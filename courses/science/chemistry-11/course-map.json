@@ -1,0 +1,748 @@
+{
+  "schema_version": "2.0",
+  "course": {
+    "id": "science-chemistry-11",
+    "code": "KH-SCI-CHEM11",
+    "title": "International Chemistry & Materials Science 11",
+    "subtitle": "Matter · Structure · Reactions · Energy · Equilibrium · Materials",
+    "grade_band": "Grade 11",
+    "credit_recommendation": "1 high-school laboratory science credit, subject to local law and school policy",
+    "duration_weeks": 36,
+    "daily_lesson_blocks": 180,
+    "estimated_hours": "150–165",
+    "pathways": [
+      "Foundation",
+      "Core",
+      "Extended"
+    ],
+    "delivery": [
+      "Self-paced",
+      "Teacher-led",
+      "Homeschool",
+      "Blended",
+      "Low-bandwidth/offline-compatible core"
+    ],
+    "lab_inquiry_target": ">=25% instructional time",
+    "passing_target": 80,
+    "benchmark_note": "AP Chemistry depth-informed benchmark; not an AP-authorized course.",
+    "mapping_status": "National/international benchmark synthesis. Jurisdiction-specific review is required before formal standards or credit reporting."
+  },
+  "standards": [
+    "NGSS HS-PS1-1–8",
+    "NGSS HS-PS3-1–5",
+    "NGSS HS-ETS1-1–4"
+  ],
+  "units": [
+    {
+      "id": "U0",
+      "weeks": [
+        1
+      ],
+      "week_titles": [
+        "Chemical Safety, Measurement & Evidence"
+      ],
+      "standards": [
+        "HS-ETS1-1",
+        "SEP 1–8"
+      ],
+      "objectives": [
+        "Explain and apply chemical safety, measurement & evidence using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U1",
+      "weeks": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "week_titles": [
+        "Atomic Models & Evidence",
+        "Isotopes, Mass & Nuclear Composition",
+        "Electrons, Spectra & Quantized Energy",
+        "Periodic Patterns & Predictive Chemistry"
+      ],
+      "standards": [
+        "HS-PS1-1",
+        "HS-PS1-8",
+        "HS-PS4-4"
+      ],
+      "objectives": [
+        "Explain and apply atomic models & evidence using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply isotopes, mass & nuclear composition using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply electrons, spectra & quantized energy using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply periodic patterns & predictive chemistry using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U2",
+      "weeks": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "week_titles": [
+        "Ionic Bonding & Lattices",
+        "Covalent Bonds & Lewis Models",
+        "Molecular Geometry & Polarity",
+        "Metals, Solids & Materials Structure"
+      ],
+      "standards": [
+        "HS-ETS1-3",
+        "HS-PS1-2",
+        "HS-PS1-3"
+      ],
+      "objectives": [
+        "Explain and apply ionic bonding & lattices using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply covalent bonds & lewis models using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply molecular geometry & polarity using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply metals, solids & materials structure using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U3",
+      "weeks": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "week_titles": [
+        "Intermolecular Forces",
+        "Gases & Particle Motion",
+        "Solutions & Concentration",
+        "Mixtures, Separation & Spectroscopic Evidence"
+      ],
+      "standards": [
+        "HS-PS1-3",
+        "HS-PS3-2",
+        "HS-PS3-4",
+        "SEP 4"
+      ],
+      "objectives": [
+        "Explain and apply intermolecular forces using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply gases & particle motion using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply solutions & concentration using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply mixtures, separation & spectroscopic evidence using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U4",
+      "weeks": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "week_titles": [
+        "Reaction Evidence & Chemical Equations",
+        "The Mole & Stoichiometry",
+        "Limiting Reactants & Yield",
+        "Redox & Solution Stoichiometry"
+      ],
+      "standards": [
+        "HS-PS1-2",
+        "HS-PS1-7"
+      ],
+      "objectives": [
+        "Explain and apply reaction evidence & chemical equations using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply the mole & stoichiometry using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply limiting reactants & yield using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply redox & solution stoichiometry using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U5",
+      "weeks": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "week_titles": [
+        "Reaction Rates & Rate Data",
+        "Collision Theory & Conditions",
+        "Mechanisms & Catalysts",
+        "Kinetics Inquiry"
+      ],
+      "standards": [
+        "HS-PS1-5",
+        "SEP 3–5"
+      ],
+      "objectives": [
+        "Explain and apply reaction rates & rate data using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply collision theory & conditions using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply mechanisms & catalysts using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply kinetics inquiry using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U6",
+      "weeks": [
+        23,
+        24,
+        25
+      ],
+      "week_titles": [
+        "Thermochemistry & Calorimetry",
+        "Bond Energy & Hess's Law",
+        "Energy, Entropy & Direction"
+      ],
+      "standards": [
+        "HS-PS1-4",
+        "HS-PS3-1",
+        "HS-PS3-2",
+        "HS-PS3-4"
+      ],
+      "objectives": [
+        "Explain and apply thermochemistry & calorimetry using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply bond energy & hess's law using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply energy, entropy & direction using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U7",
+      "weeks": [
+        26,
+        27,
+        28
+      ],
+      "week_titles": [
+        "Dynamic Equilibrium & K",
+        "Le Châtelier & System Response",
+        "Solubility & Coupled Equilibria"
+      ],
+      "standards": [
+        "HS-PS1-6"
+      ],
+      "objectives": [
+        "Explain and apply dynamic equilibrium & k using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply le châtelier & system response using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply solubility & coupled equilibria using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U8",
+      "weeks": [
+        29,
+        30,
+        31
+      ],
+      "week_titles": [
+        "Acids, Bases & Molecular Models",
+        "pH & Titration Reasoning",
+        "Buffers & Chemical Regulation"
+      ],
+      "standards": [
+        "HS-PS1-2",
+        "HS-PS1-6"
+      ],
+      "objectives": [
+        "Explain and apply acids, bases & molecular models using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply ph & titration reasoning using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply buffers & chemical regulation using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U9",
+      "weeks": [
+        32,
+        33,
+        34
+      ],
+      "week_titles": [
+        "Free Energy & Chemical Driving Forces",
+        "Electrochemistry & Energy Conversion",
+        "Nuclear Chemistry, Materials & Environmental Chemistry"
+      ],
+      "standards": [
+        "HS-ESS3-2",
+        "HS-PS1-2",
+        "HS-PS1-8",
+        "HS-PS3-1",
+        "HS-PS3-2",
+        "HS-PS3-3",
+        "HS-PS3-5"
+      ],
+      "objectives": [
+        "Explain and apply free energy & chemical driving forces using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply electrochemistry & energy conversion using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply nuclear chemistry, materials & environmental chemistry using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "CAP",
+      "weeks": [
+        35
+      ],
+      "week_titles": [
+        "Materials Science & Sustainable Chemistry Capstone"
+      ],
+      "standards": [
+        "HS-ETS1-1–4",
+        "HS-PS1"
+      ],
+      "objectives": [
+        "Explain and apply materials science & sustainable chemistry capstone using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    }
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "unit": "U0",
+      "title": "Chemical Safety, Measurement & Evidence",
+      "essentialQuestion": "How do chemists protect people and evidence while measuring matter?",
+      "phenomenon": "Two measurements disagree even though both were recorded carefully.",
+      "lab": "Safety/SDS literacy; balance/volume simulation or supervised measurement; never mix household chemicals.",
+      "concepts": "hazard; PPE; SDS; significant figures; uncertainty; dimensional analysis",
+      "quantitative": "Significant figures, percent error, unit conversion, density.",
+      "standards": "SEP 1–8; HS-ETS1-1",
+      "reading": "Course safety charter and sample SDS excerpts."
+    },
+    {
+      "week": 2,
+      "unit": "U1",
+      "title": "Atomic Models & Evidence",
+      "essentialQuestion": "How did experimental evidence change models of the atom?",
+      "phenomenon": "Scattering and emission data could not be explained by earlier atomic models.",
+      "lab": "Model-evidence card investigation.",
+      "concepts": "proton; neutron; electron; nucleus; model revision",
+      "quantitative": "Particle counting from atomic notation.",
+      "standards": "HS-PS1-1",
+      "reading": "Open chemistry text on atomic models."
+    },
+    {
+      "week": 3,
+      "unit": "U1",
+      "title": "Isotopes, Mass & Nuclear Composition",
+      "essentialQuestion": "Why can atoms of one element have different masses?",
+      "phenomenon": "Mass spectra show several peaks for a single element.",
+      "lab": "Mass-spectrum data analysis; no radioactive materials.",
+      "concepts": "isotope; mass number; atomic mass; abundance; ion",
+      "quantitative": "Weighted-average atomic mass.",
+      "standards": "HS-PS1-1; HS-PS1-8",
+      "reading": "Trusted isotope and mass-spectrum examples."
+    },
+    {
+      "week": 4,
+      "unit": "U1",
+      "title": "Electrons, Spectra & Quantized Energy",
+      "essentialQuestion": "What evidence supports quantized electron energies?",
+      "phenomenon": "Atoms emit characteristic line spectra rather than every possible color.",
+      "lab": "Virtual emission-spectrum analysis.",
+      "concepts": "energy level; photon; spectrum; electron configuration; valence electron",
+      "quantitative": "Convert wavelength/frequency conceptually or with provided constants in Extended pathway.",
+      "standards": "HS-PS1-1; HS-PS4-4",
+      "reading": "Open text on electron configurations and spectra."
+    },
+    {
+      "week": 5,
+      "unit": "U1",
+      "title": "Periodic Patterns & Predictive Chemistry",
+      "essentialQuestion": "How does periodic position help predict properties?",
+      "phenomenon": "Element properties recur in patterns across the periodic table.",
+      "lab": "Periodic-trend data investigation.",
+      "concepts": "period; group; radius; ionization energy; electronegativity; valence",
+      "quantitative": "Graph periodic trends and identify anomalies.",
+      "standards": "HS-PS1-1",
+      "reading": "Periodic table and trusted property dataset."
+    },
+    {
+      "week": 6,
+      "unit": "U2",
+      "title": "Ionic Bonding & Lattices",
+      "essentialQuestion": "How do electrostatic interactions produce ionic compounds with characteristic properties?",
+      "phenomenon": "Salt crystals are brittle solids that conduct only under certain conditions.",
+      "lab": "Conductivity/property dataset or supervised low-voltage test with safe materials.",
+      "concepts": "ion; ionic bond; lattice; formula unit; charge balance",
+      "quantitative": "Write formulas from charges; molar-mass calculations.",
+      "standards": "HS-PS1-2; HS-PS1-3",
+      "reading": "Open text on ionic bonding."
+    },
+    {
+      "week": 7,
+      "unit": "U2",
+      "title": "Covalent Bonds & Lewis Models",
+      "essentialQuestion": "How do electron-sharing models explain molecular composition?",
+      "phenomenon": "Different molecules can contain the same elements yet have different structures and properties.",
+      "lab": "Molecular model kit or paper Lewis structures.",
+      "concepts": "covalent bond; Lewis structure; octet model; bond order; resonance model",
+      "quantitative": "Count valence electrons and compare bond multiplicity.",
+      "standards": "HS-PS1-2; HS-PS1-3",
+      "reading": "Open text on covalent bonding."
+    },
+    {
+      "week": 8,
+      "unit": "U2",
+      "title": "Molecular Geometry & Polarity",
+      "essentialQuestion": "How does three-dimensional shape influence molecular behavior?",
+      "phenomenon": "Molecules with polar bonds can be overall polar or nonpolar.",
+      "lab": "VSEPR model-building with safe kits or paper models.",
+      "concepts": "electron domain; geometry; polarity; dipole; symmetry",
+      "quantitative": "Use geometry to predict net dipole qualitatively.",
+      "standards": "HS-PS1-3",
+      "reading": "Open text on VSEPR and molecular polarity."
+    },
+    {
+      "week": 9,
+      "unit": "U2",
+      "title": "Metals, Solids & Materials Structure",
+      "essentialQuestion": "How does structure at the particle scale explain material properties?",
+      "phenomenon": "Copper, glass, graphite, and salt behave very differently under stress and electrical conditions.",
+      "lab": "Property comparison and material-selection design challenge.",
+      "concepts": "metallic bonding; network solid; crystal; alloy; structure–property",
+      "quantitative": "Compare density/conductivity data and select materials using criteria.",
+      "standards": "HS-PS1-3; HS-ETS1-3",
+      "reading": "Trusted material-property tables."
+    },
+    {
+      "week": 10,
+      "unit": "U3",
+      "title": "Intermolecular Forces",
+      "essentialQuestion": "Why do substances with similar molecular mass have different boiling points?",
+      "phenomenon": "Two molecular liquids evaporate at very different rates.",
+      "lab": "Evaporation dataset or supervised water/alcohol-free safe simulation.",
+      "concepts": "dispersion; dipole-dipole; hydrogen bonding; IMF",
+      "quantitative": "Graph boiling point vs structure descriptors.",
+      "standards": "HS-PS1-3",
+      "reading": "Open text on intermolecular forces."
+    },
+    {
+      "week": 11,
+      "unit": "U3",
+      "title": "Gases & Particle Motion",
+      "essentialQuestion": "How can macroscopic gas behavior emerge from particle motion?",
+      "phenomenon": "A sealed flexible container changes volume when temperature or pressure changes.",
+      "lab": "Syringe simulation with no sealed heating; virtual gas law lab.",
+      "concepts": "pressure; temperature; volume; mole; kinetic molecular theory",
+      "quantitative": "Boyle/Charles/ideal gas calculations within course level.",
+      "standards": "HS-PS3-2; HS-PS3-4",
+      "reading": "Open gas-law text."
+    },
+    {
+      "week": 12,
+      "unit": "U3",
+      "title": "Solutions & Concentration",
+      "essentialQuestion": "How does particle-level interaction control dissolving and concentration?",
+      "phenomenon": "The same mass of solute produces different concentrations in different volumes.",
+      "lab": "Safe salt/sugar solution calculation or virtual lab; no tasting.",
+      "concepts": "solute; solvent; molarity; dilution; solubility",
+      "quantitative": "Molarity, dilution, percent concentration.",
+      "standards": "HS-PS1-3",
+      "reading": "Open text on solutions."
+    },
+    {
+      "week": 13,
+      "unit": "U3",
+      "title": "Mixtures, Separation & Spectroscopic Evidence",
+      "essentialQuestion": "How can chemists separate and identify components of mixtures?",
+      "phenomenon": "A colored mixture separates into distinct bands or signals.",
+      "lab": "Paper chromatography with washable ink/water or virtual spectroscopy.",
+      "concepts": "mixture; chromatography; spectrum; calibration; retention",
+      "quantitative": "Rf-style ratios or calibration-curve interpretation.",
+      "standards": "HS-PS1-3; SEP 4",
+      "reading": "Trusted chromatography/spectroscopy examples."
+    },
+    {
+      "week": 14,
+      "unit": "U4",
+      "title": "Reaction Evidence & Chemical Equations",
+      "essentialQuestion": "How do we represent chemical change while conserving atoms?",
+      "phenomenon": "Mass appears to change in an open reaction but is conserved in a closed-system model.",
+      "lab": "Closed-system simulation or safe effervescent tablet dataset; no sealed pressure build-up.",
+      "concepts": "reactant; product; coefficient; state symbol; conservation",
+      "quantitative": "Balance equations and perform atom audits.",
+      "standards": "HS-PS1-2; HS-PS1-7",
+      "reading": "Open text on equations and conservation."
+    },
+    {
+      "week": 15,
+      "unit": "U4",
+      "title": "The Mole & Stoichiometry",
+      "essentialQuestion": "How do chemists count enormous numbers of particles by mass?",
+      "phenomenon": "Small measured masses represent astronomical particle counts.",
+      "lab": "Mass-to-mole paper/simulation practice.",
+      "concepts": "mole; Avogadro constant; molar mass; stoichiometric ratio",
+      "quantitative": "Mole-mass-particle conversions and reaction ratios.",
+      "standards": "HS-PS1-7",
+      "reading": "Open stoichiometry text."
+    },
+    {
+      "week": 16,
+      "unit": "U4",
+      "title": "Limiting Reactants & Yield",
+      "essentialQuestion": "Why does one reactant often determine how much product can form?",
+      "phenomenon": "A recipe model stops producing product when one component runs out.",
+      "lab": "Paper-token limiting-reactant model.",
+      "concepts": "limiting reactant; excess; theoretical yield; actual yield; percent yield",
+      "quantitative": "Limiting reactant and percent-yield calculations.",
+      "standards": "HS-PS1-7",
+      "reading": "Open text on limiting reactants."
+    },
+    {
+      "week": 17,
+      "unit": "U4",
+      "title": "Redox & Solution Stoichiometry",
+      "essentialQuestion": "How can electron transfer and solution measurements quantify reactions?",
+      "phenomenon": "Some reactions transfer electrons and produce measurable electrical or color changes.",
+      "lab": "Redox-number analysis and virtual/supervised solution stoichiometry.",
+      "concepts": "oxidation; reduction; oxidation number; titration concept; equivalence",
+      "quantitative": "Balance simple redox conceptually; solution stoichiometry.",
+      "standards": "HS-PS1-2; HS-PS1-7",
+      "reading": "Open redox and solution-stoichiometry text."
+    },
+    {
+      "week": 18,
+      "unit": "MID",
+      "title": "Midterm Examination & Corrections",
+      "essentialQuestion": "What have I mastered about atomic structure, bonding, properties, and stoichiometry?",
+      "phenomenon": "A cumulative unknown requires structure–property and quantitative reasoning.",
+      "lab": "No new wet lab; midterm and correction portfolio.",
+      "concepts": "cumulative synthesis",
+      "quantitative": "Mixed dimensional analysis, stoichiometry, graphing.",
+      "standards": "HS-PS1; SEP 1–8",
+      "reading": "Review notebook and lab evidence."
+    },
+    {
+      "week": 19,
+      "unit": "U5",
+      "title": "Reaction Rates & Rate Data",
+      "essentialQuestion": "How can reaction progress be measured mathematically?",
+      "phenomenon": "Concentration changes nonlinearly with time during a reaction.",
+      "lab": "Rate-curve data analysis.",
+      "concepts": "rate; concentration; time; slope; rate law concept",
+      "quantitative": "Average/instantaneous rate from graphs.",
+      "standards": "HS-PS1-5",
+      "reading": "Open kinetics text."
+    },
+    {
+      "week": 20,
+      "unit": "U5",
+      "title": "Collision Theory & Conditions",
+      "essentialQuestion": "Why do temperature and concentration affect reaction rate?",
+      "phenomenon": "A reaction speeds up as particles collide more frequently or energetically.",
+      "lab": "Safe simulation/data analysis; no unsupervised reactive mixtures.",
+      "concepts": "collision; activation energy; temperature; concentration; surface area",
+      "quantitative": "Compare rate ratios across conditions.",
+      "standards": "HS-PS1-5",
+      "reading": "Open collision-theory text."
+    },
+    {
+      "week": 21,
+      "unit": "U5",
+      "title": "Mechanisms & Catalysts",
+      "essentialQuestion": "How can a multi-step pathway control overall reaction rate?",
+      "phenomenon": "A catalyst changes reaction rate without changing overall reactants/products.",
+      "lab": "Energy-profile/model analysis.",
+      "concepts": "mechanism; elementary step; intermediate; catalyst; transition state",
+      "quantitative": "Read multistep energy profiles.",
+      "standards": "HS-PS1-5",
+      "reading": "Open kinetics mechanisms overview."
+    },
+    {
+      "week": 22,
+      "unit": "U5",
+      "title": "Kinetics Inquiry",
+      "essentialQuestion": "How can evidence distinguish competing explanations of reaction rate?",
+      "phenomenon": "Two rate datasets can fit different models until an additional variable is tested.",
+      "lab": "Guided inquiry using simulation or teacher-supervised safe reaction.",
+      "concepts": "hypothesis; variable; rate model; residual; uncertainty",
+      "quantitative": "Fit/compare simple rate models.",
+      "standards": "HS-PS1-5; SEP 3–5",
+      "reading": "Teacher-approved kinetics dataset."
+    },
+    {
+      "week": 23,
+      "unit": "U6",
+      "title": "Thermochemistry & Calorimetry",
+      "essentialQuestion": "How can heat transfer reveal reaction-energy change?",
+      "phenomenon": "A process warms or cools its surroundings by a measurable amount.",
+      "lab": "Virtual calorimetry or teacher-supervised water-based calorimetry.",
+      "concepts": "system; surroundings; heat; enthalpy; calorimeter",
+      "quantitative": "q=mcΔT and energy accounting.",
+      "standards": "HS-PS1-4; HS-PS3-1",
+      "reading": "Open thermochemistry text."
+    },
+    {
+      "week": 24,
+      "unit": "U6",
+      "title": "Bond Energy & Hess's Law",
+      "essentialQuestion": "How can energy changes be combined across reaction pathways?",
+      "phenomenon": "Different reaction sequences can produce the same overall chemical change.",
+      "lab": "Hess-cycle card model and bond-energy calculation.",
+      "concepts": "bond energy; Hess's law; state function; pathway",
+      "quantitative": "Combine thermochemical equations and estimate ΔH.",
+      "standards": "HS-PS1-4",
+      "reading": "Open text on Hess's law and bond energy."
+    },
+    {
+      "week": 25,
+      "unit": "U6",
+      "title": "Energy, Entropy & Direction",
+      "essentialQuestion": "Why do some energetically possible changes occur more readily than others?",
+      "phenomenon": "Some processes spread matter or energy even when they absorb heat.",
+      "lab": "Particle-distribution simulation.",
+      "concepts": "entropy; dispersal; microstate concept; spontaneity",
+      "quantitative": "Interpret qualitative entropy and energy tradeoffs.",
+      "standards": "HS-PS3-2; HS-PS3-4",
+      "reading": "Open introduction to entropy."
+    },
+    {
+      "week": 26,
+      "unit": "U7",
+      "title": "Dynamic Equilibrium & K",
+      "essentialQuestion": "How can forward and reverse processes continue while concentrations remain stable?",
+      "phenomenon": "A system reaches stable concentrations even though microscopic reactions continue.",
+      "lab": "Equilibrium simulation.",
+      "concepts": "dynamic equilibrium; equilibrium constant; reaction quotient concept",
+      "quantitative": "Write/interpret simple equilibrium expressions.",
+      "standards": "HS-PS1-6",
+      "reading": "Open equilibrium text."
+    },
+    {
+      "week": 27,
+      "unit": "U7",
+      "title": "Le Châtelier & System Response",
+      "essentialQuestion": "How does an equilibrium system respond to disturbance?",
+      "phenomenon": "Changing concentration or temperature shifts the observed composition of a reversible system.",
+      "lab": "Virtual equilibrium perturbation lab.",
+      "concepts": "stress; shift; equilibrium position; temperature; concentration",
+      "quantitative": "Use tables/graphs to infer shifts.",
+      "standards": "HS-PS1-6",
+      "reading": "Open text on equilibrium response."
+    },
+    {
+      "week": 28,
+      "unit": "U7",
+      "title": "Solubility & Coupled Equilibria",
+      "essentialQuestion": "Why do some salts dissolve only slightly, and how can conditions alter solubility?",
+      "phenomenon": "A small concentration change can trigger precipitation.",
+      "lab": "Solubility-curve/data analysis; no unsupervised precipitation chemistry.",
+      "concepts": "solubility; saturation; precipitation; Ksp concept; common-ion concept",
+      "quantitative": "Read solubility curves and compare ion products qualitatively.",
+      "standards": "HS-PS1-6",
+      "reading": "Open solubility-equilibrium text."
+    },
+    {
+      "week": 29,
+      "unit": "U8",
+      "title": "Acids, Bases & Molecular Models",
+      "essentialQuestion": "What do competing acid–base models explain?",
+      "phenomenon": "Different substances change indicator behavior in repeatable ways.",
+      "lab": "Use virtual indicators or teacher-supervised food-safe indicator only; never mix cleaners.",
+      "concepts": "acid; base; proton donor/acceptor; conjugate pair; amphoteric",
+      "quantitative": "Classify acid/base reactions and simple concentration relations.",
+      "standards": "HS-PS1-2",
+      "reading": "Open acid–base text."
+    },
+    {
+      "week": 30,
+      "unit": "U8",
+      "title": "pH & Titration Reasoning",
+      "essentialQuestion": "How can logarithmic scales and stoichiometry quantify acidity?",
+      "phenomenon": "A tiny change in hydrogen-ion concentration produces a large pH shift.",
+      "lab": "Virtual titration; supervised neutralization only in equipped lab.",
+      "concepts": "pH; pOH; strong/weak; equivalence; indicator",
+      "quantitative": "pH calculations and titration stoichiometry at appropriate level.",
+      "standards": "HS-PS1-6",
+      "reading": "Open text on pH and titration."
+    },
+    {
+      "week": 31,
+      "unit": "U8",
+      "title": "Buffers & Chemical Regulation",
+      "essentialQuestion": "How do buffer systems resist changes in pH?",
+      "phenomenon": "Adding the same amount of acid changes pure water and a buffer differently.",
+      "lab": "Buffer simulation; no biological/medical dosing contexts.",
+      "concepts": "buffer; conjugate pair; capacity; equilibrium; regulation",
+      "quantitative": "Interpret buffer curves and compare capacity.",
+      "standards": "HS-PS1-6",
+      "reading": "Open buffer-system text."
+    },
+    {
+      "week": 32,
+      "unit": "U9",
+      "title": "Free Energy & Chemical Driving Forces",
+      "essentialQuestion": "How do energy and entropy combine to predict chemical direction?",
+      "phenomenon": "A process can be spontaneous even when it absorbs heat.",
+      "lab": "Free-energy graph/data analysis.",
+      "concepts": "Gibbs free energy; enthalpy; entropy; spontaneity; coupling",
+      "quantitative": "Use ΔG=ΔH−TΔS in Extended pathway; interpret signs in Core.",
+      "standards": "HS-PS3-1; HS-PS3-2",
+      "reading": "Open thermodynamics introduction."
+    },
+    {
+      "week": 33,
+      "unit": "U9",
+      "title": "Electrochemistry & Energy Conversion",
+      "essentialQuestion": "How do redox reactions convert chemical and electrical energy?",
+      "phenomenon": "Separated redox processes can drive electron flow through a circuit.",
+      "lab": "Virtual galvanic-cell investigation or teacher-supervised low-risk cell.",
+      "concepts": "anode; cathode; cell potential; oxidation; reduction",
+      "quantitative": "Read cell diagrams and compare potential data.",
+      "standards": "HS-PS1-2; HS-PS3-3; HS-PS3-5",
+      "reading": "Open electrochemistry text."
+    },
+    {
+      "week": 34,
+      "unit": "U9",
+      "title": "Nuclear Chemistry, Materials & Environmental Chemistry",
+      "essentialQuestion": "How do nuclear changes differ from chemical changes, and how do materials affect society?",
+      "phenomenon": "Radioactive decay changes nuclei while ordinary chemical reactions do not.",
+      "lab": "Half-life simulation with coins; no radioactive sources.",
+      "concepts": "isotope; decay; fission; fusion; polymer/material; lifecycle",
+      "quantitative": "Half-life modeling and material lifecycle data.",
+      "standards": "HS-PS1-8; HS-ESS3-2",
+      "reading": "Trusted nuclear/materials educational sources."
+    },
+    {
+      "week": 35,
+      "unit": "CAP",
+      "title": "Materials Science & Sustainable Chemistry Capstone",
+      "essentialQuestion": "How can chemical principles guide a safer, more sustainable material or process?",
+      "phenomenon": "A product must meet performance, cost, safety, and environmental constraints.",
+      "lab": "Design/evaluate material or process using data; no synthesis of hazardous substances.",
+      "concepts": "green chemistry; lifecycle; criterion; constraint; tradeoff; evidence",
+      "quantitative": "Multi-criteria decision matrix and quantitative comparison.",
+      "standards": "HS-ETS1-1–4; HS-PS1",
+      "reading": "Student-selected trusted sources."
+    },
+    {
+      "week": 36,
+      "unit": "FINAL",
+      "title": "Comprehensive Final & Laboratory Portfolio Defense",
+      "essentialQuestion": "Can I integrate structure, reactions, energy, kinetics, equilibrium, and quantitative chemistry?",
+      "phenomenon": "A multi-part industrial/environmental case requires several chemistry models.",
+      "lab": "No new wet lab; cumulative final and portfolio defense.",
+      "concepts": "cumulative synthesis",
+      "quantitative": "Mixed stoichiometry, graphs, energy, equilibrium, data analysis.",
+      "standards": "HS-PS1; HS-PS3; HS-ETS1; SEP 1–8",
+      "reading": "Complete course portfolio."
+    }
+  ],
+  "assessment": {
+    "weekly": "CER + portfolio + corrections",
+    "unit": "Performance task: model + data/quantitative reasoning + CER + application/design",
+    "midterm": "15-item cumulative objective check plus corrections and portfolio review",
+    "final": "30-item cumulative objective check plus portfolio/capstone defense",
+    "mastery_target": 80
+  },
+  "safety": {
+    "lab_policy": "Target ≥25% inquiry/laboratory time. Hazardous chemistry requires appropriately equipped, educator-supervised laboratory conditions; home learners use safe simulations/data alternatives.",
+    "home_rule": "Use only explicitly safe investigations; substitute simulation/data analysis whenever proper supervision or facilities are unavailable."
+  }
+}

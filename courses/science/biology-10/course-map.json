@@ -1,0 +1,736 @@
+{
+  "schema_version": "2.0",
+  "course": {
+    "id": "science-biology-10",
+    "code": "KH-SCI-BIO10",
+    "title": "International Biology & Biotechnology 10",
+    "subtitle": "Molecular · Cellular · Genetic · Evolutionary · Ecological Systems",
+    "grade_band": "Grade 10",
+    "credit_recommendation": "1 high-school laboratory science credit, subject to local law and school policy",
+    "duration_weeks": 36,
+    "daily_lesson_blocks": 180,
+    "estimated_hours": "150–165",
+    "pathways": [
+      "Foundation",
+      "Core",
+      "Extended"
+    ],
+    "delivery": [
+      "Self-paced",
+      "Teacher-led",
+      "Homeschool",
+      "Blended",
+      "Low-bandwidth/offline-compatible core"
+    ],
+    "lab_inquiry_target": ">=25% instructional time",
+    "passing_target": 80,
+    "benchmark_note": "AP Biology depth-informed benchmark; not an AP-authorized course.",
+    "mapping_status": "National/international benchmark synthesis. Jurisdiction-specific review is required before formal standards or credit reporting."
+  },
+  "standards": [
+    "NGSS HS-LS1-1–7",
+    "NGSS HS-LS2-1–8",
+    "NGSS HS-LS3-1–3",
+    "NGSS HS-LS4-1–6",
+    "NGSS HS-ETS1-1–4"
+  ],
+  "units": [
+    {
+      "id": "U0",
+      "weeks": [
+        1
+      ],
+      "week_titles": [
+        "Readiness, Safety & Quantitative Biology"
+      ],
+      "standards": [
+        "HS-ETS1-1",
+        "SEP 1–8"
+      ],
+      "objectives": [
+        "Explain and apply readiness, safety & quantitative biology using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U1",
+      "weeks": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "week_titles": [
+        "Water, Carbon & the Chemistry of Life",
+        "Macromolecules & Structure–Function",
+        "Enzymes & Reaction Rates",
+        "Cell Theory & Cellular Organization",
+        "Membranes, Transport & Surface Area",
+        "Organelles, Energy Systems & Endosymbiosis",
+        "Cell Specialization, Tissues & Systems"
+      ],
+      "standards": [
+        "HS-LS1-1",
+        "HS-LS1-2",
+        "HS-LS1-3",
+        "HS-LS1-4",
+        "HS-LS1-6",
+        "HS-LS1-7",
+        "PS3D"
+      ],
+      "objectives": [
+        "Explain and apply water, carbon & the chemistry of life using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply macromolecules & structure–function using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply enzymes & reaction rates using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply cell theory & cellular organization using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply membranes, transport & surface area using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U2",
+      "weeks": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "week_titles": [
+        "Photosynthesis: Capturing Energy",
+        "Cellular Respiration & ATP",
+        "Matter Cycling Through Metabolism",
+        "Experimental Energetics & Metabolic Evidence"
+      ],
+      "standards": [
+        "HS-LS1-5",
+        "HS-LS1-6",
+        "HS-LS1-7",
+        "HS-LS2-3",
+        "PS3D",
+        "SEP 3–5"
+      ],
+      "objectives": [
+        "Explain and apply photosynthesis: capturing energy using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply cellular respiration & atp using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply matter cycling through metabolism using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply experimental energetics & metabolic evidence using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U3",
+      "weeks": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "week_titles": [
+        "Cell Communication",
+        "Feedback & Homeostasis",
+        "Cell Cycle, Mitosis & Growth",
+        "Cell-Cycle Regulation & Model Boundaries",
+        "Semester Synthesis Investigation"
+      ],
+      "standards": [
+        "HS-ETS1-2",
+        "HS-LS1-3",
+        "HS-LS1-4",
+        "SEP 1–8"
+      ],
+      "objectives": [
+        "Explain and apply cell communication using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply feedback & homeostasis using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply cell cycle, mitosis & growth using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply cell-cycle regulation & model boundaries using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply semester synthesis investigation using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U4",
+      "weeks": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "week_titles": [
+        "Meiosis & Sources of Variation",
+        "Mendelian Inheritance",
+        "Probability, Pedigrees & Statistical Reasoning",
+        "Complex Traits & Gene–Environment Interaction"
+      ],
+      "standards": [
+        "HS-LS3-1",
+        "HS-LS3-2",
+        "HS-LS3-3"
+      ],
+      "objectives": [
+        "Explain and apply meiosis & sources of variation using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply mendelian inheritance using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply probability, pedigrees & statistical reasoning using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply complex traits & gene–environment interaction using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U5",
+      "weeks": [
+        23,
+        24,
+        25,
+        26
+      ],
+      "week_titles": [
+        "DNA Structure & Replication",
+        "Transcription, Translation & the Genetic Code",
+        "Gene Regulation & Epigenetic Mechanisms",
+        "Biotechnology, Genomics & Bioethics"
+      ],
+      "standards": [
+        "HS-ETS1-3",
+        "HS-LS1-1",
+        "HS-LS1-4",
+        "HS-LS3-1"
+      ],
+      "objectives": [
+        "Explain and apply dna structure & replication using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply transcription, translation & the genetic code using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply gene regulation & epigenetic mechanisms using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply biotechnology, genomics & bioethics using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U6",
+      "weeks": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "week_titles": [
+        "Evidence for Evolutionary Change",
+        "Population Genetics & Changing Allele Frequencies",
+        "Natural Selection & Adaptation",
+        "Speciation, Phylogeny & Origins Literacy"
+      ],
+      "standards": [
+        "HS-LS4-1",
+        "HS-LS4-2",
+        "HS-LS4-3",
+        "HS-LS4-4",
+        "HS-LS4-5"
+      ],
+      "objectives": [
+        "Explain and apply evidence for evolutionary change using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply population genetics & changing allele frequencies using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply natural selection & adaptation using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply speciation, phylogeny & origins literacy using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U7",
+      "weeks": [
+        31,
+        32,
+        33,
+        34
+      ],
+      "week_titles": [
+        "Ecosystem Energy Flow",
+        "Biogeochemical Cycles",
+        "Population & Community Dynamics",
+        "Biodiversity, Resilience & Human Impacts"
+      ],
+      "standards": [
+        "HS-ESS2-7",
+        "HS-ESS3-4",
+        "HS-LS2-1",
+        "HS-LS2-2",
+        "HS-LS2-3",
+        "HS-LS2-4",
+        "HS-LS2-5",
+        "HS-LS2-6",
+        "HS-LS2-7",
+        "HS-LS2-8",
+        "HS-LS4-6"
+      ],
+      "objectives": [
+        "Explain and apply ecosystem energy flow using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply biogeochemical cycles using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply population & community dynamics using models, evidence, quantitative reasoning, and appropriate scientific vocabulary.",
+        "Explain and apply biodiversity, resilience & human impacts using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    },
+    {
+      "id": "U8",
+      "weeks": [
+        35
+      ],
+      "week_titles": [
+        "Biology & Biotechnology Capstone"
+      ],
+      "standards": [
+        "HS-ETS1-1–4",
+        "selected HS-LS"
+      ],
+      "objectives": [
+        "Explain and apply biology & biotechnology capstone using models, evidence, quantitative reasoning, and appropriate scientific vocabulary."
+      ],
+      "assessment": "Unit performance task: model/representation + data or quantitative analysis + CER/argument + application/design task. Essential outcomes require ≥80% mastery or documented correction/reassessment."
+    }
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "unit": "U0",
+      "title": "Readiness, Safety & Quantitative Biology",
+      "essentialQuestion": "How do safe practices, measurement, statistics, and transparent records make biological evidence more trustworthy?",
+      "phenomenon": "Two teams measure the same biological sample and report different values. Which differences are normal variation, and which suggest a design or recording problem?",
+      "lab": "Safety-case analysis; measurement/graphing diagnostic; no biological culturing.",
+      "concepts": "hazard vs risk; variables; controls; uncertainty; mean/range; graph choice",
+      "quantitative": "Compute mean, percent change, and simple uncertainty from a supplied dataset.",
+      "standards": "SEP 1–8; HS-ETS1-1",
+      "reading": "Course safety charter and a teacher-approved biological dataset."
+    },
+    {
+      "week": 2,
+      "unit": "U1",
+      "title": "Water, Carbon & the Chemistry of Life",
+      "essentialQuestion": "Why do a few chemical properties make water and carbon so important to living systems?",
+      "phenomenon": "Water climbs a paper fiber and beads on a waxed surface even though gravity acts on both.",
+      "lab": "Safe capillary-action or surface-tension investigation using water only.",
+      "concepts": "polarity; hydrogen bonding; cohesion; adhesion; carbon skeletons",
+      "quantitative": "Compare ratios and percent composition in simple biomolecule data.",
+      "standards": "HS-LS1-6; PS3D",
+      "reading": "Open biology text section on water, carbon, and biomolecules."
+    },
+    {
+      "week": 3,
+      "unit": "U1",
+      "title": "Macromolecules & Structure–Function",
+      "essentialQuestion": "How does molecular structure constrain biological function?",
+      "phenomenon": "Two foods can contain similar calories but behave very differently in water and digestion models.",
+      "lab": "Food-label/data classification; paper model of monomers and polymers.",
+      "concepts": "carbohydrates; lipids; proteins; nucleic acids; monomer/polymer",
+      "quantitative": "Interpret nutrition/macromolecule tables without making medical claims.",
+      "standards": "HS-LS1-6; HS-LS1-7",
+      "reading": "Teacher-approved molecular structure diagrams and food-label examples."
+    },
+    {
+      "week": 4,
+      "unit": "U1",
+      "title": "Enzymes & Reaction Rates",
+      "essentialQuestion": "How do enzymes change reaction pathways without being consumed?",
+      "phenomenon": "The same reaction proceeds at very different rates under different conditions.",
+      "lab": "Catalase-style dataset analysis or supervised safe simulation; no ingestion.",
+      "concepts": "enzyme; active site; activation energy; denaturation; rate",
+      "quantitative": "Graph reaction rate against temperature or substrate concentration.",
+      "standards": "HS-LS1-6; HS-LS1-7",
+      "reading": "Open text on enzymes and reaction-energy diagrams."
+    },
+    {
+      "week": 5,
+      "unit": "U1",
+      "title": "Cell Theory & Cellular Organization",
+      "essentialQuestion": "What evidence supports the cell as the basic unit of life?",
+      "phenomenon": "Microscope images from very different organisms reveal recurring structural patterns.",
+      "lab": "Prepared-image analysis or supervised microscopy of prepared slides.",
+      "concepts": "cell theory; prokaryote; eukaryote; membrane; cytoplasm",
+      "quantitative": "Use scale bars to estimate actual cell size.",
+      "standards": "HS-LS1-1; HS-LS1-2",
+      "reading": "Prepared micrographs from a trusted educational source."
+    },
+    {
+      "week": 6,
+      "unit": "U1",
+      "title": "Membranes, Transport & Surface Area",
+      "essentialQuestion": "Why can a cell not simply grow forever?",
+      "phenomenon": "Small cubes exchange material faster relative to volume than large cubes.",
+      "lab": "Agar-cube simulation if supervised, or paper/computational diffusion model.",
+      "concepts": "selective permeability; diffusion; osmosis; active transport; SA:V",
+      "quantitative": "Calculate surface-area-to-volume ratios and percent diffusion.",
+      "standards": "HS-LS1-2; HS-LS1-3",
+      "reading": "Open text on membrane transport and cell-size constraints."
+    },
+    {
+      "week": 7,
+      "unit": "U1",
+      "title": "Organelles, Energy Systems & Endosymbiosis",
+      "essentialQuestion": "How do specialized cell structures cooperate as a system?",
+      "phenomenon": "Mitochondria and chloroplasts share unusual features with bacteria.",
+      "lab": "Organelle evidence matrix and model comparison; no culturing.",
+      "concepts": "nucleus; ribosome; ER; Golgi; mitochondrion; chloroplast; endosymbiotic evidence",
+      "quantitative": "Compare organelle abundance across specialized cell types.",
+      "standards": "HS-LS1-1; HS-LS1-2",
+      "reading": "Trusted diagrams and evidence summaries on organelles and endosymbiosis."
+    },
+    {
+      "week": 8,
+      "unit": "U1",
+      "title": "Cell Specialization, Tissues & Systems",
+      "essentialQuestion": "How can cells with the same genome become structurally and functionally different?",
+      "phenomenon": "Nerve, muscle, blood, and epithelial cells share DNA but have different shapes and proteins.",
+      "lab": "Image-based cell specialization classification and systems model.",
+      "concepts": "differentiation; gene expression; tissue; organ; organ system",
+      "quantitative": "Analyze cell-type abundance or morphology data.",
+      "standards": "HS-LS1-1; HS-LS1-2; HS-LS1-4",
+      "reading": "Open text on differentiation and hierarchical organization."
+    },
+    {
+      "week": 9,
+      "unit": "U2",
+      "title": "Photosynthesis: Capturing Energy",
+      "essentialQuestion": "How is light energy transformed into chemical energy?",
+      "phenomenon": "Leaves exposed to different light conditions accumulate different amounts of stored chemical energy.",
+      "lab": "Leaf-disk photosynthesis only with teacher supervision, or simulation/data analysis.",
+      "concepts": "chloroplast; light reactions; carbon fixation; glucose; limiting factor",
+      "quantitative": "Graph photosynthetic rate vs light or CO2 data.",
+      "standards": "HS-LS1-5; HS-LS1-6",
+      "reading": "Open text on photosynthesis and energy transformations."
+    },
+    {
+      "week": 10,
+      "unit": "U2",
+      "title": "Cellular Respiration & ATP",
+      "essentialQuestion": "How do cells release usable energy from organic molecules?",
+      "phenomenon": "Active tissues consume oxygen and release carbon dioxide at different rates.",
+      "lab": "Respirometry simulation or germinating-seed dataset; avoid sealed living-organism experiments without supervision.",
+      "concepts": "glycolysis; aerobic respiration; ATP; redox; fermentation",
+      "quantitative": "Compare ATP yield models and respirometry rates.",
+      "standards": "HS-LS1-7; PS3D",
+      "reading": "Open text on cellular respiration and ATP."
+    },
+    {
+      "week": 11,
+      "unit": "U2",
+      "title": "Matter Cycling Through Metabolism",
+      "essentialQuestion": "Why is matter recycled while energy flows?",
+      "phenomenon": "Carbon atoms in food can later appear in exhaled carbon dioxide or new biomass.",
+      "lab": "Carbon-tracing model with cards or digital system model.",
+      "concepts": "conservation of matter; metabolic pathway; biosynthesis; decomposition",
+      "quantitative": "Complete atom accounting through simplified reactions.",
+      "standards": "HS-LS1-6; HS-LS1-7; HS-LS2-3",
+      "reading": "Teacher-approved carbon-tracing diagrams."
+    },
+    {
+      "week": 12,
+      "unit": "U2",
+      "title": "Experimental Energetics & Metabolic Evidence",
+      "essentialQuestion": "How do scientists infer metabolic processes from indirect measurements?",
+      "phenomenon": "Different organisms or tissues produce distinct gas, heat, or mass-change patterns.",
+      "lab": "Analyze a supplied metabolic dataset; design a safe follow-up investigation.",
+      "concepts": "rate; control; respiration proxy; confounding variable; uncertainty",
+      "quantitative": "Calculate rates, normalize by mass, and compare variability.",
+      "standards": "HS-LS1-7; SEP 3–5",
+      "reading": "A published or teacher-prepared metabolism dataset."
+    },
+    {
+      "week": 13,
+      "unit": "U3",
+      "title": "Cell Communication",
+      "essentialQuestion": "How do cells send, receive, and interpret signals?",
+      "phenomenon": "The same signaling molecule can trigger different responses in different cell types.",
+      "lab": "Signal-transduction card/model simulation.",
+      "concepts": "receptor; ligand; transduction; response; specificity",
+      "quantitative": "Interpret dose-response graphs qualitatively and quantitatively.",
+      "standards": "HS-LS1-3",
+      "reading": "Open text on receptors and cell signaling."
+    },
+    {
+      "week": 14,
+      "unit": "U3",
+      "title": "Feedback & Homeostasis",
+      "essentialQuestion": "How do feedback loops stabilize changing biological systems?",
+      "phenomenon": "Body temperature remains within a narrow range despite changing environmental conditions.",
+      "lab": "Feedback-loop modeling using non-clinical sample data.",
+      "concepts": "homeostasis; negative feedback; positive feedback; set range; effector",
+      "quantitative": "Graph deviation and recovery in a feedback dataset.",
+      "standards": "HS-LS1-3",
+      "reading": "Open text on feedback; use only non-diagnostic data."
+    },
+    {
+      "week": 15,
+      "unit": "U3",
+      "title": "Cell Cycle, Mitosis & Growth",
+      "essentialQuestion": "How do organisms grow while maintaining genetic continuity?",
+      "phenomenon": "A developing organism increases cell number dramatically without changing chromosome count in most cells.",
+      "lab": "Prepared root-tip images or mitosis image set; no chemical preparation required.",
+      "concepts": "cell cycle; mitosis; cytokinesis; chromosome; checkpoint",
+      "quantitative": "Calculate mitotic index from prepared images.",
+      "standards": "HS-LS1-4",
+      "reading": "Prepared mitosis micrographs and open text."
+    },
+    {
+      "week": 16,
+      "unit": "U3",
+      "title": "Cell-Cycle Regulation & Model Boundaries",
+      "essentialQuestion": "What happens when regulatory systems fail, and what can models legitimately claim?",
+      "phenomenon": "Some cell lines divide despite signals that normally stop division.",
+      "lab": "Case-data analysis on cell-cycle control; explicitly non-diagnostic.",
+      "concepts": "checkpoint; apoptosis; mutation; regulation; correlation",
+      "quantitative": "Interpret proliferation curves and distinguish correlation from mechanism.",
+      "standards": "HS-LS1-3; HS-LS1-4",
+      "reading": "Trusted educational overview of cell-cycle regulation."
+    },
+    {
+      "week": 17,
+      "unit": "U3",
+      "title": "Semester Synthesis Investigation",
+      "essentialQuestion": "How can multiple lines of evidence support one biological explanation?",
+      "phenomenon": "A biological system changes under a controlled environmental condition.",
+      "lab": "Student-designed safe investigation or simulation with teacher approval.",
+      "concepts": "question; model; method; data; CER; limitation",
+      "quantitative": "Choose appropriate summary statistics and graph.",
+      "standards": "SEP 1–8; HS-ETS1-2",
+      "reading": "Student-selected teacher-approved background sources."
+    },
+    {
+      "week": 18,
+      "unit": "MID",
+      "title": "Midterm Examination & Corrections",
+      "essentialQuestion": "What have I mastered across cells, energy, signaling, and scientific practice?",
+      "phenomenon": "A cumulative evidence set connects molecular, cellular, and organismal scales.",
+      "lab": "No new wet lab; midterm, correction conference, portfolio audit.",
+      "concepts": "cumulative synthesis",
+      "quantitative": "Mixed data interpretation and quantitative biology.",
+      "standards": "HS-LS1; SEP 1–8",
+      "reading": "Review portfolio, models, lab notes, and vocabulary."
+    },
+    {
+      "week": 19,
+      "unit": "U4",
+      "title": "Meiosis & Sources of Variation",
+      "essentialQuestion": "How does meiosis create genetic variation while reducing chromosome number?",
+      "phenomenon": "Siblings from the same parents can be genetically different.",
+      "lab": "Chromosome-model simulation of meiosis and recombination.",
+      "concepts": "homolog; meiosis; crossing over; independent assortment; gamete",
+      "quantitative": "Count possible chromosome combinations in simplified models.",
+      "standards": "HS-LS3-2",
+      "reading": "Open text on meiosis and variation."
+    },
+    {
+      "week": 20,
+      "unit": "U4",
+      "title": "Mendelian Inheritance",
+      "essentialQuestion": "When do simple inheritance models work well, and when do they fail?",
+      "phenomenon": "Some traits follow predictable ratios while others do not.",
+      "lab": "Probability simulation with coins/cards; no human trait diagnosis.",
+      "concepts": "allele; genotype; phenotype; dominance; segregation",
+      "quantitative": "Punnett probabilities and expected ratios.",
+      "standards": "HS-LS3-1; HS-LS3-3",
+      "reading": "Open genetics text emphasizing model limits."
+    },
+    {
+      "week": 21,
+      "unit": "U4",
+      "title": "Probability, Pedigrees & Statistical Reasoning",
+      "essentialQuestion": "Why are inheritance predictions probabilistic rather than guarantees?",
+      "phenomenon": "A small family can differ greatly from an expected Mendelian ratio.",
+      "lab": "Anonymous/published pedigree interpretation; no family medical inference.",
+      "concepts": "pedigree; probability; sample size; expected vs observed; sex-linked",
+      "quantitative": "Use product/sum rules and simple chi-square conceptually.",
+      "standards": "HS-LS3-3",
+      "reading": "Teacher-approved fictional or historical pedigrees."
+    },
+    {
+      "week": 22,
+      "unit": "U4",
+      "title": "Complex Traits & Gene–Environment Interaction",
+      "essentialQuestion": "Why can phenotype not always be predicted from one gene?",
+      "phenomenon": "Identical genotypes can show different phenotypes under different conditions.",
+      "lab": "Plant/organism dataset analysis or simulation.",
+      "concepts": "polygenic; pleiotropy; environment; penetrance; quantitative trait",
+      "quantitative": "Interpret distributions and correlations without causal overclaiming.",
+      "standards": "HS-LS3-2; HS-LS3-3",
+      "reading": "Open text on complex traits and gene–environment interactions."
+    },
+    {
+      "week": 23,
+      "unit": "U5",
+      "title": "DNA Structure & Replication",
+      "essentialQuestion": "How does molecular structure enable faithful information storage and copying?",
+      "phenomenon": "DNA can be copied with high fidelity despite billions of molecular events.",
+      "lab": "Paper/digital DNA replication model.",
+      "concepts": "DNA; nucleotide; antiparallel; base pairing; replication",
+      "quantitative": "Estimate base composition from pairing rules.",
+      "standards": "HS-LS3-1",
+      "reading": "Open text on DNA structure and replication."
+    },
+    {
+      "week": 24,
+      "unit": "U5",
+      "title": "Transcription, Translation & the Genetic Code",
+      "essentialQuestion": "How is information in DNA converted into functional molecules?",
+      "phenomenon": "A single nucleotide change can alter a protein sequence—or have no effect.",
+      "lab": "Codon-table translation exercise using fictional sequences.",
+      "concepts": "transcription; RNA; codon; translation; ribosome; protein",
+      "quantitative": "Translate sequences and compare mutation outcomes.",
+      "standards": "HS-LS1-1; HS-LS3-1",
+      "reading": "Open text and standard genetic-code table."
+    },
+    {
+      "week": 25,
+      "unit": "U5",
+      "title": "Gene Regulation & Epigenetic Mechanisms",
+      "essentialQuestion": "Why are different genes active in different cells and conditions?",
+      "phenomenon": "Cells with identical DNA produce different sets of proteins.",
+      "lab": "Gene-regulation network model; no human predictive claims.",
+      "concepts": "promoter; transcription factor; regulation; epigenetic mark; expression",
+      "quantitative": "Interpret gene-expression heatmaps or fold-change data.",
+      "standards": "HS-LS1-1; HS-LS1-4",
+      "reading": "Open text on gene regulation and epigenetic mechanisms."
+    },
+    {
+      "week": 26,
+      "unit": "U5",
+      "title": "Biotechnology, Genomics & Bioethics",
+      "essentialQuestion": "How can biotechnology modify, measure, or interpret biological information responsibly?",
+      "phenomenon": "DNA technologies can identify sequences, edit genes, or produce useful molecules.",
+      "lab": "Paper gel-electrophoresis analysis, sequence comparison, and ethics case.",
+      "concepts": "PCR; electrophoresis; sequencing; CRISPR concept; consent; privacy",
+      "quantitative": "Estimate fragment sizes from a calibration curve.",
+      "standards": "HS-LS3-1; HS-ETS1-3",
+      "reading": "Trusted biotechnology overview; no procedural gene-editing instructions."
+    },
+    {
+      "week": 27,
+      "unit": "U6",
+      "title": "Evidence for Evolutionary Change",
+      "essentialQuestion": "How do multiple independent evidence streams inform explanations of biological history?",
+      "phenomenon": "Fossils, anatomy, biogeography, and DNA patterns can converge on similar relationships.",
+      "lab": "Evidence-station analysis using published images/data.",
+      "concepts": "fossil; homologous structure; biogeography; molecular evidence; inference",
+      "quantitative": "Compare sequence differences and stratigraphic patterns.",
+      "standards": "HS-LS4-1",
+      "reading": "NGSS-aligned evolution evidence resources."
+    },
+    {
+      "week": 28,
+      "unit": "U6",
+      "title": "Population Genetics & Changing Allele Frequencies",
+      "essentialQuestion": "How can population-level genetic composition change over generations?",
+      "phenomenon": "Allele frequencies shift in a simulated population under different conditions.",
+      "lab": "Allele-frequency simulation with cards/spreadsheet.",
+      "concepts": "allele frequency; selection; drift; gene flow; mutation",
+      "quantitative": "Calculate simple allele frequencies and changes over time.",
+      "standards": "HS-LS4-2; HS-LS4-3",
+      "reading": "Open population-genetics introduction."
+    },
+    {
+      "week": 29,
+      "unit": "U6",
+      "title": "Natural Selection & Adaptation",
+      "essentialQuestion": "How can differential survival and reproduction change populations?",
+      "phenomenon": "Trait distributions change after an environmental shift.",
+      "lab": "Selection simulation using paper tokens or supplied data.",
+      "concepts": "variation; heritability; fitness; selection pressure; adaptation",
+      "quantitative": "Compare trait-frequency distributions across generations.",
+      "standards": "HS-LS4-2; HS-LS4-3; HS-LS4-4",
+      "reading": "NGSS natural-selection evidence statements."
+    },
+    {
+      "week": 30,
+      "unit": "U6",
+      "title": "Speciation, Phylogeny & Origins Literacy",
+      "essentialQuestion": "How do scientists reconstruct relationships and test historical explanations?",
+      "phenomenon": "Different datasets can produce competing phylogenetic trees.",
+      "lab": "Build/compare phylogenetic trees from a supplied character matrix.",
+      "concepts": "speciation; reproductive isolation; phylogeny; common ancestry; model; worldview",
+      "quantitative": "Score parsimony or sequence-distance examples.",
+      "standards": "HS-LS4-1; HS-LS4-5",
+      "reading": "Scientific phylogeny text plus a respectful distinction among empirical, historical, philosophical, and theological claims."
+    },
+    {
+      "week": 31,
+      "unit": "U7",
+      "title": "Ecosystem Energy Flow",
+      "essentialQuestion": "Why are food webs limited by energy transfer?",
+      "phenomenon": "Biomass and organism numbers usually decline across trophic levels.",
+      "lab": "Food-web and energy-pyramid dataset analysis.",
+      "concepts": "producer; consumer; trophic level; productivity; efficiency",
+      "quantitative": "Calculate ecological efficiency and energy transfer.",
+      "standards": "HS-LS2-4; HS-LS2-5",
+      "reading": "Open ecology text on energy flow."
+    },
+    {
+      "week": 32,
+      "unit": "U7",
+      "title": "Biogeochemical Cycles",
+      "essentialQuestion": "How does matter move among living and nonliving reservoirs?",
+      "phenomenon": "A carbon atom can move among atmosphere, ocean, organism, and rock over different timescales.",
+      "lab": "Carbon/nitrogen cycle systems model.",
+      "concepts": "carbon cycle; nitrogen cycle; reservoir; flux; feedback",
+      "quantitative": "Interpret flux diagrams and compare reservoir sizes.",
+      "standards": "HS-LS2-3; HS-LS2-5; HS-ESS2-7",
+      "reading": "Open system-cycle diagrams."
+    },
+    {
+      "week": 33,
+      "unit": "U7",
+      "title": "Population & Community Dynamics",
+      "essentialQuestion": "What controls population size and community change?",
+      "phenomenon": "Populations can grow rapidly, stabilize, oscillate, or collapse.",
+      "lab": "Population model spreadsheet or supplied long-term dataset.",
+      "concepts": "exponential; logistic; carrying capacity; competition; predation; succession",
+      "quantitative": "Fit/interpret growth curves and percent change.",
+      "standards": "HS-LS2-1; HS-LS2-2; HS-LS2-6; HS-LS2-8",
+      "reading": "Published ecology dataset or open text."
+    },
+    {
+      "week": 34,
+      "unit": "U7",
+      "title": "Biodiversity, Resilience & Human Impacts",
+      "essentialQuestion": "How can societies reduce biodiversity loss while respecting ecological and human constraints?",
+      "phenomenon": "Two restoration plans have different costs, risks, and ecological benefits.",
+      "lab": "Biodiversity index or restoration-design analysis; protect sensitive locations.",
+      "concepts": "biodiversity; resilience; ecosystem service; fragmentation; restoration",
+      "quantitative": "Compute richness/evenness or compare intervention outcomes.",
+      "standards": "HS-LS2-7; HS-LS4-6; HS-ESS3-4",
+      "reading": "Trusted conservation and restoration case study."
+    },
+    {
+      "week": 35,
+      "unit": "U8",
+      "title": "Biology & Biotechnology Capstone",
+      "essentialQuestion": "How can biological evidence support a responsible solution to a real problem?",
+      "phenomenon": "A local or global biological problem requires tradeoffs among evidence, feasibility, ethics, and uncertainty.",
+      "lab": "Design project: conservation, bioengineering, health-literacy, agriculture, or biotechnology topic; teacher-approved.",
+      "concepts": "criteria; constraint; stakeholder; evidence; prototype/model; ethics",
+      "quantitative": "Use at least one quantitative model and uncertainty statement.",
+      "standards": "HS-ETS1-1–4; selected HS-LS",
+      "reading": "Student-selected trusted sources."
+    },
+    {
+      "week": 36,
+      "unit": "FINAL",
+      "title": "Comprehensive Final & Portfolio Defense",
+      "essentialQuestion": "Can I integrate biological concepts and scientific practices across unfamiliar contexts?",
+      "phenomenon": "A multi-part case requires molecular, cellular, genetic, evolutionary, and ecological reasoning.",
+      "lab": "No new wet lab; cumulative final, corrections, and portfolio defense.",
+      "concepts": "cumulative synthesis",
+      "quantitative": "Mixed quantitative and data-analysis tasks.",
+      "standards": "HS-LS1–4; HS-ETS1; SEP 1–8",
+      "reading": "Complete course portfolio and review map."
+    }
+  ],
+  "assessment": {
+    "weekly": "CER + portfolio + corrections",
+    "unit": "Performance task: model + data/quantitative reasoning + CER + application/design",
+    "midterm": "15-item cumulative objective check plus corrections and portfolio review",
+    "final": "30-item cumulative objective check plus portfolio/capstone defense",
+    "mastery_target": 80
+  },
+  "safety": {
+    "lab_policy": "Target ≥25% of instructional time in inquiry, lab, simulation-with-data, fieldwork, or supervised hands-on investigation.",
+    "home_rule": "Use only explicitly safe investigations; substitute simulation/data analysis whenever proper supervision or facilities are unavailable."
+  }
+}
