@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 4,
   "sourceId": "khaemenes.high",
   "name": "Khaemenes Academy High School",
   "classification": "educational",
@@ -19,7 +19,7 @@
     {
       "id": "high-home",
       "title": "Khaemenes Academy High School",
-      "description": "Grades 9–12 Khaemenes Academy campus and course navigation.",
+      "description": "Grades 9\u201312 Khaemenes Academy campus and course navigation.",
       "url": "https://vervenveda.com/Khaemenes_High.github.io/",
       "audiences": [
         "high",
@@ -46,7 +46,7 @@
     {
       "id": "high-language-arts",
       "title": "High School Language Arts",
-      "description": "Grades 9–12 English language arts, literature, composition, research, and analysis.",
+      "description": "Grades 9\u201312 English language arts, literature, composition, research, and analysis.",
       "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/",
       "audiences": [
         "high"
@@ -290,7 +290,7 @@
     {
       "id": "high-social-studies",
       "title": "High School Social Studies",
-      "description": "Grades 9–12 social studies, history, civics, and public-life learning.",
+      "description": "Grades 9\u201312 social studies, history, civics, and public-life learning.",
       "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/",
       "audiences": [
         "high"
@@ -318,5 +318,5 @@
       "resourceType": "department"
     }
   ],
-  "mentorNotes": "Repair 07 adds the complete four-year high-school science pathway while preserving existing High School department resources. Grade 10–12 science courses are Khaemenes courses benchmarked to national science frameworks; they must not be represented as AP-authorized without College Board Course Audit authorization."
+  "mentorNotes": "Repair 08b corrects source authority. Physical Education and Health & Wellness are federated Khaemenes High academic pathways physically owned by the Medicament High School Health Academy at medicament-hub.github.io/academy/high-school-health/. Those resources are intentionally not duplicated in this High School manifest; Mentor discovers them through verve.medicament. The federated electives navigator likewise does not transfer source ownership from specialist repositories."
 }
