@@ -24,15 +24,15 @@ This audit verifies Grade 09 as an academically rigorous, coherent, interactive,
 
 Readiness evidence does not rewrite Family Registry, promote/demote a learner, or award course mastery. Current cut bands remain policy candidates rather than validated psychometric cut scores.
 
-### Forensic repairs completed
+### Readiness repairs completed
 
-- Added deterministic displayed-answer balancing without changing underlying scoring values.
-- Repaired **E01**, whose earlier wording mixed contrast and causation; the item now asks specifically what `Although` signals.
-- Repaired **MV2**, which previously had two mathematically correct points on the stated line. The corrected item asks for the point **not** on the line and now has one defensible answer.
+- deterministic displayed-answer balancing without changing underlying scoring values;
+- **E01** repaired so `Although` is assessed as contrast/concession rather than mixed causal language;
+- **MV2** repaired because the earlier line item accidentally offered two mathematically correct points; the corrected item asks for the point **not** on the line.
 
 ### Readiness blockers still open
 
-- independent second-person verification of all remaining items/keys;
+- second independent verification of remaining items/keys;
 - exact/near-duplicate analysis;
 - constructed-response/writing evidence before high-stakes placement use;
 - cut-score calibration;
@@ -40,7 +40,7 @@ Readiness evidence does not rewrite Family Registry, promote/demote a learner, o
 
 ## Grade 09 Foundations Studio
 
-Five support paths remain built as forensic candidates:
+Five support paths are built as forensic candidates:
 
 1. Mathematics Foundations;
 2. Literacy Foundations;
@@ -52,36 +52,23 @@ Each uses a 36-week × 5-day structure, learner-scoped formal state, separate pr
 
 Support may vary by domain. A support recommendation in one subject must not lower placement in unrelated subjects or change Grade 09 membership.
 
-### Foundation-course forensic finding and repair
+### Foundations forensic repairs
 
-A deeper source pass found two distinct assessment-generation problems in the Foundations layer.
+**Mathematics Foundations** now de-duplicates visible answer choices before shuffling, preserves exactly one correct visible value, and exposes source-level audit metadata for generated daily/mastery positions. The earlier exact-choice collision-construction defect is therefore repaired at source level.
 
-**Mathematics Foundations:** its original generic distractor constructor did not guarantee four unique visible choices. Dynamic values could theoretically collide, particularly in symmetric fraction/numeric cases. The generator now de-duplicates visible choices before shuffling, preserves exactly one correct value, fills only when necessary with explicitly non-answer fallback text, and exposes a source-level forensic summary that enumerates the generated daily/mastery sample space for choice-integrity defects.
+**Literacy, Science, Global Inquiry, and Research/Study** originally repeated one substantive question family throughout a five-item daily check or ten-item mastery check. Those tracks now use spiral evidence pools combining the current skill, recent prerequisite skills, and foundational skill families. Their multiple-choice constructors also de-duplicate visible answer choices.
 
-**Literacy, Science, Global Inquiry, and Research/Study:** their first-pass assessment functions repeatedly called one question template for the current week's single skill. A five-question daily check could therefore be the same substantive question five times with only answer order changed. Weekly mastery could repeat the same template ten times. This was a real forensic defect, not acceptable purposeful retrieval practice.
+Remaining Foundations work is generated-space mathematical/semantic verification, fallback-frequency review, near-duplicate analysis, checkpoint quality, and browser/mobile/keyboard/print testing.
 
-Those four tracks now use **spiral evidence pools** instead:
+## Cross-course runtime-integrity repair
 
-- the current skill remains represented;
-- recent prerequisite skills are sampled with it;
-- a small foundational skill set prevents early-week one-template repetition;
-- daily checks sample five mixed skill families;
-- weekly mastery/checkpoints sample ten current + prerequisite skill families;
-- multiple-choice constructors de-duplicate visible answers before shuffling;
-- source-level forensic summaries enumerate generated sample positions and flag invalid choice sets.
+The forensic pass found a compatibility-layer syntax hazard: several hardening assets placed large iframe runtimes inside outer JavaScript template literals while the injected runtime itself contained unescaped template literals.
 
-This removes the worst same-template-with-different-answer-order failure while preserving deliberate spaced retrieval. It does not replace independent semantic/key review or browser execution.
-
-## Source-level runtime integrity finding
-
-The most important cross-course defect found in this forensic pass was a compatibility-layer syntax hazard.
-
-Several hardening assets placed a large iframe runtime inside an outer JavaScript template literal while the injected runtime itself contained unescaped template literals. That can terminate the outer string early and prevent the hardening runtime from loading at all.
-
-### Converted to external iframe runtimes
+The affected layers were converted to explicit external iframe runtimes.
 
 **Pre-Algebra**
 - `prealgebra-forensic-repair-runtime.js`
+- `prealgebra-content-integrity-runtime.js`
 - `prealgebra-forensic-sanity-runtime.js`
 - `prealgebra-mastery-runtime.js`
 
@@ -94,82 +81,109 @@ Several hardening assets placed a large iframe runtime inside an outer JavaScrip
 - `global9-bridge-runtime.js`
 - `global9-forensic-runtime.js`
 
-The corresponding outer assets are now small loaders; dynamic external scripts use deterministic ordering where sequence matters.
-
 This is a source-level repair, not browser certification.
 
 ## Formal course findings
 
 ### English 9
 
-- 36 weeks / 180 daily lesson blocks remain preserved.
+- 36 weeks / 180 daily lesson blocks remain preserved in `legacy.html`.
 - Academy learner-scoped continuity and sequential 80% progression are staged.
 - 36 dedicated weekly five-item banks = **180 weekly objective positions**.
 - Five-day learning is differentiated into Inquiry/Vocabulary, Close Reading/Evidence, Writing/Reasoning, Seminar/Counterreading/Revision, and Mastery/Portfolio work tied to the actual week.
 - Independent **18-item midterm** and **24-item final** replace historical cumulative reuse.
 - Four-choice positions are deterministically rotated.
-- Static inspection did not reveal the nested-template defect found in other converted layers.
+- An installed forensic audit checks assembled-bank count, answer indexes, duplicate visible choices, answer-position distribution, exact prompt duplicates, and weekly-to-cumulative exact overlap once executed in a browser.
 
-**Remaining:** independent weekly/cumulative key verification, semantic duplicate scan, answer-position audit, constructed-response rubric review, purpose-mapped resources, browser/mobile/print/learner-switch testing.
+#### New transfer-integrity repair
+
+A deeper review found that one weekly objective position remained overly procedural: it mainly asked learners to identify a recommended reading approach instead of demonstrating the week's ELA skill.
+
+`english9-transfer-integrity.js` / `english9-transfer-runtime.js` now replace one position in every weekly bank with an original transfer item using short original passages, editing problems, rhetoric/argument cases, source-tracing situations, literary-analysis scenarios, presentation choices, or portfolio evidence. The five-item count and 80% threshold remain unchanged.
+
+**Remaining:** second-pass weekly/transfer/cumulative key verification, semantic duplicate scan, final answer-position audit, constructed-response rubric review, purpose-mapped resources, and browser/mobile/print/learner-switch testing.
 
 ### Integrated Science 9
 
 - 36-week integrated science/investigation architecture remains substantial.
 - Academy continuity and sequential 80% weekly progression are staged.
-- Browser-safe external hardening runtimes now replace the vulnerable nested-template pattern.
+- Browser-safe external hardening runtimes replace the vulnerable nested-template pattern.
 - Weekly forensic sets combine domain content, vocabulary-in-context, evidence/reproducibility, investigation design, CER, source evaluation, and safety/model-limit reasoning.
-- The Assessment Center is no longer incorrectly locked as one block until Week 18; individual milestone cards are gated at Weeks 12, 18, 21, 27, and 36.
+- Assessment Center navigation is available while milestone cards remain individually gated.
 
 #### Critical learner-isolation repair
 
-The existing cumulative benchmark pages write generic browser-local keys rather than learner IDs. Earlier synchronization could therefore copy a score completed by Learner A into Learner B's formal record after a learner switch.
+Legacy cumulative benchmark pages write generic browser-local keys rather than learner IDs. Earlier synchronization could therefore attach Learner A's result to Learner B after a learner switch.
 
-That silent behavior has been removed. Raw legacy cumulative results are now **unattributed** until explicitly confirmed for the active formal learner. Attribution is fingerprinted by assessment, score, total, and submission timestamp; a new attempt requires a new confirmation. Preview cannot claim formal evidence. Ordinary Science saves now preserve the cumulative field.
+That silent behavior is removed. Legacy cumulative results remain **unattributed** until explicitly confirmed for the active formal learner. Attribution is fingerprinted by assessment, score, total, and submission timestamp; a new attempt requires a new confirmation. Preview cannot claim formal evidence.
 
-#### Science midterm resolved structurally
+#### Science midterm and cumulative progression now explicit
 
-A dedicated Week 18 Science midterm now exists at `assessments/midterm/` with:
+A dedicated Week 18 Science midterm exists at `assessments/midterm/` with:
 
 - 40 objective questions;
-- an objective mastery threshold of **32/40 = 80%**;
+- objective mastery at **32/40 = 80%**;
 - 4 constructed-response prompts preserved separately for Academy/adult review;
-- learner-scoped formal storage when an eligible Grade 09 learner is active;
-- separate preview/practice state;
+- learner-scoped formal storage;
+- separate preview state;
 - Week 19 requiring the objective midterm score to reach 80% in addition to prior weekly mastery.
 
-Constructed responses are evidence for review and are not silently machine-scored as prose.
+Formal progression also requires learner-attributed cumulative evidence at the course milestones:
 
-**Remaining:** generated-bank verification, numeric/unit checks, exact/semantic duplicates, final cumulative progression policy, resource mapping, browser/mobile/print/learner-switch and cumulative-attribution tests.
+- **Week 13+** requires Units 01–04 cumulative mastery at 80%+;
+- **Week 19+** requires the Week 18 Science midterm at 80%+;
+- **Week 22+** requires Units 05–07 cumulative mastery at 80%+;
+- **Week 28+** requires Units 08–09 cumulative mastery at 80%+.
+
+Constructed responses remain evidence for review and are not silently machine-scored.
+
+`assessments/midterm/CONTENT_REVIEW_2026-08-16.md` records a source-level review of all 40 objective domains and four written prompts. No high-confidence wrong key was found in that pass; second-person and browser verification remain required.
+
+**Remaining:** generated-bank verification, exact/semantic duplicates, purpose-mapped resources, browser/mobile/print/learner-switch testing, and cumulative-attribution tests.
 
 ### Global Studies Honors 9
 
 - 36 weeks / 180 lesson slots / 108 principal assignments remain.
 - Original 70% mastery/local-student authority are superseded by hardened 80% learner-scoped progression.
-- Academy bridge and forensic curriculum quality now use browser-safe external runtimes.
+- Academy bridge and forensic curriculum quality use browser-safe external runtimes.
 - Each week follows a topic-linked historical-thinking sequence: inquiry → sourcing/corroboration → map/data/comparison → argument/counterclaim → synthesis/portfolio.
-- Purposeful resources are selected by topic from existing Verve N Veda systems.
 - Objective architecture remains **180 week-specific items + 18-item independent midterm + 24-item independent final**.
-- Deterministic answer-position balancing remains after the bank loads.
-- `global9-objective-bank.js` was inspected for the same nested-template defect; that specific defect was not found in its quoted objective-data body.
+- Deterministic answer-position balancing runs after content corrections.
+- A forensic audit harness is installed for final assembled-bank structural checks.
 
-**Remaining:** independent verification of all 222 objective items, semantic duplicates, final answer-position count, constructed-response rubrics, browser/mobile/print/learner-switch testing.
+#### Historical content-integrity repairs
+
+`CONTENT_INTEGRITY_PASS_2026-08-16.md` records the source-level pass. Five items were tightened before answer balancing:
+
+1. **Week 13:** later-imperial Chinese examination wording now avoids implying one unchanged exam regime across all dynasties.
+2. **Week 20:** Peace of Westphalia wording now avoids the `single birth certificate of modern sovereignty` oversimplification.
+3. **Week 30:** the Great Depression item now tests multicausal explanation rather than a circular chronology statement.
+4. **Week 31:** Holocaust terminology now identifies the genocide of European Jews specifically while recognizing other groups persecuted and murdered under distinct Nazi policies.
+5. **Week 32:** proxy-war framing now preserves local causes, goals, and agency alongside outside sponsorship.
+
+No indiscriminate rewrite was justified. The bank generally already avoids geographic determinism, one-cause history, source naïveté, and passive-local-actor framing.
+
+**Remaining:** second independent verification of all 222 items, semantic duplicates, final runtime answer-position count, constructed-response rubrics, and browser/mobile/print/learner-switch testing.
 
 ### Grade 09 Mathematics / Pre-Algebra Bridge
 
 - Mathematics Foundations remains the support path below Pre-Algebra.
 - Original Pre-Algebra portal remains preserved byte-for-byte as `legacy.html` with blob SHA `1f86cf98681502de7be0749c79805faba14eea1f`.
 - Academy-facing Pre-Algebra uses learner-scoped continuity and preview separation.
-- Nested-template hardening risk has been removed from the new repair/mastery layers through external runtimes.
-- Active bank generation now explicitly covers number, integers, rational numbers, ratios/rates, percent, powers/roots, expressions, equations, inequalities, coordinate/functions, geometry, data/probability, and modelling.
+- Active bank generation covers number, integers, rational numbers, ratios/rates, percent, powers/roots, expressions, equations, inequalities, coordinate/functions, geometry, data/probability, and modelling.
 - All 36 weeks receive dedicated five-item banks with varied parameters and deterministic answer placement.
-- A final exact-choice collision sanity pass is staged.
-- An initial GCF-generator assumption was caught during this forensic pass and corrected by constructing values whose intended GCF is guaranteed.
+- Exact-choice collision sanity runs after generation.
+- GCF values are constructed so the intended GCF is guaranteed.
 - Midterm uses **18 separately salted transfer banks**.
 - Final uses **36 separately salted transfer banks**.
 - Formal progression remains Monday→Friday + required evidence + 80% weekly mastery; Week 19 also requires an 80% midterm; final requires all 36 weeks plus midterm.
 - Separate Foundation → Pre-Algebra verification contains 32 items; 26/32 = 81.25%, the first attainable whole-item result above the 80% threshold.
 
-**Remaining:** exhaustive generated-bank enumeration/solving, near-duplicate analysis, second-person readiness verification, answer-distribution audit, tool mapping, browser/mobile/print/learner-switch testing.
+#### New arithmetic presentation repair
+
+A rational-number family computed `2/3 × 3/n` correctly but could display the equivalent result `2/n` without reducing it even though the explanation instructed the learner to simplify. `prealgebra-content-integrity-runtime.js` now reduces that family to lowest terms across weekly, midterm, and final forensic banks before the sanity pass.
+
+**Remaining:** exhaustive generated-bank enumeration/solving, near-duplicate analysis, second-person readiness verification, answer-distribution audit, tool mapping, and browser/mobile/print/learner-switch testing.
 
 ## Six forensic passes
 
@@ -203,14 +217,14 @@ Verify readable layout, no overflow, keyboard operation, visible focus, mobile b
 8. Preview/Grade 08 exploration never creates formal Grade 09 evidence.
 9. NAIB remains interpretive/delegative rather than automatic placement authority.
 10. Browser/mobile/keyboard/print/accessibility tests pass.
-11. Science cumulative progression policy is resolved explicitly.
+11. Science cumulative milestone gates use only learner-attributed evidence.
 12. No merge/publish until the above evidence is reviewed.
 
 ## Current forensic verdict
 
-**Grade 09 is materially stronger after this pass. The work uncovered and repaired source-level runtime hazards, one real cross-learner Science evidence-attribution risk, two readiness-item defects, a Science midterm gap, Pre-Algebra generator weaknesses, Mathematics Foundations choice-collision risk, and a major same-template repetition defect across four Foundations assessment engines.**
+**Grade 09 is materially stronger after this pass. Source-level work has now repaired runtime hazards, cross-learner Science attribution risk, readiness-item defects, the Science midterm/cumulative-gate gap, Foundations same-template repetition, Mathematics Foundations exact-choice construction, Global Studies historical imprecision, English weekly transfer weakness, and a Pre-Algebra fraction-simplification inconsistency.**
 
-The program is still **not A+++ forensic validated** because independent item verification and live/browser validation remain open. The branch should remain isolated from `main` until those proof steps pass.
+The program is still **not A+++ forensic validated** because second-person item verification and live/browser validation remain open. The branch should remain isolated from `main` until those proof steps pass.
 
 ---
 
