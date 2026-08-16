@@ -27,7 +27,19 @@
   function pct(v){return `${Math.round(v)}%`}
   function hash(a,b,c){let x=(a*73856093)^(b*19349663)^(c*83492791);x=(x>>>0)%9973;return x}
   function choose(arr,seed){return arr[seed%arr.length]}
-  function shuffleChoices(answer,wrong,seed){const pool=[answer,...wrong].slice(0,4);for(let i=pool.length-1;i>0;i--){const j=(seed+i*7)%(i+1);[pool[i],pool[j]]=[pool[j],pool[i]]}return {choices:pool,answer:pool.indexOf(answer)}}
+  function shuffleChoices(answer,wrong,seed){
+    const correct=String(answer).trim(),seen=new Set([correct]),pool=[correct];
+    for(const raw of wrong){
+      const candidate=String(raw).trim();
+      if(candidate&&!seen.has(candidate)){seen.add(candidate);pool.push(candidate)}
+      if(pool.length===4)break;
+    }
+    const fallbacks=["Cannot be determined from the information given","None of the other listed values","A different result is required"];
+    for(const fallback of fallbacks){if(pool.length===4)break;if(!seen.has(fallback)){seen.add(fallback);pool.push(fallback)}}
+    while(pool.length<4){const fallback=`Alternative result ${pool.length}`;if(!seen.has(fallback)){seen.add(fallback);pool.push(fallback)}}
+    for(let i=pool.length-1;i>0;i--){const j=(seed+i*7)%(i+1);[pool[i],pool[j]]=[pool[j],pool[i]]}
+    return {choices:pool,answer:pool.indexOf(correct)}
+  }
   function q(prompt,answer,wrong,explanation,seed){const c=shuffleChoices(String(answer),wrong.map(String),seed);return {prompt,choices:c.choices,answer:c.answer,explanation}}
   function numeric(prompt,ans,seed,unit=""){const a=Number(ans);const d1=a+(seed%3+1),d2=a-(seed%4+1),d3=a+(seed%2?5:-5);return q(prompt,`${a}${unit}`,[`${d1}${unit}`,`${d2}${unit}`,`${d3}${unit}`],`The correct value is ${a}${unit}.`,seed)}
   const gcd=(a,b)=>b?gcd(b,a%b):Math.abs(a);
@@ -92,6 +104,22 @@
   function renderOverview(w){$("content").innerHTML=`<div class="grid"><article class="card half"><p class="eyebrow">This week</p><h3>${w.title}</h3><p>${w.objective}</p><ul>${w.days.map(d=>`<li><b>${d.day}:</b> ${d.title}</li>`).join("")}</ul></article><article class="card half"><p class="eyebrow">Exit evidence</p><h3>What mastery should look like</h3><p>${w.exit}</p><p><b>Assigned tool:</b> ${w.tool}</p><div class="actions"><button class="primary" id="startWeek">Open lessons</button><button class="secondary" id="openMastery">Weekly mastery</button></div></article></div>`;$("startWeek").addEventListener("click",()=>{view="lesson";render()});$("openMastery").addEventListener("click",()=>{view="mastery";render()})}
   function renderTools(){$("content").innerHTML=`<section class="card"><p class="eyebrow">Purposeful tools</p><h3>Use tools to see mathematics—not to skip reasoning.</h3><div class="tool-grid"><article class="tool"><strong>Scientific Calculator</strong><span>Verification, roots, scientific notation, statistics, later quantitative work.</span><a href="../../../mathematics/index.html">Mathematics Department</a></article><article class="tool"><strong>Fraction Studio</strong><span>Visual fraction quantities, equivalence, and operations.</span><span>Planned ecosystem app</span></article><article class="tool"><strong>Equation Forge</strong><span>Balance, inverse operations, expressions, equations.</span><span>Planned ecosystem app</span></article><article class="tool"><strong>Coordinate Cartographer</strong><span>Coordinate planes, slope, graph matching.</span><span>Planned ecosystem app</span></article><article class="tool"><strong>Data Detective</strong><span>Graphs, statistics, probability, misleading displays.</span><span>Planned ecosystem app</span></article><article class="tool"><strong>Geometry / CAD resources</strong><span>Measurement, scale, perimeter, area, visual design.</span><a href="../../../mathematics/index.html">Browse Math Tools</a></article></div></section>`}
   function renderPath(){const masteredCount=COURSE.weeks.filter(w=>mastered(w.week)).length;$("content").innerHTML=`<section class="card"><p class="eyebrow">Your mathematics pathway</p><h3>Foundation is a starting point, not a label.</h3><div class="pathway"><article class="current"><strong>Mathematics Foundations</strong><p>${masteredCount}/36 weekly mastery gates complete.</p></article><article><strong>Pre-Algebra Bridge</strong><p>Opens for Academy review when prerequisite evidence is strong enough.</p></article><article><strong>Algebra I / Integrated Math I</strong><p>Standard high-school algebra pathway after readiness is demonstrated.</p></article></div><p class="notice"><strong>Flexible exit:</strong> checkpoints occur after Weeks 9, 18, 27, and 36. A learner who demonstrates sufficient prerequisite mastery may be recommended for Pre-Algebra verification without waiting for the end of the year.</p><div class="actions"><a class="button gold" href="../../../readiness/grade-09/index.html">Open Grade 09 Readiness Gateway</a><a class="button secondary" href="../../../mathematics/pre-algebra/index.html">Preview Pre-Algebra Bridge</a></div></section>`}
+  function auditGeneratedBanks(){
+    const issues=[],prompts=new Map();let itemCount=0;
+    for(const w of COURSE.weeks){
+      for(let d=0;d<6;d++){
+        const count=d<5?5:10;
+        for(let i=0;i<count;i++){
+          const item=problem(w.kind,w,d,i);itemCount++;
+          if(!item||!Array.isArray(item.choices)||item.choices.length!==4||new Set(item.choices).size!==4||item.answer<0||item.answer>3)issues.push({week:w.week,day:d,item:i,type:"choice-integrity"});
+          const key=String(item?.prompt||"").trim().toLowerCase();if(key){const list=prompts.get(key)||[];list.push({week:w.week,day:d,item:i});prompts.set(key,list)}
+        }
+      }
+    }
+    const exactPromptDuplicates=[...prompts.entries()].filter(([,uses])=>uses.length>1).map(([prompt,uses])=>({prompt,uses}));
+    return {itemCount,choiceIntegrityIssues:issues,exactPromptDuplicates};
+  }
+  window.__KHAEMENES_MATH_FOUNDATIONS_FORENSIC__=auditGeneratedBanks();
   function render(){const w=COURSE.weeks[weekNo-1];renderIdentity();renderSidebarStats();renderWeeks();renderHero(w);$("weekList").querySelectorAll("button").forEach(b=>b.classList.toggle("active",Number(b.dataset.week)===weekNo));document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(view==="lesson")renderLesson(w);else if(view==="mastery")renderMastery(w);else if(view==="tools")renderTools();else if(view==="path")renderPath();else renderOverview(w)}
   document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>{view=b.dataset.view;render()}));$("prevWeek").addEventListener("click",()=>{if(weekNo>1){weekNo--;dayIndex=0;view="overview";render()}});$("nextWeek").addEventListener("click",()=>{const target=Math.min(36,weekNo+1);if(!weekUnlocked(target)){friendly(`Week ${target} opens after Week ${weekNo} reaches 80% mastery.`);return}weekNo=target;dayIndex=0;view="overview";render()});$("resetPreview").addEventListener("click",()=>{if(formal){alert("Formal learner records are not reset from the student course page.");return}if(confirm("Reset preview practice on this device?")){localStorage.removeItem(PREVIEW_STORE);location.reload()}});
   render();
