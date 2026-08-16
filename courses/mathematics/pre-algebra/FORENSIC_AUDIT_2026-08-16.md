@@ -41,19 +41,20 @@ The preserved 36-week scope still includes readiness diagnostic; number systems;
 
 The forensic pass found that large runtime bodies embedded inside an outer JavaScript template literal can fail when the injected body itself contains unescaped template literals.
 
-Pre-Algebra has therefore been moved to explicit external runtimes:
+Pre-Algebra therefore uses explicit external runtimes:
 
 - `prealgebra-forensic-repair-runtime.js`;
+- `prealgebra-content-integrity-runtime.js`;
 - `prealgebra-forensic-sanity-runtime.js`;
 - `prealgebra-mastery-runtime.js`.
 
-Their corresponding hardening files are now small iframe loaders. Dynamic runtime loading is ordered with `async=false` where sequence matters.
+Their corresponding hardening files are small iframe loaders. Runtime order is staged so content-integrity repair occurs after bank generation and before the collision sanity pass and mastery layer.
 
 This is a source-level repair; actual browser execution remains to be tested.
 
 ### Rebuilt weekly and cumulative assessment architecture
 
-The active hardening path now generates a dedicated five-item bank for every week and explicitly maps the curriculum into:
+The active hardening path generates a dedicated five-item bank for every week and explicitly maps the curriculum into:
 
 - number/operations;
 - integers;
@@ -71,20 +72,28 @@ The active hardening path now generates a dedicated five-item bank for every wee
 
 This corrects the earlier undercoverage in which powers/roots and inequalities could fall back to generic number-style evidence.
 
-The new generator also:
+The generator also:
 
 - varies numeric/context parameters by week;
 - distributes answer positions deterministically;
-- constructs GCF items from values whose intended GCF is actually guaranteed;
+- constructs GCF items from values whose intended GCF is guaranteed;
 - runs an exact-choice collision sanity pass after generation;
 - creates **18 separately salted midterm transfer banks** rather than reusing weekly items;
 - creates **36 separately salted final transfer banks** rather than reusing weekly items.
+
+### Fraction-answer integrity repair found in this pass
+
+A source-level arithmetic review found one quality issue in the rational-number family: the item `2/3 × 3/n` used the mathematically equivalent result `2/n`, but for even denominators that displayed answer was not always in lowest terms even though the explanation told the learner to simplify.
+
+`prealgebra-content-integrity-runtime.js` now detects that generated family across weekly, midterm, and final forensic banks and replaces the displayed correct answer with the reduced fraction. The explanation is rewritten to show the cancellation and final simplification.
+
+This was not a wrong-value error, but it was an instructional inconsistency worth correcting before certification.
 
 The result is structurally independent weekly/midterm/final evidence. This is not yet an exhaustive mathematical answer certification.
 
 ### Formal 80% progression
 
-Formal Grade 09 progression now stages:
+Formal Grade 09 progression stages:
 
 - Week 1 available;
 - future weeks require the preceding week to have 100% lesson completion, 100% required assignment completion, and at least 80% weekly mastery;
@@ -106,11 +115,13 @@ Candidate pass requirement is **26/32 = 81.25%**, the first attainable whole-ite
 
 Static review of the 32-item file in this pass found the displayed calculations/keys coherent in the inspected source. It still requires independent second-person verification and browser execution before production use.
 
-## Foundation-course forensic note
+## Mathematics Foundations collision repair
 
-The separate Mathematics Foundations generator was also sampled during this pass. Its instructional scope is substantial, but the generic multiple-choice generator does not yet guarantee de-duplication of dynamically produced distractors. For example, fraction/decimal symmetry or numeric-offset generation can theoretically produce repeated visible choices in some seeds.
+The separate Mathematics Foundations generator was previously flagged because dynamically produced wrong choices could collide with each other or the correct answer.
 
-That means Mathematics Foundations remains correctly classified as a forensic candidate; generated choice-collision enumeration is still required before A+++ validation.
+That generator now de-duplicates visible choices before shuffling. It keeps the correct answer unique, adds fallback choices only when necessary, and calculates the answer index after final shuffling. This closes the previously identified **exact visible-choice collision construction defect** at source level.
+
+Remaining Mathematics Foundations work is different: enumerate the generated space for mathematical key accuracy, semantic quality, fallback frequency, near-duplicate prompts, and browser behavior. It should no longer be described as lacking a uniqueness guard.
 
 ## Forensic repair standard still required
 
@@ -118,7 +129,7 @@ Before A+++ approval:
 
 - enumerate generated weekly, midterm, final, and Mathematics Foundations item spaces;
 - independently solve and verify generated numeric combinations;
-- detect exact/near-semantic duplicate stems and any remaining distractor collisions;
+- detect exact/near-semantic duplicate stems and any remaining semantic distractor collisions;
 - verify post-rotation answer-position distribution;
 - independently verify the 32 readiness items and explanations;
 - browser-test 79%/80% transitions, reassessment, Week 19, midterm/final locks, and learner switching;
@@ -127,6 +138,6 @@ Before A+++ approval:
 
 ## Current verdict
 
-**Pre-Algebra is materially stronger after this forensic pass: the original portal is preserved, Academy learner authority is layered in, the nested-runtime syntax hazard is removed, missing mathematics domains are represented, weekly/cumulative banks are structurally independent, common distractor-collision classes are guarded, and formal 80% progression remains explicit.**
+**Pre-Algebra is materially stronger after this forensic pass: the original portal is preserved, Academy learner authority is layered in, the nested-runtime syntax hazard is removed, missing mathematics domains are represented, weekly/cumulative banks are structurally independent, exact-choice collisions are guarded, one fraction-simplification inconsistency is repaired, and formal 80% progression remains explicit.**
 
 The course is still a forensic candidate until generated-answer integrity and live/browser validation pass.
