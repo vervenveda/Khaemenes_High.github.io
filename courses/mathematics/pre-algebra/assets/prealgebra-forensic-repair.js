@@ -7,7 +7,7 @@
     window.setTimeout(()=>{
       const script=doc.createElement("script");
       script.src="assets/prealgebra-forensic-repair-runtime.js";
-      script.defer=false;
+      script.async=false;
       doc.body.appendChild(script);
     },150);
   });
