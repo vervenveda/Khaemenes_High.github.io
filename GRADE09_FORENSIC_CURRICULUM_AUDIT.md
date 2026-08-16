@@ -7,7 +7,47 @@
 
 This audit verifies Grade 09 as an academically rigorous, coherent, interactive, readable, learner-safe program before work advances to Grade 10.
 
-The audit is stricter than a structural file check. It examines curriculum quality, answer integrity, repetition, progression, mastery gating, tools, games, accessibility, record authority, and cross-course coherence.
+The audit is stricter than a structural file check. It examines curriculum quality, answer integrity, repetition, progression, mastery gating, tools, games, accessibility, record authority, readiness placement, support pathways, and cross-course coherence.
+
+## Grade 09 readiness before course placement
+
+A new forensic-candidate `courses/readiness/grade-09/` gateway now gathers separate evidence in:
+
+- Mathematics;
+- Language Arts;
+- Science;
+- Social Studies;
+- Research & Academic Readiness.
+
+The readiness system deliberately produces **subject-by-subject recommendations rather than one total learner score**.
+
+Its architecture borrows useful principles from the Khaemenes Career Assessment Optimizer — evidence separation, response-quality awareness, targeted follow-up, and probability/confidence-minded interpretation — while using demonstrated academic questions instead of preference statements.
+
+Current candidate logic:
+
+- 50 common core items;
+- 10 targeted verification items;
+- follow-up verification when evidence is near the 80% boundary or suggests possible acceleration;
+- no automatic Family Registry writes;
+- no automatic promotion/demotion;
+- NAIB receives an interpretation/delegation request when available;
+- Family/Academy review remains the formal placement boundary.
+
+The current cut bands are policy candidates, not validated psychometric cut scores. They must be calibrated before production use.
+
+## Grade 09 Foundations Studio
+
+A new `courses/foundations/grade-09/` support portal establishes five non-stigmatizing tracks:
+
+1. Mathematics Foundations
+2. Literacy Foundations
+3. Science Foundations & Lab Reasoning
+4. Global Inquiry Foundations
+5. Academic Research & Study Studio
+
+A learner may need Foundations in one domain while remaining standard or advanced in another.
+
+Support does not change Grade 09 membership. Tracks should be mastery-based, allow early exit after verification, and never become a permanent remedial label.
 
 ## Canonical Grade 09 learning rule
 
@@ -97,7 +137,7 @@ Verify centered/readable content, no overflow, consistent hierarchy, keyboard op
 - Correct-answer index bias is strong.
 - Generated portal uses 70% instead of the Academy's 80% standard.
 - Generated portal has an independent local student identity.
-- Academy-facing wrapper and a full 36-week differentiation/gating layer have been prepared, but the preserved legacy portal and supporting assets must be confirmed attached on the active branch before this course is considered deployment-ready.
+- Academy-facing wrapper and a full 36-week differentiation/gating layer have been prepared.
 - Remaining: objective-bank rewrite, exam independence, answer verification/balancing, integration validation, browser/print testing.
 
 ### Grade 09 Mathematics
@@ -106,8 +146,28 @@ Verify centered/readable content, no overflow, consistent hierarchy, keyboard op
 - Exact repeated weekly quiz banks are confirmed in multiple consecutive weeks.
 - Sampled banks show substantial correct-answer-position bias.
 - Pre-Algebra should remain Foundation/Bridge rather than become the sole Grade 09 mathematics expectation.
-- Grade 09 should support deliberate placement into Foundation/Bridge, Standard Algebra I/Integrated Math I, or advanced math when prior evidence supports it.
-- Remaining: duplicate-bank rewrite, answer-position balancing, mastery gate review, pathway organization, tool/game mapping, browser/print validation.
+- Grade 09 mathematics now has an explicit support architecture below Pre-Algebra: Mathematics Foundations.
+- Recommended progression is Foundations → Pre-Algebra Bridge → Algebra I/Integrated Math I → advanced verification where prior evidence supports acceleration.
+- Remaining: build the full Mathematics Foundations lesson/assessment bank, duplicate-bank rewrite in Pre-Algebra, answer-position balancing, mastery gate review, pathway organization, tool/game mapping, browser/print validation.
+
+### Cross-subject support
+
+The Foundations Studio now defines parallel support for literacy, scientific reasoning, global/source reasoning, and academic research/study skills. These tracks require full lesson banks, interactive assignments, 80% exit verification, tool mappings, and the same uniqueness/answer-integrity standards before release.
+
+## Readiness-gateway acceptance tests
+
+Before the readiness system may influence formal Academy placement:
+
+1. Every item and key is independently verified.
+2. Exact/near duplicate items are removed or deliberately labeled as verification variants.
+3. Correct-answer positions show no exploitable pattern.
+4. Borderline scores trigger additional evidence rather than automatic placement.
+5. Advanced recommendations require second-stage verification.
+6. One domain's support need does not lower unrelated subject placement.
+7. No readiness result automatically rewrites Family Registry grade or course placement.
+8. NAIB interpretation is advisory/delegative rather than silent placement authority.
+9. Learner-local records do not leak between students.
+10. Writing/reasoning evidence is added before high-stakes production use.
 
 ## Mastery-gate acceptance tests
 
@@ -126,7 +186,7 @@ Before Grade 09 receives final forensic approval, each formal course must pass:
 
 ## Completion standard
 
-Grade 09 is not labeled **A+++ forensic validated** until content integrity, uniqueness, assessment diversity, meaningful lesson differentiation, 80% progression, resource purpose, interface quality, learner-scoped records, Grade 08 preview separation, and browser/deployment checks all pass.
+Grade 09 is not labeled **A+++ forensic validated** until readiness/placement integrity, support-pathway quality, content integrity, uniqueness, assessment diversity, meaningful lesson differentiation, 80% progression, resource purpose, interface quality, learner-scoped records, Grade 08 preview separation, and browser/deployment checks all pass.
 
 ---
 
