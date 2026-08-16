@@ -12,6 +12,10 @@ The structural counts are real — 36 weeks, 180 Monday–Friday lesson slots, 1
 
 A structural count therefore must not be treated as proof of curricular uniqueness.
 
+## Preservation rule
+
+The pre-forensic generated portal is preserved as `legacy.html` before the Academy-facing entry is replaced. The hardened `index.html` becomes the continuity/gating surface; the original curriculum remains available to the bridge while its instructional content is repaired.
+
 ## Defects confirmed
 
 ### 1. Mastery target conflict
@@ -117,6 +121,7 @@ The hardened course will enforce:
 
 - Week 1 available to the eligible Grade 09 learner;
 - Monday → Friday instructional sequence;
+- all three substantial weekly assignments completed before the formal weekly mastery check;
 - weekly mastery check opens only after the required weekly learning/evidence is reached;
 - next week opens only after the current mastery check reaches **80% or higher**;
 - midterm opens after the first-semester mastery gates;
@@ -125,8 +130,6 @@ The hardened course will enforce:
 - friendly reminders explain locked states;
 - reassessment remains available;
 - preview access does not create formal mastery.
-
-For an honors course, substantial assignments should be completed before the weekly mastery check is treated as the week's formal mastery evidence.
 
 ## Resource federation targets
 
