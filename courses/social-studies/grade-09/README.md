@@ -4,11 +4,11 @@ A 36-week integrated social studies course combining world history, geography, c
 
 ## Current forensic status
 
-The course is being hardened on `hardening/archaemenes-highschool` before Grade 09 receives final A+++ approval.
+The course is under active forensic hardening on `hardening/archaemenes-highschool` and is **not yet final A+++ certified**.
 
-The pre-forensic student portal is preserved as a repository blob during the transition, and the Academy-facing `index.html` is now the continuity/progression surface. The legacy portal must remain attached as `legacy.html` before the wrapper is considered deployment-ready.
+The pre-forensic student portal is preserved as `legacy.html`. The Academy-facing `index.html` now serves as the continuity/progression entry while the original curriculum is repaired rather than discarded.
 
-The forensic audit has confirmed several issues that ordinary structural validation did not detect:
+The forensic audit confirmed issues that ordinary structural validation did not detect:
 
 - repeated Monday–Friday lesson bodies with topic substitution;
 - repeated weekly assignment structures;
@@ -20,11 +20,30 @@ The forensic audit has confirmed several issues that ordinary structural validat
 
 See `FORENSIC_AUDIT_2026-08-16.md` for the detailed findings and repair standard.
 
+## Repairs now staged
+
+The hardening layer introduces:
+
+- Academy Family Registry learner authority;
+- learner-scoped Global Studies records;
+- Grade 08 preview separated from formal Grade 09 mastery;
+- 80% formal advancement threshold;
+- Monday → Friday sequential lesson gates;
+- three required weekly evidence assignments before the mastery check;
+- next-week unlock only after the prior week reaches 80% mastery;
+- first-semester gate followed by an 80% midterm requirement before Semester II;
+- final gate after full-year mastery plus required prior assessment status;
+- friendly locked-state reminders;
+- 36 week-specific inquiry upgrades replacing the old one-size-fits-all lesson wording with topic-specific historical methods, source tasks, map/data work, arguments, and synthesis products;
+- purposeful Verve N Veda tool recommendations attached to the weeks where they support the inquiry.
+
+The objective-question banks and cumulative exams still require a separate semantic-uniqueness rewrite before final approval.
+
 ## Preserved academic scope
 
 The course continues to target:
 
-- 36 distinct chronological weeks;
+- 36 chronological weeks;
 - 180 Monday–Friday learning blocks;
 - world history from historical-method foundations through the contemporary world;
 - geographic and quantitative reasoning;
@@ -36,7 +55,7 @@ The course continues to target:
 - nonpartisan civic capstone;
 - printable packets, reports, and portfolio evidence.
 
-The goal of the forensic pass is to make those 180 lesson blocks **substantively distinct**, not merely structurally present.
+The forensic pass requires those 180 lesson blocks to be **substantively distinct**, not merely structurally present.
 
 ## Academy continuity
 
@@ -44,7 +63,7 @@ Formal learner authority follows:
 
 `Academy Family Registry → NAIB delegation → Khaemenes Academy High School → Archaemenes · Academy Scholar → Global Studies Honors 9`
 
-The course must not create a second authoritative learner identity.
+The course does not create a second authoritative learner identity in the hardened path.
 
 Formal Grade 09 records are learner-scoped. Grade 08 advanced-preview access remains exploratory and cannot create formal Grade 09 mastery or promotion.
 
@@ -81,9 +100,9 @@ Before final release:
 
 ## Verve N Veda resource layer
 
-Appropriate existing resources include ARSHIF, The Verifier, World Wire / Global News Digest, Evidence & Citation Studio, PLERA Search, Ancients Trivia, Civic Compass Trivia, the High School Voter Portal, and Finance Hall.
+Appropriate existing resources include ARSHIF, The Verifier, World Wire, Evidence & Citation Studio, PLERA Search, Ancients Trivia, Civic Compass Trivia, the High School Voter Portal, and Finance Hall.
 
-These resources should be assigned to particular lessons for an explicit purpose rather than added as decorative links.
+The forensic layer assigns these resources to particular weeks for an explicit purpose rather than treating them as decorative links.
 
 ## Static-hosting boundary
 
