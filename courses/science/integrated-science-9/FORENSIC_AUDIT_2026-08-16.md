@@ -8,7 +8,7 @@
 
 Integrated Science 9 retains a 36-week sequence spanning laboratory readiness, scientific inquiry, cells, body systems, inheritance, ecology/evolution/biodiversity, atomic structure, chemical bonding and reactions, mechanics and energy, electricity/waves/information, Earth systems, climate/space, and sustainable engineering.
 
-The published course architecture uses a sound recurring science-practice rhythm:
+The recurring science-practice rhythm remains:
 
 1. phenomenon / question;
 2. concept and model;
@@ -16,107 +16,102 @@ The published course architecture uses a sound recurring science-practice rhythm
 4. investigation / engineering;
 5. synthesis, CER, mastery, reflection.
 
-The recurring rhythm is retained, but substantive prompts and assessment items must remain meaningfully different from week to week.
-
-## Forensic defects confirmed
+## Forensic defects and repair state
 
 ### 1. Conceptual mastery generator repetition
 
-The legacy generator historically produced six questions from a single `quizType`. Several conceptual `quizType` branches had only one substantive question template. This allowed the same question to appear repeatedly in one generated set with answer order changed.
+The legacy generator can produce several questions from one `quizType`, and some historical branches had only one substantive conceptual template.
 
-**Repair begun:** `assets/science9-forensic-quality.js` now constructs a mixed six-item set with domain-specific questions plus applied evidence/CER/source-evaluation questions. The goal is to prevent a six-question mastery check from becoming six cosmetic variants of one item.
+`assets/science9-forensic-quality.js` now mixes domain-specific items with applied evidence/CER/source-evaluation questions so a weekly set is not merely repeated cosmetic variants of one concept.
 
-This first diversity layer reduces immediate repetition but is not the final semantic-uniqueness certification. Every domain bank still requires final cross-week exact/near-duplicate analysis before A+++ approval.
+**Still required:** enumerate the complete generated item space, verify every answer/explanation and numeric range, and run exact/near-semantic duplicate analysis before A+++ approval.
 
-### 2. Mastery progression was advisory rather than enforced
+### 2. Mastery progression
 
-The legacy page displayed an 80% target but allowed learners to jump ahead.
-
-**Repair implemented:** formal Grade 09 records now use sequential progression:
+Formal Grade 09 records now use sequential progression:
 
 - Week 1 available;
-- lessons progress Monday → Friday;
-- weekly mastery check opens after the five required lessons;
-- next week opens only after the preceding mastery score reaches **80% or higher**;
-- below-80 attempts retain reassessment access and keep the next required week locked;
-- friendly explanatory reminders replace dead/punitive locks.
+- Monday → Friday prerequisite order;
+- weekly mastery after five required lessons;
+- next week only after **80%+**;
+- below-80 reassessment remains available;
+- friendly reminders replace punitive/dead locks;
+- preview mode remains non-formal.
 
-Preview mode remains exploratory and does not create formal mastery authority.
+### 3. Cumulative assessment evidence
 
-### 3. Cumulative assessment gating needed separate thresholds
+The repository contains dedicated objective assessment pages for:
 
-The Science assessment center includes diagnostic/safety verification, cumulative tests, a midterm checkpoint, and a final.
+- Units 01–04 benchmark — `khaemenes_science_units01_04_benchmark_v1`;
+- Units 05–07 benchmark — `khaemenes_science_units05_07_benchmark_v1`;
+- Units 08–09 benchmark — `khaemenes_science_units08_09_benchmark_v1`;
+- Comprehensive Final — `khaemenes_science9_final_exam_v1`.
 
-**Repair begun:** cumulative links are now treated separately rather than locking the whole assessment area. Thresholds are:
+Each of those pages records submitted objective score/total/attempts locally.
 
-- Diagnostic / safety verification: available at course start;
-- Units 01–04 cumulative: after Weeks 1–12 reach 80% mastery;
-- Midterm checkpoint: after Weeks 1–18 reach 80% mastery;
-- Units 05–07 cumulative: after Weeks 1–21 reach 80% mastery;
-- Units 08–09 cumulative: after Weeks 1–27 reach 80% mastery;
-- Final: after all 36 weekly mastery gates reach 80%.
+**New repair:** `assets/science9-cumulative-sync.js` reads only submitted assessment evidence, converts it to a transparent percentage, and synchronizes it into the active formal learner's Science 9 record under cumulative evidence. The assessment view also displays the recorded score and whether the Academy's 80% threshold has been reached.
 
-**Remaining blocker:** external cumulative/midterm/final assessment scores must be integrated into the learner-scoped formal Science 9 record so later high-stakes gates can require the appropriate prior test score, not merely weekly completion.
+The synchronizer preserves that cumulative evidence when the legacy course save routine runs rather than allowing normal weekly saves to erase it.
 
-## Academic rigor findings
+It does **not** invent a score when no submitted record exists.
 
-### Strengths
+### Midterm gap remains explicit
 
-- authentic scientific notebook fields;
+The current repository does not expose a dedicated standalone midterm record/page comparable to the three cumulative benchmarks and final. The hardened runtime therefore displays an explicit note and does **not** infer, manufacture, or silently substitute a midterm score.
+
+Before final certification we still need either:
+
+- a dedicated midterm assessment/record; or
+- a documented Academy/adult-verification workflow that records midterm evidence explicitly.
+
+### 4. Cumulative milestone gating
+
+The intended schedule remains:
+
+- diagnostic / safety at course start;
+- Units 01–04 after Weeks 1–12;
+- midterm after Weeks 1–18;
+- Units 05–07 after Weeks 1–21;
+- Units 08–09 after Weeks 1–27;
+- final after Week 36.
+
+Weekly prerequisite gating is staged. Cumulative objective scores are now captured in learner evidence, but **later milestone gates still need a final policy decision and browser-tested implementation for whether each prior cumulative assessment must itself be 80% before the next high-stakes milestone opens.**
+
+## Academic rigor strengths
+
+- scientific notebook evidence;
 - variables and investigation planning;
-- numeric data capture;
-- graphing;
+- numeric data capture and graph interpretation;
 - CER writing;
 - source evaluation;
-- explicit uncertainty and limitations;
-- lab-safety verification;
-- Foundation / Core / Extended course pathway preference;
-- detailed unit folders with models, investigations, templates, and support artifacts;
-- cumulative assessment structure;
+- uncertainty/limitations;
+- laboratory safety verification;
+- Foundation/Core/Extended depth preference;
+- detailed unit folders;
+- cumulative benchmarks;
 - sustainable engineering capstone.
 
-### Required A+++ repairs
+## Remaining A+++ repairs
 
-- expand conceptual assessment banks sufficiently to eliminate repeated substantive items across the year;
-- confirm every automatically scored answer and explanation;
-- test numeric generators for valid ranges, units, tolerances, and non-pathological values;
-- verify each week has a genuinely distinct phenomenon, investigation, and evidence product;
-- connect unit-specific tools to the week where they are needed instead of leaving resources detached;
-- integrate cumulative test scores with formal progression;
-- confirm final assessment does not duplicate weekly or cumulative items excessively;
-- run browser/mobile/print tests after static repairs.
+- full generated-bank enumeration and answer verification;
+- numeric generator range/unit/tolerance validation;
+- exact/semantic duplicate analysis;
+- verify each week's phenomenon/investigation/evidence product remains substantively distinct;
+- confirm lesson-specific resource mappings;
+- resolve the dedicated midterm-record gap;
+- decide and enforce cumulative-to-cumulative 80% progression policy;
+- compare final versus weekly/cumulative pools for excessive overlap;
+- static syntax/load-order check of bridge + forensic + cumulative-sync layers;
+- browser/mobile/keyboard/print/learner-switch/preview tests.
 
 ## Resource federation targets
 
-Recommended existing Verve N Veda resources for Science 9 include:
+Existing ecosystem resources worth purpose-mapping include the Scientific Calculator, Solanar, Planetarium, TraceLab, Weather Academy, The Verifier/EcoPulse, River to Road, Ohmic CAD, and Evidence & Citation Studio. They should appear only where the lesson has a defined learning use.
 
-- Khaemenes Scientific Calculator — quantitative science, physics, chemistry, data checks;
-- Solanar — weather, Earth systems, atmosphere, climate observation;
-- Solanar Planetarium — astronomy and space-system study;
-- Solanar TraceLab — observation / tracing / weather-data work;
-- High School Weather Academy — meteorology extension;
-- The Verifier Science News / EcoPulse — source evaluation and contemporary evidence;
-- River to Road — ecology, pollution, stewardship, field/service learning;
-- Ohmic CAD — engineering design and prototyping;
-- Evidence & Citation Studio — research provenance and scientific sourcing.
+Potential future reusable apps include Cell Systems Lab, Bond Builder, Chemistry Equation Balancer, Motion & Forces Lab, Climate Data Studio, and CER Evidence Challenge.
 
-Resource links should appear only when a lesson explicitly uses them.
+## Current verdict
 
-## Suggested new science applications
+**Substantial and increasingly well-integrated, but not yet A+++ certified.**
 
-Potential ecosystem gaps worth building later:
-
-- Cell Systems Lab;
-- Periodic / Bond Builder;
-- Chemistry Equation Balancer;
-- Motion & Forces Lab;
-- Climate Data Studio;
-- CER Evidence Challenge.
-
-These should be designed for reusable curricular value rather than decorative gamification.
-
-## Current forensic verdict
-
-**Promising / substantial / not yet A+++ certified.**
-
-The course scope and scientific-practice architecture are strong. The principal defects are assessment-bank diversity, cumulative-score integration, and final cross-week uniqueness verification. Sequential 80% mastery gating is now part of the hardened Academy-facing Science 9 path.
+The course now has sequential 80% weekly progression, a more diverse forensic question layer, and learner-scoped synchronization of the repository's existing submitted cumulative objective evidence. Remaining work is concentrated in bank verification, the missing midterm record, cumulative-gate policy, resource mapping, and live/browser validation.
