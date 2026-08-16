@@ -111,11 +111,13 @@ Verify readable centered layout, no overflow, keyboard operation, visible focus,
 ### Global Studies Honors 9
 
 - 36 weeks / 180 lesson slots / 108 principal assignments structurally present.
-- Heavy substantive five-day/three-assignment template repetition was confirmed.
-- Small shared quiz banks are reused across weeks; midterm/final reuse weekly-bank items.
-- Correct-answer index bias is strong.
-- Original generated portal used 70% and independent local learner identity; hardened wrapper corrects authority/gating direction.
-- **Remaining:** objective-bank rewrite, independent cumulative exams, answer verification/balancing, integration validation, browser/print testing.
+- Original five-day/three-assignment template repetition was confirmed; the forensic quality layer now differentiates all 36 weeks with topic-specific inquiry work and purpose-mapped resources.
+- The original shared objective banks have been replaced on the hardening path by **36 week-specific five-item banks (180 weekly objective items)**.
+- The midterm has been replaced by an **independent 18-item cumulative transfer assessment**.
+- The final has been replaced by an **independent 24-item cumulative transfer assessment**.
+- A deterministic balancing layer rotates four-choice answer positions to remove the original index-0 pattern.
+- Original 70% mastery and local-student authority are superseded by hardened 80% Academy learner-scoped progression.
+- **Remaining:** independent verification of all 222 new objective items, semantic duplicate analysis, final answer-position distribution check, injected-layer syntax/integration validation, browser/mobile/print/learner-switch testing.
 
 ### Grade 09 Mathematics
 
@@ -155,8 +157,8 @@ Before readiness may influence formal placement:
 
 ## Immediate checklist from this point
 
-1. **Global Studies 9 objective-bank rebuild and independent midterm/final** — highest remaining duplication/answer-pattern risk.
-2. **English 9 assessment diversity and lesson differentiation.**
+1. **Global Studies 9 objective-bank rebuild and independent midterm/final — structurally completed; verification/testing remains.**
+2. **English 9 assessment diversity and lesson differentiation — next active repair.**
 3. **Integrated Science 9 cumulative-score integration and remaining bank validation.**
 4. **Pre-Algebra duplicate-bank rewrite plus dedicated readiness verification.**
 5. **Cross-course Grade 09 static validation.**
