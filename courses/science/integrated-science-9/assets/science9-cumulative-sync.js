@@ -7,7 +7,7 @@
     window.setTimeout(()=>{
       const script=doc.createElement("script");
       script.src="assets/science9-cumulative-runtime.js";
-      script.defer=false;
+      script.async=false;
       doc.body.appendChild(script);
     },180);
   });
