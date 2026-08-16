@@ -9,10 +9,10 @@
   const REGISTRY_URL="https://vervenveda.com/assessment-engine/mentor/registry/ecosystem-resources.json";
 
   const grades={
-    "grade-09":{label:"9",title:"Ninth Grade",anchor:"#grade-nine"},
-    "grade-10":{label:"10",title:"Tenth Grade",anchor:"#grade-ten"},
-    "grade-11":{label:"11",title:"Eleventh Grade",anchor:"#grade-eleven"},
-    "grade-12":{label:"12",title:"Twelfth Grade",anchor:"#grade-twelve"}
+    "grade-09":{label:"9",title:"Ninth Grade",anchor:"#grade-nine",portal:"grades/grade-09/index.html"},
+    "grade-10":{label:"10",title:"Tenth Grade",anchor:"#grade-ten",portal:"grades/grade-10/index.html"},
+    "grade-11":{label:"11",title:"Eleventh Grade",anchor:"#grade-eleven",portal:"grades/grade-11/index.html"},
+    "grade-12":{label:"12",title:"Twelfth Grade",anchor:"#grade-twelve",portal:"grades/grade-12/index.html"}
   };
 
   const resources=[
@@ -61,20 +61,20 @@
       card.dataset.mode="preview";
       title.textContent=grade08?`Welcome to the Grade 09 preview, ${nickname}.`:"Advanced Grade 09 Preview";
       text.textContent="This doorway is for enrichment and readiness exploration only. Formal placement remains unchanged, High School grade records stay locked unless the Academy Family Registry later reports a formal High School grade, and this page never promotes a learner.";
-      primary.href="#grade-nine";primary.textContent="Preview Grade 09 Learning Hall";
+      primary.href="grades/grade-09/index.html";primary.textContent="Preview Grade 09 Learning Portal";
       secondary.href="https://vervenveda.com/Khaemenes_Middle.github.io/?entry=grade08-transition#transition";secondary.textContent="Return to Middle School Transition";
     }else if(transition){
       card.dataset.mode="preview";
       title.textContent=grade08?`High School transition center for ${nickname}`:"Grade 08 → High School Transition";
       text.textContent="Use this campus to understand Grade 09 expectations, pathways, and resources. Formal promotion remains an explicit Academy/family placement action.";
-      primary.href="#grade-nine";primary.textContent="Explore Grade 09";
+      primary.href="grades/grade-09/index.html";primary.textContent="Explore Grade 09";
       secondary.href="https://vervenveda.com/Khaemenes_Academy.github.io/family/";secondary.textContent="Review Family Profile";
     }else if(s.eligible&&s.learner){
       card.dataset.mode="formal";
       const g=grades[s.learner.grade];
       title.textContent=`Welcome back, ${s.learner.nickname}. ${g?.title||"High School"} is ready.`;
       text.textContent=`Your Academy Family Profile places you in ${s.learner.grade}. Archaemenes continues here as Academy Scholar. Formal course evidence remains inside the individual course portals.`;
-      primary.href=g?.anchor||"#grades";primary.textContent=`Open Grade ${g?.label||"Path"}`;
+      primary.href=g?.portal||g?.anchor||"#grades";primary.textContent=`Open Grade ${g?.label||"Path"} Portal`;
       secondary.href="https://vervenveda.com/Khaemenes_Academy.github.io/family/";secondary.textContent="Open Family Profile";
     }else if(grade08){
       card.dataset.mode="preview";
