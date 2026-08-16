@@ -1,1 +1,0 @@
-Temporary hardening note: the original monolithic Pre-Algebra portal is being preserved byte-for-byte as `legacy.html` before the Academy-facing wrapper replaces `index.html`. This marker may be removed after the legacy blob is attached.
