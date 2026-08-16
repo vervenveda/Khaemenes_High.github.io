@@ -6,178 +6,133 @@
 
 ## Course role
 
-The existing course identifies itself as **Secondary readiness / Grade 9 bridge**. Its 36-week scope is academically useful and coherent for learners who need a strong transition from middle-school mathematics into Algebra I.
+Pre-Algebra remains the **Foundation / Bridge** Grade 09 mathematics pathway rather than the sole standard Grade 09 expectation.
 
-It should therefore remain the **Foundation / Bridge** Grade 09 pathway rather than be treated as the sole standard Grade 09 mathematics expectation.
+Recommended continuum:
 
-Recommended Grade 09 mathematics pathways:
-
-1. **Foundation / Bridge — Pre-Algebra**  
-   For learners who need explicit mastery of number, proportional reasoning, algebraic readiness, functions, geometry, statistics, and modelling before Algebra I.
-
-2. **Standard — Algebra I / Integrated Mathematics I**  
-   The normal high-school algebra/functions pathway for learners demonstrating prerequisite readiness.
-
-3. **Advanced — Geometry or higher**  
-   Available only when prior demonstrated mastery and formal Academy placement support acceleration.
+1. **Mathematics Foundations** — prerequisite rebuilding below Pre-Algebra.
+2. **Pre-Algebra Bridge** — number/proportional/algebraic readiness before Algebra I.
+3. **Algebra I / Integrated Mathematics I** — standard high-school algebra/functions pathway when prerequisite evidence supports it.
+4. **Advanced verification** — Geometry or higher only when demonstrated evidence and Academy review support acceleration.
 
 Formal placement and curriculum access remain separate. No mathematics page silently rewrites Academy grade placement.
 
-## Preserved 36-week scope
+## Preserved original course
 
-The current Pre-Algebra course includes:
+The original monolithic Pre-Algebra portal is now preserved byte-for-byte as `legacy.html` (same source blob as the former `index.html`). The Academy-facing `index.html` is now a compatibility wrapper, following the same preservation pattern used in the hardened English, Science, and Global Studies portals.
 
-- readiness diagnostic;
-- number systems, factors, estimation, and order of operations;
-- integers and absolute value;
-- fractions, decimals, and rational numbers;
-- ratios, rates, proportions, and scale;
-- percent and financial mathematics;
-- powers, roots, and scientific notation;
-- variables and algebraic structure;
-- equations and formulas;
-- inequalities;
-- coordinate systems, patterns, functions, and linear relationships;
-- geometry, measurement, and scale;
-- statistics, probability, sampling, and data interpretation;
-- mathematical modelling capstone.
+The preserved 36-week scope still includes readiness diagnostic; number systems; integers; rational numbers; ratios/rates/proportions; percent and financial mathematics; powers/roots/scientific notation; variables/expressions; equations; inequalities; coordinates/functions/linear relationships; geometry/measurement; statistics/probability/sampling; and mathematical modelling.
 
-That scope is worth preserving for the Foundation/Bridge pathway.
-
-## Forensic defects confirmed
+## Confirmed original defects
 
 ### 1. Exact weekly quiz duplication
 
-The current course reuses full question sets across multiple weeks inside the same unit.
-
-Examples confirmed in the current course include consecutive integer weeks repeating the same five items:
-
-- `The absolute value of -12 is...`
-- `-7 + 3 equals...`
-- a temperature change from `2°` to `-5°`;
-- `-6 × -4 equals...`
-- `Which is least?` using the same answer set.
-
-The number/factor unit similarly reuses the same set across more than one week.
-
-This is not acceptable for the Academy forensic standard because a learner can memorize a fixed five-question unit bank rather than demonstrate fresh transfer.
+The original unit-bank architecture reused complete question sets across multiple weeks. Consecutive integer weeks repeated the same absolute-value, signed-addition, temperature-change, signed-product, and least-value items. Similar unit-bank reuse occurred elsewhere.
 
 ### 2. Correct-answer-position bias
 
-In the sampled repeated banks, the intended answer is frequently stored at answer index `0`.
+Sampled original banks frequently stored the intended answer at index `0`, creating an exploitable pattern.
 
-A predictable answer position is an assessment defect even when the mathematical stem itself is correct.
+### 3. Unit banks were too small
 
-The rebuilt banks must distribute correct answers across positions and must not introduce a detectable repeating pattern.
+Several weeks drew from the same small domain bank rather than requiring fresh transfer evidence.
 
-### 3. Unit-bank design is too small
+### 4. The 80% target was not a complete progression authority
 
-A three-week unit should not expose the same five questions every week.
+The original course expressed an 80% mastery target but allowed navigation that did not consistently enforce prerequisite day/week/exam gates.
 
-Each week requires its own mastery evidence, while later questions should spiral prior skills in changed contexts.
+### 5. Local student authority conflicted with Academy continuity
 
-### 4. Mastery target exists but progression needs forensic enforcement
+The original portal maintained its own student state and profile controls. That is appropriate for preserved open-age legacy practice, but not as the formal Academy Grade 09 authority.
 
-The course already uses an 80% mastery target conceptually, but the Grade 09 forensic standard requires actual progression gates:
+## Repairs now staged
 
-- lesson/practice sequence reached first;
-- weekly mastery check opens only when the learner reaches it;
-- next week/unit opens only after the required mastery result is **80% or higher**;
-- friendly reminders explain locked activities;
-- reassessment remains available;
-- cumulative/midterm/final gates cannot be bypassed by navigation.
+### Academy continuity and record isolation
 
-### 5. Pathway meaning must remain clear
+`assets/prealgebra-academy-bridge.js` now:
 
-Because Pre-Algebra is a bridge/foundation course, completion should communicate **Algebra I readiness**, not imply that every Grade 09 learner should automatically take Pre-Algebra.
+- resolves formal eligibility from `KhaemenesHighContinuity`;
+- treats only a formal `grade-09` Academy learner as formal evidence context;
+- stores formal Pre-Algebra records under `khaemenes_pre_algebra_records_by_learner_v1`, keyed by learner ID;
+- stores preview/practice separately;
+- replaces the legacy local student list with the active Academy learner inside the compatibility runtime;
+- hides local Add/Delete/Demo student authority;
+- does not mutate Family Registry placement.
 
-## A+++ assessment-bank repair standard
+### Weekly bank diversity
 
-The repaired 36-week bank should meet all of the following:
+`assets/prealgebra-forensic-quality.js` replaces the old shared unit-bank mapping on the hardened runtime with a dedicated five-item bank for each of the 36 weeks — **180 weekly objective positions**.
 
-- no exact duplicate objective stems across weekly mastery checks unless deliberately labeled as a reassessment item;
-- no full repeated five-question sets;
-- numeric parameters vary safely and are independently solvable;
-- distractors correspond to identifiable misconceptions;
-- one defensible answer per item;
-- correct-answer positions are balanced without an obvious sequence;
-- units, rounding rules, domains, and assumptions are explicit;
-- later weeks spiral earlier skills using new contexts rather than copying old items;
-- cumulative tests use new transfer items rather than copies of weekly checks;
-- answer explanations show the mathematical reasoning, not only the final value.
+The generated families cover:
 
-## Recommended weekly question architecture
+- number/operations;
+- integers;
+- rational numbers/fractions/decimals;
+- ratios/rates/proportions;
+- percent/financial reasoning;
+- algebraic expressions/equations;
+- coordinates/functions/linear reasoning;
+- geometry/measurement;
+- data/statistics/probability.
 
-A normal five-question weekly mastery check should contain:
+Choice positions are deterministically rotated instead of preserving the old index-0 bias. The midterm now draws one transfer item from each of Weeks 1–18; the final draws one transfer item from each of all 36 weeks rather than simply sampling four questions from a few shared domain banks.
 
-1. one direct prerequisite/fluency item;
-2. one representation item (number line, table, graph, diagram, equation, or verbal form);
-3. one contextual application;
-4. one error-analysis or misconception item;
-5. one transfer/challenge item.
+This is a **structural repair, not yet an answer-integrity certification**. Generated numeric combinations and distractor collisions still require enumeration and independent verification.
 
-For the Extended pathway, add a sixth item requiring explanation, modelling, or multi-step reasoning.
+### Formal 80% progression
 
-## Interactivity standard
+`assets/prealgebra-mastery-gate.js` now stages formal Grade 09 progression rules:
 
-The current mathematics visual direction is a strong model for the rest of Grade 09. The forensic version should preserve and standardize:
+- Week 1 available;
+- future weeks require the preceding week to have 100% lesson completion, 100% required assignment completion, and at least 80% weekly mastery;
+- daily learning checkboxes are sequential Monday → Friday;
+- the weekly mastery check cannot be submitted until all five learning days and all three weekly evidence assignments are complete;
+- Week 19 additionally requires Weeks 1–18 plus an 80% midterm;
+- midterm submission is blocked before Weeks 1–18 are mastered;
+- final submission is blocked before all 36 weeks and the 80% midterm requirement are satisfied;
+- friendly reminder language explains what remains;
+- reassessment remains available.
 
-- answers entered directly on screen;
-- immediate but non-spoiling feedback;
-- scratch/workspace area where useful;
-- printable assignment version;
-- clear week/unit progress;
-- one-card-at-a-time readability on narrow screens;
-- no input/card overflow;
-- visible current week/unit;
-- calculator/tool access only when pedagogically appropriate;
-- worked reasoning after submission/review, not exposed before the learner attempts the problem.
+Preview mode remains exploratory and does not create formal mastery authority.
 
-## Verve N Veda resource matches
+## Independent Foundation → Pre-Algebra verification
 
-### Scientific Calculator
-Use for scientific notation, roots, multi-step calculations, statistics, and later algebra verification after hand/mental setup is shown.
+A new `readiness/` assessment provides **32 independent prerequisite-transfer items** across eight strands:
 
-### Geometry Sanctuary / Sacred Geometry
-Use selectively for geometry, transformations, symmetry, scale, and visual reasoning. These should be enrichment/practice rather than substitutes for formal mathematics evidence.
+1. number operations;
+2. fractions & decimals;
+3. ratios & rates;
+4. percent;
+5. signed numbers;
+6. expressions & equations;
+7. coordinates & graphs;
+8. geometry & data.
 
-### Jenny's Sudoku / Six by Six / Signal Garden
-Use as optional logic and pattern warmups where they genuinely support perseverance, pattern recognition, or constraint reasoning.
+Candidate target: **26/32 (81.25%, satisfying the Academy's 80% minimum)**.
 
-### Finance Hall / Budget Planner
-Use in percent, tax, discount, interest, financial comparison, and modelling contexts.
+The assessment stores learner-scoped readiness evidence when a formal Grade 09 learner is present and separate preview evidence otherwise. It explicitly states that reaching the target is evidence for Academy/Family pathway review, not an automatic placement change.
 
-### Ohmic CAD
-Use in scale, measurement, geometry, design, and modelling tasks.
+## Forensic repair standard still required
 
-## High-value new mathematics apps
+Before A+++ approval:
 
-The largest current ecosystem gaps are:
+- enumerate all 180 generated weekly objective positions and all midterm/final runtime selections;
+- independently solve and verify every generated numeric combination;
+- detect duplicate answer choices and impossible/ambiguous distractors;
+- run exact and near-semantic duplicate analysis across weekly and cumulative pools;
+- verify post-rotation answer-position distribution;
+- verify all 32 readiness items and explanations independently;
+- verify the readiness threshold/report language with Academy policy;
+- confirm daily/mastery/exam gates under actual browser interaction;
+- confirm learner A/B isolation and preview/formal separation;
+- validate mobile, keyboard, print, calculator/tool links, and iframe compatibility.
 
-- **Equation Forge** — equation balance, inverse operations, inequalities, systems, misconception feedback;
-- **Coordinate Cartographer** — plotting, slope, intercepts, distance, transformations, graph matching;
-- **Function Machine Lab** — input/output, multiple representations, linear/nonlinear classification, domain/range;
-- **Data Detective** — sampling, distributions, probability simulations, misleading graphs, claim evaluation.
+## Resource federation
 
-These four would support Pre-Algebra, Algebra I, Geometry, Statistics, Science, and Social Studies rather than serving only one course.
-
-## Formal mastery-gate acceptance tests
-
-Before the Foundation/Bridge pathway receives final forensic approval:
-
-1. Unit/Week 1 is available.
-2. Future required work produces a friendly lock reminder rather than opening early.
-3. The weekly mastery check cannot open before required instruction/practice is reached.
-4. 79% or lower keeps the next required week/unit locked.
-5. 80% or higher unlocks the next required step.
-6. Reassessment remains available after review.
-7. Midterm/final cannot be accessed early.
-8. Formal records are learner-scoped where the course is used as an Academy Grade 09 pathway.
-9. Preview/open-age practice does not create formal Grade 09 mastery unless entered through the formal course context.
-10. Switching learners never transfers scores or unlock state.
+Scientific Calculator, Geometry Sanctuary/Sacred Geometry, logic/pattern games, Finance/Budget tools, and Ohmic CAD remain useful where each has an explicit lesson purpose. High-value future reusable apps include Equation Forge, Coordinate Cartographer, Function Machine Lab, and Data Detective.
 
 ## Current verdict
 
-**Strong Foundation/Bridge scope; assessment uniqueness is not yet acceptable for A+++ certification.**
+**The major structural Pre-Algebra defects are now staged for repair: original portal preserved, Academy learner authority layered in, 36 week-specific assessment banks installed, sequential 80% progression staged, and an independent Foundation → Pre-Algebra readiness verification added.**
 
-The next mathematics repair should rebuild the weekly question banks and answer-position distribution before changing the broader course scope.
+The course is still a forensic candidate until generated-bank answer integrity, uniqueness, load-order, learner isolation, and browser/mobile/print tests pass.
