@@ -1,262 +1,210 @@
 # Khaemenes Academy™ — High School Campus
 
-> **A Verve N Veda™ Educational Initiative**
+**Verve N Veda Educational Network**
 
-Khaemenes Academy™ is a comprehensive international educational platform designed to provide high-quality, freely accessible learning opportunities for students, families, educators, and lifelong learners around the world.
+Khaemenes Academy High School is the Grades 9–12 secondary campus of the wider Khaemenes Academy learning system.
 
-The High School Campus serves as the foundation for Grades 9–12 while integrating seamlessly into the larger Khaemenes Academy educational ecosystem.
+The repository contains active academic departments, grade-specific course routes, assessment systems, student/family tools, Career exploration, health and wellness connections, professional resources, and a direct transition into Khaemenes Higher Learning.
 
----
+## Academic sequence
 
-# Mission
+```text
+Khaemenes Middle School · Grade 08
+        ↓
+verified readiness / transition evidence
+        ↓
+explicit Academy / family placement
+        ↓
+Khaemenes High School · Grades 09–12
+        ↓
+Career / Higher Learning transition
+```
 
-Our mission is to create one of the world's most comprehensive open educational platforms by combining rigorous academics, beautiful design, modern technology, practical life skills, and family-centered learning into a unified learning experience.
+Promotion is deliberate. A repository boundary does not create a new learner identity and does not silently change formal placement.
 
-Students are encouraged not simply to complete courses, but to develop curiosity, responsibility, creativity, critical thinking, civic engagement, and lifelong learning habits.
+## Canonical Academy architecture
 
----
+```text
+Academy Family Registry
+        ↓
+NAIB intake / resource direction / delegation
+        ↓
+Khaemenes Academy High School
+        ↓
+Archaemenes · Academy Scholar
+        ↓
+Grade 09 / 10 / 11 / 12 course context
+        ↓
+course assessment evidence / records
+        ↓
+adult verification where formal evidence requires it
+        ↓
+completion / graduation / next-stage evidence
+```
 
-# Educational Philosophy
+Authority boundaries:
 
-Khaemenes Academy believes education should be:
+- **Academy Family Registry** owns learner identity and formal school/grade placement.
+- **NAIB** receives, interprets, delegates, and connects the learner to the appropriate platform or resource.
+- **Khaemenes Academy** provides Archaemenes as its institutional mentor.
+- **Archaemenes** mentors as **Academy Scholar** during High School and does not award formal mastery.
+- **Courses** own their own lessons, practice, assessments, and course-specific records.
+- **Local course pins and resource favorites** are convenience preferences, not identity or grade authority.
 
-- Accessible
-- Beautiful
-- Organized
-- Practical
-- Academically rigorous
-- Family friendly
-- Technology enabled
-- International
-- Self-paced
-- Affordable
-- Inclusive
-- Designed for lifelong learning
+## Grades 09–12
 
-The platform supports:
+### Grade 09 — Foundations
 
-- Traditional homeschooling
-- Independent learners
-- Classroom teachers
-- Tutors
-- Hybrid schools
-- Private schools
-- International learners
-- Adult education
+Current pathways include:
 
----
+- mathematics / Pre-Algebra and Algebra readiness;
+- Integrated Science 9;
+- English 9;
+- Global Studies Honors / Social Studies 9;
+- health, physical education, arts, music, language, technology and research resources through connected departments.
 
-# Academy Structure
+### Grade 10 — Sophomore Depth
 
-## Early Learning
+The campus includes Grade 10 Language Arts, mathematics, social studies and connected science/health pathways with increasing independence and research expectations.
 
-- Preschool
-- Pre-K
-- Kindergarten
+### Grade 11 — Junior Analysis
 
----
+Grade 11 emphasizes advanced reading and writing, civic/economic reasoning, mathematics planning, research, evidence and postsecondary exploration.
 
-## Elementary School
+### Grade 12 — Senior Synthesis
 
-Grades 1–5
+Grade 12 emphasizes senior-level academic work, portfolio/capstone evidence, future planning, Career exploration and direct transition into Higher Learning.
 
----
+## Active departments and connected halls
 
-## Middle School
+The current repository and federation connect students to:
 
-Grades 6–8
+- Mathematics;
+- Language Arts;
+- Science;
+- Social Studies & Civics;
+- Physical Education;
+- Health & Wellness;
+- Arts and Music;
+- World Languages;
+- Technology / professional tools;
+- Career exploration;
+- research resources;
+- practical life, law, civics and finance resources.
 
----
+Connected Verve N Veda resources include ARSHIF, ProReSources, Firmament Law, The Verifier, Solanar, The Refrain, Bazaar Art, Khaemenes Linguistics, the Arcade, Career Portal and Higher Learning.
 
-## High School
+## Grade 08 → Grade 09 transition
 
-Grades 9–12
+High School follows the same continuity principle used at the Elementary → Middle boundary:
 
-Including:
+> **Formal placement and advanced curriculum access are separate concepts.**
 
-- Mathematics
-- Sciences
-- Language Arts
-- History
-- Civics
-- Government
-- Financial Literacy
-- Technology
-- Music
-- Fine Arts
-- Physical Education
-- Health
-- Career Exploration
+A Grade 08 learner may explore selected Grade 09 material for transition planning or advanced challenge without being silently promoted.
 
----
+Formal Grade 09 records should require the Academy Family Registry to resolve the learner as:
 
-## Beyond High School
+```text
+stage: high
+grade: grade-09
+```
 
-Future campuses include:
+Preview access must not create Grade 09 certification, overwrite placement, or create a second student identity.
 
-- Career Academy
-- Trade School
-- University Programs
-- Professional Certifications
-- Continuing Education
-- Adult Learning
-- Senior Learning
+## High School continuity bridge
 
----
+The hardening branch contains:
 
-# Student Experience
+`assets/khaemenes-high-continuity.js`
 
-Each student receives a personalized learning environment including:
+It establishes the Academy boundary for Grades 09–12:
 
-- Student Profile
-- Family Profile
-- Parent Portal
-- Semester Planner
-- Weekly Schedule
-- Daily Homeroom
-- Gradebook
-- Portfolio
-- Progress Tracking
-- Achievement Certificates
-- Graduation Records
+- reads the active Academy learner;
+- recognizes `grade-09` through `grade-12`;
+- requires `stage: high`;
+- prefers NAIB `delegate()`;
+- resolves Archaemenes as the Academy specialist;
+- sends no learner/family IDs to NAIB;
+- creates no local identity;
+- writes no formal grade placement.
 
-Profiles are portable and designed to move securely between devices.
+See:
 
-Future releases will support secure cloud synchronization.
+`MIDDLE_TO_HIGH_CONTINUITY_AUDIT.md`
 
----
+for the current audit of the Grade 08 → High School transition and Grade 09 course identity systems.
 
-# Parent Experience
+## Current Grade 09 hardening finding
 
-Parents and guardians can:
+The Grade 09 curriculum is academically substantial, but several course portals still use older independent local student lists.
 
-- Link multiple students
-- Review progress
-- Monitor coursework
-- Print reports
-- Download records
-- Build portfolios
-- Track graduation requirements
+Examples include:
 
----
+- English 9;
+- Integrated Science 9;
+- Global Studies Honors.
 
-# Curriculum
+These course-local student selectors must be migrated to Academy learner continuity without rewriting their strong 36-week curricula.
 
-Courses include:
+The target is:
 
-- Daily Lessons
-- Interactive Activities
-- Practice Assignments
-- Projects
-- Quizzes
-- Unit Exams
-- Midterm Examinations
-- Final Examinations
-- Answer Keys
-- Teaching Resources
-- Certificates of Completion
+```text
+one Academy learner
+→ many High School courses
+→ separate learner-scoped course records
+```
 
-Curriculum is designed to support both instructor-led and independent study.
+not one independently created student identity per course.
 
----
+## Technology
 
-# Professional Resources
+The project remains intentionally understandable and portable:
 
-The Academy integrates with the broader Verve N Veda ecosystem including:
+- HTML5;
+- CSS3;
+- Vanilla JavaScript;
+- GitHub Pages compatibility;
+- local-first behavior where appropriate;
+- printable educational material;
+- offline/PWA behavior where implemented.
 
-- ARSHIF™ Digital Library
-- PROResources™
-- Firmament Law™
-- The Verifier™
-- Solanar™
-- The Refrain™
-- Bazaar Art™
-- Aurora Sanctuary™
+Browser-side storage is educational state and preference storage. It is not secure authentication or server authorization.
 
-These companion platforms provide professional tools, research resources, civic education, creative arts, wellness, and lifelong learning opportunities.
+## Design standards
 
----
+The High School campus follows the Verve N Veda visual system with:
 
-# Technology
+- ceremonial/display typography for titles;
+- readable sans-serif body typography;
+- centered institutional layouts;
+- restrained academic colors;
+- 7px controls;
+- responsive design;
+- keyboard-accessible navigation;
+- print-friendly course documents.
 
-This project is intentionally built using:
+## Hardening status
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
+Working branch:
 
-No build process is required.
+`hardening/archaemenes-highschool`
 
-The platform is designed to:
+Current work on that branch begins the same continuity migration already established in Elementary and Middle School.
 
-- Run locally
-- Operate offline where possible
-- Be GitHub Pages compatible
-- Be Wix compatible
-- Support long-term archival
-- Remain understandable for future educators and developers
+`main` remains unchanged until review, validation and explicit merge approval.
 
----
+## Next sequence
 
-# Design Standards
-
-The High School Campus follows the Verve N Veda Design System.
-
-Highlights include:
-
-- Dark navy and silver academic theme
-- Cinzel display typography
-- Clean modern sans-serif body fonts
-- Accessible color contrast
-- Centered layouts
-- 7px control radius
-- 21px card radius
-- Professional spacing
-- Responsive layouts
-- Keyboard accessibility
-- Print-friendly documents
+1. Harden the High School root around Academy Family Registry authority.
+2. Add Grade 08 transition / advanced Grade 09 preview behavior.
+3. Preserve local course pins as preferences only.
+4. Migrate English 9 to learner-scoped Academy continuity.
+5. Migrate Integrated Science 9.
+6. Migrate Global Studies Honors.
+7. Audit the Grade 09 mathematics pathway.
+8. Continue systematically through Grades 10, 11 and 12.
+9. Validate the High School → Career / Higher Learning boundary.
 
 ---
 
-# Future Development
-
-Planned additions include:
-
-- Robotics Laboratory
-- AI Research Center
-- Architecture Studio
-- Engineering Workshop
-- Marine Biology Center
-- Medical Sciences Institute
-- Aviation Academy
-- Environmental Research Center
-- Journalism Center
-- Debate Hall
-- International Languages
-- Psychology Institute
-- Culinary Arts
-- Entrepreneurship Center
-- Law & Government Academy
-- Astronomy Observatory
-
----
-
-# Vision
-
-Khaemenes Academy is being developed as a living educational campus that grows over time.
-
-Rather than becoming outdated every few years, the Academy is designed to expand continuously through new courses, new technologies, and new learning experiences while preserving a consistent educational philosophy and user experience.
-
----
-
-# Part of the Verve N Veda™ Ecosystem
-
-Khaemenes Academy is one campus within the Verve N Veda ecosystem of educational, civic, creative, and professional platforms.
-
-Each platform is designed to stand independently while working together to support learning, creativity, public service, and lifelong personal growth.
-
----
-
-© Verve N Veda™
-Khaemenes Academy™
-Educational Platform
+**Jennifer Kay Pearl · Khaemenes Academy · Verve N Veda**
