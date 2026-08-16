@@ -6,7 +6,7 @@ A 36-week integrated social studies course combining world history, geography, c
 
 The course is being hardened on `hardening/archaemenes-highschool` before Grade 09 receives final A+++ approval.
 
-The original generated student portal is preserved as `legacy.html`; the Academy-facing `index.html` is the continuity and progression surface while the curriculum is repaired.
+The pre-forensic student portal is preserved as a repository blob during the transition, and the Academy-facing `index.html` is now the continuity/progression surface. The legacy portal must remain attached as `legacy.html` before the wrapper is considered deployment-ready.
 
 The forensic audit has confirmed several issues that ordinary structural validation did not detect:
 
