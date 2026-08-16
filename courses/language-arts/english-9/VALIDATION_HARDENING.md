@@ -2,7 +2,7 @@
 
 ## Status
 
-**ACTIVE FORENSIC CANDIDATE — Academy continuity, 80% progression, differentiated weekly learning, and independent cumulative assessments are staged on `hardening/archaemenes-highschool`.**
+**ACTIVE FORENSIC CANDIDATE — Academy continuity, 80% progression, differentiated weekly learning, transferable weekly evidence, and independent cumulative assessments are staged on `hardening/archaemenes-highschool`.**
 
 This is not a browser/deployment certification and is not yet A+++ validated.
 
@@ -36,12 +36,12 @@ Preview mode is explicitly non-formal.
 
 ## Forensic curriculum differentiation staged
 
-`assets/english9-forensic-quality.js` now operates after the Academy bridge.
+`assets/english9-forensic-quality.js` operates after the Academy bridge.
 
 For all 36 weeks it:
 
 - assigns a dedicated week-specific quiz key rather than relying on the old shared `quizKey` pools;
-- builds five objective items per week from that week's named skill, suggested reading purpose, writing task, essential question, and vocabulary context — **180 weekly objective positions total**;
+- builds five objective positions per week from the week's named skill, suggested reading purpose, writing task, essential question, and vocabulary context — **180 weekly objective positions total**;
 - deterministically rotates four-choice answer positions so the historical correct-answer index pattern is not preserved;
 - replaces generic daily lesson-shell language with week-specific inquiry, close-reading/evidence, writing/reasoning, seminar/revision, and mastery/portfolio objectives tied to the actual week's reading and writing task;
 - replaces the copied/shared historical midterm with an **18-item independent cumulative transfer assessment**;
@@ -49,21 +49,40 @@ For all 36 weeks it:
 
 The cumulative items emphasize unfamiliar transfer across literary analysis, inference, perspective, evidence integration, informational reading, rhetoric, argument, source evaluation, research integrity, poetry, drama, novel study, revision, conventions, presentation, and portfolio reflection.
 
+## New transfer-integrity repair
+
+A deeper forensic review found that one weekly objective position was still too procedural: it mainly asked the learner to identify the recommended reading approach rather than demonstrate the week's ELA skill on unfamiliar evidence.
+
+`assets/english9-transfer-integrity.js` now loads `english9-transfer-runtime.js`, which waits for the forensic weekly banks and then replaces one position in each of the 36 weekly banks with an original **transfer item**.
+
+These transfer items use short original passages, argument/source scenarios, editing problems, rhetorical situations, structural comparisons, or portfolio/research cases rather than reproducing copyrighted course readings. They cover the current week's detected skill family, including:
+
+- evidence and close reading;
+- literary analysis, theme, point of view, language/mood, narrative craft, poetry, drama, adaptation, and long-form reading;
+- informational structure, rhetoric, argument, exposition;
+- research/source tracing;
+- presentation and conventions;
+- portfolio reflection.
+
+The transfer item is answer-position rotated before insertion. The installed English forensic-audit harness therefore evaluates the final assembled bank rather than the pre-repair bank.
+
+This improves the evidence standard without changing the five-item weekly quiz count or the 80% mastery threshold.
+
 ## Curriculum preservation
 
 PASS — the historical portal blob remains unchanged at `legacy.html`, including its 36-week scope, readings, writing tools, interactive organizers, reports, backups, and portfolio evidence.
 
-The forensic layer changes the Academy-facing runtime curriculum without overwriting that preserved source.
+The forensic layers change the Academy-facing runtime curriculum without overwriting that preserved source.
 
 ## Remaining forensic/deployment checks
 
-- independently verify all generated weekly items and all 42 new cumulative items;
-- enumerate the 180 weekly runtime items and run exact/near-semantic duplicate analysis;
-- verify deterministic answer-position distribution after runtime injection;
+- independently verify all generated weekly items, all transfer items, and all 42 cumulative items;
+- execute the installed runtime audit and record exact/near-semantic duplicate findings;
+- verify final answer-position distribution after all runtime layers;
 - inspect every transformed daily lesson for meaningful week-specific differentiation and no malformed text;
 - review suggested-reading/access/copyright notes and any jurisdiction-specific standards references before production claims;
 - confirm constructed-response/adult evaluation rubrics are sufficient;
-- static syntax/integration check of bridge + forensic layer load order;
+- verify bridge → quality → transfer → audit load order in a browser;
 - browser-load wrapper and legacy frame;
 - verify learner switching and learner A/B isolation;
 - verify one-time migration with a historical record;
