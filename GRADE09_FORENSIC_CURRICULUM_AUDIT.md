@@ -24,7 +24,7 @@ This audit verifies Grade 09 as an academically rigorous, coherent, interactive,
 
 Readiness evidence does not rewrite Family Registry, promote/demote a learner, or award course mastery. Current cut bands remain policy candidates rather than validated psychometric cut scores.
 
-### Forensic repairs in this pass
+### Forensic repairs completed
 
 - Added deterministic displayed-answer balancing without changing underlying scoring values.
 - Repaired **E01**, whose earlier wording mixed contrast and causation; the item now asks specifically what `Although` signals.
@@ -52,11 +52,25 @@ Each uses a 36-week × 5-day structure, learner-scoped formal state, separate pr
 
 Support may vary by domain. A support recommendation in one subject must not lower placement in unrelated subjects or change Grade 09 membership.
 
-### Foundation-course forensic finding
+### Foundation-course forensic finding and repair
 
-A static sample of the **Mathematics Foundations** generator found that its generic distractor constructor does not yet guarantee de-duplication of dynamically generated visible choices. Certain symmetric fraction/decimal or numeric-offset cases can theoretically create repeated choices.
+A deeper source pass found two distinct assessment-generation problems in the Foundations layer.
 
-Therefore all five Foundations tracks remain correctly classified as forensic candidates pending generated-space enumeration, collision checks, independent key verification, cumulative checkpoint review, and browser testing.
+**Mathematics Foundations:** its original generic distractor constructor did not guarantee four unique visible choices. Dynamic values could theoretically collide, particularly in symmetric fraction/numeric cases. The generator now de-duplicates visible choices before shuffling, preserves exactly one correct value, fills only when necessary with explicitly non-answer fallback text, and exposes a source-level forensic summary that enumerates the generated daily/mastery sample space for choice-integrity defects.
+
+**Literacy, Science, Global Inquiry, and Research/Study:** their first-pass assessment functions repeatedly called one question template for the current week's single skill. A five-question daily check could therefore be the same substantive question five times with only answer order changed. Weekly mastery could repeat the same template ten times. This was a real forensic defect, not acceptable purposeful retrieval practice.
+
+Those four tracks now use **spiral evidence pools** instead:
+
+- the current skill remains represented;
+- recent prerequisite skills are sampled with it;
+- a small foundational skill set prevents early-week one-template repetition;
+- daily checks sample five mixed skill families;
+- weekly mastery/checkpoints sample ten current + prerequisite skill families;
+- multiple-choice constructors de-duplicate visible answers before shuffling;
+- source-level forensic summaries enumerate generated sample positions and flag invalid choice sets.
+
+This removes the worst same-template-with-different-answer-order failure while preserving deliberate spaced retrieval. It does not replace independent semantic/key review or browser execution.
 
 ## Source-level runtime integrity finding
 
@@ -110,11 +124,22 @@ This is a source-level repair, not browser certification.
 
 The existing cumulative benchmark pages write generic browser-local keys rather than learner IDs. Earlier synchronization could therefore copy a score completed by Learner A into Learner B's formal record after a learner switch.
 
-That silent behavior has been removed. Raw cumulative results are now **unattributed** until explicitly confirmed for the active formal learner. Attribution is fingerprinted by assessment, score, total, and submission timestamp; a new attempt requires a new confirmation. Preview cannot claim formal evidence. Ordinary Science saves now preserve the cumulative field.
+That silent behavior has been removed. Raw legacy cumulative results are now **unattributed** until explicitly confirmed for the active formal learner. Attribution is fingerprinted by assessment, score, total, and submission timestamp; a new attempt requires a new confirmation. Preview cannot claim formal evidence. Ordinary Science saves now preserve the cumulative field.
 
-A standalone Science midterm record/page is still absent and is deliberately not fabricated.
+#### Science midterm resolved structurally
 
-**Remaining:** generated-bank verification, numeric/unit checks, exact/semantic duplicates, dedicated midterm solution, final cumulative progression policy, resource mapping, browser/mobile/print/learner-switch and cumulative-attribution tests.
+A dedicated Week 18 Science midterm now exists at `assessments/midterm/` with:
+
+- 40 objective questions;
+- an objective mastery threshold of **32/40 = 80%**;
+- 4 constructed-response prompts preserved separately for Academy/adult review;
+- learner-scoped formal storage when an eligible Grade 09 learner is active;
+- separate preview/practice state;
+- Week 19 requiring the objective midterm score to reach 80% in addition to prior weekly mastery.
+
+Constructed responses are evidence for review and are not silently machine-scored as prose.
+
+**Remaining:** generated-bank verification, numeric/unit checks, exact/semantic duplicates, final cumulative progression policy, resource mapping, browser/mobile/print/learner-switch and cumulative-attribution tests.
 
 ### Global Studies Honors 9
 
@@ -178,12 +203,12 @@ Verify readable layout, no overflow, keyboard operation, visible focus, mobile b
 8. Preview/Grade 08 exploration never creates formal Grade 09 evidence.
 9. NAIB remains interpretive/delegative rather than automatic placement authority.
 10. Browser/mobile/keyboard/print/accessibility tests pass.
-11. Science midterm and cumulative progression policy are resolved explicitly.
+11. Science cumulative progression policy is resolved explicitly.
 12. No merge/publish until the above evidence is reviewed.
 
 ## Current forensic verdict
 
-**Grade 09 is materially stronger after this pass. The work uncovered and repaired source-level runtime hazards, one real cross-learner Science evidence-attribution risk, two readiness-item defects, and several Pre-Algebra generator weaknesses that were not visible in a simple architecture count.**
+**Grade 09 is materially stronger after this pass. The work uncovered and repaired source-level runtime hazards, one real cross-learner Science evidence-attribution risk, two readiness-item defects, a Science midterm gap, Pre-Algebra generator weaknesses, Mathematics Foundations choice-collision risk, and a major same-template repetition defect across four Foundations assessment engines.**
 
 The program is still **not A+++ forensic validated** because independent item verification and live/browser validation remain open. The branch should remain isolated from `main` until those proof steps pass.
 
