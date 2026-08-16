@@ -22,13 +22,37 @@ The recurring science-practice rhythm remains:
 
 The legacy generator can produce several questions from one `quizType`, and some historical branches had only one substantive conceptual template.
 
-`assets/science9-forensic-quality.js` now mixes domain-specific items with applied evidence/CER/source-evaluation questions so a weekly set is not merely repeated cosmetic variants of one concept.
+The hardened quality layer now delegates to external `science9-forensic-runtime.js`, which builds a mixed weekly evidence set using:
+
+- a domain/content question;
+- vocabulary in scientific context;
+- evidence quality and reproducibility;
+- investigation design;
+- Claim–Evidence–Reasoning;
+- source evaluation;
+- safety or model-limit reasoning.
+
+The runtime uses the actual week's title, essential question, investigation, vocabulary, and mode so the evidence prompts remain tied to that week rather than becoming detached generic practice.
 
 **Still required:** enumerate the complete generated item space, verify every answer/explanation and numeric range, and run exact/near-semantic duplicate analysis before A+++ approval.
 
-### 2. Mastery progression
+### 2. Browser-safe hardening runtime
 
-Formal Grade 09 records now use sequential progression:
+The forensic pass identified a source-level syntax hazard in the earlier injection architecture: large runtime strings were placed inside outer template literals while the injected body itself contained unescaped template literals.
+
+Science hardening has now been separated into normal external iframe runtimes:
+
+- `science9-bridge-runtime.js`;
+- `science9-forensic-runtime.js`;
+- `science9-cumulative-runtime.js`.
+
+The loader scripts are small and use deterministic dynamic-script ordering where sequence matters. This removes the nested-template failure mode at source level.
+
+Actual browser execution remains to be verified.
+
+### 3. Mastery progression
+
+Formal Grade 09 records use sequential progression:
 
 - Week 1 available;
 - Monday → Friday prerequisite order;
@@ -38,7 +62,19 @@ Formal Grade 09 records now use sequential progression:
 - friendly reminders replace punitive/dead locks;
 - preview mode remains non-formal.
 
-### 3. Cumulative assessment evidence
+### 4. Assessment Center overlock corrected
+
+An earlier bridge layer could lock the entire Assessment Center until Week 18, which conflicted with the intended Week 12 Units 01–04 benchmark.
+
+The Assessment Center itself is now kept available. Individual milestone links carry their own weekly prerequisite gates instead:
+
+- Units 01–04 after Weeks 1–12;
+- midterm after Weeks 1–18;
+- Units 05–07 after Weeks 1–21;
+- Units 08–09 after Weeks 1–27;
+- final after Week 36.
+
+### 5. Cumulative assessment evidence and learner isolation
 
 The repository contains dedicated objective assessment pages for:
 
@@ -47,35 +83,42 @@ The repository contains dedicated objective assessment pages for:
 - Units 08–09 benchmark — `khaemenes_science_units08_09_benchmark_v1`;
 - Comprehensive Final — `khaemenes_science9_final_exam_v1`.
 
-Each of those pages records submitted objective score/total/attempts locally.
+Those assessment pages store browser-local result keys that do **not** inherently identify which Academy learner completed the assessment.
 
-**New repair:** `assets/science9-cumulative-sync.js` reads only submitted assessment evidence, converts it to a transparent percentage, and synchronizes it into the active formal learner's Science 9 record under cumulative evidence. The assessment view also displays the recorded score and whether the Academy's 80% threshold has been reached.
+The earlier synchronizer could therefore attach a generic browser result to whichever formal learner happened to be active later. That was a genuine cross-learner evidence-attribution risk.
 
-The synchronizer preserves that cumulative evidence when the legacy course save routine runs rather than allowing normal weekly saves to erase it.
+#### Repair
 
-It does **not** invent a score when no submitted record exists.
+`science9-cumulative-runtime.js` now treats raw benchmark results as **unattributed evidence**.
+
+In formal mode:
+
+- a result is not copied into the learner record automatically;
+- the active learner must be explicitly confirmed as the learner who completed the latest assessment;
+- confirmation is stored under `khaemenes_science9_cumulative_claims_v1` by learner and assessment;
+- the claim fingerprint includes submitted timestamp, score, and total;
+- a new attempt invalidates the previous fingerprint and requires fresh attribution;
+- preview mode cannot claim formal cumulative evidence;
+- ordinary Science course saves preserve the learner's cumulative field instead of erasing it.
+
+This is intentionally conservative. It is safer to leave a valid score unattributed than to silently assign one learner's benchmark to another.
 
 ### Midterm gap remains explicit
 
-The current repository does not expose a dedicated standalone midterm record/page comparable to the three cumulative benchmarks and final. The hardened runtime therefore displays an explicit note and does **not** infer, manufacture, or silently substitute a midterm score.
+The current repository still does not expose a dedicated standalone midterm record/page comparable to the three cumulative benchmarks and final.
+
+The hardened runtime therefore displays an explicit note and does **not** infer, manufacture, or silently substitute a midterm score.
 
 Before final certification we still need either:
 
 - a dedicated midterm assessment/record; or
 - a documented Academy/adult-verification workflow that records midterm evidence explicitly.
 
-### 4. Cumulative milestone gating
+### 6. Cumulative progression policy still open
 
-The intended schedule remains:
+Weekly prerequisite gating and milestone-opening weeks are now staged coherently. However, a final policy decision is still needed on whether passing each cumulative benchmark at 80% must itself block subsequent course weeks/high-stakes assessments.
 
-- diagnostic / safety at course start;
-- Units 01–04 after Weeks 1–12;
-- midterm after Weeks 1–18;
-- Units 05–07 after Weeks 1–21;
-- Units 08–09 after Weeks 1–27;
-- final after Week 36.
-
-Weekly prerequisite gating is staged. Cumulative objective scores are now captured in learner evidence, but **later milestone gates still need a final policy decision and browser-tested implementation for whether each prior cumulative assessment must itself be 80% before the next high-stakes milestone opens.**
+That decision should be made together with the missing midterm solution so Science does not end up with inconsistent high-stakes progression rules.
 
 ## Academic rigor strengths
 
@@ -99,19 +142,13 @@ Weekly prerequisite gating is staged. Cumulative objective scores are now captur
 - verify each week's phenomenon/investigation/evidence product remains substantively distinct;
 - confirm lesson-specific resource mappings;
 - resolve the dedicated midterm-record gap;
-- decide and enforce cumulative-to-cumulative 80% progression policy;
+- decide and enforce cumulative benchmark progression policy;
 - compare final versus weekly/cumulative pools for excessive overlap;
-- static syntax/load-order check of bridge + forensic + cumulative-sync layers;
-- browser/mobile/keyboard/print/learner-switch/preview tests.
-
-## Resource federation targets
-
-Existing ecosystem resources worth purpose-mapping include the Scientific Calculator, Solanar, Planetarium, TraceLab, Weather Academy, The Verifier/EcoPulse, River to Road, Ohmic CAD, and Evidence & Citation Studio. They should appear only where the lesson has a defined learning use.
-
-Potential future reusable apps include Cell Systems Lab, Bond Builder, Chemistry Equation Balancer, Motion & Forces Lab, Climate Data Studio, and CER Evidence Challenge.
+- browser/mobile/keyboard/print/learner-switch/preview tests;
+- explicitly test cumulative attribution with Learner A, switch to Learner B, and confirm no evidence transfers silently.
 
 ## Current verdict
 
-**Substantial and increasingly well-integrated, but not yet A+++ certified.**
+**Substantial and materially safer after the forensic pass, but not yet A+++ certified.**
 
-The course now has sequential 80% weekly progression, a more diverse forensic question layer, and learner-scoped synchronization of the repository's existing submitted cumulative objective evidence. Remaining work is concentrated in bank verification, the missing midterm record, cumulative-gate policy, resource mapping, and live/browser validation.
+The course now has browser-safe hardening boundaries, sequential 80% weekly progression, independently staged assessment-center gates, a more varied forensic evidence layer, and explicit learner-safe cumulative attribution. Remaining work is concentrated in generated-bank verification, the missing midterm record, final cumulative-gate policy, and live/browser validation.
