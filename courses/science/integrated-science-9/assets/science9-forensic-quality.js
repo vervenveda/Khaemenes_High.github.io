@@ -6,7 +6,7 @@
     const doc=frame.contentDocument;if(!doc)return;
     const script=doc.createElement("script");
     script.src="assets/science9-forensic-runtime.js";
-    script.defer=false;
+    script.async=false;
     doc.body.appendChild(script);
   });
 })();
