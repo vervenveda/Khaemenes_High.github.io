@@ -4,11 +4,11 @@ A 36-week integrated social studies course combining world history, geography, c
 
 ## Current forensic status
 
-The course is under active forensic hardening on `hardening/archaemenes-highschool` and is **not yet final A+++ certified or deployment-ready**.
+The course is under active forensic hardening on `hardening/archaemenes-highschool` and is **not yet final A+++ certified**.
 
-The pre-forensic portal has been retained as a repository blob for attachment as `legacy.html`. The Academy-facing `index.html` is the continuity/progression entry while the curriculum is repaired. Do not publish the wrapper until the preserved legacy portal and its hardening assets are confirmed attached on the active branch.
+The original generated portal has been preserved for the hardening transition, and Academy continuity/mastery/differentiation assets have been prepared for the hardened entry. Final deployment remains blocked on objective-bank reconstruction, semantic uniqueness checks, and browser validation.
 
-See `FORENSIC_AUDIT_2026-08-16.md` for the detailed findings and repair status.
+See `FORENSIC_AUDIT_2026-08-16.md` and the root `GRADE09_FORENSIC_CURRICULUM_AUDIT.md` for the active findings.
 
 ## Confirmed forensic issues
 
@@ -22,9 +22,21 @@ See `FORENSIC_AUDIT_2026-08-16.md` for the detailed findings and repair status.
 
 ## Hardened target
 
-The staged hardening design establishes Academy learner authority, learner-scoped records, Grade 08 preview isolation, 80% progression, sequential lessons, three evidence assignments before each weekly mastery check, an 80% midterm gate before Semester II, a final gate, friendly lock reminders, week-specific inquiry differentiation, and purposeful Verve N Veda resource assignments.
+The staged design establishes:
 
-The objective banks and cumulative exams remain a separate forensic repair before final approval.
+- Academy Family Registry learner authority;
+- learner-scoped formal records;
+- Grade 08 preview separated from Grade 09 mastery;
+- 80% progression;
+- Monday → Friday sequential lessons;
+- three weekly evidence assignments before the mastery check;
+- an 80% midterm gate before Semester II;
+- a final gate;
+- friendly lock reminders;
+- 36 topic-specific inquiry upgrades;
+- purposeful Verve N Veda resource assignments.
+
+The objective banks and cumulative exams remain the next major forensic repair.
 
 ## Preserved academic scope
 
