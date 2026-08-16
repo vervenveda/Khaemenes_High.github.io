@@ -5,195 +5,167 @@
 
 ## Purpose
 
-This audit verifies Grade 09 as an academically rigorous, coherent, interactive, readable, learner-safe program before work advances to Grade 10.
-
-The audit is stricter than a structural file check. It examines curriculum quality, answer integrity, repetition, progression, mastery gating, tools, games, accessibility, record authority, readiness placement, support pathways, and cross-course coherence.
+This audit verifies Grade 09 as an academically rigorous, coherent, interactive, readable, learner-safe program before work advances to Grade 10. It covers curriculum quality, answer integrity, repetition, progression, mastery gating, resources, accessibility, learner-state authority, readiness placement, support pathways, and cross-course coherence.
 
 ## Grade 09 readiness before course placement
 
-A forensic-candidate `courses/readiness/grade-09/` gateway gathers separate evidence in Mathematics, Language Arts, Science, Social Studies, and Research & Academic Readiness.
+`courses/readiness/grade-09/` is a forensic-candidate gateway with separate evidence in Mathematics, Language Arts, Science, Social Studies, and Research & Academic Readiness.
 
-The readiness system deliberately produces **subject-by-subject recommendations rather than one total learner score**.
+The gateway produces **subject-by-subject recommendations rather than one total learner score**. Current candidate logic includes 50 common core items plus 10 targeted verification items, with follow-up evidence near the 80% boundary or when acceleration may be warranted.
 
-Its architecture borrows useful principles from the Khaemenes Career Assessment Optimizer — evidence separation, response-quality awareness, targeted follow-up, and probability/confidence-minded interpretation — while using demonstrated academic questions instead of preference statements.
+Readiness evidence does not automatically rewrite Family Registry, promote/demote a learner, or award course mastery. NAIB may interpret/delegate next-step context. Family/Academy review remains the formal placement boundary. Current cut bands are policy candidates, not validated psychometric cut scores.
 
-Current candidate logic:
+## Grade 09 Foundations Studio — all five tracks now built as forensic candidates
 
-- 50 common core items;
-- 10 targeted verification items;
-- follow-up verification when evidence is near the 80% boundary or suggests possible acceleration;
-- no automatic Family Registry writes;
-- no automatic promotion/demotion;
-- NAIB receives an interpretation/delegation request when available;
-- Family/Academy review remains the formal placement boundary.
+`courses/foundations/grade-09/` now contains five self-paced support pathways:
 
-The current cut bands are policy candidates, not validated psychometric cut scores. They must be calibrated before production use.
+1. **Mathematics Foundations** — number sense through Pre-Algebra readiness.
+2. **Literacy Foundations** — reading, evidence, writing, revision, source use, and English 9 readiness.
+3. **Science Foundations & Lab Reasoning** — investigation design, measurement, data, safety, systems, CER, sources, and Integrated Science readiness.
+4. **Global Inquiry Foundations** — chronology, geography, sourcing, corroboration, civics/economics, comparative reasoning, and Global Studies readiness.
+5. **Academic Research & Study Studio** — planning, organization, source integrity, citation, data literacy, revision, portfolio habits, and independent-project readiness.
 
-## Grade 09 Foundations Studio
+Each track is 36 weeks × 5 learning days = 180 daily learning-check positions, uses 80% day/week mastery progression, separates formal Grade 09 learner records from preview/practice state, includes checkpoints at Weeks 9, 18, 27, and 36, and uses friendly prerequisite messaging.
 
-`courses/foundations/grade-09/` establishes five non-stigmatizing tracks:
+A learner may need support in one domain while remaining standard or advanced in another. Support does not change Grade 09 membership and must not become a permanent remedial label. The Academic Research & Study Studio is explicitly cross-subject support and must not lower subject placement by itself.
 
-1. Mathematics Foundations
-2. Literacy Foundations
-3. Science Foundations & Lab Reasoning
-4. Global Inquiry Foundations
-5. Academic Research & Study Studio
+### Foundations forensic limitations
 
-A learner may need Foundations in one domain while remaining standard or advanced in another. Support does not change Grade 09 membership. Tracks are mastery-based, permit early exit after verification, and must not become permanent remedial labels.
+All five support tracks are **built but not production-certified**. Before release they still require:
 
-### Mathematics Foundations — built forensic candidate
-
-`courses/foundations/grade-09/mathematics/` now contains a full 36-week interactive Foundation pathway below Pre-Algebra.
-
-- 36 weeks × 5 days = 180 daily lesson-check positions.
-- Each daily check contains five generated problems and requires 80% (4/5) to open the next day.
-- Each week contains a ten-item mastery check and requires 80% (8/10) to open the next week.
-- Friendly locked-state reminders are implemented.
-- Formal Grade 09 progress is learner-scoped through Academy continuity; preview practice is stored separately.
-- Formal learner records cannot be reset from the student-facing course page.
-- Checkpoints after Weeks 9, 18, 27, and 36 support early Pre-Algebra verification when evidence is strong enough.
-- Scope runs from number sense and operations through fractions, decimals, ratios, percent, integers, algebraic readiness, coordinate/function reasoning, geometry, data, probability, and a Pre-Algebra readiness capstone.
-- Purposeful tool assignments are included; planned gaps include Fraction Studio, Equation Forge, Coordinate Cartographer, Function Machine Lab, Data Detective, Ratio Builder, Integer Explorer, and Math Market.
-
-This course is substantial but not yet A+++ certified. Its generated item space still needs enumeration, exact/near duplicate analysis, independent answer verification, distractor collision checks, answer-position analysis, browser/mobile/print validation, and a dedicated Pre-Algebra readiness verification assessment.
+- enumeration of generated item spaces;
+- independent answer-key verification;
+- exact/near-duplicate analysis;
+- answer-position distribution audits;
+- distractor-collision checks;
+- independent cumulative checkpoint pools spanning prior strands;
+- adult/Academy rubrics for constructed-response/workspace evidence;
+- browser/mobile/keyboard/print/accessibility validation;
+- learner A/B isolation and preview/formal separation testing.
 
 ## Canonical Grade 09 learning rule
 
 Formal Grade 09 courses use a **minimum 80% mastery threshold**.
 
-- A learner may begin the first lesson of an available course/week.
-- Lessons inside a week unlock in instructional sequence.
-- A weekly quiz/mastery check unlocks only after the required lesson/evidence sequence has been reached.
-- The next week or unit unlocks only after the current required mastery check reaches **80% or higher**.
-- Midterm and final assessments unlock only when the learner reaches their scheduled point and has satisfied the required prior mastery gates.
-- Semester II may require the first-semester midterm itself to reach 80% before Week 19 opens.
-- Reassessment remains available after review and feedback.
-- A learner attempting to open a locked lesson, quiz, or test receives a friendly reminder explaining exactly what must be completed first.
-- Preview access does not silently create formal Grade 09 mastery, placement, or certification.
+- lessons unlock in instructional sequence;
+- mastery checks open only after required evidence is complete;
+- the next week/unit opens at 80% or higher;
+- scheduled midterm/final gates must honor prior mastery requirements;
+- Semester II may require the first-semester midterm itself at 80% before Week 19;
+- reassessment remains available;
+- locked attempts receive a friendly explanation of the prerequisite;
+- preview access never silently creates formal Grade 09 mastery, placement, or certification.
 
 Recommended reminder tone:
 
 > You’re almost there. This activity opens when the earlier learning step is complete. Finish the current lesson or reach 80% mastery on the required check, then come back — your progress is saved.
 
-Archaemenes may encourage, explain, and guide. Archaemenes does not award mastery or bypass the progression gate.
+Archaemenes may encourage, explain, and guide. Archaemenes does not award mastery or bypass progression gates.
 
 ## Six forensic passes
 
 ### 1. Content integrity
 
-For every objective assessment item:
-
-- confirm one defensible answer;
-- verify calculations, units, dates, chronology, terminology, scientific statements, and source claims;
-- verify distractors are genuinely incorrect;
-- verify answer explanations agree with the key;
-- flag ambiguous or jurisdiction-dependent questions;
-- confirm constructed-response rubrics define acceptable evidence and reasoning.
+For every objective assessment item: confirm one defensible answer; verify calculations, units, dates, chronology, terminology, scientific statements, and source claims; verify distractors and explanations; flag ambiguous/jurisdiction-dependent questions; define constructed-response rubrics.
 
 ### 2. Duplication and template audit
 
-Search across all 36 weeks and cumulative assessments for exact/near duplicate questions, answer-choice sets, lesson bodies, assignment prompts, model answers, cumulative-item reuse, and predictable correct-answer patterns.
-
-A stable weekly rhythm is acceptable. Repeated substantive lessons or assessment items are not.
+Search all 36 weeks and cumulative assessments for exact/near duplicate questions, answer choices, lesson bodies, prompts, model answers, cumulative-item reuse, and predictable correct-answer patterns. Stable rhythm is acceptable; repeated substantive content is not.
 
 ### 3. Standards and rigor
 
-Verify that actual learner evidence — not merely standards labels — supports high-school readiness and college/career preparation through transfer, synthesis, analysis, application, communication, and independent work.
+Verify actual learner evidence supports high-school readiness through transfer, synthesis, analysis, application, communication, and independent work—not merely standards labels.
 
 ### 4. Learning design and interactivity
 
-Each course should provide a consistent sequence:
-
-`overview → lesson → interactive workspace → tools/resources → assignment → mastery check → portfolio/evidence → print/review`
+Target sequence: `overview → lesson → interactive workspace → tools/resources → assignment → mastery check → portfolio/evidence → print/review`.
 
 ### 5. Resource federation
 
-Each week should expose only the tools, apps, games, and resource halls that genuinely support that lesson. Resources are assigned with a learning purpose, not as decorative links.
+Resources must support a specific learning purpose rather than serve as decorative links.
 
 ### 6. UX, accessibility, and print
 
-Verify centered/readable content, no overflow, consistent hierarchy, keyboard operation, visible focus, friendly locked-state messaging, mobile layout, clean print, usable learner inputs, and no student-facing answer-key exposure.
+Verify readable centered layout, no overflow, keyboard operation, visible focus, friendly locks, mobile layout, clean print, usable inputs, and no student-facing answer-key exposure.
 
-## Current course findings and repair state
+## Current formal-course findings
 
 ### English 9
 
 - 36 weeks / 180 daily lesson blocks present.
-- Existing validation reports only 38 objective assessment questions; shared `quizKey` banks create reuse across weeks.
+- Existing validation reports only 38 objective questions; shared `quizKey` banks create reuse.
 - Weekly bodies show substantial five-day template repetition.
-- Academy learner-scoped continuity is installed.
-- Sequential lesson gating and 80% weekly mastery progression are installed.
-- Midterm now functions as an 80% Semester II gate in the hardened path.
-- Remaining: week-specific assessment expansion, lesson differentiation, tool mapping, semantic duplicate audit, browser/print validation.
+- Academy learner-scoped continuity and sequential 80% gates are installed.
+- Midterm is now an 80% Semester II gate in the hardened path.
+- **Remaining:** week-specific assessment expansion, lesson differentiation, tool mapping, semantic duplicate audit, browser/print validation.
 
 ### Integrated Science 9
 
-- 36-week integrated science scope and investigation architecture are strong.
-- Academy learner-scoped continuity is installed.
-- Sequential lesson/week 80% gating is staged.
-- Conceptual six-question generator repetition was confirmed.
-- A forensic assessment-diversity layer now mixes domain-specific questions with applied evidence/CER/source-evaluation items.
-- Cumulative-assessment milestone gating has been staged.
-- Remaining: expand/verify the full question bank, integrate cumulative scores into formal records, verify numeric generators, confirm week-specific investigations/resources, browser/print validation.
+- 36-week integrated scope/investigation architecture is strong.
+- Academy continuity and sequential 80% gating are staged.
+- Repetitive conceptual generator behavior was confirmed.
+- A forensic diversity layer now adds domain-specific, applied, CER, and source-evaluation items.
+- Cumulative milestone gating is staged.
+- **Remaining:** full bank verification/expansion, cumulative-score integration into formal records, numeric-generator validation, week/resource checks, browser/print validation.
 
 ### Global Studies Honors 9
 
 - 36 weeks / 180 lesson slots / 108 principal assignments structurally present.
-- Forensic review confirmed heavy substantive template repetition across all five weekly lesson roles and all three weekly assignment roles.
-- Small shared quiz banks are reused across many weeks.
-- Midterm/final reuse weekly-bank items.
+- Heavy substantive five-day/three-assignment template repetition was confirmed.
+- Small shared quiz banks are reused across weeks; midterm/final reuse weekly-bank items.
 - Correct-answer index bias is strong.
-- Generated portal uses 70% instead of the Academy's 80% standard.
-- Generated portal has an independent local student identity.
-- Academy-facing wrapper and a full 36-week differentiation/gating layer have been prepared.
-- Remaining: objective-bank rewrite, exam independence, answer verification/balancing, integration validation, browser/print testing.
+- Original generated portal used 70% and independent local learner identity; hardened wrapper corrects authority/gating direction.
+- **Remaining:** objective-bank rewrite, independent cumulative exams, answer verification/balancing, integration validation, browser/print testing.
 
 ### Grade 09 Mathematics
 
-- Mathematics Foundations is now a full 36-week interactive support pathway below Pre-Algebra.
-- Pre-Algebra remains explicitly a secondary-readiness / Grade 9 bridge pathway.
-- Exact repeated weekly quiz banks are still confirmed in multiple consecutive Pre-Algebra weeks.
-- Sampled Pre-Algebra banks show substantial correct-answer-position bias.
-- Recommended progression is Mathematics Foundations → Pre-Algebra Bridge → Algebra I / Integrated Math I → advanced verification where prior evidence supports acceleration.
-- Remaining: validate the full generated Mathematics Foundations item space, build its independent Pre-Algebra readiness verification, rewrite duplicate Pre-Algebra banks, rebalance answer positions, complete browser/print testing, and confirm tool/game mappings.
-
-### Cross-subject support
-
-The Foundations Studio defines parallel support for literacy, scientific reasoning, global/source reasoning, and academic research/study skills. These four tracks still require full lesson banks, interactive assignments, 80% exit verification, tool mappings, and the same uniqueness/answer-integrity standards before release.
+- Mathematics Foundations is now built below Pre-Algebra.
+- Pre-Algebra remains a Grade 9 bridge pathway rather than the sole expectation.
+- Exact repeated weekly Pre-Algebra quiz banks and answer-position bias remain confirmed.
+- Recommended continuum: **Mathematics Foundations → Pre-Algebra Bridge → Algebra I / Integrated Math I → advanced verification**.
+- **Remaining:** generated Foundations bank validation, independent Pre-Algebra readiness verification, duplicate Pre-Algebra bank rewrite, answer balancing, mastery-gate review, tool/game mapping, browser/print validation.
 
 ## Readiness-gateway acceptance tests
 
-Before the readiness system may influence formal Academy placement:
+Before readiness may influence formal placement:
 
-1. Every item and key is independently verified.
-2. Exact/near duplicate items are removed or deliberately labeled as verification variants.
-3. Correct-answer positions show no exploitable pattern.
-4. Borderline scores trigger additional evidence rather than automatic placement.
-5. Advanced recommendations require second-stage verification.
-6. One domain's support need does not lower unrelated subject placement.
-7. No readiness result automatically rewrites Family Registry grade or course placement.
-8. NAIB interpretation is advisory/delegative rather than silent placement authority.
-9. Learner-local records do not leak between students.
-10. Writing/reasoning evidence is added before high-stakes production use.
+1. every item/key independently verified;
+2. exact/near duplicates removed or deliberately identified as verification variants;
+3. answer positions show no exploitable pattern;
+4. borderline results trigger more evidence, not automatic placement;
+5. advanced recommendations require second-stage verification;
+6. one domain's support need does not lower unrelated placement;
+7. no automatic Family Registry placement mutation;
+8. NAIB remains interpretive/delegative rather than silent placement authority;
+9. learner-local records do not leak between learners;
+10. writing/reasoning evidence is added before high-stakes use.
 
 ## Mastery-gate acceptance tests
 
-Before Grade 09 receives final forensic approval, each formal course must pass:
-
 1. Week/Unit 1 is available to the eligible learner.
-2. A future lesson cannot be opened before its prerequisite learning step.
-3. A friendly reminder appears instead of a dead or punitive lock.
-4. A weekly mastery check cannot be submitted before required learning is complete.
-5. A score below 80% keeps the next required week/unit locked and offers reassessment guidance.
-6. A score of 80% or higher unlocks the next required week/unit, subject to scheduled semester/exam gates.
-7. Midterm remains locked until the scheduled prior segment is mastered.
-8. Semester II and final honor the required prior exam gate where the course specifies it.
-9. Preview users do not create formal mastery records.
-10. Switching Academy learners does not transfer unlock state between learners.
+2. Future lessons cannot open before prerequisites.
+3. Friendly reminders replace dead/punitive locks.
+4. Mastery checks cannot be submitted before required learning.
+5. Below 80% keeps the next required step locked and offers reassessment.
+6. 80%+ unlocks exactly the intended next step, subject to semester/exam gates.
+7. Midterm remains locked until scheduled prerequisites are mastered.
+8. Semester II/final honor required prior exam gates.
+9. Preview users cannot create formal mastery records.
+10. Switching Academy learners does not transfer unlock state.
+
+## Immediate checklist from this point
+
+1. **Global Studies 9 objective-bank rebuild and independent midterm/final** — highest remaining duplication/answer-pattern risk.
+2. **English 9 assessment diversity and lesson differentiation.**
+3. **Integrated Science 9 cumulative-score integration and remaining bank validation.**
+4. **Pre-Algebra duplicate-bank rewrite plus dedicated readiness verification.**
+5. **Cross-course Grade 09 static validation.**
+6. **Browser/mobile/keyboard/print and learner-switch testing.**
+7. Only after those passes may Grade 09 be considered for A+++ forensic validation or merge/publish review.
 
 ## Completion standard
 
-Grade 09 is not labeled **A+++ forensic validated** until readiness/placement integrity, support-pathway quality, content integrity, uniqueness, assessment diversity, meaningful lesson differentiation, 80% progression, resource purpose, interface quality, learner-scoped records, Grade 08 preview separation, and browser/deployment checks all pass.
+Grade 09 is not labeled **A+++ forensic validated** until readiness/placement integrity, all five support pathways, formal-course content integrity, uniqueness, assessment diversity, meaningful lesson differentiation, 80% progression, resource purpose, interface quality, learner-scoped records, Grade 08 preview separation, and browser/deployment checks all pass.
 
 ---
 
