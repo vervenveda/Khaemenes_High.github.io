@@ -11,13 +11,7 @@ The audit is stricter than a structural file check. It examines curriculum quali
 
 ## Grade 09 readiness before course placement
 
-A new forensic-candidate `courses/readiness/grade-09/` gateway now gathers separate evidence in:
-
-- Mathematics;
-- Language Arts;
-- Science;
-- Social Studies;
-- Research & Academic Readiness.
+A forensic-candidate `courses/readiness/grade-09/` gateway gathers separate evidence in Mathematics, Language Arts, Science, Social Studies, and Research & Academic Readiness.
 
 The readiness system deliberately produces **subject-by-subject recommendations rather than one total learner score**.
 
@@ -37,7 +31,7 @@ The current cut bands are policy candidates, not validated psychometric cut scor
 
 ## Grade 09 Foundations Studio
 
-A new `courses/foundations/grade-09/` support portal establishes five non-stigmatizing tracks:
+`courses/foundations/grade-09/` establishes five non-stigmatizing tracks:
 
 1. Mathematics Foundations
 2. Literacy Foundations
@@ -45,9 +39,23 @@ A new `courses/foundations/grade-09/` support portal establishes five non-stigma
 4. Global Inquiry Foundations
 5. Academic Research & Study Studio
 
-A learner may need Foundations in one domain while remaining standard or advanced in another.
+A learner may need Foundations in one domain while remaining standard or advanced in another. Support does not change Grade 09 membership. Tracks are mastery-based, permit early exit after verification, and must not become permanent remedial labels.
 
-Support does not change Grade 09 membership. Tracks should be mastery-based, allow early exit after verification, and never become a permanent remedial label.
+### Mathematics Foundations — built forensic candidate
+
+`courses/foundations/grade-09/mathematics/` now contains a full 36-week interactive Foundation pathway below Pre-Algebra.
+
+- 36 weeks × 5 days = 180 daily lesson-check positions.
+- Each daily check contains five generated problems and requires 80% (4/5) to open the next day.
+- Each week contains a ten-item mastery check and requires 80% (8/10) to open the next week.
+- Friendly locked-state reminders are implemented.
+- Formal Grade 09 progress is learner-scoped through Academy continuity; preview practice is stored separately.
+- Formal learner records cannot be reset from the student-facing course page.
+- Checkpoints after Weeks 9, 18, 27, and 36 support early Pre-Algebra verification when evidence is strong enough.
+- Scope runs from number sense and operations through fractions, decimals, ratios, percent, integers, algebraic readiness, coordinate/function reasoning, geometry, data, probability, and a Pre-Algebra readiness capstone.
+- Purposeful tool assignments are included; planned gaps include Fraction Studio, Equation Forge, Coordinate Cartographer, Function Machine Lab, Data Detective, Ratio Builder, Integer Explorer, and Math Market.
+
+This course is substantial but not yet A+++ certified. Its generated item space still needs enumeration, exact/near duplicate analysis, independent answer verification, distractor collision checks, answer-position analysis, browser/mobile/print validation, and a dedicated Pre-Algebra readiness verification assessment.
 
 ## Canonical Grade 09 learning rule
 
@@ -142,17 +150,16 @@ Verify centered/readable content, no overflow, consistent hierarchy, keyboard op
 
 ### Grade 09 Mathematics
 
-- Pre-Algebra is explicitly a secondary-readiness / Grade 9 bridge pathway.
-- Exact repeated weekly quiz banks are confirmed in multiple consecutive weeks.
-- Sampled banks show substantial correct-answer-position bias.
-- Pre-Algebra should remain Foundation/Bridge rather than become the sole Grade 09 mathematics expectation.
-- Grade 09 mathematics now has an explicit support architecture below Pre-Algebra: Mathematics Foundations.
-- Recommended progression is Foundations → Pre-Algebra Bridge → Algebra I/Integrated Math I → advanced verification where prior evidence supports acceleration.
-- Remaining: build the full Mathematics Foundations lesson/assessment bank, duplicate-bank rewrite in Pre-Algebra, answer-position balancing, mastery gate review, pathway organization, tool/game mapping, browser/print validation.
+- Mathematics Foundations is now a full 36-week interactive support pathway below Pre-Algebra.
+- Pre-Algebra remains explicitly a secondary-readiness / Grade 9 bridge pathway.
+- Exact repeated weekly quiz banks are still confirmed in multiple consecutive Pre-Algebra weeks.
+- Sampled Pre-Algebra banks show substantial correct-answer-position bias.
+- Recommended progression is Mathematics Foundations → Pre-Algebra Bridge → Algebra I / Integrated Math I → advanced verification where prior evidence supports acceleration.
+- Remaining: validate the full generated Mathematics Foundations item space, build its independent Pre-Algebra readiness verification, rewrite duplicate Pre-Algebra banks, rebalance answer positions, complete browser/print testing, and confirm tool/game mappings.
 
 ### Cross-subject support
 
-The Foundations Studio now defines parallel support for literacy, scientific reasoning, global/source reasoning, and academic research/study skills. These tracks require full lesson banks, interactive assignments, 80% exit verification, tool mappings, and the same uniqueness/answer-integrity standards before release.
+The Foundations Studio defines parallel support for literacy, scientific reasoning, global/source reasoning, and academic research/study skills. These four tracks still require full lesson banks, interactive assignments, 80% exit verification, tool mappings, and the same uniqueness/answer-integrity standards before release.
 
 ## Readiness-gateway acceptance tests
 
