@@ -278,6 +278,7 @@ $("deleteStudent").onclick=()=>{let s=student(); if(!s)return; if(!confirm(`Dele
 $("demo").onclick=()=>{addStudent("Demo Senior"); let s=student(); for(let i=1;i<=4;i++){let r=weekRec(s,i); ["Monday","Tuesday","Wednesday"].forEach(d=>r.lessons[d]=true); r.assignments[0]=true; r.quiz.best=[90,84,88,76][i-1]; r.quiz.attempts.push({date:new Date().toISOString(),score:r.quiz.best}); if(i<3)r.portfolio=true;} s.progress.thesis.hours=18; save(); render();};
 if(!state.students.length)addStudent("First Student"); else render();
 </script>
+<script src="/assets/vnv-beta-link.js" defer></script>
 </body>
 </html>
 

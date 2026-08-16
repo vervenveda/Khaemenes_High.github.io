@@ -15,4 +15,6 @@ const KEY='khae_ss10_teacher_code';const current=()=>localStorage.getItem(KEY)||
 function openPortal(){document.getElementById('gate').hidden=true;document.getElementById('portal').hidden=false}
 document.getElementById('enter').onclick=()=>{if(document.getElementById('code').value===current())openPortal();else alert('Passcode not recognized.')};
 document.getElementById('change').onclick=()=>{const v=document.getElementById('newCode').value.trim();if(v.length<4)return alert('Use at least four characters.');localStorage.setItem(KEY,v);document.getElementById('msg').textContent='Local passcode changed for this browser.'};
-</script></body></html>
+</script>
+<script src="/assets/vnv-beta-link.js" defer></script>
+</body></html>

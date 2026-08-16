@@ -62,4 +62,6 @@ $('#saveWeeklyApprovals').onclick=()=>{if(!student)return;COURSE.weeks.forEach(w
 $('#saveCheckpoints').onclick=()=>{if(!student)return;COURSE.capstoneCheckpoints.forEach(c=>{student.capstone[c.id]={approved:document.querySelector(`[data-cp="${c.id}"]`).checked,note:document.querySelector(`[data-cpnote="${c.id}"]`).value,updated:new Date().toLocaleString()}});save();renderAudit()};
 $('#issueCredit').onclick=()=>{if(!student)return;const a=audit(student,false);if(!a.ready){alert('Every pre-issuance gate must pass.');return}if(confirm(`Issue 1.0 honors credit to ${student.name}?`)){student.teacher.issued=true;student.teacher.issuedDate=new Date().toISOString().slice(0,10);save();$('#issueMsg').textContent='Final credit issued and recorded.';renderAudit()}};
 $('#revokeCredit').onclick=()=>{if(student&&confirm('Return this record to Incomplete / Credit Not Issued?')){student.teacher.issued=false;student.teacher.issuedDate='';save();$('#issueMsg').textContent='Credit issuance removed pending review.';renderAudit()}};
-</script></body></html>
+</script>
+<script src="/assets/vnv-beta-link.js" defer></script>
+</body></html>
