@@ -45,7 +45,7 @@ The affected layers have now been separated into normal external iframe runtimes
 - `global9-bridge-runtime.js` — learner-scoped Academy continuity, prerequisite gating, formal 80% progression, exam gates, friendly reminders;
 - `global9-forensic-runtime.js` — differentiated historical-thinking lesson structure and purposeful resource federation.
 
-The corresponding outer assets are now small loaders using `async=false` for deterministic dynamic-script ordering.
+The corresponding outer assets are now small loaders using deterministic dynamic-script ordering.
 
 `global9-objective-bank.js` was separately inspected for the same nested-template defect. Its injected objective data use ordinary quoted strings rather than nested template literals, so this specific lexical defect was not found there.
 
@@ -67,20 +67,37 @@ The earlier detailed week-by-week upgrade file remains in repository history, bu
 
 ## Objective-assessment architecture
 
-The hardening branch still contains:
+The hardening branch contains:
 
 - 36 × 5 week-specific items = **180 weekly items**;
 - **18 independent midterm transfer items**;
 - **24 independent final transfer items**;
-- deterministic answer-position balancing after the objective bank loads.
+- deterministic answer-position balancing after the objective bank loads;
+- a browser forensic-audit harness for count/choice/index/duplicate/answer-position/weekly-overlap checks;
+- a post-bank content-integrity correction layer that runs **before** answer balancing.
 
 This structurally fixes the original shared-bank and copied-exam defects.
 
+## Historical content-integrity pass
+
+`CONTENT_INTEGRITY_PASS_2026-08-16.md` records a source-level wording/key review of the hardened objective architecture.
+
+Five items were tightened rather than rewriting the bank indiscriminately:
+
+1. **Week 13 — imperial Chinese examinations:** revised to `later imperial China` so the question does not imply one unchanged examination regime across all dynasties.
+2. **Week 20 — Peace of Westphalia:** revised to avoid the common oversimplification that the 1648 settlements single-handedly created modern sovereignty.
+3. **Week 30 — Great Depression:** replaced a circular chronology item with a multicausal explanation involving financial, banking, demand, trade, policy, and international monetary stresses.
+4. **Week 31 — Holocaust terminology:** revised to distinguish the Holocaust specifically as the genocide of European Jews while recognizing other groups targeted by Nazi persecution and mass murder under distinct policies.
+5. **Week 32 — proxy-war framing:** revised to retain local causes, goals, and agency while still identifying outside-power sponsorship.
+
+The correction layer is `assets/global9-content-integrity-fix.js` and loads after the objective bank but before answer balancing and the forensic-audit harness.
+
+No broad rewrite was justified by this pass. The bank generally already avoids geographic determinism, single-cause explanations, uniform institutional claims, passive-local-actor framing, correlation/causation errors, and treating source types as self-interpreting evidence.
+
 ## Remaining A+++ blockers
 
-- independently verify every weekly, midterm, and final answer, distractor, date, chronology, geographic reference, and explanation;
-- run exact and semantic duplicate analysis over all 222 objective items;
-- confirm deterministic answer balancing produces an acceptable final distribution;
+- second independent verification of every weekly, midterm, and final answer, distractor, date, chronology, geographic reference, and explanation;
+- execute the installed browser forensic audit and record exact/semantic duplicate findings and post-balance answer-position distribution;
 - confirm constructed-response rubrics;
 - browser/mobile/keyboard/print/learner-switch/preview validation;
 - verify external runtime load order against the preserved legacy page;
@@ -88,4 +105,4 @@ This structurally fixes the original shared-bank and copied-exam defects.
 
 ## Current verdict
 
-**Global Studies is materially stronger and the forensic pass removed a source-level runtime blocker in addition to the earlier assessment-repetition repairs. The objective architecture is now structurally independent, the Academy runtime is learner-scoped, and lesson differentiation remains topic-linked. Independent factual/key verification and live integration testing remain before A+++ certification.**
+**Global Studies is materially stronger. The forensic process removed the source-level runtime blocker, repaired the original assessment architecture, and tightened five historically important items where the previous wording risked oversimplification or imprecision. The course remains a forensic candidate pending second-pass content verification and live/browser evidence.**
