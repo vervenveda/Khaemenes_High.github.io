@@ -5,7 +5,7 @@
   frame.addEventListener("load",()=>{
     const doc=frame.contentDocument;if(!doc)return;
     function clearAssessmentNavLock(){
-      doc.querySelectorAll('a[href*="assessments"],button[data-view="assessments"],.navBtn[data-view="assessments"],.tab[data-view="assessments"]').forEach(el=>{
+      doc.querySelectorAll('button[data-view="assessments"],.navBtn[data-view="assessments"],.tab[data-view="assessments"]').forEach(el=>{
         el.removeAttribute("data-mastery-locked");
         el.removeAttribute("aria-disabled");
         el.removeAttribute("title");
@@ -13,7 +13,7 @@
       });
     }
     const observer=new MutationObserver(()=>queueMicrotask(clearAssessmentNavLock));
-    observer.observe(doc.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["data-mastery-locked","aria-disabled","style","title"]});
+    observer.observe(doc.documentElement,{subtree:true,childList:true});
     clearAssessmentNavLock();
   });
 })();
