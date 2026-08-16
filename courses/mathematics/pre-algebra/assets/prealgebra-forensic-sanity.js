@@ -19,7 +19,7 @@ function rotate(correct,wrongs,answerIndex){
 }
 let duplicateChoiceRepairs=0,gcfRepairs=0;
 for(const [key,bank] of Object.entries(APP.quizBank||{})){
-  if(!String(key).startsWith("forensic_" )||!Array.isArray(bank))continue;
+  if(!String(key).startsWith("forensic_")||!Array.isArray(bank))continue;
   bank.forEach((raw,idx)=>{
     if(!Array.isArray(raw)||!Array.isArray(raw[1])||raw[1].length!==4)return;
     const match=String(raw[0]).match(/greatest common factor of (\d+) and (\d+)/i);
@@ -27,15 +27,18 @@ for(const [key,bank] of Object.entries(APP.quizBank||{})){
       const actual=gcd(Number(match[1]),Number(match[2])),r=rotate(actual,[actual+1,actual+2,Math.min(Number(match[1]),Number(match[2]))+1],raw[2]);
       raw[1]=r.choices;raw[2]=r.answer;raw[3]="The GCF is the greatest positive integer that divides both values exactly.";gcfRepairs++;
     }
-    const seen=new Map();
-    raw[1]=raw[1].map((choice,i)=>{
-      const text=String(choice).trim();
-      if(!seen.has(text)){seen.set(text,i);return choice}
-      if(i===raw[2]){
-        const first=seen.get(text);raw[1][first]="Not enough information "+(idx+1);seen.delete(text);seen.set(text,i);duplicateChoiceRepairs++;return choice;
+    const choices=[...raw[1]],correctIndex=Number(raw[2]),correctText=String(choices[correctIndex]).trim(),used=new Set([correctText]);
+    for(let i=0;i<choices.length;i++){
+      if(i===correctIndex)continue;
+      const text=String(choices[i]).trim();
+      if(used.has(text)){
+        let replacement=`Not enough information ${idx+i+1}`;
+        while(used.has(replacement))replacement+="x";
+        choices[i]=replacement;duplicateChoiceRepairs++;
       }
-      duplicateChoiceRepairs++;return "Not enough information "+(idx+i+1);
-    });
+      used.add(String(choices[i]).trim());
+    }
+    raw[1]=choices;
   });
 }
 window.__KHAEMENES_PREALGEBRA_SANITY__={gcfRepairs,duplicateChoiceRepairs};
