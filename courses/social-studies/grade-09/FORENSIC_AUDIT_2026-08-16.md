@@ -12,102 +12,59 @@ The structural counts are real — 36 weeks, 180 Monday–Friday lesson slots, 1
 
 A structural count therefore must not be treated as proof of curricular uniqueness.
 
-## Preservation rule
+## Confirmed defects
 
-The pre-forensic generated portal is retained as `legacy.html` while the Academy-facing `index.html` becomes the continuity/gating surface. The original course is being repaired rather than discarded.
+1. The generated portal uses a 70% passing target instead of the Academy's 80% mastery threshold.
+2. The same five substantive Monday–Friday lesson shells recur with topic substitution.
+3. The same three assignment structures recur across most weeks.
+4. Small shared objective banks are reused across many weeks.
+5. Midterm/final items reuse questions from weekly banks.
+6. Correct-answer index 0 is overrepresented.
+7. The generated portal creates its own local students instead of using Academy learner authority.
 
-## Defects confirmed
+## Repairs prepared/staged
 
-### 1. Mastery target conflict
+- Academy learner continuity and learner-scoped records.
+- Grade 08 preview isolation.
+- 80% formal progression.
+- Monday → Friday prerequisite sequence.
+- Three weekly evidence assignments required before formal mastery check.
+- Next week unlocked only after prior week reaches 80%.
+- Midterm after first-semester mastery; Semester II requires an 80% midterm.
+- Final after full-year mastery and required prior exam gate.
+- Friendly lock explanations and reassessment.
+- Thirty-six topic-specific inquiry upgrades covering historical methods, source analysis, map/data work, argumentation, and synthesis.
+- Week-specific Verve N Veda resources with explicit learning purposes.
 
-The generated portal uses `passingTarget: 70` and `honorsTarget: 85`. Formal Academy progression requires **80% mastery**. Honors distinction may remain higher, but it cannot lower the advancement threshold.
+## Examples of substantive differentiation
 
-### 2. Repeated weekly lesson bodies
-
-The old course repeatedly used the same five substantive lesson shells with topic substitution: `Frame the Inquiry`, `Read Like a Historian`, `Map, Measure, and Compare`, `Discuss, Debate, and Write`, and `Synthesize and Demonstrate`.
-
-A stable weekly rhythm is useful; identical substantive work is not.
-
-### 3. Repeated assignment bodies
-
-The same `Source Lab`, `Atlas & Data Investigation`, and `Evidence-Based Argument` structures recurred nearly every week with only the topic substituted.
-
-### 4. Shared five-question quiz banks
-
-Many weeks point to the same small inquiry/geography/civics/economics/belief/conflict/empires/ideas/history banks and therefore receive exactly the same objective questions.
-
-### 5. Midterm and final reuse weekly-bank items
-
-The cumulative exams reuse objective questions from the same weekly banks, materially reducing assessment independence.
-
-### 6. Correct-answer position bias
-
-A large proportion of the current bank uses answer index `0`, creating a test-taking cue unrelated to content mastery.
-
-### 7. Independent local learner identity
-
-The generated portal creates First Student / Demo Student / Add/Delete records under a shared browser key. The hardened path must instead use the active Academy Grade 09 learner and learner-scoped records.
-
-## Repairs staged in the forensic layer
-
-- Academy learner authority replaces the independent local student selector in the hardened entry.
-- Formal Global Studies records are learner-scoped.
-- Grade 08 advanced preview remains exploratory and cannot write formal Grade 09 mastery.
-- Formal passing/advancement threshold is 80%.
-- Lessons gate in Monday → Friday sequence.
-- The three substantial weekly evidence assignments are required before the weekly mastery check.
-- The next week remains locked until the prior weekly mastery check reaches 80% or higher.
-- The midterm waits for first-semester mastery; Semester II also requires the midterm to reach 80%.
-- The final waits for full-year mastery plus the required prior assessment gate.
-- Friendly reminders explain why a lesson, quiz, week, or exam remains locked.
-- The 36 weeks receive topic-specific forensic inquiry upgrades so the actual source work, map/data task, argument, and synthesis product differ by historical context.
-- Week-level Verve N Veda tools are assigned with an explicit academic purpose.
-
-## Differentiation examples now defined
-
-- Agricultural Revolution — archaeology evidence matrix, domestication/settlement map, health/inequality trade-off analysis.
-- Persia and Greek World — imperial administration comparison, primary-source sourcing, citizenship/participation analysis.
-- Rome and Han — bureaucracy/frontier comparison and institutional endurance model.
-- Indian Ocean — monsoon-route map, merchant evidence, exchange-network causal model.
-- Mongol expansion / Black Death — network-flow map, mortality evidence, source corroboration, systems causation.
-- Renaissance / printing — image/text source comparison, print-diffusion evidence, communication-network analysis.
-- Atlantic slavery — voyage data, testimony/source ethics, coerced-labor system map, resistance analysis.
-- Industrial Revolution — production/urbanization data, labor evidence, competing measures of improvement.
-- Imperialism — map changes, economic evidence, resistance perspectives, competing causal explanations.
-- World Wars / Holocaust / genocide studies — careful chronology, institutional evidence, survivor-source protocols, perpetrator/bystander/resistance analysis.
-- Cold War — proxy-conflict mapping, competing perspectives, systems model.
-- Decolonization — self-determination sources, independence timelines, comparative state-building.
-- Globalization — trade/development/migration data with explicit limitations.
-- Comparative government / media literacy — lateral reading, source triangulation, institutional comparison.
-- Civic capstone — nonpartisan evidence file, stakeholder map, options matrix, public product, reflection.
-
-## Formal 80% progression target
-
-1. Week 1 available to the eligible Grade 09 learner.
-2. Monday → Friday instructional sequence.
-3. Three substantial weekly evidence assignments completed before the formal weekly mastery check.
-4. Weekly mastery check opens only after required evidence is reached.
-5. Next week opens only after the current mastery check reaches **80% or higher**.
-6. Midterm opens after first-semester mastery.
-7. Semester II opens only after the midterm reaches **80% or higher**.
-8. Final opens after full-year mastery plus the required midterm gate.
-9. Reassessment remains available.
-10. Preview access does not create formal mastery.
-
-## Resource federation targets
-
-The staged week mappings use appropriate combinations of ARSHIF, The Verifier, World Wire, Evidence & Citation Studio, PLERA Search, Ancients Trivia, Civic Compass Trivia, High School Voter Portal, and Finance Hall. Each resource has an explicit learning purpose.
+- Agricultural Revolution: archaeology evidence matrix, domestication map, health/inequality trade-offs.
+- Persia/Greek World: imperial administration and citizenship comparison.
+- Rome/Han: institutional endurance and frontier model.
+- Indian Ocean: monsoon-route and merchant-network analysis.
+- Mongols/Black Death: network risk, mortality evidence, corroboration.
+- Renaissance/printing: image-text comparison and diffusion evidence.
+- Atlantic slavery: voyage data, testimony/source ethics, coerced-labor systems, resistance.
+- Industrialization: production/urbanization/labor data and multi-indicator well-being analysis.
+- Imperialism: maps, resistance perspectives, multi-causal explanations.
+- Holocaust/genocide study: careful chronology, institutional evidence, survivor-source protocols, dignity, agency, and responsibility without collective-guilt shortcuts.
+- Cold War: proxy-conflict map plus local/regional/global analysis.
+- Decolonization: independence timelines and state-building comparison.
+- Globalization: trade/development/migration data with limitations.
+- Comparative government/media literacy: lateral reading, source triangulation, institutional comparison.
+- Civic capstone: nonpartisan evidence file, stakeholder map, options matrix, public product, reflection.
 
 ## Remaining A+++ blockers
 
-- replace/rebuild the shared weekly objective banks with sufficiently large, week-specific, semantically unique assessment sets;
-- rebalance correct-answer positions;
-- make midterm/final objective items independent from weekly questions;
-- verify every objective answer, distractor, explanation, date, chronology, geography, and historical claim;
-- add/verify constructed-response rubrics;
-- static syntax/integration check of the new wrapper/bridge/quality layer;
-- browser, mobile, print, learner-switch, preview, and deployment validation.
+- rebuild shared weekly objective banks into sufficiently large, week-specific, semantically unique sets;
+- rebalance answer positions;
+- create cumulative exams independent from weekly questions;
+- verify every answer, distractor, date, chronology, geographic reference, and explanation;
+- confirm constructed-response rubrics;
+- verify the preserved legacy portal and hardening assets are attached to the active branch;
+- static syntax/integration check;
+- browser/mobile/print/learner-switch/preview/deployment validation.
 
 ## Current verdict
 
-**Substantial foundation with meaningful forensic repairs staged; not yet A+++ certified.**
+**Substantial foundation with meaningful forensic repairs prepared; not yet A+++ certified.**
