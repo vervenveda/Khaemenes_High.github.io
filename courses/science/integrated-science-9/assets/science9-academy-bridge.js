@@ -67,7 +67,7 @@
     win.__KHAEMENES_SCIENCE9_BRIDGE__=formal?{mode:"formal",learnerId:ctx.learner.learnerId,nickname:ctx.learner.nickname,record}:{mode:"preview",learnerId:null,nickname:ctx.learner?.nickname||"Preview Scholar",record:null};
     const script=doc.createElement("script");
     script.src="assets/science9-bridge-runtime.js";
-    script.defer=false;
+    script.async=false;
     doc.body.appendChild(script);
     restoreLegacy();
   },{once:true});
