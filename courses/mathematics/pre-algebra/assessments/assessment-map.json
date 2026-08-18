@@ -18,7 +18,9 @@
       "scope": "Units 01-13 / 36 weeks",
       "questions": 80,
       "path": "final-exam-36-weeks.html",
-      "result_key": "khaemenes-prealgebra-final-result-v1"
+      "result_key": "khaemenes-prealgebra-final-result-v1",
+      "mastery_threshold": 80,
+      "work_pages": "final-exam-work-pages.html"
     }
   ],
   "definitive_answer_policy": [
@@ -27,5 +29,17 @@
     "No subjective best-answer items without a defined criterion",
     "Conventions stated when material",
     "Balanced answer positions"
-  ]
+  ],
+  "mastery_threshold": 80,
+  "readiness_policy": {
+    "evidence_set": [
+      "unit mastery records",
+      "midterm",
+      "final examination",
+      "Unit 13 capstone",
+      "representative work samples"
+    ],
+    "naib": "advisory analysis only",
+    "placement": "parent/guardian decision"
+  }
 }
