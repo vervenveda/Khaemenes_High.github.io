@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0",
+  "unit": "KH-MATH-PA-U01",
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ar": "العربية",
+    "pt": "Português"
+  },
+  "terms": [
+    {
+      "id": "natural-number",
+      "en": "natural number",
+      "definition": "A counting number, usually 1, 2, 3, and so on.",
+      "es": "número natural",
+      "fr": "nombre naturel",
+      "ar": "عدد طبيعي",
+      "pt": "número natural"
+    },
+    {
+      "id": "whole-number",
+      "en": "whole number",
+      "definition": "A natural number or zero.",
+      "es": "número entero no negativo",
+      "fr": "nombre entier naturel",
+      "ar": "عدد كلي",
+      "pt": "número inteiro não negativo"
+    },
+    {
+      "id": "integer",
+      "en": "integer",
+      "definition": "A whole number, its opposite, or zero.",
+      "es": "entero",
+      "fr": "entier relatif",
+      "ar": "عدد صحيح",
+      "pt": "número inteiro"
+    },
+    {
+      "id": "rational-number",
+      "en": "rational number",
+      "definition": "A number that can be written as a/b, where a and b are integers and b is not zero.",
+      "es": "número racional",
+      "fr": "nombre rationnel",
+      "ar": "عدد نسبي",
+      "pt": "número racional"
+    },
+    {
+      "id": "irrational-number",
+      "en": "irrational number",
+      "definition": "A real number that cannot be written as a ratio of integers; its decimal does not terminate or repeat.",
+      "es": "número irracional",
+      "fr": "nombre irrationnel",
+      "ar": "عدد غير نسبي",
+      "pt": "número irracional"
+    },
+    {
+      "id": "real-number",
+      "en": "real number",
+      "definition": "Any rational or irrational number that can be located on the number line.",
+      "es": "número real",
+      "fr": "nombre réel",
+      "ar": "عدد حقيقي",
+      "pt": "número real"
+    },
+    {
+      "id": "factor",
+      "en": "factor",
+      "definition": "A whole number that divides another whole number with no remainder.",
+      "es": "factor",
+      "fr": "facteur",
+      "ar": "عامل",
+      "pt": "fator"
+    },
+    {
+      "id": "factor-pair",
+      "en": "factor pair",
+      "definition": "Two whole-number factors whose product is a given number.",
+      "es": "par de factores",
+      "fr": "paire de facteurs",
+      "ar": "زوج عوامل",
+      "pt": "par de fatores"
+    },
+    {
+      "id": "multiple",
+      "en": "multiple",
+      "definition": "A product of a number and a whole number.",
+      "es": "múltiplo",
+      "fr": "multiple",
+      "ar": "مضاعف",
+      "pt": "múltiplo"
+    },
+    {
+      "id": "common-factor",
+      "en": "common factor",
+      "definition": "A factor shared by two or more numbers.",
+      "es": "factor común",
+      "fr": "facteur commun",
+      "ar": "عامل مشترك",
+      "pt": "fator comum"
+    },
+    {
+      "id": "common-multiple",
+      "en": "common multiple",
+      "definition": "A multiple shared by two or more numbers.",
+      "es": "múltiplo común",
+      "fr": "multiple commun",
+      "ar": "مضاعف مشترك",
+      "pt": "múltiplo comum"
+    },
+    {
+      "id": "prime-number",
+      "en": "prime number",
+      "definition": "A whole number greater than 1 with exactly two positive factors: 1 and itself.",
+      "es": "número primo",
+      "fr": "nombre premier",
+      "ar": "عدد أولي",
+      "pt": "número primo"
+    },
+    {
+      "id": "composite-number",
+      "en": "composite number",
+      "definition": "A whole number greater than 1 with more than two positive factors.",
+      "es": "número compuesto",
+      "fr": "nombre composé",
+      "ar": "عدد مركب",
+      "pt": "número composto"
+    },
+    {
+      "id": "prime-factorization",
+      "en": "prime factorization",
+      "definition": "A number written as a product of prime factors.",
+      "es": "factorización prima",
+      "fr": "décomposition en facteurs premiers",
+      "ar": "تحليل إلى العوامل الأولية",
+      "pt": "fatoração em primos"
+    },
+    {
+      "id": "divisibility-rule",
+      "en": "divisibility rule",
+      "definition": "A pattern used to decide whether one whole number divides another without calculating the full quotient.",
+      "es": "regla de divisibilidad",
+      "fr": "règle de divisibilité",
+      "ar": "قاعدة القابلية للقسمة",
+      "pt": "regra de divisibilidade"
+    },
+    {
+      "id": "greatest-common-factor",
+      "en": "greatest common factor",
+      "definition": "The largest positive factor shared by two or more whole numbers.",
+      "es": "máximo común divisor",
+      "fr": "plus grand commun diviseur",
+      "ar": "العامل المشترك الأكبر",
+      "pt": "máximo divisor comum"
+    },
+    {
+      "id": "least-common-multiple",
+      "en": "least common multiple",
+      "definition": "The smallest positive multiple shared by two or more whole numbers.",
+      "es": "mínimo común múltiplo",
+      "fr": "plus petit commun multiple",
+      "ar": "المضاعف المشترك الأصغر",
+      "pt": "mínimo múltiplo comum"
+    },
+    {
+      "id": "exponent",
+      "en": "exponent",
+      "definition": "A number that tells how many times a base is used as a factor.",
+      "es": "exponente",
+      "fr": "exposant",
+      "ar": "أس",
+      "pt": "expoente"
+    },
+    {
+      "id": "base",
+      "en": "base",
+      "definition": "The repeated factor in an exponential expression.",
+      "es": "base",
+      "fr": "base",
+      "ar": "أساس",
+      "pt": "base"
+    },
+    {
+      "id": "numerical-expression",
+      "en": "numerical expression",
+      "definition": "A mathematical phrase containing numbers and operations but no equality sign.",
+      "es": "expresión numérica",
+      "fr": "expression numérique",
+      "ar": "عبارة عددية",
+      "pt": "expressão numérica"
+    },
+    {
+      "id": "order-of-operations",
+      "en": "order of operations",
+      "definition": "Grouping, exponents, multiplication/division left to right, then addition/subtraction left to right.",
+      "es": "orden de las operaciones",
+      "fr": "priorité des opérations",
+      "ar": "ترتيب العمليات",
+      "pt": "ordem das operações"
+    },
+    {
+      "id": "estimate",
+      "en": "estimate",
+      "definition": "A close, useful approximation rather than an exact value.",
+      "es": "estimación",
+      "fr": "estimation",
+      "ar": "تقدير",
+      "pt": "estimativa"
+    },
+    {
+      "id": "compatible-numbers",
+      "en": "compatible numbers",
+      "definition": "Nearby numbers chosen because they are easy to calculate mentally.",
+      "es": "números compatibles",
+      "fr": "nombres compatibles",
+      "ar": "أعداد متوافقة",
+      "pt": "números compatíveis"
+    },
+    {
+      "id": "reasonableness",
+      "en": "reasonableness",
+      "definition": "Whether an answer makes sense given the quantities, operations, and context.",
+      "es": "razonabilidad",
+      "fr": "caractère raisonnable",
+      "ar": "معقولية",
+      "pt": "razoabilidade"
+    }
+  ]
+}
