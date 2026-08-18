@@ -1,0 +1,746 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Pre-Algebra Unit 2: Integers and Absolute Value."><meta name="theme-color" content="#f2efe8"><title>Unit 2 · Integers & Absolute Value</title><link rel="stylesheet" href="assets/unit.css"><style>
+.unit-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:1rem;align-items:start}.overview,.side{padding:1.35rem}.side{position:sticky;top:92px}.big-ideas{display:grid;gap:.65rem;padding:0;list-style:none}.big-ideas li{padding:.8rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.big-ideas li::before{content:"◇";margin-inline-end:.55rem;color:var(--green)}.pathways{grid-template-columns:repeat(3,1fr);margin-top:1rem}.pathway{padding:1rem}.pathway h3{font-size:1.05rem;margin-bottom:.35rem}.pathway p{margin:0;color:var(--muted);font-size:.82rem}.side-actions{display:grid;gap:.55rem;margin-top:1rem}.side-actions .btn{width:100%}.lesson-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.lesson-card{min-height:290px;padding:1.15rem;display:flex;flex-direction:column}.lesson-top{display:flex;justify-content:space-between;gap:.6rem}.lesson-number{color:var(--gold2);font:700 1.8rem/1 var(--serif)}.lesson-card h3{margin:1rem 0 .4rem;font-size:1.25rem}.lesson-card p{margin:0;color:var(--muted);font-size:.86rem}.lesson-objectives{margin:.75rem 0 0;padding-inline-start:1.1rem;color:var(--muted);font-size:.78rem}.lesson-actions{display:flex;gap:.5rem;margin-top:auto;padding-top:1rem}.lesson-actions a,.lesson-actions button{flex:1;min-height:42px;display:flex;align-items:center;justify-content:center;padding:.5rem;border:1px solid var(--line);border-radius:var(--rs);background:var(--bg2);color:var(--text);text-decoration:none;font-weight:850;font-size:.76rem}.lesson-actions a{background:var(--gold);border-color:var(--gold);color:#16120a}.lesson-actions button[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#101711}.resource-grid{grid-template-columns:repeat(3,1fr)}.resource-card{padding:1.1rem;text-decoration:none;min-height:190px}.resource-card h3{margin:.85rem 0 .35rem;font-size:1.1rem}.resource-card p{margin:0;color:var(--muted);font-size:.83rem}.glossary-panel,.lab-panel{padding:1.2rem}.glossary-tools{display:grid;grid-template-columns:1fr 180px;gap:.7rem}.glossary-grid{grid-template-columns:repeat(3,1fr);margin-top:1rem}.term{padding:.9rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.term strong{display:block;color:var(--blue)}.term span{display:block;margin:.25rem 0;color:var(--gold2)}.term p{margin:0;color:var(--muted);font-size:.78rem}.lab-grid{display:grid;grid-template-columns:1fr 1fr 180px;gap:1rem}.lab-result{margin-top:1rem;padding:1.2rem;text-align:center;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.lab-expression{font:700 clamp(2rem,6vw,4rem)/1.2 var(--serif);color:var(--gold2)}.number-track{position:relative;height:64px;margin-top:1rem;border-top:3px solid var(--muted)}.number-track .tick{position:absolute;top:-9px;width:2px;height:18px;background:var(--muted)}.number-track .marker{position:absolute;top:-15px;translate:-50% 0;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:.7rem;font-weight:900}.marker.a{background:var(--blue);color:#07111f}.marker.b{background:var(--rose);color:#1a0710}.marker.r{top:20px;background:var(--green);color:#07140d}@media(max-width:1000px){.unit-layout{grid-template-columns:1fr}.side{position:static}.lesson-grid,.resource-grid,.glossary-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:680px){.pathways,.lesson-grid,.resource-grid,.glossary-grid,.glossary-tools,.lab-grid{grid-template-columns:1fr}}
+</style>
+<style id="verve-arithmetic-theme">
+/* =========================================================
+   VERVE N VEDA · ARITHMETIC PAPER SYSTEM · UNIT 02
+   Black mathematical typography · warm paper · radius 7
+   ========================================================= */
+:root,
+html[data-theme="light"],
+html[data-theme="dark"]{
+  color-scheme:light;
+  --bg:#ece9e2;
+  --bg2:#f6f3ed;
+  --panel:#fffefa;
+  --panel2:#f5f1e8;
+  --text:#0b0b0b;
+  --muted:#4c4b47;
+  --line:#c9c2b6;
+  --gold:#b48a42;
+  --gold2:#76551d;
+  --blue:#244c65;
+  --green:#395f45;
+  --violet:#503d70;
+  --rose:#7b3f52;
+  --danger:#8a3333;
+  --shadow:0 18px 44px rgba(30,27,22,.09);
+  --r:7px;
+  --rs:7px;
+  --max:1240px;
+  --math:"Cambria Math","STIX Two Math","Latin Modern Math","Times New Roman",serif;
+  --serif:"Cambria Math","STIX Two Math","Latin Modern Math","Times New Roman",serif;
+  --sans:"Avenir Next","Brandon Grotesque","Segoe UI",Arial,sans-serif;
+}
+html[data-theme="dark"]{
+  --bg:#dedbd4;
+  --bg2:#ebe8e1;
+  --panel:#f8f6f1;
+  --panel2:#e9e5dc;
+  --text:#050505;
+  --muted:#3f3e3a;
+  --line:#aaa397;
+  --shadow:0 18px 44px rgba(18,17,15,.12);
+}
+
+*{box-sizing:border-box}
+html{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+  scroll-padding-top:96px;
+  background:var(--bg);
+}
+body{
+  width:100%;
+  max-width:100%;
+  margin:0;
+  overflow-x:hidden;
+  color:var(--text);
+  background:
+    linear-gradient(rgba(255,255,255,.56),rgba(255,255,255,.14)),
+    repeating-linear-gradient(90deg,transparent 0 54px,rgba(11,11,11,.025) 55px),
+    var(--bg);
+  font:400 17px/1.72 var(--sans);
+  letter-spacing:.003em;
+}
+a{color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.wrap{width:min(var(--max),calc(100% - 34px));margin-inline:auto}
+.grid{display:grid;gap:1rem}
+.card{
+  min-width:0;
+  max-width:100%;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--panel);
+  box-shadow:var(--shadow);
+}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{
+  position:fixed;
+  z-index:2000;
+  inset-inline-start:14px;
+  top:-80px;
+  padding:10px 14px;
+  border-radius:7px;
+  color:#fff;
+  background:#111;
+  text-decoration:none;
+}
+.skip:focus{top:14px}
+
+/* Compact Verve N Veda campus header */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  width:100%;
+  border-top:3px solid #111;
+  border-bottom:1px solid var(--line);
+  background:rgba(255,254,250,.96);
+  backdrop-filter:blur(14px);
+}
+html[data-theme="dark"] .site-header{background:rgba(248,246,241,.96)}
+.header-inner{
+  min-height:76px;
+  display:grid;
+  grid-template-columns:minmax(250px,1fr) auto auto;
+  align-items:center;
+  gap:18px;
+  padding-block:10px;
+}
+.brand{
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  color:#0a0a0a;
+  text-decoration:none;
+}
+.brand-mark{
+  width:44px;
+  height:44px;
+  flex:0 0 44px;
+  display:grid;
+  place-items:center;
+  border:1px solid #111;
+  border-radius:7px;
+  background:#111;
+  color:#fff;
+  font:400 24px/1 var(--math);
+}
+.brand-copy{min-width:0;display:grid;line-height:1.15}
+.brand-copy strong{
+  overflow:hidden;
+  color:#0a0a0a;
+  font:444 14px/1.2 var(--sans);
+  letter-spacing:.105em;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.brand-copy small{
+  overflow:hidden;
+  margin-top:4px;
+  color:#55514a;
+  font-size:11px;
+  letter-spacing:.075em;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.campus-nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+}
+.campus-nav a{
+  min-height:40px;
+  display:flex;
+  align-items:center;
+  padding:7px 9px;
+  border:1px solid transparent;
+  border-radius:7px;
+  color:#24231f;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:444;
+  white-space:nowrap;
+}
+.campus-nav a:hover,
+.campus-nav a:focus-visible,
+.campus-nav a[aria-current]{
+  border-color:var(--line);
+  background:var(--bg2);
+  color:#000;
+}
+.header-actions{display:flex;justify-content:flex-end}
+.theme-button{
+  width:42px;
+  min-width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  padding:0;
+  border:1px solid #111;
+  border-radius:7px;
+  color:#111;
+  background:#fff;
+  font:400 18px/1 var(--math);
+}
+
+/* Breadcrumb and local section navigation */
+.course-breadcrumb{
+  width:100%;
+  border-bottom:1px solid var(--line);
+  background:#f4f1ea;
+}
+.course-breadcrumb .wrap{
+  min-height:45px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:7px;
+  padding-block:8px;
+  color:#47443e;
+  text-align:center;
+  font-size:12px;
+}
+.course-breadcrumb a{
+  color:#111;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+}
+.course-breadcrumb a:hover{border-bottom-color:#111}
+.course-breadcrumb span[aria-current="page"]{font-weight:444;color:#000}
+
+.unit-quick-nav{
+  position:sticky;
+  top:76px;
+  z-index:850;
+  border-bottom:1px solid var(--line);
+  background:rgba(247,244,237,.96);
+  backdrop-filter:blur(10px);
+}
+.quick-nav-inner{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  overflow:auto;
+  padding-block:7px;
+  scrollbar-width:thin;
+}
+.quick-nav-inner a{
+  flex:0 0 auto;
+  padding:7px 11px;
+  border:1px solid transparent;
+  border-radius:7px;
+  color:#111;
+  text-decoration:none;
+  font-size:12px;
+}
+.quick-nav-inner a:hover{border-color:var(--line);background:#fff}
+
+/* Minimal arithmetic opening screen */
+.hero{
+  min-height:calc(100svh - 122px);
+  display:grid;
+  align-items:center;
+  padding:clamp(76px,10vw,132px) 0;
+  text-align:center;
+  border-bottom:1px solid var(--line);
+  background:
+    linear-gradient(rgba(255,254,250,.89),rgba(248,245,238,.89)),
+    repeating-linear-gradient(0deg,transparent 0 39px,rgba(11,11,11,.045) 40px);
+}
+.hero .wrap{max-width:1100px}
+.eyebrow{
+  margin:0 0 14px;
+  color:#5f4b28;
+  font-size:12px;
+  font-weight:444;
+  letter-spacing:.19em;
+  text-align:center;
+  text-transform:uppercase;
+}
+.hero h1{
+  max-width:1020px;
+  margin:0 auto 22px;
+  color:#050505;
+  font:400 clamp(48px,7.6vw,92px)/.98 var(--math);
+  letter-spacing:-.035em;
+  overflow-wrap:anywhere;
+  text-wrap:balance;
+}
+.hero .lead{
+  max-width:820px;
+  margin:0 auto;
+  color:#35332f;
+  font-size:clamp(17px,2vw,21px);
+  line-height:1.72;
+}
+.math-signature{
+  max-width:900px;
+  margin:30px auto 0;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.math-signature span{
+  display:inline-flex;
+  align-items:center;
+  min-height:39px;
+  padding:7px 13px;
+  border:1px solid #c6bfb3;
+  border-radius:7px;
+  color:#090909;
+  background:rgba(255,255,255,.72);
+  font:400 15px/1.2 var(--math);
+  white-space:nowrap;
+}
+.actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:32px;
+}
+.btn,.nav-button,.lesson-actions a,.lesson-actions button{
+  min-height:44px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:9px 14px;
+  border:1px solid #aaa397;
+  border-radius:7px!important;
+  color:#111;
+  background:#fff;
+  text-decoration:none;
+  font-weight:444!important;
+  line-height:1.25;
+  white-space:normal;
+}
+.btn:hover,.lesson-actions a:hover,.lesson-actions button:hover{
+  border-color:#111;
+  transform:translateY(-1px);
+}
+.btn.primary,.lesson-actions a{
+  border-color:#111;
+  color:#fff;
+  background:#111;
+}
+
+main,section,.footer{width:100%;max-width:100%}
+section{
+  padding:clamp(68px,8vw,102px) 0;
+  scroll-margin-top:138px;
+}
+section:nth-of-type(even):not(.hero){background:rgba(255,255,255,.28)}
+.section-head{
+  max-width:850px;
+  margin:0 auto 38px;
+  text-align:center;
+}
+.section-head h2,.overview h2{
+  color:#080808;
+  font:400 clamp(36px,5vw,62px)/1.06 var(--math);
+  letter-spacing:-.025em;
+  text-wrap:balance;
+}
+.section-head p{color:#44413c;font-size:17px}
+.lesson-card h3,.resource-card h3,.pathway h3,.term strong{
+  color:#0a0a0a;
+  font-family:var(--math);
+  font-weight:400;
+}
+.lesson-card p,.resource-card p,.pathway p,.term p,.notice{color:var(--muted)}
+.lesson-number{color:#111;font:400 31px/1 var(--math)}
+.lesson-card,.resource-card,.pathway,.overview,.side,.glossary-panel,.lab-panel{
+  border-radius:7px;
+  background:var(--panel);
+  box-shadow:var(--shadow);
+}
+.lesson-card,.resource-card{transition:transform .18s ease,border-color .18s ease}
+.lesson-card:hover,.resource-card:hover{transform:translateY(-2px);border-color:#9d9589}
+.big-ideas li,.term,.notice,.lab-result{
+  border-radius:7px;
+  background:var(--bg2);
+}
+.big-ideas li::before{color:#111}
+.pill{
+  display:inline-flex;
+  padding:4px 8px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:#4f493e;
+  background:var(--bg2);
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.pill.open{border-color:#111;color:#111}
+.field label{color:#4c4942;font-weight:444}
+.field input,.field select{
+  border:1px solid #aaa397;
+  border-radius:7px;
+  color:#080808;
+  background:#fff;
+}
+.progress-track{
+  height:8px;
+  overflow:hidden;
+  border-radius:999px;
+  background:#ddd7cc;
+}
+.progress-track span{
+  width:var(--value,0%);
+  height:100%;
+  display:block;
+  background:#111;
+  transition:width .24s ease;
+}
+
+/* Signed Number Lab */
+#signed-number-lab{
+  border-block:1px solid var(--line);
+  background:#e7e3db;
+}
+.lab-panel{padding:clamp(18px,3vw,30px)}
+.lab-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 210px;
+  gap:18px;
+  align-items:end;
+}
+.lab-grid input[type="range"]{
+  width:100%;
+  accent-color:#111;
+}
+.lab-result{
+  margin-top:22px;
+  padding:clamp(22px,4vw,38px);
+  border:1px solid var(--line);
+  text-align:center;
+}
+.lab-expression{
+  color:#050505;
+  font:400 clamp(34px,6vw,68px)/1.15 var(--math);
+  letter-spacing:-.025em;
+  overflow-wrap:anywhere;
+}
+#labExplanation{
+  max-width:770px;
+  margin:14px auto 0;
+  color:#3e3b35;
+}
+.number-track{
+  position:relative;
+  height:78px;
+  margin:44px 16px 4px;
+  border-top:2px solid #111;
+}
+.number-track .tick{
+  position:absolute;
+  top:-7px;
+  width:1px;
+  height:14px;
+  background:#111;
+}
+.number-track .tick small{
+  position:absolute;
+  top:18px;
+  translate:-50% 0;
+  color:#333;
+  font:400 11px/1 var(--math);
+}
+.number-track .marker{
+  position:absolute;
+  top:-17px;
+  translate:-50% 0;
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border:1px solid #111;
+  border-radius:50%;
+  color:#fff;
+  background:#111;
+  font:444 11px/1 var(--sans);
+  box-shadow:0 0 0 4px rgba(255,255,255,.8);
+}
+.number-track .marker.a{background:#244c65}
+.number-track .marker.b{background:#7b3f52}
+.number-track .marker.r{top:30px;background:#395f45}
+.number-track .marker.outside::after{
+  content:"↥";
+  position:absolute;
+  top:-20px;
+  color:#111;
+  font:400 16px/1 var(--math);
+}
+
+/* Footer */
+.footer{
+  border-top:1px solid var(--line);
+  color:#ddd;
+  background:#111;
+}
+.footer-inner{
+  min-height:92px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  padding-block:18px;
+  font-size:12px;
+}
+.footer-links{
+  display:flex;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.footer-links a{
+  padding:6px 8px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:7px;
+  color:#fff;
+  text-decoration:none;
+}
+.footer-links a:hover{background:#fff;color:#111}
+
+/* Overflow and responsive guarantees */
+.card,.lesson-card,.resource-card,.pathway,.overview,.side,
+.glossary-panel,.lab-panel,.lesson-grid,.resource-grid,
+.pathways,.glossary-grid,.lab-grid,.lab-result{
+  min-width:0;
+  max-width:100%;
+}
+h1,h2,h3,p,a,button,label,strong,span{overflow-wrap:anywhere}
+
+@media(max-width:1080px){
+  .header-inner{
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:8px 14px;
+  }
+  .campus-nav{
+    grid-column:1/-1;
+    justify-content:flex-start;
+    overflow:auto;
+    padding-bottom:2px;
+  }
+  .unit-quick-nav{position:static}
+  .lab-grid{grid-template-columns:1fr 1fr}
+  .lab-grid .field:last-child{grid-column:1/-1}
+}
+@media(max-width:760px){
+  .wrap{width:min(var(--max),calc(100% - 22px))}
+  .header-inner{min-height:68px}
+  .brand-mark{width:40px;height:40px;flex-basis:40px}
+  .brand-copy strong{font-size:12px;letter-spacing:.07em}
+  .brand-copy small{font-size:10px}
+  .course-breadcrumb .wrap{justify-content:flex-start;text-align:left}
+  .hero{min-height:auto;padding:72px 0 78px}
+  .hero h1{font-size:clamp(42px,13vw,65px)}
+  .math-signature{display:grid;grid-template-columns:1fr 1fr}
+  .math-signature span{justify-content:center;white-space:normal;text-align:center}
+  .footer-inner{display:grid;justify-content:center;text-align:center}
+  .footer-links{justify-content:center}
+  .number-track{margin-inline:7px}
+}
+@media(max-width:620px){
+  .lab-grid{grid-template-columns:1fr}
+  .lab-grid .field:last-child{grid-column:auto}
+}
+@media(max-width:520px){
+  .campus-nav a{font-size:11px;padding-inline:8px}
+  .math-signature{grid-template-columns:1fr}
+  .actions .btn{width:100%}
+  .number-track .tick small{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+}
+@media print{
+  @page{size:letter portrait;margin:.5in}
+  html,body{background:#fff!important;color:#000!important}
+  .site-header,.course-breadcrumb,.unit-quick-nav,.hero,.footer,
+  .side-actions,.theme-button{display:none!important}
+  section{padding:24px 0;background:#fff!important}
+  .card{box-shadow:none}
+  .side{position:static}
+  .number-track .marker{box-shadow:none}
+}
+</style>
+
+</head><body><a class="skip" href="#main">Skip to main content</a><header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="https://vervenveda.github.io/Khaemenes_High.github.io/" rel="home" aria-label="Khaemenes High School home">
+      <span class="brand-mark" aria-hidden="true">±</span>
+      <span class="brand-copy">
+        <strong>KHAEMENES HIGH · MATHEMATICS</strong>
+        <small>Global Pre-Algebra · Unit 02</small>
+      </span>
+    </a>
+
+    <nav class="campus-nav" aria-label="High school navigation">
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">High School</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Grade 9</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/" aria-current="location">Pre-Algebra</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/">Diagnostic</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/">Assessments</a>
+    </nav>
+
+    <div class="header-actions">
+      <button aria-label="Switch paper tone" class="theme-button" id="themeToggle"
+        title="Switch paper tone" type="button">◐</button>
+    </div>
+  </div>
+</header><nav class="course-breadcrumb" aria-label="Course breadcrumb">
+  <div class="wrap">
+    <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">Khaemenes High</a>
+    <span aria-hidden="true">›</span>
+    <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Grade 9</a>
+    <span aria-hidden="true">›</span>
+    <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Unit 02 · Signed Number Reasoning</span>
+  </div>
+</nav>
+<main id="main"><section class="hero"><div class="wrap"><p class="eyebrow">Unit 02 · Three Weeks · Eight Lessons</p><h1>Integers & Absolute Value</h1><p class="lead">Use signed numbers to describe temperature, money, elevation, direction, coordinates, gains, losses, and change—then justify every operation with models and meaning.</p><div class="math-signature" aria-label="Unit mathematics notation">
+  <span>−a ↔ a</span>
+  <span>|a| = distance from 0</span>
+  <span>a − b = a + (−b)</span>
+  <span>|a − b| ≥ 0</span>
+</div><div class="actions"><a class="btn primary" href="gateway/index.html">Begin Unit 02 Gateway</a><a class="btn" href="#lessons">View All Lessons</a><a class="btn" href="assessment/mastery-check.html">Open Mastery Check</a></div></div></section><nav aria-label="Unit page sections" class="unit-quick-nav">
+  <div class="wrap quick-nav-inner">
+    <a href="gateway/index.html">NAIB Gateway</a><a href="worksheets/index.html">Printables</a><a href="#unit-overview">Overview</a>
+    <a href="#signed-number-lab">Signed Number Lab</a>
+    <a href="#lessons">Lessons</a>
+    <a href="#resources">Resources</a>
+    <a href="#glossary">Glossary</a>
+  </div>
+</nav><section id="unit-overview"><div class="wrap unit-layout"><article class="card overview"><p class="eyebrow">Unit overview</p><h2 id="essentialQuestion"></h2><ul class="big-ideas" id="bigIdeas"></ul><div class="grid pathways"><article class="card pathway"><h3>Foundation</h3><p>Number-line models, zero pairs, color-coded signs, vocabulary bridges, and guided steps.</p></article><article class="card pathway"><h3>Core</h3><p>The complete integer sequence with operations, coordinates, interpretation, and multi-step applications.</p></article><article class="card pathway"><h3>Extended</h3><p>Counterexamples, parity of negative factors, coordinate transformations, and unfamiliar modelling problems.</p></article></div></article><aside class="card side"><p class="eyebrow">Your local unit record</p><div class="field"><label for="pathwaySelect">Current pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p style="display:flex;justify-content:space-between"><span>Orientation progress</span><strong id="progressLabel">0%</strong></p><div class="progress-track"><span id="progressBar" style="--value:0%"></span></div><p class="notice" id="masteryStatus">No mastery-check result is saved in this browser.</p><div class="side-actions"><a class="btn primary" href="practice/core.html">Open Practice</a><a class="btn" href="projects/signed-data-investigation.html">Open Project</a><button class="btn" id="exportProgress" type="button">Export Unit Record</button><button class="btn" id="resetProgress" type="button">Reset Unit Record</button></div></aside></div></section><section id="signed-number-lab"><div class="wrap"><div class="section-head"><p class="eyebrow">Signed Number Lab</p><h2>Explore two integers before applying a rule.</h2><p>Move the values, choose an operation, and compare the signed result with its magnitude.</p></div><article class="card lab-panel"><div class="lab-grid"><div class="field"><label for="labA">Integer A: <strong id="labALabel">−6</strong></label><input id="labA" type="range" min="-12" max="12" value="-6"></div><div class="field"><label for="labB">Integer B: <strong id="labBLabel">4</strong></label><input id="labB" type="range" min="-12" max="12" value="4"></div><div class="field"><label for="labOperation">Operation</label><select id="labOperation"><option value="add">A + B</option><option value="subtract">A − B</option><option value="multiply">A × B</option><option value="distance">Distance |A−B|</option></select></div></div><div class="lab-result"><div class="lab-expression" id="labExpression" aria-live="polite"></div><p id="labExplanation" aria-live="polite"></p><div class="number-track" id="numberTrack" aria-hidden="true"></div></div></article></div></section><section id="lessons"><div class="wrap"><div class="section-head"><p class="eyebrow">Instructional sequence</p><h2>Eight lessons that connect sign, movement, operations, and coordinates.</h2><p>Each lesson includes worked examples, pathway-specific support, multilingual vocabulary, explanations, reflection, and local progress.</p></div><div class="grid lesson-grid" id="lessonGrid"></div></div></section><section id="resources"><div class="wrap"><div class="section-head"><p class="eyebrow">Practice, assessment & support</p><h2>Choose the right level of challenge.</h2></div><div class="grid resource-grid"><a class="card resource-card" href="practice/foundation.html"><span class="pill">Foundation</span><h3>Scaffolded Practice</h3><p>Number lines, sign reminders, hints, and carefully sequenced integer questions.</p></a><a class="card resource-card" href="practice/core.html"><span class="pill">Core</span><h3>Complete Unit Practice</h3><p>Twenty questions across interpretation, operations, coordinates, and applications.</p></a><a class="card resource-card" href="practice/extended.html"><span class="pill">Extended</span><h3>Structural Challenges</h3><p>Counterexamples, multi-factor signs, coordinates, and unfamiliar signed models.</p></a><a class="card resource-card" href="assessment/mastery-check.html"><span class="pill open">Assessment</span><h3>Unit Mastery Check</h3><p>A 24-question cumulative check with domain and skill feedback and an 80% mastery threshold.</p></a><a class="card resource-card" href="teacher-guide.html"><span class="pill">Educator</span><h3>Teacher Guide</h3><p>Pacing, misconceptions, differentiation, discussion prompts, and assessment use.</p></a><a class="card resource-card" href="family-guide.html"><span class="pill">Family</span><h3>Family Guide</h3><p>Plain-language explanations and supportive questions for signed-number reasoning.</p></a></div></div></section><section id="glossary"><div class="wrap"><div class="section-head"><p class="eyebrow">Multilingual vocabulary bridge</p><h2>Learn the language of signed quantities.</h2></div><article class="card glossary-panel"><div class="glossary-tools"><div class="field"><label for="glossarySearch">Search vocabulary</label><input id="glossarySearch" type="search" placeholder="Search opposite, distance, quadrant…"></div><div class="field"><label for="glossaryLanguage">Bridge language</label><select id="glossaryLanguage"></select></div></div><div class="grid glossary-grid" id="glossaryGrid"></div></article></div></section><section><div class="wrap"><article class="card"><p class="eyebrow">Paper Learning</p><h2>Unit 02 Printable Workbook</h2><p>Eight lesson worksheets, a 20-problem cumulative review, a Signed Data project planner, and a separate teacher answer key provide a complete handwriting-friendly companion to the interactive unit.</p><a class="btn primary" href="worksheets/index.html">Open Print Center</a></article></div></section></main><footer class="footer">
+  <div class="wrap footer-inner">
+    <span>KH-MATH-PA-U02 · Local progress · Interactive · No account required</span>
+    <nav class="footer-links" aria-label="High school footer navigation">
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">High School</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Grade 9</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/">Assessments</a>
+    </nav>
+  </div>
+</footer><script>window.UNIT_MAP_FALLBACK={"schema_version": "1.0", "unit": {"id": "KH-MATH-PA-U02", "course": "KH-MATH-PA", "number": 2, "title": "Integers & Absolute Value", "duration_weeks": 3, "recommended_sessions": 15, "status": "open", "essential_question": "How do signed numbers describe position, direction, change, and distance—and how do their operation rules preserve meaning?", "big_ideas": ["An integer's sign communicates direction or position relative to a reference point.", "Opposites have equal absolute value because they are equally distant from zero.", "Integer operations can be justified with number lines, zero pairs, patterns, and context.", "Subtraction can be understood as adding the opposite.", "Coordinates and signed change connect integer reasoning to graphs, finance, science, weather, and movement."], "mastery_threshold": 75, "progress_key": "khaemenes-prealgebra-unit02-progress-v1"}, "lessons": [{"id": "l01", "number": 1, "title": "Integers in Context & on the Number Line", "duration": "50–65 minutes", "objectives": ["Interpret positive and negative integers in real contexts.", "Place integers accurately on a number line.", "Identify zero as a reference point rather than a positive or negative value.", "Translate words such as rise, fall, credit, debt, above, and below into signed numbers."], "vocab_ids": ["integer", "positive-integer", "negative-integer", "zero", "number-line", "origin", "signed-change"], "file": "lessons/lesson-01-integers-in-context.html"}, {"id": "l02", "number": 2, "title": "Opposites, Absolute Value & Distance", "duration": "50–65 minutes", "objectives": ["Identify opposites and additive inverses.", "Interpret absolute value as distance from zero.", "Find distance between two integer positions.", "Distinguish a signed value from its magnitude."], "vocab_ids": ["opposites", "absolute-value", "distance", "additive-inverse", "magnitude", "origin"], "file": "lessons/lesson-02-opposites-absolute-value.html"}, {"id": "l03", "number": 3, "title": "Comparing & Ordering Integers", "duration": "50–65 minutes", "objectives": ["Compare integers using <, >, and =.", "Order sets of positive and negative integers.", "Use number-line position to justify comparisons.", "Interpret comparisons correctly in context."], "vocab_ids": ["greater-than", "less-than", "number-line", "absolute-value", "magnitude", "elevation", "balance"], "file": "lessons/lesson-03-compare-order-integers.html"}, {"id": "l04", "number": 4, "title": "Adding Integers with Models & Meaning", "duration": "55–70 minutes", "objectives": ["Add integers using number-line movement.", "Use zero pairs to model sums with unlike signs.", "Select and justify an efficient addition strategy.", "Interpret integer sums as combined changes or positions."], "vocab_ids": ["sum", "zero-pair", "signed-change", "additive-inverse", "net-change"], "file": "lessons/lesson-04-adding-integers.html"}, {"id": "l05", "number": 5, "title": "Subtracting Integers: Add the Opposite", "duration": "55–70 minutes", "objectives": ["Rewrite subtraction as addition of the opposite.", "Subtract integers accurately using models and rules.", "Interpret subtraction as change or distance.", "Identify and correct common sign errors."], "vocab_ids": ["difference", "additive-inverse", "opposites", "signed-change", "distance"], "file": "lessons/lesson-05-subtracting-integers.html"}, {"id": "l06", "number": 6, "title": "Multiplying Integers", "duration": "55–70 minutes", "objectives": ["Multiply and divide integers accurately.", "Explain sign rules using patterns and repeated change.", "Distinguish operation signs from number signs.", "Solve contextual problems involving repeated gains, losses, and rates."], "vocab_ids": ["product", "quotient", "magnitude", "signed-change", "net-change"], "file": "lessons/lesson-06-multiply-divide-integers.html"}, {"id": "l07", "number": 7, "title": "Dividing Integers", "duration": "55–70 minutes", "objectives": ["Plot and identify ordered pairs in all four quadrants.", "Interpret signs of x- and y-coordinates.", "Describe horizontal and vertical signed change.", "Use coordinates to model location, routes, and data."], "vocab_ids": ["coordinate-plane", "x-axis", "y-axis", "quadrant", "ordered-pair", "origin", "signed-change", "distance"], "file": "lessons/lesson-07-coordinate-plane-signed-change.html"}, {"id": "l08", "number": 8, "title": "Coordinate Plane & Multi-Step Integer Applications", "duration": "60–75 minutes", "objectives": ["Evaluate multi-step expressions containing integers.", "Apply order of operations with signed values.", "Model and solve multi-stage contextual problems.", "Estimate the sign and approximate magnitude before calculating."], "vocab_ids": ["net-change", "balance", "elevation", "signed-change", "sum", "difference", "product", "quotient", "magnitude"], "file": "lessons/lesson-08-multi-step-integer-applications.html"}], "practice": [{"id": "foundation", "title": "Foundation Practice", "file": "practice/foundation.html", "description": "Scaffolded integer models, number lines, hints, and smaller steps."}, {"id": "core", "title": "Core Practice", "file": "practice/core.html", "description": "Complete unit-level practice across all integer skills."}, {"id": "extended", "title": "Extended Practice", "file": "practice/extended.html", "description": "Unfamiliar contexts, counterexamples, coordinate reasoning, and multi-step challenges."}], "assessment": {"title": "Unit 2 Mastery Check", "file": "assessment/mastery-check.html", "questions": 24, "threshold": 75}, "project": {"title": "Signed Data Investigation", "file": "projects/signed-data-investigation.html"}, "guides": [{"title": "Teacher Guide", "file": "teacher-guide.html"}, {"title": "Family Guide", "file": "family-guide.html"}]};window.VOCAB_FALLBACK={"schema_version": "1.0", "unit": "KH-MATH-PA-U02", "languages": {"en": "English", "es": "Español", "fr": "Français", "ar": "العربية", "pt": "Português"}, "terms": [{"id": "integer", "en": "integer", "definition": "A whole number, its opposite, or zero.", "es": "entero", "fr": "entier relatif", "ar": "عدد صحيح", "pt": "número inteiro"}, {"id": "positive-integer", "en": "positive integer", "definition": "An integer greater than zero.", "es": "entero positivo", "fr": "entier positif", "ar": "عدد صحيح موجب", "pt": "número inteiro positivo"}, {"id": "negative-integer", "en": "negative integer", "definition": "An integer less than zero.", "es": "entero negativo", "fr": "entier négatif", "ar": "عدد صحيح سالب", "pt": "número inteiro negativo"}, {"id": "zero", "en": "zero", "definition": "The integer that is neither positive nor negative and marks the origin on a number line.", "es": "cero", "fr": "zéro", "ar": "صفر", "pt": "zero"}, {"id": "opposites", "en": "opposites", "definition": "Two numbers the same distance from zero on opposite sides.", "es": "opuestos", "fr": "opposés", "ar": "عددان متعاكسان", "pt": "opostos"}, {"id": "absolute-value", "en": "absolute value", "definition": "A number's nonnegative distance from zero.", "es": "valor absoluto", "fr": "valeur absolue", "ar": "القيمة المطلقة", "pt": "valor absoluto"}, {"id": "number-line", "en": "number line", "definition": "A line on which numbers are placed in order at equal intervals.", "es": "recta numérica", "fr": "droite numérique", "ar": "خط الأعداد", "pt": "reta numérica"}, {"id": "origin", "en": "origin", "definition": "The zero point on a number line or the point (0,0) on a coordinate plane.", "es": "origen", "fr": "origine", "ar": "نقطة الأصل", "pt": "origem"}, {"id": "greater-than", "en": "greater than", "definition": "A comparison showing one value lies to the right of another on a number line.", "es": "mayor que", "fr": "supérieur à", "ar": "أكبر من", "pt": "maior que"}, {"id": "less-than", "en": "less than", "definition": "A comparison showing one value lies to the left of another on a number line.", "es": "menor que", "fr": "inférieur à", "ar": "أقل من", "pt": "menor que"}, {"id": "distance", "en": "distance", "definition": "The nonnegative amount of separation between two positions.", "es": "distancia", "fr": "distance", "ar": "مسافة", "pt": "distância"}, {"id": "additive-inverse", "en": "additive inverse", "definition": "A number that combines with another number to make zero.", "es": "inverso aditivo", "fr": "inverse additif", "ar": "المعكوس الجمعي", "pt": "inverso aditivo"}, {"id": "zero-pair", "en": "zero pair", "definition": "One positive and one negative unit that combine to make zero.", "es": "par cero", "fr": "paire nulle", "ar": "زوج صفري", "pt": "par zero"}, {"id": "sum", "en": "sum", "definition": "The result of addition.", "es": "suma", "fr": "somme", "ar": "مجموع", "pt": "soma"}, {"id": "difference", "en": "difference", "definition": "The result of subtraction.", "es": "diferencia", "fr": "différence", "ar": "فرق", "pt": "diferença"}, {"id": "product", "en": "product", "definition": "The result of multiplication.", "es": "producto", "fr": "produit", "ar": "حاصل ضرب", "pt": "produto"}, {"id": "quotient", "en": "quotient", "definition": "The result of division.", "es": "cociente", "fr": "quotient", "ar": "ناتج القسمة", "pt": "quociente"}, {"id": "signed-change", "en": "signed change", "definition": "A change written with a positive or negative sign to show direction.", "es": "cambio con signo", "fr": "variation signée", "ar": "تغير بإشارة", "pt": "variação com sinal"}, {"id": "coordinate-plane", "en": "coordinate plane", "definition": "A plane formed by a horizontal x-axis and vertical y-axis.", "es": "plano cartesiano", "fr": "plan repéré", "ar": "المستوى الإحداثي", "pt": "plano cartesiano"}, {"id": "x-axis", "en": "x-axis", "definition": "The horizontal axis on a coordinate plane.", "es": "eje x", "fr": "axe des x", "ar": "المحور السيني", "pt": "eixo x"}, {"id": "y-axis", "en": "y-axis", "definition": "The vertical axis on a coordinate plane.", "es": "eje y", "fr": "axe des y", "ar": "المحور الصادي", "pt": "eixo y"}, {"id": "quadrant", "en": "quadrant", "definition": "One of four regions formed by the coordinate axes.", "es": "cuadrante", "fr": "quadrant", "ar": "ربع", "pt": "quadrante"}, {"id": "ordered-pair", "en": "ordered pair", "definition": "Two coordinates written (x,y) that locate a point.", "es": "par ordenado", "fr": "couple ordonné", "ar": "زوج مرتب", "pt": "par ordenado"}, {"id": "elevation", "en": "elevation", "definition": "Height relative to a chosen reference level, often sea level.", "es": "elevación", "fr": "altitude", "ar": "ارتفاع", "pt": "elevação"}, {"id": "balance", "en": "balance", "definition": "An amount relative to zero, such as money available or owed.", "es": "saldo", "fr": "solde", "ar": "رصيد", "pt": "saldo"}, {"id": "net-change", "en": "net change", "definition": "Final value minus initial value; the overall signed change.", "es": "cambio neto", "fr": "variation nette", "ar": "التغير الصافي", "pt": "variação líquida"}, {"id": "magnitude", "en": "magnitude", "definition": "The size of a quantity without regard to direction; for an integer, its absolute value.", "es": "magnitud", "fr": "grandeur", "ar": "مقدار", "pt": "magnitude"}]};</script><script src="assets/unit-dashboard.js"></script><script>
+(() => {
+  "use strict";
+
+  const $ = selector => document.querySelector(selector);
+  const formatInteger = number => number < 0 ? `−${Math.abs(number)}` : String(number);
+  const TRACK_MIN = -12;
+  const TRACK_MAX = 12;
+
+  const elements = {
+    a: $("#labA"),
+    b: $("#labB"),
+    operation: $("#labOperation"),
+    aLabel: $("#labALabel"),
+    bLabel: $("#labBLabel"),
+    expression: $("#labExpression"),
+    explanation: $("#labExplanation"),
+    track: $("#numberTrack")
+  };
+
+  if (Object.values(elements).some(element => !element)) return;
+
+  function trackPosition(number) {
+    const clamped = Math.max(TRACK_MIN, Math.min(TRACK_MAX, number));
+    return ((clamped - TRACK_MIN) / (TRACK_MAX - TRACK_MIN)) * 100;
+  }
+
+  function marker(number, className, label) {
+    const outside = number < TRACK_MIN || number > TRACK_MAX;
+    return `
+      <span class="marker ${className}${outside ? " outside" : ""}"
+        style="left:${trackPosition(number)}%"
+        title="${label} = ${formatInteger(number)}">
+        ${label}
+      </span>`;
+  }
+
+  function drawNumberTrack(a, b, result) {
+    let ticks = "";
+    for (let value = TRACK_MIN; value <= TRACK_MAX; value += 3) {
+      ticks += `
+        <span class="tick" style="left:${trackPosition(value)}%">
+          <small>${formatInteger(value)}</small>
+        </span>`;
+    }
+
+    elements.track.innerHTML =
+      ticks +
+      marker(a, "a", "A") +
+      marker(b, "b", "B") +
+      marker(result, "r", "R");
+  }
+
+  function update() {
+    const a = Number(elements.a.value);
+    const b = Number(elements.b.value);
+    const operation = elements.operation.value;
+
+    elements.aLabel.textContent = formatInteger(a);
+    elements.bLabel.textContent = formatInteger(b);
+
+    let result;
+    let expression;
+    let explanation;
+
+    if (operation === "add") {
+      result = a + b;
+      expression = `${formatInteger(a)} + (${formatInteger(b)}) = ${formatInteger(result)}`;
+      explanation = "Addition combines signed positions or changes.";
+    } else if (operation === "subtract") {
+      result = a - b;
+      expression = `${formatInteger(a)} − (${formatInteger(b)}) = ${formatInteger(result)}`;
+      explanation = `Subtracting B is equivalent to adding its opposite, ${formatInteger(-b)}.`;
+    } else if (operation === "multiply") {
+      result = a * b;
+      expression = `${formatInteger(a)} × (${formatInteger(b)}) = ${formatInteger(result)}`;
+      explanation = "Like signs give a positive product; unlike signs give a negative product.";
+    } else {
+      result = Math.abs(a - b);
+      expression = `|${formatInteger(a)} − (${formatInteger(b)})| = ${result}`;
+      explanation = "Distance is nonnegative, even when the signed difference is negative.";
+    }
+
+    const outsideTrack = result < TRACK_MIN || result > TRACK_MAX;
+    const rangeNote = outsideTrack
+      ? ` The result is outside the displayed −12 to 12 number-line range, so R is held at the nearest edge.`
+      : "";
+
+    elements.expression.textContent = expression;
+    elements.explanation.textContent =
+      `${explanation} Result magnitude: ${Math.abs(result)}.${rangeNote}`;
+
+    drawNumberTrack(a, b, result);
+  }
+
+  [elements.a, elements.b, elements.operation].forEach(element => {
+    element.addEventListener("input", update);
+    element.addEventListener("change", update);
+  });
+
+  update();
+})();
+</script></body></html>

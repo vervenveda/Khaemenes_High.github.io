@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "unit": "KH-MATH-PA-U02",
+  "disclaimer": "Draft curriculum crosswalk for instructional planning. Verify local or jurisdictional standards before formal reporting.",
+  "frameworks": [
+    {
+      "framework": "Universal mathematical practices",
+      "connections": [
+        "Represent signed quantities with words, symbols, diagrams, and coordinates.",
+        "Reason about direction, magnitude, structure, and inverse operations.",
+        "Check results with models, estimation, and contextual interpretation."
+      ]
+    },
+    {
+      "framework": "Common Core-style references",
+      "connections": [
+        "6.NS.C.5–8: positive/negative quantities, number lines, absolute value, coordinate plane.",
+        "7.NS.A.1–3: operations with rational numbers and real-world problems.",
+        "7.EE.B.3: multi-step real-life and mathematical problems."
+      ]
+    },
+    {
+      "framework": "Cambridge Lower Secondary Mathematics",
+      "connections": [
+        "Number: order and calculate with directed numbers.",
+        "Geometry/position: coordinates in four quadrants.",
+        "Problem solving: choose operations and interpret results in context."
+      ]
+    },
+    {
+      "framework": "IB MYP conceptual connections",
+      "connections": [
+        "Representation, quantity, equivalence, change, and models.",
+        "Use mathematical communication and justify operation rules."
+      ]
+    }
+  ],
+  "lesson_crosswalk": [
+    {
+      "lesson": "l01",
+      "focus": [
+        "signed quantities",
+        "number-line position",
+        "reference points"
+      ]
+    },
+    {
+      "lesson": "l02",
+      "focus": [
+        "opposites",
+        "absolute value",
+        "distance"
+      ]
+    },
+    {
+      "lesson": "l03",
+      "focus": [
+        "comparison",
+        "order",
+        "magnitude versus value"
+      ]
+    },
+    {
+      "lesson": "l04",
+      "focus": [
+        "integer addition",
+        "zero pairs",
+        "net change"
+      ]
+    },
+    {
+      "lesson": "l05",
+      "focus": [
+        "integer subtraction",
+        "additive inverses",
+        "signed difference"
+      ]
+    },
+    {
+      "lesson": "l06",
+      "focus": [
+        "integer multiplication and division",
+        "sign patterns",
+        "rates"
+      ]
+    },
+    {
+      "lesson": "l07",
+      "focus": [
+        "coordinate plane",
+        "quadrants",
+        "signed movement"
+      ]
+    },
+    {
+      "lesson": "l08",
+      "focus": [
+        "multi-step expressions",
+        "order of operations",
+        "modelling"
+      ]
+    }
+  ]
+}
