@@ -1,0 +1,1007 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Pre-Algebra Unit 9: Inequalities and Constraints."><meta name="theme-color" content="#f2efe8"><title>Unit 9 · Inequalities & Constraints</title><link rel="stylesheet" href="assets/unit.css"><style>.unit-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:1rem;align-items:start}.overview,.side{padding:1.35rem}.side{position:sticky;top:92px}.big-ideas{display:grid;gap:.65rem;padding:0;list-style:none}.big-ideas li{padding:.8rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.big-ideas li::before{content:"◇";margin-inline-end:.55rem;color:var(--green)}.pathways{grid-template-columns:repeat(3,1fr);margin-top:1rem}.pathway{padding:1rem}.pathway h3{font-size:1.05rem;margin-bottom:.35rem}.pathway p{margin:0;color:var(--muted);font-size:.82rem}.side-actions{display:grid;gap:.55rem;margin-top:1rem}.side-actions .btn{width:100%}.lesson-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.lesson-card{min-height:290px;padding:1.15rem;display:flex;flex-direction:column}.lesson-top{display:flex;justify-content:space-between;gap:.6rem}.lesson-number{color:var(--gold2);font:700 1.8rem/1 var(--serif)}.lesson-card h3{margin:1rem 0 .4rem;font-size:1.25rem}.lesson-card p{margin:0;color:var(--muted);font-size:.86rem}.lesson-objectives{margin:.75rem 0 0;padding-inline-start:1.1rem;color:var(--muted);font-size:.78rem}.lesson-actions{display:flex;gap:.5rem;margin-top:auto;padding-top:1rem}.lesson-actions a,.lesson-actions button{flex:1;min-height:42px;display:flex;align-items:center;justify-content:center;padding:.5rem;border:1px solid var(--line);border-radius:var(--rs);background:var(--bg2);color:var(--text);text-decoration:none;font-weight:850;font-size:.76rem}.lesson-actions a{background:var(--gold);border-color:var(--gold);color:#16120a}.lesson-actions button[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#101711}.resource-grid{grid-template-columns:repeat(3,1fr)}.resource-card{padding:1.1rem;text-decoration:none;min-height:190px}.resource-card h3{margin:.85rem 0 .35rem;font-size:1.1rem}.resource-card p{margin:0;color:var(--muted);font-size:.83rem}.glossary-panel,.lab-panel{padding:1.2rem}.glossary-tools{display:grid;grid-template-columns:1fr 180px;gap:.7rem}.glossary-grid{grid-template-columns:repeat(3,1fr);margin-top:1rem}.term{padding:.9rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.term strong{display:block;color:var(--blue)}.term span{display:block;margin:.25rem 0;color:var(--gold2)}.term p{margin:0;color:var(--muted);font-size:.78rem}.lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:1rem}.result{padding:1rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2);text-align:center}.result strong{display:block;color:var(--gold2);font:700 clamp(1.05rem,3vw,1.7rem)/1.2 var(--serif);overflow-wrap:anywhere}.number-line{position:relative;height:86px;margin-top:1rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2);overflow:hidden}.axis{position:absolute;left:5%;right:5%;top:42px;height:2px;background:var(--text)}.axis::before,.axis::after{content:"";position:absolute;top:-4px;border:5px solid transparent}.axis::before{left:-9px;border-right-color:var(--text)}.axis::after{right:-9px;border-left-color:var(--text)}.boundary-dot{position:absolute;top:33px;width:20px;height:20px;border:3px solid var(--gold2);border-radius:50%;transform:translateX(-50%);background:var(--bg2);z-index:3}.boundary-dot.closed{background:var(--gold2)}.shade{position:absolute;top:38px;height:10px;background:color-mix(in srgb,var(--blue) 70%,transparent);border-radius:9px}.tick-label{position:absolute;top:57px;transform:translateX(-50%);font-size:.76rem;color:var(--muted)}@media(max-width:1000px){.unit-layout{grid-template-columns:1fr}.side{position:static}.lesson-grid,.resource-grid,.glossary-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:680px){.pathways,.lesson-grid,.resource-grid,.glossary-grid,.glossary-tools,.lab-grid,.result-grid{grid-template-columns:1fr}}</style>
+<style id="verve-arithmetic-theme">
+/* =========================================================
+   VERVE N VEDA · ARITHMETIC PAPER SYSTEM · UNIT 09
+   Corrected wrapping header · inequality and constraint logic
+   ========================================================= */
+:root,
+html[data-theme="light"],
+html[data-theme="dark"]{
+  color-scheme:light;
+  --bg:#ece9e2;
+  --bg2:#f6f3ed;
+  --panel:#fffefa;
+  --panel2:#f5f1e8;
+  --text:#0b0b0b;
+  --muted:#4c4b47;
+  --line:#c9c2b6;
+  --gold:#b48a42;
+  --gold2:#76551d;
+  --blue:#244c65;
+  --green:#395f45;
+  --violet:#503d70;
+  --rose:#7b3f52;
+  --danger:#8a3333;
+  --shadow:0 18px 44px rgba(30,27,22,.09);
+  --r:7px;
+  --rs:7px;
+  --max:1240px;
+  --math:"Cambria Math","STIX Two Math","Latin Modern Math","Times New Roman",serif;
+  --serif:"Cambria Math","STIX Two Math","Latin Modern Math","Times New Roman",serif;
+  --sans:"Avenir Next","Brandon Grotesque","Segoe UI",Arial,sans-serif;
+}
+html[data-theme="dark"]{
+  --bg:#dedbd4;
+  --bg2:#ebe8e1;
+  --panel:#f8f6f1;
+  --panel2:#e9e5dc;
+  --text:#050505;
+  --muted:#3f3e3a;
+  --line:#aaa397;
+  --shadow:0 18px 44px rgba(18,17,15,.12);
+}
+
+*{box-sizing:border-box}
+html{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+  scroll-padding-top:96px;
+  background:var(--bg);
+}
+body{
+  width:100%;
+  max-width:100%;
+  margin:0;
+  overflow-x:hidden;
+  color:var(--text);
+  background:
+    linear-gradient(rgba(255,255,255,.56),rgba(255,255,255,.14)),
+    repeating-linear-gradient(90deg,transparent 0 54px,rgba(11,11,11,.025) 55px),
+    var(--bg);
+  font:400 17px/1.72 var(--sans);
+  letter-spacing:.003em;
+}
+a{color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.wrap{width:min(var(--max),calc(100% - 34px));margin-inline:auto}
+.grid{display:grid;gap:1rem}
+.card{
+  min-width:0;
+  max-width:100%;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--panel);
+  box-shadow:var(--shadow);
+}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{
+  position:fixed;
+  z-index:2000;
+  inset-inline-start:14px;
+  top:-80px;
+  padding:10px 14px;
+  border-radius:7px;
+  color:#fff;
+  background:#111;
+  text-decoration:none;
+}
+.skip:focus{top:14px}
+
+/* Corrected non-clipping campus header */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  width:100%;
+  border-top:3px solid #111;
+  border-bottom:1px solid var(--line);
+  background:rgba(255,254,250,.96);
+  backdrop-filter:blur(14px);
+}
+html[data-theme="dark"] .site-header{background:rgba(248,246,241,.96)}
+.header-inner{
+  min-height:76px;
+  height:auto;
+  display:grid;
+  grid-template-columns:minmax(270px,1fr) minmax(0,auto) auto;
+  align-items:center;
+  gap:14px;
+  padding-block:10px;
+}
+.brand{
+  min-width:0;
+  max-width:100%;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  color:#0a0a0a;
+  text-decoration:none;
+}
+.brand-mark{
+  width:44px;
+  height:44px;
+  flex:0 0 44px;
+  display:grid;
+  place-items:center;
+  border:1px solid #111;
+  border-radius:7px;
+  background:#111;
+  color:#fff;
+  font:400 24px/1 var(--math);
+}
+.brand-copy{
+  min-width:0;
+  max-width:100%;
+  display:grid;
+  overflow:visible;
+  line-height:1.15;
+}
+.brand-copy strong{
+  display:block;
+  max-width:100%;
+  overflow:visible;
+  color:#0a0a0a;
+  font:444 clamp(10px,1.05vw,13px)/1.28 var(--sans);
+  letter-spacing:.075em;
+  text-overflow:clip;
+  white-space:normal;
+  text-wrap:balance;
+}
+.brand-copy small{
+  display:block;
+  max-width:100%;
+  overflow:visible;
+  margin-top:4px;
+  color:#55514a;
+  font-size:clamp(9px,.9vw,11px);
+  line-height:1.3;
+  letter-spacing:.055em;
+  text-overflow:clip;
+  white-space:normal;
+  text-wrap:balance;
+}
+.campus-nav{
+  min-width:0;
+  max-width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:3px;
+}
+.campus-nav a{
+  min-width:0;
+  min-height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 9px;
+  border:1px solid transparent;
+  border-radius:7px;
+  color:#24231f;
+  text-align:center;
+  text-decoration:none;
+  font-size:clamp(10px,.92vw,12px);
+  font-weight:444;
+  line-height:1.2;
+  white-space:normal;
+}
+.campus-nav a:hover,
+.campus-nav a:focus-visible,
+.campus-nav a[aria-current]{
+  border-color:var(--line);
+  background:var(--bg2);
+  color:#000;
+}
+.header-actions{display:flex;justify-content:flex-end}
+.theme-button{
+  width:42px;
+  min-width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  padding:0;
+  border:1px solid #111;
+  border-radius:7px;
+  color:#111;
+  background:#fff;
+  font:400 18px/1 var(--math);
+}
+
+/* Breadcrumb and section navigation */
+.course-breadcrumb{
+  width:100%;
+  border-bottom:1px solid var(--line);
+  background:#f4f1ea;
+}
+.course-breadcrumb .wrap{
+  min-height:45px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:7px;
+  padding-block:8px;
+  color:#47443e;
+  text-align:center;
+  font-size:12px;
+}
+.course-breadcrumb a{
+  color:#111;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+}
+.course-breadcrumb a:hover{border-bottom-color:#111}
+.course-breadcrumb span[aria-current="page"]{font-weight:444;color:#000}
+.unit-quick-nav{
+  position:sticky;
+  top:76px;
+  z-index:850;
+  border-bottom:1px solid var(--line);
+  background:rgba(247,244,237,.96);
+  backdrop-filter:blur(10px);
+}
+.quick-nav-inner{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  overflow:auto;
+  padding-block:7px;
+  scrollbar-width:thin;
+}
+.quick-nav-inner a{
+  flex:0 0 auto;
+  padding:7px 11px;
+  border:1px solid transparent;
+  border-radius:7px;
+  color:#111;
+  text-decoration:none;
+  font-size:12px;
+}
+.quick-nav-inner a:hover{border-color:var(--line);background:#fff}
+
+/* Hero */
+.hero{
+  min-height:calc(100svh - 122px);
+  display:grid;
+  align-items:center;
+  padding:clamp(76px,10vw,132px) 0;
+  text-align:center;
+  border-bottom:1px solid var(--line);
+  background:
+    linear-gradient(rgba(255,254,250,.89),rgba(248,245,238,.89)),
+    repeating-linear-gradient(0deg,transparent 0 39px,rgba(11,11,11,.045) 40px);
+}
+.hero .wrap{max-width:1140px}
+.eyebrow{
+  margin:0 0 14px;
+  color:#5f4b28;
+  font-size:12px;
+  font-weight:444;
+  letter-spacing:.19em;
+  text-align:center;
+  text-transform:uppercase;
+}
+.hero h1{
+  max-width:1100px;
+  margin:0 auto 22px;
+  color:#050505;
+  font:400 clamp(43px,7vw,84px)/.98 var(--math);
+  letter-spacing:-.035em;
+  overflow-wrap:anywhere;
+  text-wrap:balance;
+}
+.hero .lead{
+  max-width:880px;
+  margin:0 auto;
+  color:#35332f;
+  font-size:clamp(17px,2vw,21px);
+  line-height:1.72;
+}
+.math-signature{
+  max-width:1080px;
+  margin:30px auto 0;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.math-signature span{
+  display:inline-flex;
+  align-items:center;
+  min-height:39px;
+  padding:7px 13px;
+  border:1px solid #c6bfb3;
+  border-radius:7px;
+  color:#090909;
+  background:rgba(255,255,255,.72);
+  font:400 15px/1.2 var(--math);
+  white-space:nowrap;
+}
+.actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:32px;
+}
+.btn,.nav-button,.lesson-actions a,.lesson-actions button{
+  min-height:44px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:9px 14px;
+  border:1px solid #aaa397;
+  border-radius:7px!important;
+  color:#111;
+  background:#fff;
+  text-decoration:none;
+  font-weight:444!important;
+  line-height:1.25;
+  white-space:normal;
+}
+.btn:hover,.lesson-actions a:hover,.lesson-actions button:hover{
+  border-color:#111;
+  transform:translateY(-1px);
+}
+.btn.primary,.lesson-actions a{
+  border-color:#111;
+  color:#fff;
+  background:#111;
+}
+
+main,section,.footer{width:100%;max-width:100%}
+section{
+  padding:clamp(68px,8vw,102px) 0;
+  scroll-margin-top:138px;
+}
+section:nth-of-type(even):not(.hero){background:rgba(255,255,255,.28)}
+.section-head{
+  max-width:920px;
+  margin:0 auto 38px;
+  text-align:center;
+}
+.section-head h2,.overview h2{
+  color:#080808;
+  font:400 clamp(36px,5vw,62px)/1.06 var(--math);
+  letter-spacing:-.025em;
+  text-wrap:balance;
+}
+.section-head p{color:#44413c;font-size:17px}
+.lesson-card h3,.resource-card h3,.pathway h3,.term strong{
+  color:#0a0a0a;
+  font-family:var(--math);
+  font-weight:400;
+}
+.lesson-card p,.resource-card p,.pathway p,.term p,.notice{color:var(--muted)}
+.lesson-number{color:#111;font:400 31px/1 var(--math)}
+.lesson-card,.resource-card,.pathway,.overview,.side,.glossary-panel,.lab-panel{
+  border-radius:7px;
+  background:var(--panel);
+  box-shadow:var(--shadow);
+}
+.lesson-card,.resource-card{transition:transform .18s ease,border-color .18s ease}
+.lesson-card:hover,.resource-card:hover{transform:translateY(-2px);border-color:#9d9589}
+.big-ideas li,.term,.notice,.result{
+  border-radius:7px;
+  background:var(--bg2);
+}
+.big-ideas li::before{color:#111}
+.pill{
+  display:inline-flex;
+  padding:4px 8px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:#4f493e;
+  background:var(--bg2);
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.pill.open{border-color:#111;color:#111}
+.field label{color:#4c4942;font-weight:444}
+.field input,.field select{
+  border:1px solid #aaa397;
+  border-radius:7px;
+  color:#080808;
+  background:#fff;
+}
+.progress-track{
+  height:8px;
+  overflow:hidden;
+  border-radius:999px;
+  background:#ddd7cc;
+}
+.progress-track span{
+  width:var(--value,0%);
+  height:100%;
+  display:block;
+  background:#111;
+  transition:width .24s ease;
+}
+
+/* Constraint and Number-Line Lab */
+#constraint-number-line-lab{
+  border-block:1px solid var(--line);
+  background:#e7e3db;
+}
+.lab-panel{padding:clamp(18px,3vw,30px)}
+.lab-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.lab-grid input[type="range"]{
+  width:100%;
+  accent-color:#111;
+}
+.result-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin-top:22px;
+}
+.result{
+  min-width:0;
+  min-height:142px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:18px 12px;
+  border:1px solid var(--line);
+  text-align:center;
+}
+.result span{
+  color:#5b574f;
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.result strong{
+  display:block;
+  margin-top:8px;
+  color:#050505;
+  font:400 clamp(19px,2.55vw,32px)/1.16 var(--math);
+  overflow-wrap:anywhere;
+}
+.result small{
+  display:block;
+  margin-top:7px;
+  color:#5b574f;
+  font-size:11px;
+}
+.number-line{
+  position:relative;
+  height:132px;
+  margin-top:24px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:#fff;
+}
+.axis{
+  position:absolute;
+  left:5%;
+  right:5%;
+  top:58px;
+  height:2px;
+  background:#111;
+}
+.axis::before,.axis::after{
+  content:"";
+  position:absolute;
+  top:-5px;
+  width:0;
+  height:0;
+  border-top:6px solid transparent;
+  border-bottom:6px solid transparent;
+}
+.axis::before{
+  left:-10px;
+  border-right:9px solid #111;
+}
+.axis::after{
+  right:-10px;
+  border-left:9px solid #111;
+}
+.shade{
+  position:absolute;
+  top:53px;
+  height:12px;
+  border-radius:999px;
+  background:#244c65;
+  opacity:.82;
+}
+.boundary-dot{
+  position:absolute;
+  top:46px;
+  z-index:4;
+  width:26px;
+  height:26px;
+  translate:-50% 0;
+  border:3px solid #111;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 0 4px rgba(255,255,255,.82);
+}
+.boundary-dot.closed{background:#111}
+.number-tick{
+  position:absolute;
+  top:52px;
+  translate:-50% 0;
+}
+.number-tick i{
+  display:block;
+  width:1px;
+  height:14px;
+  margin:auto;
+  background:#111;
+}
+.number-tick small{
+  display:block;
+  margin-top:8px;
+  color:#4d4942;
+  font:400 11px/1 var(--math);
+}
+.direction-label{
+  position:absolute;
+  top:100px;
+  color:#4d4942;
+  font-size:11px;
+  letter-spacing:.05em;
+}
+.left-direction{left:5%}
+.right-direction{right:5%;text-align:right}
+.constraint-checks{
+  max-width:930px;
+  margin:20px auto 0;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:#fff;
+}
+.constraint-check-head,
+.constraint-check-row{
+  display:grid;
+  grid-template-columns:.55fr 1.7fr 1fr;
+}
+.constraint-check-head{
+  color:#fff;
+  background:#111;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.constraint-check-head span,
+.constraint-check-row span{
+  min-width:0;
+  padding:10px 12px;
+  text-align:center;
+}
+.constraint-check-row{
+  border-top:1px solid var(--line);
+  color:#222;
+  font-family:var(--math);
+}
+.constraint-check-row.boundary-row{background:#eee9de}
+.constraint-check-row .member{color:#2f6844}
+.constraint-check-row .not-member{color:#8a3333}
+#labExplanation{
+  max-width:1020px;
+  margin:20px auto 0;
+  padding:15px 17px;
+  border-left:3px solid #111;
+  color:#3d3a34;
+  text-align:left;
+}
+
+/* Footer */
+.footer{
+  border-top:1px solid var(--line);
+  color:#ddd;
+  background:#111;
+}
+.footer-inner{
+  min-height:92px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  padding-block:18px;
+  font-size:12px;
+}
+.footer-links{
+  display:flex;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.footer-links a{
+  padding:6px 8px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:7px;
+  color:#fff;
+  text-decoration:none;
+}
+.footer-links a:hover{background:#fff;color:#111}
+
+/* Overflow and responsive guarantees */
+.card,.lesson-card,.resource-card,.pathway,.overview,.side,
+.glossary-panel,.lab-panel,.lesson-grid,.resource-grid,.pathways,
+.glossary-grid,.lab-grid,.result-grid,.result,.number-line,.constraint-checks{
+  min-width:0;
+  max-width:100%;
+}
+h1,h2,h3,p,a,button,label,strong,span{overflow-wrap:anywhere}
+
+@media(max-width:1180px){
+  .header-inner{
+    grid-template-columns:minmax(240px,1fr) auto;
+  }
+  .campus-nav{
+    grid-column:1/-1;
+    justify-content:center;
+    overflow:visible;
+  }
+  .unit-quick-nav{position:static}
+}
+@media(max-width:840px){
+  .result-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .wrap{width:min(var(--max),calc(100% - 22px))}
+  .header-inner{
+    min-height:68px;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:8px 10px;
+    padding-block:9px;
+  }
+  .brand{gap:8px}
+  .brand-mark{
+    width:38px;
+    height:38px;
+    flex-basis:38px;
+    font-size:21px;
+  }
+  .brand-copy strong{
+    font-size:10px;
+    letter-spacing:.055em;
+  }
+  .brand-copy small{
+    font-size:9px;
+    letter-spacing:.04em;
+  }
+  .campus-nav{justify-content:flex-start}
+  .campus-nav a{
+    min-height:36px;
+    font-size:10px;
+    padding:6px 8px;
+  }
+  .course-breadcrumb .wrap{justify-content:flex-start;text-align:left}
+  .hero{min-height:auto;padding:72px 0 78px}
+  .hero h1{font-size:clamp(40px,12vw,63px)}
+  .math-signature{display:grid;grid-template-columns:1fr 1fr}
+  .math-signature span{justify-content:center;white-space:normal;text-align:center}
+  .footer-inner{display:grid;justify-content:center;text-align:center}
+  .footer-links{justify-content:center}
+  .number-line{height:144px}
+  .direction-label{top:110px}
+}
+@media(max-width:620px){
+  .lab-grid{grid-template-columns:1fr}
+  .constraint-checks{overflow-x:auto}
+  .constraint-check-head,.constraint-check-row{min-width:560px}
+}
+@media(max-width:520px){
+  .math-signature{grid-template-columns:1fr}
+  .actions .btn{width:100%}
+  .result-grid{grid-template-columns:1fr}
+  .number-tick:nth-child(even) small{display:none}
+}
+@media(max-width:430px){
+  .brand-copy strong{font-size:9.5px}
+  .brand-copy small{font-size:8.5px}
+  .campus-nav a{flex:1 1 calc(50% - 4px)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+}
+@media print{
+  @page{size:letter portrait;margin:.5in}
+  html,body{background:#fff!important;color:#000!important}
+  .site-header,.course-breadcrumb,.unit-quick-nav,.hero,.footer,
+  .side-actions,.theme-button{display:none!important}
+  section{padding:24px 0;background:#fff!important}
+  .card{box-shadow:none}
+  .side{position:static}
+  .result-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+
+</head><body><a class="skip" href="#main">Skip to main content</a><header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="https://vervenveda.github.io/Khaemenes_High.github.io/" rel="home" aria-label="Khaemenes High School home">
+      <span class="brand-mark" aria-hidden="true">≤</span>
+      <span class="brand-copy">
+        <strong>KHAEMENES HIGH · MATHEMATICS</strong>
+        <small>Global Pre-Algebra · Unit 09</small>
+      </span>
+    </a>
+
+    <nav class="campus-nav" aria-label="High school navigation">
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">High School</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Grade 9</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/" aria-current="location">Pre-Algebra</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/">Diagnostic</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/">Assessments</a>
+    </nav>
+
+    <div class="header-actions">
+      <button aria-label="Switch paper tone" class="theme-button" id="themeToggle"
+        title="Switch paper tone" type="button">◐</button>
+    </div>
+  </div>
+</header><nav class="course-breadcrumb" aria-label="Course breadcrumb">
+  <div class="wrap">
+    <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">Khaemenes High</a>
+    <span aria-hidden="true">›</span>
+    <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Grade 9</a>
+    <span aria-hidden="true">›</span>
+    <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Unit 09 · Ranges and Constraints</span>
+  </div>
+</nav>
+<main id="main"><section class="hero"><div class="wrap"><p class="eyebrow">Unit 09 · Two Weeks · Seven Lessons</p><h1>Inequalities & Constraints</h1><p class="lead">Represent ranges and limits, graph solution sets, solve and verify inequalities, combine conditions, and interpret feasible answers within real-world constraints.</p><div class="math-signature" aria-label="Unit mathematics notation">
+  <span>x &lt; b · x ≤ b</span>
+  <span>x &gt; b · x ≥ b</span>
+  <span>negative scaling reverses order</span>
+  <span>and = intersection · or = union</span>
+</div><div class="actions"><a class="btn primary" href="lessons/lesson-01-inequality-meaning-symbols-solution-sets.html">Begin Lesson 1</a><a class="btn" href="#lessons">View All Lessons</a><a class="btn" href="assessment/mastery-check.html">Open Mastery Check</a></div></div></section><nav aria-label="Unit page sections" class="unit-quick-nav">
+  <div class="wrap quick-nav-inner">
+    <a href="#unit-overview">Overview</a>
+    <a href="#constraint-number-line-lab">Constraint Lab</a>
+    <a href="#lessons">Lessons</a>
+    <a href="#resources">Resources</a>
+    <a href="#glossary">Glossary</a>
+  </div>
+</nav><section id="unit-overview"><div class="wrap unit-layout"><article class="card overview"><p class="eyebrow">Unit overview</p><h2 id="essentialQuestion"></h2><ul class="big-ideas" id="bigIdeas"></ul><div class="grid pathways"><article class="card pathway"><h3>Foundation</h3><p>Symbol cards, number-line models, operation arrows, test values, and guided constraint language.</p></article><article class="card pathway"><h3>Core</h3><p>The complete sequence across graphing, solving, reversal, compound inequalities, and contextual constraints.</p></article><article class="card pathway"><h3>Extended</h3><p>Parameters, logical unions and intersections, optimization, boundary critique, and domain analysis.</p></article></div></article><aside class="card side"><p class="eyebrow">Your local unit record</p><div class="field"><label for="pathwaySelect">Current pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p style="display:flex;justify-content:space-between"><span>Orientation progress</span><strong id="progressLabel">0%</strong></p><div class="progress-track"><span id="progressBar" style="--value:0%"></span></div><p class="notice" id="masteryStatus">No mastery-check result is saved in this browser.</p><div class="side-actions"><a class="btn primary" href="practice/core.html">Open Practice</a><a class="btn" href="projects/constraint-design-investigation.html">Open Project</a><button class="btn" id="exportProgress" type="button">Export Unit Record</button><button class="btn" id="resetProgress" type="button">Reset Unit Record</button></div></aside></div></section><section id="constraint-number-line-lab"><div class="wrap"><div class="section-head"><p class="eyebrow">Constraint & Number-Line Lab</p><h2>Change the boundary, inclusion, and direction of a solution set.</h2><p>Explore how strict and inclusive symbols change an endpoint and how “less than” and “greater than” determine the shaded direction.</p></div><article class="card lab-panel"><div class="lab-grid"><div class="field"><label for="boundaryInput">Boundary: <strong id="boundaryLabel">3</strong></label><input id="boundaryInput" type="range" min="-10" max="10" value="3"></div><div class="field"><label for="directionSelect">Direction</label><select id="directionSelect"><option value="less">Less than</option><option value="greater">Greater than</option></select></div><div class="field"><label for="inclusiveToggle">Boundary rule</label><select id="inclusiveToggle"><option value="strict">Strict</option><option value="inclusive">Inclusive</option></select></div></div><div class="result-grid">
+  <article class="result">
+    <span>Symbolic form</span>
+    <strong id="symbolicValue">x &lt; 3</strong>
+    <small id="symbolMeaning">x is less than 3</small>
+  </article>
+  <article class="result">
+    <span>Interval notation</span>
+    <strong id="intervalValue">(−∞, 3)</strong>
+    <small id="intervalMeaning">parenthesis excludes the boundary</small>
+  </article>
+  <article class="result">
+    <span>Set-builder form</span>
+    <strong id="setBuilderValue">{x ∈ ℝ | x &lt; 3}</strong>
+    <small>all real x satisfying the condition</small>
+  </article>
+  <article class="result">
+    <span>Boundary status</span>
+    <strong id="boundaryStatus">excluded</strong>
+    <small id="boundaryTest">3 &lt; 3 is false</small>
+  </article>
+  <article class="result">
+    <span>Example solution</span>
+    <strong id="solutionExample">2</strong>
+    <small id="solutionTest">2 &lt; 3 is true</small>
+  </article>
+  <article class="result">
+    <span>Example non-solution</span>
+    <strong id="nonSolutionExample">4</strong>
+    <small id="nonSolutionTest">4 &lt; 3 is false</small>
+  </article>
+</div>
+
+<div class="number-line" id="numberLine"
+  role="img"
+  aria-label="Open point at 3 with the solution set shaded to the left.">
+  <div class="axis" aria-hidden="true"></div>
+  <div class="shade" id="shade" aria-hidden="true"></div>
+  <div class="boundary-dot" id="boundaryDot" aria-hidden="true"></div>
+  <div class="number-line-ticks" id="numberLineTicks" aria-hidden="true"></div>
+  <span class="direction-label left-direction" id="leftDirection">solutions</span>
+  <span class="direction-label right-direction" id="rightDirection">non-solutions</span>
+</div>
+
+<div class="constraint-checks" aria-label="Solution membership checks">
+  <div class="constraint-check-head">
+    <span>Candidate</span><span>Comparison</span><span>Membership</span>
+  </div>
+  <div id="constraintCheckBody"></div>
+</div><p class="notice" id="labExplanation" aria-live="polite">Open at 3 and shade left: values smaller than 3 are solutions.</p></article></div></section><section id="lessons"><div class="wrap"><div class="section-head"><p class="eyebrow">Instructional sequence</p><h2>Seven lessons connecting order, graphs, transformations, logic, and feasible decisions.</h2><p>Each lesson contains worked examples, pathway-specific support, multilingual vocabulary, explanations, reflection, and local progress.</p></div><div class="grid lesson-grid" id="lessonGrid"></div></div></section><section id="resources"><div class="wrap"><div class="section-head"><p class="eyebrow">Practice, assessment & support</p><h2>Choose the right level of challenge.</h2></div><div class="grid resource-grid"><a class="card resource-card" href="practice/foundation.html"><span class="pill">Foundation</span><h3>Scaffolded Practice</h3><p>Symbol language, endpoint models, hints, and guided one-step solving.</p></a><a class="card resource-card" href="practice/core.html"><span class="pill">Core</span><h3>Complete Unit Practice</h3><p>Eighteen questions across graphs, solving, compound sets, and constraints.</p></a><a class="card resource-card" href="practice/extended.html"><span class="pill">Extended</span><h3>Constraint Challenges</h3><p>Parameters, proofs, optimization, logical complements, and model critique.</p></a><a class="card resource-card" href="assessment/mastery-check.html"><span class="pill open">Assessment</span><h3>Unit Mastery Check</h3><p>A 24-question cumulative check with domain feedback and a 80% mastery threshold.</p></a><a class="card resource-card" href="teacher-guide.html"><span class="pill">Educator</span><h3>Teacher Guide</h3><p>Pacing, misconceptions, differentiation, discussion prompts, and assessment use.</p></a><a class="card resource-card" href="family-guide.html"><span class="pill">Family</span><h3>Family Guide</h3><p>Plain-language explanations and supportive questions for inequality reasoning.</p></a></div></div></section><section id="glossary"><div class="wrap"><div class="section-head"><p class="eyebrow">Multilingual vocabulary bridge</p><h2>Learn the language of ranges, boundaries, solution sets, and constraints.</h2></div><article class="card glossary-panel"><div class="glossary-tools"><div class="field"><label for="glossarySearch">Search vocabulary</label><input id="glossarySearch" type="search" placeholder="Search boundary, compound, feasible, maximum…"></div><div class="field"><label for="glossaryLanguage">Bridge language</label><select id="glossaryLanguage"></select></div></div><div class="grid glossary-grid" id="glossaryGrid"></div></article></div></section><section><div class="wrap"><article class="card"><p class="eyebrow">Paper Learning</p><h2>Unit 09 Print Center</h2><p>Seven handwriting-friendly worksheets, cumulative review, constraints investigation, and teacher key.</p><a class="btn primary" href="worksheets/index.html">Open Print Center</a></article></div></section></main><footer class="footer">
+  <div class="wrap footer-inner">
+    <span>KH-MATH-PA-U09 · Local progress · Interactive · No account required</span>
+    <nav class="footer-links" aria-label="High school footer navigation">
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">High School</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Grade 9</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/">Assessments</a>
+    </nav>
+  </div>
+</footer><script>window.UNIT_MAP_FALLBACK={"schema_version":"1.0","unit":{"id":"KH-MATH-PA-U09","course":"KH-MATH-PA","number":9,"title":"Inequalities & Constraints","duration_weeks":2,"recommended_sessions":10,"status":"open","essential_question":"How do inequalities represent ranges, limits, choices, and constraints—and how can we verify that a solution set fits both the mathematics and the situation?","big_ideas":["An inequality compares quantities without requiring them to be equal.","A solution set may contain many values and can be represented with symbols, words, tables, and number-line graphs.","Adding or subtracting the same value preserves order; multiplying or dividing by a negative reverses the order.","Compound inequalities combine conditions using “and” or “or.”","Contextual constraints may require whole-number, nonnegative, bounded, or otherwise restricted solutions."],"mastery_threshold":75,"progress_key":"khaemenes-prealgebra-unit09-progress-v1"},"lessons":[{"id":"l01","number":1,"title":"Inequality Meaning, Symbols & Solution Sets","file":"lessons/lesson-01-inequality-meaning-symbols-solution-sets.html","duration":"50–65 minutes","objectives":["Interpret <, >, ≤, and ≥ in words and contexts.","Distinguish an inequality from an equation.","Test whether a value belongs to a solution set.","Describe strict and inclusive boundaries."],"vocab_ids":["inequality","less-than","greater-than","less-than-or-equal","greater-than-or-equal","solution-set","boundary","strict-inequality","inclusive-inequality"],"warmup":["Compare −4 and 2 using an inequality symbol.","Explain the difference between x<5 and x≤5.","Test whether 7 satisfies 2x+1>12."],"concepts":[{"heading":"An inequality compares order","body":"The symbols < and > show which value is smaller or larger; ≤ and ≥ include equality at the boundary."},{"heading":"A solution set can contain many values","body":"A value is a solution when substitution makes the inequality true. Most inequalities have infinitely many real-number solutions."},{"heading":"The boundary may be included or excluded","body":"A strict inequality excludes the boundary. An inclusive inequality includes it."}],"examples":[{"problem":"Translate “at least 18 years old.”","steps":["Identify the variable a for age.","“At least” includes 18 and every greater value.","Use an inclusive symbol."],"answer":"a ≥ 18."},{"problem":"Does x=3 satisfy 4x−2<11?","steps":["Substitute 3.","Evaluate 4(3)−2=10.","Compare 10<11."],"answer":"Yes, x=3 is in the solution set."},{"problem":"Compare x<−2 and x≤−2.","steps":["Both include values left of −2.","Only the inclusive inequality contains −2.","State the boundary difference."],"answer":"x≤−2 contains the boundary; x<−2 does not."}],"pathways":{"Foundation":"Use symbol cards, verbal phrases, and true/false substitution tables.","Core":"Move fluently among symbols, words, contexts, and tested values.","Extended":"Analyze parameterized boundaries and distinguish necessary from sufficient conditions."},"application":"Find a public age, height, capacity, safety, eligibility, or measurement rule. Express it as an inequality and explain whether its boundary is included.","questions":[{"domain":"Symbols","prompt":"Which means “x is at most 12”?","options":["x<12","x≤12","x>12","x≥12"],"answer":1,"explanation":"At most includes 12 and smaller values."},{"domain":"Meaning","prompt":"Which statement is an inequality?","options":["3x+1","3x+1=10","3x+1<10","x,10"],"answer":2,"explanation":"An inequality contains an order-comparison symbol."},{"domain":"Solution test","prompt":"Does x=4 satisfy 2x+5≥13?","options":["Yes","No; left side is 9","No; 13 is not included","Cannot tell"],"answer":0,"explanation":"2(4)+5=13, and equality is included."},{"domain":"Boundary","prompt":"Which inequality excludes the boundary 7?","options":["x≤7","x≥7","x<7","x=7"],"answer":2,"explanation":"A strict symbol excludes equality."},{"domain":"Context","prompt":"A room holds no more than 80 people. If p is attendance:","options":["p<80","p≤80","p>80","p≥80"],"answer":1,"explanation":"No more than means at most."}]},{"id":"l02","number":2,"title":"Number-Line Graphs & Interval Descriptions","file":"lessons/lesson-02-number-line-graphs-interval-descriptions.html","duration":"50–70 minutes","objectives":["Graph strict and inclusive inequalities on number lines.","Match symbols, words, and graphs.","Use open and closed points correctly.","Describe rays and bounded intervals informally."],"vocab_ids":["number-line","open-point","closed-point","ray","interval","endpoint","left-ray","right-ray","bounded-set"],"warmup":["Sketch x>2 on a number line.","What does a closed point at −1 communicate?","Describe all values between 3 and 8, including both endpoints."],"concepts":[{"heading":"Open means excluded","body":"Use an open point when the endpoint is not a solution, as with < or >."},{"heading":"Closed means included","body":"Use a closed point when equality is allowed, as with ≤ or ≥."},{"heading":"Direction communicates order","body":"Shade left for smaller values and right for larger values. Two boundaries create a bounded interval."}],"examples":[{"problem":"Graph x≥−3.","steps":["Place a closed point at −3.","Shade to the right.","Check that −3 is included."],"answer":"Closed at −3, ray right."},{"problem":"Write the graph open at 5 and shaded left.","steps":["Open means strict.","Left means smaller.","Combine symbol and boundary."],"answer":"x<5."},{"problem":"Describe −2≤x<4.","steps":["Include −2 with a closed point.","Exclude 4 with an open point.","Shade between them."],"answer":"All real values from −2 through, but not including, 4."}],"pathways":{"Foundation":"Use floor number lines and endpoint cards before drawing symbols.","Core":"Translate among symbolic, verbal, and graphical forms.","Extended":"Compare interval notation, set-builder notation, and graph conventions."},"application":"Represent an acceptable temperature range, measurement tolerance, schedule window, or capacity interval on a number line.","questions":[{"domain":"Graph","prompt":"x>−1 uses which point at −1?","options":["closed","open","no point","two points"],"answer":1,"explanation":"Strict inequalities use open points."},{"domain":"Direction","prompt":"The graph of x≤6 shades:","options":["right","left","both directions","nowhere"],"answer":1,"explanation":"Values less than 6 lie to the left."},{"domain":"Match","prompt":"Closed at 2 and shaded right represents:","options":["x>2","x≥2","x<2","x≤2"],"answer":1,"explanation":"Closed includes 2; right means greater."},{"domain":"Interval","prompt":"Which describes −3<x≤5?","options":["open at both","closed at both","open at −3, closed at 5","closed at −3, open at 5"],"answer":2,"explanation":"The symbols determine endpoint inclusion."},{"domain":"Endpoint","prompt":"Which value is not included in x<4?","options":["3.9","0","−10","4"],"answer":3,"explanation":"The strict boundary value is excluded."}]},{"id":"l03","number":3,"title":"One-Step Inequalities & Order Preservation","file":"lessons/lesson-03-one-step-inequalities-order-preservation.html","duration":"50–70 minutes","objectives":["Solve inequalities using addition and subtraction.","Solve inequalities using positive multiplication and division.","Explain why order is preserved by these operations.","Check solutions and non-solutions."],"vocab_ids":["one-step-inequality","addition-property-inequality","subtraction-property-inequality","multiplication-property-inequality","division-property-inequality","inverse-operation","equivalent-inequality","test-value"],"warmup":["Solve x+6<10.","Solve 5n≥35.","Choose a value that should satisfy p−4≤2."],"concepts":[{"heading":"Undo the operation","body":"Use inverse operations to isolate the variable, just as with equations."},{"heading":"Positive scaling preserves order","body":"Multiplying or dividing both sides by a positive number keeps the inequality direction."},{"heading":"Test values verify the set","body":"Check a value inside the proposed solution set and one outside it."}],"examples":[{"problem":"Solve x−9>4.","steps":["Add 9 to both sides.","Keep the direction.","Check x=14."],"answer":"x>13."},{"problem":"Solve 6m≤42.","steps":["Divide both sides by positive 6.","Preserve ≤.","Check m=7."],"answer":"m≤7."},{"problem":"Solve y/5≥−3.","steps":["Multiply both sides by positive 5.","Preserve ≥.","Check y=−15."],"answer":"y≥−15."}],"pathways":{"Foundation":"Use inverse-operation arrows and substitution checks.","Core":"Solve and graph one-step inequalities fluently.","Extended":"Justify order preservation with differences and number-line transformations."},"application":"Model a budget remaining after a fixed fee, a minimum score after an adjustment, or a maximum quantity per group.","questions":[{"domain":"Addition","prompt":"Solve x+8<15.","options":["x<7","x>7","x≤23","x≥23"],"answer":0,"explanation":"Subtract 8 from both sides."},{"domain":"Subtraction","prompt":"Solve n−12≥−5.","options":["n≥7","n≤7","n≥−17","n≤−17"],"answer":0,"explanation":"Add 12."},{"domain":"Positive division","prompt":"Solve 4p≤36.","options":["p≤9","p≥9","p≤32","p≥40"],"answer":0,"explanation":"Divide by positive 4."},{"domain":"Fraction","prompt":"Solve q/3>−4.","options":["q>−12","q<−12","q>−1","q<−1"],"answer":0,"explanation":"Multiply by positive 3."},{"domain":"Check","prompt":"Which value satisfies x<2?","options":["2","3","1.5","10"],"answer":2,"explanation":"1.5 is less than 2."}]},{"id":"l04","number":4,"title":"Negative Multipliers & Reversing the Inequality","file":"lessons/lesson-04-negative-multipliers-reversal.html","duration":"55–75 minutes","objectives":["Reverse an inequality when multiplying or dividing by a negative.","Explain reversal using number-line order.","Solve inequalities with negative coefficients.","Detect common sign and direction errors."],"vocab_ids":["reverse-inequality","negative-multiplier","negative-divisor","order-reversal","opposite-numbers","sign-error","verification","counterexample"],"warmup":["Compare 2<5, then multiply both values by −1.","Solve −3x<12.","Explain why dividing by −4 changes direction."],"concepts":[{"heading":"Negative scaling reflects the number line","body":"Multiplying every value by a negative reflects positions across zero, reversing left-right order."},{"heading":"The symbol reverses once","body":"When the isolation step multiplies or divides by a negative, switch < with > or ≤ with ≥."},{"heading":"Verification catches direction errors","body":"Test one value from the claimed solution set in the original inequality."}],"examples":[{"problem":"Solve −4x≤20.","steps":["Divide by −4.","Reverse ≤ to ≥.","Check x=−5."],"answer":"x≥−5."},{"problem":"Solve x/−3>7.","steps":["Multiply by −3.","Reverse > to <.","Check x=−24."],"answer":"x<−21."},{"problem":"Why is −2a<−10 equivalent to a>5?","steps":["Divide by −2.","Reverse the direction.","Check a=6: −12<−10."],"answer":"a>5."}],"pathways":{"Foundation":"Use reflected number lines and color-coded reversal steps.","Core":"Solve negative-coefficient inequalities and verify direction.","Extended":"Prove reversal using ordered differences and analyze sign-unknown parameters."},"application":"Interpret a negative rate such as temperature decline, debt change, elevation loss, or reverse scoring without losing the order relationship.","questions":[{"domain":"Reversal","prompt":"Solve −5x>30.","options":["x>−6","x<−6","x>6","x<6"],"answer":1,"explanation":"Divide by −5 and reverse."},{"domain":"Inclusive reversal","prompt":"Solve −2n≤14.","options":["n≤−7","n≥−7","n≤7","n≥7"],"answer":1,"explanation":"Divide by −2 and reverse ≤ to ≥."},{"domain":"Negative denominator","prompt":"Solve p/−4≥3.","options":["p≥−12","p≤−12","p≥12","p≤12"],"answer":1,"explanation":"Multiply by −4 and reverse."},{"domain":"Reasoning","prompt":"Why does the direction reverse?","options":["negative numbers are always smaller","negative scaling reflects order across zero","division never preserves order","symbols change randomly"],"answer":1,"explanation":"Reflection across zero reverses left-right order."},{"domain":"Error analysis","prompt":"A student solves −3x<9 as x<−3. The error is:","options":["wrong arithmetic only","failure to reverse the inequality","using subtraction","including equality"],"answer":1,"explanation":"Division by a negative requires reversal."}]},{"id":"l05","number":5,"title":"Multi-Step Inequalities & Variables on Both Sides","file":"lessons/lesson-05-multistep-variables-both-sides.html","duration":"55–80 minutes","objectives":["Simplify and solve multi-step inequalities.","Use distribution and combine like terms.","Solve inequalities with variables on both sides.","Recognize all-real and empty solution sets."],"vocab_ids":["multi-step-inequality","distributive-property","combine-like-terms","variable-both-sides","all-real-numbers","empty-set","contradiction","identity-inequality","equivalent-transformations"],"warmup":["Simplify 3(x−2)+4.","Solve 5x+1<2x+13.","Classify 2x+5<2x+9."],"concepts":[{"heading":"Simplify before isolating","body":"Distribute and combine like terms on each side before choosing inverse operations."},{"heading":"Move variable terms strategically","body":"Collect variable terms on one side and constants on the other, preserving order at each step."},{"heading":"The variable may disappear","body":"A true final statement means all allowed real values; a false statement means no solutions."}],"examples":[{"problem":"Solve 3(x−2)+4≤10.","steps":["Distribute: 3x−6+4≤10.","Combine: 3x−2≤10.","Add 2, then divide by 3."],"answer":"x≤4."},{"problem":"Solve 7x−5>3x+11.","steps":["Subtract 3x.","Add 5.","Divide by positive 4."],"answer":"x>4."},{"problem":"Classify 4(x+2)≥4x+1.","steps":["Distribute.","Subtract 4x.","Evaluate 8≥1."],"answer":"All real numbers."}],"pathways":{"Foundation":"Use a step organizer for distribution, combining, isolating, and graphing.","Core":"Solve multi-step and both-sides inequalities with verification.","Extended":"Analyze parameter cases producing bounded, empty, or universal sets."},"application":"Compare two pricing plans, production rules, or travel options and identify when one becomes less expensive or more efficient.","questions":[{"domain":"Multi-step","prompt":"Solve 2x+7≤19.","options":["x≤6","x≥6","x≤13","x≥13"],"answer":0,"explanation":"2x≤12."},{"domain":"Distribution","prompt":"Solve 3(x−1)>12.","options":["x>3","x>5","x<3","x<5"],"answer":1,"explanation":"x−1>4, so x>5."},{"domain":"Both sides","prompt":"Solve 6x+2<2x+18.","options":["x<4","x>4","x<5","x>5"],"answer":0,"explanation":"4x<16."},{"domain":"All real","prompt":"Classify 5x+3≤5x+8.","options":["x≤1","x≥1","all real numbers","no solution"],"answer":2,"explanation":"3≤8 is always true."},{"domain":"No solution","prompt":"Classify 2(x+4)>2x+10.","options":["x>1","x<1","all real numbers","no solution"],"answer":3,"explanation":"8>10 is false."}]},{"id":"l06","number":6,"title":"Compound Inequalities: “And,” “Or” & Intersections","file":"lessons/lesson-06-compound-inequalities-and-or.html","duration":"55–80 minutes","objectives":["Interpret compound inequalities using “and” and “or.”","Solve and graph intersections and unions.","Write chained inequalities.","Identify empty and overlapping compound sets."],"vocab_ids":["compound-inequality","and-condition","or-condition","intersection","union","chained-inequality","overlap","disjoint-sets","between"],"warmup":["Describe x>2 and x<7.","Describe x≤−3 or x≥4.","Which values satisfy both x≥0 and x<5?"],"concepts":[{"heading":"“And” means both conditions","body":"The solution is the overlap, or intersection, of the two sets."},{"heading":"“Or” means either condition","body":"The solution is the union of values satisfying at least one condition."},{"heading":"Chained notation compresses an interval","body":"The statement −2≤x<5 combines two “and” conditions around the same variable."}],"examples":[{"problem":"Solve x+1>3 and 2x≤12.","steps":["Solve x>2.","Solve x≤6.","Take the overlap."],"answer":"2<x≤6."},{"problem":"Solve 3x<−9 or x−2≥4.","steps":["First set: x<−3.","Second set: x≥6.","Take the union."],"answer":"x<−3 or x≥6."},{"problem":"Classify x>5 and x≤2.","steps":["Graph both conditions.","Look for overlap.","There is none."],"answer":"Empty solution set."}],"pathways":{"Foundation":"Use transparent number-line strips to see overlap and union.","Core":"Solve, graph, and write compound inequalities.","Extended":"Translate among set-builder, interval, and logical notation; analyze complements."},"application":"Model safe operating ranges, eligibility windows, acceptable dimensions, or schedules with multiple simultaneous conditions.","questions":[{"domain":"And","prompt":"x>1 and x≤5 is:","options":["1<x≤5","x≤1 or x>5","x>5","x≤1"],"answer":0,"explanation":"“And” selects the overlap."},{"domain":"Or","prompt":"x<−2 or x≥4 represents:","options":["values between −2 and 4","two outward rays","an empty set","all real values"],"answer":1,"explanation":"The union has two separate rays."},{"domain":"Solve compound","prompt":"Solve x−3≥0 and x+1<7.","options":["x≥3 and x<6","x≤3 or x>6","3≤x<6","both first and third"],"answer":3,"explanation":"Both descriptions are equivalent."},{"domain":"Empty intersection","prompt":"Which has no solution?","options":["x>2 and x<5","x≤0 or x≥3","x>7 and x≤7","−1≤x≤1"],"answer":2,"explanation":"No value is both greater than 7 and at most 7."},{"domain":"Chained form","prompt":"“At least −4 and less than 9” is:","options":["−4≤x<9","−4<x≤9","x≤−4 or x>9","x<−4 and x≥9"],"answer":0,"explanation":"Include −4, exclude 9."}]},{"id":"l07","number":7,"title":"Contextual Constraints, Discrete Solutions & Verification","file":"lessons/lesson-07-contextual-constraints-discrete-solutions.html","duration":"55–80 minutes","objectives":["Write inequalities from real constraints.","Distinguish continuous and discrete solution sets.","Apply nonnegative, whole-number, and domain restrictions.","Verify solutions against mathematics and context."],"vocab_ids":["constraint","domain-restriction","discrete-solution","continuous-solution","whole-number-solution","nonnegative","feasible-set","maximum","minimum","reasonableness"],"warmup":["Can a number of buses be 4.5? Explain.","Write a nonnegative constraint for time t.","A budget is $120 with a $15 fee and $8 items. What inequality models the item count?"],"concepts":[{"heading":"Context narrows the mathematical set","body":"A solved inequality may allow all real values, while the situation permits only integers, nonnegative values, or a finite range."},{"heading":"Discrete quantities are counted","body":"People, tickets, buses, and packages usually require whole-number solutions."},{"heading":"Verification includes units and feasibility","body":"A correct symbolic value can still be impossible or unreasonable in context."}],"examples":[{"problem":"A $50 fee plus $12 per participant must stay at or below $230.","steps":["Write 50+12p≤230.","Solve 12p≤180, so p≤15.","Require p to be a nonnegative whole number."],"answer":"p∈{0,1,…,15}."},{"problem":"At least 180 liters are needed. Each container holds 28 liters.","steps":["Write 28c≥180.","Solve c≥6.43.","Round up because containers are whole."],"answer":"At least 7 containers."},{"problem":"A walkway length satisfies 2.5≤L≤8, measured continuously.","steps":["Recognize a bounded interval.","Keep decimal values.","Check unit and endpoint inclusion."],"answer":"Any real L from 2.5 through 8 is feasible."}],"pathways":{"Foundation":"Underline limit words and label units before writing the inequality.","Core":"Solve constraints and apply discrete or continuous domains.","Extended":"Optimize within multiple constraints and critique hidden assumptions."},"application":"Design a budget, capacity plan, safety range, event schedule, environmental threshold, or production limit with explicit units and feasible solutions.","questions":[{"domain":"Model","prompt":"A $20 fee plus $6 per item must be at most $80.","options":["20+6n≤80","20+6n≥80","6n−20≤80","20n+6≤80"],"answer":0,"explanation":"Fixed fee plus per-item cost cannot exceed 80."},{"domain":"Discrete","prompt":"The solution n≤10.5 counts people. Greatest feasible n:","options":["10.5","11","10","9.5"],"answer":2,"explanation":"People require whole numbers not exceeding 10.5."},{"domain":"Round up","prompt":"Boxes hold 24 books. At least 130 books require:","options":["5 boxes","5.42 boxes","6 boxes","7 boxes"],"answer":2,"explanation":"130/24≈5.42, so six whole boxes are needed."},{"domain":"Nonnegative","prompt":"Which contextual restriction is usually needed for elapsed time t?","options":["t<0","t≥0","t is always an integer","t≠0"],"answer":1,"explanation":"Elapsed time is normally nonnegative."},{"domain":"Verification","prompt":"A contextual answer should be checked for:","options":["symbolic truth only","units, domain, boundary, and reasonableness","font size","whether it is positive only"],"answer":1,"explanation":"Feasibility includes mathematical and contextual conditions."}]}]};window.VOCAB_FALLBACK={"schema_version":"1.0","languages":{"en":"English","es":"Spanish","fr":"French","ar":"Arabic","pt":"Portuguese"},"terms":[{"id":"inequality","en":"inequality","es":"desigualdad","fr":"inégalité","ar":"متباينة","pt":"desigualdade","definition":"A statement comparing two expressions by order rather than equality."},{"id":"less-than","en":"less than","es":"menor que","fr":"inférieur à","ar":"أصغر من","pt":"menor que","definition":"The relation <, showing a value is smaller."},{"id":"greater-than","en":"greater than","es":"mayor que","fr":"supérieur à","ar":"أكبر من","pt":"maior que","definition":"The relation >, showing a value is larger."},{"id":"less-than-or-equal","en":"less than or equal to","es":"menor o igual que","fr":"inférieur ou égal à","ar":"أصغر من أو يساوي","pt":"menor ou igual a","definition":"The relation ≤, including the boundary."},{"id":"greater-than-or-equal","en":"greater than or equal to","es":"mayor o igual que","fr":"supérieur ou égal à","ar":"أكبر من أو يساوي","pt":"maior ou igual a","definition":"The relation ≥, including the boundary."},{"id":"solution-set","en":"solution set","es":"conjunto solución","fr":"ensemble solution","ar":"مجموعة الحل","pt":"conjunto solução","definition":"All values that make a statement true."},{"id":"boundary","en":"boundary","es":"límite","fr":"borne","ar":"حد","pt":"limite","definition":"A value separating solutions from non-solutions."},{"id":"strict-inequality","en":"strict inequality","es":"desigualdad estricta","fr":"inégalité stricte","ar":"متباينة صارمة","pt":"desigualdade estrita","definition":"An inequality using < or > that excludes equality."},{"id":"inclusive-inequality","en":"inclusive inequality","es":"desigualdad inclusiva","fr":"inégalité inclusive","ar":"متباينة شاملة","pt":"desigualdade inclusiva","definition":"An inequality using ≤ or ≥ that includes equality."},{"id":"number-line","en":"number line","es":"recta numérica","fr":"droite numérique","ar":"خط الأعداد","pt":"reta numérica","definition":"A line representing ordered numbers and solution sets."},{"id":"open-point","en":"open point","es":"punto abierto","fr":"point ouvert","ar":"نقطة مفتوحة","pt":"ponto aberto","definition":"A graph marker showing an endpoint is excluded."},{"id":"closed-point","en":"closed point","es":"punto cerrado","fr":"point fermé","ar":"نقطة مغلقة","pt":"ponto fechado","definition":"A graph marker showing an endpoint is included."},{"id":"ray","en":"ray","es":"semirrecta","fr":"demi-droite","ar":"شعاع","pt":"semirreta","definition":"A number-line set extending forever in one direction."},{"id":"interval","en":"interval","es":"intervalo","fr":"intervalle","ar":"فترة","pt":"intervalo","definition":"A connected range of numbers."},{"id":"endpoint","en":"endpoint","es":"extremo","fr":"extrémité","ar":"نقطة نهاية","pt":"extremidade","definition":"A boundary value of an interval."},{"id":"left-ray","en":"left ray","es":"semirrecta izquierda","fr":"demi-droite gauche","ar":"شعاع أيسر","pt":"semirreta à esquerda","definition":"A set extending toward smaller values."},{"id":"right-ray","en":"right ray","es":"semirrecta derecha","fr":"demi-droite droite","ar":"شعاع أيمن","pt":"semirreta à direita","definition":"A set extending toward larger values."},{"id":"bounded-set","en":"bounded set","es":"conjunto acotado","fr":"ensemble borné","ar":"مجموعة محدودة","pt":"conjunto limitado","definition":"A set confined between finite boundaries."},{"id":"one-step-inequality","en":"one-step inequality","es":"desigualdad de un paso","fr":"inégalité à une étape","ar":"متباينة بخطوة واحدة","pt":"desigualdade de uma etapa","definition":"An inequality solved with one inverse-operation step."},{"id":"addition-property-inequality","en":"addition property of inequality","es":"propiedad de suma","fr":"propriété additive","ar":"خاصية الجمع","pt":"propriedade da adição","definition":"Adding the same number to both sides preserves order."},{"id":"subtraction-property-inequality","en":"subtraction property of inequality","es":"propiedad de resta","fr":"propriété soustractive","ar":"خاصية الطرح","pt":"propriedade da subtração","definition":"Subtracting the same number from both sides preserves order."},{"id":"multiplication-property-inequality","en":"multiplication property of inequality","es":"propiedad de multiplicación","fr":"propriété multiplicative","ar":"خاصية الضرب","pt":"propriedade da multiplicação","definition":"Positive multiplication preserves order; negative multiplication reverses it."},{"id":"division-property-inequality","en":"division property of inequality","es":"propiedad de división","fr":"propriété de division","ar":"خاصية القسمة","pt":"propriedade da divisão","definition":"Positive division preserves order; negative division reverses it."},{"id":"inverse-operation","en":"inverse operation","es":"operación inversa","fr":"opération inverse","ar":"عملية عكسية","pt":"operação inversa","definition":"An operation that undoes another operation."},{"id":"equivalent-inequality","en":"equivalent inequality","es":"desigualdad equivalente","fr":"inégalité équivalente","ar":"متباينة مكافئة","pt":"desigualdade equivalente","definition":"An inequality with the same solution set."},{"id":"test-value","en":"test value","es":"valor de prueba","fr":"valeur test","ar":"قيمة اختبار","pt":"valor de teste","definition":"A value substituted to check membership in a solution set."},{"id":"reverse-inequality","en":"reverse the inequality","es":"invertir la desigualdad","fr":"inverser l’inégalité","ar":"عكس المتباينة","pt":"inverter a desigualdade","definition":"Switch the order symbol after multiplying or dividing by a negative."},{"id":"negative-multiplier","en":"negative multiplier","es":"multiplicador negativo","fr":"multiplicateur négatif","ar":"عامل ضرب سالب","pt":"multiplicador negativo","definition":"A negative factor that reverses order."},{"id":"negative-divisor","en":"negative divisor","es":"divisor negativo","fr":"diviseur négatif","ar":"مقسوم عليه سالب","pt":"divisor negativo","definition":"A negative divisor that requires reversing the inequality."},{"id":"order-reversal","en":"order reversal","es":"inversión del orden","fr":"inversion de l’ordre","ar":"عكس الترتيب","pt":"inversão da ordem","definition":"The change in order caused by negative scaling."},{"id":"opposite-numbers","en":"opposite numbers","es":"números opuestos","fr":"nombres opposés","ar":"أعداد متعاكسة","pt":"números opostos","definition":"Numbers equally distant from zero on opposite sides."},{"id":"sign-error","en":"sign error","es":"error de signo","fr":"erreur de signe","ar":"خطأ في الإشارة","pt":"erro de sinal","definition":"An error involving positive or negative signs."},{"id":"verification","en":"verification","es":"verificación","fr":"vérification","ar":"تحقق","pt":"verificação","definition":"Checking a result in the original statement."},{"id":"counterexample","en":"counterexample","es":"contraejemplo","fr":"contre-exemple","ar":"مثال مضاد","pt":"contraexemplo","definition":"An example proving a general claim false."},{"id":"multi-step-inequality","en":"multi-step inequality","es":"desigualdad de varios pasos","fr":"inégalité à plusieurs étapes","ar":"متباينة متعددة الخطوات","pt":"desigualdade de várias etapas","definition":"An inequality requiring several equivalent transformations."},{"id":"distributive-property","en":"distributive property","es":"propiedad distributiva","fr":"propriété distributive","ar":"خاصية التوزيع","pt":"propriedade distributiva","definition":"A property multiplying a factor across a sum or difference."},{"id":"combine-like-terms","en":"combine like terms","es":"combinar términos semejantes","fr":"regrouper les termes semblables","ar":"جمع الحدود المتشابهة","pt":"combinar termos semelhantes","definition":"Add or subtract coefficients of matching variable parts."},{"id":"variable-both-sides","en":"variable on both sides","es":"variable en ambos lados","fr":"variable des deux côtés","ar":"متغير في الطرفين","pt":"variável nos dois lados","definition":"An inequality containing variable terms on each side."},{"id":"all-real-numbers","en":"all real numbers","es":"todos los números reales","fr":"tous les réels","ar":"جميع الأعداد الحقيقية","pt":"todos os números reais","definition":"A solution set containing every real value."},{"id":"empty-set","en":"empty set","es":"conjunto vacío","fr":"ensemble vide","ar":"مجموعة خالية","pt":"conjunto vazio","definition":"A solution set containing no values."},{"id":"contradiction","en":"contradiction","es":"contradicción","fr":"contradiction","ar":"تناقض","pt":"contradição","definition":"A final false statement showing no solutions."},{"id":"identity-inequality","en":"identity inequality","es":"desigualdad identidad","fr":"inégalité identité","ar":"متباينة هوية","pt":"desigualdade identidade","definition":"An inequality true for every allowed value."},{"id":"equivalent-transformations","en":"equivalent transformations","es":"transformaciones equivalentes","fr":"transformations équivalentes","ar":"تحويلات مكافئة","pt":"transformações equivalentes","definition":"Steps preserving the same solution set."},{"id":"compound-inequality","en":"compound inequality","es":"desigualdad compuesta","fr":"inégalité composée","ar":"متباينة مركبة","pt":"desigualdade composta","definition":"Two inequalities joined by and or or."},{"id":"and-condition","en":"and condition","es":"condición y","fr":"condition et","ar":"شرط و","pt":"condição e","definition":"A condition requiring both statements to be true."},{"id":"or-condition","en":"or condition","es":"condición o","fr":"condition ou","ar":"شرط أو","pt":"condição ou","definition":"A condition requiring at least one statement to be true."},{"id":"intersection","en":"intersection","es":"intersección","fr":"intersection","ar":"تقاطع","pt":"interseção","definition":"Values shared by two sets."},{"id":"union","en":"union","es":"unión","fr":"union","ar":"اتحاد","pt":"união","definition":"Values belonging to either of two sets."},{"id":"chained-inequality","en":"chained inequality","es":"desigualdad encadenada","fr":"inégalité double","ar":"متباينة متسلسلة","pt":"desigualdade encadeada","definition":"A compact statement placing a variable between two bounds."},{"id":"overlap","en":"overlap","es":"superposición","fr":"chevauchement","ar":"تداخل","pt":"sobreposição","definition":"The common region of solution sets."},{"id":"disjoint-sets","en":"disjoint sets","es":"conjuntos disjuntos","fr":"ensembles disjoints","ar":"مجموعات منفصلة","pt":"conjuntos disjuntos","definition":"Sets with no shared values."},{"id":"between","en":"between","es":"entre","fr":"entre","ar":"بين","pt":"entre","definition":"Located within two boundaries."},{"id":"constraint","en":"constraint","es":"restricción","fr":"contrainte","ar":"قيد","pt":"restrição","definition":"A condition limiting allowable values."},{"id":"domain-restriction","en":"domain restriction","es":"restricción de dominio","fr":"restriction de domaine","ar":"قيد المجال","pt":"restrição de domínio","definition":"A rule limiting which inputs are permitted."},{"id":"discrete-solution","en":"discrete solution","es":"solución discreta","fr":"solution discrète","ar":"حل منفصل","pt":"solução discreta","definition":"A solution selected from separated countable values."},{"id":"continuous-solution","en":"continuous solution","es":"solución continua","fr":"solution continue","ar":"حل مستمر","pt":"solução contínua","definition":"A solution that may be any value in an interval."},{"id":"whole-number-solution","en":"whole-number solution","es":"solución entera no negativa","fr":"solution entière naturelle","ar":"حل بعدد كلي","pt":"solução de número inteiro não negativo","definition":"A solution restricted to 0, 1, 2, and so on."},{"id":"nonnegative","en":"nonnegative","es":"no negativo","fr":"non négatif","ar":"غير سالب","pt":"não negativo","definition":"Greater than or equal to zero."},{"id":"feasible-set","en":"feasible set","es":"conjunto factible","fr":"ensemble réalisable","ar":"مجموعة ممكنة","pt":"conjunto viável","definition":"All values meeting every mathematical and contextual constraint."},{"id":"maximum","en":"maximum","es":"máximo","fr":"maximum","ar":"حد أقصى","pt":"máximo","definition":"The greatest allowable or observed value."},{"id":"minimum","en":"minimum","es":"mínimo","fr":"minimum","ar":"حد أدنى","pt":"mínimo","definition":"The least allowable or observed value."},{"id":"reasonableness","en":"reasonableness","es":"razonabilidad","fr":"caractère raisonnable","ar":"معقولية","pt":"razoabilidade","definition":"Whether a result makes sense in context."}]};</script><script src="assets/unit-dashboard.js"></script><script>
+(() => {
+  "use strict";
+
+  const $ = selector => document.querySelector(selector);
+
+  const elements = {
+    boundary: $("#boundaryInput"),
+    direction: $("#directionSelect"),
+    inclusion: $("#inclusiveToggle"),
+    boundaryLabel: $("#boundaryLabel"),
+    symbolic: $("#symbolicValue"),
+    symbolMeaning: $("#symbolMeaning"),
+    interval: $("#intervalValue"),
+    intervalMeaning: $("#intervalMeaning"),
+    setBuilder: $("#setBuilderValue"),
+    boundaryStatus: $("#boundaryStatus"),
+    boundaryTest: $("#boundaryTest"),
+    solutionExample: $("#solutionExample"),
+    solutionTest: $("#solutionTest"),
+    nonSolutionExample: $("#nonSolutionExample"),
+    nonSolutionTest: $("#nonSolutionTest"),
+    shade: $("#shade"),
+    dot: $("#boundaryDot"),
+    ticks: $("#numberLineTicks"),
+    numberLine: $("#numberLine"),
+    leftDirection: $("#leftDirection"),
+    rightDirection: $("#rightDirection"),
+    checkBody: $("#constraintCheckBody"),
+    explanation: $("#labExplanation")
+  };
+
+  if (Object.values(elements).some(element => !element)) return;
+
+  const MIN = -10;
+  const MAX = 10;
+  const LEFT = 5;
+  const RIGHT = 95;
+
+  function position(value) {
+    return LEFT + ((value - MIN) / (MAX - MIN)) * (RIGHT - LEFT);
+  }
+
+  function relationSymbol(less, inclusive) {
+    if (less) return inclusive ? "≤" : "<";
+    return inclusive ? "≥" : ">";
+  }
+
+  function compare(value, boundary, less, inclusive) {
+    if (less) return inclusive ? value <= boundary : value < boundary;
+    return inclusive ? value >= boundary : value > boundary;
+  }
+
+  function intervalNotation(boundary, less, inclusive) {
+    if (less) return `(${String.fromCharCode(8722)}∞, ${boundary}${inclusive ? "]" : ")"}`;
+    return `${inclusive ? "[" : "("}${boundary}, ∞)`;
+  }
+
+  function words(boundary, less, inclusive) {
+    if (less) {
+      return inclusive
+        ? `x is less than or equal to ${boundary}`
+        : `x is less than ${boundary}`;
+    }
+    return inclusive
+      ? `x is greater than or equal to ${boundary}`
+      : `x is greater than ${boundary}`;
+  }
+
+  function buildTicks() {
+    const values = [];
+    for (let value = MIN; value <= MAX; value += 2) values.push(value);
+    elements.ticks.innerHTML = values.map(value => `
+      <span class="number-tick" style="left:${position(value)}%">
+        <i></i><small>${value < 0 ? `−${Math.abs(value)}` : value}</small>
+      </span>
+    `).join("");
+  }
+
+  function membershipRow(candidate, boundary, symbol, isMember, label) {
+    return `
+      <div class="constraint-check-row${label === "boundary" ? " boundary-row" : ""}">
+        <span>${candidate}</span>
+        <span>${candidate} ${symbol} ${boundary} is ${isMember ? "true" : "false"}</span>
+        <span class="${isMember ? "member" : "not-member"}">
+          ${isMember ? "solution" : "not a solution"}
+        </span>
+      </div>
+    `;
+  }
+
+  function renderLab() {
+    const boundary = Number(elements.boundary.value);
+    const less = elements.direction.value === "less";
+    const inclusive = elements.inclusion.value === "inclusive";
+    const symbol = relationSymbol(less, inclusive);
+    const boundaryIncluded = compare(boundary, boundary, less, inclusive);
+
+    const solution = less ? boundary - 1 : boundary + 1;
+    const nonSolution = less ? boundary + 1 : boundary - 1;
+    const endpointPosition = position(boundary);
+
+    elements.boundaryLabel.textContent = boundary;
+    elements.symbolic.textContent = `x ${symbol} ${boundary}`;
+    elements.symbolMeaning.textContent = words(boundary, less, inclusive);
+    elements.interval.textContent = intervalNotation(boundary, less, inclusive);
+    elements.intervalMeaning.textContent = inclusive
+      ? "square bracket includes the finite boundary"
+      : "parenthesis excludes the finite boundary";
+    elements.setBuilder.textContent = `{x ∈ ℝ | x ${symbol} ${boundary}}`;
+
+    elements.boundaryStatus.textContent = inclusive ? "included" : "excluded";
+    elements.boundaryTest.textContent =
+      `${boundary} ${symbol} ${boundary} is ${boundaryIncluded ? "true" : "false"}`;
+
+    elements.solutionExample.textContent = solution;
+    elements.solutionTest.textContent =
+      `${solution} ${symbol} ${boundary} is true`;
+
+    elements.nonSolutionExample.textContent = nonSolution;
+    elements.nonSolutionTest.textContent =
+      `${nonSolution} ${symbol} ${boundary} is false`;
+
+    elements.dot.style.left = `${endpointPosition}%`;
+    elements.dot.classList.toggle("closed", inclusive);
+
+    if (less) {
+      elements.shade.style.left = `${LEFT}%`;
+      elements.shade.style.width = `${Math.max(0, endpointPosition - LEFT)}%`;
+      elements.leftDirection.textContent = "solutions toward −∞";
+      elements.rightDirection.textContent = "non-solutions";
+    } else {
+      elements.shade.style.left = `${endpointPosition}%`;
+      elements.shade.style.width = `${Math.max(0, RIGHT - endpointPosition)}%`;
+      elements.leftDirection.textContent = "non-solutions";
+      elements.rightDirection.textContent = "solutions toward +∞";
+    }
+
+    elements.checkBody.innerHTML =
+      membershipRow(boundary, boundary, symbol, boundaryIncluded, "boundary") +
+      membershipRow(solution, boundary, symbol, true, "solution") +
+      membershipRow(nonSolution, boundary, symbol, false, "non-solution");
+
+    const pointWord = inclusive ? "closed" : "open";
+    const directionWord = less ? "left" : "right";
+    const relationPhrase = less
+      ? inclusive ? "less than or equal to" : "less than"
+      : inclusive ? "greater than or equal to" : "greater than";
+
+    elements.numberLine.setAttribute(
+      "aria-label",
+      `${pointWord} point at ${boundary}; solution set shaded ${directionWord}, representing values ${relationPhrase} ${boundary}.`
+    );
+
+    elements.explanation.textContent =
+      `Use a ${pointWord} point at ${boundary} because the boundary is ${inclusive ? "included" : "excluded"}. ` +
+      `Shade ${directionWord} because the solutions are values ${relationPhrase} ${boundary}. ` +
+      `The symbolic form x ${symbol} ${boundary}, interval ${intervalNotation(boundary, less, inclusive)}, and the number-line graph describe the same solution set.`;
+  }
+
+  buildTicks();
+
+  [elements.boundary, elements.direction, elements.inclusion].forEach(element => {
+    element.addEventListener("input", renderLab);
+    element.addEventListener("change", renderLab);
+  });
+
+  renderLab();
+})();
+</script></body></html>
