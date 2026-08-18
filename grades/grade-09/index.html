@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f4f0e7">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Khaemenes High Grade 9 Freshman Campus — personalized courses, electives, reports, grades, favorites, Archaemenes Mentor, Aurora encouragement, tools, games, directory, and mastery-aware learning.">
-<meta name="application-version" content="2026.08.17-grade09-v2">
-<title>Khaemenes Academy<br> Sr. High School<br>Grade 9<br>Freshman Campus</title>
+<meta name="description" content="Khaemenes High Grade 9 Freshman Campus — adaptive core pathways, parent-reviewed readiness, personalized courses, reports, tools, games, mentor support, and mastery-aware integrated learning.">
+<meta name="application-version" content="2026.08.18-grade09-v3-adaptive-pathways">
+<title>Khaemenes Academy · Grade 9 Freshman Campus</title>
 <style>
 :root{
  --paper:#f4f0e7;--paper2:#fbf9f4;--white:#fff;--ink:#0c1210;--soft:#3d4a45;
@@ -115,6 +115,9 @@ header{position:sticky;top:var(--ticker);z-index:1400;height:var(--header);backg
 /* feedback */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{padding:22px;border:1px solid var(--line);border-radius:11px;background:var(--white);text-align:left}.panel h3{margin:0;font:500 26px var(--display)}label.field{display:grid;gap:5px;margin-top:10px;color:var(--muted);font-size:9px}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line2);border-radius:7px;background:var(--paper2);color:var(--ink);padding:10px}.field textarea{min-height:100px;resize:vertical}.status{margin-top:9px;color:#568064;font-size:10px}
 
+/* adaptive core pathways */
+.pathway-shell{display:grid;grid-template-columns:1.05fr .95fr;gap:15px;align-items:start}.pathway-principle{padding:26px;border:1px solid var(--line);border-radius:13px;background:var(--white);text-align:left}.pathway-principle h3{margin:8px 0;font:500 31px var(--display);color:var(--deep)}.pathway-flow{display:grid;gap:8px;margin-top:15px}.flow-step{display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:start;padding:10px;border:1px solid var(--line);border-radius:9px;background:var(--paper2)}.flow-step b{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--ink);color:var(--paper2);font:500 12px var(--display)}.flow-step strong{display:block;font-size:12px}.flow-step small{display:block;color:var(--muted);font-size:10px}.pathway-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.pathway-card{padding:18px;border:1px solid var(--line);border-radius:11px;background:var(--white);text-align:left}.pathway-card .subject{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}.pathway-card h3{margin:6px 0;font:500 24px var(--display);color:var(--deep)}.pathway-status{margin:10px 0;padding:9px;border:1px dashed var(--line2);border-radius:8px;background:var(--paper2);font-size:10px;color:var(--soft)}.pathway-status strong{color:var(--deep)}.pathway-card .card-foot{align-items:flex-end}.family-rule{margin-top:16px;padding:12px;border-left:4px solid var(--gold);background:var(--paper2);border-radius:8px;color:var(--soft);font-size:11px}.pathway-modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.route-list{display:grid;gap:8px;margin-top:12px}.route-item{padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--paper2)}.route-item strong{display:block}.route-item small{color:var(--muted)}@media(max-width:900px){.pathway-shell{grid-template-columns:1fr}.pathway-grid{grid-template-columns:1fr}}@media(max-width:720px){.pathway-modal-grid{grid-template-columns:1fr}}
+
 footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:9px}
 @media(max-width:1050px){.headlinks{display:none}.header-inner{grid-template-columns:1fr auto}.grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(2,1fr)}.summary-grid{grid-template-columns:repeat(2,1fr)}.aurora-wrap,.mentor{grid-template-columns:1fr}}
 @media(max-width:720px){.shell{width:min(calc(100% - 24px),var(--max))}.profile-chip{display:none}.hero-inner{min-height:auto;padding:60px 0}.hero-stats,.grid4,.grid3,.grid2,.summary-grid,.wellbeing-grid,.mentor-prompts,.form-grid,.design-grid{grid-template-columns:1fr}.hero-stat{border-left:0;border-top:1px solid var(--line)}.hero-stat:first-child{border-top:0}.student-strip{grid-template-columns:auto 1fr}.student-actions{grid-column:1/-1;justify-content:flex-start}.directory-tools{grid-template-columns:1fr}.section{padding:62px 0}.report-table{display:block;overflow:auto}}
@@ -134,7 +137,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     </strong><small>
     </small></span></a>
   <nav class="headlinks" aria-label="Freshman navigation">
-   <a href="#courses">Courses</a><a href="#electives">Electives</a><a href="#reports">Grades & Reports</a><a href="#mentor">Archaemenes</a><a href="#directory">Directory</a>
+   <a href="#courses">Courses</a><a href="#pathways">Pathways</a><a href="#electives">Electives</a><a href="#reports">Grades & Reports</a><a href="#mentor">Archaemenes</a><a href="#directory">Directory</a>
   </nav>
   <div class="headright">
    <a class="profile-chip" id="profileChip" href="../../index.html#student-portal" hidden><span class="profile-avatar" id="profileAvatar">S</span><span><strong id="profileName">Student</strong><small id="profileMeta">Grade 9</small></span></a>
@@ -156,9 +159,8 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <section class="hero">
  <div class="shell hero-inner">
   <div class="hero-stage">
-   <h1 class="hero-title">Khaemenes Academy<br>
-     <h2 class="hero-sub">Freshman Campus
-     </h2>
+   <h1 class="hero-title">Khaemenes Academy</h1>
+   <div class="hero-sub">Grade 9 · Freshman Campus</div>
    <div class="hero-sub">Your Freshman Year Starts Here.</div>
    <p class="hero-lead" id="heroLead">A connected home for Grade 9 academics, electives, grades, progress, research, tools, games, and mentor support.</p>
    <div class="actions">
@@ -167,7 +169,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     <button class="btn" id="designBtn">✦ Design My Page</button>
    </div>
    <div class="hero-stats">
-    <div class="hero-stat"><strong>4 Core Courses</strong><span>Verified Grade 9 student portals</span></div>
+    <div class="hero-stat"><strong>4 Adaptive Core Pathways</strong><span>Unit 01 readiness · family review · appropriate challenge</span></div>
     <div class="hero-stat"><strong>7+ Electives</strong><span>Creative, civic, health, technology & research pathways</span></div>
     <div class="hero-stat"><strong>80% Mastery</strong><span>Progressive course unlock standard</span></div>
     <div class="hero-stat"><strong>Student Home</strong><span>Profile, pins, favorites & preferences</span></div>
@@ -187,7 +189,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
    <div class="summary-card"><span>Continue Learning</span><strong id="continueTitle">Choose a course</strong><p id="continueDesc">Your most recently opened Grade 9 resource will appear here.</p><div class="card-foot"><a class="open-link" id="continueLink" href="#courses">Continue →</a></div></div>
    <div class="summary-card"><span>My Favorites</span><strong id="favoriteCount">0 pinned</strong><p>Courses, tools, games and resources saved to your home.</p></div>
    <div class="summary-card"><span>Grade & Reports</span><strong>4 course reports</strong><p>Open authoritative course records and assessment reports.</p></div>
-   <div class="summary-card"><span>Mastery Standard</span><strong>80%</strong><p>Current level mastery is required before advancing.</p></div>
+   <div class="summary-card"><span>Mastery Standard</span><strong>80%</strong><p>Applies within the family-selected pathway after readiness review.</p></div>
   </div>
  </div>
 </section>
@@ -201,12 +203,34 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 
 <section class="section alt" id="courses">
  <div class="shell">
-  <div class="heading"><div class="kicker">Core Academics</div><h2>Grade 9 Courses</h2><p>Each course remains authoritative for its own grades, quizzes, reports, progress, and 80% mastery gates.</p></div>
+  <div class="heading"><div class="kicker">Core Academics</div><h2>Grade 9 Courses</h2><p>Each subject begins with a common Grade 9 foundation, then uses readiness evidence and parent/guardian review to choose the most appropriate pathway. Individual courses remain authoritative for grades, assessments, and 80% mastery gates.</p></div>
   <div class="grid4" id="courseGrid"></div>
  </div>
 </section>
 
-<section class="section" id="electives">
+
+<section class="section" id="pathways">
+ <div class="shell">
+  <div class="heading"><div class="kicker">Adaptive Core Pathways</div><h2>Right Level. Right Challenge. Parent Reviewed.</h2><p>Unit 01 is the common foundation and readiness experience in every core subject. NAIB can organize the evidence and recommend a next step; the parent or guardian makes the placement decision.</p></div>
+  <div class="pathway-shell">
+   <article class="pathway-principle">
+    <div class="kicker">The Grade 9 Bridge</div><h3>Readiness is not a label.</h3>
+    <p>Students should not be held in material they have already mastered, and students who need stronger foundations should receive targeted preparation without being treated as behind.</p>
+    <div class="pathway-flow">
+     <div class="flow-step"><b>01</b><span><strong>Common Foundation</strong><small>Unit 01 introduces the subject, course environment, and essential starting skills.</small></span></div>
+     <div class="flow-step"><b>02</b><span><strong>Readiness Evidence</strong><small>Course work, diagnostic challenges, corrections, projects, and other demonstrated learning form the evidence.</small></span></div>
+     <div class="flow-step"><b>03</b><span><strong>NAIB Advisory</strong><small>NAIB identifies strengths, developing foundations, and possible acceleration without making the placement decision.</small></span></div>
+     <div class="flow-step"><b>04</b><span><strong>Parent / Guardian Review</strong><small>The family selects the pathway after reviewing the evidence and recommendation.</small></span></div>
+     <div class="flow-step"><b>05</b><span><strong>Integrated Learning</strong><small>Unit 02 and beyond combine lessons, projects, labs, tools, games, research, reflection, and mastery evidence.</small></span></div>
+    </div>
+    <div class="family-rule"><strong>Placement principle:</strong> NAIB advises. Parent or guardian decides. Once a pathway is selected, the course's 80% mastery standard governs advancement within that pathway.</div>
+   </article>
+   <div class="pathway-grid" id="pathwayGrid"></div>
+  </div>
+ </div>
+</section>
+
+<section class="section alt" id="electives">
  <div class="shell">
   <div class="heading"><div class="kicker">Electives & Enrichment</div><h2>Build a Freshman Year That Feels Like Yours.</h2><p>Explore connected elective pathways and pin the ones you use most often.</p></div>
   <div class="grid3" id="electiveGrid"></div>
@@ -261,6 +285,9 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     <button data-mentor="test">I have a quiz or exam.</button>
     <button data-mentor="research">I need research help.</button>
     <button data-mentor="plan">Help me plan my week.</button>
+     <button data-mentor="tooeasy">My core work feels too easy.</button>
+     <button data-mentor="foundation">I need stronger foundations.</button>
+     <button data-mentor="pathway">Explain my pathway review.</button>
    </div>
    <div class="mentor-response" id="mentorResponse">Choose a prompt above for a practical next step.</div>
   </article>
@@ -278,8 +305,8 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <section class="section alt" id="beta">
  <div class="shell form-grid">
   <article class="panel">
-   <div class="kicker">Beta Program</div><h3>Report a Problem or Idea</h3><p style="color:var(--muted);font-size:12px">Reports stay local until you export them.</p>
-   <label class="field">Area<select id="betaArea"><option>Grade 9 Home</option><option>Courses</option><option>Electives</option><option>Grades / Reports</option><option>Archaemenes</option><option>Aurora</option><option>Directory</option><option>Design My Page</option><option>Tools / Games</option></select></label>
+   <div class="kicker">Beta Program</div><h3>Report a Problem or Idea</h3><p style="color:var(--muted);font-size:12px">Reports stay local until you export them. Curriculum-quality signals can be designed separately for the Spyder/Noema Beta system without including learner identity or family placement notes.</p>
+   <label class="field">Area<select id="betaArea"><option>Grade 9 Home</option><option>Courses</option><option>Electives</option><option>Grades / Reports</option><option>Archaemenes</option><option>Aurora</option><option>Directory</option><option>Design My Page</option><option>Tools / Games</option><option>Adaptive Pathways</option><option>Curriculum / Assessment</option><option>Accessibility</option></select></label>
    <label class="field">What happened?<textarea id="betaText"></textarea></label>
    <label class="field">Optional URL<input id="betaUrl"></label>
    <div class="actions" style="justify-content:flex-start"><button class="btn primary" id="saveBeta">Save Report</button><button class="btn" id="exportBeta">Export Reports</button></div><div class="status" id="betaStatus"></div>
@@ -293,7 +320,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 </section>
 </main>
 
-<footer><div class="shell">Khaemenes High · Grade 9 Freshman Campus · Foundations · Discovery · Confidence</div></footer>
+<footer><div class="shell">Khaemenes High · Grade 9 Freshman Campus · Foundations · Readiness · Integrated Learning</div></footer>
 
 <!-- Design My Page -->
 <div class="modal-bg" id="designModal" aria-hidden="true">
@@ -317,10 +344,29 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
      <label><input type="checkbox" data-section-toggle="aurora"> Aurora</label>
      <label><input type="checkbox" data-section-toggle="mentor"> Archaemenes</label>
      <label><input type="checkbox" data-section-toggle="electives"> Electives</label>
+      <label><input type="checkbox" data-section-toggle="pathways"> Adaptive Pathways</label>
     </div></div>
     <div class="design-group"><h3>Reset</h3><p style="color:var(--muted);font-size:11px">Restore the Grade 9 default appearance and section visibility.</p><button class="btn" id="resetDesign">Restore Default</button></div>
    </div>
    <div class="actions"><button class="btn primary" id="saveDesign">Save My Design</button></div>
+  </div>
+ </section>
+</div>
+
+
+<!-- Adaptive pathway review -->
+<div class="modal-bg" id="pathwayModal" aria-hidden="true">
+ <section class="modal" role="dialog" aria-modal="true" aria-label="Core pathway family review">
+  <div class="modal-head"><h2>Core Pathway Review</h2><button class="modal-close" data-close-modal="pathwayModal" aria-label="Close pathway review">×</button></div>
+  <div class="modal-body">
+   <p id="pathwayModalIntro" style="color:var(--muted);font-size:12px"></p>
+   <div class="pathway-modal-grid">
+    <div class="design-group"><h3>NAIB Advisory</h3><p id="pathwayRecommendation" style="color:var(--soft);font-size:11px">No locally saved recommendation is available yet. Complete the subject's Unit 01 readiness work first.</p></div>
+    <div class="design-group"><h3>Family Decision</h3><label class="field">Parent-selected pathway<select id="pathwayChoice"><option value="">Choose after reviewing the evidence</option></select></label><label class="field">Optional family note<textarea id="pathwayFamilyNote" placeholder="Questions, goals, or skills you would like monitored."></textarea></label></div>
+   </div>
+   <div class="route-list" id="pathwayRoutes"></div>
+   <div class="actions"><button class="btn primary" id="savePathwayDecision">Save Family Decision</button><button class="btn" id="clearPathwayDecision">Clear Saved Decision</button></div>
+   <p class="status" id="pathwayDecisionStatus"></p>
   </div>
  </section>
 </div>
@@ -349,6 +395,14 @@ const FAVORITES_KEY="khaemenes-high-resource-favorites-v2";
 const HUB_KEY="khaemenes-grade09-hub-v2";
 const LAST_KEY="khaemenes-grade09-last-open-v1";
 const COURSE_SUMMARY_KEY="khaemenes-grade09-course-summary-v1";
+ const PATHWAY_KEY="khaemenes-grade09-adaptive-pathways-v1";
+ const GATEWAY_KEYS={math:"khaemenes-prealgebra-u02-gateway-v1",ela:"khaemenes-english9-u02-gateway-v1",science:"khaemenes-science9-u02-gateway-v1",social:"khaemenes-global9-u02-gateway-v1"};
+ const PATHWAY_DEFS={
+  math:{label:"Mathematics",core:"Pre-Algebra · Grade 9 Core",foundation:"Targeted Mathematics Foundation Bridge",advanced:"Advanced Mathematics Readiness Review"},
+  ela:{label:"Language Arts",core:"English 9 · Grade 9 Core",foundation:"Targeted Literacy Foundation Bridge",advanced:"Advanced Language Arts Readiness Review"},
+  science:{label:"Science",core:"Integrated Science 9 · Grade 9 Core",foundation:"Targeted Science Foundation Bridge",advanced:"Advanced Science Readiness Review"},
+  social:{label:"Social Studies",core:"Global Studies · Grade 9 Core",foundation:"Targeted Humanities Foundation Bridge",advanced:"Advanced Humanities Readiness Review"}
+ };
 
 const $=id=>document.getElementById(id);
 const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};
@@ -357,10 +411,10 @@ const toast=m=>{const t=$("toast");t.textContent=m;t.style.opacity="1";t.style.t
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
 const COURSES=[
- {id:"prealgebra",category:"Course",title:"Pre-Algebra",tag:"Mathematics",desc:"Arithmetic fluency, rational numbers, proportional reasoning, equations, functions, geometry, statistics, modelling, tools and games.",url:"../../courses/mathematics/pre-algebra/",className:"math"},
- {id:"english9",category:"Course",title:"English 9",tag:"Language Arts",desc:"Literature, composition, grammar, vocabulary, research, speaking, listening and media literacy.",url:"../../courses/language-arts/english-9/",className:"ela"},
- {id:"science9",category:"Course",title:"Integrated Science 9",tag:"Science",desc:"Biology, chemistry, physics, Earth science, environment, engineering, inquiry, evidence and lab work.",url:"../../courses/science/integrated-science-9/",className:"science"},
- {id:"global9",category:"Course",title:"Global Studies Honors",tag:"Social Studies",desc:"World history, geography, civics, economics, media literacy, source analysis and argument.",url:"../../courses/social-studies/grade-09/",className:"social"}
+ {id:"prealgebra",subjectId:"math",category:"Course",title:"Mathematics",pathwayTitle:"Grade 9 Mathematics Pathway",tag:"Adaptive Core",desc:"Number sense, algebra readiness, modelling, geometry, statistics, tools and mathematical reasoning. Unit 01 evidence can support preparation, Pre-Algebra, acceleration, or a higher-level readiness review.",url:"../../courses/mathematics/pre-algebra/",className:"math"},
+ {id:"english9",subjectId:"ela",category:"Course",title:"Language Arts",pathwayTitle:"Grade 9 Language Arts Pathway",tag:"Adaptive Core",desc:"Reading, literature, composition, grammar, vocabulary, research, speaking, listening and media literacy with foundation, core, and advanced readiness options.",url:"../../courses/language-arts/english-9/",className:"ela"},
+ {id:"science9",subjectId:"science",category:"Course",title:"Science",pathwayTitle:"Grade 9 Science Pathway",tag:"Adaptive Core",desc:"Scientific literacy, measurement, data, graphing, biology, chemistry, physics, Earth systems, engineering, inquiry and evidence with readiness-informed support or extension.",url:"../../courses/science/integrated-science-9/",className:"science"},
+ {id:"global9",subjectId:"social",category:"Course",title:"Social Studies",pathwayTitle:"Grade 9 Humanities Pathway",tag:"Adaptive Core",desc:"World history, geography, civics, economics, chronology, source analysis, evidence and argument with foundation, core, and advanced readiness options.",url:"../../courses/social-studies/grade-09/",className:"social"}
 ];
 
 const ELECTIVES=[
@@ -374,14 +428,15 @@ const ELECTIVES=[
 ];
 
 const RESOURCES=[
- {id:"calculator",category:"Tool",title:"Scientific Calculator",tag:"Math Tool",desc:"High-school scientific calculator and problem-solving support.",url:"../../courses/mathematics/tools/calculator/"},
- {id:"arcade",category:"Game",title:"Verve N Veda Arcade",tag:"Games",desc:"Learning games, logic, strategy, puzzles and playful exploration.",url:"https://vervenveda.com/arcade.github.io/"},
- {id:"mathgames",category:"Game",title:"Pre-Algebra Games",tag:"Math Games",desc:"Pattern, logic, Sudoku, geometry and course-linked activities.",url:"../../courses/mathematics/pre-algebra/#games"},
+ {id:"calculator",category:"Tool",title:"Khaemenes Scientific Calculator",tag:"Math & Science",desc:"Sovereign high-school scientific calculator for calculation and verification.",url:"https://vervenveda.com/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/"},
+ {id:"prose",category:"Tool",title:"PROSE™ Editorial Suite",tag:"Writing",desc:"Local-first drafting, revision, reports, essays, journals and academic writing.",url:"https://vervenveda.com/proresource_hub.github.io/Protools/PROSE_index.html"},
+ {id:"citation",category:"Research",title:"Evidence & Citation Studio",tag:"Research Tool",desc:"Claims, sources, evidence notes, quotations, provenance and citation practice.",url:"https://vervenveda.com/proresource_hub.github.io/Protools/Evidence_Citation_Studio/"},
+ {id:"arcade",category:"Game",title:"Verve N Veda Arcade",tag:"Games",desc:"Learning games, logic, strategy, puzzles and playful skill reinforcement.",url:"https://vervenveda.com/arcade.github.io/"},
+ {id:"mathgames",category:"Game",title:"Pre-Algebra Games",tag:"Math Games",desc:"Course-linked practice and reinforcement. Games support learning; mastery remains based on demonstrated mathematics.",url:"../../courses/mathematics/pre-algebra/#games"},
  {id:"verifier",category:"Research",title:"The Verifier",tag:"Evidence",desc:"Evidence-aware research, claim checking and source evaluation.",url:"https://vervenveda.com/theverifier.github.io/"},
- {id:"arshif",category:"Research",title:"ARSHIF Archives",tag:"Archives",desc:"Research, history, reference collections and reading rooms.",url:"https://vervenveda.com/Arshif.github.io/"},
- {id:"citation",category:"Research",title:"Evidence & Citation Studio",tag:"Research Tool",desc:"Source handling, evidence notes, quotations and citation practice.",url:"https://vervenveda.com/proresource_hub.github.io/Protools/Evidence_Citation_Studio/index.html"},
+ {id:"arshif",category:"Research",title:"ARSHIF Archives",tag:"Archives",desc:"Research, history, reference collections, Halls and reading rooms.",url:"https://vervenveda.com/Arshif.github.io/"},
  {id:"aurora",category:"Wellbeing",title:"Aurora",tag:"Wellbeing",desc:"Reflection, encouragement, rest and creative renewal.",url:"https://vervenveda.com/aurora.github.io/"},
- {id:"science",category:"Tool",title:"Science Lab",tag:"Lab",desc:"Grade 9 science investigations, data tools, graphing and CER work.",url:"../../courses/science/integrated-science-9/"}
+ {id:"science",category:"Tool",title:"Science Lab",tag:"Lab",desc:"Grade 9 science investigations, data tools, graphing and evidence-based lab work.",url:"../../courses/science/integrated-science-9/"}
 ];
 
 const ALL=[...COURSES,...ELECTIVES,...RESOURCES];
@@ -389,6 +444,7 @@ const state=read(HUB_KEY,{favorites:[],reports:[],theme:"academic",reduceMotion:
 state.favorites=Array.isArray(state.favorites)?state.favorites:[];
 state.reports=Array.isArray(state.reports)?state.reports:[];
 state.hiddenSections=Array.isArray(state.hiddenSections)?state.hiddenSections:[];
+ const pathwayState=read(PATHWAY_KEY,{decisions:{}});pathwayState.decisions=pathwayState.decisions||{};let activePathwaySubject="math";
 
 function profile(){
  const p=read(PROFILE_KEY,null);
@@ -440,6 +496,21 @@ function courseStatusText(id){
  if(s.current)parts.push(`Current: ${s.current}`);
  return parts.join(" · ")||"Open course report";
 }
+function gatewayRecord(subject){return read(GATEWAY_KEYS[subject],null)}
+function pathwayDecision(subject){return pathwayState.decisions?.[subject]||null}
+function pathwayStatus(subject){
+ const d=pathwayDecision(subject),g=gatewayRecord(subject);
+ if(d?.choice)return `Family selected: ${d.choice}`;
+ if(g?.parent_choice)return `Family selected in course gateway: ${g.parent_choice}`;
+ if(g?.recommendation?.route)return `NAIB advisory available: ${g.recommendation.route}`;
+ return "Unit 01 readiness / family review not yet recorded on this device.";
+}
+function pathwayCard(c){const s=c.subjectId,def=PATHWAY_DEFS[s];return `<article class="pathway-card"><div class="subject">${esc(def.label)} · Adaptive Core</div><h3>${esc(c.pathwayTitle)}</h3><p>${esc(c.desc)}</p><div class="pathway-status"><strong>Current status</strong><br>${esc(pathwayStatus(s))}</div><div class="card-foot"><a class="open-link" data-open="${c.id}" href="${c.url}">Open subject →</a><button class="btn" type="button" data-pathway-review="${s}">Family Review</button></div></article>`}
+function renderPathways(){$("pathwayGrid").innerHTML=COURSES.map(pathwayCard).join("");document.querySelectorAll("[data-pathway-review]").forEach(b=>b.onclick=()=>openPathwayReview(b.dataset.pathwayReview))}
+function openPathwayReview(subject){activePathwaySubject=subject;const def=PATHWAY_DEFS[subject],g=gatewayRecord(subject),d=pathwayDecision(subject);$("pathwayModalIntro").textContent=`${def.label}: review readiness evidence, NAIB's advisory when available, and the family-selected next step.`;$("pathwayRecommendation").textContent=g?.recommendation?.route?`${g.recommendation.route}. ${g.recommendation.why||""}`:"No locally saved NAIB recommendation is available yet. Complete the subject's Unit 01 readiness work first.";const routes=[def.foundation,def.core,def.advanced];const savedChoice=d?.choice||g?.parent_choice||"";const routeOptions=[...routes];if(savedChoice&&!routeOptions.includes(savedChoice))routeOptions.push(savedChoice);$("pathwayChoice").innerHTML=`<option value="">Choose after reviewing the evidence</option>${routeOptions.map(x=>`<option>${esc(x)}</option>`).join("")}`;$("pathwayRoutes").innerHTML=routes.map((x,i)=>`<div class="route-item"><strong>${esc(x)}</strong><small>${i===0?"Strengthen only the foundations that need attention; progression can adjust as mastery is demonstrated.":i===1?"Continue the standard Grade 9 core pathway with 80% mastery progression.":"Use an additional readiness review to determine whether a more advanced course would provide appropriate challenge."}</small></div>`).join("");$("pathwayChoice").value=savedChoice;$("pathwayFamilyNote").value=d?.note||"";$("pathwayDecisionStatus").textContent=d?.savedAt?`Family decision saved locally ${new Date(d.savedAt).toLocaleString()}.`:"NAIB advises; parent or guardian decides.";openModal("pathwayModal")}
+function savePathwayReview(){const choice=$("pathwayChoice").value;if(!choice){$("pathwayDecisionStatus").textContent="Choose a pathway before saving.";return}pathwayState.decisions[activePathwaySubject]={choice,note:$("pathwayFamilyNote").value.trim(),savedAt:new Date().toISOString(),authority:"parent-or-guardian"};write(PATHWAY_KEY,pathwayState);$("pathwayDecisionStatus").textContent=`Family decision saved locally: ${choice}`;renderPathways();toast("Family pathway decision saved.")}
+function clearPathwayReview(){delete pathwayState.decisions[activePathwaySubject];write(PATHWAY_KEY,pathwayState);$("pathwayChoice").value="";$("pathwayFamilyNote").value="";$("pathwayDecisionStatus").textContent="Saved family decision cleared from this device.";renderPathways()}
+
 function renderCourses(){$("courseGrid").innerHTML=COURSES.map(x=>card(x,true)).join("")}
 function renderElectives(){$("electiveGrid").innerHTML=ELECTIVES.map(x=>card(x,false)).join("")}
 function renderFavorites(){
@@ -497,14 +568,14 @@ function applyDesign(){
  if(state.theme==="cosmic")document.body.classList.add("theme-cosmic");
  if(state.largeText)document.body.classList.add("large-text");
  if(state.reduceMotion)document.body.classList.add("reduce-motion");
- ["reports","aurora","mentor","electives"].forEach(id=>{const el=$(id);if(el)el.hidden=state.hiddenSections.includes(id)});
+ ["reports","aurora","mentor","electives","pathways"].forEach(id=>{const el=$(id);if(el)el.hidden=state.hiddenSections.includes(id)});
  renderFavorites();
 }
 function bindDynamic(){
  document.querySelectorAll("[data-pin]").forEach(b=>b.onclick=()=>togglePin(b.dataset.pin));
  document.querySelectorAll("[data-open]").forEach(a=>a.onclick=()=>{const item=ALL.find(x=>x.id===a.dataset.open);if(item)markOpen(item)});
 }
-function renderAll(){renderProfile();renderCourses();renderElectives();renderReports();renderFavorites();renderDirectory();applyDesign();bindDynamic()}
+function renderAll(){renderProfile();renderCourses();renderPathways();renderElectives();renderReports();renderFavorites();renderDirectory();applyDesign();bindDynamic()}
 
 /* ticker */
 const TICKER=[
@@ -513,7 +584,8 @@ const TICKER=[
  ["Aurora","A little encouragement for today.","#aurora"],
  ["Grades & Reports","Your course records stay authoritative.","#reports"],
  ["Freshman Directory","Search tools, games, research and electives.","#directory"],
- ["Mastery","80% unlock standard.","#reports"]
+ ["Mastery","80% within the chosen pathway.","#reports"],
+ ["Adaptive Pathways","NAIB advises · family decides.","#pathways"]
 ];
 function tickerSet(hidden=false){return `<div class="ticker-set" ${hidden?'aria-hidden="true"':""}><span class="ticker-label">Grade 9</span>${TICKER.map(([a,b,h])=>`<a href="${h}" ${hidden?'tabindex="-1"':""}>${esc(a)} · ${esc(b)}</a>`).join("")}</div>`}
 $("tickerTrack").innerHTML=tickerSet()+tickerSet(true);
@@ -522,7 +594,8 @@ $("tickerToggle").onclick=()=>{const t=$("ticker"),paused=t.dataset.paused==="tr
 /* menu */
 const MENU=[
  ["Freshman Home","Dashboard and personalization","./","IX"],
- ["Core Courses","Four Grade 9 core portals","#courses","C"],
+ ["Core Courses","Four adaptive Grade 9 core subjects","#courses","C"],
+ ["Adaptive Pathways","NAIB advisory · parent reviewed","#pathways","↗"],
  ["Electives","Creative and enrichment pathways","#electives","E"],
  ["Grades & Reports","Course records and mastery","#reports","R"],
  ["My Favorites","Pinned resources","#favoritesSection","★"],
@@ -549,6 +622,7 @@ function closeModal(id){$(id).classList.remove("open");$(id).setAttribute("aria-
 document.querySelectorAll("[data-close-modal]").forEach(b=>b.onclick=()=>closeModal(b.dataset.closeModal));
 document.querySelectorAll("[data-close-link]").forEach(a=>a.onclick=()=>closeModal("masteryModal"));
 $("designBtn").onclick=()=>openDesign();$("studentDesignBtn").onclick=()=>openDesign();$("masteryInfoBtn").onclick=()=>openModal("masteryModal");
+ $("savePathwayDecision").onclick=savePathwayReview;$("clearPathwayDecision").onclick=clearPathwayReview;
 function openDesign(){
  document.querySelectorAll('input[name="theme"]').forEach(r=>r.checked=r.value===state.theme);
  $("reduceMotion").checked=!!state.reduceMotion;$("largeText").checked=!!state.largeText;
@@ -590,7 +664,10 @@ const MENTOR={
  mastery:"Below 80% means the current level needs more work before advancing. Review quiz corrections and weak objectives, practice them directly, then retake the current assessment when ready.",
  test:"Retrieve what you know without notes first. Then study only the gaps, practice mixed questions, and finish by explaining the hardest concept in your own words.",
  research:"Start with a focused question. Use more than one source, track where each claim comes from, and separate evidence from interpretation. The Verifier, ARSHIF, and Citation Studio are in the directory.",
- plan:"Choose the week's fixed deadlines first. Then place difficult work earlier, reading and writing in longer uninterrupted blocks, and review/corrections near the end of each day."
+ plan:"Choose the week's fixed deadlines first. Then place difficult work earlier, reading and writing in longer uninterrupted blocks, and review/corrections near the end of each day.",
+ tooeasy:"If you are consistently demonstrating mastery with little new learning, that is useful readiness evidence. Complete the required current work, then open the Adaptive Pathways section with your parent or guardian and review whether a higher-level readiness check is appropriate.",
+ foundation:"Needing a stronger foundation does not mean repeating everything. Identify the exact prerequisite skill that is interfering, use a short targeted lesson, tool, game, or practice sequence, then demonstrate the skill again and continue forward.",
+ pathway:"The pathway review separates readiness from mastery. NAIB can organize evidence and recommend a route. Your parent or guardian chooses the pathway. Once chosen, the course's 80% mastery rule governs progress within that pathway."
 };
 document.querySelectorAll("[data-mentor]").forEach(b=>b.onclick=()=>{$("mentorResponse").textContent=MENTOR[b.dataset.mentor]});
 
