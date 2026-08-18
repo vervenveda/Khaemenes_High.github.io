@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "unit": "KH-MATH-PA-U01",
+  "status": "Draft conceptual crosswalk",
+  "disclaimer": "Planning aid only; not an official certification, authorization, equivalency decision, or guarantee of compliance. Schools must review current jurisdictional requirements.",
+  "universal_competencies": [
+    "Classify and represent numbers in multiple forms.",
+    "Recognize factors, multiples, prime structure, and divisibility.",
+    "Use shared structure to solve grouping and cycle problems.",
+    "Evaluate numerical expressions accurately.",
+    "Estimate, check reasonableness, and choose suitable precision.",
+    "Explain, justify, compare methods, and revise errors."
+  ],
+  "frameworks": [
+    {
+      "name": "Common Core State Standards for Mathematics",
+      "jurisdiction": "United States",
+      "mapping_level": "Conceptual",
+      "source": "https://corestandards.org/mathematics-standards/",
+      "codes": [
+        {
+          "code": "6.NS.B.4",
+          "connection": "GCF, LCM, and shared factor structure."
+        },
+        {
+          "code": "6.EE.A.1–2",
+          "connection": "Exponents and numerical expressions."
+        },
+        {
+          "code": "8.NS.A.1–2",
+          "connection": "Rational and irrational numbers and approximation."
+        },
+        {
+          "code": "MP1, MP2, MP3, MP6, MP7, MP8",
+          "connection": "Problem solving, reasoning, justification, precision, structure, repeated reasoning."
+        }
+      ]
+    },
+    {
+      "name": "Cambridge Lower Secondary Mathematics (0862)",
+      "jurisdiction": "International",
+      "mapping_level": "Strand-level conceptual",
+      "source": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-lower-secondary/curriculum/mathematics/",
+      "codes": [
+        {
+          "code": "Number",
+          "connection": "Number classification, factors, multiples, operations, estimation, fluency."
+        },
+        {
+          "code": "Algebra, Geometry and Measure",
+          "connection": "Expressions, powers, and structure."
+        },
+        {
+          "code": "Thinking and Working Mathematically",
+          "connection": "Conjecture, evidence, strategies, and reasonableness."
+        }
+      ]
+    },
+    {
+      "name": "IB Middle Years Programme Mathematics",
+      "jurisdiction": "International",
+      "mapping_level": "Framework-level conceptual",
+      "source": "https://ibo.org/programmes/middle-years-programme/curriculum/mathematics/",
+      "codes": [
+        {
+          "code": "Number",
+          "connection": "Number systems, properties, prime structure, operations, estimation."
+        },
+        {
+          "code": "Inquiry and application",
+          "connection": "Authentic contexts, unfamiliar problems, and communication."
+        },
+        {
+          "code": "Standard / Extended challenge",
+          "connection": "Varied breadth and depth by skill."
+        }
+      ]
+    },
+    {
+      "name": "OECD PISA 2022 Mathematics Framework",
+      "jurisdiction": "International comparative framework",
+      "mapping_level": "Literacy and process alignment",
+      "source": "https://www.oecd.org/en/publications/pisa-2022-assessment-and-analytical-framework_dfe0bf9c-en/full-report/component-3.html",
+      "codes": [
+        {
+          "code": "Quantity",
+          "connection": "Magnitude, representation, estimation, operations, precision."
+        },
+        {
+          "code": "Mathematical reasoning",
+          "connection": "Structure, claims, and reasonableness."
+        },
+        {
+          "code": "Formulate–Employ–Interpret",
+          "connection": "Represent, calculate, and interpret results and limitations."
+        }
+      ]
+    }
+  ]
+}
