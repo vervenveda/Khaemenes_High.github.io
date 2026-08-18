@@ -1,0 +1,343 @@
+{
+  "schema_version": "1.0",
+  "course": {
+    "id": "math-prealgebra",
+    "code": "KH-MATH-PA",
+    "title": "Khaemenes Global Pre-Algebra",
+    "grade_band": "Secondary readiness / Grade 9 bridge",
+    "duration_weeks": 36,
+    "pathways": [
+      "Foundation",
+      "Core",
+      "Extended"
+    ],
+    "delivery": [
+      "Self-paced",
+      "Teacher-led",
+      "Blended",
+      "Summer bridge"
+    ],
+    "mapping_status": "Draft universal crosswalk; jurisdiction-specific review required before formal standards reporting."
+  },
+  "mastery_scale": [
+    {
+      "level": 1,
+      "label": "Beginning",
+      "description": "Needs direct instruction and supported practice."
+    },
+    {
+      "level": 2,
+      "label": "Developing",
+      "description": "Shows partial understanding with inconsistent application."
+    },
+    {
+      "level": 3,
+      "label": "Proficient",
+      "description": "Applies the skill accurately in familiar contexts."
+    },
+    {
+      "level": 4,
+      "label": "Mastered",
+      "description": "Explains, transfers, and applies the skill in unfamiliar contexts."
+    }
+  ],
+  "units": [
+    {
+      "id": "u00",
+      "number": 0,
+      "weeks": 1,
+      "title": "Mathematical Readiness & Diagnostic",
+      "status": "open",
+      "path": "diagnostic/",
+      "big_idea": "A diagnostic should guide support, not label or punish a learner.",
+      "objectives": [
+        "Review essential arithmetic and notation",
+        "Identify strengths and unfinished learning",
+        "Select support by skill",
+        "Set a personal mathematics goal"
+      ],
+      "framework_tags": [
+        "Universal: Mathematical Practices",
+        "US: Grades 6–8 readiness",
+        "International: Lower-secondary number and algebra readiness"
+      ]
+    },
+    {
+      "id": "u01",
+      "number": 1,
+      "weeks": 2,
+      "title": "Number Systems, Factors & Estimation",
+      "status": "open",
+      "big_idea": "Numbers can be classified, decomposed, compared, and estimated to support efficient reasoning.",
+      "objectives": [
+        "Classify natural, whole, integer, rational, and irrational numbers",
+        "Use factors, multiples, primes, and divisibility",
+        "Apply greatest common factor and least common multiple",
+        "Estimate and evaluate reasonableness",
+        "Use order of operations accurately"
+      ],
+      "framework_tags": [
+        "Universal: Number",
+        "US: 6.NS / 7.NS readiness",
+        "Cambridge: Number",
+        "IB MYP: Number"
+      ],
+      "path": "units/unit-01/"
+    },
+    {
+      "id": "u02",
+      "number": 2,
+      "weeks": 3,
+      "title": "Integers & Absolute Value",
+      "status": "planned",
+      "big_idea": "Signed numbers describe direction, change, position, gain, and loss.",
+      "objectives": [
+        "Interpret integers in context",
+        "Compare and order signed numbers",
+        "Use absolute value as distance",
+        "Add, subtract, multiply, and divide integers",
+        "Model change on number lines"
+      ],
+      "framework_tags": [
+        "Universal: Number",
+        "US: 6.NS / 7.NS",
+        "Cambridge: Number",
+        "IB MYP: Number"
+      ]
+    },
+    {
+      "id": "u03",
+      "number": 3,
+      "weeks": 3,
+      "title": "Fractions, Decimals & Rational Numbers",
+      "status": "planned",
+      "big_idea": "Equivalent representations reveal relationships and make different calculations efficient.",
+      "objectives": [
+        "Generate equivalent fractions",
+        "Perform operations with rational numbers",
+        "Convert among fractions, decimals, and percentages",
+        "Estimate before calculating",
+        "Solve multistep contextual problems"
+      ],
+      "framework_tags": [
+        "Universal: Number",
+        "US: 6.NS / 7.NS",
+        "Cambridge: Number",
+        "IB MYP: Number"
+      ]
+    },
+    {
+      "id": "u04",
+      "number": 4,
+      "weeks": 3,
+      "title": "Ratios, Rates & Proportional Reasoning",
+      "status": "planned",
+      "big_idea": "Proportional reasoning compares quantities and supports scale, prediction, and fair comparison.",
+      "objectives": [
+        "Interpret ratios and unit rates",
+        "Use tables, graphs, equations, and double number lines",
+        "Solve direct-proportion problems",
+        "Analyze scale drawings and maps",
+        "Distinguish proportional from nonproportional relationships"
+      ],
+      "framework_tags": [
+        "Universal: Ratio and Proportion",
+        "US: 6.RP / 7.RP",
+        "Cambridge: Number and Algebra",
+        "IB MYP: Relationships"
+      ]
+    },
+    {
+      "id": "u05",
+      "number": 5,
+      "weeks": 3,
+      "title": "Percent, Financial Mathematics & Change",
+      "status": "planned",
+      "big_idea": "Percent expresses comparison per hundred and supports financial, scientific, and civic decisions.",
+      "objectives": [
+        "Find a percent of a quantity",
+        "Determine percent increase and decrease",
+        "Solve discount, tax, tip, markup, and simple-interest problems",
+        "Compare financial options",
+        "Interpret percentage points and relative change"
+      ],
+      "framework_tags": [
+        "Universal: Financial Literacy",
+        "US: 7.RP",
+        "Cambridge: Number",
+        "PISA: Quantity and financial contexts"
+      ]
+    },
+    {
+      "id": "u06",
+      "number": 6,
+      "weeks": 2,
+      "title": "Powers, Roots & Scientific Notation",
+      "status": "planned",
+      "big_idea": "Exponential notation describes repeated multiplication and supports extremely large and small quantities.",
+      "objectives": [
+        "Evaluate integer exponents",
+        "Use exponent patterns and properties",
+        "Estimate and evaluate square roots",
+        "Write and compare scientific notation",
+        "Apply powers of ten in science and technology"
+      ],
+      "framework_tags": [
+        "Universal: Number and Algebra",
+        "US: 8.EE",
+        "Cambridge: Number",
+        "IB MYP: Number"
+      ]
+    },
+    {
+      "id": "u07",
+      "number": 7,
+      "weeks": 3,
+      "title": "Variables, Expressions & Algebraic Structure",
+      "status": "planned",
+      "big_idea": "Algebra represents generalized relationships and preserves structure across many situations.",
+      "objectives": [
+        "Identify terms, factors, coefficients, and constants",
+        "Translate words and contexts into expressions",
+        "Evaluate expressions by substitution",
+        "Use properties to rewrite equivalent expressions",
+        "Combine like terms and interpret structure"
+      ],
+      "framework_tags": [
+        "Universal: Algebra",
+        "US: 6.EE / 7.EE",
+        "Cambridge: Algebra",
+        "IB MYP: Algebra"
+      ]
+    },
+    {
+      "id": "u08",
+      "number": 8,
+      "weeks": 3,
+      "title": "Equations, Formulas & Inverse Operations",
+      "status": "planned",
+      "big_idea": "An equation states that two expressions have equal value, and valid operations preserve that balance.",
+      "objectives": [
+        "Solve one-step and multistep equations",
+        "Use balance and inverse-operation models",
+        "Check solutions",
+        "Rearrange simple formulas",
+        "Write equations from real situations"
+      ],
+      "framework_tags": [
+        "Universal: Algebra",
+        "US: 6.EE / 7.EE / 8.EE",
+        "Cambridge: Algebra",
+        "IB MYP: Algebra"
+      ]
+    },
+    {
+      "id": "u09",
+      "number": 9,
+      "weeks": 2,
+      "title": "Inequalities & Constraints",
+      "status": "planned",
+      "big_idea": "Inequalities describe ranges, limits, choices, and conditions rather than a single value.",
+      "objectives": [
+        "Interpret inequality symbols",
+        "Graph solution sets on number lines",
+        "Solve one-step and multistep inequalities",
+        "Reverse the inequality when multiplying or dividing by a negative",
+        "Model constraints in context"
+      ],
+      "framework_tags": [
+        "Universal: Algebra",
+        "US: 6.EE / 7.EE",
+        "Cambridge: Algebra",
+        "IB MYP: Algebra"
+      ]
+    },
+    {
+      "id": "u10",
+      "number": 10,
+      "weeks": 4,
+      "title": "Coordinates, Patterns, Functions & Linear Relationships",
+      "status": "planned",
+      "big_idea": "Tables, graphs, equations, and words can represent the same relationship from different perspectives.",
+      "objectives": [
+        "Plot and interpret points in four quadrants",
+        "Recognize independent and dependent variables",
+        "Build tables and graphs from rules",
+        "Interpret slope as rate of change",
+        "Identify linear and nonlinear patterns",
+        "Use function notation informally"
+      ],
+      "framework_tags": [
+        "Universal: Functions and Relationships",
+        "US: 8.EE / 8.F",
+        "Cambridge: Algebra",
+        "IB MYP: Relationships"
+      ]
+    },
+    {
+      "id": "u11",
+      "number": 11,
+      "weeks": 3,
+      "title": "Geometry, Measurement & Scale",
+      "status": "planned",
+      "big_idea": "Measurement and geometric relationships support design, construction, navigation, and scientific modelling.",
+      "objectives": [
+        "Solve perimeter, area, surface area, and volume problems",
+        "Use angle relationships",
+        "Apply scale and similarity concepts",
+        "Use the Pythagorean theorem conceptually",
+        "Convert measurement units",
+        "Use coordinates in geometric reasoning"
+      ],
+      "framework_tags": [
+        "Universal: Geometry and Measure",
+        "US: 7.G / 8.G",
+        "Cambridge: Geometry and Measure",
+        "IB MYP: Geometry"
+      ]
+    },
+    {
+      "id": "u12",
+      "number": 12,
+      "weeks": 3,
+      "title": "Statistics, Probability & Data Decisions",
+      "status": "planned",
+      "big_idea": "Data analysis describes variation and supports evidence-aware decisions under uncertainty.",
+      "objectives": [
+        "Describe distributions",
+        "Calculate and interpret measures of center",
+        "Compare spread and variability",
+        "Read and create data displays",
+        "Use simple and compound probability",
+        "Evaluate sampling and misleading representations"
+      ],
+      "framework_tags": [
+        "Universal: Statistics and Probability",
+        "US: 6.SP / 7.SP",
+        "Cambridge: Statistics and Probability",
+        "PISA: Uncertainty and Data"
+      ]
+    },
+    {
+      "id": "u13",
+      "number": 13,
+      "weeks": 1,
+      "title": "Mathematical Modelling Capstone",
+      "status": "planned",
+      "big_idea": "Mathematics becomes powerful when learners define a problem, make assumptions, analyze evidence, and communicate limitations.",
+      "objectives": [
+        "Choose a personal, scientific, environmental, financial, or civic question",
+        "Select suitable representations",
+        "Calculate and check results",
+        "Explain assumptions and limitations",
+        "Present a defensible conclusion",
+        "Reflect on readiness for Algebra I"
+      ],
+      "framework_tags": [
+        "Universal: Mathematical Modelling",
+        "PISA: Formulate, Employ, Interpret",
+        "IB MYP: Applying mathematics in real-life contexts"
+      ]
+    }
+  ]
+}
