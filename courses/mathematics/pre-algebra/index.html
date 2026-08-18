@@ -581,10 +581,10 @@ body.activity-open{overflow:hidden}
     </div>
    </a>
    <h2>
-    Khaemenes Global Pre-Algebra
+    Khaemenes Open-Age Pre-Algebra
    </h2>
    <p>
-    Open-Age Foundations · Algebra I Readiness · Numerica Forge
+    Foundational Mathematics · GED Support · Algebra I Readiness · Numerica Forge
    </p>
    <p class="small">
     Khaemenes Academy › Mathematics › Pre-Algebra
@@ -668,7 +668,7 @@ body.activity-open{overflow:hidden}
      </div>
     </div>
     <div class="header-tools" aria-label="Course account and navigation controls">
-     <a class="header-control" href="../../../index.html#student-portal" aria-label="Open the High School student profile">Profile</a>
+     <a class="header-control" href="https://vervenveda.github.io/Khaemenes_Academy.github.io/" aria-label="Open Khaemenes Academy">Academy Home</a>
      <button class="header-control pin-control" id="pinCourseButton" type="button" aria-pressed="false" aria-describedby="pinCourseStatus">☆ Pin to Profile</button>
      <details class="course-menu" id="gamesMenu">
       <summary aria-label="Open math games and tools menu">Math Games &amp; Tools <span aria-hidden="true">⌄</span></summary>
@@ -700,6 +700,7 @@ body.activity-open{overflow:hidden}
        <div class="course-menu-label">This course</div>
        <button type="button" data-go="dashboard">Course Dashboard</button>
        <button type="button" data-go="overview">Course Guide</button>
+        <button type="button" data-go="arch">ARCH Math Mentor</button>
        <button type="button" data-go="week">Weekly Lessons</button>
        <button type="button" data-go="tools">Math Tool Dock</button>
        <button type="button" data-go="games">Math Games &amp; Tools</button>
@@ -718,7 +719,7 @@ body.activity-open{overflow:hidden}
     Open-Age · Global Pre-Algebra
    </h1>
    <p>
-    A complete, open-age 36-week pre-algebra pathway for arithmetic fluency, rational numbers, proportional reasoning, financial mathematics, exponents, equations, inequalities, functions, geometry, statistics, probability, modelling, and confident Algebra I readiness.
+    A complete, open-age 36-week mathematics pathway for teens and adults building pre-algebra mastery. Use it for foundational mathematics, GED-style preparation support, skill recovery, homeschool study, career refreshers, or confident Algebra I readiness.
    </p>
    <div class="actions">
     <button data-go="week">
@@ -3527,7 +3528,7 @@ const APP = {
     {
       "name": "Course map JSON",
       "url": "https://github.com/vervenveda/Khaemenes_High.github.io/blob/main/courses/mathematics/pre-algebra/course-map.json",
-      "note": "Defines Khaemenes Global Pre-Algebra, 36-week duration, pathways, 13 units, and universal crosswalk tags."
+      "note": "Defines Khaemenes Open-Age Pre-Algebra, 36-week duration, pathways, 13 units, and universal crosswalk tags."
     },
     {
       "name": "Mathematics folder",
@@ -4233,7 +4234,9 @@ const APP = {
 
 const STORAGE_KEY = "KHAE_OPEN_PREALGEBRA_FORGE_V2";
 const LEGACY_STORAGE_KEYS = ["KHAE_MATH9_PREALGEBRA_FORGE_V1"];
-const PROFILE_PIN_KEY = "khaemenes-high-pinned-courses-v2";
+const PROFILE_PIN_KEY = "khaemenes-academy-pinned-courses-v1";
+const LEGACY_PROFILE_PIN_KEY = "khaemenes-high-pinned-courses-v2";
+const ARCH_EVIDENCE_KEY = "khaemenes-arch-prealgebra-evidence-v1";
 const PROFILE_COURSE_ID = "pre-algebra";
 let state=loadState(),view="dashboard",activeWeek=1;
 let activeQuiz=[];
@@ -4257,7 +4260,7 @@ function loadState(){
   }catch(error){console.warn("Progress could not be loaded.",error)}
   return{schemaVersion:2,students:[],activeId:null};
 }
-function save(){state.schemaVersion=2;localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}
+function save(){state.schemaVersion=2;localStorage.setItem(STORAGE_KEY,JSON.stringify(state));publishArchEvidence()}
 function uid(){return"s_"+Math.random().toString(36).slice(2,9)+Date.now().toString(36)}
 function student(){return state.students.find(s=>s.id===state.activeId)||null}
 function ensure(s){
@@ -4295,11 +4298,11 @@ function stats(s){
     done,total:180,midterm:Math.round(mid),final:Math.round(fin),capstone:Math.round(cap),needs
   };
 }
-function readPinnedCourses(){try{const value=JSON.parse(localStorage.getItem(PROFILE_PIN_KEY)||"[]");return Array.isArray(value)?value:[]}catch{return[]}}
+function readPinnedCourses(){try{const primary=JSON.parse(localStorage.getItem(PROFILE_PIN_KEY)||"[]");if(Array.isArray(primary)&&primary.length)return primary;const legacy=JSON.parse(localStorage.getItem(LEGACY_PROFILE_PIN_KEY)||"[]");return Array.isArray(legacy)?legacy:[]}catch{return[]}}
 function courseIsPinned(){return readPinnedCourses().includes(PROFILE_COURSE_ID)}
 function updatePinButton(){const button=$("pinCourseButton");if(!button)return;const pinned=courseIsPinned();button.setAttribute("aria-pressed",String(pinned));button.textContent=pinned?"★ Pinned to Profile":"☆ Pin to Profile";button.title=pinned?"Remove Pre-Algebra from the top of the student profile":"Pin Pre-Algebra to the top of the student profile"}
-function toggleCoursePin(){let pinned=readPinnedCourses();const wasPinned=pinned.includes(PROFILE_COURSE_ID);pinned=wasPinned?pinned.filter(id=>id!==PROFILE_COURSE_ID):[PROFILE_COURSE_ID,...pinned.filter(id=>id!==PROFILE_COURSE_ID)];try{localStorage.setItem(PROFILE_PIN_KEY,JSON.stringify(pinned))}catch{return alert("This browser could not save the profile pin.")}updatePinButton();const status=$("pinCourseStatus");if(status)status.textContent=wasPinned?"Pre-Algebra was removed from the student profile.":"Pre-Algebra was pinned to the top of the student profile."}
-function render(){renderStudentSelect();renderWeekList();setActiveButtons();updatePinButton();({dashboard,overview,week,scope,tools,games,exams,capstone,reports,standards}[view]||dashboard)()}function setActiveButtons(){document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view))}function renderStudentSelect(){$("studentSelect").innerHTML=state.students.map(s=>`<option value="${s.id}" ${s.id===state.activeId?"selected":""}>${esc(s.name)}</option>`).join("")}function renderWeekList(){let s=student();$("weekList").innerHTML=APP.weeks.map(w=>{let qb=s?quizBest(s,w.week):0,tag=qb>=APP.passingTarget?"good":qb?"bad":"";return`<button class="weekBtn ${w.week===activeWeek?"active":""}" data-week="${w.week}"><span><strong>${w.week}</strong> ${esc(w.title)}</span><span class="pill ${tag}">${qb||"—"}</span></button>`}).join("");document.querySelectorAll("[data-week]").forEach(b=>b.onclick=()=>{activeWeek=+b.dataset.week;view="week";render()})}
+function toggleCoursePin(){let pinned=readPinnedCourses();const wasPinned=pinned.includes(PROFILE_COURSE_ID);pinned=wasPinned?pinned.filter(id=>id!==PROFILE_COURSE_ID):[PROFILE_COURSE_ID,...pinned.filter(id=>id!==PROFILE_COURSE_ID)];try{localStorage.setItem(PROFILE_PIN_KEY,JSON.stringify(pinned));localStorage.setItem(LEGACY_PROFILE_PIN_KEY,JSON.stringify(pinned))}catch{return alert("This browser could not save the profile pin.")}updatePinButton();const status=$("pinCourseStatus");if(status)status.textContent=wasPinned?"Pre-Algebra was removed from the student profile.":"Pre-Algebra was pinned to the top of the student profile."}
+function render(){renderStudentSelect();renderWeekList();setActiveButtons();updatePinButton();({dashboard,overview,arch,week,scope,tools,games,exams,capstone,reports,standards}[view]||dashboard)()}function setActiveButtons(){document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view))}function renderStudentSelect(){$("studentSelect").innerHTML=state.students.map(s=>`<option value="${s.id}" ${s.id===state.activeId?"selected":""}>${esc(s.name)}</option>`).join("")}function renderWeekList(){let s=student();$("weekList").innerHTML=APP.weeks.map(w=>{let qb=s?quizBest(s,w.week):0,tag=qb>=APP.passingTarget?"good":qb?"bad":"";return`<button class="weekBtn ${w.week===activeWeek?"active":""}" data-week="${w.week}"><span><strong>${w.week}</strong> ${esc(w.title)}</span><span class="pill ${tag}">${qb||"—"}</span></button>`}).join("");document.querySelectorAll("[data-week]").forEach(b=>b.onclick=()=>{activeWeek=+b.dataset.week;view="week";render()})}
 
 function dashboard(){
   let s=student(),st=stats(s),needs=st.needs.length?`Recommended review: Weeks ${st.needs.slice(0,12).join(", ")}${st.needs.length>12?"…":""}`:"No review flags yet.";
@@ -4319,9 +4322,28 @@ function dashboard(){
     <div class="card col12"><h3>Upcoming Weeks</h3><div class="table-wrap">${scopeTable(APP.weeks.slice(Math.max(0,activeWeek-1),Math.min(APP.weeks.length,activeWeek+5)))}</div></div>
   </div>`;
 }
+function publishArchEvidence(){
+  try{
+    const s=student(); if(!s)return; const st=stats(s);
+    const record={schemaVersion:1,courseId:PROFILE_COURSE_ID,courseTitle:APP.title,learnerId:s.id,learnerName:s.name,updated:new Date().toISOString(),passingTarget:APP.passingTarget,overallMastery:st.course,lessonCompletion:st.lessons,assignmentCompletion:st.assignments,quizMastery:st.quizzes,midterm:st.midterm,final:st.final,capstone:st.capstone,reviewWeeks:st.needs,weekEvidence:APP.weeks.map(w=>({week:w.week,unit:w.unitNumber,title:w.title,lessonCompletion:lessonPct(s,w.week),assignmentCompletion:assignPct(s,w.week),quizMastery:quizBest(s,w.week)}))};
+    localStorage.setItem(ARCH_EVIDENCE_KEY,JSON.stringify(record));
+  }catch(error){console.warn("ARCH evidence bridge could not be updated.",error)}
+}
+function archRecommendation(st){
+  if(!st.quizzes && !st.midterm && !st.final) return {tone:"Start with evidence",text:"Begin with the diagnostic and the first unit. ARCH will use your saved work to suggest review, practice, or advancement without attaching an age or grade label to you."};
+  if(st.course>=90 && st.final>=80) return {tone:"Ready for a stronger challenge",text:"Your current evidence is strong. Finish any incomplete course evidence, then consider Algebra I or a higher placement check. ARCH recommends by demonstrated mastery, not age."};
+  if(st.course>=80) return {tone:"On track",text:"You are meeting the course mastery target. Keep strengthening any flagged weeks and complete cumulative evidence before moving to the next mathematics level."};
+  if(st.needs.length) return {tone:"Targeted support",text:`ARCH recommends focused review in Weeks ${st.needs.slice(0,8).join(", ")}${st.needs.length>8?"…":""}. Use Foundation practice where needed, then retake the mastery checks. This is preparation, not a setback.`};
+  return {tone:"Build the evidence",text:"Continue the next lesson sequence and complete mastery checks so ARCH can make a more precise recommendation."};
+}
+function arch(){
+  const s=student(),st=stats(s),r=archRecommendation(st); publishArchEvidence();
+  $("content").innerHTML=`<div class="grid"><div class="card col12"><span class="pill">ARCH</span><span class="pill">Sovereign local mentor</span><span class="pill">Open age</span><h3>ARCH · Mathematics Mentor</h3><p>ARCH reads the learning evidence saved by this Pre-Algebra course and turns it into supportive next-step guidance. It does not decide a learner's grade placement, graduation status, GED eligibility, or next course. Those decisions belong to the learner and, when applicable, a parent, guardian, teacher, school, or testing program.</p><div class="notice"><strong>${esc(r.tone)}:</strong> ${esc(r.text)}</div></div><div class="card col4"><h3>Current Evidence</h3><p class="score">${st.course||"—"}%</p><p class="small">Overall mastery · target ${APP.passingTarget}%</p><p>Quiz mastery: <strong>${st.quizzes||"—"}%</strong><br>Midterm: <strong>${st.midterm||"—"}%</strong><br>Final: <strong>${st.final||"—"}%</strong><br>Capstone: <strong>${st.capstone||"—"}%</strong></p></div><div class="card col8"><h3>What ARCH Can Do Here</h3><ul><li>Identify weak or incomplete skill areas from saved course evidence.</li><li>Recommend Foundation, Core, or Extended practice without age-based labels.</li><li>Recognize when a learner may be ready for a stronger challenge.</li><li>Support an adult refreshing mathematics or preparing for GED-style quantitative work.</li><li>Keep advice local to this browser; no learner record is sent to an outside AI service.</li></ul><div class="actions"><button type="button" onclick="view='week';render()">Continue Learning</button><a class="button secondary" href="diagnostic/">Open Diagnostic</a><button class="ghost" type="button" onclick="view='reports';render()">View Evidence</button></div></div><div class="card col12"><h3>ARCH Review Map</h3><div class="table-wrap">${progressTable(s)}</div></div></div>`;
+}
+
 function overview(){
   $("content").innerHTML=`<div class="grid">
-    <div class="card col12"><span class="pill">Open age</span><span class="pill">36 weeks</span><span class="pill">Foundation · Core · Extended</span><h3>How to Use This Course</h3><p>This is a level-based course rather than a grade-based course. It is appropriate for any learner who needs a complete bridge from arithmetic and proportional reasoning into Algebra I.</p><div class="notice"><strong>Placement principle:</strong> begin with the diagnostic, use its evidence to choose Foundation, Core, or Extended support, and advance by demonstrated mastery rather than age.</div></div>
+    <div class="card col12"><span class="pill">Open age</span><span class="pill">36 weeks</span><span class="pill">Foundation · Core · Extended</span><h3>How to Use This Course</h3><p>This is a level-based course rather than a grade-based course. It is appropriate for secondary students, homeschool learners, returning adults, GED-preparation learners, and anyone who needs a complete bridge from arithmetic and proportional reasoning into Algebra I.</p><div class="notice"><strong>Placement principle:</strong> begin with the diagnostic, use its evidence to choose Foundation, Core, or Extended support, and advance by demonstrated mastery rather than age.</div></div>
     <div class="card col6"><h3>Learning Cycle</h3><ol><li>Open the complete unit page and lesson sequence.</li><li>Study concept development and worked examples.</li><li>Complete practice while showing reasoning and units.</li><li>Use a tool to explore or verify—not replace—the mathematics.</li><li>Analyze errors, revise work, and retake for mastery.</li><li>Save a reflection or portfolio sample.</li></ol></div>
     <div class="card col6"><h3>Evidence of Learning</h3><p><strong>Completion</strong> tracks lesson and assignment participation. <strong>Mastery</strong> is based on quizzes, the midterm, final, and capstone. Keeping these measures separate prevents checked boxes from being mistaken for mathematical proficiency.</p><p>Best scores are retained, but every attempt remains in the local record so growth is visible.</p></div>
     <div class="card col4"><h3>Foundation</h3><p>Concrete models, smaller steps, vocabulary support, worked examples, and additional practice.</p></div>
