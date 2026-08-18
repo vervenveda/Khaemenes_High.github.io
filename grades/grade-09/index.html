@@ -7,7 +7,7 @@
 <meta name="color-scheme" content="light dark">
 <meta name="description" content="Khaemenes High Grade 9 Freshman Campus — personalized courses, electives, reports, grades, favorites, Archaemenes Mentor, Aurora encouragement, tools, games, directory, and mastery-aware learning.">
 <meta name="application-version" content="2026.08.17-grade09-v2">
-<title>Khaemenes High · Grade 9 Freshman Campus</title>
+<title>Khaemenes Academy<br> Sr. High School<br>Grade 9<br>Freshman Campus</title>
 <style>
 :root{
  --paper:#f4f0e7;--paper2:#fbf9f4;--white:#fff;--ink:#0c1210;--soft:#3d4a45;
@@ -23,47 +23,47 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--ticker) + var(--header) + 14px)}
-body{margin:0;min-width:300px;color:var(--ink);background:var(--paper);font:400 16px/1.64 var(--sans);text-align:center}
+body{margin:0;min-width:333px;color:var(--ink);background:var(--paper);font:444 16px/1.64 var(--sans);text-align:center}
 body.menu-open,body.modal-open{overflow:hidden}
 body.theme-dark{--paper:#08100d;--paper2:#0e1713;--white:#142019;--ink:#f5f1e8;--soft:#c8d0ca;--muted:#a5afa8;--line:rgba(255,255,255,.12);--line2:rgba(255,255,255,.22);--forest:#d2b97d;--deep:#f2dfb0}
 body.theme-forest{--paper:#dfe8dd;--paper2:#edf2e9;--white:#f8faf6;--accent:#486a56}
 body.theme-cosmic{--paper:#111224;--paper2:#181a31;--white:#20233d;--ink:#f4f0ff;--soft:#d3cfeb;--muted:#aaa6c7;--line:rgba(255,255,255,.13);--line2:rgba(255,255,255,.24);--forest:#d8c382;--deep:#f2e4b5;--accent:#9f8de7}
-body.large-text{font-size:18px}
+body.large-text{font-size:24px}
 body.reduce-motion *,body.reduce-motion *::before,body.reduce-motion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 a{color:inherit;text-decoration:none}
 button,input,textarea,select{font:inherit}
 button{cursor:pointer}
 [hidden]{display:none!important}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.shell{width:min(calc(100% - 40px),var(--max));margin:auto}
-.skip{position:fixed;z-index:5000;left:10px;top:8px;transform:translateY(-170%);padding:9px 13px;background:#111;color:#fff;border-radius:7px}.skip:focus{transform:none}
+.shell{width:min(calc(100% - 44px),var(--max));margin:auto}
+.skip{position:fixed;z-index:5000;left:11px;top:7px;transform:translateY(-170%);padding:7px 14px;background:#111;color:#fff;border-radius:7px}.skip:focus{transform:none}
 
 /* ticker */
 .ticker{position:sticky;top:0;z-index:1500;height:var(--ticker);display:grid;grid-template-columns:1fr 40px;overflow:hidden;color:#f5ead3;background:linear-gradient(90deg,#07101d,#10243b 48%,#07101d);border-bottom:1px solid rgba(255,255,255,.14)}
 .ticker-view{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 25px,#000 calc(100% - 25px),transparent)}
-.ticker-track{width:max-content;height:100%;display:flex;align-items:center;white-space:nowrap;animation:ticker 32s linear infinite}
+.ticker-track{width:max-content;height:100%;display:flex;align-items:center;white-space:nowrap;animation:ticker 55s linear infinite}
 .ticker:hover .ticker-track,.ticker:focus-within .ticker-track,.ticker[data-paused="true"] .ticker-track{animation-play-state:paused}
-.ticker-set{display:flex;align-items:center;gap:22px;padding:0 11px}
-.ticker-label{font:500 10px/1 var(--ceremonial);letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+.ticker-set{display:flex;align-items:center;gap:24px;padding:0 11px}
+.ticker-label{font:444 11px/1 var(--ceremonial);letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
 .ticker a,.ticker button.item{border:0;background:transparent;color:#eef3f7;font-size:11px;letter-spacing:.07em;text-transform:uppercase}
-.ticker a:before,.ticker button.item:before{content:"";display:inline-block;width:4px;height:4px;margin-right:8px;border-radius:50%;background:var(--gold)}
+.ticker a:before,.ticker button.item:before{content:"";display:inline-block;width:7px;height:7px;margin-right:7px;border-radius:50%;background:var(--gold)}
 .ticker-toggle{border:0;border-left:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.12);color:white}
 @keyframes ticker{to{transform:translateX(-50%)}}
 
 /* header */
 header{position:sticky;top:var(--ticker);z-index:1400;height:var(--header);background:color-mix(in srgb,var(--paper) 95%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.header-inner{height:100%;display:grid;grid-template-columns:minmax(260px,1fr) auto minmax(100px,1fr);align-items:center;gap:20px}
+.header-inner{height:100%;display:grid;grid-template-columns:minmax(260px,1fr) auto minmax(100px,1fr);align-items:center;gap:24px}
 .brand{justify-self:start;display:flex;align-items:center;gap:11px;text-align:left;min-width:0}
-.brandmark{width:33px;height:44px;display:grid;place-items:center;border-radius:7px;background:var(--ink);color:var(--paper2);font:333 17px var(--ceremonial)}
-.brand strong{display:block;font:500 15px/1.1 var(--ceremonial);letter-spacing:.08em;text-transform:uppercase}.brand small{display:block;margin-top:4px;color:var(--muted);font-size:9px;letter-spacing:.12em;text-transform:uppercase}
-.headlinks{display:flex;gap:4px}.headlinks a,.headlinks button{min-height:40px;border:0;background:transparent;color:var(--soft);padding:7px 9px;border-radius:7px;font-size:10px;letter-spacing:.075em;text-transform:uppercase}.headlinks a:hover,.headlinks button:hover{background:var(--white)}
-.headright{justify-self:end;display:flex;align-items:center;gap:7px}.profile-chip{max-width:190px;min-height:40px;display:flex;align-items:center;gap:8px;padding:6px 9px;border:1px solid var(--line2);border-radius:7px;background:var(--white);text-align:left}.profile-avatar{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:var(--paper2);font:500 12px var(--display)}.profile-chip strong{display:block;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px}.profile-chip small{display:block;color:var(--muted);font-size:8px}
-.menu-btn{width:40px;height:40px;border:1px solid var(--line2);border-radius:7px;background:transparent;color:var(--ink);font-size:17px}
+.brandmark{width:44px;height:44px;display:grid;place-items:center;border-radius:7px;background:var(--ink);color:var(--paper2);font:444 14px var(--ceremonial)}
+.brand strong{display:block;font:444 14px/1.1 var(--ceremonial);letter-spacing:.04em;text-transform:uppercase}.brand small{display:block;margin-top:4px;color:var(--muted);font-size:7px;letter-spacing:.14em;text-transform:uppercase}
+.headlinks{display:flex;gap:7px}.headlinks a,.headlinks button{min-height:44px;border:0;background:transparent;color:var(--soft);padding:7px 7px;border-radius:7px;font-size:11px;letter-spacing:.077em;text-transform:uppercase}.headlinks a:hover,.headlinks button:hover{background:var(--white)}
+.headright{justify-self:end;display:flex;align-items:center;gap:7px}.profile-chip{max-width:222px;min-height:44px;display:flex;align-items:center;gap:7px;padding:7px 7px;border:7px solid var(--line2);border-radius:7px;background:var(--white);text-align:left}.profile-avatar{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:var(--paper2);font:444 14px var(--display)}.profile-chip strong{display:block;max-width:144px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}.profile-chip small{display:block;color:var(--muted);font-size:7px}
+.menu-btn{width:44px;height:44px;border:1px solid var(--line2);border-radius:7px;background:transparent;color:var(--ink);font-size:24px}
 
 /* drawer */
 .overlay{position:fixed;inset:0;z-index:2400;visibility:hidden;opacity:0;background:rgba(5,10,14,.76);backdrop-filter:blur(8px);transition:.18s}.overlay.open{visibility:visible;opacity:1}
 .drawer{position:absolute;right:0;top:0;width:min(520px,100%);height:100%;overflow:auto;padding:25px 22px 45px;background:linear-gradient(180deg,#10263b,#06101a);color:#fff;transform:translateX(100%);transition:.2s;text-align:left}.overlay.open .drawer{transform:none}
-.drawer-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.drawer h2{margin:0;font:500 30px/1 var(--display)}.drawer-close{width:42px;height:42px;border:1px solid rgba(255,255,255,.18);border-radius:7px;background:transparent;color:#fff;font-size:22px}.drawer p{color:rgba(255,255,255,.67);font-size:12px}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;gap:14px}.drawer h2{margin:0;font:444 44px/1 var(--display)}.drawer-close{width:44px;height:44px;border:1px solid rgba(255,255,255,.18);border-radius:7px;background:transparent;color:#fff;font-size:22px}.drawer p{color:rgba(255,255,255,.67);font-size:14px}
 .drawer-search{width:100%;min-height:47px;border:1px solid rgba(255,255,255,.18);border-radius:7px;background:rgba(255,255,255,.07);color:#fff;padding:0 13px}
 .menu-group{margin:21px 0 8px;color:var(--gold2);font-size:9px;letter-spacing:.12em;text-transform:uppercase}.menu-list{display:grid;gap:7px}.menu-link{display:grid;grid-template-columns:40px 1fr 20px;gap:10px;align-items:center;padding:10px;border:1px solid rgba(255,255,255,.12);border-radius:8px;background:rgba(255,255,255,.045)}.menu-link i{width:36px;height:36px;display:grid;place-items:center;border-radius:7px;background:rgba(234,217,184,.13);font-style:normal}.menu-link strong{display:block;font-size:13px}.menu-link small{display:block;color:rgba(255,255,255,.58);font-size:10px}
 
@@ -72,9 +72,9 @@ header{position:sticky;top:var(--ticker);z-index:1400;height:var(--header);backg
 .hero:after{content:"IX";position:absolute;right:3vw;bottom:-120px;color:color-mix(in srgb,var(--forest) 5%,transparent);font:700 27rem/1 var(--display);pointer-events:none}
 .hero-inner{position:relative;z-index:1;min-height:600px;display:grid;place-items:center;padding:65px 0}
 .hero-stage{max-width:1000px;display:grid;justify-items:center}
-.hero-title{margin:0;color:var(--deep);font:555 clamp(52px,7vw,92px)/.94 var(--display);text-wrap:balance}
-.hero-sub{margin:14px 0 0;color:var(--gold);font:333 clamp(9px,1.1vw,11px)/1.4 var(--ceremonial);letter-spacing:.17em;text-transform:uppercase}
-.hero-lead{max-width:790px;margin:18px auto 0;color:var(--soft);font:333 clamp(14px,1.7vw,22px)/1.6 var(--display)}
+.hero-title{margin:0;color:var(--deep);font:500 clamp(52px,7vw,92px)/.94 var(--display);text-wrap:balance}
+.hero-sub{margin:18px 0 0;color:var(--gold);font:500 clamp(11px,1.1vw,15px)/1.4 var(--ceremonial);letter-spacing:.17em;text-transform:uppercase}
+.hero-lead{max-width:790px;margin:18px auto 0;color:var(--soft);font:400 clamp(17px,1.7vw,22px)/1.6 var(--display)}
 .actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
 .btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line2);border-radius:7px;background:transparent;color:var(--ink);padding:10px 17px;font-size:10px;font-weight:650;letter-spacing:.08em;text-transform:uppercase}.btn.primary{background:var(--ink);color:var(--paper2);border-color:var(--ink)}.btn.gold{background:linear-gradient(145deg,#ead9b8,#caa96d);color:#172115;border-color:#d0b06f}
 .hero-stats{width:min(100%,1050px);display:grid;grid-template-columns:repeat(4,1fr);margin-top:35px;border:1px solid var(--line);border-radius:7px;overflow:hidden;background:color-mix(in srgb,var(--white) 72%,transparent)}.hero-stat{padding:15px;border-left:1px solid var(--line)}.hero-stat:first-child{border-left:0}.hero-stat strong{display:block;font:500 18px var(--display);color:var(--deep)}.hero-stat span{display:block;margin-top:4px;color:var(--muted);font-size:11px}
@@ -130,7 +130,9 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 
 <header>
  <div class="shell header-inner">
-  <a class="brand" href="./"><span class="brandmark">IX</span><span><strong>Khaemenes High · Grade 9</strong><small>Freshman Campus · Foundations · Discovery · Confidence</small></span></a>
+  <a class="brand" href="./"><span class="brandmark">IX</span><span><strong>Khaemenes Academy<br>
+    </strong><small>
+    </small></span></a>
   <nav class="headlinks" aria-label="Freshman navigation">
    <a href="#courses">Courses</a><a href="#electives">Electives</a><a href="#reports">Grades & Reports</a><a href="#mentor">Archaemenes</a><a href="#directory">Directory</a>
   </nav>
@@ -154,7 +156,9 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <section class="hero">
  <div class="shell hero-inner">
   <div class="hero-stage">
-   <h1 class="hero-title">Khaemenes High · Grade 9 Freshman Campus</h1>
+   <h1 class="hero-title">Khaemenes Academy<br>
+     <h2 class="hero-sub">Freshman Campus
+     </h2>
    <div class="hero-sub">Your Freshman Year Starts Here.</div>
    <p class="hero-lead" id="heroLead">A connected home for Grade 9 academics, electives, grades, progress, research, tools, games, and mentor support.</p>
    <div class="actions">
