@@ -1,0 +1,389 @@
+{
+  "schema_version": "1.0",
+  "unit": "KH-MATH-PA-U01",
+  "security_note": "Public static answer data is not secure. Use alternate protected forms for high-stakes testing.",
+  "practice": {
+    "foundation": [
+      {
+        "number": 1,
+        "answer_index": 0,
+        "answer": "Natural",
+        "explanation": "Six is a counting number, so natural is most specific."
+      },
+      {
+        "number": 2,
+        "answer_index": 1,
+        "answer": "Integer",
+        "explanation": "−5 is an integer."
+      },
+      {
+        "number": 3,
+        "answer_index": 1,
+        "answer": "4",
+        "explanation": "20÷4=5."
+      },
+      {
+        "number": 4,
+        "answer_index": 1,
+        "answer": "28",
+        "explanation": "7×4=28."
+      },
+      {
+        "number": 5,
+        "answer_index": 1,
+        "answer": "11",
+        "explanation": "11 has factors 1 and 11 only."
+      },
+      {
+        "number": 6,
+        "answer_index": 1,
+        "answer": "275",
+        "explanation": "275 ends in 5."
+      },
+      {
+        "number": 7,
+        "answer_index": 1,
+        "answer": "4",
+        "explanation": "The shared factors are 1, 2, and 4."
+      },
+      {
+        "number": 8,
+        "answer_index": 2,
+        "answer": "12",
+        "explanation": "The first common multiple is 12."
+      },
+      {
+        "number": 9,
+        "answer_index": 1,
+        "answer": "16",
+        "explanation": "2×3=6, then 10+6=16."
+      },
+      {
+        "number": 10,
+        "answer_index": 2,
+        "answer": "36",
+        "explanation": "12×3=36."
+      },
+      {
+        "number": 11,
+        "answer_index": 2,
+        "answer": "500",
+        "explanation": "200+300≈500."
+      },
+      {
+        "number": 12,
+        "answer_index": 1,
+        "answer": "No",
+        "explanation": "50×20≈1,000, so 9,690 is far too large."
+      }
+    ],
+    "core": [
+      {
+        "number": 1,
+        "answer_index": 2,
+        "answer": "√11",
+        "explanation": "√11 is not a perfect square and is irrational."
+      },
+      {
+        "number": 2,
+        "answer_index": 0,
+        "answer": "Natural",
+        "explanation": "√81=9, a natural number."
+      },
+      {
+        "number": 3,
+        "answer_index": 2,
+        "answer": "9",
+        "explanation": "1,2,3,4,6,9,12,18,36: nine factors."
+      },
+      {
+        "number": 4,
+        "answer_index": 2,
+        "answer": "40",
+        "explanation": "40 is divisible by both 8 and 10."
+      },
+      {
+        "number": 5,
+        "answer_index": 0,
+        "answer": "2²×3²×5",
+        "explanation": "180=2²×3²×5."
+      },
+      {
+        "number": 6,
+        "answer_index": 1,
+        "answer": "5,124",
+        "explanation": "5,124 is even and its digit sum is 12."
+      },
+      {
+        "number": 7,
+        "answer_index": 1,
+        "answer": "14",
+        "explanation": "42=2×3×7 and 70=2×5×7, so GCF=14."
+      },
+      {
+        "number": 8,
+        "answer_index": 2,
+        "answer": "90",
+        "explanation": "LCM=2×3²×5=90."
+      },
+      {
+        "number": 9,
+        "answer_index": 2,
+        "answer": "36 seconds",
+        "explanation": "LCM(12,18)=36."
+      },
+      {
+        "number": 10,
+        "answer_index": 0,
+        "answer": "13",
+        "explanation": "24÷6=4, 4×2=8, then 5+8=13."
+      },
+      {
+        "number": 11,
+        "answer_index": 0,
+        "answer": "8",
+        "explanation": "3²−4=5; 9−5=4; 2×4=8."
+      },
+      {
+        "number": 12,
+        "answer_index": 1,
+        "answer": "(3+5)×3",
+        "explanation": "(3+5)×3=24."
+      },
+      {
+        "number": 13,
+        "answer_index": 1,
+        "answer": "20",
+        "explanation": "800÷40=20."
+      },
+      {
+        "number": 14,
+        "answer_index": 1,
+        "answer": "Reject it because 60×50 is about 3,000.",
+        "explanation": "The product should be near 3,000."
+      },
+      {
+        "number": 15,
+        "answer_index": 1,
+        "answer": "Paying a utility bill",
+        "explanation": "Payments normally require exact currency values."
+      }
+    ],
+    "extended": [
+      {
+        "number": 1,
+        "answer_index": 2,
+        "answer": "A rational plus an irrational is irrational.",
+        "explanation": "A rational plus an irrational cannot be rational."
+      },
+      {
+        "number": 2,
+        "answer_index": 0,
+        "answer": "√2",
+        "explanation": "√2≈1.4142."
+      },
+      {
+        "number": 3,
+        "answer_index": 1,
+        "answer": "It is a perfect square.",
+        "explanation": "The square-root factor pairs with itself."
+      },
+      {
+        "number": 4,
+        "answer_index": 0,
+        "answer": "2,3,5,7,11,13",
+        "explanation": "√211≈14.5, so check primes through 13."
+      },
+      {
+        "number": 5,
+        "answer_index": 1,
+        "answer": "GCF×LCM=a×b",
+        "explanation": "The identity follows from prime exponents."
+      },
+      {
+        "number": 6,
+        "answer_index": 2,
+        "answer": "80",
+        "explanation": "n=(16×240)/48=80."
+      },
+      {
+        "number": 7,
+        "answer_index": 0,
+        "answer": "(6+2)×5−1",
+        "explanation": "8×5−1=39."
+      },
+      {
+        "number": 8,
+        "answer_index": 1,
+        "answer": "7",
+        "explanation": "16÷4×3−5=4×3−5=7."
+      },
+      {
+        "number": 9,
+        "answer_index": 1,
+        "answer": "8.35≤x<8.45",
+        "explanation": "8.35 through values below 8.45 round to 8.4."
+      },
+      {
+        "number": 10,
+        "answer_index": 0,
+        "answer": "1,500÷50",
+        "explanation": "1,500÷50=30."
+      },
+      {
+        "number": 11,
+        "answer_index": 1,
+        "answer": "At least one lies between 0 and 1.",
+        "explanation": "Multiplication by a positive value below 1 reduces the other factor."
+      },
+      {
+        "number": 12,
+        "answer_index": 2,
+        "answer": "Every odd number is prime.",
+        "explanation": "9 is odd but composite."
+      }
+    ]
+  },
+  "mastery_check": [
+    {
+      "number": 1,
+      "domain": "Number systems",
+      "answer_index": 2,
+      "answer": "√7",
+      "explanation": "√7 is irrational."
+    },
+    {
+      "number": 2,
+      "domain": "Number systems",
+      "answer_index": 1,
+      "answer": "Whole",
+      "explanation": "Zero is a whole number."
+    },
+    {
+      "number": 3,
+      "domain": "Number systems",
+      "answer_index": 1,
+      "answer": "Every integer is rational.",
+      "explanation": "Every integer n can be written n/1."
+    },
+    {
+      "number": 4,
+      "domain": "Factors and multiples",
+      "answer_index": 0,
+      "answer": "6 and 14",
+      "explanation": "6×14=84."
+    },
+    {
+      "number": 5,
+      "domain": "Factors and multiples",
+      "answer_index": 2,
+      "answer": "36",
+      "explanation": "LCM=36."
+    },
+    {
+      "number": 6,
+      "domain": "Prime structure",
+      "answer_index": 2,
+      "answer": "97",
+      "explanation": "97 is prime."
+    },
+    {
+      "number": 7,
+      "domain": "Prime structure",
+      "answer_index": 0,
+      "answer": "2⁴×3×5",
+      "explanation": "240=16×15=2⁴×3×5."
+    },
+    {
+      "number": 8,
+      "domain": "Divisibility",
+      "answer_index": 1,
+      "answer": "2,304",
+      "explanation": "04 is divisible by 4 and digit sum is 9."
+    },
+    {
+      "number": 9,
+      "domain": "GCF and LCM",
+      "answer_index": 2,
+      "answer": "18",
+      "explanation": "GCF=18."
+    },
+    {
+      "number": 10,
+      "domain": "GCF and LCM",
+      "answer_index": 2,
+      "answer": "48",
+      "explanation": "LCM=48."
+    },
+    {
+      "number": 11,
+      "domain": "Application",
+      "answer_index": 2,
+      "answer": "24",
+      "explanation": "GCF(72,96)=24."
+    },
+    {
+      "number": 12,
+      "domain": "Application",
+      "answer_index": 2,
+      "answer": "140",
+      "explanation": "LCM(14,20)=140."
+    },
+    {
+      "number": 13,
+      "domain": "Order of operations",
+      "answer_index": 0,
+      "answer": "20",
+      "explanation": "8+3×4=20."
+    },
+    {
+      "number": 14,
+      "domain": "Order of operations",
+      "answer_index": 2,
+      "answer": "17",
+      "explanation": "6×2+5=17."
+    },
+    {
+      "number": 15,
+      "domain": "Order of operations",
+      "answer_index": 1,
+      "answer": "15",
+      "explanation": "9+2(3)=15."
+    },
+    {
+      "number": 16,
+      "domain": "Estimation",
+      "answer_index": 1,
+      "answer": "6,000",
+      "explanation": "2,000+4,000≈6,000."
+    },
+    {
+      "number": 17,
+      "domain": "Estimation",
+      "answer_index": 0,
+      "answer": "1,200÷40=30",
+      "explanation": "Use close compatible numbers."
+    },
+    {
+      "number": 18,
+      "domain": "Reasonableness",
+      "answer_index": 1,
+      "answer": "Unreasonable; 80×40 is about 3,200.",
+      "explanation": "The product should be near 3,200."
+    },
+    {
+      "number": 19,
+      "domain": "Precision",
+      "answer_index": 1,
+      "answer": "Paying a loan balance",
+      "explanation": "Financial balances require exact values."
+    },
+    {
+      "number": 20,
+      "domain": "Mathematical reasoning",
+      "answer_index": 3,
+      "answer": "Every odd number is prime.",
+      "explanation": "9 is odd and composite."
+    }
+  ]
+}
