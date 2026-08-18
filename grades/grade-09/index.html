@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f0e7">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Khaemenes High Grade 9 Freshman Campus — personalized courses, electives, reports, grades, favorites, Archaemenes Mentor, Aurora encouragement, tools, games, directory, and mastery-aware learning.">
+<meta name="application-version" content="2026.08.17-grade09-v2">
+<title>Khaemenes High · Grade 9 Freshman Campus</title>
+<style>
+:root{
+ --paper:#f4f0e7;--paper2:#fbf9f4;--white:#fff;--ink:#0c1210;--soft:#3d4a45;
+ --forest:#243d33;--deep:#15251f;--gold:#b48b45;--gold2:#ead9b8;--navy:#10243b;
+ --line:rgba(18,23,19,.14);--line2:rgba(18,23,19,.24);--muted:#68736e;
+ --plum:#6e5f7f;--blue:#315f86;--terra:#96594e;--sage:#6d8374;
+ --shadow:0 22px 55px rgba(27,34,29,.09);--r:11px;--max:1320px;
+ --ticker:36px;--header:72px;
+ --display:"Iowan Old Style","Palatino Linotype",Palatino,Baskerville,Georgia,serif;
+ --ceremonial:Cinzel,Aboreto,"Iowan Old Style",Georgia,serif;
+ --sans:"Brandon Grotesque","Avenir Next",Avenir,Montserrat,"Segoe UI",Arial,sans-serif;
+ --accent:#b48b45;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--ticker) + var(--header) + 14px)}
+body{margin:0;min-width:300px;color:var(--ink);background:var(--paper);font:400 16px/1.64 var(--sans);text-align:center}
+body.menu-open,body.modal-open{overflow:hidden}
+body.theme-dark{--paper:#08100d;--paper2:#0e1713;--white:#142019;--ink:#f5f1e8;--soft:#c8d0ca;--muted:#a5afa8;--line:rgba(255,255,255,.12);--line2:rgba(255,255,255,.22);--forest:#d2b97d;--deep:#f2dfb0}
+body.theme-forest{--paper:#dfe8dd;--paper2:#edf2e9;--white:#f8faf6;--accent:#486a56}
+body.theme-cosmic{--paper:#111224;--paper2:#181a31;--white:#20233d;--ink:#f4f0ff;--soft:#d3cfeb;--muted:#aaa6c7;--line:rgba(255,255,255,.13);--line2:rgba(255,255,255,.24);--forest:#d8c382;--deep:#f2e4b5;--accent:#9f8de7}
+body.large-text{font-size:18px}
+body.reduce-motion *,body.reduce-motion *::before,body.reduce-motion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.shell{width:min(calc(100% - 40px),var(--max));margin:auto}
+.skip{position:fixed;z-index:5000;left:10px;top:8px;transform:translateY(-170%);padding:9px 13px;background:#111;color:#fff;border-radius:7px}.skip:focus{transform:none}
+
+/* ticker */
+.ticker{position:sticky;top:0;z-index:1500;height:var(--ticker);display:grid;grid-template-columns:1fr 40px;overflow:hidden;color:#f5ead3;background:linear-gradient(90deg,#07101d,#10243b 48%,#07101d);border-bottom:1px solid rgba(255,255,255,.14)}
+.ticker-view{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 25px,#000 calc(100% - 25px),transparent)}
+.ticker-track{width:max-content;height:100%;display:flex;align-items:center;white-space:nowrap;animation:ticker 32s linear infinite}
+.ticker:hover .ticker-track,.ticker:focus-within .ticker-track,.ticker[data-paused="true"] .ticker-track{animation-play-state:paused}
+.ticker-set{display:flex;align-items:center;gap:22px;padding:0 11px}
+.ticker-label{font:500 10px/1 var(--ceremonial);letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+.ticker a,.ticker button.item{border:0;background:transparent;color:#eef3f7;font-size:11px;letter-spacing:.07em;text-transform:uppercase}
+.ticker a:before,.ticker button.item:before{content:"";display:inline-block;width:4px;height:4px;margin-right:8px;border-radius:50%;background:var(--gold)}
+.ticker-toggle{border:0;border-left:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.12);color:white}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+/* header */
+header{position:sticky;top:var(--ticker);z-index:1400;height:var(--header);background:color-mix(in srgb,var(--paper) 95%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.header-inner{height:100%;display:grid;grid-template-columns:minmax(260px,1fr) auto minmax(100px,1fr);align-items:center;gap:20px}
+.brand{justify-self:start;display:flex;align-items:center;gap:11px;text-align:left;min-width:0}
+.brandmark{width:44px;height:38px;display:grid;place-items:center;border-radius:7px;background:var(--ink);color:var(--paper2);font:500 17px var(--ceremonial)}
+.brand strong{display:block;font:500 15px/1.1 var(--ceremonial);letter-spacing:.08em;text-transform:uppercase}.brand small{display:block;margin-top:4px;color:var(--muted);font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+.headlinks{display:flex;gap:4px}.headlinks a,.headlinks button{min-height:40px;border:0;background:transparent;color:var(--soft);padding:7px 9px;border-radius:7px;font-size:10px;letter-spacing:.075em;text-transform:uppercase}.headlinks a:hover,.headlinks button:hover{background:var(--white)}
+.headright{justify-self:end;display:flex;align-items:center;gap:7px}.profile-chip{max-width:190px;min-height:40px;display:flex;align-items:center;gap:8px;padding:6px 9px;border:1px solid var(--line2);border-radius:7px;background:var(--white);text-align:left}.profile-avatar{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:var(--paper2);font:500 12px var(--display)}.profile-chip strong{display:block;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px}.profile-chip small{display:block;color:var(--muted);font-size:8px}
+.menu-btn{width:40px;height:40px;border:1px solid var(--line2);border-radius:7px;background:transparent;color:var(--ink);font-size:17px}
+
+/* drawer */
+.overlay{position:fixed;inset:0;z-index:2400;visibility:hidden;opacity:0;background:rgba(5,10,14,.76);backdrop-filter:blur(8px);transition:.18s}.overlay.open{visibility:visible;opacity:1}
+.drawer{position:absolute;right:0;top:0;width:min(520px,100%);height:100%;overflow:auto;padding:25px 22px 45px;background:linear-gradient(180deg,#10263b,#06101a);color:#fff;transform:translateX(100%);transition:.2s;text-align:left}.overlay.open .drawer{transform:none}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.drawer h2{margin:0;font:500 30px/1 var(--display)}.drawer-close{width:42px;height:42px;border:1px solid rgba(255,255,255,.18);border-radius:7px;background:transparent;color:#fff;font-size:22px}.drawer p{color:rgba(255,255,255,.67);font-size:12px}
+.drawer-search{width:100%;min-height:47px;border:1px solid rgba(255,255,255,.18);border-radius:7px;background:rgba(255,255,255,.07);color:#fff;padding:0 13px}
+.menu-group{margin:21px 0 8px;color:var(--gold2);font-size:9px;letter-spacing:.12em;text-transform:uppercase}.menu-list{display:grid;gap:7px}.menu-link{display:grid;grid-template-columns:40px 1fr 20px;gap:10px;align-items:center;padding:10px;border:1px solid rgba(255,255,255,.12);border-radius:8px;background:rgba(255,255,255,.045)}.menu-link i{width:36px;height:36px;display:grid;place-items:center;border-radius:7px;background:rgba(234,217,184,.13);font-style:normal}.menu-link strong{display:block;font-size:13px}.menu-link small{display:block;color:rgba(255,255,255,.58);font-size:10px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:radial-gradient(circle at 50% 0,rgba(180,139,69,.13),transparent 32rem),linear-gradient(180deg,var(--paper2),var(--paper))}
+.hero:after{content:"IX";position:absolute;right:3vw;bottom:-120px;color:color-mix(in srgb,var(--forest) 5%,transparent);font:700 27rem/1 var(--display);pointer-events:none}
+.hero-inner{position:relative;z-index:1;min-height:600px;display:grid;place-items:center;padding:65px 0}
+.hero-stage{max-width:1000px;display:grid;justify-items:center}
+.hero-title{margin:0;color:var(--deep);font:500 clamp(52px,7vw,92px)/.94 var(--display);text-wrap:balance}
+.hero-sub{margin:18px 0 0;color:var(--gold);font:500 clamp(11px,1.1vw,15px)/1.4 var(--ceremonial);letter-spacing:.17em;text-transform:uppercase}
+.hero-lead{max-width:790px;margin:18px auto 0;color:var(--soft);font:400 clamp(17px,1.7vw,22px)/1.6 var(--display)}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line2);border-radius:7px;background:transparent;color:var(--ink);padding:10px 17px;font-size:10px;font-weight:650;letter-spacing:.08em;text-transform:uppercase}.btn.primary{background:var(--ink);color:var(--paper2);border-color:var(--ink)}.btn.gold{background:linear-gradient(145deg,#ead9b8,#caa96d);color:#172115;border-color:#d0b06f}
+.hero-stats{width:min(100%,1050px);display:grid;grid-template-columns:repeat(4,1fr);margin-top:35px;border:1px solid var(--line);border-radius:7px;overflow:hidden;background:color-mix(in srgb,var(--white) 72%,transparent)}.hero-stat{padding:15px;border-left:1px solid var(--line)}.hero-stat:first-child{border-left:0}.hero-stat strong{display:block;font:500 18px var(--display);color:var(--deep)}.hero-stat span{display:block;margin-top:4px;color:var(--muted);font-size:11px}
+
+/* student personalized */
+.personal{padding:42px 0;background:var(--white);border-bottom:1px solid var(--line)}
+.student-strip{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;text-align:left}
+.student-big-avatar{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:var(--paper2);font:500 28px var(--display)}
+.student-strip h2{margin:0;font:500 32px var(--display)}.student-meta{color:var(--muted);font-size:11px}.student-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.summary-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr .8fr;gap:11px;margin-top:18px}.summary-card{min-height:120px;padding:17px;border:1px solid var(--line);border-radius:9px;background:var(--paper2);text-align:left}.summary-card span{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.summary-card strong{display:block;margin-top:6px;font:500 22px var(--display);color:var(--deep)}.summary-card p{margin:6px 0 0;color:var(--muted);font-size:10px}
+
+/* sections */
+.section{padding:80px 0}.alt{background:var(--paper2);border-block:1px solid var(--line)}.dark{background:linear-gradient(145deg,#10263b,#071521);color:#fff}.heading{max-width:850px;margin:0 auto 30px}.kicker{margin:0;color:var(--gold);font:500 10px var(--ceremonial);letter-spacing:.19em;text-transform:uppercase}.heading h2{margin:10px 0 0;font:500 clamp(36px,5vw,58px)/1.05 var(--display)}.heading p{color:var(--muted)}.dark .heading p{color:rgba(255,255,255,.62)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{position:relative;padding:21px;border:1px solid var(--line);border-radius:11px;background:var(--white);text-align:left;box-shadow:0 10px 30px rgba(20,30,25,.04)}.card h3{margin:14px 0 8px;font:500 24px var(--display);color:var(--deep)}.card p{color:var(--muted);font-size:12px}.card .tag{display:inline-flex;padding:4px 8px;border-radius:999px;background:var(--paper);color:#735926;font-size:8px;letter-spacing:.09em;text-transform:uppercase}.card-foot{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-top:16px}.open-link{color:var(--forest);font-size:9px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.pin{width:36px;height:36px;border:1px solid var(--line2);border-radius:8px;background:transparent;color:var(--gold);font-size:18px}.pin[aria-pressed="true"]{background:var(--gold2);color:#4c3917}
+.course.math{border-top:4px solid var(--gold)}.course.ela{border-top:4px solid var(--plum)}.course.science{border-top:4px solid var(--blue)}.course.social{border-top:4px solid var(--terra)}
+.progressbar{height:8px;border-radius:999px;background:color-mix(in srgb,var(--ink) 9%,transparent);overflow:hidden}.progressbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#7aa284);width:0}.mastery-line{display:flex;justify-content:space-between;gap:10px;margin:13px 0 5px;color:var(--muted);font-size:10px}
+.grade-status{margin-top:10px;padding:9px;border:1px dashed var(--line2);border-radius:7px;color:var(--muted);font-size:10px}
+
+/* favorites and reports */
+.empty{grid-column:1/-1;padding:24px;border:1px dashed var(--line2);border-radius:9px;color:var(--muted);background:var(--white)}
+.report-table{width:100%;border-collapse:collapse;text-align:left}.report-table th,.report-table td{padding:13px;border-bottom:1px solid var(--line);font-size:11px}.report-table th{color:var(--gold);font-size:9px;letter-spacing:.09em;text-transform:uppercase}.status-pill{display:inline-flex;padding:4px 7px;border:1px solid var(--line2);border-radius:999px;color:var(--muted);font-size:9px}.status-pill.ready{color:#2f6b48;border-color:#74a98a}.status-pill.lock{color:#8b5d28;border-color:#c89d65}
+
+/* Aurora */
+.aurora-wrap{display:grid;grid-template-columns:.78fr 1.22fr;gap:15px}.aurora-card{padding:26px;border-radius:13px;background:linear-gradient(145deg,#fbf0d8,#e5edf5);border:1px solid rgba(111,139,160,.22);text-align:left;color:#26333d}.aurora-card h3{font:500 30px var(--display);margin:8px 0}.affirmation{font:italic 500 22px/1.45 var(--display);color:#36516a}.aurora-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.wellbeing-card{padding:26px;border:1px solid var(--line);border-radius:13px;background:var(--white);text-align:left}.wellbeing-card h3{margin:0;font:500 27px var(--display)}.wellbeing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}.wellbeing-grid button{min-height:74px;padding:11px;border:1px solid var(--line);border-radius:8px;background:var(--paper2);color:var(--ink);text-align:left}
+
+/* Mentor */
+.mentor{display:grid;grid-template-columns:.7fr 1.3fr;gap:15px}.mentor-info{padding:26px;border:1px solid rgba(180,139,69,.4);border-radius:13px;background:linear-gradient(145deg,#172d26,#0e201a);color:#fff;text-align:left}.mentor-avatar{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;border:1px solid #d6bb84;color:#ead9b8;font:500 28px var(--display)}.mentor-info h3{font:500 31px var(--display);margin:14px 0 5px}.mentor-info p{color:rgba(255,255,255,.64);font-size:12px}.beta{display:inline-flex;padding:4px 8px;border:1px solid rgba(255,255,255,.2);border-radius:999px;color:#ead9b8;font-size:8px;letter-spacing:.1em;text-transform:uppercase}.mentor-console{padding:24px;border:1px solid var(--line);border-radius:13px;background:var(--white);text-align:left}.mentor-prompts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:14px 0}.mentor-prompts button{min-height:46px;border:1px solid var(--line);border-radius:8px;background:var(--paper2);color:var(--ink);text-align:left;padding:10px;font-size:10px}.mentor-response{min-height:125px;padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--soft);font-size:12px}
+
+/* directory */
+.directory-tools{display:grid;grid-template-columns:1fr 220px;gap:9px;margin-bottom:15px}.directory-tools input,.directory-tools select{min-height:46px;border:1px solid var(--line2);border-radius:8px;background:var(--white);color:var(--ink);padding:0 12px}
+.tool-card{padding:18px;border:1px solid rgba(255,255,255,.13);border-radius:10px;background:rgba(255,255,255,.045);text-align:left}.tool-card strong{display:block;color:#efd9ac;font:500 19px var(--display)}.tool-card span{display:block;margin-top:7px;color:rgba(255,255,255,.62);font-size:10px}.tool-card .card-foot{margin-top:13px}.tool-card .pin{border-color:rgba(255,255,255,.2);color:#efd9ac}.tool-card .open-link{color:#efd9ac}
+
+/* design drawer/modal */
+.modal-bg{position:fixed;inset:0;z-index:2700;display:none;place-items:center;padding:14px;background:rgba(5,9,12,.74);backdrop-filter:blur(8px)}.modal-bg.open{display:grid}.modal{width:min(780px,100%);max-height:90vh;overflow:auto;border-radius:13px;background:var(--paper2);color:var(--ink);border:1px solid var(--line2);box-shadow:0 35px 100px rgba(0,0,0,.4);text-align:left}.modal-head{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid var(--line)}.modal-head h2{margin:0;font:500 29px var(--display)}.modal-close{width:40px;height:40px;border:1px solid var(--line2);border-radius:8px;background:transparent;color:var(--ink);font-size:20px}.modal-body{padding:20px}.design-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.design-group{padding:15px;border:1px solid var(--line);border-radius:9px;background:var(--white)}.design-group h3{margin:0 0 10px;font:500 20px var(--display)}.option-list{display:grid;gap:8px}.option-list label{display:flex;gap:8px;align-items:center;color:var(--soft);font-size:11px}.option-list input{width:auto}
+.mastery-modal .modal-body{text-align:center}.lock-icon{width:64px;height:64px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;background:#efe0bf;font-size:26px}.mastery-modal h3{font:500 31px var(--display);margin:0}.mastery-modal p{color:var(--muted);max-width:570px;margin:10px auto}
+
+/* feedback */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{padding:22px;border:1px solid var(--line);border-radius:11px;background:var(--white);text-align:left}.panel h3{margin:0;font:500 26px var(--display)}label.field{display:grid;gap:5px;margin-top:10px;color:var(--muted);font-size:9px}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line2);border-radius:7px;background:var(--paper2);color:var(--ink);padding:10px}.field textarea{min-height:100px;resize:vertical}.status{margin-top:9px;color:#568064;font-size:10px}
+
+footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:9px}
+@media(max-width:1050px){.headlinks{display:none}.header-inner{grid-template-columns:1fr auto}.grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(2,1fr)}.summary-grid{grid-template-columns:repeat(2,1fr)}.aurora-wrap,.mentor{grid-template-columns:1fr}}
+@media(max-width:720px){.shell{width:min(calc(100% - 24px),var(--max))}.profile-chip{display:none}.hero-inner{min-height:auto;padding:60px 0}.hero-stats,.grid4,.grid3,.grid2,.summary-grid,.wellbeing-grid,.mentor-prompts,.form-grid,.design-grid{grid-template-columns:1fr}.hero-stat{border-left:0;border-top:1px solid var(--line)}.hero-stat:first-child{border-top:0}.student-strip{grid-template-columns:auto 1fr}.student-actions{grid-column:1/-1;justify-content:flex-start}.directory-tools{grid-template-columns:1fr}.section{padding:62px 0}.report-table{display:block;overflow:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="ticker" id="ticker" data-paused="false">
+ <div class="ticker-view"><div class="ticker-track" id="tickerTrack"></div></div>
+ <button class="ticker-toggle" id="tickerToggle" aria-label="Pause Grade 9 ticker">Ⅱ</button>
+</div>
+
+<header>
+ <div class="shell header-inner">
+  <a class="brand" href="./"><span class="brandmark">IX</span><span><strong>Khaemenes High · Grade 9</strong><small>Freshman Campus · Foundations · Discovery · Confidence</small></span></a>
+  <nav class="headlinks" aria-label="Freshman navigation">
+   <a href="#courses">Courses</a><a href="#electives">Electives</a><a href="#reports">Grades & Reports</a><a href="#mentor">Archaemenes</a><a href="#directory">Directory</a>
+  </nav>
+  <div class="headright">
+   <a class="profile-chip" id="profileChip" href="../../index.html#student-portal" hidden><span class="profile-avatar" id="profileAvatar">S</span><span><strong id="profileName">Student</strong><small id="profileMeta">Grade 9</small></span></a>
+   <button class="menu-btn" id="menuBtn" aria-label="Open Freshman menu">☰</button>
+  </div>
+ </div>
+</header>
+
+<div class="overlay" id="menuOverlay" aria-hidden="true">
+ <aside class="drawer" role="dialog" aria-modal="true" aria-label="Grade 9 complete directory">
+  <div class="drawer-head"><h2>Freshman Menu</h2><button class="drawer-close" id="menuClose" aria-label="Close menu">×</button></div>
+  <p>Courses, electives, reports, tools, favorites, mentor support, and connected learning resources.</p>
+  <input class="drawer-search" id="menuSearch" type="search" placeholder="Search Grade 9…" autocomplete="off">
+  <div id="menuContent"></div>
+ </aside>
+</div>
+
+<main id="main">
+<section class="hero">
+ <div class="shell hero-inner">
+  <div class="hero-stage">
+   <h1 class="hero-title">Khaemenes High · Grade 9 Freshman Campus</h1>
+   <div class="hero-sub">Your Freshman Year Starts Here.</div>
+   <p class="hero-lead" id="heroLead">A connected home for Grade 9 academics, electives, grades, progress, research, tools, games, and mentor support.</p>
+   <div class="actions">
+    <a class="btn primary" href="#courses">Enter Grade 9</a>
+    <a class="btn gold" href="#mentor">Archaemenes Mentor · Beta</a>
+    <button class="btn" id="designBtn">✦ Design My Page</button>
+   </div>
+   <div class="hero-stats">
+    <div class="hero-stat"><strong>4 Core Courses</strong><span>Verified Grade 9 student portals</span></div>
+    <div class="hero-stat"><strong>7+ Electives</strong><span>Creative, civic, health, technology & research pathways</span></div>
+    <div class="hero-stat"><strong>80% Mastery</strong><span>Progressive course unlock standard</span></div>
+    <div class="hero-stat"><strong>Student Home</strong><span>Profile, pins, favorites & preferences</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="personal" id="studentHome" hidden>
+ <div class="shell">
+  <div class="student-strip">
+   <div class="student-big-avatar" id="bigAvatar">S</div>
+   <div><div class="kicker">My Freshman Home</div><h2 id="welcomeName">Welcome back.</h2><div class="student-meta" id="studentDetail"></div></div>
+   <div class="student-actions"><a class="btn" href="../../index.html#student-portal">Edit Profile</a><button class="btn" id="studentDesignBtn">Design My Page</button></div>
+  </div>
+  <div class="summary-grid">
+   <div class="summary-card"><span>Continue Learning</span><strong id="continueTitle">Choose a course</strong><p id="continueDesc">Your most recently opened Grade 9 resource will appear here.</p><div class="card-foot"><a class="open-link" id="continueLink" href="#courses">Continue →</a></div></div>
+   <div class="summary-card"><span>My Favorites</span><strong id="favoriteCount">0 pinned</strong><p>Courses, tools, games and resources saved to your home.</p></div>
+   <div class="summary-card"><span>Grade & Reports</span><strong>4 course reports</strong><p>Open authoritative course records and assessment reports.</p></div>
+   <div class="summary-card"><span>Mastery Standard</span><strong>80%</strong><p>Current level mastery is required before advancing.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="favoritesSection" hidden>
+ <div class="shell">
+  <div class="heading"><div class="kicker">My Favorites</div><h2>Pinned to My Freshman Home</h2><p>Your favorite courses, tools, games, electives, and resources stay easy to reach.</p></div>
+  <div class="grid4" id="favoritesGrid"></div>
+ </div>
+</section>
+
+<section class="section alt" id="courses">
+ <div class="shell">
+  <div class="heading"><div class="kicker">Core Academics</div><h2>Grade 9 Courses</h2><p>Each course remains authoritative for its own grades, quizzes, reports, progress, and 80% mastery gates.</p></div>
+  <div class="grid4" id="courseGrid"></div>
+ </div>
+</section>
+
+<section class="section" id="electives">
+ <div class="shell">
+  <div class="heading"><div class="kicker">Electives & Enrichment</div><h2>Build a Freshman Year That Feels Like Yours.</h2><p>Explore connected elective pathways and pin the ones you use most often.</p></div>
+  <div class="grid3" id="electiveGrid"></div>
+ </div>
+</section>
+
+<section class="section alt" id="reports">
+ <div class="shell">
+  <div class="heading"><div class="kicker">Grades · Reports · Mastery</div><h2>Your Academic Record</h2><p>The Freshman Home does not invent grades. Each course remains the source of truth; this hub gives you one clean doorway into those records.</p></div>
+  <div class="panel" style="overflow:auto">
+   <table class="report-table">
+    <thead><tr><th>Course</th><th>Mastery Rule</th><th>Grade / Report</th><th>Progress</th><th>Action</th></tr></thead>
+    <tbody id="reportRows"></tbody>
+   </table>
+  </div>
+  <div class="actions"><button class="btn" id="masteryInfoBtn">Why 80% Mastery?</button><a class="btn" href="../../index.html#student-portal">Student Profile</a></div>
+ </div>
+</section>
+
+<section class="section" id="aurora">
+ <div class="shell aurora-wrap">
+  <article class="aurora-card">
+   <div class="kicker">Aurora for Today</div><h3>Keep Going.</h3>
+   <div class="affirmation" id="affirmation"></div>
+   <div class="aurora-actions"><button class="btn" id="anotherAffirmation">Another</button><a class="btn primary" href="https://vervenveda.com/aurora.github.io/">Visit Aurora</a></div>
+  </article>
+  <article class="wellbeing-card">
+   <div class="kicker">Small Reset</div><h3>What would help right now?</h3>
+   <p style="color:var(--muted);font-size:12px">Choose a short reset. These are study-support prompts, not medical or counseling services.</p>
+   <div class="wellbeing-grid">
+    <button data-reset="focus"><strong>Refocus</strong><br><small>Pick one next task.</small></button>
+    <button data-reset="stuck"><strong>I’m Stuck</strong><br><small>Reduce the problem to one step.</small></button>
+    <button data-reset="break"><strong>Short Break</strong><br><small>Step away and return intentionally.</small></button>
+   </div>
+   <p id="resetResponse" style="color:var(--soft);font-size:12px"></p>
+  </article>
+ </div>
+</section>
+
+<section class="section alt" id="mentor">
+ <div class="shell mentor">
+  <article class="mentor-info">
+   <span class="beta">Mentor · Beta</span><div class="mentor-avatar">A</div><h3>Archaemenes</h3>
+   <p id="mentorIntro">Your Grade 9 mentor for planning, study direction, course navigation, and practical next steps.</p>
+  </article>
+  <article class="mentor-console">
+   <div class="kicker">Ask for direction</div><h3 style="font:500 30px var(--display);margin:7px 0">What are we working on?</h3>
+   <div class="mentor-prompts">
+    <button data-mentor="start">Where should I start today?</button>
+    <button data-mentor="behind">I’m falling behind.</button>
+    <button data-mentor="mastery">I’m below 80% mastery.</button>
+    <button data-mentor="test">I have a quiz or exam.</button>
+    <button data-mentor="research">I need research help.</button>
+    <button data-mentor="plan">Help me plan my week.</button>
+   </div>
+   <div class="mentor-response" id="mentorResponse">Choose a prompt above for a practical next step.</div>
+  </article>
+ </div>
+</section>
+
+<section class="section dark" id="directory">
+ <div class="shell">
+  <div class="heading"><div class="kicker">Searchable Directory</div><h2>Courses · Tools · Apps · Games · Research</h2><p>Search the freshman catalog and pin anything useful to your personalized home.</p></div>
+  <div class="directory-tools"><input id="directorySearch" type="search" placeholder="Search: calculator, history, art, music, citations…"><select id="directoryCategory"><option value="all">All categories</option><option>Course</option><option>Elective</option><option>Tool</option><option>Game</option><option>Research</option><option>Wellbeing</option></select></div>
+  <div class="grid4" id="directoryGrid"></div>
+ </div>
+</section>
+
+<section class="section alt" id="beta">
+ <div class="shell form-grid">
+  <article class="panel">
+   <div class="kicker">Beta Program</div><h3>Report a Problem or Idea</h3><p style="color:var(--muted);font-size:12px">Reports stay local until you export them.</p>
+   <label class="field">Area<select id="betaArea"><option>Grade 9 Home</option><option>Courses</option><option>Electives</option><option>Grades / Reports</option><option>Archaemenes</option><option>Aurora</option><option>Directory</option><option>Design My Page</option><option>Tools / Games</option></select></label>
+   <label class="field">What happened?<textarea id="betaText"></textarea></label>
+   <label class="field">Optional URL<input id="betaUrl"></label>
+   <div class="actions" style="justify-content:flex-start"><button class="btn primary" id="saveBeta">Save Report</button><button class="btn" id="exportBeta">Export Reports</button></div><div class="status" id="betaStatus"></div>
+  </article>
+  <article class="panel">
+   <div class="kicker">Freshman Privacy</div><h3>Personal Without Being Intrusive</h3>
+   <p style="color:var(--muted);font-size:12px">Signed out, this page behaves like a normal public Grade 9 landing page. Signed in through the existing High School local profile, it adds the student’s name, favorites, recent activity, and preferences.</p>
+   <p style="color:var(--muted);font-size:12px">Course grades and mastery remain inside their course systems. This page links to them rather than fabricating a second gradebook.</p>
+  </article>
+ </div>
+</section>
+</main>
+
+<footer><div class="shell">Khaemenes High · Grade 9 Freshman Campus · Foundations · Discovery · Confidence</div></footer>
+
+<!-- Design My Page -->
+<div class="modal-bg" id="designModal" aria-hidden="true">
+ <section class="modal" role="dialog" aria-modal="true" aria-label="Design My Page">
+  <div class="modal-head"><h2>Design My Page</h2><button class="modal-close" data-close-modal="designModal">×</button></div>
+  <div class="modal-body">
+   <div class="design-grid">
+    <div class="design-group"><h3>Appearance</h3><div class="option-list">
+     <label><input type="radio" name="theme" value="academic"> Academic Light</label>
+     <label><input type="radio" name="theme" value="dark"> Dark Academic</label>
+     <label><input type="radio" name="theme" value="forest"> Forest</label>
+     <label><input type="radio" name="theme" value="cosmic"> Cosmic</label>
+    </div></div>
+    <div class="design-group"><h3>Accessibility</h3><div class="option-list">
+     <label><input type="checkbox" id="reduceMotion"> Reduce motion</label>
+     <label><input type="checkbox" id="largeText"> Larger text</label>
+    </div></div>
+    <div class="design-group"><h3>Show on My Home</h3><div class="option-list">
+     <label><input type="checkbox" data-section-toggle="favoritesSection"> Favorites</label>
+     <label><input type="checkbox" data-section-toggle="reports"> Grades & Reports</label>
+     <label><input type="checkbox" data-section-toggle="aurora"> Aurora</label>
+     <label><input type="checkbox" data-section-toggle="mentor"> Archaemenes</label>
+     <label><input type="checkbox" data-section-toggle="electives"> Electives</label>
+    </div></div>
+    <div class="design-group"><h3>Reset</h3><p style="color:var(--muted);font-size:11px">Restore the Grade 9 default appearance and section visibility.</p><button class="btn" id="resetDesign">Restore Default</button></div>
+   </div>
+   <div class="actions"><button class="btn primary" id="saveDesign">Save My Design</button></div>
+  </div>
+ </section>
+</div>
+
+<!-- Mastery modal -->
+<div class="modal-bg" id="masteryModal" aria-hidden="true">
+ <section class="modal mastery-modal" role="dialog" aria-modal="true" aria-label="Mastery requirement">
+  <div class="modal-head"><h2>Mastery Check</h2><button class="modal-close" data-close-modal="masteryModal">×</button></div>
+  <div class="modal-body">
+   <div class="lock-icon">🔒</div><h3>80% Mastery Before Moving Ahead</h3>
+   <p>Khaemenes courses are progressive. A student should master the current required level before advancing. Your individual course remains the authority for the actual score and unlock decision.</p>
+   <div class="actions"><a class="btn primary" href="#courses" data-close-link>Return to Courses</a><a class="btn" href="#mentor" data-close-link>Ask Archaemenes</a></div>
+  </div>
+ </section>
+</div>
+
+<div id="toast" style="position:fixed;left:50%;bottom:18px;z-index:4000;transform:translateX(-50%) translateY(30px);opacity:0;pointer-events:none;padding:9px 13px;border-radius:7px;background:#111;color:#fff;font-size:10px;transition:.18s"></div>
+
+<script>
+(()=>{
+"use strict";
+
+const PROFILE_KEY="khaemenes-high-profile-v1";
+const PINNED_COURSES_KEY="khaemenes-high-pinned-courses-v2";
+const FAVORITES_KEY="khaemenes-high-resource-favorites-v2";
+const HUB_KEY="khaemenes-grade09-hub-v2";
+const LAST_KEY="khaemenes-grade09-last-open-v1";
+const COURSE_SUMMARY_KEY="khaemenes-grade09-course-summary-v1";
+
+const $=id=>document.getElementById(id);
+const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};
+const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
+const toast=m=>{const t=$("toast");t.textContent=m;t.style.opacity="1";t.style.transform="translateX(-50%) translateY(0)";clearTimeout(toast.t);toast.t=setTimeout(()=>{t.style.opacity="0";t.style.transform="translateX(-50%) translateY(30px)"},1800)};
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+const COURSES=[
+ {id:"prealgebra",category:"Course",title:"Pre-Algebra",tag:"Mathematics",desc:"Arithmetic fluency, rational numbers, proportional reasoning, equations, functions, geometry, statistics, modelling, tools and games.",url:"../../courses/mathematics/pre-algebra/",className:"math"},
+ {id:"english9",category:"Course",title:"English 9",tag:"Language Arts",desc:"Literature, composition, grammar, vocabulary, research, speaking, listening and media literacy.",url:"../../courses/language-arts/english-9/",className:"ela"},
+ {id:"science9",category:"Course",title:"Integrated Science 9",tag:"Science",desc:"Biology, chemistry, physics, Earth science, environment, engineering, inquiry, evidence and lab work.",url:"../../courses/science/integrated-science-9/",className:"science"},
+ {id:"global9",category:"Course",title:"Global Studies Honors",tag:"Social Studies",desc:"World history, geography, civics, economics, media literacy, source analysis and argument.",url:"../../courses/social-studies/grade-09/",className:"social"}
+];
+
+const ELECTIVES=[
+ {id:"earthspace",category:"Elective",title:"Earth, Climate & Space Science",tag:"Science Elective",desc:"Weather, climate, Earth systems, environmental observation, lunar cycles and space science.",url:"https://vervenveda.com/solanar.github.io/"},
+ {id:"digital",category:"Elective",title:"Digital Citizenship & Web Foundations",tag:"Technology",desc:"Digital safety, source evaluation, HTML/CSS/JavaScript foundations, files, accessibility and ethical technology.",url:"https://vervenveda.com/proresource_hub.github.io/"},
+ {id:"health",category:"Elective",title:"Health, Wellness & Human Development",tag:"Health",desc:"Health literacy, nutrition, movement, mental wellness, safety, prevention and responsible care navigation.",url:"https://vervenveda.com/medicament-hub.github.io/"},
+ {id:"visualart",category:"Elective",title:"Visual Arts Foundations",tag:"Arts",desc:"Drawing, color, composition, visual culture, digital media, critique and portfolio development.",url:"https://vervenveda.com/bazaarart.github.io/"},
+ {id:"music",category:"Elective",title:"Music Foundations & Creative Production",tag:"Music",desc:"Notation, rhythm, theory, composition, recording, performance and music research.",url:"https://vervenveda.com/the_refrain.github.io/"},
+ {id:"civic",category:"Elective",title:"Civic Literacy & Public Life",tag:"Civics",desc:"Institutions, rights, responsibilities, public policy, source evaluation, participation and service.",url:"https://vervenveda.com/onenationforall.github.io/"},
+ {id:"researchlab",category:"Elective",title:"Research, Evidence & Citation Lab",tag:"Research",desc:"Claims, sources, evidence, quotation, provenance, citations, bibliographies and responsible research.",url:"https://vervenveda.com/proresource_hub.github.io/Protools/Evidence_Citation_Studio/index.html"}
+];
+
+const RESOURCES=[
+ {id:"calculator",category:"Tool",title:"Scientific Calculator",tag:"Math Tool",desc:"High-school scientific calculator and problem-solving support.",url:"../../courses/mathematics/tools/calculator/"},
+ {id:"arcade",category:"Game",title:"Verve N Veda Arcade",tag:"Games",desc:"Learning games, logic, strategy, puzzles and playful exploration.",url:"https://vervenveda.com/arcade.github.io/"},
+ {id:"mathgames",category:"Game",title:"Pre-Algebra Games",tag:"Math Games",desc:"Pattern, logic, Sudoku, geometry and course-linked activities.",url:"../../courses/mathematics/pre-algebra/#games"},
+ {id:"verifier",category:"Research",title:"The Verifier",tag:"Evidence",desc:"Evidence-aware research, claim checking and source evaluation.",url:"https://vervenveda.com/theverifier.github.io/"},
+ {id:"arshif",category:"Research",title:"ARSHIF Archives",tag:"Archives",desc:"Research, history, reference collections and reading rooms.",url:"https://vervenveda.com/Arshif.github.io/"},
+ {id:"citation",category:"Research",title:"Evidence & Citation Studio",tag:"Research Tool",desc:"Source handling, evidence notes, quotations and citation practice.",url:"https://vervenveda.com/proresource_hub.github.io/Protools/Evidence_Citation_Studio/index.html"},
+ {id:"aurora",category:"Wellbeing",title:"Aurora",tag:"Wellbeing",desc:"Reflection, encouragement, rest and creative renewal.",url:"https://vervenveda.com/aurora.github.io/"},
+ {id:"science",category:"Tool",title:"Science Lab",tag:"Lab",desc:"Grade 9 science investigations, data tools, graphing and CER work.",url:"../../courses/science/integrated-science-9/"}
+];
+
+const ALL=[...COURSES,...ELECTIVES,...RESOURCES];
+const state=read(HUB_KEY,{favorites:[],reports:[],theme:"academic",reduceMotion:false,largeText:false,hiddenSections:[]});
+state.favorites=Array.isArray(state.favorites)?state.favorites:[];
+state.reports=Array.isArray(state.reports)?state.reports:[];
+state.hiddenSections=Array.isArray(state.hiddenSections)?state.hiddenSections:[];
+
+function profile(){
+ const p=read(PROFILE_KEY,null);
+ if(!p)return null;
+ return {...p,name:p.name||p.displayName||"",displayName:p.displayName||p.name||"",grade:String(p.grade||"9"),semester:p.semester||"Fall"};
+}
+function isGrade9Profile(p){return p&&String(p.grade).replace(/^0/,"")==="9"}
+function initials(name){return (name||"Student").split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join("").toUpperCase()||"S"}
+function saveState(){write(HUB_KEY,state)}
+function favoriteSet(){
+ const shared=read(FAVORITES_KEY,[]);
+ const local=state.favorites;
+ return new Set([...(Array.isArray(shared)?shared:[]),...local]);
+}
+function isPinned(id){return favoriteSet().has(id)}
+function togglePin(id){
+ const set=new Set(state.favorites);
+ set.has(id)?set.delete(id):set.add(id);
+ state.favorites=[...set];saveState();
+ const shared=new Set(read(FAVORITES_KEY,[]));set.has(id)?shared.add(id):shared.delete(id);write(FAVORITES_KEY,[...shared]);
+ renderAll();toast(set.has(id)?"Pinned to your Freshman Home.":"Removed from favorites.");
+}
+function markOpen(item){
+ write(LAST_KEY,{id:item.id,title:item.title,url:item.url,desc:item.desc,at:new Date().toISOString()});
+ if(item.category==="Course"){
+   const pins=new Set(read(PINNED_COURSES_KEY,[]));
+   // do not auto-pin; just preserve existing shared course pin structure
+ }
+}
+function card(item,course=false){
+ return `<article class="card ${course?`course ${item.className||""}`:""}">
+  <span class="tag">${esc(item.tag||item.category)}</span>
+  <h3>${esc(item.title)}</h3><p>${esc(item.desc)}</p>
+  ${course?`<div class="mastery-line"><span>Mastery gate</span><strong>80%</strong></div><div class="progressbar"><i style="width:${coursePercent(item.id)}%"></i></div><div class="grade-status">${courseStatusText(item.id)}</div>`:""}
+  <div class="card-foot"><a class="open-link" data-open="${item.id}" href="${item.url}">Open →</a><button class="pin" data-pin="${item.id}" aria-pressed="${isPinned(item.id)}" title="${isPinned(item.id)?"Unpin":"Pin to Freshman Home"}">${isPinned(item.id)?"★":"☆"}</button></div>
+ </article>`
+}
+function summaries(){return read(COURSE_SUMMARY_KEY,{})||{}}
+function coursePercent(id){
+ const s=summaries()[id];
+ return Number.isFinite(Number(s?.mastery))?Math.max(0,Math.min(100,Number(s.mastery))):0;
+}
+function courseStatusText(id){
+ const s=summaries()[id];
+ if(!s)return "Course report available inside this course · no synced snapshot yet.";
+ const parts=[];
+ if(Number.isFinite(Number(s.grade)))parts.push(`Grade: ${Number(s.grade)}%`);
+ if(Number.isFinite(Number(s.mastery)))parts.push(`Mastery: ${Number(s.mastery)}%`);
+ if(s.current)parts.push(`Current: ${s.current}`);
+ return parts.join(" · ")||"Open course report";
+}
+function renderCourses(){$("courseGrid").innerHTML=COURSES.map(x=>card(x,true)).join("")}
+function renderElectives(){$("electiveGrid").innerHTML=ELECTIVES.map(x=>card(x,false)).join("")}
+function renderFavorites(){
+ const p=profile(), section=$("favoritesSection");
+ const ids=[...favoriteSet()];
+ const items=ids.map(id=>ALL.find(x=>x.id===id)).filter(Boolean);
+ section.hidden=!isGrade9Profile(p)||state.hiddenSections.includes("favoritesSection");
+ $("favoritesGrid").innerHTML=items.length?items.map(x=>card(x,COURSES.some(c=>c.id===x.id))).join(""):`<div class="empty">Pin a course, elective, tool, game, or research resource and it will appear here.</div>`;
+ $("favoriteCount").textContent=`${items.length} pinned`;
+}
+function renderReports(){
+ $("reportRows").innerHTML=COURSES.map(c=>{
+  const s=summaries()[c.id], mastery=Number(s?.mastery), grade=Number(s?.grade);
+  const masteryText=Number.isFinite(mastery)?`${mastery}%`:"80% required";
+  const gradeText=Number.isFinite(grade)?`${grade}%`:"Open course report";
+  const status=Number.isFinite(mastery)?(mastery>=80?"Ready at current gate":"Current gate not mastered"):"Course-controlled";
+  const cls=Number.isFinite(mastery)?(mastery>=80?"ready":"lock"):"";
+  return `<tr><td><strong>${esc(c.title)}</strong></td><td>${masteryText}</td><td>${gradeText}</td><td><span class="status-pill ${cls}">${status}</span></td><td><a class="open-link" data-open="${c.id}" href="${c.url}">Open report →</a></td></tr>`
+ }).join("")
+}
+function directoryItems(){
+ const q=$("directorySearch").value.trim().toLowerCase(),cat=$("directoryCategory").value;
+ return ALL.filter(x=>(cat==="all"||x.category===cat)&&(!q||`${x.title} ${x.desc} ${x.tag} ${x.category}`.toLowerCase().includes(q)));
+}
+function renderDirectory(){
+ const items=directoryItems();
+ $("directoryGrid").innerHTML=items.length?items.map(x=>`<article class="tool-card"><strong>${esc(x.title)}</strong><span>${esc(x.category)} · ${esc(x.desc)}</span><div class="card-foot"><a class="open-link" data-open="${x.id}" href="${x.url}">Open →</a><button class="pin" data-pin="${x.id}" aria-pressed="${isPinned(x.id)}">${isPinned(x.id)?"★":"☆"}</button></div></article>`).join(""):`<div class="empty">No Grade 9 resource matches that search.</div>`
+}
+function renderProfile(){
+ const p=profile(), signed=isGrade9Profile(p);
+ $("studentHome").hidden=!signed;
+ $("profileChip").hidden=!signed;
+ if(!signed){
+   $("heroLead").textContent="A connected home for Grade 9 academics, electives, grades, progress, research, tools, games, and mentor support.";
+   return;
+ }
+ const name=p.displayName||p.name||"Student",ini=initials(name);
+ $("profileAvatar").textContent=ini;$("bigAvatar").textContent=ini;$("profileName").textContent=name;
+ $("profileMeta").textContent=`Grade 9 · ${p.semester||"Current Semester"}`;
+ $("welcomeName").textContent=`Welcome back, ${name}.`;
+ $("studentDetail").textContent=`Grade 9 · ${p.semester||"Current Semester"}${p.pathway?` · ${p.pathway}`:""}`;
+ $("heroLead").textContent=`Welcome back, ${name}. Your courses, favorites, reports, mentor, and freshman tools are ready when you are.`;
+ $("mentorIntro").textContent=`${name}, Archaemenes is your Grade 9 mentor for planning, study direction, course navigation, and practical next steps.`;
+ const last=read(LAST_KEY,null);
+ if(last){
+   $("continueTitle").textContent=last.title;$("continueDesc").textContent=last.desc||"Continue your most recent Grade 9 activity.";$("continueLink").href=last.url;
+ }else{
+   $("continueTitle").textContent="Choose a course";$("continueDesc").textContent="Your most recently opened Grade 9 resource will appear here.";$("continueLink").href="#courses";
+ }
+}
+function applyDesign(){
+ document.body.classList.remove("theme-dark","theme-forest","theme-cosmic","large-text","reduce-motion");
+ if(state.theme==="dark")document.body.classList.add("theme-dark");
+ if(state.theme==="forest")document.body.classList.add("theme-forest");
+ if(state.theme==="cosmic")document.body.classList.add("theme-cosmic");
+ if(state.largeText)document.body.classList.add("large-text");
+ if(state.reduceMotion)document.body.classList.add("reduce-motion");
+ ["reports","aurora","mentor","electives"].forEach(id=>{const el=$(id);if(el)el.hidden=state.hiddenSections.includes(id)});
+ renderFavorites();
+}
+function bindDynamic(){
+ document.querySelectorAll("[data-pin]").forEach(b=>b.onclick=()=>togglePin(b.dataset.pin));
+ document.querySelectorAll("[data-open]").forEach(a=>a.onclick=()=>{const item=ALL.find(x=>x.id===a.dataset.open);if(item)markOpen(item)});
+}
+function renderAll(){renderProfile();renderCourses();renderElectives();renderReports();renderFavorites();renderDirectory();applyDesign();bindDynamic()}
+
+/* ticker */
+const TICKER=[
+ ["Week 1","Start with one clear next step.","#courses"],
+ ["Archaemenes","Freshman Mentor · Beta","#mentor"],
+ ["Aurora","A little encouragement for today.","#aurora"],
+ ["Grades & Reports","Your course records stay authoritative.","#reports"],
+ ["Freshman Directory","Search tools, games, research and electives.","#directory"],
+ ["Mastery","80% unlock standard.","#reports"]
+];
+function tickerSet(hidden=false){return `<div class="ticker-set" ${hidden?'aria-hidden="true"':""}><span class="ticker-label">Grade 9</span>${TICKER.map(([a,b,h])=>`<a href="${h}" ${hidden?'tabindex="-1"':""}>${esc(a)} · ${esc(b)}</a>`).join("")}</div>`}
+$("tickerTrack").innerHTML=tickerSet()+tickerSet(true);
+$("tickerToggle").onclick=()=>{const t=$("ticker"),paused=t.dataset.paused==="true";t.dataset.paused=String(!paused);$("tickerToggle").textContent=paused?"Ⅱ":"▶"};
+
+/* menu */
+const MENU=[
+ ["Freshman Home","Dashboard and personalization","./","IX"],
+ ["Core Courses","Four Grade 9 core portals","#courses","C"],
+ ["Electives","Creative and enrichment pathways","#electives","E"],
+ ["Grades & Reports","Course records and mastery","#reports","R"],
+ ["My Favorites","Pinned resources","#favoritesSection","★"],
+ ["Archaemenes","Grade 9 Mentor Beta","#mentor","A"],
+ ["Aurora","Encouragement and wellbeing","#aurora","☼"],
+ ["Directory","Tools, apps, games and research","#directory","⌕"],
+ ["Beta Feedback","Report a problem or idea","#beta","β"],
+ ["Student Profile","High School profile","../../index.html#student-portal","P"],
+ ["High School Campus","Grades 9–12 home","../../index.html","H"],
+ ["Grade 10","Sophomore Campus","../grade-10/","X"]
+];
+function buildMenu(q=""){
+ q=q.trim().toLowerCase();
+ const rows=MENU.filter(x=>!q||`${x[0]} ${x[1]}`.toLowerCase().includes(q));
+ $("menuContent").innerHTML=`<div class="menu-group">Grade 9 Directory</div><div class="menu-list">${rows.map(x=>`<a class="menu-link" href="${x[2]}"><i>${x[3]}</i><span><strong>${x[0]}</strong><small>${x[1]}</small></span><span>›</span></a>`).join("")}</div>`;
+}
+function openMenu(){buildMenu();$("menuOverlay").classList.add("open");$("menuOverlay").setAttribute("aria-hidden","false");document.body.classList.add("menu-open");setTimeout(()=>$("menuSearch").focus(),60)}
+function closeMenu(){$("menuOverlay").classList.remove("open");$("menuOverlay").setAttribute("aria-hidden","true");document.body.classList.remove("menu-open")}
+$("menuBtn").onclick=openMenu;$("menuClose").onclick=closeMenu;$("menuOverlay").onclick=e=>{if(e.target===$("menuOverlay"))closeMenu()};$("menuSearch").oninput=e=>buildMenu(e.target.value);
+
+/* modal */
+function openModal(id){$(id).classList.add("open");$(id).setAttribute("aria-hidden","false");document.body.classList.add("modal-open")}
+function closeModal(id){$(id).classList.remove("open");$(id).setAttribute("aria-hidden","true");document.body.classList.remove("modal-open")}
+document.querySelectorAll("[data-close-modal]").forEach(b=>b.onclick=()=>closeModal(b.dataset.closeModal));
+document.querySelectorAll("[data-close-link]").forEach(a=>a.onclick=()=>closeModal("masteryModal"));
+$("designBtn").onclick=()=>openDesign();$("studentDesignBtn").onclick=()=>openDesign();$("masteryInfoBtn").onclick=()=>openModal("masteryModal");
+function openDesign(){
+ document.querySelectorAll('input[name="theme"]').forEach(r=>r.checked=r.value===state.theme);
+ $("reduceMotion").checked=!!state.reduceMotion;$("largeText").checked=!!state.largeText;
+ document.querySelectorAll("[data-section-toggle]").forEach(c=>c.checked=!state.hiddenSections.includes(c.dataset.sectionToggle));
+ openModal("designModal");
+}
+$("saveDesign").onclick=()=>{
+ state.theme=document.querySelector('input[name="theme"]:checked')?.value||"academic";
+ state.reduceMotion=$("reduceMotion").checked;state.largeText=$("largeText").checked;
+ state.hiddenSections=[...document.querySelectorAll("[data-section-toggle]")].filter(c=>!c.checked).map(c=>c.dataset.sectionToggle);
+ saveState();applyDesign();closeModal("designModal");toast("Freshman page design saved.");
+};
+$("resetDesign").onclick=()=>{state.theme="academic";state.reduceMotion=false;state.largeText=false;state.hiddenSections=[];saveState();applyDesign();openDesign();toast("Default design restored.")};
+
+/* Aurora */
+const AFF=[
+ "You do not have to finish everything today. You only need to know the next useful step.",
+ "Mastery grows through correction. A mistake you understand is progress.",
+ "Consistency matters more than one perfect study day.",
+ "When the work feels large, make the next action smaller.",
+ "You are allowed to learn at the pace required to actually understand.",
+ "A difficult chapter is not a verdict. It is a place to practice.",
+ "Finish one thing with care, then choose the next.",
+ "Curiosity is productive. Ask the question you actually have.",
+ "Progress can be quiet and still be real.",
+ "Rest and effort belong in the same learning plan."
+];
+function affirmation(){const day=Math.floor(Date.now()/86400000),offset=Number(sessionStorage.getItem("g9Aff")||0);$("affirmation").textContent=`“${AFF[(day+offset)%AFF.length]}”`}
+$("anotherAffirmation").onclick=()=>{sessionStorage.setItem("g9Aff",String(Number(sessionStorage.getItem("g9Aff")||0)+1));affirmation()};
+document.querySelectorAll("[data-reset]").forEach(b=>b.onclick=()=>{
+ const m={focus:"Write down one task small enough to finish in the next 20–30 minutes. Open only what you need for that task.",stuck:"Name the exact point where you became confused. Review that one concept, example, or instruction before trying the whole assignment again.",break:"Step away briefly, move, get water, and decide before you leave exactly what you will reopen when you return."};
+ $("resetResponse").textContent=m[b.dataset.reset];
+});
+
+/* mentor */
+const MENTOR={
+ start:"Check what is due first. If nothing is urgent, open the hardest core subject while your attention is fresh, complete one defined task, then move to reading, lab, or review work.",
+ behind:"Do not build a giant catch-up list. Identify the nearest required mastery gate, complete one missing task or weak concept there, and reassess after that.",
+ mastery:"Below 80% means the current level needs more work before advancing. Review quiz corrections and weak objectives, practice them directly, then retake the current assessment when ready.",
+ test:"Retrieve what you know without notes first. Then study only the gaps, practice mixed questions, and finish by explaining the hardest concept in your own words.",
+ research:"Start with a focused question. Use more than one source, track where each claim comes from, and separate evidence from interpretation. The Verifier, ARSHIF, and Citation Studio are in the directory.",
+ plan:"Choose the week's fixed deadlines first. Then place difficult work earlier, reading and writing in longer uninterrupted blocks, and review/corrections near the end of each day."
+};
+document.querySelectorAll("[data-mentor]").forEach(b=>b.onclick=()=>{$("mentorResponse").textContent=MENTOR[b.dataset.mentor]});
+
+/* directory */
+$("directorySearch").oninput=()=>{renderDirectory();bindDynamic()};$("directoryCategory").onchange=()=>{renderDirectory();bindDynamic()};
+
+/* beta */
+$("saveBeta").onclick=()=>{
+ const text=$("betaText").value.trim();if(!text){$("betaStatus").textContent="Describe the issue or idea first.";return}
+ state.reports.push({at:new Date().toISOString(),area:$("betaArea").value,url:$("betaUrl").value.trim(),text});state.reports=state.reports.slice(-50);saveState();$("betaText").value="";$("betaStatus").textContent=`Saved locally. ${state.reports.length} report(s) stored.`
+};
+$("exportBeta").onclick=()=>{
+ if(!state.reports.length){$("betaStatus").textContent="No saved Beta reports yet.";return}
+ const out=state.reports.map((r,i)=>`GRADE 9 BETA REPORT ${i+1}\n${r.at}\nArea: ${r.area}\nURL: ${r.url||"(none)"}\n\n${r.text}`).join("\n\n--------------------------\n\n");
+ const blob=new Blob([out],{type:"text/plain"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="khaemenes-grade9-beta-reports.txt";a.click();setTimeout(()=>URL.revokeObjectURL(u),700)
+};
+
+/* close with escape */
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeMenu();document.querySelectorAll(".modal-bg.open").forEach(m=>closeModal(m.id))}});
+
+affirmation();renderAll();
+})();
+</script>
+</body>
+</html>
