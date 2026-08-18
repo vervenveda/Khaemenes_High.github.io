@@ -1,0 +1,1012 @@
+{
+  "schema_version": "1.0",
+  "unit_id": "KH-MATH-PA-U12",
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ar": "العربية",
+    "pt": "Português"
+  },
+  "terms": [
+    {
+      "id": "statistics",
+      "en": "statistics",
+      "es": "estadística",
+      "fr": "statistique",
+      "ar": "إحصاء",
+      "pt": "estatística",
+      "definition": "The study of data, variation, and uncertainty."
+    },
+    {
+      "id": "data",
+      "en": "data",
+      "es": "datos",
+      "fr": "données",
+      "ar": "بيانات",
+      "pt": "dados",
+      "definition": "Recorded observations or information."
+    },
+    {
+      "id": "statistical-question",
+      "en": "statistical question",
+      "es": "pregunta estadística",
+      "fr": "question statistique",
+      "ar": "سؤال إحصائي",
+      "pt": "pergunta estatística",
+      "definition": "A question expecting variable answers from data."
+    },
+    {
+      "id": "variability",
+      "en": "variability",
+      "es": "variabilidad",
+      "fr": "variabilité",
+      "ar": "تباين",
+      "pt": "variabilidade",
+      "definition": "How observations differ from one another."
+    },
+    {
+      "id": "variable",
+      "en": "variable",
+      "es": "variable",
+      "fr": "variable",
+      "ar": "متغير",
+      "pt": "variável",
+      "definition": "A characteristic recorded for each case."
+    },
+    {
+      "id": "categorical-variable",
+      "en": "categorical variable",
+      "es": "variable categórica",
+      "fr": "variable catégorielle",
+      "ar": "متغير فئوي",
+      "pt": "variável categórica",
+      "definition": "A variable whose values are labels or groups."
+    },
+    {
+      "id": "numerical-variable",
+      "en": "numerical variable",
+      "es": "variable numérica",
+      "fr": "variable numérique",
+      "ar": "متغير عددي",
+      "pt": "variável numérica",
+      "definition": "A variable whose values are counts or measurements."
+    },
+    {
+      "id": "population",
+      "en": "population",
+      "es": "población",
+      "fr": "population",
+      "ar": "مجتمع إحصائي",
+      "pt": "população",
+      "definition": "The complete group of interest."
+    },
+    {
+      "id": "sample",
+      "en": "sample",
+      "es": "muestra",
+      "fr": "échantillon",
+      "ar": "عينة",
+      "pt": "amostra",
+      "definition": "A subset observed from a population."
+    },
+    {
+      "id": "census",
+      "en": "census",
+      "es": "censo",
+      "fr": "recensement",
+      "ar": "تعداد",
+      "pt": "censo",
+      "definition": "Data collection from every member of a population."
+    },
+    {
+      "id": "representative-sample",
+      "en": "representative sample",
+      "es": "muestra representativa",
+      "fr": "échantillon représentatif",
+      "ar": "عينة ممثلة",
+      "pt": "amostra representativa",
+      "definition": "A sample reflecting important population features."
+    },
+    {
+      "id": "random-sample",
+      "en": "random sample",
+      "es": "muestra aleatoria",
+      "fr": "échantillon aléatoire",
+      "ar": "عينة عشوائية",
+      "pt": "amostra aleatória",
+      "definition": "A sample selected by a chance process."
+    },
+    {
+      "id": "data-ethics",
+      "en": "data ethics",
+      "es": "ética de datos",
+      "fr": "éthique des données",
+      "ar": "أخلاقيات البيانات",
+      "pt": "ética de dados",
+      "definition": "Responsible collection, use, and communication of data."
+    },
+    {
+      "id": "anonymity",
+      "en": "anonymity",
+      "es": "anonimato",
+      "fr": "anonymat",
+      "ar": "إخفاء الهوية",
+      "pt": "anonimato",
+      "definition": "A condition in which identities are not known."
+    },
+    {
+      "id": "privacy",
+      "en": "privacy",
+      "es": "privacidad",
+      "fr": "vie privée",
+      "ar": "خصوصية",
+      "pt": "privacidade",
+      "definition": "Protection of personal information and control over its use."
+    },
+    {
+      "id": "frequency",
+      "en": "frequency",
+      "es": "frecuencia",
+      "fr": "fréquence",
+      "ar": "تكرار",
+      "pt": "frequência",
+      "definition": "The number of times a value or category occurs."
+    },
+    {
+      "id": "relative-frequency",
+      "en": "relative frequency",
+      "es": "frecuencia relativa",
+      "fr": "fréquence relative",
+      "ar": "تكرار نسبي",
+      "pt": "frequência relativa",
+      "definition": "Frequency divided by the total number of observations."
+    },
+    {
+      "id": "frequency-table",
+      "en": "frequency table",
+      "es": "tabla de frecuencias",
+      "fr": "tableau de fréquences",
+      "ar": "جدول تكراري",
+      "pt": "tabela de frequências",
+      "definition": "A table listing values or categories with counts."
+    },
+    {
+      "id": "dot-plot",
+      "en": "dot plot",
+      "es": "diagrama de puntos",
+      "fr": "diagramme à points",
+      "ar": "مخطط نقطي",
+      "pt": "diagrama de pontos",
+      "definition": "A numerical display with one mark per observation."
+    },
+    {
+      "id": "histogram",
+      "en": "histogram",
+      "es": "histograma",
+      "fr": "histogramme",
+      "ar": "مدرج تكراري",
+      "pt": "histograma",
+      "definition": "A graph grouping numerical data into intervals."
+    },
+    {
+      "id": "bin",
+      "en": "bin",
+      "es": "intervalo de clase",
+      "fr": "classe",
+      "ar": "فئة",
+      "pt": "classe",
+      "definition": "An interval used to group numerical values."
+    },
+    {
+      "id": "interval",
+      "en": "interval",
+      "es": "intervalo",
+      "fr": "intervalle",
+      "ar": "فترة",
+      "pt": "intervalo",
+      "definition": "A continuous range of values."
+    },
+    {
+      "id": "bar-graph",
+      "en": "bar graph",
+      "es": "gráfico de barras",
+      "fr": "diagramme en barres",
+      "ar": "مخطط أعمدة",
+      "pt": "gráfico de barras",
+      "definition": "A graph comparing categorical frequencies."
+    },
+    {
+      "id": "box-plot",
+      "en": "box plot",
+      "es": "diagrama de caja",
+      "fr": "boîte à moustaches",
+      "ar": "مخطط صندوقي",
+      "pt": "boxplot",
+      "definition": "A display based on the five-number summary."
+    },
+    {
+      "id": "five-number-summary",
+      "en": "five-number summary",
+      "es": "resumen de cinco números",
+      "fr": "résumé à cinq nombres",
+      "ar": "ملخص خماسي",
+      "pt": "resumo de cinco números",
+      "definition": "Minimum, Q1, median, Q3, and maximum."
+    },
+    {
+      "id": "minimum",
+      "en": "minimum",
+      "es": "mínimo",
+      "fr": "minimum",
+      "ar": "قيمة صغرى",
+      "pt": "mínimo",
+      "definition": "The smallest observed value."
+    },
+    {
+      "id": "first-quartile",
+      "en": "first quartile",
+      "es": "primer cuartil",
+      "fr": "premier quartile",
+      "ar": "الربيع الأول",
+      "pt": "primeiro quartil",
+      "definition": "The 25th-percentile boundary, Q1."
+    },
+    {
+      "id": "median",
+      "en": "median",
+      "es": "mediana",
+      "fr": "médiane",
+      "ar": "وسيط",
+      "pt": "mediana",
+      "definition": "The middle ordered value or average of two middle values."
+    },
+    {
+      "id": "third-quartile",
+      "en": "third quartile",
+      "es": "tercer cuartil",
+      "fr": "troisième quartile",
+      "ar": "الربيع الثالث",
+      "pt": "terceiro quartil",
+      "definition": "The 75th-percentile boundary, Q3."
+    },
+    {
+      "id": "maximum",
+      "en": "maximum",
+      "es": "máximo",
+      "fr": "maximum",
+      "ar": "قيمة عظمى",
+      "pt": "máximo",
+      "definition": "The largest observed value."
+    },
+    {
+      "id": "distribution",
+      "en": "distribution",
+      "es": "distribución",
+      "fr": "distribution",
+      "ar": "توزيع",
+      "pt": "distribuição",
+      "definition": "The pattern of values and their frequencies."
+    },
+    {
+      "id": "shape",
+      "en": "shape",
+      "es": "forma",
+      "fr": "forme",
+      "ar": "شكل التوزيع",
+      "pt": "forma",
+      "definition": "The overall form of a distribution."
+    },
+    {
+      "id": "measure-of-center",
+      "en": "measure of center",
+      "es": "medida de centro",
+      "fr": "mesure de tendance centrale",
+      "ar": "مقياس نزعة مركزية",
+      "pt": "medida de centro",
+      "definition": "A statistic describing a typical or central value."
+    },
+    {
+      "id": "mean",
+      "en": "mean",
+      "es": "media",
+      "fr": "moyenne",
+      "ar": "متوسط حسابي",
+      "pt": "média",
+      "definition": "The sum of values divided by their count."
+    },
+    {
+      "id": "mode",
+      "en": "mode",
+      "es": "moda",
+      "fr": "mode",
+      "ar": "منوال",
+      "pt": "moda",
+      "definition": "The most frequent value or category."
+    },
+    {
+      "id": "weighted-mean",
+      "en": "weighted mean",
+      "es": "media ponderada",
+      "fr": "moyenne pondérée",
+      "ar": "متوسط مرجح",
+      "pt": "média ponderada",
+      "definition": "A mean in which values have unequal weights."
+    },
+    {
+      "id": "weight",
+      "en": "weight",
+      "es": "peso",
+      "fr": "poids",
+      "ar": "وزن",
+      "pt": "peso",
+      "definition": "The relative contribution of a value to a weighted calculation."
+    },
+    {
+      "id": "resistant-measure",
+      "en": "resistant measure",
+      "es": "medida resistente",
+      "fr": "mesure robuste",
+      "ar": "مقياس مقاوم",
+      "pt": "medida resistente",
+      "definition": "A statistic not greatly changed by extreme values."
+    },
+    {
+      "id": "skewed-distribution",
+      "en": "skewed distribution",
+      "es": "distribución sesgada",
+      "fr": "distribution asymétrique",
+      "ar": "توزيع ملتوي",
+      "pt": "distribuição assimétrica",
+      "definition": "A distribution with a longer tail on one side."
+    },
+    {
+      "id": "symmetric-distribution",
+      "en": "symmetric distribution",
+      "es": "distribución simétrica",
+      "fr": "distribution symétrique",
+      "ar": "توزيع متماثل",
+      "pt": "distribuição simétrica",
+      "definition": "A distribution balanced around its center."
+    },
+    {
+      "id": "outlier",
+      "en": "outlier",
+      "es": "valor atípico",
+      "fr": "valeur aberrante",
+      "ar": "قيمة شاذة",
+      "pt": "valor atípico",
+      "definition": "An observation unusually distant from the rest."
+    },
+    {
+      "id": "typical-value",
+      "en": "typical value",
+      "es": "valor típico",
+      "fr": "valeur typique",
+      "ar": "قيمة نموذجية",
+      "pt": "valor típico",
+      "definition": "A value representing what is common or central."
+    },
+    {
+      "id": "spread",
+      "en": "spread",
+      "es": "dispersión",
+      "fr": "dispersion",
+      "ar": "انتشار",
+      "pt": "dispersão",
+      "definition": "The amount observations vary."
+    },
+    {
+      "id": "range",
+      "en": "range",
+      "es": "rango",
+      "fr": "étendue",
+      "ar": "مدى",
+      "pt": "amplitude",
+      "definition": "Maximum minus minimum."
+    },
+    {
+      "id": "interquartile-range",
+      "en": "interquartile range",
+      "es": "rango intercuartílico",
+      "fr": "écart interquartile",
+      "ar": "مدى ربعي",
+      "pt": "amplitude interquartil",
+      "definition": "Q3 minus Q1."
+    },
+    {
+      "id": "iqr",
+      "en": "IQR",
+      "es": "RIC",
+      "fr": "écart interquartile",
+      "ar": "المدى الربيعي",
+      "pt": "AIQ",
+      "definition": "Abbreviation for interquartile range."
+    },
+    {
+      "id": "mean-absolute-deviation",
+      "en": "mean absolute deviation",
+      "es": "desviación absoluta media",
+      "fr": "écart absolu moyen",
+      "ar": "متوسط الانحراف المطلق",
+      "pt": "desvio absoluto médio",
+      "definition": "Average absolute distance from the mean."
+    },
+    {
+      "id": "mad",
+      "en": "MAD",
+      "es": "DAM",
+      "fr": "EAM",
+      "ar": "متوسط الانحراف المطلق",
+      "pt": "DAM",
+      "definition": "Abbreviation for mean absolute deviation."
+    },
+    {
+      "id": "deviation",
+      "en": "deviation",
+      "es": "desviación",
+      "fr": "écart",
+      "ar": "انحراف",
+      "pt": "desvio",
+      "definition": "A value’s difference or distance from a reference."
+    },
+    {
+      "id": "quartile",
+      "en": "quartile",
+      "es": "cuartil",
+      "fr": "quartile",
+      "ar": "ربيع",
+      "pt": "quartil",
+      "definition": "A boundary dividing ordered data into four parts."
+    },
+    {
+      "id": "lower-fence",
+      "en": "lower fence",
+      "es": "límite inferior",
+      "fr": "borne inférieure",
+      "ar": "حد سفلي",
+      "pt": "limite inferior",
+      "definition": "Q1 minus 1.5 times IQR."
+    },
+    {
+      "id": "upper-fence",
+      "en": "upper fence",
+      "es": "límite superior",
+      "fr": "borne supérieure",
+      "ar": "حد علوي",
+      "pt": "limite superior",
+      "definition": "Q3 plus 1.5 times IQR."
+    },
+    {
+      "id": "outlier-rule",
+      "en": "outlier rule",
+      "es": "regla de valores atípicos",
+      "fr": "règle des valeurs aberrantes",
+      "ar": "قاعدة القيم الشاذة",
+      "pt": "regra de valores atípicos",
+      "definition": "A criterion for flagging possible unusual observations."
+    },
+    {
+      "id": "cluster",
+      "en": "cluster",
+      "es": "grupo",
+      "fr": "amas",
+      "ar": "تجمع",
+      "pt": "agrupamento",
+      "definition": "A region where many observations are concentrated."
+    },
+    {
+      "id": "gap",
+      "en": "gap",
+      "es": "brecha",
+      "fr": "lacune",
+      "ar": "فجوة",
+      "pt": "lacuna",
+      "definition": "A region of a distribution with no observations."
+    },
+    {
+      "id": "compare-distributions",
+      "en": "compare distributions",
+      "es": "comparar distribuciones",
+      "fr": "comparer des distributions",
+      "ar": "مقارنة توزيعات",
+      "pt": "comparar distribuições",
+      "definition": "Describe similarities and differences in center, spread, and shape."
+    },
+    {
+      "id": "center",
+      "en": "center",
+      "es": "centro",
+      "fr": "centre",
+      "ar": "مركز",
+      "pt": "centro",
+      "definition": "A typical location in a distribution."
+    },
+    {
+      "id": "skewness",
+      "en": "skewness",
+      "es": "asimetría",
+      "fr": "asymétrie",
+      "ar": "التواء",
+      "pt": "assimetria",
+      "definition": "The direction and degree of distribution asymmetry."
+    },
+    {
+      "id": "truncated-axis",
+      "en": "truncated axis",
+      "es": "eje truncado",
+      "fr": "axe tronqué",
+      "ar": "محور مبتور",
+      "pt": "eixo truncado",
+      "definition": "An axis that begins above zero or omits part of its range."
+    },
+    {
+      "id": "unequal-interval",
+      "en": "unequal interval",
+      "es": "intervalo desigual",
+      "fr": "intervalle inégal",
+      "ar": "فترة غير متساوية",
+      "pt": "intervalo desigual",
+      "definition": "Axis or bin spacing that is not consistent."
+    },
+    {
+      "id": "distorted-scale",
+      "en": "distorted scale",
+      "es": "escala distorsionada",
+      "fr": "échelle déformée",
+      "ar": "مقياس مشوه",
+      "pt": "escala distorcida",
+      "definition": "A scale that visually misrepresents numerical differences."
+    },
+    {
+      "id": "misleading-graph",
+      "en": "misleading graph",
+      "es": "gráfico engañoso",
+      "fr": "graphique trompeur",
+      "ar": "رسم مضلل",
+      "pt": "gráfico enganoso",
+      "definition": "A display whose design encourages an inaccurate impression."
+    },
+    {
+      "id": "denominator",
+      "en": "denominator",
+      "es": "denominador",
+      "fr": "dénominateur",
+      "ar": "مقام",
+      "pt": "denominador",
+      "definition": "The whole or reference total in a fraction or rate."
+    },
+    {
+      "id": "percentage-point",
+      "en": "percentage point",
+      "es": "punto porcentual",
+      "fr": "point de pourcentage",
+      "ar": "نقطة مئوية",
+      "pt": "ponto percentual",
+      "definition": "The arithmetic difference between two percentages."
+    },
+    {
+      "id": "association",
+      "en": "association",
+      "es": "asociación",
+      "fr": "association",
+      "ar": "ارتباط",
+      "pt": "associação",
+      "definition": "A relationship observed between variables."
+    },
+    {
+      "id": "causation",
+      "en": "causation",
+      "es": "causalidad",
+      "fr": "causalité",
+      "ar": "سببية",
+      "pt": "causalidade",
+      "definition": "A relationship in which changing one factor produces change in another."
+    },
+    {
+      "id": "lurking-variable",
+      "en": "lurking variable",
+      "es": "variable oculta",
+      "fr": "variable cachée",
+      "ar": "متغير خفي",
+      "pt": "variável oculta",
+      "definition": "An unmeasured factor that may influence observed variables."
+    },
+    {
+      "id": "context",
+      "en": "context",
+      "es": "contexto",
+      "fr": "contexte",
+      "ar": "سياق",
+      "pt": "contexto",
+      "definition": "The real setting and meaning of data."
+    },
+    {
+      "id": "probability",
+      "en": "probability",
+      "es": "probabilidad",
+      "fr": "probabilité",
+      "ar": "احتمال",
+      "pt": "probabilidade",
+      "definition": "A number from 0 to 1 describing likelihood."
+    },
+    {
+      "id": "experiment",
+      "en": "experiment",
+      "es": "experimento",
+      "fr": "expérience",
+      "ar": "تجربة",
+      "pt": "experimento",
+      "definition": "A repeatable chance process."
+    },
+    {
+      "id": "outcome",
+      "en": "outcome",
+      "es": "resultado",
+      "fr": "issue",
+      "ar": "ناتج",
+      "pt": "resultado",
+      "definition": "One possible result of a chance process."
+    },
+    {
+      "id": "sample-space",
+      "en": "sample space",
+      "es": "espacio muestral",
+      "fr": "univers des possibles",
+      "ar": "فضاء العينة",
+      "pt": "espaço amostral",
+      "definition": "The set of all possible outcomes."
+    },
+    {
+      "id": "event",
+      "en": "event",
+      "es": "evento",
+      "fr": "événement",
+      "ar": "حدث",
+      "pt": "evento",
+      "definition": "A collection of outcomes of interest."
+    },
+    {
+      "id": "favourable-outcome",
+      "en": "favourable outcome",
+      "es": "resultado favorable",
+      "fr": "issue favorable",
+      "ar": "ناتج ملائم",
+      "pt": "resultado favorável",
+      "definition": "An outcome included in the event."
+    },
+    {
+      "id": "theoretical-probability",
+      "en": "theoretical probability",
+      "es": "probabilidad teórica",
+      "fr": "probabilité théorique",
+      "ar": "احتمال نظري",
+      "pt": "probabilidade teórica",
+      "definition": "Probability calculated from a model."
+    },
+    {
+      "id": "experimental-probability",
+      "en": "experimental probability",
+      "es": "probabilidad experimental",
+      "fr": "probabilité expérimentale",
+      "ar": "احتمال تجريبي",
+      "pt": "probabilidade experimental",
+      "definition": "Probability estimated from observed trials."
+    },
+    {
+      "id": "complement",
+      "en": "complement",
+      "es": "complemento",
+      "fr": "complément",
+      "ar": "متمم",
+      "pt": "complemento",
+      "definition": "All outcomes not in an event."
+    },
+    {
+      "id": "certain-event",
+      "en": "certain event",
+      "es": "evento seguro",
+      "fr": "événement certain",
+      "ar": "حدث مؤكد",
+      "pt": "evento certo",
+      "definition": "An event with probability 1."
+    },
+    {
+      "id": "impossible-event",
+      "en": "impossible event",
+      "es": "evento imposible",
+      "fr": "événement impossible",
+      "ar": "حدث مستحيل",
+      "pt": "evento impossível",
+      "definition": "An event with probability 0."
+    },
+    {
+      "id": "equally-likely",
+      "en": "equally likely",
+      "es": "igualmente probables",
+      "fr": "équiprobables",
+      "ar": "متساوية الاحتمال",
+      "pt": "igualmente prováveis",
+      "definition": "Having the same probability."
+    },
+    {
+      "id": "compound-event",
+      "en": "compound event",
+      "es": "evento compuesto",
+      "fr": "événement composé",
+      "ar": "حدث مركب",
+      "pt": "evento composto",
+      "definition": "An event involving two or more stages or conditions."
+    },
+    {
+      "id": "independent-events",
+      "en": "independent events",
+      "es": "eventos independientes",
+      "fr": "événements indépendants",
+      "ar": "أحداث مستقلة",
+      "pt": "eventos independentes",
+      "definition": "Events where one does not change the probability of another."
+    },
+    {
+      "id": "dependent-events",
+      "en": "dependent events",
+      "es": "eventos dependientes",
+      "fr": "événements dépendants",
+      "ar": "أحداث تعتمد على بعضها",
+      "pt": "eventos dependentes",
+      "definition": "Events where one changes the probability of another."
+    },
+    {
+      "id": "with-replacement",
+      "en": "with replacement",
+      "es": "con reemplazo",
+      "fr": "avec remise",
+      "ar": "مع الإرجاع",
+      "pt": "com reposição",
+      "definition": "Returning a selected item before the next draw."
+    },
+    {
+      "id": "without-replacement",
+      "en": "without replacement",
+      "es": "sin reemplazo",
+      "fr": "sans remise",
+      "ar": "دون إرجاع",
+      "pt": "sem reposição",
+      "definition": "Not returning a selected item before the next draw."
+    },
+    {
+      "id": "tree-diagram",
+      "en": "tree diagram",
+      "es": "diagrama de árbol",
+      "fr": "arbre de probabilités",
+      "ar": "مخطط شجري",
+      "pt": "diagrama de árvore",
+      "definition": "A branching representation of sequential outcomes."
+    },
+    {
+      "id": "two-way-table",
+      "en": "two-way table",
+      "es": "tabla de doble entrada",
+      "fr": "tableau à double entrée",
+      "ar": "جدول ثنائي",
+      "pt": "tabela de dupla entrada",
+      "definition": "A table organizing two categorical variables."
+    },
+    {
+      "id": "organized-list",
+      "en": "organized list",
+      "es": "lista organizada",
+      "fr": "liste organisée",
+      "ar": "قائمة منظمة",
+      "pt": "lista organizada",
+      "definition": "A systematic list of possible outcomes."
+    },
+    {
+      "id": "and-probability",
+      "en": "and probability",
+      "es": "probabilidad de y",
+      "fr": "probabilité de et",
+      "ar": "احتمال و",
+      "pt": "probabilidade de e",
+      "definition": "Probability that multiple conditions all occur."
+    },
+    {
+      "id": "or-probability",
+      "en": "or probability",
+      "es": "probabilidad de o",
+      "fr": "probabilité de ou",
+      "ar": "احتمال أو",
+      "pt": "probabilidade de ou",
+      "definition": "Probability that at least one event occurs."
+    },
+    {
+      "id": "simulation",
+      "en": "simulation",
+      "es": "simulación",
+      "fr": "simulation",
+      "ar": "محاكاة",
+      "pt": "simulação",
+      "definition": "A model using repeated random trials."
+    },
+    {
+      "id": "trial",
+      "en": "trial",
+      "es": "ensayo",
+      "fr": "essai",
+      "ar": "محاولة",
+      "pt": "ensaio",
+      "definition": "One repetition of a chance experiment."
+    },
+    {
+      "id": "long-run-frequency",
+      "en": "long-run frequency",
+      "es": "frecuencia a largo plazo",
+      "fr": "fréquence à long terme",
+      "ar": "تكرار طويل الأجل",
+      "pt": "frequência de longo prazo",
+      "definition": "The relative frequency expected after many trials."
+    },
+    {
+      "id": "sampling-bias",
+      "en": "sampling bias",
+      "es": "sesgo de muestreo",
+      "fr": "biais d’échantillonnage",
+      "ar": "تحيز المعاينة",
+      "pt": "viés de amostragem",
+      "definition": "Systematic misrepresentation caused by sample selection."
+    },
+    {
+      "id": "convenience-sample",
+      "en": "convenience sample",
+      "es": "muestra por conveniencia",
+      "fr": "échantillon de convenance",
+      "ar": "عينة ملائمة",
+      "pt": "amostra por conveniência",
+      "definition": "A sample chosen because it is easy to reach."
+    },
+    {
+      "id": "voluntary-response",
+      "en": "voluntary response",
+      "es": "respuesta voluntaria",
+      "fr": "réponse volontaire",
+      "ar": "استجابة طوعية",
+      "pt": "resposta voluntária",
+      "definition": "Self-selected participation in a survey."
+    },
+    {
+      "id": "undercoverage",
+      "en": "undercoverage",
+      "es": "subcobertura",
+      "fr": "sous-couverture",
+      "ar": "نقص التغطية",
+      "pt": "subcobertura",
+      "definition": "Failure to adequately include part of a population."
+    },
+    {
+      "id": "nonresponse",
+      "en": "nonresponse",
+      "es": "falta de respuesta",
+      "fr": "non-réponse",
+      "ar": "عدم استجابة",
+      "pt": "não resposta",
+      "definition": "Failure of selected participants to provide data."
+    },
+    {
+      "id": "response-bias",
+      "en": "response bias",
+      "es": "sesgo de respuesta",
+      "fr": "biais de réponse",
+      "ar": "تحيز الاستجابة",
+      "pt": "viés de resposta",
+      "definition": "Systematic inaccuracy caused by wording or reporting."
+    },
+    {
+      "id": "random-selection",
+      "en": "random selection",
+      "es": "selección aleatoria",
+      "fr": "sélection aléatoire",
+      "ar": "اختيار عشوائي",
+      "pt": "seleção aleatória",
+      "definition": "Chance selection from a population."
+    },
+    {
+      "id": "random-assignment",
+      "en": "random assignment",
+      "es": "asignación aleatoria",
+      "fr": "assignation aléatoire",
+      "ar": "توزيع عشوائي",
+      "pt": "atribuição aleatória",
+      "definition": "Chance assignment to treatment groups."
+    },
+    {
+      "id": "inference",
+      "en": "inference",
+      "es": "inferencia",
+      "fr": "inférence",
+      "ar": "استدلال",
+      "pt": "inferência",
+      "definition": "A conclusion about a population based on evidence."
+    },
+    {
+      "id": "generalization",
+      "en": "generalization",
+      "es": "generalización",
+      "fr": "généralisation",
+      "ar": "تعميم",
+      "pt": "generalização",
+      "definition": "Applying a sample conclusion to a wider population."
+    },
+    {
+      "id": "causal-claim",
+      "en": "causal claim",
+      "es": "afirmación causal",
+      "fr": "affirmation causale",
+      "ar": "ادعاء سببي",
+      "pt": "afirmação causal",
+      "definition": "A statement that one factor produces change in another."
+    },
+    {
+      "id": "confounding-variable",
+      "en": "confounding variable",
+      "es": "variable de confusión",
+      "fr": "variable confondante",
+      "ar": "متغير مربك",
+      "pt": "variável de confusão",
+      "definition": "A variable mixed with the explanatory factor."
+    },
+    {
+      "id": "uncertainty",
+      "en": "uncertainty",
+      "es": "incertidumbre",
+      "fr": "incertitude",
+      "ar": "عدم يقين",
+      "pt": "incerteza",
+      "definition": "The limits of what data or a model can determine."
+    },
+    {
+      "id": "margin-of-error",
+      "en": "margin of error",
+      "es": "margen de error",
+      "fr": "marge d’erreur",
+      "ar": "هامش خطأ",
+      "pt": "margem de erro",
+      "definition": "A stated range of sampling uncertainty around an estimate."
+    },
+    {
+      "id": "evidence",
+      "en": "evidence",
+      "es": "evidencia",
+      "fr": "preuve",
+      "ar": "دليل",
+      "pt": "evidência",
+      "definition": "Information used to support a conclusion."
+    },
+    {
+      "id": "source",
+      "en": "source",
+      "es": "fuente",
+      "fr": "source",
+      "ar": "مصدر",
+      "pt": "fonte",
+      "definition": "The origin of data or a claim."
+    },
+    {
+      "id": "replication",
+      "en": "replication",
+      "es": "replicación",
+      "fr": "réplication",
+      "ar": "تكرار الدراسة",
+      "pt": "replicação",
+      "definition": "Repeating a study or analysis to check consistency."
+    },
+    {
+      "id": "limitation",
+      "en": "limitation",
+      "es": "limitación",
+      "fr": "limite",
+      "ar": "قيد",
+      "pt": "limitação",
+      "definition": "A condition restricting interpretation or reliability."
+    }
+  ]
+}
