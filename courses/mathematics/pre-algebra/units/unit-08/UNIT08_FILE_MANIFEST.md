@@ -1,0 +1,35 @@
+# Unit 8 File Manifest
+
+- `README.md`
+- `UPLOAD_UNIT08_FIRST.md`
+- `courses/mathematics/pre-algebra/course-map.json`
+- `courses/mathematics/pre-algebra/index.html`
+- `courses/mathematics/pre-algebra/units/unit-08/README.md`
+- `courses/mathematics/pre-algebra/units/unit-08/assessment/answer-key.json`
+- `courses/mathematics/pre-algebra/units/unit-08/assessment/mastery-check.html`
+- `courses/mathematics/pre-algebra/units/unit-08/assets/assessment-engine.js`
+- `courses/mathematics/pre-algebra/units/unit-08/assets/lesson-engine.js`
+- `courses/mathematics/pre-algebra/units/unit-08/assets/unit-dashboard.js`
+- `courses/mathematics/pre-algebra/units/unit-08/assets/unit.css`
+- `courses/mathematics/pre-algebra/units/unit-08/family-guide.html`
+- `courses/mathematics/pre-algebra/units/unit-08/index.html`
+- `courses/mathematics/pre-algebra/units/unit-08/lessons/lesson-01-equality-solutions-balance-model.html`
+- `courses/mathematics/pre-algebra/units/unit-08/lessons/lesson-02-one-step-addition-subtraction.html`
+- `courses/mathematics/pre-algebra/units/unit-08/lessons/lesson-03-one-step-multiplication-division.html`
+- `courses/mathematics/pre-algebra/units/unit-08/lessons/lesson-04-two-step-equations-operation-order.html`
+- `courses/mathematics/pre-algebra/units/unit-08/lessons/lesson-05-multistep-distribution-like-terms.html`
+- `courses/mathematics/pre-algebra/units/unit-08/lessons/lesson-06-variables-both-sides-identities-contradictions.html`
+- `courses/mathematics/pre-algebra/units/unit-08/lessons/lesson-07-rearranging-formulas-literal-equations.html`
+- `courses/mathematics/pre-algebra/units/unit-08/lessons/lesson-08-context-equations-verification-error-analysis.html`
+- `courses/mathematics/pre-algebra/units/unit-08/practice/core.html`
+- `courses/mathematics/pre-algebra/units/unit-08/practice/extended.html`
+- `courses/mathematics/pre-algebra/units/unit-08/practice/foundation.html`
+- `courses/mathematics/pre-algebra/units/unit-08/projects/equation-formula-design-investigation.html`
+- `courses/mathematics/pre-algebra/units/unit-08/standards-map.json`
+- `courses/mathematics/pre-algebra/units/unit-08/teacher-guide.html`
+- `courses/mathematics/pre-algebra/units/unit-08/unit-map.json`
+- `courses/mathematics/pre-algebra/units/unit-08/vocabulary.json`
+- `docs/audits/UNIT08_VALIDATION.md`
+- `docs/releases/UNIT08_RELEASE.md`
+- `manifest.webmanifest`
+- `service-worker.js`

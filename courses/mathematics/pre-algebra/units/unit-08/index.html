@@ -1,0 +1,1047 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Pre-Algebra Unit 8: Equations, Formulas and Inverse Operations."><meta name="theme-color" content="#f2efe8"><title>Unit 8 · Equations, Formulas & Inverse Operations</title><link rel="stylesheet" href="assets/unit.css"><style>.unit-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:1rem;align-items:start}.overview,.side{padding:1.35rem}.side{position:sticky;top:92px}.big-ideas{display:grid;gap:.65rem;padding:0;list-style:none}.big-ideas li{padding:.8rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.big-ideas li::before{content:"◇";margin-inline-end:.55rem;color:var(--green)}.pathways{grid-template-columns:repeat(3,1fr);margin-top:1rem}.pathway{padding:1rem}.pathway h3{font-size:1.05rem;margin-bottom:.35rem}.pathway p{margin:0;color:var(--muted);font-size:.82rem}.side-actions{display:grid;gap:.55rem;margin-top:1rem}.side-actions .btn{width:100%}.lesson-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.lesson-card{min-height:290px;padding:1.15rem;display:flex;flex-direction:column}.lesson-top{display:flex;justify-content:space-between;gap:.6rem}.lesson-number{color:var(--gold2);font:700 1.8rem/1 var(--serif)}.lesson-card h3{margin:1rem 0 .4rem;font-size:1.25rem}.lesson-card p{margin:0;color:var(--muted);font-size:.86rem}.lesson-objectives{margin:.75rem 0 0;padding-inline-start:1.1rem;color:var(--muted);font-size:.78rem}.lesson-actions{display:flex;gap:.5rem;margin-top:auto;padding-top:1rem}.lesson-actions a,.lesson-actions button{flex:1;min-height:42px;display:flex;align-items:center;justify-content:center;padding:.5rem;border:1px solid var(--line);border-radius:var(--rs);background:var(--bg2);color:var(--text);text-decoration:none;font-weight:850;font-size:.76rem}.lesson-actions a{background:var(--gold);border-color:var(--gold);color:#16120a}.lesson-actions button[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#101711}.resource-grid{grid-template-columns:repeat(3,1fr)}.resource-card{padding:1.1rem;text-decoration:none;min-height:190px}.resource-card h3{margin:.85rem 0 .35rem;font-size:1.1rem}.resource-card p{margin:0;color:var(--muted);font-size:.83rem}.glossary-panel,.lab-panel{padding:1.2rem}.glossary-tools{display:grid;grid-template-columns:1fr 180px;gap:.7rem}.glossary-grid{grid-template-columns:repeat(3,1fr);margin-top:1rem}.term{padding:.9rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.term strong{display:block;color:var(--blue)}.term span{display:block;margin:.25rem 0;color:var(--gold2)}.term p{margin:0;color:var(--muted);font-size:.78rem}.lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:1rem}.result{padding:1rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2);text-align:center}.result strong{display:block;color:var(--gold2);font:700 clamp(1.05rem,3vw,1.7rem)/1.2 var(--serif);overflow-wrap:anywhere}.root-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem}@media(max-width:1000px){.unit-layout{grid-template-columns:1fr}.side{position:static}.lesson-grid,.resource-grid,.glossary-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:680px){.pathways,.lesson-grid,.resource-grid,.glossary-grid,.glossary-tools,.lab-grid,.result-grid,.root-grid{grid-template-columns:1fr}}</style>
+<style id="verve-arithmetic-theme">
+/* =========================================================
+   VERVE N VEDA · ARITHMETIC PAPER SYSTEM · UNIT 08
+   Corrected wrapping header · equation-balance typography
+   ========================================================= */
+:root,
+html[data-theme="light"],
+html[data-theme="dark"]{
+  color-scheme:light;
+  --bg:#ece9e2;
+  --bg2:#f6f3ed;
+  --panel:#fffefa;
+  --panel2:#f5f1e8;
+  --text:#0b0b0b;
+  --muted:#4c4b47;
+  --line:#c9c2b6;
+  --gold:#b48a42;
+  --gold2:#76551d;
+  --blue:#244c65;
+  --green:#395f45;
+  --violet:#503d70;
+  --rose:#7b3f52;
+  --danger:#8a3333;
+  --shadow:0 18px 44px rgba(30,27,22,.09);
+  --r:7px;
+  --rs:7px;
+  --max:1240px;
+  --math:"Cambria Math","STIX Two Math","Latin Modern Math","Times New Roman",serif;
+  --serif:"Cambria Math","STIX Two Math","Latin Modern Math","Times New Roman",serif;
+  --sans:"Avenir Next","Brandon Grotesque","Segoe UI",Arial,sans-serif;
+}
+html[data-theme="dark"]{
+  --bg:#dedbd4;
+  --bg2:#ebe8e1;
+  --panel:#f8f6f1;
+  --panel2:#e9e5dc;
+  --text:#050505;
+  --muted:#3f3e3a;
+  --line:#aaa397;
+  --shadow:0 18px 44px rgba(18,17,15,.12);
+}
+
+*{box-sizing:border-box}
+html{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+  scroll-padding-top:96px;
+  background:var(--bg);
+}
+body{
+  width:100%;
+  max-width:100%;
+  margin:0;
+  overflow-x:hidden;
+  color:var(--text);
+  background:
+    linear-gradient(rgba(255,255,255,.56),rgba(255,255,255,.14)),
+    repeating-linear-gradient(90deg,transparent 0 54px,rgba(11,11,11,.025) 55px),
+    var(--bg);
+  font:400 17px/1.72 var(--sans);
+  letter-spacing:.003em;
+}
+a{color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.wrap{width:min(var(--max),calc(100% - 34px));margin-inline:auto}
+.grid{display:grid;gap:1rem}
+.card{
+  min-width:0;
+  max-width:100%;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--panel);
+  box-shadow:var(--shadow);
+}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{
+  position:fixed;
+  z-index:2000;
+  inset-inline-start:14px;
+  top:-80px;
+  padding:10px 14px;
+  border-radius:7px;
+  color:#fff;
+  background:#111;
+  text-decoration:none;
+}
+.skip:focus{top:14px}
+
+/* Corrected non-clipping campus header */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  width:100%;
+  border-top:3px solid #111;
+  border-bottom:1px solid var(--line);
+  background:rgba(255,254,250,.96);
+  backdrop-filter:blur(14px);
+}
+html[data-theme="dark"] .site-header{background:rgba(248,246,241,.96)}
+.header-inner{
+  min-height:76px;
+  height:auto;
+  display:grid;
+  grid-template-columns:minmax(270px,1fr) minmax(0,auto) auto;
+  align-items:center;
+  gap:14px;
+  padding-block:10px;
+}
+.brand{
+  min-width:0;
+  max-width:100%;
+  display:flex;
+  align-items:center;
+  gap:11px;
+  color:#0a0a0a;
+  text-decoration:none;
+}
+.brand-mark{
+  width:44px;
+  height:44px;
+  flex:0 0 44px;
+  display:grid;
+  place-items:center;
+  border:1px solid #111;
+  border-radius:7px;
+  background:#111;
+  color:#fff;
+  font:400 25px/1 var(--math);
+}
+.brand-copy{
+  min-width:0;
+  max-width:100%;
+  display:grid;
+  overflow:visible;
+  line-height:1.15;
+}
+.brand-copy strong{
+  display:block;
+  max-width:100%;
+  overflow:visible;
+  color:#0a0a0a;
+  font:444 clamp(10px,1.05vw,13px)/1.28 var(--sans);
+  letter-spacing:.075em;
+  text-overflow:clip;
+  white-space:normal;
+  text-wrap:balance;
+}
+.brand-copy small{
+  display:block;
+  max-width:100%;
+  overflow:visible;
+  margin-top:4px;
+  color:#55514a;
+  font-size:clamp(9px,.9vw,11px);
+  line-height:1.3;
+  letter-spacing:.055em;
+  text-overflow:clip;
+  white-space:normal;
+  text-wrap:balance;
+}
+.campus-nav{
+  min-width:0;
+  max-width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:3px;
+}
+.campus-nav a{
+  min-width:0;
+  min-height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 9px;
+  border:1px solid transparent;
+  border-radius:7px;
+  color:#24231f;
+  text-align:center;
+  text-decoration:none;
+  font-size:clamp(10px,.92vw,12px);
+  font-weight:444;
+  line-height:1.2;
+  white-space:normal;
+}
+.campus-nav a:hover,
+.campus-nav a:focus-visible,
+.campus-nav a[aria-current]{
+  border-color:var(--line);
+  background:var(--bg2);
+  color:#000;
+}
+.header-actions{display:flex;justify-content:flex-end}
+.theme-button{
+  width:42px;
+  min-width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  padding:0;
+  border:1px solid #111;
+  border-radius:7px;
+  color:#111;
+  background:#fff;
+  font:400 18px/1 var(--math);
+}
+
+/* Breadcrumb and section navigation */
+.course-breadcrumb{
+  width:100%;
+  border-bottom:1px solid var(--line);
+  background:#f4f1ea;
+}
+.course-breadcrumb .wrap{
+  min-height:45px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:7px;
+  padding-block:8px;
+  color:#47443e;
+  text-align:center;
+  font-size:12px;
+}
+.course-breadcrumb a{
+  color:#111;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+}
+.course-breadcrumb a:hover{border-bottom-color:#111}
+.course-breadcrumb span[aria-current="page"]{font-weight:444;color:#000}
+.unit-quick-nav{
+  position:sticky;
+  top:76px;
+  z-index:850;
+  border-bottom:1px solid var(--line);
+  background:rgba(247,244,237,.96);
+  backdrop-filter:blur(10px);
+}
+.quick-nav-inner{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  overflow:auto;
+  padding-block:7px;
+  scrollbar-width:thin;
+}
+.quick-nav-inner a{
+  flex:0 0 auto;
+  padding:7px 11px;
+  border:1px solid transparent;
+  border-radius:7px;
+  color:#111;
+  text-decoration:none;
+  font-size:12px;
+}
+.quick-nav-inner a:hover{border-color:var(--line);background:#fff}
+
+/* Hero */
+.hero{
+  min-height:calc(100svh - 122px);
+  display:grid;
+  align-items:center;
+  padding:clamp(76px,10vw,132px) 0;
+  text-align:center;
+  border-bottom:1px solid var(--line);
+  background:
+    linear-gradient(rgba(255,254,250,.89),rgba(248,245,238,.89)),
+    repeating-linear-gradient(0deg,transparent 0 39px,rgba(11,11,11,.045) 40px);
+}
+.hero .wrap{max-width:1160px}
+.eyebrow{
+  margin:0 0 14px;
+  color:#5f4b28;
+  font-size:12px;
+  font-weight:444;
+  letter-spacing:.19em;
+  text-align:center;
+  text-transform:uppercase;
+}
+.hero h1{
+  max-width:1120px;
+  margin:0 auto 22px;
+  color:#050505;
+  font:400 clamp(42px,6.8vw,82px)/.98 var(--math);
+  letter-spacing:-.035em;
+  overflow-wrap:anywhere;
+  text-wrap:balance;
+}
+.hero .lead{
+  max-width:890px;
+  margin:0 auto;
+  color:#35332f;
+  font-size:clamp(17px,2vw,21px);
+  line-height:1.72;
+}
+.math-signature{
+  max-width:1040px;
+  margin:30px auto 0;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.math-signature span{
+  display:inline-flex;
+  align-items:center;
+  min-height:39px;
+  padding:7px 13px;
+  border:1px solid #c6bfb3;
+  border-radius:7px;
+  color:#090909;
+  background:rgba(255,255,255,.72);
+  font:400 15px/1.2 var(--math);
+  white-space:nowrap;
+}
+.actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:32px;
+}
+.btn,.nav-button,.lesson-actions a,.lesson-actions button{
+  min-height:44px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:9px 14px;
+  border:1px solid #aaa397;
+  border-radius:7px!important;
+  color:#111;
+  background:#fff;
+  text-decoration:none;
+  font-weight:444!important;
+  line-height:1.25;
+  white-space:normal;
+}
+.btn:hover,.lesson-actions a:hover,.lesson-actions button:hover{
+  border-color:#111;
+  transform:translateY(-1px);
+}
+.btn.primary,.lesson-actions a{
+  border-color:#111;
+  color:#fff;
+  background:#111;
+}
+
+main,section,.footer{width:100%;max-width:100%}
+section{
+  padding:clamp(68px,8vw,102px) 0;
+  scroll-margin-top:138px;
+}
+section:nth-of-type(even):not(.hero){background:rgba(255,255,255,.28)}
+.section-head{
+  max-width:900px;
+  margin:0 auto 38px;
+  text-align:center;
+}
+.section-head h2,.overview h2{
+  color:#080808;
+  font:400 clamp(36px,5vw,62px)/1.06 var(--math);
+  letter-spacing:-.025em;
+  text-wrap:balance;
+}
+.section-head p{color:#44413c;font-size:17px}
+.lesson-card h3,.resource-card h3,.pathway h3,.term strong{
+  color:#0a0a0a;
+  font-family:var(--math);
+  font-weight:400;
+}
+.lesson-card p,.resource-card p,.pathway p,.term p,.notice{color:var(--muted)}
+.lesson-number{color:#111;font:400 31px/1 var(--math)}
+.lesson-card,.resource-card,.pathway,.overview,.side,.glossary-panel,.lab-panel{
+  border-radius:7px;
+  background:var(--panel);
+  box-shadow:var(--shadow);
+}
+.lesson-card,.resource-card{transition:transform .18s ease,border-color .18s ease}
+.lesson-card:hover,.resource-card:hover{transform:translateY(-2px);border-color:#9d9589}
+.big-ideas li,.term,.notice,.result{
+  border-radius:7px;
+  background:var(--bg2);
+}
+.big-ideas li::before{color:#111}
+.pill{
+  display:inline-flex;
+  padding:4px 8px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:#4f493e;
+  background:var(--bg2);
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.pill.open{border-color:#111;color:#111}
+.field label{color:#4c4942;font-weight:444}
+.field input,.field select{
+  border:1px solid #aaa397;
+  border-radius:7px;
+  color:#080808;
+  background:#fff;
+}
+.progress-track{
+  height:8px;
+  overflow:hidden;
+  border-radius:999px;
+  background:#ddd7cc;
+}
+.progress-track span{
+  width:var(--value,0%);
+  height:100%;
+  display:block;
+  background:#111;
+  transition:width .24s ease;
+}
+
+/* Equation Balance Lab */
+#equation-balance-lab{
+  border-block:1px solid var(--line);
+  background:#e7e3db;
+}
+.lab-panel{padding:clamp(18px,3vw,30px)}
+.lab-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.lab-grid input[type="range"]{
+  width:100%;
+  accent-color:#111;
+}
+.result-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin-top:22px;
+}
+.root-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-top:10px;
+}
+.result{
+  min-width:0;
+  min-height:142px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:18px 12px;
+  border:1px solid var(--line);
+  text-align:center;
+}
+.result span{
+  color:#5b574f;
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.result strong{
+  display:block;
+  margin-top:8px;
+  color:#050505;
+  font:400 clamp(19px,2.55vw,33px)/1.16 var(--math);
+  overflow-wrap:anywhere;
+}
+.result small{
+  display:block;
+  margin-top:7px;
+  color:#5b574f;
+  font-size:11px;
+}
+.balance-model{
+  max-width:920px;
+  margin:26px auto 0;
+  display:grid;
+  grid-template-columns:1fr 150px 1fr;
+  align-items:end;
+  gap:16px;
+}
+.balance-side{
+  min-height:132px;
+  display:grid;
+  place-items:center;
+  align-content:center;
+  gap:8px;
+  padding:18px;
+  border:1px solid #111;
+  border-radius:7px;
+  background:#fff;
+  text-align:center;
+}
+.balance-side span{
+  color:#5b574f;
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.balance-side strong{
+  color:#050505;
+  font:400 clamp(24px,4vw,44px)/1.1 var(--math);
+}
+.balance-beam{
+  position:relative;
+  height:86px;
+}
+.balance-beam::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:16px;
+  height:3px;
+  background:#111;
+}
+.balance-pivot{
+  position:absolute;
+  left:50%;
+  bottom:0;
+  translate:-50% 0;
+  color:#111;
+  font:400 60px/1 var(--math);
+}
+.balance-model[data-state="contradiction"] .balance-beam::before{
+  rotate:-4deg;
+  transform-origin:center;
+}
+.balance-model[data-state="identity"] .balance-side{
+  border-style:double;
+}
+#labExplanation{
+  max-width:1020px;
+  margin:20px auto 0;
+  padding:15px 17px;
+  border-left:3px solid #111;
+  color:#3d3a34;
+  text-align:left;
+}
+
+/* Footer */
+.footer{
+  border-top:1px solid var(--line);
+  color:#ddd;
+  background:#111;
+}
+.footer-inner{
+  min-height:92px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  padding-block:18px;
+  font-size:12px;
+}
+.footer-links{
+  display:flex;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.footer-links a{
+  padding:6px 8px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:7px;
+  color:#fff;
+  text-decoration:none;
+}
+.footer-links a:hover{background:#fff;color:#111}
+
+/* Overflow and responsive guarantees */
+.card,.lesson-card,.resource-card,.pathway,.overview,.side,
+.glossary-panel,.lab-panel,.lesson-grid,.resource-grid,.pathways,
+.glossary-grid,.lab-grid,.result-grid,.root-grid,.result,.balance-model{
+  min-width:0;
+  max-width:100%;
+}
+h1,h2,h3,p,a,button,label,strong,span{overflow-wrap:anywhere}
+
+@media(max-width:1180px){
+  .header-inner{
+    grid-template-columns:minmax(240px,1fr) auto;
+  }
+  .campus-nav{
+    grid-column:1/-1;
+    justify-content:center;
+    overflow:visible;
+  }
+  .unit-quick-nav{position:static}
+}
+@media(max-width:1000px){
+  .root-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:840px){
+  .result-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .wrap{width:min(var(--max),calc(100% - 22px))}
+  .header-inner{
+    min-height:68px;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:8px 10px;
+    padding-block:9px;
+  }
+  .brand{gap:8px}
+  .brand-mark{
+    width:38px;
+    height:38px;
+    flex-basis:38px;
+    font-size:22px;
+  }
+  .brand-copy strong{
+    font-size:10px;
+    letter-spacing:.055em;
+  }
+  .brand-copy small{
+    font-size:9px;
+    letter-spacing:.04em;
+  }
+  .campus-nav{justify-content:flex-start}
+  .campus-nav a{
+    min-height:36px;
+    font-size:10px;
+    padding:6px 8px;
+  }
+  .course-breadcrumb .wrap{justify-content:flex-start;text-align:left}
+  .hero{min-height:auto;padding:72px 0 78px}
+  .hero h1{font-size:clamp(38px,11vw,60px)}
+  .math-signature{display:grid;grid-template-columns:1fr 1fr}
+  .math-signature span{justify-content:center;white-space:normal;text-align:center}
+  .footer-inner{display:grid;justify-content:center;text-align:center}
+  .footer-links{justify-content:center}
+  .balance-model{
+    grid-template-columns:1fr;
+    align-items:stretch;
+  }
+  .balance-beam{
+    height:54px;
+  }
+  .balance-beam::before{
+    top:7px;
+  }
+  .balance-pivot{
+    font-size:42px;
+  }
+}
+@media(max-width:620px){
+  .lab-grid{grid-template-columns:1fr}
+  .root-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .math-signature{grid-template-columns:1fr}
+  .actions .btn{width:100%}
+  .result-grid{grid-template-columns:1fr}
+}
+@media(max-width:430px){
+  .brand-copy strong{font-size:9.5px}
+  .brand-copy small{font-size:8.5px}
+  .campus-nav a{flex:1 1 calc(50% - 4px)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+}
+@media print{
+  @page{size:letter portrait;margin:.5in}
+  html,body{background:#fff!important;color:#000!important}
+  .site-header,.course-breadcrumb,.unit-quick-nav,.hero,.footer,
+  .side-actions,.theme-button{display:none!important}
+  section{padding:24px 0;background:#fff!important}
+  .card{box-shadow:none}
+  .side{position:static}
+  .result-grid{grid-template-columns:repeat(3,1fr)}
+  .root-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+
+</head><body><a class="skip" href="#main">Skip to main content</a><header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="https://vervenveda.github.io/Khaemenes_High.github.io/" rel="home" aria-label="Khaemenes High School home">
+      <span class="brand-mark" aria-hidden="true">=</span>
+      <span class="brand-copy">
+        <strong>KHAEMENES HIGH · MATHEMATICS</strong>
+        <small>Global Pre-Algebra · Unit 08</small>
+      </span>
+    </a>
+
+    <nav class="campus-nav" aria-label="High school navigation">
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">High School</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Grade 9</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/" aria-current="location">Pre-Algebra</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/">Diagnostic</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/">Assessments</a>
+    </nav>
+
+    <div class="header-actions">
+      <button aria-label="Switch paper tone" class="theme-button" id="themeToggle"
+        title="Switch paper tone" type="button">◐</button>
+    </div>
+  </div>
+</header><nav class="course-breadcrumb" aria-label="Course breadcrumb">
+  <div class="wrap">
+    <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">Khaemenes High</a>
+    <span aria-hidden="true">›</span>
+    <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Grade 9</a>
+    <span aria-hidden="true">›</span>
+    <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Unit 08 · Equation Balance</span>
+  </div>
+</nav>
+<main id="main"><section class="hero"><div class="wrap"><p class="eyebrow">Unit 08 · Three Weeks · Eight Lessons</p><h1>Equations, Formulas & Inverse Operations</h1><p class="lead">Preserve equality, isolate unknowns, classify solution sets, rearrange formulas, and build equations that make contextual relationships transparent.</p><div class="math-signature" aria-label="Unit mathematics notation">
+  <span>ax + b = c</span>
+  <span>ax = c − b</span>
+  <span>x = (c − b)/a, a ≠ 0</span>
+  <span>same operation on both sides</span>
+</div><div class="actions"><a class="btn primary" href="lessons/lesson-01-equality-solutions-balance-model.html">Begin Lesson 1</a><a class="btn" href="#lessons">View All Lessons</a><a class="btn" href="assessment/mastery-check.html">Open Mastery Check</a></div></div></section><nav aria-label="Unit page sections" class="unit-quick-nav">
+  <div class="wrap quick-nav-inner">
+    <a href="#unit-overview">Overview</a>
+    <a href="#equation-balance-lab">Equation Balance Lab</a>
+    <a href="#lessons">Lessons</a>
+    <a href="#resources">Resources</a>
+    <a href="#glossary">Glossary</a>
+  </div>
+</nav><section id="unit-overview"><div class="wrap unit-layout"><article class="card overview"><p class="eyebrow">Unit overview</p><h2 id="essentialQuestion"></h2><ul class="big-ideas" id="bigIdeas"></ul><div class="grid pathways"><article class="card pathway"><h3>Foundation</h3><p>Balance diagrams, operation arrows, substitution checks, and guided one-step equation work.</p></article><article class="card pathway"><h3>Core</h3><p>The complete sequence across one-step, multi-step, both-sides equations, formulas, and contextual models.</p></article><article class="card pathway"><h3>Extended</h3><p>Parameters, identities, contradictions, literal equations, domain analysis, and model critique.</p></article></div></article><aside class="card side"><p class="eyebrow">Your local unit record</p><div class="field"><label for="pathwaySelect">Current pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p style="display:flex;justify-content:space-between"><span>Orientation progress</span><strong id="progressLabel">0%</strong></p><div class="progress-track"><span id="progressBar" style="--value:0%"></span></div><p class="notice" id="masteryStatus">No mastery-check result is saved in this browser.</p><div class="side-actions"><a class="btn primary" href="practice/core.html">Open Practice</a><a class="btn" href="projects/equation-formula-design-investigation.html">Open Project</a><button class="btn" id="exportProgress" type="button">Export Unit Record</button><button class="btn" id="resetProgress" type="button">Reset Unit Record</button></div></aside></div></section><section id="equation-balance-lab"><div class="wrap"><div class="section-head"><p class="eyebrow">Equation Balance Lab</p><h2>Change a linear equation and inspect the solution and verification.</h2><p>Adjust a, b, and c in ax+b=c. The lab isolates x, displays inverse steps, and checks both sides. Cases with a=0 reveal identities or contradictions.</p></div><article class="card lab-panel"><div class="lab-grid"><div class="field"><label for="coefA">Coefficient a: <strong id="coefALabel">3</strong></label><input id="coefA" type="range" min="-10" max="10" value="3"></div><div class="field"><label for="constantB">Constant b: <strong id="constantBLabel">4</strong></label><input id="constantB" type="range" min="-20" max="20" value="4"></div><div class="field"><label for="totalC">Right side c: <strong id="totalCLabel">19</strong></label><input id="totalC" type="range" min="-30" max="50" value="19"></div></div><div class="result-grid">
+  <article class="result">
+    <span>Original equation</span>
+    <strong id="equationValue">3x + 4 = 19</strong>
+    <small id="equationType">two-step linear equation</small>
+  </article>
+  <article class="result">
+    <span>Inverse addition step</span>
+    <strong id="subtractValue">3x = 15</strong>
+    <small id="subtractDetail">subtract 4 from both sides</small>
+  </article>
+  <article class="result">
+    <span>Inverse multiplication step</span>
+    <strong id="divideValue">x = 15/3</strong>
+    <small id="divideDetail">divide both sides by 3</small>
+  </article>
+  <article class="result">
+    <span>Solution</span>
+    <strong id="solutionValue">x = 5</strong>
+    <small id="solutionSetValue">solution set: {5}</small>
+  </article>
+  <article class="result">
+    <span>Classification</span>
+    <strong id="classificationValue">one solution</strong>
+    <small id="classificationReason">nonzero coefficient</small>
+  </article>
+  <article class="result">
+    <span>Equivalent equation</span>
+    <strong id="equivalentValue">3x = 15</strong>
+    <small id="equivalentReason">same solution set preserved</small>
+  </article>
+</div>
+
+<div class="root-grid">
+  <article class="result">
+    <span>Substitution check</span>
+    <strong id="substitutionCheck">3(5) + 4 = 19</strong>
+    <small id="substitutionDetail">replace x with the proposed solution</small>
+  </article>
+  <article class="result">
+    <span>Left-side value</span>
+    <strong id="leftCheck">19</strong>
+    <small>LHS after substitution</small>
+  </article>
+  <article class="result">
+    <span>Right-side value</span>
+    <strong id="rightCheck">19</strong>
+    <small>RHS from the original equation</small>
+  </article>
+  <article class="result">
+    <span>Truth statement</span>
+    <strong id="truthValue">19 = 19</strong>
+    <small id="truthDetail">verified</small>
+  </article>
+</div>
+
+<div class="balance-model" id="balanceModel" aria-label="Equation balance model">
+  <div class="balance-side left-pan">
+    <span>Left side</span>
+    <strong id="balanceLeft">3x + 4</strong>
+  </div>
+  <div class="balance-beam" aria-hidden="true">
+    <span class="balance-pivot">△</span>
+  </div>
+  <div class="balance-side right-pan">
+    <span>Right side</span>
+    <strong id="balanceRight">19</strong>
+  </div>
+</div><p class="notice" id="labExplanation" aria-live="polite">Subtract 4 from both sides, then divide by 3. Both sides evaluate to 19.</p></article></div></section><section id="lessons"><div class="wrap"><div class="section-head"><p class="eyebrow">Instructional sequence</p><h2>Eight lessons connecting equality, inverse operations, equation structure, formulas, verification, and modelling.</h2><p>Each lesson contains worked examples, pathway-specific support, multilingual vocabulary, explanations, reflection, and local progress.</p></div><div class="grid lesson-grid" id="lessonGrid"></div></div></section><section id="resources"><div class="wrap"><div class="section-head"><p class="eyebrow">Practice, assessment & support</p><h2>Choose the right level of challenge.</h2></div><div class="grid resource-grid"><a class="card resource-card" href="practice/foundation.html"><span class="pill">Foundation</span><h3>Scaffolded Practice</h3><p>Balance models, inverse-operation frames, hints, and guided equation solving.</p></a><a class="card resource-card" href="practice/core.html"><span class="pill">Core</span><h3>Complete Unit Practice</h3><p>Eighteen questions across equations, solution sets, formulas, and models.</p></a><a class="card resource-card" href="practice/extended.html"><span class="pill">Extended</span><h3>Structural Challenges</h3><p>Parameters, identities, contradictions, literal equations, and domain critique.</p></a><a class="card resource-card" href="assessment/mastery-check.html"><span class="pill open">Assessment</span><h3>Unit Mastery Check</h3><p>A 24-question cumulative check with domain feedback and a 80% mastery threshold.</p></a><a class="card resource-card" href="teacher-guide.html"><span class="pill">Educator</span><h3>Teacher Guide</h3><p>Pacing, misconceptions, differentiation, discussion prompts, and assessment use.</p></a><a class="card resource-card" href="family-guide.html"><span class="pill">Family</span><h3>Family Guide</h3><p>Plain-language explanations and supportive questions for equation and formula reasoning.</p></a></div></div></section><section id="glossary"><div class="wrap"><div class="section-head"><p class="eyebrow">Multilingual vocabulary bridge</p><h2>Learn the language of equations, solutions, formulas, and verification.</h2></div><article class="card glossary-panel"><div class="glossary-tools"><div class="field"><label for="glossarySearch">Search vocabulary</label><input id="glossarySearch" type="search" placeholder="Search equation, solution, inverse, formula…"></div><div class="field"><label for="glossaryLanguage">Bridge language</label><select id="glossaryLanguage"></select></div></div><div class="grid glossary-grid" id="glossaryGrid"></div></article></div></section><section><div class="wrap"><article class="card"><p class="eyebrow">Paper Learning</p><h2>Unit 08 Print Center</h2><p>Eight handwriting-friendly worksheets, cumulative review, equation modelling investigation, and teacher key.</p><a class="btn primary" href="worksheets/index.html">Open Print Center</a></article></div></section></main><footer class="footer">
+  <div class="wrap footer-inner">
+    <span>KH-MATH-PA-U08 · Local progress · Interactive · No account required</span>
+    <nav class="footer-links" aria-label="High school footer navigation">
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">High School</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Grade 9</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/">Assessments</a>
+    </nav>
+  </div>
+</footer><script>window.UNIT_MAP_FALLBACK={"schema_version":"1.0","unit":{"id":"KH-MATH-PA-U08","course":"KH-MATH-PA","number":8,"title":"Equations, Formulas & Inverse Operations","duration_weeks":3,"recommended_sessions":15,"status":"open","essential_question":"How can equivalent operations preserve equality, reveal unknown quantities, and make formulas useful in many situations?","big_ideas":["An equation states that two expressions have equal value.","A solution is a value that makes an equation true.","Applying the same valid operation to both sides preserves equality.","Inverse operations and structural simplification help isolate a variable.","Equations and formulas are meaningful only when variables, units, constraints, and checks are explicit."],"mastery_threshold":75,"progress_key":"khaemenes-prealgebra-unit08-progress-v1"},"lessons":[{"id":"l01","number":1,"title":"Equality, Solutions & the Balance Model","file":"lessons/lesson-01-equality-solutions-balance-model.html","duration":"50–65 minutes","objectives":["Interpret an equation as a statement of equality.","Identify the left side, right side, variable, and solution.","Test possible solutions by substitution.","Use a balance model to explain equivalent equations."],"vocab_ids":["equation","equality","equals-sign","left-side","right-side","solution","solution-set","balance-model","equivalent-equation","check-solution"]},{"id":"l02","number":2,"title":"One-Step Addition & Subtraction Equations","file":"lessons/lesson-02-one-step-addition-subtraction.html","duration":"50–70 minutes","objectives":["Solve equations using addition and subtraction.","Identify inverse operations.","Represent solutions on a balance model.","Check solutions in the original equation."],"vocab_ids":["one-step-equation","inverse-operation","addition-property-equality","subtraction-property-equality","isolate-variable","opposite-operation","check-solution","equivalent-equation"]},{"id":"l03","number":3,"title":"One-Step Multiplication & Division Equations","file":"lessons/lesson-03-one-step-multiplication-division.html","duration":"50–70 minutes","objectives":["Solve equations using multiplication and division.","Use reciprocals to isolate variables.","Solve equations with rational coefficients.","Check solutions with units and signs."],"vocab_ids":["multiplication-property-equality","division-property-equality","reciprocal","coefficient","one-step-equation","isolate-variable","unit-analysis","check-solution"]},{"id":"l04","number":4,"title":"Two-Step Equations & Operation Order","file":"lessons/lesson-04-two-step-equations-operation-order.html","duration":"55–75 minutes","objectives":["Solve equations of the form ax+b=c.","Reverse operations in a logical order.","Use balance and inverse-operation reasoning.","Check solutions and explain each transformation."],"vocab_ids":["two-step-equation","operation-order","inverse-operation","coefficient","constant","equivalent-equation","isolate-variable","verification"]},{"id":"l05","number":5,"title":"Multi-Step Equations with Distribution & Like Terms","file":"lessons/lesson-05-multistep-distribution-like-terms.html","duration":"55–80 minutes","objectives":["Simplify each side before isolating the variable.","Distribute accurately, including negative factors.","Combine like terms in equations.","Clear fractions or decimals when useful."],"vocab_ids":["multi-step-equation","distributive-property","combine-like-terms","clear-fractions","clear-decimals","equivalent-transformations","coefficient","constant"]},{"id":"l06","number":6,"title":"Variables on Both Sides, Identities & Contradictions","file":"lessons/lesson-06-variables-both-sides-identities-contradictions.html","duration":"55–80 minutes","objectives":["Solve equations with variables on both sides.","Classify equations with one, no, or infinitely many solutions.","Recognize identities and contradictions.","Use structure to explain solution-set classifications."],"vocab_ids":["variable-both-sides","conditional-equation","identity","contradiction","no-solution","infinitely-many-solutions","solution-set","equivalent-equation","constant"]},{"id":"l07","number":7,"title":"Rearranging Formulas & Literal Equations","file":"lessons/lesson-07-rearranging-formulas-literal-equations.html","duration":"55–80 minutes","objectives":["Solve a formula for a specified variable.","Treat other variables as known quantities.","Use inverse operations while preserving units.","State restrictions created by division."],"vocab_ids":["literal-equation","formula","rearrange-formula","subject-of-formula","dependent-variable","independent-variable","constraint","denominator","unit-analysis","inverse-operation"]},{"id":"l08","number":8,"title":"Writing Equations from Contexts, Verification & Error Analysis","file":"lessons/lesson-08-context-equations-verification-error-analysis.html","duration":"60–85 minutes","objectives":["Define variables and write equations from contexts.","Solve and interpret equations with units.","Verify solutions against the original situation.","Critique assumptions, constraints, and common solution errors."],"vocab_ids":["equation-from-context","model","assumption","constraint","domain","reasonableness","verification","fixed-amount","rate","unit-analysis","extraneous-solution"]}],"practice":[{"id":"foundation","title":"Foundation Practice","file":"practice/foundation.html","questions":15},{"id":"core","title":"Core Practice","file":"practice/core.html","questions":18},{"id":"extended","title":"Extended Practice","file":"practice/extended.html","questions":18}],"assessment":{"title":"Unit 8 Mastery Check","file":"assessment/mastery-check.html","questions":24,"threshold":75},"project":{"title":"Equation & Formula Design Investigation","file":"projects/equation-formula-design-investigation.html"},"support":{"teacher_guide":"teacher-guide.html","family_guide":"family-guide.html","standards_map":"standards-map.json","vocabulary":"vocabulary.json"}};window.VOCABULARY_FALLBACK=[{"id":"equation","english":"Equation","spanish":"ecuación","french":"équation","arabic":"معادلة","portuguese":"equação","meaning":"A statement that two expressions have equal value."},{"id":"equality","english":"Equality","spanish":"igualdad","french":"égalité","arabic":"مساواة","portuguese":"igualdade","meaning":"The relationship of having the same value."},{"id":"equals-sign","english":"Equals Sign","spanish":"signo igual","french":"signe égal","arabic":"علامة المساواة","portuguese":"sinal de igual","meaning":"The symbol = that states equality."},{"id":"left-side","english":"Left Side","spanish":"lado izquierdo","french":"membre gauche","arabic":"الطرف الأيسر","portuguese":"lado esquerdo","meaning":"The expression before the equals sign."},{"id":"right-side","english":"Right Side","spanish":"lado derecho","french":"membre droit","arabic":"الطرف الأيمن","portuguese":"lado direito","meaning":"The expression after the equals sign."},{"id":"solution","english":"Solution","spanish":"solución","french":"solution","arabic":"حل","portuguese":"solução","meaning":"A value that makes an equation true."},{"id":"solution-set","english":"Solution Set","spanish":"conjunto solución","french":"ensemble solution","arabic":"مجموعة الحل","portuguese":"conjunto solução","meaning":"All values that satisfy an equation."},{"id":"balance-model","english":"Balance Model","spanish":"modelo de balanza","french":"modèle de balance","arabic":"نموذج الميزان","portuguese":"modelo de balança","meaning":"A visual model showing equal quantities on two sides."},{"id":"equivalent-equation","english":"Equivalent Equation","spanish":"ecuación equivalente","french":"équation équivalente","arabic":"معادلة مكافئة","portuguese":"equação equivalente","meaning":"An equation with the same solution set as another."},{"id":"check-solution","english":"Check Solution","spanish":"comprobar solución","french":"vérifier la solution","arabic":"التحقق من الحل","portuguese":"verificar solução","meaning":"Substitute a value to verify the original equation."},{"id":"one-step-equation","english":"One Step Equation","spanish":"ecuación de un paso","french":"équation à une étape","arabic":"معادلة بخطوة واحدة","portuguese":"equação de uma etapa","meaning":"An equation solved with one inverse-operation step."},{"id":"inverse-operation","english":"Inverse Operation","spanish":"operación inversa","french":"opération inverse","arabic":"عملية عكسية","portuguese":"operação inversa","meaning":"An operation that undoes another operation."},{"id":"addition-property-equality","english":"Addition Property Equality","spanish":"propiedad aditiva de igualdad","french":"propriété additive de l’égalité","arabic":"خاصية الجمع للمساواة","portuguese":"propriedade aditiva da igualdade","meaning":"Adding the same quantity to both sides preserves equality."},{"id":"subtraction-property-equality","english":"Subtraction Property Equality","spanish":"propiedad sustractiva de igualdad","french":"propriété soustractive de l’égalité","arabic":"خاصية الطرح للمساواة","portuguese":"propriedade subtrativa da igualdade","meaning":"Subtracting the same quantity from both sides preserves equality."},{"id":"isolate-variable","english":"Isolate Variable","spanish":"aislar la variable","french":"isoler la variable","arabic":"عزل المتغير","portuguese":"isolar a variável","meaning":"Rewrite so the variable stands alone."},{"id":"opposite-operation","english":"Opposite Operation","spanish":"operación opuesta","french":"opération opposée","arabic":"العملية المقابلة","portuguese":"operação oposta","meaning":"An informal name for an operation that reverses another."},{"id":"multiplication-property-equality","english":"Multiplication Property Equality","spanish":"propiedad multiplicativa de igualdad","french":"propriété multiplicative de l’égalité","arabic":"خاصية الضرب للمساواة","portuguese":"propriedade multiplicativa da igualdade","meaning":"Multiplying both sides by the same quantity preserves equality."},{"id":"division-property-equality","english":"Division Property Equality","spanish":"propiedad de división de igualdad","french":"propriété de division de l’égalité","arabic":"خاصية القسمة للمساواة","portuguese":"propriedade da divisão da igualdade","meaning":"Dividing both sides by the same nonzero quantity preserves equality."},{"id":"reciprocal","english":"Reciprocal","spanish":"recíproco","french":"inverse multiplicatif","arabic":"مقلوب","portuguese":"recíproco","meaning":"A number that multiplies with another to make 1."},{"id":"coefficient","english":"Coefficient","spanish":"coeficiente","french":"coefficient","arabic":"معامل","portuguese":"coeficiente","meaning":"The signed numerical factor multiplying a variable."},{"id":"unit-analysis","english":"Unit Analysis","spanish":"análisis de unidades","french":"analyse des unités","arabic":"تحليل الوحدات","portuguese":"análise de unidades","meaning":"Using units to verify a relationship or result."},{"id":"two-step-equation","english":"Two Step Equation","spanish":"ecuación de dos pasos","french":"équation à deux étapes","arabic":"معادلة بخطوتين","portuguese":"equação de duas etapas","meaning":"An equation requiring two inverse-operation stages."},{"id":"operation-order","english":"Operation Order","spanish":"orden de operaciones","french":"ordre des opérations","arabic":"ترتيب العمليات","portuguese":"ordem das operações","meaning":"The sequence in which operations are applied or undone."},{"id":"constant","english":"Constant","spanish":"constante","french":"constante","arabic":"ثابت","portuguese":"constante","meaning":"A term without a variable."},{"id":"verification","english":"Verification","spanish":"verificación","french":"vérification","arabic":"تحقق","portuguese":"verificação","meaning":"Evidence that a result satisfies the original requirement."},{"id":"multi-step-equation","english":"Multi Step Equation","spanish":"ecuación de varios pasos","french":"équation à plusieurs étapes","arabic":"معادلة متعددة الخطوات","portuguese":"equação de várias etapas","meaning":"An equation requiring simplification and several valid transformations."},{"id":"distributive-property","english":"Distributive Property","spanish":"propiedad distributiva","french":"propriété distributive","arabic":"خاصية التوزيع","portuguese":"propriedade distributiva","meaning":"Multiplying a factor by every term in a grouped sum or difference."},{"id":"combine-like-terms","english":"Combine Like Terms","spanish":"combinar términos semejantes","french":"regrouper les termes semblables","arabic":"جمع الحدود المتشابهة","portuguese":"combinar termos semelhantes","meaning":"Add or subtract coefficients of matching variable parts."},{"id":"clear-fractions","english":"Clear Fractions","spanish":"eliminar fracciones","french":"éliminer les fractions","arabic":"إزالة الكسور","portuguese":"eliminar frações","meaning":"Multiply every term by a common denominator."},{"id":"clear-decimals","english":"Clear Decimals","spanish":"eliminar decimales","french":"éliminer les décimales","arabic":"إزالة الكسور العشرية","portuguese":"eliminar decimais","meaning":"Multiply every term by a power of ten to remove decimals."},{"id":"equivalent-transformations","english":"Equivalent Transformations","spanish":"transformaciones equivalentes","french":"transformations équivalentes","arabic":"تحويلات مكافئة","portuguese":"transformações equivalentes","meaning":"Valid changes that preserve the solution set."},{"id":"variable-both-sides","english":"Variable Both Sides","spanish":"variable en ambos lados","french":"variable des deux côtés","arabic":"متغير في الطرفين","portuguese":"variável nos dois lados","meaning":"An equation containing variable terms on both sides."},{"id":"conditional-equation","english":"Conditional Equation","spanish":"ecuación condicional","french":"équation conditionnelle","arabic":"معادلة شرطية","portuguese":"equação condicional","meaning":"An equation true for particular value or values."},{"id":"identity","english":"Identity","spanish":"identidad","french":"identité","arabic":"متطابقة","portuguese":"identidade","meaning":"An equation true for every allowed value."},{"id":"contradiction","english":"Contradiction","spanish":"contradicción","french":"contradiction","arabic":"تناقض","portuguese":"contradição","meaning":"A false statement produced when no value can satisfy the equation."},{"id":"no-solution","english":"No Solution","spanish":"sin solución","french":"aucune solution","arabic":"لا حل","portuguese":"sem solução","meaning":"A solution set with no values."},{"id":"infinitely-many-solutions","english":"Infinitely Many Solutions","spanish":"infinitas soluciones","french":"une infinité de solutions","arabic":"عدد لا نهائي من الحلول","portuguese":"infinitas soluções","meaning":"A solution set containing every allowed value."},{"id":"literal-equation","english":"Literal Equation","spanish":"ecuación literal","french":"équation littérale","arabic":"معادلة حرفية","portuguese":"equação literal","meaning":"An equation involving two or more variables."},{"id":"formula","english":"Formula","spanish":"fórmula","french":"formule","arabic":"صيغة","portuguese":"fórmula","meaning":"An equation expressing a general relationship."},{"id":"rearrange-formula","english":"Rearrange Formula","spanish":"despejar una fórmula","french":"réarranger une formule","arabic":"إعادة ترتيب الصيغة","portuguese":"rearranjar fórmula","meaning":"Use valid operations to isolate a different variable."},{"id":"subject-of-formula","english":"Subject Of Formula","spanish":"variable aislada","french":"sujet de la formule","arabic":"موضوع الصيغة","portuguese":"variável isolada","meaning":"The variable isolated in a formula."},{"id":"dependent-variable","english":"Dependent Variable","spanish":"variable dependiente","french":"variable dépendante","arabic":"متغير تابع","portuguese":"variável dependente","meaning":"An output whose value depends on another variable."},{"id":"independent-variable","english":"Independent Variable","spanish":"variable independiente","french":"variable indépendante","arabic":"متغير مستقل","portuguese":"variável independente","meaning":"An input selected or controlled in a relationship."},{"id":"constraint","english":"Constraint","spanish":"restricción","french":"contrainte","arabic":"قيد","portuguese":"restrição","meaning":"A condition limiting allowable values."},{"id":"denominator","english":"Denominator","spanish":"denominador","french":"dénominateur","arabic":"مقام","portuguese":"denominador","meaning":"The quantity below a fraction bar."},{"id":"equation-from-context","english":"Equation From Context","spanish":"ecuación desde un contexto","french":"équation issue d’un contexte","arabic":"معادلة من سياق","portuguese":"equação de um contexto","meaning":"An equation representing quantities and relationships in a situation."},{"id":"model","english":"Model","spanish":"modelo","french":"modèle","arabic":"نموذج","portuguese":"modelo","meaning":"A mathematical representation of a situation."},{"id":"assumption","english":"Assumption","spanish":"suposición","french":"hypothèse","arabic":"افتراض","portuguese":"suposição","meaning":"A condition accepted when building a model."},{"id":"domain","english":"Domain","spanish":"dominio","french":"domaine","arabic":"مجال","portuguese":"domínio","meaning":"The allowed input values for a relationship."},{"id":"reasonableness","english":"Reasonableness","spanish":"razonabilidad","french":"caractère raisonnable","arabic":"معقولية","portuguese":"razoabilidade","meaning":"Whether a result makes sense in size, sign, units, and context."},{"id":"fixed-amount","english":"Fixed Amount","spanish":"cantidad fija","french":"montant fixe","arabic":"مقدار ثابت","portuguese":"valor fixo","meaning":"A constant quantity that does not change with input."},{"id":"rate","english":"Rate","spanish":"tasa","french":"taux","arabic":"معدل","portuguese":"taxa","meaning":"A comparison describing change per unit."},{"id":"extraneous-solution","english":"Extraneous Solution","spanish":"solución extraña","french":"solution extraneous","arabic":"حل دخيل","portuguese":"solução extraneous","meaning":"A value introduced by work that does not satisfy the original equation."}];(() => {
+  "use strict";
+
+  const $ = selector => document.querySelector(selector);
+
+  const elements = {
+    a: $("#coefA"),
+    b: $("#constantB"),
+    c: $("#totalC"),
+    aLabel: $("#coefALabel"),
+    bLabel: $("#constantBLabel"),
+    cLabel: $("#totalCLabel"),
+    equation: $("#equationValue"),
+    equationType: $("#equationType"),
+    subtract: $("#subtractValue"),
+    subtractDetail: $("#subtractDetail"),
+    divide: $("#divideValue"),
+    divideDetail: $("#divideDetail"),
+    solution: $("#solutionValue"),
+    solutionSet: $("#solutionSetValue"),
+    classification: $("#classificationValue"),
+    classificationReason: $("#classificationReason"),
+    equivalent: $("#equivalentValue"),
+    equivalentReason: $("#equivalentReason"),
+    substitution: $("#substitutionCheck"),
+    substitutionDetail: $("#substitutionDetail"),
+    leftCheck: $("#leftCheck"),
+    rightCheck: $("#rightCheck"),
+    truth: $("#truthValue"),
+    truthDetail: $("#truthDetail"),
+    balanceLeft: $("#balanceLeft"),
+    balanceRight: $("#balanceRight"),
+    balanceModel: $("#balanceModel"),
+    explanation: $("#labExplanation")
+  };
+
+  if (Object.values(elements).some(element => !element)) return;
+
+  function gcd(a, b) {
+    a = Math.abs(a);
+    b = Math.abs(b);
+    while (b) [a, b] = [b, a % b];
+    return a || b || 1;
+  }
+
+  function simplifyFraction(numerator, denominator) {
+    if (denominator === 0) return null;
+    if (numerator === 0) return { numerator: 0, denominator: 1 };
+    const sign = denominator < 0 ? -1 : 1;
+    numerator *= sign;
+    denominator *= sign;
+    const divisor = gcd(numerator, denominator);
+    return {
+      numerator: numerator / divisor,
+      denominator: denominator / divisor
+    };
+  }
+
+  function fractionText(numerator, denominator) {
+    const fraction = simplifyFraction(numerator, denominator);
+    if (!fraction) return "undefined";
+    if (fraction.denominator === 1) return String(fraction.numerator);
+    return `${fraction.numerator}/${fraction.denominator}`;
+  }
+
+  function decimalText(value, places = 6) {
+    if (!Number.isFinite(value)) return "undefined";
+    if (Number.isInteger(value)) return String(value);
+    return value
+      .toFixed(places)
+      .replace(/0+$/, "")
+      .replace(/\.$/, "");
+  }
+
+  function variableTerm(coefficient) {
+    if (coefficient === 0) return "0";
+    if (coefficient === 1) return "x";
+    if (coefficient === -1) return "−x";
+    return `${coefficient}x`;
+  }
+
+  function signedConstant(value) {
+    if (value === 0) return "";
+    return value < 0 ? ` − ${Math.abs(value)}` : ` + ${value}`;
+  }
+
+  function equationText(a, b, c) {
+    const left = a === 0 ? String(b) : `${variableTerm(a)}${signedConstant(b)}`;
+    return `${left} = ${c}`;
+  }
+
+  function substitutionText(a, b, x, c) {
+    const xText = x < 0 ? `(${decimalText(x)})` : decimalText(x);
+    const product = a === 0
+      ? "0"
+      : a === 1
+        ? xText
+        : a === -1
+          ? `−${xText}`
+          : `${a}${xText.startsWith("(") ? xText : `(${xText})`}`;
+    const left = a === 0 ? String(b) : `${product}${signedConstant(b)}`;
+    return `${left} = ${c}`;
+  }
+
+  function render() {
+    const a = Number(elements.a.value);
+    const b = Number(elements.b.value);
+    const c = Number(elements.c.value);
+    const difference = c - b;
+
+    elements.aLabel.textContent = a;
+    elements.bLabel.textContent = b;
+    elements.cLabel.textContent = c;
+
+    const original = equationText(a, b, c);
+    elements.equation.textContent = original;
+    elements.balanceLeft.textContent = a === 0
+      ? String(b)
+      : `${variableTerm(a)}${signedConstant(b)}`;
+    elements.balanceRight.textContent = c;
+
+    if (a === 0) {
+      const identity = b === c;
+
+      elements.equationType.textContent = identity
+        ? "identity after the variable term vanishes"
+        : "contradictory constant equation";
+
+      elements.subtract.textContent = `${b} = ${c}`;
+      elements.subtractDetail.textContent =
+        "the variable term is 0x, so only constants remain";
+
+      elements.divide.textContent = identity ? "0 = 0" : `${b} ≠ ${c}`;
+      elements.divideDetail.textContent =
+        "division by 0 is not allowed and is not a solving step";
+
+      elements.solution.textContent = identity ? "all real x" : "no solution";
+      elements.solutionSet.textContent = identity
+        ? "solution set: ℝ"
+        : "solution set: ∅";
+
+      elements.classification.textContent = identity
+        ? "infinitely many solutions"
+        : "no solution";
+      elements.classificationReason.textContent = identity
+        ? "true for every real input"
+        : "false constant statement";
+
+      elements.equivalent.textContent = identity ? "0 = 0" : `${b} = ${c}`;
+      elements.equivalentReason.textContent = identity
+        ? "identity preserved"
+        : "contradiction exposed";
+
+      elements.substitution.textContent = identity
+        ? `for any x: ${b} = ${c}`
+        : `for every x: ${b} ≠ ${c}`;
+      elements.substitutionDetail.textContent = identity
+        ? "every real number satisfies the original equation"
+        : "no real number can change the constant comparison";
+
+      elements.leftCheck.textContent = b;
+      elements.rightCheck.textContent = c;
+      elements.truth.textContent = identity ? `${b} = ${c}` : `${b} ≠ ${c}`;
+      elements.truthDetail.textContent = identity ? "always true" : "always false";
+
+      elements.balanceModel.dataset.state = identity ? "identity" : "contradiction";
+
+      elements.explanation.textContent = identity
+        ? `The coefficient of x is 0, leaving the true statement ${b} = ${c}. Because the equation is true regardless of x, the solution set is all real numbers.`
+        : `The coefficient of x is 0, leaving the false statement ${b} = ${c}. No value of x can make this equation true, so the solution set is empty.`;
+
+      return;
+    }
+
+    const solutionFraction = simplifyFraction(difference, a);
+    const solution = difference / a;
+    const solutionExact = fractionText(difference, a);
+    const left = a * solution + b;
+
+    elements.equationType.textContent =
+      b === 0 ? "one-step linear equation" : "two-step linear equation";
+
+    elements.subtract.textContent = `${variableTerm(a)} = ${difference}`;
+    elements.subtractDetail.textContent =
+      b === 0
+        ? "no nonzero constant must be removed"
+        : `${b > 0 ? "subtract" : "add"} ${Math.abs(b)} on both sides`;
+
+    elements.divide.textContent = `x = ${difference}/${a}`;
+    elements.divideDetail.textContent =
+      `divide both sides by ${a}, which is nonzero`;
+
+    elements.solution.textContent = `x = ${solutionExact}`;
+    elements.solutionSet.textContent = `solution set: {${solutionExact}}`;
+
+    elements.classification.textContent = "one solution";
+    elements.classificationReason.textContent = "nonzero coefficient";
+
+    elements.equivalent.textContent = `${variableTerm(a)} = ${difference}`;
+    elements.equivalentReason.textContent =
+      "same operation on both sides preserves the solution set";
+
+    elements.substitution.textContent = substitutionText(a, b, solution, c);
+    elements.substitutionDetail.textContent =
+      `replace x with ${solutionExact}${solutionFraction.denominator === 1 ? "" : ` ≈ ${decimalText(solution)}`}`;
+
+    elements.leftCheck.textContent = decimalText(left);
+    elements.rightCheck.textContent = c;
+    elements.truth.textContent = `${decimalText(left)} = ${c}`;
+    elements.truthDetail.textContent =
+      Math.abs(left - c) < 1e-9 ? "verified" : "not verified";
+
+    elements.balanceModel.dataset.state = "balanced";
+
+    const firstStep = b === 0
+      ? `The equation already has no nonzero constant term on the left.`
+      : `${b > 0 ? "Subtract" : "Add"} ${Math.abs(b)} on both sides to obtain ${variableTerm(a)} = ${difference}.`;
+
+    elements.explanation.textContent =
+      `${firstStep} Then divide both sides by ${a} to get x = ${solutionExact}. ` +
+      `Substitution gives ${decimalText(left)} on the left and ${c} on the right, so the solution is verified.`;
+  }
+
+  [elements.a, elements.b, elements.c].forEach(element => {
+    element.addEventListener("input", render);
+    element.addEventListener("change", render);
+  });
+
+  render();
+})();</script><script src="assets/unit-dashboard.js"></script></body></html>
