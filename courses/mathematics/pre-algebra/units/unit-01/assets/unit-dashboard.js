@@ -26,6 +26,7 @@
   const DEFAULT_PROGRESS = Object.freeze({
     pathway: CONFIG.defaultPathway,
     completedLessons: [],
+    reviewedLessons: [],
     lessonScores: {},
     reflections: {}
   });
@@ -103,6 +104,10 @@
       progress.completedLessons = [];
     }
 
+    if (!Array.isArray(progress.reviewedLessons)) {
+      progress.reviewedLessons = [];
+    }
+
     if (!progress.lessonScores || typeof progress.lessonScores !== "object") {
       progress.lessonScores = {};
     }
@@ -114,6 +119,28 @@
     if (!progress.pathway) {
       progress.pathway = CONFIG.defaultPathway;
     }
+
+    /*
+      Migration / integrity rule:
+      completedLessons means mastered at the current threshold. Older builds
+      allowed a manual review button to write directly to completedLessons;
+      those records are preserved as reviewedLessons instead of being allowed
+      to bypass mastery.
+    */
+    const threshold = getThreshold();
+    const priorCompleted = [...new Set(progress.completedLessons)];
+    const reviewed = new Set(progress.reviewedLessons);
+
+    priorCompleted.forEach(id => {
+      if (Number(progress.lessonScores[id]) < threshold) reviewed.add(id);
+    });
+
+    const masteredFromScores = Object.entries(progress.lessonScores)
+      .filter(([, score]) => Number(score) >= threshold)
+      .map(([id]) => id);
+
+    progress.completedLessons = [...new Set(masteredFromScores)];
+    progress.reviewedLessons = [...reviewed];
   }
 
   /* ---------------------------------------------------------
@@ -271,7 +298,12 @@
 
   function unitIsMastered() {
     const result = getMasteryResult();
-    return Boolean(result && result.passed);
+    const allLessonsMastered =
+      Array.isArray(unitMap?.lessons) &&
+      unitMap.lessons.length > 0 &&
+      completedCount() === unitMap.lessons.length;
+
+    return Boolean(result?.passed && allLessonsMastered);
   }
 
   /* ---------------------------------------------------------
@@ -337,15 +369,19 @@
     const grid = byId("lessonGrid");
     if (!grid) return;
 
+    const threshold = getThreshold();
+
     grid.innerHTML = unitMap.lessons
       .map(lesson => {
-        const completed = progress.completedLessons.includes(lesson.id);
+        const mastered = progress.completedLessons.includes(lesson.id);
+        const reviewed = progress.reviewedLessons.includes(lesson.id);
         const score = progress.lessonScores[lesson.id];
+
         const scoreMarkup = isFiniteNumber(score)
           ? `
             <div class="notice">
-              Latest practice score:
-              <strong>${clamp(score, 0, 100)}%</strong>
+              Latest practice score: <strong>${clamp(score, 0, 100)}%</strong><br>
+              ${mastered ? "Lesson mastery reached." : `Reach ${threshold}% to master this lesson.`}
             </div>
           `
           : "";
@@ -354,47 +390,33 @@
           ? lesson.objectives.slice(0, 3)
           : [];
 
-        return `
-          <article
-            class="card lesson-card"
-            data-lesson-card="${escapeHTML(lesson.id)}"
-          >
-            <div class="lesson-top">
-              <span class="lesson-number">
-                ${String(lesson.number ?? "").padStart(2, "0")}
-              </span>
+        const stateText = mastered
+          ? "Mastered"
+          : reviewed
+            ? "Reviewed"
+            : escapeHTML(lesson.duration || "Lesson");
 
-              <span class="pill ${completed ? "open" : ""}">
-                ${completed ? "Completed" : escapeHTML(lesson.duration || "Lesson")}
-              </span>
+        return `
+          <article class="card lesson-card" data-lesson-card="${escapeHTML(lesson.id)}">
+            <div class="lesson-top">
+              <span class="lesson-number">${String(lesson.number ?? "").padStart(2, "0")}</span>
+              <span class="pill ${mastered ? "open" : ""}">${stateText}</span>
             </div>
 
             <h3>${escapeHTML(lesson.title)}</h3>
 
             <ul class="lesson-objectives">
-              ${objectives
-                .map(objective => `<li>${escapeHTML(objective)}</li>`)
-                .join("")}
+              ${objectives.map(objective => `<li>${escapeHTML(objective)}</li>`).join("")}
             </ul>
 
             ${scoreMarkup}
 
             <div class="lesson-actions">
-              <a
-                class="btn primary"
-                href="${escapeHTML(lesson.file)}"
-                data-open-lesson="${escapeHTML(lesson.id)}"
-              >
+              <a class="btn primary" href="${escapeHTML(lesson.file)}" data-open-lesson="${escapeHTML(lesson.id)}">
                 Open Lesson
               </a>
-
-              <button
-                class="btn"
-                type="button"
-                data-complete="${escapeHTML(lesson.id)}"
-                aria-pressed="${completed}"
-              >
-                ${completed ? "Reviewed ✓" : "Mark Reviewed"}
+              <button class="btn" type="button" data-review="${escapeHTML(lesson.id)}" aria-pressed="${reviewed}">
+                ${reviewed ? "Reviewed ✓" : "Mark Reviewed"}
               </button>
             </div>
           </article>
@@ -433,7 +455,7 @@
     const count = byId("lessonCompletionCount");
     if (count) {
       count.textContent =
-        `${completedCount()} of ${unitMap.lessons.length} lessons reviewed`;
+        `${completedCount()} of ${unitMap.lessons.length} lessons mastered`;
     }
   }
 
@@ -476,36 +498,42 @@
   function renderMasteryGate() {
     const result = getMasteryResult();
     const threshold = getThreshold();
+    const lessonsMastered = completedCount();
+    const lessonTotal = unitMap.lessons.length;
+    const allLessonsMastered = lessonTotal > 0 && lessonsMastered === lessonTotal;
+    const assessmentPassed = Boolean(result?.passed);
+    const unlocked = allLessonsMastered && assessmentPassed;
 
     document.querySelectorAll("[data-mastery-gate]").forEach(element => {
-      const mastered = Boolean(result?.passed);
-
-      element.dataset.locked = mastered ? "false" : "true";
-      element.setAttribute("aria-disabled", mastered ? "false" : "true");
+      element.dataset.locked = unlocked ? "false" : "true";
+      element.setAttribute("aria-disabled", unlocked ? "false" : "true");
 
       const label = element.querySelector("[data-gate-label]");
+      if (!label) return;
 
-      if (label) {
-        label.textContent = mastered
-          ? "Unlocked"
-          : `Locked · ${threshold}% mastery required`;
+      if (unlocked) {
+        label.textContent = "Unlocked · Unit 2 ready";
+      } else if (!allLessonsMastered) {
+        label.textContent = `Locked · master ${lessonTotal - lessonsMastered} more lesson${lessonTotal - lessonsMastered === 1 ? "" : "s"}`;
+      } else {
+        label.textContent = `Locked · ${threshold}% mastery check required`;
       }
     });
 
     const banner = byId("masteryGateMessage");
     if (!banner) return;
 
-    if (!result) {
-      banner.innerHTML =
-        `Complete the mastery check and earn <strong>${threshold}%</strong> to unlock the next unit.`;
-      banner.dataset.state = "locked";
-    } else if (result.passed) {
-      banner.innerHTML =
-        `Mastery achieved at <strong>${result.percent}%</strong>. The next unit is ready.`;
+    if (unlocked) {
+      banner.innerHTML = `All ${lessonTotal} lesson practices are mastered and the Unit 1 Mastery Check is <strong>${result.percent}%</strong>. Unit 2 is unlocked.`;
       banner.dataset.state = "unlocked";
+    } else if (!allLessonsMastered && !assessmentPassed) {
+      banner.innerHTML = `Master <strong>${lessonsMastered}/${lessonTotal}</strong> lesson practices and earn <strong>${threshold}%</strong> on the mastery check to unlock Unit 2.`;
+      banner.dataset.state = "locked";
+    } else if (!allLessonsMastered) {
+      banner.innerHTML = `Mastery check passed. Finish the remaining lesson practices at <strong>${threshold}%+</strong> to unlock Unit 2.`;
+      banner.dataset.state = "locked";
     } else {
-      banner.innerHTML =
-        `Current mastery: <strong>${result.percent}%</strong>. Review and retake until you reach <strong>${threshold}%</strong>.`;
+      banner.innerHTML = `All lesson practices are mastered. Earn <strong>${threshold}%</strong> on the Unit 1 Mastery Check to unlock Unit 2.`;
       banner.dataset.state = "locked";
     }
   }
@@ -584,28 +612,24 @@
      LESSON INTERACTIONS
      --------------------------------------------------------- */
 
-  function toggleLessonComplete(id) {
+  function toggleLessonReviewed(id) {
     if (!id) return;
 
-    const current = new Set(progress.completedLessons);
+    const current = new Set(progress.reviewedLessons);
 
-    if (current.has(id)) {
-      current.delete(id);
-    } else {
-      current.add(id);
-    }
+    if (current.has(id)) current.delete(id);
+    else current.add(id);
 
-    progress.completedLessons = [...current];
+    progress.reviewedLessons = [...current];
     saveProgress();
     renderLessons();
-    renderProgress();
   }
 
   function handleLessonGridClick(event) {
-    const completeButton = event.target.closest("[data-complete]");
+    const reviewButton = event.target.closest("[data-review]");
 
-    if (completeButton) {
-      toggleLessonComplete(completeButton.dataset.complete);
+    if (reviewButton) {
+      toggleLessonReviewed(reviewButton.dataset.review);
       return;
     }
 
@@ -775,8 +799,10 @@
 
         const threshold = getThreshold();
 
+        const lessonsMastered = completedCount();
+        const lessonTotal = unitMap.lessons.length;
         window.alert(
-          `Mastery Required\n\nReach ${threshold}% on the Unit 1 Mastery Check before moving ahead.\n\nReview the current unit, practice weak areas, and retake the assessment when ready.`
+          `Unit 1 Mastery Required\n\nMaster all ${lessonTotal} lesson practices at ${threshold}% or higher and earn ${threshold}% on the Unit 1 Mastery Check before moving ahead.\n\nCurrent lesson mastery: ${lessonsMastered}/${lessonTotal}.`
         );
       }
     });

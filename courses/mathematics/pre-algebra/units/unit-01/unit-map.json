@@ -17,7 +17,9 @@
       "Estimation is a reasoning tool, not merely rough arithmetic."
     ],
     "mastery_threshold": 80,
-    "progress_key": "khaemenes-prealgebra-unit01-progress-v1"
+    "progress_key": "khaemenes-prealgebra-unit01-progress-v1",
+    "architecture": "Open-age foundational Pre-Algebra entry unit: number systems + factors/multiples + prime/divisibility structure + GCF/LCM + order of operations + estimation/reasonableness + mastery",
+    "readiness_note": "Unit 01 is intentionally a six-lesson foundation and evidence-gathering unit. It establishes prerequisite number sense before the Unit 02 readiness/pathway bridge; advancement is based on demonstrated mastery, not age or grade identity."
   },
   "lessons": [
     {
@@ -25,12 +27,13 @@
       "number": 1,
       "title": "Number Families & the Real Number System",
       "file": "lessons/lesson-01-number-systems.html",
-      "duration": "50–70 minutes",
+      "duration": "60–75 minutes",
       "objectives": [
         "Classify natural, whole, integer, rational, irrational, and real numbers.",
-        "Explain the nesting relationships among number sets.",
-        "Represent and compare numbers on a number line.",
-        "Identify the most specific number set that contains a value."
+        "Explain how the major real-number sets are nested inside one another.",
+        "Represent, compare, and order rational and irrational values on a number line.",
+        "Identify the most specific number set that contains a value.",
+        "Justify a classification using fractions, decimal behavior, or perfect-square reasoning."
       ],
       "vocab_ids": [
         "natural-number",
@@ -46,12 +49,13 @@
       "number": 2,
       "title": "Factors, Multiples & Number Structure",
       "file": "lessons/lesson-02-factors-multiples.html",
-      "duration": "50–65 minutes",
+      "duration": "60–75 minutes",
       "objectives": [
-        "List factor pairs of a whole number.",
+        "List all positive factor pairs of a whole number systematically.",
         "Generate multiples and identify common multiples.",
-        "Distinguish factors from multiples.",
-        "Use arrays and area models to represent factor relationships."
+        "Distinguish clearly between factors and multiples.",
+        "Use arrays, rectangles, and equal-group models to represent factor relationships.",
+        "Explain how perfect squares affect the number of positive factors."
       ],
       "vocab_ids": [
         "factor",
@@ -66,12 +70,13 @@
       "number": 3,
       "title": "Prime Numbers, Divisibility & Factorization",
       "file": "lessons/lesson-03-primes-divisibility.html",
-      "duration": "55–70 minutes",
+      "duration": "60–75 minutes",
       "objectives": [
-        "Distinguish prime and composite numbers.",
+        "Classify whole numbers greater than 1 as prime or composite.",
         "Apply divisibility rules for 2, 3, 4, 5, 6, 9, and 10.",
-        "Write prime factorizations using factor trees or repeated division.",
-        "Use exponents to express repeated prime factors."
+        "Write composite numbers as products of prime factors.",
+        "Use factor trees and repeated division to verify prime factorizations.",
+        "Explain why prime factorization is unique apart from factor order."
       ],
       "vocab_ids": [
         "prime-number",
@@ -87,12 +92,13 @@
       "number": 4,
       "title": "Greatest Common Factor & Least Common Multiple",
       "file": "lessons/lesson-04-gcf-lcm.html",
-      "duration": "55–70 minutes",
+      "duration": "60–75 minutes",
       "objectives": [
-        "Find the greatest common factor using lists or prime factorization.",
-        "Find the least common multiple using lists or prime factorization.",
-        "Interpret GCF and LCM in context.",
-        "Explain why a chosen method is efficient."
+        "Find the greatest common factor of two or more whole numbers.",
+        "Find the least common multiple of two or more whole numbers.",
+        "Use factor lists and prime factorizations to determine GCF and LCM.",
+        "Distinguish situations that require a GCF from situations that require an LCM.",
+        "Explain solutions to grouping and synchronization problems using mathematical evidence."
       ],
       "vocab_ids": [
         "greatest-common-factor",
@@ -107,13 +113,13 @@
       "number": 5,
       "title": "Order of Operations & Numerical Expressions",
       "file": "lessons/lesson-05-order-operations.html",
-      "duration": "55–70 minutes",
+      "duration": "60–75 minutes",
       "objectives": [
-        "Evaluate numerical expressions using the conventional order.",
-        "Treat multiplication and division as equal-priority operations performed left to right.",
-        "Treat addition and subtraction as equal-priority operations performed left to right.",
-        "Use grouping symbols and exponents accurately.",
-        "Identify and correct common errors."
+        "Evaluate numerical expressions using grouping symbols, exponents, multiplication, division, addition, and subtraction.",
+        "Explain why multiplication and division are performed from left to right when they share a level of priority.",
+        "Explain why addition and subtraction are performed from left to right when they share a level of priority.",
+        "Use substitution and the order of operations to evaluate simple variable expressions.",
+        "Identify and correct common order-of-operations errors."
       ],
       "vocab_ids": [
         "numerical-expression",
@@ -127,13 +133,13 @@
       "number": 6,
       "title": "Estimation, Compatible Numbers & Reasonableness",
       "file": "lessons/lesson-06-estimation-reasonableness.html",
-      "duration": "50–65 minutes",
+      "duration": "60–75 minutes",
       "objectives": [
-        "Estimate sums, differences, products, and quotients.",
-        "Choose an appropriate estimation strategy.",
-        "Use compatible numbers for mental calculation.",
-        "Evaluate whether an exact result is reasonable.",
-        "Communicate appropriate precision."
+        "Estimate sums, differences, products, and quotients using purposeful rounding.",
+        "Use compatible numbers and front-end estimation for efficient mental calculation.",
+        "Choose an estimation strategy appropriate to the numbers and context.",
+        "Use estimates, magnitude, and operation sense to judge whether exact results are reasonable.",
+        "Explain when an exact answer is necessary and when an estimate is more useful."
       ],
       "vocab_ids": [
         "estimate",
@@ -147,19 +153,19 @@
       "id": "foundation",
       "title": "Foundation Practice",
       "file": "practice/foundation.html",
-      "description": "Scaffolded review with hints and smaller steps."
+      "description": "20-question scaffolded review with optional hints and smaller steps."
     },
     {
       "id": "core",
       "title": "Core Practice",
       "file": "practice/core.html",
-      "description": "Complete unit-level practice."
+      "description": "20-question complete unit-level rehearsal across all six lessons."
     },
     {
       "id": "extended",
       "title": "Extended Practice",
       "file": "practice/extended.html",
-      "description": "Deeper reasoning and unfamiliar contexts."
+      "description": "20-question deeper reasoning and unfamiliar-context practice."
     }
   ],
   "assessment": {
@@ -169,7 +175,7 @@
     "threshold": 80
   },
   "project": {
-    "title": "Number Systems Investigation",
+    "title": "Number Structure Investigation",
     "file": "projects/number-systems-investigation.html"
   },
   "guides": [

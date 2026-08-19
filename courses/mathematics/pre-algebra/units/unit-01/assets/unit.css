@@ -72,6 +72,85 @@
 
   --shadow-card: 0 14px 33px rgba(24, 33, 28, 0.08);
   --shadow-major: 0 24px 55px rgba(24, 33, 28, 0.10);
+
+  /* Backward-compatible aliases used by the existing lesson pages. */
+  --bg2: var(--bg-soft);
+  --text: var(--ink);
+  --gold2: var(--gold);
+  --serif: var(--font-display);
+  --sans: var(--font-body);
+  --math: var(--font-display);
+  --rs: var(--radius-small);
+  --r: var(--radius-card);
+  --max: var(--content-max);
+  --shadow: var(--shadow-card);
+  --paper: var(--bg);
+  --paper2: var(--bg-soft);
+  --white: var(--panel);
+  --red: var(--danger);
+  --forest-dark: var(--forest-deep);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #101713;
+  --bg-soft: #17211c;
+  --panel: #1d2922;
+  --ink: #f5f1e8;
+  --muted: #b3beb8;
+  --forest: #d8c59d;
+  --forest-deep: #f4ead5;
+  --gold: #d0a75d;
+  --gold-soft: #4d3d22;
+  --blue: #8bb2cc;
+  --green: #92c5a0;
+  --danger: #ea9488;
+  --line: rgba(245, 241, 232, 0.14);
+  --line-strong: rgba(245, 241, 232, 0.25);
+  --shadow-card: 0 14px 33px rgba(0, 0, 0, 0.22);
+  --shadow-major: 0 24px 55px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme="dark"] .site-header {
+  background: rgba(16, 23, 19, 0.96);
+}
+
+html[data-theme="dark"] .notice {
+  background: #3d321f;
+  color: #f0d8aa;
+}
+
+html[data-theme="dark"] .option:hover,
+html[data-theme="dark"] .sidebar-nav a:hover,
+html[data-theme="dark"] .sidebar-nav button:hover {
+  background: #223028;
+}
+
+.mastery-gate-panel {
+  margin-top: var(--space-24);
+  padding: var(--space-24);
+  text-align: center;
+}
+
+.mastery-gate-panel h3 {
+  margin-bottom: var(--space-11);
+}
+
+.mastery-gate-panel [data-mastery-gate][data-locked="true"] {
+  opacity: 0.58;
+}
+
+.mastery-gate-panel [data-gate-label] {
+  display: block;
+  margin-top: var(--space-7);
+  color: var(--muted);
+  font-size: var(--fs-11);
+}
+
+.mastery-count {
+  margin: var(--space-11) 0;
+  color: var(--muted);
+  font-size: var(--fs-11);
 }
 
 /* =========================================================

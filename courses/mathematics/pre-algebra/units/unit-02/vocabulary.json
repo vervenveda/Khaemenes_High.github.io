@@ -251,6 +251,96 @@
       "fr": "grandeur",
       "ar": "مقدار",
       "pt": "magnitude"
+    },
+    {
+      "id": "opposite",
+      "en": "opposite",
+      "definition": "A number the same distance from zero as another number but on the other side of zero.",
+      "es": "opuesto",
+      "fr": "opposé",
+      "ar": "المعاكس",
+      "pt": "oposto"
+    },
+    {
+      "id": "inequality",
+      "en": "inequality",
+      "definition": "A mathematical statement that compares quantities using symbols such as < or >.",
+      "es": "desigualdad",
+      "fr": "inégalité",
+      "ar": "متباينة",
+      "pt": "desigualdade"
+    },
+    {
+      "id": "subtraction",
+      "en": "subtraction",
+      "definition": "An operation that finds a difference; with integers, subtracting a number is equivalent to adding its opposite.",
+      "es": "resta",
+      "fr": "soustraction",
+      "ar": "الطرح",
+      "pt": "subtração"
+    },
+    {
+      "id": "factor",
+      "en": "factor",
+      "definition": "A number or quantity being multiplied by another number or quantity.",
+      "es": "factor",
+      "fr": "facteur",
+      "ar": "عامل",
+      "pt": "fator"
+    },
+    {
+      "id": "multiplication",
+      "en": "multiplication",
+      "definition": "An operation that combines equal groups or scales one quantity by another; with integers, the signs of the factors determine the sign of the product.",
+      "es": "multiplicación",
+      "fr": "multiplication",
+      "ar": "الضرب",
+      "pt": "multiplicação"
+    },
+    {
+      "id": "dividend",
+      "en": "dividend",
+      "definition": "The quantity being divided in a division expression.",
+      "es": "dividendo",
+      "fr": "dividende",
+      "ar": "المقسوم",
+      "pt": "dividendo"
+    },
+    {
+      "id": "divisor",
+      "en": "divisor",
+      "definition": "The nonzero quantity by which another quantity is divided.",
+      "es": "divisor",
+      "fr": "diviseur",
+      "ar": "المقسوم عليه",
+      "pt": "divisor"
+    },
+    {
+      "id": "division",
+      "en": "division",
+      "definition": "An operation that separates a quantity into equal groups or determines a rate; division is the inverse of multiplication.",
+      "es": "división",
+      "fr": "division",
+      "ar": "القسمة",
+      "pt": "divisão"
+    },
+    {
+      "id": "x-coordinate",
+      "en": "x-coordinate",
+      "definition": "The first value in an ordered pair; it gives horizontal position.",
+      "es": "coordenada x",
+      "fr": "coordonnée x",
+      "ar": "الإحداثي السيني",
+      "pt": "coordenada x"
+    },
+    {
+      "id": "y-coordinate",
+      "en": "y-coordinate",
+      "definition": "The second value in an ordered pair; it gives vertical position.",
+      "es": "coordenada y",
+      "fr": "coordonnée y",
+      "ar": "الإحداثي الصادي",
+      "pt": "coordenada y"
     }
   ]
 }

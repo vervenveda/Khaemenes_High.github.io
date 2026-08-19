@@ -16,8 +16,9 @@
       "Subtraction can be understood as adding the opposite.",
       "Coordinates and signed change connect integer reasoning to graphs, finance, science, weather, and movement."
     ],
-    "mastery_threshold": 75,
-    "progress_key": "khaemenes-prealgebra-unit02-progress-v1"
+    "mastery_threshold": 80,
+    "progress_key": "khaemenes-prealgebra-unit02-progress-v1",
+    "integration_model": "Learn → Explore → Work → Practice → Apply → Reflect → Demonstrate Mastery"
   },
   "lessons": [
     {
@@ -128,12 +129,12 @@
     {
       "id": "l06",
       "number": 6,
-      "title": "Multiplying & Dividing Integers",
+      "title": "Multiplying Integers",
       "duration": "55–70 minutes",
       "objectives": [
-        "Multiply and divide integers accurately.",
-        "Explain sign rules using patterns and repeated change.",
-        "Distinguish operation signs from number signs.",
+        "Multiply integers accurately using sign rules.",
+        "Explain multiplication sign rules using patterns and repeated signed change.",
+        "Use zero, one, and negative one structurally.",
         "Solve contextual problems involving repeated gains, losses, and rates."
       ],
       "vocab_ids": [
@@ -148,13 +149,13 @@
     {
       "id": "l07",
       "number": 7,
-      "title": "Coordinate Plane & Signed Change",
+      "title": "Dividing Integers",
       "duration": "55–70 minutes",
       "objectives": [
-        "Plot and identify ordered pairs in all four quadrants.",
-        "Interpret signs of x- and y-coordinates.",
-        "Describe horizontal and vertical signed change.",
-        "Use coordinates to model location, routes, and data."
+        "Divide integers accurately using sign rules.",
+        "Use multiplication as an inverse check for integer division.",
+        "Explain why division by zero is undefined.",
+        "Solve contextual problems involving signed rates and equal sharing."
       ],
       "vocab_ids": [
         "coordinate-plane",
@@ -171,13 +172,13 @@
     {
       "id": "l08",
       "number": 8,
-      "title": "Multi-Step Integer Expressions & Applications",
+      "title": "Coordinate Plane & Multi-Step Integer Applications",
       "duration": "60–75 minutes",
       "objectives": [
-        "Evaluate multi-step expressions containing integers.",
-        "Apply order of operations with signed values.",
-        "Model and solve multi-stage contextual problems.",
-        "Estimate the sign and approximate magnitude before calculating."
+        "Plot and interpret ordered pairs in all four quadrants.",
+        "Describe horizontal and vertical signed change.",
+        "Evaluate multi-step expressions using all four integer operations.",
+        "Model and solve multi-stage contextual and coordinate problems."
       ],
       "vocab_ids": [
         "net-change",
@@ -216,8 +217,11 @@
   "assessment": {
     "title": "Unit 2 Mastery Check",
     "file": "assessment/mastery-check.html",
+    "threshold": 80,
     "questions": 24,
-    "threshold": 75
+    "version": "2.0",
+    "evidence_model": "domain + skill + item outcome; learner-facing result stays local",
+    "program_signal": "privacy-safe curriculum-quality summary generated locally; no transmission is implemented in this unit"
   },
   "project": {
     "title": "Signed Data Investigation",
@@ -232,5 +236,52 @@
       "title": "Family Guide",
       "file": "family-guide.html"
     }
-  ]
+  ],
+  "integrated_learning": {
+    "status": "introduced",
+    "project": "projects/signed-data-investigation.html",
+    "principles": [
+      "Academic tools are contextual supports, not substitutes for mathematical reasoning.",
+      "Differentiated pathways support learning without labeling students.",
+      "Project evidence combines signed data, operations, coordinates, reasoning, and communication.",
+      "Student project records remain local unless deliberately exported."
+    ],
+    "tools": [
+      {
+        "id": "scholar-workbench",
+        "role": "show-your-work",
+        "status": "shared-protool-planned"
+      },
+      {
+        "id": "khaemenes-scientific-calculator",
+        "role": "calculation-verification",
+        "status": "resource-hub"
+      },
+      {
+        "id": "prose",
+        "role": "formal-writing",
+        "status": "resource-hub"
+      },
+      {
+        "id": "evidence-citation-studio",
+        "role": "source-and-evidence-record",
+        "status": "resource-hub"
+      }
+    ]
+  },
+  "entry_gateway": {
+    "file": "gateway/index.html",
+    "title": "NAIB Mathematics Gateway",
+    "position": "beginning-of-unit-02",
+    "authority": "NAIB advises; parent/guardian decides placement",
+    "diagnostic_questions": 12,
+    "routes": [
+      "Targeted Preparatory Mathematics Bridge",
+      "Pre-Algebra · Unit 02",
+      "Accelerated Pre-Algebra",
+      "Higher-Level Mathematics Readiness Check"
+    ],
+    "privacy": "Gateway record is local unless deliberately exported. Program signal excludes parent choice and family note.",
+    "routing_status": "advisory-v1; shared preparatory/acceleration destinations to be connected at course level"
+  }
 }
