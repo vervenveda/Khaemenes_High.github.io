@@ -233,7 +233,7 @@ $("deleteStudent").onclick=()=>{let s=student(); if(!s)return; if(!confirm(`Dele
 $("demo").onclick=()=>{addStudent("Demo Student"); let s=student(); for(let i=1;i<=3;i++){let r=weekRec(s,i); ["Monday","Tuesday","Wednesday"].forEach(d=>r.lessons[d]=true); r.assignments[0]=true; r.quiz.best=[90,78,86][i-1]; r.quiz.attempts.push({date:new Date().toISOString(),score:r.quiz.best});} save(); render();};
 if(!state.students.length)addStudent("First Student"); else render();
 </script>
-  <script src="assets/grade10-socialstudies-unified-upgrade.js"></script>
+ <script src="assets/grade10-socialstudies-unified-upgrade.js"></script>
 <script src="assets/socialstudies-beta-bridge.js"></script>
 </body>
 </html>
