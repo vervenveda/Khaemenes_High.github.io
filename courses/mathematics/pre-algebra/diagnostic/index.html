@@ -1150,7 +1150,7 @@
         <article class="card result-summary">
           <div class="result-heading">
             <div class="score-block">
-              <div class="score" id="score">0 / 18</div>
+              <div class="score" id="score">0 / 20</div>
               <small id="scorePercent">0% correct</small>
             </div>
 
@@ -1163,6 +1163,9 @@
           </div>
 
           <div class="strand-grid" id="strandGrid"></div>
+<p class="notice" style="margin-top:14px">
+  Strand labels are screening signals, not diagnoses. A single missed item is never treated as proof that an entire domain is weak.
+</p>
         </article>
 
         <article class="card targeted-review" id="targetedReview">
@@ -1207,9 +1210,7 @@
   (() => {
     "use strict";
 
-    const QUESTIONS = [{"id":"q01","domain":"Number sense","prompt":"Evaluate: 18 − 3 × 4","options":["60","6","12","24"],"answer":1,"explanation":"Multiply first: 3 × 4 = 12. Then 18 − 12 = 6."},{"id":"q02","domain":"Factors","prompt":"Which number is a factor of 24?","options":["5","7","6","11"],"answer":2,"explanation":"24 ÷ 6 = 4 with no remainder."},{"id":"q03","domain":"Prime numbers","prompt":"Which number is prime?","options":["21","27","29","39"],"answer":2,"explanation":"29 has exactly two positive factors: 1 and 29."},{"id":"q04","domain":"Integers","prompt":"Evaluate: −7 + 12","options":["−19","−5","5","19"],"answer":2,"explanation":"Starting at −7 and moving 12 units right lands at 5."},{"id":"q05","domain":"Absolute value","prompt":"What is |−9|?","options":["−9","0","9","18"],"answer":2,"explanation":"Absolute value is distance from zero, so |−9| = 9."},{"id":"q06","domain":"Fractions","prompt":"Evaluate: 3/4 + 1/8","options":["4/12","4/8","7/8","1"],"answer":2,"explanation":"3/4 = 6/8, and 6/8 + 1/8 = 7/8."},{"id":"q07","domain":"Decimals","prompt":"Evaluate: 2.5 × 0.4","options":["0.1","1","10","100"],"answer":1,"explanation":"25 × 4 = 100, and two decimal places give 1.00."},{"id":"q08","domain":"Ratios","prompt":"A recipe uses 3 cups of rice for 5 people. At the same rate, how many cups are needed for 20 people?","options":["8","10","12","15"],"answer":2,"explanation":"20 people is four times 5, so 3 × 4 = 12 cups."},{"id":"q09","domain":"Percent","prompt":"What is 15% of 80?","options":["8","10","12","15"],"answer":2,"explanation":"0.15 × 80 = 12."},{"id":"q10","domain":"Exponents","prompt":"Evaluate: 2³ × 2²","options":["16","32","64","8"],"answer":1,"explanation":"2³ × 2² = 8 × 4 = 32."},{"id":"q11","domain":"Expressions","prompt":"Simplify: 3x + 2x","options":["5","5x","6x","x⁵"],"answer":1,"explanation":"The terms are alike, so add the coefficients: 3 + 2 = 5."},{"id":"q12","domain":"Equations","prompt":"Solve: x + 7 = 19","options":["10","11","12","26"],"answer":2,"explanation":"Subtract 7 from both sides: x = 12."},{"id":"q13","domain":"Equations","prompt":"Solve: 3x = 21","options":["6","7","18","63"],"answer":1,"explanation":"Divide both sides by 3: x = 7."},{"id":"q14","domain":"Inequalities","prompt":"Solve: x − 4 > 2","options":["x > 6","x < 6","x > −2","x < −2"],"answer":0,"explanation":"Add 4 to both sides: x > 6."},{"id":"q15","domain":"Coordinates","prompt":"In which quadrant is the point (−3, 4)?","options":["I","II","III","IV"],"answer":1,"explanation":"A negative x-coordinate and positive y-coordinate place the point in Quadrant II."},{"id":"q16","domain":"Linear relationships","prompt":"For y = 2x + 1, what is y when x = 3?","options":["5","6","7","9"],"answer":2,"explanation":"Substitute x = 3: y = 2(3) + 1 = 7."},{"id":"q17","domain":"Geometry","prompt":"A triangle has base 10 units and height 6 units. What is its area?","options":["16","30","60","120"],"answer":1,"explanation":"Area = 1/2 × base × height = 1/2 × 10 × 6 = 30."},{"id":"q18","domain":"Statistics","prompt":"What is the mean of 4, 7, 9, and 10?","options":["7","7.5","8","8.5"],"answer":1,"explanation":"The sum is 30, and 30 ÷ 4 = 7.5."}];
-
-    const STRANDS = {
+    const QUESTIONS=[{"id":"q01","domain":"Number sense","prompt":"Evaluate: 18 − 3 × 4","options":["60","6","12","24"],"answer":1,"explanation":"Multiply first: 3 × 4 = 12. Then 18 − 12 = 6."},{"id":"q02","domain":"Factors","prompt":"Which number is a factor of 24?","options":["5","7","11","6"],"answer":3,"explanation":"24 ÷ 6 = 4 with no remainder."},{"id":"q03","domain":"Prime numbers","prompt":"Which number is prime?","options":["29","21","27","39"],"answer":0,"explanation":"29 has exactly two positive factors: 1 and 29."},{"id":"q04","domain":"Integers","prompt":"Evaluate: −7 + 12","options":["−19","−5","5","19"],"answer":2,"explanation":"Starting at −7 and moving 12 units right lands at 5."},{"id":"q05","domain":"Absolute value","prompt":"What is |−9|?","options":["−9","0","9","18"],"answer":2,"explanation":"Absolute value is distance from zero, so |−9| = 9."},{"id":"q06","domain":"Fractions","prompt":"Evaluate: 3/4 + 1/8","options":["7/8","4/12","4/8","1"],"answer":0,"explanation":"3/4 = 6/8, and 6/8 + 1/8 = 7/8."},{"id":"q07","domain":"Decimals","prompt":"Evaluate: 2.5 × 0.4","options":["0.1","10","100","1"],"answer":3,"explanation":"25 × 4 = 100, and two decimal places give 1.00."},{"id":"q08","domain":"Ratios","prompt":"A recipe uses 3 cups of rice for 5 people. At the same rate, how many cups are needed for 20 people?","options":["8","12","10","15"],"answer":1,"explanation":"20 people is four times 5, so 3 × 4 = 12 cups."},{"id":"q09","domain":"Percent","prompt":"What is 15% of 80?","options":["12","8","10","15"],"answer":0,"explanation":"0.15 × 80 = 12."},{"id":"q10","domain":"Exponents","prompt":"Evaluate: 2³ × 2²","options":["16","64","32","8"],"answer":2,"explanation":"2³ × 2² = 8 × 4 = 32."},{"id":"q11","domain":"Expressions","prompt":"Simplify: 3x + 2x","options":["5","5x","6x","x⁵"],"answer":1,"explanation":"The terms are alike, so add the coefficients: 3 + 2 = 5."},{"id":"q12","domain":"Equations","prompt":"Solve: x + 7 = 19","options":["10","11","26","12"],"answer":3,"explanation":"Subtract 7 from both sides: x = 12."},{"id":"q13","domain":"Equations","prompt":"Solve: 3x = 21","options":["6","18","63","7"],"answer":3,"explanation":"Divide both sides by 3: x = 7."},{"id":"q14","domain":"Inequalities","prompt":"Solve: x − 4 > 2","options":["x < 6","x > 6","x > −2","x < −2"],"answer":1,"explanation":"Add 4 to both sides: x > 6."},{"id":"q15","domain":"Coordinates","prompt":"In which quadrant is the point (−3, 4)?","options":["I","III","II","IV"],"answer":2,"explanation":"A negative x-coordinate and positive y-coordinate place the point in Quadrant II."},{"id":"q16","domain":"Linear relationships","prompt":"For y = 2x + 1, what is y when x = 3?","options":["7","5","6","9"],"answer":0,"explanation":"Substitute x = 3: y = 2(3) + 1 = 7."},{"id":"q17","domain":"Geometry","prompt":"A triangle has base 10 units and height 6 units. What is its area?","options":["16","30","60","120"],"answer":1,"explanation":"Area = 1/2 × base × height = 1/2 × 10 × 6 = 30."},{"id":"q18","domain":"Statistics","prompt":"What is the mean of 4, 7, 9, and 10?","options":["7.5","7","8","8.5"],"answer":0,"explanation":"The sum is 30, and 30 ÷ 4 = 7.5."},{"id":"q19","domain":"Probability","prompt":"A bag contains 3 red marbles and 5 blue marbles. What is the probability of drawing a red marble at random?","options":["5/8","3/5","8/3","3/8"],"answer":3,"explanation":"There are 3 favorable outcomes out of 8 total marbles, so the probability is 3/8."},{"id":"q20","domain":"Measurement","prompt":"A rectangular room is 8 metres long and 5 metres wide. What is its area?","options":["13 m²","26 m²","40 m²","80 m²"],"answer":2,"explanation":"Area = length × width = 8 × 5 = 40 square metres."}]; const STRANDS = {
       "Number Foundations": {
         domains:["Number sense","Factors","Prime numbers","Integers","Absolute value","Exponents"],
         description:"Order of operations, factors, primes, signed numbers, absolute value, and exponent foundations.",
@@ -1527,25 +1528,30 @@
     }
 
     function recommendationFor(score) {
-      if (score <= 8) {
-        return {
-          title:"Foundation pathway recommended",
-          message:"Begin with targeted number, rational-number, and equation support. Move forward by demonstrated skill rather than by the overall score alone."
-        };
-      }
-      if (score <= 14) {
-        return {
-          title:"Core pathway with targeted review",
-          message:"The diagnostic shows useful readiness for the Core sequence. Review the identified strands while beginning the course."
-        };
-      }
-      return {
-        title:"Strong Core readiness",
-        message:"The result supports beginning the Core pathway. Extended challenges may be used in the strongest strands while small-sample areas are confirmed through coursework."
-      };
-    }
-
-    function strandForDomain(domain) {
+  if (score <= 9) {
+    return {
+      title:"Foundation support recommended",
+      message:"Begin with targeted foundation support and Unit 01 evidence. This diagnostic does not place or hold back a learner; use coursework to confirm the skills that need strengthening."
+    };
+  }
+  if (score <= 15) {
+    return {
+      title:"Core pathway with targeted review",
+      message:"The diagnostic supports beginning the Core Pre-Algebra sequence while reviewing the identified strands. Continue by demonstrated mastery rather than by the overall score alone."
+    };
+  }
+  if (score <= 18) {
+    return {
+      title:"Strong Core readiness",
+      message:"The result supports beginning the Core pathway with challenge work in stronger strands. Complete Unit 01 evidence and use the Unit 02 readiness bridge to decide whether acceleration should be considered."
+    };
+  }
+  return {
+    title:"Advanced-readiness signal",
+    message:"This short diagnostic shows unusually strong prerequisite readiness. Complete Unit 01 evidence, then use the Unit 02 readiness bridge and additional higher-level evidence before choosing an accelerated or Algebra I pathway. The diagnostic itself does not make placement decisions."
+  };
+}
+function strandForDomain(domain) {
       return Object.entries(STRANDS).find(([,strand]) =>
         strand.domains.includes(domain)
       )?.[0] || "Other";
@@ -1575,11 +1581,12 @@
     }
 
     function strandLevel(correct, total) {
-      const percent = total ? (correct / total) * 100 : 0;
-      if (percent >= 80) return "secure on this snapshot";
-      if (percent >= 50) return "developing / confirm with coursework";
-      return "priority review";
-    }
+  const percent = total ? (correct / total) * 100 : 0;
+  if (total === 1) return correct === 1 ? "positive signal / confirm with coursework" : "possible review signal / confirm with coursework";
+  if (percent >= 80) return "secure on this snapshot";
+  if (percent >= 50) return "developing / confirm with coursework";
+  return "priority review";
+}
 
     function renderStrands(strandResults) {
       elements.strandGrid.innerHTML = Object.values(strandResults).map(strand => {
@@ -1835,5 +1842,16 @@
     updateResumeState();
   })();
   </script>
+
+<!--
+  Khaemenes Pre-Algebra Diagnostic v2.1
+  Final audit repair:
+  - 20 questions
+  - 5/5/5/5 answer-position balance
+  - probability + measurement breadth
+  - single-item strand evidence softened
+  - open-age advisory wording
+  - advanced-readiness signal routes to Unit 02 bridge rather than automatic placement
+-->
 </body>
 </html>
