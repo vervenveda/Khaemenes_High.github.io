@@ -17,8 +17,11 @@
       "Sampling methods, graph design, and denominators can strengthen or distort a claim.",
       "Evidence-aware decisions state sources, assumptions, uncertainty, possible bias, and limitations."
     ],
-    "mastery_threshold": 75,
-    "progress_key": "khaemenes-prealgebra-unit12-progress-v1"
+    "mastery_threshold": 80,
+    "progress_key": "khaemenes-prealgebra-unit12-progress-v1",
+    "architecture": "Open-age integrated Pre-Algebra learning: data questions + populations/samples + displays + center + variability/outliers + distribution comparison/display integrity + probability + compound probability/simulation + sampling/bias/association/evidence + mastery",
+    "tool_integration": "Calculator, spreadsheet/data tools, simulation games, and graphing resources may support computation and exploration after students identify variables, data provenance, assumptions, and the evidence claim being tested.",
+    "readiness_note": "Unit 12 develops statistical literacy, probability reasoning, and evidence-aware decision skills for learners of any age. Advancement is based on demonstrated mastery, not grade identity."
   },
   "lessons": [
     {
@@ -143,12 +146,12 @@
         },
         {
           "domain": "Population",
-          "prompt": "A survey studies all Pre-Algebra learners in an academy. The population is:",
+          "prompt": "A survey studies all Open-Age students in a school. The population is:",
           "options": [
             "only the students who answer",
             "the survey questions",
-            "one Pre-Algebra class",
-            "all Pre-Algebra learners in that academy"
+            "one Open-Age class",
+            "all Open-Age students in that school"
           ],
           "answer": 3,
           "explanation": "The population is the entire group of interest."
@@ -715,7 +718,7 @@
           "domain": "Denominator",
           "prompt": "Group A has 20 successes out of 40; Group B has 30 out of 100. Which rate is larger?",
           "options": [
-            "Group B, 70%",
+            "Group B, 80%",
             "they are equal",
             "Group A, 50%",
             "cannot compare percentages"
@@ -1195,7 +1198,24 @@
   },
   "assessment": {
     "mastery": "assessment/mastery-check.html",
-    "answer_key": "assessment/answer-key.json"
+    "answer_key": "assessment/answer-key.json",
+    "threshold": 80
   },
-  "project": "projects/community-data-evidence-investigation.html"
+  "project": "projects/community-data-evidence-investigation.html",
+  "printables": {
+    "hub": "worksheets/index.html",
+    "lesson_worksheets": [
+      "worksheets/lesson-01-worksheet.html",
+      "worksheets/lesson-02-worksheet.html",
+      "worksheets/lesson-03-worksheet.html",
+      "worksheets/lesson-04-worksheet.html",
+      "worksheets/lesson-05-worksheet.html",
+      "worksheets/lesson-06-worksheet.html",
+      "worksheets/lesson-07-worksheet.html",
+      "worksheets/lesson-08-worksheet.html"
+    ],
+    "cumulative_review": "worksheets/unit-12-cumulative-review.html",
+    "project_planner": "worksheets/data-decision-investigation.html",
+    "teacher_answer_key": "worksheets/teacher-answer-key.html"
+  }
 }

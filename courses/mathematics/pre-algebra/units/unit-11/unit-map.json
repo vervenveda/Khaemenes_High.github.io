@@ -17,8 +17,11 @@
       "Right triangles and coordinates support distance, construction, navigation, and verification.",
       "Geometric models are trustworthy only when constraints, assumptions, tolerances, and limitations are explicit."
     ],
-    "mastery_threshold": 75,
-    "progress_key": "khaemenes-prealgebra-unit11-progress-v1"
+    "mastery_threshold": 80,
+    "progress_key": "khaemenes-prealgebra-unit11-progress-v1",
+    "architecture": "Open-age integrated Pre-Algebra learning: measurement + angles/polygons + perimeter/circumference + area + scale/similarity + right triangles/distance + surface area/volume + coordinate design/error + mastery",
+    "tool_integration": "Scientific calculator, geometry games/labs, drawing/tracing tools, and CAD-style resources may support construction and verification after students label diagrams, show formulas, preserve units, and explain constraints.",
+    "readiness_note": "Unit 11 develops practical geometry and measurement reasoning for learners of any age. Advancement is based on demonstrated mastery, not grade identity."
   },
   "lessons": [
     {
@@ -1187,7 +1190,24 @@
   },
   "assessment": {
     "mastery": "assessment/mastery-check.html",
-    "answer_key": "assessment/answer-key.json"
+    "answer_key": "assessment/answer-key.json",
+    "threshold": 80
   },
-  "project": "projects/accessible-space-scale-design-investigation.html"
+  "project": "projects/accessible-space-scale-design-investigation.html",
+  "printables": {
+    "hub": "worksheets/index.html",
+    "lesson_worksheets": [
+      "worksheets/lesson-01-worksheet.html",
+      "worksheets/lesson-02-worksheet.html",
+      "worksheets/lesson-03-worksheet.html",
+      "worksheets/lesson-04-worksheet.html",
+      "worksheets/lesson-05-worksheet.html",
+      "worksheets/lesson-06-worksheet.html",
+      "worksheets/lesson-07-worksheet.html",
+      "worksheets/lesson-08-worksheet.html"
+    ],
+    "cumulative_review": "worksheets/unit-11-cumulative-review.html",
+    "project_planner": "worksheets/geometry-design-lab.html",
+    "teacher_answer_key": "worksheets/teacher-answer-key.html"
+  }
 }
