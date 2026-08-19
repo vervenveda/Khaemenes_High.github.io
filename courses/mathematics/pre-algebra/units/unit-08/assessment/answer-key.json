@@ -12,7 +12,7 @@
     {
       "number": 2,
       "domain": "Check",
-      "answer_index": 0,
+      "answer_index": 3,
       "answer": "Yes",
       "explanation": "15−4=11."
     },
@@ -26,14 +26,14 @@
     {
       "number": 4,
       "domain": "Subtraction",
-      "answer_index": 1,
+      "answer_index": 2,
       "answer": "25",
       "explanation": "Add 7."
     },
     {
       "number": 5,
       "domain": "Multiplication",
-      "answer_index": 0,
+      "answer_index": 2,
       "answer": "−9",
       "explanation": "Divide by −6."
     },
@@ -47,7 +47,7 @@
     {
       "number": 7,
       "domain": "Fraction coefficient",
-      "answer_index": 1,
+      "answer_index": 3,
       "answer": "12",
       "explanation": "Multiply by 4/7."
     },
@@ -68,7 +68,7 @@
     {
       "number": 10,
       "domain": "Distribution",
-      "answer_index": 0,
+      "answer_index": 2,
       "answer": "7",
       "explanation": "x+2=9."
     },
@@ -82,7 +82,7 @@
     {
       "number": 12,
       "domain": "Like terms",
-      "answer_index": 1,
+      "answer_index": 3,
       "answer": "5",
       "explanation": "5x=25."
     },
@@ -110,14 +110,14 @@
     {
       "number": 16,
       "domain": "Contradiction",
-      "answer_index": 2,
+      "answer_index": 0,
       "answer": "no solution",
       "explanation": "7=−1 is false."
     },
     {
       "number": 17,
       "domain": "Formula",
-      "answer_index": 0,
+      "answer_index": 1,
       "answer": "t=d/r",
       "explanation": "Divide by r."
     },
@@ -131,14 +131,14 @@
     {
       "number": 19,
       "domain": "Formula",
-      "answer_index": 0,
+      "answer_index": 3,
       "answer": "(y−b)/x",
       "explanation": "Subtract b and divide by x."
     },
     {
       "number": 20,
       "domain": "Context",
-      "answer_index": 1,
+      "answer_index": 2,
       "answer": "9",
       "explanation": "9m=81."
     },
@@ -152,14 +152,14 @@
     {
       "number": 22,
       "domain": "Error analysis",
-      "answer_index": 1,
+      "answer_index": 3,
       "answer": "−6x+15",
       "explanation": "Distribute −3 to both terms."
     },
     {
       "number": 23,
       "domain": "Constraint",
-      "answer_index": 1,
+      "answer_index": 0,
       "answer": "x≠4",
       "explanation": "Denominator cannot be zero."
     },
@@ -171,5 +171,7 @@
       "explanation": "Transparent reasoning includes conditions and verification."
     }
   ],
-  "note": "Public formative answer key; use protected alternate forms for secure assessment."
+  "note": "Public formative answer key; use protected alternate forms for secure assessment.",
+  "threshold": 80,
+  "assessment_note": "24-question cumulative mastery check; at least 20 correct is required to meet the 80% mastery standard."
 }
