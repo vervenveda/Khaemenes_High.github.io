@@ -16,8 +16,11 @@
       "Financial calculations must name the base, order, time period, and fees.",
       "Responsible decisions compare total outcomes and communicate assumptions and limitations."
     ],
-    "mastery_threshold": 75,
-    "progress_key": "khaemenes-prealgebra-unit05-progress-v1"
+    "mastery_threshold": 80,
+    "progress_key": "khaemenes-prealgebra-unit05-progress-v1",
+    "architecture": "Open-age integrated Pre-Algebra learning: instruction + reasoning + practice + application + financial literacy + tools + reflection + mastery",
+    "tool_integration": "Use calculators and Verve Arithmetic as optional reasoning/checking tools after students establish a mathematical model.",
+    "readiness_note": "Unit 05 develops percent and financial reasoning for learners of any age. Progress is based on demonstrated mastery, not grade identity."
   },
   "lessons": [
     {
@@ -234,7 +237,7 @@
     "title": "Unit 5 Mastery Check",
     "file": "assessment/mastery-check.html",
     "questions": 24,
-    "threshold": 75
+    "threshold": 80
   },
   "project": {
     "title": "Consumer Financial Decision Investigation",
@@ -248,6 +251,29 @@
     {
       "title": "Family Guide",
       "file": "family-guide.html"
+    }
+  ],
+  "printables": {
+    "hub": "worksheets/index.html",
+    "lesson_worksheets": [
+      "worksheets/lesson-01-worksheet.html",
+      "worksheets/lesson-02-worksheet.html",
+      "worksheets/lesson-03-worksheet.html",
+      "worksheets/lesson-04-worksheet.html",
+      "worksheets/lesson-05-worksheet.html",
+      "worksheets/lesson-06-worksheet.html",
+      "worksheets/lesson-07-worksheet.html",
+      "worksheets/lesson-08-worksheet.html"
+    ],
+    "cumulative_review": "worksheets/unit-05-cumulative-review.html",
+    "project_planner": "worksheets/consumer-financial-decision-planner.html",
+    "teacher_answer_key": "worksheets/teacher-answer-key.html"
+  },
+  "tools": [
+    {
+      "title": "Verve Arithmetic",
+      "file": "Unit_05_Percent_Financial_Mathematics_Change_Verve_Arithmetic_index.html",
+      "purpose": "Optional percent and arithmetic exploration/checking tool."
     }
   ]
 }
