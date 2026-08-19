@@ -1,0 +1,23 @@
+name: Pre-Algebra Component Validation
+
+on:
+  pull_request:
+    paths:
+      - "courses/mathematics/pre-algebra/**"
+      - ".github/workflows/prealgebra-component-validation.yml"
+  push:
+    paths:
+      - "courses/mathematics/pre-algebra/**"
+      - ".github/workflows/prealgebra-component-validation.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Validate Pre-Algebra component hashes
+        run: node courses/mathematics/pre-algebra/tools/validate-components.mjs
