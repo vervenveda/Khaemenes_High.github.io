@@ -1,8 +1,24 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "course_id": "KH-MATH-PA",
   "course_title": "Khaemenes Global Pre-Algebra",
   "duration_weeks": 36,
+  "assessment_policy": {
+    "classification": "cumulative mastery assessment",
+    "administration_modes": [
+      {
+        "id": "independent_mastery",
+        "label": "Independent Mastery",
+        "purpose": "Practice, correction, retesting, and progress evidence"
+      },
+      {
+        "id": "supervised_record",
+        "label": "Supervised Administration",
+        "purpose": "Consistent administration for a retained course record"
+      }
+    ],
+    "record_guidance": "The parent, teacher, or program administrator determines the official course grade and any credit awarded."
+  },
   "assessments": [
     {
       "id": "KH-MATH-PA-MIDTERM-U01-U07",
@@ -14,7 +30,7 @@
     },
     {
       "id": "KH-MATH-PA-FINAL-36W",
-      "title": "Pre-Algebra 36-Week Final Examination",
+      "title": "Pre-Algebra 36-Week Final Cumulative Assessment",
       "scope": "Units 01-13 / 36 weeks",
       "questions": 80,
       "path": "final-exam-36-weeks.html",
@@ -26,6 +42,6 @@
     "No equivalent duplicate choices",
     "No subjective best-answer items without a defined criterion",
     "Conventions stated when material",
-    "Balanced answer positions"
+    "Answer-choice presentation is designed to discourage pattern guessing"
   ]
 }
