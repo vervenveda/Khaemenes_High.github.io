@@ -16,11 +16,8 @@
       "Irrational roots can be located and estimated using nearby perfect powers.",
       "Scientific notation combines a coefficient with a power of ten to communicate scale efficiently and precisely."
     ],
-    "mastery_threshold": 80,
-    "progress_key": "khaemenes-prealgebra-unit06-progress-v1",
-    "architecture": "Open-age integrated Pre-Algebra learning: powers + exponent structure + roots + irrational estimates + scientific notation + scale applications + tools + reflection + mastery",
-    "tool_integration": "Scientific calculator use is optional for verification, approximation, and scale exploration after students first record the mathematical model or reasoning.",
-    "readiness_note": "Unit 06 is open-age Pre-Algebra. Progress is based on demonstrated mastery and readiness, not a grade-level label."
+    "mastery_threshold": 75,
+    "progress_key": "khaemenes-prealgebra-unit06-progress-v1"
   },
   "lessons": [
     {
@@ -212,25 +209,10 @@
     "title": "Unit 6 Mastery Check",
     "file": "assessment/mastery-check.html",
     "question_count": 24,
-    "threshold": 80
+    "threshold": 75
   },
   "project": {
     "title": "Scale of the Universe Investigation",
     "file": "projects/scale-of-universe-investigation.html"
-  },
-  "printables": {
-    "hub": "worksheets/index.html",
-    "lesson_worksheets": [
-      "worksheets/lesson-01-worksheet.html",
-      "worksheets/lesson-02-worksheet.html",
-      "worksheets/lesson-03-worksheet.html",
-      "worksheets/lesson-04-worksheet.html",
-      "worksheets/lesson-05-worksheet.html",
-      "worksheets/lesson-06-worksheet.html",
-      "worksheets/lesson-07-worksheet.html"
-    ],
-    "cumulative_review": "worksheets/unit-06-cumulative-review.html",
-    "project_planner": "worksheets/powers-roots-scale-investigation-planner.html",
-    "teacher_answer_key": "worksheets/teacher-answer-key.html"
   }
 }

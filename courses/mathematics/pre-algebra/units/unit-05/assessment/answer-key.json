@@ -14,14 +14,14 @@
     {
       "number": 2,
       "domain": "Conversion",
-      "answer_index": 3,
+      "answer_index": 2,
       "answer": "37.5%",
       "explanation": "3÷8=0.375."
     },
     {
       "number": 3,
       "domain": "Benchmark",
-      "answer_index": 0,
+      "answer_index": 2,
       "answer": "about 120",
       "explanation": "60% of 200 is 120."
     },
@@ -35,35 +35,35 @@
     {
       "number": 5,
       "domain": "Percent of quantity",
-      "answer_index": 2,
+      "answer_index": 1,
       "answer": "30",
       "explanation": "0.0075×4000=30."
     },
     {
       "number": 6,
       "domain": "Find percent",
-      "answer_index": 0,
+      "answer_index": 1,
       "answer": "35%",
       "explanation": "84÷240=0.35."
     },
     {
       "number": 7,
       "domain": "Find whole",
-      "answer_index": 3,
+      "answer_index": 2,
       "answer": "250",
       "explanation": "45÷0.18=250."
     },
     {
       "number": 8,
       "domain": "Percent increase",
-      "answer_index": 1,
+      "answer_index": 0,
       "answer": "15%",
       "explanation": "48÷320=15%."
     },
     {
       "number": 9,
       "domain": "Percent decrease",
-      "answer_index": 0,
+      "answer_index": 1,
       "answer": "16%",
       "explanation": "120÷750=16%."
     },
@@ -77,21 +77,21 @@
     {
       "number": 11,
       "domain": "Reverse percent",
-      "answer_index": 1,
+      "answer_index": 3,
       "answer": "200",
       "explanation": "140÷0.70=200."
     },
     {
       "number": 12,
       "domain": "Discount",
-      "answer_index": 3,
+      "answer_index": 1,
       "answer": "$169",
       "explanation": "260×0.65=169."
     },
     {
       "number": 13,
       "domain": "Tax",
-      "answer_index": 3,
+      "answer_index": 2,
       "answer": "$135",
       "explanation": "Tax is 10; total 135."
     },
@@ -112,7 +112,7 @@
     {
       "number": 16,
       "domain": "Markup",
-      "answer_index": 0,
+      "answer_index": 2,
       "answer": "$93.60",
       "explanation": "72×1.30=93.60."
     },
@@ -133,47 +133,44 @@
     {
       "number": 19,
       "domain": "Simple interest",
-      "answer_index": 3,
+      "answer_index": 2,
       "answer": "$360",
       "explanation": "2400×0.05×3=360."
     },
     {
       "number": 20,
       "domain": "Time conversion",
-      "answer_index": 2,
+      "answer_index": 1,
       "answer": "1.25 years",
       "explanation": "15÷12=1.25."
     },
     {
       "number": 21,
       "domain": "Fees and rates",
-      "answer_index": 2,
+      "answer_index": 0,
       "answer": "3% simple interest plus $25 fee",
       "explanation": "Option A 90+25=115; Option B 120."
     },
     {
       "number": 22,
       "domain": "Percentage points",
-      "answer_index": 3,
+      "answer_index": 0,
       "answer": "6 percentage points",
       "explanation": "53−47=6."
     },
     {
       "number": 23,
       "domain": "Repeated change",
-      "answer_index": 0,
+      "answer_index": 1,
       "answer": "$985.60",
       "explanation": "1000×1.12×0.88=985.60."
     },
     {
       "number": 24,
       "domain": "Decision quality",
-      "answer_index": 1,
+      "answer_index": 2,
       "answer": "rates, fees, time, totals, and assumptions",
       "explanation": "A defensible decision uses full terms and assumptions."
     }
-  ],
-  "mastery_threshold": 80,
-  "threshold": 80,
-  "assessment_note": "24-question cumulative mastery check; at least 20 correct is required to meet the 80% mastery standard."
+  ]
 }
