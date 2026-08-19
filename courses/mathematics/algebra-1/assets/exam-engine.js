@@ -1,15 +1,32 @@
-
 (()=>{
 "use strict";
 const C=window.EXAM_CONFIG,$=s=>document.querySelector(s);
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function loadDraft(){try{return JSON.parse(localStorage.getItem(C.storage_key))||{answers:{}}}catch{return{answers:{}}}}
 let draft=loadDraft();
+
+/*
+  Present choices in a fresh order while keeping each radio value tied to
+  the option's original index. Saved drafts therefore remain valid even if
+  the visible order changes on a later visit.
+*/
+function shuffledOptions(q){
+ const items=q.options.map((text,original)=>({text,original}));
+ for(let i=items.length-1;i>0;i--){
+   const j=Math.floor(Math.random()*(i+1));
+   [items[i],items[j]]=[items[j],items[i]];
+ }
+ return items;
+}
+
 function render(){
  const host=$("#questionHost");
- host.innerHTML=C.questions.map((q,i)=>`<article class="question"><fieldset><legend>${i+1}. ${esc(q.prompt)}</legend>
- <div class="options">${q.options.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}" ${draft.answers[i]===j?"checked":""}><span>${esc(o)}</span></label>`).join("")}</div>
- <div class="feedback" id="fb${i}" hidden></div></fieldset></article>`).join("");
+ host.innerHTML=C.questions.map((q,i)=>{
+   const options=shuffledOptions(q);
+   return `<article class="question"><fieldset><legend>${i+1}. ${esc(q.prompt)}</legend>
+ <div class="options">${options.map(o=>`<label class="option"><input type="radio" name="q${i}" value="${o.original}" ${draft.answers[i]===o.original?"checked":""}><span>${esc(o.text)}</span></label>`).join("")}</div>
+ <div class="feedback" id="fb${i}" hidden></div></fieldset></article>`;
+ }).join("");
  host.onchange=e=>{
    const m=e.target.name?.match(/^q(\d+)$/);
    if(m){draft.answers[m[1]]=Number(e.target.value);updateProgress()}
