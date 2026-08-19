@@ -94,7 +94,6 @@
     }
     .skip:focus{top:14px}
 
-    /* Corrected non-clipping campus header */
     .site-header{
       position:sticky;
       top:0;
@@ -215,7 +214,6 @@
       font:400 18px/1 var(--math);
     }
 
-    /* Breadcrumb and section navigation */
     .course-breadcrumb{
       width:100%;
       border-bottom:1px solid var(--line);
@@ -269,7 +267,6 @@
     }
     .quick-nav-inner a:hover{border-color:var(--line);background:#fff}
 
-    /* Hero */
     .hero{
       min-height:calc(100svh - 122px);
       display:grid;
@@ -378,7 +375,6 @@
       background:var(--bg2);
     }
 
-    /* Intro and readiness principles */
     .readiness-grid{
       grid-template-columns:repeat(4,minmax(0,1fr));
       gap:11px;
@@ -436,7 +432,6 @@
       text-align:left;
     }
 
-    /* Diagnostic engine */
     #diagnostic{
       border-block:1px solid var(--line);
       background:#e7e3db;
@@ -581,7 +576,6 @@
       text-align:center;
     }
 
-    /* Review before submission */
     #review{
       border-block:1px solid var(--line);
       background:#e7e3db;
@@ -631,7 +625,6 @@
     .review-status-button.unanswered .answer-state{color:#8a3333}
     .review-status-button.unanswered{border-color:#8a3333;background:#fff7f5}
 
-    /* Results */
     #results{
       background:
         linear-gradient(rgba(255,255,255,.7),rgba(245,242,235,.82)),
@@ -830,7 +823,6 @@
       margin-top:28px;
     }
 
-    /* Footer */
     .footer{
       border-top:1px solid var(--line);
       color:#ddd;
@@ -1004,7 +996,7 @@
   <main id="main">
     <section class="hero" id="intro">
       <div class="wrap">
-        <p class="eyebrow">18 Questions · Untimed · Local-Only Results</p>
+        <p class="eyebrow">20 Questions · Untimed · Local-Only Results</p>
         <h1>Mathematics Readiness Diagnostic</h1>
         <p class="lead">A low-pressure readiness snapshot across number foundations,
           rational and proportional reasoning, algebra, functions, geometry, and
@@ -1033,15 +1025,15 @@
         <div class="section-head">
           <p class="eyebrow">Readiness snapshot</p>
           <h2>What this diagnostic can—and cannot—show.</h2>
-          <p>The report groups the original 18 questions into six broad readiness
+          <p>The report groups the 20 questions into six broad readiness
             strands and links review needs to the appropriate course units.</p>
         </div>
 
         <div class="grid readiness-grid">
           <article class="card readiness-card">
             <span>Questions</span>
-            <strong>18</strong>
-            <p>Short definitive-answer items preserved from the original diagnostic.</p>
+            <strong>20</strong>
+            <p>Short definitive-answer items preserved from the diagnostic.</p>
           </article>
           <article class="card readiness-card">
             <span>Readiness strands</span>
@@ -1074,7 +1066,7 @@
           </div>
 
           <div class="actions">
-            <button class="btn primary" id="overviewStartButton" type="button">Start the 18 Questions</button>
+            <button class="btn primary" id="overviewStartButton" type="button">Start the 20 Questions</button>
             <a class="btn" href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/">Open Assessments & Records</a>
           </div>
         </article>
@@ -1104,7 +1096,7 @@
 
           <div class="progress-summary">
             <span>Answered</span>
-            <strong id="answeredLabel">0 / 18</strong>
+            <strong id="answeredLabel">0 / 20</strong>
           </div>
           <div class="progress-track" aria-hidden="true">
             <span id="answeredBar"></span>
@@ -1253,7 +1245,7 @@
         ]
       },
       "Data & Probability": {
-        domains:["Statistics"],
+        domains:["Statistics","Probability"],
         description:"Measures of center, data interpretation, variability, and probability foundations.",
         units:[
           {label:"Unit 12",href:"../units/unit-12/"}
@@ -1289,14 +1281,12 @@
       diagnostic:$("#diagnostic"),
       review:$("#review"),
       results:$("#results"),
-
       themeToggle:$("#themeToggle"),
       startButton:$("#startButton"),
       overviewStartButton:$("#overviewStartButton"),
       resumeButton:$("#resumeButton"),
       resumeNotice:$("#resumeNotice"),
       learnerName:$("#learnerName"),
-
       domainLabel:$("#domainLabel"),
       questionNumber:$("#questionNumber"),
       questionPrompt:$("#questionPrompt"),
@@ -1309,12 +1299,10 @@
       reviewButton:$("#reviewButton"),
       clearDraftButton:$("#clearDraftButton"),
       autosaveStatus:$("#autosaveStatus"),
-
       reviewMessage:$("#reviewMessage"),
       reviewStatusGrid:$("#reviewStatusGrid"),
       returnToQuestionsButton:$("#returnToQuestionsButton"),
       submitButton:$("#submitButton"),
-
       score:$("#score"),
       scorePercent:$("#scorePercent"),
       recommendation:$("#recommendation"),
@@ -1343,11 +1331,8 @@
     });
 
     function readJSON(key) {
-      try {
-        return JSON.parse(localStorage.getItem(key) || "null");
-      } catch {
-        return null;
-      }
+      try { return JSON.parse(localStorage.getItem(key) || "null"); }
+      catch { return null; }
     }
 
     function saveDraft() {
@@ -1362,8 +1347,7 @@
         updated_at:new Date().toISOString()
       };
       localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
-      elements.autosaveStatus.textContent =
-        `Draft saved locally · ${new Date(draft.updated_at).toLocaleTimeString([],{hour:"numeric",minute:"2-digit"})}`;
+      elements.autosaveStatus.textContent = `Draft saved locally · ${new Date(draft.updated_at).toLocaleTimeString([],{hour:"numeric",minute:"2-digit"})}`;
       updateResumeState();
     }
 
@@ -1372,9 +1356,7 @@
       index = 0;
       answers = Array(QUESTIONS.length).fill(null);
       begunAt = null;
-      if (showMessage) {
-        elements.autosaveStatus.textContent = "The local draft was cleared.";
-      }
+      if (showMessage) elements.autosaveStatus.textContent = "The local draft was cleared.";
       updateResumeState();
     }
 
@@ -1383,9 +1365,7 @@
         draft &&
         Array.isArray(draft.answers) &&
         draft.answers.length === QUESTIONS.length &&
-        draft.answers.every(answer => answer === null || (
-          Number.isInteger(answer) && answer >= 0 && answer < 4
-        ))
+        draft.answers.every(answer => answer === null || (Number.isInteger(answer) && answer >= 0 && answer < 4))
       );
     }
 
@@ -1394,22 +1374,17 @@
       const available = validDraft(draft) && draft.answers.some(answer => answer !== null);
       elements.resumeButton.hidden = !available;
       elements.resumeNotice.hidden = !available;
-
       if (available) {
         const completed = draft.answers.filter(answer => answer !== null).length;
-        const updated = draft.updated_at
-          ? new Date(draft.updated_at).toLocaleString()
-          : "an earlier session";
-        elements.resumeNotice.textContent =
-          `A local draft contains ${completed} of ${QUESTIONS.length} answers and was last updated ${updated}.`;
+        const updated = draft.updated_at ? new Date(draft.updated_at).toLocaleString() : "an earlier session";
+        elements.resumeNotice.textContent = `A local draft contains ${completed} of ${QUESTIONS.length} answers and was last updated ${updated}.`;
       }
     }
 
     function showOnly(section) {
-      [elements.intro,elements.overview,elements.diagnostic,elements.review,elements.results]
-        .forEach(element => {
-          element.hidden = element !== section;
-        });
+      [elements.intro,elements.overview,elements.diagnostic,elements.review,elements.results].forEach(element => {
+        element.hidden = element !== section;
+      });
       window.scrollTo({top:0,behavior:"smooth"});
     }
 
@@ -1427,11 +1402,7 @@
 
     function resumeDraft() {
       const draft = readJSON(DRAFT_KEY);
-      if (!validDraft(draft)) {
-        beginFresh();
-        return;
-      }
-
+      if (!validDraft(draft)) { beginFresh(); return; }
       answers = draft.answers;
       index = Math.max(0, Math.min(QUESTIONS.length - 1, Number(draft.index) || 0));
       begunAt = draft.begun_at || new Date().toISOString();
@@ -1441,16 +1412,13 @@
       elements.autosaveStatus.textContent = "Local draft restored.";
     }
 
-    function answeredCount() {
-      return answers.filter(answer => answer !== null).length;
-    }
+    function answeredCount() { return answers.filter(answer => answer !== null).length; }
 
     function renderProgress() {
       const completed = answeredCount();
       const percent = Math.round((completed / QUESTIONS.length) * 100);
       elements.answeredLabel.textContent = `${completed} / ${QUESTIONS.length}`;
       elements.answeredBar.style.width = `${percent}%`;
-
       elements.questionDots.innerHTML = QUESTIONS.map((question, questionIndex) => `
         <button class="dot ${questionIndex === index ? "current" : ""} ${answers[questionIndex] !== null ? "answered" : ""}"
           type="button" data-index="${questionIndex}"
@@ -1462,24 +1430,17 @@
 
     function renderQuestion() {
       const question = QUESTIONS[index];
-
       elements.domainLabel.textContent = question.domain;
-      elements.questionNumber.textContent =
-        `Question ${index + 1} of ${QUESTIONS.length}`;
+      elements.questionNumber.textContent = `Question ${index + 1} of ${QUESTIONS.length}`;
       elements.questionPrompt.textContent = question.prompt;
-
       elements.options.innerHTML = question.options.map((option, optionIndex) => `
         <label class="option">
-          <input type="radio" name="answer" value="${optionIndex}"
-            ${answers[index] === optionIndex ? "checked" : ""}>
+          <input type="radio" name="answer" value="${optionIndex}" ${answers[index] === optionIndex ? "checked" : ""}>
           <span>${escapeHTML(option)}</span>
         </label>
       `).join("");
-
       elements.previousButton.disabled = index === 0;
-      elements.nextButton.textContent =
-        index === QUESTIONS.length - 1 ? "Review Answers" : "Next";
-
+      elements.nextButton.textContent = index === QUESTIONS.length - 1 ? "Review Answers" : "Next";
       renderProgress();
       elements.questionPrompt.focus({preventScroll:true});
     }
@@ -1494,118 +1455,67 @@
     function renderReview() {
       const completed = answeredCount();
       const remaining = QUESTIONS.length - completed;
-
-      elements.reviewMessage.textContent =
-        remaining === 0
-          ? "All 18 questions have a recorded response. You may submit now or return to revise an answer."
-          : `${remaining} question${remaining === 1 ? "" : "s"} remain unanswered. Open any item below before submission.`;
-
+      elements.reviewMessage.textContent = remaining === 0
+        ? `All ${QUESTIONS.length} questions have a recorded response. You may submit now or return to revise an answer.`
+        : `${remaining} question${remaining === 1 ? "" : "s"} remain unanswered. Open any item below before submission.`;
       elements.reviewStatusGrid.innerHTML = QUESTIONS.map((question, questionIndex) => {
         const answered = answers[questionIndex] !== null;
-        const answerText = answered
-          ? question.options[answers[questionIndex]]
-          : "No response";
+        const answerText = answered ? question.options[answers[questionIndex]] : "No response";
         return `
-          <button class="review-status-button ${answered ? "" : "unanswered"}"
-            type="button" data-review-index="${questionIndex}">
+          <button class="review-status-button ${answered ? "" : "unanswered"}" type="button" data-review-index="${questionIndex}">
             <span class="review-number">${questionIndex + 1}</span>
-            <span>
-              <strong>${escapeHTML(question.domain)}</strong>
-              <small>${escapeHTML(answerText)}</small>
-            </span>
+            <span><strong>${escapeHTML(question.domain)}</strong><small>${escapeHTML(answerText)}</small></span>
             <span class="answer-state">${answered ? "answered" : "missing"}</span>
           </button>
         `;
       }).join("");
-
       elements.submitButton.disabled = remaining > 0;
     }
 
-    function openReview() {
-      saveDraft();
-      showOnly(elements.review);
-      renderReview();
-    }
+    function openReview() { saveDraft(); showOnly(elements.review); renderReview(); }
 
     function recommendationFor(score) {
-  if (score <= 9) {
-    return {
-      title:"Foundation support recommended",
-      message:"Begin with targeted foundation support and Unit 01 evidence. This diagnostic does not place or hold back a learner; use coursework to confirm the skills that need strengthening."
-    };
-  }
-  if (score <= 15) {
-    return {
-      title:"Core pathway with targeted review",
-      message:"The diagnostic supports beginning the Core Pre-Algebra sequence while reviewing the identified strands. Continue by demonstrated mastery rather than by the overall score alone."
-    };
-  }
-  if (score <= 18) {
-    return {
-      title:"Strong Core readiness",
-      message:"The result supports beginning the Core pathway with challenge work in stronger strands. Complete Unit 01 evidence and use the Unit 02 readiness bridge to decide whether acceleration should be considered."
-    };
-  }
-  return {
-    title:"Advanced-readiness signal",
-    message:"This short diagnostic shows unusually strong prerequisite readiness. Complete Unit 01 evidence, then use the Unit 02 readiness bridge and additional higher-level evidence before choosing an accelerated or Algebra I pathway. The diagnostic itself does not make placement decisions."
-  };
-}
-function strandForDomain(domain) {
-      return Object.entries(STRANDS).find(([,strand]) =>
-        strand.domains.includes(domain)
-      )?.[0] || "Other";
+      if (score <= 9) return {title:"Foundation support recommended",message:"Begin with targeted foundation support and Unit 01 evidence. This diagnostic does not place or hold back a learner; use coursework to confirm the skills that need strengthening."};
+      if (score <= 15) return {title:"Core pathway with targeted review",message:"The diagnostic supports beginning the Core Pre-Algebra sequence while reviewing the identified strands. Continue by demonstrated mastery rather than by the overall score alone."};
+      if (score <= 18) return {title:"Strong Core readiness",message:"The result supports beginning the Core pathway with challenge work in stronger strands. Complete Unit 01 evidence and use the Unit 02 readiness bridge to decide whether acceleration should be considered."};
+      return {title:"Advanced-readiness signal",message:"This short diagnostic shows unusually strong prerequisite readiness. Complete Unit 01 evidence, then use the Unit 02 readiness bridge and additional higher-level evidence before choosing an accelerated or Algebra I pathway. The diagnostic itself does not make placement decisions."};
+    }
+
+    function strandForDomain(domain) {
+      return Object.entries(STRANDS).find(([,strand]) => strand.domains.includes(domain))?.[0] || "Other";
     }
 
     function buildStrandResults(correctFlags) {
       const results = {};
-
       Object.entries(STRANDS).forEach(([name,strand]) => {
-        results[name] = {
-          name,
-          correct:0,
-          total:0,
-          description:strand.description,
-          units:strand.units
-        };
+        results[name] = {name,correct:0,total:0,description:strand.description,units:strand.units};
       });
-
       QUESTIONS.forEach((question, questionIndex) => {
         const strandName = strandForDomain(question.domain);
         if (!results[strandName]) return;
         results[strandName].total += 1;
         if (correctFlags[questionIndex]) results[strandName].correct += 1;
       });
-
       return results;
     }
 
     function strandLevel(correct, total) {
-  const percent = total ? (correct / total) * 100 : 0;
-  if (total === 1) return correct === 1 ? "positive signal / confirm with coursework" : "possible review signal / confirm with coursework";
-  if (percent >= 80) return "secure on this snapshot";
-  if (percent >= 50) return "developing / confirm with coursework";
-  return "priority review";
-}
+      const percent = total ? (correct / total) * 100 : 0;
+      if (total === 1) return correct === 1 ? "positive signal / confirm with coursework" : "possible review signal / confirm with coursework";
+      if (percent >= 80) return "secure on this snapshot";
+      if (percent >= 50) return "developing / confirm with coursework";
+      return "priority review";
+    }
 
     function renderStrands(strandResults) {
       elements.strandGrid.innerHTML = Object.values(strandResults).map(strand => {
         const percent = Math.round((strand.correct / strand.total) * 100);
-        const unitLinks = strand.units.map(unit =>
-          `<a href="${unit.href}">${escapeHTML(unit.label)}</a>`
-        ).join("");
-
+        const unitLinks = strand.units.map(unit => `<a href="${unit.href}">${escapeHTML(unit.label)}</a>`).join("");
         return `
           <article class="card strand-card">
-            <div class="strand-card-head">
-              <h3>${escapeHTML(strand.name)}</h3>
-              <span class="strand-score">${strand.correct}/${strand.total}</span>
-            </div>
-            <div class="strand-meter" aria-label="${percent} percent on this diagnostic strand">
-              <span style="width:${percent}%"></span>
-            </div>
-            <p><strong>${strandLevel(strand.correct,strand.total)}.</strong>
-              ${escapeHTML(strand.description)}</p>
+            <div class="strand-card-head"><h3>${escapeHTML(strand.name)}</h3><span class="strand-score">${strand.correct}/${strand.total}</span></div>
+            <div class="strand-meter" aria-label="${percent} percent on this diagnostic strand"><span style="width:${percent}%"></span></div>
+            <p><strong>${strandLevel(strand.correct,strand.total)}.</strong> ${escapeHTML(strand.description)}</p>
             <div class="unit-links">${unitLinks}</div>
           </article>
         `;
@@ -1613,28 +1523,18 @@ function strandForDomain(domain) {
     }
 
     function renderTargetedReview(strandResults) {
-      const ordered = Object.values(strandResults).sort((a,b) => {
-        const aPercent = a.correct / a.total;
-        const bPercent = b.correct / b.total;
-        return aPercent - bPercent;
-      });
-
+      const ordered = Object.values(strandResults).sort((a,b) => (a.correct / a.total) - (b.correct / b.total));
       elements.reviewPathwayList.innerHTML = ordered.map(strand => {
         const percent = Math.round((strand.correct / strand.total) * 100);
         const firstUnit = strand.units[0];
-        const guidance =
-          percent >= 80
-            ? "Continue into the connected unit sequence and confirm with ordinary coursework."
-            : percent >= 50
-              ? "Begin the connected units with a short review of prerequisite examples."
-              : "Use the Foundation pathway or targeted practice before increasing complexity.";
-
+        const guidance = percent >= 80
+          ? "Continue into the connected unit sequence and confirm with ordinary coursework."
+          : percent >= 50
+            ? "Begin the connected units with a short review of prerequisite examples."
+            : "Use the Foundation pathway or targeted practice before increasing complexity.";
         return `
           <div class="review-pathway-item">
-            <div>
-              <strong>${escapeHTML(strand.name)} · ${strand.correct}/${strand.total}</strong>
-              <p>${escapeHTML(guidance)}</p>
-            </div>
+            <div><strong>${escapeHTML(strand.name)} · ${strand.correct}/${strand.total}</strong><p>${escapeHTML(guidance)}</p></div>
             <a href="${firstUnit.href}">Open ${escapeHTML(firstUnit.label)}</a>
           </div>
         `;
@@ -1647,16 +1547,9 @@ function strandForDomain(domain) {
         const selectedAnswer = question.options[selectedIndex];
         const correctAnswer = question.options[question.answer];
         const correct = correctFlags[questionIndex];
-
         return `
           <details ${correct ? "" : "open"}>
-            <summary>
-              <span class="review-index">${questionIndex + 1}</span>
-              <strong>${escapeHTML(question.prompt)}</strong>
-              <span class="${correct ? "correct-mark" : "incorrect-mark"}">
-                ${correct ? "correct" : "review"}
-              </span>
-            </summary>
+            <summary><span class="review-index">${questionIndex + 1}</span><strong>${escapeHTML(question.prompt)}</strong><span class="${correct ? "correct-mark" : "incorrect-mark"}">${correct ? "correct" : "review"}</span></summary>
             <div class="answer-detail">
               <p><strong>Domain:</strong> ${escapeHTML(question.domain)}</p>
               <p><strong>Your answer:</strong> ${escapeHTML(selectedAnswer)}</p>
@@ -1669,14 +1562,8 @@ function strandForDomain(domain) {
     }
 
     function submitDiagnostic() {
-      if (answers.some(answer => answer === null)) {
-        renderReview();
-        return;
-      }
-
-      const correctFlags = answers.map(
-        (answer, questionIndex) => answer === QUESTIONS[questionIndex].answer
-      );
+      if (answers.some(answer => answer === null)) { renderReview(); return; }
+      const correctFlags = answers.map((answer, questionIndex) => answer === QUESTIONS[questionIndex].answer);
       const score = correctFlags.filter(Boolean).length;
       const percent = Math.round((score / QUESTIONS.length) * 100);
       const recommendation = recommendationFor(score);
@@ -1684,70 +1571,38 @@ function strandForDomain(domain) {
       const completedAt = new Date().toISOString();
 
       completedResult = {
-        schema_version:"2.0",
-        diagnostic_id:"KH-MATH-PA-DIAGNOSTIC",
-        course_code:"KH-MATH-PA",
-        title:"Pre-Algebra Readiness Diagnostic",
-        learner_label:elements.learnerName.value.trim(),
-        score,
-        total:QUESTIONS.length,
-        percent,
-        recommendation:recommendation.title,
-        message:recommendation.message,
-        answers:[...answers],
-        correct_flags:correctFlags,
-        strands:strandResults,
-        begun_at:begunAt,
-        completed_at:completedAt
+        schema_version:"2.0",diagnostic_id:"KH-MATH-PA-DIAGNOSTIC",course_code:"KH-MATH-PA",title:"Pre-Algebra Readiness Diagnostic",
+        learner_label:elements.learnerName.value.trim(),score,total:QUESTIONS.length,percent,
+        recommendation:recommendation.title,message:recommendation.message,answers:[...answers],correct_flags:correctFlags,
+        strands:strandResults,begun_at:begunAt,completed_at:completedAt
       };
 
       localStorage.setItem(RESULT_KEY, JSON.stringify(completedResult));
-      localStorage.setItem(LEGACY_RESULT_KEY, JSON.stringify({
-        score,
-        total:QUESTIONS.length,
-        recommendation:recommendation.title,
-        message:recommendation.message,
-        answers:[...answers],
-        completed_at:completedAt
-      }));
+      localStorage.setItem(LEGACY_RESULT_KEY, JSON.stringify({score,total:QUESTIONS.length,recommendation:recommendation.title,message:recommendation.message,answers:[...answers],completed_at:completedAt}));
       localStorage.removeItem(DRAFT_KEY);
 
       elements.score.textContent = `${score} / ${QUESTIONS.length}`;
       elements.scorePercent.textContent = `${percent}% correct`;
       elements.recommendation.textContent = recommendation.title;
       elements.resultMessage.textContent = recommendation.message;
-
       const metadata = [
         elements.learnerName.value.trim() || "Unlabelled learner record",
-        "18 definitive-answer questions",
+        `${QUESTIONS.length} definitive-answer questions`,
         "Untimed",
         new Date(completedAt).toLocaleString()
       ];
-      elements.resultMetadata.innerHTML = metadata
-        .map(item => `<span>${escapeHTML(item)}</span>`)
-        .join("");
-
+      elements.resultMetadata.innerHTML = metadata.map(item => `<span>${escapeHTML(item)}</span>`).join("");
       renderStrands(strandResults);
       renderTargetedReview(strandResults);
       renderAnswerReview(correctFlags);
-
       showOnly(elements.results);
       updateResumeState();
     }
 
     function exportResult() {
-      if (!completedResult) {
-        completedResult = readJSON(RESULT_KEY);
-      }
-      if (!completedResult) {
-        elements.resultStatus.textContent = "No completed result is available to export.";
-        return;
-      }
-
-      const blob = new Blob(
-        [JSON.stringify(completedResult,null,2)],
-        {type:"application/json"}
-      );
+      if (!completedResult) completedResult = readJSON(RESULT_KEY);
+      if (!completedResult) { elements.resultStatus.textContent = "No completed result is available to export."; return; }
+      const blob = new Blob([JSON.stringify(completedResult,null,2)],{type:"application/json"});
       const url = URL.createObjectURL(blob);
       const anchor = document.createElement("a");
       anchor.href = url;
@@ -1756,15 +1611,12 @@ function strandForDomain(domain) {
       anchor.click();
       anchor.remove();
       URL.revokeObjectURL(url);
-
-      elements.resultStatus.textContent =
-        "The readiness result was exported as a JSON record.";
+      elements.resultStatus.textContent = "The readiness result was exported as a JSON record.";
     }
 
     elements.startButton.addEventListener("click", beginFresh);
     elements.overviewStartButton.addEventListener("click", beginFresh);
     elements.resumeButton.addEventListener("click", resumeDraft);
-
     elements.options.addEventListener("change", event => {
       const input = event.target.closest('input[name="answer"]');
       if (!input) return;
@@ -1772,68 +1624,40 @@ function strandForDomain(domain) {
       renderProgress();
       saveDraft();
     });
-
     elements.previousButton.addEventListener("click", () => {
-      if (index > 0) {
-        index -= 1;
-        renderQuestion();
-        saveDraft();
-      }
+      if (index > 0) { index -= 1; renderQuestion(); saveDraft(); }
     });
-
     elements.nextButton.addEventListener("click", () => {
-      if (index < QUESTIONS.length - 1) {
-        index += 1;
-        renderQuestion();
-        saveDraft();
-      } else {
-        openReview();
-      }
+      if (index < QUESTIONS.length - 1) { index += 1; renderQuestion(); saveDraft(); }
+      else openReview();
     });
-
     elements.questionDots.addEventListener("click", event => {
       const button = event.target.closest("[data-index]");
       if (!button) return;
       openQuestion(Number(button.dataset.index));
     });
-
     elements.reviewButton.addEventListener("click", openReview);
-
     elements.clearDraftButton.addEventListener("click", () => {
       if (!window.confirm("Clear the current local diagnostic draft?")) return;
       clearDraft();
       showOnly(elements.intro);
     });
-
     elements.reviewStatusGrid.addEventListener("click", event => {
       const button = event.target.closest("[data-review-index]");
       if (!button) return;
       openQuestion(Number(button.dataset.reviewIndex));
     });
-
-    elements.returnToQuestionsButton.addEventListener("click", () => {
-      showOnly(elements.diagnostic);
-      renderQuestion();
-    });
-
+    elements.returnToQuestionsButton.addEventListener("click", () => { showOnly(elements.diagnostic); renderQuestion(); });
     elements.submitButton.addEventListener("click", () => {
-      if (answers.some(answer => answer === null)) {
-        renderReview();
-        return;
-      }
-      if (window.confirm("Submit the diagnostic and create the readiness report?")) {
-        submitDiagnostic();
-      }
+      if (answers.some(answer => answer === null)) { renderReview(); return; }
+      if (window.confirm("Submit the diagnostic and create the readiness report?")) submitDiagnostic();
     });
-
     elements.exportResults.addEventListener("click", exportResult);
     elements.printResults.addEventListener("click", () => window.print());
-
     elements.retakeButton.addEventListener("click", () => {
       if (!window.confirm("Begin a new diagnostic attempt? The completed result remains available until the new attempt is submitted.")) return;
       beginFresh();
     });
-
     elements.learnerName.addEventListener("change", () => {
       const draft = readJSON(DRAFT_KEY);
       if (validDraft(draft)) saveDraft();
@@ -1842,16 +1666,5 @@ function strandForDomain(domain) {
     updateResumeState();
   })();
   </script>
-
-<!--
-  Khaemenes Pre-Algebra Diagnostic v2.1
-  Final audit repair:
-  - 20 questions
-  - 5/5/5/5 answer-position balance
-  - probability + measurement breadth
-  - single-item strand evidence softened
-  - open-age advisory wording
-  - advanced-readiness signal routes to Unit 02 bridge rather than automatic placement
--->
 </body>
 </html>
