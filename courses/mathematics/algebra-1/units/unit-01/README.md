@@ -25,3 +25,11 @@ Asset paths were normalized so every Unit 01 page loads the self-contained
 `unit-01/assets/` CSS, data, and renderer correctly:
 - unit root pages -> `assets/...`
 - lessons/practice/assessment/projects -> `../assets/...`
+
+## v1.2 forensic hardening
+- balanced Foundation/Core/Extended selection now guarantees representation from all six lessons
+- Extended practice guarantees higher-reasoning items
+- mastery check uses a fixed 20-item blueprint spanning all six lessons and Levels 1–3
+- attempt history + best scores persist locally
+- integrated Unit 01 Boss Battle added
+- contextual Ask Arch links added to lessons/practice/unit challenge
