@@ -16,11 +16,8 @@
       "Properties create equivalent expressions without changing value.",
       "Algebraic models are useful only when variables, units, assumptions, and limitations are explicit."
     ],
-    "mastery_threshold": 80,
-    "progress_key": "khaemenes-prealgebra-unit07-progress-v1",
-    "architecture": "Open-age integrated Pre-Algebra learning: variables + translation + substitution + properties + distributive structure + like terms + formulas + modelling + reflection + mastery",
-    "tool_integration": "Calculator use is optional for checking numerical substitution; students first write the expression, substitution, algebraic steps, units, and reasonableness argument.",
-    "readiness_note": "Unit 07 develops Algebra I readiness for learners of any age. Advancement is based on demonstrated algebraic reasoning and mastery, not grade identity."
+    "mastery_threshold": 75,
+    "progress_key": "khaemenes-prealgebra-unit07-progress-v1"
   },
   "lessons": [
     {
@@ -239,26 +236,10 @@
     "title": "Unit 7 Mastery Check",
     "file": "assessment/mastery-check.html",
     "question_count": 24,
-    "threshold": 80
+    "threshold": 75
   },
   "project": {
     "title": "Algebraic Model & Design Investigation",
     "file": "projects/algebraic-model-design-investigation.html"
-  },
-  "printables": {
-    "hub": "worksheets/index.html",
-    "lesson_worksheets": [
-      "worksheets/lesson-01-worksheet.html",
-      "worksheets/lesson-02-worksheet.html",
-      "worksheets/lesson-03-worksheet.html",
-      "worksheets/lesson-04-worksheet.html",
-      "worksheets/lesson-05-worksheet.html",
-      "worksheets/lesson-06-worksheet.html",
-      "worksheets/lesson-07-worksheet.html",
-      "worksheets/lesson-08-worksheet.html"
-    ],
-    "cumulative_review": "worksheets/unit-07-cumulative-review.html",
-    "project_planner": "worksheets/algebraic-modelling-investigation-planner.html",
-    "teacher_answer_key": "worksheets/teacher-answer-key.html"
   }
 }

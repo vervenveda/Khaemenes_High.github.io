@@ -16,11 +16,8 @@
       "Inverse operations and structural simplification help isolate a variable.",
       "Equations and formulas are meaningful only when variables, units, constraints, and checks are explicit."
     ],
-    "mastery_threshold": 80,
-    "progress_key": "khaemenes-prealgebra-unit08-progress-v1",
-    "architecture": "Open-age integrated Pre-Algebra learning: equality + inverse operations + one-step/two-step/multistep equations + identities/contradictions + literal equations + contextual modelling + verification + mastery",
-    "tool_integration": "Calculator use is optional for arithmetic verification after the student has written the equation, shown equivalent transformations, preserved units, and checked reasonableness.",
-    "readiness_note": "Unit 08 builds equation-solving and formula-rearrangement readiness for learners of any age. Advancement is based on demonstrated mastery, not grade identity."
+    "mastery_threshold": 75,
+    "progress_key": "khaemenes-prealgebra-unit08-progress-v1"
   },
   "lessons": [
     {
@@ -240,7 +237,7 @@
     "title": "Unit 8 Mastery Check",
     "file": "assessment/mastery-check.html",
     "questions": 24,
-    "threshold": 80
+    "threshold": 75
   },
   "project": {
     "title": "Equation & Formula Design Investigation",
@@ -251,21 +248,5 @@
     "family_guide": "family-guide.html",
     "standards_map": "standards-map.json",
     "vocabulary": "vocabulary.json"
-  },
-  "printables": {
-    "hub": "worksheets/index.html",
-    "lesson_worksheets": [
-      "worksheets/lesson-01-worksheet.html",
-      "worksheets/lesson-02-worksheet.html",
-      "worksheets/lesson-03-worksheet.html",
-      "worksheets/lesson-04-worksheet.html",
-      "worksheets/lesson-05-worksheet.html",
-      "worksheets/lesson-06-worksheet.html",
-      "worksheets/lesson-07-worksheet.html",
-      "worksheets/lesson-08-worksheet.html"
-    ],
-    "cumulative_review": "worksheets/unit-08-cumulative-review.html",
-    "project_planner": "worksheets/equation-modelling-investigation-planner.html",
-    "teacher_answer_key": "worksheets/teacher-answer-key.html"
   }
 }
