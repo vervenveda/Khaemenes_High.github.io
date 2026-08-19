@@ -1,0 +1,25 @@
+# Unit 13 File Manifest
+
+- `courses/mathematics/pre-algebra/units/unit-13/README.md`
+- `courses/mathematics/pre-algebra/units/unit-13/assessment/answer-key.json`
+- `courses/mathematics/pre-algebra/units/unit-13/assessment/mastery-check.html`
+- `courses/mathematics/pre-algebra/units/unit-13/assets/assessment-engine.js`
+- `courses/mathematics/pre-algebra/units/unit-13/assets/lesson-engine.js`
+- `courses/mathematics/pre-algebra/units/unit-13/assets/unit-dashboard.js`
+- `courses/mathematics/pre-algebra/units/unit-13/assets/unit.css`
+- `courses/mathematics/pre-algebra/units/unit-13/family-guide.html`
+- `courses/mathematics/pre-algebra/units/unit-13/index.html`
+- `courses/mathematics/pre-algebra/units/unit-13/lessons/lesson-01-frame-meaningful-safe-answerable-question.html`
+- `courses/mathematics/pre-algebra/units/unit-13/lessons/lesson-02-select-variables-mathematics-data-representations.html`
+- `courses/mathematics/pre-algebra/units/unit-13/lessons/lesson-03-build-calculate-verify-revise-model.html`
+- `courses/mathematics/pre-algebra/units/unit-13/lessons/lesson-04-test-assumptions-sensitivity-uncertainty-fairness.html`
+- `courses/mathematics/pre-algebra/units/unit-13/lessons/lesson-05-communicate-defend-reflect-readiness.html`
+- `courses/mathematics/pre-algebra/units/unit-13/practice/core.html`
+- `courses/mathematics/pre-algebra/units/unit-13/practice/extended.html`
+- `courses/mathematics/pre-algebra/units/unit-13/practice/foundation.html`
+- `courses/mathematics/pre-algebra/units/unit-13/projects/mathematical-modelling-capstone-portfolio.html`
+- `courses/mathematics/pre-algebra/units/unit-13/standards-map.json`
+- `courses/mathematics/pre-algebra/units/unit-13/teacher-guide.html`
+- `courses/mathematics/pre-algebra/units/unit-13/tools/modelling-verification-studio.html`
+- `courses/mathematics/pre-algebra/units/unit-13/unit-map.json`
+- `courses/mathematics/pre-algebra/units/unit-13/vocabulary.json`
