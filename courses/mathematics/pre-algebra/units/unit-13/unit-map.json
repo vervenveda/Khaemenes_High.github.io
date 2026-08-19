@@ -17,8 +17,12 @@
       "A defensible conclusion connects claim, evidence, reasoning, assumptions, and limits.",
       "Reflection on modelling practices supports transition into Algebra I."
     ],
-    "mastery_threshold": 75,
-    "progress_key": "khaemenes-prealgebra-unit13-progress-v1"
+    "mastery_threshold": 80,
+    "progress_key": "khaemenes-prealgebra-unit13-progress-v1",
+    "architecture": "Open-age mathematical modelling capstone: frame a meaningful/safe/answerable question + define variables/units/data + select representations + build/calculate/verify/revise + test assumptions/sensitivity/uncertainty/fairness + communicate/defend/reflect + Algebra I readiness",
+    "tool_integration": "Calculator, graphing/data tools, geometry/CAD resources, handwriting/tracing, simulations, Evidence Citation Studio, and approved tools may support work while students retain an audit trail.",
+    "capstone_gate": "NAIB may summarize readiness strengths, gaps, and suggested supports. Placement remains a parent/guardian decision.",
+    "readiness_note": "Unit 13 is an open-age capstone. It measures transfer, modelling judgment, communication, and Algebra I readiness through demonstrated evidence rather than grade identity."
   },
   "lessons": [
     {
@@ -765,8 +769,22 @@
   },
   "assessment": {
     "mastery": "assessment/mastery-check.html",
-    "answer_key": "assessment/answer-key.json"
+    "answer_key": "assessment/answer-key.json",
+    "threshold": 80
   },
   "project": "projects/mathematical-modelling-capstone-portfolio.html",
-  "interactive": "tools/modelling-verification-studio.html"
+  "interactive": "tools/modelling-verification-studio.html",
+  "printables": {
+    "hub": "worksheets/index.html",
+    "session_workbooks": [
+      "worksheets/session-01-workbook.html",
+      "worksheets/session-02-workbook.html",
+      "worksheets/session-03-workbook.html",
+      "worksheets/session-04-workbook.html",
+      "worksheets/session-05-workbook.html"
+    ],
+    "capstone_planner": "worksheets/capstone-project-planner.html",
+    "readiness_review": "worksheets/capstone-readiness-review.html",
+    "teacher_answer_key": "worksheets/teacher-answer-key.html"
+  }
 }
