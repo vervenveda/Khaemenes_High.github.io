@@ -1,0 +1,279 @@
+{
+  "schema_version": "1.0",
+  "unit": {
+    "id": "KH-MATH-PA-U05",
+    "course": "KH-MATH-PA",
+    "number": 5,
+    "title": "Percent, Financial Mathematics & Change",
+    "duration_weeks": 3,
+    "recommended_sessions": 15,
+    "status": "open",
+    "essential_question": "How can percent and financial mathematics help us measure change, compare choices, and make transparent decisions?",
+    "big_ideas": [
+      "Percent is a rate per hundred that connects fractions, decimals, and proportional reasoning.",
+      "Percent problems depend on identifying the part, rate, and reference whole.",
+      "Relative change compares a difference with the original value.",
+      "Financial calculations must name the base, order, time period, and fees.",
+      "Responsible decisions compare total outcomes and communicate assumptions and limitations."
+    ],
+    "mastery_threshold": 80,
+    "progress_key": "khaemenes-prealgebra-unit05-progress-v1",
+    "architecture": "Open-age integrated Pre-Algebra learning: instruction + reasoning + practice + application + financial literacy + tools + reflection + mastery",
+    "tool_integration": "Use calculators and Verve Arithmetic as optional reasoning/checking tools after students establish a mathematical model.",
+    "readiness_note": "Unit 05 develops percent and financial reasoning for learners of any age. Progress is based on demonstrated mastery, not grade identity."
+  },
+  "lessons": [
+    {
+      "id": "l01",
+      "number": 1,
+      "title": "Percent Meaning, Benchmarks & Equivalent Forms",
+      "file": "lessons/lesson-01-percent-meaning-benchmarks-equivalent-forms.html",
+      "duration": "50–65 minutes",
+      "objectives": [
+        "Interpret percent as a rate per one hundred.",
+        "Convert among fractions, decimals, and percents.",
+        "Use benchmark percents to estimate quantities.",
+        "Distinguish the part, whole, and percent rate in context."
+      ],
+      "vocab_ids": [
+        "percent",
+        "per-hundred",
+        "percent-rate",
+        "base",
+        "part",
+        "whole",
+        "benchmark-percent",
+        "equivalent-representations"
+      ]
+    },
+    {
+      "id": "l02",
+      "number": 2,
+      "title": "Finding a Percent of a Quantity",
+      "file": "lessons/lesson-02-finding-percent-of-quantity.html",
+      "duration": "50–70 minutes",
+      "objectives": [
+        "Find a percent of a quantity using multiplication.",
+        "Use benchmark decomposition for mental percent calculations.",
+        "Write and evaluate part = rate × whole equations.",
+        "Estimate before calculating exact percent amounts."
+      ],
+      "vocab_ids": [
+        "percent-of",
+        "percent-equation",
+        "percent-rate",
+        "base",
+        "part",
+        "whole",
+        "benchmark-percent",
+        "multiplier"
+      ]
+    },
+    {
+      "id": "l03",
+      "number": 3,
+      "title": "Finding the Percent Rate or the Whole",
+      "file": "lessons/lesson-03-finding-percent-rate-or-whole.html",
+      "duration": "55–75 minutes",
+      "objectives": [
+        "Find the percent rate when the part and whole are known.",
+        "Find the whole when a part and percent are known.",
+        "Solve percent problems with equations and proportions.",
+        "Identify which quantity represents 100% before calculating."
+      ],
+      "vocab_ids": [
+        "percent-rate",
+        "base",
+        "part",
+        "whole",
+        "percent-equation",
+        "proportion",
+        "percent",
+        "equivalent-representations"
+      ]
+    },
+    {
+      "id": "l04",
+      "number": 4,
+      "title": "Percent Increase, Decrease & Relative Change",
+      "file": "lessons/lesson-04-percent-increase-decrease-relative-change.html",
+      "duration": "55–75 minutes",
+      "objectives": [
+        "Calculate absolute and relative change.",
+        "Find percent increase and percent decrease.",
+        "Use multipliers to calculate new values efficiently.",
+        "Explain why percent change uses the original value as the denominator."
+      ],
+      "vocab_ids": [
+        "original-value",
+        "new-value",
+        "absolute-change",
+        "relative-change",
+        "percent-increase",
+        "percent-decrease",
+        "multiplier",
+        "percent-rate"
+      ]
+    },
+    {
+      "id": "l05",
+      "number": 5,
+      "title": "Discounts, Tax, Tips & Commission",
+      "file": "lessons/lesson-05-discounts-tax-tips-commission.html",
+      "duration": "55–75 minutes",
+      "objectives": [
+        "Calculate discounts and sale prices.",
+        "Calculate tax, tips, and commissions.",
+        "Combine sequential charges and reductions accurately.",
+        "Distinguish a percent amount from the final total."
+      ],
+      "vocab_ids": [
+        "discount",
+        "sale-price",
+        "sales-tax",
+        "tip",
+        "commission",
+        "percent-of",
+        "multiplier",
+        "original-value",
+        "new-value"
+      ]
+    },
+    {
+      "id": "l06",
+      "number": 6,
+      "title": "Markup, Profit, Loss & Break-Even",
+      "file": "lessons/lesson-06-markup-profit-loss-break-even.html",
+      "duration": "55–75 minutes",
+      "objectives": [
+        "Calculate markup amounts and selling prices.",
+        "Calculate profit and loss in dollars and percents.",
+        "Distinguish markup on cost from margin on selling price.",
+        "Interpret fixed and variable costs in break-even reasoning."
+      ],
+      "vocab_ids": [
+        "markup",
+        "cost",
+        "selling-price",
+        "profit",
+        "loss",
+        "break-even",
+        "percent-increase",
+        "relative-change",
+        "fee"
+      ]
+    },
+    {
+      "id": "l07",
+      "number": 7,
+      "title": "Simple Interest, Fees & Financial Comparisons",
+      "file": "lessons/lesson-07-simple-interest-fees-financial-comparisons.html",
+      "duration": "60–80 minutes",
+      "objectives": [
+        "Calculate simple interest using I=Prt.",
+        "Find total amount after simple interest.",
+        "Compare savings or borrowing options with rates and fees.",
+        "Align time units with the stated interest period."
+      ],
+      "vocab_ids": [
+        "simple-interest",
+        "principal",
+        "interest-rate",
+        "time",
+        "annual-rate",
+        "fee",
+        "financial-option",
+        "percent-rate",
+        "new-value"
+      ]
+    },
+    {
+      "id": "l08",
+      "number": 8,
+      "title": "Percentage Points, Repeated Change & Financial Decisions",
+      "file": "lessons/lesson-08-percentage-points-repeated-change-decisions.html",
+      "duration": "60–80 minutes",
+      "objectives": [
+        "Distinguish percentage-point change from percent change.",
+        "Calculate successive percent changes using updated values.",
+        "Compare financial options using total cost, benefit, and assumptions.",
+        "Communicate limitations and ethical considerations in percent-based claims."
+      ],
+      "vocab_ids": [
+        "percentage-point",
+        "repeated-change",
+        "relative-change",
+        "percent-increase",
+        "percent-decrease",
+        "multiplier",
+        "financial-option",
+        "fee",
+        "original-value",
+        "new-value"
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "foundation",
+      "title": "Foundation Practice",
+      "file": "practice/foundation.html",
+      "description": "Scaffolded percent models, benchmark support, and guided financial calculations."
+    },
+    {
+      "id": "core",
+      "title": "Core Practice",
+      "file": "practice/core.html",
+      "description": "Complete unit practice across percent, change, pricing, interest, and decisions."
+    },
+    {
+      "id": "extended",
+      "title": "Extended Practice",
+      "file": "practice/extended.html",
+      "description": "Error analysis, repeated change, financial comparison, and unfamiliar contexts."
+    }
+  ],
+  "assessment": {
+    "title": "Unit 5 Mastery Check",
+    "file": "assessment/mastery-check.html",
+    "questions": 24,
+    "threshold": 80
+  },
+  "project": {
+    "title": "Consumer Financial Decision Investigation",
+    "file": "projects/consumer-financial-decision-investigation.html"
+  },
+  "guides": [
+    {
+      "title": "Teacher Guide",
+      "file": "teacher-guide.html"
+    },
+    {
+      "title": "Family Guide",
+      "file": "family-guide.html"
+    }
+  ],
+  "printables": {
+    "hub": "worksheets/index.html",
+    "lesson_worksheets": [
+      "worksheets/lesson-01-worksheet.html",
+      "worksheets/lesson-02-worksheet.html",
+      "worksheets/lesson-03-worksheet.html",
+      "worksheets/lesson-04-worksheet.html",
+      "worksheets/lesson-05-worksheet.html",
+      "worksheets/lesson-06-worksheet.html",
+      "worksheets/lesson-07-worksheet.html",
+      "worksheets/lesson-08-worksheet.html"
+    ],
+    "cumulative_review": "worksheets/unit-05-cumulative-review.html",
+    "project_planner": "worksheets/consumer-financial-decision-planner.html",
+    "teacher_answer_key": "worksheets/teacher-answer-key.html"
+  },
+  "tools": [
+    {
+      "title": "Verve Arithmetic",
+      "file": "Unit_05_Percent_Financial_Mathematics_Change_Verve_Arithmetic_index.html",
+      "purpose": "Optional percent and arithmetic exploration/checking tool."
+    }
+  ]
+}
