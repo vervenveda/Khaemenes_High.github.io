@@ -1,9 +1,84 @@
-"use strict";
-const config=window.ASSESSMENT_CONFIG,THEME_KEY="khaemenes-theme",$=s=>document.querySelector(s),escapeHTML=value=>String(value).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));function loadJSON(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}}function setTheme(theme){document.documentElement.dataset.theme=theme;localStorage.setItem(THEME_KEY,theme)}$("#themeToggle").addEventListener("click",()=>setTheme(document.documentElement.dataset.theme==="light"?"dark":"light"));setTheme(localStorage.getItem(THEME_KEY)||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark"));
-function render(){const d=loadJSON(`${config.storage_key}-draft`,{answers:{},reasoning:{}});$("#questionList").innerHTML=config.questions.map((q,i)=>`<article class="question"><fieldset><legend>${i+1}. ${escapeHTML(q.prompt)}</legend><div class="options">${q.options.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}" ${Number(d.answers[i])===j?"checked":""}><span>${escapeHTML(o)}</span></label>`).join("")}</div>${config.show_hints&&q.hint?`<button class="hint-button" type="button" data-hint="${i}">Show hint</button><p class="hint" id="hint-${i}" hidden>${escapeHTML(q.hint)}</p>`:""}<div class="feedback" id="feedback-${i}" hidden></div></fieldset></article>`).join("");if((config.reasoning_prompts||[]).length){$("#reasoningSection").innerHTML=`<h2>Reasoning reflection</h2><div class="reasoning-grid">${(config.reasoning_prompts||[]).map((p,i)=>`<div class="field"><label for="reasoning-${i}">${escapeHTML(p)}</label><textarea id="reasoning-${i}">${escapeHTML(d.reasoning[i]||"")}</textarea></div>`).join("")}</div>`}else $("#reasoningSection").hidden=true;updateDots();const existing=loadJSON(config.storage_key,null);if(existing)showResult(existing,false)}
-function currentAnswers(){const a={};config.questions.forEach((_,i)=>{const s=document.querySelector(`input[name="q${i}"]:checked`);if(s)a[i]=Number(s.value)});return a}function currentReasoning(){const r={};(config.reasoning_prompts||[]).forEach((_,i)=>r[i]=$(`#reasoning-${i}`).value.trim());return r}function autosaveDraft(){localStorage.setItem(`${config.storage_key}-draft`,JSON.stringify({answers:currentAnswers(),reasoning:currentReasoning(),saved_at:new Date().toISOString()}))}function updateDots(){const a=currentAnswers();$("#dotGrid").innerHTML=config.questions.map((_,i)=>`<span class="dot ${Object.hasOwn(a,i)?"answered":""}">${i+1}</span>`).join("")}$("#questionList").addEventListener("change",()=>{updateDots();autosaveDraft()});$("#reasoningSection").addEventListener("input",()=>{clearTimeout(window.__khDraftTimer);window.__khDraftTimer=setTimeout(autosaveDraft,333)});$("#questionList").addEventListener("click",e=>{const b=e.target.closest("[data-hint]");if(!b)return;const h=$(`#hint-${b.dataset.hint}`);h.hidden=!h.hidden;b.textContent=h.hidden?"Show hint":"Hide hint"});
-function calculate(){const a=currentAnswers();if(Object.keys(a).length!==config.questions.length)return null;let correct=0;const domains={},skills={},items=[];config.questions.forEach((q,i)=>{const ok=a[i]===q.answer;if(ok)correct++;domains[q.domain]??={correct:0,total:0};domains[q.domain].total++;if(ok)domains[q.domain].correct++;if(q.skill){skills[q.skill]??={correct:0,total:0};skills[q.skill].total++;if(ok)skills[q.skill].correct++}items.push({id:q.id||`q${i+1}`,domain:q.domain,skill:q.skill||null,lesson:q.lesson||null,correct:ok})});const percent=Math.round(correct/config.questions.length*100),passed=percent>=config.threshold;const program_signal={schema:"khaemenes-curriculum-signal-v1",resource_id:config.resource_id||config.storage_key,assessment_version:config.assessment_version||"1",unit:"KH-MATH-PA-U02",score_summary:{correct,total:config.questions.length,percent,threshold:config.threshold,passed},domains,skills,item_outcomes:items.map(x=>({id:x.id,domain:x.domain,skill:x.skill,lesson:x.lesson,correct:x.correct})),privacy:"No learner name, family identifier, free-response text, browser identifier, or credentials are included in this curriculum-quality signal."};return{title:config.title,pathway:config.pathway,score:correct,total:config.questions.length,percent,passed,threshold:config.threshold,assessment_version:config.assessment_version||"1",answers:a,reasoning:currentReasoning(),domains,skills,item_evidence:items,program_signal,completed_at:new Date().toISOString()}}
-function submit(){const r=calculate();if(!r){$("#resultMessage").textContent="Answer every scored question before submitting.";return}config.questions.forEach((q,i)=>{const f=$(`#feedback-${i}`),ok=r.answers[i]===q.answer;f.hidden=false;f.className=`feedback ${ok?"correct":"incorrect"}`;f.textContent=`${ok?"Correct.":"Review."} ${q.explanation}`});localStorage.setItem(config.storage_key,JSON.stringify(r));localStorage.removeItem(`${config.storage_key}-draft`);showResult(r,true)}
-function showResult(r,scroll){$("#results").hidden=false;$("#resultScore").textContent=`${r.score} / ${r.total}`;$("#resultTitle").textContent=r.passed?"Threshold reached":"Review recommended";$("#resultSummary").textContent=`${r.percent}% · threshold ${r.threshold}%. ${r.passed?"Continue while revisiting missed explanations.":"Review the lowest domains, then try again."}`;$("#domainGrid").innerHTML=Object.entries(r.domains).map(([d,x])=>`<article class="card domain-card"><strong>${x.correct}/${x.total}</strong><h3>${escapeHTML(d)}</h3><p>${x.correct===x.total?"Secure on this check":x.correct===0?"Priority review":"Developing"}</p></article>`).join("");$("#resultMessage").textContent=`Saved locally: ${new Date(r.completed_at).toLocaleString()}`;if(scroll)$("#results").scrollIntoView({behavior:"smooth"})}
-$("#submitButton").addEventListener("click",()=>{if(confirm("Submit the scored questions and reveal explanations?"))submit()});$("#saveDraft").addEventListener("click",()=>{localStorage.setItem(`${config.storage_key}-draft`,JSON.stringify({answers:currentAnswers(),reasoning:currentReasoning(),saved_at:new Date().toISOString()}));$("#resultMessage").textContent="Draft saved in this browser."});$("#resetButton").addEventListener("click",()=>{if(!confirm("Clear this practice or assessment from this browser?"))return;localStorage.removeItem(config.storage_key);localStorage.removeItem(`${config.storage_key}-draft`);$("#results").hidden=true;render();$("#resultMessage").textContent="Reset complete."});
-function downloadJSON(name,data){const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),500)}$("#exportButton").addEventListener("click",()=>downloadJSON(`${config.storage_key}.json`,loadJSON(config.storage_key,null)||{title:config.title,draft:{answers:currentAnswers(),reasoning:currentReasoning()},exported:new Date().toISOString()}));$("#printPage").addEventListener("click",()=>window.print());render();
+(() => {
+  "use strict";
+
+  const config = window.ASSESSMENT_CONFIG;
+  const scriptEl = document.currentScript;
+  const coreSrc = new URL("assessment-engine-core.js", scriptEl?.src || location.href).href;
+  const CLASSIFICATION = "public-self-check-nonconfidential";
+  const RESULT_SCHEMA = "khaemenes-unit-mastery-result-v3";
+
+  function hardenStoredResult() {
+    if (!config?.storage_key) return null;
+    try {
+      const raw = localStorage.getItem(config.storage_key);
+      if (!raw) return null;
+      const result = JSON.parse(raw);
+      if (!result || typeof result !== "object") return null;
+      result.result_schema = RESULT_SCHEMA;
+      result.assessment_classification = CLASSIFICATION;
+      result.trust = {
+        classification: "browser-local-self-scored",
+        authoritative: false,
+        confidential: false,
+        cryptographically_verified: false,
+        digitally_signed: false,
+        editable_storage: true,
+        review_required: true
+      };
+      localStorage.setItem(config.storage_key, JSON.stringify(result));
+      return result;
+    } catch {
+      return null;
+    }
+  }
+
+  function decorate() {
+    const submit = document.getElementById("submitButton");
+    const exportButton = document.getElementById("exportButton");
+    const resultMessage = document.getElementById("resultMessage");
+    if (submit && /submit/i.test(submit.textContent)) submit.textContent = "Submit & Self-Check";
+    if (exportButton) exportButton.textContent = "Export Unverified Result";
+
+    const hero = document.querySelector("main .hero .wrap");
+    if (hero && !document.getElementById("masteryTrustNotice")) {
+      const notice = document.createElement("p");
+      notice.id = "masteryTrustNotice";
+      notice.className = "notice";
+      notice.innerHTML = "<strong>Learning mastery check:</strong> this public self-check supports the 80% learning gate, corrections, and progress review. Its browser-local result is editable and is not a confidential, digitally signed, or independently authenticated academic record.";
+      hero.appendChild(notice);
+    }
+
+    if (resultMessage && localStorage.getItem(config?.storage_key || "")) {
+      resultMessage.textContent = "Saved locally as an unverified learning-mastery result. Parent/administrator review is required before using it as portfolio evidence.";
+    }
+  }
+
+  function installGuards() {
+    hardenStoredResult();
+    decorate();
+
+    const submit = document.getElementById("submitButton");
+    const exportButton = document.getElementById("exportButton");
+
+    submit?.addEventListener("click", () => {
+      setTimeout(() => {
+        hardenStoredResult();
+        decorate();
+      }, 0);
+    });
+
+    exportButton?.addEventListener("click", () => {
+      hardenStoredResult();
+    }, true);
+  }
+
+  const core = document.createElement("script");
+  core.src = coreSrc;
+  core.async = false;
+  core.onload = installGuards;
+  core.onerror = () => {
+    const message = document.getElementById("resultMessage");
+    if (message) message.textContent = "Assessment engine could not load. Do not submit until the page is refreshed successfully.";
+  };
+  document.head.appendChild(core);
+})();
