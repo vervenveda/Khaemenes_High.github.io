@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pre-Algebra Archaemenes Upgrade · Installation</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:900px;margin:50px auto;padding:0 22px;line-height:1.65;color:#17251f}
+h1,h2{font-family:Georgia,serif;color:#17392f}
+code,pre{background:#f3f0e8;border:1px solid #ddd6c6;border-radius:8px}
+code{padding:2px 5px}
+pre{padding:16px;overflow:auto}
+.good{border-left:4px solid #3f755b;padding:12px 15px;background:#eff7f2}
+</style>
+</head>
+<body>
+<h1>Pre-Algebra · Archaemenes + Style Upgrade v1</h1>
+<p>This is deliberately a drop-in layer so the existing 148 KB Pre-Algebra engine does not need to be rebuilt.</p>
+
+<h2>1. Upload the asset</h2>
+<p>Put:</p>
+<pre>assets/prealgebra-archaemenes-upgrade.js</pre>
+<p>inside:</p>
+<pre>courses/mathematics/pre-algebra/assets/</pre>
+
+<h2>2. Add one line to the current Pre-Algebra index.html</h2>
+<p>Immediately before the final <code>&lt;/body&gt;</code>, add:</p>
+<pre>&lt;script src="assets/prealgebra-archaemenes-upgrade.js"&gt;&lt;/script&gt;</pre>
+
+<div class="good">
+<strong>Nothing else in index.html needs to be replaced.</strong>
+The existing APP object, 36-week curriculum, localStorage records, quizzes, exams,
+tools, reports and assessment logic remain intact.
+</div>
+
+<h2>What the upgrade adds</h2>
+<p>It adds the Archaemenes course mentor, passes current Week/Unit/Lesson context to his High School page, changes the course presentation into the centered forest/gold Khaemenes academic style, adds the canonical Beta Program button, and hardens the existing details/dropdown menus so they collapse on outside click or Escape.</p>
+
+<h2>Trust boundary</h2>
+<p>The mentor layer does not read answer keys or modify scores, mastery, exams, learner records or progression.</p>
+</body>
+</html>
