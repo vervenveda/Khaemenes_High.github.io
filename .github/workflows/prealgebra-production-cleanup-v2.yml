@@ -1,0 +1,96 @@
+name: One-time Pre-Algebra production cleanup v2
+
+on:
+  push:
+    branches:
+      - agent/prealgebra-production-cleanup-v2
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: ${{ !contains(github.event.head_commit.message, '[cleanup-complete]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Apply validated Pre-Algebra cleanup
+        shell: python
+        run: |
+          from pathlib import Path
+          import json
+          import re
+
+          diagnostic_path = Path('courses/mathematics/pre-algebra/diagnostic/index.html')
+          diagnostic = diagnostic_path.read_text(encoding='utf-8')
+
+          bank_match = re.search(r'const QUESTIONS=(\[.*?\]);\s*const STRANDS\s*=\s*\{', diagnostic, re.S)
+          if not bank_match:
+              raise SystemExit('Could not locate diagnostic question bank')
+          questions = json.loads(bank_match.group(1))
+          if len(questions) != 20:
+              raise SystemExit(f'Expected 20 diagnostic questions; found {len(questions)}')
+
+          diagnostic_replacements = [
+              ('18 Questions · Untimed · Local-Only Results', '20 Questions · Untimed · Local-Only Results'),
+              ('The report groups the original 18 questions into six broad readiness', 'The report groups the 20 questions into six broad readiness'),
+              ('<span>Questions</span>\n            <strong>18</strong>', '<span>Questions</span>\n            <strong>20</strong>'),
+              ('Start the 18 Questions', 'Start the 20 Questions'),
+              ('<strong id="answeredLabel">0 / 18</strong>', '<strong id="answeredLabel">0 / 20</strong>'),
+              ('"All 18 questions have a recorded response. You may submit now or return to revise an answer."', '`All ${QUESTIONS.length} questions have a recorded response. You may submit now or return to revise an answer.`'),
+          ]
+          for old, new in diagnostic_replacements:
+              count = diagnostic.count(old)
+              if count != 1:
+                  raise SystemExit(f'Expected exactly one diagnostic match for {old!r}; found {count}')
+              diagnostic = diagnostic.replace(old, new, 1)
+
+          for stale in ('18 Questions · Untimed', 'original 18 questions', 'Start the 18 Questions', '0 / 18', 'All 18 questions'):
+              if stale in diagnostic:
+                  raise SystemExit(f'Stale diagnostic count remains: {stale}')
+
+          diagnostic_path.write_text(diagnostic, encoding='utf-8')
+
+          index_path = Path('courses/mathematics/pre-algebra/index.html')
+          index = index_path.read_text(encoding='utf-8')
+
+          standards_pattern = re.compile(r'function standards\(\)\{\n.*?\n\}\n\nfunction num\(id\)', re.S)
+          standards_matches = standards_pattern.findall(index)
+          if len(standards_matches) != 1:
+              raise SystemExit(f'Expected one standards function; found {len(standards_matches)}')
+
+          clean_standards = '''function standards(){
+  let coverage={};
+  APP.weeks.forEach(w=>w.tags.forEach(tag=>{coverage[tag]??=[];coverage[tag].push(w.week)}));
+  $("content").innerHTML=`<div class="grid"><div class="card col12"><h3>Standards &amp; Frameworks</h3><p>The 36-week Pre-Algebra sequence is organized around widely recognized secondary mathematics expectations while maintaining a coherent progression toward Algebra I.</p><p class="section-note">Framework labels are provided as alignment guides. Families and schools may compare them with requirements that apply in their own jurisdiction.</p></div><div class="card col12"><div class="table-wrap"><table><tr><th>Framework Connection</th><th>Course Weeks</th></tr>${Object.entries(coverage).sort(([a],[b])=>a.localeCompare(b)).map(([tag,weeks])=>`<tr><td>${esc(tag)}</td><td>${weeks.join(", ")}</td></tr>`).join("")}</table></div></div></div>`;
+}
+
+function num(id)'''
+          index = standards_pattern.sub(clean_standards, index, count=1)
+
+          duplicate_tail = '<script src="assets/prealgebra-archaemenes-upgrade.js"></script>\n</body>\n</html>\n</body>\n</html>'
+          clean_tail = '<script src="assets/prealgebra-archaemenes-upgrade.js"></script>\n</body>\n</html>'
+          if not index.rstrip().endswith(duplicate_tail):
+              raise SystemExit('Expected duplicate document tail was not found')
+          stripped = index.rstrip()
+          index = stripped[:-len(duplicate_tail)] + clean_tail + '\n'
+
+          if 'Repository Sources & Standards Evidence' in index or '<h3>Architecture Notes</h3>' in index:
+              raise SystemExit('Legacy public architecture copy remains')
+          if not index.rstrip().endswith(clean_tail):
+              raise SystemExit('Clean document tail validation failed')
+
+          index_path.write_text(index, encoding='utf-8')
+
+      - name: Validate and commit cleanup
+        run: |
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add courses/mathematics/pre-algebra/diagnostic/index.html courses/mathematics/pre-algebra/index.html
+          git diff --cached --quiet && exit 1
+          git commit -m "Fix Pre-Algebra release source hygiene [cleanup-complete]"
+          git push
