@@ -31,13 +31,3 @@
 ## Upload order
 
 Upload the full `courses/mathematics/pre-algebra/units/unit-01/` directory first. Then replace the two Pre-Algebra files and four root files listed above. Perform one hard refresh after deployment so the browser replaces service-worker version 3 with version 4.
-
-
-## Checkpoint 1 hardening · Unit home and progression
-
-- Standardized Unit 1 mastery at 80%.
-- Separated lesson review marks from scored lesson mastery.
-- Added migration logic so older manual review marks cannot count as mastery.
-- Added a visible Unit 2 progression gate requiring all lesson practices at 80%+ and the Unit 1 Mastery Check at 80%+.
-- Restored backward-compatible sacred design tokens used by existing lesson pages.
-- Added a functional dark theme to the shared Unit 1 design system.

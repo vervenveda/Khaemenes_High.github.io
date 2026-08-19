@@ -1,251 +1,176 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "1.0",
   "unit": "KH-MATH-PA-U02",
   "assessment": "Unit 2 Mastery Check",
-  "assessment_version": "2.1",
-  "threshold": 80,
-  "security_note": "This public static key is for teacher/reference use only; it is not a secure high-stakes testing mechanism.",
+  "threshold": 75,
   "items": [
     {
       "number": 1,
-      "id": "U02-M01",
-      "lesson": "l01",
-      "domain": "Integer meaning",
-      "skill": "interpret-signed-context",
+      "domain": "Interpretation",
       "answer_index": 1,
       "answer_text": "−45",
-      "explanation": "Debt is represented below a zero balance, so −45."
+      "explanation": "Debt is below a zero balance."
     },
     {
       "number": 2,
-      "id": "U02-M02",
-      "lesson": "l01",
-      "domain": "Integer meaning",
-      "skill": "interpret-signed-context",
-      "answer_index": 3,
-      "answer_text": "−9",
-      "explanation": "Below the reference point is negative."
+      "domain": "Number line",
+      "answer_index": 0,
+      "answer_text": "−11",
+      "explanation": "−11 is least."
     },
     {
       "number": 3,
-      "id": "U02-M03",
-      "lesson": "l02",
-      "domain": "Opposites & absolute value",
-      "skill": "opposites",
+      "domain": "Opposites",
       "answer_index": 0,
       "answer_text": "−23",
       "explanation": "23+(−23)=0."
     },
     {
       "number": 4,
-      "id": "U02-M04",
-      "lesson": "l02",
-      "domain": "Opposites & absolute value",
-      "skill": "absolute-value",
+      "domain": "Absolute value",
       "answer_index": 2,
       "answer_text": "31",
-      "explanation": "Absolute value is distance from zero, so |−31|=31."
+      "explanation": "Distance from zero is 31."
     },
     {
       "number": 5,
-      "id": "U02-M05",
-      "lesson": "l02",
-      "domain": "Opposites & absolute value",
-      "skill": "distance",
+      "domain": "Distance",
       "answer_index": 2,
       "answer_text": "9",
-      "explanation": "|−3−(−12)|=|9|=9."
+      "explanation": "|−3−(−12)|=9."
     },
     {
       "number": 6,
-      "id": "U02-M06",
-      "lesson": "l03",
-      "domain": "Compare & order",
-      "skill": "compare-integers",
-      "answer_index": 0,
+      "domain": "Comparison",
+      "answer_index": 1,
       "answer_text": "−14<−6",
-      "explanation": "−14 lies farther left on the number line."
+      "explanation": "−14 lies farther left."
     },
     {
       "number": 7,
-      "id": "U02-M07",
-      "lesson": "l03",
-      "domain": "Compare & order",
-      "skill": "order-integers",
-      "answer_index": 3,
+      "domain": "Ordering",
+      "answer_index": 0,
       "answer_text": "−9,−2,0,4",
-      "explanation": "Values increase left to right: −9<−2<0<4."
+      "explanation": "Follow the number line."
     },
     {
       "number": 8,
-      "id": "U02-M08",
-      "lesson": "l03",
-      "domain": "Compare & order",
-      "skill": "magnitude",
+      "domain": "Addition",
       "answer_index": 1,
-      "answer_text": "−17",
-      "explanation": "|−17|=17, the greatest absolute value."
+      "answer_text": "−11",
+      "explanation": "18−7=11, negative."
     },
     {
       "number": 9,
-      "id": "U02-M09",
-      "lesson": "l04",
       "domain": "Addition",
-      "skill": "add-unlike-signs",
       "answer_index": 0,
-      "answer_text": "−11",
-      "explanation": "The signs differ; 18−7=11 and the larger magnitude is negative."
+      "answer_text": "−25",
+      "explanation": "Same negative signs combine."
     },
     {
       "number": 10,
-      "id": "U02-M10",
-      "lesson": "l04",
       "domain": "Addition",
-      "skill": "add-like-signs",
       "answer_index": 2,
-      "answer_text": "−25",
-      "explanation": "Same negative signs combine: −9+(−16)=−25."
+      "answer_text": "7",
+      "explanation": "22−15=7."
     },
     {
       "number": 11,
-      "id": "U02-M11",
-      "lesson": "l04",
-      "domain": "Addition",
-      "skill": "add-context",
+      "domain": "Subtraction",
       "answer_index": 1,
-      "answer_text": "+7 yards",
-      "explanation": "−12+19=+7 yards."
+      "answer_text": "−8",
+      "explanation": "6+(−14)=−8."
     },
     {
       "number": 12,
-      "id": "U02-M12",
-      "lesson": "l05",
       "domain": "Subtraction",
-      "skill": "subtract-positive",
-      "answer_index": 3,
+      "answer_index": 1,
       "answer_text": "−8",
-      "explanation": "6−14=6+(−14)=−8."
+      "explanation": "−13+5=−8."
     },
     {
       "number": 13,
-      "id": "U02-M13",
-      "lesson": "l05",
       "domain": "Subtraction",
-      "skill": "subtract-negative",
-      "answer_index": 3,
-      "answer_text": "−8",
-      "explanation": "−13−(−5)=−13+5=−8."
+      "answer_index": 0,
+      "answer_text": "−13",
+      "explanation": "−4+(−9)=−13."
     },
     {
       "number": 14,
-      "id": "U02-M14",
-      "lesson": "l05",
-      "domain": "Subtraction",
-      "skill": "signed-difference",
-      "answer_index": 1,
-      "answer_text": "−11°C",
-      "explanation": "−7−4=−11°C."
+      "domain": "Multiplication",
+      "answer_index": 0,
+      "answer_text": "−56",
+      "explanation": "Unlike signs give negative."
     },
     {
       "number": 15,
-      "id": "U02-M15",
-      "lesson": "l06",
-      "domain": "Multiply & divide",
-      "skill": "multiply-unlike-signs",
-      "answer_index": 2,
-      "answer_text": "−56",
-      "explanation": "Unlike signs give a negative product; 7×8=56."
+      "domain": "Multiplication",
+      "answer_index": 3,
+      "answer_text": "36",
+      "explanation": "Like signs give positive."
     },
     {
       "number": 16,
-      "id": "U02-M16",
-      "lesson": "l06",
-      "domain": "Multiply & divide",
-      "skill": "multiply-like-signs",
+      "domain": "Division",
       "answer_index": 0,
-      "answer_text": "36",
-      "explanation": "Like signs give a positive product."
+      "answer_text": "−8",
+      "explanation": "Unlike signs give negative."
     },
     {
       "number": 17,
-      "id": "U02-M17",
-      "lesson": "l07",
-      "domain": "Multiply & divide",
-      "skill": "divide-unlike-signs",
-      "answer_index": 1,
-      "answer_text": "−8",
-      "explanation": "Unlike signs give −8."
+      "domain": "Division",
+      "answer_index": 3,
+      "answer_text": "8",
+      "explanation": "Like signs give positive."
     },
     {
       "number": 18,
-      "id": "U02-M18",
-      "lesson": "l07",
-      "domain": "Multiply & divide",
-      "skill": "divide-like-signs",
-      "answer_index": 0,
-      "answer_text": "8",
-      "explanation": "Like signs give a positive quotient: 8."
+      "domain": "Coordinates",
+      "answer_index": 3,
+      "answer_text": "IV",
+      "explanation": "Positive x, negative y is Quadrant IV."
     },
     {
       "number": 19,
-      "id": "U02-M19",
-      "lesson": "l07",
-      "domain": "Multiply & divide",
-      "skill": "division-by-zero",
-      "answer_index": 3,
-      "answer_text": "7÷0",
-      "explanation": "Division by zero is undefined."
+      "domain": "Coordinates",
+      "answer_index": 1,
+      "answer_text": "(−6,0)",
+      "explanation": "Points on x-axis have y=0."
     },
     {
       "number": 20,
-      "id": "U02-M20",
-      "lesson": "l08",
-      "domain": "Coordinates & signed movement",
-      "skill": "quadrants",
-      "answer_index": 2,
-      "answer_text": "IV",
-      "explanation": "Positive x and negative y place the point in Quadrant IV."
+      "domain": "Coordinates",
+      "answer_index": 3,
+      "answer_text": "7",
+      "explanation": "6−(−1)=7."
     },
     {
       "number": 21,
-      "id": "U02-M21",
-      "lesson": "l08",
-      "domain": "Coordinates & signed movement",
-      "skill": "coordinate-movement",
-      "answer_index": 2,
-      "answer_text": "(6,1)",
-      "explanation": "x: −1+7=6; y: 5−4=1."
+      "domain": "Expressions",
+      "answer_index": 1,
+      "answer_text": "−20",
+      "explanation": "2×−7=−14; −6−14=−20."
     },
     {
       "number": 22,
-      "id": "U02-M22",
-      "lesson": "l08",
-      "domain": "Multi-step reasoning",
-      "skill": "multi-step-expression",
-      "answer_index": 3,
-      "answer_text": "−20",
-      "explanation": "Multiply first: 2(−7)=−14; then −6+(−14)=−20."
+      "domain": "Expressions",
+      "answer_index": 0,
+      "answer_text": "−4",
+      "explanation": "15+9=24; 24÷−6=−4."
     },
     {
       "number": 23,
-      "id": "U02-M23",
-      "lesson": "l08",
-      "domain": "Multi-step reasoning",
-      "skill": "multi-step-expression",
-      "answer_index": 0,
-      "answer_text": "−4",
-      "explanation": "15−(−9)=24; 24÷(−6)=−4."
+      "domain": "Application",
+      "answer_index": 2,
+      "answer_text": "$4",
+      "explanation": "−27+50−19=4."
     },
     {
       "number": 24,
-      "id": "U02-M24",
-      "lesson": "l08",
-      "domain": "Application & verification",
-      "skill": "multi-step-context",
-      "answer_index": 1,
-      "answer_text": "+$4",
-      "explanation": "−27+50−19=4."
+      "domain": "Application",
+      "answer_index": 0,
+      "answer_text": "−21°C",
+      "explanation": "Final−initial=−13−8=−21."
     }
-  ],
-  "assessment_note": "24-question cumulative mastery check; 80% mastery requires at least 20 correct."
+  ]
 }
