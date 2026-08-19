@@ -1,0 +1,479 @@
+[
+  {
+    "id": "equation",
+    "english": "Equation",
+    "spanish": "ecuación",
+    "french": "équation",
+    "arabic": "معادلة",
+    "portuguese": "equação",
+    "meaning": "A statement that two expressions have equal value."
+  },
+  {
+    "id": "equality",
+    "english": "Equality",
+    "spanish": "igualdad",
+    "french": "égalité",
+    "arabic": "مساواة",
+    "portuguese": "igualdade",
+    "meaning": "The relationship of having the same value."
+  },
+  {
+    "id": "equals-sign",
+    "english": "Equals Sign",
+    "spanish": "signo igual",
+    "french": "signe égal",
+    "arabic": "علامة المساواة",
+    "portuguese": "sinal de igual",
+    "meaning": "The symbol = that states equality."
+  },
+  {
+    "id": "left-side",
+    "english": "Left Side",
+    "spanish": "lado izquierdo",
+    "french": "membre gauche",
+    "arabic": "الطرف الأيسر",
+    "portuguese": "lado esquerdo",
+    "meaning": "The expression before the equals sign."
+  },
+  {
+    "id": "right-side",
+    "english": "Right Side",
+    "spanish": "lado derecho",
+    "french": "membre droit",
+    "arabic": "الطرف الأيمن",
+    "portuguese": "lado direito",
+    "meaning": "The expression after the equals sign."
+  },
+  {
+    "id": "solution",
+    "english": "Solution",
+    "spanish": "solución",
+    "french": "solution",
+    "arabic": "حل",
+    "portuguese": "solução",
+    "meaning": "A value that makes an equation true."
+  },
+  {
+    "id": "solution-set",
+    "english": "Solution Set",
+    "spanish": "conjunto solución",
+    "french": "ensemble solution",
+    "arabic": "مجموعة الحل",
+    "portuguese": "conjunto solução",
+    "meaning": "All values that satisfy an equation."
+  },
+  {
+    "id": "balance-model",
+    "english": "Balance Model",
+    "spanish": "modelo de balanza",
+    "french": "modèle de balance",
+    "arabic": "نموذج الميزان",
+    "portuguese": "modelo de balança",
+    "meaning": "A visual model showing equal quantities on two sides."
+  },
+  {
+    "id": "equivalent-equation",
+    "english": "Equivalent Equation",
+    "spanish": "ecuación equivalente",
+    "french": "équation équivalente",
+    "arabic": "معادلة مكافئة",
+    "portuguese": "equação equivalente",
+    "meaning": "An equation with the same solution set as another."
+  },
+  {
+    "id": "check-solution",
+    "english": "Check Solution",
+    "spanish": "comprobar solución",
+    "french": "vérifier la solution",
+    "arabic": "التحقق من الحل",
+    "portuguese": "verificar solução",
+    "meaning": "Substitute a value to verify the original equation."
+  },
+  {
+    "id": "one-step-equation",
+    "english": "One Step Equation",
+    "spanish": "ecuación de un paso",
+    "french": "équation à une étape",
+    "arabic": "معادلة بخطوة واحدة",
+    "portuguese": "equação de uma etapa",
+    "meaning": "An equation solved with one inverse-operation step."
+  },
+  {
+    "id": "inverse-operation",
+    "english": "Inverse Operation",
+    "spanish": "operación inversa",
+    "french": "opération inverse",
+    "arabic": "عملية عكسية",
+    "portuguese": "operação inversa",
+    "meaning": "An operation that undoes another operation."
+  },
+  {
+    "id": "addition-property-equality",
+    "english": "Addition Property Equality",
+    "spanish": "propiedad aditiva de igualdad",
+    "french": "propriété additive de l’égalité",
+    "arabic": "خاصية الجمع للمساواة",
+    "portuguese": "propriedade aditiva da igualdade",
+    "meaning": "Adding the same quantity to both sides preserves equality."
+  },
+  {
+    "id": "subtraction-property-equality",
+    "english": "Subtraction Property Equality",
+    "spanish": "propiedad sustractiva de igualdad",
+    "french": "propriété soustractive de l’égalité",
+    "arabic": "خاصية الطرح للمساواة",
+    "portuguese": "propriedade subtrativa da igualdade",
+    "meaning": "Subtracting the same quantity from both sides preserves equality."
+  },
+  {
+    "id": "isolate-variable",
+    "english": "Isolate Variable",
+    "spanish": "aislar la variable",
+    "french": "isoler la variable",
+    "arabic": "عزل المتغير",
+    "portuguese": "isolar a variável",
+    "meaning": "Rewrite so the variable stands alone."
+  },
+  {
+    "id": "opposite-operation",
+    "english": "Opposite Operation",
+    "spanish": "operación opuesta",
+    "french": "opération opposée",
+    "arabic": "العملية المقابلة",
+    "portuguese": "operação oposta",
+    "meaning": "An informal name for an operation that reverses another."
+  },
+  {
+    "id": "multiplication-property-equality",
+    "english": "Multiplication Property Equality",
+    "spanish": "propiedad multiplicativa de igualdad",
+    "french": "propriété multiplicative de l’égalité",
+    "arabic": "خاصية الضرب للمساواة",
+    "portuguese": "propriedade multiplicativa da igualdade",
+    "meaning": "Multiplying both sides by the same quantity preserves equality."
+  },
+  {
+    "id": "division-property-equality",
+    "english": "Division Property Equality",
+    "spanish": "propiedad de división de igualdad",
+    "french": "propriété de division de l’égalité",
+    "arabic": "خاصية القسمة للمساواة",
+    "portuguese": "propriedade da divisão da igualdade",
+    "meaning": "Dividing both sides by the same nonzero quantity preserves equality."
+  },
+  {
+    "id": "reciprocal",
+    "english": "Reciprocal",
+    "spanish": "recíproco",
+    "french": "inverse multiplicatif",
+    "arabic": "مقلوب",
+    "portuguese": "recíproco",
+    "meaning": "A number that multiplies with another to make 1."
+  },
+  {
+    "id": "coefficient",
+    "english": "Coefficient",
+    "spanish": "coeficiente",
+    "french": "coefficient",
+    "arabic": "معامل",
+    "portuguese": "coeficiente",
+    "meaning": "The signed numerical factor multiplying a variable."
+  },
+  {
+    "id": "unit-analysis",
+    "english": "Unit Analysis",
+    "spanish": "análisis de unidades",
+    "french": "analyse des unités",
+    "arabic": "تحليل الوحدات",
+    "portuguese": "análise de unidades",
+    "meaning": "Using units to verify a relationship or result."
+  },
+  {
+    "id": "two-step-equation",
+    "english": "Two Step Equation",
+    "spanish": "ecuación de dos pasos",
+    "french": "équation à deux étapes",
+    "arabic": "معادلة بخطوتين",
+    "portuguese": "equação de duas etapas",
+    "meaning": "An equation requiring two inverse-operation stages."
+  },
+  {
+    "id": "operation-order",
+    "english": "Operation Order",
+    "spanish": "orden de operaciones",
+    "french": "ordre des opérations",
+    "arabic": "ترتيب العمليات",
+    "portuguese": "ordem das operações",
+    "meaning": "The sequence in which operations are applied or undone."
+  },
+  {
+    "id": "constant",
+    "english": "Constant",
+    "spanish": "constante",
+    "french": "constante",
+    "arabic": "ثابت",
+    "portuguese": "constante",
+    "meaning": "A term without a variable."
+  },
+  {
+    "id": "verification",
+    "english": "Verification",
+    "spanish": "verificación",
+    "french": "vérification",
+    "arabic": "تحقق",
+    "portuguese": "verificação",
+    "meaning": "Evidence that a result satisfies the original requirement."
+  },
+  {
+    "id": "multi-step-equation",
+    "english": "Multi Step Equation",
+    "spanish": "ecuación de varios pasos",
+    "french": "équation à plusieurs étapes",
+    "arabic": "معادلة متعددة الخطوات",
+    "portuguese": "equação de várias etapas",
+    "meaning": "An equation requiring simplification and several valid transformations."
+  },
+  {
+    "id": "distributive-property",
+    "english": "Distributive Property",
+    "spanish": "propiedad distributiva",
+    "french": "propriété distributive",
+    "arabic": "خاصية التوزيع",
+    "portuguese": "propriedade distributiva",
+    "meaning": "Multiplying a factor by every term in a grouped sum or difference."
+  },
+  {
+    "id": "combine-like-terms",
+    "english": "Combine Like Terms",
+    "spanish": "combinar términos semejantes",
+    "french": "regrouper les termes semblables",
+    "arabic": "جمع الحدود المتشابهة",
+    "portuguese": "combinar termos semelhantes",
+    "meaning": "Add or subtract coefficients of matching variable parts."
+  },
+  {
+    "id": "clear-fractions",
+    "english": "Clear Fractions",
+    "spanish": "eliminar fracciones",
+    "french": "éliminer les fractions",
+    "arabic": "إزالة الكسور",
+    "portuguese": "eliminar frações",
+    "meaning": "Multiply every term by a common denominator."
+  },
+  {
+    "id": "clear-decimals",
+    "english": "Clear Decimals",
+    "spanish": "eliminar decimales",
+    "french": "éliminer les décimales",
+    "arabic": "إزالة الكسور العشرية",
+    "portuguese": "eliminar decimais",
+    "meaning": "Multiply every term by a power of ten to remove decimals."
+  },
+  {
+    "id": "equivalent-transformations",
+    "english": "Equivalent Transformations",
+    "spanish": "transformaciones equivalentes",
+    "french": "transformations équivalentes",
+    "arabic": "تحويلات مكافئة",
+    "portuguese": "transformações equivalentes",
+    "meaning": "Valid changes that preserve the solution set."
+  },
+  {
+    "id": "variable-both-sides",
+    "english": "Variable Both Sides",
+    "spanish": "variable en ambos lados",
+    "french": "variable des deux côtés",
+    "arabic": "متغير في الطرفين",
+    "portuguese": "variável nos dois lados",
+    "meaning": "An equation containing variable terms on both sides."
+  },
+  {
+    "id": "conditional-equation",
+    "english": "Conditional Equation",
+    "spanish": "ecuación condicional",
+    "french": "équation conditionnelle",
+    "arabic": "معادلة شرطية",
+    "portuguese": "equação condicional",
+    "meaning": "An equation true for particular value or values."
+  },
+  {
+    "id": "identity",
+    "english": "Identity",
+    "spanish": "identidad",
+    "french": "identité",
+    "arabic": "متطابقة",
+    "portuguese": "identidade",
+    "meaning": "An equation true for every allowed value."
+  },
+  {
+    "id": "contradiction",
+    "english": "Contradiction",
+    "spanish": "contradicción",
+    "french": "contradiction",
+    "arabic": "تناقض",
+    "portuguese": "contradição",
+    "meaning": "A false statement produced when no value can satisfy the equation."
+  },
+  {
+    "id": "no-solution",
+    "english": "No Solution",
+    "spanish": "sin solución",
+    "french": "aucune solution",
+    "arabic": "لا حل",
+    "portuguese": "sem solução",
+    "meaning": "A solution set with no values."
+  },
+  {
+    "id": "infinitely-many-solutions",
+    "english": "Infinitely Many Solutions",
+    "spanish": "infinitas soluciones",
+    "french": "une infinité de solutions",
+    "arabic": "عدد لا نهائي من الحلول",
+    "portuguese": "infinitas soluções",
+    "meaning": "A solution set containing every allowed value."
+  },
+  {
+    "id": "literal-equation",
+    "english": "Literal Equation",
+    "spanish": "ecuación literal",
+    "french": "équation littérale",
+    "arabic": "معادلة حرفية",
+    "portuguese": "equação literal",
+    "meaning": "An equation involving two or more variables."
+  },
+  {
+    "id": "formula",
+    "english": "Formula",
+    "spanish": "fórmula",
+    "french": "formule",
+    "arabic": "صيغة",
+    "portuguese": "fórmula",
+    "meaning": "An equation expressing a general relationship."
+  },
+  {
+    "id": "rearrange-formula",
+    "english": "Rearrange Formula",
+    "spanish": "despejar una fórmula",
+    "french": "réarranger une formule",
+    "arabic": "إعادة ترتيب الصيغة",
+    "portuguese": "rearranjar fórmula",
+    "meaning": "Use valid operations to isolate a different variable."
+  },
+  {
+    "id": "subject-of-formula",
+    "english": "Subject Of Formula",
+    "spanish": "variable aislada",
+    "french": "sujet de la formule",
+    "arabic": "موضوع الصيغة",
+    "portuguese": "variável isolada",
+    "meaning": "The variable isolated in a formula."
+  },
+  {
+    "id": "dependent-variable",
+    "english": "Dependent Variable",
+    "spanish": "variable dependiente",
+    "french": "variable dépendante",
+    "arabic": "متغير تابع",
+    "portuguese": "variável dependente",
+    "meaning": "An output whose value depends on another variable."
+  },
+  {
+    "id": "independent-variable",
+    "english": "Independent Variable",
+    "spanish": "variable independiente",
+    "french": "variable indépendante",
+    "arabic": "متغير مستقل",
+    "portuguese": "variável independente",
+    "meaning": "An input selected or controlled in a relationship."
+  },
+  {
+    "id": "constraint",
+    "english": "Constraint",
+    "spanish": "restricción",
+    "french": "contrainte",
+    "arabic": "قيد",
+    "portuguese": "restrição",
+    "meaning": "A condition limiting allowable values."
+  },
+  {
+    "id": "denominator",
+    "english": "Denominator",
+    "spanish": "denominador",
+    "french": "dénominateur",
+    "arabic": "مقام",
+    "portuguese": "denominador",
+    "meaning": "The quantity below a fraction bar."
+  },
+  {
+    "id": "equation-from-context",
+    "english": "Equation From Context",
+    "spanish": "ecuación desde un contexto",
+    "french": "équation issue d’un contexte",
+    "arabic": "معادلة من سياق",
+    "portuguese": "equação de um contexto",
+    "meaning": "An equation representing quantities and relationships in a situation."
+  },
+  {
+    "id": "model",
+    "english": "Model",
+    "spanish": "modelo",
+    "french": "modèle",
+    "arabic": "نموذج",
+    "portuguese": "modelo",
+    "meaning": "A mathematical representation of a situation."
+  },
+  {
+    "id": "assumption",
+    "english": "Assumption",
+    "spanish": "suposición",
+    "french": "hypothèse",
+    "arabic": "افتراض",
+    "portuguese": "suposição",
+    "meaning": "A condition accepted when building a model."
+  },
+  {
+    "id": "domain",
+    "english": "Domain",
+    "spanish": "dominio",
+    "french": "domaine",
+    "arabic": "مجال",
+    "portuguese": "domínio",
+    "meaning": "The allowed input values for a relationship."
+  },
+  {
+    "id": "reasonableness",
+    "english": "Reasonableness",
+    "spanish": "razonabilidad",
+    "french": "caractère raisonnable",
+    "arabic": "معقولية",
+    "portuguese": "razoabilidade",
+    "meaning": "Whether a result makes sense in size, sign, units, and context."
+  },
+  {
+    "id": "fixed-amount",
+    "english": "Fixed Amount",
+    "spanish": "cantidad fija",
+    "french": "montant fixe",
+    "arabic": "مقدار ثابت",
+    "portuguese": "valor fixo",
+    "meaning": "A constant quantity that does not change with input."
+  },
+  {
+    "id": "rate",
+    "english": "Rate",
+    "spanish": "tasa",
+    "french": "taux",
+    "arabic": "معدل",
+    "portuguese": "taxa",
+    "meaning": "A comparison describing change per unit."
+  },
+  {
+    "id": "extraneous-solution",
+    "english": "Extraneous Solution",
+    "spanish": "solución extraña",
+    "french": "solution extraneous",
+    "arabic": "حل دخيل",
+    "portuguese": "solução extraneous",
+    "meaning": "A value introduced by work that does not satisfy the original equation."
+  }
+]
