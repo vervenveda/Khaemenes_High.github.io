@@ -3,6 +3,7 @@
 
 const scriptEl=document.currentScript;
 const coreSrc=new URL("prealgebra-archaemenes-upgrade-core.js",scriptEl?.src||location.href).href;
+const FAMILY_REGISTRY="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-family-registry.js";
 const CALCULATOR="https://vervenveda.com/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/";
 const ROUTES=new Map([
  ["https://vervenveda.com/arcade.github.io/a_sacred_geometry_game_index.html","https://vervenveda.com/arcade.github.io/Geometry/sacred_geometry_game_index.html"],
@@ -63,10 +64,71 @@ function installRouteGuard(){
  observer.observe(document.body,{childList:true,subtree:true});
 }
 
-const core=document.createElement("script");
-core.src=coreSrc;
-core.async=false;
-core.onload=installRouteGuard;
-core.onerror=()=>console.error("Pre-Algebra hardening core could not load.");
-document.head.appendChild(core);
+function normalizeName(value){return String(value||"").trim().toLowerCase().replace(/\s+/g," ")}
+function emptyProgress(){return {weeks:{},exams:{},capstone:{logs:[],score:0,rubric:{}}}}
+function courseState(){try{return typeof state!=="undefined"&&state&&Array.isArray(state.students)?state:null}catch{return null}}
+function persistCourseState(){try{if(typeof save==="function")save()}catch{}}
+
+function guardLegacyNicknameMigration(){
+ const R=window.KhaemenesFamilyRegistry,course=courseState();
+ if(!R||!course)return;
+ let family=null;
+ try{family=R.getFamily?.()||null}catch{}
+ const learners=Array.isArray(family?.learners)?family.learners.filter(l=>l?.learnerId&&!l.selfDirectedAdult):[];
+ if(!learners.length)return;
+ const legacy=course.students.filter(s=>s&&!String(s.id||"").startsWith("academy:"));
+ const learnersByName=new Map(),legacyByName=new Map();
+ learners.forEach(l=>{const k=normalizeName(l.nickname);if(!k)return;const a=learnersByName.get(k)||[];a.push(l);learnersByName.set(k,a)});
+ legacy.forEach(r=>{const k=normalizeName(r.name);if(!k)return;const a=legacyByName.get(k)||[];a.push(r);legacyByName.set(k,a)});
+ let changed=false;
+ learners.forEach(learner=>{
+  const id=`academy:${learner.learnerId}`;
+  if(course.students.some(s=>s?.id===id))return;
+  const k=normalizeName(learner.nickname),learnerMatches=learnersByName.get(k)||[],legacyMatches=legacyByName.get(k)||[];
+  const ambiguous=legacyMatches.length>0&&(legacyMatches.length!==1||learnerMatches.length!==1);
+  if(!ambiguous)return;
+  course.students.push({
+   id,
+   name:learner.nickname||"Learner",
+   created:new Date().toISOString(),
+   progress:emptyProgress(),
+   migration:{
+    status:"manual-review-required",
+    reason:"ambiguous-legacy-nickname",
+    legacy_record_ids:legacyMatches.map(r=>r.id||null).filter(Boolean),
+    guarded_at:new Date().toISOString()
+   }
+  });
+  changed=true;
+ });
+ if(changed)persistCourseState();
+}
+
+function loadCore(){
+ const core=document.createElement("script");
+ core.src=coreSrc;
+ core.async=false;
+ core.onload=installRouteGuard;
+ core.onerror=()=>console.error("Pre-Algebra hardening core could not load.");
+ document.head.appendChild(core);
+}
+
+function prepareRegistryAndLoadCore(){
+ if(window.KhaemenesFamilyRegistry){guardLegacyNicknameMigration();loadCore();return}
+ let registry=document.getElementById("khaemenesFamilyRegistryScript");
+ if(registry){
+  registry.addEventListener("load",()=>{guardLegacyNicknameMigration();loadCore()},{once:true});
+  registry.addEventListener("error",loadCore,{once:true});
+  return;
+ }
+ registry=document.createElement("script");
+ registry.id="khaemenesFamilyRegistryScript";
+ registry.src=FAMILY_REGISTRY;
+ registry.defer=true;
+ registry.onload=()=>{guardLegacyNicknameMigration();loadCore()};
+ registry.onerror=loadCore;
+ document.head.appendChild(registry);
+}
+
+prepareRegistryAndLoadCore();
 })();
