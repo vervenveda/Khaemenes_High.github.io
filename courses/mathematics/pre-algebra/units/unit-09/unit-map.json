@@ -16,11 +16,8 @@
       "Compound inequalities combine conditions using “and” or “or.”",
       "Contextual constraints may require whole-number, nonnegative, bounded, or otherwise restricted solutions."
     ],
-    "mastery_threshold": 80,
-    "progress_key": "khaemenes-prealgebra-unit09-progress-v1",
-    "architecture": "Open-age integrated Pre-Algebra learning: inequality meaning + number-line graphs + order preservation + negative reversal + multistep inequalities + compound inequalities + contextual constraints + discrete solutions + verification + mastery",
-    "tool_integration": "Calculator use is optional for arithmetic checks after students write the inequality, justify transformations, represent the solution set, and apply contextual constraints.",
-    "readiness_note": "Unit 09 develops inequality and constraint reasoning for learners of any age. Advancement is based on demonstrated mastery, not grade identity."
+    "mastery_threshold": 75,
+    "progress_key": "khaemenes-prealgebra-unit09-progress-v1"
   },
   "lessons": [
     {
@@ -1002,20 +999,5 @@
         }
       ]
     }
-  ],
-  "printables": {
-    "hub": "worksheets/index.html",
-    "lesson_worksheets": [
-      "worksheets/lesson-01-worksheet.html",
-      "worksheets/lesson-02-worksheet.html",
-      "worksheets/lesson-03-worksheet.html",
-      "worksheets/lesson-04-worksheet.html",
-      "worksheets/lesson-05-worksheet.html",
-      "worksheets/lesson-06-worksheet.html",
-      "worksheets/lesson-07-worksheet.html"
-    ],
-    "cumulative_review": "worksheets/unit-09-cumulative-review.html",
-    "project_planner": "worksheets/constraints-investigation-planner.html",
-    "teacher_answer_key": "worksheets/teacher-answer-key.html"
-  }
+  ]
 }

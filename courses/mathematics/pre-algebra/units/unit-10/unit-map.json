@@ -16,11 +16,8 @@
       "Slope describes rate of change, while an intercept describes an initial or boundary value.",
       "Linear models support prediction only within a stated domain and with attention to error and limitations."
     ],
-    "mastery_threshold": 80,
-    "progress_key": "khaemenes-prealgebra-unit10-progress-v1",
-    "architecture": "Open-age integrated Pre-Algebra learning: coordinates + patterns + relations/functions + multiple representations + rate of change + slope/intercepts + linear/nonlinear reasoning + modelling/residuals + mastery",
-    "tool_integration": "Graphing and scientific-calculator tools may support plotting, arithmetic verification, and model checking after students define variables, show the relationship, and explain rate/intercept meaning.",
-    "readiness_note": "Unit 10 develops function and linear-model readiness for learners of any age. Advancement is based on demonstrated mastery, not grade identity."
+    "mastery_threshold": 75,
+    "progress_key": "khaemenes-prealgebra-unit10-progress-v1"
   },
   "lessons": [
     {
@@ -1156,21 +1153,5 @@
         }
       ]
     }
-  ],
-  "printables": {
-    "hub": "worksheets/index.html",
-    "lesson_worksheets": [
-      "worksheets/lesson-01-worksheet.html",
-      "worksheets/lesson-02-worksheet.html",
-      "worksheets/lesson-03-worksheet.html",
-      "worksheets/lesson-04-worksheet.html",
-      "worksheets/lesson-05-worksheet.html",
-      "worksheets/lesson-06-worksheet.html",
-      "worksheets/lesson-07-worksheet.html",
-      "worksheets/lesson-08-worksheet.html"
-    ],
-    "cumulative_review": "worksheets/unit-10-cumulative-review.html",
-    "project_planner": "worksheets/linear-modelling-investigation.html",
-    "teacher_answer_key": "worksheets/teacher-answer-key.html"
-  }
+  ]
 }
