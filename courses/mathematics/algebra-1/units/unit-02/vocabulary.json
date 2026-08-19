@@ -1,56 +1,28 @@
 {
-  "languages": {
-    "en": "English",
-    "es": "Español",
-    "fr": "Français",
-    "ar": "العربية",
-    "pt": "Português"
-  },
+  "unit": 2,
   "terms": [
-    {
-      "id": "term",
-      "en": "term",
-      "es": "término",
-      "fr": "terme",
-      "ar": "حد",
-      "pt": "termo",
-      "definition": "One additive part of an expression."
-    },
-    {
-      "id": "coefficient",
-      "en": "coefficient",
-      "es": "coeficiente",
-      "fr": "coefficient",
-      "ar": "معامل",
-      "pt": "coeficiente",
-      "definition": "A numerical factor multiplying a variable."
-    },
-    {
-      "id": "degree",
-      "en": "degree",
-      "es": "grado",
-      "fr": "degré",
-      "ar": "درجة",
-      "pt": "grau",
-      "definition": "The greatest exponent in a polynomial."
-    },
-    {
-      "id": "polynomial",
-      "en": "polynomial",
-      "es": "polinomio",
-      "fr": "polynôme",
-      "ar": "كثيرة الحدود",
-      "pt": "polinômio",
-      "definition": "A finite sum of terms with nonnegative integer exponents."
-    },
-    {
-      "id": "distributive-property",
-      "en": "distributive property",
-      "es": "propiedad distributiva",
-      "fr": "propriété distributive",
-      "ar": "خاصية التوزيع",
-      "pt": "propriedade distributiva",
-      "definition": "Multiplication applied to every term in a group."
-    }
+    "variable",
+    "constant",
+    "term",
+    "coefficient",
+    "factor",
+    "degree",
+    "monomial",
+    "binomial",
+    "trinomial",
+    "polynomial",
+    "standard form",
+    "leading term",
+    "leading coefficient",
+    "equivalent expressions",
+    "commutative property",
+    "associative property",
+    "distributive property",
+    "identity",
+    "inverse",
+    "like terms",
+    "substitution",
+    "greatest common factor",
+    "factorization"
   ]
 }

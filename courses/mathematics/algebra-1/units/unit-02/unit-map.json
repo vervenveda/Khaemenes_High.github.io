@@ -2,10 +2,12 @@
   "unit": {
     "number": 2,
     "title": "Expressions, Properties & Polynomial Foundations",
+    "subtitle": "Structure \u00b7 Equivalence \u00b7 Polynomials \u00b7 Factoring",
     "weeks": 3,
-    "essential_question": "How can algebraic structure help us simplify, compare, and generalize relationships?",
+    "mastery_target": 80,
+    "essential": "How can algebraic structure help us simplify, compare, and generalize relationships?",
     "big_ideas": [
-      "Structure identifies terms, factors, and degree.",
+      "Structure identifies terms, factors, coefficients, and degree.",
       "Properties justify equivalence.",
       "Polynomials organize repeated operations.",
       "Factoring reverses expansion."
@@ -16,50 +18,51 @@
       "id": "u02-l01",
       "number": 1,
       "title": "Variables, Terms, Factors, Coefficients & Degree",
-      "week": 4,
       "file": "lessons/lesson-01-variables-terms-factors-coefficients-degree.html"
     },
     {
       "id": "u02-l02",
       "number": 2,
       "title": "Evaluating Expressions & Formula Substitution",
-      "week": 4,
       "file": "lessons/lesson-02-evaluating-expressions-formula-substitution.html"
     },
     {
       "id": "u02-l03",
       "number": 3,
       "title": "Properties, Equivalence & Structural Reasoning",
-      "week": 4,
       "file": "lessons/lesson-03-properties-equivalence-structural-reasoning.html"
     },
     {
       "id": "u02-l04",
       "number": 4,
       "title": "Distributive Property & Combining Like Terms",
-      "week": 5,
       "file": "lessons/lesson-04-distributive-property-combining-like-terms.html"
     },
     {
       "id": "u02-l05",
       "number": 5,
       "title": "Monomials & Introductory Polynomial Classification",
-      "week": 5,
       "file": "lessons/lesson-05-monomials-introductory-polynomial-classification.html"
     },
     {
       "id": "u02-l06",
       "number": 6,
       "title": "Adding & Subtracting Polynomials",
-      "week": 6,
       "file": "lessons/lesson-06-adding-subtracting-polynomials.html"
     },
     {
       "id": "u02-l07",
       "number": 7,
       "title": "Multiplying Monomials & Factoring the GCF",
-      "week": 6,
       "file": "lessons/lesson-07-multiplying-monomials-factoring-the-gcf.html"
     }
-  ]
+  ],
+  "practice": [
+    "practice/foundation.html",
+    "practice/core.html",
+    "practice/extended.html"
+  ],
+  "boss_battle": "boss-battle.html",
+  "mastery": "assessment/mastery-check.html",
+  "project": "projects/expression-architecture-lab.html"
 }
