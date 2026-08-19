@@ -4493,5 +4493,9 @@ activityDialog?.addEventListener("click",event=>{if(event.target===activityDialo
 $("pinCourseButton").onclick=toggleCoursePin;window.addEventListener("storage",event=>{if(event.key===PROFILE_PIN_KEY)updatePinButton()});$("addStudent").onclick=()=>{let n=$("studentName").value.trim();if(!n)return alert("Enter a learner name.");addStudent(n);$("studentName").value=""};$("studentSelect").onchange=e=>{state.activeId=e.target.value;save();render()};$("deleteStudent").onclick=()=>{let s=student();if(!s)return;if(!confirm(`Delete ${s.name}?`))return;state.students=state.students.filter(x=>x.id!==s.id);state.activeId=state.students[0]?.id||null;if(!state.students.length)addStudent("First Learner");save();render()};$("demo").onclick=()=>{addStudent("Demo Learner");let s=student();for(let i=1;i<=4;i++){let r=weekRec(s,i);["Monday","Tuesday","Wednesday"].forEach(d=>r.lessons[d]=true);r.assignments[0]=true;r.quiz.best=[100,80,85,70][i-1];r.quiz.attempts.push({date:new Date().toISOString(),score:r.quiz.best})}save();render()};if(!state.students.length)addStudent("First Learner");else render();
 
 </script>
+
+<script src="assets/prealgebra-archaemenes-upgrade.js"></script>
+</body>
+</html>
 </body>
 </html>
