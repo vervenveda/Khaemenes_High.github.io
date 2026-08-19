@@ -581,10 +581,10 @@ body.activity-open{overflow:hidden}
     </div>
    </a>
    <h2>
-    Khaemenes Open-Age Pre-Algebra
+    Khaemenes Global Pre-Algebra
    </h2>
    <p>
-    Foundational Mathematics · GED Support · Algebra I Readiness · Numerica Forge
+    Open-Age Foundations · Algebra I Readiness · Numerica Forge
    </p>
    <p class="small">
     Khaemenes Academy › Mathematics › Pre-Algebra
@@ -668,7 +668,7 @@ body.activity-open{overflow:hidden}
      </div>
     </div>
     <div class="header-tools" aria-label="Course account and navigation controls">
-     <a class="header-control" href="https://vervenveda.github.io/Khaemenes_Academy.github.io/" aria-label="Open Khaemenes Academy">Academy Home</a>
+     <a class="header-control" href="../../../index.html#student-portal" aria-label="Open the High School student profile">Profile</a>
      <button class="header-control pin-control" id="pinCourseButton" type="button" aria-pressed="false" aria-describedby="pinCourseStatus">☆ Pin to Profile</button>
      <details class="course-menu" id="gamesMenu">
       <summary aria-label="Open math games and tools menu">Math Games &amp; Tools <span aria-hidden="true">⌄</span></summary>
@@ -700,7 +700,6 @@ body.activity-open{overflow:hidden}
        <div class="course-menu-label">This course</div>
        <button type="button" data-go="dashboard">Course Dashboard</button>
        <button type="button" data-go="overview">Course Guide</button>
-        <button type="button" data-go="arch">ARCH Math Mentor</button>
        <button type="button" data-go="week">Weekly Lessons</button>
        <button type="button" data-go="tools">Math Tool Dock</button>
        <button type="button" data-go="games">Math Games &amp; Tools</button>
@@ -719,7 +718,7 @@ body.activity-open{overflow:hidden}
     Open-Age · Global Pre-Algebra
    </h1>
    <p>
-    A complete, open-age 36-week mathematics pathway for teens and adults building pre-algebra mastery. Use it for foundational mathematics, GED-style preparation support, skill recovery, homeschool study, career refreshers, or confident Algebra I readiness.
+    A complete, open-age 36-week pre-algebra pathway for arithmetic fluency, rational numbers, proportional reasoning, financial mathematics, exponents, equations, inequalities, functions, geometry, statistics, probability, modelling, and confident Algebra I readiness.
    </p>
    <div class="actions">
     <button data-go="week">
@@ -3528,7 +3527,7 @@ const APP = {
     {
       "name": "Course map JSON",
       "url": "https://github.com/vervenveda/Khaemenes_High.github.io/blob/main/courses/mathematics/pre-algebra/course-map.json",
-      "note": "Defines Khaemenes Open-Age Pre-Algebra, 36-week duration, pathways, 13 units, and universal crosswalk tags."
+      "note": "Defines Khaemenes Global Pre-Algebra, 36-week duration, pathways, 13 units, and universal crosswalk tags."
     },
     {
       "name": "Mathematics folder",
@@ -4234,13 +4233,7 @@ const APP = {
 
 const STORAGE_KEY = "KHAE_OPEN_PREALGEBRA_FORGE_V2";
 const LEGACY_STORAGE_KEYS = ["KHAE_MATH9_PREALGEBRA_FORGE_V1"];
-const PROFILE_PIN_KEY = "khaemenes-academy-pinned-courses-v1";
-const LEGACY_PROFILE_PIN_KEY = "khaemenes-high-pinned-courses-v2";
-const ARCH_EVIDENCE_KEY = "khaemenes-arch-prealgebra-evidence-v1";
-const CANONICAL_EVIDENCE_KEY = "khaemenes-prealgebra-canonical-evidence-v1";
-const GRADE09_COURSE_SUMMARY_KEY = "khaemenes-grade09-course-summary-v1";
-const MIDTERM_RESULT_KEYS = ["khaemenes-prealgebra-midterm-result-v1"];
-const FINAL_RESULT_KEYS = ["khaemenes-prealgebra-final-result-v1","khaemenes-prealgebra-final-36w-result-v1","khaemenes-prealgebra-final-result-36w-v1"];
+const PROFILE_PIN_KEY = "khaemenes-high-pinned-courses-v2";
 const PROFILE_COURSE_ID = "pre-algebra";
 let state=loadState(),view="dashboard",activeWeek=1;
 let activeQuiz=[];
@@ -4264,7 +4257,7 @@ function loadState(){
   }catch(error){console.warn("Progress could not be loaded.",error)}
   return{schemaVersion:2,students:[],activeId:null};
 }
-function save(){state.schemaVersion=2;localStorage.setItem(STORAGE_KEY,JSON.stringify(state));buildCanonicalEvidence();publishArchEvidence()}
+function save(){state.schemaVersion=2;localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}
 function uid(){return"s_"+Math.random().toString(36).slice(2,9)+Date.now().toString(36)}
 function student(){return state.students.find(s=>s.id===state.activeId)||null}
 function ensure(s){
@@ -4302,206 +4295,14 @@ function stats(s){
     done,total:180,midterm:Math.round(mid),final:Math.round(fin),capstone:Math.round(cap),needs
   };
 }
-
-function readLocalJSON(key,fallback=null){
-  try{
-    const raw=localStorage.getItem(key);
-    return raw?JSON.parse(raw):fallback;
-  }catch{return fallback}
-}
-function numericEvidence(value){
-  const n=Number(value);
-  return Number.isFinite(n)?Math.max(0,Math.min(100,Math.round(n))):0;
-}
-function extractMasteryPercent(record){
-  if(!record||typeof record!=="object")return 0;
-  const direct=["percent","best","bestScore","score","percentage","mastery","masteryPercent","mastery_percent"];
-  for(const key of direct){
-    if(record[key]!==undefined){
-      const value=numericEvidence(record[key]);
-      if(value||Number(record[key])===0)return value;
-    }
-  }
-  if(record.result&&typeof record.result==="object")return extractMasteryPercent(record.result);
-  if(record.latest&&typeof record.latest==="object")return extractMasteryPercent(record.latest);
-  if(Array.isArray(record.attempts)&&record.attempts.length){
-    return Math.max(...record.attempts.map(a=>extractMasteryPercent(a)));
-  }
-  return 0;
-}
-function uniqueArray(value){
-  return Array.isArray(value)?[...new Set(value.filter(v=>v!==null&&v!==undefined))]:[];
-}
-function unitTitle(unitNumber){
-  const hit=APP.weeks.find(w=>Number(w.unitNumber)===Number(unitNumber));
-  return hit?.unitTitle||hit?.title||`Unit ${String(unitNumber).padStart(2,"0")}`;
-}
-function readAuthoritativeUnitEvidence(unitNumber){
-  const nn=String(unitNumber).padStart(2,"0");
-  const progressKey=`khaemenes-prealgebra-unit${nn}-progress-v1`;
-  const masteryKey=`khaemenes-prealgebra-u${nn}-mastery-v1`;
-  const progress=readLocalJSON(progressKey,{})||{};
-  const mastery=readLocalJSON(masteryKey,{})||{};
-  const masteryPercent=extractMasteryPercent(mastery);
-  const completedLessons=uniqueArray(progress.completedLessons);
-  const reviewedLessons=uniqueArray(progress.reviewedLessons);
-  const lessonScores=progress.lessonScores&&typeof progress.lessonScores==="object"?progress.lessonScores:{};
-  const started=masteryPercent>0||completedLessons.length>0||reviewedLessons.length>0||Object.keys(lessonScores).length>0;
-  return{
-    unitNumber,
-    unitId:`unit-${nn}`,
-    title:unitTitle(unitNumber),
-    masteryPercent,
-    masteryMet:masteryPercent>=APP.passingTarget,
-    completedLessons,
-    reviewedLessons,
-    lessonScores,
-    started,
-    sourceKeys:{progress:progressKey,mastery:masteryKey}
-  };
-}
-
-function firstLocalRecord(keys){
-  for(const key of keys){
-    const record=readLocalJSON(key,null);
-    if(record&&typeof record==="object")return{key,record};
-  }
-  return{key:keys[0]||null,record:null};
-}
-function assessmentEvidence(label,keys,threshold=APP.passingTarget){
-  const found=firstLocalRecord(keys);
-  const percent=extractMasteryPercent(found.record);
-  return{
-    label,
-    percent,
-    masteryMet:percent>=threshold,
-    hasEvidence:!!found.record,
-    sourceKey:found.record?found.key:null,
-    threshold,
-    submittedAt:found.record?.submitted_at||found.record?.submittedAt||found.record?.date||null,
-    letterGrade:found.record?.letter_grade||found.record?.letterGrade||null
-  };
-}
-function capstoneEvidenceFromUnit13(unit13){
-  const percent=unit13?.masteryPercent||0;
-  return{
-    label:"Unit 13 Mathematical Modelling Capstone",
-    percent,
-    masteryMet:percent>=APP.passingTarget,
-    hasEvidence:!!unit13?.started,
-    sourceKey:unit13?.sourceKeys?.mastery||"khaemenes-prealgebra-u13-mastery-v1",
-    threshold:APP.passingTarget,
-    completedLessons:unit13?.completedLessons?.length||0,
-    reviewedLessons:unit13?.reviewedLessons?.length||0,
-    interpretation:"Unit 13 mastery is the authoritative scored capstone evidence; project planner/workbook artifacts remain portfolio evidence."
-  };
-}
-function cumulativeEvidence(units){
-  const midterm=assessmentEvidence("Pre-Algebra Midterm",MIDTERM_RESULT_KEYS);
-  const finalExam=assessmentEvidence("Comprehensive Final",FINAL_RESULT_KEYS);
-  const capstone=capstoneEvidenceFromUnit13(units.find(u=>u.unitNumber===13));
-  const available=[midterm,finalExam,capstone].filter(x=>x.hasEvidence&&x.percent>0);
-  return{
-    midterm,
-    final:finalExam,
-    capstone,
-    availableCount:available.length,
-    masteryCount:available.filter(x=>x.masteryMet).length,
-    average:available.length?Math.round(available.reduce((s,x)=>s+x.percent,0)/available.length):0
-  };
-}
-
-function buildCanonicalEvidence(){
-  const learner=student();
-  const shell=learner?stats(learner):{lessons:0,assignments:0,quizzes:0,course:0,midterm:0,final:0,capstone:0,needs:[]};
-  const units=Array.from({length:13},(_,i)=>readAuthoritativeUnitEvidence(i+1));
-  const scored=units.filter(u=>u.masteryPercent>0);
-  const unitAverage=scored.length?Math.round(scored.reduce((sum,u)=>sum+u.masteryPercent,0)/scored.length):0;
-  const mastered=units.filter(u=>u.masteryMet);
-  const needsSupport=units.filter(u=>u.started&&u.masteryPercent>0&&u.masteryPercent<APP.passingTarget);
-  const started=units.filter(u=>u.started);
-  const cumulative=cumulativeEvidence(units);
-  const record={
-    schemaVersion:2,
-    schemaName:"khaemenes-prealgebra-canonical-evidence",
-    courseId:PROFILE_COURSE_ID,
-    courseTitle:APP.title,
-    masteryThreshold:APP.passingTarget,
-    learnerId:learner?.id||null,
-    learnerName:learner?.name||null,
-    updated:new Date().toISOString(),
-    evidenceAuthority:{
-      unitProgress:"authoritative unit localStorage records",
-      coursePlanner:"supplemental planning/completion record",
-      midterm:"standalone midterm result record",
-      final:"standalone comprehensive-final result record",
-      capstone:"Unit 13 mastery record plus portfolio artifacts"
-    },
-    summary:{
-      unitsTotal:13,
-      unitsStarted:started.length,
-      unitsWithMasteryEvidence:scored.length,
-      unitsMastered:mastered.length,
-      unitMasteryAverage:unitAverage,
-      needsSupportUnits:needsSupport.map(u=>u.unitNumber)
-    },
-    units,
-    plannerEvidence:{
-      lessonCompletion:shell.lessons||0,
-      assignmentCompletion:shell.assignments||0,
-      weeklyQuizAverage:shell.quizzes||0,
-      plannerOverall:shell.course||0,
-      reviewWeeks:shell.needs||[]
-    },
-    cumulativeEvidence:cumulative,
-    legacyCourseShellEvidence:{
-      midterm:shell.midterm||0,
-      final:shell.final||0,
-      capstone:shell.capstone||0,
-      status:"legacy/supplemental only; not authoritative when standalone evidence exists"
-    },
-    governance:{
-      archRole:"advisory mentor",
-      naibRole:"advisory evidence summary",
-      placementAuthority:"learner and, when applicable, parent/guardian or authorized education decision-maker"
-    }
-  };
-  try{
-    localStorage.setItem(CANONICAL_EVIDENCE_KEY,JSON.stringify(record));
-    // Compatibility publication for the existing Grade 9 hub.
-    const summaries=readLocalJSON(GRADE09_COURSE_SUMMARY_KEY,{})||{};
-    summaries.prealgebra={
-      id:"prealgebra",
-      title:"Open-Age Pre-Algebra",
-      mastery:unitAverage,
-      unitsMastered:mastered.length,
-      unitsTotal:13,
-      needsSupportUnits:record.summary.needsSupportUnits,
-      midterm:cumulative.midterm.percent,
-      final:cumulative.final.percent,
-      capstone:cumulative.capstone.percent,
-      cumulativeEvidenceCount:cumulative.availableCount,
-      updated:record.updated,
-      evidenceKey:CANONICAL_EVIDENCE_KEY
-    };
-    localStorage.setItem(GRADE09_COURSE_SUMMARY_KEY,JSON.stringify(summaries));
-  }catch(error){console.warn("Canonical Pre-Algebra evidence could not be published.",error)}
-  return record;
-}
-function canonicalEvidence(){
-  return buildCanonicalEvidence();
-}
-
-function readPinnedCourses(){try{const primary=JSON.parse(localStorage.getItem(PROFILE_PIN_KEY)||"[]");if(Array.isArray(primary)&&primary.length)return primary;const legacy=JSON.parse(localStorage.getItem(LEGACY_PROFILE_PIN_KEY)||"[]");return Array.isArray(legacy)?legacy:[]}catch{return[]}}
+function readPinnedCourses(){try{const value=JSON.parse(localStorage.getItem(PROFILE_PIN_KEY)||"[]");return Array.isArray(value)?value:[]}catch{return[]}}
 function courseIsPinned(){return readPinnedCourses().includes(PROFILE_COURSE_ID)}
 function updatePinButton(){const button=$("pinCourseButton");if(!button)return;const pinned=courseIsPinned();button.setAttribute("aria-pressed",String(pinned));button.textContent=pinned?"★ Pinned to Profile":"☆ Pin to Profile";button.title=pinned?"Remove Pre-Algebra from the top of the student profile":"Pin Pre-Algebra to the top of the student profile"}
-function toggleCoursePin(){let pinned=readPinnedCourses();const wasPinned=pinned.includes(PROFILE_COURSE_ID);pinned=wasPinned?pinned.filter(id=>id!==PROFILE_COURSE_ID):[PROFILE_COURSE_ID,...pinned.filter(id=>id!==PROFILE_COURSE_ID)];try{localStorage.setItem(PROFILE_PIN_KEY,JSON.stringify(pinned));localStorage.setItem(LEGACY_PROFILE_PIN_KEY,JSON.stringify(pinned))}catch{return alert("This browser could not save the profile pin.")}updatePinButton();const status=$("pinCourseStatus");if(status)status.textContent=wasPinned?"Pre-Algebra was removed from the student profile.":"Pre-Algebra was pinned to the top of the student profile."}
-function render(){renderStudentSelect();renderWeekList();setActiveButtons();updatePinButton();({dashboard,overview,arch,week,scope,tools,games,exams,capstone,reports,standards}[view]||dashboard)()}function setActiveButtons(){document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view))}function renderStudentSelect(){$("studentSelect").innerHTML=state.students.map(s=>`<option value="${s.id}" ${s.id===state.activeId?"selected":""}>${esc(s.name)}</option>`).join("")}function renderWeekList(){let s=student();$("weekList").innerHTML=APP.weeks.map(w=>{let qb=s?quizBest(s,w.week):0,tag=qb>=APP.passingTarget?"good":qb?"bad":"";return`<button class="weekBtn ${w.week===activeWeek?"active":""}" data-week="${w.week}"><span><strong>${w.week}</strong> ${esc(w.title)}</span><span class="pill ${tag}">${qb||"—"}</span></button>`}).join("");document.querySelectorAll("[data-week]").forEach(b=>b.onclick=()=>{activeWeek=+b.dataset.week;view="week";render()})}
+function toggleCoursePin(){let pinned=readPinnedCourses();const wasPinned=pinned.includes(PROFILE_COURSE_ID);pinned=wasPinned?pinned.filter(id=>id!==PROFILE_COURSE_ID):[PROFILE_COURSE_ID,...pinned.filter(id=>id!==PROFILE_COURSE_ID)];try{localStorage.setItem(PROFILE_PIN_KEY,JSON.stringify(pinned))}catch{return alert("This browser could not save the profile pin.")}updatePinButton();const status=$("pinCourseStatus");if(status)status.textContent=wasPinned?"Pre-Algebra was removed from the student profile.":"Pre-Algebra was pinned to the top of the student profile."}
+function render(){renderStudentSelect();renderWeekList();setActiveButtons();updatePinButton();({dashboard,overview,week,scope,tools,games,exams,capstone,reports,standards}[view]||dashboard)()}function setActiveButtons(){document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view))}function renderStudentSelect(){$("studentSelect").innerHTML=state.students.map(s=>`<option value="${s.id}" ${s.id===state.activeId?"selected":""}>${esc(s.name)}</option>`).join("")}function renderWeekList(){let s=student();$("weekList").innerHTML=APP.weeks.map(w=>{let qb=s?quizBest(s,w.week):0,tag=qb>=APP.passingTarget?"good":qb?"bad":"";return`<button class="weekBtn ${w.week===activeWeek?"active":""}" data-week="${w.week}"><span><strong>${w.week}</strong> ${esc(w.title)}</span><span class="pill ${tag}">${qb||"—"}</span></button>`}).join("");document.querySelectorAll("[data-week]").forEach(b=>b.onclick=()=>{activeWeek=+b.dataset.week;view="week";render()})}
 
 function dashboard(){
-  let s=student(),st=stats(s),canonical=canonicalEvidence(),needs=st.needs.length?`Recommended review: Weeks ${st.needs.slice(0,12).join(", ")}${st.needs.length>12?"…":""}`:"No review flags yet.";
-  const ce=canonical.summary;
-  const unitEvidenceRows=canonical.units.map(u=>`<tr><td>${String(u.unitNumber).padStart(2,"0")}</td><td>${esc(u.title)}</td><td>${u.masteryPercent?u.masteryPercent+"%":"—"}</td><td>${u.masteryMet?"Mastered":u.started?"In progress":"Not started"}</td></tr>`).join("");
+  let s=student(),st=stats(s),needs=st.needs.length?`Recommended review: Weeks ${st.needs.slice(0,12).join(", ")}${st.needs.length>12?"…":""}`:"No review flags yet.";
   $("content").innerHTML=`<div class="grid">
     <div class="card kpi"><strong>${st.lessons}%</strong><span>Lesson Completion</span></div>
     <div class="card kpi"><strong>${st.assignments||"—"}</strong><span>Assignment Completion</span></div>
@@ -4515,52 +4316,12 @@ function dashboard(){
       <div class="actions"><button type="button" onclick="view='week';render()">Continue Week ${activeWeek}</button><button class="secondary" type="button" onclick="view='overview';render()">Read Course Guide</button><button class="secondary" type="button" onclick="view='tools';render()">Open Tools</button><button class="ghost" type="button" onclick="downloadBackup()">Export Backup</button></div>
     </div>
     <div class="card col4"><h3>Games &amp; Connected Tools</h3><p>Use the Khaemenes Scientific Calculator, built-in mini-tools, visual pattern games, logic practice, and OHMIC CAD without losing your place in the course.</p><div class="actions"><button class="secondary" type="button" data-launch-title="Khaemenes Scientific Calculator" data-launch-url="../tools/calculator">Open Calculator</button><button class="ghost" type="button" onclick="view='games';render()">Browse Games</button></div></div>
-    <div class="card col12"><span class="pill">Canonical evidence</span><h3>Authoritative Unit Evidence</h3><p>This panel reads the actual Unit 01–13 progress and mastery records. The weekly planner above remains useful for planning and participation, but it is not allowed to override demonstrated unit mastery.</p><div class="grid"><div class="card col3"><p class="score">${ce.unitsMastered}/13</p><p class="small">Units mastered at ${APP.passingTarget}%+</p></div><div class="card col3"><p class="score">${ce.unitMasteryAverage||"—"}${ce.unitMasteryAverage?"%":""}</p><p class="small">Average across units with mastery evidence</p></div><div class="card col3"><p class="score">${ce.unitsStarted}</p><p class="small">Units started</p></div><div class="card col3"><p class="score">${ce.needsSupportUnits.length}</p><p class="small">Units currently below mastery</p></div></div><div class="table-wrap"><table><thead><tr><th>Unit</th><th>Evidence title</th><th>Mastery</th><th>Status</th></tr></thead><tbody>${unitEvidenceRows}</tbody></table></div><p class="small">Canonical local key: <code>${CANONICAL_EVIDENCE_KEY}</code></p></div>
-    <div class="card col12"><span class="pill">Cumulative evidence</span><h3>Midterm · Capstone · Final</h3><p>These records now come from the standalone assessment/unit evidence rather than the planner's internal practice exams.</p><div class="grid"><div class="card col4"><h4>Midterm</h4><p class="score">${canonical.cumulativeEvidence.midterm.hasEvidence?canonical.cumulativeEvidence.midterm.percent+"%":"—"}</p><p class="small">${canonical.cumulativeEvidence.midterm.hasEvidence?(canonical.cumulativeEvidence.midterm.masteryMet?"80% mastery met":"Below 80% mastery"):"No standalone result saved yet"}</p></div><div class="card col4"><h4>Unit 13 Capstone</h4><p class="score">${canonical.cumulativeEvidence.capstone.hasEvidence?canonical.cumulativeEvidence.capstone.percent+"%":"—"}</p><p class="small">${canonical.cumulativeEvidence.capstone.hasEvidence?(canonical.cumulativeEvidence.capstone.masteryMet?"80% mastery met":"Below 80% mastery"):"No Unit 13 mastery evidence yet"}</p></div><div class="card col4"><h4>Comprehensive Final</h4><p class="score">${canonical.cumulativeEvidence.final.hasEvidence?canonical.cumulativeEvidence.final.percent+"%":"—"}</p><p class="small">${canonical.cumulativeEvidence.final.hasEvidence?(canonical.cumulativeEvidence.final.masteryMet?"80% mastery met":"Below 80% mastery"):"No standalone result saved yet"}</p></div></div><p class="small">ARCH uses these cumulative records as evidence. Missing evidence is shown as missing—not converted to a zero.</p></div>
     <div class="card col12"><h3>Upcoming Weeks</h3><div class="table-wrap">${scopeTable(APP.weeks.slice(Math.max(0,activeWeek-1),Math.min(APP.weeks.length,activeWeek+5)))}</div></div>
   </div>`;
 }
-function publishArchEvidence(){
-  try{
-    const s=student(); if(!s)return;
-    const canonical=canonicalEvidence(),st=stats(s);
-    const record={
-      schemaVersion:2,
-      courseId:PROFILE_COURSE_ID,
-      courseTitle:APP.title,
-      learnerId:s.id,
-      learnerName:s.name,
-      updated:new Date().toISOString(),
-      passingTarget:APP.passingTarget,
-      overallMastery:canonical.summary.unitMasteryAverage||st.course,
-      unitsMastered:canonical.summary.unitsMastered,
-      unitsTotal:canonical.summary.unitsTotal,
-      needsSupportUnits:canonical.summary.needsSupportUnits,
-      canonicalEvidenceKey:CANONICAL_EVIDENCE_KEY,
-      plannerEvidence:canonical.plannerEvidence,
-      cumulativeEvidence:canonical.cumulativeEvidence,
-      unitEvidence:canonical.units.map(u=>({unitNumber:u.unitNumber,title:u.title,masteryPercent:u.masteryPercent,masteryMet:u.masteryMet,started:u.started}))
-    };
-    localStorage.setItem(ARCH_EVIDENCE_KEY,JSON.stringify(record));
-  }catch(error){console.warn("ARCH evidence bridge could not be updated.",error)}
-}
-function archRecommendation(st){
-  if(!st.quizzes && !st.midterm && !st.final) return {tone:"Start with evidence",text:"Begin with the diagnostic and the first unit. ARCH will use your saved work to suggest review, practice, or advancement without attaching an age or grade label to you."};
-  if(st.course>=90 && st.final>=80) return {tone:"Ready for a stronger challenge",text:"Your current evidence is strong. Finish any incomplete course evidence, then consider Algebra I or a higher placement check. ARCH recommends by demonstrated mastery, not age."};
-  if(st.course>=80) return {tone:"On track",text:"You are meeting the course mastery target. Keep strengthening any flagged weeks and complete cumulative evidence before moving to the next mathematics level."};
-  if(st.needs.length) return {tone:"Targeted support",text:`ARCH recommends focused review in Weeks ${st.needs.slice(0,8).join(", ")}${st.needs.length>8?"…":""}. Use Foundation practice where needed, then retake the mastery checks. This is preparation, not a setback.`};
-  return {tone:"Build the evidence",text:"Continue the next lesson sequence and complete mastery checks so ARCH can make a more precise recommendation."};
-}
-function arch(){
-  const s=student(),st=stats(s),canonical=canonicalEvidence(),cum=canonical.cumulativeEvidence;
-  const archStats={...st,course:canonical.summary.unitMasteryAverage||st.course,needs:canonical.summary.needsSupportUnits,midterm:cum.midterm.percent||0,final:cum.final.percent||0,capstone:cum.capstone.percent||0};
-  const r=archRecommendation(archStats); publishArchEvidence();
-  $("content").innerHTML=`<div class="grid"><div class="card col12"><span class="pill">ARCH</span><span class="pill">Sovereign local mentor</span><span class="pill">Open age</span><h3>ARCH · Mathematics Mentor</h3><p>ARCH reads the learning evidence saved by this Pre-Algebra course and turns it into supportive next-step guidance. It does not decide a learner's grade placement, graduation status, GED eligibility, or next course. Those decisions belong to the learner and, when applicable, a parent, guardian, teacher, school, or testing program.</p><div class="notice"><strong>${esc(r.tone)}:</strong> ${esc(r.text)}</div></div><div class="card col4"><h3>Current Evidence</h3><p class="score">${canonical.summary.unitMasteryAverage||"—"}${canonical.summary.unitMasteryAverage?"%":""}</p><p class="small">Authoritative Unit 01–13 mastery average · target ${APP.passingTarget}%</p><p>Units mastered: <strong>${canonical.summary.unitsMastered}/13</strong><br>Midterm: <strong>${cum.midterm.hasEvidence?cum.midterm.percent+"%":"No saved result"}</strong><br>Final: <strong>${cum.final.hasEvidence?cum.final.percent+"%":"No saved result"}</strong><br>Capstone / Unit 13: <strong>${cum.capstone.hasEvidence?cum.capstone.percent+"%":"No saved result"}</strong></p></div><div class="card col8"><h3>What ARCH Can Do Here</h3><ul><li>Identify weak or incomplete skill areas from saved course evidence.</li><li>Recommend Foundation, Core, or Extended practice without age-based labels.</li><li>Recognize when a learner may be ready for a stronger challenge.</li><li>Support an adult refreshing mathematics or preparing for GED-style quantitative work.</li><li>Keep advice local to this browser; no learner record is sent to an outside AI service.</li></ul><div class="actions"><button type="button" onclick="view='week';render()">Continue Learning</button><a class="button secondary" href="diagnostic/">Open Diagnostic</a><button class="ghost" type="button" onclick="view='reports';render()">View Evidence</button></div></div><div class="card col12"><h3>ARCH Review Map</h3><div class="table-wrap">${progressTable(s)}</div></div></div>`;
-}
-
 function overview(){
   $("content").innerHTML=`<div class="grid">
-    <div class="card col12"><span class="pill">Open age</span><span class="pill">36 weeks</span><span class="pill">Foundation · Core · Extended</span><h3>How to Use This Course</h3><p>This is a level-based course rather than a grade-based course. It is appropriate for secondary students, homeschool learners, returning adults, GED-preparation learners, and anyone who needs a complete bridge from arithmetic and proportional reasoning into Algebra I.</p><div class="notice"><strong>Placement principle:</strong> begin with the diagnostic, use its evidence to choose Foundation, Core, or Extended support, and advance by demonstrated mastery rather than age.</div></div>
+    <div class="card col12"><span class="pill">Open age</span><span class="pill">36 weeks</span><span class="pill">Foundation · Core · Extended</span><h3>How to Use This Course</h3><p>This is a level-based course rather than a grade-based course. It is appropriate for any learner who needs a complete bridge from arithmetic and proportional reasoning into Algebra I.</p><div class="notice"><strong>Placement principle:</strong> begin with the diagnostic, use its evidence to choose Foundation, Core, or Extended support, and advance by demonstrated mastery rather than age.</div></div>
     <div class="card col6"><h3>Learning Cycle</h3><ol><li>Open the complete unit page and lesson sequence.</li><li>Study concept development and worked examples.</li><li>Complete practice while showing reasoning and units.</li><li>Use a tool to explore or verify—not replace—the mathematics.</li><li>Analyze errors, revise work, and retake for mastery.</li><li>Save a reflection or portfolio sample.</li></ol></div>
     <div class="card col6"><h3>Evidence of Learning</h3><p><strong>Completion</strong> tracks lesson and assignment participation. <strong>Mastery</strong> is based on quizzes, the midterm, final, and capstone. Keeping these measures separate prevents checked boxes from being mistaken for mathematical proficiency.</p><p>Best scores are retained, but every attempt remains in the local record so growth is visible.</p></div>
     <div class="card col4"><h3>Foundation</h3><p>Concrete models, smaller steps, vocabulary support, worked examples, and additional practice.</p></div>
@@ -4697,7 +4458,7 @@ function repeatWeek(){let r=weekRec(student(),activeWeek);r.repeats=(r.repeats||
 function addCapstone(){let s=student();ensure(s);let note=$("capNote").value.trim();if(!note)return alert("Add a capstone note.");s.progress.capstone.logs.push({date:new Date().toISOString(),stage:$("capStage").value,note});save();render()}
 function addStudent(name){let s={id:uid(),name,created:new Date().toISOString(),progress:{weeks:{},exams:{},capstone:{logs:[],score:0,rubric:{}}}};state.students.push(s);state.activeId=s.id;save();render()}
 
-function reportHTML(){let s=student(),st=stats(s),canonical=canonicalEvidence(),cum=canonical.cumulativeEvidence;return`<!doctype html><html><head><meta charset="utf-8"><title>Pre-Algebra Report - ${esc(s.name)}</title><style>body{font-family:Aptos,"Segoe UI",Arial,sans-serif;padding:32px;color:#111;line-height:1.55}table{width:100%;border-collapse:collapse}td,th{border:1px solid #aaa;padding:8px;vertical-align:top}.kpi{display:inline-block;border:1px solid #999;padding:12px;margin:5px}th{background:#eee}a{color:#123e77}</style></head><body><h1>Khaemenes Open-Age Pre-Algebra Report</h1><p><strong>Learner:</strong> ${esc(s.name)}<br><strong>Date:</strong> ${new Date().toLocaleDateString()}</p><div class="kpi"><strong>Unit mastery average:</strong> ${canonical.summary.unitMasteryAverage||"—"}${canonical.summary.unitMasteryAverage?"%":""}</div><div class="kpi"><strong>Units mastered:</strong> ${canonical.summary.unitsMastered}/13</div><div class="kpi"><strong>Midterm:</strong> ${cum.midterm.hasEvidence?cum.midterm.percent+"%":"—"}</div><div class="kpi"><strong>Capstone:</strong> ${cum.capstone.hasEvidence?cum.capstone.percent+"%":"—"}</div><div class="kpi"><strong>Final:</strong> ${cum.final.hasEvidence?cum.final.percent+"%":"—"}</div><div class="kpi"><strong>Planner lesson completion:</strong> ${st.lessons}%</div>${progressTable(s)}<h2>Capstone Logs</h2>${capstoneTable(s)}</body></html>`}
+function reportHTML(){let s=student(),st=stats(s);return`<!doctype html><html><head><meta charset="utf-8"><title>Pre-Algebra Report - ${esc(s.name)}</title><style>body{font-family:Aptos,"Segoe UI",Arial,sans-serif;padding:32px;color:#111;line-height:1.55}table{width:100%;border-collapse:collapse}td,th{border:1px solid #aaa;padding:8px;vertical-align:top}.kpi{display:inline-block;border:1px solid #999;padding:12px;margin:5px}th{background:#eee}a{color:#123e77}</style></head><body><h1>Khaemenes Open-Age Pre-Algebra Report</h1><p><strong>Learner:</strong> ${esc(s.name)}<br><strong>Date:</strong> ${new Date().toLocaleDateString()}</p><div class="kpi"><strong>Overall mastery:</strong> ${st.course||"—"}%</div><div class="kpi"><strong>Lesson completion:</strong> ${st.lessons}%</div><div class="kpi"><strong>Assignment completion:</strong> ${st.assignments||"—"}%</div><div class="kpi"><strong>Quiz mastery:</strong> ${st.quizzes||"—"}%</div>${progressTable(s)}<h2>Capstone Logs</h2>${capstoneTable(s)}</body></html>`}
 function printReport(){let w=window.open("","_blank");if(!w)return alert("Allow pop-ups to print the report.");w.document.write(reportHTML());w.document.close();w.focus();setTimeout(()=>w.print(),400)}
 function downloadReport(){download(`PreAlgebra_Report_${safe(student().name)}.html`,reportHTML(),"text/html")}
 function downloadCSV(){let s=student(),rows=[["Learner","Week","Unit","Focus","Lesson Completion","Assignment Completion","Quiz Mastery","Attempts","Review Cycles"]];APP.weeks.forEach(w=>{let r=weekRec(s,w.week);rows.push([s.name,w.week,w.unitTitle,w.title,lessonPct(s,w.week),assignPct(s,w.week),quizBest(s,w.week)||"",r.quiz.attempts.length,r.repeats||0])});download(`PreAlgebra_Progress_${safe(s.name)}.csv`,rows.map(r=>r.map(csv).join(",")).join("\n"),"text/csv")}
