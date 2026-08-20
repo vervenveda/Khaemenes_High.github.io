@@ -11,4 +11,3 @@ The student-facing page is the original Pre-Algebra portal. The cloud remains co
 - No cloud UI, file tree, storage controls, or cloud terminology is exposed to students.
 
 Test in `vervenveda/Dummy.github.io` before production migration.
-
