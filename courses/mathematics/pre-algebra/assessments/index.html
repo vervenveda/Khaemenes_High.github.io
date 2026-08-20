@@ -1,0 +1,1100 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Khaemenes Global Pre-Algebra assessments, scoring records, course completion certificate, and homeschool portfolio evidence.">
+  <meta name="theme-color" content="#f2efe8">
+  <title>Assessments & Completion Records · Global Pre-Algebra</title>
+  <link rel="stylesheet" href="assets/assessment-suite.css">
+
+  <style id="verve-arithmetic-theme">
+    :root,
+    html[data-theme="light"],
+    html[data-theme="dark"]{
+      color-scheme:light;
+      --bg:#ece9e2;
+      --bg2:#f6f3ed;
+      --panel:#fffefa;
+      --panel2:#f5f1e8;
+      --text:#0b0b0b;
+      --muted:#4c4b47;
+      --line:#c9c2b6;
+      --gold:#b48a42;
+      --gold2:#76551d;
+      --blue:#244c65;
+      --green:#395f45;
+      --rose:#7b3f52;
+      --danger:#8a3333;
+      --shadow:0 18px 44px rgba(30,27,22,.09);
+      --math:"Cambria Math","STIX Two Math","Latin Modern Math","Times New Roman",serif;
+      --sans:"Avenir Next","Brandon Grotesque","Segoe UI",Arial,sans-serif;
+      --max:1240px;
+    }
+    html[data-theme="dark"]{
+      --bg:#dedbd4;
+      --bg2:#ebe8e1;
+      --panel:#f8f6f1;
+      --panel2:#e9e5dc;
+      --text:#050505;
+      --muted:#3f3e3a;
+      --line:#aaa397;
+      --shadow:0 18px 44px rgba(18,17,15,.12);
+    }
+
+    *{box-sizing:border-box}
+    html{
+      width:100%;
+      max-width:100%;
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+      scroll-padding-top:96px;
+      background:var(--bg);
+    }
+    body{
+      width:100%;
+      max-width:100%;
+      margin:0;
+      overflow-x:hidden;
+      color:var(--text);
+      background:
+        linear-gradient(rgba(255,255,255,.56),rgba(255,255,255,.14)),
+        repeating-linear-gradient(90deg,transparent 0 54px,rgba(11,11,11,.025) 55px),
+        var(--bg);
+      font:400 17px/1.72 var(--sans);
+      letter-spacing:.003em;
+    }
+    a{color:inherit}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    .wrap{width:min(var(--max),calc(100% - 34px));margin-inline:auto}
+    .grid{display:grid;gap:1rem}
+    .card{
+      min-width:0;
+      max-width:100%;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:7px;
+      background:var(--panel);
+      box-shadow:var(--shadow);
+    }
+    :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+    .skip{
+      position:fixed;
+      z-index:2000;
+      inset-inline-start:14px;
+      top:-80px;
+      padding:10px 14px;
+      border-radius:7px;
+      color:#fff;
+      background:#111;
+      text-decoration:none;
+    }
+    .skip:focus{top:14px}
+
+    /* Corrected non-clipping campus header */
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      width:100%;
+      border-top:3px solid #111;
+      border-bottom:1px solid var(--line);
+      background:rgba(255,254,250,.96);
+      backdrop-filter:blur(14px);
+    }
+    html[data-theme="dark"] .site-header{background:rgba(248,246,241,.96)}
+    .header-inner{
+      min-height:76px;
+      height:auto;
+      display:grid;
+      grid-template-columns:minmax(270px,1fr) minmax(0,auto) auto;
+      align-items:center;
+      gap:14px;
+      padding-block:10px;
+    }
+    .brand{
+      min-width:0;
+      max-width:100%;
+      display:flex;
+      align-items:center;
+      gap:11px;
+      color:#0a0a0a;
+      text-decoration:none;
+    }
+    .brand-mark{
+      width:44px;
+      height:44px;
+      flex:0 0 44px;
+      display:grid;
+      place-items:center;
+      border:1px solid #111;
+      border-radius:7px;
+      color:#fff;
+      background:#111;
+      font:400 19px/1 var(--math);
+    }
+    .brand-copy{
+      min-width:0;
+      max-width:100%;
+      display:grid;
+      overflow:visible;
+      line-height:1.15;
+    }
+    .brand-copy strong{
+      display:block;
+      max-width:100%;
+      overflow:visible;
+      color:#0a0a0a;
+      font:444 clamp(10px,1.05vw,13px)/1.28 var(--sans);
+      letter-spacing:.075em;
+      text-overflow:clip;
+      white-space:normal;
+      text-wrap:balance;
+    }
+    .brand-copy small{
+      display:block;
+      max-width:100%;
+      overflow:visible;
+      margin-top:4px;
+      color:#55514a;
+      font-size:clamp(9px,.9vw,11px);
+      line-height:1.3;
+      letter-spacing:.055em;
+      text-overflow:clip;
+      white-space:normal;
+      text-wrap:balance;
+    }
+    .campus-nav{
+      min-width:0;
+      max-width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:3px;
+    }
+    .campus-nav a{
+      min-width:0;
+      min-height:40px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:7px 9px;
+      border:1px solid transparent;
+      border-radius:7px;
+      color:#24231f;
+      text-align:center;
+      text-decoration:none;
+      font-size:clamp(10px,.92vw,12px);
+      font-weight:444;
+      line-height:1.2;
+      white-space:normal;
+    }
+    .campus-nav a:hover,
+    .campus-nav a:focus-visible,
+    .campus-nav a[aria-current]{
+      border-color:var(--line);
+      color:#000;
+      background:var(--bg2);
+    }
+    .header-actions{display:flex;justify-content:flex-end}
+    .theme-button{
+      width:42px;
+      min-width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      padding:0;
+      border:1px solid #111;
+      border-radius:7px;
+      color:#111;
+      background:#fff;
+      font:400 18px/1 var(--math);
+    }
+
+    /* Breadcrumb and local navigation */
+    .course-breadcrumb{
+      width:100%;
+      border-bottom:1px solid var(--line);
+      background:#f4f1ea;
+    }
+    .course-breadcrumb .wrap{
+      min-height:45px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:7px;
+      padding-block:8px;
+      color:#47443e;
+      text-align:center;
+      font-size:12px;
+    }
+    .course-breadcrumb a{
+      color:#111;
+      text-decoration:none;
+      border-bottom:1px solid transparent;
+    }
+    .course-breadcrumb a:hover{border-bottom-color:#111}
+    .course-breadcrumb span[aria-current="page"]{font-weight:444;color:#000}
+    .assessment-nav{
+      position:sticky;
+      top:76px;
+      z-index:850;
+      border-bottom:1px solid var(--line);
+      background:rgba(247,244,237,.96);
+      backdrop-filter:blur(10px);
+    }
+    .assessment-nav .wrap{
+      min-height:48px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:5px;
+      overflow:auto;
+      padding-block:7px;
+      scrollbar-width:thin;
+    }
+    .assessment-nav a{
+      flex:0 0 auto;
+      padding:7px 11px;
+      border:1px solid transparent;
+      border-radius:7px;
+      color:#111;
+      text-decoration:none;
+      font-size:12px;
+    }
+    .assessment-nav a:hover{border-color:var(--line);background:#fff}
+
+    /* Hero */
+    .hero{
+      min-height:calc(100svh - 122px);
+      display:grid;
+      align-items:center;
+      padding:clamp(76px,10vw,132px) 0;
+      text-align:center;
+      border-bottom:1px solid var(--line);
+      background:
+        linear-gradient(rgba(255,254,250,.89),rgba(248,245,238,.89)),
+        repeating-linear-gradient(0deg,transparent 0 39px,rgba(11,11,11,.045) 40px);
+    }
+    .hero .wrap{max-width:1160px}
+    .eyebrow{
+      margin:0 0 14px;
+      color:#5f4b28;
+      font-size:12px;
+      font-weight:444;
+      letter-spacing:.19em;
+      text-align:center;
+      text-transform:uppercase;
+    }
+    .hero h1{
+      max-width:1120px;
+      margin:0 auto 22px;
+      color:#050505;
+      font:400 clamp(43px,7vw,84px)/.98 var(--math);
+      letter-spacing:-.035em;
+      overflow-wrap:anywhere;
+      text-wrap:balance;
+    }
+    .hero .lead{
+      max-width:900px;
+      margin:0 auto;
+      color:#35332f;
+      font-size:clamp(17px,2vw,21px);
+      line-height:1.72;
+    }
+    .math-signature{
+      max-width:1080px;
+      margin:30px auto 0;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .math-signature span{
+      display:inline-flex;
+      align-items:center;
+      min-height:39px;
+      padding:7px 13px;
+      border:1px solid #c6bfb3;
+      border-radius:7px;
+      color:#090909;
+      background:rgba(255,255,255,.72);
+      font:400 15px/1.2 var(--math);
+      white-space:nowrap;
+    }
+
+    main,section,.footer{width:100%;max-width:100%}
+    section{
+      padding:clamp(68px,8vw,102px) 0;
+      scroll-margin-top:138px;
+    }
+    section:nth-of-type(even):not(.hero){background:rgba(255,255,255,.28)}
+    .section-head{
+      max-width:920px;
+      margin:0 auto 38px;
+      text-align:center;
+    }
+    .section-head h2{
+      color:#080808;
+      font:400 clamp(36px,5vw,62px)/1.06 var(--math);
+      letter-spacing:-.025em;
+      text-wrap:balance;
+    }
+    .section-head p{color:#44413c;font-size:17px}
+
+    /* Assessment destinations */
+    .landing-grid{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+    .landing-card{
+      position:relative;
+      min-height:285px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:clamp(24px,4vw,38px);
+      color:#111;
+      text-decoration:none;
+      transition:transform .18s ease,border-color .18s ease;
+    }
+    .landing-card:hover{
+      transform:translateY(-2px);
+      border-color:#111;
+    }
+    .landing-card::before{
+      content:attr(data-mark);
+      position:absolute;
+      top:24px;
+      right:26px;
+      color:rgba(11,11,11,.11);
+      font:400 clamp(58px,9vw,110px)/1 var(--math);
+    }
+    .landing-card .eyebrow{text-align:left;margin-bottom:10px}
+    .landing-card h2{
+      max-width:700px;
+      margin:0;
+      color:#080808;
+      font:400 clamp(31px,4vw,48px)/1.04 var(--math);
+      text-wrap:balance;
+    }
+    .landing-card p{
+      max-width:700px;
+      margin:14px 0 0;
+      color:var(--muted);
+    }
+    .landing-card .card-link{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      margin-top:20px;
+      color:#111;
+      font-size:12px;
+      font-weight:444;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    /* Evidence pathway */
+    .pathway-grid{
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px;
+      counter-reset:pathway;
+    }
+    .pathway-card{
+      counter-increment:pathway;
+      min-width:0;
+      padding:24px 20px;
+      border:1px solid var(--line);
+      border-radius:7px;
+      background:var(--panel);
+      box-shadow:var(--shadow);
+    }
+    .pathway-card::before{
+      content:counter(pathway);
+      width:36px;
+      height:36px;
+      display:grid;
+      place-items:center;
+      margin-bottom:18px;
+      border-radius:50%;
+      color:#fff;
+      background:#111;
+      font:400 15px/1 var(--math);
+    }
+    .pathway-card h3{
+      margin:0;
+      color:#111;
+      font:400 27px/1.08 var(--math);
+    }
+    .pathway-card p{margin:10px 0 0;color:var(--muted);font-size:14px}
+
+    /* Local evidence checklist */
+    .evidence-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);
+      gap:16px;
+      align-items:stretch;
+    }
+    .evidence-checklist,
+    .evidence-summary{
+      padding:clamp(22px,4vw,38px);
+    }
+    .checklist-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:18px;
+      margin-bottom:24px;
+    }
+    .checklist-head h3,
+    .evidence-summary h3{
+      margin:0;
+      color:#111;
+      font:400 clamp(28px,4vw,44px)/1.08 var(--math);
+    }
+    .checklist-progress{
+      flex:0 0 auto;
+      min-width:104px;
+      padding:10px 13px;
+      border:1px solid #111;
+      border-radius:7px;
+      color:#fff;
+      background:#111;
+      text-align:center;
+    }
+    .checklist-progress strong{
+      display:block;
+      font:400 25px/1 var(--math);
+    }
+    .checklist-progress span{
+      display:block;
+      margin-top:4px;
+      font-size:10px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .evidence-progress-track{
+      height:10px;
+      overflow:hidden;
+      margin-bottom:20px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#ddd7cc;
+    }
+    .evidence-progress-track span{
+      width:0;
+      height:100%;
+      display:block;
+      background:#111;
+      transition:width .2s ease;
+    }
+    .evidence-items{display:grid;gap:9px}
+    .evidence-item{
+      display:grid;
+      grid-template-columns:26px 1fr;
+      gap:11px;
+      align-items:start;
+      padding:13px 14px;
+      border:1px solid var(--line);
+      border-radius:7px;
+      background:var(--bg2);
+      cursor:pointer;
+    }
+    .evidence-item input{
+      width:19px;
+      height:19px;
+      margin:2px 0 0;
+      accent-color:#111;
+    }
+    .evidence-item strong{
+      display:block;
+      color:#111;
+      font-weight:444;
+    }
+    .evidence-item small{
+      display:block;
+      margin-top:3px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .checklist-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+    }
+    .btn{
+      min-height:44px;
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      padding:9px 14px;
+      border:1px solid #aaa397;
+      border-radius:7px;
+      color:#111;
+      background:#fff;
+      text-decoration:none;
+      font-weight:444;
+      line-height:1.25;
+      white-space:normal;
+    }
+    .btn.primary{border-color:#111;color:#fff;background:#111}
+    .btn:hover{border-color:#111;transform:translateY(-1px)}
+
+    .evidence-summary dl{display:grid;gap:0;margin:22px 0}
+    .evidence-summary dl div{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:12px;
+      padding:12px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .evidence-summary dt{color:#5b574f;font-size:12px}
+    .evidence-summary dd{
+      margin:0;
+      color:#111;
+      font:400 16px/1.3 var(--math);
+      text-align:right;
+    }
+    .notice{
+      padding:15px 17px;
+      border-left:3px solid #111;
+      border-radius:7px;
+      color:#3d3a34;
+      background:var(--bg2);
+    }
+
+    /* Evidence standards */
+    .standards-grid{
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+    }
+    .standard-card{
+      padding:24px;
+    }
+    .standard-card h3{
+      margin:0;
+      color:#111;
+      font:400 28px/1.08 var(--math);
+    }
+    .standard-card p{margin:11px 0 0;color:var(--muted)}
+
+    /* Footer */
+    .footer{
+      border-top:1px solid var(--line);
+      color:#ddd;
+      background:#111;
+    }
+    .footer-inner{
+      min-height:92px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      padding-block:18px;
+      font-size:12px;
+    }
+    .footer-links{
+      display:flex;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .footer-links a{
+      padding:6px 8px;
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:7px;
+      color:#fff;
+      text-decoration:none;
+    }
+    .footer-links a:hover{background:#fff;color:#111}
+
+    .landing-grid,.landing-card,.pathway-grid,.pathway-card,
+    .evidence-layout,.evidence-checklist,.evidence-summary,
+    .standards-grid,.standard-card{
+      min-width:0;
+      max-width:100%;
+    }
+    h1,h2,h3,p,a,button,label,strong,span,small,dt,dd{overflow-wrap:anywhere}
+
+    @media(max-width:1180px){
+      .header-inner{grid-template-columns:minmax(240px,1fr) auto}
+      .campus-nav{grid-column:1/-1;justify-content:center;overflow:visible}
+      .assessment-nav{position:static}
+    }
+    @media(max-width:1000px){
+      .pathway-grid{grid-template-columns:repeat(2,1fr)}
+      .evidence-layout{grid-template-columns:1fr}
+      .standards-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:760px){
+      .wrap{width:min(var(--max),calc(100% - 22px))}
+      .header-inner{
+        min-height:68px;
+        grid-template-columns:minmax(0,1fr) auto;
+        gap:8px 10px;
+        padding-block:9px;
+      }
+      .brand{gap:8px}
+      .brand-mark{width:38px;height:38px;flex-basis:38px;font-size:17px}
+      .brand-copy strong{font-size:10px;letter-spacing:.055em}
+      .brand-copy small{font-size:9px;letter-spacing:.04em}
+      .campus-nav{justify-content:flex-start}
+      .campus-nav a{min-height:36px;font-size:10px;padding:6px 8px}
+      .course-breadcrumb .wrap{justify-content:flex-start;text-align:left}
+      .hero{min-height:auto;padding:72px 0 78px}
+      .hero h1{font-size:clamp(39px,11.5vw,62px)}
+      .math-signature{display:grid;grid-template-columns:1fr 1fr}
+      .math-signature span{justify-content:center;white-space:normal;text-align:center}
+      .landing-grid{grid-template-columns:1fr}
+      .footer-inner{display:grid;justify-content:center;text-align:center}
+      .footer-links{justify-content:center}
+    }
+    @media(max-width:560px){
+      .pathway-grid{grid-template-columns:1fr}
+      .math-signature{grid-template-columns:1fr}
+      .checklist-head{display:grid}
+      .checklist-progress{justify-self:start}
+      .checklist-actions .btn{width:100%}
+    }
+    @media(max-width:430px){
+      .brand-copy strong{font-size:9.5px}
+      .brand-copy small{font-size:8.5px}
+      .campus-nav a{flex:1 1 calc(50% - 4px)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        scroll-behavior:auto!important;
+        transition:none!important;
+        animation:none!important;
+      }
+    }
+    @media print{
+      @page{size:letter portrait;margin:.5in}
+      html,body{background:#fff!important;color:#000!important}
+      .site-header,.course-breadcrumb,.assessment-nav,.hero,.footer,
+      .theme-button,.checklist-actions{display:none!important}
+      section{padding:24px 0;background:#fff!important}
+      .card,.pathway-card{box-shadow:none}
+      .landing-grid{grid-template-columns:repeat(2,1fr)}
+      .pathway-grid{grid-template-columns:repeat(4,1fr)}
+      .evidence-layout{grid-template-columns:1.3fr .7fr}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="https://vervenveda.github.io/Khaemenes_High.github.io/" rel="home" aria-label="Khaemenes High School home">
+        <span class="brand-mark" aria-hidden="true">✓</span>
+        <span class="brand-copy">
+          <strong>KHAEMENES HIGH · MATHEMATICS</strong>
+          <small>Global Pre-Algebra · Assessments & Records</small>
+        </span>
+      </a>
+
+      <nav class="campus-nav" aria-label="High school navigation">
+        <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">High School</a>
+        <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Open-Age</a>
+        <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
+        <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/">Diagnostic</a>
+        <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/" aria-current="page">Assessments</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-button" id="themeToggle" type="button"
+          aria-label="Switch paper tone" title="Switch paper tone">◐</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="course-breadcrumb" aria-label="Course breadcrumb">
+    <div class="wrap">
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">Khaemenes High</a>
+      <span aria-hidden="true">›</span>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Open-Age</a>
+      <span aria-hidden="true">›</span>
+      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Assessments & Completion Records</span>
+    </div>
+  </nav>
+
+  <nav class="assessment-nav" aria-label="Assessment page sections">
+    <div class="wrap">
+      <a href="#assessment-destinations">Assessments</a>
+      <a href="#evidence-pathway">Evidence Pathway</a>
+      <a href="#completion-checklist">Completion Checklist</a>
+      <a href="#record-standards">Record Standards</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Formal Course Evidence · 36 Weeks · Units 01–13</p>
+        <h1>Assessments & Completion Records</h1>
+        <p class="lead">Cumulative exams, transparent scoring, portfolio exports,
+          and a parent-issued course completion record for the complete Global
+          Pre-Algebra curriculum.</p>
+
+        <div class="math-signature" aria-label="Assessment evidence summary">
+          <span>56-question midterm</span>
+          <span>80-question final</span>
+          <span>modelling capstone</span>
+          <span>certificate + detailed record</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="assessment-destinations">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Assessment suite</p>
+          <h2>Open the examination, guidance, or completion record.</h2>
+          <p>Each destination is local-first, printable, and designed to preserve
+            transparent course evidence without requiring an account.</p>
+        </div>
+
+        <div class="grid landing-grid">
+          <a class="card landing-card" data-mark="½" href="midterm-units-01-07.html">
+            <p class="eyebrow">56 Questions · Units 01–07</p>
+            <h2>Midterm Assessment</h2>
+            <p>Definitive-answer assessment with section scoring, saved drafts,
+              explanations, and exportable results.</p>
+            <span class="card-link">Open Midterm <span aria-hidden="true">→</span></span>
+          </a>
+
+          <a class="card landing-card" data-mark="Σ" href="final-exam-36-weeks.html">
+            <p class="eyebrow">80 Questions · Units 01–13</p>
+            <h2>Final Examination</h2>
+            <p>Comprehensive 36-week examination spanning arithmetic, algebra,
+              functions, geometry, statistics, probability, and modelling.</p>
+            <span class="card-link">Open Final <span aria-hidden="true">→</span></span>
+          </a>
+
+          <a class="card landing-card" data-mark="✦" href="../records/course-completion-certificate.html">
+            <p class="eyebrow">Certificate + Detailed Record</p>
+            <h2>Completion Certificate</h2>
+            <p>Printable parent-issued certificate with signatures, scores,
+              instructional hours, credit, course dates, and portfolio identifier.</p>
+            <span class="card-link">Open Completion Record <span aria-hidden="true">→</span></span>
+          </a>
+
+          <a class="card landing-card" data-mark="§" href="administration-guide.html">
+            <p class="eyebrow">Parent / Teacher Guidance</p>
+            <h2>Administration Guide</h2>
+            <p>Suggested conditions, accommodations, scoring, corrections,
+              retesting, record retention, privacy, and integrity guidance.</p>
+            <span class="card-link">Open Guide <span aria-hidden="true">→</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence-pathway">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Course evidence pathway</p>
+          <h2>A clear sequence from learning to retained completion record.</h2>
+        </div>
+
+        <div class="grid pathway-grid">
+          <article class="pathway-card">
+            <h3>Coursework</h3>
+            <p>Retain representative lessons, practice, projects, corrections,
+              progress exports, and the activity or reading log.</p>
+          </article>
+
+          <article class="pathway-card">
+            <h3>Midterm</h3>
+            <p>Administer the Units 01–07 assessment, preserve the result export,
+              and document written corrections when used.</p>
+          </article>
+
+          <article class="pathway-card">
+            <h3>Final + Capstone</h3>
+            <p>Complete the cumulative examination and Unit 13 modelling portfolio
+              with verification, scenarios, limitations, and reflection.</p>
+          </article>
+
+          <article class="pathway-card">
+            <h3>Completion Record</h3>
+            <p>Enter scores, hours, dates, grade, credit, signatures, and the
+              family’s portfolio or record identifier.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="completion-checklist">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Local completion planner</p>
+          <h2>Track whether the course-evidence packet is ready to retain.</h2>
+          <p>This checklist is stored only in the current browser. It does not
+            alter exam scores or issue a certificate automatically.</p>
+        </div>
+
+        <div class="evidence-layout">
+          <article class="card evidence-checklist">
+            <div class="checklist-head">
+              <div>
+                <p class="eyebrow" style="text-align:left">Evidence checklist</p>
+                <h3>Completion packet</h3>
+              </div>
+              <div class="checklist-progress">
+                <strong id="checklistPercent">0%</strong>
+                <span id="checklistCount">0 of 8 ready</span>
+              </div>
+            </div>
+
+            <div class="evidence-progress-track" aria-hidden="true">
+              <span id="checklistBar"></span>
+            </div>
+
+            <div class="evidence-items" id="evidenceItems">
+              <label class="evidence-item">
+                <input type="checkbox" data-evidence="coursework">
+                <span><strong>Representative coursework retained</strong>
+                  <small>Lessons, practice, projects, corrections, or work samples.</small></span>
+              </label>
+
+              <label class="evidence-item">
+                <input type="checkbox" data-evidence="activity-log">
+                <span><strong>Activity or instructional log complete</strong>
+                  <small>Dates, topics, reading materials, and documented hours as applicable.</small></span>
+              </label>
+
+              <label class="evidence-item">
+                <input type="checkbox" data-evidence="midterm">
+                <span><strong>Midterm result retained</strong>
+                  <small>Exported or printed result plus any official correction record.</small></span>
+              </label>
+
+              <label class="evidence-item">
+                <input type="checkbox" data-evidence="final">
+                <span><strong>Final examination result retained</strong>
+                  <small>Comprehensive score export or printed result.</small></span>
+              </label>
+
+              <label class="evidence-item">
+                <input type="checkbox" data-evidence="capstone">
+                <span><strong>Unit 13 capstone retained</strong>
+                  <small>Question, model, verification, scenarios, defence, and reflection.</small></span>
+              </label>
+
+              <label class="evidence-item">
+                <input type="checkbox" data-evidence="grade-policy">
+                <span><strong>Grade and credit policy documented</strong>
+                  <small>Family or program weighting, grading scale, and credit decision.</small></span>
+              </label>
+
+              <label class="evidence-item">
+                <input type="checkbox" data-evidence="certificate">
+                <span><strong>Completion certificate prepared</strong>
+                  <small>Student, dates, scores, hours, grade, credit, and record ID entered.</small></span>
+              </label>
+
+              <label class="evidence-item">
+                <input type="checkbox" data-evidence="signatures">
+                <span><strong>Printed record signed and stored</strong>
+                  <small>Parent or administrator signature and secure portfolio location.</small></span>
+              </label>
+            </div>
+
+            <div class="checklist-actions">
+              <button class="btn primary" id="exportChecklist" type="button">Export Checklist</button>
+              <button class="btn" id="resetChecklist" type="button">Reset Checklist</button>
+            </div>
+
+            <p class="notice" id="checklistMessage" aria-live="polite">
+              No evidence items are marked complete yet.
+            </p>
+          </article>
+
+          <aside class="card evidence-summary">
+            <p class="eyebrow" style="text-align:left">Course record summary</p>
+            <h3>Global Pre-Algebra</h3>
+
+            <dl>
+              <div><dt>Course code</dt><dd>KH-MATH-PA</dd></div>
+              <div><dt>Duration</dt><dd>36 weeks</dd></div>
+              <div><dt>Curriculum</dt><dd>Units 01–13</dd></div>
+              <div><dt>Midterm</dt><dd>56 questions</dd></div>
+              <div><dt>Final exam</dt><dd>80 questions</dd></div>
+              <div><dt>Capstone</dt><dd>Mathematical modelling</dd></div>
+              <div><dt>Record type</dt><dd>Parent-issued</dd></div>
+              <div><dt>Data handling</dt><dd>Local browser / export</dd></div>
+            </dl>
+
+            <p class="notice">The completion certificate is supporting course
+              documentation. It does not claim government issuance, district
+              issuance, school accreditation, or automatic satisfaction of any
+              separate evaluation or reporting requirement.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="record-standards">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Evidence standards</p>
+          <h2>Records should be accurate, transparent, and proportionate.</h2>
+        </div>
+
+        <div class="grid standards-grid">
+          <article class="card standard-card">
+            <h3>Definitive scoring</h3>
+            <p>Each scored multiple-choice item is intended to have one correct
+              answer, with equivalent duplicate choices and subjective “best”
+              wording excluded.</p>
+          </article>
+
+          <article class="card standard-card">
+            <h3>Documented administration</h3>
+            <p>Record testing conditions, accommodations, corrections, retests,
+              and which attempt is retained as the official course result.</p>
+          </article>
+
+          <article class="card standard-card">
+            <h3>Private record control</h3>
+            <p>Browser data remains local unless exported. Store printed and
+              exported records in the family’s chosen secure portfolio location.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>KH-MATH-PA-ASSESSMENTS · Parent-directed · Local-only data</span>
+      <nav class="footer-links" aria-label="Assessment footer navigation">
+        <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
+        <a href="midterm-units-01-07.html">Midterm</a>
+        <a href="final-exam-36-weeks.html">Final</a>
+        <a href="../records/course-completion-certificate.html">Certificate</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+  (() => {
+    "use strict";
+
+    const THEME_KEY = "khaemenes-theme";
+    const CHECKLIST_KEY = "khaemenes-prealgebra-assessment-evidence-v1";
+
+    const themeToggle = document.getElementById("themeToggle");
+    const evidenceInputs = [...document.querySelectorAll("[data-evidence]")];
+    const checklistPercent = document.getElementById("checklistPercent");
+    const checklistCount = document.getElementById("checklistCount");
+    const checklistBar = document.getElementById("checklistBar");
+    const checklistMessage = document.getElementById("checklistMessage");
+    const exportChecklist = document.getElementById("exportChecklist");
+    const resetChecklist = document.getElementById("resetChecklist");
+
+    function setTheme(value) {
+      document.documentElement.dataset.theme = value;
+      localStorage.setItem(THEME_KEY, value);
+    }
+
+    setTheme(localStorage.getItem(THEME_KEY) || "light");
+
+    themeToggle.addEventListener("click", () => {
+      setTheme(document.documentElement.dataset.theme === "light" ? "dark" : "light");
+    });
+
+    function readChecklist() {
+      try {
+        return JSON.parse(localStorage.getItem(CHECKLIST_KEY) || "{}");
+      } catch {
+        return {};
+      }
+    }
+
+    function writeChecklist(record) {
+      localStorage.setItem(CHECKLIST_KEY, JSON.stringify(record));
+    }
+
+    function updateChecklist() {
+      const record = {};
+      evidenceInputs.forEach(input => {
+        record[input.dataset.evidence] = input.checked;
+      });
+      writeChecklist(record);
+
+      const completed = evidenceInputs.filter(input => input.checked).length;
+      const total = evidenceInputs.length;
+      const percent = Math.round((completed / total) * 100);
+
+      checklistPercent.textContent = `${percent}%`;
+      checklistCount.textContent = `${completed} of ${total} ready`;
+      checklistBar.style.width = `${percent}%`;
+
+      checklistMessage.textContent =
+        completed === 0
+          ? "No evidence items are marked complete yet."
+          : completed === total
+            ? "The local checklist is complete. Review the actual documents before issuing and signing the record."
+            : `${completed} evidence item${completed === 1 ? "" : "s"} marked ready; ${total - completed} remain.`;
+    }
+
+    const savedChecklist = readChecklist();
+    evidenceInputs.forEach(input => {
+      input.checked = Boolean(savedChecklist[input.dataset.evidence]);
+      input.addEventListener("change", updateChecklist);
+    });
+
+    exportChecklist.addEventListener("click", () => {
+      const record = {
+        schema_version: "1.0",
+        course_code: "KH-MATH-PA",
+        title: "Global Pre-Algebra Completion Evidence Checklist",
+        exported_at: new Date().toISOString(),
+        items: Object.fromEntries(
+          evidenceInputs.map(input => [input.dataset.evidence, input.checked])
+        ),
+        completed_count: evidenceInputs.filter(input => input.checked).length,
+        total_count: evidenceInputs.length
+      };
+
+      const blob = new Blob([JSON.stringify(record, null, 2)], {
+        type: "application/json"
+      });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = "prealgebra-completion-evidence-checklist.json";
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(url);
+
+      checklistMessage.textContent = "Checklist export prepared from the current browser record.";
+    });
+
+    resetChecklist.addEventListener("click", () => {
+      if (!window.confirm("Reset all local completion-evidence checkmarks?")) return;
+      evidenceInputs.forEach(input => {
+        input.checked = false;
+      });
+      localStorage.removeItem(CHECKLIST_KEY);
+      updateChecklist();
+      checklistMessage.textContent = "The local completion-evidence checklist was reset.";
+    });
+
+    updateChecklist();
+  })();
+  </script>
+</body>
+</html>

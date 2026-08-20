@@ -1,0 +1,47 @@
+{
+  "schema_version": "2.0",
+  "course_id": "KH-MATH-PA",
+  "course_title": "Khaemenes Global Pre-Algebra",
+  "duration_weeks": 36,
+  "assessment_policy": {
+    "public_classification": "self-check-nonconfidential",
+    "public_purpose": "Practice, correction, retesting, progress evidence, and parent/administrator-reviewed portfolio evidence.",
+    "secure_classification": "supervised-confidential",
+    "secure_purpose": "Separately issued summative testing when confidential administration is required.",
+    "record_guidance": "Browser-local scores are editable and are not authoritative, confidential, digitally signed, or independently authenticated. The parent, teacher, or program administrator determines the official course grade and any credit awarded from retained evidence."
+  },
+  "assessments": [
+    {
+      "id": "KH-MATH-PA-MIDTERM-U01-U07",
+      "title": "Pre-Algebra Midterm Public Self-Check",
+      "scope": "Units 01-07",
+      "questions": 56,
+      "path": "midterm-units-01-07.html",
+      "result_key": "khaemenes-prealgebra-midterm-result-v1",
+      "classification": "public-self-check-nonconfidential",
+      "authoritative_result": false
+    },
+    {
+      "id": "KH-MATH-PA-FINAL-36W",
+      "title": "Pre-Algebra 36-Week Final Public Self-Check",
+      "scope": "Units 01-13 / 36 weeks",
+      "questions": 80,
+      "path": "final-exam-36-weeks.html",
+      "result_key": "khaemenes-prealgebra-final-result-v1",
+      "classification": "public-self-check-nonconfidential",
+      "authoritative_result": false
+    }
+  ],
+  "secure_release_policy": {
+    "midterm": "A confidential Midterm v2 must use newly authored questions and a separately held answer key. Previously public questions are not eligible for confidential reuse.",
+    "final": "A confidential Final v2 must use newly authored questions and a separately held answer key. Previously public questions are not eligible for confidential reuse.",
+    "public_repository_rule": "Confidential answer keys and signing material must not be stored in this learner-facing repository."
+  },
+  "definitive_answer_policy": [
+    "Exactly one correct answer per scored item",
+    "No equivalent duplicate choices",
+    "No subjective best-answer items without a defined criterion",
+    "Conventions stated when material",
+    "Answer-choice presentation is designed to discourage pattern guessing"
+  ]
+}
