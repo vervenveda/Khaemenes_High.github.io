@@ -1,0 +1,570 @@
+{
+  "schema_version": "1.0",
+  "languages": {
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French",
+    "ar": "Arabic",
+    "pt": "Portuguese"
+  },
+  "terms": [
+    {
+      "id": "inequality",
+      "en": "inequality",
+      "es": "desigualdad",
+      "fr": "inégalité",
+      "ar": "متباينة",
+      "pt": "desigualdade",
+      "definition": "A statement comparing two expressions by order rather than equality."
+    },
+    {
+      "id": "less-than",
+      "en": "less than",
+      "es": "menor que",
+      "fr": "inférieur à",
+      "ar": "أصغر من",
+      "pt": "menor que",
+      "definition": "The relation <, showing a value is smaller."
+    },
+    {
+      "id": "greater-than",
+      "en": "greater than",
+      "es": "mayor que",
+      "fr": "supérieur à",
+      "ar": "أكبر من",
+      "pt": "maior que",
+      "definition": "The relation >, showing a value is larger."
+    },
+    {
+      "id": "less-than-or-equal",
+      "en": "less than or equal to",
+      "es": "menor o igual que",
+      "fr": "inférieur ou égal à",
+      "ar": "أصغر من أو يساوي",
+      "pt": "menor ou igual a",
+      "definition": "The relation ≤, including the boundary."
+    },
+    {
+      "id": "greater-than-or-equal",
+      "en": "greater than or equal to",
+      "es": "mayor o igual que",
+      "fr": "supérieur ou égal à",
+      "ar": "أكبر من أو يساوي",
+      "pt": "maior ou igual a",
+      "definition": "The relation ≥, including the boundary."
+    },
+    {
+      "id": "solution-set",
+      "en": "solution set",
+      "es": "conjunto solución",
+      "fr": "ensemble solution",
+      "ar": "مجموعة الحل",
+      "pt": "conjunto solução",
+      "definition": "All values that make a statement true."
+    },
+    {
+      "id": "boundary",
+      "en": "boundary",
+      "es": "límite",
+      "fr": "borne",
+      "ar": "حد",
+      "pt": "limite",
+      "definition": "A value separating solutions from non-solutions."
+    },
+    {
+      "id": "strict-inequality",
+      "en": "strict inequality",
+      "es": "desigualdad estricta",
+      "fr": "inégalité stricte",
+      "ar": "متباينة صارمة",
+      "pt": "desigualdade estrita",
+      "definition": "An inequality using < or > that excludes equality."
+    },
+    {
+      "id": "inclusive-inequality",
+      "en": "inclusive inequality",
+      "es": "desigualdad inclusiva",
+      "fr": "inégalité inclusive",
+      "ar": "متباينة شاملة",
+      "pt": "desigualdade inclusiva",
+      "definition": "An inequality using ≤ or ≥ that includes equality."
+    },
+    {
+      "id": "number-line",
+      "en": "number line",
+      "es": "recta numérica",
+      "fr": "droite numérique",
+      "ar": "خط الأعداد",
+      "pt": "reta numérica",
+      "definition": "A line representing ordered numbers and solution sets."
+    },
+    {
+      "id": "open-point",
+      "en": "open point",
+      "es": "punto abierto",
+      "fr": "point ouvert",
+      "ar": "نقطة مفتوحة",
+      "pt": "ponto aberto",
+      "definition": "A graph marker showing an endpoint is excluded."
+    },
+    {
+      "id": "closed-point",
+      "en": "closed point",
+      "es": "punto cerrado",
+      "fr": "point fermé",
+      "ar": "نقطة مغلقة",
+      "pt": "ponto fechado",
+      "definition": "A graph marker showing an endpoint is included."
+    },
+    {
+      "id": "ray",
+      "en": "ray",
+      "es": "semirrecta",
+      "fr": "demi-droite",
+      "ar": "شعاع",
+      "pt": "semirreta",
+      "definition": "A number-line set extending forever in one direction."
+    },
+    {
+      "id": "interval",
+      "en": "interval",
+      "es": "intervalo",
+      "fr": "intervalle",
+      "ar": "فترة",
+      "pt": "intervalo",
+      "definition": "A connected range of numbers."
+    },
+    {
+      "id": "endpoint",
+      "en": "endpoint",
+      "es": "extremo",
+      "fr": "extrémité",
+      "ar": "نقطة نهاية",
+      "pt": "extremidade",
+      "definition": "A boundary value of an interval."
+    },
+    {
+      "id": "left-ray",
+      "en": "left ray",
+      "es": "semirrecta izquierda",
+      "fr": "demi-droite gauche",
+      "ar": "شعاع أيسر",
+      "pt": "semirreta à esquerda",
+      "definition": "A set extending toward smaller values."
+    },
+    {
+      "id": "right-ray",
+      "en": "right ray",
+      "es": "semirrecta derecha",
+      "fr": "demi-droite droite",
+      "ar": "شعاع أيمن",
+      "pt": "semirreta à direita",
+      "definition": "A set extending toward larger values."
+    },
+    {
+      "id": "bounded-set",
+      "en": "bounded set",
+      "es": "conjunto acotado",
+      "fr": "ensemble borné",
+      "ar": "مجموعة محدودة",
+      "pt": "conjunto limitado",
+      "definition": "A set confined between finite boundaries."
+    },
+    {
+      "id": "one-step-inequality",
+      "en": "one-step inequality",
+      "es": "desigualdad de un paso",
+      "fr": "inégalité à une étape",
+      "ar": "متباينة بخطوة واحدة",
+      "pt": "desigualdade de uma etapa",
+      "definition": "An inequality solved with one inverse-operation step."
+    },
+    {
+      "id": "addition-property-inequality",
+      "en": "addition property of inequality",
+      "es": "propiedad de suma",
+      "fr": "propriété additive",
+      "ar": "خاصية الجمع",
+      "pt": "propriedade da adição",
+      "definition": "Adding the same number to both sides preserves order."
+    },
+    {
+      "id": "subtraction-property-inequality",
+      "en": "subtraction property of inequality",
+      "es": "propiedad de resta",
+      "fr": "propriété soustractive",
+      "ar": "خاصية الطرح",
+      "pt": "propriedade da subtração",
+      "definition": "Subtracting the same number from both sides preserves order."
+    },
+    {
+      "id": "multiplication-property-inequality",
+      "en": "multiplication property of inequality",
+      "es": "propiedad de multiplicación",
+      "fr": "propriété multiplicative",
+      "ar": "خاصية الضرب",
+      "pt": "propriedade da multiplicação",
+      "definition": "Positive multiplication preserves order; negative multiplication reverses it."
+    },
+    {
+      "id": "division-property-inequality",
+      "en": "division property of inequality",
+      "es": "propiedad de división",
+      "fr": "propriété de division",
+      "ar": "خاصية القسمة",
+      "pt": "propriedade da divisão",
+      "definition": "Positive division preserves order; negative division reverses it."
+    },
+    {
+      "id": "inverse-operation",
+      "en": "inverse operation",
+      "es": "operación inversa",
+      "fr": "opération inverse",
+      "ar": "عملية عكسية",
+      "pt": "operação inversa",
+      "definition": "An operation that undoes another operation."
+    },
+    {
+      "id": "equivalent-inequality",
+      "en": "equivalent inequality",
+      "es": "desigualdad equivalente",
+      "fr": "inégalité équivalente",
+      "ar": "متباينة مكافئة",
+      "pt": "desigualdade equivalente",
+      "definition": "An inequality with the same solution set."
+    },
+    {
+      "id": "test-value",
+      "en": "test value",
+      "es": "valor de prueba",
+      "fr": "valeur test",
+      "ar": "قيمة اختبار",
+      "pt": "valor de teste",
+      "definition": "A value substituted to check membership in a solution set."
+    },
+    {
+      "id": "reverse-inequality",
+      "en": "reverse the inequality",
+      "es": "invertir la desigualdad",
+      "fr": "inverser l’inégalité",
+      "ar": "عكس المتباينة",
+      "pt": "inverter a desigualdade",
+      "definition": "Switch the order symbol after multiplying or dividing by a negative."
+    },
+    {
+      "id": "negative-multiplier",
+      "en": "negative multiplier",
+      "es": "multiplicador negativo",
+      "fr": "multiplicateur négatif",
+      "ar": "عامل ضرب سالب",
+      "pt": "multiplicador negativo",
+      "definition": "A negative factor that reverses order."
+    },
+    {
+      "id": "negative-divisor",
+      "en": "negative divisor",
+      "es": "divisor negativo",
+      "fr": "diviseur négatif",
+      "ar": "مقسوم عليه سالب",
+      "pt": "divisor negativo",
+      "definition": "A negative divisor that requires reversing the inequality."
+    },
+    {
+      "id": "order-reversal",
+      "en": "order reversal",
+      "es": "inversión del orden",
+      "fr": "inversion de l’ordre",
+      "ar": "عكس الترتيب",
+      "pt": "inversão da ordem",
+      "definition": "The change in order caused by negative scaling."
+    },
+    {
+      "id": "opposite-numbers",
+      "en": "opposite numbers",
+      "es": "números opuestos",
+      "fr": "nombres opposés",
+      "ar": "أعداد متعاكسة",
+      "pt": "números opostos",
+      "definition": "Numbers equally distant from zero on opposite sides."
+    },
+    {
+      "id": "sign-error",
+      "en": "sign error",
+      "es": "error de signo",
+      "fr": "erreur de signe",
+      "ar": "خطأ في الإشارة",
+      "pt": "erro de sinal",
+      "definition": "An error involving positive or negative signs."
+    },
+    {
+      "id": "verification",
+      "en": "verification",
+      "es": "verificación",
+      "fr": "vérification",
+      "ar": "تحقق",
+      "pt": "verificação",
+      "definition": "Checking a result in the original statement."
+    },
+    {
+      "id": "counterexample",
+      "en": "counterexample",
+      "es": "contraejemplo",
+      "fr": "contre-exemple",
+      "ar": "مثال مضاد",
+      "pt": "contraexemplo",
+      "definition": "An example proving a general claim false."
+    },
+    {
+      "id": "multi-step-inequality",
+      "en": "multi-step inequality",
+      "es": "desigualdad de varios pasos",
+      "fr": "inégalité à plusieurs étapes",
+      "ar": "متباينة متعددة الخطوات",
+      "pt": "desigualdade de várias etapas",
+      "definition": "An inequality requiring several equivalent transformations."
+    },
+    {
+      "id": "distributive-property",
+      "en": "distributive property",
+      "es": "propiedad distributiva",
+      "fr": "propriété distributive",
+      "ar": "خاصية التوزيع",
+      "pt": "propriedade distributiva",
+      "definition": "A property multiplying a factor across a sum or difference."
+    },
+    {
+      "id": "combine-like-terms",
+      "en": "combine like terms",
+      "es": "combinar términos semejantes",
+      "fr": "regrouper les termes semblables",
+      "ar": "جمع الحدود المتشابهة",
+      "pt": "combinar termos semelhantes",
+      "definition": "Add or subtract coefficients of matching variable parts."
+    },
+    {
+      "id": "variable-both-sides",
+      "en": "variable on both sides",
+      "es": "variable en ambos lados",
+      "fr": "variable des deux côtés",
+      "ar": "متغير في الطرفين",
+      "pt": "variável nos dois lados",
+      "definition": "An inequality containing variable terms on each side."
+    },
+    {
+      "id": "all-real-numbers",
+      "en": "all real numbers",
+      "es": "todos los números reales",
+      "fr": "tous les réels",
+      "ar": "جميع الأعداد الحقيقية",
+      "pt": "todos os números reais",
+      "definition": "A solution set containing every real value."
+    },
+    {
+      "id": "empty-set",
+      "en": "empty set",
+      "es": "conjunto vacío",
+      "fr": "ensemble vide",
+      "ar": "مجموعة خالية",
+      "pt": "conjunto vazio",
+      "definition": "A solution set containing no values."
+    },
+    {
+      "id": "contradiction",
+      "en": "contradiction",
+      "es": "contradicción",
+      "fr": "contradiction",
+      "ar": "تناقض",
+      "pt": "contradição",
+      "definition": "A final false statement showing no solutions."
+    },
+    {
+      "id": "identity-inequality",
+      "en": "identity inequality",
+      "es": "desigualdad identidad",
+      "fr": "inégalité identité",
+      "ar": "متباينة هوية",
+      "pt": "desigualdade identidade",
+      "definition": "An inequality true for every allowed value."
+    },
+    {
+      "id": "equivalent-transformations",
+      "en": "equivalent transformations",
+      "es": "transformaciones equivalentes",
+      "fr": "transformations équivalentes",
+      "ar": "تحويلات مكافئة",
+      "pt": "transformações equivalentes",
+      "definition": "Steps preserving the same solution set."
+    },
+    {
+      "id": "compound-inequality",
+      "en": "compound inequality",
+      "es": "desigualdad compuesta",
+      "fr": "inégalité composée",
+      "ar": "متباينة مركبة",
+      "pt": "desigualdade composta",
+      "definition": "Two inequalities joined by and or or."
+    },
+    {
+      "id": "and-condition",
+      "en": "and condition",
+      "es": "condición y",
+      "fr": "condition et",
+      "ar": "شرط و",
+      "pt": "condição e",
+      "definition": "A condition requiring both statements to be true."
+    },
+    {
+      "id": "or-condition",
+      "en": "or condition",
+      "es": "condición o",
+      "fr": "condition ou",
+      "ar": "شرط أو",
+      "pt": "condição ou",
+      "definition": "A condition requiring at least one statement to be true."
+    },
+    {
+      "id": "intersection",
+      "en": "intersection",
+      "es": "intersección",
+      "fr": "intersection",
+      "ar": "تقاطع",
+      "pt": "interseção",
+      "definition": "Values shared by two sets."
+    },
+    {
+      "id": "union",
+      "en": "union",
+      "es": "unión",
+      "fr": "union",
+      "ar": "اتحاد",
+      "pt": "união",
+      "definition": "Values belonging to either of two sets."
+    },
+    {
+      "id": "chained-inequality",
+      "en": "chained inequality",
+      "es": "desigualdad encadenada",
+      "fr": "inégalité double",
+      "ar": "متباينة متسلسلة",
+      "pt": "desigualdade encadeada",
+      "definition": "A compact statement placing a variable between two bounds."
+    },
+    {
+      "id": "overlap",
+      "en": "overlap",
+      "es": "superposición",
+      "fr": "chevauchement",
+      "ar": "تداخل",
+      "pt": "sobreposição",
+      "definition": "The common region of solution sets."
+    },
+    {
+      "id": "disjoint-sets",
+      "en": "disjoint sets",
+      "es": "conjuntos disjuntos",
+      "fr": "ensembles disjoints",
+      "ar": "مجموعات منفصلة",
+      "pt": "conjuntos disjuntos",
+      "definition": "Sets with no shared values."
+    },
+    {
+      "id": "between",
+      "en": "between",
+      "es": "entre",
+      "fr": "entre",
+      "ar": "بين",
+      "pt": "entre",
+      "definition": "Located within two boundaries."
+    },
+    {
+      "id": "constraint",
+      "en": "constraint",
+      "es": "restricción",
+      "fr": "contrainte",
+      "ar": "قيد",
+      "pt": "restrição",
+      "definition": "A condition limiting allowable values."
+    },
+    {
+      "id": "domain-restriction",
+      "en": "domain restriction",
+      "es": "restricción de dominio",
+      "fr": "restriction de domaine",
+      "ar": "قيد المجال",
+      "pt": "restrição de domínio",
+      "definition": "A rule limiting which inputs are permitted."
+    },
+    {
+      "id": "discrete-solution",
+      "en": "discrete solution",
+      "es": "solución discreta",
+      "fr": "solution discrète",
+      "ar": "حل منفصل",
+      "pt": "solução discreta",
+      "definition": "A solution selected from separated countable values."
+    },
+    {
+      "id": "continuous-solution",
+      "en": "continuous solution",
+      "es": "solución continua",
+      "fr": "solution continue",
+      "ar": "حل مستمر",
+      "pt": "solução contínua",
+      "definition": "A solution that may be any value in an interval."
+    },
+    {
+      "id": "whole-number-solution",
+      "en": "whole-number solution",
+      "es": "solución entera no negativa",
+      "fr": "solution entière naturelle",
+      "ar": "حل بعدد كلي",
+      "pt": "solução de número inteiro não negativo",
+      "definition": "A solution restricted to 0, 1, 2, and so on."
+    },
+    {
+      "id": "nonnegative",
+      "en": "nonnegative",
+      "es": "no negativo",
+      "fr": "non négatif",
+      "ar": "غير سالب",
+      "pt": "não negativo",
+      "definition": "Greater than or equal to zero."
+    },
+    {
+      "id": "feasible-set",
+      "en": "feasible set",
+      "es": "conjunto factible",
+      "fr": "ensemble réalisable",
+      "ar": "مجموعة ممكنة",
+      "pt": "conjunto viável",
+      "definition": "All values meeting every mathematical and contextual constraint."
+    },
+    {
+      "id": "maximum",
+      "en": "maximum",
+      "es": "máximo",
+      "fr": "maximum",
+      "ar": "حد أقصى",
+      "pt": "máximo",
+      "definition": "The greatest allowable or observed value."
+    },
+    {
+      "id": "minimum",
+      "en": "minimum",
+      "es": "mínimo",
+      "fr": "minimum",
+      "ar": "حد أدنى",
+      "pt": "mínimo",
+      "definition": "The least allowable or observed value."
+    },
+    {
+      "id": "reasonableness",
+      "en": "reasonableness",
+      "es": "razonabilidad",
+      "fr": "caractère raisonnable",
+      "ar": "معقولية",
+      "pt": "razoabilidade",
+      "definition": "Whether a result makes sense in context."
+    }
+  ]
+}
