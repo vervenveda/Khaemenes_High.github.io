@@ -187,5 +187,19 @@
       "title": "Family Guide",
       "file": "family-guide.html"
     }
-  ]
+  ],
+  "print_resources": {
+    "hub": "worksheets/index.html",
+    "lesson_worksheets": [
+      "worksheets/lesson-01-worksheet.html",
+      "worksheets/lesson-02-worksheet.html",
+      "worksheets/lesson-03-worksheet.html",
+      "worksheets/lesson-04-worksheet.html",
+      "worksheets/lesson-05-worksheet.html",
+      "worksheets/lesson-06-worksheet.html"
+    ],
+    "cumulative_review": "worksheets/unit-01-cumulative-review.html",
+    "project_planner": "worksheets/number-structure-investigation-planner.html",
+    "teacher_answer_key": "worksheets/teacher-answer-key.html"
+  }
 }

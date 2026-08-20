@@ -237,6 +237,22 @@
       "file": "family-guide.html"
     }
   ],
+  "print_resources": {
+    "hub": "worksheets/index.html",
+    "lesson_worksheets": [
+      "worksheets/lesson-01-worksheet.html",
+      "worksheets/lesson-02-worksheet.html",
+      "worksheets/lesson-03-worksheet.html",
+      "worksheets/lesson-04-worksheet.html",
+      "worksheets/lesson-05-worksheet.html",
+      "worksheets/lesson-06-worksheet.html",
+      "worksheets/lesson-07-worksheet.html",
+      "worksheets/lesson-08-worksheet.html"
+    ],
+    "cumulative_review": "worksheets/unit-02-cumulative-review.html",
+    "project_planner": "worksheets/signed-data-investigation-planner.html",
+    "teacher_answer_key": "worksheets/teacher-answer-key.html"
+  },
   "integrated_learning": {
     "status": "introduced",
     "project": "projects/signed-data-investigation.html",
