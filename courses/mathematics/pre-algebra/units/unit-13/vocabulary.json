@@ -1,0 +1,741 @@
+{
+  "schema_version": "1.0",
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ar": "العربية",
+    "pt": "Português"
+  },
+  "terms": [
+    {
+      "id": "mathematical-model",
+      "en": "mathematical model",
+      "es": "modelo matemático",
+      "fr": "modèle mathématique",
+      "ar": "نموذج رياضي",
+      "pt": "modelo matemático",
+      "definition": "A mathematical representation used to describe, explain, predict, or decide."
+    },
+    {
+      "id": "modelling-cycle",
+      "en": "modelling cycle",
+      "es": "ciclo de modelización",
+      "fr": "cycle de modélisation",
+      "ar": "دورة النمذجة",
+      "pt": "ciclo de modelagem",
+      "definition": "The repeated process of defining, representing, calculating, checking, interpreting, and revising."
+    },
+    {
+      "id": "problem-statement",
+      "en": "problem statement",
+      "es": "planteamiento del problema",
+      "fr": "énoncé du problème",
+      "ar": "صياغة المشكلة",
+      "pt": "declaração do problema",
+      "definition": "A focused description of the issue the model addresses."
+    },
+    {
+      "id": "research-question",
+      "en": "research question",
+      "es": "pregunta de investigación",
+      "fr": "question de recherche",
+      "ar": "سؤال بحث",
+      "pt": "pergunta de pesquisa",
+      "definition": "A clear question guiding an investigation."
+    },
+    {
+      "id": "purpose",
+      "en": "purpose",
+      "es": "propósito",
+      "fr": "objectif",
+      "ar": "غرض",
+      "pt": "propósito",
+      "definition": "The intended use of a model or investigation."
+    },
+    {
+      "id": "audience",
+      "en": "audience",
+      "es": "audiencia",
+      "fr": "public",
+      "ar": "جمهور",
+      "pt": "público",
+      "definition": "The people who will use or evaluate the work."
+    },
+    {
+      "id": "stakeholder",
+      "en": "stakeholder",
+      "es": "parte interesada",
+      "fr": "partie prenante",
+      "ar": "صاحب مصلحة",
+      "pt": "parte interessada",
+      "definition": "A person or group affected by a decision."
+    },
+    {
+      "id": "scope",
+      "en": "scope",
+      "es": "alcance",
+      "fr": "portée",
+      "ar": "نطاق",
+      "pt": "escopo",
+      "definition": "The boundaries of what an investigation includes."
+    },
+    {
+      "id": "criterion",
+      "en": "criterion",
+      "es": "criterio",
+      "fr": "critère",
+      "ar": "معيار",
+      "pt": "critério",
+      "definition": "A standard used to judge an option or result."
+    },
+    {
+      "id": "constraint",
+      "en": "constraint",
+      "es": "restricción",
+      "fr": "contrainte",
+      "ar": "قيد",
+      "pt": "restrição",
+      "definition": "A limit or requirement a solution must satisfy."
+    },
+    {
+      "id": "ethical-use",
+      "en": "ethical use",
+      "es": "uso ético",
+      "fr": "usage éthique",
+      "ar": "استخدام أخلاقي",
+      "pt": "uso ético",
+      "definition": "Responsible use that considers rights, harms, and fairness."
+    },
+    {
+      "id": "privacy",
+      "en": "privacy",
+      "es": "privacidad",
+      "fr": "vie privée",
+      "ar": "خصوصية",
+      "pt": "privacidade",
+      "definition": "Protection and appropriate control of personal information."
+    },
+    {
+      "id": "data-minimization",
+      "en": "data minimization",
+      "es": "minimización de datos",
+      "fr": "minimisation des données",
+      "ar": "تقليل البيانات",
+      "pt": "minimização de dados",
+      "definition": "Collecting only information necessary for a stated purpose."
+    },
+    {
+      "id": "feasibility",
+      "en": "feasibility",
+      "es": "viabilidad",
+      "fr": "faisabilité",
+      "ar": "جدوى",
+      "pt": "viabilidade",
+      "definition": "Whether a plan can realistically be completed."
+    },
+    {
+      "id": "decision",
+      "en": "decision",
+      "es": "decisión",
+      "fr": "décision",
+      "ar": "قرار",
+      "pt": "decisão",
+      "definition": "A choice supported by stated criteria and evidence."
+    },
+    {
+      "id": "variable",
+      "en": "variable",
+      "es": "variable",
+      "fr": "variable",
+      "ar": "متغير",
+      "pt": "variável",
+      "definition": "A quantity or characteristic that may change."
+    },
+    {
+      "id": "independent-variable",
+      "en": "independent variable",
+      "es": "variable independiente",
+      "fr": "variable indépendante",
+      "ar": "متغير مستقل",
+      "pt": "variável independente",
+      "definition": "An input or explanatory variable."
+    },
+    {
+      "id": "dependent-variable",
+      "en": "dependent variable",
+      "es": "variable dependiente",
+      "fr": "variable dépendante",
+      "ar": "متغير تابع",
+      "pt": "variável dependente",
+      "definition": "An output or response variable."
+    },
+    {
+      "id": "parameter",
+      "en": "parameter",
+      "es": "parámetro",
+      "fr": "paramètre",
+      "ar": "معلمة",
+      "pt": "parâmetro",
+      "definition": "A value controlling a model or describing a population."
+    },
+    {
+      "id": "constant",
+      "en": "constant",
+      "es": "constante",
+      "fr": "constante",
+      "ar": "ثابت",
+      "pt": "constante",
+      "definition": "A value held fixed in a model."
+    },
+    {
+      "id": "unit",
+      "en": "unit",
+      "es": "unidad",
+      "fr": "unité",
+      "ar": "وحدة",
+      "pt": "unidade",
+      "definition": "A standard quantity used in measurement."
+    },
+    {
+      "id": "data-source",
+      "en": "data source",
+      "es": "fuente de datos",
+      "fr": "source de données",
+      "ar": "مصدر بيانات",
+      "pt": "fonte de dados",
+      "definition": "The origin of data used in a model."
+    },
+    {
+      "id": "primary-data",
+      "en": "primary data",
+      "es": "datos primarios",
+      "fr": "données primaires",
+      "ar": "بيانات أولية",
+      "pt": "dados primários",
+      "definition": "Data collected directly for the current question."
+    },
+    {
+      "id": "secondary-data",
+      "en": "secondary data",
+      "es": "datos secundarios",
+      "fr": "données secondaires",
+      "ar": "بيانات ثانوية",
+      "pt": "dados secundários",
+      "definition": "Existing data collected by another source or purpose."
+    },
+    {
+      "id": "assumption",
+      "en": "assumption",
+      "es": "suposición",
+      "fr": "hypothèse",
+      "ar": "افتراض",
+      "pt": "suposição",
+      "definition": "A stated condition accepted to build or simplify a model."
+    },
+    {
+      "id": "representation",
+      "en": "representation",
+      "es": "representación",
+      "fr": "représentation",
+      "ar": "تمثيل",
+      "pt": "representação",
+      "definition": "A table, graph, equation, diagram, or verbal form of an idea."
+    },
+    {
+      "id": "table",
+      "en": "table",
+      "es": "tabla",
+      "fr": "tableau",
+      "ar": "جدول",
+      "pt": "tabela",
+      "definition": "An arrangement of values in rows and columns."
+    },
+    {
+      "id": "graph",
+      "en": "graph",
+      "es": "gráfica",
+      "fr": "graphique",
+      "ar": "رسم بياني",
+      "pt": "gráfico",
+      "definition": "A visual representation of data or a relationship."
+    },
+    {
+      "id": "equation",
+      "en": "equation",
+      "es": "ecuación",
+      "fr": "équation",
+      "ar": "معادلة",
+      "pt": "equação",
+      "definition": "A statement that two expressions are equal."
+    },
+    {
+      "id": "inequality",
+      "en": "inequality",
+      "es": "desigualdad",
+      "fr": "inégalité",
+      "ar": "متباينة",
+      "pt": "desigualdade",
+      "definition": "A comparison describing a range of values."
+    },
+    {
+      "id": "scale-drawing",
+      "en": "scale drawing",
+      "es": "dibujo a escala",
+      "fr": "dessin à l’échelle",
+      "ar": "رسم بمقياس",
+      "pt": "desenho em escala",
+      "definition": "A drawing using a constant ratio to actual dimensions."
+    },
+    {
+      "id": "statistic",
+      "en": "statistic",
+      "es": "estadístico",
+      "fr": "statistique",
+      "ar": "إحصائية",
+      "pt": "estatística",
+      "definition": "A numerical summary calculated from data."
+    },
+    {
+      "id": "probability-model",
+      "en": "probability model",
+      "es": "modelo de probabilidad",
+      "fr": "modèle probabiliste",
+      "ar": "نموذج احتمالي",
+      "pt": "modelo de probabilidade",
+      "definition": "A mathematical description of possible outcomes and likelihoods."
+    },
+    {
+      "id": "calculation",
+      "en": "calculation",
+      "es": "cálculo",
+      "fr": "calcul",
+      "ar": "حساب",
+      "pt": "cálculo",
+      "definition": "A mathematical computation."
+    },
+    {
+      "id": "procedure",
+      "en": "procedure",
+      "es": "procedimiento",
+      "fr": "procédure",
+      "ar": "إجراء",
+      "pt": "procedimento",
+      "definition": "A reproducible sequence of steps."
+    },
+    {
+      "id": "substitution",
+      "en": "substitution",
+      "es": "sustitución",
+      "fr": "substitution",
+      "ar": "تعويض",
+      "pt": "substituição",
+      "definition": "Replacing a variable with a value or expression."
+    },
+    {
+      "id": "estimate",
+      "en": "estimate",
+      "es": "estimación",
+      "fr": "estimation",
+      "ar": "تقدير",
+      "pt": "estimativa",
+      "definition": "A reasonable approximate value."
+    },
+    {
+      "id": "reasonableness",
+      "en": "reasonableness",
+      "es": "razonabilidad",
+      "fr": "caractère raisonnable",
+      "ar": "معقولية",
+      "pt": "razoabilidade",
+      "definition": "Whether a result makes sense in context."
+    },
+    {
+      "id": "verification",
+      "en": "verification",
+      "es": "verificación",
+      "fr": "vérification",
+      "ar": "تحقق",
+      "pt": "verificação",
+      "definition": "Checking that calculations and logic were carried out correctly."
+    },
+    {
+      "id": "validation",
+      "en": "validation",
+      "es": "validación",
+      "fr": "validation",
+      "ar": "تصديق",
+      "pt": "validação",
+      "definition": "Checking whether a model is suitable for its intended real context."
+    },
+    {
+      "id": "inverse-operation",
+      "en": "inverse operation",
+      "es": "operación inversa",
+      "fr": "opération inverse",
+      "ar": "عملية عكسية",
+      "pt": "operação inversa",
+      "definition": "An operation that reverses another operation."
+    },
+    {
+      "id": "unit-analysis",
+      "en": "unit analysis",
+      "es": "análisis de unidades",
+      "fr": "analyse des unités",
+      "ar": "تحليل الوحدات",
+      "pt": "análise de unidades",
+      "definition": "Checking operations and conversions through their units."
+    },
+    {
+      "id": "dimensional-consistency",
+      "en": "dimensional consistency",
+      "es": "coherencia dimensional",
+      "fr": "cohérence dimensionnelle",
+      "ar": "اتساق الأبعاد",
+      "pt": "consistência dimensional",
+      "definition": "Agreement of measurement dimensions across an equation."
+    },
+    {
+      "id": "rounding",
+      "en": "rounding",
+      "es": "redondeo",
+      "fr": "arrondi",
+      "ar": "تقريب",
+      "pt": "arredondamento",
+      "definition": "Replacing a number with a nearby value at stated precision."
+    },
+    {
+      "id": "precision",
+      "en": "precision",
+      "es": "precisión",
+      "fr": "précision",
+      "ar": "دقة القياس",
+      "pt": "precisão",
+      "definition": "The level of detail in a measurement or calculation."
+    },
+    {
+      "id": "error",
+      "en": "error",
+      "es": "error",
+      "fr": "erreur",
+      "ar": "خطأ",
+      "pt": "erro",
+      "definition": "A difference caused by measurement, approximation, modelling, or calculation."
+    },
+    {
+      "id": "revision",
+      "en": "revision",
+      "es": "revisión",
+      "fr": "révision",
+      "ar": "مراجعة",
+      "pt": "revisão",
+      "definition": "An improvement made after checking evidence or feedback."
+    },
+    {
+      "id": "reproducibility",
+      "en": "reproducibility",
+      "es": "reproducibilidad",
+      "fr": "reproductibilité",
+      "ar": "قابلية إعادة الإنتاج",
+      "pt": "reprodutibilidade",
+      "definition": "The ability for another person to repeat a method and obtain consistent results."
+    },
+    {
+      "id": "sensitivity-analysis",
+      "en": "sensitivity analysis",
+      "es": "análisis de sensibilidad",
+      "fr": "analyse de sensibilité",
+      "ar": "تحليل الحساسية",
+      "pt": "análise de sensibilidade",
+      "definition": "Testing how model output changes when inputs or assumptions change."
+    },
+    {
+      "id": "scenario",
+      "en": "scenario",
+      "es": "escenario",
+      "fr": "scénario",
+      "ar": "سيناريو",
+      "pt": "cenário",
+      "definition": "A defined set of input values and assumptions."
+    },
+    {
+      "id": "baseline",
+      "en": "baseline",
+      "es": "línea base",
+      "fr": "référence",
+      "ar": "خط أساس",
+      "pt": "linha de base",
+      "definition": "The main reference scenario."
+    },
+    {
+      "id": "best-case",
+      "en": "best-case",
+      "es": "mejor caso",
+      "fr": "meilleur cas",
+      "ar": "أفضل حالة",
+      "pt": "melhor caso",
+      "definition": "A favourable plausible scenario."
+    },
+    {
+      "id": "worst-case",
+      "en": "worst-case",
+      "es": "peor caso",
+      "fr": "pire cas",
+      "ar": "أسوأ حالة",
+      "pt": "pior caso",
+      "definition": "An unfavourable plausible scenario."
+    },
+    {
+      "id": "interval",
+      "en": "interval",
+      "es": "intervalo",
+      "fr": "intervalle",
+      "ar": "فترة",
+      "pt": "intervalo",
+      "definition": "A range between stated lower and upper values."
+    },
+    {
+      "id": "tolerance",
+      "en": "tolerance",
+      "es": "tolerancia",
+      "fr": "tolérance",
+      "ar": "هامش سماح",
+      "pt": "tolerância",
+      "definition": "An allowed amount of variation."
+    },
+    {
+      "id": "uncertainty",
+      "en": "uncertainty",
+      "es": "incertidumbre",
+      "fr": "incertitude",
+      "ar": "عدم يقين",
+      "pt": "incerteza",
+      "definition": "The limits of what inputs, data, or a model can determine."
+    },
+    {
+      "id": "risk",
+      "en": "risk",
+      "es": "riesgo",
+      "fr": "risque",
+      "ar": "مخاطرة",
+      "pt": "risco",
+      "definition": "The possibility and consequence of an unwanted outcome."
+    },
+    {
+      "id": "robustness",
+      "en": "robustness",
+      "es": "robustez",
+      "fr": "robustesse",
+      "ar": "متانة",
+      "pt": "robustez",
+      "definition": "The ability of a conclusion to remain reasonable across plausible changes."
+    },
+    {
+      "id": "limitation",
+      "en": "limitation",
+      "es": "limitación",
+      "fr": "limite",
+      "ar": "قيد",
+      "pt": "limitação",
+      "definition": "A condition restricting interpretation or reliability."
+    },
+    {
+      "id": "bias",
+      "en": "bias",
+      "es": "sesgo",
+      "fr": "biais",
+      "ar": "تحيز",
+      "pt": "viés",
+      "definition": "A systematic influence that can distort a model or conclusion."
+    },
+    {
+      "id": "fairness",
+      "en": "fairness",
+      "es": "equidad",
+      "fr": "équité",
+      "ar": "إنصاف",
+      "pt": "justiça",
+      "definition": "Consideration of whether benefits and burdens are distributed justly."
+    },
+    {
+      "id": "accessibility",
+      "en": "accessibility",
+      "es": "accesibilidad",
+      "fr": "accessibilité",
+      "ar": "إتاحة",
+      "pt": "acessibilidade",
+      "definition": "Design that supports participation by people with varied needs."
+    },
+    {
+      "id": "equity",
+      "en": "equity",
+      "es": "equidad",
+      "fr": "équité",
+      "ar": "عدالة",
+      "pt": "equidade",
+      "definition": "Fair support that accounts for different needs and barriers."
+    },
+    {
+      "id": "unintended-consequence",
+      "en": "unintended consequence",
+      "es": "consecuencia no prevista",
+      "fr": "conséquence imprévue",
+      "ar": "نتيجة غير مقصودة",
+      "pt": "consequência não intencional",
+      "definition": "An effect not planned or anticipated."
+    },
+    {
+      "id": "trade-off",
+      "en": "trade-off",
+      "es": "compensación",
+      "fr": "compromis",
+      "ar": "مفاضلة",
+      "pt": "compensação",
+      "definition": "A balance in which improving one objective may reduce another."
+    },
+    {
+      "id": "claim",
+      "en": "claim",
+      "es": "afirmación",
+      "fr": "affirmation",
+      "ar": "ادعاء",
+      "pt": "afirmação",
+      "definition": "A statement supported or evaluated with evidence."
+    },
+    {
+      "id": "evidence",
+      "en": "evidence",
+      "es": "evidencia",
+      "fr": "preuve",
+      "ar": "دليل",
+      "pt": "evidência",
+      "definition": "Information used to support a claim."
+    },
+    {
+      "id": "reasoning",
+      "en": "reasoning",
+      "es": "razonamiento",
+      "fr": "raisonnement",
+      "ar": "استدلال",
+      "pt": "raciocínio",
+      "definition": "The logical connection between evidence and a claim."
+    },
+    {
+      "id": "conclusion",
+      "en": "conclusion",
+      "es": "conclusión",
+      "fr": "conclusion",
+      "ar": "استنتاج",
+      "pt": "conclusão",
+      "definition": "A final interpretation based on the analysis."
+    },
+    {
+      "id": "recommendation",
+      "en": "recommendation",
+      "es": "recomendación",
+      "fr": "recommandation",
+      "ar": "توصية",
+      "pt": "recomendação",
+      "definition": "A proposed action based on criteria and evidence."
+    },
+    {
+      "id": "executive-summary",
+      "en": "executive summary",
+      "es": "resumen ejecutivo",
+      "fr": "résumé exécutif",
+      "ar": "ملخص تنفيذي",
+      "pt": "resumo executivo",
+      "definition": "A concise overview of question, method, result, and limits."
+    },
+    {
+      "id": "caption",
+      "en": "caption",
+      "es": "pie de figura",
+      "fr": "légende",
+      "ar": "تعليق توضيحي",
+      "pt": "legenda",
+      "definition": "Text explaining a figure or table."
+    },
+    {
+      "id": "citation",
+      "en": "citation",
+      "es": "cita",
+      "fr": "citation",
+      "ar": "استشهاد",
+      "pt": "citação",
+      "definition": "A reference identifying the source of information."
+    },
+    {
+      "id": "oral-defense",
+      "en": "oral defense",
+      "es": "defensa oral",
+      "fr": "soutenance orale",
+      "ar": "دفاع شفهي",
+      "pt": "defesa oral",
+      "definition": "A brief presentation and response to questions about the work."
+    },
+    {
+      "id": "counterargument",
+      "en": "counterargument",
+      "es": "contraargumento",
+      "fr": "contre-argument",
+      "ar": "حجة مضادة",
+      "pt": "contra-argumento",
+      "definition": "A reason challenging a claim or recommendation."
+    },
+    {
+      "id": "peer-review",
+      "en": "peer review",
+      "es": "revisión por pares",
+      "fr": "évaluation par les pairs",
+      "ar": "مراجعة الأقران",
+      "pt": "revisão por pares",
+      "definition": "Feedback from another learner using stated criteria."
+    },
+    {
+      "id": "feedback",
+      "en": "feedback",
+      "es": "retroalimentación",
+      "fr": "retour",
+      "ar": "ملاحظات",
+      "pt": "feedback",
+      "definition": "Information used to improve work."
+    },
+    {
+      "id": "reflection",
+      "en": "reflection",
+      "es": "reflexión",
+      "fr": "réflexion",
+      "ar": "تأمل",
+      "pt": "reflexão",
+      "definition": "Thoughtful evaluation of learning and growth."
+    },
+    {
+      "id": "mathematical-communication",
+      "en": "mathematical communication",
+      "es": "comunicación matemática",
+      "fr": "communication mathématique",
+      "ar": "تواصل رياضي",
+      "pt": "comunicação matemática",
+      "definition": "Clear explanation using words, symbols, units, and representations."
+    },
+    {
+      "id": "readiness",
+      "en": "readiness",
+      "es": "preparación",
+      "fr": "préparation",
+      "ar": "استعداد",
+      "pt": "prontidão",
+      "definition": "Preparedness for the next stage of learning."
+    },
+    {
+      "id": "next-step",
+      "en": "next step",
+      "es": "próximo paso",
+      "fr": "prochaine étape",
+      "ar": "خطوة تالية",
+      "pt": "próximo passo",
+      "definition": "A specific future action based on reflection."
+    }
+  ]
+}
