@@ -1,0 +1,322 @@
+{
+  "version": 4,
+  "sourceId": "khaemenes.high",
+  "name": "Khaemenes Academy High School",
+  "classification": "educational",
+  "mentorSearchable": true,
+  "audiences": [
+    "high",
+    "parent"
+  ],
+  "roles": [
+    "student",
+    "parent",
+    "educator"
+  ],
+  "homepage": "https://vervenveda.com/Khaemenes_High.github.io/",
+  "repository": "vervenveda/Khaemenes_High.github.io",
+  "resources": [
+    {
+      "id": "high-home",
+      "title": "Khaemenes Academy High School",
+      "description": "Grades 9\u201312 Khaemenes Academy campus and course navigation.",
+      "url": "https://vervenveda.com/Khaemenes_High.github.io/",
+      "audiences": [
+        "high",
+        "parent"
+      ],
+      "roles": [
+        "student",
+        "parent",
+        "educator"
+      ],
+      "domains": [
+        "education",
+        "navigation"
+      ],
+      "skills": [],
+      "tags": [
+        "high-school",
+        "course-navigation"
+      ],
+      "mentorEligible": true,
+      "featured": true,
+      "resourceType": "hub"
+    },
+    {
+      "id": "high-language-arts",
+      "title": "High School Language Arts",
+      "description": "Grades 9\u201312 English language arts, literature, composition, research, and analysis.",
+      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/",
+      "audiences": [
+        "high"
+      ],
+      "roles": [
+        "student",
+        "parent",
+        "educator"
+      ],
+      "domains": [
+        "language-arts"
+      ],
+      "skills": [
+        "reading",
+        "writing",
+        "analysis"
+      ],
+      "tags": [
+        "english",
+        "literature",
+        "composition"
+      ],
+      "mentorEligible": true,
+      "resourceType": "department"
+    },
+    {
+      "id": "high-mathematics",
+      "title": "High School Mathematics",
+      "description": "High-school mathematics course family and quantitative tools.",
+      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/",
+      "audiences": [
+        "high"
+      ],
+      "roles": [
+        "student",
+        "parent",
+        "educator"
+      ],
+      "domains": [
+        "mathematics"
+      ],
+      "skills": [
+        "mathematical-reasoning"
+      ],
+      "tags": [
+        "math",
+        "algebra",
+        "geometry",
+        "precalculus"
+      ],
+      "mentorEligible": true,
+      "resourceType": "department"
+    },
+    {
+      "id": "high-science",
+      "title": "High School Science Department",
+      "description": "Four-year laboratory science pathway: Integrated Science 9, Biology 10, Chemistry 11, Physics & Engineering 12, plus federated science extensions.",
+      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/science/",
+      "audiences": [
+        "high"
+      ],
+      "roles": [
+        "student",
+        "parent",
+        "educator"
+      ],
+      "domains": [
+        "science"
+      ],
+      "skills": [
+        "scientific-reasoning",
+        "evidence",
+        "modeling",
+        "data-analysis"
+      ],
+      "tags": [
+        "science",
+        "laboratory",
+        "inquiry",
+        "engineering"
+      ],
+      "mentorEligible": true,
+      "featured": true,
+      "resourceType": "department"
+    },
+    {
+      "id": "science-integrated-9",
+      "title": "International Integrated Science 9",
+      "description": "36-week integrated foundation in life, matter, energy, Earth systems, inquiry, engineering, and scientific information literacy.",
+      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/",
+      "audiences": [
+        "high"
+      ],
+      "roles": [
+        "student",
+        "parent",
+        "educator"
+      ],
+      "domains": [
+        "science",
+        "biology",
+        "chemistry",
+        "physics",
+        "earth-science"
+      ],
+      "skills": [
+        "scientific-inquiry",
+        "modeling",
+        "data-analysis",
+        "CER"
+      ],
+      "tags": [
+        "grade-9",
+        "integrated-science",
+        "36-weeks"
+      ],
+      "mentorEligible": true,
+      "resourceType": "course",
+      "learningValue": "core",
+      "curricularWeight": "core",
+      "subjects": [
+        "science"
+      ]
+    },
+    {
+      "id": "science-biology-10",
+      "title": "International Biology & Biotechnology 10",
+      "description": "36-week advanced biology sequence from molecular/cellular systems through genetics, biotechnology, evolution, ecology, biodiversity, and capstone.",
+      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/science/biology-10/",
+      "audiences": [
+        "high"
+      ],
+      "roles": [
+        "student",
+        "parent",
+        "educator"
+      ],
+      "domains": [
+        "biology",
+        "life-science",
+        "biotechnology",
+        "ecology"
+      ],
+      "skills": [
+        "scientific-inquiry",
+        "data-analysis",
+        "genetic-reasoning",
+        "CER"
+      ],
+      "tags": [
+        "grade-10",
+        "biology",
+        "biotechnology",
+        "36-weeks"
+      ],
+      "mentorEligible": true,
+      "resourceType": "course",
+      "learningValue": "core",
+      "curricularWeight": "core",
+      "subjects": [
+        "biology"
+      ]
+    },
+    {
+      "id": "science-chemistry-11",
+      "title": "International Chemistry & Materials Science 11",
+      "description": "36-week quantitative chemistry sequence in structure, bonding, reactions, stoichiometry, kinetics, thermodynamics, equilibrium, acids/bases, electrochemistry, and materials.",
+      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/science/chemistry-11/",
+      "audiences": [
+        "high"
+      ],
+      "roles": [
+        "student",
+        "parent",
+        "educator"
+      ],
+      "domains": [
+        "chemistry",
+        "physical-science",
+        "materials-science"
+      ],
+      "skills": [
+        "quantitative-reasoning",
+        "laboratory-analysis",
+        "modeling",
+        "CER"
+      ],
+      "tags": [
+        "grade-11",
+        "chemistry",
+        "materials",
+        "36-weeks"
+      ],
+      "mentorEligible": true,
+      "resourceType": "course",
+      "learningValue": "core",
+      "curricularWeight": "core",
+      "subjects": [
+        "chemistry"
+      ]
+    },
+    {
+      "id": "science-physics-12",
+      "title": "International Physics & Engineering 12",
+      "description": "36-week algebra-based physics and engineering sequence in mechanics, rotation, waves, fluids, thermal physics, electricity, magnetism, information technologies, space applications, and design.",
+      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/science/physics-engineering-12/",
+      "audiences": [
+        "high"
+      ],
+      "roles": [
+        "student",
+        "parent",
+        "educator"
+      ],
+      "domains": [
+        "physics",
+        "engineering",
+        "physical-science"
+      ],
+      "skills": [
+        "quantitative-modeling",
+        "experimental-design",
+        "engineering-design",
+        "data-analysis"
+      ],
+      "tags": [
+        "grade-12",
+        "physics",
+        "engineering",
+        "36-weeks"
+      ],
+      "mentorEligible": true,
+      "resourceType": "course",
+      "learningValue": "core",
+      "curricularWeight": "core",
+      "subjects": [
+        "physics",
+        "engineering"
+      ]
+    },
+    {
+      "id": "high-social-studies",
+      "title": "High School Social Studies",
+      "description": "Grades 9\u201312 social studies, history, civics, and public-life learning.",
+      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/",
+      "audiences": [
+        "high"
+      ],
+      "roles": [
+        "student",
+        "parent",
+        "educator"
+      ],
+      "domains": [
+        "social-studies",
+        "civics",
+        "history"
+      ],
+      "skills": [
+        "historical-analysis",
+        "civic-literacy"
+      ],
+      "tags": [
+        "history",
+        "civics",
+        "social-studies"
+      ],
+      "mentorEligible": true,
+      "resourceType": "department"
+    }
+  ],
+  "mentorNotes": "Repair 08b corrects source authority. Physical Education and Health & Wellness are federated Khaemenes High academic pathways physically owned by the Medicament High School Health Academy at medicament-hub.github.io/academy/high-school-health/. Those resources are intentionally not duplicated in this High School manifest; Mentor discovers them through verve.medicament. The federated electives navigator likewise does not transfer source ownership from specialist repositories."
+}

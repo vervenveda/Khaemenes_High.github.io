@@ -1,0 +1,9 @@
+# Pre-Algebra Substantial v21 File Manifest
+
+| Path | Bytes | SHA-256 |
+|---|---:|---|
+| `UPLOAD_PREALGEBRA_SUBSTANTIAL_V21.md` | 1214 | `5318929b020b72b542b1bca418814424a8982292d3e9202282a566b58acc55eb` |
+| `VALIDATION_REPORT.txt` | 688 | `f5ae9835e184862b2530a2137d8bfa5b8ad3e98f80375d361758b605a1f3a611` |
+| `courses/mathematics/pre-algebra/index.html` | 109503 | `6d0d22fd962e4d8b4674f017f4edd0f701fee53a9780abeacc9f0b836f957cf1` |
+| `docs/audits/PREALGEBRA_SUBSTANTIAL_V21_AUDIT.md` | 4167 | `12621c66ba8b5d7006e02055c56bf4ebd70f634c0eca1c9b385569b9201e91a8` |
+| `docs/releases/PREALGEBRA_SUBSTANTIAL_V21_RELEASE.md` | 1705 | `293700bf55709292de5bf01befdc214e844d3c0f417f079e70fdbfe9a6a46863` |

@@ -1,0 +1,120 @@
+{
+  "name": "Khaemenes High — Global Secondary Academy",
+  "short_name": "Khaemenes High",
+  "description": "An accessible international and national high-school program for grades 9–12.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#08111f",
+  "theme_color": "#0b1730",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "shortcuts": [
+    {
+      "name": "Grade 9 Student Portal",
+      "short_name": "Grade 9",
+      "url": "./grades/grade-09/"
+    },
+    {
+      "name": "Global Pre-Algebra",
+      "short_name": "Pre-Algebra",
+      "url": "./courses/mathematics/pre-algebra/"
+    },
+    {
+      "name": "Pre-Algebra Unit 1",
+      "short_name": "Unit 1",
+      "url": "./courses/mathematics/pre-algebra/units/unit-01/"
+    },
+    {
+      "name": "Pre-Algebra Unit 2",
+      "short_name": "Unit 2",
+      "url": "./courses/mathematics/pre-algebra/units/unit-02/"
+    },
+    {
+      "name": "Pre-Algebra Unit 3",
+      "short_name": "Unit 3",
+      "url": "./courses/mathematics/pre-algebra/units/unit-03/"
+    },
+    {
+      "name": "Pre-Algebra Unit 4",
+      "short_name": "Unit 4",
+      "url": "./courses/mathematics/pre-algebra/units/unit-04/"
+    },
+    {
+      "name": "Pre-Algebra Unit 5",
+      "short_name": "Unit 5",
+      "url": "./courses/mathematics/pre-algebra/units/unit-05/"
+    },
+    {
+      "name": "Pre-Algebra Unit 6",
+      "short_name": "Unit 6",
+      "url": "./courses/mathematics/pre-algebra/units/unit-06/"
+    },
+    {
+      "name": "Pre-Algebra Unit 7",
+      "short_name": "Unit 7",
+      "url": "./courses/mathematics/pre-algebra/units/unit-07/"
+    },
+    {
+      "name": "Pre-Algebra Unit 8",
+      "short_name": "Unit 8",
+      "url": "./courses/mathematics/pre-algebra/units/unit-08/"
+    },
+    {
+      "name": "Pre-Algebra Unit 9",
+      "short_name": "Unit 9",
+      "url": "./courses/mathematics/pre-algebra/units/unit-09/"
+    },
+    {
+      "name": "Pre-Algebra Unit 10",
+      "short_name": "Unit 10",
+      "url": "./courses/mathematics/pre-algebra/units/unit-10/"
+    },
+    {
+      "name": "Pre-Algebra Unit 11",
+      "short_name": "Unit 11",
+      "url": "./courses/mathematics/pre-algebra/units/unit-11/"
+    },
+    {
+      "name": "Pre-Algebra Unit 12",
+      "short_name": "Unit 12",
+      "url": "./courses/mathematics/pre-algebra/units/unit-12/"
+    },
+    {
+      "name": "Pre-Algebra Unit 13",
+      "short_name": "Unit 13",
+      "url": "./courses/mathematics/pre-algebra/units/unit-13/"
+    },
+    {
+      "name": "Pre-Algebra Diagnostic",
+      "short_name": "Diagnostic",
+      "url": "./courses/mathematics/pre-algebra/diagnostic/"
+    },
+    {
+      "name": "Connected Learning Network",
+      "short_name": "Resources",
+      "url": "./#resources"
+    },
+    {
+      "name": "Pre-Algebra Midterm",
+      "short_name": "Midterm",
+      "url": "./courses/mathematics/pre-algebra/assessments/midterm-units-01-07.html"
+    },
+    {
+      "name": "Pre-Algebra Final Exam",
+      "short_name": "Final Exam",
+      "url": "./courses/mathematics/pre-algebra/assessments/final-exam-36-weeks.html"
+    },
+    {
+      "name": "Course Completion Record",
+      "short_name": "Certificate",
+      "url": "./courses/mathematics/pre-algebra/records/course-completion-certificate.html"
+    }
+  ]
+}

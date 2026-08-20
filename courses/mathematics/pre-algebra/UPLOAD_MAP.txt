@@ -1,0 +1,32 @@
+Repair 07 upload map
+
+Repository: vervenveda/Khaemenes_High.github.io
+
+ROOT:
+mentor-manifest.json  -> replace existing root mentor-manifest.json
+
+COURSES:
+courses/science/index.html
+courses/science/README.md
+
+courses/science/biology-10/
+  index.html
+  course-map.json
+  README.md
+
+courses/science/chemistry-11/
+  index.html
+  course-map.json
+  README.md
+
+courses/science/physics-engineering-12/
+  index.html
+  course-map.json
+  README.md
+
+AUDIT DOCUMENTS (optional):
+RESEARCH_BASIS.md
+REPAIR_07_VALIDATION.md
+
+DO NOT replace or delete:
+courses/science/integrated-science-9/
