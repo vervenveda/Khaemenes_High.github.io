@@ -1,56 +1,22 @@
 {
-  "languages": {
-    "en": "English",
-    "es": "Español",
-    "fr": "Français",
-    "ar": "العربية",
-    "pt": "Português"
-  },
+  "unit": 4,
   "terms": [
-    {
-      "id": "inequality",
-      "en": "inequality",
-      "es": "desigualdad",
-      "fr": "inégalité",
-      "ar": "متباينة",
-      "pt": "desigualdade",
-      "definition": "A comparison describing order."
-    },
-    {
-      "id": "solution-set",
-      "en": "solution set",
-      "es": "conjunto solución",
-      "fr": "ensemble solution",
-      "ar": "مجموعة الحل",
-      "pt": "conjunto solução",
-      "definition": "All values making a statement true."
-    },
-    {
-      "id": "intersection",
-      "en": "intersection",
-      "es": "intersección",
-      "fr": "intersection",
-      "ar": "تقاطع",
-      "pt": "interseção",
-      "definition": "Values shared by sets."
-    },
-    {
-      "id": "union",
-      "en": "union",
-      "es": "unión",
-      "fr": "union",
-      "ar": "اتحاد",
-      "pt": "união",
-      "definition": "Values in either set."
-    },
-    {
-      "id": "absolute-value",
-      "en": "absolute value",
-      "es": "valor absoluto",
-      "fr": "valeur absolue",
-      "ar": "قيمة مطلقة",
-      "pt": "valor absoluto",
-      "definition": "Distance from a reference point."
-    }
+    "inequality",
+    "solution set",
+    "boundary",
+    "open endpoint",
+    "closed endpoint",
+    "interval notation",
+    "compound inequality",
+    "intersection",
+    "union",
+    "AND",
+    "OR",
+    "absolute value",
+    "distance",
+    "tolerance",
+    "feasible set",
+    "constraint",
+    "sign reversal"
   ]
 }
