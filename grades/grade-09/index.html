@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#f4f0e7">
 <meta name="color-scheme" content="light dark">
 <meta name="description" content="Khaemenes High Grade 9 Freshman Campus — adaptive core pathways, parent-reviewed readiness, personalized courses, reports, tools, games, mentor support, and mastery-aware integrated learning.">
-<meta name="application-version" content="2026.08.18-grade09-v3-adaptive-pathways">
+<meta name="application-version" content="2026.08.20-grade09-v3.1-mentor-beta-wired">
 <title>Khaemenes Academy · Grade 9 Freshman Campus</title>
 <style>
 :root{
@@ -165,7 +165,9 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
    <p class="hero-lead" id="heroLead">A connected home for Grade 9 academics, electives, grades, progress, research, tools, games, and mentor support.</p>
    <div class="actions">
     <a class="btn primary" href="#courses">Enter Grade 9</a>
-    <a class="btn gold" href="#mentor">Archaemenes Mentor · Beta</a>
+    <a class="btn gold" href="#mentor">Mentor Console</a>
+    <a class="btn" href="https://artist1970.github.io/Archaemenes.github.io/high/">Open Archaemenes</a>
+    <a class="btn" href="https://vervenveda.github.io/vervenveda.github.io/beta/">Beta Program</a>
     <button class="btn" id="designBtn">✦ Design My Page</button>
    </div>
    <div class="hero-stats">
@@ -275,6 +277,10 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   <article class="mentor-info">
    <span class="beta">Mentor · Beta</span><div class="mentor-avatar">A</div><h3>Archaemenes</h3>
    <p id="mentorIntro">Your Grade 9 mentor for planning, study direction, course navigation, and practical next steps.</p>
+   <div class="actions" style="justify-content:flex-start">
+    <a class="btn gold" href="https://artist1970.github.io/Archaemenes.github.io/high/">Open Full Archaemenes Mentor</a>
+    <a class="btn" href="https://vervenveda.github.io/vervenveda.github.io/beta/">Open Beta Program</a>
+   </div>
   </article>
   <article class="mentor-console">
    <div class="kicker">Ask for direction</div><h3 style="font:500 30px var(--display);margin:7px 0">What are we working on?</h3>
@@ -289,7 +295,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
      <button data-mentor="foundation">I need stronger foundations.</button>
      <button data-mentor="pathway">Explain my pathway review.</button>
    </div>
-   <div class="mentor-response" id="mentorResponse">Choose a prompt above for a practical next step.</div>
+   <div class="mentor-response" id="mentorResponse">Choose a prompt above for a quick local next step, or open the full Archaemenes mentor for the complete mentor experience.</div>
   </article>
  </div>
 </section>
@@ -305,11 +311,12 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <section class="section alt" id="beta">
  <div class="shell form-grid">
   <article class="panel">
-   <div class="kicker">Beta Program</div><h3>Report a Problem or Idea</h3><p style="color:var(--muted);font-size:12px">Reports stay local until you export them. Curriculum-quality signals can be designed separately for the Spyder/Noema Beta system without including learner identity or family placement notes.</p>
+   <div class="kicker">Beta Program</div><h3>Report a Problem or Idea</h3><p style="color:var(--muted);font-size:12px">This Grade 9 form is a local draft notebook: reports stay on this device until you export them. It does not silently submit learner information. Use the live Beta Program for the ecosystem reporting surface.</p>
+   <div class="actions" style="justify-content:flex-start"><a class="btn gold" href="https://vervenveda.github.io/vervenveda.github.io/beta/">Open Live Beta Program</a></div>
    <label class="field">Area<select id="betaArea"><option>Grade 9 Home</option><option>Courses</option><option>Electives</option><option>Grades / Reports</option><option>Archaemenes</option><option>Aurora</option><option>Directory</option><option>Design My Page</option><option>Tools / Games</option><option>Adaptive Pathways</option><option>Curriculum / Assessment</option><option>Accessibility</option></select></label>
    <label class="field">What happened?<textarea id="betaText"></textarea></label>
    <label class="field">Optional URL<input id="betaUrl"></label>
-   <div class="actions" style="justify-content:flex-start"><button class="btn primary" id="saveBeta">Save Report</button><button class="btn" id="exportBeta">Export Reports</button></div><div class="status" id="betaStatus"></div>
+   <div class="actions" style="justify-content:flex-start"><button class="btn primary" id="saveBeta">Save Local Draft</button><button class="btn" id="exportBeta">Export Local Drafts</button></div><div class="status" id="betaStatus"></div>
   </article>
   <article class="panel">
    <div class="kicker">Freshman Privacy</div><h3>Personal Without Being Intrusive</h3>
@@ -320,7 +327,13 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 </section>
 </main>
 
-<footer><div class="shell">Khaemenes High · Grade 9 Freshman Campus · Foundations · Readiness · Integrated Learning</div></footer>
+<footer><div class="shell">Khaemenes High · Grade 9 Freshman Campus · Foundations · Readiness · Integrated Learning
+  <div style="margin-top:8px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
+   <a href="https://artist1970.github.io/Archaemenes.github.io/high/">Archaemenes Mentor</a>
+   <a href="https://vervenveda.github.io/vervenveda.github.io/beta/">Beta Program</a>
+   <a href="../../index.html">High School Home</a>
+  </div>
+ </div></footer>
 
 <!-- Design My Page -->
 <div class="modal-bg" id="designModal" aria-hidden="true">
@@ -580,12 +593,14 @@ function renderAll(){renderProfile();renderCourses();renderPathways();renderElec
 /* ticker */
 const TICKER=[
  ["Week 1","Start with one clear next step.","#courses"],
- ["Archaemenes","Freshman Mentor · Beta","#mentor"],
+ ["Mentor Console","Quick Grade 9 guidance","#mentor"],
+ ["Archaemenes Live","Full High School mentor","https://artist1970.github.io/Archaemenes.github.io/high/"],
  ["Aurora","A little encouragement for today.","#aurora"],
  ["Grades & Reports","Your course records stay authoritative.","#reports"],
  ["Freshman Directory","Search tools, games, research and electives.","#directory"],
  ["Mastery","80% within the chosen pathway.","#reports"],
- ["Adaptive Pathways","NAIB advises · family decides.","#pathways"]
+ ["Adaptive Pathways","NAIB advises · family decides.","#pathways"],
+ ["Beta Program","Report issues and ideas.","https://vervenveda.github.io/vervenveda.github.io/beta/"]
 ];
 function tickerSet(hidden=false){return `<div class="ticker-set" ${hidden?'aria-hidden="true"':""}><span class="ticker-label">Grade 9</span>${TICKER.map(([a,b,h])=>`<a href="${h}" ${hidden?'tabindex="-1"':""}>${esc(a)} · ${esc(b)}</a>`).join("")}</div>`}
 $("tickerTrack").innerHTML=tickerSet()+tickerSet(true);
@@ -599,10 +614,12 @@ const MENU=[
  ["Electives","Creative and enrichment pathways","#electives","E"],
  ["Grades & Reports","Course records and mastery","#reports","R"],
  ["My Favorites","Pinned resources","#favoritesSection","★"],
- ["Archaemenes","Grade 9 Mentor Beta","#mentor","A"],
+ ["Mentor Console","Quick local Grade 9 guidance","#mentor","A"],
+ ["Archaemenes Live","Full High School mentor","https://artist1970.github.io/Archaemenes.github.io/high/","A"],
  ["Aurora","Encouragement and wellbeing","#aurora","☼"],
  ["Directory","Tools, apps, games and research","#directory","⌕"],
- ["Beta Feedback","Report a problem or idea","#beta","β"],
+ ["Beta Drafts","Local report drafting","#beta","β"],
+ ["Beta Program","Live ecosystem Beta surface","https://vervenveda.github.io/vervenveda.github.io/beta/","β"],
  ["Student Profile","High School profile","../../index.html#student-portal","P"],
  ["High School Campus","Grades 9–12 home","../../index.html","H"],
  ["Grade 10","Sophomore Campus","../grade-10/","X"]
@@ -680,9 +697,9 @@ $("saveBeta").onclick=()=>{
  state.reports.push({at:new Date().toISOString(),area:$("betaArea").value,url:$("betaUrl").value.trim(),text});state.reports=state.reports.slice(-50);saveState();$("betaText").value="";$("betaStatus").textContent=`Saved locally. ${state.reports.length} report(s) stored.`
 };
 $("exportBeta").onclick=()=>{
- if(!state.reports.length){$("betaStatus").textContent="No saved Beta reports yet.";return}
+ if(!state.reports.length){$("betaStatus").textContent="No saved local Beta drafts yet.";return}
  const out=state.reports.map((r,i)=>`GRADE 9 BETA REPORT ${i+1}\n${r.at}\nArea: ${r.area}\nURL: ${r.url||"(none)"}\n\n${r.text}`).join("\n\n--------------------------\n\n");
- const blob=new Blob([out],{type:"text/plain"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="khaemenes-grade9-beta-reports.txt";a.click();setTimeout(()=>URL.revokeObjectURL(u),700)
+ const blob=new Blob([out],{type:"text/plain"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="khaemenes-grade9-beta-drafts.txt";a.click();setTimeout(()=>URL.revokeObjectURL(u),700)
 };
 
 /* close with escape */
