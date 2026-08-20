@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="Khaemenes Academy High School Mathematics — enter by grade or by readiness through complete Pre-Algebra, Algebra I, Geometry, Algebra II, Precalculus & Trigonometry, and Calculus I programs.">
+  <meta name="description" content="Khaemenes Academy Mathematics — open-age, readiness-based access to Pre-Algebra, Algebra I, Geometry, Algebra II, Precalculus & Trigonometry, and Calculus I, with mentor, Beta, and schedule-building pathways.">
   <meta name="theme-color" content="#17344a">
   <meta name="color-scheme" content="light">
-  <meta name="application-version" content="2026.08.07-math-hall-v5-clean">
-  <title>Khaemenes Academy Mathematics | High School</title>
+  <meta name="application-version" content="2026.08.20-math-hall-v6-open-age-spyder">
+  <title>Khaemenes Academy Mathematics | Open-Age High School Courses</title>
   <link rel="canonical" href="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/">
 
   <style>
@@ -1241,6 +1241,35 @@
       background:#fff;
     }
 
+
+    /* Open-age schedule builder + bounded Spyder */
+    .open-age-banner{
+      max-width:1040px;margin:22px auto 0;padding:17px 20px;border:1px solid var(--gold);
+      border-radius:var(--radius);background:#fffaf0;box-shadow:var(--shadow-soft);
+      color:#343b3f;font-size:13px;line-height:1.65
+    }
+    .open-age-banner strong{color:var(--navy)}
+    .schedule-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .schedule-card{min-height:220px;display:flex;flex-direction:column;padding:20px;border:1px solid var(--line);
+      border-top:4px solid var(--accent);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow-soft);text-align:left}
+    .schedule-card h3{font-size:22px;margin-bottom:9px}
+    .schedule-card p{color:var(--muted);font-size:12px;line-height:1.6}
+    .schedule-card .btn{margin-top:auto}
+    .spyder-panel{display:grid;grid-template-columns:.82fr 1.18fr;gap:18px;align-items:start;
+      padding:25px;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:var(--radius);
+      background:#fff;box-shadow:var(--shadow)}
+    .spyder-copy{text-align:left}.spyder-copy h3{font-size:clamp(28px,4vw,44px);margin-bottom:10px}
+    .spyder-copy p{color:var(--muted);font-size:12.5px}
+    .spyder-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+    .spyder-console{padding:17px;border:1px solid var(--line);border-radius:var(--radius-small);background:var(--paper-soft);text-align:left}
+    .spyder-console pre{white-space:pre-wrap;word-break:break-word;margin:0;color:#25333b;font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace}
+    .spyder-status{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:11px}
+    .spyder-chip{padding:5px 8px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font-size:9px}
+    .spyder-chip.good{border-color:#8fb49a;color:var(--success);background:#f2f8f3}
+    @media(max-width:900px){.schedule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.spyder-panel{grid-template-columns:1fr}}
+    @media(max-width:620px){.schedule-grid{grid-template-columns:1fr}}
+
+
     /* 07 · RESPONSIVE
        --------------------------------------------------------- */
     @media(max-width:1180px){
@@ -1411,6 +1440,9 @@
         <a href="#grades">Grades 9–12</a>
         <a href="#courses">Courses</a>
         <a href="#teacher">Teacher Portal</a>
+        <a href="#schedule">Build Schedule</a>
+        <a href="https://artist1970.github.io/Archaemenes.github.io/high/">Archaemenes</a>
+        <a href="https://vervenveda.github.io/vervenveda.github.io/beta/">Beta</a>
       </nav>
 
       <div class="header-actions">
@@ -1423,6 +1455,17 @@
             <a href="#grades">Grade 9–12 Entrances</a>
             <a href="#courses">Mathematics Course Catalog</a>
             <a href="#teacher">Teacher Portal</a>
+            <a href="#schedule">Build My Schedule</a>
+            <a href="#spyder">Spyder Coverage</a>
+            <hr>
+            <p class="menu-label">Subject homes</p>
+            <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/language-arts/">Language Arts</a>
+            <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/science/">Science</a>
+            <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/social-studies/">Social Studies</a>
+            <hr>
+            <p class="menu-label">Mentor &amp; Beta</p>
+            <a href="https://artist1970.github.io/Archaemenes.github.io/high/">Archaemenes Mentor</a>
+            <a href="https://vervenveda.github.io/vervenveda.github.io/beta/">Beta Program</a>
             <hr>
             <p class="menu-label">Academy network</p>
             <a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Khaemenes Academy</a>
@@ -1477,19 +1520,21 @@
          ===================================================== -->
     <section class="hero">
       <div class="wrap">
-        <p class="eyebrow">High School Mathematics · Grades 9–12</p>
+        <p class="eyebrow">Open-Age Mathematics · Readiness-Based High School Courses</p>
         <h1 class="academy-title">Khaemenes Academy</h1>
-        <p class="academy-comment">Enter mathematics by grade or by course.</p>
+        <p class="academy-comment">Start where the mathematics makes sense.</p>
         <p class="lead">
-          Students may begin with their Grade 9–12 entrance or select the course that
-          matches demonstrated readiness, completed prerequisites, goals, and pathway.
-          The department supports foundation, core, advanced, college-readiness, data,
-          financial, and applied mathematics without locking every learner into one rigid sequence.
+          These mathematics courses are not age-locked or grade-restricted. A ninth-grade student,
+          an adult returning learner, a homeschool student, or an advanced younger learner may enter
+          the course that matches demonstrated readiness, prerequisites, goals, and desired challenge.
+          Grade entrances remain optional orientation tools — never permission gates.
         </p>
 
         <div class="hero-actions">
-          <a class="btn primary" href="#grades">Enter by Grade</a>
-          <a class="btn primary" href="#courses">Browse Live Courses</a>
+          <a class="btn primary" href="#courses">Choose Any Math Course</a>
+          <a class="btn" href="https://artist1970.github.io/Archaemenes.github.io/high/">Ask Archaemenes</a>
+          <a class="btn" href="#schedule">Build My Schedule</a>
+          <a class="btn" href="https://vervenveda.github.io/vervenveda.github.io/beta/">Beta Program</a>
           <button class="btn" type="button" data-launch-title="Scientific Calculator" data-launch-url="tools/calculator">Open Calculator</button>
           <a class="btn" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/courses/">Higher Learning Mathematics</a>
           <a class="btn gold" href="#teacher">Teacher Portal</a>
@@ -1500,6 +1545,12 @@
           <div class="snapshot-item"><strong>12</strong><span>Course Families</span></div>
           <div class="snapshot-item"><strong>6</strong><span>Complete Live Courses</span></div>
           <div class="snapshot-item"><strong>6</strong><span>Featured Games &amp; Tools</span></div>
+        </div>
+        <div class="open-age-banner">
+          <strong>No grade lock.</strong> Pre-Algebra, Algebra I, Geometry, Algebra II,
+          Precalculus &amp; Trigonometry, and Calculus I are open to any learner whose
+          readiness and goals make that course appropriate. Grade labels describe a common
+          sequence, not an age requirement.
         </div>
       </div>
     </section>
@@ -1514,6 +1565,8 @@
         <a href="#pathways">Pathways</a>
         <a href="#games-tools">Games &amp; Tools</a>
         <a href="#teacher">Teacher Portal</a>
+        <a href="#schedule">Build Schedule</a>
+        <a href="#spyder">Spyder Coverage</a>
         <a href="#resources">Resources</a>
       </div>
     </nav>
@@ -1524,11 +1577,12 @@
     <section class="section" id="grades">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Grade-level entrances</p>
-          <h2>Start with the student’s year, then choose by readiness.</h2>
+          <p class="eyebrow">Optional grade orientation</p>
+          <h2>Use grade pathways for orientation — not restriction.</h2>
           <p>
-            Grade cards provide a familiar doorway while preserving placement flexibility.
-            The six complete courses can also be entered directly from the catalog below.
+            Grade cards provide a familiar school-year map, but every live mathematics course
+            remains directly available to learners of any age. Readiness and prerequisites,
+            not birth year, determine the sensible starting point.
           </p>
         </div>
 
@@ -1604,9 +1658,9 @@
         </div>
 
         <p class="placement-note">
-          Grade placement is a suggested entrance, not a ceiling. Use demonstrated readiness,
-          completed prerequisites, learner goals, and teacher or family judgment to select the
-          most appropriate mathematics course.
+          Grade placement is optional orientation, not a gate. Adults and other open-age learners
+          may ignore the grade cards entirely and enter any live course from the catalog. Use
+          demonstrated readiness, completed prerequisites, learner goals, and informed judgment.
         </p>
       </div>
     </section>
@@ -1620,7 +1674,7 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">Course-based entrance</p>
-          <h2>Browse the high-school mathematics catalog.</h2>
+          <h2>Browse every live high-school mathematics course.</h2>
           <p>
             Six complete courses form the current foundation-to-calculus sequence.
             Six additional families preserve future data, financial, discrete,
@@ -1809,6 +1863,62 @@
       </div>
     </section>
 
+
+    <!-- =====================================================
+         BUILD A SCHEDULE
+         ===================================================== -->
+    <section class="section" id="schedule">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Build a complete learning schedule</p>
+          <h2>Math can be one part of a larger independent program.</h2>
+          <p>Open another subject department, choose a course there, and return here whenever you need mathematics. These are subject homes rather than grade locks.</p>
+        </div>
+        <div class="schedule-grid">
+          <article class="schedule-card" style="--accent:#6e6387"><h3>Language Arts</h3><p>Reading, literature, composition, research, rhetoric, speaking, media literacy, and publication.</p><a class="btn primary" href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/language-arts/">Open Language Arts</a></article>
+          <article class="schedule-card" style="--accent:#426f91"><h3>Science</h3><p>Integrated science, biology, chemistry, physics, engineering, labs, data, and scientific reasoning.</p><a class="btn primary" href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/science/">Open Science</a></article>
+          <article class="schedule-card" style="--accent:#9a5b65"><h3>Social Studies</h3><p>History, geography, civics, economics, evidence, media literacy, and public reasoning.</p><a class="btn primary" href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/social-studies/">Open Social Studies</a></article>
+          <article class="schedule-card" style="--accent:#a67b35"><h3>High School Home</h3><p>Return to the full Khaemenes High entrance for additional subjects, student pathways, and school-wide navigation.</p><a class="btn primary" href="https://vervenveda.github.io/Khaemenes_High.github.io/">Open High School</a></article>
+        </div>
+        <div class="hero-actions" style="margin-top:22px">
+          <a class="btn" href="https://artist1970.github.io/Archaemenes.github.io/high/">Ask Archaemenes to Help Plan</a>
+          <a class="btn" href="https://vervenveda.github.io/vervenveda.github.io/beta/">Open Beta Program</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SPYDER COVERAGE CRAWLER
+         ===================================================== -->
+    <section class="section section-alt" id="spyder">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Mentor + Beta driven observability</p>
+          <h2>Spyder Coverage Crawler</h2>
+          <p>The crawler inspects this Mathematics Hall's public route structure and control wiring. It does not read learner names, grades, answers, profile data, or course records.</p>
+        </div>
+        <div class="spyder-panel">
+          <div class="spyder-copy">
+            <h3>Observe the doorway, not the learner.</h3>
+            <p>Spyder checks empty links, duplicate destinations, required live math routes, schedule-home links, and launcher wiring. Same-origin course routes may be probed with a lightweight request when the page is hosted normally. Cross-origin resources are catalogued but not crawled for private content.</p>
+            <div class="spyder-actions">
+              <button class="btn primary" id="spyderScan" type="button">Run Spyder Scan</button>
+              <button class="btn" id="spyderExport" type="button">Export Scan</button>
+              <a class="btn" href="https://artist1970.github.io/Archaemenes.github.io/high/">Ask Archaemenes</a>
+              <a class="btn" href="https://vervenveda.github.io/vervenveda.github.io/beta/">Report Through Beta</a>
+            </div>
+          </div>
+          <div class="spyder-console" aria-live="polite">
+            <div class="spyder-status">
+              <span class="spyder-chip good">Privacy boundary: public routes only</span>
+              <span class="spyder-chip">Authority: observational</span>
+            </div>
+            <pre id="spyderOutput">Spyder is ready. Run a scan to inspect the Mathematics Hall public route surface.</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- =====================================================
          TEACHER PORTAL
          ===================================================== -->
@@ -1950,6 +2060,18 @@
             <strong>Open arcade →</strong>
           </button>
 
+
+          <a class="resource-card" href="https://artist1970.github.io/Archaemenes.github.io/high/">
+            <h3>Archaemenes Mentor</h3>
+            <p>Open the High School mentor for readiness, study planning, course sequencing, and next-step guidance.</p>
+            <strong>Open mentor →</strong>
+          </a>
+
+          <a class="resource-card" href="https://vervenveda.github.io/vervenveda.github.io/beta/">
+            <h3>Beta Program</h3>
+            <p>Report a public-facing issue, broken pathway, confusing interface, or improvement idea through the ecosystem Beta surface.</p>
+            <strong>Open Beta →</strong>
+          </a>
           <a class="resource-card" href="https://vervenveda.com/">
             <h3>Verve N Veda Gateway</h3>
             <p>Open the main public gateway to the broader learning, research, creative, and practical-resource network.</p>
@@ -1987,7 +2109,7 @@
 
       <div class="dialog-toolbar">
         <span id="activityStatus">Loading selected activity…</span>
-        <a id="activityExternal" href="#" target="_blank" rel="noopener">Open separately</a>
+        <a id="activityExternal" href="about:blank" target="_blank" rel="noopener">Open separately</a>
       </div>
 
       <div class="frame-wrap">
@@ -2046,7 +2168,7 @@
         mark:"ℕ",
         category:"foundation",
         status:"live",
-        level:"Foundation / Placement-Based",
+        level:"Open-Age · Foundation / Placement-Based",
         href:"pre-algebra/",
         description:"Number systems, rational numbers, proportional reasoning, expressions, equations, inequalities, functions, geometry, data, probability, financial mathematics, and modelling.",
         badges:["36 weeks","13 instructional units + diagnostic","Midterm & Final"],
@@ -2058,7 +2180,7 @@
         mark:"x",
         category:"core",
         status:"live",
-        level:"Core Sequence",
+        level:"Open-Age · Core Sequence",
         href:"algebra-1/",
         description:"Linear equations and inequalities, functions, systems, exponents, polynomials, quadratics, data, modelling, and algebraic communication.",
         badges:["36 weeks","Units 01–12 + modelling capstone","Diagnostic · Midterm · Final"],
@@ -2070,7 +2192,7 @@
         mark:"△",
         category:"core",
         status:"live",
-        level:"Core Sequence / Spatial Design",
+        level:"Open-Age · Core Sequence / Spatial Design",
         href:"geometry/",
         description:"Proof, transformations, congruence, similarity, coordinate geometry, circles, constructions, surface area, volume, CAD, and spatial reasoning.",
         badges:["36 weeks","13 units","90 lessons · teacher keys","CAD integration"],
@@ -2082,7 +2204,7 @@
         mark:"x²",
         category:"core",
         status:"live",
-        level:"Core / Advanced Bridge",
+        level:"Open-Age · Core / Advanced Bridge",
         href:"algebra-2/",
         description:"Polynomial, rational, radical, exponential, logarithmic, and trigonometric functions with systems, sequences, probability, inference, and modelling.",
         badges:["36 weeks","13 units · 92 lessons","Diagnostic · Midterm · Final","Portfolio"],
@@ -2094,7 +2216,7 @@
         mark:"sin",
         category:"advanced",
         status:"live",
-        level:"Advanced / College Readiness",
+        level:"Open-Age · Advanced / College Readiness",
         href:"precalculus-trigonometry/",
         description:"Advanced functions, polynomial and rational models, exponential and logarithmic change, trigonometry, vectors, polar and parametric work, matrices, conics, sequences, and limits preparation.",
         badges:["36 weeks","13 units · 92 lessons","Complete trigonometry sequence","Calculus readiness"],
@@ -2106,7 +2228,7 @@
         mark:"∫",
         category:"advanced",
         status:"live",
-        level:"Advanced Mathematics",
+        level:"Open-Age · Advanced Mathematics",
         href:"calculus-1/",
         description:"Limits, continuity, derivatives, integrals, differential equations, accumulation, applications of change, modelling, and mathematical justification.",
         badges:["36 weeks","13 units · 92 lessons","Diagnostic · Midterm · Final","Capstone"],
@@ -2452,9 +2574,132 @@
       if(event.target === dialog) closeActivity();
     });
 
+
     /* =======================================================
-       08 · STARTUP
+       08 · BOUNDED SPYDER COVERAGE CRAWLER
+       Public route/control observability only.
        ======================================================= */
+    const SPYDER_REQUIRED_MATH = [
+      "pre-algebra/","algebra-1/","geometry/","algebra-2/",
+      "precalculus-trigonometry/","calculus-1/","tools/calculator"
+    ];
+    const SPYDER_SUBJECT_HOMES = [
+      "courses/language-arts/","courses/science/","courses/social-studies/"
+    ];
+    let lastSpyderReport = null;
+
+    function normalizeRoute(value){
+      try{
+        return new URL(value, location.href).href;
+      }catch{
+        return String(value || "");
+      }
+    }
+
+    async function runSpyderScan(){
+      const output = $("spyderOutput");
+      if(!output) return;
+
+      output.textContent = "Spyder scanning public route surface…";
+
+      const hrefNodes = [...document.querySelectorAll("a[href]")];
+      const launchNodes = [...document.querySelectorAll("[data-launch-url]")];
+      const hrefs = hrefNodes.map(a => a.getAttribute("href") || "");
+      const launches = launchNodes.map(n => n.dataset.launchUrl || "");
+      const allRoutes = [...hrefs, ...launches].filter(Boolean);
+
+      const empty = [...document.querySelectorAll("a[href=''],a:not([href])")].length;
+      const counts = new Map();
+      allRoutes.forEach(route => counts.set(normalizeRoute(route),(counts.get(normalizeRoute(route))||0)+1));
+      const duplicates = [...counts.entries()].filter(([,count])=>count>1).map(([route,count])=>({route,count}));
+
+      const source = document.documentElement.innerHTML;
+      const mathPresence = SPYDER_REQUIRED_MATH.map(route=>({route,present:source.includes(route)}));
+      const subjectPresence = SPYDER_SUBJECT_HOMES.map(route=>({route,present:source.includes(route)}));
+
+      const sameOriginCandidates = [...new Set(allRoutes)]
+        .map(route => {
+          try{return new URL(route,location.href)}catch{return null}
+        })
+        .filter(url => url && url.origin === location.origin && /^https?:$/.test(url.protocol))
+        .slice(0,24);
+
+      const probes = [];
+      if(location.protocol === "http:" || location.protocol === "https:"){
+        for(const url of sameOriginCandidates){
+          try{
+            const res = await fetch(url.href,{method:"HEAD",cache:"no-store",credentials:"same-origin"});
+            probes.push({url:url.href,status:res.status,ok:res.ok});
+          }catch{
+            probes.push({url:url.href,status:"unavailable",ok:null});
+          }
+        }
+      }
+
+      const missingMath = mathPresence.filter(x=>!x.present);
+      const missingSubjects = subjectPresence.filter(x=>!x.present);
+
+      lastSpyderReport = {
+        schema:"khaemenes-spyder-coverage-report",
+        version:1,
+        generatedAt:new Date().toISOString(),
+        scope:"public-route-surface-only",
+        authority:"observational",
+        privacy:{
+          learnerIdentityCollected:false,
+          gradesCollected:false,
+          answersCollected:false,
+          profileDataCollected:false
+        },
+        counts:{anchors:hrefNodes.length,launchers:launchNodes.length,emptyRoutes:empty},
+        requiredMath:mathPresence,
+        subjectHomes:subjectPresence,
+        duplicates,
+        sameOriginProbes:probes
+      };
+
+      const lines = [
+        "SPYDER COVERAGE REPORT",
+        "────────────────────────",
+        `Public anchors: ${hrefNodes.length}`,
+        `Activity launchers: ${launchNodes.length}`,
+        `Empty routes: ${empty}`,
+        `Required math routes: ${mathPresence.length-missingMath.length}/${mathPresence.length}`,
+        `Subject homes: ${subjectPresence.length-missingSubjects.length}/${subjectPresence.length}`,
+        `Duplicate destinations: ${duplicates.length}`,
+        `Same-origin probes attempted: ${probes.length}`,
+        "",
+        missingMath.length ? "MISSING MATH ROUTES:\n"+missingMath.map(x=>"• "+x.route).join("\n") : "Math spine: complete in page wiring.",
+        "",
+        missingSubjects.length ? "MISSING SUBJECT HOMES:\n"+missingSubjects.map(x=>"• "+x.route).join("\n") : "Schedule subject-home wiring: complete.",
+        "",
+        "Privacy boundary: no learner identity, grades, answers, or profile records inspected.",
+        "Authority boundary: observation only; mentor and Beta remain separate human-facing destinations."
+      ];
+      output.textContent = lines.join("\n");
+    }
+
+    function exportSpyderScan(){
+      if(!lastSpyderReport){
+        alert("Run the Spyder scan first.");
+        return;
+      }
+      const blob = new Blob([JSON.stringify(lastSpyderReport,null,2)],{type:"application/json"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "khaemenes-math-spyder-coverage.json";
+      a.click();
+      setTimeout(()=>URL.revokeObjectURL(url),500);
+    }
+
+    $("spyderScan")?.addEventListener("click",runSpyderScan);
+    $("spyderExport")?.addEventListener("click",exportSpyderScan);
+
+    /* =======================================================
+       09 · STARTUP
+       ======================================================= */
+
     renderCatalog();
   })();
   </script>
