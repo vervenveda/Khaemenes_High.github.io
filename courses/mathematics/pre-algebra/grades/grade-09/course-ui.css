@@ -1,0 +1,371 @@
+/* ==========================================================
+   KHAEMENES ACADEMY COURSE UI
+   Shared typography and layout for lessons, assignments,
+   tests, answer keys, resources, records, and course pages.
+   ========================================================== */
+
+:root{
+  --bg:#07111f;
+  --bg2:#0c1828;
+  --panel:#122236;
+  --panel2:#182b42;
+  --text:#f4f7fa;
+  --muted:#aeb9c5;
+  --line:rgba(207,218,229,.20);
+  --silver:#c8d1da;
+  --silver-soft:#eef2f6;
+  --steel:#8795a3;
+  --success:#8fb19f;
+  --danger:#c67f7f;
+  --shadow:0 18px 44px rgba(0,0,0,.26);
+  --r:21px;
+  --rs:7px;
+  --max:1240px;
+  --serif:"Cinzel","Cormorant Garamond","Palatino Linotype",Georgia,serif;
+  --sans:"Avenir Next","Brandon Grotesque","Segoe UI",Arial,sans-serif;
+}
+
+[data-theme="light"]{
+  --bg:#eef2f5;
+  --bg2:#f7f9fb;
+  --panel:#ffffff;
+  --panel2:#e8edf2;
+  --text:#182433;
+  --muted:#5e6c79;
+  --line:rgba(24,36,51,.16);
+  --silver:#667687;
+  --silver-soft:#263748;
+  --steel:#718090;
+  --shadow:0 18px 42px rgba(20,34,48,.10);
+}
+
+html{
+  color-scheme:dark;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+
+body{
+  color:var(--text);
+  background:
+    radial-gradient(circle at 10% 0,rgba(199,211,223,.08),transparent 28rem),
+    linear-gradient(180deg,var(--bg),#091522);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.72;
+  font-weight:400;
+  text-align:center;
+}
+
+body,
+button,
+input,
+select,
+textarea{
+  font-family:var(--sans);
+}
+
+h1,h2,h3,h4{
+  color:var(--text);
+  font-family:var(--serif);
+  font-weight:444;
+  letter-spacing:.015em;
+}
+
+h1{line-height:1.02}
+h2{line-height:1.08}
+h3{line-height:1.22}
+
+strong,b{
+  font-weight:444;
+}
+
+p,li{
+  color:var(--muted);
+}
+
+.wrap,
+.section-head,
+.hero .wrap{
+  text-align:center;
+}
+
+.hero .lead,
+.section-head p,
+.card p,
+.notice{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.eyebrow{
+  color:var(--silver);
+  font-weight:444;
+  letter-spacing:.18em;
+}
+
+.site-header{
+  background:rgba(6,16,29,.95);
+  border-bottom:1px solid var(--line);
+}
+
+.brand-mark{
+  border-radius:7px;
+  color:#09121e;
+  background:linear-gradient(145deg,#eef2f6,#aeb8c3);
+  border:0;
+  font-weight:444;
+}
+
+.brand-copy strong{
+  font-weight:444;
+}
+
+.nav-button,
+.theme-button,
+.btn,
+.unit-actions a,
+.unit-actions button,
+.course-actions a,
+.course-actions button,
+.field input,
+.field select,
+.pill{
+  border-radius:7px;
+  font-weight:444;
+}
+
+.btn,
+.unit-actions a,
+.unit-actions button{
+  min-width:0;
+  max-width:100%;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  line-height:1.35;
+}
+
+.btn.primary,
+.unit-actions a.primary{
+  color:#09121e;
+  background:linear-gradient(180deg,#eef2f6,#bdc7d1);
+  border-color:#d7dee6;
+}
+
+.card{
+  color:var(--text);
+  background:linear-gradient(180deg,var(--panel2),var(--panel));
+  border:1px solid var(--line);
+  border-radius:21px;
+  box-shadow:var(--shadow);
+}
+
+.card,
+.pathway,
+.practice-card,
+.unit-card,
+.course-main,
+.course-side{
+  text-align:center;
+}
+
+.pathway{
+  border-radius:21px;
+}
+
+.pill,
+.unit-objectives span{
+  border-radius:7px;
+  font-weight:444;
+  letter-spacing:.06em;
+  text-transform:none;
+}
+
+.unit-number{
+  border-radius:7px;
+  color:#0a1420;
+  background:linear-gradient(145deg,#e7edf3,#9eabb7);
+  font-weight:444;
+}
+
+.unit-card{
+  align-items:center;
+}
+
+.unit-objectives{
+  justify-content:center;
+}
+
+.unit-actions{
+  justify-items:stretch;
+}
+
+.course-breadcrumb{
+  border-bottom:1px solid var(--line);
+  background:rgba(9,21,35,.92);
+}
+
+.course-breadcrumb .wrap{
+  min-height:48px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:.55rem;
+  color:var(--muted);
+  font-size:.78rem;
+}
+
+.course-breadcrumb a{
+  color:var(--silver-soft);
+  text-decoration:none;
+}
+
+.course-breadcrumb a:hover{
+  text-decoration:underline;
+}
+
+.framework-list{
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+}
+
+.notice{
+  max-width:900px;
+  color:var(--muted);
+  background:rgba(199,211,223,.045);
+  border-color:var(--line);
+}
+
+.progress-bar{
+  border-radius:7px;
+}
+
+.progress-bar span{
+  background:linear-gradient(90deg,#8192a3,#d4dbe2);
+}
+
+/* Shared document typography for assignments, tests, answer keys, and resources */
+.assignment-page,
+.test-page,
+.answer-key-page,
+.resource-page,
+.lesson-page,
+.record-page{
+  width:min(100% - 2rem,980px);
+  margin:0 auto;
+  padding:clamp(2rem,5vw,4rem);
+  border:1px solid var(--line);
+  border-radius:21px;
+  background:var(--panel);
+  box-shadow:var(--shadow);
+  text-align:left;
+}
+
+.assignment-page h1,
+.test-page h1,
+.answer-key-page h1,
+.resource-page h1,
+.lesson-page h1,
+.record-page h1{
+  text-align:center;
+  font-size:clamp(2.2rem,5vw,4rem);
+}
+
+.assignment-page h2,
+.test-page h2,
+.answer-key-page h2,
+.resource-page h2,
+.lesson-page h2,
+.record-page h2{
+  margin-top:2rem;
+  padding-bottom:.5rem;
+  border-bottom:1px solid var(--line);
+  font-size:clamp(1.45rem,3vw,2.1rem);
+}
+
+.question,
+.problem,
+.resource-block,
+.answer-block,
+.rubric-block{
+  margin-top:1rem;
+  padding:1rem;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--bg2);
+}
+
+.question-number,
+.problem-number{
+  color:var(--silver);
+  font-weight:444;
+}
+
+.instructions{
+  margin:1rem auto;
+  padding:1rem;
+  border-left:3px solid var(--silver);
+  border-radius:0 7px 7px 0;
+  background:rgba(199,211,223,.05);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:1rem;
+  font-size:.9rem;
+}
+
+th,td{
+  padding:.75rem;
+  border:1px solid var(--line);
+  text-align:left;
+}
+
+th{
+  color:var(--silver-soft);
+  background:var(--bg2);
+  font-weight:444;
+}
+
+@media(max-width:700px){
+  body{font-size:16px}
+  .unit-card{grid-template-columns:1fr}
+  .unit-number{margin:auto}
+  .unit-actions{grid-column:auto;grid-template-columns:1fr}
+  .framework-list{text-align:left}
+}
+
+@media print{
+  body{
+    color:#111;
+    background:#fff;
+    text-align:left;
+  }
+
+  .site-header,
+  .course-breadcrumb,
+  .actions,
+  .no-print,
+  .footer{
+    display:none!important;
+  }
+
+  .card,
+  .assignment-page,
+  .test-page,
+  .answer-key-page,
+  .resource-page,
+  .lesson-page,
+  .record-page{
+    color:#111;
+    background:#fff;
+    border:1px solid #999;
+    box-shadow:none;
+  }
+
+  p,li{color:#222}
+}
