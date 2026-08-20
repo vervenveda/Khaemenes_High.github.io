@@ -1,0 +1,31 @@
+name: Build Pre-Algebra Archive
+
+on:
+  push:
+    branches:
+      - prealgebra-archive-build
+
+permissions:
+  contents: read
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact branch contents
+        uses: actions/checkout@v4
+
+      - name: Build complete Pre-Algebra ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd courses/mathematics
+          zip -r "$GITHUB_WORKSPACE/Khaemenes-Pre-Algebra-Full-Course.zip" pre-algebra
+
+      - name: Upload Pre-Algebra archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: Khaemenes-Pre-Algebra-Full-Course
+          path: Khaemenes-Pre-Algebra-Full-Course.zip
+          if-no-files-found: error
+          retention-days: 7
