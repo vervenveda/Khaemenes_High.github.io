@@ -218,21 +218,30 @@
       "title": "Foundation Practice",
       "file": "practice/foundation.html",
       "question_count": 15,
-      "support": "Guided vocabulary, translation, substitution, and like-term practice."
+      "support": "Guided vocabulary, translation, substitution, and like-term practice.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": true
     },
     {
       "id": "core",
       "title": "Core Practice",
       "file": "practice/core.html",
       "question_count": 18,
-      "support": "Complete practice across expression structure and modelling."
+      "support": "Complete practice across expression structure and modelling.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     },
     {
       "id": "extended",
       "title": "Extended Practice",
       "file": "practice/extended.html",
       "question_count": 18,
-      "support": "Proof, counterexamples, parameter reasoning, and model critique."
+      "support": "Proof, counterexamples, parameter reasoning, and model critique.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     }
   ],
   "assessment": {

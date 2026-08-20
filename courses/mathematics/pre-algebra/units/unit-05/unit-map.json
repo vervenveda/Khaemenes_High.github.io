@@ -218,19 +218,28 @@
       "id": "foundation",
       "title": "Foundation Practice",
       "file": "practice/foundation.html",
-      "description": "Scaffolded percent models, benchmark support, and guided financial calculations."
+      "description": "Scaffolded percent models, benchmark support, and guided financial calculations.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": true
     },
     {
       "id": "core",
       "title": "Core Practice",
       "file": "practice/core.html",
-      "description": "Complete unit practice across percent, change, pricing, interest, and decisions."
+      "description": "Complete unit practice across percent, change, pricing, interest, and decisions.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     },
     {
       "id": "extended",
       "title": "Extended Practice",
       "file": "practice/extended.html",
-      "description": "Error analysis, repeated change, financial comparison, and unfamiliar contexts."
+      "description": "Error analysis, repeated change, financial comparison, and unfamiliar contexts.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     }
   ],
   "assessment": {

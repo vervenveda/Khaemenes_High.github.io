@@ -204,19 +204,28 @@
       "id": "foundation",
       "title": "Foundation Practice",
       "file": "practice/foundation.html",
-      "description": "Scaffolded fraction models, conversion support, hints, and smaller steps."
+      "description": "Scaffolded fraction models, conversion support, hints, and smaller steps.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": true
     },
     {
       "id": "core",
       "title": "Core Practice",
       "file": "practice/core.html",
-      "description": "Complete unit-level practice across rational-number representations and operations."
+      "description": "Complete unit-level practice across rational-number representations and operations.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     },
     {
       "id": "extended",
       "title": "Extended Practice",
       "file": "practice/extended.html",
-      "description": "Proof, error analysis, repeating decimals, and unfamiliar multi-step models."
+      "description": "Proof, error analysis, repeating decimals, and unfamiliar multi-step models.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     }
   ],
   "assessment": {

@@ -153,19 +153,28 @@
       "id": "foundation",
       "title": "Foundation Practice",
       "file": "practice/foundation.html",
-      "description": "20-question scaffolded review with optional hints and smaller steps."
+      "description": "20-question scaffolded review with optional hints and smaller steps.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": true
     },
     {
       "id": "core",
       "title": "Core Practice",
       "file": "practice/core.html",
-      "description": "20-question complete unit-level rehearsal across all six lessons."
+      "description": "20-question complete unit-level rehearsal across all six lessons.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     },
     {
       "id": "extended",
       "title": "Extended Practice",
       "file": "practice/extended.html",
-      "description": "20-question deeper reasoning and unfamiliar-context practice."
+      "description": "20-question deeper reasoning and unfamiliar-context practice.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     }
   ],
   "assessment": {

@@ -221,19 +221,25 @@
       "id": "foundation",
       "title": "Foundation Practice",
       "file": "practice/foundation.html",
-      "questions": 15
+      "questions": 20,
+      "threshold": 80,
+      "hints": true
     },
     {
       "id": "core",
       "title": "Core Practice",
       "file": "practice/core.html",
-      "questions": 18
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     },
     {
       "id": "extended",
       "title": "Extended Practice",
       "file": "practice/extended.html",
-      "questions": 18
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     }
   ],
   "assessment": {

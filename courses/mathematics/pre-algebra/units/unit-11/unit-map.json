@@ -1183,11 +1183,32 @@
       ]
     }
   ],
-  "practice": {
-    "foundation": "practice/foundation.html",
-    "core": "practice/core.html",
-    "extended": "practice/extended.html"
-  },
+  "practice": [
+    {
+      "id": "foundation",
+      "title": "Foundation Practice",
+      "file": "practice/foundation.html",
+      "questions": 20,
+      "threshold": 80,
+      "hints": true
+    },
+    {
+      "id": "core",
+      "title": "Core Practice",
+      "file": "practice/core.html",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
+    },
+    {
+      "id": "extended",
+      "title": "Extended Practice",
+      "file": "practice/extended.html",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
+    }
+  ],
   "assessment": {
     "mastery": "assessment/mastery-check.html",
     "answer_key": "assessment/answer-key.json",

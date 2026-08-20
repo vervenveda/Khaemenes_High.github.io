@@ -206,19 +206,28 @@
       "id": "foundation",
       "title": "Foundation Practice",
       "file": "practice/foundation.html",
-      "description": "Scaffolded ratio models, tables, unit-rate support, and guided steps."
+      "description": "Scaffolded ratio models, tables, unit-rate support, and guided steps.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": true
     },
     {
       "id": "core",
       "title": "Core Practice",
       "file": "practice/core.html",
-      "description": "Complete unit-level practice across ratios, rates, proportional equations, scale, and modelling."
+      "description": "Complete unit-level practice across ratios, rates, proportional equations, scale, and modelling.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     },
     {
       "id": "extended",
       "title": "Extended Practice",
       "file": "practice/extended.html",
-      "description": "Proof, error analysis, precision, model comparison, and unfamiliar proportional situations."
+      "description": "Proof, error analysis, precision, model comparison, and unfamiliar proportional situations.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     }
   ],
   "assessment": {

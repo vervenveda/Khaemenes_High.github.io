@@ -199,19 +199,28 @@
       "id": "foundation",
       "title": "Foundation Practice",
       "file": "practice/foundation.html",
-      "description": "Scaffolded integer models, number lines, hints, and smaller steps."
+      "description": "Scaffolded integer models, number lines, hints, and smaller steps.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": true
     },
     {
       "id": "core",
       "title": "Core Practice",
       "file": "practice/core.html",
-      "description": "Complete unit-level practice across all integer skills."
+      "description": "Complete unit-level practice across all integer skills.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     },
     {
       "id": "extended",
       "title": "Extended Practice",
       "file": "practice/extended.html",
-      "description": "Unfamiliar contexts, counterexamples, coordinate reasoning, and multi-step challenges."
+      "description": "Unfamiliar contexts, counterexamples, coordinate reasoning, and multi-step challenges.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     }
   ],
   "assessment": {

@@ -1031,5 +1031,31 @@
     "vocabulary": "vocabulary.json",
     "project": "projects/constraint-design-investigation.html",
     "print_center": "worksheets/index.html"
-  }
+  },
+  "practice": [
+    {
+      "id": "foundation",
+      "title": "Foundation Practice",
+      "file": "practice/foundation.html",
+      "questions": 20,
+      "threshold": 80,
+      "hints": true
+    },
+    {
+      "id": "core",
+      "title": "Core Practice",
+      "file": "practice/core.html",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
+    },
+    {
+      "id": "extended",
+      "title": "Extended Practice",
+      "file": "practice/extended.html",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
+    }
+  ]
 }

@@ -191,21 +191,30 @@
       "title": "Foundation Practice",
       "file": "practice/foundation.html",
       "question_count": 15,
-      "support": "Hints and scaffolded powers, roots, and notation."
+      "support": "Hints and scaffolded powers, roots, and notation.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": true
     },
     {
       "id": "core",
       "title": "Core Practice",
       "file": "practice/core.html",
       "question_count": 18,
-      "support": "Complete practice across all Unit 6 domains."
+      "support": "Complete practice across all Unit 6 domains.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     },
     {
       "id": "extended",
       "title": "Extended Practice",
       "file": "practice/extended.html",
       "question_count": 18,
-      "support": "Proof, error analysis, precision, and unfamiliar scale models."
+      "support": "Proof, error analysis, precision, and unfamiliar scale models.",
+      "questions": 20,
+      "threshold": 80,
+      "hints": false
     }
   ],
   "assessment": {
