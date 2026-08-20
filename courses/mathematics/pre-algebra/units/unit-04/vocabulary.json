@@ -1,0 +1,301 @@
+{
+  "schema_version": "1.0",
+  "unit": "KH-MATH-PA-U04",
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ar": "العربية",
+    "pt": "Português"
+  },
+  "terms": [
+    {
+      "id": "ratio",
+      "en": "ratio",
+      "definition": "A comparison of two quantities by division.",
+      "es": "razón",
+      "fr": "rapport",
+      "ar": "نسبة",
+      "pt": "razão"
+    },
+    {
+      "id": "ratio-notation",
+      "en": "ratio notation",
+      "definition": "Ways to write a ratio, such as a:b, a to b, or a/b.",
+      "es": "notación de razón",
+      "fr": "notation de rapport",
+      "ar": "ترميز النسبة",
+      "pt": "notação de razão"
+    },
+    {
+      "id": "part-to-part-ratio",
+      "en": "part-to-part ratio",
+      "definition": "A ratio comparing one part of a whole with another part.",
+      "es": "razón parte a parte",
+      "fr": "rapport partie à partie",
+      "ar": "نسبة جزء إلى جزء",
+      "pt": "razão parte a parte"
+    },
+    {
+      "id": "part-to-whole-ratio",
+      "en": "part-to-whole ratio",
+      "definition": "A ratio comparing one part with the total.",
+      "es": "razón parte al todo",
+      "fr": "rapport partie au tout",
+      "ar": "نسبة جزء إلى كل",
+      "pt": "razão parte ao todo"
+    },
+    {
+      "id": "equivalent-ratios",
+      "en": "equivalent ratios",
+      "definition": "Ratios that express the same multiplicative comparison.",
+      "es": "razones equivalentes",
+      "fr": "rapports équivalents",
+      "ar": "نسب متكافئة",
+      "pt": "razões equivalentes"
+    },
+    {
+      "id": "ratio-table",
+      "en": "ratio table",
+      "definition": "A table showing pairs of equivalent ratio values.",
+      "es": "tabla de razones",
+      "fr": "tableau de rapports",
+      "ar": "جدول النسب",
+      "pt": "tabela de razões"
+    },
+    {
+      "id": "double-number-line",
+      "en": "double number line",
+      "definition": "Two aligned number lines used to show corresponding quantities.",
+      "es": "recta numérica doble",
+      "fr": "double droite numérique",
+      "ar": "خط أعداد مزدوج",
+      "pt": "reta numérica dupla"
+    },
+    {
+      "id": "rate",
+      "en": "rate",
+      "definition": "A ratio comparing quantities measured in different units.",
+      "es": "tasa",
+      "fr": "taux",
+      "ar": "معدل",
+      "pt": "taxa"
+    },
+    {
+      "id": "unit-rate",
+      "en": "unit rate",
+      "definition": "A rate expressed per one unit of the second quantity.",
+      "es": "tasa unitaria",
+      "fr": "taux unitaire",
+      "ar": "معدل الوحدة",
+      "pt": "taxa unitária"
+    },
+    {
+      "id": "unit-price",
+      "en": "unit price",
+      "definition": "The cost for one item, one unit of mass, or another single unit.",
+      "es": "precio unitario",
+      "fr": "prix unitaire",
+      "ar": "سعر الوحدة",
+      "pt": "preço unitário"
+    },
+    {
+      "id": "benchmark-rate",
+      "en": "benchmark rate",
+      "definition": "A familiar rate used for estimation or comparison.",
+      "es": "tasa de referencia",
+      "fr": "taux repère",
+      "ar": "معدل مرجعي",
+      "pt": "taxa de referência"
+    },
+    {
+      "id": "constant-of-proportionality",
+      "en": "constant of proportionality",
+      "definition": "The unit rate k in a proportional relationship y=kx.",
+      "es": "constante de proporcionalidad",
+      "fr": "constante de proportionnalité",
+      "ar": "ثابت التناسب",
+      "pt": "constante de proporcionalidade"
+    },
+    {
+      "id": "proportional-relationship",
+      "en": "proportional relationship",
+      "definition": "A relationship in which every output equals a constant times its input.",
+      "es": "relación proporcional",
+      "fr": "relation proportionnelle",
+      "ar": "علاقة تناسبية",
+      "pt": "relação proporcional"
+    },
+    {
+      "id": "direct-variation",
+      "en": "direct variation",
+      "definition": "A proportional relationship described by y=kx.",
+      "es": "variación directa",
+      "fr": "variation directe",
+      "ar": "تغير طردي",
+      "pt": "variação direta"
+    },
+    {
+      "id": "multiplicative-relationship",
+      "en": "multiplicative relationship",
+      "definition": "A relationship built by multiplying by a constant factor.",
+      "es": "relación multiplicativa",
+      "fr": "relation multiplicative",
+      "ar": "علاقة ضربية",
+      "pt": "relação multiplicativa"
+    },
+    {
+      "id": "additive-relationship",
+      "en": "additive relationship",
+      "definition": "A relationship built by adding a constant amount rather than scaling.",
+      "es": "relación aditiva",
+      "fr": "relation additive",
+      "ar": "علاقة جمعيّة",
+      "pt": "relação aditiva"
+    },
+    {
+      "id": "nonproportional-relationship",
+      "en": "nonproportional relationship",
+      "definition": "A relationship that does not maintain one constant output-to-input ratio.",
+      "es": "relación no proporcional",
+      "fr": "relation non proportionnelle",
+      "ar": "علاقة غير تناسبية",
+      "pt": "relação não proporcional"
+    },
+    {
+      "id": "independent-variable",
+      "en": "independent variable",
+      "definition": "The input quantity chosen or controlled.",
+      "es": "variable independiente",
+      "fr": "variable indépendante",
+      "ar": "متغير مستقل",
+      "pt": "variável independente"
+    },
+    {
+      "id": "dependent-variable",
+      "en": "dependent variable",
+      "definition": "The output quantity that changes in response to the input.",
+      "es": "variable dependiente",
+      "fr": "variable dépendante",
+      "ar": "متغير تابع",
+      "pt": "variável dependente"
+    },
+    {
+      "id": "ordered-pair",
+      "en": "ordered pair",
+      "definition": "A pair (x,y) locating a point on a coordinate plane.",
+      "es": "par ordenado",
+      "fr": "couple ordonné",
+      "ar": "زوج مرتب",
+      "pt": "par ordenado"
+    },
+    {
+      "id": "origin",
+      "en": "origin",
+      "definition": "The point (0,0) where the coordinate axes meet.",
+      "es": "origen",
+      "fr": "origine",
+      "ar": "نقطة الأصل",
+      "pt": "origem"
+    },
+    {
+      "id": "equation",
+      "en": "equation",
+      "definition": "A statement that two mathematical expressions are equal.",
+      "es": "ecuación",
+      "fr": "équation",
+      "ar": "معادلة",
+      "pt": "equação"
+    },
+    {
+      "id": "graph",
+      "en": "graph",
+      "definition": "A visual representation of relationships between quantities.",
+      "es": "gráfica",
+      "fr": "graphique",
+      "ar": "رسم بياني",
+      "pt": "gráfico"
+    },
+    {
+      "id": "proportion",
+      "en": "proportion",
+      "definition": "An equation stating that two ratios are equivalent.",
+      "es": "proporción",
+      "fr": "proportion",
+      "ar": "تناسب",
+      "pt": "proporção"
+    },
+    {
+      "id": "cross-products",
+      "en": "cross products",
+      "definition": "The products of diagonally opposite terms in two equal ratios.",
+      "es": "productos cruzados",
+      "fr": "produits en croix",
+      "ar": "نواتج الضرب التبادلي",
+      "pt": "produtos cruzados"
+    },
+    {
+      "id": "scale",
+      "en": "scale",
+      "definition": "A comparison between a representation and the actual object or distance.",
+      "es": "escala",
+      "fr": "échelle",
+      "ar": "مقياس",
+      "pt": "escala"
+    },
+    {
+      "id": "scale-factor",
+      "en": "scale factor",
+      "definition": "The multiplier connecting corresponding lengths or quantities.",
+      "es": "factor de escala",
+      "fr": "facteur d’échelle",
+      "ar": "معامل القياس",
+      "pt": "fator de escala"
+    },
+    {
+      "id": "scale-drawing",
+      "en": "scale drawing",
+      "definition": "A drawing whose lengths are proportional to actual lengths.",
+      "es": "dibujo a escala",
+      "fr": "dessin à l’échelle",
+      "ar": "رسم بمقياس",
+      "pt": "desenho em escala"
+    },
+    {
+      "id": "map-scale",
+      "en": "map scale",
+      "definition": "A ratio connecting distance on a map with real distance.",
+      "es": "escala de mapa",
+      "fr": "échelle cartographique",
+      "ar": "مقياس الخريطة",
+      "pt": "escala de mapa"
+    },
+    {
+      "id": "similar-figures",
+      "en": "similar figures",
+      "definition": "Figures with equal corresponding angles and proportional corresponding side lengths.",
+      "es": "figuras semejantes",
+      "fr": "figures semblables",
+      "ar": "أشكال متشابهة",
+      "pt": "figuras semelhantes"
+    },
+    {
+      "id": "conversion-factor",
+      "en": "conversion factor",
+      "definition": "A ratio equal to 1 used to change units without changing a quantity.",
+      "es": "factor de conversión",
+      "fr": "facteur de conversion",
+      "ar": "عامل تحويل",
+      "pt": "fator de conversão"
+    },
+    {
+      "id": "dimensional-analysis",
+      "en": "dimensional analysis",
+      "definition": "A method that tracks and cancels units through multiplication by conversion factors.",
+      "es": "análisis dimensional",
+      "fr": "analyse dimensionnelle",
+      "ar": "تحليل الأبعاد",
+      "pt": "análise dimensional"
+    }
+  ]
+}
