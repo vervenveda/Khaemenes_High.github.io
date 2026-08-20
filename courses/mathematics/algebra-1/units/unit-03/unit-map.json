@@ -16,50 +16,52 @@
       "id": "u03-l01",
       "number": 1,
       "title": "Equality, Inverse Operations & Solution Verification",
-      "week": 7,
       "file": "lessons/lesson-01-equality-inverse-operations-solution-verification.html"
     },
     {
       "id": "u03-l02",
       "number": 2,
       "title": "One-Step & Two-Step Linear Equations",
-      "week": 7,
       "file": "lessons/lesson-02-one-step-two-step-linear-equations.html"
     },
     {
       "id": "u03-l03",
       "number": 3,
       "title": "Multi-Step Equations with Distribution & Like Terms",
-      "week": 7,
       "file": "lessons/lesson-03-multi-step-equations-with-distribution-like-terms.html"
     },
     {
       "id": "u03-l04",
       "number": 4,
       "title": "Variables on Both Sides; Identities & Contradictions",
-      "week": 8,
       "file": "lessons/lesson-04-variables-on-both-sides-identities-contradictions.html"
     },
     {
       "id": "u03-l05",
       "number": 5,
       "title": "Literal Equations & Rearranging Formulas",
-      "week": 8,
       "file": "lessons/lesson-05-literal-equations-rearranging-formulas.html"
     },
     {
       "id": "u03-l06",
       "number": 6,
       "title": "Proportions, Direct Variation & Percent Equations",
-      "week": 9,
       "file": "lessons/lesson-06-proportions-direct-variation-percent-equations.html"
     },
     {
       "id": "u03-l07",
       "number": 7,
       "title": "Rate, Mixture, Distance & Financial Equation Models",
-      "week": 9,
       "file": "lessons/lesson-07-rate-mixture-distance-financial-equation-models.html"
     }
-  ]
+  ],
+  "practice": [
+    "practice/foundation.html",
+    "practice/core.html",
+    "practice/extended.html"
+  ],
+  "boss_battle": "boss-battle.html",
+  "mastery": "assessment/mastery-check.html",
+  "project": "projects/equation-modeling-lab.html",
+  "mastery_target": 80
 }

@@ -1,56 +1,27 @@
 {
-  "languages": {
-    "en": "English",
-    "es": "Español",
-    "fr": "Français",
-    "ar": "العربية",
-    "pt": "Português"
-  },
+  "unit": 3,
   "terms": [
-    {
-      "id": "equation",
-      "en": "equation",
-      "es": "ecuación",
-      "fr": "équation",
-      "ar": "معادلة",
-      "pt": "equação",
-      "definition": "A statement that two expressions are equal."
-    },
-    {
-      "id": "solution",
-      "en": "solution",
-      "es": "solución",
-      "fr": "solution",
-      "ar": "حل",
-      "pt": "solução",
-      "definition": "A value that makes a statement true."
-    },
-    {
-      "id": "identity",
-      "en": "identity",
-      "es": "identidad",
-      "fr": "identité",
-      "ar": "هوية",
-      "pt": "identidade",
-      "definition": "An equation true for every allowed value."
-    },
-    {
-      "id": "literal-equation",
-      "en": "literal equation",
-      "es": "ecuación literal",
-      "fr": "équation littérale",
-      "ar": "معادلة حرفية",
-      "pt": "equação literal",
-      "definition": "An equation with two or more variables."
-    },
-    {
-      "id": "direct-variation",
-      "en": "direct variation",
-      "es": "variación directa",
-      "fr": "variation directe",
-      "ar": "تغير طردي",
-      "pt": "variação direta",
-      "definition": "A proportional relationship y=kx."
-    }
+    "equation",
+    "equality",
+    "solution",
+    "solution set",
+    "inverse operation",
+    "equivalent equation",
+    "identity",
+    "contradiction",
+    "literal equation",
+    "formula",
+    "proportion",
+    "ratio",
+    "direct variation",
+    "constant of proportionality",
+    "percent equation",
+    "rate",
+    "distance",
+    "mixture",
+    "simple interest",
+    "domain",
+    "constraint",
+    "verification"
   ]
 }
