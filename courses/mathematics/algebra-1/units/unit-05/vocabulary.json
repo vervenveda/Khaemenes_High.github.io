@@ -1,56 +1,25 @@
 {
-  "languages": {
-    "en": "English",
-    "es": "Español",
-    "fr": "Français",
-    "ar": "العربية",
-    "pt": "Português"
-  },
+  "unit": 5,
   "terms": [
-    {
-      "id": "function",
-      "en": "function",
-      "es": "función",
-      "fr": "fonction",
-      "ar": "دالة",
-      "pt": "função",
-      "definition": "A relation assigning one output to each allowed input."
-    },
-    {
-      "id": "domain",
-      "en": "domain",
-      "es": "dominio",
-      "fr": "domaine",
-      "ar": "مجال",
-      "pt": "domínio",
-      "definition": "The set of allowed inputs."
-    },
-    {
-      "id": "range",
-      "en": "range",
-      "es": "rango",
-      "fr": "ensemble image",
-      "ar": "مدى",
-      "pt": "imagem",
-      "definition": "The set of resulting outputs."
-    },
-    {
-      "id": "transformation",
-      "en": "transformation",
-      "es": "transformación",
-      "fr": "transformation",
-      "ar": "تحويل",
-      "pt": "transformação",
-      "definition": "A predictable change to a graph or rule."
-    },
-    {
-      "id": "piecewise-function",
-      "en": "piecewise function",
-      "es": "función por partes",
-      "fr": "fonction définie par morceaux",
-      "ar": "دالة متعددة التعريف",
-      "pt": "função por partes",
-      "definition": "A function using different rules on different intervals."
-    }
+    "relation",
+    "function",
+    "input",
+    "output",
+    "function notation",
+    "domain",
+    "range",
+    "discrete",
+    "continuous",
+    "representation",
+    "parent function",
+    "transformation",
+    "translation",
+    "reflection",
+    "stretch",
+    "piecewise function",
+    "sequence",
+    "common difference",
+    "inverse relation",
+    "one-to-one"
   ]
 }
