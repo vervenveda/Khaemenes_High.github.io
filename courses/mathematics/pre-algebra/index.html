@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="description" content="Khaemenes Academy open-age, 36-week pre-algebra course with complete units, mastery tracking, assessments, modelling, profile pinning, mathematics tools, and in-page learning games."/>
 <meta name="theme-color" content="#080b10"/>
+<link rel="manifest" href="manifest.webmanifest"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>
  Khaemenes Open-Age Pre-Algebra
@@ -4416,7 +4417,7 @@ function capstone(){
 }
 function capstoneTable(s){return(s.progress.capstone.logs||[]).length?`<div class="table-wrap"><table><tr><th>Date</th><th>Stage</th><th>Note</th></tr>${s.progress.capstone.logs.slice().reverse().map(l=>`<tr><td>${new Date(l.date).toLocaleDateString()}</td><td>${esc(l.stage)}</td><td>${esc(l.note)}</td></tr>`).join("")}</table></div>`:`<p class="small">No capstone logs yet.</p>`}
 
-function reports(){let s=student(),st=stats(s);$("content").innerHTML=`<div class="grid"><div class="card kpi"><strong>${st.course||"—"}%</strong><span>Overall Mastery</span></div><div class="card kpi"><strong>${st.lessons}%</strong><span>Lesson Completion</span></div><div class="card kpi"><strong>${st.midterm||"—"}</strong><span>Midterm</span></div><div class="card kpi"><strong>${st.final||"—"}</strong><span>Final</span></div><div class="card col12"><h3>Reports & Backups</h3><p class="section-note">Records are stored in this browser. Export JSON regularly and keep a copy outside the browser.</p><div class="actions"><button type="button" onclick="printReport()">Print</button><button class="secondary" type="button" onclick="downloadReport()">Download HTML</button><button class="secondary" type="button" onclick="downloadCSV()">Download CSV</button><button class="ghost" type="button" onclick="downloadBackup()">Export JSON</button><label class="button secondary">Import JSON <input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(event)"></label></div></div><div class="card col12"><div class="table-wrap">${progressTable(s)}</div></div></div>`}
+function reports(){let s=student(),st=stats(s);$("content").innerHTML=`<div class="grid"><div class="card kpi"><strong>${st.course||"—"}%</strong><span>Overall Mastery</span></div><div class="card kpi"><strong>${st.lessons}%</strong><span>Lesson Completion</span></div><div class="card kpi"><strong>${st.midterm||"—"}</strong><span>Midterm</span></div><div class="card kpi"><strong>${st.final||"—"}</strong><span>Final</span></div><div class="card col12"><span class="pill">Course Records Office</span><h3>A+++ Reports & Administrative Records</h3><p class="section-note">The Academy Family Learning Center is the parent-facing front door. This course Records Office supplies its detailed Pre-Algebra progress, mastery, activity, portfolio, and completion evidence.</p><div class="actions"><a class="button" href="records/">Open Pre-Algebra Records</a><a class="button secondary" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Open Family Learning Center</a><a class="button secondary" href="records/course-completion-certificate.html">Course Certificate</a><button class="ghost" type="button" onclick="downloadBackup()">Export Full JSON Backup</button><label class="button secondary">Import JSON Backup <input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(event)"></label></div></div><div class="card col12"><h3>Current Weekly Evidence</h3><div class="table-wrap">${progressTable(s)}</div></div></div>`}
 function progressTable(s){return`<table><tr><th>Week</th><th>Focus</th><th>Lesson Plan</th><th>Assignments</th><th>Quiz Mastery</th><th>Attempts</th><th>Review Cycles</th></tr>${APP.weeks.map(w=>{let r=weekRec(s,w.week);return`<tr><td>${w.week}</td><td><a href="${esc(unitHref(w))}">${esc(w.title)}</a></td><td>${lessonPct(s,w.week)}%</td><td>${assignPct(s,w.week)}%</td><td>${quizBest(s,w.week)||"—"}</td><td>${r.quiz.attempts.length}</td><td>${r.repeats||0}</td></tr>`}).join("")}</table>`}
 
 function standards(){
@@ -4495,6 +4496,14 @@ $("pinCourseButton").onclick=toggleCoursePin;window.addEventListener("storage",e
 </script>
 
 <script src="assets/prealgebra-archaemenes-upgrade.js"></script>
+<script>
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>{
+    navigator.serviceWorker.register("service-worker.js",{scope:"./"}).catch(error=>{
+      console.warn("Pre-Algebra offline core could not be registered.",error);
+    });
+  });
+}
+</script>
 </body>
 </html>
-
