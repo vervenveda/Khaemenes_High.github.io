@@ -1,0 +1,45 @@
+(()=>{
+"use strict";
+const bank=window.ALGEBRA1_QUESTIONS;
+if(!Array.isArray(bank))return;
+const rows=[
+{id:"q0001",unit:1,lesson:1,category:"reasoning",skill:"verify-equation-solution",difficulty:1,prompt:"Which method best verifies a proposed solution to an equation?",options:["Substitute it into the original equation","Repeat the same steps without checking","Round the value","Reverse every sign"],answer:0,explanation:"A valid solution makes the original equation true when substituted."},
+{id:"q0002",unit:1,lesson:1,category:"properties",skill:"distributive-property",difficulty:1,prompt:"Which property justifies 5(x+3)=5x+15?",options:["Commutative","Distributive","Identity","Associative"],answer:1,explanation:"The factor 5 is distributed to both terms inside the parentheses."},
+{id:"q0003",unit:1,lesson:1,category:"reasoning",skill:"counterexample",difficulty:2,prompt:"Which statement is a counterexample to the claim “all prime numbers are odd”?",options:["2 is prime and even","3 is prime and odd","9 is odd and composite","1 is not prime"],answer:0,explanation:"A single prime number that is not odd disproves the universal claim."},
+{id:"q0004",unit:1,lesson:1,category:"notation",skill:"interpret-expression",difficulty:2,prompt:"What does 3(x+4) mean?",options:["Add 3 to x, then add 4","Multiply 3 by the entire quantity x+4","Multiply x by 4, then add 3","Add x and 4 three separate times without multiplication"],answer:1,explanation:"Parentheses make x+4 one quantity multiplied by 3."},
+{id:"q0005",unit:1,lesson:1,category:"reasoning",skill:"equivalent-equation-step",difficulty:2,prompt:"If a=b, which transformation must also be true?",options:["a+7=b+7","a+7=b−7","7a=b+7","a/7=7b"],answer:0,explanation:"Adding the same quantity to both sides preserves equality."},
+
+{id:"q0006",unit:1,lesson:2,category:"real_numbers",skill:"identify-irrational",difficulty:1,prompt:"Which number is irrational?",options:["−7","0.125","√2","3/5"],answer:2,explanation:"√2 cannot be written as a ratio of integers."},
+{id:"q0007",unit:1,lesson:2,category:"real_numbers",skill:"classify-number",difficulty:1,prompt:"What is the most specific classification of −12?",options:["Whole number","Integer","Irrational number","Natural number"],answer:1,explanation:"−12 is an integer; integers are also rational and real, but integer is the most specific choice listed."},
+{id:"q0008",unit:1,lesson:2,category:"intervals",skill:"inequality-to-interval",difficulty:2,prompt:"Which interval represents x≥−2?",options:["(−2,∞)","[−2,∞)","(−∞,−2]","(−∞,−2)"],answer:1,explanation:"The bracket includes −2 and the interval extends to positive infinity."},
+{id:"q0009",unit:1,lesson:2,category:"real_numbers",skill:"terminating-decimal-rational",difficulty:1,prompt:"Why is 0.375 rational?",options:["It is positive","It terminates and equals 3/8","It is less than 1","It has three decimal places"],answer:1,explanation:"0.375=375/1000=3/8, a ratio of integers."},
+{id:"q0010",unit:1,lesson:2,category:"real_numbers",skill:"perfect-square-root",difficulty:2,prompt:"Which statement about √49 is true?",options:["It is irrational","It equals 7 and is rational","It equals ±7 as a single-valued square root","It is not a real number"],answer:1,explanation:"The principal square root of 49 is 7, which is rational."},
+
+{id:"q0011",unit:1,lesson:3,category:"order_ops",skill:"order-of-operations",difficulty:1,prompt:"Evaluate 8+3(10−6).",options:["20","32","44","14"],answer:0,explanation:"Parentheses first, then multiplication: 8+3·4=20."},
+{id:"q0012",unit:1,lesson:3,category:"exponents",skill:"negative-sign-and-power",difficulty:2,prompt:"Evaluate −3²+10.",options:["1","19","−19","−1"],answer:0,explanation:"Exponentiation occurs before the leading negative: −9+10=1."},
+{id:"q0013",unit:1,lesson:3,category:"signed_operations",skill:"signed-arithmetic",difficulty:1,prompt:"Evaluate (−18÷3)+4.",options:["−10","−2","2","10"],answer:1,explanation:"−18÷3=−6, then −6+4=−2."},
+{id:"q0014",unit:1,lesson:3,category:"properties",skill:"commutative-property",difficulty:1,prompt:"Which property justifies 7+x=x+7?",options:["Associative property of addition","Commutative property of addition","Distributive property","Additive inverse property"],answer:1,explanation:"The order of the addends is reversed without changing the sum."},
+{id:"q0015",unit:1,lesson:3,category:"expressions",skill:"distribute-combine",difficulty:3,prompt:"Simplify 4(2x−3)−2x.",options:["6x−12","8x−14","6x−3","10x−12"],answer:0,explanation:"Distribute to get 8x−12, then combine 8x−2x=6x."},
+
+{id:"q0016",unit:1,lesson:4,category:"units",skill:"metric-conversion",difficulty:1,prompt:"Convert 3.5 meters to centimeters.",options:["35 cm","350 cm","3500 cm","0.035 cm"],answer:1,explanation:"Multiply by 100 centimeters per meter."},
+{id:"q0017",unit:1,lesson:4,category:"rates",skill:"unit-rate",difficulty:1,prompt:"A vehicle travels 180 miles in 3 hours. What is its average rate?",options:["60 miles per hour","90 miles per hour","177 miles per hour","540 miles per hour"],answer:0,explanation:"180÷3=60 miles per hour."},
+{id:"q0018",unit:1,lesson:4,category:"rates",skill:"rate-conversion",difficulty:2,prompt:"A cyclist travels at 72 kilometers per hour. What is that rate in kilometers per minute?",options:["0.72 km/min","1.2 km/min","12 km/min","120 km/min"],answer:1,explanation:"72 kilometers per 60 minutes equals 1.2 kilometers per minute."},
+{id:"q0019",unit:1,lesson:4,category:"dimensional_analysis",skill:"compound-unit",difficulty:2,prompt:"Mass is measured in grams and volume in cubic centimeters. Which unit is appropriate for density?",options:["g·cm³","g/cm³","cm³/g²","g+cm³"],answer:1,explanation:"Density is mass divided by volume."},
+{id:"q0020",unit:1,lesson:4,category:"scale",skill:"proportional-scale",difficulty:2,prompt:"On a map, 1 inch represents 5 miles. Two locations are 3.4 inches apart. What is the actual distance?",options:["8.4 miles","15 miles","17 miles","34 miles"],answer:2,explanation:"3.4×5=17 miles."},
+
+{id:"q0021",unit:1,lesson:5,category:"precision",skill:"rounding",difficulty:1,prompt:"Round 18.746 to the nearest tenth.",options:["18.7","18.74","18.75","18.8"],answer:0,explanation:"The hundredths digit is 4, so the tenths digit stays 7."},
+{id:"q0022",unit:1,lesson:5,category:"precision",skill:"percent-error",difficulty:2,prompt:"A measurement is 108 and the accepted value is 100. What is the percent error?",options:["8%","92%","100%","108%"],answer:0,explanation:"|108−100|/100×100%=8%."},
+{id:"q0023",unit:1,lesson:5,category:"precision",skill:"significant-figures",difficulty:2,prompt:"How many significant figures are in 0.004560?",options:["3","4","5","6"],answer:1,explanation:"Leading zeros are not significant; 4,5,6 and the trailing decimal zero are significant."},
+{id:"q0024",unit:1,lesson:5,category:"precision",skill:"absolute-error",difficulty:1,prompt:"A measured length is 12.4 cm and the accepted length is 12.1 cm. What is the absolute error?",options:["0.3 cm","0.03 cm","3 cm","24.5 cm"],answer:0,explanation:"Absolute error is |12.4−12.1|=0.3 cm."},
+{id:"q0025",unit:1,lesson:5,category:"precision",skill:"reasonable-precision",difficulty:3,prompt:"A scale measures to the nearest gram. Which reported mass best matches that precision?",options:["482 g","482.00000 g","about 500.347 g","482.7391 g"],answer:0,explanation:"Reporting whole grams matches a scale whose smallest increment is one gram."},
+
+{id:"q0026",unit:1,lesson:6,category:"synthesis",skill:"evaluate-and-interpret",difficulty:1,prompt:"Evaluate 2(x+5)−3 when x=−2.",options:["−9","1","3","9"],answer:2,explanation:"2(3)−3=3."},
+{id:"q0027",unit:1,lesson:6,category:"synthesis",skill:"solve-and-verify",difficulty:2,prompt:"Solve 4x−7=13.",options:["x=1.5","x=5","x=6.5","x=20"],answer:1,explanation:"Add 7 to get 4x=20, then divide by 4."},
+{id:"q0028",unit:1,lesson:6,category:"synthesis",skill:"unit-conversion",difficulty:1,prompt:"Convert 2.4 kilometers to meters.",options:["24 m","240 m","2,400 m","24,000 m"],answer:2,explanation:"2.4×1000=2,400 meters."},
+{id:"q0029",unit:1,lesson:6,category:"error_analysis",skill:"identify-distribution-error",difficulty:2,prompt:"A student rewrites 3(x−4) as 3x−4. What is the first error?",options:["They changed subtraction to addition","They failed to distribute 3 to −4","They should divide x by 3","There is no error"],answer:1,explanation:"The distributive property gives 3x−12."},
+{id:"q0030",unit:1,lesson:6,category:"reasoning",skill:"counterexample",difficulty:3,prompt:"Which value is a counterexample to the claim x²>x for every real x?",options:["x=2","x=3","x=1/2","x=−2"],answer:2,explanation:"For x=1/2, x²=1/4, which is not greater than 1/2."}
+];
+const byId=new Map(rows.map(q=>[q.id,q]));
+for(let i=0;i<bank.length;i++){if(byId.has(bank[i]?.id))bank[i]=byId.get(bank[i].id)}
+window.ALGEBRA1_UNIT01_UPGRADE={version:"1.0",question_count:rows.length,question_ids:rows.map(q=>q.id),principle:"Preserve existing IDs while replacing generator repetition with unique lesson-aligned items."};
+})();
