@@ -1,0 +1,39 @@
+{
+  "schema": "khaemenes.remediation.v1",
+  "course": "KH-MATH-A1",
+  "mastery_threshold": 80,
+  "principle": "Mastery is preserved; remediation targets evidence of unfinished skills rather than punishing the learner.",
+  "pathways": {
+    "foundation": {"purpose": "rebuild prerequisite understanding", "recommended_when": "skill evidence is below 60% or prerequisite weakness is detected"},
+    "core": {"purpose": "direct corrective practice on the missed course skill", "recommended_when": "skill evidence is 60-79% or an isolated misconception is detected"},
+    "extended": {"purpose": "transfer, application, and durable mastery", "recommended_when": "skill is mastered or learner requests challenge"}
+  },
+  "evidence_contract": {
+    "required": ["course_id", "assessment_id", "attempt_id", "unit", "lesson", "question_id", "skill_id", "correct", "mastery_status"],
+    "optional": ["category", "difficulty", "selected_answer", "correct_answer", "timestamp", "prior_attempts", "best_score"]
+  },
+  "recommendation_contract": {
+    "input": ["skill_id", "question_id", "unit", "lesson", "mastery_status"],
+    "output": ["pathway", "resource_type", "resource_id", "reason", "return_target"],
+    "resource_types": ["lesson", "worked_example", "practice", "worksheet", "lab", "project", "game"],
+    "external_recommender": "NAIB",
+    "external_recommender_optional": true,
+    "fallback": "Local course resources must remain sufficient when NAIB is unavailable."
+  },
+  "student_recovery_loop": [
+    "show exact missed item and skill",
+    "explain misconception without exposing hidden answer logic before submission",
+    "recommend Foundation/Core/Extended resource",
+    "permit return to lesson and assignment",
+    "permit repeat practice and quiz attempts",
+    "reassess skill",
+    "unlock progression when mastery is at least 80%"
+  ],
+  "safety_rules": [
+    "never erase a previously earned mastery record",
+    "never lower the 80% progression standard silently",
+    "never require NAIB or an external service for course completion",
+    "never recommend a resource without a traceable skill association",
+    "preserve attempt history and correction evidence"
+  ]
+}
