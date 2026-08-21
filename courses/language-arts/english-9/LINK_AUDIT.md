@@ -11,7 +11,7 @@ All student-facing network destinations open published Verve N Veda pages rather
 - **linguistics**: https://vervenveda.github.io/Khaemenes_Linguistics.github.io/
 - **arshif**: https://vervenveda.github.io/Arshif.github.io/
 - **proresources**: https://vervenveda.github.io/proresource_hub.github.io/
-- **prose_gateway**: https://vervenveda.github.io/proresource_hub.github.io/Protools/PROSE/editorial-gateway.html
+- **prose_gateway**: https://vervenveda.github.io/proresource_hub.github.io/Protools/PROSE/Editorial%20Suite/editorial-suite_core.html
 - **prose**: https://vervenveda.github.io/proresource_hub.github.io/Protools/PROSE/Editorial%20Suite/editorial-suite_core.html
 - **evidence**: https://vervenveda.github.io/proresource_hub.github.io/Protools/Evidence_Citation_Studio/index.html
 - **plera_tool**: https://vervenveda.github.io/proresource_hub.github.io/Protools/PLERA%E2%84%A2%20Search%20Gate_index.html
@@ -24,5 +24,13 @@ All student-facing network destinations open published Verve N Veda pages rather
 
 ## Local package result
 
-- Missing relative links: 0
-- Unexpected external destinations in HTML: 0
+- Audit date: 2026-08-21
+- HTML files inspected: 81
+- HTML `href` and `src` references inspected: 1,444
+- Unique external destinations tested: 69
+- Missing relative files: 0
+- Missing local anchors: 0
+- Legacy English 9 PROSE launcher references: 0
+- Verified direct PROSE core, Evidence Studio, unit, week, grade, department, Academy, ARSHIF, Arcade, Gutenberg, and Internet Archive routes returned successfully.
+- Sacred Texts rejected the automated request with HTTP 403. This is recorded as an inspection restriction rather than a confirmed broken learner link; Unit 2 retains alternative source pathways and does not depend on that host alone.
+- JavaScript template placeholders were excluded from static file-path results and remain escaped before insertion.
