@@ -21,3 +21,5 @@ jobs:
         uses: actions/checkout@v6
       - name: Validate Algebra I first draft
         run: node courses/mathematics/algebra-1/tools/validate-first-draft.mjs
+      - name: Run Algebra I forensic audit suite
+        run: node courses/mathematics/algebra-1/tools/audit-forensic.mjs
