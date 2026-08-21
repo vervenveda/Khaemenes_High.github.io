@@ -16,27 +16,34 @@
   const load=()=>{try{return JSON.parse(localStorage.getItem(courseKey)||"{}")}catch{return {}}};
   const save=data=>{try{localStorage.setItem(courseKey,JSON.stringify(data))}catch{}};
   const progress=load();
+  const masteryReadyUnits=new Set(["unit-01","unit-02"]);
   document.querySelectorAll("[data-progress-key]").forEach(button=>{
     const key=button.dataset.progressKey;
-    if(key==="unit-01"){
+    if(/^unit-\d{2}$/.test(key)){
+      if(!masteryReadyUnits.has(key)){
+        button.setAttribute("aria-disabled","true");
+        button.disabled=true;
+        button.textContent="Instructional Build Pending";
+        return;
+      }
       let mastered=false;
       try{
         const record=JSON.parse(localStorage.getItem("khae-ela9-mastery-v2")||"{}").units?.[key];
-        mastered=Boolean(record?.lessonIds?.length===14&&record.lessonIds.every(id=>Number(record.lessonScores?.[id])>=Number(record.threshold||80)));
+        mastered=Boolean(record?.lessonIds?.length&&record.lessonIds.every(id=>Number(record.lessonAttempts?.[id]?.bestScore??record.lessonScores?.[id])>=Number(record.threshold||80)));
       }catch{}
       button.setAttribute("aria-pressed",String(mastered));
       button.setAttribute("aria-disabled",String(!mastered));
       button.textContent=mastered?"Mastery Verified ✓":"Open Coursebook to Verify Mastery";
-      button.addEventListener("click",()=>{if(!mastered)location.href=courseHref("units/unit-01/coursebook.html#reflection");});
+      button.addEventListener("click",()=>{if(!mastered)location.href=courseHref(`units/${key}/coursebook.html#reflection`);});
       return;
     }
     const on=Boolean(progress[key]);
     button.setAttribute("aria-pressed",String(on));
-    button.textContent=on?"Completed ✓":"Mark Complete";
+    button.textContent=on?"Reviewed ✓":"Mark Reviewed";
     button.addEventListener("click",()=>{
       progress[key]=!progress[key];save(progress);
       button.setAttribute("aria-pressed",String(progress[key]));
-      button.textContent=progress[key]?"Completed ✓":"Mark Complete";
+      button.textContent=progress[key]?"Reviewed ✓":"Mark Reviewed";
       updateProgress();
     });
   });
@@ -47,7 +54,7 @@
     const total=36,done=Array.from({length:36},(_,i)=>progress[`week-${String(i+1).padStart(2,"0")}`]).filter(Boolean).length;
     const pct=Math.round(done/total*100);
     if(bar)bar.style.width=`${pct}%`;
-    if(label)label.textContent=`${done} of ${total} weeks complete · ${pct}%`;
+    if(label)label.textContent=`${done} of ${total} weekly plans reviewed · ${pct}% · review is not mastery`;
   }
   updateProgress();
 
