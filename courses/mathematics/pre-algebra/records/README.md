@@ -11,27 +11,43 @@ Pre-Algebra currently has two legitimate browser-local evidence streams:
 1. **36-week portal progress** — stored under `KHAE_OPEN_PREALGEBRA_FORGE_V2`. This data is organized inside learner profiles used by the course portal and Records Office.
 2. **Unit 01–13 lesson mastery evidence** — stored under `khaemenes-prealgebra-unitNN-progress-v1`. These unit keys currently do **not** contain a learner identifier and are therefore classified as **unscoped browser unit evidence**.
 
-The Records Office must not silently attach unscoped unit evidence to whichever learner profile happens to be selected. Unit evidence may be reviewed, exported, or explicitly associated through a future adoption/validation workflow, but automatic learner attribution is prohibited until a trustworthy identity binding exists.
+The Records Office must not silently attach unscoped unit evidence to whichever learner profile happens to be selected. Unit evidence may be reviewed, exported, or explicitly associated through the learner-association workflow, but automatic learner attribution is prohibited until an intentional identity binding exists.
+
+## Explicit learner association
+
+`unit-evidence-association.html` provides the deliberate bridge between the unscoped Unit 01–13 evidence and a learner profile from the 36-week portal.
+
+The association workflow:
+
+- requires a learner to be selected deliberately;
+- requires an explicit confirmation statement;
+- stores the association separately from both the source evidence and learner progress;
+- permits only one active learner binding for the browser's unscoped evidence set;
+- requires release before rebinding the same evidence set to a different learner;
+- preserves association/release history;
+- fingerprints the evidence snapshot at confirmation time;
+- reports when later practice or retakes cause the evidence to differ from the confirmed snapshot;
+- never changes scores, mastery, lesson progress, or learner profiles;
+- never converts local browser evidence into an authenticated or validated institutional record.
+
+The preferred fingerprint is SHA-256 through the browser Web Crypto API. A local non-cryptographic fallback may be used only as a change detector on older browsers; neither method is represented as a digital signature or proof of authorship.
 
 ## Contracts and tools
 
 - `record-contract-v1.json` defines the course-level trust classes and export boundaries.
 - `unit-evidence-bridge.js` safely reads Unit 01–13 browser evidence and exposes it as unscoped evidence without changing mastery or learner records.
 - `unit-evidence-review.html` provides a centered, printable, read-only review and JSON export of the Unit 01–13 evidence currently stored in the browser. It does not assign that evidence to a learner.
-- `lesson-record-builder.js` defines the normalized `khaemenes.lesson.learning-record` object used by the hardened lesson export contract.
-- `legacy-record-normalizer.js` converts older Unit 01 flat lesson exports and legacy Unit 01 assessment/draft exports into the PA-13.2 record shapes without increasing their authority.
+- `unit-evidence-association.js` implements explicit, reversible, fingerprinted learner association without altering source evidence.
+- `unit-evidence-association.html` provides the human-facing confirmation, release, status, and history workflow.
+- `unit-evidence-association-contract-v1.json` defines the association rules, states, required fields, fingerprint purpose, and release behavior.
+- `legacy-record-normalizer.js` converts older Unit 01 lesson exports, older scored assessment results, and older assessment drafts into the current trust-aware record shapes. Normalization does not authenticate the source or increase its authority.
+- `lesson-record-builder.js` defines the reusable lesson learning-record shape for trust-aware exports.
 - `compact-engine-reference.js` is the canonical PA-13.2 compact lesson-engine snapshot used by Units 02–13.
-- `PA-13.2-EXPORT-SCHEMA.md` documents the normalized lesson record fields and mastery states.
 
-## Unit 01 assessment exports
+### Assessment record distinction
 
-The Unit 01 assessment wrapper now distinguishes two export types:
-
-- `khaemenes.assessment.result-record` — a submitted, self-scored browser-local assessment result. It may carry score, percent, mastery state, domain performance, answers, and learner reasoning, but remains unscoped and independently unverified.
-- `khaemenes.assessment.draft-record` — an unfinished draft containing current answers/reasoning. It is explicitly non-mastery evidence and can never grant progression.
-
-Older assessment exports can be normalized through `legacy-record-normalizer.js`. Normalization changes structure and labeling only; it does not authenticate the source or increase record authority.
+Submitted/scored Unit 01 mastery checks are `khaemenes.assessment.result-record` evidence. Unsubmitted work is `khaemenes.assessment.draft-record` and may never grant mastery. The public assessment wrapper preserves diagnostic domain evidence and learner reasoning while labeling the result as browser-local, self-scored, unscoped evidence requiring review before portfolio use.
 
 ### Authority rule
 
-**Resources teach. Course engines verify. Browser exports report evidence. A protected institutional records workflow is required before an exported browser record can be treated as independently validated academic documentation.**
+**Resources teach. Course engines verify. Browser exports report evidence. Explicit association identifies the intended learner locally. A protected institutional records workflow is still required before an exported browser record can be treated as independently validated academic documentation.**
