@@ -1,0 +1,33 @@
+{
+  "schema":"khaemenes.algebra1.integration.v1",
+  "course":"KH-MATH-A1",
+  "accessibility":{
+    "target":"WCAG 2.2 AA-informed course interface",
+    "requirements":["semantic headings and landmarks","keyboard-operable controls","visible focus states","skip links on primary pages","reduced-motion support","high-contrast and forced-colors resilience","labels for form controls","no mastery information conveyed by color alone","printable assessment and record surfaces"],
+    "math_access":"Use readable Unicode/math text with explanatory language; avoid image-only mathematics. Future MathML enhancement must preserve plain-text fallback.",
+    "accommodations":"Timing, breaks, text size, read-aloud where permitted, alternate input, and reduced visual load may improve access without changing the mathematical target."
+  },
+  "multilingual":{
+    "canonical_instruction_language":"en",
+    "supported_vocabulary_columns":["en","es","fr","ar","pt"],
+    "directionality":{"ar":"rtl","default":"ltr"},
+    "fallback":"English remains canonical when a translated instructional string is unavailable.",
+    "translation_rule":"Do not silently machine-translate scored question meaning or answer keys in the canonical assessment bank. Validated translations should carry their own version identifier and preserve the same skill ID and mathematical target.",
+    "future_locale_structure":"locales/{locale}.json",
+    "assessment_equivalence":"Translated formal assessments require item-by-item equivalence review before certification."
+  },
+  "offline":{
+    "baseline":"Core HTML, CSS, JavaScript, question banks, unit content, records, and localStorage progress do not require a remote application server after files are available to the browser.",
+    "current_limit":"Some registry-driven pages use fetch() for local JSON and therefore depend on the site files being reachable unless packaged/cached locally.",
+    "required_for_full_offline_certification":["cache or package local JSON registries","cache canonical unit and assessment assets","provide an offline fallback page","test a cold reload after network removal","verify localStorage evidence persists independently of network state"],
+    "dependency_rule":"No CDN, hosted font, analytics, external AI, or third-party account may be required for course completion."
+  },
+  "tool_integration":{
+    "principle":"Tools may enhance learning but may not become hidden prerequisites.",
+    "optional_tools":["NAIB recommendation service","calculator","graphing utility","game/practice engines","print/export utilities"],
+    "NAIB_input":["course","unit","lesson","skill_id","question_id","mastery_status","game_tags"],
+    "NAIB_output":["resource_type","resource_id","reason","return_target"],
+    "privacy":"Do not transmit learner identity, family identifiers, free-response text, credentials, or browser identifiers in curriculum-quality or recommendation signals unless a separate authorized identity layer explicitly requires it.",
+    "fallback":"Every required learning, remediation, reassessment, and completion route must remain available without optional tools."
+  }
+}
