@@ -1,155 +1,849 @@
 {
+  "schema": "khaemenes-algebra1-unit-answer-key",
+  "version": "2026.08.21-u11-v2",
   "unit": 11,
-  "items": [
+  "question_count": 120,
+  "notes": "20 unique questions per lesson. First five IDs per lesson preserve existing course-data lesson checks.",
+  "answers": [
     {
       "id": "q0346",
-      "answer": "7√2",
-      "explanation": "Factor out the perfect square."
+      "lesson": 1,
+      "answer": 1,
+      "answer_text": "9",
+      "explanation": "The radical symbol √ denotes the nonnegative principal square root."
     },
     {
       "id": "q0347",
-      "answer": "6√2",
-      "explanation": "Factor out the perfect square."
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "6√2",
+      "explanation": "72=36·2, so √72=6√2."
     },
     {
       "id": "q0348",
-      "answer": "5√2",
-      "explanation": "Factor out the perfect square."
+      "lesson": 1,
+      "answer": 2,
+      "answer_text": "7 and 8",
+      "explanation": "49<50<64, so 7<√50<8."
     },
     {
       "id": "q0349",
-      "answer": "4√2",
-      "explanation": "Factor out the perfect square."
+      "lesson": 1,
+      "answer": 2,
+      "answer_text": "|x|",
+      "explanation": "A principal square root is nonnegative, so √(x²)=|x|."
     },
     {
       "id": "q0350",
-      "answer": "4√2",
-      "explanation": "Factor out the perfect square."
+      "lesson": 1,
+      "answer": 2,
+      "answer_text": "x≥4",
+      "explanation": "A real square root requires x−4≥0."
+    },
+    {
+      "id": "u11x-l01-06",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "4√3",
+      "explanation": "48=16·3."
+    },
+    {
+      "id": "u11x-l01-07",
+      "lesson": 1,
+      "answer": 1,
+      "answer_text": "√25=5",
+      "explanation": "√ denotes the principal, nonnegative square root."
+    },
+    {
+      "id": "u11x-l01-08",
+      "lesson": 1,
+      "answer": 1,
+      "answer_text": "5.5",
+      "explanation": "√30≈5.477, which rounds to 5.5."
+    },
+    {
+      "id": "u11x-l01-09",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "4a",
+      "explanation": "√16=4 and √(a²)=a because a≥0."
+    },
+    {
+      "id": "u11x-l01-10",
+      "lesson": 1,
+      "answer": 1,
+      "answer_text": "−3x",
+      "explanation": "√(9x²)=3|x|; when x<0, |x|=−x."
+    },
+    {
+      "id": "u11x-l01-11",
+      "lesson": 1,
+      "answer": 3,
+      "answer_text": "√15",
+      "explanation": "15 has no perfect-square factor greater than 1."
+    },
+    {
+      "id": "u11x-l01-12",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "10√2",
+      "explanation": "200=100·2."
+    },
+    {
+      "id": "u11x-l01-13",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "7√2 cm",
+      "explanation": "Side length is √98=√(49·2)=7√2."
+    },
+    {
+      "id": "u11x-l01-14",
+      "lesson": 1,
+      "answer": 1,
+      "answer_text": "8.4",
+      "explanation": "√70≈8.367."
+    },
+    {
+      "id": "u11x-l01-15",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "x≥−3",
+      "explanation": "Require 2x+6≥0, so x≥−3."
+    },
+    {
+      "id": "u11x-l01-16",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "5√3·|y|",
+      "explanation": "√75=5√3 and √(y²)=|y|."
+    },
+    {
+      "id": "u11x-l01-17",
+      "lesson": 1,
+      "answer": 1,
+      "answer_text": "√36=6; ±6 solves x²=36",
+      "explanation": "The radical symbol gives the principal root; an equation can have two roots."
+    },
+    {
+      "id": "u11x-l01-18",
+      "lesson": 1,
+      "answer": 1,
+      "answer_text": "121",
+      "explanation": "√121=11."
+    },
+    {
+      "id": "u11x-l01-19",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "6√3",
+      "explanation": "108=36·3."
+    },
+    {
+      "id": "u11x-l01-20",
+      "lesson": 1,
+      "answer": 1,
+      "answer_text": "150",
+      "explanation": "144<n<169; only 150 fits."
     },
     {
       "id": "q0351",
-      "answer": "3√2",
-      "explanation": "Factor out the perfect square."
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "5√5",
+      "explanation": "Like radicals combine by adding coefficients."
     },
     {
       "id": "q0352",
-      "answer": "6√2",
-      "explanation": "Factor out the perfect square."
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "3√3",
+      "explanation": "Subtract the coefficients of like radicals."
     },
     {
       "id": "q0353",
-      "answer": "3√2",
-      "explanation": "Factor out the perfect square."
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "5√3",
+      "explanation": "√12=2√3 and √27=3√3."
     },
     {
       "id": "q0354",
-      "answer": "6√2",
-      "explanation": "Factor out the perfect square."
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "3√10",
+      "explanation": "√90=√(9·10)=3√10."
     },
     {
       "id": "q0355",
-      "answer": "2√2",
-      "explanation": "Factor out the perfect square."
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "6",
+      "explanation": "√12=2√3, so 2√3(√3)=2·3=6."
+    },
+    {
+      "id": "u11x-l02-06",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "3√5",
+      "explanation": "45=9·5."
+    },
+    {
+      "id": "u11x-l02-07",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "6√2",
+      "explanation": "√8=2√2, so 4√2+2√2=6√2."
+    },
+    {
+      "id": "u11x-l02-08",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "4√7",
+      "explanation": "Combine coefficients: 5−2+1=4."
+    },
+    {
+      "id": "u11x-l02-09",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "30√2",
+      "explanation": "6√50=6·5√2=30√2."
+    },
+    {
+      "id": "u11x-l02-10",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "12",
+      "explanation": "√144=12."
+    },
+    {
+      "id": "u11x-l02-11",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "4√5",
+      "explanation": "√20=2√5; 6√5−2√5=4√5."
+    },
+    {
+      "id": "u11x-l02-12",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "√8 and √18",
+      "explanation": "√8=2√2 and √18=3√2."
+    },
+    {
+      "id": "u11x-l02-13",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "4",
+      "explanation": "Difference of squares: 7−3=4."
+    },
+    {
+      "id": "u11x-l02-14",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "9+4√5",
+      "explanation": "(√5)²+4√5+4=9+4√5."
+    },
+    {
+      "id": "u11x-l02-15",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "30√2 m²",
+      "explanation": "10√18=10·3√2=30√2."
+    },
+    {
+      "id": "u11x-l02-16",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "8√2",
+      "explanation": "2√50=10√2 and √8=2√2."
+    },
+    {
+      "id": "u11x-l02-17",
+      "lesson": 2,
+      "answer": 1,
+      "answer_text": "√8=2√2, so the sum is 3√2",
+      "explanation": "Radicals do not add by adding radicands."
+    },
+    {
+      "id": "u11x-l02-18",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "3√2",
+      "explanation": "√32=4√2."
+    },
+    {
+      "id": "u11x-l02-19",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "24√2",
+      "explanation": "8√18=8·3√2=24√2."
+    },
+    {
+      "id": "u11x-l02-20",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "2√3",
+      "explanation": "3√3+4√3−5√3=2√3."
     },
     {
       "id": "q0356",
-      "answer": "√(x³)",
-      "explanation": "Denominator gives root; numerator gives power."
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "√x",
+      "explanation": "An exponent of 1/2 means square root."
     },
     {
       "id": "q0357",
-      "answer": "√(x³)",
-      "explanation": "Denominator gives root; numerator gives power."
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "√(x³)",
+      "explanation": "The denominator 2 is the root index and numerator 3 is the power."
     },
     {
       "id": "q0358",
-      "answer": "√(x³)",
-      "explanation": "Denominator gives root; numerator gives power."
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "8",
+      "explanation": "Fourth root of 16 is 2; 2³=8."
     },
     {
       "id": "q0359",
-      "answer": "√(x³)",
-      "explanation": "Denominator gives root; numerator gives power."
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "a^(2/3)",
+      "explanation": "Root index becomes the denominator."
     },
     {
       "id": "q0360",
-      "answer": "√(x³)",
-      "explanation": "Denominator gives root; numerator gives power."
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "x",
+      "explanation": "Add exponents with the same base: 1/3+2/3=1."
+    },
+    {
+      "id": "u11x-l03-06",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "5",
+      "explanation": "25^(1/2)=√25=5."
+    },
+    {
+      "id": "u11x-l03-07",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "9",
+      "explanation": "Cube root of 27 is 3; 3²=9."
+    },
+    {
+      "id": "u11x-l03-08",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "m^(5/2)",
+      "explanation": "Square root corresponds to exponent 1/2."
+    },
+    {
+      "id": "u11x-l03-09",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "y",
+      "explanation": "Subtract exponents: 5/4−1/4=1."
+    },
+    {
+      "id": "u11x-l03-10",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "x^(3/4)",
+      "explanation": "The root index 4 is the denominator."
+    },
+    {
+      "id": "u11x-l03-11",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "27",
+      "explanation": "Fourth root of 81 is 3; 3³=27."
+    },
+    {
+      "id": "u11x-l03-12",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "x²",
+      "explanation": "Multiply exponents: (2/3)·3=2."
+    },
+    {
+      "id": "u11x-l03-13",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "x^(1/3)",
+      "explanation": "Odd roots of negative numbers are real; even roots are not."
+    },
+    {
+      "id": "u11x-l03-14",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "4",
+      "explanation": "Fifth root of 32 is 2; 2²=4."
+    },
+    {
+      "id": "u11x-l03-15",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "x^(−1/2)",
+      "explanation": "Reciprocal changes the exponent sign."
+    },
+    {
+      "id": "u11x-l03-16",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "x",
+      "explanation": "Subtract exponents: 7/6−1/6=1."
+    },
+    {
+      "id": "u11x-l03-17",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "8^(2/3)=(³√8)²=4",
+      "explanation": "A fractional exponent represents a root and a power, not division of the exponent."
+    },
+    {
+      "id": "u11x-l03-18",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "(³√64)²",
+      "explanation": "Take the cube root first: 4²=16."
+    },
+    {
+      "id": "u11x-l03-19",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "A^(1/2)",
+      "explanation": "Taking the principal square root gives s=A^(1/2)."
+    },
+    {
+      "id": "u11x-l03-20",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "a³b²",
+      "explanation": "Multiply each exponent by 6."
     },
     {
       "id": "q0361",
-      "answer": "5",
-      "explanation": "Use the Pythagorean theorem."
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "5",
+      "explanation": "√(3²+4²)=5."
     },
     {
       "id": "q0362",
-      "answer": "5",
-      "explanation": "Use the Pythagorean theorem."
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "10",
+      "explanation": "√(36+64)=10."
     },
     {
       "id": "q0363",
-      "answer": "5",
-      "explanation": "Use the Pythagorean theorem."
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "2√13",
+      "explanation": "Differences are 6 and 4; distance √52=2√13."
     },
     {
       "id": "q0364",
-      "answer": "5",
-      "explanation": "Use the Pythagorean theorem."
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "√41",
+      "explanation": "Differences are 4 and 5; √(16+25)=√41."
     },
     {
       "id": "q0365",
-      "answer": "5",
-      "explanation": "Use the Pythagorean theorem."
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "5 ft",
+      "explanation": "x²+12²=13², so x²=25."
+    },
+    {
+      "id": "u11x-l04-06",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "15",
+      "explanation": "17²−8²=225, so the leg is 15."
+    },
+    {
+      "id": "u11x-l04-07",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "8",
+      "explanation": "Same x-coordinate; vertical distance is |3−(−5)|=8."
+    },
+    {
+      "id": "u11x-l04-08",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "5",
+      "explanation": "Differences 3 and 4 form a 3-4-5 triangle."
+    },
+    {
+      "id": "u11x-l04-09",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "5√2",
+      "explanation": "√(25+25)=√50=5√2."
+    },
+    {
+      "id": "u11x-l04-10",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "√((x₂−x₁)²+(y₂−y₁)²)",
+      "explanation": "The distance formula is the Pythagorean theorem applied to coordinate differences."
+    },
+    {
+      "id": "u11x-l04-11",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "30 in",
+      "explanation": "√(24²+18²)=√900=30."
+    },
+    {
+      "id": "u11x-l04-12",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "10",
+      "explanation": "Differences are 8 and −6; √(64+36)=10."
+    },
+    {
+      "id": "u11x-l04-13",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "√130",
+      "explanation": "c=√(49+81)=√130."
+    },
+    {
+      "id": "u11x-l04-14",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "10 km",
+      "explanation": "Differences 6 and 8; √100=10."
+    },
+    {
+      "id": "u11x-l04-15",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "5,12,13",
+      "explanation": "5²+12²=13²."
+    },
+    {
+      "id": "u11x-l04-16",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Coordinate distance uses √((Δx)²+(Δy)²)",
+      "explanation": "Straight-line distance is the hypotenuse of a right triangle."
+    },
+    {
+      "id": "u11x-l04-17",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "a√2",
+      "explanation": "√(a²+a²)=a√2 for a≥0."
+    },
+    {
+      "id": "u11x-l04-18",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "5√2",
+      "explanation": "s√2=10, so s=10/√2=5√2."
+    },
+    {
+      "id": "u11x-l04-19",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "±4",
+      "explanation": "3²+y²=25 gives y²=16."
+    },
+    {
+      "id": "u11x-l04-20",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "15",
+      "explanation": "√(81+144)=√225=15."
     },
     {
       "id": "q0366",
-      "answer": "5",
-      "explanation": "Use the Pythagorean theorem."
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(5,7)",
+      "explanation": "Average corresponding coordinates."
     },
     {
       "id": "q0367",
-      "answer": "5",
-      "explanation": "Use the Pythagorean theorem."
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(−1,5)",
+      "explanation": "((-6+4)/2,(2+8)/2)=(-1,5)."
     },
     {
       "id": "q0368",
-      "answer": "5",
-      "explanation": "Use the Pythagorean theorem."
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(8,11)",
+      "explanation": "2·midpoint−known endpoint=(10−2,14−3)."
     },
     {
       "id": "q0369",
-      "answer": "5",
-      "explanation": "Use the Pythagorean theorem."
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(2,2)",
+      "explanation": "Average x-values and y-values."
     },
     {
       "id": "q0370",
-      "answer": "5",
-      "explanation": "Use the Pythagorean theorem."
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(3,0)",
+      "explanation": "The midpoint is 3 units from each endpoint."
+    },
+    {
+      "id": "u11x-l05-06",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(4,−1)",
+      "explanation": "((1+7)/2,(-5+3)/2)=(4,-1)."
+    },
+    {
+      "id": "u11x-l05-07",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(8,9)",
+      "explanation": "x=2·2−(−4)=8 and y=2·5−1=9."
+    },
+    {
+      "id": "u11x-l05-08",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(1,3)",
+      "explanation": "Average coordinates."
+    },
+    {
+      "id": "u11x-l05-09",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(−4,7)",
+      "explanation": "Endpoints symmetric about the origin."
+    },
+    {
+      "id": "u11x-l05-10",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(x−2)²+(y+1)²=25",
+      "explanation": "Distance 5 from a fixed point forms a circle of radius 5."
+    },
+    {
+      "id": "u11x-l05-11",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(7,5)",
+      "explanation": "B=(8−1,6−1)=(7,5)."
+    },
+    {
+      "id": "u11x-l05-12",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "((a+c)/2,(b+d)/2)",
+      "explanation": "Midpoint averages corresponding coordinates."
+    },
+    {
+      "id": "u11x-l05-13",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(4,4)",
+      "explanation": "Average coordinates."
+    },
+    {
+      "id": "u11x-l05-14",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(0,5)",
+      "explanation": "The perpendicular bisector is x=0."
+    },
+    {
+      "id": "u11x-l05-15",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(7,−8)",
+      "explanation": "Other endpoint=(6−(-1),-4−4)=(7,-8)."
+    },
+    {
+      "id": "u11x-l05-16",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Midpoint (3,4), length 10",
+      "explanation": "Midpoint averages coordinates; distance is √100=10."
+    },
+    {
+      "id": "u11x-l05-17",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Average corresponding coordinates",
+      "explanation": "Midpoint is the coordinate-wise average."
+    },
+    {
+      "id": "u11x-l05-18",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "(2,7)",
+      "explanation": "((-5+9)/2,(2+12)/2)=(2,7)."
+    },
+    {
+      "id": "u11x-l05-19",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "P lies on AB and PA=PB",
+      "explanation": "A midpoint lies on the segment and divides it into two equal parts."
+    },
+    {
+      "id": "u11x-l05-20",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "2",
+      "explanation": "(x+8)/2=5 gives x=2."
     },
     {
       "id": "q0371",
-      "answer": "center (2,−3), radius 5",
-      "explanation": "Compare with (x−h)²+(y−k)²=r²."
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "center (2,−3), r=5",
+      "explanation": "Circle form is (x−h)²+(y−k)²=r²."
     },
     {
       "id": "q0372",
-      "answer": "center (2,−3), radius 5",
-      "explanation": "Compare with (x−h)²+(y−k)²=r²."
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "(x+4)²+(y−1)²=9",
+      "explanation": "Use (x−h)²+(y−k)²=r²."
     },
     {
       "id": "q0373",
-      "answer": "center (2,−3), radius 5",
-      "explanation": "Compare with (x−h)²+(y−k)²=r²."
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "Yes",
+      "explanation": "5²+4²=25+16=41."
     },
     {
       "id": "q0374",
-      "answer": "center (2,−3), radius 5",
-      "explanation": "Compare with (x−h)²+(y−k)²=r²."
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "5√2",
+      "explanation": "r=√50=5√2."
     },
     {
       "id": "q0375",
-      "answer": "center (2,−3), radius 5",
-      "explanation": "Compare with (x−h)²+(y−k)²=r²."
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "5",
+      "explanation": "Distance from center to point is √(3²+4²)=5."
+    },
+    {
+      "id": "u11x-l06-06",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "(−1,6)",
+      "explanation": "Signs inside parentheses are opposite the center coordinates."
+    },
+    {
+      "id": "u11x-l06-07",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "6",
+      "explanation": "r²=36, so r=6."
+    },
+    {
+      "id": "u11x-l06-08",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "x²+y²=64",
+      "explanation": "At the origin, h=k=0 and r²=64."
+    },
+    {
+      "id": "u11x-l06-09",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "No; it is the center",
+      "explanation": "Substitution gives 0, not 9."
+    },
+    {
+      "id": "u11x-l06-10",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "(3,4)",
+      "explanation": "3²+4²=25."
+    },
+    {
+      "id": "u11x-l06-11",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "(x−2)²+(y−3)²=25",
+      "explanation": "Radius is vertical distance 5."
+    },
+    {
+      "id": "u11x-l06-12",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "6√2",
+      "explanation": "r=√72=6√2."
+    },
+    {
+      "id": "u11x-l06-13",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "(x−4)²+(y+3)²=100",
+      "explanation": "Boundary points are exactly 10 units from the center."
+    },
+    {
+      "id": "u11x-l06-14",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "(8,8)",
+      "explanation": "8²+8²=128>100."
+    },
+    {
+      "id": "u11x-l06-15",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "(x−2)²+y²=16",
+      "explanation": "Center is midpoint (2,0), radius 4."
+    },
+    {
+      "id": "u11x-l06-16",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "Center is (3,−2)",
+      "explanation": "Circle form uses x−h and y−k, so signs reverse."
+    },
+    {
+      "id": "u11x-l06-17",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "5",
+      "explanation": "Distance is √(4²+3²)=5."
+    },
+    {
+      "id": "u11x-l06-18",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "x²+y²=13",
+      "explanation": "r²=(√13)²=13."
+    },
+    {
+      "id": "u11x-l06-19",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "Yes",
+      "explanation": "(3−1)²+(3−1)²=4+4=8."
+    },
+    {
+      "id": "u11x-l06-20",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "10√2",
+      "explanation": "r=√200=10√2."
     }
   ]
 }
