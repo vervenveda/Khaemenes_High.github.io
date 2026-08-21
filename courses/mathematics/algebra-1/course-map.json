@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "2.1",
   "course": {
     "id": "math-algebra1-integrated1",
     "profile_course_id": "algebra-1",
@@ -7,11 +7,7 @@
     "title": "Khaemenes Open-Age Algebra I & Integrated Mathematics I",
     "audience": "Open-age, placement-based learners with demonstrated pre-algebra readiness",
     "duration_weeks": 36,
-    "pathways": [
-      "Foundation",
-      "Core",
-      "Extended"
-    ],
+    "pathways": ["Foundation", "Core", "Extended"],
     "storage_key": "khaemenes-algebra1-course-v1",
     "mastery_target": 80,
     "standards_status": "Broad official-framework union; jurisdiction-specific review required for formal reporting.",
@@ -26,110 +22,19 @@
     "final_week": 36
   },
   "units": [
-    {
-      "number": 1,
-      "title": "Algebraic Reasoning, Real Numbers & Precision",
-      "weeks": 2,
-      "path": "units/unit-01/",
-      "lesson_count": 6,
-      "essential_question": "How do notation, units, properties, and precision make mathematical claims trustworthy?"
-    },
-    {
-      "number": 2,
-      "title": "Expressions, Properties & Polynomial Foundations",
-      "weeks": 3,
-      "path": "units/unit-02/",
-      "lesson_count": 7,
-      "essential_question": "How can algebraic structure help us simplify, compare, and generalize relationships?"
-    },
-    {
-      "number": 3,
-      "title": "Linear Equations, Formulas & Proportional Models",
-      "weeks": 3,
-      "path": "units/unit-03/",
-      "lesson_count": 7,
-      "essential_question": "How do equations preserve equality while representing real constraints and relationships?"
-    },
-    {
-      "number": 4,
-      "title": "Linear Inequalities & Absolute Value",
-      "weeks": 2,
-      "path": "units/unit-04/",
-      "lesson_count": 6,
-      "essential_question": "How do inequalities and absolute value describe ranges, tolerances, limits, and feasible choices?"
-    },
-    {
-      "number": 5,
-      "title": "Functions, Domain, Range & Multiple Representations",
-      "weeks": 3,
-      "path": "units/unit-05/",
-      "lesson_count": 7,
-      "essential_question": "How do functions connect inputs and outputs across equations, tables, graphs, and contexts?"
-    },
-    {
-      "number": 6,
-      "title": "Linear Functions, Regression & Modelling",
-      "weeks": 4,
-      "path": "units/unit-06/",
-      "lesson_count": 8,
-      "essential_question": "How can linear functions describe constant change, support prediction, and reveal model limitations?"
-    },
-    {
-      "number": 7,
-      "title": "Systems of Equations & Inequalities",
-      "weeks": 3,
-      "path": "units/unit-07/",
-      "lesson_count": 7,
-      "essential_question": "How do simultaneous constraints determine intersections, feasible choices, and optimized decisions?"
-    },
-    {
-      "number": 8,
-      "title": "Exponents, Sequences & Exponential Functions",
-      "weeks": 2,
-      "path": "units/unit-08/",
-      "lesson_count": 6,
-      "essential_question": "How do repeated multiplication and constant percent change create exponential patterns?"
-    },
-    {
-      "number": 9,
-      "title": "Polynomials, Operations & Factoring",
-      "weeks": 3,
-      "path": "units/unit-09/",
-      "lesson_count": 7,
-      "essential_question": "How do polynomial operations and factoring expose structure, zeros, and geometric relationships?"
-    },
-    {
-      "number": 10,
-      "title": "Quadratic Functions & Equations",
-      "weeks": 4,
-      "path": "units/unit-10/",
-      "lesson_count": 8,
-      "essential_question": "How do quadratic forms reveal zeros, vertices, rates of change, and maximum or minimum values?"
-    },
-    {
-      "number": 11,
-      "title": "Radicals, Rational Exponents & Coordinate Geometry",
-      "weeks": 2,
-      "path": "units/unit-11/",
-      "lesson_count": 6,
-      "essential_question": "How do radical forms and coordinate methods connect algebra, distance, and geometric constraints?"
-    },
-    {
-      "number": 12,
-      "title": "Statistics, Financial Mathematics & Evidence",
-      "weeks": 3,
-      "path": "units/unit-12/",
-      "lesson_count": 7,
-      "essential_question": "How can algebra and statistics support responsible financial and evidence-based decisions?"
-    },
-    {
-      "number": 13,
-      "title": "Integrated Mathematical Modelling Capstone",
-      "weeks": 1,
-      "path": "units/unit-13/",
-      "lesson_count": 5,
-      "essential_question": "How can a defensible mathematical model support a real decision while acknowledging uncertainty and limits?"
-    }
+    {"number":1,"title":"Algebraic Reasoning, Real Numbers & Precision","weeks":2,"path":"units/unit-01/","lesson_count":6,"essential_question":"How do notation, units, properties, and precision make mathematical claims trustworthy?"},
+    {"number":2,"title":"Expressions, Properties & Polynomial Foundations","weeks":3,"path":"units/unit-02/","lesson_count":7,"essential_question":"How can algebraic structure help us simplify, compare, and generalize relationships?"},
+    {"number":3,"title":"Linear Equations, Formulas & Proportional Models","weeks":3,"path":"units/unit-03/","lesson_count":7,"essential_question":"How do equations preserve equality while representing real constraints and relationships?"},
+    {"number":4,"title":"Linear Inequalities & Absolute Value","weeks":2,"path":"units/unit-04/","lesson_count":6,"essential_question":"How do inequalities and absolute value describe ranges, tolerances, limits, and feasible choices?"},
+    {"number":5,"title":"Functions, Domain, Range & Multiple Representations","weeks":3,"path":"units/unit-05/","lesson_count":7,"essential_question":"How do functions connect inputs and outputs across equations, tables, graphs, and contexts?"},
+    {"number":6,"title":"Linear Functions, Regression & Modelling","weeks":4,"path":"units/unit-06/","lesson_count":8,"essential_question":"How can linear functions describe constant change, support prediction, and reveal model limitations?"},
+    {"number":7,"title":"Systems of Equations & Inequalities","weeks":3,"path":"units/unit-07/","lesson_count":7,"essential_question":"How do simultaneous constraints determine intersections, feasible choices, and optimized decisions?"},
+    {"number":8,"title":"Exponents, Sequences & Exponential Functions","weeks":2,"path":"units/unit-08/","lesson_count":6,"essential_question":"How do repeated multiplication and constant percent change create exponential patterns?"},
+    {"number":9,"title":"Polynomials, Operations & Factoring","weeks":3,"path":"units/unit-09/","lesson_count":7,"essential_question":"How do polynomial operations and factoring expose structure, zeros, and geometric relationships?"},
+    {"number":10,"title":"Quadratic Functions & Equations","weeks":4,"path":"units/unit-10/","lesson_count":8,"essential_question":"How do quadratic forms reveal zeros, vertices, rates of change, and maximum or minimum values?"},
+    {"number":11,"title":"Radicals, Rational Exponents & Coordinate Geometry","weeks":2,"path":"units/unit-11/","lesson_count":6,"essential_question":"How do radical forms and coordinate methods connect algebra, distance, and geometric constraints?"},
+    {"number":12,"title":"Statistics, Financial Mathematics & Evidence","weeks":3,"path":"units/unit-12/","lesson_count":7,"essential_question":"How can algebra and statistics support responsible financial and evidence-based decisions?"},
+    {"number":13,"title":"Integrated Mathematical Modelling Capstone","weeks":1,"path":"units/unit-13/","lesson_count":5,"essential_question":"How can a defensible mathematical model support a real decision while acknowledging uncertainty and limits?"}
   ],
   "assessments": {
     "diagnostic": "diagnostic/",
@@ -137,11 +42,23 @@
     "final": "assessments/final-exam-36-weeks.html",
     "certificate": "records/course-completion-certificate.html"
   },
+  "readiness_bridge": {
+    "schema": "khaemenes.math.transition.v1",
+    "contract": "readiness/transition-contract.json",
+    "incoming_course": "KH-MATH-PA",
+    "incoming_policy": "Prior Pre-Algebra evidence may preselect support; the Algebra I diagnostic confirms or adjusts routing.",
+    "outgoing_courses": ["KH-MATH-GEO", "KH-MATH-A2"],
+    "evidence_template": "records/readiness-evidence-template.json",
+    "grade_separate_from_readiness": true,
+    "unfinished_learning_blocks_progression": false
+  },
   "interconnections": {
     "academy_home": "https://khaemenesacademy.org/",
     "high_school_profile": "../../../index.html#student-portal",
     "mathematics_hall": "../",
     "pre_algebra": "../pre-algebra/",
+    "geometry": "../geometry/",
+    "algebra_2": "../algebra-2/",
     "scientific_calculator": "../tools/calculator"
   }
 }
