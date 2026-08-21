@@ -27,6 +27,63 @@
     catch { return false; }
   }
 
+  function slug(value) {
+    return String(value || "general")
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "general";
+  }
+
+  function enrichDiagnostics(result) {
+    if (!result || typeof result !== "object") return result;
+    const domains = {};
+    const skills = {};
+    const items = [];
+    (config.questions || []).forEach((question, index) => {
+      const domain = question.domain || "General";
+      const skill = question.skill || slug(domain);
+      const correct = Number(result.answers?.[index]) === Number(question.answer);
+      domains[domain] ??= { correct: 0, total: 0 };
+      domains[domain].total += 1;
+      if (correct) domains[domain].correct += 1;
+      skills[skill] ??= { correct: 0, total: 0 };
+      skills[skill].total += 1;
+      if (correct) skills[skill].correct += 1;
+      items.push({
+        id: question.id || `KH-MATH-PA-U01-M${String(index + 1).padStart(2, "0")}`,
+        domain,
+        skill,
+        lesson: question.lesson || null,
+        correct
+      });
+    });
+    result.domains = Object.keys(domains).length ? domains : (result.domains || {});
+    result.skills = skills;
+    result.item_evidence = items;
+    result.assessment_version = config.assessment_version || result.assessment_version || "1.0";
+    result.resource_id = config.resource_id || result.resource_id || "KH-MATH-PA-U01-MASTERY";
+    result.unit_id = "KH-MATH-PA-U01";
+    result.program_signal = {
+      schema: "khaemenes-curriculum-signal-v1",
+      resource_id: result.resource_id,
+      assessment_version: result.assessment_version,
+      unit: result.unit_id,
+      score_summary: {
+        correct: Number(result.score) || 0,
+        total: Number(result.total) || (config.questions || []).length,
+        percent: Number(result.percent) || 0,
+        threshold: Number(result.threshold ?? config.threshold) || 80,
+        passed: Number(result.percent) >= (Number(result.threshold ?? config.threshold) || 80)
+      },
+      domains: result.domains,
+      skills,
+      item_outcomes: items.map(item => ({ ...item })),
+      privacy: "No learner name, family identifier, free-response text, browser identifier, credentials, or answer keys are included in this curriculum-quality signal."
+    };
+    return result;
+  }
+
   function compactAttempt(result) {
     return {
       score: Number(result?.score) || 0,
@@ -34,7 +91,9 @@
       percent: Number(result?.percent) || 0,
       passed: Number(result?.percent) >= (Number(result?.threshold ?? config.threshold) || 80),
       completed_at: result?.completed_at || null,
-      domains: result?.domains || {}
+      domains: result?.domains || {},
+      skills: result?.skills || {},
+      item_evidence: Array.isArray(result?.item_evidence) ? result.item_evidence : []
     };
   }
 
@@ -42,11 +101,12 @@
     if (!raw || typeof raw !== "object" || !Number.isFinite(Number(raw.percent))) return null;
     const threshold = Number(raw.threshold ?? config.threshold) || 80;
     const percent = Math.max(0, Math.min(100, Number(raw.percent)));
-    if (raw.result_schema === RESULT_SCHEMA && raw.attempt_history) return raw;
+    if (raw.result_schema === RESULT_SCHEMA && raw.attempt_history) return enrichDiagnostics(raw);
     const at = raw.completed_at || new Date().toISOString();
     const mastered = percent >= threshold;
+    const enriched = enrichDiagnostics({ ...raw, percent, threshold, completed_at: at });
     return {
-      ...raw,
+      ...enriched,
       result_schema: RESULT_SCHEMA,
       threshold,
       latest_passed: percent >= threshold,
@@ -59,7 +119,7 @@
         attemptCount: 1,
         masteredAt: mastered ? at : null,
         bestCompletedAt: at,
-        attempts: [compactAttempt({ ...raw, percent, threshold, completed_at: at })]
+        attempts: [compactAttempt(enriched)]
       }
     };
   }
@@ -99,6 +159,7 @@
     const current = readJSON(config.storage_key, null);
     const hardened = prior ? mergeCurrentWithPrior(current, prior) : normalizePrior(current);
     if (!hardened) return null;
+    enrichDiagnostics(hardened);
     hardened.assessment_classification = CLASSIFICATION;
     hardened.trust = {
       classification: "browser-local-self-scored",
@@ -155,7 +216,7 @@
       trust: trust("This public browser assessment is self-scored local evidence. It is not bound to a learner identity and must not be silently attributed to a learner profile or treated as a validated institutional record."),
       course: COURSE,
       unit: UNIT,
-      assessment: { id: config.storage_key || "khaemenes-prealgebra-u01-mastery-v1", title: config.title || "Unit 1 Mastery Check", pathway: config.pathway || "Cumulative Assessment", classification: CLASSIFICATION },
+      assessment: { id: config.storage_key || "khaemenes-prealgebra-u01-mastery-v1", resource_id: result?.resource_id || "KH-MATH-PA-U01-MASTERY", title: config.title || "Unit 1 Mastery Check", pathway: config.pathway || "Cumulative Assessment", assessment_version: result?.assessment_version || "1.0", classification: CLASSIFICATION },
       mastery: {
         threshold,
         state: mastered ? "mastered" : (Number.isFinite(latest) ? "developing" : "not_assessed"),
@@ -170,7 +231,13 @@
         total: Number.isFinite(Number(result?.total)) ? Number(result.total) : null,
         completed_at: result?.completed_at || null
       },
-      diagnostic_evidence: { domains: result?.domains || {}, answers: result?.answers || {} },
+      diagnostic_evidence: {
+        domains: result?.domains || {},
+        skills: result?.skills || {},
+        items: Array.isArray(result?.item_evidence) ? result.item_evidence : [],
+        program_signal: result?.program_signal || null,
+        answers: result?.answers || {}
+      },
       learner_created_evidence: { reasoning: result?.reasoning || {} },
       attempt_history: Array.isArray(h.attempts) ? h.attempts : [],
       source: { storage_key: config.storage_key || null, environment: "public_browser_localStorage", result_schema: RESULT_SCHEMA }
