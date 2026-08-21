@@ -1,0 +1,46 @@
+{
+  "assessmentId": "U01-MASTERY",
+  "title": "Unit Mastery Assessment",
+  "purpose": "canonical",
+  "authority": "canonical",
+  "masteryThreshold": 0.8,
+  "questionIds": [
+    "Q001",
+    "Q002"
+  ],
+  "items": [
+    {
+      "id": "Q001",
+      "type": "objective",
+      "skills": [
+        "close-reading",
+        "evidence"
+      ],
+      "correctiveRoute": "CR-EVIDENCE-01"
+    },
+    {
+      "id": "Q002",
+      "type": "objective",
+      "skills": [
+        "inference"
+      ],
+      "correctiveRoute": "CR-INFERENCE-01"
+    }
+  ],
+  "attemptHistory": {
+    "firstScore": null,
+    "latestScore": null,
+    "bestScore": null,
+    "attemptCount": 0,
+    "masteredAt": null
+  },
+  "correction": {
+    "enabled": true,
+    "requiresReattempt": true
+  },
+  "accessibility": {
+    "printable": true,
+    "keyboard": true,
+    "screenReader": true
+  }
+}

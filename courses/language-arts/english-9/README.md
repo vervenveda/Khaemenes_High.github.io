@@ -1,32 +1,28 @@
-# Khaemenes High — Grade 9 English Language Arts
+# Khaemenes High — English 9 FULL A+++ Upgrade Package
 
-Complete repository-ready curriculum package for:
+This is a non-destructive upgrade layer for the existing English 9 course.
 
-- `courses/language-arts/index.html` — High School Language Arts department portal
-- `courses/language-arts/english-9/index.html` — Grade 9 English I course landing
-- `grades/grade-09/language-arts/index.html` — Grade 9 route landing
-- 12 unit pages
-- 36 weekly instructional pages / 180 daily lesson blocks
-- diagnostic, midterm, final examination, portfolio, rubrics, syllabus, reading list, standards, and teacher guide
-- annual calendar, gradebook, reading log, attendance/hour log, and completion certificate
+The public repository currently documents 12 units, 36 weekly instructional pages / 180 daily lesson blocks, diagnostic/midterm/final assessment, portfolio, rubrics, syllabus, reading list, standards, teacher guide, annual calendar, gradebook, reading log, attendance/hour log, and completion certificate.
 
-## Design
+## Upgrade philosophy
+Do not rewrite the course. Harden the academic operating system underneath it:
 
-- Vanilla HTML, CSS, and JavaScript
-- Verve N Veda academic style
-- Light-first parchment system with dark mode
-- 7px radius, clean borders, centered eyebrow headers, 333/444-style font weights
-- Responsive, accessible, printable, and local-first
-- No external framework or account required
+Teach → Explore → Practice → Check → Correct → Reassess → Master → Extend.
 
-## Curriculum Position
-
-The program fully addresses Grade 9–10 reading, writing, speaking/listening, and language domains and intentionally extends beyond a single-state checklist through rhetoric, media literacy, research verification, publication, multimodal composition, portfolio curation, and oral defense.
-
-## Upload
-
-Copy the included `courses` and `grades` folders into the root of `vervenveda/Khaemenes_High.github.io`, preserving paths exactly.
-
-## Credits
-
-Jennifer Pearl and Autumn Pearl · Khaemenes Academy · Verve N Veda · 2026
+## Package
+- A+++ master specification
+- Course mastery manifest
+- Assessment schema
+- Diagnostic routing
+- Corrective-learning map
+- Weekly mastery metadata
+- Benchmark matrix
+- Portfolio evidence map
+- Advanced pathway
+- Accessibility contract
+- Resource registry
+- Teacher dashboards
+- Student mastery panel specification
+- QA/validation checklist
+- Migration plan
+- GitHub-ready file map

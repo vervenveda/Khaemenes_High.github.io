@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "courseId": "english-9",
+  "mastery": {
+    "threshold": 0.8,
+    "resourcesOpenBeforeMastery": true,
+    "preservePriorMastery": true,
+    "retryLimit": null
+  },
+  "attemptHistory": [
+    "firstScore",
+    "latestScore",
+    "bestScore",
+    "attemptCount",
+    "masteredAt",
+    "missedQuestionIds",
+    "skillSignals",
+    "attemptedAt"
+  ],
+  "evidenceAuthority": [
+    "canonical",
+    "teacher_review",
+    "portfolio",
+    "practice"
+  ],
+  "humanReview": [
+    "essay",
+    "research",
+    "speech",
+    "debate",
+    "portfolio",
+    "oral_defense",
+    "project",
+    "complex_reasoning"
+  ],
+  "weeklyLoop": [
+    "learn",
+    "explore",
+    "practice",
+    "check",
+    "correct",
+    "reassess",
+    "extend",
+    "evidence"
+  ],
+  "diagnosticRoutes": [
+    "advanced_readiness",
+    "ready",
+    "ready_optional_review",
+    "targeted_refresh",
+    "foundational_path"
+  ],
+  "courseUnits": 12,
+  "weeks": 36,
+  "dailyBlocks": 180
+}
