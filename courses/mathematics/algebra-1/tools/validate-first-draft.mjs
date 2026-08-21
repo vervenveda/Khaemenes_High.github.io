@@ -42,6 +42,8 @@ ok(exists('assessments/midterm-units-01-06.html'), 'midterm exists');
 ok(exists('assessments/final-exam-36-weeks.html'), 'final exists');
 ok(exists('records/course-completion-certificate.html'), 'completion certificate exists');
 ok(exists('records/readiness-evidence-template.json'), 'readiness evidence template exists');
+ok(exists('records/index.html'), 'records landing page exists');
+ok(exists('readiness/index.html'), 'readiness landing page exists');
 ok(exists('readiness/transition-contract.json'), 'cross-course readiness contract exists');
 ok(exists('readiness/validate-transition-contract.mjs'), 'readiness bridge validator exists');
 
@@ -61,6 +63,7 @@ ok(assessmentMap.definitive_answer_policy === true, 'definitive-answer policy re
 ok(exists('assessments/answer-key.json'), 'canonical singular answer key exists');
 ok(!exists('assessments/answer-keys.json'), 'unused plural answer-key duplicate is absent');
 ok(!exists('units/unit-13/unit-13'), 'nested duplicate Unit 13 tree is absent');
+ok(!exists('lessons'), 'duplicate root Unit 06 lessons directory is absent');
 const key = json('assessments/answer-key.json');
 ok(key.schema === 'khaemenes-algebra1-unit-answer-key', 'canonical answer key schema is valid');
 ok(key.unit === 13, 'canonical answer key belongs to Unit 13');
@@ -77,14 +80,22 @@ ok(transition.outgoing?.algebra2?.course === 'KH-MATH-A2', 'Algebra II outgoing 
 ok(transition.principles?.courseGradeIsNotReadinessProfile === true, 'grade and readiness remain separate');
 ok(transition.principles?.unfinishedLearningDoesNotAutomaticallyBlockProgression === true, 'unfinished learning does not automatically block progression');
 
-const surfaces = ['index.html','teacher/index.html','family/index.html','remediation/index.html','labs/index.html','projects/index.html','records/course-completion-certificate.html'];
+const surfaces = ['index.html','teacher/index.html','family/index.html','remediation/index.html','labs/index.html','projects/index.html','readiness/index.html','records/index.html','records/course-completion-certificate.html'];
 for (const file of surfaces) {
   ok(exists(file), `${file} exists`);
-  if (exists(file)) { const html = read(file); ok(/<main\b/i.test(html) && /href=["']#/.test(html), `${file} exposes accessibility/navigation surface`); }
+  if (exists(file)) {
+    const html = read(file);
+    ok(/<main\b/i.test(html) && /href=["']#/.test(html), `${file} exposes accessibility/navigation surface`);
+  }
 }
+
 const courseHome = read('index.html');
 ok(/Algebra I/i.test(courseHome) && /id=["']units["']/.test(courseHome), 'course home identifies Algebra I and exposes unit navigation');
 ok(!/Unit 06 · The Linear Model Laboratory/i.test(courseHome), 'course root is not a leaked Unit 06 shell');
+const teacher = read('teacher/index.html');
+ok(!teacher.includes('answer-keys.json'), 'teacher portal does not reference deleted plural answer-key path');
+ok(teacher.includes('../assessments/answer-key.json'), 'teacher portal points to canonical singular Unit 13 answer key');
+ok(/Unit 13 Answer Key/i.test(teacher), 'teacher portal labels canonical key accurately');
 
 ok(!exists('GRADE10_ALGEBRA1_FILE_MANIFEST.md'), 'legacy grade manifest removed from production root');
 ok(!exists('MATHEMATICS_PORTAL_GRADE10_INTEGRATION.md'), 'legacy integration note removed from production root');
