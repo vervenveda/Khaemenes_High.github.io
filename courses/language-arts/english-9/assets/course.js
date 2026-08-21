@@ -46,7 +46,7 @@
     const shellLinks=[
       ["Learning Lab","learning-lab.html"],
       ["Translator","tools/multilingual-translator/index.html"],
-      ["Archaemenes","mentor.html"],
+      ["Eiren","mentor.html"],
       ["Beta","beta.html"]
     ];
     shellLinks.reverse().forEach(([label,path])=>{
