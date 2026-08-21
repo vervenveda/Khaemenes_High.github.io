@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "KH-MATH-PA-RECORDS-V1",
+  "course": {
+    "id": "math-prealgebra",
+    "code": "KH-MATH-PA",
+    "title": "Khaemenes Global Pre-Algebra"
+  },
+  "principle": "Every record must declare what it is, where it came from, and what authority it does or does not carry.",
+  "trust_classes": {
+    "canonical_course_engine_evidence": {
+      "description": "Evidence calculated by a canonical course or assessment engine from learner responses.",
+      "may_inform_mastery": true,
+      "portable_as_official_record_without_validation": false
+    },
+    "browser_local_course_evidence": {
+      "description": "Course-engine evidence stored in browser localStorage. It may faithfully reflect the local course engine but is editable browser state and is not independently authenticated.",
+      "may_inform_local_progress": true,
+      "portable_as_official_record_without_validation": false
+    },
+    "unscoped_browser_unit_evidence": {
+      "description": "Unit evidence stored under a browser-level key that is not bound to a learner identity. It must not be silently attributed to a selected learner profile.",
+      "may_inform_local_review": true,
+      "may_auto_attach_to_learner": false,
+      "portable_as_official_record_without_validation": false
+    },
+    "family_entered_information": {
+      "description": "Names, dates, hours, observations, logs, signatures, and other fields entered by a parent, learner, teacher, or administrator.",
+      "may_inform_portfolio": true,
+      "must_remain_labeled_user_entered": true
+    },
+    "learner_created_evidence": {
+      "description": "Reflections, notes, handwriting, uploaded work, projects, and other learner-created artifacts.",
+      "may_inform_portfolio": true,
+      "is_automatic_mastery_evidence": false
+    },
+    "validated_academic_record": {
+      "description": "A record that has been validated by a protected institutional records workflow with an explicit identity and authority chain.",
+      "available_in_current_public_browser_course": false
+    }
+  },
+  "lesson_export": {
+    "record_type": "khaemenes.lesson.learning-record",
+    "required_fields": [
+      "schema_version",
+      "record_type",
+      "exported_at",
+      "trust",
+      "course",
+      "unit",
+      "lesson",
+      "pathway",
+      "mastery",
+      "reviewed"
+    ],
+    "mastery_fields": [
+      "threshold",
+      "state",
+      "first_score",
+      "latest_score",
+      "best_score",
+      "attempt_count",
+      "mastered_at"
+    ]
+  },
+  "unit_bridge": {
+    "progress_key_pattern": "khaemenes-prealgebra-unitNN-progress-v1",
+    "unit_range": [1, 13],
+    "learner_scoped": false,
+    "automatic_learner_attribution_allowed": false,
+    "reason": "Current unit progress keys do not contain or encode a learner identifier."
+  },
+  "records_office": {
+    "portal_progress_key": "KHAE_OPEN_PREALGEBRA_FORGE_V2",
+    "portal_progress_is_learner_scoped": true,
+    "family_metadata_key": "khaemenes-prealgebra-family-records-v1",
+    "family_metadata_is_user_entered": true,
+    "rule": "Do not silently merge unscoped unit evidence into a learner-scoped family record."
+  },
+  "mastery": {
+    "default_threshold_percent": 80,
+    "resources_may_support_mastery": true,
+    "only_canonical_assessment_evidence_may_award_course_mastery": true,
+    "lower_voluntary_retake_may_erase_prior_mastery": false
+  }
+}
