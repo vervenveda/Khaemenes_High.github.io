@@ -25,9 +25,10 @@
 
   const state = read();
   state.units ||= {};
-  state.units[UNIT] ||= { lessonScores: {}, reviewedLessons: {}, practiceDrafts: {} };
+  state.units[UNIT] ||= { lessonScores: {}, lessonAttempts: {}, reviewedLessons: {}, practiceDrafts: {} };
   const unit = state.units[UNIT];
   unit.lessonScores ||= {};
+  unit.lessonAttempts ||= {};
   unit.reviewedLessons ||= {};
   unit.practiceDrafts ||= {};
 
@@ -41,10 +42,24 @@
   unit.lessonScores = scores;
   delete unit.completedLessons;
 
+  // Migrate the earlier single-score record into the full A+++ attempt contract.
+  for (const [lesson, score] of Object.entries(unit.lessonScores)) {
+    const prior = unit.lessonAttempts[lesson];
+    if (prior && Number.isFinite(Number(prior.bestScore))) continue;
+    unit.lessonAttempts[lesson] = {
+      firstScore: score,
+      latestScore: score,
+      bestScore: score,
+      attemptCount: 1,
+      masteredAt: score >= THRESHOLD ? (unit.masteredAt || Date.now()) : null,
+      updatedAt: Date.now()
+    };
+  }
+
   root.querySelectorAll(".lesson-block").forEach(block => {
     if (block.dataset.lessonIds) return;
     const heading = block.querySelector(".lesson-kicker")?.textContent || "";
-    const match = heading.match(/Lessons?\s+(\d+\.\d+)(?:[–-](\d+\.\d+|\d+))?/i);
+    const match = heading.match(/(?:Lessons?|Sessions?)\s+(\d+\.\d+)(?:[–-](\d+\.\d+|\d+))?/i);
     if (!match) return;
     const ids = [match[1]];
     if (match[2]) {
@@ -62,10 +77,11 @@
   unit.lessonIds = lessonIds;
 
   const escapeId = value => window.CSS?.escape ? CSS.escape(value) : value.replace(/[^a-zA-Z0-9_-]/g, "-");
-  const isMastered = id => Number(unit.lessonScores[id]) >= THRESHOLD;
+  const bestScore = id => Number(unit.lessonAttempts[id]?.bestScore ?? unit.lessonScores[id]);
+  const isMastered = id => bestScore(id) >= THRESHOLD;
   const masteredCount = () => lessonIds.filter(isMastered).length;
   const average = () => {
-    const recorded = lessonIds.map(id => unit.lessonScores[id]).filter(Number.isFinite);
+    const recorded = lessonIds.map(bestScore).filter(Number.isFinite);
     return recorded.length ? Math.round(recorded.reduce((sum, score) => sum + score, 0) / recorded.length) : 0;
   };
   const allMastered = () => lessonIds.length > 0 && masteredCount() === lessonIds.length;
@@ -79,7 +95,7 @@
     <h2>Unit ${UNIT.replace(/\D/g, "")} mastery record</h2>
     <div class="mastery-stat-grid">
       <div><strong data-mastery-count>0 / ${lessonIds.length}</strong><span>Lessons mastered</span></div>
-      <div><strong data-mastery-average>0%</strong><span>Recorded-score average</span></div>
+      <div><strong data-mastery-average>0%</strong><span>Best-score average</span></div>
       <div><strong>${THRESHOLD}%</strong><span>Mastery threshold</span></div>
       <div><strong data-draft-count>0</strong><span>Practice drafts preserved</span></div>
     </div>
@@ -109,17 +125,19 @@
 
   const masteryDialog = document.createElement("dialog");
   masteryDialog.className = "mastery-dialog";
+  const unitNumber = Number(UNIT.replace(/\D/g, "")) || 1;
+  const nextUnitNumber = unitNumber + 1;
   masteryDialog.innerHTML = `
     <form method="dialog">
       <p class="lesson-kicker">Mastery Gate</p>
-      <h2>Unit 2 opens after mastery.</h2>
+      <h2>Unit ${nextUnitNumber} opens after mastery.</h2>
       <p data-dialog-message></p>
       <p>Review feedback, revise the work, and record a new score. A review mark alone does not unlock progression.</p>
-      <button class="btn primary" value="close">Return to Unit 1</button>
+      <button class="btn primary" value="close">Return to Unit ${unitNumber}</button>
     </form>`;
   document.body.append(masteryDialog);
 
-  const inferredNext = root.querySelector('a[href="../unit-02/index.html"]');
+  const inferredNext = root.querySelector(`[data-mastery-next], a[href="../unit-${String(nextUnitNumber).padStart(2, "0")}/index.html"]`);
   if (inferredNext) inferredNext.dataset.masteryNext = "";
   const nextLinks = root.querySelectorAll("[data-mastery-next]");
   nextLinks.forEach(link => {
@@ -160,11 +178,12 @@
   const render = () => {
     root.querySelectorAll("[data-lesson-score]").forEach(input => {
       const id = input.dataset.lessonScore;
-      if (document.activeElement !== input) input.value = Number.isFinite(unit.lessonScores[id]) ? unit.lessonScores[id] : "";
+      const attempt = unit.lessonAttempts[id];
+      if (document.activeElement !== input) input.value = Number.isFinite(Number(attempt?.latestScore)) ? attempt.latestScore : "";
       const label = root.querySelector(`[data-lesson-state="${id}"]`);
       if (label) {
-        label.textContent = Number.isFinite(unit.lessonScores[id])
-          ? (isMastered(id) ? "Mastered" : "Revise and retry")
+        label.textContent = Number.isFinite(Number(attempt?.latestScore))
+          ? (isMastered(id) ? `Mastered · best ${attempt.bestScore}% · ${attempt.attemptCount} attempt${attempt.attemptCount === 1 ? "" : "s"}` : `Revise · best ${attempt.bestScore}% · ${attempt.attemptCount} attempt${attempt.attemptCount === 1 ? "" : "s"}`)
           : "Not scored";
         label.dataset.state = isMastered(id) ? "mastered" : "developing";
       }
@@ -181,29 +200,46 @@
     status.querySelector("[data-draft-count]").textContent = String(drafts);
     status.querySelector("[data-mastery-bar]").style.width = `${Math.round(count / lessonIds.length * 100)}%`;
     status.querySelector("[data-mastery-message]").textContent = allMastered()
-      ? "Mastery verified from lesson scores. Unit 2 is available."
+      ? `Mastery verified from lesson scores. Unit ${nextUnitNumber} is available.`
       : `${lessonIds.length - count} lesson${lessonIds.length - count === 1 ? "" : "s"} still need a score of ${THRESHOLD}% or higher.`;
     nextLinks.forEach(link => {
       const unlocked = allMastered();
       link.setAttribute("aria-disabled", String(!unlocked));
       link.classList.toggle("is-locked", !unlocked);
-      link.textContent = unlocked ? "Continue to Unit 2" : "Unit 2 · Mastery Required";
+      link.textContent = unlocked ? `Continue to Unit ${nextUnitNumber}` : `Unit ${nextUnitNumber} · Mastery Required`;
     });
     unit.masteredLessons = lessonIds.filter(isMastered);
     unit.masteryVerified = allMastered();
     unit.threshold = THRESHOLD;
+    if (unit.masteryVerified && !unit.masteredAt) unit.masteredAt = Date.now();
     write(state);
   };
 
-  root.addEventListener("input", event => {
+  root.addEventListener("change", event => {
     if (event.target.matches("[data-lesson-score]")) {
       const id = event.target.dataset.lessonScore;
       const raw = event.target.value;
       const score = Number(raw);
-      if (raw === "") delete unit.lessonScores[id];
-      else if (Number.isFinite(score) && score >= 0 && score <= 100) unit.lessonScores[id] = score;
+      if (raw === "") return render();
+      if (Number.isFinite(score) && score >= 0 && score <= 100) {
+        const prior = unit.lessonAttempts[id];
+        const masteredBefore = Number(prior?.bestScore) >= THRESHOLD;
+        unit.lessonAttempts[id] = {
+          firstScore: Number.isFinite(Number(prior?.firstScore)) ? Number(prior.firstScore) : score,
+          latestScore: score,
+          bestScore: Number.isFinite(Number(prior?.bestScore)) ? Math.max(Number(prior.bestScore), score) : score,
+          attemptCount: Math.max(0, Number(prior?.attemptCount) || 0) + 1,
+          masteredAt: prior?.masteredAt || (!masteredBefore && score >= THRESHOLD ? Date.now() : null),
+          updatedAt: Date.now()
+        };
+        unit.lessonScores[id] = score;
+      }
       render();
-    } else if (event.target.matches("[data-save-field]")) {
+    }
+  });
+
+  root.addEventListener("input", event => {
+    if (event.target.matches("[data-save-field]")) {
       window.clearTimeout(event.target._draftTimer);
       event.target._draftTimer = window.setTimeout(render, SACRED_DELAY);
     }
