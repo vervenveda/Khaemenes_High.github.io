@@ -13,10 +13,11 @@ Pre-Algebra currently has two legitimate browser-local evidence streams:
 
 The Records Office must not silently attach unscoped unit evidence to whichever learner profile happens to be selected. Unit evidence may be reviewed, exported, or explicitly associated through a future adoption/validation workflow, but automatic learner attribution is prohibited until a trustworthy identity binding exists.
 
-## Contracts
+## Contracts and tools
 
 - `record-contract-v1.json` defines the course-level trust classes and export boundaries.
 - `unit-evidence-bridge.js` safely reads Unit 01–13 browser evidence and exposes it as unscoped evidence without changing mastery or learner records.
+- `unit-evidence-review.html` provides a centered, printable, read-only review and JSON export of the Unit 01–13 evidence currently stored in the browser. It does not assign that evidence to a learner.
 
 ### Authority rule
 
