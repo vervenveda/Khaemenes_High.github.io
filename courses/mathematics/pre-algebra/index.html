@@ -23,7 +23,7 @@
   --red:#ef8f8f;
   --line:rgba(216,180,95,.28);
   --grid:rgba(248,243,233,.07);
-  --shadow:0 14px 55px rgba(0,0,0,.42)
+  --shadow:0 18px 58px rgba(0,0,0,.42)
 }
 
 * {
@@ -90,7 +90,7 @@ body:before {
   color:var(--gold);
   text-transform:uppercase;
   letter-spacing:.14em;
-  font-weight:333;
+  font-weight:444;
   font-size:.77rem
 }
 .hero h1 {
@@ -111,7 +111,7 @@ button,.button {
   padding:.77rem .99rem;
   background:linear-gradient(135deg,var(--gold),#f4de9d);
   color:#1b1205;
-  font-weight:333;
+  font-weight:850;
   cursor:pointer;
   text-decoration:none;
   box-shadow:0 10px 24px rgba(216,180,95,.17)
@@ -120,24 +120,18 @@ button.secondary,.button.secondary {
   background:#20242b;
   color:var(--ink);
   border:1px solid var(--line);
- font-family:Consolas,monospace;
-  font-weight:333;
   box-shadow:none
 }
 button.ghost,.button.ghost {
   background:transparent;
   color:var(--gold);
   border:1px solid rgba(216,180,95,.5);
- font-family:Consolas,monospace;
-  font-weight:333;
   box-shadow:none
 }
 button.danger {
   background:#452328;
   color:#ffe0e0;
   border:1px solid rgba(239,143,143,.55);
- font-family:Consolas,monospace;
-  font-weight:333;
   box-shadow:none
 }
 
@@ -148,8 +142,6 @@ input,select,textarea {
   color:var(--ink);
   border-radius:7px;
   padding:.77rem;
- font-family:Consolas,monospace;
-  font-weight:333;
   font:inherit
 }
 textarea {
@@ -160,7 +152,6 @@ label {
   display:block;
   color:var(--muted);
   font-size:.88rem;
- 
   margin:.33rem 0
 }
 a {
@@ -186,7 +177,8 @@ a {
   display:grid;
   place-items:center;
   color:var(--gold);
-  
+  font-family:Consolas,monospace;
+  font-weight:444;
   background:radial-gradient(circle,rgba(216,180,95,.16),transparent)
 }
 .brand h2 {
@@ -217,8 +209,6 @@ a {
   background:#101215;
   color:var(--ink);
   border:1px solid var(--line);
- 
-  font-weight:333;
   box-shadow:none
 }
 .navBtn {
@@ -237,7 +227,6 @@ a {
   display:grid;
   gap:11px;
   max-height:44vh;
- 
   overflow:auto
 }
 .weekBtn {
@@ -246,8 +235,6 @@ a {
   gap:11px;
   text-align:left;
   align-items:center;
- 
-  font-weight:333;
   padding:11px
 }
 
@@ -313,8 +300,6 @@ a {
   border-radius:7px;
   background:#050505;
   border:1px solid var(--line);
- font-family:Consolas,monospace;
-  font-weight:333;
   overflow:hidden
 }
 .progress span {
@@ -328,8 +313,6 @@ a {
   background:#0b0c0e;
   border-radius:7px;
   padding:14px;
-
-  font-weight:333;
   margin:14px 0
 }
 .lessonHead {
@@ -342,7 +325,7 @@ a {
   gap:7px;
   align-items:center;
   color:var(--green);
-  font-weight:333
+  font-weight:444
 }
 .check input,.choice input {
   width:auto
@@ -358,7 +341,7 @@ a {
 .score {
   font-size:1.45rem;
   color:var(--gold);
-  font-weight:333;
+  font-weight:555;
   font-family:Consolas,monospace
 }
 .notice {
@@ -366,8 +349,6 @@ a {
   background:rgba(216,180,95,.09);
   padding:11px 14px;
   border-radius:7px;
- 
-  font-weight:333;
   color:#ffe1a0
 }
 table {
@@ -399,8 +380,7 @@ td {
   background:#050505;
   border:1px solid rgba(96,165,250,.24);
   color:#d9ecff;
-  
-  font-weight:333;
+  font-family:Consolas,monospace;
   overflow-wrap:anywhere
 }
 
@@ -442,8 +422,6 @@ td {
     background:#fff;
     color:#111;
     box-shadow:none;
-   
-  font-weight:333;
     border:1px solid #999
   }
   .hero p,.card p,td {
@@ -461,8 +439,6 @@ body{
   font-family:"Aptos","Segoe UI Variable","Segoe UI",Inter,system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
   font-size:14px;
   line-height:1.7;
-
-  font-weight:333;
   letter-spacing:.002em;
 }
 button,.button,input,select,textarea{font-family:inherit}
@@ -476,19 +452,19 @@ button:focus-visible,.button:focus-visible,a:focus-visible,input:focus-visible,s
   position:fixed;left:1rem;top:1rem;z-index:9999;
   transform:translateY(-180%);
   padding:.75rem 1rem;border-radius:9px;background:#fff;color:#111;
-  font-weight:333;text-decoration:none;
+  font-weight:750;text-decoration:none;
 }
 .skip-link:focus{transform:none}
 .app{grid-template-columns:minmax(300px,360px) minmax(0,1fr)}
-.sidebar{padding:14px}
-.main{max-width:1500px;padding:38px clamp(24px,3vw,50px) 55px}
-.hero{padding:clamp(33px,4vw,55px);border-radius:7px;margin-bottom:24px}
+.sidebar{padding:24px}
+.main{max-width:1500px;padding:38px clamp(24px,3vw,50px) 52px}
+.hero{padding:clamp(30px,4vw,52px);border-radius:21px;margin-bottom:22px}
 .hero h1{
   font-family:"Aptos Display","Segoe UI Variable Display","Segoe UI",sans-serif;
-  font-weight:333;
-  letter-spacing:-.034em;
-  line-height:1.04;
-  margin:.44rem 0 .7rem;
+  font-weight:555;
+  letter-spacing:-.035em;
+  line-height:1.05;
+  margin:.45rem 0 .8rem;
 }
 .hero p{line-height:1.78;font-size:1.04rem}
 .eyebrow{font-weight:444;font-size:.7rem}
@@ -502,9 +478,9 @@ button:focus-visible,.button:focus-visible,a:focus-visible,input:focus-visible,s
 .grid{gap:24px}
 .actions{gap:14px;margin-top:14px}
 .lesson,.assignment,.q,.toolBox{padding:24px;margin:14px 0;border-radius:7px}
-.lesson p,.assignment p,.card p{max-width:77ch}
+.lesson p,.assignment p,.card p{max-width:78ch}
 .lessonHead{align-items:flex-start}
-.choice{padding:14px 14px;margin:7px 0}
+.choice{padding:14px 13px;margin:7px 0}
 .notice{padding:14px 24px;line-height:1.66}
 th,td{padding:.9rem .8rem}
 .toolGrid{gap:24px}
@@ -606,7 +582,7 @@ body.activity-open{overflow:hidden}
     </div>
    </a>
    <h2>
-    Khaemenes Global Pre-Algebra
+   Pre-Algebra
    </h2>
    <p>
     Open-Age Foundations · Algebra I Readiness · Numerica Forge
