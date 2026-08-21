@@ -8,8 +8,8 @@
     "duration_weeks": 36,
     "pathways": ["independent", "family-supported", "educator-led"],
     "delivery": ["web", "print", "local-first", "offline-capable", "translation-ready"],
-    "mapping_status": "unit-01-complete-units-02-12-mapped",
-    "mentor": {"public_name": "Archaemenes", "mode": "transparent-local-guidance", "path": "mentor.html"},
+    "mapping_status": "units-01-02-complete-units-03-12-mapped",
+    "mentor": {"role": "english-instruction", "public_name": "Eiren", "mode": "transparent-local-guidance", "path": "mentor.html", "authority": {"awards_mastery": false, "changes_grades": false, "changes_placement": false}},
     "beta": {"status": "public-beta", "path": "beta.html"},
     "learning_lab": {"path": "learning-lab.html", "evidence_policy": "adult-reviewed"},
     "language_access": {
