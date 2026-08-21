@@ -1,6 +1,9 @@
 
 (() => {
   "use strict";
+  const scriptUrl=new URL(document.currentScript?.src||"assets/course.js",location.href);
+  const courseRoot=new URL("../",scriptUrl);
+  const courseHref=path=>new URL(path,courseRoot).href;
   const root=document.documentElement;
   const themeKey="khae-ela9-theme-v1";
   const themeButton=document.querySelector("[data-theme-toggle]");
@@ -35,6 +38,26 @@
     if(label)label.textContent=`${done} of ${total} weeks complete · ${pct}%`;
   }
   updateProgress();
+
+  // Public course-shell contract: every formal course page receives the same
+  // learner-safe routes. These links expose no private topology or backend state.
+  const headerActions=document.querySelector(".header-actions");
+  if(headerActions){
+    const shellLinks=[
+      ["Learning Lab","learning-lab.html"],
+      ["Archaemenes","mentor.html"],
+      ["Beta","beta.html"]
+    ];
+    shellLinks.reverse().forEach(([label,path])=>{
+      if(headerActions.querySelector(`[data-course-shell="${path}"]`))return;
+      const link=document.createElement("a");
+      link.className="nav-button shell-link";
+      link.href=courseHref(path);
+      link.dataset.courseShell=path;
+      link.textContent=label;
+      headerActions.prepend(link);
+    });
+  }
 
   document.querySelectorAll("[data-save-field]").forEach(field=>{
     const key=`khae-ela9-field:${field.dataset.saveField}`;
