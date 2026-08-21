@@ -1,24 +1,45 @@
 {
   "unit": 1,
+  "title": "Foundations, Constructions & Geometric Reasoning",
   "domains": [
-    "Geometric foundations",
-    "Constructions",
-    "Logic and proof",
-    "Measurement precision"
+    "Geometric foundations and notation",
+    "Segment and angle measurement",
+    "Coordinate distance, midpoint, and partition",
+    "Compass-and-straightedge constructions",
+    "Conditional logic and counterexamples",
+    "Proof structure and justification"
   ],
-  "practices": [
-    "Make sense of problems",
+  "standards_support": [
+    "Make formal geometric constructions with a compass and straightedge.",
+    "Use definitions and properties precisely when reasoning about geometric figures.",
+    "Use coordinates to compute distances and midpoints and to represent segment relationships.",
+    "Distinguish conjecture, counterexample, postulate, theorem, and proof.",
+    "Construct viable geometric arguments and critique invalid or unsupported reasoning."
+  ],
+  "mathematical_practices": [
+    "Make sense of problems and persevere in solving them",
     "Reason abstractly and quantitatively",
-    "Construct viable arguments",
+    "Construct viable arguments and critique the reasoning of others",
     "Model with mathematics",
-    "Use tools strategically",
+    "Use appropriate tools strategically",
     "Attend to precision",
-    "Look for structure"
+    "Look for and make use of structure"
   ],
-  "evidence": [
-    "Printable lesson work",
-    "Mastery check",
-    "Applied investigation",
-    "Reflection and correction"
-  ]
+  "lesson_evidence": {
+    "u01-l01": ["precise geometric vocabulary", "object naming and notation", "collinear and coplanar reasoning"],
+    "u01-l02": ["segment and angle notation", "segment addition", "angle addition and classification"],
+    "u01-l03": ["number-line and coordinate distance", "midpoint", "ratio partition"],
+    "u01-l04": ["classical constructions", "construction marks", "equidistance and congruence justification"],
+    "u01-l05": ["conditional transformations", "truth values", "counterexamples and biconditionals"],
+    "u01-l06": ["two-column proof", "flow proof", "paragraph proof", "reason selection and error analysis"]
+  },
+  "unit_evidence": [
+    "Foundation, Core, and Extended practice",
+    "30-item hardened assessment bank with explanations",
+    "12-question mastery check drawn from the hardened bank",
+    "Classical Construction Portfolio & Proof Gallery",
+    "Written corrections and reflection",
+    "Teacher or family review of open-response construction and proof evidence"
+  ],
+  "mastery_target": 80
 }
