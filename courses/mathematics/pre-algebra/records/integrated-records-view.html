@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Integrated read-only Pre-Algebra records view combining the learner-scoped 36-week portal record with explicitly associated Unit 01–13 mastery evidence.">
+<title>Integrated Records View · Khaemenes Pre-Algebra</title>
+<style>
+:root{--paper:#f3f0e8;--sheet:#fffdf8;--ink:#171b19;--muted:#68706c;--line:#cfc9bd;--forest:#17392f;--gold:#a98543;--wine:#71363e;--green:#286345;--amber:#86542d;--shadow:0 24px 66px rgba(24,36,30,.10);--head:Cinzel,"Palatino Linotype",Georgia,serif;--body:"Brandon Grotesque","Avenir Next","Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.68 var(--body)}a{color:inherit}.wrap{width:min(1111px,calc(100% - 44px));margin:auto}.hero{padding:66px 0 33px;text-align:center}.eyebrow{margin:0;color:var(--wine);font:600 12px var(--head);letter-spacing:.16em;text-transform:uppercase}.hero h1{margin:14px auto 18px;color:var(--forest);font:500 clamp(38px,6vw,66px)/1.06 var(--head);letter-spacing:.015em}.lead{max-width:777px;margin:auto;color:var(--muted)}.boundary{max-width:888px;margin:24px auto 0;padding:14px 18px;border:1px solid #dac99e;border-left:4px solid var(--gold);background:#fff8e8;text-align:left}.actions{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin:24px 0}.button,button{min-width:180px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border:1px solid var(--forest);border-radius:7px;background:var(--forest);color:#fff;text-decoration:none;font:600 13px var(--body);letter-spacing:.035em;cursor:pointer}.secondary{background:transparent!important;color:var(--forest)!important}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:33px 0}.metric{min-height:111px;display:grid;place-items:center;padding:14px;border:1px solid var(--line);background:var(--sheet);text-align:center;box-shadow:var(--shadow)}.metric strong{display:block;color:var(--forest);font:500 30px var(--head)}.metric span{display:block;margin-top:4px;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.panel{margin:24px 0;padding:24px;border:1px solid var(--line);background:var(--sheet);box-shadow:var(--shadow)}.panel h2{margin:0 0 14px;color:var(--forest);font:500 25px var(--head)}.status{padding:14px 16px;border-left:4px solid var(--gold);background:#fff8e8}.status.good{border-left-color:var(--green);background:#eef8f1}.status.warn{border-left-color:var(--amber);background:#fff4e9}.quiet{color:var(--muted)}.identity{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}.identity div{padding:11px;border-bottom:1px solid var(--line)}.identity div:nth-child(odd){border-right:1px solid var(--line)}.identity strong{display:block;color:var(--muted);font-size:11px;letter-spacing:.07em;text-transform:uppercase}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--forest);font-size:11px;letter-spacing:.07em;text-transform:uppercase}.goodText{color:var(--green);font-weight:700}.warnText{color:var(--amber);font-weight:700}.empty{padding:33px;border:1px dashed var(--line);text-align:center;color:var(--muted)}footer{padding:44px 0 66px;text-align:center;color:var(--muted);font-size:13px}@media(max-width:850px){.grid{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.metrics,.identity{grid-template-columns:1fr}.identity div:nth-child(odd){border-right:0}.actions>*{width:100%}.wrap{width:min(100% - 24px,1111px)}}@page{size:letter;margin:.55in}@media print{body{background:#fff}.actions,footer{display:none}.wrap{width:100%}.panel,.metric{box-shadow:none}.boundary,.status{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="hero wrap">
+<p class="eyebrow">Khaemenes Academy · Pre-Algebra Records</p>
+<h1>Integrated Records View</h1>
+<p class="lead">A read-only continuity view that places the learner-scoped 36-week portal record beside the explicitly associated Unit 01–13 mastery evidence.</p>
+<div class="boundary"><strong>Authority boundary:</strong> This page does not merge, rewrite, authenticate, or upgrade either evidence stream. It only displays them together when an explicit learner association exists. A protected institutional validation workflow would still be required for independently validated academic records.</div>
+<div class="actions">
+<a class="button" href="./">Family Records Office</a>
+<a class="button secondary" href="unit-evidence-association.html">Manage Learner Association</a>
+<a class="button secondary" href="unit-evidence-review.html">Review Unit Evidence</a>
+<button class="secondary" id="export" type="button">Export Combined Context</button>
+<button class="secondary" id="print" type="button">Print / Save PDF</button>
+</div>
+</header>
+<main class="wrap">
+<section class="panel"><h2>Association Status</h2><div id="associationStatus" class="status">Checking current browser evidence…</div><div id="identity" style="margin-top:18px"></div></section>
+<section class="metrics" id="metrics"></section>
+<div class="grid">
+<section class="panel"><h2>36-Week Portal Record</h2><div id="portal"></div></section>
+<section class="panel"><h2>Unit 01–13 Mastery Evidence</h2><div id="units"></div></section>
+</div>
+<section class="panel"><h2>Combined Records Context</h2><div id="combined"></div></section>
+</main>
+<footer class="wrap">Khaemenes Academy · Read-only records continuity view · Association is not authentication.</footer>
+<script src="unit-evidence-bridge.js"></script>
+<script src="unit-evidence-association.js"></script>
+<script>
+"use strict";
+const COURSE_KEY="KHAE_OPEN_PREALGEBRA_FORGE_V2";
+const $=id=>document.getElementById(id);
+const esc=value=>String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+const metric=(value,label)=>`<article class="metric"><div><strong>${esc(value??"—")}</strong><span>${esc(label)}</span></div></article>`;
+let combinedContext=null;
+function readCourse(){try{return JSON.parse(localStorage.getItem(COURSE_KEY)||"null")||{students:[]}}catch{return{students:[]}}}
+function weekRecord(student,week){return student?.progress?.weeks?.[week]||{lessons:{},assignments:{},quiz:{best:0,attempts:[]},repeats:0}}
+function portalSummary(student){
+ if(!student)return null;
+ let lessons=0,assignments=0,mastered=0,assessed=0,attempts=0,reviews=0;
+ for(let week=1;week<=36;week+=1){const r=weekRecord(student,week);lessons+=["Monday","Tuesday","Wednesday","Thursday","Friday"].filter(day=>r.lessons?.[day]).length;assignments+=[0,1,2].filter(key=>r.assignments?.[key]).length;const quiz=Number(r.quiz?.best||0);if(quiz>0){assessed+=1;if(quiz>=80)mastered+=1}attempts+=r.quiz?.attempts?.length||0;reviews+=Number(r.repeats||0)}
+ return{lessons,assignments,assessed,mastered,attempts,reviews,midterm:Number(student.progress?.exams?.midterm?.best||0),final:Number(student.progress?.exams?.final?.best||0),capstone:Number(student.progress?.capstone?.score||0)};
+}
+function portalTable(student){
+ if(!student)return'<div class="empty">The associated learner ID was not found in the current 36-week course portal record.</div>';
+ const rows=[];for(let week=1;week<=36;week+=1){const r=weekRecord(student,week),quiz=Number(r.quiz?.best||0),lessonCount=["Monday","Tuesday","Wednesday","Thursday","Friday"].filter(day=>r.lessons?.[day]).length,assignmentCount=[0,1,2].filter(key=>r.assignments?.[key]).length;if(lessonCount||assignmentCount||quiz||r.quiz?.attempts?.length||r.repeats){rows.push(`<tr><td>${week}</td><td>${lessonCount}/5</td><td>${assignmentCount}/3</td><td class="${quiz>=80?"goodText":quiz?"warnText":""}">${quiz?quiz+"%":"—"}</td><td>${r.quiz?.attempts?.length||0}</td><td>${Number(r.repeats||0)}</td></tr>`)}}
+ return rows.length?`<div class="table-wrap"><table><thead><tr><th>Week</th><th>Lessons</th><th>Assignments</th><th>Best mastery</th><th>Attempts</th><th>Reviews</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>`:'<div class="empty">The associated learner exists, but no 36-week progress evidence is recorded yet.</div>';
+}
+function unitTable(snapshot){
+ const active=snapshot?.units?.filter(unit=>unit.hasEvidence)||[];
+ if(!active.length)return'<div class="empty">No Unit 01–13 lesson evidence is stored in this browser.</div>';
+ return active.map(unit=>`<h3>Unit ${String(unit.unitNumber).padStart(2,"0")}</h3><div class="table-wrap"><table><thead><tr><th>Lesson</th><th>First</th><th>Latest</th><th>Best</th><th>Attempts</th><th>Status</th></tr></thead><tbody>${unit.lessons.map(item=>`<tr><td>${esc(item.lessonId)}</td><td>${item.firstScore??"—"}${item.firstScore!==null?"%":""}</td><td>${item.latestScore??"—"}${item.latestScore!==null?"%":""}</td><td>${item.bestScore??"—"}${item.bestScore!==null?"%":""}</td><td>${item.attemptCount}</td><td class="${item.mastered?"goodText":"warnText"}">${item.mastered?"Mastered":"Building mastery"}${item.reviewed?" · Reviewed":""}</td></tr>`).join("")}</tbody></table></div>`).join("");
+}
+async function render(){
+ const snapshot=window.KhaemenesPreAlgebraUnitEvidence?.collectAll?.()||null;
+ const associationApi=window.KhaemenesPreAlgebraEvidenceAssociation;
+ const status=associationApi?await associationApi.status(snapshot):{state:"unavailable",active:null};
+ const active=status.active;
+ const course=readCourse();
+ const student=active?course.students?.find(item=>String(item.id)===String(active.learnerId)):null;
+ const ps=portalSummary(student);
+ const us=snapshot?.summary||{};
+ let statusClass="status",statusText="No explicit learner association exists for the current Unit 01–13 evidence.";
+ if(status.state==="associated_current"){statusClass="status good";statusText=`Current evidence is explicitly associated with ${active.learnerName}. The stored fingerprint matches the evidence now in this browser.`}
+ else if(status.state==="associated_evidence_changed"){statusClass="status warn";statusText=`The evidence is associated with ${active.learnerName}, but the Unit 01–13 evidence has changed since confirmation. Review and refresh the association before relying on it for continuity.`}
+ else if(status.state==="unavailable"){statusClass="status warn";statusText="The association engine could not be loaded."}
+ $("associationStatus").className=statusClass;$("associationStatus").textContent=statusText;
+ $("identity").innerHTML=active?`<div class="identity"><div><strong>Learner</strong>${esc(active.learnerName)}</div><div><strong>Learner ID</strong>${esc(active.learnerId)}</div><div><strong>Associated</strong>${esc(active.confirmedAt||"—")}</div><div><strong>Fingerprint</strong>${esc(active.fingerprintMethod||"—")}</div><div><strong>Source trust</strong>${esc(active.sourceTrustClass||"unscoped_browser_unit_evidence")}</div><div><strong>Institutionally validated</strong>No</div></div>`:'<p class="quiet">Use Manage Learner Association to deliberately connect this browser evidence set to a learner profile.</p>';
+ $("metrics").innerHTML=[metric(ps?.lessons??"—","Portal sessions"),metric(ps?.assessed??"—","Portal mastery checks"),metric(us.masteredLessons??"—","Unit lessons mastered"),metric(us.totalAttempts??"—","Unit attempts")].join("");
+ $("portal").innerHTML=active?portalTable(student):'<div class="empty">No learner is associated with the Unit 01–13 evidence yet.</div>';
+ $("units").innerHTML=active?unitTable(snapshot):'<div class="empty">Unit evidence remains intentionally unscoped until an explicit learner association is made.</div>';
+ const current=status.state==="associated_current";
+ $("combined").innerHTML=active?`<p><strong>Continuity state:</strong> <span class="${current?"goodText":"warnText"}">${current?"Association current":"Association requires review"}</span></p><p>This view contains two evidence streams side by side: the learner-scoped 36-week portal record and the browser-local Unit 01–13 evidence explicitly associated with that learner. Neither stream is copied into the other.</p><p class="quiet">Association permits local records continuity only. It does not authenticate identity, verify browser-local data, or create an independently validated academic record.</p>`:'<p>No combined learner context is available until an explicit association exists.</p>';
+ combinedContext={schema_version:"1.0",record_type:"khaemenes.prealgebra.combined-records-context",exported_at:new Date().toISOString(),trust:{read_only:true,association_state:status.state,independently_authenticated:false,validated_academic_record:false,note:"This export places existing local evidence streams in one context. It does not merge or validate them."},learner:active?{id:active.learnerId,name:active.learnerName}:null,association:active||null,portal_summary:ps,unit_evidence:snapshot};
+}
+function exportCombined(){if(!combinedContext)return;const blob=new Blob([JSON.stringify(combinedContext,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`prealgebra-combined-records-context-${new Date().toISOString().slice(0,10)}.json`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),666)}
+$("export").addEventListener("click",exportCombined);$("print").addEventListener("click",()=>window.print());render();
+</script>
+</body>
+</html>
