@@ -46,6 +46,21 @@ It displays those evidence streams side by side only when an explicit learner as
 
 The integrated view can export a `khaemenes.prealgebra.combined-records-context` JSON file. That export is a read-only context package, not a merged or independently validated academic record.
 
+## PA-13.3 cumulative assessment contract
+
+The compact Unit 02–13 cumulative assessment engines now use a shared durable mastery contract:
+
+- first, latest, and best cumulative assessment scores are retained;
+- a later lower voluntary retake cannot erase previously demonstrated mastery;
+- the latest attempt remains visible for instructional feedback while the best score remains the mastery authority;
+- legacy flat assessment results are migrated into a one-attempt history record rather than discarded;
+- Reset clears the current form and draft only and preserves saved mastery evidence;
+- each scored attempt emits domain, skill, item, unit, and resource metadata suitable for future curriculum-quality and adaptive-support routing;
+- when an assessment question does not yet have an explicit skill tag, the engine derives a deterministic skill slug from its domain as a compatibility fallback;
+- generated item IDs and unit IDs are derived from the current assessment configuration/storage key rather than being hard-coded to Unit 02.
+
+This contract hardens evidence continuity but does not authenticate browser-local assessment records or grant institutional authority.
+
 ## Contracts and tools
 
 - `record-contract-v1.json` defines the course-level trust classes and export boundaries.
@@ -62,6 +77,8 @@ The integrated view can export a `khaemenes.prealgebra.combined-records-context`
 ### Assessment record distinction
 
 Submitted/scored Unit 01 mastery checks are `khaemenes.assessment.result-record` evidence. Unsubmitted work is `khaemenes.assessment.draft-record` and may never grant mastery. The public assessment wrapper preserves diagnostic domain evidence and learner reasoning while labeling the result as browser-local, self-scored, unscoped evidence requiring review before portfolio use.
+
+The Unit 02–13 compact cumulative assessment cores now preserve durable attempt/mastery history and emit diagnostic skill/item metadata. Their wrapper/export normalization remains part of the PA-13.3 follow-on work so scored results and unfinished drafts receive the same explicit trust-aware record-type distinction already implemented for Unit 01.
 
 ### Authority rule
 
