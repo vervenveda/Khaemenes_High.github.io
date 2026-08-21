@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "KH-MATH-PA-UNIT-EVIDENCE-ASSOCIATION-V1",
+  "course": {
+    "id": "KH-MATH-PA",
+    "title": "Khaemenes Global Pre-Algebra"
+  },
+  "purpose": "Explicitly associate one browser-local Unit 01–13 evidence set with one learner profile without rewriting either source.",
+  "association_record_type": "khaemenes.evidence.learner-association",
+  "storage_key": "khaemenes-prealgebra-unit-evidence-associations-v1",
+  "rules": {
+    "automatic_assignment_allowed": false,
+    "explicit_confirmation_required": true,
+    "one_active_learner_per_unscoped_evidence_set": true,
+    "different_learner_requires_release_first": true,
+    "source_evidence_may_be_mutated": false,
+    "learner_progress_may_be_mutated": false,
+    "association_is_authentication": false,
+    "association_is_validation": false,
+    "association_creates_institutional_record": false,
+    "history_must_be_preserved": true,
+    "evidence_change_detection_required": true
+  },
+  "required_active_fields": [
+    "schema_version",
+    "record_type",
+    "association_id",
+    "learnerId",
+    "learnerName",
+    "confirmedAt",
+    "confirmedByRole",
+    "confirmationText",
+    "evidenceFingerprint",
+    "fingerprintMethod",
+    "evidenceSummary",
+    "evidenceKeys",
+    "sourceRecordType",
+    "sourceTrustClass",
+    "learnerScopedAfterAssociation",
+    "independentlyAuthenticated",
+    "validatedAcademicRecord",
+    "mutatesSourceEvidence",
+    "authorityNote"
+  ],
+  "fingerprint": {
+    "preferred": "SHA-256",
+    "fallback": "local non-cryptographic change detector",
+    "purpose": "Detect whether the browser evidence has changed since explicit association. The fingerprint is not a digital signature or proof of authorship."
+  },
+  "states": {
+    "unassociated": "No active learner association exists.",
+    "associated_current": "An active learner association exists and the current evidence fingerprint matches the confirmed snapshot.",
+    "associated_evidence_changed": "An active learner association exists, but the current evidence fingerprint differs from the confirmed snapshot. The association must be refreshed explicitly if the current evidence should be associated."
+  },
+  "release": {
+    "deletes_source_evidence": false,
+    "deletes_learner_profile": false,
+    "preserves_history_entry": true
+  }
+}
