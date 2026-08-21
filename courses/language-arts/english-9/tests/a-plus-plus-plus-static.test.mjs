@@ -50,3 +50,11 @@ test("public mentor is Eiren and disclaims grading authority", () => {
   assert.match(mentor, /cannot (?:award mastery or )?change a grade/i);
   assert.doesNotMatch(mentor, /Archaemenes/);
 });
+
+test("legacy portal loads the evidence reconciler and labels activity as non-authoritative", () => {
+  const portal = read("index.html");
+  assert.match(portal, /assets\/evidence-reconciler\.js/);
+  assert.match(portal, /Canonical coursebook evidence determines mastery/);
+  assert.match(portal, /legacy activities reviewed/i);
+  assert.doesNotMatch(portal, /Course grade to date/);
+});
