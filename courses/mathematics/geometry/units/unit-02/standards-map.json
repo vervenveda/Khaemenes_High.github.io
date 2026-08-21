@@ -1,24 +1,51 @@
 {
   "unit": 2,
+  "title": "Transformations, Symmetry & Congruence",
+  "weeks": [3, 4, 5],
+  "mastery_target": 80,
   "domains": [
-    "Transformations",
-    "Congruence",
-    "Symmetry",
-    "Tessellations"
+    "Rigid transformations in the coordinate plane",
+    "Transformation composition and congruence",
+    "Line, rotational and point symmetry",
+    "Tessellations and transformation-based design"
   ],
-  "practices": [
-    "Make sense of problems",
-    "Reason abstractly and quantitatively",
-    "Construct viable arguments",
-    "Model with mathematics",
-    "Use tools strategically",
-    "Attend to precision",
-    "Look for structure"
+  "standards_support": [
+    "Represent translations, reflections and rotations using coordinates and precise geometric notation.",
+    "Describe transformations as functions that map preimages to images and preserve appropriate geometric structure.",
+    "Use sequences of rigid motions to establish or analyze congruence.",
+    "Analyze symmetry through transformations that map a figure onto itself.",
+    "Use transformations to explain tessellations, frieze patterns and repeating geometric designs.",
+    "Construct and communicate mathematical arguments using diagrams, coordinates, definitions and verified evidence."
   ],
-  "evidence": [
-    "Printable lesson work",
-    "Mastery check",
-    "Applied investigation",
-    "Reflection and correction"
-  ]
+  "mathematical_practices": [
+    "Make sense of problems and persevere in solving them.",
+    "Reason abstractly and quantitatively.",
+    "Construct viable arguments and critique reasoning.",
+    "Model with mathematics.",
+    "Use appropriate tools strategically.",
+    "Attend to precision.",
+    "Look for and make use of structure."
+  ],
+  "lesson_evidence": {
+    "u02-l01": ["Apply translation vectors to points and figures.", "Recover or verify translation rules from coordinate evidence.", "Explain which measurements are preserved."],
+    "u02-l02": ["Reflect figures across coordinate axes and specified lines.", "Connect reflection rules to geometric distance from the mirror line.", "Verify orientation and preserved measurements."],
+    "u02-l03": ["Rotate points and figures about the origin and other centers.", "Use angle, direction and center information precisely.", "Verify distance preservation under rotation."],
+    "u02-l04": ["Apply transformations in the stated order.", "Distinguish composition order and explain noncommutativity through examples.", "Describe a composite mapping from preimage to final image."],
+    "u02-l05": ["Use rigid motions to define and establish congruence.", "Identify invariant distances and angle measures.", "Connect transformation evidence to corresponding parts."],
+    "u02-l06": ["Identify and justify line, rotational and point symmetry.", "Determine rotational order and angle where appropriate.", "Distinguish visual appearance from a transformation that actually maps a figure onto itself."],
+    "u02-l07": ["Analyze tessellations and frieze patterns using transformations.", "Identify repeating transformation rules.", "Design or critique a pattern for gaps, overlaps, symmetry and repeatability."]
+  },
+  "unit_evidence": [
+    "Seven hardened printable lessons with written mathematical reasoning.",
+    "Foundation, Core and Extended practice pathways.",
+    "A 12-question mastery check drawn from a unit-aligned assessment bank.",
+    "Written corrections or targeted remediation when mastery evidence is incomplete.",
+    "Arcade Symmetry Studio & Transformation Design applied investigation with portfolio evidence."
+  ],
+  "assessment_expectations": {
+    "automatic": "Objective mastery-check responses may be scored by the local assessment engine.",
+    "human_review": "Open explanations, constructions, design evidence, corrections and project rubric judgments require teacher, mentor or qualified reviewer judgment.",
+    "mastery": "Target is 80% on objective evidence or documented correction/remediation evidence demonstrating the missed skills.",
+    "policy_note": "Automated score evidence and human-reviewed portfolio evidence are complementary; neither should be represented as evidence the learner did not actually produce."
+  }
 }
