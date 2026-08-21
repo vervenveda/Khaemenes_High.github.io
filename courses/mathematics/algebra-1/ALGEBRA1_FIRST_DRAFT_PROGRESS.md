@@ -14,17 +14,23 @@ Purpose: durable repository checkpoint so the full first-draft build does not de
 ## Unit progression
 - [x] Unit 01 — Foundations & Algebraic Thinking: 30-question compatibility-preserving rebuild activated
 - [x] Unit 02 — Expressions & Polynomials Foundations: 35-question compatibility-preserving rebuild activated
-- [ ] Unit 03 — Linear Equations, Formulas & Proportional Models
-- [ ] Unit 04 — Linear Inequalities & Absolute Value
-- [ ] Unit 05 — Functions, Domain, Range & Multiple Representations
-- [ ] Unit 06 — Linear Functions, Regression & Modelling
-- [ ] Unit 07 — Systems of Equations & Inequalities
-- [ ] Unit 08 — Exponents, Sequences & Exponential Functions
-- [ ] Unit 09 — Polynomials, Operations & Factoring
-- [ ] Unit 10 — Quadratic Functions & Equations
-- [x] Unit 11 — Radicals, Rational Exponents & Coordinate Geometry: existing 120-question rebuild retained for forensic review
-- [x] Unit 12 — Statistics, Financial Mathematics & Evidence: existing 140-question rebuild retained for forensic review
-- [x] Unit 13 — Integrated Mathematical Modelling Capstone: existing 100-question rebuild retained for forensic review
+- [x] Unit 03 — Linear Equations, Formulas & Proportional Models: 35-question rebuild activated
+- [x] Unit 04 — Linear Inequalities & Absolute Value: 30-question rebuild activated
+- [x] Unit 05 — Functions, Domain, Range & Multiple Representations: 35-question rebuild activated
+- [x] Unit 06 — Linear Functions, Regression & Modelling: 40-question rebuild activated
+- [x] Unit 07 — Systems of Equations & Inequalities: 35-question rebuild activated
+- [x] Unit 08 — Exponents, Sequences & Exponential Functions: 30-question rebuild activated
+- [x] Unit 09 — Polynomials, Operations & Factoring: 35-question rebuild activated
+- [x] Unit 10 — Quadratic Functions & Equations: 40-question rebuild activated
+- [x] Unit 11 — Radicals, Rational Exponents & Coordinate Geometry: 120-question rebuild retained; six-lesson map alignment confirmed in preservation pass
+- [x] Unit 12 — Statistics, Financial Mathematics & Evidence: 140-question rebuild retained for first draft
+- [x] Unit 13 — Integrated Mathematical Modelling Capstone: 100-question rebuild retained for first draft
+
+## First-draft content checkpoint
+- [x] All 13 unit content layers now present on the draft branch
+- [x] Units 01–10 compatibility IDs preserved across replacement pools
+- [x] Units 11–13 substantial prior rebuilds preserved rather than needlessly regenerated
+- [x] Main branch remains untouched by this first-draft content pass
 
 ## After unit content pass
 - [ ] Midterm forensic/content hardening
