@@ -1,0 +1,23 @@
+name: Algebra I First-Draft Validation
+
+on:
+  push:
+    paths:
+      - 'courses/mathematics/algebra-1/**'
+      - '.github/workflows/algebra1-first-draft-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/mathematics/algebra-1/**'
+      - '.github/workflows/algebra1-first-draft-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Validate Algebra I first draft
+        run: node courses/mathematics/algebra-1/tools/validate-first-draft.mjs
