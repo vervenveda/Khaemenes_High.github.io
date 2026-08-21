@@ -18,6 +18,18 @@
   const progress=load();
   document.querySelectorAll("[data-progress-key]").forEach(button=>{
     const key=button.dataset.progressKey;
+    if(key==="unit-01"){
+      let mastered=false;
+      try{
+        const record=JSON.parse(localStorage.getItem("khae-ela9-mastery-v2")||"{}").units?.[key];
+        mastered=Boolean(record?.lessonIds?.length===14&&record.lessonIds.every(id=>Number(record.lessonScores?.[id])>=Number(record.threshold||80)));
+      }catch{}
+      button.setAttribute("aria-pressed",String(mastered));
+      button.setAttribute("aria-disabled",String(!mastered));
+      button.textContent=mastered?"Mastery Verified ✓":"Open Coursebook to Verify Mastery";
+      button.addEventListener("click",()=>{if(!mastered)location.href=courseHref("units/unit-01/coursebook.html#reflection");});
+      return;
+    }
     const on=Boolean(progress[key]);
     button.setAttribute("aria-pressed",String(on));
     button.textContent=on?"Completed ✓":"Mark Complete";
