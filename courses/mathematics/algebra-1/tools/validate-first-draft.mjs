@@ -4,10 +4,7 @@ import process from 'node:process';
 
 const root = path.resolve('courses/mathematics/algebra-1');
 let problems = 0;
-const ok = (condition, label) => {
-  if (condition) console.log(`OK ${label}`);
-  else { console.error(`FAIL ${label}`); problems += 1; }
-};
+const ok = (condition, label) => { if (condition) console.log(`OK ${label}`); else { console.error(`FAIL ${label}`); problems += 1; } };
 const exists = rel => fs.existsSync(path.join(root, rel));
 const read = rel => fs.readFileSync(path.join(root, rel), 'utf8');
 const json = rel => JSON.parse(read(rel));
@@ -50,10 +47,11 @@ ok(exists('readiness/validate-transition-contract.mjs'), 'readiness bridge valid
 
 const midterm = read('assessments/midterm-units-01-06.html');
 const finalExam = read('assessments/final-exam-36-weeks.html');
+const examEngine = read('assets/exam-engine.js');
 ok(midterm.includes('"question_count": 60'), 'midterm declares 60 questions');
 ok(finalExam.includes('"question_count": 100'), 'final declares 100 questions');
-ok(midterm.includes('attempt_history') && midterm.includes('bestScore') && midterm.includes('mastery'), 'midterm preserves attempt history and mastery evidence');
-ok(finalExam.includes('attempt_history') && finalExam.includes('bestScore') && finalExam.includes('mastery'), 'final preserves attempt history and mastery evidence');
+ok(examEngine.includes('attempt_history') && examEngine.includes('bestScore') && examEngine.includes('mastery'), 'shared exam engine preserves attempt history, best score, and mastery evidence');
+ok(examEngine.includes('Saved score history and mastery evidence were preserved'), 'exam reset preserves scored evidence');
 
 const assessmentMap = json('assessments/assessment-map.json');
 ok(assessmentMap.midterm?.questions === 60, 'assessment map midterm count is 60');
@@ -63,7 +61,6 @@ ok(assessmentMap.definitive_answer_policy === true, 'definitive-answer policy re
 ok(exists('assessments/answer-key.json'), 'canonical singular answer key exists');
 ok(!exists('assessments/answer-keys.json'), 'unused plural answer-key duplicate is absent');
 ok(!exists('units/unit-13/unit-13'), 'nested duplicate Unit 13 tree is absent');
-
 const key = json('assessments/answer-key.json');
 ok(key.schema === 'khaemenes-algebra1-unit-answer-key', 'canonical answer key schema is valid');
 ok(key.unit === 13, 'canonical answer key belongs to Unit 13');
@@ -83,11 +80,11 @@ ok(transition.principles?.unfinishedLearningDoesNotAutomaticallyBlockProgression
 const surfaces = ['index.html','teacher/index.html','family/index.html','remediation/index.html','labs/index.html','projects/index.html','records/course-completion-certificate.html'];
 for (const file of surfaces) {
   ok(exists(file), `${file} exists`);
-  if (exists(file)) {
-    const html = read(file);
-    ok(/<main\b/i.test(html) && /href=["']#/.test(html), `${file} exposes accessibility/navigation surface`);
-  }
+  if (exists(file)) { const html = read(file); ok(/<main\b/i.test(html) && /href=["']#/.test(html), `${file} exposes accessibility/navigation surface`); }
 }
+const courseHome = read('index.html');
+ok(/Algebra I/i.test(courseHome) && /id=["']units["']/.test(courseHome), 'course home identifies Algebra I and exposes unit navigation');
+ok(!/Unit 06 · The Linear Model Laboratory/i.test(courseHome), 'course root is not a leaked Unit 06 shell');
 
 ok(!exists('GRADE10_ALGEBRA1_FILE_MANIFEST.md'), 'legacy grade manifest removed from production root');
 ok(!exists('MATHEMATICS_PORTAL_GRADE10_INTEGRATION.md'), 'legacy integration note removed from production root');
@@ -97,8 +94,5 @@ ok(!exists('UPLOAD_GRADE10_ALGEBRA1_FIRST.md'), 'legacy upload instructions remo
 ok(!exists('UPLOAD_MAP.md'), 'legacy upload map removed from production root');
 ok(exists('docs/internal/legacy'), 'legacy development archive is preserved');
 
-if (problems) {
-  console.error(`Algebra I whole-course validation failed: ${problems} problem(s).`);
-  process.exit(1);
-}
+if (problems) { console.error(`Algebra I whole-course validation failed: ${problems} problem(s).`); process.exit(1); }
 console.log('Algebra I whole-course validation passed.');
