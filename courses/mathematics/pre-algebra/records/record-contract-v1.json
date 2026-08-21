@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "contract_id": "KH-MATH-PA-RECORDS-V1",
   "course": {
     "id": "math-prealgebra",
@@ -34,6 +34,11 @@
       "may_inform_portfolio": true,
       "is_automatic_mastery_evidence": false
     },
+    "assessment_draft": {
+      "description": "Unsubmitted answers or reasoning saved for continuity. Draft state is not scored mastery evidence.",
+      "may_inform_mastery": false,
+      "must_not_be_presented_as_completed_assessment": true
+    },
     "validated_academic_record": {
       "description": "A record that has been validated by a protected institutional records workflow with an explicit identity and authority chain.",
       "available_in_current_public_browser_course": false
@@ -61,6 +66,30 @@
       "best_score",
       "attempt_count",
       "mastered_at"
+    ]
+  },
+  "assessment_exports": {
+    "scored_record_type": "khaemenes.assessment.result",
+    "draft_record_type": "khaemenes.assessment.draft",
+    "rule": "A draft and a submitted/scored result must never share an ambiguous record type.",
+    "scored_result_may_inform_mastery": true,
+    "draft_may_inform_mastery": false,
+    "required_scored_fields": [
+      "schema_version",
+      "record_type",
+      "exported_at",
+      "trust",
+      "assessment",
+      "mastery",
+      "domains"
+    ],
+    "required_draft_fields": [
+      "schema_version",
+      "record_type",
+      "exported_at",
+      "trust",
+      "assessment",
+      "draft"
     ]
   },
   "unit_bridge": {
