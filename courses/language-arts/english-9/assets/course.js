@@ -45,6 +45,7 @@
   if(headerActions){
     const shellLinks=[
       ["Learning Lab","learning-lab.html"],
+      ["Translator","tools/multilingual-translator/index.html"],
       ["Archaemenes","mentor.html"],
       ["Beta","beta.html"]
     ];

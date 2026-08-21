@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "unit": {
+    "id": "KH-ELA-ENG9-U02",
+    "course": "KH-ELA-ENG9",
+    "number": 2,
+    "title": "Myth, Epic & Archetype",
+    "duration_weeks": 3,
+    "recommended_sessions": 15,
+    "status": "complete",
+    "essential_question": "How do cultures use stories to examine duty, identity, power, belonging, and the unknown?",
+    "big_ideas": [
+      "A recurring pattern becomes meaningful only inside a particular cultural and historical context.",
+      "Heroes reveal communal ideals through their choices, limits, relationships, and consequences.",
+      "Comparison should preserve meaningful difference rather than flatten traditions into a universal formula.",
+      "Translations and editions are interpretations with identifiable makers, dates, purposes, and limits."
+    ],
+    "mastery_threshold": 80,
+    "progress_key": "unit-02",
+    "architecture": "coursebook-with-week-routes",
+    "readiness_note": "Unit 1 close-reading and evidence practices remain active. Complete Unit 1 or use its skill review before beginning the major comparison."
+  },
+  "lessons": [
+    {
+      "id": "KH-ELA-ENG9-U02-W04",
+      "number": 4,
+      "title": "Why Humans Make Myths",
+      "file": "coursebook.html#week4",
+      "duration": "5 sessions",
+      "objectives": [
+        "Distinguish myth as a literary and cultural category from falsehood",
+        "Analyze motif, symbol, structure, and cultural function",
+        "Record source, tradition, teller or author, translator, edition, and access status"
+      ],
+      "vocab_ids": ["myth", "cosmology", "motif", "symbol", "oral-tradition", "worldview"]
+    },
+    {
+      "id": "KH-ELA-ENG9-U02-W05",
+      "number": 5,
+      "title": "Epic Heroes & Cultural Values",
+      "file": "coursebook.html#week5",
+      "duration": "5 sessions",
+      "objectives": [
+        "Analyze how an epic hero embodies and challenges communal ideals",
+        "Compare tests, choices, consequences, and relationships",
+        "Use tense and voice purposefully in literary analysis"
+      ],
+      "vocab_ids": ["epic", "invocation", "epithet", "hubris", "quest", "hospitality"]
+    },
+    {
+      "id": "KH-ELA-ENG9-U02-W06",
+      "number": 6,
+      "title": "Comparative Myth Synthesis",
+      "file": "coursebook.html#week6",
+      "duration": "5 sessions",
+      "objectives": [
+        "Develop a comparative thesis based on a meaningful criterion",
+        "Synthesize similarities and differences without erasing context",
+        "Revise and defend a comparative literary analysis"
+      ],
+      "vocab_ids": ["synthesis", "transformation", "allusion", "context", "nuance", "universality"]
+    }
+  ],
+  "required_sources": {
+    "guide": "source-guide.html",
+    "minimum": "Two authentic traditions represented through named, lawful editions; at least one sustained passage from each.",
+    "edition_rule": "Every quotation records work, tradition or author, translator/editor when applicable, edition or host, and location marker.",
+    "summary_rule": "Course and ARSHIF summaries provide orientation only and may not replace the assigned primary passage as literary evidence."
+  },
+  "tools": [
+    {
+      "id": "interlingual-translator",
+      "file": "../../tools/multilingual-translator/index.html",
+      "role": "optional",
+      "purpose": "Directions, vocabulary, learner-owned notes, and translation criticism",
+      "evidence_policy": "Machine output is an unreviewed draft and is not authoritative literary evidence."
+    },
+    {
+      "id": "arshif-world-classics",
+      "url": "https://vervenveda.com/Arshif.github.io/halls/literacy-world-classics/",
+      "role": "extension",
+      "purpose": "Dossier discovery, context, and edition guidance",
+      "evidence_policy": "English 9 verifies the actual edition used."
+    },
+    {
+      "id": "arshif-indigenous-storywork",
+      "url": "https://vervenveda.com/Arshif.github.io/halls/literacy-indiginous-oral-traditions/",
+      "role": "extension",
+      "purpose": "Protocol, community authority, oral-performance context, and translation ethics",
+      "evidence_policy": "Public context only unless the relevant community permits more."
+    }
+  ],
+  "assessment": [
+    {
+      "title": "Unit 2 source and concept check",
+      "file": "../../assessments/unit-02/index.html",
+      "type": "mixed-response",
+      "threshold": 80
+    },
+    {
+      "title": "Comparative literary analysis and contextual archetype map",
+      "file": "coursebook.html#assessment",
+      "type": "educator-scored-performance"
+    }
+  ],
+  "guides": [
+    {"title": "Source and edition guide", "file": "source-guide.html"},
+    {"title": "Educator key", "file": "teacher-key.html"},
+    {"title": "Unit map", "file": "index.html"}
+  ],
+  "support_resources": [
+    {"title": "Archaemenes guidance", "file": "../../mentor.html", "mode": "transparent-local-guidance"},
+    {"title": "Beta feedback", "file": "../../beta.html", "mode": "local-worksheet"}
+  ]
+}

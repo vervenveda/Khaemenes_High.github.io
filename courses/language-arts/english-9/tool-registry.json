@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "course": "KH-ELA-ENG9",
+  "policy": "Tools supplement complete instruction and may not be required unless an accessible local fallback exists.",
+  "approved_for_planning": [
+    {"id":"prose-editor","name":"PROSE Editorial Suite","owner":"vervenveda/proresource_hub.github.io","path":"Protools/PROSE/Editorial Suite/editingsuite_index.html","roles":["drafting","revision","publication"],"network_review":"required-before-launch"},
+    {"id":"prose-handwriting","name":"PROSE Handwriting Lab","owner":"vervenveda/proresource_hub.github.io","path":"Protools/PROSE/Handwriting Lab/handwriting-lab.html","roles":["handwriting","fluency","print"],"optional":true},
+    {"id":"evidence-citation","name":"Evidence & Citation Studio","owner":"vervenveda/proresource_hub.github.io","path":"Protools/Evidence_Citation_Studio/index.html","roles":["research","provenance","citation"],"functional_review":"required-before-assessment-use"},
+    {"id":"aurora-daily-spark","name":"Daily Spark Studio","owner":"vervenveda/aurora.github.io","path":"apps/daily_writing_spark_index.html","roles":["multilingual-writing","fluency","warm-up"],"optional":true},
+    {"id":"aurora-story-spark","name":"Aurora Story Spark","owner":"vervenveda/aurora.github.io","path":"apps/story_spark_index.html","roles":["narrative","prompting","revision"],"optional":true},
+    {"id":"arcade-story-orb","name":"Quantum Story Seed Orb","owner":"vervenveda/arcade.github.io","path":"a_quantum_storyseed_orb_game_index.html","roles":["narrative","timed-writing","draft-export"],"optional":true},
+    {"id":"arcade-affixsix","name":"AffixSix","owner":"vervenveda/arcade.github.io","path":"AffixSix™_index.html","roles":["morphology","vocabulary"],"word-bank-review":"required"},
+    {"id":"linguistics-framework","name":"Language Learning Hall Framework","owner":"vervenveda/Khaemenes_Linguistics.github.io","path":"Halls/docs/PROFICIENCY_AND_STANDARDS_FRAMEWORK.md","roles":["cefr","actfl","mediation","plurilingual-reference"],"interface_tool":false},
+    {"id":"interlingual-translator","name":"Khaemenes Multilingual Translator v2.2","owner":"vervenveda/Khaemenes_Linguistics.github.io","path":"multilingual-translator_index.html","course_snapshot":"tools/multilingual-translator/index.html","roles":["directions-support","vocabulary-support","learner-owned-notes","translation-criticism"],"language_count":102,"network":"offline-verified-library-or-explicit-consent-online","prohibited_roles":["authoritative-literary-translation","unmarked-assessment-assistance","required-network-access"],"evidence_boundary":"machine-output-is-an-unreviewed-draft"},
+    {"id":"arshif-world-classics","name":"ARSHIF World Classics & Humanities Hall","owner":"vervenveda/Arshif.github.io","path":"halls/literacy-world-classics/index.html","roles":["global-literature","edition-guidance","context","extended-reading"],"evidence_boundary":"course-supplies-and-verifies-required-edition"},
+    {"id":"arshif-indigenous-storywork","name":"ARSHIF Indigenous Oral Traditions & Storywork Hall","owner":"vervenveda/Arshif.github.io","path":"halls/literacy-indiginous-oral-traditions/index.html","roles":["oral-tradition","protocol","community-authority","translation-ethics"],"evidence_boundary":"public-context-only-unless-community-authority-permits-more"}
+  ],
+  "conditional": [
+    {"id":"translation-helper","name":"Khaemenes Translation Helper","owner":"vervenveda/Khaemenes_Linguistics.github.io","path":"apps/translation_helper_index.html","hold":["rtl-test","language-metadata","speech-provider-notice"]},
+    {"id":"esl-mastercourse","name":"ESL Mastercourse","owner":"vervenveda/Khaemenes_Linguistics.github.io","path":"apps/ESL_course_index.html","hold":["placement-model","grade-level-bridge","assessment-crosswalk"]}
+  ],
+  "rejected_current_form": [
+    {"id":"dictionarybox","reason":"external third-party form and inaccessible legacy interface"},
+    {"id":"scrabble-finder","reason":"external third-party form, weak curricular evidence, unclear data boundary"},
+    {"id":"third-party-word-day","reason":"third-party scripts, forms, and iframes outside course control"}
+  ]
+}
