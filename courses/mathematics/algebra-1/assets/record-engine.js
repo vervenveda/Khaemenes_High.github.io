@@ -1,25 +1,23 @@
-
 (()=>{
 "use strict";
-const $=s=>document.querySelector(s),KEY="khaemenes-algebra1-completion-record-v1";
-function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch{return{}}}
+const $=s=>document.querySelector(s),KEY="khaemenes-algebra1-completion-record-v2",THRESHOLD=80,UNIT_COUNT=13;
+const MIDTERM_KEY="khaemenes-algebra1-midterm-result-v1",FINAL_KEY="khaemenes-algebra1-final-result-v1";
+function read(k,f=null){try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}}
+function write(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}}
 function collect(){const out={};document.querySelectorAll("[data-field]").forEach(e=>out[e.dataset.field]=e.value);return out}
-function fill(data){document.querySelectorAll("[data-field]").forEach(e=>{if(data[e.dataset.field]!=null)e.value=data[e.dataset.field]})}
-function calculate(){
- const g=collect(),vals=["coursework","midterm","final","capstone"].map(k=>Number(g[k]));
- if(vals.some(v=>!Number.isFinite(v)))return alert("Enter all four component scores.");
- const p=vals[0]*.40+vals[1]*.20+vals[2]*.30+vals[3]*.10;
- $("#finalGrade").value=p.toFixed(1);
- $("#letterGrade").value=p>=90?"A":p>=80?"B":p>=70?"C":p>=60?"D":"F";
-}
-$("#calculate").onclick=calculate;
-$("#save").onclick=()=>{localStorage.setItem(KEY,JSON.stringify(collect()));alert("Record saved locally.")};
-$("#print").onclick=()=>window.print();
-$("#export").onclick=()=>{
- const blob=new Blob([JSON.stringify(collect(),null,2)],{type:"application/json"});
- const url=URL.createObjectURL(blob),a=document.createElement("a");
- a.href=url;a.download="algebra1-course-completion-record.json";a.click();
- setTimeout(()=>URL.revokeObjectURL(url),500);
-};
-fill(load());
+function fill(data){document.querySelectorAll("[data-field]").forEach(e=>{if(data?.[e.dataset.field]!=null)e.value=data[e.dataset.field]})}
+function bestExam(key){const r=read(key,null);const n=Number(r?.attempt_history?.bestScore??r?.percent);return Number.isFinite(n)?n:null}
+function unitRecord(n){const key=`khaemenes-algebra1-unit${String(n).padStart(2,"0")}-progress-v1`,r=read(key,null);if(!r)return{unit:n,present:false,mastered:false,best:null,lessons:0,mastered_lessons:0};const attempts=r.lessonAttempts&&typeof r.lessonAttempts==="object"?Object.values(r.lessonAttempts):[];const scores=attempts.map(a=>Number(a?.bestScore)).filter(Number.isFinite);const completed=Array.isArray(r.completed)?r.completed.length:0;const allAttempted=scores.length>0;const mastered=Boolean(r?.unitMastery?.mastered)||(allAttempted&&scores.every(x=>x>=THRESHOLD));return{unit:n,present:true,mastered,best:scores.length?Math.min(...scores):null,lessons:scores.length,mastered_lessons:scores.filter(x=>x>=THRESHOLD).length,unitMastery:r.unitMastery||null}}
+function scanEvidence(){const units=Array.from({length:UNIT_COUNT},(_,i)=>unitRecord(i+1));const midterm=bestExam(MIDTERM_KEY),final=bestExam(FINAL_KEY),g=collect(),capstone=Number(g.capstone);const capstoneValid=Number.isFinite(capstone)&&capstone>=0&&capstone<=100;const status={schema:"khaemenes.algebra1.completion-evidence.v1",generated_at:new Date().toISOString(),course_id:"KH-MATH-A1",threshold:THRESHOLD,units,unit_mastery_count:units.filter(u=>u.mastered).length,all_units_mastered:units.every(u=>u.mastered),midterm:{best:midterm,mastered:Number(midterm)>=THRESHOLD},final:{best:final,mastered:Number(final)>=THRESHOLD},capstone:{score:capstoneValid?capstone:null,source:capstoneValid?"parent/program attestation":"not entered",recommended:true},certificate_ready:units.every(u=>u.mastered)&&Number(midterm)>=THRESHOLD&&Number(final)>=THRESHOLD,trust:{evidence_origin:"browser-local canonical course engines",learner_scoped:false,independently_authenticated:false,parent_or_program_validation_required:true,official_state_or_district_record:false}};return status}
+function setEvidenceUI(s){const host=$("#evidenceStatus");if(!host)return;const rows=s.units.map(u=>`<tr><td>Unit ${String(u.unit).padStart(2,"0")}</td><td>${u.present?"Found":"Missing"}</td><td>${u.mastered?"Mastered":u.present?"Developing":"No evidence"}</td><td>${u.best==null?"—":u.best+"%"}</td></tr>`).join("");host.innerHTML=`<p><strong>${s.unit_mastery_count}/${UNIT_COUNT}</strong> units mastered · Midterm <strong>${s.midterm.best??"—"}${s.midterm.best!=null?"%":""}</strong> · Final <strong>${s.final.best??"—"}${s.final.best!=null?"%":""}</strong></p><div class="table-wrap"><table><thead><tr><th>Unit</th><th>Evidence</th><th>Status</th><th>Lowest lesson best</th></tr></thead><tbody>${rows}</tbody></table></div><p class="notice"><strong>${s.certificate_ready?"Completion evidence threshold met.":"Completion evidence is not yet complete."}</strong> Certificate readiness requires all 13 units at ≥80%, midterm best ≥80%, and final best ≥80%. Capstone remains a separately attested portfolio component.</p>`;const badge=$("#certificateState");if(badge){badge.textContent=s.certificate_ready?"Evidence threshold met — validation/signature required":"Not yet ready for issuance";badge.className=`pill ${s.certificate_ready?"good":""}`}}
+function calculate(){const g=collect(),vals=["coursework","midterm","final","capstone"].map(k=>Number(g[k]));if(vals.some(v=>!Number.isFinite(v)||v<0||v>100))return alert("Enter valid 0–100 scores for all four grade components.");const p=vals[0]*.40+vals[1]*.20+vals[2]*.30+vals[3]*.10;$("#finalGrade").value=p.toFixed(1);$("#letterGrade").value=p>=90?"A":p>=80?"B":p>=70?"C":p>=60?"D":"F"}
+async function fingerprint(obj){const text=JSON.stringify(obj);if(globalThis.crypto?.subtle){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(text));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}let h=2166136261;for(let i=0;i<text.length;i++){h^=text.charCodeAt(i);h=Math.imul(h,16777619)}return`local-${(h>>>0).toString(16).padStart(8,"0")}`}
+async function buildBundle(){const record=collect(),evidence=scanEvidence(),payload={schema:"khaemenes.algebra1.course-record-bundle.v1",exported_at:new Date().toISOString(),record,evidence};payload.integrity_fingerprint=await fingerprint(payload);payload.integrity_note="Fingerprint detects later file changes; it is not an identity signature, accreditation mark, or independent authentication.";return payload}
+function download(name,obj){const blob=new Blob([JSON.stringify(obj,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),500)}
+$("#calculate")?.addEventListener("click",calculate);
+$("#scanEvidence")?.addEventListener("click",()=>{const s=scanEvidence();setEvidenceUI(s);if(s.midterm.best!=null)document.querySelector('[data-field="midterm"]').value=s.midterm.best;if(s.final.best!=null)document.querySelector('[data-field="final"]').value=s.final.best;write(`${KEY}-last-evidence`,s)});
+$("#save")?.addEventListener("click",()=>{write(KEY,collect());alert("Record saved locally. Learner identity and signatures remain parent/program validated fields.")});
+$("#print")?.addEventListener("click",()=>window.print());
+$("#export")?.addEventListener("click",async()=>download("algebra1-course-record-bundle.json",await buildBundle()));
+fill(read(KEY,read("khaemenes-algebra1-completion-record-v1",{})));setEvidenceUI(scanEvidence());
 })();
