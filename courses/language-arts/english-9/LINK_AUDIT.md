@@ -11,8 +11,8 @@ All student-facing network destinations open published Verve N Veda pages rather
 - **linguistics**: https://vervenveda.github.io/Khaemenes_Linguistics.github.io/
 - **arshif**: https://vervenveda.github.io/Arshif.github.io/
 - **proresources**: https://vervenveda.github.io/proresource_hub.github.io/
-- **prose_gateway**: https://vervenveda.github.io/proresource_hub.github.io/Protools/PROSE_index.html
-- **prose**: https://vervenveda.github.io/proresource_hub.github.io/Protools/PROSE%E2%84%A2%20editingsuite_index.html
+- **prose_gateway**: https://vervenveda.github.io/proresource_hub.github.io/Protools/PROSE/editorial-gateway.html
+- **prose**: https://vervenveda.github.io/proresource_hub.github.io/Protools/PROSE/Editorial%20Suite/editorial-suite_core.html
 - **evidence**: https://vervenveda.github.io/proresource_hub.github.io/Protools/Evidence_Citation_Studio/index.html
 - **plera_tool**: https://vervenveda.github.io/proresource_hub.github.io/Protools/PLERA%E2%84%A2%20Search%20Gate_index.html
 - **khaeclean**: https://vervenveda.github.io/proresource_hub.github.io/Protools/KhaeClean%E2%84%A2_index.html
