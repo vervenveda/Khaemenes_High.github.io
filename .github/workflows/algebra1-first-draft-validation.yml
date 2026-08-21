@@ -23,3 +23,5 @@ jobs:
         run: node courses/mathematics/algebra-1/tools/validate-first-draft.mjs
       - name: Run Algebra I forensic audit suite
         run: node courses/mathematics/algebra-1/tools/audit-forensic.mjs
+      - name: Audit effective Algebra I question parity
+        run: node courses/mathematics/algebra-1/tools/audit-question-parity.mjs
