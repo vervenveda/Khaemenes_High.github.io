@@ -1,0 +1,71 @@
+{
+  "standardVersion": "1.0.0",
+  "course": {
+    "title": "English 9 — Global Language Arts",
+    "repository": "vervenveda/Khaemenes_High.github.io",
+    "branch": "english9-unit1-foundation",
+    "commit": "a4bf2e3338b97a41ca6ad025a1e95d9bd75fefe9",
+    "path": "courses/language-arts/english-9",
+    "courseVersion": "development-baseline-2026-08-21"
+  },
+  "audit": {
+    "auditId": "KH-ELA-ENG9-AUDIT-20260821-P01",
+    "startedAt": "2026-08-21T08:00:00Z",
+    "completedAt": "2026-08-21T09:00:00Z",
+    "reviewer": "Khaemenes Academy course audit",
+    "scope": "Full static repository architecture, curriculum completeness, mastery authority, records trust, accessibility, public presentation, multilingual support, tools, reporting, and release readiness."
+  },
+  "inventory": {
+    "expected": 106,
+    "observed": 106,
+    "missing": [],
+    "unexpected": []
+  },
+  "validation": {
+    "automatedTests": {"status": "pass-01-static-contract-and-local-link-validation-added"},
+    "manualChecks": [
+      {"check": "Unit 1 mastery gate", "result": "pass"},
+      {"check": "Unit 2 mastery integration", "result": "baseline-fail"},
+      {"check": "Mentor identity consistency", "result": "baseline-fail"},
+      {"check": "Units 3-12 instructional completeness", "result": "baseline-fail"}
+    ],
+    "brokenRequiredLinks": [],
+    "syntaxErrors": []
+  },
+  "domains": [
+    {"id":"curriculum","weight":14,"score":2,"weightedResult":7,"evidence":["12-unit map","36 weekly plans","Units 1-2 coursebooks"],"findings":["Units 3-12 remain mapped shells"]},
+    {"id":"instruction-correction","weight":14,"score":2,"weightedResult":7,"evidence":["Unit 1 and 2 guided instruction","revision and source guidance"],"findings":["not course-wide"]},
+    {"id":"assessment-mastery","weight":14,"score":1,"weightedResult":3.5,"evidence":["Unit 1 mastery engine","human-reviewed performance rubrics"],"findings":["Unit 2 and later units lack canonical mastery integration"]},
+    {"id":"attempts-records","weight":10,"score":1,"weightedResult":2.5,"evidence":["lessonScores","draft preservation","review separation"],"findings":["minimum attempt-history fields incomplete"]},
+    {"id":"progression-completion","weight":8,"score":1,"weightedResult":2,"evidence":["Unit 1 progression gate"],"findings":["generic page completion competes with mastery"]},
+    {"id":"accessibility-response","weight":10,"score":3,"weightedResult":7.5,"evidence":["semantic pages","keyboard controls","print styles","multiple response modes"],"findings":["full manual assistive-technology pass pending"]},
+    {"id":"international-interlingual","weight":7,"score":3,"weightedResult":5.25,"evidence":["global literature design","translator boundary","source and edition guidance"],"findings":["course-wide translated interface remains incomplete"]},
+    {"id":"privacy-resilience","weight":9,"score":3,"weightedResult":6.75,"evidence":["local-first drafts","explicit transmission warning","no mentor surveillance claim"],"findings":["legacy/canonical migration testing pending"]},
+    {"id":"family-reporting","weight":6,"score":2,"weightedResult":3,"evidence":["gradebook and records pages","printable logs"],"findings":["no canonical Academy family-progress provider"]},
+    {"id":"visual-print","weight":5,"score":3,"weightedResult":3.75,"evidence":["shared Khaemenes CSS","print controls","responsive layouts"],"findings":["full visual regression and print render pass pending"]},
+    {"id":"resources-games-tools","weight":3,"score":3,"weightedResult":2.25,"evidence":["tool registry","PROSE audit","learning lab evidence boundary"],"findings":["skill metadata normalization remains incomplete"]}
+  ],
+  "blockers": [
+    "Units 3-12 are mapped shells rather than complete instructional coursebooks.",
+    "Generic page completion is not canonical mastery.",
+    "Unit 2 lacks canonical mastery integration at baseline.",
+    "Attempt history does not yet satisfy the A+++ minimum contract at baseline.",
+    "Legacy and canonical progress models are not reconciled."
+  ],
+  "exceptions": [],
+  "remediation": [
+    {"priority":1,"action":"Correct Eiren mentor authority and public presentation","status":"completed-on-working-branch"},
+    {"priority":2,"action":"Upgrade mastery attempt history and Unit 2 integration","status":"completed-on-working-branch"},
+    {"priority":3,"action":"Replace page completion with review-only semantics","status":"completed-on-working-branch"},
+    {"priority":4,"action":"Build Units 3-12 sequentially","status":"pending"},
+    {"priority":5,"action":"Connect canonical family reporting","status":"pending"}
+  ],
+  "disposition": {
+    "totalScore": 50.5,
+    "rating": "not-audit-ready",
+    "releaseReady": false,
+    "certified": false,
+    "reviewerDecision": "Systematic remediation required; do not claim A+++ alignment yet.",
+    "reauditDate": null
+  }
+}
