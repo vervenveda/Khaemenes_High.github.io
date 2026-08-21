@@ -1,14 +1,17 @@
 (() => {
   "use strict";
 
-  const config = window.ASSESSMENT_CONFIG;
+  const config = window.ASSESSMENT_CONFIG || {};
   const scriptEl = document.currentScript;
   const coreSrc = new URL("assessment-engine-core.js", scriptEl?.src || location.href).href;
   const CLASSIFICATION = "public-self-check-nonconfidential";
-  const RESULT_SCHEMA = "khaemenes-unit-mastery-result-v3";
+  const RESULT_SCHEMA = "khaemenes-unit-mastery-result-v4";
   const RECORD_SCHEMA = "1.0";
+  const HISTORY_LIMIT = 24;
   const COURSE = Object.freeze({ id: "KH-MATH-PA", title: "Khaemenes Global Pre-Algebra" });
   const UNIT = Object.freeze({ id: "KH-MATH-PA-U01", number: 1, title: "Number Systems, Factors & Estimation" });
+  let beforeSubmit = null;
+  let beforeReset = null;
 
   function readJSON(key, fallback = null) {
     try {
@@ -19,105 +22,158 @@
     }
   }
 
-  function currentDraft() {
-    const key = config?.storage_key ? `${config.storage_key}-draft` : null;
-    if (!key) return { answers: {}, reasoning: {}, saved_at: null };
-    const stored = readJSON(key, {}) || {};
-    const answers = {};
-    const reasoning = {};
+  function writeJSON(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); return true; }
+    catch { return false; }
+  }
 
-    (config?.questions || []).forEach((_, index) => {
-      const selected = document.querySelector(`input[name="q${index}"]:checked`);
-      if (selected) answers[index] = Number(selected.value);
-    });
-
-    (config?.reasoning_prompts || []).forEach((_, index) => {
-      const field = document.getElementById(`reasoning-${index}`);
-      reasoning[index] = field ? field.value.trim() : String(stored.reasoning?.[index] || "");
-    });
-
+  function compactAttempt(result) {
     return {
-      answers: Object.keys(answers).length ? answers : (stored.answers || {}),
-      reasoning,
-      saved_at: stored.saved_at || null
+      score: Number(result?.score) || 0,
+      total: Number(result?.total) || 0,
+      percent: Number(result?.percent) || 0,
+      passed: Number(result?.percent) >= (Number(result?.threshold ?? config.threshold) || 80),
+      completed_at: result?.completed_at || null,
+      domains: result?.domains || {}
     };
   }
 
-  function trust() {
+  function normalizePrior(raw) {
+    if (!raw || typeof raw !== "object" || !Number.isFinite(Number(raw.percent))) return null;
+    const threshold = Number(raw.threshold ?? config.threshold) || 80;
+    const percent = Math.max(0, Math.min(100, Number(raw.percent)));
+    if (raw.result_schema === RESULT_SCHEMA && raw.attempt_history) return raw;
+    const at = raw.completed_at || new Date().toISOString();
+    const mastered = percent >= threshold;
+    return {
+      ...raw,
+      result_schema: RESULT_SCHEMA,
+      threshold,
+      latest_passed: percent >= threshold,
+      passed: mastered,
+      mastery: { threshold, mastered, mastered_at: mastered ? at : null },
+      attempt_history: {
+        firstScore: percent,
+        latestScore: percent,
+        bestScore: percent,
+        attemptCount: 1,
+        masteredAt: mastered ? at : null,
+        bestCompletedAt: at,
+        attempts: [compactAttempt({ ...raw, percent, threshold, completed_at: at })]
+      }
+    };
+  }
+
+  function mergeCurrentWithPrior(currentRaw, priorRaw) {
+    const current = normalizePrior(currentRaw);
+    if (!current) return normalizePrior(priorRaw);
+    const prior = normalizePrior(priorRaw);
+    if (!prior) return current;
+    const threshold = Number(current.threshold ?? config.threshold) || 80;
+    const latest = Number(current.percent);
+    const priorHistory = prior.attempt_history || {};
+    const previousBest = Number(priorHistory.bestScore);
+    const bestScore = Number.isFinite(previousBest) ? Math.max(previousBest, latest) : latest;
+    const masteredAt = priorHistory.masteredAt || prior.mastery?.mastered_at || (latest >= threshold ? current.completed_at : null);
+    const attempts = [...(priorHistory.attempts || []), compactAttempt(current)].slice(-HISTORY_LIMIT);
+    return {
+      ...current,
+      result_schema: RESULT_SCHEMA,
+      latest_passed: latest >= threshold,
+      passed: bestScore >= threshold,
+      mastery: { threshold, mastered: bestScore >= threshold, mastered_at: masteredAt },
+      attempt_history: {
+        firstScore: Number.isFinite(Number(priorHistory.firstScore)) ? Number(priorHistory.firstScore) : Number(prior.percent),
+        latestScore: latest,
+        bestScore,
+        attemptCount: Number(priorHistory.attemptCount || 1) + 1,
+        masteredAt,
+        bestCompletedAt: latest > previousBest ? current.completed_at : (priorHistory.bestCompletedAt || prior.completed_at || null),
+        attempts
+      }
+    };
+  }
+
+  function hardenStoredResult(prior = null) {
+    if (!config.storage_key) return null;
+    const current = readJSON(config.storage_key, null);
+    const hardened = prior ? mergeCurrentWithPrior(current, prior) : normalizePrior(current);
+    if (!hardened) return null;
+    hardened.assessment_classification = CLASSIFICATION;
+    hardened.trust = {
+      classification: "browser-local-self-scored",
+      authoritative: false,
+      confidential: false,
+      cryptographically_verified: false,
+      digitally_signed: false,
+      editable_storage: true,
+      review_required: true
+    };
+    writeJSON(config.storage_key, hardened);
+    return hardened;
+  }
+
+  function currentDraft() {
+    const key = config.storage_key ? `${config.storage_key}-draft` : null;
+    const stored = key ? readJSON(key, {}) || {} : {};
+    const answers = {};
+    const reasoning = {};
+    (config.questions || []).forEach((_, index) => {
+      const selected = document.querySelector(`input[name="q${index}"]:checked`);
+      if (selected) answers[index] = Number(selected.value);
+    });
+    (config.reasoning_prompts || []).forEach((_, index) => {
+      const field = document.getElementById(`reasoning-${index}`);
+      reasoning[index] = field ? field.value.trim() : String(stored.reasoning?.[index] || "");
+    });
+    return { answers: Object.keys(answers).length ? answers : (stored.answers || {}), reasoning, saved_at: stored.saved_at || null };
+  }
+
+  function trust(note, origin = "canonical_course_engine_evidence") {
     return {
       class: "unscoped_browser_unit_evidence",
-      evidence_origin: "canonical_course_engine_evidence",
+      evidence_origin: origin,
       storage: "browser_local_course_evidence",
       learner_scoped: false,
       independently_authenticated: false,
       official_record_without_validation: false,
       assessment_classification: CLASSIFICATION,
-      note: "This public browser assessment is self-scored local evidence. It is not bound to a learner identity and must not be silently attributed to a learner profile or treated as a validated institutional record."
+      note
     };
   }
 
-  function hardenStoredResult() {
-    if (!config?.storage_key) return null;
-    try {
-      const raw = localStorage.getItem(config.storage_key);
-      if (!raw) return null;
-      const result = JSON.parse(raw);
-      if (!result || typeof result !== "object") return null;
-      result.result_schema = RESULT_SCHEMA;
-      result.assessment_classification = CLASSIFICATION;
-      result.trust = {
-        classification: "browser-local-self-scored",
-        authoritative: false,
-        confidential: false,
-        cryptographically_verified: false,
-        digitally_signed: false,
-        editable_storage: true,
-        review_required: true
-      };
-      localStorage.setItem(config.storage_key, JSON.stringify(result));
-      return result;
-    } catch {
-      return null;
-    }
-  }
-
   function assessmentResultRecord(result) {
-    const percent = Number.isFinite(Number(result?.percent)) ? Number(result.percent) : null;
-    const threshold = Number(config?.threshold) || 80;
+    const threshold = Number(result?.mastery?.threshold ?? result?.threshold ?? config.threshold) || 80;
+    const h = result?.attempt_history || {};
+    const latest = Number.isFinite(Number(h.latestScore)) ? Number(h.latestScore) : Number(result?.percent);
+    const best = Number.isFinite(Number(h.bestScore)) ? Number(h.bestScore) : latest;
+    const mastered = Number.isFinite(best) ? best >= threshold : false;
     return {
       schema_version: RECORD_SCHEMA,
       record_type: "khaemenes.assessment.result-record",
       exported_at: new Date().toISOString(),
-      trust: trust(),
+      trust: trust("This public browser assessment is self-scored local evidence. It is not bound to a learner identity and must not be silently attributed to a learner profile or treated as a validated institutional record."),
       course: COURSE,
       unit: UNIT,
-      assessment: {
-        id: config?.storage_key || "khaemenes-prealgebra-u01-mastery-v1",
-        title: config?.title || "Unit 1 Mastery Check",
-        pathway: config?.pathway || "Cumulative Assessment",
-        classification: CLASSIFICATION
-      },
+      assessment: { id: config.storage_key || "khaemenes-prealgebra-u01-mastery-v1", title: config.title || "Unit 1 Mastery Check", pathway: config.pathway || "Cumulative Assessment", classification: CLASSIFICATION },
       mastery: {
         threshold,
-        state: percent === null ? "not_assessed" : (percent >= threshold ? "mastered" : "developing"),
-        percent,
-        passed: percent !== null ? percent >= threshold : false,
+        state: mastered ? "mastered" : (Number.isFinite(latest) ? "developing" : "not_assessed"),
+        mastered,
+        mastered_at: h.masteredAt || result?.mastery?.mastered_at || null,
+        first_score: Number.isFinite(Number(h.firstScore)) ? Number(h.firstScore) : latest,
+        latest_score: Number.isFinite(latest) ? latest : null,
+        best_score: Number.isFinite(best) ? best : null,
+        attempt_count: Number(h.attemptCount) || (Number.isFinite(latest) ? 1 : 0),
+        latest_passed: Number.isFinite(latest) ? latest >= threshold : false,
         score: Number.isFinite(Number(result?.score)) ? Number(result.score) : null,
         total: Number.isFinite(Number(result?.total)) ? Number(result.total) : null,
         completed_at: result?.completed_at || null
       },
-      diagnostic_evidence: {
-        domains: result?.domains || {},
-        answers: result?.answers || {}
-      },
-      learner_created_evidence: {
-        reasoning: result?.reasoning || {}
-      },
-      source: {
-        storage_key: config?.storage_key || null,
-        environment: "public_browser_localStorage",
-        result_schema: RESULT_SCHEMA
-      }
+      diagnostic_evidence: { domains: result?.domains || {}, answers: result?.answers || {} },
+      learner_created_evidence: { reasoning: result?.reasoning || {} },
+      attempt_history: Array.isArray(h.attempts) ? h.attempts : [],
+      source: { storage_key: config.storage_key || null, environment: "public_browser_localStorage", result_schema: RESULT_SCHEMA }
     };
   }
 
@@ -127,32 +183,13 @@
       schema_version: RECORD_SCHEMA,
       record_type: "khaemenes.assessment.draft-record",
       exported_at: new Date().toISOString(),
-      trust: {
-        ...trust(),
-        evidence_origin: "learner_created_evidence",
-        note: "This is an unfinished assessment draft. It is not scored mastery evidence and must never grant progression or mastery."
-      },
+      trust: trust("This is an unfinished assessment draft. It is not scored mastery evidence and must never grant progression or mastery.", "learner_created_evidence"),
       course: COURSE,
       unit: UNIT,
-      assessment: {
-        id: config?.storage_key || "khaemenes-prealgebra-u01-mastery-v1",
-        title: config?.title || "Unit 1 Mastery Check",
-        pathway: config?.pathway || "Cumulative Assessment"
-      },
-      draft: {
-        answers: draft.answers || {},
-        reasoning: draft.reasoning || {},
-        saved_at: draft.saved_at || null
-      },
-      mastery: {
-        threshold: Number(config?.threshold) || 80,
-        state: "not_assessed",
-        may_grant_mastery: false
-      },
-      source: {
-        storage_key: config?.storage_key ? `${config.storage_key}-draft` : null,
-        environment: "public_browser_localStorage"
-      }
+      assessment: { id: config.storage_key || "khaemenes-prealgebra-u01-mastery-v1", title: config.title || "Unit 1 Mastery Check", pathway: config.pathway || "Cumulative Assessment" },
+      draft,
+      mastery: { threshold: Number(config.threshold) || 80, state: "not_assessed", may_grant_mastery: false },
+      source: { storage_key: config.storage_key ? `${config.storage_key}-draft` : null, environment: "public_browser_localStorage" }
     };
   }
 
@@ -172,11 +209,26 @@
     event.preventDefault();
     event.stopImmediatePropagation();
     const result = hardenStoredResult();
-    if (result) {
-      downloadJSON("khaemenes-prealgebra-u01-mastery-result.json", assessmentResultRecord(result));
-    } else {
-      downloadJSON("khaemenes-prealgebra-u01-mastery-draft.json", assessmentDraftRecord());
-    }
+    if (result) downloadJSON("khaemenes-prealgebra-u01-mastery-result.json", assessmentResultRecord(result));
+    else downloadJSON("khaemenes-prealgebra-u01-mastery-draft.json", assessmentDraftRecord());
+  }
+
+  function updateEligibility() {
+    const box = document.getElementById("masteryEligibility");
+    if (!box) return;
+    const progress = readJSON("khaemenes-prealgebra-unit01-progress-v1", {}) || {};
+    const scores = progress.lessonScores || {};
+    const attempts = progress.lessonAttempts || {};
+    const completed = new Set(Array.isArray(progress.completedLessons) ? progress.completedLessons : []);
+    const ids = ["l01", "l02", "l03", "l04", "l05", "l06"];
+    const ready = ids.every(id => {
+      const best = Number(attempts?.[id]?.bestScore);
+      return (Number.isFinite(best) && best >= 80) || completed.has(id) || Number(scores[id]) >= 80;
+    });
+    box.textContent = ready
+      ? "Lesson gate complete: all six lesson practices have demonstrated at least 80% mastery. You are ready for the Unit 1 Mastery Check."
+      : "Recommended before submitting: demonstrate at least 80% mastery in all six lesson practices. You may still open and review this assessment.";
+    box.style.borderLeftColor = ready ? "var(--green)" : "var(--gold)";
   }
 
   function decorate() {
@@ -185,36 +237,60 @@
     const resultMessage = document.getElementById("resultMessage");
     if (submit && /submit/i.test(submit.textContent)) submit.textContent = "Submit & Self-Check";
     if (exportButton) exportButton.textContent = "Export Learning Record";
-
     const hero = document.querySelector("main .hero .wrap");
     if (hero && !document.getElementById("masteryTrustNotice")) {
       const notice = document.createElement("p");
       notice.id = "masteryTrustNotice";
       notice.className = "notice";
-      notice.innerHTML = "<strong>Learning mastery check:</strong> this public self-check supports the 80% learning gate, corrections, and progress review. Its browser-local result is editable and is not a confidential, digitally signed, or independently authenticated academic record.";
+      notice.innerHTML = "<strong>Learning mastery check:</strong> this public self-check supports the 80% learning gate, corrections, and progress review. Browser-local results are editable and are not confidential, digitally signed, or independently authenticated academic records.";
       hero.appendChild(notice);
     }
-
-    if (resultMessage && localStorage.getItem(config?.storage_key || "")) {
-      resultMessage.textContent = "Saved locally as an unverified learning-mastery result. Parent/administrator review is required before using it as portfolio evidence.";
+    const stored = hardenStoredResult();
+    if (resultMessage && stored?.attempt_history) {
+      const h = stored.attempt_history;
+      resultMessage.textContent = `Saved locally · latest ${h.latestScore ?? "—"}% · best ${h.bestScore ?? "—"}% · ${h.attemptCount || 0} attempt(s).`;
     }
+    updateEligibility();
   }
 
   function installGuards() {
     hardenStoredResult();
-    decorate();
-
+    updateEligibility();
     const submit = document.getElementById("submitButton");
+    const reset = document.getElementById("resetButton");
     const exportButton = document.getElementById("exportButton");
 
+    submit?.addEventListener("click", () => { beforeSubmit = hardenStoredResult(); }, true);
     submit?.addEventListener("click", () => {
       setTimeout(() => {
-        hardenStoredResult();
+        const merged = hardenStoredResult(beforeSubmit);
+        beforeSubmit = null;
         decorate();
+        if (merged?.attempt_history && document.getElementById("resultSummary")) {
+          const h = merged.attempt_history;
+          const latest = Number(h.latestScore);
+          const best = Number(h.bestScore);
+          const threshold = Number(merged.threshold ?? config.threshold) || 80;
+          document.getElementById("resultSummary").textContent = `${latest}% latest · ${best}% best · threshold ${threshold}% · attempt ${h.attemptCount}. ${latest >= threshold ? "You met the mastery standard on this attempt." : best >= threshold ? "Earlier mastery is preserved; use this retake to target weak areas." : "Review the lowest domains, practice again, and retake when ready."}`;
+          const title = document.getElementById("resultTitle");
+          if (title && latest < threshold && best >= threshold) title.textContent = "Mastery Preserved";
+        }
+      }, 0);
+    });
+
+    reset?.addEventListener("click", () => { beforeReset = hardenStoredResult(); }, true);
+    reset?.addEventListener("click", () => {
+      setTimeout(() => {
+        if (beforeReset && config.storage_key && !localStorage.getItem(config.storage_key)) writeJSON(config.storage_key, beforeReset);
+        beforeReset = null;
+        decorate();
+        const message = document.getElementById("resultMessage");
+        if (message) message.textContent = "Form reset. Saved cumulative mastery evidence was preserved.";
       }, 0);
     });
 
     exportButton?.addEventListener("click", exportNormalized, true);
+    decorate();
   }
 
   const core = document.createElement("script");
