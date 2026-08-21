@@ -1,0 +1,23 @@
+name: Algebra I Readiness Bridge Validation
+
+on:
+  push:
+    paths:
+      - 'courses/mathematics/algebra-1/readiness/**'
+      - '.github/workflows/algebra1-readiness-bridge-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/mathematics/algebra-1/readiness/**'
+      - '.github/workflows/algebra1-readiness-bridge-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-readiness-bridge:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Validate Algebra I readiness bridge
+        run: node courses/mathematics/algebra-1/readiness/validate-transition-contract.mjs
