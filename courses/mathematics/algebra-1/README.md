@@ -1,50 +1,48 @@
-# Algebra I · Unit 12 Content Rebuild
+# Algebra I · Unit 13 Capstone Rebuild
 
-Unit 12: **Statistics, Financial Mathematics & Evidence**
+Unit 13: **Integrated Mathematical Modelling Capstone**
 
-This upgrade preserves the existing Algebra I architecture and Units 1–11.
+## What this fixes
 
-## Improvements
+The prior 25-item capstone bank reused essentially three answer ideas across five lessons. This package replaces that shallow layer while preserving the course architecture.
 
-- 140 unique questions: 20 for each of the seven Unit 12 lessons.
-- Existing lesson-check IDs `q0376` through `q0410` are preserved.
-- Foundation/Core/Extended practice now samples from a broad, lesson-aligned Unit 12 pool.
-- Blueprint mastery guarantees all seven lessons are represented.
-- The project becomes a genuine `Evidence & Financial Decision Audit`.
-- Mastery continues to use the existing Unit 12 local progress record.
-- No personal financial information is requested or stored.
+- 100 unique questions: 20 per capstone lesson.
+- Existing IDs `q0411`–`q0435` preserved.
+- Balanced 20-question mastery: exactly 4 questions from each lesson.
+- Stronger modelling portfolio + oral defence.
+- Existing Unit 13 progress record remains authoritative.
+- Unit-page loader continues to support Unit 11 and Unit 12 upgrades.
 
 ## Files
 
-1. **ADD** `assets/unit-12-content-upgrade.js`
+1. **ADD** `assets/unit-13-content-upgrade.js`
 2. **REPLACE** `assets/unit-page.js`
-   - This loader supports **both Unit 11 and Unit 12 upgrades**.
-3. **REPLACE** `units/unit-12/assessment/answer-key.json`
-4. **ADD** `units/unit-12/assessment/unit-12-mastery-blueprint.js`
-5. **ADD** `units/unit-12/projects/unit-12-project-upgrade.js`
+3. **REPLACE** `units/unit-13/assessment/answer-key.json`
+4. **ADD** `units/unit-13/assessment/unit-13-mastery-blueprint.js`
+5. **ADD** `units/unit-13/projects/unit-13-project-upgrade.js`
 
-## Small HTML includes
+## HTML includes
 
-In `units/unit-12/assessment/mastery-check.html`, immediately after the existing `../../../assets/unit-page.js` script:
+Add after the existing shared `unit-page.js` script on:
 
-```html
-<script src="unit-12-mastery-blueprint.js"></script>
-```
-
-In `units/unit-12/projects/evidence-financial-decision-audit.html`, immediately after the existing `../../../assets/unit-page.js` script:
+`units/unit-13/assessment/mastery-check.html`
 
 ```html
-<script src="unit-12-project-upgrade.js"></script>
+<script src="unit-13-mastery-blueprint.js"></script>
 ```
 
-If the existing script paths differ in the live HTML, keep the existing `unit-page.js` path and add these two local scripts immediately after it.
+Add after the existing shared `unit-page.js` script on the Unit 13 project page:
+
+```html
+<script src="unit-13-project-upgrade.js"></script>
+```
 
 ## QA
 
-- 140/140 prompts unique
-- 140/140 IDs unique
+- 100/100 unique prompts
+- 100/100 unique IDs
 - 20 questions per lesson
-- Legacy IDs q0376–q0410 preserved
-- Correct answer text verified against options
-- Unit 11 loader support retained
-- Units 1–10 continue directly to the existing core renderer
+- q0411–q0435 preserved
+- Unit 11 loader preserved
+- Unit 12 loader preserved
+- Unit 13 loader active
