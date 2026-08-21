@@ -32,6 +32,20 @@ The association workflow:
 
 The preferred fingerprint is SHA-256 through the browser Web Crypto API. A local non-cryptographic fallback may be used only as a change detector on older browsers; neither method is represented as a digital signature or proof of authorship.
 
+## Integrated records continuity view
+
+`integrated-records-view.html` is the read-only bridge between the existing Family Records Office and the hardened Unit 01–13 mastery system.
+
+It reads:
+
+- the learner-scoped 36-week portal record;
+- the current explicit learner association;
+- the current Unit 01–13 evidence snapshot.
+
+It displays those evidence streams side by side only when an explicit learner association exists. It never copies Unit 01–13 scores into the 36-week learner profile, never rewrites either source, and never upgrades association into authentication. If the unit evidence changes after association, the page flags the continuity state for review rather than silently presenting the old fingerprint as current.
+
+The integrated view can export a `khaemenes.prealgebra.combined-records-context` JSON file. That export is a read-only context package, not a merged or independently validated academic record.
+
 ## Contracts and tools
 
 - `record-contract-v1.json` defines the course-level trust classes and export boundaries.
@@ -40,6 +54,7 @@ The preferred fingerprint is SHA-256 through the browser Web Crypto API. A local
 - `unit-evidence-association.js` implements explicit, reversible, fingerprinted learner association without altering source evidence.
 - `unit-evidence-association.html` provides the human-facing confirmation, release, status, and history workflow.
 - `unit-evidence-association-contract-v1.json` defines the association rules, states, required fields, fingerprint purpose, and release behavior.
+- `integrated-records-view.html` presents the associated 36-week portal record and Unit 01–13 mastery evidence together without merging or rewriting either source.
 - `legacy-record-normalizer.js` converts older Unit 01 lesson exports, older scored assessment results, and older assessment drafts into the current trust-aware record shapes. Normalization does not authenticate the source or increase its authority.
 - `lesson-record-builder.js` defines the reusable lesson learning-record shape for trust-aware exports.
 - `compact-engine-reference.js` is the canonical PA-13.2 compact lesson-engine snapshot used by Units 02–13.
@@ -50,4 +65,4 @@ Submitted/scored Unit 01 mastery checks are `khaemenes.assessment.result-record`
 
 ### Authority rule
 
-**Resources teach. Course engines verify. Browser exports report evidence. Explicit association identifies the intended learner locally. A protected institutional records workflow is still required before an exported browser record can be treated as independently validated academic documentation.**
+**Resources teach. Course engines verify. Browser exports report evidence. Explicit association identifies the intended learner locally. The integrated view provides continuity without silently merging records. A protected institutional records workflow is still required before an exported browser record can be treated as independently validated academic documentation.**
