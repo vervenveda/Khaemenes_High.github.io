@@ -1,46 +1,50 @@
-# Algebra I · Unit 11 Content Rebuild
+# Algebra I · Unit 12 Content Rebuild
 
-This package upgrades Unit 11 without changing Units 1–10.
+Unit 12: **Statistics, Financial Mathematics & Evidence**
 
-## What it fixes
+This upgrade preserves the existing Algebra I architecture and Units 1–11.
 
-- 120 unique Unit 11 questions: 20 per lesson.
-- Existing q0346–q0375 IDs remain valid for the five-question lesson checks.
-- Foundation/Core/Extended practice now draws from a substantially broader bank.
-- A blueprint mastery override guarantees all six lessons appear in the 20-question mastery check.
-- The Unit 11 project becomes a real coordinate-geometry/accessibility design investigation.
-- No new gradebook is introduced; the mastery override writes to the existing Unit 11 progress record.
+## Improvements
 
-## Files to add/replace
+- 140 unique questions: 20 for each of the seven Unit 12 lessons.
+- Existing lesson-check IDs `q0376` through `q0410` are preserved.
+- Foundation/Core/Extended practice now samples from a broad, lesson-aligned Unit 12 pool.
+- Blueprint mastery guarantees all seven lessons are represented.
+- The project becomes a genuine `Evidence & Financial Decision Audit`.
+- Mastery continues to use the existing Unit 12 local progress record.
+- No personal financial information is requested or stored.
 
-1. **ADD** `assets/unit-11-content-upgrade.js`
+## Files
+
+1. **ADD** `assets/unit-12-content-upgrade.js`
 2. **REPLACE** `assets/unit-page.js`
-3. **REPLACE** `units/unit-11/assessment/answer-key.json`
-4. **ADD** `units/unit-11/assessment/unit-11-mastery-blueprint.js`
-5. **ADD** `units/unit-11/projects/unit-11-project-upgrade.js`
+   - This loader supports **both Unit 11 and Unit 12 upgrades**.
+3. **REPLACE** `units/unit-12/assessment/answer-key.json`
+4. **ADD** `units/unit-12/assessment/unit-12-mastery-blueprint.js`
+5. **ADD** `units/unit-12/projects/unit-12-project-upgrade.js`
 
-## Two small HTML includes
+## Small HTML includes
 
-In `units/unit-11/assessment/mastery-check.html`, immediately after the existing `unit-page.js` script tag:
-
-```html
-<script src="unit-11-mastery-blueprint.js"></script>
-```
-
-In `units/unit-11/projects/coordinate-geometry-accessibility-design.html`, immediately after the existing `unit-page.js` script tag:
+In `units/unit-12/assessment/mastery-check.html`, immediately after the existing `../../../assets/unit-page.js` script:
 
 ```html
-<script src="unit-11-project-upgrade.js"></script>
+<script src="unit-12-mastery-blueprint.js"></script>
 ```
 
-The replacement `assets/unit-page.js` automatically loads `unit-11-content-upgrade.js` **only when PAGE_REF.unit === 11**. Other units continue directly to the existing `unit-page-core.js`.
+In `units/unit-12/projects/evidence-financial-decision-audit.html`, immediately after the existing `../../../assets/unit-page.js` script:
 
-## QA performed
+```html
+<script src="unit-12-project-upgrade.js"></script>
+```
 
-- 120/120 prompts unique.
-- 120/120 IDs unique.
-- 20 questions per lesson.
-- Legacy lesson-check IDs q0346–q0375 preserved.
-- Every answer_text exists in its options.
-- Every answer index is generated from the exact correct option.
-- No changes to Units 1–10.
+If the existing script paths differ in the live HTML, keep the existing `unit-page.js` path and add these two local scripts immediately after it.
+
+## QA
+
+- 140/140 prompts unique
+- 140/140 IDs unique
+- 20 questions per lesson
+- Legacy IDs q0376–q0410 preserved
+- Correct answer text verified against options
+- Unit 11 loader support retained
+- Units 1–10 continue directly to the existing core renderer
