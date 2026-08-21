@@ -1,0 +1,23 @@
+{
+  "schema": "khaemenes.math.readiness-evidence.v1",
+  "courseId": "KH-MATH-A1",
+  "completionStatus": "",
+  "masteryTarget": 80,
+  "skillEvidence": [],
+  "supportFlags": [],
+  "recommendedPathway": "Core",
+  "evidenceTimestamp": "",
+  "nextCourseReadiness": {
+    "geometry": {
+      "courseId": "KH-MATH-GEO",
+      "status": "",
+      "supportFlags": []
+    },
+    "algebra2": {
+      "courseId": "KH-MATH-A2",
+      "status": "",
+      "supportFlags": []
+    }
+  },
+  "notes": "This readiness record is separate from the official course grade. Prior-course evidence informs receiving-course support; the receiving course diagnostic may confirm or adjust routing."
+}
