@@ -1,0 +1,83 @@
+{
+  "schema": "khaemenes.math.transition.v1",
+  "course": {
+    "id": "KH-MATH-A1",
+    "title": "Khaemenes Global Algebra I & Integrated Mathematics I",
+    "masteryTarget": 80
+  },
+  "principles": {
+    "placementBased": true,
+    "priorEvidenceInformsDiagnostic": true,
+    "diagnosticMayOverrideRouting": true,
+    "courseGradeIsNotReadinessProfile": true,
+    "unfinishedLearningDoesNotAutomaticallyBlockProgression": true,
+    "pathways": ["Foundation", "Core", "Extended"]
+  },
+  "incoming": {
+    "from": "KH-MATH-PA",
+    "skillFamilies": [
+      {"source": "PA.NUMBER_RATIONAL_FLUENCY", "target": "A1.REAL_NUMBERS_PRECISION", "supports": ["unit-01"]},
+      {"source": "PA.PROPORTIONAL_REASONING", "target": "A1.PROPORTIONAL_MODELS", "supports": ["unit-03", "unit-06"]},
+      {"source": "PA.POWERS_ROOTS", "target": "A1.EXPONENT_RADICAL_READINESS", "supports": ["unit-08", "unit-11"]},
+      {"source": "PA.EXPRESSIONS", "target": "A1.EXPRESSIONS_STRUCTURE", "supports": ["unit-02"]},
+      {"source": "PA.EQUATIONS", "target": "A1.LINEAR_EQUATIONS", "supports": ["unit-03"]},
+      {"source": "PA.INEQUALITIES", "target": "A1.LINEAR_INEQUALITIES", "supports": ["unit-04"]},
+      {"source": "PA.FUNCTIONS_LINEAR_RELATIONSHIPS", "target": "A1.FUNCTIONS_LINEAR_MODELS", "supports": ["unit-05", "unit-06"]},
+      {"source": "PA.GEOMETRY_COORDINATES", "target": "A1.COORDINATE_GEOMETRY", "supports": ["unit-11"]},
+      {"source": "PA.DATA_STATISTICS", "target": "A1.STATISTICAL_EVIDENCE", "supports": ["unit-06", "unit-12"]},
+      {"source": "PA.MODELLING", "target": "A1.MODELLING_REASONING", "supports": ["unit-03", "unit-06", "unit-12", "unit-13"]}
+    ]
+  },
+  "outgoing": {
+    "geometry": {
+      "course": "KH-MATH-GEO",
+      "skillFamilies": [
+        {"source": "A1.REAL_NUMBERS_PRECISION", "target": "GEO.PRECISION_REASONING"},
+        {"source": "A1.LINEAR_EQUATIONS", "target": "GEO.ALGEBRAIC_GEOMETRY"},
+        {"source": "A1.FUNCTIONS_LINEAR_MODELS", "target": "GEO.COORDINATE_RELATIONSHIPS"},
+        {"source": "A1.SYSTEMS_CONSTRAINTS", "target": "GEO.INTERSECTION_CONSTRAINT_REASONING"},
+        {"source": "A1.EXPONENT_RADICAL_READINESS", "target": "GEO.DISTANCE_RADICAL_REASONING"},
+        {"source": "A1.COORDINATE_GEOMETRY", "target": "GEO.COORDINATE_PROOF"},
+        {"source": "A1.MODELLING_REASONING", "target": "GEO.MODELLING_REASONING"}
+      ]
+    },
+    "algebra2": {
+      "course": "KH-MATH-A2",
+      "skillFamilies": [
+        {"source": "A1.FUNCTIONS_LINEAR_MODELS", "target": "A2.FUNCTIONS"},
+        {"source": "A1.SYSTEMS_CONSTRAINTS", "target": "A2.SYSTEMS"},
+        {"source": "A1.EXPONENT_RADICAL_READINESS", "target": "A2.EXPONENTIAL_RADICALS"},
+        {"source": "A1.POLYNOMIAL_STRUCTURE", "target": "A2.POLYNOMIALS"},
+        {"source": "A1.QUADRATIC_REASONING", "target": "A2.QUADRATICS"},
+        {"source": "A1.STATISTICAL_EVIDENCE", "target": "A2.STATISTICS"},
+        {"source": "A1.MODELLING_REASONING", "target": "A2.MODELLING"}
+      ]
+    }
+  },
+  "evidenceRecord": {
+    "requiredFields": [
+      "courseId",
+      "completionStatus",
+      "masteryTarget",
+      "skillEvidence",
+      "supportFlags",
+      "recommendedPathway",
+      "evidenceTimestamp"
+    ],
+    "skillEvidenceFields": [
+      "skillFamily",
+      "status",
+      "bestScore",
+      "attemptCount",
+      "evidenceTypes"
+    ],
+    "allowedStatus": ["Beginning", "Developing", "Proficient", "Mastered"],
+    "evidenceTypes": ["lesson", "practice", "mastery-check", "midterm", "final", "project", "capstone", "correction", "human-review"]
+  },
+  "routing": {
+    "rule": "Use prior-course evidence to preselect support, then confirm or adjust with the receiving course diagnostic.",
+    "foundationSignal": "A prerequisite skill family is Beginning or Developing, or recent diagnostic evidence is below mastery.",
+    "coreSignal": "Prerequisite evidence is generally Proficient with no material diagnostic contradiction.",
+    "extendedSignal": "Prerequisite evidence is Mastered and transfer reasoning is secure; receiving-course evidence must still confirm readiness."
+  }
+}
