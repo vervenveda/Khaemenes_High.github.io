@@ -6,9 +6,7 @@
 <meta name="theme-color" content="#080b10"/>
 <link rel="manifest" href="manifest.webmanifest"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>
- Khaemenes Open-Age Pre-Algebra
-</title>
+<title>Pre-Algebra</title>
 
 <style>
 :root {
@@ -569,6 +567,14 @@ body.activity-open{overflow:hidden}
 }
 @media print{.activity-dialog{display:none!important}}
 
+/* Refined course typography: lighter, calmer, and easier to scan */
+body{font-weight:400}
+.hero h1,.brand h2,.panel h3,.card h3,.card h4,.activity-dialog-header h2{font-weight:500}
+.eyebrow,.course-menu-label,.dialog-eyebrow,.metric-label{font-weight:600}
+button,.button,.header-control,.course-menu>summary,.course-menu-panel a,.course-menu-panel button{font-weight:600}
+.seal,.hero-home-badge,.activity-symbol{font-weight:650}
+strong,th{font-weight:600}
+
 </style>
 </head>
 <body>
@@ -581,9 +587,7 @@ body.activity-open{overflow:hidden}
      K
     </div>
    </a>
-   <h2>
-    Khaemenes Global Pre-Algebra
-   </h2>
+   <h2>Pre-Algebra</h2>
    <p>
     Open-Age Foundations · Algebra I Readiness · Numerica Forge
    </p>
@@ -665,7 +669,7 @@ body.activity-open{overflow:hidden}
      <a class="hero-home-badge" href="https://vervenveda.github.io/Khaemenes_Academy.github.io/" aria-label="Khaemenes Academy home">K</a>
      <div>
       <div class="eyebrow">Numerica Forge · Khaemenes Academy</div>
-      <div class="hero-route">Pre-Algebra</div>
+      <div class="hero-route">Mathematics › Open-Age Pre-Algebra</div>
      </div>
     </div>
     <div class="header-tools" aria-label="Course account and navigation controls">
@@ -715,9 +719,7 @@ body.activity-open{overflow:hidden}
      <span class="sr-only" id="pinCourseStatus" aria-live="polite"></span>
     </div>
    </div>
-   <h1>
-   Pre-Algebra
-   </h1>
+   <h1>Pre-Algebra</h1>
    <p>
     A complete, open-age 36-week pre-algebra pathway for arithmetic fluency, rational numbers, proportional reasoning, financial mathematics, exponents, equations, inequalities, functions, geometry, statistics, probability, modelling, and confident Algebra I readiness.
    </p>
@@ -734,7 +736,7 @@ body.activity-open{overflow:hidden}
     <a class="button ghost" href="https://vervenveda.github.io/Khaemenes_Higher_Learning.github.io/">
      Higher Learning
     </a>
-    <button class="ghost" data-go="reports">
+    <button class="ghost" id="progressReportButton" type="button" data-go="reports" aria-controls="content">
      Progress Reports
     </button>
    </div>
@@ -4481,7 +4483,20 @@ function openActivity(launcher){
 }
 function closeActivity(){if(!activityDialog)return;activityFrame.src="about:blank";if(typeof activityDialog.close==="function"&&activityDialog.open)activityDialog.close();else activityDialog.removeAttribute("open");document.body.classList.remove("activity-open");lastActivityLauncher?.focus()}
 document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{view=b.dataset.view;render()});
-document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{view=b.dataset.go;closeCourseMenus();render()});
+function openCourseView(target,{moveFocus=false}={}){
+  view=target;
+  closeCourseMenus();
+  render();
+  if(moveFocus){
+    const content=$("content");
+    content?.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+    if(content){
+      content.setAttribute("tabindex","-1");
+      setTimeout(()=>content.focus({preventScroll:true}),220);
+    }
+  }
+}
+document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>openCourseView(b.dataset.go,{moveFocus:b.id==="progressReportButton"}));
 courseMenus.forEach(menu=>menu.addEventListener("toggle",()=>{if(menu.open)closeCourseMenus(menu)}));
 document.addEventListener("click",event=>{
   const launcher=event.target.closest("[data-launch-url]");if(launcher){event.preventDefault();openActivity(launcher);return}
