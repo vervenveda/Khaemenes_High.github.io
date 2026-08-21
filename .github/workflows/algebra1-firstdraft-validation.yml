@@ -1,14 +1,14 @@
-name: Algebra I First-Draft Validation
+name: Algebra I Whole-Course Validation
 
 on:
   push:
     paths:
       - 'courses/mathematics/algebra-1/**'
-      - '.github/workflows/algebra1-first-draft-validation.yml'
+      - '.github/workflows/algebra1-firstdraft-validation.yml'
   pull_request:
     paths:
       - 'courses/mathematics/algebra-1/**'
-      - '.github/workflows/algebra1-first-draft-validation.yml'
+      - '.github/workflows/algebra1-firstdraft-validation.yml'
 
 permissions:
   contents: read
@@ -19,5 +19,17 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
-      - name: Validate Algebra I first draft
-        run: node courses/mathematics/algebra-1/tools/validate-first-draft.mjs
+      - name: Validate Algebra I whole course
+        run: |
+          set -euo pipefail
+          if [ -f courses/mathematics/algebra-1/tools/validate-first-draft.mjs ]; then
+            node courses/mathematics/algebra-1/tools/validate-first-draft.mjs
+          elif [ -f courses/mathematics/algebra-1/validate-first-draft.mjs ]; then
+            node courses/mathematics/algebra-1/validate-first-draft.mjs
+          else
+            echo 'ERROR: Algebra I whole-course validator is missing.' >&2
+            echo 'Expected courses/mathematics/algebra-1/tools/validate-first-draft.mjs or courses/mathematics/algebra-1/validate-first-draft.mjs' >&2
+            exit 1
+          fi
+      - name: Validate Algebra I readiness bridge
+        run: node courses/mathematics/algebra-1/readiness/validate-transition-contract.mjs
