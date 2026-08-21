@@ -31,6 +31,7 @@
     completedLessons: [],
     reviewedLessons: [],
     lessonScores: {},
+    lessonAttempts: {},
     reflections: {},
     lessonNotes: {},
     practiceDrafts: {}
@@ -70,11 +71,35 @@
     }
   }
 
+  function numericScore(value) {
+    if (value === null || value === undefined || value === "") return null;
+    const score = Number(value);
+    return Number.isFinite(score) ? score : null;
+  }
+
+  function normalizeAttempt(raw, fallbackScore = null) {
+    const score = numericScore(fallbackScore);
+    const hasScore = score !== null;
+    const out = raw && typeof raw === "object" ? { ...raw } : {};
+    const first = numericScore(out.firstScore);
+    const latest = numericScore(out.latestScore);
+    const best = numericScore(out.bestScore);
+    const count = Number(out.attemptCount);
+
+    out.firstScore = first !== null ? first : (hasScore ? score : null);
+    out.latestScore = latest !== null ? latest : (hasScore ? score : null);
+    out.bestScore = best !== null ? best : (hasScore ? score : null);
+    out.attemptCount = Number.isInteger(count) && count > 0 ? count : (hasScore ? 1 : 0);
+    out.masteredAt = typeof out.masteredAt === "string" && out.masteredAt ? out.masteredAt : null;
+    return out;
+  }
+
   function normalizeProgress() {
     if (!progress || typeof progress !== "object") progress = clone(DEFAULT_PROGRESS);
     if (!Array.isArray(progress.completedLessons)) progress.completedLessons = [];
     if (!Array.isArray(progress.reviewedLessons)) progress.reviewedLessons = [];
     if (!progress.lessonScores || typeof progress.lessonScores !== "object") progress.lessonScores = {};
+    if (!progress.lessonAttempts || typeof progress.lessonAttempts !== "object") progress.lessonAttempts = {};
     if (!progress.reflections || typeof progress.reflections !== "object") progress.reflections = {};
     if (!progress.lessonNotes || typeof progress.lessonNotes !== "object") progress.lessonNotes = {};
     if (!progress.practiceDrafts || typeof progress.practiceDrafts !== "object") progress.practiceDrafts = {};
@@ -82,11 +107,20 @@
 
     const reviewed = new Set(progress.reviewedLessons);
     progress.completedLessons.forEach(id => {
-      if (Number(progress.lessonScores[id]) < CONFIG.masteryThreshold) reviewed.add(id);
+      const score = numericScore(progress.lessonScores[id]);
+      if (score === null || score < CONFIG.masteryThreshold) reviewed.add(id);
     });
 
-    progress.completedLessons = Object.entries(progress.lessonScores)
-      .filter(([, score]) => Number(score) >= CONFIG.masteryThreshold)
+    Object.entries(progress.lessonScores).forEach(([id, score]) => {
+      progress.lessonAttempts[id] = normalizeAttempt(progress.lessonAttempts[id], score);
+    });
+
+    Object.keys(progress.lessonAttempts).forEach(id => {
+      progress.lessonAttempts[id] = normalizeAttempt(progress.lessonAttempts[id], progress.lessonScores[id]);
+    });
+
+    progress.completedLessons = Object.entries(progress.lessonAttempts)
+      .filter(([, attempt]) => numericScore(attempt.bestScore) !== null && Number(attempt.bestScore) >= CONFIG.masteryThreshold)
       .map(([id]) => id);
 
     progress.reviewedLessons = [...reviewed];
@@ -95,6 +129,31 @@
   function saveProgress() {
     normalizeProgress();
     saveJSON(PROGRESS_KEY, progress);
+  }
+
+  function recordAttempt(percent) {
+    normalizeProgress();
+    const id = lesson.id;
+    const now = new Date().toISOString();
+    const existing = normalizeAttempt(progress.lessonAttempts[id], progress.lessonScores[id]);
+    const count = existing.attemptCount || 0;
+    const previousBest = numericScore(existing.bestScore);
+    const bestScore = count > 0 ? Math.max(previousBest ?? percent, percent) : percent;
+
+    const next = {
+      firstScore: count > 0 ? existing.firstScore : percent,
+      latestScore: percent,
+      bestScore,
+      attemptCount: count + 1,
+      masteredAt: existing.masteredAt
+    };
+
+    if (!next.masteredAt && bestScore >= CONFIG.masteryThreshold) next.masteredAt = now;
+
+    progress.lessonAttempts[id] = next;
+    progress.lessonScores[id] = percent;
+    normalizeProgress();
+    return next;
   }
 
   function setTheme(theme) {
@@ -217,7 +276,6 @@
       </dl>`;
   }
 
-
   function factorPairsOf(value) {
     const n = Number(value);
     if (!Number.isInteger(n) || n < 1) return [];
@@ -269,7 +327,6 @@
       </div>
       <p class="factor-list"><strong>Positive factors:</strong> ${factors.join(", ")}</p>`;
   }
-
 
   function primeFactorsOf(value) {
     let n = Math.max(2, Math.trunc(Number(value) || 2));
@@ -342,7 +399,6 @@
       </div>`;
   }
 
-
   function positiveFactors(value) {
     const n = Math.max(1, Math.trunc(Number(value) || 1));
     const out = [];
@@ -408,7 +464,6 @@
       </div>`;
   }
 
-
   function renderExpressionStepper() {
     const target = $("#expressionStepper");
     if (!target) return;
@@ -436,7 +491,6 @@
       <div class="expression-answer"><span>Final value</span><strong>${escapeHTML(item.answer)}</strong></div>`;
   }
 
-
   function renderEstimationLab() {
     const target=$("#estimationLab");
     if(!target) return;
@@ -447,6 +501,7 @@
     </article>`;
     showEstimate(0);
   }
+
   function showEstimate(index){
     const result=$("#estimationResult"), examples=lesson.estimation_lab?.examples||[];
     if(!result||!examples.length)return;
@@ -661,11 +716,7 @@
     }
 
     const percent = Math.round((correct / questions.length) * 100);
-    progress.lessonScores[lesson.id] = percent;
-
-    if (percent >= CONFIG.masteryThreshold && !progress.completedLessons.includes(lesson.id)) {
-      progress.completedLessons.push(lesson.id);
-    }
+    const attempt = recordAttempt(percent);
 
     saveProgress();
     renderRecord();
@@ -674,8 +725,8 @@
     setMessage(
       "#scoreMessage",
       `Score: ${correct}/${questions.length} (${percent}%). ` +
-      (percent >= CONFIG.masteryThreshold
-        ? "Practice mastery reached. The next lesson is now unlocked."
+      (attempt.bestScore >= CONFIG.masteryThreshold
+        ? "Practice mastery reached or preserved. The next lesson is unlocked."
         : `Reach ${CONFIG.masteryThreshold}% to unlock the next lesson. Review the explanations and try again.`)
     );
   }
@@ -694,16 +745,21 @@
   }
 
   function renderRecord() {
+    normalizeProgress();
     const rawScore = progress.lessonScores[lesson.id];
-    const score = Number(rawScore);
-    const hasScore = rawScore !== undefined && rawScore !== null && Number.isFinite(score);
+    const score = numericScore(rawScore);
+    const hasScore = score !== null;
     const completed = progress.completedLessons.includes(lesson.id);
     const reviewed = progress.reviewedLessons.includes(lesson.id);
+    const attempt = progress.lessonAttempts[lesson.id];
 
     const status = $("#lessonStatus");
     if (status) {
       if (hasScore) {
-        status.textContent = `Latest practice score: ${score}% · ${completed ? "Lesson mastery reached" : `${CONFIG.masteryThreshold}% mastery required`}`;
+        const history = attempt && attempt.attemptCount > 1
+          ? ` · Best: ${attempt.bestScore}% · Attempts: ${attempt.attemptCount}`
+          : "";
+        status.textContent = `Latest practice score: ${score}%${history} · ${completed ? "Lesson mastery reached" : `${CONFIG.masteryThreshold}% mastery required`}`;
       } else {
         status.textContent = reviewed
           ? `Lesson reviewed. Reach ${CONFIG.masteryThreshold}% on practice to save mastery.`
@@ -773,8 +829,8 @@
   function showMasteryModal(nextTitle = "the next lesson") {
     ensureMasteryModal();
     const modal = $("#masteryModal");
-    const score = Number(progress.lessonScores[lesson.id]);
-    const hasScore = Number.isFinite(score);
+    const score = numericScore(progress.lessonScores[lesson.id]);
+    const hasScore = score !== null;
     const text = $("#masteryModalText");
     if (text) {
       text.textContent = hasScore
@@ -860,6 +916,7 @@
   }
 
   function exportLesson() {
+    normalizeProgress();
     downloadJSON(`unit01-${lesson.id}-record.json`, {
       schema_version: "2.1",
       exported_at: new Date().toISOString(),
@@ -869,6 +926,7 @@
       pathway: progress.pathway,
       mastery_threshold: CONFIG.masteryThreshold,
       score: progress.lessonScores[lesson.id] ?? null,
+      attempt: progress.lessonAttempts[lesson.id] || null,
       completed: progress.completedLessons.includes(lesson.id),
       reviewed: progress.reviewedLessons.includes(lesson.id),
       notes: progress.lessonNotes[lesson.id] || "",
@@ -894,7 +952,6 @@
       const button = event.target.closest("[data-set-index]");
       if (button) showSet(Number(button.dataset.setIndex));
     });
-
 
     $("#factorLab")?.addEventListener("click", event => {
       const preset = event.target.closest("[data-factor-value]");
