@@ -1,1184 +1,709 @@
 {
-  "diagnostic": [
+  "schema": "khaemenes-algebra1-unit-answer-key",
+  "version": "2026.08.21-u13-v2",
+  "unit": 13,
+  "question_count": 100,
+  "notes": "20 unique questions per lesson; q0411–q0435 preserved as lesson-check IDs.",
+  "answers": [
     {
-      "number": 1,
-      "answer": "substitute it into the original equation",
-      "category": "reasoning",
-      "explanation": "A solution must make the original equation true."
+      "id": "q0411",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "State a precise decision/question and define the quantities",
+      "explanation": "A model should begin with a clear purpose and measurable quantities."
     },
     {
-      "number": 2,
-      "answer": "distributive property",
-      "category": "reasoning",
-      "explanation": "The factor multiplies every term."
+      "id": "q0412",
+      "lesson": 1,
+      "answer": 1,
+      "answer_text": "How does changing weekly attendance affect projected meal demand over one month?",
+      "explanation": "A model-ready question specifies quantities, relationship, and decision context."
     },
     {
-      "number": 3,
-      "answer": "√2",
-      "category": "real_numbers",
-      "explanation": "√2 cannot be written as a ratio of integers."
+      "id": "q0413",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "So the model has a defined domain and purpose",
+      "explanation": "Bounds keep the model interpretable and prevent unsupported extrapolation."
     },
     {
-      "number": 4,
-      "answer": "√2",
-      "category": "real_numbers",
-      "explanation": "√2 cannot be written as a ratio of integers."
+      "id": "q0414",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Assume attendance remains within 400–550 students",
+      "explanation": "An assumption is accepted for modelling rather than directly observed as a measured value."
     },
     {
-      "number": 5,
-      "answer": "7",
-      "category": "order_ops",
-      "explanation": "Multiply before adding and subtracting."
+      "id": "q0415",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "A parameter is treated as fixed within a model run; a variable may change",
+      "explanation": "Parameters set model conditions while variables represent changing quantities."
     },
     {
-      "number": 6,
-      "answer": "23",
-      "category": "order_ops",
-      "explanation": "Multiply before adding and subtracting."
+      "id": "u13x-l01-06",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "t = travel time in minutes",
+      "explanation": "Variables should have precise meanings and units."
     },
     {
-      "number": 7,
-      "answer": "600 cm",
-      "category": "units",
-      "explanation": "Multiply by 100 cm per meter."
+      "id": "u13x-l01-07",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "They help verify meaning and dimensional consistency",
+      "explanation": "Units can expose invalid operations and clarify interpretation."
     },
     {
-      "number": 8,
-      "answer": "300 cm",
-      "category": "units",
-      "explanation": "Multiply by 100 cm per meter."
+      "id": "u13x-l01-08",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "How can we compare two fictional transportation plans using cost and travel time without collecting personal location histories?",
+      "explanation": "Ethical modelling minimizes unnecessary sensitive data and keeps the question proportionate to its purpose."
     },
     {
-      "number": 9,
-      "answer": "8%",
-      "category": "precision",
-      "explanation": "Absolute error divided by accepted value times 100."
+      "id": "u13x-l01-09",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Distance, walking-speed assumption, route domain, and time unit",
+      "explanation": "A defensible model defines quantities, assumptions, units, and scope."
     },
     {
-      "number": 10,
-      "answer": "3%",
-      "category": "precision",
-      "explanation": "Absolute error divided by accepted value times 100."
+      "id": "u13x-l01-10",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "What makes a good city?",
+      "explanation": "The phrase does not identify measurable quantities, domain, or decision criterion."
     },
     {
-      "number": 11,
-      "answer": "-3",
-      "category": "expressions",
-      "explanation": "Substitute and evaluate."
+      "id": "u13x-l01-11",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "A measurable rule used to compare model outcomes",
+      "explanation": "Criteria such as cost, time, error, or capacity support explicit comparison."
     },
     {
-      "number": 12,
-      "answer": "-11",
-      "category": "expressions",
-      "explanation": "Substitute and evaluate."
+      "id": "u13x-l01-12",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "So readers can judge whether the model applies",
+      "explanation": "Assumptions define the conditions under which conclusions are meaningful."
     },
     {
-      "number": 13,
-      "answer": "10x+8",
-      "category": "combine",
-      "explanation": "Combine variable terms and constants separately."
+      "id": "u13x-l01-13",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "0≤x≤50",
+      "explanation": "The domain identifies allowed inputs."
     },
     {
-      "number": 14,
-      "answer": "14x+2",
-      "category": "combine",
-      "explanation": "Combine variable terms and constants separately."
+      "id": "u13x-l01-14",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "The model ignores weather-related delays",
+      "explanation": "A limitation describes an important real-world factor not represented or not fully resolved."
     },
     {
-      "number": 15,
-      "answer": "x=-4",
-      "category": "equations",
-      "explanation": "Undo operations and verify."
+      "id": "u13x-l01-15",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Choose the simplest form justified by structure, data, and purpose",
+      "explanation": "Model complexity should be earned by evidence and purpose."
     },
     {
-      "number": 16,
-      "answer": "x=0",
-      "category": "equations",
-      "explanation": "Undo operations and verify."
+      "id": "u13x-l01-16",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Under the same stated assumptions, which plan has lower total cost over 12 months?",
+      "explanation": "Fair comparison applies consistent conditions and criteria."
     },
     {
-      "number": 17,
-      "answer": "x=1",
-      "category": "proportion",
-      "explanation": "Multiply by the denominator and simplify."
+      "id": "u13x-l01-17",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Different groups may experience different benefits, costs, or risks",
+      "explanation": "A decision can be mathematically efficient yet distribute consequences unevenly."
     },
     {
-      "number": 18,
-      "answer": "x=1",
-      "category": "proportion",
-      "explanation": "Multiply by the denominator and simplify."
+      "id": "u13x-l01-18",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "It produces outputs that can be compared with observations or constraints",
+      "explanation": "Validation requires something observable or checkable."
     },
     {
-      "number": 19,
-      "answer": "x≤2",
-      "category": "inequalities",
-      "explanation": "Subtract the same value."
+      "id": "u13x-l01-19",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Unsupported extrapolation beyond the evidence domain",
+      "explanation": "Prediction far beyond observed conditions requires additional justification."
     },
     {
-      "number": 20,
-      "answer": "x≤8",
-      "category": "inequalities",
-      "explanation": "Subtract the same value."
+      "id": "u13x-l01-20",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Question, quantities, units, domain, assumptions, criteria, and relevant ethical constraints",
+      "explanation": "A complete setup makes later reasoning auditable."
     },
     {
-      "number": 21,
-      "answer": "{(1,2),(1,5),(3,7)}",
-      "category": "functions",
-      "explanation": "Input 1 has two outputs."
+      "id": "q0416",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "A time-series line graph",
+      "explanation": "Ordered time data are naturally shown with time on the horizontal axis."
     },
     {
-      "number": 22,
-      "answer": "{(1,2),(1,5),(3,7)}",
-      "category": "functions",
-      "explanation": "Input 1 has two outputs."
+      "id": "q0417",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Equations and a shared coordinate graph",
+      "explanation": "Equations support exact comparison and a shared graph shows intersections and relative cost."
     },
     {
-      "number": 23,
-      "answer": "-3",
-      "category": "function_eval",
-      "explanation": "Substitute the input."
+      "id": "q0418",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Meaning and unit",
+      "explanation": "A symbol is interpretable only when its quantity and unit are defined."
     },
     {
-      "number": 24,
-      "answer": "-26",
-      "category": "function_eval",
-      "explanation": "Substitute the input."
+      "id": "q0419",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Document the mismatch and decide whether adjustment or exclusion is justified",
+      "explanation": "Data provenance and comparability affect model validity."
     },
     {
-      "number": 25,
-      "answer": "4",
-      "category": "domain",
-      "explanation": "The denominator cannot be zero."
+      "id": "q0420",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Cost per rider calculated from total cost/riders",
+      "explanation": "A derived quantity is calculated from other variables."
     },
     {
-      "number": 26,
-      "answer": "4",
-      "category": "domain",
-      "explanation": "The denominator cannot be zero."
+      "id": "u13x-l02-06",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Different forms reveal different features and allow cross-checking",
+      "explanation": "Tables, equations, and graphs can expose structure and errors differently."
     },
     {
-      "number": 27,
-      "answer": "4",
-      "category": "slope",
-      "explanation": "Change in y divided by change in x."
+      "id": "u13x-l02-07",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "A linear model with slope 5",
+      "explanation": "Constant first differences support a linear relationship."
     },
     {
-      "number": 28,
-      "answer": "3",
-      "category": "slope",
-      "explanation": "Change in y divided by change in x."
+      "id": "u13x-l02-08",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Exponential",
+      "explanation": "A constant multiplicative factor suggests exponential structure."
     },
     {
-      "number": 29,
-      "answer": "y=7x+8",
-      "category": "lines",
-      "explanation": "Use y=mx+b."
+      "id": "u13x-l02-09",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Quadratic",
+      "explanation": "A parabola can model a single turning point with roughly symmetric change."
     },
     {
-      "number": 30,
-      "answer": "y=9x+7",
-      "category": "lines",
-      "explanation": "Use y=mx+b."
+      "id": "u13x-l02-10",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "A travel time of −12 minutes",
+      "explanation": "Negative travel time is physically implausible in the stated context."
     },
     {
-      "number": 31,
-      "answer": "6.0",
-      "category": "statistics",
-      "explanation": "Add and divide by count."
+      "id": "u13x-l02-11",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Expressing quantities relative to a common scale such as per person",
+      "explanation": "Normalization can support fair comparisons across different-sized groups."
     },
     {
-      "number": 32,
-      "answer": "9.6",
-      "category": "statistics",
-      "explanation": "Add and divide by count."
+      "id": "u13x-l02-12",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Missingness can affect estimates and bias conclusions",
+      "explanation": "The pattern and extent of missingness influence validity."
     },
     {
-      "number": 33,
-      "answer": "box plot",
-      "category": "displays",
-      "explanation": "Box plots show the five-number summary."
+      "id": "u13x-l02-13",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Using inconsistent axis scales between comparison panels",
+      "explanation": "Scale changes can create misleading visual comparisons."
     },
     {
-      "number": 34,
-      "answer": "box plot",
-      "category": "displays",
-      "explanation": "Box plots show the five-number summary."
+      "id": "u13x-l02-14",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Fixed starting cost when x=0",
+      "explanation": "The intercept is the predicted output at zero input."
     },
     {
-      "number": 35,
-      "answer": "denominator, time period, and source",
-      "category": "evidence",
-      "explanation": "Percentages require a comparison base and context."
+      "id": "u13x-l02-15",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Output change per one unit of x",
+      "explanation": "Slope is rate of change."
     },
     {
-      "number": 36,
-      "answer": "denominator, time period, and source",
-      "category": "evidence",
-      "explanation": "Percentages require a comparison base and context."
-    }
-  ],
-  "midterm": [
-    {
-      "number": 1,
-      "answer": "substitute it into the original equation",
-      "unit": 1,
-      "explanation": "A solution must make the original equation true."
-    },
-    {
-      "number": 2,
-      "answer": "√2",
-      "unit": 1,
-      "explanation": "√2 cannot be written as a ratio of integers."
-    },
-    {
-      "number": 3,
-      "answer": "12",
-      "unit": 1,
-      "explanation": "Multiply before adding and subtracting."
-    },
-    {
-      "number": 4,
-      "answer": "300 cm",
-      "unit": 1,
-      "explanation": "Multiply by 100 cm per meter."
-    },
-    {
-      "number": 5,
-      "answer": "2%",
-      "unit": 1,
-      "explanation": "Absolute error divided by accepted value times 100."
-    },
-    {
-      "number": 6,
-      "answer": "distributive property",
-      "unit": 1,
-      "explanation": "The factor multiplies every term."
-    },
-    {
-      "number": 7,
-      "answer": "2 is prime and even",
-      "unit": 1,
-      "explanation": "One counterexample disproves a universal claim."
-    },
-    {
-      "number": 8,
-      "answer": "substitute it into the original equation",
-      "unit": 1,
-      "explanation": "A solution must make the original equation true."
-    },
-    {
-      "number": 9,
-      "answer": "distributive property",
-      "unit": 1,
-      "explanation": "The factor multiplies every term."
-    },
-    {
-      "number": 10,
-      "answer": "√2",
-      "unit": 1,
-      "explanation": "√2 cannot be written as a ratio of integers."
-    },
-    {
-      "number": 11,
-      "answer": "13",
-      "unit": 2,
-      "explanation": "Substitute and evaluate."
-    },
-    {
-      "number": 12,
-      "answer": "substitute it into the original equation",
-      "unit": 2,
-      "explanation": "A solution must make the original equation true."
-    },
-    {
-      "number": 13,
-      "answer": "7x+8",
-      "unit": 2,
-      "explanation": "Combine variable terms and constants separately."
-    },
-    {
-      "number": 14,
-      "answer": "3",
-      "unit": 2,
-      "explanation": "The greatest exponent is 3."
-    },
-    {
-      "number": 15,
-      "answer": "10x²+5x",
-      "unit": 2,
-      "explanation": "Combine like degrees."
-    },
-    {
-      "number": 16,
-      "answer": "5(9x+5)",
-      "unit": 2,
-      "explanation": "Factor the greatest shared factor."
-    },
-    {
-      "number": 17,
-      "answer": "6",
-      "unit": 2,
-      "explanation": "Substitute and evaluate."
-    },
-    {
-      "number": 18,
-      "answer": "-11",
-      "unit": 2,
-      "explanation": "Substitute and evaluate."
-    },
-    {
-      "number": 19,
-      "answer": "8",
-      "unit": 2,
-      "explanation": "Substitute and evaluate."
-    },
-    {
-      "number": 20,
-      "answer": "6",
-      "unit": 2,
-      "explanation": "Substitute and evaluate."
-    },
-    {
-      "number": 21,
-      "answer": "x=1",
-      "unit": 3,
-      "explanation": "Undo operations and verify."
-    },
-    {
-      "number": 22,
-      "answer": "identity",
-      "unit": 3,
-      "explanation": "Both sides are equivalent."
-    },
-    {
-      "number": 23,
-      "answer": "w=A/l",
-      "unit": 3,
-      "explanation": "Divide by l, l≠0."
-    },
-    {
-      "number": 24,
-      "answer": "x=1",
-      "unit": 3,
-      "explanation": "Multiply by the denominator and simplify."
-    },
-    {
-      "number": 25,
-      "answer": "8",
-      "unit": 3,
-      "explanation": "Model fixed+rate·h=total."
-    },
-    {
-      "number": 26,
-      "answer": "x=9",
-      "unit": 3,
-      "explanation": "Undo operations and verify."
-    },
-    {
-      "number": 27,
-      "answer": "x=-5",
-      "unit": 3,
-      "explanation": "Undo operations and verify."
-    },
-    {
-      "number": 28,
-      "answer": "x=-2",
-      "unit": 3,
-      "explanation": "Undo operations and verify."
-    },
-    {
-      "number": 29,
-      "answer": "x=-2",
-      "unit": 3,
-      "explanation": "Undo operations and verify."
-    },
-    {
-      "number": 30,
-      "answer": "x=-5",
-      "unit": 3,
-      "explanation": "Undo operations and verify."
-    },
-    {
-      "number": 31,
-      "answer": "x≤-3",
-      "unit": 4,
-      "explanation": "Subtract the same value."
-    },
-    {
-      "number": 32,
-      "answer": "x≥-2",
-      "unit": 4,
-      "explanation": "Divide by a negative and reverse the sign."
-    },
-    {
-      "number": 33,
-      "answer": "(−2, 8]",
-      "unit": 4,
-      "explanation": "Left excluded, right included."
-    },
-    {
-      "number": 34,
-      "answer": "x=-3 or x=15",
-      "unit": 4,
-      "explanation": "Two points lie the stated distance from the center."
-    },
-    {
-      "number": 35,
-      "answer": "x≤-5",
-      "unit": 4,
-      "explanation": "Subtract the same value."
-    },
-    {
-      "number": 36,
-      "answer": "x≤3",
-      "unit": 4,
-      "explanation": "Subtract the same value."
-    },
-    {
-      "number": 37,
-      "answer": "x≤1",
-      "unit": 4,
-      "explanation": "Subtract the same value."
-    },
-    {
-      "number": 38,
-      "answer": "x≤6",
-      "unit": 4,
-      "explanation": "Subtract the same value."
-    },
-    {
-      "number": 39,
-      "answer": "x≤3",
-      "unit": 4,
-      "explanation": "Subtract the same value."
-    },
-    {
-      "number": 40,
-      "answer": "x≤1",
-      "unit": 4,
-      "explanation": "Subtract the same value."
-    },
-    {
-      "number": 41,
-      "answer": "{(1,2),(1,5),(3,7)}",
-      "unit": 5,
-      "explanation": "Input 1 has two outputs."
-    },
-    {
-      "number": 42,
-      "answer": "4",
-      "unit": 5,
-      "explanation": "Substitute the input."
-    },
-    {
-      "number": 43,
-      "answer": "4",
-      "unit": 5,
-      "explanation": "The denominator cannot be zero."
-    },
-    {
-      "number": 44,
-      "answer": "y=7x+7",
-      "unit": 5,
-      "explanation": "Difference gives slope; x=0 gives intercept."
-    },
-    {
-      "number": 45,
-      "answer": "right 3 and up 2",
-      "unit": 5,
-      "explanation": "Inside changes horizontal position; outside changes vertical."
-    },
-    {
-      "number": 46,
-      "answer": "0",
-      "unit": 5,
-      "explanation": "The x≥0 rule applies."
-    },
-    {
-      "number": 47,
-      "answer": "25",
-      "unit": 5,
-      "explanation": "Add the constant difference."
-    },
-    {
-      "number": 48,
-      "answer": "{(1,2),(1,5),(3,7)}",
-      "unit": 5,
-      "explanation": "Input 1 has two outputs."
-    },
-    {
-      "number": 49,
-      "answer": "{(1,2),(1,5),(3,7)}",
-      "unit": 5,
-      "explanation": "Input 1 has two outputs."
-    },
-    {
-      "number": 50,
-      "answer": "{(1,2),(1,5),(3,7)}",
-      "unit": 5,
-      "explanation": "Input 1 has two outputs."
-    },
-    {
-      "number": 51,
-      "answer": "2",
-      "unit": 6,
-      "explanation": "Change in y divided by change in x."
-    },
-    {
-      "number": 52,
-      "answer": "y=5x+2",
-      "unit": 6,
-      "explanation": "Use y=mx+b."
-    },
-    {
-      "number": 53,
-      "answer": "−1/2",
-      "unit": 6,
-      "explanation": "Use the negative reciprocal."
-    },
-    {
-      "number": 54,
-      "answer": "7",
-      "unit": 6,
-      "explanation": "Residual=observed−predicted."
-    },
-    {
-      "number": 55,
-      "answer": "49",
-      "unit": 6,
-      "explanation": "Substitute the input."
-    },
-    {
-      "number": 56,
-      "answer": "4",
-      "unit": 6,
-      "explanation": "Change in y divided by change in x."
-    },
-    {
-      "number": 57,
-      "answer": "6",
-      "unit": 6,
-      "explanation": "Change in y divided by change in x."
-    },
-    {
-      "number": 58,
-      "answer": "8",
-      "unit": 6,
-      "explanation": "Change in y divided by change in x."
-    },
-    {
-      "number": 59,
-      "answer": "6",
-      "unit": 6,
-      "explanation": "Change in y divided by change in x."
-    },
-    {
-      "number": 60,
-      "answer": "2",
-      "unit": 6,
-      "explanation": "Change in y divided by change in x."
-    }
-  ],
-  "final": [
-    {
-      "number": 1,
-      "answer": "substitute it into the original equation",
-      "unit": 1,
-      "explanation": "A solution must make the original equation true."
-    },
-    {
-      "number": 2,
-      "answer": "√2",
-      "unit": 1,
-      "explanation": "√2 cannot be written as a ratio of integers."
-    },
-    {
-      "number": 3,
-      "answer": "12",
-      "unit": 1,
-      "explanation": "Multiply before adding and subtracting."
-    },
-    {
-      "number": 4,
-      "answer": "300 cm",
-      "unit": 1,
-      "explanation": "Multiply by 100 cm per meter."
-    },
-    {
-      "number": 5,
-      "answer": "2%",
-      "unit": 1,
-      "explanation": "Absolute error divided by accepted value times 100."
-    },
-    {
-      "number": 6,
-      "answer": "distributive property",
-      "unit": 1,
-      "explanation": "The factor multiplies every term."
-    },
-    {
-      "number": 7,
-      "answer": "2 is prime and even",
-      "unit": 1,
-      "explanation": "One counterexample disproves a universal claim."
-    },
-    {
-      "number": 8,
-      "answer": "13",
-      "unit": 2,
-      "explanation": "Substitute and evaluate."
-    },
-    {
-      "number": 9,
-      "answer": "substitute it into the original equation",
-      "unit": 2,
-      "explanation": "A solution must make the original equation true."
-    },
-    {
-      "number": 10,
-      "answer": "7x+8",
-      "unit": 2,
-      "explanation": "Combine variable terms and constants separately."
-    },
-    {
-      "number": 11,
-      "answer": "3",
-      "unit": 2,
-      "explanation": "The greatest exponent is 3."
-    },
-    {
-      "number": 12,
-      "answer": "10x²+5x",
-      "unit": 2,
-      "explanation": "Combine like degrees."
-    },
-    {
-      "number": 13,
-      "answer": "5(9x+5)",
-      "unit": 2,
-      "explanation": "Factor the greatest shared factor."
-    },
-    {
-      "number": 14,
-      "answer": "6",
-      "unit": 2,
-      "explanation": "Substitute and evaluate."
-    },
-    {
-      "number": 15,
-      "answer": "x=1",
-      "unit": 3,
-      "explanation": "Undo operations and verify."
-    },
-    {
-      "number": 16,
-      "answer": "identity",
-      "unit": 3,
-      "explanation": "Both sides are equivalent."
-    },
-    {
-      "number": 17,
-      "answer": "w=A/l",
-      "unit": 3,
-      "explanation": "Divide by l, l≠0."
-    },
-    {
-      "number": 18,
-      "answer": "x=1",
-      "unit": 3,
-      "explanation": "Multiply by the denominator and simplify."
-    },
-    {
-      "number": 19,
-      "answer": "8",
-      "unit": 3,
-      "explanation": "Model fixed+rate·h=total."
-    },
-    {
-      "number": 20,
-      "answer": "x=9",
-      "unit": 3,
-      "explanation": "Undo operations and verify."
-    },
-    {
-      "number": 21,
-      "answer": "x=-5",
-      "unit": 3,
-      "explanation": "Undo operations and verify."
-    },
-    {
-      "number": 22,
-      "answer": "x≤-3",
-      "unit": 4,
-      "explanation": "Subtract the same value."
-    },
-    {
-      "number": 23,
-      "answer": "x≥-2",
-      "unit": 4,
-      "explanation": "Divide by a negative and reverse the sign."
-    },
-    {
-      "number": 24,
-      "answer": "(−2, 8]",
-      "unit": 4,
-      "explanation": "Left excluded, right included."
-    },
-    {
-      "number": 25,
-      "answer": "x=-3 or x=15",
-      "unit": 4,
-      "explanation": "Two points lie the stated distance from the center."
-    },
-    {
-      "number": 26,
-      "answer": "x≤-5",
-      "unit": 4,
-      "explanation": "Subtract the same value."
-    },
-    {
-      "number": 27,
-      "answer": "x≤3",
-      "unit": 4,
-      "explanation": "Subtract the same value."
-    },
-    {
-      "number": 28,
-      "answer": "x≤1",
-      "unit": 4,
-      "explanation": "Subtract the same value."
-    },
-    {
-      "number": 29,
-      "answer": "{(1,2),(1,5),(3,7)}",
-      "unit": 5,
-      "explanation": "Input 1 has two outputs."
-    },
-    {
-      "number": 30,
-      "answer": "4",
-      "unit": 5,
-      "explanation": "Substitute the input."
-    },
-    {
-      "number": 31,
-      "answer": "4",
-      "unit": 5,
-      "explanation": "The denominator cannot be zero."
-    },
-    {
-      "number": 32,
-      "answer": "y=7x+7",
-      "unit": 5,
-      "explanation": "Difference gives slope; x=0 gives intercept."
-    },
-    {
-      "number": 33,
-      "answer": "right 3 and up 2",
-      "unit": 5,
-      "explanation": "Inside changes horizontal position; outside changes vertical."
-    },
-    {
-      "number": 34,
-      "answer": "0",
-      "unit": 5,
-      "explanation": "The x≥0 rule applies."
-    },
-    {
-      "number": 35,
-      "answer": "25",
-      "unit": 5,
-      "explanation": "Add the constant difference."
-    },
-    {
-      "number": 36,
-      "answer": "2",
-      "unit": 6,
-      "explanation": "Change in y divided by change in x."
+      "id": "u13x-l02-16",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Median and IQR",
+      "explanation": "Median and IQR resist influence from extreme values."
     },
     {
-      "number": 37,
-      "answer": "y=5x+2",
-      "unit": 6,
-      "explanation": "Use y=mx+b."
+      "id": "u13x-l02-17",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "A value known to come from a broken sensor with documented failure",
+      "explanation": "Exclusion should be based on defensible data-quality criteria, not desired conclusions."
     },
     {
-      "number": 38,
-      "answer": "−1/2",
-      "unit": 6,
-      "explanation": "Use the negative reciprocal."
+      "id": "u13x-l02-18",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Inflation adjustment or explicit nominal-dollar limitation",
+      "explanation": "Price-level changes can make nominal amounts non-comparable."
     },
     {
-      "number": 39,
-      "answer": "7",
-      "unit": 6,
-      "explanation": "Residual=observed−predicted."
+      "id": "u13x-l02-19",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Clarify geometry, relationships, and assumptions before equations are built",
+      "explanation": "A schematic can make structure and constraints visible."
     },
     {
-      "number": 40,
-      "answer": "49",
-      "unit": 6,
-      "explanation": "Substitute the input."
+      "id": "u13x-l02-20",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "At least two complementary forms with consistent units and labels",
+      "explanation": "Complementary representations improve interpretation and verification."
     },
     {
-      "number": 41,
-      "answer": "4",
-      "unit": 6,
-      "explanation": "Change in y divided by change in x."
+      "id": "q0421",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Comparing model output with data, constraints, or an independent method",
+      "explanation": "Validation tests whether a model performs acceptably for its purpose."
     },
     {
-      "number": 42,
-      "answer": "6",
-      "unit": 6,
-      "explanation": "Change in y divided by change in x."
+      "id": "q0422",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "−2",
+      "explanation": "Residual=50−52=−2."
     },
     {
-      "number": 43,
-      "answer": "(6, 5)",
-      "unit": 7,
-      "explanation": "The pair must satisfy both equations."
+      "id": "q0423",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Systematic patterns can reveal model misspecification",
+      "explanation": "A curve or trend in residuals suggests missing structure."
     },
     {
-      "number": 44,
-      "answer": "substitution",
-      "unit": 7,
-      "explanation": "Substitution replaces a variable with an equivalent expression."
+      "id": "q0424",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Consider a nonlinear model",
+      "explanation": "A curved residual pattern suggests a linear form may be inadequate."
     },
     {
-      "number": 45,
-      "answer": "solid line y=2x−1",
-      "unit": 7,
-      "explanation": "Equality includes the boundary."
+      "id": "q0425",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Substitute the result into the original relationship",
+      "explanation": "Independent verification should test the original condition."
     },
     {
-      "number": 46,
-      "answer": "vertices",
-      "unit": 7,
-      "explanation": "Linear extrema occur at feasible vertices when bounded."
+      "id": "u13x-l03-06",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Revisit domain/constraints or model structure",
+      "explanation": "Outputs violating physical constraints indicate a model or domain problem."
     },
     {
-      "number": 47,
-      "answer": "(2, 4)",
-      "unit": 7,
-      "explanation": "The pair must satisfy both equations."
+      "id": "u13x-l03-07",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Premature rounding can accumulate error",
+      "explanation": "Exact intermediate results preserve precision for later calculations."
     },
     {
-      "number": 48,
-      "answer": "(4, 3)",
-      "unit": 7,
-      "explanation": "The pair must satisfy both equations."
+      "id": "u13x-l03-08",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Overfitting",
+      "explanation": "An overly tailored model can memorize noise rather than general structure."
     },
     {
-      "number": 49,
-      "answer": "(8, 3)",
-      "unit": 7,
-      "explanation": "The pair must satisfy both equations."
+      "id": "u13x-l03-09",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Adjusting parameters so model output aligns with relevant observations",
+      "explanation": "Calibration estimates model parameters from evidence."
     },
     {
-      "number": 50,
-      "answer": "x^17",
-      "unit": 8,
-      "explanation": "Add exponents for the same base."
+      "id": "u13x-l03-10",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Mean absolute error",
+      "explanation": "Absolute errors retain the response variable's units before averaging."
     },
     {
-      "number": 51,
-      "answer": "4,200",
-      "unit": 8,
-      "explanation": "Move the decimal three places right."
+      "id": "u13x-l03-11",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Is 2 units acceptable for the decision purpose?",
+      "explanation": "Model adequacy depends on decision tolerance, not just numerical fit."
     },
     {
-      "number": 52,
-      "answer": "15",
-      "unit": 8,
-      "explanation": "Add the constant difference."
+      "id": "u13x-l03-12",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Flag the prediction as unsupported or expand validation before using it",
+      "explanation": "Use outside the validated domain is extrapolation and needs justification."
     },
     {
-      "number": 53,
-      "answer": "P(1.08)^t",
-      "unit": 8,
-      "explanation": "Constant percent growth uses P(1+r)^t."
+      "id": "u13x-l03-13",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Using a second valid method or representation to verify a result",
+      "explanation": "Independent methods reduce risk of shared calculation error."
     },
     {
-      "number": 54,
-      "answer": "A=P(1+r)^t",
-      "unit": 8,
-      "explanation": "Annual compound growth multiplies by 1+r each year."
+      "id": "u13x-l03-14",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "The predicted demand exceeds the capacity constraint by 50",
+      "explanation": "A model should preserve and interpret binding constraints rather than silently clip results."
     },
     {
-      "number": 55,
-      "answer": "x^8",
-      "unit": 8,
-      "explanation": "Add exponents for the same base."
+      "id": "u13x-l03-15",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Change model form after residuals show systematic curvature",
+      "explanation": "Revision should respond to diagnostic evidence."
     },
     {
-      "number": 56,
-      "answer": "x^8",
-      "unit": 8,
-      "explanation": "Add exponents for the same base."
+      "id": "u13x-l03-16",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Potential sensitivity or instability",
+      "explanation": "Large output change from small input change signals sensitivity."
     },
     {
-      "number": 57,
-      "answer": "3",
-      "unit": 9,
-      "explanation": "The greatest exponent is 3."
+      "id": "u13x-l03-17",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Data reserved for testing model performance after fitting",
+      "explanation": "Holdout data can assess generalization beyond the fitting sample."
     },
     {
-      "number": 58,
-      "answer": "16x²+2x",
-      "unit": 9,
-      "explanation": "Combine like degrees."
+      "id": "u13x-l03-18",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "To create an auditable trail of what changed and why",
+      "explanation": "Version history supports reproducibility and accountability."
     },
     {
-      "number": 59,
-      "answer": "48x²+30x",
-      "unit": 9,
-      "explanation": "Distribute the monomial."
+      "id": "u13x-l03-19",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Validation requires comparison with data, constraints, or independent reasoning",
+      "explanation": "Software can execute an incorrect model perfectly."
     },
     {
-      "number": 60,
-      "answer": "x²+8x+16",
-      "unit": 9,
-      "explanation": "(x+a)²=x²+2ax+a²."
+      "id": "u13x-l03-20",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "When errors, constraints, assumptions, or instability make it unfit for purpose",
+      "explanation": "Models are judged relative to purpose and acceptable evidence standards."
     },
     {
-      "number": 61,
-      "answer": "7(4x+3)",
-      "unit": 9,
-      "explanation": "Factor the greatest shared factor."
+      "id": "q0426",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "How results change when inputs or assumptions change",
+      "explanation": "Sensitivity analysis evaluates dependence of outputs on model inputs."
     },
     {
-      "number": 62,
-      "answer": "(x+3)(x+5)",
-      "unit": 9,
-      "explanation": "Factors multiply to the constant and add to the middle coefficient."
+      "id": "q0427",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "High sensitivity",
+      "explanation": "Large output response to a small input change indicates instability/sensitivity."
     },
     {
-      "number": 63,
-      "answer": "8 and −4",
-      "unit": 9,
-      "explanation": "Set each factor equal to zero."
+      "id": "q0428",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "A quantified or described limit on what is known or predicted",
+      "explanation": "Uncertainty reflects incomplete knowledge, variability, or estimation limits."
     },
     {
-      "number": 64,
-      "answer": "downward",
-      "unit": 10,
-      "explanation": "Negative leading coefficient opens downward."
+      "id": "q0429",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "It can communicate plausible variation or uncertainty",
+      "explanation": "A range can better reflect uncertainty than false precision."
     },
     {
-      "number": 65,
-      "answer": "(7, 7)",
-      "unit": 10,
-      "explanation": "Vertex form gives (h,k)."
+      "id": "q0430",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Comparing outputs under several coherent sets of assumptions",
+      "explanation": "Scenarios show how conclusions depend on plausible conditions."
     },
     {
-      "number": 66,
-      "answer": "2 and −3",
-      "unit": 10,
-      "explanation": "Set each factor to zero."
+      "id": "u13x-l04-06",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "The decision is not robust to that assumption",
+      "explanation": "A robust conclusion should not hinge on tiny reasonable changes without disclosure."
     },
     {
-      "number": 67,
-      "answer": "x=6 or x=6",
-      "unit": 10,
-      "explanation": "Factor and use the zero-product property."
+      "id": "u13x-l04-07",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Who receives benefits, burdens, errors, or exclusions under the model",
+      "explanation": "Fairness includes distribution of model consequences across relevant groups."
     },
     {
-      "number": 68,
-      "answer": "0",
-      "unit": 10,
-      "explanation": "b²−4ac=16−16."
+      "id": "u13x-l04-08",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Report and investigate the disparity",
+      "explanation": "Aggregate performance can conceal subgroup harm."
     },
     {
-      "number": 69,
-      "answer": "vertex",
-      "unit": 10,
-      "explanation": "The maximum occurs at the vertex."
+      "id": "u13x-l04-09",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "One that remains reasonable across plausible changes in assumptions",
+      "explanation": "Robustness concerns stability under plausible uncertainty."
     },
     {
-      "number": 70,
-      "answer": "0, 1, or 2",
-      "unit": 10,
-      "explanation": "Substitution yields a quadratic."
+      "id": "u13x-l04-10",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Natural day-to-day demand variability",
+      "explanation": "Some uncertainty arises from inherent variability rather than lack of knowledge alone."
     },
     {
-      "number": 71,
-      "answer": "7√2",
-      "unit": 11,
-      "explanation": "Factor out the perfect square."
+      "id": "u13x-l04-11",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Measurement uncertainty",
+      "explanation": "Improved instruments or data collection can reduce some epistemic uncertainty."
     },
     {
-      "number": 72,
-      "answer": "√(x³)",
-      "unit": 11,
-      "explanation": "Denominator gives root; numerator gives power."
+      "id": "u13x-l04-12",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Extreme unrealistic inputs can distract from decision-relevant behavior",
+      "explanation": "Analysis should focus on credible variations relevant to the decision."
     },
     {
-      "number": 73,
-      "answer": "5",
-      "unit": 11,
-      "explanation": "Use the Pythagorean theorem."
+      "id": "u13x-l04-13",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Plan A is unlikely to be cheaper under the stated plausible range",
+      "explanation": "The threshold lies outside the stated plausible scenario range."
     },
     {
-      "number": 74,
-      "answer": "center (2,−3), radius 5",
-      "unit": 11,
-      "explanation": "Compare with (x−h)²+(y−k)²=r²."
+      "id": "u13x-l04-14",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "An input value where compared outcomes become equal",
+      "explanation": "Threshold analysis identifies where a preferred decision may switch."
     },
     {
-      "number": 75,
-      "answer": "6√2",
-      "unit": 11,
-      "explanation": "Factor out the perfect square."
+      "id": "u13x-l04-15",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Projected cost is $12,000–$14,000 under the stated demand scenarios",
+      "explanation": "The statement connects uncertainty to explicit scenarios."
     },
     {
-      "number": 76,
-      "answer": "5√2",
-      "unit": 11,
-      "explanation": "Factor out the perfect square."
+      "id": "u13x-l04-16",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Transparent trade-off analysis rather than claiming universal improvement",
+      "explanation": "Fairness decisions can involve competing objectives that should be disclosed."
     },
     {
-      "number": 77,
-      "answer": "4√2",
-      "unit": 11,
-      "explanation": "Factor out the perfect square."
+      "id": "u13x-l04-17",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Which inputs have the largest effect on an output over chosen ranges",
+      "explanation": "Ranked bars can visualize relative output sensitivity to inputs."
     },
     {
-      "number": 78,
-      "answer": "randomly select students from every grade",
-      "unit": 12,
-      "explanation": "Stratified random selection reduces undercoverage."
+      "id": "u13x-l04-18",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Test multiple plausible scenarios including unfavorable but credible ones",
+      "explanation": "Balanced scenario analysis reduces cherry-picking."
     },
     {
-      "number": 79,
-      "answer": "6.0",
-      "unit": 12,
-      "explanation": "Add and divide by count."
+      "id": "u13x-l04-19",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "State the unresolved issue and keep it in the decision process",
+      "explanation": "Not every ethical trade-off can be reduced to one scalar metric."
     },
     {
-      "number": 80,
-      "answer": "box plot",
-      "unit": 12,
-      "explanation": "Box plots show the five-number summary."
+      "id": "u13x-l04-20",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Plan B is preferred under tested ranges, but the choice reverses if demand falls below 120 units",
+      "explanation": "The statement communicates preference, scope, and a decision threshold."
     },
     {
-      "number": 81,
-      "answer": "larger x tends to occur with larger y",
-      "unit": 12,
-      "explanation": "Association describes a trend, not causation."
+      "id": "q0431",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "The decision question and main conclusion",
+      "explanation": "Audience orientation starts with purpose and the answer being defended."
     },
     {
-      "number": 82,
-      "answer": "7/12",
-      "unit": 12,
-      "explanation": "Favorable over total."
+      "id": "q0432",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "A calculation linked to data, assumptions, and validation",
+      "explanation": "Defence requires a traceable evidence chain."
     },
     {
-      "number": 83,
-      "answer": "$96.30",
-      "unit": 12,
-      "explanation": "Add tax to original price."
+      "id": "q0433",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Acknowledge it and explain its effect on interpretation",
+      "explanation": "Transparent limitations strengthen rather than weaken defensibility."
     },
     {
-      "number": 84,
-      "answer": "denominator, time period, and source",
-      "unit": 12,
-      "explanation": "Percentages require a comparison base and context."
+      "id": "q0434",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "The conclusion applies to the tested 0–50 unit domain under the stated cost assumptions",
+      "explanation": "Scope connects conclusions to domain and assumptions."
     },
     {
-      "number": 85,
-      "answer": "state a precise question and define quantities",
-      "unit": 13,
-      "explanation": "Question and quantities guide the model."
+      "id": "q0435",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "One proportional to the evidence and explicit about uncertainty",
+      "explanation": "Evidence strength should bound claim strength."
     },
     {
-      "number": 86,
-      "answer": "how results change when inputs change",
-      "unit": 13,
-      "explanation": "Sensitivity evaluates stability."
+      "id": "u13x-l05-06",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "They make quantitative claims interpretable and checkable",
+      "explanation": "Values without units can be ambiguous or misleading."
     },
     {
-      "number": 87,
-      "answer": "The model supports the claim within its domain and assumptions.",
-      "unit": 13,
-      "explanation": "Defensible conclusions state scope and limits."
+      "id": "u13x-l05-07",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Another reviewer could follow the data, assumptions, and calculations to recreate the result",
+      "explanation": "Reproducibility depends on documented methods and inputs."
     },
     {
-      "number": 88,
-      "answer": "state a precise question and define quantities",
-      "unit": 13,
-      "explanation": "Question and quantities guide the model."
+      "id": "u13x-l05-08",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "A labeled graph directly supporting the decision with readable scales",
+      "explanation": "Visuals should clarify evidence without distortion."
     },
     {
-      "number": 89,
-      "answer": "how results change when inputs change",
-      "unit": 13,
-      "explanation": "Sensitivity evaluates stability."
+      "id": "u13x-l05-09",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "The observed structure and residual diagnostics supported linear behavior over the decision domain",
+      "explanation": "Model choice should be justified by structure, diagnostics, and purpose."
     },
     {
-      "number": 90,
-      "answer": "state a precise question and define quantities",
-      "unit": 13,
-      "explanation": "Question and quantities guide the model."
+      "id": "u13x-l05-10",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Correct it, revise the conclusion if needed, and document the change",
+      "explanation": "Good modelling treats correction as part of the evidence process."
     },
     {
-      "number": 91,
-      "answer": "how results change when inputs change",
-      "unit": 13,
-      "explanation": "Sensitivity evaluates stability."
+      "id": "u13x-l05-11",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Let reviewers trace data and claims to their origins",
+      "explanation": "Source transparency supports auditability."
     },
     {
-      "number": 92,
-      "answer": "The model supports the claim within its domain and assumptions.",
-      "unit": 13,
-      "explanation": "Defensible conclusions state scope and limits."
+      "id": "u13x-l05-12",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "I can select methods, justify them, verify results, and explain limits",
+      "explanation": "Readiness includes reasoning, verification, and communication—not procedure alone."
     },
     {
-      "number": 93,
-      "answer": "substitute it into the original equation",
-      "unit": 1,
-      "explanation": "A solution must make the original equation true."
+      "id": "u13x-l05-13",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "A correct calculation can still support an invalid contextual claim",
+      "explanation": "Mathematics and contextual inference require separate justification."
     },
     {
-      "number": 94,
-      "answer": "distributive property",
-      "unit": 1,
-      "explanation": "The factor multiplies every term."
+      "id": "u13x-l05-14",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "What worked, what changed, remaining limitations, and the next skill to strengthen",
+      "explanation": "Reflection should identify learning evidence and future improvement."
     },
     {
-      "number": 95,
-      "answer": "√2",
-      "unit": 1,
-      "explanation": "√2 cannot be written as a ratio of integers."
+      "id": "u13x-l05-15",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Name a specific assumption, threshold, or new evidence that would alter the result",
+      "explanation": "A defensible recommendation identifies conditions under which it would change."
     },
     {
-      "number": 96,
-      "answer": "√2",
-      "unit": 1,
-      "explanation": "√2 cannot be written as a ratio of integers."
+      "id": "u13x-l05-16",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Round to justified precision and explain uncertainty",
+      "explanation": "Reported precision should reflect input quality and model uncertainty."
     },
     {
-      "number": 97,
-      "answer": "√2",
-      "unit": 1,
-      "explanation": "√2 cannot be written as a ratio of integers."
+      "id": "u13x-l05-17",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "No; data quality can undermine an otherwise correct calculation",
+      "explanation": "Correct computation cannot repair a systematically flawed evidence base."
     },
     {
-      "number": 98,
-      "answer": "√2",
-      "unit": 1,
-      "explanation": "√2 cannot be written as a ratio of integers."
+      "id": "u13x-l05-18",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Test whether the modeller understands choices, evidence, and limits",
+      "explanation": "Defence questions probe reasoning rather than rote reproduction."
     },
     {
-      "number": 99,
-      "answer": "9",
-      "unit": 1,
-      "explanation": "Multiply before adding and subtracting."
+      "id": "u13x-l05-19",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Include meaningful revisions and explain why discarded approaches were rejected",
+      "explanation": "A revision trail demonstrates modelling judgment."
     },
     {
-      "number": 100,
-      "answer": "12",
-      "unit": 1,
-      "explanation": "Multiply before adding and subtracting."
+      "id": "u13x-l05-20",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Within the stated domain and tested assumptions, the model supports Plan A; uncertainty and threshold analysis identify when that choice could reverse",
+      "explanation": "The claim matches evidence while preserving scope and uncertainty."
     }
   ]
 }
