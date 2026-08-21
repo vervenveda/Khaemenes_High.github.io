@@ -7,12 +7,11 @@ const unit=Number(ref.unit);
 const scripts=[];
 if(unit===11) scripts.push(new URL("unit-11-content-upgrade.js",base).href);
 if(unit===12) scripts.push(new URL("unit-12-content-upgrade.js",base).href);
+if(unit===13) scripts.push(new URL("unit-13-content-upgrade.js",base).href);
 scripts.push(new URL("unit-page-core.js",base).href);
-
 function loadAt(i){
  if(i>=scripts.length){shuffleVisibleOptions();return}
- const s=document.createElement("script");
- s.src=scripts[i];s.async=false;
+ const s=document.createElement("script");s.src=scripts[i];s.async=false;
  s.onload=()=>loadAt(i+1);
  s.onerror=()=>console.error("Algebra I unit renderer dependency could not load:",scripts[i]);
  document.head.appendChild(s);
