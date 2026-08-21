@@ -1,0 +1,989 @@
+{
+  "schema": "khaemenes-algebra1-unit-answer-key",
+  "version": "2026.08.21-u12-v2",
+  "unit": 12,
+  "question_count": 140,
+  "notes": "20 unique questions per lesson. Existing q0376–q0410 IDs remain the five lesson-check IDs.",
+  "answers": [
+    {
+      "id": "q0376",
+      "lesson": 1,
+      "answer": 1,
+      "answer_text": "What is the average commute time for students at this school?",
+      "explanation": "A statistical question anticipates variability in a group of observations."
+    },
+    {
+      "id": "q0377",
+      "lesson": 1,
+      "answer": 2,
+      "answer_text": "Randomly sample students within each grade",
+      "explanation": "Stratified random sampling can reduce undercoverage of grade levels."
+    },
+    {
+      "id": "q0378",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Undercoverage",
+      "explanation": "Students who avoid the cafeteria are excluded from the sampling frame."
+    },
+    {
+      "id": "q0379",
+      "lesson": 1,
+      "answer": 1,
+      "answer_text": "Random assignment to treatment groups",
+      "explanation": "Random assignment helps balance lurking variables and supports causal inference."
+    },
+    {
+      "id": "q0380",
+      "lesson": 1,
+      "answer": 1,
+      "answer_text": "Gather only data needed for the stated question",
+      "explanation": "Data minimization reduces privacy risk while preserving the study purpose."
+    },
+    {
+      "id": "u12x-l01-06",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Simple random sample",
+      "explanation": "Each rostered student can be selected by the random process."
+    },
+    {
+      "id": "u12x-l01-07",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Voluntary-response bias",
+      "explanation": "People with stronger opinions may be more likely to respond."
+    },
+    {
+      "id": "u12x-l01-08",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "A census can be costly and still contain measurement or nonresponse errors",
+      "explanation": "Complete coverage does not eliminate poor measurement, nonresponse, or processing problems."
+    },
+    {
+      "id": "u12x-l01-09",
+      "lesson": 1,
+      "answer": 2,
+      "answer_text": "Preferred study location",
+      "explanation": "Preferred location records categories rather than numerical measurements."
+    },
+    {
+      "id": "u12x-l01-10",
+      "lesson": 1,
+      "answer": 2,
+      "answer_text": "Daily screen time in minutes",
+      "explanation": "Minutes are numerical measurements on which arithmetic is meaningful."
+    },
+    {
+      "id": "u12x-l01-11",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Students self-selected tutoring",
+      "explanation": "Self-selection may be related to motivation, prior achievement, or other confounders."
+    },
+    {
+      "id": "u12x-l01-12",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Create treatment groups that are comparable on average",
+      "explanation": "Random assignment addresses treatment-group comparability, not population sampling."
+    },
+    {
+      "id": "u12x-l01-13",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Support generalization from sample to population",
+      "explanation": "Probability sampling supports population inference when implemented well."
+    },
+    {
+      "id": "u12x-l01-14",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Leading wording",
+      "explanation": "The wording pushes respondents toward a particular answer."
+    },
+    {
+      "id": "u12x-l01-15",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Replace names with anonymous response IDs when identity is unnecessary",
+      "explanation": "Removing unnecessary identifiers reduces privacy exposure."
+    },
+    {
+      "id": "u12x-l01-16",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Warmer weather may influence both variables",
+      "explanation": "A lurking variable such as temperature can explain association without direct causation."
+    },
+    {
+      "id": "u12x-l01-17",
+      "lesson": 1,
+      "answer": 2,
+      "answer_text": "Students in one honors club only",
+      "explanation": "One specialized club is unlikely to represent the full student population."
+    },
+    {
+      "id": "u12x-l01-18",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "To make measurements consistent and interpretable",
+      "explanation": "Operational definitions help different observations measure the same concept."
+    },
+    {
+      "id": "u12x-l01-19",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Treatment effects from expectations and background change",
+      "explanation": "A placebo comparison can help isolate effects beyond expectation or ordinary change."
+    },
+    {
+      "id": "u12x-l01-20",
+      "lesson": 1,
+      "answer": 0,
+      "answer_text": "Collect only what is needed, explain purpose, protect access, and limit retention",
+      "explanation": "Responsible data practice includes purpose limitation, minimization, protection, and appropriate consent/notice."
+    },
+    {
+      "id": "q0381",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "8",
+      "explanation": "The sum is 40 and 40/5=8."
+    },
+    {
+      "id": "q0382",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "7",
+      "explanation": "The ordered middle value is 7."
+    },
+    {
+      "id": "q0383",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "11",
+      "explanation": "Range=max−min=14−3=11."
+    },
+    {
+      "id": "q0384",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "6",
+      "explanation": "IQR=Q3−Q1=8−2=6."
+    },
+    {
+      "id": "q0385",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Median",
+      "explanation": "The median depends on order more than magnitude and is resistant to extreme values."
+    },
+    {
+      "id": "u12x-l02-06",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "7",
+      "explanation": "The sum is 35 and 35/5=7."
+    },
+    {
+      "id": "u12x-l02-07",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "7",
+      "explanation": "For six values, average the middle two: (6+8)/2=7."
+    },
+    {
+      "id": "u12x-l02-08",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "4,4,4,4",
+      "explanation": "Standard deviation is zero only when all values are identical."
+    },
+    {
+      "id": "u12x-l02-09",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Group B",
+      "explanation": "Standard deviation increases as values tend to lie farther from the mean."
+    },
+    {
+      "id": "u12x-l02-10",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Median and IQR",
+      "explanation": "Median and IQR are resistant to skew and extreme observations."
+    },
+    {
+      "id": "u12x-l02-11",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "25",
+      "explanation": "Adding a constant to every value adds that constant to the mean."
+    },
+    {
+      "id": "u12x-l02-12",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "It is multiplied by 3",
+      "explanation": "Scaling all deviations by 3 scales standard deviation by 3."
+    },
+    {
+      "id": "u12x-l02-13",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "18",
+      "explanation": "The high outlier increases the arithmetic mean."
+    },
+    {
+      "id": "u12x-l02-14",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "12",
+      "explanation": "12 occurs more often than any other value."
+    },
+    {
+      "id": "u12x-l02-15",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "It measures typical spread around the mean",
+      "explanation": "Standard deviation summarizes how far values typically lie from the mean."
+    },
+    {
+      "id": "u12x-l02-16",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "8",
+      "explanation": "IQR=22−14=8."
+    },
+    {
+      "id": "u12x-l02-17",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "30",
+      "explanation": "IQR=8; upper fence=18+1.5(8)=30."
+    },
+    {
+      "id": "u12x-l02-18",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Their middle-50% spread",
+      "explanation": "IQR measures the spread of the middle half of ordered data."
+    },
+    {
+      "id": "u12x-l02-19",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Mean is 9",
+      "explanation": "(6+8+10+12)/4=36/4=9."
+    },
+    {
+      "id": "u12x-l02-20",
+      "lesson": 2,
+      "answer": 0,
+      "answer_text": "Mean and standard deviation",
+      "explanation": "For roughly symmetric distributions without strong outliers, mean and standard deviation are informative summaries."
+    },
+    {
+      "id": "q0386",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Box plot",
+      "explanation": "A box plot displays the five-number-summary structure and potential outliers."
+    },
+    {
+      "id": "q0387",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Histogram",
+      "explanation": "Histograms group quantitative values into intervals to reveal shape."
+    },
+    {
+      "id": "q0388",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Right-skewed",
+      "explanation": "Skew is named for the direction of the longer tail."
+    },
+    {
+      "id": "q0389",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Median",
+      "explanation": "The internal line marks the second quartile, or median."
+    },
+    {
+      "id": "q0390",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Group B has larger IQR",
+      "explanation": "Box width/length along the measurement axis represents the interquartile range."
+    },
+    {
+      "id": "u12x-l03-06",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "A bar graph comparing similar values",
+      "explanation": "A truncated axis can visually exaggerate differences in bar heights."
+    },
+    {
+      "id": "u12x-l03-07",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "An interval with no observations",
+      "explanation": "A gap is an empty bin or region in the observed distribution."
+    },
+    {
+      "id": "u12x-l03-08",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "6",
+      "explanation": "IQR=11−5=6."
+    },
+    {
+      "id": "u12x-l03-09",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Compare center, spread, shape, and unusual values",
+      "explanation": "A meaningful distribution comparison addresses several features, not one statistic."
+    },
+    {
+      "id": "u12x-l03-10",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Important shape details can be hidden",
+      "explanation": "Bin width changes the visual resolution of the distribution."
+    },
+    {
+      "id": "u12x-l03-11",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Bimodal",
+      "explanation": "Two prominent modes or peaks indicate bimodality."
+    },
+    {
+      "id": "u12x-l03-12",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Side-by-side box plots",
+      "explanation": "Aligned box plots make centers and spreads directly comparable."
+    },
+    {
+      "id": "u12x-l03-13",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Different bins can create misleading visual differences",
+      "explanation": "Different boundaries/widths can make the same data appear differently shaped."
+    },
+    {
+      "id": "u12x-l03-14",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "About 50%",
+      "explanation": "The box spans Q1 to Q3, the middle half of observations."
+    },
+    {
+      "id": "u12x-l03-15",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Their centers match, but the second class has more middle-half variability",
+      "explanation": "Equal medians give the same reported center; larger IQR indicates more spread."
+    },
+    {
+      "id": "u12x-l03-16",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Magnitude cannot be interpreted reliably",
+      "explanation": "A quantitative display needs an interpretable scale."
+    },
+    {
+      "id": "u12x-l03-17",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Number and location of modes",
+      "explanation": "Histograms show detailed shape such as peaks; box plots compress shape information."
+    },
+    {
+      "id": "u12x-l03-18",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "It may suggest right-tail spread, but the mean is not shown directly",
+      "explanation": "A box plot does not directly display the arithmetic mean."
+    },
+    {
+      "id": "u12x-l03-19",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Box plot with median and IQR",
+      "explanation": "Box plots pair naturally with resistant summaries for skewed distributions."
+    },
+    {
+      "id": "u12x-l03-20",
+      "lesson": 3,
+      "answer": 0,
+      "answer_text": "Read and reconcile the scales",
+      "explanation": "Visual comparison is meaningful only after understanding whether axes represent counts, densities, or percentages and their scales."
+    },
+    {
+      "id": "q0391",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Positive association",
+      "explanation": "Larger x-values tend to occur with larger y-values."
+    },
+    {
+      "id": "q0392",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Negative association",
+      "explanation": "Larger x-values tend to occur with smaller y-values."
+    },
+    {
+      "id": "q0393",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "3",
+      "explanation": "Residual=observed−predicted=18−15."
+    },
+    {
+      "id": "q0394",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "−6",
+      "explanation": "Residual=24−30=−6."
+    },
+    {
+      "id": "q0395",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "The model predicted that observation exactly",
+      "explanation": "Observed and predicted values are equal."
+    },
+    {
+      "id": "u12x-l04-06",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "The variables are strongly associated",
+      "explanation": "Correlation describes association, not causation or study design."
+    },
+    {
+      "id": "u12x-l04-07",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "A straight-line model may miss structure",
+      "explanation": "Systematic residual patterns suggest the model form is inadequate."
+    },
+    {
+      "id": "u12x-l04-08",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "A linear model may be reasonable",
+      "explanation": "Lack of systematic pattern is consistent with an adequate linear form."
+    },
+    {
+      "id": "u12x-l04-09",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "An outlier",
+      "explanation": "An outlier is unusual relative to the general bivariate pattern."
+    },
+    {
+      "id": "u12x-l04-10",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Predicting beyond the observed x-range",
+      "explanation": "Extrapolation extends the fitted relationship outside the observed domain."
+    },
+    {
+      "id": "u12x-l04-11",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "The relationship may change outside the observed range",
+      "explanation": "Patterns supported by observed data may not continue indefinitely."
+    },
+    {
+      "id": "u12x-l04-12",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Strong negative linear association",
+      "explanation": "Correlation near −1 corresponds to points close to a downward-sloping line."
+    },
+    {
+      "id": "u12x-l04-13",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "There is little linear association, though nonlinear association may still exist",
+      "explanation": "Correlation measures linear association and can miss curved relationships."
+    },
+    {
+      "id": "u12x-l04-14",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "6",
+      "explanation": "76−70=6."
+    },
+    {
+      "id": "u12x-l04-15",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "A point far in x from the others and off the trend",
+      "explanation": "High leverage combined with discrepancy can substantially affect a fitted line."
+    },
+    {
+      "id": "u12x-l04-16",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Students who studied more tended to have higher scores",
+      "explanation": "“Tended to” describes association without asserting unsupported causation."
+    },
+    {
+      "id": "u12x-l04-17",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Predicted score increases about 2.5 points for each additional hour within the model range",
+      "explanation": "Slope is a predicted change per unit of x, interpreted within the relevant domain."
+    },
+    {
+      "id": "u12x-l04-18",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "Use observed−predicted",
+      "explanation": "The course convention is residual=observed−predicted."
+    },
+    {
+      "id": "u12x-l04-19",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "There is nonlinear structure despite weak linear correlation",
+      "explanation": "Positive and negative linear tendencies can cancel even when a clear curve is present."
+    },
+    {
+      "id": "u12x-l04-20",
+      "lesson": 4,
+      "answer": 0,
+      "answer_text": "A randomized controlled experiment with appropriate safeguards",
+      "explanation": "Random assignment and controlled comparison provide stronger causal evidence than observational association alone."
+    },
+    {
+      "id": "q0396",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "7/12",
+      "explanation": "Probability=favorable outcomes/total outcomes."
+    },
+    {
+      "id": "q0397",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "1/3",
+      "explanation": "Outcomes 5 and 6: 2/6=1/3."
+    },
+    {
+      "id": "q0398",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "3/5",
+      "explanation": "12 out of 20 students are in band."
+    },
+    {
+      "id": "q0399",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "18/30",
+      "explanation": "Conditioning on juniors uses the junior total as denominator."
+    },
+    {
+      "id": "q0400",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "0.20",
+      "explanation": "For independent events, multiply probabilities."
+    },
+    {
+      "id": "u12x-l05-06",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "1/4",
+      "explanation": "HH is 1 of 4 equally likely sequences."
+    },
+    {
+      "id": "u12x-l05-07",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "3/5",
+      "explanation": "6 of 10 cards are not stars."
+    },
+    {
+      "id": "u12x-l05-08",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "0.7",
+      "explanation": "Complement probability is 1−0.3."
+    },
+    {
+      "id": "u12x-l05-09",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Teens",
+      "explanation": "30/50=60% exceeds 20/50=40%."
+    },
+    {
+      "id": "u12x-l05-10",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Conditional percentages use comparable denominators",
+      "explanation": "Rates/conditional proportions account for different group totals."
+    },
+    {
+      "id": "u12x-l05-11",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "1",
+      "explanation": "The event and its complement cover the full sample space."
+    },
+    {
+      "id": "u12x-l05-12",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "0",
+      "explanation": "Mutually exclusive events have no shared outcomes."
+    },
+    {
+      "id": "u12x-l05-13",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Yes",
+      "explanation": "0.6×0.5=0.3, matching P(A and B)."
+    },
+    {
+      "id": "u12x-l05-14",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "9/15",
+      "explanation": "The condition “sports” sets the denominator to 15."
+    },
+    {
+      "id": "u12x-l05-15",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Number/count in B",
+      "explanation": "Conditional probability restricts the sample space to B."
+    },
+    {
+      "id": "u12x-l05-16",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "−$0.50",
+      "explanation": "Expected winnings=0.25·6=$1.50; net=$1.50−$2=−$0.50."
+    },
+    {
+      "id": "u12x-l05-17",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "Use the senior total as denominator",
+      "explanation": "Conditioning changes the reference group."
+    },
+    {
+      "id": "u12x-l05-18",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "0.24",
+      "explanation": "P(not A and not B)=0.8×0.3=0.24."
+    },
+    {
+      "id": "u12x-l05-19",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "0.80",
+      "explanation": "For mutually exclusive events, add probabilities."
+    },
+    {
+      "id": "u12x-l05-20",
+      "lesson": 5,
+      "answer": 0,
+      "answer_text": "The group sizes",
+      "explanation": "A weighted overall rate depends on how many observations are in each group."
+    },
+    {
+      "id": "q0401",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "$85.60",
+      "explanation": "Tax is 0.07·80=$5.60; total=$85.60."
+    },
+    {
+      "id": "q0402",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "$40.00",
+      "explanation": "20% of $50 is $10; subtract from original price."
+    },
+    {
+      "id": "q0403",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "$100",
+      "explanation": "I=Prt=1000·0.05·2=$100."
+    },
+    {
+      "id": "q0404",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "$1,102.50",
+      "explanation": "A=1000(1.05)²=$1,102.50."
+    },
+    {
+      "id": "q0405",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "A longer repayment term at the same rate and principal",
+      "explanation": "More time generally means more interest accrues, though exact loan terms matter."
+    },
+    {
+      "id": "u12x-l06-06",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "$90.00",
+      "explanation": "Discount=$30; 120−30=90."
+    },
+    {
+      "id": "u12x-l06-07",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "$64.80",
+      "explanation": "60(1.08)=64.80."
+    },
+    {
+      "id": "u12x-l06-08",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "$560",
+      "explanation": "Interest=500·0.04·3=$60; amount=$560."
+    },
+    {
+      "id": "u12x-l06-09",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "A=P(1+r)^t",
+      "explanation": "Annual compounding multiplies by 1+r each period."
+    },
+    {
+      "id": "u12x-l06-10",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "0.88",
+      "explanation": "A 12% decrease leaves 88% of the previous value."
+    },
+    {
+      "id": "u12x-l06-11",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "15%",
+      "explanation": "Increase is 6; 6/40=0.15=15%."
+    },
+    {
+      "id": "u12x-l06-12",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "APR/rate, fees, term, payment schedule, and total cost",
+      "explanation": "A responsible comparison includes both periodic burden and total borrowing cost."
+    },
+    {
+      "id": "u12x-l06-13",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "The loan term is much longer",
+      "explanation": "Stretching repayment can reduce each payment while increasing total interest."
+    },
+    {
+      "id": "u12x-l06-14",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "$2,060",
+      "explanation": "2000(1.03)=2060."
+    },
+    {
+      "id": "u12x-l06-15",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "$100",
+      "explanation": "$75 is 75% of original, so 75/0.75=100."
+    },
+    {
+      "id": "u12x-l06-16",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "Request assumptions, fees, time horizon, and risk information before comparing",
+      "explanation": "Return figures are incomplete without time, costs, assumptions, and risk."
+    },
+    {
+      "id": "u12x-l06-17",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "The tax is $6.30; total is $96.30",
+      "explanation": "Multiply 90 by 0.07 to find tax, then add it."
+    },
+    {
+      "id": "u12x-l06-18",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "Plan A",
+      "explanation": "Plan A costs 10+0.05(100)=$15, less than $18."
+    },
+    {
+      "id": "u12x-l06-19",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "160",
+      "explanation": "10+0.05m=18 gives 0.05m=8, so m=160."
+    },
+    {
+      "id": "u12x-l06-20",
+      "lesson": 6,
+      "answer": 0,
+      "answer_text": "A rate without its time basis can be misinterpreted",
+      "explanation": "Growth and borrowing rates depend on the period to which the rate applies."
+    },
+    {
+      "id": "q0406",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Baseline risk and time period",
+      "explanation": "Relative change is hard to interpret without the starting level and relevant period."
+    },
+    {
+      "id": "q0407",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Precision and reliability cannot be judged well",
+      "explanation": "Sample size is important context for uncertainty and representativeness."
+    },
+    {
+      "id": "q0408",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Who was sampled and how",
+      "explanation": "Sampling method determines what population the result may represent."
+    },
+    {
+      "id": "q0409",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "The visual difference can appear exaggerated",
+      "explanation": "Truncated axes can magnify small absolute differences visually."
+    },
+    {
+      "id": "q0410",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "The absolute increase was 1 case",
+      "explanation": "Relative and absolute changes together give clearer scale."
+    },
+    {
+      "id": "u12x-l07-06",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "10 percentage points",
+      "explanation": "Percentage-point change is 50−40=10."
+    },
+    {
+      "id": "u12x-l07-07",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "25%",
+      "explanation": "Relative increase=(50−40)/40=0.25."
+    },
+    {
+      "id": "u12x-l07-08",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Per-capita rate",
+      "explanation": "Rates with a common denominator support fairer comparison when population sizes differ."
+    },
+    {
+      "id": "u12x-l07-09",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Outliers or nonlinear structure may be hidden",
+      "explanation": "A single summary statistic can conceal important structure."
+    },
+    {
+      "id": "u12x-l07-10",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "The sample showed an association; the study design does not establish causation",
+      "explanation": "The conclusion should match the strength of the design and evidence."
+    },
+    {
+      "id": "u12x-l07-11",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Large size does not remove self-selection bias",
+      "explanation": "More observations do not fix a systematically unrepresentative sampling process."
+    },
+    {
+      "id": "u12x-l07-12",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "It helps establish the relevant scale or exposure",
+      "explanation": "Counts often need a population, opportunities, or exposure base for interpretation."
+    },
+    {
+      "id": "u12x-l07-13",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Skew can make mean and median differ substantially",
+      "explanation": "The chosen measure of center can change interpretation in skewed data."
+    },
+    {
+      "id": "u12x-l07-14",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Results describe this sample and may not generalize beyond the sampling frame",
+      "explanation": "A limitation identifies the boundary of supported inference."
+    },
+    {
+      "id": "u12x-l07-15",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Question the categories, denominator, or calculation",
+      "explanation": "Mutually exclusive exhaustive categories should total about 100%, allowing rounding."
+    },
+    {
+      "id": "u12x-l07-16",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Inflation or price-level change",
+      "explanation": "Nominal amounts from different years may not represent equal purchasing power."
+    },
+    {
+      "id": "u12x-l07-17",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Check the arithmetic and wording; decreases are bounded at 100% relative to a positive baseline",
+      "explanation": "Relative decrease from a positive baseline cannot exceed 100% without changing the meaning of the comparison."
+    },
+    {
+      "id": "u12x-l07-18",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Recompute from the stated data and compare with an independent source when appropriate",
+      "explanation": "Independent recalculation and source comparison help detect arithmetic or reporting errors."
+    },
+    {
+      "id": "u12x-l07-19",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "4",
+      "explanation": "Circle area is proportional to radius squared, so doubling radius quadruples area."
+    },
+    {
+      "id": "u12x-l07-20",
+      "lesson": 7,
+      "answer": 0,
+      "answer_text": "Result, units, evidence, assumptions, uncertainty/limitations, and scope",
+      "explanation": "A quantitative conclusion should distinguish calculation from interpretation and state its boundaries."
+    }
+  ]
+}
