@@ -108,7 +108,9 @@
     const reviewed = new Set(progress.reviewedLessons);
     progress.completedLessons.forEach(id => {
       const score = numericScore(progress.lessonScores[id]);
-      if (score === null || score < CONFIG.masteryThreshold) reviewed.add(id);
+      const best = numericScore(progress.lessonAttempts[id]?.bestScore);
+      if ((best === null || best < CONFIG.masteryThreshold) &&
+          (score === null || score < CONFIG.masteryThreshold)) reviewed.add(id);
     });
 
     Object.entries(progress.lessonScores).forEach(([id, score]) => {
