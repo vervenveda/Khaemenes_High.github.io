@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explicitly associate browser-local Pre-Algebra Unit 01–13 evidence with a selected learner profile.">
+<title>Learner Evidence Association · Khaemenes Pre-Algebra</title>
+<style>
+:root{--paper:#f3f0e8;--sheet:#fffdf8;--ink:#171b19;--muted:#68706c;--line:#cec7ba;--forest:#17392f;--gold:#a98543;--wine:#71363e;--shadow:0 24px 66px rgba(24,36,30,.10);--head:Cinzel,"Palatino Linotype",Georgia,serif;--body:"Brandon Grotesque","Avenir Next","Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.68 var(--body)}.wrap{width:min(888px,calc(100% - 44px));margin:auto}header{padding:66px 0 33px;text-align:center}.eyebrow{margin:0;color:var(--wine);font:600 12px var(--head);letter-spacing:.16em;text-transform:uppercase}h1,h2{color:var(--forest);font-family:var(--head);font-weight:500}h1{margin:14px auto 18px;font-size:clamp(38px,6vw,66px);line-height:1.06}.lead{max-width:777px;margin:auto;color:var(--muted)}.panel{margin:24px 0;padding:24px;border:1px solid var(--line);background:var(--sheet);box-shadow:var(--shadow)}.panel h2{margin:0 0 14px;font-size:25px}.boundary{padding:14px 18px;border:1px solid #dac99e;border-left:4px solid var(--gold);background:#fff8e8}.field{display:grid;gap:7px;margin:18px 0}.field label{font-weight:700;color:var(--forest)}select,input[type="text"]{width:100%;min-height:44px;padding:9px 11px;border:1px solid var(--line);border-radius:7px;background:#fff;font:inherit}.confirm{display:flex;gap:11px;align-items:flex-start;margin:18px 0;padding:14px;border:1px solid var(--line);background:#faf8f2}.confirm input{margin-top:5px}.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:18px}button,a.button{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border:1px solid var(--forest);border-radius:7px;background:var(--forest);color:#fff;text-decoration:none;font:600 13px var(--body);cursor:pointer}button.secondary,a.button.secondary{background:transparent;color:var(--forest)}button.danger{border-color:var(--wine);background:var(--wine)}button:disabled{opacity:.45;cursor:not-allowed}.status{padding:14px;border:1px solid var(--line);background:#faf8f2}.status.good{border-left:4px solid #2f6b4a}.status.watch{border-left:4px solid var(--gold)}.status.none{border-left:4px solid var(--muted)}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin:18px 0}.metric{padding:14px;border:1px solid var(--line);text-align:center;background:#fff}.metric strong{display:block;color:var(--forest);font:500 26px var(--head)}.metric span{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em}.mono{overflow-wrap:anywhere;font:12px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;color:#3e4944}.history{display:grid;gap:9px}.history-item{padding:12px;border:1px solid var(--line);background:#fff}.quiet{color:var(--muted)}footer{padding:44px 0 66px;text-align:center;color:var(--muted);font-size:13px}@media(max-width:680px){.metrics{grid-template-columns:repeat(2,1fr)}.wrap{width:min(100% - 24px,888px)}}@media(max-width:430px){.metrics{grid-template-columns:1fr}.actions>*{width:100%}}
+</style>
+</head>
+<body>
+<header class="wrap">
+<p class="eyebrow">Khaemenes Academy · Pre-Algebra Records</p>
+<h1>Learner Evidence Association</h1>
+<p class="lead">Bind the Unit 01–13 evidence currently stored in this browser to one learner profile through an explicit local confirmation.</p>
+</header>
+<main class="wrap">
+<section class="panel boundary"><strong>Important boundary:</strong> association is not authentication. This page does not change scores, mastery, lesson progress, or the learner profile. It creates a separate local record stating who the user intentionally associates with the current browser evidence snapshot.</section>
+<section class="panel">
+<h2>Current Unit Evidence</h2>
+<div class="metrics" id="metrics"></div>
+<p class="quiet" id="evidenceNote"></p>
+</section>
+<section class="panel">
+<h2>Association Status</h2>
+<div id="associationStatus" class="status none">Checking…</div>
+<div id="fingerprint" class="mono" style="margin-top:14px"></div>
+</section>
+<section class="panel">
+<h2>Associate with a Learner</h2>
+<div class="field"><label for="learner">Learner profile</label><select id="learner"></select></div>
+<label class="confirm"><input id="confirm" type="checkbox"><span>I intentionally associate the current browser-local Pre-Algebra Unit 01–13 evidence with the learner selected above. I understand this creates a local identity association only and does not independently authenticate or validate the evidence.</span></label>
+<div class="actions"><button id="associate" type="button">Confirm Association</button><button id="release" class="danger" type="button">Release Current Association</button><a class="button secondary" href="unit-evidence-review.html">Review Unit Evidence</a><a class="button secondary" href="./">Records Office</a></div>
+<p id="message" class="quiet" aria-live="polite"></p>
+</section>
+<section class="panel">
+<h2>Association History</h2>
+<div id="history" class="history"></div>
+</section>
+</main>
+<footer class="wrap">Khaemenes Academy · Explicit identity binding · Source evidence remains unchanged.</footer>
+<script src="unit-evidence-bridge.js"></script>
+<script src="unit-evidence-association.js"></script>
+<script>
+"use strict";
+const COURSE_KEY="KHAE_OPEN_PREALGEBRA_FORGE_V2";
+const $=id=>document.getElementById(id);
+const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let course={students:[],activeId:null},snapshot=null;
+try{course=JSON.parse(localStorage.getItem(COURSE_KEY)||"null")||course}catch{}
+function selectedLearner(){return course.students.find(item=>String(item.id)===String($("learner").value))||null}
+function metric(value,label){return `<article class="metric"><strong>${esc(value??"—")}</strong><span>${esc(label)}</span></article>`}
+function renderLearners(){
+ const learners=Array.isArray(course.students)?course.students:[];
+ $("learner").innerHTML=learners.length?learners.map(item=>`<option value="${esc(item.id)}">${esc(item.name||"Learner")}</option>`).join(""):'<option value="">No learner profiles found</option>';
+ if(course.activeId&&learners.some(item=>String(item.id)===String(course.activeId)))$("learner").value=String(course.activeId);
+}
+function renderEvidence(){
+ snapshot=window.KhaemenesPreAlgebraUnitEvidence?.collectAll?.()||null;
+ const s=snapshot?.summary||{};
+ $("metrics").innerHTML=[metric(s.unitsWithEvidence||0,"Units with evidence"),metric(s.lessonsWithEvidence||0,"Lessons scored"),metric(s.masteredLessons||0,"Lessons mastered"),metric(s.totalAttempts||0,"Attempts")].join("");
+ $("evidenceNote").textContent=s.unitsWithEvidence?"Evidence is present and can be intentionally associated.":"No Unit 01–13 lesson evidence is stored in this browser yet.";
+}
+async function renderStatus(){
+ const api=window.KhaemenesPreAlgebraEvidenceAssociation;
+ const status=await api.status(snapshot);
+ const box=$("associationStatus");
+ if(status.state==="unassociated"){
+   box.className="status none";box.textContent="No learner is currently associated with this browser evidence set.";$("fingerprint").textContent="";$("release").disabled=true;return;
+ }
+ $("release").disabled=false;
+ const a=status.active;
+ if(status.matchesCurrentEvidence){
+   box.className="status good";box.textContent=`Associated with ${a.learnerName} (${a.learnerId}). The current evidence matches the confirmed snapshot.`;
+ }else{
+   box.className="status watch";box.textContent=`Associated with ${a.learnerName} (${a.learnerId}), but the unit evidence has changed since confirmation. Refresh the association to bind the current snapshot.`;
+ }
+ $("fingerprint").textContent=`Confirmed fingerprint: ${a.evidenceFingerprint}\nCurrent fingerprint: ${status.currentFingerprint||"unavailable"}\nMethod: ${a.fingerprintMethod}`;
+}
+function renderHistory(){
+ const items=window.KhaemenesPreAlgebraEvidenceAssociation.history();
+ $("history").innerHTML=items.length?items.slice().reverse().map(item=>`<div class="history-item"><strong>${esc(item.learnerName)} · ${esc(item.learnerId)}</strong><div class="quiet">Confirmed ${esc(item.confirmedAt||"—")}${item.releasedAt?` · Released ${esc(item.releasedAt)}`:""}${item.supersededAt?` · Superseded ${esc(item.supersededAt)}`:""}</div></div>`).join(""):'<p class="quiet">No prior association history in this browser.</p>';
+}
+async function refresh(){renderEvidence();await renderStatus();renderHistory();}
+$("associate").addEventListener("click",async()=>{
+ const learner=selectedLearner();
+ if(!learner){$("message").textContent="Select a valid learner profile first.";return}
+ if(!$("confirm").checked){$("message").textContent="Check the confirmation statement before associating evidence.";return}
+ try{
+   await window.KhaemenesPreAlgebraEvidenceAssociation.associate(learner,snapshot,{confirmedByRole:"parent_or_administrator"});
+   $("confirm").checked=false;$("message").textContent="Association saved locally. Source evidence and learner progress were not modified.";await refresh();
+ }catch(error){$("message").textContent=error.message||"Association could not be saved."}
+});
+$("release").addEventListener("click",async()=>{
+ const active=window.KhaemenesPreAlgebraEvidenceAssociation.current();
+ if(!active)return;
+ if(!confirm(`Release the current evidence association with ${active.learnerName}? This will not delete the evidence or learner profile.`))return;
+ window.KhaemenesPreAlgebraEvidenceAssociation.release("explicit_user_release");
+ $("message").textContent="Association released. The history entry was preserved.";await refresh();
+});
+renderLearners();refresh();
+</script>
+</body>
+</html>
