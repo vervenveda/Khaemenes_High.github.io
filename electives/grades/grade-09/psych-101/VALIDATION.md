@@ -38,6 +38,7 @@
 - daily review scoring and best-score storage
 - 80% daily completion threshold for optional challenge unlock
 - weekly assessment score storage
+- cumulative assessment score storage
 - best-score reconstruction from actual attempts
 - mastery reconstructed from assessment evidence, not old completion flags
 - reviewed status independent from mastery
@@ -93,36 +94,48 @@ Coverage includes neurons/neurotransmitters, CNS/PNS, autonomic/endocrine regula
 **GREEN — FULL WEEK IMPLEMENTED**
 
 Student-facing files:
-- `lessons/week-03/day-01.html` — Sensation & Transduction
-- `lessons/week-03/day-02.html` — Vision, Hearing & the Other Senses
-- `lessons/week-03/day-03.html` — Perception: Building Meaning
-- `lessons/week-03/day-04.html` — Attention & Awareness
-- `lessons/week-03/day-05.html` — Context, Experience & Perceptual Reality
-- `assessments/week-03.html` — Week 3 mastery assessment + parallel retake
+- `lessons/week-03/day-01.html`
+- `lessons/week-03/day-02.html`
+- `lessons/week-03/day-03.html`
+- `lessons/week-03/day-04.html`
+- `lessons/week-03/day-05.html`
+- `assessments/week-03.html`
 
-Week 3 verification includes:
-- sensation vs perception
-- sensory receptors and transduction
-- absolute/difference thresholds as probabilistic measures
-- sensory adaptation
-- rods/cones, sound frequency/amplitude, touch, taste, smell, vestibular sense, proprioception
-- multisensory / cross-modal processing
-- bottom-up and top-down processing
-- Gestalt organization, depth cues, and perceptual constancy
-- illusions as evidence about normal perceptual rules rather than broken senses
-- selective/divided attention
-- inattentional blindness and change blindness
-- visual-search reaction time and accuracy
-- nuanced multitasking/task-switching reasoning
-- perceptual set, context, expectation, expertise, and experience
-- group pattern ≠ individual perceptual destiny
-- physical reality remains measurable even when interpretation varies
-- final position: perception is not identical to physical reality, but it is not arbitrary
+Coverage includes sensation vs perception, sensory receptors and transduction, probabilistic thresholds, sensory adaptation, major sensory systems, multisensory processing, bottom-up/top-down processing, Gestalt organization, depth cues, perceptual constancy, illusions, selective/divided attention, inattentional/change blindness, visual-search data, perceptual set, context, expertise, experience, and explicit protection against relativism and group stereotyping.
 
-Week 3 assessment includes Form A, targeted correction, parallel Form B, exact 80% mastery, stored best score, and explicit protection against relativism and group stereotyping.
+## Week 4 — Learning & Behavior
+**GREEN — FULL WEEK IMPLEMENTED**
+
+Student-facing files:
+- `lessons/week-04/day-01.html` — Classical Conditioning
+- `lessons/week-04/day-02.html` — Operant Conditioning
+- `lessons/week-04/day-03.html` — Shaping, Schedules & Habit Formation
+- `lessons/week-04/day-04.html` — Observational Learning, Modeling & Cognition
+- `lessons/week-04/day-05.html` — Learning Systems, Applications & Ethical Behavior Change
+- `assessments/week-04.html` — Week 4 mastery assessment + parallel retake
+
+Week 4 verification includes:
+- US, UR, neutral stimulus, CS, CR
+- acquisition, extinction, spontaneous recovery, generalization, discrimination
+- conditioning as predictive relationship rather than mere repetition
+- reinforcement and punishment defined by future behavior
+- positive = add; negative = remove
+- negative reinforcement ≠ punishment
+- reward ≠ reinforcer unless behavior increases
+- Antecedent → Behavior → Consequence analysis
+- shaping through successive approximations
+- fixed/variable ratio and interval schedules
+- baseline and repeated-measurement reasoning
+- habit models used without “21-day” mythology
+- observational learning, modeling, attention, retention, production, motivation, and vicarious consequences
+- learning ≠ immediate performance
+- media/modeling claims calibrated rather than made automatic
+- immediate practice performance distinguished from delayed retention
+- ethical behavior change: transparency, autonomy, proportionality, fairness, access barriers, constructive alternatives
+- explicit distinction that a completion reward is a reinforcer candidate until future target behavior actually increases
 
 ## Weekly Assessment Verification
-Weeks 1–3 each implement:
+Weeks 1–4 each implement:
 - 10-question mixed-format Form A
 - 4 core knowledge
 - 2 application/scenario
@@ -135,13 +148,32 @@ Weeks 1–3 each implement:
 - stored best score
 - mastery derived from actual attempts rather than completion flags
 
+## Cumulative Assessment I — Weeks 1–4
+**GREEN — IMPLEMENTED**
+
+`assessments/cumulative-01.html` includes:
+- 30 integrated items
+- 8 core knowledge
+- 7 application/scenario
+- 5 research-design
+- 4 data interpretation
+- 4 cross-unit synthesis
+- 2 ethics/limitations
+- exact 80% checkpoint mastery
+- targeted correction below mastery
+- independent parallel Form B with 30 new scenarios on the same standards
+- cumulative score stored separately from weekly mastery
+- cross-unit transfer among scientific methods, biology, perception/attention, and learning
+
 ## Current Production Totals
-- Student-facing lessons implemented: **15 / 65**
-- Weekly mastery assessments implemented: **3 / 13**
-- Parallel-form retake systems implemented: **3 / 13**
+- Student-facing lessons implemented: **20 / 65**
+- Weekly mastery assessments implemented: **4 / 13**
+- Parallel-form weekly retake systems implemented: **4 / 13**
+- Cumulative assessments implemented: **1 / 3**
+- Cumulative parallel retakes implemented: **1 / 3**
 - Local completion challenges implemented: **1** (`Reaction Flash`)
 - Student Lesson Navigator: **implemented**
-- Weeks 1–3 navigation: **complete**
+- Weeks 1–4 navigation: **complete**
 
 ## Standards Verification
 Primary alignment is the **APA National Standards for High School Psychology Curricula (2022)**. The course covers the Scientific Inquiry & Research Methods foundation and the Biological, Cognition, Development and Learning, Social and Personality, and Mental and Physical Health pillars.
@@ -163,6 +195,11 @@ Every weekly assessment preserves the 10-question blueprint, 80% mastery, target
 - attention ≠ eyesight
 - illusion ≠ broken perception
 - perceptual variation ≠ anything goes
+- reinforcement ≠ bribery
+- negative ≠ bad
+- explanation ≠ justification
+- behavior modification ≠ controlling people
+- learning ≠ only observable conditioning
 - group average ≠ individual destiny
 - symptom ≠ diagnosis
 - diagnosis ≠ identity
@@ -178,4 +215,4 @@ Completion rewards remain optional, non-graded, local-first, non-coercive, bound
 ## Production Verdict
 **AMBER — ACTIVE BUILD.**
 
-Weeks 1–3 are now complete reference-grade student implementations. Remaining production work: 50 student-facing lessons, 10 weekly assessments/parallel retakes, 3 cumulative assessments, Word Lab, Research Notebook/Journal/Progress interfaces, additional approved completion challenges, full link validation, accessibility checks, export/import recovery tests, and offline integrity testing.
+Weeks 1–4 and Cumulative Assessment I are now complete student-facing production batches. Remaining production work: 45 student-facing lessons, 9 weekly assessments/parallel retakes, 2 cumulative assessments, Word Lab, Research Notebook/Journal/Progress interfaces, additional approved completion challenges, full link validation, accessibility checks, export/import recovery tests, and offline integrity testing.
