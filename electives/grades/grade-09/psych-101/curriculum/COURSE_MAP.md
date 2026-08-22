@@ -9,7 +9,7 @@
 | 5 | Memory & Language | LOCKED | How do people encode, store, reconstruct, retrieve, and communicate information? |
 | 6 | Thinking, Intelligence & Decision-Making | LOCKED | How do people reason, solve problems, judge evidence, and evaluate their own thinking? |
 | 7 | Emotion & Motivation | LOCKED | Why do people feel, choose, and persist? |
-| 8 | Human Development | IN DEVELOPMENT | How do biology, experience, and culture shape development across life? |
+| 8 | Human Development | LOCKED | How do biology, experience, relationships, and culture shape development across the lifespan? |
 | 9 | Personality & Individual Differences | IN DEVELOPMENT | Why are people similar, different, and variable across situations? |
 | 10 | Social & Cultural Psychology | IN DEVELOPMENT | How do groups, culture, and social environments influence behavior? |
 | 11 | Mental & Physical Health Psychology | IN DEVELOPMENT | How do psychological science and behavior relate to health and well-being? |
@@ -56,12 +56,15 @@
 - A group pattern does not define an individual.
 - Psychological explanation does not equal diagnosis.
 - Understanding behavior does not excuse harmful behavior.
+- Developmental averages are patterns, not personal deadlines or destinies.
 - Scientific conclusions should become stronger or weaker as evidence changes.
 
 ## Locked Curriculum Progress
 
-- **Weeks 1–7:** academically audited and locked
-- **35 daily lesson plans:** present
-- **Weeks 8–13:** reserved until each forensic audit is complete
-- **First cumulative checkpoint:** follows Week 4 and integrates Weeks 1–4
+- **Weeks 1–8:** academically audited and locked
+- **40 daily lesson plans:** present
+- **Weeks 9–13:** reserved until each forensic audit is complete
+- **Cumulative Assessment I:** follows Week 4 and integrates Weeks 1–4
+- **Cumulative Assessment II:** follows Week 8, covers Weeks 1–8 with emphasis on Weeks 5–8
 - **Week 7 unified model:** Situation → Appraisal → Emotion → Motivation → Choice → Consequence
+- **Week 8 development rule:** age-related group patterns do not define individual people
