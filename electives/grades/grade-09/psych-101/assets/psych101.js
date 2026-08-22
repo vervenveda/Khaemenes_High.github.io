@@ -24,13 +24,15 @@
   function setLessonDraft(id,field,value){const p=getProgress();const old=p.lessons[id]||{};const drafts={...(old.drafts||{}),[field]:String(value??'')};p.lessons[id]={...old,drafts,lastEditedAt:now()};saveProgress(p);return drafts[field];}
   function recordDailyReview(id,score){const n=Math.max(0,Math.min(100,Number(score)||0));const p=getProgress();const old=p.lessons[id]||{};const prior=old.dailyReview||{attempts:[]};const attempts=Array.isArray(prior.attempts)?prior.attempts:[];attempts.push({score:n,at:now()});const best=Math.max(n,...attempts.map(x=>Number(x.score)||0));p.lessons[id]={...old,dailyReview:{attempts,bestScore:best,passed:best>=MASTERY}};saveProgress(p);return p.lessons[id].dailyReview;}
 
-  function getAssessments(){const a=read(KEYS.assessments,{version:1,weeks:{},cumulative:{},updatedAt:null});if(!a.weeks||typeof a.weeks!=='object')a.weeks={};return a;}
+  function getAssessments(){const a=read(KEYS.assessments,{version:1,weeks:{},cumulative:{},updatedAt:null});if(!a.weeks||typeof a.weeks!=='object')a.weeks={};if(!a.cumulative||typeof a.cumulative!=='object')a.cumulative={};return a;}
   function saveAssessments(a){a.updatedAt=now();return write(KEYS.assessments,a);}
-  function recordWeeklyScore(week,score,form='A'){
-    const n=Math.max(0,Math.min(100,Number(score)||0));const a=getAssessments();const key=String(week).padStart(2,'0');const old=a.weeks[key]||{attempts:[]};const attempts=Array.isArray(old.attempts)?old.attempts:[];attempts.push({score:n,form:String(form),at:now()});const best=Math.max(n,...attempts.map(x=>Number(x.score)||0));a.weeks[key]={attempts,bestScore:best,mastered:best>=MASTERY};saveAssessments(a);return a.weeks[key];
-  }
+  function addAssessmentAttempt(bucket,key,score,form){const n=Math.max(0,Math.min(100,Number(score)||0));const old=bucket[key]||{attempts:[]};const attempts=Array.isArray(old.attempts)?old.attempts:[];attempts.push({score:n,form:String(form||'A'),at:now()});const best=Math.max(n,...attempts.map(x=>Number(x.score)||0));bucket[key]={attempts,bestScore:best,mastered:best>=MASTERY};return bucket[key];}
+  function recordWeeklyScore(week,score,form='A'){const a=getAssessments();const key=String(week).padStart(2,'0');const result=addAssessmentAttempt(a.weeks,key,score,form);saveAssessments(a);return result;}
   function weeklyBest(week){const key=String(week).padStart(2,'0');const w=getAssessments().weeks[key];if(!w)return null;const scores=(w.attempts||[]).map(x=>Number(x.score)).filter(Number.isFinite);return scores.length?Math.max(...scores):null;}
   function isWeekMastered(week){const best=weeklyBest(week);return best!==null&&best>=MASTERY;}
+  function recordCumulativeScore(checkpoint,score,form='A'){const a=getAssessments();const key=String(checkpoint).padStart(2,'0');const result=addAssessmentAttempt(a.cumulative,key,score,form);saveAssessments(a);return result;}
+  function cumulativeBest(checkpoint){const key=String(checkpoint).padStart(2,'0');const c=getAssessments().cumulative[key];if(!c)return null;const scores=(c.attempts||[]).map(x=>Number(x.score)).filter(Number.isFinite);return scores.length?Math.max(...scores):null;}
+  function isCumulativeMastered(checkpoint){const best=cumulativeBest(checkpoint);return best!==null&&best>=MASTERY;}
 
   function getNotebook(){const n=read(KEYS.notebook,{version:1,entries:{},updatedAt:null});n.entries=n.entries||{};return n;}
   function setNotebook(id,value){const n=getNotebook();n.entries[id]=String(value??'');n.updatedAt=now();write(KEYS.notebook,n);}
@@ -65,7 +67,7 @@
 
   function announce(message){let el=document.getElementById('psych-live');if(!el){el=document.createElement('div');el.id='psych-live';el.setAttribute('aria-live','polite');el.style.position='absolute';el.style.left='-9999px';document.body.appendChild(el);}el.textContent='';setTimeout(()=>{el.textContent=message;},20);}
 
-  window.Psych101={KEYS,MASTERY,lessonId,getProgress,getLesson,markLessonReviewed,setLessonDraft,recordDailyReview,getAssessments,recordWeeklyScore,weeklyBest,isWeekMastered,getNotebook,setNotebook,getJournal,setJournal,exportAll,importAll,resetAll,bindDrafts,bindNotebookJournal,bindLessonCompletion,bindDailyReview,announce};
+  window.Psych101={KEYS,MASTERY,lessonId,getProgress,getLesson,markLessonReviewed,setLessonDraft,recordDailyReview,getAssessments,recordWeeklyScore,weeklyBest,isWeekMastered,recordCumulativeScore,cumulativeBest,isCumulativeMastered,getNotebook,setNotebook,getJournal,setJournal,exportAll,importAll,resetAll,bindDrafts,bindNotebookJournal,bindLessonCompletion,bindDailyReview,announce};
 
   document.addEventListener('DOMContentLoaded',()=>{bindDrafts();bindNotebookJournal();bindLessonCompletion();bindDailyReview();document.querySelectorAll('[data-print]').forEach(b=>b.addEventListener('click',()=>window.print()));document.querySelectorAll('[data-export]').forEach(b=>b.addEventListener('click',exportAll));});
 })();
