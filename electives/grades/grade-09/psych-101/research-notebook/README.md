@@ -48,10 +48,21 @@ Then challenge it:
 - Could the order differ?
 - Could prior learning, social context, habit, or opportunity explain part of the pattern?
 
-## Weeks 8–13
+## Week 8 — Human Development
+Determine whether age or development is relevant → select the developmental domain actually involved → compare cross-sectional and longitudinal evidence → identify possible cohort effects → audit language, schooling, peer, family, cultural, and historical context → distinguish a developmental group pattern from an individual prediction.
+
+### Week 8 Milestone — Developmental Inference Check
+Student must state:
+- whether a developmental explanation is justified;
+- which developmental process is being proposed;
+- what design would measure change over time;
+- one cohort/context alternative;
+- one conclusion that cannot be made about an individual from group-level data.
+
+## Weeks 9–13
 Reserved for the continuing forensic audit. Add checkpoints only after each week is academically locked.
 
 ## Permanent Research Rule
 **Justified exclusion is better science than forcing every theory or level of explanation onto every research question.**
 
-A student may conclude that a biological, perceptual, learning, memory, cognitive, emotional, motivational, social, or other factor is not currently relevant. The notebook rewards defensible reasoning, not the number of theories named.
+A student may conclude that a biological, perceptual, learning, memory, cognitive, emotional, motivational, developmental, social, or other factor is not currently relevant. The notebook rewards defensible reasoning, not the number of theories named.
