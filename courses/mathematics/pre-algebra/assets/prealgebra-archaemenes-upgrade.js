@@ -11,6 +11,68 @@ const ROUTES=new Map([
  ["../tools/calculator",CALCULATOR]
 ]);
 
+function courseApp(){try{return typeof APP!=="undefined"&&APP?APP:null}catch{return null}}
+function courseState(){try{return typeof state!=="undefined"&&state&&Array.isArray(state.students)?state:null}catch{return null}}
+function persistCourseState(){try{if(typeof save==="function")save()}catch{}}
+
+function migrateLegacyDiagnosticWeek(){
+ const course=courseState();
+ if(!course)return;
+ let changed=false;
+ course.students.forEach(student=>{
+  const progress=student?.progress;
+  if(!progress||progress.placementWeekMigrationV1)return;
+  progress.placement??={};
+  if(progress.weeks?.[1]){
+   progress.placement.legacyDiagnosticWeekRecord=progress.weeks[1];
+   progress.placement.migratedAt=new Date().toISOString();
+   delete progress.weeks[1];
+  }
+  progress.placementWeekMigrationV1=true;
+  changed=true;
+ });
+ if(changed)persistCourseState();
+}
+
+function patchPlacementArchitecture(){
+ const app=courseApp();
+ if(!app||!Array.isArray(app.weeks)||!app.weeks.length)return;
+ const diagnosticWeek=app.weeks.find(w=>w?.unitId==="u00");
+ if(diagnosticWeek){
+  app.placement={
+   id:"precourse-placement",
+   title:"Pre-Course Mathematics Placement",
+   path:"diagnostic/",
+   oneTime:true,
+   countsTowardCourse:false,
+   note:"Complete once before course placement. Results may support NAIB placement into Pre-Algebra or Algebra I; this assessment is not an instructional week."
+  };
+  const weekOneSource=app.weeks.find(w=>w?.unitId==="u01")||{};
+  const weekOne={
+   ...weekOneSource,
+   week:1,
+   unitId:"u01",
+   unitNumber:1,
+   unitTitle:"Number Systems, Factors & Estimation",
+   title:"Number Families, Real Numbers & Number-Line Reasoning",
+   bigIdea:"Numbers can be classified, decomposed, compared, and estimated to support efficient reasoning.",
+   path:"units/unit-01/",
+   domain:"number"
+  };
+  app.weeks=app.weeks.map(w=>w.week===1?weekOne:w);
+ }
+ if(Array.isArray(app.units)){
+  app.units=app.units.filter(u=>u?.id!=="u00");
+  const u01=app.units.find(u=>u?.id==="u01");
+  if(u01)u01.weeks=3;
+ }
+ migrateLegacyDiagnosticWeek();
+ try{
+  if(typeof activeWeek!=="undefined"&&(!Number.isFinite(activeWeek)||activeWeek<1))activeWeek=1;
+  if(typeof render==="function")render();
+ }catch(error){console.warn("Pre-Algebra curriculum rerender could not complete.",error)}
+}
+
 function canonicalRoute(value){
  if(!value)return value;
  if(ROUTES.has(value))return ROUTES.get(value);
@@ -31,8 +93,9 @@ function canonicalRoute(value){
 
 function patchResourceRoutes(root=document){
  try{
-  if(Array.isArray(window.APP?.tools)){
-   window.APP.tools.forEach(tool=>{
+  const app=courseApp();
+  if(Array.isArray(app?.tools)){
+   app.tools.forEach(tool=>{
     if(/scientific calculator/i.test(String(tool?.name||"")))tool.url=CALCULATOR;
    });
   }
@@ -66,8 +129,6 @@ function installRouteGuard(){
 
 function normalizeName(value){return String(value||"").trim().toLowerCase().replace(/\s+/g," ")}
 function emptyProgress(){return {weeks:{},exams:{},capstone:{logs:[],score:0,rubric:{}}}}
-function courseState(){try{return typeof state!=="undefined"&&state&&Array.isArray(state.students)?state:null}catch{return null}}
-function persistCourseState(){try{if(typeof save==="function")save()}catch{}}
 
 function guardLegacyNicknameMigration(){
  const R=window.KhaemenesFamilyRegistry,course=courseState();
@@ -130,5 +191,6 @@ function prepareRegistryAndLoadCore(){
  document.head.appendChild(registry);
 }
 
+patchPlacementArchitecture();
 prepareRegistryAndLoadCore();
 })();
