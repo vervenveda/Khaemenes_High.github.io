@@ -22,39 +22,34 @@
 - Week 6: **LOCKED** summary + 5 daily planning files
 - Week 7: **LOCKED** summary + 5 daily planning files
 - Week 8: **LOCKED** summary + 5 daily planning files
-- Weeks 9–13: reserved with explicit `IN DEVELOPMENT` status
+- Week 9: **LOCKED** summary + 5 daily planning files
+- Weeks 10–13: reserved with explicit `IN DEVELOPMENT` status
 
 ## Current Totals
-- Locked weeks: **8 / 13**
-- Locked daily lesson plans: **40 / 65**
+- Locked weeks: **9 / 13**
+- Locked daily lesson plans: **45 / 65**
 - Cumulative assessment blueprints: **2**
   - `CUMULATIVE_ASSESSMENT_I_BLUEPRINT.md` — Weeks 1–4
   - `CUMULATIVE_ASSESSMENT_II_BLUEPRINT.md` — Weeks 1–8 with emphasis on Weeks 5–8
-- Research Notebook checkpoints: through **Week 8**
+- Research Notebook checkpoints: through **Week 9**
 
-## Week 7 Verification
-Week 7 includes:
-- multi-component emotion measurement
-- appraisal and regulation
-- intrinsic/extrinsic motivation
-- goals, incentives, autonomy, competence, relatedness, and opportunity
-- self-efficacy, feedback, persistence, and strategy
-- unified Situation → Appraisal → Emotion → Motivation → Choice → Consequence scaffold
-- explicit warning that the scaffold is not a rigid universal sequence
-- no required private emotional disclosure
-
-## Week 8 Verification
-Week 8 includes:
-- lifespan development rather than childhood-only coverage
-- physical, cognitive, social, and cultural developmental domains
-- cross-sectional and longitudinal designs
-- cohort effects and developmental inference limits
-- early development without destiny claims
-- cognitive and language development
-- adolescence without “unfinished brain” determinism
-- adulthood and aging as continued development
-- overlapping-group data and explicit protection against individual prediction from age averages
-- no required private family or childhood disclosure
+## Week 9 Verification
+Week 9 includes:
+- personality as a measurable pattern rather than an identity label
+- trait vs. state distinction
+- temperament as contribution rather than destiny
+- Big Five dimensional thinking
+- percentile and distribution interpretation
+- person × situation interaction
+- within-person and between-person variability
+- self-report, informant, behavioral, and repeated-measure methods
+- reliability vs. validity
+- social desirability and response-bias limitations
+- self-concept and values distinguished from personality traits
+- culture and environment without group stereotyping
+- overlapping distributions and protection against individual prediction from group averages
+- explicit rule that personality description is not clinical diagnosis
+- fictional rather than real-person profiling for assessed work
 
 ## Permanent Quality Controls
 Every locked week must preserve:
@@ -69,5 +64,13 @@ Every locked week must preserve:
 - parallel-form retake after targeted correction when below mastery
 - explicit limitations and ethical boundaries
 
+## Person-Level Interpretation Controls
+- a trait score is not the whole person
+- a reliable test is not automatically valid
+- description does not by itself establish cause
+- group averages do not justify exact individual predictions
+- context-dependent behavior does not automatically imply inconsistency or dishonesty
+- personality education does not qualify a student to diagnose personality disorders
+
 ## Implementation Boundary
-Student-facing HTML for a week should not be treated as complete until that week's curriculum is academically locked. The repository currently preserves this boundary: Weeks 1–8 are locked; Weeks 9–13 remain development placeholders.
+Student-facing HTML for a week should not be treated as complete until that week's curriculum is academically locked. The repository currently preserves this boundary: Weeks 1–9 are locked; Weeks 10–13 remain development placeholders.
