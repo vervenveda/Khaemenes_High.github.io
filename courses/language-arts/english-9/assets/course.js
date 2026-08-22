@@ -22,10 +22,16 @@
     const key=button.dataset.progressKey;
     const on=Boolean(progress[key]);
     button.setAttribute("aria-pressed",String(on));
-    button.textContent=on?"Completed ✓":"Mark Complete";
-    button.addEventListener("click",()=>{progress[key]=!progress[key];save(progress);button.setAttribute("aria-pressed",String(progress[key]));button.textContent=progress[key]?"Completed ✓":"Mark Complete";updateProgress();});
+    button.textContent=on?"Weekly Evidence Recorded ✓":"Record Weekly Evidence Complete";
+    button.title="This records evidence completion only. It does not satisfy or bypass any 80% mastery gate.";
+    button.addEventListener("click",()=>{
+      progress[key]=!progress[key];save(progress);
+      button.setAttribute("aria-pressed",String(progress[key]));
+      button.textContent=progress[key]?"Weekly Evidence Recorded ✓":"Record Weekly Evidence Complete";
+      updateProgress();
+    });
   });
-  function updateProgress(){const bar=document.querySelector("[data-course-progress]");const label=document.querySelector("[data-course-progress-label]");if(!bar&&!label)return;const total=36,done=Array.from({length:36},(_,i)=>progress[`week-${String(i+1).padStart(2,"0")}`]).filter(Boolean).length;const pct=Math.round(done/total*100);if(bar)bar.style.width=`${pct}%`;if(label)label.textContent=`${done} of ${total} weeks complete · ${pct}%`;}
+  function updateProgress(){const bar=document.querySelector("[data-course-progress]");const label=document.querySelector("[data-course-progress-label]");if(!bar&&!label)return;const total=36,done=Array.from({length:36},(_,i)=>progress[`week-${String(i+1).padStart(2,"0")}`]).filter(Boolean).length;const pct=Math.round(done/total*100);if(bar)bar.style.width=`${pct}%`;if(label)label.textContent=`${done} of ${total} weekly evidence records complete · ${pct}%`;}
   updateProgress();
 
   document.querySelectorAll("[data-mastery-score]").forEach(field=>{const id=field.dataset.masteryScore;if(mastery[id]?.score!==undefined)field.value=mastery[id].score;});
@@ -39,7 +45,7 @@
     document.querySelectorAll("[data-prerequisite-panel]").forEach(panel=>{
       const id=panel.dataset.prerequisitePanel,record=mastery[id],passed=Boolean(record&&record.passed&&Number(record.score)>=MASTERY_THRESHOLD);
       panel.innerHTML=passed?`<strong>${record.score}% · Prerequisite mastered ✓</strong><p>${id.replace("unit-","Unit ")} meets the ${MASTERY_THRESHOLD}% gate. This lesson is available.</p>`:`<strong>Prerequisite not yet verified</strong><p>${id.replace("unit-","Unit ")} must reach ${MASTERY_THRESHOLD}% before this lesson begins.</p>`;
-      document.querySelectorAll(`[data-prerequisite-content="${id}"]`).forEach(control=>{control.setAttribute("aria-disabled",String(!passed));if(!passed){control.dataset.lockedHref=control.getAttribute("href")||"";control.removeAttribute("href");control.title=`${id.replace("unit-","Unit ")} mastery of ${MASTERY_THRESHOLD}% is required`;control.addEventListener("click",event=>event.preventDefault(),{once:true});}else if(!control.getAttribute("href")&&control.dataset.lockedHref){control.setAttribute("href",control.dataset.lockedHref);}});
+      document.querySelectorAll(`[data-prerequisite-content="${id}"]`).forEach(control=>{control.setAttribute("aria-disabled",String(!passed));if(!passed){control.dataset.lockedHref=control.getAttribute("href")||control.dataset.lockedHref||"";control.removeAttribute("href");control.title=`${id.replace("unit-","Unit ")} mastery of ${MASTERY_THRESHOLD}% is required`;}else if(!control.getAttribute("href")&&control.dataset.lockedHref){control.setAttribute("href",control.dataset.lockedHref);control.removeAttribute("aria-disabled");}});
     });
   }
   renderPrerequisites();
