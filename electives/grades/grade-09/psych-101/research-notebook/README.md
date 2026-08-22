@@ -59,10 +59,26 @@ Student must state:
 - one cohort/context alternative;
 - one conclusion that cannot be made about an individual from group-level data.
 
-## Weeks 9–13
+## Week 9 — Personality & Individual Differences
+Determine whether stable individual differences are relevant → define the proposed trait or individual-difference construct → choose self-report, informant report, behavioral observation, repeated measures, or a combination → identify reliability/validity questions → identify response-bias risks → test whether situational context moderates the relationship → distinguish trait description from causal explanation.
+
+### Week 9 Milestone — Individual-Differences Audit
+Student must state:
+- whether a personality or trait explanation is actually needed;
+- the exact construct being proposed;
+- how the construct would be operationalized;
+- what evidence would show stability across time or settings;
+- one likely measurement bias;
+- one situational moderator or alternative explanation;
+- one conclusion that a trait score would **not** justify about the individual.
+
+## Weeks 10–13
 Reserved for the continuing forensic audit. Add checkpoints only after each week is academically locked.
 
 ## Permanent Research Rule
 **Justified exclusion is better science than forcing every theory or level of explanation onto every research question.**
 
-A student may conclude that a biological, perceptual, learning, memory, cognitive, emotional, motivational, developmental, social, or other factor is not currently relevant. The notebook rewards defensible reasoning, not the number of theories named.
+A student may conclude that a biological, perceptual, learning, memory, cognitive, emotional, motivational, developmental, personality, social, or other factor is not currently relevant. The notebook rewards defensible reasoning, not the number of theories named.
+
+## Permanent Person-Level Interpretation Rule
+A group pattern, trait score, developmental average, or psychological measure is evidence about a defined construct under defined conditions. It is not a complete description of a person, a moral judgment, a diagnosis, or a destiny.
