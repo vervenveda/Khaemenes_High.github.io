@@ -11,16 +11,18 @@ GitHub-ready curriculum repository for a 13-week introductory psychology course 
 - Week 5 — Memory & Language: **LOCKED**
 - Week 6 — Thinking, Intelligence & Decision-Making: **LOCKED**
 - Week 7 — Emotion & Motivation: **LOCKED**
-- Weeks 8–13 — scaffolded and awaiting week-by-week forensic audit
+- Week 8 — Human Development: **LOCKED**
+- Weeks 9–13 — scaffolded and awaiting week-by-week forensic audit
 
 ### Current authored planning depth
-- 7 locked weekly architectures
-- 35 locked daily lesson planning files
+- 8 locked weekly architectures
+- 40 locked daily lesson planning files
 - permanent Scientific Reasoning routine
 - permanent Data Lens and Claims Laboratory strands
-- Research Notebook checkpoints through Week 7
-- first cumulative assessment blueprint after Week 4
-- Week 7 integrated emotion–motivation model with explicit observation/inference boundaries
+- Research Notebook checkpoints through Week 8
+- Cumulative Assessment I after Week 4
+- Cumulative Assessment II after Week 8
+- explicit developmental guardrail: age-related group patterns do not define individual people
 
 ### Course identity
 - Grade: 9
@@ -41,6 +43,7 @@ GitHub-ready curriculum repository for a 13-week introductory psychology course 
 - a measure is not the construct itself
 - group findings do not automatically describe an individual
 - psychological explanation is not diagnosis
+- developmental averages are not personal deadlines or destinies
 - understanding behavior does not excuse harm
 
 ### Sovereign design
@@ -50,6 +53,6 @@ stored locally with explicit export/import backup controls.
 
 ### Implementation discipline
 Curriculum is locked academically before student-facing lesson HTML is implemented.
-Weeks 8–13 remain intentionally marked `IN DEVELOPMENT` until each forensic audit is complete.
+Weeks 9–13 remain intentionally marked `IN DEVELOPMENT` until each forensic audit is complete.
 This prevents placeholders from being mistaken for finished instruction and protects the
 continuity of the locked curriculum.
