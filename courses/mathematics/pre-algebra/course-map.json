@@ -15,17 +15,15 @@
   "entry_gateway": {
     "title": "Pre-Algebra Readiness Gateway",
     "path": "diagnostic/gateway.html",
-    "legacy_diagnostic": "diagnostic/index.html",
-    "assessment_id": "KH-MATH-PA-READINESS-GATEWAY",
-    "assessment_version": "2026.08.22",
+    "legacy_path": "diagnostic/index.html",
     "purpose": "Determine readiness by prerequisite strand and route support without labeling or punishing the learner.",
     "ready_threshold_percent": 80,
     "essential_strand_floor_percent": 75,
     "essential_strands_required": true,
-    "ready_route": "units/unit-01/",
-    "supported_route": "unit-00/",
-    "naib_profile_key": "khaemenes-naib-readiness-math-prealgebra-v1",
-    "supported_pathway_duration_weeks": 42
+    "ready_route": "units/unit-01/entry.html",
+    "supported_route": "units/unit-00/",
+    "supported_pathway_duration_weeks": 42,
+    "naib_profile_key": "naib:math-prealgebra:readiness"
   },
   "mastery_scale": [
     {"level":1,"label":"Beginning","description":"Needs direct instruction and supported practice."},
@@ -39,11 +37,17 @@
     "weeks":6,
     "title":"Foundations & Readiness",
     "status":"conditional",
-    "path":"unit-00/",
+    "path":"units/unit-00/",
     "map":"unit-0-map.json",
-    "exit_requirement":"80% mastery plus reasoning corrections",
-    "exit_route":"units/unit-01/",
+    "exit_requirement":"80% mastery plus reasoning corrections and no essential strand below 75%",
+    "exit_route":"units/unit-01/entry.html",
+    "mastery_assessment":"units/unit-00/assessment/mastery.html",
     "big_idea":"Readiness evidence should identify the smallest useful bridge between what a learner knows and what the official course requires."
+  },
+  "unit_1_entry": {
+    "path":"units/unit-01/entry.html",
+    "naib_profile_key":"naib:math-prealgebra:unit-01-entry",
+    "purpose":"Preserve either direct-readiness or Unit 0 mastery evidence before the official 36-week course begins."
   },
   "units": [
     {"id":"u01","number":1,"weeks":2,"title":"Number Systems, Factors & Estimation","status":"open","path":"units/unit-01/","big_idea":"Numbers can be classified, decomposed, compared, and estimated to support efficient reasoning.","objectives":["Classify natural, whole, integer, rational, and irrational numbers","Use factors, multiples, primes, and divisibility","Apply greatest common factor and least common multiple","Estimate and evaluate reasonableness","Use order of operations accurately"]},
