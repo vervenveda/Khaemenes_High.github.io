@@ -57,3 +57,4 @@
   document.addEventListener("DOMContentLoaded",initialize);
 })();
 (() => {const marker="/courses/science/integrated-science-9/",path=window.location.pathname,at=path.indexOf(marker),base=at>=0?path.slice(0,at+marker.length):new URL("./",window.location.href).pathname;if(document.querySelector('script[data-science-theme-loader]'))return;const script=document.createElement("script");script.src=`${base}science-theme-loader.js`;script.defer=true;script.dataset.scienceThemeLoader="true";document.head.append(script)})();
+(() => {const marker="/courses/science/integrated-science-9/",path=window.location.pathname,at=path.indexOf(marker),base=at>=0?path.slice(0,at+marker.length):new URL("../../",window.location.href).pathname;if(document.querySelector('script[data-unit01-entry-gate]'))return;const script=document.createElement("script");script.src=`${base}units/unit-01/unit01-entry-gate.js`;script.dataset.unit01EntryGate="true";document.head.append(script)})();
