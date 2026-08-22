@@ -63,11 +63,13 @@ function styles(){if(document.getElementById('kss-resource-bridge-style'))return
 function render(){
   const content=document.getElementById('content');if(!content)return;
   const n=weekNumber(),plan=WEEK_PLANS[n];
-  const existing=document.getElementById('kssResourceBridge');if(existing)existing.remove();
+  const existing=document.getElementById('kssResourceBridge');
+  if(existing&&existing.dataset.week===String(n))return;
+  if(existing)existing.remove();
   if(!plan)return;
   const grid=content.querySelector('.grid');if(!grid)return;
   const weekHeading=[...content.querySelectorAll('h2')].some(h=>h.textContent && !/Welcome|Course Architecture/i.test(h.textContent));if(!weekHeading)return;
-  const card=document.createElement('section');card.id='kssResourceBridge';card.className='card col12';
+  const card=document.createElement('section');card.id='kssResourceBridge';card.dataset.week=String(n);card.className='card col12';
   card.innerHTML=`<div class="pills"><span class="pill">Approved Course Resources</span><span class="pill">Week ${n}</span></div><h2>Research · Evidence · Production Studio</h2><h3>${esc(plan.title)}</h3><p class="rb-intro"><strong>Purpose:</strong> ${esc(plan.essential)} These tools support the assignment; opening a tool is not evidence of mastery.</p><div class="rb-flow">${plan.steps.map((x,i)=>{const r=RESOURCES[x.r];return `<article class="rb-step"><div class="rb-top"><strong>${i+1}. ${esc(r.name)}</strong><span class="rb-type">${esc(r.type)}</span>${x.optional?'<span class="rb-optional">Optional transfer</span>':''}</div><p><strong>Student task:</strong> ${esc(x.task)}</p><p class="rb-product"><strong>Evidence/product:</strong> ${esc(x.product)}</p><p class="small">${esc(r.note)}</p><a class="rb-open" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">Open approved resource ↗</a></article>`}).join('')}</div><div class="rb-boundary"><strong>Course boundary:</strong> Khaemenes Social Studies remains the instructional and grading authority. ARSHIF supplies research environments; ProTools organize evidence and production; One Nation appears only as an approved civic-learning transfer where listed. Campaign/candidate pages are not required course resources. Students must verify claims and submit their own reasoning.</div>`;
   const first=grid.firstElementChild;if(first&&first.nextSibling)grid.insertBefore(card,first.nextSibling);else grid.appendChild(card);
 }
