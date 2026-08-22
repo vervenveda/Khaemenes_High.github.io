@@ -1,24 +1,18 @@
 {
   "unit": 6,
-  "domains": [
-    "Pythagorean theorem",
-    "Special right triangles",
-    "Trigonometry",
-    "Bearings"
+  "title": "Right Triangles, Trigonometry & Bearings",
+  "lesson_evidence": [
+    {"lesson_id":"u06-l01","focus":"Pythagorean theorem and converse","evidence":["solve missing sides","classify from three lengths","justify hypotenuse choice"]},
+    {"lesson_id":"u06-l02","focus":"45-45-90 exact relationships","evidence":["use 1:1:√2","move leg-to-hypotenuse and reverse","preserve exact radical form"]},
+    {"lesson_id":"u06-l03","focus":"30-60-90 exact relationships","evidence":["use 1:√3:2","match sides to opposite angles","derive from an equilateral triangle"]},
+    {"lesson_id":"u06-l04","focus":"Right-triangle altitude and geometric mean","evidence":["use h²=pq","use leg projection relationships","justify similarity structure"]},
+    {"lesson_id":"u06-l05","focus":"Sine cosine and tangent","evidence":["identify opposite/adjacent/hypotenuse","select ratio from known/unknown sides","solve unknown lengths"]},
+    {"lesson_id":"u06-l06","focus":"Inverse trigonometry","evidence":["select inverse function","recover acute angle","use degree mode and rounding discipline"]},
+    {"lesson_id":"u06-l07","focus":"Angles of elevation and depression","evidence":["construct line-of-sight model","transfer angles across horizontal parallels","account for observer height and measurement error"]},
+    {"lesson_id":"u06-l08","focus":"Bearings vectors and navigation","evidence":["interpret quadrant bearings","resolve and add components","find resultant magnitude and bearing"]}
   ],
-  "practices": [
-    "Make sense of problems",
-    "Reason abstractly and quantitatively",
-    "Construct viable arguments",
-    "Model with mathematics",
-    "Use tools strategically",
-    "Attend to precision",
-    "Look for structure"
-  ],
-  "evidence": [
-    "Printable lesson work",
-    "Mastery check",
-    "Applied investigation",
-    "Reflection and correction"
-  ]
+  "mathematical_practices": ["Make sense of problems","Reason quantitatively","Construct viable arguments","Model with mathematics","Use tools strategically","Attend to precision","Look for structure"],
+  "automatic_evidence": ["Selected-response mastery items scored locally"],
+  "human_review_evidence": ["Written derivations","Field or navigation survey work","Diagram quality","Modeling assumptions","Measurement-error analysis","Corrections and reflections"],
+  "mastery_target": 80
 }
