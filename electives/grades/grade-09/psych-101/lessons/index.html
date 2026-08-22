@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Psychology 101 — Lessons</title>
+<link rel="stylesheet" href="../assets/psych101.css">
+<script src="../data/course-data.js" defer></script>
+<script src="../assets/psych101.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to lessons</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Psychology 101</a><div class="header-meta">Grade 9 · 13 weeks · 65 lessons</div></div></header>
+<main id="main">
+<nav class="breadcrumbs"><a href="../index.html">Course Home</a><span>›</span><span>Lessons</span></nav>
+<section class="hero">
+<div class="eyebrow">Student Lesson Navigator</div>
+<h1>Foundations of Human Behavior</h1>
+<p class="lead">The curriculum architecture for all 65 lessons is locked. Student-facing pages are now being implemented systematically. A lesson is linked here only after its interactive page exists and has passed the implementation check.</p>
+<div class="chips"><span class="chip">13 Units Locked</span><span class="chip">65 Plans Locked</span><span class="chip">80% Weekly Mastery</span><span class="chip">Local Progress</span><span class="chip">Print Friendly</span></div>
+</section>
+<section class="section">
+<div class="section-head"><div><div class="section-num">Permanent Routine</div><h2>Think Like a Psychological Scientist</h2></div></div>
+<div class="rule">Claim → Measure → Evidence → Alternative Explanation → Limitation → Conclusion</div>
+</section>
+<section class="section">
+<div class="section-head"><div><div class="section-num">Course Map</div><h2>13 Weeks</h2></div><button class="btn soft no-print" type="button" data-export>Export Local Progress</button></div>
+<div id="weekGrid" class="grid-2"></div>
+</section>
+</main>
+<footer>Psychology 101 · Grade 9 · Local-first student course</footer>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const grid=document.getElementById('weekGrid');
+  const course=window.PSYCH101_COURSE;
+  if(!course){grid.textContent='Course data could not be loaded.';return;}
+  course.units.forEach(unit=>{
+    const card=document.createElement('article');
+    card.className='card';
+    const w=String(unit.week).padStart(2,'0');
+    const mastered=window.Psych101&&Psych101.isWeekMastered(unit.week);
+    const implemented=unit.week===1;
+    card.innerHTML=`<div class="section-num">Week ${w} · ${mastered?'Mastered':'Curriculum locked'}</div><h3>${unit.title}</h3><p>${unit.question}</p><div class="actions"></div>`;
+    const actions=card.querySelector('.actions');
+    if(implemented){
+      const a=document.createElement('a');a.className='btn primary';a.href='week-01/day-01.html';a.textContent='Open Week 1 · Day 1';actions.appendChild(a);
+      const note=document.createElement('span');note.className='small';note.textContent='Reference implementation underway';actions.appendChild(note);
+    }else{
+      const b=document.createElement('button');b.className='btn';b.disabled=true;b.textContent='Student pages in build';actions.appendChild(b);
+    }
+    grid.appendChild(card);
+  });
+});
+</script>
+</body></html>
