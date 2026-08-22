@@ -25,18 +25,29 @@
 1. Retrieval Warm-Up
 2. Essential Question
 3. Learning Objectives
-4. Vocabulary in Context
-5. Substantial Core Reading
-6. Worked Example
-7. Psychological Scientist's Desk
-8. Data Lens
-9. Claims Laboratory
-10. Guided Investigation
-11. Independent Assignment
-12. Research Notebook Checkpoint
-13. Academic Journal Reflection
-14. 5-Question Daily Review
-15. Local Completion Record
+4. Psychology Word of the Day
+5. Vocabulary in Context
+6. Substantial Core Reading
+7. Worked Example
+8. Psychological Scientist's Desk
+9. Data Lens
+10. Claims Laboratory
+11. Guided Investigation
+12. Independent Assignment
+13. Research Notebook Checkpoint
+14. Academic Journal Reflection
+15. 5-Question Daily Review
+16. Local Completion Record
+
+### Psychology Word of the Day
+
+Each of the 65 daily lessons receives one anchor psychology term aligned to that day's content. The anchor term receives deeper treatment through the local Psychology Word Lab while the full `Vocabulary in Context` list remains part of the academic lesson.
+
+The course adaptation is based on the useful daily-word pattern in `vervenveda/arcade.github.io/Learn_a_New_Word_index.html`, but Psychology 101 will keep its own embedded word bank so the course has no runtime dependency on the Arcade repository.
+
+Lesson mode should open the assigned term by lesson identity rather than calendar date, for example `?lesson=01-03`. This keeps vocabulary synchronized with independent-study pacing.
+
+See: `reference/PSYCHOLOGY_WORD_OF_THE_DAY_PLAN.md`.
 
 ## Evidence Ladder
 
@@ -67,7 +78,9 @@
 
 - **Weeks 1–10:** academically audited and locked
 - **50 daily lesson plans:** present
+- **50 daily anchor vocabulary terms:** mapped to locked lessons
 - **Weeks 11–13:** reserved until each forensic audit is complete
+- **Final 15 anchor vocabulary terms:** intentionally reserved until Weeks 11–13 are locked
 - **Cumulative Assessment I:** follows Week 4 and integrates Weeks 1–4
 - **Cumulative Assessment II:** follows Week 8, covers Weeks 1–8 with emphasis on Weeks 5–8
 - **Week 7 unified model:** Situation → Appraisal → Emotion → Motivation → Choice → Consequence
