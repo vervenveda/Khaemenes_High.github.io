@@ -13,18 +13,20 @@ GitHub-ready curriculum repository for a 13-week introductory psychology course 
 - Week 7 — Emotion & Motivation: **LOCKED**
 - Week 8 — Human Development: **LOCKED**
 - Week 9 — Personality & Individual Differences: **LOCKED**
-- Weeks 10–13 — scaffolded and awaiting week-by-week forensic audit
+- Week 10 — Social & Cultural Psychology: **LOCKED**
+- Weeks 11–13 — scaffolded and awaiting week-by-week forensic audit
 
 ### Current authored planning depth
-- 9 locked weekly architectures
-- 45 locked daily lesson planning files
+- 10 locked weekly architectures
+- 50 locked daily lesson planning files
 - permanent Scientific Reasoning routine
 - permanent Data Lens and Claims Laboratory strands
-- Research Notebook checkpoints through Week 9
+- Research Notebook checkpoints through Week 10
 - Cumulative Assessment I after Week 4
 - Cumulative Assessment II after Week 8
-- explicit developmental guardrail: age-related group patterns do not define individual people
-- explicit personality guardrail: trait descriptions and scores do not define the whole person or function as diagnosis
+- developmental guardrail: age-related group patterns do not define individual people
+- personality guardrail: trait descriptions and scores do not define the whole person or function as diagnosis
+- social-context guardrail: group influence changes probabilities without erasing individual agency or responsibility
 
 ### Course identity
 - Grade: 9
@@ -48,6 +50,8 @@ GitHub-ready curriculum repository for a 13-week introductory psychology course 
 - developmental averages are not personal deadlines or destinies
 - trait descriptions summarize tendencies rather than identity
 - a reliable measure is not automatically valid
+- social influence is not mind control
+- culture is context, not a fixed personality assigned to a group
 - understanding behavior does not excuse harm
 
 ### Sovereign design
@@ -57,6 +61,6 @@ stored locally with explicit export/import backup controls.
 
 ### Implementation discipline
 Curriculum is locked academically before student-facing lesson HTML is implemented.
-Weeks 10–13 remain intentionally marked `IN DEVELOPMENT` until each forensic audit is complete.
+Weeks 11–13 remain intentionally marked `IN DEVELOPMENT` until each forensic audit is complete.
 This prevents placeholders from being mistaken for finished instruction and protects the
 continuity of the locked curriculum.
