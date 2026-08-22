@@ -1,4 +1,4 @@
-const CACHE='khaemenes-global-studies-9-v3';
+const CACHE='khaemenes-global-studies-9-v4';
 const SHELL=[
   './',
   './index.html',
@@ -16,7 +16,8 @@ const SHELL=[
   './assets/grade09-socialstudies-cleanup-v1.1.js',
   './assets/socialstudies-beta-bridge.js',
   './resources/index.html',
-  './teacher/index.html'
+  './teacher/index.html',
+  './teacher/teacher.js'
 ];
 
 self.addEventListener('install',event=>event.waitUntil(
