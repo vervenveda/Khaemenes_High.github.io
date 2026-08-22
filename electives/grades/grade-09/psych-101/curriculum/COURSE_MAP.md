@@ -38,6 +38,7 @@
 14. Academic Journal Reflection
 15. 5-Question Daily Review
 16. Local Completion Record
+17. Optional Completion Challenge
 
 ### Psychology Word of the Day
 
@@ -48,6 +49,25 @@ The course adaptation is based on the useful daily-word pattern in `vervenveda/a
 Lesson mode should open the assigned term by lesson identity rather than calendar date, for example `?lesson=01-03`. This keeps vocabulary synchronized with independent-study pacing.
 
 See: `reference/PSYCHOLOGY_WORD_OF_THE_DAY_PLAN.md`.
+
+### Optional Completion Challenge
+
+Selected Arcade mechanics may be adapted into short, local-first challenge modules that appear only after legitimate academic completion.
+
+The challenge layer follows these rules:
+
+- optional, never required for mastery;
+- no penalty for skipping, losing, or closing;
+- no autoplay or hidden tracking;
+- default microbreak length 10–60 seconds;
+- longer challenges reserved for daily/weekly completion;
+- local adapted modules rather than a runtime dependency on the Arcade repository;
+- accessible touch, keyboard, reduced-motion, and visible-exit controls;
+- predictable availability after completion rather than variable-ratio reward scheduling.
+
+Scientific terminology matters: the games are **completion rewards / reinforcer candidates**. They function as positive reinforcement only if adding them actually increases the future probability of the target behavior.
+
+See: `reference/COMPLETION_CHALLENGE_REINFORCEMENT_PLAN.md`.
 
 ## Evidence Ladder
 
@@ -72,6 +92,7 @@ See: `reference/PSYCHOLOGY_WORD_OF_THE_DAY_PLAN.md`.
 - A personality score is evidence from a measure, not an identity or diagnosis.
 - Social influence changes probabilities and pressures; it does not erase agency.
 - Culture is context, not a personality assigned to every group member.
+- A reward is not automatically a reinforcer; behavioral effect defines reinforcement.
 - Scientific conclusions should become stronger or weaker as evidence changes.
 
 ## Locked Curriculum Progress
@@ -81,6 +102,7 @@ See: `reference/PSYCHOLOGY_WORD_OF_THE_DAY_PLAN.md`.
 - **50 daily anchor vocabulary terms:** mapped to locked lessons
 - **Weeks 11–13:** reserved until each forensic audit is complete
 - **Final 15 anchor vocabulary terms:** intentionally reserved until Weeks 11–13 are locked
+- **Completion Challenge architecture:** planned; student-facing modules not yet implemented
 - **Cumulative Assessment I:** follows Week 4 and integrates Weeks 1–4
 - **Cumulative Assessment II:** follows Week 8, covers Weeks 1–8 with emphasis on Weeks 5–8
 - **Week 7 unified model:** Situation → Appraisal → Emotion → Motivation → Choice → Consequence
