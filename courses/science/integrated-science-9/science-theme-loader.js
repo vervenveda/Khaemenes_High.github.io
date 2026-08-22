@@ -43,6 +43,14 @@
    */
   loadSharedWidget(`${courseBase}science-protools-integration.js`, "data-science-protools-loader");
 
+  /*
+   * Daily vocabulary bridge. Unit lesson pages receive one curriculum-matched
+   * science word, pronunciation support, a contextual reasoning check, and a
+   * route into the sovereign LeArnA vocabulary adventure. Vocabulary progress
+   * is local-only and remains separate from science mastery state.
+   */
+  loadSharedWidget(`${courseBase}science-vocabulary-integration.js`, "data-science-vocabulary-loader");
+
   function synchronizeBrowserChrome() {
     const dark = document.documentElement.dataset.theme === "dark";
     document.documentElement.style.colorScheme = dark ? "dark" : "light";
