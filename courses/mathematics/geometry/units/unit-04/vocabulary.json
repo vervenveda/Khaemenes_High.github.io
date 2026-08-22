@@ -1,12 +1,28 @@
 {
   "unit": 4,
+  "title": "Parallel Lines, Slopes & Coordinate Proof",
   "terms": [
-    "transversal",
-    "alternate interior",
-    "corresponding angles",
-    "slope",
-    "parallel",
-    "perpendicular",
-    "coordinate proof"
+    {"term":"parallel lines","definition":"Coplanar lines that never intersect."},
+    {"term":"perpendicular lines","definition":"Lines that intersect to form right angles."},
+    {"term":"transversal","definition":"A line that intersects two or more coplanar lines at distinct points."},
+    {"term":"corresponding angles","definition":"Angles in matching relative positions where a transversal crosses two lines."},
+    {"term":"alternate interior angles","definition":"Interior angles on opposite sides of a transversal."},
+    {"term":"alternate exterior angles","definition":"Exterior angles on opposite sides of a transversal."},
+    {"term":"same-side interior angles","definition":"Interior angles on the same side of a transversal."},
+    {"term":"converse","definition":"A statement formed by reversing the hypothesis and conclusion of a conditional statement."},
+    {"term":"slope","definition":"The ratio of vertical change to horizontal change between two points on a nonvertical line."},
+    {"term":"rise","definition":"The signed vertical change used when calculating slope."},
+    {"term":"run","definition":"The signed horizontal change used when calculating slope."},
+    {"term":"undefined slope","definition":"The slope of a vertical line, for which horizontal change is zero."},
+    {"term":"zero slope","definition":"The slope of a horizontal line."},
+    {"term":"negative reciprocal","definition":"A number obtained by reversing a nonzero fraction and changing its sign; slopes of nonvertical perpendicular lines are negative reciprocals."},
+    {"term":"distance formula","definition":"A coordinate formula derived from the Pythagorean theorem for finding the distance between two points."},
+    {"term":"midpoint","definition":"The point that divides a segment into two congruent segments."},
+    {"term":"coordinate proof","definition":"A proof that places figures in a coordinate plane and uses algebraic calculations to establish geometric properties."},
+    {"term":"linear equation","definition":"An equation whose graph is a straight line."},
+    {"term":"slope-intercept form","definition":"The linear form y=mx+b, where m is slope and b is the y-intercept."},
+    {"term":"point-slope form","definition":"The linear form y-y1=m(x-x1), describing a line through a known point with a known slope."},
+    {"term":"y-intercept","definition":"The point or y-coordinate where a graph crosses the y-axis."},
+    {"term":"collinear","definition":"Lying on the same straight line."}
   ]
 }
