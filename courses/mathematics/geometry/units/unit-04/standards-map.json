@@ -1,24 +1,32 @@
 {
   "unit": 4,
-  "domains": [
-    "Parallel lines",
-    "Slope",
-    "Coordinate proof",
-    "Equations of lines"
+  "title": "Parallel Lines, Slopes & Coordinate Proof",
+  "weeks": [9, 10],
+  "mastery_target": 80,
+  "domains": ["Parallel-line angle relationships", "Slope and direction", "Parallel and perpendicular criteria", "Coordinate proof", "Equations of lines in geometric context"],
+  "standards_support": [
+    "Use angle relationships created by a transversal to solve and justify geometric claims.",
+    "Use converses of parallel-line angle theorems to establish that lines are parallel.",
+    "Interpret slope as direction and rate of change on the coordinate plane.",
+    "Use slope relationships to establish parallelism and perpendicularity.",
+    "Use distance, midpoint and slope strategically in coordinate proofs.",
+    "Write equations of lines satisfying point, slope, parallel and perpendicular conditions.",
+    "Construct viable arguments using diagrams, coordinates, definitions and verified evidence."
   ],
-  "practices": [
-    "Make sense of problems",
-    "Reason abstractly and quantitatively",
-    "Construct viable arguments",
-    "Model with mathematics",
-    "Use tools strategically",
-    "Attend to precision",
-    "Look for structure"
-  ],
-  "evidence": [
-    "Printable lesson work",
-    "Mastery check",
-    "Applied investigation",
-    "Reflection and correction"
-  ]
+  "mathematical_practices": ["Make sense of problems and persevere in solving them.", "Reason abstractly and quantitatively.", "Construct viable arguments and critique reasoning.", "Model with mathematics.", "Use appropriate tools strategically.", "Attend to precision.", "Look for and make use of structure."],
+  "lesson_evidence": {
+    "u04-l01": ["Identify angle pairs formed by a transversal.", "Use parallel-line angle relationships to determine unknown measures.", "Distinguish observed appearance from theorem-supported conclusions."],
+    "u04-l02": ["Use converse angle relationships to prove lines parallel.", "State sufficient evidence and justify the applicable converse theorem.", "Reject insufficient visual evidence."],
+    "u04-l03": ["Compute and interpret slope from coordinates.", "Relate positive, negative, zero and undefined slope to direction.", "Compare slopes as geometric evidence."],
+    "u04-l04": ["Establish parallel lines using equal slopes.", "Establish perpendicular lines using negative-reciprocal slope relationships where defined.", "Handle horizontal and vertical special cases correctly."],
+    "u04-l05": ["Use distance, midpoint and slope in coordinate proofs.", "Select only the calculations needed for a stated geometric claim.", "Organize coordinate evidence into a valid proof."],
+    "u04-l06": ["Write line equations from points and slopes.", "Construct equations for parallel and perpendicular lines.", "Interpret line equations in geometric context and verify conditions." ]
+  },
+  "unit_evidence": ["Six printable lessons with written mathematical reasoning.", "Foundation, Core and Extended practice pathways.", "A 12-question mastery check drawn from a unit-aligned assessment bank.", "Written corrections or targeted remediation when mastery evidence is incomplete.", "Coordinate Street-Grid Proof & Design applied investigation with portfolio evidence."],
+  "assessment_expectations": {
+    "automatic": "Objective mastery-check responses may be scored by the local assessment engine.",
+    "human_review": "Open proofs, explanations, constructions, corrections and project rubric judgments require teacher, mentor or qualified reviewer judgment.",
+    "mastery": "Target is 80% on objective evidence or documented correction/remediation evidence demonstrating missed skills.",
+    "policy_note": "Automated scores and human-reviewed evidence are complementary and must represent work the learner actually produced."
+  }
 }
