@@ -1,13 +1,30 @@
 {
   "unit": 10,
+  "title": "Area, Measurement & Geometric Probability",
   "terms": [
-    "area",
-    "composite figure",
-    "apothem",
-    "semiperimeter",
-    "precision",
-    "relative error",
-    "geometric probability",
-    "optimization"
+    {"term":"area","definition":"the amount of two-dimensional region enclosed by a figure, measured in square units"},
+    {"term":"height","definition":"a perpendicular distance used with a chosen base in an area relationship"},
+    {"term":"composite figure","definition":"a figure whose area can be found by combining or subtracting simpler regions"},
+    {"term":"regular polygon","definition":"a polygon with all sides congruent and all interior angles congruent"},
+    {"term":"apothem","definition":"the perpendicular segment from the center of a regular polygon to a side"},
+    {"term":"semiperimeter","definition":"one-half of a figure's perimeter; in Heron's formula, s=(a+b+c)/2"},
+    {"term":"Heron's formula","definition":"A=sqrt(s(s-a)(s-b)(s-c)), used to find triangle area from three side lengths"},
+    {"term":"dilation","definition":"a transformation that multiplies distances from a center by a scale factor"},
+    {"term":"scale factor","definition":"the ratio k of corresponding linear measurements in similar figures"},
+    {"term":"area scale factor","definition":"k squared, the factor by which area changes under a dilation with linear factor k"},
+    {"term":"accuracy","definition":"closeness of a measured or calculated value to an accepted value"},
+    {"term":"precision","definition":"the resolution or consistency represented by a measurement or report"},
+    {"term":"absolute error","definition":"the absolute difference between a measured value and an accepted value"},
+    {"term":"relative error","definition":"absolute error divided by the magnitude of the accepted value"},
+    {"term":"significant figures","definition":"digits in a measured quantity that communicate its supported precision"},
+    {"term":"geometric probability","definition":"probability modeled using ratios of geometric measures such as lengths or areas"},
+    {"term":"uniform selection","definition":"a model in which equal-measure locations are equally likely"},
+    {"term":"sample region","definition":"the complete geometric region from which an outcome may occur"},
+    {"term":"favorable region","definition":"the portion of the sample region satisfying the event"},
+    {"term":"complement","definition":"all outcomes in the sample region that are not in the stated event"},
+    {"term":"constraint","definition":"a condition that every valid design or solution must satisfy"},
+    {"term":"objective","definition":"the quantity an optimization problem seeks to maximize or minimize"},
+    {"term":"feasible","definition":"satisfying every stated constraint"},
+    {"term":"optimum","definition":"the best feasible result according to the stated objective"}
   ]
 }
