@@ -21,25 +21,40 @@
 - Week 5: **LOCKED** summary + 5 daily planning files
 - Week 6: **LOCKED** summary + 5 daily planning files
 - Week 7: **LOCKED** summary + 5 daily planning files
-- Weeks 8–13: reserved with explicit `IN DEVELOPMENT` status
+- Week 8: **LOCKED** summary + 5 daily planning files
+- Weeks 9–13: reserved with explicit `IN DEVELOPMENT` status
 
 ## Current Totals
-- Locked weeks: **7 / 13**
-- Locked daily lesson plans: **35 / 65**
-- Cumulative assessment blueprints: **1** (`CUMULATIVE_ASSESSMENT_I_BLUEPRINT.md`, Weeks 1–4)
-- Research Notebook checkpoints: through **Week 7**
+- Locked weeks: **8 / 13**
+- Locked daily lesson plans: **40 / 65**
+- Cumulative assessment blueprints: **2**
+  - `CUMULATIVE_ASSESSMENT_I_BLUEPRINT.md` — Weeks 1–4
+  - `CUMULATIVE_ASSESSMENT_II_BLUEPRINT.md` — Weeks 1–8 with emphasis on Weeks 5–8
+- Research Notebook checkpoints: through **Week 8**
 
 ## Week 7 Verification
 Week 7 includes:
 - multi-component emotion measurement
 - appraisal and regulation
 - intrinsic/extrinsic motivation
-- autonomy, competence, relatedness, goals, expectancy, and opportunity
+- goals, incentives, autonomy, competence, relatedness, and opportunity
 - self-efficacy, feedback, persistence, and strategy
 - unified Situation → Appraisal → Emotion → Motivation → Choice → Consequence scaffold
 - explicit warning that the scaffold is not a rigid universal sequence
 - no required private emotional disclosure
-- explicit distinction between motivation, opportunity, ability, and performance
+
+## Week 8 Verification
+Week 8 includes:
+- lifespan development rather than childhood-only coverage
+- physical, cognitive, social, and cultural developmental domains
+- cross-sectional and longitudinal designs
+- cohort effects and developmental inference limits
+- early development without destiny claims
+- cognitive and language development
+- adolescence without “unfinished brain” determinism
+- adulthood and aging as continued development
+- overlapping-group data and explicit protection against individual prediction from age averages
+- no required private family or childhood disclosure
 
 ## Permanent Quality Controls
 Every locked week must preserve:
@@ -55,4 +70,4 @@ Every locked week must preserve:
 - explicit limitations and ethical boundaries
 
 ## Implementation Boundary
-Student-facing HTML for a week should not be treated as complete until that week's curriculum is academically locked. The repository currently preserves this boundary: Weeks 1–7 are locked; Weeks 8–13 remain development placeholders.
+Student-facing HTML for a week should not be treated as complete until that week's curriculum is academically locked. The repository currently preserves this boundary: Weeks 1–8 are locked; Weeks 9–13 remain development placeholders.
