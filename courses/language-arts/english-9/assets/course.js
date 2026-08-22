@@ -1,4 +1,3 @@
-
 (() => {
   "use strict";
   const root=document.documentElement;
@@ -10,9 +9,15 @@
   themeButton?.addEventListener("click",()=>{root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";try{localStorage.setItem(themeKey,root.dataset.theme)}catch{}syncTheme();});
 
   const courseKey="khae-ela9-progress-v1";
+  const masteryKey="khae-ela9-mastery-v1";
+  const MASTERY_THRESHOLD=80;
   const load=()=>{try{return JSON.parse(localStorage.getItem(courseKey)||"{}")}catch{return {}}};
+  const loadMastery=()=>{try{return JSON.parse(localStorage.getItem(masteryKey)||"{}")}catch{return {}}};
   const save=data=>{try{localStorage.setItem(courseKey,JSON.stringify(data))}catch{}};
+  const saveMastery=data=>{try{localStorage.setItem(masteryKey,JSON.stringify(data))}catch{}};
   const progress=load();
+  const mastery=loadMastery();
+
   document.querySelectorAll("[data-progress-key]").forEach(button=>{
     const key=button.dataset.progressKey;
     const on=Boolean(progress[key]);
@@ -35,6 +40,29 @@
     if(label)label.textContent=`${done} of ${total} weeks complete · ${pct}%`;
   }
   updateProgress();
+
+  document.querySelectorAll("[data-mastery-score]").forEach(field=>{
+    const id=field.dataset.masteryScore;
+    if(mastery[id]?.score!==undefined)field.value=mastery[id].score;
+  });
+  document.querySelectorAll("[data-mastery-check]").forEach(button=>{
+    const id=button.dataset.masteryCheck;
+    const field=document.querySelector(`[data-mastery-score="${id}"]`);
+    const panel=document.querySelector(`[data-mastery-panel="${id}"]`);
+    const render=()=>{
+      if(!field||!panel)return;
+      const raw=String(field.value).trim();
+      if(raw===""){panel.innerHTML="<strong>Not verified</strong><p>Enter a verified assessment score from 0–100.</p>";return;}
+      const score=Number(raw);
+      if(!Number.isFinite(score)||score<0||score>100){panel.innerHTML="<strong>Check the score</strong><p>Enter a valid percentage from 0–100.</p>";return;}
+      const passed=score>=MASTERY_THRESHOLD;
+      mastery[id]={score,passed,threshold:MASTERY_THRESHOLD,recordedAt:new Date().toISOString()};saveMastery(mastery);
+      if(passed){panel.innerHTML=`<strong>${score}% · Mastery demonstrated ✓</strong><p>The ${MASTERY_THRESHOLD}% gate is satisfied. Progression may continue.</p>`;}
+      else{panel.innerHTML=`<strong>${score}% · Not yet mastered</strong><p>${MASTERY_THRESHOLD}% is required. Complete corrective learning, review missed skills, and retry before progression.</p>`;}
+    };
+    button.addEventListener("click",render);
+    if(mastery[id]?.score!==undefined)render();
+  });
 
   document.querySelectorAll("[data-save-field]").forEach(field=>{
     const key=`khae-ela9-field:${field.dataset.saveField}`;
