@@ -1,0 +1,112 @@
+{
+  "schema": "khaemenes-english9-aurora-integration-v1",
+  "purpose": "Public-safe curriculum mapping for Aurora creative tools used by English 9. Tool use supports learning evidence but does not replace assessed mastery.",
+  "source_repository": "vervenveda/aurora.github.io",
+  "apps": [
+    {
+      "id": "auraink",
+      "name": "AuraInk",
+      "source_path": "apps/AuraInk_index.html",
+      "public_url": "https://vervenveda.github.io/aurora.github.io/apps/AuraInk_index.html",
+      "status": "approved_with_boundaries",
+      "verified_functions": [
+        "drawing canvas",
+        "brush/marker/pencil/crayon/watercolor/glow/rainbow/eraser tools",
+        "color selection",
+        "template gallery",
+        "local artwork export",
+        "basic language toggle"
+      ],
+      "language_arts_uses": [
+        "visual-to-verbal description",
+        "imagery and diction practice",
+        "visual poetry ideation",
+        "multimodal composition prototype",
+        "creative transformation planning"
+      ],
+      "recommended_weeks": [10, 31, 32, 35],
+      "boundaries": [
+        "Artwork is a composition or observation prompt, not textual evidence.",
+        "External template/font dependencies may fail; the blank local canvas must remain a valid fallback.",
+        "Student-created visuals used in publication still require accessibility descriptions and editorial review."
+      ]
+    },
+    {
+      "id": "aurora-inspiration",
+      "name": "Aurora Inspiration Game",
+      "source_path": "apps/Aurora_Inspiration_index.html",
+      "public_url": "https://vervenveda.github.io/aurora.github.io/apps/Aurora_Inspiration_index.html",
+      "status": "approved_for_ideation_only",
+      "verified_functions": [
+        "20 reflective inspiration questions",
+        "context-keyword response system",
+        "creative prompt generation",
+        "user text input"
+      ],
+      "language_arts_uses": [
+        "low-stakes prewriting",
+        "personal narrative seed generation",
+        "creative prompt exploration",
+        "audience/theme brainstorming"
+      ],
+      "recommended_weeks": [7, 9, 31, 35],
+      "boundaries": [
+        "Generated affirmations/prompts are ideation material, not evidence or assessment answers.",
+        "Students may reject or modify any generated prompt.",
+        "Social-sharing controls are not required for coursework or mastery."
+      ]
+    },
+    {
+      "id": "creative-mind-odyssey",
+      "name": "Creative Mind Odyssey — Sovereign Edition",
+      "source_path": "apps/creative_mind_odyssey_index.html",
+      "public_url": "https://vervenveda.github.io/aurora.github.io/apps/creative_mind_odyssey_index.html",
+      "status": "approved_with_boundaries",
+      "verified_functions": [
+        "creative prompt station",
+        "journaling response area",
+        "local-device storage",
+        "prompt/library controls",
+        "gallery/history features",
+        "theme controls"
+      ],
+      "language_arts_uses": [
+        "creative-writing warmups",
+        "reflection journaling",
+        "narrative/poetry ideation",
+        "capstone creative-component exploration"
+      ],
+      "recommended_weeks": [7, 9, 10, 31, 35],
+      "boundaries": [
+        "Prompt output may start thinking but cannot author assessed work for the student.",
+        "Saved local responses remain process evidence unless explicitly selected for portfolio use.",
+        "Mastery requires the course's defined reading/writing evidence regardless of app score or streak."
+      ]
+    },
+    {
+      "id": "auraentune",
+      "name": "AuraenTune / Frequency Tuner",
+      "source_path": "apps/AuraenTune_index.html",
+      "public_url": "https://vervenveda.github.io/aurora.github.io/apps/AuraenTune_index.html",
+      "status": "hold_for_content_revision",
+      "verified_functions": [
+        "Web Audio oscillator",
+        "manual 20–1000 Hz frequency slider",
+        "sine-tone playback",
+        "animated frequency visualization"
+      ],
+      "potential_language_arts_uses": [
+        "optional demonstration that pitch/frequency is different from poetic rhythm, meter, stress, and cadence"
+      ],
+      "blocking_issue": "Preset descriptions include unsupported wellness/medical-style claims such as restoring cellular balance. Do not present those claims as instructional facts or integrate this app into scored Language Arts work until the public copy is corrected.",
+      "recommended_weeks_after_revision": [11, 12]
+    }
+  ],
+  "global_rules": [
+    "Aurora tools are optional learning supports unless a lesson explicitly defines an equivalent no-tool pathway.",
+    "No Aurora score, streak, artwork, generated prompt, or activity-completion signal may satisfy an 80 percent mastery gate by itself.",
+    "Eiren may discuss student-created Aurora work but may not convert it into assessed writing on the student's behalf.",
+    "Beta feedback about Aurora integrations remains separate from mastery.",
+    "Public-facing curriculum should expose only approved public destinations and educational purpose, never credentials, protected endpoints, repository secrets, internal topology, or network mapping."
+  ]
+}
