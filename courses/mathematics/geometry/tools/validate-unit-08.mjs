@@ -7,16 +7,7 @@ const errors=[];
 const read=p=>fs.readFileSync(p,'utf8');
 const must=(ok,msg)=>{if(!ok)errors.push(msg)};
 const lessonIds=Array.from({length:8},(_,i)=>`u08-l0${i+1}`);
-const lessonTerms=[
- ['radius','diameter','chord'],
- ['central angle','arc length'],
- ['inscribed angle','intercepted arc'],
- ['perpendicular','chord'],
- ['tangent','point of tangency'],
- ['secant','power'],
- ['sector','annulus'],
- ['standard form','center']
-];
+const lessonTerms=[['radius','diameter','chord'],['central angle','arc length'],['inscribed angle','intercepted arc'],['perpendicular','chord'],['tangent','point of tangency'],['secant','power'],['sector','annulus'],['standard form','center']];
 const clonePhrase='Connect radii, chords, arcs, angles, tangents, secants, sectors, and coordinate equations in a unified circle model.';
 
 for(let i=0;i<8;i++){
@@ -29,9 +20,8 @@ for(let i=0;i<8;i++){
    const s=read(student);
    must(s.includes('Mastery target 80%'),`${id} missing 80% mastery language`);
    must(!s.includes(clonePhrase),`${id} still contains clone-template phrase`);
-   for(const term of lessonTerms[i]) must(s.toLowerCase().includes(term.toLowerCase()),`${id} missing identity term: ${term}`);
-   const problems=(s.match(/problem-number/g)||[]).length;
-   must(problems>=6,`${id} has fewer than 6 worksheet problems`);
+   for(const term of lessonTerms[i]) must(s.toLowerCase().includes(term),`${id} missing identity term: ${term}`);
+   must((s.match(/problem-number/g)||[]).length>=6,`${id} has fewer than 6 worksheet problems`);
    must(s.includes(`../../../teacher-keys/${id}-key.html`),`${id} teacher-key link mismatch`);
  }
  if(fs.existsSync(key)){
@@ -62,30 +52,30 @@ const standards=JSON.parse(read(path.join(unit,'standards-map.json')));
 must(Array.isArray(standards.lesson_evidence)&&standards.lesson_evidence.length===8,'standards-map must contain 8 lesson_evidence entries');
 must(Boolean(standards.human_review_boundary),'standards-map missing human_review_boundary');
 
-const bankPath=path.join(unit,'assessment','question-bank.js');
-const enginePath=path.join(unit,'assessment','balanced-engine.js');
+const bankPath=path.join(unit,'assessment','unit-08-question-bank.js');
+const enginePath=path.join(unit,'assessment','unit-08-assessment-engine.js');
 const masteryPath=path.join(unit,'assessment','mastery-check.html');
 must(fs.existsSync(bankPath),'Missing Unit 08 local assessment question bank');
 must(fs.existsSync(enginePath),'Missing Unit 08 balanced mastery engine');
 if(fs.existsSync(bankPath)){
  const bank=read(bankPath);
- const ids=[...bank.matchAll(/"id"\s*:\s*"(u08-l\d\d-q\d\d)"/g)].map(m=>m[1]);
+ const ids=[...bank.matchAll(/"id"\s*:\s*"(geo-u08-l\d\d-q\d\d)"/g)].map(m=>m[1]);
  must(ids.length===32,`Unit 08 bank must contain 32 questions; found ${ids.length}`);
  must(new Set(ids).size===ids.length,'Unit 08 bank contains duplicate question ids');
  for(const id of lessonIds){
-   const count=ids.filter(q=>q.startsWith(id+'-q')).length;
+   const count=ids.filter(q=>q.startsWith(`geo-${id}-q`)).length;
    must(count===4,`${id} must contribute exactly 4 assessment questions; found ${count}`);
  }
  must(!bank.includes('1.33π')&&!bank.includes('2.67π'),'Unit 08 bank contains decimal-π approximations');
 }
 if(fs.existsSync(enginePath)){
  const e=read(enginePath);
- must(e.includes('one from each')||e.includes('lesson'), 'balanced engine should document lesson balancing');
- must(e.includes('12'),'balanced engine should build a 12-question mastery set');
+ must(e.includes('Every attempt includes at least one question from each of the eight Unit 08 lessons'),'balanced engine must guarantee all eight lesson identities');
+ must(e.includes('const target=Math.min(Number(cfg.count)||12'),'balanced engine should build a 12-question mastery set');
 }
 const mastery=read(masteryPath);
-must(mastery.includes('question-bank.js'),'mastery check must load Unit 08 local question bank');
-must(mastery.includes('balanced-engine.js'),'mastery check must load Unit 08 balanced engine');
+must(mastery.includes('unit-08-question-bank.js'),'mastery check must load Unit 08 local question bank');
+must(mastery.includes('unit-08-assessment-engine.js'),'mastery check must load Unit 08 balanced engine');
 must(mastery.includes('80%'),'mastery check must state 80% target');
 
 const index=read(path.join(unit,'index.html'));
@@ -98,9 +88,5 @@ must(project.includes('three different Unit 08 relationships'),'Project must req
 must(project.includes('Khaemenes_Scientific_Calculator'),'Project missing calculator verification option');
 must(project.includes('Evidence_Citation_Studio'),'Project missing evidence studio option');
 
-if(errors.length){
- console.error(`Geometry Unit 08 validation failed: ${errors.length} problem(s).`);
- for(const e of errors) console.error(`- ${e}`);
- process.exit(1);
-}
+if(errors.length){console.error(`Geometry Unit 08 validation failed: ${errors.length} problem(s).`);for(const e of errors)console.error(`- ${e}`);process.exit(1)}
 console.log('Geometry Unit 08 validation passed.');
