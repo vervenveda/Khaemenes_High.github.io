@@ -1,184 +1,33 @@
 {
   "course": "Khaemenes Geometry & Spatial Design",
-  "version": "2026-08-22-reading-thread-draft",
-  "purpose": "One anchor reading selection per geometry unit, integrated through a three-stage reading arc: Read & Notice, Math Connection, Evidence & Synthesis.",
-  "calendar_note": "The live course is 36 weeks with mixed unit lengths. The reading arc is a three-stage instructional sequence, not a requirement that every math unit occupy exactly three weeks.",
+  "version": "2026-08-22-reading-thread-fadeout",
+  "purpose": "Anchor readings enrich Units 1–11 through Read & Notice, Math Connection, and Evidence & Synthesis. Required reading intentionally ends after Unit 11 so students can focus on design, cumulative capstone evidence, and the separate final examination.",
+  "calendar_note": "The live course is 36 weeks with mixed unit lengths. Unit 12 is a reading intermission during CAD/design work. Unit 13 contains no new lessons and no required reading.",
   "mastery_policy": "Reading activities enrich geometry, vocabulary, evidence use, and critical thinking but do not replace the 80% mathematics mastery gate.",
   "source_policy": "Prefer public-domain, openly licensed, or legitimately free-access sources. Preserve attribution and provide accessible excerpts/reading guides.",
-  "integration_pattern": {
-    "stage_1": "Read & Notice: context, author, vocabulary, mathematical ideas, questions.",
-    "stage_2": "Math Connection: connect one claim, diagram, method, historical problem, or idea directly to unit mathematics.",
-    "stage_3": "Evidence & Synthesis: short evidence-citation response, critical-thinking prompt, design reflection, or model critique."
-  },
-  "units": [
-    {
-      "unit": 1,
-      "title": "Foundations, Constructions & Geometric Reasoning",
-      "anchor": "The First Six Books of the Elements of Euclid",
-      "author": "Euclid; John Casey edition",
-      "selection": "Introduction; Book I definitions, postulates/common notions, and selected opening propositions",
-      "source": "https://www.gutenberg.org/ebooks/21076",
-      "access": "Public domain in the USA",
-      "connection": "Definitions, axioms/postulates, compass-straightedge construction, proof, and the difference between appearance and deduction.",
-      "critical_question": "What must be accepted, defined, constructed, or proved before a geometric conclusion is trustworthy?"
-    },
-    {
-      "unit": 2,
-      "title": "Transformations, Symmetry & Congruence",
-      "anchor": "Flatland: A Romance of Many Dimensions",
-      "author": "Edwin A. Abbott",
-      "selection": "Sections 1-3 and selected passages on recognizing figures, motion, dimension, and point of view",
-      "source": "https://www.gutenberg.org/ebooks/97",
-      "access": "Public domain in the USA",
-      "connection": "Shape identity, transformations, perception, invariance, symmetry, and spatial reasoning.",
-      "critical_question": "Which properties belong to a figure itself, and which depend on the observer or representation?"
-    },
-    {
-      "unit": 3,
-      "title": "Triangle Congruence & Proof",
-      "anchor": "The First Six Books of the Elements of Euclid",
-      "author": "Euclid; John Casey edition",
-      "selection": "Book I, selected triangle-congruence propositions including propositions 4, 8, and 26",
-      "source": "https://www.gutenberg.org/ebooks/21076",
-      "access": "Public domain in the USA",
-      "connection": "SSS/SAS/ASA-style reasoning, corresponding parts, and proof from limited measurements.",
-      "critical_question": "How much information is sufficient to force two triangles to agree?"
-    },
-    {
-      "unit": 4,
-      "title": "Parallel Lines, Slopes & Coordinate Proof",
-      "anchor": "The Foundations of Geometry",
-      "author": "David Hilbert",
-      "selection": "Teacher-curated excerpts on incidence, order, parallels, and the role of axioms",
-      "source": "https://www.gutenberg.org/ebooks/17384",
-      "access": "Public domain in the USA",
-      "connection": "Parallelism, logical conditions, proof structure, and why coordinate evidence must satisfy defined relationships.",
-      "critical_question": "Which facts about lines follow from definitions and axioms, and which require additional evidence?"
-    },
-    {
-      "unit": 5,
-      "title": "Similarity, Dilations & Proportional Reasoning",
-      "anchor": "The First Six Books of the Elements of Euclid",
-      "author": "Euclid; John Casey edition",
-      "selection": "Book VI selections on similar figures and proportional sides",
-      "source": "https://www.gutenberg.org/ebooks/21076",
-      "access": "Public domain in the USA",
-      "connection": "Similarity, scale factors, proportional reasoning, indirect measurement, maps, and models.",
-      "critical_question": "What must remain proportional for a scale model to represent the original faithfully?"
-    },
-    {
-      "unit": 6,
-      "title": "Right Triangles, Trigonometry & Bearings",
-      "anchor": "Practical Talks by an Astronomer",
-      "author": "Harold Jacoby",
-      "selection": "Navigation at Sea and selected passages on astronomical direction-finding",
-      "source": "https://www.gutenberg.org/ebooks/53396",
-      "access": "Public domain in the USA",
-      "connection": "Bearings, inaccessible distances, right-triangle measurement, navigation, instruments, and error.",
-      "critical_question": "How can angle and direction measurements determine a position or distance that cannot be measured directly?"
-    },
-    {
-      "unit": 7,
-      "title": "Polygons & Quadrilaterals",
-      "anchor": "Flatland: A Romance of Many Dimensions",
-      "author": "Edwin A. Abbott",
-      "selection": "Selected passages describing triangles, squares, polygons, recognition, and social classification",
-      "source": "https://www.gutenberg.org/ebooks/97",
-      "access": "Public domain in the USA",
-      "connection": "Polygon classification, attributes, necessary/sufficient properties, and the danger of confusing labels with mathematical evidence.",
-      "critical_question": "When does a classification follow from geometric properties, and when is it merely an imposed label?"
-    },
-    {
-      "unit": 8,
-      "title": "Circles, Arcs & Tangency",
-      "anchor": "The First Six Books of the Elements of Euclid",
-      "author": "Euclid; John Casey edition",
-      "selection": "Book III selections on circles, chords, tangents, arcs, and angle relationships",
-      "source": "https://www.gutenberg.org/ebooks/21076",
-      "access": "Public domain in the USA",
-      "connection": "Circle theorems, tangent relationships, chords, arcs, central/inscribed relationships, and deductive structure.",
-      "critical_question": "Which circle relationships are consequences of radius and symmetry rather than visual appearance?"
-    },
-    {
-      "unit": 9,
-      "title": "Analytic Geometry, Loci & Conic Connections",
-      "anchor": "Conic Sections: Treated Geometrically",
-      "author": "W. H. Besant",
-      "selection": "Introductory definitions and selected geometric treatments of ellipse, parabola, and hyperbola",
-      "source": "https://www.gutenberg.org/ebooks/29913",
-      "access": "Public domain in the USA",
-      "connection": "Locus definitions, conic sections, distance conditions, construction, and coordinate/geometric representations.",
-      "critical_question": "How can one geometric condition generate an entire curve?"
-    },
-    {
-      "unit": 10,
-      "title": "Area, Measurement & Geometric Probability",
-      "anchor": "The Logic of Chance",
-      "author": "John Venn",
-      "selection": "Chapter I and selected Chapter II passages on probability series, error/divergence, and a line drawn at random",
-      "source": "https://www.gutenberg.org/ebooks/57359",
-      "access": "Public domain in the USA",
-      "connection": "Probability, randomness, repeated trials, measurement, uncertainty, and geometric probability.",
-      "critical_question": "When does a measured or observed frequency justify a probability claim, and what uncertainty remains?"
-    },
-    {
-      "unit": 11,
-      "title": "Solids, Surface Area & Volume",
-      "anchor": "Solid Geometry with Problems and Applications",
-      "author": "H. E. Slaught and N. J. Lennes",
-      "selection": "Teacher-curated selections on polyhedra, prisms/cylinders, pyramids/cones, surface area, volume, and cross-sections",
-      "source": "https://www.gutenberg.org/ebooks/29807",
-      "access": "Public domain in the USA",
-      "connection": "Nets, dimensional reasoning, surface area versus volume, cross-sections, and design efficiency.",
-      "critical_question": "Why do length, area, and volume scale differently when a solid is enlarged?"
-    },
-    {
-      "unit": 12,
-      "title": "CAD, Scale Drawing & Spatial Design",
-      "anchor": "The Elements of Perspective",
-      "author": "John Ruskin",
-      "selection": "Opening instructional sections and selected perspective constructions",
-      "source": "https://www.gutenberg.org/ebooks/60816",
-      "access": "Public domain in the USA",
-      "connection": "Technical drawing, representation, viewpoint, spatial design, scale, projection, and the difference between the object and its drawing.",
-      "critical_question": "How does a representation preserve some geometric information while changing other information?"
-    },
-    {
-      "unit": 13,
-      "title": "Geometry Modeling Capstone & Defense",
-      "anchor": "Science and Hypothesis",
-      "author": "Henri Poincare",
-      "selection": "Introduction; selected passages from On the Nature of Mathematical Reasoning, Space and Geometry, and Experience and Geometry",
-      "source": "https://www.gutenberg.org/ebooks/37157",
-      "access": "Public domain in the USA",
-      "connection": "Constraint, validation, assumptions, models, evidence, uncertainty, sufficiency, and the limits of mathematical claims.",
-      "critical_question": "What does a mathematical model establish, what does it assume, and what evidence would make us revise it?"
-    }
+  "integration_pattern": {"stage_1":"Read & Notice","stage_2":"Math Connection","stage_3":"Evidence & Synthesis"},
+  "required_reading_units": [
+    {"unit":1,"anchor":"The First Six Books of the Elements of Euclid","author":"Euclid; John Casey edition","source":"https://www.gutenberg.org/ebooks/21076","critical_question":"What must be accepted, defined, constructed, or proved before a geometric conclusion is trustworthy?"},
+    {"unit":2,"anchor":"Flatland: A Romance of Many Dimensions","author":"Edwin A. Abbott","source":"https://www.gutenberg.org/ebooks/97","critical_question":"Which properties belong to a figure itself, and which depend on the observer or representation?"},
+    {"unit":3,"anchor":"The First Six Books of the Elements of Euclid — Book I congruence selections","author":"Euclid; John Casey edition","source":"https://www.gutenberg.org/ebooks/21076","critical_question":"How much information is sufficient to force two triangles to agree?"},
+    {"unit":4,"anchor":"The Foundations of Geometry","author":"David Hilbert","source":"https://www.gutenberg.org/ebooks/17384","critical_question":"Which facts about lines follow from definitions and axioms, and which require additional evidence?"},
+    {"unit":5,"anchor":"The First Six Books of the Elements of Euclid — Book VI","author":"Euclid; John Casey edition","source":"https://www.gutenberg.org/ebooks/21076","critical_question":"What must remain proportional for a scale model to represent the original faithfully?"},
+    {"unit":6,"anchor":"Practical Talks by an Astronomer","author":"Harold Jacoby","source":"https://www.gutenberg.org/ebooks/53396","critical_question":"How can angle and direction measurements determine a position or distance that cannot be measured directly?"},
+    {"unit":7,"anchor":"Flatland: A Romance of Many Dimensions — polygon selections","author":"Edwin A. Abbott","source":"https://www.gutenberg.org/ebooks/97","critical_question":"When does a classification follow from geometric properties, and when is it merely an imposed label?"},
+    {"unit":8,"anchor":"The First Six Books of the Elements of Euclid — Book III","author":"Euclid; John Casey edition","source":"https://www.gutenberg.org/ebooks/21076","critical_question":"Which circle relationships are consequences of radius and symmetry rather than visual appearance?"},
+    {"unit":9,"anchor":"Conic Sections: Treated Geometrically","author":"W. H. Besant","source":"https://www.gutenberg.org/ebooks/29913","critical_question":"How can one geometric condition generate an entire curve?"},
+    {"unit":10,"anchor":"The Logic of Chance","author":"John Venn","source":"https://www.gutenberg.org/ebooks/57359","critical_question":"When does a measured or observed frequency justify a probability claim, and what uncertainty remains?"},
+    {"unit":11,"anchor":"Solid Geometry with Problems and Applications","author":"H. E. Slaught and N. J. Lennes","source":"https://www.gutenberg.org/ebooks/29807","critical_question":"Why do length, area, and volume scale differently when a solid is enlarged?"}
   ],
-  "optional_enrichment": [
-    {
-      "title": "The Mathematicall Praeface to Elements of Geometrie",
-      "author": "John Dee",
-      "source": "https://www.gutenberg.org/ebooks/22062",
-      "use": "Historical/philosophical enrichment for Units 1, 5, or 13."
-    },
-    {
-      "title": "The Teaching of Geometry",
-      "author": "David Eugene Smith",
-      "source": "https://www.gutenberg.org/ebooks/37681",
-      "use": "Teacher resource and selected student history passages on why geometry is studied, Euclid, definitions, axioms, and applications."
-    },
-    {
-      "title": "The Theory and Practice of Perspective",
-      "author": "G. A. Storey",
-      "source": "https://www.gutenberg.org/ebooks/20165",
-      "use": "Alternative/additional Unit 12 reading at approximately 8th-9th grade readability."
-    },
-    {
-      "title": "Mathematical Recreations and Essays",
-      "author": "W. W. Rouse Ball",
-      "source": "https://www.gutenberg.org/ebooks/26839",
-      "use": "Optional challenge readings, famous geometry problems, and critical-thinking extensions."
-    }
+  "fadeout": [
+    {"unit":12,"status":"Reading Intermission","reason":"Students focus on CAD, scale drawing, spatial design, applied portfolio work, and mathematical production. No assigned anchor reading."},
+    {"unit":13,"status":"Assessment-Only Capstone","reason":"No new lessons and no assigned reading. Students complete a separate 50-question cumulative capstone covering Units 1–12, corrections, completion evidence, and then the independent comprehensive final examination."}
+  ],
+  "optional_teacher_or_enrichment_sources": [
+    {"title":"The Elements of Perspective","author":"John Ruskin","source":"https://www.gutenberg.org/ebooks/60816","use":"Optional Unit 12 enrichment only; never required."},
+    {"title":"Science and Hypothesis","author":"Henri Poincare","source":"https://www.gutenberg.org/ebooks/37157","use":"Teacher/reference or post-course enrichment; not assigned in Unit 13."},
+    {"title":"The Mathematicall Praeface to Elements of Geometrie","author":"John Dee","source":"https://www.gutenberg.org/ebooks/22062","use":"Optional historical enrichment."},
+    {"title":"The Teaching of Geometry","author":"David Eugene Smith","source":"https://www.gutenberg.org/ebooks/37681","use":"Teacher resource and optional history selections."},
+    {"title":"Mathematical Recreations and Essays","author":"W. W. Rouse Ball","source":"https://www.gutenberg.org/ebooks/26839","use":"Optional challenge reading only."}
   ]
 }
