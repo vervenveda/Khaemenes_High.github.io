@@ -1,24 +1,104 @@
 {
   "unit": 8,
+  "title": "Circles, Arcs & Tangency",
   "domains": [
-    "Circles",
-    "Arcs and angles",
-    "Tangency",
-    "Circle equations"
+    "Circle definitions and chord relationships",
+    "Central and inscribed angle relationships",
+    "Arc length and circular measure",
+    "Tangency and power-of-a-point relationships",
+    "Sector, segment, and annulus area",
+    "Coordinate equations of circles"
   ],
   "practices": [
-    "Make sense of problems",
+    "Make sense of problems and persevere",
     "Reason abstractly and quantitatively",
-    "Construct viable arguments",
+    "Construct viable arguments and critique reasoning",
     "Model with mathematics",
     "Use tools strategically",
     "Attend to precision",
-    "Look for structure"
+    "Look for and use structure"
   ],
-  "evidence": [
-    "Printable lesson work",
-    "Mastery check",
-    "Applied investigation",
-    "Reflection and correction"
-  ]
+  "lesson_evidence": [
+    {
+      "lesson_id": "u08-l01",
+      "focus": "Circle Vocabulary, Radius, Diameter & Chords",
+      "evidence": [
+        "Classify radii, diameters, and chords from diagrams and descriptions",
+        "Use d=2r and r=d/2",
+        "Explain why every diameter is a chord but not every chord is a diameter"
+      ]
+    },
+    {
+      "lesson_id": "u08-l02",
+      "focus": "Central Angles, Arcs & Arc Length",
+      "evidence": [
+        "Relate central-angle measure to intercepted-arc measure",
+        "Use θ/360 as a fraction of a full rotation",
+        "Calculate and reverse-solve exact arc lengths"
+      ]
+    },
+    {
+      "lesson_id": "u08-l03",
+      "focus": "Inscribed Angles & Intercepted Arcs",
+      "evidence": [
+        "Apply the inscribed-angle theorem",
+        "Use same-arc and diameter consequences",
+        "Reason about cyclic-angle relationships"
+      ]
+    },
+    {
+      "lesson_id": "u08-l04",
+      "focus": "Chords, Perpendicular Bisectors & Distances",
+      "evidence": [
+        "Use perpendicular-from-center chord bisection",
+        "Build right triangles from radius, half-chord, and center distance",
+        "Apply equal-chord/equal-distance relationships"
+      ]
+    },
+    {
+      "lesson_id": "u08-l05",
+      "focus": "Tangents and Radius Relationships",
+      "evidence": [
+        "Use radius-tangent perpendicularity",
+        "Apply congruent tangent segments from an external point",
+        "Solve tangent-length problems with right-triangle reasoning"
+      ]
+    },
+    {
+      "lesson_id": "u08-l06",
+      "focus": "Secant, Chord & Tangent Power Theorems",
+      "evidence": [
+        "Apply intersecting-chord products",
+        "Distinguish external and whole secant lengths",
+        "Apply secant-secant and tangent-secant power relationships"
+      ]
+    },
+    {
+      "lesson_id": "u08-l07",
+      "focus": "Sector Area, Segment Area & Annuli",
+      "evidence": [
+        "Find exact sector areas",
+        "Decompose circular segments as sector minus triangle",
+        "Find annulus area by subtracting concentric-circle areas"
+      ]
+    },
+    {
+      "lesson_id": "u08-l08",
+      "focus": "Equation of a Circle & Coordinate Applications",
+      "evidence": [
+        "Read center and radius from standard form",
+        "Construct equations from geometric information",
+        "Use midpoint and distance reasoning to classify coordinate points and circles"
+      ]
+    }
+  ],
+  "unit_evidence": [
+    "Eight lesson-specific printable worksheets",
+    "Eight synchronized teacher keys",
+    "Balanced 12-question mastery check sampling all eight lessons",
+    "Circle-Theorem Investigation & Radial Design project",
+    "Written correction and reflection pathway",
+    "Strategic use of the Khaemenes Scientific Calculator for verification only"
+  ],
+  "human_review_boundary": "Teacher or reviewer confirms reasoning quality, written justification, project evidence, and any accepted corrections. Automated mastery scoring does not replace human review of proof, modelling, or design evidence."
 }
