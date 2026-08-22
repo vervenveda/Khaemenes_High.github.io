@@ -1,19 +1,20 @@
 {
   "unit": 2,
   "title": "Transformations, Symmetry & Congruence",
-  "source": "assets/unit-02-content-upgrade.js",
+  "source": ["assets/unit-02-content-upgrade.js", "assets/unit-02-answer-balance.js"],
   "declared_question_count": 35,
   "questions_per_lesson": 5,
   "mastery_target": 80,
   "answer_index_base": 0,
+  "answer_position_policy": "Deterministic rotation distributes correct choices across indexes 0-3 while preserving each question's answer text and explanation.",
   "grading_note": "Objective multiple-choice items are automatically scored. Explanations, corrections and project evidence may require human review.",
   "answers": [
-    {"id":"geo-u02-01-01","lesson":1,"answer":0},{"id":"geo-u02-01-02","lesson":1,"answer":0},{"id":"geo-u02-01-03","lesson":1,"answer":0},{"id":"geo-u02-01-04","lesson":1,"answer":0},{"id":"geo-u02-01-05","lesson":1,"answer":0},
-    {"id":"geo-u02-02-01","lesson":2,"answer":0},{"id":"geo-u02-02-02","lesson":2,"answer":0},{"id":"geo-u02-02-03","lesson":2,"answer":0},{"id":"geo-u02-02-04","lesson":2,"answer":0},{"id":"geo-u02-02-05","lesson":2,"answer":0},
-    {"id":"geo-u02-03-01","lesson":3,"answer":0},{"id":"geo-u02-03-02","lesson":3,"answer":0},{"id":"geo-u02-03-03","lesson":3,"answer":0},{"id":"geo-u02-03-04","lesson":3,"answer":0},{"id":"geo-u02-03-05","lesson":3,"answer":0},
-    {"id":"geo-u02-04-01","lesson":4,"answer":0},{"id":"geo-u02-04-02","lesson":4,"answer":0},{"id":"geo-u02-04-03","lesson":4,"answer":0},{"id":"geo-u02-04-04","lesson":4,"answer":0},{"id":"geo-u02-04-05","lesson":4,"answer":0},
-    {"id":"geo-u02-05-01","lesson":5,"answer":0},{"id":"geo-u02-05-02","lesson":5,"answer":0},{"id":"geo-u02-05-03","lesson":5,"answer":0},{"id":"geo-u02-05-04","lesson":5,"answer":0},{"id":"geo-u02-05-05","lesson":5,"answer":0},
-    {"id":"geo-u02-06-01","lesson":6,"answer":0},{"id":"geo-u02-06-02","lesson":6,"answer":0},{"id":"geo-u02-06-03","lesson":6,"answer":0},{"id":"geo-u02-06-04","lesson":6,"answer":0},{"id":"geo-u02-06-05","lesson":6,"answer":0},
-    {"id":"geo-u02-07-01","lesson":7,"answer":0},{"id":"geo-u02-07-02","lesson":7,"answer":0},{"id":"geo-u02-07-03","lesson":7,"answer":0},{"id":"geo-u02-07-04","lesson":7,"answer":0},{"id":"geo-u02-07-05","lesson":7,"answer":0}
+    {"id":"geo-u02-01-01","lesson":1,"answer":0},{"id":"geo-u02-01-02","lesson":1,"answer":3},{"id":"geo-u02-01-03","lesson":1,"answer":2},{"id":"geo-u02-01-04","lesson":1,"answer":1},{"id":"geo-u02-01-05","lesson":1,"answer":0},
+    {"id":"geo-u02-02-01","lesson":2,"answer":3},{"id":"geo-u02-02-02","lesson":2,"answer":2},{"id":"geo-u02-02-03","lesson":2,"answer":1},{"id":"geo-u02-02-04","lesson":2,"answer":0},{"id":"geo-u02-02-05","lesson":2,"answer":3},
+    {"id":"geo-u02-03-01","lesson":3,"answer":2},{"id":"geo-u02-03-02","lesson":3,"answer":1},{"id":"geo-u02-03-03","lesson":3,"answer":0},{"id":"geo-u02-03-04","lesson":3,"answer":3},{"id":"geo-u02-03-05","lesson":3,"answer":2},
+    {"id":"geo-u02-04-01","lesson":4,"answer":1},{"id":"geo-u02-04-02","lesson":4,"answer":0},{"id":"geo-u02-04-03","lesson":4,"answer":3},{"id":"geo-u02-04-04","lesson":4,"answer":2},{"id":"geo-u02-04-05","lesson":4,"answer":1},
+    {"id":"geo-u02-05-01","lesson":5,"answer":0},{"id":"geo-u02-05-02","lesson":5,"answer":3},{"id":"geo-u02-05-03","lesson":5,"answer":2},{"id":"geo-u02-05-04","lesson":5,"answer":1},{"id":"geo-u02-05-05","lesson":5,"answer":0},
+    {"id":"geo-u02-06-01","lesson":6,"answer":3},{"id":"geo-u02-06-02","lesson":6,"answer":2},{"id":"geo-u02-06-03","lesson":6,"answer":1},{"id":"geo-u02-06-04","lesson":6,"answer":0},{"id":"geo-u02-06-05","lesson":6,"answer":3},
+    {"id":"geo-u02-07-01","lesson":7,"answer":2},{"id":"geo-u02-07-02","lesson":7,"answer":1},{"id":"geo-u02-07-03","lesson":7,"answer":0},{"id":"geo-u02-07-04","lesson":7,"answer":3},{"id":"geo-u02-07-05","lesson":7,"answer":2}
   ]
 }
