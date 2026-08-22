@@ -1,131 +1,87 @@
 {
-  "title": "Week 1 Quiz — How We Know the Past",
+  "title": "Week 1 Mastery Quiz — How We Know the Past",
   "points": 25,
+  "masteryPercent": 80,
   "questions": [
     {
       "id": "W01Q1",
-      "prompt": "Which term best matches this definition: Evidence created during the period being studied.",
-      "choices": [
-        "primary source",
-        "bias",
-        "contextualization",
-        "historical claim"
-      ],
+      "prompt": "A handwritten diary entry created during an event is best classified as which kind of evidence?",
+      "choices": ["Primary source", "Secondary source", "Historical claim", "Corroboration"],
       "answer": 0,
-      "explanation": "Primary Source is the course term defined as: Evidence created during the period being studied."
+      "explanation": "A primary source was created during the period or event being studied. Its closeness to the event makes it valuable evidence, but it still must be evaluated for purpose, perspective, context, and limits."
     },
     {
       "id": "W01Q2",
-      "prompt": "Which term best matches this definition: An interpretation produced after the period by someone analyzing evidence.",
-      "choices": [
-        "contextualization",
-        "corroboration",
-        "historical claim",
-        "secondary source"
-      ],
-      "answer": 3,
-      "explanation": "Secondary Source is the course term defined as: An interpretation produced after the period by someone analyzing evidence."
+      "prompt": "A historian compares two eyewitness accounts with meeting minutes and a newspaper report. Which historical-thinking practice is the historian using most directly?",
+      "choices": ["Periodization", "Corroboration", "Memorization", "Prediction"],
+      "answer": 1,
+      "explanation": "Corroboration means checking one source against independent evidence to identify agreement, contradiction, and uncertainty."
     },
     {
       "id": "W01Q3",
-      "prompt": "Which term best matches this definition: Checking one source against other independent evidence.",
-      "choices": [
-        "bias",
-        "corroboration",
-        "contextualization",
-        "primary source"
-      ],
-      "answer": 1,
-      "explanation": "Corroboration is the course term defined as: Checking one source against other independent evidence."
+      "prompt": "Which question is most useful for contextualizing a source?",
+      "choices": ["Is the source interesting?", "Is the source longer than the others?", "What conditions, values, and events shaped the source when it was created?", "Does the source agree with my first impression?"],
+      "answer": 2,
+      "explanation": "Contextualization places evidence within the conditions, values, institutions, and events of its time rather than judging it outside that setting."
     },
     {
       "id": "W01Q4",
-      "prompt": "Which term best matches this definition: Placing evidence within the conditions, values, and events of its time.",
-      "choices": [
-        "contextualization",
-        "bias",
-        "historical claim",
-        "primary source"
-      ],
-      "answer": 0,
-      "explanation": "Contextualization is the course term defined as: Placing evidence within the conditions, values, and events of its time."
+      "prompt": "Two witnesses agree that a vote occurred but disagree about why several people opposed it. What is the strongest historical conclusion?",
+      "choices": ["One witness must be lying.", "The disagreement makes both accounts useless.", "The motive is already proven because both witnessed the event.", "The occurrence of the vote is better corroborated than the disputed motive."],
+      "answer": 3,
+      "explanation": "Agreement can strengthen one part of a claim while disagreement preserves uncertainty about another. Historians separate what the evidence supports strongly from what remains disputed."
     },
     {
       "id": "W01Q5",
-      "prompt": "Which term best matches this definition: A preference or perspective that can shape what a source includes or omits.",
-      "choices": [
-        "bias",
-        "primary source",
-        "contextualization",
-        "historical claim"
-      ],
+      "prompt": "Which statement about bias is most accurate?",
+      "choices": ["Bias can shape what a source includes or omits, so perspective must be analyzed rather than treated as automatic disqualification.", "Any biased source must be discarded.", "Only primary sources contain bias.", "A source that claims neutrality cannot contain bias."],
       "answer": 0,
-      "explanation": "Bias is the course term defined as: A preference or perspective that can shape what a source includes or omits."
+      "explanation": "Perspective can shape every kind of source. Bias is a reason to examine origin, audience, purpose, and limits—not a reason to discard evidence automatically."
     },
     {
       "id": "W01Q6",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 1?",
-      "choices": [
-        "Every map simplifies reality and reflects choices about scale, projection, categories, and purpose.",
-        "Homo sapiens originated in Africa and migrated over many generations into diverse environments.",
-        "Historical change always follows one universal path and can be explained by a single cause.",
-        "Historical knowledge is constructed by comparing evidence rather than accepting a single account."
-      ],
-      "answer": 3,
-      "explanation": "Historical knowledge is constructed by comparing evidence rather than accepting a single account."
+      "prompt": "Which statement is a defensible historical claim rather than an unsupported assertion?",
+      "choices": ["The loudest witness was obviously the most accurate.", "Because three independent records agree that the meeting ended at 8:00 p.m., that conclusion is better supported than a single conflicting recollection.", "The oldest surviving source must always be correct.", "If evidence is incomplete, historians cannot make any claims."],
+      "answer": 1,
+      "explanation": "A defensible historical claim identifies evidence and explains why that evidence supports the conclusion while remaining open to limits or contrary evidence."
     },
     {
       "id": "W01Q7",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 1?",
-      "choices": [
-        "Historical change always follows one universal path and can be explained by a single cause.",
-        "A source can be biased and still be useful when its purpose, audience, and context are examined.",
-        "Human settlement is influenced by water, climate, terrain, resources, transportation, and political boundaries.",
-        "Agriculture developed independently in several regions rather than spreading from a single universal center."
-      ],
-      "answer": 1,
-      "explanation": "A source can be biased and still be useful when its purpose, audience, and context are examined."
+      "prompt": "A map shows where six witnesses were standing during a public meeting. What can the map most responsibly help a historian evaluate?",
+      "choices": ["Which witness had the best personality", "Whether every witness remembered accurately", "How location and line of sight may have shaped what each person could observe", "Which political position was morally correct"],
+      "answer": 2,
+      "explanation": "Spatial evidence can help explain differences in observation. It cannot by itself prove memory accuracy, motive, personality, or moral correctness."
     },
     {
       "id": "W01Q8",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 1?",
-      "choices": [
-        "Historical change always follows one universal path and can be explained by a single cause.",
-        "Strong historical claims identify uncertainty and explain why selected evidence is persuasive.",
-        "Food surplus supported larger settlements and specialization but also contributed to hierarchy, disease exposure, and conflict.",
-        "Migration usually results from interacting push factors, pull factors, networks, and constraints."
-      ],
-      "answer": 1,
-      "explanation": "Strong historical claims identify uncertainty and explain why selected evidence is persuasive."
+      "prompt": "Which practice best protects against overclaiming when evidence is incomplete?",
+      "choices": ["Ignore contradictory evidence", "Choose the account with the most dramatic language", "State the conclusion as certain so readers will trust it", "Name the uncertainty, explain the strongest evidence, and identify what additional evidence would help"],
+      "answer": 3,
+      "explanation": "Strong historical reasoning distinguishes evidence from inference and communicates uncertainty instead of pretending the record is more complete than it is."
     },
     {
       "id": "W01Q9",
-      "prompt": "What is the strongest method for evaluating “Conflicting Eyewitness Accounts”?",
-      "choices": [
-        "Accept the source if it was created during the period because primary sources are automatically accurate.",
-        "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits.",
-        "Reject the source if it contains a point of view because useful evidence must be neutral.",
-        "Use only the most dramatic sentence because memorable details are the most reliable."
-      ],
+      "prompt": "A speech was written to persuade voters. Why can it still be useful historical evidence?",
+      "choices": ["Persuasive sources are automatically factual.", "Its purpose and audience can reveal what the speaker wanted voters to believe, especially when its factual claims are checked against other evidence.", "Its persuasive purpose proves every opposing source false.", "A speech is useful only when the historian agrees with it."],
       "answer": 1,
-      "explanation": "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits."
+      "explanation": "Purpose is part of a source's evidentiary value. A persuasive source can reveal arguments, priorities, audiences, and assumptions while factual claims still require corroboration."
     },
     {
       "id": "W01Q10",
-      "prompt": "Which response demonstrates the strongest geographic or quantitative reasoning?",
-      "choices": [
-        "Ignore units and scale so attention stays on the overall appearance.",
-        "Use the visualization only if it confirms the original claim.",
-        "Assume that every mapped relationship is a direct cause.",
-        "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
-      ],
-      "answer": 3,
-      "explanation": "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
+      "prompt": "Which sequence represents the strongest method for evaluating a disputed historical claim?",
+      "choices": ["Choose a source, summarize it, stop", "Search only for evidence that confirms the first source", "Define the question, source and contextualize evidence, corroborate across independent records, then make a qualified claim", "Count how many sources exist without examining who created them"],
+      "answer": 2,
+      "explanation": "Reliable historical inquiry begins with a clear question, evaluates source origin and context, compares independent evidence, and then makes a claim proportionate to the evidence."
     }
   ],
   "shortResponse": {
-    "prompt": "Using at least two specific pieces of evidence, answer: How can we build a trustworthy account of the past when evidence is incomplete or disputed?",
+    "prompt": "Using at least two specific ideas from this week, explain how a historian can build a trustworthy account when surviving evidence is incomplete or disputed. Your response must distinguish evidence from inference and identify one limitation or uncertainty.",
     "points": 5,
-    "exemplar": "A full-credit response states a defensible answer to the essential question, uses two accurate details from the week, explains how each detail supports the claim, and acknowledges one complexity or limitation."
+    "exemplar": "Full-credit work makes a defensible claim, accurately uses at least two Week 1 concepts such as sourcing, contextualization, corroboration, bias, spatial evidence, or qualified claims, explains how those concepts strengthen reliability, and identifies one remaining uncertainty or additional source that would help.",
+    "rubric": {
+      "Evidence": 2,
+      "Reasoning": 2,
+      "AccuracyAndLimits": 1
+    }
   }
 }
