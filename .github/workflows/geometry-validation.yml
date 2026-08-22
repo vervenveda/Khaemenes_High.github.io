@@ -20,5 +20,5 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Validate Geometry Units 01-08
-        run: node courses/mathematics/geometry/tools/validate-units-01-08.mjs
+      - name: Validate Geometry Units 01-09
+        run: node courses/mathematics/geometry/tools/validate-units-01-09.mjs
