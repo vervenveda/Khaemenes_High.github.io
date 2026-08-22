@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "purpose": "Optional positive reinforcement after successful English 9 learning milestones. Arcade play is formative enrichment only and never satisfies or bypasses the 80 percent mastery gates.",
   "arcadeBase": "https://vervenveda.github.io/arcade.github.io/",
   "games": [
@@ -7,9 +7,10 @@
       "id": "affixsix",
       "title": "AffixSix™",
       "url": "https://vervenveda.github.io/arcade.github.io/AffixSix%E2%84%A2_index.html",
-      "category": "language",
-      "bestFor": ["morphology", "word structure", "vocabulary", "language play"],
-      "rewardWeight": 4
+      "category": "strategy",
+      "bestFor": ["planning ahead", "pattern recognition", "spatial strategy", "opponent modeling"],
+      "rewardWeight": 2,
+      "note": "Despite its name, the audited game is a 12 by 12 connect-six strategy game, not a morphology/affix vocabulary game."
     },
     {
       "id": "hangman",
@@ -65,8 +66,8 @@
       "url": "https://vervenveda.github.io/arcade.github.io/Orions_connect_four_index.html",
       "category": "strategy",
       "bestFor": ["planning ahead", "prediction", "pattern recognition"],
-      "rewardWeight": 2,
-      "note": "The current game includes mathematics gates, so use primarily as a free-choice strategy reward rather than a Language Arts skill check."
+      "rewardWeight": 1,
+      "note": "The current game includes mathematics gates, so use only as an optional free-choice strategy reward rather than a Language Arts skill check."
     },
     {
       "id": "backgammon",
@@ -78,10 +79,10 @@
     }
   ],
   "selectionPolicy": {
-    "units1to6": ["affixsix", "hangman", "mini-iq", "sudoku", "chess"],
+    "units1to6": ["hangman", "mini-iq", "sudoku", "chess", "affixsix"],
     "units7to9": ["mini-iq", "sudoku", "chess", "hangman", "affixsix"],
     "units10to12": ["mini-iq", "chess", "checkers", "sudoku", "quantum-iq", "backgammon"],
     "masteryMilestone": ["mini-iq", "quantum-iq", "chess", "sudoku"],
-    "freeChoice": ["checkers", "connect-four", "backgammon", "chess", "sudoku"]
+    "freeChoice": ["affixsix", "checkers", "connect-four", "backgammon", "chess", "sudoku"]
   }
 }
