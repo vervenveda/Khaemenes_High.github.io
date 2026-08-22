@@ -1,4 +1,4 @@
-# Week 12 · Day 3 — Biopsychosocial Models, Stigma & Human Impact
+# Week 12 · Day 3 — Biopsychosocial Model & Stigma
 
 **Essential Question:** How can psychology explain psychological difficulty without blame or dehumanization?
 
@@ -8,57 +8,61 @@ Students will be able to:
 - explain the biopsychosocial model as interaction rather than a checklist;
 - define stigma and distinguish stereotype, prejudice, and discrimination;
 - explain why causal explanation does not establish moral blame;
-- use person-first or identity-respecting language appropriate to context;
-- evaluate public claims that reduce disorders to one cause.
+- use respectful, precise language.
 
 ## Psychology Word of the Day
 **stigma** — socially devaluing beliefs, attitudes, or treatment attached to a characteristic or label.
 
 ## Vocabulary in Context
-biopsychosocial model · vulnerability · protective factor · social determinant · stigma · stereotype · prejudice · discrimination · person-first language · lived experience
+biopsychosocial model · vulnerability · protective factor · social determinant · stigma · stereotype · prejudice · discrimination
 
-## Core Reading
-Psychological disorders rarely have one simple cause. Biological vulnerability, learning history, cognition, relationships, stress exposure, development, culture, environment, and opportunity can interact. The biopsychosocial model is useful when it generates testable explanations rather than becoming a list of everything that might matter.
+## Compact Briefing Card
+Psychological difficulties rarely reduce to one simple cause. Biological vulnerability, learning, cognition, relationships, stress exposure, development, culture, environment, and opportunity can interact.
 
-Stigma can create additional harm through exclusion, lowered expectations, discrimination, secrecy pressure, and reduced access to care. Students learn to separate understanding a disorder from assigning blame and to recognize that people are more than clinical labels.
+The biopsychosocial model is useful when it helps generate measurable explanations. It becomes unhelpful when it is merely a list of everything that might matter.
+
+Stigma can create additional harm through stereotypes, exclusion, discrimination, secrecy pressure, and reduced access to care.
+
+## Visual Model
+Students build an **Interaction Web** around a fictional composite:
+- biological factors;
+- psychological factors;
+- social/context factors;
+- developmental factors;
+- protective factors.
+
+Arrows show possible interaction rather than one-way destiny.
 
 ## Worked Example
-A fictional case includes family history, recent stress, sleep disruption, learned avoidance, and limited social support. Students construct several hypotheses while marking which factors are measured, inferred, or unknown.
+A fictional case includes family history, recent stress, sleep disruption, learned avoidance, and limited support. Students mark each detail as **measured / inferred / unknown**.
 
 ## Psychological Scientist's Desk
 **Claim:** “Mental disorders are caused by chemical imbalances in the brain.”
 
-Students identify this as an oversimplified single-cause explanation and replace it with a multi-factor, evidence-sensitive statement.
+Students replace the single-cause claim with a cautious, multi-factor explanation.
 
 ## Data Lens
-Students examine fictional data comparing outcomes across combinations of vulnerability and environmental support. They interpret an interaction without saying biology or environment “wins.”
+Students compare fictional outcomes across combinations of vulnerability and environmental support. They identify an interaction without declaring that biology or environment “wins.”
 
-## Claims Laboratory
-Evaluate:
-- “Psychological disorders are weakness.”
-- “Brain-based means permanent.”
-- “If environment matters, biology does not.”
-- “Knowing a diagnosis tells you how dangerous someone is.”
-- “Stigma is only hurt feelings.”
+## Guided Investigation — Stigma Language Audit
+Students revise short statements that imply:
+- weakness;
+- dangerousness;
+- inevitability;
+- blame;
+- identity reduction.
 
-## Guided Investigation
-### Model Comparison Matrix
-For a supplied fictional case, students generate:
-- one biological hypothesis;
-- one cognitive/learning hypothesis;
-- one social/context hypothesis;
-- one developmental consideration;
-- evidence that would support or weaken each;
-- one ethical communication rule.
+The task is to make language more accurate, not merely more polite.
 
-## Independent Assignment
-Write a 500–700 word **Biopsychosocial Explanation Without Blame** using a fictional composite. Students must include at least three interacting levels and one stigma-prevention principle.
+## Independent Assignment — 200–250 words or Concept Map
+Choose one supplied fictional composite. Show at least three interacting contributors, one protective factor, and one stigma-prevention principle.
+
+Students may submit either:
+- a short written explanation; or
+- a labeled concept map with a 100-word evidence note.
 
 ## Research Notebook Checkpoint
-Add a **Language & Stigma Audit**:
-- Does the project use labels as nouns or identities unnecessarily?
-- Does it imply blame, danger, weakness, or inevitability?
-- Could the wording be more precise and humane without weakening scientific accuracy?
+Complete a **Language & Stigma Audit** of the semester project. Remove wording that implies blame, danger, weakness, or inevitability without evidence.
 
 ## Academic Journal Reflection
 Why is explaining a cause different from assigning blame?
@@ -68,7 +72,7 @@ Why is explaining a cause different from assigning blame?
 2. Why is a single-cause explanation risky?
 3. Define stigma.
 4. Distinguish stereotype, prejudice, and discrimination.
-5. Why does diagnosis not establish dangerousness or moral character?
+5. Why does diagnosis not establish moral character?
 
 ## Completion Challenge
 Optional after completion. Best fit: **Doodle Break**, **Color Match Minute**, or Skip.
