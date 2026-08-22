@@ -20,13 +20,26 @@
 - Week 4: **LOCKED** summary + 5 daily planning files
 - Week 5: **LOCKED** summary + 5 daily planning files
 - Week 6: **LOCKED** summary + 5 daily planning files
-- Weeks 7–13: reserved with explicit `IN DEVELOPMENT` status
+- Week 7: **LOCKED** summary + 5 daily planning files
+- Weeks 8–13: reserved with explicit `IN DEVELOPMENT` status
 
 ## Current Totals
-- Locked weeks: **6 / 13**
-- Locked daily lesson plans: **30 / 65**
+- Locked weeks: **7 / 13**
+- Locked daily lesson plans: **35 / 65**
 - Cumulative assessment blueprints: **1** (`CUMULATIVE_ASSESSMENT_I_BLUEPRINT.md`, Weeks 1–4)
-- Research Notebook checkpoints: through **Week 6**
+- Research Notebook checkpoints: through **Week 7**
+
+## Week 7 Verification
+Week 7 includes:
+- multi-component emotion measurement
+- appraisal and regulation
+- intrinsic/extrinsic motivation
+- autonomy, competence, relatedness, goals, expectancy, and opportunity
+- self-efficacy, feedback, persistence, and strategy
+- unified Situation → Appraisal → Emotion → Motivation → Choice → Consequence scaffold
+- explicit warning that the scaffold is not a rigid universal sequence
+- no required private emotional disclosure
+- explicit distinction between motivation, opportunity, ability, and performance
 
 ## Permanent Quality Controls
 Every locked week must preserve:
@@ -42,4 +55,4 @@ Every locked week must preserve:
 - explicit limitations and ethical boundaries
 
 ## Implementation Boundary
-Student-facing HTML for a week should not be treated as complete until that week's curriculum is academically locked. The repository currently preserves this boundary: Weeks 1–6 are locked; Weeks 7–13 remain development placeholders.
+Student-facing HTML for a week should not be treated as complete until that week's curriculum is academically locked. The repository currently preserves this boundary: Weeks 1–7 are locked; Weeks 8–13 remain development placeholders.
