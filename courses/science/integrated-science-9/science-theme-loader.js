@@ -27,29 +27,18 @@
     document.head.append(script);
   }
 
-  /*
-   * Public-facing learner controls. These widgets receive only sanitized
-   * hostname/path context; they never read student names, answers, scores,
-   * query/hash data, localStorage, credentials, or internal routing details.
-   */
+  /* Public-facing learner controls. */
   loadSharedWidget(`${repositoryBase}/assets/vnv-beta-link.js`, "data-vnv-beta-loader");
   loadSharedWidget(`${repositoryBase}/assets/khaemenes-mentor-link.js`, "data-khaemenes-mentor-loader");
 
-  /*
-   * Science ProTools workflow layer. This shared controller adds only
-   * context-appropriate links to local-first research/lab tools. It does not
-   * read or transmit student progress, answers, scores, names, or localStorage.
-   * Independent quiz/test/exam surfaces are explicitly excluded by the layer.
-   */
+  /* Context-aware Science ProTools routing. */
   loadSharedWidget(`${courseBase}science-protools-integration.js`, "data-science-protools-loader");
 
-  /*
-   * Daily vocabulary bridge. Unit lesson pages receive one curriculum-matched
-   * science word, pronunciation support, a contextual reasoning check, and a
-   * route into the sovereign LeArnA vocabulary adventure. Vocabulary progress
-   * is local-only and remains separate from science mastery state.
-   */
+  /* Daily curriculum-matched science vocabulary via the LeArnA bridge. */
   loadSharedWidget(`${courseBase}science-vocabulary-integration.js`, "data-science-vocabulary-loader");
+
+  /* Optional positive reinforcement after genuine science-success events. */
+  loadSharedWidget(`${courseBase}science-success-challenges.js`, "data-science-success-challenges-loader");
 
   function synchronizeBrowserChrome() {
     const dark = document.documentElement.dataset.theme === "dark";
@@ -61,9 +50,5 @@
   }
 
   synchronizeBrowserChrome();
-
-  new MutationObserver(synchronizeBrowserChrome).observe(
-    document.documentElement,
-    { attributes:true, attributeFilter:["data-theme"] }
-  );
+  new MutationObserver(synchronizeBrowserChrome).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 })();
