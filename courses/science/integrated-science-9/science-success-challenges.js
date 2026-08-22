@@ -25,7 +25,7 @@
 
   function closeModal(modal) {
     modal?.remove();
-    document.removeEventListener("keydown", modal?._escHandler);
+    if (modal?._escHandler) document.removeEventListener("keydown", modal._escHandler);
   }
 
   function showChallenge(detail={}) {
@@ -55,5 +55,24 @@
     card.querySelector("[data-challenge-close]")?.focus();
   }
 
+  function bindLessonCompletionRewards() {
+    document.querySelectorAll("[data-page-complete]").forEach(button => {
+      if (button.dataset.successChallengeBound === "true") return;
+      button.dataset.successChallengeBound = "true";
+      button.addEventListener("click", () => {
+        const wasComplete = button.getAttribute("aria-pressed") === "true";
+        const id = button.dataset.pageComplete || "lesson";
+        setTimeout(() => {
+          const isComplete = button.getAttribute("aria-pressed") === "true";
+          if (!wasComplete && isComplete) {
+            showChallenge({key:`lesson:${id}:first-success`});
+          }
+        }, 180);
+      });
+    });
+  }
+
   window.addEventListener("khaemenes:science-success", e => showChallenge(e.detail||{}));
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", bindLessonCompletionRewards);
+  else bindLessonCompletionRewards();
 })();
