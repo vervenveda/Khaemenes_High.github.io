@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "course_id": "math-prealgebra",
+  "unit": 0,
+  "title": "Foundations & Readiness",
+  "status": "conditional",
+  "duration_weeks": 6,
+  "entry": "Assigned by the Pre-Algebra Readiness Gateway when prerequisite evidence indicates targeted reinforcement is needed.",
+  "exit": "80% mastery plus completed reasoning corrections routes directly to Official Unit 1.",
+  "student_message": "This is a preparation pathway, not a failure or repeated course. It strengthens the exact skills that will make the official course easier to learn.",
+  "lessons": [
+    {
+      "id": "u00-l01",
+      "week": 1,
+      "title": "Number Sense & Operations",
+      "strands": ["whole-number operations", "integers", "order of operations", "estimation", "magnitude"],
+      "mastery_evidence": "Accurate computation plus explanation of reasonableness."
+    },
+    {
+      "id": "u00-l02",
+      "week": 2,
+      "title": "Fractions, Decimals, Percents & Ratios",
+      "strands": ["equivalence", "conversion", "fraction operations", "decimal operations", "percent", "ratio and unit rate"],
+      "mastery_evidence": "Move flexibly among representations and solve a proportional application."
+    },
+    {
+      "id": "u00-l03",
+      "week": 3,
+      "title": "Variables & Mathematical Language",
+      "strands": ["expressions", "terms", "coefficients", "substitution", "properties", "word-to-symbol translation"],
+      "mastery_evidence": "Translate, evaluate, and explain an algebraic expression."
+    },
+    {
+      "id": "u00-l04",
+      "week": 4,
+      "title": "Equations & Inequalities",
+      "strands": ["inverse operations", "one-step equations", "multistep reasoning", "solution checks", "inequality meaning"],
+      "mastery_evidence": "Solve and verify equations while identifying an invalid step."
+    },
+    {
+      "id": "u00-l05",
+      "week": 5,
+      "title": "Coordinates, Patterns & Functions",
+      "strands": ["coordinate plane", "tables", "patterns", "input-output", "introductory rate of change", "graph interpretation"],
+      "mastery_evidence": "Connect a rule, table, coordinate points, and graph meaning."
+    },
+    {
+      "id": "u00-l06",
+      "week": 6,
+      "title": "Measurement, Geometry & Integrated Readiness",
+      "strands": ["units", "perimeter", "area", "angles", "formulas", "multistep problem solving", "evidence and sufficiency"],
+      "mastery_evidence": "Complete an integrated readiness challenge and Unit 0 mastery assessment."
+    }
+  ],
+  "naib_behavior": {
+    "use_initial_diagnostic_strands": true,
+    "personalize_practice_depth": true,
+    "preserve_initial_profile": true,
+    "record_post_refresher_profile": true,
+    "compare_growth": true,
+    "unlock_on_mastery": "units/unit-01/"
+  }
+}
