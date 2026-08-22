@@ -72,13 +72,27 @@ Student must state:
 - one situational moderator or alternative explanation;
 - one conclusion that a trait score would **not** justify about the individual.
 
-## Weeks 10–13
+## Week 10 — Social & Cultural Psychology
+Determine whether social influence is relevant → define the social variable precisely → identify whether informational or normative processes are plausible → compare person-level and situation-level explanations → identify group-level versus individual-level units of analysis → audit sampling and representation → identify cultural, institutional, economic, environmental, or historical context that could change interpretation.
+
+### Week 10 Milestone — Social Context Audit
+Student must state:
+- what social variable is being proposed;
+- whether the evidence concerns individuals, dyads, groups, institutions, or populations;
+- one dispositional explanation;
+- one situational explanation;
+- one sample/representation limitation;
+- one cultural or institutional context that could alter the result;
+- one group-level conclusion that would be inappropriate to apply to an individual;
+- how explanation can be separated from moral or legal excuse.
+
+## Weeks 11–13
 Reserved for the continuing forensic audit. Add checkpoints only after each week is academically locked.
 
 ## Permanent Research Rule
 **Justified exclusion is better science than forcing every theory or level of explanation onto every research question.**
 
-A student may conclude that a biological, perceptual, learning, memory, cognitive, emotional, motivational, developmental, personality, social, or other factor is not currently relevant. The notebook rewards defensible reasoning, not the number of theories named.
+A student may conclude that a biological, perceptual, learning, memory, cognitive, emotional, motivational, developmental, personality, social, cultural, or other factor is not currently relevant. The notebook rewards defensible reasoning, not the number of theories named.
 
 ## Permanent Person-Level Interpretation Rule
 A group pattern, trait score, developmental average, or psychological measure is evidence about a defined construct under defined conditions. It is not a complete description of a person, a moral judgment, a diagnosis, or a destiny.
