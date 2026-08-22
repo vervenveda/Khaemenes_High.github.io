@@ -3,12 +3,16 @@ import path from 'node:path';
 import vm from 'node:vm';
 
 const root=path.dirname(new URL(import.meta.url).pathname);
+const mathRoot=path.resolve(root,'..');
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
+const readMath=file=>fs.readFileSync(path.join(mathRoot,file),'utf8');
 const fail=msg=>{throw new Error(msg)};
 const ok=(cond,msg)=>{if(!cond)fail(msg)};
 
 const map=JSON.parse(read('readiness-map.json'));
+const manifest=JSON.parse(read('integration-manifest.json'));
 const html=read('index.html');
+const bridge=read('course-readiness-bridge.js');
 const bankSource=read('question-bank.js');
 const sandbox={window:{}};
 vm.createContext(sandbox);
@@ -17,7 +21,10 @@ const bank=sandbox.window.KHAEMENES_MATH_READINESS_BANK;
 
 ok(map.instructional_time===false,'Readiness must not be instructional time.');
 ok(map.counts_toward_course===false,'Readiness must not count toward course completion.');
+ok(manifest.instructional_time===false,'Integration manifest must keep readiness outside instructional time.');
+ok(manifest.counts_toward_course===false,'Integration manifest must keep readiness outside course completion.');
 ok(map.result_contract?.storage_key==='KHAEMENES_MATH_READINESS_V1','Unexpected readiness storage key.');
+ok(manifest.storage_key===map.result_contract.storage_key,'Manifest and readiness map storage keys must match.');
 ok(Array.isArray(map.placement_levels)&&map.placement_levels.length===6,'Expected six placement destinations.');
 
 const expected=['pre-algebra','algebra-1','geometry','algebra-2','precalculus-trigonometry','calculus-1'];
@@ -52,4 +59,18 @@ for(let tier=1;tier<=6;tier++){
 ].forEach(token=>ok(html.includes(token),`index.html missing readiness contract token: ${token}`));
 
 ok(!/weekRec\(|progress\.weeks|course completion.*true/i.test(html),'Readiness engine appears to write instructional-week progress.');
-console.log('PASS: shared mathematics readiness architecture is structurally valid.');
+ok(bridge.includes('KHAEMENES_MATH_READINESS_V1'),'Shared course bridge must read the readiness record.');
+ok(bridge.includes('recommendation is advisory')||bridge.includes('recommendation is <strong>'),'Shared course bridge must preserve advisory placement language.');
+ok(Array.isArray(manifest.required_surfaces)&&manifest.required_surfaces.length===7,'Expected portal plus six live-course integration surfaces.');
+expected.forEach(id=>ok(manifest.required_surfaces.some(x=>x.id===id),`Integration manifest missing ${id}.`));
+
+const algebra1=readMath('algebra-1/index.html');
+ok(algebra1.includes('../readiness/'),'Algebra I must link to the shared readiness engine.');
+ok(algebra1.includes('../readiness/course-readiness-bridge.js'),'Algebra I must load the shared readiness bridge.');
+ok(!/1 readiness week/i.test(algebra1),'Algebra I must not count readiness as an instructional week.');
+
+const preUpgrade=readMath('pre-algebra/assets/prealgebra-archaemenes-upgrade.js');
+ok(preUpgrade.includes('course-readiness-bridge.js'),'Pre-Algebra must load the shared readiness bridge.');
+ok(preUpgrade.includes('countsTowardCourse:false'),'Pre-Algebra placement contract must remain non-instructional.');
+
+console.log('PASS: shared mathematics readiness architecture and first course integrations are structurally valid.');
