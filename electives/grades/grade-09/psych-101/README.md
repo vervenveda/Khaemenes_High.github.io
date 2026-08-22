@@ -12,17 +12,19 @@ GitHub-ready curriculum repository for a 13-week introductory psychology course 
 - Week 6 — Thinking, Intelligence & Decision-Making: **LOCKED**
 - Week 7 — Emotion & Motivation: **LOCKED**
 - Week 8 — Human Development: **LOCKED**
-- Weeks 9–13 — scaffolded and awaiting week-by-week forensic audit
+- Week 9 — Personality & Individual Differences: **LOCKED**
+- Weeks 10–13 — scaffolded and awaiting week-by-week forensic audit
 
 ### Current authored planning depth
-- 8 locked weekly architectures
-- 40 locked daily lesson planning files
+- 9 locked weekly architectures
+- 45 locked daily lesson planning files
 - permanent Scientific Reasoning routine
 - permanent Data Lens and Claims Laboratory strands
-- Research Notebook checkpoints through Week 8
+- Research Notebook checkpoints through Week 9
 - Cumulative Assessment I after Week 4
 - Cumulative Assessment II after Week 8
 - explicit developmental guardrail: age-related group patterns do not define individual people
+- explicit personality guardrail: trait descriptions and scores do not define the whole person or function as diagnosis
 
 ### Course identity
 - Grade: 9
@@ -44,6 +46,8 @@ GitHub-ready curriculum repository for a 13-week introductory psychology course 
 - group findings do not automatically describe an individual
 - psychological explanation is not diagnosis
 - developmental averages are not personal deadlines or destinies
+- trait descriptions summarize tendencies rather than identity
+- a reliable measure is not automatically valid
 - understanding behavior does not excuse harm
 
 ### Sovereign design
@@ -53,6 +57,6 @@ stored locally with explicit export/import backup controls.
 
 ### Implementation discipline
 Curriculum is locked academically before student-facing lesson HTML is implemented.
-Weeks 9–13 remain intentionally marked `IN DEVELOPMENT` until each forensic audit is complete.
+Weeks 10–13 remain intentionally marked `IN DEVELOPMENT` until each forensic audit is complete.
 This prevents placeholders from being mistaken for finished instruction and protects the
 continuity of the locked curriculum.
