@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v1`;
+const CACHE_NAME=`${CACHE_PREFIX}v2-placement-separated`;
 const CORE_FILES=[
   "./",
   "./index.html",
