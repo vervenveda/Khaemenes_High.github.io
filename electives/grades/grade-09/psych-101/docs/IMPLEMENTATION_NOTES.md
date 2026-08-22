@@ -4,7 +4,17 @@
 
 **Phase 2 — Student-facing implementation.**
 
-The curriculum architecture is now complete and locked for all 13 weeks / 65 daily lessons.
+Academic architecture is complete and locked for all **13 weeks / 65 daily lessons**.
+
+Current production state:
+- Weeks 1–4: fully student-facing
+- 20 / 65 student-facing lessons implemented
+- 4 / 13 weekly mastery assessments implemented
+- 4 / 13 parallel-form retake systems implemented
+- Cumulative Assessment I implemented
+- Cumulative Assessments II–III pending
+- first local completion challenge implemented: Reaction Flash
+- next production batch: **Week 5 — Memory & Language**
 
 ## Preserve Throughout Implementation
 
@@ -72,7 +82,7 @@ psych-101/
 
 ## Shared Lesson Contract
 
-Every student-facing daily lesson should render:
+Every student-facing daily lesson renders:
 1. Retrieval Warm-Up
 2. Essential Question
 3. Learning Objectives
@@ -93,7 +103,7 @@ Every student-facing daily lesson should render:
 
 ## Local Storage Namespace
 
-Use versioned, course-specific keys such as:
+Use versioned, course-specific keys:
 - `psych101_grade9_progress_v1`
 - `psych101_grade9_assessments_v1`
 - `psych101_grade9_notebook_v1`
@@ -105,19 +115,28 @@ Never trust a historical `completed=true` flag as mastery evidence. Reconstruct 
 
 ## Assessment Engine
 
+Implemented behavior:
 - weekly assessment: 10 questions
 - mastery: 80%+
 - below mastery: targeted correction → parallel-form retake
-- cumulative checkpoints: Weeks 4, 8, 12
-- Week 13: synthesis check + Research Brief, not giant final exam
-- reviewed/completed must remain distinct from mastered
+- best score reconstructed from stored attempts
+- reviewed/completed remains distinct from mastered
+- Cumulative Assessment I stores checkpoint evidence separately from weekly mastery
+
+Remaining assessment work:
+- Weeks 5–13 weekly assessments
+- Cumulative Assessment II after Week 8
+- Cumulative Assessment III after Week 12
+- Week 13 synthesis check + Research Brief defense
 
 ## Psychology Word of the Day
 
 Use:
 `reference/PSYCHOLOGY_WORD_OF_THE_DAY_PLAN.md`
 
-Do not call Arcade at runtime. Build an embedded 65-term Psychology bank.
+All 65 anchor terms are already mapped academically.
+
+Do not call Arcade at runtime. Build an embedded 65-term Psychology bank and lesson-synchronized Word Lab.
 
 ## Completion Challenge / Reinforcement Layer
 
@@ -136,27 +155,51 @@ Rules:
 - no remote dependencies or analytics;
 - challenge choice/performance never becomes psychological profiling data.
 
-## First Local Challenge Set
+Current implementation:
+1. Reaction Flash — complete
 
-1. Reaction Flash
+Next approved local modules:
 2. Focus Catch
 3. Focus Burst
 4. Psych Word Reveal
 5. One-Round Grid
 
-## Implementation Order
+## Implementation Order — Current
 
-1. shared CSS + app/progress engine
-2. course data / navigation map
-3. student-facing Week 1 as reference implementation
-4. weekly assessment engine + mastery gating
-5. Psychology Word Lab
-6. Research Notebook / Journal / Progress interfaces
-7. remaining Weeks 2–13
-8. cumulative assessments
-9. optional completion challenge modules
-10. print/export/import and full forensic validation
+1. shared CSS + app/progress engine — **DONE**
+2. course data / navigation map — **DONE**
+3. Week 1 reference implementation — **DONE**
+4. weekly assessment/mastery engine — **DONE / REUSED BY EACH WEEK**
+5. Weeks 2–4 student implementation — **DONE**
+6. Cumulative Assessment I — **DONE**
+7. Week 5 — Memory & Language — **NEXT**
+8. Weeks 6–8 + Cumulative Assessment II
+9. Weeks 9–12 + Cumulative Assessment III
+10. Week 13 + Final Research Brief interface
+11. Psychology Word Lab
+12. Research Notebook / Journal / Progress interfaces
+13. remaining optional completion challenges
+14. print/export/import recovery + full forensic validation
+
+## Batch Rule
+
+For each remaining week, proceed in this order:
+
+1. inspect the five locked curriculum plans;
+2. implement Day 1 only;
+3. verify the 17-part contract and links;
+4. implement Days 2–5 individually;
+5. implement the weekly Form A assessment;
+6. implement targeted correction + parallel Form B;
+7. update navigation, manifest, validation, and production counts;
+8. only then mark the week student-ready.
+
+This preserves the one-item-at-a-time build discipline and prevents a partially implemented week from being represented as complete.
 
 ## Production Gate
 
-The architecture may be called **curriculum complete**, but the course is not yet **production complete** until all 65 student-facing lessons, assessments, progress logic, accessibility, print views, links, and offline behavior are implemented and audited.
+**Curriculum complete:** yes.
+
+**Production complete:** no.
+
+Production completion requires all 65 student-facing lessons, 13 weekly assessments and parallel retakes, 3 cumulative assessments, progress/reference interfaces, accessibility, print views, navigation, export/import recovery, and offline behavior to be implemented and audited.
