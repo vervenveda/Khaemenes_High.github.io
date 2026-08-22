@@ -1,0 +1,24 @@
+name: Geometry Validation
+
+on:
+  push:
+    paths:
+      - 'courses/mathematics/geometry/**'
+      - '.github/workflows/geometry-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/mathematics/geometry/**'
+      - '.github/workflows/geometry-validation.yml'
+
+jobs:
+  validate-geometry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate Geometry Units 01-08
+        run: node courses/mathematics/geometry/tools/validate-units-01-08.mjs
