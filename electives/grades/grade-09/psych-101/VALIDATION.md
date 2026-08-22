@@ -8,10 +8,12 @@
 - Assessment policy: present
 - Research Skills reference: present
 - Psychology & Ethics reference: present
+- Psychology Word of the Day plan: present
+- Completion Challenge / Reinforcement plan: present
 - Research Notebook: present
 - Academic Journal guidance: present
 - Final Project guidance: present
-- External runtime dependencies: none
+- External runtime dependencies: none required by the Psychology course architecture
 
 ## Curriculum Audit Status
 - Week 1: **LOCKED** summary + 5 daily planning files
@@ -29,10 +31,12 @@
 ## Current Totals
 - Locked weeks: **10 / 13**
 - Locked daily lesson plans: **50 / 65**
+- Daily anchor vocabulary terms mapped: **50 / 65**
 - Cumulative assessment blueprints: **2**
   - `CUMULATIVE_ASSESSMENT_I_BLUEPRINT.md` — Weeks 1–4
   - `CUMULATIVE_ASSESSMENT_II_BLUEPRINT.md` — Weeks 1–8 with emphasis on Weeks 5–8
 - Research Notebook checkpoints: through **Week 10**
+- Completion Challenge architecture: **planned, not yet implemented student-facing**
 
 ## Week 9 Verification
 Week 9 includes:
@@ -65,6 +69,25 @@ Week 10 includes:
 - strong protection against applying group averages to individuals
 - no assessed ranking or labeling of classmates, family members, or protected groups
 
+## Completion Challenge Architecture Verification
+The planned reinforcement layer preserves these boundaries:
+- challenges are optional completion rewards, not academic requirements;
+- skipping or losing never changes mastery, grade, access, or progression;
+- default micro-challenges are 10–60 seconds;
+- daily/weekly rewards may be longer but remain bounded;
+- selected Arcade mechanics will be adapted locally rather than required from the Arcade repository at runtime;
+- no variable-ratio reward-access schedule, loot-box structure, streak loss, or coercive gamification;
+- no hidden/remote behavioral analytics;
+- keyboard, touch, reduced-motion, visible-focus, and immediate-exit controls are required;
+- scientifically accurate terminology is preserved: a reward is a reinforcer only if it increases the future probability of the target behavior.
+
+Initial planned local challenge set:
+- Reaction Flash
+- Focus Catch
+- Focus Burst
+- Psych Word Reveal
+- One-Round Grid
+
 ## Permanent Quality Controls
 Every locked week must preserve:
 - scientific inquiry throughout the week
@@ -90,3 +113,5 @@ Every locked week must preserve:
 
 ## Implementation Boundary
 Student-facing HTML for a week should not be treated as complete until that week's curriculum is academically locked. The repository currently preserves this boundary: Weeks 1–10 are locked; Weeks 11–13 remain development placeholders.
+
+The Psychology Word of the Day and Completion Challenge systems are architecture-level plans only until the full curriculum and student-facing engine are ready for implementation.
