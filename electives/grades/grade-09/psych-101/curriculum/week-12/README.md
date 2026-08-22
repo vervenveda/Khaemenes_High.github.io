@@ -1,5 +1,5 @@
 # WEEK 12 — Psychological Disorders, Treatment & Ethics
-## STATUS: LOCKED
+## STATUS: LOCKED — LOW-READING APPLICATION WEEK
 
 **Central Question:** How can psychology describe psychological disorders and treatments responsibly without turning classroom knowledge into amateur diagnosis?
 
@@ -7,44 +7,54 @@
 
 > **A diagnosis is a professional clinical judgment based on defined criteria, context, impairment, differential considerations, and appropriate assessment. A classroom example is not a diagnosis.**
 
-Week 12 completes the Mental and Physical Health pillar by introducing perspectives on abnormality, classification, broad disorder families, stigma, treatment, mental-health professions, and legal/ethical responsibilities. The unit is deliberately literacy-focused rather than self-screening-focused.
+Week 12 intentionally changes pace. After eleven content-dense weeks, students receive a **reading-light, application-heavy week**. The academic standard remains high, but long expository reading is replaced by compact briefing cards, diagrams, comparison tables, supplied case files, data displays, claim audits, and guided ethical reasoning.
 
-It aligns with the APA high-school standards for Disorders and Therapies: perspectives on abnormal behavior; cross-cultural context; medical and biopsychosocial models; stigma; classification and diagnostic challenges; major disorder categories; psychological and biomedical treatments; treatment matching; historical use/misuse; provider roles; and legal/ethical responsibilities.
+### Load-Lightening Rule
+
+For Week 12 student-facing implementation:
+- no long-form textbook-style core reading;
+- each day's required briefing text should generally stay near **250–400 words total**;
+- concepts should be carried by cards, tables, diagrams, short cases, and data rather than long prose blocks;
+- independent written work should usually stay near **150–300 words** or a structured one-page template;
+- Day 5 culmination should be a **one-page evidence brief**, not an 800–1,100 word essay;
+- students may use fictional composites and supplied data instead of personal disclosure;
+- daily review and weekly mastery standards remain unchanged.
+
+This is a **cognitive-load reduction**, not an academic reduction.
 
 ## Week 12 Intellectual Spine
 
 | Strand | Student understanding |
 |---|---|
-| Abnormality | Unusual behavior alone does not establish disorder; distress, impairment, context, culture, duration, development, and risk all matter |
+| Abnormality | Unusual behavior alone does not establish disorder; distress, impairment, duration, context, development, culture, and risk all matter |
 | Classification | Classification systems organize clinical information; categories are tools, not complete descriptions of people |
 | Diagnosis | Diagnosis requires qualified assessment and cannot be inferred from one symptom, post, quiz, or classroom observation |
-| Dimensionality | Many symptoms and traits vary continuously; clinical thresholds serve practical purposes but do not create two completely different kinds of humans |
-| Comorbidity | People may meet criteria for more than one disorder; overlapping symptoms complicate classification |
-| Models | Biological, psychological, social, developmental, and cultural factors can interact in disorder risk and course |
-| Disorder families | Students receive broad literacy about major categories without memorizing self-diagnostic checklists |
+| Dimensionality | Many symptoms and traits vary continuously; thresholds are decision tools, not identity boundaries |
+| Comorbidity | Symptoms and diagnoses can overlap; one symptom rarely identifies one disorder |
+| Models | Biological, psychological, social, developmental, and cultural contributors can interact |
 | Stigma | Labels, stereotypes, prejudice, and discrimination can produce secondary harm |
-| Treatment | Psychotherapy, medication, combined care, and other biomedical approaches differ in mechanism, indication, evidence, and risk |
-| Treatment matching | “What works?” depends on condition, person, age, severity, preference, context, access, and evidence |
-| Providers | Psychologists, psychiatrists, counselors, social workers, psychiatric nurses, and other professionals have different training and scopes that vary by jurisdiction |
-| Ethics | Competence, informed consent/assent, privacy, confidentiality, boundaries, evidence, documentation, and protection from harm matter in practice |
-| Evidence | Treatment claims require controlled evidence, meaningful outcomes, follow-up, harms monitoring, replication, and transparent limitations |
+| Treatment | Psychological and biomedical treatments differ in mechanism, indication, evidence, burden, and risk |
+| Treatment matching | Population evidence informs care but does not guarantee the best choice for every person |
+| Providers | Professional roles and scopes differ and may vary by jurisdiction |
+| Ethics | Competence, informed consent, privacy, confidentiality, boundaries, and protection from harm matter |
+| Evidence | Treatment claims require controlled evidence, meaningful outcomes, follow-up, harms monitoring, and limitations |
 
-## Daily Sequence
+## Daily Sequence — Read Less, Analyze More
 
-1. **Day 1 — Defining & Classifying Psychological Disorders**  
-   How do clinicians distinguish disorder from ordinary variation, temporary distress, and cultural difference?
+1. **Day 1 — Classification Without Diagnosis**  
+   Short briefing cards + scenario sort + dimensional data.
 
-2. **Day 2 — Disorder Families, Dimensions & Diagnostic Challenges**  
-   How can categories organize information without becoming labels that explain everything?
+2. **Day 2 — Disorder Families as Maps, Not Labels**  
+   Visual category map + overlap matrix + category-vs-dimension lab.
 
-3. **Day 3 — Biopsychosocial Models, Stigma & Human Impact**  
-   How can psychology explain psychological difficulty without blame or dehumanization?
+3. **Day 3 — Biopsychosocial Model & Stigma**  
+   Interaction diagram + stigma language audit + fictional case matrix.
 
-4. **Day 4 — Psychological & Biomedical Treatments: Evidence and Matching**  
-   How do researchers determine whether a treatment helps, for whom, and under what conditions?
+4. **Day 4 — Treatment Evidence in Pictures & Tables**  
+   Trial diagram + outcome table + efficacy/effectiveness comparison.
 
-5. **Day 5 — Providers, Confidentiality, Ethics & Treatment Claim Audit**  
-   What responsibilities protect people when psychological knowledge becomes professional practice?
+5. **Day 5 — Professional Ethics Case Conference**  
+   Provider-role cards + confidentiality cases + one-page evidence brief + weekly mastery check.
 
 ## Classification Literacy Boundary
 
@@ -61,81 +71,59 @@ The course does not provide a “Which disorder do you have?” activity.
 
 ## Broad Disorder-Family Coverage
 
-Grade 9 students receive careful, non-sensational literacy about broad families including:
-- anxiety disorders;
-- depressive and bipolar disorders;
-- obsessive-compulsive and related disorders;
-- trauma- and stressor-related disorders;
-- psychotic disorders;
-- eating disorders;
-- neurodevelopmental conditions;
-- selected personality-disorder concepts only as needed to explain classification complexity.
-
-Coverage emphasizes patterns, impairment, heterogeneity, overlap, and treatment—not dramatic symptom trivia.
+Coverage remains literacy-level and non-sensational. Students encounter broad families including anxiety, depressive/bipolar, obsessive-compulsive-related, trauma/stressor-related, psychotic, eating, and neurodevelopmental conditions through **summary cards and comparison visuals**, not diagnostic checklists.
 
 ## Claims Laboratory — Locked Set
 
-- “Unusual behavior is abnormal behavior.” → **Too simple; context, distress, impairment, development, culture, and risk matter.**
-- “One symptom tells you what disorder someone has.” → **Incorrect. Symptoms overlap across disorders and ordinary experience.**
-- “A diagnosis explains everything about a person.” → **Incorrect. Diagnosis is limited clinical information, not identity.**
-- “People with the same diagnosis are basically the same.” → **Incorrect. Heterogeneity is substantial.**
+- “Unusual behavior is automatically disordered.” → **Too simple.**
+- “One symptom tells you the diagnosis.” → **Incorrect.**
+- “A diagnosis explains everything about a person.” → **Incorrect.**
+- “People with the same diagnosis are basically the same.” → **Incorrect.**
 - “Mental disorders are caused only by brain chemistry.” → **Unsupported reductionism.**
-- “Psychological disorders are just weakness or bad choices.” → **Unsupported moralization.**
-- “Medication changes personality.” → **Too broad and clinically imprecise.**
-- “Therapy is just talking about feelings.” → **Incorrect; psychotherapies use structured methods with specific goals and evidence bases.**
-- “If a treatment is evidence-based, it works for everyone.” → **Incorrect. Average efficacy does not guarantee individual response.**
-- “Confidentiality means a provider can never share information.” → **Incorrect; legal and ethical limits exist and vary by jurisdiction/context.**
+- “Psychological disorders are weakness or bad choices.” → **Unsupported moralization.**
+- “If a treatment is evidence-based, it works for everyone.” → **Incorrect.**
+- “Confidentiality means a provider can never share information.” → **Too absolute.**
 
 ## Week 12 Research/Data Lab
 
 ### Treatment Evidence Trial
 
-Students analyze a fictional randomized treatment study with:
-- baseline symptom/function measure;
-- treatment and comparison groups;
+Students use a supplied visual trial map and compact outcome table containing:
+- baseline;
+- treatment/comparison groups;
 - post-treatment outcome;
-- follow-up outcome;
-- dropout/attrition information;
-- adverse-effect or burden measure;
-- confidence/uncertainty information at an introductory level.
+- follow-up;
+- attrition;
+- burden/adverse-effect information.
 
-Students identify:
-1. treatment condition;
-2. comparison condition;
-3. outcome measure;
-4. absolute change;
-5. between-group difference;
-6. attrition risk;
-7. one alternative explanation;
-8. whether the evidence supports efficacy under the study conditions;
-9. why the result does not guarantee benefit for every individual.
+Students identify what improved, how large the group difference is, what follow-up adds, why attrition matters, and what cannot be concluded about an individual.
 
 ## Week 12 Culminating Task
 
-### Disorder & Treatment Evidence Brief
+### One-Page Disorder & Treatment Evidence Brief
 
-Students analyze a supplied fictional composite and a supplied treatment claim. Required sections:
-1. observable concerns and functional impact stated without diagnosis;
-2. why more information would be needed for diagnosis;
-3. at least two plausible biopsychosocial contributors;
+Using only supplied fictional materials, students complete a structured one-page template:
+1. observable concern/function without diagnosis;
+2. why diagnosis needs more information;
+3. two biopsychosocial contributors;
 4. one stigma risk;
-5. treatment category appropriate to investigate professionally;
-6. evidence needed to compare treatment options;
-7. provider/ethical considerations;
-8. one data interpretation;
-9. one limitation;
-10. conclusion using person-first, non-stigmatizing language.
+5. one treatment category worth investigating professionally;
+6. one piece of treatment evidence;
+7. one provider/ethics consideration;
+8. one limitation;
+9. one respectful conclusion.
 
-Students are graded on reasoning, not on guessing a diagnostic label.
+The goal is precision and restraint, not volume of writing.
 
 ## Research Notebook — Week 12
 
-- Audit whether the semester project accidentally pathologizes ordinary behavior.
-- Remove diagnostic language unless the project is explicitly about professionally diagnosed populations and the evidence supports it.
-- Identify whether mental-health status is measured by self-report, clinician assessment, administrative record, behavioral outcome, or another method.
-- Add a stigma/privacy analysis when health information is involved.
-- If treatment is discussed, distinguish efficacy, effectiveness, access, adherence, side effects/burdens, and individual variation.
-- Specify what kind of professional expertise would be required beyond the scope of the student project.
+Students complete a short **Clinical Boundary Audit**:
+- Does the project accidentally pathologize ordinary behavior?
+- Is diagnostic language justified?
+- How is any mental-health variable measured?
+- Is privacy protected?
+- Does treatment discussion stay at the evidence-literacy level?
+- What professional expertise would be required beyond the student project?
 
 ## Weekly Assessment Blueprint
 
@@ -159,7 +147,7 @@ Many symptoms occur across disorders and ordinary life. Diagnosis requires profe
 Clinical classification provides limited information for care and communication; it does not define a person.
 
 ### Difference ≠ disorder
-Cultural, developmental, personality, and neurocognitive variation should not be pathologized merely because it is unfamiliar.
+Variation should not be pathologized merely because it is unfamiliar.
 
 ### Cause ≠ blame
 Biopsychosocial explanation does not assign moral fault.
@@ -168,13 +156,13 @@ Biopsychosocial explanation does not assign moral fault.
 Students evaluate evidence but do not prescribe treatment.
 
 ### Evidence-based ≠ guaranteed
-Population-level treatment effects do not determine individual outcomes.
+Population-level effects do not determine individual outcomes.
 
-### Confidentiality ≠ absolute secrecy
-Professional confidentiality has legal and ethical limits that depend on setting and jurisdiction.
+### Less reading ≠ less rigor
+Week 12 shifts from prose volume to case analysis, data interpretation, ethical reasoning, and visual synthesis.
 
 ## Week 12 Verdict
 
-**GREEN — LOCKED**
+**GREEN — LOCKED, LOW-READING APPLICATION DESIGN**
 
-Week 12 preserves scientific literacy, dignity, and clinical boundaries while meeting the disorders and therapies expectations of an advanced introductory high-school psychology course.
+Week 12 preserves clinical literacy, scientific rigor, dignity, and ethical boundaries while deliberately reducing reading load before the capstone week.
