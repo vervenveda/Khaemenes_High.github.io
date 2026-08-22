@@ -19,6 +19,42 @@
     updatedAt:null
   };
 
+  const PROTOOLS_BASE = "https://vervenveda.com/proresource_hub.github.io/Protools/";
+  const RESOURCE_CATALOG = {
+    calculator: {
+      label:"Scientific Calculator",
+      url:`${PROTOOLS_BASE}Khaemenes_Scientific_Calculator/`,
+      note:"Use for unit conversions, scientific notation, averages, percent change, and quantitative checks."
+    },
+    evidence: {
+      label:"Evidence Citation Studio",
+      url:`${PROTOOLS_BASE}Evidence_Citation_Studio/`,
+      note:"Capture sources, distinguish evidence from interpretation, and build transparent citation records."
+    },
+    atlas: {
+      label:"Atlas Evidence Analysis",
+      url:`${PROTOOLS_BASE}Atlas_Evidence_Analysis.html`,
+      note:"Classify claims, observations, assumptions, evidence, and limitations before drawing conclusions."
+    },
+    prose: {
+      label:"PROSE Editorial Suite",
+      url:`${PROTOOLS_BASE}PROSE/editorial-gateway.html`,
+      note:"Revise CER explanations, lab summaries, methods, and scientific writing without replacing your reasoning."
+    },
+    dataset: {
+      label:"Unit 01 Dataset Laboratory",
+      url:"../dataset-laboratory.html",
+      lessonUrl:"../dataset-laboratory.html",
+      note:"Analyze a supplied dataset, graph evidence, identify variation, and evaluate conclusions."
+    },
+    design: {
+      label:"Investigation Design Task",
+      url:"../investigation-design-task.html",
+      lessonUrl:"../investigation-design-task.html",
+      note:"Turn a question into variables, controls, measurements, safety boundaries, and a defensible procedure."
+    }
+  };
+
   const $ = (s,p=document) => p.querySelector(s);
   const $$ = (s,p=document) => [...p.querySelectorAll(s)];
   function parse(raw,fallback){try{return JSON.parse(raw)??fallback}catch{return fallback}}
@@ -91,11 +127,6 @@
     $("#themeToggle")?.addEventListener("click",()=>applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark"));
   }
 
-  /*
-   * Centralized navigation repair.
-   * Unit-root pages sit five levels below the repository root.
-   * Lesson pages sit six levels below the repository root.
-   */
   function repairPortalLinks(){
     const repositoryRoot=location.pathname.includes("/lessons/")
       ?"../../../../../../"
@@ -109,6 +140,61 @@
         link.setAttribute("href",`${repositoryRoot}grades/grade-09/`);
       }
     });
+  }
+
+  function resourceHref(resource){
+    if(location.pathname.includes("/lessons/") && resource.lessonUrl) return resource.lessonUrl;
+    if(resource.url.startsWith("../") && !location.pathname.includes("/lessons/")) return resource.url.replace(/^\.\.\//,"");
+    return resource.url;
+  }
+
+  function chooseResources(){
+    const text=`${document.title} ${$("h1")?.textContent||""} ${document.body?.textContent?.slice(0,6000)||""}`.toLowerCase();
+    const chosen=[];
+    const add=id=>{if(!chosen.includes(id))chosen.push(id)};
+
+    if(/measure|unit|precision|accuracy|uncertainty|average|mean|graph|data|quant|significant|scientific notation/.test(text)) add("calculator");
+    if(/source|evidence|claim|citation|research|reliable|bias|correlation|causation|cer/.test(text)) add("evidence");
+    if(/question|variable|control|hypothesis|investigat|method|design|fair test|observation|inference/.test(text)) add("atlas");
+    if(/cer|claim|reasoning|explanation|reflection|report|communicat|conclusion|method/.test(text)) add("prose");
+    if(/data|graph|variation|anomal|uncertainty|mean|trend|correlation/.test(text)) add("dataset");
+    if(/question|variable|control|investigat|procedure|method|design/.test(text)) add("design");
+
+    if(!chosen.length){add("evidence");add("prose")}
+    return chosen.slice(0,4);
+  }
+
+  function mountIntegrationDock(){
+    if($("#scienceIntegrationDock"))return;
+    const host=$("article.lesson-page") || $("main article") || $("main .card") || $("main");
+    if(!host)return;
+
+    const selected=chooseResources();
+    const section=document.createElement("section");
+    section.id="scienceIntegrationDock";
+    section.className="lesson-section science-integration-dock no-print";
+    section.setAttribute("aria-labelledby","scienceIntegrationTitle");
+    section.innerHTML=`
+      <h2 id="scienceIntegrationTitle">Interactive Science Studio</h2>
+      <p>Use the recommended tools as part of the investigation. Record what the tool reveals, what assumptions it makes, and what evidence still must come from your own observations or reasoning.</p>
+      <div class="science-tool-grid">
+        ${selected.map(id=>{
+          const r=RESOURCE_CATALOG[id];
+          const external=/^https?:/i.test(resourceHref(r));
+          return `<a class="science-tool-card" href="${resourceHref(r)}"${external?' target="_blank" rel="noopener noreferrer"':''}><strong>${r.label}</strong><span>${r.note}</span></a>`;
+        }).join("")}
+      </div>
+      <p class="science-tool-rule"><strong>Evidence rule:</strong> tools support exploration and verification; they do not replace measurements, written reasoning, source evaluation, safety review, or the ≥80% mastery requirement.</p>`;
+
+    const actions=$(".lesson-actions",host);
+    if(actions) host.insertBefore(section,actions); else host.append(section);
+
+    if(!$("#scienceIntegrationDockStyles")){
+      const style=document.createElement("style");
+      style.id="scienceIntegrationDockStyles";
+      style.textContent=`.science-integration-dock{border-top:1px solid var(--line,rgba(255,255,255,.15));margin-top:24px;padding-top:22px}.science-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}.science-tool-card{display:flex;min-width:0;min-height:104px;flex-direction:column;gap:7px;justify-content:center;padding:15px;border:1px solid color-mix(in srgb,var(--teal,#62c8c0) 45%,var(--line,transparent));border-radius:14px;background:color-mix(in srgb,var(--panel2,#173148) 88%,transparent);color:var(--ink,#f4f2e9);text-decoration:none}.science-tool-card:hover{border-color:var(--teal,#62c8c0);transform:translateY(-1px)}.science-tool-card strong{color:var(--teal,#62c8c0)}.science-tool-card span{color:var(--muted,#b8c5cc);font-size:.9rem;line-height:1.5}.science-tool-rule{font-size:.9rem;color:var(--muted,#b8c5cc)}@media(max-width:720px){.science-tool-grid{grid-template-columns:1fr}}@media print{.science-integration-dock{display:none!important}}`;
+      document.head.append(style);
+    }
   }
 
   function toast(message){
@@ -204,6 +290,7 @@
   function initialize(){
     repairPortalLinks();
     initializeTheme();
+    mountIntegrationDock();
     $$("[data-page-complete]").forEach(button=>button.addEventListener("click",()=>togglePage(button.dataset.pageComplete)));
     $$("[data-evidence]").forEach(button=>button.addEventListener("click",()=>markEvidence(button.dataset.evidence)));
     $("#designForm")?.addEventListener("submit",submitDesign);
