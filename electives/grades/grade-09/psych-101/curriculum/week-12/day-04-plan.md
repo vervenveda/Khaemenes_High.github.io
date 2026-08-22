@@ -1,76 +1,73 @@
-# Week 12 · Day 4 — Psychological & Biomedical Treatments: Evidence and Matching
+# Week 12 · Day 4 — Treatment Evidence in Pictures & Tables
 
 **Essential Question:** How do researchers determine whether a treatment helps, for whom, and under what conditions?
 
 ## Learning Objectives
 Students will be able to:
-- distinguish psychotherapy from biomedical treatment at a high level;
-- describe why treatments are matched to condition, person, age, severity, preference, context, and evidence;
-- identify randomized comparison, baseline, outcome, follow-up, attrition, and adverse effects in treatment research;
+- distinguish psychological and biomedical treatment at a high level;
+- explain why treatment matching depends on evidence and context;
+- identify baseline, comparison group, outcome, follow-up, attrition, and burden in treatment research;
 - distinguish efficacy from effectiveness;
 - explain why evidence-based treatment does not guarantee benefit for every individual;
-- avoid prescribing or recommending individualized treatment.
+- avoid giving individualized treatment advice.
 
 ## Psychology Word of the Day
 **psychotherapy** — structured psychological treatment delivered by a qualified professional using evidence-informed methods to address psychological difficulties and functioning.
 
 ## Vocabulary in Context
-psychotherapy · biomedical treatment · medication · combined treatment · efficacy · effectiveness · randomized controlled trial · placebo/control condition · follow-up · attrition · adverse effect · treatment matching
+psychotherapy · biomedical treatment · medication · combined treatment · efficacy · effectiveness · randomized trial · comparison condition · follow-up · attrition · adverse effect
 
-## Core Reading
-Psychological treatment is broader than “talking about feelings.” Different psychotherapies use structured methods for specific goals. Biomedical treatments can include medication and, for some conditions, brain-stimulation approaches. Treatment choice depends on evidence, diagnosis, age, health history, severity, preference, access, risks, and professional judgment.
+## Compact Briefing Cards
+Students read three small cards rather than a long chapter:
 
-Students learn the distinction between **efficacy**—whether an intervention can help under studied conditions—and **effectiveness**—how well it works in ordinary practice. They also examine why follow-up, dropout, burden, and adverse effects matter alongside symptom change.
+### Card A — What treatment is
+Psychotherapies use structured psychological methods. Biomedical approaches can include medication and selected medical procedures. Different approaches address different problems and have different evidence, burdens, and risks.
 
-The lesson does not teach students to select treatment for themselves or others.
+### Card B — Efficacy vs. effectiveness
+**Efficacy** asks whether an intervention can help under studied conditions. **Effectiveness** asks how well it works in ordinary practice.
+
+### Card C — Population evidence vs. individual outcome
+An average benefit does not guarantee that every participant improved or that one treatment is best for every person.
+
+## Visual Trial Map
+**Baseline → Assignment → Treatment / Comparison → Post-Test → Follow-Up → Benefits + Burdens**
+
+Students label each stage and identify where attrition can distort interpretation.
 
 ## Worked Example
-A fictional trial compares treatment, active-comparison, and waitlist conditions. The treatment group improves more on average at post-test, but some participants do not improve and several leave the study.
+A fictional treatment group improves more on average than a comparison group, but several participants leave and some do not improve.
 
-Supported: the treatment showed greater average improvement under the study conditions.
+Supported: greater average improvement under the study conditions.
 
-Not supported: the treatment works for everyone, is best for every person, or has no downsides.
+Not supported: universal benefit, zero burden, or best choice for every individual.
 
 ## Psychological Scientist's Desk
 **Claim:** “If a treatment is evidence-based, it is the right treatment for everyone with that diagnosis.”
 
-Students identify population averages, heterogeneity, contraindications, preference, access, age, comorbidity, and treatment-response variation.
+Students identify heterogeneity, age, severity, preference, health context, access, and treatment-response variation.
 
-## Data Lens
-Students analyze a fictional randomized trial with baseline, post-treatment, and 3-month follow-up. They calculate absolute change, compare groups, note attrition, and identify whether gains persist.
+## Data Lens — Treatment Evidence Table
+Students use one compact table containing baseline, post-test, follow-up, attrition, and burden. They calculate simple absolute changes and identify the strongest justified conclusion.
 
-## Claims Laboratory
-Evaluate:
-- “Therapy is just talking.”
-- “Medication changes who you are.”
-- “Natural treatments are safer.”
-- “A placebo-controlled trial proves a treatment is perfect.”
-- “If average symptoms improve, every participant improved.”
-
-## Guided Investigation
-### Treatment Evidence Matrix
-Students compare three fictional intervention claims across:
-- study design;
-- sample;
+## Guided Investigation — Evidence Matrix
+Compare three fictional intervention claims using checkboxes for:
 - comparison condition;
+- sample;
 - outcome measure;
 - follow-up;
-- harms/burdens;
+- burden/adverse effects;
 - replication;
-- appropriate conclusion.
+- conclusion strength.
 
-## Independent Assignment
-Write a 500–700 word **Treatment Evidence Audit** of one supplied fictional study. Include efficacy, effectiveness, limitations, and one reason individualized treatment decisions require professional assessment.
+## Independent Assignment — 200–300 words
+Write a short **Treatment Evidence Audit** using the supplied table. Include:
+1. what improved;
+2. what remains uncertain;
+3. one burden/limitation;
+4. why individualized decisions require qualified professional assessment.
 
 ## Research Notebook Checkpoint
-If the semester project discusses treatment or intervention, add:
-- exact intervention;
-- target outcome;
-- evidence level;
-- population studied;
-- follow-up period;
-- harms/burdens;
-- one reason the project cannot provide individualized treatment advice.
+If the semester project discusses intervention, record the target outcome, evidence level, population, follow-up, burden, and one reason the project cannot provide personal treatment advice.
 
 ## Academic Journal Reflection
 Why should treatment research measure both benefits and burdens?
