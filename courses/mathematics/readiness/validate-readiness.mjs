@@ -73,4 +73,26 @@ const preUpgrade=readMath('pre-algebra/assets/prealgebra-archaemenes-upgrade.js'
 ok(preUpgrade.includes('course-readiness-bridge.js'),'Pre-Algebra must load the shared readiness bridge.');
 ok(preUpgrade.includes('countsTowardCourse:false'),'Pre-Algebra placement contract must remain non-instructional.');
 
-console.log('PASS: shared mathematics readiness architecture and first course integrations are structurally valid.');
+const integrationFiles={
+  geometry:'geometry/assets/geometry-archaemenes-upgrade.js',
+  'algebra-2':'algebra-2/assets/algebra2-archaemenes-upgrade.js',
+  'precalculus-trigonometry':'precalculus-trigonometry/assets/precalculus-trigonometry-archaemenes-upgrade.js',
+  'calculus-1':'calculus-1/assets/calculus1-archaemenes-upgrade.js'
+};
+for(const [id,file] of Object.entries(integrationFiles)){
+  const source=readMath(file);
+  ok(source.includes('course-readiness-bridge.js'),`${id} must load the shared readiness bridge.`);
+  ok(source.includes(`dataset.courseId='${id}'`)||source.includes(`dataset.courseId="${id}"`),`${id} bridge must identify its course.`);
+}
+
+const forbiddenWeekPhrases=[
+  /1 readiness week/i,
+  /week 1[^\n]{0,80}diagnostic/i,
+  /diagnostic[^\n]{0,80}week 1/i
+];
+for(const id of expected){
+  const courseIndex=readMath(`${id}/index.html`);
+  forbiddenWeekPhrases.forEach(pattern=>ok(!pattern.test(courseIndex),`${id} appears to count readiness/diagnostic as Week 1.`));
+}
+
+console.log('PASS: shared mathematics readiness architecture and all six live-course integrations are structurally valid.');
