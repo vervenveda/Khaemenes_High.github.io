@@ -106,4 +106,22 @@
   }
 
   window.addEventListener("khaemenes:science-success", e => showReward(e.detail));
+
+  /*
+   * Unit 03 currently records lesson evidence synchronously through its shared
+   * controller. Listen after that click has finished, then reward only when the
+   * controller reports aria-pressed=true. If the learner cancels attestation or
+   * removes a prior record, no reward is issued.
+   */
+  document.addEventListener("click", e => {
+    const button = e.target.closest?.("[data-page-complete]");
+    if (!button) return;
+    const id = button.dataset.pageComplete;
+    if (!UNIT03[id]) return;
+    setTimeout(() => {
+      if (button.getAttribute("aria-pressed") === "true") {
+        showReward({ type:"lesson", unit:"u03", id });
+      }
+    }, 0);
+  });
 })();
