@@ -1,24 +1,28 @@
 {
   "unit": 5,
-  "domains": [
-    "Similarity",
-    "Dilations",
-    "Proportions",
-    "Scale drawings"
+  "title": "Similarity, Dilations & Proportional Reasoning",
+  "mastery_target": 80,
+  "domains": ["Similarity","Dilations","Proportional reasoning","Scale drawings","Mathematical modeling"],
+  "standards": [
+    {"code":"G-SRT.A.1","summary":"Verify experimentally properties of dilations from a center."},
+    {"code":"G-SRT.A.2","summary":"Use similarity transformations to determine whether figures are similar and explain correspondence."},
+    {"code":"G-SRT.A.3","summary":"Use properties of similarity transformations to establish AA similarity."},
+    {"code":"G-SRT.B.4","summary":"Use similarity reasoning in proofs involving triangles and proportional relationships."},
+    {"code":"G-SRT.B.5","summary":"Use congruence and similarity criteria to solve problems and prove relationships."},
+    {"code":"G-MG.A.1","summary":"Use geometric shapes and scale relationships to model objects and solve design or measurement problems."}
   ],
-  "practices": [
-    "Make sense of problems",
-    "Reason abstractly and quantitatively",
-    "Construct viable arguments",
-    "Model with mathematics",
-    "Use tools strategically",
-    "Attend to precision",
-    "Look for structure"
-  ],
-  "evidence": [
-    "Printable lesson work",
-    "Mastery check",
-    "Applied investigation",
-    "Reflection and correction"
-  ]
+  "lesson_evidence": {
+    "u05-l01":{"focus":"Dilations from a center","evidence":["construct image points","interpret scale factor","explain collinearity and scaled distances"]},
+    "u05-l02":{"focus":"Similarity through transformations","evidence":["describe rigid-motion-plus-dilation sequence","track correspondence","identify preserved angle measures and scaled lengths"]},
+    "u05-l03":{"focus":"AA similarity and proportions","evidence":["establish AA similarity","write ordered similarity statement","solve corresponding-side proportions"]},
+    "u05-l04":{"focus":"SSS and SAS similarity","evidence":["verify proportional side sets","identify included angle","distinguish sufficient from insufficient evidence"]},
+    "u05-l05":{"focus":"Side-Splitter and proportional segments","evidence":["apply Triangle Proportionality Theorem","solve split-segment ratios","use converse to justify parallelism"]},
+    "u05-l06":{"focus":"Scale drawings, maps and models","evidence":["interpret scale","convert units","compute drawing and actual dimensions","justify a feasible model scale"]},
+    "u05-l07":{"focus":"Indirect measurement","evidence":["establish similar-triangle field model","solve inaccessible length","identify measurement-error and safety constraints"]}
+  },
+  "evidence_policy": {
+    "automatic":"Selected-response mastery items may be scored locally by the assessment engine.",
+    "human_review":"Written proofs, transformation explanations, scale-model design, field-study reasoning, corrections, and project evidence may require teacher, mentor, or qualified reviewer judgment.",
+    "mastery":"A numeric score is one evidence source; documented corrections and human-reviewed performance evidence remain part of mastery determination."
+  }
 }
