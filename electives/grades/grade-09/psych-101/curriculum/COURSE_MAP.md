@@ -12,15 +12,15 @@
 | 8 | Human Development | LOCKED | How do biology, experience, relationships, and culture shape development across the lifespan? |
 | 9 | Personality & Individual Differences | LOCKED | How can psychologists describe relatively stable individual differences without reducing a person to a label? |
 | 10 | Social & Cultural Psychology | LOCKED | How do groups, relationships, culture, and social environments influence behavior without erasing individual agency? |
-| 11 | Mental & Physical Health Psychology | IN DEVELOPMENT | How do psychological science and behavior relate to health and well-being? |
-| 12 | Psychological Disorders, Treatment & Ethics | IN DEVELOPMENT | How does psychology study psychological difficulties responsibly? |
-| 13 | Applied Psychology & Research Synthesis | IN DEVELOPMENT | How can psychological science responsibly improve real-world decisions? |
+| 11 | Mental & Physical Health Psychology | LOCKED | How do psychological science, behavior, and context relate to health and well-being without turning ordinary experiences into diagnoses? |
+| 12 | Psychological Disorders, Treatment & Ethics | LOCKED | How can psychology describe psychological disorders and treatments responsibly without turning classroom knowledge into amateur diagnosis? |
+| 13 | Applied Psychology & Research Synthesis | LOCKED | How can psychological science responsibly improve real-world decisions without overselling what the evidence can do? |
 
-## Permanent course reasoning routine
+## Permanent Course Reasoning Routine
 
 **Claim → Measure → Evidence → Alternative Explanation → Limitation → Conclusion**
 
-## Permanent daily lesson contract
+## Permanent Daily Lesson Contract
 
 1. Retrieval Warm-Up
 2. Essential Question
@@ -40,34 +40,33 @@
 16. Local Completion Record
 17. Optional Completion Challenge
 
-### Psychology Word of the Day
+## Psychology Word of the Day
 
-Each of the 65 daily lessons receives one anchor psychology term aligned to that day's content. The anchor term receives deeper treatment through the local Psychology Word Lab while the full `Vocabulary in Context` list remains part of the academic lesson.
+Each of the **65 daily lessons** receives one anchor psychology term aligned to that day's content. The anchor term receives deeper treatment through the local Psychology Word Lab while the full `Vocabulary in Context` list remains part of the lesson.
 
-The course adaptation is based on the useful daily-word pattern in `vervenveda/arcade.github.io/Learn_a_New_Word_index.html`, but Psychology 101 will keep its own embedded word bank so the course has no runtime dependency on the Arcade repository.
-
-Lesson mode should open the assigned term by lesson identity rather than calendar date, for example `?lesson=01-03`. This keeps vocabulary synchronized with independent-study pacing.
+Lesson mode opens the assigned term by lesson identity rather than calendar date, for example `?lesson=01-03`, preserving independent-study pacing.
 
 See: `reference/PSYCHOLOGY_WORD_OF_THE_DAY_PLAN.md`.
 
-### Optional Completion Challenge
+## Optional Completion Challenge
 
-Selected Arcade mechanics may be adapted into short, local-first challenge modules that appear only after legitimate academic completion.
+Selected Arcade and Aurora mechanics may be adapted into short, local-first completion rewards after genuine academic completion.
 
-The challenge layer follows these rules:
+Rules:
+- optional; never required for mastery;
+- skipping/losing never changes grade, access, or progression;
+- no autoplay, hidden tracking, loot boxes, streak loss, or variable-ratio reward access;
+- microbreak default: 10–60 seconds;
+- daily reward: 1–3 minutes;
+- weekly reward: 3–7 minutes;
+- local adapted modules only; no runtime dependency on Arcade/Aurora;
+- touch, keyboard, reduced-motion, visible focus, and immediate exit required.
 
-- optional, never required for mastery;
-- no penalty for skipping, losing, or closing;
-- no autoplay or hidden tracking;
-- default microbreak length 10–60 seconds;
-- longer challenges reserved for daily/weekly completion;
-- local adapted modules rather than a runtime dependency on the Arcade repository;
-- accessible touch, keyboard, reduced-motion, and visible-exit controls;
-- predictable availability after completion rather than variable-ratio reward scheduling.
+Scientific terminology remains accurate: the activities are **completion rewards / reinforcer candidates** unless data show they actually increase the target behavior.
 
-Scientific terminology matters: the games are **completion rewards / reinforcer candidates**. They function as positive reinforcement only if adding them actually increases the future probability of the target behavior.
-
-See: `reference/COMPLETION_CHALLENGE_REINFORCEMENT_PLAN.md`.
+See:
+- `reference/COMPLETION_CHALLENGE_REINFORCEMENT_PLAN.md`
+- `reference/AURORA_COMPLETION_ENRICHMENT_PLAN.md`
 
 ## Evidence Ladder
 
@@ -79,7 +78,7 @@ See: `reference/COMPLETION_CHALLENGE_REINFORCEMENT_PLAN.md`.
 | Controlled experimental evidence | “Changing X affected Y under these conditions…” |
 | Converging evidence | “Evidence across multiple studies and methods suggests…” |
 
-## Course-wide Interpretation Boundaries
+## Course-Wide Interpretation Boundaries
 
 - Description is not explanation.
 - Association is not automatically causation.
@@ -92,20 +91,32 @@ See: `reference/COMPLETION_CHALLENGE_REINFORCEMENT_PLAN.md`.
 - A personality score is evidence from a measure, not an identity or diagnosis.
 - Social influence changes probabilities and pressures; it does not erase agency.
 - Culture is context, not a personality assigned to every group member.
+- Stress is not automatically disorder.
+- Coping and health behavior are not moral character tests.
+- Symptoms are not diagnoses.
+- Diagnosis is not identity.
+- Treatment evidence is not individualized treatment advice.
+- Evidence-based does not mean guaranteed for every individual.
+- Statistical significance is not automatically practical importance.
+- Internal validity is not automatic generalizability.
 - A reward is not automatically a reinforcer; behavioral effect defines reinforcement.
 - Scientific conclusions should become stronger or weaker as evidence changes.
 
 ## Locked Curriculum Progress
 
-- **Weeks 1–10:** academically audited and locked
-- **50 daily lesson plans:** present
-- **50 daily anchor vocabulary terms:** mapped to locked lessons
-- **Weeks 11–13:** reserved until each forensic audit is complete
-- **Final 15 anchor vocabulary terms:** intentionally reserved until Weeks 11–13 are locked
-- **Completion Challenge architecture:** planned; student-facing modules not yet implemented
-- **Cumulative Assessment I:** follows Week 4 and integrates Weeks 1–4
-- **Cumulative Assessment II:** follows Week 8, covers Weeks 1–8 with emphasis on Weeks 5–8
-- **Week 7 unified model:** Situation → Appraisal → Emotion → Motivation → Choice → Consequence
-- **Week 8 development rule:** age-related group patterns do not define individual people
-- **Week 9 personality rule:** describe patterns carefully; never mistake a score or trait label for the whole person
-- **Week 10 social rule:** context matters; explanation is not excuse; group patterns are not individual destinies
+- **Weeks 1–13:** academically audited and LOCKED
+- **65 / 65 daily lesson plans:** present
+- **65 / 65 daily anchor vocabulary terms:** assigned
+- **Cumulative Assessment I:** after Week 4; integrates Weeks 1–4
+- **Cumulative Assessment II:** after Week 8; covers Weeks 1–8 with emphasis on Weeks 5–8
+- **Cumulative Assessment III:** after Week 12; cumulative Weeks 1–12 with emphasis on Weeks 9–12
+- **Week 13:** final Research Brief + synthesis knowledge check rather than a giant conventional final exam
+- **Research Notebook:** complete through Week 13 with milestone audits
+- **Completion Challenge architecture:** approved; student-facing modules still to be implemented
+- **Aurora enrichment architecture:** approved; therapeutic/personal sanctuary tools remain separate and voluntary
+
+## Curriculum Architecture Verdict
+
+**GREEN — COMPLETE.**
+
+The next phase is student-facing implementation: shared lesson engine, local progress/mastery logic, Psychology Word Lab, assessments, print views, research notebook interface, and optional local completion challenges.
