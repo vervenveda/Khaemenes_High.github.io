@@ -1,24 +1,35 @@
 {
   "unit": 12,
-  "domains": [
-    "Technical drawing",
-    "Scale",
-    "Coordinate geometry",
-    "Design communication"
+  "title": "CAD, Scale Drawing & Spatial Design",
+  "masteryTarget": 80,
+  "standards": [
+    {"id":"G-CO.2","focus":"Represent transformations in the plane using geometric and coordinate descriptions.","evidence":["u12-l06 transformation rules","Core and Extended transformation practice","CAD modular design lab"]},
+    {"id":"G-CO.5","focus":"Given a geometric figure and a rotation, reflection, or translation, draw the transformed figure and specify the sequence.","evidence":["u12-l06 coordinate transformations","Foundation/Core practice","Mandala/Sanctuary reinforcement prompt"]},
+    {"id":"G-SRT.1","focus":"Verify experimentally the properties of dilations and scale relationships.","evidence":["u12-l04 scale plans","u12-l06 dilation reasoning","Core/Extended scale tasks"]},
+    {"id":"G-MG.1","focus":"Use geometric shapes, measures, and properties to describe and model objects.","evidence":["u12-l04 room/opening plans","u12-l05 material schedules","OHMIC CAD portfolio"]},
+    {"id":"G-MG.2","focus":"Apply concepts of density and measurement to modeling situations.","evidence":["u12-l02 tolerance/error","u12-l05 quantities and waste factors","project material estimates"]},
+    {"id":"G-MG.3","focus":"Apply geometric methods to solve design problems.","evidence":["u12-l01 through u12-l07 CAD design sequence","OHMIC CAD Spatial Design Portfolio","design defense"]},
+    {"id":"N-Q.1","focus":"Use units as a way to understand problems and guide multi-step solutions.","evidence":["u12-l01 units and workspace","u12-l04 scale conversions","u12-l05 material quantities","u12-l07 print-scale verification"]},
+    {"id":"N-Q.3","focus":"Choose a level of accuracy appropriate to limitations on measurement.","evidence":["u12-l02 tolerance, error, and significant figures","project precision statement","design defense"]}
   ],
-  "practices": [
-    "Make sense of problems",
-    "Reason abstractly and quantitatively",
-    "Construct viable arguments",
-    "Model with mathematics",
-    "Use tools strategically",
-    "Attend to precision",
-    "Look for structure"
+  "mathematicalPractices": [
+    "MP1 Make sense of problems and persevere",
+    "MP2 Reason abstractly and quantitatively",
+    "MP3 Construct viable arguments and critique reasoning",
+    "MP4 Model with mathematics",
+    "MP5 Use appropriate tools strategically",
+    "MP6 Attend to precision",
+    "MP7 Look for and make use of structure",
+    "MP8 Look for and express regularity in repeated reasoning"
   ],
-  "evidence": [
-    "Printable lesson work",
-    "Mastery check",
-    "Applied investigation",
-    "Reflection and correction"
+  "masteryEvidence": [
+    "Seven lesson worksheets and CAD labs",
+    "Math Word of the Day retrieval checks",
+    "Foundation/Core/Extended practice with two touches per lesson",
+    "Dedicated 14-question mastery assessment covering all seven lessons",
+    "Written corrections and targeted review below 80%",
+    "OHMIC CAD Spatial Design Portfolio",
+    "60–90 second mathematical design defense",
+    "Optional post-completion arcade reinforcement with no grade impact"
   ]
 }
