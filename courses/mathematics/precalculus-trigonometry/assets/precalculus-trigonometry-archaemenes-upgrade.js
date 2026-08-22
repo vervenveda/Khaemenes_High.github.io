@@ -12,6 +12,7 @@ const HIGH_URL = "https://vervenveda.com/Khaemenes_High.github.io/";
 const ALGEBRA2_URL = "https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/algebra-2/";
 const CALCULUS_URL = "https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/calculus-1/";
 const BETA_URL = "https://vervenveda.com/beta/";
+const READINESS_BRIDGE = "../readiness/course-readiness-bridge.js";
 
 const css = `
 :root{
@@ -70,8 +71,6 @@ body::before{opacity:.24!important}
 input,select,textarea{color:var(--k-ink)!important;background:#fff!important;border-color:var(--k-line)!important}
 .btn,.button{color:var(--k-forest)!important;background:#fff!important;border-color:var(--k-line)!important}
 .btn.primary,.button.primary,.btn.gold{color:#fff!important;background:var(--k-forest)!important;border-color:var(--k-forest)!important}
-
-/* Advanced-study mentor */
 .khae-precalc-mentor{
   width:min(calc(100% - 42px),1240px);margin:0 auto 30px;padding:30px;
   display:grid;grid-template-columns:minmax(160px,220px) minmax(0,1fr);gap:30px;align-items:center;
@@ -100,6 +99,16 @@ style.id="khaemenes-precalculus-archaemenes-theme-v1";
 style.textContent=css;
 document.head.appendChild(style);
 
+function loadReadinessBridge(){
+  if(document.querySelector('script[data-khaemenes-readiness-bridge]'))return;
+  const script=document.createElement('script');
+  script.src=READINESS_BRIDGE;
+  script.dataset.khaemenesReadinessBridge='precalculus-trigonometry';
+  script.dataset.courseId='precalculus-trigonometry';
+  script.dataset.courseTitle='Precalculus & Trigonometry';
+  script.defer=true;
+  document.head.appendChild(script);
+}
 function contextFromPage(){
   const view=document.querySelector(".quick-nav button.active")?.textContent?.trim()||"";
   const heading=document.querySelector(".view.active .section-head h2,.view.active h2,.view.active h3")?.textContent?.trim()||"";
@@ -150,7 +159,7 @@ function hardenMenus(){
   document.addEventListener("keydown",e=>{if(e.key==="Escape")menus.forEach(menu=>menu.open=false)});
 }
 function boot(){
-  createMentor();addBeta();hardenMenus();
+  loadReadinessBridge();createMentor();addBeta();hardenMenus();
   document.addEventListener("click",e=>{if(e.target.closest(".quick-nav button,.week-chip,[data-view],[data-go]"))setTimeout(refresh,30)});
   const main=document.querySelector("main");if(main)new MutationObserver(refresh).observe(main,{subtree:true,childList:true,attributes:true,attributeFilter:["class"]});
 }

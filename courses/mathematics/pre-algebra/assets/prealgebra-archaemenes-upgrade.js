@@ -3,6 +3,7 @@
 
 const scriptEl=document.currentScript;
 const coreSrc=new URL("prealgebra-archaemenes-upgrade-core.js",scriptEl?.src||location.href).href;
+const readinessBridgeSrc=new URL("../../readiness/course-readiness-bridge.js",scriptEl?.src||location.href).href;
 const FAMILY_REGISTRY="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-family-registry.js";
 const CALCULATOR="https://vervenveda.com/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/";
 const ROUTES=new Map([
@@ -42,7 +43,7 @@ function patchPlacementArchitecture(){
   app.placement={
    id:"precourse-placement",
    title:"Pre-Course Mathematics Placement",
-   path:"diagnostic/",
+   path:"../readiness/",
    oneTime:true,
    countsTowardCourse:false,
    note:"Complete once before course placement. Results may support NAIB placement into Pre-Algebra or Algebra I; this assessment is not an instructional week."
@@ -165,12 +166,21 @@ function guardLegacyNicknameMigration(){
  if(changed)persistCourseState();
 }
 
+function loadReadinessBridge(){
+ if(document.querySelector(`script[src="${readinessBridgeSrc}"]`))return;
+ const bridge=document.createElement("script");
+ bridge.src=readinessBridgeSrc;
+ bridge.defer=true;
+ bridge.onerror=()=>console.warn("Shared mathematics readiness bridge could not load.");
+ document.head.appendChild(bridge);
+}
+
 function loadCore(){
  const core=document.createElement("script");
  core.src=coreSrc;
  core.async=false;
- core.onload=installRouteGuard;
- core.onerror=()=>console.error("Pre-Algebra hardening core could not load.");
+ core.onload=()=>{installRouteGuard();loadReadinessBridge();};
+ core.onerror=()=>{console.error("Pre-Algebra hardening core could not load.");loadReadinessBridge();};
  document.head.appendChild(core);
 }
 

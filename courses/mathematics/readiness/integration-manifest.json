@@ -1,0 +1,25 @@
+{
+  "schema_version":"1.0",
+  "engine":"Khaemenes Mathematics Readiness & Placement Engine",
+  "storage_key":"KHAEMENES_MATH_READINESS_V1",
+  "instructional_time":false,
+  "counts_toward_course":false,
+  "portal_route":"readiness/",
+  "course_bridge":"readiness/course-readiness-bridge.js",
+  "required_surfaces":[
+    {"id":"mathematics-portal","path":"index.html","role":"front-door launch and recommendation summary"},
+    {"id":"pre-algebra","path":"pre-algebra/index.html","role":"advisory readiness notice; Unit 01 remains instructional start"},
+    {"id":"algebra-1","path":"algebra-1/index.html","role":"advisory readiness notice; Unit 01 remains instructional start"},
+    {"id":"geometry","path":"geometry/index.html","role":"advisory readiness notice; Unit 01 remains instructional start"},
+    {"id":"algebra-2","path":"algebra-2/index.html","role":"advisory readiness notice; Unit 01 remains instructional start"},
+    {"id":"precalculus-trigonometry","path":"precalculus-trigonometry/index.html","role":"advisory readiness notice; Unit 01 remains instructional start"},
+    {"id":"calculus-1","path":"calculus-1/index.html","role":"advisory readiness notice; Unit 01 remains instructional start"}
+  ],
+  "invariants":[
+    "Placement is one-time by default and reassessment is intentional.",
+    "Placement records never write into instructional week progress.",
+    "Every course begins instruction at Unit 01 / Week 1.",
+    "Recommendations are advisory, not hard enrollment gates.",
+    "Course validators must fail if diagnostic or placement is counted as instructional time."
+  ]
+}
