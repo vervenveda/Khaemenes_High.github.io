@@ -1,46 +1,79 @@
 {
-  "assessmentId": "U01-MASTERY",
-  "title": "Unit Mastery Assessment",
-  "purpose": "canonical",
-  "authority": "canonical",
-  "masteryThreshold": 0.8,
-  "questionIds": [
-    "Q001",
-    "Q002"
-  ],
-  "items": [
-    {
-      "id": "Q001",
-      "type": "objective",
-      "skills": [
-        "close-reading",
-        "evidence"
-      ],
-      "correctiveRoute": "CR-EVIDENCE-01"
+  "schemaVersion": "2.0.0",
+  "courseId": "english-9",
+  "masteryThreshold": 80,
+  "publicStaticCourse": true,
+  "evidenceClasses": {
+    "practice": {
+      "authoritativeForMastery": false,
+      "examples": ["weekly-check", "game", "self-check", "mentor-rehearsal", "drafting-tool", "weekly-evidence-record"]
     },
-    {
-      "id": "Q002",
-      "type": "objective",
-      "skills": [
-        "inference"
-      ],
-      "correctiveRoute": "CR-INFERENCE-01"
+    "released_public_form": {
+      "authoritativeForSecureHiddenKeyMastery": false,
+      "examples": ["diagnostic-public", "midterm-released-public", "final-released-public"],
+      "note": "Forms whose keys have appeared in public client code or public Git history are treated as released/open forms."
+    },
+    "teacher_review": {
+      "authoritativeForMastery": true,
+      "types": ["essay", "research", "speech", "debate", "portfolio", "oral_defense", "project", "complex_reasoning"]
+    },
+    "verified_mastery": {
+      "authoritativeForProgression": true,
+      "minimumPercent": 80,
+      "requiresDefinedEvidencePlan": true
     }
-  ],
-  "attemptHistory": {
-    "firstScore": null,
-    "latestScore": null,
-    "bestScore": null,
-    "attemptCount": 0,
-    "masteredAt": null
   },
-  "correction": {
-    "enabled": true,
-    "requiresReattempt": true
+  "assessmentRecord": {
+    "requiredFields": [
+      "assessmentId",
+      "title",
+      "purpose",
+      "evidenceClass",
+      "authority",
+      "skills",
+      "scoringModel",
+      "correctiveRoutes",
+      "accessibility"
+    ],
+    "attemptHistory": [
+      "firstScore",
+      "latestScore",
+      "bestScore",
+      "attemptCount",
+      "masteredAt",
+      "attemptedAt"
+    ]
+  },
+  "objectiveItem": {
+    "requiredFields": ["id", "type", "skills", "correctiveRoute"],
+    "rule": "A canonical objective item must have exactly one defensible answer and may not expose a supposedly protected key in public client code."
+  },
+  "performanceTask": {
+    "requiredFields": ["id", "skills", "rubric", "reviewAuthority", "studentAuthorshipRequired"],
+    "reviewAuthority": "human"
+  },
+  "retakePolicy": {
+    "correctionRequiredBelowMastery": true,
+    "freshOrMeaningfullyChangedEvidenceWhenNeeded": true,
+    "preservePriorMastery": true,
+    "lowerRetakeCannotEraseMastery": true,
+    "retryLimit": null
+  },
+  "diagnostic": {
+    "purpose": "formative-routing",
+    "blocksProgression": false,
+    "permanentPlacement": false
+  },
+  "publicReleasedForms": {
+    "diagnostic": "formative",
+    "midterm": "practice-review",
+    "final": "practice-review"
   },
   "accessibility": {
-    "printable": true,
     "keyboard": true,
-    "screenReader": true
+    "screenReader": true,
+    "printable": true,
+    "visibleFocus": true,
+    "alternateResponseModesWhereCompetencyPermits": true
   }
 }
