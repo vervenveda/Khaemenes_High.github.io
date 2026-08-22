@@ -1,4 +1,4 @@
-const CACHE='khaemenes-global-studies-9-v4';
+const CACHE='khaemenes-global-studies-9-v5';
 const SHELL=[
   './',
   './index.html',
