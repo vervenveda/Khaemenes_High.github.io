@@ -35,6 +35,14 @@
   loadSharedWidget(`${repositoryBase}/assets/vnv-beta-link.js`, "data-vnv-beta-loader");
   loadSharedWidget(`${repositoryBase}/assets/khaemenes-mentor-link.js`, "data-khaemenes-mentor-loader");
 
+  /*
+   * Science ProTools workflow layer. This shared controller adds only
+   * context-appropriate links to local-first research/lab tools. It does not
+   * read or transmit student progress, answers, scores, names, or localStorage.
+   * Independent quiz/test/exam surfaces are explicitly excluded by the layer.
+   */
+  loadSharedWidget(`${courseBase}science-protools-integration.js`, "data-science-protools-loader");
+
   function synchronizeBrowserChrome() {
     const dark = document.documentElement.dataset.theme === "dark";
     document.documentElement.style.colorScheme = dark ? "dark" : "light";
