@@ -1,62 +1,72 @@
-# Week 12 · Day 2 — Disorder Families, Dimensions & Diagnostic Challenges
+# Week 12 · Day 2 — Disorder Families as Maps, Not Labels
 
 **Essential Question:** How can categories organize clinical information without becoming labels that explain everything?
 
 ## Learning Objectives
 Students will be able to:
 - describe several broad disorder families at a literacy level;
-- explain heterogeneity within a diagnosis;
-- define comorbidity and symptom overlap;
+- explain heterogeneity, comorbidity, and symptom overlap;
 - distinguish categorical from dimensional description;
-- explain why base rates, medical factors, development, and context can complicate diagnosis;
+- explain why diagnosis does not automatically identify cause;
 - avoid self-diagnostic reasoning.
 
 ## Psychology Word of the Day
 **comorbidity** — the presence of more than one diagnosable condition in the same person.
 
 ## Vocabulary in Context
-heterogeneity · comorbidity · symptom overlap · dimensional model · categorical model · base rate · impairment · differential diagnosis · neurodevelopmental · psychotic · mood · anxiety
+heterogeneity · comorbidity · symptom overlap · dimensional model · categorical model · base rate · impairment · differential diagnosis
 
-## Core Reading
-Diagnostic categories help organize recurring patterns, but people with the same diagnosis can differ substantially in symptom pattern, severity, history, strengths, functioning, and treatment response. Symptoms also overlap across disorders and ordinary experience.
+## Compact Briefing Cards
+Instead of a long reading, students receive one short card for each broad family: anxiety, depressive/bipolar, obsessive-compulsive-related, trauma/stressor-related, psychotic, eating, and neurodevelopmental conditions.
 
-Students receive broad, non-sensational introductions to anxiety disorders; depressive and bipolar disorders; obsessive-compulsive and related disorders; trauma- and stressor-related disorders; psychotic disorders; eating disorders; and neurodevelopmental conditions. The lesson emphasizes function, heterogeneity, and professional assessment rather than memorizing diagnostic checklists.
+Each card contains only:
+- broad pattern studied;
+- one example of functional impact;
+- one reminder that symptoms overlap;
+- one reminder that classroom material is not diagnostic.
 
-Many psychological characteristics are dimensional: people vary along continua. Clinical systems often use thresholds for practical decisions, but a threshold does not imply that people on either side are fundamentally different kinds of humans.
+## Visual Model
+### Category vs. Dimension
+Students compare:
+- a continuous symptom/function distribution;
+- a practical clinical threshold;
+- overlapping people on both sides of that threshold.
+
+The goal is to see that a decision boundary can be useful without creating two fundamentally different kinds of people.
 
 ## Worked Example
-Two fictional patients have the same professional diagnosis but different difficulties and strengths. Students identify why the shared label does not imply identical symptoms, causes, treatment needs, or prognosis.
+Two fictional people have the same professional diagnosis but different difficulties, strengths, histories, and treatment responses.
+
+Conclusion: the shared category organizes information; it does not make the two people interchangeable.
 
 ## Psychological Scientist's Desk
-**Claim:** “If two disorders share symptoms, one of the diagnoses must be wrong.”
+**Claim:** “If two disorders share symptoms, one diagnosis must be wrong.”
 
-Students explain symptom overlap, comorbidity, differential diagnosis, and the need for broader assessment.
+Students explain overlap, comorbidity, and the need for broader assessment.
 
-## Data Lens
-Students examine a Venn-style fictional symptom matrix showing overlapping features across three diagnostic families. They calculate simple percentages and identify why one symptom has poor diagnostic specificity.
+## Data Lens — Overlap Matrix
+Students inspect a supplied table showing which fictional symptoms appear across three broad diagnostic families. They identify which features are common, which are less specific, and why one symptom is weak diagnostic evidence.
 
-## Claims Laboratory
-Evaluate:
-- “People with the same diagnosis are basically the same.”
-- “A diagnosis identifies the cause of the disorder.”
-- “Symptoms belong to only one disorder.”
-- “Crossing a diagnostic threshold changes someone into a different kind of person.”
+## Guided Investigation — Card Sort
+Students sort supplied statements into:
+- **category information**
+- **dimension information**
+- **possible overlap**
+- **not enough information**
 
-## Guided Investigation
-### Category vs. Dimension Lab
-Students compare a continuous fictional symptom/function distribution with a clinical decision threshold. They discuss what the threshold helps professionals do and what it does not prove about individual identity or cause.
+## Independent Assignment — One-Page Comparison
+Complete a structured **Classification Strengths / Classification Limits** sheet. No essay required.
 
-## Independent Assignment
-Create a two-column **Classification Strengths / Classification Limits** brief using supplied examples. Include heterogeneity, overlap, comorbidity, communication value, and one ethical risk.
+Required entries:
+- communication value;
+- heterogeneity;
+- symptom overlap;
+- comorbidity;
+- one ethical risk;
+- one responsible conclusion.
 
 ## Research Notebook Checkpoint
-If the semester project references a clinical population, specify:
-- how that population was identified;
-- whether diagnosis was professionally established;
-- what heterogeneity remains;
-- one measurement or sampling limitation.
-
-Otherwise, explicitly state that the project does not support diagnostic inference.
+If the semester project refers to a clinical population, identify how that population was established and one remaining source of heterogeneity. Otherwise state clearly that the project does not support diagnostic inference.
 
 ## Academic Journal Reflection
 How can a category be useful without being a complete explanation?
@@ -69,4 +79,4 @@ How can a category be useful without being a complete explanation?
 5. Why is a diagnosis not automatically a causal explanation?
 
 ## Completion Challenge
-Optional after completion. Best fit: **Concept Mosaic** using supplied course concepts, or **Psych Word Reveal**.
+Optional after completion. Best fit: **Concept Mosaic** or **Psych Word Reveal**.
