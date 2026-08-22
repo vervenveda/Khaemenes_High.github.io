@@ -25,7 +25,6 @@
   rewards.played ||= {};
   rewards.dismissed ||= {};
 
-  /* Theme */
   const themeButton = document.querySelector("[data-theme-toggle]");
   try { root.dataset.theme = localStorage.getItem(themeKey) || "light"; }
   catch { root.dataset.theme = "light"; }
@@ -42,7 +41,6 @@
     syncTheme();
   });
 
-  /* Mastery normalization */
   function normalizeMasteryRecord(record) {
     if (!record || typeof record !== "object") return null;
     const legacyScore = Number(record.score);
@@ -71,7 +69,6 @@
   });
   writeJSON(masteryKey, mastery);
 
-  /* Context */
   const weekMatch = window.location.pathname.match(/\/weeks\/week-(\d{2})\/?(?:index\.html)?$/i);
   const currentWeek = weekMatch ? Number(weekMatch[1]) : null;
   const currentUnit = currentWeek ? Math.ceil(currentWeek / 3) : null;
@@ -83,7 +80,7 @@
      ========================================================== */
   const ARCADE = "https://vervenveda.github.io/arcade.github.io/";
   const GAMES = {
-    affixsix: { title: "AffixSix™", url: `${ARCADE}AffixSix%E2%84%A2_index.html`, category: "Language", why: "word structure and language play" },
+    affixsix: { title: "AffixSix™", url: `${ARCADE}AffixSix%E2%84%A2_index.html`, category: "Strategy", why: "Connect-Six planning, pattern recognition, and anticipating an opponent" },
     hangman: { title: "Progressive Hangman", url: `${ARCADE}Hangman_index.html`, category: "Language", why: "spelling and vocabulary retrieval" },
     miniIQ: { title: "Mini IQ Reasoning Lab", url: `${ARCADE}IQ-mini_index.html`, category: "Reasoning", why: "logic, verbal analogy, and problem solving" },
     quantumIQ: { title: "Quantum IQ", url: `${ARCADE}IQ-Quantum_index.html`, category: "Reasoning", why: "extended adaptive reasoning" },
@@ -199,7 +196,6 @@
     render();
   }
 
-  /* Weekly evidence */
   function updateProgress() {
     const bar = document.querySelector("[data-course-progress]");
     const label = document.querySelector("[data-course-progress-label]");
@@ -230,7 +226,6 @@
   });
   updateProgress();
 
-  /* Mastery fields and gates */
   document.querySelectorAll("[data-mastery-score]").forEach(field => {
     const id = field.dataset.masteryScore;
     const record = normalizeMasteryRecord(mastery[id]);
@@ -313,7 +308,6 @@
   });
   renderPrerequisites();
 
-  /* Local notebook / print / search */
   document.querySelectorAll("[data-save-field]").forEach(field => {
     const key = `khae-ela9-field:${field.dataset.saveField}`;
     try { field.value = localStorage.getItem(key) || ""; } catch {}
@@ -333,9 +327,6 @@
     document.querySelectorAll("[data-search-card]").forEach(card => { card.hidden = Boolean(q && !card.textContent.toLowerCase().includes(q)); });
   });
 
-  /* ==========================================================
-     LearnA · 180-Day Vocabulary Strand
-     ========================================================== */
   const LEARNA_URL = `${ARCADE}Learn_a_New_Word_index.html`;
   const VOCAB_PATH_URL = "../../vocabulary/index.html";
   const unitApplicationFocus = [
