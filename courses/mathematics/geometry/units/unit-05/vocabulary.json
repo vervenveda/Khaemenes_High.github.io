@@ -1,12 +1,29 @@
 {
   "unit": 5,
   "terms": [
-    "similar",
-    "dilation",
-    "scale factor",
-    "corresponding sides",
-    "proportion",
-    "indirect measurement",
-    "scale drawing"
+    {"term":"similar figures","definition":"Figures with congruent corresponding angles and proportional corresponding lengths."},
+    {"term":"dilation","definition":"A transformation from a center that multiplies distances from the center by one scale factor."},
+    {"term":"center of dilation","definition":"The fixed point from which dilation rays originate."},
+    {"term":"scale factor","definition":"The ratio of an image length to its corresponding preimage length."},
+    {"term":"preimage","definition":"The original figure before a transformation."},
+    {"term":"image","definition":"The resulting figure after a transformation."},
+    {"term":"rigid motion","definition":"A translation, rotation, or reflection that preserves distances and angle measures."},
+    {"term":"similarity transformation","definition":"A sequence of rigid motions and a dilation that maps one figure to a similar figure."},
+    {"term":"corresponding vertices","definition":"Vertices that occupy matching positions in two related figures."},
+    {"term":"corresponding sides","definition":"Sides joining corresponding vertices in related figures."},
+    {"term":"AA similarity","definition":"Triangle similarity established by two pairs of congruent corresponding angles."},
+    {"term":"SSS similarity","definition":"Triangle similarity established when all three pairs of corresponding sides are proportional."},
+    {"term":"SAS similarity","definition":"Triangle similarity established by two proportional corresponding side pairs and congruent included angles."},
+    {"term":"included angle","definition":"The angle formed by the two sides being used in an SAS relationship."},
+    {"term":"proportion","definition":"An equation stating that two ratios are equal."},
+    {"term":"Triangle Proportionality Theorem","definition":"A line parallel to one side of a triangle divides the other two sides proportionally."},
+    {"term":"Side-Splitter Theorem","definition":"Another name for the Triangle Proportionality Theorem."},
+    {"term":"converse of the Triangle Proportionality Theorem","definition":"If a segment divides two sides of a triangle proportionally, that segment is parallel to the third side."},
+    {"term":"scale drawing","definition":"A drawing whose lengths are proportional to corresponding real lengths according to a stated scale."},
+    {"term":"scale model","definition":"A three-dimensional representation built with dimensions proportional to an actual object."},
+    {"term":"unit conversion","definition":"Rewriting a measurement in an equivalent unit before comparing or scaling quantities."},
+    {"term":"indirect measurement","definition":"Finding an inaccessible length by using relationships such as similarity instead of measuring it directly."},
+    {"term":"line of sight","definition":"A straight visual path between an observer and a target, often used in indirect-measurement models."},
+    {"term":"measurement error","definition":"The difference between a measured or estimated value and the actual value due to instrument, setup, or observation limits."}
   ]
 }
