@@ -8,7 +8,7 @@
 | 4 | Learning & Behavior | LOCKED | How does experience change behavior, and how can psychologists tell what kind of learning has occurred? |
 | 5 | Memory & Language | LOCKED | How do people encode, store, reconstruct, retrieve, and communicate information? |
 | 6 | Thinking, Intelligence & Decision-Making | LOCKED | How do people reason, solve problems, judge evidence, and evaluate their own thinking? |
-| 7 | Emotion & Motivation | IN DEVELOPMENT | Why do people feel, choose, and persist? |
+| 7 | Emotion & Motivation | LOCKED | Why do people feel, choose, and persist? |
 | 8 | Human Development | IN DEVELOPMENT | How do biology, experience, and culture shape development across life? |
 | 9 | Personality & Individual Differences | IN DEVELOPMENT | Why are people similar, different, and variable across situations? |
 | 10 | Social & Cultural Psychology | IN DEVELOPMENT | How do groups, culture, and social environments influence behavior? |
@@ -48,9 +48,20 @@
 | Controlled experimental evidence | “Changing X affected Y under these conditions…” |
 | Converging evidence | “Evidence across multiple studies and methods suggests…” |
 
+## Course-wide Interpretation Boundaries
+
+- Description is not explanation.
+- Association is not automatically causation.
+- A measure is not identical to the psychological construct it represents.
+- A group pattern does not define an individual.
+- Psychological explanation does not equal diagnosis.
+- Understanding behavior does not excuse harmful behavior.
+- Scientific conclusions should become stronger or weaker as evidence changes.
+
 ## Locked Curriculum Progress
 
-- **Weeks 1–6:** academically audited and locked
-- **30 daily lesson plans:** present
-- **Weeks 7–13:** reserved until each forensic audit is complete
+- **Weeks 1–7:** academically audited and locked
+- **35 daily lesson plans:** present
+- **Weeks 8–13:** reserved until each forensic audit is complete
 - **First cumulative checkpoint:** follows Week 4 and integrates Weeks 1–4
+- **Week 7 unified model:** Situation → Appraisal → Emotion → Motivation → Choice → Consequence
