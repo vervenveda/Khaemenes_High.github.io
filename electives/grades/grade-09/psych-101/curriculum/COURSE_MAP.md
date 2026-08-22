@@ -11,7 +11,7 @@
 | 7 | Emotion & Motivation | LOCKED | Why do people feel, choose, and persist? |
 | 8 | Human Development | LOCKED | How do biology, experience, relationships, and culture shape development across the lifespan? |
 | 9 | Personality & Individual Differences | LOCKED | How can psychologists describe relatively stable individual differences without reducing a person to a label? |
-| 10 | Social & Cultural Psychology | IN DEVELOPMENT | How do groups, culture, and social environments influence behavior? |
+| 10 | Social & Cultural Psychology | LOCKED | How do groups, relationships, culture, and social environments influence behavior without erasing individual agency? |
 | 11 | Mental & Physical Health Psychology | IN DEVELOPMENT | How do psychological science and behavior relate to health and well-being? |
 | 12 | Psychological Disorders, Treatment & Ethics | IN DEVELOPMENT | How does psychology study psychological difficulties responsibly? |
 | 13 | Applied Psychology & Research Synthesis | IN DEVELOPMENT | How can psychological science responsibly improve real-world decisions? |
@@ -59,15 +59,18 @@
 - Developmental averages are patterns, not personal deadlines or destinies.
 - Trait descriptions summarize tendencies; they do not define an entire person.
 - A personality score is evidence from a measure, not an identity or diagnosis.
+- Social influence changes probabilities and pressures; it does not erase agency.
+- Culture is context, not a personality assigned to every group member.
 - Scientific conclusions should become stronger or weaker as evidence changes.
 
 ## Locked Curriculum Progress
 
-- **Weeks 1–9:** academically audited and locked
-- **45 daily lesson plans:** present
-- **Weeks 10–13:** reserved until each forensic audit is complete
+- **Weeks 1–10:** academically audited and locked
+- **50 daily lesson plans:** present
+- **Weeks 11–13:** reserved until each forensic audit is complete
 - **Cumulative Assessment I:** follows Week 4 and integrates Weeks 1–4
 - **Cumulative Assessment II:** follows Week 8, covers Weeks 1–8 with emphasis on Weeks 5–8
 - **Week 7 unified model:** Situation → Appraisal → Emotion → Motivation → Choice → Consequence
 - **Week 8 development rule:** age-related group patterns do not define individual people
 - **Week 9 personality rule:** describe patterns carefully; never mistake a score or trait label for the whole person
+- **Week 10 social rule:** context matters; explanation is not excuse; group patterns are not individual destinies
