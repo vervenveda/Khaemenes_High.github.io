@@ -10,6 +10,7 @@ const SHELL=[
   './assets/global-studies-seal.svg',
   './assets/atlas-grid.svg',
   './assets/timeline-grid.svg',
+  './assets/week01-gold-standard-v1.js',
   './assets/grade09-socialstudies-mastery-v2.js',
   './assets/grade09-socialstudies-grade-engine-v1.js',
   './assets/grade09-socialstudies-archaemenes-upgrade.js',
@@ -19,24 +20,11 @@ const SHELL=[
   './teacher/index.html',
   './teacher/teacher.js'
 ];
-
-self.addEventListener('install',event=>event.waitUntil(
-  caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting())
-));
-
-self.addEventListener('activate',event=>event.waitUntil(
-  caches.keys()
-    .then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))
-    .then(()=>self.clients.claim())
-));
-
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{
   if(event.request.method!=='GET')return;
-  event.respondWith(
-    caches.match(event.request).then(cached=>cached||fetch(event.request).then(response=>{
-      const copy=response.clone();
-      caches.open(CACHE).then(c=>c.put(event.request,copy));
-      return response;
-    }).catch(()=>event.request.mode==='navigate'?caches.match('./offline.html'):undefined))
-  );
+  event.respondWith(caches.match(event.request).then(cached=>cached||fetch(event.request).then(response=>{
+    const copy=response.clone();caches.open(CACHE).then(c=>c.put(event.request,copy));return response;
+  }).catch(()=>event.request.mode==='navigate'?caches.match('./offline.html'):undefined)));
 });
