@@ -1,131 +1,20 @@
 {
-  "title": "Week 27 Quiz — Capitalism, Socialism, Labor, and Reform",
-  "points": 25,
-  "questions": [
-    {
-      "id": "W27Q1",
-      "prompt": "Which term best matches this definition: An economic system based largely on private ownership, markets, wage labor, and investment.",
-      "choices": [
-        "laissez-faire",
-        "collective bargaining",
-        "socialism",
-        "capitalism"
-      ],
-      "answer": 3,
-      "explanation": "Capitalism is the course term defined as: An economic system based largely on private ownership, markets, wage labor, and investment."
-    },
-    {
-      "id": "W27Q2",
-      "prompt": "Which term best matches this definition: The view that government should interfere minimally in economic exchange.",
-      "choices": [
-        "social insurance",
-        "capitalism",
-        "socialism",
-        "laissez-faire"
-      ],
-      "answer": 3,
-      "explanation": "Laissez-Faire is the course term defined as: The view that government should interfere minimally in economic exchange."
-    },
-    {
-      "id": "W27Q3",
-      "prompt": "Which term best matches this definition: A family of ideas favoring social or public control of major productive resources and greater economic equality.",
-      "choices": [
-        "social insurance",
-        "socialism",
-        "Marxism",
-        "capitalism"
-      ],
-      "answer": 1,
-      "explanation": "Socialism is the course term defined as: A family of ideas favoring social or public control of major productive resources and greater economic equality."
-    },
-    {
-      "id": "W27Q4",
-      "prompt": "Which term best matches this definition: A theory emphasizing class conflict, historical change, and collective ownership of production.",
-      "choices": [
-        "socialism",
-        "Marxism",
-        "collective bargaining",
-        "laissez-faire"
-      ],
-      "answer": 1,
-      "explanation": "Marxism is the course term defined as: A theory emphasizing class conflict, historical change, and collective ownership of production."
-    },
-    {
-      "id": "W27Q5",
-      "prompt": "Which term best matches this definition: Negotiation between workers acting together and employers.",
-      "choices": [
-        "Marxism",
-        "laissez-faire",
-        "social insurance",
-        "collective bargaining"
-      ],
-      "answer": 3,
-      "explanation": "Collective Bargaining is the course term defined as: Negotiation between workers acting together and employers."
-    },
-    {
-      "id": "W27Q6",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 27?",
-      "choices": [
-        "Industrial weapons and transport aided empire, but conquest also depended on local alliances, finance, medicine, and political divisions.",
-        "Capitalism and socialism contain diverse schools rather than one fixed model each.",
-        "World War I resulted from interacting causes including alliance commitments, imperial rivalry, nationalism, militarism, and crisis decisions.",
-        "Industrialization depended on agriculture, capital, coal, technology, colonial trade, transport, labor, and institutions."
-      ],
-      "answer": 1,
-      "explanation": "Capitalism and socialism contain diverse schools rather than one fixed model each."
-    },
-    {
-      "id": "W27Q7",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 27?",
-      "choices": [
-        "Labor reform emerged through unions, cooperatives, political parties, religious movements, mutual aid, and government regulation.",
-        "Colonial rule reorganized land, labor, borders, education, law, and trade for imperial priorities.",
-        "Factory production increased output while reorganizing time, skill, family labor, and workplace discipline.",
-        "Industrial technology increased destructive capacity while states mobilized soldiers, workers, colonies, finance, and information."
-      ],
-      "answer": 0,
-      "explanation": "Labor reform emerged through unions, cooperatives, political parties, religious movements, mutual aid, and government regulation."
-    },
-    {
-      "id": "W27Q8",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 27?",
-      "choices": [
-        "War pressures contributed to revolutions and the collapse of Russian, Ottoman, German, and Austro-Hungarian imperial structures.",
-        "Modern economies combine markets, public institutions, households, and nonprofit organizations in different proportions.",
-        "Industrial growth raised long-run productivity but generated severe inequality, pollution, dangerous work, and urban hardship.",
-        "Resistance ranged from armed conflict to legal petitions, religious movements, labor action, cultural preservation, and intellectual critique."
-      ],
-      "answer": 1,
-      "explanation": "Modern economies combine markets, public institutions, households, and nonprofit organizations in different proportions."
-    },
-    {
-      "id": "W27Q9",
-      "prompt": "What is the strongest method for evaluating “Economic Ideas and Worker Demands”?",
-      "choices": [
-        "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits.",
-        "Use only the most dramatic sentence because memorable details are the most reliable.",
-        "Reject the source if it contains a point of view because useful evidence must be neutral.",
-        "Accept the source if it was created during the period because primary sources are automatically accurate."
-      ],
-      "answer": 0,
-      "explanation": "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits."
-    },
-    {
-      "id": "W27Q10",
-      "prompt": "Which response demonstrates the strongest geographic or quantitative reasoning?",
-      "choices": [
-        "Ignore units and scale so attention stays on the overall appearance.",
-        "State the observed pattern, propose an explanation, and identify what the map or data cannot prove.",
-        "Use the visualization only if it confirms the original claim.",
-        "Assume that every mapped relationship is a direct cause."
-      ],
-      "answer": 1,
-      "explanation": "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
-    }
+  "title":"Week 27 Quiz — Capitalism, Socialism, Labor, and Reform",
+  "version":"2.0.0",
+  "masteryThreshold":80,
+  "points":25,
+  "questionIds":["W27Q1","W27Q2","W27Q3","W27Q4","W27Q5","W27Q6","W27Q7","W27Q8","W27Q9","W27Q10"],
+  "questions":[
+    {"id":"W27Q1","type":"multiple-choice","prompt":"Which distinction is most important when comparing capitalism, socialism, and mixed economies?","choices":["Treat each label as one fixed system with no internal differences","Identify who owns resources, how decisions are coordinated, what incentives operate, and how risks and benefits are distributed","Assume government participation makes an economy socialist","Assume private ownership means government has no economic role"],"answer":1,"explanation":"The course emphasizes diverse schools and specific institutional arrangements rather than treating economic labels as single fixed models."},
+    {"id":"W27Q2","type":"multiple-choice","prompt":"A labor petition demands shorter hours and safer workplaces. What is the strongest historical question to ask first?","choices":["Whether the petition agrees with our modern preferences","Who created it, for whom, under what conditions, and what evidence can corroborate its claims","Whether every worker shared the same view","Whether the petition is automatically true because it is primary evidence"],"answer":1,"explanation":"Source analysis begins with origin, audience, context, purpose, and corroboration."},
+    {"id":"W27Q3","type":"multiple-choice","prompt":"Which evidence would best evaluate whether a proposed wage increase improved household welfare?","choices":["Nominal wages alone","Wages together with prices, hours, employment, household needs, and other relevant evidence","The employer's opinion alone","A political slogan about wages"],"answer":1,"explanation":"Real welfare requires contextual measures rather than a single nominal number."},
+    {"id":"W27Q4","type":"multiple-choice","prompt":"Why should students distinguish description, prediction, and moral judgment in economic texts?","choices":["They are interchangeable","A description of how a system works does not automatically prove a prediction or establish that an outcome is morally desirable","Moral judgments are never allowed in history","Predictions are always more reliable than evidence"],"answer":1,"explanation":"Different kinds of claims require different evidence and reasoning."},
+    {"id":"W27Q5","type":"multiple-choice","prompt":"Which statement best explains why labor reform developed through multiple organizations and strategies?","choices":["Workers used only strikes","Reform could involve unions, cooperatives, mutual aid, political parties, religious movements, petitions, and government regulation","Reform came only from employers","Government regulation eliminated the need for collective action"],"answer":1,"explanation":"The week treats labor reform as a broad historical process involving multiple forms of organization and action."},
+    {"id":"W27Q6","type":"multiple-choice","prompt":"A source argues that laissez-faire will produce prosperity. Which evidence would most directly test the prediction historically?","choices":["A definition of laissez-faire","Comparable evidence about production, wages, prices, employment, working conditions, and distribution before and after relevant policy changes","A later political speech","The source's popularity"],"answer":1,"explanation":"Predictions should be tested against relevant historical outcomes and appropriate comparison."},
+    {"id":"W27Q7","type":"multiple-choice","prompt":"A cooperative reformer and Marxist critic both oppose aspects of industrial capitalism but propose different solutions. What should a student conclude?","choices":["They must actually support identical systems","Criticism of a system does not imply agreement about the alternative; compare mechanisms, goals, institutions, and assumptions","One source must be incorrect","All socialist traditions are identical"],"answer":1,"explanation":"The course explicitly distinguishes diverse socialist and reform traditions."},
+    {"id":"W27Q8","type":"multiple-choice","prompt":"A map shows strikes concentrated near industrial cities. What can the map establish most directly?","choices":["Industrialization caused every strike","There is a spatial association that can generate questions about labor organization, industry, migration, and political conditions","All workers in those cities were union members","Strikes had the same causes everywhere"],"answer":1,"explanation":"Maps reveal spatial patterns; causation requires additional evidence."},
+    {"id":"W27Q9","type":"multiple-choice","prompt":"What is the strongest method for evaluating “Economic Ideas and Worker Demands”?","choices":["Compare it with independent evidence and evaluate origin, purpose, context, perspective, and limits","Accept it automatically because it is primary evidence","Reject it because it has a point of view","Use only its strongest sentence"],"answer":0,"explanation":"Historical reasoning requires sourcing, contextualization, and corroboration."},
+    {"id":"W27Q10","type":"multiple-choice","prompt":"Which response best answers the essential question: What should markets, governments, employers, workers, and communities each control?","choices":["One institution should control everything","No institution should have responsibilities","A defensible answer should specify institutional roles, explain tradeoffs, use historical evidence, and acknowledge a competing interpretation","The answer is determined by whichever ideology uses the strongest label"],"answer":2,"explanation":"The course asks students to reason about institutional design, tradeoffs, evidence, and competing interpretations rather than memorize an ideology."}
   ],
-  "shortResponse": {
-    "prompt": "Using at least two specific pieces of evidence, answer: What should markets, governments, employers, workers, and communities each control?",
-    "points": 5,
-    "exemplar": "A full-credit response states a defensible answer to the essential question, uses two accurate details from the week, explains how each detail supports the claim, and acknowledges one complexity or limitation."
-  }
+  "shortResponse":{"id":"W27SR1","type":"evidence-response","prompt":"Using at least three specific pieces of historical evidence, answer: What should markets, governments, employers, workers, and communities each control? Compare at least two economic or reform traditions and identify one tradeoff or limitation in your proposed arrangement.","points":5,"rubric":{"5":"Defensible institutional claim; three accurate pieces of evidence; meaningful comparison of two traditions; clear tradeoff/limitation; reasoning is historically grounded.","4":"Defensible claim; three relevant pieces of evidence; comparison and tradeoff mostly clear.","3":"Claim with two relevant pieces of evidence and some comparison.","2":"General claim with limited evidence or weak comparison.","1":"Minimal or unsupported response.","0":"No relevant response."}}
 }
