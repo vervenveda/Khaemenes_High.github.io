@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "component_set": "KH-MATH-PA",
-  "release": "2026.08.19-security-hardening-v1",
+  "release": "2026.08.22-placement-hardening-v2",
   "hash_format": "git-blob-sha1",
   "components": [
-    {"path":"assets/prealgebra-archaemenes-upgrade.js","sha":"15b393830f4711d9d513636f3e24b0f281820c3d"},
+    {"path":"assets/prealgebra-archaemenes-upgrade.js","sha":"abead592b80dbb4642fcb1572870da47567755a9"},
     {"path":"assets/prealgebra-archaemenes-upgrade-core.js","sha":"567269eef4fc218a6a70b644c7c15fd41ebd51f2"},
     {"path":"assessments/assets/exam-engine.js","sha":"ef387d085f615387ebe1a985d1eebbcc57e811da"},
     {"path":"assessments/assessment-map.json","sha":"23f2384988530d11b7d82221944fa804178ea49a"},
