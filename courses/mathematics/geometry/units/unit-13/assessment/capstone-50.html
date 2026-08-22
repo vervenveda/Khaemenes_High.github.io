@@ -1,0 +1,62 @@
+<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>50-Question Geometry Capstone</title><link rel="stylesheet" href="../../../assets/styles.css?v=geometry-1"><style>.cap-q{margin:18px 0;padding:18px;border:1px solid rgba(255,255,255,.14);border-radius:14px}.cap-q h3{margin-top:0}.cap-q label{display:block;margin:8px 0}.cap-q input[type=text],.cap-q textarea{width:100%;box-sizing:border-box;padding:10px;background:transparent;color:inherit;border:1px solid rgba(255,255,255,.25);border-radius:8px}.cap-q textarea{min-height:110px}.cap-section{margin-top:28px}.score-box{margin:24px 0;padding:18px;border:1px solid rgba(255,255,255,.2);border-radius:14px}.teacher-note{opacity:.8}</style></head><body><header class="site-header"><div class="wrap header-inner"><div class="brand-group"><a class="brand-home" href="https://khaemenesacademy.org/">K</a><a class="brand-copy" href="../../../index.html"><strong>Khaemenes Geometry</strong><small>Unit 13 Cumulative Capstone</small></a></div><div class="header-tools"><a class="header-control" href="../index.html">Unit 13</a><a class="header-control" href="../../../assessments/final.html">Final Exam</a><button class="header-control" onclick="print()">Print / Save PDF</button></div></div></header><main class="assessment-shell"><div class="assessment-head"><p class="eyebrow">Week 35 · Additional assessment</p><h1>50-Question Cumulative Geometry Capstone</h1><p>This capstone covers Units 1–12 and is completed <strong>in addition to</strong> the separate comprehensive final examination. Questions 1–25 are multiple choice, 26–40 are fill-in/short mathematical responses, and 41–50 are mathematical judgment/explanation responses.</p></div><section class="visual-card"><h2>Mastery contract</h2><p>Target: <strong>80% plus corrections</strong>. Multiple-choice items are auto-scored. Short and explanation responses require teacher review using the answer guide. Corrections must explain the reasoning error, not merely replace an answer.</p></section><form id="capstoneForm"><section class="cap-section"><h2>Part A · Multiple Choice — 25 questions</h2><div id="mcRoot"></div></section><section class="cap-section"><h2>Part B · Fill-In / Short Mathematical Response — 15 questions</h2><div id="shortRoot"></div></section><section class="cap-section"><h2>Part C · Mathematical Judgment &amp; Explanation — 10 questions</h2><p class="teacher-note">These prompts assess responsible mathematical reasoning: evidence, uncertainty, validation, correction, and justified claims. They do not assess personal morality or ideology.</p><div id="explainRoot"></div></section><div class="assessment-controls"><button class="btn primary" type="button" id="scoreBtn">Score Objective Portion</button><button class="btn" type="button" id="resetBtn">New Attempt</button></div><div class="score-box" id="scoreBox">Objective score not yet calculated. Teacher-reviewed responses remain pending.</div></form></main><script>
+const MC=[
+['A diagram looks like a right angle but has no marking or theorem establishing 90°. What is justified?',['It is 90°','It is approximately 90°','Insufficient evidence to claim 90°','All drawn angles are exact'],2],
+['Which transformation always preserves distance?',['Dilation with scale factor 2','Translation','Nonuniform stretch','Perspective projection'],1],
+['Two triangles have sides 5,7,9 and 5,7,9. Strongest relationship?',['Similar only','Congruent by SSS','No relationship','AAA congruent'],1],
+['Lines have slopes 3/4 and -4/3. They are:',['parallel','perpendicular','coincident','insufficient'],1],
+['A dilation has scale factor 3. A 4 cm side becomes:',['1 cm','7 cm','12 cm','64 cm'],2],
+['A right triangle has legs 8 and 15. Hypotenuse?',['17','23','7','289'],0],
+['Which condition alone guarantees a quadrilateral is a parallelogram?',['One pair of opposite sides congruent','Both pairs of opposite sides parallel','Diagonals congruent','One right angle'],1],
+['Radius 5. Circumference is:',['10π','25π','5π','20π'],0],
+['A parabola is best described as points equidistant from:',['two foci','a focus and a directrix','a center and tangent','two parallel lines'],1],
+['A rectangle is 12 by 7. Area?',['19','38','84','168'],2],
+['A cube side doubles. Volume is multiplied by:',['2','4','6','8'],3],
+['A 1:50 plan length is 2.4 cm. Actual length?',['0.048 m','0.48 m','1.2 m','12 m'],2],
+['A student gets the correct answer using an invalid theorem. What is true?',['The proof is valid because the answer is right','The proof still fails','The theorem becomes valid','No correction is needed'],1],
+['Which is irrelevant to finding a 9-12 right triangle hypotenuse?',['leg 9','leg 12','Pythagorean theorem','printer resolution 300 dpi'],3],
+['Two figures have corresponding side ratios all 2:1 and equal corresponding angles. They are:',['congruent only','similar','unrelated','perpendicular'],1],
+['An inscribed angle intercepts an 80° arc. Its measure is:',['40°','80°','160°','20°'],0],
+['A triangle has sides 3,4,8. It is:',['possible','impossible by triangle inequality','right','equilateral'],1],
+['Distance between (0,0) and (6,8)?',['10','14','48','100'],0],
+['A model gives 51,54,57 across tested cases; threshold is 50. Best claim?',['Output never changes','Tested decision is robust','Works under all possible conditions','Model is invalid'],1],
+['Which evidence best validates a computed polygon area?',['Repeat same keystrokes','Independent decomposition or coordinate method','Make diagram prettier','Ask a friend if it looks right'],1],
+['A net folds to six congruent squares. Solid?',['tetrahedron','cube','cone','cylinder'],1],
+['If two parallel lines are cut by a transversal, alternate interior angles are:',['supplementary always','congruent','right angles','undefined'],1],
+['Which statement overclaims evidence?',['The tested cases stayed above threshold','The model passed the tested range','Therefore it works in every real-world condition','The result depends on stated assumptions'],2],
+['A CAD result conflicts with verified coordinate calculations. First response?',['Trust CAD automatically','Trust hand work automatically','Audit inputs, units, settings, and calculations','Average the two answers'],2],
+['Two side lengths 7 and 11 are given for a triangle. Exact area?',['38.5','77','18','Cannot be determined from those facts alone'],3]
+];
+const SHORT=[
+['Write the converse of: If two angles are vertical angles, then they are congruent.'],
+['Reflect the point (4,-3) across the y-axis.'],
+['Name the congruence theorem for two sides and the included angle.'],
+['Find the slope through (2,1) and (8,9).'],
+['A scale factor is 1.5 and the original side is 8 cm. Find the image side.'],
+['Find sin θ for a right triangle with opposite=6 and hypotenuse=10. Simplify.'],
+['Find the sum of the interior angles of a hexagon.'],
+['A circle has diameter 14 cm. Give its radius.'],
+['Find the midpoint of (-2,4) and (6,10).'],
+['Find the area of a triangle with base 12 cm and height 9 cm.'],
+['Find the volume of a rectangular prism 4 cm × 5 cm × 9 cm.'],
+['On a 1:100 drawing, 3.5 cm represents how many meters?'],
+['State one additional piece of information that would make the exact area of a triangle with only two known sides determinable.'],
+['Complete the evidence chain: conclusion → calculation/proof → ________ → source/assumption.'],
+['A threshold is 45 m² and low/base/high outputs are 46.5, 48, 49.5. Is the tested decision robust or fragile?']
+];
+const EXPLAIN=[
+['A diagram appears to show parallel lines but no markings, slope evidence, or theorem establishes parallelism. Explain what you may and may not conclude.'],
+['Your calculator and CAD tool agree, but both used the same incorrect source measurement. Explain why agreement does not finish validation.'],
+['A teammate discovers a verified calculation error after the portfolio is polished. Explain the mathematically responsible next step and why.'],
+['A model changes numerically when an input changes, but every tested result remains safely above the decision threshold. Explain the difference between numerical sensitivity and decision fragility.'],
+['A reviewer challenges your result only because “the drawing looks wrong,” while verified dimensions support your model. Explain how to respond without dismissing legitimate future evidence.'],
+['Explain why “insufficient information” can be a stronger mathematical answer than guessing a number.'],
+['A conclusion is true but one step of its proof is invalid. Explain why the proof must still be repaired.'],
+['A model was tested over a limited measurement range. Explain why claiming it works under all real-world conditions would be an overstatement.'],
+['A software tool reports perpendicular lines, while slopes from entered endpoints multiply to -0.8. Describe an audit process before accepting either result.'],
+['Describe one way your mathematical reasoning should change when new verified evidence contradicts your original conclusion.']
+];
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function render(){document.getElementById('mcRoot').innerHTML=MC.map((q,i)=>`<article class="cap-q"><h3>${i+1}. ${esc(q[0])}</h3>${q[1].map((o,j)=>`<label><input type="radio" name="mc${i}" value="${j}"> ${String.fromCharCode(65+j)}. ${esc(o)}</label>`).join('')}</article>`).join('');document.getElementById('shortRoot').innerHTML=SHORT.map((q,i)=>`<article class="cap-q"><h3>${i+26}. ${esc(q[0])}</h3><input type="text" name="short${i}" autocomplete="off"></article>`).join('');document.getElementById('explainRoot').innerHTML=EXPLAIN.map((q,i)=>`<article class="cap-q"><h3>${i+41}. ${esc(q[0])}</h3><textarea name="explain${i}"></textarea></article>`).join('');}
+function score(){let correct=0,answered=0;MC.forEach((q,i)=>{const x=document.querySelector(`input[name=mc${i}]:checked`);if(x){answered++;if(Number(x.value)===q[2])correct++;}});const pct=Math.round(correct/MC.length*100);localStorage.setItem('geometry_u13_capstone_objective',JSON.stringify({correct,total:MC.length,pct,answered,at:new Date().toISOString()}));document.getElementById('scoreBox').innerHTML=`<strong>Multiple-choice score: ${correct}/${MC.length} (${pct}%).</strong><br>Answered ${answered}/${MC.length}. Questions 26–50 remain teacher-reviewed. The overall 50-question capstone result is not complete until those responses are evaluated and corrections are finished when required.`;}
+document.getElementById('scoreBtn').addEventListener('click',score);document.getElementById('resetBtn').addEventListener('click',()=>{if(confirm('Clear this capstone attempt?')){document.getElementById('capstoneForm').reset();localStorage.removeItem('geometry_u13_capstone_objective');document.getElementById('scoreBox').textContent='Objective score not yet calculated. Teacher-reviewed responses remain pending.';}});render();
+</script></body></html>
