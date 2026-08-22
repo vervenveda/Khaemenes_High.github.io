@@ -27,6 +27,7 @@
 
   const courseKey = "khae-ela9-progress-v1";
   const masteryKey = "khae-ela9-mastery-v1";
+  const vocabKey = "khae-ela9-vocabulary-v1";
   const MASTERY_THRESHOLD = 80;
 
   const load = () => {
@@ -39,6 +40,11 @@
     catch { return {}; }
   };
 
+  const loadVocabulary = () => {
+    try { return JSON.parse(localStorage.getItem(vocabKey) || "{}"); }
+    catch { return {}; }
+  };
+
   const save = data => {
     try { localStorage.setItem(courseKey, JSON.stringify(data)); } catch {}
   };
@@ -47,8 +53,13 @@
     try { localStorage.setItem(masteryKey, JSON.stringify(data)); } catch {}
   };
 
+  const saveVocabulary = data => {
+    try { localStorage.setItem(vocabKey, JSON.stringify(data)); } catch {}
+  };
+
   const progress = load();
   const mastery = loadMastery();
+  const vocabulary = loadVocabulary();
 
   function normalizeMasteryRecord(record) {
     if (!record || typeof record !== "object") return null;
@@ -263,4 +274,102 @@
       });
     });
   }
+
+  /* ==========================================================
+     LearnA · One New Word Every Instructional Day
+     Auto-injected into all 36 English 9 weekly lesson pages.
+     5 days/week × 36 weeks = 180 vocabulary launches.
+     Formative enrichment only; never substitutes for mastery.
+     ========================================================== */
+  const LEARNA_URL = "https://vervenveda.github.io/arcade.github.io/Learn_a_New_Word_index.html";
+  const VOCAB_PATH_URL = "../../vocabulary/index.html";
+  const vocabMatch = window.location.pathname.match(/\/weeks\/week-(\d{2})\/?(?:index\.html)?$/i);
+
+  const unitApplicationFocus = [
+    "Use the word to sharpen observation, inference, evidence, or sentence-level precision.",
+    "Test whether the word helps compare mythic patterns without flattening cultural difference.",
+    "Use the word purposefully in narrative craft, voice, characterization, conflict, or revision.",
+    "Explore sound, connotation, imagery, figurative meaning, form, or performance through the word.",
+    "Apply the word to dramatic interpretation, conflict, motivation, stagecraft, or seminar reasoning.",
+    "Use the word to improve rhetorical precision, audience awareness, reasoning, evidence, or public voice.",
+    "Interrogate the word's meaning as you research: scope, provenance, connotation, uncertainty, and claim fit matter.",
+    "Use the word only if it improves explanatory or technical precision; test whether a reader would understand it.",
+    "Apply the word to a sustained interpretation, then test whether later textual evidence changes the usage or claim.",
+    "Use the word in argument only when it clarifies scope, evidence, warrants, tradeoffs, or qualification rather than decorating the prose.",
+    "Examine how the word changes audience interpretation across text, caption, layout, sequence, or another medium.",
+    "Use the word in capstone reflection or defense only when artifact evidence supports the distinction it makes."
+  ];
+
+  const dailyMoves = [
+    { title: "Hear & Define", prompt: "Hear the pronunciation, read both definitions, then restate the meaning accurately in your own words." },
+    { title: "Inspect & Distinguish", prompt: "Inspect part of speech, origin, synonyms, register, and connotation. Name one near-synonym that would change the meaning." },
+    { title: "Apply to Today's Thinking", prompt: "Use the word in a sentence connected directly to today's Language Arts work. The sentence must demonstrate the meaning rather than merely contain the word." },
+    { title: "Challenge the Choice", prompt: "Ask whether the word actually improves precision. Compare it with a simpler alternative and keep the stronger choice for the audience and purpose." },
+    { title: "Retrieve & Retain", prompt: "Complete LearnA's quick quiz, mark the word learned when appropriate, and reuse one earlier word naturally if it improves today's reflection." }
+  ];
+
+  function vocabCompletedCount() {
+    return Array.from({ length: 180 }, (_, i) => Boolean(vocabulary[`day-${String(i + 1).padStart(3, "0")}`])).filter(Boolean).length;
+  }
+
+  function injectDailyVocabulary() {
+    if (!vocabMatch || document.getElementById("daily-vocabulary-launch")) return;
+    const week = Number(vocabMatch[1]);
+    if (!Number.isInteger(week) || week < 1 || week > 36) return;
+
+    const unit = Math.ceil(week / 3);
+    const startDay = (week - 1) * 5 + 1;
+    const section = document.createElement("section");
+    section.id = "daily-vocabulary-launch";
+    section.className = "section-alt";
+
+    const cards = dailyMoves.map((move, index) => {
+      const courseDay = startDay + index;
+      const key = `day-${String(courseDay).padStart(3, "0")}`;
+      const done = Boolean(vocabulary[key]);
+      return `<article class="card day-card" data-vocab-card="${key}">
+        <span class="day-label">Day ${index + 1} · Course Day ${courseDay}</span>
+        <h3>${move.title}</h3>
+        <p>${move.prompt}</p>
+        <p><strong>Unit ${unit} application:</strong> ${unitApplicationFocus[unit - 1]}</p>
+        <div class="actions">
+          <a class="btn primary" href="${LEARNA_URL}" target="_blank" rel="noopener noreferrer">Open Today's LearnA Word</a>
+          <button class="btn" type="button" data-vocab-complete="${key}" aria-pressed="${done}">${done ? "Daily Word Recorded ✓" : "Record Daily Word"}</button>
+        </div>
+      </article>`;
+    }).join("");
+
+    section.innerHTML = `<div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">LearnA · Daily Vocabulary Launch</p>
+        <h2>One new word every instructional day.</h2>
+        <p>Open LearnA on the day you complete each lesson. Use that day's word as a five-minute language-and-critical-thinking launch: hear → define → inspect → apply → challenge → retain.</p>
+      </div>
+      <div class="notice" data-vocab-summary>${vocabCompletedCount()} of 180 daily vocabulary launches recorded locally. Vocabulary practice is formative enrichment and does not satisfy or bypass the 80% mastery gate.</div>
+      <div class="grid day-grid" style="margin-top:16px">${cards}</div>
+      <div class="actions" style="margin-top:16px">
+        <a class="btn" href="${VOCAB_PATH_URL}">Open 180-Day Vocabulary Path</a>
+        <a class="btn" href="https://artist1970.github.io/Eiren.github.io/" target="_blank" rel="noopener noreferrer">Ask Eiren to Test Precision</a>
+      </div>
+    </div>`;
+
+    const quickNav = document.querySelector(".quick-nav");
+    if (quickNav) quickNav.insertAdjacentElement("afterend", section);
+    else document.querySelector("main")?.prepend(section);
+
+    section.querySelectorAll("[data-vocab-complete]").forEach(button => {
+      button.addEventListener("click", () => {
+        const key = button.dataset.vocabComplete;
+        vocabulary[key] = !vocabulary[key];
+        saveVocabulary(vocabulary);
+        const done = Boolean(vocabulary[key]);
+        button.setAttribute("aria-pressed", String(done));
+        button.textContent = done ? "Daily Word Recorded ✓" : "Record Daily Word";
+        const summary = section.querySelector("[data-vocab-summary]");
+        if (summary) summary.textContent = `${vocabCompletedCount()} of 180 daily vocabulary launches recorded locally. Vocabulary practice is formative enrichment and does not satisfy or bypass the 80% mastery gate.`;
+      });
+    });
+  }
+
+  injectDailyVocabulary();
 })();
