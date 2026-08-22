@@ -40,6 +40,9 @@
   /* Optional positive reinforcement after genuine science-success events. */
   loadSharedWidget(`${courseBase}science-success-challenges.js`, "data-science-success-challenges-loader");
 
+  /* Distinct one-time celebration after full verified unit mastery. */
+  loadSharedWidget(`${courseBase}science-unit-mastery-celebration.js`, "data-science-unit-mastery-loader");
+
   function synchronizeBrowserChrome() {
     const dark = document.documentElement.dataset.theme === "dark";
     document.documentElement.style.colorScheme = dark ? "dark" : "light";
