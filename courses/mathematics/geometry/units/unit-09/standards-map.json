@@ -1,24 +1,17 @@
 {
   "unit": 9,
-  "domains": [
-    "Loci",
-    "Analytic geometry",
-    "Distance",
-    "Conic connections"
-  ],
-  "practices": [
-    "Make sense of problems",
-    "Reason abstractly and quantitatively",
-    "Construct viable arguments",
-    "Model with mathematics",
-    "Use tools strategically",
-    "Attend to precision",
-    "Look for structure"
-  ],
-  "evidence": [
-    "Printable lesson work",
-    "Mastery check",
-    "Applied investigation",
-    "Reflection and correction"
-  ]
+  "domains": ["Loci", "Analytic geometry", "Distance", "Geometric systems", "Conic connections", "Spatial partitioning and design"],
+  "practices": ["Make sense of problems", "Reason abstractly and quantitatively", "Construct viable arguments", "Model with mathematics", "Use tools strategically", "Attend to precision", "Look for structure"],
+  "lessonEvidence": {
+    "u09-l01": "Describe complete loci from fixed-distance, equidistance, boundary, and region conditions.",
+    "u09-l02": "Use perpendicular- and angle-bisector equidistance theorems, converses, constructions, and coordinate reasoning.",
+    "u09-l03": "Interpret perpendicular distance as shortest distance and calculate point-to-line distance in coordinate settings.",
+    "u09-l04": "Translate simultaneous geometric conditions into systems, solve intersections, and verify candidate solutions.",
+    "u09-l05": "Classify circle-line relationships using center-to-line distance and connect them to algebraic intersection counts.",
+    "u09-l06": "Define and derive parabolas through focus-directrix equidistance and interpret standard-form parameters.",
+    "u09-l07": "Construct and interpret nearest-site/Voronoi regions using perpendicular-bisector boundaries and distance comparisons."
+  },
+  "unitEvidence": ["Seven printable lesson artifacts", "Differentiated practice across Foundation, Core, and Extended pathways", "Balanced mastery evidence covering every lesson identity", "Applied investigation connecting analytic geometry to a design decision", "Written reflection and correction after assessment"],
+  "masteryTarget": 80,
+  "humanReviewBoundary": "Automated checks can verify structure, coverage, answer metadata, and required terminology. A qualified reviewer must still inspect mathematical exposition, diagrams, accessibility, open-response quality, and whether applications are pedagogically appropriate."
 }
