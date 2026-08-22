@@ -6,6 +6,7 @@
   const coreSrc = new URL("assessment-engine-core.js", scriptEl?.src || location.href).href;
   const CLASSIFICATION = "public-self-check-nonconfidential";
   const RESULT_SCHEMA = "khaemenes-unit-mastery-result-v3";
+  const NAIB_KEY = "naib:math-prealgebra:course-mastery:u01";
 
   function hardenStoredResult() {
     if (!config?.storage_key) return null;
@@ -26,10 +27,43 @@
         review_required: true
       };
       localStorage.setItem(config.storage_key, JSON.stringify(result));
+      writeNaibProfile(result);
       return result;
     } catch {
       return null;
     }
+  }
+
+  function writeNaibProfile(result) {
+    if (!result || typeof result !== "object") return;
+    const domains = result.domains || {};
+    const strand_scores = Object.fromEntries(Object.entries(domains).map(([name, values]) => {
+      const total = Number(values?.total) || 0;
+      const correct = Number(values?.correct) || 0;
+      return [name, total ? Math.round((correct / total) * 100) : 0];
+    }));
+    const percent = Number.isFinite(Number(result.percent)) ? Number(result.percent) : 0;
+    const profile = {
+      schema_version: "1.0",
+      profile_type: "course_mastery",
+      course_id: "math-prealgebra",
+      unit_id: "u01",
+      assessment_id: "KH-MATH-PA-U01-MASTERY",
+      assessment_version: "2026.08.22",
+      overall_percent: percent,
+      raw_score: Number(result.score) || 0,
+      total: Number(result.total) || 20,
+      strand_scores,
+      strengths: Object.entries(strand_scores).filter(([,v]) => v >= 80).map(([k]) => k),
+      refresh_priorities: Object.entries(strand_scores).filter(([,v]) => v < 80).map(([k]) => k),
+      mastery_threshold: Number(result.threshold ?? config?.threshold ?? 80),
+      mastered: Boolean(result.passed ?? percent >= Number(config?.threshold ?? 80)),
+      correction_status: percent >= Number(config?.threshold ?? 80) ? "not_required" : "required",
+      source_storage_key: config?.storage_key || null,
+      timestamp: result.completed_at || new Date().toISOString(),
+      trust: result.trust || null
+    };
+    localStorage.setItem(NAIB_KEY, JSON.stringify(profile));
   }
 
   function decorate() {
@@ -44,12 +78,12 @@
       const notice = document.createElement("p");
       notice.id = "masteryTrustNotice";
       notice.className = "notice";
-      notice.innerHTML = "<strong>Learning mastery check:</strong> this public self-check supports the 80% learning gate, corrections, and progress review. Its browser-local result is editable and is not a confidential, digitally signed, or independently authenticated academic record.";
+      notice.innerHTML = "<strong>Learning mastery check:</strong> this public self-check supports the 80% learning gate, corrections, progress review, and NAIB skill profiling. Its browser-local result is editable and is not a confidential, digitally signed, or independently authenticated academic record.";
       hero.appendChild(notice);
     }
 
     if (resultMessage && localStorage.getItem(config?.storage_key || "")) {
-      resultMessage.textContent = "Saved locally as an unverified learning-mastery result. Parent/administrator review is required before using it as portfolio evidence.";
+      resultMessage.textContent = "Saved locally as an unverified learning-mastery result and synchronized to the local NAIB course-mastery profile. Parent/administrator review is required before using it as portfolio evidence.";
     }
   }
 
