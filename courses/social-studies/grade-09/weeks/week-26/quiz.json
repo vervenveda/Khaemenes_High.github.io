@@ -1,131 +1,20 @@
 {
   "title": "Week 26 Quiz — Industrial Revolution",
+  "version": "2.0.0",
+  "masteryThreshold": 80,
   "points": 25,
+  "questionIds": ["W26Q1","W26Q2","W26Q3","W26Q4","W26Q5","W26Q6","W26Q7","W26Q8","W26Q9","W26Q10"],
   "questions": [
-    {
-      "id": "W26Q1",
-      "prompt": "Which term best matches this definition: The expansion of machine production, factories, and fossil-fuel energy.",
-      "choices": [
-        "capital",
-        "labor union",
-        "industrialization",
-        "urbanization"
-      ],
-      "answer": 2,
-      "explanation": "Industrialization is the course term defined as: The expansion of machine production, factories, and fossil-fuel energy."
-    },
-    {
-      "id": "W26Q2",
-      "prompt": "Which term best matches this definition: Growth in the proportion of people living in towns and cities.",
-      "choices": [
-        "urbanization",
-        "labor union",
-        "division of labor",
-        "capital"
-      ],
-      "answer": 0,
-      "explanation": "Urbanization is the course term defined as: Growth in the proportion of people living in towns and cities."
-    },
-    {
-      "id": "W26Q3",
-      "prompt": "Which term best matches this definition: The separation of production into specialized tasks.",
-      "choices": [
-        "urbanization",
-        "division of labor",
-        "labor union",
-        "capital"
-      ],
-      "answer": 1,
-      "explanation": "Division Of Labor is the course term defined as: The separation of production into specialized tasks."
-    },
-    {
-      "id": "W26Q4",
-      "prompt": "Which term best matches this definition: Wealth or productive resources invested to generate further value.",
-      "choices": [
-        "division of labor",
-        "externality",
-        "capital",
-        "labor union"
-      ],
-      "answer": 2,
-      "explanation": "Capital is the course term defined as: Wealth or productive resources invested to generate further value."
-    },
-    {
-      "id": "W26Q5",
-      "prompt": "Which term best matches this definition: An organization of workers formed to negotiate or act collectively.",
-      "choices": [
-        "capital",
-        "labor union",
-        "externality",
-        "urbanization"
-      ],
-      "answer": 1,
-      "explanation": "Labor Union is the course term defined as: An organization of workers formed to negotiate or act collectively."
-    },
-    {
-      "id": "W26Q6",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 26?",
-      "choices": [
-        "Industrial weapons and transport aided empire, but conquest also depended on local alliances, finance, medicine, and political divisions.",
-        "Capitalism and socialism contain diverse schools rather than one fixed model each.",
-        "The American, French, Haitian, and Latin American revolutions influenced one another but arose from distinct social structures.",
-        "Industrialization depended on agriculture, capital, coal, technology, colonial trade, transport, labor, and institutions."
-      ],
-      "answer": 3,
-      "explanation": "Industrialization depended on agriculture, capital, coal, technology, colonial trade, transport, labor, and institutions."
-    },
-    {
-      "id": "W26Q7",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 26?",
-      "choices": [
-        "Colonial rule reorganized land, labor, borders, education, law, and trade for imperial priorities.",
-        "Labor reform emerged through unions, cooperatives, political parties, religious movements, mutual aid, and government regulation.",
-        "Rights declarations became tools for groups excluded by original revolutionary settlements.",
-        "Factory production increased output while reorganizing time, skill, family labor, and workplace discipline."
-      ],
-      "answer": 3,
-      "explanation": "Factory production increased output while reorganizing time, skill, family labor, and workplace discipline."
-    },
-    {
-      "id": "W26Q8",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 26?",
-      "choices": [
-        "Industrial growth raised long-run productivity but generated severe inequality, pollution, dangerous work, and urban hardship.",
-        "Modern economies combine markets, public institutions, households, and nonprofit organizations in different proportions.",
-        "Resistance ranged from armed conflict to legal petitions, religious movements, labor action, cultural preservation, and intellectual critique.",
-        "The Haitian Revolution was the most successful large-scale revolt of enslaved people and transformed Atlantic politics."
-      ],
-      "answer": 0,
-      "explanation": "Industrial growth raised long-run productivity but generated severe inequality, pollution, dangerous work, and urban hardship."
-    },
-    {
-      "id": "W26Q9",
-      "prompt": "What is the strongest method for evaluating “Factory Testimony and Production Data”?",
-      "choices": [
-        "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits.",
-        "Accept the source if it was created during the period because primary sources are automatically accurate.",
-        "Reject the source if it contains a point of view because useful evidence must be neutral.",
-        "Use only the most dramatic sentence because memorable details are the most reliable."
-      ],
-      "answer": 0,
-      "explanation": "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits."
-    },
-    {
-      "id": "W26Q10",
-      "prompt": "Which response demonstrates the strongest geographic or quantitative reasoning?",
-      "choices": [
-        "Assume that every mapped relationship is a direct cause.",
-        "Ignore units and scale so attention stays on the overall appearance.",
-        "Use the visualization only if it confirms the original claim.",
-        "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
-      ],
-      "answer": 3,
-      "explanation": "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
-    }
+    {"id":"W26Q1","type":"multiple-choice","prompt":"Which combination best explains why industrialization emerged early in Britain?","choices":["Coal, commercial agriculture, capital, transport, skilled labor, markets, and institutions interacted","Only one invention caused it","Urban growth alone caused it","Factory owners created it without earlier economic changes"],"answer":0,"explanation":"The course treats industrialization as multicausal: energy, agriculture, capital, labor, transport, markets, colonial connections, and institutions interacted."},
+    {"id":"W26Q2","type":"multiple-choice","prompt":"A factory increases output after introducing specialized tasks. Which conclusion is most defensible?","choices":["Division of labor may increase productivity while changing skill, time, and workplace organization","All workers became more skilled","Working conditions necessarily improved","The change proves factory labor was voluntary"],"answer":0,"explanation":"Specialization can raise output while reorganizing skill and workplace discipline; it does not by itself establish worker welfare."},
+    {"id":"W26Q3","type":"multiple-choice","prompt":"Which evidence would best test whether industrialization improved workers’ lives?","choices":["Production totals alone","A combination of wages, prices, working hours, health, housing, mortality, testimony, and long-term trends","Factory advertisements alone","The number of machines alone"],"answer":1,"explanation":"Human welfare cannot be inferred from output alone; multiple indicators and perspectives are needed."},
+    {"id":"W26Q4","type":"multiple-choice","prompt":"A map shows coalfields near several industrial centers. What can the map establish most directly?","choices":["Coal caused every industrial decision","Coal geography was spatially associated with some industrial centers","All industrial centers had identical economies","Workers moved only because of coal"],"answer":1,"explanation":"A map can establish a spatial pattern; explaining causation requires additional evidence about energy, transport, capital, technology, labor, and institutions."},
+    {"id":"W26Q5","type":"multiple-choice","prompt":"In the Growth Simulator, a student changes technology while holding the other variables constant. What is the strongest procedure?","choices":["Record the prediction, change only technology, observe the result, and identify a model limitation","Change every variable at once","Choose the result that confirms the hypothesis","Treat the model output as proof of historical causation"],"answer":0,"explanation":"Controlled simulation requires changing one variable at a time and separating model behavior from historical proof."},
+    {"id":"W26Q6","type":"multiple-choice","prompt":"A student runs the Supply & Demand Simulator five times and sees equilibrium price change when demand changes. What does that demonstrate?","choices":["The simplified model responds to its demand assumption","Every historical market behaved identically","Demand always causes every price change","The simulation proves a specific nineteenth-century price movement"],"answer":0,"explanation":"The simulator demonstrates the behavior of its assumptions; historical claims require historical price data and context."},
+    {"id":"W26Q7","type":"multiple-choice","prompt":"A factory owner reports that machinery increased output, while workers report exhaustion and dangerous conditions. What is the strongest historical interpretation?","choices":["One account must be false","Both can provide evidence about different dimensions of industrialization and should be contextualized and corroborated","Worker testimony is always more reliable","Output data proves workers were satisfied"],"answer":1,"explanation":"Productivity and worker experience can both be historically real; historians must evaluate perspective, context, and corroborating evidence."},
+    {"id":"W26Q8","type":"multiple-choice","prompt":"Which statement best captures an externality in industrialization?","choices":["A factory's private revenue","A worker's agreed wage","Pollution costs imposed on people who were not part of the transaction","A machine's purchase price"],"answer":2,"explanation":"An externality is a cost or benefit imposed on people outside the immediate transaction; pollution is a classic example."},
+    {"id":"W26Q9","type":"multiple-choice","prompt":"What is the strongest method for evaluating Factory Testimony and Production Data?","choices":["Accept primary evidence automatically","Reject any source with a point of view","Compare sources, evaluate origin/purpose/context, and identify what each can and cannot establish","Use only the most dramatic statement"],"answer":2,"explanation":"Historical reasoning requires sourcing and corroboration rather than automatic acceptance or rejection."},
+    {"id":"W26Q10","type":"multiple-choice","prompt":"Which response best answers the week's essential question?","choices":["Industrialization was simply progress","Industrialization was simply exploitation","Industrialization increased productive capacity and eventually contributed to improvements in many places, while benefits, harms, and timing were distributed unequally","No historical judgment is possible"],"answer":2,"explanation":"The course emphasizes a qualified interpretation: industrialization produced substantial growth and later improvements while imposing serious and uneven costs."}
   ],
-  "shortResponse": {
-    "prompt": "Using at least two specific pieces of evidence, answer: Did industrialization improve human life, and for whom?",
-    "points": 5,
-    "exemplar": "A full-credit response states a defensible answer to the essential question, uses two accurate details from the week, explains how each detail supports the claim, and acknowledges one complexity or limitation."
-  }
+  "shortResponse":{"id":"W26SR1","type":"evidence-response","prompt":"Using at least three specific pieces of historical evidence and, if used, one result from a Week 26 simulation, answer: Did industrialization improve human life, and for whom? Explain one limitation of your evidence or model.","points":5,"rubric":{"5":"Defensible qualified claim; three accurate pieces of evidence; explains relationships; incorporates or appropriately rejects simulation evidence; identifies a limitation.","4":"Defensible claim; three relevant pieces of evidence; explanation and limitation mostly clear.","3":"Claim and two relevant pieces of evidence with some explanation.","2":"General claim with limited or weak evidence.","1":"Minimal response or unsupported assertion.","0":"No relevant response."}}
 }
