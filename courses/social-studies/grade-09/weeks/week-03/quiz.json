@@ -1,131 +1,83 @@
 {
-  "title": "Week 3 Quiz — Early Humanity and the Agricultural Revolution",
+  "title": "Week 3 Mastery Quiz — Early Humanity and the Agricultural Revolution",
   "points": 25,
+  "masteryPercent": 80,
   "questions": [
     {
       "id": "W03Q1",
-      "prompt": "Which term best matches this definition: The period when humans generally lived by hunting, gathering, and fishing.",
-      "choices": [
-        "archaeology",
-        "Paleolithic",
-        "surplus",
-        "domestication"
-      ],
+      "prompt": "Which description best fits most Paleolithic communities?",
+      "choices": ["Large states organized around permanent capitals", "Mobile or semi-mobile groups relying on hunting, gathering, fishing, and detailed environmental knowledge", "Industrial cities supplied by mechanized agriculture", "Settled farming villages dependent on written tax records"],
       "answer": 1,
-      "explanation": "Paleolithic is the course term defined as: The period when humans generally lived by hunting, gathering, and fishing."
+      "explanation": "For most of human history, Paleolithic communities were mobile or semi-mobile and relied on hunting, gathering, fishing, and deep environmental knowledge rather than settled agriculture."
     },
     {
       "id": "W03Q2",
-      "prompt": "Which term best matches this definition: The later Stone Age associated in many regions with agriculture and settled communities.",
-      "choices": [
-        "archaeology",
-        "domestication",
-        "Neolithic",
-        "specialization"
-      ],
+      "prompt": "What does domestication mean in the context of the Neolithic transition?",
+      "choices": ["A sudden invention of agriculture in one location", "The replacement of all wild foods by crops", "The long-term process of selecting and managing plants or animals for human use", "The creation of writing for farm records"],
       "answer": 2,
-      "explanation": "Neolithic is the course term defined as: The later Stone Age associated in many regions with agriculture and settled communities."
+      "explanation": "Domestication was a long-term process in which people increasingly selected, managed, and reproduced plants and animals for human purposes."
     },
     {
       "id": "W03Q3",
-      "prompt": "Which term best matches this definition: The long-term process of selecting and managing plants or animals for human use.",
-      "choices": [
-        "Neolithic",
-        "Paleolithic",
-        "domestication",
-        "archaeology"
-      ],
-      "answer": 2,
-      "explanation": "Domestication is the course term defined as: The long-term process of selecting and managing plants or animals for human use."
+      "prompt": "Which evidence would most directly help an archaeologist infer that an early village stored agricultural surplus?",
+      "choices": ["Large storage pits containing concentrated plant remains", "A modern textbook describing agriculture", "A political border drawn on a present-day map", "A later legend with no material connection to the site"],
+      "answer": 0,
+      "explanation": "Storage pits and concentrated plant remains are material evidence that can support an inference about food storage and surplus, especially when interpreted in archaeological context."
     },
     {
       "id": "W03Q4",
-      "prompt": "Which term best matches this definition: Production beyond immediate consumption needs.",
-      "choices": [
-        "surplus",
-        "Paleolithic",
-        "archaeology",
-        "domestication"
-      ],
-      "answer": 0,
-      "explanation": "Surplus is the course term defined as: Production beyond immediate consumption needs."
+      "prompt": "Why should historians avoid describing the Agricultural Revolution as one event that happened everywhere at the same time?",
+      "choices": ["Agriculture never changed human communities", "All farming began in a single river valley", "Written records prove every region adopted the same crops", "Domestication developed gradually and independently in several regions, with many communities combining farming, hunting, and gathering for long periods"],
+      "answer": 3,
+      "explanation": "The transition was uneven and gradual. Multiple regions developed agriculture independently, and mixed subsistence strategies continued for centuries."
     },
     {
       "id": "W03Q5",
-      "prompt": "Which term best matches this definition: The concentration of labor on particular tasks or skills.",
-      "choices": [
-        "specialization",
-        "domestication",
-        "surplus",
-        "Neolithic"
-      ],
+      "prompt": "Which outcome best explains how agricultural surplus could encourage specialization?",
+      "choices": ["Stored food could support some people who spent more time on crafts, administration, trade, or other non-food-producing work", "Surplus eliminated all differences in wealth", "Specialization required communities to become mobile", "Surplus prevented organized leadership from emerging"],
       "answer": 0,
-      "explanation": "Specialization is the course term defined as: The concentration of labor on particular tasks or skills."
+      "explanation": "When communities could store food beyond immediate needs, some members could spend more time on specialized work rather than producing food full time."
     },
     {
       "id": "W03Q6",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 3?",
-      "choices": [
-        "Homo sapiens originated in Africa and migrated over many generations into diverse environments.",
-        "River valleys supported intensive agriculture but required coordinated labor and management.",
-        "Every map simplifies reality and reflects choices about scale, projection, categories, and purpose.",
-        "Complex societies emerged independently in many regions and should not be treated as copies of one model."
-      ],
-      "answer": 0,
-      "explanation": "Homo sapiens originated in Africa and migrated over many generations into diverse environments."
+      "prompt": "A cemetery from an early farming village shows major differences in grave goods between burials. What is the most responsible inference?",
+      "choices": ["Every person had equal status", "The community definitely had a monarchy", "The differences may indicate social inequality or status distinctions, but additional evidence is needed to explain their exact meaning", "Grave goods prove which crops the community grew"],
+      "answer": 2,
+      "explanation": "Unequal grave goods can support an inference about status differences, but they do not by themselves prove a specific political system or explain the exact basis of inequality."
     },
     {
       "id": "W03Q7",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 3?",
-      "choices": [
-        "Archaeology is especially important where written evidence is limited, undeciphered, or produced mainly by elites.",
-        "Agriculture developed independently in several regions rather than spreading from a single universal center.",
-        "Writing and accounting expanded partly because governments and temples needed to track resources and obligations.",
-        "Human settlement is influenced by water, climate, terrain, resources, transportation, and political boundaries."
-      ],
+      "prompt": "Which comparison best reflects the evidence about possible costs and benefits of settled agriculture?",
+      "choices": ["Agriculture increased mobility while eliminating disease exposure", "Agriculture could increase food storage and population while also increasing labor demands, disease exposure, land conflict, and inequality", "Agriculture always improved nutrition for every person", "Agriculture immediately ended hunting and gathering everywhere"],
       "answer": 1,
-      "explanation": "Agriculture developed independently in several regions rather than spreading from a single universal center."
+      "explanation": "The agricultural transition created both opportunities and costs. Larger settlements and food storage coexisted with new labor burdens, disease risks, land claims, conflict, and unequal access to resources."
     },
     {
       "id": "W03Q8",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 3?",
-      "choices": [
-        "Migration usually results from interacting push factors, pull factors, networks, and constraints.",
-        "Food surplus supported larger settlements and specialization but also contributed to hierarchy, disease exposure, and conflict.",
-        "Early law codes reveal social priorities and inequalities as well as attempts to regulate conflict.",
-        "Urban design, monuments, and trade goods reveal organization, belief, exchange, and inequality."
-      ],
-      "answer": 1,
-      "explanation": "Food surplus supported larger settlements and specialization but also contributed to hierarchy, disease exposure, and conflict."
+      "prompt": "Why is archaeology especially important for studying early human communities?",
+      "choices": ["Archaeology replaces the need for evidence", "Archaeologists can directly observe the past", "Archaeology proves all societies followed the same path", "Material remains can provide evidence where written records are absent, limited, or represent only a narrow part of society"],
+      "answer": 3,
+      "explanation": "For periods without extensive written records, material evidence such as tools, seeds, bones, structures, pollen, and human remains is essential for reconstructing past lifeways."
     },
     {
       "id": "W03Q9",
-      "prompt": "What is the strongest method for evaluating “Archaeological Evidence from an Early Village”?",
-      "choices": [
-        "Reject the source if it contains a point of view because useful evidence must be neutral.",
-        "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits.",
-        "Accept the source if it was created during the period because primary sources are automatically accurate.",
-        "Use only the most dramatic sentence because memorable details are the most reliable."
-      ],
-      "answer": 1,
-      "explanation": "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits."
+      "prompt": "A map shows several early centers of domestication in different world regions. Which conclusion is best supported?",
+      "choices": ["Agriculture developed independently in more than one region", "All agriculture originated from a single universal center", "Climate had no relationship to domestication", "Every region domesticated the same species"],
+      "answer": 0,
+      "explanation": "Evidence from multiple early centers supports the conclusion that agriculture and domestication developed independently in several regions rather than from one universal origin."
     },
     {
       "id": "W03Q10",
-      "prompt": "Which response demonstrates the strongest geographic or quantitative reasoning?",
-      "choices": [
-        "Ignore units and scale so attention stays on the overall appearance.",
-        "Use the visualization only if it confirms the original claim.",
-        "Assume that every mapped relationship is a direct cause.",
-        "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
-      ],
-      "answer": 3,
-      "explanation": "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
+      "prompt": "Which thesis best answers the Week 3 essential question using historical complexity?",
+      "choices": ["Agriculture was entirely good because populations grew", "Agriculture was entirely harmful because inequality existed", "Agriculture increased food security and settlement in many places, but it also introduced new labor demands, disease risks, land conflicts, and inequalities, so its effects depended on community and context", "Agriculture had no significant effect on human societies"],
+      "answer": 2,
+      "explanation": "A strong historical thesis acknowledges multiple effects, avoids universal claims, and connects benefits and costs to evidence and context."
     }
   ],
   "shortResponse": {
-    "prompt": "Using at least two specific pieces of evidence, answer: Did agriculture improve human life, or did it exchange some freedoms for new forms of security and inequality?",
+    "prompt": "Using at least two specific pieces of Week 3 evidence, answer: Did agriculture improve human life, or did it exchange some freedoms for new forms of security and inequality? Your response must identify one benefit, one cost, and one limitation or uncertainty in the evidence.",
     "points": 5,
-    "exemplar": "A full-credit response states a defensible answer to the essential question, uses two accurate details from the week, explains how each detail supports the claim, and acknowledges one complexity or limitation."
+    "exemplar": "Full-credit work makes a defensible claim, accurately uses at least two Week 3 details such as storage, domestication, settlement, specialization, disease, labor, mobility, or inequality, explains both a benefit and a cost, and acknowledges one uncertainty or limit in the surviving evidence.",
+    "rubric": {"Evidence": 2, "Reasoning": 2, "AccuracyAndComplexity": 1}
   }
 }
