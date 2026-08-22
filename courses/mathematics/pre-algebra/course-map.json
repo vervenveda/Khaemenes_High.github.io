@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "course": {
     "id": "math-prealgebra",
     "code": "KH-MATH-PA",
@@ -14,12 +14,17 @@
   },
   "entry_gateway": {
     "title": "Pre-Algebra Readiness Gateway",
-    "path": "diagnostic/",
+    "path": "diagnostic/gateway.html",
+    "legacy_diagnostic": "diagnostic/index.html",
+    "assessment_id": "KH-MATH-PA-READINESS-GATEWAY",
+    "assessment_version": "2026.08.22",
     "purpose": "Determine readiness by prerequisite strand and route support without labeling or punishing the learner.",
     "ready_threshold_percent": 80,
+    "essential_strand_floor_percent": 75,
     "essential_strands_required": true,
     "ready_route": "units/unit-01/",
-    "supported_route": "unit-0-map.json",
+    "supported_route": "unit-00/",
+    "naib_profile_key": "khaemenes-naib-readiness-math-prealgebra-v1",
     "supported_pathway_duration_weeks": 42
   },
   "mastery_scale": [
@@ -34,7 +39,8 @@
     "weeks":6,
     "title":"Foundations & Readiness",
     "status":"conditional",
-    "path":"unit-0-map.json",
+    "path":"unit-00/",
+    "map":"unit-0-map.json",
     "exit_requirement":"80% mastery plus reasoning corrections",
     "exit_route":"units/unit-01/",
     "big_idea":"Readiness evidence should identify the smallest useful bridge between what a learner knows and what the official course requires."
