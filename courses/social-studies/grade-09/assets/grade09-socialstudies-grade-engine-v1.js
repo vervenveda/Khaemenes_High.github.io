@@ -33,12 +33,21 @@ function activeStudent(db){
 function pct(n,d){ return d > 0 ? (n/d)*100 : null; }
 function round(n){ return n == null ? null : Math.round(n*10)/10; }
 
+function assignmentPossiblePoints(key, record){
+  const explicit=Number(record?.possiblePoints ?? record?.points);
+  if(Number.isFinite(explicit) && explicit>0) return explicit;
+  const [weekRaw,numRaw]=String(key).split('-');
+  const week=Number(weekRaw), num=Number(numRaw);
+  const canonical=COURSE.weeks?.find(w=>w.week===week)?.assignments?.find(a=>a.number===num)?.points;
+  return Number.isFinite(Number(canonical)) && Number(canonical)>0 ? Number(canonical) : null;
+}
+
 function assignmentCategory(s){
   let earned = 0, possible = 0, evaluated = 0, submitted = 0;
-  for(const a of Object.values(s?.assignments || {})){
+  for(const [key,a] of Object.entries(s?.assignments || {})){
     if(a?.submitted) submitted++;
     const score = Number(a?.score);
-    const max = Number(a?.possiblePoints || a?.points || 30);
+    const max = assignmentPossiblePoints(key,a);
     if(Number.isFinite(score) && Number.isFinite(max) && max > 0){
       earned += score;
       possible += max;
@@ -61,10 +70,8 @@ function examCategory(s,name){
   const written = Number(ex.writtenPercent ?? ex.teacherPercent);
   const hasObj = Number.isFinite(objective);
   const hasWritten = Number.isFinite(written);
-  // If teacher/evaluator has supplied a total percent, prefer it.
   const total = Number(ex.totalPercent);
   if(Number.isFinite(total)) return {percent:round(total), evaluated:true, objective:hasObj?round(objective):null, written:hasWritten?round(written):null};
-  // Objective score alone is real evidence, but the exam is not academically complete when written work is required.
   return {percent:hasObj?round(objective):null, evaluated:hasObj && hasWritten, objective:hasObj?round(objective):null, written:hasWritten?round(written):null};
 }
 
