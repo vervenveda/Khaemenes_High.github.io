@@ -85,26 +85,35 @@ Each public page is checked for:
 
 ## Critical findings — immediate remediation required
 
-### CRITICAL 01 — High-stakes answer keys are embedded in public client code
+### CRITICAL 01 — High-stakes answer keys are embedded in public client code — OPEN
 
 The diagnostic, midterm, and final currently include JavaScript `ANSWERS` objects in the same public HTML delivered to students. This makes the key inspectable in source/devtools and means the objective sections cannot be treated as protected high-stakes assessment evidence.
 
+Important forensic note: because the exact keys have already existed in public Git history, simply deleting the current JavaScript would not make those exact forms secure again. The current forms must be treated as released/public forms unless the high-stakes assessment model changes.
+
 Required disposition:
 - Diagnostic may remain explicitly formative/open if desired.
-- Midterm and final may not be represented as secure hidden-key exams while answer keys live in public client code.
-- For a fully public static course, secure hidden-answer assessment requires either an authorized non-public scoring mechanism or a different assessment model built around fresh transfer tasks and human-reviewed evidence.
+- Midterm and final may not be represented as secure hidden-key exams while exact answer keys are publicly recoverable.
+- For a fully public static course, secure hidden-answer assessment requires either an authorized non-public scoring mechanism, fresh unpublished forms, or a different assessment model built around fresh transfer tasks and human-reviewed evidence.
 
-### CRITICAL 02 — Mastery records are manually writable client-side and current logic does not preserve mastery history
+### CRITICAL 02 — Mastery history was not preserved — PARTIALLY REMEDIATED
 
-`assets/course.js` allows a learner-facing number field to write a mastery score directly into `localStorage`. This is useful as a local record, but it is not authoritative verification. The current implementation also replaces the prior record rather than preserving first/latest/best score and attempt count, conflicting with the course mastery manifest's `preservePriorMastery` and attempt-history requirements.
+Original finding: `assets/course.js` allowed a learner-facing number field to overwrite a mastery record rather than preserving first/latest/best score and attempt count, conflicting with the course mastery manifest's `preservePriorMastery` and attempt-history requirements.
 
-Required disposition:
-- Treat browser mastery as a local progress record, not cryptographically authoritative proof.
-- Preserve first/latest/best score, attempt count, mastered-at timestamp, threshold, and prior mastery.
-- Never allow a later lower retake to erase established mastery.
-- Keep educator/human review authoritative for complex work.
+Remediation completed on audit branch:
+- first score preserved
+- latest score preserved
+- best score preserved
+- attempt count preserved
+- mastered-at timestamp preserved
+- a lower later score no longer erases prior mastery
+- legacy records are normalized for backward compatibility
+- prerequisite logic consumes preserved best mastery
 
-### HIGH 03 — No dedicated weekly quiz directory or canonical unit-test implementation exists
+Remaining limitation:
+- browser/localStorage mastery is still a local record, not tamper-resistant institutional verification. Public static JavaScript cannot authenticate who entered the score.
+
+### HIGH 03 — No dedicated weekly quiz directory or canonical unit-test implementation exists — OPEN
 
 The course has a 36-week instructional sequence and many weekly pages state that defined scored checks require ≥80%, but there is no `quizzes/` directory and the assessment center exposes only diagnostic, midterm, final, and portfolio. Unit pages currently accept manually entered “verified” scores rather than linking to a canonical scored unit assessment.
 
@@ -113,7 +122,7 @@ Required disposition:
 - Build or identify the canonical assessment source for each unit before calling the unit gate fully verified.
 - Use the Pre-Algebra pattern as the structural benchmark without forcing Language Arts into math-style itemization where authentic writing/speaking evidence is the better measure.
 
-### HIGH 04 — Public rubrics are generic templates rather than criterion-specific scoring instruments
+### HIGH 04 — Public rubrics are generic templates rather than criterion-specific scoring instruments — OPEN
 
 All five inspected rubrics repeat the same generic level descriptors across every criterion. For example, “Specific, controlled, insightful, and independent” is used for claim, evidence, reasoning, organization, language, delivery, source quality, citation, etc. This is not sufficiently diagnostic for A+++ scoring or targeted corrective learning.
 
@@ -122,30 +131,62 @@ Required disposition:
 - Align 4/3/2/1 levels with the 80% mastery model.
 - Prevent style, charisma, accent, disability, or polish from substituting for the actual competency.
 
-### HIGH 05 — `grades/grade-09/index.html` contains route/canonical problems
+### HIGH 05 — `grades/grade-09/index.html` route/canonical defects — REMEDIATED
 
-The file lives inside `courses/language-arts/english-9/grades/grade-09/` but its canonical and relative asset/course links point toward a different `/grades/grade-09/language-arts/` structure. Relative paths require normalization or this legacy page should be replaced by a clean redirect/route page.
+Completed on audit branch:
+- repaired canonical path
+- repaired relative stylesheet/script/course links
+- normalized Course Portal / Eiren / Beta shell
+- connected portfolio and assessment routes
+- added explicit 80% / corrective-learning course contract
 
-### HIGH 06 — Public shell normalization is incomplete
+### HIGH 06 — Public shell normalization is incomplete — OPEN
 
-A number of later unit/week/assessment/portfolio/rubric pages still use the older High School / Language Arts header and text-only Beta treatment rather than the standardized English I shell:
+A number of later unit/week/assessment/rubric/record pages still use the older High School / Language Arts header and text-only Beta treatment rather than the standardized English I shell:
 
 `Course Portal · Eiren · Beta`
 
 This is a continuity defect, not a reason to rewrite strong pedagogy.
 
-### HIGH 07 — Portfolio still carries a stale PROSE route and completion terminology
+### HIGH 07 — Portfolio stale route / completion terminology — REMEDIATED
 
-`portfolio/index.html` links to an older encoded PROSE path instead of the verified editorial gateway and still exposes a “Mark Portfolio Complete” control. Portfolio completion may be recorded, but it must not be confused with final course mastery.
+Completed on audit branch:
+- normalized PROSE to the verified editorial gateway
+- changed “Mark Portfolio Complete” to an evidence-readiness record
+- explicitly states that portfolio readiness does not satisfy final course mastery
+- added Course Portal / Eiren / Beta continuity
+- strengthened growth-claim, counterevidence, oral-defense, and authenticity language
 
-### MEDIUM 08 — Certificate/gradebook are manually editable local records
+### HIGH 08 — Public assessment scoring can be mistaken for full assessment mastery — OPEN
+
+Diagnostic, midterm, and final pages auto-score only the multiple-choice portion while written responses require human review. No combined scoring model is visible on those pages. A displayed objective percentage therefore must not be treated as the total assessment score.
+
+Required disposition:
+- label objective score as section-only
+- define weighting or evidence-authority rules
+- prevent objective auto-score from being copied directly into a unit/course mastery gate without the required writing/performance review
+
+### HIGH 09 — Midterm and final coverage are too narrow for the cumulative claims currently made — OPEN
+
+The midterm uses one rhetoric-centered passage plus language questions to represent Units 1–6. The final uses one informational passage plus language/research/argument questions to represent the full year. These are useful released forms, but they do not adequately sample the full set of literary, narrative, poetry, drama, speaking/listening, research, argument, multimodal, and transfer competencies claimed by the course.
+
+Required disposition:
+- broaden cumulative evidence through multiple unfamiliar text types / modes and performance evidence
+- keep human-reviewed writing and oral-defense evidence authoritative where appropriate
+- use fresh or meaningfully changed transfer tasks for reassessment
+
+### MEDIUM 10 — Assessment radio groups should use stronger semantic grouping — OPEN
+
+The assessment questions use labeled radio inputs, which is a good baseline, but each question should ideally use `fieldset` + `legend` so screen-reader users receive the question context reliably while navigating answer choices.
+
+### MEDIUM 11 — Certificate/gradebook are manually editable local records — OPEN / DOCUMENTED LIMITATION
 
 The public gradebook and completion certificate are appropriate printable local documents only if clearly treated as records requiring educator verification. They cannot constitute tamper-resistant credential verification in a static client-only application.
 
 Required disposition:
-- Keep the existing educator-verification language.
-- Do not imply that local browser fields create authoritative institutional records.
-- Gate any “course mastered” language on reviewed evidence, not merely typed local values.
+- keep the existing educator-verification language
+- do not imply that local browser fields create authoritative institutional records
+- gate any “course mastered” language on reviewed evidence, not merely typed local values
 
 ## Strong findings to preserve
 
@@ -158,16 +199,17 @@ Required disposition:
 - Corrective learning / reassessment language is embedded throughout the hardened lessons.
 - PROSE, Evidence Studio, ARSHIF, Bazaar Art, Aurora tools, the translator, and sovereign games are strongest when tied to a specific learning move rather than used as decoration.
 - Week 36 correctly separates mentor/tool preparation from independently scored performance.
+- No dedicated `quizzes/` directory exists in the current English 9 course package; this is now explicitly tracked rather than assumed.
 
 ## Regression order
 
-1. Shared `course.js` mastery/state logic
-2. Assessment center + diagnostic + midterm + final
+1. Shared `course.js` mastery/state logic — first remediation completed
+2. Assessment center + diagnostic + midterm + final — active
 3. Public rubrics
-4. English I landing + student portal + Grade 9 route
+4. English I landing + student portal + Grade 9 route — Grade 9 route repaired
 5. Units 1–12 shells and assessment links
 6. Weeks 1–36 shells, Beta/Eiren/tool routes, prerequisite checks
-7. Portfolio
+7. Portfolio — first remediation completed
 8. Records affecting grade/mastery/completion
 9. Broken-link and canonical-route pass
 10. Accessibility pass
