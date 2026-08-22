@@ -1,24 +1,54 @@
 {
   "unit": 3,
+  "title": "Triangle Congruence & Proof",
+  "weeks": [6, 7, 8],
+  "mastery_target": 80,
   "domains": [
-    "Triangle congruence",
-    "Proof",
-    "Triangle centers",
-    "Inequalities"
+    "Triangle classification and angle relationships",
+    "Triangle congruence criteria",
+    "Correspondence and proof",
+    "Special triangle theorems",
+    "Triangle inequality and construction feasibility",
+    "Triangle centers and concurrency"
   ],
-  "practices": [
-    "Make sense of problems",
-    "Reason abstractly and quantitatively",
-    "Construct viable arguments",
-    "Model with mathematics",
-    "Use tools strategically",
-    "Attend to precision",
-    "Look for structure"
+  "standards_support": [
+    "Use triangle angle relationships and classification criteria to solve and justify geometric conclusions.",
+    "Use SSS, SAS, ASA, AAS, and HL as sufficient conditions for triangle congruence when their hypotheses are satisfied.",
+    "Use corresponding parts only after congruence has been established and organize proof statements in a valid dependency order.",
+    "Apply isosceles and equilateral triangle theorems and their converses.",
+    "Use triangle inequalities to determine whether side lengths are feasible and to solve missing-side ranges.",
+    "Use perpendicular bisectors, angle bisectors, medians, and altitudes to identify and reason about classical triangle centers.",
+    "Construct viable geometric arguments and critique circular, incomplete, or visually unsupported reasoning."
   ],
-  "evidence": [
-    "Printable lesson work",
-    "Mastery check",
-    "Applied investigation",
-    "Reflection and correction"
-  ]
+  "mathematical_practices": [
+    "Make sense of problems and persevere in solving them.",
+    "Reason abstractly and quantitatively.",
+    "Construct viable arguments and critique reasoning.",
+    "Model with mathematics.",
+    "Use appropriate tools strategically.",
+    "Attend to precision.",
+    "Look for and make use of structure."
+  ],
+  "lesson_evidence": {
+    "u03-l01": ["Classify triangles by sides and angles.", "Use angle sum and exterior-angle relationships.", "Distinguish feasible triangle descriptions from inconsistent ones."],
+    "u03-l02": ["Match corresponding vertices and sides before naming a theorem.", "Use SSS and SAS when their hypotheses are satisfied.", "Reject SSA as insufficient general congruence evidence."],
+    "u03-l03": ["Distinguish ASA from AAS by side location.", "Verify right-triangle conditions before using HL.", "Explain why AAA establishes shape but not size."],
+    "u03-l04": ["Establish triangle congruence before invoking CPCTC.", "Read correspondence accurately from congruence statements.", "Write multi-step proof chains with reasons for each claim."],
+    "u03-l05": ["Use equal sides to infer equal opposite angles and conversely.", "Solve isosceles/equilateral angle and side problems.", "Use inclusive classification and equilateral/equiangular structure precisely."],
+    "u03-l06": ["Test feasible, degenerate, and impossible side sets.", "Solve strict missing-side intervals.", "Apply triangle inequality to construction and design constraints."],
+    "u03-l07": ["Match concurrency lines to circumcenter, incenter, centroid, and orthocenter.", "Use equal-distance properties of circumcenter and incenter.", "Use centroid 2:1 structure and reason about center locations by triangle type."]
+  },
+  "unit_evidence": [
+    "Seven hardened printable lessons with 20-problem lesson evidence.",
+    "Foundation, Core and Extended practice pathways.",
+    "A 12-question mastery check drawn from a lesson-aligned unit bank.",
+    "Written corrections or targeted remediation when mastery evidence is incomplete.",
+    "Triangle-Center Construction & Congruence Defense applied investigation with proof and construction evidence."
+  ],
+  "assessment_expectations": {
+    "automatic": "Objective mastery-check responses may be scored by the local assessment engine.",
+    "human_review": "Open proofs, constructions, corrections, explanations and project evidence may require teacher, mentor or qualified reviewer judgment.",
+    "mastery": "Target is 80% on objective evidence or documented correction/remediation evidence demonstrating the missed skills.",
+    "policy_note": "Automatically scored evidence and human-reviewed proof/construction evidence must remain distinguishable in records."
+  }
 }
