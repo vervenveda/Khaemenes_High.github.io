@@ -85,7 +85,7 @@
       message.textContent = `Readiness: ${record.overall_percent}%. Essential prerequisite strands meet the readiness rule. The learner may enter the 36-week core course.`;
       note.innerHTML = `<strong>Core 36-week pathway</strong><p>${record.refresh_priorities.length ? `Optional refresh priorities: ${record.refresh_priorities.join(", ")}.` : "No prerequisite strand requires the six-week bridge."} Readiness does not alter any earlier course-completion record.</p>`;
       button.textContent = "Enter Official Unit 1";
-      button.href = "../units/unit-01/";
+      button.href = "../units/unit-01/entry.html";
     }
   }
 
