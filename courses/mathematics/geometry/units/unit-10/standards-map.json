@@ -1,24 +1,43 @@
 {
   "unit": 10,
+  "title": "Area, Measurement & Geometric Probability",
+  "lesson_evidence": {
+    "u10-l01": ["derive and apply triangle, parallelogram, and trapezoid area relationships", "identify perpendicular height", "solve missing-dimension area problems"],
+    "u10-l02": ["use A=1/2 aP for regular polygons", "decompose and subtract composite regions", "justify efficient decomposition strategies"],
+    "u10-l03": ["use Heron's formula from three side lengths", "compute area from coordinates", "compare independent area methods"],
+    "u10-l04": ["apply linear scale factor k", "apply perimeter factor k and area factor k^2", "recover linear scale from area ratio"],
+    "u10-l05": ["interpret measurement bounds", "calculate absolute and relative error", "report significant figures and units responsibly"],
+    "u10-l06": ["model uniform geometric probability by length or area", "use complements and composite sample regions", "audit the uniform-selection assumption"],
+    "u10-l07": ["separate objectives from constraints", "compare feasible designs", "optimize perimeter or area and verify practical constraints"]
+  },
   "domains": [
-    "Area",
-    "Precision and error",
+    "Area and geometric measurement",
+    "Similarity and scale effects",
+    "Measurement precision, units, and error",
     "Geometric probability",
-    "Optimization"
+    "Mathematical modeling and optimization"
   ],
   "practices": [
-    "Make sense of problems",
+    "Make sense of problems and persevere in solving them",
     "Reason abstractly and quantitatively",
-    "Construct viable arguments",
+    "Construct viable arguments and critique reasoning",
     "Model with mathematics",
-    "Use tools strategically",
+    "Use appropriate tools strategically",
     "Attend to precision",
-    "Look for structure"
+    "Look for and make use of structure"
   ],
-  "evidence": [
-    "Printable lesson work",
-    "Mastery check",
-    "Applied investigation",
-    "Reflection and correction"
+  "mastery_evidence": [
+    "Seven lesson-specific printable worksheets",
+    "Synchronized teacher keys with reasoning",
+    "Unit 10 mastery check with 80 percent target",
+    "Applied design or measurement investigation",
+    "Written correction and reflection evidence"
+  ],
+  "audit_requirements": [
+    "Assessment questions must represent all seven lesson identities rather than a generic area template",
+    "Student and teacher-key prompts must remain synchronized",
+    "Units and precision must be mathematically appropriate",
+    "Tool use must support rather than replace setup and reasoning",
+    "Optimization answers must satisfy every stated constraint"
   ]
 }
