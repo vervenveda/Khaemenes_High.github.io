@@ -1,4 +1,4 @@
-const CACHE='khaemenes-global-studies-9-v5';
+const CACHE='khaemenes-global-studies-9-v6';
 const SHELL=[
   './',
   './index.html',
@@ -11,6 +11,7 @@ const SHELL=[
   './assets/atlas-grid.svg',
   './assets/timeline-grid.svg',
   './assets/week01-gold-standard-v1.js',
+  './assets/week02-gold-standard-v1.js',
   './assets/grade09-socialstudies-mastery-v2.js',
   './assets/grade09-socialstudies-grade-engine-v1.js',
   './assets/grade09-socialstudies-archaemenes-upgrade.js',
