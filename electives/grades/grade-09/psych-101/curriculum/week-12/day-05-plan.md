@@ -1,74 +1,86 @@
-# Week 12 · Day 5 — Providers, Confidentiality, Ethics & Treatment Claim Audit
+# Week 12 · Day 5 — Professional Ethics Case Conference
 
 **Essential Question:** What responsibilities protect people when psychological knowledge becomes professional practice?
 
 ## Learning Objectives
 Students will be able to:
-- distinguish major categories of mental-health professionals at an introductory level;
-- explain that scopes of practice and prescribing authority vary by profession and jurisdiction;
-- define informed consent/assent, competence, privacy, confidentiality, boundaries, and documentation;
+- distinguish major mental-health professional roles at an introductory level;
+- explain that scope of practice and prescribing authority vary by profession and jurisdiction;
+- define informed consent/assent, privacy, confidentiality, competence, and professional boundaries;
 - explain why confidentiality has legal and ethical limits;
 - evaluate a treatment claim without giving personal treatment advice;
-- identify appropriate pathways for seeking qualified professional help in general terms.
+- complete the Week 12 clinical-boundary audit.
 
 ## Psychology Word of the Day
 **confidentiality** — a professional obligation to protect private client information within defined legal and ethical limits.
 
 ## Vocabulary in Context
-psychologist · psychiatrist · counselor · social worker · psychiatric nurse · scope of practice · informed consent · assent · confidentiality · privacy · competence · professional boundary · mandated disclosure
+psychologist · psychiatrist · counselor · social worker · psychiatric nurse · scope of practice · informed consent · assent · confidentiality · privacy · competence · professional boundary
 
-## Core Reading
-Mental-health care is delivered by professionals with different education, licenses, roles, and scopes. Psychologists commonly provide assessment, research, and psychological treatment; psychiatrists are physicians who can diagnose and provide medical treatment; counselors, clinical social workers, psychiatric nurses, and other professionals may provide services depending on their training and jurisdiction.
+## Compact Provider Cards
+Students use a short comparison set rather than a long reading.
 
-Professional ethics protect clients through competence, informed consent, privacy, confidentiality, boundaries, accurate records, and attention to conflicts of interest. Confidentiality is strong but not absolute. Exact requirements differ by jurisdiction and setting, so students learn the principle rather than memorizing a universal legal rule.
+Each card identifies:
+- typical training role;
+- common services;
+- whether medical training is part of the role;
+- a reminder that exact legal scope varies by jurisdiction.
+
+No student is expected to memorize state-by-state licensing rules.
+
+## Ethics Snapshot
+Professional ethics protect clients through:
+- competence;
+- informed consent;
+- privacy and confidentiality;
+- appropriate boundaries;
+- accurate documentation;
+- referral when needs exceed competence.
+
+Confidentiality is strong but not absolute. Exact exceptions vary by law, profession, setting, and jurisdiction.
 
 ## Worked Example
-A fictional therapist tells a client that sessions are confidential but explains the limits before treatment begins. Students identify why informed consent includes knowing the boundaries of privacy rather than promising impossible absolute secrecy.
+A fictional provider explains privacy rules and their limits before services begin. Students identify why informed consent includes knowing those boundaries rather than promising impossible absolute secrecy.
 
 ## Psychological Scientist's Desk
 **Claim:** “A therapist can never share anything a client says.”
 
-Students explain why that is too absolute and why legal/ethical exceptions must be communicated clearly by qualified providers.
+Students explain why the statement is too absolute and why qualified professionals must communicate limits clearly.
 
-## Data Lens
-Students examine a fictional treatment-claim infographic containing relative percentages, missing baseline values, and no follow-up. They reconstruct the absolute numbers and identify misleading presentation choices.
+## Data Lens — Misleading Treatment Infographic
+Students inspect a supplied infographic that uses:
+- relative percentages without baseline values;
+- a truncated graph;
+- no follow-up;
+- no burden data.
 
-## Claims Laboratory
-Evaluate:
-- “All therapists have the same training and legal authority.”
-- “Confidentiality means absolute secrecy.”
-- “A professional title automatically proves competence for every problem.”
-- “A large percentage improvement proves a treatment is best.”
-- “Reading about treatment qualifies someone to recommend it.”
+Students rebuild the conclusion using absolute numbers and cautious language.
 
-## Guided Investigation
-### Professional Ethics Case Conference
-Students analyze fictional scenarios involving:
+## Guided Investigation — Case Conference
+Students rotate through five fictional mini-cases involving:
 - informed consent;
-- privacy;
+- confidentiality;
 - professional competence;
-- conflicts of interest;
-- boundaries;
-- referral to another professional.
+- conflicts/boundaries;
+- referral.
 
-Students identify the ethical principle involved without pretending to issue legal rulings.
+For each they identify the ethical principle and the information still needed. They do not issue legal rulings.
 
-## Independent Assignment — Week 12 Culminating Task
-### Disorder & Treatment Evidence Brief
-Using only supplied fictional materials, students produce 800–1,100 words covering:
+## Independent Assignment — One-Page Week 12 Evidence Brief
+Using supplied fictional materials, complete a structured one-page template:
 1. observable concern/function without diagnosis;
 2. why diagnosis requires more information;
-3. biopsychosocial contributors;
-4. stigma risk;
-5. treatment category to investigate;
-6. treatment-study evidence;
-7. provider role;
-8. confidentiality/ethics issue;
-9. limitation;
-10. non-stigmatizing conclusion.
+3. two biopsychosocial contributors;
+4. one stigma risk;
+5. one treatment category to investigate professionally;
+6. one relevant treatment-study result;
+7. one provider/ethics issue;
+8. one limitation;
+9. one respectful conclusion.
 
-## Research Notebook Checkpoint
-Complete the **Clinical Boundary Audit**:
+No long essay is required.
+
+## Research Notebook Checkpoint — Clinical Boundary Audit
 - Does the project diagnose anyone?
 - Does it make treatment recommendations beyond evidence?
 - Does it protect privacy?
