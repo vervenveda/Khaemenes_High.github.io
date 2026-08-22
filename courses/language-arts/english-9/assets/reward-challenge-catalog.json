@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "purpose": "Optional positive reinforcement after successful English 9 learning milestones. Arcade play is formative enrichment only and never satisfies or bypasses the 80 percent mastery gates.",
+  "arcadeBase": "https://vervenveda.github.io/arcade.github.io/",
+  "games": [
+    {
+      "id": "affixsix",
+      "title": "AffixSix™",
+      "url": "https://vervenveda.github.io/arcade.github.io/AffixSix%E2%84%A2_index.html",
+      "category": "language",
+      "bestFor": ["morphology", "word structure", "vocabulary", "language play"],
+      "rewardWeight": 4
+    },
+    {
+      "id": "hangman",
+      "title": "Progressive Hangman",
+      "url": "https://vervenveda.github.io/arcade.github.io/Hangman_index.html",
+      "category": "language",
+      "bestFor": ["spelling", "word recognition", "vocabulary retrieval"],
+      "rewardWeight": 4
+    },
+    {
+      "id": "mini-iq",
+      "title": "Mini IQ Reasoning Lab",
+      "url": "https://vervenveda.github.io/arcade.github.io/IQ-mini_index.html",
+      "category": "reasoning",
+      "bestFor": ["logic", "verbal analogies", "patterns", "problem solving"],
+      "rewardWeight": 3
+    },
+    {
+      "id": "quantum-iq",
+      "title": "Quantum IQ",
+      "url": "https://vervenveda.github.io/arcade.github.io/IQ-Quantum_index.html",
+      "category": "reasoning",
+      "bestFor": ["extended reasoning", "adaptive challenge", "logic", "problem solving"],
+      "rewardWeight": 1
+    },
+    {
+      "id": "chess",
+      "title": "Chess Studio",
+      "url": "https://vervenveda.github.io/arcade.github.io/Chess_Studio_index.html",
+      "category": "strategy",
+      "bestFor": ["planning", "consequence", "counterfactual thinking", "strategy"],
+      "rewardWeight": 2
+    },
+    {
+      "id": "checkers",
+      "title": "Checkers Variant Lab",
+      "url": "https://vervenveda.github.io/arcade.github.io/Checkers_Variant_Lab_index.html",
+      "category": "strategy",
+      "bestFor": ["planning", "rules", "alternative systems", "strategy"],
+      "rewardWeight": 2
+    },
+    {
+      "id": "sudoku",
+      "title": "Sovereign Sudoku",
+      "url": "https://vervenveda.github.io/arcade.github.io/Jenny's_Sudoku_index.html",
+      "category": "reasoning",
+      "bestFor": ["constraint reasoning", "pattern detection", "persistence"],
+      "rewardWeight": 3
+    },
+    {
+      "id": "connect-four",
+      "title": "Orion's Connect Four",
+      "url": "https://vervenveda.github.io/arcade.github.io/Orions_connect_four_index.html",
+      "category": "strategy",
+      "bestFor": ["planning ahead", "prediction", "pattern recognition"],
+      "rewardWeight": 2,
+      "note": "The current game includes mathematics gates, so use primarily as a free-choice strategy reward rather than a Language Arts skill check."
+    },
+    {
+      "id": "backgammon",
+      "title": "Backgammon",
+      "url": "https://vervenveda.github.io/arcade.github.io/Backgammon_index.html",
+      "category": "strategy",
+      "bestFor": ["probabilistic thinking", "planning", "decision making"],
+      "rewardWeight": 1
+    }
+  ],
+  "selectionPolicy": {
+    "units1to6": ["affixsix", "hangman", "mini-iq", "sudoku", "chess"],
+    "units7to9": ["mini-iq", "sudoku", "chess", "hangman", "affixsix"],
+    "units10to12": ["mini-iq", "chess", "checkers", "sudoku", "quantum-iq", "backgammon"],
+    "masteryMilestone": ["mini-iq", "quantum-iq", "chess", "sudoku"],
+    "freeChoice": ["checkers", "connect-four", "backgammon", "chess", "sudoku"]
+  }
+}
