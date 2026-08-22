@@ -34,10 +34,24 @@ Attention/encoding as variable or mediator → specify relevant memory process �
 ## Week 6 — Thinking, Measurement & Metacognition
 Clarify constructs/categories → identify heuristic/base-rate risks → audit framing and wording → evaluate reliability/validity of cognitive measures → add a confidence rating and specify evidence that would increase, decrease, or overturn the working explanation.
 
-## Weeks 7–13
+## Week 7 — Emotion & Motivation
+Determine whether emotion is relevant → operationalize emotion with more than one possible measure → consider appraisal as a mediator → identify possible goals, incentives, or expected success → distinguish motivation from opportunity and performance → identify one explanation that should be excluded if evidence is insufficient.
+
+### Week 7 Model Check
+Use the scaffold only when supported:
+**Situation → Appraisal → Emotion → Motivation → Choice → Consequence**
+
+Then challenge it:
+- Which elements are observed?
+- Which are measured?
+- Which are inferred?
+- Could the order differ?
+- Could prior learning, social context, habit, or opportunity explain part of the pattern?
+
+## Weeks 8–13
 Reserved for the continuing forensic audit. Add checkpoints only after each week is academically locked.
 
 ## Permanent Research Rule
 **Justified exclusion is better science than forcing every theory or level of explanation onto every research question.**
 
-A student may conclude that a biological, perceptual, learning, memory, social, or other factor is not currently relevant. The notebook rewards defensible reasoning, not the number of theories named.
+A student may conclude that a biological, perceptual, learning, memory, cognitive, emotional, motivational, social, or other factor is not currently relevant. The notebook rewards defensible reasoning, not the number of theories named.
