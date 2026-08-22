@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reaction Flash — Psychology 101</title>
+<link rel="stylesheet" href="../assets/psych101.css">
+<style>
+.challenge-wrap{max-width:680px;margin:0 auto;text-align:center}.signal{min-height:180px;display:grid;place-items:center;border:1px solid var(--line);border-radius:var(--radius);background:#f5f1e8;margin:18px 0;font-size:20px;user-select:none}.signal.ready{background:#e4f2e6}.trial-list{display:flex;gap:7px;justify-content:center;flex-wrap:wrap}.trial{border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:12px}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">Psychology 101</a><div class="header-meta">Optional Completion Challenge</div></div></header>
+<main>
+<nav class="breadcrumbs"><a href="javascript:history.back()">Return to Lesson</a><span>›</span><span>Reaction Flash</span></nav>
+<section class="hero challenge-wrap">
+<div class="eyebrow">Focus · 3 trials</div><h1>Reaction Flash</h1>
+<p class="lead">A brief optional completion reward. It is not graded, does not affect mastery, and the reaction times are not used as psychological data.</p>
+<div id="signal" class="signal">Press Begin when you are ready.</div>
+<div class="actions" style="justify-content:center"><button id="go" class="btn primary" type="button">Begin</button><button class="btn" type="button" onclick="history.back()">Return to Lesson</button></div>
+<div id="trials" class="trial-list" aria-live="polite"></div>
+<p class="small">Reaction time varies with device, browser, input method, attention, expectation, and many other conditions. This tiny game is not a test of intelligence or ability.</p>
+</section>
+</main>
+<script>
+(()=>{
+ const signal=document.getElementById('signal'),go=document.getElementById('go'),trials=document.getElementById('trials');
+ let state='idle',timer=null,start=0,results=[];
+ function render(){trials.innerHTML=results.map((r,i)=>`<span class="trial">Trial ${i+1}: ${r} ms</span>`).join('');}
+ function reset(){state='idle';signal.classList.remove('ready');signal.textContent=results.length>=3?'Three trials complete. Nice work.':'Press Begin for the next trial.';go.disabled=false;go.textContent=results.length>=3?'Again':'Begin';}
+ go.addEventListener('click',()=>{
+   if(results.length>=3){results=[];render();}
+   if(state!=='idle')return;
+   state='waiting';go.disabled=true;signal.classList.remove('ready');signal.textContent='Wait for the signal…';
+   timer=setTimeout(()=>{state='ready';start=performance.now();signal.classList.add('ready');signal.textContent='TAP NOW';go.disabled=false;go.textContent='Tap!';},900+Math.random()*1700);
+ });
+ go.addEventListener('pointerdown',()=>{
+   if(state==='waiting'){
+     clearTimeout(timer);state='idle';signal.textContent='Too soon — try again when ready.';go.disabled=false;go.textContent='Begin';
+   }else if(state==='ready'){
+     const rt=Math.round(performance.now()-start);results.push(rt);render();state='idle';setTimeout(reset,250);
+   }
+ });
+})();
+</script>
+</body></html>
