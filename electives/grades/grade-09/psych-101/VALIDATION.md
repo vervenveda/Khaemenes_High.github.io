@@ -44,7 +44,7 @@
 - export/import bundle support
 
 ## Permanent Student Lesson Contract
-Every implemented lesson must include:
+Every implemented lesson includes:
 1. Retrieval Warm-Up
 2. Essential Question
 3. Learning Objectives
@@ -76,44 +76,72 @@ Student-facing files:
 
 Coverage includes scientific definition of psychology, observation vs inference, multiple perspectives, operational definitions, sampling, reliability/validity, correlation/causation, graph integrity, ethics, replication, converging evidence, and the Week 1 scientific investigation.
 
-Week 1 assessment includes Form A, targeted correction, parallel Form B, exact 80% mastery, stored best score, and mastery derived from actual attempts.
-
 ## Week 2 — Brain, Nervous System & Consciousness
 **GREEN — FULL WEEK IMPLEMENTED**
 
 Student-facing files:
-- `lessons/week-02/day-01.html` — Neurons & Neural Communication
-- `lessons/week-02/day-02.html` — Nervous System & Endocrine System
-- `lessons/week-02/day-03.html` — Brain Organization & Neural Networks
-- `lessons/week-02/day-04.html` — Consciousness, Sleep & Biological Rhythms
-- `lessons/week-02/day-05.html` — Studying the Brain, Neuroplasticity & Evidence
-- `assessments/week-02.html` — Week 2 mastery assessment + parallel retake
+- `lessons/week-02/day-01.html`
+- `lessons/week-02/day-02.html`
+- `lessons/week-02/day-03.html`
+- `lessons/week-02/day-04.html`
+- `lessons/week-02/day-05.html`
+- `assessments/week-02.html`
 
-Week 2 verification includes:
-- neuron, action potential, synapse, neurotransmitter, receptor
-- rejection of one-chemical/one-emotion explanations
-- CNS/PNS, somatic/autonomic, sympathetic/parasympathetic, endocrine/hormonal communication
-- homeostasis as dynamic regulation
-- physiology interpreted without mind-reading
-- brainstem, cerebellum, thalamus, hypothalamus, hippocampal systems, amygdala, cortex, lobes
-- localization + network reasoning
-- left-brain/right-brain personality myth correction
-- consciousness, circadian rhythm, non-REM/REM, sleep-performance reasoning
-- no private sleep disclosure or classroom diagnosis
-- EEG, fMRI, lesion evidence, behavioral measures
-- neuroplasticity without unlimited-change claims
-- converging evidence and method limitations
-- Brain & Behavior Report
+Coverage includes neurons/neurotransmitters, CNS/PNS, autonomic/endocrine regulation, brain regions and network reasoning, consciousness and sleep, EEG/fMRI/lesion evidence, neuroplasticity, and strong biological-determinism / mind-reading guardrails.
 
-Week 2 assessment includes Form A, targeted correction, parallel Form B, exact 80% mastery, stored best score, and biological interpretation guardrails.
+## Week 3 — Sensation, Perception & Attention
+**GREEN — FULL WEEK IMPLEMENTED**
+
+Student-facing files:
+- `lessons/week-03/day-01.html` — Sensation & Transduction
+- `lessons/week-03/day-02.html` — Vision, Hearing & the Other Senses
+- `lessons/week-03/day-03.html` — Perception: Building Meaning
+- `lessons/week-03/day-04.html` — Attention & Awareness
+- `lessons/week-03/day-05.html` — Context, Experience & Perceptual Reality
+- `assessments/week-03.html` — Week 3 mastery assessment + parallel retake
+
+Week 3 verification includes:
+- sensation vs perception
+- sensory receptors and transduction
+- absolute/difference thresholds as probabilistic measures
+- sensory adaptation
+- rods/cones, sound frequency/amplitude, touch, taste, smell, vestibular sense, proprioception
+- multisensory / cross-modal processing
+- bottom-up and top-down processing
+- Gestalt organization, depth cues, and perceptual constancy
+- illusions as evidence about normal perceptual rules rather than broken senses
+- selective/divided attention
+- inattentional blindness and change blindness
+- visual-search reaction time and accuracy
+- nuanced multitasking/task-switching reasoning
+- perceptual set, context, expectation, expertise, and experience
+- group pattern ≠ individual perceptual destiny
+- physical reality remains measurable even when interpretation varies
+- final position: perception is not identical to physical reality, but it is not arbitrary
+
+Week 3 assessment includes Form A, targeted correction, parallel Form B, exact 80% mastery, stored best score, and explicit protection against relativism and group stereotyping.
+
+## Weekly Assessment Verification
+Weeks 1–3 each implement:
+- 10-question mixed-format Form A
+- 4 core knowledge
+- 2 application/scenario
+- 2 research/evidence
+- 1 data interpretation
+- 1 ethics/context/limitation item
+- exact 80% mastery threshold
+- targeted concept review below mastery
+- a parallel Form B using new questions on the same standards
+- stored best score
+- mastery derived from actual attempts rather than completion flags
 
 ## Current Production Totals
-- Student-facing lessons implemented: **10 / 65**
-- Weekly mastery assessments implemented: **2 / 13**
-- Parallel-form retake systems implemented: **2 / 13**
+- Student-facing lessons implemented: **15 / 65**
+- Weekly mastery assessments implemented: **3 / 13**
+- Parallel-form retake systems implemented: **3 / 13**
 - Local completion challenges implemented: **1** (`Reaction Flash`)
 - Student Lesson Navigator: **implemented**
-- Weeks 1–2 navigation: **complete**
+- Weeks 1–3 navigation: **complete**
 
 ## Standards Verification
 Primary alignment is the **APA National Standards for High School Psychology Curricula (2022)**. The course covers the Scientific Inquiry & Research Methods foundation and the Biological, Cognition, Development and Learning, Social and Personality, and Mental and Physical Health pillars.
@@ -129,9 +157,12 @@ Every weekly assessment preserves the 10-question blueprint, 80% mastery, target
 - biology influences behavior but is not destiny
 - neurotransmitter ≠ fixed emotion or personality
 - brain activity ≠ explanation by itself
-- network ≠ single center
 - physiological change ≠ mind-reading
-- sleep state ≠ personality
+- sensation ≠ perception
+- interpretation ≠ invention
+- attention ≠ eyesight
+- illusion ≠ broken perception
+- perceptual variation ≠ anything goes
 - group average ≠ individual destiny
 - symptom ≠ diagnosis
 - diagnosis ≠ identity
@@ -147,4 +178,4 @@ Completion rewards remain optional, non-graded, local-first, non-coercive, bound
 ## Production Verdict
 **AMBER — ACTIVE BUILD.**
 
-Weeks 1 and 2 are now complete reference-grade student implementations. Remaining production work: 55 student-facing lessons, 11 weekly assessments/parallel retakes, 3 cumulative assessments, Word Lab, Research Notebook/Journal/Progress interfaces, additional approved completion challenges, full link validation, accessibility checks, export/import recovery tests, and offline integrity testing.
+Weeks 1–3 are now complete reference-grade student implementations. Remaining production work: 50 student-facing lessons, 10 weekly assessments/parallel retakes, 3 cumulative assessments, Word Lab, Research Notebook/Journal/Progress interfaces, additional approved completion challenges, full link validation, accessibility checks, export/import recovery tests, and offline integrity testing.
