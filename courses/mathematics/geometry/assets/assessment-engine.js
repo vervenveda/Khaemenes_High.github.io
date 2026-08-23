@@ -5,81 +5,30 @@ const diagnostic=cfg.source==="diagnostic";
 const all=diagnostic?window.GEOMETRY_DIAGNOSTIC:window.GEOMETRY_QUESTIONS;
 const host=document.getElementById("assessmentRoot");
 if(!host||!Array.isArray(all))return;
-const KEY="khaemenes-geometry-assessment-records-v1";
-const MASTERY_TARGET=diagnostic?null:Number(cfg.masteryTarget??80);
+const KEY="khaemenes-geometry-assessment-records-v1",LESSON_KEY="khaemenes-geometry-lesson-progress-v1",WEEK_KEY="khaemenes-geometry-weekly-mastery-v2";
+const MASTERY_TARGET=diagnostic?null:Number(cfg.masteryTarget??80),LESSON_COUNTS={1:6,2:7,3:7,4:6,5:7,6:8,7:7,8:8,9:7,10:7,11:7,12:7,13:6},UNIT_WEEKS={1:[1,2],2:[3,4,5],3:[6,7,8],4:[9,10],5:[11,12,13],6:[14,15,16,17],7:[19,20,21],8:[22,23,24],9:[25,26,27],10:[28,29],11:[30,31],12:[32,33,34],13:[35,36]};
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-function load(){try{return JSON.parse(localStorage.getItem(KEY)||"{}")}catch{return {}}}
+function parse(key,fallback={}){try{return JSON.parse(localStorage.getItem(key)||"null")||fallback}catch{return fallback}}
+function load(){return parse(KEY,{})}
 function save(x){try{localStorage.setItem(KEY,JSON.stringify(x))}catch{}}
+function lessonMastered(unit,lesson){const id=`u${String(unit).padStart(2,"0")}-l${String(lesson).padStart(2,"0")}`,r=parse(LESSON_KEY,{})[id];return Number(r?.bestScore??r?.score)>=80&&r?.mastery===true}
+function allLessonsMastered(unit){const count=LESSON_COUNTS[unit]||0;return count>0&&Array.from({length:count},(_,i)=>i+1).every(l=>lessonMastered(unit,l))}
+function unitMastered(unit){const r=load()[`unit-${String(unit).padStart(2,"0")}`];return Number(r?.bestScore)>=80||r?.mastery===true||Array.isArray(r?.attempts)&&r.attempts.some(a=>Number(a.score)>=80)}
+function weekMastered(week){const r=parse(WEEK_KEY,{weeks:{}})?.weeks?.[week];return Number(r?.best)>=80||Array.isArray(r?.attempts)&&r.attempts.some(a=>a?.mastery_met===true||Number(a?.percent)>=80)}
+function cumulativeMastered(key){const r=load()[key];return Number(r?.bestScore)>=80||r?.mastery===true||Array.isArray(r?.attempts)&&r.attempts.some(a=>Number(a.score)>=80)}
+function recordUnit(){const m=String(cfg.recordKey||"").match(/^unit-(\d{2})$/);return m?Number(m[1]):null}
+function missingPrereqs(){if(diagnostic)return[];const missing=[],u=recordUnit();if(u){if(u>1&&!unitMastered(u-1))missing.push(`Unit ${String(u-1).padStart(2,"0")} mastery ≥80%`);if(!allLessonsMastered(u))missing.push(`all ${LESSON_COUNTS[u]} lesson gates in Unit ${String(u).padStart(2,"0")} ≥80%`);for(const w of UNIT_WEEKS[u]||[])if(!weekMastered(w))missing.push(`Week ${String(w).padStart(2,"0")} mastery ≥80%`);return missing}if(cfg.recordKey==="midterm"){for(let u=1;u<=6;u++)if(!unitMastered(u))missing.push(`Unit ${String(u).padStart(2,"0")} mastery ≥80%`);for(let w=1;w<=18;w++)if(!weekMastered(w))missing.push(`Week ${String(w).padStart(2,"0")} mastery ≥80%`);return missing}if(cfg.recordKey==="final"){for(let u=1;u<=13;u++)if(!unitMastered(u))missing.push(`Unit ${String(u).padStart(2,"0")} mastery ≥80%`);for(let w=1;w<=36;w++)if(!weekMastered(w))missing.push(`Week ${String(w).padStart(2,"0")} mastery ≥80%`);if(!cumulativeMastered("midterm"))missing.push("Midterm mastery ≥80%");return missing}return missing}
+function renderLocked(missing){host.innerHTML=`<article class="card"><p class="eyebrow">Strict 80% Mastery Gate</p><h2>${esc(cfg.title||"Assessment")} is locked</h2><p>This assessment opens only after the required prior mastery evidence is complete.</p><ul>${missing.slice(0,14).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>${missing.length>14?`<p>Plus ${missing.length-14} additional prerequisite gate(s).</p>`:""}<p class="notice">Scores below 80% remain in attempt history but do not unlock the next graded stage.</p></article>`;document.getElementById("startAssessment")?.setAttribute("disabled","true");document.getElementById("resetAssessment")?.setAttribute("disabled","true")}
 function shuffle(a){const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}return x}
-function pool(){
- let p=[...all];
- if(Array.isArray(cfg.units)&&cfg.units.length)p=p.filter(q=>cfg.units.includes(q.unit));
- return p;
-}
-function balancedSet(){
- const p=pool(),requested=Math.min(Number(cfg.count)||10,p.length);
- if(requested>=p.length)return shuffle(p);
- const units=Array.isArray(cfg.units)&&cfg.units.length?[...cfg.units]:[];
- if(diagnostic||units.length<2)return shuffle(p).slice(0,requested);
- const base=Math.floor(requested/units.length),extra=requested%units.length;
- let selected=[];
- units.forEach((unit,index)=>{
-  const unitPool=shuffle(p.filter(q=>q.unit===unit));
-  const quota=base+(index<extra?1:0);
-  selected.push(...unitPool.slice(0,Math.min(quota,unitPool.length)));
- });
- if(selected.length<requested){
-  const used=new Set(selected.map(q=>q.id));
-  selected.push(...shuffle(p.filter(q=>!used.has(q.id))).slice(0,requested-selected.length));
- }
- return shuffle(selected).slice(0,requested);
-}
+function pool(){let p=[...all];if(Array.isArray(cfg.units)&&cfg.units.length)p=p.filter(q=>cfg.units.includes(q.unit));return p}
+function balancedSet(){const p=pool(),requested=Math.min(Number(cfg.count)||10,p.length);if(requested>=p.length)return shuffle(p);const units=Array.isArray(cfg.units)&&cfg.units.length?[...cfg.units]:[];if(diagnostic||units.length<2)return shuffle(p).slice(0,requested);const base=Math.floor(requested/units.length),extra=requested%units.length;let selected=[];units.forEach((unit,index)=>{const unitPool=shuffle(p.filter(q=>q.unit===unit)),quota=base+(index<extra?1:0);selected.push(...unitPool.slice(0,Math.min(quota,unitPool.length)))});if(selected.length<requested){const used=new Set(selected.map(q=>q.id));selected.push(...shuffle(p.filter(q=>!used.has(q.id))).slice(0,requested-selected.length))}return shuffle(selected).slice(0,requested)}
 let set=[];
 function records(){return load()}
 function attempts(){return records()[cfg.recordKey]?.attempts||[]}
 function best(){const arr=attempts();return arr.length?Math.max(...arr.map(x=>Number(x.score)||0)):null}
 function bestMastered(){return MASTERY_TARGET==null?null:attempts().some(x=>Number(x.score)>=MASTERY_TARGET)}
-function statusText(score){
- if(MASTERY_TARGET==null)return "Diagnostic evidence recorded. Use the result to guide placement and review; it does not gate course credit.";
- return score>=MASTERY_TARGET?`Mastery demonstrated at or above ${MASTERY_TARGET}%.`:`Below ${MASTERY_TARGET}% mastery. Review explanations, complete corrections, and retake with a fresh set.`;
-}
-function start(){
- set=balancedSet();
- const token=`geo-${Date.now()}`;
- const priorBest=best(),priorMastered=bestMastered();
- const savedStatus=priorBest==null?"No saved attempt yet.":MASTERY_TARGET==null?`Best saved score: ${priorBest}%`:`Best saved score: ${priorBest}% · ${priorMastered?"Mastery demonstrated":"Mastery not yet demonstrated"}`;
- host.innerHTML=`<article class="card"><div class="form-grid"><label>Learner name or initials<input id="assessmentLearner" maxlength="60" placeholder="Optional local label"></label><label>Pathway<select id="assessmentPathway"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></label></div><p class="notice">${esc(cfg.instructions||"Answer every question. Submit once complete, review explanations, and correct missed work.")}</p>${MASTERY_TARGET==null?"":`<p class="notice"><strong>Mastery target:</strong> ${MASTERY_TARGET}%. A lower score remains useful evidence but does not count as demonstrated mastery until a later attempt reaches the target.</p>`}</article>`+
- set.map((q,i)=>`<article class="question"><fieldset><legend>${i+1}. ${esc(q.prompt)}</legend><div class="options">${q.options.map((o,j)=>`<label class="option"><input type="radio" name="${token}-q${i}" value="${j}"><span>${esc(o)}</span></label>`).join("")}</div><div class="feedback" id="${token}-fb${i}" hidden></div></fieldset></article>`).join("")+
- `<div class="assessment-result"><button class="btn primary" id="submitAssessment" type="button">Submit &amp; Score</button><button class="btn" id="printAssessment" type="button">Print</button><p id="assessmentMessage">${esc(savedStatus)}</p></div>`;
- document.getElementById("submitAssessment").addEventListener("click",()=>score(token));
- document.getElementById("printAssessment").addEventListener("click",()=>print());
-}
-function score(token){
- let right=0,complete=true,missed=[];
- set.forEach((q,i)=>{
-  const selected=document.querySelector(`input[name="${token}-q${i}"]:checked`);
-  const fb=document.getElementById(`${token}-fb${i}`);fb.hidden=false;
-  if(!selected){complete=false;fb.className="feedback bad";fb.textContent="Choose an answer.";return}
-  const ok=Number(selected.value)===q.answer;if(ok)right++;else missed.push(q.id);
-  fb.className=`feedback ${ok?"good":"bad"}`;
-  fb.textContent=`${ok?"Correct.":"Review."} ${q.explanation}`;
- });
- if(!complete){document.getElementById("assessmentMessage").textContent="Answer every question before scoring.";return}
- const score=Math.round(right/set.length*100),data=records(),key=cfg.recordKey||"assessment";
- data[key]=data[key]||{title:cfg.title||key,attempts:[]};
- data[key].title=cfg.title||data[key].title||key;
- data[key].masteryTarget=MASTERY_TARGET;
- data[key].attempts.push({date:new Date().toISOString(),score,right,total:set.length,missed,learner:document.getElementById("assessmentLearner").value.trim(),pathway:document.getElementById("assessmentPathway").value,mastered:MASTERY_TARGET==null?null:score>=MASTERY_TARGET,questionIds:set.map(q=>q.id),unitCoverage:[...new Set(set.map(q=>q.unit))].sort((a,b)=>a-b)});
- data[key].bestScore=Math.max(...data[key].attempts.map(x=>Number(x.score)||0));
- data[key].mastery=MASTERY_TARGET==null?null:data[key].bestScore>=MASTERY_TARGET;
- save(data);
- const message=document.getElementById("assessmentMessage");
- message.textContent="";
- const scoreSpan=document.createElement("span");scoreSpan.className="score";scoreSpan.textContent=`${score}%`;
- message.append(scoreSpan,document.createTextNode(` · ${right}/${set.length} · Best ${data[key].bestScore}% · ${statusText(score)}`));
- document.getElementById("submitAssessment").disabled=true;
-}
-document.getElementById("startAssessment")?.addEventListener("click",start);
-document.getElementById("resetAssessment")?.addEventListener("click",()=>{if(confirm("Start a new attempt? Saved score history and best mastery evidence will be preserved."))start()});
-start();
+function statusText(score){if(MASTERY_TARGET==null)return "Diagnostic evidence recorded. Use the result to guide placement and review; it does not gate course credit.";return score>=MASTERY_TARGET?`Mastery demonstrated at or above ${MASTERY_TARGET}%.`:`Below ${MASTERY_TARGET}% mastery. Review explanations, complete corrections, and retake with a fresh set.`}
+function start(){const missing=missingPrereqs();if(missing.length){renderLocked(missing);return}set=balancedSet();const token=`geo-${Date.now()}`,priorBest=best(),priorMastered=bestMastered(),savedStatus=priorBest==null?"No saved attempt yet.":MASTERY_TARGET==null?`Best saved score: ${priorBest}%`:`Best saved score: ${priorBest}% · ${priorMastered?"Mastery demonstrated":"Mastery not yet demonstrated"}`;host.innerHTML=`<article class="card"><div class="form-grid"><label>Learner name or initials<input id="assessmentLearner" maxlength="60" placeholder="Optional local label"></label><label>Pathway<select id="assessmentPathway"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></label></div><p class="notice">${esc(cfg.instructions||"Answer every question. Submit once complete, review explanations, and correct missed work.")}</p>${MASTERY_TARGET==null?"":`<p class="notice"><strong>Mastery gate:</strong> ${MASTERY_TARGET}% is required before the next graded stage unlocks.</p>`}</article>`+set.map((q,i)=>`<article class="question"><fieldset><legend>${i+1}. ${esc(q.prompt)}</legend><div class="options">${q.options.map((o,j)=>`<label class="option"><input type="radio" name="${token}-q${i}" value="${j}"><span>${esc(o)}</span></label>`).join("")}</div><div class="feedback" id="${token}-fb${i}" hidden></div></fieldset></article>`).join("")+`<div class="assessment-result"><button class="btn primary" id="submitAssessment" type="button">Submit &amp; Score</button><button class="btn" id="printAssessment" type="button">Print</button><p id="assessmentMessage">${esc(savedStatus)}</p></div>`;document.getElementById("submitAssessment").addEventListener("click",()=>score(token));document.getElementById("printAssessment").addEventListener("click",()=>print())}
+function score(token){let right=0,complete=true,missed=[];set.forEach((q,i)=>{const selected=document.querySelector(`input[name="${token}-q${i}"]:checked`),fb=document.getElementById(`${token}-fb${i}`);fb.hidden=false;if(!selected){complete=false;fb.className="feedback bad";fb.textContent="Choose an answer.";return}const ok=Number(selected.value)===q.answer;if(ok)right++;else missed.push(q.id);fb.className=`feedback ${ok?"good":"bad"}`;fb.textContent=`${ok?"Correct.":"Review."} ${q.explanation}`});if(!complete){document.getElementById("assessmentMessage").textContent="Answer every question before scoring.";return}const score=Math.round(right/set.length*100),data=records(),key=cfg.recordKey||"assessment";data[key]=data[key]||{title:cfg.title||key,attempts:[]};data[key].title=cfg.title||data[key].title||key;data[key].masteryTarget=MASTERY_TARGET;data[key].attempts.push({date:new Date().toISOString(),score,right,total:set.length,missed,learner:document.getElementById("assessmentLearner").value.trim(),pathway:document.getElementById("assessmentPathway").value,mastered:MASTERY_TARGET==null?null:score>=MASTERY_TARGET,questionIds:set.map(q=>q.id),unitCoverage:[...new Set(set.map(q=>q.unit))].sort((a,b)=>a-b)});data[key].bestScore=Math.max(...data[key].attempts.map(x=>Number(x.score)||0));data[key].mastery=MASTERY_TARGET==null?null:data[key].bestScore>=MASTERY_TARGET;save(data);const message=document.getElementById("assessmentMessage");message.textContent="";const scoreSpan=document.createElement("span");scoreSpan.className="score";scoreSpan.textContent=`${score}%`;message.append(scoreSpan,document.createTextNode(` · ${right}/${set.length} · Best ${data[key].bestScore}% · ${statusText(score)}`));document.getElementById("submitAssessment").disabled=true}
+document.getElementById("startAssessment")?.addEventListener("click",start);document.getElementById("resetAssessment")?.addEventListener("click",()=>{if(confirm("Start a new attempt? Saved score history and best mastery evidence will be preserved."))start()});start();
 })();
