@@ -1,11 +1,12 @@
 "use strict";
-const CACHE_VERSION="khaemenes-algebra1-v5-canonical-mastery-convergence";
+const CACHE_VERSION="khaemenes-algebra1-v6-applied-labs";
 const LEGACY_SOURCE="./service-worker-precache-v1.js";
 const RELEASE_FILES=[
  "./","./index.html","./offline.html","./service-worker-precache-v1.js",
  "./assessments/index.html","./assessments/administration-guide.html","./assessments/assessment-map.json","./assessments/weekly-mastery.html","./assessments/midterm-units-01-06.html","./assessments/final-exam-36-weeks.html",
  "./assessments/assets/weekly-mastery-v2-a.js","./assessments/assets/weekly-mastery-v2-b.js","./assessments/assets/weekly-mastery-v2-c.js","./assessments/assets/weekly-mastery-v2-d.js","./assessments/assets/weekly-mastery-quality-patch-v2.js","./assessments/assets/weekly-mastery-engine-v2.js","./assessments/assets/exam-depth-v2.js",
  "./assets/mastery-authority-v1.js","./assets/dedicated-unit-gates-v1.js","./assets/exam-engine.js","./assets/legacy-mastery-engine-v2.js","./assets/record-engine.js","./assets/strict-mastery-gates.js","./assets/course-progression-gates.js","./assets/unit-page.js","./assets/unit-page-core.js","./assets/unit-13-content-upgrade.js","./assets/styles.css","./course-map.json","./course-data.js","./assets/question-bank.js",
+ "./labs/index.html","./labs/assets/lab-engine-v1.js","./labs/linear-model-lab.html","./labs/systems-constraints-lab.html","./labs/exponential-change-lab.html","./labs/quadratic-design-lab.html","./labs/financial-evidence-lab.html","./labs/integrated-modelling-lab.html",
  "./units/unit-01/assets/unit01.js",
  "./units/unit-02/assets/unit02.js","./units/unit-02/assets/unit02-core.js",
  "./units/unit-03/assets/unit03.js","./units/unit-03/assets/unit03-core.js",
