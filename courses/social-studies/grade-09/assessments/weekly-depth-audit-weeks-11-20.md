@@ -1,4 +1,4 @@
-# Weekly Assessment Depth Audit — Weeks 11–20
+# Weekly Assessment Depth Audit — Weeks 11–25
 
 ## Purpose
 Verify that each weekly assessment measures the actual instructional depth of its week rather than merely satisfying an 80% threshold or testing generic vocabulary.
@@ -39,8 +39,23 @@ Reformation, Media, Power & Toleration. The prior printable assessment contained
 
 Repair commit: `778a0d7aebe2ec30b68854c04842f9d561e29143`.
 
+### Week 21 — PASS
+Land-Based Empires, Diversity & State Capacity. Canonical and printable assessments align around state capacity beyond gunpowder, local intermediaries, imperial accommodation, assessment versus actual collection, frontier control, imperial imagery/legitimacy, the limits of “gunpowder empire,” Ottoman devshirme, and comparative governance. The constructed response requires three source categories and multiple imperial contexts. No repair required.
+
+### Week 22 — PASS
+Oceanic Expansion, Encounter & Columbian Exchange. Canonical and printable assessments align around oceanic expansion as a system, Indigenous alliances and agency, Columbus source criticism, Florentine Codex mediation, biological exchange, demographic collapse as multicausal, encomienda law-versus-practice, map limitations, and responsibility. No repair required.
+
+### Week 23 — PASS
+Atlantic Slavery, Colonialism & Resistance. Canonical and printable assessments align around the Atlantic forced-labor system, quantitative uncertainty, racialization as a historical process, law versus implementation, diverse forms of resistance, archival bias, and careful map/data interpretation. No repair required.
+
+### Week 24 — PASS
+Enlightenment, Authority & Rights. Canonical and printable assessments align around competing Enlightenment arguments, Hobbes/Locke comparison, circulation versus reception, unequal public-sphere access, institutional design and tradeoffs, universal rights versus exclusion, critical voices including Wollstonecraft/abolitionists, and separating historical analysis from present-day normative judgment. No repair required.
+
+### Week 25 — PASS
+Atlantic Revolutions, Rights & Unequal Outcomes. Canonical and printable assessments align around multicausal revolutionary origins, ideals versus implementation, excluded voices, Haitian agency, comparative revolutions, continuity/change, map limitations, transparent evaluation criteria, and unequal rights outcomes. No repair required.
+
 ## Standard established
 A weekly assessment is not considered rigorous merely because it has ten questions and an 80% gate. It must sample the week's actual content and disciplinary skills, include meaningful reasoning, and require transfer beyond vocabulary recognition. Printable assessments must match canonical quiz data and teacher keys.
 
 ## Next audit range
-Continue with Weeks 21–30 under the same depth standard, with special attention to imperialism, colonialism, slavery, Indigenous dispossession, Atlantic systems, and later Israel/Palestine chronology when those topics appear.
+Continue with Weeks 26–30 under the same depth standard, with special attention to industrialization, capitalism/socialism, labor, imperialism, colonialism, Indigenous dispossession, Atlantic systems, and later Israel/Palestine chronology when those topics appear.
