@@ -1,0 +1,1 @@
+The reusable engine files in `assets/` are the sources for the Unit 2–13 lesson/dashboard controllers and the Unit 1–13 assessment wrappers. Unit 1 retains its richer engines as `*-core.js` files behind thin hardening wrappers.

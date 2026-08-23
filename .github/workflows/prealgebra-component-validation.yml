@@ -23,3 +23,5 @@ jobs:
         run: node courses/mathematics/pre-algebra/tools/validate-components.mjs
       - name: Validate Pre-Algebra assessment depth
         run: node courses/mathematics/pre-algebra/tools/validate-assessment-depth.mjs
+      - name: Validate Academy mastery gates
+        run: node courses/mathematics/pre-algebra/tools/validate-mastery-gates.mjs
