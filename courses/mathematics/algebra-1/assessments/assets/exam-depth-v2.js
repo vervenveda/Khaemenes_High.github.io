@@ -47,4 +47,12 @@ window.KhaemenesAlgebra1ExamDepth={
     ]
   }
 };
+const MASTERY=80;
+const safe=(key,fallback={})=>{try{return JSON.parse(localStorage.getItem(key)||"null")||fallback}catch{return fallback}};
+function unitMastered(n){if(n===1)return Number(safe("khaemenes-algebra1-unit01-a3-v1",{best:{}})?.best?.mastery)>=MASTERY;const p=safe(`khaemenes-algebra1-unit${String(n).padStart(2,"0")}-progress-v1`,{completed:[],scores:{}});return Number(p?.scores?.mastery)>=MASTERY||Array.isArray(p?.completed)&&p.completed.includes("mastery")}
+function weekMastered(n){const r=safe("khaemenes-algebra1-weekly-mastery-v2",{weeks:{}})?.weeks?.[n];return Number(r?.best)>=MASTERY||Array.isArray(r?.attempts)&&r.attempts.some(a=>a?.mastery_met===true)}
+function cumulativeMastered(key){const r=safe(key,null);return !!(r&&r.mastery===true)}
+function missingFor(id){const missing=[];if(id==="KH-MATH-A1-MIDTERM-U01-U06"){for(let u=1;u<=6;u++)if(!unitMastered(u))missing.push(`Unit ${String(u).padStart(2,"0")} mastery`);for(let w=2;w<=18;w++)if(!weekMastered(w))missing.push(`Week ${String(w).padStart(2,"0")} mastery`)}else if(id==="KH-MATH-A1-FINAL-36W"){for(let u=1;u<=13;u++)if(!unitMastered(u))missing.push(`Unit ${String(u).padStart(2,"0")} mastery`);for(let w=2;w<=36;w++)if(!weekMastered(w))missing.push(`Week ${String(w).padStart(2,"0")} mastery`);if(!cumulativeMastered("khaemenes-algebra1-midterm-result-v1"))missing.push("reviewed Midterm mastery")}return missing}
+function enforceExamGate(){const C=window.EXAM_CONFIG;if(!C)return;const missing=missingFor(C.id);if(!missing.length)return;const main=document.getElementById("main");if(!main)return;const list=missing.slice(0,12).map(x=>`<li>${x}</li>`).join("");const more=missing.length>12?`<p>Plus ${missing.length-12} additional prerequisite gate(s).</p>`:"";main.innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Strict 80% Mastery Gate</p><h1>${C.title} is locked</h1><p class="lead">Every prerequisite lesson/weekly/unit gate must be complete before this cumulative examination opens.</p><div class="actions"><a class="btn primary" href="../assessments/weekly-mastery.html">Return to Weekly Mastery</a><a class="btn" href="../#units">Review Units</a></div></div></section><section class="block"><div class="wrap"><article class="card"><h2>Still required</h2><ul>${list}</ul>${more}<p class="notice">A score below ${MASTERY}% remains saved as evidence, but it does not unlock the next graded stage.</p></article></div></section>`}
+setTimeout(enforceExamGate,0);
 })();
