@@ -1,0 +1,57 @@
+{
+  "schema": "khaemenes-algebra1-mathematical-key-proof-v1",
+  "audit_date": "2026-08-23",
+  "course_id": "KH-MATH-A1",
+  "status": "partial-course-proof",
+  "mastery_threshold": 80,
+  "method": {
+    "weekly_selected_response": "Every learner-facing weekly prompt was independently re-solved or conceptually verified against its keyed option and explanation. Verification was performed on the effective runtime bank, after the documented quality patch is applied.",
+    "source_pinning": "Git blob SHAs pin the exact source files audited so later content changes cannot silently inherit this proof.",
+    "claim_boundary": "This record certifies only scopes whose status is proven. It does not certify pending unit, Midterm, Final, or readiness scopes."
+  },
+  "weekly_mastery": {
+    "status": "proven",
+    "weeks": 36,
+    "questions_per_week": 10,
+    "questions_checked": 360,
+    "effective_key_defects_found_in_this_pass": 0,
+    "source_blobs": {
+      "assessments/assets/weekly-mastery-v2-a.js": "3181ddd98b233ecfb1a05894a8aa9d0efea16260",
+      "assessments/assets/weekly-mastery-v2-b.js": "1f216ff93cd511cde300d962671135cb830db4c4",
+      "assessments/assets/weekly-mastery-v2-c.js": "e2f5f45fcbcd88c9d15911d71837a705de0fa4af",
+      "assessments/assets/weekly-mastery-v2-d.js": "3c9e66d15609fae3381284bb643335ab3a068032",
+      "assessments/assets/weekly-mastery-quality-patch-v2.js": "f6cb02c36c26741d1963be6f99b98cfd0a54ff63"
+    },
+    "effective_runtime_corrections_verified": [
+      {
+        "id": "a1-w08-q07",
+        "purpose": "Correct answer index/explanation for rectangle width W=16.",
+        "effective_answer": 0
+      },
+      {
+        "id": "a1-w09-q07",
+        "purpose": "Remove equivalent duplicate 2-hour options and retain one definitive answer.",
+        "effective_answer": 1
+      },
+      {
+        "id": "a1-w18-q07",
+        "purpose": "Remove equivalent $141/$141.00 duplicate options and retain one definitive answer.",
+        "effective_answer": 2
+      }
+    ],
+    "conclusion": "The effective Week 1-36 weekly mastery bank contains 360 independently checked learner-facing keyed questions. No additional mathematical key correction was required by this audit pass."
+  },
+  "pending_scopes": [
+    "readiness diagnostic key proof",
+    "Units 01-09 dedicated question-bank and fixed formal-mastery key proof",
+    "Units 10-13 shared question-bank and formal-mastery key proof",
+    "Midterm 60 selected-response key proof",
+    "Final 100 selected-response key proof",
+    "constructed-response rubric/prompt mathematical review"
+  ],
+  "trust": {
+    "authoritative_credential": false,
+    "purpose": "repository QA evidence",
+    "whole_course_mathematically_proven": false
+  }
+}
