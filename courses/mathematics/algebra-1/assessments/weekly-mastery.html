@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17344a">
+<meta name="description" content="Khaemenes Algebra I week-specific mastery checks: 10 aligned questions per week with an 80% mastery target.">
+<title>Weekly Mastery Center · Algebra I · Khaemenes Academy</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.weekly-toolbar{display:flex;gap:.7rem;align-items:end;justify-content:center;flex-wrap:wrap;margin-top:1.2rem}.weekly-toolbar label{display:grid;gap:.35rem;text-align:left;color:var(--muted);font-size:.82rem}.weekly-toolbar select{min-width:260px;padding:.72rem .8rem;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink)}
+.weekly-shell{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:1rem;align-items:start}.weekly-side{position:sticky;top:92px}.question-list{display:grid;gap:.85rem}.question{padding:1rem}.question fieldset{border:0;margin:0;padding:0}.question legend{font-weight:800;line-height:1.45}.qmeta{display:block;margin-bottom:.35rem;color:var(--muted);font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.options{display:grid;gap:.45rem;margin-top:.7rem}.option{display:flex;gap:.55rem;align-items:flex-start;padding:.55rem;border:1px solid transparent;border-radius:9px}.option:hover{border-color:var(--blue)}.feedback{margin-top:.65rem;padding:.68rem;border-radius:9px}.feedback.good{background:rgba(52,131,88,.12);color:var(--green)}.feedback.bad{background:rgba(164,72,62,.1);color:var(--danger)}.dimension-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.45rem;margin-top:1rem}.dimension-chip{padding:.55rem;border:1px solid var(--line);border-radius:9px;background:var(--bg2);text-align:center;font-size:.72rem}.weekly-score{font-size:clamp(2.4rem,7vw,4.8rem);font-weight:800;color:var(--gold2);line-height:1}.side-actions{display:grid;gap:.55rem}.side-actions .btn{width:100%}.trust-note{font-size:.82rem;color:var(--muted)}
+@media(max-width:900px){.weekly-shell{grid-template-columns:1fr}.weekly-side{position:static}.dimension-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.dimension-grid{grid-template-columns:1fr}.weekly-toolbar select{min-width:0;width:100%}}
+@media print{.site-header,.weekly-side,.weekly-toolbar,.no-print{display:none!important}.weekly-shell{display:block}.question{break-inside:avoid}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to weekly mastery</a>
+<header class="site-header"><div class="wrap header-inner">
+<a class="brand" href="../"><span class="brand-mark">A1</span><span class="brand-copy"><strong>KHAEMENES ACADEMY</strong><small>Algebra I · Weekly Mastery</small></span></a>
+<nav class="header-nav" aria-label="Course navigation"><a href="../">Course Home</a><a href="../#units">Units</a><a href="./">Assessments</a><a href="../teacher/">Teacher</a><a href="../family/">Family</a></nav>
+<button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">◐</button>
+</div></header>
+<main id="main">
+<section class="hero"><div class="wrap">
+<p class="eyebrow">36-Week Assessment Alignment · 80% Mastery</p>
+<h1 id="weekTitle">Weekly Mastery Center</h1>
+<p class="lead" id="weekFocus">Ten week-specific questions measure the mathematics actually taught that week.</p>
+<div class="weekly-toolbar no-print">
+<label for="weekSelect">Choose course week<select id="weekSelect" aria-label="Choose course week"></select></label>
+<a class="btn" id="unitReviewLink" href="../#units">Review Unit</a>
+<button class="btn" id="printButton" type="button">Print</button>
+</div>
+</div></section>
+<section class="block"><div class="wrap"><p class="notice" id="masteryNotice"><strong>Mastery standard:</strong> 8 of 10 correct (80%) is required on graded instructional weeks. Week 1 is readiness evidence and remains separate from the course grade.</p></div></section>
+<section class="block"><div class="wrap weekly-shell">
+<article class="card"><div class="question-list" id="questionHost"></div></article>
+<aside class="card weekly-side">
+<p class="eyebrow">Mastery record</p>
+<h2 id="sideWeekTitle">Week</h2>
+<p id="sideFocus"></p>
+<p id="progressLabel">0/10 answered</p><div class="progress"><span id="progressBar"></span></div>
+<div class="dimension-grid" id="dimensionGrid" aria-label="Assessment dimensions"></div>
+<div class="side-actions no-print" style="margin-top:1rem">
+<button class="btn primary" id="submitButton" type="button">Submit &amp; Score</button>
+<button class="btn" id="saveButton" type="button">Save Draft</button>
+<button class="btn" id="exportButton" type="button">Export Result</button>
+<button class="btn" id="resetButton" type="button">Reset Week</button>
+</div>
+<p id="status" class="trust-note" aria-live="polite"></p>
+</aside>
+</div></section>
+<section class="block" id="results" hidden><div class="wrap"><article class="card">
+<p class="eyebrow">Weekly result</p><div class="weekly-score" id="resultScore"></div><h2 id="resultTitle"></h2><p id="resultSummary"></p>
+<div class="actions no-print"><a class="btn" id="reviewAfterResult" href="../#units">Review Unit</a><button class="btn primary" id="nextWeekButton" type="button">Open Next Week</button></div>
+<p class="notice">This is browser-local learning evidence. It is editable, not digitally signed, and not an independently authenticated academic record.</p>
+</article></div></section>
+</main>
+<script src="assets/weekly-mastery-v2-a.js"></script>
+<script src="assets/weekly-mastery-v2-b.js"></script>
+<script src="assets/weekly-mastery-v2-c.js"></script>
+<script src="assets/weekly-mastery-v2-d.js"></script>
+<script src="assets/weekly-mastery-quality-patch-v2.js"></script>
+<script src="assets/weekly-mastery-engine-v2.js"></script>
+</body>
+</html>
