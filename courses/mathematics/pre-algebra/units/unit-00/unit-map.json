@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "unit": {
     "id": "KH-MATH-PA-U00",
     "course": "KH-MATH-PA",
@@ -7,85 +7,35 @@
     "title": "Foundations & Readiness",
     "conditional": true,
     "duration_weeks": 6,
-    "recommended_lessons": 6,
-    "status": "locked",
+    "status": "conditional",
     "entry_source": "KH-MATH-PA-READINESS-GATEWAY",
-    "entry_rule": "Overall readiness below 80% or any essential prerequisite strand below 80% routes to Unit 0, subject to teacher-review exceptions.",
+    "entry_rule": "NAIB assigns Unit 0 when overall readiness or an essential prerequisite strand is below the 80% readiness standard, subject to human review when evidence conflicts.",
+    "lesson_mastery_threshold_percent": 80,
+    "weekly_quiz_threshold_percent": 80,
     "exit_threshold_percent": 80,
     "exit_requires_reasoning_corrections": true,
-    "exit_route": "Official Unit 1",
+    "parallel_retake_required_below_mastery": true,
     "official_course_duration_weeks": 36,
     "supported_course_duration_weeks": 42,
+    "readiness_gateway_counts_as_course_week": false,
+    "exit_route": "Official Unit 1",
     "naib_profile_outputs": ["refresh", "readiness"],
     "record_protection": "Unit 0 and readiness evidence never erase or downgrade prior course mastery, retention, or completion records."
   },
-  "lesson_pattern": [
-    "diagnostic connection",
-    "teach/reteach",
-    "guided practice",
-    "independent practice",
-    "application",
-    "mastery evidence"
-  ],
+  "lesson_pattern": ["teach/reteach", "guided examples", "20-question lesson mastery", "correction and retry", "10-question weekly quiz", "reflection"],
   "lessons": [
-    {
-      "id": "u00-l01",
-      "week": 1,
-      "title": "Number Foundations Reset",
-      "strand_id": "number-foundations",
-      "essential": true,
-      "file": "lessons/lesson-01-number-foundations.md",
-      "targets": ["order of operations", "factors and primes", "integers", "absolute value", "exponent foundations"]
-    },
-    {
-      "id": "u00-l02",
-      "week": 2,
-      "title": "Rational & Proportional Reasoning Reset",
-      "strand_id": "rational-proportional",
-      "essential": true,
-      "file": "lessons/lesson-02-rational-proportional.md",
-      "targets": ["fractions", "decimals", "percent", "ratios", "rates", "equivalent representations"]
-    },
-    {
-      "id": "u00-l03",
-      "week": 3,
-      "title": "Algebraic Reasoning Reset",
-      "strand_id": "algebraic-reasoning",
-      "essential": true,
-      "file": "lessons/lesson-03-algebraic-reasoning.md",
-      "targets": ["expressions", "substitution", "inverse operations", "equations", "inequalities"]
-    },
-    {
-      "id": "u00-l04",
-      "week": 4,
-      "title": "Functions & Coordinates Bridge",
-      "strand_id": "functions-coordinates",
-      "essential": false,
-      "file": "lessons/lesson-04-functions-coordinates.md",
-      "targets": ["ordered pairs", "coordinate plane", "input and output", "rules", "rate of change"]
-    },
-    {
-      "id": "u00-l05",
-      "week": 5,
-      "title": "Geometry & Measurement Bridge",
-      "strand_id": "geometry-measurement",
-      "essential": false,
-      "file": "lessons/lesson-05-geometry-measurement.md",
-      "targets": ["area", "perimeter", "scale", "units", "measurement reasoning"]
-    },
-    {
-      "id": "u00-l06",
-      "week": 6,
-      "title": "Data & Probability Bridge",
-      "strand_id": "data-probability",
-      "essential": false,
-      "file": "lessons/lesson-06-data-probability.md",
-      "targets": ["mean", "median", "mode", "simple probability", "representative samples", "data interpretation"]
-    }
+    {"id":"u00-l01","week":1,"title":"Number Foundations Reset","strand_id":"number-foundations","essential":true,"file":"lessons/lesson-01-number-foundations.html","lesson_questions":20,"weekly_quiz_questions":10,"lesson_threshold":80,"quiz_threshold":80},
+    {"id":"u00-l02","week":2,"title":"Rational & Proportional Reasoning Reset","strand_id":"rational-proportional","essential":true,"file":"lessons/lesson-02-rational-proportional.html","lesson_questions":20,"weekly_quiz_questions":10,"lesson_threshold":80,"quiz_threshold":80},
+    {"id":"u00-l03","week":3,"title":"Algebraic Reasoning Reset","strand_id":"algebraic-reasoning","essential":true,"file":"lessons/lesson-03-algebraic-reasoning.html","lesson_questions":20,"weekly_quiz_questions":10,"lesson_threshold":80,"quiz_threshold":80},
+    {"id":"u00-l04","week":4,"title":"Functions & Coordinates Bridge","strand_id":"functions-coordinates","essential":false,"file":"lessons/lesson-04-functions-coordinates.html","lesson_questions":20,"weekly_quiz_questions":10,"lesson_threshold":80,"quiz_threshold":80},
+    {"id":"u00-l05","week":5,"title":"Geometry & Measurement Bridge","strand_id":"geometry-measurement","essential":false,"file":"lessons/lesson-05-geometry-measurement.html","lesson_questions":20,"weekly_quiz_questions":10,"lesson_threshold":80,"quiz_threshold":80},
+    {"id":"u00-l06","week":6,"title":"Data & Probability Bridge","strand_id":"data-probability","essential":false,"file":"lessons/lesson-06-data-probability.html","lesson_questions":20,"weekly_quiz_questions":10,"lesson_threshold":80,"quiz_threshold":80}
   ],
   "assessment": {
-    "title": "Unit 0 Foundations & Readiness Exit Assessment",
-    "file": "assessment/EXIT_MASTERY_BLUEPRINT.md",
+    "title": "Unit 0 Foundations & Readiness Exit Mastery",
+    "file": "assessment/exit-mastery.html",
+    "questions_per_form": 30,
+    "forms": ["A", "B"],
     "threshold_percent": 80,
     "parallel_retake_required_below_mastery": true,
     "reasoning_corrections_required": true,
