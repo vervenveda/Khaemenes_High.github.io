@@ -3,6 +3,7 @@
 
 const scriptEl=document.currentScript;
 const coreSrc=new URL("prealgebra-archaemenes-upgrade-core.js",scriptEl?.src||location.href).href;
+const assessmentDepthSrc=new URL("prealgebra-assessment-depth-v2.js",scriptEl?.src||location.href).href;
 const FAMILY_REGISTRY="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-family-registry.js";
 const CALCULATOR="https://vervenveda.com/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/";
 const ROUTES=new Map([
@@ -165,6 +166,16 @@ function guardLegacyNicknameMigration(){
  if(changed)persistCourseState();
 }
 
+function loadAssessmentDepth(){
+ if(document.getElementById("khaemenesPreAlgebraAssessmentDepthV2"))return;
+ const assessment=document.createElement("script");
+ assessment.id="khaemenesPreAlgebraAssessmentDepthV2";
+ assessment.src=assessmentDepthSrc;
+ assessment.async=false;
+ assessment.onerror=()=>console.error("Pre-Algebra assessment-depth layer could not load.");
+ document.head.appendChild(assessment);
+}
+
 function loadCore(){
  const core=document.createElement("script");
  core.src=coreSrc;
@@ -192,5 +203,6 @@ function prepareRegistryAndLoadCore(){
 }
 
 patchPlacementArchitecture();
+loadAssessmentDepth();
 prepareRegistryAndLoadCore();
 })();
