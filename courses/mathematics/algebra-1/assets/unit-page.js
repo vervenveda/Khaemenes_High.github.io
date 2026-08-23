@@ -8,6 +8,7 @@ const scripts=[];
 if(unit===11) scripts.push(new URL("unit-11-content-upgrade.js",base).href);
 if(unit===12) scripts.push(new URL("unit-12-content-upgrade.js",base).href);
 if(unit===13) scripts.push(new URL("unit-13-content-upgrade.js",base).href);
+scripts.push(new URL("mastery-authority-v1.js",base).href);
 scripts.push(new URL("unit-page-core.js",base).href);
 scripts.push(new URL("strict-mastery-gates.js",base).href);
 function loadAt(i){
