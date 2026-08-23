@@ -1,5 +1,5 @@
 "use strict";
-const CACHE="khaemenes-geometry-v3-unit-depth-release";
+const CACHE="khaemenes-geometry-v4-final-strict-release";
 const CORE=[
  "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js","./assets/question-bank.js","./assets/assessment-engine.js","./assets/lesson-tools.js","./assets/unit-progress.js","./course-data.js","./course-map.json","./manifest.webmanifest","./diagnostic/","./assessments/","./teacher/","./teacher-keys/",
  "./assets/geometry-archaemenes-upgrade.js","./assets/strict-course-progression.js","./assets/unit-index-gates.js","./assets/unit-mastery-source-v2.js",
