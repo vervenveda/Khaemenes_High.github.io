@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v2-placement-separated`;
+const CACHE_NAME=`${CACHE_PREFIX}v3-assessment-depth`;
 const CORE_FILES=[
   "./",
   "./index.html",
@@ -11,7 +11,21 @@ const CORE_FILES=[
   "./records/",
   "./records/course-completion-certificate.html",
   "./assets/prealgebra-archaemenes-upgrade.js",
-  "./assets/prealgebra-archaemenes-upgrade-core.js"
+  "./assets/prealgebra-archaemenes-upgrade-core.js",
+  "./assets/prealgebra-assessment-depth-v2.js",
+  "./assets/assessment-depth/prealgebra-weekly-quizzes-v2-a.js",
+  "./assets/assessment-depth/prealgebra-weekly-quizzes-v2-b.js",
+  "./assets/assessment-depth/prealgebra-weekly-quizzes-v2-c.js",
+  "./assets/assessment-depth/prealgebra-weekly-quizzes-v2-d.js",
+  "./assessments/",
+  "./assessments/index.html",
+  "./assessments/assessment-map.json",
+  "./assessments/administration-guide.html",
+  "./assessments/midterm-units-01-07.html",
+  "./assessments/final-exam-36-weeks.html",
+  "./assessments/assets/assessment-suite.css",
+  "./assessments/assets/exam-engine.js",
+  "./assessments/assets/exam-depth-v2.js"
 ];
 
 self.addEventListener("install",event=>{
