@@ -1,0 +1,50 @@
+(()=>{
+"use strict";
+const R=window.PAGE_REF||{},D=window.ALGEBRA1_DATA,$=s=>document.querySelector(s),MASTERY=80;
+if(!D||!R.unit)return;
+const unitNo=Number(R.unit),unit=D.units.find(u=>u.number===unitNo),lessons=D.lessons.filter(l=>l.unit===unitNo);
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const parse=(key,fallback={})=>{try{return JSON.parse(localStorage.getItem(key)||"null")||fallback}catch{return fallback}};
+const progressKey=n=>`khaemenes-algebra1-unit${String(n).padStart(2,"0")}-progress-v1`;
+function unit1Mastered(){const r=parse("khaemenes-algebra1-unit01-a3-v1",{best:{}});return Number(r?.best?.mastery)>=MASTERY}
+function unitMastered(n){
+ if(n<1)return true;
+ if(n===1)return unit1Mastered();
+ const p=parse(progressKey(n),{completed:[],scores:{}});
+ return Number(p?.scores?.mastery)>=MASTERY||Array.isArray(p?.completed)&&p.completed.includes("mastery");
+}
+function currentProgress(){const p=parse(progressKey(unitNo),{completed:[],scores:{}});p.completed=Array.isArray(p.completed)?p.completed:[];return p}
+function unitUnlocked(){return unitNo===1||unitMastered(unitNo-1)}
+function lessonUnlocked(number){
+ if(!unitUnlocked())return false;
+ if(number<=1)return true;
+ const prev=lessons.find(l=>l.number===number-1);return !!prev&&currentProgress().completed.includes(prev.id);
+}
+function allLessonsMastered(){const p=currentProgress();return lessons.length>0&&lessons.every(l=>p.completed.includes(l.id))}
+function lockPage(title,detail,href){
+ const main=$("#main");if(!main)return;
+ main.innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Strict 80% Mastery Gate</p><h1>${esc(title)}</h1><p class="lead">${esc(detail)}</p><div class="actions"><a class="btn primary" href="${esc(href)}">Return to required mastery step</a><a class="btn" href="${esc(R.root||"../../")}">Course Home</a></div></div></section><section class="block"><div class="wrap"><article class="card"><h2>Why this is locked</h2><p>Algebra I now requires at least ${MASTERY}% on each lesson check before the next lesson opens, and at least ${MASTERY}% on unit mastery before the next unit opens. Lower attempts remain saved as learning evidence and may be retried.</p></article></div></section>`;
+}
+function disableLink(a,message){if(!a)return;a.removeAttribute("href");a.setAttribute("aria-disabled","true");a.classList.remove("primary");a.textContent=message;a.addEventListener("click",e=>e.preventDefault())}
+function gateUnitPage(){
+ if(!unitUnlocked())return lockPage(`Unit ${String(unitNo).padStart(2,"0")} is locked`,`Reach ${MASTERY}% mastery on Unit ${String(unitNo-1).padStart(2,"0")} before beginning this unit.`,unitNo===2?"../unit-01/assessment/mastery-check.html":`../unit-${String(unitNo-1).padStart(2,"0")}/assessment/mastery-check.html`);
+ const p=currentProgress(),cards=[...document.querySelectorAll(".lesson-grid .lesson-card")];
+ cards.forEach((card,i)=>{const lesson=lessons[i];if(!lesson)return;const unlocked=lessonUnlocked(lesson.number),a=card.querySelector("a.btn");if(!unlocked){card.classList.add("locked");disableLink(a,`Locked · Master Lesson ${String(lesson.number-1).padStart(2,"0")} at 80%`) }else if(p.completed.includes(lesson.id)){const tag=document.createElement("span");tag.className="pill";tag.textContent="80% mastery met";card.prepend(tag)}});
+ const mastery=[...document.querySelectorAll('a[href*="assessment/mastery-check.html"]')].at(-1);
+ if(mastery&&!allLessonsMastered())disableLink(mastery,"Mastery Check Locked · Complete all lesson gates");
+}
+function gateLessonPage(){
+ const lesson=lessons.find(l=>l.number===Number(R.lesson));if(!lesson)return;
+ if(!lessonUnlocked(lesson.number)){
+  const prev=lesson.number>1?`Lesson ${String(lesson.number-1).padStart(2,"0")}`:`Unit ${String(unitNo-1).padStart(2,"0")} mastery`;
+  const href=lesson.number>1?`../${lessons.find(l=>l.number===lesson.number-1)?.slug||"index"}.html`:`../index.html`;
+  lockPage(`${lesson.title} is locked`,`Reach ${MASTERY}% on ${prev} before opening this lesson.`,href);return;
+ }
+ const msg=$("#scoreMsg");if(msg&&!msg.dataset.gateNote){const note=document.createElement("p");note.className="notice";note.dataset.gateNote="true";note.innerHTML=`<strong>Progression gate:</strong> score ${MASTERY}% or higher on this Lesson Check to unlock the next lesson.`;msg.before(note)}
+}
+function gateMasteryPage(){
+ if(!unitUnlocked())return lockPage(`Unit ${String(unitNo).padStart(2,"0")} mastery is locked`,`Complete the previous unit at ${MASTERY}% mastery first.`,`../index.html`);
+ if(!allLessonsMastered())return lockPage(`Unit ${String(unitNo).padStart(2,"0")} mastery is locked`,`Every lesson check in this unit must reach ${MASTERY}% before the formal unit mastery assessment opens.`,`../index.html`);
+}
+if(R.type==="unit")gateUnitPage();else if(R.type==="lesson")gateLessonPage();else if(R.type==="mastery")gateMasteryPage();
+})();
