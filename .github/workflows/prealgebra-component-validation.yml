@@ -21,3 +21,5 @@ jobs:
         uses: actions/checkout@v6
       - name: Validate Pre-Algebra component hashes
         run: node courses/mathematics/pre-algebra/tools/validate-components.mjs
+      - name: Validate Pre-Algebra assessment depth
+        run: node courses/mathematics/pre-algebra/tools/validate-assessment-depth.mjs
