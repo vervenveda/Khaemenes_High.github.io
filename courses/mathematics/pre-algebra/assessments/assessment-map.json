@@ -1,35 +1,74 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "3.0",
   "course_id": "KH-MATH-PA",
   "course_title": "Khaemenes Global Pre-Algebra",
   "duration_weeks": 36,
+  "mastery_threshold": 80,
+  "weekly_mastery": {
+    "weeks": 36,
+    "questions_per_week": 10,
+    "total_unique_prompts": 360,
+    "required_correct": 8,
+    "alignment": "week-specific",
+    "dimensions": [
+      "procedural-fluency",
+      "multi-step-application",
+      "representation-interpretation",
+      "error-analysis",
+      "transfer-reasoning"
+    ],
+    "policy": "A weekly mastery check must reflect the stated weekly focus and may not be satisfied by a recycled generic unit-domain quiz."
+  },
+  "unit_mastery": {
+    "units": 13,
+    "minimum_scored_items": 20,
+    "minimum_written_reasoning_prompts": 2,
+    "threshold": 80,
+    "purpose": "Cumulative unit evidence combining broad definitive-answer coverage with written reflection/reasoning evidence."
+  },
   "assessment_policy": {
     "public_classification": "self-check-nonconfidential",
     "public_purpose": "Practice, correction, retesting, progress evidence, and parent/administrator-reviewed portfolio evidence.",
     "secure_classification": "supervised-confidential",
     "secure_purpose": "Separately issued summative testing when confidential administration is required.",
-    "record_guidance": "Browser-local scores are editable and are not authoritative, confidential, digitally signed, or independently authenticated. The parent, teacher, or program administrator determines the official course grade and any credit awarded from retained evidence."
+    "record_guidance": "Browser-local scores and evaluator entries are editable and are not authoritative, confidential, digitally signed, or independently authenticated. The parent, teacher, or program administrator determines the official course grade and any credit awarded from retained evidence."
+  },
+  "cumulative_scoring": {
+    "selected_response_weight": 70,
+    "constructed_response_weight": 30,
+    "rubric_scale": "0-4",
+    "mastery_requires": {
+      "selected_response_percent": 80,
+      "constructed_response_percent": 80,
+      "overall_percent": 80,
+      "evaluator_review_complete": true
+    },
+    "rationale": "Auto-scored correctness and human-reviewed mathematical reasoning are reported separately so selected-response recognition alone cannot certify full cumulative mastery."
   },
   "assessments": [
     {
       "id": "KH-MATH-PA-MIDTERM-U01-U07",
-      "title": "Pre-Algebra Midterm Public Self-Check",
+      "title": "Pre-Algebra Midterm Public Mixed-Evidence Self-Check",
       "scope": "Units 01-07",
-      "questions": 56,
+      "selected_response_questions": 56,
+      "constructed_responses": 7,
       "path": "midterm-units-01-07.html",
       "result_key": "khaemenes-prealgebra-midterm-result-v1",
       "classification": "public-self-check-nonconfidential",
-      "authoritative_result": false
+      "authoritative_result": false,
+      "full_mastery_requires_evaluator_review": true
     },
     {
       "id": "KH-MATH-PA-FINAL-36W",
-      "title": "Pre-Algebra 36-Week Final Public Self-Check",
+      "title": "Pre-Algebra 36-Week Final Public Mixed-Evidence Self-Check",
       "scope": "Units 01-13 / 36 weeks",
-      "questions": 80,
+      "selected_response_questions": 80,
+      "constructed_responses": 10,
       "path": "final-exam-36-weeks.html",
       "result_key": "khaemenes-prealgebra-final-result-v1",
       "classification": "public-self-check-nonconfidential",
-      "authoritative_result": false
+      "authoritative_result": false,
+      "full_mastery_requires_evaluator_review": true
     }
   ],
   "secure_release_policy": {
@@ -38,10 +77,17 @@
     "public_repository_rule": "Confidential answer keys and signing material must not be stored in this learner-facing repository."
   },
   "definitive_answer_policy": [
-    "Exactly one correct answer per scored item",
+    "Exactly one correct answer per auto-scored item",
     "No equivalent duplicate choices",
     "No subjective best-answer items without a defined criterion",
     "Conventions stated when material",
     "Answer-choice presentation is designed to discourage pattern guessing"
+  ],
+  "constructed_response_policy": [
+    "Require visible mathematical reasoning rather than answer-only responses",
+    "Expect units, representations, verification, and interpretation when relevant",
+    "Use the shared 0-4 rubric for local evaluator review",
+    "Do not mark full cumulative mastery until evaluator review is complete",
+    "Retain the written response with the exported assessment result when used as portfolio evidence"
   ]
 }
