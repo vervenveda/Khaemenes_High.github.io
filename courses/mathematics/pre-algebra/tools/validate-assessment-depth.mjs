@@ -99,8 +99,21 @@ ok(examEngine.includes('Constructed-Response Depth Evidence')&&examEngine.includ
 ok(examEngine.includes('selected>=threshold&&constructedPercent>=threshold&&overall>=threshold'),"full cumulative mastery requires 80% selected-response, 80% constructed-response, and 80% overall");
 ok(examEngine.includes('pending-evaluator-review')&&examEngine.includes('review_complete'),"cumulative result distinguishes auto-score from completed evaluator review");
 
+const map=JSON.parse(fs.readFileSync(path.join(root,"assessments/assessment-map.json"),"utf8"));
+ok(map.schema_version==="3.0"&&map.mastery_threshold===80,"assessment map declares v3 depth alignment and 80% mastery");
+ok(map.weekly_mastery?.weeks===36&&map.weekly_mastery?.questions_per_week===10&&map.weekly_mastery?.total_unique_prompts===360,"assessment map records 36 × 10 weekly alignment");
+ok(map.cumulative_scoring?.selected_response_weight===70&&map.cumulative_scoring?.constructed_response_weight===30,"assessment map matches cumulative 70/30 weighting");
+ok(map.cumulative_scoring?.mastery_requires?.selected_response_percent===80&&map.cumulative_scoring?.mastery_requires?.constructed_response_percent===80&&map.cumulative_scoring?.mastery_requires?.overall_percent===80,"assessment map matches the three-part 80% cumulative rule");
+ok(map.assessments?.[0]?.constructed_responses===7&&map.assessments?.[1]?.constructed_responses===10,"assessment map matches midterm/final constructed-response counts");
+
+const sw=fs.readFileSync(path.join(root,"service-worker.js"),"utf8");
+ok(sw.includes('v3-assessment-depth'),"service worker cache version advances for assessment depth");
+for(const rel of ["prealgebra-assessment-depth-v2.js",...parts.map(path.basename),"exam-engine.js","exam-depth-v2.js"]){
+  ok(sw.includes(rel),`offline cache includes ${rel}`);
+}
+
 if(failures){
   console.error(`Pre-Algebra assessment-depth validation failed: ${failures} problem(s).`);
   process.exit(1);
 }
-console.log("Pre-Algebra assessment-depth validation passed: 36 weekly checks / 360 unique prompts, unit reasoning coverage, and mixed-evidence cumulative mastery.");
+console.log("Pre-Algebra assessment-depth validation passed: 36 weekly checks / 360 unique prompts, unit reasoning coverage, mixed-evidence cumulative mastery, and offline assessment assets.");
