@@ -1,12 +1,12 @@
 "use strict";
-const CACHE_VERSION="khaemenes-algebra1-v3-release-hardening";
+const CACHE_VERSION="khaemenes-algebra1-v4-strict-80-gates";
 const LEGACY_SOURCE="./service-worker-precache-v1.js";
 const RELEASE_FILES=[
  "./","./index.html","./offline.html","./service-worker-precache-v1.js",
  "./assessments/index.html","./assessments/administration-guide.html","./assessments/assessment-map.json","./assessments/weekly-mastery.html","./assessments/midterm-units-01-06.html","./assessments/final-exam-36-weeks.html",
  "./assessments/assets/weekly-mastery-v2-a.js","./assessments/assets/weekly-mastery-v2-b.js","./assessments/assets/weekly-mastery-v2-c.js","./assessments/assets/weekly-mastery-v2-d.js","./assessments/assets/weekly-mastery-quality-patch-v2.js","./assessments/assets/weekly-mastery-engine-v2.js","./assessments/assets/exam-depth-v2.js",
- "./assets/exam-engine.js","./assets/legacy-mastery-engine-v2.js","./assets/record-engine.js","./assets/styles.css","./course-map.json","./course-data.js","./assets/question-bank.js",
- "./records/course-completion-certificate.html"
+ "./assets/exam-engine.js","./assets/legacy-mastery-engine-v2.js","./assets/record-engine.js","./assets/strict-mastery-gates.js","./assets/course-progression-gates.js","./assets/unit-page.js","./assets/unit-page-core.js","./assets/styles.css","./course-map.json","./course-data.js","./assets/question-bank.js",
+ "./units/unit-01/assets/unit01.js","./records/course-completion-certificate.html"
 ];
 function normalizeLegacyPath(p){if(p==="./assessments/answer-keys.json")return"./assessments/answer-key.json";if(p==="./assessments/unit-13-mastery-blueprint.js")return null;if(p.startsWith("./units/unit-12/unit-12/"))return null;return p}
 async function legacyFiles(){try{const response=await fetch(new Request(LEGACY_SOURCE,{cache:"reload"}));if(!response.ok)throw new Error(`precache source ${response.status}`);const text=await response.text(),match=text.match(/const PRECACHE=(\[[\s\S]*?\]);/);if(!match)throw new Error("legacy PRECACHE array not found");const parsed=JSON.parse(match[1]);return Array.isArray(parsed)?parsed.map(normalizeLegacyPath).filter(Boolean):[]}catch(error){console.warn("Algebra I legacy precache list could not be recovered; release core will still be cached.",error);return[]}}
