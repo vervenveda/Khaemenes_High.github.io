@@ -54,8 +54,53 @@ ok(loader.includes('week-specific')&&loader.includes('error-analysis')&&loader.i
 const upgrade=fs.readFileSync(path.join(root,"assets/prealgebra-archaemenes-upgrade.js"),"utf8");
 ok(upgrade.includes('prealgebra-assessment-depth-v2.js')&&upgrade.includes('loadAssessmentDepth()'),"course upgrade loads assessment-depth v2");
 
+function extractAssessmentConfig(html,unit){
+  const match=html.match(/window\.ASSESSMENT_CONFIG\s*=\s*(\{[\s\S]*?\});\s*<\/script>/);
+  if(!match){ok(false,`Unit ${unit} mastery config is parseable`);return null}
+  try{return JSON.parse(match[1])}catch(error){ok(false,`Unit ${unit} mastery config is valid JSON (${error.message})`);return null}
+}
+for(let unit=1;unit<=13;unit+=1){
+  const id=String(unit).padStart(2,"0");
+  const rel=`units/unit-${id}/assessment/mastery-check.html`;
+  ok(fs.existsSync(path.join(root,rel)),`Unit ${id} mastery check exists`);
+  if(!fs.existsSync(path.join(root,rel)))continue;
+  const config=extractAssessmentConfig(fs.readFileSync(path.join(root,rel),"utf8"),id);
+  if(!config)continue;
+  ok(config.threshold===80,`Unit ${id} mastery threshold remains 80%`);
+  ok(Array.isArray(config.questions)&&config.questions.length>=20,`Unit ${id} mastery check has at least 20 scored items`);
+  ok(Array.isArray(config.reasoning_prompts)&&config.reasoning_prompts.length>=2,`Unit ${id} includes at least two written reasoning prompts`);
+  const unitPrompts=(config.questions||[]).map(q=>String(q.prompt||"").trim().toLowerCase());
+  ok(new Set(unitPrompts).size===unitPrompts.length,`Unit ${id} mastery prompts are unique within the unit`);
+}
+
+const depthContext={window:{}};
+vm.createContext(depthContext);
+const examDepthPath=path.join(root,"assessments/assets/exam-depth-v2.js");
+ok(fs.existsSync(examDepthPath),"cumulative exam depth configuration exists");
+if(fs.existsSync(examDepthPath))vm.runInContext(fs.readFileSync(examDepthPath,"utf8"),depthContext,{filename:"exam-depth-v2.js"});
+const examDepth=depthContext.window.KhaemenesPreAlgebraExamDepth||{};
+const mid=examDepth["KH-MATH-PA-MIDTERM-U01-U07"];
+const fin=examDepth["KH-MATH-PA-FINAL-36W"];
+ok(mid?.constructed?.length===7,"midterm requires seven constructed responses across Units 01-07");
+ok(fin?.constructed?.length===10,"final requires ten cross-domain constructed responses");
+for(const [label,config] of [["midterm",mid],["final",fin]]){
+  if(!config)continue;
+  ok(config.selected_weight===70&&config.constructed_weight===30,`${label} uses 70/30 selected-response / constructed-response weighting`);
+  ok(config.rubric_max===4&&Array.isArray(config.rubric)&&config.rubric.length===5,`${label} exposes a five-level 0-4 reasoning rubric`);
+  ok(Number(config.response_min_chars)>=40,`${label} requires substantive constructed-response text before submission`);
+  const crPrompts=(config.constructed||[]).map(x=>String(x.prompt||"").trim().toLowerCase());
+  ok(new Set(crPrompts).size===crPrompts.length,`${label} constructed-response prompts are unique`);
+  ok((config.constructed||[]).every(x=>typeof x.domain==="string"&&x.domain.trim()&&typeof x.prompt==="string"&&x.prompt.trim().length>80),`${label} constructed-response tasks contain domain labels and substantive prompts`);
+}
+
+const examEngine=fs.readFileSync(path.join(root,"assessments/assets/exam-engine.js"),"utf8");
+ok(examEngine.includes('exam-depth-v2.js'),"cumulative exam engine loads the depth configuration");
+ok(examEngine.includes('Constructed-Response Depth Evidence')&&examEngine.includes('Evaluator Review'),"cumulative exam engine renders reasoning evidence and evaluator review");
+ok(examEngine.includes('selected>=threshold&&constructedPercent>=threshold&&overall>=threshold'),"full cumulative mastery requires 80% selected-response, 80% constructed-response, and 80% overall");
+ok(examEngine.includes('pending-evaluator-review')&&examEngine.includes('review_complete'),"cumulative result distinguishes auto-score from completed evaluator review");
+
 if(failures){
   console.error(`Pre-Algebra assessment-depth validation failed: ${failures} problem(s).`);
   process.exit(1);
 }
-console.log("Pre-Algebra assessment-depth validation passed: 36 weeks, 360 unique aligned questions, 8-of-10 mastery contract.");
+console.log("Pre-Algebra assessment-depth validation passed: 36 weekly checks / 360 unique prompts, unit reasoning coverage, and mixed-evidence cumulative mastery.");
