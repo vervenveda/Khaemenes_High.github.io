@@ -33,3 +33,5 @@ jobs:
           fi
       - name: Validate Algebra I readiness bridge
         run: node courses/mathematics/algebra-1/readiness/validate-transition-contract.mjs
+      - name: Validate Algebra I assessment depth
+        run: node courses/mathematics/algebra-1/tools/validate-assessment-depth.mjs
