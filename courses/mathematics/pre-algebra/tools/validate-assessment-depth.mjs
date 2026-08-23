@@ -55,7 +55,7 @@ const upgrade=fs.readFileSync(path.join(root,"assets/prealgebra-archaemenes-upgr
 ok(upgrade.includes('prealgebra-assessment-depth-v2.js')&&upgrade.includes('loadAssessmentDepth()'),"course upgrade loads assessment-depth v2");
 
 function extractAssessmentConfig(html,unit){
-  const match=html.match(/window\.ASSESSMENT_CONFIG\s*=\s*(\{[\s\S]*?\});\s*<\/script>/);
+  const match=html.match(/window\.ASSESSMENT_CONFIG\s*=\s*(\{[\s\S]*?\})\s*;?\s*<\/script>/);
   if(!match){ok(false,`Unit ${unit} mastery config is parseable`);return null}
   try{return JSON.parse(match[1])}catch(error){ok(false,`Unit ${unit} mastery config is valid JSON (${error.message})`);return null}
 }
@@ -108,7 +108,7 @@ ok(map.assessments?.[0]?.constructed_responses===7&&map.assessments?.[1]?.constr
 
 const sw=fs.readFileSync(path.join(root,"service-worker.js"),"utf8");
 ok(sw.includes('v3-assessment-depth'),"service worker cache version advances for assessment depth");
-for(const rel of ["prealgebra-assessment-depth-v2.js",...parts.map(path.basename),"exam-engine.js","exam-depth-v2.js"]){
+for(const rel of ["prealgebra-assessment-depth-v2.js",...parts.map(rel=>path.basename(rel)),"exam-engine.js","exam-depth-v2.js"]){
   ok(sw.includes(rel),`offline cache includes ${rel}`);
 }
 
