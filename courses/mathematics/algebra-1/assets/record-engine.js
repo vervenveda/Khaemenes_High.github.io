@@ -1,25 +1,34 @@
-
 (()=>{
 "use strict";
-const $=s=>document.querySelector(s),KEY="khaemenes-algebra1-completion-record-v1";
-function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch{return{}}}
-function collect(){const out={};document.querySelectorAll("[data-field]").forEach(e=>out[e.dataset.field]=e.value);return out}
-function fill(data){document.querySelectorAll("[data-field]").forEach(e=>{if(data[e.dataset.field]!=null)e.value=data[e.dataset.field]})}
-function calculate(){
- const g=collect(),vals=["coursework","midterm","final","capstone"].map(k=>Number(g[k]));
- if(vals.some(v=>!Number.isFinite(v)))return alert("Enter all four component scores.");
- const p=vals[0]*.40+vals[1]*.20+vals[2]*.30+vals[3]*.10;
- $("#finalGrade").value=p.toFixed(1);
- $("#letterGrade").value=p>=90?"A":p>=80?"B":p>=70?"C":p>=60?"D":"F";
+const $=s=>document.querySelector(s),MASTER=80,KEY="khaemenes-algebra1-completion-record-v2",WEEKLY_KEY="khaemenes-algebra1-weekly-mastery-v2",MIDTERM_KEY="khaemenes-algebra1-midterm-result-v1",FINAL_KEY="khaemenes-algebra1-final-result-v1";
+const safeParse=(raw,fallback)=>{try{const v=JSON.parse(raw);return v&&typeof v==="object"?v:fallback}catch{return fallback}};
+const local=k=>safeParse(localStorage.getItem(k),null);
+function stored(){return local(KEY)||local("khaemenes-algebra1-completion-record-v1")||{}}
+function collectFields(){const out={};document.querySelectorAll("[data-field]").forEach(e=>{out[e.dataset.field]=e.type==="checkbox"?e.checked:e.value});return out}
+function fill(data){const fields=data?.fields||data||{};document.querySelectorAll("[data-field]").forEach(e=>{if(fields[e.dataset.field]==null)return;if(e.type==="checkbox")e.checked=fields[e.dataset.field]===true;else e.value=fields[e.dataset.field]})}
+function numeric(v){const n=Number(v);return Number.isFinite(n)?n:null}
+function weeklyEvidence(){const s=local(WEEKLY_KEY),scores=[];for(let week=2;week<=36;week++){const best=numeric(s?.weeks?.[week]?.best);scores.push({week,best,mastery:best!==null&&best>=MASTER})}return {mastered:scores.filter(x=>x.mastery).length,total:35,scores}}
+function unitEvidence(){const scores=[];for(let unit=1;unit<=13;unit++){const id=String(unit).padStart(2,"0"),modern=unit<=9,record=local(modern?`khaemenes-algebra1-unit${id}-a3-v1`:`khaemenes-algebra1-unit${id}-progress-v1`),best=numeric(modern?record?.best?.mastery:record?.scores?.mastery);scores.push({unit,best,mastery:best!==null&&best>=MASTER})}return {mastered:scores.filter(x=>x.mastery).length,total:13,scores}}
+function examEvidence(key){const e=local(key),attempts=Array.isArray(e?.attempt_history)?e.attempt_history:[],mastered=attempts.filter(a=>a?.mastery===true&&!a?.legacy_selected_only&&a?.constructed_response?.review_complete===true&&numeric(a?.overall_percent)!==null),best=mastered.length?Math.max(...mastered.map(a=>Number(a.overall_percent))):null;return {mastery:best!==null&&best>=MASTER,best,reviewed_mastery_attempts:mastered.length}}
+function evidence(){return {weekly:weeklyEvidence(),units:unitEvidence(),midterm:examEvidence(MIDTERM_KEY),final:examEvidence(FINAL_KEY)}}
+function gate(id,pass,text){const el=$(id),span=$(`${id}Text`);el?.classList.toggle("pass",pass);el?.classList.toggle("fail",!pass);if(span)span.textContent=text}
+function letter(p){return p>=90?"A":p>=80?"B":p>=70?"C":p>=60?"D":"F"}
+function evaluate(){const fields=collectFields(),ev=evidence(),coursework=numeric(fields.coursework),capstone=numeric(fields.capstone),midterm=ev.midterm.best,finalExam=ev.final.best;
+ if($("#midtermScore"))$("#midtermScore").value=midterm===null?"":midterm.toFixed(1);if($("#finalExamScore"))$("#finalExamScore").value=finalExam===null?"":finalExam.toFixed(1);
+ const weeklyPass=ev.weekly.mastered===ev.weekly.total,unitPass=ev.units.mastered===ev.units.total,midPass=ev.midterm.mastery,finalPass=ev.final.mastery,courseworkPass=coursework!==null&&coursework>=MASTER,capstonePass=capstone!==null&&capstone>=MASTER,attestationPass=fields.attestation===true,identityPass=String(fields.student||"").trim().length>0;
+ gate("#weeklyGate",weeklyPass,`${ev.weekly.mastered}/${ev.weekly.total} graded weeks mastered`);gate("#unitGate",unitPass,`${ev.units.mastered}/${ev.units.total} units mastered`);gate("#midtermGate",midPass,midPass?`Human-reviewed mixed-evidence mastery · ${midterm.toFixed(1)}%`:"Human-reviewed mixed-evidence mastery not found");gate("#finalGate",finalPass,finalPass?`Human-reviewed mixed-evidence mastery · ${finalExam.toFixed(1)}%`:"Human-reviewed mixed-evidence mastery not found");gate("#courseworkGate",courseworkPass,coursework===null?"Evaluator score of at least 80% required":`${coursework.toFixed(1)}% · ${courseworkPass?"gate met":"below 80%"}`);gate("#capstoneGate",capstonePass,capstone===null?"Evaluator score of at least 80% required":`${capstone.toFixed(1)}% · ${capstonePass?"gate met":"below 80%"}`);
+ const components=[coursework,midterm,finalExam,capstone],grade=components.every(v=>v!==null)?coursework*.40+midterm*.20+finalExam*.30+capstone*.10:null;if($("#finalGrade"))$("#finalGrade").value=grade===null?"":grade.toFixed(1);if($("#letterGrade"))$("#letterGrade").value=grade===null?"":letter(grade);
+ const ready=weeklyPass&&unitPass&&midPass&&finalPass&&courseworkPass&&capstonePass&&attestationPass&&identityPass&&grade!==null&&grade>=MASTER,missing=[];if(!identityPass)missing.push("student name");if(!weeklyPass)missing.push("all 35 graded weekly mastery gates");if(!unitPass)missing.push("all 13 unit mastery gates");if(!midPass)missing.push("human-reviewed midterm mastery");if(!finalPass)missing.push("human-reviewed final mastery");if(!courseworkPass)missing.push("coursework ≥80%");if(!capstonePass)missing.push("capstone ≥80%");if(!attestationPass)missing.push("evaluator attestation");
+ $("#completionStatus").textContent=ready?"READY FOR PARENT / PROGRAM ISSUE":"NOT YET VERIFIED";$("#completionReason").textContent=ready?`All mastery gates are met. Calculated course grade: ${grade.toFixed(1)}% (${letter(grade)}).`:`Still required: ${missing.join("; ")}.`;$("#certificateStatement").textContent=ready?"has completed":"has a completion record that remains pending for";$("#print").disabled=!ready;
+ return {ready,grade,letter:grade===null?null:letter(grade),fields:{...fields,midterm:midterm===null?"":midterm.toFixed(1),final:finalExam===null?"":finalExam.toFixed(1),finalGrade:grade===null?"":grade.toFixed(1),letterGrade:grade===null?"":letter(grade)},evidence:ev,requirements:{mastery_threshold:MASTER,weekly_required:35,units_required:13,cumulative_requires_human_review:true,coursework_minimum:80,capstone_minimum:80,evaluator_attestation_required:true}}
 }
-$("#calculate").onclick=calculate;
-$("#save").onclick=()=>{localStorage.setItem(KEY,JSON.stringify(collect()));alert("Record saved locally.")};
-$("#print").onclick=()=>window.print();
-$("#export").onclick=()=>{
- const blob=new Blob([JSON.stringify(collect(),null,2)],{type:"application/json"});
- const url=URL.createObjectURL(blob),a=document.createElement("a");
- a.href=url;a.download="algebra1-course-completion-record.json";a.click();
- setTimeout(()=>URL.revokeObjectURL(url),500);
-};
-fill(load());
+function record(){const r=evaluate();return {schema:"khaemenes-algebra1-completion-record-v2",course_id:"KH-MATH-A1",completion_status:r.ready?"ready-for-local-issue":"pending",calculated_at:new Date().toISOString(),grade:{percent:r.grade,letter:r.letter,weights:{coursework:40,midterm:20,final:30,capstone:10}},fields:r.fields,evidence:r.evidence,requirements:r.requirements,trust:{classification:"browser-local-parent-or-program-issued-record",authoritative:false,digitally_signed:false,identity_authenticated:false,cryptographically_verified:false,editable_storage:true,jurisdiction_specific_review_required:true}}}
+$("#refreshEvidence").onclick=()=>{const r=evaluate();$("#recordStatus").textContent=r.ready?"All completion gates are satisfied in this browser.":"Evidence refreshed. Completion remains pending until every listed gate is satisfied."};
+$("#calculate").onclick=()=>{const r=evaluate();$("#recordStatus").textContent=r.grade===null?"A course grade cannot be calculated until coursework, mixed-evidence midterm/final, and capstone scores are present.":`Calculated course grade: ${r.grade.toFixed(1)}% (${r.letter}). Completion status is ${r.ready?"ready":"still pending"}.`};
+$("#save").onclick=()=>{const r=record();try{localStorage.setItem(KEY,JSON.stringify(r));$("#recordStatus").textContent=r.completion_status==="ready-for-local-issue"?"Completion-ready local record saved.":"Pending progress record saved locally; it does not claim course completion."}catch{$("#recordStatus").textContent="Local save failed in this browser."}};
+$("#print").onclick=()=>{const r=evaluate();if(!r.ready){$("#recordStatus").textContent="Printing a completion record is blocked until every mastery and evaluator gate is satisfied.";return}window.print()};
+$("#export").onclick=()=>{const r=record(),blob=new Blob([JSON.stringify(r,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=r.completion_status==="ready-for-local-issue"?"algebra1-course-completion-record.json":"algebra1-course-progress-record.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),500);$("#recordStatus").textContent=r.completion_status==="ready-for-local-issue"?"Completion-ready evidence record exported.":"Pending progress record exported; it does not claim completion."};
+$("#themeToggle")?.addEventListener("click",()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==="light"?"dark":"light"});
+document.querySelectorAll('[data-field="coursework"],[data-field="capstone"],[data-field="student"],[data-field="attestation"]').forEach(el=>el.addEventListener("input",evaluate));
+fill(stored());evaluate();
 })();
