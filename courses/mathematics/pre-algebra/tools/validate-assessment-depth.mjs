@@ -46,7 +46,15 @@ for(let week=1;week<=36;week+=1){
 }
 ok(new Set(prompts).size===prompts.length,"all 360 weekly prompts are unique");
 
-const loader=fs.readFileSync(path.join(root,"assets/prealgebra-assessment-depth-v2.js"),"utf8");
+// The public bootstrap now loads two preserved modules: the original assessment-depth
+// implementation and the Academy course-gate layer. Validate the bootstrap relationship,
+// then validate the original assessment-depth declarations in the preserved core source.
+const loaderBootstrap=fs.readFileSync(path.join(root,"assets/prealgebra-assessment-depth-v2.js"),"utf8");
+const loaderCorePath=path.join(root,"assets/prealgebra-assessment-depth-v2-core.js");
+ok(fs.existsSync(loaderCorePath),"assessment-depth preserved core exists");
+ok(loaderBootstrap.includes('prealgebra-assessment-depth-v2-core.js'),"assessment-depth bootstrap loads preserved core");
+const loaderCore=fs.existsSync(loaderCorePath)?fs.readFileSync(loaderCorePath,"utf8"):"";
+const loader=`${loaderBootstrap}\n${loaderCore}`;
 ok(parts.every(rel=>loader.includes(path.basename(rel))),"assessment-depth loader references all four quiz-bank parts");
 ok(loader.includes('questionCount:10')&&loader.includes('masteryThreshold:80')&&loader.includes('masteryRequired:8'),"loader declares 10-question / 80% / 8-of-10 mastery contract");
 ok(loader.includes('week-specific')&&loader.includes('error-analysis')&&loader.includes('transfer-reasoning'),"loader declares week-specific depth blueprint");
