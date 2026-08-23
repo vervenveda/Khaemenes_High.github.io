@@ -1,6 +1,7 @@
 (()=>{
 "use strict";
 const $=s=>document.querySelector(s),MASTER=80,KEY="khaemenes-algebra1-completion-record-v2",A=window.KhaemenesAlgebra1MasteryAuthority||null;
+const CANONICAL_EVIDENCE_CONTRACT=Object.freeze({delegated_to:"KhaemenesAlgebra1MasteryAuthority",legacy_midterm_key:"khaemenes-algebra1-midterm-result-v1",legacy_final_key:"khaemenes-algebra1-final-result-v1",reviewed_attempt_rule:"review_complete===true"});
 const safeParse=(raw,fallback)=>{try{const v=JSON.parse(raw);return v&&typeof v==="object"?v:fallback}catch{return fallback}};
 const local=k=>safeParse(localStorage.getItem(k),null);
 function stored(){return local(KEY)||local("khaemenes-algebra1-completion-record-v1")||{}}
