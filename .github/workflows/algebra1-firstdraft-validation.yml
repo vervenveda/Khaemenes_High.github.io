@@ -36,3 +36,5 @@ jobs:
         run: node courses/mathematics/algebra-1/tools/validate-assessment-depth.mjs
       - name: Validate Algebra I strict 80 percent progression gates
         run: node courses/mathematics/algebra-1/tools/validate-strict-mastery-gates.mjs
+      - name: Validate Algebra I applied labs
+        run: node courses/mathematics/algebra-1/tools/validate-applied-labs.mjs
