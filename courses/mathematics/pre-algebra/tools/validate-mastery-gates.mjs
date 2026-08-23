@@ -14,7 +14,7 @@ must(/prealgebra-assessment-depth-v2-core\.js/.test(bootstrap),'root bootstrap: 
 must(/prealgebra-course-gates-v1\.js/.test(bootstrap),'root bootstrap: course mastery gate is not loaded');
 const rootGate=read('assets/prealgebra-course-gates-v1.js');
 must(/NAIB_KEY/.test(rootGate)&&/EXIT_KEY/.test(rootGate),'root gate: NAIB/Unit0 entrance routing missing');
-must(/weekMastered/.test(rootGate)&&/quizBest\(n-1\)/.test(rootGate),'root gate: prior weekly quiz 80% gate missing');
+must(/weekMastered\(n-1\)/.test(rootGate)&&/quizBest\(n\)>=MIN/.test(rootGate),'root gate: prior weekly quiz 80% gate missing');
 must(/MIN=80/.test(rootGate),'root gate: Academy threshold must be 80%');
 
 const u0=JSON.parse(read('units/unit-00/unit-map.json'));
