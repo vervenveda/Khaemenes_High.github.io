@@ -12,6 +12,7 @@ const HIGH_URL = "https://vervenveda.com/Khaemenes_High.github.io/";
 const ALGEBRA1_URL = "https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/algebra-1/";
 const ALGEBRA2_URL = "https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/algebra-2/";
 const BETA_URL = "https://vervenveda.com/beta/";
+const UPGRADE_SCRIPT_URL = document.currentScript?.src || new URL("assets/geometry-archaemenes-upgrade.js", location.href).href;
 
 const css = `
 :root{
@@ -149,8 +150,16 @@ function hardenMenus(){
   document.addEventListener("pointerdown",e=>menus.forEach(menu=>{if(menu.open&&!menu.contains(e.target))menu.open=false}),{passive:true});
   document.addEventListener("keydown",e=>{if(e.key==="Escape")menus.forEach(menu=>menu.open=false)});
 }
+function loadStrictProgression(){
+  if(document.querySelector('script[data-geometry-strict-progression="v1"]'))return;
+  const s=document.createElement("script");
+  s.dataset.geometryStrictProgression="v1";
+  s.src=new URL("strict-course-progression.js",UPGRADE_SCRIPT_URL).href;
+  s.defer=true;
+  document.body.appendChild(s);
+}
 function boot(){
-  createMentor();addBeta();hardenMenus();
+  createMentor();addBeta();hardenMenus();loadStrictProgression();
   document.addEventListener("click",e=>{if(e.target.closest(".quick-nav button,.week-chip,[data-view],[data-go]"))setTimeout(refresh,30)});
   const main=document.querySelector("main");if(main)new MutationObserver(refresh).observe(main,{subtree:true,childList:true,attributes:true,attributeFilter:["class"]});
 }
