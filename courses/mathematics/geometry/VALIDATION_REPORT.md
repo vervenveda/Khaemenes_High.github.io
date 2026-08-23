@@ -1,42 +1,33 @@
 # Geometry Course Validation Report
 
-Status: **PASS**
+Status: **PENDING — STRICT-80 RELEASE VALIDATION IN PROGRESS**
 
-## Structural counts
+The previous PASS report described the original Geometry package before the strict progression, week-specific depth, mixed-evidence exam, evidence-gated completion, and formal unit-depth hardening layers were added. That historical PASS is superseded and must not be used to certify the current branch.
 
-- 36 weeks
-- 180 study sessions
-- 13 units
-- 90 detailed visual printable lesson pages
-- 90 separate teacher answer keys
-- 13 Foundation practice sets
-- 13 Core practice sets
-- 13 Extended practice sets
-- 13 mastery checks
-- 13 applied investigations
-- 156-question course bank
-- 40-question readiness diagnostic
-- 60-question midterm configuration
-- 100-question final configuration
-- 294 HTML pages before manifest/report generation
+## Current release contract to validate
 
-## Automated checks passed
+- 36 weeks / 180 study sessions
+- 13 units / 90 detailed visual printable lesson pages / 90 teacher answer keys
+- 90 lesson evidence gates at ≥80%
+- 36 weekly mastery gates with 10 questions each
+- 360 globally unique weekly mastery prompts
+- five weekly depth dimensions, two questions per dimension per week
+- 13 formal unit mastery checks with 20 questions each
+- every formal unit check represents every instructional week in the unit
+- every formal unit check contains four questions in each of the five depth dimensions
+- all 13 unit index pages load strict progression gating
+- 40-question non-gating readiness diagnostic
+- Midterm: 60 selected-response + 6 human-reviewed constructed-response tasks
+- Final: 100 selected-response + 10 human-reviewed constructed-response tasks
+- cumulative exams weighted 70% selected response / 30% constructed response
+- cumulative mastery requires ≥80% selected response, ≥80% constructed response, and ≥80% overall
+- evidence-gated completion requires 90/90 lesson gates, 36/36 weekly gates, 13/13 unit gates, Midterm, Final, 13 investigations, capstone/defense ≥80%, and evaluator attestation
+- root course shell distinguishes legacy planning grades from canonical mastery evidence
+- offline worker retains the strict progression and assessment runtime
+- browser-local records are explicitly non-authoritative and not digitally signed
 
-- All JSON files parsed
-- All JavaScript files passed Node syntax checking
-- All internal course links resolved
-- No duplicate HTML IDs
-- Every lesson contains a print sheet, worksheet grid, six geometric figures, local completion hook, print control, and teacher-key route
-- Every teacher key contains aligned figures, answers, reasoning, and print control
-- All question items have four unique options
-- Every answer index points to the declared answer text
-- All 13 unit structures and all 36 weeks are present
-- External course connections use public Verve N Veda routes rather than GitHub repository pages
-- The ZIP uses `geometry/` as its top-level repository folder
+## Release status
 
-## Manual review priorities after deployment
+Do not classify the current Geometry build as Production PASS until the dedicated Geometry release validator is committed and its GitHub Actions workflow succeeds on the exact release head.
 
-- Confirm the host serves `.webmanifest` with an appropriate MIME type
-- Hard-refresh once after upload so the Geometry service worker becomes active
-- Verify public Arcade and ProReSources routes from the deployed domain
-- Print one student lesson and one teacher key from the target browser/printer
+After CI succeeds, this report will be updated with the verified release status and final integrity notes.
