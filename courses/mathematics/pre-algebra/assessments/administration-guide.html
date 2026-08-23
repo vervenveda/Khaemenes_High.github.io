@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Khaemenes Academy Pre-Algebra assessment administration and scoring guide.">
+<meta name="description" content="Khaemenes Academy Pre-Algebra assessment administration, depth-alignment, mastery, and scoring guide.">
 <title>Assessment Administration Guide · Khaemenes Academy</title>
 <link rel="stylesheet" href="assets/assessment-suite.css">
 <style>
@@ -11,18 +11,20 @@
 .admin-page{font-family:var(--sans)}
 .admin-page .hero{min-height:52svh;display:grid;place-items:center;padding:clamp(5rem,10vw,8rem) 0 4rem}
 .admin-page .hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,5.4rem);letter-spacing:.015em;text-wrap:balance}
-.admin-page .hero .lead{max-width:760px;line-height:1.8}
+.admin-page .hero .lead{max-width:820px;line-height:1.8}
 .breadcrumb{border-bottom:1px solid var(--line);background:var(--bg2)}
 .breadcrumb .wrap{min-height:46px;display:flex;align-items:center;justify-content:center;gap:.55rem;flex-wrap:wrap;font-size:.78rem;color:var(--muted)}
 .breadcrumb a{text-decoration:none}
 .guide-grid{max-width:1040px;margin-inline:auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
 .guide-card{padding:clamp(1.6rem,4vw,2.5rem);text-align:center}
 .guide-card h2{margin-bottom:.8rem;font-family:var(--serif);font-size:clamp(1.65rem,3vw,2.35rem)}
-.guide-card p{max-width:700px;margin:.65rem auto;color:var(--muted)}
-.guide-card ul{display:inline-block;max-width:720px;margin:.7rem auto 0;padding-left:1.25rem;text-align:left;color:var(--muted)}
+.guide-card p{max-width:740px;margin:.65rem auto;color:var(--muted)}
+.guide-card ul,.guide-card ol{display:inline-block;max-width:760px;margin:.7rem auto 0;padding-left:1.35rem;text-align:left;color:var(--muted)}
 .guide-card li+li{margin-top:.5rem}
 .guide-card.wide{grid-column:1/-1}
 .guide-actions{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-top:1.4rem}
+.mastery-rule{max-width:760px;margin:1rem auto;padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--bg2);text-align:left}
+.mastery-rule strong{display:block;margin-bottom:.35rem}
 .site-header .brand-copy strong{font-family:var(--serif);letter-spacing:.12em}
 .footer-inner{justify-content:center;text-align:center}
 @media(max-width:760px){.guide-grid{grid-template-columns:1fr}.guide-card.wide{grid-column:auto}}
@@ -38,54 +40,90 @@
 </header>
 <nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap"><a href="../">Pre-Algebra</a><span aria-hidden="true">›</span><a href="index.html">Assessments</a><span aria-hidden="true">›</span><span aria-current="page">Administration Guide</span></div></nav>
 <main id="main">
-<section class="hero"><div class="wrap"><p class="eyebrow">Parent · Teacher · Program Administrator</p><h1>Administration &amp; Scoring Guide</h1><p class="lead">A clear, student-centered framework for distinguishing public self-checks, supervised administration, confidential summative testing, and retained course records.</p></div></section>
+<section class="hero"><div class="wrap"><p class="eyebrow">Parent · Teacher · Program Administrator</p><h1>Administration &amp; Scoring Guide</h1><p class="lead">Pre-Algebra uses aligned weekly checks, cumulative unit evidence, and mixed-evidence midterm/final assessments so an 80% mastery result reflects the depth of the instruction rather than topic recognition alone.</p></div></section>
 <section><div class="wrap grid guide-grid">
-  <article class="card guide-card">
-    <p class="eyebrow">Learning Path</p><h2>Public Self-Check</h2>
-    <p>Use the public digital assessments for practice, self-study, correction cycles, retesting, and evidence of growth. These forms are intentionally self-scoring and are not confidential.</p>
-    <ul><li>Complete every item before submission.</li><li>Review missed concepts after scoring.</li><li>Complete written corrections when appropriate.</li><li>Keep representative work with the student portfolio.</li><li>Treat browser-local scores as editable, unverified data until reviewed.</li></ul>
-  </article>
-  <article class="card guide-card">
-    <p class="eyebrow">Observed Use</p><h2>Supervised Public Administration</h2>
-    <p>A parent, teacher, or program may supervise a public self-check when it will be retained as one piece of course evidence. Supervision improves administration consistency but does not make a public form confidential.</p>
-    <ul><li>Identify permitted tools before beginning.</li><li>Provide a quiet, interruption-limited setting.</li><li>Do not provide content hints during scored work.</li><li>Allow ordinary accessibility supports that do not supply answers.</li><li>Document retesting or correction cycles clearly.</li></ul>
-  </article>
   <article class="card guide-card wide">
-    <p class="eyebrow">Summative Security</p><h2>Confidential Midterm &amp; Final</h2>
-    <p>When confidential summative testing is required, use a separately issued supervised assessment whose questions and answer key have not been published in the learner-facing repository. Previously public questions are not eligible for confidential reuse. The public midterm and final remain useful self-check and portfolio-evidence forms, but they are not secure examinations.</p>
+    <p class="eyebrow">Assessment Alignment v2</p><h2>What Mastery Must Demonstrate</h2>
+    <p>Assessment evidence should sample the mathematics at the level it was taught. Across the course, checks deliberately include procedural fluency, multi-step application, representation and interpretation, error analysis, and transfer or reasoning.</p>
+    <div class="mastery-rule"><strong>Weekly rule</strong>Each instructional week has a distinct 10-question mastery check aligned to that week’s focus. Eight correct answers are required to reach the 80% threshold. A generic unit quiz may not be reused as proof of mastery for a different week.</div>
   </article>
+
   <article class="card guide-card">
-    <p class="eyebrow">Quality Standard</p><h2>Definitive Answers</h2>
-    <p>Scored multiple-choice items are written to have one mathematically or definitionally correct response.</p>
-    <ul><li>Avoid duplicate equivalent choices.</li><li>State conventions when they materially affect an answer.</li><li>Avoid undefined or subjective “best answer” wording.</li><li>Use explanations to support correction and mastery.</li></ul>
+    <p class="eyebrow">Weekly Learning Gate</p><h2>10 Questions · 8 Required</h2>
+    <p>Weekly checks are designed to reveal whether the learner can use the week’s ideas, not merely recognize vocabulary.</p>
+    <ul><li>10 unique questions for each of 36 weeks.</li><li>80% means at least 8 of 10 correct.</li><li>Questions include context, interpretation, error analysis, or reasoning in addition to direct skill checks.</li><li>Scores below 80% trigger review, corrections, and retesting rather than erasing completed work.</li></ul>
   </article>
+
   <article class="card guide-card">
-    <p class="eyebrow">Course Grade</p><h2>Suggested Weighting</h2>
-    <p>A parent, teacher, or program administrator determines the official course grade and any credit awarded from the evidence they retain and review.</p>
-    <ul><li>Unit and coursework average: 40%</li><li>Midterm evidence: 20%</li><li>Final cumulative evidence: 30%</li><li>Mathematical modeling capstone: 10%</li></ul>
+    <p class="eyebrow">Unit Evidence</p><h2>Cumulative Mastery Checks</h2>
+    <p>Unit mastery checks sample the full lesson sequence and retain written reasoning prompts alongside the scored items.</p>
+    <ul><li>At least 20 scored items per unit mastery check.</li><li>At least two written reasoning/reflection prompts.</li><li>80% remains the unit mastery target.</li><li>Review written work when the selected-response score and demonstrated reasoning appear inconsistent.</li></ul>
   </article>
+
+  <article class="card guide-card wide">
+    <p class="eyebrow">Midterm &amp; Final</p><h2>Mixed-Evidence Cumulative Mastery</h2>
+    <p>The public midterm and final now combine auto-scored definitive-answer work with required constructed responses. The midterm contains seven constructed-response tasks across Units 01–07; the final contains ten cross-domain tasks covering reasoning, modelling, verification, interpretation, and Algebra I readiness.</p>
+    <div class="mastery-rule"><strong>70/30 evidence model</strong>Selected-response mathematics contributes 70% of the mixed-evidence score and evaluator-reviewed constructed responses contribute 30%.</div>
+    <div class="mastery-rule"><strong>Three-part 80% rule</strong>Full cumulative mastery is recorded only when the learner earns at least 80% on the selected-response portion, at least 80% on the constructed-response rubric, and at least 80% overall.</div>
+  </article>
+
+  <article class="card guide-card">
+    <p class="eyebrow">Human Review</p><h2>Constructed-Response Rubric</h2>
+    <p>Use the 0–4 rubric shown inside the cumulative assessment. Review the mathematics, not writing style.</p>
+    <ol><li><strong>4:</strong> complete/correct reasoning with relevant representation, units, verification, and interpretation.</li><li><strong>3:</strong> substantially correct with a minor omission or non-conceptual error.</li><li><strong>2:</strong> partial understanding with a conceptual gap or incomplete verification.</li><li><strong>1:</strong> limited relevant work with major misconceptions or unsupported conclusions.</li><li><strong>0:</strong> blank, unrelated, or no assessable reasoning.</li></ol>
+  </article>
+
+  <article class="card guide-card">
+    <p class="eyebrow">Public Self-Check</p><h2>Learning Evidence, Not Authentication</h2>
+    <p>Public digital assessments support practice, correction cycles, retesting, and portfolio evidence. Browser-local scores and evaluator entries remain editable and are not confidential, digitally signed, or independently authenticated.</p>
+    <ul><li>Keep representative scratch work or written reasoning.</li><li>Retain exported results when useful.</li><li>Have a parent, teacher, or program administrator review evidence used for an official grade.</li></ul>
+  </article>
+
+  <article class="card guide-card wide">
+    <p class="eyebrow">Summative Security</p><h2>Confidential Administration Is Separate</h2>
+    <p>When confidential summative testing is required, use a separately issued supervised assessment whose questions and answer key have not been published in the learner-facing repository. Previously public questions are not eligible for confidential reuse. Supervision of a public form can improve administration consistency, but it does not make the form confidential.</p>
+  </article>
+
+  <article class="card guide-card">
+    <p class="eyebrow">Portal Display</p><h2>Current Mastery Weighting</h2>
+    <p>The course portal’s running mastery display uses the evidence available in the local course record. It is not itself an official transcript grade.</p>
+    <ul><li>Weekly quiz mastery: 55%</li><li>Midterm evidence: 15%</li><li>Final cumulative evidence: 20%</li><li>Mathematical modelling capstone: 10%</li></ul>
+  </article>
+
+  <article class="card guide-card">
+    <p class="eyebrow">Course Grade</p><h2>Administrator Judgment</h2>
+    <p>A parent, teacher, school, or program administrator determines the official course grade and any credit awarded from the evidence they retain and review. The portal mastery display is one source of evidence, not a replacement for local academic judgment or jurisdictional requirements.</p>
+  </article>
+
   <article class="card guide-card">
     <p class="eyebrow">Mastery</p><h2>Corrections &amp; Retesting</h2>
-    <p>Assessment should support learning as well as measurement. After scoring, review missed concepts and require meaningful correction where appropriate.</p>
-    <p>When a learner retests, preserve or clearly identify attempts so the academic record remains understandable.</p>
+    <p>Assessment should support learning as well as measurement. After a score below 80%, identify the weak domain, complete meaningful corrections, revisit the relevant lesson, and retest. Preserve attempts so growth remains visible.</p>
   </article>
+
   <article class="card guide-card">
     <p class="eyebrow">Record Integrity</p><h2>Know the Evidence Source</h2>
-    <p>Browser-local result files and course records may include provenance and integrity information, but an unsigned public export is not proof of authorship or authenticity. Parent or administrator attestation remains required until a separately signed verification record is issued.</p>
+    <p>Browser-local result files may include provenance and review status, but an unsigned export is not proof of authorship or authenticity. Parent or administrator attestation remains required until a separately signed verification record is issued.</p>
   </article>
+
   <article class="card guide-card">
     <p class="eyebrow">Student Record</p><h2>Portfolio Evidence</h2>
     <p>Retain the materials that best demonstrate the learner’s progress and achievement.</p>
-    <ul><li>Assessment result or printed score record</li><li>Representative lessons and practice</li><li>Written corrections</li><li>Projects and capstone evidence</li><li>Progress records required by the learner’s program or jurisdiction</li></ul>
+    <ul><li>Weekly and unit mastery results</li><li>Representative lessons and practice</li><li>Written corrections and constructed responses</li><li>Projects and modelling capstone evidence</li><li>Midterm/final auto-score plus evaluator review</li></ul>
   </article>
-  <article class="card guide-card wide">
+
+  <article class="card guide-card">
     <p class="eyebrow">Privacy &amp; Stewardship</p><h2>Keep Records Purposeful</h2>
     <p>Use only the student information needed for the academic record. Keep exported or printed records in the family’s, school’s, or program’s chosen secure portfolio location and follow applicable recordkeeping requirements.</p>
+  </article>
+
+  <article class="card guide-card wide">
+    <p class="eyebrow">Administration Sequence</p><h2>Recommended Cumulative Assessment Flow</h2>
+    <ol><li>Identify permitted tools and accessibility supports before beginning.</li><li>Complete the selected-response and constructed-response sections without content hints.</li><li>Submit the assessment to obtain the auto-scored result.</li><li>Review written responses using the 0–4 rubric.</li><li>Save the evaluator review; the engine then calculates the mixed-evidence overall result.</li><li>If any mastery component is below 80%, review, correct, and retest rather than treating the first attempt as final.</li><li>Export or print the evidence chosen for the learner’s portfolio.</li></ol>
     <div class="guide-actions no-print"><a class="btn primary" href="index.html">Return to Assessment Center</a><a class="btn" href="../">Return to Pre-Algebra</a></div>
   </article>
 </div></section>
 </main>
-<footer class="footer"><div class="wrap footer-inner"><span>Khaemenes Academy · Pre-Algebra · Administration &amp; Scoring Guide</span></div></footer>
+<footer class="footer"><div class="wrap footer-inner"><span>Khaemenes Academy · Pre-Algebra · Assessment Alignment v2 · Administration &amp; Scoring Guide</span></div></footer>
 <script>
 const t=document.getElementById("themeToggle");
 const set=v=>{document.documentElement.dataset.theme=v;localStorage.setItem("khaemenes-theme",v)};
