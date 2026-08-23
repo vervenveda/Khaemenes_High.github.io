@@ -10,13 +10,14 @@ function unitUnlocked(c,A){if(c.unit<=1)return true;if(!A.unitMastered(c.unit-1)
 function lessonUnlocked(c,A,n){if(!unitUnlocked(c,A))return false;if(n<=1)return true;if(!A.lessonMastered(c.unit,n-1))return false;const priorWeek=lessonWeek(c,n-1),currentWeek=lessonWeek(c,n);if(priorWeek&&currentWeek&&currentWeek>priorWeek&&!A.weekMastered(priorWeek))return false;return true}
 function allLessonsMastered(c,A,D){return Array.isArray(D?.lessons)&&D.lessons.length>0&&D.lessons.every(l=>A.lessonMastered(c.unit,l.number))}
 function allWeeksMastered(c,A){const weeks=[...new Set((c.lesson_weeks||[]).map(Number).filter(Number.isFinite))];return weeks.length>0&&weeks.every(w=>A.weekMastered(w))}
-function rootFromMode(mode){return mode==="lesson"?"../../../":mode==="mastery"?"../../../":"../../"}
+function rootFromMode(mode){return ["lesson","mastery","practice"].includes(mode)?"../../../":"../../"}
 function lock(title,detail,href){const main=document.getElementById("main");if(!main)return;const c=config(),mode=document.body?.dataset?.mode||"",root=rootFromMode(mode);main.innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Strict 80% Mastery Gate</p><h1>${esc(title)}</h1><p class="lead">${esc(detail)}</p><div class="nav"><a class="btn primary" href="${esc(href)}">Return to required mastery step</a><a class="btn" href="${root}index.html">Course Home</a></div></div></section><section class="block"><div class="wrap"><article class="card"><h2>Progression rule</h2><p>Algebra I requires at least ${MASTERY}% on the prerequisite lesson, graded weekly gate, unit mastery check, and cumulative gate where applicable. A below-target attempt remains evidence but does not unlock the next graded stage.</p></article></div></section>`;if(c)document.body.dataset.masteryLocked="true"}
 function prerequisite(c,A,D,mode,lessonNumber){
- if(!A)return {ok:false,title:"Mastery evidence unavailable",detail:"The canonical Algebra I mastery authority could not be loaded. This page is locked rather than guessing at progression.",href:rootFromMode(mode)+"index.html"};
+ const root=rootFromMode(mode);
+ if(!A)return {ok:false,title:"Mastery evidence unavailable",detail:"The canonical Algebra I mastery authority could not be loaded. This page is locked rather than guessing at progression.",href:root+"index.html"};
  if(!unitUnlocked(c,A)){
   const midterm=c.unit===7&&A.unitMastered(6)&&!A.midtermMastered();
-  return {ok:false,title:`Unit ${String(c.unit).padStart(2,"0")} is locked`,detail:midterm?`Full mixed-evidence Midterm mastery at ${MASTERY}% is required before Unit 07.`:`Reach ${MASTERY}% mastery on Unit ${String(c.unit-1).padStart(2,"0")} before beginning this unit.`,href:midterm?"../../assessments/midterm-units-01-06.html":`../unit-${String(c.unit-1).padStart(2,"0")}/assessment/mastery-check.html`};
+  return {ok:false,title:`Unit ${String(c.unit).padStart(2,"0")} is locked`,detail:midterm?`Full mixed-evidence Midterm mastery at ${MASTERY}% is required before Unit 07.`:`Reach ${MASTERY}% mastery on Unit ${String(c.unit-1).padStart(2,"0")} before beginning this unit.`,href:midterm?`${root}assessments/midterm-units-01-06.html`:`${root}units/unit-${String(c.unit-1).padStart(2,"0")}/assessment/mastery-check.html`};
  }
  if(mode==="lesson"){
   const n=Number(lessonNumber);if(!lessonUnlocked(c,A,n)){
