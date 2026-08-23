@@ -1,131 +1,22 @@
 {
-  "title": "Week 4 Quiz — Rivers, Cities, Law, and Government",
+  "title": "Week 4 Mastery Quiz — Rivers, Cities, Law, and Government",
   "points": 25,
+  "masteryThreshold": 80,
   "questions": [
-    {
-      "id": "W04Q1",
-      "prompt": "Which term best matches this definition: A complex society with cities, institutions, specialized labor, and systems of communication.",
-      "choices": [
-        "tribute",
-        "bureaucracy",
-        "civilization",
-        "cuneiform"
-      ],
-      "answer": 2,
-      "explanation": "Civilization is the course term defined as: A complex society with cities, institutions, specialized labor, and systems of communication."
-    },
-    {
-      "id": "W04Q2",
-      "prompt": "Which term best matches this definition: A city and its surrounding territory functioning as an independent political unit.",
-      "choices": [
-        "bureaucracy",
-        "city-state",
-        "cuneiform",
-        "tribute"
-      ],
-      "answer": 1,
-      "explanation": "City-State is the course term defined as: A city and its surrounding territory functioning as an independent political unit."
-    },
-    {
-      "id": "W04Q3",
-      "prompt": "Which term best matches this definition: An administrative system of officials and offices.",
-      "choices": [
-        "city-state",
-        "bureaucracy",
-        "cuneiform",
-        "civilization"
-      ],
-      "answer": 1,
-      "explanation": "Bureaucracy is the course term defined as: An administrative system of officials and offices."
-    },
-    {
-      "id": "W04Q4",
-      "prompt": "Which term best matches this definition: A wedge-shaped writing system developed in ancient Mesopotamia.",
-      "choices": [
-        "rule of law",
-        "cuneiform",
-        "city-state",
-        "civilization"
-      ],
-      "answer": 1,
-      "explanation": "Cuneiform is the course term defined as: A wedge-shaped writing system developed in ancient Mesopotamia."
-    },
-    {
-      "id": "W04Q5",
-      "prompt": "Which term best matches this definition: Goods, labor, or wealth delivered to a ruler or state.",
-      "choices": [
-        "rule of law",
-        "tribute",
-        "city-state",
-        "cuneiform"
-      ],
-      "answer": 1,
-      "explanation": "Tribute is the course term defined as: Goods, labor, or wealth delivered to a ruler or state."
-    },
-    {
-      "id": "W04Q6",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 4?",
-      "choices": [
-        "Homo sapiens originated in Africa and migrated over many generations into diverse environments.",
-        "Complex societies emerged independently in many regions and should not be treated as copies of one model.",
-        "River valleys supported intensive agriculture but required coordinated labor and management.",
-        "Religious and philosophical traditions developed in specific historical settings but continued to change across time and place."
-      ],
-      "answer": 2,
-      "explanation": "River valleys supported intensive agriculture but required coordinated labor and management."
-    },
-    {
-      "id": "W04Q7",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 4?",
-      "choices": [
-        "Writing and accounting expanded partly because governments and temples needed to track resources and obligations.",
-        "Agriculture developed independently in several regions rather than spreading from a single universal center.",
-        "Traditions must be studied through multiple voices rather than reduced to one rule or stereotype.",
-        "Archaeology is especially important where written evidence is limited, undeciphered, or produced mainly by elites."
-      ],
-      "answer": 0,
-      "explanation": "Writing and accounting expanded partly because governments and temples needed to track resources and obligations."
-    },
-    {
-      "id": "W04Q8",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 4?",
-      "choices": [
-        "Belief systems influenced law, family, education, art, political legitimacy, and social reform.",
-        "Early law codes reveal social priorities and inequalities as well as attempts to regulate conflict.",
-        "Food surplus supported larger settlements and specialization but also contributed to hierarchy, disease exposure, and conflict.",
-        "Urban design, monuments, and trade goods reveal organization, belief, exchange, and inequality."
-      ],
-      "answer": 1,
-      "explanation": "Early law codes reveal social priorities and inequalities as well as attempts to regulate conflict."
-    },
-    {
-      "id": "W04Q9",
-      "prompt": "What is the strongest method for evaluating “Law and Administration in Mesopotamia and Egypt”?",
-      "choices": [
-        "Use only the most dramatic sentence because memorable details are the most reliable.",
-        "Accept the source if it was created during the period because primary sources are automatically accurate.",
-        "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits.",
-        "Reject the source if it contains a point of view because useful evidence must be neutral."
-      ],
-      "answer": 2,
-      "explanation": "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits."
-    },
-    {
-      "id": "W04Q10",
-      "prompt": "Which response demonstrates the strongest geographic or quantitative reasoning?",
-      "choices": [
-        "State the observed pattern, propose an explanation, and identify what the map or data cannot prove.",
-        "Use the visualization only if it confirms the original claim.",
-        "Ignore units and scale so attention stays on the overall appearance.",
-        "Assume that every mapped relationship is a direct cause."
-      ],
-      "answer": 0,
-      "explanation": "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
-    }
+    {"id":"W04Q1","prompt":"Which feature best distinguishes a city-state?","choices":["A city and its surrounding territory function as an independent political unit.","All cities are governed by one universal emperor.","Its economy excludes agriculture and trade.","Its laws apply equally to every neighboring society."],"answer":0,"explanation":"A city-state is an independent political unit centered on a city and its surrounding territory."},
+    {"id":"W04Q2","prompt":"Why did early governments and temples expand writing and accounting systems?","choices":["To eliminate oral communication","To record resources, labor, taxes or tribute, and obligations","To make agriculture unnecessary","To prevent all political competition"],"answer":1,"explanation":"Administrative institutions needed durable records for resources, labor, and obligations."},
+    {"id":"W04Q3","prompt":"Which conclusion is best supported by comparing the Nile and Tigris-Euphrates systems?","choices":["River geography dictated identical political systems.","All river floods were equally predictable.","Similar agricultural opportunities could produce different political responses and institutions.","Cities could develop only where deserts surrounded rivers."],"answer":2,"explanation":"Geographic opportunities and constraints matter, but societies respond through institutions and choices rather than a single predetermined path."},
+    {"id":"W04Q4","prompt":"What is the strongest caution when using a collection associated with Hammurabi to reconstruct everyday life?","choices":["Written evidence has no historical value.","Legal cases reveal only agricultural technology.","The collection proves every rule was enforced identically.","It reveals legal ideals and social distinctions but cannot by itself prove everyday enforcement or experience."],"answer":3,"explanation":"Law collections are valuable evidence of norms and categories, but practice requires corroboration."},
+    {"id":"W04Q5","prompt":"A bureaucracy is best understood as:","choices":["an administrative system of officials and offices","a wedge-shaped writing system","goods delivered to a ruler","an independent city and its territory"],"answer":0,"explanation":"Bureaucracy refers to organized administrative offices and officials."},
+    {"id":"W04Q6","prompt":"Why can grain surplus strengthen state capacity?","choices":["Surplus guarantees equal wealth.","Stored and collected resources can support specialists, public works, administration, and emergency reserves.","Surplus removes the need for labor coordination.","Surplus proves that rulers were legitimate."],"answer":1,"explanation":"Surplus can finance activities beyond immediate household consumption, increasing institutional capacity."},
+    {"id":"W04Q7","prompt":"Which observation most directly supports the claim that early legal systems could formalize inequality?","choices":["Rivers were used for transportation.","Writing was used for accounting.","Penalties or obligations could differ according to social status or category.","Cities contained specialized labor."],"answer":2,"explanation":"Different legal treatment by status provides direct evidence of formally recognized social inequality."},
+    {"id":"W04Q8","prompt":"Which statement best distinguishes written law from the broader principle of rule of law?","choices":["They are identical concepts in every historical society.","Rule of law means rulers never use administrators.","Written law exists only in democracies.","A society may have written rules without consistently subjecting political authority to known, general legal constraints."],"answer":3,"explanation":"Written rules alone do not establish the stronger institutional principle that authority itself is constrained by law."},
+    {"id":"W04Q9","prompt":"A historian comparing a Mesopotamian law case with an Egyptian labor record is primarily using corroboration to:","choices":["compare different evidence to test, refine, or limit a historical interpretation","prove that the two societies were politically identical","replace contextual analysis with a single source","assume administrative records are neutral"],"answer":0,"explanation":"Corroboration compares independent evidence to strengthen, complicate, or limit claims."},
+    {"id":"W04Q10","prompt":"Which explanation best answers why early cities developed more complex systems of authority?","choices":["Large populations automatically become monarchies.","Dense populations and concentrated resources created coordination, allocation, conflict, infrastructure, and recordkeeping problems that institutions attempted to manage.","Writing caused rivers to flood predictably.","Every early city developed the same government for the same reason."],"answer":1,"explanation":"Urban concentration created recurring coordination problems, while institutional responses varied across societies."}
   ],
   "shortResponse": {
-    "prompt": "Using at least two specific pieces of evidence, answer: Why did early cities require new systems of law, labor, recordkeeping, and authority?",
+    "prompt": "Using at least two specific pieces of evidence from Week 4, explain why early cities developed new systems of law, labor, recordkeeping, and authority. Include one benefit of coordination and one way those systems could reinforce inequality or concentrated power.",
     "points": 5,
-    "exemplar": "A full-credit response states a defensible answer to the essential question, uses two accurate details from the week, explains how each detail supports the claim, and acknowledges one complexity or limitation."
+    "exemplar": "Full-credit work makes a defensible causal claim, uses at least two accurate Week 4 details, connects evidence to reasoning, and includes a qualification about inequality, enforcement, or variation among societies."
   }
 }

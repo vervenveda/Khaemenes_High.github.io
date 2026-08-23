@@ -1,0 +1,25 @@
+(()=>{
+"use strict";
+const MASTERY=80,LESSON_STORE="khaemenes-geometry-lesson-progress-v1",WEEK_STORE="khaemenes-geometry-weekly-mastery-v2",ASSESS_STORE="khaemenes-geometry-assessment-records-v1";
+const UNIT_WEEKS={1:[1,2],2:[3,4,5],3:[6,7,8],4:[9,10],5:[11,12,13],6:[14,15,16,17],7:[19,20,21],8:[22,23,24],9:[25,26,27],10:[28,29],11:[30,31],12:[32,33,34],13:[35,36]};
+const LESSON_GROUPS={1:[[1,2,3],[4,5,6]],2:[[1,2,3],[4,5],[6,7]],3:[[1,2,3],[4,5],[6,7]],4:[[1,2,3],[4,5,6]],5:[[1,2,3],[4,5],[6,7]],6:[[1,2],[3,4],[5,6],[7,8]],7:[[1,2,3],[4,5],[6,7]],8:[[1,2,3],[4,5,6],[7,8]],9:[[1,2,3],[4,5],[6,7]],10:[[1,2,3,4],[5,6,7]],11:[[1,2,3,4],[5,6,7]],12:[[1,2,3],[4,5],[6,7]],13:[[1,2,3],[4,5,6]]};
+const parse=(key,f={})=>{try{return JSON.parse(localStorage.getItem(key)||"null")||f}catch{return f}},unitNo=Number(location.pathname.match(/unit-(\d+)/)?.[1]);if(!unitNo)return;
+function lessonMastered(id){const r=parse(LESSON_STORE,{})[id];return Number(r?.bestScore)>=MASTERY||r?.complete===true&&Number(r?.masteryScore)>=MASTERY}
+function weekMastered(n){const r=parse(WEEK_STORE,{weeks:{}})?.weeks?.[n];return Number(r?.best)>=MASTERY||r?.attempts?.some(a=>a.mastery_met===true)}
+function unitMastered(n){if(n<1)return true;const r=parse(ASSESS_STORE,{})[`unit-${String(n).padStart(2,"0")}`];return r?.mastery===true||Number(r?.bestScore)>=MASTERY}
+function midtermMastered(){const r=parse(ASSESS_STORE,{})["midterm"];return r?.mastery===true||Number(r?.bestScore)>=MASTERY}
+function unitUnlocked(){if(unitNo===1)return true;if(unitNo===7)return unitMastered(6)&&midtermMastered();return unitMastered(unitNo-1)}
+function weekForLesson(n){const groups=LESSON_GROUPS[unitNo]||[],weeks=UNIT_WEEKS[unitNo]||[];const i=groups.findIndex(g=>g.includes(n));return i>=0?weeks[i]:null}
+function previousWeekForBoundary(n){const groups=LESSON_GROUPS[unitNo]||[],weeks=UNIT_WEEKS[unitNo]||[];const i=groups.findIndex(g=>g.includes(n));if(i<=0||groups[i][0]!==n)return null;return weeks[i-1]}
+function lessonUnlocked(n,cards){if(!unitUnlocked())return false;if(n===1)return true;const prev=cards[n-2]?.dataset.lessonId;if(!prev||!lessonMastered(prev))return false;const priorWeek=previousWeekForBoundary(n);return priorWeek==null||weekMastered(priorWeek)}
+function lockPage(reason,href){const main=document.querySelector("main");if(!main)return;main.innerHTML=`<section class="unit-hero"><div class="wrap"><p class="eyebrow">Strict 80% Mastery Gate</p><h1>Unit ${String(unitNo).padStart(2,"0")} is locked</h1><p>${reason}</p><div class="actions"><a class="btn primary" href="${href}">Return to required mastery step</a><a class="btn" href="../../index.html">Course Home</a></div></div></section>`}
+function disable(a,text){if(!a)return;a.dataset.originalHref=a.getAttribute("href")||"";a.removeAttribute("href");a.setAttribute("aria-disabled","true");a.style.opacity=".55";a.style.cursor="not-allowed";a.addEventListener("click",e=>e.preventDefault());const p=document.createElement("p");p.className="notice";p.textContent=text;a.append(p)}
+function boot(){
+ if(!unitUnlocked()){const reason=unitNo===7?"Complete Unit 06 mastery and the reviewed Midterm at 80% before beginning Unit 07.":`Complete Unit ${String(unitNo-1).padStart(2,"0")} mastery at 80% before beginning this unit.`;const href=unitNo===7?"../../assessments/midterm.html":`../unit-${String(unitNo-1).padStart(2,"0")}/assessment/mastery-check.html`;lockPage(reason,href);return}
+ const cards=[...document.querySelectorAll('.lesson-grid > a.card[href*="lessons/"]')];cards.forEach((card,i)=>{card.dataset.lessonId=`u${String(unitNo).padStart(2,"0")}-l${String(i+1).padStart(2,"0")}`;const n=i+1;if(lessonMastered(card.dataset.lessonId)){const tag=document.createElement("span");tag.className="pill";tag.textContent="✓ 80% lesson mastery";card.prepend(tag)}if(!lessonUnlocked(n,cards))disable(card,previousWeekForBoundary(n)&&!weekMastered(previousWeekForBoundary(n))?`Locked · Week ${previousWeekForBoundary(n)} mastery must reach 80%.`:`Locked · Lesson ${String(n-1).padStart(2,"0")} must reach 80%.`) });
+ const allLessons=cards.length>0&&cards.every(c=>lessonMastered(c.dataset.lessonId)),weeks=UNIT_WEEKS[unitNo]||[],allWeeks=weeks.every(weekMastered),mastery=document.querySelector('a.btn[href*="assessment/mastery-check.html"]');if(mastery&&(!allLessons||!allWeeks))disable(mastery,!allLessons?"Mastery Check Locked · All lesson gates must reach 80%.":"Mastery Check Locked · All unit weekly gates must reach 80%.");
+ const begin=document.querySelector('.unit-hero a.btn.primary[href*="lessons/"]');if(begin&&!lessonUnlocked(1,cards))disable(begin,"Begin Unit Locked");
+ const note=document.createElement("p");note.className="notice";note.innerHTML=`<strong>Strict progression:</strong> each lesson requires ${MASTERY}%, week boundaries require the prior weekly mastery gate, and formal unit mastery opens only after all lesson and weekly gates are satisfied.`;document.querySelector(".unit-hero .wrap")?.append(note)
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
+})();

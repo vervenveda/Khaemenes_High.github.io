@@ -1,11 +1,13 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "course": {
     "id": "math-prealgebra",
     "code": "KH-MATH-PA",
     "title": "Khaemenes Global Pre-Algebra",
     "grade_band": "Secondary readiness / Open-Age bridge",
     "duration_weeks": 36,
+    "supported_duration_weeks": 42,
+    "official_instructional_units": 13,
     "pathways": [
       "Foundation",
       "Core",
@@ -18,6 +20,49 @@
       "Summer bridge"
     ],
     "mapping_status": "Draft universal crosswalk; jurisdiction-specific review required before formal standards reporting."
+  },
+  "readiness_gateway": {
+    "assessment_id": "KH-MATH-PA-READINESS-GATEWAY",
+    "path": "diagnostic/",
+    "assessment_bank": "diagnostic/readiness-assessment-v3.json",
+    "counts_toward_official_duration": false,
+    "mastery_threshold_percent": 80,
+    "routing": {
+      "ready": "Official Unit 1",
+      "supported": "Conditional Unit 0 Foundations & Readiness",
+      "teacher_review": "Use when diagnostic evidence conflicts materially with other valid evidence or the attempt cannot be interpreted fairly."
+    },
+    "principle": "A readiness diagnostic guides support; it does not label or punish a learner."
+  },
+  "conditional_unit_0": {
+    "id": "u00",
+    "number": 0,
+    "title": "Foundations & Readiness",
+    "path": "units/unit-00/",
+    "conditional": true,
+    "duration_weeks": 6,
+    "counts_toward_official_duration": false,
+    "route_in": "Readiness Gateway indicates prerequisite reinforcement.",
+    "exit_threshold_percent": 80,
+    "exit_requires_reasoning_corrections": true,
+    "route_out": "Official Unit 1",
+    "supported_pathway_total_weeks": 42,
+    "strands": [
+      "Number Foundations",
+      "Rational & Proportional Reasoning",
+      "Algebraic Reasoning",
+      "Functions & Coordinates",
+      "Geometry & Measurement",
+      "Data & Probability"
+    ],
+    "record_rule": "Unit 0 updates Refresh and Readiness evidence only; it never erases or downgrades Course Mastery, Retention, or prior completion records."
+  },
+  "duration_validation": {
+    "official_units_1_through_13_weeks": 36,
+    "conditional_unit_0_weeks": 6,
+    "ready_pathway_weeks": 36,
+    "supported_pathway_weeks": 42,
+    "readiness_gateway_counts_as_course_week": false
   },
   "mastery_scale": [
     {
@@ -42,26 +87,6 @@
     }
   ],
   "units": [
-    {
-      "id": "u00",
-      "number": 0,
-      "weeks": 1,
-      "title": "Mathematical Readiness & Diagnostic",
-      "status": "open",
-      "path": "diagnostic/",
-      "big_idea": "A diagnostic should guide support, not label or punish a learner.",
-      "objectives": [
-        "Review essential arithmetic and notation",
-        "Identify strengths and unfinished learning",
-        "Select support by skill",
-        "Set a personal mathematics goal"
-      ],
-      "framework_tags": [
-        "Universal: Mathematical Practices",
-        "US: Grades 6–8 readiness",
-        "International: Lower-secondary number and algebra readiness"
-      ]
-    },
     {
       "id": "u01",
       "number": 1,
@@ -332,7 +357,7 @@
     {
       "id": "u13",
       "number": 13,
-      "weeks": 1,
+      "weeks": 2,
       "title": "Mathematical Modelling Capstone",
       "status": "open",
       "big_idea": "Mathematics becomes powerful when learners define a problem, make assumptions, analyze evidence, and communicate limitations.",

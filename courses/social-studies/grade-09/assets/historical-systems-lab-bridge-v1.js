@@ -1,0 +1,20 @@
+/* Khaemenes Grade 9 Social Studies · Historical Systems Lab Bridge v1
+   Longitudinal skill progression for the existing ProResource Empire Systems Lab.
+   The lab is used as a model-building instrument; simulation output is not historical proof.
+*/
+(function(){'use strict';
+  const LAB_SOURCE='https://github.com/vervenveda/proresource_hub.github.io/blob/main/Protools/empire-systems-lab_index.html';
+  const stages=[
+    {weeks:[1,2],stage:'Observer',focus:'What is a system, variable, model, observation, and limitation?',studentTask:'Observe one variable change. Record prediction, result, and one thing the model cannot establish.',skills:['observation','variable identification','model limits']},
+    {weeks:[3,4,5],stage:'Mapper',focus:'How do geography, environment, resources, and settlement interact?',studentTask:'Map a historical system and identify at least two interacting conditions before making a causal claim.',skills:['systems mapping','spatial reasoning','interaction']},
+    {weeks:[6,7,8],stage:'Causation Investigator',focus:'How do we distinguish correlation, mechanism, and causation?',studentTask:'Write one model observation, two alternative explanations, and the evidence needed to discriminate among them.',skills:['causation','alternatives','evidence planning']},
+    {weeks:[9,10,11,12],stage:'Network Analyst',focus:'How do cities, states, religions, technologies, and knowledge networks affect one another?',studentTask:'Trace one network pathway and identify a feedback or unintended consequence.',skills:['networks','feedback','contingency']},
+    {weeks:[13,14,15,16,17],stage:'Exchange Analyst',focus:'How do trade, migration, technology, and institutions redistribute opportunities and costs?',studentTask:'Compare a model pathway with historical exchange evidence and identify who gains, who bears costs, and what is missing.',skills:['flows','distribution','institutions','agency']},
+    {weeks:[18,19,20,21,22,23],stage:'Historical Investigator',focus:'How do information, religion, empire, trade, labor, and coercion interact?',studentTask:'Run a scenario, preserve the output, then corroborate or challenge it with primary and secondary evidence.',skills:['scenario comparison','corroboration','source criticism']},
+    {weeks:[24,25],stage:'Systems Analyst',focus:'How do institutions, rights, revolutions, and unequal outcomes interact?',studentTask:'Build an ideals-versus-outcomes comparison and identify at least one structural tradeoff.',skills:['institutional analysis','tradeoffs','counterevidence']},
+    {weeks:[26,27],stage:'Applied Analyst',focus:'How do industrial and economic systems interact with human welfare and institutional choices?',studentTask:'Use controlled simulations, record distributional effects, identify model limitations, and corroborate with historical evidence.',skills:['controlled modeling','distribution','economic reasoning']},
+    {weeks:[28,29,30,31,32,33,34,35,36],stage:'Forensic Historian',focus:'How can a complex systems model help generate and test historical questions?',studentTask:'Construct a scenario, compare alternatives, investigate resistance and agency, document uncertainty, and produce a qualified causal argument.',skills:['multi-variable systems','agency','uncertainty','qualified causation','capstone synthesis']}
+  ];
+  function forWeek(week){return stages.find(s=>s.weeks.includes(Number(week)))||stages[stages.length-1]}
+  window.KhaemenesHistoricalSystemsLab={version:'1.0.0',labSource:LAB_SOURCE,stages,forWeek,protocol:['predict','change deliberately','observe','record','explain','identify limitation','seek alternative explanations','corroborate','qualify conclusion'],guardrails:['Simulation output is not historical evidence by itself.','Model parameters are not historical measurements unless independently sourced.','Correlation does not establish causation.','Local actors, collaboration, resistance, contingency, and missing voices must be considered.']};
+})();

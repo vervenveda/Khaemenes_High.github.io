@@ -1,0 +1,322 @@
+{
+  "schema_version": "3.0",
+  "assessment_id": "KH-MATH-PA-READINESS-GATEWAY",
+  "assessment_version": "3.0.0",
+  "course_id": "math-prealgebra",
+  "course_code": "KH-MATH-PA",
+  "title": "Pre-Algebra Readiness Gateway",
+  "purpose": "Determine whether a learner is ready to enter Official Unit 1 or should receive the conditional six-week Unit 0 Foundations & Readiness refresher.",
+  "academy_template": "khaemenes-course-readiness-v1",
+  "mastery_threshold_percent": 80,
+  "question_count": 30,
+  "untimed": true,
+  "premature_answer_disclosure": false,
+  "corrections_required_below_mastery": true,
+  "correction_requires_reasoning": true,
+  "navigation": ["question navigator", "previous", "next", "review", "submit"],
+  "reporting": ["overall score", "strand scores", "strengths", "refresh priorities", "routing recommendation"],
+  "strand_policy": {
+    "questions_per_strand": 5,
+    "ready_percent_per_essential_strand": 80,
+    "essential_strands_must_be_ready": true,
+    "note": "With five items per strand, four correct answers equals the 80% strand-readiness threshold. A single result remains a screening signal and should be interpreted alongside course evidence when teacher review is appropriate."
+  },
+  "routing": {
+    "advance": "Overall score is at least 80% and every essential strand is at least 80%.",
+    "advance_with_targeted_refresh": "Overall score is at least 80%, every essential strand is at least 80%, but one or more nonessential strands are below 80%. Learner enters Official Unit 1 with optional targeted refresh recommendations.",
+    "unit_0_refresher": "Overall score is below 80% OR any essential strand is below 80%. Learner enters Unit 0 Foundations & Readiness.",
+    "teacher_review": "Use when the attempt is incomplete/invalid, accessibility circumstances materially affect interpretation, or repeated evidence conflicts strongly with the diagnostic result.",
+    "unit_0_exit": "After Unit 0, learner must demonstrate at least 80% mastery and complete required reasoning corrections before routing directly to Official Unit 1."
+  },
+  "naib_record": {
+    "profile_type": "readiness",
+    "required_fields": ["course_id", "assessment_id", "assessment_version", "timestamp", "attempt_number", "raw_score", "percent", "strand_scores", "strengths", "refresh_priorities", "route", "correction_status"],
+    "preservation_rule": "This readiness result must never erase or downgrade a prior course-mastery, retention, or completion record."
+  },
+  "strands": [
+    {
+      "id": "number-foundations",
+      "label": "Number Foundations",
+      "essential": true,
+      "unit_0_lesson": 1,
+      "description": "Order of operations, factors/primes, integers, absolute value, and exponent foundations."
+    },
+    {
+      "id": "rational-proportional",
+      "label": "Rational & Proportional Reasoning",
+      "essential": true,
+      "unit_0_lesson": 2,
+      "description": "Fractions, decimals, percent, ratios, rates, and equivalent representations."
+    },
+    {
+      "id": "algebraic-reasoning",
+      "label": "Algebraic Reasoning",
+      "essential": true,
+      "unit_0_lesson": 3,
+      "description": "Expressions, substitution, inverse operations, equations, and inequalities."
+    },
+    {
+      "id": "functions-coordinates",
+      "label": "Functions & Coordinates",
+      "essential": false,
+      "unit_0_lesson": 4,
+      "description": "Ordered pairs, coordinate planes, input-output rules, and rate-of-change foundations."
+    },
+    {
+      "id": "geometry-measurement",
+      "label": "Geometry & Measurement",
+      "essential": false,
+      "unit_0_lesson": 5,
+      "description": "Area, perimeter, scale, units, and measurement reasoning."
+    },
+    {
+      "id": "data-probability",
+      "label": "Data & Probability",
+      "essential": false,
+      "unit_0_lesson": 6,
+      "description": "Measures of center, simple probability, data summaries, and representative-sample reasoning."
+    }
+  ],
+  "questions": [
+    {
+      "id": "PA-RDY-NF-001",
+      "strand": "number-foundations",
+      "prompt": "Evaluate: 18 - 3 × 4",
+      "options": ["60", "6", "12", "24"],
+      "answer_index": 1,
+      "explanation": "Multiply first: 3 × 4 = 12. Then 18 - 12 = 6."
+    },
+    {
+      "id": "PA-RDY-NF-002",
+      "strand": "number-foundations",
+      "prompt": "Which number is a factor of 36?",
+      "options": ["7", "9", "11", "13"],
+      "answer_index": 1,
+      "explanation": "36 ÷ 9 = 4 with no remainder."
+    },
+    {
+      "id": "PA-RDY-NF-003",
+      "strand": "number-foundations",
+      "prompt": "Which number is prime?",
+      "options": ["21", "27", "31", "39"],
+      "answer_index": 2,
+      "explanation": "31 has exactly two positive factors: 1 and 31."
+    },
+    {
+      "id": "PA-RDY-NF-004",
+      "strand": "number-foundations",
+      "prompt": "Evaluate: -8 + 13",
+      "options": ["-21", "-5", "5", "21"],
+      "answer_index": 2,
+      "explanation": "Moving 13 units right from -8 lands at 5."
+    },
+    {
+      "id": "PA-RDY-NF-005",
+      "strand": "number-foundations",
+      "prompt": "Evaluate: 2³ + |-4|",
+      "options": ["4", "8", "10", "12"],
+      "answer_index": 3,
+      "explanation": "2³ = 8 and |-4| = 4, so the sum is 12."
+    },
+    {
+      "id": "PA-RDY-RP-001",
+      "strand": "rational-proportional",
+      "prompt": "Evaluate: 3/4 + 1/8",
+      "options": ["7/8", "4/12", "4/8", "1"],
+      "answer_index": 0,
+      "explanation": "3/4 = 6/8, and 6/8 + 1/8 = 7/8."
+    },
+    {
+      "id": "PA-RDY-RP-002",
+      "strand": "rational-proportional",
+      "prompt": "Evaluate: 2.4 ÷ 0.6",
+      "options": ["0.4", "4", "24", "40"],
+      "answer_index": 1,
+      "explanation": "2.4 divided by 0.6 equals 4."
+    },
+    {
+      "id": "PA-RDY-RP-003",
+      "strand": "rational-proportional",
+      "prompt": "What is 15% of 80?",
+      "options": ["8", "10", "12", "15"],
+      "answer_index": 2,
+      "explanation": "0.15 × 80 = 12."
+    },
+    {
+      "id": "PA-RDY-RP-004",
+      "strand": "rational-proportional",
+      "prompt": "A recipe uses 3 cups of rice for 5 people. At the same rate, how many cups are needed for 20 people?",
+      "options": ["8", "10", "12", "15"],
+      "answer_index": 2,
+      "explanation": "20 is four times 5, so 3 × 4 = 12 cups."
+    },
+    {
+      "id": "PA-RDY-RP-005",
+      "strand": "rational-proportional",
+      "prompt": "Which decimal is equivalent to 3/5?",
+      "options": ["0.3", "0.5", "0.6", "0.8"],
+      "answer_index": 2,
+      "explanation": "3 ÷ 5 = 0.6."
+    },
+    {
+      "id": "PA-RDY-AR-001",
+      "strand": "algebraic-reasoning",
+      "prompt": "Simplify: 4x + 3x",
+      "options": ["7", "7x", "12x", "x⁷"],
+      "answer_index": 1,
+      "explanation": "The terms are alike, so add the coefficients: 4 + 3 = 7."
+    },
+    {
+      "id": "PA-RDY-AR-002",
+      "strand": "algebraic-reasoning",
+      "prompt": "Solve: x + 9 = 23",
+      "options": ["12", "14", "16", "32"],
+      "answer_index": 1,
+      "explanation": "Subtract 9 from both sides: x = 14."
+    },
+    {
+      "id": "PA-RDY-AR-003",
+      "strand": "algebraic-reasoning",
+      "prompt": "Solve: 5x = 35",
+      "options": ["5", "6", "7", "30"],
+      "answer_index": 2,
+      "explanation": "Divide both sides by 5: x = 7."
+    },
+    {
+      "id": "PA-RDY-AR-004",
+      "strand": "algebraic-reasoning",
+      "prompt": "Evaluate 2a + 3 when a = 4.",
+      "options": ["9", "10", "11", "14"],
+      "answer_index": 2,
+      "explanation": "Substitute 4 for a: 2(4) + 3 = 11."
+    },
+    {
+      "id": "PA-RDY-AR-005",
+      "strand": "algebraic-reasoning",
+      "prompt": "Solve: x - 2 > 5",
+      "options": ["x > 3", "x > 7", "x < 3", "x < 7"],
+      "answer_index": 1,
+      "explanation": "Add 2 to both sides: x > 7."
+    },
+    {
+      "id": "PA-RDY-FC-001",
+      "strand": "functions-coordinates",
+      "prompt": "In which quadrant is the point (-3, 4)?",
+      "options": ["I", "II", "III", "IV"],
+      "answer_index": 1,
+      "explanation": "A negative x-coordinate and positive y-coordinate place the point in Quadrant II."
+    },
+    {
+      "id": "PA-RDY-FC-002",
+      "strand": "functions-coordinates",
+      "prompt": "For y = 2x + 1, what is y when x = 4?",
+      "options": ["7", "8", "9", "10"],
+      "answer_index": 2,
+      "explanation": "Substitute x = 4: y = 2(4) + 1 = 9."
+    },
+    {
+      "id": "PA-RDY-FC-003",
+      "strand": "functions-coordinates",
+      "prompt": "A table has x-values 0, 1, 2 and y-values 3, 5, 7. Which rule fits the table?",
+      "options": ["y = x + 3", "y = 2x + 3", "y = 3x + 2", "y = 5x"],
+      "answer_index": 1,
+      "explanation": "When x increases by 1, y increases by 2, and y = 3 when x = 0, so y = 2x + 3."
+    },
+    {
+      "id": "PA-RDY-FC-004",
+      "strand": "functions-coordinates",
+      "prompt": "A student records distance traveled after different numbers of hours at a constant speed. Which quantity is the natural input (independent variable)?",
+      "options": ["distance traveled", "time in hours", "final location", "average of both quantities"],
+      "answer_index": 1,
+      "explanation": "Time is the input used to determine the corresponding distance."
+    },
+    {
+      "id": "PA-RDY-FC-005",
+      "strand": "functions-coordinates",
+      "prompt": "For every increase of 1 in x, y increases by 3. What is the rate of change?",
+      "options": ["1/3", "1", "2", "3"],
+      "answer_index": 3,
+      "explanation": "Rate of change is change in y divided by change in x: 3 ÷ 1 = 3."
+    },
+    {
+      "id": "PA-RDY-GM-001",
+      "strand": "geometry-measurement",
+      "prompt": "A triangle has base 10 units and height 6 units. What is its area?",
+      "options": ["16", "30", "60", "120"],
+      "answer_index": 1,
+      "explanation": "Area = 1/2 × base × height = 30 square units."
+    },
+    {
+      "id": "PA-RDY-GM-002",
+      "strand": "geometry-measurement",
+      "prompt": "A rectangle is 8 metres long and 5 metres wide. What is its area?",
+      "options": ["13 m²", "26 m²", "40 m²", "80 m²"],
+      "answer_index": 2,
+      "explanation": "Area = length × width = 8 × 5 = 40 square metres."
+    },
+    {
+      "id": "PA-RDY-GM-003",
+      "strand": "geometry-measurement",
+      "prompt": "A rectangle is 7 units long and 4 units wide. What is its perimeter?",
+      "options": ["11", "22", "28", "44"],
+      "answer_index": 1,
+      "explanation": "Perimeter = 2(7 + 4) = 22 units."
+    },
+    {
+      "id": "PA-RDY-GM-004",
+      "strand": "geometry-measurement",
+      "prompt": "How many centimetres are in 2.5 metres?",
+      "options": ["25", "250", "2500", "0.25"],
+      "answer_index": 1,
+      "explanation": "1 metre = 100 centimetres, so 2.5 metres = 250 centimetres."
+    },
+    {
+      "id": "PA-RDY-GM-005",
+      "strand": "geometry-measurement",
+      "prompt": "On a scale drawing, 1 cm represents 4 m. A wall measures 6 cm on the drawing. What is the actual length?",
+      "options": ["10 m", "18 m", "24 m", "30 m"],
+      "answer_index": 2,
+      "explanation": "6 × 4 = 24 metres."
+    },
+    {
+      "id": "PA-RDY-DP-001",
+      "strand": "data-probability",
+      "prompt": "What is the mean of 4, 7, 9, and 10?",
+      "options": ["7", "7.5", "8", "8.5"],
+      "answer_index": 1,
+      "explanation": "The sum is 30, and 30 ÷ 4 = 7.5."
+    },
+    {
+      "id": "PA-RDY-DP-002",
+      "strand": "data-probability",
+      "prompt": "What is the median of 3, 5, 8, 12, and 20?",
+      "options": ["5", "8", "9.6", "12"],
+      "answer_index": 1,
+      "explanation": "The middle value in the ordered list is 8."
+    },
+    {
+      "id": "PA-RDY-DP-003",
+      "strand": "data-probability",
+      "prompt": "A bag contains 3 red marbles and 5 blue marbles. What is the probability of drawing a red marble at random?",
+      "options": ["3/5", "3/8", "5/8", "8/3"],
+      "answer_index": 1,
+      "explanation": "There are 3 favorable outcomes among 8 total outcomes, so the probability is 3/8."
+    },
+    {
+      "id": "PA-RDY-DP-004",
+      "strand": "data-probability",
+      "prompt": "What is the mode of 2, 4, 4, 5, and 7?",
+      "options": ["2", "4", "5", "7"],
+      "answer_index": 1,
+      "explanation": "4 occurs more often than any other value."
+    },
+    {
+      "id": "PA-RDY-DP-005",
+      "strand": "data-probability",
+      "prompt": "A school wants to know which lunch choices all students prefer. Which sample is most likely to be biased?",
+      "options": ["A random sample from the full student roster", "Students selected proportionally from each grade", "Only members of the basketball team", "A random sample from each lunch period"],
+      "answer_index": 2,
+      "explanation": "Only surveying one team may not represent the preferences of the full school population."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "weekId": "W01",
+  "unitId": "U01",
+  "learningLoop": {
+    "learn": {
+      "required": true
+    },
+    "explore": {
+      "required": true
+    },
+    "practice": {
+      "required": true
+    },
+    "check": {
+      "required": true
+    },
+    "correct": {
+      "required": true
+    },
+    "reassess": {
+      "required": true
+    },
+    "extend": {
+      "required": true
+    },
+    "evidence": {
+      "required": true
+    }
+  },
+  "mastery": {
+    "assessmentId": "U01-MASTERY",
+    "threshold": 0.8
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screenReader": true,
+    "printable": true,
+    "paper": true
+  }
+}

@@ -1,131 +1,20 @@
 {
-  "title": "Week 30 Quiz — The Interwar World",
-  "points": 25,
-  "questions": [
-    {
-      "id": "W30Q1",
-      "prompt": "Which term best matches this definition: A severe global economic contraction beginning in 1929.",
-      "choices": [
-        "fascism",
-        "Great Depression",
-        "appeasement",
-        "propaganda"
-      ],
-      "answer": 1,
-      "explanation": "Great Depression is the course term defined as: A severe global economic contraction beginning in 1929."
-    },
-    {
-      "id": "W30Q2",
-      "prompt": "Which term best matches this definition: An ultranationalist authoritarian ideology rejecting liberal democracy and political pluralism.",
-      "choices": [
-        "Stalinism",
-        "appeasement",
-        "fascism",
-        "Nazism"
-      ],
-      "answer": 2,
-      "explanation": "Fascism is the course term defined as: An ultranationalist authoritarian ideology rejecting liberal democracy and political pluralism."
-    },
-    {
-      "id": "W30Q3",
-      "prompt": "Which term best matches this definition: The German fascist movement centered on dictatorship, racial hierarchy, antisemitism, and expansion.",
-      "choices": [
-        "propaganda",
-        "appeasement",
-        "Nazism",
-        "fascism"
-      ],
-      "answer": 2,
-      "explanation": "Nazism is the course term defined as: The German fascist movement centered on dictatorship, racial hierarchy, antisemitism, and expansion."
-    },
-    {
-      "id": "W30Q4",
-      "prompt": "Which term best matches this definition: The centralized, coercive political and economic order associated with Joseph Stalin’s rule.",
-      "choices": [
-        "Stalinism",
-        "propaganda",
-        "fascism",
-        "Great Depression"
-      ],
-      "answer": 0,
-      "explanation": "Stalinism is the course term defined as: The centralized, coercive political and economic order associated with Joseph Stalin’s rule."
-    },
-    {
-      "id": "W30Q5",
-      "prompt": "Which term best matches this definition: A policy of making concessions to avoid conflict.",
-      "choices": [
-        "appeasement",
-        "Great Depression",
-        "Nazism",
-        "propaganda"
-      ],
-      "answer": 0,
-      "explanation": "Appeasement is the course term defined as: A policy of making concessions to avoid conflict."
-    },
-    {
-      "id": "W30Q6",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 30?",
-      "choices": [
-        "The Great Depression spread through interconnected finance, trade, production, and policy failures.",
-        "The Holocaust developed through escalating exclusion, law, dispossession, deportation, occupation, and mass murder.",
-        "World War I resulted from interacting causes including alliance commitments, imperial rivalry, nationalism, militarism, and crisis decisions.",
-        "The Cold War combined ideology, security fears, nuclear weapons, alliances, economics, propaganda, and decolonization."
-      ],
-      "answer": 0,
-      "explanation": "The Great Depression spread through interconnected finance, trade, production, and policy failures."
-    },
-    {
-      "id": "W30Q7",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 30?",
-      "choices": [
-        "Industrial technology increased destructive capacity while states mobilized soldiers, workers, colonies, finance, and information.",
-        "Authoritarian movements used crisis, propaganda, violence, nationalism, and institutional weakness to dismantle opposition.",
-        "Nazi Germany targeted Jews for total destruction and also persecuted Roma, disabled people, Poles, Soviet prisoners, political opponents, LGBTQ people, and others.",
-        "Conflicts in Korea, Vietnam, Afghanistan, Africa, Latin America, and the Middle East had local causes as well as superpower involvement."
-      ],
-      "answer": 1,
-      "explanation": "Authoritarian movements used crisis, propaganda, violence, nationalism, and institutional weakness to dismantle opposition."
-    },
-    {
-      "id": "W30Q8",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 30?",
-      "choices": [
-        "War pressures contributed to revolutions and the collapse of Russian, Ottoman, German, and Austro-Hungarian imperial structures.",
-        "Nonaligned states pursued their own interests and challenged a simple two-bloc interpretation.",
-        "Fascism, Nazism, Stalinism, militarism, and democratic responses must be distinguished rather than treated as identical.",
-        "Choices by institutions, officials, collaborators, bystanders, rescuers, and resisters shaped events within unequal and dangerous conditions."
-      ],
-      "answer": 2,
-      "explanation": "Fascism, Nazism, Stalinism, militarism, and democratic responses must be distinguished rather than treated as identical."
-    },
-    {
-      "id": "W30Q9",
-      "prompt": "What is the strongest method for evaluating “Propaganda and Economic Evidence”?",
-      "choices": [
-        "Reject the source if it contains a point of view because useful evidence must be neutral.",
-        "Accept the source if it was created during the period because primary sources are automatically accurate.",
-        "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits.",
-        "Use only the most dramatic sentence because memorable details are the most reliable."
-      ],
-      "answer": 2,
-      "explanation": "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits."
-    },
-    {
-      "id": "W30Q10",
-      "prompt": "Which response demonstrates the strongest geographic or quantitative reasoning?",
-      "choices": [
-        "Assume that every mapped relationship is a direct cause.",
-        "Ignore units and scale so attention stays on the overall appearance.",
-        "State the observed pattern, propose an explanation, and identify what the map or data cannot prove.",
-        "Use the visualization only if it confirms the original claim."
-      ],
-      "answer": 2,
-      "explanation": "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
-    }
+  "title":"Week 30 Quiz — The Interwar World",
+  "version":"3.0.0",
+  "masteryThreshold":80,
+  "points":25,
+  "questionIds":["W30Q1","W30Q2","W30Q3","W30Q4","W30Q5","W30Q6","W30Q7","W30Q8","W30Q9","W30Q10"],
+  "questions":[
+    {"id":"W30Q1","type":"multiple-choice","prompt":"A banking crisis spreads through trade, production, credit, and policy decisions across several countries. Which interpretation is strongest?","choices":["The Great Depression was a single-country event","The Great Depression spread through interconnected financial, trade, production, and policy mechanisms","Bank failures explain every later political development by themselves","Economic crises have no relationship to political institutions"],"answer":1,"explanation":"The course treats the Great Depression as an interconnected global crisis rather than a single-cause event."},
+    {"id":"W30Q2","type":"multiple-choice","prompt":"A government responds to economic collapse by expanding democratic institutions and social programs. Another responds by suppressing opposition and concentrating power. What should a historian examine?","choices":["Only the leaders' personalities","Institutions, political traditions, economic conditions, public fears, organized movements, and contingent decisions","Only unemployment rates","Only propaganda"],"answer":1,"explanation":"The week compares democratic and authoritarian responses through multiple interacting conditions."},
+    {"id":"W30Q3","type":"multiple-choice","prompt":"Which distinction is most important when comparing fascism, Nazism, Stalinism, militarism, and democratic responses?","choices":["Treat them as identical forms of authoritarianism","Distinguish their ideologies, institutions, goals, methods, and historical contexts while recognizing overlapping coercive practices where evidence supports it","Assume every authoritarian state had the same racial ideology","Treat political labels as sufficient explanations"],"answer":1,"explanation":"The course explicitly requires these movements and responses to be distinguished rather than collapsed into one category."},
+    {"id":"W30Q4","type":"multiple-choice","prompt":"A propaganda poster promises national restoration while depicting political opponents as enemies. What can the poster establish most directly?","choices":["Every citizen believed the message","The political language, symbols, intended audience, and claims promoted by its producers","That the policy described was successful","That opponents actually possessed the characteristics depicted"],"answer":1,"explanation":"Propaganda is evidence about political communication and claims; reception and factual accuracy require other evidence."},
+    {"id":"W30Q5","type":"multiple-choice","prompt":"A historian compares unemployment, industrial output, voting patterns, and political violence across several countries. Why is comparative data useful?","choices":["It eliminates the need for interpretation","It can reveal patterns and differences that help test explanations for divergent political responses","It proves correlation is causation","It makes primary sources unnecessary"],"answer":1,"explanation":"Comparative evidence can test explanations while still requiring attention to institutions and context."},
+    {"id":"W30Q6","type":"multiple-choice","prompt":"Which statement best explains why economic crisis could contribute to authoritarian growth without making authoritarianism inevitable?","choices":["Economic crisis had no political consequences","Crisis could weaken institutions and increase fear or political opportunity, while choices by movements, institutions, voters, elites, and governments still mattered","Every country in crisis became authoritarian","Economic conditions alone determine political systems"],"answer":1,"explanation":"The course emphasizes mechanisms and contingency rather than inevitability."},
+    {"id":"W30Q7","type":"multiple-choice","prompt":"Why is Nazism not simply interchangeable with the broader category of fascism?","choices":["Nazism had no relationship to fascism","Nazism was a specific German movement with distinctive racial hierarchy, antisemitism, dictatorship, expansionism, and genocidal policies within a broader fascist family","All fascist movements shared identical racial policies","The labels have no historical meaning"],"answer":1,"explanation":"The course distinguishes related ideological categories and specific historical manifestations."},
+    {"id":"W30Q8","type":"multiple-choice","prompt":"A chart shows unemployment rising before extremist voting increases, but the timing differs across countries. What is the strongest conclusion?","choices":["Unemployment automatically caused extremism everywhere","The relationship deserves causal investigation, but differing timing requires attention to institutions, political organization, and other conditions","The chart proves economic evidence is unreliable","Voting patterns cannot be studied historically"],"answer":1,"explanation":"Temporal patterns can support causal inquiry but do not establish a universal causal rule by themselves."},
+    {"id":"W30Q9","type":"multiple-choice","prompt":"A source from an authoritarian government claims that political repression created stability. What evidence would best test the claim?","choices":["The source's title","Independent evidence about arrests, opposition activity, violence, economic conditions, public behavior, and institutional change","A modern opinion about authoritarianism","One dramatic photograph"],"answer":1,"explanation":"A broad claim about stability requires independent, multidimensional evidence."},
+    {"id":"W30Q10","type":"multiple-choice","prompt":"Which statement best captures why some societies resisted authoritarian movements more successfully than others?","choices":["Resistance depended on one leader in every case","Different outcomes reflected interacting institutions, political coalitions, economic conditions, civic organizations, media environments, and contingent decisions","Authoritarian movements succeeded whenever unemployment was high","Democracy always survives economic crisis automatically"],"answer":1,"explanation":"The course emphasizes comparative institutional and political reasoning rather than single-factor explanations."}
   ],
-  "shortResponse": {
-    "prompt": "Using at least two specific pieces of evidence, answer: Why did some societies respond to crisis with democratic reform while others turned toward authoritarian rule?",
-    "points": 5,
-    "exemplar": "A full-credit response states a defensible answer to the essential question, uses two accurate details from the week, explains how each detail supports the claim, and acknowledges one complexity or limitation."
-  }
+  "shortResponse":{"id":"W30SR1","type":"evidence-response","prompt":"Using at least three specific pieces of evidence, explain why some societies responded to interwar crisis with democratic reform while others turned toward authoritarian rule. Compare at least two cases, identify one causal mechanism, and explain one limitation or complication in your evidence.","points":5,"rubric":{"5":"Defensible qualified claim; three accurate pieces of evidence; meaningful comparison of at least two cases; causal mechanism; limitation/complication.","4":"Defensible claim; three relevant pieces of evidence; comparison and causal reasoning mostly clear.","3":"Claim with two relevant pieces of evidence and some comparison.","2":"General claim with limited evidence or weak comparison.","1":"Minimal or unsupported response.","0":"No relevant response."}}
 }

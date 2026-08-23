@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "khaemenes-ss9-readiness-v1",
+  "template_ref": "../../../shared/course-readiness-template.json",
+  "template_id": "khaemenes-course-readiness-v1",
+  "course_id": "grade09-global-studies-honors",
+  "course_title": "Grade 9 Global Studies Honors",
+  "standard_course_weeks": 36,
+  "supported_course_weeks": 42,
+  "mastery_threshold_percent": 80,
+  "essential_strand_floor_percent": 60,
+  "readiness_strands": [
+    {
+      "id": "claim_evidence_inference",
+      "label": "Reading Claims, Evidence, Inference & Qualification",
+      "essential": true,
+      "unit_0_lesson": "P1"
+    },
+    {
+      "id": "source_provenance_corroboration",
+      "label": "Sources, Provenance, Audience, Purpose & Corroboration",
+      "essential": true,
+      "unit_0_lesson": "P2"
+    },
+    {
+      "id": "chronology_causation_change",
+      "label": "Chronology, Causation, Continuity & Change",
+      "essential": true,
+      "unit_0_lesson": "P3"
+    },
+    {
+      "id": "geography_maps_networks",
+      "label": "Maps, Geography, Scale, Networks & Human Systems",
+      "essential": true,
+      "unit_0_lesson": "P4"
+    },
+    {
+      "id": "data_quantitative_reasoning",
+      "label": "Data, Graphs, Percentages, Estimates & Uncertainty",
+      "essential": true,
+      "unit_0_lesson": "P5"
+    },
+    {
+      "id": "argument_comparison_ethics",
+      "label": "Historical Argument, Comparison, Counterevidence & Ethical Reasoning",
+      "essential": true,
+      "unit_0_lesson": "P6"
+    }
+  ],
+  "routing": {
+    "advance": {
+      "condition": "overall_percent >= 80 and every essential strand >= 60",
+      "destination": "Official Week 1"
+    },
+    "advance_with_targeted_refresh": {
+      "condition": "overall_percent >= 80 and teacher/NAIB determines a noncritical refresh can occur without delaying entry",
+      "destination": "Official Week 1 with targeted refresh profile"
+    },
+    "unit_0_refresher": {
+      "condition": "overall_percent < 80 or any essential strand < 60",
+      "destination": "Unit 0 Foundations & Readiness · P1–P6"
+    },
+    "teacher_review": {
+      "condition": "invalid/incomplete attempt, accessibility concern, contradictory evidence, or exceptional placement context",
+      "destination": "Teacher/NAIB review"
+    }
+  },
+  "unit_0": {
+    "title": "Foundations & Readiness",
+    "lessons": 6,
+    "duration_weeks": 6,
+    "lesson_ids": ["P1", "P2", "P3", "P4", "P5", "P6"],
+    "mastery_threshold_percent": 80,
+    "corrections_required_below_mastery": true,
+    "completion_destination": "Official Week 1",
+    "grading_rule": "Unit 0 readiness/prep evidence is stored separately from the official course-completion grade."
+  },
+  "naib_records": {
+    "course_mastery": "Records demonstrated achievement inside the official Grade 9 course and is never erased by a later placement result.",
+    "retention": "Records what remains fluent when sampled after learning.",
+    "refresh": "Records specific strands or concepts needing reinforcement.",
+    "readiness": "Records evidence relevant to successful entry into this course or a subsequent course.",
+    "separation_rule": "No readiness, retention, or refresh event may overwrite or downgrade course_mastery/completion history."
+  },
+  "readiness_attempt_required_fields": [
+    "course_id",
+    "assessment_id",
+    "assessment_version",
+    "timestamp",
+    "attempt_number",
+    "raw_score",
+    "overall_percent",
+    "strand_scores",
+    "strengths",
+    "refresh_priorities",
+    "route",
+    "correction_status"
+  ],
+  "naib_event": "khaemenes:readiness-result",
+  "notes": [
+    "This file is a course-specific adapter. The academy-wide shared readiness template remains authoritative.",
+    "The readiness diagnostic measures prerequisite disciplinary skills rather than prior knowledge of Grade 9 world-history content.",
+    "A diagnostic guides support; it does not label or punish a learner."
+  ]
+}

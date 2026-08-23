@@ -1,0 +1,163 @@
+Khaemenes High School — Algebra II Roadmap
+
+Course ID: KH-MATH-A2
+Length: 36 weeks
+Mastery target: 80%
+Architecture: 13 units
+Pathways: Foundation · Core · Extended
+Course philosophy: concept → representation → reasoning → practice → application → mastery → remediation
+
+13-unit academic map
+Unit	Approx. Weeks	Core Study
+01 · Algebra II Foundations & Function Language	1–2	Algebra I diagnostic bridge, expressions, equations, inequalities, function notation, domain/range, transformations
+02 · Linear Functions, Systems & Advanced Modeling	3–5	Linear models, systems, inequalities, matrices as system tools, regression, constraints, optimization
+03 · Quadratic Functions & Complex Numbers	6–8	Parabolas, forms of quadratics, factoring, completing square, quadratic formula, discriminant, complex solutions
+04 · Polynomial Functions	9–11	Polynomial structure, operations, graphs, zeros, multiplicity, division, remainder/factor theorems, Fundamental Theorem of Algebra
+05 · Rational Expressions & Rational Functions	12–14	Rational expressions, equations, restrictions, asymptotes, holes, graph behavior, inverse variation and modeling
+06 · Radical Functions & Rational Exponents	15–16	Radicals, rational exponents, radical equations, extraneous solutions, transformations and models
+07 · Exponential Functions	17–19	Growth/decay, compound interest, continuous growth, half-life, transformations, model selection
+08 · Logarithmic Functions	20–22	Logs as inverses, properties, equations, exponential/logarithmic modeling, scales and applications
+09 · Sequences, Series & Recursive Models	23–25	Arithmetic/geometric sequences, recursive/explicit rules, sigma notation, finite/infinite geometric series
+10 · Advanced Function Analysis & Inverses	26–27	Composition, inverse functions, one-to-one behavior, piecewise functions, transformations, model comparison
+11 · Trigonometric Foundations & Functions	28–30	Radians, unit circle, sine/cosine/tangent, graphs, transformations, basic identities and equations
+12 · Probability, Statistics & Data Modeling	31–33	Conditional probability, independence, counting, distributions, expected value, regression and interpreting evidence
+13 · Integrated Mathematical Modeling & Capstone	34–36	Multi-family model selection, data, uncertainty, financial/scientific/social applications, portfolio, oral/written defense
+
+That gives us a genuine Algebra II progression rather than simply “Algebra I with harder questions.”
+
+Assessment architecture
+
+I would carry forward the strongest system we've developed:
+
+Every lesson
+
+substantive instructional reading;
+worked examples;
+visual/model representations;
+misconception checks;
+20 meaningful practice problems where appropriate;
+Foundation/Core/Extended routing;
+printable work;
+local progress evidence.
+
+Every unit
+
+lessons;
+vocabulary;
+three-tier practice;
+mastery assessment;
+teacher answer key with explanations;
+teacher guide;
+family guide;
+standards map;
+applied lab/project;
+remediation path;
+meaningful interactive component.
+
+I would retain 80% as the mastery threshold.
+
+Major assessments
+
+Beginning: Algebra I readiness diagnostic — diagnostic only, not punitive.
+
+Midterm: after Unit 06, with balanced representation of Units 01–06 rather than allowing one topic to dominate.
+
+Final: cumulative across all 13 units.
+
+Capstone: Unit 13 mathematical-modeling portfolio and defense.
+
+For consistency with Algebra I, we can provisionally retain:
+
+40% coursework · 20% midterm · 30% final · 10% capstone
+
+but explicitly document automated versus human-reviewed evidence from day one.
+
+Preventive forensic standard
+
+This is where Algebra II can start considerably ahead of our previous courses.
+
+The validator should exist before we build Unit 01, and continuously check duration, 13-unit inventory, expected lesson counts, required unit-package files, question IDs, normalized prompt uniqueness, choice uniqueness, valid answer indexes, correct keyed answers, explanations, mathematical-content flags, question depth per lesson, Foundation/Core/Extended parity, project/lab presence, standards metadata, navigation, accessibility, print behavior, offline references, records, grading weights, mastery threshold, and broken/duplicate/development files.
+
+In other words:
+
+We don't wait until Audit #2 to discover what a validator could have caught during construction.
+
+Proposed repository architecture
+algebra-2/
+│
+├── index.html
+├── course-data.js
+├── course-map.json
+├── manifest.webmanifest
+├── service-worker.js
+│
+├── assets/
+├── assessments/
+├── diagnostic/
+├── family/
+├── labs/
+├── projects/
+├── remediation/
+├── records/
+├── teacher/
+├── tools/
+│   ├── validate-course.mjs
+│   ├── audit-forensic.mjs
+│   ├── audit-question-parity.mjs
+│   ├── audit-navigation.mjs
+│   ├── audit-records.mjs
+│   └── audit-mathematics.mjs
+│
+├── docs/
+│   ├── academic/
+│   └── development-history/
+│
+└── units/
+    ├── unit-01/
+    ├── unit-02/
+    ├── ...
+    └── unit-13/
+
+And each unit follows one immutable contract:
+
+unit-XX/
+├── index.html
+├── README.md
+├── unit-map.json
+├── vocabulary.json
+├── standards-map.json
+├── lessons/
+├── practice/
+│   ├── foundation.html
+│   ├── core.html
+│   └── extended.html
+├── assessment/
+│   ├── mastery-check.html
+│   └── answer-key.json
+├── project/
+├── teacher-guide.html
+└── family-guide.html
+
+No UPLOAD_MAP, migration instructions, temporary QA reports, construction notes, or obsolete duplicate files cluttering the finished learner-facing root. Development history can be preserved without making it part of the academic product.
+
+One additional Algebra II improvement
+
+I would make function families the longitudinal spine of the course.
+
+Instead of students learning polynomial, rational, radical, exponential, logarithmic, and trigonometric functions as disconnected chapters, every major family repeatedly asks:
+
+What is its parent behavior? → What are its domain/range restrictions? → How do parameters transform it? → How do we solve equations involving it? → What does its inverse mean? → What real phenomena can it model? → When is this model inappropriate?
+
+By Unit 13, the student isn't merely being told which equation to use. They're given a situation and must decide:
+
+linear, quadratic, polynomial, rational, radical, exponential, logarithmic, trigonometric—or none of them?
+
+That is the mathematical maturity I would want Algebra II to produce.
+
+So our larger mathematics progression becomes:
+
+Pre-Algebra → Algebra I → Geometry → Algebra II
+
+with each generation inheriting the forensic lessons of the previous one.
+
+And then Algebra II positions us naturally for Precalculus.

@@ -1,86 +1,48 @@
 (()=>{
 "use strict";
-const C=window.EXAM_CONFIG,$=s=>document.querySelector(s);
-const esc=v=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-function loadDraft(){try{return JSON.parse(localStorage.getItem(C.storage_key))||{answers:{}}}catch{return{answers:{}}}}
-let draft=loadDraft();
-
-/*
-  Present choices in a fresh order while keeping each radio value tied to
-  the option's original index. Saved drafts therefore remain valid even if
-  the visible order changes on a later visit.
-*/
-function shuffledOptions(q){
- const items=q.options.map((text,original)=>({text,original}));
- for(let i=items.length-1;i>0;i--){
-   const j=Math.floor(Math.random()*(i+1));
-   [items[i],items[j]]=[items[j],items[i]];
+const C=window.EXAM_CONFIG;
+if(!C)return;
+const engineScript=document.currentScript;
+const depthSrc=new URL("../assessments/assets/exam-depth-v2.js",engineScript?.src||location.href).href;
+function boot(){
+ const D=(window.KhaemenesAlgebra1ExamDepth||{})[C.id]||null,$=s=>document.querySelector(s),MASTERY=80;
+ const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const safeParse=(raw,fallback)=>{try{const v=JSON.parse(raw);return v&&typeof v==="object"?v:fallback}catch{return fallback}};
+ function loadDraft(){const d=safeParse(localStorage.getItem(C.storage_key),{answers:{},responses:{},submitted:false});d.answers=d.answers&&typeof d.answers==="object"?d.answers:{};d.responses=d.responses&&typeof d.responses==="object"?d.responses:{};return d}
+ function normalizeEvidence(){
+  const prior=safeParse(localStorage.getItem(C.result_key),null);
+  if(!prior)return {result_schema:"khaemenes-algebra1-cumulative-evidence-v2",assessment_id:C.id,attempt_history:[],bestScore:null,bestSelectedScore:null,bestOverallScore:null,mastery:false,lastResult:null};
+  if(prior.result_schema==="khaemenes-algebra1-cumulative-evidence-v2")return prior;
+  const oldAttempts=Array.isArray(prior.attempt_history)?prior.attempt_history:[prior.lastResult||prior].filter(Boolean);
+  const legacyBest=Number.isFinite(prior.bestScore)?prior.bestScore:(Number.isFinite(prior.percent)?prior.percent:null);
+  return {result_schema:"khaemenes-algebra1-cumulative-evidence-v2",assessment_id:C.id,attempt_history:oldAttempts.map(x=>({...x,legacy_selected_only:true})),bestScore:null,bestSelectedScore:legacyBest,bestOverallScore:null,mastery:false,lastResult:null,legacy_best_selected_score:legacyBest,updated:new Date().toISOString()};
  }
- return items;
+ let draft=loadDraft();
+ function hashSeed(text){let h=2166136261;for(let i=0;i<text.length;i++){h^=text.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+ function nextSeed(x){x^=x<<13;x^=x>>>17;x^=x<<5;return x>>>0}
+ function shuffled(values,seed){const a=values.slice();let x=seed>>>0;for(let i=a.length-1;i>0;i--){x=nextSeed(x);const j=x%(i+1);[a[i],a[j]]=[a[j],a[i]]}return a}
+ function optionOrder(q,i){return shuffled(q.options.map((_,j)=>j),hashSeed(`${C.id}:${i}:options-v2`))}
+ function saveDraft(){try{localStorage.setItem(C.storage_key,JSON.stringify(draft))}catch{}updateProgress()}
+ function installDepthStyles(){if(document.getElementById("algebra1DepthStyles"))return;const s=document.createElement("style");s.id="algebra1DepthStyles";s.textContent=`.constructed-block{margin-top:1rem}.constructed-intro{padding:1rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.constructed-list{display:grid;gap:1rem;margin-top:1rem}.constructed-item{padding:1rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.constructed-item textarea{width:100%;min-height:160px;margin-top:.7rem;padding:.75rem;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink);font:inherit;line-height:1.5}.constructed-meta{display:block;margin-bottom:.35rem;color:var(--muted);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em}.constructed-count{margin:.35rem 0 0;color:var(--muted);font-size:.78rem}.evaluator-review{margin-top:1.2rem;padding:1rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.evaluator-grid{display:grid;gap:.7rem}.evaluator-row{display:grid;grid-template-columns:minmax(0,1fr) 100px;gap:.7rem;align-items:center;padding:.65rem;border:1px solid var(--line);border-radius:9px}.evaluator-row input{width:100%;padding:.55rem;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}.rubric-list{color:var(--muted)}@media(max-width:700px){.evaluator-row{grid-template-columns:1fr}}@media print{.constructed-item textarea{min-height:130px}.evaluator-review button{display:none!important}}`;document.head.appendChild(s)}
+ function installNotice(){const hero=document.querySelector("main .hero .wrap");if(hero&&!document.getElementById("algebra1AssessmentTrust")){const p=document.createElement("p");p.id="algebra1AssessmentTrust";p.className="notice";p.innerHTML=D?"<strong>Mixed-evidence public assessment:</strong> selected-response items are auto-scored. Required written reasoning is reviewed with the included rubric before full mastery can be recorded. Browser-local results remain editable and unverified.":"<strong>Public self-check:</strong> this browser-delivered score is editable local learning evidence and is not a confidential or digitally signed academic record.";hero.appendChild(p)}if(D&&$("#submitButton"))$("#submitButton").textContent="Submit Auto-Scored Work & Reasoning"}
+ function group(){const m=new Map();C.questions.forEach((q,i)=>{const k=q.unit?`Unit ${String(q.unit).padStart(2,"0")}`:(q.category||"Assessment");if(!m.has(k))m.set(k,[]);m.get(k).push([q,i])});return m}
+ function renderConstructed(host){if(!D?.constructed?.length)return;const sec=document.createElement("section");sec.className="constructed-block";sec.innerHTML=`<div class="constructed-intro"><p class="eyebrow">Required reasoning evidence</p><h2>${esc(D.title)}</h2><p>Complete all ${D.constructed.length} written tasks. Show structure, calculations, representations, verification, units, interpretation, assumptions, or limitations where the prompt calls for them. These responses are reviewed by a parent, teacher, or program evaluator after the auto-scored portion.</p></div>`;const list=document.createElement("div");list.className="constructed-list";D.constructed.forEach((task,i)=>{const value=String(draft.responses[i]||"");const art=document.createElement("article");art.className="constructed-item";art.innerHTML=`<span class="constructed-meta">Response ${i+1} · ${esc(task.domain)}</span><strong>${esc(task.prompt)}</strong><textarea id="cr${i}" aria-label="Constructed response ${i+1}" ${draft.submitted?"disabled":""}>${esc(value)}</textarea><p class="constructed-count" id="crCount${i}">${value.trim().length} characters · minimum ${D.response_min_chars||50}</p>`;const ta=art.querySelector("textarea");ta?.addEventListener("input",()=>{draft.responses[i]=ta.value;art.querySelector(`#crCount${i}`).textContent=`${ta.value.trim().length} characters · minimum ${D.response_min_chars||50}`;saveDraft()});list.appendChild(art)});sec.appendChild(list);host.appendChild(sec)}
+ function render(){const host=$("#questionHost");host.innerHTML="";for(const [label,items] of group()){const section=document.createElement("section");section.innerHTML=`<h2>${esc(label)}</h2>`;const list=document.createElement("div");list.className="question-list";items.forEach(([q,i])=>{const art=document.createElement("article");art.className="question";const selected=draft.answers[i];const feedback=draft.submitted?`<div class="feedback ${Number(selected)===q.answer?"good":"bad"}">${Number(selected)===q.answer?"Correct.":`Review. Correct answer: ${esc(q.options[q.answer])}.`} ${esc(q.explanation)}</div>`:"";art.innerHTML=`<fieldset><legend>${i+1}. ${esc(q.prompt)}</legend><div class="options">${optionOrder(q,i).map(j=>`<label class="option"><input type="radio" name="q${i}" value="${j}" ${Number(selected)===j?"checked":""} ${draft.submitted?"disabled":""}><span>${esc(q.options[j])}</span></label>`).join("")}</div>${feedback}</fieldset>`;list.appendChild(art)});section.appendChild(list);host.appendChild(section)}renderConstructed(host);host.onchange=e=>{const m=e.target.name?.match(/^q(\d+)$/);if(!m)return;draft.answers[m[1]]=Number(e.target.value);saveDraft()};updateProgress()}
+ function completedConstructed(){if(!D?.constructed?.length)return 0;const min=D.response_min_chars||50;return D.constructed.filter((_,i)=>String(draft.responses[i]||"").trim().length>=min).length}
+ function updateProgress(){const n=Object.keys(draft.answers).filter(k=>Number(k)>=0&&Number(k)<C.questions.length).length,total=C.questions.length;$("#progressLabel").textContent=`${n}/${total} answered`;$("#progressBar").style.width=`${total?n/total*100:0}%`;if(draft.submitted)$("#status").textContent=D?"Auto-scored portion submitted. Written reasoning now requires evaluator review.":"Self-check submitted.";else if(D)$("#status").textContent=`${total-n} selected-response questions remaining · ${D.constructed.length-completedConstructed()} written responses incomplete.`;else $("#status").textContent=`${total-n} questions remaining.`}
+ function selectedResult(){let correct=0,breakdown={};C.questions.forEach((q,i)=>{const key=q.unit?`Unit ${String(q.unit).padStart(2,"0")}`:(q.category||"Assessment");breakdown[key]??={correct:0,total:0};breakdown[key].total++;if(Number(draft.answers[i])===q.answer){correct++;breakdown[key].correct++}});const percent=Math.round(correct/C.questions.length*1000)/10;return {id:C.id,assessment_id:C.id,title:C.title,score:correct,total:C.questions.length,percent,selected_response_percent:percent,breakdown,mastery_threshold:MASTERY,selected_response_mastery_met:percent>=MASTERY,constructed_response:D?{version:D.version,count:D.constructed.length,responses:{...draft.responses},response_min_chars:D.response_min_chars,rubric_max:D.rubric_max,selected_weight:D.selected_weight,constructed_weight:D.constructed_weight,evaluator_scores:null,percent:null,review_complete:false}:null,overall_percent:D?null:percent,mastery:D?false:percent>=MASTERY,mastery_met:D?false:percent>=MASTERY,mastery_status:D?(percent>=MASTERY?"pending-evaluator-review":"selected-response-review-required"):(percent>=MASTERY?"mastery-met":"review-required"),submitted:new Date().toISOString(),trust:{classification:D?"browser-local-self-scored-plus-local-evaluator-review":"browser-local-self-scored",authoritative:false,confidential:false,digitally_signed:false,cryptographically_verified:false,editable_storage:true,review_required:true}}}
+ function persistAttempt(attempt){const ev=normalizeEvidence();ev.attempt_history=[...(ev.attempt_history||[]),attempt];ev.bestSelectedScore=Math.max(Number.isFinite(ev.bestSelectedScore)?ev.bestSelectedScore:0,attempt.selected_response_percent);if(!D){ev.bestScore=Math.max(Number.isFinite(ev.bestScore)?ev.bestScore:0,attempt.percent);ev.bestOverallScore=ev.bestScore;ev.mastery=ev.bestScore>=MASTERY}ev.lastResult=attempt;ev.updated=new Date().toISOString();localStorage.setItem(C.result_key,JSON.stringify(ev));return ev}
+ function submit(){const answered=Object.keys(draft.answers).filter(k=>Number(k)>=0&&Number(k)<C.questions.length).length;if(answered!==C.questions.length){$("#status").textContent="Answer every selected-response question before scoring.";return}if(D&&completedConstructed()!==D.constructed.length){$("#status").textContent=`Complete every written response with at least ${D.response_min_chars||50} meaningful characters before submitting.`;return}draft.submitted=true;saveDraft();const ev=persistAttempt(selectedResult());render();showResult(ev.lastResult,true)}
+ function renderEvaluator(attempt){if(!D||!attempt?.constructed_response)return;let panel=$("#evaluatorReview");if(!panel){panel=document.createElement("div");panel.id="evaluatorReview";panel.className="evaluator-review";$("#results .card")?.appendChild(panel)}const existing=attempt.constructed_response.evaluator_scores||{};panel.innerHTML=`<p class="eyebrow">Human-reviewed reasoning</p><h2>Evaluator Review</h2><p>Score each response from 0 to ${D.rubric_max}. Full mastery requires at least 80% selected response, at least 80% constructed response, and at least 80% overall.</p><ul class="rubric-list">${D.rubric.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><div class="evaluator-grid">${D.constructed.map((task,i)=>`<label class="evaluator-row"><span><strong>Response ${i+1}</strong> · ${esc(task.domain)}</span><input type="number" min="0" max="${D.rubric_max}" step="1" data-score="${i}" value="${existing[i]??""}" aria-label="Evaluator score for response ${i+1}"></label>`).join("")}</div><div class="actions"><button class="btn primary" id="saveEvaluator" type="button">Save Evaluator Review</button></div><p id="evaluatorStatus"></p>`;$("#saveEvaluator").onclick=()=>saveEvaluatorReview(attempt)}
+ function saveEvaluatorReview(attempt){const inputs=[...document.querySelectorAll("[data-score]")],scores={};for(const input of inputs){const v=Number(input.value);if(!Number.isInteger(v)||v<0||v>D.rubric_max){$("#evaluatorStatus").textContent=`Enter a whole-number score from 0 to ${D.rubric_max} for every response.`;return}scores[input.dataset.score]=v}if(inputs.length!==D.constructed.length){$("#evaluatorStatus").textContent="Every constructed response must be reviewed.";return}const total=Object.values(scores).reduce((a,b)=>a+b,0),max=D.constructed.length*D.rubric_max,constructedPercent=Math.round(total/max*1000)/10,selected=Number(attempt.selected_response_percent),overall=Math.round((selected*(D.selected_weight/100)+constructedPercent*(D.constructed_weight/100))*10)/10,full=selected>=MASTERY&&constructedPercent>=MASTERY&&overall>=MASTERY;const ev=normalizeEvidence(),idx=ev.attempt_history.findIndex(x=>x.submitted===attempt.submitted&&x.id===attempt.id);const updated={...(idx>=0?ev.attempt_history[idx]:attempt),constructed_response:{...attempt.constructed_response,evaluator_scores:scores,percent:constructedPercent,review_complete:true,reviewed_at:new Date().toISOString()},overall_percent:overall,mastery:full,mastery_met:full,mastery_status:full?"mastery-met":"review-required",evaluator_review:{classification:"local-human-review",authoritative:false,digitally_signed:false,review_complete:true}};if(idx>=0)ev.attempt_history[idx]=updated;else ev.attempt_history.push(updated);ev.lastResult=updated;ev.bestSelectedScore=Math.max(Number.isFinite(ev.bestSelectedScore)?ev.bestSelectedScore:0,selected);ev.bestOverallScore=Math.max(Number.isFinite(ev.bestOverallScore)?ev.bestOverallScore:0,overall);ev.bestScore=ev.bestOverallScore;ev.mastery=ev.attempt_history.some(x=>x.mastery===true&&!x.legacy_selected_only);ev.updated=new Date().toISOString();localStorage.setItem(C.result_key,JSON.stringify(ev));showResult(updated,false);$("#evaluatorStatus").textContent=`Constructed response: ${constructedPercent}% · Overall: ${overall}% · ${full?"Full mastery demonstrated.":"Mastery requirements not yet met."}`}
+ function showResult(a,scroll){if(!a)return;$("#results").hidden=false;const selected=Number(a.selected_response_percent??a.percent??0),overall=Number.isFinite(a.overall_percent)?a.overall_percent:null;$("#resultTitle").textContent=D?(a.mastery?"Full cumulative mastery demonstrated":(a.constructed_response?.review_complete?"Review and correction cycle recommended":"Evaluator review required")):(a.mastery?"Mastery demonstrated":"Review and corrections recommended");$("#resultScore").textContent=D?(overall===null?`Selected response ${selected}% · Written review pending`:`Selected ${selected}% · Constructed ${a.constructed_response.percent}% · Overall ${overall}%`):`${selected}% · ${a.score}/${a.total}`;$("#breakdown").innerHTML=Object.entries(a.breakdown||{}).map(([k,v])=>`<p><strong>${esc(k)}:</strong> ${v.correct}/${v.total} (${Math.round(v.correct/v.total*100)}%)</p>`).join("");renderEvaluator(a);if(scroll)$("#results").scrollIntoView({behavior:"smooth",block:"start"})}
+ $("#saveButton").onclick=()=>{saveDraft();$("#status").textContent="Draft saved locally."};
+ $("#resetButton").onclick=()=>{if(!confirm("Clear this assessment draft? Saved scored evidence will be preserved."))return;localStorage.removeItem(C.storage_key);draft={answers:{},responses:{},submitted:false};render();$("#results").hidden=true;$("#status").textContent="Draft reset. Saved assessment history was preserved."};
+ $("#submitButton").onclick=submit;
+ $("#exportButton").onclick=()=>{const ev=normalizeEvidence();const blob=new Blob([JSON.stringify(ev,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=C.export_name||`${C.id}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),500)};
+ $("#themeToggle")?.addEventListener("click",()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==="light"?"dark":"light"});
+ $("#printButton")?.addEventListener("click",()=>print());
+ installDepthStyles();installNotice();render();const ev=normalizeEvidence();if(ev.lastResult)showResult(ev.lastResult,false)
 }
-
-function render(){
- const host=$("#questionHost");
- host.innerHTML=C.questions.map((q,i)=>{
-   const options=shuffledOptions(q);
-   return `<article class="question"><fieldset><legend>${i+1}. ${esc(q.prompt)}</legend>
- <div class="options">${options.map(o=>`<label class="option"><input type="radio" name="q${i}" value="${o.original}" ${draft.answers[i]===o.original?"checked":""}><span>${esc(o.text)}</span></label>`).join("")}</div>
- <div class="feedback" id="fb${i}" hidden></div></fieldset></article>`;
- }).join("");
- host.onchange=e=>{
-   const m=e.target.name?.match(/^q(\d+)$/);
-   if(m){draft.answers[m[1]]=Number(e.target.value);updateProgress()}
- };
- updateProgress();
-}
-function updateProgress(){
- const answered=Object.keys(draft.answers).length,total=C.questions.length;
- $("#progressLabel").textContent=`${answered}/${total} answered`;
- $("#progressBar").style.width=`${answered/total*100}%`;
-}
-$("#saveButton").onclick=()=>{
- localStorage.setItem(C.storage_key,JSON.stringify(draft));
- $("#status").textContent="Draft saved locally.";
-};
-$("#resetButton").onclick=()=>{
- if(!confirm("Clear this assessment draft and saved result?"))return;
- localStorage.removeItem(C.storage_key);localStorage.removeItem(C.result_key);
- draft={answers:{}};render();$("#results").hidden=true;$("#status").textContent="Assessment reset.";
-};
-$("#submitButton").onclick=()=>{
- if(Object.keys(draft.answers).length<C.questions.length){
-   $("#status").textContent="Answer every question before scoring.";return;
- }
- let correct=0,breakdown={};
- C.questions.forEach((q,i)=>{
-   const ok=draft.answers[i]===q.answer;if(ok)correct++;
-   const key=q.unit?`Unit ${String(q.unit).padStart(2,"0")}`:(q.category||"Readiness");
-   breakdown[key]||(breakdown[key]={correct:0,total:0});
-   breakdown[key].total++;if(ok)breakdown[key].correct++;
-   const f=$(`#fb${i}`);f.hidden=false;f.className=`feedback ${ok?"good":"bad"}`;
-   f.textContent=`${ok?"Correct.":"Review."} ${q.explanation}`;
- });
- const percent=Math.round(correct/C.questions.length*100);
- const result={id:C.id,title:C.title,score:correct,total:C.questions.length,percent,breakdown,submitted:new Date().toISOString()};
- localStorage.setItem(C.storage_key,JSON.stringify(draft));
- localStorage.setItem(C.result_key,JSON.stringify(result));
- $("#results").hidden=false;
- $("#resultTitle").textContent=percent>=80?"Mastery demonstrated":"Review and corrections recommended";
- $("#resultScore").textContent=`${percent}% · ${correct}/${C.questions.length}`;
- $("#breakdown").innerHTML=Object.entries(breakdown).map(([k,v])=>`<p><strong>${esc(k)}:</strong> ${v.correct}/${v.total} (${Math.round(v.correct/v.total*100)}%)</p>`).join("");
- $("#status").textContent="Result saved locally.";
- $("#results").scrollIntoView({behavior:"smooth"});
-};
-$("#exportButton").onclick=()=>{
- const result=JSON.parse(localStorage.getItem(C.result_key)||"null")||{draft,exported:new Date().toISOString()};
- const blob=new Blob([JSON.stringify(result,null,2)],{type:"application/json"});
- const url=URL.createObjectURL(blob),a=document.createElement("a");
- a.href=url;a.download=(C.export_name||`${C.id}.json`);a.click();
- setTimeout(()=>URL.revokeObjectURL(url),500);
-};
-$("#themeToggle")?.addEventListener("click",()=>{
- document.documentElement.dataset.theme=document.documentElement.dataset.theme==="light"?"dark":"light";
-});
-$("#printButton")?.addEventListener("click",()=>window.print());
-render();
+if(window.KhaemenesAlgebra1ExamDepth)boot();else{const s=document.createElement("script");s.src=depthSrc;s.async=false;s.onload=boot;s.onerror=boot;document.head.appendChild(s)}
 })();

@@ -1,131 +1,83 @@
 {
-  "title": "Week 2 Quiz — Geography and Human Systems",
+  "title": "Week 2 Mastery Quiz — Geography and Human Systems",
   "points": 25,
+  "masteryPercent": 80,
   "questions": [
     {
       "id": "W02Q1",
-      "prompt": "Which term best matches this definition: A precise position expressed through coordinates or another fixed reference.",
-      "choices": [
-        "absolute location",
-        "relative location",
-        "projection",
-        "migration"
-      ],
+      "prompt": "Which example gives an absolute location?",
+      "choices": ["25.7617° N, 80.1918° W", "south of the river", "near the old market", "two hours from the coast"],
       "answer": 0,
-      "explanation": "Absolute Location is the course term defined as: A precise position expressed through coordinates or another fixed reference."
+      "explanation": "Absolute location uses a fixed reference such as geographic coordinates; the other choices describe relative location."
     },
     {
       "id": "W02Q2",
-      "prompt": "Which term best matches this definition: A place described in relation to other places.",
-      "choices": [
-        "absolute location",
-        "human-environment interaction",
-        "scale",
-        "relative location"
-      ],
-      "answer": 3,
-      "explanation": "Relative Location is the course term defined as: A place described in relation to other places."
+      "prompt": "A geographer says a town is upstream from a port and east of a mountain pass. Which concept is being used?",
+      "choices": ["Projection", "Relative location", "Scale", "Population density"],
+      "answer": 1,
+      "explanation": "Relative location describes a place in relation to other places or features."
     },
     {
       "id": "W02Q3",
-      "prompt": "Which term best matches this definition: The relationship between distance on a map and distance on Earth.",
-      "choices": [
-        "scale",
-        "migration",
-        "projection",
-        "relative location"
-      ],
-      "answer": 0,
-      "explanation": "Scale is the course term defined as: The relationship between distance on a map and distance on Earth."
+      "prompt": "Why does map scale matter when interpreting distance?",
+      "choices": ["It identifies the map's political viewpoint.", "It determines which projection is automatically correct.", "It shows the relationship between distance on the map and distance on Earth.", "It proves why people migrated."],
+      "answer": 2,
+      "explanation": "Scale translates mapped distance into real-world distance. It does not by itself explain politics, projection choice, or migration causes."
     },
     {
       "id": "W02Q4",
-      "prompt": "Which term best matches this definition: A method of representing Earth’s curved surface on a flat map.",
-      "choices": [
-        "projection",
-        "absolute location",
-        "migration",
-        "human-environment interaction"
-      ],
-      "answer": 0,
-      "explanation": "Projection is the course term defined as: A method of representing Earth’s curved surface on a flat map."
+      "prompt": "Why must every flat world map distort at least some geographic property?",
+      "choices": ["Cartographers intentionally make maps inaccurate.", "Political borders change too quickly.", "Latitude and longitude cannot be measured.", "Earth's curved surface cannot be flattened without tradeoffs in area, shape, distance, or direction."],
+      "answer": 3,
+      "explanation": "Map projections transform a curved surface into a flat one, so every projection preserves some properties better than others."
     },
     {
       "id": "W02Q5",
-      "prompt": "Which term best matches this definition: The movement of people from one place to another.",
-      "choices": [
-        "relative location",
-        "absolute location",
-        "projection",
-        "migration"
-      ],
-      "answer": 3,
-      "explanation": "Migration is the course term defined as: The movement of people from one place to another."
+      "prompt": "Which statement best describes human-environment interaction?",
+      "choices": ["People adapt to, depend on, and alter natural systems, while environments create possibilities and constraints.", "Environment determines exactly how every society will develop.", "Human choices are independent of geography.", "Only climate matters in settlement decisions."],
+      "answer": 0,
+      "explanation": "Human-environment interaction is reciprocal: geography matters, but technology, institutions, culture, and power shape how people respond."
     },
     {
       "id": "W02Q6",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 2?",
-      "choices": [
-        "Every map simplifies reality and reflects choices about scale, projection, categories, and purpose.",
-        "Historical knowledge is constructed by comparing evidence rather than accepting a single account.",
-        "River valleys supported intensive agriculture but required coordinated labor and management.",
-        "Homo sapiens originated in Africa and migrated over many generations into diverse environments."
-      ],
-      "answer": 0,
-      "explanation": "Every map simplifies reality and reflects choices about scale, projection, categories, and purpose."
+      "prompt": "A population-density map shows a large concentration near a coast. What is the strongest next step before explaining why?",
+      "choices": ["Assume the coast caused the settlement pattern.", "Compare additional evidence such as water access, transport routes, terrain, economic activity, and political boundaries.", "Ignore the pattern because maps are simplified.", "Conclude the population is permanent and never seasonal."],
+      "answer": 1,
+      "explanation": "A mapped pattern is an observation, not yet a complete causal explanation. Multiple geographic and human-system variables should be tested."
     },
     {
       "id": "W02Q7",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 2?",
-      "choices": [
-        "Human settlement is influenced by water, climate, terrain, resources, transportation, and political boundaries.",
-        "Agriculture developed independently in several regions rather than spreading from a single universal center.",
-        "Writing and accounting expanded partly because governments and temples needed to track resources and obligations.",
-        "A source can be biased and still be useful when its purpose, audience, and context are examined."
-      ],
-      "answer": 0,
-      "explanation": "Human settlement is influenced by water, climate, terrain, resources, transportation, and political boundaries."
+      "prompt": "Which example best shows why migration is rarely explained by one factor alone?",
+      "choices": ["A traveler chooses a road because it is shorter.", "A map uses a different color scheme.", "A family moves because conflict creates risk, relatives provide a destination network, transportation becomes available, and border rules allow entry.", "A city lies at an absolute location."],
+      "answer": 2,
+      "explanation": "Migration often reflects interacting push factors, pull factors, networks, transportation, policy, and constraints."
     },
     {
       "id": "W02Q8",
-      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 2?",
-      "choices": [
-        "Food surplus supported larger settlements and specialization but also contributed to hierarchy, disease exposure, and conflict.",
-        "Strong historical claims identify uncertainty and explain why selected evidence is persuasive.",
-        "Early law codes reveal social priorities and inequalities as well as attempts to regulate conflict.",
-        "Migration usually results from interacting push factors, pull factors, networks, and constraints."
-      ],
+      "prompt": "A conformal projection preserves local shape and direction well but greatly enlarges high-latitude areas. Which conclusion is most responsible?",
+      "choices": ["The map is useless.", "The projection is the only accurate world map.", "Area comparisons made from the map are automatically exact.", "The projection may be useful for some navigation or shape tasks but should not be used uncritically for comparing land area."],
       "answer": 3,
-      "explanation": "Migration usually results from interacting push factors, pull factors, networks, and constraints."
+      "explanation": "Projection choice should match purpose. A map can be useful for one task while distorting another property."
     },
     {
       "id": "W02Q9",
-      "prompt": "What is the strongest method for evaluating “Comparing World Map Projections”?",
-      "choices": [
-        "Accept the source if it was created during the period because primary sources are automatically accurate.",
-        "Use only the most dramatic sentence because memorable details are the most reliable.",
-        "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits.",
-        "Reject the source if it contains a point of view because useful evidence must be neutral."
-      ],
-      "answer": 2,
-      "explanation": "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits."
+      "prompt": "Which evidence would best help test a claim that a new highway changed migration into a region?",
+      "choices": ["One person's opinion about the highway", "Migration counts before and after the highway, transportation data, and evidence about other changes occurring at the same time", "A world map with no time data", "The highway's name"],
+      "answer": 1,
+      "explanation": "Testing change over time requires before/after evidence and attention to competing explanations rather than one anecdote or static map."
     },
     {
       "id": "W02Q10",
-      "prompt": "Which response demonstrates the strongest geographic or quantitative reasoning?",
-      "choices": [
-        "Use the visualization only if it confirms the original claim.",
-        "Ignore units and scale so attention stays on the overall appearance.",
-        "State the observed pattern, propose an explanation, and identify what the map or data cannot prove.",
-        "Assume that every mapped relationship is a direct cause."
-      ],
+      "prompt": "Which statement best answers the week's essential question without geographic determinism?",
+      "choices": ["Location determines human choices completely.", "Geography matters only when technology is absent.", "Location creates opportunities and constraints, but people respond through technology, institutions, culture, networks, and power.", "Places with similar environments always develop in the same way."],
       "answer": 2,
-      "explanation": "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
+      "explanation": "Geography influences choices and risks without mechanically determining outcomes; human systems mediate environmental possibilities and constraints."
     }
   ],
   "shortResponse": {
-    "prompt": "Using at least two specific pieces of evidence, answer: How does location shape opportunities, risks, movement, and human choices?",
+    "prompt": "Using at least two specific examples from this week, explain how location can shape opportunities, risks, movement, and human choices without determining them completely. Include one limitation of a map, dataset, or geographic explanation.",
     "points": 5,
-    "exemplar": "A full-credit response states a defensible answer to the essential question, uses two accurate details from the week, explains how each detail supports the claim, and acknowledges one complexity or limitation."
+    "exemplar": "Full-credit work makes a clear claim, accurately uses at least two Week 2 concepts or examples such as scale, projection, settlement pattern, migration factors, transportation, or human-environment interaction, explains the relationship rather than merely listing evidence, and identifies one limit or alternative factor.",
+    "rubric": {"Evidence":2,"Reasoning":2,"AccuracyAndLimits":1}
   }
 }

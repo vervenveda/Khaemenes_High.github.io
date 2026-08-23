@@ -19,11 +19,16 @@ Three weeks — fifteen instructional days.
 | 12 | Tissues, organs, systems | Organization pathway |
 | 13 | Photosynthesis and respiration | Matter-and-energy model |
 | 14 | Model evaluation | Cell model task |
-| 15 | Synthesis and mastery | Quiz, assessment, reflection |
+| 15 | Synthesis and mastery | Quiz, assessment, performance verification, reflection |
 
 ## Mastery rules
-- Virtual microscopy: 5/6
-- Mastery quiz: 16/20
-- Objective assessment: 24/30
-- Corrections and retakes allowed
-- Constructed responses and cell model are rubric-scored
+- Virtual microscopy: **5/6 or higher**
+- Mastery quiz: **16/20 or higher (≥80%)**
+- Objective assessment: **24/30 or higher (≥80%)**
+- Cell Model Performance Task: **32/40 or higher (≥80%)**
+- Constructed Response 1: **16/20 or higher (≥80%)**
+- Constructed Response 2: **16/20 or higher (≥80%)**
+- Corrections and retakes/revisions are allowed
+- Below-mastery performance components are revised individually; stronger scores do not average away a below-mastery component
+- Human-scored performance verification must be recorded before Unit 02 is considered mastered
+- Unit 03 remains locked until Unit 02 mastery is recorded in course-level progress state
