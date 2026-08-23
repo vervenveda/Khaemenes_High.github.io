@@ -1,40 +1,101 @@
 {
+  "schema": "3.0",
+  "course_id": "KH-MATH-GEO",
+  "course_title": "Khaemenes Open-Age Geometry & Spatial Design",
+  "mastery_target": 80,
   "diagnostic": {
     "count": 40,
-    "source": "diagnostic"
+    "source": "diagnostic",
+    "gating": false,
+    "purpose": "readiness evidence only"
   },
-  "midterm": {
-    "count": 60,
-    "units": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ]
+  "lesson_mastery": {
+    "count": 90,
+    "threshold_percent": 80,
+    "evidence": "completed lesson and worksheet evidence scored by the local evaluator",
+    "progression_required": true,
+    "below_mastery": "attempt retained; correction and retake required before progression"
   },
-  "final": {
-    "count": 100,
-    "units": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13
-    ]
+  "weekly_mastery": {
+    "weeks": 36,
+    "questions_each": 10,
+    "total_unique_prompts": 360,
+    "required_correct_each": 8,
+    "threshold_percent": 80,
+    "progression_required": true,
+    "dimensions": [
+      "procedural-fluency",
+      "multi-step-application",
+      "representation-interpretation",
+      "error-analysis",
+      "transfer-reasoning"
+    ],
+    "questions_per_dimension_each_week": 2
   },
   "unit_mastery": {
-    "count_each": 12,
-    "units": 13
+    "units": 13,
+    "questions_each": 20,
+    "threshold_percent": 80,
+    "progression_required": true,
+    "source": "weekly-mastery-v2 week-aligned depth bank",
+    "blueprint": {
+      "all_instructional_weeks_in_unit_represented": true,
+      "questions_per_dimension": 4,
+      "dimensions": [
+        "procedural-fluency",
+        "multi-step-application",
+        "representation-interpretation",
+        "error-analysis",
+        "transfer-reasoning"
+      ],
+      "deterministic_option_reordering": true,
+      "fail_closed_if_depth_bank_missing": true
+    },
+    "prerequisites": "all lesson gates and all weekly gates assigned to the unit must be at or above 80%; prior unit mastery controls entry to the next unit",
+    "below_mastery": "attempt retained; corrections do not substitute for the 80% gate; retake required"
   },
-  "mastery_target": 80
+  "midterm": {
+    "selected_response_count": 60,
+    "constructed_response_count": 6,
+    "units": [1, 2, 3, 4, 5, 6],
+    "selected_response_weight_percent": 70,
+    "constructed_response_weight_percent": 30,
+    "selected_response_threshold_percent": 80,
+    "constructed_response_threshold_percent": 80,
+    "overall_threshold_percent": 80,
+    "constructed_response_rubric": "0-4 human evaluator rubric",
+    "prerequisites": "Units 01-06 and Weeks 01-18 at or above 80%",
+    "mastery_requires_all_three_thresholds": true
+  },
+  "final": {
+    "selected_response_count": 100,
+    "constructed_response_count": 10,
+    "units": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "selected_response_weight_percent": 70,
+    "constructed_response_weight_percent": 30,
+    "selected_response_threshold_percent": 80,
+    "constructed_response_threshold_percent": 80,
+    "overall_threshold_percent": 80,
+    "constructed_response_rubric": "0-4 human evaluator rubric",
+    "prerequisites": "all 13 unit mastery checks, all 36 weekly mastery gates, and reviewed Midterm mastery at or above 80%",
+    "mastery_requires_all_three_thresholds": true
+  },
+  "completion": {
+    "lesson_mastery_required": "90 of 90",
+    "weekly_mastery_required": "36 of 36",
+    "unit_mastery_required": "13 of 13",
+    "midterm_mastery_required": true,
+    "final_mastery_required": true,
+    "applied_investigations_required": 13,
+    "capstone_defense_threshold_percent": 80,
+    "evaluator_attestation_required": true,
+    "learner_and_evaluator_identification_required": true
+  },
+  "trust": {
+    "storage": "browser-local",
+    "authoritative": false,
+    "digitally_signed": false,
+    "editable_storage": true,
+    "official_credit": "determined by the parent, teacher, school, or authorized evaluator from retained evidence"
+  }
 }
