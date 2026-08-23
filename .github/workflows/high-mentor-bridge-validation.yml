@@ -1,0 +1,32 @@
+name: High Mentor Bridge Validation
+
+on:
+  pull_request:
+    paths:
+      - 'assets/khaemenes-mentor-link.js'
+      - 'mentor/index.html'
+      - 'tools/validate-high-mentor-bridge.mjs'
+      - '.github/workflows/high-mentor-bridge-validation.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'assets/khaemenes-mentor-link.js'
+      - 'mentor/index.html'
+      - 'tools/validate-high-mentor-bridge.mjs'
+      - '.github/workflows/high-mentor-bridge-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check doorway syntax
+        run: node --check assets/khaemenes-mentor-link.js
+      - name: Validate Academy mentor bridge
+        run: node tools/validate-high-mentor-bridge.mjs
