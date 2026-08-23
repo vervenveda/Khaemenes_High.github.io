@@ -1,0 +1,31 @@
+name: Geometry Release Validation
+
+on:
+  pull_request:
+    paths:
+      - "courses/mathematics/geometry/**"
+      - ".github/workflows/geometry-release-validation.yml"
+  push:
+    paths:
+      - "courses/mathematics/geometry/**"
+      - ".github/workflows/geometry-release-validation.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Validate Geometry strict release contract
+        run: node courses/mathematics/geometry/tools/validate-release.mjs
+      - name: Generate Geometry release integrity metadata
+        run: node courses/mathematics/geometry/tools/generate-release-integrity.mjs --output "$RUNNER_TEMP/geometry-release-integrity"
+      - name: Upload Geometry release integrity metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: geometry-release-integrity
+          path: ${{ runner.temp }}/geometry-release-integrity
+          if-no-files-found: error
