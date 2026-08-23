@@ -53,11 +53,11 @@ const examEngine = read('assets/exam-engine.js');
 ok(midterm.includes('"question_count": 60'), 'midterm declares 60 questions');
 ok(finalExam.includes('"question_count": 100'), 'final declares 100 questions');
 ok(examEngine.includes('attempt_history') && examEngine.includes('bestScore') && examEngine.includes('mastery'), 'shared exam engine preserves attempt history, best score, and mastery evidence');
-ok(examEngine.includes('Saved score history and mastery evidence were preserved'), 'exam reset preserves scored evidence');
+ok(examEngine.includes('localStorage.removeItem(C.storage_key)') && !examEngine.includes('localStorage.removeItem(C.result_key)'), 'exam reset clears only the draft and preserves scored evidence');
 
 const assessmentMap = json('assessments/assessment-map.json');
-ok(assessmentMap.midterm?.questions === 60, 'assessment map midterm count is 60');
-ok(assessmentMap.final?.questions === 100, 'assessment map final count is 100');
+ok((assessmentMap.midterm?.questions === 60) || (assessmentMap.midterm?.selected_response_questions === 60), 'assessment map midterm selected-response count is 60');
+ok((assessmentMap.final?.questions === 100) || (assessmentMap.final?.selected_response_questions === 100), 'assessment map final selected-response count is 100');
 ok(assessmentMap.definitive_answer_policy === true, 'definitive-answer policy remains enabled');
 
 ok(exists('assessments/answer-key.json'), 'canonical singular answer key exists');
