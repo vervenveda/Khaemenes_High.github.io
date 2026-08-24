@@ -6,6 +6,7 @@ on:
       - fix/grade09-placement-aware-math-dashboard-20260824
     paths:
       - scripts/apply_grade09_placement_math_dashboard.py
+      - scripts/fix_grade09_math_path_precedence.py
       - .github/workflows/grade09-placement-math-repair.yml
 
 permissions:
@@ -21,7 +22,9 @@ jobs:
           fetch-depth: 0
 
       - name: Apply deterministic dashboard repair
-        run: python scripts/apply_grade09_placement_math_dashboard.py
+        run: |
+          python scripts/apply_grade09_placement_math_dashboard.py
+          python scripts/fix_grade09_math_path_precedence.py
 
       - name: Check JavaScript syntax
         run: |
@@ -34,12 +37,12 @@ jobs:
       - name: Commit repaired student surfaces
         shell: bash
         run: |
-          if git diff --quiet -- grades/grade-09/student-profile/index.html grades/grade-09/student-profile/daily-lessons/index.html courses/mathematics/pre-algebra/assets/prealgebra-student-navigation.js; then
+          if git diff --quiet -- grades/grade-09/student-profile/index.html grades/grade-09/student-profile/daily-lessons/index.html grades/grade-09/student-profile/student-course-registry.js courses/mathematics/pre-algebra/assets/prealgebra-student-navigation.js; then
             echo "No student-surface changes required."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add grades/grade-09/student-profile/index.html grades/grade-09/student-profile/daily-lessons/index.html courses/mathematics/pre-algebra/assets/prealgebra-student-navigation.js
-          git commit -m "Wire Grade 09 My Day to placement-aware mathematics"
+          git add grades/grade-09/student-profile/index.html grades/grade-09/student-profile/daily-lessons/index.html grades/grade-09/student-profile/student-course-registry.js courses/mathematics/pre-algebra/assets/prealgebra-student-navigation.js
+          git commit -m "Refine Grade 09 mathematics pathway routing"
           git push
