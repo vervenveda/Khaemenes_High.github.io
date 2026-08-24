@@ -1,0 +1,30 @@
+name: Grade 10 Mathematics Label Validation
+
+on:
+  pull_request:
+    paths:
+      - 'grades/grade-10/index.html'
+      - 'tools/validate-grade10-math-labels.mjs'
+      - '.github/workflows/grade10-math-label-validation.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'grades/grade-10/index.html'
+      - 'tools/validate-grade10-math-labels.mjs'
+      - '.github/workflows/grade10-math-label-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-grade10-math-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Validate grade-neutral mathematics language
+        run: node tools/validate-grade10-math-labels.mjs
