@@ -17,16 +17,20 @@ expect(units.reduce((sum,u)=>sum+Number(u.weeks||0),0)===36,"Official Unit 1–1
 
 for(const unit of units){
   const n=String(Number(unit.number)).padStart(2,"0");
-  const map=json(`units/unit-${n}/unit-map.json`);
+  const unitRoot=`units/unit-${n}`;
+  const map=json(`${unitRoot}/unit-map.json`);
   expect(Number(map.unit?.number)===Number(unit.number),`Unit ${n} map number must match course-map.json.`);
   expect(typeof map.unit?.progress_key==="string"&&map.unit.progress_key.length>0,`Unit ${n} must expose its authoritative progress_key.`);
   expect(Array.isArray(map.lessons)&&map.lessons.length>0,`Unit ${n} must expose real lesson records for review navigation.`);
   for(const lesson of map.lessons){
     expect(typeof lesson.id==="string"&&lesson.id,`Unit ${n} contains a lesson without an id.`);
     expect(typeof lesson.file==="string"&&lesson.file,`Unit ${n} lesson ${lesson.id||"?"} lacks a canonical lesson file.`);
+    expect(fs.existsSync(path.join(root,unitRoot,lesson.file)),`Unit ${n} lesson ${lesson.id} must resolve to a real canonical lesson file.`);
   }
-  expect(typeof map.assessment?.file==="string"&&map.assessment.file,`Unit ${n} must expose its mastery assessment file.`);
-  expect(Number(map.assessment?.threshold||map.unit?.mastery_threshold||80)===80,`Unit ${n} must preserve the 80% mastery threshold.`);
+  const assessmentFile=typeof map.assessment?.file==="string"&&map.assessment.file.trim()?map.assessment.file:"assessment/mastery-check.html";
+  expect(fs.existsSync(path.join(root,unitRoot,assessmentFile)),`Unit ${n} must resolve to a real mastery assessment file (${assessmentFile}).`);
+  const threshold=map.assessment?.threshold??map.unit?.mastery_threshold;
+  expect(Number(threshold)===80,`Unit ${n} must explicitly preserve the 80% mastery threshold.`);
 }
 
 const nav=text("assets/prealgebra-course-navigator-v1.js");
@@ -54,7 +58,8 @@ for(const token of [
   'Midterm Practice Sampler',
   'Final Practice Sampler',
   'Optional dashboard practice',
-  'does not erase, lower, or replace stored mastery evidence'
+  'does not erase, lower, or replace stored mastery evidence',
+  'unit.map?.assessment?.file||"assessment/mastery-check.html"'
 ]) expect(nav.includes(token),`Course navigator contract is missing: ${token}`);
 
 expect(!nav.includes("localStorage.setItem("),"Course navigator must remain read-only with respect to mastery/progress records.");
@@ -84,4 +89,4 @@ for(const relative of ["assets/prealgebra-course-navigator-v1.js","assets/prealg
   expect(check.status===0,`${relative} failed JavaScript syntax validation:\n${check.stderr||check.stdout}`);
 }
 
-console.log("Pre-Algebra Course Navigator validation passed: 36 weeks / 13 units, authoritative score review, fail-closed future navigation, cumulative midterm/final review boundaries, and offline navigator metadata are intact.");
+console.log("Pre-Algebra Course Navigator validation passed: 36 weeks / 13 units, authoritative score review, canonical assessment fallback, fail-closed future navigation, cumulative midterm/final review boundaries, and offline navigator metadata are intact.");
