@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "engine_id": "khaemenes-math-readiness-v1",
+  "title": "Khaemenes Mathematics Readiness & Placement",
+  "instructional_time": false,
+  "counts_toward_course": false,
+  "default_attempt_policy": "one-time with intentional reassessment",
+  "placement_levels": [
+    {
+      "id": "pre-algebra",
+      "label": "Pre-Algebra",
+      "course_path": "../pre-algebra/",
+      "required_domains": ["arithmetic", "fractions", "integers", "ratio"],
+      "minimum_domain_score": 60,
+      "recommended_overall": 65
+    },
+    {
+      "id": "algebra-1",
+      "label": "Algebra I",
+      "course_path": "../algebra-1/",
+      "required_domains": ["arithmetic", "fractions", "integers", "ratio", "expressions", "equations", "coordinates"],
+      "minimum_domain_score": 70,
+      "recommended_overall": 75
+    },
+    {
+      "id": "geometry",
+      "label": "Geometry",
+      "course_path": "../geometry/",
+      "required_domains": ["equations", "coordinates", "linear", "measurement", "angles"],
+      "minimum_domain_score": 70,
+      "recommended_overall": 75
+    },
+    {
+      "id": "algebra-2",
+      "label": "Algebra II",
+      "course_path": "../algebra-2/",
+      "required_domains": ["equations", "linear", "systems", "exponents", "factoring", "quadratics", "functions"],
+      "minimum_domain_score": 72,
+      "recommended_overall": 78
+    },
+    {
+      "id": "precalculus-trigonometry",
+      "label": "Precalculus / Trigonometry",
+      "course_path": "../precalculus-trigonometry/",
+      "required_domains": ["functions", "quadratics", "polynomials", "rational", "exponential-log", "right-triangle"],
+      "minimum_domain_score": 75,
+      "recommended_overall": 80
+    },
+    {
+      "id": "calculus-1",
+      "label": "Calculus I",
+      "course_path": "../calculus-1/",
+      "required_domains": ["functions", "polynomials", "rational", "exponential-log", "trigonometry", "composition-inverse", "limit-readiness"],
+      "minimum_domain_score": 78,
+      "recommended_overall": 82
+    }
+  ],
+  "result_contract": {
+    "storage_key": "KHAEMENES_MATH_READINESS_V1",
+    "fields": [
+      "engineVersion",
+      "completedAt",
+      "learnerName",
+      "domainScores",
+      "overallScore",
+      "highestReadyCourse",
+      "recommendedCourse",
+      "readinessBands",
+      "reviewDomains",
+      "attemptId"
+    ],
+    "naib_note": "This record is advisory evidence for NAIB placement. It is separate from course grades, instructional mastery, and course completion."
+  }
+}
