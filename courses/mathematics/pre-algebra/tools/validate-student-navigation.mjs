@@ -48,6 +48,14 @@ assert.ok(registry.includes("pinnedCourses"),"Grade 9 course registry must expos
 assert.ok(registry.includes("continueFor"),"Grade 9 course registry must resolve course continuation");
 assert.ok(registry.includes("mentorFor"),"Grade 9 course registry must create subject-aware Mentor links");
 
+const campusPath="grades/grade-09/index.html";
+const campus=read(campusPath);
+assert.ok(campus.includes('<a class="btn gold" href="student-profile/">Open Student Dashboard</a>'),"Grade 9 campus primary action must open Student Dashboard");
+assert.ok(campus.includes('Dashboard first'),"Grade 9 campus must state the dashboard-first navigation rule");
+assert.ok(!campus.includes('Math Lesson 01'),"Grade 9 campus must not compete with pinned classes using a hard-coded Math Lesson 01 shortcut");
+assert.ok(campus.includes('/Khaemenes_High.github.io/mentor/'),"Grade 9 campus must use the same-ecosystem Mentor");
+assert.ok(!campus.includes('artist1970.github.io/Archaemenes'),"Grade 9 campus must not restore the legacy Mentor route");
+
 const profilePath="grades/grade-09/student-profile/index.html";
 const profile=read(profilePath);
 assert.ok(profile.includes('id="pinnedCoursesGrid"'),"Grade 9 dashboard must expose the multi-class pinned surface");
@@ -71,4 +79,4 @@ assert.ok(!daily.includes('id="pinnedDailyCard"'),"Daily Lessons must not regres
 assert.ok(!daily.includes("artist1970.github.io/Archaemenes"),"Daily Lessons must not use the legacy Mentor URL");
 
 console.log("Grade 9 student navigation validation: PASS");
-console.log("Checked: Pre-Algebra theme/mobile controls, mastery-safe continue, shared pin key, four core classes, Student Home, Mentor, Dashboard, Daily Lessons, Units 01–13.");
+console.log("Checked: dashboard-first campus, Pre-Algebra theme/mobile controls, mastery-safe continue, shared pin key, four core classes, Student Home, Mentor, Dashboard, Daily Lessons, Units 01–13.");
