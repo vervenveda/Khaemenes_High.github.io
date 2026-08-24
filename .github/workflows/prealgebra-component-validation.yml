@@ -33,3 +33,5 @@ jobs:
         run: node courses/mathematics/pre-algebra/tools/validate-student-workroom.mjs
       - name: Validate 36-week course navigator and cumulative review center
         run: node courses/mathematics/pre-algebra/tools/validate-course-navigator.mjs
+      - name: Validate read-only Study Scorebook and official result separation
+        run: node courses/mathematics/pre-algebra/tools/validate-study-scorebook.mjs
