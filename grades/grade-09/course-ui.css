@@ -51,7 +51,7 @@ body{
     radial-gradient(circle at 10% 0,rgba(199,211,223,.08),transparent 28rem),
     linear-gradient(180deg,var(--bg),#091522);
   font-family:var(--sans);
-  font-size:17px;
+  font-size:20px;
   line-height:1.72;
   font-weight:400;
   text-align:center;
@@ -213,7 +213,7 @@ p,li{
   flex-wrap:wrap;
   gap:.55rem;
   color:var(--muted);
-  font-size:.78rem;
+  font-size:1rem;
 }
 
 .course-breadcrumb a{
@@ -316,7 +316,7 @@ table{
   width:100%;
   border-collapse:collapse;
   margin-top:1rem;
-  font-size:.9rem;
+  font-size:1rem;
 }
 
 th,td{
@@ -332,7 +332,7 @@ th{
 }
 
 @media(max-width:700px){
-  body{font-size:16px}
+  body{font-size:19px}
   .unit-card{grid-template-columns:1fr}
   .unit-number{margin:auto}
   .unit-actions{grid-column:auto;grid-template-columns:1fr}
@@ -355,6 +355,33 @@ pre,code,kbd,samp{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-w
 table{display:block;width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
 math,mi,mn,mo,msup,mfrac{max-width:100%;overflow-wrap:anywhere}
 
+/* Readability lift: approximately +3px over the prior Grade 09 course baseline. */
+.lesson-page,
+.assignment-page,
+.test-page,
+.answer-key-page,
+.resource-page,
+.record-page,
+.question,
+.problem,
+.resource-block,
+.answer-block,
+.rubric-block,
+.instructions,
+.notice{
+  font-size:1rem;
+}
+
+.btn,
+.unit-actions a,
+.unit-actions button,
+.course-actions a,
+.course-actions button,
+.nav-button,
+.theme-button{
+  font-size:.95rem;
+}
+
 @media(max-width:900px){
   .wrap,.shell,.container{width:min(calc(100% - 24px),var(--max));max-width:100%}
   .course-main,.course-side,.course-grid,.unit-grid,.lesson-grid,.grid2,.grid3,.grid4{grid-template-columns:1fr!important}
@@ -363,7 +390,7 @@ math,mi,mn,mo,msup,mfrac{max-width:100%;overflow-wrap:anywhere}
 }
 
 @media(max-width:520px){
-  body{min-width:0;font-size:15.5px;line-height:1.62}
+  body{min-width:0;font-size:18.5px;line-height:1.62}
   .wrap,.shell,.container{width:min(calc(100% - 18px),var(--max))}
   .assignment-page,.test-page,.answer-key-page,.resource-page,.lesson-page,.record-page{width:min(100% - .75rem,980px);padding:1rem;border-radius:12px}
   .assignment-page h1,.test-page h1,.answer-key-page h1,.resource-page h1,.lesson-page h1,.record-page h1{font-size:clamp(1.8rem,12vw,2.55rem)}
