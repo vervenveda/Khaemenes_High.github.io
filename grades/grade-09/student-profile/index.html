@@ -1,231 +1,83 @@
 <!doctype html>
-<html lang="en" data-theme="academy">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Khaemenes Academy grade-level student profile portal — editable local learner profile, grade courses, goals, journal, portfolio, export, and print report.">
+<meta name="description" content="Grade 09 student profile dashboard with direct doors to grades, daily lessons, games, profile editing, and parent-aware settings.">
 <meta name="theme-color" content="#17392f">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()">
-<title>Khaemenes Academy · Grade 09 Student Profile</title>
-<style>
-:root{
-  --paper:#f4f0e7;--paper2:#fbf9f4;--panel:#fffdf8;--ink:#17251f;--muted:#66736d;--soft:#4e5c55;
-  --forest:#17392f;--forest2:#245246;--navy:#172c43;--gold:#b48b45;--gold2:#e7d7b6;
-  --burgundy:#71363e;--blue:#315f86;--teal:#4f7f7a;--plum:#725f82;--terra:#96594e;
-  --line:rgba(20,40,32,.15);--line2:rgba(20,40,32,.28);--shadow:0 18px 46px rgba(20,40,32,.08);
-  --formal:Cinzel,"Palatino Linotype",Palatino,Georgia,serif;
-  --body:"Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif;
-  --max:1240px;--r:7px;--r2:21px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--paper)}
-body{margin:0;min-width:300px;min-height:100vh;color:var(--ink);background:radial-gradient(circle at 50% -10rem,rgba(180,139,69,.13),transparent 34rem),linear-gradient(180deg,#fbfaf6,var(--paper));font:16px/1.68 var(--body);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}:focus-visible{outline:3px solid var(--gold);outline-offset:3px}[hidden]{display:none!important}
-.shell{width:min(calc(100% - 34px),var(--max));margin:auto}.skip{position:fixed;left:10px;top:10px;z-index:5000;transform:translateY(-180%);padding:9px 12px;border-radius:var(--r);color:#fff;background:#111}.skip:focus{transform:none}
-.top{color:#fff;background:linear-gradient(135deg,#102f27,var(--forest) 55%,#0d241e)}
-.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}.brand{display:flex;align-items:center;gap:10px;text-align:left}.mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid #d7b56f;border-radius:var(--r);color:#17392f;background:linear-gradient(145deg,#fff5d8,#d7b56f);font:600 14px/1 var(--formal)}.brand strong{display:block;font:500 14px/1.3 var(--formal);letter-spacing:.08em;text-transform:uppercase}.brand small{display:block;margin-top:3px;color:#cad6d0;font-size:9px;letter-spacing:.08em;text-transform:uppercase}.navlinks{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.navlinks a,.navlinks button{min-height:38px;display:flex;align-items:center;padding:7px 10px;border:1px solid rgba(255,255,255,.18);border-radius:var(--r);color:#fff;background:transparent;font-size:10px;letter-spacing:.06em;text-transform:uppercase}
-.hero{padding:66px 0 50px;text-align:center}.eyebrow{margin:0;color:var(--gold2);font:600 11px/1.4 var(--formal);letter-spacing:.18em;text-transform:uppercase}h1,h2,h3{font-family:var(--formal);font-weight:500;text-wrap:balance}h1{margin:11px auto 0;font-size:clamp(3rem,8vw,6.2rem);line-height:.96}.hero p{max-width:820px;margin:18px auto 0;color:#d8e1dc}.hero-actions,.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;align-items:center}.hero-actions{justify-content:center}.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:9px 14px;border:1px solid var(--forest);border-radius:var(--r);color:#fff;background:var(--forest);font-size:11px;font-weight:800;letter-spacing:.055em;text-transform:uppercase}.btn.secondary{color:var(--forest);background:#fff;border-color:var(--line2)}.btn.gold{color:#2c2618;background:#ead6a4;border-color:#c8a861}.btn.warn{background:var(--burgundy);border-color:var(--burgundy)}.hero .btn.secondary{border-color:rgba(255,255,255,.25);background:transparent;color:#fff}.hero .btn.gold{color:#2c2618}
-.section{padding:62px 0}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:15px}.card{grid-column:span 12;padding:25px;border:1px solid var(--line);border-radius:var(--r2);background:var(--panel);box-shadow:var(--shadow)}.col3{grid-column:span 3}.col4{grid-column:span 4}.col5{grid-column:span 5}.col7{grid-column:span 7}.col8{grid-column:span 8}.col6{grid-column:span 6}
-.card h2,.card h3{margin:0;color:var(--forest)}.card h2{font-size:clamp(1.8rem,3.5vw,3rem);line-height:1.02}.card h3{font-size:1.55rem}.card p{color:var(--muted)}.profile{text-align:center}.avatar-wrap{display:grid;place-items:center;margin-bottom:14px}.avatar{width:124px;height:124px;display:grid;place-items:center;overflow:hidden;border-radius:50%;border:3px solid var(--gold);background:linear-gradient(145deg,#fff7df,#d7b56f);color:var(--forest);font:600 38px var(--formal)}.avatar img{width:100%;height:100%;object-fit:cover}.profile-name{margin:8px 0 0;color:var(--forest);font:500 clamp(2rem,4.5vw,3.8rem)/1 var(--formal)}.subline{color:var(--muted);font-size:13px}.chips{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:14px}.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border:1px solid var(--line);border-radius:999px;background:var(--paper2);color:var(--forest);font-size:11px}.privacy .private-field{filter:blur(5px);user-select:none}.privacy .hide-private{display:none!important}
-.progress{height:16px;background:#e6e2d7;border-radius:999px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--forest2));transition:width .35s ease}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.metric{padding:12px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper2);text-align:center}.metric strong{display:block;color:var(--forest);font:500 1.2rem var(--formal)}.metric span{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-.field{display:grid;gap:5px;margin-top:12px}.field label{font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}.field input,.field select,.field textarea{width:100%;min-height:42px;padding:9px 11px;border:1px solid var(--line);border-radius:var(--r);background:#fff;color:var(--ink)}.field textarea{min-height:92px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.class-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}.class-card{--accent:var(--blue);display:flex;flex-direction:column;min-height:185px;padding:17px;border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:14px;background:#fff;text-align:left}.class-card strong{color:var(--forest);font:500 1.28rem var(--formal)}.class-card small{display:block;margin-top:5px;color:var(--muted)}.class-card p{font-size:12px;line-height:1.55}.class-card .btn{width:100%;margin-top:auto}.slider-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-top:10px}.slider-row input{width:100%}.pct{min-width:44px;text-align:right;color:var(--forest);font-weight:800}.badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.badge{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--forest);font-size:12px}.badge.locked{opacity:.45;filter:grayscale(1)}
-.list{display:grid;gap:9px;margin-top:14px}.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:11px;background:var(--paper2)}.row strong{display:block;color:var(--forest)}.row small{display:block;color:var(--muted);margin-top:3px}.row button{min-height:36px}.journal{height:320px;overflow:auto;padding:14px;border:1px solid var(--line);border-radius:12px;background:#f7f5ef}.entry{padding:11px 12px;border-radius:11px;background:#fff;border:1px solid var(--line);margin-bottom:10px}.entry small{display:block;color:var(--muted);margin-bottom:4px}.notice{padding:13px 15px;border-left:4px solid var(--gold);border-radius:var(--r);background:#fff8e8;color:#66502b;font-size:13px}.notice.good{border-left-color:#4e755a;background:#eef7f0;color:#315f3c}.notice.danger{border-left-color:var(--burgundy);background:#fff1f3;color:#71363e}.footer{padding:38px 20px;color:#d6ded9;background:#10251f;text-align:center;font-size:11px}.footer strong{display:block;color:#fff;font:500 1.2rem var(--formal)}
-.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.tools .btn{font-size:10px;min-height:40px}.hidden-file{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}.safe{white-space:pre-wrap;display:none;margin-top:12px;padding:12px;border:1px solid #d6b26b;border-radius:var(--r);background:#1a1f24;color:#fff;font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;text-align:left}.safe.on{display:block}
-@media(max-width:980px){.col3,.col4,.col5,.col6,.col7,.col8{grid-column:span 12}.class-grid{grid-template-columns:1fr}.nav{justify-content:center;text-align:center;flex-wrap:wrap}.navlinks{justify-content:center}.two,.three{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr 1fr}}
-@media(max-width:560px){.shell{width:min(calc(100% - 22px),var(--max))}.hero{padding:52px 0 38px}.brand small{display:none}.row{grid-template-columns:1fr}.actions .btn,.hero-actions .btn,.tools .btn{width:100%}.metrics{grid-template-columns:1fr}.card{padding:19px}.avatar{width:108px;height:108px}}
-
-/* Grade 09 placement hardening: keep every panel responsive on phones, tablets, and laptops. */
-html,body{width:100%;max-width:100%;overflow-x:hidden}
-img,svg,video,canvas{max-width:100%;height:auto}
-.card,.class-card,.row,.notice,.journal,.entry,.field,.grid,.shell,.section,main,section,article{min-width:0;max-width:100%;overflow-wrap:anywhere}
-input,select,textarea,button,.btn{max-width:100%}
-table{display:block;width:100%;max-width:100%;overflow-x:auto}
-pre,code{white-space:pre-wrap;overflow-wrap:anywhere}
-@media(max-width:760px){.shell{width:min(calc(100% - 20px),var(--max))}.hero{padding-inline:0}h1{font-size:clamp(2.35rem,14vw,4rem)}.navlinks{width:100%}.navlinks a,.navlinks button{flex:1 1 140px;justify-content:center}.card{padding:17px;border-radius:16px}.section{padding:42px 0}.grid{gap:11px}.class-grid{grid-template-columns:1fr}.profile-name{font-size:clamp(1.8rem,10vw,3rem)}}
-
-@media print{.top,.tools,.navlinks,.hero-actions,.btn,#editCard,#journalComposer,#safeBox{display:none!important}body{background:#fff}.section{padding:0}.shell{width:100%;max-width:none}.card{box-shadow:none;break-inside:avoid;margin-bottom:10px}.col3,.col4,.col5,.col6,.col7,.col8{grid-column:span 12}.class-grid{grid-template-columns:1fr 1fr}.privacy .private-field{filter:none}.footer{color:#111;background:#fff;border-top:1px solid #ccc}}
-</style>
+<title>Grade 09 Student Dashboard</title>
+<link rel="stylesheet" href="student-profile.css">
 </head>
 <body>
-<a class="skip" href="#workspace">Skip to profile workspace</a>
 <header class="top">
   <div class="shell nav">
-    <a class="brand" href="../../../index.html"><span class="mark">K</span><span><strong>Khaemenes Academy</strong><small id="brandSub">Grade Student Portal</small></span></a>
-    <nav class="navlinks" aria-label="Student portal navigation">
-      <a href="../../../index.html">School Home</a>
-      <a href="../../../courses/">Courses</a>
-      <a href="/Khaemenes_Academy.github.io/student/">Academy Student</a>
-      <a href="/Khaemenes_Academy.github.io/family/">Family Hub</a>
-      <button type="button" id="privacyBtn">Privacy Mode</button>
+    <a class="brand" href="/Khaemenes_High.github.io/grades/grade-09/"><span class="mark">IX</span><span><strong>Khaemenes Academy</strong><small>Grade 09 Student Dashboard</small></span></a>
+    <nav class="navlinks" aria-label="Student dashboard navigation">
+      <a href="/Khaemenes_High.github.io/grades/grade-09/">Exit to Grade 09</a>
+      <a href="daily-lessons/">Daily Lessons</a>
+      <a href="grades/">Grades</a>
+      <a href="games/">Games</a>
+      <a href="settings/">Settings</a>
     </nav>
   </div>
   <div class="shell hero">
-    <p class="eyebrow" id="eyebrow">Khaemenes Academy · Grade Directory</p>
-    <h1 id="heroTitle">Student Portal</h1>
-    <p id="heroLead">A grade-level dashboard for the active learner, course doors, goals, journal notes, portfolio links, exports, and printable records.</p>
-    <div class="hero-actions">
-      <a class="btn gold" id="continueBtn" href="#classes">Continue Classes</a>
-      <a class="btn secondary" href="/Khaemenes_Academy.github.io/family/enroll/">Review Placement</a>
-      <button class="btn secondary" type="button" id="printBtn">Print Summary</button>
+    <p class="eyebrow">Khaemenes High · Grade 09</p>
+    <h1>Student Dashboard</h1>
+    <p>A clear home room for profile, current lessons, grade records, games, and parent-aware settings.</p>
+    <div class="actions" style="justify-content:center">
+      <a class="btn gold" href="daily-lessons/">Start Today’s Lessons</a>
+      <a class="btn secondary" href="/Khaemenes_High.github.io/grades/grade-09/">Exit to Grade 09</a>
     </div>
   </div>
 </header>
-
-<main class="section" id="workspace">
-  <div class="shell grid">
-    <section class="card col3 profile" id="profileCard">
-      <div class="avatar-wrap"><div class="avatar" id="avatar">K</div></div>
-      <input class="hidden-file" type="file" id="avatarInput" accept="image/*">
-      <button class="btn secondary hide-private" type="button" id="avatarBtn">Change Avatar</button>
-      <div class="profile-name private-field" id="profileName">Learner</div>
-      <div class="subline" id="placementLine">Placement loading…</div>
-      <div class="chips"><span class="chip" id="studentIdChip">Student ID pending</span><span class="chip" id="gradeChip">Grade</span></div>
-      <div class="progress" aria-label="Overall profile progress"><span id="overallBar"></span></div>
-      <div class="metrics"><div class="metric"><strong id="metricCourses">0</strong><span>Courses</span></div><div class="metric"><strong id="metricAvg">0%</strong><span>Average</span></div><div class="metric"><strong id="metricGoals">0</strong><span>Goals</span></div></div>
-      <div class="badge-row" id="badges"></div>
-    </section>
-
-    <section class="card col5" id="editCard">
-      <p class="eyebrow" style="color:var(--burgundy)">Editable Profile</p>
-      <h2>Student profile</h2>
-      <p>These fields save only in this browser for the active learner and grade. Use export for backup.</p>
-      <div class="two"><div class="field"><label for="nameInput">Preferred student name</label><input id="nameInput" autocomplete="name"></div><div class="field"><label for="pronounInput">Pronouns / form of address</label><input id="pronounInput" placeholder="optional"></div></div>
-      <div class="two"><div class="field"><label for="styleInput">Learning style notes</label><input id="styleInput" placeholder="visual, discussion, quiet work, hands-on…"></div><div class="field"><label for="interestInput">Current interests</label><input id="interestInput" placeholder="science, music, debate, coding…"></div></div>
-      <div class="field"><label for="supportInput">Helpful supports</label><textarea id="supportInput" placeholder="What helps this learner stay organized, focused, calm, or confident?"></textarea></div>
-      <div class="field"><label for="goalInput">Primary academic goal</label><textarea id="goalInput" placeholder="Write one clear goal for this grade period."></textarea></div>
-      <div class="tools"><button class="btn" type="button" id="saveProfileBtn">Save Profile</button><button class="btn secondary" type="button" id="resetDemoBtn">Reset Demo</button></div>
-    </section>
-
-    <section class="card col4">
-      <p class="eyebrow" style="color:var(--forest)">Today</p>
-      <h2>Focus plan</h2>
-      <div class="list" id="focusList"></div>
-      <div class="field"><label for="focusInput">Add focus item</label><input id="focusInput" placeholder="Example: Finish Lesson 01 math practice"></div>
-      <div class="tools"><button class="btn" type="button" id="addFocusBtn">Add Focus</button><button class="btn secondary" type="button" id="clearFocusBtn">Clear Done</button></div>
-      <p class="notice" id="readyNotice">Progress readiness will appear here.</p>
-    </section>
-  </div>
+<main>
+  <div class="shell crumbs"><a href="/Khaemenes_High.github.io/">High School</a><span>›</span><a href="/Khaemenes_High.github.io/grades/grade-09/">Grade 09</a><span>›</span><strong>Student Dashboard</strong></div>
+  <section class="section">
+    <div class="shell grid">
+      <article class="card col12">
+        <div class="profile-row">
+          <div class="avatar" id="avatar">S</div>
+          <div>
+            <h2 class="profile-name" id="studentName">Student</h2>
+            <div class="subline" id="studentMeta">Grade 09 · Local profile workspace</div>
+            <div class="chip-row"><span class="chip">Parent access always remains active</span><span class="chip">Local storage only</span><span class="chip">No real password stored here</span></div>
+          </div>
+        </div>
+      </article>
+      <section class="card col12" aria-labelledby="doorsTitle">
+        <h2 id="doorsTitle">Where do you want to go?</h2>
+        <div class="door-grid">
+          <a class="door" href="grades/"><span><b>Grades</b><span>Open course records, reports, mastery status, and print/export options.</span></span><small>Open Grades →</small></a>
+          <a class="door" href="daily-lessons/"><span><b>Daily Current Lessons</b><span>Go directly to today’s Grade 09 classes and current course doors.</span></span><small>Start Lessons →</small></a>
+          <a class="door" href="games/"><span><b>Games</b><span>Open math practice, logic games, learning arcade links, and study breaks.</span></span><small>Open Games →</small></a>
+          <a class="door" href="profile/"><span><b>My Profile</b><span>Edit interests, goals, portfolio links, strengths, supports, and journal notes.</span></span><small>Edit Profile →</small></a>
+        </div>
+      </section>
+      <section class="card col6">
+        <h2>Parent Access Rule</h2>
+        <p>Parent or guardian access should never be removed by a student profile setting. Any future protected password change must notify the parent and keep the parent recovery path active.</p>
+        <div class="actions"><a class="btn secondary" href="settings/">Open Settings</a></div>
+      </section>
+      <section class="card col6">
+        <h2>Continue Learning</h2>
+        <p>This dashboard now gives direct lesson doors. Start with Daily Current Lessons, or return to the full Grade 09 campus.</p>
+        <div class="actions"><a class="btn gold" href="daily-lessons/">Daily Lessons</a><a class="btn secondary" href="/Khaemenes_High.github.io/grades/grade-09/#courses">Course Campus</a></div>
+      </section>
+    </div>
+  </section>
 </main>
-
-<section class="section" id="classes">
-  <div class="shell grid">
-    <section class="card col8">
-      <p class="eyebrow" style="color:var(--blue)">Course Doors</p>
-      <h2 id="classesTitle">My classes</h2>
-      <p id="classesLead">Grade-level courses appear here. Adjust progress locally or open the course doorway.</p>
-      <div class="class-grid" id="classGrid"></div>
-    </section>
-    <section class="card col4">
-      <p class="eyebrow" style="color:var(--gold)">Portfolio</p>
-      <h2>Evidence links</h2>
-      <p>Add public-safe links or local notes for projects, essays, labs, art, presentations, or certificates.</p>
-      <div class="field"><label for="portfolioTitle">Title</label><input id="portfolioTitle" placeholder="Research essay draft"></div>
-      <div class="field"><label for="portfolioUrl">URL or note</label><input id="portfolioUrl" placeholder="https://… or local note"></div>
-      <div class="tools"><button class="btn" type="button" id="addPortfolioBtn">Add Evidence</button></div>
-      <div class="list" id="portfolioList"></div>
-    </section>
-  </div>
-</section>
-
-<section class="section" id="journalComposer">
-  <div class="shell grid">
-    <section class="card col6">
-      <p class="eyebrow" style="color:var(--plum)">Journal</p>
-      <h2>Learning reflection</h2>
-      <p>This replaces the Pre-K chat box with an academic reflection journal. It is local-only.</p>
-      <div class="field"><label for="journalInput">New reflection</label><textarea id="journalInput" placeholder="What did I learn, struggle with, revise, or master today?"></textarea></div>
-      <div class="tools"><button class="btn" type="button" id="addJournalBtn">Save Reflection</button><button class="btn secondary" type="button" id="clearJournalBtn">Clear Journal</button></div>
-    </section>
-    <section class="card col6">
-      <h2>Saved reflections</h2>
-      <div class="journal" id="journalList"></div>
-    </section>
-  </div>
-</section>
-
-<section class="section">
-  <div class="shell grid">
-    <section class="card col6">
-      <p class="eyebrow" style="color:var(--terra)">Records</p>
-      <h2>Export and import</h2>
-      <p>Use this for family backups or moving a profile to another browser. Do not place real private exports in a public GitHub repository.</p>
-      <input class="hidden-file" type="file" id="importInput" accept="application/json,.json">
-      <div class="tools"><button class="btn" type="button" id="exportBtn">Export JSON</button><button class="btn secondary" type="button" id="importBtn">Import JSON</button><button class="btn secondary" type="button" id="printBtn2">Print</button></div>
-      <pre class="safe" id="safeBox"></pre>
-    </section>
-    <section class="card col6">
-      <p class="eyebrow" style="color:var(--forest)">Privacy Boundary</p>
-      <h2>Public repo safe</h2>
-      <p>This grade portal is a browser-local helper. It does not authenticate students, award official credit, or send private information to a server. Course engines remain responsible for course mastery evidence.</p>
-      <div class="notice">Use the Academy Family Hub for family records, learner switching, placement, and backups. Use course dashboards for scores and mastery.</div>
-      <div class="tools"><a class="btn secondary" href="/Khaemenes_Academy.github.io/student/">Academy Student Portal</a><a class="btn secondary" href="/Khaemenes_Academy.github.io/family/">Family Hub</a><button class="btn secondary" type="button" id="safeBtn">Safe Mode</button></div>
-    </section>
-  </div>
-</section>
-
-<footer class="footer"><strong>Khaemenes Academy</strong>Grade-level student profile portal · Local-first · Editable · Printable · Public-repo safe.</footer>
-
+<footer class="footer"><strong>Khaemenes High · Grade 09</strong>Student dashboard · local-first · parent-aware</footer>
 <script>
-(function(){'use strict';
-const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
-const now=()=>new Date().toISOString();
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const GRADE_META={
- "PK":{label:"Pre-K",stage:"early",school:"Khaemenes Early Learning",tone:"gentle",title:"Pre-K Student Portal",lead:"A gentle profile doorway for early learning, play, language, number sense, stories, art, movement, and family notes."},
- "K":{label:"Kindergarten",stage:"early",school:"Khaemenes Elementary",tone:"garden",title:"Kindergarten Student Portal",lead:"A bright profile doorway for alphabet work, number sense, stories, nature, kindness, art, and early independence."},
- "01":{label:"Grade 01",stage:"elementary",school:"Khaemenes Elementary",tone:"elementary",title:"Grade 01 Student Portal",lead:"A simple academic home for reading, writing, numbers, science curiosity, art, family routines, and confidence."},
- "02":{label:"Grade 02",stage:"elementary",school:"Khaemenes Elementary",tone:"elementary",title:"Grade 02 Student Portal",lead:"A profile and course doorway for fluency, paragraph writing, problem solving, science observation, and daily learning habits."},
- "03":{label:"Grade 03",stage:"elementary",school:"Khaemenes Elementary",tone:"elementary",title:"Grade 03 Student Portal",lead:"A grade-level dashboard for stronger reading, multiplication, writing, science notebooks, projects, and reflection."},
- "04":{label:"Grade 04",stage:"elementary",school:"Khaemenes Elementary",tone:"elementary",title:"Grade 04 Student Portal",lead:"A profile and course doorway for stronger analysis, fractions, writing stamina, science reasoning, history, and portfolio work."},
- "05":{label:"Grade 05",stage:"elementary",school:"Khaemenes Elementary",tone:"elementary",title:"Grade 05 Student Portal",lead:"A transition dashboard for independent organization, course progress, reading depth, mathematics fluency, and project evidence."},
- "06":{label:"Grade 06",stage:"middle",school:"Khaemenes Middle School",tone:"middle",title:"Grade 06 Student Portal",lead:"A middle school profile for course organization, academic independence, goal-setting, reflection, and steady mastery."},
- "07":{label:"Grade 07",stage:"middle",school:"Khaemenes Middle School",tone:"middle",title:"Grade 07 Student Portal",lead:"A seventh-grade dashboard for writing, algebra readiness, lab reasoning, world studies, projects, and learning stamina."},
- "08":{label:"Grade 08",stage:"middle",school:"Khaemenes Middle School",tone:"middle",title:"Grade 08 Student Portal",lead:"A high-school-readiness dashboard for placement, course mastery, study skills, projects, and transition planning."},
- "09":{label:"Grade 09",stage:"high",school:"Khaemenes High School",tone:"high",title:"Grade 09 Student Portal",lead:"A serious high school dashboard for course mastery, daily focus, portfolio evidence, writing, research, mathematics, science, and academic independence."},
- "10":{label:"Grade 10",stage:"high",school:"Khaemenes High School",tone:"high",title:"Grade 10 Student Portal",lead:"A sophomore dashboard for deeper course mastery, research habits, laboratory reasoning, civic literacy, math growth, and portfolio evidence."},
- "11":{label:"Grade 11",stage:"high",school:"Khaemenes High School",tone:"high",title:"Grade 11 Student Portal",lead:"A junior-year dashboard for advanced coursework, transcript readiness, essays, research, leadership, career direction, and evidence of mastery."},
- "12":{label:"Grade 12",stage:"high",school:"Khaemenes High School",tone:"high",title:"Grade 12 Student Portal",lead:"A senior-year dashboard for graduation evidence, final assessments, transcript review, essays, capstone work, service, and next-step readiness."}
-};
-const SUBJECTS={
- early:[
-  ["Reading Garden","Letters, phonics, stories, vocabulary, handwriting.","../../../courses/language-arts/index.html","#648057"],["Number Garden","Counting, addition, subtraction, shapes, patterns.","../../../courses/mathematics/index.html","#315f86"],["Discovery Science","Weather, plants, animals, senses, observing.","../../../courses/science/index.html","#4f7f7a"],["Community & Arts","Helpers, home, map words, music, drawing.","../../../courses/social-studies/index.html","#96594e"]],
- elementary:[
-  ["Language Arts","Reading, writing, spelling, grammar, vocabulary, speaking.","../../../courses/language-arts/index.html","#725f82"],["Mathematics","Arithmetic, problem solving, fractions, measurement, fluency.","../../../courses/mathematics/index.html","#315f86"],["Science","Observation, experiments, nature, matter, earth, engineering.","../../../courses/science/index.html","#4f7f7a"],["Social Studies","Community, maps, civics, cultures, history, geography.","../../../courses/social-studies/index.html","#96594e"],["Arts & Enrichment","Art, music, movement, projects, creativity.","../../../electives/index.html","#b48b45"]],
- middle:[
-  ["Language Arts","Close reading, writing, grammar, rhetoric, research.","../../../courses/language-arts/index.html","#725f82"],["Mathematics","Pre-algebra, ratios, equations, geometry, data.","../../../courses/mathematics/index.html","#315f86"],["Science","Lab habits, earth, life, physical science, engineering.","../../../courses/science/index.html","#4f7f7a"],["Social Studies","History, civics, geography, economics, source analysis.","../../../courses/social-studies/index.html","#96594e"],["Electives","Coding, art, music, health, languages, career exploration.","../../../electives/index.html","#b48b45"]],
- high:[
-  ["Mathematics","Pre-Algebra through Calculus pathways, tools, and assessments.","../../../courses/mathematics/index.html","#315f86"],["Science","Integrated science, biology, chemistry, physics, engineering.","../../../courses/science/index.html","#4f7f7a"],["Language Arts","Literature, rhetoric, writing, research, media literacy.","../../../courses/language-arts/index.html","#725f82"],["Social Studies","History, civics, economics, law, geography, verification.","../../../courses/social-studies/index.html","#96594e"],["Electives Hall","Technology, art, music, financial literacy, health, PE, special studies.","../../../courses/electives/index.html","#b48b45"]]
-};
-function detectGrade(){const qs=new URLSearchParams(location.search);let g=qs.get('grade');if(g){g=String(g).padStart(2,'0').toUpperCase();return GRADE_META[g]?g:g.replace(/^0K$/,'K')}const m=location.pathname.match(/grade[-_ ]?(\d{1,2}|PK|K)/i);if(m){const raw=m[1].toUpperCase();return /^\d+$/.test(raw)?raw.padStart(2,'0'):raw}try{const ctx=window.KhaemenesLearnerContext?.active?.();const p=window.KhaemenesLearnerContext?.placementFor?.(ctx);if(p?.grade)return String(p.grade).padStart(2,'0').toUpperCase()}catch{}return '09'}
-const grade=detectGrade();const meta=GRADE_META[grade]||GRADE_META['09'];
-function learnerId(){try{return window.KhaemenesLearnerContext?.active?.()?.learnerId||'demo-learner'}catch{return 'demo-learner'}}
-const KEY=`khaemenes_grade_profile_v2_${learnerId()}_${grade}`;
-let state=load();
-function load(){try{return JSON.parse(localStorage.getItem(KEY)||'null')||demo()}catch{return demo()}}
-function save(){localStorage.setItem(KEY,JSON.stringify(state));render()}
-function demo(){return{profile:{name:'Learner',pronouns:'',style:'',interests:'',supports:'',goal:'Build steady mastery and keep clear evidence of learning.',avatar:'',studentId:'local profile',focus:['Open the first course lesson','Write one reflection after learning','Check progress before closing'],portfolio:[],journal:[],progress:{}}}}
-function render(){
- document.title=`Khaemenes Academy · ${meta.label} Student Profile`;$("#brandSub").textContent=`${meta.label} Student Portal`;$("#eyebrow").textContent=`${meta.school} · ${meta.label}`;$("#heroTitle").textContent=meta.title;$("#heroLead").textContent=meta.lead;$("#gradeChip").textContent=meta.label;$("#classesTitle").textContent=`${meta.label} courses`;$("#classesLead").textContent=`These ${meta.label} course doors can be copied into the matching grade directory and adjusted as that grade's curriculum grows.`;
- const p=state.profile;$("#profileName").textContent=p.name||'Learner';$("#placementLine").textContent=`${meta.school} · ${meta.label}`;$("#studentIdChip").textContent=p.studentId||'Student ID pending';$("#nameInput").value=p.name||'';$("#pronounInput").value=p.pronouns||'';$("#styleInput").value=p.style||'';$("#interestInput").value=p.interests||'';$("#supportInput").value=p.supports||'';$("#goalInput").value=p.goal||'';
- const avatar=$("#avatar");avatar.innerHTML=p.avatar?`<img src="${p.avatar}" alt="Student avatar">`:esc((p.name||'K').trim()[0]||'K');
- renderClasses();renderFocus();renderPortfolio();renderJournal();renderMetrics();}
-function renderClasses(){const subjects=SUBJECTS[meta.stage]||SUBJECTS.high;const grid=$("#classGrid");grid.innerHTML=subjects.map(([title,desc,href,color],i)=>{const id=title.toLowerCase().replace(/[^a-z0-9]+/g,'-');const pct=Number(state.profile.progress[id]||0);const url=href+(href.includes("?")?"&":"?")+`grade=${encodeURIComponent(grade)}`;return `<article class="class-card" style="--accent:${color}"><strong>${esc(title)}</strong><small>${esc(meta.label)} pathway</small><p>${esc(desc)}</p><div class="slider-row"><input type="range" min="0" max="100" value="${pct}" data-progress="${esc(id)}" aria-label="${esc(title)} progress"><span class="pct">${pct}%</span></div><a class="btn secondary" href="${esc(url)}">Open ${esc(title)}</a></article>`}).join('');$$('[data-progress]').forEach(input=>input.addEventListener('input',e=>{state.profile.progress[e.target.dataset.progress]=Number(e.target.value);e.target.nextElementSibling.textContent=e.target.value+'%';saveLite();renderMetrics()}));}
-function saveLite(){localStorage.setItem(KEY,JSON.stringify(state))}
-function avg(){const vals=Object.values(state.profile.progress||{}).map(Number);return vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):0}
-function renderMetrics(){const a=avg(), goals=[state.profile.goal,...(state.profile.focus||[])].filter(Boolean).length;$("#metricCourses").textContent=Object.keys(state.profile.progress||{}).length;$("#metricAvg").textContent=a+'%';$("#metricGoals").textContent=goals;$("#overallBar").style.width=Math.min(100,a)+'%';$("#readyNotice").className=a>=80?"notice good":"notice";$("#readyNotice").textContent=a>=80?"Strong progress signal. Continue collecting mastery evidence in the course dashboards.":"Use today's focus list and course doors to keep the week organized.";$("#badges").innerHTML=[['Organizer',goals>1],['Portfolio',state.profile.portfolio.length>0],['Reflective',state.profile.journal.length>0],['80%+',a>=80]].map(([b,on])=>`<span class="badge ${on?'':'locked'}">${on?'✓':'○'} ${b}</span>`).join('')}
-function renderFocus(){const list=$("#focusList"),items=state.profile.focus||[];list.innerHTML=items.length?items.map((x,i)=>`<div class="row"><span><strong>${esc(x)}</strong><small>Focus item</small></span><button class="btn secondary" data-del-focus="${i}" type="button">Done</button></div>`).join(''):'<div class="notice">No focus items yet.</div>';$$('[data-del-focus]').forEach(b=>b.onclick=()=>{state.profile.focus.splice(Number(b.dataset.delFocus),1);save()})}
-function renderPortfolio(){const list=$("#portfolioList"),items=state.profile.portfolio||[];list.innerHTML=items.length?items.map((x,i)=>{const isUrl=/^https?:\/\//i.test(x.url||"");return `<div class="row"><span><strong>${esc(x.title)}</strong><small>${esc(x.url||"Local note")}</small></span>${isUrl?`<a class="btn secondary" href="${esc(x.url)}" rel="noopener">Open</a>`:`<button class="btn secondary" data-del-portfolio="${i}" type="button">Remove</button>`}</div>`}).join(""):'<div class="notice">No portfolio links yet.</div>';$$('[data-del-portfolio]').forEach(b=>b.onclick=()=>{state.profile.portfolio.splice(Number(b.dataset.delPortfolio),1);save()})}
-function renderJournal(){const list=$("#journalList"),items=state.profile.journal||[];list.innerHTML=items.length?items.slice().reverse().map(x=>`<div class="entry"><small>${new Date(x.date).toLocaleString()}</small>${esc(x.text)}</div>`).join(''):'<div class="notice">No reflections yet.</div>'}
-function saveProfile(){Object.assign(state.profile,{name:$("#nameInput").value.trim()||'Learner',pronouns:$("#pronounInput").value.trim(),style:$("#styleInput").value.trim(),interests:$("#interestInput").value.trim(),supports:$("#supportInput").value.trim(),goal:$("#goalInput").value.trim()});save()}
-$("#saveProfileBtn").onclick=saveProfile;$("#addFocusBtn").onclick=()=>{const v=$("#focusInput").value.trim();if(v){state.profile.focus.push(v);$("#focusInput").value='';save()}};$("#clearFocusBtn").onclick=()=>{state.profile.focus=[];save()};$("#addPortfolioBtn").onclick=()=>{const title=$("#portfolioTitle").value.trim(),url=$("#portfolioUrl").value.trim();if(title||url){state.profile.portfolio.push({title:title||'Evidence',url,date:now()});$("#portfolioTitle").value='';$("#portfolioUrl").value='';save()}};$("#addJournalBtn").onclick=()=>{const text=$("#journalInput").value.trim();if(text){state.profile.journal.push({text,date:now()});$("#journalInput").value='';save()}};$("#clearJournalBtn").onclick=()=>{if(confirm('Clear local journal reflections for this grade profile?')){state.profile.journal=[];save()}};
-$("#avatarBtn").onclick=()=>$("#avatarInput").click();$("#avatarInput").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{const img=new Image();img.onload=()=>{const c=document.createElement('canvas'),max=360,scale=Math.min(1,max/Math.max(img.width,img.height));c.width=Math.round(img.width*scale);c.height=Math.round(img.height*scale);c.getContext('2d').drawImage(img,0,0,c.width,c.height);state.profile.avatar=c.toDataURL('image/jpeg',.82);save()};img.src=ev.target.result};r.readAsDataURL(f)};
-$("#privacyBtn").onclick=()=>document.body.classList.toggle('privacy');$("#printBtn").onclick=()=>print();$("#printBtn2").onclick=()=>print();$("#resetDemoBtn").onclick=()=>{if(confirm('Reset this local grade profile demo data?')){state=demo();save()}};
-$("#exportBtn").onclick=()=>{const data={format:'khaemenes-grade-profile-export-v2',exportedAt:now(),grade,meta,learnerId:learnerId(),profile:state.profile};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=`khaemenes-${grade}-student-profile.json`;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);};
-$("#importBtn").onclick=()=>$("#importInput").click();$("#importInput").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const data=JSON.parse(r.result);if(!data.profile)throw new Error('Missing profile object');state.profile={...demo().profile,...data.profile};save()}catch(err){alert('Could not import profile JSON: '+err.message)}};r.readAsText(f)};
-$("#safeBtn").onclick=()=>{const box=$("#safeBox");box.classList.toggle('on');box.textContent=JSON.stringify({path:location.pathname,grade,storageKey:KEY,localOnly:true,academyContext:!!window.KhaemenesLearnerContext,average:avg()},null,2)};
-render();
+(function(){
+  const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};
+  const p=read('khaemenes-high-profile-v1',null)||read('khaemenes-grade09-profile-v1',null)||{};
+  const name=p.displayName||p.name||p.nickname||'Student';
+  const initials=(name.split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('')||'S').toUpperCase();
+  document.getElementById('studentName').textContent=name;
+  document.getElementById('avatar').textContent=initials;
+  document.getElementById('studentMeta').textContent=`Grade 09${p.pathway?' · '+p.pathway:''} · Local profile workspace`;
 })();
 </script>
 </body>
