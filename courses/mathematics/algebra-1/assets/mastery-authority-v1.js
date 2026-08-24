@@ -1,5 +1,15 @@
 (()=>{
 "use strict";
+const authorityScript=document.currentScript;
+function ensureResponsiveLayout(){
+ if(document.querySelector('link[data-algebra1-responsive="v1"]'))return;
+ const link=document.createElement("link");
+ link.rel="stylesheet";
+ link.href=new URL("responsive-layout-v1.css",authorityScript?.src||location.href).href;
+ link.dataset.algebra1Responsive="v1";
+ document.head.appendChild(link);
+}
+ensureResponsiveLayout();
 const MASTERY=80;
 const WEEKLY_KEY="khaemenes-algebra1-weekly-mastery-v2";
 const MIDTERM_KEY="khaemenes-algebra1-midterm-result-v1";
@@ -64,8 +74,9 @@ function cumulativeEvidence(key){
 function allUnitsMastered(first=1,last=13){for(let n=Number(first);n<=Number(last);n++)if(!unitEvidence(n).mastery)return false;return true}
 function allWeeksMastered(first=2,last=36){for(let n=Number(first);n<=Number(last);n++)if(!weekEvidence(n).mastery)return false;return true}
 window.KhaemenesAlgebra1MasteryAuthority={
- version:"1.1",
+ version:"1.2",
  threshold:MASTERY,
+ responsive_layout:"v1",
  keys:{weekly:WEEKLY_KEY,midterm:MIDTERM_KEY,final:FINAL_KEY,dedicatedUnit:dedicatedKey,sharedUnit:sharedKey},
  weekLessonMap:WEEK_LESSONS,
  unitEvidence,
