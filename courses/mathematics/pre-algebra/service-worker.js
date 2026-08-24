@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v3-assessment-depth-v4-course-navigator`;
+const CACHE_NAME=`${CACHE_PREFIX}v3-assessment-depth-v4-course-navigator-v5-study-scorebook`;
 const CORE_FILES=[
   "./",
   "./index.html",
@@ -16,6 +16,7 @@ const CORE_FILES=[
   "./assets/prealgebra-assessment-depth-v2-core.js",
   "./assets/prealgebra-course-gates-v1.js",
   "./assets/prealgebra-course-navigator-v1.js",
+  "./assets/prealgebra-study-scorebook-v1.js",
   "./assets/assessment-depth/prealgebra-weekly-quizzes-v2-a.js",
   "./assets/assessment-depth/prealgebra-weekly-quizzes-v2-b.js",
   "./assets/assessment-depth/prealgebra-weekly-quizzes-v2-c.js",
