@@ -1,0 +1,47 @@
+name: Grade 09 Placement Mathematics Validation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - grades/grade-09/student-profile/**
+      - courses/mathematics/pre-algebra/assets/prealgebra-student-navigation.js
+      - courses/mathematics/algebra-1/units/**/unit-map.json
+      - scripts/validate_grade09_placement_math_dashboard.mjs
+      - .github/workflows/grade09-placement-math-validation.yml
+  push:
+    branches:
+      - main
+      - fix/grade09-placement-aware-math-dashboard-20260824
+    paths:
+      - grades/grade-09/student-profile/**
+      - courses/mathematics/pre-algebra/assets/prealgebra-student-navigation.js
+      - courses/mathematics/algebra-1/units/**/unit-map.json
+      - scripts/validate_grade09_placement_math_dashboard.mjs
+      - .github/workflows/grade09-placement-math-validation.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Validate Grade 09 placement-aware mathematics dashboard
+        run: node scripts/validate_grade09_placement_math_dashboard.mjs
+
+      - name: Check shared JavaScript syntax
+        run: |
+          node --check grades/grade-09/student-profile/student-course-registry.js
+          node --check courses/mathematics/pre-algebra/assets/prealgebra-student-navigation.js
+
+      - name: Check whitespace
+        run: git diff --check HEAD^
