@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Grade 09 student dashboard with a streamlined daily start, lessons, grades, games, profile editing, and parent-aware settings.">
+<meta name="description" content="Grade 09 student dashboard with a streamlined daily start, pinned classes, lessons, grades, games, profile editing, and parent-aware settings.">
 <meta name="theme-color" content="#17392f">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()">
@@ -26,9 +26,9 @@
   <div class="shell hero">
     <p class="eyebrow">Khaemenes High · Grade 09</p>
     <h1>Student Dashboard</h1>
-    <p>Your clean daily home room: start lessons, check grades, open games, update your profile, and keep parent access visible.</p>
+    <p>Your clean daily home room: continue pinned classes, start lessons, check grades, open games, update your profile, and keep parent access visible.</p>
     <div class="actions center">
-      <a class="btn gold" href="daily-lessons/">Start Today’s Lessons</a>
+      <a class="btn gold" id="dashboardPrimaryStart" href="daily-lessons/">Start Today’s Lessons</a>
       <a class="btn secondary" href="/Khaemenes_High.github.io/grades/grade-09/">Exit to Grade 09</a>
     </div>
   </div>
@@ -52,6 +52,21 @@
         </div>
       </article>
 
+      <section class="card col12" id="pinnedClassCard" aria-labelledby="pinnedClassTitle" hidden>
+        <div class="focus-card">
+          <div>
+            <span class="chip">Pinned Class</span>
+            <strong id="pinnedClassTitle">Pre-Algebra</strong>
+            <span id="pinnedClassStatus">Pinned to this student profile.</span>
+          </div>
+          <div class="actions">
+            <a class="btn gold" id="continuePreAlgebra" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Continue Pre-Algebra</a>
+            <a class="btn secondary" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Course Home</a>
+            <button class="btn secondary" id="unpinPreAlgebra" type="button">Unpin</button>
+          </div>
+        </div>
+      </section>
+
       <section class="card col12" aria-labelledby="todayTitle">
         <div class="focus-card">
           <div>
@@ -59,7 +74,7 @@
             <span id="todayFocus">Open Daily Current Lessons. Start with Math or the course your parent assigned first.</span>
           </div>
           <div class="actions">
-            <a class="btn gold" href="daily-lessons/">Go to Daily Lessons</a>
+            <a class="btn gold" id="todayPrimaryLink" href="daily-lessons/">Go to Daily Lessons</a>
             <a class="btn secondary" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html">Math Lesson 01</a>
           </div>
         </div>
@@ -84,15 +99,22 @@
       <section class="card col6">
         <h2>Quick exits</h2>
         <p>Use these when you need the broader campus instead of the student dashboard.</p>
-        <div class="actions"><a class="btn" href="/Khaemenes_High.github.io/grades/grade-09/#courses">Course Campus</a><a class="btn secondary" href="/Khaemenes_High.github.io/">High School Home</a></div>
+        <div class="actions"><a class="btn" href="/Khaemenes_High.github.io/grades/grade-09/#courses">Course Campus</a><a class="btn secondary" href="/Khaemenes_High.github.io/mentor/?stage=high&amp;subject=general&amp;source=%2FKhaemenes_High.github.io%2Fgrades%2Fgrade-09%2Fstudent-profile%2F">Ask Mentor</a><a class="btn secondary" href="/Khaemenes_High.github.io/">High School Home</a></div>
       </section>
     </div>
   </section>
 </main>
-<footer class="footer"><strong>Khaemenes High · Grade 09</strong>Student dashboard · local-first · parent-aware</footer>
+<footer class="footer"><strong>Khaemenes High · Grade 09</strong>Student dashboard · pinned classes · local-first · parent-aware</footer>
 <script>
 (function(){
+  const PIN_KEY='khaemenes-high-pinned-courses-v2';
+  const CONTINUE_KEY='khaemenes-grade09-last-open-v1';
+  const COURSE_ID='pre-algebra';
+  const COURSE_HOME='/Khaemenes_High.github.io/courses/mathematics/pre-algebra/';
   const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};
+  const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
+  const safeCourseUrl=value=>typeof value==='string'&&value.startsWith('/Khaemenes_High.github.io/courses/mathematics/pre-algebra/')?value:COURSE_HOME;
+
   const p=read('khaemenes-high-profile-v1',null)||read('khaemenes-grade09-profile-v1',null)||{};
   const name=p.displayName||p.name||p.nickname||'Student';
   const initials=(name.split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('')||'S').toUpperCase();
@@ -100,7 +122,45 @@
   document.getElementById('studentName').textContent=name;
   document.getElementById('avatar').textContent=initials;
   document.getElementById('studentMeta').textContent=`Grade 09${p.pathway?' · '+p.pathway:''} · Local profile workspace`;
-  if(note&&note.trim())document.getElementById('todayFocus').textContent=note.trim();
+
+  function renderPinnedClass(){
+    const pins=read(PIN_KEY,[]);
+    const pinned=Array.isArray(pins)&&pins.includes(COURSE_ID);
+    const card=document.getElementById('pinnedClassCard');
+    const continueLink=document.getElementById('continuePreAlgebra');
+    const status=document.getElementById('pinnedClassStatus');
+    const primary=document.getElementById('dashboardPrimaryStart');
+    const todayLink=document.getElementById('todayPrimaryLink');
+    const todayFocus=document.getElementById('todayFocus');
+    if(!card)return;
+    card.hidden=!pinned;
+    if(!pinned){
+      primary.href='daily-lessons/';primary.textContent='Start Today’s Lessons';
+      todayLink.href='daily-lessons/';todayLink.textContent='Go to Daily Lessons';
+      if(note&&note.trim())todayFocus.textContent=note.trim();
+      else todayFocus.textContent='Open Daily Current Lessons. Start with Math or the course your parent assigned first.';
+      return;
+    }
+    const last=read(CONTINUE_KEY,null);
+    const lastIsCourse=last&&last.course===COURSE_ID;
+    const url=lastIsCourse?safeCourseUrl(last.url):COURSE_HOME;
+    const lessonTitle=lastIsCourse&&last.title?String(last.title):'Pre-Algebra course home';
+    continueLink.href=url;
+    continueLink.textContent=lastIsCourse?'Continue Current Lesson':'Open Pre-Algebra';
+    status.textContent=lastIsCourse?`Last opened: ${lessonTitle}`:'Pinned to this profile. Open the course to begin or continue.';
+    primary.href=url;primary.textContent='Continue Pre-Algebra';
+    todayLink.href=url;todayLink.textContent='Continue Pre-Algebra';
+    if(note&&note.trim())todayFocus.textContent=note.trim();
+    else todayFocus.textContent=lastIsCourse?`Continue Pre-Algebra: ${lessonTitle}`:'Pre-Algebra is pinned. Open the course and continue from the current unit.';
+  }
+
+  document.getElementById('unpinPreAlgebra').addEventListener('click',()=>{
+    const pins=read(PIN_KEY,[]);
+    const next=Array.isArray(pins)?pins.filter(id=>id!==COURSE_ID):[];
+    if(write(PIN_KEY,next))renderPinnedClass();
+  });
+  window.addEventListener('storage',event=>{if(event.key===PIN_KEY||event.key===CONTINUE_KEY)renderPinnedClass()});
+  renderPinnedClass();
 })();
 </script>
 </body>
