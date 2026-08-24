@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "component_set": "KH-MATH-PA",
-  "release": "2026.08.24-student-navigation-v3",
+  "release": "2026.08.24-unit1-daily-workroom-v4",
   "hash_format": "git-blob-sha1",
   "components": [
     {"path":"service-worker.js","sha":"36b7674c26c0d9c22c047ac7ff1a4393c2325721"},
@@ -16,8 +16,9 @@
     {"path":"assets/prealgebra-unit-entry-wrapper-v1.js","sha":"cf52c7df4a91031d3a552d15ad85126b504c6db3"},
     {"path":"assets/prealgebra-unit-dashboard-entry-wrapper-v1.js","sha":"9b0623eb1e5a242afe4d9d504b03782378b1973b"},
     {"path":"assets/prealgebra-unit-assessment-wrapper-v1.js","sha":"e23cabd784f9fc36baf0aa398d2c91c4f6410daa"},
-    {"path":"assets/unit01-lesson-mastery-wrapper-v1.js","sha":"ca2dee5131190d821ba1a2e2eded1c62a6d84137"},
-    {"path":"assets/unit01-dashboard-gate-wrapper-v1.js","sha":"e8ae6e4add13c2975159a057b0c548e93a7fa23a"},
+    {"path":"assets/unit01-lesson-mastery-wrapper-v1.js","sha":"62aa2ffbeeb9659677d49f9bf28ce57a30a0a418"},
+    {"path":"assets/unit01-dashboard-gate-wrapper-v1.js","sha":"29c32b7e788ca13086e318e4050e8e8afdf43992"},
+    {"path":"units/unit-01/assets/student-workroom.js","sha":"b570e520cd139bd1e3f68ee3ebf2bf9a855338b8"},
     {"path":"assets/assessment-depth/prealgebra-weekly-quizzes-v2-a.js","sha":"6819246829e8f3d7c0df1b833e01033703a5aec1"},
     {"path":"assets/assessment-depth/prealgebra-weekly-quizzes-v2-b.js","sha":"1b312d41b277ba93b30f63fbb0580e7dfca99f9c"},
     {"path":"assets/assessment-depth/prealgebra-weekly-quizzes-v2-c.js","sha":"aaf2156fd9058f13385dcf00b2e9be6dd43a9278"},
