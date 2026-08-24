@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Grade 09 student dashboard with a streamlined daily start, pinned classes, lessons, grades, games, profile editing, and parent-aware settings.">
+<meta name="description" content="Grade 09 student dashboard with a streamlined daily start, pinned classes, lessons, grades, mentor support, profile editing, and parent-aware settings.">
 <meta name="theme-color" content="#17392f">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()">
@@ -17,19 +17,17 @@
     <nav class="navlinks" aria-label="Student dashboard navigation">
       <a href="daily-lessons/">Daily Lessons</a>
       <a href="grades/">Grades</a>
-      <a href="games/">Games</a>
-      <a href="profile/">Profile</a>
-      <a href="settings/">Settings</a>
+      <a href="/Khaemenes_High.github.io/mentor/?stage=high&amp;subject=general&amp;course=grade-09&amp;source=%2FKhaemenes_High.github.io%2Fgrades%2Fgrade-09%2Fstudent-profile%2F">Ask Mentor</a>
       <a href="/Khaemenes_High.github.io/grades/grade-09/">Exit</a>
     </nav>
   </div>
   <div class="shell hero">
     <p class="eyebrow">Khaemenes High · Grade 09</p>
     <h1>Student Dashboard</h1>
-    <p>Your clean daily home room: continue pinned classes, start lessons, check grades, open games, update your profile, and keep parent access visible.</p>
+    <p>This is home. Start the day here, continue pinned classes, open grades, ask for help, or manage your student profile without searching through the whole school site.</p>
     <div class="actions center">
-      <a class="btn gold" id="dashboardPrimaryStart" href="daily-lessons/">Start Today’s Lessons</a>
-      <a class="btn secondary" href="/Khaemenes_High.github.io/grades/grade-09/">Exit to Grade 09</a>
+      <a class="btn gold" href="daily-lessons/">Start Today’s Lessons</a>
+      <a class="btn secondary" href="#classes">My Classes</a>
     </div>
   </div>
 </header>
@@ -44,47 +42,44 @@
             <h2 class="profile-name" id="studentName">Student</h2>
             <div class="subline" id="studentMeta">Grade 09 · Local profile workspace</div>
             <div class="chip-row">
+              <span class="chip">Dashboard = home</span>
+              <span class="chip">Pinned classes stay visible</span>
               <span class="chip">Parent access remains active</span>
-              <span class="chip">Local storage only</span>
-              <span class="chip">No real password stored here</span>
             </div>
           </div>
         </div>
       </article>
 
-      <section class="card col12" id="pinnedClassCard" aria-labelledby="pinnedClassTitle" hidden>
-        <div class="focus-card">
-          <div>
-            <span class="chip">Pinned Class</span>
-            <strong id="pinnedClassTitle">Pre-Algebra</strong>
-            <span id="pinnedClassStatus">Pinned to this student profile.</span>
-          </div>
-          <div class="actions">
-            <a class="btn gold" id="continuePreAlgebra" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Continue Pre-Algebra</a>
-            <a class="btn secondary" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Course Home</a>
-            <button class="btn secondary" id="unpinPreAlgebra" type="button">Unpin</button>
-          </div>
-        </div>
+      <section class="card col12" id="classes" aria-labelledby="pinnedClassesTitle">
+        <h2 id="pinnedClassesTitle">My Pinned Classes</h2>
+        <p>Pin a class once. It stays here on this device so you do not have to locate it again tomorrow.</p>
+        <div class="lesson-grid" id="pinnedCoursesGrid" aria-live="polite"></div>
       </section>
 
       <section class="card col12" aria-labelledby="todayTitle">
         <div class="focus-card">
           <div>
             <strong id="todayTitle">Today’s first step</strong>
-            <span id="todayFocus">Open Daily Current Lessons. Start with Math or the course your parent assigned first.</span>
+            <span id="todayFocus">Open Daily Lessons and choose the first assigned class.</span>
           </div>
           <div class="actions">
-            <a class="btn gold" id="todayPrimaryLink" href="daily-lessons/">Go to Daily Lessons</a>
-            <a class="btn secondary" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html">Math Lesson 01</a>
+            <a class="btn gold" href="daily-lessons/">Open Daily Lessons</a>
+            <a class="btn secondary" href="/Khaemenes_High.github.io/mentor/?stage=high&amp;subject=general&amp;course=grade-09&amp;source=%2FKhaemenes_High.github.io%2Fgrades%2Fgrade-09%2Fstudent-profile%2F">Ask Mentor</a>
           </div>
         </div>
       </section>
 
+      <section class="card col12" aria-labelledby="manageClassesTitle">
+        <h2 id="manageClassesTitle">Manage Core Classes</h2>
+        <p>Use the star button to add or remove a class from My Pinned Classes. Opening a class does not change grades or mastery records.</p>
+        <div class="lesson-grid" id="courseManagerGrid"></div>
+      </section>
+
       <section class="card col12" aria-labelledby="doorsTitle">
-        <h2 id="doorsTitle">Student rooms</h2>
-        <p>These are the main doors a student should need every day. The Grade 09 campus is still available through Exit.</p>
+        <h2 id="doorsTitle">Student Rooms</h2>
+        <p>These are the other everyday rooms. The broader Grade 09 campus is available through Exit.</p>
         <div class="door-grid">
-          <a class="door" href="daily-lessons/"><span><b>Daily Current Lessons</b><span>Start the day, choose a class, save a note, and track your checklist.</span></span><small>Start Lessons →</small></a>
+          <a class="door" href="daily-lessons/"><span><b>Daily Lessons</b><span>See pinned classes, choose today’s work, save a note, and use the daily checklist.</span></span><small>Start Today →</small></a>
           <a class="door" href="grades/"><span><b>Grades</b><span>Open course records, reports, mastery status, and print/export options.</span></span><small>Open Grades →</small></a>
           <a class="door" href="games/"><span><b>Games</b><span>Open math practice, logic games, learning arcade links, and study breaks.</span></span><small>Open Games →</small></a>
           <a class="door" href="profile/"><span><b>My Profile</b><span>Edit interests, goals, portfolio links, strengths, supports, and journal notes.</span></span><small>Edit Profile →</small></a>
@@ -92,28 +87,27 @@
       </section>
 
       <section class="card col6">
-        <h2>Parent access rule</h2>
-        <p>Parent or guardian access should never be removed by a student profile setting. Any future protected password change must notify the parent and keep the parent recovery path active.</p>
+        <h2>Parent Access Rule</h2>
+        <p>Parent or guardian access remains active. Student settings do not remove the parent recovery path.</p>
         <div class="actions"><a class="btn secondary" href="settings/">Open Settings</a></div>
       </section>
       <section class="card col6">
-        <h2>Quick exits</h2>
-        <p>Use these when you need the broader campus instead of the student dashboard.</p>
-        <div class="actions"><a class="btn" href="/Khaemenes_High.github.io/grades/grade-09/#courses">Course Campus</a><a class="btn secondary" href="/Khaemenes_High.github.io/mentor/?stage=high&amp;subject=general&amp;source=%2FKhaemenes_High.github.io%2Fgrades%2Fgrade-09%2Fstudent-profile%2F">Ask Mentor</a><a class="btn secondary" href="/Khaemenes_High.github.io/">High School Home</a></div>
+        <h2>Need a Different Door?</h2>
+        <p>Use these only when you need the broader campus rather than your daily dashboard.</p>
+        <div class="actions"><a class="btn" href="/Khaemenes_High.github.io/grades/grade-09/#courses">Course Campus</a><a class="btn secondary" href="/Khaemenes_High.github.io/">High School Home</a></div>
       </section>
     </div>
   </section>
 </main>
-<footer class="footer"><strong>Khaemenes High · Grade 09</strong>Student dashboard · pinned classes · local-first · parent-aware</footer>
+<footer class="footer"><strong>Khaemenes High · Grade 09</strong>Student home · pinned classes · daily path · local-first · parent-aware</footer>
+<script src="student-course-registry.js"></script>
 <script>
 (function(){
-  const PIN_KEY='khaemenes-high-pinned-courses-v2';
-  const CONTINUE_KEY='khaemenes-grade09-last-open-v1';
-  const COURSE_ID='pre-algebra';
-  const COURSE_HOME='/Khaemenes_High.github.io/courses/mathematics/pre-algebra/';
+  "use strict";
+  const registry=window.KhaemenesGrade09Courses;
+  if(!registry)return;
   const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};
-  const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
-  const safeCourseUrl=value=>typeof value==='string'&&value.startsWith('/Khaemenes_High.github.io/courses/mathematics/pre-algebra/')?value:COURSE_HOME;
+  const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
   const p=read('khaemenes-high-profile-v1',null)||read('khaemenes-grade09-profile-v1',null)||{};
   const name=p.displayName||p.name||p.nickname||'Student';
@@ -123,44 +117,79 @@
   document.getElementById('avatar').textContent=initials;
   document.getElementById('studentMeta').textContent=`Grade 09${p.pathway?' · '+p.pathway:''} · Local profile workspace`;
 
-  function renderPinnedClass(){
-    const pins=read(PIN_KEY,[]);
-    const pinned=Array.isArray(pins)&&pins.includes(COURSE_ID);
-    const card=document.getElementById('pinnedClassCard');
-    const continueLink=document.getElementById('continuePreAlgebra');
-    const status=document.getElementById('pinnedClassStatus');
-    const primary=document.getElementById('dashboardPrimaryStart');
-    const todayLink=document.getElementById('todayPrimaryLink');
-    const todayFocus=document.getElementById('todayFocus');
-    if(!card)return;
-    card.hidden=!pinned;
-    if(!pinned){
-      primary.href='daily-lessons/';primary.textContent='Start Today’s Lessons';
-      todayLink.href='daily-lessons/';todayLink.textContent='Go to Daily Lessons';
-      if(note&&note.trim())todayFocus.textContent=note.trim();
-      else todayFocus.textContent='Open Daily Current Lessons. Start with Math or the course your parent assigned first.';
-      return;
-    }
-    const last=read(CONTINUE_KEY,null);
-    const lastIsCourse=last&&last.course===COURSE_ID;
-    const url=lastIsCourse?safeCourseUrl(last.url):COURSE_HOME;
-    const lessonTitle=lastIsCourse&&last.title?String(last.title):'Pre-Algebra course home';
-    continueLink.href=url;
-    continueLink.textContent=lastIsCourse?'Continue Current Lesson':'Open Pre-Algebra';
-    status.textContent=lastIsCourse?`Last opened: ${lessonTitle}`:'Pinned to this profile. Open the course to begin or continue.';
-    primary.href=url;primary.textContent='Continue Pre-Algebra';
-    todayLink.href=url;todayLink.textContent='Continue Pre-Algebra';
-    if(note&&note.trim())todayFocus.textContent=note.trim();
-    else todayFocus.textContent=lastIsCourse?`Continue Pre-Algebra: ${lessonTitle}`:'Pre-Algebra is pinned. Open the course and continue from the current unit.';
+  function bindLaunches(root=document){
+    root.querySelectorAll('[data-launch-course]').forEach(link=>{
+      link.addEventListener('click',()=>{
+        const course=registry.getCourse(link.dataset.launchCourse);
+        if(course)registry.recordLaunch(course.id,link.href.replace(location.origin,''),course.title);
+      });
+    });
   }
 
-  document.getElementById('unpinPreAlgebra').addEventListener('click',()=>{
-    const pins=read(PIN_KEY,[]);
-    const next=Array.isArray(pins)?pins.filter(id=>id!==COURSE_ID):[];
-    if(write(PIN_KEY,next))renderPinnedClass();
+  function renderPinned(){
+    const host=document.getElementById('pinnedCoursesGrid');
+    const pinned=registry.pinnedCourses();
+    if(!pinned.length){
+      host.innerHTML='<div class="notice" style="grid-column:1/-1"><strong>No classes pinned yet.</strong> Use Manage Core Classes below and press ☆ Pin Class. Your pinned classes will stay at the top of this dashboard.</div>';
+      return;
+    }
+    host.innerHTML=pinned.map(course=>{
+      const current=registry.continueFor(course.id);
+      const continueText=course.id==='pre-algebra'&&current?.hasSpecificLocation?'Continue Current Lesson':`Open ${course.short}`;
+      const detail=course.id==='pre-algebra'&&current?.hasSpecificLocation?`Last opened: ${escapeHTML(current.label)}`:`${escapeHTML(course.subject)} · pinned to your dashboard`;
+      return `<article class="lesson-card ${course.className}">
+        <div class="chip-row"><span class="chip">★ Pinned</span><span class="chip">${escapeHTML(course.subject)}</span></div>
+        <h3>${escapeHTML(course.title)}</h3>
+        <p>${detail}</p>
+        <div class="actions">
+          <a class="btn" data-launch-course="${course.id}" href="${escapeHTML(current?.url||course.home)}">${escapeHTML(continueText)}</a>
+          <a class="btn secondary" href="${escapeHTML(registry.mentorFor(course.id))}">Ask Mentor</a>
+          <button class="btn secondary" type="button" data-unpin-course="${course.id}">Unpin</button>
+        </div>
+      </article>`;
+    }).join('');
+    host.querySelectorAll('[data-unpin-course]').forEach(button=>button.addEventListener('click',()=>{
+      registry.setPinned(button.dataset.unpinCourse,false);
+      renderAll();
+    }));
+    bindLaunches(host);
+  }
+
+  function renderManager(){
+    const host=document.getElementById('courseManagerGrid');
+    host.innerHTML=registry.courses.map(course=>{
+      const pinned=registry.isPinned(course.id);
+      return `<article class="lesson-card ${course.className}">
+        <div class="chip-row"><span class="chip">${escapeHTML(course.subject)}</span><span class="chip">${pinned?'Pinned':'Available'}</span></div>
+        <h3>${escapeHTML(course.title)}</h3>
+        <p>${pinned?'This class is already at the top of your dashboard.':'Pin this class to make it an everyday one-click door.'}</p>
+        <div class="actions">
+          <button class="btn ${pinned?'secondary':''}" type="button" data-toggle-course="${course.id}" aria-pressed="${pinned}">${pinned?'★ Pinned':'☆ Pin Class'}</button>
+          <a class="btn secondary" data-launch-course="${course.id}" href="${escapeHTML(course.home)}">Course Home</a>
+        </div>
+      </article>`;
+    }).join('');
+    host.querySelectorAll('[data-toggle-course]').forEach(button=>button.addEventListener('click',()=>{
+      registry.togglePinned(button.dataset.toggleCourse);
+      renderAll();
+    }));
+    bindLaunches(host);
+  }
+
+  function renderToday(){
+    const focus=document.getElementById('todayFocus');
+    if(note&&note.trim()){focus.textContent=note.trim();return}
+    const pinned=registry.pinnedCourses();
+    focus.textContent=pinned.length
+      ? `${pinned.length} pinned ${pinned.length===1?'class is':'classes are'} ready. Open Daily Lessons and choose today’s first class.`
+      : 'Open Daily Lessons and choose the first assigned class. You can pin your regular classes below.';
+  }
+
+  function renderAll(){renderPinned();renderManager();renderToday()}
+  window.addEventListener('storage',event=>{
+    if(event.key===registry.PIN_KEY||event.key===registry.PREALGEBRA_CONTINUE_KEY||event.key===registry.LAST_LAUNCH_KEY)renderAll();
   });
-  window.addEventListener('storage',event=>{if(event.key===PIN_KEY||event.key===CONTINUE_KEY)renderPinnedClass()});
-  renderPinnedClass();
+  renderAll();
 })();
 </script>
 </body>
