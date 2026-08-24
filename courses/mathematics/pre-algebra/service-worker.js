@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v3-assessment-depth`;
+const CACHE_NAME=`${CACHE_PREFIX}v4-course-navigator`;
 const CORE_FILES=[
   "./",
   "./index.html",
@@ -13,10 +13,26 @@ const CORE_FILES=[
   "./assets/prealgebra-archaemenes-upgrade.js",
   "./assets/prealgebra-archaemenes-upgrade-core.js",
   "./assets/prealgebra-assessment-depth-v2.js",
+  "./assets/prealgebra-assessment-depth-v2-core.js",
+  "./assets/prealgebra-course-gates-v1.js",
+  "./assets/prealgebra-course-navigator-v1.js",
   "./assets/assessment-depth/prealgebra-weekly-quizzes-v2-a.js",
   "./assets/assessment-depth/prealgebra-weekly-quizzes-v2-b.js",
   "./assets/assessment-depth/prealgebra-weekly-quizzes-v2-c.js",
   "./assets/assessment-depth/prealgebra-weekly-quizzes-v2-d.js",
+  "./units/unit-01/unit-map.json",
+  "./units/unit-02/unit-map.json",
+  "./units/unit-03/unit-map.json",
+  "./units/unit-04/unit-map.json",
+  "./units/unit-05/unit-map.json",
+  "./units/unit-06/unit-map.json",
+  "./units/unit-07/unit-map.json",
+  "./units/unit-08/unit-map.json",
+  "./units/unit-09/unit-map.json",
+  "./units/unit-10/unit-map.json",
+  "./units/unit-11/unit-map.json",
+  "./units/unit-12/unit-map.json",
+  "./units/unit-13/unit-map.json",
   "./assessments/",
   "./assessments/index.html",
   "./assessments/assessment-map.json",
