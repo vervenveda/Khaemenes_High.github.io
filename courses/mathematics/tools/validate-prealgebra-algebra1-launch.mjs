@@ -55,11 +55,12 @@ ok(a1Map.calendar?.midterm_after_week === 18, "Algebra I Midterm remains after W
 ok(a1Map.calendar?.final_week === 36, "Algebra I Final remains Week 36");
 
 const landing = read(path.join(a1, "index.html"));
+const progression = read(path.join(a1, "assets/course-progression-gates.js"));
 ok(landing.includes('class="network-ticker"'), "Algebra I landing carries the Verve N Veda ticker");
 ok(landing.includes('class="portal-menu"'), "Algebra I landing carries the dropdown course menu");
 ok(landing.includes('id="lessonLibrary"'), "Algebra I landing carries the lesson drawer directory");
 ok(landing.includes("87 Lesson Directory"), "Algebra I menu exposes the 87-lesson directory");
-ok(landing.includes("Capstone Planning Runway") && landing.includes("Weeks 33–35"), "Algebra I landing preserves capstone planning language");
+ok(landing.includes('assets/course-progression-gates.js') && progression.includes("Capstone Planning Runway · Weeks 33–35") && progression.includes("intentionally non-graded") && progression.includes("awards no lesson, weekly, unit, capstone, or Final mastery credit"), "Algebra I landing renders the non-graded Weeks 33–35 capstone planning runway");
 const authorityPos = landing.indexOf('assets/mastery-authority-v1.js');
 const progressionPos = landing.indexOf('assets/course-progression-gates.js');
 ok(authorityPos >= 0 && progressionPos > authorityPos, "Algebra I landing loads mastery authority before progression gates");
@@ -125,7 +126,7 @@ for (let unit = 1; unit <= 13; unit++) {
   ok(sw.includes(`./units/unit-${id}/unit-map.json`), `Algebra I offline release caches Unit ${id} lesson map`);
 }
 ok(sw.includes("./diagnostic/index.html") && sw.includes("./readiness/index.html"), "Algebra I offline release caches launch entry surfaces");
-ok(sw.includes("v6-applied-labs-landing-v1"), "Algebra I offline cache version reflects landing upgrade");
+ok(sw.includes("v7-responsive-deep-lessons") && sw.includes("focused-assessment-v1.js") && sw.includes("responsive-layout-v1.css"), "Algebra I offline cache version reflects responsive/deep/focused v7 release");
 
 if (failures) {
   console.error(`\nLAUNCH VALIDATION FAILED: ${failures} problem(s).`);
