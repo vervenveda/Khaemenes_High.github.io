@@ -4,10 +4,12 @@ on:
   pull_request:
     paths:
       - "courses/mathematics/pre-algebra/**"
+      - "grades/grade-09/student-profile/**"
       - ".github/workflows/prealgebra-component-validation.yml"
   push:
     paths:
       - "courses/mathematics/pre-algebra/**"
+      - "grades/grade-09/student-profile/**"
       - ".github/workflows/prealgebra-component-validation.yml"
 
 permissions:
@@ -25,3 +27,5 @@ jobs:
         run: node courses/mathematics/pre-algebra/tools/validate-assessment-depth.mjs
       - name: Validate Academy mastery gates
         run: node courses/mathematics/pre-algebra/tools/validate-mastery-gates.mjs
+      - name: Validate student navigation, theme, pin, and continue paths
+        run: node courses/mathematics/pre-algebra/tools/validate-student-navigation.mjs
