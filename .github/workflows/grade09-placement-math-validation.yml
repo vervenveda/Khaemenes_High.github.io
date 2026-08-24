@@ -6,6 +6,7 @@ on:
     paths:
       - grades/grade-09/student-profile/**
       - courses/mathematics/pre-algebra/assets/prealgebra-student-navigation.js
+      - courses/mathematics/pre-algebra/tools/component-manifest.json
       - courses/mathematics/algebra-1/units/**/unit-map.json
       - scripts/validate_grade09_placement_math_dashboard.mjs
       - .github/workflows/grade09-placement-math-validation.yml
@@ -16,6 +17,7 @@ on:
     paths:
       - grades/grade-09/student-profile/**
       - courses/mathematics/pre-algebra/assets/prealgebra-student-navigation.js
+      - courses/mathematics/pre-algebra/tools/component-manifest.json
       - courses/mathematics/algebra-1/units/**/unit-map.json
       - scripts/validate_grade09_placement_math_dashboard.mjs
       - .github/workflows/grade09-placement-math-validation.yml
@@ -29,6 +31,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -44,4 +48,10 @@ jobs:
           node --check courses/mathematics/pre-algebra/assets/prealgebra-student-navigation.js
 
       - name: Check whitespace
-        run: git diff --check HEAD^
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git diff --check "${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }}"
+          else
+            git diff --check HEAD^..HEAD
+          fi
