@@ -70,6 +70,7 @@ function togglePin(){
     return;
   }
   if(!wasPinned)writeJSON(MATH_PATHWAY_KEY,COURSE_ID);
+  if(!wasPinned)writeJSON(MATH_PATHWAY_KEY,COURSE_ID);
   updatePinButton();
   const status=document.getElementById("preAlgebraNavStatus");
   if(status){

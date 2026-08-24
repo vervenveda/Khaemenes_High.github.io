@@ -157,12 +157,11 @@ function hasPreAlgebraCourseEvidence(){
 }
 function explicitMathPathway(){const value=readJSON(MATH_PATHWAY_KEY,null);return MATH_ID_SET.has(value)?value:null}
 function mathPathway(pinSource=rawPins()){
-  if(hasAlgebraCourseEvidence())return "algebra-1";
   const explicit=explicitMathPathway();
-  if(explicit==="algebra-1")return explicit;
-  if(hasDiagnosticEvidence())return "algebra-1";
-  if(explicit==="pre-algebra")return explicit;
+  if(explicit)return explicit;
+  if(hasAlgebraCourseEvidence())return "algebra-1";
   if(hasPreAlgebraCourseEvidence())return "pre-algebra";
+  if(hasDiagnosticEvidence())return "algebra-1";
   const mathPins=pinSource.filter(id=>MATH_ID_SET.has(id));
   return mathPins.length===1?mathPins[0]:null;
 }
