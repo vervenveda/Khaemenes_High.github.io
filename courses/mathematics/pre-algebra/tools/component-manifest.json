@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
   "component_set": "KH-MATH-PA",
-  "release": "2026.08.24-student-navigation-v3",
+  "release": "2026.08.24-placement-aware-navigation-v4",
   "hash_format": "git-blob-sha1",
   "components": [
     {"path":"service-worker.js","sha":"36b7674c26c0d9c22c047ac7ff1a4393c2325721"},
-    {"path":"assets/prealgebra-student-navigation.js","sha":"6e9ec0b336f4a80154c59a2996c59f2633c61751"},
+    {"path":"assets/prealgebra-student-navigation.js","sha":"d99cc934087bb8a737fa5f3593ed7c14e139016f"},
     {"path":"assets/prealgebra-archaemenes-upgrade.js","sha":"db9ae5718198d38a7fae9e8b830759f8a6539a65"},
     {"path":"assets/prealgebra-archaemenes-upgrade-core.js","sha":"567269eef4fc218a6a70b644c7c15fd41ebd51f2"},
     {"path":"assets/prealgebra-assessment-depth-v2.js","sha":"d0401c5ed41585d6233b6ded644f2bd6af974f1e"},

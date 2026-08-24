@@ -3,7 +3,9 @@
 
 const THEME_KEY="khaemenes-theme";
 const PIN_KEY="khaemenes-high-pinned-courses-v2";
+const MATH_PATHWAY_KEY="khaemenes-high-math-pathway-v1";
 const COURSE_ID="pre-algebra";
+const OTHER_MATH_ID="algebra-1";
 const CONTINUE_KEY="khaemenes-grade09-last-open-v1";
 const COURSE_HOME="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/";
 const STUDENT_HOME="/Khaemenes_High.github.io/grades/grade-09/student-profile/";
@@ -61,12 +63,14 @@ function updatePinButton(){
 function togglePin(){
   const pins=readPins();
   const wasPinned=pins.includes(COURSE_ID);
-  const next=wasPinned?pins.filter(id=>id!==COURSE_ID):[COURSE_ID,...pins.filter(id=>id!==COURSE_ID)];
+  const next=wasPinned?pins.filter(id=>id!==COURSE_ID):[COURSE_ID,...pins.filter(id=>id!==COURSE_ID&&id!==OTHER_MATH_ID)];
   if(!writeJSON(PIN_KEY,next)){
     const status=document.getElementById("preAlgebraNavStatus");
     if(status)status.textContent="This browser could not save the profile pin.";
     return;
   }
+  if(!wasPinned)writeJSON(MATH_PATHWAY_KEY,COURSE_ID);
+  if(!wasPinned)writeJSON(MATH_PATHWAY_KEY,COURSE_ID);
   updatePinButton();
   const status=document.getElementById("preAlgebraNavStatus");
   if(status){

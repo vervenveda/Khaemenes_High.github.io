@@ -70,8 +70,8 @@
       </section>
 
       <section class="card col12" aria-labelledby="manageClassesTitle">
-        <h2 id="manageClassesTitle">Manage Core Classes</h2>
-        <p>Use the star button to add or remove a class from My Pinned Classes. Opening a class does not change grades or mastery records.</p>
+        <h2 id="manageClassesTitle">Manage Classes &amp; Mathematics Pathway</h2>
+        <p>Pin regular classes for one-click access. Mathematics is placement-based: only one mathematics course is treated as the active pinned pathway at a time. Changing the math pin changes the doorway, not grades or mastery evidence.</p>
         <div class="lesson-grid" id="courseManagerGrid"></div>
       </section>
 
@@ -126,70 +126,82 @@
     });
   }
 
-  function renderPinned(){
+  async function renderPinned(){
     const host=document.getElementById('pinnedCoursesGrid');
     const pinned=registry.pinnedCourses();
     if(!pinned.length){
-      host.innerHTML='<div class="notice" style="grid-column:1/-1"><strong>No classes pinned yet.</strong> Use Manage Core Classes below and press ☆ Pin Class. Your pinned classes will stay at the top of this dashboard.</div>';
+      host.innerHTML='<div class="notice" style="grid-column:1/-1"><strong>No classes pinned yet.</strong> Use Manage Classes & Mathematics Pathway below and press ☆ Pin Class. Your pinned classes will stay at the top of this dashboard.</div>';
       return;
     }
-    host.innerHTML=pinned.map(course=>{
-      const current=registry.continueFor(course.id);
-      const continueText=course.id==='pre-algebra'&&current?.hasSpecificLocation?'Continue Current Lesson':`Open ${course.short}`;
-      const detail=course.id==='pre-algebra'&&current?.hasSpecificLocation?`Last opened: ${escapeHTML(current.label)}`:`${escapeHTML(course.subject)} · pinned to your dashboard`;
+    const cards=await Promise.all(pinned.map(async course=>{
+      const current=await registry.resolveContinueFor(course.id);
       return `<article class="lesson-card ${course.className}">
-        <div class="chip-row"><span class="chip">★ Pinned</span><span class="chip">${escapeHTML(course.subject)}</span></div>
+        <div class="chip-row"><span class="chip">★ Pinned</span><span class="chip">${escapeHTML(course.subject)}</span>${registry.isMathCourse(course.id)?'<span class="chip">Current math path</span>':''}</div>
         <h3>${escapeHTML(course.title)}</h3>
-        <p>${detail}</p>
+        <p>${escapeHTML(current?.detail||`${course.subject} · pinned to your dashboard`)}</p>
         <div class="actions">
-          <a class="btn" data-launch-course="${course.id}" href="${escapeHTML(current?.url||course.home)}">${escapeHTML(continueText)}</a>
+          <a class="btn" data-launch-course="${course.id}" href="${escapeHTML(current?.url||course.home)}">${escapeHTML(current?.actionLabel||`Open ${course.short}`)}</a>
           <a class="btn secondary" href="${escapeHTML(registry.mentorFor(course.id))}">Ask Mentor</a>
           <button class="btn secondary" type="button" data-unpin-course="${course.id}">Unpin</button>
         </div>
       </article>`;
-    }).join('');
+    }));
+    host.innerHTML=cards.join('');
     host.querySelectorAll('[data-unpin-course]').forEach(button=>button.addEventListener('click',()=>{
       registry.setPinned(button.dataset.unpinCourse,false);
-      renderAll();
+      void renderAll();
     }));
     bindLaunches(host);
   }
 
-  function renderManager(){
+  async function renderManager(){
     const host=document.getElementById('courseManagerGrid');
-    host.innerHTML=registry.courses.map(course=>{
+    const activeMath=registry.mathPathway();
+    const cards=await Promise.all(registry.courses.map(async course=>{
       const pinned=registry.isPinned(course.id);
+      const current=await registry.resolveContinueFor(course.id);
+      const mathChip=registry.isMathCourse(course.id)?`<span class="chip">${activeMath===course.id?'Current math path':'Math option'}</span>`:'';
+      const description=registry.isMathCourse(course.id)
+        ? (activeMath===course.id?'This is the active mathematics pathway for this browser profile.':'Choose this only when readiness/mastery evidence or family/teacher placement makes it the learner’s current mathematics course.')
+        : (pinned?'This class is already at the top of your dashboard.':'Pin this class to make it an everyday one-click door.');
       return `<article class="lesson-card ${course.className}">
-        <div class="chip-row"><span class="chip">${escapeHTML(course.subject)}</span><span class="chip">${pinned?'Pinned':'Available'}</span></div>
+        <div class="chip-row"><span class="chip">${escapeHTML(course.subject)}</span><span class="chip">${pinned?'Pinned':'Available'}</span>${mathChip}</div>
         <h3>${escapeHTML(course.title)}</h3>
-        <p>${pinned?'This class is already at the top of your dashboard.':'Pin this class to make it an everyday one-click door.'}</p>
+        <p>${escapeHTML(description)}</p>
         <div class="actions">
           <button class="btn ${pinned?'secondary':''}" type="button" data-toggle-course="${course.id}" aria-pressed="${pinned}">${pinned?'★ Pinned':'☆ Pin Class'}</button>
-          <a class="btn secondary" data-launch-course="${course.id}" href="${escapeHTML(course.home)}">Course Home</a>
+          <a class="btn secondary" data-launch-course="${course.id}" href="${escapeHTML(current?.url||course.home)}">${escapeHTML(current?.actionLabel||'Course Home')}</a>
         </div>
       </article>`;
-    }).join('');
+    }));
+    host.innerHTML=cards.join('');
     host.querySelectorAll('[data-toggle-course]').forEach(button=>button.addEventListener('click',()=>{
       registry.togglePinned(button.dataset.toggleCourse);
-      renderAll();
+      void renderAll();
     }));
     bindLaunches(host);
   }
 
-  function renderToday(){
+  async function renderToday(){
     const focus=document.getElementById('todayFocus');
     if(note&&note.trim()){focus.textContent=note.trim();return}
     const pinned=registry.pinnedCourses();
+    const mathId=registry.mathPathway();
+    if(mathId){
+      const math=registry.getCourse(mathId),next=await registry.resolveContinueFor(mathId);
+      focus.textContent=`Mathematics: ${math?.title||'current pathway'}. ${next?.detail||'Open Daily Lessons to continue.'}`;
+      return;
+    }
     focus.textContent=pinned.length
       ? `${pinned.length} pinned ${pinned.length===1?'class is':'classes are'} ready. Open Daily Lessons and choose today’s first class.`
-      : 'Open Daily Lessons and choose the first assigned class. You can pin your regular classes below.';
+      : 'Open Daily Lessons and choose the first assigned class. You can pin regular classes and choose the current mathematics pathway below.';
   }
 
-  function renderAll(){renderPinned();renderManager();renderToday()}
+  async function renderAll(){await Promise.all([renderPinned(),renderManager(),renderToday()])}
   window.addEventListener('storage',event=>{
-    if(event.key===registry.PIN_KEY||event.key===registry.PREALGEBRA_CONTINUE_KEY||event.key===registry.LAST_LAUNCH_KEY)renderAll();
+    if(registry.shouldRefreshForStorageKey(event.key))void renderAll();
   });
-  renderAll();
+  void renderAll();
 })();
 </script>
 </body>
