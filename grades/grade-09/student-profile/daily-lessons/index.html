@@ -75,7 +75,7 @@
       <section class="card col12">
         <h2>Today’s Note</h2>
         <p>This note stays on this device and also appears on the Student Dashboard as today’s focus.</p>
-        <div class="field"><label for="dailyNote">What needs attention today?</label><textarea id="dailyNote" placeholder="Example: Finish Pre-Algebra, then complete English reading."></textarea></div>
+        <div class="field"><label for="dailyNote">What needs attention today?</label><textarea id="dailyNote" placeholder="Example: Complete today’s mathematics step, then finish English reading."></textarea></div>
         <div class="actions"><button class="btn" id="saveNote">Save Daily Note</button><button class="btn secondary" id="clearNote">Clear</button></div>
         <p class="notice good" id="status" hidden></p>
       </section>
@@ -119,7 +119,7 @@
     });
   }
 
-  function renderPinned(){
+  async function renderPinned(){
     const host=document.getElementById('pinnedDailyGrid');
     const pinned=registry.pinnedCourses();
     const primary=document.getElementById('dailyPrimaryStart');
@@ -127,59 +127,58 @@
       host.innerHTML='<div class="notice" style="grid-column:1/-1"><strong>No classes pinned yet.</strong> Use Class Doors below and press ☆ Pin Class. Once pinned, your regular classes will appear here every day.</div>';
       primary.href='#classDoorsTitle';
       primary.textContent='Choose First Class';
+      delete primary.dataset.launchCourse;
       return;
     }
-    host.innerHTML=pinned.map(course=>{
-      const current=registry.continueFor(course.id);
-      const continueText=course.id==='pre-algebra'&&current?.hasSpecificLocation?'Continue Current Lesson':`Open ${course.short}`;
-      const detail=course.id==='pre-algebra'&&current?.hasSpecificLocation?`Last opened: ${escapeHTML(current.label)}`:`${escapeHTML(course.subject)} · ready for today`;
-      return `<article class="lesson-card ${course.className}">
-        <div class="chip-row"><span class="chip">★ Pinned</span><span class="chip">${escapeHTML(course.subject)}</span></div>
+    const resolved=await Promise.all(pinned.map(async course=>({course,current:await registry.resolveContinueFor(course.id)})));
+    host.innerHTML=resolved.map(({course,current})=>`<article class="lesson-card ${course.className}">
+        <div class="chip-row"><span class="chip">★ Pinned</span><span class="chip">${escapeHTML(course.subject)}</span>${registry.isMathCourse(course.id)?'<span class="chip">Current math path</span>':''}</div>
         <h3>${escapeHTML(course.title)}</h3>
-        <p>${detail}</p>
+        <p>${escapeHTML(current?.detail||`${course.subject} · ready for today`)}</p>
         <div class="actions">
-          <a class="btn" data-launch-course="${course.id}" href="${escapeHTML(current?.url||course.home)}">${escapeHTML(continueText)}</a>
+          <a class="btn" data-launch-course="${course.id}" href="${escapeHTML(current?.url||course.home)}">${escapeHTML(current?.actionLabel||`Open ${course.short}`)}</a>
           <a class="btn secondary" href="${escapeHTML(registry.mentorFor(course.id))}">Ask Mentor</a>
         </div>
-      </article>`;
-    }).join('');
-    const first=pinned[0];
-    const firstCurrent=registry.continueFor(first.id);
-    primary.href=firstCurrent?.url||first.home;
-    primary.dataset.launchCourse=first.id;
-    primary.textContent=`Open ${first.short}`;
+      </article>`).join('');
+    const first=resolved[0];
+    primary.href=first.current?.url||first.course.home;
+    primary.dataset.launchCourse=first.course.id;
+    primary.textContent=first.current?.actionLabel||`Open ${first.course.short}`;
     bindLaunches(host);
     bindLaunches(document.querySelector('.hero'));
   }
 
-  function renderClassDoors(){
+  async function renderClassDoors(){
     const host=document.getElementById('dailyClassGrid');
-    host.innerHTML=registry.courses.map(course=>{
+    const activeMath=registry.mathPathway();
+    const resolved=await Promise.all(registry.courses.map(async course=>({course,current:await registry.resolveContinueFor(course.id)})));
+    host.innerHTML=resolved.map(({course,current})=>{
       const pinned=registry.isPinned(course.id);
-      const current=registry.continueFor(course.id);
-      const openText=course.id==='pre-algebra'&&current?.hasSpecificLocation?'Continue Current Lesson':`Open ${course.short}`;
+      const mathChip=registry.isMathCourse(course.id)?`<span class="chip">${activeMath===course.id?'Current math path':'Math option'}</span>`:'';
+      const description=registry.isMathCourse(course.id)
+        ? (activeMath===course.id?(current?.detail||'Current mathematics pathway.'):'Choose this pathway only when placement/readiness evidence makes it the learner’s current mathematics course.')
+        : (pinned?'Pinned to Student Home and Daily Lessons.':'Pin this class if it is part of the regular daily schedule.');
       return `<article class="lesson-card ${course.className}">
-        <div class="chip-row"><span class="chip">${escapeHTML(course.subject)}</span><span class="chip">${pinned?'Pinned':'Available'}</span></div>
+        <div class="chip-row"><span class="chip">${escapeHTML(course.subject)}</span><span class="chip">${pinned?'Pinned':'Available'}</span>${mathChip}</div>
         <h3>${escapeHTML(course.title)}</h3>
-        <p>${pinned?'Pinned to Student Home and Daily Lessons.':'Pin this class if it is part of the regular daily schedule.'}</p>
+        <p>${escapeHTML(description)}</p>
         <div class="actions">
-          <a class="btn" data-launch-course="${course.id}" href="${escapeHTML(current?.url||course.home)}">${escapeHTML(openText)}</a>
+          <a class="btn" data-launch-course="${course.id}" href="${escapeHTML(current?.url||course.home)}">${escapeHTML(current?.actionLabel||`Open ${course.short}`)}</a>
           <button class="btn secondary" type="button" data-toggle-course="${course.id}" aria-pressed="${pinned}">${pinned?'★ Pinned':'☆ Pin Class'}</button>
         </div>
       </article>`;
     }).join('');
     host.querySelectorAll('[data-toggle-course]').forEach(button=>button.addEventListener('click',()=>{
       registry.togglePinned(button.dataset.toggleCourse);
-      renderCourses();
+      void renderCourses();
     }));
     bindLaunches(host);
   }
 
-  function renderCourses(){
+  async function renderCourses(){
     const primary=document.getElementById('dailyPrimaryStart');
     delete primary.dataset.launchCourse;
-    renderPinned();
-    renderClassDoors();
+    await Promise.all([renderPinned(),renderClassDoors()]);
   }
 
   document.querySelectorAll('[data-check]').forEach(box=>{
@@ -206,9 +205,9 @@
     s.hidden=false;s.textContent='Daily note cleared.';
   };
   window.addEventListener('storage',event=>{
-    if(event.key===registry.PIN_KEY||event.key===registry.PREALGEBRA_CONTINUE_KEY||event.key===registry.LAST_LAUNCH_KEY)renderCourses();
+    if(registry.shouldRefreshForStorageKey(event.key))void renderCourses();
   });
-  renderCourses();
+  void renderCourses();
 })();
 </script>
 </body>
