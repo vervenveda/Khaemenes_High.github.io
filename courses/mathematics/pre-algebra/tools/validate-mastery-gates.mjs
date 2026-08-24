@@ -52,7 +52,7 @@ must(/unitIsMastered/.test(u1DashCore)&&/data-mastery-gate/.test(u1DashCore),'Un
 for(let n=2;n<=13;n++){
   const id=String(n).padStart(2,'0'),le=read(`units/unit-${id}/assets/lesson-engine.js`),leCore=read(`units/unit-${id}/assets/lesson-engine-core.js`),dash=read(`units/unit-${id}/assets/unit-dashboard.js`),dashCore=read(`units/unit-${id}/assets/unit-dashboard-core.js`);
   must(/lesson-engine-core\.js/.test(le)&&/unitMastered\(unitNo-1\)/.test(le),`Unit ${n}: direct-entry previous-unit lesson guard missing`);
-  must(/lessonBest/.test(le)&&/idx>0/.test(le),`Unit ${n}: direct-entry prior-lesson guard missing`);
+  must(/lessonBest/.test(le)&&/(?:idx|i)>0/.test(le)&&/prior/.test(le)&&/requires at least 80% mastery before this lesson begins/.test(le),`Unit ${n}: direct-entry prior-lesson guard missing`);
   must(!/percent\s*>=\s*70|>=\s*70/.test(leCore),`Unit ${n}: legacy 70% threshold found in lesson core`);
   must(/MIN=Math\.max\(80/.test(leCore),`Unit ${n}: hardened 80% lesson core missing`);
   must(/lessonBestScores/.test(leCore)&&/lessonAttempts/.test(leCore),`Unit ${n}: best-score attempt history missing`);
