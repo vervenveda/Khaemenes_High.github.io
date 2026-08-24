@@ -339,11 +339,44 @@ th{
   .framework-list{text-align:left}
 }
 
+/* ==========================================================
+   RESPONSIVE RESCUE PATCH · 2026-08-24
+   Keeps lesson text, problems, tables, formulas, cards, and
+   action buttons inside their boxes on phones/tablets/laptops.
+   ========================================================== */
+*,*::before,*::after{box-sizing:border-box}
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+img,svg,video,canvas{max-width:100%;height:auto}
+main,section,article,aside,header,footer,nav,.wrap,.shell,.container,.grid,.course-grid,.unit-grid,.lesson-grid,.card,.pathway,.practice-card,.unit-card,.course-main,.course-side,.assignment-page,.test-page,.answer-key-page,.resource-page,.lesson-page,.record-page,.question,.problem,.resource-block,.answer-block,.rubric-block,.instructions,.notice{min-width:0;max-width:100%;overflow-wrap:anywhere;word-break:normal}
+.lesson-page *,.assignment-page *,.test-page *,.answer-key-page *,.resource-page *,.record-page *{max-width:100%}
+.lesson-page p,.assignment-page p,.test-page p,.resource-page p,.record-page p,.question,.problem,li,dd,blockquote{overflow-wrap:anywhere;word-break:normal}
+button,a,.btn,.nav-button,.theme-button,.unit-actions a,.unit-actions button,.course-actions a,.course-actions button,input,select,textarea{max-width:100%;min-width:0}
+pre,code,kbd,samp{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+table{display:block;width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+math,mi,mn,mo,msup,mfrac{max-width:100%;overflow-wrap:anywhere}
+
+@media(max-width:900px){
+  .wrap,.shell,.container{width:min(calc(100% - 24px),var(--max));max-width:100%}
+  .course-main,.course-side,.course-grid,.unit-grid,.lesson-grid,.grid2,.grid3,.grid4{grid-template-columns:1fr!important}
+  .assignment-page,.test-page,.answer-key-page,.resource-page,.lesson-page,.record-page{width:min(100% - 1.25rem,980px);padding:clamp(1.1rem,4vw,2rem);border-radius:14px}
+  .question,.problem,.resource-block,.answer-block,.rubric-block,.instructions{padding:.9rem;border-radius:7px}
+}
+
+@media(max-width:520px){
+  body{min-width:0;font-size:15.5px;line-height:1.62}
+  .wrap,.shell,.container{width:min(calc(100% - 18px),var(--max))}
+  .assignment-page,.test-page,.answer-key-page,.resource-page,.lesson-page,.record-page{width:min(100% - .75rem,980px);padding:1rem;border-radius:12px}
+  .assignment-page h1,.test-page h1,.answer-key-page h1,.resource-page h1,.lesson-page h1,.record-page h1{font-size:clamp(1.8rem,12vw,2.55rem)}
+  .assignment-page h2,.test-page h2,.answer-key-page h2,.resource-page h2,.lesson-page h2,.record-page h2{font-size:clamp(1.25rem,7vw,1.7rem)}
+  .btn,.unit-actions a,.unit-actions button,.course-actions a,.course-actions button{width:100%}
+}
+
 @media print{
   body{
     color:#111;
     background:#fff;
     text-align:left;
+    overflow:visible;
   }
 
   .site-header,
@@ -365,6 +398,7 @@ th{
     background:#fff;
     border:1px solid #999;
     box-shadow:none;
+    overflow:visible;
   }
 
   p,li{color:#222}
