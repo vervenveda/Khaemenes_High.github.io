@@ -46,6 +46,10 @@ window.KHAEMENES_MATH_READINESS_BANK = [
 
   {id:"ci1",tier:6,domain:"composition-inverse",prompt:"If f(x)=x+3 and g(x)=2x, then f(g(2))=...",choices:["7","10","8","5"],answer:0},
   {id:"ci2",tier:6,domain:"composition-inverse",prompt:"If f(x)=x-5, then f⁻¹(x)=...",choices:["x+5","x-5","5-x","1/(x-5)"],answer:0},
+  {id:"ci3",tier:6,domain:"composition-inverse",prompt:"If f(x)=2x+1, which input gives f(x)=7?",choices:["3","4","6","14"],answer:0},
+  {id:"ci4",tier:6,domain:"composition-inverse",prompt:"For f(x)=x² restricted to x≥0, f⁻¹(x) is...",choices:["√x","x²","-√x","1/x²"],answer:0},
   {id:"lr1",tier:6,domain:"limit-readiness",prompt:"As x approaches 2, the values of x+3 approach...",choices:["5","3","2","infinity"],answer:0},
-  {id:"lr2",tier:6,domain:"limit-readiness",prompt:"Which idea best describes a limit?",choices:["the value a function approaches","the largest x-value","the slope only","an equation with no variables"],answer:0}
+  {id:"lr2",tier:6,domain:"limit-readiness",prompt:"Which idea best describes a limit?",choices:["the value a function approaches","the largest x-value","the slope only","an equation with no variables"],answer:0},
+  {id:"lr3",tier:6,domain:"limit-readiness",prompt:"For a continuous polynomial f, lim x→3 f(x) is found by...",choices:["evaluating f(3)","dividing by 3","setting f(x)=0","using only the x-intercept"],answer:0},
+  {id:"lr4",tier:6,domain:"limit-readiness",prompt:"As two points on a smooth curve move closer together, the slope of their secant line can approach the slope of the...",choices:["tangent line","x-axis","vertical axis","constant term"],answer:0}
 ];
