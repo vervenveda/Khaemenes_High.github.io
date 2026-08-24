@@ -133,6 +133,7 @@ function ensureHeaderControls(){
 }
 
 function recordContinue(){
+  if(document.getElementById("academyDirectGate")||document.getElementById("academyUnit1Gate"))return;
   const lesson=window.LESSON_DATA||{};
   if(!lesson.id&&!lesson.title)return;
   const unitMatch=location.pathname.match(/\/units\/(unit-\d+)\//i);
@@ -164,8 +165,8 @@ function addStyles(){
 function init(){
   addStyles();
   ensureHeaderControls();
-  recordContinue();
-  window.addEventListener("load",recordContinue,{once:true});
+  if(document.readyState==="complete")setTimeout(recordContinue,0);
+  else window.addEventListener("load",recordContinue,{once:true});
   window.addEventListener("storage",event=>{
     if(event.key===PIN_KEY)updatePinButton();
     if(event.key===THEME_KEY)setTheme(event.newValue||"dark");
