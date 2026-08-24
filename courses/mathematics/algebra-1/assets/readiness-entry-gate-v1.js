@@ -1,11 +1,21 @@
 (()=>{
 "use strict";
-const VERSION="1.0";
+const VERSION="1.1";
+const script=document.currentScript;
+function ensureResponsiveLayout(){
+ if(document.querySelector('link[data-algebra1-responsive="v1"]'))return;
+ const link=document.createElement("link");
+ link.rel="stylesheet";
+ link.href=new URL("responsive-layout-v1.css",script?.src||location.href).href;
+ link.dataset.algebra1Responsive="v1";
+ document.head.appendChild(link);
+}
+ensureResponsiveLayout();
 const DIAGNOSTIC_RESULT_KEY="khaemenes-algebra1-diagnostic-result-v1";
 const DIAGNOSTIC_DRAFT_KEY="khaemenes-algebra1-diagnostic-v1";
-const DIAGNOSTIC_URL=new URL("../diagnostic/",document.currentScript?.src||location.href).href;
-const COURSE_URL=new URL("../",document.currentScript?.src||location.href).href;
-const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const DIAGNOSTIC_URL=new URL("../diagnostic/",script?.src||location.href).href;
+const COURSE_URL=new URL("../",script?.src||location.href).href;
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const parse=(key)=>{try{return JSON.parse(localStorage.getItem(key)||"null")}catch{return null}};
 function hasObjectEvidence(v){
  if(!v||typeof v!=="object")return false;
