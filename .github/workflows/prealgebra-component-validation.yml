@@ -31,3 +31,5 @@ jobs:
         run: node courses/mathematics/pre-algebra/tools/validate-student-navigation.mjs
       - name: Validate Unit 1 daily workroom and mastery handoff
         run: node courses/mathematics/pre-algebra/tools/validate-student-workroom.mjs
+      - name: Validate 36-week course navigator and cumulative review center
+        run: node courses/mathematics/pre-algebra/tools/validate-course-navigator.mjs
