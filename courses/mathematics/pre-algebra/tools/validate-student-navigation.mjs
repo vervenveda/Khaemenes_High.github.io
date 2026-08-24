@@ -13,11 +13,13 @@ assert.ok(helper.includes('const THEME_KEY="khaemenes-theme"'),"student navigati
 assert.ok(helper.includes('const PIN_KEY="khaemenes-high-pinned-courses-v2"'),"student navigation must use the course-home pin key");
 assert.ok(helper.includes('const COURSE_ID="pre-algebra"'),"student navigation must identify Pre-Algebra consistently");
 assert.ok(helper.includes('const CONTINUE_KEY="khaemenes-grade09-last-open-v1"'),"student navigation must preserve the Grade 9 continue key");
-assert.ok(helper.includes('id="studentHomeButton"')||helper.includes('a.id="studentHomeButton"'),"lesson helper must add Student Home");
+assert.ok(helper.includes('a.id="studentHomeButton"'),"lesson helper must add Student Home");
 assert.ok(helper.includes('a.id="mentorHelpButton"'),"lesson helper must add Ask Mentor");
 assert.ok(helper.includes('button.id="pinPreAlgebraClass"'),"lesson helper must add Pin Class");
 assert.ok(helper.includes('stopImmediatePropagation'),"theme control must prevent the legacy double-toggle path");
-assert.ok(helper.includes('window.addEventListener("load",recordContinue'),"continue record must be reasserted after legacy lesson engines finish loading");
+assert.ok(helper.includes('window.addEventListener("load",recordContinue'),"continue record must be written after lesson engines and gates settle");
+assert.ok(helper.includes('academyDirectGate')&&helper.includes('academyUnit1Gate'),"locked lessons must not replace the Continue Pre-Algebra target");
+assert.ok(helper.includes('#studentHomeButton,#mentorHelpButton,#pinPreAlgebraClass{display:inline-flex!important}'),"essential student controls must remain visible on small screens");
 assert.ok(!helper.includes("artist1970.github.io"),"student navigation must not use the legacy cross-origin mentor route");
 
 const courseHome=read(`${courseRoot}/index.html`);
@@ -53,4 +55,4 @@ assert.ok(daily.includes("/Khaemenes_High.github.io/mentor/"),"Daily Lessons mus
 assert.ok(!daily.includes("artist1970.github.io/Archaemenes"),"Daily Lessons must not use the legacy Mentor URL");
 
 console.log("Pre-Algebra student navigation validation: PASS");
-console.log("Checked: theme, pin key, continue record, Student Home, Mentor, course home, Grade 9 dashboard, Daily Lessons, Units 01–13.");
+console.log("Checked: theme, mobile controls, pin key, continue safety, Student Home, Mentor, course home, Grade 9 dashboard, Daily Lessons, Units 01–13.");
