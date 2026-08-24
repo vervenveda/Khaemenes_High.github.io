@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Grade 09 daily current lessons room with direct subject doors, first lesson links, checklist, and local daily note.">
+<meta name="description" content="Grade 09 daily current lessons room with pinned classes, direct subject doors, checklist, and local daily note.">
 <meta name="theme-color" content="#17392f">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()">
@@ -25,9 +25,9 @@
   <div class="shell hero">
     <p class="eyebrow">Current Work</p>
     <h1>Daily Current Lessons</h1>
-    <p>Start with one subject, finish one lesson block, then check it off. Course pages remain the authority for mastery gates and grades.</p>
+    <p>Continue a pinned class first, or choose one subject and finish one lesson block. Course pages remain the authority for mastery gates and grades.</p>
     <div class="actions center">
-      <a class="btn gold" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html">Start Math Lesson 01</a>
+      <a class="btn gold" id="dailyPrimaryStart" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html">Start Math Lesson 01</a>
       <a class="btn secondary" href="../">Back to Dashboard</a>
     </div>
   </div>
@@ -36,13 +36,28 @@
   <div class="shell crumbs"><a href="/Khaemenes_High.github.io/">High School</a><span>›</span><a href="/Khaemenes_High.github.io/grades/grade-09/">Grade 09</a><span>›</span><a href="../">Student Dashboard</a><span>›</span><strong>Daily Lessons</strong></div>
   <section class="section">
     <div class="shell grid">
+      <section class="card col12" id="pinnedDailyCard" aria-labelledby="pinnedDailyTitle" hidden>
+        <div class="focus-card">
+          <div>
+            <span class="chip">Pinned Class</span>
+            <strong id="pinnedDailyTitle">Pre-Algebra</strong>
+            <span id="pinnedDailyStatus">Ready to continue.</span>
+          </div>
+          <div class="actions">
+            <a class="btn gold" id="dailyContinuePreAlgebra" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Continue Pre-Algebra</a>
+            <a class="btn secondary" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Course Home</a>
+            <a class="btn secondary" href="/Khaemenes_High.github.io/mentor/?stage=high&amp;subject=mathematics&amp;course=pre-algebra&amp;source=%2FKhaemenes_High.github.io%2Fgrades%2Fgrade-09%2Fstudent-profile%2Fdaily-lessons%2F">Ask Mentor</a>
+          </div>
+        </div>
+      </section>
+
       <article class="card col12">
         <div class="focus-card">
           <div>
             <strong>Today’s flow</strong>
-            <span>1. Open Math or the assigned first class. 2. Complete one lesson block. 3. Save a note. 4. Mark the checklist.</span>
+            <span>1. Continue a pinned class or open the assigned first class. 2. Complete one lesson block. 3. Save a note. 4. Mark the checklist.</span>
           </div>
-          <div class="actions"><a class="btn gold" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html">Math Lesson 01</a><a class="btn secondary" href="/Khaemenes_High.github.io/grades/grade-09/#courses">All Courses</a></div>
+          <div class="actions"><a class="btn gold" id="todayMathLink" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html">Math Lesson 01</a><a class="btn secondary" href="/Khaemenes_High.github.io/grades/grade-09/#courses">All Courses</a></div>
         </div>
       </article>
 
@@ -51,8 +66,8 @@
         <div class="lesson-grid">
           <article class="lesson-card math">
             <h3>Mathematics</h3>
-            <p>Pre-Algebra / Grade 09 mathematics pathway. Start here when no other parent direction is given.</p>
-            <div class="actions"><a class="btn" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html">Lesson 01</a><a class="btn secondary" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Course Home</a><a class="btn secondary" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/">Unit 01</a></div>
+            <p>Pre-Algebra / Grade 09 mathematics pathway. Pin it once, then the dashboard and this page will return to the most recently opened lesson.</p>
+            <div class="actions"><a class="btn" id="mathContinueLink" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html">Lesson 01</a><a class="btn secondary" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Course Home</a><a class="btn secondary" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/">Unit 01</a></div>
           </article>
           <article class="lesson-card ela">
             <h3>Language Arts</h3>
@@ -83,39 +98,75 @@
       </section>
       <section class="card col6">
         <h2>Need help?</h2>
-        <p>Do not hunt through the whole site. Use the dashboard, course campus, or parent settings from here.</p>
-        <div class="actions"><a class="btn secondary" href="../">Dashboard</a><a class="btn secondary" href="/Khaemenes_High.github.io/grades/grade-09/#mentor">Mentor Area</a><a class="btn secondary" href="../settings/">Parent Settings</a></div>
+        <p>Do not hunt through the whole site. Use the student dashboard, the same-ecosystem Mentor, or parent settings from here.</p>
+        <div class="actions"><a class="btn secondary" href="../">Dashboard</a><a class="btn secondary" href="/Khaemenes_High.github.io/mentor/?stage=high&amp;subject=general&amp;source=%2FKhaemenes_High.github.io%2Fgrades%2Fgrade-09%2Fstudent-profile%2Fdaily-lessons%2F">Ask Mentor</a><a class="btn secondary" href="../settings/">Parent Settings</a></div>
       </section>
 
       <section class="card col12">
         <h2>Today’s note</h2>
         <p>Local notes stay on this device. This note also appears on the student dashboard as today’s focus.</p>
-        <div class="field"><label for="dailyNote">What needs attention today?</label><textarea id="dailyNote" placeholder="Example: Finish Math Lesson 01, then check English 9 reading."></textarea></div>
+        <div class="field"><label for="dailyNote">What needs attention today?</label><textarea id="dailyNote" placeholder="Example: Continue Pre-Algebra, then check English 9 reading."></textarea></div>
         <div class="actions"><button class="btn" id="saveNote">Save Daily Note</button><button class="btn secondary" id="clearNote">Clear</button></div>
         <p class="notice good" id="status" hidden></p>
       </section>
     </div>
   </section>
 </main>
-<footer class="footer"><strong>Khaemenes High · Grade 09</strong>Daily lesson doors · checklist · local focus note</footer>
+<footer class="footer"><strong>Khaemenes High · Grade 09</strong>Pinned classes · daily lesson doors · checklist · local focus note</footer>
 <script>
 (function(){
   const noteKey='khaemenes-grade09-daily-note-v1';
   const checkKey='khaemenes-grade09-daily-checks-v1';
+  const pinKey='khaemenes-high-pinned-courses-v2';
+  const continueKey='khaemenes-grade09-last-open-v1';
+  const courseId='pre-algebra';
+  const courseHome='/Khaemenes_High.github.io/courses/mathematics/pre-algebra/';
+  const defaultLesson='/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html';
   const n=document.getElementById('dailyNote');
   const s=document.getElementById('status');
   const today=new Date().toISOString().slice(0,10);
-  const readChecks=()=>{try{return JSON.parse(localStorage.getItem(checkKey)||'{}')}catch{return {}}};
+  const readJSON=(key,fallback)=>{try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):fallback}catch{return fallback}};
+  const safeCourseUrl=value=>typeof value==='string'&&value.startsWith('/Khaemenes_High.github.io/courses/mathematics/pre-algebra/')?value:courseHome;
+  const readChecks=()=>readJSON(checkKey,{});
   const writeChecks=v=>localStorage.setItem(checkKey,JSON.stringify(v));
   const checks=readChecks();
   if(checks.date!==today){checks.date=today;checks.items={};writeChecks(checks)}
   n.value=localStorage.getItem(noteKey)||'';
+
+  function renderPinned(){
+    const pins=readJSON(pinKey,[]);
+    const pinned=Array.isArray(pins)&&pins.includes(courseId);
+    const last=readJSON(continueKey,null);
+    const lastIsCourse=last&&last.course===courseId;
+    const url=lastIsCourse?safeCourseUrl(last.url):courseHome;
+    const label=lastIsCourse&&last.title?String(last.title):'Pre-Algebra course home';
+    const card=document.getElementById('pinnedDailyCard');
+    const continueLink=document.getElementById('dailyContinuePreAlgebra');
+    const primary=document.getElementById('dailyPrimaryStart');
+    const todayLink=document.getElementById('todayMathLink');
+    const mathLink=document.getElementById('mathContinueLink');
+    card.hidden=!pinned;
+    if(pinned){
+      continueLink.href=url;continueLink.textContent=lastIsCourse?'Continue Current Lesson':'Open Pre-Algebra';
+      document.getElementById('pinnedDailyStatus').textContent=lastIsCourse?`Last opened: ${label}`:'Pinned to the student profile.';
+      primary.href=url;primary.textContent='Continue Pre-Algebra';
+      todayLink.href=url;todayLink.textContent='Continue Pre-Algebra';
+      mathLink.href=url;mathLink.textContent=lastIsCourse?'Continue Current Lesson':'Open Pre-Algebra';
+    }else{
+      primary.href=defaultLesson;primary.textContent='Start Math Lesson 01';
+      todayLink.href=defaultLesson;todayLink.textContent='Math Lesson 01';
+      mathLink.href=defaultLesson;mathLink.textContent='Lesson 01';
+    }
+  }
+
   document.querySelectorAll('[data-check]').forEach(box=>{
     box.checked=!!checks.items[box.dataset.check];
     box.addEventListener('change',()=>{const c=readChecks();if(c.date!==today){c.date=today;c.items={}}c.items[box.dataset.check]=box.checked;writeChecks(c)});
   });
   document.getElementById('saveNote').onclick=()=>{localStorage.setItem(noteKey,n.value);const c=readChecks();if(c.date!==today){c.date=today;c.items={}}c.items['saved-note']=true;writeChecks(c);document.querySelector('[data-check="saved-note"]').checked=true;s.hidden=false;s.textContent='Daily note saved locally.'};
   document.getElementById('clearNote').onclick=()=>{n.value='';localStorage.removeItem(noteKey);s.hidden=false;s.textContent='Daily note cleared.'};
+  window.addEventListener('storage',event=>{if(event.key===pinKey||event.key===continueKey)renderPinned()});
+  renderPinned();
 })();
 </script>
 </body>
