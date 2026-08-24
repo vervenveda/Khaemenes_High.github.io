@@ -1,7 +1,8 @@
 (()=>{
 "use strict";
-const authorityScript=document.currentScript;
+const authorityScript=typeof document!=="undefined"?document.currentScript:null;
 function ensureResponsiveLayout(){
+ if(typeof document==="undefined")return;
  if(document.querySelector('link[data-algebra1-responsive="v1"]'))return;
  const link=document.createElement("link");
  link.rel="stylesheet";
@@ -9,7 +10,19 @@ function ensureResponsiveLayout(){
  link.dataset.algebra1Responsive="v1";
  document.head.appendChild(link);
 }
-ensureResponsiveLayout();
+function ensureFocusedAssessment(){
+ if(typeof document==="undefined"||typeof location==="undefined")return;
+ const path=location.pathname.toLowerCase();
+ const assessmentContext=/\/diagnostic\//.test(path)||/\/assessments\//.test(path)||/\/assessment\//.test(path)||document.body?.dataset?.mode==="mastery";
+ if(!assessmentContext)return;
+ if(window.KhaemenesAlgebra1FocusedAssessment||document.querySelector('script[data-algebra1-focused="v1"]'))return;
+ const script=document.createElement("script");
+ script.src=new URL("focused-assessment-v1.js",authorityScript?.src||location.href).href;
+ script.async=false;
+ script.dataset.algebra1Focused="v1";
+ document.head.appendChild(script);
+}
+if(typeof document!=="undefined"){ensureResponsiveLayout();setTimeout(ensureFocusedAssessment,0)}
 const MASTERY=80;
 const WEEKLY_KEY="khaemenes-algebra1-weekly-mastery-v2";
 const MIDTERM_KEY="khaemenes-algebra1-midterm-result-v1";
@@ -74,9 +87,10 @@ function cumulativeEvidence(key){
 function allUnitsMastered(first=1,last=13){for(let n=Number(first);n<=Number(last);n++)if(!unitEvidence(n).mastery)return false;return true}
 function allWeeksMastered(first=2,last=36){for(let n=Number(first);n<=Number(last);n++)if(!weekEvidence(n).mastery)return false;return true}
 window.KhaemenesAlgebra1MasteryAuthority={
- version:"1.2",
+ version:"1.3",
  threshold:MASTERY,
  responsive_layout:"v1",
+ focused_assessment:"v1.2",
  keys:{weekly:WEEKLY_KEY,midterm:MIDTERM_KEY,final:FINAL_KEY,dedicatedUnit:dedicatedKey,sharedUnit:sharedKey},
  weekLessonMap:WEEK_LESSONS,
  unitEvidence,
