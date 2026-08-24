@@ -64,7 +64,7 @@ function togglePin(){
   const next=wasPinned?pins.filter(id=>id!==COURSE_ID):[COURSE_ID,...pins.filter(id=>id!==COURSE_ID)];
   if(!writeJSON(PIN_KEY,next)){
     const status=document.getElementById("preAlgebraNavStatus");
-    if(status)status.textContent="This browser could not save the class pin.";
+    if(status)status.textContent="This browser could not save the profile pin.";
     return;
   }
   updatePinButton();
@@ -165,6 +165,7 @@ function init(){
   addStyles();
   ensureHeaderControls();
   recordContinue();
+  window.addEventListener("load",recordContinue,{once:true});
   window.addEventListener("storage",event=>{
     if(event.key===PIN_KEY)updatePinButton();
     if(event.key===THEME_KEY)setTheme(event.newValue||"dark");
