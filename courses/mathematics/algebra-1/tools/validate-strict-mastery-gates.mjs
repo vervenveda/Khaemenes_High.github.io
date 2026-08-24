@@ -19,7 +19,7 @@ for(let unit=2;unit<=9;unit++){const id=String(unit).padStart(2,'0'),wrapper=rea
 ok(u1.includes('weekMastered(2)')&&u1.includes('weekMastered(3)'),'Unit 01 requires Weeks 02 and 03 mastery');
 ok(u1.includes('n===4?weekMastered(2)'),'Unit 01 Week 02→03 lesson boundary is gated');
 ok(u1.includes('allLessonsMastered()&&allUnitWeeksMastered()'),'Unit 01 formal mastery requires lessons and weekly gates');
-ok(authority.includes('version:"1.1"')&&authority.includes('weekLessonMap:WEEK_LESSONS')&&authority.includes('weekLessonsMastered'),'canonical authority owns the Week 02-36 lesson prerequisite map');
+ok(authority.includes('version:"1.3"')&&authority.includes('weekLessonMap:WEEK_LESSONS')&&authority.includes('weekLessonsMastered')&&authority.includes('focused_assessment:"v1.2"'),'canonical authority owns the Week 02-36 lesson prerequisite map and focused-assessment contract');
 ok(weeklyPage.includes('../assets/mastery-authority-v1.js'),'weekly mastery page preloads canonical authority');
 ok(/MASTERY=80/.test(weekly)&&weekly.includes('function weekGate')&&weekly.includes('A.weekLessonEvidence(week)'),'weekly engine uses canonical current-week lesson gating');
 ok(weekly.includes('reason:"previous-week"')&&weekly.includes('A.unitMastered(unit-1)')&&weekly.includes('A.midtermMastered()'),'weekly engine independently enforces previous-week, prior-unit, and Midterm prerequisites');
@@ -29,7 +29,7 @@ ok(depth.includes('for(let u=1;u<=6;u++)')&&depth.includes('for(let w=2;w<=18;w+
 ok(depth.includes('for(let u=1;u<=13;u++)')&&depth.includes('for(let w=2;w<=36;w++)')&&depth.includes('A.midtermMastered()'),'Final gate covers all units/weeks plus reviewed Midterm');
 ok(home.includes('KhaemenesAlgebra1MasteryAuthority')&&home.includes('unit>=7&&previousOk&&!midtermOk'),'course home uses canonical evidence and preserves second-half Midterm gate');
 ok(index.includes('course-progression-gates.js'),'course home loads progression gate layer');
-ok(index.includes('Capstone Planning Runway')&&index.includes('Weeks 33–35'),'course home exposes the non-graded pre-Week-36 capstone runway');
+ok(home.includes('Capstone Planning Runway · Weeks 33–35')&&home.includes('intentionally non-graded')&&home.includes('awards no lesson, weekly, unit, capstone, or Final mastery credit'),'course home renders the non-graded pre-Week-36 capstone runway');
 ok(capstoneProject.includes('Weeks 33–35 · Non-graded capstone runway')&&capstoneProject.includes('does not award lesson, weekly, unit, capstone, or Final mastery'),'capstone runway explicitly grants no early mastery credit');
 ok(capstoneProject.includes('Week 36 · Formal evidence sequence')&&capstoneProject.includes('16/20 or better')&&capstoneProject.includes('8/10 or better'),'capstone pacing preserves Week 36 weekly and unit 80% mastery thresholds');
 ok(capstoneProject.includes('selected-response, constructed-response, and overall 80% requirements remain unchanged'),'capstone pacing explicitly preserves cumulative Final depth');
@@ -42,7 +42,7 @@ ok(recordHtml.includes('issuerGate')&&recordHtml.includes('completionDateGate'),
 ok(recordEngine.includes('issuerPass=String(fields.evaluator')&&recordEngine.includes('completionDatePass=Number.isFinite(completionTime)&&completionTime<=Date.now()'),'completion readiness requires issuer identity and a valid non-future completion date');
 ok(recordEngine.includes('evaluator_identity_required:true')&&recordEngine.includes('completion_date_required:true')&&recordEngine.includes('completion_date_must_not_be_future:true'),'completion export records issuer/date issuance requirements');
 ok(recordEngine.includes('identity_authenticated:false')&&recordHtml.includes('does not authenticate that identity'),'typed issuer identity is not misrepresented as authentication');
-ok(sw.includes('v6-applied-labs')&&sw.includes('mastery-authority-v1.js')&&sw.includes('dedicated-unit-gates-v1.js'),'offline cache carries canonical convergence gate assets in applied-labs v6');
+ok(sw.includes('v7-responsive-deep-lessons')&&sw.includes('mastery-authority-v1.js')&&sw.includes('dedicated-unit-gates-v1.js')&&sw.includes('focused-assessment-v1.js')&&sw.includes('responsive-layout-v1.css'),'offline cache carries canonical convergence, focused-assessment, and responsive assets in v7');
 ok(sw.includes('unit-13-content-upgrade.js')&&sw.includes('unit-13-project-upgrade.js')&&sw.includes('algebra-i-integrated-modelling-portfolio-oral-defence.html'),'offline cache explicitly carries Unit 13 capstone content, pacing enhancement, and project page');
 for(let unit=2;unit<=9;unit++){const id=String(unit).padStart(2,'0');ok(sw.includes(`unit${id}.js`)&&sw.includes(`unit${id}-core.js`),`offline cache carries Unit ${id} bootstrap and core`)}
-if(failed){console.error('\nAlgebra I strict mastery gate validation FAILED.');process.exit(1)}console.log('\nPASS Algebra I strict 80% canonical progression, capstone pacing, and issuance contract.');
+if(failed){console.error('\nAlgebra I strict mastery gate validation FAILED.');process.exit(1)}console.log('\nPASS Algebra I strict 80% canonical progression, focused assessment presentation, capstone pacing, responsive offline coverage, and issuance contract.');
