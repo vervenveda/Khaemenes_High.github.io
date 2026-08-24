@@ -1,0 +1,70 @@
+name: Pre-Algebra and Algebra I Launch Validation
+
+on:
+  pull_request:
+    paths:
+      - 'courses/mathematics/pre-algebra/**'
+      - 'courses/mathematics/algebra-1/**'
+      - 'courses/mathematics/tools/validate-prealgebra-algebra1-launch.mjs'
+      - '.github/workflows/math-launch-day-validation.yml'
+  push:
+    paths:
+      - 'courses/mathematics/pre-algebra/**'
+      - 'courses/mathematics/algebra-1/**'
+      - 'courses/mathematics/tools/validate-prealgebra-algebra1-launch.mjs'
+      - '.github/workflows/math-launch-day-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  launch-contract:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Validate combined launch contract
+        run: node courses/mathematics/tools/validate-prealgebra-algebra1-launch.mjs
+
+      - name: Validate Pre-Algebra component hashes
+        run: node courses/mathematics/pre-algebra/tools/validate-components.mjs
+
+      - name: Validate Pre-Algebra assessment depth
+        run: node courses/mathematics/pre-algebra/tools/validate-assessment-depth.mjs
+
+      - name: Validate Pre-Algebra Academy mastery gates
+        run: node courses/mathematics/pre-algebra/tools/validate-mastery-gates.mjs
+
+      - name: Validate Algebra I whole course
+        run: node courses/mathematics/algebra-1/tools/validate-first-draft.mjs
+
+      - name: Validate Algebra I readiness bridge
+        run: node courses/mathematics/algebra-1/readiness/validate-transition-contract.mjs
+
+      - name: Validate Algebra I assessment depth
+        run: node courses/mathematics/algebra-1/tools/validate-assessment-depth.mjs
+
+      - name: Validate Algebra I strict 80 percent progression gates
+        run: node courses/mathematics/algebra-1/tools/validate-strict-mastery-gates.mjs
+
+      - name: Validate Algebra I applied labs
+        run: node courses/mathematics/algebra-1/tools/validate-applied-labs.mjs
+
+      - name: Validate launch-page inline JavaScript syntax
+        run: |
+          node <<'NODE'
+          const fs=require('fs');
+          const vm=require('vm');
+          const files=[
+            'courses/mathematics/algebra-1/index.html',
+            'courses/mathematics/algebra-1/diagnostic/index.html'
+          ];
+          for(const file of files){
+            const html=fs.readFileSync(file,'utf8');
+            const scripts=[...html.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)].map(m=>m[1]);
+            if(!scripts.length)throw new Error(`${file}: no inline scripts found`);
+            scripts.forEach((code,index)=>new vm.Script(code,{filename:`${file}#inline-${index+1}`}));
+            console.log(`OK ${file}: ${scripts.length} inline script(s) parse`);
+          }
+          NODE
