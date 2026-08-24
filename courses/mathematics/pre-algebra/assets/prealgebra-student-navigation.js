@@ -155,8 +155,9 @@ function addStyles(){
   style.id="preAlgebraStudentNavStyles";
   style.textContent=`
     .header-actions{display:flex;align-items:center;justify-content:flex-end;gap:7px;flex-wrap:wrap;position:relative}
-    #pinPreAlgebraClass[aria-pressed="true"]{background:var(--gold-soft);border-color:var(--gold);color:var(--forest-deep)}
+    #pinPreAlgebraClass[aria-pressed="true"]{background:color-mix(in srgb,var(--gold) 18%,transparent);border-color:var(--gold);color:var(--text,inherit)}
     @media(max-width:820px){.header-inner{align-items:flex-start}.header-actions{justify-content:flex-end}.header-actions .nav-button,.header-actions .theme-button{min-height:40px;padding:8px 10px;font-size:10px}}
+    @media(max-width:760px){#studentHomeButton,#mentorHelpButton,#pinPreAlgebraClass{display:inline-flex!important}}
     @media(max-width:620px){.header-inner{flex-direction:column;align-items:stretch;padding-block:11px}.brand{justify-content:center}.header-actions{justify-content:center}.header-actions .nav-button,.header-actions .theme-button{flex:1 1 auto}}
   `;
   document.head.appendChild(style);
