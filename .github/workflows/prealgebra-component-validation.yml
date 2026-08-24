@@ -29,3 +29,5 @@ jobs:
         run: node courses/mathematics/pre-algebra/tools/validate-mastery-gates.mjs
       - name: Validate student navigation, theme, pin, and continue paths
         run: node courses/mathematics/pre-algebra/tools/validate-student-navigation.mjs
+      - name: Validate Unit 1 daily workroom and mastery handoff
+        run: node courses/mathematics/pre-algebra/tools/validate-student-workroom.mjs
