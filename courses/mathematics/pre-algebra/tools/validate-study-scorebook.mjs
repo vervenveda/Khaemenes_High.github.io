@@ -40,7 +40,7 @@ for(const token of [
 expect(!scorebook.includes("localStorage.setItem("),"Study Scorebook must remain read-only and may not write browser-local progress or result records.");
 expect(scorebook.includes('Math.max(safeNumber(quiz.best),...attempts.map(a=>safeNumber(a?.score)))'),"Weekly display must preserve/use best demonstrated quiz evidence.");
 expect(scorebook.includes('attempts.at(-1)'),"Weekly display must distinguish the most recent attempt from best evidence.");
-expect(scorebook.includes('row.best<MIN'),"Study focus must flag previously scored weekly evidence below 80%.");
+expect(scorebook.includes('weeks.filter(r=>r.best>0&&r.best<MIN)'),"Study focus must flag previously scored weekly evidence below 80%.");
 expect(scorebook.includes('units.filter(r=>r.best>0&&r.best<MIN)'),"Study focus must flag previously scored unit evidence below 80%.");
 expect(scorebook.includes('mastery_met')&&scorebook.includes('review_complete'),"Official cumulative display must understand mastery and evaluator-review state.");
 expect(scorebook.includes('Browser-local results are study evidence'),"Study Scorebook must label browser-local evidence appropriately.");
