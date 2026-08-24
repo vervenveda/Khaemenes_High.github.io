@@ -1,0 +1,93 @@
+name: Algebra I Responsive + Deep Lesson Validation
+
+on:
+  pull_request:
+    paths:
+      - 'courses/mathematics/algebra-1/**'
+      - '.github/workflows/algebra1-responsive-deep-validation.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'courses/mathematics/algebra-1/**'
+      - '.github/workflows/algebra1-responsive-deep-validation.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate responsive and instructional contract
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, sys
+
+          root = Path('courses/mathematics/algebra-1')
+          errors = []
+
+          responsive = root/'assets/responsive-layout-v1.css'
+          if not responsive.exists():
+              errors.append('missing responsive-layout-v1.css')
+          else:
+              css = responsive.read_text(encoding='utf-8')
+              for token in ['max-width:1180px','max-width:900px','max-width:680px','max-width:430px','orientation:landscape','overflow-x:hidden']:
+                  if token not in css:
+                      errors.append(f'responsive contract missing {token}')
+
+          styles = (root/'assets/styles.css').read_text(encoding='utf-8')
+          if '@import url("./responsive-layout-v1.css")' not in styles:
+              errors.append('shared styles.css does not import responsive contract')
+
+          authority = (root/'assets/mastery-authority-v1.js').read_text(encoding='utf-8')
+          entry = (root/'assets/readiness-entry-gate-v1.js').read_text(encoding='utf-8')
+          for name, text in [('mastery authority',authority),('readiness entry gate',entry)]:
+              if 'responsive-layout-v1.css' not in text:
+                  errors.append(f'{name} does not load responsive contract')
+
+          deep = (root/'assets/deep-lesson-engine-v1.js').read_text(encoding='utf-8')
+          for token in ['deep-concept-card','deep-dialog','What the lesson check expects','worked']:
+              if token.lower() not in deep.lower():
+                  errors.append(f'deep lesson engine missing {token}')
+
+          focused = (root/'assets/focused-assessment-v1.js').read_text(encoding='utf-8')
+          for token in ['One problem at a time','focused-assessment-dots','Previous','Next']:
+              if token not in focused:
+                  errors.append(f'focused assessment engine missing {token}')
+
+          sw = (root/'service-worker.js').read_text(encoding='utf-8')
+          for asset in ['responsive-layout-v1.css','readiness-entry-gate-v1.js','deep-lesson-engine-v1.js','focused-assessment-v1.js']:
+              if asset not in sw:
+                  errors.append(f'service worker does not cache {asset}')
+
+          lesson_files = sorted(root.glob('units/unit-*/lessons/*.html'))
+          if len(lesson_files) != 87:
+              errors.append(f'expected 87 Algebra I lesson pages; found {len(lesson_files)}')
+          for path in lesson_files:
+              html = path.read_text(encoding='utf-8')
+              if not re.search(r'<meta\s+name=["\']viewport["\']', html, re.I):
+                  errors.append(f'missing viewport metadata: {path}')
+
+          critical = [root/'index.html', root/'diagnostic/index.html', root/'assessments/weekly-mastery.html', root/'assessments/midterm-units-01-06.html', root/'assessments/final-exam-36-weeks.html']
+          for path in critical:
+              html = path.read_text(encoding='utf-8')
+              if not re.search(r'<meta\s+name=["\']viewport["\']', html, re.I):
+                  errors.append(f'missing viewport metadata: {path}')
+
+          if errors:
+              print('\n'.join('ERROR: '+x for x in errors))
+              sys.exit(1)
+          print(f'PASS: responsive/deep lesson contract validated across {len(lesson_files)} lesson pages.')
+          PY
+
+      - name: JavaScript syntax
+        run: |
+          node --check courses/mathematics/algebra-1/assets/mastery-authority-v1.js
+          node --check courses/mathematics/algebra-1/assets/readiness-entry-gate-v1.js
+          node --check courses/mathematics/algebra-1/assets/deep-lesson-engine-v1.js
+          node --check courses/mathematics/algebra-1/assets/focused-assessment-v1.js
+          node --check courses/mathematics/algebra-1/service-worker.js
