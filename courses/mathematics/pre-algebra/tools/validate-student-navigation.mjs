@@ -36,23 +36,39 @@ for(let unit=1;unit<=13;unit++){
   assert.ok(source.includes("startCore"),`Unit ${n} lesson wrapper must retain the mastery-engine start boundary`);
 }
 
+const registryPath="grades/grade-09/student-profile/student-course-registry.js";
+const registry=read(registryPath);
+new Function(registry);
+assert.ok(registry.includes('const PIN_KEY="khaemenes-high-pinned-courses-v2"'),"Grade 9 course registry must share the canonical pin key");
+assert.ok(registry.includes('const PREALGEBRA_CONTINUE_KEY="khaemenes-grade09-last-open-v1"'),"Grade 9 course registry must preserve the Pre-Algebra continue key");
+for(const id of ["pre-algebra","english-9","integrated-science-9","global-studies-9"]){
+  assert.ok(registry.includes(`id:"${id}"`),`Grade 9 course registry must include ${id}`);
+}
+assert.ok(registry.includes("pinnedCourses"),"Grade 9 course registry must expose pinned-course ordering");
+assert.ok(registry.includes("continueFor"),"Grade 9 course registry must resolve course continuation");
+assert.ok(registry.includes("mentorFor"),"Grade 9 course registry must create subject-aware Mentor links");
+
 const profilePath="grades/grade-09/student-profile/index.html";
 const profile=read(profilePath);
-assert.ok(profile.includes('id="pinnedClassCard"'),"Grade 9 dashboard must expose the pinned-class surface");
-assert.ok(profile.includes("khaemenes-high-pinned-courses-v2"),"Grade 9 dashboard must read the shared pin key");
-assert.ok(profile.includes("khaemenes-grade09-last-open-v1"),"Grade 9 dashboard must read the continue-learning record");
-assert.ok(profile.includes("Continue Pre-Algebra"),"Grade 9 dashboard must provide a Continue Pre-Algebra action");
+assert.ok(profile.includes('id="pinnedCoursesGrid"'),"Grade 9 dashboard must expose the multi-class pinned surface");
+assert.ok(profile.includes('id="courseManagerGrid"'),"Grade 9 dashboard must expose the core-class manager");
+assert.ok(profile.includes('student-course-registry.js'),"Grade 9 dashboard must load the shared course registry");
+assert.ok(profile.includes('data-toggle-course'),"Grade 9 dashboard must provide Pin/Unpin class controls");
+assert.ok(profile.includes('data-launch-course'),"Grade 9 dashboard must provide direct class launch controls");
 assert.ok(profile.includes("/Khaemenes_High.github.io/mentor/"),"Grade 9 dashboard must expose the same-ecosystem Mentor");
+assert.ok(!profile.includes('id="pinnedClassCard"'),"Grade 9 dashboard must not regress to a Pre-Algebra-only pinned card");
 assert.ok(!profile.includes("artist1970.github.io/Archaemenes"),"Grade 9 dashboard must not restore the legacy Mentor URL");
 
 const dailyPath="grades/grade-09/student-profile/daily-lessons/index.html";
 const daily=read(dailyPath);
-assert.ok(daily.includes('id="pinnedDailyCard"'),"Daily Lessons must expose the pinned-class surface");
-assert.ok(daily.includes("khaemenes-high-pinned-courses-v2"),"Daily Lessons must read the shared pin key");
-assert.ok(daily.includes("khaemenes-grade09-last-open-v1"),"Daily Lessons must read the continue-learning record");
-assert.ok(daily.includes("Continue Pre-Algebra"),"Daily Lessons must provide a Continue Pre-Algebra action");
+assert.ok(daily.includes('id="pinnedDailyGrid"'),"Daily Lessons must expose the multi-class pinned surface");
+assert.ok(daily.includes('id="dailyClassGrid"'),"Daily Lessons must expose core class doors");
+assert.ok(daily.includes('../student-course-registry.js'),"Daily Lessons must load the shared course registry");
+assert.ok(daily.includes('data-toggle-course'),"Daily Lessons must provide Pin/Unpin class controls");
+assert.ok(daily.includes('data-launch-course'),"Daily Lessons must provide direct class launch controls");
 assert.ok(daily.includes("/Khaemenes_High.github.io/mentor/"),"Daily Lessons must expose the same-ecosystem Mentor");
+assert.ok(!daily.includes('id="pinnedDailyCard"'),"Daily Lessons must not regress to a Pre-Algebra-only pinned card");
 assert.ok(!daily.includes("artist1970.github.io/Archaemenes"),"Daily Lessons must not use the legacy Mentor URL");
 
-console.log("Pre-Algebra student navigation validation: PASS");
-console.log("Checked: theme, mobile controls, pin key, continue safety, Student Home, Mentor, course home, Grade 9 dashboard, Daily Lessons, Units 01–13.");
+console.log("Grade 9 student navigation validation: PASS");
+console.log("Checked: Pre-Algebra theme/mobile controls, mastery-safe continue, shared pin key, four core classes, Student Home, Mentor, Dashboard, Daily Lessons, Units 01–13.");
