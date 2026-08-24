@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "engine_id": "khaemenes-math-readiness-v1",
   "title": "Khaemenes Mathematics Readiness & Placement",
   "instructional_time": false,
@@ -9,7 +9,9 @@
     {
       "id": "pre-algebra",
       "label": "Pre-Algebra",
-      "course_path": "../pre-algebra/",
+      "course_path": "../pre-algebra/diagnostic/",
+      "entry_authority": "NAIB readiness gateway",
+      "shared_result_can_unlock": false,
       "required_domains": ["arithmetic", "fractions", "integers", "ratio"],
       "minimum_domain_score": 60,
       "recommended_overall": 65
@@ -69,6 +71,6 @@
       "reviewDomains",
       "attemptId"
     ],
-    "naib_note": "This record is advisory evidence for NAIB placement. It is separate from course grades, instructional mastery, and course completion."
+    "naib_note": "This record is advisory evidence. For Pre-Algebra, the NAIB diagnostic remains the authoritative entrance and may assign conditional Unit 0. Shared readiness is separate from course grades, mastery, and completion."
   }
 }
