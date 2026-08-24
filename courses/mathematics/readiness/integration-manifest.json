@@ -1,25 +1,34 @@
 {
-  "schema_version":"1.0",
+  "schema_version":"1.1",
   "engine":"Khaemenes Mathematics Readiness & Placement Engine",
   "storage_key":"KHAEMENES_MATH_READINESS_V1",
   "instructional_time":false,
   "counts_toward_course":false,
   "portal_route":"readiness/",
   "course_bridge":"readiness/course-readiness-bridge.js",
+  "pre_algebra_entry_authority":{
+    "route":"pre-algebra/diagnostic/",
+    "authority":"NAIB readiness gateway",
+    "conditional_support":"pre-algebra/units/unit-00/",
+    "shared_readiness_can_unlock":false
+  },
+  "integration_policy":{
+    "algebra-1":"advisory",
+    "geometry":"advisory",
+    "algebra-2":"advisory",
+    "precalculus-trigonometry":"advisory",
+    "calculus-1":"advisory",
+    "pre-algebra":"informational-only; defer to NAIB gateway"
+  },
   "required_surfaces":[
-    {"id":"mathematics-portal","path":"index.html","role":"front-door launch and recommendation summary"},
-    {"id":"pre-algebra","path":"pre-algebra/index.html","role":"advisory readiness notice; Unit 01 remains instructional start"},
-    {"id":"algebra-1","path":"algebra-1/index.html","role":"advisory readiness notice; Unit 01 remains instructional start"},
-    {"id":"geometry","path":"geometry/index.html","role":"advisory readiness notice; Unit 01 remains instructional start"},
-    {"id":"algebra-2","path":"algebra-2/index.html","role":"advisory readiness notice; Unit 01 remains instructional start"},
-    {"id":"precalculus-trigonometry","path":"precalculus-trigonometry/index.html","role":"advisory readiness notice; Unit 01 remains instructional start"},
-    {"id":"calculus-1","path":"calculus-1/index.html","role":"advisory readiness notice; Unit 01 remains instructional start"}
+    {"id":"shared-readiness","path":"readiness/index.html","role":"standalone pre-course placement evidence"},
+    {"id":"pre-algebra-gateway","path":"pre-algebra/diagnostic/index.html","role":"authoritative Pre-Algebra entrance; not replaced by shared readiness"}
   ],
   "invariants":[
-    "Placement is one-time by default and reassessment is intentional.",
-    "Placement records never write into instructional week progress.",
-    "Every course begins instruction at Unit 01 / Week 1.",
-    "Recommendations are advisory, not hard enrollment gates.",
-    "Course validators must fail if diagnostic or placement is counted as instructional time."
+    "Shared readiness is outside instructional time and course completion.",
+    "Shared readiness never writes course mastery or grades.",
+    "Pre-Algebra entrance is governed by the NAIB diagnostic and conditional Unit 0 contract.",
+    "Shared readiness cannot unlock or bypass Pre-Algebra gates.",
+    "Course-page integrations must be made against current course files, not resurrected from historical PR #12."
   ]
 }
