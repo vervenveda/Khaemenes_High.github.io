@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Grade 09 student profile dashboard with direct doors to grades, daily lessons, games, profile editing, and parent-aware settings.">
+<meta name="description" content="Grade 09 student dashboard with a streamlined daily start, lessons, grades, games, profile editing, and parent-aware settings.">
 <meta name="theme-color" content="#17392f">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()">
@@ -15,18 +15,19 @@
   <div class="shell nav">
     <a class="brand" href="/Khaemenes_High.github.io/grades/grade-09/"><span class="mark">IX</span><span><strong>Khaemenes Academy</strong><small>Grade 09 Student Dashboard</small></span></a>
     <nav class="navlinks" aria-label="Student dashboard navigation">
-      <a href="/Khaemenes_High.github.io/grades/grade-09/">Exit to Grade 09</a>
       <a href="daily-lessons/">Daily Lessons</a>
       <a href="grades/">Grades</a>
       <a href="games/">Games</a>
+      <a href="profile/">Profile</a>
       <a href="settings/">Settings</a>
+      <a href="/Khaemenes_High.github.io/grades/grade-09/">Exit</a>
     </nav>
   </div>
   <div class="shell hero">
     <p class="eyebrow">Khaemenes High · Grade 09</p>
     <h1>Student Dashboard</h1>
-    <p>A clear home room for profile, current lessons, grade records, games, and parent-aware settings.</p>
-    <div class="actions" style="justify-content:center">
+    <p>Your clean daily home room: start lessons, check grades, open games, update your profile, and keep parent access visible.</p>
+    <div class="actions center">
       <a class="btn gold" href="daily-lessons/">Start Today’s Lessons</a>
       <a class="btn secondary" href="/Khaemenes_High.github.io/grades/grade-09/">Exit to Grade 09</a>
     </div>
@@ -42,28 +43,48 @@
           <div>
             <h2 class="profile-name" id="studentName">Student</h2>
             <div class="subline" id="studentMeta">Grade 09 · Local profile workspace</div>
-            <div class="chip-row"><span class="chip">Parent access always remains active</span><span class="chip">Local storage only</span><span class="chip">No real password stored here</span></div>
+            <div class="chip-row">
+              <span class="chip">Parent access remains active</span>
+              <span class="chip">Local storage only</span>
+              <span class="chip">No real password stored here</span>
+            </div>
           </div>
         </div>
       </article>
+
+      <section class="card col12" aria-labelledby="todayTitle">
+        <div class="focus-card">
+          <div>
+            <strong id="todayTitle">Today’s first step</strong>
+            <span id="todayFocus">Open Daily Current Lessons. Start with Math or the course your parent assigned first.</span>
+          </div>
+          <div class="actions">
+            <a class="btn gold" href="daily-lessons/">Go to Daily Lessons</a>
+            <a class="btn secondary" href="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html">Math Lesson 01</a>
+          </div>
+        </div>
+      </section>
+
       <section class="card col12" aria-labelledby="doorsTitle">
-        <h2 id="doorsTitle">Where do you want to go?</h2>
+        <h2 id="doorsTitle">Student rooms</h2>
+        <p>These are the main doors a student should need every day. The Grade 09 campus is still available through Exit.</p>
         <div class="door-grid">
+          <a class="door" href="daily-lessons/"><span><b>Daily Current Lessons</b><span>Start the day, choose a class, save a note, and track your checklist.</span></span><small>Start Lessons →</small></a>
           <a class="door" href="grades/"><span><b>Grades</b><span>Open course records, reports, mastery status, and print/export options.</span></span><small>Open Grades →</small></a>
-          <a class="door" href="daily-lessons/"><span><b>Daily Current Lessons</b><span>Go directly to today’s Grade 09 classes and current course doors.</span></span><small>Start Lessons →</small></a>
           <a class="door" href="games/"><span><b>Games</b><span>Open math practice, logic games, learning arcade links, and study breaks.</span></span><small>Open Games →</small></a>
           <a class="door" href="profile/"><span><b>My Profile</b><span>Edit interests, goals, portfolio links, strengths, supports, and journal notes.</span></span><small>Edit Profile →</small></a>
         </div>
       </section>
+
       <section class="card col6">
-        <h2>Parent Access Rule</h2>
+        <h2>Parent access rule</h2>
         <p>Parent or guardian access should never be removed by a student profile setting. Any future protected password change must notify the parent and keep the parent recovery path active.</p>
         <div class="actions"><a class="btn secondary" href="settings/">Open Settings</a></div>
       </section>
       <section class="card col6">
-        <h2>Continue Learning</h2>
-        <p>This dashboard now gives direct lesson doors. Start with Daily Current Lessons, or return to the full Grade 09 campus.</p>
-        <div class="actions"><a class="btn gold" href="daily-lessons/">Daily Lessons</a><a class="btn secondary" href="/Khaemenes_High.github.io/grades/grade-09/#courses">Course Campus</a></div>
+        <h2>Quick exits</h2>
+        <p>Use these when you need the broader campus instead of the student dashboard.</p>
+        <div class="actions"><a class="btn" href="/Khaemenes_High.github.io/grades/grade-09/#courses">Course Campus</a><a class="btn secondary" href="/Khaemenes_High.github.io/">High School Home</a></div>
       </section>
     </div>
   </section>
@@ -75,9 +96,11 @@
   const p=read('khaemenes-high-profile-v1',null)||read('khaemenes-grade09-profile-v1',null)||{};
   const name=p.displayName||p.name||p.nickname||'Student';
   const initials=(name.split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('')||'S').toUpperCase();
+  const note=localStorage.getItem('khaemenes-grade09-daily-note-v1');
   document.getElementById('studentName').textContent=name;
   document.getElementById('avatar').textContent=initials;
   document.getElementById('studentMeta').textContent=`Grade 09${p.pathway?' · '+p.pathway:''} · Local profile workspace`;
+  if(note&&note.trim())document.getElementById('todayFocus').textContent=note.trim();
 })();
 </script>
 </body>
