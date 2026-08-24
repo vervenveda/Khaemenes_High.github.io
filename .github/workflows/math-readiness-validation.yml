@@ -1,0 +1,33 @@
+name: Mathematics Readiness Validation
+
+on:
+  pull_request:
+    paths:
+      - 'courses/mathematics/readiness/**'
+      - '.github/workflows/math-readiness-validation.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/mathematics/readiness/**'
+      - '.github/workflows/math-readiness-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - name: Validate readiness contract
+        run: node courses/mathematics/readiness/validate-readiness.mjs
+      - name: Syntax-check readiness JavaScript
+        run: |
+          node --check courses/mathematics/readiness/question-bank.js
+          node --check courses/mathematics/readiness/course-readiness-bridge.js
+          node --check courses/mathematics/readiness/portal-entry.js
