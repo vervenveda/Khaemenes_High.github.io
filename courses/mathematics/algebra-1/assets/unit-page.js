@@ -12,8 +12,9 @@ scripts.push(new URL("mastery-authority-v1.js",base).href);
 scripts.push(new URL("unit-page-core.js",base).href);
 if(unit===13) scripts.push(new URL("../units/unit-13/projects/unit-13-project-upgrade.js",base).href);
 scripts.push(new URL("strict-mastery-gates.js",base).href);
+scripts.push(new URL("deep-lesson-engine-v1.js",base).href);
 function loadAt(i){
- if(i>=scripts.length){shuffleVisibleOptions();return}
+ if(i>=scripts.length){shuffleVisibleOptions();window.KhaemenesAlgebra1LearningExperience?.enhance();return}
  const s=document.createElement("script");s.src=scripts[i];s.async=false;
  s.onload=()=>loadAt(i+1);
  s.onerror=()=>console.error("Algebra I unit renderer dependency could not load:",scripts[i]);
