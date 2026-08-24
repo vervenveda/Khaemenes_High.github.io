@@ -1,0 +1,34 @@
+name: Algebra I Canonical Route Validation
+
+on:
+  pull_request:
+    paths:
+      - 'grades/grade-10/algebra-1/index.html'
+      - 'courses/mathematics/algebra-1/index.html'
+      - 'courses/mathematics/algebra-1/diagnostic/index.html'
+      - 'tools/validate-algebra1-canonical-route.mjs'
+      - '.github/workflows/algebra1-canonical-route-validation.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'grades/grade-10/algebra-1/index.html'
+      - 'courses/mathematics/algebra-1/index.html'
+      - 'courses/mathematics/algebra-1/diagnostic/index.html'
+      - 'tools/validate-algebra1-canonical-route.mjs'
+      - '.github/workflows/algebra1-canonical-route-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-canonical-route:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Validate Algebra I canonical route
+        run: node tools/validate-algebra1-canonical-route.mjs
