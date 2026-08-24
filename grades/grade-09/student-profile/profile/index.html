@@ -11,7 +11,7 @@ const key='khaemenes-high-profile-v1',status=document.getElementById('status');
 const fields=['name','pathway','interests','goals','strengths','supports','portfolio'];
 const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};
 const write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
-function load(){const p=read(key,{});fields.forEach(id=>document.getElementById(id).value=p[id]||p.displayName&&id==='name'?p.displayName:(p[id]||''));}
+function load(){const p=read(key,{});fields.forEach(id=>{document.getElementById(id).value=(id==='name'?(p.name||p.displayName||p.nickname||''):(p[id]||''));});}
 function data(){const p=read(key,{});fields.forEach(id=>p[id]=document.getElementById(id).value.trim());p.displayName=p.name||p.displayName||'Student';p.grade='9';p.updatedAt=new Date().toISOString();return p}
 document.getElementById('saveProfile').onclick=()=>{write(key,data());status.hidden=false;status.textContent='Profile saved locally.'};
 document.getElementById('exportProfile').onclick=()=>{const b=new Blob([JSON.stringify(data(),null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='khaemenes-grade09-student-profile.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),800)};
