@@ -1,0 +1,26 @@
+name: Grade 09 Mathematics Label Validation
+
+on:
+  pull_request:
+    paths:
+      - grades/grade-09/index.html
+      - scripts/validate_grade09_math_labels.py
+      - .github/workflows/grade09-math-label-validation.yml
+  push:
+    branches: [main]
+    paths:
+      - grades/grade-09/index.html
+      - scripts/validate_grade09_math_labels.py
+      - .github/workflows/grade09-math-label-validation.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate Grade 09 mathematics labels
+        run: python scripts/validate_grade09_math_labels.py
