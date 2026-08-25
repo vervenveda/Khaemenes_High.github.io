@@ -12,6 +12,6 @@
   "autoplay": false,
   "transcript": null,
   "captions_verified": false,
-  "alignment_status": "enrichment_only", 
-  "alignment_note": "This video teaches how to multiply a mixed number by a fraction. Unit 3 Lesson 5 focuses on the coordinate plane and multi-step integer applications, so this resource is best treated as optional fraction and rational-number enrichment rather than a directly aligned lesson video."
+  "alignment_status": "aligned",
+  "alignment_note": "This video directly supports Unit 3 Lesson 5 by showing how to multiply a mixed number and a fraction. It reinforces conversion of mixed numbers to improper fractions and procedural fluency while the lesson extends the idea through scaling, signed factors, estimation, and simplification."
 }
