@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Khaemenes Pre-Algebra Unit 2 Lesson 4 companion game: Adding Integers with Models and Meaning.">
+<meta name="theme-color" content="#090d14">
+<title>Lesson 4 · Integer Sum Lab · Adding Integers</title>
+<style>
+:root{
+--bg:#090d14;--panel:#151d29;--ink:#f7f2e7;--muted:#c9c1b2;--line:#3b4655;
+--gold:#d8bd7a;--gold2:#f0d99b;--green:#8fd4ad;--red:#ef9a9a;--blue:#90b8e6;
+--shadow:0 18px 55px rgba(0,0,0,.36);--serif:Cinzel,Georgia,"Times New Roman",serif;
+--sans:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--sans);line-height:1.5;background:
+radial-gradient(circle at 15% 0%,rgba(216,189,122,.11),transparent 28rem),
+radial-gradient(circle at 90% 20%,rgba(84,122,164,.11),transparent 30rem),
+linear-gradient(180deg,var(--bg),#0c121a 60%,#090d14)}
+button,a,select{font:inherit}a{color:inherit}button{touch-action:manipulation}
+button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #b9d8ff;outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:1000;background:#fff;color:#111;padding:10px 14px;border-radius:8px}
+.shell{width:min(var(--max),calc(100% - 28px));margin:auto;padding:22px 0 50px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid rgba(216,189,122,.22);padding:8px 0 20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}.seal{width:44px;height:44px;border:1px solid rgba(216,189,122,.7);border-radius:9px;display:grid;place-items:center;transform:rotate(45deg);background:rgba(216,189,122,.06);flex:0 0 auto}.seal span{transform:rotate(-45deg);font-family:Georgia,serif;color:var(--gold2)}
+.kicker{margin:0;color:var(--gold2);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}.crumb{margin:3px 0 0;color:var(--muted);font-size:.86rem}.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.ghost,.primary,.secondary{min-height:42px;border-radius:10px;padding:9px 13px;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.ghost,.secondary{border:1px solid var(--line);background:#151c25;color:var(--ink)}.primary{border:1px solid var(--gold2);background:var(--gold2);color:#17130a;font-weight:800}.ghost:hover,.secondary:hover{border-color:var(--gold)}
+.hero{text-align:center;max-width:930px;margin:auto;padding:46px 10px 28px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.19em;font-size:.75rem;font-weight:800}
+h1,h2,h3{font-family:var(--serif);font-weight:500}h1{font-size:clamp(2.05rem,5vw,4.05rem);line-height:1.05;margin:10px 0 13px}.hero p{color:var(--muted);font-size:clamp(1rem,2vw,1.15rem);max-width:800px;margin:0 auto}
+.lesson-sync{max-width:900px;margin:20px auto 0;padding:13px 15px;border-left:3px solid var(--gold);border-radius:0 11px 11px 0;background:rgba(216,189,122,.06);color:#ddd5c6;text-align:left}
+.panel{border:1px solid rgba(216,189,122,.18);border-radius:18px;background:linear-gradient(180deg,rgba(23,30,41,.97),rgba(15,21,30,.97));box-shadow:var(--shadow)}
+.studio{padding:20px;margin-bottom:22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:14px}.section-head h2{margin:3px 0 0;font-size:clamp(1.4rem,3vw,2.1rem)}.section-head p{margin:0;color:var(--muted);max-width:660px}
+.studio-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}.studio-tab{min-height:52px;border:1px solid var(--line);border-radius:10px;background:#111720;color:var(--muted);cursor:pointer;padding:8px}.studio-tab[aria-selected="true"]{background:var(--gold2);border-color:var(--gold2);color:#17130a;font-weight:800}
+.scene{display:none;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:16px}.scene.active{display:grid}
+.visual{min-height:330px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px),#0b1016;background-size:24px 24px;padding:18px;display:grid;place-items:center;overflow:hidden}
+.copy{border:1px solid var(--line);border-radius:14px;background:#111720;padding:18px}.copy h3{margin:0 0 8px}.copy p,.copy li{color:var(--muted);font-size:.92rem}.copy ul{padding-left:20px}.takeaway{margin-top:12px;padding:10px 12px;border-left:3px solid var(--gold);background:rgba(216,189,122,.06);color:#e7dece}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+
+/* number line */
+.line-wrap{width:min(100%,700px);position:relative;height:210px}.axis{position:absolute;left:5%;right:5%;top:112px;height:2px;background:#778393}.axis:before,.axis:after{content:"";position:absolute;top:-6px;border:7px solid transparent}.axis:before{left:-10px;border-right-color:#778393}.axis:after{right:-10px;border-left-color:#778393}
+.tick{position:absolute;top:98px;width:1px;height:30px;background:#586576}.tick span{position:absolute;top:35px;left:50%;transform:translateX(-50%);color:#9da7b2;font-size:.72rem}.zero-tick{background:var(--gold2);width:2px}
+.walker{position:absolute;top:55px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;transform:translateX(-50%);border:1px solid var(--gold2);background:#211c12;color:#fff0c7;font:1rem Georgia,serif;transition:.7s ease}
+.move-label{position:absolute;top:20px;left:50%;transform:translateX(-50%);color:var(--gold2);font:1rem Georgia,serif}
+
+/* zero pairs */
+.counter-field{display:grid;gap:14px;width:min(100%,680px)}.counter-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;min-height:54px}.counter{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:900;border:1px solid var(--line);opacity:.45;transition:.25s}.counter.pos{background:rgba(143,212,173,.15);color:#bdf1d0}.counter.neg{background:rgba(239,154,154,.13);color:#ffc7c7}.counter.on{opacity:1;border-color:var(--gold2);transform:scale(1.05)}.counter.cancel{opacity:.12;transform:scale(.75)}
+.zero-note{text-align:center;color:var(--muted)}.zero-note b{color:var(--gold2)}
+
+/* magnitude duel */
+.duel{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;width:min(100%,650px)}.fighter{border:1px solid var(--line);border-radius:14px;background:#111720;padding:18px;text-align:center;opacity:.4;transition:.25s}.fighter b{display:block;font:2rem Georgia,serif}.fighter span{display:block;color:var(--muted);font-size:.84rem}.fighter.on{opacity:1;border-color:var(--gold2);background:rgba(216,189,122,.07)}.vs{font:1.4rem Georgia,serif;color:var(--gold2)}.result-card{grid-column:1/-1;border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center;color:var(--muted);opacity:.35;transition:.25s}.result-card.on{opacity:1;border-color:var(--gold2);color:#fff0c7}
+
+/* inverse */
+.inverse-demo{display:grid;gap:10px;width:min(100%,640px)}.inverse-step{border:1px solid var(--line);border-radius:10px;background:#111720;padding:13px;text-align:center;color:var(--muted);opacity:.35;transition:.25s}.inverse-step b{font-family:Georgia,serif;color:#e8e0d1}.inverse-step.on{opacity:1;border-color:var(--gold2);background:rgba(216,189,122,.07);color:#fff0c7}
+
+/* game */
+.game-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:18px;align-items:start}.play{padding:20px}.side{padding:18px}
+.status{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-bottom:15px}.progress-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.82rem;margin-bottom:7px}.track{height:8px;background:#07090d;border:1px solid #313946;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ae9255,var(--gold2));transition:.3s}.stat{min-width:72px;text-align:center;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}.stat b{display:block}.stat span{display:block;color:var(--muted);font-size:.68rem;text-transform:uppercase}
+.stage{min-height:235px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),#0c1117;background-size:24px 24px;padding:22px;display:grid;place-items:center;text-align:center}.mission-badge{display:inline-block;margin-bottom:8px;padding:5px 9px;border:1px solid rgba(216,189,122,.35);border-radius:999px;color:var(--gold2);font-size:.7rem;letter-spacing:.11em;text-transform:uppercase}.big{font:clamp(2rem,7vw,4.4rem) Georgia,serif;color:#fff5da;margin:6px 0}.prompt{color:#ddd5c6}
+.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}.choice{min-height:68px;border:1px solid var(--line);border-radius:12px;background:#111720;color:var(--ink);cursor:pointer;padding:11px;text-align:left;position:relative}.choice:hover{border-color:#748194}.choice[aria-pressed="true"]{border-color:var(--gold2);background:rgba(216,189,122,.09)}.choice[aria-pressed="true"]:after{content:"✓";position:absolute;right:9px;top:7px;color:var(--gold2);font-weight:900}.choice strong{display:block;font-family:Georgia,serif}
+.feedback{margin-top:14px;min-height:78px;border:1px solid transparent;border-radius:12px;padding:13px 14px;background:rgba(255,255,255,.02)}.feedback.good{border-color:rgba(143,212,173,.42);background:rgba(143,212,173,.07)}.feedback.bad{border-color:rgba(239,154,154,.42);background:rgba(239,154,154,.07)}.feedback h3{margin:0 0 4px;font-size:1rem}.feedback p{margin:0;color:#d7d0c2}.feedback .detail{color:var(--gold2);margin-top:6px;font-size:.88rem}.action-row{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:14px}
+.side h2{margin:2px 0 12px;font-size:1.18rem}.concept{border:1px solid var(--line);border-radius:11px;padding:11px;background:rgba(255,255,255,.025);margin-bottom:9px}.concept b{display:block;font:1rem Georgia,serif}.concept span{color:var(--muted);font-size:.82rem}.tip{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.tip p{margin:5px 0 0;color:var(--muted);font-size:.87rem}.controls{display:grid;gap:10px;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.control{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.control label{color:var(--muted);font-size:.8rem}.control select{min-height:40px;border:1px solid var(--line);border-radius:9px;background:#111720;color:var(--ink);padding:8px 10px}.best{color:var(--gold2);font-size:.82rem;margin:11px 0 0}
+.mastery{display:none;margin-top:20px;padding:24px;text-align:center;border:1px solid rgba(216,189,122,.5);border-radius:16px;background:#111720}.mastery.show{display:block}.mastery-mark{width:72px;height:72px;border-radius:50%;border:1px solid var(--gold2);display:grid;place-items:center;margin:0 auto 12px;color:var(--gold2);font:1.25rem Georgia,serif}.mastery h2{margin:5px 0}.mastery p{color:var(--muted);max-width:650px;margin:7px auto 15px}
+footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
+@media(max-width:920px){.scene,.game-grid{grid-template-columns:1fr}.side{order:2}}@media(max-width:720px){.studio-tabs{grid-template-columns:1fr 1fr}.choice-grid{grid-template-columns:1fr}.duel{grid-template-columns:1fr}.vs{display:none}}@media(max-width:560px){.shell{width:min(100% - 18px,var(--max));padding-top:12px}.actions{display:none}.studio,.play{padding:13px}.status{grid-template-columns:1fr 66px}.status .stat:last-child{display:none}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.001ms!important;scroll-behavior:auto!important}}@media print{body{background:#fff;color:#111}.actions,.studio-tabs,.row,.action-row,.controls{display:none!important}.panel,.visual,.copy,.stage,.concept{box-shadow:none!important;background:#fff!important;color:#111!important;border-color:#bbb!important}.hero p,.copy p,.copy li,.concept span,.tip p{color:#444!important}}
+</style>
+</head>
+<body><a class="skip" href="#game">Skip to game</a><div class="shell">
+<header class="topbar">
+<a class="brand" href="../units/unit-02/lessons/lesson-04-adding-integers.html"><div class="seal"><span>Σ</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 02</p><p class="crumb">Lesson 4 Companion · Adding Integers with Models & Meaning</p></div></a>
+<div class="actions"><a class="ghost" href="../units/unit-02/lessons/lesson-04-adding-integers.html">← Lesson 4</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
+</header>
+
+<section class="hero">
+<div class="eyebrow">Unit 2 · Lesson 4 · Companion Game</div>
+<h1>Integer Sum Lab</h1>
+<p>Move on the number line, build and cancel zero pairs, compare magnitudes, and defend the sign of every integer sum.</p>
+<div class="lesson-sync"><strong>Lesson sync:</strong> adding a positive moves right; adding a negative moves left. Same signs combine magnitudes and keep the common sign. Different signs compete by magnitude. Opposites cancel to zero.</div>
+</section>
+
+<section class="panel studio">
+<div class="section-head"><div><div class="eyebrow">Animated instruction studio</div><h2>See why the addition rules work.</h2></div><p>Four visual demonstrations mirror the lesson’s number-line movement, zero-pair, same/different sign, and additive-inverse reasoning.</p></div>
+<div class="studio-tabs"><button class="studio-tab" aria-selected="true">1 · Number-Line Movement</button><button class="studio-tab" aria-selected="false">2 · Zero-Pair Cancellation</button><button class="studio-tab" aria-selected="false">3 · Magnitude Decides the Sign</button><button class="studio-tab" aria-selected="false">4 · Additive Inverses</button></div>
+
+<div class="scene active">
+<div class="visual"><div class="line-wrap"><div class="move-label" id="moveLabel">Start at −3</div><div class="axis"></div>
+<div class="tick" style="left:12%"><span>−8</span></div><div class="tick" style="left:22%"><span>−6</span></div><div class="tick" style="left:32%"><span>−4</span></div><div class="tick" style="left:42%"><span>−2</span></div><div class="tick zero-tick" style="left:52%"><span>0</span></div><div class="tick" style="left:62%"><span>2</span></div><div class="tick" style="left:72%"><span>4</span></div><div class="tick" style="left:82%"><span>6</span></div><div class="tick" style="left:92%"><span>8</span></div>
+<div class="walker" id="walker" style="left:37%">−3</div></div></div>
+<div class="copy"><h3>Addition is movement from a starting point.</h3><p>For −3 + 5, start at −3 and move five units to the right because the added value is positive.</p><div class="takeaway">Adding positive → move right. Adding negative → move left.</div><div class="row"><button class="primary" id="playMoveDemo">Animate −3 + 5</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="counter-field"><div class="counter-row" id="counterRow"></div><div class="zero-note"><b>+1 and −1 form a zero pair.</b><br>Cancel matching pairs; whatever remains determines the sum.</div></div></div>
+<div class="copy"><h3>Zero pairs explain unlike signs.</h3><p>For +5 + (−3), three positive counters cancel with three negative counters. Two positive counters remain.</p><div class="takeaway">The uncancelled counters show both the magnitude and sign of the result.</div><div class="row"><button class="primary" id="playCounterDemo">Build +5 + (−3)</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="duel"><div class="fighter" id="fightNeg"><b>−12</b><span>magnitude 12</span></div><div class="vs">vs</div><div class="fighter" id="fightPos"><b>+7</b><span>magnitude 7</span></div><div class="result-card" id="fightResult">12 − 7 = 5, and the larger magnitude belonged to −12 → result −5</div></div></div>
+<div class="copy"><h3>Different signs create a magnitude contest.</h3><p>When signs differ, subtract magnitudes. The sign of the larger magnitude controls the result.</p><div class="takeaway">−12 + 7 = −5 because 12 > 7.</div><div class="row"><button class="primary" id="playDuelDemo">Compare the magnitudes</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="inverse-demo"><div class="inverse-step" id="inv1"><b>+8 and −8 are opposites.</b></div><div class="inverse-step" id="inv2">Their magnitudes match exactly.</div><div class="inverse-step" id="inv3"><b>8 + (−8) = 0</b></div><div class="inverse-step" id="inv4">General rule: a + (−a) = 0</div></div></div>
+<div class="copy"><h3>Opposites are additive inverses.</h3><p>A number and its opposite cancel completely because their signed changes are equal in size and opposite in direction.</p><div class="takeaway">Equal magnitudes + opposite signs = zero.</div><div class="row"><button class="primary" id="playInverseDemo">Show the cancellation</button></div></div>
+</div>
+</section>
+
+<main id="game" class="game-grid">
+<section class="panel play">
+<div class="section-head"><div><div class="eyebrow">Integer Sum Challenge</div><h2>Movement & Zero-Pair Missions</h2></div><p>Add same-sign and different-sign integers, predict the result’s sign, interpret contexts, and identify additive inverse structure.</p></div>
+<div class="status"><div><div class="progress-label"><span id="roundLabel">Mission 1 of 16</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div></div>
+<div class="stage"><div><div class="mission-badge" id="missionBadge">Add Integers</div><div class="big" id="challengeValue">−9 + 5</div><div class="prompt" id="questionPrompt">What is the sum?</div></div></div>
+<div class="choice-grid" id="choiceGrid"></div>
+<div class="action-row"><button class="secondary" id="hintBtn">Reasoning hint</button><button class="primary" id="checkBtn">Check reasoning</button><button class="secondary" id="nextBtn" hidden>Next mission →</button></div>
+<div class="feedback" id="feedback"><h3>Ready.</h3><p>Decide first: same signs, different signs, or additive inverses?</p></div>
+<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../units/unit-02/lessons/lesson-04-adding-integers.html">Return to Lesson 4</a></div></div>
+</section>
+
+<aside class="panel side">
+<h2>Lesson 4 Field Guide</h2>
+<div class="concept"><b>Same signs</b><span>Add magnitudes and keep the common sign.</span></div>
+<div class="concept"><b>Different signs</b><span>Subtract magnitudes; use the sign of the greater magnitude.</span></div>
+<div class="concept"><b>Number line</b><span>Positive addend → right. Negative addend → left.</span></div>
+<div class="concept"><b>Zero pair</b><span>One positive and one negative unit cancel to zero.</span></div>
+<div class="concept"><b>Additive inverses</b><span>a + (−a) = 0.</span></div>
+<div class="tip"><strong>Sum question</strong><p id="strategyText">Are the signs the same, different, or exact opposites?</p></div>
+<div class="controls"><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
+<p class="best" id="bestScore">Best mastery score: —</p>
+</aside>
+</main>
+<footer>KH-MATH-PA-U02-L4 · integer addition · number line · zero pairs · additive inverses · 80% mastery</footer>
+</div>
+
+<script>
+(()=>{"use strict";
+const BANK=[
+{l:"Foundation",b:"Same Signs",v:"6 + 9",q:"What is the sum?",o:["3","15","−15","54"],a:1,h:"Same positive signs: add magnitudes and keep positive.",w:"6 + 9 = 15."},
+{l:"Foundation",b:"Same Signs",v:"−4 + (−7)",q:"What is the sum?",o:["−3","3","11","−11"],a:3,h:"Same negative signs: 4 + 7 = 11, then keep negative.",w:"−4 + (−7) = −11."},
+{l:"Foundation",b:"Same Signs",v:"−15 + (−6)",q:"What is the sum?",o:["−21","−9","9","21"],a:0,h:"Both addends are negative.",w:"15 + 6 = 21, so the sum is −21."},
+{l:"Foundation",b:"Different Signs",v:"−9 + 5",q:"What is the sum?",o:["−14","4","−4","14"],a:2,h:"Subtract magnitudes 9 − 5. The larger magnitude is negative.",w:"−9 + 5 = −4."},
+{l:"Foundation",b:"Different Signs",v:"13 + (−8)",q:"What is the sum?",o:["−21","−5","5","21"],a:2,h:"Subtract 13 − 8. The larger magnitude is positive.",w:"13 + (−8) = 5."},
+{l:"Foundation",b:"Zero Pair",v:"12 + (−12)",q:"What is the sum?",o:["−24","12","24","0"],a:3,h:"The addends are exact opposites.",w:"A number plus its opposite equals zero."},
+{l:"Foundation",b:"Number-Line Move",v:"Start at 3, add −7",q:"Which movement is correct?",o:["7 units left","7 units right","3 units left","Stay at 3"],a:0,h:"Adding a negative means move left.",w:"Starting at 3 and adding −7 means move seven units left."},
+
+{l:"Core",b:"Number-Line Result",v:"Start at −5, add 9",q:"Where do you land?",o:["−14","−4","4","14"],a:2,h:"Adding +9 means move nine units right from −5.",w:"−5 + 9 = 4."},
+{l:"Core",b:"Structure",v:"Same-sign rule",q:"Which rule is correct?",o:["Subtract magnitudes and keep larger sign.","Add magnitudes and keep common sign.","Always make the sum positive.","Always make the sum zero."],a:1,h:"Think about −6 + (−4).",w:"For same signs, add magnitudes and keep the common sign."},
+{l:"Core",b:"Sign Prediction",v:"7 + (−11)",q:"Which magnitude controls the sign?",o:["7","18","0","11"],a:3,h:"Compare |7| and |−11|.",w:"11 is larger and belongs to the negative addend, so the sum is negative."},
+{l:"Core",b:"Temperature Context",v:"−3°C then falls 6°C",q:"What is the new temperature?",o:["−3°C","3°C","9°C","−9°C"],a:3,h:"A fall of 6 is −6.",w:"−3 + (−6) = −9°C."},
+{l:"Core",b:"Sports Context",v:"Lose 8 yards, gain 13",q:"What is the net change?",o:["−21 yards","+5 yards","−5 yards","+21 yards"],a:1,h:"Represent the changes as −8 and +13.",w:"−8 + 13 = +5 yards."},
+{l:"Core",b:"Finance Context",v:"−$30 then +$18",q:"What is the net change?",o:["−$48","+$12","−$12","+$48"],a:2,h:"30 has the larger magnitude and it is negative.",w:"−30 + 18 = −12."},
+{l:"Core",b:"Movement Context",v:"Down 12 m, then up 7 m",q:"What is the net change?",o:["−5 m","−19 m","+5 m","+19 m"],a:0,h:"Represent down as −12 and up as +7.",w:"−12 + 7 = −5 m."},
+{l:"Core",b:"Error Analysis",v:"Student says −6 + 10 = −16",q:"What is the best correction?",o:["Add magnitudes and use negative.","Subtract 10 − 6 and use positive: 4.","The answer is 16.","Different signs always make zero."],a:1,h:"Different signs require comparing magnitudes.",w:"10 has the greater magnitude, so −6 + 10 = +4."},
+{l:"Core",b:"Sign Prediction",v:"−42 + 15",q:"Without exact calculation, what sign must the sum have?",o:["Negative","Positive","Zero","Cannot know"],a:0,h:"Compare magnitudes 42 and 15.",w:"The negative addend has greater magnitude, so the sum must be negative."},
+
+{l:"Extended",b:"Additive Inverse",v:"a + (−a) = 0",q:"What relationship is illustrated?",o:["Commutative property only","Multiplication by zero","Absolute value","Additive inverses"],a:3,h:"A number and its opposite cancel.",w:"Opposites are additive inverses because their sum is zero."},
+{l:"Extended",b:"Evaluate Then Add",v:"−|6| + 10",q:"What is the value?",o:["−16","−4","4","16"],a:2,h:"First evaluate |6|, then apply the negative sign.",w:"−|6| + 10 = −6 + 10 = 4."},
+{l:"Extended",b:"Strategic Pairing",v:"−8 + 5 + 8 + (−2)",q:"Which first move is most efficient?",o:["Pair −8 and +8","Add −8 + 5 first","Pair 5 and −2 because signs differ","Change all signs"],a:0,h:"Look for additive inverses that cancel to zero.",w:"Pairing −8 and +8 gives 0 immediately; then 5 + (−2) = 3."},
+{l:"Extended",b:"Strategic Pairing",v:"14 + (−6) + (−14) + 9",q:"What is the sum?",o:["3","−3","17","−17"],a:0,h:"Pair +14 and −14 first.",w:"14 + (−14) = 0, then −6 + 9 = 3."},
+{l:"Extended",b:"Reasoning",v:"x + y = 0",q:"If x and y are integers and x ≠ 0, what must be true?",o:["x = y","y = −x","Both must be positive","Both must be zero"],a:1,h:"What kind of pair sums to zero?",w:"The integers must be additive inverses, so y = −x."},
+{l:"Extended",b:"Sign Reasoning",v:"−31 + 44",q:"Which statement explains the result’s sign?",o:["Negative because one addend is negative.","Positive because 44 has the greater magnitude.","Zero because signs differ.","Positive because all sums are positive."],a:1,h:"Compare magnitudes 31 and 44.",w:"Different signs: 44 > 31, so the result is positive."},
+{l:"Extended",b:"Running Total",v:"+12, −20, +5, +9",q:"What is the final net change?",o:["−6","+6","+46","−46"],a:1,h:"Pair or accumulate strategically.",w:"+12 −20 +5 +9 = +6."}
+];
+
+const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
+const BEST="khaemenes-prealgebra-u02-l04-integer-sum-lab-v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
+function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
+function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function start(src=null){deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
+function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;el.strategy.textContent=c.b.includes("Same")?"Same signs: add magnitudes and keep the sign.":c.b.includes("Inverse")||c.b.includes("Pair")?"Look for opposite values that cancel to zero.":"If signs differ, compare magnitudes or model the movement.";feedback("","Mission ready.","Decide first: same signs, different signs, or additive inverses?");stats()}
+function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by the model or sign reasoning.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Sum defended.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
+function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
+function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(e){return null}}
+function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
+function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(BEST,String(p))}catch(e){}updateBest()}
+function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Integer Sum Lab mastery passed":"Rebuild the model";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} Lesson 4 missions correctly and met the 80% mastery target. Return to Lesson 4 for practice and reflection.`:`You solved ${correct} of ${attempts} missions correctly. Review the missed sums, especially sign selection, zero pairs, and magnitude reasoning.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
+el.tabs.forEach((b,i)=>b.onclick=()=>{el.tabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));el.scenes.forEach((s,j)=>s.classList.toggle("active",j===i))});
+const later=(f,m)=>setTimeout(f,m);
+
+$("playMoveDemo").onclick=()=>{const w=$("walker"),m=$("moveLabel");w.style.left="37%";w.textContent="−3";m.textContent="Start at −3";later(()=>{m.textContent="Add +5 → move right 5";w.style.left="62%";w.textContent="+2"},500);later(()=>{m.textContent="Land at +2"},1300)};
+
+$("playCounterDemo").onclick=()=>{const row=$("counterRow");row.innerHTML="";const counters=[];for(let i=0;i<5;i++){const c=document.createElement("div");c.className="counter pos";c.textContent="+";row.appendChild(c);counters.push(c)}for(let i=0;i<3;i++){const c=document.createElement("div");c.className="counter neg";c.textContent="−";row.appendChild(c);counters.push(c)};counters.forEach((c,i)=>later(()=>c.classList.add("on"),i*100));later(()=>{for(let i=0;i<3;i++){counters[i].classList.add("cancel");counters[5+i].classList.add("cancel")}},1050)};
+
+$("playDuelDemo").onclick=()=>{["fightNeg","fightPos","fightResult"].forEach(id=>$(id).classList.remove("on"));$("fightNeg").classList.add("on");later(()=>$("fightPos").classList.add("on"),450);later(()=>$("fightResult").classList.add("on"),900)};
+
+$("playInverseDemo").onclick=()=>{["inv1","inv2","inv3","inv4"].forEach(id=>$(id).classList.remove("on"));["inv1","inv2","inv3","inv4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*380))};
+
+document.addEventListener("keydown",e=>{if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName))return;if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();feedback("","Reasoning hint",deck[index].h)}});
+updateBest();start();
+})();
+</script>
+</body></html>
