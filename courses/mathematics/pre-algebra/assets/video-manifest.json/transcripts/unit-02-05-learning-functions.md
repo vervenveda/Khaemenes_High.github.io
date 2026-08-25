@@ -12,6 +12,6 @@
   "autoplay": false,
   "transcript": null,
   "captions_verified": false,
-  "alignment_status": "aligned",
-  "alignment_note": "This video introduces the concept of functions and explains how inputs and outputs are related. It supports Unit 2 Lesson 5 by reinforcing foundational function vocabulary, mappings, and the idea that each input is associated with an output."
+  "alignment_status": "not_aligned",
+  "alignment_note": "This video introduces functions, inputs, and outputs. Unit 2 Lesson 5 teaches subtracting integers by adding the opposite, so this video should not be presented as a Lesson 5 instructional companion. It is retained in the media library for possible use in a later functions unit."
 }
