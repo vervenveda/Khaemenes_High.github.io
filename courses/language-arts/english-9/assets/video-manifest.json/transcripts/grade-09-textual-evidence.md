@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "lesson_id": "KH-ELA-ENG9-U01-L04",
   "unit": 1,
-  "lesson": 1,
+  "lesson": 4,
   "title": "Citing Textual Evidence During Reading — Reading Comprehension",
   "provider": "youtube",
   "video_id": "fyJr3Zv5lvQ",
