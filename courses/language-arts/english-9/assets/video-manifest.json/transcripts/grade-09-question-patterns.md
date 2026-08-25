@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "lesson_id": "KH-ELA-ENG9-U01-L01",
+  "lesson_id": "KH-ELA-ENG9-U01-L03",
   "unit": 1,
-  "lesson": 1,
+  "lesson": 3,
   "title": "Question Patterns — English Grammar",
   "provider": "youtube",
   "video_id": "PHe-f-xsU7c",
