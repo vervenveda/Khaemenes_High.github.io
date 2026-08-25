@@ -1,4 +1,67 @@
-<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Pre-Algebra Unit 1 Lesson 6: Estimation, Compatible Numbers and Reasonableness."><meta name="theme-color" content="#0b1730"><title>Lesson 6 · Estimation &amp; Reasonableness</title><link rel="stylesheet" href="../assets/unit.css"><style>
+<!doctype html>
+<!--
+============================================================
+KHAEMENES PRE-ALGEBRA · UNIT 01 · LESSON 06
+Estimation, Compatible Numbers & Reasonableness
+
+REPOSITORY FILE TREE
+------------------------------------------------------------
+courses/
+└── mathematics/
+    └── pre-algebra/
+        ├── learning-games/
+        │   ├── number-family.html
+        │   ├── factors-multiples.html
+        │   ├── prime-composite.html
+        │   ├── group-or-cycle.html
+        │   ├── GCF-LCM-Challenge.html
+        │   ├── operation-stepper.html
+        │   └── estimate-defender.html
+        └── units/
+            └── unit-01/
+                ├── assets/
+                │   ├── unit.css
+                │   └── lesson-engine.js
+                └── lessons/
+                    ├── lesson-01-number-systems.html
+                    ├── lesson-02-factors-multiples.html
+                    ├── lesson-03-primes-divisibility.html
+                    ├── lesson-04-gcf-lcm.html
+                    ├── lesson-05-order-operations.html
+                    └── lesson-06-estimation-reasonableness.html  ← this file
+
+INSIDE THIS FILE
+------------------------------------------------------------
+01 · Metadata + lesson-specific CSS
+02 · Tablet overflow / answer-choice repair CSS
+03 · Header + breadcrumb
+04 · Hero
+05 · Learning goals + warm-up
+06 · Concept development + deeper concept instructions
+07 · Reading room
+08 · Estimation laboratory
+09 · Quick check
+10 · 33-second reset
+11 · Math Break · Estimate Defender
+12 · Worked examples
+13 · Guided notes
+14 · Pathway support
+15 · Vocabulary bridge
+16 · Application
+17 · Practice
+18 · Reflection + lesson navigation
+19 · LESSON_DATA
+20 · UNIT_MAP_FALLBACK
+21 · VOCAB_FALLBACK
+22 · Shared lesson-engine.js connection
+
+PUBLIC / STUDENT SAFE
+------------------------------------------------------------
+No passwords. No hidden credentials. No external libraries.
+Local browser progress remains controlled by the shared lesson engine.
+============================================================
+-->
+<html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Pre-Algebra Unit 1 Lesson 6: Estimation, Compatible Numbers and Reasonableness."><meta name="theme-color" content="#0b1730"><title>Lesson 6 · Estimation &amp; Reasonableness</title><link rel="stylesheet" href="../assets/unit.css"><style>
 .lesson-layout{display:grid;grid-template-columns:minmax(0,1fr) 333px;gap:24px;align-items:start}
 .lesson-main,.lesson-side{padding:24px}.lesson-side{position:sticky;top:88px}
 .objective-list{display:grid;gap:11px;padding:0;list-style:none}.objective-list li{padding:14px;border:1px solid var(--line);border-radius:7px;background:var(--bg2)}.objective-list li::before{content:"✓";margin-inline-end:11px;color:var(--green);font-weight:444}
@@ -25,21 +88,332 @@
 .expression-card{padding:33px}.expression-tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}.expression-hero{padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--bg2);text-align:center}.expression-hero span,.expression-answer span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em}.expression-hero strong{display:block;font-family:var(--serif);font-size:33px;margin:11px 0;color:var(--forest-deep)}.expression-hero p{margin:0;color:var(--muted)}.step-list{display:grid;gap:11px;margin:24px 0}.math-step{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:14px;border:1px solid var(--line);border-radius:7px;background:var(--bg2)}.math-step>span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--forest);color:#fff;font-family:var(--serif)}.math-step strong{display:block;font-family:var(--serif);font-size:22px}.math-step small{display:block;margin-top:5px;color:var(--muted)}.expression-answer{padding:18px;border-left:3px solid var(--gold);border-radius:7px;background:var(--bg2);text-align:center}.expression-answer strong{display:block;font-family:var(--serif);font-size:33px;color:var(--gold2);margin-top:5px}
 
 .estimation-card{padding:33px}.estimation-tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}.estimate-hero{padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--bg2);text-align:center}.estimate-hero span,.estimate-verdict span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em}.estimate-hero strong{display:block;font-family:var(--serif);font-size:33px;margin:11px 0;color:var(--forest-deep)}.estimate-hero p{margin:0;color:var(--muted)}.estimate-flow{display:grid;gap:11px;margin:24px 0}.estimate-step{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:14px;border:1px solid var(--line);border-radius:7px;background:var(--bg2)}.estimate-step>span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--forest);color:#fff;font-family:var(--serif)}.estimate-step strong{display:block;font-family:var(--serif);font-size:22px}.estimate-step small{display:block;margin-top:5px;color:var(--muted)}.estimate-verdict{padding:18px;border-left:3px solid var(--gold);border-radius:7px;background:var(--bg2);text-align:center}.estimate-verdict strong{display:block;font-family:var(--serif);font-size:33px;color:var(--gold2);margin:5px 0}.estimate-verdict small{color:var(--muted)}
+
+/* =========================================================
+   ORGANIZATION + DEEPER CONCEPT SUPPORT · LESSON 06
+   Student-facing structure only. No scoring, mastery,
+   localStorage, or shared lesson-engine behavior changed.
+   ========================================================= */
+.concept-study-guide{
+  max-width:999px;
+  margin:0 auto 24px;
+  padding:24px;
+}
+.concept-study-guide h3{
+  font-size:24px;
+  margin:7px 0 11px;
+}
+.concept-study-guide p{
+  color:var(--muted);
+  line-height:1.75;
+  margin:0 0 14px;
+}
+.concept-steps{
+  display:grid;
+  gap:11px;
+  margin:18px 0 0;
+  padding:0;
+  list-style:none;
+}
+.concept-steps li{
+  display:grid;
+  grid-template-columns:33px minmax(0,1fr);
+  gap:11px;
+  align-items:start;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--bg2);
+  color:var(--muted);
+  line-height:1.65;
+}
+.concept-steps strong{
+  color:var(--ink);
+}
+.concept-step-number{
+  display:grid;
+  place-items:center;
+  width:33px;
+  height:33px;
+  border-radius:50%;
+  background:var(--forest);
+  color:#fff;
+  font-family:var(--serif);
+}
+.math-break-card{
+  max-width:888px;
+  margin:auto;
+  text-align:center;
+  padding:33px;
+}
+.math-break-card p{
+  color:var(--muted);
+  line-height:1.75;
+}
+
+/* =========================================================
+   TABLET CHOICE + OVERFLOW RESCUE · LESSON 06
+   CSS only · no scoring, mastery, storage, or lesson logic changed
+   ========================================================= */
+html,
+body{
+  max-width:100%;
+  overflow-x:clip;
+}
+.wrap,
+.lesson-layout,
+.lesson-main,
+.lesson-side,
+.card,
+.question,
+.option,
+.notice,
+.field,
+.actions,
+.header-inner,
+.practice-meter,
+.vocab-table,
+.concept-study-guide,
+.math-break-card{
+  min-width:0!important;
+  max-width:100%!important;
+}
+p,
+li,
+dd,
+dt,
+label,
+legend,
+h1,
+h2,
+h3,
+h4,
+.lead,
+.notice,
+.help-text,
+.option,
+.question,
+.answer,
+.feedback,
+.pathway-panel,
+.vocab-table th,
+.vocab-table td,
+.concept-study-guide,
+.concept-steps li{
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  hyphens:auto;
+}
+.option{
+  display:grid!important;
+  grid-template-columns:28px minmax(0,1fr)!important;
+  align-items:start!important;
+  overflow:hidden!important;
+  gap:11px!important;
+}
+.option input[type="radio"],
+.option input[type="checkbox"]{
+  width:22px!important;
+  min-width:22px!important;
+  max-width:22px!important;
+  height:22px!important;
+  min-height:22px!important;
+  margin:2px 0 0 0!important;
+  padding:0!important;
+  flex:0 0 22px!important;
+  justify-self:start!important;
+  accent-color:var(--gold);
+}
+.option label,
+.option span{
+  min-width:0!important;
+  max-width:100%!important;
+  overflow-wrap:anywhere!important;
+}
+.vocab-table{
+  width:100%!important;
+}
+img,
+svg,
+video,
+canvas{
+  max-width:100%!important;
+  height:auto;
+}
+.btn,
+.nav-button,
+.theme-button,
+button{
+  max-width:100%!important;
+  white-space:normal!important;
+}
+@media(max-width:1024px){
+  .lesson-layout{
+    grid-template-columns:1fr!important;
+  }
+  .lesson-side{
+    position:static!important;
+    width:100%!important;
+    max-width:none!important;
+  }
+  .concept-grid,
+  .quick-check-grid,
+  .factor-pair-grid,
+  .divisibility-grid,
+  .structure-grid,
+  .gcf-lcm-summary,
+  .estimate-flow{
+    grid-template-columns:1fr!important;
+  }
+  .header-actions,
+  .actions{
+    width:100%;
+  }
+}
+@media(max-width:760px){
+  .wrap,
+  .lesson-layout,
+  .header-inner{
+    width:min(calc(100% - 24px),var(--content-max,var(--max,100%)))!important;
+  }
+  .lesson-main,
+  .lesson-side,
+  .lesson-reading,
+  .factor-lab-card,
+  .inspector-card,
+  .gcf-lcm-card,
+  .estimation-card,
+  .card,
+  .panel,
+  .question,
+  .example,
+  .concept-study-guide,
+  .math-break-card{
+    padding:14px!important;
+  }
+  h1{
+    font-size:clamp(2rem,12vw,4rem)!important;
+  }
+  .concept-steps li{
+    grid-template-columns:1fr!important;
+  }
+}
+
 </style></head><body><a class="skip" href="#main">Skip to main content</a>
+
+<!-- =========================================================
+     03 · Header + breadcrumb
+     ========================================================= -->
 <header class="site-header"><div class="wrap header-inner"><a class="brand" href="../"><span class="brand-mark">K</span><span class="brand-copy"><strong>UNIT 1</strong><small>Lesson 6 · Estimation &amp; Reasonableness</small></span></a><div class="header-actions"><a class="nav-button secondary" href="../#lessons">All Lessons</a><a class="nav-button" href="../../../">Course Home</a><button class="theme-button" id="themeToggle" type="button" aria-label="Switch theme">◐</button></div></div></header>
+
+<!-- =========================================================
+     04 · Hero
+     ========================================================= -->
 <main id="main"><section class="hero"><div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../../">Pre-Algebra</a><span>›</span><a href="../">Unit 1</a><span>›</span><span aria-current="page">Lesson 6</span></nav><p class="eyebrow">Lesson 6 · 60–75 minutes</p><h1>Estimation, Compatible Numbers &amp; Reasonableness</h1><p class="lead">How can estimation help us predict, check, and communicate whether a numerical answer makes sense?</p><div class="actions"><a class="btn primary" href="#learn">Begin Lesson</a><button class="btn" id="printLesson" type="button">Print Lesson</button></div></div></section>
-<section id="learn"><div class="wrap lesson-layout"><article class="card lesson-main"><p class="eyebrow">Learning goals</p><ul class="objective-list" id="objectives"></ul><h2 style="margin-top:24px">Warm-up</h2><ol class="warmup" id="warmup"></ol></article><aside class="card lesson-side"><p class="eyebrow">Your lesson record</p><div class="field"><label for="pathwaySelect">Pathway support</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p class="notice" id="lessonStatus">Complete the practice to save a lesson score.</p><div class="side-actions"><a class="btn" href="#reading">Reading</a><a class="btn" href="#estimation-lab">Estimation Lab</a><a class="btn" href="#practice">Practice</a><button class="btn primary" id="markComplete" type="button">Mark Lesson Reviewed</button><button class="btn" id="exportLesson" type="button">Export Lesson Record</button></div></aside></div></section>
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Concept development</p><h2>Approximate deliberately. Check intelligently.</h2></div><div class="grid concept-grid" id="conceptGrid"></div></div></section>
+
+<!-- =========================================================
+     05 · Learning goals + warm-up
+     ========================================================= -->
+<section id="learn"><div class="wrap lesson-layout"><article class="card lesson-main"><p class="eyebrow">Learning goals</p><ul class="objective-list" id="objectives"></ul><h2 style="margin-top:24px">Warm-up</h2><ol class="warmup" id="warmup"></ol></article><aside class="card lesson-side"><p class="eyebrow">Your lesson record</p><div class="field"><label for="pathwaySelect">Pathway support</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p class="notice" id="lessonStatus">Complete the practice to save a lesson score.</p><div class="side-actions"><a class="btn" href="#concepts">Concepts</a><a class="btn" href="#reading">Reading</a><a class="btn" href="#estimation-lab">Estimation Lab</a><a class="btn" href="#math-break">Math Break</a><a class="btn" href="#practice">Practice</a><button class="btn primary" id="markComplete" type="button">Save Lesson Review</button><button class="btn" id="exportLesson" type="button">Export Lesson Record</button></div></aside></div></section>
+
+<!-- =========================================================
+     06 · Concept development + deeper concept instructions
+     ========================================================= -->
+<section id="concepts"><div class="wrap"><div class="section-head"><p class="eyebrow">Concept development</p><h2>Approximate deliberately. Check intelligently.</h2><p class="help-text">This section teaches estimation as a decision process. Read the concept cards as tools for thinking, not vocabulary to memorize.</p></div><article class="card lesson-main concept-study-guide" aria-labelledby="conceptGuideTitle"><p class="eyebrow">How to study these concepts</p><h3 id="conceptGuideTitle">Use each concept as a question you ask before calculating.</h3><p>Estimation becomes powerful when a student can explain why an approximation is useful. In this lesson, every estimate should answer a purpose: predicting the size of an answer, making a quick decision, or checking whether an exact result could possibly be right.</p><ol class="concept-steps"><li><span class="concept-step-number">1</span><span><strong>Name the purpose.</strong> Decide whether you are planning, checking, comparing, budgeting, or choosing a reasonable answer. A quick magnitude check may need only rough rounding, while a money decision may need a tighter estimate.</span></li><li><span class="concept-step-number">2</span><span><strong>Choose the strategy.</strong> Use rounding for sums and differences, compatible numbers for quotients, benchmark factors for products, and money estimates when dollars or quantities need a practical decision.</span></li><li><span class="concept-step-number">3</span><span><strong>State what changed.</strong> Write which numbers were replaced and why. For example, 598 ÷ 29 becomes 600 ÷ 30 because 600 and 30 are nearby values that divide easily.</span></li><li><span class="concept-step-number">4</span><span><strong>Check the scale.</strong> Compare the estimate with the exact or reported answer. If the exact answer has the wrong place value, sign, size, unit, or direction of change, it is not reasonable.</span></li></ol></article><div class="grid concept-grid" id="conceptGrid"></div></div></section>
+
+<!-- =========================================================
+     07 · Reading room
+     ========================================================= -->
 <section id="reading"><div class="wrap"><div class="section-head"><p class="eyebrow">Reading room</p><h2>Estimation is a reasoning tool—not careless arithmetic.</h2><p class="help-text">Learn how strategy, magnitude, and context work together to make an estimate useful.</p></div><div class="reading-stack" id="readingSections"></div></div></section>
+
+<!-- =========================================================
+     08 · Estimation laboratory
+     ========================================================= -->
 <section id="estimation-lab"><div class="wrap"><div class="section-head"><p class="eyebrow">Interactive estimation laboratory</p><h2>Choose nearby numbers for a reason.</h2><p class="help-text">Compare rounding, compatible numbers, benchmark factors, and money estimates. Each example explains why the approximation is useful.</p></div><div id="estimationLab"></div></div></section>
+
+<!-- =========================================================
+     09 · Quick check
+     ========================================================= -->
 <section><div class="wrap"><div class="section-head"><p class="eyebrow">Quick check · Not graded</p><h2>Predict the scale before calculating exactly.</h2></div><div class="quick-check-grid" id="quickCheckList"></div></div></section>
+
+<!-- =========================================================
+     10 · 33-second reset
+     ========================================================= -->
 <section class="section-tight"><div class="wrap"><div class="pause-card"><strong>33-second reset</strong><p>Pick a difficult calculation. Do not solve it. Decide only whether its answer should be in the tens, hundreds, thousands, or beyond.</p></div></div></section>
+
+<!-- =========================================================
+     11 · Math Break · Estimate Defender
+     ========================================================= -->
+<section class="section-tight" id="math-break">
+  <div class="wrap">
+    <article class="card lesson-main math-break-card">
+      <p class="eyebrow">Math Break · Skill Game</p>
+      <h2>Estimate Defender</h2>
+      <p class="help-text">
+        Take a short reasoning break. Choose reasonable answers, reject impossible results,
+        and return to the worked examples with stronger magnitude sense.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="../../../learning-games/estimate-defender.html">
+          Open Estimate Defender
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- =========================================================
+     12 · Worked examples
+     ========================================================= -->
 <section><div class="wrap"><div class="section-head"><p class="eyebrow">Worked examples</p><h2>Use approximation as mathematical quality control.</h2></div><div class="example-list" id="exampleList"></div></div></section>
+
+<!-- =========================================================
+     13 · Guided notes
+     ========================================================= -->
 <section><div class="wrap"><div class="section-head"><p class="eyebrow">Guided notes</p><h2>Build your own reasonableness checklist.</h2></div><article class="card lesson-main guided-note"><div class="field"><label for="lessonNotes">Describe three ways to estimate and explain how you use an estimate to decide whether an exact answer is reasonable.</label><textarea id="lessonNotes"></textarea></div><div class="actions"><button class="btn primary" id="saveNotes" type="button">Save Guided Notes</button></div><p id="notesMessage" aria-live="polite"></p></article></div></section>
+
+<!-- =========================================================
+     14 · Pathway support
+     ========================================================= -->
 <section><div class="wrap"><div class="section-head"><p class="eyebrow">Pathway support</p><h2>Choose the amount of support that helps you think.</h2></div><article class="card lesson-main"><div class="pathway-tabs" id="pathwayTabs"></div><div class="pathway-panel" id="pathwayPanel"></div></article></div></section>
+
+<!-- =========================================================
+     15 · Vocabulary bridge
+     ========================================================= -->
 <section><div class="wrap"><div class="section-head"><p class="eyebrow">Vocabulary bridge</p><h2>Connect mathematical language across languages.</h2></div><article class="card lesson-main"><div class="vocab-controls field"><label for="vocabLanguage">Bridge language</label><select id="vocabLanguage"></select></div><table class="vocab-table"><thead><tr><th>English</th><th id="languageHeading">Translation</th><th>Meaning</th></tr></thead><tbody id="vocabBody"></tbody></table></article></div></section>
+
+<!-- =========================================================
+     16 · Application
+     ========================================================= -->
 <section><div class="wrap"><div class="section-head"><p class="eyebrow">Application</p><h2>Estimate first; decide what must become exact.</h2></div><p class="notice" id="application"></p></div></section>
-<section id="practice"><div class="wrap"><div class="section-head"><p class="eyebrow">Lesson practice · 20 questions</p><h2>Reach <span data-mastery-threshold>80%</span> to complete the instructional sequence.</h2><p class="help-text">Answers autosave locally. Explanations appear after scoring.</p></div><div class="practice-meter"><div class="practice-meter-row"><span id="practiceAnswered">0 of 20 answered</span><span>Mastery: 16 / 20</span></div><div class="progress-track" id="practiceProgress" style="--value:0%"></div></div><form class="question-list" id="questionList"></form><div class="actions"><button class="btn primary" id="submitPractice" type="button">Check My Answers</button><button class="btn" id="resetPractice" type="button">Reset Practice</button></div><p class="notice" id="scoreMessage" aria-live="polite">No practice score yet.</p></div></section>
+
+<!-- =========================================================
+     17 · Practice
+     ========================================================= -->
+<section id="practice"><div class="wrap"><div class="section-head"><p class="eyebrow">Lesson practice · 20 questions</p><h2>Reach <span data-mastery-threshold>80%</span> to complete the instructional sequence.</h2><p class="help-text">Answers autosave locally. Explanations appear after scoring.</p></div><div class="practice-meter"><div class="practice-meter-row"><span id="practiceAnswered">0 of 20 answered</span><span>Mastery: 16 / 20</span></div><div class="progress-track" id="practiceProgress" style="--value:0%"></div></div><form class="question-list" id="questionList"></form><div class="actions"><button class="btn primary" id="submitPractice" type="button">Submit Assignment</button><button class="btn" id="resetPractice" type="button">Reset Practice</button></div><p class="notice" id="scoreMessage" aria-live="polite">No practice score yet.</p></div></section>
+
+<!-- =========================================================
+     18 · Reflection + lesson navigation
+     ========================================================= -->
 <section><div class="wrap"><div class="section-head"><p class="eyebrow">Reflection</p><h2>Make estimation part of your normal arithmetic.</h2></div><article class="card lesson-main"><div class="field"><label for="reflection">When would you deliberately estimate before calculating exactly, and what kind of error could that estimate help you catch?</label><textarea id="reflection"></textarea></div><div class="actions"><button class="btn primary" id="saveReflection" type="button">Save Reflection</button></div><p id="reflectionMessage" aria-live="polite"></p><nav class="lesson-nav"><a class="btn" id="previousLesson" href="#">← Previous</a><a class="btn primary" id="nextLesson" href="#">Next →</a></nav></article></div></section>
 </main><footer class="footer"><div class="wrap footer-inner"><span>KH-MATH-PA-U01-L6</span><span>Local progress · 80% mastery · Multilingual vocabulary · Printable</span></div></footer>
-<script>window.LESSON_DATA={"id":"l06","number":6,"slug":"estimation-reasonableness","title":"Estimation, Compatible Numbers & Reasonableness","duration":"60–75 minutes","essential_question":"How can estimation help us predict, check, and communicate whether a numerical answer makes sense?","objectives":["Estimate sums, differences, products, and quotients using purposeful rounding.","Use compatible numbers and front-end estimation for efficient mental calculation.","Choose an estimation strategy appropriate to the numbers and context.","Use estimates, magnitude, and operation sense to judge whether exact results are reasonable.","Explain when an exact answer is necessary and when an estimate is more useful."],"vocab_ids":["estimate","compatible-numbers","reasonableness"],"warmup":["Without calculating exactly, estimate 398 + 607. Explain how you chose the numbers in your estimate.","A student says 49 × 21 = 10,290. Use estimation—not exact multiplication—to decide whether that answer is believable."],"concepts":[{"heading":"Estimate with a purpose","body":"An estimate is not a random guess. It replaces exact values with useful nearby values so you can predict size, make a decision, or check an answer."},{"heading":"Compatible numbers reduce mental load","body":"Compatible numbers are nearby values chosen because they work together easily, especially in division: 598 ÷ 29 is close to 600 ÷ 30."},{"heading":"Reasonableness connects number sense to accuracy","body":"A correct-looking calculation can still be wrong. Compare its magnitude, sign, operation, units, and context with what an estimate predicts."}],"reading_sections":[{"heading":"Estimation is mathematical prediction","paragraphs":["Estimation produces an approximate value that is close enough for a particular purpose. The goal is not always to get as close as possible; the goal is to use enough precision for the decision you need to make.","For 398 + 607, rounding to hundreds gives 400 + 600 = 1,000. That estimate quickly predicts the size of the exact sum and gives us a benchmark for checking it."],"bullets":["Round more coarsely for a fast magnitude check.","Round more precisely when the decision requires a tighter estimate.","Always state that an approximate result is an estimate."],"takeaway":"A useful estimate is deliberate, explainable, and precise enough for its purpose."},{"heading":"Different operations invite different strategies","paragraphs":["For addition and subtraction, rounding or front-end estimation often works well. For multiplication, nearby benchmark factors can reveal the expected magnitude. For division, compatible numbers can make a difficult quotient mentally manageable.","For example, 598 ÷ 29 is awkward mentally, but 600 ÷ 30 = 20. That tells us immediately that the exact quotient should be near 20."],"bullets":["Addition/subtraction: round or use leading digits.","Multiplication: use nearby benchmark factors.","Division: look for compatible dividend-divisor pairs."],"takeaway":"Do not force one estimation method onto every problem; choose the method that fits the structure."},{"heading":"Reasonableness can catch errors before they spread","paragraphs":["Suppose a calculator entry or written algorithm reports 48 × 19 = 9,120. An estimate of 50 × 20 = 1,000 shows that 9,120 is far too large before we even compute the exact product.","Reasonableness checks also use operation sense. Adding two positive numbers should produce a result larger than either addend. Dividing a positive number by a number greater than 1 should make it smaller."],"bullets":["Compare the answer's magnitude with an estimate.","Ask whether the operation should make the value larger or smaller.","Check place value, units, and decimal placement."],"takeaway":"Estimation is a quality-control system for exact arithmetic."},{"heading":"Precision depends on context","paragraphs":["An estimate may be ideal when planning attendance, checking a grocery total, or deciding whether a budget is sufficient. Exact calculation is required when precise payment, measurement tolerances, grades, or formal records depend on the result.","Good mathematical communication makes the distinction visible. Words such as about, approximately, nearly, or ≈ signal that a value is not exact."],"bullets":["Planning often begins with estimates.","Transactions and final records often require exact values.","More decimal places do not automatically mean a number is more useful."],"takeaway":"Precision is a decision about what the situation requires, not a contest to write the most digits."}],"estimation_lab":{"examples":[{"label":"398 + 607","strategy":"Rounding","expression":"398 + 607","purpose":"Predict the magnitude of the sum.","steps":[{"work":"398 ≈ 400","why":"Round to a nearby hundred."},{"work":"607 ≈ 600","why":"Use the same useful place value."},{"work":"400 + 600","why":"Add the benchmark values."}],"estimate":"≈ 1,000","verdict":"The exact answer should be very close to one thousand."},{"label":"598 ÷ 29","strategy":"Compatible numbers","expression":"598 ÷ 29","purpose":"Turn an awkward quotient into mental arithmetic.","steps":[{"work":"598 ≈ 600","why":"600 is close and works well with 30."},{"work":"29 ≈ 30","why":"30 is a nearby divisor."},{"work":"600 ÷ 30 = 20","why":"The compatible pair divides easily."}],"estimate":"≈ 20","verdict":"A quotient near 20 is reasonable."},{"label":"49 × 21","strategy":"Benchmark factors","expression":"49 × 21","purpose":"Check the magnitude of a product.","steps":[{"work":"49 ≈ 50","why":"50 is a nearby benchmark."},{"work":"21 ≈ 20","why":"20 is nearby and easy to multiply."},{"work":"50 × 20 = 1,000","why":"Use the estimate as a scale check."}],"estimate":"≈ 1,000","verdict":"An answer around one thousand is plausible; ten thousand is not."},{"label":"$7.89 × 6","strategy":"Money estimate","expression":"$7.89 × 6","purpose":"Predict whether available money is enough.","steps":[{"work":"$7.89 ≈ $8","why":"Round to a nearby whole dollar."},{"work":"$8 × 6 = $48","why":"Multiply mentally."}],"estimate":"≈ $48","verdict":"About $50 would be a sensible quick budget; exact payment still requires the exact total."}]},"quick_checks":[{"prompt":"Which is the most useful quick estimate for 612 + 391?","options":["600 + 400 = 1,000","60 + 40 = 100","612 + 400 = 1,012 exactly","6 + 4 = 10"],"answer":0,"explanation":"Rounding both addends to hundreds gives a fast, appropriately scaled estimate of about 1,000."},{"prompt":"Which compatible-number estimate best fits 804 ÷ 39?","options":["800 ÷ 40 = 20","80 ÷ 4 = 20 exactly","900 ÷ 30 = 30","800 ÷ 4 = 200"],"answer":0,"explanation":"800 and 40 are close to the original values and divide easily."},{"prompt":"A student reports 31 × 19 = 5,890. Which estimate best exposes the error?","options":["30 × 20 ≈ 600","3 × 2 ≈ 6","30 + 20 ≈ 50","40 × 20 ≈ 800 exactly"],"answer":0,"explanation":"The product should be around 600, so 5,890 has the wrong magnitude."},{"prompt":"When is an exact value more appropriate than an estimate?","options":["Predicting attendance next month","Checking the rough size of a product","Charging a customer's final purchase total","Deciding whether an answer is plausible"],"answer":2,"explanation":"A final financial transaction requires the actual amount owed."}],"examples":[{"problem":"Estimate 2,487 + 3,112 to the nearest hundred.","steps":["2,487 ≈ 2,500.","3,112 ≈ 3,100.","Add the rounded values: 2,500 + 3,100."],"answer":"About 5,600."},{"problem":"Estimate 598 ÷ 29 using compatible numbers.","steps":["Choose nearby values 600 and 30.","600 ÷ 30 = 20.","Use 20 as a benchmark for the exact quotient."],"answer":"About 20."},{"problem":"Is 48 × 19 = 9,120 reasonable?","steps":["Round 48 to 50 and 19 to 20.","50 × 20 = 1,000.","9,120 is more than nine times the estimate, so its magnitude is implausible."],"answer":"No. The reported answer is unreasonable; the exact product is 912."},{"problem":"A family has $100 for 12 tickets costing $7.89 each. Is $100 probably enough?","steps":["Round $7.89 to $8.","Estimate 12 × $8 = $96.","Because $96 is below but close to $100, the estimate suggests the budget may be enough, but the exact total should be checked before purchase."],"answer":"Probably yes; exact calculation confirms $94.68."}],"pathways":{"Foundation":"Round to familiar tens, hundreds, or whole numbers. Say what each rounded value represents before computing.","Core":"Choose among rounding, compatible numbers, benchmarks, and front-end estimation, then justify why your strategy is useful.","Extended":"Create upper and lower bounds, compare relative error, and discuss how precision changes decisions in financial, scientific, or measurement contexts."},"application":"A school event expects 287–315 visitors. Lunch costs about $6.85 per visitor. Estimate a sensible food budget, include a small contingency, and explain which values may remain estimates during planning and which must become exact before payment.","guided_note_prompt":"Describe three ways to estimate and explain how you use an estimate to decide whether an exact answer is reasonable.","questions":[{"prompt":"Estimate 398 + 607 by rounding to the nearest hundred.","options":["About 900","About 1,000","About 1,100","About 10,000"],"answer":1,"explanation":"398≈400 and 607≈600, so the sum is about 1,000."},{"prompt":"Estimate 1,984 − 1,021 by rounding to the nearest hundred.","options":["About 100","About 500","About 3,000","About 1,000"],"answer":3,"explanation":"1,984≈2,000 and 1,021≈1,000, giving about 1,000."},{"prompt":"Estimate 49 × 21 using benchmark factors.","options":["About 1,000","About 100","About 500","About 10,000"],"answer":0,"explanation":"50×20=1,000."},{"prompt":"Which compatible-number estimate is best for 598 ÷ 29?","options":["500 ÷ 20 = 25","600 ÷ 20 = 30","600 ÷ 30 = 20","900 ÷ 30 = 30"],"answer":2,"explanation":"600 and 30 are both close to the original values and divide easily."},{"prompt":"Which is a reasonable estimate for 7.92 × 5?","options":["About 4","About 8","About 40","About 400"],"answer":2,"explanation":"7.92≈8 and 8×5=40."},{"prompt":"A student reports 62 × 39 = 24,180. Which estimate shows the result is unreasonable?","options":["60×40≈2,400","6×4≈24","60+40≈100","100×40≈4,000"],"answer":0,"explanation":"The expected product is around 2,400, not 24,000."},{"prompt":"Which estimate best checks 3,052 ÷ 61?","options":["300÷60=5","3,000÷6=500","3,600÷60=60","3,000÷60=50"],"answer":3,"explanation":"3,000 and 60 are close compatible numbers, producing about 50."},{"prompt":"If 486 + 519 is calculated as 10,005, what is the clearest reason the answer is unreasonable?","options":["Addition always makes a number smaller.","The sum of two numbers near 500 should be near 1,000.","The answer must be even.","519 should be rounded to 600."],"answer":1,"explanation":"A magnitude estimate near 1,000 immediately exposes the place-value error."},{"prompt":"Which phrase signals an approximate value?","options":["is approximately","equals exactly","is identical to","must equal"],"answer":0,"explanation":"Approximately signals that the value is an estimate."},{"prompt":"Round 6,748 to the nearest hundred.","options":["6,750","6,800","6,700","7,000"],"answer":2,"explanation":"The tens digit is 4, so the hundreds digit stays 7: 6,700."},{"prompt":"Round 6,758 to the nearest hundred.","options":["6,700","6,800","6,750","7,000"],"answer":1,"explanation":"The tens digit is 5, so round the hundreds digit up to 8."},{"prompt":"Which estimate is most useful for 203 × 48?","options":["20×5=100","203+48=251","300×50=15,000","200×50=10,000"],"answer":3,"explanation":"200 and 50 are close benchmarks and give the correct product scale."},{"prompt":"A quotient 425 ÷ 8 is reported as 531.25. What does estimation suggest?","options":["Reasonable because 400÷8≈50","Reasonable because division increases numbers","Impossible to judge","Unreasonable because 400÷8≈50, not 500"],"answer":3,"explanation":"The quotient should be a little above 50, so 531.25 is far too large."},{"prompt":"Which situation is best served by an estimate first?","options":["Determining exact tax owed on a filed return","Planning roughly how much food to buy for about 300 guests","Recording a final exam score","Paying an exact invoice"],"answer":1,"explanation":"Early planning with uncertain attendance naturally benefits from estimation."},{"prompt":"Which situation requires an exact value at the final step?","options":["Predicting next year's enrollment","Checking whether a product is around 5,000","Charging a debit card for a purchase","Estimating travel time"],"answer":2,"explanation":"A financial charge must use the exact amount owed."},{"prompt":"Front-end estimation of 482 + 351 using hundreds gives approximately what?","options":["800","700","900","1,000"],"answer":0,"explanation":"Using the leading hundreds gives 400+300=700, but including the substantial remaining tens gives a better front-end adjustment toward about 800."},{"prompt":"Which estimate gives an upper benchmark for 47 × 18 by rounding both factors up to tens?","options":["40×10=400","50×20=1,000","50×10=500","40×20=800"],"answer":1,"explanation":"Rounding both positive factors upward gives 50×20=1,000, an upper benchmark."},{"prompt":"The exact sum is 2,996. Which estimate is the best magnitude check?","options":["About 3,000","About 30","About 300","About 30,000"],"answer":0,"explanation":"2,996 is extremely close to 3,000."},{"prompt":"Why might two reasonable estimates for the same calculation differ?","options":["Only one estimation method is legal.","Estimates must always equal the exact answer.","Reasonableness cannot be checked with estimates.","Different useful rounding choices can produce different approximations."],"answer":3,"explanation":"Estimation permits purposeful approximation, so valid strategies can produce slightly different nearby results."},{"prompt":"What is the strongest reason to estimate before or after exact calculation?","options":["To avoid learning exact arithmetic","To guarantee every rounded value is exact","To create a benchmark that helps detect magnitude and entry errors","To replace units with whole numbers"],"answer":2,"explanation":"An estimate provides an independent expectation against which an exact result can be checked."}],"mastery_threshold":80};window.UNIT_MAP_FALLBACK={"schema_version":"1.0","unit":{"id":"KH-MATH-PA-U01","course":"KH-MATH-PA","number":1,"title":"Number Systems, Factors & Estimation","duration_weeks":2,"recommended_sessions":10,"status":"open","essential_question":"How does number structure help us calculate efficiently, recognize patterns, and judge whether results make sense?","big_ideas":["Number sets are nested and connected.","Factors and prime structure describe how whole numbers are built.","Shared factors and multiples solve grouping and synchronization problems.","The order of operations preserves shared mathematical meaning.","Estimation is a reasoning tool, not merely rough arithmetic."],"mastery_threshold":80,"progress_key":"khaemenes-prealgebra-unit01-progress-v1","architecture":"Open-age foundational Pre-Algebra entry unit: number systems + factors/multiples + prime/divisibility structure + GCF/LCM + order of operations + estimation/reasonableness + mastery","readiness_note":"Unit 01 is intentionally a six-lesson foundation and evidence-gathering unit. It establishes prerequisite number sense before the Unit 02 readiness/pathway bridge; advancement is based on demonstrated mastery, not age or grade identity."},"lessons":[{"id":"l01","number":1,"title":"Number Families & the Real Number System","file":"lessons/lesson-01-number-systems.html","duration":"60–75 minutes","objectives":["Classify natural, whole, integer, rational, irrational, and real numbers.","Explain how the major real-number sets are nested inside one another.","Represent, compare, and order rational and irrational values on a number line.","Identify the most specific number set that contains a value.","Justify a classification using fractions, decimal behavior, or perfect-square reasoning."],"vocab_ids":["natural-number","whole-number","integer","rational-number","irrational-number","real-number"]},{"id":"l02","number":2,"title":"Factors, Multiples & Number Structure","file":"lessons/lesson-02-factors-multiples.html","duration":"60–75 minutes","objectives":["List all positive factor pairs of a whole number systematically.","Generate multiples and identify common multiples.","Distinguish clearly between factors and multiples.","Use arrays, rectangles, and equal-group models to represent factor relationships.","Explain how perfect squares affect the number of positive factors."],"vocab_ids":["factor","factor-pair","multiple","common-factor","common-multiple"]},{"id":"l03","number":3,"title":"Prime Numbers, Divisibility & Factorization","file":"lessons/lesson-03-primes-divisibility.html","duration":"60–75 minutes","objectives":["Classify whole numbers greater than 1 as prime or composite.","Apply divisibility rules for 2, 3, 4, 5, 6, 9, and 10.","Write composite numbers as products of prime factors.","Use factor trees and repeated division to verify prime factorizations.","Explain why prime factorization is unique apart from factor order."],"vocab_ids":["prime-number","composite-number","prime-factorization","divisibility-rule","exponent","base"]},{"id":"l04","number":4,"title":"Greatest Common Factor & Least Common Multiple","file":"lessons/lesson-04-gcf-lcm.html","duration":"60–75 minutes","objectives":["Find the greatest common factor of two or more whole numbers.","Find the least common multiple of two or more whole numbers.","Use factor lists and prime factorizations to determine GCF and LCM.","Distinguish situations that require a GCF from situations that require an LCM.","Explain solutions to grouping and synchronization problems using mathematical evidence."],"vocab_ids":["greatest-common-factor","least-common-multiple","common-factor","common-multiple","prime-factorization"]},{"id":"l05","number":5,"title":"Order of Operations & Numerical Expressions","file":"lessons/lesson-05-order-operations.html","duration":"60–75 minutes","objectives":["Evaluate numerical expressions using grouping symbols, exponents, multiplication, division, addition, and subtraction.","Explain why multiplication and division are performed from left to right when they share a level of priority.","Explain why addition and subtraction are performed from left to right when they share a level of priority.","Use substitution and the order of operations to evaluate simple variable expressions.","Identify and correct common order-of-operations errors."],"vocab_ids":["numerical-expression","order-of-operations","exponent","base"]},{"id":"l06","number":6,"title":"Estimation, Compatible Numbers & Reasonableness","file":"lessons/lesson-06-estimation-reasonableness.html","duration":"60–75 minutes","objectives":["Estimate sums, differences, products, and quotients using purposeful rounding.","Use compatible numbers and front-end estimation for efficient mental calculation.","Choose an estimation strategy appropriate to the numbers and context.","Use estimates, magnitude, and operation sense to judge whether exact results are reasonable.","Explain when an exact answer is necessary and when an estimate is more useful."],"vocab_ids":["estimate","compatible-numbers","reasonableness"]}],"practice":[{"id":"foundation","title":"Foundation Practice","file":"practice/foundation.html","description":"20-question scaffolded review with optional hints and smaller steps."},{"id":"core","title":"Core Practice","file":"practice/core.html","description":"20-question complete unit-level rehearsal across all six lessons."},{"id":"extended","title":"Extended Practice","file":"practice/extended.html","description":"20-question deeper reasoning and unfamiliar-context practice."}],"assessment":{"title":"Unit 1 Mastery Check","file":"assessment/mastery-check.html","questions":20,"threshold":80},"project":{"title":"Number Structure Investigation","file":"projects/number-systems-investigation.html"},"guides":[{"title":"Teacher Guide","file":"teacher-guide.html"},{"title":"Family Guide","file":"family-guide.html"}]};window.VOCAB_FALLBACK={"schema_version": "1.0", "unit": "KH-MATH-PA-U01", "languages": {"en": "English", "es": "Español", "fr": "Français", "ar": "العربية", "pt": "Português"}, "terms": [{"id": "natural-number", "en": "natural number", "definition": "A counting number, usually 1, 2, 3, and so on.", "es": "número natural", "fr": "nombre naturel", "ar": "عدد طبيعي", "pt": "número natural"}, {"id": "whole-number", "en": "whole number", "definition": "A natural number or zero.", "es": "número entero no negativo", "fr": "nombre entier naturel", "ar": "عدد كلي", "pt": "número inteiro não negativo"}, {"id": "integer", "en": "integer", "definition": "A whole number, its opposite, or zero.", "es": "entero", "fr": "entier relatif", "ar": "عدد صحيح", "pt": "número inteiro"}, {"id": "rational-number", "en": "rational number", "definition": "A number that can be written as a/b, where a and b are integers and b is not zero.", "es": "número racional", "fr": "nombre rationnel", "ar": "عدد نسبي", "pt": "número racional"}, {"id": "irrational-number", "en": "irrational number", "definition": "A real number that cannot be written as a ratio of integers; its decimal does not terminate or repeat.", "es": "número irracional", "fr": "nombre irrationnel", "ar": "عدد غير نسبي", "pt": "número irracional"}, {"id": "real-number", "en": "real number", "definition": "Any rational or irrational number that can be located on the number line.", "es": "número real", "fr": "nombre réel", "ar": "عدد حقيقي", "pt": "número real"}, {"id": "factor", "en": "factor", "definition": "A whole number that divides another whole number with no remainder.", "es": "factor", "fr": "facteur", "ar": "عامل", "pt": "fator"}, {"id": "factor-pair", "en": "factor pair", "definition": "Two whole-number factors whose product is a given number.", "es": "par de factores", "fr": "paire de facteurs", "ar": "زوج عوامل", "pt": "par de fatores"}, {"id": "multiple", "en": "multiple", "definition": "A product of a number and a whole number.", "es": "múltiplo", "fr": "multiple", "ar": "مضاعف", "pt": "múltiplo"}, {"id": "common-factor", "en": "common factor", "definition": "A factor shared by two or more numbers.", "es": "factor común", "fr": "facteur commun", "ar": "عامل مشترك", "pt": "fator comum"}, {"id": "common-multiple", "en": "common multiple", "definition": "A multiple shared by two or more numbers.", "es": "múltiplo común", "fr": "multiple commun", "ar": "مضاعف مشترك", "pt": "múltiplo comum"}, {"id": "prime-number", "en": "prime number", "definition": "A whole number greater than 1 with exactly two positive factors: 1 and itself.", "es": "número primo", "fr": "nombre premier", "ar": "عدد أولي", "pt": "número primo"}, {"id": "composite-number", "en": "composite number", "definition": "A whole number greater than 1 with more than two positive factors.", "es": "número compuesto", "fr": "nombre composé", "ar": "عدد مركب", "pt": "número composto"}, {"id": "prime-factorization", "en": "prime factorization", "definition": "A number written as a product of prime factors.", "es": "factorización prima", "fr": "décomposition en facteurs premiers", "ar": "تحليل إلى العوامل الأولية", "pt": "fatoração em primos"}, {"id": "divisibility-rule", "en": "divisibility rule", "definition": "A pattern used to decide whether one whole number divides another without calculating the full quotient.", "es": "regla de divisibilidad", "fr": "règle de divisibilité", "ar": "قاعدة القابلية للقسمة", "pt": "regra de divisibilidade"}, {"id": "greatest-common-factor", "en": "greatest common factor", "definition": "The largest positive factor shared by two or more whole numbers.", "es": "máximo común divisor", "fr": "plus grand commun diviseur", "ar": "العامل المشترك الأكبر", "pt": "máximo divisor comum"}, {"id": "least-common-multiple", "en": "least common multiple", "definition": "The smallest positive multiple shared by two or more whole numbers.", "es": "mínimo común múltiplo", "fr": "plus petit commun multiple", "ar": "المضاعف المشترك الأصغر", "pt": "mínimo múltiplo comum"}, {"id": "exponent", "en": "exponent", "definition": "A number that tells how many times a base is used as a factor.", "es": "exponente", "fr": "exposant", "ar": "أس", "pt": "expoente"}, {"id": "base", "en": "base", "definition": "The repeated factor in an exponential expression.", "es": "base", "fr": "base", "ar": "أساس", "pt": "base"}, {"id": "numerical-expression", "en": "numerical expression", "definition": "A mathematical phrase containing numbers and operations but no equality sign.", "es": "expresión numérica", "fr": "expression numérique", "ar": "عبارة عددية", "pt": "expressão numérica"}, {"id": "order-of-operations", "en": "order of operations", "definition": "Grouping, exponents, multiplication/division left to right, then addition/subtraction left to right.", "es": "orden de las operaciones", "fr": "priorité des opérations", "ar": "ترتيب العمليات", "pt": "ordem das operações"}, {"id": "estimate", "en": "estimate", "definition": "A close, useful approximation rather than an exact value.", "es": "estimación", "fr": "estimation", "ar": "تقدير", "pt": "estimativa"}, {"id": "compatible-numbers", "en": "compatible numbers", "definition": "Nearby numbers chosen because they are easy to calculate mentally.", "es": "números compatibles", "fr": "nombres compatibles", "ar": "أعداد متوافقة", "pt": "números compatíveis"}, {"id": "reasonableness", "en": "reasonableness", "definition": "Whether an answer makes sense given the quantities, operations, and context.", "es": "razonabilidad", "fr": "caractère raisonnable", "ar": "معقولية", "pt": "razoabilidade"}, {"id": "expression", "en": "expression", "definition": "A mathematical phrase made of numbers, variables, operations, or grouping symbols that represents a value.", "es": "expresión", "fr": "expression", "ar": "عبارة رياضية", "pt": "expressão"}, {"id": "evaluate", "en": "evaluate", "definition": "To determine the value of a numerical or variable expression by carrying out the indicated operations correctly.", "es": "evaluar", "fr": "évaluer", "ar": "يُقيِّم", "pt": "avaliar"}]};</script><script src="../assets/lesson-engine.js"></script></body></html>
+
+<!-- =========================================================
+     19 · LESSON_DATA
+     ========================================================= -->
+<script>window.LESSON_DATA={"id":"l06","number":6,"slug":"estimation-reasonableness","title":"Estimation, Compatible Numbers & Reasonableness","duration":"60–75 minutes","essential_question":"How can estimation help us predict, check, and communicate whether a numerical answer makes sense?","objectives":["Estimate sums, differences, products, and quotients using purposeful rounding.","Use compatible numbers and front-end estimation for efficient mental calculation.","Choose an estimation strategy appropriate to the numbers and context.","Use estimates, magnitude, and operation sense to judge whether exact results are reasonable.","Explain when an exact answer is necessary and when an estimate is more useful."],"vocab_ids":["estimate","compatible-numbers","reasonableness"],"warmup":["Without calculating exactly, estimate 398 + 607. Explain how you chose the numbers in your estimate.","A student says 49 × 21 = 10,290. Use estimation—not exact multiplication—to decide whether that answer is believable."],"concepts":[{"heading":"Estimate with a purpose","body":"Before changing any numbers, decide what the estimate is supposed to do. Are you predicting a total, checking whether an answer has the right magnitude, planning a budget, or deciding whether exact calculation is necessary? The purpose controls how precise the estimate should be."},{"heading":"Compatible numbers reduce mental load","body":"Compatible numbers are not always the nearest rounded numbers. They are nearby values chosen because they work together easily. In division, 598 ÷ 29 is close to 600 ÷ 30, and that pair makes the quotient easy to see: about 20."},{"heading":"Reasonableness connects number sense to accuracy","body":"A reported answer should match the estimate's scale, sign, operation sense, and context. If an estimate predicts about 1,000, then an answer near 10,000 probably has a place-value, input, or operation error even before exact recalculation."}],"reading_sections":[{"heading":"Estimation is mathematical prediction","paragraphs":["Estimation produces an approximate value that is close enough for a particular purpose. The goal is not always to get as close as possible; the goal is to use enough precision for the decision you need to make.","For 398 + 607, rounding to hundreds gives 400 + 600 = 1,000. That estimate quickly predicts the size of the exact sum and gives us a benchmark for checking it."],"bullets":["Round more coarsely for a fast magnitude check.","Round more precisely when the decision requires a tighter estimate.","Always state that an approximate result is an estimate."],"takeaway":"A useful estimate is deliberate, explainable, and precise enough for its purpose."},{"heading":"Different operations invite different strategies","paragraphs":["For addition and subtraction, rounding or front-end estimation often works well. For multiplication, nearby benchmark factors can reveal the expected magnitude. For division, compatible numbers can make a difficult quotient mentally manageable.","For example, 598 ÷ 29 is awkward mentally, but 600 ÷ 30 = 20. That tells us immediately that the exact quotient should be near 20."],"bullets":["Addition/subtraction: round or use leading digits.","Multiplication: use nearby benchmark factors.","Division: look for compatible dividend-divisor pairs."],"takeaway":"Do not force one estimation method onto every problem; choose the method that fits the structure."},{"heading":"Reasonableness can catch errors before they spread","paragraphs":["Suppose a calculator entry or written algorithm reports 48 × 19 = 9,120. An estimate of 50 × 20 = 1,000 shows that 9,120 is far too large before we even compute the exact product.","Reasonableness checks also use operation sense. Adding two positive numbers should produce a result larger than either addend. Dividing a positive number by a number greater than 1 should make it smaller."],"bullets":["Compare the answer's magnitude with an estimate.","Ask whether the operation should make the value larger or smaller.","Check place value, units, and decimal placement."],"takeaway":"Estimation is a quality-control system for exact arithmetic."},{"heading":"Precision depends on context","paragraphs":["An estimate may be ideal when planning attendance, checking a grocery total, or deciding whether a budget is sufficient. Exact calculation is required when precise payment, measurement tolerances, grades, or formal records depend on the result.","Good mathematical communication makes the distinction visible. Words such as about, approximately, nearly, or ≈ signal that a value is not exact."],"bullets":["Planning often begins with estimates.","Transactions and final records often require exact values.","More decimal places do not automatically mean a number is more useful."],"takeaway":"Precision is a decision about what the situation requires, not a contest to write the most digits."}],"estimation_lab":{"examples":[{"label":"398 + 607","strategy":"Rounding","expression":"398 + 607","purpose":"Predict the magnitude of the sum.","steps":[{"work":"398 ≈ 400","why":"Round to a nearby hundred."},{"work":"607 ≈ 600","why":"Use the same useful place value."},{"work":"400 + 600","why":"Add the benchmark values."}],"estimate":"≈ 1,000","verdict":"The exact answer should be very close to one thousand."},{"label":"598 ÷ 29","strategy":"Compatible numbers","expression":"598 ÷ 29","purpose":"Turn an awkward quotient into mental arithmetic.","steps":[{"work":"598 ≈ 600","why":"600 is close and works well with 30."},{"work":"29 ≈ 30","why":"30 is a nearby divisor."},{"work":"600 ÷ 30 = 20","why":"The compatible pair divides easily."}],"estimate":"≈ 20","verdict":"A quotient near 20 is reasonable."},{"label":"49 × 21","strategy":"Benchmark factors","expression":"49 × 21","purpose":"Check the magnitude of a product.","steps":[{"work":"49 ≈ 50","why":"50 is a nearby benchmark."},{"work":"21 ≈ 20","why":"20 is nearby and easy to multiply."},{"work":"50 × 20 = 1,000","why":"Use the estimate as a scale check."}],"estimate":"≈ 1,000","verdict":"An answer around one thousand is plausible; ten thousand is not."},{"label":"$7.89 × 6","strategy":"Money estimate","expression":"$7.89 × 6","purpose":"Predict whether available money is enough.","steps":[{"work":"$7.89 ≈ $8","why":"Round to a nearby whole dollar."},{"work":"$8 × 6 = $48","why":"Multiply mentally."}],"estimate":"≈ $48","verdict":"About $50 would be a sensible quick budget; exact payment still requires the exact total."}]},"quick_checks":[{"prompt":"Which is the most useful quick estimate for 612 + 391?","options":["600 + 400 = 1,000","60 + 40 = 100","612 + 400 = 1,012 exactly","6 + 4 = 10"],"answer":0,"explanation":"Rounding both addends to hundreds gives a fast, appropriately scaled estimate of about 1,000."},{"prompt":"Which compatible-number estimate best fits 804 ÷ 39?","options":["800 ÷ 40 = 20","80 ÷ 4 = 20 exactly","900 ÷ 30 = 30","800 ÷ 4 = 200"],"answer":0,"explanation":"800 and 40 are close to the original values and divide easily."},{"prompt":"A student reports 31 × 19 = 5,890. Which estimate best exposes the error?","options":["30 × 20 ≈ 600","3 × 2 ≈ 6","30 + 20 ≈ 50","40 × 20 ≈ 800 exactly"],"answer":0,"explanation":"The product should be around 600, so 5,890 has the wrong magnitude."},{"prompt":"When is an exact value more appropriate than an estimate?","options":["Predicting attendance next month","Checking the rough size of a product","Charging a customer's final purchase total","Deciding whether an answer is plausible"],"answer":2,"explanation":"A final financial transaction requires the actual amount owed."}],"examples":[{"problem":"Estimate 2,487 + 3,112 to the nearest hundred.","steps":["2,487 ≈ 2,500.","3,112 ≈ 3,100.","Add the rounded values: 2,500 + 3,100."],"answer":"About 5,600."},{"problem":"Estimate 598 ÷ 29 using compatible numbers.","steps":["Choose nearby values 600 and 30.","600 ÷ 30 = 20.","Use 20 as a benchmark for the exact quotient."],"answer":"About 20."},{"problem":"Is 48 × 19 = 9,120 reasonable?","steps":["Round 48 to 50 and 19 to 20.","50 × 20 = 1,000.","9,120 is more than nine times the estimate, so its magnitude is implausible."],"answer":"No. The reported answer is unreasonable; the exact product is 912."},{"problem":"A family has $100 for 12 tickets costing $7.89 each. Is $100 probably enough?","steps":["Round $7.89 to $8.","Estimate 12 × $8 = $96.","Because $96 is below but close to $100, the estimate suggests the budget may be enough, but the exact total should be checked before purchase."],"answer":"Probably yes; exact calculation confirms $94.68."}],"pathways":{"Foundation":"Round to familiar tens, hundreds, or whole numbers. Say what each rounded value represents before computing.","Core":"Choose among rounding, compatible numbers, benchmarks, and front-end estimation, then justify why your strategy is useful.","Extended":"Create upper and lower bounds, compare relative error, and discuss how precision changes decisions in financial, scientific, or measurement contexts."},"application":"A school event expects 287–315 visitors. Lunch costs about $6.85 per visitor. Estimate a sensible food budget, include a small contingency, and explain which values may remain estimates during planning and which must become exact before payment.","guided_note_prompt":"Describe three estimation strategies. For each one, explain when you would use it, what numbers you would choose, and how the estimate helps you judge whether an exact answer is reasonable.","questions":[{"prompt":"Estimate 398 + 607 by rounding to the nearest hundred.","options":["About 900","About 1,000","About 1,100","About 10,000"],"answer":1,"explanation":"398≈400 and 607≈600, so the sum is about 1,000."},{"prompt":"Estimate 1,984 − 1,021 by rounding to the nearest hundred.","options":["About 100","About 500","About 3,000","About 1,000"],"answer":3,"explanation":"1,984≈2,000 and 1,021≈1,000, giving about 1,000."},{"prompt":"Estimate 49 × 21 using benchmark factors.","options":["About 1,000","About 100","About 500","About 10,000"],"answer":0,"explanation":"50×20=1,000."},{"prompt":"Which compatible-number estimate is best for 598 ÷ 29?","options":["500 ÷ 20 = 25","600 ÷ 20 = 30","600 ÷ 30 = 20","900 ÷ 30 = 30"],"answer":2,"explanation":"600 and 30 are both close to the original values and divide easily."},{"prompt":"Which is a reasonable estimate for 7.92 × 5?","options":["About 4","About 8","About 40","About 400"],"answer":2,"explanation":"7.92≈8 and 8×5=40."},{"prompt":"A student reports 62 × 39 = 24,180. Which estimate shows the result is unreasonable?","options":["60×40≈2,400","6×4≈24","60+40≈100","100×40≈4,000"],"answer":0,"explanation":"The expected product is around 2,400, not 24,000."},{"prompt":"Which estimate best checks 3,052 ÷ 61?","options":["300÷60=5","3,000÷6=500","3,600÷60=60","3,000÷60=50"],"answer":3,"explanation":"3,000 and 60 are close compatible numbers, producing about 50."},{"prompt":"If 486 + 519 is calculated as 10,005, what is the clearest reason the answer is unreasonable?","options":["Addition always makes a number smaller.","The sum of two numbers near 500 should be near 1,000.","The answer must be even.","519 should be rounded to 600."],"answer":1,"explanation":"A magnitude estimate near 1,000 immediately exposes the place-value error."},{"prompt":"Which phrase signals an approximate value?","options":["is approximately","equals exactly","is identical to","must equal"],"answer":0,"explanation":"Approximately signals that the value is an estimate."},{"prompt":"Round 6,748 to the nearest hundred.","options":["6,750","6,800","6,700","7,000"],"answer":2,"explanation":"The tens digit is 4, so the hundreds digit stays 7: 6,700."},{"prompt":"Round 6,758 to the nearest hundred.","options":["6,700","6,800","6,750","7,000"],"answer":1,"explanation":"The tens digit is 5, so round the hundreds digit up to 8."},{"prompt":"Which estimate is most useful for 203 × 48?","options":["20×5=100","203+48=251","300×50=15,000","200×50=10,000"],"answer":3,"explanation":"200 and 50 are close benchmarks and give the correct product scale."},{"prompt":"A quotient 425 ÷ 8 is reported as 531.25. What does estimation suggest?","options":["Reasonable because 400÷8≈50","Reasonable because division increases numbers","Impossible to judge","Unreasonable because 400÷8≈50, not 500"],"answer":3,"explanation":"The quotient should be a little above 50, so 531.25 is far too large."},{"prompt":"Which situation is best served by an estimate first?","options":["Determining exact tax owed on a filed return","Planning roughly how much food to buy for about 300 guests","Recording a final exam score","Paying an exact invoice"],"answer":1,"explanation":"Early planning with uncertain attendance naturally benefits from estimation."},{"prompt":"Which situation requires an exact value at the final step?","options":["Predicting next year's enrollment","Checking whether a product is around 5,000","Charging a debit card for a purchase","Estimating travel time"],"answer":2,"explanation":"A financial charge must use the exact amount owed."},{"prompt":"Front-end estimation of 482 + 351 using hundreds gives approximately what?","options":["800","700","900","1,000"],"answer":0,"explanation":"Using the leading hundreds gives 400+300=700, but including the substantial remaining tens gives a better front-end adjustment toward about 800."},{"prompt":"Which estimate gives an upper benchmark for 47 × 18 by rounding both factors up to tens?","options":["40×10=400","50×20=1,000","50×10=500","40×20=800"],"answer":1,"explanation":"Rounding both positive factors upward gives 50×20=1,000, an upper benchmark."},{"prompt":"The exact sum is 2,996. Which estimate is the best magnitude check?","options":["About 3,000","About 30","About 300","About 30,000"],"answer":0,"explanation":"2,996 is extremely close to 3,000."},{"prompt":"Why might two reasonable estimates for the same calculation differ?","options":["Only one estimation method is legal.","Estimates must always equal the exact answer.","Reasonableness cannot be checked with estimates.","Different useful rounding choices can produce different approximations."],"answer":3,"explanation":"Estimation permits purposeful approximation, so valid strategies can produce slightly different nearby results."},{"prompt":"What is the strongest reason to estimate before or after exact calculation?","options":["To avoid learning exact arithmetic","To guarantee every rounded value is exact","To create a benchmark that helps detect magnitude and entry errors","To replace units with whole numbers"],"answer":2,"explanation":"An estimate provides an independent expectation against which an exact result can be checked."}],"mastery_threshold":80};
+
+/* =========================================================
+   20 · UNIT_MAP_FALLBACK
+   ========================================================= */
+window.UNIT_MAP_FALLBACK={"schema_version":"1.0","unit":{"id":"KH-MATH-PA-U01","course":"KH-MATH-PA","number":1,"title":"Number Systems, Factors & Estimation","duration_weeks":2,"recommended_sessions":10,"status":"open","essential_question":"How does number structure help us calculate efficiently, recognize patterns, and judge whether results make sense?","big_ideas":["Number sets are nested and connected.","Factors and prime structure describe how whole numbers are built.","Shared factors and multiples solve grouping and synchronization problems.","The order of operations preserves shared mathematical meaning.","Estimation is a reasoning tool, not merely rough arithmetic."],"mastery_threshold":80,"progress_key":"khaemenes-prealgebra-unit01-progress-v1","architecture":"Open-age foundational Pre-Algebra entry unit: number systems + factors/multiples + prime/divisibility structure + GCF/LCM + order of operations + estimation/reasonableness + mastery","readiness_note":"Unit 01 is intentionally a six-lesson foundation and evidence-gathering unit. It establishes prerequisite number sense before the Unit 02 readiness/pathway bridge; advancement is based on demonstrated mastery, not age or grade identity."},"lessons":[{"id":"l01","number":1,"title":"Number Families & the Real Number System","file":"lessons/lesson-01-number-systems.html","duration":"60–75 minutes","objectives":["Classify natural, whole, integer, rational, irrational, and real numbers.","Explain how the major real-number sets are nested inside one another.","Represent, compare, and order rational and irrational values on a number line.","Identify the most specific number set that contains a value.","Justify a classification using fractions, decimal behavior, or perfect-square reasoning."],"vocab_ids":["natural-number","whole-number","integer","rational-number","irrational-number","real-number"]},{"id":"l02","number":2,"title":"Factors, Multiples & Number Structure","file":"lessons/lesson-02-factors-multiples.html","duration":"60–75 minutes","objectives":["List all positive factor pairs of a whole number systematically.","Generate multiples and identify common multiples.","Distinguish clearly between factors and multiples.","Use arrays, rectangles, and equal-group models to represent factor relationships.","Explain how perfect squares affect the number of positive factors."],"vocab_ids":["factor","factor-pair","multiple","common-factor","common-multiple"]},{"id":"l03","number":3,"title":"Prime Numbers, Divisibility & Factorization","file":"lessons/lesson-03-primes-divisibility.html","duration":"60–75 minutes","objectives":["Classify whole numbers greater than 1 as prime or composite.","Apply divisibility rules for 2, 3, 4, 5, 6, 9, and 10.","Write composite numbers as products of prime factors.","Use factor trees and repeated division to verify prime factorizations.","Explain why prime factorization is unique apart from factor order."],"vocab_ids":["prime-number","composite-number","prime-factorization","divisibility-rule","exponent","base"]},{"id":"l04","number":4,"title":"Greatest Common Factor & Least Common Multiple","file":"lessons/lesson-04-gcf-lcm.html","duration":"60–75 minutes","objectives":["Find the greatest common factor of two or more whole numbers.","Find the least common multiple of two or more whole numbers.","Use factor lists and prime factorizations to determine GCF and LCM.","Distinguish situations that require a GCF from situations that require an LCM.","Explain solutions to grouping and synchronization problems using mathematical evidence."],"vocab_ids":["greatest-common-factor","least-common-multiple","common-factor","common-multiple","prime-factorization"]},{"id":"l05","number":5,"title":"Order of Operations & Numerical Expressions","file":"lessons/lesson-05-order-operations.html","duration":"60–75 minutes","objectives":["Evaluate numerical expressions using grouping symbols, exponents, multiplication, division, addition, and subtraction.","Explain why multiplication and division are performed from left to right when they share a level of priority.","Explain why addition and subtraction are performed from left to right when they share a level of priority.","Use substitution and the order of operations to evaluate simple variable expressions.","Identify and correct common order-of-operations errors."],"vocab_ids":["numerical-expression","order-of-operations","exponent","base"]},{"id":"l06","number":6,"title":"Estimation, Compatible Numbers & Reasonableness","file":"lessons/lesson-06-estimation-reasonableness.html","duration":"60–75 minutes","objectives":["Estimate sums, differences, products, and quotients using purposeful rounding.","Use compatible numbers and front-end estimation for efficient mental calculation.","Choose an estimation strategy appropriate to the numbers and context.","Use estimates, magnitude, and operation sense to judge whether exact results are reasonable.","Explain when an exact answer is necessary and when an estimate is more useful."],"vocab_ids":["estimate","compatible-numbers","reasonableness"]}],"practice":[{"id":"foundation","title":"Foundation Practice","file":"practice/foundation.html","description":"20-question scaffolded review with optional hints and smaller steps."},{"id":"core","title":"Core Practice","file":"practice/core.html","description":"20-question complete unit-level rehearsal across all six lessons."},{"id":"extended","title":"Extended Practice","file":"practice/extended.html","description":"20-question deeper reasoning and unfamiliar-context practice."}],"assessment":{"title":"Unit 1 Mastery Check","file":"assessment/mastery-check.html","questions":20,"threshold":80},"project":{"title":"Number Structure Investigation","file":"projects/number-systems-investigation.html"},"guides":[{"title":"Teacher Guide","file":"teacher-guide.html"},{"title":"Family Guide","file":"family-guide.html"}]};
+
+/* =========================================================
+   21 · VOCAB_FALLBACK
+   ========================================================= */
+window.VOCAB_FALLBACK={"schema_version": "1.0", "unit": "KH-MATH-PA-U01", "languages": {"en": "English", "es": "Español", "fr": "Français", "ar": "العربية", "pt": "Português"}, "terms": [{"id": "natural-number", "en": "natural number", "definition": "A counting number, usually 1, 2, 3, and so on.", "es": "número natural", "fr": "nombre naturel", "ar": "عدد طبيعي", "pt": "número natural"}, {"id": "whole-number", "en": "whole number", "definition": "A natural number or zero.", "es": "número entero no negativo", "fr": "nombre entier naturel", "ar": "عدد كلي", "pt": "número inteiro não negativo"}, {"id": "integer", "en": "integer", "definition": "A whole number, its opposite, or zero.", "es": "entero", "fr": "entier relatif", "ar": "عدد صحيح", "pt": "número inteiro"}, {"id": "rational-number", "en": "rational number", "definition": "A number that can be written as a/b, where a and b are integers and b is not zero.", "es": "número racional", "fr": "nombre rationnel", "ar": "عدد نسبي", "pt": "número racional"}, {"id": "irrational-number", "en": "irrational number", "definition": "A real number that cannot be written as a ratio of integers; its decimal does not terminate or repeat.", "es": "número irracional", "fr": "nombre irrationnel", "ar": "عدد غير نسبي", "pt": "número irracional"}, {"id": "real-number", "en": "real number", "definition": "Any rational or irrational number that can be located on the number line.", "es": "número real", "fr": "nombre réel", "ar": "عدد حقيقي", "pt": "número real"}, {"id": "factor", "en": "factor", "definition": "A whole number that divides another whole number with no remainder.", "es": "factor", "fr": "facteur", "ar": "عامل", "pt": "fator"}, {"id": "factor-pair", "en": "factor pair", "definition": "Two whole-number factors whose product is a given number.", "es": "par de factores", "fr": "paire de facteurs", "ar": "زوج عوامل", "pt": "par de fatores"}, {"id": "multiple", "en": "multiple", "definition": "A product of a number and a whole number.", "es": "múltiplo", "fr": "multiple", "ar": "مضاعف", "pt": "múltiplo"}, {"id": "common-factor", "en": "common factor", "definition": "A factor shared by two or more numbers.", "es": "factor común", "fr": "facteur commun", "ar": "عامل مشترك", "pt": "fator comum"}, {"id": "common-multiple", "en": "common multiple", "definition": "A multiple shared by two or more numbers.", "es": "múltiplo común", "fr": "multiple commun", "ar": "مضاعف مشترك", "pt": "múltiplo comum"}, {"id": "prime-number", "en": "prime number", "definition": "A whole number greater than 1 with exactly two positive factors: 1 and itself.", "es": "número primo", "fr": "nombre premier", "ar": "عدد أولي", "pt": "número primo"}, {"id": "composite-number", "en": "composite number", "definition": "A whole number greater than 1 with more than two positive factors.", "es": "número compuesto", "fr": "nombre composé", "ar": "عدد مركب", "pt": "número composto"}, {"id": "prime-factorization", "en": "prime factorization", "definition": "A number written as a product of prime factors.", "es": "factorización prima", "fr": "décomposition en facteurs premiers", "ar": "تحليل إلى العوامل الأولية", "pt": "fatoração em primos"}, {"id": "divisibility-rule", "en": "divisibility rule", "definition": "A pattern used to decide whether one whole number divides another without calculating the full quotient.", "es": "regla de divisibilidad", "fr": "règle de divisibilité", "ar": "قاعدة القابلية للقسمة", "pt": "regra de divisibilidade"}, {"id": "greatest-common-factor", "en": "greatest common factor", "definition": "The largest positive factor shared by two or more whole numbers.", "es": "máximo común divisor", "fr": "plus grand commun diviseur", "ar": "العامل المشترك الأكبر", "pt": "máximo divisor comum"}, {"id": "least-common-multiple", "en": "least common multiple", "definition": "The smallest positive multiple shared by two or more whole numbers.", "es": "mínimo común múltiplo", "fr": "plus petit commun multiple", "ar": "المضاعف المشترك الأصغر", "pt": "mínimo múltiplo comum"}, {"id": "exponent", "en": "exponent", "definition": "A number that tells how many times a base is used as a factor.", "es": "exponente", "fr": "exposant", "ar": "أس", "pt": "expoente"}, {"id": "base", "en": "base", "definition": "The repeated factor in an exponential expression.", "es": "base", "fr": "base", "ar": "أساس", "pt": "base"}, {"id": "numerical-expression", "en": "numerical expression", "definition": "A mathematical phrase containing numbers and operations but no equality sign.", "es": "expresión numérica", "fr": "expression numérique", "ar": "عبارة عددية", "pt": "expressão numérica"}, {"id": "order-of-operations", "en": "order of operations", "definition": "Grouping, exponents, multiplication/division left to right, then addition/subtraction left to right.", "es": "orden de las operaciones", "fr": "priorité des opérations", "ar": "ترتيب العمليات", "pt": "ordem das operações"}, {"id": "estimate", "en": "estimate", "definition": "A close, useful approximation rather than an exact value.", "es": "estimación", "fr": "estimation", "ar": "تقدير", "pt": "estimativa"}, {"id": "compatible-numbers", "en": "compatible numbers", "definition": "Nearby numbers chosen because they are easy to calculate mentally.", "es": "números compatibles", "fr": "nombres compatibles", "ar": "أعداد متوافقة", "pt": "números compatíveis"}, {"id": "reasonableness", "en": "reasonableness", "definition": "Whether an answer makes sense given the quantities, operations, and context.", "es": "razonabilidad", "fr": "caractère raisonnable", "ar": "معقولية", "pt": "razoabilidade"}, {"id": "expression", "en": "expression", "definition": "A mathematical phrase made of numbers, variables, operations, or grouping symbols that represents a value.", "es": "expresión", "fr": "expression", "ar": "عبارة رياضية", "pt": "expressão"}, {"id": "evaluate", "en": "evaluate", "definition": "To determine the value of a numerical or variable expression by carrying out the indicated operations correctly.", "es": "evaluar", "fr": "évaluer", "ar": "يُقيِّم", "pt": "avaliar"}]};</script>
+
+<!-- =========================================================
+     22 · Shared lesson-engine.js connection
+     ========================================================= -->
+<script src="../assets/lesson-engine.js"></script></body></html>
