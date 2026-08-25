@@ -1,17 +1,29 @@
 {
-  "schema_version": "1.0",
-  "lesson_id": "KH-ELA-ENG9-U02-L02",
-  "unit": 2,
-  "lesson": 2,
+  "schema_version": "1.1",
+  "asset_id": "ELA-PARAGRAPH-WRITING-001",
   "title": "How to Write a Paragraph",
   "provider": "youtube",
   "video_id": "lMRTtUrSFOc",
   "embed_url": "https://www.youtube-nocookie.com/embed/lMRTtUrSFOc",
   "aspect_ratio": "16:9",
+  "topics": [
+    "paragraph structure",
+    "topic sentences",
+    "supporting details",
+    "coherence",
+    "academic writing"
+  ],
+  "skills": [
+    "write focused topic sentences",
+    "develop supporting details",
+    "organize a coherent paragraph",
+    "maintain paragraph unity"
+  ],
+  "grade_band": "9-12",
   "optional": true,
   "autoplay": false,
   "transcript": null,
   "captions_verified": false,
   "alignment_status": "aligned",
-  "alignment_note": "This video directly supports English 9 Unit 2 Lesson 2 by teaching the structure and development of an effective paragraph. It reinforces topic sentences, supporting details, organization, coherence, and the construction of clear academic writing."
+  "alignment_note": "Teaches the structure and development of an effective paragraph. Reinforces topic sentences, supporting details, organization, coherence, paragraph unity, and clear academic writing."
 }
