@@ -1,1 +1,325 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Unit 0 · Week 4 · Functions & Coordinates</title><link rel="stylesheet" href="../assets/refresher.css"></head><body><a class="skip" href="#main">Skip to main content</a><header><div class="wrap"><a class="brand" href="../">Khaemenes High · Pre-Algebra · Unit 0</a><a class="btn" href="lesson-03-algebraic-reasoning.html">Previous Week</a></div></header><main id="main"><section class="hero"><div class="wrap"><p class="eyebrow">Conditional Refresher · Week 4 of 6</p><h1>Functions & Coordinates Bridge</h1><p>Use ordered pairs, coordinate movement, input/output rules, sequences, and rate of change to connect arithmetic reasoning with algebraic relationships.</p><div class="badges"><span class="badge">20 Questions · Lesson Practice</span><span class="badge">10 Questions · Weekly Quiz</span><span class="badge">80% Mastery Gate</span></div><p class="notice" id="entryNotice" hidden></p></div></section><section><div class="wrap"><div class="section-head"><p class="eyebrow">Learn</p><h2>Relationships can be represented in several ways.</h2></div><div class="grid"><article class="card"><h2>Coordinates</h2><p>The x-coordinate describes horizontal position; the y-coordinate describes vertical position.</p></article><article class="card"><h2>Rules</h2><p>A function rule transforms an input into an output in a predictable way.</p></article><article class="card"><h2>Sequences</h2><p>Repeated change can be described by a rule and used to predict later terms.</p></article><article class="card"><h2>Rate of change</h2><p>Compare change in output with change in input to describe how quickly a relationship changes.</p></article></div></div></section><section id="practice"><div class="wrap"><div class="section-head"><p class="eyebrow">Lesson Mastery · 20 Questions</p><h2>Reach 80% to unlock the weekly quiz.</h2></div><div class="question-list" id="practiceQuestions"></div><div class="actions"><button class="primary" id="submitPractice">Score Lesson Practice</button><button id="resetPractice">Reset Visible Answers</button></div><p class="notice" id="practiceStatus">No lesson-practice score yet.</p></div></section><section id="quizSection" data-locked="true"><div class="wrap"><div class="section-head"><p class="eyebrow">Weekly Quiz Gate · 10 Questions</p><h2>Reach 80% to complete Week 4.</h2><p id="quizLock" class="notice">Locked: reach 80% on lesson practice first.</p></div><div class="question-list" id="quizQuestions"></div><div class="actions"><button class="primary" id="submitQuiz">Score Weekly Quiz</button><button id="resetQuiz">Reset Visible Answers</button></div><p class="notice" id="quizStatus">No weekly-quiz score yet.</p></div></section><section id="mastery"><div class="wrap"><article class="card"><p class="eyebrow">Reflect · Continue</p><h2>How can a table, graph, and rule describe the same relationship?</h2><textarea id="reflection"></textarea><div class="actions"><button id="saveReflection">Save Reflection</button><a class="btn locked" id="nextLink" aria-disabled="true" href="#mastery">Locked · practice + quiz both require 80%</a></div><p id="reflectionStatus" class="notice">Reflection is optional and separate from mastery.</p></article></div></section></main><footer class="footer">Conditional Unit 0 · Week 4 · practice ≥80% · weekly quiz ≥80%</footer><script>window.REFRESHER_WEEK={week:4,title:"Functions & Coordinates Bridge",strand:"Functions & Coordinates",next:"lesson-05-geometry-measurement.html"};</script><script src="../assets/refresher-engine.js"></script></body></html>
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Conditional Unit 0 Week 4: Functions &amp; Coordinates Bridge.">
+<title>Unit 0 · Week 4 · Functions &amp; Coordinates Bridge</title>
+<link rel="stylesheet" href="../assets/refresher.css">
+<style>
+
+/* =========================================================
+   KHAEMENES UNIT 0 REFRESHER · TABLET + OVERFLOW RESCUE
+   Purpose: preserve mastery engine IDs while making the
+   lesson readable on tablet/mobile screens.
+   ========================================================= */
+:root{
+  --kh-ink:#f7f2e7; --kh-muted:#cfc6b7; --kh-bg:#090d14; --kh-panel:#151d29;
+  --kh-line:#3b4655; --kh-gold:#d8bd7a; --kh-gold2:#f0d99b; --kh-green:#8fd4ad;
+  --kh-blue:#90b8e6; --kh-red:#ef9a9a; --kh-radius:14px;
+}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;min-height:100vh;background:
+  radial-gradient(circle at 15% 0%,rgba(216,189,122,.10),transparent 28rem),
+  radial-gradient(circle at 85% 15%,rgba(144,184,230,.08),transparent 28rem),
+  linear-gradient(180deg,var(--kh-bg),#0d131c 55%,#090d14);
+  color:var(--kh-ink);font-family:"Avenir Next","Brandon Grotesque","Trebuchet MS",system-ui,sans-serif;line-height:1.55}
+a,button,select,textarea,input{font:inherit}
+a{color:inherit}
+button,a.btn,.btn{min-height:42px;touch-action:manipulation}
+.wrap{width:min(1120px,calc(100% - 28px));margin-inline:auto}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;z-index:99;background:#fff;color:#111;padding:.7rem 1rem;border-radius:10px}
+header{border-bottom:1px solid rgba(216,189,122,.22);background:rgba(9,13,20,.88);position:sticky;top:0;z-index:10;backdrop-filter:blur(10px)}
+header .wrap{display:flex;gap:.8rem;align-items:center;justify-content:space-between;padding:.8rem 0;flex-wrap:wrap}
+.brand{text-decoration:none;color:var(--kh-gold2);font-weight:850;letter-spacing:.02em;min-width:0}
+.btn,button{border:1px solid var(--kh-line);border-radius:11px;background:#131a24;color:var(--kh-ink);padding:.65rem .9rem;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:.35rem}
+.primary,button.primary,.btn.primary{background:var(--kh-gold2);border-color:var(--kh-gold2);color:#17130a;font-weight:900}
+.btn.locked{opacity:.72;cursor:not-allowed}
+.hero{padding:3.1rem 0 2rem;text-align:center}
+.eyebrow{color:var(--kh-gold);letter-spacing:.17em;text-transform:uppercase;font-size:.76rem;font-weight:900;margin:0 0 .4rem}
+h1,h2,h3{font-family:Cinzel,Georgia,"Times New Roman",serif;font-weight:550;line-height:1.12}
+h1{font-size:clamp(2rem,5vw,4rem);margin:.35rem auto .75rem;max-width:980px}
+.hero p{max-width:880px;margin:.6rem auto;color:var(--kh-muted);font-size:clamp(1rem,2vw,1.15rem)}
+.badges,.actions{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:1rem}
+.badge{border:1px solid rgba(216,189,122,.28);background:rgba(216,189,122,.07);color:#efe3c2;border-radius:999px;padding:.45rem .75rem;font-size:.84rem;font-weight:800}
+section{padding:1.5rem 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.section-head h2{margin:.1rem 0 0;font-size:clamp(1.45rem,3vw,2.25rem)}
+.section-head p:not(.eyebrow){margin:.25rem 0 0;color:var(--kh-muted);max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.9rem}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{border:1px solid rgba(216,189,122,.18);border-radius:var(--kh-radius);background:linear-gradient(180deg,rgba(23,30,41,.96),rgba(15,21,30,.96));padding:1.1rem;box-shadow:0 16px 45px rgba(0,0,0,.22);min-width:0}
+.card h2,.card h3{margin-top:0}
+.card p,.card li{color:var(--kh-muted)}
+.notice{border-left:3px solid var(--kh-gold);background:rgba(216,189,122,.06);border-radius:0 12px 12px 0;padding:.85rem 1rem;color:#e5ddcf}
+.study-list{display:grid;gap:.75rem;padding-left:1.15rem}
+.study-list li{padding-left:.15rem}
+.math-note{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;white-space:normal;overflow-wrap:anywhere;background:#0b1118;border:1px solid var(--kh-line);border-radius:12px;padding:.8rem}
+.game-frame-wrap{border:1px solid var(--kh-line);border-radius:16px;overflow:hidden;background:#070b10;box-shadow:0 16px 45px rgba(0,0,0,.30)}
+.game-frame-wrap iframe{display:block;width:100%;height:min(760px,82vh);border:0;background:#05070b}
+.game-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+.question-list{display:grid;gap:.85rem;max-width:100%;min-width:0}
+.question,.question-list>*{max-width:100%;min-width:0;overflow-wrap:anywhere}
+.question fieldset{min-width:0}
+.options{display:grid;gap:.5rem}
+.option{
+  display:grid !important;
+  grid-template-columns:28px minmax(0,1fr) !important;
+  gap:.6rem !important;
+  align-items:start !important;
+  max-width:100% !important;
+  overflow-wrap:anywhere !important;
+  word-break:normal;
+}
+.option input,.option input[type="radio"],.option input[type="checkbox"]{
+  width:auto !important;min-width:18px !important;max-width:18px !important;
+  height:18px !important;margin:.2rem 0 0 !important;flex:0 0 auto !important;
+}
+.option label,.option span{min-width:0;overflow-wrap:anywhere}
+textarea{width:100%;min-height:140px;border:1px solid var(--kh-line);border-radius:12px;background:#111720;color:var(--kh-ink);padding:1rem;resize:vertical}
+.footer{padding:2rem 1rem;text-align:center;color:#9b9386;font-size:.85rem}
+@media(max-width:960px){
+  .grid,.grid.two,.grid.three{grid-template-columns:1fr}
+  header .wrap{align-items:flex-start}
+  .section-head{align-items:flex-start}
+  .card{padding:1rem}
+}
+@media(max-width:620px){
+  .wrap{width:min(100% - 18px,1120px)}
+  .hero{padding-top:2rem}
+  .actions,.badges{justify-content:stretch}
+  .actions > *, .badges > *{width:100%}
+  .game-frame-wrap iframe{height:72vh}
+}
+@media print{
+  header,.actions,.game-frame-wrap,.game-actions{display:none!important}
+  body{background:#fff;color:#111}
+  .card,.notice,.math-note{background:#fff!important;color:#111!important;border-color:#bbb!important;box-shadow:none!important}
+  .card p,.card li,.hero p{color:#333!important}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- =========================================================
+     KHAEMENES HIGH · PRE-ALGEBRA · UNIT 00 · WEEK 04
+     Conditional refresher for students below 80% on diagnostic.
+     Keep IDs used by refresher-engine.js unchanged.
+     ========================================================= -->
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="../">Khaemenes High · Pre-Algebra · Unit 0</a>
+    <nav class="actions" aria-label="Refresher navigation">
+      <a class="btn" href="lesson-03-algebraic-reasoning.html">Previous Week</a>
+      <a class="btn" href="../../../">Course Home</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Conditional Refresher · Week 4 of 6</p>
+      <h1>Functions &amp; Coordinates Bridge</h1>
+      <p>Use ordered pairs, coordinate movement, input/output rules, sequences, and rate of change to connect arithmetic reasoning with algebraic relationships.</p>
+      <div class="badges">
+        <span class="badge">20 Questions · Lesson Practice</span>
+        <span class="badge">10 Questions · Weekly Quiz</span>
+        <span class="badge">80% Mastery Gate</span>
+        <span class="badge">Tablet Safe</span>
+      </div>
+      <p class="notice" id="entryNotice" hidden></p>
+    </div>
+  </section>
+
+  <!-- SECTION 01 · REFRESHER ROLE -->
+  <section id="refresher-role">
+    <div class="wrap">
+      <article class="card">
+        <p class="eyebrow">Why this refresher exists</p>
+        <h2>This is a bridge, not a setback.</h2>
+        <p>Unit 0 rebuilds the prerequisite habits students need before entering Pre-Algebra Unit 1. A student who reaches 80% on both the lesson practice and weekly quiz is showing readiness evidence for the next refresher week. Completing the full six-week path prepares the student to merge into the official Pre-Algebra sequence with stronger confidence, cleaner reasoning, and fewer hidden gaps.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 02 · CORE CONCEPTS -->
+  <section id="learn">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Learn</p>
+          <h2>Relationships can be represented in several ways.</h2>
+        </div>
+        <p>Read the concept cards before beginning the practice. The goal is not only to get an answer; the goal is to explain why the answer is reasonable.</p>
+      </div>
+      <div class="grid"><article class="card"><h2>Coordinates</h2><p>The x-coordinate describes horizontal position; the y-coordinate describes vertical position.</p></article>
+<article class="card"><h2>Rules</h2><p>A function rule transforms an input into an output in a predictable way.</p></article>
+<article class="card"><h2>Sequences</h2><p>Repeated change can be described by a rule and used to predict later terms.</p></article>
+<article class="card"><h2>Rate of change</h2><p>Compare change in output with change in input to describe how quickly a relationship changes.</p></article></div>
+    </div>
+  </section>
+
+  <!-- SECTION 03 · DEEPER STUDY GUIDE -->
+  <section id="concept-guide">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Deeper concept study guide</p>
+          <h2>How to think through this week.</h2>
+        </div>
+        <p>These notes make the lesson more substantial without changing the mastery engine.</p>
+      </div>
+      <div class="grid two"><article class="card">
+      <h3>Coordinate reading</h3>
+      <ul class="study-list"><li>Read ordered pairs as (x, y), never (y, x).</li><li>Move horizontally first, then vertically.</li><li>Use signs to choose right/left and up/down.</li></ul>
+    </article>
+<article class="card">
+      <h3>Function table reasoning</h3>
+      <ul class="study-list"><li>A rule assigns each input to an output.</li><li>Check every row before declaring the rule.</li><li>Use the rule to predict values beyond the table.</li></ul>
+    </article>
+<article class="card">
+      <h3>Sequence reasoning</h3>
+      <ul class="study-list"><li>Find whether the change is constant.</li><li>Use repeated addition for arithmetic patterns.</li><li>Connect the repeated change to a simple rule when possible.</li></ul>
+    </article>
+<article class="card">
+      <h3>Rate reasoning</h3>
+      <ul class="study-list"><li>Compare change in output to change in input.</li><li>Use units to keep the meaning clear.</li><li>Check whether the rate is positive, negative, or zero.</li></ul>
+    </article></div>
+    </div>
+  </section>
+
+  <!-- SECTION 04 · WORKED EXAMPLES -->
+  <section id="worked-examples">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Worked examples</p>
+          <h2>Model the thinking before the score.</h2>
+        </div>
+      </div>
+      <div class="grid three"><article class="card">
+      <h3>Coordinate movement</h3>
+      <p class="math-note">Start at (−2, 3), move 5 right and 4 down.</p>
+      <ol class="study-list"><li>Right adds 5 to x: −2+5=3.</li><li>Down subtracts 4 from y: 3−4=−1.</li><li>Write the new ordered pair.</li></ol>
+      <p class="notice"><strong>Result:</strong> (3, −1)</p>
+    </article>
+<article class="card">
+      <h3>Input/output rule</h3>
+      <p class="math-note">Rule: y = 2x + 1. Find y when x = 4.</p>
+      <ol class="study-list"><li>Substitute 4 for x.</li><li>Multiply first: 2(4)=8.</li><li>Add 1.</li></ol>
+      <p class="notice"><strong>Result:</strong> y = 9</p>
+    </article>
+<article class="card">
+      <h3>Rate of change</h3>
+      <p class="math-note">A table goes from (1, 5) to (3, 11).</p>
+      <ol class="study-list"><li>Input changed by 2.</li><li>Output changed by 6.</li><li>Rate is output change ÷ input change.</li></ol>
+      <p class="notice"><strong>Result:</strong> 3 per 1 input</p>
+    </article></div>
+    </div>
+  </section>
+
+  <!-- SECTION 05 · MISCONCEPTION CLINIC -->
+  <section id="misconceptions">
+    <div class="wrap">
+      <article class="card">
+        <p class="eyebrow">Misconception clinic</p>
+        <h2>Common errors to catch early.</h2>
+        <ul class="study-list"><li><strong>Reversing coordinates</strong> — The first coordinate is horizontal x; the second is vertical y.</li>
+<li><strong>Calling any pattern a function rule too quickly</strong> — A rule must work for every input-output pair given.</li>
+<li><strong>Ignoring units in rate problems</strong> — A rate is not just a number; it describes change per input unit.</li>
+<li><strong>Thinking negative coordinates are errors</strong> — Negative coordinates are valid positions left of or below the origin.</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 06 · MATH BREAK GAME -->
+  <section id="math-break">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Math Break · Skill Game</p>
+          <h2>Coordinate Mission Control</h2>
+        </div>
+        <p>This game supports coordinate movement and multi-step signed reasoning, the bridge skill for this week.</p>
+      </div>
+      <article class="card">
+        <div class="game-frame-wrap" aria-label="Coordinate Mission Control embedded game">
+          <iframe title="Coordinate Mission Control" src="../../../learning-games/unit-02-08-coordinated-mission-control/index.html" loading="lazy"></iframe>
+        </div>
+        <div class="game-actions">
+          <a class="btn primary" href="../../../learning-games/unit-02-08-coordinated-mission-control/index.html">Open game in its own page</a>
+          <a class="btn" href="#practice">Return to lesson practice</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 07 · PRACTICE ENGINE OUTPUT -->
+  <section id="practice">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Lesson Mastery · 20 Questions</p>
+          <h2>Reach 80% to unlock the weekly quiz.</h2>
+        </div>
+      </div>
+      <div class="question-list" id="practiceQuestions"></div>
+      <div class="actions">
+        <button class="primary" id="submitPractice" type="button">Submit Lesson Practice</button>
+        <button id="resetPractice" type="button">Reset Visible Answers</button>
+      </div>
+      <p class="notice" id="practiceStatus">No lesson-practice score yet.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 08 · WEEKLY QUIZ GATE -->
+  <section id="quizSection" data-locked="true">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Weekly Quiz Gate · 10 Questions</p>
+          <h2>Reach 80% to complete Week 4.</h2>
+        </div>
+        <p id="quizLock" class="notice">Locked: reach 80% on lesson practice first.</p>
+      </div>
+      <div class="question-list" id="quizQuestions"></div>
+      <div class="actions">
+        <button class="primary" id="submitQuiz" type="button">Submit Weekly Quiz</button>
+        <button id="resetQuiz" type="button">Reset Visible Answers</button>
+      </div>
+      <p class="notice" id="quizStatus">No weekly-quiz score yet.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 09 · REFLECTION + NEXT GATE -->
+  <section id="mastery">
+    <div class="wrap">
+      <article class="card">
+        <p class="eyebrow">Reflect · Continue</p>
+        <h2>How can a table, graph, and rule describe the same relationship?</h2>
+        <textarea id="reflection" placeholder="Record a strategy, misconception you corrected, or question to revisit."></textarea>
+        <div class="actions">
+          <button id="saveReflection" type="button">Save Reflection</button>
+          <a class="btn locked" id="nextLink" aria-disabled="true" href="#mastery">Locked · practice + quiz both require 80%</a>
+        </div>
+        <p id="reflectionStatus" class="notice">Reflection is optional and does not replace mastery evidence.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">Conditional Unit 0 · Week 4 · practice ≥80% · weekly quiz ≥80%</footer>
+
+<script>
+window.REFRESHER_WEEK={week:4,title:'Functions & Coordinates Bridge',strand:'Functions & Coordinates',next:'lesson-05-geometry-measurement.html'};
+</script>
+<script src="../assets/refresher-engine.js"></script>
+</body>
+</html>
