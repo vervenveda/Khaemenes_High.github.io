@@ -1,12 +1,4 @@
-concept development → reading room → interactive factor-pair lab → Math Break: Factor Pair Builder → worked examples → 20-question practice with an 80% mastery requirement.
-
-Repository-ready file
-
-Download factors-multiples.html
-
-Descriptive backup copy
-
-Download Lesson 2 · Synced Factor Pair Builder
+Lesson 2 · Synced Factor Pair Builder
 
 The upgraded game now begins with an Animated Instruction Studio:
 
