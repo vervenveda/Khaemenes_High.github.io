@@ -1,17 +1,28 @@
 {
-  "schema_version": "1.0",
-  "lesson_id": "KH-ELA-ENG9-U02-L05",
-  "unit": 2,
-  "lesson": 5,
+  "schema_version": "1.1",
+  "asset_id": "ELA-CONTRAST-SHIFT-001",
   "title": "Contrast or Shift in Meaning — Sentence Equivalence",
   "provider": "youtube",
   "video_id": "33Ee1Xgeu8w",
   "embed_url": "https://www.youtube-nocookie.com/embed/33Ee1Xgeu8w",
   "aspect_ratio": "16:9",
+  "topics": [
+    "contrast",
+    "shifts in meaning",
+    "transition clues",
+    "sentence interpretation"
+  ],
+  "skills": [
+    "identify contrast clues",
+    "track shifts in meaning",
+    "interpret relationships between ideas",
+    "use context to resolve meaning"
+  ],
+  "grade_band": "9-12",
   "optional": true,
   "autoplay": false,
   "transcript": null,
   "captions_verified": false,
   "alignment_status": "enrichment_only",
-  "alignment_note": "This video teaches how contrast and shifts in meaning affect sentence interpretation, including the use of contextual and transition clues. These skills support English 9 reading comprehension, vocabulary in context, and analysis of relationships between ideas, but the GRE-oriented presentation makes the resource best suited as advanced enrichment."
+  "alignment_note": "Teaches how contrast and shifts in meaning affect sentence interpretation using contextual and transition clues. The GRE-oriented framing makes this best suited as advanced enrichment rather than core instruction."
 }
