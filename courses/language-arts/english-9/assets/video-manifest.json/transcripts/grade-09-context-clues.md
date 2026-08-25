@@ -1,17 +1,28 @@
 {
-  "schema_version": "1.0",
-  "lesson_id": "KH-ELA-ENG9-U01-L02",
-  "unit": 1,
-  "lesson": 2,
+  "schema_version": "1.1",
+  "asset_id": "ELA-CONTEXT-CLUES-001",
   "title": "Context Clues — Comprehension & Reading Strategies",
   "provider": "youtube",
   "video_id": "CyK01USxdg0",
   "embed_url": "https://www.youtube-nocookie.com/embed/CyK01USxdg0",
   "aspect_ratio": "16:9",
+  "topics": [
+    "context clues",
+    "vocabulary",
+    "reading comprehension",
+    "sentence structure"
+  ],
+  "skills": [
+    "infer word meaning from context",
+    "use examples and surrounding language",
+    "analyze sentence clues",
+    "read unfamiliar vocabulary independently"
+  ],
+  "grade_band": "9-12",
   "optional": true,
   "autoplay": false,
   "transcript": null,
   "captions_verified": false,
   "alignment_status": "aligned",
-  "alignment_note": "This video teaches students how to use surrounding words, phrases, examples, and sentence structure to infer the meaning of unfamiliar vocabulary. It supports English 9 scholarly foundations by strengthening close reading, vocabulary acquisition, comprehension, and independent analysis of increasingly complex texts."
+  "alignment_note": "Teaches students to use surrounding words, phrases, examples, and sentence structure to infer unfamiliar vocabulary. Reinforces close reading, vocabulary acquisition, comprehension, and independent analysis of complex texts."
 }
