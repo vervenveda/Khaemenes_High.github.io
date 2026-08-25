@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lesson 1 · Number Families Game — classify real numbers as Natural, Whole, Integer, Rational, Irrational, and Real." />
+  <title>Lesson 1 · Number Family Sort</title>
+  <style>
+    :root{
+      --ink:#f7f1e3;
+      --muted:#c9c1b1;
+      --bg:#090b10;
+      --bg2:#10151c;
+      --panel:#141a22;
+      --panel2:#1a222d;
+      --line:#394351;
+      --gold:#d8bd7a;
+      --gold2:#f0d99b;
+      --good:#8fd4ad;
+      --bad:#ed9b9b;
+      --focus:#b9d8ff;
+      --shadow:0 18px 55px rgba(0,0,0,.35);
+      --radius:18px;
+      --radius-sm:12px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100%;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(216,189,122,.10), transparent 28rem),
+        radial-gradient(circle at 90% 18%, rgba(106,139,174,.10), transparent 30rem),
+        linear-gradient(180deg,var(--bg),#0d1117 60%,#090b10);
+      font-family:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;
+      line-height:1.5;
+    }
+
+    button,select{font:inherit}
+    button{touch-action:manipulation}
+    button:focus-visible, select:focus-visible{
+      outline:3px solid var(--focus);
+      outline-offset:3px;
+    }
+
+    .skip{
+      position:absolute;
+      left:-9999px;
+      top:auto;
+    }
+    .skip:focus{
+      left:16px;
+      top:16px;
+      z-index:20;
+      background:#fff;
+      color:#111;
+      padding:10px 14px;
+      border-radius:8px;
+    }
+
+    .shell{
+      width:min(var(--max),calc(100% - 28px));
+      margin:0 auto;
+      padding:28px 0 48px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:10px 0 26px;
+      border-bottom:1px solid rgba(216,189,122,.22);
+    }
+
+    .brandline{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .seal{
+      width:44px;
+      height:44px;
+      border:1px solid rgba(216,189,122,.68);
+      display:grid;
+      place-items:center;
+      transform:rotate(45deg);
+      border-radius:9px;
+      background:rgba(216,189,122,.06);
+      flex:0 0 auto;
+    }
+    .seal span{
+      transform:rotate(-45deg);
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--gold2);
+      font-size:19px;
+    }
+
+    .kicker{
+      margin:0;
+      color:var(--gold2);
+      font-size:.78rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+    .crumb{
+      margin:3px 0 0;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .mini-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .ghost{
+      appearance:none;
+      border:1px solid var(--line);
+      color:var(--ink);
+      background:transparent;
+      border-radius:999px;
+      padding:9px 13px;
+      cursor:pointer;
+    }
+    .ghost:hover{border-color:var(--gold);background:rgba(216,189,122,.06)}
+
+    .hero{
+      text-align:center;
+      padding:54px 10px 30px;
+      max-width:900px;
+      margin:0 auto;
+    }
+    .hero .eyebrow{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:.78rem;
+      font-weight:800;
+    }
+    h1,h2,h3{
+      font-family:Cinzel,Georgia,"Times New Roman",serif;
+      font-weight:500;
+    }
+    h1{
+      margin:10px 0 13px;
+      font-size:clamp(2rem,5vw,4rem);
+      line-height:1.05;
+      letter-spacing:.025em;
+    }
+    .hero p{
+      margin:0 auto;
+      max-width:760px;
+      color:var(--muted);
+      font-size:clamp(1rem,2vw,1.15rem);
+    }
+
+    .rule-strip{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:8px;
+      margin:24px auto 0;
+      max-width:900px;
+    }
+    .rule-chip{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.025);
+      border-radius:11px;
+      padding:10px 8px;
+      min-width:0;
+    }
+    .rule-chip b{
+      display:block;
+      color:var(--gold2);
+      font-size:.86rem;
+    }
+    .rule-chip small{color:var(--muted);font-size:.72rem}
+
+    .lesson-note{
+      margin:22px auto 0;
+      max-width:900px;
+      padding:14px 16px;
+      border-left:3px solid var(--gold);
+      background:rgba(216,189,122,.055);
+      color:#ddd5c6;
+      text-align:left;
+      border-radius:0 10px 10px 0;
+    }
+
+    .game-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr);
+      gap:18px;
+      align-items:start;
+      margin-top:24px;
+    }
+
+    .panel{
+      border:1px solid rgba(216,189,122,.18);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,rgba(23,29,38,.96),rgba(16,21,28,.96));
+      box-shadow:var(--shadow);
+    }
+
+    .play-panel{padding:22px}
+    .side-panel{padding:18px}
+
+    .status-row{
+      display:grid;
+      grid-template-columns:1fr auto auto;
+      gap:12px;
+      align-items:center;
+      margin-bottom:16px;
+    }
+    .progress-wrap{min-width:0}
+    .progress-label{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      color:var(--muted);
+      font-size:.82rem;
+      margin-bottom:7px;
+    }
+    .track{
+      height:8px;
+      background:#07090d;
+      border:1px solid #313946;
+      border-radius:999px;
+      overflow:hidden;
+    }
+    .fill{
+      height:100%;
+      width:0%;
+      background:linear-gradient(90deg,#ae9255,var(--gold2));
+      transition:width .3s ease;
+    }
+    .stat{
+      text-align:center;
+      min-width:72px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(255,255,255,.025);
+    }
+    .stat b{display:block;font-size:1.15rem}
+    .stat span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+
+    .number-stage{
+      min-height:250px;
+      display:grid;
+      place-items:center;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),
+        #0c1117;
+      background-size:24px 24px;
+      border-radius:16px;
+      padding:24px;
+      position:relative;
+      overflow:hidden;
+    }
+    .number-stage::after{
+      content:"";
+      position:absolute;
+      inset:16px;
+      border:1px solid rgba(216,189,122,.12);
+      border-radius:12px;
+      pointer-events:none;
+    }
+    .card-wrap{
+      text-align:center;
+      position:relative;
+      z-index:1;
+    }
+    .card-label{
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.15em;
+      font-size:.74rem;
+      margin-bottom:10px;
+    }
+    .number-card{
+      display:inline-grid;
+      place-items:center;
+      min-width:min(360px,78vw);
+      min-height:118px;
+      padding:18px 28px;
+      border:1px solid rgba(216,189,122,.7);
+      border-radius:14px;
+      background:linear-gradient(145deg,#212934,#151b23);
+      box-shadow:0 14px 38px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.03);
+      color:#fff8e8;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(2rem,7vw,4rem);
+      letter-spacing:.02em;
+    }
+    .number-card.enter{animation:deal .3s ease both}
+    @keyframes deal{
+      from{opacity:0;transform:translateY(12px) scale(.98)}
+      to{opacity:1;transform:none}
+    }
+
+    .instruction{
+      margin:18px 0 10px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    .families{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+
+    .family-btn{
+      appearance:none;
+      min-height:74px;
+      border:1px solid var(--line);
+      border-radius:13px;
+      padding:10px;
+      background:#111720;
+      color:var(--ink);
+      cursor:pointer;
+      position:relative;
+      text-align:left;
+      transition:.16s ease;
+    }
+    .family-btn:hover{
+      border-color:#727f90;
+      transform:translateY(-1px);
+    }
+    .family-btn[aria-pressed="true"]{
+      border-color:var(--gold2);
+      background:linear-gradient(180deg,rgba(216,189,122,.16),rgba(216,189,122,.07));
+      box-shadow:inset 0 0 0 1px rgba(216,189,122,.24);
+    }
+    .family-btn[aria-pressed="true"]::after{
+      content:"✓";
+      position:absolute;
+      right:10px;
+      top:8px;
+      color:var(--gold2);
+      font-weight:900;
+    }
+    .family-btn strong{
+      display:block;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:1.02rem;
+      color:#fff;
+    }
+    .family-btn small{color:var(--muted);display:block;margin-top:2px}
+
+    .action-row{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:9px;
+      margin-top:16px;
+    }
+    .primary,.secondary{
+      appearance:none;
+      min-height:44px;
+      border-radius:10px;
+      padding:10px 16px;
+      cursor:pointer;
+      letter-spacing:.04em;
+      font-weight:700;
+    }
+    .primary{
+      border:1px solid var(--gold2);
+      background:var(--gold2);
+      color:#17130a;
+    }
+    .primary:hover{filter:brightness(1.05)}
+    .primary:disabled{opacity:.45;cursor:not-allowed}
+    .secondary{
+      border:1px solid var(--line);
+      background:#171e27;
+      color:var(--ink);
+    }
+    .secondary:hover{border-color:var(--gold)}
+
+    .feedback{
+      margin-top:16px;
+      min-height:76px;
+      border-radius:12px;
+      border:1px solid transparent;
+      padding:13px 14px;
+      background:rgba(255,255,255,.02);
+    }
+    .feedback.good{
+      border-color:rgba(143,212,173,.42);
+      background:rgba(143,212,173,.07);
+    }
+    .feedback.bad{
+      border-color:rgba(237,155,155,.42);
+      background:rgba(237,155,155,.07);
+    }
+    .feedback h3{
+      margin:0 0 4px;
+      font-size:1.02rem;
+    }
+    .feedback p{margin:0;color:#d5cebf}
+    .feedback .sets{margin-top:6px;color:var(--gold2);font-size:.9rem}
+
+    .side-panel h2{
+      margin:2px 0 12px;
+      font-size:1.18rem;
+    }
+
+    .ladder{
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      margin:8px 0 18px;
+    }
+    .ladder-row{
+      display:flex;
+      align-items:center;
+      gap:9px;
+      min-width:0;
+    }
+    .ladder-node{
+      flex:1;
+      min-width:0;
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:9px 11px;
+      background:rgba(255,255,255,.025);
+    }
+    .ladder-node b{font-family:Georgia,"Times New Roman",serif}
+    .ladder-node span{display:block;color:var(--muted);font-size:.77rem}
+    .arrow{color:var(--gold);font-size:1rem}
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin:10px 0 18px;
+    }
+    .branch{
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:10px;
+      background:#111720;
+    }
+    .branch b{display:block;font-family:Georgia,"Times New Roman",serif}
+    .branch small{color:var(--muted)}
+
+    .tip{
+      border-top:1px solid var(--line);
+      padding-top:14px;
+      margin-top:14px;
+    }
+    .tip p{
+      color:var(--muted);
+      margin:5px 0 0;
+      font-size:.9rem;
+    }
+
+    .controls{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      border-top:1px solid var(--line);
+      padding-top:14px;
+      margin-top:14px;
+    }
+    label{color:var(--muted);font-size:.82rem}
+    select{
+      color:var(--ink);
+      background:#111720;
+      border:1px solid var(--line);
+      border-radius:9px;
+      padding:8px 30px 8px 10px;
+      min-height:40px;
+    }
+
+    .best{
+      color:var(--gold2);
+      font-size:.82rem;
+      margin:12px 0 0;
+    }
+
+    .mastery{
+      display:none;
+      margin-top:20px;
+      padding:24px;
+      text-align:center;
+      border:1px solid rgba(216,189,122,.5);
+      border-radius:16px;
+      background:
+        radial-gradient(circle at 50% 0%,rgba(216,189,122,.14),transparent 24rem),
+        #111720;
+    }
+    .mastery.show{display:block}
+    .mastery .mark{
+      width:66px;
+      height:66px;
+      margin:0 auto 12px;
+      border:1px solid var(--gold2);
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      color:var(--gold2);
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:1.65rem;
+    }
+    .mastery h2{margin:5px 0}
+    .mastery p{color:var(--muted);max-width:620px;margin:7px auto 15px}
+
+    footer{
+      text-align:center;
+      color:#847e73;
+      font-size:.78rem;
+      padding:26px 0 0;
+    }
+
+    .sr-only{
+      position:absolute!important;
+      width:1px!important;
+      height:1px!important;
+      padding:0!important;
+      margin:-1px!important;
+      overflow:hidden!important;
+      clip:rect(0,0,0,0)!important;
+      white-space:nowrap!important;
+      border:0!important;
+    }
+
+    @media(max-width:860px){
+      .game-grid{grid-template-columns:1fr}
+      .side-panel{order:2}
+      .rule-strip{grid-template-columns:repeat(3,1fr)}
+    }
+
+    @media(max-width:600px){
+      .shell{width:min(100% - 18px,var(--max));padding-top:12px}
+      .topbar{align-items:flex-start}
+      .mini-actions{display:none}
+      .hero{padding-top:34px}
+      .families{grid-template-columns:1fr 1fr}
+      .status-row{grid-template-columns:1fr 66px}
+      .status-row .stat:last-child{display:none}
+      .play-panel{padding:13px}
+      .number-stage{min-height:210px;padding:16px}
+      .number-card{min-width:0;width:100%;padding-inline:14px}
+    }
+
+    @media(max-width:380px){
+      .rule-strip{grid-template-columns:1fr 1fr}
+      .families{grid-template-columns:1fr}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        scroll-behavior:auto!important;
+        animation-duration:.001ms!important;
+        transition-duration:.001ms!important;
+      }
+    }
+
+    @media print{
+      body{background:#fff;color:#111}
+      .topbar,.hero .eyebrow,.action-row,.controls,.mini-actions{display:none!important}
+      .shell{width:100%;padding:0}
+      .panel,.number-stage,.family-btn,.ladder-node,.branch{
+        box-shadow:none;
+        color:#111;
+        background:#fff;
+        border-color:#bbb;
+      }
+      .hero{padding:0 0 20px}
+      .hero p,.instruction,.rule-chip small,.family-btn small,.ladder-node span,.branch small,.tip p{color:#444}
+      h1,h2,h3,.family-btn strong{color:#111}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#game">Skip to game</a>
+
+  <div class="shell">
+    <header class="topbar">
+      <div class="brandline">
+        <div class="seal" aria-hidden="true"><span>1</span></div>
+        <div>
+          <p class="kicker">Mathematics · Lesson 1</p>
+          <p class="crumb">Number Families · Interactive Classification Lab</p>
+        </div>
+      </div>
+      <div class="mini-actions">
+        <button class="ghost" id="printBtn" type="button">Print reference</button>
+        <button class="ghost" id="resetBestBtn" type="button">Reset best</button>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="eyebrow">Number Family Sort</div>
+      <h1 id="pageTitle">Where does each number belong?</h1>
+      <p>
+        Examine one number at a time and select <strong>every family</strong> it belongs to.
+        The goal is precision: number families nest inside one another.
+      </p>
+
+      <div class="rule-strip" aria-label="Number family quick reference">
+        <div class="rule-chip"><b>Natural</b><small>1, 2, 3, …</small></div>
+        <div class="rule-chip"><b>Whole</b><small>0, 1, 2, …</small></div>
+        <div class="rule-chip"><b>Integer</b><small>…, −2, −1, 0, 1, …</small></div>
+        <div class="rule-chip"><b>Rational</b><small>fractions & repeating/ending decimals</small></div>
+        <div class="rule-chip"><b>Irrational</b><small>nonending, nonrepeating</small></div>
+        <div class="rule-chip"><b>Real</b><small>all rational + irrational numbers</small></div>
+      </div>
+
+      <div class="lesson-note">
+        <strong>Mathematical convention used here:</strong> Natural numbers begin at 1. Because the sets overlap,
+        a card such as <strong>5</strong> belongs to Natural, Whole, Integer, Rational, <em>and</em> Real.
+      </div>
+    </section>
+
+    <main id="game" class="game-grid">
+      <section class="panel play-panel" aria-labelledby="gameHeading">
+        <h2 id="gameHeading" class="sr-only">Number Family Sort game</h2>
+
+        <div class="status-row">
+          <div class="progress-wrap">
+            <div class="progress-label">
+              <span id="roundLabel">Card 1 of 18</span>
+              <span id="accuracyLabel">Accuracy 0%</span>
+            </div>
+            <div class="track" aria-hidden="true"><div class="fill" id="progressFill"></div></div>
+          </div>
+          <div class="stat"><b id="score">0</b><span>Score</span></div>
+          <div class="stat"><b id="streak">0</b><span>Streak</span></div>
+        </div>
+
+        <div class="number-stage">
+          <div class="card-wrap">
+            <div class="card-label">Classify this number</div>
+            <div class="number-card enter" id="numberCard" aria-live="polite">5</div>
+          </div>
+        </div>
+
+        <p class="instruction">
+          Select every set that contains this number. Keyboard: <strong>1–6</strong> toggle families, <strong>Enter</strong> checks.
+        </p>
+
+        <div class="families" id="families" aria-label="Number families">
+          <button class="family-btn" type="button" data-set="Natural" aria-pressed="false">
+            <strong>1 · Natural</strong><small>Counting numbers from 1</small>
+          </button>
+          <button class="family-btn" type="button" data-set="Whole" aria-pressed="false">
+            <strong>2 · Whole</strong><small>Natural numbers plus 0</small>
+          </button>
+          <button class="family-btn" type="button" data-set="Integer" aria-pressed="false">
+            <strong>3 · Integer</strong><small>Positive, negative, and zero</small>
+          </button>
+          <button class="family-btn" type="button" data-set="Rational" aria-pressed="false">
+            <strong>4 · Rational</strong><small>Can be written as a/b</small>
+          </button>
+          <button class="family-btn" type="button" data-set="Irrational" aria-pressed="false">
+            <strong>5 · Irrational</strong><small>Not expressible as a fraction</small>
+          </button>
+          <button class="family-btn" type="button" data-set="Real" aria-pressed="false">
+            <strong>6 · Real</strong><small>Every number in this lesson</small>
+          </button>
+        </div>
+
+        <div class="action-row">
+          <button class="secondary" id="hintBtn" type="button">Hint</button>
+          <button class="primary" id="checkBtn" type="button">Check classification</button>
+          <button class="secondary" id="nextBtn" type="button" hidden>Next card →</button>
+        </div>
+
+        <div class="feedback" id="feedback" aria-live="polite">
+          <h3>Ready.</h3>
+          <p>Choose all families that contain the number, then check your classification.</p>
+        </div>
+
+        <div class="mastery" id="mastery" aria-live="polite">
+          <div class="mark" id="masteryMark">80</div>
+          <h2 id="masteryTitle">Round complete</h2>
+          <p id="masteryText"></p>
+          <div class="action-row">
+            <button class="primary" id="newRoundBtn" type="button">Play another round</button>
+            <button class="secondary" id="reviewBtn" type="button">Review missed cards</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel side-panel" aria-labelledby="mapHeading">
+        <h2 id="mapHeading">The Number Family Map</h2>
+
+        <div class="ladder" aria-label="Nested rational number families">
+          <div class="ladder-row"><div class="ladder-node"><b>Natural</b><span>1, 2, 3, …</span></div><span class="arrow">⊂</span></div>
+          <div class="ladder-row"><div class="ladder-node"><b>Whole</b><span>0, 1, 2, 3, …</span></div><span class="arrow">⊂</span></div>
+          <div class="ladder-row"><div class="ladder-node"><b>Integer</b><span>…, −2, −1, 0, 1, …</span></div><span class="arrow">⊂</span></div>
+          <div class="ladder-row"><div class="ladder-node"><b>Rational</b><span>a/b, where b ≠ 0</span></div><span class="arrow">⊂</span></div>
+          <div class="ladder-row"><div class="ladder-node"><b>Real</b><span>Rational ∪ Irrational</span></div></div>
+        </div>
+
+        <div class="split" aria-label="Two branches of real numbers">
+          <div class="branch"><b>Rational</b><small>terminating or repeating decimals</small></div>
+          <div class="branch"><b>Irrational</b><small>nonterminating and nonrepeating</small></div>
+        </div>
+
+        <div class="tip">
+          <strong>Strategy</strong>
+          <p id="strategyText">Start with the smallest family you recognize, then work outward through every larger family that contains it.</p>
+        </div>
+
+        <div class="controls">
+          <label for="roundSize">Round length</label>
+          <select id="roundSize">
+            <option value="12">12 cards</option>
+            <option value="18" selected>18 cards</option>
+            <option value="24">24 cards</option>
+          </select>
+        </div>
+
+        <p class="best" id="bestScore">Best mastery score: —</p>
+      </aside>
+    </main>
+
+    <footer>
+      Lesson 1 · Number-set classification · Standalone HTML + CSS + vanilla JavaScript
+    </footer>
+  </div>
+
+  <script>
+  (() => {
+    "use strict";
+
+    const SET_ORDER = ["Natural","Whole","Integer","Rational","Irrational","Real"];
+
+    const BANK = [
+      {v:"1", sets:["Natural","Whole","Integer","Rational","Real"], why:"1 is a counting number, so it is Natural; therefore it is also Whole, Integer, Rational (1/1), and Real."},
+      {v:"7", sets:["Natural","Whole","Integer","Rational","Real"], why:"7 is a positive counting number. It is also 7/1, so it is Rational and Real."},
+      {v:"24", sets:["Natural","Whole","Integer","Rational","Real"], why:"24 is Natural, Whole, Integer, Rational (24/1), and Real."},
+      {v:"111", sets:["Natural","Whole","Integer","Rational","Real"], why:"111 is a positive counting number and can be written 111/1."},
+      {v:"0", sets:["Whole","Integer","Rational","Real"], why:"0 is Whole and Integer. It is Rational because 0 = 0/1, and all rational numbers are Real."},
+      {v:"−1", sets:["Integer","Rational","Real"], why:"−1 is an Integer. It equals −1/1, so it is Rational and therefore Real."},
+      {v:"−8", sets:["Integer","Rational","Real"], why:"−8 is an Integer, Rational (−8/1), and Real. It is not Whole or Natural."},
+      {v:"−33", sets:["Integer","Rational","Real"], why:"Negative whole-valued numbers are Integers, and every Integer is Rational and Real."},
+      {v:"1/2", sets:["Rational","Real"], why:"1/2 is a ratio of two integers with a nonzero denominator, so it is Rational and Real."},
+      {v:"−3/4", sets:["Rational","Real"], why:"−3/4 is a ratio of integers, so it is Rational and Real."},
+      {v:"22/7", sets:["Rational","Real"], why:"22/7 is a fraction of integers. It approximates π, but it is not π; 22/7 is Rational."},
+      {v:"5/11", sets:["Rational","Real"], why:"5/11 is a ratio of integers, so it is Rational and Real."},
+      {v:"0.25", sets:["Rational","Real"], why:"0.25 terminates and equals 1/4, so it is Rational and Real."},
+      {v:"−2.75", sets:["Rational","Real"], why:"−2.75 terminates and equals −11/4, so it is Rational and Real."},
+      {v:"0.333…", sets:["Rational","Real"], why:"A repeating decimal is Rational. Here 0.333… = 1/3, so it is also Real."},
+      {v:"1.272727…", sets:["Rational","Real"], why:"The repeating block 27 makes this decimal Rational; every Rational number is Real."},
+      {v:"√4", sets:["Natural","Whole","Integer","Rational","Real"], why:"√4 = 2. Since 2 is a counting number, it belongs to Natural, Whole, Integer, Rational, and Real."},
+      {v:"√81", sets:["Natural","Whole","Integer","Rational","Real"], why:"√81 = 9, which is Natural, Whole, Integer, Rational, and Real."},
+      {v:"−√9", sets:["Integer","Rational","Real"], why:"−√9 = −3, which is Integer, Rational, and Real."},
+      {v:"√2", sets:["Irrational","Real"], why:"√2 cannot be written as a ratio of integers. It is Irrational and therefore Real."},
+      {v:"√3", sets:["Irrational","Real"], why:"√3 is not the square root of a perfect square, and it is Irrational and Real."},
+      {v:"√5", sets:["Irrational","Real"], why:"√5 is Irrational, so its decimal does not terminate or repeat; it is still Real."},
+      {v:"√10", sets:["Irrational","Real"], why:"10 is not a perfect square; √10 is Irrational and Real."},
+      {v:"π", sets:["Irrational","Real"], why:"π is an Irrational number and therefore belongs to the Real numbers."},
+      {v:"e", sets:["Irrational","Real"], why:"Euler's number e is Irrational and Real."},
+      {v:"π/2", sets:["Irrational","Real"], why:"Dividing nonzero irrational π by rational 2 remains Irrational; it is also Real."},
+      {v:"2π", sets:["Irrational","Real"], why:"Multiplying irrational π by nonzero rational 2 gives an Irrational real number."},
+      {v:"3 + √2", sets:["Irrational","Real"], why:"Adding rational 3 to irrational √2 produces an Irrational real number."},
+      {v:"4.125", sets:["Rational","Real"], why:"4.125 is terminating; it equals 33/8, so it is Rational and Real."},
+      {v:"−0.6", sets:["Rational","Real"], why:"−0.6 = −3/5, so it is Rational and Real."},
+      {v:"14/2", sets:["Natural","Whole","Integer","Rational","Real"], why:"14/2 = 7, so it is Natural, Whole, Integer, Rational, and Real."},
+      {v:"−12/3", sets:["Integer","Rational","Real"], why:"−12/3 = −4, so it is Integer, Rational, and Real."},
+      {v:"8/8", sets:["Natural","Whole","Integer","Rational","Real"], why:"8/8 = 1. That makes it Natural, Whole, Integer, Rational, and Real."},
+      {v:"0/9", sets:["Whole","Integer","Rational","Real"], why:"0/9 = 0, so it is Whole, Integer, Rational, and Real."},
+      {v:"√16/2", sets:["Natural","Whole","Integer","Rational","Real"], why:"√16/2 = 4/2 = 2, so it belongs to all nested rational families through Real."},
+      {v:"−√25/5", sets:["Integer","Rational","Real"], why:"−√25/5 = −5/5 = −1, so it is Integer, Rational, and Real."}
+    ];
+
+    const el = {
+      numberCard: document.getElementById("numberCard"),
+      families: [...document.querySelectorAll(".family-btn")],
+      check: document.getElementById("checkBtn"),
+      next: document.getElementById("nextBtn"),
+      hint: document.getElementById("hintBtn"),
+      feedback: document.getElementById("feedback"),
+      score: document.getElementById("score"),
+      streak: document.getElementById("streak"),
+      roundLabel: document.getElementById("roundLabel"),
+      accuracyLabel: document.getElementById("accuracyLabel"),
+      progressFill: document.getElementById("progressFill"),
+      mastery: document.getElementById("mastery"),
+      masteryMark: document.getElementById("masteryMark"),
+      masteryTitle: document.getElementById("masteryTitle"),
+      masteryText: document.getElementById("masteryText"),
+      newRound: document.getElementById("newRoundBtn"),
+      review: document.getElementById("reviewBtn"),
+      roundSize: document.getElementById("roundSize"),
+      best: document.getElementById("bestScore"),
+      strategy: document.getElementById("strategyText"),
+      print: document.getElementById("printBtn"),
+      resetBest: document.getElementById("resetBestBtn")
+    };
+
+    let deck = [];
+    let index = 0;
+    let score = 0;
+    let attempts = 0;
+    let correct = 0;
+    let streak = 0;
+    let checked = false;
+    let selected = new Set();
+    let missed = [];
+
+    const BEST_KEY = "khaemenes_number_family_sort_best_v1";
+
+    function shuffle(items){
+      const a = items.slice();
+      for(let i=a.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [a[i],a[j]]=[a[j],a[i]];
+      }
+      return a;
+    }
+
+    function bestValue(){
+      try{
+        const n = Number(localStorage.getItem(BEST_KEY));
+        return Number.isFinite(n) && n >= 0 ? n : null;
+      }catch(_){ return null; }
+    }
+
+    function saveBest(percent){
+      try{
+        const old = bestValue();
+        if(old === null || percent > old) localStorage.setItem(BEST_KEY,String(percent));
+      }catch(_){}
+      updateBest();
+    }
+
+    function updateBest(){
+      const best = bestValue();
+      el.best.textContent = best === null ? "Best mastery score: —" : `Best mastery score: ${best}%`;
+    }
+
+    function makeRound(source){
+      const count = Math.max(6,Math.min(24,Number(el.roundSize.value)||18));
+      if(source && source.length){
+        const expanded = [];
+        while(expanded.length < count) expanded.push(...shuffle(source));
+        return expanded.slice(0,count);
+      }
+      return shuffle(BANK).slice(0,count);
+    }
+
+    function startRound(source=null){
+      deck = makeRound(source);
+      index = 0;
+      score = 0;
+      attempts = 0;
+      correct = 0;
+      streak = 0;
+      missed = [];
+      checked = false;
+      selected.clear();
+      el.mastery.classList.remove("show");
+      renderCard();
+      updateStats();
+      window.scrollTo({top:document.getElementById("game").offsetTop - 10,behavior:"smooth"});
+    }
+
+    function current(){ return deck[index]; }
+
+    function setFeedback(kind,title,text,setsText=""){
+      el.feedback.className = "feedback" + (kind ? ` ${kind}` : "");
+      el.feedback.innerHTML = `<h3>${title}</h3><p>${text}</p>${setsText ? `<div class="sets">${setsText}</div>` : ""}`;
+    }
+
+    function renderCard(){
+      checked = false;
+      selected.clear();
+      el.families.forEach(b=>{
+        b.setAttribute("aria-pressed","false");
+        b.disabled=false;
+      });
+      el.check.hidden=false;
+      el.check.disabled=false;
+      el.next.hidden=true;
+      el.hint.disabled=false;
+
+      el.numberCard.classList.remove("enter");
+      void el.numberCard.offsetWidth;
+      el.numberCard.textContent = current().v;
+      el.numberCard.classList.add("enter");
+
+      setFeedback("","Ready.","Select every family that contains this number, then check your classification.");
+      el.strategy.textContent = "Start with the smallest family you recognize, then work outward through every larger family that contains it.";
+      updateStats();
+    }
+
+    function updateStats(){
+      const total = deck.length || 1;
+      const completed = Math.min(index,total);
+      const acc = attempts ? Math.round(correct/attempts*100) : 0;
+      el.score.textContent = score;
+      el.streak.textContent = streak;
+      el.roundLabel.textContent = `Card ${Math.min(index+1,total)} of ${total}`;
+      el.accuracyLabel.textContent = `Accuracy ${acc}%`;
+      el.progressFill.style.width = `${Math.round(completed/total*100)}%`;
+    }
+
+    function toggleFamily(btn){
+      if(checked) return;
+      const set = btn.dataset.set;
+      if(selected.has(set)) selected.delete(set);
+      else selected.add(set);
+      btn.setAttribute("aria-pressed",selected.has(set) ? "true" : "false");
+    }
+
+    function sameSets(a,b){
+      if(a.size !== b.size) return false;
+      for(const item of a) if(!b.has(item)) return false;
+      return true;
+    }
+
+    function checkAnswer(){
+      if(checked) return;
+      if(selected.size === 0){
+        setFeedback("bad","Choose at least one family.","A classification needs at least one selected set.");
+        return;
+      }
+
+      checked = true;
+      attempts++;
+      const item = current();
+      const answer = new Set(item.sets);
+      const isCorrect = sameSets(selected,answer);
+
+      el.families.forEach(b=>b.disabled=true);
+      el.check.hidden=true;
+      el.hint.disabled=true;
+
+      if(isCorrect){
+        correct++;
+        streak++;
+        score += 100 + Math.min(50,(streak-1)*10);
+        setFeedback("good","Correct classification.",item.why,`Families: ${item.sets.join(" · ")}`);
+      }else{
+        streak=0;
+        missed.push(item);
+        const missing = item.sets.filter(s=>!selected.has(s));
+        const extra = [...selected].filter(s=>!answer.has(s));
+        let detail = "";
+        if(missing.length) detail += ` Missing: ${missing.join(", ")}.`;
+        if(extra.length) detail += ` Remove: ${extra.join(", ")}.`;
+        setFeedback("bad","Not quite.",item.why + detail,`Correct families: ${item.sets.join(" · ")}`);
+      }
+
+      el.next.hidden=false;
+      el.next.textContent = index === deck.length-1 ? "See round results →" : "Next card →";
+      updateStats();
+    }
+
+    function showHint(){
+      if(checked) return;
+      const item = current();
+      const smallest = item.sets[0];
+      let hint = "";
+      if(smallest === "Natural") hint = "This expression simplifies to a positive counting number. Begin with Natural and move outward.";
+      else if(smallest === "Whole") hint = "This expression simplifies to zero. Remember: zero is Whole, but not Natural in this lesson.";
+      else if(smallest === "Integer") hint = "This is a negative whole-valued number. Start at Integer.";
+      else if(smallest === "Rational") hint = "Ask whether it is a fraction, a terminating decimal, or a repeating decimal.";
+      else hint = "Its decimal form would continue forever without a repeating pattern.";
+      el.strategy.textContent = hint;
+      setFeedback("","Hint",hint);
+    }
+
+    function nextCard(){
+      if(!checked) return;
+      if(index >= deck.length-1){
+        finishRound();
+        return;
+      }
+      index++;
+      renderCard();
+    }
+
+    function finishRound(){
+      index = deck.length;
+      updateStats();
+      el.progressFill.style.width="100%";
+      const percent = attempts ? Math.round(correct/attempts*100) : 0;
+      saveBest(percent);
+      const passed = percent >= 80;
+
+      el.mastery.classList.add("show");
+      el.masteryMark.textContent = `${percent}%`;
+      el.masteryTitle.textContent = passed ? "Mastery gate passed" : "Keep building mastery";
+      el.masteryText.textContent = passed
+        ? `You classified ${correct} of ${attempts} cards correctly. You met the 80% mastery target for number-set classification.`
+        : `You classified ${correct} of ${attempts} cards correctly. The lesson target is 80%. Review the missed cards and try again.`;
+
+      el.review.disabled = missed.length === 0;
+      el.review.textContent = missed.length ? `Review missed cards (${missed.length})` : "No missed cards";
+      el.mastery.scrollIntoView({behavior:"smooth",block:"center"});
+    }
+
+    el.families.forEach(btn=>btn.addEventListener("click",()=>toggleFamily(btn)));
+    el.check.addEventListener("click",checkAnswer);
+    el.next.addEventListener("click",nextCard);
+    el.hint.addEventListener("click",showHint);
+    el.newRound.addEventListener("click",()=>startRound());
+    el.review.addEventListener("click",()=>{ if(missed.length) startRound(missed); });
+    el.roundSize.addEventListener("change",()=>startRound());
+    el.print.addEventListener("click",()=>window.print());
+    el.resetBest.addEventListener("click",()=>{
+      try{ localStorage.removeItem(BEST_KEY); }catch(_){}
+      updateBest();
+      setFeedback("","Best score reset.","Your saved best mastery score was cleared on this device.");
+    });
+
+    document.addEventListener("keydown",(event)=>{
+      const tag=(document.activeElement && document.activeElement.tagName)||"";
+      if(["INPUT","TEXTAREA","SELECT"].includes(tag)) return;
+      if(event.key >= "1" && event.key <= "6"){
+        const btn=el.families[Number(event.key)-1];
+        if(btn && !btn.disabled){
+          event.preventDefault();
+          toggleFamily(btn);
+          btn.focus();
+        }
+      }else if(event.key === "Enter"){
+        event.preventDefault();
+        if(checked) nextCard(); else checkAnswer();
+      }else if(event.key.toLowerCase() === "h"){
+        event.preventDefault();
+        showHint();
+      }
+    });
+
+    updateBest();
+    startRound();
+  })();
+  </script>
+</body>
+</html>
