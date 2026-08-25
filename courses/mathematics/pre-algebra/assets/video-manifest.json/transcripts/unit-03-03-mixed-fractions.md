@@ -12,6 +12,6 @@
   "autoplay": false,
   "transcript": null,
   "captions_verified": false,
-  "alignment_status": "enrichment_only",
-  "alignment_note": "This video teaches how to compare mixed numbers and mixed fractions. Unit 3 Lesson 3 focuses on the coordinate plane and multi-step integer applications, so this resource is best treated as optional fraction and rational-number enrichment rather than a directly aligned lesson video."
+  "alignment_status": "aligned",
+  "alignment_note": "This video supports Unit 3 Lesson 3 by demonstrating comparison of mixed numbers and fractions. It is a focused companion within the broader lesson, which also compares fractions and decimals, orders signed rational numbers, and asks students to choose among benchmarks, common denominators, decimal forms, and cross products."
 }
