@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "lesson_id": "KH-MATH-PA-U02-L02",
+  "lesson_id": "KH-MATH-PA-U02-L01",
   "unit": 2,
-  "lesson": 2,
+  "lesson": 1,
   "title": "Fractions on a Number Line — Place a Fraction on a Number Line",
   "provider": "youtube",
   "video_id": "TLktfswm54A",
