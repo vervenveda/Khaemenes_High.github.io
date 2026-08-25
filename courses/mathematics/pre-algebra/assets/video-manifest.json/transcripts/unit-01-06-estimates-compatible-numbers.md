@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "lesson_id": "KH-MATH-PA-U01-L01",
+  "lesson_id": "KH-MATH-PA-U01-L06",
   "unit": 1,
-  "lesson": 1,
+  "lesson": 6,
   "title": "Estimate the Quotient Using Compatible Numbers",
   "provider": "youtube",
   "video_id": "IAJDI52kmiU",
