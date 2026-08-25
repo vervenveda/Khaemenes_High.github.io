@@ -1,1 +1,424 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Unit 0 · Week 3 · Algebraic Reasoning</title><link rel="stylesheet" href="../assets/refresher.css"></head><body><a class="skip" href="#main">Skip to main content</a><header><div class="wrap"><a class="brand" href="../">Khaemenes High · Pre-Algebra · Unit 0</a><a class="btn" href="lesson-02-rational-proportional.html">Previous Week</a></div></header><main id="main"><section class="hero"><div class="wrap"><p class="eyebrow">Conditional Refresher · Week 3 of 6</p><h1>Algebraic Reasoning Reset</h1><p>Strengthen expressions, substitution, inverse operations, equations, inequalities, and the balance reasoning that prepares students for formal algebra.</p><div class="badges"><span class="badge">20 Questions · Lesson Practice</span><span class="badge">10 Questions · Weekly Quiz</span><span class="badge">80% Mastery Gate</span></div><p class="notice" id="entryNotice" hidden></p></div></section><section><div class="wrap"><div class="section-head"><p class="eyebrow">Learn</p><h2>Operations preserve relationships.</h2></div><div class="grid"><article class="card"><h2>Expressions</h2><p>Variables stand for values. Substitute carefully and preserve operation order.</p></article><article class="card"><h2>Equations</h2><p>An equation states equality. Apply the same valid operation to both sides to preserve balance.</p></article><article class="card"><h2>Inverse operations</h2><p>Addition and subtraction undo one another; multiplication and division undo one another.</p></article><article class="card"><h2>Check the solution</h2><p>Substitute the result back into the original relationship to verify it.</p></article></div></div></section><section id="practice"><div class="wrap"><div class="section-head"><p class="eyebrow">Lesson Mastery · 20 Questions</p><h2>Reach 80% to unlock the weekly quiz.</h2></div><div class="question-list" id="practiceQuestions"></div><div class="actions"><button class="primary" id="submitPractice">Score Lesson Practice</button><button id="resetPractice">Reset Visible Answers</button></div><p class="notice" id="practiceStatus">No lesson-practice score yet.</p></div></section><section id="quizSection" data-locked="true"><div class="wrap"><div class="section-head"><p class="eyebrow">Weekly Quiz Gate · 10 Questions</p><h2>Reach 80% to complete Week 3.</h2><p id="quizLock" class="notice">Locked: reach 80% on lesson practice first.</p></div><div class="question-list" id="quizQuestions"></div><div class="actions"><button class="primary" id="submitQuiz">Score Weekly Quiz</button><button id="resetQuiz">Reset Visible Answers</button></div><p class="notice" id="quizStatus">No weekly-quiz score yet.</p></div></section><section id="mastery"><div class="wrap"><article class="card"><p class="eyebrow">Reflect · Continue</p><h2>Which inverse-operation move is most useful to you?</h2><textarea id="reflection"></textarea><div class="actions"><button id="saveReflection">Save Reflection</button><a class="btn locked" id="nextLink" aria-disabled="true" href="#mastery">Locked · practice + quiz both require 80%</a></div><p id="reflectionStatus" class="notice">Reflection is optional and separate from mastery.</p></article></div></section></main><footer class="footer">Conditional Unit 0 · Week 3 · practice ≥80% · weekly quiz ≥80%</footer><script>window.REFRESHER_WEEK={week:3,title:"Algebraic Reasoning Reset",strand:"Algebraic Reasoning",next:"lesson-04-functions-coordinates.html"};</script><script src="../assets/refresher-engine.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Conditional Unit 0 Week 3: Algebraic Reasoning Reset.">
+<title>Unit 0 · Week 3 · Algebraic Reasoning</title>
+<link rel="stylesheet" href="../assets/refresher.css">
+
+<style>
+/* ==========================================================================
+   KHAEMENES UNIT 0 · TABLET / OVERFLOW RESCUE
+   Purpose: keep refresher lessons readable on tablets and phones.
+   ========================================================================== */
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0}
+.wrap,main,section,article,.card,.grid,.question-list,.actions,.badges{max-width:100%;min-width:0}
+img,svg,canvas,iframe,table{max-width:100%}
+p,li,h1,h2,h3,label,legend,.notice,.badge,.btn,button{overflow-wrap:anywhere}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.bridge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+.study-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+.callout{border:1px solid var(--line,#d8bd7a55);border-radius:14px;padding:1rem;background:rgba(216,189,122,.07)}
+.path-map{display:grid;gap:.65rem;margin:1rem 0}
+.path-step{border-left:3px solid var(--gold,#d8bd7a);padding:.75rem 1rem;background:rgba(216,189,122,.06);border-radius:0 12px 12px 0}
+.concept-list{display:grid;gap:.75rem;margin:1rem 0;padding:0;list-style:none}
+.concept-list li{padding:.85rem;border:1px solid var(--line,#d8bd7a55);border-radius:12px;background:rgba(255,255,255,.035)}
+.mini-table{width:100%;border-collapse:collapse;margin:.75rem 0;border:1px solid var(--line,#d8bd7a55);border-radius:12px;overflow:hidden}
+.mini-table th,.mini-table td{padding:.65rem;border-bottom:1px solid var(--line,#d8bd7a55);text-align:left;vertical-align:top}
+.mini-table th{font-weight:800}
+.game-frame-wrap{border:1px solid var(--line,#d8bd7a55);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.035);box-shadow:0 12px 34px rgba(0,0,0,.18)}
+.game-frame{display:block;width:100%;height:min(76vh,760px);border:0;background:#090d14}
+.game-note{margin-top:.7rem}
+.question,.quiz-question,[data-question],fieldset{max-width:100%;min-width:0}
+.question label,.quiz-question label,.option,.choice,.answer-choice{
+  display:grid !important;
+  grid-template-columns:28px minmax(0,1fr);
+  gap:.55rem;
+  align-items:start;
+  max-width:100%;
+  min-width:0;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+input[type="radio"],input[type="checkbox"]{
+  width:18px !important;
+  min-width:18px !important;
+  max-width:18px !important;
+  height:18px !important;
+  margin-top:.2rem;
+  flex:0 0 auto;
+}
+textarea{width:100%;max-width:100%;min-height:140px}
+.actions{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center}
+.actions>*{max-width:100%}
+button,.btn,.primary{min-height:44px;line-height:1.2}
+.file-map{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86rem;white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:860px){
+  .hero h1{font-size:clamp(2rem,8vw,3rem)}
+  .badges{display:grid;grid-template-columns:1fr;gap:.55rem}
+  .actions{display:grid;grid-template-columns:1fr}
+  .actions .btn,.actions button{width:100%}
+  .game-frame{height:70vh}
+  .mini-table{display:block;overflow-x:auto}
+}
+@media(max-width:560px){
+  .wrap{width:min(100% - 18px,1100px)}
+  .card{padding:1rem}
+  .game-frame{height:68vh}
+}
+@media print{
+  .game-frame-wrap,.screen-only{display:none!important}
+}
+</style>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<!--
+===============================================================================
+KHAEMENES HIGH · PRE-ALGEBRA · UNIT 0 REFRESHER
+FILE: units/unit-00/lessons/lesson-03-algebraic-reasoning.html
+PURPOSE:
+  Conditional bridge for students redirected after scoring below 80% mastery on
+  the pre-algebra readiness assessment.
+
+REPOSITORY MAP
+pre-algebra/
+├── learning-games/
+│   └── 05-operation-stepper/
+│       └── index.html        ← embedded support game for expression order
+└── units/
+    └── unit-00/
+        ├── index.html
+        ├── assets/
+        │   ├── refresher.css
+        │   └── refresher-engine.js
+        └── lessons/
+            └── lesson-03-algebraic-reasoning.html  ← THIS FILE
+
+EDITING MAP
+01 · Header and navigation
+02 · Hero / mastery gate explanation
+03 · Algebra readiness bridge
+04 · Deeper concept study guide
+05 · Guided examples
+06 · Balance and inverse-operations lab
+07 · Math Break game
+08 · Lesson practice generated by refresher-engine.js
+09 · Weekly quiz generated by refresher-engine.js
+10 · Reflection and next-week gate
+11 · REFRESHER_WEEK object
+===============================================================================
+-->
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="../">Khaemenes High · Pre-Algebra · Unit 0</a>
+    <a class="btn" href="lesson-02-rational-proportional.html">Previous Week</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- 01 · HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Conditional Refresher · Week 3 of 6</p>
+      <h1>Algebraic Reasoning Reset</h1>
+      <p>
+        Strengthen expressions, substitution, inverse operations, equations,
+        inequalities, and balance reasoning before students merge into formal
+        Pre-Algebra work.
+      </p>
+      <div class="badges">
+        <span class="badge">20 Questions · Lesson Practice</span>
+        <span class="badge">10 Questions · Weekly Quiz</span>
+        <span class="badge">80% Mastery Gate</span>
+        <span class="badge">Tablet-Safe</span>
+      </div>
+      <p class="notice" id="entryNotice" hidden></p>
+    </div>
+  </section>
+
+  <!-- 02 · ALGEBRA READINESS BRIDGE -->
+  <section id="bridge-purpose">
+    <div class="wrap">
+      <article class="card">
+        <p class="eyebrow">Bridge purpose</p>
+        <h2>Algebra begins before variables look difficult.</h2>
+        <p>
+          Students often struggle with algebra because they see letters and forget
+          that algebra is still number reasoning. This week rebuilds the habits
+          that keep algebra stable: read the expression, preserve order, use inverse
+          operations, keep equations balanced, and check solutions in the original
+          relationship.
+        </p>
+        <div class="path-map">
+          <div class="path-step"><strong>Read:</strong> identify numbers, variables, operations, and grouping.</div>
+          <div class="path-step"><strong>Substitute:</strong> replace a variable with a value using parentheses when needed.</div>
+          <div class="path-step"><strong>Solve:</strong> undo operations in the reverse order while preserving balance.</div>
+          <div class="path-step"><strong>Check:</strong> put the solution back into the original statement.</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 03 · CORE LEARN CARDS -->
+  <section id="learn">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Learn</p>
+        <h2>Operations preserve relationships.</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h2>Expressions</h2>
+          <p>
+            Variables stand for values. Substitute carefully, use parentheses around
+            negative replacements, and preserve the original order of operations.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Equations</h2>
+          <p>
+            An equation states equality. Applying the same valid operation to both
+            sides preserves balance.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Inverse operations</h2>
+          <p>
+            Addition and subtraction undo one another; multiplication and division
+            undo one another. Solving an equation means undoing what was done to
+            the variable.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Check the solution</h2>
+          <p>
+            Substitute the result back into the original relationship. A solution
+            is not proven until it makes the original statement true.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · DEEPER CONCEPT STUDY GUIDE -->
+  <section id="concept-guide">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Concept study guide</p>
+        <h2>What students must understand before formal algebra.</h2>
+      </div>
+      <div class="study-grid">
+        <article class="card">
+          <h2>1 · Expression versus equation</h2>
+          <p>
+            An expression is a mathematical phrase. It can be simplified or evaluated.
+            An equation is a mathematical sentence with an equal sign. It can be solved.
+          </p>
+          <table class="mini-table">
+            <tr><th>Form</th><th>Meaning</th><th>Student action</th></tr>
+            <tr><td>3x + 5</td><td>Expression</td><td>Evaluate or simplify</td></tr>
+            <tr><td>3x + 5 = 20</td><td>Equation</td><td>Solve and check</td></tr>
+          </table>
+        </article>
+        <article class="card">
+          <h2>2 · Substitution must preserve structure</h2>
+          <p>
+            Replacing a variable is not just “dropping in a number.” Students must
+            keep grouping and operation order intact, especially when the value is
+            negative.
+          </p>
+          <p class="callout">
+            For 2x² when x = −3, write 2(−3)², not 2−3².
+          </p>
+        </article>
+        <article class="card">
+          <h2>3 · Balance reasoning</h2>
+          <p>
+            Solving is not a trick. It is a controlled sequence of balance-preserving
+            moves. Whatever is done to one side of an equation must also be done to
+            the other side.
+          </p>
+          <ul class="concept-list">
+            <li>To undo +7, subtract 7 from both sides.</li>
+            <li>To undo −4, add 4 to both sides.</li>
+            <li>To undo ×5, divide both sides by 5.</li>
+            <li>To undo ÷3, multiply both sides by 3.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>4 · Inequalities have direction</h2>
+          <p>
+            An inequality compares two values. Students should read it aloud and
+            identify which side is greater. This prepares them for formal inequality
+            solving later.
+          </p>
+          <p class="callout">
+            At this refresher level, focus on interpreting and checking inequalities,
+            not advanced inequality transformations.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · GUIDED EXAMPLES -->
+  <section id="guided-examples">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Guided examples</p>
+        <h2>Show the mathematical move, not just the answer.</h2>
+      </div>
+      <div class="study-grid">
+        <article class="card">
+          <h2>Example A · Evaluate an expression</h2>
+          <p><strong>Question:</strong> Evaluate 4x − 6 when x = 5.</p>
+          <ol>
+            <li>Substitute: 4(5) − 6.</li>
+            <li>Multiply first: 20 − 6.</li>
+            <li>Subtract: 14.</li>
+          </ol>
+          <p class="notice"><strong>Answer:</strong> 14.</p>
+        </article>
+        <article class="card">
+          <h2>Example B · Use inverse operations</h2>
+          <p><strong>Question:</strong> Solve x + 9 = 22.</p>
+          <ol>
+            <li>The variable has 9 added to it.</li>
+            <li>Undo +9 by subtracting 9 from both sides.</li>
+            <li>x = 13.</li>
+            <li>Check: 13 + 9 = 22.</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h2>Example C · Solve a two-step equation</h2>
+          <p><strong>Question:</strong> Solve 3x − 4 = 11.</p>
+          <ol>
+            <li>Add 4 to both sides: 3x = 15.</li>
+            <li>Divide both sides by 3: x = 5.</li>
+            <li>Check: 3(5) − 4 = 15 − 4 = 11.</li>
+          </ol>
+          <p class="notice"><strong>Answer:</strong> x = 5.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · BALANCE AND INVERSE OPERATIONS LAB -->
+  <section id="balance-lab">
+    <div class="wrap">
+      <article class="card">
+        <p class="eyebrow">Reasoning lab</p>
+        <h2>Choose the inverse move before solving.</h2>
+        <table class="mini-table">
+          <tr><th>Equation form</th><th>First undo move</th><th>Reason</th></tr>
+          <tr><td>x − 8 = 17</td><td>Add 8 to both sides</td><td>Adding 8 undoes subtracting 8.</td></tr>
+          <tr><td>5x = 35</td><td>Divide both sides by 5</td><td>Division by 5 undoes multiplication by 5.</td></tr>
+          <tr><td>x/4 = 6</td><td>Multiply both sides by 4</td><td>Multiplication by 4 undoes division by 4.</td></tr>
+          <tr><td>2x + 3 = 15</td><td>Subtract 3 first</td><td>Undo addition/subtraction before undoing multiplication.</td></tr>
+        </table>
+      </article>
+    </div>
+  </section>
+
+  <!-- 07 · MATH BREAK GAME -->
+  <section id="math-break" class="screen-only">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Math Break · Skill Game</p>
+        <h2>Operation Stepper Challenge</h2>
+      </div>
+      <article class="card">
+        <p>
+          Algebraic reasoning depends on reading expressions in the right order.
+          This companion game reinforces operation order and step-by-step thinking,
+          which supports substitution and equation solving.
+        </p>
+        <div class="game-frame-wrap">
+          <iframe
+            class="game-frame"
+            title="Operation Stepper Challenge game"
+            src="../../../learning-games/05-operation-stepper/index.html"
+            loading="lazy"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
+          </iframe>
+        </div>
+        <p class="notice game-note">
+          This is a support game for expression order; the lesson practice and quiz
+          remain the mastery evidence.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 08 · PRACTICE generated by refresher-engine.js -->
+  <section id="practice">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Lesson Mastery · 20 Questions</p>
+        <h2>Reach 80% to unlock the weekly quiz.</h2>
+      </div>
+      <div class="question-list" id="practiceQuestions"></div>
+      <div class="actions">
+        <button class="primary" id="submitPractice" type="button">Submit Lesson Practice</button>
+        <button id="resetPractice" type="button">Reset Visible Answers</button>
+      </div>
+      <p class="notice" id="practiceStatus">No lesson-practice score yet.</p>
+    </div>
+  </section>
+
+  <!-- 09 · QUIZ generated by refresher-engine.js -->
+  <section id="quizSection" data-locked="true">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Weekly Quiz Gate · 10 Questions</p>
+        <h2>Reach 80% to complete Week 3.</h2>
+        <p id="quizLock" class="notice">Locked: reach 80% on lesson practice first.</p>
+      </div>
+      <div class="question-list" id="quizQuestions"></div>
+      <div class="actions">
+        <button class="primary" id="submitQuiz" type="button">Submit Weekly Quiz</button>
+        <button id="resetQuiz" type="button">Reset Visible Answers</button>
+      </div>
+      <p class="notice" id="quizStatus">No weekly-quiz score yet.</p>
+    </div>
+  </section>
+
+  <!-- 10 · REFLECTION -->
+  <section id="mastery">
+    <div class="wrap">
+      <article class="card">
+        <p class="eyebrow">Reflect · Continue</p>
+        <h2>Which inverse-operation move is most useful to you?</h2>
+        <textarea id="reflection" placeholder="Explain one equation move you understand better now."></textarea>
+        <div class="actions">
+          <button id="saveReflection" type="button">Save Reflection</button>
+          <a class="btn locked" id="nextLink" aria-disabled="true" href="#mastery">Locked · practice + quiz both require 80%</a>
+        </div>
+        <p id="reflectionStatus" class="notice">Reflection is optional and separate from mastery.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">Conditional Unit 0 · Week 3 · practice ≥80% · weekly quiz ≥80%</footer>
+
+<script>
+window.REFRESHER_WEEK = {
+  week: 3,
+  title: "Algebraic Reasoning Reset",
+  strand: "Algebraic Reasoning",
+  next: "lesson-04-functions-coordinates.html"
+};
+</script>
+<script src="../assets/refresher-engine.js"></script>
+</body>
+</html>
+
+You've reached the maximum length for this conversation, but you can keep talking by starting a new chat.
