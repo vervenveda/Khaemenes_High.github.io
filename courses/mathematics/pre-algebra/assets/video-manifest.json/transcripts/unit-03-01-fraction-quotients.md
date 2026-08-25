@@ -12,6 +12,6 @@
   "autoplay": false,
   "transcript": null,
   "captions_verified": false,
-  "alignment_status": "enrichment_only",
-  "alignment_note": "This video teaches how fractions can be interpreted as quotients of two numbers. Unit 3 Lesson 1 focuses on the coordinate plane and multi-step integer applications, so this resource is best treated as optional rational-number enrichment rather than a directly aligned lesson video."
+  "alignment_status": "aligned",
+  "alignment_note": "This video directly supports Unit 3 Lesson 1 by interpreting fractions as quotients, matching the lesson objective that a fraction a/b represents a divided by b. It is a focused companion to the broader lesson work on fraction meaning, rational-number forms, mixed numbers, and number-line location."
 }
