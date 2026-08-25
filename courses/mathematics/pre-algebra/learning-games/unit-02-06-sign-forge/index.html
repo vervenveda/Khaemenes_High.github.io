@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Khaemenes Pre-Algebra Unit 2 Lesson 6 companion game: Multiplying Integers.">
+<meta name="theme-color" content="#090d14">
+<title>Lesson 6 · Sign Forge · Multiplying Integers</title>
+<style>
+:root{
+--bg:#090d14;--panel:#151d29;--ink:#f7f2e7;--muted:#c9c1b2;--line:#3b4655;
+--gold:#d8bd7a;--gold2:#f0d99b;--green:#8fd4ad;--red:#ef9a9a;--blue:#90b8e6;
+--shadow:0 18px 55px rgba(0,0,0,.36);--serif:Cinzel,Georgia,"Times New Roman",serif;
+--sans:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--sans);line-height:1.5;background:
+radial-gradient(circle at 15% 0%,rgba(216,189,122,.11),transparent 28rem),
+radial-gradient(circle at 90% 20%,rgba(84,122,164,.11),transparent 30rem),
+linear-gradient(180deg,var(--bg),#0c121a 60%,#090d14)}
+button,a,select{font:inherit}a{color:inherit}button{touch-action:manipulation}
+button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #b9d8ff;outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:1000;background:#fff;color:#111;padding:10px 14px;border-radius:8px}
+.shell{width:min(var(--max),calc(100% - 28px));margin:auto;padding:22px 0 50px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid rgba(216,189,122,.22);padding:8px 0 20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}.seal{width:44px;height:44px;border:1px solid rgba(216,189,122,.7);border-radius:9px;display:grid;place-items:center;transform:rotate(45deg);background:rgba(216,189,122,.06);flex:0 0 auto}.seal span{transform:rotate(-45deg);font-family:Georgia,serif;color:var(--gold2)}
+.kicker{margin:0;color:var(--gold2);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}.crumb{margin:3px 0 0;color:var(--muted);font-size:.86rem}.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.ghost,.primary,.secondary{min-height:42px;border-radius:10px;padding:9px 13px;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.ghost,.secondary{border:1px solid var(--line);background:#151c25;color:var(--ink)}.primary{border:1px solid var(--gold2);background:var(--gold2);color:#17130a;font-weight:800}.ghost:hover,.secondary:hover{border-color:var(--gold)}
+.hero{text-align:center;max-width:930px;margin:auto;padding:46px 10px 28px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.19em;font-size:.75rem;font-weight:800}
+h1,h2,h3{font-family:var(--serif);font-weight:500}h1{font-size:clamp(2.05rem,5vw,4.05rem);line-height:1.05;margin:10px 0 13px}.hero p{color:var(--muted);font-size:clamp(1rem,2vw,1.15rem);max-width:800px;margin:0 auto}
+.lesson-sync{max-width:900px;margin:20px auto 0;padding:13px 15px;border-left:3px solid var(--gold);border-radius:0 11px 11px 0;background:rgba(216,189,122,.06);color:#ddd5c6;text-align:left}
+.panel{border:1px solid rgba(216,189,122,.18);border-radius:18px;background:linear-gradient(180deg,rgba(23,30,41,.97),rgba(15,21,30,.97));box-shadow:var(--shadow)}
+.studio{padding:20px;margin-bottom:22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:14px}.section-head h2{margin:3px 0 0;font-size:clamp(1.4rem,3vw,2.1rem)}.section-head p{margin:0;color:var(--muted);max-width:660px}
+.studio-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}.studio-tab{min-height:52px;border:1px solid var(--line);border-radius:10px;background:#111720;color:var(--muted);cursor:pointer;padding:8px}.studio-tab[aria-selected="true"]{background:var(--gold2);border-color:var(--gold2);color:#17130a;font-weight:800}
+.scene{display:none;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:16px}.scene.active{display:grid}
+.visual{min-height:330px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px),#0b1016;background-size:24px 24px;padding:18px;display:grid;place-items:center;overflow:hidden}
+.copy{border:1px solid var(--line);border-radius:14px;background:#111720;padding:18px}.copy h3{margin:0 0 8px}.copy p,.copy li{color:var(--muted);font-size:.92rem}.copy ul{padding-left:20px}.takeaway{margin-top:12px;padding:10px 12px;border-left:3px solid var(--gold);background:rgba(216,189,122,.06);color:#e7dece}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+
+/* sign pattern */
+.sign-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;width:min(100%,650px)}.sign-card{border:1px solid var(--line);border-radius:12px;background:#111720;padding:18px;text-align:center;opacity:.4;transition:.25s}.sign-card b{display:block;font:1.55rem Georgia,serif}.sign-card span{display:block;color:var(--muted);font-size:.82rem;margin-top:6px}.sign-card.on{opacity:1;border-color:var(--gold2);background:rgba(216,189,122,.07)}
+
+/* magnitude */
+.forge{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;width:min(100%,650px)}.forge-box{border:1px solid var(--line);border-radius:14px;background:#111720;padding:18px;text-align:center;opacity:.4;transition:.25s}.forge-box b{display:block;font:2rem Georgia,serif}.forge-box span{display:block;color:var(--muted);font-size:.84rem}.forge-box.on{opacity:1;border-color:var(--gold2);background:rgba(216,189,122,.07)}.forge-arrow{font:2rem Georgia,serif;color:var(--gold2)}.forge-result{grid-column:1/-1;border:1px solid var(--line);border-radius:11px;padding:13px;text-align:center;color:var(--muted);opacity:.35;transition:.25s}.forge-result.on{opacity:1;border-color:var(--gold2);color:#fff0c7}
+
+/* repeated change */
+.repeat-demo{display:grid;gap:10px;width:min(100%,680px)}.repeat-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.change-chip{border:1px solid var(--line);border-radius:10px;background:#111720;padding:10px 13px;min-width:74px;text-align:center;color:var(--muted);opacity:.35;transition:.25s}.change-chip.on{opacity:1;border-color:var(--gold2);color:#fff0c7}.repeat-total{border:1px solid var(--line);border-radius:11px;padding:13px;text-align:center;color:var(--muted);opacity:.35;transition:.25s}.repeat-total.on{opacity:1;border-color:var(--gold2);background:rgba(216,189,122,.07);color:#fff0c7}
+
+/* parity */
+.parity-demo{display:grid;gap:12px;width:min(100%,680px)}.factor-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.factor-chip{border:1px solid var(--line);border-radius:10px;background:#111720;padding:10px 13px;opacity:.35;transition:.25s}.factor-chip.neg{color:#ffc8c8}.factor-chip.pos{color:#c9f2d8}.factor-chip.on{opacity:1;border-color:var(--gold2)}.parity-note{border:1px solid var(--line);border-radius:11px;padding:13px;text-align:center;color:var(--muted);opacity:.35;transition:.25s}.parity-note.on{opacity:1;border-color:var(--gold2);color:#fff0c7}
+
+/* game */
+.game-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:18px;align-items:start}.play{padding:20px}.side{padding:18px}
+.status{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-bottom:15px}.progress-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.82rem;margin-bottom:7px}.track{height:8px;background:#07090d;border:1px solid #313946;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ae9255,var(--gold2));transition:.3s}.stat{min-width:72px;text-align:center;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}.stat b{display:block}.stat span{display:block;color:var(--muted);font-size:.68rem;text-transform:uppercase}
+.stage{min-height:235px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),#0c1117;background-size:24px 24px;padding:22px;display:grid;place-items:center;text-align:center}.mission-badge{display:inline-block;margin-bottom:8px;padding:5px 9px;border:1px solid rgba(216,189,122,.35);border-radius:999px;color:var(--gold2);font-size:.7rem;letter-spacing:.11em;text-transform:uppercase}.big{font:clamp(2rem,7vw,4.4rem) Georgia,serif;color:#fff5da;margin:6px 0}.prompt{color:#ddd5c6}
+.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}.choice{min-height:68px;border:1px solid var(--line);border-radius:12px;background:#111720;color:var(--ink);cursor:pointer;padding:11px;text-align:left;position:relative}.choice:hover{border-color:#748194}.choice[aria-pressed="true"]{border-color:var(--gold2);background:rgba(216,189,122,.09)}.choice[aria-pressed="true"]:after{content:"✓";position:absolute;right:9px;top:7px;color:var(--gold2);font-weight:900}.choice strong{display:block;font-family:Georgia,serif}
+.feedback{margin-top:14px;min-height:78px;border:1px solid transparent;border-radius:12px;padding:13px 14px;background:rgba(255,255,255,.02)}.feedback.good{border-color:rgba(143,212,173,.42);background:rgba(143,212,173,.07)}.feedback.bad{border-color:rgba(239,154,154,.42);background:rgba(239,154,154,.07)}.feedback h3{margin:0 0 4px;font-size:1rem}.feedback p{margin:0;color:#d7d0c2}.feedback .detail{color:var(--gold2);margin-top:6px;font-size:.88rem}.action-row{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:14px}
+.side h2{margin:2px 0 12px;font-size:1.18rem}.concept{border:1px solid var(--line);border-radius:11px;padding:11px;background:rgba(255,255,255,.025);margin-bottom:9px}.concept b{display:block;font:1rem Georgia,serif}.concept span{color:var(--muted);font-size:.82rem}.tip{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.tip p{margin:5px 0 0;color:var(--muted);font-size:.87rem}.controls{display:grid;gap:10px;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.control{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.control label{color:var(--muted);font-size:.8rem}.control select{min-height:40px;border:1px solid var(--line);border-radius:9px;background:#111720;color:var(--ink);padding:8px 10px}.best{color:var(--gold2);font-size:.82rem;margin:11px 0 0}
+.mastery{display:none;margin-top:20px;padding:24px;text-align:center;border:1px solid rgba(216,189,122,.5);border-radius:16px;background:#111720}.mastery.show{display:block}.mastery-mark{width:72px;height:72px;border-radius:50%;border:1px solid var(--gold2);display:grid;place-items:center;margin:0 auto 12px;color:var(--gold2);font:1.25rem Georgia,serif}.mastery h2{margin:5px 0}.mastery p{color:var(--muted);max-width:650px;margin:7px auto 15px}
+footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
+@media(max-width:920px){.scene,.game-grid{grid-template-columns:1fr}.side{order:2}}@media(max-width:720px){.studio-tabs{grid-template-columns:1fr 1fr}.choice-grid{grid-template-columns:1fr}.forge{grid-template-columns:1fr}.forge-arrow{transform:rotate(90deg);text-align:center}.sign-grid{grid-template-columns:1fr}}@media(max-width:560px){.shell{width:min(100% - 18px,var(--max));padding-top:12px}.actions{display:none}.studio,.play{padding:13px}.status{grid-template-columns:1fr 66px}.status .stat:last-child{display:none}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.001ms!important;scroll-behavior:auto!important}}@media print{body{background:#fff;color:#111}.actions,.studio-tabs,.row,.action-row,.controls{display:none!important}.panel,.visual,.copy,.stage,.concept{box-shadow:none!important;background:#fff!important;color:#111!important;border-color:#bbb!important}.hero p,.copy p,.copy li,.concept span,.tip p{color:#444!important}}
+</style>
+</head>
+<body><a class="skip" href="#game">Skip to game</a><div class="shell">
+<header class="topbar">
+<a class="brand" href="../units/unit-02/lessons/lesson-06-multiply-divide-integers.html"><div class="seal"><span>×</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 02</p><p class="crumb">Lesson 6 Companion · Multiplying Integers</p></div></a>
+<div class="actions"><a class="ghost" href="../units/unit-02/lessons/lesson-06-multiply-divide-integers.html">← Lesson 6</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
+</header>
+
+<section class="hero">
+<div class="eyebrow">Unit 2 · Lesson 6 · Companion Game</div>
+<h1>Sign Forge</h1>
+<p>Determine the sign, forge the magnitude, model repeated signed change, and use patterns to explain why integer products behave the way they do.</p>
+<div class="lesson-sync"><strong>Lesson sync:</strong> same signs produce a positive product; different signs produce a negative product. Multiply absolute values for magnitude, then apply the sign rule. Zero annihilates a product, 1 preserves a value, and −1 produces its opposite.</div>
+</section>
+
+<section class="panel studio">
+<div class="section-head"><div><div class="eyebrow">Animated instruction studio</div><h2>Build the sign rules from structure.</h2></div><p>Four demonstrations mirror the lesson’s sign patterns, magnitude-first reasoning, repeated signed change, and Extended parity reasoning.</p></div>
+<div class="studio-tabs"><button class="studio-tab" aria-selected="true">1 · Sign Pattern</button><button class="studio-tab" aria-selected="false">2 · Magnitude First</button><button class="studio-tab" aria-selected="false">3 · Repeated Change</button><button class="studio-tab" aria-selected="false">4 · Negative-Factor Parity</button></div>
+
+<div class="scene active">
+<div class="visual"><div class="sign-grid"><div class="sign-card" id="sg1"><b>(+)(+) = +</b><span>same signs</span></div><div class="sign-card" id="sg2"><b>(−)(−) = +</b><span>same signs</span></div><div class="sign-card" id="sg3"><b>(+)(−) = −</b><span>different signs</span></div><div class="sign-card" id="sg4"><b>(−)(+) = −</b><span>different signs</span></div></div></div>
+<div class="copy"><h3>The sign pattern has only two cases.</h3><p>Rather than memorizing four unrelated rules, group them by whether the factors have the same sign or different signs.</p><div class="takeaway">Same → positive. Different → negative.</div><div class="row"><button class="primary" id="playSignDemo">Reveal the pattern</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="forge"><div class="forge-box" id="fg1"><b>|−7| = 7</b><span>first magnitude</span></div><div class="forge-arrow">×</div><div class="forge-box" id="fg2"><b>|5| = 5</b><span>second magnitude</span></div><div class="forge-result" id="fg3">7 × 5 = 35 · signs differ → product = −35</div></div></div>
+<div class="copy"><h3>Separate magnitude from sign.</h3><p>First multiply the absolute values. Then determine the sign from the signs of the factors.</p><div class="takeaway">(−7)(5): magnitude 35, unlike signs → −35.</div><div class="row"><button class="primary" id="playForgeDemo">Forge the product</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="repeat-demo"><div class="repeat-row"><div class="change-chip" id="rc1">−3°C</div><div class="change-chip" id="rc2">−3°C</div><div class="change-chip" id="rc3">−3°C</div><div class="change-chip" id="rc4">−3°C</div></div><div class="repeat-total" id="rc5">4(−3) = −12°C total change</div></div></div>
+<div class="copy"><h3>Multiplication can mean repeated signed change.</h3><p>Four hourly decreases of 3°C are four equal changes of −3: −3 + −3 + −3 + −3 = −12.</p><div class="takeaway">A positive count of repeated negative changes produces a negative total.</div><div class="row"><button class="primary" id="playRepeatDemo">Build 4(−3)</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="parity-demo"><div class="factor-row"><div class="factor-chip neg" id="pf1">−2</div><div class="factor-chip neg" id="pf2">−3</div><div class="factor-chip neg" id="pf3">−4</div><div class="factor-chip neg" id="pf4">−5</div></div><div class="parity-note" id="pn1">4 negative factors → even count → positive product</div><div class="parity-note" id="pn2">Odd number of negative factors → negative product</div></div></div>
+<div class="copy"><h3>Extended: count negative factors.</h3><p>Every pair of negative signs contributes a positive sign. So an even number of negative factors gives a positive product; an odd number gives a negative product.</p><div class="takeaway">Parity predicts the sign before any multiplication.</div><div class="row"><button class="primary" id="playParityDemo">Count the negatives</button></div></div>
+</div>
+</section>
+
+<main id="game" class="game-grid">
+<section class="panel play">
+<div class="section-head"><div><div class="eyebrow">Sign Forge Challenge</div><h2>Pattern, Product & Context Missions</h2></div><p>Predict signs, compute products, reason with zero and ±1, model repeated changes, evaluate absolute-value expressions, and analyze many-factor products.</p></div>
+<div class="status"><div><div class="progress-label"><span id="roundLabel">Mission 1 of 16</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div></div>
+<div class="stage"><div><div class="mission-badge" id="missionBadge">Sign Rule</div><div class="big" id="challengeValue">(−)(+)</div><div class="prompt" id="questionPrompt">What is the sign of the product?</div></div></div>
+<div class="choice-grid" id="choiceGrid"></div>
+<div class="action-row"><button class="secondary" id="hintBtn">Reasoning hint</button><button class="primary" id="checkBtn">Check reasoning</button><button class="secondary" id="nextBtn" hidden>Next mission →</button></div>
+<div class="feedback" id="feedback"><h3>Ready.</h3><p>Determine the sign before multiplying the magnitudes.</p></div>
+<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../units/unit-02/lessons/lesson-06-multiply-divide-integers.html">Return to Lesson 6</a></div></div>
+</section>
+
+<aside class="panel side">
+<h2>Lesson 6 Field Guide</h2>
+<div class="concept"><b>Same signs</b><span>Positive product.</span></div>
+<div class="concept"><b>Different signs</b><span>Negative product.</span></div>
+<div class="concept"><b>Magnitude first</b><span>Multiply absolute values, then apply sign.</span></div>
+<div class="concept"><b>Zero / ±1</b><span>a·0 = 0, a·1 = a, a·(−1) = −a.</span></div>
+<div class="concept"><b>Parity</b><span>Even negative-factor count → positive; odd → negative.</span></div>
+<div class="tip"><strong>Forge question</strong><p id="strategyText">Are the factor signs the same or different?</p></div>
+<div class="controls"><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
+<p class="best" id="bestScore">Best mastery score: —</p>
+</aside>
+</main>
+<footer>KH-MATH-PA-U02-L6 · multiplication · sign rules · repeated change · zero/±1 · negative-factor parity · 80% mastery</footer>
+</div>
+
+<script>
+(()=>{"use strict";
+const BANK=[
+{l:"Foundation",b:"Sign Rule",v:"(−)(+)",q:"What is the sign of the product?",o:["Positive","Negative","Zero","Cannot determine"],a:1,h:"The two nonzero factors have different signs.",w:"Different signs produce a negative product."},
+{l:"Foundation",b:"Sign Rule",v:"(−)(−)",q:"What is the sign of the product?",o:["Negative","Zero","Always one","Positive"],a:3,h:"The factors have the same sign.",w:"Two negative factors produce a positive product."},
+{l:"Foundation",b:"Compute",v:"7(−5)",q:"What is the product?",o:["−35","−12","12","35"],a:0,h:"Different signs → negative; 7×5=35.",w:"7(−5)=−35."},
+{l:"Foundation",b:"Compute",v:"(−8)(6)",q:"What is the product?",o:["−14","14","−48","48"],a:2,h:"Unlike signs give a negative product.",w:"(−8)(6)=−48."},
+{l:"Foundation",b:"Compute",v:"(−9)(−3)",q:"What is the product?",o:["−27","−12","27","12"],a:2,h:"Same negative signs produce a positive product.",w:"(−9)(−3)=27."},
+{l:"Foundation",b:"Zero Property",v:"(−17)(0)",q:"What is the product?",o:["−17","17","Undefined","0"],a:3,h:"Any number multiplied by zero is zero.",w:"(−17)(0)=0."},
+{l:"Foundation",b:"Multiply by −1",v:"(−1)(14)",q:"What is the product?",o:["−13","−14","13","14"],a:1,h:"Multiplying by −1 gives the opposite.",w:"(−1)(14)=−14."},
+
+{l:"Core",b:"Structure",v:"Which is positive?",q:"Which expression has a positive product?",o:["(−5)(−8)","(−5)(8)","5(−8)","0(−8)"],a:0,h:"Look for two nonzero factors with the same sign.",w:"(−5)(−8) is positive."},
+{l:"Core",b:"Structure",v:"Which is negative?",q:"Which expression has a negative product?",o:["(−4)(−6)","4(6)","(−4)(6)","0(6)"],a:2,h:"Different nonzero signs produce a negative product.",w:"(−4)(6) is negative."},
+{l:"Core",b:"Magnitude",v:"|(−7)(5)|",q:"What is the value?",o:["−35","35","12","2"],a:1,h:"The product is −35; absolute value asks for its magnitude.",w:"|(−7)(5)|=|−35|=35."},
+{l:"Core",b:"Sign Prediction",v:"(−23)(−11)",q:"Without multiplying fully, what sign does the product have?",o:["Negative","Zero","Cannot know","Positive"],a:3,h:"The two factors have the same sign.",w:"The product is positive."},
+{l:"Core",b:"Repeated Change",v:"6(−4)",q:"A submarine descends 4 m/min for 6 min. What is the signed change?",o:["−10 m","+10 m","+24 m","−24 m"],a:3,h:"Six repeated changes of −4.",w:"6(−4)=−24 m."},
+{l:"Core",b:"Sports Context",v:"5(−3)",q:"Five penalty events each lose 3 points. What is the total change?",o:["−8","−15","+8","+15"],a:1,h:"Five equal changes of −3.",w:"5(−3)=−15."},
+{l:"Core",b:"Finance Context",v:"4(+25)",q:"Four identical $25 credits produce what total change?",o:["−$100","−$29","+$100","+$29"],a:2,h:"A credit is positive.",w:"4(+25)=+$100."},
+{l:"Core",b:"Temperature Context",v:"7(−2)",q:"Temperature drops 2°C/hour for 7 hours. What is the total change?",o:["−14°C","−9°C","+9°C","+14°C"],a:0,h:"Seven repeated decreases of 2.",w:"7(−2)=−14°C."},
+{l:"Core",b:"Error Analysis",v:"(−6)(−7)=−42 ?",q:"What is the error?",o:["Magnitudes multiplied incorrectly.","Two negative factors should produce a positive product.","The product should be zero.","Negative integers cannot be multiplied."],a:1,h:"Check the sign rule, not the magnitude.",w:"The magnitude 42 is correct, but two negative factors give +42."},
+{l:"Core",b:"Absolute Value Expression",v:"−3|−4|",q:"What is the value?",o:["−12","−7","7","12"],a:0,h:"Evaluate |−4| first.",w:"|−4|=4, so −3×4=−12."},
+{l:"Core",b:"Solve for x",v:"(−5)x=30",q:"What integer is x?",o:["−5","5","6","−6"],a:3,h:"A negative times what gives a positive 30?",w:"(−5)(−6)=30, so x=−6."},
+
+{l:"Extended",b:"Model Selection",v:"Three repeated decreases of 8",q:"Which expression models the situation?",o:["3(8)","−3(−8)","3(−8)","8−3"],a:2,h:"Each decrease is −8; there are three of them.",w:"3(−8)=−24."},
+{l:"Extended",b:"Parity",v:"(−2)(−3)(−4)(−5)",q:"What is the sign of the product?",o:["Positive","Negative","Zero","Cannot know"],a:0,h:"Count the negative factors.",w:"There are four negative factors—an even number—so the product is positive."},
+{l:"Extended",b:"Parity",v:"(−2)(−3)(−4)(5)",q:"What is the sign of the product?",o:["Positive","Negative","Zero","Cannot know"],a:1,h:"Count the negative factors.",w:"There are three negative factors—an odd number—so the product is negative."},
+{l:"Extended",b:"Parity",v:"7 negative factors",q:"Without multiplying, what is the sign of their nonzero product?",o:["Positive","Negative","Zero","Undefined"],a:1,h:"Odd number of negative factors.",w:"An odd count of negative factors gives a negative product."},
+{l:"Extended",b:"Parity",v:"8 negative factors",q:"Without multiplying, what is the sign of their nonzero product?",o:["Positive","Negative","Zero","Undefined"],a:0,h:"Even number of negative factors.",w:"An even count of negative factors gives a positive product."},
+{l:"Extended",b:"Identity Structure",v:"(−1)(−1)(−1)(12)",q:"What is the value?",o:["12","−12","3","−3"],a:1,h:"Three factors of −1 give an overall negative sign.",w:"(−1)^3(12)=−12."},
+{l:"Extended",b:"Zero Dominates",v:"(−8)(5)(0)(−3)",q:"What is the product?",o:["120","−120","0","Undefined"],a:2,h:"Any zero factor makes the whole product zero.",w:"The product is 0."},
+{l:"Extended",b:"Reasoning",v:"Why is (−a)(−b) positive for positive a,b?",q:"Which explanation best matches the lesson’s structure?",o:["Because negative numbers are always larger.","Because matching signs produce a positive product, consistent with multiplication patterns and inverses.","Because absolute value removes both factors.","Because every product is positive."],a:1,h:"Use the sign pattern and inverse structure.",w:"The same-sign rule is supported by multiplication patterns and inverse relationships."}
+];
+
+const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
+const BEST="khaemenes-prealgebra-u02-l06-sign-forge-v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
+function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
+function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function start(src=null){deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
+function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;el.strategy.textContent=c.b.includes("Parity")?"Count negative factors before doing any multiplication.":c.b.includes("Context")||c.b.includes("Repeated")||c.b.includes("Model")?"Translate the repeated signed change into a multiplication expression.":"Determine the sign first, then multiply magnitudes.";feedback("","Mission ready.","Determine the sign before multiplying the magnitudes.");stats()}
+function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by sign and magnitude reasoning.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Product forged.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
+function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
+function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(e){return null}}
+function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
+function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(BEST,String(p))}catch(e){}updateBest()}
+function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Sign Forge mastery passed":"Recheck the sign pattern";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} Lesson 6 multiplication missions correctly and met the 80% mastery target. Return to Lesson 6 for practice and reflection.`:`You solved ${correct} of ${attempts} missions correctly. Review the missed sign rules, repeated-change models, and parity questions, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
+el.tabs.forEach((b,i)=>b.onclick=()=>{el.tabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));el.scenes.forEach((s,j)=>s.classList.toggle("active",j===i))});
+const later=(f,m)=>setTimeout(f,m);
+
+$("playSignDemo").onclick=()=>{["sg1","sg2","sg3","sg4"].forEach(id=>$(id).classList.remove("on"));["sg1","sg2","sg3","sg4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*320))};
+$("playForgeDemo").onclick=()=>{["fg1","fg2","fg3"].forEach(id=>$(id).classList.remove("on"));$("fg1").classList.add("on");later(()=>$("fg2").classList.add("on"),450);later(()=>$("fg3").classList.add("on"),900)};
+$("playRepeatDemo").onclick=()=>{["rc1","rc2","rc3","rc4","rc5"].forEach(id=>$(id).classList.remove("on"));["rc1","rc2","rc3","rc4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*260));later(()=>$("rc5").classList.add("on"),1200)};
+$("playParityDemo").onclick=()=>{["pf1","pf2","pf3","pf4","pn1","pn2"].forEach(id=>$(id).classList.remove("on"));["pf1","pf2","pf3","pf4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*220));later(()=>$("pn1").classList.add("on"),1050);later(()=>$("pn2").classList.add("on"),1500)};
+
+document.addEventListener("keydown",e=>{if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName))return;if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();feedback("","Reasoning hint",deck[index].h)}});
+updateBest();start();
+})();
+</script>
+</body></html>
