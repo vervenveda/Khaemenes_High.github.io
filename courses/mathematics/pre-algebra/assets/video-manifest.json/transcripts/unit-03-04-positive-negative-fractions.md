@@ -12,6 +12,6 @@
   "autoplay": false,
   "transcript": null,
   "captions_verified": false,
-  "alignment_status": "enrichment_only",
-  "alignment_note": "This video teaches how to add and subtract positive and negative fractions. Unit 3 Lesson 4 focuses on the coordinate plane and multi-step integer applications, so this resource is best treated as optional signed-rational-number enrichment rather than a directly aligned lesson video."
+  "alignment_status": "aligned",
+  "alignment_note": "This video directly supports Unit 3 Lesson 4 by reinforcing addition and subtraction with positive and negative fractions. It complements the lesson's emphasis on common denominators, equivalent fractions, signed-number reasoning, estimation, and the interpretation of subtraction as adding the opposite."
 }
