@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Khaemenes Pre-Algebra Unit 2 Lesson 8 companion game: Coordinate Plane and Multi-Step Integer Applications.">
+<meta name="theme-color" content="#090d14">
+<title>Lesson 8 · Coordinate Mission Control</title>
+<style>
+:root{
+--bg:#090d14;--panel:#151d29;--ink:#f7f2e7;--muted:#c9c1b2;--line:#3b4655;
+--gold:#d8bd7a;--gold2:#f0d99b;--green:#8fd4ad;--red:#ef9a9a;--blue:#90b8e6;
+--shadow:0 18px 55px rgba(0,0,0,.36);--serif:Cinzel,Georgia,"Times New Roman",serif;
+--sans:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--sans);line-height:1.5;background:
+radial-gradient(circle at 15% 0%,rgba(216,189,122,.11),transparent 28rem),
+radial-gradient(circle at 90% 20%,rgba(84,122,164,.11),transparent 30rem),
+linear-gradient(180deg,var(--bg),#0c121a 60%,#090d14)}
+button,a,select{font:inherit}a{color:inherit}button{touch-action:manipulation}
+button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #b9d8ff;outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:1000;background:#fff;color:#111;padding:10px 14px;border-radius:8px}
+.shell{width:min(var(--max),calc(100% - 28px));margin:auto;padding:22px 0 50px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid rgba(216,189,122,.22);padding:8px 0 20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}.seal{width:44px;height:44px;border:1px solid rgba(216,189,122,.7);border-radius:9px;display:grid;place-items:center;transform:rotate(45deg);background:rgba(216,189,122,.06);flex:0 0 auto}.seal span{transform:rotate(-45deg);font-family:Georgia,serif;color:var(--gold2)}
+.kicker{margin:0;color:var(--gold2);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}.crumb{margin:3px 0 0;color:var(--muted);font-size:.86rem}.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.ghost,.primary,.secondary{min-height:42px;border-radius:10px;padding:9px 13px;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.ghost,.secondary{border:1px solid var(--line);background:#151c25;color:var(--ink)}.primary{border:1px solid var(--gold2);background:var(--gold2);color:#17130a;font-weight:800}.ghost:hover,.secondary:hover{border-color:var(--gold)}
+.hero{text-align:center;max-width:930px;margin:auto;padding:46px 10px 28px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.19em;font-size:.75rem;font-weight:800}
+h1,h2,h3{font-family:var(--serif);font-weight:500}h1{font-size:clamp(2.05rem,5vw,4.05rem);line-height:1.05;margin:10px 0 13px}.hero p{color:var(--muted);font-size:clamp(1rem,2vw,1.15rem);max-width:800px;margin:0 auto}
+.lesson-sync{max-width:900px;margin:20px auto 0;padding:13px 15px;border-left:3px solid var(--gold);border-radius:0 11px 11px 0;background:rgba(216,189,122,.06);color:#ddd5c6;text-align:left}
+.panel{border:1px solid rgba(216,189,122,.18);border-radius:18px;background:linear-gradient(180deg,rgba(23,30,41,.97),rgba(15,21,30,.97));box-shadow:var(--shadow)}
+.studio{padding:20px;margin-bottom:22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:14px}.section-head h2{margin:3px 0 0;font-size:clamp(1.4rem,3vw,2.1rem)}.section-head p{margin:0;color:var(--muted);max-width:660px}
+.studio-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}.studio-tab{min-height:52px;border:1px solid var(--line);border-radius:10px;background:#111720;color:var(--muted);cursor:pointer;padding:8px}.studio-tab[aria-selected="true"]{background:var(--gold2);border-color:var(--gold2);color:#17130a;font-weight:800}
+.scene{display:none;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:16px}.scene.active{display:grid}
+.visual{min-height:330px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px),#0b1016;background-size:24px 24px;padding:18px;display:grid;place-items:center;overflow:hidden}
+.copy{border:1px solid var(--line);border-radius:14px;background:#111720;padding:18px}.copy h3{margin:0 0 8px}.copy p,.copy li{color:var(--muted);font-size:.92rem}.copy ul{padding-left:20px}.takeaway{margin-top:12px;padding:10px 12px;border-left:3px solid var(--gold);background:rgba(216,189,122,.06);color:#e7dece}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+
+/* coordinate plane */
+.plane{width:min(100%,580px);aspect-ratio:1/1;position:relative;border:1px solid var(--line);border-radius:14px;background:
+linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px),#0c1117;background-size:10% 10%}
+.plane:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:#8a95a4}.plane:after{content:"";position:absolute;top:50%;left:0;right:0;height:2px;background:#8a95a4}
+.quad{position:absolute;color:#626d7a;font:1rem Georgia,serif}.q1{right:8px;top:8px}.q2{left:8px;top:8px}.q3{left:8px;bottom:8px}.q4{right:8px;bottom:8px}
+.point{position:absolute;width:24px;height:24px;border-radius:50%;transform:translate(-50%,-50%);background:var(--gold2);border:2px solid #fff5d7;box-shadow:0 0 0 6px rgba(216,189,122,.13);transition:.7s}.point-label{position:absolute;transform:translate(-50%,-50%);margin-top:-22px;color:#fff0c7;font:1rem Georgia,serif;transition:.7s}
+.pathline{position:absolute;height:3px;background:var(--gold2);transform-origin:left center;opacity:.75;transition:.5s}
+
+/* sequence */
+.sequence,.operations-demo,.reason-demo{display:grid;gap:10px;width:min(100%,680px)}.seq-step,.op-step,.reason-step{border:1px solid var(--line);border-radius:11px;background:#111720;padding:14px;text-align:center;color:var(--muted);opacity:.35;transition:.25s}.seq-step b,.op-step b,.reason-step b{display:block;font:1.12rem Georgia,serif;color:#e8e0d1}.seq-step.on,.op-step.on,.reason-step.on{opacity:1;border-color:var(--gold2);background:rgba(216,189,122,.07);color:#fff0c7}
+
+/* game */
+.game-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:18px;align-items:start}.play{padding:20px}.side{padding:18px}
+.status{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-bottom:15px}.progress-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.82rem;margin-bottom:7px}.track{height:8px;background:#07090d;border:1px solid #313946;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ae9255,var(--gold2));transition:.3s}.stat{min-width:72px;text-align:center;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}.stat b{display:block}.stat span{display:block;color:var(--muted);font-size:.68rem;text-transform:uppercase}
+.stage{min-height:235px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),#0c1117;background-size:24px 24px;padding:22px;display:grid;place-items:center;text-align:center}.mission-badge{display:inline-block;margin-bottom:8px;padding:5px 9px;border:1px solid rgba(216,189,122,.35);border-radius:999px;color:var(--gold2);font-size:.7rem;letter-spacing:.11em;text-transform:uppercase}.big{font:clamp(1.8rem,6vw,4.1rem) Georgia,serif;color:#fff5da;margin:6px 0}.prompt{color:#ddd5c6}
+.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}.choice{min-height:68px;border:1px solid var(--line);border-radius:12px;background:#111720;color:var(--ink);cursor:pointer;padding:11px;text-align:left;position:relative}.choice:hover{border-color:#748194}.choice[aria-pressed="true"]{border-color:var(--gold2);background:rgba(216,189,122,.09)}.choice[aria-pressed="true"]:after{content:"✓";position:absolute;right:9px;top:7px;color:var(--gold2);font-weight:900}.choice strong{display:block;font-family:Georgia,serif}
+.feedback{margin-top:14px;min-height:78px;border:1px solid transparent;border-radius:12px;padding:13px 14px;background:rgba(255,255,255,.02)}.feedback.good{border-color:rgba(143,212,173,.42);background:rgba(143,212,173,.07)}.feedback.bad{border-color:rgba(239,154,154,.42);background:rgba(239,154,154,.07)}.feedback h3{margin:0 0 4px;font-size:1rem}.feedback p{margin:0;color:#d7d0c2}.feedback .detail{color:var(--gold2);margin-top:6px;font-size:.88rem}.action-row{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:14px}
+.side h2{margin:2px 0 12px;font-size:1.18rem}.concept{border:1px solid var(--line);border-radius:11px;padding:11px;background:rgba(255,255,255,.025);margin-bottom:9px}.concept b{display:block;font:1rem Georgia,serif}.concept span{color:var(--muted);font-size:.82rem}.tip{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.tip p{margin:5px 0 0;color:var(--muted);font-size:.87rem}.controls{display:grid;gap:10px;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.control{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.control label{color:var(--muted);font-size:.8rem}.control select{min-height:40px;border:1px solid var(--line);border-radius:9px;background:#111720;color:var(--ink);padding:8px 10px}.best{color:var(--gold2);font-size:.82rem;margin:11px 0 0}
+.mastery{display:none;margin-top:20px;padding:24px;text-align:center;border:1px solid rgba(216,189,122,.5);border-radius:16px;background:#111720}.mastery.show{display:block}.mastery-mark{width:72px;height:72px;border-radius:50%;border:1px solid var(--gold2);display:grid;place-items:center;margin:0 auto 12px;color:var(--gold2);font:1.25rem Georgia,serif}.mastery h2{margin:5px 0}.mastery p{color:var(--muted);max-width:650px;margin:7px auto 15px}
+footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
+@media(max-width:920px){.scene,.game-grid{grid-template-columns:1fr}.side{order:2}}@media(max-width:720px){.studio-tabs{grid-template-columns:1fr 1fr}.choice-grid{grid-template-columns:1fr}}@media(max-width:560px){.shell{width:min(100% - 18px,var(--max));padding-top:12px}.actions{display:none}.studio,.play{padding:13px}.status{grid-template-columns:1fr 66px}.status .stat:last-child{display:none}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.001ms!important;scroll-behavior:auto!important}}@media print{body{background:#fff;color:#111}.actions,.studio-tabs,.row,.action-row,.controls{display:none!important}.panel,.visual,.copy,.stage,.concept{box-shadow:none!important;background:#fff!important;color:#111!important;border-color:#bbb!important}.hero p,.copy p,.copy li,.concept span,.tip p{color:#444!important}}
+</style>
+</head>
+<body><a class="skip" href="#game">Skip to game</a><div class="shell">
+<header class="topbar">
+<a class="brand" href="../units/unit-02/lessons/lesson-08-multi-step-integer-applications.html"><div class="seal"><span>⌖</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 02</p><p class="crumb">Lesson 8 Companion · Coordinate Plane & Multi-Step Applications</p></div></a>
+<div class="actions"><a class="ghost" href="../units/unit-02/lessons/lesson-08-multi-step-integer-applications.html">← Lesson 8</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
+</header>
+
+<section class="hero">
+<div class="eyebrow">Unit 2 · Lesson 8 · Companion Game</div>
+<h1>Coordinate Mission Control</h1>
+<p>Track signed horizontal and vertical movement, choose the right integer operation, and solve multi-step missions while checking sign, magnitude, and context.</p>
+<div class="lesson-sync"><strong>Lesson sync:</strong> ordered pairs locate position, signed changes describe movement, and all four integer operations work together to model multi-stage situations. Translate first, calculate second, and verify the final sign and magnitude.</div>
+</section>
+
+<section class="panel studio">
+<div class="section-head"><div><div class="eyebrow">Animated instruction studio</div><h2>Coordinate the operations.</h2></div><p>Four demonstrations mirror the lesson’s coordinate movement, operation selection, multi-step sequencing, and reasonableness checking.</p></div>
+<div class="studio-tabs"><button class="studio-tab" aria-selected="true">1 · Move on the Plane</button><button class="studio-tab" aria-selected="false">2 · Choose the Operation</button><button class="studio-tab" aria-selected="false">3 · Multi-Step Chain</button><button class="studio-tab" aria-selected="false">4 · Check Reasonableness</button></div>
+
+<div class="scene active">
+<div class="visual"><div class="plane"><div class="quad q1">I</div><div class="quad q2">II</div><div class="quad q3">III</div><div class="quad q4">IV</div><div class="point" id="pointA" style="left:70%;top:65%"></div><div class="point-label" id="labelA" style="left:70%;top:65%">(4, −3)</div></div></div>
+<div class="copy"><h3>Move x first, then y.</h3><p>From (4, −3), moving 7 left changes x by −7. Moving 5 up changes y by +5.</p><div class="takeaway">(4, −3) + (−7, +5) = (−3, 2)</div><div class="row"><button class="primary" id="playPlaneDemo">Animate the route</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="operations-demo"><div class="op-step" id="o1"><b>Addition</b>combined signed changes</div><div class="op-step" id="o2"><b>Subtraction</b>difference or final − initial</div><div class="op-step" id="o3"><b>Multiplication</b>repeated equal signed changes</div><div class="op-step" id="o4"><b>Division</b>equal groups or signed rates</div></div></div>
+<div class="copy"><h3>Operation choice comes before computation.</h3><p>The arithmetic only makes sense after the situation has been translated correctly.</p><div class="takeaway">Context → operation → sign → calculation → check.</div><div class="row"><button class="primary" id="playOperationDemo">Reveal operation roles</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="sequence"><div class="seq-step" id="m1"><b>Diver starts at −6 m</b></div><div class="seq-step" id="m2"><b>Descends 4 m/min for 3 min → 3(−4)=−12</b></div><div class="seq-step" id="m3"><b>Combine with start: −6 + (−12)</b></div><div class="seq-step" id="m4"><b>Final position = −18 m</b></div></div></div>
+<div class="copy"><h3>Multi-step problems chain different ideas.</h3><p>Repeated change may require multiplication first, then addition to combine that change with an initial position.</p><div class="takeaway">Translate every stage before combining them.</div><div class="row"><button class="primary" id="playMultiDemo">Build the chain</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="reason-demo"><div class="reason-step" id="rr1"><b>Robot: four left moves of 3 → 4(−3)=−12</b></div><div class="reason-step" id="rr2"><b>Then right 5 → −12+5=−7</b></div><div class="reason-step" id="rr3"><b>Does −7 make sense?</b>Yes: the robot moved left more than it moved right.</div><div class="reason-step" id="rr4"><b>Sign and magnitude both pass the context check.</b></div></div></div>
+<div class="copy"><h3>A correct-looking number can still be wrong.</h3><p>Check whether the direction, size, and context all agree with the computed answer.</p><div class="takeaway">Reasonableness is part of the solution—not an optional extra.</div><div class="row"><button class="primary" id="playReasonDemo">Run the check</button></div></div>
+</div>
+</section>
+
+<main id="game" class="game-grid">
+<section class="panel play">
+<div class="section-head"><div><div class="eyebrow">Coordinate Mission Challenge</div><h2>Plot, Operate & Verify</h2></div><p>Identify coordinates, compute signed movement, evaluate multi-step expressions, interpret real-world changes, and verify whether results make sense.</p></div>
+<div class="status"><div><div class="progress-label"><span id="roundLabel">Mission 1 of 16</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div></div>
+<div class="stage"><div><div class="mission-badge" id="missionBadge">Coordinates</div><div class="big" id="challengeValue">(−4, 3)</div><div class="prompt" id="questionPrompt">Which ordered pair has x=−4 and y=3?</div></div></div>
+<div class="choice-grid" id="choiceGrid"></div>
+<div class="action-row"><button class="secondary" id="hintBtn">Reasoning hint</button><button class="primary" id="checkBtn">Check reasoning</button><button class="secondary" id="nextBtn" hidden>Next mission →</button></div>
+<div class="feedback" id="feedback"><h3>Ready.</h3><p>Translate the position or change before calculating.</p></div>
+<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../units/unit-02/lessons/lesson-08-multi-step-integer-applications.html">Return to Lesson 8</a></div></div>
+</section>
+
+<aside class="panel side">
+<h2>Lesson 8 Field Guide</h2>
+<div class="concept"><b>Coordinates</b><span>(x,y): horizontal first, vertical second.</span></div>
+<div class="concept"><b>Signed movement</b><span>Right/up positive; left/down negative.</span></div>
+<div class="concept"><b>Operation choice</b><span>Add combined change; subtract difference; multiply repeated change; divide rates/groups.</span></div>
+<div class="concept"><b>Multi-step order</b><span>Translate first and preserve the required operation order.</span></div>
+<div class="concept"><b>Reasonableness</b><span>Check direction, magnitude, and context.</span></div>
+<div class="tip"><strong>Mission question</strong><p id="strategyText">Which coordinate or operation is changing first?</p></div>
+<div class="controls"><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
+<p class="best" id="bestScore">Best mastery score: —</p>
+</aside>
+</main>
+<footer>KH-MATH-PA-U02-L8 · coordinates · signed movement · all four integer operations · multi-step reasoning · 80% mastery</footer>
+</div>
+
+<script>
+(()=>{"use strict";
+const BANK=[
+{l:"Foundation",b:"Coordinates",v:"x=−4, y=3",q:"Which ordered pair is correct?",o:["(3,−4)","(−4,3)","(4,−3)","(−3,4)"],a:1,h:"Ordered pairs are written (x,y).",w:"The point is (−4,3)."},
+{l:"Foundation",b:"Coordinates",v:"Point on y-axis",q:"What must be true?",o:["y=0","x=y","Both coordinates positive","x=0"],a:3,h:"The y-axis is the vertical axis through x=0.",w:"Every point on the y-axis has x=0."},
+{l:"Foundation",b:"Coordinates",v:"Origin",q:"Which point is the origin?",o:["(0,0)","(1,0)","(0,1)","(−1,−1)"],a:0,h:"The origin is where both axes meet.",w:"The origin is (0,0)."},
+{l:"Foundation",b:"Quadrant",v:"(−5,−2)",q:"Which quadrant contains the point?",o:["I","II","III","IV"],a:2,h:"Both x and y are negative.",w:"Negative x and negative y place the point in Quadrant III."},
+{l:"Foundation",b:"Movement",v:"From (−3,2), move 6 right",q:"Where do you land?",o:["(−9,2)","(−3,8)","(3,2)","(−3,−4)"],a:2,h:"Right changes only x by +6.",w:"−3+6=3, so the new point is (3,2)."},
+{l:"Foundation",b:"Movement",v:"From (4,1), move 7 down",q:"What is the new point?",o:["(4,−6)","(−3,1)","(11,1)","(4,8)"],a:0,h:"Down changes only y by −7.",w:"1−7=−6, so the new point is (4,−6)."},
+{l:"Foundation",b:"Signed Change",v:"(−2,−4) → (5,−4)",q:"What is the signed horizontal change?",o:["−7","−3","+3","+7"],a:3,h:"Compute final x − initial x.",w:"5−(−2)=+7."},
+
+{l:"Core",b:"Signed Change",v:"(3,6) → (3,−2)",q:"What is the signed vertical change?",o:["−4","−8","+4","+8"],a:1,h:"Compute final y − initial y.",w:"−2−6=−8."},
+{l:"Core",b:"Operations",v:"−8 + 13 − 6",q:"Evaluate the expression.",o:["−1","−27","1","11"],a:0,h:"Work left to right for addition/subtraction.",w:"−8+13=5, then 5−6=−1."},
+{l:"Core",b:"Operations",v:"5(−4) + 7",q:"Evaluate the expression.",o:["−27","13","−13","27"],a:2,h:"Multiply before adding.",w:"5(−4)=−20, then −20+7=−13."},
+{l:"Core",b:"Operations",v:"−36 ÷ 6 + 10",q:"Evaluate the expression.",o:["−16","4","6","16"],a:1,h:"Divide before adding.",w:"−36÷6=−6, then −6+10=4."},
+{l:"Core",b:"Operations",v:"18 − (−7) + (−5)",q:"Evaluate the expression.",o:["6","16","30","20"],a:3,h:"Subtracting −7 means adding +7.",w:"18+7−5=20."},
+{l:"Core",b:"Temperature Context",v:"−4°C +9°C −6°C",q:"What is the final temperature?",o:["−19°C","+1°C","+11°C","−1°C"],a:3,h:"Track the running value.",w:"−4+9−6=−1°C."},
+{l:"Core",b:"Finance Context",v:"−$25 + $40 − $18",q:"What is the final balance?",o:["−$83","−$3","+$3","+$33"],a:1,h:"Track the signed balance through each change.",w:"−25+40−18=−3."},
+{l:"Core",b:"Repeated Change",v:"Start −10 m; 4 min at −3 m/min",q:"What is the final position?",o:["−12 m","+2 m","−22 m","+22 m"],a:2,h:"First find 4(−3), then add to the start.",w:"4(−3)=−12 and −10+(−12)=−22 m."},
+{l:"Core",b:"Rate + Change",v:"−48 m over 6 intervals, then +5 m",q:"What is one average interval change followed by the rise?",o:["−3 m","−13 m","+3 m","+13 m"],a:0,h:"First divide −48 by 6, then add +5.",w:"−48÷6=−8; −8+5=−3 m."},
+{l:"Core",b:"Error Analysis",v:"x: −6 → 2; student says change −8",q:"What is the correction?",o:["Change is −4.","Change is +8 because 2−(−6)=8.","Change is +4.","Student is correct."],a:1,h:"Signed change is final − initial.",w:"2−(−6)=+8."},
+{l:"Core",b:"Reasonableness",v:"6 repeated decreases of 4",q:"Which check best supports −24?",o:["6(−4)=−24","6+4=10","−24÷(−4)=−6","|−24|=−24"],a:0,h:"Repeated decreases use multiplication by a negative rate.",w:"6(−4)=−24 directly matches the context."},
+
+{l:"Extended",b:"Vector Change",v:"P=(−1,4), change (+5,−7)",q:"What is the new point?",o:["(−6,11)","(6,3)","(−4,7)","(4,−3)"],a:3,h:"Add the x changes and y changes separately.",w:"x: −1+5=4; y: 4−7=−3, so (4,−3)."},
+{l:"Extended",b:"Repeated Movement",v:"Start x=0; left 3 four times; right 5",q:"What is the final x-coordinate?",o:["−17","+7","−7","+17"],a:2,h:"Four left moves are 4(−3).",w:"4(−3)=−12, then −12+5=−7."},
+{l:"Extended",b:"Operation Choice",v:"Final value minus initial value",q:"Which operation is the natural model?",o:["Addition","Subtraction","Multiplication","Division"],a:1,h:"A difference compares two values.",w:"Subtraction models final − initial."},
+{l:"Extended",b:"Operation Choice",v:"Same signed change repeated 8 times",q:"Which operation is most direct?",o:["Addition only","Subtraction","Multiplication","Division"],a:2,h:"Repeated equal groups suggest multiplication.",w:"Multiplication efficiently models repeated equal signed changes."},
+{l:"Extended",b:"Operation Choice",v:"Total signed change split across equal intervals",q:"Which operation is most direct?",o:["Addition","Subtraction","Multiplication","Division"],a:3,h:"A rate per equal interval comes from dividing the total.",w:"Division models equal rates or equal groups."},
+{l:"Extended",b:"Multi-Step",v:"Start 5; three changes of −4; then +9",q:"What is the final value?",o:["2","−2","26","−26"],a:0,h:"Compute 3(−4) first.",w:"3(−4)=−12; 5−12+9=2."},
+{l:"Extended",b:"Multi-Step",v:"Start −8; +15; then −18÷3",q:"What is the final value?",o:["1","−1","13","−13"],a:0,h:"Evaluate division first: −18÷3=−6.",w:"−8+15−6=1."},
+{l:"Extended",b:"Reasonableness",v:"Robot moves left 12 total, then right 5",q:"Which final sign is reasonable?",o:["Positive","Negative","Zero","Undefined"],a:1,h:"The leftward movement has greater magnitude.",w:"Net movement is leftward, so the final signed position/change should be negative."}
+];
+
+const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
+const BEST="khaemenes-prealgebra-u02-l08-coordinate-mission-control-v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
+function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
+function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function start(src=null){deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
+function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;
+el.strategy.textContent=c.b.includes("Coordinate")||c.b.includes("Quadrant")||c.b.includes("Movement")||c.b.includes("Vector")?"Track x horizontally and y vertically.":c.b.includes("Operation Choice")?"Translate the context before choosing an operation.":c.b.includes("Reason")?"Check whether sign, direction, and magnitude match the situation.":"Follow the operation order and track every sign.";
+feedback("","Mission ready.","Translate the position or change before calculating.");stats()}
+function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by coordinate and integer-operation reasoning.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Mission confirmed.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
+function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
+function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(e){return null}}
+function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
+function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(BEST,String(p))}catch(e){}updateBest()}
+function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Coordinate Mission mastery passed":"Rebuild the route";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} Lesson 8 missions correctly and met the 80% mastery target. Return to Lesson 8 for practice, reflection, and Unit 2 mastery work.`:`You solved ${correct} of ${attempts} missions correctly. Review missed coordinate moves, operation choices, and multi-step sign checks, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
+el.tabs.forEach((b,i)=>b.onclick=()=>{el.tabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));el.scenes.forEach((s,j)=>s.classList.toggle("active",j===i))});
+const later=(f,m)=>setTimeout(f,m);
+
+$("playPlaneDemo").onclick=()=>{const p=$("pointA"),l=$("labelA");p.style.left="70%";p.style.top="65%";l.style.left="70%";l.style.top="65%";l.textContent="(4, −3)";later(()=>{p.style.left="35%";l.style.left="35%";l.textContent="(−3, −3)"},500);later(()=>{p.style.top="40%";l.style.top="40%";l.textContent="(−3, 2)"},1300)};
+$("playOperationDemo").onclick=()=>{["o1","o2","o3","o4"].forEach(id=>$(id).classList.remove("on"));["o1","o2","o3","o4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*330))};
+$("playMultiDemo").onclick=()=>{["m1","m2","m3","m4"].forEach(id=>$(id).classList.remove("on"));["m1","m2","m3","m4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*360))};
+$("playReasonDemo").onclick=()=>{["rr1","rr2","rr3","rr4"].forEach(id=>$(id).classList.remove("on"));["rr1","rr2","rr3","rr4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*360))};
+
+document.addEventListener("keydown",e=>{if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName))return;if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();feedback("","Reasoning hint",deck[index].h)}});
+updateBest();start();
+})();
+</script>
+</body></html>
