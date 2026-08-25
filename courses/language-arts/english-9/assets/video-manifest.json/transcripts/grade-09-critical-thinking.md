@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "lesson_id": "KH-ELA-ENG9-U01-L01",
+  "lesson_id": "KH-ELA-ENG9-U01-L00",
   "unit": 1,
-  "lesson": 1,
+  "lesson": 0,
   "title": "Critical Thinking — What It Is and How to Do It",
   "provider": "youtube",
   "video_id": "DTJ7C1wD_00",
