@@ -1,123 +1,368 @@
 <!doctype html>
 <!--
-=========================================================
+============================================================
 KHAEMENES HIGH · PRE-ALGEBRA
-UNIT 02 · LESSON 01
-Integers in Context & on the Number Line
+UNIT 02 · LESSON 02 ORGANIZED FILE TREE
+============================================================
 
-REPOSITORY FILE TREE
+Repository location:
 courses/
 └── mathematics/
     └── pre-algebra/
-        ├── learning-games/
-        │   └── 02-01-integer-compass-signed-situation-sort/
-        │       └── index.html
-        └── units/
-            └── unit-02/
-                ├── assets/
-                │   ├── unit.css
-                │   └── lesson-engine.js
-                └── lessons/
-                    └── lesson-01-integers-in-context.html
+        ├── units/
+        │   └── unit-02/
+        │       ├── index.html
+        │       ├── assets/
+        │       │   ├── unit.css
+        │       │   └── lesson-engine.js
+        │       └── lessons/
+        │           └── lesson-02-opposites-absolute-value.html   ← this file
+        └── learning-games/
+            └── unit-02-02-opposite-mirror/
+                └── index.html                                   ← Math Break game
 
-INSIDE THIS FILE
-1. Head metadata + lesson-specific styles
-2. Header and course navigation
-3. Hero
-4. Learning goals / warm-up / lesson record
-5. Concept study guide
-6. Concept development cards
-7. Math Break skill game
-8. Worked examples
-9. Pathway support
-10. Vocabulary bridge
-11. Application
-12. Lesson practice
-13. Reflection and lesson navigation
-14. LESSON_DATA / UNIT_MAP_FALLBACK / VOCAB_FALLBACK
-15. Shared lesson engine connection
+Inside this file:
+01 · Head metadata + page CSS
+02 · Header and course navigation
+03 · Hero
+04 · Learning goals + lesson record
+05 · Deeper Concept Study Guide
+06 · Concept development generated from LESSON_DATA
+07 · Math Break game link
+08 · Worked examples generated from LESSON_DATA
+09 · Pathway support
+10 · Vocabulary bridge
+11 · Global application
+12 · Lesson practice generated from LESSON_DATA
+13 · Reflection + lesson navigation
+14 · LESSON_DATA / UNIT_MAP_FALLBACK / VOCAB_FALLBACK
+15 · Shared lesson engine: ../assets/lesson-engine.js
 
-NO-SECRETS NOTE
-This public lesson file contains only curriculum, local browser behavior,
-relative links, and printable learning content. It does not contain private
-student data, keys, tokens, endpoints, or hidden assessment logic.
-=========================================================
+No secrets. No external libraries. Local progress only.
+============================================================
 -->
-<html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Pre-Algebra Unit 2 Lesson 1: Integers in Context &amp; on the Number Line."><meta name="theme-color" content="#0b1730"><title>Lesson 1 · Integers in Context &amp; on the Number Line</title><link rel="stylesheet" href="../assets/unit.css"><style>
-.lesson-layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:1rem;align-items:start}.lesson-main,.lesson-side{padding:1.35rem}.lesson-side{position:sticky;top:92px}.objective-list{display:grid;gap:.55rem;padding:0;list-style:none}.objective-list li{padding:.75rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.objective-list li::before{content:"✓";margin-inline-end:.55rem;color:var(--green);font-weight:900}.warmup{display:grid;gap:.6rem}.warmup li{color:var(--muted)}.concept-grid{grid-template-columns:repeat(3,1fr)}.concept{padding:1rem}.concept h3{font-size:1.05rem;margin-bottom:.35rem}.concept p{margin:0;color:var(--muted);font-size:.84rem}.example-list{display:grid;gap:.85rem}.example{padding:1.1rem}.example h3{font-size:1.08rem;margin-bottom:.55rem}.example ol{color:var(--muted)}.answer{padding:.65rem;border-radius:9px;background:color-mix(in srgb,var(--green) 10%,var(--bg2));color:var(--green);font-weight:850}.pathway-tabs{display:flex;gap:.45rem;flex-wrap:wrap}.pathway-tabs button{min-height:40px;padding:.55rem .75rem;border:1px solid var(--line);border-radius:99px;background:var(--bg2);color:var(--muted);font-weight:850}.pathway-tabs button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#16120a}.pathway-panel{margin-top:.8rem;padding:1rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2);color:var(--muted)}.vocab-table{width:100%;border-collapse:collapse}.vocab-table th,.vocab-table td{padding:.65rem;border-bottom:1px solid var(--line);text-align:start}.vocab-table th{color:var(--gold2);font-size:.75rem;text-transform:uppercase}.vocab-table td{font-size:.84rem}.vocab-controls{display:flex;justify-content:flex-end;margin-bottom:.7rem}.question-list{display:grid;gap:.8rem}.question{padding:1rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.question fieldset{border:0;padding:0;margin:0}.question legend{font-weight:850}.options{display:grid;gap:.45rem;margin-top:.65rem}.option{display:flex;gap:.6rem;align-items:flex-start;padding:.55rem;border:1px solid transparent;border-radius:9px}.option:hover{border-color:var(--blue)}.feedback{margin-top:.6rem;padding:.65rem;border-radius:9px}.feedback.correct{background:color-mix(in srgb,var(--green) 12%,var(--bg2));color:var(--green)}.feedback.incorrect{background:color-mix(in srgb,var(--danger) 9%,var(--bg2));color:var(--danger)}.side-actions{display:grid;gap:.55rem;margin-top:1rem}.side-actions .btn{width:100%}.lesson-nav{display:flex;justify-content:space-between;gap:.7rem;flex-wrap:wrap;margin-top:1.5rem}@media(max-width:960px){.lesson-layout{grid-template-columns:1fr}.lesson-side{position:static}.concept-grid{grid-template-columns:1fr}}
-
+<html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Pre-Algebra Unit 2 Lesson 2: Opposites, Absolute Value &amp; Distance."><meta name="theme-color" content="#0b1730"><title>Lesson 2 · Opposites, Absolute Value &amp; Distance</title><link rel="stylesheet" href="../assets/unit.css"><style>
 /* =========================================================
-   ORGANIZATION + DEEP CONCEPT INSTRUCTION HELPERS
+   KHAEMENES PRE-ALGEBRA · UNIT 02 LESSON 02
+   Page-specific layout only. Shared visual system comes from:
+   ../assets/unit.css
    ========================================================= */
-.concept-guide-card,
-.math-break-card{
-  max-width:999px;
-  margin:auto;
-  padding:24px;
-}
-.concept-guide-grid{
+
+.lesson-layout{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:14px;
-  margin-top:18px;
+  grid-template-columns:minmax(0,1fr) 310px;
+  gap:1rem;
+  align-items:start;
 }
-.concept-guide-step{
-  padding:16px;
+
+.lesson-main,
+.lesson-side{
+  padding:1.35rem;
+}
+
+.lesson-side{
+  position:sticky;
+  top:92px;
+}
+
+.objective-list{
+  display:grid;
+  gap:.55rem;
+  padding:0;
+  list-style:none;
+}
+
+.objective-list li{
+  padding:.75rem;
   border:1px solid var(--line);
   border-radius:11px;
   background:var(--bg2);
 }
-.concept-guide-step strong{
-  display:block;
-  font-family:var(--serif);
-  color:var(--gold2);
-  margin-bottom:6px;
+
+.objective-list li::before{
+  content:"✓";
+  margin-inline-end:.55rem;
+  color:var(--green);
+  font-weight:900;
 }
-.concept-guide-step p{
+
+.warmup{
+  display:grid;
+  gap:.6rem;
+}
+
+.warmup li{
+  color:var(--muted);
+}
+
+.concept-guide-card{
+  padding:1.35rem;
+}
+
+.concept-guide-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+  margin-top:1rem;
+}
+
+.study-card{
+  padding:1rem;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:var(--bg2);
+}
+
+.study-card h3{
+  margin:0 0 .45rem;
+  font-size:1.05rem;
+}
+
+.study-card p{
   margin:0;
   color:var(--muted);
   line-height:1.65;
+  font-size:.92rem;
 }
+
+.concept-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.concept{
+  padding:1rem;
+}
+
+.concept h3{
+  font-size:1.05rem;
+  margin-bottom:.35rem;
+}
+
+.concept p{
+  margin:0;
+  color:var(--muted);
+  font-size:.92rem;
+  line-height:1.65;
+}
+
+.math-break-card{
+  padding:1.35rem;
+  border:1px solid var(--line);
+  border-radius:21px;
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb,var(--gold) 13%,transparent), transparent 24rem),
+    var(--panel);
+  box-shadow:var(--shadow-card);
+}
+
 .math-break-card p{
   color:var(--muted);
-  line-height:1.7;
+  line-height:1.65;
 }
-.math-break-card .game-note{
-  margin-top:14px;
-  padding:14px;
-  border-left:3px solid var(--gold);
-  border-radius:7px;
+
+.example-list{
+  display:grid;
+  gap:.85rem;
+}
+
+.example{
+  padding:1.1rem;
+}
+
+.example h3{
+  font-size:1.08rem;
+  margin-bottom:.55rem;
+}
+
+.example ol{
+  color:var(--muted);
+}
+
+.answer{
+  padding:.65rem;
+  border-radius:9px;
+  background:color-mix(in srgb,var(--green) 10%,var(--bg2));
+  color:var(--green);
+  font-weight:850;
+}
+
+.pathway-tabs{
+  display:flex;
+  gap:.45rem;
+  flex-wrap:wrap;
+}
+
+.pathway-tabs button{
+  min-height:40px;
+  padding:.55rem .75rem;
+  border:1px solid var(--line);
+  border-radius:99px;
   background:var(--bg2);
-  color:var(--ink);
+  color:var(--muted);
+  font-weight:850;
+}
+
+.pathway-tabs button[aria-pressed="true"]{
+  background:var(--gold);
+  border-color:var(--gold);
+  color:#16120a;
+}
+
+.pathway-panel{
+  margin-top:.8rem;
+  padding:1rem;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:var(--bg2);
+  color:var(--muted);
+}
+
+.vocab-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.vocab-table th,
+.vocab-table td{
+  padding:.65rem;
+  border-bottom:1px solid var(--line);
+  text-align:start;
+}
+
+.vocab-table th{
+  color:var(--gold2);
+  font-size:.75rem;
+  text-transform:uppercase;
+}
+
+.vocab-table td{
+  font-size:.84rem;
+}
+
+.vocab-controls{
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom:.7rem;
+}
+
+.question-list{
+  display:grid;
+  gap:.8rem;
+}
+
+.question{
+  padding:1rem;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:var(--bg2);
+}
+
+.question fieldset{
+  border:0;
+  padding:0;
+  margin:0;
+}
+
+.question legend{
+  font-weight:850;
+}
+
+.options{
+  display:grid;
+  gap:.45rem;
+  margin-top:.65rem;
+}
+
+.option{
+  display:grid;
+  grid-template-columns:26px minmax(0,1fr);
+  gap:.6rem;
+  align-items:flex-start;
+  padding:.55rem;
+  border:1px solid transparent;
+  border-radius:9px;
+  min-width:0;
+}
+
+.option:hover{
+  border-color:var(--blue);
+}
+
+.option input[type="radio"],
+.option input[type="checkbox"]{
+  width:20px!important;
+  min-width:20px!important;
+  max-width:20px!important;
+  height:20px!important;
+  margin:2px 0 0 0!important;
+  padding:0!important;
+  accent-color:var(--gold);
+}
+
+.feedback{
+  margin-top:.6rem;
+  padding:.65rem;
+  border-radius:9px;
+}
+
+.feedback.correct{
+  background:color-mix(in srgb,var(--green) 12%,var(--bg2));
+  color:var(--green);
+}
+
+.feedback.incorrect{
+  background:color-mix(in srgb,var(--danger) 9%,var(--bg2));
+  color:var(--danger);
+}
+
+.side-actions{
+  display:grid;
+  gap:.55rem;
+  margin-top:1rem;
+}
+
+.side-actions .btn{
+  width:100%;
+}
+
+.lesson-nav{
+  display:flex;
+  justify-content:space-between;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.5rem;
 }
 
 /* =========================================================
    TABLET CHOICE + OVERFLOW RESCUE
-   CSS only · no scoring, mastery, storage, or lesson logic changed
+   CSS only · no scoring, mastery, storage, or engine logic changed
    ========================================================= */
+
 html,
 body{
   max-width:100%;
   overflow-x:clip;
 }
+
 .wrap,
+.header-inner,
 .lesson-layout,
 .lesson-main,
 .lesson-side,
 .card,
+.concept-guide-card,
+.math-break-card,
 .question,
 .option,
 .notice,
 .field,
 .actions,
-.header-inner,
 .practice-meter,
-.vocab-table,
-.concept-guide-card,
-.math-break-card{
+.vocab-table{
   min-width:0!important;
   max-width:100%!important;
 }
+
 p,
 li,
 dd,
@@ -137,39 +382,16 @@ h4,
 .feedback,
 .pathway-panel,
 .vocab-table th,
-.vocab-table td,
-.concept-guide-step{
+.vocab-table td{
   overflow-wrap:anywhere!important;
   word-break:normal!important;
   hyphens:auto;
 }
-.option{
-  display:grid!important;
-  grid-template-columns:28px minmax(0,1fr)!important;
-  align-items:start!important;
-  gap:11px!important;
-  overflow:hidden!important;
-}
-.option input[type="radio"],
-.option input[type="checkbox"]{
-  width:22px!important;
-  min-width:22px!important;
-  max-width:22px!important;
-  height:22px!important;
-  margin:2px 0 0 0!important;
-  padding:0!important;
-  flex:0 0 22px!important;
-  accent-color:var(--gold);
-}
-.option label,
-.option span{
-  min-width:0!important;
-  max-width:100%!important;
-  overflow-wrap:anywhere!important;
-}
+
 .vocab-table{
   width:100%!important;
 }
+
 img,
 svg,
 video,
@@ -177,6 +399,7 @@ canvas{
   max-width:100%!important;
   height:auto;
 }
+
 .btn,
 .nav-button,
 .theme-button,
@@ -184,1109 +407,186 @@ button{
   max-width:100%!important;
   white-space:normal!important;
 }
-@media(max-width:1024px){
-  .lesson-layout{
+
+@media(max-width:960px){
+  .lesson-layout,
+  .concept-grid,
+  .concept-guide-grid{
     grid-template-columns:1fr!important;
   }
+
   .lesson-side{
     position:static!important;
     width:100%!important;
     max-width:none!important;
   }
-  .concept-grid,
-  .quick-check-grid,
-  .concept-guide-grid{
-    grid-template-columns:1fr!important;
-  }
+
   .header-actions,
   .actions{
     width:100%;
   }
 }
-@media(max-width:760px){
+
+@media(max-width:666px){
   .wrap,
   .lesson-layout,
   .header-inner{
     width:min(calc(100% - 24px),var(--content-max,var(--max,100%)))!important;
   }
+
   .lesson-main,
   .lesson-side,
+  .concept-guide-card,
+  .math-break-card,
   .card,
   .question,
-  .example,
-  .concept-guide-card,
-  .math-break-card{
+  .example{
     padding:14px!important;
   }
-  h1{
-    font-size:clamp(2rem,12vw,4rem)!important;
+
+  .option{
+    grid-template-columns:24px minmax(0,1fr)!important;
+    gap:9px!important;
   }
 }
 
-</style></head><body>
-<a class="skip" href="#main">Skip to main content</a>
+@media print{
+  .theme-button,
+  .header-actions,
+  .side-actions,
+  .pathway-tabs,
+  .vocab-controls,
+  #submitPractice,
+  #resetPractice,
+  #saveReflection,
+  .lesson-nav,
+  .math-break-card{
+    display:none!important;
+  }
+
+  .lesson-side{
+    position:static!important;
+  }
+
+  .lesson-layout{
+    grid-template-columns:1fr!important;
+  }
+
+  .question,
+  .example,
+  .concept,
+  .study-card{
+    break-inside:avoid;
+    box-shadow:none!important;
+  }
+
+  .feedback{
+    display:none!important;
+  }
+}
+</style></head><body><a class="skip" href="#main">Skip to main content</a>
 <!-- =========================================================
-     HEADER + COURSE NAVIGATION
+     02 · HEADER AND COURSE NAVIGATION
      ========================================================= -->
-<header class="site-header"><div class="wrap header-inner"><a class="brand" href="../"><span class="brand-mark">K</span><span class="brand-copy"><strong>UNIT 2</strong><small>Lesson 1 · Signed Number Reasoning</small></span></a><div class="header-actions"><a class="nav-button secondary" href="../#lessons">All Lessons</a><a class="nav-button" href="../../../">Course Home</a><button class="theme-button" id="themeToggle" type="button">◐</button></div></div></header>
+<header class="site-header"><div class="wrap header-inner"><a class="brand" href="../"><span class="brand-mark">K</span><span class="brand-copy"><strong>UNIT 2</strong><small>Lesson 2 · Signed Number Reasoning</small></span></a><div class="header-actions"><a class="nav-button secondary" href="../#lessons">All Lessons</a><a class="nav-button" href="../../../">Course Home</a><button class="theme-button" id="themeToggle" type="button">◐</button></div></div></header>
 <!-- =========================================================
      MAIN LESSON CONTENT
      ========================================================= -->
 <main id="main">
-<section class="hero"><div class="wrap"><p class="eyebrow">Lesson 1 · 50–65 minutes</p><h1>Integers in Context &amp; on the Number Line</h1><p class="lead">How can one number communicate both size and direction?</p><div class="actions"><a class="btn primary" href="#learn">Begin Lesson</a><button class="btn" id="printLesson" type="button">Print Lesson</button></div></div>
-</section>
-<section id="learn"><div class="wrap lesson-layout">
-<article class="card lesson-main"><p class="eyebrow">Learning goals</p><ul class="objective-list" id="objectives"></ul><h2 style="margin-top:1.5rem">Warm-up</h2><ol class="warmup" id="warmup"></ol>
-</article>
-<aside class="card lesson-side"><p class="eyebrow">Your lesson record</p><div class="field"><label for="pathwaySelect">Pathway support</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p class="notice" id="lessonStatus">Complete the practice to save a lesson score.</p><div class="side-actions"><a class="btn" href="#concept-guide">Concept Guide</a><a class="btn" href="#math-break">Math Break</a><a class="btn" href="#practice">Practice</a><button class="btn primary" id="markComplete" type="button">Save Lesson Review</button><button class="btn" id="exportLesson" type="button">Export Lesson Record</button></div>
-</aside></div>
-</section>
-<!-- =========================================================
-     CONCEPT STUDY GUIDE
-     ========================================================= -->
-
-<section class="section-tight" id="concept-guide">
-  <div class="wrap">
-    
-<article class="card concept-guide-card">
-      <p class="eyebrow">Concept study guide</p>
-      <h2>How to read signed-number situations</h2>
-      <p class="help-text">
-        Before choosing a positive or negative integer, slow down and identify the structure of the situation.
-        A signed number has two jobs: the sign communicates direction, and the magnitude communicates size.
-      </p>
-      <div class="concept-guide-grid">
-        <div class="concept-guide-step">
-          <strong>1 · Name the reference point</strong>
-          <p>Ask what zero means. It might be sea level, street level, no change, a starting balance, or the current position.</p>
-        </div>
-        <div class="concept-guide-step">
-          <strong>2 · Identify the direction</strong>
-          <p>Look for words such as above, below, gained, lost, deposit, withdrawal, forward, backward, up, down, or no change.</p>
-        </div>
-        <div class="concept-guide-step">
-          <strong>3 · Separate sign from magnitude</strong>
-          <p>The sign tells direction relative to zero. The number part tells distance or size. In −18, the direction is negative and the magnitude is 18.</p>
-        </div>
-        <div class="concept-guide-step">
-          <strong>4 · Explain the integer in context</strong>
-          <p>Do not stop at the symbol. Write a sentence: “−18 means 18 feet below sea level,” or “+45 means an account increase of 45 dollars.”</p>
-        </div>
-      </div>
-    
-</article>
-  </div>
-
-</section>
 
 <!-- =========================================================
-     CONCEPT DEVELOPMENT
-     Rendered from window.LESSON_DATA.concepts
+     03 · HERO
      ========================================================= -->
+<section class="hero"><div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../../">Pre-Algebra</a><span>›</span><a href="../">Unit 2</a><span>›</span><span aria-current="page">Lesson 2</span></nav><p class="eyebrow">Lesson 2 · 50–65 minutes</p><h1>Opposites, Absolute Value & Distance</h1><p class="lead">Why can two different numbers have the same absolute value?</p><div class="actions"><a class="btn primary" href="#learn">Begin Lesson</a><button class="btn" id="printLesson" type="button">Print Lesson</button></div></div></section>
 
-<section id="concepts">
+<!-- =========================================================
+     04 · LEARNING GOALS + LESSON RECORD
+     ========================================================= -->
+<section id="learn"><div class="wrap lesson-layout"><article class="card lesson-main"><p class="eyebrow">Learning goals</p><ul class="objective-list" id="objectives"></ul><h2 style="margin-top:1.5rem">Warm-up</h2><ol class="warmup" id="warmup"></ol></article><aside class="card lesson-side"><p class="eyebrow">Your lesson record</p><div class="field"><label for="pathwaySelect">Pathway support</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p class="notice" id="lessonStatus">Complete the practice to save a lesson score.</p><div class="side-actions"><a class="btn" href="#concept-guide">Concept Guide</a><a class="btn" href="#math-break">Math Break</a><a class="btn" href="#practice">Practice</a><button class="btn primary" id="markComplete" type="button">Save Lesson Review</button><button class="btn" id="exportLesson" type="button">Export Lesson Record</button></div></aside></div></section>
+
+<!-- =========================================================
+     05 · DEEPER CONCEPT STUDY GUIDE
+     ========================================================= -->
+<section id="concept-guide">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Concept development</p>
-      <h2>Build the idea before memorizing the procedure.</h2>
-      <p class="help-text">Study each card as a reasoning tool: reference point, direction, magnitude, translation, and reasonableness.</p>
+      <p class="eyebrow">Concept study guide</p>
+      <h2>Read this before the quick rules.</h2>
+      <p class="help-text">This lesson has two ideas students often mix up: the opposite of a number and the absolute value of a number. Use this guide to separate mirror position from distance.</p>
     </div>
-    <div class="grid concept-grid" id="conceptGrid"></div>
+    <article class="card concept-guide-card">
+      <div class="concept-guide-grid">
+        <div class="study-card"><h3>1 · Locate zero first</h3><p>Zero is the mirror line for opposites and the starting point for absolute value. Before answering, ask: where is zero in this situation?</p></div>
+        <div class="study-card"><h3>2 · Opposite means other side</h3><p>The opposite of a number is the same distance from zero but on the other side. Opposite changes direction while preserving magnitude.</p></div>
+        <div class="study-card"><h3>3 · Absolute value means distance</h3><p>Absolute value ignores direction and reports distance from zero. Distance is never negative, so the value inside the bars may be negative while the result is not.</p></div>
+        <div class="study-card"><h3>4 · Read notation carefully</h3><p>|−8| = 8, but −|8| = −8. The bars are evaluated first, then any sign outside the bars is applied.</p></div>
+      </div>
+    </article>
   </div>
-
 </section>
 
 <!-- =========================================================
-     MATH BREAK · SKILL GAME
+     06 · CONCEPT DEVELOPMENT
+     Generated from LESSON_DATA.concepts
      ========================================================= -->
+<section><div class="wrap"><div class="section-head"><p class="eyebrow">Concept development</p><h2>Build the idea before memorizing the procedure.</h2></div><div class="grid concept-grid" id="conceptGrid"></div></div></section>
 
+<!-- =========================================================
+     07 · MATH BREAK · SKILL GAME
+     ========================================================= -->
 <section class="section-tight" id="math-break">
   <div class="wrap">
-    
-<article class="card math-break-card">
+    <article class="math-break-card">
       <p class="eyebrow">Math Break · Skill Game</p>
-      <h2>Integer Compass · Signed Situation Sort</h2>
-      <p>
-        Take a focused practice break. Sort real-world situations by sign, identify the reference point,
-        and connect each integer to its direction and magnitude.
-      </p>
+      <h2>Opposite Mirror</h2>
+      <p>Take a short practice break. Use the mirrored number line to match opposites, read absolute value as distance, and return to the worked examples with the concept clearer.</p>
       <div class="actions">
-        <a class="btn primary" href="../../../learning-games/02-01-integer-compass-signed-situation-sort/index.html">
-          Open Integer Compass
-        </a>
+        <a class="btn primary" href="../../../learning-games/unit-02-02-opposite-mirror/index.html">Open Opposite Mirror</a>
       </div>
-      <p class="game-note">
-        Return to the worked examples after the game and explain one card using the full sentence routine:
-        reference point, direction, magnitude, and meaning.
-      </p>
-    
-</article>
+    </article>
   </div>
-
 </section>
 
 <!-- =========================================================
-     WORKED EXAMPLES
+     08 · WORKED EXAMPLES
+     Generated from LESSON_DATA.examples
      ========================================================= -->
-
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Worked examples</p><h2>Follow the reasoning one step at a time.</h2></div><div class="example-list" id="exampleList"></div></div>
-</section>
-<!-- =========================================================
-     PATHWAY SUPPORT
-     ========================================================= -->
-
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Pathway support</p><h2>Choose support or extension for this skill.</h2></div>
-<article class="card lesson-main"><div class="pathway-tabs" id="pathwayTabs"></div><div class="pathway-panel" id="pathwayPanel"></div>
-</article></div>
-</section>
-<!-- =========================================================
-     VOCABULARY BRIDGE
-     ========================================================= -->
-
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Vocabulary bridge</p><h2>Connect mathematical language across languages.</h2></div>
-<article class="card lesson-main"><div class="vocab-controls field"><label for="vocabLanguage">Bridge language</label><select id="vocabLanguage"></select></div><table class="vocab-table"><thead><tr><th>English</th><th id="languageHeading">Translation</th><th>Meaning</th></tr></thead><tbody id="vocabBody"></tbody></table>
-</article></div>
-</section>
-<!-- =========================================================
-     GLOBAL APPLICATION
-     ========================================================= -->
-
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Global application</p><h2>Use the mathematics in a real setting.</h2></div><p class="notice" id="application"></p></div>
-</section>
-<!-- =========================================================
-     LESSON PRACTICE
-     ========================================================= -->
-
-<section id="practice"><div class="wrap"><div class="section-head"><p class="eyebrow">Lesson practice</p><h2>Check understanding and study the explanations.</h2></div>
-<form class="question-list" id="questionList">
-</form><div class="actions"><button class="btn primary" id="submitPractice" type="button">Submit Assignment</button><button class="btn" id="resetPractice" type="button">Reset Practice</button></div><p class="notice" id="scoreMessage" aria-live="polite">No practice score yet.</p></div>
-</section>
-<!-- =========================================================
-     REFLECTION
-     ========================================================= -->
-
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Reflection</p><h2>Explain what changed in your thinking.</h2></div>
-<article class="card lesson-main"><div class="field"><label for="reflection">What idea, strategy, or error will you remember?</label><textarea id="reflection"></textarea></div><div class="actions"><button class="btn primary" id="saveReflection" type="button">Save Reflection</button></div><p id="reflectionMessage" aria-live="polite"></p>
-<nav class="lesson-nav"><a class="btn" id="previousLesson" href="#">← Previous</a><a class="btn primary" id="nextLesson" href="#">Next →</a>
-</nav>
-</article></div>
-</section></main>
+<section><div class="wrap"><div class="section-head"><p class="eyebrow">Worked examples</p><h2>Follow the reasoning one step at a time.</h2></div><div class="example-list" id="exampleList"></div></div></section>
 
 <!-- =========================================================
-     FOOTER
+     09 · PATHWAY SUPPORT
      ========================================================= -->
-<footer class="footer"><div class="wrap footer-inner"><span>KH-MATH-PA-U02-L1</span><span>Local progress · Multilingual vocabulary · Printable</span></div></footer>
+<section><div class="wrap"><div class="section-head"><p class="eyebrow">Pathway support</p><h2>Choose support or extension for this skill.</h2></div><article class="card lesson-main"><div class="pathway-tabs" id="pathwayTabs"></div><div class="pathway-panel" id="pathwayPanel"></div></article></div></section>
 
-<script>
-/* =========================================================
-   LESSON DATA
-   Edit curriculum text, questions, examples, and pathways here.
-   The lesson engine reads these objects to render the page.
-   ========================================================= */
-window.LESSON_DATA = {
-  "id": "l01",
-  "number": 1,
-  "title": "Integers in Context",
-  "objectives": [
-    "Define an integer and distinguish positive integers, negative integers, and zero.",
-    "Translate real-world situations into signed integer values.",
-    "Explain what zero means relative to a stated reference point.",
-    "Interpret the sign and magnitude of an integer in context.",
-    "Check whether a signed-number statement is reasonable for the situation."
-  ],
-  "vocab_ids": [
-    "integer",
-    "positive-integer",
-    "negative-integer",
-    "zero",
-    "opposite",
-    "absolute-value"
-  ],
-  "warmup": {
-    "prompt": "A thermometer reads 4°F below zero. What integer represents the temperature?",
-    "answer": "−4",
-    "explanation": "Below zero is represented with a negative sign, so 4 degrees below zero is −4°F."
-  },
-  "concepts": [
-    {
-      "title": "Integers are whole-number positions and changes",
-      "body": "An integer is a whole-number value, its opposite, or zero. In this lesson, do not look only at the numeral; ask what the number is describing. A count, position, gain, loss, elevation, or temperature can be an integer when it moves in whole-number steps. Fractions and non-whole decimals are not integers, even when they have a positive or negative sign."
-    },
-    {
-      "title": "The sign carries the direction",
-      "body": "The plus or minus sign tells the direction relative to a reference point. Positive often means above, ahead, gained, deposited, increased, or moved upward. Negative often means below, behind, lost, withdrawn, owed, decreased, or moved downward. The same number can mean different things in different stories, so always connect the sign to the words in the situation."
-    },
-    {
-      "title": "Zero is the reference point",
-      "body": "Zero is neither positive nor negative; it marks the point from which the situation is being measured. In one problem, zero might mean sea level. In another, it might mean street level, no net change, a starting balance, a tie score, or the current position. Before choosing a sign, name what zero means."
-    },
-    {
-      "title": "Magnitude is the distance from zero",
-      "body": "Magnitude is the size of the value without its direction. In −12, the negative sign tells the direction and 12 tells the distance or size. This is why +12 and −12 are opposites: they have the same magnitude but point in opposite directions from zero."
-    },
-    {
-      "title": "Translate with a four-step routine",
-      "body": "To translate a signed situation, first identify the reference point, then decide whether the situation is above or below that point, then write the integer, and finally explain the sign and magnitude in a full sentence. This habit prevents common errors such as writing +30 for a diver 30 feet below sea level."
-    }
-  ],
-  "examples": [
-    {
-      "title": "Elevation",
-      "problem": "A diver is 18 feet below sea level. Represent the diver's elevation.",
-      "steps": [
-        "Sea level is the reference value 0.",
-        "Below the reference point is negative.",
-        "The distance from sea level is 18 feet."
-      ],
-      "answer": "−18 feet"
-    },
-    {
-      "title": "Money",
-      "problem": "An account changes by a $35 withdrawal. Represent the change.",
-      "steps": [
-        "A withdrawal reduces the account.",
-        "A decrease is represented by a negative signed value.",
-        "The magnitude of the change is 35."
-      ],
-      "answer": "−35 dollars"
-    },
-    {
-      "title": "Temperature",
-      "problem": "The temperature rises 7°C from its current value. Represent the change.",
-      "steps": [
-        "The word rises indicates an increase.",
-        "An increase is positive.",
-        "The magnitude is 7."
-      ],
-      "answer": "+7°C"
-    }
-  ],
-  "pathways": {
-    "Foundation": "Use a floor number line, temperature scale, or vertical elevation diagram. Say the reference point aloud before assigning a sign.",
-    "Core": "Translate contexts to integers, plot them, and explain what both the sign and magnitude communicate.",
-    "Extended": "Compare how changing the reference point can change the signed number without changing the physical position."
-  },
-  "application": {
-    "title": "Signed situation sort",
-    "body": "Create six situation cards from daily life—temperature, elevation, money, sports, movement, or change. Assign an integer to each. For every card, identify the reference point and explain why the sign is positive, negative, or zero."
-  },
-  "questions": [
-    {
-      "domain": "Integer meaning",
-      "prompt": "Which value is an integer?",
-      "options": [
-        "3/4",
-        "−8",
-        "2.5",
-        "√2"
-      ],
-      "answer": 1,
-      "explanation": "−8 is a whole-number value with a sign, so it is an integer."
-    },
-    {
-      "domain": "Integer meaning",
-      "prompt": "Which value is not an integer?",
-      "options": [
-        "−12",
-        "0",
-        "19",
-        "4.6"
-      ],
-      "answer": 3,
-      "explanation": "4.6 is not a whole number, so it is not an integer."
-    },
-    {
-      "domain": "Signs in context",
-      "prompt": "A temperature of 6 degrees below zero is represented by which integer?",
-      "options": [
-        "−6",
-        "0",
-        "+6",
-        "60"
-      ],
-      "answer": 0,
-      "explanation": "Below zero indicates a negative value: −6."
-    },
-    {
-      "domain": "Signs in context",
-      "prompt": "A deposit of $45 is best represented as which account change?",
-      "options": [
-        "−45",
-        "0",
-        "+45",
-        "−4.5"
-      ],
-      "answer": 2,
-      "explanation": "A deposit increases the account, so the change is +45."
-    },
-    {
-      "domain": "Signs in context",
-      "prompt": "A withdrawal of $28 is represented by which signed change?",
-      "options": [
-        "+28",
-        "0",
-        "−28",
-        "28/100"
-      ],
-      "answer": 2,
-      "explanation": "A withdrawal decreases the account, so the change is −28."
-    },
-    {
-      "domain": "Elevation",
-      "prompt": "A hiker is 320 feet above sea level. Which integer represents the elevation?",
-      "options": [
-        "+320",
-        "−320",
-        "0",
-        "32"
-      ],
-      "answer": 0,
-      "explanation": "Above sea level is positive, so the elevation is +320 feet."
-    },
-    {
-      "domain": "Elevation",
-      "prompt": "A submarine is 75 meters below sea level. Which integer represents its position?",
-      "options": [
-        "+75",
-        "0",
-        "750",
-        "−75"
-      ],
-      "answer": 3,
-      "explanation": "Below sea level is represented by −75."
-    },
-    {
-      "domain": "Zero",
-      "prompt": "Which situation can reasonably be represented by 0?",
-      "options": [
-        "12 feet below sea level",
-        "No change in an account balance",
-        "+8 points gained",
-        "5°C below freezing"
-      ],
-      "answer": 1,
-      "explanation": "Zero can represent no change relative to the reference point."
-    },
-    {
-      "domain": "Zero",
-      "prompt": "Which statement about zero is correct?",
-      "options": [
-        "Zero is neither positive nor negative.",
-        "Zero is positive.",
-        "Zero is negative.",
-        "Zero is not an integer."
-      ],
-      "answer": 0,
-      "explanation": "Zero is an integer but is neither positive nor negative."
-    },
-    {
-      "domain": "Sports",
-      "prompt": "A football team loses 7 yards on a play. Which integer represents the change in field position?",
-      "options": [
-        "+7",
-        "0",
-        "−7",
-        "70"
-      ],
-      "answer": 2,
-      "explanation": "A loss of yards is a negative change."
-    },
-    {
-      "domain": "Sports",
-      "prompt": "A player gains 14 yards. Which signed value represents the gain?",
-      "options": [
-        "−14",
-        "+14",
-        "0",
-        "−1.4"
-      ],
-      "answer": 1,
-      "explanation": "A gain is represented by a positive value."
-    },
-    {
-      "domain": "Movement",
-      "prompt": "An elevator moves down 9 floors. Which integer best represents the change?",
-      "options": [
-        "+9",
-        "0",
-        "90",
-        "−9"
-      ],
-      "answer": 3,
-      "explanation": "Downward movement relative to the starting point is negative."
-    },
-    {
-      "domain": "Movement",
-      "prompt": "A climber moves upward 24 meters. Which signed change represents the movement?",
-      "options": [
-        "−24",
-        "0",
-        "2.4",
-        "+24"
-      ],
-      "answer": 3,
-      "explanation": "Upward movement is positive."
-    },
-    {
-      "domain": "Reasoning",
-      "prompt": "What does the negative sign in −42 most directly communicate in a real-world context?",
-      "options": [
-        "The value is always money.",
-        "A direction or condition below the chosen reference point.",
-        "The magnitude is zero.",
-        "The value is not an integer."
-      ],
-      "answer": 1,
-      "explanation": "The negative sign indicates direction relative to a defined reference point; the context tells what that direction means."
-    },
-    {
-      "domain": "Reasoning",
-      "prompt": "In the statement 'the temperature changed by −5°C,' what does 5 describe?",
-      "options": [
-        "The direction only",
-        "The reference point",
-        "The magnitude of the change",
-        "A positive temperature"
-      ],
-      "answer": 2,
-      "explanation": "The 5 gives the size, or magnitude, of the change."
-    },
-    {
-      "domain": "Translation",
-      "prompt": "Which phrase is best represented by −16?",
-      "options": [
-        "16 units below a reference point",
-        "16 units above a reference point",
-        "a gain of 16",
-        "no change"
-      ],
-      "answer": 0,
-      "explanation": "A negative integer commonly represents a position below the stated reference point."
-    },
-    {
-      "domain": "Translation",
-      "prompt": "Which phrase is best represented by +22?",
-      "options": [
-        "a decrease of 22",
-        "an increase of 22",
-        "22 below zero",
-        "no change"
-      ],
-      "answer": 1,
-      "explanation": "A positive signed value represents an increase in this context."
-    },
-    {
-      "domain": "Reasonableness",
-      "prompt": "A diver is described as 30 feet below sea level, but a student writes +30 feet. What is the error?",
-      "options": [
-        "The sign should be negative.",
-        "The magnitude should be 3.",
-        "Sea level cannot be zero.",
-        "30 is not an integer."
-      ],
-      "answer": 0,
-      "explanation": "Below sea level requires a negative sign; the magnitude 30 is correct."
-    },
-    {
-      "domain": "Reference points",
-      "prompt": "A parking garage labels street level as 0. Level −3 means what?",
-      "options": [
-        "Three levels above street level",
-        "Thirty levels below street level",
-        "The garage has no levels",
-        "Three levels below street level"
-      ],
-      "answer": 3,
-      "explanation": "With street level as zero, −3 is three levels below it."
-    },
-    {
-      "domain": "Transfer",
-      "prompt": "A business reports a net change of 0 customers from yesterday. What does 0 communicate?",
-      "options": [
-        "The business had no customers.",
-        "The final count is negative.",
-        "There was no net increase or decrease relative to yesterday.",
-        "The business gained one customer."
-      ],
-      "answer": 2,
-      "explanation": "Zero describes no net change from the stated reference value."
-    }
-  ],
-  "subtitle": "Read, represent, and interpret positive and negative whole-number values in real situations.",
-  "mastery_threshold": 80,
-  "reflection_prompt": "Choose one integer from today's lesson. Explain what its sign means, what its magnitude means, and what zero represents in the same context.",
-  "concept_study_routine": [
-    "Name the reference point: What does zero mean in this situation?",
-    "Identify direction: Is the situation above/below, gain/loss, deposit/withdrawal, forward/backward, up/down, or no change?",
-    "Separate sign from magnitude: Which part tells direction, and which part tells distance or size?",
-    "Write the integer and explain it in context.",
-    "Check reasonableness: Does the sign match the story?"
-  ]
-};
-
-/* =========================================================
-   UNIT MAP FALLBACK
-   Local backup of Unit 02 navigation and mastery metadata.
-   ========================================================= */
-window.UNIT_MAP_FALLBACK = {
-  "schema_version": "1.0",
-  "unit": {
-    "id": "KH-MATH-PA-U02",
-    "course": "KH-MATH-PA",
-    "number": 2,
-    "title": "Integers & Absolute Value",
-    "duration_weeks": 3,
-    "recommended_sessions": 15,
-    "status": "open",
-    "essential_question": "How do signed numbers describe position, direction, change, and distance—and how do their operation rules preserve meaning?",
-    "big_ideas": [
-      "An integer's sign communicates direction or position relative to a reference point.",
-      "Opposites have equal absolute value because they are equally distant from zero.",
-      "Integer operations can be justified with number lines, zero pairs, patterns, and context.",
-      "Subtraction can be understood as adding the opposite.",
-      "Coordinates and signed change connect integer reasoning to graphs, finance, science, weather, and movement."
-    ],
-    "mastery_threshold": 80,
-    "progress_key": "khaemenes-prealgebra-unit02-progress-v1",
-    "integration_model": "Learn → Explore → Work → Practice → Apply → Reflect → Demonstrate Mastery"
-  },
-  "lessons": [
-    {
-      "id": "l01",
-      "number": 1,
-      "title": "Integers in Context & on the Number Line",
-      "duration": "50–65 minutes",
-      "objectives": [
-        "Interpret positive and negative integers in real contexts.",
-        "Place integers accurately on a number line.",
-        "Identify zero as a reference point rather than a positive or negative value.",
-        "Translate words such as rise, fall, credit, debt, above, and below into signed numbers."
-      ],
-      "vocab_ids": [
-        "integer",
-        "positive-integer",
-        "negative-integer",
-        "zero",
-        "number-line",
-        "origin",
-        "signed-change"
-      ],
-      "file": "lessons/lesson-01-integers-in-context.html"
-    },
-    {
-      "id": "l02",
-      "number": 2,
-      "title": "Opposites, Absolute Value & Distance",
-      "duration": "50–65 minutes",
-      "objectives": [
-        "Identify opposites and additive inverses.",
-        "Interpret absolute value as distance from zero.",
-        "Find distance between two integer positions.",
-        "Distinguish a signed value from its magnitude."
-      ],
-      "vocab_ids": [
-        "opposites",
-        "absolute-value",
-        "distance",
-        "additive-inverse",
-        "magnitude",
-        "origin"
-      ],
-      "file": "lessons/lesson-02-opposites-absolute-value.html"
-    },
-    {
-      "id": "l03",
-      "number": 3,
-      "title": "Comparing & Ordering Integers",
-      "duration": "50–65 minutes",
-      "objectives": [
-        "Compare integers using <, >, and =.",
-        "Order sets of positive and negative integers.",
-        "Use number-line position to justify comparisons.",
-        "Interpret comparisons correctly in context."
-      ],
-      "vocab_ids": [
-        "greater-than",
-        "less-than",
-        "number-line",
-        "absolute-value",
-        "magnitude",
-        "elevation",
-        "balance"
-      ],
-      "file": "lessons/lesson-03-compare-order-integers.html"
-    },
-    {
-      "id": "l04",
-      "number": 4,
-      "title": "Adding Integers with Models & Meaning",
-      "duration": "55–70 minutes",
-      "objectives": [
-        "Add integers using number-line movement.",
-        "Use zero pairs to model sums with unlike signs.",
-        "Select and justify an efficient addition strategy.",
-        "Interpret integer sums as combined changes or positions."
-      ],
-      "vocab_ids": [
-        "sum",
-        "zero-pair",
-        "signed-change",
-        "additive-inverse",
-        "net-change"
-      ],
-      "file": "lessons/lesson-04-adding-integers.html"
-    },
-    {
-      "id": "l05",
-      "number": 5,
-      "title": "Subtracting Integers: Add the Opposite",
-      "duration": "55–70 minutes",
-      "objectives": [
-        "Rewrite subtraction as addition of the opposite.",
-        "Subtract integers accurately using models and rules.",
-        "Interpret subtraction as change or distance.",
-        "Identify and correct common sign errors."
-      ],
-      "vocab_ids": [
-        "difference",
-        "additive-inverse",
-        "opposites",
-        "signed-change",
-        "distance"
-      ],
-      "file": "lessons/lesson-05-subtracting-integers.html"
-    },
-    {
-      "id": "l06",
-      "number": 6,
-      "title": "Multiplying Integers",
-      "duration": "55–70 minutes",
-      "objectives": [
-        "Multiply integers accurately using sign rules.",
-        "Explain multiplication sign rules using patterns and repeated signed change.",
-        "Use zero, one, and negative one structurally.",
-        "Solve contextual problems involving repeated gains, losses, and rates."
-      ],
-      "vocab_ids": [
-        "product",
-        "quotient",
-        "magnitude",
-        "signed-change",
-        "net-change"
-      ],
-      "file": "lessons/lesson-06-multiply-divide-integers.html"
-    },
-    {
-      "id": "l07",
-      "number": 7,
-      "title": "Dividing Integers",
-      "duration": "55–70 minutes",
-      "objectives": [
-        "Divide integers accurately using sign rules.",
-        "Use multiplication as an inverse check for integer division.",
-        "Explain why division by zero is undefined.",
-        "Solve contextual problems involving signed rates and equal sharing."
-      ],
-      "vocab_ids": [
-        "coordinate-plane",
-        "x-axis",
-        "y-axis",
-        "quadrant",
-        "ordered-pair",
-        "origin",
-        "signed-change",
-        "distance"
-      ],
-      "file": "lessons/lesson-07-coordinate-plane-signed-change.html"
-    },
-    {
-      "id": "l08",
-      "number": 8,
-      "title": "Coordinate Plane & Multi-Step Integer Applications",
-      "duration": "60–75 minutes",
-      "objectives": [
-        "Plot and interpret ordered pairs in all four quadrants.",
-        "Describe horizontal and vertical signed change.",
-        "Evaluate multi-step expressions using all four integer operations.",
-        "Model and solve multi-stage contextual and coordinate problems."
-      ],
-      "vocab_ids": [
-        "net-change",
-        "balance",
-        "elevation",
-        "signed-change",
-        "sum",
-        "difference",
-        "product",
-        "quotient",
-        "magnitude"
-      ],
-      "file": "lessons/lesson-08-multi-step-integer-applications.html"
-    }
-  ],
-  "practice": [
-    {
-      "id": "foundation",
-      "title": "Foundation Practice",
-      "file": "practice/foundation.html",
-      "description": "Scaffolded integer models, number lines, hints, and smaller steps."
-    },
-    {
-      "id": "core",
-      "title": "Core Practice",
-      "file": "practice/core.html",
-      "description": "Complete unit-level practice across all integer skills."
-    },
-    {
-      "id": "extended",
-      "title": "Extended Practice",
-      "file": "practice/extended.html",
-      "description": "Unfamiliar contexts, counterexamples, coordinate reasoning, and multi-step challenges."
-    }
-  ],
-  "assessment": {
-    "title": "Unit 2 Mastery Check",
-    "file": "assessment/mastery-check.html",
-    "threshold": 80,
-    "questions": 24,
-    "version": "2.0",
-    "evidence_model": "domain + skill + item outcome; learner-facing result stays local",
-    "program_signal": "privacy-safe curriculum-quality summary generated locally; no transmission is implemented in this unit"
-  },
-  "project": {
-    "title": "Signed Data Investigation",
-    "file": "projects/signed-data-investigation.html"
-  },
-  "guides": [
-    {
-      "title": "Teacher Guide",
-      "file": "teacher-guide.html"
-    },
-    {
-      "title": "Family Guide",
-      "file": "family-guide.html"
-    }
-  ],
-  "integrated_learning": {
-    "status": "introduced",
-    "project": "projects/signed-data-investigation.html",
-    "principles": [
-      "Academic tools are contextual supports, not substitutes for mathematical reasoning.",
-      "Differentiated pathways support learning without labeling students.",
-      "Project evidence combines signed data, operations, coordinates, reasoning, and communication.",
-      "Student project records remain local unless deliberately exported."
-    ],
-    "tools": [
-      {
-        "id": "scholar-workbench",
-        "role": "show-your-work",
-        "status": "shared-protool-planned"
-      },
-      {
-        "id": "khaemenes-scientific-calculator",
-        "role": "calculation-verification",
-        "status": "resource-hub"
-      },
-      {
-        "id": "prose",
-        "role": "formal-writing",
-        "status": "resource-hub"
-      },
-      {
-        "id": "evidence-citation-studio",
-        "role": "source-and-evidence-record",
-        "status": "resource-hub"
-      }
-    ]
-  },
-  "entry_gateway": {
-    "file": "gateway/index.html",
-    "title": "NAIB Mathematics Gateway",
-    "position": "beginning-of-unit-02",
-    "authority": "NAIB advises; parent/guardian decides placement",
-    "diagnostic_questions": 12,
-    "routes": [
-      "Targeted Preparatory Mathematics Bridge",
-      "Pre-Algebra · Unit 02",
-      "Accelerated Pre-Algebra",
-      "Higher-Level Mathematics Readiness Check"
-    ],
-    "privacy": "Gateway record is local unless deliberately exported. Program signal excludes parent choice and family note.",
-    "routing_status": "advisory-v1; shared preparatory/acceleration destinations to be connected at course level"
-  }
-};
-
-/* =========================================================
-   VOCABULARY FALLBACK
-   Multilingual vocabulary backup used when external data is unavailable.
-   ========================================================= */
-window.VOCAB_FALLBACK = {
-  "schema_version": "1.0",
-  "unit": "KH-MATH-PA-U02",
-  "languages": {
-    "en": "English",
-    "es": "Español",
-    "fr": "Français",
-    "ar": "العربية",
-    "pt": "Português"
-  },
-  "terms": [
-    {
-      "id": "integer",
-      "en": "integer",
-      "definition": "A whole number, its opposite, or zero.",
-      "es": "entero",
-      "fr": "entier relatif",
-      "ar": "عدد صحيح",
-      "pt": "número inteiro"
-    },
-    {
-      "id": "positive-integer",
-      "en": "positive integer",
-      "definition": "An integer greater than zero.",
-      "es": "entero positivo",
-      "fr": "entier positif",
-      "ar": "عدد صحيح موجب",
-      "pt": "número inteiro positivo"
-    },
-    {
-      "id": "negative-integer",
-      "en": "negative integer",
-      "definition": "An integer less than zero.",
-      "es": "entero negativo",
-      "fr": "entier négatif",
-      "ar": "عدد صحيح سالب",
-      "pt": "número inteiro negativo"
-    },
-    {
-      "id": "zero",
-      "en": "zero",
-      "definition": "The integer that is neither positive nor negative and marks the origin on a number line.",
-      "es": "cero",
-      "fr": "zéro",
-      "ar": "صفر",
-      "pt": "zero"
-    },
-    {
-      "id": "opposites",
-      "en": "opposites",
-      "definition": "Two numbers the same distance from zero on opposite sides.",
-      "es": "opuestos",
-      "fr": "opposés",
-      "ar": "عددان متعاكسان",
-      "pt": "opostos"
-    },
-    {
-      "id": "absolute-value",
-      "en": "absolute value",
-      "definition": "A number's nonnegative distance from zero.",
-      "es": "valor absoluto",
-      "fr": "valeur absolue",
-      "ar": "القيمة المطلقة",
-      "pt": "valor absoluto"
-    },
-    {
-      "id": "number-line",
-      "en": "number line",
-      "definition": "A line on which numbers are placed in order at equal intervals.",
-      "es": "recta numérica",
-      "fr": "droite numérique",
-      "ar": "خط الأعداد",
-      "pt": "reta numérica"
-    },
-    {
-      "id": "origin",
-      "en": "origin",
-      "definition": "The zero point on a number line or the point (0,0) on a coordinate plane.",
-      "es": "origen",
-      "fr": "origine",
-      "ar": "نقطة الأصل",
-      "pt": "origem"
-    },
-    {
-      "id": "greater-than",
-      "en": "greater than",
-      "definition": "A comparison showing one value lies to the right of another on a number line.",
-      "es": "mayor que",
-      "fr": "supérieur à",
-      "ar": "أكبر من",
-      "pt": "maior que"
-    },
-    {
-      "id": "less-than",
-      "en": "less than",
-      "definition": "A comparison showing one value lies to the left of another on a number line.",
-      "es": "menor que",
-      "fr": "inférieur à",
-      "ar": "أقل من",
-      "pt": "menor que"
-    },
-    {
-      "id": "distance",
-      "en": "distance",
-      "definition": "The nonnegative amount of separation between two positions.",
-      "es": "distancia",
-      "fr": "distance",
-      "ar": "مسافة",
-      "pt": "distância"
-    },
-    {
-      "id": "additive-inverse",
-      "en": "additive inverse",
-      "definition": "A number that combines with another number to make zero.",
-      "es": "inverso aditivo",
-      "fr": "inverse additif",
-      "ar": "المعكوس الجمعي",
-      "pt": "inverso aditivo"
-    },
-    {
-      "id": "zero-pair",
-      "en": "zero pair",
-      "definition": "One positive and one negative unit that combine to make zero.",
-      "es": "par cero",
-      "fr": "paire nulle",
-      "ar": "زوج صفري",
-      "pt": "par zero"
-    },
-    {
-      "id": "sum",
-      "en": "sum",
-      "definition": "The result of addition.",
-      "es": "suma",
-      "fr": "somme",
-      "ar": "مجموع",
-      "pt": "soma"
-    },
-    {
-      "id": "difference",
-      "en": "difference",
-      "definition": "The result of subtraction.",
-      "es": "diferencia",
-      "fr": "différence",
-      "ar": "فرق",
-      "pt": "diferença"
-    },
-    {
-      "id": "product",
-      "en": "product",
-      "definition": "The result of multiplication.",
-      "es": "producto",
-      "fr": "produit",
-      "ar": "حاصل ضرب",
-      "pt": "produto"
-    },
-    {
-      "id": "quotient",
-      "en": "quotient",
-      "definition": "The result of division.",
-      "es": "cociente",
-      "fr": "quotient",
-      "ar": "ناتج القسمة",
-      "pt": "quociente"
-    },
-    {
-      "id": "signed-change",
-      "en": "signed change",
-      "definition": "A change written with a positive or negative sign to show direction.",
-      "es": "cambio con signo",
-      "fr": "variation signée",
-      "ar": "تغير بإشارة",
-      "pt": "variação com sinal"
-    },
-    {
-      "id": "coordinate-plane",
-      "en": "coordinate plane",
-      "definition": "A plane formed by a horizontal x-axis and vertical y-axis.",
-      "es": "plano cartesiano",
-      "fr": "plan repéré",
-      "ar": "المستوى الإحداثي",
-      "pt": "plano cartesiano"
-    },
-    {
-      "id": "x-axis",
-      "en": "x-axis",
-      "definition": "The horizontal axis on a coordinate plane.",
-      "es": "eje x",
-      "fr": "axe des x",
-      "ar": "المحور السيني",
-      "pt": "eixo x"
-    },
-    {
-      "id": "y-axis",
-      "en": "y-axis",
-      "definition": "The vertical axis on a coordinate plane.",
-      "es": "eje y",
-      "fr": "axe des y",
-      "ar": "المحور الصادي",
-      "pt": "eixo y"
-    },
-    {
-      "id": "quadrant",
-      "en": "quadrant",
-      "definition": "One of four regions formed by the coordinate axes.",
-      "es": "cuadrante",
-      "fr": "quadrant",
-      "ar": "ربع",
-      "pt": "quadrante"
-    },
-    {
-      "id": "ordered-pair",
-      "en": "ordered pair",
-      "definition": "Two coordinates written (x,y) that locate a point.",
-      "es": "par ordenado",
-      "fr": "couple ordonné",
-      "ar": "زوج مرتب",
-      "pt": "par ordenado"
-    },
-    {
-      "id": "elevation",
-      "en": "elevation",
-      "definition": "Height relative to a chosen reference level, often sea level.",
-      "es": "elevación",
-      "fr": "altitude",
-      "ar": "ارتفاع",
-      "pt": "elevação"
-    },
-    {
-      "id": "balance",
-      "en": "balance",
-      "definition": "An amount relative to zero, such as money available or owed.",
-      "es": "saldo",
-      "fr": "solde",
-      "ar": "رصيد",
-      "pt": "saldo"
-    },
-    {
-      "id": "net-change",
-      "en": "net change",
-      "definition": "Final value minus initial value; the overall signed change.",
-      "es": "cambio neto",
-      "fr": "variation nette",
-      "ar": "التغير الصافي",
-      "pt": "variação líquida"
-    },
-    {
-      "id": "magnitude",
-      "en": "magnitude",
-      "definition": "The size of a quantity without regard to direction; for an integer, its absolute value.",
-      "es": "magnitud",
-      "fr": "grandeur",
-      "ar": "مقدار",
-      "pt": "magnitude"
-    },
-    {
-      "id": "opposite",
-      "en": "opposite",
-      "definition": "A number the same distance from zero as another number but on the other side of zero.",
-      "es": "opuesto",
-      "fr": "opposé",
-      "ar": "المعاكس",
-      "pt": "oposto"
-    }
-  ]
-};
-</script>
 <!-- =========================================================
-     SHARED LESSON ENGINE
+     10 · VOCABULARY BRIDGE
+     ========================================================= -->
+<section><div class="wrap"><div class="section-head"><p class="eyebrow">Vocabulary bridge</p><h2>Connect mathematical language across languages.</h2></div><article class="card lesson-main"><div class="vocab-controls field"><label for="vocabLanguage">Bridge language</label><select id="vocabLanguage"></select></div><table class="vocab-table"><thead><tr><th>English</th><th id="languageHeading">Translation</th><th>Meaning</th></tr></thead><tbody id="vocabBody"></tbody></table></article></div></section>
+
+<!-- =========================================================
+     11 · GLOBAL APPLICATION
+     ========================================================= -->
+<section><div class="wrap"><div class="section-head"><p class="eyebrow">Global application</p><h2>Use the mathematics in a real setting.</h2></div><p class="notice" id="application"></p></div></section>
+
+<!-- =========================================================
+     12 · LESSON PRACTICE
+     Generated from LESSON_DATA.questions
+     ========================================================= -->
+<section id="practice"><div class="wrap"><div class="section-head"><p class="eyebrow">Lesson practice</p><h2>Check understanding and study the explanations.</h2></div><form class="question-list" id="questionList"></form><div class="actions"><button class="btn primary" id="submitPractice" type="button">Submit Assignment</button><button class="btn" id="resetPractice" type="button">Reset Practice</button></div><p class="notice" id="scoreMessage" aria-live="polite">No practice score yet.</p></div></section>
+
+<!-- =========================================================
+     13 · REFLECTION + LESSON NAVIGATION
+     ========================================================= -->
+<section><div class="wrap"><div class="section-head"><p class="eyebrow">Reflection</p><h2>Explain what changed in your thinking.</h2></div><article class="card lesson-main"><div class="field"><label for="reflection">What idea, strategy, or error will you remember?</label><textarea id="reflection"></textarea></div><div class="actions"><button class="btn primary" id="saveReflection" type="button">Save Reflection</button></div><p id="reflectionMessage" aria-live="polite"></p><nav class="lesson-nav"><a class="btn" id="previousLesson" href="#">← Previous</a><a class="btn primary" id="nextLesson" href="#">Next →</a></nav></article></div></section></main><footer class="footer"><div class="wrap footer-inner"><span>KH-MATH-PA-U02-L2</span><span>Local progress · 80% mastery · Multilingual vocabulary · Printable · Math Break</span></div></footer>
+<!-- =========================================================
+     14 · DATA PAYLOADS
+     LESSON_DATA powers objectives, warmup, concepts, examples,
+     pathways, application, questions, mastery, and reflection.
+     ========================================================= -->
+<script>window.LESSON_DATA={"id":"l02","number":2,"title":"Opposites & Absolute Value","objectives":["Identify the opposite of any integer.","Explain opposites as numbers the same distance from zero on opposite sides.","Evaluate absolute-value expressions.","Distinguish a number's sign from its absolute value.","Interpret absolute value as distance in real-world situations."],"vocab_ids":["opposite","absolute-value","integer","zero","positive-integer","negative-integer"],"warmup":{"prompt":"What is the opposite of −7?","answer":"+7","explanation":"−7 and +7 are the same distance from zero but lie on opposite sides."},"concepts":[{"title":"Opposites are mirror positions","body":"Opposite integers are not chosen by size alone. They are mirror positions across zero: the same distance from zero, but on different sides of the number line. The opposite of −9 is +9 because both are 9 units from zero. The opposite of +9 is −9 for the same reason."},{"title":"Absolute value is distance, not direction","body":"Absolute value bars ask, “How far is this value from zero?” Distance is measured without direction, so it is never negative. That is why |−12| = 12 and |12| = 12. A negative sign outside the bars is different: −|12| means the opposite of the distance 12, which is −12."},{"title":"Zero is the anchor point","body":"Zero is the origin on the number line. It is neither positive nor negative, and it is the only integer that is its own opposite. Since zero is 0 units away from zero, |0| = 0. In real contexts, zero is the reference point: sea level, a $0 balance, the lobby floor, or no change."},{"title":"Separate sign from magnitude","body":"The sign tells which side of zero or which direction a value points. The magnitude tells how large the distance is. For −15, the sign is negative and the magnitude is 15. Absolute value keeps the magnitude and removes the direction; opposites keep the magnitude but reverse the direction."}],"examples":[{"title":"Opposite integer","problem":"Find the opposite of −18.","steps":["Locate −18 relative to zero.","Move the same distance to the other side of zero.","The corresponding integer is +18."],"answer":"+18"},{"title":"Absolute value","problem":"Evaluate |−23|.","steps":["Absolute value asks for distance from zero.","−23 is 23 units from zero.","Distance is nonnegative."],"answer":"23"},{"title":"Context","problem":"Two divers are at −14 m and +14 m relative to a reference level. What relationship do their positions have?","steps":["Their magnitudes are both 14.","Their signs are different.","They are opposites relative to the reference point."],"answer":"They are opposite positions, each 14 units from zero."}],"pathways":{"Foundation":"Fold or mirror a number line at zero to match opposite pairs. Use the phrase distance from zero every time you see absolute-value bars.","Core":"Use opposites, absolute value, and |a−b| to solve comparisons and distances.","Extended":"Explain why |a−b|=|b−a| and explore sets of points a fixed distance from a center other than zero."},"application":{"title":"Opposite-position model","body":"Choose four real contexts with a meaningful zero—temperature, elevation, money, movement, or scoring. Create an integer and its opposite for each. Explain what both values mean and why their absolute values are equal."},"questions":[{"domain":"Opposites","prompt":"What is the opposite of +6?","options":["+6","−6","0","12"],"answer":1,"explanation":"The opposite lies the same distance from zero on the other side, so the opposite of +6 is −6."},{"domain":"Opposites","prompt":"What is the opposite of −13?","options":["−13","0","26","+13"],"answer":3,"explanation":"The opposite of −13 is +13."},{"domain":"Opposites","prompt":"What is the opposite of 0?","options":["0","−1","+1","Undefined"],"answer":0,"explanation":"Zero is its own opposite."},{"domain":"Absolute value","prompt":"Evaluate |−9|.","options":["−9","0","9","18"],"answer":2,"explanation":"−9 is 9 units from zero, so |−9|=9."},{"domain":"Absolute value","prompt":"Evaluate |17|.","options":["−17","0","17","34"],"answer":2,"explanation":"17 is 17 units from zero."},{"domain":"Absolute value","prompt":"Evaluate |0|.","options":["0","−1","1","Undefined"],"answer":0,"explanation":"Zero is zero units from zero."},{"domain":"Structure","prompt":"Which pair contains opposite integers?","options":["−4 and −4","4 and 8","0 and 4","−4 and 4"],"answer":3,"explanation":"−4 and +4 have equal magnitude and opposite signs."},{"domain":"Structure","prompt":"Which pair has the same absolute value?","options":["−11 and 10","−11 and 11","5 and 6","−3 and 0"],"answer":1,"explanation":"Both −11 and +11 are 11 units from zero."},{"domain":"Structure","prompt":"Which statement is true?","options":["Absolute value measures distance from zero.","Absolute value can be negative.","Opposites always have different absolute values.","Every number has absolute value 0."],"answer":0,"explanation":"Absolute value represents distance from zero."},{"domain":"Comparison","prompt":"Which number is farther from zero?","options":["+9","They are equally far.","−14","Cannot tell"],"answer":2,"explanation":"|−14|=14 and |9|=9, so −14 is farther from zero."},{"domain":"Comparison","prompt":"Which two integers are equally far from zero?","options":["−7 and +6","−7 and +7","0 and +7","−8 and +7"],"answer":1,"explanation":"Opposite integers have equal absolute values."},{"domain":"Notation","prompt":"Which expression has value 12?","options":["−|12|","|−6|","|0|","|−12|"],"answer":3,"explanation":"|−12|=12."},{"domain":"Notation","prompt":"What is the value of −|8|?","options":["0","8","16","−8"],"answer":3,"explanation":"First |8|=8; the negative sign outside makes the value −8."},{"domain":"Reasoning","prompt":"A student says |−20|=−20 because the number inside is negative. What is the best correction?","options":["Negative numbers have no absolute value.","Absolute value gives distance, so |−20|=20.","Absolute value changes 20 to 0.","The student is correct."],"answer":1,"explanation":"Distance from zero is nonnegative, so |−20|=20."},{"domain":"Context","prompt":"A temperature is −5°C relative to zero. How far is it from 0°C?","options":["−5°C","0°C","5°C","10°C"],"answer":2,"explanation":"Distance from zero is |−5|=5."},{"domain":"Context","prompt":"An account is $32 below a $0 reference balance. What is the magnitude of its position relative to zero?","options":["32","−32","0","64"],"answer":0,"explanation":"Magnitude is the absolute value: |−32|=32."},{"domain":"Context","prompt":"Two elevators are at floors −4 and +4 relative to the lobby. Which statement is true?","options":["They are on the same floor.","They are opposites and equally far from the lobby.","Floor −4 is farther from the lobby.","Floor +4 has absolute value −4."],"answer":1,"explanation":"The positions are opposites and both have absolute value 4."},{"domain":"Transfer","prompt":"If |x|=9 and x is an integer, which values could x be?","options":["−9 or +9","9 only","−9 only","0 or 9"],"answer":0,"explanation":"Both −9 and +9 are 9 units from zero."},{"domain":"Transfer","prompt":"If an integer and its opposite are equal, what must the integer be?","options":["−1","1","Any integer","0"],"answer":3,"explanation":"Only zero is equal to its own opposite."},{"domain":"Reasoning","prompt":"Which statement best distinguishes −12 from |−12|?","options":["They are identical values.","Absolute value makes −12 more negative.","−12 gives a signed position; |−12| gives its distance from zero.","|−12| is not an integer."],"answer":2,"explanation":"−12 includes direction relative to zero, while |−12|=12 describes magnitude."}],"subtitle":"Use opposites, absolute value, and distance from zero to reason about signed numbers.","mastery_threshold":80,"reflection_prompt":"Explain the difference between the opposite of a number and the absolute value of a number. Use −8 as your example.","concept_study_guide":[{"heading":"1 · Locate zero first","body":"Before naming an opposite or absolute value, identify zero as the reference point. Zero is the mirror line for opposites and the starting point for distance."},{"heading":"2 · Ask two different questions","body":"Opposite asks: “What number is the same distance away on the other side?” Absolute value asks: “How far is this number from zero?” These questions are related but not the same."},{"heading":"3 · Watch the notation carefully","body":"|−8| equals 8 because the bars ask for distance. −|8| equals −8 because the negative sign is outside the bars. Read the symbols before calculating."},{"heading":"4 · Translate context last","body":"After you understand the number-line structure, return to the situation. A value of −12 could mean 12 feet below sea level, $12 owed, or 12 units backward depending on the reference point."}],"math_break":{"title":"Opposite Mirror","href":"../../../learning-games/unit-02-02-opposite-mirror/index.html","description":"Use a mirrored number line to match opposites, interpret absolute value, and separate direction from distance before returning to practice."}};window.UNIT_MAP_FALLBACK={"schema_version": "1.0", "unit": {"id": "KH-MATH-PA-U02", "course": "KH-MATH-PA", "number": 2, "title": "Integers & Absolute Value", "duration_weeks": 3, "recommended_sessions": 15, "status": "open", "essential_question": "How do signed numbers describe position, direction, change, and distance—and how do their operation rules preserve meaning?", "big_ideas": ["An integer's sign communicates direction or position relative to a reference point.", "Opposites have equal absolute value because they are equally distant from zero.", "Integer operations can be justified with number lines, zero pairs, patterns, and context.", "Subtraction can be understood as adding the opposite.", "Coordinates and signed change connect integer reasoning to graphs, finance, science, weather, and movement."], "mastery_threshold": 80, "progress_key": "khaemenes-prealgebra-unit02-progress-v1", "integration_model": "Learn → Explore → Work → Practice → Apply → Reflect → Demonstrate Mastery"}, "lessons": [{"id": "l01", "number": 1, "title": "Integers in Context & on the Number Line", "duration": "50–65 minutes", "objectives": ["Interpret positive and negative integers in real contexts.", "Place integers accurately on a number line.", "Identify zero as a reference point rather than a positive or negative value.", "Translate words such as rise, fall, credit, debt, above, and below into signed numbers."], "vocab_ids": ["integer", "positive-integer", "negative-integer", "zero", "number-line", "origin", "signed-change"], "file": "lessons/lesson-01-integers-in-context.html"}, {"id": "l02", "number": 2, "title": "Opposites, Absolute Value & Distance", "duration": "50–65 minutes", "objectives": ["Identify opposites and additive inverses.", "Interpret absolute value as distance from zero.", "Find distance between two integer positions.", "Distinguish a signed value from its magnitude."], "vocab_ids": ["opposites", "absolute-value", "distance", "additive-inverse", "magnitude", "origin"], "file": "lessons/lesson-02-opposites-absolute-value.html"}, {"id": "l03", "number": 3, "title": "Comparing & Ordering Integers", "duration": "50–65 minutes", "objectives": ["Compare integers using <, >, and =.", "Order sets of positive and negative integers.", "Use number-line position to justify comparisons.", "Interpret comparisons correctly in context."], "vocab_ids": ["greater-than", "less-than", "number-line", "absolute-value", "magnitude", "elevation", "balance"], "file": "lessons/lesson-03-compare-order-integers.html"}, {"id": "l04", "number": 4, "title": "Adding Integers with Models & Meaning", "duration": "55–70 minutes", "objectives": ["Add integers using number-line movement.", "Use zero pairs to model sums with unlike signs.", "Select and justify an efficient addition strategy.", "Interpret integer sums as combined changes or positions."], "vocab_ids": ["sum", "zero-pair", "signed-change", "additive-inverse", "net-change"], "file": "lessons/lesson-04-adding-integers.html"}, {"id": "l05", "number": 5, "title": "Subtracting Integers: Add the Opposite", "duration": "55–70 minutes", "objectives": ["Rewrite subtraction as addition of the opposite.", "Subtract integers accurately using models and rules.", "Interpret subtraction as change or distance.", "Identify and correct common sign errors."], "vocab_ids": ["difference", "additive-inverse", "opposites", "signed-change", "distance"], "file": "lessons/lesson-05-subtracting-integers.html"}, {"id": "l06", "number": 6, "title": "Multiplying Integers", "duration": "55–70 minutes", "objectives": ["Multiply integers accurately using sign rules.", "Explain multiplication sign rules using patterns and repeated signed change.", "Use zero, one, and negative one structurally.", "Solve contextual problems involving repeated gains, losses, and rates."], "vocab_ids": ["product", "quotient", "magnitude", "signed-change", "net-change"], "file": "lessons/lesson-06-multiply-divide-integers.html"}, {"id": "l07", "number": 7, "title": "Dividing Integers", "duration": "55–70 minutes", "objectives": ["Divide integers accurately using sign rules.", "Use multiplication as an inverse check for integer division.", "Explain why division by zero is undefined.", "Solve contextual problems involving signed rates and equal sharing."], "vocab_ids": ["coordinate-plane", "x-axis", "y-axis", "quadrant", "ordered-pair", "origin", "signed-change", "distance"], "file": "lessons/lesson-07-coordinate-plane-signed-change.html"}, {"id": "l08", "number": 8, "title": "Coordinate Plane & Multi-Step Integer Applications", "duration": "60–75 minutes", "objectives": ["Plot and interpret ordered pairs in all four quadrants.", "Describe horizontal and vertical signed change.", "Evaluate multi-step expressions using all four integer operations.", "Model and solve multi-stage contextual and coordinate problems."], "vocab_ids": ["net-change", "balance", "elevation", "signed-change", "sum", "difference", "product", "quotient", "magnitude"], "file": "lessons/lesson-08-multi-step-integer-applications.html"}], "practice": [{"id": "foundation", "title": "Foundation Practice", "file": "practice/foundation.html", "description": "Scaffolded integer models, number lines, hints, and smaller steps."}, {"id": "core", "title": "Core Practice", "file": "practice/core.html", "description": "Complete unit-level practice across all integer skills."}, {"id": "extended", "title": "Extended Practice", "file": "practice/extended.html", "description": "Unfamiliar contexts, counterexamples, coordinate reasoning, and multi-step challenges."}], "assessment": {"title": "Unit 2 Mastery Check", "file": "assessment/mastery-check.html", "threshold": 80, "questions": 24, "version": "2.0", "evidence_model": "domain + skill + item outcome; learner-facing result stays local", "program_signal": "privacy-safe curriculum-quality summary generated locally; no transmission is implemented in this unit"}, "project": {"title": "Signed Data Investigation", "file": "projects/signed-data-investigation.html"}, "guides": [{"title": "Teacher Guide", "file": "teacher-guide.html"}, {"title": "Family Guide", "file": "family-guide.html"}], "integrated_learning": {"status": "introduced", "project": "projects/signed-data-investigation.html", "principles": ["Academic tools are contextual supports, not substitutes for mathematical reasoning.", "Differentiated pathways support learning without labeling students.", "Project evidence combines signed data, operations, coordinates, reasoning, and communication.", "Student project records remain local unless deliberately exported."], "tools": [{"id": "scholar-workbench", "role": "show-your-work", "status": "shared-protool-planned"}, {"id": "khaemenes-scientific-calculator", "role": "calculation-verification", "status": "resource-hub"}, {"id": "prose", "role": "formal-writing", "status": "resource-hub"}, {"id": "evidence-citation-studio", "role": "source-and-evidence-record", "status": "resource-hub"}]}, "entry_gateway": {"file": "gateway/index.html", "title": "NAIB Mathematics Gateway", "position": "beginning-of-unit-02", "authority": "NAIB advises; parent/guardian decides placement", "diagnostic_questions": 12, "routes": ["Targeted Preparatory Mathematics Bridge", "Pre-Algebra · Unit 02", "Accelerated Pre-Algebra", "Higher-Level Mathematics Readiness Check"], "privacy": "Gateway record is local unless deliberately exported. Program signal excludes parent choice and family note.", "routing_status": "advisory-v1; shared preparatory/acceleration destinations to be connected at course level"}};window.VOCAB_FALLBACK={"schema_version": "1.0", "unit": "KH-MATH-PA-U02", "languages": {"en": "English", "es": "Español", "fr": "Français", "ar": "العربية", "pt": "Português"}, "terms": [{"id": "integer", "en": "integer", "definition": "A whole number, its opposite, or zero.", "es": "entero", "fr": "entier relatif", "ar": "عدد صحيح", "pt": "número inteiro"}, {"id": "positive-integer", "en": "positive integer", "definition": "An integer greater than zero.", "es": "entero positivo", "fr": "entier positif", "ar": "عدد صحيح موجب", "pt": "número inteiro positivo"}, {"id": "negative-integer", "en": "negative integer", "definition": "An integer less than zero.", "es": "entero negativo", "fr": "entier négatif", "ar": "عدد صحيح سالب", "pt": "número inteiro negativo"}, {"id": "zero", "en": "zero", "definition": "The integer that is neither positive nor negative and marks the origin on a number line.", "es": "cero", "fr": "zéro", "ar": "صفر", "pt": "zero"}, {"id": "opposites", "en": "opposites", "definition": "Two numbers the same distance from zero on opposite sides.", "es": "opuestos", "fr": "opposés", "ar": "عددان متعاكسان", "pt": "opostos"}, {"id": "absolute-value", "en": "absolute value", "definition": "A number's nonnegative distance from zero.", "es": "valor absoluto", "fr": "valeur absolue", "ar": "القيمة المطلقة", "pt": "valor absoluto"}, {"id": "number-line", "en": "number line", "definition": "A line on which numbers are placed in order at equal intervals.", "es": "recta numérica", "fr": "droite numérique", "ar": "خط الأعداد", "pt": "reta numérica"}, {"id": "origin", "en": "origin", "definition": "The zero point on a number line or the point (0,0) on a coordinate plane.", "es": "origen", "fr": "origine", "ar": "نقطة الأصل", "pt": "origem"}, {"id": "greater-than", "en": "greater than", "definition": "A comparison showing one value lies to the right of another on a number line.", "es": "mayor que", "fr": "supérieur à", "ar": "أكبر من", "pt": "maior que"}, {"id": "less-than", "en": "less than", "definition": "A comparison showing one value lies to the left of another on a number line.", "es": "menor que", "fr": "inférieur à", "ar": "أقل من", "pt": "menor que"}, {"id": "distance", "en": "distance", "definition": "The nonnegative amount of separation between two positions.", "es": "distancia", "fr": "distance", "ar": "مسافة", "pt": "distância"}, {"id": "additive-inverse", "en": "additive inverse", "definition": "A number that combines with another number to make zero.", "es": "inverso aditivo", "fr": "inverse additif", "ar": "المعكوس الجمعي", "pt": "inverso aditivo"}, {"id": "zero-pair", "en": "zero pair", "definition": "One positive and one negative unit that combine to make zero.", "es": "par cero", "fr": "paire nulle", "ar": "زوج صفري", "pt": "par zero"}, {"id": "sum", "en": "sum", "definition": "The result of addition.", "es": "suma", "fr": "somme", "ar": "مجموع", "pt": "soma"}, {"id": "difference", "en": "difference", "definition": "The result of subtraction.", "es": "diferencia", "fr": "différence", "ar": "فرق", "pt": "diferença"}, {"id": "product", "en": "product", "definition": "The result of multiplication.", "es": "producto", "fr": "produit", "ar": "حاصل ضرب", "pt": "produto"}, {"id": "quotient", "en": "quotient", "definition": "The result of division.", "es": "cociente", "fr": "quotient", "ar": "ناتج القسمة", "pt": "quociente"}, {"id": "signed-change", "en": "signed change", "definition": "A change written with a positive or negative sign to show direction.", "es": "cambio con signo", "fr": "variation signée", "ar": "تغير بإشارة", "pt": "variação com sinal"}, {"id": "coordinate-plane", "en": "coordinate plane", "definition": "A plane formed by a horizontal x-axis and vertical y-axis.", "es": "plano cartesiano", "fr": "plan repéré", "ar": "المستوى الإحداثي", "pt": "plano cartesiano"}, {"id": "x-axis", "en": "x-axis", "definition": "The horizontal axis on a coordinate plane.", "es": "eje x", "fr": "axe des x", "ar": "المحور السيني", "pt": "eixo x"}, {"id": "y-axis", "en": "y-axis", "definition": "The vertical axis on a coordinate plane.", "es": "eje y", "fr": "axe des y", "ar": "المحور الصادي", "pt": "eixo y"}, {"id": "quadrant", "en": "quadrant", "definition": "One of four regions formed by the coordinate axes.", "es": "cuadrante", "fr": "quadrant", "ar": "ربع", "pt": "quadrante"}, {"id": "ordered-pair", "en": "ordered pair", "definition": "Two coordinates written (x,y) that locate a point.", "es": "par ordenado", "fr": "couple ordonné", "ar": "زوج مرتب", "pt": "par ordenado"}, {"id": "elevation", "en": "elevation", "definition": "Height relative to a chosen reference level, often sea level.", "es": "elevación", "fr": "altitude", "ar": "ارتفاع", "pt": "elevação"}, {"id": "balance", "en": "balance", "definition": "An amount relative to zero, such as money available or owed.", "es": "saldo", "fr": "solde", "ar": "رصيد", "pt": "saldo"}, {"id": "net-change", "en": "net change", "definition": "Final value minus initial value; the overall signed change.", "es": "cambio neto", "fr": "variation nette", "ar": "التغير الصافي", "pt": "variação líquida"}, {"id": "magnitude", "en": "magnitude", "definition": "The size of a quantity without regard to direction; for an integer, its absolute value.", "es": "magnitud", "fr": "grandeur", "ar": "مقدار", "pt": "magnitude"}, {"id": "opposite", "en": "opposite", "definition": "A number the same distance from zero as another number but on the other side of zero.", "es": "opuesto", "fr": "opposé", "ar": "المعاكس", "pt": "oposto"}]};</script>
+
+<!-- =========================================================
+     15 · SHARED LESSON ENGINE
+     Do not edit unless changing course-wide rendering logic.
      ========================================================= -->
 <script src="../assets/lesson-engine.js"></script></body></html>
