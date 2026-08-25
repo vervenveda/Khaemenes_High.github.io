@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "lesson_id": "KH-ELA-ENG9-U01-L01",
+  "lesson_id": "KH-ELA-ENG9-U01-L02",
   "unit": 1,
-  "lesson": 1,
+  "lesson": 2,
   "title": "Context Clues — Comprehension & Reading Strategies",
   "provider": "youtube",
   "video_id": "CyK01USxdg0",
