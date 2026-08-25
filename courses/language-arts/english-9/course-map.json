@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "course": {
+    "id": "KH-ELA-ENG9",
+    "code": "ENG9",
+    "title": "English 9 — Global Language Arts",
+    "grade_band": "9",
+    "duration_weeks": 36,
+    "pathways": ["independent", "family-supported", "educator-led"],
+    "delivery": ["web", "print", "local-first", "offline-capable", "translation-ready"],
+    "mapping_status": "units-01-02-complete-units-03-12-mapped",
+    "mentor": {"role": "english-instruction", "public_name": "Eiren", "mode": "transparent-local-guidance", "path": "mentor.html", "authority": {"awards_mastery": false, "changes_grades": false, "changes_placement": false}},
+    "beta": {"status": "public-beta", "path": "beta.html"},
+    "learning_lab": {"path": "learning-lab.html", "evidence_policy": "adult-reviewed"},
+    "language_access": {
+      "model": "additive-multilingual",
+      "course_language": "English",
+      "interface_translation": "planned",
+      "instruction_translation": "planned-after-source-lock",
+      "learner_support": ["home-language directions", "bilingual glossary", "parallel vocabulary", "read-aloud compatibility", "right-to-left layout", "translanguaging notes", "English mastery evidence"],
+      "policy": "Language support may clarify access without lowering the assessed English 9 learning target."
+    }
+  },
+  "mastery_scale": {
+    "Beginning": "0-59",
+    "Developing": "60-79",
+    "Proficient": "80-89",
+    "Mastered": "90-100"
+  },
+  "units": [
+    {"id":"KH-ELA-ENG9-U01","number":1,"weeks":[1,2,3],"title":"Foundations of Scholarly Reading & Writing","status":"complete","path":"units/unit-01/","big_idea":"Careful readers turn observations into defensible ideas.","framework_tags":["reading","writing","language","integrity"]},
+    {"id":"KH-ELA-ENG9-U02","number":2,"weeks":[4,5,6],"title":"Myth, Epic & Archetype","status":"complete","path":"units/unit-02/","big_idea":"Cultures use stories to explore duty, identity, power, and the unknown.","framework_tags":["literature","culture","comparison","translation-ethics","source-integrity"]},
+    {"id":"KH-ELA-ENG9-U03","number":3,"weeks":[7,8,9],"title":"Short Fiction & Narrative Craft","status":"mapped","path":"units/unit-03/","big_idea":"Writers shape experience through character, structure, perspective, and detail.","framework_tags":["fiction","craft","revision"]},
+    {"id":"KH-ELA-ENG9-U04","number":4,"weeks":[10,11,12],"title":"Poetry, Voice & Form","status":"mapped","path":"units/unit-04/","big_idea":"Compressed language carries sound, image, argument, memory, and emotion.","framework_tags":["poetry","voice","performance"]},
+    {"id":"KH-ELA-ENG9-U05","number":5,"weeks":[13,14,15],"title":"Drama, Choice & Consequence","status":"mapped","path":"units/unit-05/","big_idea":"Drama places competing duties, values, and consequences into public view.","framework_tags":["drama","performance","analysis"]},
+    {"id":"KH-ELA-ENG9-U06","number":6,"weeks":[16,17,18],"title":"Rhetoric & Public Voice","status":"mapped","path":"units/unit-06/","big_idea":"Speakers move audiences through language, evidence, structure, and delivery.","framework_tags":["rhetoric","speech","evidence"]},
+    {"id":"KH-ELA-ENG9-U07","number":7,"weeks":[19,20,21],"title":"Research, Evidence & Media Literacy","status":"mapped","path":"units/unit-07/","big_idea":"Researchers test and ethically communicate reliable information.","framework_tags":["research","media-literacy","citation"]},
+    {"id":"KH-ELA-ENG9-U08","number":8,"weeks":[22,23,24],"title":"Informational & Technical Communication","status":"mapped","path":"units/unit-08/","big_idea":"Writers make complex processes accurate, usable, and clear.","framework_tags":["informational","technical","accessibility"]},
+    {"id":"KH-ELA-ENG9-U09","number":9,"weeks":[25,26,27],"title":"The Novel & Sustained Inquiry","status":"mapped","path":"units/unit-09/","big_idea":"Sustained reading reveals patterns, change, and developed meaning.","framework_tags":["novel","inquiry","analysis"]},
+    {"id":"KH-ELA-ENG9-U10","number":10,"weeks":[28,29,30],"title":"Argument, Debate & Civic Reasoning","status":"mapped","path":"units/unit-10/","big_idea":"Ethical arguments address evidence, reasoning, audience, counterclaims, and serious opposition.","framework_tags":["argument","debate","civic-reasoning"]},
+    {"id":"KH-ELA-ENG9-U11","number":11,"weeks":[31,32,33],"title":"Creative Media & Publication","status":"mapped","path":"units/unit-11/","big_idea":"Words, images, sound, layout, and sequence work together for a real audience.","framework_tags":["publication","media","editorial-design"]},
+    {"id":"KH-ELA-ENG9-U12","number":12,"weeks":[34,35,36],"title":"Portfolio, Exhibition & Reflection","status":"mapped","path":"units/unit-12/","big_idea":"Curated evidence and reflection make growth visible.","framework_tags":["portfolio","presentation","reflection"]}
+  ]
+}

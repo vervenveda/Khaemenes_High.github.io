@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Transparent, learner-safe English 9 guidance from Eiren, the Khaemenes language arts mentor.">
+<meta name="theme-color" content="#f2efe8">
+<title>Eiren · English 9 Mentor</title>
+<link rel="stylesheet" href="assets/course.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html"><span class="brand-mark">KA</span><span class="brand-copy"><strong>Khaemenes Academy</strong><small>English 9 · Mentor</small></span></a>
+  <div class="header-actions"><a class="nav-button" href="index.html">English 9</a><button class="icon-button" type="button" data-theme-toggle>Dark</button></div>
+</div></header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap"><a href="index.html">English 9</a><span>›</span><span aria-current="page">Eiren</span></div></nav>
+<main id="main">
+  <section class="hero compact-hero"><div class="wrap">
+    <p class="eyebrow">English · Literature · Writing · PROSE</p>
+    <h1>Eiren</h1>
+    <p class="comment">Notice the language. Test the interpretation. Revise with purpose.</p>
+    <p class="lead">Eiren offers transparent English 9 guidance selected from the visible course guidance on this page. This page is not live surveillance, private messaging, grading, counseling, or an undisclosed service connection.</p>
+    <div class="actions"><button class="btn primary" id="newMessage" type="button">Leave Me Guidance</button><a class="btn" href="units/unit-01/coursebook.html">Return to Unit 1</a></div>
+  </div></section>
+  <section><div class="wrap content-layout">
+    <article class="content-main">
+      <div class="mentor-note" aria-live="polite"><blockquote id="mentorMessage">Begin with honest evidence: open the text, complete one meaningful task, and preserve the work you are proud to revise.</blockquote><footer>Eiren · transparent local course guidance</footer></div>
+      <div class="feature-grid" style="margin-top:14px">
+        <article class="card feature-card"><p class="eyebrow">Read</p><h2>Observe first</h2><p>Separate what the text actually says from what you infer. Connect the two with precise reasoning.</p></article>
+        <article class="card feature-card"><p class="eyebrow">Write</p><h2>Revise visibly</h2><p>Keep the first draft. Revision becomes stronger evidence when a reader can see what changed and why.</p></article>
+        <article class="card feature-card"><p class="eyebrow">Master</p><h2>Use the threshold</h2><p>Eighty percent signals readiness. A lower result points toward practice; it is never a verdict about ability.</p></article>
+      </div>
+    </article>
+    <aside class="card content-side"><span class="status-badge">Public-safe · local</span><h2>Mentor boundary</h2><p>Messages are selected on this device from visible course rules. No personal record is transmitted by this page, and mentor guidance cannot award mastery or change a grade.</p><p><strong>For a human concern:</strong> pause and speak with a parent, guardian, teacher, or trusted adult.</p></aside>
+  </div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><span>Khaemenes Academy · English 9</span><span>Language arts encouragement with transparent boundaries</span></div></footer>
+<script>
+(() => {
+  "use strict";
+  const messages = [
+    "Choose one precise detail. Name what it does before deciding what it means.",
+    "A strong claim can survive a fair alternate reading. Test yours against the best competing interpretation.",
+    "Revise the thinking before polishing the sentence. Then make the language carry the clearer idea.",
+    "If a source shaped the thought, name it. Citation protects both the writer and the reader.",
+    "Read the sentence aloud. Rhythm often reveals a boundary, repetition, or missing connection the eye skipped.",
+    "Keep the earlier draft. Growth becomes visible when the evidence of revision remains intact."
+  ];
+  const output = document.getElementById("mentorMessage");
+  let cursor = 0;
+  document.getElementById("newMessage")?.addEventListener("click", () => {
+    output.textContent = messages[cursor % messages.length];
+    cursor += 1;
+  });
+})();
+</script>
+<script src="assets/course.js"></script>
+</body>
+</html>

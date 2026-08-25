@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "unit": {
+    "id": "KH-ELA-ENG9-U01",
+    "course": "KH-ELA-ENG9",
+    "number": 1,
+    "title": "Foundations of Scholarly Reading & Writing",
+    "duration_weeks": 3,
+    "recommended_sessions": 15,
+    "status": "complete",
+    "essential_question": "How do careful readers turn observations into defensible ideas?",
+    "big_ideas": ["Observation and inference are different moves.", "Claims require precise evidence and reasoning.", "Revision and attribution make writing stronger and more trustworthy."],
+    "mastery_threshold": 80,
+    "progress_key": "unit-01",
+    "architecture": "coursebook-with-week-routes",
+    "readiness_note": "Complete the diagnostic before treating later work as growth evidence."
+  },
+  "lessons": [
+    {"id":"KH-ELA-ENG9-U01-W01","number":1,"title":"Diagnostic Reading & Writer Identity","file":"coursebook.html#week1","duration":"5 sessions","objectives":["Establish a baseline","Distinguish observation from inference","Write a unified paragraph"],"vocab_ids":["observation","inference","claim"]},
+    {"id":"KH-ELA-ENG9-U01-W02","number":2,"title":"Close Reading, Claims & Evidence","file":"coursebook.html#week2","duration":"5 sessions","objectives":["Annotate purposefully","Select precise evidence","Explain reasoning"],"vocab_ids":["annotation","evidence","reasoning"]},
+    {"id":"KH-ELA-ENG9-U01-W03","number":3,"title":"Revision, Style & Academic Integrity","file":"coursebook.html#week3","duration":"5 sessions","objectives":["Repair sentence boundaries","Revise for clarity and style","Quote and paraphrase responsibly"],"vocab_ids":["revision","paraphrase","attribution"]}
+  ],
+  "practice": [{"title":"English 9 Learning Lab","file":"../../learning-lab.html","evidence_policy":"adult-reviewed"}],
+  "assessment": [{"title":"Pre-course diagnostic","file":"../../assessments/diagnostic/index.html","type":"baseline"},{"title":"Unit 1 mastery check","file":"coursebook.html#mastery","threshold":80}],
+  "project": [{"title":"Revised diagnostic essay and analytical paragraph","file":"coursebook.html#assessment"}],
+  "guides": [{"title":"Educator key","file":"teacher-key.html"},{"title":"Unit map","file":"index.html"}],
+  "print_resources": [{"title":"Printable coursebook","file":"coursebook.html","method":"browser-print"}],
+  "support_resources": [{"title":"Archaemenes guidance","file":"../../mentor.html","mode":"transparent-local-guidance"},{"title":"Beta feedback","file":"../../beta.html","mode":"local-worksheet"}]
+}
