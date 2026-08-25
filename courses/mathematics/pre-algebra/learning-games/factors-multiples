@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Factors & Multiples Game · Factor Pair Builder — build arrays, discover factor pairs, and prove factor completeness." />
+  <title>Factors & Multiples · Factor Pair Builder</title>
+  <style>
+    :root{
+      --ink:#f7f1e3;
+      --muted:#c9c1b1;
+      --bg:#090b10;
+      --bg2:#10151c;
+      --panel:#141a22;
+      --panel2:#1a222d;
+      --line:#394351;
+      --gold:#d8bd7a;
+      --gold2:#f0d99b;
+      --good:#8fd4ad;
+      --bad:#ed9b9b;
+      --focus:#b9d8ff;
+      --tile:#d8bd7a;
+      --shadow:0 18px 55px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100%;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(216,189,122,.10), transparent 28rem),
+        radial-gradient(circle at 92% 18%, rgba(106,139,174,.10), transparent 30rem),
+        linear-gradient(180deg,var(--bg),#0d1117 60%,#090b10);
+      font-family:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;
+      line-height:1.5;
+    }
+
+    button,input,select{font:inherit}
+    button{touch-action:manipulation}
+    button:focus-visible,input:focus-visible,select:focus-visible{
+      outline:3px solid var(--focus);
+      outline-offset:3px;
+    }
+
+    .shell{
+      width:min(var(--max),calc(100% - 28px));
+      margin:0 auto;
+      padding:28px 0 48px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:10px 0 26px;
+      border-bottom:1px solid rgba(216,189,122,.22);
+    }
+
+    .brandline{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .seal{
+      width:44px;
+      height:44px;
+      border:1px solid rgba(216,189,122,.68);
+      display:grid;
+      place-items:center;
+      transform:rotate(45deg);
+      border-radius:9px;
+      background:rgba(216,189,122,.06);
+      flex:0 0 auto;
+    }
+    .seal span{
+      transform:rotate(-45deg);
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--gold2);
+      font-size:17px;
+    }
+
+    .kicker{
+      margin:0;
+      color:var(--gold2);
+      font-size:.78rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+    .crumb{
+      margin:3px 0 0;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .mini-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .ghost{
+      appearance:none;
+      border:1px solid var(--line);
+      color:var(--ink);
+      background:transparent;
+      border-radius:999px;
+      padding:9px 13px;
+      cursor:pointer;
+    }
+    .ghost:hover{border-color:var(--gold);background:rgba(216,189,122,.06)}
+
+    .hero{
+      text-align:center;
+      padding:54px 10px 30px;
+      max-width:900px;
+      margin:0 auto;
+    }
+    .hero .eyebrow{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:.78rem;
+      font-weight:800;
+    }
+    h1,h2,h3{
+      font-family:Cinzel,Georgia,"Times New Roman",serif;
+      font-weight:500;
+    }
+    h1{
+      margin:10px 0 13px;
+      font-size:clamp(2rem,5vw,4rem);
+      line-height:1.05;
+      letter-spacing:.025em;
+    }
+    .hero p{
+      margin:0 auto;
+      max-width:760px;
+      color:var(--muted);
+      font-size:clamp(1rem,2vw,1.15rem);
+    }
+
+    .rule-strip{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin:24px auto 0;
+      max-width:850px;
+    }
+    .rule-chip{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.025);
+      border-radius:12px;
+      padding:12px 10px;
+    }
+    .rule-chip b{
+      display:block;
+      color:var(--gold2);
+      font-size:.9rem;
+    }
+    .rule-chip small{color:var(--muted);font-size:.76rem}
+
+    .game-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);
+      gap:18px;
+      align-items:start;
+      margin-top:20px;
+    }
+
+    .panel{
+      border:1px solid rgba(216,189,122,.18);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,rgba(23,29,38,.96),rgba(16,21,28,.96));
+      box-shadow:var(--shadow);
+    }
+    .play-panel{padding:22px}
+    .side-panel{padding:18px}
+
+    .status-row{
+      display:grid;
+      grid-template-columns:1fr auto auto;
+      gap:12px;
+      align-items:center;
+      margin-bottom:16px;
+    }
+    .progress-wrap{min-width:0}
+    .progress-label{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      color:var(--muted);
+      font-size:.82rem;
+      margin-bottom:7px;
+    }
+    .track{
+      height:8px;
+      background:#07090d;
+      border:1px solid #313946;
+      border-radius:999px;
+      overflow:hidden;
+    }
+    .fill{
+      height:100%;
+      width:0%;
+      background:linear-gradient(90deg,#ae9255,var(--gold2));
+      transition:width .3s ease;
+    }
+    .stat{
+      text-align:center;
+      min-width:72px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(255,255,255,.025);
+    }
+    .stat b{display:block;font-size:1.15rem}
+    .stat span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+
+    .number-stage{
+      min-height:170px;
+      display:grid;
+      place-items:center;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),
+        #0c1117;
+      background-size:24px 24px;
+      border-radius:16px;
+      padding:20px;
+      position:relative;
+      overflow:hidden;
+    }
+    .number-stage::after{
+      content:"";
+      position:absolute;
+      inset:14px;
+      border:1px solid rgba(216,189,122,.12);
+      border-radius:12px;
+      pointer-events:none;
+    }
+    .target-wrap{
+      position:relative;
+      z-index:1;
+      text-align:center;
+    }
+    .card-label{
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.15em;
+      font-size:.74rem;
+      margin-bottom:6px;
+    }
+    .target-number{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(3.2rem,9vw,6rem);
+      color:#fff8e8;
+      line-height:1;
+    }
+    .target-sub{
+      margin-top:7px;
+      color:var(--gold2);
+      font-size:.88rem;
+    }
+
+    .builder{
+      display:grid;
+      grid-template-columns:minmax(0,360px) 1fr;
+      gap:18px;
+      margin-top:18px;
+      align-items:start;
+    }
+
+    .build-controls{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      background:#111720;
+    }
+    .build-controls h2{
+      font-size:1.05rem;
+      margin:0 0 12px;
+    }
+    .dimension-row{
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      gap:8px;
+      align-items:end;
+    }
+    .field label{
+      display:block;
+      color:var(--muted);
+      font-size:.78rem;
+      margin-bottom:5px;
+    }
+    .field input{
+      width:100%;
+      min-height:48px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:#0c1117;
+      color:#fff;
+      padding:8px 10px;
+      font-size:1.15rem;
+      text-align:center;
+    }
+    .times{
+      padding-bottom:12px;
+      color:var(--gold2);
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:1.25rem;
+    }
+
+    .quick-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin-top:11px;
+    }
+    .quick{
+      appearance:none;
+      border:1px solid var(--line);
+      border-radius:8px;
+      background:#171e27;
+      color:var(--ink);
+      min-width:42px;
+      min-height:40px;
+      cursor:pointer;
+    }
+    .quick:hover{border-color:var(--gold)}
+    .quick:disabled{opacity:.35;cursor:not-allowed}
+
+    .action-row{
+      display:flex;
+      justify-content:flex-start;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:9px;
+      margin-top:14px;
+    }
+    .primary,.secondary{
+      appearance:none;
+      min-height:44px;
+      border-radius:10px;
+      padding:10px 16px;
+      cursor:pointer;
+      letter-spacing:.04em;
+      font-weight:700;
+    }
+    .primary{
+      border:1px solid var(--gold2);
+      background:var(--gold2);
+      color:#17130a;
+    }
+    .secondary{
+      border:1px solid var(--line);
+      background:#171e27;
+      color:var(--ink);
+    }
+    .primary:hover{filter:brightness(1.05)}
+    .secondary:hover{border-color:var(--gold)}
+    .primary:disabled,.secondary:disabled{opacity:.42;cursor:not-allowed}
+
+    .array-panel{
+      min-width:0;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      background:#0d1218;
+      min-height:260px;
+      display:flex;
+      flex-direction:column;
+    }
+    .array-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:12px;
+    }
+    .array-head b{
+      font-family:Georgia,"Times New Roman",serif;
+      font-weight:500;
+    }
+    .array-head span{
+      color:var(--muted);
+      font-size:.78rem;
+    }
+
+    .array-canvas{
+      flex:1;
+      min-height:190px;
+      overflow:auto;
+      display:grid;
+      place-items:center;
+      border:1px dashed #313a47;
+      border-radius:11px;
+      padding:14px;
+      background:
+        radial-gradient(circle at 50% 50%,rgba(216,189,122,.035),transparent 18rem),
+        #090d12;
+    }
+    .tiles{
+      display:grid;
+      gap:3px;
+      justify-content:center;
+      align-content:center;
+      max-width:100%;
+    }
+    .tile{
+      width:clamp(10px,2.4vw,24px);
+      aspect-ratio:1;
+      border:1px solid rgba(240,217,155,.62);
+      background:linear-gradient(145deg,rgba(216,189,122,.9),rgba(143,116,58,.85));
+      border-radius:3px;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+    .empty-array{
+      text-align:center;
+      color:var(--muted);
+      max-width:360px;
+      font-size:.9rem;
+    }
+
+    .pair-progress{
+      margin-top:18px;
+      border-top:1px solid var(--line);
+      padding-top:15px;
+    }
+    .pair-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .pair-title h2{font-size:1.05rem;margin:0}
+    .pair-title span{color:var(--muted);font-size:.82rem}
+    .pairs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      min-height:44px;
+    }
+    .pair-chip{
+      border:1px solid rgba(143,212,173,.46);
+      background:rgba(143,212,173,.08);
+      color:#dff6e8;
+      border-radius:999px;
+      padding:8px 11px;
+      font-family:Georgia,"Times New Roman",serif;
+    }
+    .pair-locked{
+      border:1px dashed #3b4451;
+      color:#767f8a;
+      background:rgba(255,255,255,.018);
+    }
+
+    .feedback{
+      margin-top:15px;
+      min-height:70px;
+      border-radius:12px;
+      border:1px solid transparent;
+      padding:13px 14px;
+      background:rgba(255,255,255,.02);
+    }
+    .feedback.good{
+      border-color:rgba(143,212,173,.42);
+      background:rgba(143,212,173,.07);
+    }
+    .feedback.bad{
+      border-color:rgba(237,155,155,.42);
+      background:rgba(237,155,155,.07);
+    }
+    .feedback h3{margin:0 0 4px;font-size:1rem}
+    .feedback p{margin:0;color:#d5cebf}
+
+    .side-panel h2{
+      margin:2px 0 12px;
+      font-size:1.18rem;
+    }
+    .concept{
+      border:1px solid var(--line);
+      border-radius:11px;
+      padding:11px;
+      background:rgba(255,255,255,.025);
+      margin-bottom:9px;
+    }
+    .concept b{
+      display:block;
+      font-family:Georgia,"Times New Roman",serif;
+      color:#fff;
+    }
+    .concept span{
+      color:var(--muted);
+      font-size:.82rem;
+    }
+
+    .tip{
+      border-top:1px solid var(--line);
+      padding-top:14px;
+      margin-top:14px;
+    }
+    .tip p{
+      color:var(--muted);
+      margin:5px 0 0;
+      font-size:.9rem;
+    }
+
+    .controls{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      border-top:1px solid var(--line);
+      padding-top:14px;
+      margin-top:14px;
+    }
+    label{color:var(--muted);font-size:.82rem}
+    select{
+      color:var(--ink);
+      background:#111720;
+      border:1px solid var(--line);
+      border-radius:9px;
+      padding:8px 30px 8px 10px;
+      min-height:40px;
+    }
+    .best{
+      color:var(--gold2);
+      font-size:.82rem;
+      margin:12px 0 0;
+    }
+
+    .mastery{
+      display:none;
+      margin-top:20px;
+      padding:24px;
+      text-align:center;
+      border:1px solid rgba(216,189,122,.5);
+      border-radius:16px;
+      background:
+        radial-gradient(circle at 50% 0%,rgba(216,189,122,.14),transparent 24rem),
+        #111720;
+    }
+    .mastery.show{display:block}
+    .mastery .mark{
+      width:68px;
+      height:68px;
+      margin:0 auto 12px;
+      border:1px solid var(--gold2);
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      color:var(--gold2);
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:1.35rem;
+    }
+    .mastery h2{margin:5px 0}
+    .mastery p{color:var(--muted);max-width:620px;margin:7px auto 15px}
+    .mastery .action-row{justify-content:center}
+
+    footer{
+      text-align:center;
+      color:#847e73;
+      font-size:.78rem;
+      padding:26px 0 0;
+    }
+
+    .sr-only{
+      position:absolute!important;
+      width:1px!important;
+      height:1px!important;
+      padding:0!important;
+      margin:-1px!important;
+      overflow:hidden!important;
+      clip:rect(0,0,0,0)!important;
+      white-space:nowrap!important;
+      border:0!important;
+    }
+
+    @media(max-width:900px){
+      .game-grid{grid-template-columns:1fr}
+      .side-panel{order:2}
+    }
+    @media(max-width:720px){
+      .builder{grid-template-columns:1fr}
+      .rule-strip{grid-template-columns:1fr}
+    }
+    @media(max-width:600px){
+      .shell{width:min(100% - 18px,var(--max));padding-top:12px}
+      .topbar{align-items:flex-start}
+      .mini-actions{display:none}
+      .hero{padding-top:34px}
+      .status-row{grid-template-columns:1fr 66px}
+      .status-row .stat:last-child{display:none}
+      .play-panel{padding:13px}
+      .array-panel{min-height:230px}
+    }
+    @media(max-width:380px){
+      .dimension-row{grid-template-columns:1fr}
+      .times{padding:0;text-align:center}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        scroll-behavior:auto!important;
+        transition-duration:.001ms!important;
+        animation-duration:.001ms!important;
+      }
+    }
+    @media print{
+      body{background:#fff;color:#111}
+      .mini-actions,.build-controls,.controls,.action-row{display:none!important}
+      .shell{width:100%;padding:0}
+      .panel,.number-stage,.array-panel,.concept{
+        box-shadow:none;background:#fff;color:#111;border-color:#bbb;
+      }
+      .hero p,.concept span,.tip p,.crumb{color:#444}
+      h1,h2,h3,.concept b{color:#111}
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brandline">
+        <div class="seal" aria-hidden="true"><span>×</span></div>
+        <div>
+          <p class="kicker">Mathematics · Factors & Multiples</p>
+          <p class="crumb">Interactive Array Laboratory · Factor Pair Builder</p>
+        </div>
+      </div>
+      <div class="mini-actions">
+        <button class="ghost" id="printBtn" type="button">Print reference</button>
+        <button class="ghost" id="resetBestBtn" type="button">Reset best</button>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="eyebrow">Factor Pair Builder</div>
+      <h1 id="pageTitle">Build every rectangle.</h1>
+      <p>
+        Choose two side lengths whose product matches the target number. Each correct rectangle unlocks one
+        unique factor pair. Find them all to prove the factor list is complete.
+      </p>
+
+      <div class="rule-strip" aria-label="Factor concepts">
+        <div class="rule-chip"><b>Factors</b><small>Numbers that divide a target evenly.</small></div>
+        <div class="rule-chip"><b>Arrays</b><small>Equal rows and columns model multiplication.</small></div>
+        <div class="rule-chip"><b>Completeness</b><small>Stop when factor pairs begin to repeat in reverse.</small></div>
+      </div>
+    </section>
+
+    <main class="game-grid">
+      <section class="panel play-panel" aria-labelledby="gameHeading">
+        <h2 id="gameHeading" class="sr-only">Factor Pair Builder game</h2>
+
+        <div class="status-row">
+          <div class="progress-wrap">
+            <div class="progress-label">
+              <span id="roundLabel">Number 1 of 10</span>
+              <span id="accuracyLabel">Mastery 0%</span>
+            </div>
+            <div class="track"><div class="fill" id="progressFill"></div></div>
+          </div>
+          <div class="stat"><b id="score">0</b><span>Score</span></div>
+          <div class="stat"><b id="streak">0</b><span>Streak</span></div>
+        </div>
+
+        <div class="number-stage">
+          <div class="target-wrap">
+            <div class="card-label">Build factor rectangles for</div>
+            <div class="target-number" id="targetNumber">24</div>
+            <div class="target-sub" id="targetSub">Find all unique factor pairs</div>
+          </div>
+        </div>
+
+        <div class="builder">
+          <section class="build-controls" aria-labelledby="buildHeading">
+            <h2 id="buildHeading">Choose rectangle dimensions</h2>
+
+            <div class="dimension-row">
+              <div class="field">
+                <label for="rowsInput">Rows</label>
+                <input id="rowsInput" type="number" inputmode="numeric" min="1" max="100" value="1" />
+              </div>
+              <div class="times" aria-hidden="true">×</div>
+              <div class="field">
+                <label for="colsInput">Columns</label>
+                <input id="colsInput" type="number" inputmode="numeric" min="1" max="100" value="1" />
+              </div>
+            </div>
+
+            <div class="quick-row" id="quickRow" aria-label="Quick row-size choices"></div>
+
+            <div class="action-row">
+              <button class="primary" id="buildBtn" type="button">Build rectangle</button>
+              <button class="secondary" id="hintBtn" type="button">Hint</button>
+              <button class="secondary" id="nextBtn" type="button" hidden>Next number →</button>
+            </div>
+          </section>
+
+          <section class="array-panel" aria-labelledby="arrayHeading">
+            <div class="array-head">
+              <b id="arrayHeading">Array workspace</b>
+              <span id="arrayLabel">Choose dimensions and build</span>
+            </div>
+            <div class="array-canvas" id="arrayCanvas">
+              <div class="empty-array">A correct factor pair will appear here as a rectangle of equal-sized tiles.</div>
+            </div>
+          </section>
+        </div>
+
+        <section class="pair-progress" aria-labelledby="pairsHeading">
+          <div class="pair-title">
+            <h2 id="pairsHeading">Unlocked factor pairs</h2>
+            <span id="pairCount">0 of 0 discovered</span>
+          </div>
+          <div class="pairs" id="pairs"></div>
+        </section>
+
+        <div class="feedback" id="feedback" aria-live="polite">
+          <h3>Ready.</h3>
+          <p>Build a rectangle whose rows × columns equals the target.</p>
+        </div>
+
+        <div class="mastery" id="mastery" aria-live="polite">
+          <div class="mark" id="masteryMark">80%</div>
+          <h2 id="masteryTitle">Round complete</h2>
+          <p id="masteryText"></p>
+          <div class="action-row">
+            <button class="primary" id="newRoundBtn" type="button">Play another round</button>
+            <button class="secondary" id="reviewBtn" type="button">Review incomplete numbers</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel side-panel" aria-labelledby="referenceHeading">
+        <h2 id="referenceHeading">Factor Laboratory Notes</h2>
+
+        <div class="concept">
+          <b>Factor pair</b>
+          <span>Two whole numbers whose product equals the target: 3 × 8 = 24.</span>
+        </div>
+        <div class="concept">
+          <b>Array</b>
+          <span>A rectangle made from equal rows and columns. Turning it 90° does not create a new factor pair.</span>
+        </div>
+        <div class="concept">
+          <b>Perfect square</b>
+          <span>A number with a square factor pair such as 6 × 6 = 36.</span>
+        </div>
+        <div class="concept">
+          <b>Prime number</b>
+          <span>A number with exactly one unique factor pair: 1 × itself.</span>
+        </div>
+
+        <div class="tip">
+          <strong>Completeness strategy</strong>
+          <p id="strategyText">
+            Test possible row lengths from 1 upward. Once the first number in the pair passes the square root of the target,
+            any new rectangle would only repeat one you already found.
+          </p>
+        </div>
+
+        <div class="controls">
+          <label for="roundSize">Round length</label>
+          <select id="roundSize">
+            <option value="8">8 numbers</option>
+            <option value="10" selected>10 numbers</option>
+            <option value="12">12 numbers</option>
+          </select>
+        </div>
+
+        <p class="best" id="bestScore">Best mastery score: —</p>
+      </aside>
+    </main>
+
+    <footer>
+      Factors & Multiples · Factors · Arrays · Factor completeness · Standalone HTML + CSS + vanilla JavaScript
+    </footer>
+  </div>
+
+  <script>
+  (() => {
+    "use strict";
+
+    const BANK = [
+      6,8,9,10,12,14,15,16,18,20,21,24,25,27,28,30,32,33,35,36,40,42,44,45,
+      48,49,50,54,56,60,63,64,66,70,72,75,77,80,81,84,88,90,96,99,100,108,
+      11,13,17,19,23,29,31,37
+    ];
+
+    const el = {
+      target: document.getElementById("targetNumber"),
+      targetSub: document.getElementById("targetSub"),
+      rows: document.getElementById("rowsInput"),
+      cols: document.getElementById("colsInput"),
+      build: document.getElementById("buildBtn"),
+      hint: document.getElementById("hintBtn"),
+      next: document.getElementById("nextBtn"),
+      quick: document.getElementById("quickRow"),
+      arrayCanvas: document.getElementById("arrayCanvas"),
+      arrayLabel: document.getElementById("arrayLabel"),
+      pairs: document.getElementById("pairs"),
+      pairCount: document.getElementById("pairCount"),
+      feedback: document.getElementById("feedback"),
+      score: document.getElementById("score"),
+      streak: document.getElementById("streak"),
+      roundLabel: document.getElementById("roundLabel"),
+      accuracyLabel: document.getElementById("accuracyLabel"),
+      progressFill: document.getElementById("progressFill"),
+      strategy: document.getElementById("strategyText"),
+      roundSize: document.getElementById("roundSize"),
+      best: document.getElementById("bestScore"),
+      mastery: document.getElementById("mastery"),
+      masteryMark: document.getElementById("masteryMark"),
+      masteryTitle: document.getElementById("masteryTitle"),
+      masteryText: document.getElementById("masteryText"),
+      newRound: document.getElementById("newRoundBtn"),
+      review: document.getElementById("reviewBtn"),
+      print: document.getElementById("printBtn"),
+      resetBest: document.getElementById("resetBestBtn")
+    };
+
+    const BEST_KEY = "khaemenes_factor_pair_builder_best_v1";
+
+    let deck = [];
+    let index = 0;
+    let found = new Set();
+    let score = 0;
+    let streak = 0;
+    let completed = 0;
+    let solvedWithoutWrong = true;
+    let wrongAttempts = 0;
+    let incomplete = [];
+
+    function factorPairs(n){
+      const pairs = [];
+      for(let a=1;a*a<=n;a++){
+        if(n % a === 0) pairs.push([a,n/a]);
+      }
+      return pairs;
+    }
+
+    function pairKey(a,b){
+      const x = Math.min(a,b);
+      const y = Math.max(a,b);
+      return `${x}x${y}`;
+    }
+
+    function shuffle(items){
+      const a = items.slice();
+      for(let i=a.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [a[i],a[j]]=[a[j],a[i]];
+      }
+      return a;
+    }
+
+    function isPrime(n){
+      return factorPairs(n).length === 1;
+    }
+
+    function isSquare(n){
+      return Number.isInteger(Math.sqrt(n));
+    }
+
+    function current(){
+      return deck[index];
+    }
+
+    function updateBest(){
+      let best = null;
+      try{
+        const raw = localStorage.getItem(BEST_KEY);
+        if(raw !== null){
+          const n = Number(raw);
+          if(Number.isFinite(n)) best=n;
+        }
+      }catch(_){}
+      el.best.textContent = best === null ? "Best mastery score: —" : `Best mastery score: ${best}%`;
+    }
+
+    function saveBest(percent){
+      try{
+        const old = Number(localStorage.getItem(BEST_KEY));
+        if(!Number.isFinite(old) || percent > old){
+          localStorage.setItem(BEST_KEY,String(percent));
+        }
+      }catch(_){}
+      updateBest();
+    }
+
+    function setFeedback(kind,title,text){
+      el.feedback.className = "feedback" + (kind ? ` ${kind}` : "");
+      el.feedback.innerHTML = `<h3>${title}</h3><p>${text}</p>`;
+    }
+
+    function startRound(source=null){
+      const size = Math.max(4,Math.min(12,Number(el.roundSize.value)||10));
+      const pool = source && source.length ? source.slice() : BANK.slice();
+      const working = [];
+      while(working.length < size) working.push(...shuffle(pool));
+      deck = working.slice(0,size);
+
+      index = 0;
+      found = new Set();
+      score = 0;
+      streak = 0;
+      completed = 0;
+      wrongAttempts = 0;
+      incomplete = [];
+      solvedWithoutWrong = true;
+      el.mastery.classList.remove("show");
+      renderTarget();
+      updateStats();
+    }
+
+    function renderTarget(){
+      const n = current();
+      const pairs = factorPairs(n);
+
+      found = new Set();
+      solvedWithoutWrong = true;
+
+      el.target.textContent = n;
+      el.targetSub.textContent = isPrime(n)
+        ? "Prime challenge · discover its only factor pair"
+        : isSquare(n)
+          ? "Perfect-square challenge · find every unique pair"
+          : "Find every unique factor pair";
+
+      el.rows.value = 1;
+      el.cols.value = n;
+      el.next.hidden = true;
+      el.build.disabled = false;
+      el.hint.disabled = false;
+
+      buildQuickChoices(n);
+      renderPairs();
+      renderEmptyArray();
+      setFeedback("","Ready.",`Build a rectangle whose rows × columns equals ${n}.`);
+      el.strategy.textContent = "Test row lengths from 1 upward. When a row length divides the target evenly, you have found a factor pair.";
+      updateStats();
+    }
+
+    function updateStats(){
+      const total = deck.length || 1;
+      const mastery = total ? Math.round((completed/total)*100) : 0;
+      el.score.textContent = score;
+      el.streak.textContent = streak;
+      el.roundLabel.textContent = `Number ${Math.min(index+1,total)} of ${total}`;
+      el.accuracyLabel.textContent = `Mastery ${mastery}%`;
+      el.progressFill.style.width = `${Math.round(completed/total*100)}%`;
+    }
+
+    function buildQuickChoices(n){
+      el.quick.innerHTML = "";
+      const max = Math.min(12,Math.floor(Math.sqrt(n))+3);
+      for(let a=1;a<=max;a++){
+        const btn = document.createElement("button");
+        btn.type="button";
+        btn.className="quick";
+        btn.textContent=a;
+        btn.setAttribute("aria-label",`Use ${a} rows`);
+        btn.addEventListener("click",()=>{
+          el.rows.value=a;
+          el.cols.value = n % a === 0 ? n/a : Math.max(1,Math.round(n/a));
+          el.rows.focus();
+        });
+        el.quick.appendChild(btn);
+      }
+    }
+
+    function renderPairs(){
+      const pairs = factorPairs(current());
+      el.pairs.innerHTML = "";
+      pairs.forEach(([a,b])=>{
+        const key = pairKey(a,b);
+        const chip = document.createElement("div");
+        chip.className = found.has(key) ? "pair-chip" : "pair-chip pair-locked";
+        chip.textContent = found.has(key) ? `${a} × ${b}` : "locked";
+        el.pairs.appendChild(chip);
+      });
+      el.pairCount.textContent = `${found.size} of ${pairs.length} discovered`;
+    }
+
+    function renderEmptyArray(){
+      el.arrayLabel.textContent = "Choose dimensions and build";
+      el.arrayCanvas.innerHTML = `<div class="empty-array">A correct factor pair will appear here as a rectangle of equal-sized tiles.</div>`;
+    }
+
+    function renderArray(rows,cols){
+      const n = rows*cols;
+      el.arrayLabel.textContent = `${rows} rows × ${cols} columns = ${n}`;
+
+      const tiles = document.createElement("div");
+      tiles.className = "tiles";
+
+      const maxCell = 24;
+      const minCell = 9;
+      const canvasWidth = Math.max(260, Math.min(560, el.arrayCanvas.clientWidth - 30));
+      const ideal = Math.floor(canvasWidth / Math.max(cols,1)) - 3;
+      const size = Math.max(minCell,Math.min(maxCell,ideal));
+
+      tiles.style.gridTemplateColumns = `repeat(${cols}, ${size}px)`;
+
+      const cap = Math.min(n,160);
+      for(let i=0;i<cap;i++){
+        const t=document.createElement("div");
+        t.className="tile";
+        t.style.width=`${size}px`;
+        tiles.appendChild(t);
+      }
+
+      el.arrayCanvas.innerHTML="";
+      el.arrayCanvas.appendChild(tiles);
+
+      if(n>160){
+        const note=document.createElement("div");
+        note.className="empty-array";
+        note.style.marginTop="10px";
+        note.textContent=`Array contains ${n} tiles; display is capped for readability.`;
+        el.arrayCanvas.appendChild(note);
+      }
+    }
+
+    function clampInt(value){
+      const n = Math.floor(Number(value));
+      if(!Number.isFinite(n)) return null;
+      return Math.max(1,Math.min(100,n));
+    }
+
+    function buildRectangle(){
+      if(el.build.disabled) return;
+
+      const n = current();
+      const rows = clampInt(el.rows.value);
+      const cols = clampInt(el.cols.value);
+
+      if(rows === null || cols === null){
+        setFeedback("bad","Use whole-number dimensions.","Rows and columns must both be positive whole numbers.");
+        return;
+      }
+
+      el.rows.value=rows;
+      el.cols.value=cols;
+      renderArray(rows,cols);
+
+      if(rows*cols !== n){
+        solvedWithoutWrong = false;
+        wrongAttempts++;
+        const product = rows*cols;
+        setFeedback(
+          "bad",
+          `${rows} × ${cols} = ${product}, not ${n}.`,
+          product < n
+            ? `Your rectangle is ${n-product} tile${Math.abs(n-product)===1?"":"s"} too small. Adjust one side and try again.`
+            : `Your rectangle is ${product-n} tile${Math.abs(product-n)===1?"":"s"} too large. Adjust one side and try again.`
+        );
+        streak = 0;
+        updateStats();
+        return;
+      }
+
+      const key = pairKey(rows,cols);
+
+      if(found.has(key)){
+        solvedWithoutWrong = false;
+        wrongAttempts++;
+        setFeedback(
+          "bad",
+          "That factor pair is already unlocked.",
+          `${rows} × ${cols} is the same rectangle family as ${Math.min(rows,cols)} × ${Math.max(rows,cols)}. Rotating a rectangle does not create a new factor pair.`
+        );
+        return;
+      }
+
+      found.add(key);
+      score += 100;
+      renderPairs();
+
+      const allPairs = factorPairs(n);
+      const remaining = allPairs.length - found.size;
+
+      if(remaining === 0){
+        completed++;
+        streak++;
+        if(solvedWithoutWrong) score += 100;
+        el.build.disabled = true;
+        el.hint.disabled = true;
+        el.next.hidden = false;
+        el.next.textContent = index === deck.length-1 ? "See round results →" : "Next number →";
+
+        const factorList = allPairs.flatMap(([a,b])=>a===b?[a]:[a,b]);
+        const uniqueFactors = [...new Set(factorList)].sort((a,b)=>a-b);
+
+        setFeedback(
+          "good",
+          "Factor set complete.",
+          `You found every unique rectangle for ${n}. Its factors are ${uniqueFactors.join(", ")}.${isPrime(n) ? " This number is prime." : isSquare(n) ? " Notice the square pair in the center." : ""}`
+        );
+      }else{
+        setFeedback(
+          "good",
+          "New factor pair unlocked.",
+          `${rows} × ${cols} = ${n}. ${remaining} unique factor pair${remaining===1?" remains":"s remain"}.`
+        );
+      }
+
+      updateStats();
+    }
+
+    function showHint(){
+      if(el.hint.disabled) return;
+      const n=current();
+      const pairs=factorPairs(n);
+      const remaining=pairs.find(([a,b])=>!found.has(pairKey(a,b)));
+      if(!remaining){
+        setFeedback("good","Complete.","You have already found every factor pair.");
+        return;
+      }
+
+      const [a,b]=remaining;
+      const softer = found.size===0
+        ? `Try testing small row lengths in order. Does ${a} divide ${n} evenly?`
+        : `The next undiscovered row length to investigate is ${a}. Ask whether ${n} ÷ ${a} is a whole number.`;
+
+      el.strategy.textContent = softer;
+      setFeedback("","Hint",softer);
+    }
+
+    function nextTarget(){
+      if(!el.build.disabled) return;
+      if(index >= deck.length-1){
+        finishRound();
+        return;
+      }
+      index++;
+      renderTarget();
+    }
+
+    function finishRound(){
+      index=deck.length;
+      updateStats();
+      el.progressFill.style.width="100%";
+
+      const percent = Math.round((completed/deck.length)*100);
+      saveBest(percent);
+
+      el.mastery.classList.add("show");
+      el.masteryMark.textContent = `${percent}%`;
+      el.masteryTitle.textContent = percent >= 80 ? "Mastery gate passed" : "More factor practice recommended";
+
+      if(percent >= 80){
+        el.masteryText.textContent =
+          `You completed all factor pairs for ${completed} of ${deck.length} target numbers and met the 80% mastery goal.`;
+      }else{
+        el.masteryText.textContent =
+          `You completed ${completed} of ${deck.length} target numbers. The lesson target is 80% mastery. Review the incomplete numbers and try again.`;
+      }
+
+      el.review.disabled = incomplete.length===0;
+      el.review.textContent = incomplete.length ? `Review incomplete (${incomplete.length})` : "No incomplete numbers";
+      el.mastery.scrollIntoView({behavior:"smooth",block:"center"});
+    }
+
+    function markIncompleteAndAdvance(){
+      if(el.build.disabled) return;
+      if(!incomplete.includes(current())) incomplete.push(current());
+    }
+
+    el.build.addEventListener("click",buildRectangle);
+    el.hint.addEventListener("click",showHint);
+    el.next.addEventListener("click",nextTarget);
+    el.newRound.addEventListener("click",()=>startRound());
+    el.review.addEventListener("click",()=>{
+      if(incomplete.length) startRound(incomplete);
+    });
+
+    el.roundSize.addEventListener("change",()=>startRound());
+
+    el.rows.addEventListener("input",()=>{
+      const n=current();
+      const r=clampInt(el.rows.value);
+      if(r && n%r===0) el.cols.value=n/r;
+    });
+
+    el.rows.addEventListener("keydown",e=>{
+      if(e.key==="Enter"){
+        e.preventDefault();
+        buildRectangle();
+      }
+    });
+    el.cols.addEventListener("keydown",e=>{
+      if(e.key==="Enter"){
+        e.preventDefault();
+        buildRectangle();
+      }
+    });
+
+    el.print.addEventListener("click",()=>window.print());
+    el.resetBest.addEventListener("click",()=>{
+      try{ localStorage.removeItem(BEST_KEY); }catch(_){}
+      updateBest();
+      setFeedback("","Best score reset.","The saved mastery score for this device was cleared.");
+    });
+
+    window.addEventListener("beforeunload",markIncompleteAndAdvance);
+
+    updateBest();
+    startRound();
+  })();
+  </script>
+</body>
+</html>
