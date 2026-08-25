@@ -12,6 +12,6 @@
   "autoplay": false,
   "transcript": null,
   "captions_verified": false,
-  "alignment_status": "enrichment_only",
-  "alignment_note": "This video teaches multiplication of positive and negative integers. Unit 2 Lesson 6 is focused on introductory functions, so this video is best treated as optional integer-operations enrichment rather than a direct lesson-aligned resource."
+  "alignment_status": "core_aligned",
+  "alignment_note": "This video teaches multiplication of positive and negative integers. It directly supports the multiplication focus of Unit 2 Lesson 6 and reinforces sign rules, product magnitude, and reasoning with positive and negative factors."
 }
