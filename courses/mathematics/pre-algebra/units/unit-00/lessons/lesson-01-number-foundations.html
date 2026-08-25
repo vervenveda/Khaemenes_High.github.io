@@ -1,1 +1,1138 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Conditional Unit 0 Week 1: Number Foundations Reset."><title>Unit 0 · Week 1 · Number Foundations</title><link rel="stylesheet" href="../assets/refresher.css"></head><body><a class="skip" href="#main">Skip to main content</a><header><div class="wrap"><a class="brand" href="../">Khaemenes High · Pre-Algebra · Unit 0</a><a class="btn" href="../../../diagnostic/">NAIB Readiness</a></div></header><main id="main"><section class="hero"><div class="wrap"><p class="eyebrow">Conditional Refresher · Week 1 of 6</p><h1>Number Foundations Reset</h1><p>Rebuild number sense, signed-number fluency, factor structure, exponents, absolute value, and order-of-operations reasoning before the official 36-week course begins.</p><div class="badges"><span class="badge">20 Questions · Lesson Practice</span><span class="badge">10 Questions · Weekly Quiz</span><span class="badge">80% Mastery Gate</span></div><p class="notice" id="entryNotice" hidden></p></div></section><section><div class="wrap"><div class="section-head"><p class="eyebrow">Learn</p><h2>Structure before speed.</h2></div><div class="grid"><article class="card"><h2>Order has meaning</h2><p>Grouping symbols and exponents come first. Multiplication and division share a level and move left to right; addition and subtraction do the same.</p></article><article class="card"><h2>Factor structure</h2><p>Prime factorization reveals how whole numbers are built and supports efficient GCF and LCM reasoning.</p></article><article class="card"><h2>Signed numbers</h2><p>A sign communicates direction or position. Absolute value is distance from zero and is never negative.</p></article><article class="card"><h2>Reasonableness</h2><p>Estimate magnitude and sign before or after calculating so an impossible result is easier to catch.</p></article></div></div></section><section id="practice"><div class="wrap"><div class="section-head"><p class="eyebrow">Lesson Mastery · 20 Questions</p><h2>Reach 80% to unlock the weekly quiz.</h2></div><div class="question-list" id="practiceQuestions"></div><div class="actions"><button class="primary" id="submitPractice" type="button">Score Lesson Practice</button><button id="resetPractice" type="button">Reset Visible Answers</button></div><p class="notice" id="practiceStatus">No lesson-practice score yet.</p></div></section><section id="quizSection" data-locked="true"><div class="wrap"><div class="section-head"><p class="eyebrow">Weekly Quiz Gate · 10 Questions</p><h2>Reach 80% to complete Week 1.</h2><p id="quizLock" class="notice">Locked: reach 80% on lesson practice first.</p></div><div class="question-list" id="quizQuestions"></div><div class="actions"><button class="primary" id="submitQuiz" type="button">Score Weekly Quiz</button><button id="resetQuiz" type="button">Reset Visible Answers</button></div><p class="notice" id="quizStatus">No weekly-quiz score yet.</p></div></section><section id="mastery"><div class="wrap"><article class="card"><p class="eyebrow">Reflect · Continue</p><h2>What became clearer this week?</h2><textarea id="reflection" placeholder="Record a strategy, misconception you corrected, or question to revisit."></textarea><div class="actions"><button id="saveReflection" type="button">Save Reflection</button><a class="btn locked" id="nextLink" aria-disabled="true" href="#mastery">Locked · practice + quiz both require 80%</a></div><p id="reflectionStatus" class="notice">Reflection is optional and does not replace mastery evidence.</p></article></div></section></main><footer class="footer">Conditional Unit 0 · Week 1 · practice ≥80% · weekly quiz ≥80%</footer><script>window.REFRESHER_WEEK={week:1,title:"Number Foundations Reset",strand:"Number Foundations",next:"lesson-02-rational-proportional.html"};</script><script src="../assets/refresher-engine.js"></script></body></html>
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Conditional Unit 0 Week 1: Number Foundations Reset. Tablet-safe refresher bridge into Pre-Algebra Unit 1.">
+<meta name="theme-color" content="#0b1730">
+<title>Unit 0 · Week 1 · Number Foundations Reset</title>
+<link rel="stylesheet" href="../assets/refresher.css">
+
+<style>
+/* =====================================================================
+   KHAEMENES HIGH · PRE-ALGEBRA · UNIT 00 · WEEK 01
+   File: units/unit-00/lessons/lesson-01-number-foundations.html
+
+   Repository map:
+   pre-algebra/
+   ├── learning-games/
+   │   └── 01-number-family/
+   │       └── index.html          ← embedded Math Break game
+   └── units/
+       └── unit-00/
+           ├── assets/
+           │   ├── refresher.css
+           │   └── refresher-engine.js
+           └── lessons/
+               └── lesson-01-number-foundations.html  ← THIS FILE
+
+   This file is intentionally readable:
+   01. Base + tablet safety
+   02. Header / hero
+   03. Bridge purpose
+   04. Concept study guide
+   05. Reading room
+   06. Worked examples
+   07. Math Break game
+   08. Practice and weekly quiz
+   09. Reflection / next lesson gate
+   10. REFRESHER_WEEK data and shared engine
+   ===================================================================== */
+
+/* ============================================================
+   01 · BASE + TABLET SAFETY
+   ============================================================ */
+:root{
+  --u00-bg:#08111f;
+  --u00-bg2:#0d1a2d;
+  --u00-panel:#101f35;
+  --u00-panel2:#132642;
+  --u00-ink:#f7f1e4;
+  --u00-muted:#cbbfaca;
+  --u00-line:rgba(232,214,168,.22);
+  --u00-line-strong:rgba(232,214,168,.42);
+  --u00-gold:#d8bd7a;
+  --u00-gold2:#f1d99b;
+  --u00-blue:#90b8e6;
+  --u00-green:#9be2b8;
+  --u00-red:#ff9f9f;
+  --u00-shadow:0 24px 70px rgba(0,0,0,.34);
+  --u00-radius:18px;
+  --u00-serif:Cinzel,Georgia,"Times New Roman",serif;
+  --u00-sans:"Avenir Next","Brandon Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --u00-max:1180px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  margin:0;
+  min-height:100vh;
+  overflow-x:hidden;
+  color:var(--u00-ink);
+  font-family:var(--u00-sans);
+  line-height:1.6;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(216,189,122,.13),transparent 32rem),
+    radial-gradient(circle at 90% 18%,rgba(96,145,196,.13),transparent 34rem),
+    linear-gradient(180deg,var(--u00-bg),#0a1424 55%,#08111f);
+}
+
+body,
+.wrap,
+.card,
+.question,
+.lesson-grid,
+.study-grid,
+.reading-grid,
+.example-grid,
+.game-frame-wrap{
+  min-width:0;
+  max-width:100%;
+}
+
+img,svg,canvas,iframe,table,pre,code{max-width:100%}
+button,a,input,textarea,select{font:inherit}
+button{touch-action:manipulation}
+a{color:inherit}
+p,li,h1,h2,h3,label,legend,td,th{
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+
+.wrap{
+  width:min(var(--u00-max),calc(100% - 28px));
+  margin:auto;
+}
+
+.skip{
+  position:absolute;
+  left:-9999px;
+}
+.skip:focus{
+  left:16px;
+  top:16px;
+  z-index:1000;
+  background:#fff;
+  color:#111;
+  padding:10px 14px;
+  border-radius:10px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible{
+  outline:3px solid #b9d8ff;
+  outline-offset:3px;
+}
+
+h1,h2,h3{
+  font-family:var(--u00-serif);
+  font-weight:444;
+  line-height:1.12;
+  margin:0;
+}
+
+p{margin:0}
+section{padding:44px 0}
+.section-tight{padding:24px 0}
+.eyebrow{
+  margin:0 0 9px;
+  color:var(--u00-gold2);
+  font-size:.76rem;
+  font-weight:850;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.lead{
+  color:var(--u00-muted);
+  font-size:clamp(1rem,2.2vw,1.18rem);
+}
+.card{
+  border:1px solid var(--u00-line);
+  border-radius:var(--u00-radius);
+  background:linear-gradient(180deg,rgba(18,35,59,.96),rgba(13,26,45,.96));
+  box-shadow:var(--u00-shadow);
+}
+.notice{
+  border:1px solid var(--u00-line);
+  border-left:4px solid var(--u00-gold);
+  border-radius:0 14px 14px 0;
+  background:rgba(216,189,122,.075);
+  padding:13px 15px;
+  color:#e9dfca;
+}
+.btn,
+button,
+.primary{
+  min-height:44px;
+  min-width:44px;
+  border-radius:12px;
+  border:1px solid var(--u00-line-strong);
+  background:var(--u00-panel2);
+  color:var(--u00-ink);
+  padding:10px 14px;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  cursor:pointer;
+}
+.primary,
+.btn.primary{
+  background:linear-gradient(180deg,var(--u00-gold2),var(--u00-gold));
+  color:#17130a;
+  border-color:var(--u00-gold2);
+  font-weight:850;
+}
+button:disabled,
+[aria-disabled="true"]{
+  opacity:.58;
+  cursor:not-allowed;
+}
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.grid{display:grid;gap:18px}
+
+/* Tablet repair for engine-generated numeric questions */
+.question-list{
+  display:grid;
+  gap:14px;
+}
+.question{
+  padding:18px;
+  border:1px solid var(--u00-line);
+  border-radius:16px;
+  background:rgba(255,255,255,.035);
+}
+.question label{
+  display:block;
+  font-weight:800;
+  line-height:1.5;
+  margin-bottom:10px;
+}
+.question input{
+  width:min(100%,320px);
+  max-width:100%;
+  min-height:46px;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--u00-line-strong);
+  background:#08111f;
+  color:var(--u00-ink);
+}
+.feedback{
+  margin-top:10px;
+  padding:10px 12px;
+  border-radius:12px;
+  min-height:42px;
+}
+.feedback.good,
+.feedback.correct{
+  background:rgba(155,226,184,.1);
+  color:var(--u00-green);
+}
+.feedback.bad,
+.feedback.incorrect{
+  background:rgba(255,159,159,.1);
+  color:var(--u00-red);
+}
+
+/* ============================================================
+   02 · HEADER / HERO
+   ============================================================ */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(16px);
+  background:rgba(8,17,31,.88);
+  border-bottom:1px solid var(--u00-line);
+}
+.header-inner{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{
+  min-width:0;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand-mark{
+  width:44px;
+  height:44px;
+  border:1px solid var(--u00-gold);
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  transform:rotate(45deg);
+  background:rgba(216,189,122,.08);
+  flex:0 0 auto;
+}
+.brand-mark span{
+  transform:rotate(-45deg);
+  font-family:Georgia,serif;
+  color:var(--u00-gold2);
+}
+.brand-copy strong{
+  display:block;
+  font-size:.82rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--u00-gold2);
+}
+.brand-copy small{
+  display:block;
+  color:var(--u00-muted);
+}
+
+.hero{
+  padding:58px 0 40px;
+  text-align:center;
+}
+.hero h1{
+  max-width:960px;
+  margin:0 auto 14px;
+  font-size:clamp(2.25rem,6vw,4.8rem);
+}
+.hero .lead{
+  max-width:890px;
+  margin:0 auto 22px;
+}
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+  margin:20px auto 0;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  min-height:36px;
+  padding:7px 12px;
+  border:1px solid var(--u00-line);
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  color:var(--u00-muted);
+  font-size:.85rem;
+}
+
+/* ============================================================
+   03 · BRIDGE PURPOSE
+   ============================================================ */
+.bridge-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);
+  gap:18px;
+  align-items:start;
+}
+.bridge-card{
+  padding:24px;
+}
+.bridge-card h2{
+  font-size:clamp(1.45rem,3vw,2.35rem);
+  margin-bottom:12px;
+}
+.bridge-card p,
+.bridge-card li{
+  color:var(--u00-muted);
+}
+.checklist{
+  display:grid;
+  gap:10px;
+  padding:0;
+  list-style:none;
+  margin:16px 0 0;
+}
+.checklist li{
+  padding:12px 12px 12px 42px;
+  position:relative;
+  border:1px solid var(--u00-line);
+  border-radius:12px;
+  background:rgba(255,255,255,.035);
+}
+.checklist li::before{
+  content:"✓";
+  position:absolute;
+  left:14px;
+  top:12px;
+  color:var(--u00-green);
+  font-weight:900;
+}
+
+/* ============================================================
+   04 · CONCEPT STUDY GUIDE
+   ============================================================ */
+.study-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.study-card{
+  padding:22px;
+}
+.study-card h3{
+  font-size:1.35rem;
+  margin-bottom:10px;
+}
+.study-card p,
+.study-card li{
+  color:var(--u00-muted);
+}
+.study-card ul{
+  display:grid;
+  gap:8px;
+  margin:14px 0 0;
+  padding-left:20px;
+}
+.try-box{
+  margin-top:16px;
+  padding:13px 14px;
+  border-left:3px solid var(--u00-gold);
+  border-radius:0 12px 12px 0;
+  background:rgba(216,189,122,.075);
+  color:#eadfca;
+}
+
+/* ============================================================
+   05 · READING ROOM
+   ============================================================ */
+.reading-grid{
+  display:grid;
+  gap:18px;
+}
+.reading-card{
+  padding:24px;
+}
+.reading-card h3{
+  font-size:1.42rem;
+  margin-bottom:10px;
+}
+.reading-card p,
+.reading-card li{
+  color:var(--u00-muted);
+}
+.reading-card ol{
+  display:grid;
+  gap:10px;
+  margin:14px 0 0;
+}
+
+/* ============================================================
+   06 · WORKED EXAMPLES
+   ============================================================ */
+.example-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.example{
+  padding:22px;
+}
+.example h3{
+  font-size:1.26rem;
+  margin-bottom:10px;
+}
+.example ol{
+  display:grid;
+  gap:7px;
+  padding-left:20px;
+  color:var(--u00-muted);
+}
+.answer{
+  margin-top:14px;
+  padding:12px 14px;
+  border-radius:12px;
+  background:rgba(155,226,184,.09);
+  color:var(--u00-green);
+  font-weight:850;
+}
+.error-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.error-card{
+  padding:18px;
+  border:1px solid rgba(255,159,159,.24);
+  background:rgba(255,159,159,.06);
+  border-radius:16px;
+}
+.error-card h3{
+  font-size:1.04rem;
+  margin-bottom:7px;
+}
+.error-card p{
+  color:var(--u00-muted);
+}
+
+/* ============================================================
+   07 · MATH BREAK GAME
+   ============================================================ */
+.game-card{
+  overflow:hidden;
+}
+.game-intro{
+  padding:24px;
+  border-bottom:1px solid var(--u00-line);
+}
+.game-intro h2{
+  font-size:clamp(1.5rem,3vw,2.5rem);
+  margin-bottom:10px;
+}
+.game-intro p{
+  color:var(--u00-muted);
+  max-width:850px;
+}
+.game-frame-wrap{
+  width:100%;
+  padding:14px;
+  background:#07101d;
+}
+.game-frame{
+  display:block;
+  width:100%;
+  min-height:680px;
+  border:1px solid var(--u00-line);
+  border-radius:16px;
+  background:#07101d;
+}
+.game-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  padding:0 24px 24px;
+}
+.booster-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin-top:18px;
+}
+.booster{
+  padding:16px;
+  border:1px solid var(--u00-line);
+  border-radius:16px;
+  background:rgba(255,255,255,.035);
+}
+.booster h3{
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.booster p{
+  color:var(--u00-muted);
+  font-size:.93rem;
+}
+
+/* ============================================================
+   08 · PRACTICE / QUIZ
+   ============================================================ */
+#quizSection[data-locked="true"]{
+  opacity:.68;
+}
+#quizSection[data-locked="true"] .question-list{
+  filter:saturate(.55);
+}
+textarea{
+  display:block;
+  width:100%;
+  min-height:150px;
+  resize:vertical;
+  border:1px solid var(--u00-line-strong);
+  border-radius:14px;
+  background:#08111f;
+  color:var(--u00-ink);
+  padding:12px 14px;
+}
+.locked{
+  border-style:dashed!important;
+}
+
+/* ============================================================
+   TABLET / MOBILE / PRINT
+   ============================================================ */
+@media(max-width:960px){
+  .bridge-grid,
+  .study-grid,
+  .example-grid,
+  .error-grid,
+  .booster-grid{
+    grid-template-columns:1fr;
+  }
+  header{
+    position:static;
+  }
+  .header-inner{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:14px 0;
+  }
+  .header-inner .actions{
+    width:100%;
+  }
+  .header-inner .actions .btn{
+    flex:1 1 180px;
+  }
+  .game-frame{
+    min-height:620px;
+  }
+}
+
+@media(max-width:620px){
+  .wrap{
+    width:min(var(--u00-max),calc(100% - 18px));
+  }
+  section{
+    padding:32px 0;
+  }
+  .hero{
+    padding:38px 0 28px;
+  }
+  .card,
+  .bridge-card,
+  .study-card,
+  .reading-card,
+  .example,
+  .game-intro{
+    padding:16px;
+  }
+  .actions,
+  .game-links{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .actions .btn,
+  .actions button,
+  .game-links .btn{
+    width:100%;
+  }
+  .question{
+    padding:14px;
+  }
+  .question input{
+    width:100%;
+  }
+  .game-frame-wrap{
+    padding:8px;
+  }
+  .game-frame{
+    min-height:560px;
+  }
+}
+
+@media print{
+  header,
+  .game-card,
+  .actions,
+  #submitPractice,
+  #resetPractice,
+  #submitQuiz,
+  #resetQuiz,
+  #saveReflection,
+  .skip{
+    display:none!important;
+  }
+  body{
+    background:#fff!important;
+    color:#111!important;
+  }
+  .card,
+  .question,
+  .notice,
+  .study-card,
+  .reading-card,
+  .example{
+    box-shadow:none!important;
+    background:#fff!important;
+    color:#111!important;
+    border-color:#bbb!important;
+  }
+  p,li,.lead,.card p,.card li{
+    color:#222!important;
+  }
+  section{
+    padding:18px 0;
+    break-inside:avoid;
+  }
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     02 · HEADER
+     ============================================================ -->
+<header>
+  <div class="wrap header-inner">
+    <a class="brand" href="../">
+      <span class="brand-mark"><span>K</span></span>
+      <span class="brand-copy">
+        <strong>Khaemenes High · Pre-Algebra · Unit 0</strong>
+        <small>Conditional Refresher · Week 1 · Number Foundations Reset</small>
+      </span>
+    </a>
+    <div class="actions">
+      <a class="btn" href="../../../diagnostic/">NAIB Readiness</a>
+      <a class="btn" href="../">Unit 0 Home</a>
+      <button class="btn" id="printLesson" type="button" onclick="window.print()">Print Lesson</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ==========================================================
+       02 · HERO
+       ========================================================== -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Conditional Refresher · Week 1 of 6</p>
+      <h1>Number Foundations Reset</h1>
+      <p class="lead">
+        Rebuild number sense, signed-number fluency, factor structure, exponents,
+        absolute value, and order-of-operations reasoning before merging into
+        the official Pre-Algebra sequence.
+      </p>
+      <div class="badges" aria-label="Lesson requirements">
+        <span class="badge">20 Questions · Lesson Practice</span>
+        <span class="badge">10 Questions · Weekly Quiz</span>
+        <span class="badge">80% Practice Gate</span>
+        <span class="badge">80% Weekly Quiz Gate</span>
+        <span class="badge">Tablet-safe</span>
+      </div>
+      <p class="notice" id="entryNotice" hidden></p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 · BRIDGE PURPOSE
+       ========================================================== -->
+  <section class="section-tight" id="bridge">
+    <div class="wrap bridge-grid">
+      <article class="card bridge-card">
+        <p class="eyebrow">Why this bridge exists</p>
+        <h2>This is a repair lane, not a lower track.</h2>
+        <p>
+          Unit 0 is a short readiness bridge for students who did not yet show
+          80% mastery on the Pre-Algebra readiness assessment. The purpose is to
+          strengthen prerequisite thinking so the student can re-enter Pre-Algebra
+          Unit 1 with confidence and evidence.
+        </p>
+        <ul class="checklist">
+          <li>Master the weekly lesson practice at 80% or higher.</li>
+          <li>Then master the weekly quiz at 80% or higher.</li>
+          <li>Use the game as rehearsal, not as a replacement for written practice.</li>
+          <li>Record one reflection about a corrected misconception or strategy.</li>
+        </ul>
+      </article>
+
+      <aside class="card bridge-card">
+        <p class="eyebrow">Week 1 focus</p>
+        <h2>Five foundations</h2>
+        <ul class="checklist">
+          <li>Order of operations</li>
+          <li>Signed-number meaning</li>
+          <li>Absolute value as distance</li>
+          <li>Exponents as repeated multiplication</li>
+          <li>Grouped expressions and reasonableness checks</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 · CONCEPT STUDY GUIDE
+       ========================================================== -->
+  <section id="concept-guide">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Learn · Concept Study Guide</p>
+        <h2>Structure before speed.</h2>
+        <p class="lead">A student is ready for Unit 1 when these ideas are explainable, not just memorizable.</p>
+      </div>
+
+      <div class="study-grid">
+        <article class="card study-card">
+          <h3>1 · Number families and membership</h3>
+          <p>
+            Numbers belong to families. A counting number such as 8 is also whole,
+            integer, rational, and real. A number such as −8 is not natural or whole,
+            but it is an integer, rational, and real. A square root must be simplified
+            before classification: √49 is 7, but √11 is irrational.
+          </p>
+          <ul>
+            <li>Ask for the <strong>most specific</strong> family first.</li>
+            <li>Then name every larger family that also contains the number.</li>
+            <li>Use decimal behavior: terminating or repeating decimals are rational.</li>
+          </ul>
+          <div class="try-box">Try: classify 0, −6, 3/4, √16, and √10.</div>
+        </article>
+
+        <article class="card study-card">
+          <h3>2 · Signed numbers and absolute value</h3>
+          <p>
+            A sign tells direction or position relative to zero. Positive can mean
+            above, right, gained, deposited, or increased. Negative can mean below,
+            left, lost, withdrawn, or decreased. Absolute value tells distance from
+            zero, so it is never negative.
+          </p>
+          <ul>
+            <li>−12 is a signed position or change.</li>
+            <li>|−12| = 12 because the distance from zero is 12 units.</li>
+            <li>Opposites have the same absolute value but different directions.</li>
+          </ul>
+          <div class="try-box">Try: explain the difference between −9 and |−9|.</div>
+        </article>
+
+        <article class="card study-card">
+          <h3>3 · Exponents and repeated multiplication</h3>
+          <p>
+            An exponent tells how many times the base is used as a factor. This is
+            different from multiplying the base by the exponent. For example, 3²
+            means 3 × 3, not 3 × 2.
+          </p>
+          <ul>
+            <li>2³ = 2 × 2 × 2 = 8.</li>
+            <li>4² = 4 × 4 = 16.</li>
+            <li>When an exponent appears in a longer expression, evaluate it before multiplication, division, addition, or subtraction.</li>
+          </ul>
+          <div class="try-box">Try: compare 2³ and 3². Which is larger?</div>
+        </article>
+
+        <article class="card study-card">
+          <h3>4 · Order of operations</h3>
+          <p>
+            The order of operations preserves shared mathematical meaning. Grouping
+            symbols come first, then exponents, then multiplication and division from
+            left to right, then addition and subtraction from left to right.
+          </p>
+          <ul>
+            <li>Multiplication does not always happen before division; they share a level.</li>
+            <li>Addition does not always happen before subtraction; they share a level.</li>
+            <li>Left-to-right matters when operations share the same priority.</li>
+          </ul>
+          <div class="try-box">Try: evaluate 18 ÷ 3 × 2. Explain the left-to-right step.</div>
+        </article>
+
+        <article class="card study-card">
+          <h3>5 · Factor structure</h3>
+          <p>
+            Factors build whole numbers. Prime factorization reveals that structure.
+            This prepares students for GCF, LCM, fractions, ratios, and later algebraic
+            factoring. A strong factor habit prevents guessing.
+          </p>
+          <ul>
+            <li>List factor pairs systematically.</li>
+            <li>Check divisibility before claiming a number is prime.</li>
+            <li>Use prime factorization to see the hidden structure of a number.</li>
+          </ul>
+          <div class="try-box">Try: write 36 as a product of prime factors.</div>
+        </article>
+
+        <article class="card study-card">
+          <h3>6 · Reasonableness checks</h3>
+          <p>
+            Before accepting an answer, check whether its sign and size make sense.
+            Estimation is not careless arithmetic; it is a quality-control habit.
+            An answer can look neat and still be impossible.
+          </p>
+          <ul>
+            <li>Predict whether the result should be positive, negative, or zero.</li>
+            <li>Estimate the magnitude before or after calculating.</li>
+            <li>Ask whether the operation should make the value larger or smaller.</li>
+          </ul>
+          <div class="try-box">Try: decide whether 49 × 21 = 10,290 is reasonable without exact multiplication.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 · READING ROOM
+       ========================================================== -->
+  <section id="reading">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Reading room</p>
+        <h2>How to study this week</h2>
+      </div>
+
+      <div class="reading-grid">
+        <article class="card reading-card">
+          <h3>Use a three-pass method</h3>
+          <ol>
+            <li><strong>Pass 1 · Meaning:</strong> identify what each sign, symbol, or operation is asking.</li>
+            <li><strong>Pass 2 · Structure:</strong> decide which rule applies and why it applies.</li>
+            <li><strong>Pass 3 · Check:</strong> verify the sign, magnitude, and context before submitting.</li>
+          </ol>
+        </article>
+
+        <article class="card reading-card">
+          <h3>Write one sentence after each hard problem</h3>
+          <p>
+            A short sentence such as “I multiplied before adding,” “absolute value is
+            distance,” or “the negative sign means below the reference point” turns a
+            calculation into a reusable strategy. This is how the refresher becomes a
+            bridge into Unit 1 rather than a repeated worksheet.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       06 · WORKED EXAMPLES
+       ========================================================== -->
+  <section id="worked-examples">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Worked examples</p>
+        <h2>Slow reasoning first, then practice speed.</h2>
+      </div>
+
+      <div class="example-grid">
+        <article class="card example">
+          <h3>Order of operations</h3>
+          <p><strong>Evaluate:</strong> 6 + 4 × 3</p>
+          <ol>
+            <li>Multiplication has priority over addition.</li>
+            <li>Compute 4 × 3 = 12.</li>
+            <li>Add 6 + 12.</li>
+          </ol>
+          <div class="answer">Answer: 18</div>
+        </article>
+
+        <article class="card example">
+          <h3>Signed addition</h3>
+          <p><strong>Evaluate:</strong> −9 + 5</p>
+          <ol>
+            <li>The signs differ, so compare magnitudes.</li>
+            <li>9 is larger than 5.</li>
+            <li>Subtract 9 − 5 = 4 and keep the sign of −9.</li>
+          </ol>
+          <div class="answer">Answer: −4</div>
+        </article>
+
+        <article class="card example">
+          <h3>Absolute value</h3>
+          <p><strong>Evaluate:</strong> |−7 − 3|</p>
+          <ol>
+            <li>Work inside the absolute-value bars first.</li>
+            <li>−7 − 3 = −10.</li>
+            <li>|−10| asks for distance from zero.</li>
+          </ol>
+          <div class="answer">Answer: 10</div>
+        </article>
+
+        <article class="card example">
+          <h3>Exponent meaning</h3>
+          <p><strong>Evaluate:</strong> 2⁴</p>
+          <ol>
+            <li>The base is 2.</li>
+            <li>The exponent 4 means use 2 as a factor four times.</li>
+            <li>2 × 2 × 2 × 2 = 16.</li>
+          </ol>
+          <div class="answer">Answer: 16</div>
+        </article>
+
+        <article class="card example">
+          <h3>Grouping with signed result</h3>
+          <p><strong>Evaluate:</strong> (8 − 11) × 3</p>
+          <ol>
+            <li>Grouping symbols come first.</li>
+            <li>8 − 11 = −3.</li>
+            <li>Multiply −3 × 3.</li>
+          </ol>
+          <div class="answer">Answer: −9</div>
+        </article>
+
+        <article class="card example">
+          <h3>Factor structure</h3>
+          <p><strong>Prime factorize:</strong> 36</p>
+          <ol>
+            <li>Start with a factor pair: 36 = 6 × 6.</li>
+            <li>Break each 6 into primes: 6 = 2 × 3.</li>
+            <li>Collect the prime factors.</li>
+          </ol>
+          <div class="answer">Answer: 36 = 2 × 2 × 3 × 3 = 2² × 3²</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" id="error-traps">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Common error traps</p>
+        <h2>Catch these before they become habits.</h2>
+      </div>
+      <div class="error-grid">
+        <article class="error-card">
+          <h3>Adding left-to-right too soon</h3>
+          <p>In 6 + 4 × 3, do not add 6 + 4 first. Multiplication happens before addition.</p>
+        </article>
+        <article class="error-card">
+          <h3>Making absolute value negative</h3>
+          <p>|−10| is 10, not −10, because absolute value is distance from zero.</p>
+        </article>
+        <article class="error-card">
+          <h3>Confusing exponent with multiplication</h3>
+          <p>3² means 3 × 3, not 3 × 2. Say “three used as a factor two times.”</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       07 · MATH BREAK GAME
+       ========================================================== -->
+  <section id="math-break">
+    <div class="wrap">
+      <article class="card game-card">
+        <div class="game-intro">
+          <p class="eyebrow">Math Break · Skill Game</p>
+          <h2>The Number Family Tree</h2>
+          <p>
+            Use this short game as concept rehearsal before the graded practice. It
+            strengthens number-family classification, rational-number recognition,
+            radical simplification, and number-line comparison.
+          </p>
+        </div>
+
+        <div class="game-frame-wrap">
+          <iframe
+            class="game-frame"
+            title="The Number Family Tree · Unit 1 readiness game"
+            src="../../../learning-games/01-number-family/index.html"
+            loading="lazy"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+          ></iframe>
+        </div>
+
+        <div class="game-links">
+          <a class="btn primary" href="../../../learning-games/01-number-family/index.html">Open Game Full Page</a>
+          <a class="btn" href="#practice">Return to Lesson Practice</a>
+        </div>
+      </article>
+
+      <div class="booster-grid" aria-label="Optional readiness boosters">
+        <article class="booster">
+          <h3>Need factor practice?</h3>
+          <p>Use factor pairs and multiples before attempting Unit 1 GCF/LCM work.</p>
+          <p><a class="btn" href="../../../learning-games/02-factors-multiples/index.html">Open Factor Booster</a></p>
+        </article>
+        <article class="booster">
+          <h3>Need operation practice?</h3>
+          <p>Use the operation stepper to rehearse order-of-operations decisions.</p>
+          <p><a class="btn" href="../../../learning-games/05-operation-stepper/index.html">Open Operation Booster</a></p>
+        </article>
+        <article class="booster">
+          <h3>Need sign practice?</h3>
+          <p>Use signed-number games later if integer signs are still unstable.</p>
+          <p><a class="btn" href="../../../learning-games/unit-02-01-integer-compass-signed-situation-sort/index.html">Open Sign Booster</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       08 · LESSON PRACTICE
+       The shared refresher-engine.js renders numeric-answer questions here.
+       ========================================================== -->
+  <section id="practice">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Lesson Mastery · 20 Questions</p>
+        <h2>Reach 80% to unlock the weekly quiz.</h2>
+        <p class="lead">Use numbers only. Decimals are accepted when the question requires them.</p>
+      </div>
+
+      <div class="question-list" id="practiceQuestions"></div>
+
+      <div class="actions">
+        <button class="primary" id="submitPractice" type="button">Score Lesson Practice</button>
+        <button id="resetPractice" type="button">Reset Visible Answers</button>
+      </div>
+      <p class="notice" id="practiceStatus">No lesson-practice score yet.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       08 · WEEKLY QUIZ GATE
+       ========================================================== -->
+  <section id="quizSection" data-locked="true">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Weekly Quiz Gate · 10 Questions</p>
+        <h2>Reach 80% to complete Week 1.</h2>
+        <p id="quizLock" class="notice">Locked: reach 80% on lesson practice first.</p>
+      </div>
+
+      <div class="question-list" id="quizQuestions"></div>
+
+      <div class="actions">
+        <button class="primary" id="submitQuiz" type="button">Score Weekly Quiz</button>
+        <button id="resetQuiz" type="button">Reset Visible Answers</button>
+      </div>
+      <p class="notice" id="quizStatus">No weekly-quiz score yet.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       09 · REFLECTION / NEXT LESSON GATE
+       ========================================================== -->
+  <section id="mastery">
+    <div class="wrap">
+      <article class="card bridge-card">
+        <p class="eyebrow">Reflect · Continue</p>
+        <h2>What became clearer this week?</h2>
+        <p class="lead">
+          A useful reflection names one repaired misconception, one reliable strategy,
+          or one question to revisit before the next bridge lesson.
+        </p>
+        <textarea id="reflection" placeholder="Record a strategy, misconception you corrected, or question to revisit."></textarea>
+        <div class="actions">
+          <button id="saveReflection" type="button">Save Reflection</button>
+          <a class="btn locked" id="nextLink" aria-disabled="true" href="#mastery">Locked · practice + quiz both require 80%</a>
+        </div>
+        <p id="reflectionStatus" class="notice">Reflection is optional and does not replace mastery evidence.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  Conditional Unit 0 · Week 1 · practice ≥80% · weekly quiz ≥80% · local progress
+</footer>
+
+<!-- ============================================================
+     10 · REFRESHER WEEK DATA + SHARED ENGINE
+     The existing refresher engine generates the 20 practice questions,
+     10 quiz questions, localStorage mastery evidence, lock states,
+     and next-lesson gate.
+     ============================================================ -->
+<script>
+window.REFRESHER_WEEK = {
+  week: 1,
+  title: "Number Foundations Reset",
+  strand: "Number Foundations",
+  next: "lesson-02-rational-proportional.html"
+};
+</script>
+<script src="../assets/refresher-engine.js"></script>
+</body>
+</html>
