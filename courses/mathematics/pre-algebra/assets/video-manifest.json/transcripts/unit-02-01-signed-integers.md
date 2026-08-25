@@ -13,5 +13,5 @@
   "transcript": null,
   "captions_verified": false,
   "alignment_status": "aligned",
-  "alignment_note": "This video teaches signed integers, including positive and negative whole-number values. It directly supports Unit 1 Lesson 1 by strengthening the integer portion of the lesson's classification of natural, whole, integer, rational, irrational, and real numbers."
+  "alignment_note": "This video teaches signed integers, including positive and negative whole-number values. It directly supports Unit 2 Lesson 1 by strengthening the integer portion of the lesson's classification of natural, whole, integer, rational, irrational, and real numbers."
 }
