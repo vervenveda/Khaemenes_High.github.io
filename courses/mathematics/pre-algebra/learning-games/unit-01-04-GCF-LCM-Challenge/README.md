@@ -1,12 +1,6 @@
 Group or Cycle? as the main Math Break for deciding GCF vs. LCM before calculation, with the separate GCF/LCM Challenge as an optional extension.
 
-Repository-ready file
-
-Download group-or-cycle.html
-
-Backup copy
-
-Download Lesson 4 · Synced Group or Cycle
+Lesson 4 · Synced Group or Cycle
 
 The new Animated Instruction Studio has four parts:
 
@@ -21,7 +15,7 @@ bus intervals → LCM = 60
 
 That directly reinforces the lesson’s principle that the situation—not merely the numbers—determines the mathematical tool.
 
-I also upgraded the actual game. After the student chooses GCF or LCM, an evidence panel now reveals why:
+After the student chooses GCF or LCM, an evidence panel now reveals why:
 
 For a grouping problem such as 18 and 24:
 
@@ -35,7 +29,7 @@ LCM(8,12) = 24
 The multiple lists first meet at 24
 Then it explains what 24 means in the context.
 
-So she learns:
+So the student learns:
 
 interpret → choose tool → inspect structure → see calculation → interpret the answer
 
