@@ -12,6 +12,6 @@
   "autoplay": false,
   "transcript": null,
   "captions_verified": false,
-  "alignment_status": "enrichment_only",
-  "alignment_note": "This video teaches how to simplify fractions by reducing them to equivalent forms. Unit 3 Lesson 2 focuses on the coordinate plane and multi-step integer applications, so this resource is best treated as optional fraction and rational-number enrichment rather than a directly aligned lesson video."
+  "alignment_status": "aligned",
+  "alignment_note": "This video directly supports Unit 3 Lesson 2 by showing how fractions are simplified to equivalent forms. It reinforces the lesson's work with common factors, greatest common factor, simplest form, and the idea that equivalent representations preserve value."
 }
