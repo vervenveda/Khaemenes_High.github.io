@@ -13,5 +13,5 @@
   "transcript": null,
   "captions_verified": false,
   "alignment_status": "not_aligned",
-  "alignment_note": "This video teaches estimating quotients using compatible numbers. Unit 1 Lesson 1 focuses on classifying natural, whole, integer, rational, irrational, and real numbers, so this video does not directly support the lesson objective."
+  "alignment_note": "This video teaches estimating quotients using compatible numbers. Unit 1 Lesson 6 focuses on classifying natural, whole, integer, rational, irrational, and real numbers, so this video does not directly support the lesson objective."
 }
