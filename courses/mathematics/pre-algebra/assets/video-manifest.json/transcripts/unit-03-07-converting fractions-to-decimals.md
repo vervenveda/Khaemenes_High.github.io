@@ -12,6 +12,6 @@
   "autoplay": false,
   "transcript": null,
   "captions_verified": false,
-  "alignment_status": "enrichment_only",
-  "alignment_note": "This video teaches how to convert fractions to decimals using place value. The current lesson focus is interpreting division as measurement or partition and dividing by multiplying by the reciprocal, so this resource is best treated as optional rational-number enrichment rather than a directly aligned lesson video."
+  "alignment_status": "aligned",
+  "alignment_note": "This video directly supports Unit 3 Lesson 7 by reinforcing conversion from fractions to decimals using place-value reasoning. It complements the lesson's broader work with decimal operations, terminating and repeating decimal representations, and precision."
 }
