@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "lesson_id": "KH-MATH-PA-U01-L01",
+  "lesson_id": "KH-MATH-PA-U01-L02",
   "unit": 1,
-  "lesson": 1,
+  "lesson": 2,
   "title": "Multiples vs. Factors — What are Multiples and Factors?",
   "provider": "youtube",
   "video_id": "1qPfLkOEuYY",
