@@ -3,15 +3,15 @@
   "lesson_id": "KH-MATH-PA-U01-L01",
   "unit": 1,
   "lesson": 1,
-  "title": "Number Systems Introduction — Decimal, Binary, Octal & Hexadecimal",
+  "title": "Types of Numbers — Natural, Whole, Integers, Rational, Irrational, Real & Imaginary",
   "provider": "youtube",
-  "video_id": "FFDMzbrEXaE",
-  "embed_url": "https://www.youtube-nocookie.com/embed/FFDMzbrEXaE",
+  "video_id": "WxXZaP8Y8pI",
+  "embed_url": "https://www.youtube-nocookie.com/embed/WxXZaP8Y8pI",
   "aspect_ratio": "16:9",
   "optional": true,
   "autoplay": false,
   "transcript": null,
   "captions_verified": false,
-  "alignment_status": "enrichment_only",
-  "alignment_note": "This video teaches decimal, binary, octal, and hexadecimal numeral systems. Unit 1 Lesson 1 primarily teaches natural, whole, integer, rational, irrational, and real number classifications."
+  "alignment_status": "aligned",
+  "alignment_note": "This video directly supports Unit 1 Lesson 1 by teaching natural numbers, whole numbers, integers, rational numbers, irrational numbers, and real numbers. It also introduces imaginary numbers as an extension beyond the lesson's core real-number classification objectives."
 }
