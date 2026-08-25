@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "lesson_id": "KH-MATH-PA-U01-L02",
+  "lesson_id": "KH-MATH-PA-U01-L03",
   "unit": 1,
-  "lesson": 2,
+  "lesson": 3,
   "title": "Divisibility, Prime Numbers, and Prime Factorization",
   "provider": "youtube",
   "video_id": "WZWKJG9fxnU",
