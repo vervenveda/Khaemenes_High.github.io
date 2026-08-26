@@ -11,7 +11,8 @@
 - Foundation, Core, and Extended practice pathways
 - 24-question mastery check and answer key
 - Multilingual vocabulary bridge (English, Spanish, French, Arabic, Portuguese)
-- Rational Representation Lab
+- Lesson-integrated rational representation activities
+- Eight lesson-aligned learning games, injected through the shared lesson engine
 - Rational Quantity Investigation project
 - Teacher guide, family guide, standards map, and local export tools
 - Local-only progress, reflections, drafts, and exports
@@ -27,6 +28,10 @@
 6. Dividing Fractions & Complex Fractions
 7. Decimal Operations, Terminating & Repeating Decimals
 8. Conversions, Estimation & Multi-Step Rational Problems
+
+## Companion-learning architecture
+
+Each lesson can receive its aligned game and optional video companion through `assets/lesson-engine.js`. Companion activities support understanding and fluency but do not replace the scored lesson assignment or the 80% mastery requirement.
 
 ## Privacy
 
