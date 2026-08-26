@@ -12,7 +12,7 @@
     "big_ideas": [
       "An integer's sign communicates direction or position relative to a reference point.",
       "Opposites have equal absolute value because they are equally distant from zero.",
-      "Integer operations can be justified with number lines, zero pairs, patterns, and context.",
+      "Integer operations can be justified with number lines, zero pairs, patterns, inverse relationships, and context.",
       "Subtraction can be understood as adding the opposite.",
       "Coordinates and signed change connect integer reasoning to graphs, finance, science, weather, and movement."
     ],
@@ -121,6 +121,7 @@
         "difference",
         "additive-inverse",
         "opposites",
+        "subtraction",
         "signed-change",
         "distance"
       ],
@@ -129,27 +130,28 @@
     {
       "id": "l06",
       "number": 6,
-      "title": "Multiplying Integers",
+      "title": "Multiplying Integers & Sign Patterns",
       "duration": "55–70 minutes",
       "objectives": [
         "Multiply integers accurately using sign rules.",
         "Explain multiplication sign rules using patterns and repeated signed change.",
         "Use zero, one, and negative one structurally.",
-        "Solve contextual problems involving repeated gains, losses, and rates."
+        "Connect multiplication facts to inverse division reasoning in preparation for Lesson 7."
       ],
       "vocab_ids": [
+        "multiplication",
+        "factor",
         "product",
-        "quotient",
         "magnitude",
         "signed-change",
-        "net-change"
+        "quotient"
       ],
       "file": "lessons/lesson-06-multiply-divide-integers.html"
     },
     {
       "id": "l07",
       "number": 7,
-      "title": "Dividing Integers",
+      "title": "Dividing Integers & Inverse Reasoning",
       "duration": "55–70 minutes",
       "objectives": [
         "Divide integers accurately using sign rules.",
@@ -158,16 +160,16 @@
         "Solve contextual problems involving signed rates and equal sharing."
       ],
       "vocab_ids": [
-        "coordinate-plane",
-        "x-axis",
-        "y-axis",
-        "quadrant",
-        "ordered-pair",
-        "origin",
-        "signed-change",
-        "distance"
+        "division",
+        "dividend",
+        "divisor",
+        "quotient",
+        "product",
+        "factor",
+        "magnitude"
       ],
-      "file": "lessons/lesson-07-coordinate-plane-signed-change.html"
+      "file": "lessons/lesson-07-coordinate-plane-signed-change.html",
+      "file_note": "Legacy filename retained for compatibility; the live lesson content is Dividing Integers & Inverse Reasoning."
     },
     {
       "id": "l08",
@@ -181,10 +183,16 @@
         "Model and solve multi-stage contextual and coordinate problems."
       ],
       "vocab_ids": [
-        "net-change",
-        "balance",
-        "elevation",
+        "coordinate-plane",
+        "x-axis",
+        "y-axis",
+        "quadrant",
+        "ordered-pair",
+        "x-coordinate",
+        "y-coordinate",
+        "origin",
         "signed-change",
+        "net-change",
         "sum",
         "difference",
         "product",
