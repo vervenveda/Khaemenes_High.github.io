@@ -130,46 +130,54 @@
     {
       "id": "l06",
       "number": 6,
-      "title": "Multiplying Integers & Sign Patterns",
-      "duration": "55–70 minutes",
+      "title": "Multiplying & Dividing Integers",
+      "duration": "60–75 minutes",
       "objectives": [
-        "Multiply integers accurately using sign rules.",
-        "Explain multiplication sign rules using patterns and repeated signed change.",
-        "Use zero, one, and negative one structurally.",
-        "Connect multiplication facts to inverse division reasoning in preparation for Lesson 7."
+        "Multiply integers with like and unlike signs accurately.",
+        "Divide integers with like and unlike signs accurately.",
+        "Explain the sign rules using patterns, repeated signed change, and inverse relationships.",
+        "Use zero, one, and negative one structurally when multiplying or dividing signed values.",
+        "Evaluate mixed integer expressions involving absolute value, multiplication, and division.",
+        "Solve and verify real-world problems involving repeated signed rates and equal sharing."
       ],
       "vocab_ids": [
-        "multiplication",
-        "factor",
+        "integer",
+        "positive-integer",
+        "negative-integer",
+        "absolute-value",
         "product",
-        "magnitude",
-        "signed-change",
-        "quotient"
+        "quotient",
+        "factor",
+        "multiplication",
+        "division"
       ],
       "file": "lessons/lesson-06-multiply-divide-integers.html"
     },
     {
       "id": "l07",
       "number": 7,
-      "title": "Dividing Integers & Inverse Reasoning",
+      "title": "Dividing Integers",
       "duration": "55–70 minutes",
       "objectives": [
-        "Divide integers accurately using sign rules.",
-        "Use multiplication as an inverse check for integer division.",
-        "Explain why division by zero is undefined.",
-        "Solve contextual problems involving signed rates and equal sharing."
+        "Divide integers with like and unlike signs accurately.",
+        "Explain quotient signs by connecting division to multiplication.",
+        "Verify each integer quotient with the inverse relationship: quotient × divisor = dividend.",
+        "Distinguish zero divided by a nonzero integer from division by zero.",
+        "Evaluate signed division expressions involving absolute value, negatives outside grouping symbols, and simple equations.",
+        "Model real-world signed rates, equal intervals, equal groups, money changes, temperature changes, and elevation changes with integer division."
       ],
       "vocab_ids": [
-        "division",
+        "integer",
+        "positive-integer",
+        "negative-integer",
+        "absolute-value",
+        "quotient",
         "dividend",
         "divisor",
-        "quotient",
-        "product",
-        "factor",
-        "magnitude"
+        "division"
       ],
       "file": "lessons/lesson-07-coordinate-plane-signed-change.html",
-      "file_note": "Legacy filename retained for compatibility; the live lesson content is Dividing Integers & Inverse Reasoning."
+      "file_note": "Legacy filename retained for compatibility; the live lesson content is Dividing Integers."
     },
     {
       "id": "l08",
