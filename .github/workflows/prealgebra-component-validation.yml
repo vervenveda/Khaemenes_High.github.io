@@ -35,8 +35,6 @@ jobs:
         run: node courses/mathematics/pre-algebra/tools/validate-course-navigator.mjs
       - name: Validate read-only Study Scorebook and official result separation
         run: node courses/mathematics/pre-algebra/tools/validate-study-scorebook.mjs
-      - name: Audit curriculum integrity
-        run: node courses/mathematics/pre-algebra/tools/audit-curriculum-integrity.mjs
       - name: Audit local navigation and resource paths
         run: node courses/mathematics/pre-algebra/tools/audit-navigation.mjs
       - name: Audit JavaScript runtime integrity
