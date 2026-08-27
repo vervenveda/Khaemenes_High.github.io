@@ -1,0 +1,3 @@
+The Animated Instruction Studio includes Fraction = Quotient, Exact Number-Line Point, Mixed ↔ Improper, and What Is Rational? Students see ideas such as 3/5 = 3 ÷ 5, −3/4 positioned between −1 and 0, 11/4 = 2 3/4, −2 1/3 = −7/3, and why integers, terminating decimals, and repeating decimals are rational.
+
+The game includes the lesson’s original concepts plus Extended missions on 5/5, −5/4, −7/3, repeating decimals, rational-number definitions, signed location, and equivalent representations. It retains Foundation / Core / Extended, 12/16/20 missions, immediate explanations, missed-item replay, local best score, keyboard controls, printable reference, and the 80% mastery gate.

@@ -1,0 +1,7 @@
+This capstone companion follows the lesson’s four major objectives: convert among fractions, decimals, and percentages, estimate before calculating, solve multi-step contextual problems while preserving units, and choose between exact and approximate representations depending on purpose.
+
+The Animated Instruction Studio includes Representation Triangle, connecting 5/8 = 0.625 = 62.5%; Estimate Before Exact, using 31.2 × 0.49 ≈ 30 × 0.5 ≈ 15 before confirming 15.288; Multi-Step Route, showing how representation choice and order of operations simplify mixed-form calculations; and Exact, Approximate & Units, emphasizing that 1/3 may be preferable to 0.33 when exactness matters and that 32 pieces is fundamentally different from 32 m.
+
+The mission bank incorporates the lesson’s conversion, percent, estimation, unit, precision, and multi-step problems and adds Extended challenges such as 7/8 = 0.875 = 87.5%, estimating 49.8 × 0.202 ≈ 10, solving 60% of 25 + 3/4 = 15.75, reporting $7.436 appropriately as $7.44, and analyzing the rounding error in 1/3 ≈ 0.33. These additions reinforce the lesson’s emphasis on choosing representations and checking whether a contextual answer is defensible.
+
+The established architecture remains intact: Foundation / Core / Extended, 12/16/20 mission rounds, score/streak/accuracy tracking, immediate explanations and hints, missed-item replay, local best score, print support, keyboard controls, responsive/reduced-motion design, and the 80% mastery target.

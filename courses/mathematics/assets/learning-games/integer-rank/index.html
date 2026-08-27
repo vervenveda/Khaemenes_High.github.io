@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Khaemenes Pre-Algebra Unit 2 Lesson 3 companion game: Comparing and Ordering Integers.">
+<meta name="theme-color" content="#090d14">
+<title>Lesson 3 · Integer Rank · Compare & Order Integers</title>
+<style>
+:root{
+--bg:#090d14;--panel:#151d29;--ink:#f7f2e7;--muted:#c9c1b2;--line:#3b4655;
+--gold:#d8bd7a;--gold2:#f0d99b;--green:#8fd4ad;--red:#ef9a9a;--blue:#90b8e6;
+--shadow:0 18px 55px rgba(0,0,0,.36);--serif:Cinzel,Georgia,"Times New Roman",serif;
+--sans:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--sans);line-height:1.5;background:
+radial-gradient(circle at 15% 0%,rgba(216,189,122,.11),transparent 28rem),
+radial-gradient(circle at 90% 20%,rgba(84,122,164,.11),transparent 30rem),
+linear-gradient(180deg,var(--bg),#0c121a 60%,#090d14)}
+button,a,select{font:inherit}a{color:inherit}button{touch-action:manipulation}
+button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #b9d8ff;outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:1000;background:#fff;color:#111;padding:10px 14px;border-radius:8px}
+.shell{width:min(var(--max),calc(100% - 28px));margin:auto;padding:22px 0 50px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid rgba(216,189,122,.22);padding:8px 0 20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}.seal{width:44px;height:44px;border:1px solid rgba(216,189,122,.7);border-radius:9px;display:grid;place-items:center;transform:rotate(45deg);background:rgba(216,189,122,.06);flex:0 0 auto}.seal span{transform:rotate(-45deg);font-family:Georgia,serif;color:var(--gold2)}
+.kicker{margin:0;color:var(--gold2);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}.crumb{margin:3px 0 0;color:var(--muted);font-size:.86rem}.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.ghost,.primary,.secondary{min-height:42px;border-radius:10px;padding:9px 13px;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.ghost,.secondary{border:1px solid var(--line);background:#151c25;color:var(--ink)}.primary{border:1px solid var(--gold2);background:var(--gold2);color:#17130a;font-weight:800}.ghost:hover,.secondary:hover{border-color:var(--gold)}
+.hero{text-align:center;max-width:930px;margin:auto;padding:46px 10px 28px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.19em;font-size:.75rem;font-weight:800}
+h1,h2,h3{font-family:var(--serif);font-weight:500}h1{font-size:clamp(2.05rem,5vw,4.05rem);line-height:1.05;margin:10px 0 13px}.hero p{color:var(--muted);font-size:clamp(1rem,2vw,1.15rem);max-width:800px;margin:0 auto}
+.lesson-sync{max-width:900px;margin:20px auto 0;padding:13px 15px;border-left:3px solid var(--gold);border-radius:0 11px 11px 0;background:rgba(216,189,122,.06);color:#ddd5c6;text-align:left}
+.panel{border:1px solid rgba(216,189,122,.18);border-radius:18px;background:linear-gradient(180deg,rgba(23,30,41,.97),rgba(15,21,30,.97));box-shadow:var(--shadow)}
+.studio{padding:20px;margin-bottom:22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:14px}.section-head h2{margin:3px 0 0;font-size:clamp(1.4rem,3vw,2.1rem)}.section-head p{margin:0;color:var(--muted);max-width:660px}
+.studio-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}.studio-tab{min-height:52px;border:1px solid var(--line);border-radius:10px;background:#111720;color:var(--muted);cursor:pointer;padding:8px}.studio-tab[aria-selected="true"]{background:var(--gold2);border-color:var(--gold2);color:#17130a;font-weight:800}
+.scene{display:none;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:16px}.scene.active{display:grid}
+.visual{min-height:330px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px),#0b1016;background-size:24px 24px;padding:18px;display:grid;place-items:center;overflow:hidden}
+.copy{border:1px solid var(--line);border-radius:14px;background:#111720;padding:18px}.copy h3{margin:0 0 8px}.copy p,.copy li{color:var(--muted);font-size:.92rem}.copy ul{padding-left:20px}.takeaway{margin-top:12px;padding:10px 12px;border-left:3px solid var(--gold);background:rgba(216,189,122,.06);color:#e7dece}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+
+/* demos */
+.line-wrap{width:min(100%,700px);position:relative;height:200px}.axis{position:absolute;left:5%;right:5%;top:100px;height:2px;background:#778393}.axis:before,.axis:after{content:"";position:absolute;top:-6px;border:7px solid transparent}.axis:before{left:-10px;border-right-color:#778393}.axis:after{right:-10px;border-left-color:#778393}
+.tick{position:absolute;top:86px;width:1px;height:30px;background:#586576}.tick span{position:absolute;top:35px;left:50%;transform:translateX(-50%);color:#9da7b2;font-size:.75rem}
+.zero-tick{background:var(--gold2);width:2px}.point{position:absolute;top:49px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;transform:translateX(-50%);border:1px solid var(--line);background:#151d29;color:#fff;font:1rem Georgia,serif;transition:.45s}.point.on{border-color:var(--gold2);background:#211c12;color:#fff0c7;transform:translateX(-50%) scale(1.06)}.arrow-right{position:absolute;top:38px;left:50%;right:8%;height:2px;background:var(--gold2);opacity:.35}.arrow-right:after{content:"";position:absolute;right:-2px;top:-5px;border:6px solid transparent;border-left-color:var(--gold2)}
+.neg-demo,.mag-demo,.context-demo{display:grid;gap:10px;width:min(100%,680px)}.demo-card{border:1px solid var(--line);border-radius:11px;background:#111720;padding:13px;text-align:center;color:var(--muted);opacity:.4;transition:.25s}.demo-card b{display:block;font:1.08rem Georgia,serif;color:#e8e0d1}.demo-card.on{opacity:1;border-color:var(--gold2);background:rgba(216,189,122,.07);color:#fff0c7}
+.sort-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;width:100%}.sort-chip{min-width:70px;border:1px solid var(--line);border-radius:10px;background:#111720;padding:12px;text-align:center;font:1.05rem Georgia,serif;opacity:.4;transition:.25s}.sort-chip.on{opacity:1;border-color:var(--gold2);background:rgba(216,189,122,.07);transform:translateY(-2px)}
+.context-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}.context-card{border:1px solid var(--line);border-radius:12px;background:#111720;padding:14px;text-align:center;opacity:.42;transition:.25s}.context-card b{display:block;font-family:Georgia,serif}.context-card span{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}.context-card.on{opacity:1;border-color:var(--gold2);transform:translateY(-2px);background:rgba(216,189,122,.06)}
+
+/* game */
+.game-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:18px;align-items:start}.play{padding:20px}.side{padding:18px}
+.status{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-bottom:15px}.progress-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.82rem;margin-bottom:7px}.track{height:8px;background:#07090d;border:1px solid #313946;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ae9255,var(--gold2));transition:.3s}.stat{min-width:72px;text-align:center;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}.stat b{display:block}.stat span{display:block;color:var(--muted);font-size:.68rem;text-transform:uppercase}
+.stage{min-height:235px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),#0c1117;background-size:24px 24px;padding:22px;display:grid;place-items:center;text-align:center}.mission-badge{display:inline-block;margin-bottom:8px;padding:5px 9px;border:1px solid rgba(216,189,122,.35);border-radius:999px;color:var(--gold2);font-size:.7rem;letter-spacing:.11em;text-transform:uppercase}.big{font:clamp(2rem,7vw,4.4rem) Georgia,serif;color:#fff5da;margin:6px 0}.prompt{color:#ddd5c6}
+.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}.choice{min-height:68px;border:1px solid var(--line);border-radius:12px;background:#111720;color:var(--ink);cursor:pointer;padding:11px;text-align:left;position:relative}.choice:hover{border-color:#748194}.choice[aria-pressed="true"]{border-color:var(--gold2);background:rgba(216,189,122,.09)}.choice[aria-pressed="true"]:after{content:"✓";position:absolute;right:9px;top:7px;color:var(--gold2);font-weight:900}.choice strong{display:block;font-family:Georgia,serif}
+.feedback{margin-top:14px;min-height:78px;border:1px solid transparent;border-radius:12px;padding:13px 14px;background:rgba(255,255,255,.02)}.feedback.good{border-color:rgba(143,212,173,.42);background:rgba(143,212,173,.07)}.feedback.bad{border-color:rgba(239,154,154,.42);background:rgba(239,154,154,.07)}.feedback h3{margin:0 0 4px;font-size:1rem}.feedback p{margin:0;color:#d7d0c2}.feedback .detail{color:var(--gold2);margin-top:6px;font-size:.88rem}.action-row{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:14px}
+.side h2{margin:2px 0 12px;font-size:1.18rem}.concept{border:1px solid var(--line);border-radius:11px;padding:11px;background:rgba(255,255,255,.025);margin-bottom:9px}.concept b{display:block;font:1rem Georgia,serif}.concept span{color:var(--muted);font-size:.82rem}.tip{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.tip p{margin:5px 0 0;color:var(--muted);font-size:.87rem}.controls{display:grid;gap:10px;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.control{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.control label{color:var(--muted);font-size:.8rem}.control select{min-height:40px;border:1px solid var(--line);border-radius:9px;background:#111720;color:var(--ink);padding:8px 10px}.best{color:var(--gold2);font-size:.82rem;margin:11px 0 0}
+.mastery{display:none;margin-top:20px;padding:24px;text-align:center;border:1px solid rgba(216,189,122,.5);border-radius:16px;background:#111720}.mastery.show{display:block}.mastery-mark{width:72px;height:72px;border-radius:50%;border:1px solid var(--gold2);display:grid;place-items:center;margin:0 auto 12px;color:var(--gold2);font:1.25rem Georgia,serif}.mastery h2{margin:5px 0}.mastery p{color:var(--muted);max-width:650px;margin:7px auto 15px}
+footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
+@media(max-width:920px){.scene,.game-grid{grid-template-columns:1fr}.side{order:2}}@media(max-width:720px){.studio-tabs{grid-template-columns:1fr 1fr}.choice-grid{grid-template-columns:1fr}.context-grid{grid-template-columns:1fr}}@media(max-width:560px){.shell{width:min(100% - 18px,var(--max));padding-top:12px}.actions{display:none}.studio,.play{padding:13px}.status{grid-template-columns:1fr 66px}.status .stat:last-child{display:none}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.001ms!important;scroll-behavior:auto!important}}@media print{body{background:#fff;color:#111}.actions,.studio-tabs,.row,.action-row,.controls{display:none!important}.panel,.visual,.copy,.stage,.concept{box-shadow:none!important;background:#fff!important;color:#111!important;border-color:#bbb!important}.hero p,.copy p,.copy li,.concept span,.tip p{color:#444!important}}
+</style>
+</head>
+<body><a class="skip" href="#game">Skip to game</a><div class="shell">
+<header class="topbar">
+<a class="brand" href="../units/unit-02/lessons/lesson-03-compare-order-integers.html"><div class="seal"><span>&lt;&gt;</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 02</p><p class="crumb">Lesson 3 Companion · Comparing & Ordering Integers</p></div></a>
+<div class="actions"><a class="ghost" href="../units/unit-02/lessons/lesson-03-compare-order-integers.html">← Lesson 3</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
+</header>
+
+<section class="hero"><div class="eyebrow">Unit 2 · Lesson 3 · Companion Game</div><h1>Integer Rank</h1><p>Use number-line position, inequality symbols, signed context, and ordering logic to decide which value belongs farther left or farther right.</p><div class="lesson-sync"><strong>Lesson sync:</strong> numbers increase as you move right. Among negative integers, the value closer to zero is greater. Absolute value measures magnitude—not signed order.</div></section>
+
+<section class="panel studio">
+<div class="section-head"><div><div class="eyebrow">Animated instruction studio</div><h2>Position determines order.</h2></div><p>Four visual demonstrations mirror the lesson’s number-line, negative comparison, ordering, and magnitude-vs-order reasoning.</p></div>
+<div class="studio-tabs"><button class="studio-tab" aria-selected="true">1 · Farther Right = Greater</button><button class="studio-tab" aria-selected="false">2 · Negative Number Trap</button><button class="studio-tab" aria-selected="false">3 · Order a Set</button><button class="studio-tab" aria-selected="false">4 · Magnitude ≠ Order</button></div>
+
+<div class="scene active">
+<div class="visual"><div class="line-wrap"><div class="axis"></div><div class="arrow-right"></div><div class="tick" style="left:15%"><span>−8</span></div><div class="tick" style="left:35%"><span>−3</span></div><div class="tick zero-tick" style="left:50%"><span>0</span></div><div class="tick" style="left:70%"><span>+4</span></div><div class="tick" style="left:85%"><span>+7</span></div><div class="point" id="rightA" style="left:15%">−8</div><div class="point" id="rightB" style="left:35%">−3</div></div></div>
+<div class="copy"><h3>Greater numbers live farther right.</h3><p>−3 is greater than −8 because −3 appears to the right of −8 on the number line.</p><div class="takeaway">Left → smaller. Right → greater.</div><div class="row"><button class="primary" id="playRightDemo">Show the comparison</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="neg-demo"><div class="demo-card" id="neg1"><b>Compare −15 and −6</b>15 has the larger magnitude.</div><div class="demo-card" id="neg2"><b>But −15 lies farther left.</b>So −15 is smaller.</div><div class="demo-card" id="neg3"><b>−15 &lt; −6</b>Closer to zero is greater among negatives.</div></div></div>
+<div class="copy"><h3>Larger magnitude can mean smaller signed value.</h3><p>This is the core misconception of Lesson 3. Negative numbers reverse the intuition students bring from positive whole numbers.</p><div class="takeaway">Do not compare negative integers by ignoring their signs.</div><div class="row"><button class="primary" id="playNegDemo">Expose the trap</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div><div class="sort-row" id="sortStart"><div class="sort-chip">4</div><div class="sort-chip">−6</div><div class="sort-chip">0</div><div class="sort-chip">−1</div><div class="sort-chip">7</div></div><div style="height:18px"></div><div class="sort-row" id="sortEnd"><div class="sort-chip" id="s1">−6</div><div class="sort-chip" id="s2">−1</div><div class="sort-chip" id="s3">0</div><div class="sort-chip" id="s4">4</div><div class="sort-chip" id="s5">7</div></div></div></div>
+<div class="copy"><h3>Ordering is repeated comparison.</h3><p>Place the most negative values first, then zero, then positive values when ordering least to greatest.</p><div class="takeaway">Least to greatest means left to right on the number line.</div><div class="row"><button class="primary" id="playSortDemo">Build the order</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="mag-demo"><div class="demo-card" id="mag1"><b>|−12| = 12 and |−5| = 5</b>−12 has greater magnitude.</div><div class="demo-card" id="mag2"><b>Signed comparison</b>−12 is still farther left.</div><div class="demo-card" id="mag3"><b>−12 &lt; −5</b>Magnitude and numerical order are different ideas.</div></div></div>
+<div class="copy"><h3>Absolute value measures distance, not rank.</h3><p>Lesson 2 taught magnitude. Lesson 3 now separates that from signed numerical order.</p><div class="takeaway">A number can have greater absolute value and still be the smaller signed integer.</div><div class="row"><button class="primary" id="playMagDemo">Separate magnitude and order</button></div></div>
+</div>
+</section>
+
+<main id="game" class="game-grid">
+<section class="panel play">
+<div class="section-head"><div><div class="eyebrow">Integer Rank Challenge</div><h2>Compare & Order Missions</h2></div><p>Choose inequality symbols, identify greatest/least values, order sets, interpret signed contexts, and catch magnitude traps.</p></div>
+<div class="status"><div><div class="progress-label"><span id="roundLabel">Mission 1 of 16</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div></div>
+<div class="stage"><div><div class="mission-badge" id="missionBadge">Compare</div><div class="big" id="challengeValue">−3 ? −8</div><div class="prompt" id="questionPrompt">Which comparison is correct?</div></div></div>
+<div class="choice-grid" id="choiceGrid"></div>
+<div class="action-row"><button class="secondary" id="hintBtn">Reasoning hint</button><button class="primary" id="checkBtn">Check reasoning</button><button class="secondary" id="nextBtn" hidden>Next mission →</button></div>
+<div class="feedback" id="feedback"><h3>Ready.</h3><p>Picture the values on a number line before choosing.</p></div>
+<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../units/unit-02/lessons/lesson-03-compare-order-integers.html">Return to Lesson 3</a></div></div>
+</section>
+
+<aside class="panel side">
+<h2>Lesson 3 Field Guide</h2>
+<div class="concept"><b>Number-line order</b><span>Farther right means greater; farther left means less.</span></div>
+<div class="concept"><b>Negative integers</b><span>Among negatives, closer to zero is greater.</span></div>
+<div class="concept"><b>Inequality symbols</b><span>The open side faces the greater number; the point faces the lesser.</span></div>
+<div class="concept"><b>Absolute value</b><span>Measures magnitude, not signed order.</span></div>
+<div class="concept"><b>Ordering</b><span>Least to greatest follows the number line from left to right.</span></div>
+<div class="tip"><strong>Rank question</strong><p id="strategyText">Which value would appear farther right on the number line?</p></div>
+<div class="controls"><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
+<p class="best" id="bestScore">Best mastery score: —</p>
+</aside>
+</main>
+<footer>KH-MATH-PA-U02-L3 · compare · order · inequalities · signed context · magnitude vs order · 80% mastery</footer>
+</div>
+
+<script>
+(()=>{"use strict";
+const BANK=[
+{l:"Foundation",b:"Compare",v:"−3 ? −8",q:"Which statement is true?",o:["−3 < −8","−3 > −8","−3 = −8","Cannot compare"],a:1,h:"Which number is farther right?",w:"−3 lies to the right of −8, so −3 > −8."},
+{l:"Foundation",b:"Choose the Symbol",v:"−12 __ −5",q:"Which symbol belongs in the blank?",o:[">","=","+","<"],a:3,h:"−12 is farther left than −5.",w:"−12 < −5."},
+{l:"Foundation",b:"Choose the Symbol",v:"7 __ −2",q:"Which symbol belongs in the blank?",o:[">","<","=","−"],a:0,h:"Every positive integer is to the right of every negative integer.",w:"7 > −2."},
+{l:"Foundation",b:"Choose the Symbol",v:"0 __ −9",q:"Which symbol belongs in the blank?",o:["<","=",">","×"],a:2,h:"Zero lies to the right of every negative integer.",w:"0 > −9."},
+{l:"Foundation",b:"Greatest Value",v:"−11, −7, −2, −5",q:"Which integer is greatest?",o:["−11","−7","−2","−5"],a:2,h:"Among negatives, closest to zero is greatest.",w:"−2 is farthest right, so it is greatest."},
+{l:"Foundation",b:"Least Value",v:"−4, +3, 0, −1",q:"Which integer is least?",o:["−4","+3","0","−1"],a:0,h:"Least means farthest left.",w:"−4 is farthest left and therefore least."},
+{l:"Foundation",b:"Order Least → Greatest",v:"−8, −3, 0, 5",q:"Which list is ordered correctly?",o:["−3, −8, 0, 5","5, 0, −3, −8","0, −8, −3, 5","−8, −3, 0, 5"],a:3,h:"Read the number line from left to right.",w:"−8, −3, 0, 5 is increasing order."},
+
+{l:"Core",b:"Order Greatest → Least",v:"−1, 6, −9, 2",q:"Which order is greatest to least?",o:["−9, −1, 2, 6","6, 2, −1, −9","6, −1, 2, −9","2, 6, −1, −9"],a:1,h:"Greatest to least means move from right to left.",w:"6 > 2 > −1 > −9."},
+{l:"Core",b:"Number-Line Logic",v:"A is right of B",q:"What must be true?",o:["A < B","A = B","A > B","A and B are opposites"],a:2,h:"Numbers increase to the right.",w:"If A lies to the right of B, then A > B."},
+{l:"Core",b:"Between Values",v:"−6 and −2",q:"Which integer lies between them?",o:["−8","−4","0","3"],a:1,h:"A number between them must be greater than −6 and less than −2.",w:"−4 lies between −6 and −2."},
+{l:"Core",b:"Magnitude Trap",v:"−9 vs −4",q:"Which statement is correct?",o:["−9 > −4 because 9 > 4.","−9 = −4 because both are negative.","Absolute value makes −9 positive in the comparison.","−9 < −4 even though |−9| > |−4|."],a:3,h:"Signed order and absolute value are different.",w:"−9 is farther left, so −9 < −4 even though its magnitude is larger."},
+{l:"Core",b:"Magnitude",v:"7, −9, 4, −12",q:"Which integer has greatest absolute value?",o:["7","−9","4","−12"],a:3,h:"Compare distances from zero.",w:"|−12| = 12, the greatest magnitude."},
+{l:"Core",b:"Temperature Context",v:"Town A: −6°C · Town B: −1°C",q:"Which town is warmer?",o:["Town A","Town B","They are equal","Cannot determine"],a:1,h:"Warmer means greater temperature.",w:"−1°C is greater than −6°C, so Town B is warmer."},
+{l:"Core",b:"Elevation Context",v:"Divers: −25 m and −8 m",q:"Which diver is higher?",o:["The diver at −25 m","Same height","The diver at −8 m","Cannot compare"],a:2,h:"Higher means greater elevation.",w:"−8 is greater than −25, so that diver is higher."},
+{l:"Core",b:"Finance Context",v:"Change A: −$40 · Change B: +$5",q:"Which change is greater?",o:["+$5","−$40","They are equal","Signs cannot be compared"],a:0,h:"Positive values are greater than negative values.",w:"+5 is greater than −40."},
+{l:"Core",b:"Reasoning",v:"Student says −15 > −6 because 15 > 6",q:"What is the best correction?",o:["The student is correct.","−15 lies farther left, so −15 < −6.","Negative integers cannot be ordered.","Make both values positive first."],a:1,h:"Compare signed positions, not only magnitudes.",w:"−15 is farther left than −6, so −15 < −6."},
+
+{l:"Extended",b:"Always True?",v:"negative integer n",q:"Which statement is always true?",o:["n < 0","n > 0","n = 0","|n| < 0"],a:0,h:"Use the definition of a negative integer.",w:"Every negative integer is less than zero."},
+{l:"Extended",b:"Transfer",v:"a < b",q:"Which value appears farther right?",o:["a","0 always","Their opposites are equal","b"],a:3,h:"The greater value is farther right.",w:"If a < b, then b lies farther right."},
+{l:"Extended",b:"Evaluate Then Order",v:"−|7|, −2, 0, |−3|",q:"Which order is least to greatest?",o:["−2, −7, 0, 3","3, 0, −2, −7","−7, −2, 0, 3","−7, 0, −2, 3"],a:2,h:"First evaluate −|7| and |−3|.",w:"−|7| = −7 and |−3| = 3, so −7 < −2 < 0 < 3."},
+{l:"Extended",b:"Counterexample",v:"Claim: greater absolute value always means greater number",q:"Which pair disproves the claim?",o:["3 and 2","−12 and −5","7 and 0","4 and −1"],a:1,h:"Find a case where the number with larger magnitude is actually smaller.",w:"|−12| > |−5|, but −12 < −5."},
+{l:"Extended",b:"Signed Ranking",v:"−10, |−6|, −|4|, 2",q:"Which value is greatest?",o:["−10","|−6|","−|4|","2"],a:1,h:"Evaluate the absolute-value expressions first.",w:"|−6| = 6 and −|4| = −4; among −10, 6, −4, 2, the greatest is 6."},
+{l:"Extended",b:"Signed Ranking",v:"−|9|, −3, |−1|, 0",q:"Which value is least?",o:["−|9|","−3","|−1|","0"],a:0,h:"Evaluate the bars first.",w:"−|9| = −9, which is farthest left and therefore least."}
+];
+const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
+const BEST="khaemenes-prealgebra-u02-l03-integer-rank-v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
+function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
+function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function start(src=null){deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
+function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;el.strategy.textContent=c.b.includes("Magnitude")?"Compare signed position separately from distance from zero.":c.b.includes("Order")||c.b.includes("Ranking")?"Imagine arranging the values from left to right.":"Which value would appear farther right on the number line?";feedback("","Mission ready.","Picture the values on a number line before choosing.");stats()}
+function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by number-line order.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Rank confirmed.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
+function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
+function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(e){return null}}
+function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
+function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(BEST,String(p))}catch(e){}updateBest()}
+function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Integer Rank mastery passed":"Rebuild the number line";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} Lesson 3 missions correctly and met the 80% mastery target. Return to Lesson 3 for practice and reflection.`:`You solved ${correct} of ${attempts} missions correctly. Review the missed comparisons, especially negative-number and magnitude traps.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
+el.tabs.forEach((b,i)=>b.onclick=()=>{el.tabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));el.scenes.forEach((s,j)=>s.classList.toggle("active",j===i))});
+const later=(f,m)=>setTimeout(f,m);
+$("playRightDemo").onclick=()=>{["rightA","rightB"].forEach(id=>$(id).classList.remove("on"));$("rightA").classList.add("on");later(()=>$("rightB").classList.add("on"),500)};
+$("playNegDemo").onclick=()=>{["neg1","neg2","neg3"].forEach(id=>$(id).classList.remove("on"));["neg1","neg2","neg3"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*420))};
+$("playSortDemo").onclick=()=>{["s1","s2","s3","s4","s5"].forEach(id=>$(id).classList.remove("on"));["s1","s2","s3","s4","s5"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*260))};
+$("playMagDemo").onclick=()=>{["mag1","mag2","mag3"].forEach(id=>$(id).classList.remove("on"));["mag1","mag2","mag3"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*420))};
+document.addEventListener("keydown",e=>{if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName))return;if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();feedback("","Reasoning hint",deck[index].h)}});
+updateBest();start();
+})();
+</script>
+</body></html>

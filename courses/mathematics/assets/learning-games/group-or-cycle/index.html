@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Lesson 4 GCF & LCM Game: Group or Cycle? Decide whether word problems call for GCF or LCM before calculating.">
+<title>Lesson 4 · Group or Cycle?</title>
+<style>
+:root{
+  --bg:#090b10;--panel:#141a22;--panel2:#10161e;--ink:#f7f1e3;--muted:#c8c1b3;
+  --line:#384351;--gold:#d8bd7a;--gold2:#f0d99b;--good:#8fd4ad;--bad:#ed9b9b;
+  --focus:#b9d8ff;--shadow:0 18px 55px rgba(0,0,0,.35);--max:1180px
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:
+radial-gradient(circle at 14% 0%,rgba(216,189,122,.10),transparent 28rem),
+radial-gradient(circle at 90% 18%,rgba(104,139,175,.10),transparent 30rem),
+linear-gradient(180deg,var(--bg),#0d1117 60%,#090b10);
+font-family:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;line-height:1.5}
+button,input,select{font:inherit}button{touch-action:manipulation}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.shell{width:min(var(--max),calc(100% - 28px));margin:auto;padding:28px 0 48px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:10px 0 26px;border-bottom:1px solid rgba(216,189,122,.22)}
+.brand{display:flex;align-items:center;gap:12px}.seal{width:44px;height:44px;border:1px solid rgba(216,189,122,.68);border-radius:9px;display:grid;place-items:center;transform:rotate(45deg);background:rgba(216,189,122,.06)}
+.seal span{transform:rotate(-45deg);font:15px Georgia,serif;color:var(--gold2)}
+.kicker{margin:0;color:var(--gold2);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.crumb{margin:3px 0 0;color:var(--muted);font-size:.9rem}
+.actions{display:flex;gap:8px}.ghost{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}.ghost:hover{border-color:var(--gold)}
+.hero{text-align:center;max-width:900px;margin:auto;padding:54px 10px 30px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.22em;font-size:.78rem;font-weight:800}
+h1,h2,h3{font-family:Cinzel,Georgia,"Times New Roman",serif;font-weight:500}h1{margin:10px 0 13px;font-size:clamp(2rem,5vw,4rem);line-height:1.05}
+.hero p{margin:auto;max-width:780px;color:var(--muted);font-size:clamp(1rem,2vw,1.15rem)}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px auto 0;max-width:850px}.rule{border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025);padding:12px}.rule b{display:block;color:var(--gold2)}.rule small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr);gap:18px;align-items:start}.panel{border:1px solid rgba(216,189,122,.18);border-radius:18px;background:linear-gradient(180deg,rgba(23,29,38,.96),rgba(16,21,28,.96));box-shadow:var(--shadow)}.play{padding:22px}.side{padding:18px}
+.status{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-bottom:16px}.progress-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.82rem;margin-bottom:7px}.track{height:8px;background:#07090d;border:1px solid #313946;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ae9255,var(--gold2));transition:width .25s ease}.stat{text-align:center;min-width:72px;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}.stat b{display:block;font-size:1.15rem}.stat span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.stage{min-height:240px;border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:
+linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),#0c1117;background-size:24px 24px}
+.stage:after{content:"";position:absolute;inset:15px;border:1px solid rgba(216,189,122,.12);border-radius:12px;pointer-events:none}.inside{position:relative;z-index:1;max-width:760px}
+.label{color:var(--muted);text-transform:uppercase;letter-spacing:.15em;font-size:.74rem}.big{font:clamp(2rem,6vw,4rem) Georgia,serif;color:#fff8e8;line-height:1.15;margin:8px 0}.question{font-size:clamp(1.1rem,2.3vw,1.45rem);color:#f5eddf;margin-top:8px}
+.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}.choice{appearance:none;min-height:72px;border:1px solid var(--line);border-radius:13px;background:#111720;color:var(--ink);cursor:pointer;text-align:left;padding:12px;transition:.15s ease}.choice:hover{border-color:#738093;transform:translateY(-1px)}.choice[aria-pressed="true"]{border-color:var(--gold2);background:linear-gradient(180deg,rgba(216,189,122,.16),rgba(216,189,122,.07));box-shadow:inset 0 0 0 1px rgba(216,189,122,.24)}.choice strong{display:block;font:1.04rem Georgia,serif;color:#fff}.choice small{display:block;color:var(--muted);margin-top:2px}
+.row{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:15px}.primary,.secondary{min-height:44px;border-radius:10px;padding:10px 16px;cursor:pointer;font-weight:700;letter-spacing:.03em}.primary{border:1px solid var(--gold2);background:var(--gold2);color:#17130a}.secondary{border:1px solid var(--line);background:#171e27;color:var(--ink)}.primary:disabled,.secondary:disabled{opacity:.45;cursor:not-allowed}
+.feedback{margin-top:15px;min-height:74px;border-radius:12px;border:1px solid transparent;padding:13px 14px;background:rgba(255,255,255,.02)}.feedback.good{border-color:rgba(143,212,173,.42);background:rgba(143,212,173,.07)}.feedback.bad{border-color:rgba(237,155,155,.42);background:rgba(237,155,155,.07)}.feedback h3{margin:0 0 4px;font-size:1rem}.feedback p{margin:0;color:#d5cebf}
+.side h2{margin:2px 0 12px;font-size:1.18rem}.concept{border:1px solid var(--line);border-radius:11px;padding:11px;background:rgba(255,255,255,.025);margin-bottom:9px}.concept b{display:block;font:1rem Georgia,serif}.concept span{color:var(--muted);font-size:.82rem}.tip{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.tip p{margin:5px 0 0;color:var(--muted);font-size:.9rem}.controls{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}select{color:var(--ink);background:#111720;border:1px solid var(--line);border-radius:9px;padding:8px 30px 8px 10px;min-height:40px}.best{color:var(--gold2);font-size:.82rem;margin:12px 0 0}
+.mastery{display:none;margin-top:20px;padding:24px;text-align:center;border:1px solid rgba(216,189,122,.5);border-radius:16px;background:radial-gradient(circle at 50% 0%,rgba(216,189,122,.14),transparent 24rem),#111720}.mastery.show{display:block}.mark{width:68px;height:68px;margin:0 auto 12px;border:1px solid var(--gold2);display:grid;place-items:center;border-radius:50%;color:var(--gold2);font:1.3rem Georgia,serif}.mastery h2{margin:5px 0}.mastery p{color:var(--muted);max-width:620px;margin:7px auto 15px}
+footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+@media(max-width:650px){.rules{grid-template-columns:1fr}.choices{grid-template-columns:1fr}.status{grid-template-columns:1fr 66px}.status .stat:last-child{display:none}.play{padding:13px}.actions{display:none}.hero{padding-top:34px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+<div class="brand"><div class="seal" aria-hidden="true"><span>G/C</span></div><div><p class="kicker">Mathematics · Lesson 4</p><p class="crumb">GCF & LCM · Group or Cycle?</p></div></div>
+<div class="actions"><button class="ghost" id="printBtn" type="button">Print reference</button><button class="ghost" id="resetBestBtn" type="button">Reset best</button></div>
+</header>
+<section class="hero">
+<div class="eyebrow">Group or Cycle?</div><h1>Choose the tool before calculating.</h1>
+<p>Read each situation and decide whether it asks for a <strong>greatest common factor</strong> or a <strong>least common multiple</strong>. The goal is recognizing the structure of the problem first.</p>
+<div class="rules">
+<div class="rule"><b>GCF · Group</b><small>Split quantities into the largest equal groups with nothing left over.</small></div>
+<div class="rule"><b>LCM · Cycle</b><small>Find when repeating schedules or patterns line up again.</small></div>
+<div class="rule"><b>Reason first</b><small>Do not calculate until you know what the question is asking.</small></div>
+</div>
+</section>
+<main class="grid">
+<section class="panel play">
+<div class="status"><div><div class="progress-label"><span id="roundLabel">Problem 1 of 16</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div></div>
+
+<div class="stage"><div class="inside"><div class="label">Read the situation</div><div class="question" id="problemText"></div></div></div>
+
+<div class="choices">
+<button class="choice" type="button" data-choice="GCF" aria-pressed="false"><strong>GCF · Group</strong><small>Largest equal grouping or largest equal size</small></button>
+<button class="choice" type="button" data-choice="LCM" aria-pressed="false"><strong>LCM · Cycle</strong><small>First time repeating events coincide</small></button>
+</div>
+
+<div class="row"><button class="secondary" id="hintBtn" type="button">Clue</button><button class="primary" id="checkBtn" type="button">Lock in tool</button><button class="secondary" id="nextBtn" type="button" hidden>Next problem →</button></div>
+<div class="feedback" id="feedback" aria-live="polite"><h3>Ready.</h3><p>Identify whether the story is about grouping or cycling.</p></div>
+
+<div class="mastery" id="mastery"><div class="mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="row"><button class="primary" id="newRoundBtn" type="button">Play another round</button><button class="secondary" id="reviewBtn" type="button">Review missed problems</button></div></div>
+</section>
+
+<aside class="panel side">
+<h2>Decision Guide</h2>
+<div class="concept"><b>Look for GCF</b><span>“Largest equal groups,” “same size,” “no leftovers,” “greatest possible length,” or dividing supplies evenly.</span></div>
+<div class="concept"><b>Look for LCM</b><span>“When will they meet again?”, “first time together,” repeating schedules, flashing lights, rotations, or cycles.</span></div>
+<div class="concept"><b>Trap to avoid</b><span>Words like “groups” do not automatically mean GCF. Ask what quantity the problem is trying to maximize or synchronize.</span></div>
+<div class="tip"><strong>Strategy</strong><p id="strategyText">If you are dividing into equal chunks, think GCF. If two repeating patterns must meet again, think LCM.</p></div>
+<div class="controls"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 problems</option><option value="16" selected>16 problems</option><option value="20">20 problems</option></select></div>
+<p class="best" id="bestScore">Best mastery score: —</p>
+</aside>
+</main>
+<footer>Lesson 4 · GCF & LCM · Mathematical decision making · Standalone HTML/CSS/vanilla JavaScript</footer>
+</div>
+<script>
+(()=>{
+"use strict";
+const BANK=[
+{type:"GCF",text:"A teacher has 24 red markers and 36 blue markers. She wants to make the greatest possible number of identical supply packs with no markers left over.",why:"The quantities are being split into the greatest number of equal groups with no leftovers."},
+{type:"LCM",text:"Two hallway lights flash every 6 seconds and every 8 seconds. They flash together now. When will they flash together again?",why:"Two repeating cycles must line up again, so this is an LCM situation."},
+{type:"GCF",text:"A gardener has two ropes, 42 feet and 56 feet long. She wants to cut both into equal pieces of the greatest possible length with no waste.",why:"The goal is the greatest equal piece length that divides both original lengths."},
+{type:"LCM",text:"One bus arrives every 12 minutes and another every 18 minutes. Both are at the stop now. When is the next time they arrive together?",why:"The repeating arrival schedules need their first shared future time."},
+{type:"GCF",text:"There are 30 apples and 45 oranges. A coach wants the greatest number of identical snack bags with the same number of each fruit and none left over.",why:"This asks for the greatest number of equal groups."},
+{type:"LCM",text:"A blue beacon rotates every 9 seconds and a gold beacon every 15 seconds. They point north together now. When will they align north together again?",why:"Rotations are repeating cycles; we need their first shared cycle length."},
+{type:"GCF",text:"Two rectangular banners are 48 inches and 72 inches long. They will be marked into equal-width sections as wide as possible, with no partial section.",why:"The largest equal width that divides both lengths is found with GCF."},
+{type:"LCM",text:"A music loop repeats every 8 beats and a drum pattern every 12 beats. They begin together. After how many beats will both restart together?",why:"The problem asks when two repeating patterns synchronize again."},
+{type:"GCF",text:"A library has 28 mystery books and 42 science books. It wants the largest number of identical display sets using all books.",why:"The collection is divided into equal sets using every item."},
+{type:"LCM",text:"Two sprinklers turn on every 10 minutes and every 15 minutes. They turn on together at noon. When will both turn on together next?",why:"This is a repeated schedule alignment problem."},
+{type:"GCF",text:"A craft class has 32 silver beads and 48 black beads. Students will create the greatest number of identical kits with no beads remaining.",why:"We are maximizing the number of equal groups that divide both quantities."},
+{type:"LCM",text:"A planetarium signal sounds every 14 seconds while another sounds every 21 seconds. They sound together now. When is the next shared signal?",why:"The first shared future occurrence of two cycles is an LCM."},
+{type:"GCF",text:"A carpenter has boards 60 cm and 84 cm long and wants equal sections of the greatest possible whole-number length.",why:"The greatest shared divisor determines the longest equal section."},
+{type:"LCM",text:"A student practices piano every 4 days and violin every 6 days. Both are practiced today. In how many days will both happen on the same day again?",why:"Two repeating schedules need their least common future interval."},
+{type:"GCF",text:"A museum has 18 bronze tokens and 30 silver tokens. It wants the greatest number of identical prize bundles with nothing left over.",why:"The problem asks for the greatest number of equal bundles."},
+{type:"LCM",text:"Two gears return to their starting marks every 16 turns and 24 turns. They are aligned now. After how many turns will both marks align again?",why:"The first shared return point of repeating cycles is found with LCM."},
+{type:"GCF",text:"Two ribbons measure 45 inches and 75 inches. They are cut into equal pieces of the greatest possible length.",why:"The greatest common factor gives the longest shared piece length."},
+{type:"LCM",text:"One game bonus appears every 5 rounds and another every 7 rounds. Both appear in round 1. After how many rounds will their schedules line up again?",why:"We are finding the first common repeat of two cycles."},
+{type:"GCF",text:"A bakery has 40 chocolate cookies and 64 vanilla cookies and wants the greatest number of identical boxes using them all.",why:"Identical groups with no leftovers indicate GCF."},
+{type:"LCM",text:"Two satellites send a status ping every 18 minutes and every 30 minutes. They ping together now. When will they ping together next?",why:"The question asks for a shared repeat time, which indicates LCM."}
+];
+const el={text:document.getElementById("problemText"),choices:[...document.querySelectorAll(".choice")],hint:document.getElementById("hintBtn"),check:document.getElementById("checkBtn"),next:document.getElementById("nextBtn"),feedback:document.getElementById("feedback"),score:document.getElementById("score"),streak:document.getElementById("streak"),round:document.getElementById("roundLabel"),acc:document.getElementById("accuracyLabel"),fill:document.getElementById("progressFill"),strategy:document.getElementById("strategyText"),size:document.getElementById("roundSize"),best:document.getElementById("bestScore"),mastery:document.getElementById("mastery"),mark:document.getElementById("masteryMark"),mTitle:document.getElementById("masteryTitle"),mText:document.getElementById("masteryText"),newRound:document.getElementById("newRoundBtn"),review:document.getElementById("reviewBtn"),print:document.getElementById("printBtn"),resetBest:document.getElementById("resetBestBtn")};
+const BEST="khaemenes_group_cycle_best_v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function setFeedback(k,t,p){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${p}</p>`}
+function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(_){return null}}
+function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
+function saveBest(p){try{const old=best();if(old===null||p>old)localStorage.setItem(BEST,String(p))}catch(_){}updateBest()}
+function start(source=null){const count=Math.max(8,Math.min(20,Number(el.size.value)||16));const pool=source&&source.length?source:BANK;const arr=[];while(arr.length<count)arr.push(...shuffle(pool));deck=arr.slice(0,count);index=0;selected=null;checked=false;score=0;correct=0;attempts=0;streak=0;missed=[];el.mastery.classList.remove("show");render();updateStats()}
+function render(){checked=false;selected=null;const c=deck[index];el.text.textContent=c.text;el.choices.forEach(b=>{b.disabled=false;b.setAttribute("aria-pressed","false")});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;setFeedback("","Ready.","Identify whether the structure is grouping or cycling.");updateStats()}
+el.choices.forEach(b=>b.addEventListener("click",()=>{if(checked)return;selected=b.dataset.choice;el.choices.forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))}));
+function hint(){const c=deck[index];const clue=c.type==="GCF"?"Look for language about dividing into the greatest possible equal groups or equal lengths.":"Look for two repeating schedules, rotations, or patterns that must line up again.";setFeedback("","Clue",clue)}
+function submit(){if(checked)return;if(!selected){setFeedback("bad","Choose a tool.","Select GCF or LCM before submitting.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.type;el.choices.forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);setFeedback("good",`${c.type} is the right tool.`,c.why)}else{streak=0;missed.push(c);setFeedback("bad",`Use ${c.type} here.`,c.why)}el.next.textContent=index===deck.length-1?"See round results →":"Next problem →";updateStats()}
+function updateStats(){const total=deck.length||1,a=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Problem ${Math.min(index+1,total)} of ${total}`;el.acc.textContent=`Accuracy ${a}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+function next(){if(!checked)return;if(index>=deck.length-1){finish();return}index++;render()}
+function finish(){index=deck.length;updateStats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Mastery gate passed":"Keep sharpening tool choice";el.mText.textContent=p>=80?`You selected the correct mathematical tool in ${correct} of ${attempts} problems and met the 80% mastery goal.`:`You selected the correct tool in ${correct} of ${attempts} problems. Review the story structure and try again to reach 80%.`;el.review.disabled=missed.length===0;el.review.textContent=missed.length?`Review missed (${missed.length})`:"No missed problems";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.addEventListener("click",submit);el.next.addEventListener("click",next);el.hint.addEventListener("click",hint);el.newRound.addEventListener("click",()=>start());el.review.addEventListener("click",()=>{if(missed.length)start(missed)});el.size.addEventListener("change",()=>start());el.print.addEventListener("click",()=>window.print());el.resetBest.addEventListener("click",()=>{try{localStorage.removeItem(BEST)}catch(_){}updateBest();setFeedback("","Best score reset.","The saved best score on this device was cleared.")});
+updateBest();start();
+})();
+</script>
+</body>
+</html>
