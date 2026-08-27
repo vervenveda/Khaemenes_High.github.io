@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Lesson 5 Order of Operations Game: Operation Stepper Challenge. Tap the next legal operation using PEMDAS and left-to-right reasoning.">
+<title>Lesson 5 · Operation Stepper Challenge</title>
+<style>
+:root{
+  --bg:#090b10;--panel:#141a22;--panel2:#10161e;--ink:#f7f1e3;--muted:#c8c1b3;
+  --line:#384351;--gold:#d8bd7a;--gold2:#f0d99b;--good:#8fd4ad;--bad:#ed9b9b;
+  --focus:#b9d8ff;--shadow:0 18px 55px rgba(0,0,0,.35);--max:1180px
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:
+radial-gradient(circle at 14% 0%,rgba(216,189,122,.10),transparent 28rem),
+radial-gradient(circle at 90% 18%,rgba(104,139,175,.10),transparent 30rem),
+linear-gradient(180deg,var(--bg),#0d1117 60%,#090b10);
+font-family:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;line-height:1.5}
+button,input,select{font:inherit}button{touch-action:manipulation}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.shell{width:min(var(--max),calc(100% - 28px));margin:auto;padding:28px 0 48px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:10px 0 26px;border-bottom:1px solid rgba(216,189,122,.22)}
+.brand{display:flex;align-items:center;gap:12px}.seal{width:44px;height:44px;border:1px solid rgba(216,189,122,.68);border-radius:9px;display:grid;place-items:center;transform:rotate(45deg);background:rgba(216,189,122,.06)}
+.seal span{transform:rotate(-45deg);font:15px Georgia,serif;color:var(--gold2)}
+.kicker{margin:0;color:var(--gold2);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.crumb{margin:3px 0 0;color:var(--muted);font-size:.9rem}
+.actions{display:flex;gap:8px}.ghost{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}.ghost:hover{border-color:var(--gold)}
+.hero{text-align:center;max-width:900px;margin:auto;padding:54px 10px 30px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.22em;font-size:.78rem;font-weight:800}
+h1,h2,h3{font-family:Cinzel,Georgia,"Times New Roman",serif;font-weight:500}h1{margin:10px 0 13px;font-size:clamp(2rem,5vw,4rem);line-height:1.05}
+.hero p{margin:auto;max-width:780px;color:var(--muted);font-size:clamp(1rem,2vw,1.15rem)}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px auto 0;max-width:850px}.rule{border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025);padding:12px}.rule b{display:block;color:var(--gold2)}.rule small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr);gap:18px;align-items:start}.panel{border:1px solid rgba(216,189,122,.18);border-radius:18px;background:linear-gradient(180deg,rgba(23,29,38,.96),rgba(16,21,28,.96));box-shadow:var(--shadow)}.play{padding:22px}.side{padding:18px}
+.status{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-bottom:16px}.progress-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.82rem;margin-bottom:7px}.track{height:8px;background:#07090d;border:1px solid #313946;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ae9255,var(--gold2));transition:width .25s ease}.stat{text-align:center;min-width:72px;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}.stat b{display:block;font-size:1.15rem}.stat span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.stage{min-height:240px;border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:
+linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),#0c1117;background-size:24px 24px}
+.stage:after{content:"";position:absolute;inset:15px;border:1px solid rgba(216,189,122,.12);border-radius:12px;pointer-events:none}.inside{position:relative;z-index:1;max-width:760px}
+.label{color:var(--muted);text-transform:uppercase;letter-spacing:.15em;font-size:.74rem}.big{font:clamp(2rem,6vw,4rem) Georgia,serif;color:#fff8e8;line-height:1.15;margin:8px 0}.question{font-size:clamp(1.1rem,2.3vw,1.45rem);color:#f5eddf;margin-top:8px}
+.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}.choice{appearance:none;min-height:72px;border:1px solid var(--line);border-radius:13px;background:#111720;color:var(--ink);cursor:pointer;text-align:left;padding:12px;transition:.15s ease}.choice:hover{border-color:#738093;transform:translateY(-1px)}.choice[aria-pressed="true"]{border-color:var(--gold2);background:linear-gradient(180deg,rgba(216,189,122,.16),rgba(216,189,122,.07));box-shadow:inset 0 0 0 1px rgba(216,189,122,.24)}.choice strong{display:block;font:1.04rem Georgia,serif;color:#fff}.choice small{display:block;color:var(--muted);margin-top:2px}
+.row{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:15px}.primary,.secondary{min-height:44px;border-radius:10px;padding:10px 16px;cursor:pointer;font-weight:700;letter-spacing:.03em}.primary{border:1px solid var(--gold2);background:var(--gold2);color:#17130a}.secondary{border:1px solid var(--line);background:#171e27;color:var(--ink)}.primary:disabled,.secondary:disabled{opacity:.45;cursor:not-allowed}
+.feedback{margin-top:15px;min-height:74px;border-radius:12px;border:1px solid transparent;padding:13px 14px;background:rgba(255,255,255,.02)}.feedback.good{border-color:rgba(143,212,173,.42);background:rgba(143,212,173,.07)}.feedback.bad{border-color:rgba(237,155,155,.42);background:rgba(237,155,155,.07)}.feedback h3{margin:0 0 4px;font-size:1rem}.feedback p{margin:0;color:#d5cebf}
+.side h2{margin:2px 0 12px;font-size:1.18rem}.concept{border:1px solid var(--line);border-radius:11px;padding:11px;background:rgba(255,255,255,.025);margin-bottom:9px}.concept b{display:block;font:1rem Georgia,serif}.concept span{color:var(--muted);font-size:.82rem}.tip{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.tip p{margin:5px 0 0;color:var(--muted);font-size:.9rem}.controls{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}select{color:var(--ink);background:#111720;border:1px solid var(--line);border-radius:9px;padding:8px 30px 8px 10px;min-height:40px}.best{color:var(--gold2);font-size:.82rem;margin:12px 0 0}
+.mastery{display:none;margin-top:20px;padding:24px;text-align:center;border:1px solid rgba(216,189,122,.5);border-radius:16px;background:radial-gradient(circle at 50% 0%,rgba(216,189,122,.14),transparent 24rem),#111720}.mastery.show{display:block}.mark{width:68px;height:68px;margin:0 auto 12px;border:1px solid var(--gold2);display:grid;place-items:center;border-radius:50%;color:var(--gold2);font:1.3rem Georgia,serif}.mastery h2{margin:5px 0}.mastery p{color:var(--muted);max-width:620px;margin:7px auto 15px}
+footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+@media(max-width:650px){.rules{grid-template-columns:1fr}.choices{grid-template-columns:1fr}.status{grid-template-columns:1fr 66px}.status .stat:last-child{display:none}.play{padding:13px}.actions{display:none}.hero{padding-top:34px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.001ms!important}}
+
+.expression{font:clamp(2rem,6vw,4.2rem) Georgia,serif;color:#fff8e8;line-height:1.35;word-break:break-word}
+.op-grid{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:16px}
+.op-btn{min-height:48px;border:1px solid var(--line);border-radius:10px;background:#111720;color:var(--ink);padding:10px 13px;cursor:pointer}
+.op-btn:hover{border-color:var(--gold)}.op-btn.correct{border-color:rgba(143,212,173,.65);background:rgba(143,212,173,.08)}
+.steps{margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:12px;background:#0d1218}
+.steps h2{font-size:1rem;margin:0 0 8px}.step-list{display:grid;gap:6px}.step-item{border-left:2px solid var(--gold);padding:6px 9px;background:rgba(255,255,255,.02);color:#d8d1c2}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+<div class="brand"><div class="seal" aria-hidden="true"><span>PEM</span></div><div><p class="kicker">Mathematics · Lesson 5</p><p class="crumb">Order of Operations · Operation Stepper Challenge</p></div></div>
+<div class="actions"><button class="ghost" id="printBtn" type="button">Print reference</button><button class="ghost" id="resetBestBtn" type="button">Reset best</button></div>
+</header>
+<section class="hero">
+<div class="eyebrow">Operation Stepper Challenge</div><h1>Tap the next legal move.</h1>
+<p>Do not race to the final answer. At each step, choose the operation that is legally next under <strong>PEMDAS</strong>, including the crucial left-to-right rule for multiplication/division and addition/subtraction.</p>
+<div class="rules">
+<div class="rule"><b>P · Parentheses</b><small>Simplify grouped expressions first.</small></div>
+<div class="rule"><b>E · Exponents</b><small>Evaluate powers after grouping.</small></div>
+<div class="rule"><b>MD / AS</b><small>Multiplication and division tie; addition and subtraction tie. Work left to right.</small></div>
+</div>
+</section>
+<main class="grid">
+<section class="panel play">
+<div class="status"><div><div class="progress-label"><span id="roundLabel">Expression 1 of 12</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div></div>
+
+<div class="stage"><div class="inside"><div class="label">Current expression</div><div class="expression" id="expression"></div><div class="question">Which operation must be performed next?</div></div></div>
+<div class="op-grid" id="opGrid"></div>
+<div class="row"><button class="secondary" id="hintBtn" type="button">Rule hint</button><button class="secondary" id="nextBtn" type="button" hidden>Next expression →</button></div>
+
+<div class="steps"><h2>Solution path</h2><div class="step-list" id="stepList"><div class="step-item">Choose the next legal operation to begin.</div></div></div>
+<div class="feedback" id="feedback" aria-live="polite"><h3>Ready.</h3><p>Follow precedence carefully, one operation at a time.</p></div>
+
+<div class="mastery" id="mastery"><div class="mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="row"><button class="primary" id="newRoundBtn" type="button">Play another round</button><button class="secondary" id="reviewBtn" type="button">Review missed expressions</button></div></div>
+</section>
+
+<aside class="panel side">
+<h2>PEMDAS Precision Guide</h2>
+<div class="concept"><b>1 · Parentheses</b><span>Work inside grouping symbols before outside operations.</span></div>
+<div class="concept"><b>2 · Exponents</b><span>Evaluate powers after grouped work is simplified.</span></div>
+<div class="concept"><b>3 · Multiply / Divide</b><span>Equal priority. Perform whichever occurs first from the left.</span></div>
+<div class="concept"><b>4 · Add / Subtract</b><span>Equal priority. Perform whichever occurs first from the left.</span></div>
+<div class="tip"><strong>Common error</strong><p id="strategyText">PEMDAS does not mean multiplication always comes before division or addition always before subtraction.</p></div>
+<div class="controls"><label for="roundSize">Round length</label><select id="roundSize"><option value="8">8 expressions</option><option value="12" selected>12 expressions</option><option value="16">16 expressions</option></select></div>
+<p class="best" id="bestScore">Best mastery score: —</p>
+</aside>
+</main>
+<footer>Lesson 5 · Order of Operations · PEMDAS · Left-to-right reasoning · Standalone HTML/CSS/vanilla JavaScript</footer>
+</div>
+<script>
+(()=>{
+"use strict";
+const BANK=[
+{start:"8 + 3 × 4",steps:[{ops:["3 × 4"],next:"8 + 12",why:"Multiplication comes before addition."},{ops:["8 + 12"],next:"20",why:"Only addition remains."}]},
+{start:"24 ÷ 6 × 2",steps:[{ops:["24 ÷ 6"],next:"4 × 2",why:"Division and multiplication have equal priority, so work left to right."},{ops:["4 × 2"],next:"8",why:"Multiply the remaining factors."}]},
+{start:"18 − 6 + 2",steps:[{ops:["18 − 6"],next:"12 + 2",why:"Addition and subtraction have equal priority, so work left to right."},{ops:["12 + 2"],next:"14",why:"Add the remaining terms."}]},
+{start:"2 + 3² × 4",steps:[{ops:["3²"],next:"2 + 9 × 4",why:"Exponents are evaluated before multiplication or addition."},{ops:["9 × 4"],next:"2 + 36",why:"Multiplication comes before addition."},{ops:["2 + 36"],next:"38",why:"Add last."}]},
+{start:"(5 + 3) × 2",steps:[{ops:["5 + 3"],next:"8 × 2",why:"Parentheses are simplified first."},{ops:["8 × 2"],next:"16",why:"Multiply after the grouping is resolved."}]},
+{start:"30 ÷ (2 + 3)",steps:[{ops:["2 + 3"],next:"30 ÷ 5",why:"Simplify inside parentheses first."},{ops:["30 ÷ 5"],next:"6",why:"Then divide."}]},
+{start:"4 × 2³ − 5",steps:[{ops:["2³"],next:"4 × 8 − 5",why:"Evaluate the exponent first."},{ops:["4 × 8"],next:"32 − 5",why:"Multiply before subtracting."},{ops:["32 − 5"],next:"27",why:"Subtract last."}]},
+{start:"36 ÷ 3 ÷ 2",steps:[{ops:["36 ÷ 3"],next:"12 ÷ 2",why:"Division ties with division, so move left to right."},{ops:["12 ÷ 2"],next:"6",why:"Complete the remaining division."}]},
+{start:"7 + 12 ÷ 3 × 2",steps:[{ops:["12 ÷ 3"],next:"7 + 4 × 2",why:"Division and multiplication tie; the division is farther left."},{ops:["4 × 2"],next:"7 + 8",why:"Finish multiplication before addition."},{ops:["7 + 8"],next:"15",why:"Add last."}]},
+{start:"20 − 4 × (2 + 1)",steps:[{ops:["2 + 1"],next:"20 − 4 × 3",why:"Parentheses first."},{ops:["4 × 3"],next:"20 − 12",why:"Multiplication before subtraction."},{ops:["20 − 12"],next:"8",why:"Subtract last."}]},
+{start:"5² − 9 ÷ 3",steps:[{ops:["5²"],next:"25 − 9 ÷ 3",why:"Exponent first."},{ops:["9 ÷ 3"],next:"25 − 3",why:"Division before subtraction."},{ops:["25 − 3"],next:"22",why:"Subtract last."}]},
+{start:"6 + 18 ÷ 3 − 2",steps:[{ops:["18 ÷ 3"],next:"6 + 6 − 2",why:"Division comes before addition/subtraction."},{ops:["6 + 6"],next:"12 − 2",why:"Addition and subtraction tie; the addition occurs first from the left."},{ops:["12 − 2"],next:"10",why:"Subtract last."}]},
+{start:"(9 − 5)² + 3",steps:[{ops:["9 − 5"],next:"4² + 3",why:"Parentheses first."},{ops:["4²"],next:"16 + 3",why:"Exponent next."},{ops:["16 + 3"],next:"19",why:"Addition last."}]},
+{start:"48 ÷ 4 × 3 + 1",steps:[{ops:["48 ÷ 4"],next:"12 × 3 + 1",why:"Division and multiplication tie; start from the left."},{ops:["12 × 3"],next:"36 + 1",why:"Finish multiplication before addition."},{ops:["36 + 1"],next:"37",why:"Add last."}]},
+{start:"16 − 8 ÷ 2 + 3",steps:[{ops:["8 ÷ 2"],next:"16 − 4 + 3",why:"Division first."},{ops:["16 − 4"],next:"12 + 3",why:"Subtraction and addition tie; move left to right."},{ops:["12 + 3"],next:"15",why:"Add last."}]},
+{start:"3 × (4 + 2²)",steps:[{ops:["2²"],next:"3 × (4 + 4)",why:"Inside parentheses, the exponent has priority."},{ops:["4 + 4"],next:"3 × 8",why:"Finish simplifying the parentheses."},{ops:["3 × 8"],next:"24",why:"Multiply last."}]}
+];
+const el={expr:document.getElementById("expression"),grid:document.getElementById("opGrid"),steps:document.getElementById("stepList"),hint:document.getElementById("hintBtn"),next:document.getElementById("nextBtn"),feedback:document.getElementById("feedback"),score:document.getElementById("score"),streak:document.getElementById("streak"),round:document.getElementById("roundLabel"),acc:document.getElementById("accuracyLabel"),fill:document.getElementById("progressFill"),size:document.getElementById("roundSize"),best:document.getElementById("bestScore"),mastery:document.getElementById("mastery"),mark:document.getElementById("masteryMark"),mTitle:document.getElementById("masteryTitle"),mText:document.getElementById("masteryText"),newRound:document.getElementById("newRoundBtn"),review:document.getElementById("reviewBtn"),print:document.getElementById("printBtn"),resetBest:document.getElementById("resetBestBtn")};
+const BEST="khaemenes_operation_stepper_best_v1";let deck=[],index=0,step=0,score=0,correctExpr=0,attemptedExpr=0,streak=0,missed=[],madeError=false;
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(_){return null}}
+function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
+function saveBest(p){try{const old=best();if(old===null||p>old)localStorage.setItem(BEST,String(p))}catch(_){}updateBest()}
+function setFeedback(k,t,p){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${p}</p>`}
+function start(source=null){const count=Math.max(6,Math.min(16,Number(el.size.value)||12));const pool=source&&source.length?source:BANK;const arr=[];while(arr.length<count)arr.push(...shuffle(pool));deck=arr.slice(0,count);index=0;step=0;score=0;correctExpr=0;attemptedExpr=0;streak=0;missed=[];el.mastery.classList.remove("show");renderExpr();updateStats()}
+function current(){return deck[index]}
+function renderExpr(){step=0;madeError=false;el.expr.textContent=current().start;el.steps.innerHTML='<div class="step-item">Choose the next legal operation to begin.</div>';el.next.hidden=true;el.hint.disabled=false;setFeedback("","Ready.","Choose the operation that must be performed next.");renderOps();updateStats()}
+function candidates(expression){const tokens=[];const re=/\([^()]*\)|\d+²|\d+\s*[×÷]\s*\d+|\d+\s*[+−]\s*\d+/g;let m;while((m=re.exec(expression)))tokens.push(m[0]);return tokens}
+function renderOps(){const c=current(),s=c.steps[step];if(!s)return;const expr=el.expr.textContent;let opts=candidates(expr);const correct=s.ops[0];if(!opts.includes(correct))opts.unshift(correct);opts=[...new Set(opts)].slice(0,6);el.grid.innerHTML="";opts.forEach(op=>{const b=document.createElement("button");b.type="button";b.className="op-btn";b.textContent=op;b.addEventListener("click",()=>choose(op,b));el.grid.appendChild(b)})}
+function choose(op,b){const c=current(),s=c.steps[step];if(!s)return;if(s.ops.includes(op)){score+=100;b.classList.add("correct");const old=el.expr.textContent;el.expr.textContent=s.next;const item=document.createElement("div");item.className="step-item";item.textContent=`${old} → ${s.next}`;el.steps.appendChild(item);setFeedback("good","Legal step.",s.why);step++;if(step>=c.steps.length){attemptedExpr++;if(!madeError){correctExpr++;streak++;score+=100}else streak=0;el.grid.innerHTML="";el.next.hidden=false;el.next.textContent=index===deck.length-1?"See round results →":"Next expression →";el.hint.disabled=true}else renderOps();updateStats()}else{madeError=true;streak=0;setFeedback("bad","That operation is not next.","Check grouping, exponents, then equal-priority operations from left to right.");updateStats()}}
+function hint(){const s=current().steps[step];if(s)setFeedback("","Rule hint",s.why)}
+function updateStats(){const total=deck.length||1,a=attemptedExpr?Math.round(correctExpr/attemptedExpr*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Expression ${Math.min(index+1,total)} of ${total}`;el.acc.textContent=`Accuracy ${a}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+function next(){if(step<current().steps.length)return;if(index>=deck.length-1){finish();return}index++;renderExpr()}
+function finish(){index=deck.length;updateStats();el.fill.style.width="100%";const p=attemptedExpr?Math.round(correctExpr/attemptedExpr*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Mastery gate passed":"Keep stepping carefully";el.mText.textContent=p>=80?`You completed ${correctExpr} of ${attemptedExpr} expressions without an illegal step and met the 80% mastery target.`:`You completed ${correctExpr} of ${attemptedExpr} expressions without an illegal step. Review left-to-right reasoning and retry.`;const misses=deck.filter((_,i)=>false);el.review.disabled=true;el.review.textContent="Review by replaying round";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.hint.addEventListener("click",hint);el.next.addEventListener("click",next);el.newRound.addEventListener("click",()=>start());el.size.addEventListener("change",()=>start());el.print.addEventListener("click",()=>window.print());el.resetBest.addEventListener("click",()=>{try{localStorage.removeItem(BEST)}catch(_){}updateBest();setFeedback("","Best score reset.","The saved best score on this device was cleared.")});
+updateBest();start();
+})();
+</script>
+</body>
+</html>

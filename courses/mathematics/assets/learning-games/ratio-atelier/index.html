@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Khaemenes Academy Pre-Algebra Unit 04 Lesson 01 game for ratio meaning, language, and equivalent ratios.">
+  <meta name="theme-color" content="#09111f">
+  <title>Ratio Atelier · Unit 04 Lesson 01</title>
+  <style>
+    :root{
+      --bg:#08101d;--bg2:#0e1828;--panel:#121e30;--panel2:#0b1523;--ink:#f4efe4;--muted:#b9b5ac;
+      --gold:#d7b96f;--gold2:#f2d997;--blue:#83b7df;--green:#8fd3aa;--red:#ef9e9e;--line:#334155;
+      --shadow:0 18px 50px rgba(0,0,0,.32);--radius:7px;--focus:#9fd8ff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;background:
+      radial-gradient(circle at 10% 0%,rgba(131,183,223,.12),transparent 28rem),
+      radial-gradient(circle at 92% 12%,rgba(215,185,111,.10),transparent 30rem),var(--bg);
+      color:var(--ink);font-family:"Brandon Grotesque","Avenir Next",Avenir,system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:444;line-height:1.55}
+    button,input,select,a{font:inherit}
+    button,a{touch-action:manipulation}
+    button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+    [hidden]{display:none!important}
+    .skip{position:fixed;left:-9999px;top:12px;z-index:9999;background:#fff;color:#111;padding:10px 14px;border-radius:var(--radius)}
+    .skip:focus{left:12px}
+    .shell{width:min(1180px,calc(100% - 28px));margin:auto}
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(8,16,29,.92);border-bottom:1px solid rgba(215,185,111,.22);backdrop-filter:blur(14px)}
+    .header-inner{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none;min-width:0}
+    .brand-mark{width:42px;height:42px;border:1px solid var(--gold);border-radius:var(--radius);display:grid;place-items:center;color:var(--gold2);font:700 1.25rem Georgia,serif;transform:rotate(45deg)}
+    .brand-mark span{transform:rotate(-45deg)}
+    .brand-copy{display:grid;line-height:1.12}.brand-copy strong{font-family:Cinzel,Georgia,serif;letter-spacing:.08em}.brand-copy small{color:var(--muted)}
+    .header-actions{display:flex;gap:8px;align-items:center}.close-link{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:var(--radius);color:var(--ink);text-decoration:none;font-size:1.35rem}
+    .hero{padding:58px 0 30px;text-align:center}.eyebrow{margin:0 0 8px;color:var(--gold2);font-size:.74rem;text-transform:uppercase;letter-spacing:.2em;font-weight:800}
+    h1,h2,h3{font-family:Cinzel,Georgia,"Times New Roman",serif;line-height:1.16}h1{font-size:clamp(2.25rem,6vw,5rem);margin:.12em 0;background:linear-gradient(90deg,#fff4cf,var(--gold),#cae8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero .lead{max-width:760px;margin:14px auto;color:#d5d1c7;font-size:clamp(1rem,2.2vw,1.18rem)}
+    .hero-meta{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:20px}.pill{border:1px solid var(--line);border-radius:999px;padding:7px 11px;background:rgba(255,255,255,.025);color:var(--muted);font-size:.82rem}
+    .lesson-bridge{margin:0 auto 26px;max-width:900px;padding:13px 15px;border-left:3px solid var(--gold);background:rgba(215,185,111,.06);border-radius:0 var(--radius) var(--radius) 0;color:#ded8cc}
+    .learn-strip{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;margin-bottom:26px;padding:18px;border:1px solid rgba(215,185,111,.25);border-radius:var(--radius);background:linear-gradient(135deg,rgba(18,30,48,.96),rgba(11,21,35,.96));box-shadow:var(--shadow)}
+    .ratio-swatch{min-height:150px;border:1px solid var(--line);border-radius:var(--radius);padding:14px;background:var(--panel2)}
+    .swatch-head{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.82rem;margin-bottom:10px}.dot-line{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 13px}.dot{width:24px;height:24px;border-radius:50%;box-shadow:inset 0 -4px 8px rgba(0,0,0,.25)}
+    .dot.amber{background:#e0b95d}.dot.azure{background:#75b9ea}.dot.rose{background:#e8899b}.dot.mint{background:#75cea1}
+    .scale-center{text-align:center;min-width:220px}.scale-equation{font:700 clamp(1.3rem,3vw,2.1rem) Georgia,serif;color:var(--gold2);margin:8px 0}.scale-controls{display:flex;justify-content:center;gap:8px}
+    .btn{min-height:44px;border:1px solid var(--line);border-radius:var(--radius);padding:9px 14px;background:#172337;color:var(--ink);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;font-weight:700}
+    .btn:hover{border-color:#6f8299}.btn.primary{background:var(--gold);border-color:var(--gold);color:#171309}.btn:disabled{opacity:.42;cursor:not-allowed}.icon-btn{width:44px;padding:0}
+    .game-grid{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:18px;align-items:start;padding-bottom:54px}.panel{border:1px solid rgba(215,185,111,.2);border-radius:var(--radius);background:linear-gradient(180deg,rgba(18,30,48,.98),rgba(10,20,33,.98));box-shadow:var(--shadow);min-width:0}
+    .play-panel{padding:clamp(16px,3vw,26px)}.side-panel{padding:20px;position:sticky;top:88px}.section-head{display:flex;justify-content:space-between;gap:16px;align-items:start}.section-head h2{margin:0;font-size:clamp(1.45rem,3vw,2rem)}.section-head p{max-width:520px;margin:3px 0;color:var(--muted);font-size:.9rem}
+    .status-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:end;margin:22px 0}.progress-label{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.78rem}.track{height:9px;border:1px solid #3a4758;border-radius:999px;background:#050a12;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#b38c3d,var(--gold2));transition:width .3s ease}
+    .stat{min-width:74px;padding:7px 10px;border:1px solid var(--line);border-radius:var(--radius);text-align:center;background:rgba(255,255,255,.025)}.stat b{display:block;font-size:1.05rem}.stat span{color:var(--muted);font-size:.65rem;text-transform:uppercase;letter-spacing:.09em}
+    .mission-card{overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel2)}.mission-head{padding:19px;background:linear-gradient(120deg,rgba(131,183,223,.09),rgba(215,185,111,.07));border-bottom:1px solid var(--line)}
+    .mission-type{color:var(--gold2);font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}.mission-head h3{font-size:clamp(1.2rem,3vw,1.65rem);margin:6px 0}.mission-head p{margin:0;color:#d9d5cb}
+    .visual-stage{min-height:170px;padding:18px;display:grid;place-items:center;background:
+      linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),#09121f;background-size:24px 24px;border-bottom:1px solid var(--line)}
+    .quantity-grid{width:min(600px,100%);display:grid;grid-template-columns:1fr 1fr;gap:12px}.quantity-box{padding:13px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(18,30,48,.92)}.quantity-box strong{display:block;margin-bottom:6px}.quantity-box small{color:var(--muted)}
+    .ratio-pair{width:min(620px,100%);display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}.ratio-card{min-width:122px;padding:15px;border:1px solid rgba(215,185,111,.42);border-radius:var(--radius);background:#111d2d;text-align:center}.ratio-card small{display:block;color:var(--muted);margin-bottom:4px}.ratio-card b{font:700 1.65rem Georgia,serif;color:var(--gold2)}.equal-sign{font:700 1.6rem Georgia,serif;color:var(--muted)}
+    .word-card{max-width:620px;padding:18px 20px;border-left:3px solid var(--gold);background:rgba(18,30,48,.94);border-radius:0 var(--radius) var(--radius) 0;font:1.15rem Georgia,serif;color:#f0e8d7}
+    .answer-zone{padding:18px}.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice-btn{min-height:62px;border:1px solid var(--line);border-radius:var(--radius);background:#111d2d;color:var(--ink);text-align:left;padding:11px 13px;cursor:pointer;position:relative}.choice-btn:hover{border-color:#71869e}.choice-btn[aria-pressed="true"]{border-color:var(--gold2);background:rgba(215,185,111,.10);box-shadow:inset 4px 0 0 var(--gold)}.choice-btn:disabled{opacity:.66;cursor:not-allowed}
+    .number-zone{max-width:380px;margin:auto}.number-zone label{display:block;text-align:center;color:var(--muted);margin-bottom:8px}.number-input{width:100%;min-height:58px;border:1px solid var(--line);border-radius:var(--radius);background:#08111e;color:#fff;text-align:center;font:700 1.5rem Georgia,serif;padding:8px}
+    .action-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.feedback{min-height:92px;margin-top:14px;padding:13px 15px;border:1px solid transparent;border-radius:var(--radius);background:rgba(255,255,255,.025)}.feedback h3{font-family:inherit;margin:0 0 3px;font-size:1rem}.feedback p{margin:0;color:#d6d1c6}.feedback .detail{margin-top:7px;color:var(--muted);font-size:.84rem}.feedback.good{border-color:rgba(143,211,170,.52);background:rgba(143,211,170,.07)}.feedback.bad{border-color:rgba(239,158,158,.48);background:rgba(239,158,158,.07)}
+    .mastery{display:none;margin-top:20px;padding:25px;text-align:center;border:1px solid rgba(215,185,111,.55);border-radius:var(--radius);background:radial-gradient(circle at 50% 0%,rgba(215,185,111,.16),transparent 22rem),#101c2d}.mastery.show{display:block}.mastery-mark{width:108px;height:108px;border:2px solid var(--gold);border-radius:50%;margin:auto;display:grid;place-items:center;font:700 2rem Georgia,serif;color:var(--gold2)}.mastery h2{margin:14px 0 5px}.mastery p{color:var(--muted)}.mastery .action-row{justify-content:center}
+    .concept{padding:11px 0;border-bottom:1px solid var(--line)}.concept:last-of-type{border:0}.concept b{display:block;color:var(--gold2)}.concept span{font-size:.82rem;color:var(--muted)}.control{margin-top:14px}.control label{display:block;color:var(--muted);font-size:.78rem;margin-bottom:5px}.control select{width:100%;min-height:43px;border:1px solid var(--line);border-radius:var(--radius);background:#0b1523;color:var(--ink);padding:8px}.best{color:var(--muted);font-size:.78rem;margin:15px 0 0}.privacy-note{font-size:.73rem;color:#959b9f;margin-top:14px}.safe-mode{margin:14px auto;max-width:900px;border:1px solid var(--red);padding:12px;border-radius:var(--radius);background:rgba(239,158,158,.08);color:#ffe1e1}
+    footer{border-top:1px solid rgba(215,185,111,.18);padding:24px 0 34px;color:var(--muted);font-size:.78rem}.footer-inner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .confetti-piece{position:fixed;z-index:999;top:-20px;width:9px;height:14px;pointer-events:none;animation:fall 2.8s linear forwards}@keyframes fall{to{transform:translate3d(var(--drift),105vh,0) rotate(720deg);opacity:.2}}
+    @media(max-width:900px){.game-grid{grid-template-columns:1fr}.side-panel{position:static}.learn-strip{grid-template-columns:1fr}.scale-center{order:-1}.game-grid{padding-bottom:32px}}
+    @media(max-width:620px){.shell{width:min(100% - 18px,1180px)}.brand-copy small{display:none}.header-inner{min-height:62px}.hero{padding-top:38px}.section-head{display:block}.status-row{grid-template-columns:1fr 1fr}.status-row>div:first-child{grid-column:1/-1}.choice-grid,.quantity-grid{grid-template-columns:1fr}.action-row>.btn{flex:1 1 140px}.play-panel{padding:12px}.mission-head,.answer-zone{padding:14px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.confetti-piece{display:none}}
+    @media print{body{background:#fff;color:#111}.site-header,.hero,.learn-strip,.side-panel,.action-row,#choiceZone,#numberZone,.safe-mode{display:none!important}.shell{width:100%}.game-grid{display:block}.panel,.mission-card,.mastery{box-shadow:none;background:#fff;color:#111;border-color:#999}.feedback p,.mastery p,.section-head p{color:#333}.mastery{display:block!important}footer{color:#333}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#game">Skip to the game</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../units/unit-04/lessons/lesson-01-ratio-meaning-equivalent-ratios.html" aria-label="Return to Unit 04 Lesson 01">
+        <span class="brand-mark" aria-hidden="true"><span>K</span></span>
+        <span class="brand-copy"><strong>Khaemenes Academy</strong><small>Pre-Algebra · Unit 04 · Lesson 01</small></span>
+      </a>
+      <div class="header-actions">
+        <button class="btn icon-btn" id="soundBtn" type="button" aria-pressed="false" aria-label="Turn sound on">♪</button>
+        <button class="btn" id="printBtn" type="button">Print</button>
+        <a class="close-link" href="../units/unit-04/lessons/lesson-01-ratio-meaning-equivalent-ratios.html" aria-label="Close game and return to Lesson 01">×</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell">
+    <section class="hero" aria-labelledby="pageTitle">
+      <p class="eyebrow">Number Structure Studio · Game 04.01</p>
+      <h1 id="pageTitle">Ratio Atelier</h1>
+      <p class="lead">Keep the order, scale both terms, and preserve the multiplicative pattern. Every mission is built directly from Unit 04 Lesson 01.</p>
+      <div class="hero-meta"><span class="pill">Foundation · Core · Extended</span><span class="pill">80% mastery</span><span class="pill">Offline & local</span><span class="pill">Fresh randomized rounds</span></div>
+    </section>
+
+    <p class="lesson-bridge"><strong>Lesson connection:</strong> A ratio is an ordered multiplicative comparison. This game moves among words, colon notation, part-to-part and part-to-whole models, equivalent ratios, and explanations of why scaling works.</p>
+
+    <section class="learn-strip" aria-labelledby="demoTitle">
+      <div class="ratio-swatch"><div class="swatch-head"><strong>First quantity</strong><span id="demoFirstLabel">3 amber tiles</span></div><div class="dot-line" id="demoFirst"></div><small>The first term always names this quantity.</small></div>
+      <div class="scale-center"><p class="eyebrow" id="demoTitle">Scale together</p><div class="scale-equation" id="demoEquation">3 : 5 = 3 : 5</div><div class="scale-controls"><button class="btn icon-btn" id="scaleDown" type="button" aria-label="Decrease scale factor">−</button><span class="pill" id="scaleFactor">× 1</span><button class="btn icon-btn" id="scaleUp" type="button" aria-label="Increase scale factor">+</button></div><p id="demoStatement">Both terms use the same scale factor.</p></div>
+      <div class="ratio-swatch"><div class="swatch-head"><strong>Second quantity</strong><span id="demoSecondLabel">5 azure tiles</span></div><div class="dot-line" id="demoSecond"></div><small>Changing the order changes the comparison.</small></div>
+    </section>
+
+    <p class="safe-mode" id="safeMode" role="alert" hidden>The game encountered an unexpected problem. Your saved best score remains on this device. Reload the page to begin a clean round.</p>
+
+    <main id="game" class="game-grid">
+      <section class="panel play-panel" aria-labelledby="gameTitle">
+        <div class="section-head"><div><p class="eyebrow">Lesson-synced practice</p><h2 id="gameTitle">Preserve the Pattern</h2></div><p>Mission types rotate so students must interpret, model, calculate, and explain—not memorize answer positions.</p></div>
+
+        <div class="status-row">
+          <div><div class="progress-label"><span id="roundLabel">Mission 1 of 16</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track" aria-hidden="true"><div class="fill" id="progressFill"></div></div></div>
+          <div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div>
+        </div>
+
+        <article class="mission-card">
+          <div class="mission-head"><div class="mission-type" id="missionType">Ratio model</div><h3 id="missionTitle">Read the comparison carefully.</h3><p id="questionPrompt">Choose the ordered ratio named in the prompt.</p></div>
+          <div class="visual-stage" id="visualStage" aria-label="Mission visual model"></div>
+          <div class="answer-zone">
+            <div class="choice-grid" id="choiceZone"></div>
+            <div class="number-zone" id="numberZone" hidden><label for="numberInput" id="numberLabel">Enter the missing value</label><input class="number-input" id="numberInput" type="number" inputmode="numeric" min="0" step="1" autocomplete="off"></div>
+            <div class="action-row"><button class="btn" id="hintBtn" type="button">Reasoning hint</button><button class="btn primary" id="checkBtn" type="button">Check answer</button><button class="btn" id="nextBtn" type="button" hidden>Next mission →</button></div>
+            <div class="feedback" id="feedback" aria-live="polite"><h3>Mission ready.</h3><p>Read the order of the quantities before choosing.</p></div>
+          </div>
+        </article>
+
+        <section class="mastery" id="mastery" aria-labelledby="masteryTitle">
+          <div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p>
+          <div class="action-row"><button class="btn primary" id="newRoundBtn" type="button">Play another round</button><button class="btn" id="reviewBtn" type="button">Review missed missions</button><button class="btn" id="exportBtn" type="button">Export game record</button><a class="btn" href="../units/unit-04/lessons/lesson-01-ratio-meaning-equivalent-ratios.html">Return to Lesson 01</a></div>
+        </section>
+      </section>
+
+      <aside class="panel side-panel" aria-labelledby="fieldTitle">
+        <p class="eyebrow">Lesson 01 field guide</p><h2 id="fieldTitle">Ratio reasoning</h2>
+        <div class="concept"><b>Order matters</b><span>3:5 compares the first named quantity with the second. Reversing the terms changes the meaning.</span></div>
+        <div class="concept"><b>Part-to-part</b><span>Compares one category with another category.</span></div>
+        <div class="concept"><b>Part-to-whole</b><span>Compares one category with the total of all categories.</span></div>
+        <div class="concept"><b>Equivalent ratios</b><span>Multiply or divide both terms by the same nonzero factor.</span></div>
+        <div class="concept"><b>Multiplicative</b><span>Ratios preserve “times as much,” not a constant difference.</span></div>
+        <div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option value="Foundation">Foundation</option><option value="Core" selected>Core</option><option value="Extended">Extended</option></select></div>
+        <div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div>
+        <p class="best" id="bestScore">Best Core mastery: —</p>
+        <p class="privacy-note">Scores stay on this device unless the student intentionally exports a game record. Game mastery is practice evidence and does not replace the official 20-question lesson score.</p>
+      </aside>
+    </main>
+  </div>
+
+  <footer><div class="shell footer-inner"><span>KH-MATH-PA-U04-L01-GAME · Ratio Atelier v1.0</span><span>Jennifer Kay Pearl · Local-first learning practice</span></div></footer>
+
+  <script>
+  (()=>{
+    "use strict";
+
+    const GAME_ID="KH-MATH-PA-U04-L01-GAME";
+    const STORE_KEY="khaemenes-prealgebra-u04-l01-ratio-atelier-v1";
+    const COLORS=["amber","azure","rose","mint"];
+    const COLOR_NAMES=["amber","azure","rose","mint"];
+    const ITEM_NAMES=["tiles","beads","flags","books","markers","seeds"];
+    const CONTEXTS=[
+      ["blue paint","white paint"],["walkers","riders"],["roses","lilies"],["violins","cellos"],
+      ["solar panels","battery units"],["red markers","blue markers"],["mosaic stars","mosaic moons"]
+    ];
+
+    const el={
+      demoFirst:document.getElementById("demoFirst"),demoSecond:document.getElementById("demoSecond"),demoFirstLabel:document.getElementById("demoFirstLabel"),demoSecondLabel:document.getElementById("demoSecondLabel"),
+      demoEquation:document.getElementById("demoEquation"),demoStatement:document.getElementById("demoStatement"),scaleFactor:document.getElementById("scaleFactor"),scaleDown:document.getElementById("scaleDown"),scaleUp:document.getElementById("scaleUp"),
+      missionType:document.getElementById("missionType"),missionTitle:document.getElementById("missionTitle"),questionPrompt:document.getElementById("questionPrompt"),visual:document.getElementById("visualStage"),
+      choices:document.getElementById("choiceZone"),numberZone:document.getElementById("numberZone"),numberInput:document.getElementById("numberInput"),numberLabel:document.getElementById("numberLabel"),
+      hint:document.getElementById("hintBtn"),check:document.getElementById("checkBtn"),next:document.getElementById("nextBtn"),feedback:document.getElementById("feedback"),
+      round:document.getElementById("roundLabel"),accuracy:document.getElementById("accuracyLabel"),fill:document.getElementById("progressFill"),score:document.getElementById("score"),streak:document.getElementById("streak"),
+      pathway:document.getElementById("pathwaySelect"),size:document.getElementById("roundSize"),best:document.getElementById("bestScore"),mastery:document.getElementById("mastery"),masteryMark:document.getElementById("masteryMark"),masteryTitle:document.getElementById("masteryTitle"),masteryText:document.getElementById("masteryText"),
+      newRound:document.getElementById("newRoundBtn"),review:document.getElementById("reviewBtn"),exportBtn:document.getElementById("exportBtn"),print:document.getElementById("printBtn"),sound:document.getElementById("soundBtn"),safe:document.getElementById("safeMode")
+    };
+
+    let demoScale=1,deck=[],index=0,score=0,correct=0,streak=0,selected=null,checked=false,missed=[],lastRecord=null,soundOn=false;
+
+    function shuffle(items){const a=items.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+    function pick(items){return items[Math.floor(Math.random()*items.length)]}
+    function rand(min,max){return Math.floor(Math.random()*(max-min+1))+min}
+    function gcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a||1}
+    function reducedPair(min=2,max=12){let a,b;do{a=rand(min,max);b=rand(min,max)}while(a===b||gcd(a,b)!==1);return[a,b]}
+    function ratio(a,b){return`${a}:${b}`}
+    function uniqueChoices(answer,distractors){const out=[String(answer)];for(const d of distractors){const s=String(d);if(!out.includes(s))out.push(s);if(out.length===4)break}while(out.length<4){const s=ratio(rand(1,18),rand(1,20));if(!out.includes(s))out.push(s)}return shuffle(out)}
+    function cloneMission(m){return{...m,options:m.options?shuffle(m.options):undefined,visual:m.visual?JSON.parse(JSON.stringify(m.visual)):undefined}}
+
+    function modelMission(){
+      const [firstName,secondName]=pick(CONTEXTS);let a=rand(2,9),b=rand(2,9);if(a===b)b+=2;const firstColor=pick(COLORS),secondColor=pick(COLORS.filter(c=>c!==firstColor));
+      const partWhole=Math.random()<.48;const answer=partWhole?ratio(a,a+b):ratio(a,b);
+      return{kind:"choice",family:"model",type:partWhole?"Part-to-whole model":"Part-to-part model",title:"Read the order in the model.",
+        prompt:`There are ${a} ${firstName} and ${b} ${secondName}. What is the ratio of ${firstName} to ${partWhole?"the total":secondName}?`,answer,
+        options:uniqueChoices(answer,[ratio(b,a),ratio(a,b),ratio(b,a+b),ratio(a+b,a)]),
+        hint:partWhole?`The total is ${a}+${b}. Keep ${firstName} first.`:`The wording names ${firstName} first and ${secondName} second.`,
+        explain:partWhole?`The total is ${a+b}, so ${firstName} to total is ${a}:${a+b}.`:`Preserve the stated order: ${firstName} to ${secondName} is ${a}:${b}.`,
+        visual:{mode:"model",a,b,firstName,secondName,colors:[firstColor,secondColor]}};
+    }
+
+    function notationMission(){
+      const [a,b]=reducedPair(2,11);const [x,y]=pick(CONTEXTS);const answer=ratio(a,b);
+      return{kind:"choice",family:"notation",type:"Ratio language",title:"Translate words into ordered notation.",prompt:`Write “${a} ${x} for every ${b} ${y}” in colon notation.`,answer,
+        options:uniqueChoices(answer,[ratio(b,a),ratio(a,a+b),ratio(a+b,b),ratio(a,b*2)]),hint:"The quantity named before “for every” is the first term.",explain:`The words name ${x} first and ${y} second, so the ordered ratio is ${a}:${b}.`,visual:{mode:"words",text:`${a} ${x} for every ${b} ${y}`}};
+    }
+
+    function scaleMission(level){
+      const [a,b]=reducedPair(2,level==="Foundation"?8:12),k=rand(2,level==="Extended"?7:5),blankFirst=Math.random()<.5;
+      const left=blankFirst?"?":a*k,right=blankFirst?b*k:"?",answer=blankFirst?a*k:b*k;
+      return{kind:"number",family:"scale",type:"Equivalent-ratio builder",title:"Scale both terms together.",prompt:`Complete the equivalent ratio: ${a}:${b} = ${left}:${right}`,answer,
+        hint:`The visible term was multiplied by ${k}. Apply ×${k} to the other term.`,explain:`Both terms use the same scale factor: ${a}×${k}=${a*k} and ${b}×${k}=${b*k}.`,
+        visual:{mode:"ratios",left:ratio(a,b),right:`${left}:${right}`,labels:["Original ratio",`Scale factor ×${k}`]}};
+    }
+
+    function equivalentMission(level){
+      const [a,b]=reducedPair(2,level==="Extended"?15:11),k=rand(2,5),answer=ratio(a*k,b*k);
+      return{kind:"choice",family:"equivalent",type:"Equivalent-ratio test",title:"Find the preserved comparison.",prompt:`Which ratio is equivalent to ${a}:${b}?`,answer,
+        options:uniqueChoices(answer,[ratio(a+k,b+k),ratio(a*k,b),ratio(b*k,a*k),ratio(a,b*k)]),hint:"Look for one nonzero scale factor applied to both terms.",explain:`Multiplying both terms by ${k} gives ${a*k}:${b*k}. The quotient and comparison stay the same.`,visual:{mode:"ratios",left:ratio(a,b),right:"? : ?",labels:["Ratio family","Equivalent member"]}};
+    }
+
+    function meaningMission(){
+      const a=rand(2,9),b=rand(2,9),[x,y]=pick(CONTEXTS);const total=a+b;const askPart=Math.random()<.5;
+      const shown=askPart?ratio(a,b):ratio(a,total);const answer=askPart?"Part-to-part":"Part-to-whole";
+      return{kind:"choice",family:"meaning",type:"Meaning classifier",title:"Name what the ratio compares.",prompt:`A collection has ${a} ${x} and ${b} ${y}. The ratio ${shown} compares ${x} with ${askPart?y:"the entire collection"}. What kind of ratio is it?`,answer,
+        options:shuffle(["Part-to-part","Part-to-whole","Additive comparison","Reversed ratio"]),hint:"Ask whether the second term names another category or the total.",explain:askPart?`It compares one category (${x}) with another (${y}), so it is part-to-part.`:`It compares ${x} with all ${total} items, so it is part-to-whole.`,visual:{mode:"model",a,b,firstName:x,secondName:y,colors:["amber","azure"]}};
+    }
+
+    function multiplicativeMission(){
+      const [a,b]=reducedPair(2,10),k=rand(2,6),answer=`Both terms were multiplied by ${k}.`;
+      return{kind:"choice",family:"multiplicative",type:"Multiplicative reasoning",title:"Explain what stayed constant.",prompt:`How did ${a}:${b} become ${a*k}:${b*k}?`,answer,
+        options:shuffle([answer,`${a*(k-1)} was added to both terms.`,`Only the first term was multiplied.`,`The order of the terms was reversed.`]),hint:"Compare each new term with its matching original term by division.",explain:`${a*k}÷${a}=${k} and ${b*k}÷${b}=${k}. The same multiplier acts on both terms.`,visual:{mode:"ratios",left:ratio(a,b),right:ratio(a*k,b*k),labels:["Original",`Scaled ×${k}`]}};
+    }
+
+    function contextMission(level){
+      const [a,b]=reducedPair(2,level==="Extended"?12:8),k=rand(2,level==="Extended"?8:5),[x,y]=pick(CONTEXTS);
+      return{kind:"number",family:"context",type:"Context scaling",title:"Keep the mixture in balance.",prompt:`A design uses ${a} ${x} for every ${b} ${y}. How many ${y} are needed with ${a*k} ${x}?`,answer:b*k,
+        hint:`${a} became ${a*k}. Find that scale factor, then apply it to ${b}.`,explain:`The first quantity was multiplied by ${k}, so the second must also be multiplied by ${k}: ${b}×${k}=${b*k}.`,visual:{mode:"ratios",left:ratio(a,b),right:`${a*k}:?`,labels:["Original design",`Scaled design ×${k}`]}};
+    }
+
+    function errorMission(){
+      const [a,b]=reducedPair(3,12),add=rand(2,6),claim=ratio(a+add,b+add),answer="The same number was added instead of using one scale factor.";
+      return{kind:"choice",family:"error",type:"Error analysis",title:"Diagnose the broken ratio family.",prompt:`A student says ${a}:${b} is equivalent to ${claim} because ${add} was added to both terms. What is the error?`,answer,
+        options:shuffle([answer,"The terms should always be reversed.","Equivalent ratios must have equal sums.","Only the second term should change."]),hint:"Equivalent ratios preserve a quotient through multiplication or division—not usually through addition.",explain:`Adding ${add} does not preserve the multiplicative comparison. Both terms must be multiplied or divided by the same nonzero factor.`,visual:{mode:"ratios",left:ratio(a,b),right:claim,labels:["Original","Student claim"]}};
+    }
+
+    function proofMission(){
+      const [a,b]=reducedPair(3,14),k=rand(2,6),c=a*k,d=b*k,answer=`${a}×${d} = ${b}×${c}`;
+      return{kind:"choice",family:"proof",type:"Equivalence proof",title:"Choose a valid justification.",prompt:`Which equation proves that ${a}:${b} and ${c}:${d} are equivalent?`,answer,
+        options:uniqueChoices(answer,[`${a}+${d} = ${b}+${c}`,`${a}×${c} = ${b}×${d}`,`${a}+${b} = ${c}+${d}`,`${a}−${b} = ${c}−${d}`]),hint:"For equivalent ratios a:b and c:d, the cross products a×d and b×c are equal.",explain:`The cross products are equal: ${a}×${d}=${a*d} and ${b}×${c}=${b*c}.`,visual:{mode:"ratios",left:ratio(a,b),right:ratio(c,d),labels:["First ratio","Second ratio"]}};
+    }
+
+    function missionFactories(pathway){
+      const foundation=[()=>modelMission(),()=>notationMission(),()=>scaleMission("Foundation"),()=>meaningMission()];
+      const core=[...foundation,()=>equivalentMission("Core"),()=>multiplicativeMission(),()=>contextMission("Core")];
+      return pathway==="Foundation"?foundation:pathway==="Core"?core:[...core,()=>scaleMission("Extended"),()=>equivalentMission("Extended"),()=>contextMission("Extended"),()=>errorMission(),()=>proofMission()];
+    }
+
+    function buildDeck(){
+      const count=Math.max(8,Math.min(20,Number(el.size.value)||16)),factories=missionFactories(el.pathway.value),out=[];
+      const cycle=shuffle(factories);for(let i=0;i<count;i++)out.push(cycle[i%cycle.length]());return shuffle(out);
+    }
+
+    function renderDots(container,count,color){container.innerHTML="";for(let i=0;i<count;i++){const dot=document.createElement("span");dot.className=`dot ${color}`;dot.setAttribute("aria-hidden","true");container.appendChild(dot)}}
+    function renderDemo(){renderDots(el.demoFirst,3*demoScale,"amber");renderDots(el.demoSecond,5*demoScale,"azure");el.demoFirstLabel.textContent=`${3*demoScale} amber tiles`;el.demoSecondLabel.textContent=`${5*demoScale} azure tiles`;el.demoEquation.textContent=`3 : 5 = ${3*demoScale} : ${5*demoScale}`;el.scaleFactor.textContent=`× ${demoScale}`;el.demoStatement.textContent=demoScale===1?"The original ratio begins the family.":`Both terms were multiplied by ${demoScale}.`;el.scaleDown.disabled=demoScale===1;el.scaleUp.disabled=demoScale===5}
+
+    function renderVisual(v){
+      el.visual.innerHTML="";
+      if(v.mode==="model"){
+        const grid=document.createElement("div");grid.className="quantity-grid";
+        [[v.a,v.firstName,v.colors[0]],[v.b,v.secondName,v.colors[1]]].forEach(([count,name,color])=>{const box=document.createElement("div");box.className="quantity-box";const strong=document.createElement("strong");strong.textContent=`${count} ${name}`;const dots=document.createElement("div");dots.className="dot-line";renderDots(dots,count,color);const small=document.createElement("small");small.textContent="Count and keep the named order.";box.append(strong,dots,small);grid.appendChild(box)});el.visual.appendChild(grid);
+      }else if(v.mode==="ratios"){
+        const wrap=document.createElement("div");wrap.className="ratio-pair";[v.left,v.right].forEach((value,i)=>{if(i){const eq=document.createElement("span");eq.className="equal-sign";eq.textContent="=";wrap.appendChild(eq)}const card=document.createElement("div");card.className="ratio-card";const small=document.createElement("small");small.textContent=v.labels[i];const b=document.createElement("b");b.textContent=value;card.append(small,b);wrap.appendChild(card)});el.visual.appendChild(wrap);
+      }else{const card=document.createElement("div");card.className="word-card";card.textContent=`“${v.text}”`;el.visual.appendChild(card)}
+    }
+
+    function setFeedback(kind,title,text,detail=""){el.feedback.className=`feedback${kind?` ${kind}`:""}`;el.feedback.innerHTML="";const h=document.createElement("h3");h.textContent=title;const p=document.createElement("p");p.textContent=text;el.feedback.append(h,p);if(detail){const d=document.createElement("div");d.className="detail";d.textContent=detail;el.feedback.appendChild(d)}}
+    function current(){return deck[index]}
+
+    function renderMission(){
+      checked=false;selected=null;
+      el.hint.disabled=false;el.check.disabled=false;el.next.disabled=false;
+      el.hint.hidden=false;el.check.hidden=false;el.next.hidden=true;
+      el.numberInput.disabled=false;el.numberInput.value="";el.choices.innerHTML="";
+      const item=current();el.missionType.textContent=item.type;el.missionTitle.textContent=item.title;el.questionPrompt.textContent=item.prompt;renderVisual(item.visual);
+      if(item.kind==="choice"){
+        el.numberZone.hidden=true;el.choices.hidden=false;
+        item.options.forEach((option,i)=>{const b=document.createElement("button");b.type="button";b.className="choice-btn";b.textContent=option;b.dataset.value=option;b.setAttribute("aria-pressed","false");b.addEventListener("click",()=>{if(checked)return;selected=option;[...el.choices.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))});el.choices.appendChild(b)});
+      }else{el.choices.hidden=true;el.numberZone.hidden=false;el.numberLabel.textContent="Enter the missing whole-number term";setTimeout(()=>el.numberInput.focus({preventScroll:true}),0)}
+      setFeedback("","Mission ready.",item.kind==="choice"?"Choose one answer, then check your reasoning.":"Enter the missing value, then check your reasoning.");updateStats();
+    }
+
+    function submit(){
+      if(checked)return;const item=current();let response;
+      if(item.kind==="choice"){if(selected===null){setFeedback("bad","Choose an answer.","Select one option before checking.");tone("bad");return}response=selected}
+      else{if(el.numberInput.value.trim()===""){setFeedback("bad","Enter a value.","The missing term needs a positive whole number.");tone("bad");return}response=Number(el.numberInput.value)}
+      checked=true;el.hint.disabled=true;el.check.disabled=true;el.numberInput.disabled=true;[...el.choices.children].forEach(b=>b.disabled=true);el.next.hidden=false;el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";
+      const good=String(response)===String(item.answer);
+      if(good){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);setFeedback("good","Pattern preserved.",item.explain,`Answer: ${item.answer}`);tone("good")}
+      else{streak=0;missed.push(cloneMission(item));setFeedback("bad","The ratio family changed.",item.explain,`Correct answer: ${item.answer}`);tone("bad")}
+      updateStats();
+    }
+
+    function showHint(){if(checked)return;setFeedback("","Reasoning hint",current().hint)}
+    function next(){if(!checked)return;if(index>=deck.length-1){finishRound();return}index++;renderMission()}
+    function updateStats(){const total=deck.length||1,done=index+(checked?1:0),acc=done?Math.round(correct/done*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${acc}%`;el.fill.style.width=`${Math.round(done/total*100)}%`}
+
+    function startRound(reviewDeck=null){deck=reviewDeck&&reviewDeck.length?shuffle(reviewDeck.map(cloneMission)):buildDeck();index=0;score=0;correct=0;streak=0;missed=[];lastRecord=null;el.mastery.classList.remove("show");renderMission()}
+    function readStore(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||"{}")||{}}catch(_){return{}}}
+    function writeStore(data){try{localStorage.setItem(STORE_KEY,JSON.stringify(data))}catch(_){}}
+    function updateBest(){const data=readStore(),p=el.pathway.value,value=data.best&&Number(data.best[p]);el.best.textContent=Number.isFinite(value)?`Best ${p} mastery: ${value}%`:`Best ${p} mastery: —`}
+    function saveRecord(record){const data=readStore(),best={...(data.best||{})},history=Array.isArray(data.history)?data.history:[];best[record.pathway]=Math.max(Number(best[record.pathway])||0,record.percent);history.unshift(record);writeStore({schema_version:"1.0",best,history:history.slice(0,20)});updateBest()}
+
+    function finishRound(){
+      const percent=Math.round(correct/deck.length*100);el.fill.style.width="100%";
+      lastRecord={schema_version:"1.0",record_type:"lesson_game_practice",game_id:GAME_ID,course:"Pre-Algebra",unit:4,lesson:1,title:"Ratio Meaning, Language & Equivalent Ratios",pathway:el.pathway.value,missions:deck.length,correct,percent,score,mastery_threshold:80,status:percent>=80?"mastered":"practice_needed",completed_at:new Date().toISOString(),privacy:"No student name or identifier included."};
+      saveRecord(lastRecord);el.mastery.classList.add("show");el.masteryMark.textContent=`${percent}%`;el.masteryTitle.textContent=percent>=80?"Ratio Atelier mastery earned":"Keep strengthening the ratio family";el.masteryText.textContent=percent>=80?`You preserved ${correct} of ${deck.length} ratio patterns and met the 80% game-mastery target.`:`You preserved ${correct} of ${deck.length} ratio patterns. Review the missed missions, then retry until the multiplicative comparison stays clear.`;el.review.disabled=missed.length===0;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";if(percent>=80){confetti();tone("mastery")}el.mastery.scrollIntoView({behavior:"smooth",block:"center"})
+    }
+
+    function exportRecord(){if(!lastRecord)return;const blob=new Blob([JSON.stringify(lastRecord,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`KH-MATH-PA-U04-L01-game-${new Date().toISOString().slice(0,10)}.json`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+    function tone(kind){if(!soundOn)return;try{const AudioContext=window.AudioContext||window.webkitAudioContext,ctx=new AudioContext(),notes=kind==="mastery"?[392,523,659,784]:kind==="good"?[523,659]:[220];notes.forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type="sine";o.frequency.value=f;g.gain.setValueAtTime(.0001,ctx.currentTime+i*.1);g.gain.exponentialRampToValueAtTime(.08,ctx.currentTime+i*.1+.02);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+i*.1+.22);o.connect(g).connect(ctx.destination);o.start(ctx.currentTime+i*.1);o.stop(ctx.currentTime+i*.1+.24)});setTimeout(()=>ctx.close(),900)}catch(_){}}
+    function confetti(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;const colors=["#d7b96f","#83b7df","#8fd3aa","#ef9e9e"];for(let i=0;i<55;i++){const p=document.createElement("span");p.className="confetti-piece";p.style.left=`${Math.random()*100}vw`;p.style.background=pick(colors);p.style.setProperty("--drift",`${rand(-130,130)}px`);p.style.animationDelay=`${Math.random()*.55}s`;document.body.appendChild(p);setTimeout(()=>p.remove(),3500)}}
+
+    el.scaleDown.addEventListener("click",()=>{demoScale=Math.max(1,demoScale-1);renderDemo()});el.scaleUp.addEventListener("click",()=>{demoScale=Math.min(5,demoScale+1);renderDemo()});
+    el.hint.addEventListener("click",showHint);el.check.addEventListener("click",submit);el.next.addEventListener("click",next);el.numberInput.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();submit()}});
+    el.newRound.addEventListener("click",()=>startRound());el.review.addEventListener("click",()=>{if(missed.length){const review=missed.map(cloneMission);startRound(review)}});el.exportBtn.addEventListener("click",exportRecord);el.print.addEventListener("click",()=>window.print());
+    el.pathway.addEventListener("change",()=>{updateBest();startRound()});el.size.addEventListener("change",()=>startRound());el.sound.addEventListener("click",()=>{soundOn=!soundOn;el.sound.setAttribute("aria-pressed",String(soundOn));el.sound.setAttribute("aria-label",soundOn?"Turn sound off":"Turn sound on");el.sound.textContent=soundOn?"♫":"♪";if(soundOn)tone("good")});
+    window.addEventListener("error",()=>{el.safe.hidden=false});
+
+    renderDemo();updateBest();startRound();
+  })();
+  </script>
+</body>
+</html>

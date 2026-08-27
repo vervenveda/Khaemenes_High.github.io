@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Lesson 3 Prime Spy / Composite Catch — classify numbers as prime, composite, or neither using divisibility reasoning.">
+<title>Lesson 3 · Prime Spy / Composite Catch</title>
+<style>
+:root{
+  --bg:#090b10;--panel:#141a22;--panel2:#10161e;--ink:#f7f1e3;--muted:#c8c1b3;
+  --line:#384351;--gold:#d8bd7a;--gold2:#f0d99b;--good:#8fd4ad;--bad:#ed9b9b;
+  --focus:#b9d8ff;--shadow:0 18px 55px rgba(0,0,0,.35);--max:1180px
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:
+radial-gradient(circle at 13% 0%,rgba(216,189,122,.10),transparent 28rem),
+radial-gradient(circle at 90% 20%,rgba(104,139,175,.10),transparent 30rem),
+linear-gradient(180deg,var(--bg),#0d1117 60%,#090b10);
+font-family:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;line-height:1.5}
+button,select{font:inherit}button{touch-action:manipulation}
+button:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.shell{width:min(var(--max),calc(100% - 28px));margin:auto;padding:28px 0 48px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:10px 0 26px;border-bottom:1px solid rgba(216,189,122,.22)}
+.brand{display:flex;align-items:center;gap:12px}.seal{width:44px;height:44px;border:1px solid rgba(216,189,122,.68);border-radius:9px;display:grid;place-items:center;transform:rotate(45deg);background:rgba(216,189,122,.06)}
+.seal span{transform:rotate(-45deg);font:18px Georgia,serif;color:var(--gold2)}
+.kicker{margin:0;color:var(--gold2);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.crumb{margin:3px 0 0;color:var(--muted);font-size:.9rem}
+.actions{display:flex;gap:8px;flex-wrap:wrap}.ghost{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}.ghost:hover{border-color:var(--gold)}
+.hero{text-align:center;max-width:900px;margin:auto;padding:54px 10px 30px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.22em;font-size:.78rem;font-weight:800}
+h1,h2,h3{font-family:Cinzel,Georgia,"Times New Roman",serif;font-weight:500}
+h1{margin:10px 0 13px;font-size:clamp(2rem,5vw,4rem);line-height:1.05}
+.hero p{margin:auto;max-width:760px;color:var(--muted);font-size:clamp(1rem,2vw,1.15rem)}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px auto 0;max-width:840px}
+.rule{border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025);padding:12px 10px}.rule b{display:block;color:var(--gold2)}.rule small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(290px,.82fr);gap:18px;align-items:start}
+.panel{border:1px solid rgba(216,189,122,.18);border-radius:18px;background:linear-gradient(180deg,rgba(23,29,38,.96),rgba(16,21,28,.96));box-shadow:var(--shadow)}
+.play{padding:22px}.side{padding:18px}
+.status{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-bottom:16px}.progress-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.82rem;margin-bottom:7px}
+.track{height:8px;background:#07090d;border:1px solid #313946;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ae9255,var(--gold2));transition:width .25s ease}
+.stat{text-align:center;min-width:72px;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}.stat b{display:block;font-size:1.15rem}.stat span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.stage{min-height:250px;display:grid;place-items:center;text-align:center;border:1px solid var(--line);border-radius:16px;padding:22px;position:relative;overflow:hidden;background:
+linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),#0c1117;background-size:24px 24px}
+.stage:after{content:"";position:absolute;inset:15px;border:1px solid rgba(216,189,122,.12);border-radius:12px;pointer-events:none}.target{position:relative;z-index:1}
+.label{color:var(--muted);text-transform:uppercase;letter-spacing:.15em;font-size:.74rem}.num{font:clamp(4rem,11vw,7rem) Georgia,serif;line-height:1;color:#fff8e8;margin:6px 0}.sub{color:var(--gold2);font-size:.9rem}
+.classify{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.choice{appearance:none;min-height:78px;border:1px solid var(--line);border-radius:13px;background:#111720;color:var(--ink);cursor:pointer;text-align:left;padding:11px;transition:.15s ease}
+.choice:hover{border-color:#738093;transform:translateY(-1px)}.choice[aria-pressed="true"]{border-color:var(--gold2);background:linear-gradient(180deg,rgba(216,189,122,.16),rgba(216,189,122,.07));box-shadow:inset 0 0 0 1px rgba(216,189,122,.24)}
+.choice strong{display:block;font:1.04rem Georgia,serif;color:#fff}.choice small{display:block;color:var(--muted);margin-top:2px}
+.spy-lab{margin-top:18px;border-top:1px solid var(--line);padding-top:15px}.spy-head{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.spy-head h2{font-size:1.05rem;margin:0}.spy-head span{color:var(--muted);font-size:.8rem}
+.spy-buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.spy{border:1px solid var(--line);border-radius:9px;background:#171e27;color:var(--ink);min-width:64px;min-height:44px;cursor:pointer}.spy:hover{border-color:var(--gold)}.spy.hit{border-color:rgba(143,212,173,.6);background:rgba(143,212,173,.08)}.spy.miss{opacity:.7}
+.scan-result{min-height:50px;margin-top:10px;border:1px dashed #3a4552;border-radius:10px;padding:10px 12px;color:var(--muted);background:#0d1218}
+.row{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:15px}.primary,.secondary{min-height:44px;border-radius:10px;padding:10px 16px;cursor:pointer;font-weight:700;letter-spacing:.03em}
+.primary{border:1px solid var(--gold2);background:var(--gold2);color:#17130a}.secondary{border:1px solid var(--line);background:#171e27;color:var(--ink)}.primary:disabled,.secondary:disabled{opacity:.45;cursor:not-allowed}
+.feedback{margin-top:15px;min-height:74px;border-radius:12px;border:1px solid transparent;padding:13px 14px;background:rgba(255,255,255,.02)}.feedback.good{border-color:rgba(143,212,173,.42);background:rgba(143,212,173,.07)}.feedback.bad{border-color:rgba(237,155,155,.42);background:rgba(237,155,155,.07)}.feedback h3{margin:0 0 4px;font-size:1rem}.feedback p{margin:0;color:#d5cebf}
+.side h2{margin:2px 0 12px;font-size:1.18rem}.rulecard{border:1px solid var(--line);border-radius:11px;padding:11px;background:rgba(255,255,255,.025);margin-bottom:9px}.rulecard b{display:block;font:1rem Georgia,serif}.rulecard span{color:var(--muted);font-size:.82rem}
+.tip{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.tip p{margin:5px 0 0;color:var(--muted);font-size:.9rem}.controls{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+select{color:var(--ink);background:#111720;border:1px solid var(--line);border-radius:9px;padding:8px 30px 8px 10px;min-height:40px}.best{color:var(--gold2);font-size:.82rem;margin:12px 0 0}
+.mastery{display:none;margin-top:20px;padding:24px;text-align:center;border:1px solid rgba(216,189,122,.5);border-radius:16px;background:radial-gradient(circle at 50% 0%,rgba(216,189,122,.14),transparent 24rem),#111720}.mastery.show{display:block}.mark{width:68px;height:68px;margin:0 auto 12px;border:1px solid var(--gold2);display:grid;place-items:center;border-radius:50%;color:var(--gold2);font:1.3rem Georgia,serif}.mastery h2{margin:5px 0}.mastery p{color:var(--muted);max-width:620px;margin:7px auto 15px}
+footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+@media(max-width:650px){.rules{grid-template-columns:1fr}.classify{grid-template-columns:1fr}.status{grid-template-columns:1fr 66px}.status .stat:last-child{display:none}.play{padding:13px}.actions{display:none}.hero{padding-top:34px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.001ms!important}}
+@media print{body{background:#fff;color:#111}.actions,.row,.spy-lab,.controls{display:none!important}.shell{width:100%;padding:0}.panel,.stage,.rulecard{box-shadow:none;background:#fff;color:#111;border-color:#bbb}.hero p,.rulecard span,.tip p,.crumb{color:#444}h1,h2,h3,.rulecard b{color:#111}}
+
+.lesson-sync{max-width:900px;margin:20px auto 0;padding:13px 15px;border-left:3px solid var(--gold);border-radius:0 11px 11px 0;background:rgba(216,189,122,.06);color:#ddd5c6;text-align:left}
+.studio{margin:4px 0 22px;padding:20px}
+.studio-head{display:flex;justify-content:space-between;gap:16px;align-items:end;flex-wrap:wrap;margin-bottom:14px}.studio-head h2{margin:3px 0 0;font-size:clamp(1.4rem,3vw,2rem)}.studio-head p{margin:0;color:var(--muted);max-width:650px}
+.studio-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.studio-tab{min-height:52px;border:1px solid var(--line);border-radius:10px;background:#111720;color:var(--muted);cursor:pointer;padding:8px}
+.studio-tab[aria-selected="true"]{background:var(--gold2);border-color:var(--gold2);color:#17130a;font-weight:800}
+.scene{display:none;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:16px}.scene.active{display:grid}
+.scene-visual{min-height:320px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px),#0b1016;background-size:24px 24px;padding:18px;display:grid;place-items:center}
+.scene-copy{border:1px solid var(--line);border-radius:14px;background:#111720;padding:18px}.scene-copy h3{margin:0 0 8px}.scene-copy p,.scene-copy li{color:var(--muted);font-size:.92rem}.scene-copy ul{padding-left:20px}.takeaway{margin-top:12px;padding:10px 12px;border-left:3px solid var(--gold);background:rgba(216,189,122,.06);color:#e7dece}
+.demo-number{width:92px;height:92px;border:1px solid var(--gold2);border-radius:50%;display:grid;place-items:center;background:#211c12;color:#fff0c5;font:2rem Georgia,serif;margin:0 auto 16px}
+.demo-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.demo-chip{border:1px solid var(--line);border-radius:999px;padding:8px 10px;background:#151b23;color:#aab3be;transition:.25s ease}.demo-chip.on{border-color:rgba(143,212,173,.62);background:rgba(143,212,173,.08);color:#e4f8eb;transform:translateY(-2px)}
+.demo-caption{text-align:center;color:var(--muted);min-height:44px;margin-top:12px}
+.tree-demo{display:grid;justify-items:center;gap:9px}.tree-node{min-width:60px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:#151b23;text-align:center;font:1.05rem Georgia,serif;opacity:.3;transition:.25s ease}.tree-node.on{opacity:1}.tree-node.prime{border-color:rgba(143,212,173,.62);color:#e4f8eb}
+.tree-branch{display:flex;gap:26px;justify-content:center}
+.path-demo{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}.path-card{border:1px solid var(--line);border-radius:12px;background:#111720;padding:14px;text-align:center}.path-card b{display:block;font-family:Georgia,serif}.path-card span{display:block;color:var(--muted);margin-top:7px}
+.same-result{grid-column:1/-1;border:1px solid rgba(143,212,173,.5);border-radius:999px;padding:10px;text-align:center;color:#e4f8eb;background:rgba(143,212,173,.07);opacity:.4;transition:.25s}.same-result.on{opacity:1;transform:scale(1.02)}
+.fingerprint{margin-top:12px;border:1px solid var(--line);border-radius:10px;background:#0d1218;padding:10px;color:var(--muted)}.fingerprint strong{color:var(--gold2);font-family:Georgia,serif}
+@media(max-width:900px){.scene{grid-template-columns:1fr}}
+@media(max-width:650px){.studio-tabs{grid-template-columns:1fr 1fr}.path-demo{grid-template-columns:1fr}.same-result{grid-column:auto}}
+
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+  <a class="brand" href="../units/unit-01/lessons/lesson-03-primes-divisibility.html" style="text-decoration:none"><div class="seal" aria-hidden="true"><span>3</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 01</p><p class="crumb">Lesson 3 Companion · Prime Numbers, Divisibility & Prime Factorization</p></div></a>
+  <div class="actions"><a class="ghost" href="../units/unit-01/lessons/lesson-03-primes-divisibility.html" style="text-decoration:none">← Lesson 3</a><button class="ghost" id="printBtn" type="button">Print rules</button><button class="ghost" id="resetBestBtn" type="button">Reset best</button></div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Prime Spy / Composite Catch</div>
+  <h1>Investigate the number.</h1>
+  <p>Use divisibility clues, factor reasoning, factor trees, and the square-root stopping rule to decide whether each number is <strong>prime</strong>, <strong>composite</strong>, or <strong>neither</strong>—then uncover its prime structure.</p>
+  <div class="rules">
+    <div class="rule"><b>Prime</b><small>A whole number greater than 1 with exactly two factors: 1 and itself.</small></div>
+    <div class="rule"><b>Composite</b><small>A whole number greater than 1 with more than two factors.</small></div>
+    <div class="rule"><b>Neither</b><small>0 and 1 are neither prime nor composite.</small></div>
+  </div>
+  <div class="lesson-sync"><strong>Lesson sync:</strong> this edition follows Lesson 3’s full sequence: prime/composite classification, divisibility rules for 2, 3, 4, 5, 6, 9, and 10, factor trees, prime factorization, and the fact that different valid trees end with the same prime factors.</div>
+</section>
+
+<section class="panel studio" aria-labelledby="studioTitle">
+  <div class="studio-head">
+    <div><div class="eyebrow">Animated instruction studio</div><h2 id="studioTitle">Find the prime structure hiding inside whole numbers.</h2></div>
+    <p>Watch four short demonstrations, then use the same evidence in Prime Spy.</p>
+  </div>
+  <div class="studio-tabs" role="tablist">
+    <button class="studio-tab" type="button" aria-selected="true">1 · Prime or Composite</button>
+    <button class="studio-tab" type="button" aria-selected="false">2 · Divisibility Rules</button>
+    <button class="studio-tab" type="button" aria-selected="false">3 · Factor Tree</button>
+    <button class="studio-tab" type="button" aria-selected="false">4 · Same Prime Fingerprint</button>
+  </div>
+
+  <div class="scene active">
+    <div class="scene-visual">
+      <div>
+        <div class="demo-number" id="demoPrimeNumber">29</div>
+        <div class="demo-row" id="demoPrimeFactors">
+          <span class="demo-chip">1</span><span class="demo-chip">2</span><span class="demo-chip">3</span><span class="demo-chip">5</span><span class="demo-chip">7</span><span class="demo-chip">29</span>
+        </div>
+        <div class="demo-caption" id="demoPrimeCaption">29 has only factors 1 and 29.</div>
+      </div>
+    </div>
+    <div class="scene-copy">
+      <h3>Prime means exactly two positive factors.</h3>
+      <p>Composite numbers have at least one additional factor pair. The number 1 is neither prime nor composite.</p>
+      <ul><li>29 is prime.</li><li>21 is composite because 3 × 7 = 21.</li><li>2 is the only even prime.</li></ul>
+      <div class="takeaway">One nontrivial factor proves composite. To prove prime, test only prime divisors through √n.</div>
+      <div class="row"><button class="primary" id="playPrimeLessonDemo" type="button">Compare 29 and 21</button></div>
+    </div>
+  </div>
+
+  <div class="scene">
+    <div class="scene-visual">
+      <div>
+        <div class="demo-number">1,134</div>
+        <div class="demo-row" id="demoRules">
+          <span class="demo-chip" data-rule="2">÷2</span><span class="demo-chip" data-rule="3">÷3</span><span class="demo-chip" data-rule="4">÷4</span><span class="demo-chip" data-rule="5">÷5</span><span class="demo-chip" data-rule="6">÷6</span><span class="demo-chip" data-rule="9">÷9</span><span class="demo-chip" data-rule="10">÷10</span>
+        </div>
+        <div class="demo-caption" id="demoRuleCaption">Digit sum: 1 + 1 + 3 + 4 = 9.</div>
+      </div>
+    </div>
+    <div class="scene-copy">
+      <h3>Divisibility rules are efficient tests.</h3>
+      <ul><li>2: last digit is even.</li><li>3 or 9: use the digit sum.</li><li>4: inspect the last two digits.</li><li>5: ends in 0 or 5.</li><li>6: passes both 2 and 3.</li><li>10: ends in 0.</li></ul>
+      <div class="takeaway">1,134 passes the tests for 2, 3, 6, and 9.</div>
+      <div class="row"><button class="primary" id="playRuleLessonDemo" type="button">Run scanner</button></div>
+    </div>
+  </div>
+
+  <div class="scene">
+    <div class="scene-visual">
+      <div>
+        <div class="tree-demo" id="demoTree">
+          <div class="tree-node">84</div>
+          <div class="tree-branch"><div class="tree-node">12</div><div class="tree-node prime">7</div></div>
+          <div class="tree-branch"><div class="tree-node prime">3</div><div class="tree-node">4</div></div>
+          <div class="tree-branch"><div class="tree-node prime">2</div><div class="tree-node prime">2</div></div>
+        </div>
+        <div class="demo-caption" id="demoTreeCaption">Split composite branches until every endpoint is prime.</div>
+      </div>
+    </div>
+    <div class="scene-copy">
+      <h3>Factor trees decompose composites.</h3>
+      <p>For 84: 84 = 12 × 7, 12 = 3 × 4, and 4 = 2 × 2.</p>
+      <div class="takeaway">Prime leaves: 2, 2, 3, 7. Multiply them to reconstruct 84.</div>
+      <div class="row"><button class="primary" id="playTreeLessonDemo" type="button">Animate factor tree</button></div>
+    </div>
+  </div>
+
+  <div class="scene">
+    <div class="scene-visual">
+      <div class="path-demo">
+        <div class="path-card"><b>60 = 6 × 10</b><span>→ 2 × 3 × 2 × 5</span></div>
+        <div class="path-card"><b>60 = 4 × 15</b><span>→ 2 × 2 × 3 × 5</span></div>
+        <div class="same-result" id="samePrimeResult">Both paths → 2 × 2 × 3 × 5 = 2² × 3 × 5</div>
+      </div>
+    </div>
+    <div class="scene-copy">
+      <h3>Tree shape can change; prime identity cannot.</h3>
+      <p>The Fundamental Theorem of Arithmetic says a whole number greater than 1 has one prime factorization apart from factor order.</p>
+      <div class="takeaway">Prime factorization is a structural fingerprint.</div>
+      <div class="row"><button class="primary" id="playSameLessonDemo" type="button">Converge the paths</button></div>
+    </div>
+  </div>
+</section>
+
+<main class="grid">
+<section class="panel play">
+  <div class="status">
+    <div><div class="progress-label"><span id="roundLabel">Case 1 of 18</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div>
+    <div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div>
+  </div>
+
+  <div class="stage"><div class="target"><div class="label">Number under investigation</div><div class="num" id="numberCard">29</div><div class="sub" id="caseSub">Use evidence before you classify.</div></div></div>
+
+  <div class="classify">
+    <button class="choice" type="button" data-choice="Prime" aria-pressed="false"><strong>Prime</strong><small>Only factors 1 and itself</small></button>
+    <button class="choice" type="button" data-choice="Composite" aria-pressed="false"><strong>Composite</strong><small>Has another factor pair</small></button>
+    <button class="choice" type="button" data-choice="Neither" aria-pressed="false"><strong>Neither</strong><small>Special case: 0 or 1</small></button>
+  </div>
+
+  <section class="spy-lab">
+    <div class="spy-head"><h2>Divisibility scanner</h2><span>Test a possible divisor</span></div>
+    <div class="spy-buttons" id="spyButtons"></div>
+    <div class="scan-result" id="scanResult">Select a divisor to inspect the evidence.</div>
+    <div class="fingerprint"><strong>Prime fingerprint:</strong> after classification, composite-number feedback reveals the complete prime factorization. Different factor-tree paths must end with this same set of prime factors.</div>
+  </section>
+
+  <div class="row"><button class="secondary" id="hintBtn" type="button">Reasoning hint</button><button class="primary" id="checkBtn" type="button">Submit classification</button><button class="secondary" id="nextBtn" type="button" hidden>Next case →</button></div>
+
+  <div class="feedback" id="feedback" aria-live="polite"><h3>Case open.</h3><p>Gather evidence, choose a classification, and submit your reasoning.</p></div>
+
+  <div class="mastery" id="mastery"><div class="mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="row"><button class="primary" id="newRoundBtn" type="button">Play another round</button><button class="secondary" id="reviewBtn" type="button">Review missed cases</button></div></div>
+</section>
+
+<aside class="panel side">
+  <h2>Lesson 3 Field Guide</h2>
+  <div class="rulecard"><b>Divisible by 2</b><span>Last digit is 0, 2, 4, 6, or 8.</span></div>
+  <div class="rulecard"><b>Divisible by 3</b><span>Digit sum is divisible by 3.</span></div>
+  <div class="rulecard"><b>Divisible by 4</b><span>The last two digits form a number divisible by 4.</span></div>
+  <div class="rulecard"><b>Divisible by 5</b><span>Last digit is 0 or 5.</span></div>
+  <div class="rulecard"><b>Divisible by 6</b><span>The number passes both the 2 and 3 tests.</span></div>
+  <div class="rulecard"><b>Divisible by 9</b><span>Digit sum is divisible by 9.</span></div>
+  <div class="rulecard"><b>Divisible by 10</b><span>Last digit is 0.</span></div>
+  <div class="rulecard"><b>Prime factorization</b><span>Keep splitting composite factors until every factor is prime.</span></div>
+  <div class="tip"><strong>Prime reasoning</strong><p id="strategyText">To prove a number prime, you only need to test possible prime divisors up to its square root.</p></div>
+  <div class="controls"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 cases</option><option value="18" selected>18 cases</option><option value="24">24 cases</option></select></div>
+  <p class="best" id="bestScore">Best mastery score: —</p>
+</aside>
+</main>
+<footer>KH-MATH-PA-U01-L3 · Prime/composite · Divisibility · Factor trees · Prime factorization · 80% mastery</footer>
+</div>
+<script>
+(()=>{
+"use strict";
+const BANK=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,27,29,31,33,35,37,39,41,42,43,44,45,47,49,51,53,55,57,59,61,63,64,65,67,69,71,73,75,77,79,81,83,85,87,89,91,93,95,97,99,101,103,107,109,111,113,121];
+const DIVS=[2,3,4,5,6,9,10];
+const el={
+ card:document.getElementById("numberCard"),sub:document.getElementById("caseSub"),choices:[...document.querySelectorAll(".choice")],
+ spies:document.getElementById("spyButtons"),scan:document.getElementById("scanResult"),hint:document.getElementById("hintBtn"),
+ check:document.getElementById("checkBtn"),next:document.getElementById("nextBtn"),feedback:document.getElementById("feedback"),
+ score:document.getElementById("score"),streak:document.getElementById("streak"),round:document.getElementById("roundLabel"),
+ acc:document.getElementById("accuracyLabel"),fill:document.getElementById("progressFill"),strategy:document.getElementById("strategyText"),
+ size:document.getElementById("roundSize"),best:document.getElementById("bestScore"),mastery:document.getElementById("mastery"),
+ mark:document.getElementById("masteryMark"),mTitle:document.getElementById("masteryTitle"),mText:document.getElementById("masteryText"),
+ newRound:document.getElementById("newRoundBtn"),review:document.getElementById("reviewBtn"),print:document.getElementById("printBtn"),
+ resetBest:document.getElementById("resetBestBtn")
+};
+const BEST="khaemenes_prime_spy_best_v1";
+let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function isPrime(n){if(n<2)return false;if(n===2)return true;if(n%2===0)return false;for(let d=3;d*d<=n;d+=2)if(n%d===0)return false;return true}
+function kind(n){if(n===0||n===1)return"Neither";return isPrime(n)?"Prime":"Composite"}
+function factorWitness(n){if(n<2)return null;for(let d=2;d*d<=n;d++)if(n%d===0)return[d,n/d];return null}
+function primeFactors(n){const out=[];let d=2;let x=n;while(x>1){while(x%d===0){out.push(d);x/=d}d++}return out}
+function factorizationText(n){if(n<2)return "No prime factorization";const f=primeFactors(n);return f.join(" × ")}
+function setFeedback(k,t,p){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${p}</p>`}
+function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(_){return null}}
+function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
+function saveBest(p){try{const old=best();if(old===null||p>old)localStorage.setItem(BEST,String(p))}catch(_){}updateBest()}
+function current(){return deck[index]}
+function start(source=null){const count=Math.max(6,Math.min(24,Number(el.size.value)||18));const pool=source&&source.length?source:BANK;const arr=[];while(arr.length<count)arr.push(...shuffle(pool));deck=arr.slice(0,count);index=0;selected=null;checked=false;score=0;correct=0;attempts=0;streak=0;missed=[];el.mastery.classList.remove("show");render();updateStats()}
+function render(){
+ checked=false;selected=null;const n=current();el.card.textContent=n;el.sub.textContent=n<2?"Remember the special cases.":"Use evidence before you classify.";
+ el.choices.forEach(b=>{b.disabled=false;b.setAttribute("aria-pressed","false")});el.check.hidden=false;el.check.disabled=false;el.next.hidden=true;el.hint.disabled=false;
+ buildSpies(n);el.scan.textContent="Select a divisor to inspect the evidence.";setFeedback("","Case open.","Gather evidence, choose a classification, and submit your reasoning.");updateStats()
+}
+function buildSpies(n){el.spies.innerHTML="";DIVS.forEach(d=>{const b=document.createElement("button");b.type="button";b.className="spy";b.textContent=`÷ ${d}`;b.addEventListener("click",()=>scan(d,b));el.spies.appendChild(b)})}
+function scan(d,b){
+ const n=current();const hit=n!==0&&n%d===0;document.querySelectorAll(".spy").forEach(x=>x.classList.remove("hit","miss"));b.classList.add(hit?"hit":"miss");
+ const digitSum=String(Math.abs(n)).split("").reduce((s,x)=>s+Number(x),0);
+ const lastTwo=Math.abs(n)%100,last=Math.abs(n)%10;
+ let evidence="";
+ if(d===2)evidence=`Last digit ${last} is ${last%2===0?"even":"not even"}.`;
+ else if(d===3)evidence=`Digit sum is ${digitSum}.`;
+ else if(d===4)evidence=`Last two digits form ${lastTwo}.`;
+ else if(d===5)evidence=`Last digit is ${last}.`;
+ else if(d===6)evidence=`A ÷6 test needs both ÷2 and ÷3 to pass.`;
+ else if(d===9)evidence=`Digit sum is ${digitSum}.`;
+ else if(d===10)evidence=`Last digit is ${last}.`;
+ if(n===0){el.scan.textContent=`${evidence} 0 is a special case: neither prime nor composite.`;return}
+ if(hit){el.scan.textContent=`${evidence} ${n} ÷ ${d} = ${n/d}, so ${d} divides evenly.`}
+ else{el.scan.textContent=`${evidence} ${n} is not divisible by ${d}.`}
+}
+function updateStats(){const total=deck.length||1;const a=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Case ${Math.min(index+1,total)} of ${total}`;el.acc.textContent=`Accuracy ${a}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+el.choices.forEach(b=>b.addEventListener("click",()=>{if(checked)return;selected=b.dataset.choice;el.choices.forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))}));
+function hint(){
+ const n=current();if(n===0||n===1){setFeedback("","Hint",`${n} is one of the two special whole numbers that are neither prime nor composite.`);return}
+ const root=Math.floor(Math.sqrt(n));const candidates=DIVS.filter(d=>d<=root);
+ if(isPrime(n))setFeedback("","Hint",`To prove ${n} prime, test prime divisors no larger than √${n} ≈ ${Math.sqrt(n).toFixed(2)}. Relevant tests here: ${candidates.length?candidates.join(", "):"none beyond 1"}.`);
+ else{const w=factorWitness(n);setFeedback("","Hint",`Look for a divisor no larger than √${n} ≈ ${Math.sqrt(n).toFixed(2)}. One of the small tests will expose a factor pair.`)}
+}
+function submit(){
+ if(checked)return;if(!selected){setFeedback("bad","Choose a classification.","Select Prime, Composite, or Neither before submitting.");return}
+ checked=true;attempts++;const n=current(),answer=kind(n),ok=selected===answer;el.choices.forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;
+ if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);let why;if(answer==="Prime")why=`${n} has no divisors other than 1 and ${n}; no prime divisor at or below √${n} divides evenly.`;else if(answer==="Composite"){const [a,b]=factorWitness(n);why=`${n} is composite because ${a} × ${b} = ${n}. Prime factorization: ${factorizationText(n)}.`; }else why=`${n} is neither prime nor composite.`;setFeedback("good","Case solved.",why)}
+ else{streak=0;missed.push(n);let why;if(answer==="Composite"){const [a,b]=factorWitness(n);why=`${n} is composite because ${a} × ${b} = ${n}. Prime factorization: ${factorizationText(n)}.`}else if(answer==="Prime")why=`${n} is prime: no prime divisor at or below its square root divides it evenly.`;else why=`${n} is a special case: neither prime nor composite.`;setFeedback("bad",`Correct classification: ${answer}.`,why)}
+ el.next.textContent=index===deck.length-1?"See round results →":"Next case →";updateStats()
+}
+function next(){if(!checked)return;if(index>=deck.length-1){finish();return}index++;render()}
+function finish(){index=deck.length;updateStats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Mastery gate passed":"Continue the investigation";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} cases correctly and met the 80% mastery goal for prime and divisibility reasoning.`:`You solved ${correct} of ${attempts} cases correctly. Review divisibility evidence and retry the missed cases to reach 80%.`;el.review.disabled=missed.length===0;el.review.textContent=missed.length?`Review missed cases (${missed.length})`:"No missed cases";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.addEventListener("click",submit);el.next.addEventListener("click",next);el.hint.addEventListener("click",hint);el.newRound.addEventListener("click",()=>start());el.review.addEventListener("click",()=>{if(missed.length)start(missed)});el.size.addEventListener("change",()=>start());
+el.print.addEventListener("click",()=>window.print());el.resetBest.addEventListener("click",()=>{try{localStorage.removeItem(BEST)}catch(_){}updateBest();setFeedback("","Best score reset.","The saved best score on this device was cleared.")});
+document.addEventListener("keydown",e=>{const t=document.activeElement&&document.activeElement.tagName;if(["INPUT","TEXTAREA","SELECT"].includes(t))return;if(e.key==="1"||e.key==="2"||e.key==="3"){const b=el.choices[Number(e.key)-1];if(!b.disabled)b.click()}else if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();hint()}});
+
+const lessonTabs=[...document.querySelectorAll(".studio-tab")];
+const lessonScenes=[...document.querySelectorAll(".scene")];
+lessonTabs.forEach((b,i)=>b.addEventListener("click",()=>{lessonTabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));lessonScenes.forEach((s,j)=>s.classList.toggle("active",j===i))}));
+
+const lessonTimers=[];
+function lessonLater(fn,ms){lessonTimers.push(setTimeout(fn,ms))}
+document.getElementById("playPrimeLessonDemo").addEventListener("click",()=>{
+ const number=document.getElementById("demoPrimeNumber"),chips=[...document.querySelectorAll("#demoPrimeFactors .demo-chip")],cap=document.getElementById("demoPrimeCaption");
+ chips.forEach(c=>c.classList.remove("on"));number.textContent="29";cap.textContent="29: only 1 and 29 divide evenly.";
+ ["1","29"].forEach((v,i)=>lessonLater(()=>chips.find(c=>c.textContent===v)?.classList.add("on"),i*300));
+ lessonLater(()=>{chips.forEach(c=>c.classList.remove("on"));number.textContent="21";cap.textContent="21: 3 × 7 gives an extra factor pair, so it is composite.";["1","3","7"].forEach((v,i)=>lessonLater(()=>chips.find(c=>c.textContent===v)?.classList.add("on"),i*250))},1100);
+});
+document.getElementById("playRuleLessonDemo").addEventListener("click",()=>{
+ const chips=[...document.querySelectorAll("#demoRules .demo-chip")],passes=new Set(["2","3","6","9"]);
+ chips.forEach(c=>c.classList.remove("on"));chips.forEach((c,i)=>lessonLater(()=>{if(passes.has(c.dataset.rule))c.classList.add("on")},i*150));
+ lessonLater(()=>document.getElementById("demoRuleCaption").textContent="1,134 passes 2, 3, 6, and 9.",1200);
+});
+document.getElementById("playTreeLessonDemo").addEventListener("click",()=>{
+ const nodes=[...document.querySelectorAll("#demoTree .tree-node")],cap=document.getElementById("demoTreeCaption");nodes.forEach(n=>n.classList.remove("on"));
+ nodes.forEach((n,i)=>lessonLater(()=>{n.classList.add("on");if(i===0)cap.textContent="84 = 12 × 7";if(i===2)cap.textContent="12 = 3 × 4; 7 is already prime.";if(i===5)cap.textContent="4 = 2 × 2 → prime leaves 2, 2, 3, 7."},i*240));
+});
+document.getElementById("playSameLessonDemo").addEventListener("click",()=>document.getElementById("samePrimeResult").classList.add("on"));
+
+updateBest();start();
+})();
+</script>
+</body>
+</html>

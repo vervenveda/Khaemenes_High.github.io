@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Khaemenes Pre-Algebra Unit 3 Lesson 8 companion game: Conversions, Estimation and Multi-Step Rational Problems.">
+<meta name="theme-color" content="#090d14">
+<title>Lesson 8 · Rational Navigator · Conversions & Multi-Step Problems</title>
+<style>
+:root{
+--bg:#090d14;--panel:#151d29;--ink:#f7f2e7;--muted:#c9c1b2;--line:#3b4655;
+--gold:#d8bd7a;--gold2:#f0d99b;--green:#8fd4ad;--red:#ef9a9a;--blue:#90b8e6;
+--shadow:0 18px 55px rgba(0,0,0,.36);--serif:Cinzel,Georgia,"Times New Roman",serif;
+--sans:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--sans);line-height:1.5;background:
+radial-gradient(circle at 13% 0%,rgba(216,189,122,.11),transparent 28rem),
+radial-gradient(circle at 88% 18%,rgba(84,122,164,.11),transparent 30rem),
+linear-gradient(180deg,var(--bg),#0c121a 60%,#090d14)}
+button,a,select{font:inherit}a{color:inherit}button{touch-action:manipulation}
+button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #b9d8ff;outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:1000;background:#fff;color:#111;padding:10px 14px;border-radius:8px}
+.shell{width:min(var(--max),calc(100% - 28px));margin:auto;padding:22px 0 50px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid rgba(216,189,122,.22);padding:8px 0 20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}.seal{width:44px;height:44px;border:1px solid rgba(216,189,122,.7);border-radius:9px;display:grid;place-items:center;transform:rotate(45deg);background:rgba(216,189,122,.06);flex:0 0 auto}.seal span{transform:rotate(-45deg);font-family:Georgia,serif;color:var(--gold2);font-size:.8rem}
+.kicker{margin:0;color:var(--gold2);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}.crumb{margin:3px 0 0;color:var(--muted);font-size:.86rem}.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.ghost,.primary,.secondary{min-height:42px;border-radius:10px;padding:9px 13px;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.ghost,.secondary{border:1px solid var(--line);background:#151c25;color:var(--ink)}.primary{border:1px solid var(--gold2);background:var(--gold2);color:#17130a;font-weight:800}.ghost:hover,.secondary:hover{border-color:var(--gold)}
+.hero{text-align:center;max-width:940px;margin:auto;padding:46px 10px 28px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.19em;font-size:.75rem;font-weight:800}
+h1,h2,h3{font-family:var(--serif);font-weight:500}h1{font-size:clamp(2.05rem,5vw,4.05rem);line-height:1.05;margin:10px 0 13px}.hero p{color:var(--muted);font-size:clamp(1rem,2vw,1.15rem);max-width:820px;margin:0 auto}
+.lesson-sync{max-width:920px;margin:20px auto 0;padding:13px 15px;border-left:3px solid var(--gold);border-radius:0 11px 11px 0;background:rgba(216,189,122,.06);color:#ddd5c6;text-align:left}
+.panel{border:1px solid rgba(216,189,122,.18);border-radius:18px;background:linear-gradient(180deg,rgba(23,30,41,.97),rgba(15,21,30,.97));box-shadow:var(--shadow)}
+.studio{padding:20px;margin-bottom:22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:14px}.section-head h2{margin:3px 0 0;font-size:clamp(1.4rem,3vw,2.1rem)}.section-head p{margin:0;color:var(--muted);max-width:660px}
+.studio-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}.studio-tab{min-height:52px;border:1px solid var(--line);border-radius:10px;background:#111720;color:var(--muted);cursor:pointer;padding:8px}.studio-tab[aria-selected="true"]{background:var(--gold2);border-color:var(--gold2);color:#17130a;font-weight:800}
+.scene{display:none;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:16px}.scene.active{display:grid}
+.visual{min-height:330px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px),#0b1016;background-size:24px 24px;padding:18px;display:grid;place-items:center;overflow:hidden}
+.copy{border:1px solid var(--line);border-radius:14px;background:#111720;padding:18px}.copy h3{margin:0 0 8px}.copy p,.copy li{color:var(--muted);font-size:.92rem}.takeaway{margin-top:12px;padding:10px 12px;border-left:3px solid var(--gold);background:rgba(216,189,122,.06);color:#e7dece}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.demo{display:grid;gap:10px;width:min(100%,700px)}.step{border:1px solid var(--line);border-radius:11px;background:#111720;padding:14px;text-align:center;color:var(--muted);opacity:.35;transition:.25s}.step b{display:block;font:1.15rem Georgia,serif;color:#e8e0d1}.step.on{opacity:1;border-color:var(--gold2);background:rgba(216,189,122,.07);color:#fff0c7}
+.convert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:min(100%,700px)}.convert-card{border:1px solid var(--line);border-radius:14px;background:#111720;padding:18px;text-align:center;opacity:.35;transition:.25s}.convert-card.on{opacity:1;border-color:var(--gold2);background:rgba(216,189,122,.07)}.convert-card b{display:block;font:1.35rem Georgia,serif;color:#fff0c7}.convert-card span{color:var(--muted);font-size:.82rem}
+.game-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:18px;align-items:start}.play{padding:20px}.side{padding:18px}
+.status{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-bottom:15px}.progress-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.82rem;margin-bottom:7px}.track{height:8px;background:#07090d;border:1px solid #313946;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ae9255,var(--gold2));transition:.3s}.stat{min-width:72px;text-align:center;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}.stat b{display:block}.stat span{display:block;color:var(--muted);font-size:.68rem;text-transform:uppercase}
+.stage{min-height:235px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),#0c1117;background-size:24px 24px;padding:22px;display:grid;place-items:center;text-align:center}.mission-badge{display:inline-block;margin-bottom:8px;padding:5px 9px;border:1px solid rgba(216,189,122,.35);border-radius:999px;color:var(--gold2);font-size:.7rem;letter-spacing:.11em;text-transform:uppercase}.big{font:clamp(1.75rem,6vw,3.8rem) Georgia,serif;color:#fff5da;margin:6px 0}.prompt{color:#ddd5c6}
+.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}.choice{min-height:68px;border:1px solid var(--line);border-radius:12px;background:#111720;color:var(--ink);cursor:pointer;padding:11px;text-align:left;position:relative}.choice:hover{border-color:#748194}.choice[aria-pressed="true"]{border-color:var(--gold2);background:rgba(216,189,122,.09)}.choice[aria-pressed="true"]:after{content:"✓";position:absolute;right:9px;top:7px;color:var(--gold2);font-weight:900}.choice strong{display:block;font-family:Georgia,serif}
+.feedback{margin-top:14px;min-height:78px;border:1px solid transparent;border-radius:12px;padding:13px 14px;background:rgba(255,255,255,.02)}.feedback.good{border-color:rgba(143,212,173,.42);background:rgba(143,212,173,.07)}.feedback.bad{border-color:rgba(239,154,154,.42);background:rgba(239,154,154,.07)}.feedback h3{margin:0 0 4px;font-size:1rem}.feedback p{margin:0;color:#d7d0c2}.feedback .detail{color:var(--gold2);margin-top:6px;font-size:.88rem}.action-row{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:14px}
+.side h2{margin:2px 0 12px;font-size:1.18rem}.concept{border:1px solid var(--line);border-radius:11px;padding:11px;background:rgba(255,255,255,.025);margin-bottom:9px}.concept b{display:block;font:1rem Georgia,serif}.concept span{color:var(--muted);font-size:.82rem}.tip{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.tip p{margin:5px 0 0;color:var(--muted);font-size:.87rem}.controls{display:grid;gap:10px;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.control{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.control label{color:var(--muted);font-size:.8rem}.control select{min-height:40px;border:1px solid var(--line);border-radius:9px;background:#111720;color:var(--ink);padding:8px 10px}.best{color:var(--gold2);font-size:.82rem;margin:11px 0 0}
+.mastery{display:none;margin-top:20px;padding:24px;text-align:center;border:1px solid rgba(216,189,122,.5);border-radius:16px;background:#111720}.mastery.show{display:block}.mastery-mark{width:72px;height:72px;border-radius:50%;border:1px solid var(--gold2);display:grid;place-items:center;margin:0 auto 12px;color:var(--gold2);font:1.25rem Georgia,serif}.mastery h2{margin:5px 0}.mastery p{color:var(--muted);max-width:650px;margin:7px auto 15px}
+footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
+@media(max-width:920px){.scene,.game-grid{grid-template-columns:1fr}.side{order:2}}@media(max-width:720px){.studio-tabs{grid-template-columns:1fr 1fr}.choice-grid,.convert-grid{grid-template-columns:1fr}}@media(max-width:560px){.shell{width:min(100% - 18px,var(--max));padding-top:12px}.actions{display:none}.studio,.play{padding:13px}.status{grid-template-columns:1fr 66px}.status .stat:last-child{display:none}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.001ms!important;scroll-behavior:auto!important}}@media print{body{background:#fff;color:#111}.actions,.studio-tabs,.row,.action-row,.controls{display:none!important}.panel,.visual,.copy,.stage,.concept{box-shadow:none!important;background:#fff!important;color:#111!important;border-color:#bbb!important}.hero p,.copy p,.concept span,.tip p{color:#444!important}}
+</style>
+</head>
+<body><a class="skip" href="#game">Skip to game</a><div class="shell">
+<header class="topbar">
+<a class="brand" href="../units/unit-03/lessons/lesson-08-conversions-estimation-applications.html"><div class="seal"><span>F·D·%</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 03</p><p class="crumb">Lesson 8 Companion · Conversions, Estimation & Multi-Step Rational Problems</p></div></a>
+<div class="actions"><a class="ghost" href="../units/unit-03/lessons/lesson-08-conversions-estimation-applications.html">← Lesson 8</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
+</header>
+
+<section class="hero">
+<div class="eyebrow">Unit 3 · Lesson 8 · Companion Game</div>
+<h1>Rational Navigator</h1>
+<p>Move confidently among fractions, decimals, and percents; estimate before exact work; preserve units through multi-step reasoning; and choose the representation that best serves the purpose.</p>
+<div class="lesson-sync"><strong>Lesson sync:</strong> conversion changes representation, not value. A complete rational-number solution should identify quantities and units, estimate a plausible range, calculate in an efficient form, and report exactness or precision appropriately.</div>
+</section>
+
+<section class="panel studio">
+<div class="section-head"><div><div class="eyebrow">Animated instruction studio</div><h2>Choose the representation that helps.</h2></div><p>Four demonstrations mirror the lesson’s equivalent representations, estimation-before-exact reasoning, multi-step structure, and exact-versus-approximate decision making.</p></div>
+<div class="studio-tabs"><button class="studio-tab" aria-selected="true">1 · Representation Triangle</button><button class="studio-tab" aria-selected="false">2 · Estimate Before Exact</button><button class="studio-tab" aria-selected="false">3 · Multi-Step Route</button><button class="studio-tab" aria-selected="false">4 · Exact, Approximate & Units</button></div>
+
+<div class="scene active">
+<div class="visual"><div class="convert-grid"><div class="convert-card" id="cv1"><b>5/8</b><span>fraction · exact</span></div><div class="convert-card" id="cv2"><b>0.625</b><span>decimal · exact</span></div><div class="convert-card" id="cv3"><b>62.5%</b><span>percent · per hundred</span></div></div></div>
+<div class="copy"><h3>One value can wear several useful forms.</h3><p>Fractions often preserve exact structure, decimals work naturally for measurement and money, and percents communicate relative size per hundred.</p><div class="takeaway">5/8 = 0.625 = 62.5%</div><div class="row"><button class="primary" id="playConvert">Connect the three forms</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="demo"><div class="step" id="es1"><b>31.2 × 0.49</b></div><div class="step" id="es2"><b>≈ 30 × 0.5</b>compatible numbers</div><div class="step" id="es3"><b>≈ 15</b>predicted size</div><div class="step" id="es4"><b>Exact = 15.288</b>estimate confirms reasonableness</div></div></div>
+<div class="copy"><h3>Estimate before exact work.</h3><p>A quick prediction gives you a target range. If the exact result is far outside that range, recheck operations, decimal placement, and units.</p><div class="takeaway">Estimate → calculate → verify.</div><div class="row"><button class="primary" id="playEstimate">Run the reasonableness check</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="demo"><div class="step" id="ms1"><b>2 1/2 × 0.4 + 1/2</b></div><div class="step" id="ms2"><b>2.5 × 0.4 + 0.5</b>choose convenient forms</div><div class="step" id="ms3"><b>1 + 0.5</b>multiply before adding</div><div class="step" id="ms4"><b>1.5</b>check against the context and unit</div></div></div>
+<div class="copy"><h3>Multi-step problems need a route before arithmetic.</h3><p>Identify quantities, units, operation order, and the most useful representation before pressing buttons or manipulating symbols.</p><div class="takeaway">Structure first; arithmetic second.</div><div class="row"><button class="primary" id="playMulti">Trace the solution route</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="demo"><div class="step" id="ex1"><b>Exact thirds: 1/3</b>best exact form</div><div class="step" id="ex2"><b>Report: 0.33</b>approximate to hundredths</div><div class="step" id="ex3"><b>Measured 4.786 → 4.79</b>precision chosen by context</div><div class="step" id="ex4"><b>Units belong in the answer</b>32 pieces ≠ 32 m</div></div></div>
+<div class="copy"><h3>Representation and units are part of mathematical communication.</h3><p>The “best” form depends on purpose. Exact algebra and approximate measurement may need different representations of the same value.</p><div class="takeaway">Value + representation + precision + unit = defensible answer.</div><div class="row"><button class="primary" id="playExact">Compare reporting choices</button></div></div>
+</div>
+</section>
+
+<main id="game" class="game-grid">
+<section class="panel play">
+<div class="section-head"><div><div class="eyebrow">Rational Navigator Challenge</div><h2>Convert, Estimate & Solve Missions</h2></div><p>Switch forms, work with percents, estimate, solve multi-step expressions, preserve units, and decide whether exact or approximate reporting is most appropriate.</p></div>
+<div class="status"><div><div class="progress-label"><span id="roundLabel">Mission 1 of 16</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div></div>
+<div class="stage"><div><div class="mission-badge" id="missionBadge">Conversion</div><div class="big" id="challengeValue">0.625</div><div class="prompt" id="questionPrompt">Which equivalent forms match?</div></div></div>
+<div class="choice-grid" id="choiceGrid"></div>
+<div class="action-row"><button class="secondary" id="hintBtn">Reasoning hint</button><button class="primary" id="checkBtn">Check reasoning</button><button class="secondary" id="nextBtn" hidden>Next mission →</button></div>
+<div class="feedback" id="feedback"><h3>Ready.</h3><p>Choose a useful representation, estimate the scale, and keep the units attached.</p></div>
+<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../units/unit-03/lessons/lesson-08-conversions-estimation-applications.html">Return to Lesson 8</a></div></div>
+</section>
+
+<aside class="panel side">
+<h2>Lesson 8 Field Guide</h2>
+<div class="concept"><b>Equivalent forms</b><span>Fractions, decimals, and percents can name the same rational value.</span></div>
+<div class="concept"><b>Percent</b><span>p% means p/100.</span></div>
+<div class="concept"><b>Estimate first</b><span>Use compatible numbers to predict sign, size, and range.</span></div>
+<div class="concept"><b>Structure</b><span>Identify quantities, units, operations, and order before calculation.</span></div>
+<div class="concept"><b>Exact vs approximate</b><span>Choose the form and precision that fit the purpose.</span></div>
+<div class="tip"><strong>Navigator question</strong><p id="strategyText">Which representation makes this problem easiest to understand and verify?</p></div>
+<div class="controls"><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
+<p class="best" id="bestScore">Best mastery score: —</p>
+</aside>
+</main>
+<footer>KH-MATH-PA-U03-L8 · conversions · percents · estimation · multi-step reasoning · exact/approximate · units · 80% mastery</footer>
+</div>
+
+<script>
+(()=>{"use strict";
+const BANK=[
+{l:"Foundation",b:"Conversion",v:"0.625",q:"Which equivalent forms match?",o:["5/6 and 62.5%","5/8 and 62.5%","625/10 and 6.25%","3/5 and 62.5%"],a:1,h:"Multiply the decimal by 100 for percent; write it over 1000 for a fraction and simplify.",w:"0.625=5/8=62.5%."},
+{l:"Foundation",b:"Conversion",v:"3/5",q:"What percent is equivalent?",o:["3%","5%","35%","60%"],a:3,h:"3÷5=0.6.",w:"0.6=60%."},
+{l:"Foundation",b:"Conversion",v:"35%",q:"What decimal is equivalent?",o:["0.35","3.5","0.035","35"],a:0,h:"Percent means per 100.",w:"35%=35/100=0.35."},
+{l:"Foundation",b:"Conversion",v:"0.08",q:"What percent is equivalent?",o:["0.08%","0.8%","8%","80%"],a:2,h:"Multiply the decimal by 100.",w:"0.08=8%."},
+{l:"Foundation",b:"Conversion",v:"125%",q:"What decimal is equivalent?",o:["0.125","12.5","1.25","125"],a:2,h:"Divide the percent by 100.",w:"125%=1.25."},
+{l:"Foundation",b:"Fraction",v:"45%",q:"What is the simplest fraction?",o:["9/20","4/5","45/10","5/9"],a:0,h:"45%=45/100.",w:"45/100 simplifies to 9/20."},
+{l:"Foundation",b:"Estimation",v:"31.2 × 0.49",q:"What is a good estimate?",o:["3","30","60","15"],a:3,h:"Use 30×0.5.",w:"30×0.5≈15."},
+
+{l:"Core",b:"Estimation",v:"7.9 ÷ 2.1",q:"What is a good estimate?",o:["0.4","4","2","16"],a:1,h:"Use 8÷2.",w:"8÷2≈4."},
+{l:"Core",b:"Multi-Step",v:"1.8 + 3/5 − 0.25",q:"What is the value?",o:["2.15","1.55","2.65","3.05"],a:0,h:"Convert 3/5 to 0.6.",w:"1.8+0.6−0.25=2.15."},
+{l:"Core",b:"Multi-Step",v:"2 1/2 × 0.4 + 1/2",q:"What is the value?",o:["1","2","1.5","2.5"],a:2,h:"2.5×0.4=1.",w:"1+0.5=1.5."},
+{l:"Core",b:"Units",v:"12 m ÷ 3/8 m",q:"What is the correct contextual answer?",o:["4.5 pieces","32 pieces","96 m","32 m"],a:1,h:"Meters divided by meters gives a count of pieces.",w:"12÷3/8=32 pieces."},
+{l:"Core",b:"Percent Application",v:"20% of 45",q:"What is the value?",o:["5","20","25","9"],a:3,h:"Use 0.2×45.",w:"20% of 45 is 9."},
+{l:"Core",b:"Percent Application",v:"25% of $40",q:"What is the discount amount?",o:["$15","$25","$30","$10"],a:3,h:"0.25×40.",w:"The discount is $10."},
+{l:"Core",b:"Percent Application",v:"$40 − $10",q:"What is the sale price?",o:["$10","$30","$20","$50"],a:1,h:"Subtract the discount from the original price.",w:"The sale price is $30."},
+{l:"Core",b:"Exactness",v:"Exact value of one third",q:"Which form preserves it exactly?",o:["0.33","0.333","1/3","33%"],a:2,h:"Finite decimal and percent approximations truncate the repeating value.",w:"1/3 is exact."},
+{l:"Core",b:"Precision",v:"4.786 to hundredths",q:"What is the rounded value?",o:["4.79","4.78","4.8","5"],a:0,h:"Look at the thousandths digit.",w:"The thousandths digit is 6, so 4.786 rounds to 4.79."},
+{l:"Core",b:"Reasoning",v:"Estimate before multi-step work",q:"Why is this useful?",o:["To avoid exact work forever","To predict a reasonable range and catch errors","To remove units","To guarantee an integer"],a:1,h:"Estimation is a reasonableness check.",w:"It gives a plausible range against which the exact result can be checked."},
+{l:"Core",b:"Representation",v:"Exact thirds in algebra",q:"Which representation is usually best?",o:["fraction form","rounded hundredths","percent rounded to whole","any approximation"],a:0,h:"Choose the form that preserves exactness.",w:"Fraction form preserves exact thirds."},
+
+{l:"Extended",b:"Application",v:"2.5 L × 60%",q:"How much liquid is present?",o:["1.0 L","2.0 L","4.17 L","1.5 L"],a:3,h:"Convert 60% to 0.6.",w:"0.6×2.5=1.5 L."},
+{l:"Extended",b:"Synthesis",v:"Complete contextual solution",q:"What should it include?",o:["only a calculator result","only a percent","operations, reasonableness, and units","no explanation"],a:2,h:"A result should be interpretable and defensible.",w:"Structure, reasonableness, and units belong in a complete solution."},
+{l:"Extended",b:"Conversion",v:"7/8",q:"Which pair is equivalent?",o:["0.875 and 87.5%","0.78 and 78%","0.875 and 8.75%","0.0875 and 87.5%"],a:0,h:"7÷8=0.875.",w:"7/8=0.875=87.5%."},
+{l:"Extended",b:"Estimation",v:"49.8 × 0.202",q:"Best compatible-number estimate?",o:["about 1","about 10","about 25","about 100"],a:1,h:"Use 50×0.2.",w:"50×0.2≈10."},
+{l:"Extended",b:"Multi-Step",v:"60% of 25 + 3/4",q:"What is the exact value?",o:["15.75","15.5","18.75","25.75"],a:0,h:"60% of 25 is 15; 3/4=0.75.",w:"15+0.75=15.75."},
+{l:"Extended",b:"Units",v:"3.6 kg shared among 8 bags",q:"What is the amount per bag?",o:["0.45 kg","2.22 kg","28.8 kg","0.045 kg"],a:0,h:"Divide 3.6 by 8.",w:"3.6÷8=0.45 kg per bag."},
+{l:"Extended",b:"Exactness",v:"2/7",q:"Which is the best exact representation?",o:["0.29","28.6%","2/7","0.2857"],a:2,h:"The decimal repeats.",w:"2/7 preserves the exact value."},
+{l:"Extended",b:"Precision",v:"$7.436 in money",q:"What is an appropriate reported amount?",o:["$7","$7.4","$7.44","$7.436000"],a:2,h:"Money is usually reported to the nearest cent.",w:"$7.436 rounds to $7.44."},
+{l:"Extended",b:"Representation",v:"Compare 3/4 and 72%",q:"Which form makes the comparison quickest?",o:["Convert 3/4 to 75%","Convert 72% to a mixed number","Use no conversion","Round both to integers"],a:0,h:"A percent form makes the comparison immediate.",w:"3/4=75%, so 75%>72%."},
+{l:"Extended",b:"Rounding Error",v:"1/3 ≈ 0.33",q:"What is true?",o:["They are exactly equal","0.33 is an approximation smaller than 1/3","0.33 is larger than 1/3","1/3 is irrational"],a:1,h:"0.33=33/100; 1/3≈0.333…",w:"0.33 is a finite approximation and is slightly less than 1/3."}
+];
+
+const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
+const BEST="khaemenes-prealgebra-u03-l08-rational-navigator-v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
+function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
+function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function start(src=null){deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
+function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;
+el.strategy.textContent=c.b.includes("Conversion")||c.b.includes("Fraction")?"Choose the form—fraction, decimal, or percent—that exposes the relationship most clearly.":c.b.includes("Estimate")?"Use compatible numbers to predict a plausible range before exact work.":c.b.includes("Units")||c.b.includes("Application")?"Track units through every operation and interpret what the final unit means.":c.b.includes("Exact")||c.b.includes("Precision")||c.b.includes("Representation")?"Decide whether exactness or practical reporting is more important in this context.":"Identify the operation order and a convenient representation before calculating.";
+feedback("","Mission ready.","Choose a useful representation, estimate the scale, and keep units attached.");stats()}
+function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by conversion, estimation, and contextual reasoning.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Route verified.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
+function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
+function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(e){return null}}
+function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
+function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(BEST,String(p))}catch(e){}updateBest()}
+function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Rational Navigator mastery passed":"Recheck the route";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} Unit 3 Lesson 8 missions correctly and met the 80% mastery target. You have completed the eight Unit 3 companion-game skill sets.`:`You solved ${correct} of ${attempts} missions correctly. Review conversions, estimation, multi-step structure, units, and exact-versus-approximate decisions, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
+el.tabs.forEach((b,i)=>b.onclick=()=>{el.tabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));el.scenes.forEach((s,j)=>s.classList.toggle("active",j===i))});
+const later=(f,m)=>setTimeout(f,m);
+function reveal(ids){ids.forEach(id=>$(id).classList.remove("on"));ids.forEach((id,i)=>later(()=>$(id).classList.add("on"),i*350))}
+$("playConvert").onclick=()=>reveal(["cv1","cv2","cv3"]);
+$("playEstimate").onclick=()=>reveal(["es1","es2","es3","es4"]);
+$("playMulti").onclick=()=>reveal(["ms1","ms2","ms3","ms4"]);
+$("playExact").onclick=()=>reveal(["ex1","ex2","ex3","ex4"]);
+document.addEventListener("keydown",e=>{if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName))return;if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();feedback("","Reasoning hint",deck[index].h)}});
+updateBest();start();
+})();
+</script>
+</body></html>

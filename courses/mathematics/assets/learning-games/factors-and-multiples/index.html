@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Khaemenes High Pre-Algebra Lesson 2 companion game: Factors, Multiples & Number Structure." />
+  <meta name="theme-color" content="#090b10" />
+  <title>Lesson 2 · Factor Pair Builder · Lesson Sync Edition</title>
+  <style>
+    :root{
+      --bg:#090b10; --bg2:#10151c; --panel:#141a22; --panel2:#1a222d;
+      --ink:#f7f1e3; --muted:#c9c1b1; --line:#394351; --line2:#596575;
+      --gold:#d8bd7a; --gold2:#f0d99b; --forest:#294c43; --blue:#55789d;
+      --good:#8fd4ad; --bad:#ed9b9b; --focus:#b9d8ff;
+      --shadow:0 18px 55px rgba(0,0,0,.35); --max:1180px;
+      --serif:Cinzel,Georgia,"Times New Roman",serif;
+      --sans:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; min-height:100%; color:var(--ink);
+      background:
+        radial-gradient(circle at 14% 0%,rgba(216,189,122,.10),transparent 30rem),
+        radial-gradient(circle at 90% 18%,rgba(85,120,157,.11),transparent 32rem),
+        linear-gradient(180deg,var(--bg),#0d1117 62%,#090b10);
+      font-family:var(--sans); line-height:1.5; overflow-x:clip;
+    }
+
+    button,a,input,select{font:inherit}
+    button{touch-action:manipulation}
+    a{color:inherit}
+    button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{
+      outline:3px solid var(--focus); outline-offset:3px;
+    }
+
+    .skip{position:absolute;left:-9999px;top:auto}
+    .skip:focus{left:16px;top:16px;z-index:999;padding:10px 14px;border-radius:8px;color:#111;background:#fff}
+
+    .shell{width:min(var(--max),calc(100% - 28px));margin:0 auto;padding:24px 0 50px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(216,189,122,.22);padding:8px 0 22px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0;text-decoration:none}
+    .seal{width:44px;height:44px;border:1px solid rgba(216,189,122,.68);display:grid;place-items:center;transform:rotate(45deg);border-radius:9px;background:rgba(216,189,122,.06);flex:0 0 auto}
+    .seal span{transform:rotate(-45deg);font-family:Georgia,"Times New Roman",serif;color:var(--gold2);font-size:17px}
+    .kicker{margin:0;color:var(--gold2);font-size:.77rem;letter-spacing:.17em;text-transform:uppercase;font-weight:800}
+    .crumb{margin:3px 0 0;color:var(--muted);font-size:.88rem}
+    .header-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+
+    .ghost,.btn{
+      appearance:none;min-height:42px;border:1px solid var(--line);border-radius:10px;
+      background:#151b23;color:var(--ink);padding:9px 13px;text-decoration:none;cursor:pointer;
+      display:inline-flex;align-items:center;justify-content:center;gap:7px
+    }
+    .ghost:hover,.btn:hover{border-color:var(--gold)}
+    .btn.primary{background:var(--gold2);border-color:var(--gold2);color:#17130a;font-weight:800}
+
+    .hero{text-align:center;max-width:920px;margin:0 auto;padding:48px 10px 28px}
+    .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.21em;font-size:.77rem;font-weight:800}
+    h1,h2,h3{font-family:var(--serif);font-weight:500}
+    h1{margin:10px 0 13px;font-size:clamp(2.05rem,5vw,4.15rem);line-height:1.05}
+    .hero .lead{margin:0 auto;max-width:790px;color:var(--muted);font-size:clamp(1rem,2vw,1.16rem)}
+    .lesson-sync{max-width:900px;margin:22px auto 0;padding:13px 15px;border-left:3px solid var(--gold);border-radius:0 11px 11px 0;background:rgba(216,189,122,.06);color:#ddd5c6;text-align:left}
+
+    .panel{border:1px solid rgba(216,189,122,.18);border-radius:18px;background:linear-gradient(180deg,rgba(23,29,38,.97),rgba(16,21,28,.97));box-shadow:var(--shadow);min-width:0}
+    .studio{margin-top:10px;padding:20px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+    .section-head h2{margin:3px 0 0;font-size:clamp(1.45rem,3vw,2.15rem)}
+    .section-head p{margin:0;color:var(--muted);max-width:660px}
+
+    .studio-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+    .studio-tab{min-height:54px;border:1px solid var(--line);border-radius:10px;background:#111720;color:var(--muted);cursor:pointer;padding:8px;text-align:center}
+    .studio-tab[aria-selected="true"]{color:#17130a;border-color:var(--gold2);background:var(--gold2);font-weight:800}
+
+    .lesson-scene{display:none;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:18px;align-items:stretch}
+    .lesson-scene.active{display:grid}
+    .visual{
+      position:relative;min-height:350px;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+      background:linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),
+                 linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px),#0b1016;
+      background-size:24px 24px;padding:18px;
+    }
+    .instruction-copy{border:1px solid var(--line);border-radius:14px;background:#111720;padding:18px}
+    .instruction-copy h3{margin:0 0 8px;font-size:1.2rem}
+    .instruction-copy p,.instruction-copy li{color:var(--muted);font-size:.94rem}
+    .instruction-copy ul{padding-left:20px}
+    .instruction-copy .takeaway{margin-top:13px;padding:11px 12px;border-left:3px solid var(--gold);background:rgba(216,189,122,.06);color:#e8dfcf}
+    .scene-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+
+    /* Array theatre */
+    .array-theatre{height:100%;display:grid;grid-template-rows:auto 1fr auto;gap:12px}
+    .target-badge{text-align:center;color:var(--gold2);font-family:var(--serif);font-size:1.05rem}
+    .array-canvas{min-height:230px;display:grid;place-items:center;border:1px dashed #3b4654;border-radius:12px;background:#090d12;padding:16px;overflow:auto}
+    .tiles{display:grid;gap:3px;justify-content:center;align-content:center;transition:.35s ease}
+    .tile{width:22px;height:22px;border:1px solid rgba(240,217,155,.62);background:linear-gradient(145deg,rgba(216,189,122,.9),rgba(143,116,58,.85));border-radius:3px}
+    .array-caption{text-align:center;color:var(--muted);min-height:28px}
+
+    /* factor vs multiple */
+    .direction-lab{height:100%;display:grid;align-content:center;gap:22px}
+    .number-core{width:82px;height:82px;margin:auto;border-radius:50%;border:1px solid var(--gold2);display:grid;place-items:center;background:#211c12;color:#fff3ce;font:2rem Georgia,serif}
+    .direction-row{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center}
+    .direction-column{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+    .num-chip{border:1px solid var(--line);border-radius:999px;padding:8px 11px;background:#151b23;color:#c9c2b5;transition:.25s ease}
+    .num-chip.on{border-color:var(--gold2);background:rgba(216,189,122,.08);color:#fff0c7;transform:translateY(-2px)}
+    .direction-arrow{color:var(--gold);font-size:1.6rem;text-align:center}
+    .direction-label{text-align:center;color:var(--muted);font-size:.84rem}
+
+    /* common lab */
+    .common-lab{height:100%;display:grid;align-content:center;gap:14px}
+    .common-row{border:1px solid var(--line);border-radius:12px;padding:12px;background:#111720}
+    .common-row h3{font-size:1rem;margin:0 0 8px}
+    .common-chips{display:flex;flex-wrap:wrap;gap:7px}
+    .common-chip{border:1px solid #465260;border-radius:999px;padding:6px 9px;color:#9ba4af;background:#151b23;transition:.25s ease}
+    .common-chip.shared{border-color:rgba(143,212,173,.65);background:rgba(143,212,173,.08);color:#e4f8eb}
+
+    /* square lab */
+    .square-lab{height:100%;display:grid;align-content:center;gap:12px}
+    .pair-rack{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+    .pair-card{min-width:88px;border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center;background:#151b23;color:#d7d0c2;font-family:Georgia,serif;transition:.28s ease}
+    .pair-card.on{border-color:var(--gold2);background:rgba(216,189,122,.08);color:#fff1c6;transform:translateY(-2px)}
+    .pair-card.middle{box-shadow:0 0 0 2px rgba(216,189,122,.2)}
+    .factor-count{text-align:center;color:var(--muted);min-height:42px}
+
+    /* Game */
+    .game-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:18px;align-items:start;margin-top:22px}
+    .play-panel{padding:20px}.side-panel{padding:18px}
+    .status-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-bottom:15px}
+    .progress-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.82rem;margin-bottom:7px}
+    .track{height:8px;background:#07090d;border:1px solid #313946;border-radius:999px;overflow:hidden}
+    .fill{height:100%;width:0;background:linear-gradient(90deg,#ae9255,var(--gold2));transition:width .3s ease}
+    .stat{text-align:center;min-width:72px;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}
+    .stat b{display:block;font-size:1.13rem}.stat span{display:block;font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+
+    .mission-stage{
+      min-height:225px;display:grid;place-items:center;text-align:center;border:1px solid var(--line);border-radius:16px;padding:22px;position:relative;overflow:hidden;
+      background:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),#0c1117;background-size:24px 24px
+    }
+    .mission-stage::after{content:"";position:absolute;inset:15px;border:1px solid rgba(216,189,122,.12);border-radius:12px;pointer-events:none}
+    .mission-content{position:relative;z-index:1;max-width:730px}
+    .mission-type{color:var(--gold);font-size:.73rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+    .challenge-value{margin:8px 0;font:clamp(3.1rem,9vw,6rem) Georgia,serif;line-height:1;color:#fff7e5}
+    .question-prompt{color:#ddd5c6;font-size:1rem}
+
+    .builder-zone{display:grid;grid-template-columns:minmax(0,330px) 1fr;gap:14px;margin-top:15px}
+    .builder-controls{border:1px solid var(--line);border-radius:12px;background:#111720;padding:14px}
+    .dimension-row{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:end}
+    .field label{display:block;color:var(--muted);font-size:.77rem;margin-bottom:5px}
+    .field input{width:100%;min-height:46px;border:1px solid var(--line);border-radius:9px;background:#0b1016;color:#fff;padding:8px 10px;text-align:center;font-size:1.1rem}
+    .times{padding-bottom:10px;color:var(--gold2);font:1.25rem Georgia,serif}
+    .quick-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+    .quick{min-width:42px;min-height:38px;border:1px solid var(--line);border-radius:8px;background:#171e27;color:var(--ink);cursor:pointer}
+    .quick:hover{border-color:var(--gold)}
+
+    .game-array{border:1px solid var(--line);border-radius:12px;background:#0d1218;padding:12px;min-height:210px;display:grid;grid-template-rows:auto 1fr;gap:8px}
+    .game-array-head{display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--muted);font-size:.8rem}
+    .game-array-canvas{min-height:160px;display:grid;place-items:center;overflow:auto;border:1px dashed #3b4654;border-radius:10px;background:#090d12;padding:12px}
+
+    .pair-progress{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+    .pair-progress h3{font-size:1rem;margin:0 0 8px}
+    .pair-chips{display:flex;flex-wrap:wrap;gap:7px}
+    .locked-chip,.found-chip{border-radius:999px;padding:7px 10px;font-family:Georgia,serif}
+    .locked-chip{border:1px dashed #3d4754;color:#747d89;background:rgba(255,255,255,.018)}
+    .found-chip{border:1px solid rgba(143,212,173,.55);color:#e1f7e9;background:rgba(143,212,173,.07)}
+
+    .choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}
+    .choice-btn{appearance:none;min-height:68px;border:1px solid var(--line);border-radius:12px;background:#111720;color:var(--ink);cursor:pointer;padding:11px;text-align:left;position:relative}
+    .choice-btn:hover{border-color:#727f90}.choice-btn[aria-pressed="true"]{border-color:var(--gold2);background:rgba(216,189,122,.09)}
+    .choice-btn[aria-pressed="true"]::after{content:"✓";position:absolute;right:9px;top:7px;color:var(--gold2);font-weight:900}
+    .choice-btn strong{display:block;font-family:Georgia,serif;color:#fff}.choice-btn small{display:block;color:var(--muted);margin-top:2px}
+
+    .action-row{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:14px}
+    .primary,.secondary{appearance:none;min-height:44px;border-radius:10px;padding:10px 16px;cursor:pointer;font-weight:800;letter-spacing:.03em}
+    .primary{border:1px solid var(--gold2);background:var(--gold2);color:#17130a}
+    .secondary{border:1px solid var(--line);background:#171e27;color:var(--ink)}
+    .primary:disabled,.secondary:disabled{opacity:.45;cursor:not-allowed}
+
+    .feedback{margin-top:14px;min-height:80px;border-radius:12px;border:1px solid transparent;padding:13px 14px;background:rgba(255,255,255,.02)}
+    .feedback.good{border-color:rgba(143,212,173,.42);background:rgba(143,212,173,.07)}
+    .feedback.bad{border-color:rgba(237,155,155,.42);background:rgba(237,155,155,.07)}
+    .feedback h3{margin:0 0 4px;font-size:1rem}.feedback p{margin:0;color:#d5cebf}.feedback .detail{color:var(--gold2);margin-top:6px;font-size:.88rem}
+
+    .side-panel h2{margin:2px 0 12px;font-size:1.18rem}
+    .concept{border:1px solid var(--line);border-radius:11px;padding:11px;background:rgba(255,255,255,.025);margin-bottom:9px}
+    .concept b{display:block;font:1rem Georgia,serif}.concept span{color:var(--muted);font-size:.82rem}
+    .tip{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.tip p{margin:5px 0 0;color:var(--muted);font-size:.89rem}
+    .controls{display:grid;gap:10px;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+    .control-line{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+    label{color:var(--muted);font-size:.8rem}
+    select{color:var(--ink);background:#111720;border:1px solid var(--line);border-radius:9px;padding:8px 30px 8px 10px;min-height:40px;max-width:100%}
+    .best{color:var(--gold2);font-size:.82rem;margin:11px 0 0}
+
+    .mastery{display:none;margin-top:20px;padding:24px;text-align:center;border:1px solid rgba(216,189,122,.5);border-radius:16px;background:radial-gradient(circle at 50% 0%,rgba(216,189,122,.14),transparent 24rem),#111720}
+    .mastery.show{display:block}.mastery-mark{width:72px;height:72px;margin:0 auto 12px;border:1px solid var(--gold2);display:grid;place-items:center;border-radius:50%;color:var(--gold2);font:1.35rem Georgia,serif}
+    .mastery h2{margin:5px 0}.mastery p{color:var(--muted);max-width:650px;margin:7px auto 15px}
+
+    footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
+    .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+    @media(max-width:920px){
+      .lesson-scene,.game-grid{grid-template-columns:1fr}
+      .side-panel{order:2}.visual{min-height:330px}
+    }
+    @media(max-width:760px){
+      .studio-tabs{grid-template-columns:1fr 1fr}
+      .builder-zone{grid-template-columns:1fr}
+      .choice-grid{grid-template-columns:1fr}
+      .direction-row{grid-template-columns:1fr}
+      .direction-arrow{transform:rotate(90deg)}
+    }
+    @media(max-width:600px){
+      .shell{width:min(100% - 18px,var(--max));padding-top:12px}.header-actions{display:none}.hero{padding-top:34px}.studio,.play-panel{padding:13px}
+      .status-row{grid-template-columns:1fr 66px}.status-row .stat:last-child{display:none}
+      .dimension-row{grid-template-columns:1fr}.times{padding:0;text-align:center}
+    }
+    @media(max-width:380px){.studio-tabs{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;transition-duration:.001ms!important}}
+    @media print{
+      body{background:#fff;color:#111}.header-actions,.studio-tabs,.scene-actions,.action-row,.controls,.builder-controls{display:none!important}.shell{width:100%;padding:0}
+      .panel,.visual,.instruction-copy,.mission-stage,.concept,.game-array{box-shadow:none!important;background:#fff!important;color:#111!important;border-color:#bbb!important}
+      h1,h2,h3,.choice-btn strong{color:#111!important}.hero .lead,.instruction-copy p,.instruction-copy li,.concept span,.tip p,.crumb{color:#444!important}
+    }
+  </style>
+</head>
+<body>
+<a class="skip" href="#game">Skip to game</a>
+
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" href="../units/unit-01/lessons/lesson-02-factors-multiples.html" aria-label="Return to Lesson 2">
+      <div class="seal" aria-hidden="true"><span>2</span></div>
+      <div>
+        <p class="kicker">Khaemenes High · Pre-Algebra · Unit 01</p>
+        <p class="crumb">Lesson 2 Companion · Factors, Multiples & Number Structure</p>
+      </div>
+    </a>
+    <div class="header-actions">
+      <a class="ghost" href="../units/unit-01/lessons/lesson-02-factors-multiples.html">← Return to Lesson 2</a>
+      <button class="ghost" id="printBtn" type="button">Print reference</button>
+      <button class="ghost" id="resetBestBtn" type="button">Reset best</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Lesson 2 · Math Break · Skill Game</div>
+    <h1>Factor Pair Builder</h1>
+    <p class="lead">See how whole numbers are built, watch factors and multiples move in opposite directions, then prove the structure yourself.</p>
+    <div class="lesson-sync">
+      <strong>Lesson sync:</strong> this game practices the same five ideas as Lesson 2:
+      complete factor pairs, multiples, factor-vs-multiple language, arrays/equal groups, and the special middle pair of perfect squares.
+    </div>
+  </section>
+
+  <section class="panel studio" aria-labelledby="studioTitle">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Animated instruction studio</div>
+        <h2 id="studioTitle">See the structure before you calculate.</h2>
+      </div>
+      <p>Four short visual demonstrations mirror the lesson’s reading room, factor-pair lab, worked examples, and perfect-square reasoning.</p>
+    </div>
+
+    <div class="studio-tabs" role="tablist" aria-label="Instruction scenes">
+      <button class="studio-tab" role="tab" aria-selected="true" data-scene="0" type="button">1 · Build 24</button>
+      <button class="studio-tab" role="tab" aria-selected="false" data-scene="1" type="button">2 · Inward / Outward</button>
+      <button class="studio-tab" role="tab" aria-selected="false" data-scene="2" type="button">3 · Common Ground</button>
+      <button class="studio-tab" role="tab" aria-selected="false" data-scene="3" type="button">4 · Square Middle</button>
+    </div>
+
+    <div class="lesson-scene active" data-panel="0">
+      <div class="visual">
+        <div class="array-theatre">
+          <div class="target-badge">24 tiles · every rectangle is a factor pair</div>
+          <div class="array-canvas" id="demoArrayCanvas"></div>
+          <div class="array-caption" id="demoArrayCaption">Press “Animate factor pairs” to build 24 in every unique rectangular shape.</div>
+        </div>
+      </div>
+      <div class="instruction-copy">
+        <h3>Factors are building dimensions.</h3>
+        <p>If 24 objects are arranged in equal rows with no leftovers, every possible rectangle gives one factor pair.</p>
+        <ul>
+          <li>1 × 24</li>
+          <li>2 × 12</li>
+          <li>3 × 8</li>
+          <li>4 × 6</li>
+        </ul>
+        <div class="takeaway">List pairs in order. Stop when the next pair would only reverse one you already found.</div>
+        <div class="scene-actions"><button class="btn primary" id="playArrayDemo" type="button">Animate factor pairs</button></div>
+      </div>
+    </div>
+
+    <div class="lesson-scene" data-panel="1">
+      <div class="visual">
+        <div class="direction-lab">
+          <div class="direction-label">Factors point inward toward the structure of 6.</div>
+          <div class="direction-row">
+            <div class="direction-column" id="factorDirection">
+              <span class="num-chip">1</span><span class="num-chip">2</span><span class="num-chip">3</span><span class="num-chip">6</span>
+            </div>
+            <div class="number-core">6</div>
+            <div class="direction-column" id="multipleDirection">
+              <span class="num-chip">6</span><span class="num-chip">12</span><span class="num-chip">18</span><span class="num-chip">24</span><span class="num-chip">30</span><span class="num-chip">36</span>
+            </div>
+          </div>
+          <div class="direction-label" id="directionCaption">Multiples point outward and continue forever.</div>
+        </div>
+      </div>
+      <div class="instruction-copy">
+        <h3>Factor or multiple?</h3>
+        <p>The same multiplication equation can describe both relationships.</p>
+        <ul>
+          <li>6 × 8 = 48</li>
+          <li>6 and 8 are <strong>factors</strong> of 48.</li>
+          <li>48 is a <strong>multiple</strong> of both 6 and 8.</li>
+          <li>A positive factor list is finite; a positive multiple list never ends.</li>
+        </ul>
+        <div class="takeaway">Ask: am I dividing a number into equal groups, or building repeated groups?</div>
+        <div class="scene-actions"><button class="btn primary" id="playDirectionDemo" type="button">Animate directions</button></div>
+      </div>
+    </div>
+
+    <div class="lesson-scene" data-panel="2">
+      <div class="visual">
+        <div class="common-lab">
+          <div class="common-row">
+            <h3>Factors of 18</h3>
+            <div class="common-chips" id="f18"><span class="common-chip">1</span><span class="common-chip">2</span><span class="common-chip">3</span><span class="common-chip">6</span><span class="common-chip">9</span><span class="common-chip">18</span></div>
+          </div>
+          <div class="common-row">
+            <h3>Factors of 24</h3>
+            <div class="common-chips" id="f24"><span class="common-chip">1</span><span class="common-chip">2</span><span class="common-chip">3</span><span class="common-chip">4</span><span class="common-chip">6</span><span class="common-chip">8</span><span class="common-chip">12</span><span class="common-chip">24</span></div>
+          </div>
+          <div class="common-row">
+            <h3>Multiples of 4 and 6</h3>
+            <div class="common-chips" id="multiplesCommon"><span class="common-chip">4</span><span class="common-chip">6</span><span class="common-chip">8</span><span class="common-chip">12</span><span class="common-chip">18</span><span class="common-chip">24</span><span class="common-chip">36</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="instruction-copy">
+        <h3>Two numbers can share structure.</h3>
+        <p>A common factor divides two numbers evenly. A common multiple appears in both repeating multiple lists.</p>
+        <ul>
+          <li>18 and 24 share factors 1, 2, 3, and 6.</li>
+          <li>4 and 6 share multiples 12, 24, 36, …</li>
+          <li>These ideas lead directly into GCF and LCM in Lesson 4.</li>
+        </ul>
+        <div class="takeaway">Shared divisor → common factor. Shared repeated product → common multiple.</div>
+        <div class="scene-actions"><button class="btn primary" id="playCommonDemo" type="button">Highlight shared values</button></div>
+      </div>
+    </div>
+
+    <div class="lesson-scene" data-panel="3">
+      <div class="visual">
+        <div class="square-lab">
+          <div class="target-badge">36 · perfect-square factor pairs</div>
+          <div class="pair-rack" id="squarePairs">
+            <div class="pair-card">1 × 36</div>
+            <div class="pair-card">2 × 18</div>
+            <div class="pair-card">3 × 12</div>
+            <div class="pair-card">4 × 9</div>
+            <div class="pair-card middle">6 × 6</div>
+          </div>
+          <div class="factor-count" id="squareCaption">Most factor pairs contribute two different factors. The middle square pair contributes only one new factor.</div>
+        </div>
+      </div>
+      <div class="instruction-copy">
+        <h3>Perfect squares have a special middle pair.</h3>
+        <p>For 36, the search reaches 6 × 6. Because the two partners are the same, the middle pair contributes only one distinct factor.</p>
+        <ul>
+          <li>36 has factors 1, 2, 3, 4, 6, 9, 12, 18, 36.</li>
+          <li>That is 9 positive factors—an odd number.</li>
+          <li>The same pattern explains 25, 49, 64, and other perfect squares.</li>
+        </ul>
+        <div class="takeaway">A repeated middle factor explains why perfect squares have an odd number of positive factors.</div>
+        <div class="scene-actions"><button class="btn primary" id="playSquareDemo" type="button">Animate the middle pair</button></div>
+      </div>
+    </div>
+  </section>
+
+  <main id="game" class="game-grid">
+    <section class="panel play-panel" aria-labelledby="gameTitle">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Lesson-synced practice</div>
+          <h2 id="gameTitle">Number Structure Mission</h2>
+        </div>
+        <p>The round mixes factor-pair building, factor/multiple language, common values, and perfect-square reasoning.</p>
+      </div>
+
+      <div class="status-row">
+        <div>
+          <div class="progress-label"><span id="roundLabel">Mission 1 of 16</span><span id="accuracyLabel">Accuracy 0%</span></div>
+          <div class="track"><div class="fill" id="progressFill"></div></div>
+        </div>
+        <div class="stat"><b id="score">0</b><span>Score</span></div>
+        <div class="stat"><b id="streak">0</b><span>Streak</span></div>
+      </div>
+
+      <div class="mission-stage">
+        <div class="mission-content">
+          <div class="mission-type" id="missionType">Factor pair builder</div>
+          <div class="challenge-value" id="challengeValue">24</div>
+          <div class="question-prompt" id="questionPrompt">Build every unique factor rectangle.</div>
+        </div>
+      </div>
+
+      <div id="builderMission">
+        <div class="builder-zone">
+          <section class="builder-controls">
+            <div class="dimension-row">
+              <div class="field"><label for="rowsInput">Rows</label><input id="rowsInput" type="number" inputmode="numeric" min="1" max="144" value="1"></div>
+              <div class="times" aria-hidden="true">×</div>
+              <div class="field"><label for="colsInput">Columns</label><input id="colsInput" type="number" inputmode="numeric" min="1" max="144" value="24"></div>
+            </div>
+            <div class="quick-row" id="quickRow"></div>
+            <div class="action-row">
+              <button class="primary" id="buildBtn" type="button">Build rectangle</button>
+              <button class="secondary" id="builderHintBtn" type="button">Hint</button>
+            </div>
+          </section>
+
+          <section class="game-array">
+            <div class="game-array-head"><strong>Array workspace</strong><span id="arrayLabel">Choose dimensions</span></div>
+            <div class="game-array-canvas" id="gameArrayCanvas"><span style="color:var(--muted)">A correct factor rectangle will appear here.</span></div>
+          </section>
+        </div>
+
+        <div class="pair-progress">
+          <h3 id="pairProgressTitle">Unlocked factor pairs</h3>
+          <div class="pair-chips" id="pairChips"></div>
+        </div>
+      </div>
+
+      <div id="choiceMission" hidden>
+        <div class="choice-grid" id="choiceGrid"></div>
+      </div>
+
+      <div class="action-row">
+        <button class="secondary" id="hintBtn" type="button" hidden>Reasoning hint</button>
+        <button class="primary" id="checkBtn" type="button" hidden>Check answer</button>
+        <button class="secondary" id="nextBtn" type="button" hidden>Next mission →</button>
+      </div>
+
+      <div class="feedback" id="feedback" aria-live="polite">
+        <h3>Ready.</h3><p>Use the same strategy as Lesson 2: build systematically and explain the relationship.</p>
+      </div>
+
+      <div class="mastery" id="mastery">
+        <div class="mastery-mark" id="masteryMark">80%</div>
+        <h2 id="masteryTitle">Round complete</h2>
+        <p id="masteryText"></p>
+        <div class="action-row">
+          <button class="primary" id="newRoundBtn" type="button">Play another round</button>
+          <button class="secondary" id="reviewBtn" type="button">Review missed missions</button>
+          <a class="secondary btn" href="../units/unit-01/lessons/lesson-02-factors-multiples.html">Return to Lesson 2</a>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel side-panel" aria-labelledby="referenceTitle">
+      <h2 id="referenceTitle">Lesson 2 Field Guide</h2>
+      <div class="concept"><b>Factor</b><span>Divides a whole number evenly with no remainder.</span></div>
+      <div class="concept"><b>Factor pair</b><span>Two positive whole-number partners whose product is the target.</span></div>
+      <div class="concept"><b>Multiple</b><span>A repeated product: n, 2n, 3n, 4n, … and the list continues forever.</span></div>
+      <div class="concept"><b>Complete factor search</b><span>Test possible partners in order and stop after passing √n; later pairs only reverse earlier ones.</span></div>
+      <div class="concept"><b>Perfect square</b><span>Has a repeated middle pair such as 6 × 6 for 36, producing an odd number of positive factors.</span></div>
+
+      <div class="tip">
+        <strong>Current strategy</strong>
+        <p id="strategyText">For factors, search systematically from 1 upward and record both partners.</p>
+      </div>
+
+      <div class="controls">
+        <div class="control-line">
+          <label for="pathwaySelect">Pathway</label>
+          <select id="pathwaySelect">
+            <option value="Foundation">Foundation</option>
+            <option value="Core" selected>Core</option>
+            <option value="Extended">Extended</option>
+          </select>
+        </div>
+        <div class="control-line">
+          <label for="roundSize">Round length</label>
+          <select id="roundSize">
+            <option value="12">12 missions</option>
+            <option value="16" selected>16 missions</option>
+            <option value="20">20 missions</option>
+          </select>
+        </div>
+      </div>
+      <p class="best" id="bestScore">Best mastery score: —</p>
+    </aside>
+  </main>
+
+  <footer>KH-MATH-PA-U01-L2 · Lesson-synced local practice · 80% mastery · No external dependencies</footer>
+</div>
+
+<script>
+(() => {
+  "use strict";
+
+  const FACTOR_TARGETS = [
+    {level:"Foundation",n:12},{level:"Foundation",n:18},{level:"Foundation",n:20},{level:"Foundation",n:24},
+    {level:"Core",n:28},{level:"Core",n:30},{level:"Core",n:36},{level:"Core",n:42},{level:"Core",n:48},
+    {level:"Core",n:54},{level:"Core",n:60},{level:"Extended",n:64},{level:"Extended",n:72},{level:"Extended",n:84},
+    {level:"Extended",n:96},{level:"Extended",n:108},{level:"Extended",n:120},{level:"Extended",n:144}
+  ];
+
+  const CHOICE_BANK = [
+    {level:"Foundation",type:"relation",prompt:"Which statement correctly describes 8 and 56?",choices:["56 is a factor of 8.","8 is a factor of 56.","8 is not related to 56 by multiplication.","56 is smaller than a factor of 8."],answer:1,why:"56 ÷ 8 = 7, so 8 is a factor of 56 and 56 is a multiple of 8."},
+    {level:"Foundation",type:"common",prompt:"Which number is a common multiple of 6 and 9?",choices:["12","18","27","45"],answer:1,why:"18 = 6 × 3 and 18 = 9 × 2."},
+    {level:"Foundation",type:"pair",prompt:"Which is a factor pair of 42?",choices:["5 and 8","6 and 7","3 and 12","4 and 11"],answer:1,why:"6 × 7 = 42."},
+    {level:"Foundation",type:"multiple",prompt:"What is the sixth positive multiple of 7?",choices:["35","42","49","56"],answer:1,why:"The multiples are 7, 14, 21, 28, 35, 42."},
+    {level:"Foundation",type:"common",prompt:"Which number is a common factor of 30 and 42?",choices:["4","8","6","10"],answer:2,why:"30 ÷ 6 = 5 and 42 ÷ 6 = 7."},
+
+    {level:"Core",type:"complete",prompt:"Which list shows all positive factor pairs of 20?",choices:["1×20, 2×10, 4×5","1×20, 2×10, 3×7, 4×5","1×20, 4×5","2×10, 4×5, 5×4"],answer:0,why:"The systematic unique pairs are 1×20, 2×10, and 4×5."},
+    {level:"Core",type:"relation",prompt:"Which equation proves that 15 is a factor of 90?",choices:["90 + 15 = 105","90 − 15 = 75","90 × 15 = 1350","15 × 6 = 90"],answer:3,why:"A factor relationship is proven by a whole-number product: 15 × 6 = 90."},
+    {level:"Core",type:"common",prompt:"Which number is a common multiple of 8 and 12?",choices:["16","24","20","36"],answer:1,why:"24 = 8 × 3 and 24 = 12 × 2."},
+    {level:"Core",type:"square",prompt:"Why does 25 have an odd number of positive factors?",choices:["It is odd.","It is a perfect square.","It is a multiple of 5.","All odd numbers have odd factor counts."],answer:1,why:"The repeated middle pair 5 × 5 contributes only one distinct middle factor."},
+    {level:"Core",type:"square",prompt:"Which perfect square has exactly five positive factors?",choices:["25","16","36","49"],answer:1,why:"16 has positive factors 1, 2, 4, 8, 16 — five factors."},
+    {level:"Core",type:"complete",prompt:"Why can you stop searching for factor pairs of 60 after checking 7?",choices:["The next whole number, 8, is greater than √60, so later pairs would repeat earlier partners.","7 is always the last possible factor.","60 has exactly seven factors.","Multiples stop after 7."],answer:0,why:"√60 is about 7.75. After testing through 7, later factor pairs only reverse pairs already found."},
+    {level:"Core",type:"application",prompt:"There are 32 students. Which equal team size is impossible with no one left over?",choices:["6","2","4","8"],answer:0,why:"32 ÷ 6 is not a whole number, so teams of 6 leave students over."},
+
+    {level:"Extended",type:"square",prompt:"Which statement best explains why 36 has an odd number of positive factors?",choices:["36 is even.","36 is divisible by 3.","36 is a perfect square, so the middle factor pair is 6×6.","All multiples of 6 have odd factor counts."],answer:2,why:"Most factors pair with different partners; the square pair 6×6 contributes only one distinct factor."},
+    {level:"Extended",type:"relation",prompt:"Which statement is true for every positive whole number n?",choices:["n has infinitely many positive multiples.","n has infinitely many positive factors.","Every factor of n is larger than n.","n cannot be its own factor."],answer:0,why:"The positive multiples n, 2n, 3n, 4n, … continue forever."},
+    {level:"Extended",type:"application",prompt:"A bell rings every 4 minutes and another every 10 minutes. Which time is a common multiple of both intervals?",choices:["14 minutes","24 minutes","30 minutes","20 minutes"],answer:3,why:"20 is divisible by both 4 and 10."},
+    {level:"Extended",type:"complete",prompt:"A number has factor pairs 1×45, 3×15, and 5×9. Which number is it?",choices:["35","40","45","50"],answer:2,why:"Every listed factor pair has product 45."}
+  ];
+
+  const el = {
+    studioTabs:[...document.querySelectorAll(".studio-tab")],
+    scenes:[...document.querySelectorAll(".lesson-scene")],
+    demoArrayCanvas:document.getElementById("demoArrayCanvas"),
+    demoArrayCaption:document.getElementById("demoArrayCaption"),
+    playArrayDemo:document.getElementById("playArrayDemo"),
+    factorDirection:[...document.querySelectorAll("#factorDirection .num-chip")],
+    multipleDirection:[...document.querySelectorAll("#multipleDirection .num-chip")],
+    directionCaption:document.getElementById("directionCaption"),
+    playDirectionDemo:document.getElementById("playDirectionDemo"),
+    f18:[...document.querySelectorAll("#f18 .common-chip")],
+    f24:[...document.querySelectorAll("#f24 .common-chip")],
+    mCommon:[...document.querySelectorAll("#multiplesCommon .common-chip")],
+    playCommonDemo:document.getElementById("playCommonDemo"),
+    squarePairs:[...document.querySelectorAll("#squarePairs .pair-card")],
+    squareCaption:document.getElementById("squareCaption"),
+    playSquareDemo:document.getElementById("playSquareDemo"),
+
+    missionType:document.getElementById("missionType"),
+    challengeValue:document.getElementById("challengeValue"),
+    questionPrompt:document.getElementById("questionPrompt"),
+    builderMission:document.getElementById("builderMission"),
+    choiceMission:document.getElementById("choiceMission"),
+    choiceGrid:document.getElementById("choiceGrid"),
+    rows:document.getElementById("rowsInput"),
+    cols:document.getElementById("colsInput"),
+    quick:document.getElementById("quickRow"),
+    build:document.getElementById("buildBtn"),
+    builderHint:document.getElementById("builderHintBtn"),
+    gameArrayCanvas:document.getElementById("gameArrayCanvas"),
+    arrayLabel:document.getElementById("arrayLabel"),
+    pairChips:document.getElementById("pairChips"),
+    pairProgressTitle:document.getElementById("pairProgressTitle"),
+    hint:document.getElementById("hintBtn"),
+    check:document.getElementById("checkBtn"),
+    next:document.getElementById("nextBtn"),
+    feedback:document.getElementById("feedback"),
+    score:document.getElementById("score"),
+    streak:document.getElementById("streak"),
+    round:document.getElementById("roundLabel"),
+    accuracy:document.getElementById("accuracyLabel"),
+    fill:document.getElementById("progressFill"),
+    strategy:document.getElementById("strategyText"),
+    pathway:document.getElementById("pathwaySelect"),
+    size:document.getElementById("roundSize"),
+    best:document.getElementById("bestScore"),
+    mastery:document.getElementById("mastery"),
+    masteryMark:document.getElementById("masteryMark"),
+    masteryTitle:document.getElementById("masteryTitle"),
+    masteryText:document.getElementById("masteryText"),
+    newRound:document.getElementById("newRoundBtn"),
+    review:document.getElementById("reviewBtn"),
+    print:document.getElementById("printBtn"),
+    resetBest:document.getElementById("resetBestBtn")
+  };
+
+  const BEST_KEY = "khaemenes-prealgebra-u01-l02-factor-game-v2";
+  let timers=[];
+  let deck=[];
+  let index=0;
+  let score=0;
+  let correct=0;
+  let attempts=0;
+  let streak=0;
+  let missed=[];
+  let selectedChoice=null;
+  let checked=false;
+  let foundPairs=new Set();
+  let builderHadError=false;
+
+  function later(fn,ms){const t=setTimeout(fn,ms);timers.push(t);return t}
+  function clearTimers(){timers.forEach(clearTimeout);timers=[]}
+
+  function shuffle(items){
+    const a=items.slice();
+    for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
+    return a;
+  }
+
+  function factors(n){
+    const out=[];
+    for(let i=1;i*i<=n;i++){
+      if(n%i===0){out.push(i);if(i!==n/i)out.push(n/i)}
+    }
+    return out.sort((a,b)=>a-b);
+  }
+
+  function factorPairs(n){
+    const out=[];
+    for(let i=1;i*i<=n;i++)if(n%i===0)out.push([i,n/i]);
+    return out;
+  }
+
+  function pairKey(a,b){return `${Math.min(a,b)}x${Math.max(a,b)}`}
+
+  function setFeedback(kind,title,text,detail=""){
+    el.feedback.className="feedback"+(kind?` ${kind}`:"");
+    el.feedback.innerHTML=`<h3>${title}</h3><p>${text}</p>${detail?`<div class="detail">${detail}</div>`:""}`;
+  }
+
+  function showScene(n){
+    clearTimers();
+    el.studioTabs.forEach((b,i)=>b.setAttribute("aria-selected",i===n?"true":"false"));
+    el.scenes.forEach((s,i)=>s.classList.toggle("active",i===n));
+  }
+  el.studioTabs.forEach((b,i)=>b.addEventListener("click",()=>showScene(i)));
+
+  function renderTiles(canvas,rows,cols,maxTiles=160){
+    canvas.innerHTML="";
+    const total=rows*cols;
+    const grid=document.createElement("div");
+    grid.className="tiles";
+    const width=Math.max(240,Math.min(560,canvas.clientWidth-30));
+    const size=Math.max(8,Math.min(22,Math.floor(width/Math.max(cols,1))-3));
+    grid.style.gridTemplateColumns=`repeat(${cols}, ${size}px)`;
+    const cap=Math.min(total,maxTiles);
+    for(let i=0;i<cap;i++){
+      const tile=document.createElement("div");
+      tile.className="tile";
+      tile.style.width=`${size}px`;
+      tile.style.height=`${size}px`;
+      grid.appendChild(tile);
+    }
+    canvas.appendChild(grid);
+    if(total>maxTiles){
+      const note=document.createElement("div");
+      note.style.cssText="color:var(--muted);font-size:.75rem;text-align:center;margin-top:8px";
+      note.textContent=`${total} tiles total; display capped for readability.`;
+      canvas.appendChild(note);
+    }
+  }
+
+  el.playArrayDemo.addEventListener("click",()=>{
+    clearTimers();
+    const pairs=[[1,24],[2,12],[3,8],[4,6]];
+    pairs.forEach(([r,c],i)=>later(()=>{
+      renderTiles(el.demoArrayCanvas,r,c);
+      el.demoArrayCaption.textContent=`${r} × ${c} = 24 · factor pair ${i+1} of 4`;
+    },i*900));
+    later(()=>el.demoArrayCaption.textContent="Complete: 1×24, 2×12, 3×8, 4×6. The next pair would reverse an earlier rectangle.",pairs.length*900);
+  });
+
+  el.playDirectionDemo.addEventListener("click",()=>{
+    clearTimers();
+    [...el.factorDirection,...el.multipleDirection].forEach(c=>c.classList.remove("on"));
+    el.directionCaption.textContent="First watch the finite factor list move inward.";
+    el.factorDirection.forEach((c,i)=>later(()=>c.classList.add("on"),i*220));
+    later(()=>{
+      el.directionCaption.textContent="Now watch multiples move outward. The list keeps going.";
+      el.multipleDirection.forEach((c,i)=>later(()=>c.classList.add("on"),i*220));
+    },1200);
+  });
+
+  el.playCommonDemo.addEventListener("click",()=>{
+    clearTimers();
+    [...el.f18,...el.f24,...el.mCommon].forEach(c=>c.classList.remove("shared"));
+    const fShared=new Set(["1","2","3","6"]);
+    el.f18.forEach((c,i)=>later(()=>{if(fShared.has(c.textContent))c.classList.add("shared")},i*100));
+    el.f24.forEach((c,i)=>later(()=>{if(fShared.has(c.textContent))c.classList.add("shared")},500+i*100));
+    const mShared=new Set(["12","24","36"]);
+    el.mCommon.forEach((c,i)=>later(()=>{if(mShared.has(c.textContent))c.classList.add("shared")},1400+i*120));
+  });
+
+  el.playSquareDemo.addEventListener("click",()=>{
+    clearTimers();
+    el.squarePairs.forEach(c=>c.classList.remove("on"));
+    el.squareCaption.textContent="Walk through the factor pairs from the outside toward the middle.";
+    el.squarePairs.forEach((c,i)=>later(()=>c.classList.add("on"),i*350));
+    later(()=>el.squareCaption.textContent="The middle pair is 6 × 6. Because 6 repeats, 36 has 9 distinct positive factors—an odd count.",1900);
+  });
+
+  function allowedLevels(pathway){
+    if(pathway==="Foundation")return new Set(["Foundation"]);
+    if(pathway==="Core")return new Set(["Foundation","Core"]);
+    return new Set(["Foundation","Core","Extended"]);
+  }
+
+  function buildRound(source=null){
+    const count=Math.max(8,Math.min(20,Number(el.size.value)||16));
+    if(source&&source.length){
+      const arr=[];
+      while(arr.length<count)arr.push(...shuffle(source));
+      return arr.slice(0,count);
+    }
+
+    const allowed=allowedLevels(el.pathway.value);
+    const buildPool=FACTOR_TARGETS.filter(x=>allowed.has(x.level)).map(x=>({...x,type:"builder"}));
+    const choicePool=CHOICE_BANK.filter(x=>allowed.has(x.level)).map(x=>({...x,type:"choice"}));
+
+    const builders=Math.max(5,Math.round(count*.45));
+    const choices=count-builders;
+    const takeRepeated=(pool,n)=>{
+      const out=[];
+      while(out.length<n)out.push(...shuffle(pool));
+      return out.slice(0,n);
+    };
+    return shuffle([...takeRepeated(buildPool,builders),...takeRepeated(choicePool,choices)]);
+  }
+
+  function current(){return deck[index]}
+
+  function startRound(source=null){
+    deck=buildRound(source);
+    index=0;score=0;correct=0;attempts=0;streak=0;missed=[];
+    el.mastery.classList.remove("show");
+    renderMission();
+    updateStats();
+  }
+
+  function renderMission(){
+    clearTimers();
+    checked=false;
+    selectedChoice=null;
+    foundPairs=new Set();
+    builderHadError=false;
+
+    const item=current();
+    el.next.hidden=true;
+    el.hint.hidden=true;
+    el.check.hidden=true;
+    el.hint.disabled=false;
+    el.check.disabled=false;
+
+    if(item.type==="builder"){
+      renderBuilder(item);
+    }else{
+      renderChoice(item);
+    }
+    updateStats();
+  }
+
+  function renderBuilder(item){
+    const n=item.n;
+    el.missionType.textContent="Factor pair builder";
+    el.challengeValue.textContent=n;
+    el.questionPrompt.textContent="Build every unique positive factor rectangle for this number.";
+    el.builderMission.hidden=false;
+    el.choiceMission.hidden=true;
+    el.build.disabled=false;
+    el.builderHint.disabled=false;
+    el.rows.value=1;
+    el.cols.value=n;
+    el.arrayLabel.textContent="Choose dimensions";
+    el.gameArrayCanvas.innerHTML='<span style="color:var(--muted)">A correct factor rectangle will appear here.</span>';
+    el.strategy.textContent=`Test row lengths from 1 upward. Stop after passing √${n} ≈ ${Math.sqrt(n).toFixed(2)}.`;
+    buildQuick(n);
+    renderPairProgress(n);
+    setFeedback("","Builder ready.",`Find all ${factorPairs(n).length} unique factor pair${factorPairs(n).length===1?"":"s"} of ${n}.`);
+  }
+
+  function buildQuick(n){
+    el.quick.innerHTML="";
+    const limit=Math.min(12,Math.floor(Math.sqrt(n))+3);
+    for(let i=1;i<=limit;i++){
+      const b=document.createElement("button");
+      b.type="button";b.className="quick";b.textContent=i;b.setAttribute("aria-label",`Use ${i} rows`);
+      b.addEventListener("click",()=>{
+        el.rows.value=i;
+        el.cols.value=n%i===0?n/i:Math.max(1,Math.round(n/i));
+      });
+      el.quick.appendChild(b);
+    }
+  }
+
+  function renderPairProgress(n){
+    const pairs=factorPairs(n);
+    el.pairProgressTitle.textContent=`Unlocked factor pairs · ${foundPairs.size} of ${pairs.length}`;
+    el.pairChips.innerHTML="";
+    pairs.forEach(([a,b])=>{
+      const key=pairKey(a,b);
+      const chip=document.createElement("span");
+      chip.className=foundPairs.has(key)?"found-chip":"locked-chip";
+      chip.textContent=foundPairs.has(key)?`${a} × ${b}`:"locked";
+      el.pairChips.appendChild(chip);
+    });
+  }
+
+  function intValue(v){
+    const n=Math.floor(Number(v));
+    if(!Number.isFinite(n))return null;
+    return Math.max(1,Math.min(144,n));
+  }
+
+  function buildRectangle(){
+    const item=current();
+    if(item.type!=="builder"||checked||el.build.disabled)return;
+    const n=item.n;
+    const r=intValue(el.rows.value),c=intValue(el.cols.value);
+    if(r===null||c===null){
+      setFeedback("bad","Use positive whole-number dimensions.","Rows and columns must both be positive whole numbers.");
+      return;
+    }
+    el.rows.value=r;el.cols.value=c;
+    renderTiles(el.gameArrayCanvas,r,c);
+    el.arrayLabel.textContent=`${r} rows × ${c} columns = ${r*c}`;
+
+    if(r*c!==n){
+      builderHadError=true;
+      streak=0;
+      const diff=Math.abs(r*c-n);
+      setFeedback("bad",`${r} × ${c} = ${r*c}, not ${n}.`,r*c<n?`Your rectangle is ${diff} tile${diff===1?"":"s"} too small.`:`Your rectangle is ${diff} tile${diff===1?"":"s"} too large.`);
+      updateStats();
+      return;
+    }
+
+    const key=pairKey(r,c);
+    if(foundPairs.has(key)){
+      builderHadError=true;
+      streak=0;
+      setFeedback("bad","That pair is already unlocked.",`${r} × ${c} is the same rectangle family as ${Math.min(r,c)} × ${Math.max(r,c)}. Rotating does not make a new factor pair.`);
+      updateStats();
+      return;
+    }
+
+    foundPairs.add(key);
+    score+=100;
+    renderPairProgress(n);
+
+    const total=factorPairs(n).length;
+    if(foundPairs.size===total){
+      checked=true;attempts++;correct++;streak++;
+      if(!builderHadError)score+=100;
+      el.build.disabled=true;el.builderHint.disabled=true;el.next.hidden=false;
+      el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";
+      const list=factors(n);
+      setFeedback("good","Factor set complete.",`You found every unique rectangle for ${n}.`,`Positive factors: ${list.join(", ")}${Number.isInteger(Math.sqrt(n))?" · Perfect square: repeated middle pair detected.":""}`);
+    }else{
+      const remain=total-foundPairs.size;
+      setFeedback("good","New factor pair unlocked.",`${r} × ${c} = ${n}.`,` ${remain} unique pair${remain===1?" remains":"s remain"}.`);
+    }
+    updateStats();
+  }
+
+  function builderHint(){
+    const item=current();
+    if(item.type!=="builder"||checked)return;
+    const missing=factorPairs(item.n).find(([a,b])=>!foundPairs.has(pairKey(a,b)));
+    if(!missing)return;
+    setFeedback("","Builder hint",foundPairs.size===0
+      ?`Start with 1, then test whole-number row lengths in order. Does ${missing[0]} divide ${item.n} evenly?`
+      :`The next undiscovered row length to investigate is ${missing[0]}. Compute ${item.n} ÷ ${missing[0]}.`);
+  }
+
+  function renderChoice(item){
+    el.builderMission.hidden=true;
+    el.choiceMission.hidden=false;
+    el.missionType.textContent=({
+      relation:"Factor or multiple?",
+      common:"Common structure",
+      pair:"Factor pair reasoning",
+      multiple:"Multiple sequence",
+      complete:"Factor completeness",
+      square:"Perfect-square reasoning",
+      application:"Equal-group application"
+    })[item.type]||"Number structure";
+    el.challengeValue.textContent="?";
+    el.questionPrompt.textContent=item.prompt;
+    el.choiceGrid.innerHTML="";
+    item.choices.forEach((choice,i)=>{
+      const b=document.createElement("button");
+      b.type="button";b.className="choice-btn";b.dataset.index=i;b.setAttribute("aria-pressed","false");
+      b.innerHTML=`<strong>${choice}</strong>`;
+      b.addEventListener("click",()=>{
+        if(checked)return;
+        selectedChoice=i;
+        [...el.choiceGrid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));
+      });
+      el.choiceGrid.appendChild(b);
+    });
+    el.hint.hidden=false;
+    el.check.hidden=false;
+    el.strategy.textContent=choiceStrategy(item.type);
+    setFeedback("","Mission ready.","Choose the statement that matches the Lesson 2 structure.");
+  }
+
+  function choiceStrategy(type){
+    if(type==="relation")return"Use a multiplication or exact-division equation to decide which number is the factor and which is the multiple.";
+    if(type==="common")return"Test whether the candidate divides both numbers or appears in both multiple lists.";
+    if(type==="square")return"Look for the repeated middle pair a × a.";
+    if(type==="complete")return"List pairs in order and stop after the square-root boundary.";
+    if(type==="application")return"Equal groups with no leftovers require a factor of the total.";
+    return"Translate the wording into multiplication or repeated products.";
+  }
+
+  function choiceHint(){
+    const item=current();
+    if(item.type!=="choice"||checked)return;
+    let hint="Use the lesson definitions and test each statement with multiplication or division.";
+    if(item.type==="relation")hint="Try to write one number as the other number times a positive whole number.";
+    else if(item.type==="common")hint="A common factor divides both; a common multiple is divisible by both.";
+    else if(item.type==="square")hint="Perfect squares contain a repeated middle pair such as 5×5 or 6×6.";
+    else if(item.type==="complete")hint="Search pairs from 1 upward and compare with the square root.";
+    else if(item.type==="multiple")hint="The kth positive multiple of n is n × k.";
+    else if(item.type==="application")hint="No leftovers means the proposed group size must divide the total exactly.";
+    setFeedback("","Reasoning hint",hint);
+  }
+
+  function submitChoice(){
+    const item=current();
+    if(item.type!=="choice"||checked)return;
+    if(selectedChoice===null){
+      setFeedback("bad","Choose an answer.","Select one option before checking.");
+      return;
+    }
+    checked=true;attempts++;
+    [...el.choiceGrid.children].forEach(b=>b.disabled=true);
+    el.hint.disabled=true;el.check.disabled=true;el.next.hidden=false;
+    el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";
+
+    if(selectedChoice===item.answer){
+      correct++;streak++;score+=100+Math.min(50,(streak-1)*10);
+      setFeedback("good","Correct reasoning.",item.why);
+    }else{
+      streak=0;missed.push(item);
+      setFeedback("bad",`Correct answer: ${item.choices[item.answer]}`,item.why);
+    }
+    updateStats();
+  }
+
+  function next(){
+    if(!checked)return;
+    if(index>=deck.length-1){finishRound();return}
+    index++;
+    renderMission();
+  }
+
+  function updateStats(){
+    const total=deck.length||1;
+    const acc=attempts?Math.round(correct/attempts*100):0;
+    el.score.textContent=score;el.streak.textContent=streak;
+    el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;
+    el.accuracy.textContent=`Accuracy ${acc}%`;
+    el.fill.style.width=`${Math.round(index/total*100)}%`;
+  }
+
+  function bestValue(){
+    try{const v=Number(localStorage.getItem(BEST_KEY));return Number.isFinite(v)?v:null}catch(_){return null}
+  }
+  function updateBest(){const v=bestValue();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
+  function saveBest(p){try{const old=bestValue();if(old===null||p>old)localStorage.setItem(BEST_KEY,String(p))}catch(_){}updateBest()}
+
+  function finishRound(){
+    index=deck.length;updateStats();el.fill.style.width="100%";
+    const percent=attempts?Math.round(correct/attempts*100):0;saveBest(percent);
+    el.mastery.classList.add("show");el.masteryMark.textContent=`${percent}%`;
+    el.masteryTitle.textContent=percent>=80?"Lesson-game mastery passed":"Keep building number structure";
+    el.masteryText.textContent=percent>=80
+      ?`You solved ${correct} of ${attempts} Lesson 2 missions correctly and met the 80% mastery target. Return to the lesson for worked examples and the 20-question assignment.`
+      :`You solved ${correct} of ${attempts} missions correctly. Revisit the animated instruction and retry the missed number-structure missions until you reach 80%.`;
+    el.review.disabled=missed.length===0;
+    el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed choice missions";
+    el.mastery.scrollIntoView({behavior:"smooth",block:"center"});
+  }
+
+  el.build.addEventListener("click",buildRectangle);
+  el.builderHint.addEventListener("click",builderHint);
+  el.hint.addEventListener("click",choiceHint);
+  el.check.addEventListener("click",submitChoice);
+  el.next.addEventListener("click",next);
+  el.newRound.addEventListener("click",()=>startRound());
+  el.review.addEventListener("click",()=>{if(missed.length)startRound(missed)});
+  el.pathway.addEventListener("change",()=>startRound());
+  el.size.addEventListener("change",()=>startRound());
+  el.rows.addEventListener("input",()=>{
+    const item=current();
+    if(item&&item.type==="builder"){
+      const r=intValue(el.rows.value);
+      if(r&&item.n%r===0)el.cols.value=item.n/r;
+    }
+  });
+  el.rows.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();buildRectangle()}});
+  el.cols.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();buildRectangle()}});
+  el.print.addEventListener("click",()=>window.print());
+  el.resetBest.addEventListener("click",()=>{
+    try{localStorage.removeItem(BEST_KEY)}catch(_){}
+    updateBest();setFeedback("","Best score reset.","The saved game mastery score on this device was cleared.");
+  });
+
+  updateBest();
+  startRound();
+})();
+</script>
+</body>
+</html>

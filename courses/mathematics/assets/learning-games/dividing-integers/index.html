@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Khaemenes Pre-Algebra Unit 2 Lesson 7 companion game: Dividing Integers.">
+<meta name="theme-color" content="#090d14">
+<title>Lesson 7 · Quotient Check · Dividing Integers</title>
+<style>
+:root{
+--bg:#090d14;--panel:#151d29;--ink:#f7f2e7;--muted:#c9c1b2;--line:#3b4655;
+--gold:#d8bd7a;--gold2:#f0d99b;--green:#8fd4ad;--red:#ef9a9a;--blue:#90b8e6;
+--shadow:0 18px 55px rgba(0,0,0,.36);--serif:Cinzel,Georgia,"Times New Roman",serif;
+--sans:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--sans);line-height:1.5;background:
+radial-gradient(circle at 15% 0%,rgba(216,189,122,.11),transparent 28rem),
+radial-gradient(circle at 90% 20%,rgba(84,122,164,.11),transparent 30rem),
+linear-gradient(180deg,var(--bg),#0c121a 60%,#090d14)}
+button,a,select{font:inherit}a{color:inherit}button{touch-action:manipulation}
+button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #b9d8ff;outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:1000;background:#fff;color:#111;padding:10px 14px;border-radius:8px}
+.shell{width:min(var(--max),calc(100% - 28px));margin:auto;padding:22px 0 50px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid rgba(216,189,122,.22);padding:8px 0 20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}.seal{width:44px;height:44px;border:1px solid rgba(216,189,122,.7);border-radius:9px;display:grid;place-items:center;transform:rotate(45deg);background:rgba(216,189,122,.06);flex:0 0 auto}.seal span{transform:rotate(-45deg);font-family:Georgia,serif;color:var(--gold2)}
+.kicker{margin:0;color:var(--gold2);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}.crumb{margin:3px 0 0;color:var(--muted);font-size:.86rem}.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.ghost,.primary,.secondary{min-height:42px;border-radius:10px;padding:9px 13px;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.ghost,.secondary{border:1px solid var(--line);background:#151c25;color:var(--ink)}.primary{border:1px solid var(--gold2);background:var(--gold2);color:#17130a;font-weight:800}.ghost:hover,.secondary:hover{border-color:var(--gold)}
+.hero{text-align:center;max-width:930px;margin:auto;padding:46px 10px 28px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.19em;font-size:.75rem;font-weight:800}
+h1,h2,h3{font-family:var(--serif);font-weight:500}h1{font-size:clamp(2.05rem,5vw,4.05rem);line-height:1.05;margin:10px 0 13px}.hero p{color:var(--muted);font-size:clamp(1rem,2vw,1.15rem);max-width:800px;margin:0 auto}
+.lesson-sync{max-width:900px;margin:20px auto 0;padding:13px 15px;border-left:3px solid var(--gold);border-radius:0 11px 11px 0;background:rgba(216,189,122,.06);color:#ddd5c6;text-align:left}
+.panel{border:1px solid rgba(216,189,122,.18);border-radius:18px;background:linear-gradient(180deg,rgba(23,30,41,.97),rgba(15,21,30,.97));box-shadow:var(--shadow)}
+.studio{padding:20px;margin-bottom:22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:14px}.section-head h2{margin:3px 0 0;font-size:clamp(1.4rem,3vw,2.1rem)}.section-head p{margin:0;color:var(--muted);max-width:660px}
+.studio-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}.studio-tab{min-height:52px;border:1px solid var(--line);border-radius:10px;background:#111720;color:var(--muted);cursor:pointer;padding:8px}.studio-tab[aria-selected="true"]{background:var(--gold2);border-color:var(--gold2);color:#17130a;font-weight:800}
+.scene{display:none;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:16px}.scene.active{display:grid}
+.visual{min-height:330px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px),#0b1016;background-size:24px 24px;padding:18px;display:grid;place-items:center;overflow:hidden}
+.copy{border:1px solid var(--line);border-radius:14px;background:#111720;padding:18px}.copy h3{margin:0 0 8px}.copy p,.copy li{color:var(--muted);font-size:.92rem}.copy ul{padding-left:20px}.takeaway{margin-top:12px;padding:10px 12px;border-left:3px solid var(--gold);background:rgba(216,189,122,.06);color:#e7dece}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+
+/* sign rule */
+.sign-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;width:min(100%,650px)}.sign-card{border:1px solid var(--line);border-radius:12px;background:#111720;padding:18px;text-align:center;opacity:.4;transition:.25s}.sign-card b{display:block;font:1.55rem Georgia,serif}.sign-card span{display:block;color:var(--muted);font-size:.82rem;margin-top:6px}.sign-card.on{opacity:1;border-color:var(--gold2);background:rgba(216,189,122,.07)}
+
+/* inverse check */
+.inverse-demo,.zero-demo,.rate-demo{display:grid;gap:10px;width:min(100%,680px)}.inv-step,.zero-step,.rate-step{border:1px solid var(--line);border-radius:11px;background:#111720;padding:14px;text-align:center;color:var(--muted);opacity:.35;transition:.25s}.inv-step b,.zero-step b,.rate-step b{display:block;font:1.15rem Georgia,serif;color:#e8e0d1}.inv-step.on,.zero-step.on,.rate-step.on{opacity:1;border-color:var(--gold2);background:rgba(216,189,122,.07);color:#fff0c7}
+
+/* game */
+.game-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:18px;align-items:start}.play{padding:20px}.side{padding:18px}
+.status{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-bottom:15px}.progress-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.82rem;margin-bottom:7px}.track{height:8px;background:#07090d;border:1px solid #313946;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ae9255,var(--gold2));transition:.3s}.stat{min-width:72px;text-align:center;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}.stat b{display:block}.stat span{display:block;color:var(--muted);font-size:.68rem;text-transform:uppercase}
+.stage{min-height:235px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),#0c1117;background-size:24px 24px;padding:22px;display:grid;place-items:center;text-align:center}.mission-badge{display:inline-block;margin-bottom:8px;padding:5px 9px;border:1px solid rgba(216,189,122,.35);border-radius:999px;color:var(--gold2);font-size:.7rem;letter-spacing:.11em;text-transform:uppercase}.big{font:clamp(2rem,7vw,4.4rem) Georgia,serif;color:#fff5da;margin:6px 0}.prompt{color:#ddd5c6}
+.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}.choice{min-height:68px;border:1px solid var(--line);border-radius:12px;background:#111720;color:var(--ink);cursor:pointer;padding:11px;text-align:left;position:relative}.choice:hover{border-color:#748194}.choice[aria-pressed="true"]{border-color:var(--gold2);background:rgba(216,189,122,.09)}.choice[aria-pressed="true"]:after{content:"✓";position:absolute;right:9px;top:7px;color:var(--gold2);font-weight:900}.choice strong{display:block;font-family:Georgia,serif}
+.feedback{margin-top:14px;min-height:78px;border:1px solid transparent;border-radius:12px;padding:13px 14px;background:rgba(255,255,255,.02)}.feedback.good{border-color:rgba(143,212,173,.42);background:rgba(143,212,173,.07)}.feedback.bad{border-color:rgba(239,154,154,.42);background:rgba(239,154,154,.07)}.feedback h3{margin:0 0 4px;font-size:1rem}.feedback p{margin:0;color:#d7d0c2}.feedback .detail{color:var(--gold2);margin-top:6px;font-size:.88rem}.action-row{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:14px}
+.side h2{margin:2px 0 12px;font-size:1.18rem}.concept{border:1px solid var(--line);border-radius:11px;padding:11px;background:rgba(255,255,255,.025);margin-bottom:9px}.concept b{display:block;font:1rem Georgia,serif}.concept span{color:var(--muted);font-size:.82rem}.tip{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.tip p{margin:5px 0 0;color:var(--muted);font-size:.87rem}.controls{display:grid;gap:10px;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.control{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.control label{color:var(--muted);font-size:.8rem}.control select{min-height:40px;border:1px solid var(--line);border-radius:9px;background:#111720;color:var(--ink);padding:8px 10px}.best{color:var(--gold2);font-size:.82rem;margin:11px 0 0}
+.mastery{display:none;margin-top:20px;padding:24px;text-align:center;border:1px solid rgba(216,189,122,.5);border-radius:16px;background:#111720}.mastery.show{display:block}.mastery-mark{width:72px;height:72px;border-radius:50%;border:1px solid var(--gold2);display:grid;place-items:center;margin:0 auto 12px;color:var(--gold2);font:1.25rem Georgia,serif}.mastery h2{margin:5px 0}.mastery p{color:var(--muted);max-width:650px;margin:7px auto 15px}
+footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
+@media(max-width:920px){.scene,.game-grid{grid-template-columns:1fr}.side{order:2}}@media(max-width:720px){.studio-tabs{grid-template-columns:1fr 1fr}.choice-grid{grid-template-columns:1fr}.sign-grid{grid-template-columns:1fr}}@media(max-width:560px){.shell{width:min(100% - 18px,var(--max));padding-top:12px}.actions{display:none}.studio,.play{padding:13px}.status{grid-template-columns:1fr 66px}.status .stat:last-child{display:none}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.001ms!important;scroll-behavior:auto!important}}@media print{body{background:#fff;color:#111}.actions,.studio-tabs,.row,.action-row,.controls{display:none!important}.panel,.visual,.copy,.stage,.concept{box-shadow:none!important;background:#fff!important;color:#111!important;border-color:#bbb!important}.hero p,.copy p,.copy li,.concept span,.tip p{color:#444!important}}
+</style>
+</head>
+<body><a class="skip" href="#game">Skip to game</a><div class="shell">
+<header class="topbar">
+<a class="brand" href="../units/unit-02/lessons/lesson-07-coordinate-plane-signed-change.html"><div class="seal"><span>÷</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 02</p><p class="crumb">Lesson 7 Companion · Dividing Integers</p></div></a>
+<div class="actions"><a class="ghost" href="../units/unit-02/lessons/lesson-07-coordinate-plane-signed-change.html">← Lesson 7</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
+</header>
+
+<section class="hero">
+<div class="eyebrow">Unit 2 · Lesson 7 · Companion Game</div>
+<h1>Quotient Check</h1>
+<p>Choose the quotient sign, divide the magnitudes, verify with multiplication, and interpret signed rates and equal groups.</p>
+<div class="lesson-sync"><strong>Lesson sync:</strong> same nonzero signs give a positive quotient; different signs give a negative quotient. Division reverses multiplication, and division by zero is undefined.</div>
+</section>
+
+<section class="panel studio">
+<div class="section-head"><div><div class="eyebrow">Animated instruction studio</div><h2>Division should always be checkable.</h2></div><p>Four demonstrations mirror the lesson’s sign rules, inverse multiplication checks, division-by-zero reasoning, and signed-rate interpretation.</p></div>
+<div class="studio-tabs"><button class="studio-tab" aria-selected="true">1 · Quotient Sign Pattern</button><button class="studio-tab" aria-selected="false">2 · Inverse Multiplication Check</button><button class="studio-tab" aria-selected="false">3 · Why ÷ 0 Is Undefined</button><button class="studio-tab" aria-selected="false">4 · Signed Rates</button></div>
+
+<div class="scene active">
+<div class="visual"><div class="sign-grid"><div class="sign-card" id="sg1"><b>(+)÷(+) = +</b><span>same signs</span></div><div class="sign-card" id="sg2"><b>(−)÷(−) = +</b><span>same signs</span></div><div class="sign-card" id="sg3"><b>(+)÷(−) = −</b><span>different signs</span></div><div class="sign-card" id="sg4"><b>(−)÷(+) = −</b><span>different signs</span></div></div></div>
+<div class="copy"><h3>Division uses the same sign logic as multiplication.</h3><p>For nonzero integers, matching signs produce a positive quotient and different signs produce a negative quotient.</p><div class="takeaway">Same → positive. Different → negative.</div><div class="row"><button class="primary" id="playSignDemo">Reveal quotient signs</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="inverse-demo"><div class="inv-step" id="i1"><b>−42 ÷ 7 = −6</b></div><div class="inv-step" id="i2">Check by reversing the division.</div><div class="inv-step" id="i3"><b>(−6)(7) = −42</b></div><div class="inv-step" id="i4">quotient × divisor = dividend ✓</div></div></div>
+<div class="copy"><h3>Every quotient should survive an inverse check.</h3><p>Multiplication verifies the quotient. This catches many sign errors immediately.</p><div class="takeaway">quotient × divisor = dividend</div><div class="row"><button class="primary" id="playInverseDemo">Verify −42 ÷ 7</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="zero-demo"><div class="zero-step" id="z1"><b>Suppose 8 ÷ 0 = q.</b></div><div class="zero-step" id="z2">Then the inverse check would require q × 0 = 8.</div><div class="zero-step" id="z3"><b>But every q × 0 = 0.</b></div><div class="zero-step" id="z4">No quotient can work → 8 ÷ 0 is undefined.</div></div></div>
+<div class="copy"><h3>Division by zero fails the inverse test.</h3><p>There is no number that can be multiplied by zero to recover a nonzero dividend.</p><div class="takeaway">0 ÷ nonzero = 0, but nonzero ÷ 0 is undefined.</div><div class="row"><button class="primary" id="playZeroDemo">Test division by zero</button></div></div>
+</div>
+
+<div class="scene">
+<div class="visual"><div class="rate-demo"><div class="rate-step" id="r1"><b>Total change: −36 m</b></div><div class="rate-step" id="r2"><b>Time: 6 min</b></div><div class="rate-step" id="r3"><b>−36 ÷ 6 = −6 m/min</b></div><div class="rate-step" id="r4">Check: (−6)(6) = −36</div></div></div>
+<div class="copy"><h3>Division can find a signed rate.</h3><p>A negative total change split across positive equal intervals gives a negative change per interval.</p><div class="takeaway">signed total ÷ number of intervals = signed rate per interval</div><div class="row"><button class="primary" id="playRateDemo">Build the signed rate</button></div></div>
+</div>
+</section>
+
+<main id="game" class="game-grid">
+<section class="panel play">
+<div class="section-head"><div><div class="eyebrow">Quotient Check Challenge</div><h2>Sign, Divide & Verify Missions</h2></div><p>Predict quotient signs, compute integer division, verify with multiplication, reason about zero, and interpret signed rates.</p></div>
+<div class="status"><div><div class="progress-label"><span id="roundLabel">Mission 1 of 16</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div></div>
+<div class="stage"><div><div class="mission-badge" id="missionBadge">Sign Rule</div><div class="big" id="challengeValue">−24 ÷ 6</div><div class="prompt" id="questionPrompt">What is the sign of the quotient?</div></div></div>
+<div class="choice-grid" id="choiceGrid"></div>
+<div class="action-row"><button class="secondary" id="hintBtn">Reasoning hint</button><button class="primary" id="checkBtn">Check reasoning</button><button class="secondary" id="nextBtn" hidden>Next mission →</button></div>
+<div class="feedback" id="feedback"><h3>Ready.</h3><p>Choose the sign first, then divide the magnitudes.</p></div>
+<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../units/unit-02/lessons/lesson-07-coordinate-plane-signed-change.html">Return to Lesson 7</a></div></div>
+</section>
+
+<aside class="panel side">
+<h2>Lesson 7 Field Guide</h2>
+<div class="concept"><b>Same signs</b><span>Positive quotient.</span></div>
+<div class="concept"><b>Different signs</b><span>Negative quotient.</span></div>
+<div class="concept"><b>Inverse check</b><span>quotient × divisor = dividend.</span></div>
+<div class="concept"><b>Zero</b><span>0 ÷ nonzero = 0; division by 0 is undefined.</span></div>
+<div class="concept"><b>Signed rates</b><span>Total signed change ÷ equal intervals.</span></div>
+<div class="tip"><strong>Quotient question</strong><p id="strategyText">Are the dividend and divisor signs the same or different?</p></div>
+<div class="controls"><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
+<p class="best" id="bestScore">Best mastery score: —</p>
+</aside>
+</main>
+<footer>KH-MATH-PA-U02-L7 · division · quotient signs · inverse check · division by zero · signed rates · 80% mastery</footer>
+</div>
+
+<script>
+(()=>{"use strict";
+const BANK=[
+{l:"Foundation",b:"Sign Rule",v:"(−24) ÷ 6",q:"What is the sign of the quotient?",o:["Positive","Negative","Zero","Undefined"],a:1,h:"The dividend and divisor have different signs.",w:"Different signs give a negative quotient."},
+{l:"Foundation",b:"Sign Rule",v:"(−24) ÷ (−6)",q:"What is the sign of the quotient?",o:["Negative","Zero","Undefined","Positive"],a:3,h:"The nonzero integers have the same sign.",w:"Same signs give a positive quotient."},
+{l:"Foundation",b:"Compute",v:"35 ÷ (−5)",q:"What is the quotient?",o:["−7","−5","5","7"],a:0,h:"Different signs → negative; 35 ÷ 5 = 7.",w:"35 ÷ (−5)=−7."},
+{l:"Foundation",b:"Compute",v:"−48 ÷ 8",q:"What is the quotient?",o:["−8","6","−6","8"],a:2,h:"Different signs → negative; 48 ÷ 8 = 6.",w:"−48 ÷ 8 = −6."},
+{l:"Foundation",b:"Compute",v:"−63 ÷ (−9)",q:"What is the quotient?",o:["−7","−6","7","6"],a:2,h:"Same signs → positive.",w:"−63 ÷ (−9)=7."},
+{l:"Foundation",b:"Zero",v:"0 ÷ (−11)",q:"What is the quotient?",o:["−11","11","Undefined","0"],a:3,h:"Zero divided by a nonzero number is zero.",w:"0 ÷ (−11)=0."},
+{l:"Foundation",b:"Division by Zero",v:"15 ÷ 0",q:"What is the result?",o:["0","Undefined","15","−15"],a:1,h:"Ask what number times 0 would equal 15.",w:"No such number exists, so division by zero is undefined."},
+
+{l:"Core",b:"Structure",v:"Which is positive?",q:"Which expression has a positive quotient?",o:["−40÷(−8)","−40÷8","40÷(−8)","0÷8"],a:0,h:"Look for same nonzero signs.",w:"−40÷(−8) has a positive quotient."},
+{l:"Core",b:"Structure",v:"Which is negative?",q:"Which expression has a negative quotient?",o:["−54÷(−6)","54÷6","−54÷6","0÷6"],a:2,h:"Look for different nonzero signs.",w:"−54÷6 is negative."},
+{l:"Core",b:"Inverse Check",v:"−42 ÷ 7 = −6",q:"Which multiplication verifies it?",o:["6×7=−42","−6×7=−42","−6×(−7)=−42","42×7=−6"],a:1,h:"Quotient × divisor should equal dividend.",w:"−6×7=−42 verifies the quotient."},
+{l:"Core",b:"Inverse Check",v:"(−8)(−5)=40",q:"Which quotient does this verify?",o:["40÷5=−8","−40÷(−5)=−8","40÷(−8)=8","40÷(−5)=−8"],a:3,h:"Use product ÷ one factor = the other factor.",w:"40÷(−5)=−8."},
+{l:"Core",b:"Signed Rate",v:"−36 m over 6 min",q:"What is the signed change per minute?",o:["−5 m","+5 m","+6 m","−6 m"],a:3,h:"Compute −36 ÷ 6.",w:"−36÷6=−6 m/min."},
+{l:"Core",b:"Finance Rate",v:"−$84 over 7 days",q:"What is the average signed change per day?",o:["−$7","−$12","+$7","+$12"],a:1,h:"Compute −84 ÷ 7.",w:"−84÷7=−12 dollars per day."},
+{l:"Core",b:"Scoring Rate",v:"+45 points over 5 rounds",q:"What is the average signed change per round?",o:["−9","5","9","40"],a:2,h:"Compute 45 ÷ 5.",w:"+45÷5=+9."},
+{l:"Core",b:"Error Analysis",v:"−32÷(−4)=−8 ?",q:"What is the correction?",o:["Two negatives give a positive quotient, so the answer is 8.","The student is correct.","The answer must be zero.","Division of negatives is undefined."],a:0,h:"Check the sign rule.",w:"Same negative signs give +8."},
+{l:"Core",b:"Reasoning",v:"Why is 8÷0 undefined?",q:"Which explanation is correct?",o:["Because 8 is positive.","Because no number multiplied by 0 equals 8.","Because zero is negative.","Because all division involving zero is undefined."],a:1,h:"Use the inverse multiplication check.",w:"No quotient q can satisfy q×0=8."},
+{l:"Core",b:"Absolute Value Expression",v:"−|24| ÷ 6",q:"What is the value?",o:["−4","−3","3","4"],a:0,h:"Evaluate |24| first.",w:"−|24|÷6=−24÷6=−4."},
+
+{l:"Extended",b:"Solve for x",v:"(−6)x=42",q:"What is x?",o:["−6","6","7","−7"],a:3,h:"Divide both sides by −6.",w:"x=42÷(−6)=−7."},
+{l:"Extended",b:"Model Selection",v:"−96 split into 12 equal changes",q:"Which expression and result are correct?",o:["−96÷(−12)=−8","96÷12=−8","−96÷12=−8","−96÷0=−8"],a:2,h:"A negative total over 12 positive intervals gives a negative rate.",w:"−96÷12=−8."},
+{l:"Extended",b:"Zero Logic",v:"0 ÷ x = 0",q:"For which integer x is this valid?",o:["Only x=0","Any nonzero integer x","Only positive x","No integer x"],a:1,h:"Zero may be divided by any nonzero integer.",w:"0÷x=0 for every nonzero integer x."},
+{l:"Extended",b:"Inverse Structure",v:"q = −72 ÷ (−9)",q:"Which check must be true?",o:["q×(−9)=−72","q×9=−72","q×0=−72","q+(−9)=−72"],a:0,h:"Use quotient × divisor = dividend.",w:"q×(−9)=−72."},
+{l:"Extended",b:"Sign Reasoning",v:"positive dividend ÷ negative divisor",q:"What sign must a nonzero quotient have?",o:["Positive","Negative","Zero","Undefined"],a:1,h:"The signs differ.",w:"Different nonzero signs give a negative quotient."},
+{l:"Extended",b:"Signed Rate",v:"+84 change over −7 signed intervals",q:"What is the quotient?",o:["−12","+12","−91","+91"],a:0,h:"Different signs give a negative quotient; 84÷7=12.",w:"+84÷(−7)=−12."},
+{l:"Extended",b:"Reasoning",v:"Why do multiplication and division share sign rules?",q:"Which explanation is strongest?",o:["Because division is the inverse of multiplication.","Because all operations use identical rules.","Because negative numbers disappear in division.","Because quotients are always positive."],a:0,h:"Think about checking a quotient by multiplying.",w:"Division reverses multiplication, so its sign rules must be consistent with multiplication."},
+{l:"Extended",b:"Multi-Step",v:"−|54| ÷ (−6)",q:"What is the value?",o:["−9","9","−48","48"],a:1,h:"Evaluate absolute value first, then divide.",w:"−|54|=−54, and −54÷(−6)=9."}
+];
+
+const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
+const BEST="khaemenes-prealgebra-u02-l07-quotient-check-v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
+function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
+function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function start(src=null){deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
+function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;el.strategy.textContent=c.b.includes("Zero")?"Use the multiplication inverse check to decide whether a quotient can exist.":c.b.includes("Rate")||c.b.includes("Model")?"Divide the signed total by the number of equal intervals or groups.":c.b.includes("Inverse")?"Check quotient × divisor = dividend.":"Choose the sign first, then divide the magnitudes.";feedback("","Mission ready.","Choose the sign first, then divide the magnitudes.");stats()}
+function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by quotient and inverse reasoning.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Quotient verified.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
+function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
+function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(e){return null}}
+function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
+function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(BEST,String(p))}catch(e){}updateBest()}
+function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Quotient Check mastery passed":"Run the inverse check again";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} Lesson 7 division missions correctly and met the 80% mastery target. Return to Lesson 7 for practice and reflection.`:`You solved ${correct} of ${attempts} missions correctly. Review quotient signs, inverse checks, signed rates, and division-by-zero reasoning, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
+el.tabs.forEach((b,i)=>b.onclick=()=>{el.tabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));el.scenes.forEach((s,j)=>s.classList.toggle("active",j===i))});
+const later=(f,m)=>setTimeout(f,m);
+$("playSignDemo").onclick=()=>{["sg1","sg2","sg3","sg4"].forEach(id=>$(id).classList.remove("on"));["sg1","sg2","sg3","sg4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*320))};
+$("playInverseDemo").onclick=()=>{["i1","i2","i3","i4"].forEach(id=>$(id).classList.remove("on"));["i1","i2","i3","i4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*360))};
+$("playZeroDemo").onclick=()=>{["z1","z2","z3","z4"].forEach(id=>$(id).classList.remove("on"));["z1","z2","z3","z4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*360))};
+$("playRateDemo").onclick=()=>{["r1","r2","r3","r4"].forEach(id=>$(id).classList.remove("on"));["r1","r2","r3","r4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*360))};
+document.addEventListener("keydown",e=>{if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName))return;if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();feedback("","Reasoning hint",deck[index].h)}});
+updateBest();start();
+})();
+</script>
+</body></html>
