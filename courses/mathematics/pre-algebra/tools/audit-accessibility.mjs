@@ -14,25 +14,26 @@ function fail(file,message){failures.push(`${label(file)}: ${message}`);}
 
 for(const file of walk(courseRoot).filter(item=>item.endsWith(".html"))){
   const source=fs.readFileSync(file,"utf8");
+  const staticSource=source.replace(/<!--[\s\S]*?-->/g,"");
   stats.pages++;
-  if(!/<html\b[^>]*\blang=["'][^"']+["']/i.test(source))fail(file,"missing document language");
-  if(!/<title>\s*[^<]+\s*<\/title>/i.test(source))fail(file,"missing page title");
-  if(!/<meta\b[^>]*name=["']viewport["']/i.test(source))fail(file,"missing responsive viewport");
-  if(!/<main\b/i.test(source))fail(file,"missing main landmark");
-  const ids=[...source.matchAll(/\bid=["']([^"'${}]+)["']/gi)].map(match=>match[1]);
+  if(!/<html\b[^>]*\blang=["'][^"']+["']/i.test(staticSource))fail(file,"missing document language");
+  if(!/<title>\s*[^<]+\s*<\/title>/i.test(staticSource))fail(file,"missing page title");
+  if(!/<meta\b[^>]*name=["']viewport["']/i.test(staticSource))fail(file,"missing responsive viewport");
+  if(!/<main\b/i.test(staticSource))fail(file,"missing main landmark");
+  const ids=[...staticSource.matchAll(/\bid=["']([^"'${}]+)["']/gi)].map(match=>match[1]);
   const duplicates=[...new Set(ids.filter((id,index)=>ids.indexOf(id)!==index))];
   if(duplicates.length)fail(file,`duplicate static IDs: ${duplicates.join(", ")}`);
-  for(const image of source.matchAll(/<img\b[^>]*>/gi)){
+  for(const image of staticSource.matchAll(/<img\b[^>]*>/gi)){
     stats.images++;
     if(!/\balt\s*=/i.test(image[0]))fail(file,"image missing alt attribute");
   }
-  for(const form of source.matchAll(/<form\b[\s\S]*?<\/form>/gi)){
+  for(const form of staticSource.matchAll(/<form\b[\s\S]*?<\/form>/gi)){
     stats.forms++;
     for(const button of form[0].matchAll(/<button\b[^>]*>/gi))if(!/\btype\s*=/i.test(button[0])&&!button[0].includes("${"))fail(file,"button inside form missing explicit type");
   }
   if(file.includes(`${path.sep}worksheets${path.sep}`)&&path.basename(file)!=="index.html"){
     stats.worksheets++;
-    if(!/@media\s+print/i.test(source))fail(file,"printable resource missing print stylesheet");
+    if(!/@media\s+print/i.test(staticSource))fail(file,"printable resource missing print stylesheet");
   }
 }
 

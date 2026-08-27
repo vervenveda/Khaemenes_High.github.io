@@ -12,7 +12,7 @@
     "big_ideas": [
       "An integer's sign communicates direction or position relative to a reference point.",
       "Opposites have equal absolute value because they are equally distant from zero.",
-      "Integer operations can be justified with number lines, zero pairs, patterns, and context.",
+      "Integer operations can be justified with number lines, zero pairs, patterns, inverse relationships, and context.",
       "Subtraction can be understood as adding the opposite.",
       "Coordinates and signed change connect integer reasoning to graphs, finance, science, weather, and movement."
     ],
@@ -121,6 +121,7 @@
         "difference",
         "additive-inverse",
         "opposites",
+        "subtraction",
         "signed-change",
         "distance"
       ],
@@ -129,20 +130,26 @@
     {
       "id": "l06",
       "number": 6,
-      "title": "Multiplying Integers",
-      "duration": "55–70 minutes",
+      "title": "Multiplying & Dividing Integers",
+      "duration": "60–75 minutes",
       "objectives": [
-        "Multiply integers accurately using sign rules.",
-        "Explain multiplication sign rules using patterns and repeated signed change.",
-        "Use zero, one, and negative one structurally.",
-        "Solve contextual problems involving repeated gains, losses, and rates."
+        "Multiply integers with like and unlike signs accurately.",
+        "Divide integers with like and unlike signs accurately.",
+        "Explain the sign rules using patterns, repeated signed change, and inverse relationships.",
+        "Use zero, one, and negative one structurally when multiplying or dividing signed values.",
+        "Evaluate mixed integer expressions involving absolute value, multiplication, and division.",
+        "Solve and verify real-world problems involving repeated signed rates and equal sharing."
       ],
       "vocab_ids": [
+        "integer",
+        "positive-integer",
+        "negative-integer",
+        "absolute-value",
         "product",
         "quotient",
-        "magnitude",
-        "signed-change",
-        "net-change"
+        "factor",
+        "multiplication",
+        "division"
       ],
       "file": "lessons/lesson-06-multiply-divide-integers.html"
     },
@@ -152,22 +159,25 @@
       "title": "Dividing Integers",
       "duration": "55–70 minutes",
       "objectives": [
-        "Divide integers accurately using sign rules.",
-        "Use multiplication as an inverse check for integer division.",
-        "Explain why division by zero is undefined.",
-        "Solve contextual problems involving signed rates and equal sharing."
+        "Divide integers with like and unlike signs accurately.",
+        "Explain quotient signs by connecting division to multiplication.",
+        "Verify each integer quotient with the inverse relationship: quotient × divisor = dividend.",
+        "Distinguish zero divided by a nonzero integer from division by zero.",
+        "Evaluate signed division expressions involving absolute value, negatives outside grouping symbols, and simple equations.",
+        "Model real-world signed rates, equal intervals, equal groups, money changes, temperature changes, and elevation changes with integer division."
       ],
       "vocab_ids": [
-        "coordinate-plane",
-        "x-axis",
-        "y-axis",
-        "quadrant",
-        "ordered-pair",
-        "origin",
-        "signed-change",
-        "distance"
+        "integer",
+        "positive-integer",
+        "negative-integer",
+        "absolute-value",
+        "quotient",
+        "dividend",
+        "divisor",
+        "division"
       ],
-      "file": "lessons/lesson-07-coordinate-plane-signed-change.html"
+      "file": "lessons/lesson-07-coordinate-plane-signed-change.html",
+      "file_note": "Legacy filename retained for compatibility; the live lesson content is Dividing Integers."
     },
     {
       "id": "l08",
@@ -181,10 +191,16 @@
         "Model and solve multi-stage contextual and coordinate problems."
       ],
       "vocab_ids": [
-        "net-change",
-        "balance",
-        "elevation",
+        "coordinate-plane",
+        "x-axis",
+        "y-axis",
+        "quadrant",
+        "ordered-pair",
+        "x-coordinate",
+        "y-coordinate",
+        "origin",
         "signed-change",
+        "net-change",
         "sum",
         "difference",
         "product",
