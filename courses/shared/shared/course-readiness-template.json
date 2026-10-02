@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "template_id": "khaemenes-course-readiness-v1",
+  "scope": "academy-wide",
+  "purpose": "Reusable readiness gateway and conditional Unit 0 refresher architecture for Khaemenes courses.",
+  "principles": [
+    "A diagnostic guides support; it does not label or punish a learner.",
+    "Course completion and next-course readiness are separate records.",
+    "A high overall score must not hide a critical prerequisite gap.",
+    "Students who are ready enter Official Unit 1 without added workload.",
+    "Students who need reinforcement receive a targeted Unit 0 and re-enter the same official curriculum after mastery.",
+    "NAIB receives strand-level evidence, not only a total score."
+  ],
+  "assessment_contract": {
+    "mastery_threshold_percent": 80,
+    "corrections_required_below_mastery": true,
+    "correction_requires_reasoning": true,
+    "stable_question_ids": true,
+    "attempt_record": ["assessment_id", "assessment_version", "timestamp", "attempt_number", "raw_score", "percent", "strand_scores", "correction_status"],
+    "navigation": ["question navigator", "previous", "next", "submit"],
+    "accessibility": ["keyboard usable", "responsive", "high contrast", "clear focus states", "printable"],
+    "feedback": "Do not reveal correct answers before submission.",
+    "reporting": ["overall score", "strand scores", "strengths", "refresh priorities", "routing recommendation"],
+    "style": {
+      "heading": "Cinzel",
+      "body": "Brandon Grotesque or academy fallback stack",
+      "controls": "balanced symmetrical rectangular buttons",
+      "layout": "centered, spacious, uncluttered",
+      "themes": ["dark", "light"]
+    }
+  },
+  "routing_contract": {
+    "ready_route": "Official Unit 1",
+    "supported_route": "Unit 0 Foundations & Readiness",
+    "overall_ready_percent": 80,
+    "essential_strands_must_be_ready": true,
+    "unit_0_exit_percent": 80,
+    "unit_0_exit_requires_corrections": true,
+    "unit_0_completion_routes_to": "Official Unit 1"
+  },
+  "unit_0_contract": {
+    "conditional": true,
+    "recommended_lessons": 6,
+    "recommended_duration_weeks": 6,
+    "course_duration_standard_weeks": 36,
+    "course_duration_supported_weeks": 42,
+    "lesson_pattern": ["diagnostic connection", "teach/reteach", "guided practice", "independent practice", "application", "mastery evidence"],
+    "adaptive_behavior": "Strong prerequisite strands may use confirmation challenges while weak strands receive full refresher instruction."
+  },
+  "naib_profile_contract": {
+    "profile_types": ["course_mastery", "retention", "refresh", "readiness"],
+    "required_fields": ["course_id", "assessment_id", "overall_percent", "strand_scores", "strengths", "refresh_priorities", "route", "attempt", "timestamp"],
+    "routes": ["advance", "advance_with_targeted_refresh", "unit_0_refresher", "teacher_review"],
+    "rule": "Never erase or downgrade a completed-course record because of a later readiness diagnostic."
+  }
+}
