@@ -18,7 +18,7 @@ COURSE.metadata.passingTarget = MASTER;
 COURSE.metadata.masteryTarget = MASTER;
 COURSE.metadata.masteryPolicy = '80% across all mastery gates';
 
-const LAB_URL = 'https://github.com/vervenveda/proresource_hub.github.io/blob/main/Protools/empire-systems-lab_index.html';
+const LAB_URL = './resources/historical-systems-lab.html';
 const ROADMAP_URL = './systems-lab-roadmap.html';
 
 const stages = [

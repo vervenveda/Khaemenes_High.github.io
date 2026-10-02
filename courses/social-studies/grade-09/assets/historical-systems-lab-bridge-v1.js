@@ -3,7 +3,7 @@
    The lab is used as a model-building instrument; simulation output is not historical proof.
 */
 (function(){'use strict';
-  const LAB_SOURCE='https://github.com/vervenveda/proresource_hub.github.io/blob/main/Protools/empire-systems-lab_index.html';
+  const LAB_SOURCE='./resources/historical-systems-lab.html';
   const stages=[
     {weeks:[1,2],stage:'Observer',focus:'What is a system, variable, model, observation, and limitation?',studentTask:'Observe one variable change. Record prediction, result, and one thing the model cannot establish.',skills:['observation','variable identification','model limits']},
     {weeks:[3,4,5],stage:'Mapper',focus:'How do geography, environment, resources, and settlement interact?',studentTask:'Map a historical system and identify at least two interacting conditions before making a causal claim.',skills:['systems mapping','spatial reasoning','interaction']},
