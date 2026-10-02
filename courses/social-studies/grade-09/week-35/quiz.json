@@ -1,0 +1,149 @@
+{
+  "title": "Week 35 Quiz — Comparative Government, Media Literacy, and Civic Action",
+  "points": 25,
+  "questions": [
+    {
+      "id": "W35Q1",
+      "prompt": "Which term best matches this definition: A foundational set of rules establishing government powers, limits, and relationships.",
+      "choices": [
+        "constitution",
+        "presidential system",
+        "misinformation",
+        "disinformation"
+      ],
+      "answer": 0,
+      "explanation": "Constitution is the course term defined as: A foundational set of rules establishing government powers, limits, and relationships."
+    },
+    {
+      "id": "W35Q2",
+      "prompt": "Which term best matches this definition: The principle that public authority is bound by known and fairly applied law.",
+      "choices": [
+        "parliamentary system",
+        "rule of law",
+        "constitution",
+        "misinformation"
+      ],
+      "answer": 1,
+      "explanation": "Rule Of Law is the course term defined as: The principle that public authority is bound by known and fairly applied law."
+    },
+    {
+      "id": "W35Q3",
+      "prompt": "Which term best matches this definition: A system in which the executive emerges from and remains accountable to the legislature.",
+      "choices": [
+        "disinformation",
+        "rule of law",
+        "parliamentary system",
+        "constitution"
+      ],
+      "answer": 2,
+      "explanation": "Parliamentary System is the course term defined as: A system in which the executive emerges from and remains accountable to the legislature."
+    },
+    {
+      "id": "W35Q4",
+      "prompt": "Which term best matches this definition: A system with a separately elected executive serving a fixed term.",
+      "choices": [
+        "parliamentary system",
+        "constitution",
+        "misinformation",
+        "presidential system"
+      ],
+      "answer": 3,
+      "explanation": "Presidential System is the course term defined as: A system with a separately elected executive serving a fixed term."
+    },
+    {
+      "id": "W35Q5",
+      "prompt": "Which term best matches this definition: False or inaccurate information shared without necessarily intending harm.",
+      "choices": [
+        "misinformation",
+        "disinformation",
+        "constitution",
+        "presidential system"
+      ],
+      "answer": 0,
+      "explanation": "Misinformation is the course term defined as: False or inaccurate information shared without necessarily intending harm."
+    },
+    {
+      "id": "W35Q6",
+      "prompt": "Two democracies have similar constitutions, but one has weaker accountability and less access to reliable information. What does this comparison suggest?",
+      "choices": [
+        "Constitutional text alone guarantees democratic performance.",
+        "Democratic performance depends on formal rules plus norms, institutions, participation, accountability, and information access.",
+        "Institutional design never matters.",
+        "Only election turnout matters."
+      ],
+      "answer": 1,
+      "explanation": "Formal constitutions matter, but democratic practice also depends on institutions, norms, accountability, participation, and information.",
+      "type": "multiple-choice"
+    },
+    {
+      "id": "W35Q7",
+      "prompt": "A viral post cites an unfamiliar website for a dramatic political claim. What is the strongest first verification move?",
+      "choices": [
+        "Share it quickly before it disappears.",
+        "Judge credibility from the page design.",
+        "Open new tabs, trace the claim to its original source, and compare independent credible reporting or records.",
+        "Count how many comments agree with it."
+      ],
+      "answer": 2,
+      "explanation": "Lateral reading and source tracing test a claim outside the page that is making it.",
+      "type": "multiple-choice"
+    },
+    {
+      "id": "W35Q8",
+      "prompt": "What is a useful comparison between parliamentary and presidential systems?",
+      "choices": [
+        "Which system has the better national character.",
+        "Which system uses more political vocabulary.",
+        "Whether either system can have courts.",
+        "How executives are selected and removed, how they relate to legislatures, and what checks structure authority."
+      ],
+      "answer": 3,
+      "explanation": "Comparative government focuses on institutional relationships and accountability rather than cultural stereotypes.",
+      "type": "multiple-choice"
+    },
+    {
+      "id": "W35Q9",
+      "prompt": "A turnout table lists registered voters, ballots cast, and percentages. What check prevents a misleading comparison between districts?",
+      "choices": [
+        "Verify the denominator and distinguish totals from percentages before interpreting turnout.",
+        "Compare only raw ballot totals regardless of district size.",
+        "Assume the largest district has the highest turnout rate.",
+        "Ignore missing or invalid ballots."
+      ],
+      "answer": 0,
+      "explanation": "Percentages depend on denominators; raw totals and rates answer different questions.",
+      "type": "multiple-choice"
+    },
+    {
+      "id": "W35Q10",
+      "prompt": "A student proposes a civic action on a local issue. Which plan is most responsible?",
+      "choices": [
+        "Target whichever official is most famous even if that office lacks authority.",
+        "Identify the responsible jurisdiction, affected stakeholders, credible evidence, lawful action, tradeoffs, and a way to measure results.",
+        "Use an unverified viral claim because it creates urgency.",
+        "Avoid considering people who disagree with the proposal."
+      ],
+      "answer": 1,
+      "explanation": "Responsible civic action connects evidence to the correct authority and considers stakeholders, legality, tradeoffs, and measurable outcomes.",
+      "type": "multiple-choice"
+    }
+  ],
+  "shortResponse": {
+    "prompt": "Using at least two specific pieces of evidence, answer: How can citizens evaluate institutions and information well enough to act responsibly?",
+    "points": 5,
+    "exemplar": "A full-credit response states a defensible answer to the essential question, uses two accurate details from the week, explains how each detail supports the claim, and acknowledges one complexity or limitation."
+  },
+  "masteryThreshold": 80,
+  "questionIds": [
+    "W35Q1",
+    "W35Q2",
+    "W35Q3",
+    "W35Q4",
+    "W35Q5",
+    "W35Q6",
+    "W35Q7",
+    "W35Q8",
+    "W35Q9",
+    "W35Q10"
+  ]
+}
