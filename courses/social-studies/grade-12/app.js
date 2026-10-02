@@ -171,7 +171,7 @@ function capstoneHTML(){
  <section class="card col8"><h3>Ten Enforced Checkpoints</h3>${COURSE.capstoneCheckpoints.map(c=>`<div class="checkpoint"><strong>Week ${c.week} · ${esc(c.title)}</strong><p>${esc(c.requirement)}</p><p>${s?.capstone?.[c.id]?.approved?'<span class="statusPass">Approved</span>':'<span class="statusFail">Not yet approved</span>'}</p></div>`).join('')}</section>
  <section class="card col4"><h3>Thesis Requirements</h3><ul><li>4,000–5,000 words</li><li>Student-generated question</li><li>Ethical methodology</li><li>Primary and credible secondary evidence</li><li>Competing explanations</li><li>Findings and limitations</li><li>Standard citations</li><li>AI-assistance disclosure</li><li>Public communication product</li><li>Oral defense</li></ul>
  <a class="button" href="docs/CAPSTONE_RESEARCH_HANDBOOK.md">Research Handbook</a><a class="button secondary" href="resources/capstone-planner.html">Capstone Planner</a></section>
- <section class="card col12"><h3>Current Thesis Record</h3><p>Submission: ${thesis.submitted?'Submitted':'Not submitted'} · Score: ${Number.isFinite(+thesis.score)?`${+thesis.score}%`:'Not scored'} · Required: 75%</p></section></div>`;
+ <section class="card col12"><h3>Current Thesis Record</h3><p>Submission: ${thesis.submitted?'Submitted':'Not submitted'} · Score: ${Number.isFinite(+thesis.score)?`${+thesis.score}%`:'Not scored'} · Required: 80%</p></section></div>`;
 }
 function graduationHTML(){
  const s=activeStudent(),a=gateAudit(s);

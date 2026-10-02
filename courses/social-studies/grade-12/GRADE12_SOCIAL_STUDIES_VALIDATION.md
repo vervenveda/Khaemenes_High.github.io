@@ -66,13 +66,13 @@ The course requires:
 - all 108 principal assignments;
 - evaluator approval for all 36 weekly portfolios;
 - all 36 quizzes at 80% or higher;
-- at least 70% in each semester;
-- at least 75% overall;
+- at least 80% in each semester;
+- at least 80% overall;
 - every major assessment threshold;
 - all ten capstone checkpoints;
-- 75% or higher on the thesis;
-- 75% or higher on the oral defense;
-- 70% or higher on the cumulative final;
+- 80% or higher on the thesis;
+- 80% or higher on the oral defense;
+- 80% or higher on the cumulative final;
 - integrity and AI-disclosure verification;
 - evaluator verification;
 - explicit final-credit issuance.
