@@ -1,0 +1,1212 @@
+{
+  "schema_version": "1.0",
+  "course": "Integrated Science 9",
+  "purpose": "Machine-auditable map of official daily lessons to existing local investigation tools. Empty tools means no direct local tool is required for that day.",
+  "authority": "course-local",
+  "network_required": false,
+  "lesson_count": 180,
+  "lessons_with_direct_tools": 20,
+  "direct_tool_links": 20,
+  "lessons": [
+    {
+      "lesson_id": "DIAG-D01",
+      "lesson_path": "diagnostic/lessons/day-01.html",
+      "lesson_title": "Science as a Way of Knowing",
+      "tools": []
+    },
+    {
+      "lesson_id": "DIAG-D02",
+      "lesson_path": "diagnostic/lessons/day-02.html",
+      "lesson_title": "Risk, Safety & Ethics",
+      "tools": []
+    },
+    {
+      "lesson_id": "DIAG-D03",
+      "lesson_path": "diagnostic/lessons/day-03.html",
+      "lesson_title": "Measurement & SI Units",
+      "tools": []
+    },
+    {
+      "lesson_id": "DIAG-D04",
+      "lesson_path": "diagnostic/lessons/day-04.html",
+      "lesson_title": "Evidence, Data & Models",
+      "tools": []
+    },
+    {
+      "lesson_id": "DIAG-D05",
+      "lesson_path": "diagnostic/lessons/day-05.html",
+      "lesson_title": "Readiness & Learning Goals",
+      "tools": []
+    },
+    {
+      "lesson_id": "U01-D01",
+      "lesson_path": "units/unit-01/lessons/day-01.html",
+      "lesson_title": "From Phenomena to Questions",
+      "tools": []
+    },
+    {
+      "lesson_id": "U01-D02",
+      "lesson_path": "units/unit-01/lessons/day-02.html",
+      "lesson_title": "Variables & Operational Definitions",
+      "tools": []
+    },
+    {
+      "lesson_id": "U01-D03",
+      "lesson_path": "units/unit-01/lessons/day-03.html",
+      "lesson_title": "Fair Tests, Controls & Sampling",
+      "tools": []
+    },
+    {
+      "lesson_id": "U01-D04",
+      "lesson_path": "units/unit-01/lessons/day-04.html",
+      "lesson_title": "Measurement Quality",
+      "tools": []
+    },
+    {
+      "lesson_id": "U01-D05",
+      "lesson_path": "units/unit-01/lessons/day-05.html",
+      "lesson_title": "Plan the Paper Helicopter",
+      "tools": []
+    },
+    {
+      "lesson_id": "U01-D06",
+      "lesson_path": "units/unit-01/lessons/day-06.html",
+      "lesson_title": "Conduct & Analyze",
+      "tools": []
+    },
+    {
+      "lesson_id": "U01-D07",
+      "lesson_path": "units/unit-01/lessons/day-07.html",
+      "lesson_title": "Tables, Graphs & Scale",
+      "tools": []
+    },
+    {
+      "lesson_id": "U01-D08",
+      "lesson_path": "units/unit-01/lessons/day-08.html",
+      "lesson_title": "Patterns, Uncertainty & Causation",
+      "tools": [
+        {
+          "href": "../dataset-laboratory.html",
+          "target": "units/unit-01/dataset-laboratory.html",
+          "tool_title": "Dataset Laboratory"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U01-D09",
+      "lesson_path": "units/unit-01/lessons/day-09.html",
+      "lesson_title": "Claim, Evidence, Reasoning & Sources",
+      "tools": []
+    },
+    {
+      "lesson_id": "U01-D10",
+      "lesson_path": "units/unit-01/lessons/day-10.html",
+      "lesson_title": "Design Challenge & Mastery",
+      "tools": []
+    },
+    {
+      "lesson_id": "U02-D01",
+      "lesson_path": "units/unit-02/lessons/day-01.html",
+      "lesson_title": "Cell Theory & Evidence",
+      "tools": []
+    },
+    {
+      "lesson_id": "U02-D02",
+      "lesson_path": "units/unit-02/lessons/day-02.html",
+      "lesson_title": "Scale, Units & Microscopes",
+      "tools": []
+    },
+    {
+      "lesson_id": "U02-D03",
+      "lesson_path": "units/unit-02/lessons/day-03.html",
+      "lesson_title": "Prokaryotic Cells: Small Systems, Enormous Diversity",
+      "tools": []
+    },
+    {
+      "lesson_id": "U02-D04",
+      "lesson_path": "units/unit-02/lessons/day-04.html",
+      "lesson_title": "Eukaryotic Cell Systems",
+      "tools": []
+    },
+    {
+      "lesson_id": "U02-D05",
+      "lesson_path": "units/unit-02/lessons/day-05.html",
+      "lesson_title": "Virtual Microscopy Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U02-D06",
+      "lesson_path": "units/unit-02/lessons/day-06.html",
+      "lesson_title": "The Plasma Membrane: Selectivity, Transport & Communication",
+      "tools": []
+    },
+    {
+      "lesson_id": "U02-D07",
+      "lesson_path": "units/unit-02/lessons/day-07.html",
+      "lesson_title": "Diffusion & Concentration Gradients",
+      "tools": []
+    },
+    {
+      "lesson_id": "U02-D08",
+      "lesson_path": "units/unit-02/lessons/day-08.html",
+      "lesson_title": "Osmosis, Tonicity & Cellular Water Balance",
+      "tools": [
+        {
+          "href": "../membrane-transport-lab.html",
+          "target": "units/unit-02/membrane-transport-lab.html",
+          "tool_title": "Membrane Transport Lab"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U02-D09",
+      "lesson_path": "units/unit-02/lessons/day-09.html",
+      "lesson_title": "Active & Bulk Transport",
+      "tools": []
+    },
+    {
+      "lesson_id": "U02-D10",
+      "lesson_path": "units/unit-02/lessons/day-10.html",
+      "lesson_title": "Cell Size, Surface Area & Volume",
+      "tools": [
+        {
+          "href": "../surface-area-volume.html",
+          "target": "units/unit-02/surface-area-volume.html",
+          "tool_title": "Surface Area Volume"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U02-D11",
+      "lesson_path": "units/unit-02/lessons/day-11.html",
+      "lesson_title": "Specialized Cells: Structure, Function & Trade-offs",
+      "tools": []
+    },
+    {
+      "lesson_id": "U02-D12",
+      "lesson_path": "units/unit-02/lessons/day-12.html",
+      "lesson_title": "From Specialized Cells to Tissues, Organs & Systems",
+      "tools": []
+    },
+    {
+      "lesson_id": "U02-D13",
+      "lesson_path": "units/unit-02/lessons/day-13.html",
+      "lesson_title": "Photosynthesis & Cellular Respiration",
+      "tools": []
+    },
+    {
+      "lesson_id": "U02-D14",
+      "lesson_path": "units/unit-02/lessons/day-14.html",
+      "lesson_title": "Models, Images, Scale & Scientific Limitations",
+      "tools": [
+        {
+          "href": "../cell-model-task.html",
+          "target": "units/unit-02/cell-model-task.html",
+          "tool_title": "Cell Model Task"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U02-D15",
+      "lesson_path": "units/unit-02/lessons/day-15.html",
+      "lesson_title": "Cell Biology Synthesis & Mastery",
+      "tools": []
+    },
+    {
+      "lesson_id": "U03-D01",
+      "lesson_path": "units/unit-03/lessons/day-01.html",
+      "lesson_title": "Systems Thinking & Homeostasis",
+      "tools": [
+        {
+          "href": "../homeostasis-simulator.html",
+          "target": "units/unit-03/homeostasis-simulator.html",
+          "tool_title": "Homeostasis Simulator"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U03-D02",
+      "lesson_path": "units/unit-03/lessons/day-02.html",
+      "lesson_title": "Circulation & Transport",
+      "tools": []
+    },
+    {
+      "lesson_id": "U03-D03",
+      "lesson_path": "units/unit-03/lessons/day-03.html",
+      "lesson_title": "The Heart, Vessels & Blood",
+      "tools": []
+    },
+    {
+      "lesson_id": "U03-D04",
+      "lesson_path": "units/unit-03/lessons/day-04.html",
+      "lesson_title": "Gas Exchange & Ventilation",
+      "tools": []
+    },
+    {
+      "lesson_id": "U03-D05",
+      "lesson_path": "units/unit-03/lessons/day-05.html",
+      "lesson_title": "Exercise-Response Evidence",
+      "tools": [
+        {
+          "href": "../exercise-response-lab.html",
+          "target": "units/unit-03/exercise-response-lab.html",
+          "tool_title": "Exercise Response Lab"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U03-D06",
+      "lesson_path": "units/unit-03/lessons/day-06.html",
+      "lesson_title": "Digestion & Absorption",
+      "tools": []
+    },
+    {
+      "lesson_id": "U03-D07",
+      "lesson_path": "units/unit-03/lessons/day-07.html",
+      "lesson_title": "The Liver & Nutrient Regulation",
+      "tools": []
+    },
+    {
+      "lesson_id": "U03-D08",
+      "lesson_path": "units/unit-03/lessons/day-08.html",
+      "lesson_title": "Kidneys, Excretion & Water Balance",
+      "tools": []
+    },
+    {
+      "lesson_id": "U03-D09",
+      "lesson_path": "units/unit-03/lessons/day-09.html",
+      "lesson_title": "Thermoregulation",
+      "tools": [
+        {
+          "href": "../homeostasis-simulator.html",
+          "target": "units/unit-03/homeostasis-simulator.html",
+          "tool_title": "Homeostasis Simulator"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U03-D10",
+      "lesson_path": "units/unit-03/lessons/day-10.html",
+      "lesson_title": "Blood-Glucose Regulation",
+      "tools": []
+    },
+    {
+      "lesson_id": "U03-D11",
+      "lesson_path": "units/unit-03/lessons/day-11.html",
+      "lesson_title": "Nervous Coordination & Reflexes",
+      "tools": []
+    },
+    {
+      "lesson_id": "U03-D12",
+      "lesson_path": "units/unit-03/lessons/day-12.html",
+      "lesson_title": "Endocrine Coordination",
+      "tools": []
+    },
+    {
+      "lesson_id": "U03-D13",
+      "lesson_path": "units/unit-03/lessons/day-13.html",
+      "lesson_title": "Defense, Immunity & Evidence",
+      "tools": []
+    },
+    {
+      "lesson_id": "U03-D14",
+      "lesson_path": "units/unit-03/lessons/day-14.html",
+      "lesson_title": "Integrated Systems Case Study",
+      "tools": []
+    },
+    {
+      "lesson_id": "U03-D15",
+      "lesson_path": "units/unit-03/lessons/day-15.html",
+      "lesson_title": "Synthesis & Mastery",
+      "tools": []
+    },
+    {
+      "lesson_id": "U04-D01",
+      "lesson_path": "units/unit-04/lessons/day-01.html",
+      "lesson_title": "DNA, Genes, Alleles & Chromosomes",
+      "tools": []
+    },
+    {
+      "lesson_id": "U04-D02",
+      "lesson_path": "units/unit-04/lessons/day-02.html",
+      "lesson_title": "The Cell Cycle & DNA Replication",
+      "tools": [
+        {
+          "href": "../cell-cycle-laboratory.html",
+          "target": "units/unit-04/cell-cycle-laboratory.html",
+          "tool_title": "Cell Cycle Laboratory"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U04-D03",
+      "lesson_path": "units/unit-04/lessons/day-03.html",
+      "lesson_title": "Mitosis & Cytokinesis",
+      "tools": []
+    },
+    {
+      "lesson_id": "U04-D04",
+      "lesson_path": "units/unit-04/lessons/day-04.html",
+      "lesson_title": "Growth, Repair & Differentiation",
+      "tools": []
+    },
+    {
+      "lesson_id": "U04-D05",
+      "lesson_path": "units/unit-04/lessons/day-05.html",
+      "lesson_title": "Cell-Cycle Control & Evidence",
+      "tools": []
+    },
+    {
+      "lesson_id": "U04-D06",
+      "lesson_path": "units/unit-04/lessons/day-06.html",
+      "lesson_title": "Asexual Reproduction & Cloning",
+      "tools": []
+    },
+    {
+      "lesson_id": "U04-D07",
+      "lesson_path": "units/unit-04/lessons/day-07.html",
+      "lesson_title": "Sexual Reproduction & Life Cycles",
+      "tools": []
+    },
+    {
+      "lesson_id": "U04-D08",
+      "lesson_path": "units/unit-04/lessons/day-08.html",
+      "lesson_title": "Meiosis I & Homologous Pairs",
+      "tools": [
+        {
+          "href": "../meiosis-laboratory.html",
+          "target": "units/unit-04/meiosis-laboratory.html",
+          "tool_title": "Meiosis Laboratory"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U04-D09",
+      "lesson_path": "units/unit-04/lessons/day-09.html",
+      "lesson_title": "Meiosis II & Gamete Variation",
+      "tools": []
+    },
+    {
+      "lesson_id": "U04-D10",
+      "lesson_path": "units/unit-04/lessons/day-10.html",
+      "lesson_title": "Chromosome Inheritance Laboratory",
+      "tools": [
+        {
+          "href": "../meiosis-laboratory.html",
+          "target": "units/unit-04/meiosis-laboratory.html",
+          "tool_title": "Meiosis Laboratory"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U04-D11",
+      "lesson_path": "units/unit-04/lessons/day-11.html",
+      "lesson_title": "Genotype, Phenotype & Dominance",
+      "tools": []
+    },
+    {
+      "lesson_id": "U04-D12",
+      "lesson_path": "units/unit-04/lessons/day-12.html",
+      "lesson_title": "Punnett Squares & Probability",
+      "tools": [
+        {
+          "href": "../inheritance-probability-lab.html",
+          "target": "units/unit-04/inheritance-probability-lab.html",
+          "tool_title": "Inheritance Probability Lab"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U04-D13",
+      "lesson_path": "units/unit-04/lessons/day-13.html",
+      "lesson_title": "Beyond Simple Dominance",
+      "tools": [
+        {
+          "href": "../variation-data-lab.html",
+          "target": "units/unit-04/variation-data-lab.html",
+          "tool_title": "Variation Data Lab"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U04-D14",
+      "lesson_path": "units/unit-04/lessons/day-14.html",
+      "lesson_title": "Mutation, Technology & Ethics",
+      "tools": []
+    },
+    {
+      "lesson_id": "U04-D15",
+      "lesson_path": "units/unit-04/lessons/day-15.html",
+      "lesson_title": "Synthesis & Mastery",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D01",
+      "lesson_path": "units/unit-05/lessons/day-01.html",
+      "lesson_title": "Ecology Begins with Observation",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D02",
+      "lesson_path": "units/unit-05/lessons/day-02.html",
+      "lesson_title": "Food Chains, Food Webs & Trophic Roles",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D03",
+      "lesson_path": "units/unit-05/lessons/day-03.html",
+      "lesson_title": "Energy Flow, Biomass & Ecological Efficiency",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D04",
+      "lesson_path": "units/unit-05/lessons/day-04.html",
+      "lesson_title": "Matter Cycles Through Ecosystems",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D05",
+      "lesson_path": "units/unit-05/lessons/day-05.html",
+      "lesson_title": "Biodiversity Survey & Evidence",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D06",
+      "lesson_path": "units/unit-05/lessons/day-06.html",
+      "lesson_title": "Population Size, Density & Sampling",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D07",
+      "lesson_path": "units/unit-05/lessons/day-07.html",
+      "lesson_title": "Population Growth, Carrying Capacity & Limits",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D08",
+      "lesson_path": "units/unit-05/lessons/day-08.html",
+      "lesson_title": "Species Interactions & Food-Web Change",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D09",
+      "lesson_path": "units/unit-05/lessons/day-09.html",
+      "lesson_title": "Disturbance, Succession & Resilience",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D10",
+      "lesson_path": "units/unit-05/lessons/day-10.html",
+      "lesson_title": "Biodiversity, Human Impacts & Conservation",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D11",
+      "lesson_path": "units/unit-05/lessons/day-11.html",
+      "lesson_title": "Variation, Natural Selection & Observed Change",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D12",
+      "lesson_path": "units/unit-05/lessons/day-12.html",
+      "lesson_title": "Microevolution, Speciation & Macroevolution",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D13",
+      "lesson_path": "units/unit-05/lessons/day-13.html",
+      "lesson_title": "Fossils, Equids & Historical Reconstruction",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D14",
+      "lesson_path": "units/unit-05/lessons/day-14.html",
+      "lesson_title": "Human Origins, Creation & Worldviews",
+      "tools": []
+    },
+    {
+      "lesson_id": "U05-D15",
+      "lesson_path": "units/unit-05/lessons/day-15.html",
+      "lesson_title": "Evidence Hearing, Stewardship & Mastery",
+      "tools": [
+        {
+          "href": "../food-web-energy-lab.html",
+          "target": "units/unit-05/food-web-energy-lab.html",
+          "tool_title": "Food Web Energy Lab"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U06-D01",
+      "lesson_path": "units/unit-06/lessons/day-01.html",
+      "lesson_title": "Matter, Elements & the Atomic Scale",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D02",
+      "lesson_path": "units/unit-06/lessons/day-02.html",
+      "lesson_title": "How Atomic Models Changed",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D03",
+      "lesson_path": "units/unit-06/lessons/day-03.html",
+      "lesson_title": "Protons, Neutrons & Electrons",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D04",
+      "lesson_path": "units/unit-06/lessons/day-04.html",
+      "lesson_title": "Atomic Number, Mass Number & Charge",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D05",
+      "lesson_path": "units/unit-06/lessons/day-05.html",
+      "lesson_title": "Atomic Composition Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D06",
+      "lesson_path": "units/unit-06/lessons/day-06.html",
+      "lesson_title": "Isotopes & Nuclear Notation",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D07",
+      "lesson_path": "units/unit-06/lessons/day-07.html",
+      "lesson_title": "Relative Atomic Mass & Abundance",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D08",
+      "lesson_path": "units/unit-06/lessons/day-08.html",
+      "lesson_title": "Electron Energy Levels & Spectral Evidence",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D09",
+      "lesson_path": "units/unit-06/lessons/day-09.html",
+      "lesson_title": "Electron Configurations for Elements 1\u201320",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D10",
+      "lesson_path": "units/unit-06/lessons/day-10.html",
+      "lesson_title": "Valence Electrons & Ion Formation",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D11",
+      "lesson_path": "units/unit-06/lessons/day-11.html",
+      "lesson_title": "The Periodic Table as a Model",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D12",
+      "lesson_path": "units/unit-06/lessons/day-12.html",
+      "lesson_title": "Metals, Nonmetals & Metalloids",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D13",
+      "lesson_path": "units/unit-06/lessons/day-13.html",
+      "lesson_title": "Group Trends: Alkali Metals, Halogens & Noble Gases",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D14",
+      "lesson_path": "units/unit-06/lessons/day-14.html",
+      "lesson_title": "Periodic Patterns Data Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U06-D15",
+      "lesson_path": "units/unit-06/lessons/day-15.html",
+      "lesson_title": "Atomic Evidence Synthesis & Mastery",
+      "tools": [
+        {
+          "href": "../atomic-composition-lab.html",
+          "target": "units/unit-06/atomic-composition-lab.html",
+          "tool_title": "Atomic Composition Lab"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U07-D01",
+      "lesson_path": "units/unit-07/lessons/day-01.html",
+      "lesson_title": "Why Atoms Bond: Energy, Attraction & Models",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D02",
+      "lesson_path": "units/unit-07/lessons/day-02.html",
+      "lesson_title": "Ions, Ionic Bonding & Lattices",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D03",
+      "lesson_path": "units/unit-07/lessons/day-03.html",
+      "lesson_title": "Ionic Formulae & Charge Balance",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D04",
+      "lesson_path": "units/unit-07/lessons/day-04.html",
+      "lesson_title": "Covalent Bonds & Molecular Models",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D05",
+      "lesson_path": "units/unit-07/lessons/day-05.html",
+      "lesson_title": "Bond Polarity & Molecular Properties",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D06",
+      "lesson_path": "units/unit-07/lessons/day-06.html",
+      "lesson_title": "Giant Covalent & Metallic Structures",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D07",
+      "lesson_path": "units/unit-07/lessons/day-07.html",
+      "lesson_title": "Formulae, Names & Relative Formula Mass",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D08",
+      "lesson_path": "units/unit-07/lessons/day-08.html",
+      "lesson_title": "Word Equations, Symbol Equations & State Symbols",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D09",
+      "lesson_path": "units/unit-07/lessons/day-09.html",
+      "lesson_title": "Balancing Equations & Conservation of Atoms",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D10",
+      "lesson_path": "units/unit-07/lessons/day-10.html",
+      "lesson_title": "Evidence of Chemical Change & Reaction Types",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D11",
+      "lesson_path": "units/unit-07/lessons/day-11.html",
+      "lesson_title": "Exothermic & Endothermic Reactions",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D12",
+      "lesson_path": "units/unit-07/lessons/day-12.html",
+      "lesson_title": "Bond Energy, Activation Energy & Catalysts",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D13",
+      "lesson_path": "units/unit-07/lessons/day-13.html",
+      "lesson_title": "Reaction Rates & Collision Theory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D14",
+      "lesson_path": "units/unit-07/lessons/day-14.html",
+      "lesson_title": "Reversible Reactions, Equilibrium & Industrial Tradeoffs",
+      "tools": []
+    },
+    {
+      "lesson_id": "U07-D15",
+      "lesson_path": "units/unit-07/lessons/day-15.html",
+      "lesson_title": "Bonding & Reaction Evidence Synthesis",
+      "tools": [
+        {
+          "href": "../bonding-formula-lab.html",
+          "target": "units/unit-07/bonding-formula-lab.html",
+          "tool_title": "Bonding Formula Lab"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U08-D01",
+      "lesson_path": "units/unit-08/lessons/day-01.html",
+      "lesson_title": "Physical Quantities, SI Units, Scalars & Vectors",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D02",
+      "lesson_path": "units/unit-08/lessons/day-02.html",
+      "lesson_title": "Distance, Displacement, Speed & Velocity",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D03",
+      "lesson_path": "units/unit-08/lessons/day-03.html",
+      "lesson_title": "Position\u2013Time and Distance\u2013Time Graphs",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D04",
+      "lesson_path": "units/unit-08/lessons/day-04.html",
+      "lesson_title": "Speed\u2013Time and Velocity\u2013Time Graphs",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D05",
+      "lesson_path": "units/unit-08/lessons/day-05.html",
+      "lesson_title": "Motion Data Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D06",
+      "lesson_path": "units/unit-08/lessons/day-06.html",
+      "lesson_title": "Forces, Free-Body Diagrams & Net Force",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D07",
+      "lesson_path": "units/unit-08/lessons/day-07.html",
+      "lesson_title": "Newton\u2019s First Law, Inertia & Reference Frames",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D08",
+      "lesson_path": "units/unit-08/lessons/day-08.html",
+      "lesson_title": "Newton\u2019s Second Law: Force, Mass & Acceleration",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D09",
+      "lesson_path": "units/unit-08/lessons/day-09.html",
+      "lesson_title": "Newton\u2019s Third Law & Interaction Pairs",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D10",
+      "lesson_path": "units/unit-08/lessons/day-10.html",
+      "lesson_title": "Momentum, Impulse & Collision Safety",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D11",
+      "lesson_path": "units/unit-08/lessons/day-11.html",
+      "lesson_title": "Work, Energy Stores & Transfer Pathways",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D12",
+      "lesson_path": "units/unit-08/lessons/day-12.html",
+      "lesson_title": "Kinetic & Gravitational Potential Energy",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D13",
+      "lesson_path": "units/unit-08/lessons/day-13.html",
+      "lesson_title": "Energy Conservation, Friction & Efficiency",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D14",
+      "lesson_path": "units/unit-08/lessons/day-14.html",
+      "lesson_title": "Power, Machines & Engineering Tradeoffs",
+      "tools": []
+    },
+    {
+      "lesson_id": "U08-D15",
+      "lesson_path": "units/unit-08/lessons/day-15.html",
+      "lesson_title": "Motion, Forces & Energy Synthesis",
+      "tools": [
+        {
+          "href": "../motion-graph-lab.html",
+          "target": "units/unit-08/motion-graph-lab.html",
+          "tool_title": "Motion Graph Lab"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U09-D01",
+      "lesson_path": "units/unit-09/lessons/day-01.html",
+      "lesson_title": "Charge, Current, Potential Difference & Electrical Energy",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D02",
+      "lesson_path": "units/unit-09/lessons/day-02.html",
+      "lesson_title": "Resistance, Ohm\u2019s Law & I\u2013V Evidence",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D03",
+      "lesson_path": "units/unit-09/lessons/day-03.html",
+      "lesson_title": "Series Circuits: Current, Voltage & Resistance",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D04",
+      "lesson_path": "units/unit-09/lessons/day-04.html",
+      "lesson_title": "Parallel Circuits: Branches, Current & Resistance",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D05",
+      "lesson_path": "units/unit-09/lessons/day-05.html",
+      "lesson_title": "Low-Voltage Circuit Data Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D06",
+      "lesson_path": "units/unit-09/lessons/day-06.html",
+      "lesson_title": "Electrical Power, Energy Use & Efficiency",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D07",
+      "lesson_path": "units/unit-09/lessons/day-07.html",
+      "lesson_title": "Magnetic Fields, Electromagnets & Motors",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D08",
+      "lesson_path": "units/unit-09/lessons/day-08.html",
+      "lesson_title": "Electromagnetic Induction, Generators & Transformers",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D09",
+      "lesson_path": "units/unit-09/lessons/day-09.html",
+      "lesson_title": "Wave Quantities & the Wave Equation",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D10",
+      "lesson_path": "units/unit-09/lessons/day-10.html",
+      "lesson_title": "Reflection, Refraction, Diffraction & Superposition",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D11",
+      "lesson_path": "units/unit-09/lessons/day-11.html",
+      "lesson_title": "Sound: Vibrations, Frequency, Amplitude & Hearing",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D12",
+      "lesson_path": "units/unit-09/lessons/day-12.html",
+      "lesson_title": "Light & the Electromagnetic Spectrum",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D13",
+      "lesson_path": "units/unit-09/lessons/day-13.html",
+      "lesson_title": "Wave and Particle Models of Light",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D14",
+      "lesson_path": "units/unit-09/lessons/day-14.html",
+      "lesson_title": "Analog, Digital Signals, Noise & Information Transfer",
+      "tools": []
+    },
+    {
+      "lesson_id": "U09-D15",
+      "lesson_path": "units/unit-09/lessons/day-15.html",
+      "lesson_title": "Electricity, Waves & Information Synthesis",
+      "tools": [
+        {
+          "href": "../circuit-data-lab.html",
+          "target": "units/unit-09/circuit-data-lab.html",
+          "tool_title": "Circuit Data Lab"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U10-D01",
+      "lesson_path": "units/unit-10/lessons/day-01.html",
+      "lesson_title": "Earth as an Interacting System",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D02",
+      "lesson_path": "units/unit-10/lessons/day-02.html",
+      "lesson_title": "Earth\u2019s Interior: Evidence, Density & Layers",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D03",
+      "lesson_path": "units/unit-10/lessons/day-03.html",
+      "lesson_title": "Thermal Energy, Convection & Plate Motion",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D04",
+      "lesson_path": "units/unit-10/lessons/day-04.html",
+      "lesson_title": "Plate Boundaries, Landforms, Hazards & Feedbacks",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D05",
+      "lesson_path": "units/unit-10/lessons/day-05.html",
+      "lesson_title": "Earth Interior & Plate Evidence Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D06",
+      "lesson_path": "units/unit-10/lessons/day-06.html",
+      "lesson_title": "Minerals, Rocks & the Rock Cycle",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D07",
+      "lesson_path": "units/unit-10/lessons/day-07.html",
+      "lesson_title": "Weathering, Erosion, Deposition & Soils",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D08",
+      "lesson_path": "units/unit-10/lessons/day-08.html",
+      "lesson_title": "Water Cycle, Watersheds & Groundwater",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D09",
+      "lesson_path": "units/unit-10/lessons/day-09.html",
+      "lesson_title": "Watershed & Surface-Change Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D10",
+      "lesson_path": "units/unit-10/lessons/day-10.html",
+      "lesson_title": "Carbon Cycle: Reservoirs, Fluxes & Residence Time",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D11",
+      "lesson_path": "units/unit-10/lessons/day-11.html",
+      "lesson_title": "Nitrogen, Phosphorus & Nutrient Cycling",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D12",
+      "lesson_path": "units/unit-10/lessons/day-12.html",
+      "lesson_title": "Biogeochemical Cycle Modeling Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D13",
+      "lesson_path": "units/unit-10/lessons/day-13.html",
+      "lesson_title": "Atmosphere, Solar Energy & the Greenhouse Effect",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D14",
+      "lesson_path": "units/unit-10/lessons/day-14.html",
+      "lesson_title": "Climate Data, Feedbacks, Human Influence & Resilience",
+      "tools": []
+    },
+    {
+      "lesson_id": "U10-D15",
+      "lesson_path": "units/unit-10/lessons/day-15.html",
+      "lesson_title": "Earth Systems Synthesis",
+      "tools": [
+        {
+          "href": "../earth-interior-plate-lab.html",
+          "target": "units/unit-10/earth-interior-plate-lab.html",
+          "tool_title": "Earth Interior Plate Lab"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U11-D01",
+      "lesson_path": "units/unit-11/lessons/day-01.html",
+      "lesson_title": "Observing the Sky: Frames, Motions & Evidence",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D02",
+      "lesson_path": "units/unit-11/lessons/day-02.html",
+      "lesson_title": "Earth\u2013Moon\u2013Sun Geometry: Day, Year, Seasons & Phases",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D03",
+      "lesson_path": "units/unit-11/lessons/day-03.html",
+      "lesson_title": "Astronomical Scale, Units & Light-Time",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D04",
+      "lesson_path": "units/unit-11/lessons/day-04.html",
+      "lesson_title": "Gravity, Orbits & Conservation",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D05",
+      "lesson_path": "units/unit-11/lessons/day-05.html",
+      "lesson_title": "Solar-System Scale & Orbit Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D06",
+      "lesson_path": "units/unit-11/lessons/day-06.html",
+      "lesson_title": "Solar-System Formation & Planetary Diversity",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D07",
+      "lesson_path": "units/unit-11/lessons/day-07.html",
+      "lesson_title": "The Sun: Structure, Fusion, Radiation & Space Weather",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D08",
+      "lesson_path": "units/unit-11/lessons/day-08.html",
+      "lesson_title": "Light, Spectra & Telescopes",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D09",
+      "lesson_path": "units/unit-11/lessons/day-09.html",
+      "lesson_title": "Stellar Spectra & Light Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D10",
+      "lesson_path": "units/unit-11/lessons/day-10.html",
+      "lesson_title": "Stellar Birth, Stability, Life Cycles & Element Formation",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D11",
+      "lesson_path": "units/unit-11/lessons/day-11.html",
+      "lesson_title": "Exoplanets: Detection, Bias & Habitability Claims",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D12",
+      "lesson_path": "units/unit-11/lessons/day-12.html",
+      "lesson_title": "Exoplanet Transit Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D13",
+      "lesson_path": "units/unit-11/lessons/day-13.html",
+      "lesson_title": "Galaxies, Distance Evidence & Cosmic Structure",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D14",
+      "lesson_path": "units/unit-11/lessons/day-14.html",
+      "lesson_title": "Cosmic Expansion, Big Bang Evidence & Model Limits",
+      "tools": []
+    },
+    {
+      "lesson_id": "U11-D15",
+      "lesson_path": "units/unit-11/lessons/day-15.html",
+      "lesson_title": "Space Systems Synthesis, Exploration & Responsibility",
+      "tools": [
+        {
+          "href": "../solar-system-orbit-lab.html",
+          "target": "units/unit-11/solar-system-orbit-lab.html",
+          "tool_title": "Solar System Orbit Lab"
+        }
+      ]
+    },
+    {
+      "lesson_id": "U12-D01",
+      "lesson_path": "units/unit-12/lessons/day-01.html",
+      "lesson_title": "Engineering for Sustainable Systems",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D02",
+      "lesson_path": "units/unit-12/lessons/day-02.html",
+      "lesson_title": "Problem Definition, Stakeholders & Need Statements",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D03",
+      "lesson_path": "units/unit-12/lessons/day-03.html",
+      "lesson_title": "Criteria, Constraints, Requirements & Tradeoffs",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D04",
+      "lesson_path": "units/unit-12/lessons/day-04.html",
+      "lesson_title": "Research, Baselines, Metrics & Evidence Quality",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D05",
+      "lesson_path": "units/unit-12/lessons/day-05.html",
+      "lesson_title": "Criteria, Constraints & Decision-Matrix Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D06",
+      "lesson_path": "units/unit-12/lessons/day-06.html",
+      "lesson_title": "Generating Concepts, Biomimicry & Systems Thinking",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D07",
+      "lesson_path": "units/unit-12/lessons/day-07.html",
+      "lesson_title": "Materials, Energy, Manufacturing & Circular Design",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D08",
+      "lesson_path": "units/unit-12/lessons/day-08.html",
+      "lesson_title": "Prototypes, Models & Test Plans",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D09",
+      "lesson_path": "units/unit-12/lessons/day-09.html",
+      "lesson_title": "Prototype Testing, Uncertainty & Optimization Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D10",
+      "lesson_path": "units/unit-12/lessons/day-10.html",
+      "lesson_title": "Life-Cycle, Resource & Circularity Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D11",
+      "lesson_path": "units/unit-12/lessons/day-11.html",
+      "lesson_title": "Risk, Failure Modes, Reliability & Resilience",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D12",
+      "lesson_path": "units/unit-12/lessons/day-12.html",
+      "lesson_title": "Risk, Reliability & Resilience Laboratory",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D13",
+      "lesson_path": "units/unit-12/lessons/day-13.html",
+      "lesson_title": "Iteration, Optimization & Evidence-Based Revision",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D14",
+      "lesson_path": "units/unit-12/lessons/day-14.html",
+      "lesson_title": "Ethics, Equity, Accessibility, Governance & Communication",
+      "tools": []
+    },
+    {
+      "lesson_id": "U12-D15",
+      "lesson_path": "units/unit-12/lessons/day-15.html",
+      "lesson_title": "Capstone Integration, Exhibition & Course Completion",
+      "tools": [
+        {
+          "href": "../decision-matrix-lab.html",
+          "target": "units/unit-12/decision-matrix-lab.html",
+          "tool_title": "Decision Matrix Lab"
+        }
+      ]
+    }
+  ]
+}

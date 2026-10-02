@@ -6,7 +6,7 @@
   const ASSESSMENT_VERSION = "2.0";
   const MASTERY = 80;
   const ESSENTIAL_STRANDS = ["Scientific practices", "Measurement", "Data and evidence"];
-  const ESSENTIAL_MIN = 75;
+  const ESSENTIAL_MIN = 80;
 
   const $ = (selector) => document.querySelector(selector);
   const readJSON = (key, fallback) => {
