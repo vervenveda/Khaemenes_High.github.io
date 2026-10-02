@@ -18,6 +18,6 @@ assert.ok(surface.includes("cannot unlock future curriculum"),"mentor surface mu
 assert.ok(surface.includes("reveal locked quiz/test items"),"mentor surface must reject locked assessment disclosure");
 assert.ok(surface.includes("allowLockedAssessmentDisclosure:false"),"transport context must explicitly forbid locked assessment disclosure");
 assert.ok(surface.includes("allowProgressionBypass:false"),"transport context must explicitly forbid progression bypass");
-assert.ok(surface.includes("https://vervenveda.com/assets/vnv-beta-link.js"),"mentor surface must retain canonical Beta doorway");
+assert.ok(surface.includes("/stos/khaemenes/assets/vnv-beta-link.js"),"mentor surface must retain canonical Beta doorway");
 
 console.log("Khaemenes High mentor bridge: PASS");
