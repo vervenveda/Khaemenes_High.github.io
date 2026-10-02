@@ -1,10 +1,11 @@
-<!doctype html>
-<html lang="en" data-theme="dark">
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Khaemenes High International Integrated Science 9 student portal with a 36-week curriculum, phenomenon-based lessons, investigations, data tools, CER writing, assessments, reports, and local records.">
-<meta name="theme-color" content="#07131d">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="Khaemenes High International Integrated Science 9 student portal with a 36-week curriculum, phenomenon-based lessons, investigations, data tools, CER writing, assessments, reports, and local records." name="description"/>
+<meta content="#07131d" name="theme-color"/>
 <title>International Integrated Science 9 — 36 Week Student Portal</title>
 <style>
 :root{
@@ -86,36 +87,36 @@ table{width:100%;border-collapse:collapse}th,td{padding:.7rem;border-bottom:1px 
 <body>
 <div class="app">
 <aside class="sidebar">
- <div class="brand"><div class="seal">S9</div><div><h1>Integrated Science 9</h1><p>36 Week Student Portal</p></div></div>
- <div class="sideBox">
-  <label for="studentSelect">Active student</label><select id="studentSelect"></select>
-  <div class="inline" style="margin-top:8px"><input id="studentName" placeholder="New student name"><button id="addStudentBtn">Add</button></div>
-  <div class="actions"><button class="secondary" id="demoBtn">Add Demo</button><button class="danger" id="deleteStudentBtn">Delete</button></div>
- </div>
- <div class="sideBox"><label for="pathway">Learning pathway</label><select id="pathway"></select><p class="small" id="pathwayMessage"></p></div>
- <div class="sideBox">
-  <button class="navBtn active" data-view="dashboard">Dashboard</button><button class="navBtn" data-view="week">Weekly Lessons</button>
-  <button class="navBtn" data-view="scope">36 Week Scope</button><button class="navBtn" data-view="lab">Science Lab</button>
-  <button class="navBtn" data-view="assessments">Assessments</button><button class="navBtn" data-view="reports">Reports</button>
-  <button class="navBtn" data-view="standards">Course Charter & Mastery</button>
- </div>
- <div class="sideBox"><h3>Weeks</h3><div class="weekList" id="weekList"></div></div>
+<div class="brand"><div class="seal">S9</div><div><h1>Integrated Science 9</h1><p>36 Week Student Portal</p></div></div>
+<div class="sideBox">
+<label for="studentSelect">Active student</label><select id="studentSelect"></select>
+<div class="inline" style="margin-top:8px"><input aria-label="New student name" id="studentName" placeholder="New student name"/><button id="addStudentBtn">Add</button></div>
+<div class="actions"><button class="secondary" id="demoBtn">Add Demo</button><button class="danger" id="deleteStudentBtn">Delete</button></div>
+</div>
+<div class="sideBox"><label for="pathway">Learning pathway</label><select id="pathway"></select><p class="small" id="pathwayMessage"></p></div>
+<div class="sideBox">
+<button class="navBtn active" data-view="dashboard">Dashboard</button><button class="navBtn" data-view="week">Weekly Lessons</button>
+<button class="navBtn" data-view="scope">36 Week Scope</button><button class="navBtn" data-view="lab">Science Lab</button>
+<button class="navBtn" data-view="assessments">Assessments</button><button class="navBtn" data-view="reports">Reports</button>
+<button class="navBtn" data-view="standards">Course Charter &amp; Mastery</button>
+</div>
+<div class="sideBox"><h3>Weeks</h3><div class="weekList" id="weekList"></div></div>
 </aside>
 <main class="main">
- <div class="topline noPrint">
-  <div class="crumbs"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Khaemenes Academy</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/">High School</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/">Integrated Science 9</a><span>›</span><span>Grade 09 Portal</span></div>
-  <button class="secondary" id="themeBtn">Light</button>
- </div>
- <section class="hero">
-  <h2>Integrated Science 9</h2>
-  <p><strong>Life, Matter, Energy and Earth Systems.</strong> This self-contained classroom combines a complete 36-week integrated curriculum, Foundation/Core/Extended pathways, phenomenon-based instruction, safe investigations, data and graph tools, CER writing, generated mastery checks, formal assessment links, reports, and local backups.</p>
-  <p class="small">Student work is stored locally in this browser. Export a backup regularly. Public student navigation does not expose answer keys.</p>
-  <div class="heroLinks noPrint"><a class="button secondary" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/">Complete Course Hall</a><a class="button ghost" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/diagnostic/">Safety & Diagnostic</a><a class="button secondary" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/assessments/">Assessment Center</a></div>
- </section>
- <div class="ticker"><div class="tickerTrack"><span>Observe before interpreting</span><span>Safety before materials and procedures</span><span>Use SI units and record uncertainty</span><span>Distinguish evidence, models, inference and worldview</span><span>Correct work and reassess essential outcomes</span><span>Life · Matter · Energy · Earth Systems · Engineering</span><span>Observe before interpreting</span><span>Safety before materials and procedures</span><span>Use SI units and record uncertainty</span><span>Distinguish evidence, models, inference and worldview</span><span>Correct work and reassess essential outcomes</span><span>Life · Matter · Energy · Earth Systems · Engineering</span></div></div>
- <div class="tabs noPrint"><button class="tab active" data-view="dashboard">Dashboard</button><button class="tab" data-view="week">Lessons</button><button class="tab" data-view="scope">Scope</button><button class="tab" data-view="lab">Lab</button><button class="tab" data-view="assessments">Tests</button><button class="tab" data-view="reports">Reports</button><button class="tab" data-view="standards">Mastery</button></div>
- <section id="content"></section>
- <p class="footer">Khaemenes Academy · Integrated Science 9 · Jennifer Pearl · 2026</p>
+<div class="topline noPrint">
+<div class="crumbs"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Khaemenes Academy</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/">High School</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/">Integrated Science 9</a><span>›</span><span>Grade 09 Portal</span></div>
+<button class="secondary" id="themeBtn">Light</button>
+</div>
+<section class="hero">
+<h2>Integrated Science 9</h2>
+<p><strong>Life, Matter, Energy and Earth Systems.</strong> This self-contained classroom combines a complete 36-week integrated curriculum, Foundation/Core/Extended pathways, phenomenon-based instruction, safe investigations, data and graph tools, CER writing, generated mastery checks, formal assessment links, reports, and local backups.</p>
+<p class="small">Student work is stored locally in this browser. Export a backup regularly. Public student navigation does not expose answer keys.</p>
+<div class="heroLinks noPrint"><a class="button secondary" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/">Complete Course Hall</a><a class="button ghost" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/diagnostic/">Safety &amp; Diagnostic</a><a class="button secondary" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/assessments/">Assessment Center</a></div>
+</section>
+<div class="ticker"><div class="tickerTrack"><span>Observe before interpreting</span><span>Safety before materials and procedures</span><span>Use SI units and record uncertainty</span><span>Distinguish evidence, models, inference and worldview</span><span>Correct work and reassess essential outcomes</span><span>Life · Matter · Energy · Earth Systems · Engineering</span><span>Observe before interpreting</span><span>Safety before materials and procedures</span><span>Use SI units and record uncertainty</span><span>Distinguish evidence, models, inference and worldview</span><span>Correct work and reassess essential outcomes</span><span>Life · Matter · Energy · Earth Systems · Engineering</span></div></div>
+<div class="tabs noPrint"><button class="tab active" data-view="dashboard">Dashboard</button><button class="tab" data-view="week">Lessons</button><button class="tab" data-view="scope">Scope</button><button class="tab" data-view="lab">Lab</button><button class="tab" data-view="assessments">Tests</button><button class="tab" data-view="reports">Reports</button><button class="tab" data-view="standards">Mastery</button></div>
+<section id="content"></section>
+<p class="footer">Khaemenes Academy · Integrated Science 9 · Jennifer Kay Pearl · 2026</p>
 </main>
 </div>
 <script>

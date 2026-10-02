@@ -1,3 +1,4 @@
+// Privacy boundary: shared Mentor/Beta launchers receive sanitized route context only; this loader never reads student names, grades, form values, or localStorage.
 "use strict";
 (() => {
   const MARKER = "/courses/science/integrated-science-9/";
