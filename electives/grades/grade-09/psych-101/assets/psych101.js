@@ -34,6 +34,9 @@
   function cumulativeBest(checkpoint){const key=String(checkpoint).padStart(2,'0');const c=getAssessments().cumulative[key];if(!c)return null;const scores=(c.attempts||[]).map(x=>Number(x.score)).filter(Number.isFinite);return scores.length?Math.max(...scores):null;}
   function isCumulativeMastered(checkpoint){const best=cumulativeBest(checkpoint);return best!==null&&best>=MASTERY;}
 
+  function getWords(){const w=read(KEYS.words,{version:1,studied:{},updatedAt:null});w.studied=w.studied||{};return w;}
+  function setWordStudied(id,studied=true){const w=getWords();w.studied[String(id)]=!!studied;w.updatedAt=now();write(KEYS.words,w);return w.studied[String(id)];}
+
   function getNotebook(){const n=read(KEYS.notebook,{version:1,entries:{},updatedAt:null});n.entries=n.entries||{};return n;}
   function setNotebook(id,value){const n=getNotebook();n.entries[id]=String(value??'');n.updatedAt=now();write(KEYS.notebook,n);}
   function getJournal(){const j=read(KEYS.journal,{version:1,entries:{},updatedAt:null});j.entries=j.entries||{};return j;}
@@ -49,9 +52,9 @@
   function bindDrafts(root=document){root.querySelectorAll('[data-psych-draft]').forEach(el=>{const id=el.getAttribute('data-lesson-id')||document.body.getAttribute('data-lesson-id');const field=el.getAttribute('data-psych-draft');if(!id||!field)return;const saved=getLesson(id).drafts?.[field];if(saved!==undefined&&saved!==null&&!el.value)el.value=saved;el.addEventListener('input',()=>setLessonDraft(id,field,el.value));});}
 
   function bindNotebookJournal(root=document){
-    const lesson=document.body.getAttribute('data-lesson-id');if(!lesson)return;
-    root.querySelectorAll('[data-notebook]').forEach(el=>{const key=el.getAttribute('data-notebook')||lesson;const saved=getNotebook().entries[key];if(saved!==undefined&&!el.value)el.value=saved;el.addEventListener('input',()=>setNotebook(key,el.value));});
-    root.querySelectorAll('[data-journal]').forEach(el=>{const key=el.getAttribute('data-journal')||lesson;const saved=getJournal().entries[key];if(saved!==undefined&&!el.value)el.value=saved;el.addEventListener('input',()=>setJournal(key,el.value));});
+    const lesson=document.body.getAttribute('data-lesson-id')||'';
+    root.querySelectorAll('[data-notebook]').forEach(el=>{const key=el.getAttribute('data-notebook')||lesson;if(!key)return;const saved=getNotebook().entries[key];if(saved!==undefined&&!el.value)el.value=saved;el.addEventListener('input',()=>setNotebook(key,el.value));});
+    root.querySelectorAll('[data-journal]').forEach(el=>{const key=el.getAttribute('data-journal')||lesson;if(!key)return;const saved=getJournal().entries[key];if(saved!==undefined&&!el.value)el.value=saved;el.addEventListener('input',()=>setJournal(key,el.value));});
   }
 
   function bindLessonCompletion(root=document){const id=document.body.getAttribute('data-lesson-id');if(!id)return;const btn=root.querySelector('[data-mark-reviewed]');const status=root.querySelector('[data-review-status]');const render=()=>{const reviewed=!!getLesson(id).reviewed;if(status)status.textContent=reviewed?'Reviewed locally':'Not yet marked reviewed';if(btn)btn.textContent=reviewed?'Reviewed ✓':'Mark lesson reviewed';if(btn)btn.classList.toggle('success',reviewed);};if(btn)btn.addEventListener('click',()=>{markLessonReviewed(id,!getLesson(id).reviewed);render();});render();}
@@ -67,7 +70,7 @@
 
   function announce(message){let el=document.getElementById('psych-live');if(!el){el=document.createElement('div');el.id='psych-live';el.setAttribute('aria-live','polite');el.style.position='absolute';el.style.left='-9999px';document.body.appendChild(el);}el.textContent='';setTimeout(()=>{el.textContent=message;},20);}
 
-  window.Psych101={KEYS,MASTERY,lessonId,getProgress,getLesson,markLessonReviewed,setLessonDraft,recordDailyReview,getAssessments,recordWeeklyScore,weeklyBest,isWeekMastered,recordCumulativeScore,cumulativeBest,isCumulativeMastered,getNotebook,setNotebook,getJournal,setJournal,exportAll,importAll,resetAll,bindDrafts,bindNotebookJournal,bindLessonCompletion,bindDailyReview,announce};
+  window.Psych101={KEYS,MASTERY,lessonId,getWords,setWordStudied,getWords,setWordStudied,getProgress,getLesson,markLessonReviewed,setLessonDraft,recordDailyReview,getAssessments,recordWeeklyScore,weeklyBest,isWeekMastered,recordCumulativeScore,cumulativeBest,isCumulativeMastered,getNotebook,setNotebook,getJournal,setJournal,exportAll,importAll,resetAll,bindDrafts,bindNotebookJournal,bindLessonCompletion,bindDailyReview,announce};
 
   document.addEventListener('DOMContentLoaded',()=>{bindDrafts();bindNotebookJournal();bindLessonCompletion();bindDailyReview();document.querySelectorAll('[data-print]').forEach(b=>b.addEventListener('click',()=>window.print()));document.querySelectorAll('[data-export]').forEach(b=>b.addEventListener('click',exportAll));});
 })();
