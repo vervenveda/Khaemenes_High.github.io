@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Khaemenes High School learner-aware educational mentor surface coordinated through the Academy NAIB mentor contract.">
+<meta name="description" content="Khaemenes High School learner-aware School Principal and Academy Mentor surface, with NAIB Administration routing and Noema backend Chancellor support.">
 <meta name="theme-color" content="#102b43">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://vervenveda.com; style-src 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://vervenveda.com; img-src 'self' data:; connect-src 'self' https://vervenveda.com; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none';">
 <title>Khaemenes High · Mentor</title>
 <style>
 :root{--paper:#f4f0e7;--paper2:#fbf9f4;--ink:#14211c;--soft:#52605a;--forest:#17392f;--deep:#0d261f;--navy:#102b43;--gold:#b48b45;--line:rgba(18,30,25,.16);--formal:Cinzel,"Palatino Linotype",Palatino,Georgia,serif;--body:"Brandon Grotesque","Avenir Next",Avenir,Montserrat,"Segoe UI",Arial,sans-serif}
@@ -24,7 +24,7 @@
 <div class="context" id="context"></div>
 </section>
 <section class="mentor-card" aria-labelledby="mentorName">
-<div class="mentor-head"><div class="avatar" id="avatar" aria-hidden="true">🦉</div><div><h2 id="mentorName">Archaemenes</h2><p id="mentorTitle">Scholar and Educational Mentor of Khaemenes Academy</p></div></div>
+<div class="mentor-head"><div class="avatar" id="avatar" aria-hidden="true">🦉</div><div><h2 id="mentorName">Archaemenes</h2><p id="mentorTitle">Scholar and School Principal · Academy Mentor of Khaemenes Academy</p></div></div>
 <div class="boundary"><strong>Mastery boundary:</strong> formal Khaemenes curriculum advances only after the required scored checkpoint reaches at least 80% mastery. This mentor cannot unlock future curriculum, change grades, reveal locked quiz/test items, or provide protected answer keys.</div>
 </section>
 <section class="chat" aria-label="Mentor conversation">
@@ -38,10 +38,10 @@
 <form class="form" id="form"><textarea id="question" maxlength="1200" aria-label="Ask the mentor" placeholder="Ask about the lesson, concept, evidence, or reasoning you are working on now."></textarea><button class="send" type="submit">Ask Mentor</button></form>
 <p class="status" id="status"></p>
 </section>
-<nav class="links" aria-label="Academy links"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student Portal</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family Profile</a><a href="https://vervenveda.com/beta/">Beta Program</a></nav>
+<nav class="links" aria-label="Academy links"><a href="/stos/khaemenes/student/">Student Portal</a><a href="/stos/khaemenes/family/">Family Profile</a><a href="https://vervenveda.com/beta/">Beta Program</a></nav>
 </main>
-<script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-family-registry.js"></script>
-<script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-naib-mentor-router.js"></script>
+<script src="/stos/khaemenes/assets/khaemenes-family-registry.js"></script>
+<script src="/stos/khaemenes/assets/khaemenes-naib-mentor-router.js"></script>
 <script>
 (()=>{
 "use strict";
@@ -53,7 +53,7 @@ const course=safe(q.get("course")||"",100);
 const learner=window.KhaemenesFamilyRegistry?.getLearner?.()||null;
 const stage=learner?.stage==="high"?"high":"high";
 const assignment=window.KhaemenesNAIB?.assignMentor?.({role:"student",stage,grade:learner?.grade||null,learnerId:learner?.learnerId||null,ageBand:learner?.ageBand||"",interests:learner?.interests||[],surface:source,subject,courseId:course,intent:"academic-support"})||null;
-const mentor=assignment?.mentor||{name:"Archaemenes",title:"Scholar and Educational Mentor of Khaemenes Academy",avatar:"🦉",intro:"I can help you reason through the material one step at a time."};
+const mentor=assignment?.mentor||{name:"Archaemenes",title:"Scholar and School Principal · Academy Mentor of Khaemenes Academy",avatar:"🦉",intro:"I can help you reason through the material one step at a time."};
 const context=document.getElementById("context"),log=document.getElementById("log"),form=document.getElementById("form"),question=document.getElementById("question"),status=document.getElementById("status");
 document.getElementById("mentorName").textContent=mentor.name||"Archaemenes";
 document.getElementById("mentorTitle").textContent=mentor.title||"Khaemenes Academy Mentor";
@@ -68,6 +68,6 @@ async function ask(text){const cleaned=safe(text,1200).trim();if(!cleaned)return
 form.addEventListener("submit",e=>{e.preventDefault();ask(question.value)});document.querySelectorAll(".prompt").forEach(b=>b.addEventListener("click",()=>{question.value=b.textContent;question.focus()}));
 })();
 </script>
-<script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script>
+<script src="/stos/khaemenes/assets/vnv-beta-link.js" defer></script>
 </body>
 </html>

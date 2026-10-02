@@ -6,9 +6,9 @@ required = [
     'Grade 09 Campus',
     'Mathematics Pathway',
     'Mathematics is placement-based.',
-    '/Khaemenes_High.github.io/courses/mathematics/',
-    '/Khaemenes_High.github.io/courses/mathematics/pre-algebra/',
-    '/Khaemenes_High.github.io/courses/mathematics/algebra-1/diagnostic/',
+    '../../courses/mathematics/',
+    '../../courses/mathematics/pre-algebra/',
+    '../../courses/mathematics/algebra-1/diagnostic/',
     'readiness and mastery evidence rather than grade level',
 ]
 for token in required:
