@@ -1,0 +1,74 @@
+{
+  "schema_id": "khaemenes.grade09.placement",
+  "schema_version": "1.0.0",
+  "authority": "STOS",
+  "reference_implementation": "courses/mathematics/pre-algebra",
+  "mastery_threshold_percent": 80,
+  "official_course_duration_weeks": 36,
+  "foundation_duration_weeks": 6,
+  "supported_duration_weeks": 42,
+  "readiness_counts_toward_official_grade": false,
+  "foundation_counts_toward_official_grade": false,
+  "duration_pathways": [
+    "core_36_week",
+    "supported_42_week"
+  ],
+  "record_types": [
+    "readiness",
+    "refresh",
+    "retention",
+    "course_mastery"
+  ],
+  "subjects": {
+    "mathematics": {
+      "course_placement_required": true,
+      "course_options": [
+        "math-prealgebra",
+        "math-algebra1"
+      ],
+      "reference_status": "prealgebra_intact_algebra1_alignment_required",
+      "portal_course_options": [
+        "pre-algebra",
+        "algebra-1"
+      ],
+      "catalog_course_options": [
+        "math-prealgebra",
+        "math-algebra1"
+      ]
+    },
+    "language_arts": {
+      "course_id": "english-9",
+      "reference_status": "foundation_route_required",
+      "portal_course_id": "english-9",
+      "catalog_course_id": "ela-english9"
+    },
+    "science": {
+      "course_id": "integrated-science-9",
+      "reference_status": "implemented_aligned",
+      "portal_course_id": "integrated-science-9",
+      "catalog_course_id": "science-integrated9"
+    },
+    "social_studies": {
+      "course_id": "grade09-global-studies-honors",
+      "reference_status": "implemented_enforced",
+      "portal_course_id": "global-studies-9",
+      "catalog_course_id": "social-world"
+    }
+  },
+  "authoritative_states": [
+    "draft",
+    "submitted",
+    "auto_scored",
+    "awaiting_human_review",
+    "returned_for_correction",
+    "mastered",
+    "finalized",
+    "superseded"
+  ],
+  "override_requirements": [
+    "authorized_actor",
+    "reason",
+    "timestamp",
+    "append_only_audit_event"
+  ]
+}

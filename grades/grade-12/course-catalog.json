@@ -1,0 +1,31 @@
+{
+  "grade": 12,
+  "core": [
+    {
+      "id": "english-12",
+      "path": "../../courses/language-arts/english-12/"
+    },
+    {
+      "id": "physics-engineering-12",
+      "path": "../../courses/science/physics-engineering-12/"
+    },
+    {
+      "id": "social-studies-12",
+      "path": "../../courses/social-studies/grade-12/"
+    }
+  ],
+  "mathematics": {
+    "placementBased": true,
+    "hall": "../../courses/mathematics/",
+    "typical": [
+      "algebra-2",
+      "precalculus-trigonometry",
+      "calculus-1"
+    ]
+  },
+  "capstone": true,
+  "masteryThreshold": 80,
+  "mentorAuthority": "archaemenes",
+  "administration": "NAIB",
+  "backendChancellor": "Noema"
+}

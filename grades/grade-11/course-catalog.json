@@ -1,0 +1,36 @@
+{
+  "grade": 11,
+  "core": [
+    {
+      "id": "english-11",
+      "path": "../../courses/language-arts/english-11/"
+    },
+    {
+      "id": "chemistry-11",
+      "path": "../../courses/science/chemistry-11/"
+    },
+    {
+      "id": "social-studies-11",
+      "path": "../../courses/social-studies/grade-11/"
+    }
+  ],
+  "mathematics": {
+    "placementBased": true,
+    "hall": "../../courses/mathematics/",
+    "typical": [
+      "geometry",
+      "algebra-2",
+      "precalculus-trigonometry"
+    ]
+  },
+  "liveElectives": [
+    {
+      "id": "personal-finance",
+      "path": "../../courses/social-studies/grade-11/personal-finance/"
+    }
+  ],
+  "masteryThreshold": 80,
+  "mentorAuthority": "archaemenes",
+  "administration": "NAIB",
+  "backendChancellor": "Noema"
+}

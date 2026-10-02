@@ -5,6 +5,22 @@ const PIN_KEY="khaemenes-high-pinned-courses-v2";
 const PREALGEBRA_CONTINUE_KEY="khaemenes-grade09-last-open-v1";
 const LAST_LAUNCH_KEY="khaemenes-grade09-course-launches-v1";
 
+function repositoryBasePath(){
+  const path=String(location.pathname||"/").replace(/\/{2,}/g,"/");
+  const marker="/grades/grade-09";
+  const at=path.indexOf(marker);
+  return at>=0 ? (path.slice(0,at+1)||"/") : "/";
+}
+const REPO_BASE=repositoryBasePath();
+function repoPath(relative=""){
+  return `${REPO_BASE}${String(relative).replace(/^\/+/,"")}`;
+}
+function normalizeLegacyRoute(value){
+  if(typeof value!=="string")return value;
+  const old="/Khaemenes_High.github.io/";
+  return value.startsWith(old)?repoPath(value.slice(old.length)):value;
+}
+
 const COURSES=Object.freeze([
   Object.freeze({
     id:"pre-algebra",
@@ -12,9 +28,9 @@ const COURSES=Object.freeze([
     subject:"Mathematics",
     short:"Math",
     className:"math",
-    home:"/Khaemenes_High.github.io/courses/mathematics/pre-algebra/",
-    defaultContinue:"/Khaemenes_High.github.io/courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html",
-    prefix:"/Khaemenes_High.github.io/courses/mathematics/pre-algebra/",
+    home:repoPath("courses/mathematics/pre-algebra/"),
+    defaultContinue:repoPath("courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html"),
+    prefix:repoPath("courses/mathematics/pre-algebra/"),
     mentorSubject:"mathematics"
   }),
   Object.freeze({
@@ -23,9 +39,9 @@ const COURSES=Object.freeze([
     subject:"Language Arts",
     short:"English",
     className:"ela",
-    home:"/Khaemenes_High.github.io/courses/language-arts/english-9/",
-    defaultContinue:"/Khaemenes_High.github.io/courses/language-arts/english-9/",
-    prefix:"/Khaemenes_High.github.io/courses/language-arts/english-9/",
+    home:repoPath("courses/language-arts/english-9/"),
+    defaultContinue:repoPath("courses/language-arts/english-9/"),
+    prefix:repoPath("courses/language-arts/english-9/"),
     mentorSubject:"language-arts"
   }),
   Object.freeze({
@@ -34,9 +50,9 @@ const COURSES=Object.freeze([
     subject:"Science",
     short:"Science",
     className:"science",
-    home:"/Khaemenes_High.github.io/courses/science/integrated-science-9/",
-    defaultContinue:"/Khaemenes_High.github.io/courses/science/integrated-science-9/",
-    prefix:"/Khaemenes_High.github.io/courses/science/integrated-science-9/",
+    home:repoPath("courses/science/integrated-science-9/"),
+    defaultContinue:repoPath("courses/science/integrated-science-9/"),
+    prefix:repoPath("courses/science/integrated-science-9/"),
     mentorSubject:"science"
   }),
   Object.freeze({
@@ -45,9 +61,9 @@ const COURSES=Object.freeze([
     subject:"Social Studies",
     short:"Social Studies",
     className:"social",
-    home:"/Khaemenes_High.github.io/courses/social-studies/grade-09/",
-    defaultContinue:"/Khaemenes_High.github.io/courses/social-studies/grade-09/",
-    prefix:"/Khaemenes_High.github.io/courses/social-studies/grade-09/",
+    home:repoPath("courses/social-studies/grade-09/"),
+    defaultContinue:repoPath("courses/social-studies/grade-09/"),
+    prefix:repoPath("courses/social-studies/grade-09/"),
     mentorSubject:"social-studies"
   })
 ]);
@@ -73,7 +89,7 @@ function setPinned(id,shouldPin){
 function togglePinned(id){const next=!isPinned(id);return setPinned(id,next)?next:null}
 
 function safeCourseURL(course,value){
-  return typeof value==="string"&&value.startsWith(course.prefix)?value:course.defaultContinue;
+  const normalized=normalizeLegacyRoute(value);return typeof normalized==="string"&&normalized.startsWith(course.prefix)?normalized:course.defaultContinue;
 }
 function continueFor(id){
   const course=COURSE_MAP.get(id);
@@ -112,7 +128,7 @@ function mentorFor(id,source=location.pathname){
     course:course?.id||"grade-09",
     source
   });
-  return `/Khaemenes_High.github.io/mentor/?${params.toString()}`;
+  return `${repoPath("mentor/")}?${params.toString()}`;
 }
 function getCourse(id){return COURSE_MAP.get(id)||null}
 

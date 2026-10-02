@@ -35,6 +35,11 @@
         "Summer bridge",
         "Returning learners",
         "International placement support"
+      ],
+      "canonical_id": "pre-algebra",
+      "aliases": [
+        "math-prealgebra",
+        "pre-algebra"
       ]
     },
     {
@@ -43,8 +48,14 @@
       "department": "Mathematics",
       "title": "Algebra I",
       "type": "Core",
-      "status": "planned",
-      "summary": "Linear relationships, equations, inequalities, functions, systems, exponents, polynomials, and data modelling."
+      "status": "open",
+      "summary": "Linear relationships, equations, inequalities, functions, systems, exponents, polynomials, and data modelling.",
+      "canonical_id": "algebra-1",
+      "path": "../../courses/mathematics/algebra-1/",
+      "aliases": [
+        "algebra-1",
+        "math-algebra1"
+      ]
     },
     {
       "id": "ela-english9",
@@ -52,8 +63,14 @@
       "department": "Language & Literature",
       "title": "English 9: Literature, Composition & Communication",
       "type": "Core",
-      "status": "planned",
-      "summary": "Reading across world literature, evidence-based writing, grammar, research, speaking, listening, and media literacy."
+      "status": "open",
+      "summary": "Reading across world literature, evidence-based writing, grammar, research, speaking, listening, and media literacy.",
+      "canonical_id": "english-9",
+      "path": "../../courses/language-arts/english-9/",
+      "aliases": [
+        "ela-english9",
+        "english-9"
+      ]
     },
     {
       "id": "science-integrated9",
@@ -69,6 +86,11 @@
         "International and homeschool learners",
         "Foundation, Core, and Extended pathways",
         "Preparation for later Biology, Chemistry, Physics, and Earth Science courses"
+      ],
+      "canonical_id": "integrated-science-9",
+      "aliases": [
+        "integrated-science-9",
+        "science-integrated9"
       ]
     },
     {
@@ -85,10 +107,37 @@
       "id": "social-world",
       "code": "KH-SS-WHG",
       "department": "History & Society",
-      "title": "World History & Geography",
+      "title": "Global Studies Honors",
       "type": "Core",
-      "status": "planned",
-      "summary": "Civilizations, geography, migration, belief, exchange, conflict, governance, primary sources, and historical reasoning."
+      "status": "open",
+      "summary": "Civilizations, geography, migration, belief, exchange, conflict, governance, primary sources, and historical reasoning.",
+      "canonical_id": "global-studies-9",
+      "path": "../../courses/social-studies/grade-09/",
+      "aliases": [
+        "global-studies-9",
+        "social-world"
+      ]
+    },
+    {
+      "id": "psychology-101",
+      "code": "KH-PSY-101",
+      "department": "Behavioral Sciences",
+      "title": "Psychology 101: Introduction to Psychological Science",
+      "type": "Elective",
+      "status": "open",
+      "path": "../../electives/grades/grade-09/psych-101/",
+      "summary": "A 13-week evidence-centered introduction to psychological science, research methods, brain and behavior, cognition, development, social psychology, personality, health, ethics, and responsible interpretation.",
+      "recommended_for": [
+        "Grade 9 elective",
+        "Behavioral science exploration",
+        "Research and evidence practice",
+        "Preparation for later psychology and social science study"
+      ],
+      "canonical_id": "psychology-101",
+      "aliases": [
+        "psychology-101",
+        "psych-101"
+      ]
     },
     {
       "id": "digital-foundations",
@@ -150,5 +199,10 @@
       "path": "https://vervenveda.github.io/proresource_hub.github.io/Protools/Evidence_Citation_Studio/index.html",
       "summary": "Claims, sources, evidence, quotation, provenance, citations, bibliographies, and responsible research practice."
     }
-  ]
+  ],
+  "route_policy": {
+    "repository_relative": true,
+    "stos_ready": true,
+    "note": "Core course paths are repository-relative so the same package can run under STOS, a custom domain, a project path, or local static testing."
+  }
 }

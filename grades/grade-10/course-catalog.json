@@ -1,0 +1,29 @@
+{
+  "grade": 10,
+  "core": [
+    {
+      "id": "english-10",
+      "path": "../../courses/language-arts/english-10/"
+    },
+    {
+      "id": "biology-10",
+      "path": "../../courses/science/biology-10/"
+    },
+    {
+      "id": "social-studies-10",
+      "path": "../../courses/social-studies/grade-10/"
+    }
+  ],
+  "mathematics": {
+    "placementBased": true,
+    "hall": "../../courses/mathematics/",
+    "typical": [
+      "algebra-1",
+      "geometry"
+    ]
+  },
+  "masteryThreshold": 80,
+  "mentorAuthority": "archaemenes",
+  "administration": "NAIB",
+  "backendChancellor": "Noema"
+}
