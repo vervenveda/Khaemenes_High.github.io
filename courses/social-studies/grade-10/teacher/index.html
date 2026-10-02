@@ -1,14 +1,15 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Teacher Portal · Grade 10 U.S. History</title><link rel="stylesheet" href="../styles.css"></head><body><main class="main" style="max-width:1100px;margin:auto">
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Teacher Portal · Grade 10 U.S. History</title><link href="../styles.css" rel="stylesheet"/></head><body><main class="main" style="max-width:1100px;margin:auto">
 <header class="hero"><div class="eyebrow">Khaemenes High · Teacher Resource</div><h1>Grade 10 Teacher Portal</h1><p class="subtitle">United States History Honors</p>
 <div class="heroActions noPrint"><a class="button ghost" href="../index.html">Return to Course</a></div></header>
 <section class="card" id="gate"><h2>Teacher Access</h2><p>This browser-only passcode is a convenience screen, not secure protection. Static GitHub Pages files remain publicly retrievable by anyone who knows their paths.</p>
-<label for="code">Local portal passcode</label><div class="inline"><input id="code" type="password"><button id="enter">Enter</button></div><p class="small">Initial passcode: KHAE10. Change it after opening the portal.</p></section>
-<section id="portal" hidden><div class="grid">
+<label for="code">Local portal passcode</label><div class="inline"><input id="code" type="password"/><button id="enter">Enter</button></div><p class="small">Initial passcode: KHAE10. Change it after opening the portal.</p></section>
+<section hidden="" id="portal"><div class="grid">
 <section class="card col12"><h2>Teacher Resources</h2><div class="actions"><a class="button" href="ANSWER_KEY_INDEX.html">Weekly Answer Keys</a><a class="button secondary" href="MIDTERM_ANSWER_KEY.html">Midterm Key</a><a class="button secondary" href="FINAL_ANSWER_KEY.html">Final Key</a></div></section>
 <section class="card col6"><h3>Planning and Instruction</h3><ul><li><a href="TEACHER_HANDBOOK.md">Teacher Handbook</a></li><li><a href="PACINGS_AND_SUPPORTS.md">Pacing and Supports</a></li><li><a href="RUBRICS.md">Rubrics</a></li><li><a href="pacing-guide.csv">Pacing Guide CSV</a></li></ul></section>
 <section class="card col6"><h3>Records</h3><ul><li><a href="gradebook-template.csv">Gradebook Template</a></li><li><a href="attendance-log.csv">Attendance Log</a></li><li><a href="standards-mastery-template.csv">Standards Mastery Template</a></li></ul></section>
-<section class="card col12"><h3>Change Local Passcode</h3><div class="inline"><input id="newCode" type="password" placeholder="New local passcode"><button id="change">Change</button></div><p id="msg" class="small"></p></section>
+<section class="card col12"><h3>Change Local Passcode</h3><div class="inline"><input aria-label="New local passcode" id="newCode" placeholder="New local passcode" type="password"/><button id="change">Change</button></div><p class="small" id="msg"></p></section>
 </div></section></main>
 <script>
 const KEY='khae_ss10_teacher_code';const current=()=>localStorage.getItem(KEY)||'KHAE10';
