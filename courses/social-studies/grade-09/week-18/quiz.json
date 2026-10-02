@@ -1,0 +1,144 @@
+{
+  "title": "Week 18 Mastery Check — Midterm Readiness & Transfer",
+  "points": 25,
+  "masteryThreshold": 80,
+  "questions": [
+    {
+      "id": "W18Q1",
+      "prompt": "Why should cumulative review begin with retrieval before rereading?",
+      "choices": [
+        "Retrieval guarantees every answer will be correct.",
+        "Rereading is never useful.",
+        "Unaided recall reveals what is durably available and exposes gaps that familiarity during rereading can hide.",
+        "Retrieval eliminates the need for correction."
+      ],
+      "answer": 2,
+      "explanation": "Retrieval functions diagnostically and strengthens access to learned knowledge; later review can then target actual gaps."
+    },
+    {
+      "id": "W18Q2",
+      "prompt": "A student remembers a historical claim but places it in the wrong century and region. How should the error be classified most usefully?",
+      "choices": [
+        "As correct because the claim sounds familiar.",
+        "As an attention error automatically.",
+        "As proof the entire unit must be repeated.",
+        "As a chronology/geography error requiring reconstruction of time-space context, not merely vocabulary review."
+      ],
+      "answer": 3,
+      "explanation": "Error analysis should identify the actual failed component so reteaching is targeted."
+    },
+    {
+      "id": "W18Q3",
+      "prompt": "What makes an unfamiliar stimulus useful on a cumulative history assessment?",
+      "choices": [
+        "It tests whether students can transfer sourcing, contextualization, corroboration, map/data reasoning, and content knowledge to new evidence.",
+        "It tests whether students memorized the exact source previously used.",
+        "It prevents students from using historical knowledge.",
+        "It should contain no provenance or context."
+      ],
+      "answer": 0,
+      "explanation": "Transfer to unfamiliar evidence is stronger evidence of disciplinary understanding than recognition of rehearsed wording."
+    },
+    {
+      "id": "W18Q4",
+      "prompt": "A thematic map shows two developments occurring in connected regions. What is the strongest next step before claiming causation?",
+      "choices": [
+        "Draw a causal arrow because spatial connection proves influence.",
+        "Establish chronology, identify a plausible mechanism, and seek corroborating evidence while stating what the map cannot prove.",
+        "Ignore the map entirely.",
+        "Assume both developments occurred uniformly within each region."
+      ],
+      "answer": 1,
+      "explanation": "Spatial relationship can generate a hypothesis but causation requires mechanism, chronology, and corroboration."
+    },
+    {
+      "id": "W18Q5",
+      "prompt": "Which cumulative comparison is methodologically strongest?",
+      "choices": [
+        "Rank societies by one universal scale.",
+        "Compare only societies from the same continent.",
+        "Apply a consistent analytical question across cases while preserving differences in chronology, ecology, institutions, power, and evidence.",
+        "Treat official political claims as proof of implementation."
+      ],
+      "answer": 2,
+      "explanation": "Consistent categories plus contextual qualification produce defensible comparison without ranking."
+    },
+    {
+      "id": "W18Q6",
+      "prompt": "When building a cross-unit causal chain, what must each arrow represent?",
+      "choices": [
+        "Any two events that happened near each other in time.",
+        "A vocabulary relationship.",
+        "A direct cause proven by a map line.",
+        "A specified mechanism supported by evidence, with uncertainty or alternative explanations noted where appropriate."
+      ],
+      "answer": 3,
+      "explanation": "Causal chains require mechanisms and evidence rather than sequence or visual proximity alone."
+    },
+    {
+      "id": "W18Q7",
+      "prompt": "A DBQ source strongly contradicts the student's thesis. What should the student do?",
+      "choices": [
+        "Source and evaluate it, then refine, qualify, or challenge the thesis and explain the contradiction.",
+        "Exclude it so the essay remains consistent.",
+        "Assume it is inaccurate because it disagrees.",
+        "Quote it without discussing its significance."
+      ],
+      "answer": 0,
+      "explanation": "Contradictory evidence is analytically valuable and should improve rather than disappear from the argument."
+    },
+    {
+      "id": "W18Q8",
+      "prompt": "Which statement best describes cumulative historical mastery?",
+      "choices": [
+        "Recalling isolated definitions without context.",
+        "Integrating chronology, geography, evidence, concepts, and reasoning to explain relationships and transfer methods to unfamiliar problems.",
+        "Memorizing every prior quiz answer.",
+        "Producing one interpretation without acknowledging limits."
+      ],
+      "answer": 1,
+      "explanation": "Durable mastery combines knowledge with disciplinary reasoning and transfer."
+    },
+    {
+      "id": "W18Q9",
+      "prompt": "A student misses a source question because they ignored the creator and audience, although they knew the historical topic. What is the most useful correction?",
+      "choices": [
+        "Copy the correct letter five times.",
+        "Study only vocabulary.",
+        "Classify it as a source-reading error, redo provenance/audience analysis, explain why the original reasoning failed, and apply the method to a new source.",
+        "Change the score without new evidence of learning."
+      ],
+      "answer": 2,
+      "explanation": "Correction should target the failed reasoning process and demonstrate transfer."
+    },
+    {
+      "id": "W18Q10",
+      "prompt": "What should happen when a student scores below the course's 80% mastery threshold?",
+      "choices": [
+        "Move on permanently with no follow-up.",
+        "Repeat the identical test until answers are memorized.",
+        "Replace the assessment with participation points.",
+        "Use error categories to target relearning, require evidence-based corrections and additional practice, then reassess mastery."
+      ],
+      "answer": 3,
+      "explanation": "The mastery gate should trigger targeted relearning and reassessment rather than punishment or answer memorization."
+    }
+  ],
+  "shortResponse": {
+    "prompt": "Using examples from at least three different course units or skill domains, explain how a student can demonstrate durable historical understanding rather than short-term memorization. Include one example of transfer to unfamiliar evidence and one example of how error analysis should change subsequent learning.",
+    "points": 5,
+    "exemplar": "Full-credit work integrates accurate course knowledge with chronology/geography and evidence reasoning, demonstrates transfer to an unfamiliar source/map/data problem, explains a specific error category and targeted correction, and distinguishes durable mastery from recognition or vocabulary recall."
+  },
+  "questionIds": [
+    "W18Q1",
+    "W18Q2",
+    "W18Q3",
+    "W18Q4",
+    "W18Q5",
+    "W18Q6",
+    "W18Q7",
+    "W18Q8",
+    "W18Q9",
+    "W18Q10"
+  ]
+}
