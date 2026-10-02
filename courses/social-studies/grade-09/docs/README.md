@@ -35,4 +35,4 @@ Upload the included `courses/social-studies/` directory into the repository root
 `courses/social-studies/grade-09/index.html`
 
 ## Credits
-Developed for Khaemenes High and Khaemenes Academy by Jennifer Pearl and Autumn Pearl, 2026.
+Developed for Khaemenes High and Khaemenes Academy by Jennifer Kay Pearl, 2026.
