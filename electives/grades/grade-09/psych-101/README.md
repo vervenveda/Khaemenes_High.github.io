@@ -23,28 +23,22 @@ All 13 weeks are **academically audited and LOCKED**:
 
 ## Current Production Status
 
+### Student-facing implementation
+- **65 / 65 student-facing lessons implemented**
+- **13 / 13 weekly mastery assessments implemented**
+- **13 / 13 parallel-form weekly retakes implemented**
+- **3 / 3 cumulative assessments implemented**
+- Research Notebook, Academic Journal, Word Lab, Progress & Recovery Center, and Final Research Brief interfaces implemented
+- local-first export/import recovery implemented
+- three optional non-graded completion challenges implemented
+- complete-course offline cache and honest offline fallback implemented
+
 ### Academic architecture
 - **13 / 13 locked weekly architectures**
 - **65 / 65 daily lesson planning files**
-- **65 / 65 Psychology Word of the Day anchor terms mapped**
-- complete 13-week Research Notebook architecture
-- 3 cumulative-assessment blueprints
+- **65 / 65 Psychology Word of the Day anchors**
 - final Psychology Research Brief + research defense
 - APA 2022 high-school psychology standards alignment
-
-### Student-facing implementation
-- **20 / 65 student-facing lessons implemented**
-- **Weeks 1–4 fully student-ready**
-- **4 / 13 weekly mastery assessments implemented**
-- **4 / 13 parallel-form retake systems implemented**
-- **Cumulative Assessment I implemented** after Week 4
-- shared local-first lesson/progress engine implemented
-- student Lesson Navigator implemented
-- first local optional completion challenge implemented: `Reaction Flash`
-- print support and progress export active in implemented lessons
-
-### Next production batch
-**Week 5 — Memory & Language**
 
 ## Course Identity
 
@@ -169,6 +163,6 @@ See:
 
 **Curriculum architecture: GREEN — COMPLETE.**
 
-**Student-facing production: AMBER — ACTIVE BUILD.**
+**Student-facing production: GREEN — COMPLETE.**
 
-The course becomes production-complete only after all 65 student-facing lessons, 13 weekly assessments and retakes, 3 cumulative assessments, Word Lab, Research Notebook/Journal/Progress interfaces, optional challenge modules, print/export/import recovery, accessibility, navigation, and offline behavior are implemented and audited.
+The Grade 9 Psychology 101 student surface is production-complete and must now remain behind the repository validation gate before release.
