@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#08111f">
+  <meta name="description" content="Grade 9 Global Studies Honors official 36-week course application.">
+  <title>Global Studies Honors · Official Course</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/grade09-entry-gate.js" defer></script>
+  <script src="course-data.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="assets/grade09-integration-loader.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to course content</a>
+  <div class="app">
+    <aside class="sidebar" aria-label="Course navigation">
+      <div class="brand"><div class="seal" aria-hidden="true">IX</div><h2>Global Studies Honors</h2><p>Grade 09 · Official 36-week course</p><div class="breadcrumbs"><a href="index.html">Course Entrance</a><span>›</span><span>Official Course</span></div></div>
+      <section class="panel"><h3>Learner</h3><select id="studentSelect" aria-label="Active learner"></select><div class="inline" style="margin-top:8px"><input id="studentName" maxlength="80" placeholder="Learner name" aria-label="New learner name"><button id="addStudentBtn" type="button">Add</button></div><div class="inline" style="margin-top:8px"><button class="secondary" id="demoBtn" type="button">Demo</button><button class="danger" id="deleteStudentBtn" type="button">Delete</button></div></section>
+      <nav class="panel" aria-label="Course sections"><h3>Course</h3><button class="navBtn active" data-view="dashboard" type="button">Dashboard</button><button class="navBtn" data-view="week" type="button">Official Weeks</button><button class="navBtn" data-view="scope" type="button">Scope</button><button class="navBtn" data-view="exams" type="button">Assessments</button><button class="navBtn" data-view="reports" type="button">Reports</button><button class="navBtn" data-view="standards" type="button">Standards</button></nav>
+      <section class="panel"><h3>Official weeks</h3><div class="weekList" id="weekList"></div></section>
+      <section class="panel"><h3>Display</h3><div class="inline"><button class="secondary" id="fontDown" type="button" aria-label="Decrease text size">A−</button><button class="secondary" id="fontUp" type="button" aria-label="Increase text size">A+</button><button class="secondary" id="themeBtn" type="button">Theme</button></div></section>
+    </aside>
+    <main class="main">
+      <header class="hero"><p class="eyebrow">Khaemenes High · Grade 09</p><h1>Global Studies Honors</h1><p class="subtitle">World History · Geography · Civics · Economics · Media Literacy</p><p>The same 36 official weeks serve both pathways. Foundation work remains separate from the official course grade.</p><div class="heroActions noPrint"><button id="continueBtn" type="button">Continue</button><button class="secondary" id="readCourseBtn" type="button">Read Course Introduction</button><a class="button ghost" href="index.html">Placement &amp; Course Entrance</a></div></header>
+      <nav class="tabs noPrint" aria-label="Course views"><button class="tab active" data-view="dashboard" type="button">Dashboard</button><button class="tab" data-view="week" type="button">Weeks</button><button class="tab" data-view="scope" type="button">Scope</button><button class="tab" data-view="exams" type="button">Assessments</button><button class="tab" data-view="reports" type="button">Reports</button><button class="tab" data-view="standards" type="button">Standards</button></nav>
+      <div id="content" tabindex="-1"></div>
+      <footer class="footer">Jennifer Kay Pearl · Khaemenes High · Grade 9 Global Studies Honors · 2026</footer>
+    </main>
+  </div>
+</body>
+</html>

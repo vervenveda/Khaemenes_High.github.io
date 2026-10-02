@@ -205,6 +205,8 @@ function quizHTML(w,s){
     <div id="quizResult">${saved.completed?`<p class="score">Best objective score: ${saved.bestScore}/20 (${saved.bestPercent}%)</p><p class="small">Attempts: ${saved.attempts||1}</p>`:''}</div>
   </section>`;
 }
+function packetPath(w){return w.week===27?'weeks/week-27/student-packet-v2.html':`weeks/week-${String(w.week).padStart(2,'0')}/student-packet.html`}
+function localLabHTML(w){if(w.week===26)return '<section class="card col12"><h2>Local Industrialization Simulation Lab</h2><p>Run the Academy local growth and supply/demand models, then corroborate model behavior with the historical record. No network connection is required.</p><div class="actions"><a class="button secondary" href="weeks/week-26/simulation-lab.html">Open Local Week 26 Lab</a></div></section>';if(w.week===27)return '<section class="card col12"><h2>Local Economic Reasoning Lab</h2><p>Test controlled market scenarios locally, record distributional effects and limitations, then compare the model with Week 27 historical evidence.</p><div class="actions"><a class="button secondary" href="weeks/week-27/economic-lab.html">Open Local Week 27 Lab</a></div></section>';return ''}
 function weekHTML(w){
   const s=activeStudent();
   const readingText=w.readingSections.map(x=>`${x.heading}. ${x.text}`).join(' ');
@@ -213,7 +215,7 @@ function weekHTML(w){
       <div class="pills"><span class="pill">Week ${w.week}</span><span class="pill">${esc(w.unit)}</span><span class="pill">${esc(w.period)}</span><span class="pill">${esc(w.regions)}</span></div>
       <h2>${esc(w.title)}</h2><div class="notice"><strong>Essential Question:</strong> ${esc(w.essentialQuestion)}</div>
       <div class="actions noPrint"><button id="speakReading">Read Weekly Text</button><button class="secondary" onclick="window.print()">Print Week Packet</button>
-      <a class="button ghost" href="weeks/week-${String(w.week).padStart(2,'0')}/student-packet.html">Open Standalone Packet</a></div>
+      <a class="button ghost" href="${packetPath(w)}">Open Standalone Packet</a></div>
       <p class="small">Standards: ${w.standards.map(x=>esc(x.code)).join(' · ')}</p>
     </section>
     <section class="card col8">
@@ -228,6 +230,7 @@ function weekHTML(w){
       <h3>Optional Resources</h3><ul>${w.resources.map((r,i)=>`<li><a href="${esc(r)}" target="_blank" rel="noopener">Supplemental resource ${i+1}</a></li>`).join('')}</ul>
     </aside>
     <section class="card col12"><h2>Five Daily Lessons</h2>${w.dailyLessons.map((l,i)=>lessonBlock(w,l,i,s)).join('')}</section>
+    ${localLabHTML(w)}
     <section class="card col12"><h2>Three Weekly Assignments</h2>${w.assignments.map(a=>assignmentBlock(w,a,s)).join('')}</section>
     ${quizHTML(w,s)}
     <section class="card col12"><h3>Teacher Notes for Week ${w.week}</h3>

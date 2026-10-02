@@ -77,4 +77,4 @@ Open `teacher/index.html`. Initial local passcode: `KHAE09`. Change it after fir
 Because GitHub Pages is a static host, this passcode is only a convenience layer. It is not secure server authentication, and the site must not contain sensitive student information.
 
 ## Credits
-Developed for Khaemenes High and Khaemenes Academy by Jennifer Pearl and Autumn Pearl, 2026.
+Developed for Khaemenes High and Khaemenes Academy by Jennifer Kay Pearl, 2026.
