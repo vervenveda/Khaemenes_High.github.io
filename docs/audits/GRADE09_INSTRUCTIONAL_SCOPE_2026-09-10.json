@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-10",
+  "source": {
+    "filename": "Khaemenes-High-1789014663854.zip",
+    "sha256": "db5c74abca00245539d287355a5c031b9aff2c16908b8d551650ddff56859577",
+    "authority": "STOS Repository Storage"
+  },
+  "modified_scope": [
+    "courses/language-arts/english-9/",
+    "courses/social-studies/grade-09/",
+    "electives/grades/grade-09/psych-101/",
+    "courses/mathematics/algebra-1/",
+    "courses/science/integrated-science-9/",
+    "docs/audits/"
+  ],
+  "deferred_scope": {
+    "path": "courses/mathematics/pre-algebra/",
+    "reason": "Game/video companion authoring is still in progress; preserve current STOS state byte-for-byte.",
+    "expected_files": 688,
+    "modified_files": 0,
+    "added_files": 0,
+    "deleted_files": 0
+  },
+  "validation_commands": {"passed": 36, "failed": 0}
+}

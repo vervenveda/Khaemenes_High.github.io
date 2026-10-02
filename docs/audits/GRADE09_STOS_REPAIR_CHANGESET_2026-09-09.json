@@ -1,0 +1,1230 @@
+{
+  "schema": "khaemenes-high-stos-forensic-changeset-v1",
+  "date": "2026-09-09",
+  "repairs": 5,
+  "modified_or_added_count": 175,
+  "deleted_count": 0,
+  "changes": [
+    {
+      "path": "courses/language-arts/english-9/404.html",
+      "change": "modified",
+      "bytes": 1708,
+      "old_sha256": "10ba2b2a7714dec784f18360987b1505f8f974e844182378dd2f64531d25072b",
+      "sha256": "c4df47f48a1875a7ae2186e50eb76bfe1a1451ac9a9bd3c842726679121f4971"
+    },
+    {
+      "path": "courses/language-arts/english-9/assessments/diagnostic/index.html",
+      "change": "modified",
+      "bytes": 12941,
+      "old_sha256": "ee2f160fd2b6a3ff1cd693a70c99964ebfbc43317f642e184daba19c7ee0672a",
+      "sha256": "934b4c62254bfca11cb444e91518e96e25ebe391ded0d8539130d1661b449f15"
+    },
+    {
+      "path": "courses/language-arts/english-9/assessments/final/index.html",
+      "change": "modified",
+      "bytes": 16918,
+      "old_sha256": "887c60a7b3c948ca1e37796a500d715c38daa233621ec54c86574aac5990ebc1",
+      "sha256": "3bf31b214398b554f5709b30417d0ef4c5dba8acf969ab6b40f55e63eac9af01"
+    },
+    {
+      "path": "courses/language-arts/english-9/assessments/index.html",
+      "change": "modified",
+      "bytes": 4910,
+      "old_sha256": "a221f5ec63ffd7728b4668435415de6d0f617e6dfc44871a7cc7d6c11f95d43c",
+      "sha256": "d07eea2d7f6dd73ed43a7802f5027df80f48edea5a0b8381d30b1b12e7ba404b"
+    },
+    {
+      "path": "courses/language-arts/english-9/assessments/midterm/index.html",
+      "change": "modified",
+      "bytes": 13764,
+      "old_sha256": "87204d0285a96064f7c75228783f177dba8eef4305ff6ec7198ec4a487270255",
+      "sha256": "339dba6c6f858cf96d552070faed16f95c833362d99922aaac20a2aeeac82512"
+    },
+    {
+      "path": "courses/language-arts/english-9/grades/grade-09/index.html",
+      "change": "modified",
+      "bytes": 2560,
+      "old_sha256": "7d70124ce7b821b50f3e25182b208ae50d94a38e1470f8efce57100db1cb9f7c",
+      "sha256": "ad955688f0e4f312c476718c5f156d52c5a1d6d9c8a6118cd0a10b0607662a41"
+    },
+    {
+      "path": "courses/language-arts/english-9/index.html",
+      "change": "modified",
+      "bytes": 290676,
+      "old_sha256": "00693a33ad9ec396e98964e202033756e2ff74b0f258b6771c73ac54f1468236",
+      "sha256": "854639f6cb9a7d85e3cf82e6b94e939450d42d8d8d899738c3bdf7b9ae0191f9"
+    },
+    {
+      "path": "courses/language-arts/english-9/portfolio/index.html",
+      "change": "modified",
+      "bytes": 4101,
+      "old_sha256": "ff959455cb09b08dc29527a3d0e2d2e26aac00ba8d3ca4b6e161f94f7dfe2c51",
+      "sha256": "1d8072ed14e22faedc2893915d2f22907aefbe274779be9f28bb04a1120a7934"
+    },
+    {
+      "path": "courses/language-arts/english-9/reading-list.html",
+      "change": "modified",
+      "bytes": 7311,
+      "old_sha256": "bc0b9914e83d595105ad94f1f9b9cacd27e1d72631dd0756ad2a519dfc0118ad",
+      "sha256": "87c2ad3aab4cb1b1728572d261943d98e8e259db73e9e92881bdfb75d7798026"
+    },
+    {
+      "path": "courses/language-arts/english-9/records/annual-calendar.html",
+      "change": "modified",
+      "bytes": 8432,
+      "old_sha256": "29fef20ceb3d7e4236604d6431f58514f62bae022dc2983d7b66b41ed81ec9fd",
+      "sha256": "6badfac5bf51816297d28420a9950db28a8abe2fc0b39e9b807e67417c3c8c77"
+    },
+    {
+      "path": "courses/language-arts/english-9/records/attendance-log.html",
+      "change": "modified",
+      "bytes": 18854,
+      "old_sha256": "e48d041ba87c518498b5f0db2ff66293a4edd7a04b8d27a7d0c77826a2ad47d4",
+      "sha256": "bca4c0af26a241c199920ca1a53792e6c48770f951d01964d41be3dd2ad67c31"
+    },
+    {
+      "path": "courses/language-arts/english-9/records/completion-certificate.html",
+      "change": "modified",
+      "bytes": 4213,
+      "old_sha256": "530573e6fe28ff4c0cd4c3e24fd130cd289d62e5d700aa477e9459862fcbd9aa",
+      "sha256": "39fcb90e2bc82afcb766572dc569a3b58cfa0c20e453b94afe667c028afc7aed"
+    },
+    {
+      "path": "courses/language-arts/english-9/records/gradebook.html",
+      "change": "modified",
+      "bytes": 10630,
+      "old_sha256": "c6bf5232c9b3e795633f6f8152bc0878aa1e0c26f7c436d298b84aeb72329968",
+      "sha256": "de5d9028fd6db5cbeeb937a292cacbedd8233a2f2d48fdb4d34fbd9c1d71aad0"
+    },
+    {
+      "path": "courses/language-arts/english-9/records/index.html",
+      "change": "modified",
+      "bytes": 3416,
+      "old_sha256": "4fd23b9b1a77b61aaeeed9d43cb6a88a3ced7bfc3b4648bd401ad05ff249658a",
+      "sha256": "45a44f9a57f27d750f20a24d0e7aa0b101a1506ceca89111c3c1df8edad2b9f4"
+    },
+    {
+      "path": "courses/language-arts/english-9/records/reading-log.html",
+      "change": "modified",
+      "bytes": 17566,
+      "old_sha256": "dd5b483b33afc7c2422c2d5eb2e3428817896842cb92c838fa83bbedea911d4d",
+      "sha256": "67e7535a52e4d8541d8419bd6baeebbe94916a3ca07921fdc81436f91006587e"
+    },
+    {
+      "path": "courses/language-arts/english-9/rubrics/argument.html",
+      "change": "modified",
+      "bytes": 3710,
+      "old_sha256": "4b619609d03390eaac2b41ff369284714466673902d9bc88116a29ddb1f57bf8",
+      "sha256": "d8c1c97151105d116d70862710f2038145ba1158f1d1ce42aa2c8f98c27d695a"
+    },
+    {
+      "path": "courses/language-arts/english-9/rubrics/narrative.html",
+      "change": "modified",
+      "bytes": 3716,
+      "old_sha256": "566f644bd401b73397ddec52b479fb005d6ffa7d59251201eb6d498b221a461c",
+      "sha256": "87f17434d5868ed3a496be980cbd9dea69279ea591d4cf3f13d7e848226cfeac"
+    },
+    {
+      "path": "courses/language-arts/english-9/rubrics/speaking.html",
+      "change": "modified",
+      "bytes": 3745,
+      "old_sha256": "3144b4edddb0ab9a35309c3ec23b5a51d35b749cc736d4dceb644e684fb3779d",
+      "sha256": "4b6246ecb291ba9c041c6fd7614f926c5e0161389fcdb1389632dcd041da102d"
+    },
+    {
+      "path": "courses/language-arts/english-9/standards.html",
+      "change": "modified",
+      "bytes": 8221,
+      "old_sha256": "a77697f6c16aa9a30f894994e08d089183bcbfe52b42cc3fc6c84657d0de5432",
+      "sha256": "cbe7914f811c1907c24c9a25d731543ae5a0796441dc4d11a022d4dbbca5dfd3"
+    },
+    {
+      "path": "courses/language-arts/english-9/syllabus.html",
+      "change": "modified",
+      "bytes": 5450,
+      "old_sha256": "4028efded5e12ab97a17f395870dafbd18bf5600a67d39c73c98d869e3b394c8",
+      "sha256": "6aa50c87210f3dcf88715ac5b9be675ec131fbf5772a25f00e7b0508092e2ff9"
+    },
+    {
+      "path": "courses/language-arts/english-9/teacher-guide.html",
+      "change": "modified",
+      "bytes": 5113,
+      "old_sha256": "48988c66f6fe3a02a167142b42a7ba59d829acd64c1551de5101f0802c029cea",
+      "sha256": "adde59a381103ff60dda7c0aa917b187b517f44978ab1251040b3da4175b35b6"
+    },
+    {
+      "path": "courses/language-arts/english-9/units/unit-01/index.html",
+      "change": "modified",
+      "bytes": 6156,
+      "old_sha256": "60c1b8c1cb59d4756bce464ef0ebe846a1281e248b1f053aec638c3f7f9ed96c",
+      "sha256": "a9a3e122ac10c5a398dd5f45d80803e80233aded34ab9af0d82246b875ce531b"
+    },
+    {
+      "path": "courses/language-arts/english-9/units/unit-02/index.html",
+      "change": "modified",
+      "bytes": 6049,
+      "old_sha256": "2dca3b0d47f2f5f2c8b4a1c1127d0a0cadca04c439b7abd7bd6113e008885987",
+      "sha256": "fd8ce5ec65c4ff63a5a26ae2ca4b97f98a5411da8c0ec0185fbb797288b2e614"
+    },
+    {
+      "path": "courses/language-arts/english-9/units/unit-03/index.html",
+      "change": "modified",
+      "bytes": 6108,
+      "old_sha256": "e0d36213e5e5a65da87b3281d638dcc7d4054ca0fcf9a36cd209709ba8a463eb",
+      "sha256": "9e9b65f38acbd898e6c28c0ace29404b65224c70e93b7cbdf5aba9a046d6c521"
+    },
+    {
+      "path": "courses/language-arts/english-9/units/unit-04/index.html",
+      "change": "modified",
+      "bytes": 6104,
+      "old_sha256": "1b73799f56ba91c8368188a4373fa2c3154d058bcbfec25d1f47bf711de1f698",
+      "sha256": "301752febba78645ec984c50719a2f2bc7ea32cbc84dd2bd1145ff4fa7a19c1a"
+    },
+    {
+      "path": "courses/language-arts/english-9/units/unit-05/index.html",
+      "change": "modified",
+      "bytes": 6066,
+      "old_sha256": "e0dfe5eafced521b35088ac612ccf116045457b2678a82b8cf5ca1303bed7368",
+      "sha256": "658920d73ba30aafc7c3a8c0c863ca5593e744856472e00dc5544fa31a72121c"
+    },
+    {
+      "path": "courses/language-arts/english-9/units/unit-06/index.html",
+      "change": "modified",
+      "bytes": 6072,
+      "old_sha256": "2259533fcbb641158c56dd683fabc3815cbdfcbc33671e06278595f67cf3e14f",
+      "sha256": "4dbf1d2d8da75c363c980aa153d2a6ebece6e7d92e39f0eab444d7668d4e77ba"
+    },
+    {
+      "path": "courses/language-arts/english-9/units/unit-10/index.html",
+      "change": "modified",
+      "bytes": 6145,
+      "old_sha256": "4b83a8262579defc37f0b2e7a41e6dcb06c2ccfb035d81a132e26fd4cebe9989",
+      "sha256": "7f74a8449d5241fd8fbd0b0aaedec2f6be3a7e708d06102f4f69b1a11c8f9d7f"
+    },
+    {
+      "path": "courses/language-arts/english-9/units/unit-11/index.html",
+      "change": "modified",
+      "bytes": 6189,
+      "old_sha256": "804dc4314505362fe21336a11019561b6069200a7affc0a792b682b5ff5bb333",
+      "sha256": "85e626e2f836e3465aafc129badb89ad4b9ef886a8cac7c6656440264ba92530"
+    },
+    {
+      "path": "courses/language-arts/english-9/units/unit-12/index.html",
+      "change": "modified",
+      "bytes": 6239,
+      "old_sha256": "ba11070939b273060afb67916c848f007c751291d63c004862c2dc3ab43d88f8",
+      "sha256": "7fe1c0e5bde31e61544e9f0c9b48184ee85f6abfbc7ced3420ff111fa16220ed"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-01/index.html",
+      "change": "modified",
+      "bytes": 48611,
+      "old_sha256": "161141563beeda8de65f1039312eff32e388147b8bcddd75ba8687c7b1f37326",
+      "sha256": "49ac7af74f0c0c4999ae1340557f5339df8c3964709ad74cc95409ae271586e4"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-02/index.html",
+      "change": "modified",
+      "bytes": 41784,
+      "old_sha256": "3998643ce166f82545f0596d62070f977f308d7cb9a17bc5fcabad508f783e2d",
+      "sha256": "5cd677de18019ef73df153c94440b4e8c1a20603cdd5f15ec35dcbf1a7127789"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-03/index.html",
+      "change": "modified",
+      "bytes": 44237,
+      "old_sha256": "002e6ed9bea48665a2f0e4180b9715e8a95abf39fea2e4ad8271ce9dd279b133",
+      "sha256": "0065d2d02dc00eb6b8dc5697ad22891764be58e4706e6f037911b9caf0893a56"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-04/index.html",
+      "change": "modified",
+      "bytes": 40632,
+      "old_sha256": "6b4055996da05763d4d7a8ccff63e6888475b864767cdda60a52081d0f88629b",
+      "sha256": "3d6421e561ca772a58cae15c0622a9a592f49616bfa908a6a0de85e27627b7a4"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-05/index.html",
+      "change": "modified",
+      "bytes": 43370,
+      "old_sha256": "7d010ff1e747ac376cbfd5457b300dc18a3e86fdb804cdc751cb96f78495bd5e",
+      "sha256": "2306bb6dff4188bb1049500cd773eb0ce5263c03e4c63daf8e7849fc73e75fb2"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-06/index.html",
+      "change": "modified",
+      "bytes": 33351,
+      "old_sha256": "bfa43780c59c16771fc73d5922818f0fc44b440bfbd7e2f9a4f7a6dcbe15b103",
+      "sha256": "13366054457bd4ca6c7ba54efbc4ed91722f0279f00ec24e7f26f9a856d30c3a"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-07/index.html",
+      "change": "modified",
+      "bytes": 34461,
+      "old_sha256": "020b35ef5b79642972bd703819487ef88b8efe835826897b8073f4b711cf7270",
+      "sha256": "1e01e8b4c4792456b196b42c6a5f904bc84b6503bf883f8b28c557141cb6425b"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-08/index.html",
+      "change": "modified",
+      "bytes": 36834,
+      "old_sha256": "23f463913585c61d1427b7073b590138c6b73585b0b885fd073a0fedb77f8949",
+      "sha256": "60c834eb15dbff2a0686043e69fe9fe08d16c681f711a4eb201c72500ff15341"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-09/index.html",
+      "change": "modified",
+      "bytes": 33275,
+      "old_sha256": "2d6cd3e88c916d16eaf72488188a457a9e015844cf62e6842d5e1dd2e1602ed7",
+      "sha256": "2f38cb1284cc062a8fc842f39a4cbd2d67c2eec18331fe78cb2aadf4db3887aa"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-10/index.html",
+      "change": "modified",
+      "bytes": 34435,
+      "old_sha256": "3d5457219a5fd017fa106c8c6a5b3c9b0976979c3572b00386f6fb2de6d74aac",
+      "sha256": "a96fc0d3fd4f058a7af3436fd0e2de7f6bade45a3eaf30858aafb21cf5db95ed"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-11/index.html",
+      "change": "modified",
+      "bytes": 32134,
+      "old_sha256": "9e169ac0b3eb5424052be5165bd7971d954b73a16b1404a5e5d71fd5dcb70307",
+      "sha256": "79155ea9dce6bb75b6639eaf6974ea680b5b3c14b50e5a1f83f9920be9929afe"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-12/index.html",
+      "change": "modified",
+      "bytes": 29720,
+      "old_sha256": "920543753761747dce790fa464e633d405f70bb9e53a64cbf445edf9fa6c04a6",
+      "sha256": "155fd4a64057a825108000f75ddb29e6998c64ee0e2431c2713bb3d27f180a84"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-28/index.html",
+      "change": "modified",
+      "bytes": 7460,
+      "old_sha256": "ffc2c504ef0ddec0fac925fa0f5b29ec5fc6fd51b77bd5f7e346e0131ec14bfc",
+      "sha256": "431b26e43329fc8fbe5bb9ebf50472212b29c7a462e21608f3f838c8c64a582b"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-29/index.html",
+      "change": "modified",
+      "bytes": 7505,
+      "old_sha256": "f2438854b1e69beebb5af8fc9a1bb7dde1119ee1a3d7190ba640bef7e51596c4",
+      "sha256": "d62cdac14e4f176f548098b6d6a0b1d98ab077ee1fd10b0b387563cf836062bb"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-30/index.html",
+      "change": "modified",
+      "bytes": 7446,
+      "old_sha256": "665d536a87d898698350f4d564f583e3e19c90d165064bb0b75a30fd1217498d",
+      "sha256": "1cd946c6d5108515715d7ebaa94e0a602bc77d7a8d33d87f70f8d35a7a0c6ad7"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-31/index.html",
+      "change": "modified",
+      "bytes": 7465,
+      "old_sha256": "4c0d0e368daa446a30d0cb0f19c418eca5e34aed0e226fe0c24709affa4c0d30",
+      "sha256": "af6fa1cce702ed64bba8ef992ffb4f31f71d8dd8b93f49c1e9e296ed5c19fc48"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-32/index.html",
+      "change": "modified",
+      "bytes": 7442,
+      "old_sha256": "f1910dc0f04a0f62399a6c70b3b300246d22ebde01abf293423fcb1e20124a35",
+      "sha256": "f36af70852a83975bbd901666004a08fd5a5b8bae9e450f2c7ffbd1e2e8153e9"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-33/index.html",
+      "change": "modified",
+      "bytes": 7488,
+      "old_sha256": "b6ffb2499e4d8b62027052b6e46976bda8f9779d865a06294171787608d3dc0a",
+      "sha256": "379de01149faec7fe28fb2b0a5adfc9f125d01a7ae609df5fe7a8bfe202d1e8d"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-34/index.html",
+      "change": "modified",
+      "bytes": 7542,
+      "old_sha256": "8c3f0a0b58db9d27b1de98435c2a26ac3819a7d4556b14e9ec4193870aedc762",
+      "sha256": "c2380ad017370611727a533470b37f58affba08ec9938c3a1d78730a9e27cbd2"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-35/index.html",
+      "change": "modified",
+      "bytes": 7499,
+      "old_sha256": "146a700de8c5bc88b0800df75cc9c9bde3f77a8e2e8333ad71c09b0640fa9ea0",
+      "sha256": "1e393f2c73574528fe3898bbeec9cd7f6dbff66ea66ed664d279c60af8de2cdd"
+    },
+    {
+      "path": "courses/language-arts/english-9/weeks/week-36/index.html",
+      "change": "modified",
+      "bytes": 7526,
+      "old_sha256": "a5e870d17dd347a71008ba2418341fd04ff0d01be1b0fa93dc8754cd1b69b2d1",
+      "sha256": "1b3750efc9ea6e3d0d54d1a30e1e1d9371a9e42415c7bf1fde2297e12e8a84ac"
+    },
+    {
+      "path": "courses/mathematics/algebra-1/service-worker.js",
+      "change": "modified",
+      "bytes": 5201,
+      "old_sha256": "22b3b694572c02b505df351e9c137987ddf6e937e0853f3b035e5f696d99df62",
+      "sha256": "e437b6af763689a01e36c7ec76bd0f79b1ea8d128c352b42b1332b44b666afca"
+    },
+    {
+      "path": "courses/mathematics/algebra-1/transition-contract.html",
+      "change": "added",
+      "bytes": 3551,
+      "sha256": "938fb2c67dfa85e3320857595c54433847d70017a8e1f99ff83f6ff8325f33ed"
+    },
+    {
+      "path": "courses/science/integrated-science-9/index.html",
+      "change": "modified",
+      "bytes": 215579,
+      "old_sha256": "057f443ac743a478f23b6adb3055a1c19119d7f9d052bcfe7031cc4654d04d07",
+      "sha256": "6fffeaa493e72981f58290c2df65f2fb7c8f8beb720c3e61bd7db2505738434e"
+    },
+    {
+      "path": "courses/science/integrated-science-9/science-theme-loader.js",
+      "change": "modified",
+      "bytes": 2679,
+      "old_sha256": "c0b5d4ed27d7b177539ed4773fa8f5268945346e5e713f71fa6d43dadda3d291",
+      "sha256": "77c68de2c32002ab3b7b326d7da12fe750cd071d64d778dbe7fb0e8e5b92d5bd"
+    },
+    {
+      "path": "courses/science/integrated-science-9/tools/validate-unit01.mjs",
+      "change": "modified",
+      "bytes": 8017,
+      "old_sha256": "e9388a8da55f519190e570214da5c06ac12ade1607455f7f02b383552362f8a5",
+      "sha256": "875d2950b0f1afa01bddb6b198b000dade9f9be9dcca20005bb6687ceef92485"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/dataset-laboratory.html",
+      "change": "modified",
+      "bytes": 13476,
+      "old_sha256": "df1183fa08a607795b3ec22c6ea29d251dab08fc38f65e79d24259da3edc1c09",
+      "sha256": "a0cc802c64091b24083f4aebd478e67571fda90d370d3081d2bc98458c9b20c9"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/index.html",
+      "change": "modified",
+      "bytes": 21042,
+      "old_sha256": "5799d9c08c667505396fa82b98a2e7733539b399849d2fab98629d70fb19013d",
+      "sha256": "110e44ceb00b7d6a02dea63d91fe7ed00a4a32e2b72b825748b2daa8d3da0014"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/investigation-design-task.html",
+      "change": "modified",
+      "bytes": 14002,
+      "old_sha256": "735b47f4b8b039a47d2b41b8a09ce323d312abccf367395e8b67d3174b3b13d7",
+      "sha256": "75f52e7ce7d9b41c2c5f10862fec34ff7547190e425266980e0ac4ad2e957093"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/lessons/day-01.html",
+      "change": "modified",
+      "bytes": 14122,
+      "old_sha256": "62c2d873bfc656dea9c53caff1a4323ae1799677186c0bd7dc58ca167a5e2ca3",
+      "sha256": "47b2530142f6ed921c64f247ec92a99f0963b3e993377f18949484b490194b4c"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/lessons/day-02.html",
+      "change": "modified",
+      "bytes": 13342,
+      "old_sha256": "6ac8a8a4a81e673c8e428df2da8678390c69b37cf649d65cadf2e453ac2cc582",
+      "sha256": "042141066fcc8f68aa8b8d2d7778e7cc942137f77f23def33a7b82fd445253bf"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/lessons/day-03.html",
+      "change": "modified",
+      "bytes": 13059,
+      "old_sha256": "0561e0e99aa8ef21240a0ec1f3d767d3e22b251df552e71eb0595362583d843a",
+      "sha256": "915ab1e74a2067916cb375ec3a5e4dccaf613d71da89eb458cd70c9322ca8383"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/lessons/day-04.html",
+      "change": "modified",
+      "bytes": 13347,
+      "old_sha256": "e327a106170533a29b79ee92ed453182e9205753fb858792722df5ea34bd6954",
+      "sha256": "a48bb939239a974e575fd5d72a4ffebb942eeaab7b343f15d97e1166456a81d1"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/lessons/day-05.html",
+      "change": "modified",
+      "bytes": 15191,
+      "old_sha256": "a9f649dc99efada8643dce2c6b3e5ea8aac9df3862dc0f5023d89076087ae24a",
+      "sha256": "788fdf09a4db9d4c70b5f31c4875c9078c6fe219a5f696750bf7f6334c148ef3"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/lessons/day-06.html",
+      "change": "modified",
+      "bytes": 13773,
+      "old_sha256": "2716e434926dd07927a8602fef9447b285e1b340a95472f948bec571f78ce85a",
+      "sha256": "55a9273837ad33873399e8439ab50416d4f9d3bcf484b25ff6e7d5cc790cfd0a"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/lessons/day-07.html",
+      "change": "modified",
+      "bytes": 14417,
+      "old_sha256": "3e89c7070d6bc44578ffeea43f28f67c76febeabc813cc42ac2a460681ad9df5",
+      "sha256": "e936ff838f56dcddf90ea31b9b5a426c8e900fe12976e49e55fd453c9736884f"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/lessons/day-08.html",
+      "change": "modified",
+      "bytes": 15013,
+      "old_sha256": "6aa6e4a0eaea86c36fa0f1c10232f6b440a70b52d7251b819923d3aa756f9a7e",
+      "sha256": "b767d698dd0e7b2a92e89f08866f8c5f28e7c17252854b5353398596d3eb38dd"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/lessons/day-09.html",
+      "change": "modified",
+      "bytes": 15530,
+      "old_sha256": "0bdfaceecaaccb4bf4f85a23eb69422bee07f7a7d4bde03b6adf4541b138216f",
+      "sha256": "a83211b440d9bdea12974faa60e09d27f473552bfa089ff8f0974f17055c5f69"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/lessons/day-10.html",
+      "change": "modified",
+      "bytes": 14956,
+      "old_sha256": "8da4e35e4fcfae893f023cc5c6165ae8875396f85af05887e95d7468bf95cf31",
+      "sha256": "c4d04c2fd6f406ed57cdd0b56180a68306690efae8b4900ea2584aa6d1533531"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/mastery-quiz.html",
+      "change": "modified",
+      "bytes": 4353,
+      "old_sha256": "2207ad73f0f002455ac9ff7a21b5165057ab4b31bbb9dd69bcf88be21bdd8423",
+      "sha256": "302724283bb0a8920ee7d0385edaf4f86e80b123a96535695e13fbac85e97f85"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/paper-helicopter-investigation.html",
+      "change": "modified",
+      "bytes": 13350,
+      "old_sha256": "a5e5fdbd65ae1872221f7cdfe8be2a817b9a9dab220b177d4b71ee0ee47a9a38",
+      "sha256": "7bd9f973295357accab742982226e68e4f58e58fb0b456822e0cb1814e5676b1"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/student-record.html",
+      "change": "modified",
+      "bytes": 6699,
+      "old_sha256": "504b9a7c00331423249808421a931f3ddf5f4d0d6bf6e83b7f236c9062219bae",
+      "sha256": "e3e7c208837983d7013f12d21c5cc0f9dc88590ca6e7b758e8cbc4b0374b85a2"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-01/unit-assessment.html",
+      "change": "modified",
+      "bytes": 7396,
+      "old_sha256": "315c70f8dd89c5eab88813dec9a232335f40dbbb7fefcd9f657863a9c0f9be54",
+      "sha256": "d16c7b7dd5f030b96d0112f6e984a38b92e3ddb7aef2e773033b2429d47e1f37"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/cell-model-gallery.html",
+      "change": "modified",
+      "bytes": 5482,
+      "old_sha256": "5edfa0f4e5659f48fb613d2676ef7d81cfd1bc7847e0bb403266b7fa25aee4f9",
+      "sha256": "e0f92a031f820bc76381b9b3165ec1485e5201c2e1ab858cde94c35a4d57d56d"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/cell-model-task.html",
+      "change": "modified",
+      "bytes": 4338,
+      "old_sha256": "78c89dc11a00db51cd470681a3aaef1602da51ce6182caf3bc6f6118d4bb8612",
+      "sha256": "d4dc585ab9dc50d287faee3f20018a6cdb1d732798eccd627bd169a80cc9981a"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/diffusion-investigation.html",
+      "change": "modified",
+      "bytes": 4010,
+      "old_sha256": "3d0a054a54e35addc4751bb39159c255906fbf5ddca9cdfe989a55d03aa8ed7d",
+      "sha256": "075a3aa03fcb9c6e7df27d07a8908d6519b0b03b19fabc0006a6dd898ddb3587"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/index.html",
+      "change": "modified",
+      "bytes": 28925,
+      "old_sha256": "c11d9fd3a78eaa27587d6046573e36d83a0214f248eb6ccf0cc1e99cb665a249",
+      "sha256": "2ca98c4385dd1f8dd5d23ab012c097de646c793c2d54ea839e8730ff61676131"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-01.html",
+      "change": "modified",
+      "bytes": 14748,
+      "old_sha256": "ac5648e9d8f34aa0ddc4d9744ba64977712803060994785ccaad1a8b85b0d548",
+      "sha256": "0ed3ebcdb6e17344847becbd15c5a1f671350f3e4720011247eb80e904d26129"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-02.html",
+      "change": "modified",
+      "bytes": 12094,
+      "old_sha256": "96473143b7b21be0494328b59facecddcf590216e5ab4cb5d5612c26fe4decb9",
+      "sha256": "6ce2c42dd27df6d80cbb03f0ddcd9852296cf9a2366401ca3ef3c40edd7fc6bf"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-03.html",
+      "change": "modified",
+      "bytes": 13742,
+      "old_sha256": "33861aa7f1efc698de13a3cbbfbf3d3410e04d6be5fff14fe3af1a30246b8102",
+      "sha256": "ab4a462a5334841d06446fd56b5f6cce6d9773b46ee7eea68e5814e6ccd22959"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-04.html",
+      "change": "modified",
+      "bytes": 14360,
+      "old_sha256": "006847be5789712c483cac1bd2b306f6cb97d81e026334344ac1691ef6e8b7b1",
+      "sha256": "1248cbd0120521b42d0da5fadc8bef01d9c3b98f0aa57f0b1dcc158ed8d442fc"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-05.html",
+      "change": "modified",
+      "bytes": 11529,
+      "old_sha256": "33942c9cd2c4331c541c2a1ae11ea8feef22b7e4171a3f5768b634237096ed1b",
+      "sha256": "d38b6b3a57ba8b8ebf950d76abf30e2534e3ed5a5af9e2a639fbbb66484fd3c6"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-06.html",
+      "change": "modified",
+      "bytes": 13273,
+      "old_sha256": "c4dd35736855c0d23b0a248d0b45c1e35e4412429f817e5f93fff5643f4b890e",
+      "sha256": "46cb2144281d077ef4fafeb0b33cb9c84c0b58c482bbbd6a6ed8fee104dd317d"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-07.html",
+      "change": "modified",
+      "bytes": 12766,
+      "old_sha256": "7c05656b19728317e2f93b8cf58c245f8dbc9faac5a174502e450b5853ed720f",
+      "sha256": "c7b1cc20ffc30190189a2cbd775e94b0fb9a54301f947245a3acd7b960d7983d"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-08.html",
+      "change": "modified",
+      "bytes": 13723,
+      "old_sha256": "447b8bea9e7c4e7eba643ac962504c179ce32dc11d252c0582ebdeb6c32119c9",
+      "sha256": "3abddd5bd59ffea7a8341184ee9d4f6b43ac4fdce14ec4bd14f7cba774e33445"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-09.html",
+      "change": "modified",
+      "bytes": 14344,
+      "old_sha256": "9ebc228cf9cb97bab1e989262e8da38299f8778318de1bcbd5ae4e40bb36a3e2",
+      "sha256": "beaeddaae379e9959371f60cb44b05fd40296b7dc285efe37bbdc73c3d5e205f"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-10.html",
+      "change": "modified",
+      "bytes": 13360,
+      "old_sha256": "634cec52d633e083e608cf562e082fdb0c6937d4583ddb476d1e46580a1297c3",
+      "sha256": "5e529ed30fa90c474fabf9a65754d13da128a434e898cc5fc7033e36ba1130fd"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-11.html",
+      "change": "modified",
+      "bytes": 15262,
+      "old_sha256": "413c92ff057ad990d292245903461ddfc4a9d989a69b53f87fdc46ab0f38599c",
+      "sha256": "48abedf13d37db8748583dca15dae14af961b5aac8330217504a2502e208323a"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-12.html",
+      "change": "modified",
+      "bytes": 14845,
+      "old_sha256": "b1da41e476bdc24886df5eaf3561e7e54efff05cec1682456d9347ef818091df",
+      "sha256": "b4fbac804cdbf2fff11c5e12ed1886a041bef59f73f06ce5d14155f92accaca9"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-13.html",
+      "change": "modified",
+      "bytes": 14812,
+      "old_sha256": "1a0cbe5bbf889d4242d7e34e47c4f50391d09001cec9a9a547bed3e59f4e659c",
+      "sha256": "73c68d9846d56a3cd59be25d8713e371488eb6362aead86e306fb20248cc5a92"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-14.html",
+      "change": "modified",
+      "bytes": 16206,
+      "old_sha256": "f1c1b6b29ebc2217c86aeeb2290cede969724fc81c8f26c9955217d93ebf9e1f",
+      "sha256": "8cc4b810a7b57431fad1076550639a8126da249f47f85ed92cda91ad3143041b"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-15.html",
+      "change": "modified",
+      "bytes": 15244,
+      "old_sha256": "6a7188cdc94a46b54134c1721a11f626957140ee31a0cb8b79b8ae5ed2febba9",
+      "sha256": "83e1eb422bbca42bfa74a4aac001463c15a108c50f9361d1395cfc8bcaca7437"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/mastery-quiz.html",
+      "change": "modified",
+      "bytes": 3662,
+      "old_sha256": "f58627aab527829eb7442bef28d66eff20c75bb605a19aefa9afac960012e26e",
+      "sha256": "fe836bb16cc3f008507219f2f71aec470882a5cf3f19e445db56fce6ea88e88e"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/membrane-transport-lab.html",
+      "change": "modified",
+      "bytes": 4015,
+      "old_sha256": "59b475fbdac5b3256279d0808b182ee7323fbe630e15af88a65d3b39bd4e10c9",
+      "sha256": "d3c68d284f2dc64f6530b95ff24da1e10b6f1a38a52b27e7daf39ee9cc7a6a82"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/student-record.html",
+      "change": "modified",
+      "bytes": 5990,
+      "old_sha256": "a78155a1823754abd605bd97b2cdcb75b4c90f57564755e39121508e44bde9e7",
+      "sha256": "59316e14be83a8a99fdab74e252257511f181fdc37f3cebb5c8b4342c673b312"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/surface-area-volume.html",
+      "change": "modified",
+      "bytes": 3440,
+      "old_sha256": "b736d859f8adc2d3f755b71f70414a2c5e69e91210068374211baecff43e3b0c",
+      "sha256": "20874ce880becfddea787aeca0eae445da7ab0ca2b14501a84ae17fa76466210"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/unit-assessment.html",
+      "change": "modified",
+      "bytes": 4519,
+      "old_sha256": "e3a532097d7b49a0114d7350eaa470e711a4b4a75a708d148abf4482c1d9540e",
+      "sha256": "1945b9337fbae27d569960bdbc3fd5de9e27567c577cce090c914b4389999f40"
+    },
+    {
+      "path": "courses/science/integrated-science-9/units/unit-02/virtual-microscopy.html",
+      "change": "modified",
+      "bytes": 2637,
+      "old_sha256": "ee6eac542abb80c37f09cbdaac0ba214e1f663ce9a574060c890b3a72393b1d6",
+      "sha256": "072203fc4db281f6073f85fd1e9d2e1d48b61ebca25eaa1c389d4cd2648fb0c0"
+    },
+    {
+      "path": "courses/social-studies/grade-09/LICENSE.md",
+      "change": "modified",
+      "bytes": 641,
+      "old_sha256": "93ed5d3a4fa6f3a4e494053730aa6de3d19e300795117b5afe771a699980014c",
+      "sha256": "a100f6e0637aeb4b596336e1ef8c0be3a50bcd7a4f8646abf242376ab4ab7666"
+    },
+    {
+      "path": "courses/social-studies/grade-09/README.md",
+      "change": "modified",
+      "bytes": 4157,
+      "old_sha256": "804ee401c6fdc782d090be6a52219f5f2b5d70bc13e1df1690a263018619c579",
+      "sha256": "d837a695104e62ea2a77192d59082622162068ee78f5d51c6043e445c07b7372"
+    },
+    {
+      "path": "courses/social-studies/grade-09/course-data.js",
+      "change": "modified",
+      "bytes": 779284,
+      "old_sha256": "958d6449f55d1c5bb29be24d351c69f2eb1a7508eb23cc8e64560cb67e0be34d",
+      "sha256": "0397496c70dea4575a02d0ec36ed2e88ac3a2efba1f13f2702d99cb6739439c4"
+    },
+    {
+      "path": "courses/social-studies/grade-09/data/course-data.json",
+      "change": "modified",
+      "bytes": 934850,
+      "old_sha256": "2290e213d0902f8362b16f2849fe0dfb26f34221df963cf5109b9580b66d32df",
+      "sha256": "a9cf90b62019952d02d1f8316676b56797a12b7615433490fc87cac846079867"
+    },
+    {
+      "path": "courses/social-studies/grade-09/docs/README.md",
+      "change": "modified",
+      "bytes": 1456,
+      "old_sha256": "070329ce9343abb479a41edf3ef6a2097addca6bb412a843f675a06936848503",
+      "sha256": "fbce20abbc6acebf302e6f477596e9f3be8152d52b0dc05c4dbce8b18120ce32"
+    },
+    {
+      "path": "courses/social-studies/grade-09/resources/atlas-and-data-lab.html",
+      "change": "modified",
+      "bytes": 1746,
+      "old_sha256": "f9d099d30289502c277c0c4470239a7e101d648401d9e8d075992ac4f9b61912",
+      "sha256": "31197c92529d20c256ef5b410213369a03bc93e4d4d8f1161c669894d9ab8f13"
+    },
+    {
+      "path": "courses/social-studies/grade-09/resources/certificate.html",
+      "change": "modified",
+      "bytes": 1747,
+      "old_sha256": "fe2a742e4b8f2ea464b69e00bf56ffcd60d712fc18abd5e8a59fb04ff6c821c7",
+      "sha256": "b7ccbe18fa55b1e0bdcd108d3abe0bfa20ed4da37a270a080921a3f352f34fcb"
+    },
+    {
+      "path": "courses/social-studies/grade-09/resources/civic-capstone.html",
+      "change": "modified",
+      "bytes": 2899,
+      "old_sha256": "aa602f2bba981d7f9b5dc1182fd3b0c2d2c9f6ce117e906a40a5d081ba6f6d00",
+      "sha256": "57d94ce48cd4557596fec55123abddc5c6107f2dcb3417cf2d901028cd1ce5e0"
+    },
+    {
+      "path": "courses/social-studies/grade-09/resources/global-timeline.html",
+      "change": "modified",
+      "bytes": 2302,
+      "old_sha256": "d1bd077e3f7abf1f0003d66540620b05607b2008f292dd8072335d95aea53a94",
+      "sha256": "03a499db73503bf1383a07996c63ecf59477c39bba01fda039ae0d4cb9798d3d"
+    },
+    {
+      "path": "courses/social-studies/grade-09/resources/glossary.html",
+      "change": "modified",
+      "bytes": 36761,
+      "old_sha256": "320c25d91f3587beab3939846d9511dcf44af6d59edf4289bcd8771f7a8199ea",
+      "sha256": "7e40ce81aae44ea080c36752a4bd36e0aaba63647441fa5f186d9db3c24f646e"
+    },
+    {
+      "path": "courses/social-studies/grade-09/resources/index.html",
+      "change": "modified",
+      "bytes": 2354,
+      "old_sha256": "a69fccebbbd88be2b4f539b075499e78c57a8ba731b16fb1b83380af422d14f3",
+      "sha256": "4d1d8d5ed4012cf36c800eb2d6d23f3ff0913d5d374e60f9f1fa6bf97f1e2bf4"
+    },
+    {
+      "path": "courses/social-studies/grade-09/resources/media-verification-lab.html",
+      "change": "modified",
+      "bytes": 2529,
+      "old_sha256": "5d6c8381d367a4828eb6260cddf11f4b090aa34ce19dc3fa023654b1f8a09094",
+      "sha256": "c94b30f501a5fcc4f4936af273a96eb5d2740af384b83181349f59e6ae4375a4"
+    },
+    {
+      "path": "courses/social-studies/grade-09/resources/source-analysis-lab.html",
+      "change": "modified",
+      "bytes": 1819,
+      "old_sha256": "b7f811240a4a3915553aba6209c5ab9c7b78ab2ab9ef25af7643af7bc908da83",
+      "sha256": "e747ad9efcb4554ca09992afbed164d6a64d268adc12b186c48fbe3341513339"
+    },
+    {
+      "path": "courses/social-studies/grade-09/resources/writing-studio.html",
+      "change": "modified",
+      "bytes": 2119,
+      "old_sha256": "4f69a26c46c2fb46579f66c1df8ac45eca168fbfc8af139917fcc6568ae81be3",
+      "sha256": "a91b4cce40d7893727561d2c7935a3ba5d611f15942453da29495a533bae6ed7"
+    },
+    {
+      "path": "courses/social-studies/grade-09/teacher/ANSWER_KEY_INDEX.html",
+      "change": "modified",
+      "bytes": 146607,
+      "old_sha256": "f6c19e2961cf63992d5f826105ea6e9529fa704eacc2c71d276be62df37d9683",
+      "sha256": "da6207f77010456bc118df8323464d90759f84d0c94fa5dca4d75a9fcafedcc9"
+    },
+    {
+      "path": "courses/social-studies/grade-09/teacher/FINAL_ANSWER_KEY.html",
+      "change": "modified",
+      "bytes": 12094,
+      "old_sha256": "10cb747b305dd0b84b6b8bff3a6f00cecef4a5961a562c28c92a583f2f0a4787",
+      "sha256": "a9a15d4c6bed7eb273337226075000be8e6262ef8b4a82dc2e320da170954348"
+    },
+    {
+      "path": "courses/social-studies/grade-09/teacher/MIDTERM_ANSWER_KEY.html",
+      "change": "modified",
+      "bytes": 9912,
+      "old_sha256": "b9b932284bc50824081ce215ddcbbb0e4dd7557f4d1b6a629159d60eacb0e1f1",
+      "sha256": "1fbc28f3135623b5e30e07379612a0a774e261d26607ad84f6d11a113145e059"
+    },
+    {
+      "path": "courses/social-studies/grade-09/validation/assessment-validation-report.json",
+      "change": "modified",
+      "bytes": 20442,
+      "old_sha256": "5d39e66f9ea6ae344a4d55a23e5b4f9bf2329c542c080f5efcf0f43e24c4eabd",
+      "sha256": "d8792087ed4abf1907e507e1e6619e67a0eaf66fd430e5ddb9652da1f4ce7511"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-01/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8282,
+      "old_sha256": "d68ce83d7d8aaba78b9952120fd54b20b60e7f318eed062435fa66451e15ff8d",
+      "sha256": "b6485756f163ea8696639721da76ca5c2e2ddd83f5aeeed036baf7a5fda5c3eb"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-02/teacher-guide.html",
+      "change": "modified",
+      "bytes": 6406,
+      "old_sha256": "864430f1b5642ce167897b64d81301703a999d809dace654374ed19b22760dd3",
+      "sha256": "519a4102413eba264f939e61d1b9dfd1e5c629d283f25253fd1ceee8e5051fe5"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-04/teacher-guide.html",
+      "change": "modified",
+      "bytes": 5682,
+      "old_sha256": "c473c8bdb65e65428467077260d0014a89967951dc5039bfe65325042bcd21c8",
+      "sha256": "26fe9feba7db3f56879c7faec1df2f1c91b21afe754ae7c8cf3bedc4c86f14da"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-05/teacher-guide.html",
+      "change": "modified",
+      "bytes": 6397,
+      "old_sha256": "20bad0becc64cd9c8b1bf163c3e3632c20a8aada0a7acb917aeeebeb30cec525",
+      "sha256": "92a2ab00fcd8f86741d9ff091760fb75ec29dce3e1ade691d97e895d73fa4179"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-06/student-packet.html",
+      "change": "modified",
+      "bytes": 18507,
+      "old_sha256": "46ddc5b09cf48c10b75d8cbad6b4866d568da6eb38f6f00a23d34e9fa7b2253c",
+      "sha256": "31aa0efcb4c79d10219d3e7452acc1a772ebcd11442cb69e8edfaa181a478707"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-06/teacher-guide.html",
+      "change": "modified",
+      "bytes": 6321,
+      "old_sha256": "bca8070a6aefadcb78a40a36f2f44e8c1a053941cc0e8d1a698e4e91404d81de",
+      "sha256": "379d862fc252a2b156b14bad63212e36c3821908a996aac7db85a9a5752a7aed"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-07/teacher-guide.html",
+      "change": "modified",
+      "bytes": 6409,
+      "old_sha256": "814637a929cc14eac24cce060208b81dacfd906001c5f88a6137bfacdbafcffe",
+      "sha256": "590b3a8c3c1ed3dfd67828f8544519a98547e08e1b11c658ec624611de23a00e"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-08/teacher-guide.html",
+      "change": "modified",
+      "bytes": 6043,
+      "old_sha256": "c39e94a0a49bfc37b5e7456104f19fab45220e2ae03aa02559ccecf769cc5072",
+      "sha256": "7384be3c340b0439ff0db41d49457414f50b340df81338e08e02ffc98f5bce67"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-09/student-packet.html",
+      "change": "modified",
+      "bytes": 18074,
+      "old_sha256": "0042ffd81766511747f2fb281e5e3d46b7088677fe0d8043d32caae1b8b52bdc",
+      "sha256": "dbd3e08ce0c310acaff521b7200d0f1721cf5f557d624aa20bdd32f77ee4e9a8"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-09/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8844,
+      "old_sha256": "7c4775f8603fa8deaeb039580decb6a73c4cd3ee2e7f9d0daea8c7b4a5ef3e17",
+      "sha256": "56294c79743b4b96ac9b103d1204b36450938792b2540aedc573f4528f017f08"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-10/teacher-guide.html",
+      "change": "modified",
+      "bytes": 6584,
+      "old_sha256": "c1729a0c48afaa6d868e4f128751518e8f74c7fe19e30770db7c8945522ce7d4",
+      "sha256": "6b048b126e8a136568b4f1cecfbc26e729807f85ed139972ba04a79a95ad1704"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-11/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8104,
+      "old_sha256": "3e13692f1928cc8e3d50e584cfe8c46a1156322ef1819b35d2169a34bd2378b6",
+      "sha256": "9857cf3760de4bcc34b2d4e51afabfc0d25a9d4088d526cf005a03a704e8276b"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-12/teacher-guide.html",
+      "change": "modified",
+      "bytes": 7046,
+      "old_sha256": "5ad8f6abd7803d9b6aaac2677c145dd7af68607b69590cc591436c5ba4e5f99b",
+      "sha256": "b2ec182cf19d00fedce3917529906a085dff9f9d774c64a9e470844bdeff75c7"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-13/teacher-guide.html",
+      "change": "modified",
+      "bytes": 6012,
+      "old_sha256": "5e1366642331f1dd2c942b836f2c740532ce57d1d7e3f23f834afa0948573487",
+      "sha256": "233759cf7664b07bef4a4270c8db28c9cd5ff75f4bf7a3e9fd77893bf4b877a0"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-14/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8411,
+      "old_sha256": "25770a30eec97e774e0ccb7ec66b421607071464f9533347cc211f6cace5b951",
+      "sha256": "b14d608cc84776e200cddf10bd92b3ee4463934f215e28c54348b4ab8a3cbfab"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-15/teacher-guide.html",
+      "change": "modified",
+      "bytes": 6988,
+      "old_sha256": "c9a1a9bf92c996c54f43e65ff21dac445888ef537ca7feb92ca5e4282bd170a2",
+      "sha256": "fea8fbf305232e900b4fd7081843f43ea532b0ac7fbfeb5a28051bb66f045ed9"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-16/teacher-guide.html",
+      "change": "modified",
+      "bytes": 6774,
+      "old_sha256": "dcb31b5afca0efec251374e05d9320f521202cd7bab8c4d3aa582c31b7a36580",
+      "sha256": "606851209c0b2e5f4975bf66d012bc3ab7319e7614f9bedad6c0347b9e1d28e2"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-17/teacher-guide.html",
+      "change": "modified",
+      "bytes": 7256,
+      "old_sha256": "2756c0e3529c851455d2816258a468028237e5bba2ef9fd080665c58162e8d25",
+      "sha256": "ae2a390d588968e51ac4a9992667b4ba05191e8c3c3b60aea6f1406205fb66df"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-18/teacher-guide.html",
+      "change": "modified",
+      "bytes": 4903,
+      "old_sha256": "10dd3cd44cb8d8314388e27c952c4e1c90949690b4f744fb39c5c158ebe4818d",
+      "sha256": "9a24d04b1a3983318c873b86324a524acc04bd5cf777e6bd8e9888883119bfac"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-19/teacher-guide.html",
+      "change": "modified",
+      "bytes": 7504,
+      "old_sha256": "cf1e783545a1d59fda811ee5e3980e0e05aa14e57a5dff8d2eaab4894a8544be",
+      "sha256": "e4d10afe9470370795218c80e6f45b7c84affcfef080d883702bfbe4a091b07d"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-20/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8359,
+      "old_sha256": "3005865c22e07494454e1c9e1eb94763a448a784b458bef56d2c54fbf56ce982",
+      "sha256": "bdbc7ac346193a0cd0b8c0f46350858243ba55a64079b1952be99472feb64889"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-21/teacher-guide.html",
+      "change": "modified",
+      "bytes": 6572,
+      "old_sha256": "70aecc91905932ae105b5935174bf1e42a06a638c78fd29ff950002aff55c916",
+      "sha256": "f906d33bc1ed23e58939098e1843518839d581568d3359c8f93b497c10163c28"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-22/teacher-guide.html",
+      "change": "modified",
+      "bytes": 7691,
+      "old_sha256": "6c3930cf9b7526ad973de247c548c47af14180d0a5d1064cc7b36c44ed6520d5",
+      "sha256": "67bacdad2eed96b82fbfa703a243721c7e8481fee1d5d85a26e365c13c90929a"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-24/student-packet.html",
+      "change": "modified",
+      "bytes": 18424,
+      "old_sha256": "2754dbc8d2ec672c1d918e48ff977e6543f80334103fcb3ee051fea2956861cf",
+      "sha256": "370bdf8251aae8fd4f9a60c84503594641fdf9290e4ea4b9d1faa13e5541fd24"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-25/student-packet.html",
+      "change": "modified",
+      "bytes": 18284,
+      "old_sha256": "32f4d10122bb16048f2c40f6e0c171e68b5855f12a5080fbc180a76fefb1677c",
+      "sha256": "5e010eca43aa8cac972ec4d4dafb0463a5bcc8ba71583ed6eaa262ed6a5bfcbd"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-28/student-packet.html",
+      "change": "modified",
+      "bytes": 18583,
+      "old_sha256": "619221b7b7181dacb25111adf5636fb1f15098043970393157f7b43c956d9246",
+      "sha256": "44929f53bf273fb30e130a960e4446826ad7c5e30701179cb752275030596be0"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-28/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8694,
+      "old_sha256": "82aa89be944d3a948862fe53aac63edf672d2dd4852b5ae0610c10a3d75517f6",
+      "sha256": "94ae640e1a205eabc0a1249480a68b2cef3fef718e063e5722bd8a81744de88b"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-29/student-packet.html",
+      "change": "modified",
+      "bytes": 18232,
+      "old_sha256": "743fa923f3d2afe708ba4b8d0aaf90a09dea2391dfa4ece0e5c5668c4c09b4eb",
+      "sha256": "3e106d9ef3f41bb2c6b93f834e7b81c5ab78778f6b3855f52758d1b5b88dbddb"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-29/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8471,
+      "old_sha256": "70cdab993d3e986917f39f811207ab530e0bd9a1ad0a193229f00f0e051c63bb",
+      "sha256": "9afef89571932d39e4730c848a00f4ace034eb01796ad452522c55b25d1a53c3"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-30/student-packet.html",
+      "change": "modified",
+      "bytes": 18249,
+      "old_sha256": "890582b0f4992686acc6fd9cb16f3b31cbce50f637f230be460fd1e2566fa288",
+      "sha256": "2fe65c2a848cebbb136ea498dee4125fd3f26ae135d8c4804da6b7c47cabb14c"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-30/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8412,
+      "old_sha256": "2ed1bc14c3ba0859a679fb502896f6312117e15b420e6aef7e6798c3c5fbe735",
+      "sha256": "4fd65bddc541a54f454f6772c5dbd8aaa553af44e99ad45e8ea2809d913b38e6"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-31/student-packet.html",
+      "change": "modified",
+      "bytes": 19078,
+      "old_sha256": "c63b66c3c46c82dfc6fc3664741976708dda4878972935ed4318cc43b7b45442",
+      "sha256": "35df65aeb7d7a7f907c2807f25c6e3b0a939b5bc7df45909dca8dba98dd192ea"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-31/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8818,
+      "old_sha256": "ae78923b90e77dd729d8988a8b81b214c9601ba1f2d55973de8fe5e85c452d1c",
+      "sha256": "36a1a96877353eb0604d3da06f2dbf0f05830b77c009cee48b9f6f0687ab89e4"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-32/student-packet.html",
+      "change": "modified",
+      "bytes": 18089,
+      "old_sha256": "297f1c6b6a7eae35fde0b6c9ee976808ef470b61a62f0168753a6fadaf0170a6",
+      "sha256": "1a77a840d3ddd30c05b9daa5efc69754e583ce4a0af37d6ca5cb96a4c0e3bdda"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-32/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8463,
+      "old_sha256": "cf27e535ee1de01811d4b71f88dc5715201a0750e1986eab42621a86ee8afffb",
+      "sha256": "275ba166039a22e97f38aa2f415f86f9820d13b6b881bc0818255cec4b2509a4"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-33/student-packet.html",
+      "change": "modified",
+      "bytes": 18645,
+      "old_sha256": "e4ce068cf41b39f8930c2c1b6aff4b127c2824ff65738ca9221624a23dcdfdc2",
+      "sha256": "c0076cdb96b5eaaa939f0c67bdbff0ace0d24009442e264ba5a92818987def18"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-33/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8619,
+      "old_sha256": "7342938bc2e15ea1de8c74a157b36fe09ccf182d2b0457026aae091c6430679e",
+      "sha256": "27d00cb6781b0c8e7fed1f6c9003b3df00a3241f988a0f8fa64a2906643b60c2"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-34/student-packet.html",
+      "change": "modified",
+      "bytes": 18561,
+      "old_sha256": "55c2f8f80173f23539b853db933b8532d6b7f14680e67d934217b1fbfdd5af95",
+      "sha256": "30849a737b817e2ae297e6cd688016980e9bc615a8ef5b3f56c1a6a41696206d"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-34/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8613,
+      "old_sha256": "0fdc753507ea5edba0346b79e03ac3cd2944f90985a48fc414c10fd2b7362f31",
+      "sha256": "e2219a6e2ef91b51312a8a3136bafbcc67108e7b7a5661401d3f7bb066bb2bc1"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-35/student-packet.html",
+      "change": "modified",
+      "bytes": 18915,
+      "old_sha256": "e72312619a083aa693684220aa4617d89979e6ca2bf01987240470119dbb88de",
+      "sha256": "4e1ba5bde8da328503d5926eacf2a8ebb9a7dd0e0be46bb598a711ab36792d4b"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-35/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8780,
+      "old_sha256": "0f40756f447489730354ce458b5e5c0ae008baf6cfe437e81b99f17d37a4ebde",
+      "sha256": "5c2fb225fd9b99cf970d21e478613f306d634da113a40eb7ccd3e3cf8bb04f8b"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-36/student-packet.html",
+      "change": "modified",
+      "bytes": 18168,
+      "old_sha256": "f3c373572f97ac0275991e3e71fa30f877d3597b961ee388e67e95b99aa1f57f",
+      "sha256": "c3dc113fd64bf6126ce71d0f6e3be3118048b5d16529f6bedcfaf6e5428feabd"
+    },
+    {
+      "path": "courses/social-studies/grade-09/weeks/week-36/teacher-guide.html",
+      "change": "modified",
+      "bytes": 8523,
+      "old_sha256": "7028c69b95e344b0248fd58f81c9dc899de3e170706dae5a1a66f5c5df21c2b6",
+      "sha256": "a10896e3d6600f5f8b8a4c4c9c89061d465082af4db6de543922bd20f771d69a"
+    },
+    {
+      "path": "docs/audits/GRADE09_STOS_FORENSIC_REPAIR_2026-09-09.md",
+      "change": "added",
+      "bytes": 9771,
+      "sha256": "4b6217396d2ab5af98d2b875612a9ff8f65745d126e0e9c3ed5ff7b78d0e799d"
+    },
+    {
+      "path": "docs/audits/GRADE09_STOS_REPAIR_VALIDATION_2026-09-09.txt",
+      "change": "added",
+      "bytes": 153869,
+      "sha256": "244e63940617c43890cfec04780b98fca2cff5023bcf49c72e08fa2b3b2d311e"
+    },
+    {
+      "path": "grades/grade-09/course-catalog.json",
+      "change": "modified",
+      "bytes": 7041,
+      "old_sha256": "602bfa9a945cb2ce775a30b9acd48ca8f69619f517fe489eca63922672efa02b",
+      "sha256": "37eb7656ef3f36852dcf08f56899d49c8da0e2e448ed4954901d4c1fcc5b2aa2"
+    },
+    {
+      "path": "grades/grade-09/index.html",
+      "change": "modified",
+      "bytes": 15772,
+      "old_sha256": "72e8d7dfa049f4c1ec609f8bb9012a8857cd2cabdcfe8c18a5eb47256301999a",
+      "sha256": "68d07de18e72247841f0537ba2035fbd0d39c38a66aa40d1c51823a4dd370add"
+    },
+    {
+      "path": "grades/grade-09/language-arts/index.html",
+      "change": "modified",
+      "bytes": 2453,
+      "old_sha256": "90a48ff94991eca66dc23b9fab79ec87693ee5dbc3e4b1043aed25dd91b1cce6",
+      "sha256": "6781589f941f1177a087c500c11c4eb40a82f0111fdf3064738385211572bc4c"
+    },
+    {
+      "path": "grades/grade-09/placement-contract.json",
+      "change": "modified",
+      "bytes": 1954,
+      "old_sha256": "dffd39b1b28b0e2e31def06fe94bd9e79e2e710c45ed3f6a06d30220037b872e",
+      "sha256": "c0ce8f3c4a4bcabd0df15cdf49443918840bf673785a7ce4941fabf89c0b67bd"
+    },
+    {
+      "path": "grades/grade-09/student-profile/daily-lessons/index.html",
+      "change": "modified",
+      "bytes": 11173,
+      "old_sha256": "07b22c80581a196593148d05da2991ae8cb26784600acebeef1ddd9b9262dcf3",
+      "sha256": "acfba72cb592a8d6e65ebbe2e9b7d7fbe338b74fdbf9f9a536ac92abc25ee4f7"
+    },
+    {
+      "path": "grades/grade-09/student-profile/games/index.html",
+      "change": "modified",
+      "bytes": 2658,
+      "old_sha256": "d7ddac82b95b2c733aa41eb0a029140241de7d8495e9626f96c8e36c4eb8f4fe",
+      "sha256": "ccae21818da27896fa4215639137ebfcdab19210cd587ff68f53e005214d6a1f"
+    },
+    {
+      "path": "grades/grade-09/student-profile/grades/index.html",
+      "change": "modified",
+      "bytes": 3386,
+      "old_sha256": "152bed5f17da982115651c03e63fbbcb43b2455e4ac03208e8ed06f3f7c3385f",
+      "sha256": "62152ce4e66aaa12f1f15cf40b78675e50eb1af2781a23978c8b6fdee493e869"
+    },
+    {
+      "path": "grades/grade-09/student-profile/index.html",
+      "change": "modified",
+      "bytes": 10796,
+      "old_sha256": "38117570a34f1160a1b5cc9c49017dfd9b1d1dc1c273910d59efd084fc1515c1",
+      "sha256": "28ae34c81630c6d16965b908f9ee6363a100c389b20078ba6f588e0e4f8d631d"
+    },
+    {
+      "path": "grades/grade-09/student-profile/profile/index.html",
+      "change": "modified",
+      "bytes": 4121,
+      "old_sha256": "94777174728c8e3f7b79a452d7f5d5418681ef1916678dd0d6bfe578a4fba42d",
+      "sha256": "ef2e977e16fd3350914e1266d049f8de317041671d15ae91ba783e261fddeedd"
+    },
+    {
+      "path": "grades/grade-09/student-profile/settings/index.html",
+      "change": "modified",
+      "bytes": 4611,
+      "old_sha256": "2c99106619a480bf9838f47c493cfae4aa7d1846ec8a83b1b9dc03a222c3975c",
+      "sha256": "88406b39bfeebf4fa2df6bfba453e0c1e88be75780b2d9b0f7dfa49281454f5d"
+    },
+    {
+      "path": "grades/grade-09/student-profile/student-course-registry.js",
+      "change": "modified",
+      "bytes": 5208,
+      "old_sha256": "fcc105e648951899b3ddbf797741aee6cdc87aff80c949cfebdcdb9384c443ab",
+      "sha256": "6b0640f8aa785aa1630e7104f27170c673d108c8dd25056084e694ff765b9dbc"
+    },
+    {
+      "path": "scripts/validate_grade09_math_labels.py",
+      "change": "modified",
+      "bytes": 875,
+      "old_sha256": "fd4fa019b72801fd5da8d0b5f117b6f3633d0e46db6ae9464e09d4339e6fdce8",
+      "sha256": "239caeef395983191fbf4120bd70b3f5ffedeffba702e9cc309902cddf35ad3f"
+    },
+    {
+      "path": "scripts/validate_grade09_stos_forensic.py",
+      "change": "added",
+      "bytes": 4411,
+      "sha256": "9f3c372cd61277d2cb3ea8e2025aaf8557dbea947abaf9ef802f351a83e634af"
+    },
+    {
+      "path": "service-worker.js",
+      "change": "modified",
+      "bytes": 31279,
+      "old_sha256": "34f4133ecc6f2bde2dbd2bed2f7251ca7e55ce635ef925081c75ff1c38a100c3",
+      "sha256": "dfe854f5085c01e954e2ff3ff0176402d95f2296e08f1aba4e793f8a69ab50bf"
+    }
+  ]
+}
