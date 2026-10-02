@@ -7,4 +7,4 @@
 - Public product and accessibility — 15
 - Ethical reflection and next steps — 15
 
-Minimum graduation score: 70.
+Minimum graduation score: 80.

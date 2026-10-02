@@ -8,4 +8,4 @@
 - Revision conditions and implications — 10
 - Professional, accessible communication — 10
 
-Minimum graduation score: 75.
+Minimum graduation score: 80.

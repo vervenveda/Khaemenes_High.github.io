@@ -8,4 +8,4 @@
 - Limitations and revision conditions — 10
 - Organization, citation, writing, and disclosure — 15
 
-Minimum graduation score: 75.
+Minimum graduation score: 80.
