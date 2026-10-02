@@ -82,7 +82,7 @@ const report={
   answerPositions,
   failures,
   warnings,
-  result:failures.length?'FAIL':'PASS_WITH_WARNINGS'
+  result:failures.length?'FAIL':warnings.length?'PASS_WITH_WARNINGS':'PASS'
 };
 
 const out=path.join(ROOT,'validation','assessment-validation-report.json');
