@@ -1,0 +1,150 @@
+{
+  "title": "Week 2 Mastery Quiz — Geography and Human Systems",
+  "points": 25,
+  "masteryPercent": 80,
+  "questions": [
+    {
+      "id": "W02Q1",
+      "prompt": "Which example gives an absolute location?",
+      "choices": [
+        "south of the river",
+        "near the old market",
+        "25.7617° N, 80.1918° W",
+        "two hours from the coast"
+      ],
+      "answer": 2,
+      "explanation": "Absolute location uses a fixed reference such as geographic coordinates; the other choices describe relative location."
+    },
+    {
+      "id": "W02Q2",
+      "prompt": "A geographer says a town is upstream from a port and east of a mountain pass. Which concept is being used?",
+      "choices": [
+        "Projection",
+        "Scale",
+        "Population density",
+        "Relative location"
+      ],
+      "answer": 3,
+      "explanation": "Relative location describes a place in relation to other places or features."
+    },
+    {
+      "id": "W02Q3",
+      "prompt": "Why does map scale matter when interpreting distance?",
+      "choices": [
+        "It shows the relationship between distance on the map and distance on Earth.",
+        "It identifies the map's political viewpoint.",
+        "It determines which projection is automatically correct.",
+        "It proves why people migrated."
+      ],
+      "answer": 0,
+      "explanation": "Scale translates mapped distance into real-world distance. It does not by itself explain politics, projection choice, or migration causes."
+    },
+    {
+      "id": "W02Q4",
+      "prompt": "Why must every flat world map distort at least some geographic property?",
+      "choices": [
+        "Cartographers intentionally make maps inaccurate.",
+        "Earth's curved surface cannot be flattened without tradeoffs in area, shape, distance, or direction.",
+        "Political borders change too quickly.",
+        "Latitude and longitude cannot be measured."
+      ],
+      "answer": 1,
+      "explanation": "Map projections transform a curved surface into a flat one, so every projection preserves some properties better than others."
+    },
+    {
+      "id": "W02Q5",
+      "prompt": "Which statement best describes human-environment interaction?",
+      "choices": [
+        "Environment determines exactly how every society will develop.",
+        "Human choices are independent of geography.",
+        "People adapt to, depend on, and alter natural systems, while environments create possibilities and constraints.",
+        "Only climate matters in settlement decisions."
+      ],
+      "answer": 2,
+      "explanation": "Human-environment interaction is reciprocal: geography matters, but technology, institutions, culture, and power shape how people respond."
+    },
+    {
+      "id": "W02Q6",
+      "prompt": "A population-density map shows a large concentration near a coast. What is the strongest next step before explaining why?",
+      "choices": [
+        "Assume the coast caused the settlement pattern.",
+        "Ignore the pattern because maps are simplified.",
+        "Conclude the population is permanent and never seasonal.",
+        "Compare additional evidence such as water access, transport routes, terrain, economic activity, and political boundaries."
+      ],
+      "answer": 3,
+      "explanation": "A mapped pattern is an observation, not yet a complete causal explanation. Multiple geographic and human-system variables should be tested."
+    },
+    {
+      "id": "W02Q7",
+      "prompt": "Which example best shows why migration is rarely explained by one factor alone?",
+      "choices": [
+        "A family moves because conflict creates risk, relatives provide a destination network, transportation becomes available, and border rules allow entry.",
+        "A traveler chooses a road because it is shorter.",
+        "A map uses a different color scheme.",
+        "A city lies at an absolute location."
+      ],
+      "answer": 0,
+      "explanation": "Migration often reflects interacting push factors, pull factors, networks, transportation, policy, and constraints."
+    },
+    {
+      "id": "W02Q8",
+      "prompt": "A conformal projection preserves local shape and direction well but greatly enlarges high-latitude areas. Which conclusion is most responsible?",
+      "choices": [
+        "The map is useless.",
+        "The projection may be useful for some navigation or shape tasks but should not be used uncritically for comparing land area.",
+        "The projection is the only accurate world map.",
+        "Area comparisons made from the map are automatically exact."
+      ],
+      "answer": 1,
+      "explanation": "Projection choice should match purpose. A map can be useful for one task while distorting another property."
+    },
+    {
+      "id": "W02Q9",
+      "prompt": "Which evidence would best help test a claim that a new highway changed migration into a region?",
+      "choices": [
+        "One person's opinion about the highway",
+        "A world map with no time data",
+        "Migration counts before and after the highway, transportation data, and evidence about other changes occurring at the same time",
+        "The highway's name"
+      ],
+      "answer": 2,
+      "explanation": "Testing change over time requires before/after evidence and attention to competing explanations rather than one anecdote or static map."
+    },
+    {
+      "id": "W02Q10",
+      "prompt": "Which statement best answers the week's essential question without geographic determinism?",
+      "choices": [
+        "Location determines human choices completely.",
+        "Geography matters only when technology is absent.",
+        "Places with similar environments always develop in the same way.",
+        "Location creates opportunities and constraints, but people respond through technology, institutions, culture, networks, and power."
+      ],
+      "answer": 3,
+      "explanation": "Geography influences choices and risks without mechanically determining outcomes; human systems mediate environmental possibilities and constraints."
+    }
+  ],
+  "shortResponse": {
+    "prompt": "Using at least two specific examples from this week, explain how location can shape opportunities, risks, movement, and human choices without determining them completely. Include one limitation of a map, dataset, or geographic explanation.",
+    "points": 5,
+    "exemplar": "Full-credit work makes a clear claim, accurately uses at least two Week 2 concepts or examples such as scale, projection, settlement pattern, migration factors, transportation, or human-environment interaction, explains the relationship rather than merely listing evidence, and identifies one limit or alternative factor.",
+    "rubric": {
+      "Evidence": 2,
+      "Reasoning": 2,
+      "AccuracyAndLimits": 1
+    }
+  },
+  "masteryThreshold": 80,
+  "questionIds": [
+    "W02Q1",
+    "W02Q2",
+    "W02Q3",
+    "W02Q4",
+    "W02Q5",
+    "W02Q6",
+    "W02Q7",
+    "W02Q8",
+    "W02Q9",
+    "W02Q10"
+  ]
+}
