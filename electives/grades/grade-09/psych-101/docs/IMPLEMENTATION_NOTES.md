@@ -1,3 +1,5 @@
+> **Historical build log:** Production is now complete at 65/65 lessons, 13/13 weekly assessments, and 3/3 cumulative assessments. See `../VALIDATION.md` and `../VALIDATION_REPORT.json` for the current certified state.
+
 # IMPLEMENTATION NOTES
 
 ## Current Phase
