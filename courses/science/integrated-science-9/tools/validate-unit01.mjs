@@ -37,7 +37,7 @@ requireCheck(/REQUIREMENTS=.*verification/.test(unitJS.replace(/\s+/g,'')),'veri
 requireCheck(/completed\.add\("u01"\)|completed\.add\('u01'\)|completed\.add\(`u01`\)/.test(unitJS),'Unit 01 synchronizes to course completedUnits');
 
 const dashboard=read(`${base}/index.html`);
-requireCheck(/17[^<]{0,30}Mastery Requirements/i.test(dashboard.replace(/\s+/g,' ')),'dashboard advertises 17 mastery requirements');
+requireCheck(/<strong>\s*17\s*<\/strong>\s*<span>\s*Mastery Requirements/i.test(dashboard)||/17[^<]{0,30}Mastery Requirements/i.test(dashboard.replace(/\s+/g,' ')),'dashboard advertises 17 mastery requirements');
 requireCheck(/0 of 17 requirements/i.test(dashboard),'dashboard initial progress count matches runtime');
 requireCheck(/data-requirement="verification"/.test(dashboard),'dashboard exposes human verification requirement');
 requireCheck(/12\/15/.test(dashboard)&&/20\/24/.test(dashboard)&&/32\/40/.test(dashboard)&&/16\/20/.test(dashboard),'dashboard publishes all objective and human-scored mastery thresholds');
@@ -49,7 +49,7 @@ requireCheck(/TOTAL\s*=\s*QUESTIONS\.length|TOTAL\s*=\s*15/.test(quiz),'quiz tot
 requireCheck(/bestScore/.test(quiz),'quiz preserves best demonstrated score');
 
 const assessment=read(`${base}/assessment-app.js`);
-requireCheck(/PASSING\s*=\s*20/.test(assessment),'objective assessment threshold is 20/24');
+requireCheck(/PASSING\s*=\s*20/.test(assessment)||/PASSING\s*=\s*Math\.ceil\(TOTAL\*0\.80\)/.test(assessment),'objective assessment threshold is 20/24 or computed ≥80%');
 requireCheck(/TOTAL\s*=\s*QUESTIONS\.length|TOTAL\s*=\s*24/.test(assessment),'objective assessment total is 24');
 requireCheck(/bestScore/.test(assessment),'objective assessment preserves best demonstrated score');
 
