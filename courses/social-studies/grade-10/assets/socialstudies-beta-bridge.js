@@ -1,7 +1,7 @@
 (() => {
 "use strict";
 
-const BETA_WIDGET = "https://vervenveda.com/assets/vnv-beta-link.js";
+const BETA_WIDGET = "/stos/khaemenes/assets/vnv-beta-link.js";
 const SCRIPT_ID = "vnvBetaWidgetScript";
 
 function removeLegacyBeta(){
