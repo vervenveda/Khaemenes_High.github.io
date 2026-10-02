@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "school": "Khaemenes Academy High School",
+  "stage": "high",
+  "operationalHome": "/stos/khaemenes/high/",
+  "academyHome": "/stos/khaemenes/",
+  "principalAndSoleActiveMentor": {
+    "id": "archaemenes",
+    "route": "/stos/mentor/"
+  },
+  "administration": {
+    "id": "NAIB"
+  },
+  "backendChancellor": {
+    "id": "Noema"
+  },
+  "learnerIdentity": "academy-family-registry",
+  "progressionAuthority": "course-engine",
+  "masteryThresholdMinimum": 80,
+  "teacherAiMentorAuthority": "deferred",
+  "assessmentPolicy": "courses/shared/assessment-authority/"
+}

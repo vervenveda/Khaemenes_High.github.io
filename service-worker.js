@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-design-v20";
+const CACHE_VERSION = "khaemenes-high-design-v21-stos-forensic-20260909";
 const PRECACHE_FILES = [
   "./",
   "./index.html",
@@ -21,7 +21,6 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/diagnostic/index.html",
   "./courses/mathematics/pre-algebra/units/unit-01/",
   "./courses/mathematics/pre-algebra/units/unit-01/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-01/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-01/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-01/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-01/assets/lesson-engine.js",
@@ -40,12 +39,10 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-01/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-01/projects/number-systems-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-01/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-01/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-01/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-01/vocabulary.json",
   "./courses/mathematics/pre-algebra/units/unit-02/",
   "./courses/mathematics/pre-algebra/units/unit-02/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-02/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-02/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-02/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-02/assets/lesson-engine.js",
@@ -66,11 +63,9 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-02/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-02/projects/signed-data-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-02/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-02/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-02/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-02/vocabulary.json",
   "./courses/mathematics/pre-algebra/units/unit-03/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-03/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-03/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-03/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-03/assets/lesson-engine.js",
@@ -91,11 +86,9 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-03/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-03/projects/rational-quantity-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-03/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-03/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-03/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-03/vocabulary.json",
   "./courses/mathematics/pre-algebra/units/unit-04/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-04/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-04/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-04/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-04/assets/lesson-engine.js",
@@ -116,12 +109,10 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-04/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-04/projects/community-scale-rate-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-04/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-04/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-04/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-04/vocabulary.json",
   "./courses/mathematics/pre-algebra/units/unit-05/",
   "./courses/mathematics/pre-algebra/units/unit-05/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-05/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-05/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-05/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-05/assets/lesson-engine.js",
@@ -142,12 +133,10 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-05/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-05/projects/consumer-financial-decision-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-05/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-05/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-05/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-05/vocabulary.json",
   "./courses/mathematics/pre-algebra/units/unit-06/",
   "./courses/mathematics/pre-algebra/units/unit-06/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-06/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-06/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-06/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-06/assets/lesson-engine.js",
@@ -167,12 +156,10 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-06/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-06/projects/scale-of-universe-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-06/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-06/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-06/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-06/vocabulary.json",
   "./courses/mathematics/pre-algebra/units/unit-07/",
   "./courses/mathematics/pre-algebra/units/unit-07/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-07/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-07/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-07/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-07/assets/lesson-engine.js",
@@ -193,12 +180,10 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-07/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-07/projects/algebraic-model-design-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-07/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-07/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-07/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-07/vocabulary.json",
   "./courses/mathematics/pre-algebra/units/unit-08/",
   "./courses/mathematics/pre-algebra/units/unit-08/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-08/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-08/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-08/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-08/assets/lesson-engine.js",
@@ -219,11 +204,9 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-08/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-08/projects/equation-formula-design-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-08/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-08/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-08/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-08/vocabulary.json",
   "./courses/mathematics/pre-algebra/units/unit-09/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-09/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-09/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-09/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-09/assets/lesson-engine.js",
@@ -243,11 +226,9 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-09/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-09/projects/constraint-design-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-09/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-09/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-09/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-09/vocabulary.json",
   "./courses/mathematics/pre-algebra/units/unit-10/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-10/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-10/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-10/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-10/assets/lesson-engine.js",
@@ -268,11 +249,9 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-10/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-10/projects/linear-relationship-data-story-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-10/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-10/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-10/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-10/vocabulary.json",
   "./courses/mathematics/pre-algebra/units/unit-11/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-11/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-11/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-11/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-11/assets/lesson-engine.js",
@@ -293,11 +272,9 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-11/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-11/projects/accessible-space-scale-design-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-11/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-11/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-11/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-11/vocabulary.json",
   "./courses/mathematics/pre-algebra/units/unit-12/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-12/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-12/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-12/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-12/assets/lesson-engine.js",
@@ -318,12 +295,10 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-12/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-12/projects/community-data-evidence-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-12/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-12/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-12/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-12/vocabulary.json"
 ,
   "./courses/mathematics/pre-algebra/units/unit-13/README.md",
-  "./courses/mathematics/pre-algebra/units/unit-13/assessment/answer-key.json",
   "./courses/mathematics/pre-algebra/units/unit-13/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-13/assets/assessment-engine.js",
   "./courses/mathematics/pre-algebra/units/unit-13/assets/lesson-engine.js",
@@ -341,7 +316,6 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-13/practice/foundation.html",
   "./courses/mathematics/pre-algebra/units/unit-13/projects/mathematical-modelling-capstone-portfolio.html",
   "./courses/mathematics/pre-algebra/units/unit-13/standards-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-13/teacher-guide.html",
   "./courses/mathematics/pre-algebra/units/unit-13/tools/modelling-verification-studio.html",
   "./courses/mathematics/pre-algebra/units/unit-13/unit-map.json",
   "./courses/mathematics/pre-algebra/units/unit-13/vocabulary.json",
@@ -351,7 +325,6 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/assessments/final-exam-36-weeks.html",
   "./courses/mathematics/pre-algebra/assessments/administration-guide.html",
   "./courses/mathematics/pre-algebra/assessments/assessment-map.json",
-  "./courses/mathematics/pre-algebra/assessments/answer-keys.json",
   "./courses/mathematics/pre-algebra/assessments/assets/assessment-suite.css",
   "./courses/mathematics/pre-algebra/assessments/assets/exam-engine.js",
   "./courses/mathematics/pre-algebra/records/README.md",
@@ -359,6 +332,18 @@ const PRECACHE_FILES = [
   "./docs/releases/ASSESSMENT_RECORDS_RELEASE.md",
   "./docs/audits/ASSESSMENT_RECORDS_VALIDATION.md",
 ];
+
+const SENSITIVE_CACHE_PATTERNS = [
+  /\/teacher(?:\/|$)/i,
+  /teacher-guide/i,
+  /teacher-keys/i,
+  /answer[-_]?keys?/i,
+  /final[-_]?key/i,
+  /midterm[-_]?key/i
+];
+function shouldNeverCache(url){
+  return SENSITIVE_CACHE_PATTERNS.some(pattern=>pattern.test(url.pathname));
+}
 
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_VERSION).then(cache => Promise.allSettled(PRECACHE_FILES.map(path => cache.add(new Request(path, { cache: "reload" }))))).then(() => self.skipWaiting()));
@@ -396,6 +381,10 @@ self.addEventListener("fetch", event => {
   if (request.method !== "GET") return;
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+  if (shouldNeverCache(url)) {
+    event.respondWith(fetch(request, { cache: "no-store" }));
+    return;
+  }
   if (request.mode === "navigate") {
     event.respondWith(fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(async () => (await caches.match(request)) || (await caches.match(fallbackFor(url))) || caches.match("./index.html")));
     return;

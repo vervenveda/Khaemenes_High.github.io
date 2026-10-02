@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "sourceId": "khaemenes.high",
   "name": "Khaemenes Academy High School",
   "classification": "educational",
@@ -13,14 +13,14 @@
     "parent",
     "educator"
   ],
-  "homepage": "https://vervenveda.com/Khaemenes_High.github.io/",
+  "homepage": "/stos/khaemenes/high/",
   "repository": "vervenveda/Khaemenes_High.github.io",
   "resources": [
     {
       "id": "high-home",
       "title": "Khaemenes Academy High School",
-      "description": "Grades 9\u201312 Khaemenes Academy campus and course navigation.",
-      "url": "https://vervenveda.com/Khaemenes_High.github.io/",
+      "description": "Grades 9–12 Khaemenes Academy campus and course navigation.",
+      "url": "/stos/khaemenes/high/",
       "audiences": [
         "high",
         "parent"
@@ -46,8 +46,8 @@
     {
       "id": "high-language-arts",
       "title": "High School Language Arts",
-      "description": "Grades 9\u201312 English language arts, literature, composition, research, and analysis.",
-      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/",
+      "description": "Grades 9–12 English language arts, literature, composition, research, and analysis.",
+      "url": "/stos/khaemenes/high/courses/language-arts/",
       "audiences": [
         "high"
       ],
@@ -76,7 +76,7 @@
       "id": "high-mathematics",
       "title": "High School Mathematics",
       "description": "High-school mathematics course family and quantitative tools.",
-      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/",
+      "url": "/stos/khaemenes/high/courses/mathematics/",
       "audiences": [
         "high"
       ],
@@ -104,7 +104,7 @@
       "id": "high-science",
       "title": "High School Science Department",
       "description": "Four-year laboratory science pathway: Integrated Science 9, Biology 10, Chemistry 11, Physics & Engineering 12, plus federated science extensions.",
-      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/science/",
+      "url": "/stos/khaemenes/high/courses/science/",
       "audiences": [
         "high"
       ],
@@ -136,7 +136,7 @@
       "id": "science-integrated-9",
       "title": "International Integrated Science 9",
       "description": "36-week integrated foundation in life, matter, energy, Earth systems, inquiry, engineering, and scientific information literacy.",
-      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/",
+      "url": "/stos/khaemenes/high/courses/science/integrated-science-9/",
       "audiences": [
         "high"
       ],
@@ -175,7 +175,7 @@
       "id": "science-biology-10",
       "title": "International Biology & Biotechnology 10",
       "description": "36-week advanced biology sequence from molecular/cellular systems through genetics, biotechnology, evolution, ecology, biodiversity, and capstone.",
-      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/science/biology-10/",
+      "url": "/stos/khaemenes/high/courses/science/biology-10/",
       "audiences": [
         "high"
       ],
@@ -214,7 +214,7 @@
       "id": "science-chemistry-11",
       "title": "International Chemistry & Materials Science 11",
       "description": "36-week quantitative chemistry sequence in structure, bonding, reactions, stoichiometry, kinetics, thermodynamics, equilibrium, acids/bases, electrochemistry, and materials.",
-      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/science/chemistry-11/",
+      "url": "/stos/khaemenes/high/courses/science/chemistry-11/",
       "audiences": [
         "high"
       ],
@@ -252,7 +252,7 @@
       "id": "science-physics-12",
       "title": "International Physics & Engineering 12",
       "description": "36-week algebra-based physics and engineering sequence in mechanics, rotation, waves, fluids, thermal physics, electricity, magnetism, information technologies, space applications, and design.",
-      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/science/physics-engineering-12/",
+      "url": "/stos/khaemenes/high/courses/science/physics-engineering-12/",
       "audiences": [
         "high"
       ],
@@ -290,8 +290,8 @@
     {
       "id": "high-social-studies",
       "title": "High School Social Studies",
-      "description": "Grades 9\u201312 social studies, history, civics, and public-life learning.",
-      "url": "https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/",
+      "description": "Grades 9–12 social studies, history, civics, and public-life learning.",
+      "url": "/stos/khaemenes/high/courses/social-studies/",
       "audiences": [
         "high"
       ],
@@ -318,5 +318,11 @@
       "resourceType": "department"
     }
   ],
-  "mentorNotes": "Repair 08b corrects source authority. Physical Education and Health & Wellness are federated Khaemenes High academic pathways physically owned by the Medicament High School Health Academy at medicament-hub.github.io/academy/high-school-health/. Those resources are intentionally not duplicated in this High School manifest; Mentor discovers them through verve.medicament. The federated electives navigator likewise does not transfer source ownership from specialist repositories."
+  "mentorNotes": "Repair 08b corrects source authority. Physical Education and Health & Wellness are federated Khaemenes High academic pathways physically owned by the Medicament High School Health Academy at medicament-hub.github.io/academy/high-school-health/. Those resources are intentionally not duplicated in this High School manifest; Mentor discovers them through verve.medicament. The federated electives navigator likewise does not transfer source ownership from specialist repositories.",
+  "operationalAuthority": "STOS",
+  "repositoryRole": "archive/reference only; not an operational runtime dependency",
+  "mentorAuthority": "Archaemenes · School Principal",
+  "administrationAuthority": "NAIB",
+  "backendChancellor": "Noema",
+  "teacherAiMentorAuthority": "deferred"
 }
