@@ -80,17 +80,20 @@ for(let unit=1;unit<=13;unit++){
   notes.push(`Unit ${id}: ${config.questions.length} questions at ${config.threshold}%`);
 }
 
-const diagnosticQuestions=embeddedArray("diagnostic/index.html","QUESTIONS");
+const readiness=readJson("diagnostic/readiness-assessment-v3.json");
+const diagnosticQuestions=(readiness.questions||[]).map(q=>({prompt:q.prompt,options:q.options,answer:q.answer_index,explanation:q.explanation,domain:q.strand||q.domain}));
 inspectQuestions("Readiness diagnostic",diagnosticQuestions);
-if(diagnosticQuestions.length!==20)fail(`Readiness diagnostic: ${diagnosticQuestions.length} questions, expected 20`);
-notes.push(`Readiness diagnostic: ${diagnosticQuestions.length} ungraded placement questions before Unit 01`);
+if(readiness.question_count!==diagnosticQuestions.length)fail(`Readiness diagnostic: declared count ${readiness.question_count} differs from ${diagnosticQuestions.length} questions`);
+if(diagnosticQuestions.length!==30)fail(`Readiness diagnostic: ${diagnosticQuestions.length} questions, expected 30 in v3`);
+if(Number(readiness.mastery_threshold_percent||readiness.mastery_threshold)!==80)fail("Readiness diagnostic mastery threshold must be 80%");
+notes.push(`Readiness diagnostic v3: ${diagnosticQuestions.length} stable-ID placement questions before Unit 01`);
 
 const assessmentMap=readJson("assessments/assessment-map.json");
 for(const record of assessmentMap.assessments){
   const config=embeddedConfig(`assessments/${record.path}`,"EXAM_CONFIG");
   inspectQuestions(record.id,config.questions);
   if(config.question_count!==config.questions.length)fail(`${record.id}: embedded count ${config.question_count} does not match ${config.questions.length} questions`);
-  if(record.questions!==config.questions.length)fail(`${record.id}: assessment-map count ${record.questions} does not match ${config.questions.length} questions`);
+  if(record.selected_response_questions!==config.questions.length)fail(`${record.id}: assessment-map selected-response count ${record.selected_response_questions} does not match ${config.questions.length} questions`);
   if(config.mastery_threshold!==80)fail(`${record.id}: mastery threshold is ${config.mastery_threshold}, expected 80`);
   if(config.result_key!==record.result_key)fail(`${record.id}: result key differs from assessment map`);
   const covered=[...new Set(config.questions.map(question=>question.unit))].sort((a,b)=>a-b);

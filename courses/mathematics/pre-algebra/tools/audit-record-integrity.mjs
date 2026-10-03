@@ -64,7 +64,7 @@ const reportTypes=["Family Progress Summary","Detailed Mastery Record","Portfoli
 for(const type of reportTypes)if(!reportCenter.includes(type))fail(`Records Office is missing ${type}`);
 const reportSafeguards=[
   ["Family Learning Center","Academy parent-page route"],
-  ["khaemenes-family-registry.js","canonical Family Registry connection"],
+  ["window.KhaemenesFamilyRegistry","optional host-provided Family Registry seam"],
   ["KHAE_OPEN_PREALGEBRA_FORGE_V2","course evidence source"],
   ["recorded_at:new Date().toISOString()","activity-log recording timestamp"],
   ["Reading/material title","reading-material title field"],
@@ -77,6 +77,7 @@ const reportSafeguards=[
   ["Download HTML","portable report export"]
 ];
 for(const [text,label] of reportSafeguards)if(!reportCenter.includes(text))fail(`Records Office missing ${label}`);
+if(/<script[^>]+src=["\']https?:\/\//i.test(reportCenter))fail("Records Office must not auto-load remote runtime code");
 for(const field of ["legalName","programName","academicYear","courseDates","parentName","district","hours","recordId","strengths","nextSteps","accommodations"])if(!reportCenter.includes(`id="${field}"`))fail(`Records Office missing ${field} field`);
 if(!courseHome.includes('href="records/"'))fail("Course report page does not link to the Records Office");
 if(!courseHome.includes("Open Family Learning Center"))fail("Course report page does not link to the Academy family page");

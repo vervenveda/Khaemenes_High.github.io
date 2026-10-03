@@ -4,9 +4,19 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const courseRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
-const repoRoot=execFileSync("git",["rev-parse","--show-toplevel"],{cwd:courseRoot,encoding:"utf8"}).trim();
-const tree=process.env.COURSE_AUDIT_TREE||"HEAD";
-const inventory=new Set(execFileSync("git",["ls-tree","-r","--name-only",tree],{cwd:repoRoot,encoding:"utf8"}).trim().split("\n").filter(Boolean));
+let repoRoot=path.resolve(courseRoot,"../../..");
+let tree=process.env.COURSE_AUDIT_TREE||"WORKTREE";
+let inventory;
+try{
+  repoRoot=execFileSync("git",["rev-parse","--show-toplevel"],{cwd:courseRoot,encoding:"utf8",stdio:["ignore","pipe","ignore"]}).trim();
+  tree=process.env.COURSE_AUDIT_TREE||"HEAD";
+  inventory=new Set(execFileSync("git",["ls-tree","-r","--name-only",tree],{cwd:repoRoot,encoding:"utf8"}).trim().split("\n").filter(Boolean));
+}catch{
+  const all=[];
+  const collect=directory=>{for(const entry of fs.readdirSync(directory,{withFileTypes:true})){const full=path.join(directory,entry.name);if(entry.isDirectory())collect(full);else all.push(path.relative(repoRoot,full).split(path.sep).join("/"));}};
+  collect(repoRoot);
+  inventory=new Set(all);
+}
 const failures=[];
 let references=0,anchors=0;
 

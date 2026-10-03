@@ -18,6 +18,6 @@ The map preserves each legacy `lesson_id`, unit, lesson, original alignment stat
 
 The legacy directory remains intact during this migration:
 
-`assets/video-manifest.json/transcripts/`
+`assets/legacy-video-manifest/transcripts/`
 
 Do not delete it until Pre-Algebra lesson rendering and any video-loading logic have been verified against the shared library and compatibility map.

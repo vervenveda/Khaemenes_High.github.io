@@ -74,15 +74,15 @@ expect(bootstrap.includes('prealgebra-course-navigator-v1.js'),"Existing Pre-Alg
 expect(bootstrap.includes('khaemenesPreAlgebraCourseNavigatorV1'),"Navigator bootstrap must use a stable component id.");
 
 for(const required of [
-  './assets/prealgebra-assessment-depth-v2-core.js',
   './assets/prealgebra-course-gates-v1.js',
   './assets/prealgebra-course-navigator-v1.js'
-]) expect(serviceWorker.includes(required),`Offline core must cache ${required}.`);
+]) expect(serviceWorker.includes(required),`Compact offline shell must cache ${required}.`);
+expect(!serviceWorker.includes('./assets/prealgebra-assessment-depth-v2-core.js'),"Assessment-depth core must remain on-demand rather than eagerly cached.");
 for(let i=1;i<=13;i++){
   const required=`./units/unit-${String(i).padStart(2,"0")}/unit-map.json`;
-  expect(serviceWorker.includes(required),`Offline core must cache canonical ${required}.`);
+  expect(!serviceWorker.includes(required),`Canonical ${required} must remain on-demand rather than expanding the shell cache.`);
 }
-expect(serviceWorker.includes('v4-course-navigator'),"Navigator release must advance the Pre-Algebra offline cache version.");
+expect(serviceWorker.includes('v6-compact-course-shell'),"Navigator validation must target the compact v6 offline-shell release.");
 
 for(const relative of ["assets/prealgebra-course-navigator-v1.js","assets/prealgebra-assessment-depth-v2.js","service-worker.js"]){
   const check=spawnSync(process.execPath,["--check",path.join(root,relative)],{encoding:"utf8"});

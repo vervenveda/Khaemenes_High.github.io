@@ -39,10 +39,13 @@ function inspectQuestion(label,question,index){
 
 const courseMap=readJson("course-map.json");
 if(courseMap.course?.duration_weeks!==36)fail(`Course duration is ${courseMap.course?.duration_weeks}, expected 36 weeks`);
-if(courseMap.units?.length!==14)fail(`Course map has ${courseMap.units?.length} entries, expected diagnostic plus 13 units`);
+if(courseMap.units?.length!==13)fail(`Course map has ${courseMap.units?.length} official instructional units, expected 13`);
 const mappedWeeks=(courseMap.units||[]).reduce((sum,unit)=>sum+Number(unit.weeks||0),0);
-if(mappedWeeks!==36)fail(`Mapped duration totals ${mappedWeeks}, expected 36 weeks`);
-if(courseMap.units?.[0]?.number!==0||courseMap.units?.[0]?.path!=="diagnostic/")fail("Unit 00 readiness diagnostic is not first in the course map");
+if(mappedWeeks!==36)fail(`Official instructional duration totals ${mappedWeeks}, expected 36 weeks`);
+if(courseMap.readiness_gateway?.path!=="diagnostic/")fail("Readiness gateway path is not diagnostic/");
+if(courseMap.readiness_gateway?.counts_toward_official_duration!==false)fail("Readiness gateway must not count toward the official 36-week duration");
+if(courseMap.conditional_unit_0?.number!==0||courseMap.conditional_unit_0?.path!=="units/unit-00/")fail("Conditional Unit 0 is not declared separately from official Units 1–13");
+if(courseMap.conditional_unit_0?.counts_toward_official_duration!==false)fail("Conditional Unit 0 must not count toward the official 36-week duration");
 
 for(let number=1;number<=13;number++){
   const id=String(number).padStart(2,"0"),courseUnit=courseMap.units.find(unit=>unit.number===number),unitMap=readJson(`units/unit-${id}/unit-map.json`);

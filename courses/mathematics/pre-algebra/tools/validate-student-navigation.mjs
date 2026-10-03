@@ -48,12 +48,23 @@ assert.ok(registry.includes("pinnedCourses"),"Grade 9 course registry must expos
 assert.ok(registry.includes("continueFor"),"Grade 9 course registry must resolve course continuation");
 assert.ok(registry.includes("mentorFor"),"Grade 9 course registry must create subject-aware Mentor links");
 
+function assertMentorHref(html,label){
+  const match=html.match(/href="([^"]*mentor\/\?[^"#]+)"/i);
+  assert.ok(match,`${label} must expose a Mentor href`);
+  const href=match[1].replace(/&amp;/g,"&");
+  const query=href.split("?")[1]||"";
+  const params=new URLSearchParams(query);
+  assert.equal(params.get("stage"),"high",`${label} Mentor stage must be high`);
+  for(const key of ["subject","course","source"])assert.ok(params.get(key),`${label} Mentor query must include ${key}`);
+  assert.ok(!String(params.get("source")).includes("Khaemenes_High.github.io"),`${label} Mentor source must be host-neutral`);
+}
+
 const campusPath="grades/grade-09/index.html";
 const campus=read(campusPath);
 assert.ok(campus.includes('<a class="btn gold" href="student-profile/">Open Student Dashboard</a>'),"Grade 9 campus primary action must open Student Dashboard");
 assert.ok(campus.includes('Dashboard first'),"Grade 9 campus must state the dashboard-first navigation rule");
 assert.ok(!campus.includes('Math Lesson 01'),"Grade 9 campus must not compete with pinned classes using a hard-coded Math Lesson 01 shortcut");
-assert.ok(campus.includes('/Khaemenes_High.github.io/mentor/'),"Grade 9 campus must use the same-ecosystem Mentor");
+assertMentorHref(campus,"Grade 9 campus");
 assert.ok(!campus.includes('artist1970.github.io/Archaemenes'),"Grade 9 campus must not restore the legacy Mentor route");
 
 const profilePath="grades/grade-09/student-profile/index.html";
@@ -63,7 +74,7 @@ assert.ok(profile.includes('id="courseManagerGrid"'),"Grade 9 dashboard must exp
 assert.ok(profile.includes('student-course-registry.js'),"Grade 9 dashboard must load the shared course registry");
 assert.ok(profile.includes('data-toggle-course'),"Grade 9 dashboard must provide Pin/Unpin class controls");
 assert.ok(profile.includes('data-launch-course'),"Grade 9 dashboard must provide direct class launch controls");
-assert.ok(profile.includes("/Khaemenes_High.github.io/mentor/"),"Grade 9 dashboard must expose the same-ecosystem Mentor");
+assertMentorHref(profile,"Grade 9 dashboard");
 assert.ok(!profile.includes('id="pinnedClassCard"'),"Grade 9 dashboard must not regress to a Pre-Algebra-only pinned card");
 assert.ok(!profile.includes("artist1970.github.io/Archaemenes"),"Grade 9 dashboard must not restore the legacy Mentor URL");
 
@@ -74,7 +85,7 @@ assert.ok(daily.includes('id="dailyClassGrid"'),"Daily Lessons must expose core 
 assert.ok(daily.includes('../student-course-registry.js'),"Daily Lessons must load the shared course registry");
 assert.ok(daily.includes('data-toggle-course'),"Daily Lessons must provide Pin/Unpin class controls");
 assert.ok(daily.includes('data-launch-course'),"Daily Lessons must provide direct class launch controls");
-assert.ok(daily.includes("/Khaemenes_High.github.io/mentor/"),"Daily Lessons must expose the same-ecosystem Mentor");
+assertMentorHref(daily,"Daily Lessons");
 assert.ok(!daily.includes('id="pinnedDailyCard"'),"Daily Lessons must not regress to a Pre-Algebra-only pinned card");
 assert.ok(!daily.includes("artist1970.github.io/Archaemenes"),"Daily Lessons must not use the legacy Mentor URL");
 

@@ -1,13 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="description" content="Khaemenes Academy open-age, 36-week pre-algebra course with complete units, mastery tracking, assessments, modelling, profile pinning, mathematics tools, and in-page learning games."/>
-<meta name="theme-color" content="#080b10"/>
-<link rel="manifest" href="manifest.webmanifest"/>
+<meta content="Khaemenes Academy open-age, 36-week pre-algebra course with complete units, mastery tracking, assessments, modelling, profile pinning, mathematics tools, and in-page learning games." name="description"/>
+<meta content="#080b10" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Pre-Algebra</title>
-
 <style>
 :root {
   --black:#050505;
@@ -580,227 +580,224 @@ strong,th{font-weight:600}
 <body>
 <a class="skip-link" href="#content">Skip to course content</a>
 <div class="app">
- <aside class="sidebar">
-  <div class="brand">
-   <a class="brand-home" href="https://vervenveda.github.io/Khaemenes_Academy.github.io/" aria-label="Khaemenes Academy home">
-    <div class="seal" aria-hidden="true">
+<aside class="sidebar">
+<div class="brand">
+<a aria-label="Khaemenes Academy home" class="brand-home" href="https://vervenveda.github.io/Khaemenes_Academy.github.io/">
+<div aria-hidden="true" class="seal">
      K
     </div>
-   </a>
-   <h2>Pre-Algebra</h2>
-   <p>
+</a>
+<h2>Pre-Algebra</h2>
+<p>
     Open-Age Foundations · Algebra I Readiness · Numerica Forge
    </p>
-   <p class="small">
+<p class="small">
     Khaemenes Academy › Mathematics › Pre-Algebra
    </p>
-  </div>
-  <section class="panel" id="student-profile">
-   <h3>
+</div>
+<section class="panel" id="student-profile">
+<h3>
     Learner Record
    </h3>
-   <label>
+<label>
     Active learner
    </label>
-   <select id="studentSelect">
-   </select>
-   <label>
+<select aria-label="Student Select" id="studentSelect">
+</select>
+<label>
     Add learner
    </label>
-   <div class="inline">
-    <input id="studentName" placeholder="Learner name"/>
-    <button id="addStudent">
+<div class="inline">
+<input aria-label="Learner name" id="studentName" placeholder="Learner name"/>
+<button id="addStudent">
      Add
     </button>
-   </div>
-   <div class="actions">
-    <button class="secondary" id="demo">
+</div>
+<div class="actions">
+<button class="secondary" id="demo">
      Add Demo
     </button>
-    <button class="danger" id="deleteStudent">
+<button class="danger" id="deleteStudent">
      Delete
     </button>
-   </div>
-  </section>
-  <nav class="panel">
-   <button class="navBtn active" data-view="dashboard">
+</div>
+</section>
+<nav class="panel">
+<button class="navBtn active" data-view="dashboard">
     Dashboard
    </button>
-   <button class="navBtn" data-view="overview">
+<button class="navBtn" data-view="overview">
     Course Guide
    </button>
-   <button class="navBtn" data-view="week">
+<button class="navBtn" data-view="week">
     Weekly Lessons
    </button>
-   <button class="navBtn" data-view="scope">
+<button class="navBtn" data-view="scope">
     36-Week Scope
    </button>
-   <button class="navBtn" data-view="tools">
+<button class="navBtn" data-view="tools">
     Math Tool Dock
    </button>
-   <button class="navBtn" data-view="games">
+<button class="navBtn" data-view="games">
     Math Games &amp; Tools
    </button>
-   <button class="navBtn" data-view="exams">
+<button class="navBtn" data-view="exams">
     Midterm &amp; Final
    </button>
-   <button class="navBtn" data-view="capstone">
+<button class="navBtn" data-view="capstone">
     Modelling Capstone
    </button>
-   <button class="navBtn" data-view="reports">
+<button class="navBtn" data-view="reports">
     Reports
    </button>
-   <button class="navBtn" data-view="standards">
+<button class="navBtn" data-view="standards">
     Sources
    </button>
-  </nav>
-  <section class="panel">
-   <h3>
+</nav>
+<section class="panel">
+<h3>
     Weeks
    </h3>
-   <div class="weekList" id="weekList">
-   </div>
-  </section>
- </aside>
- <main class="main" id="main">
-  <header class="hero">
-   <div class="hero-topline">
-    <div class="hero-identity">
-     <a class="hero-home-badge" href="https://vervenveda.github.io/Khaemenes_Academy.github.io/" aria-label="Khaemenes Academy home">K</a>
-     <div>
-      <div class="eyebrow">Numerica Forge · Khaemenes Academy</div>
-      <div class="hero-route">Mathematics › Open-Age Pre-Algebra</div>
-     </div>
-    </div>
-    <div class="header-tools" aria-label="Course account and navigation controls">
-     <a class="header-control" href="#student-profile" aria-label="Open this course learner record">Profile</a>
-     <button class="header-control pin-control" id="pinCourseButton" type="button" aria-pressed="false" aria-describedby="pinCourseStatus">☆ Pin to Profile</button>
-     <details class="course-menu" id="gamesMenu">
-      <summary aria-label="Open math games and tools menu">Math Games &amp; Tools <span aria-hidden="true">⌄</span></summary>
-      <div class="course-menu-panel">
-       <div class="course-menu-label">Launch here</div>
-       <p class="menu-note">Open a selected activity in a focused window without leaving Pre-Algebra.</p>
-       <button type="button" data-launch-title="Pattern Pirates" data-launch-url="https://vervenveda.com/arcade.github.io/games/kids/Pattern_Pirates_index.html">Pattern Pirates</button>
-       <button type="button" data-launch-title="Jenny’s Sudoku" data-launch-url="https://vervenveda.com/arcade.github.io/Jenny%27s_Sudoku_index.html">Jenny’s Sudoku</button>
-       <button type="button" data-launch-title="Six by Six" data-launch-url="https://vervenveda.com/arcade.github.io/SixbySix_index.html">Six by Six</button>
-       <button type="button" data-launch-title="Sacred Geometry" data-launch-url="https://vervenveda.com/arcade.github.io/a_sacred_geometry_game_index.html">Sacred Geometry</button>
-       <button type="button" data-launch-title="Mandala Rings" data-launch-url="https://vervenveda.com/arcade.github.io/a_mandala_rings_game_index.html">Mandala Rings</button>
-       <div class="course-menu-divider" aria-hidden="true"></div>
-       <button type="button" data-launch-title="Khaemenes Scientific Calculator" data-launch-url="../tools/calculator">Scientific Calculator</button>
-       <button type="button" data-launch-title="OHMIC CAD Studio" data-launch-url="https://vervenveda.com/proresource_hub.github.io/Protools/Ohmic_CAD_Studio.html">OHMIC CAD Studio</button>
-       <button type="button" data-launch-title="Verve N Veda Arcade" data-launch-url="https://vervenveda.com/arcade.github.io/">Open Full Arcade</button>
-       <div class="course-menu-divider" aria-hidden="true"></div>
-       <button type="button" data-go="games">View Games &amp; Tools Page</button>
-      </div>
-     </details>
-     <details class="course-menu" id="courseMenu">
-      <summary aria-label="Open course menu">School Menu <span aria-hidden="true">⌄</span></summary>
-      <div class="course-menu-panel">
-       <div class="course-menu-label">High School first</div>
-       <a href="../../../index.html">Khaemenes High Home</a>
-       <a href="#student-profile">Student Profile</a>
-       <a href="../index.html">Mathematics Home</a>
-       <a href="../algebra-1/index.html">Continue to Algebra I</a>
-       <div class="course-menu-divider" aria-hidden="true"></div>
-       <div class="course-menu-label">This course</div>
-       <button type="button" data-go="dashboard">Course Dashboard</button>
-       <button type="button" data-go="overview">Course Guide</button>
-       <button type="button" data-go="week">Weekly Lessons</button>
-       <button type="button" data-go="tools">Math Tool Dock</button>
-       <button type="button" data-go="games">Math Games &amp; Tools</button>
-       <button type="button" data-go="reports">Progress Reports</button>
-       <div class="course-menu-divider" aria-hidden="true"></div>
-       <div class="course-menu-label">Academy &amp; Verve N Veda</div>
-       <a href="https://vervenveda.github.io/Khaemenes_Academy.github.io/">Khaemenes Academy</a>
-       <a href="https://vervenveda.github.io/Khaemenes_Higher_Learning.github.io/">Khaemenes Higher Learning</a>
-       <a href="https://vervenveda.github.io/">Verve N Veda Gateway</a>
-      </div>
-     </details>
-     <span class="sr-only" id="pinCourseStatus" aria-live="polite"></span>
-    </div>
-   </div>
-   <h1>Pre-Algebra</h1>
-   <p>
+<div class="weekList" id="weekList">
+</div>
+</section>
+</aside>
+<main class="main" id="main">
+<header class="hero">
+<div class="hero-topline">
+<div class="hero-identity">
+<a aria-label="Khaemenes Academy home" class="hero-home-badge" href="https://vervenveda.github.io/Khaemenes_Academy.github.io/">K</a>
+<div>
+<div class="eyebrow">Numerica Forge · Khaemenes Academy</div>
+<div class="hero-route">Mathematics › Open-Age Pre-Algebra</div>
+</div>
+</div>
+<div aria-label="Course account and navigation controls" class="header-tools">
+<a aria-label="Open this course learner record" class="header-control" href="#student-profile">Profile</a>
+<button aria-describedby="pinCourseStatus" aria-pressed="false" class="header-control pin-control" id="pinCourseButton" type="button">☆ Pin to Profile</button>
+<details class="course-menu" id="gamesMenu">
+<summary aria-label="Open math games and tools menu">Math Games &amp; Tools <span aria-hidden="true">⌄</span></summary>
+<div class="course-menu-panel">
+<div class="course-menu-label">Launch here</div>
+<p class="menu-note">Open a selected activity in a focused window without leaving Pre-Algebra.</p>
+<button data-launch-title="Pattern Pirates" data-launch-url="https://vervenveda.com/arcade.github.io/games/kids/Pattern_Pirates_index.html" type="button">Pattern Pirates</button>
+<button data-launch-title="Jenny’s Sudoku" data-launch-url="https://vervenveda.com/arcade.github.io/Jenny%27s_Sudoku_index.html" type="button">Jenny’s Sudoku</button>
+<button data-launch-title="Six by Six" data-launch-url="https://vervenveda.com/arcade.github.io/SixbySix_index.html" type="button">Six by Six</button>
+<button data-launch-title="Sacred Geometry" data-launch-url="https://vervenveda.com/arcade.github.io/a_sacred_geometry_game_index.html" type="button">Sacred Geometry</button>
+<button data-launch-title="Mandala Rings" data-launch-url="https://vervenveda.com/arcade.github.io/a_mandala_rings_game_index.html" type="button">Mandala Rings</button>
+<div aria-hidden="true" class="course-menu-divider"></div>
+<button data-launch-title="Khaemenes Scientific Calculator" data-launch-url="../tools/calculator" type="button">Scientific Calculator</button>
+<button data-launch-title="OHMIC CAD Studio" data-launch-url="https://vervenveda.com/proresource_hub.github.io/Protools/Ohmic_CAD_Studio.html" type="button">OHMIC CAD Studio</button>
+<button data-launch-title="Verve N Veda Arcade" data-launch-url="https://vervenveda.com/arcade.github.io/" type="button">Open Full Arcade</button>
+<div aria-hidden="true" class="course-menu-divider"></div>
+<button data-go="games" type="button">View Games &amp; Tools Page</button>
+</div>
+</details>
+<details class="course-menu" id="courseMenu">
+<summary aria-label="Open course menu">School Menu <span aria-hidden="true">⌄</span></summary>
+<div class="course-menu-panel">
+<div class="course-menu-label">High School first</div>
+<a href="../../../index.html">Khaemenes High Home</a>
+<a href="#student-profile">Student Profile</a>
+<a href="../index.html">Mathematics Home</a>
+<a href="../algebra-1/index.html">Continue to Algebra I</a>
+<div aria-hidden="true" class="course-menu-divider"></div>
+<div class="course-menu-label">This course</div>
+<button data-go="dashboard" type="button">Course Dashboard</button>
+<button data-go="overview" type="button">Course Guide</button>
+<button data-go="week" type="button">Weekly Lessons</button>
+<button data-go="tools" type="button">Math Tool Dock</button>
+<button data-go="games" type="button">Math Games &amp; Tools</button>
+<button data-go="reports" type="button">Progress Reports</button>
+<div aria-hidden="true" class="course-menu-divider"></div>
+<div class="course-menu-label">Academy &amp; Verve N Veda</div>
+<a href="https://vervenveda.github.io/Khaemenes_Academy.github.io/">Khaemenes Academy</a>
+<a href="https://vervenveda.github.io/Khaemenes_Higher_Learning.github.io/">Khaemenes Higher Learning</a>
+<a href="https://vervenveda.github.io/">Verve N Veda Gateway</a>
+</div>
+</details>
+<span aria-live="polite" class="sr-only" id="pinCourseStatus"></span>
+</div>
+</div>
+<h1>Pre-Algebra</h1>
+<p>
     A complete, open-age 36-week pre-algebra pathway for arithmetic fluency, rational numbers, proportional reasoning, financial mathematics, exponents, equations, inequalities, functions, geometry, statistics, probability, modelling, and confident Algebra I readiness.
    </p>
-   <div class="actions">
-    <button data-go="week">
+<div class="actions">
+<button data-go="week">
      Open Lessons
     </button>
-    <button class="secondary" data-go="tools">
+<button class="secondary" data-go="tools">
      Math Tools
     </button>
-    <button class="secondary" data-go="games">
+<button class="secondary" data-go="games">
      Games &amp; Tools
     </button>
-    <a class="button ghost" href="https://vervenveda.github.io/Khaemenes_Higher_Learning.github.io/">
+<a class="button ghost" href="https://vervenveda.github.io/Khaemenes_Higher_Learning.github.io/">
      Higher Learning
     </a>
-    <button class="ghost" id="progressReportButton" type="button" data-go="reports" aria-controls="content">
+<button aria-controls="content" class="ghost" data-go="reports" id="progressReportButton" type="button">
      Progress Reports
     </button>
-   </div>
-  </header>
-  <nav class="tabs">
-   <button class="tab active" data-view="dashboard">
+</div>
+</header>
+<nav class="tabs">
+<button class="tab active" data-view="dashboard">
     Dashboard
    </button>
-   <button class="tab" data-view="overview">
+<button class="tab" data-view="overview">
     Course Guide
    </button>
-   <button class="tab" data-view="week">
+<button class="tab" data-view="week">
     Lessons
    </button>
-   <button class="tab" data-view="scope">
+<button class="tab" data-view="scope">
     Scope
    </button>
-   <button class="tab" data-view="tools">
+<button class="tab" data-view="tools">
     Tools
    </button>
-   <button class="tab" data-view="games">
+<button class="tab" data-view="games">
     Games
    </button>
-   <button class="tab" data-view="exams">
+<button class="tab" data-view="exams">
     Assessments
    </button>
-   <button class="tab" data-view="capstone">
+<button class="tab" data-view="capstone">
     Capstone
    </button>
-   <button class="tab" data-view="reports">
+<button class="tab" data-view="reports">
     Reports
    </button>
-   <button class="tab" data-view="standards">
+<button class="tab" data-view="standards">
     Sources
    </button>
-  </nav>
-  <section id="content" tabindex="-1">
-  </section>
-  <p class="small">
+</nav>
+<section id="content" tabindex="-1">
+</section>
+<p class="small">
    Khaemenes Academy · Open-Age Mathematics · Jennifer Pearl · 2026
   </p>
- </main>
+</main>
 </div>
-
-
- <dialog class="activity-dialog" id="activityDialog" aria-labelledby="activityDialogTitle">
-  <div class="activity-dialog-shell">
-   <header class="activity-dialog-header">
-    <div>
-     <p class="dialog-eyebrow">Khaemenes Pre-Algebra · Activity Window</p>
-     <h2 id="activityDialogTitle">Math Activity</h2>
-    </div>
-    <button class="dialog-close" id="activityDialogClose" type="button" aria-label="Close activity window">×</button>
-   </header>
-   <div class="activity-dialog-toolbar">
-    <span id="activityDialogStatus">Loading selected activity…</span>
-    <a id="activityDialogExternal" href="#" target="_blank" rel="noopener">Open separately</a>
-   </div>
-   <div class="activity-frame-wrap">
-    <iframe id="activityFrame" title="Math activity" loading="lazy" allow="fullscreen; autoplay; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-   </div>
-  </div>
- </dialog>
-
+<dialog aria-labelledby="activityDialogTitle" class="activity-dialog" id="activityDialog">
+<div class="activity-dialog-shell">
+<header class="activity-dialog-header">
+<div>
+<p class="dialog-eyebrow">Khaemenes Pre-Algebra · Activity Window</p>
+<h2 id="activityDialogTitle">Math Activity</h2>
+</div>
+<button aria-label="Close activity window" class="dialog-close" id="activityDialogClose" type="button">×</button>
+</header>
+<div class="activity-dialog-toolbar">
+<span id="activityDialogStatus">Loading selected activity…</span>
+<a href="#" id="activityDialogExternal" rel="noopener" target="_blank">Open separately</a>
+</div>
+<div class="activity-frame-wrap">
+<iframe allow="fullscreen; autoplay; clipboard-write" id="activityFrame" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Math activity"></iframe>
+</div>
+</div>
+</dialog>
 <script>
 
 const APP = {
@@ -4509,7 +4506,6 @@ activityDialog?.addEventListener("click",event=>{if(event.target===activityDialo
 $("pinCourseButton").onclick=toggleCoursePin;window.addEventListener("storage",event=>{if(event.key===PROFILE_PIN_KEY)updatePinButton()});$("addStudent").onclick=()=>{let n=$("studentName").value.trim();if(!n)return alert("Enter a learner name.");addStudent(n);$("studentName").value=""};$("studentSelect").onchange=e=>{state.activeId=e.target.value;save();render()};$("deleteStudent").onclick=()=>{let s=student();if(!s)return;if(!confirm(`Delete ${s.name}?`))return;state.students=state.students.filter(x=>x.id!==s.id);state.activeId=state.students[0]?.id||null;if(!state.students.length)addStudent("First Learner");save();render()};$("demo").onclick=()=>{addStudent("Demo Learner");let s=student();for(let i=1;i<=4;i++){let r=weekRec(s,i);["Monday","Tuesday","Wednesday"].forEach(d=>r.lessons[d]=true);r.assignments[0]=true;r.quiz.best=[100,80,85,70][i-1];r.quiz.attempts.push({date:new Date().toISOString(),score:r.quiz.best})}save();render()};if(!state.students.length)addStudent("First Learner");else render();
 
 </script>
-
 <script src="assets/prealgebra-archaemenes-upgrade.js"></script>
 <script>
 if("serviceWorker" in navigator){

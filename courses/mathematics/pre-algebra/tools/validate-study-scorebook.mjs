@@ -60,10 +60,10 @@ const scorebookIndex=bootstrap.indexOf('load(scorebookSrc,"khaemenesPreAlgebraSt
 expect(bootstrap.includes('prealgebra-study-scorebook-v1.js'),"Pre-Algebra bootstrap must load the Study Scorebook component.");
 expect(navigatorIndex>=0&&scorebookIndex>navigatorIndex,"Study Scorebook must load after the Course Navigator so dashboard wrappers compose in the intended order.");
 
-expect(serviceWorker.includes('./assets/prealgebra-study-scorebook-v1.js'),"Offline core must cache the Study Scorebook component.");
-expect(serviceWorker.includes('v3-assessment-depth'),"Study Scorebook release must preserve assessment-depth cache lineage.");
-expect(serviceWorker.includes('v4-course-navigator'),"Study Scorebook release must preserve course-navigator cache lineage.");
-expect(serviceWorker.includes('v5-study-scorebook'),"Study Scorebook release must advance the offline cache version.");
+expect(serviceWorker.includes('./assets/prealgebra-study-scorebook-v1.js'),"Compact offline shell must cache the Study Scorebook component.");
+expect(serviceWorker.includes('./assets/prealgebra-course-navigator-v1.js'),"Compact offline shell must preserve the Course Navigator component.");
+expect(!serviceWorker.includes('./assets/prealgebra-assessment-depth-v2-core.js'),"Study Scorebook release must keep assessment-depth content on-demand.");
+expect(serviceWorker.includes('v6-compact-course-shell'),"Study Scorebook validation must target the compact v6 offline-shell release.");
 
 for(const relative of ["assets/prealgebra-study-scorebook-v1.js","assets/prealgebra-assessment-depth-v2.js","service-worker.js"]){
   const check=spawnSync(process.execPath,["--check",path.join(root,relative)],{encoding:"utf8"});
