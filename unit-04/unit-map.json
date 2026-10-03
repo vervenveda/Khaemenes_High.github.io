@@ -1,0 +1,61 @@
+{
+  "unit": {
+    "number": 4,
+    "title": "Linear Inequalities & Absolute Value",
+    "weeks": 2,
+    "essential_question": "How do inequalities and absolute value describe ranges, tolerances, limits, and feasible choices?",
+    "big_ideas": [
+      "Inequalities describe solution sets.",
+      "Negative scaling reverses order.",
+      "Compound conditions use union or intersection.",
+      "Absolute value measures distance."
+    ]
+  },
+  "lessons": [
+    {
+      "id": "u04-l01",
+      "number": 1,
+      "title": "Inequality Meaning, Number Lines & Interval Notation",
+      "file": "lessons/lesson-01-inequality-meaning-number-lines-interval-notation.html"
+    },
+    {
+      "id": "u04-l02",
+      "number": 2,
+      "title": "One-Step & Multi-Step Linear Inequalities",
+      "file": "lessons/lesson-02-one-step-multi-step-linear-inequalities.html"
+    },
+    {
+      "id": "u04-l03",
+      "number": 3,
+      "title": "Negative Multipliers & Sign Reversal",
+      "file": "lessons/lesson-03-negative-multipliers-sign-reversal.html"
+    },
+    {
+      "id": "u04-l04",
+      "number": 4,
+      "title": "Compound Inequalities: AND, OR & Intersections",
+      "file": "lessons/lesson-04-compound-inequalities-and-or-intersections.html"
+    },
+    {
+      "id": "u04-l05",
+      "number": 5,
+      "title": "Absolute Value Equations",
+      "file": "lessons/lesson-05-absolute-value-equations.html"
+    },
+    {
+      "id": "u04-l06",
+      "number": 6,
+      "title": "Absolute Value Inequalities & Contextual Constraints",
+      "file": "lessons/lesson-06-absolute-value-inequalities-contextual-constraints.html"
+    }
+  ],
+  "practice": [
+    "practice/foundation.html",
+    "practice/core.html",
+    "practice/extended.html"
+  ],
+  "boss_battle": "boss-battle.html",
+  "mastery": "assessment/mastery-check.html",
+  "project": "projects/constraint-design-lab.html",
+  "mastery_target": 80
+}
