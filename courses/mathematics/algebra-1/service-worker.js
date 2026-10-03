@@ -2,7 +2,7 @@
 const CACHE_VERSION="khaemenes-algebra1-v7-responsive-deep-lessons";
 const LEGACY_SOURCE="./service-worker-precache-v1.js";
 const RELEASE_FILES=[
- "./","./index.html","./offline.html","./service-worker-precache-v1.js","./diagnostic/index.html","./readiness/index.html","./readiness/transition-contract.json",
+ "./","./index.html","./offline.html","./service-worker-precache-v1.js","./diagnostic/index.html","./readiness/index.html","./transition-contract.html","./readiness/transition-contract.json",
  "./assessments/index.html","./assessments/administration-guide.html","./assessments/assessment-map.json","./assessments/weekly-mastery.html","./assessments/midterm-units-01-06.html","./assessments/final-exam-36-weeks.html",
  "./assessments/assets/weekly-mastery-v2-a.js","./assessments/assets/weekly-mastery-v2-b.js","./assessments/assets/weekly-mastery-v2-c.js","./assessments/assets/weekly-mastery-v2-d.js","./assessments/assets/weekly-mastery-quality-patch-v2.js","./assessments/assets/weekly-mastery-engine-v2.js","./assessments/assets/exam-depth-v2.js",
  "./assets/mastery-authority-v1.js","./assets/readiness-entry-gate-v1.js","./assets/dedicated-unit-gates-v1.js","./assets/deep-lesson-engine-v1.js","./assets/focused-assessment-v1.js","./assets/responsive-layout-v1.css","./assets/exam-engine.js","./assets/legacy-mastery-engine-v2.js","./assets/record-engine.js","./assets/strict-mastery-gates.js","./assets/course-progression-gates.js","./assets/unit-page.js","./assets/unit-page-core.js","./assets/unit-13-content-upgrade.js","./assets/styles.css","./course-map.json","./course-data.js","./assets/question-bank.js",

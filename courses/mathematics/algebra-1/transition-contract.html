@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>Algebra I Transition Contract · Khaemenes High</title>
+<style>
+:root{--paper:#f7f4ec;--card:#fff;--ink:#17251f;--muted:#596760;--forest:#17392f;--gold:#b48b45;--line:rgba(20,40,32,.16);--r:7px;--formal:Cinzel,Georgia,serif;--body:"Brandon Grotesque","Avenir Next","Segoe UI",Arial,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.7 var(--body)}main{width:min(100% - 32px,1000px);margin:48px auto}.card{padding:28px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}h1,h2{font-family:var(--formal);font-weight:500;color:var(--forest)}h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.btn{display:inline-flex;padding:10px 14px;border:1px solid var(--forest);border-radius:var(--r);background:var(--forest);color:white;text-decoration:none}.btn.secondary{background:white;color:var(--forest)}table{width:100%;border-collapse:collapse;margin-top:16px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}small,.muted{color:var(--muted)}@media(max-width:700px){table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{padding:10px 0;border-bottom:1px solid var(--line)}td{border:0;padding:4px 0}}
+</style>
+</head>
+<body>
+<main>
+<section class="card">
+<p class="muted">Khaemenes High · Mathematics Continuity</p>
+<h1>Algebra I Transition Contract</h1>
+<p>This page presents the canonical readiness bridge between Pre-Algebra, Algebra I, Geometry, and Algebra II. Readiness evidence guides support; it does not replace the receiving-course diagnostic or the 80% mastery authority.</p>
+<div class="actions"><a class="btn" href="readiness/">Readiness Bridge</a><a class="btn secondary" href="./">Algebra I Home</a></div>
+<div id="status" class="muted">Loading canonical contract…</div>
+<div id="content" hidden></div>
+</section>
+</main>
+<script>
+const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+fetch('readiness/transition-contract.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(c=>{
+ const incoming=(c.incoming?.skillFamilies||[]).map(x=>`<tr><td>${esc(x.source)}</td><td>${esc(x.target)}</td><td>${esc((x.supports||[]).join(', '))}</td></tr>`).join('');
+ const outgoing=[...(c.outgoing?.geometry?.skillFamilies||[]),...(c.outgoing?.algebra2?.skillFamilies||[])];
+ document.getElementById('content').innerHTML=`<h2>Core principles</h2><p><strong>Mastery target:</strong> ${esc(c.course?.masteryTarget)}%</p><p>${esc(c.routing?.rule||'')}</p><h2>Incoming Pre-Algebra evidence</h2><table><thead><tr><th>Source skill</th><th>Algebra I target</th><th>Support units</th></tr></thead><tbody>${incoming}</tbody></table><h2>Outgoing continuity</h2><p>${outgoing.length} mapped skill-family transitions support Geometry and Algebra II planning.</p><p class="muted">Canonical source: readiness/transition-contract.json · Schema ${esc(c.schema)}</p>`;
+ document.getElementById('status').hidden=true;document.getElementById('content').hidden=false;
+}).catch(err=>{document.getElementById('status').textContent='The transition contract could not be loaded. Open readiness/transition-contract.json directly or use the Readiness Bridge. '+err.message;});
+</script>
+</body>
+</html>

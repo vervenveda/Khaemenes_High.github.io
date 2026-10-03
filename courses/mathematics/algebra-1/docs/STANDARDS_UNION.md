@@ -1,4 +1,4 @@
-# Grade 10 Algebra I / Integrated Mathematics I Standards Union
+# placement-based Grades 9–10 Algebra I / Integrated Mathematics I Standards Union
 
 This course is intentionally broader than a single-state minimum. It combines recurring expectations in these official frameworks while requiring jurisdiction-specific review before formal reporting.
 
