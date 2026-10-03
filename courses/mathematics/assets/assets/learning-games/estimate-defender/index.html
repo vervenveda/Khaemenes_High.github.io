@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Lesson 6 Estimation & Reasonableness Game: Estimate Defender. Choose reasonable answers and reject impossible results.">
+<title>Lesson 6 · Estimate Defender</title>
+<style>
+:root{
+  --bg:#090b10;--panel:#141a22;--panel2:#10161e;--ink:#f7f1e3;--muted:#c8c1b3;
+  --line:#384351;--gold:#d8bd7a;--gold2:#f0d99b;--good:#8fd4ad;--bad:#ed9b9b;
+  --focus:#b9d8ff;--shadow:0 18px 55px rgba(0,0,0,.35);--max:1180px
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:
+radial-gradient(circle at 14% 0%,rgba(216,189,122,.10),transparent 28rem),
+radial-gradient(circle at 90% 18%,rgba(104,139,175,.10),transparent 30rem),
+linear-gradient(180deg,var(--bg),#0d1117 60%,#090b10);
+font-family:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;line-height:1.5}
+button,input,select{font:inherit}button{touch-action:manipulation}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.shell{width:min(var(--max),calc(100% - 28px));margin:auto;padding:28px 0 48px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:10px 0 26px;border-bottom:1px solid rgba(216,189,122,.22)}
+.brand{display:flex;align-items:center;gap:12px}.seal{width:44px;height:44px;border:1px solid rgba(216,189,122,.68);border-radius:9px;display:grid;place-items:center;transform:rotate(45deg);background:rgba(216,189,122,.06)}
+.seal span{transform:rotate(-45deg);font:15px Georgia,serif;color:var(--gold2)}
+.kicker{margin:0;color:var(--gold2);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.crumb{margin:3px 0 0;color:var(--muted);font-size:.9rem}
+.actions{display:flex;gap:8px}.ghost{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}.ghost:hover{border-color:var(--gold)}
+.hero{text-align:center;max-width:900px;margin:auto;padding:54px 10px 30px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.22em;font-size:.78rem;font-weight:800}
+h1,h2,h3{font-family:Cinzel,Georgia,"Times New Roman",serif;font-weight:500}h1{margin:10px 0 13px;font-size:clamp(2rem,5vw,4rem);line-height:1.05}
+.hero p{margin:auto;max-width:780px;color:var(--muted);font-size:clamp(1rem,2vw,1.15rem)}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px auto 0;max-width:850px}.rule{border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025);padding:12px}.rule b{display:block;color:var(--gold2)}.rule small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr);gap:18px;align-items:start}.panel{border:1px solid rgba(216,189,122,.18);border-radius:18px;background:linear-gradient(180deg,rgba(23,29,38,.96),rgba(16,21,28,.96));box-shadow:var(--shadow)}.play{padding:22px}.side{padding:18px}
+.status{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-bottom:16px}.progress-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.82rem;margin-bottom:7px}.track{height:8px;background:#07090d;border:1px solid #313946;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ae9255,var(--gold2));transition:width .25s ease}.stat{text-align:center;min-width:72px;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025)}.stat b{display:block;font-size:1.15rem}.stat span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.stage{min-height:240px;border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:
+linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),#0c1117;background-size:24px 24px}
+.stage:after{content:"";position:absolute;inset:15px;border:1px solid rgba(216,189,122,.12);border-radius:12px;pointer-events:none}.inside{position:relative;z-index:1;max-width:760px}
+.label{color:var(--muted);text-transform:uppercase;letter-spacing:.15em;font-size:.74rem}.big{font:clamp(2rem,6vw,4rem) Georgia,serif;color:#fff8e8;line-height:1.15;margin:8px 0}.question{font-size:clamp(1.1rem,2.3vw,1.45rem);color:#f5eddf;margin-top:8px}
+.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}.choice{appearance:none;min-height:72px;border:1px solid var(--line);border-radius:13px;background:#111720;color:var(--ink);cursor:pointer;text-align:left;padding:12px;transition:.15s ease}.choice:hover{border-color:#738093;transform:translateY(-1px)}.choice[aria-pressed="true"]{border-color:var(--gold2);background:linear-gradient(180deg,rgba(216,189,122,.16),rgba(216,189,122,.07));box-shadow:inset 0 0 0 1px rgba(216,189,122,.24)}.choice strong{display:block;font:1.04rem Georgia,serif;color:#fff}.choice small{display:block;color:var(--muted);margin-top:2px}
+.row{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:15px}.primary,.secondary{min-height:44px;border-radius:10px;padding:10px 16px;cursor:pointer;font-weight:700;letter-spacing:.03em}.primary{border:1px solid var(--gold2);background:var(--gold2);color:#17130a}.secondary{border:1px solid var(--line);background:#171e27;color:var(--ink)}.primary:disabled,.secondary:disabled{opacity:.45;cursor:not-allowed}
+.feedback{margin-top:15px;min-height:74px;border-radius:12px;border:1px solid transparent;padding:13px 14px;background:rgba(255,255,255,.02)}.feedback.good{border-color:rgba(143,212,173,.42);background:rgba(143,212,173,.07)}.feedback.bad{border-color:rgba(237,155,155,.42);background:rgba(237,155,155,.07)}.feedback h3{margin:0 0 4px;font-size:1rem}.feedback p{margin:0;color:#d5cebf}
+.side h2{margin:2px 0 12px;font-size:1.18rem}.concept{border:1px solid var(--line);border-radius:11px;padding:11px;background:rgba(255,255,255,.025);margin-bottom:9px}.concept b{display:block;font:1rem Georgia,serif}.concept span{color:var(--muted);font-size:.82rem}.tip{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.tip p{margin:5px 0 0;color:var(--muted);font-size:.9rem}.controls{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}select{color:var(--ink);background:#111720;border:1px solid var(--line);border-radius:9px;padding:8px 30px 8px 10px;min-height:40px}.best{color:var(--gold2);font-size:.82rem;margin:12px 0 0}
+.mastery{display:none;margin-top:20px;padding:24px;text-align:center;border:1px solid rgba(216,189,122,.5);border-radius:16px;background:radial-gradient(circle at 50% 0%,rgba(216,189,122,.14),transparent 24rem),#111720}.mastery.show{display:block}.mark{width:68px;height:68px;margin:0 auto 12px;border:1px solid var(--gold2);display:grid;place-items:center;border-radius:50%;color:var(--gold2);font:1.3rem Georgia,serif}.mastery h2{margin:5px 0}.mastery p{color:var(--muted);max-width:620px;margin:7px auto 15px}
+footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+@media(max-width:650px){.rules{grid-template-columns:1fr}.choices{grid-template-columns:1fr}.status{grid-template-columns:1fr 66px}.status .stat:last-child{display:none}.play{padding:13px}.actions{display:none}.hero{padding-top:34px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.001ms!important}}
+
+.answer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+.answer-choice{appearance:none;min-height:76px;border:1px solid var(--line);border-radius:13px;background:#111720;color:var(--ink);cursor:pointer;text-align:center;padding:12px;font:1.35rem Georgia,serif}
+.answer-choice:hover{border-color:#738093}.answer-choice[aria-pressed="true"]{border-color:var(--gold2);background:rgba(216,189,122,.10)}
+.meter{margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:12px;background:#0d1218}.meter-line{height:10px;border-radius:999px;background:linear-gradient(90deg,#26303c,#7e7152,#26303c);position:relative;overflow:hidden}.meter-mark{position:absolute;top:-4px;width:2px;height:18px;background:var(--gold2);left:50%}.meter-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:.75rem;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+<div class="brand"><div class="seal" aria-hidden="true"><span>≈</span></div><div><p class="kicker">Mathematics · Lesson 6</p><p class="crumb">Estimation & Reasonableness · Estimate Defender</p></div></div>
+<div class="actions"><button class="ghost" id="printBtn" type="button">Print reference</button><button class="ghost" id="resetBestBtn" type="button">Reset best</button></div>
+</header>
+<section class="hero">
+<div class="eyebrow">Estimate Defender</div><h1>Defend the reasonable answer.</h1>
+<p>Use magnitude, rounding, benchmark values, and operation sense to choose the answer that could reasonably be correct—and reject results that are impossible.</p>
+<div class="rules">
+<div class="rule"><b>Estimate first</b><small>Round or use compatible numbers before calculating exactly.</small></div>
+<div class="rule"><b>Check magnitude</b><small>Ask whether the answer is too large, too small, or in the right neighborhood.</small></div>
+<div class="rule"><b>Use operation sense</b><small>Multiplying, dividing, adding, and subtracting affect size in predictable ways.</small></div>
+</div>
+</section>
+<main class="grid">
+<section class="panel play">
+<div class="status"><div><div class="progress-label"><span id="roundLabel">Defense 1 of 16</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div></div>
+
+<div class="stage"><div class="inside"><div class="label">Estimate before choosing</div><div class="big" id="problemExpr"></div><div class="question" id="promptText">Which answer is reasonable?</div></div></div>
+<div class="answer-grid" id="answerGrid"></div>
+
+<div class="meter"><div class="meter-line"><div class="meter-mark" aria-hidden="true"></div></div><div class="meter-labels"><span>too small</span><span>reasonable zone</span><span>too large</span></div></div>
+
+<div class="row"><button class="secondary" id="hintBtn" type="button">Estimate clue</button><button class="primary" id="checkBtn" type="button">Defend answer</button><button class="secondary" id="nextBtn" type="button" hidden>Next defense →</button></div>
+<div class="feedback" id="feedback" aria-live="polite"><h3>Ready.</h3><p>Estimate the result before selecting an answer.</p></div>
+
+<div class="mastery" id="mastery"><div class="mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="row"><button class="primary" id="newRoundBtn" type="button">Play another round</button><button class="secondary" id="reviewBtn" type="button">Review missed defenses</button></div></div>
+</section>
+
+<aside class="panel side">
+<h2>Reasonableness Toolkit</h2>
+<div class="concept"><b>Round strategically</b><span>Use easy nearby numbers: 398 ≈ 400, 49 ≈ 50, 1.98 ≈ 2.</span></div>
+<div class="concept"><b>Use benchmarks</b><span>Fractions near 0, 1/2, and 1 can quickly reveal whether a result makes sense.</span></div>
+<div class="concept"><b>Watch operation size</b><span>Multiplying by a number greater than 1 increases magnitude; dividing by a number greater than 1 decreases it.</span></div>
+<div class="concept"><b>Check units</b><span>Word problems should produce an answer in the expected unit and scale.</span></div>
+<div class="tip"><strong>Strategy</strong><p id="strategyText">Do a rough calculation first. Exact arithmetic is not needed to reject wildly unreasonable answers.</p></div>
+<div class="controls"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 defenses</option><option value="16" selected>16 defenses</option><option value="20">20 defenses</option></select></div>
+<p class="best" id="bestScore">Best mastery score: —</p>
+</aside>
+</main>
+<footer>Lesson 6 · Estimation · Magnitude · Reasonableness · Answer checking · Standalone HTML/CSS/vanilla JavaScript</footer>
+</div>
+<script>
+(()=>{
+"use strict";
+const BANK=[
+{expr:"398 + 603",choices:["101","1,001","10,010","9,001"],answer:"1,001",hint:"400 + 600 is about 1,000.",why:"398 + 603 is just over 1,000, so 1,001 is reasonable."},
+{expr:"49 × 21",choices:["100","1,029","10,290","70"],answer:"1,029",hint:"50 × 20 is about 1,000.",why:"49 × 21 should be near 1,000; 1,029 fits that estimate."},
+{expr:"1,205 ÷ 6",choices:["2","20","201","2,010"],answer:"201",hint:"1,200 ÷ 6 = 200.",why:"1,205 ÷ 6 is a little above 200, so 201 is reasonable."},
+{expr:"7.9 × 5.1",choices:["4","40.29","402.9","0.4029"],answer:"40.29",hint:"8 × 5 is about 40.",why:"A product near 40 is expected."},
+{expr:"803 − 397",choices:["4","406","1,200","40,600"],answer:"406",hint:"800 − 400 is about 400.",why:"The difference should be around 400; 406 is reasonable."},
+{expr:"2.4 × 0.5",choices:["12","1.2","0.12","4.8"],answer:"1.2",hint:"Multiplying by one-half should cut 2.4 in half.",why:"Half of 2.4 is 1.2."},
+{expr:"3,980 + 2,050",choices:["603","6,030","60,300","1,930"],answer:"6,030",hint:"4,000 + 2,000 is about 6,000.",why:"The exact sum should be near 6,000."},
+{expr:"998 ÷ 10",choices:["9.98","99.8","9980","0.998"],answer:"99.8",hint:"Dividing by 10 moves the decimal one place left.",why:"998 ÷ 10 must be just under 100."},
+{expr:"62 × 8",choices:["49.6","496","4,960","70"],answer:"496",hint:"60 × 8 = 480.",why:"The product should be a little more than 480."},
+{expr:"5.02 + 9.87",choices:["1.489","14.89","148.9","4.85"],answer:"14.89",hint:"5 + 10 is about 15.",why:"14.89 is close to the benchmark estimate 15."},
+{expr:"1/2 + 1/3",choices:["1/5","5/6","2/5","6"],answer:"5/6",hint:"One-half plus one-third should be more than one-half but less than 1.",why:"5/6 lies between 1/2 and 1, so it is reasonable."},
+{expr:"3/4 of 80",choices:["6","60","600","20"],answer:"60",hint:"Three-fourths of 80 should be less than 80 but much more than 20.",why:"3/4 of 80 is 60."},
+{expr:"19.8 ÷ 4.9",choices:["0.4","4.04","40.4","404"],answer:"4.04",hint:"20 ÷ 5 is about 4.",why:"The quotient should be near 4."},
+{expr:"4,999 × 2",choices:["999.8","9,998","99,980","4,997"],answer:"9,998",hint:"5,000 × 2 is about 10,000.",why:"9,998 is just under 10,000."},
+{expr:"0.49 × 100",choices:["0.0049","4.9","49","490"],answer:"49",hint:"Multiplying by 100 moves the decimal two places right.",why:"0.49 × 100 equals 49."},
+{expr:"12,040 − 6,090",choices:["595","5,950","59,500","18,130"],answer:"5,950",hint:"12,000 − 6,000 is about 6,000.",why:"The difference should be near 6,000."},
+{expr:"250 ÷ 0.5",choices:["125","250","500","5,000"],answer:"500",hint:"Dividing by one-half asks how many halves fit; the result doubles.",why:"250 ÷ 0.5 = 500, so the quotient is larger than 250."},
+{expr:"0.98 + 1.03",choices:["0.201","2.01","20.1","1.001"],answer:"2.01",hint:"1 + 1 is about 2.",why:"2.01 is the only result near 2."},
+{expr:"87 × 0.1",choices:["0.87","8.7","87","870"],answer:"8.7",hint:"Multiplying by one-tenth makes the number ten times smaller.",why:"87 × 0.1 = 8.7."},
+{expr:"145 + 158 + 149",choices:["45.2","452","4,520","152"],answer:"452",hint:"150 + 150 + 150 is about 450.",why:"452 is close to the estimate 450."}
+];
+const el={expr:document.getElementById("problemExpr"),prompt:document.getElementById("promptText"),grid:document.getElementById("answerGrid"),hint:document.getElementById("hintBtn"),check:document.getElementById("checkBtn"),next:document.getElementById("nextBtn"),feedback:document.getElementById("feedback"),score:document.getElementById("score"),streak:document.getElementById("streak"),round:document.getElementById("roundLabel"),acc:document.getElementById("accuracyLabel"),fill:document.getElementById("progressFill"),size:document.getElementById("roundSize"),best:document.getElementById("bestScore"),mastery:document.getElementById("mastery"),mark:document.getElementById("masteryMark"),mTitle:document.getElementById("masteryTitle"),mText:document.getElementById("masteryText"),newRound:document.getElementById("newRoundBtn"),review:document.getElementById("reviewBtn"),print:document.getElementById("printBtn"),resetBest:document.getElementById("resetBestBtn")};
+const BEST="khaemenes_estimate_defender_best_v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(_){return null}}
+function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
+function saveBest(p){try{const old=best();if(old===null||p>old)localStorage.setItem(BEST,String(p))}catch(_){}updateBest()}
+function setFeedback(k,t,p){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${p}</p>`}
+function start(source=null){const count=Math.max(8,Math.min(20,Number(el.size.value)||16));const pool=source&&source.length?source:BANK;const arr=[];while(arr.length<count)arr.push(...shuffle(pool));deck=arr.slice(0,count);index=0;selected=null;checked=false;score=0;correct=0;attempts=0;streak=0;missed=[];el.mastery.classList.remove("show");render();updateStats()}
+function render(){checked=false;selected=null;const c=deck[index];el.expr.textContent=c.expr;el.grid.innerHTML="";shuffle(c.choices).forEach(v=>{const b=document.createElement("button");b.type="button";b.className="answer-choice";b.textContent=v;b.dataset.value=v;b.setAttribute("aria-pressed","false");b.addEventListener("click",()=>{if(checked)return;selected=v;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))});el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;setFeedback("","Ready.","Estimate first, then defend the answer that fits the expected magnitude.");updateStats()}
+function hint(){setFeedback("","Estimate clue",deck[index].hint)}
+function submit(){if(checked)return;if(selected===null){setFeedback("bad","Choose an answer.","Select the result that seems reasonable before defending it.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.answer;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);setFeedback("good","Reasonable answer defended.",c.why)}else{streak=0;missed.push(c);setFeedback("bad",`The reasonable answer is ${c.answer}.`,`${c.hint} ${c.why}`)}el.next.textContent=index===deck.length-1?"See round results →":"Next defense →";updateStats()}
+function updateStats(){const total=deck.length||1,a=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Defense ${Math.min(index+1,total)} of ${total}`;el.acc.textContent=`Accuracy ${a}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+function next(){if(!checked)return;if(index>=deck.length-1){finish();return}index++;render()}
+function finish(){index=deck.length;updateStats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Mastery gate passed":"Strengthen your estimate shield";el.mText.textContent=p>=80?`You defended ${correct} of ${attempts} reasonable answers correctly and met the 80% mastery goal.`:`You defended ${correct} of ${attempts} answers correctly. Review magnitude and benchmark estimates, then try again.`;el.review.disabled=missed.length===0;el.review.textContent=missed.length?`Review missed (${missed.length})`:"No missed defenses";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.addEventListener("click",submit);el.next.addEventListener("click",next);el.hint.addEventListener("click",hint);el.newRound.addEventListener("click",()=>start());el.review.addEventListener("click",()=>{if(missed.length)start(missed)});el.size.addEventListener("change",()=>start());el.print.addEventListener("click",()=>window.print());el.resetBest.addEventListener("click",()=>{try{localStorage.removeItem(BEST)}catch(_){}updateBest();setFeedback("","Best score reset.","The saved best score on this device was cleared.")});
+updateBest();start();
+})();
+</script>
+</body>
+</html>
