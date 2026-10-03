@@ -3,10 +3,8 @@
 
 const STUDENT_PORTAL="https://vervenveda.com/Khaemenes_Academy.github.io/student/";
 const FAMILY_PORTAL="https://vervenveda.com/Khaemenes_Academy.github.io/family/";
-const FAMILY_REGISTRY="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-family-registry.js";
 const MENTOR_HOME="https://artist1970.github.io/Archaemenes.github.io/high/";
 const HIGH_HOME="https://vervenveda.com/Khaemenes_High.github.io/";
-const BETA_WIDGET="https://vervenveda.com/assets/vnv-beta-link.js";
 const PIN_KEY="khaemenes_course_pins_v1";
 const COURSE_ID="pre-algebra";
 const COURSE_URL="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/";
@@ -158,7 +156,7 @@ function hardenedReports(){const s=student(),st=hardenedStats(s);document.getEle
 function currentWeek(){try{return APP.weeks.find(w=>w.week===Number(activeWeek))||APP.weeks[0]}catch{return null}}
 function mentorHref(){const w=currentWeek(),q=new URLSearchParams({course:"Pre-Algebra"});if(w){q.set("week",`Week ${w.week}`);q.set("unit",w.unitTitle||"");q.set("lesson",w.title||"");q.set("concept",w.domain||"")}return `${MENTOR_HOME}?${q.toString()}`}
 function mentorContext(){const w=currentWeek();return w?`Pre-Algebra · Week ${w.week} · ${w.unitTitle}`:"Pre-Algebra · Open-Age Mathematics"}
-function createMentor(){if(document.getElementById("khaeCourseMentor"))return;const main=document.querySelector(".main"),tabs=main?.querySelector(".tabs");if(!main||!tabs)return;const section=document.createElement("section");section.className="khae-mentor";section.id="khaeCourseMentor";section.innerHTML=`<div class="khae-mentor-portrait"><img src="https://artist1970.github.io/Archaemenes.github.io/assets/Archaemens-high.png" alt="Archaemenes, educational mentor"></div><div class="khae-mentor-copy"><div class="khae-mentor-kicker">Scholar · Educational Mentor · Mathematics</div><h2>Study with Archaemenes.</h2><p>Open the mentor when another explanation, a hint, a fresh practice example, or help organizing mathematical reasoning would be useful.</p><p class="khae-mentor-context" id="khaeMentorContext">${esc(mentorContext())}</p><div class="khae-mentor-actions"><a class="primary" id="khaeMentorLink" href="${mentorHref()}">Open Archaemenes</a><a class="secondary" href="${HIGH_HOME}">Khaemenes High</a></div></div>`;tabs.before(section)}
+function createMentor(){if(document.getElementById("khaeCourseMentor"))return;const main=document.querySelector(".main"),tabs=main?.querySelector(".tabs");if(!main||!tabs)return;const section=document.createElement("section");section.className="khae-mentor";section.id="khaeCourseMentor";section.innerHTML=`<div class="khae-mentor-portrait" aria-hidden="true"><span style="font:600 4rem var(--k-formal);color:var(--k-forest)">A</span></div><div class="khae-mentor-copy"><div class="khae-mentor-kicker">Scholar · Educational Mentor · Mathematics</div><h2>Study with Archaemenes.</h2><p>Open the mentor when another explanation, a hint, a fresh practice example, or help organizing mathematical reasoning would be useful.</p><p class="khae-mentor-context" id="khaeMentorContext">${esc(mentorContext())}</p><div class="khae-mentor-actions"><a class="primary" id="khaeMentorLink" href="${mentorHref()}">Open Archaemenes</a><a class="secondary" href="${HIGH_HOME}">Khaemenes High</a></div></div>`;tabs.before(section)}
 function refreshMentor(){const c=document.getElementById("khaeMentorContext"),a=document.getElementById("khaeMentorLink");if(c)c.textContent=mentorContext();if(a)a.href=mentorHref()}
 
 function installOverrides(){
@@ -173,6 +171,6 @@ function installOverrides(){
  const originalRender=typeof render==="function"?render:null;if(originalRender){try{render=function(){originalRender();decorateLearnerPanel();updatePin();refreshMentor();fixZeroLabels()}}catch{}}
 }
 
-function boot(){addStyle();patchNavigation();installOverrides();createMentor();loadScript(BETA_WIDGET,"vnvBetaWidgetScript");if(familyRegistry()){installLearnerContinuity();installPin()}else loadScript(FAMILY_REGISTRY,"khaemenesFamilyRegistryScript",()=>{installLearnerContinuity();installPin()});document.addEventListener("click",e=>{if(e.target.closest("[data-week],[data-view],[data-go]"))setTimeout(()=>{refreshMentor();decorateLearnerPanel();fixZeroLabels()},20)})}
+function boot(){addStyle();patchNavigation();installOverrides();createMentor();if(familyRegistry())installLearnerContinuity();installPin();document.addEventListener("click",e=>{if(e.target.closest("[data-week],[data-view],[data-go]"))setTimeout(()=>{refreshMentor();decorateLearnerPanel();fixZeroLabels()},20)})}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
 })();

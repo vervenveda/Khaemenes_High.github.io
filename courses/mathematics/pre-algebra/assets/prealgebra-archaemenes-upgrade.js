@@ -4,7 +4,6 @@
 const scriptEl=document.currentScript;
 const coreSrc=new URL("prealgebra-archaemenes-upgrade-core.js",scriptEl?.src||location.href).href;
 const assessmentDepthSrc=new URL("prealgebra-assessment-depth-v2.js",scriptEl?.src||location.href).href;
-const FAMILY_REGISTRY="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-family-registry.js";
 const CALCULATOR="https://vervenveda.com/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/";
 const ROUTES=new Map([
  ["https://vervenveda.com/arcade.github.io/a_sacred_geometry_game_index.html","https://vervenveda.com/arcade.github.io/Geometry/sacred_geometry_game_index.html"],
@@ -186,20 +185,10 @@ function loadCore(){
 }
 
 function prepareRegistryAndLoadCore(){
- if(window.KhaemenesFamilyRegistry){guardLegacyNicknameMigration();loadCore();return}
- let registry=document.getElementById("khaemenesFamilyRegistryScript");
- if(registry){
-  registry.addEventListener("load",()=>{guardLegacyNicknameMigration();loadCore()},{once:true});
-  registry.addEventListener("error",loadCore,{once:true});
-  return;
- }
- registry=document.createElement("script");
- registry.id="khaemenesFamilyRegistryScript";
- registry.src=FAMILY_REGISTRY;
- registry.defer=true;
- registry.onload=()=>{guardLegacyNicknameMigration();loadCore()};
- registry.onerror=loadCore;
- document.head.appendChild(registry);
+ // Family identity is an optional host-provided capability. The course never
+ // reaches outside its own runtime to acquire identity code.
+ if(window.KhaemenesFamilyRegistry)guardLegacyNicknameMigration();
+ loadCore();
 }
 
 patchPlacementArchitecture();
