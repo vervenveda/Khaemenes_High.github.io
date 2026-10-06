@@ -1,7 +1,48 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Week 26 · Industrialization Simulation Lab</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../../styles.css"></head><body><main class="main"><header class="hero"><div class="eyebrow">Grade 9 Global Studies Honors · Week 26</div><h1>Industrialization Simulation Lab</h1><p>Use the existing Khaemenes Finance simulators as controlled models. The goal is not to “win” the simulator; it is to make, test, and qualify historical claims.</p></header><section class="card"><h2>Lab Protocol</h2><ol><li><strong>Predict:</strong> state what you expect before changing a variable.</li><li><strong>Change one variable:</strong> avoid changing several factors at once.</li><li><strong>Observe:</strong> record the output or equilibrium.</li><li><strong>Explain:</strong> connect the result to an economic mechanism.</li><li><strong>Limit:</strong> identify what the simplified model leaves out.</li><li><strong>Corroborate:</strong> compare the model with historical evidence from Week 26 readings.</li></ol></section><section class="card"><h2>Lab A · Long-Run Growth</h2><p>Explore savings/investment, depreciation, population growth, and technology. The simulator reports steady-state capital, output per worker, and growth potential.</p><a class="button" target="_blank" rel="noopener" href="https://vervenveda.github.io/finance/apps/simulator_economic_growth_index.html">Open Growth Simulator</a><h3>Student Record</h3><p>Record three runs. For each: settings → prediction → observed result → explanation → limitation.</p><textarea rows="10" aria-label="Growth simulation notes" placeholder="Run 1…
-Run 2…
-Run 3…"></textarea></section><section class="card"><h2>Lab B · Supply & Demand</h2><p>Adjust demand and supply strength and observe the equilibrium price and quantity. Treat the output as a simplified model, not a complete historical economy.</p><a class="button" target="_blank" rel="noopener" href="https://vervenveda.github.io/finance/apps/simulator_supply_demand_index.html">Open Supply &amp; Demand Simulator</a><h3>Student Record</h3><p>Record five runs and explain one change using supply/demand language.</p><textarea rows="10" aria-label="Supply and demand notes" placeholder="Run 1…
-Run 2…
-Run 3…
-Run 4…
-Run 5…"></textarea></section><section class="notice"><strong>Historical reasoning safeguard:</strong> A simulator demonstrates the behavior of its assumptions. It does not by itself prove that historical industrialization followed exactly the same pattern. Use primary/secondary evidence to test the connection.</section><button onclick="window.print()">Print Lab</button></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Week 26 · Local Industrialization Model</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="../../assets/grade09-records.js?v=20261007"></script>
+<script src="../../assets/grade09-economics-labs-v1.js?v=20261007" defer></script>
+</head>
+<body>
+<main class="main" data-ss9-economic-lab="week26">
+<header class="hero">
+  <div class="eyebrow">Grade 9 Global Studies Honors · Week 26</div>
+  <h1>Industrialization Model Lab</h1>
+  <p>Use a small local classroom model to test how savings, depreciation, population growth, and technology can change modeled output. It is a reasoning aid, not a historical measurement or financial tool.</p>
+  <div class="heroActions noPrint"><a class="button secondary" href="../../app.html?view=week&amp;week=26">Return to Week 26</a><button class="button" id="print-lab" type="button">Print / Save Record</button></div>
+</header>
+<p id="lab-status" class="notice" role="status">Local course model loading.</p>
+<section class="card">
+  <h2>Lab protocol</h2>
+  <ol><li>Predict before changing a variable.</li><li>Change one variable at a time.</li><li>Record the modeled output.</li><li>Explain the mechanism in plain language.</li><li>Name one missing variable or limitation.</li><li>Corroborate the historical claim with the Week 26 readings.</li></ol>
+</section>
+<section class="card">
+  <h2>Local growth model</h2>
+  <p class="notice">The model is intentionally simple and transparent. Capital index = 35 + 80×savings − 55×depreciation − 20×population growth + 25×technology. Output and potential are bounded classroom indices from 0–100.</p>
+  <div class="grid">
+    <div class="col6"><label for="growth-savings">Savings / investment <output id="growth-savings-out">50</output></label><input id="growth-savings" data-save type="range" min="0" max="100" value="50"></div>
+    <div class="col6"><label for="growth-depreciation">Depreciation <output id="growth-depreciation-out">50</output></label><input id="growth-depreciation" data-save type="range" min="0" max="100" value="50"></div>
+    <div class="col6"><label for="growth-population">Population growth <output id="growth-population-out">5</output></label><input id="growth-population" data-save type="range" min="0" max="10" value="5"></div>
+    <div class="col6"><label for="growth-technology">Technology <output id="growth-technology-out">5</output></label><input id="growth-technology" data-save type="range" min="0" max="10" value="5"></div>
+  </div>
+  <div class="grid">
+    <div class="card col4 kpi"><output id="growth-capital">0</output><span>Modeled capital index</span></div>
+    <div class="card col4 kpi"><output id="growth-output">0</output><span>Modeled output per worker</span></div>
+    <div class="card col4 kpi"><output id="growth-potential">0</output><span>Modeled growth potential</span></div>
+  </div>
+</section>
+<section class="card">
+  <h2>Student reasoning record</h2>
+  <p>Run the model at least three times. Record settings, prediction, observed result, explanation, and limitation. A saved note remains on this device and is scoped to the selected Academy learner when one is active.</p>
+  <label for="growth-notes">Three-run record</label><textarea id="growth-notes" data-save rows="14" placeholder="Run 1 — settings → prediction → observed result → explanation → limitation\n\nRun 2 — ...\n\nRun 3 — ..."></textarea>
+  <label for="growth-corroboration">Historical corroboration</label><textarea id="growth-corroboration" data-save rows="8" placeholder="Which Week 26 evidence supports, complicates, or limits the model pattern?"></textarea>
+  <div class="actions noPrint"><button class="button" id="save-lab" type="button">Save local record</button><a class="button ghost" href="../../systems-lab-roadmap.html">Systems roadmap</a></div>
+</section>
+<footer class="footer">Khaemenes High · Jennifer Kay Pearl · Week 26</footer>
+</main>
+</body>
+</html>

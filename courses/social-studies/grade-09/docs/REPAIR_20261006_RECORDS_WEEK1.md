@@ -23,7 +23,7 @@ Service-worker activation removes only this course’s older cache names and pre
 ## Remaining inspection and repair
 
 - Reconcile and expand later units’ source packs, app instruction and printable packet variants.
-- Replace the online Finance links in Weeks 26–27 with genuinely local equivalents or truthful optional-online labels.
+- Weeks 26–27 local model repair is recorded in `REPAIR_20261006_LOCAL_LABS.md`; the canonical lab pages no longer require an online Finance dependency.
 - Review the remaining legacy top-level week directories and broken legacy styling/return references.
 - Verify all historical sources, distractors and current-information resources independently.
 - Validate continuity on the student's physical tablet and confirm evaluator scoring against preserved evidence.

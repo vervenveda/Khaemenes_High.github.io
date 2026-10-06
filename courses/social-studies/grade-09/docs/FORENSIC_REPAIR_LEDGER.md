@@ -175,6 +175,8 @@ Required anatomy:
 - [ ] Week 35
 - [ ] Week 36 / Capstone + Final
 
+Targeted dependency repair (2026-10-06): Week 26 and Week 27 economic lab pages now use local classroom models with guarded learner-scoped notes. The full later-week curriculum review remains open.
+
 ## Phase 09 — Packet and link integrity
 
 - [ ] Confirm actual location of all 36 student packets.

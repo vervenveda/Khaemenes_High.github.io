@@ -1,1 +1,54 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Week 27 · Economic Reasoning Lab</title><link rel="stylesheet" href="../../styles.css"></head><body><main class="main"><header class="hero"><div class="eyebrow">Grade 9 Global Studies Honors · Week 27</div><h1>Economic Reasoning Lab</h1><p>Use a simplified market model to investigate claims about institutions, incentives, distribution, and tradeoffs. The model is evidence for model behavior—not proof of a historical outcome.</p></header><section class="card"><h2>Protocol</h2><ol><li><strong>Define:</strong> identify the institution or market mechanism being studied.</li><li><strong>Predict:</strong> state what you expect and why.</li><li><strong>Change one variable:</strong> keep other settings stable.</li><li><strong>Record:</strong> capture the observed equilibrium.</li><li><strong>Distribution:</strong> ask who might gain, lose, or bear a cost.</li><li><strong>Limit:</strong> identify what the simplified model leaves out.</li><li><strong>Corroborate:</strong> compare the model with historical evidence.</li></ol></section><section class="card"><h2>Supply &amp; Demand Investigation</h2><p>Run five controlled scenarios. For each, record demand setting, supply setting, predicted direction, equilibrium price, equilibrium quantity, distributional question, and limitation.</p><a class="button" target="_blank" rel="noopener" href="https://vervenveda.github.io/finance/apps/simulator_supply_demand_index.html">Open Supply &amp; Demand Simulator</a><table><thead><tr><th>Run</th><th>Prediction</th><th>Observed price</th><th>Observed quantity</th><th>Distributional effect</th><th>Limitation</th></tr></thead><tbody><tr><td>1</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td>2</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td>3</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td>4</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td>5</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr></tbody></table></section><section class="card"><h2>Historical Corroboration</h2><p>Choose one historical claim from the Week 27 reading. Explain whether the simulation supports it, complicates it, or cannot test it.</p><textarea rows="12" placeholder="Claim → simulation evidence → historical evidence → limitation → conclusion"></textarea></section><button onclick="window.print()">Print Lab</button></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Week 27 · Local Economic Reasoning Lab</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="../../assets/grade09-records.js?v=20261007"></script>
+<script src="../../assets/grade09-economics-labs-v1.js?v=20261007" defer></script>
+</head>
+<body>
+<main class="main" data-ss9-economic-lab="week27">
+<header class="hero">
+  <div class="eyebrow">Grade 9 Global Studies Honors · Week 27</div>
+  <h1>Economic Reasoning Lab</h1>
+  <p>Use a local supply-and-demand model to investigate institutions, incentives, distribution, and tradeoffs. The output describes model behavior; it does not prove a historical outcome.</p>
+  <div class="heroActions noPrint"><a class="button secondary" href="../../app.html?view=week&amp;week=27">Return to Week 27</a><button class="button" id="print-lab" type="button">Print / Save Record</button></div>
+</header>
+<p id="lab-status" class="notice" role="status">Local course model loading.</p>
+<section class="card">
+  <h2>Protocol</h2>
+  <ol><li>Define the institution or market mechanism.</li><li>Predict before changing a variable.</li><li>Change one variable and hold the other steady.</li><li>Record the modeled price and quantity.</li><li>Ask who might gain, lose, or bear a cost.</li><li>Name a limitation and corroborate with historical evidence.</li></ol>
+</section>
+<section class="card">
+  <h2>Local supply-and-demand model</h2>
+  <p class="notice">Price index = 50 + 0.7×(demand − 50) − 0.6×(supply − 50). Quantity index = 50 + 0.45×(demand − 50) + 0.55×(supply − 50). Both outputs are bounded classroom indices from 0–100.</p>
+  <div class="grid">
+    <div class="col6"><label for="market-demand">Demand strength <output id="market-demand-out">50</output></label><input id="market-demand" data-save type="range" min="0" max="100" value="50"></div>
+    <div class="col6"><label for="market-supply">Supply strength <output id="market-supply-out">50</output></label><input id="market-supply" data-save type="range" min="0" max="100" value="50"></div>
+  </div>
+  <div class="grid">
+    <div class="card col6 kpi"><output id="market-price">0</output><span>Modeled price index</span></div>
+    <div class="card col6 kpi"><output id="market-quantity">0</output><span>Modeled quantity index</span></div>
+  </div>
+</section>
+<section class="card">
+  <h2>Five-run record</h2>
+  <p>Change one setting at a time. Complete each row with a prediction, the observed output, a distributional question, and a limitation.</p>
+  <div class="tableWrap"><table><thead><tr><th>Run</th><th>Prediction</th><th>Observed price</th><th>Observed quantity</th><th>Distributional question</th><th>Limitation</th></tr></thead><tbody>
+    <tr data-run><th scope="row">1</th><td><input data-field="prediction" aria-label="Run 1 prediction"></td><td><input data-field="price" aria-label="Run 1 observed price"></td><td><input data-field="quantity" aria-label="Run 1 observed quantity"></td><td><input data-field="distribution" aria-label="Run 1 distributional question"></td><td><input data-field="limitation" aria-label="Run 1 limitation"></td></tr>
+    <tr data-run><th scope="row">2</th><td><input data-field="prediction" aria-label="Run 2 prediction"></td><td><input data-field="price" aria-label="Run 2 observed price"></td><td><input data-field="quantity" aria-label="Run 2 observed quantity"></td><td><input data-field="distribution" aria-label="Run 2 distributional question"></td><td><input data-field="limitation" aria-label="Run 2 limitation"></td></tr>
+    <tr data-run><th scope="row">3</th><td><input data-field="prediction" aria-label="Run 3 prediction"></td><td><input data-field="price" aria-label="Run 3 observed price"></td><td><input data-field="quantity" aria-label="Run 3 observed quantity"></td><td><input data-field="distribution" aria-label="Run 3 distributional question"></td><td><input data-field="limitation" aria-label="Run 3 limitation"></td></tr>
+    <tr data-run><th scope="row">4</th><td><input data-field="prediction" aria-label="Run 4 prediction"></td><td><input data-field="price" aria-label="Run 4 observed price"></td><td><input data-field="quantity" aria-label="Run 4 observed quantity"></td><td><input data-field="distribution" aria-label="Run 4 distributional question"></td><td><input data-field="limitation" aria-label="Run 4 limitation"></td></tr>
+    <tr data-run><th scope="row">5</th><td><input data-field="prediction" aria-label="Run 5 prediction"></td><td><input data-field="price" aria-label="Run 5 observed price"></td><td><input data-field="quantity" aria-label="Run 5 observed quantity"></td><td><input data-field="distribution" aria-label="Run 5 distributional question"></td><td><input data-field="limitation" aria-label="Run 5 limitation"></td></tr>
+  </tbody></table></div>
+</section>
+<section class="card">
+  <h2>Historical corroboration</h2>
+  <label for="market-corroboration">Claim → model evidence → historical evidence → limitation → conclusion</label><textarea id="market-corroboration" data-save rows="12" placeholder="Choose one Week 27 claim. Explain whether the model supports it, complicates it, or cannot test it."></textarea>
+  <div class="actions noPrint"><button class="button" id="save-lab" type="button">Save local record</button><a class="button ghost" href="../../systems-lab-roadmap.html">Systems roadmap</a></div>
+</section>
+<footer class="footer">Khaemenes High · Jennifer Kay Pearl · Week 27</footer>
+</main>
+</body>
+</html>
