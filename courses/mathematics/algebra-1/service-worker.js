@@ -2,6 +2,7 @@
 const CACHE_VERSION="khaemenes-algebra1-v7-responsive-deep-lessons";
 const LEGACY_SOURCE="./service-worker-precache-v1.js";
 const RELEASE_FILES=[
+ "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
  "./","./index.html","./offline.html","./service-worker-precache-v1.js","./diagnostic/index.html","./readiness/index.html","./transition-contract.html","./readiness/transition-contract.json",
  "./assessments/index.html","./assessments/administration-guide.html","./assessments/assessment-map.json","./assessments/weekly-mastery.html","./assessments/midterm-units-01-06.html","./assessments/final-exam-36-weeks.html",
  "./assessments/assets/weekly-mastery-v2-a.js","./assessments/assets/weekly-mastery-v2-b.js","./assessments/assets/weekly-mastery-v2-c.js","./assessments/assets/weekly-mastery-v2-d.js","./assessments/assets/weekly-mastery-quality-patch-v2.js","./assessments/assets/weekly-mastery-engine-v2.js","./assessments/assets/exam-depth-v2.js",

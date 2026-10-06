@@ -11,9 +11,15 @@ assert.equal(catalog.schema, 'khaemenes-course-entry-catalog-v1');
 assert.equal(catalog.overall_ready_percent, 80);
 assert.equal(catalog.essential_strand_floor_percent, 80);
 assert.deepEqual(catalog.courses.map(course => course.course_id), [
-  'math-prealgebra', 'english-9', 'grade09-global-studies-honors',
+  'math-prealgebra', 'math-algebra1', 'math-geometry', 'math-algebra2',
+  'math-precalculus-trigonometry', 'math-calculus1', 'english-9', 'grade09-global-studies-honors',
   'integrated-science-9', 'psychology-101', 'physical-education-9-12'
 ]);
+for (const course of catalog.courses.filter(course => course.course_id.startsWith('math-') && course.course_id !== 'math-prealgebra')) {
+  assert.equal(course.status, 'shared-entry-gate');
+  assert.deepEqual(course.essential_strands, ['overall']);
+  assert.ok(course.readiness_key.startsWith('khaemenes-math-'));
+}
 assert.equal(catalog.courses.find(course => course.course_id === 'psychology-101').entry_mode, 'direct-entry-with-learner-scope');
 assert.equal(catalog.courses.find(course => course.course_id === 'physical-education-9-12').mode, 'federated');
 
@@ -49,4 +55,5 @@ assert.equal(api.routeFor(80, { one: 79 }, ['one']), 'unit_0_refresher');
 assert.equal(api.isReady({ course_id: 'demo', route: 'advance', overall_percent: 80, strand_scores: { one: 80 } }, ['one'], 'demo'), true);
 assert.equal(api.isReady({ course_id: 'demo', route: 'advance', overall_percent: 80, strand_scores: { one: 79 } }, ['one'], 'demo'), false);
 
-console.log('PASS: shared entry contract, six-course catalog, 80% thresholds, and learner scoping');
+assert.match(read('./math-entry-gate.js'), /mathReadinessKey/);
+console.log('PASS: shared entry contract, math sequence catalog, 80% thresholds, and learner scoping');

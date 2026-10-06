@@ -1,6 +1,6 @@
 "use strict";
-const CACHE="khaemenes-calculus-1-v1";
-const CORE=["./","index.html","offline.html","manifest.webmanifest","course-data.js","course-map.json","assets/styles.css","assets/app.js","assets/question-bank.js","assets/assessment-engine.js","assets/lesson-tools.js","assets/unit-progress.js","diagnostic/","assessments/","teacher/","teacher-keys/"];
+const CACHE="khaemenes-calculus-1-v2-math-entry";
+const CORE=["./","index.html","offline.html","../../shared/course-entry-contract.js","../../shared/math-entry-gate.js","manifest.webmanifest","course-data.js","course-map.json","assets/styles.css","assets/app.js","assets/question-bank.js","assets/assessment-engine.js","assets/lesson-tools.js","assets/unit-progress.js","diagnostic/","assessments/","teacher/","teacher-keys/"];
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 self.addEventListener("fetch",event=>{
