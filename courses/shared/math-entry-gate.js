@@ -18,7 +18,8 @@
   };
   const scoped = key => {
     if (!key || key.includes(":learner:")) return key;
-    if (!prefixes.some(prefix => key === prefix || key.startsWith(prefix))) return key;
+    const learnerScoped = key === "khaemenes-high-pinned-courses-v2" || prefixes.some(prefix => key === prefix || key.startsWith(prefix));
+    if (!learnerScoped) return key;
     const profile = contract?.readAcademyProfile?.();
     return profile ? contract.scopedKey(key, profile) : null;
   };
