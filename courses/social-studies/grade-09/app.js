@@ -414,5 +414,5 @@ function wireGlobal(){
   $('#fontDown').onclick=()=>{db.settings.fontScale=Math.max(85,(db.settings.fontScale||100)-5);saveDB();applySettings();};
 }
 renderStudentControls();renderSidebarWeeks();wireGlobal();render();
-if('serviceWorker'in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('service-worker.js').catch(()=>{});
+if('serviceWorker'in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('service-worker.js?v=20261007').catch(()=>{});
 })();
