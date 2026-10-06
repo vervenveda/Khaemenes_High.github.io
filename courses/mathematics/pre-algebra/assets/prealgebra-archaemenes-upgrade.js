@@ -185,10 +185,19 @@ function loadCore(){
 }
 
 function prepareRegistryAndLoadCore(){
- // Family identity is an optional host-provided capability. The course never
- // reaches outside its own runtime to acquire identity code.
- if(window.KhaemenesFamilyRegistry)guardLegacyNicknameMigration();
- loadCore();
+ function ready(){
+  if(window.KhaemenesFamilyRegistry)guardLegacyNicknameMigration();
+  loadCore();
+ }
+ if(window.KhaemenesFamilyRegistry){ready();return;}
+ const registry=document.createElement("script");
+ registry.src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-family-registry.js";
+ registry.onload=ready;
+ registry.onerror=()=>{
+  console.warn("Academy learner profiles are unavailable; local course records remain available.");
+  ready();
+ };
+ document.head.appendChild(registry);
 }
 
 patchPlacementArchitecture();

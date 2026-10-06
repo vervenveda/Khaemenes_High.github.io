@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="Khaemenes Academy open-age, 36-week pre-algebra course with complete units, mastery tracking, assessments, modelling, profile pinning, mathematics tools, and in-page learning games." name="description"/>
 <meta content="#080b10" name="theme-color"/>
-<link href="manifest.webmanifest" rel="manifest"/>
+<link rel="manifest" href="manifest.webmanifest"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Pre-Algebra</title>
 <style>
@@ -776,7 +776,7 @@ strong,th{font-weight:600}
 <section id="content" tabindex="-1">
 </section>
 <p class="small">
-   Khaemenes Academy · Open-Age Mathematics · Jennifer Pearl · 2026
+   Khaemenes Academy · Open-Age Mathematics · Jennifer Kay Pearl · 2026
   </p>
 </main>
 </div>
@@ -4479,8 +4479,8 @@ function openActivity(launcher){
   if(typeof activityDialog.showModal==="function")activityDialog.showModal();else activityDialog.setAttribute("open","");
 }
 function closeActivity(){if(!activityDialog)return;activityFrame.src="about:blank";if(typeof activityDialog.close==="function"&&activityDialog.open)activityDialog.close();else activityDialog.removeAttribute("open");document.body.classList.remove("activity-open");lastActivityLauncher?.focus()}
-document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{view=b.dataset.view;render()});
-function openCourseView(target,{moveFocus=false}={}){
+document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>openCourseView(b.dataset.view));
+function openCourseView(target,{moveFocus=true}={}){
   view=target;
   closeCourseMenus();
   render();
@@ -4493,7 +4493,7 @@ function openCourseView(target,{moveFocus=false}={}){
     }
   }
 }
-document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>openCourseView(b.dataset.go,{moveFocus:b.id==="progressReportButton"}));
+document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>openCourseView(b.dataset.go,{moveFocus:true}));
 courseMenus.forEach(menu=>menu.addEventListener("toggle",()=>{if(menu.open)closeCourseMenus(menu)}));
 document.addEventListener("click",event=>{
   const launcher=event.target.closest("[data-launch-url]");if(launcher){event.preventDefault();openActivity(launcher);return}
