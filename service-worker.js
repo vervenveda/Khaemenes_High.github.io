@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-design-v21-stos-forensic-20260909";
+const CACHE_VERSION = "khaemenes-high-design-v22-frontend-recovery-20261006";
 const PRECACHE_FILES = [
   "./",
   "./index.html",
