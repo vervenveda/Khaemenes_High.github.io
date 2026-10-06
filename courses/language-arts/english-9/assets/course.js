@@ -1,6 +1,28 @@
 
 (() => {
   "use strict";
+
+  function readProfile(){
+    try{
+      const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null");
+      const registry=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");
+      const learner=typeof id==="string"?registry?.learners?.[id]:null;
+      return learner && learner.learnerId===id ? {learnerId:id,name:String(learner.nickname||"Learner")} : null;
+    }catch{return null;}
+  }
+  const academyProfile=readProfile();
+  const scopedKey=base=>academyProfile?`${base}:learner:${encodeURIComponent(academyProfile.learnerId)}`:base;
+  window.KhaemenesEnglish9Records=Object.freeze({profile:academyProfile,storageKey:scopedKey,version:1});
+  function showProfileNotice(){
+    const main=document.querySelector("main")||document.querySelector(".main");
+    if(!main)return;
+    const note=document.createElement("p");note.className="notice";note.setAttribute("role","status");
+    note.textContent=academyProfile?`Learning profile: ${academyProfile.name}. Work is saved separately for this learner on this device. Protected sign-in and cross-device sync are not connected.`:"No Academy learner is selected. Notes here use the existing unassigned browser workspace. Select a learner in the Academy Family Portal before starting new learner-specific work.";
+    main.prepend(note);
+  }
+  showProfileNotice();
+  window.addEventListener("storage",event=>{if(event.key==="khaemenes_active_learner_v1")location.reload();});
+
   const root=document.documentElement;
   const themeKey="khae-ela9-theme-v1";
   const themeButton=document.querySelector("[data-theme-toggle]");
@@ -9,7 +31,7 @@
   syncTheme();
   themeButton?.addEventListener("click",()=>{root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";try{localStorage.setItem(themeKey,root.dataset.theme)}catch{}syncTheme();});
 
-  const courseKey="khae-ela9-progress-v1";
+  const courseKey=scopedKey("khae-ela9-progress-v1");
   const load=()=>{try{return JSON.parse(localStorage.getItem(courseKey)||"{}")}catch{return {}}};
   const save=data=>{try{localStorage.setItem(courseKey,JSON.stringify(data))}catch{}};
   const progress=load();
@@ -37,7 +59,7 @@
   updateProgress();
 
   document.querySelectorAll("[data-save-field]").forEach(field=>{
-    const key=`khae-ela9-field:${field.dataset.saveField}`;
+    const key=scopedKey(`khae-ela9-field:${field.dataset.saveField}`);
     try{field.value=localStorage.getItem(key)||""}catch{}
     field.addEventListener("input",()=>{try{localStorage.setItem(key,field.value)}catch{}});
   });

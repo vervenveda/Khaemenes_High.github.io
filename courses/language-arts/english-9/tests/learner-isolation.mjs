@@ -1,0 +1,8 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const source=fs.readFileSync(new URL('../assets/course.js',import.meta.url),'utf8');
+const records=new Map([['khae-ela9-progress-v1','{"week-01":true}'],['khae-ela9-field:week1-claim','legacy claim'],['khaemenes_family_registry_v1',JSON.stringify({learners:{learner_A:{learnerId:'learner_A',nickname:'A'},learner_B:{learnerId:'learner_B',nickname:'B'}}})]]);
+function open(id){if(id)records.set('khaemenes_active_learner_v1',JSON.stringify(id));else records.delete('khaemenes_active_learner_v1');const field={dataset:{saveField:'week1-claim'},value:'',addEventListener(type,fn){this.input=fn}};const window={addEventListener(){}};const document={documentElement:{dataset:{}},querySelector:()=>null,querySelectorAll:selector=>selector==='[data-save-field]'?[field]:[]};vm.runInNewContext(source,{window,document,localStorage:{getItem:k=>records.get(k)||null,setItem:(k,v)=>records.set(k,v)}});return {api:window.KhaemenesEnglish9Records,field};}
+const a=open('learner_A');assert.equal(a.field.value,'');a.field.value='A claim';a.field.input();
+const b=open('learner_B');assert.equal(b.field.value,'');b.field.value='B claim';b.field.input();
+assert.equal(open('learner_A').field.value,'A claim');assert.equal(open('learner_B').field.value,'B claim');assert.equal(open(null).field.value,'legacy claim');assert.equal(records.get('khae-ela9-progress-v1'),'{"week-01":true}');assert.notEqual(a.api.storageKey('progress'),b.api.storageKey('progress'));
+console.log('PASS: two learner notebooks isolated, legacy notes and completion preserved');
