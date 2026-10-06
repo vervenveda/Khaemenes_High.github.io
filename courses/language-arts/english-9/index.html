@@ -164,8 +164,8 @@ details.materials summary{cursor:pointer;color:var(--gold);font-weight:800}.pack
     <section id="content"></section>
     <p class="footer">Created as a parent/teacher planning portal. Verify local school, umbrella, scholarship, or district requirements before using it as an official transcript record.</p>
    </div>
-  <section id="content"></section>
-  <p class="footer">Khaemenes Academy · Grade 09 Language Arts · Jennifer Pearl · 2026</p>
+
+  <p class="footer">Khaemenes Academy · Grade 09 Language Arts · Jennifer Kay Pearl · 2026</p>
 </main>
 </div>
 
@@ -240,16 +240,19 @@ function courseStats(student){
     const lp = lessonPct(student,w.week);
     completedLessons += Math.round(lp/20); // 5 lessons times percent
     const qb = quizBest(student,w.week);
-    if(qb > 0) quizScores.push(qb);
-    if(lp > 0 || qb > 0) weeklyScores.push(weeklyScore(student,w.week));
-    if((qb > 0 && qb < APP.passingTarget) || (lp > 0 && lp < 100)) needsReview.push(w.week);
+    const attempted = (weekProgress(student,w.week).quiz.attempts || []).length > 0;
+    if(attempted || qb > 0) quizScores.push(qb);
+    if(lp > 0 || attempted || qb > 0) weeklyScores.push(weeklyScore(student,w.week));
+    if(((attempted || qb > 0) && qb < APP.passingTarget) || (lp > 0 && lp < 100)) needsReview.push(w.week);
   });
   const lessonAverage = Math.round(completedLessons/totalLessons*100);
   const quizAverage = quizScores.length ? Math.round(quizScores.reduce((a,b)=>a+b,0)/quizScores.length) : 0;
   const weeklyAverage = weeklyScores.length ? Math.round(weeklyScores.reduce((a,b)=>a+b,0)/weeklyScores.length) : 0;
   const mid = student.progress.exams?.midterm?.best || 0;
   const fin = student.progress.exams?.final?.best || 0;
-  const examWeightUsed = (mid?15:0)+(fin?15:0);
+  const midAttempted = (student.progress.exams?.midterm?.attempts || []).length > 0 || mid > 0;
+  const finalAttempted = (student.progress.exams?.final?.attempts || []).length > 0 || fin > 0;
+  const examWeightUsed = (midAttempted?15:0)+(finalAttempted?15:0);
   const weeklyWeight = 100 - examWeightUsed;
   const courseGrade = Math.round((weeklyAverage*weeklyWeight + mid*15 + fin*15)/100);
   return {completedLessons,totalLessons,lessonAverage,quizAverage,weeklyAverage,courseGrade,midterm:Math.round(mid),final:Math.round(fin),needsReview};
@@ -527,10 +530,20 @@ function stopReadingTimer(weekNo){
   const sec=Math.max(1,Math.floor((Date.now()-readingTimerStart)/1000));clearInterval(readingTimer);readingTimer=null;readingTimerWeek=null;readingTimerStart=0;
   const p=weekProgress(activeStudent(),weekNo);p.reading.minutes=Math.max(0,Number(p.reading.minutes||0))+Math.max(1,Math.round(sec/60));if(p.reading.status==="Not started")p.reading.status="In progress";saveState();renderAll();
 }
+function balancedChoiceOrders(questions){
+  const offset=Math.floor(Math.random()*4);
+  return questions.map((q,i)=>{
+    const wrong=q.choices.map((_,j)=>j).filter(j=>j!==q.answer);
+    for(let j=wrong.length-1;j>0;j--){const k=Math.floor(Math.random()*(j+1));[wrong[j],wrong[k]]=[wrong[k],wrong[j]];}
+    wrong.splice((i+offset)%q.choices.length,0,q.answer);
+    return wrong;
+  });
+}
 function renderQuiz(w){
   const s = activeStudent();
   const p = weekProgress(s,w.week);
   const questions = APP.quizBank[w.quizKey] || APP.quizBank.close_reading;
+  const choiceOrders = balancedChoiceOrders(questions);
   const attempts = p.quiz.attempts || [];
   const attemptList = attempts.length ? `<p class="small">Attempts: ${attempts.map(a => `${new Date(a.date).toLocaleDateString()} — ${Math.round(a.score)}%`).join(" | ")}</p>` : `<p class="small">No attempts yet.</p>`;
   const last = attempts[attempts.length-1];
@@ -542,7 +555,7 @@ function renderQuiz(w){
     <form id="quizForm">
       ${questions.map((q,i) => `<div class="quizQ">
         <p><strong>${i+1}. ${esc(q.q)}</strong></p>
-        ${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="q${i}" value="${j}"> ${esc(c)}</label>`).join("")}
+        ${choiceOrders[i].map(j=>`<label class="choice"><input type="radio" name="q${i}" value="${j}"> ${esc(q.choices[j])}</label>`).join("")}
       </div>`).join("")}
       <div class="actions">
         <button type="button" onclick="submitQuiz(${w.week})">Submit Quiz</button>
@@ -615,9 +628,10 @@ function renderExams(){
   </div>`;
 }
 function renderExamForm(name, questions){
+  const choiceOrders = balancedChoiceOrders(questions);
   return `<form id="${name}Form">
     ${questions.map((q,i)=>`<details class="quizQ"><summary><strong>${i+1}. ${esc(q.skill || "")}: ${esc(q.q)}</strong></summary>
-      ${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="${name}_${i}" value="${j}"> ${esc(c)}</label>`).join("")}
+      ${choiceOrders[i].map(j=>`<label class="choice"><input type="radio" name="${name}_${i}" value="${j}"> ${esc(q.choices[j])}</label>`).join("")}
     </details>`).join("")}
     <div class="actions"><button type="button" onclick="submitExam('${name}')">Submit ${name === "midterm" ? "Midterm" : "Final"}</button><button class="secondary" type="reset">Clear</button></div>
   </form>`;
@@ -728,8 +742,16 @@ function downloadScopeCSV(){
   APP.weeks.forEach(w => rows.push([w.week,w.unit,w.title,w.essentialQuestion,w.readingSuggestion?.title||"",w.readingSuggestion?.author||"",w.readingSuggestion?.genre||"",w.reading,w.writingTask,w.standards.map(s=>s.code).join("; "),w.vocabulary.join("; ")]));
   downloadText("ELA9_36_Week_Scope_Sequence.csv", rows.map(r=>r.map(csvCell).join(",")).join("\n"), "text/csv");
 }
+function collectStandaloneEvidence(){
+  const evidence={};
+  for(let i=0;i<localStorage.length;i++){
+    const key=localStorage.key(i);
+    if(key==="khae-ela9-progress-v1" || key.startsWith("khae-ela9-field:")) evidence[key]=localStorage.getItem(key);
+  }
+  return {ownership:"unassigned-legacy-browser-evidence",records:evidence,previousImport:localStorage.getItem("khae-ela9-imported-evidence-v3")};
+}
 function downloadBackup(){
-  downloadText("ELA9_Portal_Backup.json", JSON.stringify(state,null,2), "application/json");
+  downloadText("ELA9_Portal_Backup.json", JSON.stringify({schema:"khaemenes-english9-backup-v3",exportedAt:new Date().toISOString(),students:state.students,activeId:state.activeId,standaloneEvidence:collectStandaloneEvidence()},null,2), "application/json");
 }
 function importBackup(event){
   const file = event.target.files[0];
@@ -739,7 +761,15 @@ function importBackup(event){
     try{
       const obj = JSON.parse(reader.result);
       if(!obj.students || !Array.isArray(obj.students)) throw new Error("Invalid backup.");
-      state = obj;
+      if(!obj.students.every(s=>s && typeof s.id==="string" && typeof s.name==="string" && s.progress && typeof s.progress==="object")) throw new Error("Invalid learner record.");
+      if(!confirm("Replace this dashboard with the imported learner records? Export your current backup first. Separate lesson notes will not be overwritten.")) return;
+      if(obj.standaloneEvidence){
+        const records=obj.standaloneEvidence.records;
+        if(!records || typeof records!=="object" || Array.isArray(records) || !Object.entries(records).every(([k,v])=>(k==="khae-ela9-progress-v1" || k.startsWith("khae-ela9-field:")) && typeof v==="string")) throw new Error("Invalid evidence bundle.");
+        // Preserve imported unassigned evidence separately; never overwrite another learner's browser notes.
+        localStorage.setItem("khae-ela9-imported-evidence-v3",JSON.stringify(obj.standaloneEvidence));
+      }
+      state = {students:obj.students,activeId:obj.activeId};
       if(!state.activeId && state.students[0]) state.activeId = state.students[0].id;
       saveState(); renderAll();
       alert("Backup imported.");
