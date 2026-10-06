@@ -10,7 +10,7 @@ window.KHAEMENES_SOCIAL_STUDIES_DATA = {
     "assignments": 108,
     "weeklyQuizzes": 36,
     "generated": "2026-08-05",
-    "authors": "Jennifer Pearl and Autumn Pearl",
+    "authors": "Jennifer Kay Pearl",
     "passingTarget": 80,
     "honorsTarget": 85,
     "storageKey": "khaemenes_grade09_social_studies_v1"
@@ -92,12 +92,12 @@ window.KHAEMENES_SOCIAL_STUDIES_DATA = {
         }
       ],
       "sourceStudy": {
-        "title": "Conflicting Eyewitness Accounts",
-        "context": "Compare two short fictionalized eyewitness descriptions of a town meeting. Identify agreement, disagreement, purpose, audience, and what additional evidence would be needed."
+        "title": "Conflicting Eyewitness Accounts — Evidence Reliability Lab",
+        "context": "Use a clearly identified simulated town-meeting evidence set to practice sourcing, contextualization, corroboration, spatial reasoning, and qualified claims. Because this is a methods lab rather than a historical case study, students must not treat the simulated accounts as evidence about a real event."
       },
-      "geographyTask": "Create a source map showing where each piece of evidence was produced and how distance or position may have shaped observation.",
-      "dataTask": "Rank six sources by usefulness for answering a specific question, then defend the ranking with criteria.",
-      "seminarPrompt": "Is an openly biased source less useful than a source that claims to be neutral?",
+      "geographyTask": "Plot six witness positions around a meeting space, then explain how distance, obstruction, and line of sight could affect what each observer could reasonably report.",
+      "dataTask": "Build an evidence matrix for six records. Rate each record for proximity, purpose, independence, corroboration, and limitation; then rank usefulness for one clearly stated question.",
+      "seminarPrompt": "Is an openly biased source necessarily less useful than a source that presents itself as neutral? Defend a qualified answer using Week 1 evidence rules.",
       "resources": [
         "https://www.loc.gov/programs/teachers/getting-started-with-primary-sources/",
         "https://www.archives.gov/education/lessons"
@@ -139,96 +139,98 @@ window.KHAEMENES_SOCIAL_STUDIES_DATA = {
       "dailyLessons": [
         {
           "day": "Monday",
-          "title": "Frame the Inquiry",
+          "title": "Evidence, Inference, and the Limits of the Record",
           "minutes": 55,
-          "objective": "Locate How We Know the Past in time and space and develop an initial answer to the essential question.",
-          "warmup": "Without notes, write three observations or questions suggested by the title “How We Know the Past.”",
-          "instruction": "Social studies begins with questions. Historians, geographers, economists, and civic researchers do not simply collect facts; they decide what evidence is relevant, test explanations, and communicate conclusions. Because the past cannot be rerun, every historical account depends on surviving traces such as letters, laws, artifacts, maps, photographs, oral histories, buildings, and statistical records.",
-          "guidedPractice": "Build a class chronology for Foundations and identify the focal region(s): Global. Mark what is known, inferred, or still questioned.",
-          "independentPractice": "Complete the first section of the weekly inquiry notebook: initial claim, two questions, and a labeled time-space frame.",
-          "checkForUnderstanding": "Explain one way chronology or geography prevents a misleading interpretation.",
+          "objective": "Distinguish observation, evidence, inference, and historical claim, and explain why historical certainty varies with the surviving record.",
+          "warmup": "Write one thing you know about yesterday from direct experience and one thing you know only because someone told or recorded it. Label each.",
+          "instruction": "Historians cannot rerun the past. They reconstruct it from surviving traces. A trace becomes historical evidence only when it is connected to a question. Evidence supports an inference; an inference becomes part of a historical claim when the reasoning is made explicit. Reliable history therefore separates what a source directly shows from what a researcher concludes. The strength of a conclusion depends on the quality, relevance, independence, and agreement of the evidence.",
+          "guidedPractice": "Sort twelve statements from a simulated meeting record into four columns: direct observation, source information, inference, and unsupported assertion. Discuss disagreements.",
+          "independentPractice": "Create a two-column evidence ledger for the weekly essential question: What the record supports / What remains uncertain. Add at least three entries to each.",
+          "checkForUnderstanding": "Rewrite one overconfident statement as a qualified historical claim that matches the available evidence.",
           "materials": [
             "Weekly reading",
-            "Blank timeline",
-            "World or regional map",
-            "Inquiry notebook"
+            "Evidence/inference sorting cards",
+            "Inquiry notebook",
+            "Evidence ledger"
           ],
-          "support": "Provide a partially completed timeline, vocabulary preview, read-aloud option, and sentence frames.",
-          "extension": "Identify one periodization choice that another historian might challenge."
+          "support": "Provide definitions with examples and sentence frames: “The evidence directly shows…,” “This suggests…,” and “We cannot yet conclude…”.",
+          "extension": "Explain how absence of evidence can be meaningful in one case but misleading in another."
         },
         {
           "day": "Tuesday",
-          "title": "Read Like a Historian",
+          "title": "Source, Contextualize, and Corroborate",
           "minutes": 60,
-          "objective": "Source, contextualize, and corroborate primary and secondary evidence.",
-          "warmup": "Preview the source study: Conflicting Eyewitness Accounts. Predict its possible audience and purpose.",
-          "instruction": "Sources were created by people with purposes. A tax register records what officials wanted counted; a speech attempts to persuade; a diary may reveal private experience but only one person’s view. Researchers therefore ask who created a source, for whom, under what conditions, and with what possible limits. These questions do not automatically disqualify a source. They help determine what the source can reliably show.",
-          "guidedPractice": "Compare two short fictionalized eyewitness descriptions of a town meeting. Identify agreement, disagreement, purpose, audience, and what additional evidence would be needed.",
-          "independentPractice": "Complete Assignment 1, identifying origin, audience, purpose, context, claims, useful evidence, limits, and one corroborating source needed.",
-          "checkForUnderstanding": "State one claim the source can support and one claim it cannot support by itself.",
+          "objective": "Evaluate origin, audience, purpose, context, value, and limitation, then corroborate claims across independent records.",
+          "warmup": "Two witnesses describe the same meeting differently. List three reasons both accounts could be sincere yet different.",
+          "instruction": "A source is not reliable or unreliable in the abstract; it is more or less useful for a particular question. Origin tells who created it. Audience and purpose help explain why it was created. Context identifies the circumstances surrounding it. Value identifies what the source can reveal, while limitation identifies what it cannot establish alone. Corroboration then compares independent records to determine what is strongly supported, contradicted, or still uncertain.",
+          "guidedPractice": "Analyze two simulated eyewitness accounts and one meeting record. Annotate origin, audience, purpose, context, agreement, contradiction, and missing evidence.",
+          "independentPractice": "Complete Assignment 1: OPVL analysis plus a corroboration table and a 150–250 word qualified claim.",
+          "checkForUnderstanding": "Name one claim supported by more than one independent source and one claim that remains uncorroborated.",
           "materials": [
-            "Source-study sheet",
-            "Primary-source analysis form",
-            "Colored annotation tools"
+            "Simulated source set",
+            "OPVL organizer",
+            "Corroboration matrix",
+            "Annotation tools"
           ],
-          "support": "Chunk the source, define difficult words, and allow oral annotation before writing.",
-          "extension": "Locate a second perspective and explain whether it confirms, complicates, or contradicts the first."
+          "support": "Chunk each source and provide a question guide for origin, audience, purpose, value, and limitation.",
+          "extension": "Design one additional source that would most efficiently resolve a specific contradiction and justify why."
         },
         {
           "day": "Wednesday",
-          "title": "Map and Measure",
+          "title": "Place, Position, and Quantitative Evidence",
           "minutes": 55,
-          "objective": "Use geographic and quantitative evidence to explain patterns and relationships.",
-          "warmup": "Study the map or data before reading its title. List two patterns and one question.",
-          "instruction": "Corroboration is the practice of comparing sources. Two accounts may agree on the sequence of events while disagreeing about motives. An artifact may confirm that a technology existed but not prove how widely it was used. A historian builds a stronger conclusion by combining different kinds of evidence and explaining contradictions rather than hiding them.",
-          "guidedPractice": "Create a source map showing where each piece of evidence was produced and how distance or position may have shaped observation.",
-          "independentPractice": "Rank six sources by usefulness for answering a specific question, then defend the ranking with criteria.",
-          "checkForUnderstanding": "Describe one pattern, one plausible explanation, and one limitation of the map or data.",
+          "objective": "Use spatial and tabular evidence to test whether observer position changes the strength of a claim.",
+          "warmup": "Sketch a room with a blocked line of sight. Explain why two observers in different positions may report different details without either being dishonest.",
+          "instruction": "Historical evidence has geography. Where a person stood, where a record was produced, how information traveled, and how far an observer was from an event can affect what the evidence can show. Quantitative organization also helps researchers compare records consistently. A map or table does not prove motive or truth by itself; it helps reveal patterns, relationships, and limits that must be interpreted alongside other evidence.",
+          "guidedPractice": "Plot six observer locations on a meeting-space diagram and compare the mapped positions with each observer’s reported details.",
+          "independentPractice": "Complete Assignment 2: evidence map plus usefulness matrix. State one observed pattern, one evidence-based explanation, and one thing the visualization cannot prove.",
+          "checkForUnderstanding": "Explain why a mapped relationship can strengthen or weaken a claim without proving causation or honesty.",
           "materials": [
-            "Blank map",
-            "Colored pencils",
-            "Data table or graph",
-            "Calculator optional"
+            "Meeting-space map",
+            "Evidence matrix",
+            "Ruler or scale guide",
+            "Colored pencils"
           ],
-          "support": "Provide map labels, a graph-reading guide, and worked example for one calculation.",
-          "extension": "Create an alternative visualization and explain what it reveals or hides."
+          "support": "Provide labeled positions and a worked example distinguishing observation from interpretation.",
+          "extension": "Create a second visualization that organizes the same evidence by source independence rather than location, then compare what each reveals."
         },
         {
           "day": "Thursday",
-          "title": "Discuss, Debate, and Write",
+          "title": "Build and Challenge a Historical Claim",
           "minutes": 60,
-          "objective": "Construct an evidence-based argument that acknowledges a competing interpretation.",
-          "warmup": "Choose an initial position on: Is an openly biased source less useful than a source that claims to be neutral?",
-          "instruction": "These habits matter beyond history. Citizens face claims in news reports, campaign messages, social media, advertisements, and artificial-intelligence outputs. The same habits—checking origin, context, evidence, and independent confirmation—help people make responsible decisions in the present.",
-          "guidedPractice": "Use a claim-evidence-reasoning organizer. Require evidence from the weekly reading, source study, and map or data lab.",
-          "independentPractice": "Complete Assignment 3 as a structured seminar contribution, policy memo, or evidence-based response.",
-          "checkForUnderstanding": "Revise the claim after hearing a counterargument and explain what changed.",
+          "objective": "Construct a defensible claim using multiple source types and revise it after a serious counterargument.",
+          "warmup": "Respond provisionally: Is an openly biased source necessarily less useful than one that claims neutrality? Include the word “depends.”",
+          "instruction": "Historical arguments are strongest when claims are proportional to evidence. Good arguments identify the evidence, explain why it matters, acknowledge important limitations, and address competing interpretations. A counterclaim is not a decorative sentence; it is a serious alternative explanation that tests whether the original reasoning can survive scrutiny.",
+          "guidedPractice": "Use a claim-evidence-reasoning-counterclaim organizer to build two competing explanations from the Week 1 source set. Identify which claim is better supported and why.",
+          "independentPractice": "Complete Assignment 3 as an evidence-based seminar contribution or written argument using at least three pieces of evidence from two source types.",
+          "checkForUnderstanding": "Revise one sentence of your argument after considering the strongest counterclaim. Explain why the revision is more defensible.",
           "materials": [
-            "CER organizer",
-            "Seminar tracker",
+            "CER-counterclaim organizer",
+            "Weekly source set",
             "Argument rubric",
-            "Weekly sources"
+            "Seminar tracker"
           ],
-          "support": "Offer sentence stems for agreeing, disagreeing, qualifying, and citing evidence.",
-          "extension": "Write a counterclaim strong enough that a reasonable person could accept it."
+          "support": "Provide stems for qualification: “The evidence strongly supports…,” “A reasonable alternative is…,” and “This remains uncertain because…”.",
+          "extension": "Write the strongest possible counterargument to your own conclusion and identify what new evidence could change your position."
         },
         {
           "day": "Friday",
-          "title": "Synthesize and Demonstrate",
+          "title": "Mastery Lab — From Evidence to Trustworthy Account",
           "minutes": 55,
-          "objective": "Synthesize the week’s historical content and disciplinary skills.",
-          "warmup": "Retrieve six key terms and three major ideas without notes; then correct in another color.",
-          "instruction": "Review the essential question through chronology, geography, institutions, economy, culture, and evidence. Connect the week to an earlier course theme.",
-          "guidedPractice": "Complete a four-corner synthesis: continuity, change, cause, and consequence.",
-          "independentPractice": "Complete the weekly quiz and short response, then record corrections and a next-step goal.",
-          "checkForUnderstanding": "Answer the essential question in two sentences: How can we build a trustworthy account of the past when evidence is incomplete or disputed?",
+          "objective": "Demonstrate mastery of sourcing, context, corroboration, spatial reasoning, and qualified historical claims.",
+          "warmup": "Without notes, define primary source, secondary source, corroboration, contextualization, bias, and historical claim; then self-correct.",
+          "instruction": "Return to the essential question. A trustworthy account does not mean a perfectly certain account. It means the researcher has asked a clear question, evaluated source origin and context, compared independent evidence, distinguished observation from inference, communicated uncertainty, and made claims no stronger than the evidence allows.",
+          "guidedPractice": "Complete a five-step reliability audit on one disputed claim: question, source/context, corroboration, spatial/data check, qualified conclusion.",
+          "independentPractice": "Complete the 10-question mastery quiz and constructed response. A score of 80% or higher on the objective section is required for weekly mastery; sub-80 attempts require review, corrections, and retake.",
+          "checkForUnderstanding": "Answer the essential question in two precise sentences and identify one habit you will carry into every later unit.",
           "materials": [
-            "Quiz",
+            "Mastery quiz",
             "Correction form",
-            "Portfolio checklist"
+            "Portfolio checklist",
+            "Week 1 evidence set"
           ],
-          "support": "Allow extended time, text-to-speech for directions, and a quiet testing setting as appropriate.",
-          "extension": "Write a transfer question that applies the week’s reasoning skill to a contemporary issue."
+          "support": "Allow approved accessibility supports and provide a correction conference or guided review before retake.",
+          "extension": "Apply the Week 1 reliability audit to a contemporary public claim, clearly separating verification method from political agreement."
         }
       ],
       "assignments": [
@@ -399,24 +401,24 @@ window.KHAEMENES_SOCIAL_STUDIES_DATA = {
             "id": "W01Q9",
             "prompt": "A speech was written to persuade voters. Why can it still be useful historical evidence?",
             "choices": [
-              "Its purpose and audience can reveal what the speaker wanted voters to believe, especially when its factual claims are checked against other evidence.",
               "Persuasive sources are automatically factual.",
+              "Its purpose and audience can reveal what the speaker wanted voters to believe, especially when its factual claims are checked against other evidence.",
               "Its persuasive purpose proves every opposing source false.",
               "A speech is useful only when the historian agrees with it."
             ],
-            "answer": 0,
-            "explanation": "Purpose is part of a source's evidentiary value. A persuasive source can reveal arguments, priorities, audiences, and assumptions while factual claims still require corroboration."
+            "answer": 1,
+            "explanation": "Purpose is part of a source’s evidentiary value. A persuasive source can reveal arguments, priorities, audiences, and assumptions while factual claims still require corroboration."
           },
           {
             "id": "W01Q10",
             "prompt": "Which sequence represents the strongest method for evaluating a disputed historical claim?",
             "choices": [
               "Choose a source, summarize it, stop",
-              "Define the question, source and contextualize evidence, corroborate across independent records, then make a qualified claim",
               "Search only for evidence that confirms the first source",
+              "Define the question, source and contextualize evidence, corroborate across independent records, then make a qualified claim",
               "Count how many sources exist without examining who created them"
             ],
-            "answer": 1,
+            "answer": 2,
             "explanation": "Reliable historical inquiry begins with a clear question, evaluates source origin and context, compares independent evidence, and then makes a claim proportionate to the evidence."
           }
         ],
@@ -429,20 +431,7 @@ window.KHAEMENES_SOCIAL_STUDIES_DATA = {
             "Reasoning": 2,
             "AccuracyAndLimits": 1
           }
-        },
-        "masteryThreshold": 80,
-        "questionIds": [
-          "W01Q1",
-          "W01Q2",
-          "W01Q3",
-          "W01Q4",
-          "W01Q5",
-          "W01Q6",
-          "W01Q7",
-          "W01Q8",
-          "W01Q9",
-          "W01Q10"
-        ]
+        }
       }
     },
     {
@@ -10164,12 +10153,12 @@ window.KHAEMENES_SOCIAL_STUDIES_DATA = {
           "prompt": "Using at least three specific pieces of historical evidence and, if used, one result from a Week 26 simulation, answer: Did industrialization improve human life, and for whom? Explain one limitation of your evidence or model.",
           "points": 5,
           "rubric": {
-            "5": "Defensible qualified claim; three accurate pieces of evidence; explains relationships; incorporates or appropriately rejects simulation evidence; identifies a limitation.",
-            "4": "Defensible claim; three relevant pieces of evidence; explanation and limitation mostly clear.",
-            "3": "Claim and two relevant pieces of evidence with some explanation.",
-            "2": "General claim with limited or weak evidence.",
+            "0": "No relevant response.",
             "1": "Minimal response or unsupported assertion.",
-            "0": "No relevant response."
+            "2": "General claim with limited or weak evidence.",
+            "3": "Claim and two relevant pieces of evidence with some explanation.",
+            "4": "Defensible claim; three relevant pieces of evidence; explanation and limitation mostly clear.",
+            "5": "Defensible qualified claim; three accurate pieces of evidence; explains relationships; incorporates or appropriately rejects simulation evidence; identifies a limitation."
           }
         }
       }
@@ -10571,12 +10560,12 @@ window.KHAEMENES_SOCIAL_STUDIES_DATA = {
           "prompt": "Using at least three specific pieces of historical evidence, answer: What should markets, governments, employers, workers, and communities each control? Compare at least two economic or reform traditions and identify one tradeoff or limitation in your proposed arrangement.",
           "points": 5,
           "rubric": {
-            "5": "Defensible institutional claim; three accurate pieces of evidence; meaningful comparison of two traditions; clear tradeoff/limitation; reasoning is historically grounded.",
-            "4": "Defensible claim; three relevant pieces of evidence; comparison and tradeoff mostly clear.",
-            "3": "Claim with two relevant pieces of evidence and some comparison.",
-            "2": "General claim with limited evidence or weak comparison.",
+            "0": "No relevant response.",
             "1": "Minimal or unsupported response.",
-            "0": "No relevant response."
+            "2": "General claim with limited evidence or weak comparison.",
+            "3": "Claim with two relevant pieces of evidence and some comparison.",
+            "4": "Defensible claim; three relevant pieces of evidence; comparison and tradeoff mostly clear.",
+            "5": "Defensible institutional claim; three accurate pieces of evidence; meaningful comparison of two traditions; clear tradeoff/limitation; reasoning is historically grounded."
           }
         }
       }
@@ -10982,12 +10971,12 @@ window.KHAEMENES_SOCIAL_STUDIES_DATA = {
           "prompt": "Using at least three specific pieces of evidence, explain how industrial power, nationalism, racism, and local collaboration shaped imperial expansion and resistance. Include one example of local agency and one limitation or complication in your evidence.",
           "points": 5,
           "rubric": {
-            "5": "Defensible qualified claim; three accurate pieces of evidence; explains mechanisms among industrial power, ideology, collaboration/resistance; includes local agency and limitation.",
-            "4": "Defensible claim; three relevant pieces of evidence; mechanisms and limitation mostly clear.",
-            "3": "Claim with two relevant pieces of evidence and some explanation.",
-            "2": "General claim with limited evidence or weak causal reasoning.",
+            "0": "No relevant response.",
             "1": "Minimal or unsupported response.",
-            "0": "No relevant response."
+            "2": "General claim with limited evidence or weak causal reasoning.",
+            "3": "Claim with two relevant pieces of evidence and some explanation.",
+            "4": "Defensible claim; three relevant pieces of evidence; mechanisms and limitation mostly clear.",
+            "5": "Defensible qualified claim; three accurate pieces of evidence; explains mechanisms among industrial power, ideology, collaboration/resistance; includes local agency and limitation."
           }
         }
       }
@@ -11389,12 +11378,12 @@ window.KHAEMENES_SOCIAL_STUDIES_DATA = {
           "prompt": "Using at least three specific pieces of evidence, explain how industrial warfare and state collapse transformed societies, borders, and political expectations. Include one causal mechanism, one comparison or complication, and one limitation of your evidence.",
           "points": 5,
           "rubric": {
-            "5": "Defensible qualified claim; three accurate pieces of evidence; clear causal mechanism; meaningful comparison/complication; evidence limitation.",
-            "4": "Defensible claim; three relevant pieces of evidence; causal reasoning and limitation mostly clear.",
-            "3": "Claim with two relevant pieces of evidence and some causal explanation.",
-            "2": "General claim with limited evidence or weak causal reasoning.",
+            "0": "No relevant response.",
             "1": "Minimal or unsupported response.",
-            "0": "No relevant response."
+            "2": "General claim with limited evidence or weak causal reasoning.",
+            "3": "Claim with two relevant pieces of evidence and some causal explanation.",
+            "4": "Defensible claim; three relevant pieces of evidence; causal reasoning and limitation mostly clear.",
+            "5": "Defensible qualified claim; three accurate pieces of evidence; clear causal mechanism; meaningful comparison/complication; evidence limitation."
           }
         }
       }
@@ -11796,12 +11785,12 @@ window.KHAEMENES_SOCIAL_STUDIES_DATA = {
           "prompt": "Using at least three specific pieces of evidence, explain why some societies responded to interwar crisis with democratic reform while others turned toward authoritarian rule. Compare at least two cases, identify one causal mechanism, and explain one limitation or complication in your evidence.",
           "points": 5,
           "rubric": {
-            "5": "Defensible qualified claim; three accurate pieces of evidence; meaningful comparison of at least two cases; causal mechanism; limitation/complication.",
-            "4": "Defensible claim; three relevant pieces of evidence; comparison and causal reasoning mostly clear.",
-            "3": "Claim with two relevant pieces of evidence and some comparison.",
-            "2": "General claim with limited evidence or weak comparison.",
+            "0": "No relevant response.",
             "1": "Minimal or unsupported response.",
-            "0": "No relevant response."
+            "2": "General claim with limited evidence or weak comparison.",
+            "3": "Claim with two relevant pieces of evidence and some comparison.",
+            "4": "Defensible claim; three relevant pieces of evidence; comparison and causal reasoning mostly clear.",
+            "5": "Defensible qualified claim; three accurate pieces of evidence; meaningful comparison of at least two cases; causal mechanism; limitation/complication."
           }
         }
       }

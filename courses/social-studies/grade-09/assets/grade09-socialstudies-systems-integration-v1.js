@@ -46,6 +46,7 @@ function selectedWeek() {
 }
 
 function inject() {
+  if(!document.querySelector('.navBtn.active[data-view="week"],.tab.active[data-view="week"]'))return;
   const content = document.getElementById('content');
   if (!content || document.getElementById('ss9SystemsCheckpoint')) return;
   const week = selectedWeek();

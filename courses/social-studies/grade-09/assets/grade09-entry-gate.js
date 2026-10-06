@@ -1,38 +1,35 @@
 (() => {
-  "use strict";
-  const READINESS_KEY = "khaemenes_ss9_readiness_v1";
-  const FOUNDATIONS_KEY = "khaemenes_ss9_unit0_v2";
-  const COURSE_KEY = "khaemenes_grade09_social_studies_v1";
-  const MASTERY = 80;
-  const read = (key, fallback = null) => { try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } };
-  function hasCourseProgress() {
-    const db = read(COURSE_KEY, {});
-    return Array.isArray(db.students) && db.students.some(student => Object.values(student.completedLessons || {}).some(days => Array.isArray(days) && days.some(Boolean)) || Object.keys(student.assignments || {}).length || Object.keys(student.quizzes || {}).length || Object.keys(student.exams || {}).length);
-  }
-  function foundationsMastered() {
-    const record = read(FOUNDATIONS_KEY, {}), scores = Object.values(record.mastery || {}).map(item => Number(item?.best || 0));
-    return record.gateway?.route === "advance" && scores.length === 6 && scores.every(score => score >= MASTERY);
-  }
-  function decision() {
-    if (hasCourseProgress()) return { allow: true, pathway: "returning_learner" };
-    if (foundationsMastered()) return { allow: true, pathway: "supported_42_week" };
-    const readiness = read(READINESS_KEY, null);
-    if (readiness?.route === "advance") return { allow: true, pathway: "core_36_week" };
-    if (readiness?.route === "unit_0_refresher") return { allow: false, title: "Complete the six Foundation Weeks first", message: "Your readiness record assigns the Supported 42-week Pathway. Complete P1–P6 at 80% before Official Week 01.", href: "prep/index.html", label: "Open Foundation Weeks" };
-    return { allow: false, title: "Begin with the Readiness Gateway", message: "Every first-time learner completes placement before the official 36-week course begins.", href: "assessments/readiness.html", label: "Start Readiness Gateway" };
-  }
-  function mount(result) {
-    if (result.allow) { document.documentElement.dataset.grade09Entry = "open"; document.documentElement.dataset.durationPathway = result.pathway; return; }
-    document.documentElement.dataset.grade09Entry = "locked";
-    const style = document.createElement("style");
-    style.textContent = ".grade09-entry-gate{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:22px;background:rgba(4,12,20,.97);color:#fff}.grade09-entry-card{width:min(700px,100%);padding:30px;border:1px solid rgba(234,211,154,.5);border-radius:7px;background:#0b1c2d;text-align:center}.grade09-entry-card h1{font-family:Georgia,serif;font-weight:444}.grade09-entry-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:22px}.grade09-entry-actions a{min-height:46px;padding:10px 15px;border:1px solid #ead39a;border-radius:7px;color:#211a0f;background:#ead39a;text-decoration:none;font-weight:700}.grade09-entry-actions a.secondary{color:#fff;background:transparent}";
-    document.head.appendChild(style);
-    const gate = document.createElement("section");
-    gate.className = "grade09-entry-gate"; gate.setAttribute("role", "dialog"); gate.setAttribute("aria-modal", "true"); gate.setAttribute("aria-labelledby", "grade09EntryTitle");
-    gate.innerHTML = `<article class="grade09-entry-card"><p>GRADE 09 · GLOBAL STUDIES PLACEMENT</p><h1 id="grade09EntryTitle">${result.title}</h1><p>${result.message}</p><p>Readiness and Foundation evidence remain separate from the official course grade.</p><div class="grade09-entry-actions"><a href="${result.href}">${result.label}</a><a class="secondary" href="index.html">Course Entrance</a></div></article>`;
-    document.body.appendChild(gate); gate.querySelector("a")?.focus();
-  }
-  const run = () => mount(decision());
-  window.KhaemenesSocialStudies9Entry = { decision, run };
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, { once: true }); else run();
+'use strict';
+const records=window.KhaemenesSS9Records;
+const read=(key,fallback=null)=>{try{return JSON.parse(records.storage.getItem(key)||'null')??fallback}catch{return fallback}};
+const strands=['claim_evidence_inference','source_provenance_corroboration','chronology_causation_change','geography_maps_networks','data_quantitative_reasoning','argument_comparison_ethics'];
+const passed=r=>r?.route==='advance'&&typeof r.overall_percent==='number'&&r.overall_percent>=80&&strands.every(s=>typeof r.strand_scores?.[s]==='number'&&r.strand_scores[s]>=80&&r.strand_scores[s]<=100);
+function decision(){
+ if(!records||records.isBlocked())return {allow:false,title:'Saved work needs attention',message:'Saving is paused. Preserve your work and resolve the record warning before continuing.',href:'index.html',label:'Course Entrance'};
+ const db=read('khaemenes_grade09_social_studies_v1',{});
+ if(records.isBlocked())return {allow:false,title:'Saved work needs attention',message:'The stored course record was preserved. Resolve the visible record warning.',href:'index.html',label:'Course Entrance'};
+ const s=Array.isArray(db.students)?db.students.find(s=>s.id===db.activeId):null;
+ if(s&&(Object.values(s.completedLessons||{}).some(days=>Array.isArray(days)&&days.some(Boolean))||Object.keys(s.assignments||{}).length||Object.keys(s.quizzes||{}).length||Object.keys(s.exams||{}).length))return {allow:true,pathway:'returning_learner'};
+ const foundations=read('khaemenes_ss9_unit0_v2',{});
+ if(passed(foundations.gateway)&&['P1','P2','P3','P4','P5','P6'].every(p=>typeof foundations.mastery?.[p]?.best==='number'&&foundations.mastery[p].best>=80))return {allow:true,pathway:'supported_42_week'};
+ const readiness=read('khaemenes_ss9_readiness_v1');
+ if(records.isBlocked())return {allow:false,title:'Saved placement needs attention',message:'The placement record was preserved. Resolve the record warning before continuing.',href:'index.html',label:'Course Entrance'};
+ if(passed(readiness))return {allow:true,pathway:'core_36_week'};
+ if(readiness?.route==='unit_0_refresher')return {allow:false,title:'Continue your foundations',message:'Build the six foundation strands at your own pace. There is no calendar deadline.',href:'prep/index.html',label:'Open Foundations'};
+ return {allow:false,title:'Begin with readiness when you are ready',message:'This low-stakes check identifies support before the first official lesson. Take your time.',href:'assessments/readiness.html',label:'Open Readiness'};
+}
+function mount(result){
+ if(result.allow){document.documentElement.dataset.grade09Entry='open';return;}
+ const script=document.currentScript||document.querySelector('script[src*="grade09-entry-gate"]');const base=new URL('../',script?.src||location.href);
+ const gate=document.createElement('section');gate.className='grade09-entry-gate';gate.setAttribute('role','dialog');gate.setAttribute('aria-modal','true');gate.setAttribute('aria-labelledby','grade09EntryTitle');
+ gate.style.cssText='position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:20px;background:#08111ff5;color:white';
+ const card=document.createElement('article');card.style.cssText='max-width:650px;padding:26px;border:1px solid #ead39a;border-radius:7px;background:#0b1c2d';
+ const title=document.createElement('h1');title.id='grade09EntryTitle';title.textContent=result.title;title.style.cssText='font-weight:400;font-size:1.6rem';const text=document.createElement('p');text.textContent=result.message;card.append(title,text);
+ for(const [path,label] of [[result.href,result.label],['index.html','Course Entrance']]){const a=document.createElement('a');a.href=new URL(path,base).href;a.textContent=label;a.style.cssText='display:inline-block;padding:12px;margin:8px;border:1px solid #ead39a;border-radius:7px;color:#fff';card.append(a);}
+ gate.append(card);document.querySelectorAll('body > :not(script)').forEach(e=>{if(e.id!=='ss9-record-error')e.inert=true;});document.body.append(gate);
+ const links=Array.from(gate.querySelectorAll('a'));gate.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();const i=links.indexOf(document.activeElement);links[(i+(e.shiftKey?-1:1)+links.length)%links.length].focus();}});links[0]?.focus();
+}
+window.KhaemenesSocialStudies9Entry=Object.freeze({decision,passed});
+const run=()=>{if(document.querySelector('[data-ss9-require-entry]'))mount(decision());};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{once:true});else run();
 })();

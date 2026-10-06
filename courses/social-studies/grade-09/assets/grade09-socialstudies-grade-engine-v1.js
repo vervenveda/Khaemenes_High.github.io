@@ -21,7 +21,7 @@ const WEIGHTS = Object.freeze({
 
 function readDB(){
   try{
-    const db = JSON.parse(localStorage.getItem(KEY));
+    const db = JSON.parse(window.KhaemenesSS9Records.storage.getItem(KEY));
     return db && Array.isArray(db.students) ? db : null;
   }catch{return null;}
 }
@@ -42,72 +42,36 @@ function assignmentPossiblePoints(key, record){
   return Number.isFinite(Number(canonical)) && Number(canonical)>0 ? Number(canonical) : null;
 }
 
+const score=x=>typeof x==='number'&&Number.isFinite(x)&&x>=0?x:null;
 function assignmentCategory(s){
-  let earned = 0, possible = 0, evaluated = 0, submitted = 0;
-  for(const [key,a] of Object.entries(s?.assignments || {})){
-    if(a?.submitted) submitted++;
-    const score = Number(a?.score);
-    const max = assignmentPossiblePoints(key,a);
-    if(Number.isFinite(score) && Number.isFinite(max) && max > 0){
-      earned += score;
-      possible += max;
-      evaluated++;
-    }
-  }
-  return { percent: round(pct(earned,possible)), earned, possible, evaluated, submitted, total: 108 };
+ let earned=0,possible=0,evaluated=0,submitted=0;
+ for(const w of COURSE.weeks)for(const a of w.assignments){const record=s?.assignments?.[`${w.week}-${a.number}`];if(record?.submitted)submitted++;const n=score(record?.score),max=assignmentPossiblePoints(`${w.week}-${a.number}`,record);if(n!==null&&max!==null&&n<=max){earned+=n;possible+=max;evaluated++;}}
+ return {percent:round(pct(earned,possible)),earned,possible,evaluated,submitted,total:108};
 }
-
 function quizCategory(s){
-  const rows = Object.values(s?.quizzes || {}).filter(q => Number.isFinite(Number(q?.bestPercent ?? q?.percent)));
-  const percent = rows.length ? rows.reduce((n,q)=>n+Number(q.bestPercent ?? q.percent),0)/rows.length : null;
-  return { percent: round(percent), evaluated: rows.length, total: 36 };
+ const rows=[];
+ for(const w of COURSE.weeks){const q=s?.quizzes?.[w.week],objective=score(q?.score),written=score(q?.shortScore);if(q?.completed&&objective!==null&&objective<=20&&written!==null&&written<=5)rows.push((objective+written)/25*100);}
+ return {percent:rows.length?round(rows.reduce((a,b)=>a+b,0)/rows.length):null,evaluated:rows.length,total:36};
 }
-
 function examCategory(s,name){
-  const ex = s?.exams?.[name];
-  if(!ex) return {percent:null, evaluated:false, objective:null, written:null};
-  const objective = Number(ex.bestPercent ?? ex.percent);
-  const written = Number(ex.writtenPercent ?? ex.teacherPercent);
-  const hasObj = Number.isFinite(objective);
-  const hasWritten = Number.isFinite(written);
-  const total = Number(ex.totalPercent);
-  if(Number.isFinite(total)) return {percent:round(total), evaluated:true, objective:hasObj?round(objective):null, written:hasWritten?round(written):null};
-  return {percent:hasObj?round(objective):null, evaluated:hasObj && hasWritten, objective:hasObj?round(objective):null, written:hasWritten?round(written):null};
+ const ex=s?.exams?.[name],spec=COURSE[name];
+ const objective=score(ex?.percent),written=score(ex?.writtenPercent);
+ const valid=ex?.completed&&objective!==null&&objective<=100&&written!==null&&written<=100;
+ const objectivePoints=spec.multipleChoice.length*2,writtenPoints=spec.shortResponses.reduce((n,q)=>n+q.points,0)+spec.essay.points;
+ // Derive the total from the published point values. A typed total cannot replace missing evidence.
+ const total=valid?(objective*objectivePoints+written*writtenPoints)/(objectivePoints+writtenPoints):null;
+ return {percent:round(total),evaluated:Boolean(valid),objective:round(objective),written:round(written)};
 }
-
 function journalCategory(s){
-  const rows = Object.values(s?.journal || {}).filter(x => Number.isFinite(Number(x?.score ?? x?.percent)));
-  if(!rows.length) return {percent:null,evaluated:0};
-  const vals = rows.map(x => {
-    const p = Number(x.percent);
-    if(Number.isFinite(p)) return p;
-    const score=Number(x.score), max=Number(x.possiblePoints ?? x.points ?? 100);
-    return max>0 ? score/max*100 : null;
-  }).filter(Number.isFinite);
-  return {percent:vals.length?round(vals.reduce((a,b)=>a+b,0)/vals.length):null,evaluated:vals.length};
+ const vals=COURSE.weeks.map(w=>score(s?.journal?.[w.week]?.percent)).filter(p=>p!==null&&p<=100);
+ return {percent:vals.length?round(vals.reduce((a,b)=>a+b,0)/vals.length):null,evaluated:vals.length,total:36};
 }
-
 function gradeSnapshot(s){
-  const cat = {
-    assignments: assignmentCategory(s),
-    weeklyQuizzes: quizCategory(s),
-    midterm: examCategory(s,'midterm'),
-    final: examCategory(s,'final'),
-    journalDiscussion: journalCategory(s)
-  };
-  let weightedPoints = 0, availableWeight = 0;
-  const pending = [];
-  for(const [name,weight] of Object.entries(WEIGHTS)){
-    const p = cat[name]?.percent;
-    if(Number.isFinite(p)){
-      weightedPoints += p * weight / 100;
-      availableWeight += weight;
-    }else pending.push(name);
-  }
-  const evaluatedGrade = availableWeight ? weightedPoints / availableWeight * 100 : null;
-  const officialReady = availableWeight === 100 && cat.midterm.evaluated && cat.final.evaluated;
-  const officialGrade = officialReady ? weightedPoints : null;
-  return {cat, weightedPoints:round(weightedPoints), availableWeight, evaluatedGrade:round(evaluatedGrade), officialReady, officialGrade:round(officialGrade), pending};
+ const cat={assignments:assignmentCategory(s),weeklyQuizzes:quizCategory(s),midterm:examCategory(s,'midterm'),final:examCategory(s,'final'),journalDiscussion:journalCategory(s)};
+ let weightedPoints=0,availableWeight=0;const pending=[];
+ for(const [name,weight] of Object.entries(WEIGHTS)){const p=cat[name].percent;if(Number.isFinite(p)){weightedPoints+=p*weight/100;availableWeight+=weight;}else pending.push(name);}
+ const complete=cat.assignments.evaluated===108&&cat.weeklyQuizzes.evaluated===36&&cat.journalDiscussion.evaluated===36&&cat.midterm.evaluated&&cat.final.evaluated;
+ return {cat,weightedPoints:round(weightedPoints),availableWeight,evaluatedGrade:availableWeight?round(weightedPoints/availableWeight*100):null,officialReady:complete,officialGrade:complete?round(weightedPoints):null,pending,requiredEvidence:{assignments:108,weeklyQuizzes:36,journal:36}};
 }
 
 window.KHAEMENES_SS9_GRADE_ENGINE = Object.freeze({WEIGHTS, gradeSnapshot});
@@ -139,7 +103,7 @@ function renderPanel(){
     </tbody></table></div>
     <div class="notice">${snap.officialReady
       ? 'All weighted categories contain evaluated evidence. The displayed grade is the published weighted course grade.'
-      : `Official course grade is intentionally withheld until every weighted category has evaluated evidence${snap.pending.length?`: ${snap.pending.map(label).join(', ')}`:''}. Completion and submission remain visible elsewhere but do not count as academic scores.`}</div>`;
+      : `Official course grade is intentionally withheld until all 108 assignments, 36 complete weekly quizzes, 36 journal/reflection records, and both complete examinations have been evaluated${snap.pending.length?`: ${snap.pending.map(label).join(', ')}`:''}. Completion and submission remain visible elsewhere but do not count as academic scores.`}</div>`;
   const grid=content.querySelector('.grid');
   if(grid) grid.appendChild(panel); else content.appendChild(panel);
 }

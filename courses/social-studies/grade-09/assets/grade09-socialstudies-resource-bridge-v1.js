@@ -61,6 +61,7 @@ function styles(){if(document.getElementById('kss-resource-bridge-style'))return
 #kssResourceBridge h2,#kssResourceBridge h3{color:#f6fbf8}#kssResourceBridge .rb-intro{max-width:90ch;color:#d1e1db}.rb-flow{display:grid;gap:10px;margin-top:14px}.rb-step{border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px;background:rgba(255,255,255,.045)}.rb-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.rb-type{font-size:.75rem;letter-spacing:.07em;text-transform:uppercase;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:3px 8px;color:#cce9dc}.rb-optional{font-size:.72rem;border-radius:999px;padding:3px 8px;background:#5f4c27;color:#fff4c8}.rb-step p{margin:.45rem 0}.rb-product{color:#c6edd8}.rb-open{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:7px 11px;border:1px solid rgba(255,255,255,.28);border-radius:8px;color:#fff;text-decoration:none;background:rgba(255,255,255,.07)}.rb-open:hover{background:rgba(255,255,255,.14)}.rb-boundary{margin-top:13px;padding:10px 12px;border-left:4px solid #d4b86a;background:rgba(212,184,106,.08);font-size:.9rem;color:#e9e1c8}@media(max-width:700px){.rb-top{align-items:flex-start}}
 `;document.head.appendChild(s);}
 function render(){
+  if(!document.querySelector('.navBtn.active[data-view="week"],.tab.active[data-view="week"]'))return;
   const content=document.getElementById('content');if(!content)return;
   const n=weekNumber(),plan=WEEK_PLANS[n];
   const existing=document.getElementById('kssResourceBridge');

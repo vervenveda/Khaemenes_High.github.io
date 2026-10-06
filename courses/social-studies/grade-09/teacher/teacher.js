@@ -8,16 +8,16 @@ const DEFAULT_PASSCODE = 'KHAE09';
 const root = document.getElementById('teacherContent');
 
 const esc=(v='')=>String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-const n=v=>Number.isFinite(Number(v))?Number(v):null;
+const n=v=>v!==null&&v!==undefined&&String(v).trim()!==''&&Number.isFinite(Number(v))?Number(v):null;
 const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
 
 function freshDB(){return {version:1,teacherPasscode:DEFAULT_PASSCODE,activeId:null,students:[],settings:{}};}
 function loadDB(){
-  try{const d=JSON.parse(localStorage.getItem(KEY));return d&&Array.isArray(d.students)?Object.assign(freshDB(),d):freshDB();}
+  try{const d=JSON.parse(window.KhaemenesSS9Records.storage.getItem(KEY));return d?window.KhaemenesSS9Records.prepareDB(window.KhaemenesSS9Records.validDB(d)):window.KhaemenesSS9Records.prepareDB(freshDB());}
   catch{return freshDB();}
 }
-function saveDB(db){localStorage.setItem(KEY,JSON.stringify(db));}
-let db=loadDB(), unlocked=sessionStorage.getItem(KEY+'_teacher_unlocked')==='yes', selectedId=db.activeId||db.students[0]?.id||null;
+function saveDB(db){window.KhaemenesSS9Records.storage.setItem(KEY,JSON.stringify(db));}
+let db=loadDB(), unlocked=sessionStorage.getItem(window.KhaemenesSS9Records.key(KEY+'_teacher_unlocked'))==='yes', selectedId=db.activeId||db.students[0]?.id||null;
 
 function student(){return db.students.find(s=>s.id===selectedId)||null;}
 function setStatus(msg,kind='good'){
@@ -53,7 +53,7 @@ function portalHTML(){
       <select id="teacherStudent">${db.students.length?db.students.map(x=>`<option value="${esc(x.id)}" ${x.id===selectedId?'selected':''}>${esc(x.name)}</option>`).join(''):'<option>No student records found</option>'}</select>
       <div id="teacherStatus"></div>
     </section>
-    ${s?summaryHTML(s)+assignmentsHTML(s)+journalHTML(s)+examsHTML(s)+backupHTML():`<section class="card col12"><h3>No student records</h3><p>Create a student from the student portal first.</p></section>`}
+    ${s?summaryHTML(s)+workspaceEvidenceHTML(s)+assignmentsHTML(s)+weeklyHTML(s)+journalHTML(s)+examsHTML(s)+backupHTML():`<section class="card col12"><h3>No student records</h3><p>Create a student from the student portal first.</p></section>`}
   </div>`;
 }
 
@@ -62,10 +62,22 @@ function summaryHTML(s){
   return `<section class="card col12">
     <h3>Academic Status · ${esc(s.name)}</h3>
     ${snap?`<p><strong>${snap.officialReady?`Official weighted grade: ${snap.officialGrade}%`:`Evaluated-work grade: ${snap.evaluatedGrade??'Pending'}${snap.evaluatedGrade!=null?'%':''}`}</strong></p>
-    <p class="small">Evaluated weight currently represented: ${snap.availableWeight}% of 100%. Official grade remains withheld until all weighted categories are evaluated.</p>`:'<p>Scores entered here use the same browser record as the student portal.</p>'}
+    <p class="small">Evaluated weight currently represented: ${snap.availableWeight}% of 100%. Official grade remains withheld until the required assignment, weekly quiz, reflection and examination evidence has been evaluated.</p>`:'<p>Scores entered here use the same browser record as the student portal.</p>'}
   </section>`;
 }
 
+function workspaceEvidenceHTML(s){
+ const ws=s.week1Workspace;if(!ws)return '';
+ return `<section class="card col12"><details><summary>Week 1 baseline and learning notes</summary><h4>Preserved starting claim</h4><pre style="white-space:pre-wrap">${esc(ws.baseline||'Not preserved')}</pre>${Object.entries(ws.notes||{}).map(([key,text])=>`<h4>${esc(key)}</h4><pre style="white-space:pre-wrap">${esc(text)}</pre>`).join('')}</details></section>`;
+}
+function weeklyHTML(s){
+ return `<section class="card col12"><h3>Weekly constructed responses · 5 points each</h3><p>Objective answers are 20 points; the evaluated response contributes 5. A pending response is not zero.</p>${COURSE.weeks.filter(w=>s.quizzes?.[w.week]?.completed).map(w=>{const q=s.quizzes[w.week];return `<details><summary>Week ${w.week} · ${esc(w.title)}</summary><p>${esc(w.quiz.shortResponse.prompt)}</p><pre style="white-space:pre-wrap">${esc(q.shortResponse||'No response supplied')}</pre><label for="qscore-${w.week}">Response score (0–5)</label><input id="qscore-${w.week}" type="number" min="0" max="5" value="${q.shortScore??''}"><label for="qfeedback-${w.week}">Feedback</label><textarea id="qfeedback-${w.week}">${esc(q.shortFeedback||'')}</textarea><button class="saveWeekly" data-week="${w.week}">Save response evaluation</button></details>`}).join('')}</section>`;
+}
+function saveWeekly(button){
+ const s=student(),week=button.dataset.week,q=s?.quizzes?.[week];if(!q)return;
+ const value=n(document.getElementById('qscore-'+week).value);if(value===null||value<0||value>5)return setStatus('Enter a score from 0 to 5.','bad');
+ q.shortScore=value;q.shortFeedback=document.getElementById('qfeedback-'+week).value;q.shortEvaluatedAt=new Date().toISOString();saveDB(db);render();
+}
 function assignmentRows(s){
   const rows=[];
   for(const w of COURSE.weeks){
@@ -129,11 +141,12 @@ function wire(){
     const pass=document.getElementById('teacherPasscode').value;
     const expected=db.teacherPasscode||DEFAULT_PASSCODE;
     if(pass!==expected) return setStatus('Passcode not accepted.','bad');
-    unlocked=true;sessionStorage.setItem(KEY+'_teacher_unlocked','yes');render();
+    unlocked=true;sessionStorage.setItem(window.KhaemenesSS9Records.key(KEY+'_teacher_unlocked'),'yes');render();
   });
-  document.getElementById('lockTeacher')?.addEventListener('click',()=>{unlocked=false;sessionStorage.removeItem(KEY+'_teacher_unlocked');render();});
+  document.getElementById('lockTeacher')?.addEventListener('click',()=>{unlocked=false;sessionStorage.removeItem(window.KhaemenesSS9Records.key(KEY+'_teacher_unlocked'));render();});
   document.getElementById('teacherStudent')?.addEventListener('change',e=>{selectedId=e.target.value;db.activeId=selectedId;saveDB(db);render();});
   document.querySelectorAll('.saveAssignmentScore').forEach(b=>b.addEventListener('click',()=>saveAssignmentScore(b)));
+  document.querySelectorAll('.saveWeekly').forEach(b=>b.addEventListener('click',()=>saveWeekly(b)));
   document.querySelectorAll('.saveJournal').forEach(b=>b.addEventListener('click',()=>saveJournal(b)));
   document.querySelectorAll('.saveExamEvaluation').forEach(b=>b.addEventListener('click',()=>saveExamEvaluation(b)));
   document.getElementById('teacherRefresh')?.addEventListener('click',()=>{db=loadDB();selectedId=db.activeId||db.students[0]?.id||null;render();});
@@ -167,7 +180,7 @@ function saveExamEvaluation(btn){
   saveDB(db);render();
 }
 function exportBackup(){
-  const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+  const blob=new Blob([JSON.stringify(window.KhaemenesSS9Records.exportDB(db),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
   a.href=url;a.download=`grade09-socialstudies-evaluator-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),500);
 }
 

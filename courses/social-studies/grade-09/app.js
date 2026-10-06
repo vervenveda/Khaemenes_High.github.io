@@ -3,8 +3,8 @@
 const COURSE = window.KHAEMENES_SOCIAL_STUDIES_DATA;
 const META = COURSE.metadata;
 const KEY = META.storageKey;
-let selectedWeek = Math.max(1, Math.min(36, Number(new URLSearchParams(location.search).get('week')) || 1));
-let view = 'dashboard';
+let selectedWeek = Math.max(1, Math.min(36, Math.floor(Number(new URLSearchParams(location.search).get('week'))) || 1));
+let view = ['dashboard','week','scope','exams','reports','standards'].includes(new URLSearchParams(location.search).get('view')) ? new URLSearchParams(location.search).get('view') : 'dashboard';
 let examType = 'midterm';
 
 const $ = (s, r=document) => r.querySelector(s);
@@ -18,13 +18,14 @@ function freshDB(){
 }
 function loadDB(){
   try{
-    const saved = JSON.parse(localStorage.getItem(KEY));
-    if(saved && Array.isArray(saved.students)) return Object.assign(freshDB(), saved);
+    const saved = JSON.parse(window.KhaemenesSS9Records.storage.getItem(KEY));
+    if(saved) return window.KhaemenesSS9Records.prepareDB(window.KhaemenesSS9Records.validDB(saved));
   }catch(e){ console.warn('Could not read saved course data',e); }
-  return freshDB();
+  return window.KhaemenesSS9Records.prepareDB(freshDB());
 }
 let db = loadDB();
-function saveDB(){ localStorage.setItem(KEY, JSON.stringify(db)); }
+if(view==='week'&&!new URLSearchParams(location.search).has('week'))selectedWeek=currentWeek(activeStudent());
+function saveDB(){ window.KhaemenesSS9Records.storage.setItem(KEY, JSON.stringify(db)); }
 function activeStudent(){ return db.students.find(s=>s.id===db.activeId) || null; }
 function normalizeStudent(s){
   s.completedLessons ||= {};
@@ -70,20 +71,14 @@ function combinedProgress(s){
   const l=lessonStats(s).percent, a=assignmentStats(s).percent, q=Math.round(quizStats(s).completed/36*100);
   return Math.round(l*.35+a*.40+q*.25);
 }
-function currentWeek(s){
-  if(!s) return 1;
-  for(const w of COURSE.weeks){
-    if((s.completedLessons[w.week]||[]).filter(Boolean).length<5) return w.week;
-  }
-  return 36;
-}
+function currentWeek(s){return window.KhaemenesSS9Records.nextWeek(s);}
 function setView(next){
   view=next;
   $$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
   render();
 }
 function setWeek(n){
-  selectedWeek=Math.max(1,Math.min(36,+n));
+  selectedWeek=Math.max(1,Math.min(36,Math.floor(+n)||1));
   view='week';
   history.replaceState(null,'',`?week=${selectedWeek}`);
   renderSidebarWeeks();
@@ -92,7 +87,7 @@ function setWeek(n){
 }
 function renderStudentControls(){
   const select=$('#studentSelect');
-  select.innerHTML = db.students.length ? db.students.map(s=>`<option value="${s.id}" ${s.id===db.activeId?'selected':''}>${esc(s.name)}</option>`).join('') : '<option value="">No student added</option>';
+  select.innerHTML = db.students.length ? db.students.map(s=>`<option value="${esc(s.id)}" ${s.id===db.activeId?'selected':''}>${esc(s.name)}</option>`).join('') : '<option value="">No student added</option>';
 }
 function renderSidebarWeeks(){
   const s=activeStudent();
@@ -104,6 +99,7 @@ function renderSidebarWeeks(){
   $$('#weekList .weekBtn').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
 }
 function render(){
+  $$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
   applySettings();
   const c=$('#content');
   if(view==='dashboard') c.innerHTML=dashboardHTML();
@@ -132,7 +128,7 @@ function dashboardHTML(){
     <section class="card col3 kpi"><strong>${ls.done}/180</strong><span>Daily lessons completed</span></section>
     <section class="card col3 kpi"><strong>${as.submitted}/108</strong><span>Assignments submitted</span></section>
     <section class="card col3 kpi"><strong>${qs.completed}/36</strong><span>Weekly quizzes completed</span></section>
-    <section class="card col3 kpi"><strong>${qs.avg}%</strong><span>Quiz average</span></section>
+    <section class="card col3 kpi"><strong>${qs.completed?qs.avg+"%":"Pending"}</strong><span>Objective quiz average</span></section>
     <section class="card col8">
       <h3>Course Architecture</h3>
       <div class="tableWrap"><table><thead><tr><th>Component</th><th>Total</th><th>Purpose</th></tr></thead><tbody>
@@ -200,7 +196,7 @@ function quizHTML(w,s){
       ${q.choices.map((ch,ci)=>`<label class="choice"><input type="radio" name="q${qi}" value="${ci}" ${saved.answers?.[qi]===ci?'checked':''}> ${esc(ch)}</label>`).join('')}
       <div id="fb-${qi}"></div></div>`).join('')}
     <div class="quizQ"><p><strong>Constructed Response.</strong> ${esc(w.quiz.shortResponse.prompt)}</p>
-      <textarea id="quizShort">${esc(saved.shortResponse||'')}</textarea></div>
+      <textarea id="quizShort" aria-label="Weekly constructed response">${esc(saved.shortResponse||'')}</textarea></div>
     <div class="actions"><button id="submitQuiz">Score Objective Questions</button><button class="secondary" id="saveQuiz">Save Without Scoring</button></div>
     <div id="quizResult">${saved.completed?`<p class="score">Best objective score: ${saved.bestScore}/20 (${saved.bestPercent}%)</p><p class="small">Attempts: ${saved.attempts||1}</p>`:''}</div>
   </section>`;
@@ -229,12 +225,12 @@ function weekHTML(w){
       <h3>Key Understandings</h3><ul>${w.keyUnderstandings.map(k=>`<li>${esc(k)}</li>`).join('')}</ul>
       <h3>Optional Resources</h3><ul>${w.resources.map((r,i)=>`<li><a href="${esc(r)}" target="_blank" rel="noopener">Supplemental resource ${i+1}</a></li>`).join('')}</ul>
     </aside>
-    <section class="card col12"><h2>Five Daily Lessons</h2>${w.dailyLessons.map((l,i)=>lessonBlock(w,l,i,s)).join('')}</section>
+    <section class="card col12"><h2>Five Daily Lessons</h2>${w.week===1?'<p>Read the complete source set and work one day at a time. Your assignment writing uses this learner’s course record.</p><a class="button" href="weeks/week-01/student-packet.html">Open Week 1 Daily Workspace</a>':w.dailyLessons.map((l,i)=>lessonBlock(w,l,i,s)).join('')}</section>
     ${localLabHTML(w)}
     <section class="card col12"><h2>Three Weekly Assignments</h2>${w.assignments.map(a=>assignmentBlock(w,a,s)).join('')}</section>
     ${quizHTML(w,s)}
     <section class="card col12"><h3>Teacher Notes for Week ${w.week}</h3>
-      <p>Teacher guide, sample answers, scoring notes, accommodations, and the complete quiz key are included in <code>weeks/week-${String(w.week).padStart(2,'0')}/teacher-guide.html</code> and in the protected teacher dashboard.</p>
+      <p>Teacher guide, sample answers, scoring notes, accommodations, and the complete quiz key are included in <code>weeks/week-${String(w.week).padStart(2,'0')}/teacher-guide.html</code> and in the local evaluator dashboard (classroom passcode only).</p>
     </section>
   </div>`;
 }
@@ -260,7 +256,7 @@ function examsHTML(){
       ${ex.multipleChoice.map((q,qi)=>`<div class="quizQ"><p><strong>${qi+1}. ${esc(q.prompt)}</strong> <span class="small">(Week ${q.sourceWeek})</span></p>
         ${q.choices.map((ch,ci)=>`<label class="choice"><input type="radio" name="examq${qi}" value="${ci}" ${saved.answers?.[qi]===ci?'checked':''}> ${esc(ch)}</label>`).join('')}</div>`).join('')}
       <h3>Short Responses</h3>${ex.shortResponses.map((q,i)=>`<div class="quizQ"><p><strong>${i+1}. ${esc(q.prompt)}</strong></p><textarea id="short-${i}">${esc(saved.shortResponses?.[i]||'')}</textarea></div>`).join('')}
-      <h3>Evidence-Based Essay</h3><div class="quizQ"><p>${esc(ex.essay.prompt)}</p><textarea id="examEssay" style="min-height:260px">${esc(saved.essay||'')}</textarea></div>
+      <h3>Evidence-Based Essay</h3><div class="quizQ"><p>${esc(ex.essay.prompt)}</p><textarea id="examEssay" aria-label="Examination essay" style="min-height:260px">${esc(saved.essay||'')}</textarea></div>
       <div class="actions"><button id="submitExam">Score and Save ${examType==='midterm'?'Midterm':'Final'}</button><button class="secondary" id="saveExam">Save Draft</button></div>
       <div id="examResult"></div>
     </section>
@@ -281,7 +277,7 @@ function reportsHTML(){
     <table><tbody>
       <tr><th>Daily lessons</th><td>${r.ls.done} of 180 (${r.ls.percent}%)</td></tr>
       <tr><th>Assignments submitted</th><td>${r.as.submitted} of 108 (${r.as.percent}%)</td></tr>
-      <tr><th>Weekly quizzes</th><td>${r.qs.completed} of 36 · average ${r.qs.avg}%</td></tr>
+      <tr><th>Weekly quizzes</th><td>${r.qs.completed} of 36 · objective average ${r.qs.completed?r.qs.avg+"%":"Pending"}</td></tr>
       <tr><th>Midterm objective score</th><td>${r.mid?.completed?`${r.mid.bestPercent}%`:'Not completed'}</td></tr>
       <tr><th>Final objective score</th><td>${r.fin?.completed?`${r.fin.bestPercent}%`:'Not completed'}</td></tr>
       <tr><th>Estimated completion</th><td>${r.overall}%</td></tr>
@@ -339,6 +335,7 @@ function saveAssignment(key,submit){
   const s=activeStudent(); if(!s)return alert('Add a student first.');
   const ta=$(`[data-assignment="${key}"]`); const old=s.assignments[key]||{};
   s.assignments[key]={...old,text:ta.value,submitted:submit||old.submitted||false,updated:new Date().toLocaleString()};
+  if(old.text!==ta.value){if(typeof old.score==='number')s.assignments[key].previousEvaluation={score:old.score,feedback:old.feedback||'',text:old.text||'',evaluatedAt:old.evaluatedAt||null};delete s.assignments[key].score;delete s.assignments[key].evaluatedAt;}
   saveDB(); const status=$(`#status-${key}`); if(status)status.textContent=`Saved ${s.assignments[key].updated}${s.assignments[key].submitted?' · Submitted':''}`;
   if(submit) render();
 }
@@ -352,6 +349,7 @@ function saveQuiz(scoreIt){
   const w=COURSE.weeks[selectedWeek-1], answers=collectAnswers('q',w.quiz.questions.length);
   const prev=s.quizzes[selectedWeek]||{};
   const next={...prev,answers,shortResponse:$('#quizShort').value,updated:new Date().toISOString()};
+  if(next.shortResponse!==prev.shortResponse||scoreIt){delete next.shortScore;delete next.shortFeedback;delete next.shortEvaluatedAt;}
   if(scoreIt){
     let correct=0;
     w.quiz.questions.forEach((q,i)=>{
@@ -369,6 +367,7 @@ function saveExam(scoreIt){
   const s=activeStudent();if(!s)return alert('Add a student first.');
   const ex=COURSE[examType], prev=s.exams[examType]||{}, answers=collectAnswers('examq',ex.multipleChoice.length);
   const next={...prev,answers,shortResponses:ex.shortResponses.map((_,i)=>$(`#short-${i}`).value),essay:$('#examEssay').value,updated:new Date().toISOString()};
+  if(scoreIt||next.essay!==prev.essay||JSON.stringify(next.shortResponses)!==JSON.stringify(prev.shortResponses)||JSON.stringify(next.answers)!==JSON.stringify(prev.answers)){delete next.writtenPercent;delete next.teacherPercent;delete next.totalPercent;delete next.evaluatedAt;}
   if(scoreIt){
     const correct=ex.multipleChoice.reduce((n,q,i)=>n+(answers[i]===q.answer?1:0),0), score=correct*2, total=ex.multipleChoice.length*2, percent=Math.round(score/total*100);
     next.score=score;next.percent=percent;next.attempts=(prev.attempts||0)+1;next.completed=true;
@@ -384,7 +383,7 @@ function speak(text){
 function download(name,content,type='application/octet-stream'){
   const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),500);
 }
-function exportJSON(){download(`grade09-social-studies-backup-${today()}.json`,JSON.stringify(db,null,2),'application/json')}
+function exportJSON(){download(`grade09-social-studies-backup-${today()}.json`,JSON.stringify({...window.KhaemenesSS9Records.exportDB(db),visibleDrafts:[...document.querySelectorAll('textarea')].map(f=>({id:f.id,value:f.value}))},null,2),'application/json')}
 function exportCSV(){
   const rows=[['Student','Lessons','Assignments','Quizzes','Quiz Average','Midterm %','Final %','Estimated Completion %']];
   db.students.forEach(s=>{const r=reportData(s);rows.push([s.name,r.ls.done,r.as.submitted,r.qs.completed,r.qs.avg,r.mid?.bestPercent??'',r.fin?.bestPercent??'',r.overall])});
@@ -393,7 +392,7 @@ function exportCSV(){
 }
 function importJSON(e){
   const f=e.target.files[0];if(!f)return;const reader=new FileReader();
-  reader.onload=()=>{try{const x=JSON.parse(reader.result);if(!Array.isArray(x.students))throw new Error('Invalid backup');db=Object.assign(freshDB(),x);saveDB();renderStudentControls();renderSidebarWeeks();render();alert('Backup imported.');}catch(err){alert('Could not import this backup.');}};
+  reader.onload=()=>{try{if(f.size>8*1024*1024)throw new Error('Backup is too large');const next=window.KhaemenesSS9Records.importDB(JSON.parse(reader.result));window.KhaemenesSS9Records.storage.setItem(KEY,JSON.stringify(next));db=next;renderStudentControls();renderSidebarWeeks();render();alert('Backup imported.');}catch(err){alert('Could not import this backup: '+err.message);}};
   reader.readAsText(f);
 }
 function applySettings(){
@@ -401,6 +400,10 @@ function applySettings(){
   document.documentElement.style.fontSize=`${db.settings?.fontScale||100}%`;
 }
 function wireGlobal(){
+  $('#heroContinueBtn')?.addEventListener('click',()=>setWeek(currentWeek(activeStudent())));
+  $('#heroReadCourseBtn')?.addEventListener('click',()=>speak('Work at your own pace. Follow the lessons in order and preserve your evidence.'));
+  if(window.KhaemenesSS9Records.profile){['studentName','addStudentBtn','demoBtn','deleteStudentBtn'].forEach(id=>{$('#'+id).hidden=true;});$('#studentSelect').disabled=true;}
+
   $$('.navBtn,.tab').forEach(b=>b.onclick=()=>setView(b.dataset.view));
   $('#addStudentBtn').onclick=()=>{const n=$('#studentName').value.trim();if(!n)return;createStudent(n);$('#studentName').value='';renderStudentControls();renderSidebarWeeks();render();};
   $('#demoBtn').onclick=()=>{demoStudent();renderStudentControls();renderSidebarWeeks();render();};

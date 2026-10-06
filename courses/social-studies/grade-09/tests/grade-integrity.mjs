@@ -1,0 +1,11 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const root=new URL('../',import.meta.url);const data=JSON.parse(fs.readFileSync(new URL('data/course-data.json',root)));const window={KHAEMENES_SOCIAL_STUDIES_DATA:data,addEventListener(){},KhaemenesSS9Records:{storage:{getItem:()=>null}}};const context={window,document:{documentElement:{},addEventListener(){}},MutationObserver:class{observe(){}},requestAnimationFrame(){}};
+vm.runInNewContext(fs.readFileSync(new URL('assets/grade09-socialstudies-grade-engine-v1.js',root),'utf8'),context);const grade=window.KHAEMENES_SS9_GRADE_ENGINE.gradeSnapshot;
+let g=grade({assignments:{'1-1':{score:null}},journal:{1:{percent:null}},quizzes:{1:{percent:null}}});assert.equal(g.cat.assignments.evaluated,0);assert.equal(g.cat.journalDiscussion.evaluated,0);assert.equal(g.evaluatedGrade,null);
+g=grade({assignments:{'1-1':{score:0}},journal:{1:{percent:0}},quizzes:{1:{completed:true,score:0,shortScore:0}}});assert.equal(g.cat.assignments.percent,0);assert.equal(g.cat.weeklyQuizzes.percent,0);
+g=grade({exams:{midterm:{completed:true,percent:80,writtenPercent:50},final:{completed:true,percent:80,writtenPercent:50}}});assert.equal(g.cat.midterm.percent,68);assert.equal(g.cat.final.percent,69.4);
+const s={assignments:{'1-1':{score:20}},quizzes:{1:{completed:true,score:20,shortScore:5}},journal:{1:{percent:100}},exams:{midterm:{completed:true,percent:100,writtenPercent:100},final:{completed:true,percent:100,writtenPercent:100}}};assert.equal(grade(s).officialReady,false);
+for(const w of data.weeks){for(const a of w.assignments)s.assignments[`${w.week}-${a.number}`]={score:a.points};s.quizzes[w.week]={completed:true,score:20,shortScore:5};s.journal[w.week]={percent:100};}
+assert.equal(grade(s).officialGrade,100);s.exams.final.writtenPercent=null;assert.equal(grade(s).officialReady,false);
+assert.equal(data.weeks[0].dailyLessons[0].title,'Evidence, Inference, and the Limits of the Record');assert.equal(data.metadata.authors,'Jennifer Kay Pearl');
+console.log('PASS: pending versus zero, paired weekly response, published examination point weights, complete-evidence final grade and consolidated Week 1 instruction');
