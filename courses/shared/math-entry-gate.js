@@ -97,7 +97,7 @@
     if (contract.readinessIsValid(latest, courseId) && latest.route === "advance") return { allow: true, profile, pathway: "core" };
     if (contract.readinessIsValid(latest, courseId) && latest.route === "advance_with_targeted_refresh") return { allow: true, profile, pathway: "supported" };
     const evidence = readScoped(evidenceKey, profile);
-    if (evidence && extractScore(evidencePath ? evidence?.[evidencePath] : evidence) !== null) return { allow: true, profile, pathway: "returning_learner" };
+    if (!contract.readinessIsValid(latest, courseId) && evidence && extractScore(evidencePath ? evidence?.[evidencePath] : evidence) !== null) return { allow: true, profile, pathway: "returning_learner" };
     if (latest?.route === "unit_0_refresher") return { allow: false, title: "Continue your mathematics readiness", message: "This result recommends a targeted prerequisite refresh before the official course sequence. Work at your own pace; there is no deadline.", href: html.dataset.mathDiagnosticHref || "diagnostic/", label: "Open readiness diagnostic" };
     return { allow: false, title: "Begin with mathematics readiness", message: "Complete the low-stakes readiness check first. It keeps the course path and saved work tied to the selected Academy learner.", href: html.dataset.mathDiagnosticHref || "diagnostic/", label: "Open readiness diagnostic" };
   }
