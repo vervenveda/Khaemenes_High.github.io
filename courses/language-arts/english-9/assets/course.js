@@ -21,6 +21,17 @@
     main.prepend(note);
   }
   showProfileNotice();
+  const courseScript=document.currentScript;
+  const courseMain=document.querySelector("main")||document.querySelector(".main");
+  if(courseScript?.src && courseMain){
+    const tools=document.createElement("p");
+    const link=document.createElement("a");
+    const url=new URL("../learning-tools.html",courseScript.src);
+    const match=location.pathname.match(/weeks\/week-(\d+)/);
+    if(match)url.hash="week-"+Number(match[1]);
+    link.href=url.href;link.className="btn";link.textContent="Lesson tools, games and return paths";
+    tools.appendChild(link);courseMain.prepend(tools);
+  }
   window.addEventListener("storage",event=>{if(event.key==="khaemenes_active_learner_v1")location.reload();});
 
   const root=document.documentElement;
@@ -39,11 +50,12 @@
     const key=button.dataset.progressKey;
     const on=Boolean(progress[key]);
     button.setAttribute("aria-pressed",String(on));
-    button.textContent=on?"Completed ✓":"Mark Complete";
+    const prepared=button.dataset.progressKey.startsWith("week-") && Boolean(document.querySelector('[data-save-field*="-day-"]'));
+    button.textContent=on?(prepared?"Evidence prepared ✓":"Completed ✓"):(prepared?"Mark Evidence Prepared":"Mark Complete");
     button.addEventListener("click",()=>{
       progress[key]=!progress[key];save(progress);
       button.setAttribute("aria-pressed",String(progress[key]));
-      button.textContent=progress[key]?"Completed ✓":"Mark Complete";
+      button.textContent=progress[key]?(prepared?"Evidence prepared ✓":"Completed ✓"):(prepared?"Mark Evidence Prepared":"Mark Complete");
       updateProgress();
     });
   });
@@ -71,3 +83,4 @@
   const search=document.querySelector("[data-card-search]");
   if(search){search.addEventListener("input",()=>{const q=search.value.trim().toLowerCase();document.querySelectorAll("[data-search-card]").forEach(card=>{card.hidden=q&&!card.textContent.toLowerCase().includes(q);});});}
 })();
+
