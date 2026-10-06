@@ -18,13 +18,13 @@
     if(!main)return;
     const note=document.createElement("p");note.className="notice";note.setAttribute("role","status");
     note.textContent=academyProfile?`Learning profile: ${academyProfile.name}. Work is saved separately for this learner on this device. Protected sign-in and cross-device sync are not connected.`:"No Academy learner is selected. Notes here use the existing unassigned browser workspace. Select a learner in the Academy Family Portal before starting new learner-specific work.";
-    if(document.querySelector("#landing-navigation"))note.textContent=academyProfile?`Learning profile: ${academyProfile.name} · Saved on this device.`:"Choose your learner in the Academy Family Portal before starting learner-specific work.";
+    if(document.querySelector("#landing-navigation, [data-week1-workspace]"))note.textContent=academyProfile?`Learning profile: ${academyProfile.name} · Saved on this device.`:"Choose your learner in the Academy Family Portal before starting learner-specific work.";
     main.prepend(note);
   }
   showProfileNotice();
   const courseScript=document.currentScript;
   const courseMain=document.querySelector("main")||document.querySelector(".main");
-  if(courseScript?.src && courseMain && !document.querySelector("#landing-navigation")){
+  if(courseScript?.src && courseMain && !document.querySelector("#landing-navigation, [data-week1-workspace]")){
     const tools=document.createElement("p");
     const link=document.createElement("a");
     const url=new URL("../learning-tools.html",courseScript.src);
@@ -48,10 +48,11 @@
   const save=data=>{try{localStorage.setItem(courseKey,JSON.stringify(data))}catch{}};
   const progress=load();
   document.querySelectorAll("[data-progress-key]").forEach(button=>{
+    if(button.dataset.managedProgress==="week1")return;
     const key=button.dataset.progressKey;
     const on=Boolean(progress[key]);
     button.setAttribute("aria-pressed",String(on));
-    const prepared=button.dataset.progressKey.startsWith("week-") && Boolean(document.querySelector('[data-save-field*="-day-"]'));
+    const prepared=button.dataset.evidenceOnly==="true" || button.dataset.progressKey.startsWith("week-") && Boolean(document.querySelector('[data-save-field*="-day-"]'));
     button.textContent=on?(prepared?"Evidence prepared ✓":"Completed ✓"):(prepared?"Mark Evidence Prepared":"Mark Complete");
     button.addEventListener("click",()=>{
       progress[key]=!progress[key];save(progress);
@@ -72,6 +73,7 @@
   updateProgress();
 
   document.querySelectorAll("[data-save-field]").forEach(field=>{
+    if(field.dataset.managedSave==="week1")return;
     const key=scopedKey(`khae-ela9-field:${field.dataset.saveField}`);
     try{field.value=localStorage.getItem(key)||""}catch{}
     field.addEventListener("input",()=>{try{localStorage.setItem(key,field.value)}catch{}});
@@ -84,4 +86,5 @@
   const search=document.querySelector("[data-card-search]");
   if(search){search.addEventListener("input",()=>{const q=search.value.trim().toLowerCase();document.querySelectorAll("[data-search-card]").forEach(card=>{card.hidden=q&&!card.textContent.toLowerCase().includes(q);});});}
 })();
+
 
