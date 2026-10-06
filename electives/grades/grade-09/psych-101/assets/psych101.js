@@ -1,6 +1,15 @@
 (function(){
   'use strict';
 
+  const contract=window.KhaemenesCourseEntryContract;
+  function readAcademyProfile(){
+    if(contract?.readAcademyProfile)return contract.readAcademyProfile();
+    try{const id=JSON.parse(localStorage.getItem('khaemenes_active_learner_v1')||'null');const registry=JSON.parse(localStorage.getItem('khaemenes_family_registry_v1')||'null');const learner=typeof id==='string'?registry?.learners?.[id]:null;return learner&&learner.learnerId===id?{learnerId:id,name:String(learner.nickname||'Learner')}:null}catch(_){return null;}
+  }
+  const profile=readAcademyProfile();
+  const requireProfile=!!document.body?.hasAttribute('data-psych101-require-entry');
+  const scoped=key=>contract?.scopedKey?.(key,profile)||(profile?`${key}:learner:${encodeURIComponent(profile.learnerId)}`:key);
+
   const KEYS={
     progress:'psych101_grade9_progress_v1',
     assessments:'psych101_grade9_assessments_v1',
@@ -9,11 +18,12 @@
     words:'psych101_grade9_words_v1',
     preferences:'psych101_grade9_preferences_v1'
   };
+  Object.keys(KEYS).forEach(name=>{KEYS[name]=scoped(KEYS[name]);});
   const MASTERY=80;
 
   function structuredCloneSafe(v){try{return JSON.parse(JSON.stringify(v));}catch(_){return v;}}
   function read(key,fallback){try{const raw=localStorage.getItem(key);if(!raw)return structuredCloneSafe(fallback);const parsed=JSON.parse(raw);return parsed??structuredCloneSafe(fallback);}catch(_){return structuredCloneSafe(fallback);}}
-  function write(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true;}catch(_){return false;}}
+  function write(key,value){if(requireProfile&&!profile)return false;try{if(profile&&contract?.identityRaw?.()!==JSON.stringify(profile.learnerId))return false;localStorage.setItem(key,JSON.stringify(value));return true;}catch(_){return false;}}
   function now(){return new Date().toISOString();}
   function lessonId(week,day){return String(week).padStart(2,'0')+'-'+String(day).padStart(2,'0');}
 
@@ -43,7 +53,7 @@
   function setJournal(id,value){const j=getJournal();j.entries[id]=String(value??'');j.updatedAt=now();write(KEYS.journal,j);}
 
   function exportAll(){
-    const bundle={schema:'psych101-grade9-export-v1',exportedAt:now(),data:{progress:read(KEYS.progress,null),assessments:read(KEYS.assessments,null),notebook:read(KEYS.notebook,null),journal:read(KEYS.journal,null),words:read(KEYS.words,null),preferences:read(KEYS.preferences,null)}};
+    const bundle={schema:'psych101-grade9-export-v1',learnerId:profile?.learnerId||null,exportedAt:now(),data:{progress:read(KEYS.progress,null),assessments:read(KEYS.assessments,null),notebook:read(KEYS.notebook,null),journal:read(KEYS.journal,null),words:read(KEYS.words,null),preferences:read(KEYS.preferences,null)}};
     const blob=new Blob([JSON.stringify(bundle,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='psychology-101-progress.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
   function importAll(text){const bundle=JSON.parse(text);if(!bundle||bundle.schema!=='psych101-grade9-export-v1'||!bundle.data)throw new Error('This is not a recognized Psychology 101 export.');const map={progress:KEYS.progress,assessments:KEYS.assessments,notebook:KEYS.notebook,journal:KEYS.journal,words:KEYS.words,preferences:KEYS.preferences};Object.entries(map).forEach(([name,key])=>{const value=bundle.data[name];if(value!==undefined&&value!==null)write(key,value);});return true;}
@@ -72,5 +82,14 @@
 
   window.Psych101={KEYS,MASTERY,lessonId,getWords,setWordStudied,getWords,setWordStudied,getProgress,getLesson,markLessonReviewed,setLessonDraft,recordDailyReview,getAssessments,recordWeeklyScore,weeklyBest,isWeekMastered,recordCumulativeScore,cumulativeBest,isCumulativeMastered,getNotebook,setNotebook,getJournal,setJournal,exportAll,importAll,resetAll,bindDrafts,bindNotebookJournal,bindLessonCompletion,bindDailyReview,announce};
 
-  document.addEventListener('DOMContentLoaded',()=>{bindDrafts();bindNotebookJournal();bindLessonCompletion();bindDailyReview();document.querySelectorAll('[data-print]').forEach(b=>b.addEventListener('click',()=>window.print()));document.querySelectorAll('[data-export]').forEach(b=>b.addEventListener('click',exportAll));});
+  function mountEntryGate(){
+    if(!requireProfile||profile)return;
+    const gate=document.createElement('section');gate.setAttribute('role','dialog');gate.setAttribute('aria-modal','true');gate.setAttribute('aria-labelledby','psych101EntryTitle');gate.style.cssText='position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:20px;background:#151515ee;color:#fff';
+    const card=document.createElement('article');card.style.cssText='max-width:620px;padding:26px;border:1px solid #d8bd8a;border-radius:8px;background:#1b1917';
+    const title=document.createElement('h1');title.id='psych101EntryTitle';title.textContent='Choose your learner';title.style.fontWeight='400';
+    const copy=document.createElement('p');copy.textContent='Select your learner in the Academy Family Portal before opening Psychology 101. Work will be saved separately for that learner.';
+    const link=document.createElement('a');link.href='https://vervenveda.com/Khaemenes_Academy.github.io/';link.textContent='Return to Academy sign-in';link.style.cssText='display:inline-block;padding:12px 16px;border:1px solid #d8bd8a;border-radius:5px;background:#d8bd8a;color:#171411;text-decoration:none';
+    card.append(title,copy,link);gate.append(card);document.querySelectorAll('body > :not(script)').forEach(node=>{node.inert=true});document.body.append(gate);link.focus();
+  }
+  document.addEventListener('DOMContentLoaded',()=>{mountEntryGate();if(requireProfile&&!profile)return;bindDrafts();bindNotebookJournal();bindLessonCompletion();bindDailyReview();document.querySelectorAll('[data-print]').forEach(b=>b.addEventListener('click',()=>window.print()));document.querySelectorAll('[data-export]').forEach(b=>b.addEventListener('click',exportAll));});
 })();

@@ -8,7 +8,7 @@
   "standard_course_weeks": 36,
   "supported_course_weeks": 42,
   "mastery_threshold_percent": 80,
-  "essential_strand_floor_percent": 60,
+  "essential_strand_floor_percent": 80,
   "readiness_strands": [
     {
       "id": "claim_evidence_inference",
@@ -49,7 +49,7 @@
   ],
   "routing": {
     "advance": {
-      "condition": "overall_percent >= 80 and every essential strand >= 60",
+      "condition": "overall_percent >= 80 and every essential strand >= 80",
       "destination": "Official Week 1"
     },
     "advance_with_targeted_refresh": {
@@ -57,7 +57,7 @@
       "destination": "Official Week 1 with targeted refresh profile"
     },
     "unit_0_refresher": {
-      "condition": "overall_percent < 80 or any essential strand < 60",
+      "condition": "overall_percent < 80 or any essential strand < 80",
       "destination": "Unit 0 Foundations & Readiness · P1–P6"
     },
     "teacher_review": {

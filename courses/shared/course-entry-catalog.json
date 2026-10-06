@@ -1,0 +1,65 @@
+{
+  "schema": "khaemenes-course-entry-catalog-v1",
+  "contract": "khaemenes-course-readiness-v1",
+  "overall_ready_percent": 80,
+  "essential_strand_floor_percent": 80,
+  "courses": [
+    {
+      "course_id": "math-prealgebra",
+      "label": "Pre-Algebra",
+      "owner": "Khaemenes High",
+      "mode": "local",
+      "entry_route": "courses/mathematics/pre-algebra/diagnostic/",
+      "readiness_key": "khaemenes-naib-readiness-profile-v1",
+      "status": "reference-compatible"
+    },
+    {
+      "course_id": "english-9",
+      "label": "English 9",
+      "owner": "Khaemenes High",
+      "mode": "local",
+      "entry_route": "courses/language-arts/english-9/assessments/diagnostic/",
+      "readiness_key": "khaemenes-english9-readiness-v1",
+      "status": "shared-entry-gate"
+    },
+    {
+      "course_id": "grade09-global-studies-honors",
+      "label": "Global Studies Honors 9",
+      "owner": "Khaemenes High",
+      "mode": "local",
+      "entry_route": "courses/social-studies/grade-09/assessments/readiness.html",
+      "readiness_key": "khaemenes_ss9_readiness_v1",
+      "status": "shared-entry-gate"
+    },
+    {
+      "course_id": "integrated-science-9",
+      "label": "Integrated Science 9",
+      "owner": "Khaemenes High",
+      "mode": "local",
+      "entry_route": "courses/science/integrated-science-9/diagnostic/readiness-diagnostic.html",
+      "readiness_key": "khaemenes_naib_readiness_science9_v1",
+      "status": "shared-entry-gate"
+    },
+    {
+      "course_id": "psychology-101",
+      "label": "Psychology 101",
+      "owner": "Khaemenes High",
+      "mode": "local",
+      "entry_route": "electives/grades/grade-09/psych-101/",
+      "readiness_key": "course-specific-readiness-pending",
+      "entry_mode": "direct-entry-with-learner-scope",
+      "status": "learner-scoped-direct-entry"
+    },
+    {
+      "course_id": "physical-education-9-12",
+      "label": "Physical Education",
+      "owner": "Medicament High School Health Academy",
+      "mode": "federated",
+      "entry_route": "https://vervenveda.com/medicament-hub.github.io/academy/high-school-health/courses/physical-education/",
+      "readiness_key": "provider-managed",
+      "entry_mode": "federated-provider-gate",
+      "status": "federated-handoff-required",
+      "handoff": "The High repo can publish the route and contract metadata; protected learner and readiness continuity must be connected by the future cross-site account authority."
+    }
+  ]
+}

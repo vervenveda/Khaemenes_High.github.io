@@ -10,9 +10,41 @@
       return learner && learner.learnerId===id ? {learnerId:id,name:String(learner.nickname||"Learner")} : null;
     }catch{return null;}
   }
-  const academyProfile=readProfile();
-  const scopedKey=base=>academyProfile?`${base}:learner:${encodeURIComponent(academyProfile.learnerId)}`:base;
+  const entryContract=window.KhaemenesCourseEntryContract;
+  const academyProfile=entryContract?.readAcademyProfile?.()||readProfile();
+  const scopedKey=base=>entryContract?.scopedKey?.(base,academyProfile)||(academyProfile?`${base}:learner:${encodeURIComponent(academyProfile.learnerId)}`:base);
   window.KhaemenesEnglish9Records=Object.freeze({profile:academyProfile,storageKey:scopedKey,version:1});
+
+  function entryDecision(){
+    if(!academyProfile)return {allow:false,title:"Choose your learner",message:"Select your learner in the Academy Family Portal before opening English 9. Course records stay separated by Academy learner.",href:"https://vervenveda.com/Khaemenes_Academy.github.io/",label:"Return to Academy sign-in"};
+    const readiness=entryContract?.readJSON?.("khaemenes-english9-readiness-v1",null,academyProfile)||(()=>{try{return JSON.parse(localStorage.getItem(scopedKey("khaemenes-english9-readiness-v1"))||"null")}catch{return null}})();
+    const essentials=["close_reading_evidence","language_conventions","source_argument"];
+    const ready=entryContract?.isReady?.(readiness,essentials,"english-9")||(
+      readiness?.course_id==="english-9"&&["advance","advance_with_targeted_refresh"].includes(readiness.route)&&readiness.overall_percent>=80&&essentials.every(id=>Number(readiness.strand_scores?.[id])>=80)
+    );
+    if(ready)return {allow:true,profile:academyProfile};
+    const diagnostic=new URL("assessments/diagnostic/index.html",new URL("../",document.currentScript?.src||location.href)).href;
+    return readiness?.route==="unit_0_refresher"
+      ? {allow:false,title:"Continue your English foundations",message:"This readiness result recommends targeted review before Official Week 1. Work through the diagnostic corrections and try again when you are ready.",href:diagnostic,label:"Review readiness"}
+      : {allow:false,title:"Begin with English readiness",message:"This low-stakes check identifies the support that will make the 36-week course more useful. Take it at your own pace.",href:diagnostic,label:"Open readiness check"};
+  }
+  function mountEntryGate(){
+    const result=entryDecision();
+    window.KhaemenesEnglish9Entry=Object.freeze({decision:()=>result});
+    if(result.allow)return;
+    document.documentElement.dataset.english9EntryBlocked="true";
+    const gate=document.createElement("section");gate.className="english9-entry-gate";gate.setAttribute("role","dialog");gate.setAttribute("aria-modal","true");gate.setAttribute("aria-labelledby","english9EntryTitle");
+    gate.style.cssText="position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:20px;background:#191919eF;color:#fff";
+    const card=document.createElement("article");card.style.cssText="max-width:620px;padding:26px;border:1px solid #d7d1c5;border-radius:7px;background:#fff;color:#191919";
+    const title=document.createElement("h1");title.id="english9EntryTitle";title.textContent=result.title;title.style.fontWeight="400";
+    const message=document.createElement("p");message.textContent=result.message;
+    const link=document.createElement("a");link.href=result.href;link.textContent=result.label;link.style.cssText="display:inline-block;padding:12px 16px;border:1px solid #705719;border-radius:7px;background:#705719;color:#fff;text-decoration:none";
+    const home=document.createElement("a");home.href=new URL("../",new URL("../",document.currentScript?.src||location.href)).href;home.textContent="English 9 home";home.style.cssText="display:inline-block;margin-left:10px;padding:12px 16px;border:1px solid #d7d1c5;border-radius:7px;color:#191919;text-decoration:none";
+    card.append(title,message,link,home);gate.append(card);document.querySelectorAll("body > :not(script)").forEach(node=>{node.inert=true});document.body.append(gate);link.focus();
+  }
+  const pathName=typeof location!=="undefined"?String(location.pathname||""):"";
+  const requiresEntry=document.body?.hasAttribute("data-english9-require-entry")||/\/weeks\/week-\d+(?:\/|$)/.test(pathName);
+  if(requiresEntry && document.body && typeof document.createElement==="function")mountEntryGate();
   function showProfileNotice(){
     const main=document.querySelector("main")||document.querySelector(".main");
     if(!main)return;
@@ -86,5 +118,3 @@
   const search=document.querySelector("[data-card-search]");
   if(search){search.addEventListener("input",()=>{const q=search.value.trim().toLowerCase();document.querySelectorAll("[data-search-card]").forEach(card=>{card.hidden=q&&!card.textContent.toLowerCase().includes(q);});});}
 })();
-
-

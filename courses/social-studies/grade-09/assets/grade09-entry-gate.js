@@ -1,9 +1,9 @@
 (() => {
 'use strict';
-const records=window.KhaemenesSS9Records;
+const records=window.KhaemenesSS9Records,contract=window.KhaemenesCourseEntryContract;
 const read=(key,fallback=null)=>{try{return JSON.parse(records.storage.getItem(key)||'null')??fallback}catch{return fallback}};
 const strands=['claim_evidence_inference','source_provenance_corroboration','chronology_causation_change','geography_maps_networks','data_quantitative_reasoning','argument_comparison_ethics'];
-const passed=r=>r?.route==='advance'&&typeof r.overall_percent==='number'&&r.overall_percent>=80&&strands.every(s=>typeof r.strand_scores?.[s]==='number'&&r.strand_scores[s]>=80&&r.strand_scores[s]<=100);
+const passed=r=>contract?.isReady?.(r,strands,'grade09-global-studies-honors')|| (r?.route==='advance'&&typeof r.overall_percent==='number'&&r.overall_percent>=(contract?.overallReadyPercent||80)&&strands.every(s=>typeof r.strand_scores?.[s]==='number'&&r.strand_scores[s]>=(contract?.essentialStrandFloorPercent||80)&&r.strand_scores[s]<=100));
 function decision(){
  if(!records||records.isBlocked())return {allow:false,title:'Saved work needs attention',message:'Saving is paused. Preserve your work and resolve the record warning before continuing.',href:'index.html',label:'Course Entrance'};
  const db=read('khaemenes_grade09_social_studies_v1',{});

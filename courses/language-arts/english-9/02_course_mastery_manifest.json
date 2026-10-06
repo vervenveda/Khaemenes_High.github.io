@@ -50,6 +50,15 @@
     "targeted_refresh",
     "foundational_path"
   ],
+  "readinessContract": {
+    "templateRef": "../../shared/course-readiness-template.json",
+    "contractScript": "../../shared/course-entry-contract.js",
+    "readinessKey": "khaemenes-english9-readiness-v1",
+    "overallReadyPercent": 80,
+    "essentialStrandFloorPercent": 80,
+    "essentialStrands": ["close_reading_evidence", "language_conventions", "source_argument"],
+    "supportedRoute": "Unit 0 Foundations & Readiness"
+  },
   "courseUnits": 12,
   "weeks": 36,
   "dailyBlocks": 180

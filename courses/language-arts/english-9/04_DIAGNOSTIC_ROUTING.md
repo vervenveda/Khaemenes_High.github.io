@@ -12,15 +12,15 @@
 9. Media literacy
 
 ## Instructional routing
-| Result | Route |
+| Result | Instructional route |
 |---|---|
-| 85%+ across domains | Advanced Readiness |
-| 80–84% | Ready |
-| 70–79% | Ready + Optional Review |
-| 55–69% | Targeted Refresh |
-| <55% | Foundational Path Recommended |
+| 85%+ across domains, with every essential strand ≥80% | Advanced Readiness |
+| 80–84%, with every essential strand ≥80% | Ready |
+| 70–79% or an essential strand below 80% | Targeted Refresh before Official Week 1 |
+| 55–69% or an essential strand below 80% | Targeted Refresh before Official Week 1 |
+| <55% | Foundational Path before Official Week 1 |
 
-These are instructional routes, not grades.
+The shared academy entry contract requires **80% overall and 80% in every essential strand** before Official Week 1 opens. These are instructional routes, not grades.
 
 ## Required behavior
 Diagnostic results should produce:

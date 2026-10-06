@@ -1,19 +1,26 @@
 "use strict";
 (() => {
-  const U00_KEY = "khaemenes_science_u00_v1";
-  const NAIB_KEY = "khaemenes_naib_readiness_science9_v1";
+  const contract = window.KhaemenesCourseEntryContract;
+  const profile = contract?.readAcademyProfile?.();
+  const scoped = key => contract?.scopedKey?.(key, profile) || key;
+  const U00_KEY = scoped("khaemenes_science_u00_v1");
+  const NAIB_KEY = scoped("khaemenes_naib_readiness_science9_v1");
   const ASSESSMENT_ID = "science9-readiness-gateway";
   const ASSESSMENT_VERSION = "2.0";
-  const MASTERY = 80;
+  const MASTERY = contract?.overallReadyPercent || 80;
   const ESSENTIAL_STRANDS = ["Scientific practices", "Measurement", "Data and evidence"];
-  const ESSENTIAL_MIN = 80;
+  const ESSENTIAL_MIN = contract?.essentialStrandFloorPercent || 80;
 
   const $ = (selector) => document.querySelector(selector);
   const readJSON = (key, fallback) => {
     try { return JSON.parse(localStorage.getItem(key)) ?? fallback; }
     catch { return fallback; }
   };
-  const writeJSON = (key, value) => localStorage.setItem(key, JSON.stringify(value));
+  const writeJSON = (key, value) => {
+    if (!profile) throw new Error("Select an Academy learner before saving readiness evidence.");
+    if (contract?.identityRaw?.() !== JSON.stringify(profile.learnerId)) throw new Error("The Academy learner changed.");
+    localStorage.setItem(key, JSON.stringify(value));
+  };
   const percent = (correct, total) => total ? Math.round((correct / total) * 1000) / 10 : 0;
 
   function analyze(result) {
