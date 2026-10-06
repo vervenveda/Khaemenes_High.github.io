@@ -20,6 +20,7 @@ const CORE=[
   "./assessments/week-13.html",
   "./assets/psych101.css",
   "./assets/psych101.js",
+  "../../../../courses/shared/course-entry-contract.js",
   "./assets/register-sw.js",
   "./challenges/claim-calibrator.html",
   "./challenges/evidence-sort.html",
