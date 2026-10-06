@@ -7,7 +7,7 @@ const code=source.slice(start,source.indexOf('function csvCell',start));
 function attempt(backup){
  const writes=[]; let confirmations=0;
  const ctx=vm.createContext({window:{KhaemenesEnglish9Records:{profile:{learnerId:'A'}}},FileReader:class {readAsText(){this.result=JSON.stringify(backup);this.onload();}},localStorage:{setItem:(...args)=>writes.push(args)},confirm:()=>{confirmations++;return true},alert:()=>{},saveState:()=>writes.push(['dashboard']),renderAll:()=>{},state:{students:[]}});
- vm.runInContext(code,ctx);vm.runInContext('importBackup({target:{files:[{}]}})',ctx);
+ vm.runInContext(source.slice(source.indexOf('function validateRecords'),source.indexOf('function loadState')),ctx);vm.runInContext(code,ctx);vm.runInContext('importBackup({target:{files:[{}]}})',ctx);
  return {writes,confirmations};
 }
 const learner={id:'dashboard-A',academyLearnerId:'A',name:'Learner',progress:{weeks:{},exams:{}}};
