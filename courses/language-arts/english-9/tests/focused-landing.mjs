@@ -1,0 +1,13 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const html=fs.readFileSync(new URL('../index.html',import.meta.url),'utf8');
+const start=html.indexOf('const OFFICIAL_WEEKS =');const code=html.slice(start,html.indexOf('function renderWeek(){',start));
+let saved='{}';const content={innerHTML:''};
+const ctx=vm.createContext({window:{KhaemenesEnglish9Records:{profile:{name:'A < B'},storageKey:()=> 'learner-A'}},localStorage:{getItem:key=>{assert.equal(key,'learner-A');return saved;}},$:()=>content,esc:s=>String(s).replaceAll('<','&lt;'),activeStudent:()=>null});
+vm.runInContext(code,ctx);vm.runInContext('renderDashboard()',ctx);
+assert.ok(content.innerHTML.includes('Week 1 Lesson'));assert.equal((content.innerHTML.match(/primary-link/g)||[]).length,1);assert.ok(!content.innerHTML.includes('<table'));assert.ok(!content.innerHTML.includes('kpi'));assert.ok(content.innerHTML.includes('A &lt; B'));
+saved='{"week-01":true,"week-02":true}';assert.equal(vm.runInContext('nextOfficialWeek()',ctx),3);
+vm.runInContext('renderOfficialCourse()',ctx);assert.equal((content.innerHTML.match(/class="unit-picker"/g)||[]).length,12);assert.equal((content.innerHTML.match(/weeks\/week-/g)||[]).length,36);assert.equal((content.innerHTML.match(/class="unit-picker" open/g)||[]).length,1);
+saved='{broken';assert.equal(vm.runInContext('nextOfficialWeek()',ctx),1);assert.equal(saved,'{broken');
+assert.equal((html.match(/id="content"/g)||[]).length,1);assert.ok(!html.includes('id="tabs"'));
+for(const m of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new vm.Script(m[1]);
+console.log('PASS: single primary task, scoped next week, 12 collapsed units, 36 lesson routes, escaped learner name and unchanged records');

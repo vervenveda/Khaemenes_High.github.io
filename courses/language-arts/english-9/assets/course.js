@@ -18,12 +18,13 @@
     if(!main)return;
     const note=document.createElement("p");note.className="notice";note.setAttribute("role","status");
     note.textContent=academyProfile?`Learning profile: ${academyProfile.name}. Work is saved separately for this learner on this device. Protected sign-in and cross-device sync are not connected.`:"No Academy learner is selected. Notes here use the existing unassigned browser workspace. Select a learner in the Academy Family Portal before starting new learner-specific work.";
+    if(document.querySelector("#landing-navigation"))note.textContent=academyProfile?`Learning profile: ${academyProfile.name} · Saved on this device.`:"Choose your learner in the Academy Family Portal before starting learner-specific work.";
     main.prepend(note);
   }
   showProfileNotice();
   const courseScript=document.currentScript;
   const courseMain=document.querySelector("main")||document.querySelector(".main");
-  if(courseScript?.src && courseMain){
+  if(courseScript?.src && courseMain && !document.querySelector("#landing-navigation")){
     const tools=document.createElement("p");
     const link=document.createElement("a");
     const url=new URL("../learning-tools.html",courseScript.src);
