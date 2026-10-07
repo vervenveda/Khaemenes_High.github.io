@@ -69,6 +69,25 @@ for(let number=1;number<=13;number++){
   });
 }
 
+const refresherMap=readJson("units/unit-00/unit-map.json");
+if(refresherMap.unit?.number!==0||refresherMap.unit?.conditional!==true)fail("Unit 0 bridge map must declare a conditional Unit 0");
+if(refresherMap.unit?.duration_weeks!==6)fail(`Unit 0 duration is ${refresherMap.unit?.duration_weeks}, expected 6 weeks`);
+if(refresherMap.unit?.lesson_mastery_threshold_percent!==80||refresherMap.unit?.weekly_quiz_threshold_percent!==80)fail("Unit 0 lesson and weekly quiz thresholds must both be 80%");
+const refresherLessons=refresherMap.lessons||[],refresherDirectory=path.join(courseRoot,"units/unit-00/lessons");
+const refresherFiles=fs.readdirSync(refresherDirectory).filter(file=>file.endsWith(".html")).sort();
+const declaredRefresherFiles=refresherLessons.map(lesson=>lesson.file?.replace(/^lessons\\//,"")).sort();
+if(JSON.stringify(refresherFiles)!==JSON.stringify(declaredRefresherFiles))fail("Unit 0 lesson files differ from unit-map inventory");
+refresherLessons.forEach((lesson,index)=>{
+  const relative=`units/unit-00/${lesson.file}`,source=fs.readFileSync(path.join(courseRoot,relative),"utf8"),match=/window\\.REFRESHER_WEEK\\s*=\\s*\\{([\\s\\S]*?)\\}/.exec(source),label=`Unit 00 lesson ${index+1}`;
+  if(!match){fail(`${label}: REFRESHER_WEEK contract was not found`);return;}
+  const block=match[1],value=(key)=>new RegExp(`${key}\\\\s*:\\\\s*["']([^"']+)["']`).exec(block)?.[1]||"";
+  if(Number(value("week"))!==lesson.week)fail(`${label}: embedded week differs from unit map`);
+  if(value("title")!==lesson.title)fail(`${label}: embedded title differs from unit map`);
+  if(!source.includes('src="../assets/refresher-engine.js"'))fail(`${label}: refresher engine is not loaded`);
+  if(!fs.existsSync(path.join(courseRoot,relative.replace(/\\.html$/,".md"))))fail(`${label}: paired Markdown lesson is missing`);
+  if(lesson.lesson_questions!==20||lesson.weekly_quiz_questions!==10)fail(`${label}: Unit 0 question contract is not 20 lesson / 10 weekly`);
+});
+
 if(failures.length){
   console.error(`Curriculum integrity audit failed (${failures.length}):`);
   failures.forEach(failure=>console.error(`- ${failure}`));
