@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Khaemenes High student mentor fallback. Local-first support while the STOS mentor authority is being prepared.">
+<meta name="theme-color" content="#102b43">
+<title>Khaemenes High · Mentor Fallback</title>
+<style>
+:root{--paper:#f4f0e7;--paper2:#fffdf8;--ink:#14211c;--soft:#52605a;--forest:#17392f;--navy:#102b43;--gold:#b48b45;--line:rgba(18,30,25,.16);--formal:Georgia,"Times New Roman",serif;--body:system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:400 16px/1.6 var(--body)}a{color:inherit}.shell{width:min(calc(100% - 32px),900px);margin:auto}.top{padding:16px 0;border-bottom:1px solid var(--line);background:rgba(244,240,231,.96)}.top .shell{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font:600 .78rem var(--formal);letter-spacing:.1em;text-transform:uppercase}.back{padding:8px 11px;border:1px solid var(--line);border-radius:7px;text-decoration:none;font-size:.78rem}.hero{padding:54px 0 25px;text-align:center}.kicker{margin:0;color:var(--gold);font:600 .72rem var(--formal);letter-spacing:.16em;text-transform:uppercase}.hero h1{margin:10px 0 0;color:var(--navy);font:500 clamp(2.8rem,8vw,5.5rem)/.95 var(--formal)}.lead{max-width:700px;margin:18px auto 0;color:var(--soft)}.context{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;margin-top:18px}.pill{padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--soft);font-size:.76rem}.card{padding:24px;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;background:var(--paper2);box-shadow:0 12px 35px rgba(20,32,26,.07)}.boundary{padding:12px 14px;border-left:3px solid var(--gold);background:#fff;color:var(--soft);font-size:.86rem}.chat{margin-top:20px;padding:20px;border:1px solid var(--line);border-radius:12px;background:#fff}.log{display:grid;gap:10px;min-height:110px;max-height:420px;overflow:auto}.msg{max-width:88%;padding:10px 12px;border-radius:10px;white-space:pre-wrap}.mentor{justify-self:start;background:#f8f2e7;border:1px solid #eadfc9}.student{justify-self:end;background:#edf4f1}.msg strong{display:block;margin-bottom:3px;color:#806332;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}.prompts{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}.prompt,.send{min-height:42px;padding:8px 12px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--forest);font:600 .82rem var(--body);cursor:pointer}.form{display:grid;grid-template-columns:1fr auto;gap:9px;align-items:end}.form textarea{width:100%;min-height:82px;resize:vertical;padding:11px;border:1px solid #bdc8c2;border-radius:8px;color:var(--ink);font:inherit}.send{border-color:var(--forest);color:#fff;background:var(--forest)}.status{min-height:20px;margin:8px 0 0;color:var(--soft);font-size:.78rem}.links{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:22px 0 45px}.links a{padding:9px 12px;border:1px solid var(--line);border-radius:7px;background:#fff;text-decoration:none;font-size:.76rem}@media(max-width:650px){.form{grid-template-columns:1fr}.send{width:100%}.top .shell{align-items:flex-start}}
+</style>
+</head>
+<body>
+<header class="top"><div class="shell"><span class="brand">Khaemenes Academy · High School</span><a class="back" href="../../">Back to High School</a></div></header>
+<main class="shell">
+<section class="hero">
+<p class="kicker">Student support · web fallback</p>
+<h1>Mentor</h1>
+<p class="lead">A local-first academic support surface for the current Academy portal. It helps with reasoning and study habits; the course remains the authority for mastery, grades, unlocks, and protected assessments.</p>
+<div class="context" id="context"></div>
+</section>
+<section class="card">
+<div class="boundary"><strong>Current boundary:</strong> this fallback does not call STOS Secure Server, does not transmit student work, cannot unlock curriculum, and cannot reveal protected answer keys. It can be replaced by the STOS mentor adapter later without changing the student doorway.</div>
+<div class="chat" aria-label="Mentor conversation">
+<div class="log" id="log" aria-live="polite"></div>
+<div class="prompts">
+<button class="prompt" type="button">Help me understand this concept</button>
+<button class="prompt" type="button">Help me study what is unlocked</button>
+<button class="prompt" type="button">Help me diagnose a mistake</button>
+<button class="prompt" type="button">Help me plan my next step</button>
+</div>
+<form class="form" id="form"><textarea id="question" maxlength="1200" aria-label="Ask the mentor" placeholder="Ask about the lesson, concept, evidence, or reasoning you are working on now."></textarea><button class="send" type="submit">Ask Mentor</button></form>
+<p class="status" id="status"></p>
+</div>
+</section>
+<nav class="links" aria-label="Academy links"><a href="../../mentor/">Full Academy mentor surface</a><a href="../../">High School home</a></nav>
+</main>
+<script>
+(()=>{
+"use strict";
+const q=new URLSearchParams(location.search),safe=(v,m=160)=>String(v||"").replace(/[\u0000-\u001f\u007f]/g,"").slice(0,m),subject=safe(q.get("subject")||"general",60).replace(/-/g," "),course=safe(q.get("course")||"",100),source=safe(q.get("source")||"",180),context=document.getElementById("context"),log=document.getElementById("log"),form=document.getElementById("form"),question=document.getElementById("question"),status=document.getElementById("status");
+const pills=["High School",subject,course?`course: ${course}`:null].filter(Boolean);context.innerHTML=pills.map(x=>`<span class="pill">${x.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}</span>`).join("");
+function add(who,text){const d=document.createElement("div");d.className=`msg ${who}`;const s=document.createElement("strong");s.textContent=who==="mentor"?"Archaemenes":"You";d.append(s,document.createTextNode(text));log.append(d);log.scrollTop=log.scrollHeight}
+function answer(text){const t=text.toLowerCase();if(/locked|future|answer key|test answers|quiz answers|exam answers|bypass/.test(t))return"I can help you prepare, but I cannot reveal locked future questions, protected answer keys, or bypass a prerequisite. Tell me the concept or skill you are preparing for, and we can practice it with a fresh example inside your current learning scope.";if(/mistake|wrong|missed|error|diagnose/.test(t))return"Show me the step, sentence, claim, calculation, or evidence choice that was marked wrong—or describe what you expected. We will compare the reasoning with the rule or evidence one step at a time.";if(/study|review|practice|remember/.test(t))return"Choose one unlocked skill. Explain it from memory, complete one fresh example without looking at the model, then check the result and write the specific correction you would make.";if(/plan|next step|schedule/.test(t))return"Make the next step observable: name the current lesson, the exact task still incomplete, and the mastery evidence needed next. Work only that scope before planning farther ahead.";return`For ${subject||"this subject"}, tell me what the task is asking, what you already understand, and the first point where the reasoning becomes uncertain. I will help you build the next valid step without completing scored work for you.`}
+add("mentor",source?`I’m here to support the current learning page. Tell me where the reasoning becomes unclear, and we’ll work from there.`:"I’m here to support your current learning. Tell me where the reasoning becomes unclear, and we’ll work from there.");
+form.addEventListener("submit",e=>{e.preventDefault();const text=safe(question.value,1200).trim();if(!text)return;add("student",text);question.value="";status.textContent="Working through the current learning context…";window.setTimeout(()=>{add("mentor",answer(text));status.textContent=""},120)});document.querySelectorAll(".prompt").forEach(b=>b.addEventListener("click",()=>{question.value=b.textContent;question.focus()}));
+})();
+</script>
+</body>
+</html>
