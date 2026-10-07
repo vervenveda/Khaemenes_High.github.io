@@ -25,6 +25,99 @@ const contract = read("courses/shared/course-entry-contract.js");
 const preAlgebraIndex = read("courses/mathematics/pre-algebra/index.html");
 const algebraIndex = read("courses/mathematics/algebra-1/index.html");
 
+const directLearnerPages = [
+  ...[
+    "index.html",
+    "Unit_01_Number_Systems_Verve_Arithmetic_index.html"
+  ].map(file => ({
+    path: `courses/mathematics/pre-algebra/units/unit-01/${file}`,
+    scope: "pre-algebra",
+    base: "../../../shared"
+  })),
+  ...[
+    "lesson-01-number-systems.html",
+    "lesson-02-factors-multiples.html",
+    "lesson-03-primes-divisibility.html",
+    "lesson-04-gcf-lcm.html",
+    "lesson-05-order-operations.html",
+    "lesson-06-estimation-reasonableness.html"
+  ].map(file => ({
+    path: `courses/mathematics/pre-algebra/units/unit-01/lessons/${file}`,
+    scope: "pre-algebra",
+    base: "../../../../shared"
+  })),
+  ...[
+    "assessment/mastery-check.html",
+    "practice/core.html",
+    "practice/extended.html",
+    "practice/foundation.html"
+  ].map(file => ({
+    path: `courses/mathematics/pre-algebra/units/unit-01/${file}`,
+    scope: "pre-algebra",
+    base: "../../../../shared"
+  })),
+  ...[
+    "index.html",
+    "midterm-units-01-07.html",
+    "final-exam-36-weeks.html"
+  ].map(file => ({
+    path: `courses/mathematics/pre-algebra/assessments/${file}`,
+    scope: "pre-algebra",
+    base: "../../../shared"
+  })),
+  {
+    path: "courses/mathematics/algebra-1/units/unit-01/index.html",
+    scope: "algebra-1",
+    base: "../../../shared"
+  },
+  ...[
+    "lesson-01-algebraic-habits-notation-mathematical-argument.html",
+    "lesson-02-the-real-number-system-interval-representations.html",
+    "lesson-03-operations-properties-order-of-operations.html",
+    "lesson-04-units-rates-dimensional-analysis.html",
+    "lesson-05-precision-rounding-significant-figures-percent-error.html",
+    "lesson-06-algebra-readiness-synthesis-error-analysis.html"
+  ].map(file => ({
+    path: `courses/mathematics/algebra-1/units/unit-01/lessons/${file}`,
+    scope: "algebra-1",
+    base: "../../../../shared"
+  })),
+  ...[
+    "assessment/mastery-check.html",
+    "practice/core.html",
+    "practice/extended.html",
+    "practice/foundation.html"
+  ].map(file => ({
+    path: `courses/mathematics/algebra-1/units/unit-01/${file}`,
+    scope: "algebra-1",
+    base: "../../../../shared"
+  })),
+  ...[
+    "index.html",
+    "weekly-mastery.html",
+    "midterm-units-01-06.html",
+    "final-exam-36-weeks.html"
+  ].map(file => ({
+    path: `courses/mathematics/algebra-1/assessments/${file}`,
+    scope: "algebra-1",
+    base: "../../../shared"
+  }))
+];
+
+for (const page of directLearnerPages) {
+  const html = read(page.path);
+  const headStart = html.indexOf("<head");
+  const headEnd = html.indexOf("</head>");
+  const contractAt = html.indexOf(`${page.base}/course-entry-contract.js`);
+  const scopeAt = html.indexOf(`${page.base}/learner-scope-v1.js`);
+  assert(
+    headStart >= 0 && headEnd > headStart && contractAt > headStart &&
+      scopeAt > contractAt && scopeAt < headEnd &&
+      html.includes(`data-learner-scope="${page.scope}"`),
+    `${page.path} loads the learner contract and ${page.scope} scope before page scripts`
+  );
+}
+
 assert(
   preAlgebraIndex.indexOf("learner-scope-v1.js") >= 0 &&
     preAlgebraIndex.indexOf("learner-scope-v1.js") < preAlgebraIndex.indexOf("const STORAGE_KEY"),
@@ -45,6 +138,13 @@ assert(
     helper.includes("KHAE_OPEN_PREALGEBRA_FORGE_V2"),
   "Pre-Algebra adapter preserves legacy ownership and independent learner slots"
 );
+assert(
+  helper.includes('"algebra-1"') &&
+    helper.includes('"khaemenes-algebra1-"') &&
+    helper.includes("khaemenes_math_unit"),
+  "Learner adapter covers Algebra I records and the legacy Pre-Algebra worksheet key"
+);
+
 assert(
   mathGate.includes("readScopedTarget") &&
     mathGate.includes("writeScopedTarget") &&
@@ -189,6 +289,50 @@ assert(
   algebraStorage.getItem(`${algebraKey}:learner:thaeden`) === algebraThaeden &&
     mathContext.localStorage.getItem(algebraKey) === algebraThaeden,
   "Algebra I second learner receives an independent writable record"
+);
+
+
+const algebraScopeStorage = new MemoryStorage();
+let directProfile = { learnerId: "ahja", name: "Ahja" };
+const algebraDirectKey = "khaemenes-algebra1-unit01-a3-v1";
+const algebraDirectLegacy = JSON.stringify({ version: 1, best: { "lesson-1": 80 } });
+algebraScopeStorage.setItem(algebraDirectKey, algebraDirectLegacy);
+
+const algebraScopeContext = {
+  window: {
+    localStorage: algebraScopeStorage,
+    KhaemenesCourseEntryContract: {
+      readAcademyProfile() {
+        return directProfile;
+      }
+    }
+  },
+  localStorage: algebraScopeStorage,
+  Storage: MemoryStorage,
+  document: { currentScript: { dataset: { learnerScope: "algebra-1" } } },
+  encodeURIComponent,
+  Date,
+  JSON,
+  console
+};
+vm.runInNewContext(helper, algebraScopeContext, { filename: "learner-scope-v1-algebra.js" });
+
+assert(
+  algebraScopeContext.localStorage.getItem(algebraDirectKey) === algebraDirectLegacy &&
+    algebraScopeStorage.getItem(`${algebraDirectKey}:learner:ahja`) === algebraDirectLegacy,
+  "Algebra I Unit 1 direct records migrate intact to Ahja"
+);
+
+directProfile = { learnerId: "thaeden", name: "Thaeden" };
+assert(
+  algebraScopeContext.localStorage.getItem(algebraDirectKey) === null,
+  "Algebra I Unit 1 direct records stay hidden from a second learner"
+);
+const algebraDirectThaeden = JSON.stringify({ version: 1, best: { "lesson-1": 92 } });
+algebraScopeContext.localStorage.setItem(algebraDirectKey, algebraDirectThaeden);
+assert(
+  algebraScopeStorage.getItem(`${algebraDirectKey}:learner:thaeden`) === algebraDirectThaeden,
+  "Algebra I Unit 1 direct records write to the second learner slot"
 );
 
 console.log(`Learner-scoped persistence validation passed (${checks.length} checks).`);
