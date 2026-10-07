@@ -292,7 +292,23 @@ assert(
 );
 
 
-const algebraScopeStorage = new MemoryStorage();
+class DirectMemoryStorage {
+  constructor() {
+    this.values = new Map();
+  }
+  getItem(key) {
+    const value = this.values.get(String(key));
+    return value === undefined ? null : value;
+  }
+  setItem(key, value) {
+    this.values.set(String(key), String(value));
+  }
+  removeItem(key) {
+    this.values.delete(String(key));
+  }
+}
+
+const algebraScopeStorage = new DirectMemoryStorage();
 let directProfile = { learnerId: "ahja", name: "Ahja" };
 const algebraDirectKey = "khaemenes-algebra1-unit01-a3-v1";
 const algebraDirectLegacy = JSON.stringify({ version: 1, best: { "lesson-1": 80 } });
@@ -308,7 +324,7 @@ const algebraScopeContext = {
     }
   },
   localStorage: algebraScopeStorage,
-  Storage: MemoryStorage,
+  Storage: DirectMemoryStorage,
   document: { currentScript: { dataset: { learnerScope: "algebra-1" } } },
   encodeURIComponent,
   Date,
