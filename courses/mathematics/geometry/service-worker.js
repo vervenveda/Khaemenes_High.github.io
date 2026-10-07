@@ -1,5 +1,5 @@
 "use strict";
-const CACHE="khaemenes-geometry-v6-student-safe";
+const CACHE="khaemenes-geometry-v5-math-entry";
 const CORE=[
  "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
  "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js","./assets/question-bank.js","./assets/diagnostic-bank-v2.js","./assets/assessment-engine.js","./assets/lesson-tools.js","./assets/unit-progress.js","./course-data.js","./course-map.json","./manifest.webmanifest","./diagnostic/","./assessments/",
@@ -152,8 +152,12 @@ const CORE=[
  "./units/unit-11/projects/11-project.html",
  "./units/unit-12/projects/12-project.html",
  "./units/unit-13/projects/13-project.html",];
+const NEVER_CACHE=/(?:^|\\/)(?:teacher|teacher-keys)(?:\\/|$)/i;
+function shouldNeverCache(url){return NEVER_CACHE.test(url.pathname)}
+
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(CORE.map(url=>cache.add(new Request(url,{cache:"reload"}))))).then(()=>self.skipWaiting()))});
-self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
+async function purgeSensitiveCacheEntries(){const cache=await caches.open(CACHE);const requests=await cache.keys();await Promise.all(requests.filter(request=>shouldNeverCache(new URL(request.url))).map(request=>cache.delete(request)))}
+self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(purgeSensitiveCacheEntries).then(()=>self.clients.claim()))});
 const NEVER_CACHE=/(?:^|\\/)(?:teacher|teacher-keys)(?:\\/|$)/i;
 function shouldNeverCache(url){return NEVER_CACHE.test(url.pathname)}
 self.addEventListener("fetch",event=>{
