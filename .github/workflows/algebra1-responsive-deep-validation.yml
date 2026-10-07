@@ -60,7 +60,7 @@ jobs:
                   errors.append(f'focused assessment engine missing {token}')
 
           sw = (root/'service-worker.js').read_text(encoding='utf-8')
-          for asset in ['responsive-layout-v1.css','readiness-entry-gate-v1.js','deep-lesson-engine-v1.js','focused-assessment-v1.js']:
+          for asset in ['responsive-layout-v1.css','readiness-entry-gate-v1.js','deep-lesson-engine-v1.js','lesson-resource-map.js','lesson-resource-bridge-v1.js','focused-assessment-v1.js']:
               if asset not in sw:
                   errors.append(f'service worker does not cache {asset}')
 
