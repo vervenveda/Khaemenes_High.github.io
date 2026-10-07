@@ -1,8 +1,8 @@
 "use strict";
-const CACHE="khaemenes-geometry-v5-math-entry";
+const CACHE="khaemenes-geometry-v6-student-safe";
 const CORE=[
  "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
- "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js","./assets/question-bank.js","./assets/diagnostic-bank-v2.js","./assets/assessment-engine.js","./assets/lesson-tools.js","./assets/unit-progress.js","./course-data.js","./course-map.json","./manifest.webmanifest","./diagnostic/","./assessments/","./teacher/","./teacher-keys/",
+ "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js","./assets/question-bank.js","./assets/diagnostic-bank-v2.js","./assets/assessment-engine.js","./assets/lesson-tools.js","./assets/unit-progress.js","./course-data.js","./course-map.json","./manifest.webmanifest","./diagnostic/","./assessments/",
  "./assets/geometry-archaemenes-upgrade.js","./assets/strict-course-progression.js","./assets/unit-index-gates.js","./assets/unit-mastery-source-v2.js",
  "./assessments/index.html","./assessments/administration-guide.html","./assessments/assessment-map.json","./assessments/weekly-mastery.html","./assessments/midterm.html","./assessments/final.html",
  "./assessments/assets/exam-depth-v2.js","./assessments/assets/weekly-mastery-engine-v2.js",
@@ -154,9 +154,15 @@ const CORE=[
  "./units/unit-13/projects/13-project.html",];
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(CORE.map(url=>cache.add(new Request(url,{cache:"reload"}))))).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
+const NEVER_CACHE=/(?:^|\\/)(?:teacher|teacher-keys)(?:\\/|$)/i;
+function shouldNeverCache(url){return NEVER_CACHE.test(url.pathname)}
 self.addEventListener("fetch",event=>{
  if(event.request.method!=="GET")return;
  const url=new URL(event.request.url); if(url.origin!==location.origin)return;
+ if(shouldNeverCache(url)){
+   event.respondWith(fetch(event.request,{cache:"no-store"}));
+   return;
+ }
  if(event.request.mode==="navigate"){
    event.respondWith(fetch(event.request,{cache:"no-store"}).then(response=>{if(response&&response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy))}return response}).catch(()=>caches.match(event.request).then(hit=>hit||caches.match("./index.html")).then(hit=>hit||caches.match("./offline.html"))));return;
  }
