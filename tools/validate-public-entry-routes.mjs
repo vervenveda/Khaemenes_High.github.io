@@ -15,6 +15,7 @@ const ENTRYPOINTS=[
   "courses/mathematics/geometry/index.html",
   "courses/language-arts/index.html",
   "courses/language-arts/english-9/index.html",
+  "courses/language-arts/english-9/foundations/index.html",
   "courses/science/index.html",
   "courses/science/integrated-science-9/index.html",
   "courses/social-studies/index.html",
