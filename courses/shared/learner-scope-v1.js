@@ -10,6 +10,7 @@
         "KHAE_MATH9_PREALGEBRA_",
         "khaemenes-naib-",
         "khaemenes-prealgebra-",
+        "khaemenes_math_unit",
         "khaemenes-grade09-last-open-v1"
       ]
     },
