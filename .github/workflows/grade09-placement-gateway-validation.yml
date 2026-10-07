@@ -1,0 +1,46 @@
+name: Grade 09 Placement Gateway Validation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "grades/grade-09/student-profile/student-course-registry.js"
+      - "courses/shared/course-entry-catalog.json"
+      - "courses/mathematics/pre-algebra/index.html"
+      - "courses/mathematics/pre-algebra/assets/prealgebra-course-gates-v1.js"
+      - "courses/language-arts/english-9/index.html"
+      - "courses/language-arts/english-9/assets/course.js"
+      - "courses/science/integrated-science-9/index.html"
+      - "courses/science/integrated-science-9/assets/science9-entry-gate.js"
+      - "courses/social-studies/grade-09/index.html"
+      - "courses/social-studies/grade-09/app.html"
+      - "courses/social-studies/grade-09/assets/grade09-records.js"
+      - "courses/social-studies/grade-09/assets/grade09-entry-gate.js"
+      - "scripts/validate_grade09_placement_gateway.mjs"
+      - ".github/workflows/grade09-placement-gateway-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Validate Grade 09 placement gateway
+        run: node scripts/validate_grade09_placement_gateway.mjs
+      - name: Syntax-check placement modules
+        run: |
+          node --check grades/grade-09/student-profile/student-course-registry.js
+          node --check courses/mathematics/pre-algebra/assets/prealgebra-course-gates-v1.js
+          node --check courses/social-studies/grade-09/assets/grade09-entry-gate.js
+          node --check scripts/validate_grade09_placement_gateway.mjs
+      - name: Check patch whitespace
+        run: git diff --check HEAD^ HEAD
