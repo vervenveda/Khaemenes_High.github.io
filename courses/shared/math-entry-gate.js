@@ -16,12 +16,43 @@
     set: Storage.prototype.setItem,
     remove: Storage.prototype.removeItem
   };
+  const claimPrefix = `__khaemenes_legacy_claim_v1:${encodeURIComponent(courseId)}:`;
+  const parseLegacy = value => {
+    try { return JSON.parse(value || "null"); } catch { return null; }
+  };
+  const claimKey = base => `${claimPrefix}${encodeURIComponent(base)}`;
+  const learnerTarget = (base, profile) => contract.scopedKey(base, profile);
+
+  function migrateLegacy(base, profile) {
+    const target = learnerTarget(base, profile);
+    if (raw.get.call(localStorage, target) !== null) return target;
+    const claim = parseLegacy(raw.get.call(localStorage, claimKey(base)));
+    if (claim && claim.learnerId !== profile.learnerId) return null;
+    if (!claim) {
+      const legacy = raw.get.call(localStorage, base);
+      if (legacy !== null) {
+        raw.set.call(
+          localStorage,
+          claimKey(base),
+          JSON.stringify({
+            version: 1,
+            learnerId: profile.learnerId,
+            claimed_at: new Date().toISOString()
+          })
+        );
+        raw.set.call(localStorage, target, legacy);
+      }
+    }
+    return target;
+  }
+
   const scoped = key => {
     if (!key || key.includes(":learner:")) return key;
-    const learnerScoped = key === "khaemenes-high-pinned-courses-v2" || prefixes.some(prefix => key === prefix || key.startsWith(prefix));
+    const learnerScoped = key === "khaemenes-high-pinned-courses-v2" ||
+      prefixes.some(prefix => key === prefix || key.startsWith(prefix));
     if (!learnerScoped) return key;
     const profile = contract?.readAcademyProfile?.();
-    return profile ? contract.scopedKey(key, profile) : null;
+    return profile ? migrateLegacy(key, profile) : null;
   };
   Storage.prototype.getItem = function(key) {
     const target = scoped(String(key));
@@ -35,11 +66,13 @@
     const target = scoped(String(key));
     if (target !== null) raw.remove.call(this, target);
   };
-
   function parse(value) { try { return JSON.parse(value || "null"); } catch { return null; } }
   function readScoped(base, profile) {
     if (!profile || !base) return null;
-    try { return parse(raw.get.call(localStorage, contract.scopedKey(base, profile))); } catch { return null; }
+    try {
+      const target = migrateLegacy(base, profile);
+      return target === null ? null : parseLegacy(raw.get.call(localStorage, target));
+    } catch { return null; }
   }
   function number(value) {
     const n = Number(value);
