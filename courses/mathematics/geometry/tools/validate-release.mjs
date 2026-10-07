@@ -75,12 +75,34 @@ try{
 }catch(e){fail(`question-bank evaluation failed: ${e.message}`)}
 ok('156-item cumulative source bank verified');
 
+try{
+ const diagnosticContext={window:{}};vm.createContext(diagnosticContext);
+ for(const relPath of ['assets/question-bank.js','assets/diagnostic-bank-v2.js']){
+  new vm.Script(read(relPath),{filename:relPath}).runInContext(diagnosticContext);
+ }
+ const diagnostic=diagnosticContext.window.GEOMETRY_DIAGNOSTIC||[];
+ assert(diagnostic.length===40,`diagnostic bank: expected 40 items, found ${diagnostic.length}`);
+ const diagnosticIds=new Set(),domains=Object.fromEntries(['linear-equations','proportion-scale','coordinate-graphing','radicals-exponents','measurement-reasoning'].map(d=>[d,0]));
+ diagnostic.forEach((item,i)=>{
+  assertQuestion(item,`diagnostic item ${i+1}`);
+  assert(!diagnosticIds.has(item.id),`diagnostic duplicate id ${item.id}`);diagnosticIds.add(item.id);
+  assert(Object.hasOwn(domains,item.readiness_domain),`diagnostic item ${i+1}: invalid readiness domain ${item.readiness_domain}`);
+  if(Object.hasOwn(domains,item.readiness_domain))domains[item.readiness_domain]++;
+ });
+ for(const [domain,count] of Object.entries(domains))assert(count===8,`diagnostic: ${domain} expected 8 items, found ${count}`);
+ const diagnosticHtml=read('diagnostic/index.html');
+ assert(diagnosticHtml.includes('diagnostic-bank-v2.js'),'diagnostic page: v2 placement bank loader missing');
+ assert(diagnosticHtml.indexOf('diagnostic-bank-v2.js')<diagnosticHtml.indexOf('assessment-engine.js'),'diagnostic page: placement bank must load before assessment engine');
+ assert(!/src="\.\.\/\.\.\/shared\/(course-entry-contract|math-entry-gate)\.js"/.test(diagnosticHtml),'diagnostic page: broken duplicate shared-script path remains');
+}catch(e){fail(`diagnostic bank evaluation failed: ${e.message}`)}
+ok('40-question prerequisite diagnostic / five-domain placement coverage verified');
+
 const bankContext={window:{KhaemenesGeometryWeeklyMasteryV2:{}}};vm.createContext(bankContext);
 const bankFiles=Array.from({length:12},(_,i)=>{const a=i*3+1,b=a+2;return `assessments/assets/weekly-mastery-v2-${String(a).padStart(2,'0')}-${String(b).padStart(2,'0')}.js`});
 for(const f of bankFiles){assert(exists(f),`${f}: missing`);if(exists(f)){try{new vm.Script(read(f),{filename:f}).runInContext(bankContext)}catch(e){fail(`${f}: execution failed: ${e.message}`)}}}
 const bank=bankContext.window.KhaemenesGeometryWeeklyMasteryV2||{};
 assert(Object.keys(bank).length===36,`weekly bank: expected 36 weeks, found ${Object.keys(bank).length}`);
-const weeklyIds=new Set(),weeklyPrompts=new Set();
+const weeklyIds=new Set(),weeklyPrompts=new Set(),weeklyAnswerPositions=[0,0,0,0];
 for(let n=1;n<=36;n++){
  const w=bank[String(n)];assert(w,`weekly bank: Week ${n} missing`);if(!w)continue;
  assert(Number(w.week)===n,`Week ${n}: week number mismatch`);
@@ -93,11 +115,13 @@ for(let n=1;n<=36;n++){
   const p=String(q.prompt||'').trim().toLowerCase();
   assert(!weeklyIds.has(q.id),`weekly bank duplicate id ${q.id}`);weeklyIds.add(q.id);
   assert(!weeklyPrompts.has(p),`weekly bank duplicate prompt at ${q.id}`);weeklyPrompts.add(p);
+  weeklyAnswerPositions[q.answer]++;
  }
  for(const d of DIMS)assert(dims[d]===2,`Week ${n}: ${d} expected 2 questions, found ${dims[d]}`);
 }
 assert(weeklyIds.size===360,`weekly bank: expected 360 unique ids, found ${weeklyIds.size}`);
 assert(weeklyPrompts.size===360,`weekly bank: expected 360 unique prompts, found ${weeklyPrompts.size}`);
+for(const [i,count] of weeklyAnswerPositions.entries())assert(count===90,`weekly bank: answer position ${i} expected 90 source answers, found ${count}`);
 ok('36 weekly mastery gates / 360 unique depth prompts verified');
 
 const weeklyEngine=read('assessments/assets/weekly-mastery-engine-v2.js');
@@ -147,12 +171,14 @@ assert(/MASTERY=80/.test(lessonTools),'lesson-tools: mastery 80 missing');
 assert(/Evaluator lesson score/.test(lessonTools)&&/Record Mastery Attempt/.test(lessonTools),'lesson-tools: evaluator evidence gate missing');
 ok('Lesson, week-boundary, unit-entry, and formal-unit progression gates verified');
 
-const index=read('index.html'),upgrade=read('assets/geometry-archaemenes-upgrade.js'),strict=read('assets/strict-course-progression.js');
+const index=read('index.html'),app=read('assets/app.js'),upgrade=read('assets/geometry-archaemenes-upgrade.js'),strict=read('assets/strict-course-progression.js');
 assert(index.includes('assets/geometry-archaemenes-upgrade.js'),'course root: Geometry upgrade loader missing');
 assert(upgrade.includes('strict-course-progression.js')&&upgrade.includes('loadStrictProgression'),'course root: strict progression dynamic load missing');
 assert(strict.includes('Manual Midterm and Final score entry has been retired'),'strict layer: manual formal score retirement missing');
 assert(strict.includes('patchGradebook')&&strict.includes('Legacy planning average'),'strict layer: legacy gradebook distinction missing');
 assert(strict.includes('Week ${n} is locked until Week ${n-1} mastery reaches 80%.'),'strict layer: root weekly progression lock missing');
+assert(!app.includes('Record formal scores')&&!app.includes('id="saveFormal"'),'course root: manual formal score entry must remain retired at source');
+assert(app.includes('Legacy planning average')&&app.includes('Canonical credit comes only from the strict evidence chain'),'course root: legacy grade display must be explicitly non-canonical');
 ok('Root course shell strict progression verified');
 
 let depth;
@@ -195,14 +221,17 @@ assert(rec.includes('Browser-local evidence is editable and not digitally signed
 ok('Evidence-gated completion record verified');
 
 const sw=read('service-worker.js');
-assert(sw.includes('khaemenes-geometry-v4-final-strict-release'),'service worker: final v4 cache identity missing');
+assert(sw.includes('khaemenes-geometry-v5-math-entry'),'service worker: v5 math-entry cache identity missing');
 const coreMatch=sw.match(/const CORE=\[([\s\S]*?)\];/);
 if(!coreMatch)fail('service worker: CORE precache list missing');else{
  const urls=[...coreMatch[1].matchAll(/"([^"]+)"/g)].map(m=>m[1]);
  for(const url of urls){if(!url.startsWith('./'))continue;const target=url.slice(2);if(!target)continue;assert(fs.existsSync(path.join(ROOT,target)),`service worker: precache target missing ${url}`)}
- const critical=['./assets/strict-course-progression.js','./assets/unit-index-gates.js','./assets/unit-mastery-source-v2.js','./assessments/assets/exam-depth-v2.js','./assessments/assets/weekly-mastery-engine-v2.js','./records/record-engine-v2.js','./records/course-completion-certificate.html'];
+ const critical=['./assets/strict-course-progression.js','./assets/unit-index-gates.js','./assets/unit-mastery-source-v2.js','./assets/diagnostic-bank-v2.js','./assessments/assets/exam-depth-v2.js','./assessments/assets/weekly-mastery-engine-v2.js','./records/record-engine-v2.js','./records/course-completion-certificate.html'];
  for(const f of [...critical,...bankFiles.map(x=>`./${x}`)])assert(urls.includes(f),`service worker: critical offline asset missing ${f}`);
  for(let u=1;u<=13;u++){const p=String(u).padStart(2,'0');assert(urls.includes(`./units/unit-${p}/index.html`),`service worker: Unit ${p} index missing`);assert(urls.includes(`./units/unit-${p}/assessment/mastery-check.html`),`service worker: Unit ${p} mastery missing`)}
+ for(const pattern of [/^units\/unit-\d{2}\/lessons\/.*\.html$/,/^units\/unit-\d{2}\/practice\/.*\.html$/,/^units\/unit-\d{2}\/projects\/.*\.html$/]){
+  for(const file of files.filter(f=>pattern.test(rel(f))))assert(urls.includes(`./${rel(file)}`),`service worker: offline route missing ./${rel(file)}`);
+ }
 }
 ok('Offline strict runtime parity verified');
 
@@ -210,6 +239,10 @@ const center=read('assessments/index.html'),readme=read('README.md'),report=read
 assert(center.includes('360 unique prompts')&&center.includes('20-question mastery checks'),'Assessment Center: strict depth summary missing');
 assert(readme.includes('360 unique weekly mastery prompts')&&readme.includes('156-item cumulative selected-response source bank'),'README: bank distinction missing');
 assert(report.includes('PENDING — STRICT-80 RELEASE VALIDATION IN PROGRESS'),'Validation report must remain PENDING until CI release gate is green');
+const publicText=files.filter(f=>/\.(html|js|md)$/.test(rel(f))).map(f=>read(rel(f))).join('\n');
+for(const stale of ['a_sacred_geometry_game_index.html','a_geometry_sanctuary_game_index.html','a_mandala_rings_game_index.html'])assert(!publicText.includes(stale),`activity routes: stale Arcade path remains (${stale})`);
+for(const route of ['Geometry/sacred_geometry_game_index.html','Geometry/Sanctuary%20V2.0','Geometry/mandala_rings_game_index.html'])assert(publicText.includes(route),`activity routes: canonical Arcade path missing (${route})`);
+assert(!publicText.includes('Autumn Pearl')&&!publicText.includes('Jennifer Pearl and'),'public provenance: retired footer name remains');
 ok('Public release documentation is internally consistent');
 
 if(errors.length){

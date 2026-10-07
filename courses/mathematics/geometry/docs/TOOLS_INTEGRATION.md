@@ -10,7 +10,7 @@ Primary use: Units 4, 10, 11, 12, and 13.
 
 ## Sacred Geometry Sanctuary
 
-Public route: `https://vervenveda.com/arcade.github.io/a_sacred_geometry_game_index.html`
+Public route: `https://vervenveda.com/arcade.github.io/Geometry/sacred_geometry_game_index.html`
 
 Used for radial repetition, transformations, symmetry, regular polygons, circles, rotation, scale, layer design, SVG export, and mathematical-art analysis.
 
@@ -18,7 +18,7 @@ Primary use: Units 2, 7, and 8.
 
 ## Mandala Rings
 
-Public route: `https://vervenveda.com/arcade.github.io/a_mandala_rings_game_index.html`
+Public route: `https://vervenveda.com/arcade.github.io/Geometry/mandala_rings_game_index.html`
 
 Used for circular chains, radial alignment, center control, symmetry, pattern reasoning, and strategic spatial explanation.
 

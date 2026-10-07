@@ -17,6 +17,8 @@ The previous PASS report described the original Geometry package before the stri
 - every formal unit check contains four questions in each of the five depth dimensions
 - all 13 unit index pages load strict progression gating
 - 40-question non-gating readiness diagnostic
+- diagnostic coverage is balanced across linear equations, proportion/scale, coordinate graphing, radicals/exponents, and measurement/reasoning
+- weekly source answer positions are balanced and answer text matches the keyed option
 - Midterm: 60 selected-response + 6 human-reviewed constructed-response tasks
 - Final: 100 selected-response + 10 human-reviewed constructed-response tasks
 - cumulative exams weighted 70% selected response / 30% constructed response

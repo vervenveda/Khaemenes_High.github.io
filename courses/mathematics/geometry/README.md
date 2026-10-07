@@ -17,6 +17,7 @@ A complete 36-week, placement-based high-school Geometry course designed for nat
 - 20 questions per unit check, balanced across every instructional week in the unit and all five depth dimensions
 - 13 applied investigations
 - 40-question non-gating readiness diagnostic
+- Diagnostic coverage: eight questions each on linear equations, proportion/scale, coordinate graphing, radicals/exponents, and measurement/reasoning
 - 156-item cumulative selected-response source bank
 - Midterm: 60 selected-response questions + 6 required constructed-response tasks
 - Final: 100 selected-response questions + 10 required constructed-response tasks
