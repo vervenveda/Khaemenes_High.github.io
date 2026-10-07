@@ -20,7 +20,7 @@ function compile(label, source) {
 }
 
 function scriptSources(html) {
-  return [...html.matchAll(/<script\\b[^>]*\\bsrc=["']([^"']+)["'][^>]*>/gi)].map((match) => match[1]);
+  return [...html.matchAll(/<script\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi)].map((match) => match[1]);
 }
 
 const registry = read("grades/grade-09/student-profile/student-course-registry.js");
