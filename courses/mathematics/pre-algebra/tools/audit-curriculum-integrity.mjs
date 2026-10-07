@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const courseRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const failures=[];
-let lessonCount=0,questionCount=0;
+let lessonCount=0,questionCount=0;const promptOwners=new Map();
 const fail=message=>failures.push(message);
 const readJson=relative=>JSON.parse(fs.readFileSync(path.join(courseRoot,relative),"utf8"));
 
@@ -65,7 +65,7 @@ for(let number=1;number<=13;number++){
     if(lesson.number!==index+1)fail(`${label}: lesson numbering is not consecutive`);
     if(!Array.isArray(data.objectives)||data.objectives.length<3)fail(`${label}: fewer than three objectives`);
     if(!Array.isArray(data.questions)||data.questions.length!==20)fail(`${label}: ${data.questions?.length} questions, expected 20`);
-    else data.questions.forEach((question,questionIndex)=>{questionCount++;inspectQuestion(label,question,questionIndex);});
+    else data.questions.forEach((question,questionIndex)=>{questionCount++;inspectQuestion(label,question,questionIndex);const normalizedPrompt=String(question.prompt||"").trim().toLocaleLowerCase().replace(/\s+/g," ");if(promptOwners.has(normalizedPrompt))fail(`${label}: duplicate prompt also used by ${promptOwners.get(normalizedPrompt)}`);else promptOwners.set(normalizedPrompt,label);});
   });
 }
 
