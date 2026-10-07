@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "component_set": "KH-MATH-PA",
-  "release": "2026.10.06-frontend-recovery-v1",
+  "release": "2026.10.07-resource-cache-v1",
   "hash_format": "git-blob-sha1",
   "components": [
     {
       "path": "service-worker.js",
-      "sha": "5a589dc49a6a50c382cdfe33028852aec124ec5a"
+      "sha": "8e24ece4908c142e0249fd3ef42f05ae2a6c2126"
     },
     {
       "path": "assets/prealgebra-student-navigation.js",
