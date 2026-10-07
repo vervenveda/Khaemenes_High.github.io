@@ -35,12 +35,13 @@
   const claimKey = base => `${claimPrefix}${encodeURIComponent(base)}`;
   const learnerKey = (base, learnerId) => `${base}:learner:${encodeURIComponent(learnerId)}`;
 
-  function targetFor(base, learner) {
+  function readTarget(base, learner) {
     const target = learnerKey(base, learner.learnerId);
     if (raw.get.call(window.localStorage, target) !== null) return target;
 
     const claim = parse(raw.get.call(window.localStorage, claimKey(base)));
-    if (claim && claim.learnerId !== learner.learnerId) return null;
+    const legacyOwner = claim?.legacyLearnerId || claim?.learnerId || null;
+    if (legacyOwner && legacyOwner !== learner.learnerId) return null;
 
     if (!claim) {
       const legacy = raw.get.call(window.localStorage, base);
@@ -50,7 +51,8 @@
           claimKey(base),
           JSON.stringify({
             version: 1,
-            learnerId: learner.learnerId,
+            legacyLearnerId: learner.learnerId,
+            learners: [learner.learnerId],
             claimed_at: new Date().toISOString()
           })
         );
@@ -60,45 +62,41 @@
     return target;
   }
 
-  function targetForKey(key) {
+  function writeTarget(base, learner) {
+    const target = learnerKey(base, learner.learnerId);
+    const key = claimKey(base);
+    const claim = parse(raw.get.call(window.localStorage, key)) || {
+      version: 1,
+      legacyLearnerId: null,
+      learners: []
+    };
+    claim.learners = Array.isArray(claim.learners) ? claim.learners : [];
+    if (!claim.learners.includes(learner.learnerId)) claim.learners.push(learner.learnerId);
+    raw.set.call(window.localStorage, key, JSON.stringify(claim));
+    return target;
+  }
+
+  function targetForKey(key, mode) {
     const base = String(key);
     if (!matches(base)) return base;
     const learner = profile();
-    return learner ? targetFor(base, learner) : base;
-  }
-
-  function ensureClaim(base, learner) {
-    const key = claimKey(base);
-    if (raw.get.call(window.localStorage, key) === null) {
-      raw.set.call(
-        window.localStorage,
-        key,
-        JSON.stringify({
-          version: 1,
-          learnerId: learner.learnerId,
-          claimed_at: new Date().toISOString()
-        })
-      );
-    }
+    if (!learner) return base;
+    return mode === "write" ? writeTarget(base, learner) : readTarget(base, learner);
   }
 
   Storage.prototype.getItem = function(key) {
-    const target = targetForKey(key);
+    const target = targetForKey(key, "read");
     return target === null ? null : raw.get.call(this, target);
   };
 
   Storage.prototype.setItem = function(key, value) {
-    const base = String(key);
-    const target = targetForKey(base);
-    if (target === null) return;
-    const learner = matches(base) ? profile() : null;
-    if (learner) ensureClaim(base, learner);
+    const target = targetForKey(key, "write");
     raw.set.call(this, target, value);
   };
 
   Storage.prototype.removeItem = function(key) {
-    const target = targetForKey(key);
-    if (target !== null) raw.remove.call(this, target);
+    const target = targetForKey(key, "write");
+    raw.remove.call(this, target);
   };
 
   window.KhaemenesLearnerScope = Object.freeze({
@@ -108,7 +106,7 @@
     scopedKey(base) {
       const learner = profile();
       return learner && matches(String(base))
-        ? targetFor(String(base), learner)
+        ? readTarget(String(base), learner) || learnerKey(String(base), learner.learnerId)
         : String(base);
     }
   });
