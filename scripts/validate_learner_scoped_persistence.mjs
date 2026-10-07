@@ -126,4 +126,69 @@ assert(
   "Switching back restores Ahja's original progress"
 );
 
+const algebraStorage = new MemoryStorage();
+let algebraProfile = { learnerId: "ahja", name: "Ahja" };
+const algebraKey = "khaemenes-algebra1-course-v1";
+const algebraLegacy = JSON.stringify({ version: 1, students: [{ id: "legacy-algebra", name: "Existing Algebra learner" }] });
+algebraStorage.setItem(algebraKey, algebraLegacy);
+
+const mathContext = {
+  window: {
+    localStorage: algebraStorage,
+    addEventListener() {},
+    KhaemenesCourseEntryContract: {
+      readAcademyProfile() {
+        return algebraProfile;
+      },
+      scopedKey(base, profile) {
+        return `${base}:learner:${encodeURIComponent(profile.learnerId)}`;
+      }
+    }
+  },
+  localStorage: algebraStorage,
+  Storage: MemoryStorage,
+  document: {
+    readyState: "loading",
+    documentElement: {
+      dataset: {
+        mathEntry: "course",
+        mathCourseId: "math-algebra1",
+        mathReadinessKey: "khaemenes-math-algebra1-readiness-v1",
+        mathStoragePrefixes: "khaemenes-algebra1-",
+        mathEvidenceKey: "khaemenes-algebra1-diagnostic-result-v1",
+        mathDiagnosticHref: "diagnostic/"
+      }
+    },
+    addEventListener() {}
+  },
+  encodeURIComponent,
+  Date,
+  JSON,
+  console
+};
+vm.runInNewContext(mathGate, mathContext, { filename: "math-entry-gate.js" });
+
+assert(
+  mathContext.localStorage.getItem(algebraKey) === algebraLegacy,
+  "Algebra I first learner can read preserved legacy work"
+);
+assert(
+  algebraStorage.getItem(`${algebraKey}:learner:ahja`) === algebraLegacy &&
+    algebraStorage.getItem(algebraKey) === algebraLegacy,
+  "Algebra I migration preserves the original unscoped record"
+);
+
+algebraProfile = { learnerId: "thaeden", name: "Thaeden" };
+assert(
+  mathContext.localStorage.getItem(algebraKey) === null,
+  "Algebra I second learner cannot read the first learner's inherited record"
+);
+const algebraThaeden = JSON.stringify({ version: 1, students: [{ id: "new-algebra", name: "Thaeden" }] });
+mathContext.localStorage.setItem(algebraKey, algebraThaeden);
+assert(
+  algebraStorage.getItem(`${algebraKey}:learner:thaeden`) === algebraThaeden &&
+    mathContext.localStorage.getItem(algebraKey) === algebraThaeden,
+  "Algebra I second learner receives an independent writable record"
+);
+
 console.log(`Learner-scoped persistence validation passed (${checks.length} checks).`);
