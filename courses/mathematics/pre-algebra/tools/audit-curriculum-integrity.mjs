@@ -75,7 +75,7 @@ if(refresherMap.unit?.duration_weeks!==6)fail(`Unit 0 duration is ${refresherMap
 if(refresherMap.unit?.lesson_mastery_threshold_percent!==80||refresherMap.unit?.weekly_quiz_threshold_percent!==80)fail("Unit 0 lesson and weekly quiz thresholds must both be 80%");
 const refresherLessons=refresherMap.lessons||[],refresherDirectory=path.join(courseRoot,"units/unit-00/lessons");
 const refresherFiles=fs.readdirSync(refresherDirectory).filter(file=>file.endsWith(".html")).sort();
-const declaredRefresherFiles=refresherLessons.map(lesson=>lesson.file?.replace(/^lessons\//," ")).sort();
+const declaredRefresherFiles=refresherLessons.map(lesson=>lesson.file?.replace(/^lessons\//,"")).sort();
 if(JSON.stringify(refresherFiles)!==JSON.stringify(declaredRefresherFiles))fail("Unit 0 lesson files differ from unit-map inventory");
 refresherLessons.forEach((lesson,index)=>{
   const relative=`units/unit-00/${lesson.file}`,source=fs.readFileSync(path.join(courseRoot,relative),"utf8"),match=/window\.REFRESHER_WEEK\s*=\s*\{([\s\S]*?)\}/.exec(source),label=`Unit 00 lesson ${index+1}`;
