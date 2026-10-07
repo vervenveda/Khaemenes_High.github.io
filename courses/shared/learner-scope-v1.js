@@ -12,6 +12,11 @@
         "khaemenes-prealgebra-",
         "khaemenes-grade09-last-open-v1"
       ]
+    },
+    "algebra-1": {
+      prefixes: [
+        "khaemenes-algebra1-"
+      ]
     }
   };
   const config = configs[scope];
