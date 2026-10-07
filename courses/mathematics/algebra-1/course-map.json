@@ -164,5 +164,12 @@
     "geometry": "../geometry/",
     "algebra_2": "../algebra-2/",
     "scientific_calculator": "../tools/calculator"
+  },
+  "lesson_evidence_contract": {
+    "mastery_threshold": 80,
+    "units_1_9_questions_per_lesson": 10,
+    "units_10_13_questions_per_lesson": 5,
+    "formal_unit_mastery_questions": 20,
+    "note": "The late-unit compact lesson checks are a documented compatibility contract; every formal unit mastery check remains 20 lesson-balanced questions."
   }
 }
