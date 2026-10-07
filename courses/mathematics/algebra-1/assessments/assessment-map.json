@@ -9,7 +9,9 @@
     "mastery_required": 8,
     "week_1": {
       "classification": "readiness-diagnostic",
-      "course_grade_eligible": false
+      "course_grade_eligible": false,
+      "separate_from_36_question_diagnostic": true,
+      "note": "Week 1 weekly readiness confirmation is a separate 10-question evidence surface; the 36-question diagnostic remains the official starting assessment."
     },
     "graded_instructional_weeks": 35,
     "dimensions": [
@@ -21,6 +23,7 @@
     ],
     "week_unit_map": {
       "1": 0,
+      "36": 13,
       "2-3": 1,
       "4-6": 2,
       "7-9": 3,
@@ -32,8 +35,7 @@
       "24-26": 9,
       "27-30": 10,
       "31-32": 11,
-      "33-35": 12,
-      "36": 13
+      "33-35": 12
     }
   },
   "unit_mastery": {
@@ -52,7 +54,8 @@
     "mastery_requires": {
       "selected_response_percent": 80,
       "constructed_response_percent": 80,
-      "overall_percent": 80
+      "overall_percent": 80,
+      "evaluator_review_complete": true
     },
     "constructed_rubric": "0-4 per response",
     "trust": "browser-local public assessment plus local human review; editable and unverified"
@@ -61,17 +64,48 @@
     "id": "KH-MATH-A1-MIDTERM-U01-U06",
     "selected_response_questions": 60,
     "constructed_responses": 6,
-    "units": [1,2,3,4,5,6],
+    "units": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
     "after_week": 18,
-    "answer_balance": {"A":15,"B":15,"C":15,"D":15}
+    "answer_balance": {
+      "A": 15,
+      "B": 15,
+      "C": 15,
+      "D": 15
+    }
   },
   "final": {
     "id": "KH-MATH-A1-FINAL-36W",
     "selected_response_questions": 100,
     "constructed_responses": 10,
-    "units": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "units": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
     "week": 36,
-    "answer_balance": {"A":25,"B":25,"C":25,"D":25}
+    "answer_balance": {
+      "A": 25,
+      "B": 25,
+      "C": 25,
+      "D": 25
+    }
   },
   "definitive_answer_policy": true,
   "confidential_assessment_policy": "Public repository forms are self-check and portfolio-evidence instruments. Confidential summative testing requires separately issued unpublished forms."
