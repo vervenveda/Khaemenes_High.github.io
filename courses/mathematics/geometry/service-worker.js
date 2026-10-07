@@ -158,8 +158,6 @@ function shouldNeverCache(url){return NEVER_CACHE.test(url.pathname)}
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(CORE.map(url=>cache.add(new Request(url,{cache:"reload"}))))).then(()=>self.skipWaiting()))});
 async function purgeSensitiveCacheEntries(){const cache=await caches.open(CACHE);const requests=await cache.keys();await Promise.all(requests.filter(request=>shouldNeverCache(new URL(request.url))).map(request=>cache.delete(request)))}
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(purgeSensitiveCacheEntries).then(()=>self.clients.claim()))});
-const NEVER_CACHE=/(?:^|\/)(?:teacher|teacher-keys)(?:\/|$)/i;
-function shouldNeverCache(url){return NEVER_CACHE.test(url.pathname)}
 self.addEventListener("fetch",event=>{
  if(event.request.method!=="GET")return;
  const url=new URL(event.request.url); if(url.origin!==location.origin)return;
