@@ -57,7 +57,9 @@
     "overallReadyPercent": 80,
     "essentialStrandFloorPercent": 80,
     "essentialStrands": ["close_reading_evidence", "language_conventions", "source_argument"],
-    "supportedRoute": "Unit 0 Foundations & Readiness"
+    "supportedRoute": "Unit 0 Foundations & Readiness (six-week bridge)",
+    "supportedPath": "foundations/index.html",
+    "supportedExitAssessment": "foundations/index.html#assessment"
   },
   "courseUnits": 12,
   "weeks": 36,
