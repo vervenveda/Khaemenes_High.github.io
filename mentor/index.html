@@ -38,10 +38,10 @@
 <form class="form" id="form"><textarea id="question" maxlength="1200" aria-label="Ask the mentor" placeholder="Ask about the lesson, concept, evidence, or reasoning you are working on now."></textarea><button class="send" type="submit">Ask Mentor</button></form>
 <p class="status" id="status"></p>
 </section>
-<nav class="links" aria-label="Academy links"><a href="/stos/khaemenes/student/">Student Portal</a><a href="/stos/khaemenes/family/">Family Profile</a><a href="https://vervenveda.com/beta/">Beta Program</a></nav>
+<nav class="links" aria-label="Academy links"><a href="../#student-portal">Student Portal</a><a href="../#parent-portal">Family Profile</a><a href="https://vervenveda.com/beta/">Beta Program</a></nav>
 </main>
-<script src="/stos/khaemenes/assets/khaemenes-family-registry.js"></script>
-<script src="/stos/khaemenes/assets/khaemenes-naib-mentor-router.js"></script>
+
+
 <script>
 (()=>{
 "use strict";
@@ -68,6 +68,6 @@ async function ask(text){const cleaned=safe(text,1200).trim();if(!cleaned)return
 form.addEventListener("submit",e=>{e.preventDefault();ask(question.value)});document.querySelectorAll(".prompt").forEach(b=>b.addEventListener("click",()=>{question.value=b.textContent;question.focus()}));
 })();
 </script>
-<script src="/stos/khaemenes/assets/vnv-beta-link.js" defer></script>
+
 </body>
 </html>
