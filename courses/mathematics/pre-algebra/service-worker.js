@@ -1,13 +1,14 @@
 "use strict";
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v6-compact-course-shell`;
+const CACHE_NAME=`${CACHE_PREFIX}v7-compact-course-shell`;
 const CORE_FILES=[
   "./",
   "./index.html",
   "./offline.html",
   "./manifest.webmanifest",
   "./course-map.json",
+  "./video-map.json",
   "./records/",
   "./records/course-completion-certificate.html",
   "./assets/prealgebra-course-gates-v1.js",
