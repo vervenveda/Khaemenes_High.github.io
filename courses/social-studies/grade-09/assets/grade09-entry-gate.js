@@ -9,13 +9,19 @@ function decision(){
  const db=read('khaemenes_grade09_social_studies_v1',{});
  if(records.isBlocked())return {allow:false,title:'Saved work needs attention',message:'The stored course record was preserved. Resolve the visible record warning.',href:'index.html',label:'Course Entrance'};
  const s=Array.isArray(db.students)?db.students.find(s=>s.id===db.activeId):null;
- if(s&&(Object.values(s.completedLessons||{}).some(days=>Array.isArray(days)&&days.some(Boolean))||Object.keys(s.assignments||{}).length||Object.keys(s.quizzes||{}).length||Object.keys(s.exams||{}).length))return {allow:true,pathway:'returning_learner'};
+ const hasReturningWork=Boolean(s&&(
+   Object.values(s.completedLessons||{}).some(days=>Array.isArray(days)&&days.some(Boolean))||
+   Object.keys(s.assignments||{}).length||
+   Object.keys(s.quizzes||{}).length||
+   Object.keys(s.exams||{}).length
+ ));
  const foundations=read('khaemenes_ss9_unit0_v2',{});
  if(passed(foundations.gateway)&&['P1','P2','P3','P4','P5','P6'].every(p=>typeof foundations.mastery?.[p]?.best==='number'&&foundations.mastery[p].best>=80))return {allow:true,pathway:'supported_42_week'};
  const readiness=read('khaemenes_ss9_readiness_v1');
  if(records.isBlocked())return {allow:false,title:'Saved placement needs attention',message:'The placement record was preserved. Resolve the record warning before continuing.',href:'index.html',label:'Course Entrance'};
- if(passed(readiness))return {allow:true,pathway:'core_36_week'};
+ if(passed(readiness))return {allow:true,pathway:hasReturningWork?'returning_learner':'core_36_week'};
  if(readiness?.route==='unit_0_refresher')return {allow:false,title:'Continue your foundations',message:'Build the six foundation strands at your own pace. There is no calendar deadline.',href:'prep/index.html',label:'Open Foundations'};
+ if(hasReturningWork)return {allow:false,title:'Complete readiness before resuming',message:'Your saved Global Studies work is preserved. Complete the readiness or foundations pathway before resuming official lessons.',href:'assessments/readiness.html',label:'Open Readiness'};
  return {allow:false,title:'Begin with readiness when you are ready',message:'This low-stakes check identifies support before the first official lesson. Take your time.',href:'assessments/readiness.html',label:'Open Readiness'};
 }
 function mount(result){
