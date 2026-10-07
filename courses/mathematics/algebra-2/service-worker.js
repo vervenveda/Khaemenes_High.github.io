@@ -1,10 +1,11 @@
 "use strict";
-const CACHE="khaemenes-algebra2-v3-math-entry";
+const CACHE_PREFIX="khaemenes-algebra2-";
+const CACHE=`${CACHE_PREFIX}v3-math-entry`;
 const CORE=[
   "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
   "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js",
   "./assets/question-bank.js","./assets/assessment-engine.js","./assets/lesson-tools.js",
-  "./assets/unit-progress.js","./course-data.js","./course-map.json",
+  "./assets/unit-progress.js","./assets/algebra2-progression.js","./course-data.js","./course-map.json",
   "./manifest.webmanifest","./diagnostic/","./assessments/"
 ];
 
@@ -19,7 +20,7 @@ self.addEventListener("install",event=>{
 self.addEventListener("activate",event=>{
   event.waitUntil(
     caches.keys()
-      .then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key))))
+      .then(keys=>Promise.all(keys.filter(key=>key.startsWith(CACHE_PREFIX)&&key!==CACHE).map(key=>caches.delete(key))))
       .then(()=>self.clients.claim())
   );
 });
