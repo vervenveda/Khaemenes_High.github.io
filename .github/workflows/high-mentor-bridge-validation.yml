@@ -6,6 +6,12 @@ on:
       - 'assets/khaemenes-mentor-link.js'
       - 'mentor/index.html'
       - 'tools/validate-high-mentor-bridge.mjs'
+      - 'stos/**'
+      - 'academy-authority.json'
+      - 'mentor-manifest.json'
+      - 'courses/index.html'
+      - 'grades/grade-11/index.html'
+      - 'grades/grade-12/index.html'
       - '.github/workflows/high-mentor-bridge-validation.yml'
   push:
     branches: [ main ]
@@ -13,6 +19,12 @@ on:
       - 'assets/khaemenes-mentor-link.js'
       - 'mentor/index.html'
       - 'tools/validate-high-mentor-bridge.mjs'
+      - 'stos/**'
+      - 'academy-authority.json'
+      - 'mentor-manifest.json'
+      - 'courses/index.html'
+      - 'grades/grade-11/index.html'
+      - 'grades/grade-12/index.html'
       - '.github/workflows/high-mentor-bridge-validation.yml'
 
 permissions:
