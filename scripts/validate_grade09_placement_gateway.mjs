@@ -100,7 +100,7 @@ assert(
   "Social Studies preserves returning work while requiring readiness"
 );
 assert(
-  (registry.match(/\\/Khaemenes_High\\.github\\.io\\//g) || []).length === 1,
+  registry.split("/Khaemenes_High.github.io/").length - 1 === 1,
   "Grade 09 registry keeps only its legacy-route normalizer"
 );
 
