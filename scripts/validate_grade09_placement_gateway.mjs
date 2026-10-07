@@ -26,6 +26,10 @@ function scriptSources(html) {
 const registry = read("grades/grade-09/student-profile/student-course-registry.js");
 const catalog = JSON.parse(read("courses/shared/course-entry-catalog.json"));
 const preAlgebraIndex = read("courses/mathematics/pre-algebra/index.html");
+const preAlgebraUnitIndex = read("courses/mathematics/pre-algebra/units/unit-01/index.html");
+const preAlgebraLessonPage = read("courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html");
+const preAlgebraUnitDashboard = read("courses/mathematics/pre-algebra/units/unit-01/assets/unit-dashboard.js");
+const preAlgebraLessonEngine = read("courses/mathematics/pre-algebra/units/unit-01/assets/lesson-engine.js");
 const englishIndex = read("courses/language-arts/english-9/index.html");
 const scienceIndex = read("courses/science/integrated-science-9/index.html");
 const socialIndex = read("courses/social-studies/grade-09/index.html");
@@ -59,6 +63,18 @@ for (const catalogId of [
 assert(
   scriptSources(preAlgebraIndex).includes("assets/prealgebra-course-gates-v1.js"),
   "Pre-Algebra entry loads its existing placement gate"
+);
+assert(
+  scriptSources(preAlgebraUnitIndex).includes("assets/unit-dashboard.js") &&
+    preAlgebraUnitDashboard.includes("function entrance()") &&
+    preAlgebraUnitDashboard.includes("if(!gate.ok)"),
+  "Pre-Algebra Unit 1 dashboard enforces the readiness gate on direct entry"
+);
+assert(
+  scriptSources(preAlgebraLessonPage).includes("../assets/lesson-engine.js") &&
+    preAlgebraLessonEngine.includes("const g1=entrance()") &&
+    preAlgebraLessonEngine.includes("if(!g2.ok)"),
+  "Pre-Algebra Unit 1 lessons enforce readiness and sequence gates on direct entry"
 );
 assert(
   scriptSources(englishIndex).some((src) => src.includes("shared/course-entry-contract.js")) &&
@@ -106,6 +122,8 @@ assert(
 
 compile("student-course-registry.js", registry);
 compile("prealgebra-course-gates-v1.js", preAlgebraGate);
+compile("prealgebra-unit-dashboard.js", preAlgebraUnitDashboard);
+compile("prealgebra-lesson-engine.js", preAlgebraLessonEngine);
 compile("grade09-entry-gate.js", socialGate);
 
 function socialDecision(values) {
