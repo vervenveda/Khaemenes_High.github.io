@@ -120,9 +120,9 @@ Each student receives a personalized learning environment including:
 - Achievement Certificates
 - Graduation Records
 
-Profiles are portable and designed to move securely between devices.
+Profiles are local-first. The current High School portal stores the display profile and course shelf in browser storage on the device being used. Families may explicitly export a JSON profile or progress file for manual transfer; that export is not an authenticated cloud record and should be treated as local data.
 
-Future releases will support secure cloud synchronization.
+Secure cross-device account synchronization is not active. Future STOS gateway commissioning will require a separate account, privacy, and security review before any real learner records are onboarded.
 
 ---
 
