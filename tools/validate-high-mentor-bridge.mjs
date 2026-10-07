@@ -3,6 +3,20 @@ import assert from "node:assert/strict";
 
 const doorway=fs.readFileSync("assets/khaemenes-mentor-link.js","utf8");
 const surface=fs.readFileSync("mentor/index.html","utf8");
+const neutralFiles=[
+  "stos/mentor/index.html",
+  "stos/khaemenes/student/index.html",
+  "stos/khaemenes/family/index.html",
+  "stos/khaemenes/assets/khaemenes-family-registry.js",
+  "stos/khaemenes/assets/khaemenes-naib-mentor-router.js",
+  "stos/khaemenes/assets/vnv-beta-link.js"
+];
+for(const file of neutralFiles)assert.ok(fs.existsSync(file),`neutral deferred STOS file missing: ${file}`);
+for(const file of neutralFiles.filter(file=>file.endsWith(".js"))){
+  const bridge=fs.readFileSync(file,"utf8");
+  assert.ok(!bridge.includes("fetch(")&&!bridge.includes("XMLHttpRequest")&&!bridge.includes("WebSocket")&&!bridge.includes("http://")&&!bridge.includes("https://"),`neutral STOS bridge must not call a network: ${file}`);
+}
+assert.ok(fs.readFileSync("stos/mentor/index.html","utf8").includes("does not call STOS Secure Server"),"STOS mentor doorway must remain an inert fallback");
 
 assert.ok(!doorway.includes("artist1970.github.io"),"mentor doorway must not route to the legacy cross-origin mentor");
 assert.ok(doorway.includes('MENTOR_PATH="/Khaemenes_High.github.io/mentor/"'),"mentor doorway must use the High School same-ecosystem mentor surface");
