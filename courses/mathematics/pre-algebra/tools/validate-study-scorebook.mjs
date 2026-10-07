@@ -63,7 +63,7 @@ expect(navigatorIndex>=0&&scorebookIndex>navigatorIndex,"Study Scorebook must lo
 expect(serviceWorker.includes('./assets/prealgebra-study-scorebook-v1.js'),"Compact offline shell must cache the Study Scorebook component.");
 expect(serviceWorker.includes('./assets/prealgebra-course-navigator-v1.js'),"Compact offline shell must preserve the Course Navigator component.");
 expect(!serviceWorker.includes('./assets/prealgebra-assessment-depth-v2-core.js'),"Study Scorebook release must keep assessment-depth content on-demand.");
-expect(serviceWorker.includes('v6-compact-course-shell'),"Study Scorebook validation must target the compact v6 offline-shell release.");
+expect(serviceWorker.includes('v7-compact-course-shell'),"Study Scorebook validation must target the compact v6 offline-shell release.");
 
 for(const relative of ["assets/prealgebra-study-scorebook-v1.js","assets/prealgebra-assessment-depth-v2.js","service-worker.js"]){
   const check=spawnSync(process.execPath,["--check",path.join(root,relative)],{encoding:"utf8"});
