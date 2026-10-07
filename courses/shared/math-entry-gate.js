@@ -23,11 +23,12 @@
   const claimKey = base => `${claimPrefix}${encodeURIComponent(base)}`;
   const learnerTarget = (base, profile) => contract.scopedKey(base, profile);
 
-  function migrateLegacy(base, profile) {
+  function readScopedTarget(base, profile) {
     const target = learnerTarget(base, profile);
     if (raw.get.call(localStorage, target) !== null) return target;
     const claim = parseLegacy(raw.get.call(localStorage, claimKey(base)));
-    if (claim && claim.learnerId !== profile.learnerId) return null;
+    const legacyOwner = claim?.legacyLearnerId || claim?.learnerId || null;
+    if (legacyOwner && legacyOwner !== profile.learnerId) return null;
     if (!claim) {
       const legacy = raw.get.call(localStorage, base);
       if (legacy !== null) {
@@ -36,7 +37,8 @@
           claimKey(base),
           JSON.stringify({
             version: 1,
-            learnerId: profile.learnerId,
+            legacyLearnerId: profile.learnerId,
+            learners: [profile.learnerId],
             claimed_at: new Date().toISOString()
           })
         );
@@ -46,31 +48,48 @@
     return target;
   }
 
-  const scoped = key => {
+  function writeScopedTarget(base, profile) {
+    const target = learnerTarget(base, profile);
+    const key = claimKey(base);
+    const claim = parseLegacy(raw.get.call(localStorage, key)) || {
+      version: 1,
+      legacyLearnerId: null,
+      learners: []
+    };
+    claim.learners = Array.isArray(claim.learners) ? claim.learners : [];
+    if (!claim.learners.includes(profile.learnerId)) claim.learners.push(profile.learnerId);
+    raw.set.call(localStorage, key, JSON.stringify(claim));
+    return target;
+  }
+
+  const scoped = (key, mode = "read") => {
     if (!key || key.includes(":learner:")) return key;
     const learnerScoped = key === "khaemenes-high-pinned-courses-v2" ||
       prefixes.some(prefix => key === prefix || key.startsWith(prefix));
     if (!learnerScoped) return key;
     const profile = contract?.readAcademyProfile?.();
-    return profile ? migrateLegacy(key, profile) : null;
+    if (!profile) return null;
+    return mode === "write"
+      ? writeScopedTarget(key, profile)
+      : readScopedTarget(key, profile);
   };
   Storage.prototype.getItem = function(key) {
-    const target = scoped(String(key));
+    const target = scoped(String(key), "read");
     return target === null ? null : raw.get.call(this, target);
   };
   Storage.prototype.setItem = function(key, value) {
-    const target = scoped(String(key));
+    const target = scoped(String(key), "write");
     if (target !== null) raw.set.call(this, target, value);
   };
   Storage.prototype.removeItem = function(key) {
-    const target = scoped(String(key));
+    const target = scoped(String(key), "write");
     if (target !== null) raw.remove.call(this, target);
   };
   function parse(value) { try { return JSON.parse(value || "null"); } catch { return null; } }
   function readScoped(base, profile) {
     if (!profile || !base) return null;
     try {
-      const target = migrateLegacy(base, profile);
+      const target = readScopedTarget(base, profile);
       return target === null ? null : parseLegacy(raw.get.call(localStorage, target));
     } catch { return null; }
   }
