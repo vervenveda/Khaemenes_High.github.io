@@ -24,8 +24,9 @@
     );
     if(ready)return {allow:true,profile:academyProfile};
     const diagnostic=new URL("assessments/diagnostic/index.html",new URL("../",document.currentScript?.src||location.href)).href;
+    const foundations=new URL("foundations/index.html",new URL("../",document.currentScript?.src||location.href)).href;
     return readiness?.route==="unit_0_refresher"
-      ? {allow:false,title:"Continue your English foundations",message:"This readiness result recommends targeted review before Official Week 1. Work through the diagnostic corrections and try again when you are ready.",href:diagnostic,label:"Review readiness"}
+      ? {allow:false,title:"Continue your English foundations",message:"This readiness result recommends a six-week targeted bridge before Official Week 1. Work through the local lessons, print the evidence pages if useful, and return for the exit check when you are ready.",href:foundations,label:"Open Foundations bridge"}
       : {allow:false,title:"Begin with English readiness",message:"This low-stakes check identifies the support that will make the 36-week course more useful. Take it at your own pace.",href:diagnostic,label:"Open readiness check"};
   }
   function mountEntryGate(){
