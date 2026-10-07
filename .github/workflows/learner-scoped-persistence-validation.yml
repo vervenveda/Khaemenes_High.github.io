@@ -1,0 +1,41 @@
+name: Learner-Scoped Persistence Validation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "courses/shared/course-entry-contract.js"
+      - "courses/shared/learner-scope-v1.js"
+      - "courses/shared/math-entry-gate.js"
+      - "courses/mathematics/pre-algebra/index.html"
+      - "courses/mathematics/algebra-1/index.html"
+      - "scripts/validate_learner_scoped_persistence.mjs"
+      - ".github/workflows/learner-scoped-persistence-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Validate migration and collision behavior
+        run: node scripts/validate_learner_scoped_persistence.mjs
+      - name: Syntax-check scope modules
+        run: |
+          node --check courses/shared/course-entry-contract.js
+          node --check courses/shared/learner-scope-v1.js
+          node --check courses/shared/math-entry-gate.js
+          node --check scripts/validate_learner_scoped_persistence.mjs
+      - name: Check patch whitespace
+        run: git diff --check HEAD^ HEAD
