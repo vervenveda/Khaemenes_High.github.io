@@ -126,7 +126,7 @@ for (let unit = 1; unit <= 13; unit++) {
   ok(sw.includes(`./units/unit-${id}/unit-map.json`), `Algebra I offline release caches Unit ${id} lesson map`);
 }
 ok(sw.includes("./diagnostic/index.html") && sw.includes("./readiness/index.html"), "Algebra I offline release caches launch entry surfaces");
-ok(sw.includes("v7-responsive-deep-lessons") && sw.includes("focused-assessment-v1.js") && sw.includes("responsive-layout-v1.css"), "Algebra I offline cache version reflects responsive/deep/focused v7 release");
+ok(sw.includes("khaemenes-algebra1-v8-offline-companions") && sw.includes("focused-assessment-v1.js") && sw.includes("responsive-layout-v1.css"), "Algebra I offline cache version reflects the v8 offline-companions release");
 
 if (failures) {
   console.error(`\nLAUNCH VALIDATION FAILED: ${failures} problem(s).`);
