@@ -376,5 +376,12 @@
       ],
       "path": "units/unit-13/"
     }
-  ]
+  ],
+  "lesson_evidence_contract": {
+    "mastery_threshold": 80,
+    "official_lesson_questions": 20,
+    "conditional_unit_0_lesson_questions": 20,
+    "weekly_quiz_questions": 10,
+    "note": "Official and conditional bridge lessons use the same 20-question lesson evidence contract; weekly checks remain separate 10-question evidence."
+  }
 }
