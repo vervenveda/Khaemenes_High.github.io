@@ -36,3 +36,10 @@ These are **catalog-level** gaps, not a claim that individual lessons lack all i
 5. Validate course navigation, responsive display, and regression checks on the published GitHub Pages site.
 
 Do not delete legacy assets, assume a YouTube embed is live, or represent staged placements as deployed video lessons.
+
+## Verification pass 2 — 2026-10-08
+- Compared both library directories by Git blob SHA: all 24 entries (23 JSON and README) match exactly; **no deletion authorized** because consumer references are not yet proven absent.
+- Current repository tree contains 269 lesson HTML files across the five higher-math target course directories.
+- External source checks locate public descriptions for the three proposed videos: number systems (`WxXZaP8Y8pI`), order of operations (`saTBf8AO4Ok`), and functions (`lGfsp2CWjok`). These support preliminary topic alignment only; embedded playback and caption accessibility remain untested.
+- Preserve `enabled:false` on all staged placements until a browser-level verification and transcript fallback review.
+- Caution: third-party video summaries are not definitive proof of mathematical accuracy; evaluate the actual lesson content before promoting a resource.
