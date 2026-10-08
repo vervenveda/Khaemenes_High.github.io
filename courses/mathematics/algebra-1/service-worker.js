@@ -1,5 +1,5 @@
 "use strict";
-const CACHE_VERSION="khaemenes-algebra1-v13-advanced-lessons-20261008";
+const CACHE_VERSION="khaemenes-algebra1-v14-complete-course-20261008";
 const LEGACY_SOURCE="./service-worker-precache-v1.js";
 const RELEASE_FILES=[
  "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
