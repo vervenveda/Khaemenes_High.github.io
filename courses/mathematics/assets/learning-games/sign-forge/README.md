@@ -9,3 +9,16 @@ For example, Extended students can reason about:
 without multiplying anything: four negative factors is an even count, so the product must be positive.
 
 The game includes the same Foundation / Core / Extended pathways, 12/16/20 mission rounds, missed-item review, local best score, and 80% mastery target.
+
+
+## Canonical Shared-Game Migration · Sign Forge v3
+
+Canonical: `courses/mathematics/assets/learning-games/sign-forge/`
+
+Modes:
+- Pre-Algebra U02-L06 — integer products and quotients
+- Algebra I U02-L07 — signed monomial coefficients
+- Geometry U04-L04 — signed slopes and negative reciprocals
+- Algebra II U04-L02 — rational-expression products and quotients
+
+The original Pre-Algebra copy remains as rollback compatibility until production verification. The shared launcher now permits multiple distinct canonical games on one lesson, so legitimate overlaps do not mask one another.

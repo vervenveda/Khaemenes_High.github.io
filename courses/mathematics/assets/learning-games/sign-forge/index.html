@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Khaemenes Pre-Algebra Unit 2 Lesson 6 companion game: Multiplying Integers.">
+<meta name="description" content="Khaemenes Mathematics shared Sign Forge game: signed multiplication and division progressing through Pre-Algebra, Algebra I, Geometry, and Algebra II.">
 <meta name="theme-color" content="#090d14">
-<title>Lesson 6 · Sign Forge · Multiplying Integers</title>
+<title>Sign Forge · Khaemenes Mathematics Shared Game</title>
 <style>
 :root{
 --bg:#090d14;--panel:#151d29;--ink:#f7f2e7;--muted:#c9c1b2;--line:#3b4655;
@@ -60,15 +60,15 @@ footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
 </head>
 <body><a class="skip" href="#game">Skip to game</a><div class="shell">
 <header class="topbar">
-<a class="brand" href="../units/unit-02/lessons/lesson-06-multiply-divide-integers.html"><div class="seal"><span>×</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 02</p><p class="crumb">Lesson 6 Companion · Multiplying Integers</p></div></a>
-<div class="actions"><a class="ghost" href="../units/unit-02/lessons/lesson-06-multiply-divide-integers.html">← Lesson 6</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
+<a class="brand" id="brandLink" href="../../../pre-algebra/units/unit-02/lessons/lesson-06-multiply-divide-integers.html"><div class="seal"><span>×</span></div><div><p class="kicker" id="courseKicker">Khaemenes High · Pre-Algebra · Unit 02</p><p class="crumb" id="courseCrumb">Lesson 6 Companion · Multiplying & Dividing Integers</p></div></a>
+<div class="actions"><a class="ghost" id="topReturn" href="../../../pre-algebra/units/unit-02/lessons/lesson-06-multiply-divide-integers.html">← Pre-Algebra U02-L06</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
 </header>
 
 <section class="hero">
-<div class="eyebrow">Unit 2 · Lesson 6 · Companion Game</div>
-<h1>Sign Forge</h1>
-<p>Determine the sign, forge the magnitude, model repeated signed change, and use patterns to explain why integer products behave the way they do.</p>
-<div class="lesson-sync"><strong>Lesson sync:</strong> same signs produce a positive product; different signs produce a negative product. Multiply absolute values for magnitude, then apply the sign rule. Zero annihilates a product, 1 preserves a value, and −1 produces its opposite.</div>
+<div class="eyebrow" id="modeEyebrow">Pre-Algebra · Unit 02 · Lesson 06</div>
+<h1 id="gameTitle">Sign Forge</h1>
+<p id="modeDescription">Determine the sign, forge the magnitude, model repeated signed change, and use patterns to explain why integer products and quotients behave the way they do.</p>
+<div class="lesson-sync"><strong>Lesson sync:</strong> same nonzero signs produce a positive product or quotient; different signs produce a negative result. Operate on magnitudes, then apply the sign rule. Zero times any value is zero; zero divided by a nonzero value is zero; division by zero is undefined.</div>
 </section>
 
 <section class="panel studio">
@@ -98,28 +98,30 @@ footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
 
 <main id="game" class="game-grid">
 <section class="panel play">
-<div class="section-head"><div><div class="eyebrow">Sign Forge Challenge</div><h2>Pattern, Product & Context Missions</h2></div><p>Predict signs, compute products, reason with zero and ±1, model repeated changes, evaluate absolute-value expressions, and analyze many-factor products.</p></div>
+<div class="section-head"><div><div class="eyebrow">Sign Forge Challenge</div><h2>Pattern, Product, Quotient & Context Missions</h2></div><p>Predict signs, compute products, reason with zero and ±1, model repeated changes, evaluate absolute-value expressions, and analyze many-factor products.</p></div>
 <div class="status"><div><div class="progress-label"><span id="roundLabel">Mission 1 of 16</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div></div>
 <div class="stage"><div><div class="mission-badge" id="missionBadge">Sign Rule</div><div class="big" id="challengeValue">(−)(+)</div><div class="prompt" id="questionPrompt">What is the sign of the product?</div></div></div>
 <div class="choice-grid" id="choiceGrid"></div>
 <div class="action-row"><button class="secondary" id="hintBtn">Reasoning hint</button><button class="primary" id="checkBtn">Check reasoning</button><button class="secondary" id="nextBtn" hidden>Next mission →</button></div>
 <div class="feedback" id="feedback"><h3>Ready.</h3><p>Determine the sign before multiplying the magnitudes.</p></div>
-<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../units/unit-02/lessons/lesson-06-multiply-divide-integers.html">Return to Lesson 6</a></div></div>
+<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" id="returnToLesson" href="../../../pre-algebra/units/unit-02/lessons/lesson-06-multiply-divide-integers.html">Return to Pre-Algebra U02-L06</a></div></div>
 </section>
 
 <aside class="panel side">
-<h2>Lesson 6 Field Guide</h2>
+<h2 id="fieldGuideTitle">Lesson 6 Field Guide</h2>
 <div class="concept"><b>Same signs</b><span>Positive product.</span></div>
-<div class="concept"><b>Different signs</b><span>Negative product.</span></div>
+<div class="concept"><b>Different signs</b><span>Negative product or quotient.</span></div>
+<div class="concept"><b>Division</b><span>Use the same sign rule as multiplication; division by zero is undefined.</span></div>
 <div class="concept"><b>Magnitude first</b><span>Multiply absolute values, then apply sign.</span></div>
 <div class="concept"><b>Zero / ±1</b><span>a·0 = 0, a·1 = a, a·(−1) = −a.</span></div>
 <div class="concept"><b>Parity</b><span>Even negative-factor count → positive; odd → negative.</span></div>
 <div class="tip"><strong>Forge question</strong><p id="strategyText">Are the factor signs the same or different?</p></div>
-<div class="controls"><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
+<div class="tip"><strong>Course progression</strong><p id="courseContext">The same sign structure later controls algebraic coefficients, perpendicular slopes, and rational expressions.</p></div>
+<div class="controls"><div class="control"><label for="courseMode">Course level</label><select id="courseMode"><option value="prealgebra">Pre-Algebra · Integer Products & Quotients</option><option value="algebra1">Algebra I · Signed Monomials</option><option value="geometry">Geometry · Signed Slopes & Negative Reciprocals</option><option value="algebra2">Algebra II · Rational Products & Quotients</option></select></div><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
 <p class="best" id="bestScore">Best mastery score: —</p>
 </aside>
 </main>
-<footer>KH-MATH-PA-U02-L6 · multiplication · sign rules · repeated change · zero/±1 · negative-factor parity · 80% mastery</footer>
+<footer>Khaemenes Mathematics Shared Game · Sign Forge · signed products & quotients · multi-course progression · 80% mastery</footer>
 </div>
 
 <script>
@@ -155,13 +157,65 @@ const BANK=[
 {l:"Extended",b:"Reasoning",v:"Why is (−a)(−b) positive for positive a,b?",q:"Which explanation best matches the lesson’s structure?",o:["Because negative numbers are always larger.","Because matching signs produce a positive product, consistent with multiplication patterns and inverses.","Because absolute value removes both factors.","Because every product is positive."],a:1,h:"Use the sign pattern and inverse structure.",w:"The same-sign rule is supported by multiplication patterns and inverse relationships."}
 ];
 
-const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
-const BEST="khaemenes-prealgebra-u02-l06-sign-forge-v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+
+const PREALGEBRA_DIVISION_BANK=[
+{l:"Foundation",b:"Division Sign",v:"−24 ÷ 6",q:"What is the quotient?",o:["−4","4","−18","18"],a:0,h:"Different nonzero signs give a negative quotient.",w:"−24 ÷ 6 = −4."},
+{l:"Foundation",b:"Division Sign",v:"−35 ÷ (−5)",q:"What is the quotient?",o:["−7","7","−30","30"],a:1,h:"Same nonzero signs give a positive quotient.",w:"−35 ÷ (−5) = 7."},
+{l:"Foundation",b:"Zero Dividend",v:"0 ÷ (−8)",q:"What is the quotient?",o:["0","−8","8","Undefined"],a:0,h:"Zero divided by a nonzero number is zero.",w:"0 ÷ (−8) = 0."},
+{l:"Core",b:"Division by Zero",v:"12 ÷ 0",q:"What is the result?",o:["0","12","−12","Undefined"],a:3,h:"No number multiplied by 0 can equal 12.",w:"Division by zero is undefined."},
+{l:"Core",b:"Inverse Check",v:"42 ÷ (−7)",q:"Which quotient is verified by quotient × divisor = dividend?",o:["−6","6","−49","49"],a:0,h:"Ask what times −7 equals 42.",w:"−6 × −7 = 42, so 42 ÷ −7 = −6."},
+{l:"Extended",b:"Mixed Product & Quotient",v:"(−6)(8) ÷ (−4)",q:"What is the value?",o:["−12","12","−20","20"],a:1,h:"The product is −48; dividing by −4 gives a positive result.",w:"(−6)(8) ÷ (−4)=12."}
+];
+
+const COURSE_CONFIG={
+prealgebra:{label:"Pre-Algebra",title:"Sign Forge",field:"Lesson 6 Field Guide",context:"Multiply and divide signed integers by separating magnitude from sign, using inverse relationships, and recognizing zero and ±1 structure.",eyebrow:"Pre-Algebra · Unit 02 · Lesson 06",kicker:"Khaemenes High · Pre-Algebra · Unit 02",crumb:"Lesson 6 Companion · Multiplying & Dividing Integers",returnHref:"../../../pre-algebra/units/unit-02/lessons/lesson-06-multiply-divide-integers.html",returnLabel:"Return to Pre-Algebra U02-L06"},
+algebra1:{label:"Algebra I",title:"Sign Forge · Signed Monomials",field:"Signed Coefficient Field Guide",context:"Extend integer sign rules to monomial products and quotients: operate on signed coefficients while exponent laws control variable factors.",eyebrow:"Algebra I · Unit 02 · Lesson 07",kicker:"Khaemenes High · Algebra I · Unit 02",crumb:"Multiplying Monomials · Signed Coefficients",returnHref:"../../../algebra-1/units/unit-02/lessons/lesson-07-multiplying-monomials-factoring-the-gcf.html",returnLabel:"Return to Algebra I U02-L07"},
+geometry:{label:"Geometry",title:"Sign Forge · Slope Products",field:"Perpendicular Slope Field Guide",context:"Use signed multiplication and division to compute slopes and verify negative-reciprocal relationships for perpendicular nonvertical lines.",eyebrow:"Geometry · Unit 04 · Lesson 04",kicker:"Khaemenes High · Geometry · Unit 04",crumb:"Parallel & Perpendicular Slopes",returnHref:"../../../geometry/units/unit-04/lessons/u04-l04.html",returnLabel:"Return to Geometry U04-L04"},
+algebra2:{label:"Algebra II",title:"Sign Forge · Rational Operations",field:"Rational Product & Quotient Field Guide",context:"Control signs while multiplying and dividing rational expressions, reciprocating divisors, simplifying coefficients, and preserving restrictions.",eyebrow:"Algebra II · Unit 04 · Lesson 02",kicker:"Khaemenes High · Algebra II · Unit 04",crumb:"Multiplying & Dividing Rational Expressions",returnHref:"../../../algebra-2/units/unit-04/lessons/u04-l02.html",returnLabel:"Return to Algebra II U04-L02"}
+};
+
+const ALGEBRA1_BANK=[
+{l:"Foundation",b:"Signed Monomial Product",v:"(−3x)(4x²)",q:"What is the product?",o:["−12x³","12x³","−7x²","−12x²"],a:0,h:"Multiply coefficients and add exponents on x.",w:"(−3)(4)=−12 and x·x²=x³, so the product is −12x³."},
+{l:"Foundation",b:"Signed Monomial Product",v:"(−5a²)(−2a³)",q:"What is the product?",o:["−10a⁵","10a⁵","10a⁶","7a⁵"],a:1,h:"Same coefficient signs give a positive product.",w:"(−5)(−2)=10 and a²a³=a⁵."},
+{l:"Foundation",b:"Monomial Quotient",v:"−18m⁵ ÷ 6m²",q:"What is the quotient?",o:["−3m³","3m³","−12m³","−3m⁷"],a:0,h:"Divide coefficients and subtract exponents.",w:"−18÷6=−3 and m⁵÷m²=m³."},
+{l:"Core",b:"Monomial Quotient",v:"−24x⁴ ÷ (−6x)",q:"What is the quotient?",o:["−4x³","4x³","4x⁴","18x³"],a:1,h:"Same coefficient signs give a positive quotient.",w:"−24÷−6=4 and x⁴÷x=x³."},
+{l:"Core",b:"Negative-Factor Parity",v:"(−2x)(−3x²)(4x³)",q:"What is the product?",o:["−24x⁶","24x⁶","24x⁵","−24x⁵"],a:1,h:"Two negative coefficients give a positive sign; add exponents 1+2+3.",w:"The coefficient is +24 and the variable factor is x⁶."},
+{l:"Core",b:"Inverse Operation",v:"−6x=42",q:"What is x?",o:["−7","7","−36","36"],a:0,h:"Divide both sides by −6.",w:"42÷−6=−7."},
+{l:"Extended",b:"Coefficient Structure",v:"(−2a²b)(5ab³)",q:"What is the product?",o:["−10a³b⁴","10a³b⁴","−7a²b³","−10a²b⁴"],a:0,h:"Multiply signed coefficients; add exponents of matching variables.",w:"−2·5=−10, a²a=a³, and bb³=b⁴."},
+{l:"Extended",b:"Error Analysis",v:"(−4x²)(−3x³)=−12x⁵ ?",q:"What is the error?",o:["Exponents should multiply","Two negative coefficients should give a positive product","x²x³=x⁶","There is no error"],a:1,h:"Check the coefficient sign.",w:"The variable exponent is correct, but (−4)(−3)=+12."}
+];
+
+const GEOMETRY_BANK=[
+{l:"Foundation",b:"Slope Sign",v:"Δy=−12, Δx=4",q:"What is the slope?",o:["−3","3","−8","8"],a:0,h:"Slope is Δy ÷ Δx.",w:"−12÷4=−3."},
+{l:"Foundation",b:"Slope Sign",v:"Δy=−8, Δx=−2",q:"What is the slope?",o:["−4","4","−6","6"],a:1,h:"Same signs in the quotient give a positive result.",w:"−8÷−2=4."},
+{l:"Foundation",b:"Negative Reciprocal",v:"m=−3/4",q:"What slope is perpendicular to m?",o:["−4/3","4/3","3/4","−3/4"],a:1,h:"A perpendicular nonvertical slope is the negative reciprocal.",w:"The negative reciprocal of −3/4 is 4/3."},
+{l:"Core",b:"Negative Reciprocal",v:"m=5",q:"What slope is perpendicular to m?",o:["5","−5","1/5","−1/5"],a:3,h:"Write 5 as 5/1, swap numerator and denominator, then change sign.",w:"The perpendicular slope is −1/5."},
+{l:"Core",b:"Perpendicular Check",v:"(−2/3)(3/2)",q:"What does the product equal?",o:["1","−1","−4/9","4/9"],a:1,h:"Multiply numerators and denominators, including signs.",w:"(−2/3)(3/2)=−1, confirming negative reciprocals."},
+{l:"Core",b:"Line Relationship",v:"m₁=−5/2, m₂=2/5",q:"What relationship do the nonvertical lines have?",o:["Parallel","Perpendicular","Same line","Cannot determine"],a:1,h:"Multiply the slopes.",w:"(−5/2)(2/5)=−1, so the slopes are negative reciprocals."},
+{l:"Extended",b:"Coordinate Slope",v:"A(−2,5), B(4,−7)",q:"What is the slope AB?",o:["−2","2","−1/2","1/2"],a:0,h:"Compute (−7−5)/(4−(−2)).",w:"−12/6=−2."},
+{l:"Extended",b:"Perpendicular Design",v:"A line has slope −7/3.",q:"Which slope produces a perpendicular support?",o:["−3/7","3/7","−7/3","7/3"],a:1,h:"Use the negative reciprocal.",w:"The negative reciprocal of −7/3 is 3/7."}
+];
+
+const ALGEBRA2_BANK=[
+{l:"Foundation",b:"Rational Product Sign",v:"(−2x/3)(9/(4x))",q:"Assuming x≠0, what is the simplified product?",o:["−3/2","3/2","−3x/2","−3/(2x)"],a:0,h:"The x factors cancel; unlike signs give a negative product.",w:"(−18x)/(12x)=−3/2."},
+{l:"Foundation",b:"Rational Product",v:"(−6x/(5y))(10y/(9x))",q:"For x,y≠0, simplify.",o:["−4/3","4/3","−2/3","4/5"],a:0,h:"Cancel x and y, then reduce the signed coefficient fraction.",w:"−60/45=−4/3."},
+{l:"Foundation",b:"Rational Quotient Sign",v:"(−5a/(6b)) ÷ (−10a/(9b))",q:"For a,b≠0, simplify.",o:["−3/4","3/4","4/3","−4/3"],a:1,h:"Multiply by the reciprocal; same signs give a positive result.",w:"(−5a/6b)(−9b/10a)=45/60=3/4."},
+{l:"Core",b:"Multiply by Reciprocal",v:"(3x/5) ÷ (−9x/10)",q:"For x≠0, simplify.",o:["−2/3","2/3","−3/2","3/2"],a:0,h:"Rewrite division as multiplication by the reciprocal.",w:"(3x/5)(10/−9x)=30/−45=−2/3."},
+{l:"Core",b:"Rational Expression Product",v:"(−3x²/(4y))(8y²/(9x))",q:"For x,y≠0, simplify.",o:["−2xy/3","2xy/3","−6xy","−2x/(3y)"],a:0,h:"Cancel one x and one y after multiplying.",w:"−24x²y²/(36xy)=−2xy/3."},
+{l:"Core",b:"Sign Location",v:"A rational expression has exactly one overall negative sign.",q:"Which statement is correct?",o:["The negative may be placed in the numerator or denominator, but not both.","The negative must stay in front.","Moving the negative changes the value.","Putting a negative in both numerator and denominator keeps the expression negative."],a:0,h:"One negative factor controls the overall sign.",w:"A single negative can be written in front, in the numerator, or in the denominator; two negatives cancel."},
+{l:"Extended",b:"Nested Quotient",v:"(−4x²/(3y)) ÷ (2x/(9y²))",q:"For x,y≠0, simplify.",o:["−6xy","6xy","−2x/(3y)","−18xy"],a:0,h:"Multiply by 9y²/(2x), then cancel.",w:"(−4x²/3y)(9y²/2x)=−36x²y²/(6xy)=−6xy."},
+{l:"Extended",b:"Error Analysis",v:"(−a/b) ÷ (c/d)",q:"Which transformation is correct?",o:["−ad/(bc)","−ac/(bd)","ad/(bc)","−bd/(ac)"],a:0,h:"Division by c/d means multiplication by d/c.",w:"(−a/b)(d/c)=−ad/(bc), with nonzero denominators and divisor."}
+];
+
+const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),course:$("courseMode"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),brandLink:$("brandLink"),topReturn:$("topReturn"),returnLink:$("returnToLesson"),kicker:$("courseKicker"),crumb:$("courseCrumb"),eyebrow:$("modeEyebrow"),gameTitle:$("gameTitle"),modeDescription:$("modeDescription"),fieldTitle:$("fieldGuideTitle"),courseContext:$("courseContext"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
+const params=new URLSearchParams(location.search);if(COURSE_CONFIG[params.get("course")])el.course.value=params.get("course");let BEST=`khaemenes-math-sign-forge-${el.course.value}-v3`;let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
 function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
-function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
-function start(src=null){deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
+function activeBank(){if(el.course.value==="algebra1")return ALGEBRA1_BANK;if(el.course.value==="geometry")return GEOMETRY_BANK;if(el.course.value==="algebra2")return ALGEBRA2_BANK;return [...BANK,...PREALGEBRA_DIVISION_BANK]}
+function updateCourseMode(){const cfg=COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;BEST=`khaemenes-math-sign-forge-${el.course.value}-v3`;el.gameTitle.textContent=cfg.title;el.fieldTitle.textContent=cfg.field;el.courseContext.textContent=cfg.context;el.eyebrow.textContent=cfg.eyebrow;el.kicker.textContent=cfg.kicker;el.crumb.textContent=cfg.crumb;el.modeDescription.textContent=cfg.context;el.brandLink.href=cfg.returnHref;el.topReturn.href=cfg.returnHref;el.topReturn.textContent=`← ${cfg.returnLabel.replace("Return to ","")}`;el.returnLink.href=cfg.returnHref;el.returnLink.textContent=cfg.returnLabel;updateBest()}
+function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:activeBank().filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function start(src=null){updateCourseMode();deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
 function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;el.strategy.textContent=c.b.includes("Parity")?"Count negative factors before doing any multiplication.":c.b.includes("Context")||c.b.includes("Repeated")||c.b.includes("Model")?"Translate the repeated signed change into a multiplication expression.":"Determine the sign first, then multiply magnitudes.";feedback("","Mission ready.","Determine the sign before multiplying the magnitudes.");stats()}
 function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by sign and magnitude reasoning.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Product forged.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
 function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
@@ -169,8 +223,8 @@ function next(){if(!checked)return;if(index>=deck.length-1)return finish();index
 function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(e){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
 function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(BEST,String(p))}catch(e){}updateBest()}
-function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Sign Forge mastery passed":"Recheck the sign pattern";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} Lesson 6 multiplication missions correctly and met the 80% mastery target. Return to Lesson 6 for practice and reflection.`:`You solved ${correct} of ${attempts} missions correctly. Review the missed sign rules, repeated-change models, and parity questions, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
-el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
+function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Sign Forge mastery passed":"Recheck the sign pattern";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} ${COURSE_CONFIG[el.course.value].label} Sign Forge missions correctly and met the 80% mastery target. Return to the mapped lesson for the full instructional sequence.`:`You solved ${correct} of ${attempts} missions correctly. Review the sign structure, magnitude work, and inverse reasoning, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.course.onchange=()=>{const u=new URL(location.href);u.searchParams.set("course",el.course.value);history.replaceState(null,"",u);start()};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
 el.tabs.forEach((b,i)=>b.onclick=()=>{el.tabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));el.scenes.forEach((s,j)=>s.classList.toggle("active",j===i))});
 const later=(f,m)=>setTimeout(f,m);
 

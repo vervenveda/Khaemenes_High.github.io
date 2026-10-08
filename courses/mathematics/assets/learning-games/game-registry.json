@@ -568,6 +568,55 @@
         }
       ],
       "scope_note": "Geometry intentionally omitted: Integer Compass already owns signed-coordinate/vector progression. Complex subtraction remains with the complex-operations lesson family rather than duplicating Integer Sum Lab."
+    },
+    "sign-forge": {
+      "title": "Sign Forge",
+      "canonical_path": "courses/mathematics/assets/learning-games/sign-forge/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-06-sign-forge/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "02",
+          "lesson": "06",
+          "lesson_title": "Multiplying & Dividing Integers",
+          "mode": "integer-products-quotients",
+          "query": "?course=prealgebra&unit=02&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "02",
+          "lesson": "07",
+          "lesson_title": "Multiplying Monomials & Factoring the GCF",
+          "mode": "signed-monomials",
+          "query": "?course=algebra1&unit=02&lesson=07",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "04",
+          "lesson": "04",
+          "lesson_title": "Parallel and Perpendicular Slopes",
+          "mode": "signed-slopes-negative-reciprocals",
+          "query": "?course=geometry&unit=04&lesson=u04-l04",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "04",
+          "lesson": "02",
+          "lesson_title": "Multiplying and Dividing Rational Expressions",
+          "mode": "rational-products-quotients",
+          "query": "?course=algebra2&unit=04&lesson=u04-l02",
+          "wired": true
+        }
+      ]
     }
   }
 }
