@@ -100,3 +100,6 @@ jobs:
 
       - name: Verify inequalities, functions and linear-model lessons
         run: node courses/mathematics/algebra-1/tools/test-middle-lessons.mjs
+
+      - name: Validate authored systems, exponents and polynomials
+        run: node courses/mathematics/algebra-1/tools/test-advanced-lessons.mjs
