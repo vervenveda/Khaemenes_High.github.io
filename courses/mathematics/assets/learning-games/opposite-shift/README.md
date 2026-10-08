@@ -26,3 +26,21 @@ and then the existing different-sign magnitude reasoning produces:
 +5
 
 The same Foundation / Core / Extended pathways, 12/16/20 mission rounds, missed-item replay, local best score, and 80% mastery target are included.
+
+
+## Canonical Shared-Game Migration · Opposite Shift v3
+
+Canonical location:
+- `courses/mathematics/assets/learning-games/opposite-shift/`
+
+Course progression:
+- Pre-Algebra U02-L05 → integer subtraction and signed change
+- Algebra I U02-L06 → subtraction of polynomials by adding the opposite polynomial
+- Algebra II U02-L02 → higher-degree, nested, and function-difference structure
+
+Geometry is intentionally not assigned to this game. Coordinate translation/vector progression is already owned by Integer Compass, so adding Opposite Shift there would duplicate subject ownership.
+
+Migration rule:
+1. Shared Mathematics copy is canonical.
+2. The original Pre-Algebra copy remains temporarily as rollback compatibility.
+3. Legacy deletion is not allowed until the shared route and lesson launchers are verified live.

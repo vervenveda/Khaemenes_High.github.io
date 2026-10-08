@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Khaemenes Pre-Algebra Unit 2 Lesson 5 companion game: Subtracting Integers by Adding the Opposite.">
+<meta name="description" content="Khaemenes Mathematics shared Opposite Shift game: subtraction as adding the opposite from integers through polynomial structure.">
 <meta name="theme-color" content="#090d14">
-<title>Lesson 5 · Opposite Shift · Subtracting Integers</title>
+<title>Opposite Shift · Khaemenes Mathematics Shared Game</title>
 <style>
 :root{
 --bg:#090d14;--panel:#151d29;--ink:#f7f2e7;--muted:#c9c1b2;--line:#3b4655;
@@ -100,28 +100,28 @@ footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
 
 <main id="game" class="game-grid">
 <section class="panel play">
-<div class="section-head"><div><div class="eyebrow">Opposite Shift Challenge</div><h2>Rewrite, Move & Verify</h2></div><p>Rewrite subtraction, evaluate signed differences, choose number-line movement, solve contextual changes, and catch sign errors.</p></div>
+<div class="section-head"><div><div class="eyebrow">Opposite Shift Challenge</div><h2 id="gameTitle">Rewrite, Move & Verify</h2></div><p>Rewrite subtraction, evaluate signed differences, choose number-line movement, solve contextual changes, and catch sign errors.</p></div>
 <div class="status"><div><div class="progress-label"><span id="roundLabel">Mission 1 of 16</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div></div>
 <div class="stage"><div><div class="mission-badge" id="missionBadge">Rewrite</div><div class="big" id="challengeValue">5 − (−7)</div><div class="prompt" id="questionPrompt">Which addition expression is equivalent?</div></div></div>
 <div class="choice-grid" id="choiceGrid"></div>
 <div class="action-row"><button class="secondary" id="hintBtn">Reasoning hint</button><button class="primary" id="checkBtn">Check reasoning</button><button class="secondary" id="nextBtn" hidden>Next mission →</button></div>
 <div class="feedback" id="feedback"><h3>Ready.</h3><p>Rewrite the subtraction before doing any arithmetic.</p></div>
-<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../units/unit-02/lessons/lesson-05-subtracting-integers.html">Return to Lesson 5</a></div></div>
+<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" id="returnToLesson" href="../../../pre-algebra/units/unit-02/lessons/lesson-05-subtracting-integers.html">Return to Pre-Algebra U02-L05</a></div></div>
 </section>
 
 <aside class="panel side">
-<h2>Lesson 5 Field Guide</h2>
+<h2 id="fieldGuideTitle">Lesson 5 Field Guide</h2>
 <div class="concept"><b>Add the opposite</b><span>a − b = a + (−b).</span></div>
 <div class="concept"><b>Subtract positive</b><span>Equivalent to adding a negative; movement goes left.</span></div>
 <div class="concept"><b>Subtract negative</b><span>Equivalent to adding a positive; movement goes right.</span></div>
 <div class="concept"><b>Signed change</b><span>final − initial keeps direction.</span></div>
 <div class="concept"><b>Distance</b><span>|a − b| measures separation and is nonnegative.</span></div>
 <div class="tip"><strong>Shift question</strong><p id="strategyText">What is the opposite of the second integer?</p></div>
-<div class="controls"><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
+<div class="tip"><strong>Course progression</strong><p id="courseContext">Integer subtraction becomes a structural rule that later applies to entire algebraic expressions.</p></div><div class="controls"><div class="control"><label for="courseMode">Course level</label><select id="courseMode"><option value="prealgebra">Pre-Algebra · Integer Subtraction</option><option value="algebra1">Algebra I · Polynomial Subtraction</option><option value="algebra2">Algebra II · Structural Polynomial Operations</option></select></div><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
 <p class="best" id="bestScore">Best mastery score: —</p>
 </aside>
 </main>
-<footer>KH-MATH-PA-U02-L5 · subtraction · add the opposite · signed difference · distance · 80% mastery</footer>
+<footer>Khaemenes Mathematics Shared Game · Opposite Shift · subtraction as additive inverse · multi-course progression · 80% mastery</footer>
 </div>
 
 <script>
@@ -156,13 +156,78 @@ const BANK=[
 {l:"Extended",b:"Multi-Step Rewrite",v:"10 − (−4) − 7",q:"What is the value?",o:["7","21","−1","−21"],a:0,h:"Work left to right: 10 − (−4) = 14, then 14 − 7.",w:"10 + 4 − 7 = 7."}
 ];
 
-const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
-const BEST="khaemenes-prealgebra-u02-l05-opposite-shift-v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+
+const ALGEBRA1_BANK=[
+{l:"Foundation",b:"Opposite Expression",v:"−(x + 4)",q:"Which expression is equivalent?",o:["−x + 4","x − 4","−x − 4","x + 4"],a:2,h:"The opposite of a sum changes the sign of every term.",w:"−(x + 4) = −x − 4."},
+{l:"Foundation",b:"Rewrite",v:"(3x + 5) − (x − 2)",q:"Rewrite the subtraction as addition of the opposite.",o:["(3x + 5) + (x − 2)","(3x + 5) + (−x + 2)","(−3x − 5) + (x − 2)","(3x + 5) + (−x − 2)"],a:1,h:"Keep the first polynomial and add the opposite of every term in the second.",w:"The opposite of x − 2 is −x + 2."},
+{l:"Foundation",b:"Compute",v:"(5x + 7) − (2x + 3)",q:"Simplify.",o:["3x + 4","7x + 10","3x + 10","7x + 4"],a:0,h:"Distribute the subtraction sign, then combine like terms.",w:"5x + 7 − 2x − 3 = 3x + 4."},
+{l:"Core",b:"Polynomial Difference",v:"(4x² − 3x + 2) − (x² + 5x − 7)",q:"Simplify.",o:["3x² + 2x − 5","5x² + 2x − 5","3x² − 8x + 9","3x² − 2x − 5"],a:2,h:"Add the opposite of the second polynomial, then combine like terms.",w:"4x² − 3x + 2 − x² − 5x + 7 = 3x² − 8x + 9."},
+{l:"Core",b:"Error Analysis",v:"(2x² + x) − (x² − 4x)",q:"Which simplification is correct?",o:["x² − 3x","x² + 5x","3x² − 3x","3x² + 5x"],a:1,h:"The opposite of x² − 4x is −x² + 4x.",w:"2x² + x − x² + 4x = x² + 5x."},
+{l:"Core",b:"Structure",v:"P(x) − Q(x)",q:"Which statement is always valid?",o:["P−Q=P+Q","P−Q=−P+Q","P−Q=P+(−Q)","P−Q=|P|+|Q|"],a:2,h:"Subtraction is addition of the additive inverse, even when the object is a polynomial.",w:"P(x) − Q(x) = P(x) + (−Q(x))."},
+{l:"Core",b:"Distribute the Negative",v:"7 − (2x − 5)",q:"Simplify.",o:["2 − 2x","12 − 2x","2x + 2","12 + 2x"],a:1,h:"Subtracting the group changes both signs inside it.",w:"7 − 2x + 5 = 12 − 2x."},
+{l:"Extended",b:"Multi-Variable Difference",v:"(3a − 2b + 4) − (−a + 5b − 6)",q:"Simplify.",o:["2a + 3b − 2","4a − 7b + 10","4a + 3b − 2","2a − 7b + 10"],a:1,h:"Take the opposite of each term in the second expression.",w:"3a − 2b + 4 + a − 5b + 6 = 4a − 7b + 10."},
+{l:"Extended",b:"Nested Subtraction",v:"2x − [3 − (x − 4)]",q:"Simplify.",o:["x − 7","3x − 7","3x + 1","x + 1"],a:1,h:"Work from the inner subtraction outward and distribute each negative carefully.",w:"3 − (x − 4)=7−x, so 2x−(7−x)=3x−7."},
+{l:"Extended",b:"Verification",v:"A(x)=5x²−2x+1, B(x)=2x²+x−4",q:"What is A(x)−B(x)?",o:["3x²−3x+5","7x²−x−3","3x²−x−3","7x²−3x+5"],a:0,h:"Add −B(x): −2x²−x+4.",w:"5x²−2x+1−2x²−x+4=3x²−3x+5."}
+];
+
+const ALGEBRA2_BANK=[
+{l:"Foundation",b:"Structural Opposite",v:"−(2x³ − x + 5)",q:"Which is the additive inverse?",o:["−2x³ − x + 5","−2x³ + x − 5","2x³ + x − 5","2x³ − x − 5"],a:1,h:"Reverse the sign of every term.",w:"−(2x³ − x + 5)=−2x³+x−5."},
+{l:"Foundation",b:"Polynomial Difference",v:"(x³ + 4x) − (2x³ − x)",q:"Simplify.",o:["−x³ + 5x","3x³ + 3x","−x³ + 3x","3x³ + 5x"],a:0,h:"Add the opposite of the second polynomial.",w:"x³+4x−2x³+x=−x³+5x."},
+{l:"Foundation",b:"Equivalent Form",v:"F − G",q:"Which operation preserves the meaning of subtraction?",o:["F + G","−F + G","F + (−G)","|F| − |G|"],a:2,h:"The additive inverse rule applies to any algebraic expression.",w:"F−G=F+(−G)."},
+{l:"Core",b:"Higher-Degree Difference",v:"(2x⁴ − 3x² + 1) − (x⁴ + 5x² − 6)",q:"Simplify.",o:["x⁴ + 2x² − 5","3x⁴ − 8x² + 7","x⁴ − 8x² + 7","x⁴ − 2x² − 5"],a:2,h:"Distribute the negative to all three terms of the second polynomial.",w:"2x⁴−3x²+1−x⁴−5x²+6=x⁴−8x²+7."},
+{l:"Core",b:"Function Difference",v:"f(x)=3x²−x, g(x)=x²+4x−2",q:"Find (f−g)(x).",o:["2x²−5x+2","4x²+3x−2","2x²+3x−2","4x²−5x+2"],a:0,h:"Compute f(x)+[−g(x)].",w:"3x²−x−x²−4x+2=2x²−5x+2."},
+{l:"Core",b:"Error Analysis",v:"A student writes P−(Q−R)=P−Q−R.",q:"What correction is required?",o:["No correction","P−Q+R","−P+Q−R","P+Q−R"],a:1,h:"The negative outside the group changes both Q and −R.",w:"P−(Q−R)=P−Q+R."},
+{l:"Core",b:"Coefficient Structure",v:"(1/2)x³ − [(3/2)x³ − 2x]",q:"Simplify.",o:["−x³ + 2x","2x³ − 2x","−x³ − 2x","x³ + 2x"],a:0,h:"Subtract the full second expression before combining coefficients.",w:"(1/2−3/2)x³+2x=−x³+2x."},
+{l:"Extended",b:"Nested Difference",v:"P − [Q − (R − S)]",q:"Which expanded sign pattern is correct?",o:["P−Q−R−S","P−Q+R−S","P+Q−R+S","P−Q+R+S"],a:1,h:"Each subtraction of a group applies an additive inverse to the whole group.",w:"P−[Q−(R−S)]=P−Q+R−S."},
+{l:"Extended",b:"Difference at a Value",v:"P(x)=x³−2x, Q(x)=2x²−1; x=−2",q:"What is P(−2)−Q(−2)?",o:["−3","−11","−15","3"],a:1,h:"Evaluate each polynomial first, then subtract.",w:"P(−2)=−4 and Q(−2)=7, so −4−7=−11."},
+{l:"Extended",b:"Equivalent Forms",v:"−[x³ − (2x² − 3x + 4)]",q:"Simplify.",o:["−x³+2x²−3x+4","−x³−2x²+3x−4","x³−2x²+3x−4","−x³+2x²+3x−4"],a:0,h:"Simplify the inner subtraction, then take the opposite of the resulting polynomial.",w:"Inside: x³−2x²+3x−4. Negating gives −x³+2x²−3x+4."}
+];
+
+const COURSE_CONFIG={
+ prealgebra:{
+   label:"Pre-Algebra",
+   title:"Rewrite, Move & Verify",
+   field:"Lesson 5 Field Guide",
+   context:"Subtract integers by rewriting subtraction as addition of the opposite; distinguish signed change from distance.",
+   returnHref:"../../../pre-algebra/units/unit-02/lessons/lesson-05-subtracting-integers.html",
+   returnLabel:"Return to Pre-Algebra U02-L05"
+ },
+ algebra1:{
+   label:"Algebra I",
+   title:"Opposite Entire Expressions",
+   field:"Polynomial Subtraction Field Guide",
+   context:"Extend a − b = a + (−b) from integers to whole polynomials: negate every term before combining like terms.",
+   returnHref:"../../../algebra-1/units/unit-02/lessons/lesson-06-adding-subtracting-polynomials.html",
+   returnLabel:"Return to Algebra I U02-L06"
+ },
+ algebra2:{
+   label:"Algebra II",
+   title:"Structural Polynomial Difference",
+   field:"Equivalent-Form Subtraction Field Guide",
+   context:"Use additive inverses to control signs in higher-degree, nested, and function-difference expressions.",
+   returnHref:"../../../algebra-2/units/unit-02/lessons/u02-l02.html",
+   returnLabel:"Return to Algebra II U02-L02"
+ }
+};
+
+const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),course:$("courseMode"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),returnLink:$("returnToLesson"),gameTitle:$("gameTitle"),fieldTitle:$("fieldGuideTitle"),courseContext:$("courseContext"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
+const params=new URLSearchParams(location.search);if(COURSE_CONFIG[params.get("course")])el.course.value=params.get("course");let BEST=`khaemenes-math-opposite-shift-${el.course.value}-v3`;let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
 function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
-function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
-function start(src=null){deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
+function activeBank(){return el.course.value==="algebra1"?ALGEBRA1_BANK:el.course.value==="algebra2"?ALGEBRA2_BANK:BANK}
+function updateCourseMode(){
+ const cfg=COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;
+ BEST=`khaemenes-math-opposite-shift-${el.course.value}-v3`;
+ el.gameTitle.textContent=cfg.title;
+ el.fieldTitle.textContent=cfg.field;
+ el.courseContext.textContent=cfg.context;
+ el.returnLink.href=cfg.returnHref;
+ el.returnLink.textContent=cfg.returnLabel;
+ updateBest();
+}
+function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:activeBank().filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function start(src=null){updateCourseMode();deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
 function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;el.strategy.textContent=c.b.includes("Distance")?"Ask whether the problem wants direction (signed difference) or only separation (distance).":c.b.includes("Change")||c.b.includes("Position")||c.b.includes("Temperature")||c.b.includes("Finance")||c.b.includes("Elevation")?"Use final − initial, then rewrite subtraction as addition of the opposite.":"Keep the first number. Change subtraction to addition. Replace the second number with its opposite.";feedback("","Mission ready.","Rewrite the subtraction before doing arithmetic.");stats()}
 function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by the add-the-opposite rule.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Shift confirmed.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
 function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
@@ -170,8 +235,8 @@ function next(){if(!checked)return;if(index>=deck.length-1)return finish();index
 function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(e){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
 function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(BEST,String(p))}catch(e){}updateBest()}
-function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Opposite Shift mastery passed":"Rewrite before recalculating";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} Lesson 5 missions correctly and met the 80% mastery target. Return to Lesson 5 for practice and reflection.`:`You solved ${correct} of ${attempts} missions correctly. Review the missed rewrites, sign changes, and signed-difference questions, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
-el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
+function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Opposite Shift mastery passed":"Rewrite before recalculating";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} ${COURSE_CONFIG[el.course.value].label} missions correctly and met the 80% mastery target. Return to the mapped lesson for the full instructional sequence.`:`You solved ${correct} of ${attempts} missions correctly. Review the missed additive-inverse rewrites and sign changes, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.course.onchange=()=>{const u=new URL(location.href);u.searchParams.set("course",el.course.value);history.replaceState(null,"",u);start()};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
 el.tabs.forEach((b,i)=>b.onclick=()=>{el.tabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));el.scenes.forEach((s,j)=>s.classList.toggle("active",j===i))});
 const later=(f,m)=>setTimeout(f,m);
 

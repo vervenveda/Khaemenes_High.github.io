@@ -527,6 +527,47 @@
         }
       ],
       "scope_note": "Geometry is intentionally not assigned: Integer Compass already owns signed-coordinate/vector progression there. Algebra I polynomial addition remains available for a later polynomial-specific game, avoiding duplicate subject ownership."
+    },
+    "opposite-shift": {
+      "title": "Opposite Shift",
+      "canonical_path": "courses/mathematics/assets/learning-games/opposite-shift/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-05-opposite-shift/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "02",
+          "lesson": "05",
+          "lesson_title": "Subtracting Integers",
+          "mode": "integer-subtraction",
+          "query": "?course=prealgebra&unit=02&lesson=05&mode=integer-subtraction",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "02",
+          "lesson": "06",
+          "lesson_title": "Adding & Subtracting Polynomials",
+          "mode": "polynomial-subtraction",
+          "query": "?course=algebra1&unit=02&lesson=06&mode=polynomial-subtraction",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "02",
+          "lesson_title": "Polynomial Operations & Equivalent Forms",
+          "mode": "structural-polynomial-difference",
+          "query": "?course=algebra2&unit=02&lesson=u02-l02&mode=structural-polynomial-difference",
+          "wired": true
+        }
+      ],
+      "scope_note": "Geometry intentionally omitted: Integer Compass already owns signed-coordinate/vector progression. Complex subtraction remains with the complex-operations lesson family rather than duplicating Integer Sum Lab."
     }
   }
 }
