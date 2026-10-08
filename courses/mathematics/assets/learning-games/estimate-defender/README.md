@@ -56,3 +56,21 @@ I also extracted the completed JavaScript and ran it through Node's syntax check
 At this point, all six Unit 1 companion games have the same general learning rhythm:
 
 lesson concept → animated explanation → guided visual reasoning → game application → immediate explanation → missed-item review → 80% mastery → return to lesson.
+
+
+## Canonical Shared-Game Migration · Estimate Defender v3
+
+This directory is the canonical Mathematics copy.
+
+Supported course placements:
+- `?course=prealgebra&unit=01&lesson=06` — compatible numbers, magnitude, and reasonableness
+- `?course=algebra1&unit=01&lesson=05&mode=precision-error` — precision, significant figures, and percent error
+- `?course=geometry&unit=10&lesson=u10-l05&mode=measurement-precision` — geometric measurement, tolerance, units, and error
+- `?course=algebra2&unit=07&lesson=u07-l06&mode=technology-estimation` — logarithmic benchmarks and technology reasonableness
+
+Migration rule:
+1. Shared Mathematics copy is canonical.
+2. Existing Pre-Algebra copies remain temporarily for rollback/compatibility.
+3. Pre-Algebra U01-L06 resolves to the shared copy.
+4. Legacy files are not deleted until live-route and behavior verification is complete.
+5. The nested `assets/assets` duplicate is not part of this migration and remains untouched pending a separate audit.

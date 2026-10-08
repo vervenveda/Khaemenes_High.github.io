@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Lesson 6 Estimation & Reasonableness Game: Estimate Defender. Choose reasonable answers and reject impossible results.">
-<title>Lesson 6 · Estimate Defender</title>
+<meta name="description" content="Khaemenes Mathematics shared Estimate Defender game: progressive estimation, precision, measurement error, and advanced technology reasonableness across Pre-Algebra, Algebra I, Geometry, and Algebra II.">
+<title>Estimate Defender · Khaemenes Mathematics Shared Game</title>
 <style>
 :root{
   --bg:#090b10;--panel:#141a22;--panel2:#10161e;--ink:#f7f1e3;--muted:#c8c1b3;
@@ -23,7 +23,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
 .brand{display:flex;align-items:center;gap:12px}.seal{width:44px;height:44px;border:1px solid rgba(216,189,122,.68);border-radius:9px;display:grid;place-items:center;transform:rotate(45deg);background:rgba(216,189,122,.06)}
 .seal span{transform:rotate(-45deg);font:15px Georgia,serif;color:var(--gold2)}
 .kicker{margin:0;color:var(--gold2);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.crumb{margin:3px 0 0;color:var(--muted);font-size:.9rem}
-.actions{display:flex;gap:8px}.ghost{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer}.ghost:hover{border-color:var(--gold)}
+.actions{display:flex;gap:8px}.ghost{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:9px 13px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.ghost:hover{border-color:var(--gold)}
 .hero{text-align:center;max-width:900px;margin:auto;padding:54px 10px 30px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.22em;font-size:.78rem;font-weight:800}
 h1,h2,h3{font-family:Cinzel,Georgia,"Times New Roman",serif;font-weight:500}h1{margin:10px 0 13px;font-size:clamp(2rem,5vw,4rem);line-height:1.05}
 .hero p{margin:auto;max-width:780px;color:var(--muted);font-size:clamp(1rem,2vw,1.15rem)}
@@ -53,12 +53,12 @@ footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
 <body>
 <div class="shell">
 <header class="topbar">
-<div class="brand"><div class="seal" aria-hidden="true"><span>≈</span></div><div><p class="kicker">Mathematics · Lesson 6</p><p class="crumb">Estimation & Reasonableness · Estimate Defender</p></div></div>
-<div class="actions"><button class="ghost" id="printBtn" type="button">Print reference</button><button class="ghost" id="resetBestBtn" type="button">Reset best</button></div>
+<div class="brand"><div class="seal" aria-hidden="true"><span>≈</span></div><div><p class="kicker" id="courseKicker">Khaemenes Mathematics · Shared Game</p><p class="crumb" id="courseCrumb">Pre-Algebra · Estimation & Reasonableness</p></div></div>
+<div class="actions"><a class="ghost" id="returnToLesson" href="../../../pre-algebra/units/unit-01/lessons/lesson-06-estimation-reasonableness.html">Return to lesson</a><button class="ghost" id="printBtn" type="button">Print reference</button><button class="ghost" id="resetBestBtn" type="button">Reset best</button></div>
 </header>
 <section class="hero">
-<div class="eyebrow">Estimate Defender</div><h1>Defend the reasonable answer.</h1>
-<p>Use magnitude, rounding, benchmark values, and operation sense to choose the answer that could reasonably be correct—and reject results that are impossible.</p>
+<div class="eyebrow">Estimate Defender</div><h1 id="gameTitle">Defend the reasonable answer.</h1>
+<p id="heroIntro">Use magnitude, rounding, benchmark values, and operation sense to choose the answer that could reasonably be correct—and reject results that are impossible.</p>
 <div class="rules">
 <div class="rule"><b>Estimate first</b><small>Round or use compatible numbers before calculating exactly.</small></div>
 <div class="rule"><b>Check magnitude</b><small>Ask whether the answer is too large, too small, or in the right neighborhood.</small></div>
@@ -87,16 +87,26 @@ footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
 <div class="concept"><b>Watch operation size</b><span>Multiplying by a number greater than 1 increases magnitude; dividing by a number greater than 1 decreases it.</span></div>
 <div class="concept"><b>Check units</b><span>Word problems should produce an answer in the expected unit and scale.</span></div>
 <div class="tip"><strong>Strategy</strong><p id="strategyText">Do a rough calculation first. Exact arithmetic is not needed to reject wildly unreasonable answers.</p></div>
-<div class="controls"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 defenses</option><option value="16" selected>16 defenses</option><option value="20">20 defenses</option></select></div>
+<div class="controls">
+<label for="courseMode">Course level</label>
+<select id="courseMode">
+<option value="prealgebra">Pre-Algebra · Estimation & Reasonableness</option>
+<option value="algebra1">Algebra I · Precision & Percent Error</option>
+<option value="geometry">Geometry · Measurement Precision</option>
+<option value="algebra2">Algebra II · Technology & Log Estimation</option>
+</select>
+<label for="roundSize">Round length</label>
+<select id="roundSize"><option value="12">12 defenses</option><option value="16" selected>16 defenses</option><option value="20">20 defenses</option></select>
+</div>
 <p class="best" id="bestScore">Best mastery score: —</p>
 </aside>
 </main>
-<footer>Lesson 6 · Estimation · Magnitude · Reasonableness · Answer checking · Standalone HTML/CSS/vanilla JavaScript</footer>
+<footer>Khaemenes Mathematics Shared Game · Estimate Defender · Multi-course progression · 80% mastery · Standalone HTML/CSS/vanilla JavaScript</footer>
 </div>
 <script>
 (()=>{
 "use strict";
-const BANK=[
+const PREALGEBRA_BANK=[
 {expr:"398 + 603",choices:["101","1,001","10,010","9,001"],answer:"1,001",hint:"400 + 600 is about 1,000.",why:"398 + 603 is just over 1,000, so 1,001 is reasonable."},
 {expr:"49 × 21",choices:["100","1,029","10,290","70"],answer:"1,029",hint:"50 × 20 is about 1,000.",why:"49 × 21 should be near 1,000; 1,029 fits that estimate."},
 {expr:"1,205 ÷ 6",choices:["2","20","201","2,010"],answer:"201",hint:"1,200 ÷ 6 = 200.",why:"1,205 ÷ 6 is a little above 200, so 201 is reasonable."},
@@ -118,21 +128,77 @@ const BANK=[
 {expr:"87 × 0.1",choices:["0.87","8.7","87","870"],answer:"8.7",hint:"Multiplying by one-tenth makes the number ten times smaller.",why:"87 × 0.1 = 8.7."},
 {expr:"145 + 158 + 149",choices:["45.2","452","4,520","152"],answer:"452",hint:"150 + 150 + 150 is about 450.",why:"452 is close to the estimate 450."}
 ];
-const el={expr:document.getElementById("problemExpr"),prompt:document.getElementById("promptText"),grid:document.getElementById("answerGrid"),hint:document.getElementById("hintBtn"),check:document.getElementById("checkBtn"),next:document.getElementById("nextBtn"),feedback:document.getElementById("feedback"),score:document.getElementById("score"),streak:document.getElementById("streak"),round:document.getElementById("roundLabel"),acc:document.getElementById("accuracyLabel"),fill:document.getElementById("progressFill"),size:document.getElementById("roundSize"),best:document.getElementById("bestScore"),mastery:document.getElementById("mastery"),mark:document.getElementById("masteryMark"),mTitle:document.getElementById("masteryTitle"),mText:document.getElementById("masteryText"),newRound:document.getElementById("newRoundBtn"),review:document.getElementById("reviewBtn"),print:document.getElementById("printBtn"),resetBest:document.getElementById("resetBestBtn")};
-const BEST="khaemenes_estimate_defender_best_v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+
+const ALGEBRA1_BANK=[{"expr":"Round 12.48 cm to the nearest tenth.","prompt":"Which reported measurement has justified precision?","choices":["12.5 cm","12.48 cm","12 cm","13.0 cm"],"answer":"12.5 cm","hint":"The nearest tenth keeps one digit after the decimal.","why":"12.48 rounds to 12.5 at the tenths place."},{"expr":"Accepted 50.0 g · measured 48.5 g","prompt":"What is the percent error?","choices":["0.3%","3%","30%","97%"],"answer":"3%","hint":"Absolute error is 1.5 g. Divide by the accepted 50.0 g.","why":"1.5 ÷ 50.0 × 100 = 3%."},{"expr":"3.746","prompt":"Round to 3 significant figures.","choices":["3.75","3.74","3.7","3.7460"],"answer":"3.75","hint":"Keep 3, 7, 4; the next digit is 6.","why":"The 6 rounds the hundredths digit from 4 to 5."},{"expr":"12.4 cm × 3.1 cm","prompt":"Area reported to 2 significant figures?","choices":["38 cm²","38.44 cm²","38.4 cm²","3.8 cm²"],"answer":"38 cm²","hint":"The product is 38.44, but the least precise factor has 2 significant figures.","why":"38.44 rounds to 38 cm² at 2 significant figures."},{"expr":"198 × 4.97","prompt":"Which benchmark best checks the product?","choices":["about 1,000","about 100","about 10,000","about 20"],"answer":"about 1,000","hint":"Use 200 × 5.","why":"200 × 5 = 1,000, so a calculator result should be near 1,000."},{"expr":"180 miles in 3 hours","prompt":"Which rate is reasonable?","choices":["60 mi/h","540 mi/h","6 mi/h","0.017 mi/h"],"answer":"60 mi/h","hint":"Divide total distance by total time.","why":"180 ÷ 3 = 60 miles per hour."},{"expr":"Measured 24.5 cm · accepted 25.0 cm","prompt":"What is the percent error?","choices":["2%","0.5%","20%","98%"],"answer":"2%","hint":"The absolute error is 0.5 cm.","why":"0.5 ÷ 25 × 100 = 2%."},{"expr":"0.004987","prompt":"Round to 2 significant figures.","choices":["0.0050","0.0049","0.00499","0.05"],"answer":"0.0050","hint":"Leading zeros are not significant; 4 and 9 are the first two significant digits.","why":"0.004987 rounds to 0.0050 at 2 significant figures."},{"expr":"Calculator output: 19.9987 from data measured to the nearest tenth","prompt":"Which final report is best justified?","choices":["20.0","19.9987","20","19.99"],"answer":"20.0","hint":"Do not report more measurement precision than the data support.","why":"20.0 preserves the nearest-tenth precision."},{"expr":"4.02 × 9.8","prompt":"Which estimate is the best reasonableness check?","choices":["about 40","about 400","about 4","about 14"],"answer":"about 40","hint":"Use 4 × 10.","why":"4 × 10 = 40, so the exact product should be close to 40."}];
+const GEOMETRY_BANK=[{"expr":"Rectangle: 12.3 cm by 4.8 cm","prompt":"Which area estimate is reasonable?","choices":["about 60 cm²","about 600 cm²","about 17 cm²","about 6 cm²"],"answer":"about 60 cm²","hint":"Use 12 × 5.","why":"12 × 5 = 60, so the area should be near 60 cm²."},{"expr":"Circle radius = 5.1 cm","prompt":"Which area is reasonable?","choices":["about 82 cm²","about 16 cm²","about 260 cm²","about 32 cm²"],"answer":"about 82 cm²","hint":"πr² ≈ 3.14 × 25.","why":"3.14 × 26.01 ≈ 81.7 cm²."},{"expr":"Measured segment 19.6 cm · accepted 20.0 cm","prompt":"What is the percent error?","choices":["2%","0.4%","20%","98%"],"answer":"2%","hint":"The absolute error is 0.4 cm.","why":"0.4 ÷ 20.0 × 100 = 2%."},{"expr":"A diagonal has exact length √50 cm","prompt":"Which decimal estimate is reasonable?","choices":["about 7.1 cm","about 5.0 cm","about 25 cm","about 50 cm"],"answer":"about 7.1 cm","hint":"7² = 49.","why":"√50 is just greater than 7, approximately 7.07."},{"expr":"Scale 1 cm : 25 m · drawing length 4.2 cm","prompt":"Which actual length is reasonable?","choices":["105 m","10.5 m","1,050 m","29.2 m"],"answer":"105 m","hint":"Multiply 4.2 by 25.","why":"4.2 × 25 = 105 meters."},{"expr":"8.0 cm ± 0.1 cm","prompt":"Which measurement is outside the stated tolerance?","choices":["8.2 cm","7.9 cm","8.0 cm","8.1 cm"],"answer":"8.2 cm","hint":"The acceptable interval is 7.9 through 8.1 cm.","why":"8.2 cm lies outside the ±0.1 cm tolerance."},{"expr":"Triangle base 9.8 m · height 6.1 m","prompt":"Which area estimate is reasonable?","choices":["about 30 m²","about 60 m²","about 16 m²","about 300 m²"],"answer":"about 30 m²","hint":"Use 1/2 × 10 × 6.","why":"The estimated area is about 30 m²."},{"expr":"Perimeter computed from lengths recorded to nearest centimeter","prompt":"Which report is most defensible?","choices":["Report to the nearest centimeter","Report to six decimal places","Always round to the nearest meter","Drop the units"],"answer":"Report to the nearest centimeter","hint":"Reported precision should reflect measurement precision.","why":"Extra decimal places would imply unsupported precision."},{"expr":"A square side is 14.9 cm","prompt":"Which area estimate best checks a calculator result?","choices":["about 225 cm²","about 30 cm²","about 1,500 cm²","about 60 cm²"],"answer":"about 225 cm²","hint":"Use 15².","why":"15² = 225, so the exact area should be near 225 cm²."},{"expr":"Measured angle 59° · target angle 60°","prompt":"Which statement is reasonable?","choices":["The absolute error is 1°","The error is 60°","The measurement is exact","The percent error is 59%"],"answer":"The absolute error is 1°","hint":"Absolute error is the distance between measured and accepted values.","why":"|59−60| = 1°."}];
+const ALGEBRA2_BANK=[{"expr":"log₁₀(950)","prompt":"Which estimate is reasonable?","choices":["about 3","about 9.5","about 95","about −3"],"answer":"about 3","hint":"10² = 100 and 10³ = 1,000.","why":"950 is close to 1,000, so log₁₀(950) is just under 3."},{"expr":"ln(20)","prompt":"Which estimate is reasonable?","choices":["about 3","about 20","about 0.05","about 9"],"answer":"about 3","hint":"e³ ≈ 20.1.","why":"Because e³ is about 20.1, ln(20) is almost 3."},{"expr":"log₂(70)","prompt":"Between which consecutive integers must the value lie?","choices":["6 and 7","2 and 3","7 and 8","35 and 36"],"answer":"6 and 7","hint":"2⁶ = 64 and 2⁷ = 128.","why":"70 lies between 64 and 128, so log₂(70) lies between 6 and 7."},{"expr":"10ˣ = 450","prompt":"Which estimate for x is reasonable?","choices":["about 2.65","about 45","about 0.45","about 4.5"],"answer":"about 2.65","hint":"450 lies between 10² and 10³.","why":"log₁₀(450) ≈ 2.65."},{"expr":"log₅(124)","prompt":"Which estimate is reasonable?","choices":["about 3","about 5","about 25","about 2"],"answer":"about 3","hint":"5³ = 125.","why":"124 is extremely close to 125, so the logarithm is just under 3."},{"expr":"e^4.6","prompt":"Which magnitude is reasonable?","choices":["about 100","about 10","about 1,000","about 4.6"],"answer":"about 100","hint":"ln(100) ≈ 4.605.","why":"e^4.6 is approximately 99.5."},{"expr":"log₂(0.125)","prompt":"Which calculator result passes a reasonableness check?","choices":["−3","3","−8","0.125"],"answer":"−3","hint":"0.125 = 1/8 = 2⁻³.","why":"log₂(2⁻³) = −3."},{"expr":"ln(1.01)","prompt":"Which value is most reasonable?","choices":["about 0.01","about 1","about 10","about −1"],"answer":"about 0.01","hint":"For small x, ln(1+x) is close to x.","why":"ln(1.01) ≈ 0.00995."},{"expr":"log₃(20)","prompt":"Which estimate is reasonable?","choices":["about 2.7","about 6.7","about 20","about 0.15"],"answer":"about 2.7","hint":"3² = 9 and 3³ = 27.","why":"20 lies between 9 and 27, closer to 27, so the log is about 2.7."},{"expr":"A calculator returns log₁₀(0.0001)=4","prompt":"What should the defender conclude?","choices":["Unreasonable; it should be −4","Reasonable; it should be 4","Unreasonable; it should be 0.0001","Reasonable because logs are always positive"],"answer":"Unreasonable; it should be −4","hint":"10⁻⁴ = 0.0001.","why":"The correct logarithm is −4, so the positive result fails a magnitude/sign check."}];
+
+const COURSE_CONFIG={
+ prealgebra:{
+  label:"Pre-Algebra",crumb:"Estimation, Compatible Numbers & Reasonableness",
+  title:"Defend the reasonable answer.",
+  intro:"Use magnitude, rounding, benchmark values, compatible numbers, and operation sense to reject impossible results before exact calculation.",
+  strategy:"Do a rough calculation first. Exact arithmetic is not needed to reject wildly unreasonable answers.",
+  returnHref:"../../../pre-algebra/units/unit-01/lessons/lesson-06-estimation-reasonableness.html",
+  returnLabel:"Return to Pre-Algebra U01-L06",bank:PREALGEBRA_BANK
+ },
+ algebra1:{
+  label:"Algebra I",crumb:"Precision, Rounding, Significant Figures & Percent Error",
+  title:"Defend justified precision.",
+  intro:"Estimate first, then decide whether a reported value has reasonable magnitude, units, rounding, significant figures, and percent error.",
+  strategy:"A precise-looking answer is not automatically a defensible answer. Check magnitude, units, measurement precision, and percent error.",
+  returnHref:"../../../algebra-1/units/unit-01/lessons/lesson-05-precision-rounding-significant-figures-percent-error.html",
+  returnLabel:"Return to Algebra I U01-L05",bank:ALGEBRA1_BANK
+ },
+ geometry:{
+  label:"Geometry",crumb:"Units, Precision, Error & Significant Figures",
+  title:"Defend geometric measurement.",
+  intro:"Use scale, units, exact forms, tolerance, percent error, and significant figures to judge whether geometric measurements and calculator outputs are defensible.",
+  strategy:"Estimate the geometry before trusting the decimal. Preserve units and report only the precision supported by the measurements.",
+  returnHref:"../../../geometry/units/unit-10/lessons/u10-l05.html",
+  returnLabel:"Return to Geometry U10-L05",bank:GEOMETRY_BANK
+ },
+ algebra2:{
+  label:"Algebra II",crumb:"Change of Base, Technology & Estimation",
+  title:"Defend advanced estimates.",
+  intro:"Use powers, logarithmic benchmarks, sign, order of magnitude, and inverse relationships to decide whether technology output is mathematically reasonable.",
+  strategy:"Before accepting technology output, bracket the value with known powers or inverse relationships and check its sign and magnitude.",
+  returnHref:"../../../algebra-2/units/unit-07/lessons/u07-l06.html",
+  returnLabel:"Return to Algebra II U07-L06",bank:ALGEBRA2_BANK
+ }
+};
+
+const el={expr:document.getElementById("problemExpr"),prompt:document.getElementById("promptText"),grid:document.getElementById("answerGrid"),hint:document.getElementById("hintBtn"),check:document.getElementById("checkBtn"),next:document.getElementById("nextBtn"),feedback:document.getElementById("feedback"),score:document.getElementById("score"),streak:document.getElementById("streak"),round:document.getElementById("roundLabel"),acc:document.getElementById("accuracyLabel"),fill:document.getElementById("progressFill"),size:document.getElementById("roundSize"),course:document.getElementById("courseMode"),best:document.getElementById("bestScore"),returnLink:document.getElementById("returnToLesson"),kicker:document.getElementById("courseKicker"),crumb:document.getElementById("courseCrumb"),gameTitle:document.getElementById("gameTitle"),heroIntro:document.getElementById("heroIntro"),strategy:document.getElementById("strategyText"),mastery:document.getElementById("mastery"),mark:document.getElementById("masteryMark"),mTitle:document.getElementById("masteryTitle"),mText:document.getElementById("masteryText"),newRound:document.getElementById("newRoundBtn"),review:document.getElementById("reviewBtn"),print:document.getElementById("printBtn"),resetBest:document.getElementById("resetBestBtn")};
+const params=new URLSearchParams(location.search);
+const requestedCourse=params.get("course");
+if(COURSE_CONFIG[requestedCourse])el.course.value=requestedCourse;
+const bestKey=()=>`khaemenes-math-estimate-defender-${el.course.value}-v3`;
+let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(_){return null}}
+function best(){try{const v=Number(localStorage.getItem(bestKey()));return Number.isFinite(v)?v:null}catch(_){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
-function saveBest(p){try{const old=best();if(old===null||p>old)localStorage.setItem(BEST,String(p))}catch(_){}updateBest()}
+function saveBest(p){try{const old=best();if(old===null||p>old)localStorage.setItem(bestKey(),String(p))}catch(_){}updateBest()}
 function setFeedback(k,t,p){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${p}</p>`}
-function start(source=null){const count=Math.max(8,Math.min(20,Number(el.size.value)||16));const pool=source&&source.length?source:BANK;const arr=[];while(arr.length<count)arr.push(...shuffle(pool));deck=arr.slice(0,count);index=0;selected=null;checked=false;score=0;correct=0;attempts=0;streak=0;missed=[];el.mastery.classList.remove("show");render();updateStats()}
-function render(){checked=false;selected=null;const c=deck[index];el.expr.textContent=c.expr;el.grid.innerHTML="";shuffle(c.choices).forEach(v=>{const b=document.createElement("button");b.type="button";b.className="answer-choice";b.textContent=v;b.dataset.value=v;b.setAttribute("aria-pressed","false");b.addEventListener("click",()=>{if(checked)return;selected=v;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))});el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;setFeedback("","Ready.","Estimate first, then defend the answer that fits the expected magnitude.");updateStats()}
+function updateCourseMode(){
+ const cfg=COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;
+ el.kicker.textContent=`Khaemenes Mathematics · ${cfg.label}`;
+ el.crumb.textContent=cfg.crumb;
+ el.gameTitle.textContent=cfg.title;
+ el.heroIntro.textContent=cfg.intro;
+ el.strategy.textContent=cfg.strategy;
+ el.returnLink.href=cfg.returnHref;
+ el.returnLink.textContent=cfg.returnLabel;
+ updateBest();
+}
+function start(source=null){updateCourseMode();const count=Math.max(8,Math.min(20,Number(el.size.value)||16));const pool=source&&source.length?source:(COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra).bank;const arr=[];while(arr.length<count)arr.push(...shuffle(pool));deck=arr.slice(0,count);index=0;selected=null;checked=false;score=0;correct=0;attempts=0;streak=0;missed=[];el.mastery.classList.remove("show");render();updateStats()}
+function render(){checked=false;selected=null;const c=deck[index];el.expr.textContent=c.expr;el.prompt.textContent=c.prompt||"Which answer is reasonable?";el.grid.innerHTML="";shuffle(c.choices).forEach(v=>{const b=document.createElement("button");b.type="button";b.className="answer-choice";b.textContent=v;b.dataset.value=v;b.setAttribute("aria-pressed","false");b.addEventListener("click",()=>{if(checked)return;selected=v;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))});el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;setFeedback("","Ready.","Estimate first, then defend the answer that fits the expected magnitude.");updateStats()}
 function hint(){setFeedback("","Estimate clue",deck[index].hint)}
 function submit(){if(checked)return;if(selected===null){setFeedback("bad","Choose an answer.","Select the result that seems reasonable before defending it.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.answer;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);setFeedback("good","Reasonable answer defended.",c.why)}else{streak=0;missed.push(c);setFeedback("bad",`The reasonable answer is ${c.answer}.`,`${c.hint} ${c.why}`)}el.next.textContent=index===deck.length-1?"See round results →":"Next defense →";updateStats()}
 function updateStats(){const total=deck.length||1,a=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Defense ${Math.min(index+1,total)} of ${total}`;el.acc.textContent=`Accuracy ${a}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
 function next(){if(!checked)return;if(index>=deck.length-1){finish();return}index++;render()}
-function finish(){index=deck.length;updateStats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Mastery gate passed":"Strengthen your estimate shield";el.mText.textContent=p>=80?`You defended ${correct} of ${attempts} reasonable answers correctly and met the 80% mastery goal.`:`You defended ${correct} of ${attempts} answers correctly. Review magnitude and benchmark estimates, then try again.`;el.review.disabled=missed.length===0;el.review.textContent=missed.length?`Review missed (${missed.length})`:"No missed defenses";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
-el.check.addEventListener("click",submit);el.next.addEventListener("click",next);el.hint.addEventListener("click",hint);el.newRound.addEventListener("click",()=>start());el.review.addEventListener("click",()=>{if(missed.length)start(missed)});el.size.addEventListener("change",()=>start());el.print.addEventListener("click",()=>window.print());el.resetBest.addEventListener("click",()=>{try{localStorage.removeItem(BEST)}catch(_){}updateBest();setFeedback("","Best score reset.","The saved best score on this device was cleared.")});
+function finish(){index=deck.length;updateStats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Mastery gate passed":"Strengthen your estimate shield";el.mText.textContent=p>=80?`You defended ${correct} of ${attempts} ${COURSE_CONFIG[el.course.value].label} estimates correctly and met the 80% mastery goal.`:`You defended ${correct} of ${attempts} estimates correctly. Review the reasoning checks for this course level, then try again.`;el.review.disabled=missed.length===0;el.review.textContent=missed.length?`Review missed (${missed.length})`:"No missed defenses";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.addEventListener("click",submit);el.next.addEventListener("click",next);el.hint.addEventListener("click",hint);el.newRound.addEventListener("click",()=>start());el.review.addEventListener("click",()=>{if(missed.length)start(missed)});el.course.addEventListener("change",()=>{const u=new URL(location.href);u.searchParams.set("course",el.course.value);u.searchParams.delete("mode");history.replaceState(null,"",u);start()});
+el.size.addEventListener("change",()=>start());el.print.addEventListener("click",()=>window.print());el.resetBest.addEventListener("click",()=>{try{localStorage.removeItem(bestKey())}catch(_){}updateBest();setFeedback("","Best score reset.","The saved best score on this device was cleared.")});
 updateBest();start();
 })();
 </script>

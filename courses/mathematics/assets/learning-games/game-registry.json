@@ -276,6 +276,57 @@
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
       "scope_note": "The shared game teaches evaluation sequence. Higher modes use formula and composition structure rather than merely larger arithmetic."
+    },
+    "estimate-defender": {
+      "title": "Estimate Defender",
+      "canonical_path": "courses/mathematics/assets/learning-games/estimate-defender/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-06-estimate-defender/index.html",
+        "courses/mathematics/pre-algebra/learning-games/estimate-defender/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "01",
+          "lesson": "06",
+          "lesson_title": "Estimation, Compatible Numbers & Reasonableness",
+          "mode": "reasonableness",
+          "query": "?course=prealgebra&unit=01&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "01",
+          "lesson": "05",
+          "lesson_title": "Precision, Rounding, Significant Figures & Percent Error",
+          "mode": "precision-error",
+          "query": "?course=algebra1&unit=01&lesson=05&mode=precision-error",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "10",
+          "lesson": "05",
+          "lesson_title": "Units, Precision, Error & Significant Figures",
+          "mode": "measurement-precision",
+          "query": "?course=geometry&unit=10&lesson=u10-l05&mode=measurement-precision",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "07",
+          "lesson": "06",
+          "lesson_title": "Change of Base, Technology & Estimation",
+          "mode": "technology-estimation",
+          "query": "?course=algebra2&unit=07&lesson=u07-l06&mode=technology-estimation",
+          "wired": true
+        }
+      ],
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "scope_note": "Algebra II measurement-error and modelling lessons remain available for later companions; this game owns the strongest direct progression without duplicating those future concepts."
     }
   }
 }
