@@ -436,6 +436,56 @@
           "wired": true
         }
       ]
+    },
+    "integer-rank": {
+      "title": "Integer Rank",
+      "canonical_path": "courses/mathematics/assets/learning-games/integer-rank/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-03-integer-rank/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "02",
+          "lesson": "03",
+          "lesson_title": "Compare & Order Integers",
+          "mode": "integer-order",
+          "query": "?course=prealgebra&unit=02&lesson=03",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "04",
+          "lesson": "01",
+          "lesson_title": "Inequality Meaning, Number Lines & Interval Notation",
+          "mode": "inequalities-intervals",
+          "query": "?course=algebra1&unit=04&lesson=01&mode=inequalities-intervals",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "03",
+          "lesson": "06",
+          "lesson_title": "Triangle Inequality & Feasible Construction",
+          "mode": "triangle-feasibility",
+          "query": "?course=geometry&unit=03&lesson=u03-l06&mode=triangle-feasibility",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "01",
+          "lesson": "02",
+          "lesson_title": "Domain, Range, Intervals & Constraints",
+          "mode": "domain-interval-constraints",
+          "query": "?course=algebra2&unit=01&lesson=u01-l02&mode=domain-interval-constraints",
+          "wired": true
+        }
+      ],
+      "scope_note": "Integer Rank owns order/interval representation and feasibility boundaries. Absolute-value solving remains with Opposite Mirror; later function-domain or inequality-solving games should extend other concepts rather than duplicate this ordering layer."
     }
   }
 }

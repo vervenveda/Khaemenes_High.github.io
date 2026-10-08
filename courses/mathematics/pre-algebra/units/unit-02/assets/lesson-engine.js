@@ -4,7 +4,7 @@ const pad=n=>String(n).padStart(2,"0"),unitNo=Number(map?.unit?.number)||Number(
 const COMPANIONS={
  l01:{game:"unit-02-01-integer-compass-signed-situation-sort",sharedGame:"integer-compass",gameMode:"prealgebra",video:{id:"R9MuFLGOJro",title:"Signed Integers",alignment:"core",note:"Core-aligned companion: reinforces positive and negative integers, signed quantities, and number-line meaning."}},
  l02:{game:"unit-02-02-opposite-mirror",sharedGame:"opposite-mirror",gameMode:"prealgebra",video:{id:"q4iUbeN7xV4",title:"Opposites and Absolute Value",alignment:"core",note:"Core-aligned companion: reinforces opposite integers, distance from zero, and absolute value."}},
- l03:{game:"unit-02-03-integer-rank",video:{id:"RSJOTBJlKNA",title:"The Number Line",alignment:"core",note:"Core-aligned companion: reinforces integer placement, ordering, comparison, and number-line reasoning."}},
+ l03:{game:"unit-02-03-integer-rank",sharedGame:"integer-rank",gameMode:"prealgebra",video:{id:"RSJOTBJlKNA",title:"The Number Line",alignment:"core",note:"Core-aligned companion: reinforces integer placement, ordering, comparison, and number-line reasoning."}},
  l04:{game:"unit-02-04-integer-sum-lab",video:{id:"3LUTYhmltQY",title:"Adding Integers Using a Number Line",alignment:"core",note:"Core-aligned companion: reinforces integer addition through directional movement on a number line."}},
  l05:{game:"unit-02-05-opposite-shift"},
  l06:{game:"unit-02-06-sign-forge",video:{id:"K9aN_GoATqI",title:"Multiplying Integers — Positive and Negative Numbers",alignment:"core",note:"Core-aligned companion: reinforces multiplication sign rules and products of positive and negative integers."}},
