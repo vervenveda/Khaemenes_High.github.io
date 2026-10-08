@@ -18,3 +18,21 @@ Missed-case review
 Local best score
 80% mastery gate
 Responsive and printable design
+
+
+## Canonical Shared-Game Migration · v3
+
+Canonical path:
+`courses/mathematics/assets/learning-games/prime-spy-composite/`
+
+Supported placements:
+- Pre-Algebra U01-L03 — Prime / Composite, divisibility, factor trees, prime factorization
+- Algebra I U02-L07 — GCF and algebraic factor structure
+- Algebra I U11-L02 — radical factor structure
+- Algebra II U05-L02 — advanced radical factor structure
+
+Intentional non-placement:
+- Geometry radical/Pythagorean lessons already use the shared Number Family game, so Prime Spy is not stacked there.
+- Algebra II U03-L04 Rational Root Theorem already uses the shared Factors & Multiples game, so this game is not duplicated there.
+
+Legacy Pre-Algebra copies remain temporarily for rollback and must not be deleted until live verification.

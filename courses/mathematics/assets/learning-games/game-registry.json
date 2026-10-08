@@ -124,6 +124,57 @@
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
       "scope_note": "GCF/LCM is intentionally reserved for the existing Pre-Algebra U01-L04 game to avoid subject duplication."
+    },
+    "prime-spy-composite": {
+      "title": "Prime Spy / Composite Catch",
+      "canonical_path": "courses/mathematics/assets/learning-games/prime-spy-composite/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-03-prime-spy-composite/index.html",
+        "courses/mathematics/pre-algebra/learning-games/03-prime-spy-composite/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "01",
+          "lesson": "03",
+          "lesson_title": "Prime Numbers, Divisibility & Prime Factorization",
+          "mode": "prime-structure",
+          "query": "?course=prealgebra&unit=01&lesson=03&mode=prime-structure",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "02",
+          "lesson": "07",
+          "lesson_title": "Multiplying Monomials & Factoring the GCF",
+          "mode": "gcf-factor-structure",
+          "query": "?course=algebra1&unit=02&lesson=07&mode=gcf-factor-structure",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "11",
+          "lesson": "02",
+          "lesson_title": "Simplifying & Operating with Radicals",
+          "mode": "radical-factor-structure",
+          "query": "?course=algebra1&unit=11&lesson=02&mode=radical-factor-structure",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "05",
+          "lesson": "02",
+          "lesson_title": "Simplifying Radical Expressions",
+          "mode": "radical-factor-structure-advanced",
+          "query": "?course=algebra2&unit=05&lesson=u05-l02&mode=radical-factor-structure-advanced",
+          "wired": true
+        }
+      ],
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "scope_note": "Geometry and Algebra II Rational Root placements were deliberately not duplicated because those lessons already have canonical shared-game companions."
     }
   }
 }

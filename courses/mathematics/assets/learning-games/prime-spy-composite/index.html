@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Lesson 3 Prime Spy / Composite Catch — classify numbers as prime, composite, or neither using divisibility reasoning.">
-<title>Lesson 3 · Prime Spy / Composite Catch</title>
+<meta name="description" content="Khaemenes Mathematics shared Prime Spy / Composite Catch game: prime structure, algebraic GCF factoring, and radical factor forensics across Pre-Algebra, Algebra I, and Algebra II.">
+<title>Prime Spy / Composite Catch · Khaemenes Mathematics Shared Game</title>
 <style>
 :root{
   --bg:#090b10;--panel:#141a22;--panel2:#10161e;--ink:#f7f1e3;--muted:#c8c1b3;
@@ -86,20 +86,20 @@ footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
 <body>
 <div class="shell">
 <header class="topbar">
-  <a class="brand" href="../units/unit-01/lessons/lesson-03-primes-divisibility.html" style="text-decoration:none"><div class="seal" aria-hidden="true"><span>3</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 01</p><p class="crumb">Lesson 3 Companion · Prime Numbers, Divisibility & Prime Factorization</p></div></a>
-  <div class="actions"><a class="ghost" href="../units/unit-01/lessons/lesson-03-primes-divisibility.html" style="text-decoration:none">← Lesson 3</a><button class="ghost" id="printBtn" type="button">Print rules</button><button class="ghost" id="resetBestBtn" type="button">Reset best</button></div>
+  <a class="brand" id="brandReturn" href="../../../pre-algebra/units/unit-01/lessons/lesson-03-primes-divisibility.html" style="text-decoration:none"><div class="seal" aria-hidden="true"><span>3</span></div><div><p class="kicker" id="courseKicker">Khaemenes Mathematics · Shared Game</p><p class="crumb" id="courseCrumb">Prime structure grows from arithmetic into algebraic factor reasoning.</p></div></a>
+  <div class="actions"><a class="ghost" id="lessonReturn" href="../../../pre-algebra/units/unit-01/lessons/lesson-03-primes-divisibility.html" style="text-decoration:none">← Return to Lesson</a><button class="ghost" id="printBtn" type="button">Print rules</button><button class="ghost" id="resetBestBtn" type="button">Reset best</button></div>
 </header>
 
 <section class="hero">
   <div class="eyebrow">Prime Spy / Composite Catch</div>
-  <h1>Investigate the number.</h1>
-  <p>Use divisibility clues, factor reasoning, factor trees, and the square-root stopping rule to decide whether each number is <strong>prime</strong>, <strong>composite</strong>, or <strong>neither</strong>—then uncover its prime structure.</p>
+  <h1 id="gameTitle">Investigate the number.</h1>
+  <p id="gameDescription">Use divisibility clues, factor reasoning, factor trees, and the square-root stopping rule to decide whether each number is <strong>prime</strong>, <strong>composite</strong>, or <strong>neither</strong>—then uncover its prime structure.</p>
   <div class="rules">
     <div class="rule"><b>Prime</b><small>A whole number greater than 1 with exactly two factors: 1 and itself.</small></div>
     <div class="rule"><b>Composite</b><small>A whole number greater than 1 with more than two factors.</small></div>
     <div class="rule"><b>Neither</b><small>0 and 1 are neither prime nor composite.</small></div>
   </div>
-  <div class="lesson-sync"><strong>Lesson sync:</strong> this edition follows Lesson 3’s full sequence: prime/composite classification, divisibility rules for 2, 3, 4, 5, 6, 9, and 10, factor trees, prime factorization, and the fact that different valid trees end with the same prime factors.</div>
+  <div class="lesson-sync" id="lessonSync"><strong>Lesson sync:</strong> this edition follows Lesson 3’s full sequence: prime/composite classification, divisibility rules for 2, 3, 4, 5, 6, 9, and 10, factor trees, prime factorization, and the fact that different valid trees end with the same prime factors.</div>
 </section>
 
 <section class="panel studio" aria-labelledby="studioTitle">
@@ -204,10 +204,10 @@ footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
   </div>
 
   <section class="spy-lab">
-    <div class="spy-head"><h2>Divisibility scanner</h2><span>Test a possible divisor</span></div>
+    <div class="spy-head"><h2 id="scannerTitle">Divisibility scanner</h2><span id="scannerSubtitle">Test a possible divisor</span></div>
     <div class="spy-buttons" id="spyButtons"></div>
     <div class="scan-result" id="scanResult">Select a divisor to inspect the evidence.</div>
-    <div class="fingerprint"><strong>Prime fingerprint:</strong> after classification, composite-number feedback reveals the complete prime factorization. Different factor-tree paths must end with this same set of prime factors.</div>
+    <div class="fingerprint" id="fingerprintText"><strong>Prime fingerprint:</strong> after classification, composite-number feedback reveals the complete prime factorization. Different factor-tree paths must end with this same set of prime factors.</div>
   </section>
 
   <div class="row"><button class="secondary" id="hintBtn" type="button">Reasoning hint</button><button class="primary" id="checkBtn" type="button">Submit classification</button><button class="secondary" id="nextBtn" type="button" hidden>Next case →</button></div>
@@ -218,7 +218,7 @@ footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
 </section>
 
 <aside class="panel side">
-  <h2>Lesson 3 Field Guide</h2>
+  <h2 id="fieldGuideTitle">Lesson 3 Field Guide</h2>
   <div class="rulecard"><b>Divisible by 2</b><span>Last digit is 0, 2, 4, 6, or 8.</span></div>
   <div class="rulecard"><b>Divisible by 3</b><span>Digit sum is divisible by 3.</span></div>
   <div class="rulecard"><b>Divisible by 4</b><span>The last two digits form a number divisible by 4.</span></div>
@@ -228,11 +228,22 @@ footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
   <div class="rulecard"><b>Divisible by 10</b><span>Last digit is 0.</span></div>
   <div class="rulecard"><b>Prime factorization</b><span>Keep splitting composite factors until every factor is prime.</span></div>
   <div class="tip"><strong>Prime reasoning</strong><p id="strategyText">To prove a number prime, you only need to test possible prime divisors up to its square root.</p></div>
-  <div class="controls"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 cases</option><option value="18" selected>18 cases</option><option value="24">24 cases</option></select></div>
+  <div class="controls">
+    <label for="courseMode">Course level</label>
+    <select id="courseMode">
+      <option value="prealgebra">Pre-Algebra · Prime Structure</option>
+      <option value="algebra1">Algebra I · Factor Structure</option>
+      <option value="algebra2">Algebra II · Radical Factor Forensics</option>
+    </select>
+    <label for="focusMode">Mission focus</label>
+    <select id="focusMode"></select>
+    <label for="roundSize">Round length</label>
+    <select id="roundSize"><option value="12">12 cases</option><option value="18" selected>18 cases</option><option value="24">24 cases</option></select>
+  </div>
   <p class="best" id="bestScore">Best mastery score: —</p>
 </aside>
 </main>
-<footer>KH-MATH-PA-U01-L3 · Prime/composite · Divisibility · Factor trees · Prime factorization · 80% mastery</footer>
+<footer id="footerText">Khaemenes Mathematics Shared Game · Prime Spy / Composite Catch · 80% mastery</footer>
 </div>
 <script>
 (()=>{
@@ -245,12 +256,82 @@ const el={
  check:document.getElementById("checkBtn"),next:document.getElementById("nextBtn"),feedback:document.getElementById("feedback"),
  score:document.getElementById("score"),streak:document.getElementById("streak"),round:document.getElementById("roundLabel"),
  acc:document.getElementById("accuracyLabel"),fill:document.getElementById("progressFill"),strategy:document.getElementById("strategyText"),
- size:document.getElementById("roundSize"),best:document.getElementById("bestScore"),mastery:document.getElementById("mastery"),
+ course:document.getElementById("courseMode"),focus:document.getElementById("focusMode"),size:document.getElementById("roundSize"),best:document.getElementById("bestScore"),mastery:document.getElementById("mastery"),
  mark:document.getElementById("masteryMark"),mTitle:document.getElementById("masteryTitle"),mText:document.getElementById("masteryText"),
  newRound:document.getElementById("newRoundBtn"),review:document.getElementById("reviewBtn"),print:document.getElementById("printBtn"),
- resetBest:document.getElementById("resetBestBtn")
+ resetBest:document.getElementById("resetBestBtn"),
+ brandReturn:document.getElementById("brandReturn"),lessonReturn:document.getElementById("lessonReturn"),
+ kicker:document.getElementById("courseKicker"),crumb:document.getElementById("courseCrumb"),
+ gameTitle:document.getElementById("gameTitle"),gameDescription:document.getElementById("gameDescription"),
+ lessonSync:document.getElementById("lessonSync"),scannerTitle:document.getElementById("scannerTitle"),
+ scannerSubtitle:document.getElementById("scannerSubtitle"),fingerprint:document.getElementById("fingerprintText"),
+ fieldGuideTitle:document.getElementById("fieldGuideTitle"),footer:document.getElementById("footerText")
 };
-const BEST="khaemenes_prime_spy_best_v1";
+const params=new URLSearchParams(location.search);
+const COURSE_CONFIG={
+ prealgebra:{
+   label:"Pre-Algebra",defaultFocus:"prime-structure",
+   focuses:[["prime-structure","Prime / Composite & Divisibility"]],
+   returnHref:"../../../pre-algebra/units/unit-01/lessons/lesson-03-primes-divisibility.html",
+   returnLabel:"← Pre-Algebra U01-L03"
+ },
+ algebra1:{
+   label:"Algebra I",defaultFocus:"gcf-factor-structure",
+   focuses:[["gcf-factor-structure","GCF & Algebraic Factor Structure"],["radical-factor-structure","Radical Factor Structure"]],
+   returnHref:"../../../algebra-1/units/unit-02/lessons/lesson-07-multiplying-monomials-factoring-the-gcf.html",
+   returnLabel:"← Algebra I"
+ },
+ algebra2:{
+   label:"Algebra II",defaultFocus:"radical-factor-structure-advanced",
+   focuses:[["radical-factor-structure-advanced","Advanced Radical Factor Structure"]],
+   returnHref:"../../../algebra-2/units/unit-05/lessons/u05-l02.html",
+   returnLabel:"← Algebra II U05-L02"
+ }
+};
+
+const GCF_MISSIONS=[
+ {display:"18x³ and 30x²",prompt:"Greatest common monomial factor?",options:["6x²","3x²","6x³"],answer:0,hint:"Prime-factor 18 and 30, then use the smaller exponent of x.",why:"18=2·3² and 30=2·3·5, so the coefficient GCF is 6; the smaller x exponent is 2. GCF = 6x².",clues:["18 = 2 · 3²","30 = 2 · 3 · 5","Use the minimum shared exponent x²."]},
+ {display:"24a²b³ and 36ab²",prompt:"Greatest common monomial factor?",options:["12ab²","6a²b²","12a²b³"],answer:0,hint:"Use shared prime factors of 24 and 36, then minimum variable exponents.",why:"GCF(24,36)=12; min exponent of a is 1 and b is 2. GCF = 12ab².",clues:["24 = 2³ · 3","36 = 2² · 3²","Shared variable powers: a¹ and b²."]},
+ {display:"14x² + 21x",prompt:"Complete the GCF factorization.",options:["7x(2x+3)","7(2x²+3x)","x(14x+21)"],answer:0,hint:"Find the greatest factor common to both terms, including x.",why:"14 and 21 share 7, and both terms share x. Factoring 7x gives 7x(2x+3).",clues:["14 = 2 · 7","21 = 3 · 7","Both terms contain x."]},
+ {display:"18m³ − 24m²",prompt:"Complete the GCF factorization.",options:["6m²(3m−4)","6m(3m²−4m)","3m²(6m−8)"],answer:0,hint:"The greatest coefficient factor is 6 and the minimum m exponent is 2.",why:"18 and 24 share GCF 6; m³ and m² share m². So 18m³−24m²=6m²(3m−4).",clues:["18 = 2 · 3²","24 = 2³ · 3","Minimum m exponent is 2."]},
+ {display:"16x⁴y² and 40x²y⁵",prompt:"Greatest common monomial factor?",options:["8x²y²","8x⁴y⁵","4x²y²"],answer:0,hint:"Take the GCF of coefficients and the smaller exponent of each variable.",why:"GCF(16,40)=8; min x exponent=2 and min y exponent=2. GCF = 8x²y².",clues:["16 = 2⁴","40 = 2³ · 5","Use x² and y²."]},
+ {display:"27p²q + 45pq²",prompt:"Complete the GCF factorization.",options:["9pq(3p+5q)","9p²q²(3+5)","3pq(9p+15q)"],answer:0,hint:"Use the greatest numerical factor and the variables present in both terms.",why:"GCF(27,45)=9 and both terms contain pq. So the expression factors as 9pq(3p+5q).",clues:["27 = 3³","45 = 3² · 5","Both terms contain p and q."]},
+ {display:"84",prompt:"Which is the prime factorization?",options:["2²·3·7","2·3²·7","4·21"],answer:0,hint:"Keep splitting every composite factor until only primes remain.",why:"84=4·21=(2²)(3·7)=2²·3·7.",clues:["84 ÷ 2 = 42","42 ÷ 2 = 21","21 = 3 · 7"]},
+ {display:"72 and 90",prompt:"Greatest common numerical factor?",options:["18","9","36"],answer:0,hint:"Compare their prime fingerprints.",why:"72=2³·3² and 90=2·3²·5. Shared minimum powers give 2·3²=18.",clues:["72 = 2³ · 3²","90 = 2 · 3² · 5","Shared minimum powers: 2¹ · 3²."]}
+];
+
+const RADICAL_MISSIONS=[
+ {display:"√72",prompt:"Simplify completely.",options:["6√2","3√8","12√2"],answer:0,hint:"Find the greatest perfect-square factor of 72.",why:"72=36·2, so √72=√36·√2=6√2.",clues:["72 = 2³ · 3²","Pair 2² and 3² outside the radical.","One factor 2 remains inside."]},
+ {display:"√48",prompt:"Simplify completely.",options:["4√3","2√12","8√3"],answer:0,hint:"48 contains the perfect-square factor 16.",why:"48=16·3, so √48=4√3.",clues:["48 = 2⁴ · 3","2⁴ is a perfect square.","√16 = 4."]},
+ {display:"3√20",prompt:"Simplify completely.",options:["6√5","3√10","12√5"],answer:0,hint:"Factor 20 into a perfect square times a remaining factor.",why:"20=4·5, so 3√20=3·2√5=6√5.",clues:["20 = 2² · 5","√(2²)=2","Multiply the outside 3 by 2."]},
+ {display:"√(75x²), x≥0",prompt:"Simplify completely.",options:["5x√3","25x√3","5x²√3"],answer:0,hint:"Factor 75 and extract the square x².",why:"75=25·3 and √(x²)=x for x≥0, so √(75x²)=5x√3.",clues:["75 = 3 · 5²","x² is a perfect square.","x≥0 removes the absolute-value issue."]},
+ {display:"√(98a⁴)",prompt:"Simplify completely.",options:["7a²√2","49a²√2","7a⁴√2"],answer:0,hint:"98=49·2 and a⁴ is a perfect square.",why:"√(98a⁴)=√49·√2·√(a⁴)=7a²√2.",clues:["98 = 2 · 7²","a⁴=(a²)²","Extract 7a²."]},
+ {display:"2√27 + √12",prompt:"Combine in simplest radical form.",options:["8√3","6√39","4√3"],answer:0,hint:"Simplify each radical before combining like radicals.",why:"√27=3√3 and √12=2√3, so 2√27+√12=6√3+2√3=8√3.",clues:["27 = 3² · 3","12 = 2² · 3","Both simplify to multiples of √3."]},
+ {display:"√45 · √5",prompt:"Simplify.",options:["15","5√5","√50"],answer:0,hint:"Combine the radicals first or simplify √45.",why:"√45·√5=√225=15.",clues:["45·5 = 225","225 = 15²","The product is a perfect square."]},
+ {display:"√200",prompt:"Simplify completely.",options:["10√2","20√2","5√8"],answer:0,hint:"Use the greatest perfect-square factor.",why:"200=100·2, so √200=10√2.",clues:["200 = 2³ · 5²","100 is a perfect-square factor.","√100 = 10."]}
+];
+
+const ADV_RADICAL_MISSIONS=[
+ {display:"√(200x⁶), x≥0",prompt:"Simplify completely.",options:["10x³√2","20x³√2","10x⁶√2"],answer:0,hint:"Extract the perfect-square coefficient and the square root of x⁶.",why:"200=100·2 and √(x⁶)=x³ for x≥0, giving 10x³√2.",clues:["200 = 2³ · 5²","x⁶=(x³)²","Extract 10x³."]},
+ {display:"∛54",prompt:"Simplify completely.",options:["3∛2","9∛2","3∛6"],answer:0,hint:"Find a perfect-cube factor of 54.",why:"54=27·2, so ∛54=3∛2.",clues:["54 = 2 · 3³","27 is a perfect cube.","∛27 = 3."]},
+ {display:"∜(48x⁸), x≥0",prompt:"Simplify completely.",options:["2x²∜3","4x²∜3","2x⁴∜3"],answer:0,hint:"Extract fourth powers from the coefficient and variable.",why:"48=16·3 and x⁸=(x²)⁴, so ∜(48x⁸)=2x²∜3.",clues:["48 = 2⁴ · 3","x⁸=(x²)⁴","Extract 2x²."]},
+ {display:"x^(7/2), x≥0",prompt:"Write in simplest radical form.",options:["x³√x","x⁷√2","x²√(x³)"],answer:0,hint:"Separate 7/2 as 3 + 1/2.",why:"x^(7/2)=x³·x^(1/2)=x³√x.",clues:["7/2 = 3 + 1/2","x^(1/2)=√x","Keep the whole-power factor outside."]},
+ {display:"√(18a⁵), a≥0",prompt:"Simplify completely.",options:["3a²√(2a)","9a²√(2a)","3a⁵√2"],answer:0,hint:"Extract square factors from both 18 and a⁵.",why:"18a⁵=9a⁴·2a, so the square root is 3a²√(2a).",clues:["18 = 3² · 2","a⁵=a⁴·a","Extract 3a²."]},
+ {display:"∛(16x⁷)",prompt:"Simplify completely.",options:["2x²∛(2x)","4x²∛x","2x³∛2"],answer:0,hint:"Extract perfect cubes from 16 and x⁷.",why:"16x⁷=8x⁶·2x, so ∛(16x⁷)=2x²∛(2x).",clues:["16 = 2³ · 2","x⁷=x⁶·x","Extract 2x²."]},
+ {display:"(81y⁸)^(1/4)",prompt:"Simplify for real y.",options:["3y²","9y²","3y⁴"],answer:0,hint:"Recognize fourth powers in 81 and y⁸.",why:"81=3⁴ and y⁸=(y²)⁴, so the fourth root is 3y².",clues:["81 = 3⁴","y⁸=(y²)⁴","y² is already nonnegative."]},
+ {display:"√12 / √3",prompt:"Simplify.",options:["2","4","√9"],answer:0,hint:"Combine the radicals because the denominator is positive.",why:"√12/√3=√(12/3)=√4=2.",clues:["12/3 = 4","4 is a perfect square.","√4 = 2."]}
+];
+
+function courseKey(){return el.course.value||"prealgebra"}
+function focusKey(){return el.focus.value||COURSE_CONFIG[courseKey()].defaultFocus}
+function bestKey(){return `khaemenes-math-prime-spy-${courseKey()}-${focusKey()}-v3`}
+function isFoundationMode(){return focusKey()==="prime-structure"}
+function missionPool(){
+ if(focusKey()==="gcf-factor-structure")return GCF_MISSIONS;
+ if(focusKey()==="radical-factor-structure")return RADICAL_MISSIONS;
+ if(focusKey()==="radical-factor-structure-advanced")return ADV_RADICAL_MISSIONS;
+ return BANK;
+}
 let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function isPrime(n){if(n<2)return false;if(n===2)return true;if(n%2===0)return false;for(let d=3;d*d<=n;d+=2)if(n%d===0)return false;return true}
@@ -259,15 +340,42 @@ function factorWitness(n){if(n<2)return null;for(let d=2;d*d<=n;d++)if(n%d===0)r
 function primeFactors(n){const out=[];let d=2;let x=n;while(x>1){while(x%d===0){out.push(d);x/=d}d++}return out}
 function factorizationText(n){if(n<2)return "No prime factorization";const f=primeFactors(n);return f.join(" × ")}
 function setFeedback(k,t,p){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${p}</p>`}
-function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(_){return null}}
+function best(){try{const v=Number(localStorage.getItem(bestKey()));return Number.isFinite(v)?v:null}catch(_){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
-function saveBest(p){try{const old=best();if(old===null||p>old)localStorage.setItem(BEST,String(p))}catch(_){}updateBest()}
+function saveBest(p){try{const old=best();if(old===null||p>old)localStorage.setItem(bestKey(),String(p))}catch(_){}updateBest()}
 function current(){return deck[index]}
-function start(source=null){const count=Math.max(6,Math.min(24,Number(el.size.value)||18));const pool=source&&source.length?source:BANK;const arr=[];while(arr.length<count)arr.push(...shuffle(pool));deck=arr.slice(0,count);index=0;selected=null;checked=false;score=0;correct=0;attempts=0;streak=0;missed=[];el.mastery.classList.remove("show");render();updateStats()}
+function start(source=null){
+ const count=Math.max(6,Math.min(24,Number(el.size.value)||18));
+ const pool=source&&source.length?source:missionPool();
+ const arr=[];while(arr.length<count)arr.push(...shuffle(pool));
+ deck=arr.slice(0,count);index=0;selected=null;checked=false;score=0;correct=0;attempts=0;streak=0;missed=[];
+ el.mastery.classList.remove("show");render();updateStats()
+}
+function setChoiceButton(button,label,small,value){
+ button.dataset.choice=String(value);button.querySelector("strong").textContent=label;button.querySelector("small").textContent=small||"";
+ button.disabled=false;button.setAttribute("aria-pressed","false")
+}
 function render(){
- checked=false;selected=null;const n=current();el.card.textContent=n;el.sub.textContent=n<2?"Remember the special cases.":"Use evidence before you classify.";
- el.choices.forEach(b=>{b.disabled=false;b.setAttribute("aria-pressed","false")});el.check.hidden=false;el.check.disabled=false;el.next.hidden=true;el.hint.disabled=false;
- buildSpies(n);el.scan.textContent="Select a divisor to inspect the evidence.";setFeedback("","Case open.","Gather evidence, choose a classification, and submit your reasoning.");updateStats()
+ checked=false;selected=null;const item=current();
+ if(isFoundationMode()){
+   const n=item;el.card.textContent=n;el.sub.textContent=n<2?"Remember the special cases.":"Use evidence before you classify.";
+   const base=[["Prime","Only factors 1 and itself","Prime"],["Composite","Has another factor pair","Composite"],["Neither","Special case: 0 or 1","Neither"]];
+   el.choices.forEach((b,i)=>setChoiceButton(b,...base[i]));
+   buildSpies(n);el.scan.textContent="Select a divisor to inspect the evidence.";
+   setFeedback("","Case open.","Gather evidence, choose a classification, and submit your reasoning.")
+ }else{
+   const m=item;el.card.textContent=m.display;el.sub.textContent=m.prompt;
+   el.choices.forEach((b,i)=>setChoiceButton(b,m.options[i],"Choose the structurally correct result",i));
+   buildEvidence(m);el.scan.textContent="Open an evidence card to inspect the factor structure.";
+   setFeedback("","Case open.","Use factor structure, not guesswork, to choose the correct result.")
+ }
+ el.check.hidden=false;el.check.disabled=false;el.next.hidden=true;el.hint.disabled=false;updateStats()
+}
+function buildEvidence(m){
+ el.spies.innerHTML="";
+ (m.clues||[]).forEach((clue,i)=>{const b=document.createElement("button");b.type="button";b.className="spy";b.textContent=`Evidence ${i+1}`;b.addEventListener("click",()=>{
+   document.querySelectorAll(".spy").forEach(x=>x.classList.remove("hit","miss"));b.classList.add("hit");el.scan.textContent=clue
+ });el.spies.appendChild(b)})
 }
 function buildSpies(n){el.spies.innerHTML="";DIVS.forEach(d=>{const b=document.createElement("button");b.type="button";b.className="spy";b.textContent=`÷ ${d}`;b.addEventListener("click",()=>scan(d,b));el.spies.appendChild(b)})}
 function scan(d,b){
@@ -289,22 +397,84 @@ function scan(d,b){
 function updateStats(){const total=deck.length||1;const a=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Case ${Math.min(index+1,total)} of ${total}`;el.acc.textContent=`Accuracy ${a}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
 el.choices.forEach(b=>b.addEventListener("click",()=>{if(checked)return;selected=b.dataset.choice;el.choices.forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))}));
 function hint(){
+ if(!isFoundationMode()){const m=current();setFeedback("","Hint",m.hint);return}
  const n=current();if(n===0||n===1){setFeedback("","Hint",`${n} is one of the two special whole numbers that are neither prime nor composite.`);return}
  const root=Math.floor(Math.sqrt(n));const candidates=DIVS.filter(d=>d<=root);
  if(isPrime(n))setFeedback("","Hint",`To prove ${n} prime, test prime divisors no larger than √${n} ≈ ${Math.sqrt(n).toFixed(2)}. Relevant tests here: ${candidates.length?candidates.join(", "):"none beyond 1"}.`);
  else{const w=factorWitness(n);setFeedback("","Hint",`Look for a divisor no larger than √${n} ≈ ${Math.sqrt(n).toFixed(2)}. One of the small tests will expose a factor pair.`)}
 }
 function submit(){
- if(checked)return;if(!selected){setFeedback("bad","Choose a classification.","Select Prime, Composite, or Neither before submitting.");return}
- checked=true;attempts++;const n=current(),answer=kind(n),ok=selected===answer;el.choices.forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;
- if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);let why;if(answer==="Prime")why=`${n} has no divisors other than 1 and ${n}; no prime divisor at or below √${n} divides evenly.`;else if(answer==="Composite"){const [a,b]=factorWitness(n);why=`${n} is composite because ${a} × ${b} = ${n}. Prime factorization: ${factorizationText(n)}.`; }else why=`${n} is neither prime nor composite.`;setFeedback("good","Case solved.",why)}
- else{streak=0;missed.push(n);let why;if(answer==="Composite"){const [a,b]=factorWitness(n);why=`${n} is composite because ${a} × ${b} = ${n}. Prime factorization: ${factorizationText(n)}.`}else if(answer==="Prime")why=`${n} is prime: no prime divisor at or below its square root divides it evenly.`;else why=`${n} is a special case: neither prime nor composite.`;setFeedback("bad",`Correct classification: ${answer}.`,why)}
+ if(checked)return;if(selected===null){setFeedback("bad","Choose a classification.","Select one response before submitting.");return}
+ checked=true;attempts++;let ok=false,why="",answerLabel="";
+ if(isFoundationMode()){
+   const n=current(),answer=kind(n);ok=selected===answer;answerLabel=answer;
+   if(answer==="Composite"){const [a,b]=factorWitness(n);why=`${n} is composite because ${a} × ${b} = ${n}. Prime factorization: ${factorizationText(n)}.`}
+   else if(answer==="Prime")why=`${n} is prime: no prime divisor at or below its square root divides it evenly.`;
+   else why=`${n} is a special case: neither prime nor composite.`;
+ }else{
+   const m=current();ok=Number(selected)===m.answer;answerLabel=m.options[m.answer];why=m.why;
+ }
+ el.choices.forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;
+ if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);setFeedback("good","Case solved.",why)}
+ else{streak=0;missed.push(current());setFeedback("bad",`Correct response: ${answerLabel}.`,why)}
  el.next.textContent=index===deck.length-1?"See round results →":"Next case →";updateStats()
 }
+function configureFocuses(preferred=null){
+ const cfg=COURSE_CONFIG[courseKey()];
+ el.focus.innerHTML=cfg.focuses.map(([value,label])=>`<option value="${value}">${label}</option>`).join("");
+ const wanted=preferred||params.get("mode")||cfg.defaultFocus;
+ if(cfg.focuses.some(([v])=>v===wanted))el.focus.value=wanted;
+}
+function applyMode(){
+ const cfg=COURSE_CONFIG[courseKey()];
+ const focus=focusKey();
+ el.brandReturn.href=cfg.returnHref;el.lessonReturn.href=cfg.returnHref;el.lessonReturn.textContent=cfg.returnLabel;
+ el.kicker.textContent=`Khaemenes Mathematics · ${cfg.label}`;
+ if(courseKey()==="prealgebra"){
+   el.crumb.textContent="U01-L03 · Prime Numbers, Divisibility & Prime Factorization";
+   el.gameTitle.textContent="Investigate the number.";
+   el.gameDescription.innerHTML="Use divisibility clues, factor reasoning, factor trees, and the square-root stopping rule to classify numbers and uncover their prime structure.";
+   el.lessonSync.innerHTML="<strong>Lesson sync:</strong> prime/composite classification, divisibility rules, factor trees, prime factorization, and uniqueness of prime fingerprints.";
+   el.scannerTitle.textContent="Divisibility scanner";el.scannerSubtitle.textContent="Test a possible divisor";
+   el.fingerprint.innerHTML="<strong>Prime fingerprint:</strong> every composite whole number has one prime factorization apart from factor order.";
+   el.fieldGuideTitle.textContent="Pre-Algebra Prime Structure Field Guide";
+ }else if(focus==="gcf-factor-structure"){
+   el.crumb.textContent="Algebra I · U02-L07 · Multiplying Monomials & Factoring the GCF";
+   el.gameTitle.textContent="Trace the common factor.";
+   el.gameDescription.textContent="Use prime fingerprints and minimum variable exponents to expose greatest common monomial factors and complete GCF factorizations.";
+   el.lessonSync.innerHTML="<strong>Lesson sync:</strong> numerical prime factorization becomes algebraic GCF structure.";
+   el.scannerTitle.textContent="Factor evidence";el.scannerSubtitle.textContent="Open a structural clue";
+   el.fingerprint.innerHTML="<strong>Algebraic fingerprint:</strong> a monomial GCF uses shared prime factors and the minimum exponent of each shared variable.";
+   el.fieldGuideTitle.textContent="Algebra I Factor Structure Field Guide";
+   el.lessonReturn.href="../../../algebra-1/units/unit-02/lessons/lesson-07-multiplying-monomials-factoring-the-gcf.html";
+ }else if(focus==="radical-factor-structure"){
+   el.crumb.textContent="Algebra I · U11-L02 · Simplifying & Operating with Radicals";
+   el.gameTitle.textContent="Find the square factors hiding inside.";
+   el.gameDescription.textContent="Use prime factorization and perfect-power grouping to simplify radicals exactly before operating or approximating.";
+   el.lessonSync.innerHTML="<strong>Lesson sync:</strong> prime-factor structure identifies perfect-square groups that can leave the radical.";
+   el.scannerTitle.textContent="Radical evidence";el.scannerSubtitle.textContent="Open a factor clue";
+   el.fingerprint.innerHTML="<strong>Radical fingerprint:</strong> paired prime factors leave a square root together; unpaired factors remain inside.";
+   el.fieldGuideTitle.textContent="Algebra I Radical Structure Field Guide";
+   el.lessonReturn.href="../../../algebra-1/units/unit-11/lessons/lesson-02-simplifying-operating-with-radicals.html";
+ }else{
+   el.crumb.textContent="Algebra II · U05-L02 · Simplifying Radical Expressions";
+   el.gameTitle.textContent="Run advanced factor forensics.";
+   el.gameDescription.textContent="Use prime powers and perfect-power structure to simplify square, cube, and fourth roots and translate rational exponents.";
+   el.lessonSync.innerHTML="<strong>Lesson sync:</strong> prime fingerprints extend to higher-index radicals and rational-exponent equivalence.";
+   el.scannerTitle.textContent="Advanced factor evidence";el.scannerSubtitle.textContent="Open a structural clue";
+   el.fingerprint.innerHTML="<strong>Advanced fingerprint:</strong> group prime exponents by the radical index and extract complete groups.";
+   el.fieldGuideTitle.textContent="Algebra II Radical Structure Field Guide";
+ }
+ el.footer.textContent=`Khaemenes Mathematics Shared Game · Prime Spy / Composite Catch · ${cfg.label} · 80% mastery`;
+ updateBest()
+}
+
 function next(){if(!checked)return;if(index>=deck.length-1){finish();return}index++;render()}
-function finish(){index=deck.length;updateStats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Mastery gate passed":"Continue the investigation";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} cases correctly and met the 80% mastery goal for prime and divisibility reasoning.`:`You solved ${correct} of ${attempts} cases correctly. Review divisibility evidence and retry the missed cases to reach 80%.`;el.review.disabled=missed.length===0;el.review.textContent=missed.length?`Review missed cases (${missed.length})`:"No missed cases";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+function finish(){index=deck.length;updateStats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Mastery gate passed":"Continue the investigation";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} cases correctly and met the 80% mastery goal for ${el.focus.options[el.focus.selectedIndex]?.textContent||"factor reasoning"}.`:`You solved ${correct} of ${attempts} cases correctly. Review the factor evidence and retry the missed cases to reach 80%.`;el.review.disabled=missed.length===0;el.review.textContent=missed.length?`Review missed cases (${missed.length})`:"No missed cases";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
 el.check.addEventListener("click",submit);el.next.addEventListener("click",next);el.hint.addEventListener("click",hint);el.newRound.addEventListener("click",()=>start());el.review.addEventListener("click",()=>{if(missed.length)start(missed)});el.size.addEventListener("change",()=>start());
-el.print.addEventListener("click",()=>window.print());el.resetBest.addEventListener("click",()=>{try{localStorage.removeItem(BEST)}catch(_){}updateBest();setFeedback("","Best score reset.","The saved best score on this device was cleared.")});
+el.course.addEventListener("change",()=>{configureFocuses();applyMode();start()});
+el.focus.addEventListener("change",()=>{applyMode();start()});
+el.print.addEventListener("click",()=>window.print());el.resetBest.addEventListener("click",()=>{try{localStorage.removeItem(bestKey())}catch(_){}updateBest();setFeedback("","Best score reset.","The saved best score on this device was cleared.")});
 document.addEventListener("keydown",e=>{const t=document.activeElement&&document.activeElement.tagName;if(["INPUT","TEXTAREA","SELECT"].includes(t))return;if(e.key==="1"||e.key==="2"||e.key==="3"){const b=el.choices[Number(e.key)-1];if(!b.disabled)b.click()}else if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();hint()}});
 
 const lessonTabs=[...document.querySelectorAll(".studio-tab")];
@@ -330,7 +500,11 @@ document.getElementById("playTreeLessonDemo").addEventListener("click",()=>{
 });
 document.getElementById("playSameLessonDemo").addEventListener("click",()=>document.getElementById("samePrimeResult").classList.add("on"));
 
-updateBest();start();
+const requestedCourse=params.get("course");
+if(COURSE_CONFIG[requestedCourse])el.course.value=requestedCourse;
+configureFocuses(params.get("mode"));
+applyMode();
+start();
 })();
 </script>
 </body>
