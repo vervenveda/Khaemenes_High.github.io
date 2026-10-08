@@ -6,6 +6,7 @@ on:
       - "courses/mathematics/assets/learning-games/**"
       - "courses/mathematics/assets/shared-game-launcher.js"
       - "courses/mathematics/tools/validate-shared-games.mjs"
+      - "courses/mathematics/tools/test-game-regressions.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -17,6 +18,7 @@ on:
       - "courses/mathematics/assets/learning-games/**"
       - "courses/mathematics/assets/shared-game-launcher.js"
       - "courses/mathematics/tools/validate-shared-games.mjs"
+      - "courses/mathematics/tools/test-game-regressions.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -35,3 +37,6 @@ jobs:
         uses: actions/checkout@v6
       - name: Validate canonical shared-game contracts
         run: node courses/mathematics/tools/validate-shared-games.mjs
+
+      - name: Verify repaired game behavior
+        run: node courses/mathematics/tools/test-game-regressions.mjs
