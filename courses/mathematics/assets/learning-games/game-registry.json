@@ -928,10 +928,46 @@
           "mode": "multi-step",
           "query": "?course=algebra1&unit=03&lesson=03&mode=multi-step",
           "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "08",
+          "lesson": "02",
+          "lesson_title": "One-Step Equations: Addition & Subtraction",
+          "mode": "one-step",
+          "query": "?course=prealgebra&unit=08&lesson=02&mode=one-step",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "08",
+          "lesson": "03",
+          "lesson_title": "One-Step Equations: Multiplication & Division",
+          "mode": "one-step",
+          "query": "?course=prealgebra&unit=08&lesson=03&mode=one-step",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "08",
+          "lesson": "04",
+          "lesson_title": "Two-Step Equations & Operation Order",
+          "mode": "two-step",
+          "query": "?course=prealgebra&unit=08&lesson=04&mode=two-step",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "08",
+          "lesson": "05",
+          "lesson_title": "Multi-Step Equations: Distribution & Like Terms",
+          "mode": "multi-step",
+          "query": "?course=prealgebra&unit=08&lesson=05&mode=multi-step",
+          "wired": true
         }
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "scope_note": "Game v1 currently chooses level in its own UI; query mode is placement metadata, not enforced difficulty. Student-facing runtime and mathematical accuracy tests pending."
+      "scope_note": "Game v1 does not interpret mode parameters; learner selects difficulty manually. Pre-Algebra L02/L03 should use Level 1; L04 Level 2; L05 Level 3 (variables on both sides is advanced enrichment). Browser QA pending."
     }
   }
 }
