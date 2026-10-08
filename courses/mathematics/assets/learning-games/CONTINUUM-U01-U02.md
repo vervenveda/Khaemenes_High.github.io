@@ -54,7 +54,9 @@ The nested `assets/assets/` tree is a duplicate cleanup target and no indexed re
 
 ## Current step
 
-Units 01 and 02 are audited and ready to close after post-commit workflow verification.
+Units 01 and 02 are audited and closed.
+
+A dedicated `Mathematics Shared Games Validation` workflow now guards future migrations. It checks canonical game presence, legacy rollback presence, registry placements, Pre-Algebra engine mappings, higher-course launcher/game/mode wiring, canonical local links, and inline JavaScript syntax.
 
 ## Next
 

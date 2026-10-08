@@ -1,0 +1,37 @@
+name: Mathematics Shared Games Validation
+
+on:
+  pull_request:
+    paths:
+      - "courses/mathematics/assets/learning-games/**"
+      - "courses/mathematics/assets/shared-game-launcher.js"
+      - "courses/mathematics/tools/validate-shared-games.mjs"
+      - "courses/mathematics/pre-algebra/units/**"
+      - "courses/mathematics/algebra-1/units/**"
+      - "courses/mathematics/geometry/units/**"
+      - "courses/mathematics/algebra-2/units/**"
+      - ".github/workflows/math-shared-games-validation.yml"
+  push:
+    branches: [ main ]
+    paths:
+      - "courses/mathematics/assets/learning-games/**"
+      - "courses/mathematics/assets/shared-game-launcher.js"
+      - "courses/mathematics/tools/validate-shared-games.mjs"
+      - "courses/mathematics/pre-algebra/units/**"
+      - "courses/mathematics/algebra-1/units/**"
+      - "courses/mathematics/geometry/units/**"
+      - "courses/mathematics/algebra-2/units/**"
+      - ".github/workflows/math-shared-games-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Validate canonical shared-game contracts
+        run: node courses/mathematics/tools/validate-shared-games.mjs
