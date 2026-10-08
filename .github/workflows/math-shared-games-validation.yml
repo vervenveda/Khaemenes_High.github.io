@@ -9,6 +9,7 @@ on:
       - "courses/mathematics/tools/test-game-regressions.mjs"
       - "courses/mathematics/tools/test-game-storage-links.mjs"
       - "courses/mathematics/tools/test-all-game-rounds.mjs"
+      - "courses/mathematics/tools/test-algebra-game-routes.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -23,6 +24,7 @@ on:
       - "courses/mathematics/tools/test-game-regressions.mjs"
       - "courses/mathematics/tools/test-game-storage-links.mjs"
       - "courses/mathematics/tools/test-all-game-rounds.mjs"
+      - "courses/mathematics/tools/test-algebra-game-routes.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -50,3 +52,6 @@ jobs:
 
       - name: Verify every shared game round and review
         run: node courses/mathematics/tools/test-all-game-rounds.mjs
+
+      - name: Verify Algebra I shared-game launch and return routes
+        run: node courses/mathematics/tools/test-algebra-game-routes.mjs
