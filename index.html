@@ -414,7 +414,7 @@ footer{padding:36px 20px;color:rgba(255,255,255,.64);background:#030a11;border-t
           <div class="profile-summary" id="profileSummary" aria-live="polite">No local student profile has been saved on this device.</div>
           <div class="portal-links">
             <a id="openMyGrade" href="#grades">Choose My Grade</a>
-            <a href="./stos/khaemenes/student/">Open Student Portal</a>
+            <a href="./stos/khaemenes/student/">Future Student Account · Not Active</a>
             <a href="./courses/">Course Directory</a>
             <a href="./mentor/?stage=high&amp;subject=general&amp;source=front-hall">Mentor · Get Instruction</a>
             <a href="#library">Study Resources</a>
@@ -427,7 +427,7 @@ footer{padding:36px 20px;color:rgba(255,255,255,.64);background:#030a11;border-t
           <h3>Family &amp; Educator Portal</h3>
           <p>Review grade pathways, courses, health and PE, career preparation, connected learning resources, and family-controlled records.</p>
           <div class="portal-links">
-            <a href="./stos/khaemenes/family/">Open Family Portal</a>
+            <a href="./stos/khaemenes/family/">Future Family Account · Not Active</a>
             <a href="./courses/">Course Directory</a>
             <a href="./mentor/?stage=high&amp;subject=general&amp;source=family-front-hall">Mentor · Get Instruction</a>
             <a href="#grades">Grades 9–12</a>
@@ -917,8 +917,8 @@ footer{padding:36px 20px;color:rgba(255,255,255,.64);background:#030a11;border-t
       {group:"Portals",icon:"F",title:"Family & Educator Portal",description:"Records, health, pathways, Career, and support",url:"#parent-portal"},
       ...GRADES.map(g=>({group:"Grades",icon:g.grade,title:g.title,description:g.description,url:g.url})),
       ...ALL_COURSES.map(c=>({group:"Courses",icon:c.icon,title:c.title,description:c.description,url:c.url})),
-      {group:"Portals",icon:"S",title:"Open Student Portal",description:"Student workspace and learning records",url:"stos/khaemenes/student/"},
-      {group:"Portals",icon:"F",title:"Open Family Portal",description:"Family workspace",url:"stos/khaemenes/family/"},
+      {group:"Portals",icon:"S",title:"Future Student Account · Not Active",description:"Preserved doorway for future secure synchronization",url:"stos/khaemenes/student/"},
+      {group:"Portals",icon:"F",title:"Future Family Account · Not Active",description:"Preserved doorway for future secure synchronization",url:"stos/khaemenes/family/"},
       {group:"Campus",icon:"M",title:"Mentor · Get Instruction",description:"High School study guidance",url:"mentor/?stage=high&subject=general&source=front-hall-directory"},
       {group:"Campus",icon:"C",title:"Course Directory",description:"Browse High School departments and courses",url:"courses/"},
       {group:"Campus",icon:"D",title:"Departments",description:"Academic and federated subject families",url:"#departments"},
