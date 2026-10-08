@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-design-v24-canonical-math-20261008";
+const CACHE_VERSION = "khaemenes-high-design-v25-algebra-reading-20261008";
 const PRECACHE_FILES = [
   "./courses/mathematics/assets/learning-games/round-policy.js",
   "./courses/mathematics/assets/learning-games/common-ground/index.html",

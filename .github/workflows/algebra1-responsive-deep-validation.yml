@@ -91,3 +91,6 @@ jobs:
           node --check courses/mathematics/algebra-1/assets/deep-lesson-engine-v1.js
           node --check courses/mathematics/algebra-1/assets/focused-assessment-v1.js
           node --check courses/mathematics/algebra-1/service-worker.js
+
+      - name: Verify lesson reading and draft recovery
+        run: node courses/mathematics/algebra-1/tools/test-lesson-reading-drafts.mjs

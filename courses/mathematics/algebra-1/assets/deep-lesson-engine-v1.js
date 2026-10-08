@@ -1,6 +1,6 @@
 (()=>{
 "use strict";
-const VERSION="1.0";
+const VERSION="1.1";
 const MASTERY=80;
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const text=v=>String(v??"").trim();
@@ -191,7 +191,7 @@ function lessonContext(){
 function style(){
  if(document.getElementById("khaeDeepLessonStyles"))return;
  const s=document.createElement("style");s.id="khaeDeepLessonStyles";s.textContent=`
- .deep-concept-card{position:relative;cursor:pointer;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}.deep-concept-card:hover,.deep-concept-card:focus-within{transform:translateY(-2px);border-color:var(--forest,#17392f)!important;box-shadow:0 14px 34px rgba(20,40,32,.10)!important}.deep-concept-open{margin-top:12px;min-height:38px!important;padding:7px 10px!important;border-radius:7px!important;font-size:.78rem!important}.deep-concept-note{margin:8px 0 0;color:var(--muted,#66736d);font-size:.77rem}.deep-dialog{width:min(920px,calc(100vw - 28px));max-height:min(88vh,900px);padding:0;border:1px solid rgba(20,40,32,.2);border-radius:14px;background:#fffdf8;color:#17251f;box-shadow:0 28px 80px rgba(12,28,24,.28);overflow:hidden}.deep-dialog::backdrop{background:rgba(7,18,15,.62);backdrop-filter:blur(4px)}.deep-dialog-shell{max-height:88vh;overflow:auto}.deep-dialog-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;gap:18px;align-items:start;padding:22px 24px;border-bottom:1px solid rgba(20,40,32,.13);background:rgba(255,253,248,.97);backdrop-filter:blur(12px);text-align:left}.deep-dialog-head h2{margin:3px 0 0;color:#17392f;font-family:Cinzel,Georgia,serif;font-size:clamp(1.55rem,3vw,2.35rem);font-weight:500;line-height:1.05}.deep-dialog-kicker{margin:0;color:#71363e;font:600 .67rem Cinzel,Georgia,serif;letter-spacing:.15em;text-transform:uppercase}.deep-close{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border:1px solid rgba(20,40,32,.18);border-radius:7px;background:#fff;color:#17392f;font-size:1.35rem}.deep-dialog-body{padding:24px;text-align:left}.deep-section{margin:0 0 22px;padding:20px;border:1px solid rgba(20,40,32,.12);border-radius:11px;background:#fbf8f0}.deep-section h3{margin:0 0 10px;color:#17392f;font-family:Cinzel,Georgia,serif;font-weight:500}.deep-section p:last-child,.deep-section ol:last-child,.deep-section ul:last-child{margin-bottom:0}.deep-section ol,.deep-section ul{padding-left:1.25rem}.deep-section li{margin:.42rem 0}.deep-worked{background:#f3f7f4}.deep-error{background:#fbf2ed;border-left:4px solid #8a4d42}.deep-check{background:#f5f2e9;border-left:4px solid #b48b45}.deep-example-steps{display:grid;gap:8px;margin-top:12px}.deep-example-step{padding:10px 12px;border:1px solid rgba(20,40,32,.11);border-radius:7px;background:#fff}.focused-check{margin:18px 0 14px;padding:15px;border:1px solid rgba(20,40,32,.14);border-radius:11px;background:#fffdf8}.focused-check-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.focused-check-label{font:600 .72rem Cinzel,Georgia,serif;letter-spacing:.1em;text-transform:uppercase;color:#17392f}.focused-check-count{color:#66736d;font-size:.8rem}.focused-track{height:8px;margin-top:10px;overflow:hidden;border-radius:999px;background:#e7e1d5}.focused-track span{display:block;height:100%;width:0;background:linear-gradient(90deg,#6f9688,#b48b45)}.focused-dots{display:grid;grid-template-columns:repeat(10,minmax(20px,1fr));gap:5px;margin-top:11px}.focused-dot{min-height:28px;padding:0;border:1px solid rgba(20,40,32,.16)!important;border-radius:999px!important;background:#fff!important;color:#53615a!important;font-size:.7rem!important}.focused-dot.answered{color:#fff!important;background:#527866!important;border-color:#527866!important}.focused-dot.current{outline:2px solid #b48b45;outline-offset:2px}.focused-nav{display:flex;justify-content:space-between;gap:8px;margin-top:14px}.focused-nav button{min-height:40px!important;padding:7px 11px!important;border-radius:7px!important}.focused-question[hidden]{display:none!important}.focused-score-lock{opacity:.48;pointer-events:none}.focused-hint{margin:10px 0 0;color:#66736d;font-size:.82rem;text-align:center}@media(max-width:640px){.deep-dialog-body{padding:14px}.deep-dialog-head{padding:17px}.deep-section{padding:15px}.focused-dots{grid-template-columns:repeat(5,1fr)}}@media print{.deep-concept-open,.deep-dialog,.focused-check,.focused-nav{display:none!important}.focused-question[hidden]{display:block!important}}
+ .deep-concept-card{position:relative;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}.deep-concept-card:hover,.deep-concept-card:focus-within{transform:translateY(-2px);border-color:var(--forest,#17392f)!important;box-shadow:0 14px 34px rgba(20,40,32,.10)!important}.deep-concept-open{margin-top:12px;min-height:38px!important;padding:7px 10px!important;border-radius:7px!important;font-size:.78rem!important}.deep-concept-note{margin:8px 0 0;color:var(--muted,#66736d);font-size:.77rem}.deep-dialog{width:min(920px,calc(100vw - 28px));max-height:min(88vh,900px);padding:0;border:1px solid rgba(20,40,32,.2);border-radius:14px;background:#fffdf8;color:#17251f;box-shadow:0 28px 80px rgba(12,28,24,.28);overflow:hidden}.deep-dialog::backdrop{background:rgba(7,18,15,.62);backdrop-filter:blur(4px)}.deep-dialog-shell{max-height:88vh;overflow:auto}.deep-dialog-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;gap:18px;align-items:start;padding:22px 24px;border-bottom:1px solid rgba(20,40,32,.13);background:rgba(255,253,248,.97);backdrop-filter:blur(12px);text-align:left}.deep-dialog-head h2{margin:3px 0 0;color:#17392f;font-family:Cinzel,Georgia,serif;font-size:clamp(1.55rem,3vw,2.35rem);font-weight:500;line-height:1.05}.deep-dialog-kicker{margin:0;color:#71363e;font:600 .67rem Cinzel,Georgia,serif;letter-spacing:.15em;text-transform:uppercase}.deep-close{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border:1px solid rgba(20,40,32,.18);border-radius:7px;background:#fff;color:#17392f;font-size:1.35rem}.deep-dialog-body{padding:24px;text-align:left}.deep-section{margin:0 0 22px;padding:20px;border:1px solid rgba(20,40,32,.12);border-radius:11px;background:#fbf8f0}.deep-section h3{margin:0 0 10px;color:#17392f;font-family:Cinzel,Georgia,serif;font-weight:500}.deep-section p:last-child,.deep-section ol:last-child,.deep-section ul:last-child{margin-bottom:0}.deep-section ol,.deep-section ul{padding-left:1.25rem}.deep-section li{margin:.42rem 0}.deep-worked{background:#f3f7f4}.deep-error{background:#fbf2ed;border-left:4px solid #8a4d42}.deep-check{background:#f5f2e9;border-left:4px solid #b48b45}.deep-example-steps{display:grid;gap:8px;margin-top:12px}.deep-example-step{padding:10px 12px;border:1px solid rgba(20,40,32,.11);border-radius:7px;background:#fff}.focused-check{margin:18px 0 14px;padding:15px;border:1px solid rgba(20,40,32,.14);border-radius:11px;background:#fffdf8}.focused-check-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.focused-check-label{font:600 .72rem Cinzel,Georgia,serif;letter-spacing:.1em;text-transform:uppercase;color:#17392f}.focused-check-count{color:#66736d;font-size:.8rem}.focused-track{height:8px;margin-top:10px;overflow:hidden;border-radius:999px;background:#e7e1d5}.focused-track span{display:block;height:100%;width:0;background:linear-gradient(90deg,#6f9688,#b48b45)}.focused-dots{display:grid;grid-template-columns:repeat(10,minmax(20px,1fr));gap:5px;margin-top:11px}.focused-dot{min-height:28px;padding:0;border:1px solid rgba(20,40,32,.16)!important;border-radius:999px!important;background:#fff!important;color:#53615a!important;font-size:.7rem!important}.focused-dot.answered{color:#fff!important;background:#527866!important;border-color:#527866!important}.focused-dot.current{outline:2px solid #b48b45;outline-offset:2px}.focused-nav{display:flex;justify-content:space-between;gap:8px;margin-top:14px}.focused-nav button{min-height:40px!important;padding:7px 11px!important;border-radius:7px!important}.focused-question[hidden]{display:none!important}.focused-score-lock{opacity:.48;pointer-events:none}.focused-hint{margin:10px 0 0;color:#66736d;font-size:.82rem;text-align:center}@media(max-width:640px){.deep-dialog-body{padding:14px}.deep-dialog-head{padding:17px}.deep-section{padding:15px}.focused-dots{grid-template-columns:repeat(5,1fr)}}.lesson-reading{grid-column:1/-1;width:100%;box-sizing:border-box;margin:24px auto;padding:24px;max-width:1100px;background:#fffdf8;color:#000;border:1px solid #d5c8af;border-radius:7px}.lesson-reading h2,.lesson-reading h3{color:#000}.lesson-reading .deep-section{border-radius:7px}.lesson-draft-status{font-size:.85rem;color:#000}.lesson-reading-link{display:block;margin:14px 0}.lesson-reading:focus{outline:2px solid #17392f}@media print{.lesson-reading{max-width:none;padding:0;border:0}.lesson-reading details>*{display:block!important}.lesson-reading section{break-inside:avoid}.lesson-draft-status,.lesson-reading-link{display:none!important}.deep-concept-open,.deep-dialog,.focused-check,.focused-nav{display:none!important}.focused-question[hidden]{display:block!important}}
  `;document.head.appendChild(s);
 }
 
@@ -207,7 +207,7 @@ function ensureDialog(){
 }
 function objectiveFor(l,i){const a=l.objectives||[];return a[i%Math.max(a.length,1)]||a[0]||"Explain and apply this idea accurately."}
 function workedContent(l,fam){
- if(Array.isArray(l.examples)&&l.examples.length){return l.examples.slice(0,2).map(e=>({problem:e.problem||"Worked example",steps:[e.reasoning||"Work the structure carefully.",`Result: ${e.answer??"Verify the result."}`]}));}
+ if(Array.isArray(l.examples)&&l.examples.length){return l.examples.map(e=>({problem:e.problem||"Worked example",steps:[...(Array.isArray(e.steps)&&e.steps.length?e.steps:[e.reasoning||"Work the structure carefully."]),`Result: ${e.answer??"Verify the result."}`]}));}
  if(l.mystery)return [{problem:l.mystery,steps:[l.mystery_answer||"Reason through the structure and verify the result."]}];
  return [{problem:FAMILIES[fam].example[0],steps:FAMILIES[fam].example.slice(1)}];
 }
@@ -217,11 +217,13 @@ function openConcept(index){
  d.querySelector("#deepDialogKicker").textContent=`Unit ${String(ctx.unit?.number||ctx.lesson?.unit||"").padStart(2,"0")} · ${F.label} · Concept ${index+1}`;
  d.querySelector("#deepDialogTitle").textContent=l.title;
  d.querySelector("#deepDialogBody").innerHTML=`
+  ${authoredHTML(l)}
   <section class="deep-section"><h3>The idea</h3><p><strong>${esc(concept)}</strong></p><p>${esc(objectiveFor(l,index))}</p></section>
   <section class="deep-section"><h3>Mechanics · how to do the mathematics</h3><ol>${F.steps.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></section>
   <section class="deep-section deep-worked"><h3>Worked example</h3>${work.map(w=>`<p><strong>${esc(w.problem)}</strong></p><div class="deep-example-steps">${w.steps.map((x,j)=>`<div class="deep-example-step"><strong>${j+1}.</strong> ${esc(x)}</div>`).join("")}</div>`).join("")}</section>
   <section class="deep-section deep-error"><h3>Common error · repair the reasoning</h3><p><strong>${esc(err.problem)}</strong></p><p>${esc(err.repair)}</p></section>
   <section class="deep-section"><h3>Why this works</h3><p>The procedure is not a list of tricks. Each step preserves the mathematical relationship, definition, quantity, or model described in the lesson. If a step cannot be justified, pause there and repair it before continuing.</p><p><strong>Verification habit:</strong> use the original equation, another representation, a unit check, a boundary case, or a known data point whenever one is available.</p></section>
+  ${practiceHTML(l)}
   <section class="deep-section deep-check"><h3>What the lesson check expects</h3><p>The scored check remains separate. These stems show the kinds of thinking represented in the lesson bank without revealing answer choices or answer keys.</p>${qs.length?`<ul>${qs.map(q=>`<li>${esc(q.prompt)}</li>`).join("")}</ul>`:"<p>Be ready to apply the idea, explain a step, diagnose an error, and verify a result.</p>"}<p><strong>Mastery target:</strong> ${MASTERY}% or higher before normal progression.</p></section>`;
  if(typeof d.showModal==="function")d.showModal();else d.setAttribute("open","");
 }
@@ -234,13 +236,89 @@ function enhanceConcepts(){
   const learn=[...document.querySelectorAll("article.card.full")].find(a=>/3\s*·\s*Learn/i.test(a.querySelector(".eyebrow")?.textContent||"")||/Objectives/i.test(a.querySelector("h2")?.textContent||""));
   cards=learn?[...learn.querySelectorAll(":scope .grid > .card")]:[];
  }
+ if(!cards.length)return;
+ exposeReading();
+ preserveDrafts();
  cards.slice(0,ctx.lesson.concepts.length).forEach((card,i)=>{
   if(card.dataset.deepEnhanced==="true")return;card.dataset.deepEnhanced="true";card.classList.add("deep-concept-card");
-  const note=document.createElement("p");note.className="deep-concept-note";note.textContent="Open the full teaching lesson for mechanics, worked examples, error repair, and assessment connection.";
-  const b=document.createElement("button");b.type="button";b.className="deep-concept-open";b.textContent="Open full lesson";b.addEventListener("click",e=>{e.stopPropagation();openConcept(i)});
-  card.append(note,b);card.tabIndex=0;card.setAttribute("role","button");card.setAttribute("aria-label",`Open full lesson for concept ${i+1}: ${ctx.lesson.concepts[i]}`);
-  card.addEventListener("click",e=>{if(e.target.closest("button,a,input,textarea,select"))return;openConcept(i)});card.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&!e.target.closest("button,a,input,textarea,select")){e.preventDefault();openConcept(i)}});
+  const note=document.createElement("p");note.className="deep-concept-note";note.textContent="Read the lesson below or open this concept guide for a focused view.";
+  const b=document.createElement("button");b.type="button";b.className="deep-concept-open";b.textContent="Open concept guide";b.addEventListener("click",e=>{e.stopPropagation();openConcept(i)});
+  card.append(note,b);b.setAttribute("aria-label",`Open teaching guide for concept ${i+1}: ${ctx.lesson.concepts[i]}`);
+
  });
+}
+
+
+function workedHTML(l){
+ const fam=familyFor(l.title,"");
+ return `<section class="deep-section deep-worked"><h3>Worked examples and verification</h3>${workedContent(l,fam).map(w=>`<h4>${esc(w.problem)}</h4><ol>${w.steps.map(step=>`<li>${esc(step)}</li>`).join("")}</ol>`).join("")}</section>`;
+}
+function authoredHTML(l){
+ return (l.reading_sections||[]).map(r=>`<section class="deep-section"><h3>${esc(r.heading)}</h3><p>${esc(r.body)}</p></section>`).join("");
+}
+function practiceHTML(l){
+ return (l.guided_practice||[]).map((p,i)=>`<section class="deep-section"><h3>Guided practice ${i+1}</h3><p>${esc(p.prompt)}</p><details><summary>Check your reasoning after you try</summary><p>${esc(p.solution)}</p></details></section>`).join("")+(l.transfer_task?`<section class="deep-section deep-check"><h3>Apply and defend</h3><p>${esc(l.transfer_task)}</p></section>`:"");
+}
+function exposeReading(){
+ if(document.getElementById("lessonReading"))return;
+ const l=ctx.lesson,main=document.getElementById("main");if(!main)return;
+ const reader=document.createElement("section");reader.id="lessonReading";reader.className="lesson-reading";reader.tabIndex=-1;
+ const guide=(l.concepts||[]).map((c,i)=>{const f=FAMILIES[familyFor(l.title,c)];return `<section class="deep-section"><h3>Concept ${i+1}: ${esc(f.label)}</h3><p>${esc(c)}</p><ol>${f.steps.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></section>`}).join("");
+ const err=errorContent(l);
+ reader.innerHTML=`<h2>Lesson reading and worked steps</h2>${l.reading_sections?.length?authoredHTML(l):`<p>This shared study guide expands the stored concepts. Read each step alongside the lesson activities and examples.</p>${guide}`}${workedHTML(l)}<section class="deep-section deep-error"><h3>Misconception repair</h3><p>${esc(err.problem)}</p><p>${esc(err.repair)}</p></section>${practiceHTML(l)}`;
+ const concepts=main.querySelector(".concept-grid");
+ const learn=[...main.querySelectorAll("article.card.full")].find(a=>/3\s*·\s*Learn/i.test(a.querySelector(".eyebrow")?.textContent||"")||/Objectives/i.test(a.querySelector("h2")?.textContent||""));
+ if(concepts)concepts.closest("section").after(reader);else if(learn)learn.after(reader);else return;
+ const link=document.createElement("a");link.href="#lessonReading";link.className="lesson-reading-link";link.textContent="Read the lesson and worked steps";
+ (concepts||learn).prepend(link);
+ link.addEventListener("click",()=>reader.focus());
+ let printDetails=[];
+ window.addEventListener("beforeprint",()=>{printDetails=[...reader.querySelectorAll("details")].map(d=>[d,d.open]);printDetails.forEach(([d])=>d.open=true)});
+ window.addEventListener("afterprint",()=>{printDetails.forEach(([d,open])=>d.open=open);printDetails=[]});
+ // The inline reader includes every worked example, so remove the duplicated base presentation.
+ main.querySelector(".example-grid")?.closest("section")?.remove();
+}
+function draftFieldKey(field,index){
+ const question=field.closest(".question");
+ if(question){
+  const prompt=question.querySelector("legend,strong,h3")?.textContent?.replace(/^\s*\d+\.\s*/,"").trim()||field.name;
+  if(field.type!=="radio"&&field.type!=="checkbox")return JSON.stringify([field.type,prompt,field.id||field.name||index]);
+  const option=field.closest("label")?.textContent?.trim()||field.value;
+  return JSON.stringify([field.type,prompt,option]);
+ }
+ return JSON.stringify([field.tagName,field.id||field.name||`writing-${index}`]);
+}
+function preserveDrafts(){
+ const main=document.getElementById("main");if(!main||main.dataset.lessonDraftEnhanced==="true")return;
+ main.dataset.lessonDraftEnhanced="true";
+ const base=`khaemenes-algebra1-lesson-draft-v1:${ctx.unit?.number||ctx.lesson.unit}:${ctx.lesson.number}`;
+ const identity=()=>{try{return localStorage.getItem("khaemenes_active_learner_v1")}catch{return null}};
+ const ownerIdentity=identity();
+ let owner=null;try{const id=JSON.parse(ownerIdentity||"null"),registry=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");if(typeof id==="string"&&registry?.learners?.[id]?.learnerId===id)owner=id}catch{}
+ // Unit 01 has the learner adapter; other lesson pages need an explicit learner draft suffix.
+ const key=window.KhaemenesLearnerScope?.course==="algebra-1"?base:`${base}:${owner?`learner:${encodeURIComponent(owner)}`:"guest"}`;
+ const fields=[...main.querySelectorAll('textarea,input[type="radio"],input[type="checkbox"],input[type="text"],input[type="number"]')].filter(f=>!f.disabled);
+ const status=document.createElement("p");status.className="lesson-draft-status";status.setAttribute("role","status");status.setAttribute("aria-live","polite");status.textContent="Draft work saves locally on this device; submit the check to record a score.";main.appendChild(status);
+ let saved={};try{saved=JSON.parse(localStorage.getItem(key)||"{}");if(!saved||typeof saved!=="object")saved={}}catch{status.textContent="Local draft storage is unavailable. Keep this page open or copy your work before leaving."}
+ fields.forEach((f,i)=>{
+  if(f.tagName==="TEXTAREA"&&!f.getAttribute("aria-label")&&!f.labels?.length){
+   const heading=f.closest("article,aside")?.querySelector("h2,h3")?.textContent||"Lesson reflection";
+   f.setAttribute("aria-label",`${heading} — written response ${i+1}`);
+  }
+  const id=draftFieldKey(f,i);f.dataset.lessonDraftKey=id;
+  if(Object.prototype.hasOwnProperty.call(saved,id)){
+   if(f.type==="radio"||f.type==="checkbox")f.checked=saved[id]===true;
+   else if(typeof saved[id]==="string")f.value=saved[id];
+  }
+ });
+ function saveDraft(){
+  if(identity()!==ownerIdentity){status.textContent="The active learner changed. Reload before saving more work.";return}
+  const values={};fields.forEach(f=>{values[f.dataset.lessonDraftKey]=(f.type==="radio"||f.type==="checkbox")?f.checked:f.value});
+  try{localStorage.setItem(key,JSON.stringify(values));status.textContent="Draft saved locally. This does not submit answers or change mastery."}
+  catch{status.textContent="Draft could not be saved. Keep this page open or copy your work before leaving."}
+ }
+ main.addEventListener("input",saveDraft);main.addEventListener("change",saveDraft);
+ const reset=main.querySelector("#reset,#resetButton");reset?.addEventListener("click",()=>setTimeout(saveDraft,0));
 }
 
 function focusQuestionSet(){
@@ -248,11 +326,11 @@ function focusQuestionSet(){
  const questions=[...host.querySelectorAll(".question")].filter(q=>!q.closest(".constructed-block"));if(questions.length<2)return;
  host.dataset.focusedEnhanced="true";questions.forEach(q=>q.classList.add("focused-question"));
  let current=0;
- const panel=document.createElement("div");panel.className="focused-check";panel.innerHTML=`<div class="focused-check-top"><span class="focused-check-label">Focused problem view</span><span class="focused-check-count" aria-live="polite"></span></div><div class="focused-track" aria-hidden="true"><span></span></div><div class="focused-dots" aria-label="Question progress"></div><div class="focused-nav"><button type="button" data-prev>← Previous</button><button type="button" data-next>Next →</button></div><p class="focused-hint">One problem at a time. Your answers remain saved by the course engine.</p>`;
+ const panel=document.createElement("div");panel.className="focused-check";panel.innerHTML=`<div class="focused-check-top"><span class="focused-check-label">Focused problem view</span><span class="focused-check-count" aria-live="polite"></span></div><div class="focused-track" aria-hidden="true"><span></span></div><div class="focused-dots" aria-label="Question progress"></div><div class="focused-nav"><button type="button" data-prev>← Previous</button><button type="button" data-next>Next →</button></div><p class="focused-hint">One problem at a time. Draft answers save locally when storage is available; submit to record a score.</p>`;
  host.parentNode.insertBefore(panel,host);const count=panel.querySelector(".focused-check-count"),bar=panel.querySelector(".focused-track span"),dots=panel.querySelector(".focused-dots"),prev=panel.querySelector("[data-prev]"),next=panel.querySelector("[data-next]");
  questions.forEach((_,i)=>{const b=document.createElement("button");b.type="button";b.className="focused-dot";b.textContent=String(i+1);b.setAttribute("aria-label",`Go to question ${i+1}`);b.onclick=()=>show(i);dots.appendChild(b)});
  const dotButtons=[...dots.children];
- function answered(q){return !!q.querySelector('input[type="radio"]:checked, input[type="checkbox"]:checked, textarea:not(:placeholder-shown), input[type="text"]:not(:placeholder-shown)')}
+ function answered(q){return !!q.querySelector('input[type="radio"]:checked, input[type="checkbox"]:checked')||[...q.querySelectorAll('textarea,input[type="text"],input[type="number"]')].some(f=>f.value.trim()!=="")}
  function update(){const done=questions.filter(answered).length;count.textContent=`Question ${current+1} of ${questions.length} · ${done} answered`;bar.style.width=`${Math.round(done/questions.length*100)}%`;dotButtons.forEach((b,i)=>{b.classList.toggle("answered",answered(questions[i]));b.classList.toggle("current",i===current)});prev.disabled=current===0;next.disabled=current===questions.length-1;next.textContent=current===questions.length-1?"Last problem":"Next →"}
  function show(i){current=Math.max(0,Math.min(questions.length-1,i));questions.forEach((q,j)=>q.hidden=j!==current);update();questions[current].scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});questions[current].querySelector("input,textarea,button")?.focus({preventScroll:true})}
  prev.onclick=()=>show(current-1);next.onclick=()=>show(current+1);host.addEventListener("change",update);host.addEventListener("input",update);
@@ -261,6 +339,6 @@ function focusQuestionSet(){
 }
 
 function enhance(){style();enhanceConcepts();focusQuestionSet()}
-window.KhaemenesAlgebra1LearningExperience={version:VERSION,enhance,focusQuestionSet,enhanceConcepts};
+window.KhaemenesAlgebra1LearningExperience={version:VERSION,enhance,focusQuestionSet,enhanceConcepts,draftFieldKey};
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",()=>setTimeout(enhance,0),{once:true});else setTimeout(enhance,0);
 })();
