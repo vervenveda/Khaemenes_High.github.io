@@ -36,3 +36,25 @@ Core — completeness reasoning, square-root boundary, common factors/multiples,
 Extended — larger values, deeper factor-count reasoning, synchronization applications, and structural explanations.
 
 The actual lesson explicitly uses those Foundation/Core/Extended support levels.
+
+
+## Canonical Shared-Game Migration · Factor Structure Lab v3
+
+This directory is now the canonical Mathematics copy.
+
+Supported mappings:
+- `?course=prealgebra&unit=01&lesson=02` — factors, multiples, arrays, and complete factor pairs
+- `?course=algebra1&unit=09&lesson=06` — product-sum factor reasoning for trinomials and difference of squares
+- `?course=geometry&unit=10&lesson=u10-l07` — integer rectangle dimensions and area/perimeter optimization
+- `?course=algebra2&unit=03&lesson=u03-l04` — Rational Root Theorem factor inventories and candidate zeros
+
+Non-duplication rule:
+- This game owns factor-pair structure and factor-generated candidates.
+- The existing U01-L04 GCF/LCM game remains responsible for greatest-common-factor, least-common-multiple, grouping, and synchronization concepts.
+- Higher-course mappings should not duplicate those GCF/LCM missions here.
+
+Migration rule:
+1. Shared Mathematics copy is canonical.
+2. Legacy Pre-Algebra copies remain temporarily for rollback and old bookmarks.
+3. Pre-Algebra U01-L02 now resolves to this shared copy.
+4. Legacy copies are not deleted until production routing and game behavior are verified.

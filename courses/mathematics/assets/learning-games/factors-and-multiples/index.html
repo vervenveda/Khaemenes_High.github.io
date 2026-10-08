@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Khaemenes High Pre-Algebra Lesson 2 companion game: Factors, Multiples & Number Structure." />
+  <meta name="description" content="Khaemenes Mathematics shared Factors & Multiples game: progressive factor structure for Pre-Algebra, Algebra I, Geometry, and Algebra II." />
   <meta name="theme-color" content="#090b10" />
-  <title>Lesson 2 · Factor Pair Builder · Lesson Sync Edition</title>
+  <title>Factor Structure Lab · Khaemenes Mathematics Shared Game</title>
   <style>
     :root{
       --bg:#090b10; --bg2:#10151c; --panel:#141a22; --panel2:#1a222d;
@@ -226,28 +226,25 @@
 
 <div class="shell">
   <header class="topbar">
-    <a class="brand" href="../units/unit-01/lessons/lesson-02-factors-multiples.html" aria-label="Return to Lesson 2">
+    <a class="brand" data-return-lesson href="../../../pre-algebra/units/unit-01/lessons/lesson-02-factors-multiples.html" aria-label="Return to mapped lesson">
       <div class="seal" aria-hidden="true"><span>2</span></div>
       <div>
-        <p class="kicker">Khaemenes High · Pre-Algebra · Unit 01</p>
-        <p class="crumb">Lesson 2 Companion · Factors, Multiples & Number Structure</p>
+        <p class="kicker">Khaemenes Mathematics · Shared Game Library</p>
+        <p class="crumb">Progressive factor structure across the mathematics sequence</p>
       </div>
     </a>
     <div class="header-actions">
-      <a class="ghost" href="../units/unit-01/lessons/lesson-02-factors-multiples.html">← Return to Lesson 2</a>
+      <a class="ghost" data-return-lesson href="../../../pre-algebra/units/unit-01/lessons/lesson-02-factors-multiples.html">← Return to mapped lesson</a>
       <button class="ghost" id="printBtn" type="button">Print reference</button>
       <button class="ghost" id="resetBestBtn" type="button">Reset best</button>
     </div>
   </header>
 
   <section class="hero">
-    <div class="eyebrow">Lesson 2 · Math Break · Skill Game</div>
-    <h1>Factor Pair Builder</h1>
-    <p class="lead">See how whole numbers are built, watch factors and multiples move in opposite directions, then prove the structure yourself.</p>
-    <div class="lesson-sync">
-      <strong>Lesson sync:</strong> this game practices the same five ideas as Lesson 2:
-      complete factor pairs, multiples, factor-vs-multiple language, arrays/equal groups, and the special middle pair of perfect squares.
-    </div>
+    <div class="eyebrow" id="courseEyebrow">Shared Mathematics Game</div>
+    <h1 id="heroTitle">Factor Structure Lab</h1>
+    <p class="lead" id="heroLead">Build factor structure visually, then apply it to arithmetic, algebraic factoring, geometry, and polynomial reasoning.</p>
+    <div class="lesson-sync" id="lessonSync"><strong>Shared progression:</strong> the same factor-pair structure grows from whole-number factors into trinomial factoring, geometric optimization, and Rational Root candidate generation.</div>
   </section>
 
   <section class="panel studio" aria-labelledby="studioTitle">
@@ -383,7 +380,7 @@
           <div class="eyebrow">Lesson-synced practice</div>
           <h2 id="gameTitle">Number Structure Mission</h2>
         </div>
-        <p>The round mixes factor-pair building, factor/multiple language, common values, and perfect-square reasoning.</p>
+        <p id="missionHelp">The round mixes factor-pair building, factor/multiple language, common values, and perfect-square reasoning.</p>
       </div>
 
       <div class="status-row">
@@ -451,7 +448,7 @@
         <div class="action-row">
           <button class="primary" id="newRoundBtn" type="button">Play another round</button>
           <button class="secondary" id="reviewBtn" type="button">Review missed missions</button>
-          <a class="secondary btn" href="../units/unit-01/lessons/lesson-02-factors-multiples.html">Return to Lesson 2</a>
+          <a class="secondary btn" data-return-lesson href="../../../pre-algebra/units/unit-01/lessons/lesson-02-factors-multiples.html">Return to mapped lesson</a>
         </div>
       </div>
     </section>
@@ -470,6 +467,15 @@
       </div>
 
       <div class="controls">
+        <div class="control-line">
+          <label for="courseMode">Course level</label>
+          <select id="courseMode">
+            <option value="prealgebra">Pre-Algebra · Factors & Multiples</option>
+            <option value="algebra1">Algebra I · Product-Sum Factoring</option>
+            <option value="geometry">Geometry · Rectangle Area Optimization</option>
+            <option value="algebra2">Algebra II · Rational Root Candidates</option>
+          </select>
+        </div>
         <div class="control-line">
           <label for="pathwaySelect">Pathway</label>
           <select id="pathwaySelect">
@@ -491,7 +497,7 @@
     </aside>
   </main>
 
-  <footer>KH-MATH-PA-U01-L2 · Lesson-synced local practice · 80% mastery · No external dependencies</footer>
+  <footer>Khaemenes Mathematics Shared Game · Factor Structure Lab · Multi-course progression · 80% mastery · No external dependencies</footer>
 </div>
 
 <script>
@@ -524,6 +530,80 @@
     {level:"Extended",type:"relation",prompt:"Which statement is true for every positive whole number n?",choices:["n has infinitely many positive multiples.","n has infinitely many positive factors.","Every factor of n is larger than n.","n cannot be its own factor."],answer:0,why:"The positive multiples n, 2n, 3n, 4n, … continue forever."},
     {level:"Extended",type:"application",prompt:"A bell rings every 4 minutes and another every 10 minutes. Which time is a common multiple of both intervals?",choices:["14 minutes","24 minutes","30 minutes","20 minutes"],answer:3,why:"20 is divisible by both 4 and 10."},
     {level:"Extended",type:"complete",prompt:"A number has factor pairs 1×45, 3×15, and 5×9. Which number is it?",choices:["35","40","45","50"],answer:2,why:"Every listed factor pair has product 45."}
+  ];
+
+  const COURSE_CONFIG = {
+    prealgebra:{
+      label:"Pre-Algebra",
+      mode:"Factors & Multiples",
+      context:"Build complete positive factor pairs, distinguish factors from multiples, and reason about common structure.",
+      returnHref:"../../../pre-algebra/units/unit-01/lessons/lesson-02-factors-multiples.html",
+      returnLabel:"Return to Pre-Algebra U01-L02"
+    },
+    algebra1:{
+      label:"Algebra I",
+      mode:"Product-Sum Factoring",
+      context:"Use complete factor-pair inventories as the numerical structure behind factoring trinomials and difference-of-squares reasoning.",
+      returnHref:"../../../algebra-1/units/unit-09/lessons/lesson-06-factoring-trinomials-difference-of-squares.html",
+      returnLabel:"Return to Algebra I U09-L06"
+    },
+    geometry:{
+      label:"Geometry",
+      mode:"Rectangle Area Optimization",
+      context:"Interpret factor pairs as integer rectangle dimensions, compare perimeters, and explain why dimensions near a square are often more efficient.",
+      returnHref:"../../../geometry/units/unit-10/lessons/u10-l07.html",
+      returnLabel:"Return to Geometry U10-L07"
+    },
+    algebra2:{
+      label:"Algebra II",
+      mode:"Rational Root Candidates",
+      context:"Build complete factor lists for constant and leading coefficients, then form, reduce, and interpret Rational Root Theorem candidates.",
+      returnHref:"../../../algebra-2/units/unit-03/lessons/u03-l04.html",
+      returnLabel:"Return to Algebra II U03-L04"
+    }
+  };
+
+  const COURSE_TARGETS = {
+    prealgebra: FACTOR_TARGETS,
+    algebra1:[
+      {level:"Foundation",n:12},{level:"Foundation",n:18},{level:"Core",n:24},{level:"Core",n:30},
+      {level:"Core",n:35},{level:"Core",n:40},{level:"Extended",n:42},{level:"Extended",n:56}
+    ],
+    geometry:[
+      {level:"Foundation",n:24},{level:"Foundation",n:30},{level:"Core",n:36},{level:"Core",n:48},
+      {level:"Core",n:60},{level:"Extended",n:72},{level:"Extended",n:84},{level:"Extended",n:96}
+    ],
+    algebra2:[
+      {level:"Foundation",n:6},{level:"Foundation",n:10},{level:"Core",n:12},{level:"Core",n:15},
+      {level:"Core",n:18},{level:"Extended",n:20},{level:"Extended",n:24},{level:"Extended",n:30}
+    ]
+  };
+
+  const ALGEBRA1_CHOICE_BANK = [
+    {level:"Foundation",type:"trinomial",prompt:"Which positive factor pair of 12 has sum 7?",choices:["1 and 12","2 and 6","3 and 4","4 and 8"],answer:2,why:"3·4=12 and 3+4=7, so x²+7x+12=(x+3)(x+4)."},
+    {level:"Core",type:"trinomial",prompt:"Which signed pair has product −12 and sum −1?",choices:["−4 and 3","4 and −3","−6 and 2","−12 and 1"],answer:0,why:"(−4)(3)=−12 and −4+3=−1, so x²−x−12=(x−4)(x+3)."},
+    {level:"Core",type:"trinomial",prompt:"Factor x²−13x+40.",choices:["(x−5)(x−8)","(x+5)(x+8)","(x−4)(x−10)","(x−2)(x−20)"],answer:0,why:"The signed factors −5 and −8 multiply to 40 and add to −13."},
+    {level:"Core",type:"trinomial",prompt:"For the AC method on 2x²+7x+3, which pair multiplies to 6 and adds to 7?",choices:["1 and 6","2 and 3","−1 and −6","3 and 4"],answer:0,why:"a·c=2·3=6, and 1+6=7."},
+    {level:"Extended",type:"trinomial",prompt:"Factor x²+2x−35.",choices:["(x+7)(x−5)","(x−7)(x+5)","(x+35)(x−1)","(x−5)(x−7)"],answer:0,why:"7·(−5)=−35 and 7+(−5)=2."},
+    {level:"Extended",type:"trinomial",prompt:"Which factorization is a difference of squares?",choices:["x²−25=(x−5)(x+5)","x²−25=(x−25)(x+1)","x²−25=(x−5)²","x²−25=(x+25)(x−1)"],answer:0,why:"a²−b²=(a−b)(a+b), so x²−25=(x−5)(x+5)."}
+  ];
+
+  const GEOMETRY_CHOICE_BANK = [
+    {level:"Foundation",type:"geometry",prompt:"A rectangle has area 24 square units. Which dimensions give perimeter 20 units?",choices:["1×24","2×12","3×8","4×6"],answer:3,why:"For 4×6, perimeter=2(4+6)=20."},
+    {level:"Core",type:"geometry",prompt:"Among integer rectangles with area 36, which has the smallest perimeter?",choices:["1×36","2×18","3×12","6×6"],answer:3,why:"The 6×6 square has perimeter 24, smaller than the other factor-pair rectangles."},
+    {level:"Core",type:"geometry",prompt:"For area 48, which factor pair gives the smaller perimeter?",choices:["4×12","6×8","3×16","2×24"],answer:1,why:"6×8 has perimeter 28, while the other listed rectangles have larger perimeters."},
+    {level:"Core",type:"geometry",prompt:"Why are factor pairs useful when area is fixed at a whole-number value?",choices:["Each factor pair gives an integer length-width design.","Factors always make squares.","Every factor pair has the same perimeter.","Multiples determine all angles."],answer:0,why:"If LW=A, every positive factor pair of A gives one integer rectangle."},
+    {level:"Extended",type:"geometry",prompt:"For fixed integer area 72, which dimensions are closest to a square?",choices:["1×72","3×24","6×12","8×9"],answer:3,why:"8 and 9 are closest together; that rectangle also has the least perimeter among the listed factor pairs."},
+    {level:"Extended",type:"geometry",prompt:"A 5×12 rectangle and a 6×10 rectangle both have area 60. Which has smaller perimeter?",choices:["5×12","6×10","They are equal.","Cannot be determined."],answer:1,why:"Perimeters are 34 and 32 respectively, so 6×10 is more perimeter-efficient."}
+  ];
+
+  const ALGEBRA2_CHOICE_BANK = [
+    {level:"Foundation",type:"rationalroot",prompt:"For a monic polynomial with constant term 12, which values are possible rational zeros?",choices:["±1, ±2, ±3, ±4, ±6, ±12","±1, ±12 only","±2, ±3 only","1, 2, 3, 4, 6, 12 only"],answer:0,why:"With leading coefficient 1, candidates are ± factors of the constant term."},
+    {level:"Core",type:"rationalroot",prompt:"For 2x³−3x²−8x+12, which list gives all possible rational zeros?",choices:["±1, ±2, ±3, ±4, ±6, ±12, ±1/2, ±3/2","±1, ±2, ±3, ±4, ±6, ±12 only","±1/2 and ±3/2 only","±2, ±4, ±6 only"],answer:0,why:"Use ±p/q with p|12 and q|2, then reduce duplicates."},
+    {level:"Core",type:"rationalroot",prompt:"For 3x³+5x²−2, which set contains every possible rational zero?",choices:["±1, ±2, ±1/3, ±2/3","±1, ±2, ±3","±1/3 only","±2, ±2/3 only"],answer:0,why:"p divides 2 and q divides 3, giving ±1, ±2, ±1/3, and ±2/3."},
+    {level:"Core",type:"rationalroot",prompt:"What does the Rational Root Theorem produce?",choices:["Candidates that must still be tested","Guaranteed zeros","Only positive zeros","Only integer zeros"],answer:0,why:"The theorem gives possible rational zeros; substitution or division determines which are actual zeros."},
+    {level:"Extended",type:"rationalroot",prompt:"Why must candidate fractions be reduced?",choices:["Different p/q combinations can represent the same rational number.","Reduced fractions are always zeros.","Only unit fractions may be tested.","Reduction changes the polynomial."],answer:0,why:"For example, 2/2 and 1/1 name the same candidate 1; duplicates should be removed."},
+    {level:"Extended",type:"rationalroot",prompt:"If P(2)=0, what follows?",choices:["x−2 is a factor of P(x).","x+2 is always a factor.","2 is only a candidate, never a zero.","The constant term must be 2."],answer:0,why:"By the Factor Theorem, P(2)=0 means x−2 divides P(x)."}
   ];
 
   const el = {
@@ -569,7 +649,12 @@
     accuracy:document.getElementById("accuracyLabel"),
     fill:document.getElementById("progressFill"),
     strategy:document.getElementById("strategyText"),
+    course:document.getElementById("courseMode"),
     pathway:document.getElementById("pathwaySelect"),
+    gameTitle:document.getElementById("gameTitle"),
+    missionHelp:document.getElementById("missionHelp"),
+    referenceTitle:document.getElementById("referenceTitle"),
+    returnLinks:[...document.querySelectorAll("[data-return-lesson]")],
     size:document.getElementById("roundSize"),
     best:document.getElementById("bestScore"),
     mastery:document.getElementById("mastery"),
@@ -582,7 +667,11 @@
     resetBest:document.getElementById("resetBestBtn")
   };
 
-  const BEST_KEY = "khaemenes-prealgebra-u01-l02-factor-game-v2";
+  const params=new URLSearchParams(location.search);
+  const requestedCourse=params.get("course");
+  if(COURSE_CONFIG[requestedCourse])el.course.value=requestedCourse;
+  const modeKey=()=>el.course.value||"prealgebra";
+  const bestKey=()=>`khaemenes-math-factors-multiples-${modeKey()}-v3`;
   let timers=[];
   let deck=[];
   let index=0;
@@ -712,8 +801,11 @@
     }
 
     const allowed=allowedLevels(el.pathway.value);
-    const buildPool=FACTOR_TARGETS.filter(x=>allowed.has(x.level)).map(x=>({...x,type:"builder"}));
-    const choicePool=CHOICE_BANK.filter(x=>allowed.has(x.level)).map(x=>({...x,type:"choice"}));
+    const course=el.course.value;
+    const targets=COURSE_TARGETS[course]||FACTOR_TARGETS;
+    const bank=course==="algebra1"?ALGEBRA1_CHOICE_BANK:course==="geometry"?GEOMETRY_CHOICE_BANK:course==="algebra2"?ALGEBRA2_CHOICE_BANK:CHOICE_BANK;
+    const buildPool=targets.filter(x=>allowed.has(x.level)).map(x=>({...x,type:"builder"}));
+    const choicePool=bank.filter(x=>allowed.has(x.level)).map(x=>({...x,type:"choice"}));
 
     const builders=Math.max(5,Math.round(count*.45));
     const choices=count-builders;
@@ -727,7 +819,23 @@
 
   function current(){return deck[index]}
 
+  function updateCourseMode(){
+    const cfg=COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;
+    el.gameTitle.textContent=`${cfg.label} · ${cfg.mode}`;
+    el.missionHelp.textContent=cfg.context;
+    el.referenceTitle.textContent=`${cfg.label} Factor Structure Field Guide`;
+    document.getElementById("courseEyebrow").textContent=`${cfg.label} · Shared Mathematics Game`;
+    document.getElementById("heroTitle").textContent=cfg.mode;
+    document.getElementById("heroLead").textContent=cfg.context;
+    document.getElementById("lessonSync").innerHTML=`<strong>Mapped progression:</strong> ${cfg.context}`;
+    document.querySelector(".kicker").textContent=`Khaemenes Mathematics · ${cfg.label}`;
+    document.querySelector(".crumb").textContent=cfg.mode;
+    el.returnLinks.forEach((a,i)=>{a.href=cfg.returnHref;a.textContent=i===1?`← ${cfg.returnLabel}`:cfg.returnLabel;});
+    updateBest();
+  }
+
   function startRound(source=null){
+    updateCourseMode();
     deck=buildRound(source);
     index=0;score=0;correct=0;attempts=0;streak=0;missed=[];
     el.mastery.classList.remove("show");
@@ -759,9 +867,21 @@
 
   function renderBuilder(item){
     const n=item.n;
-    el.missionType.textContent="Factor pair builder";
+    const course=el.course.value;
     el.challengeValue.textContent=n;
-    el.questionPrompt.textContent="Build every unique positive factor rectangle for this number.";
+    if(course==="algebra1"){
+      el.missionType.textContent="Product-pair builder";
+      el.questionPrompt.textContent="Build every positive factor pair of this target product. These are the unsigned candidates used when factoring trinomials.";
+    }else if(course==="geometry"){
+      el.missionType.textContent="Integer rectangle builder";
+      el.questionPrompt.textContent="Build every unique integer rectangle with this area, then compare the resulting dimensions.";
+    }else if(course==="algebra2"){
+      el.missionType.textContent="Rational-root factor inventory";
+      el.questionPrompt.textContent="Build every positive factor pair. Complete factor lists become p and q candidates in ±p/q.";
+    }else{
+      el.missionType.textContent="Factor pair builder";
+      el.questionPrompt.textContent="Build every unique positive factor rectangle for this number.";
+    }
     el.builderMission.hidden=false;
     el.choiceMission.hidden=true;
     el.build.disabled=false;
@@ -770,10 +890,23 @@
     el.cols.value=n;
     el.arrayLabel.textContent="Choose dimensions";
     el.gameArrayCanvas.innerHTML='<span style="color:var(--muted)">A correct factor rectangle will appear here.</span>';
-    el.strategy.textContent=`Test row lengths from 1 upward. Stop after passing √${n} ≈ ${Math.sqrt(n).toFixed(2)}.`;
+    el.strategy.textContent=course==="algebra1"
+      ?`List positive pairs completely. Then use the middle coefficient to choose the required signs.`
+      :course==="geometry"
+      ?`Each factor pair is a possible integer length × width. After enumerating them, compare perimeter or shape efficiency.`
+      :course==="algebra2"
+      ?`List factors completely before constructing ±p/q candidates, then reduce duplicates.`
+      :`Test row lengths from 1 upward. Stop after passing √${n} ≈ ${Math.sqrt(n).toFixed(2)}.`;
     buildQuick(n);
     renderPairProgress(n);
-    setFeedback("","Builder ready.",`Find all ${factorPairs(n).length} unique factor pair${factorPairs(n).length===1?"":"s"} of ${n}.`);
+    const readyText=course==="geometry"
+      ?`Find all ${factorPairs(n).length} integer rectangle dimension pair${factorPairs(n).length===1?"":"s"} for area ${n}.`
+      :course==="algebra1"
+      ?`Find all ${factorPairs(n).length} positive product pair${factorPairs(n).length===1?"":"s"} of ${n} before selecting signs.`
+      :course==="algebra2"
+      ?`Find all ${factorPairs(n).length} positive factor pair${factorPairs(n).length===1?"":"s"} of ${n}; these can feed Rational Root candidates.`
+      :`Find all ${factorPairs(n).length} unique factor pair${factorPairs(n).length===1?"":"s"} of ${n}.`;
+    setFeedback("","Builder ready.",readyText);
   }
 
   function buildQuick(n){
@@ -879,7 +1012,10 @@
       multiple:"Multiple sequence",
       complete:"Factor completeness",
       square:"Perfect-square reasoning",
-      application:"Equal-group application"
+      application:"Equal-group application",
+      trinomial:"Trinomial factor structure",
+      geometry:"Rectangle optimization",
+      rationalroot:"Rational Root candidates"
     })[item.type]||"Number structure";
     el.challengeValue.textContent="?";
     el.questionPrompt.textContent=item.prompt;
@@ -907,6 +1043,9 @@
     if(type==="square")return"Look for the repeated middle pair a × a.";
     if(type==="complete")return"List pairs in order and stop after the square-root boundary.";
     if(type==="application")return"Equal groups with no leftovers require a factor of the total.";
+    if(type==="trinomial")return"Find factor pairs for the target product, then choose signs so the pair also matches the required sum.";
+    if(type==="geometry")return"Interpret factor pairs as length-width designs; compute perimeter when efficiency matters.";
+    if(type==="rationalroot")return"List factors of the constant and leading coefficient completely, form ±p/q, and reduce duplicates.";
     return"Translate the wording into multiplication or repeated products.";
   }
 
@@ -920,6 +1059,9 @@
     else if(item.type==="complete")hint="Search pairs from 1 upward and compare with the square root.";
     else if(item.type==="multiple")hint="The kth positive multiple of n is n × k.";
     else if(item.type==="application")hint="No leftovers means the proposed group size must divide the total exactly.";
+    else if(item.type==="trinomial")hint="Start with the product. Which signed factor pair also produces the middle-term sum?";
+    else if(item.type==="geometry")hint="For a rectangle, A=LW and P=2(L+W). Enumerate factor-pair dimensions first.";
+    else if(item.type==="rationalroot")hint="Use ±p/q where p divides the constant term and q divides the leading coefficient.";
     setFeedback("","Reasoning hint",hint);
   }
 
@@ -962,19 +1104,20 @@
   }
 
   function bestValue(){
-    try{const v=Number(localStorage.getItem(BEST_KEY));return Number.isFinite(v)?v:null}catch(_){return null}
+    try{const v=Number(localStorage.getItem(bestKey()));return Number.isFinite(v)?v:null}catch(_){return null}
   }
   function updateBest(){const v=bestValue();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
-  function saveBest(p){try{const old=bestValue();if(old===null||p>old)localStorage.setItem(BEST_KEY,String(p))}catch(_){}updateBest()}
+  function saveBest(p){try{const old=bestValue();if(old===null||p>old)localStorage.setItem(bestKey(),String(p))}catch(_){}updateBest()}
 
   function finishRound(){
     index=deck.length;updateStats();el.fill.style.width="100%";
     const percent=attempts?Math.round(correct/attempts*100):0;saveBest(percent);
     el.mastery.classList.add("show");el.masteryMark.textContent=`${percent}%`;
-    el.masteryTitle.textContent=percent>=80?"Lesson-game mastery passed":"Keep building number structure";
+    const cfg=COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;
+    el.masteryTitle.textContent=percent>=80?`${cfg.label} game mastery passed`:"Keep building factor structure";
     el.masteryText.textContent=percent>=80
-      ?`You solved ${correct} of ${attempts} Lesson 2 missions correctly and met the 80% mastery target. Return to the lesson for worked examples and the 20-question assignment.`
-      :`You solved ${correct} of ${attempts} missions correctly. Revisit the animated instruction and retry the missed number-structure missions until you reach 80%.`;
+      ?`You solved ${correct} of ${attempts} ${cfg.mode} missions correctly and met the 80% mastery target. Return to the mapped lesson for the full instructional sequence.`
+      :`You solved ${correct} of ${attempts} missions correctly. Revisit the factor structure, review missed missions, and retry until you reach 80%.`;
     el.review.disabled=missed.length===0;
     el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed choice missions";
     el.mastery.scrollIntoView({behavior:"smooth",block:"center"});
@@ -987,6 +1130,7 @@
   el.next.addEventListener("click",next);
   el.newRound.addEventListener("click",()=>startRound());
   el.review.addEventListener("click",()=>{if(missed.length)startRound(missed)});
+  el.course.addEventListener("change",()=>{const u=new URL(location.href);u.searchParams.set("course",el.course.value);history.replaceState(null,"",u);startRound()});
   el.pathway.addEventListener("change",()=>startRound());
   el.size.addEventListener("change",()=>startRound());
   el.rows.addEventListener("input",()=>{
@@ -1000,7 +1144,7 @@
   el.cols.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();buildRectangle()}});
   el.print.addEventListener("click",()=>window.print());
   el.resetBest.addEventListener("click",()=>{
-    try{localStorage.removeItem(BEST_KEY)}catch(_){}
+    try{localStorage.removeItem(bestKey())}catch(_){}
     updateBest();setFeedback("","Best score reset.","The saved game mastery score on this device was cleared.");
   });
 

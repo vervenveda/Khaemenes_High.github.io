@@ -73,6 +73,57 @@
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained"
+    },
+    "factors-and-multiples": {
+      "title": "Factor Structure Lab",
+      "canonical_path": "courses/mathematics/assets/learning-games/factors-and-multiples/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-02-factors-multiples/index.html",
+        "courses/mathematics/pre-algebra/learning-games/02-factors-multiples/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "01",
+          "lesson": "02",
+          "lesson_title": "Factors, Multiples & Number Structure",
+          "mode": "factors-multiples",
+          "query": "?course=prealgebra&unit=01&lesson=02",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "09",
+          "lesson": "06",
+          "lesson_title": "Factoring Trinomials & Difference of Squares",
+          "mode": "product-sum-factoring",
+          "query": "?course=algebra1&unit=09&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "10",
+          "lesson": "07",
+          "lesson_title": "Optimization with Perimeter and Area Constraints",
+          "mode": "rectangle-area-optimization",
+          "query": "?course=geometry&unit=10&lesson=u10-l07",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "03",
+          "lesson": "04",
+          "lesson_title": "Rational Root Theorem & Candidate Zeros",
+          "mode": "rational-root-candidates",
+          "query": "?course=algebra2&unit=03&lesson=u03-l04",
+          "wired": true
+        }
+      ],
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "scope_note": "GCF/LCM is intentionally reserved for the existing Pre-Algebra U01-L04 game to avoid subject duplication."
     }
   }
 }
