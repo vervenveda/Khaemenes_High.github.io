@@ -111,6 +111,7 @@ footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
 <footer>KH-MATH-PA-U03-L4 · common denominators · signed rational operations · mixed numbers · estimation · 80% mastery</footer>
 </div>
 
+<script src="../round-policy.js"></script>
 <script>
 (()=>{"use strict";
 const BANK=[
@@ -149,13 +150,13 @@ const BEST="khaemenes-prealgebra-u03-l04-common-ground-v1";let deck=[],index=0,s
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
 function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
-function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];return src&&src.length?shuffle(window.MathGameRounds.unique(src)):window.MathGameRounds.sample(p,n)}
 function start(src=null){deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
 function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;
 el.strategy.textContent=c.b.includes("Estimate")?"Predict sign and approximate magnitude before exact arithmetic.":c.b.includes("Mixed")?"Choose between converting to improper fractions or regrouping.":c.b.includes("Subtraction")||c.b.includes("Opposite")||c.b.includes("Signed")?"Create compatible units, then apply signed-number reasoning.":"Check whether the denominators already name the same-size units.";
 feedback("","Mission ready.","Create compatible units first; then combine signed values.");stats()}
 function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by common-denominator and signed-number reasoning.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Common ground established.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
-function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+function stats(){window.MathGameRounds.lock(el,attempts>0&&index<deck.length);const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
 function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
 function best(){try{const raw=localStorage.getItem(BEST);if(raw===null)return null;const v=Number(raw);return Number.isFinite(v)?v:null}catch(e){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}

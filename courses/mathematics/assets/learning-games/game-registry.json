@@ -2,9 +2,12 @@
   "schema_version": "1.0",
   "canonical_root": "courses/mathematics/assets/learning-games",
   "migration_policy": {
-    "strategy": "one-existing-game-at-a-time",
-    "legacy_pre_algebra_root": "courses/mathematics/pre-algebra/learning-games",
-    "delete_legacy_only_after_live_verification": true
+    "strategy": "canonical-shared-games-only",
+    "retired_roots": [
+      "courses/mathematics/assets/assets/learning-games",
+      "courses/mathematics/pre-algebra/learning-games"
+    ],
+    "legacy_versions": "removed; history remains in git"
   },
   "games": {
     "number-family": {
@@ -12,9 +15,6 @@
       "canonical_path": "courses/mathematics/assets/learning-games/number-family/index.html",
       "status": "canonical-v3",
       "mastery_target": 80,
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-01-01-number-family/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -72,17 +72,17 @@
         }
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "migration_state": "canonical-shared-wired-legacy-retained"
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-01-number-family/index.html",
+        "courses/mathematics/pre-algebra/learning-games/01-number-family/index.html"
+      ]
     },
     "factors-and-multiples": {
       "title": "Factor Structure Lab",
       "canonical_path": "courses/mathematics/assets/learning-games/factors-and-multiples/index.html",
       "status": "canonical-v3",
       "mastery_target": 80,
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-01-02-factors-multiples/index.html",
-        "courses/mathematics/pre-algebra/learning-games/02-factors-multiples/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -123,17 +123,17 @@
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
-      "scope_note": "GCF/LCM is intentionally reserved for the existing Pre-Algebra U01-L04 game to avoid subject duplication."
+      "scope_note": "GCF/LCM is intentionally reserved for the existing Pre-Algebra U01-L04 game to avoid subject duplication.",
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-02-factors-multiples/index.html",
+        "courses/mathematics/pre-algebra/learning-games/02-factors-multiples/index.html"
+      ]
     },
     "prime-spy-composite": {
       "title": "Prime Spy / Composite Catch",
       "canonical_path": "courses/mathematics/assets/learning-games/prime-spy-composite/index.html",
       "status": "canonical-v3",
       "mastery_target": 80,
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-01-03-prime-spy-composite/index.html",
-        "courses/mathematics/pre-algebra/learning-games/03-prime-spy-composite/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -174,17 +174,17 @@
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
-      "scope_note": "Geometry and Algebra II Rational Root placements were deliberately not duplicated because those lessons already have canonical shared-game companions."
+      "scope_note": "Geometry and Algebra II Rational Root placements were deliberately not duplicated because those lessons already have canonical shared-game companions.",
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-03-prime-spy-composite/index.html",
+        "courses/mathematics/pre-algebra/learning-games/03-prime-spy-composite/index.html"
+      ]
     },
     "gcf-lcm-challenge": {
       "title": "GCF / LCM Challenge",
       "canonical_path": "courses/mathematics/assets/learning-games/gcf-lcm-challenge/index.html",
       "status": "canonical-v3",
       "mastery_target": 80,
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-01-04-GCF-LCM-Challenge/index.html",
-        "courses/mathematics/pre-algebra/learning-games/GCF-LCM-Challenge/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -225,16 +225,17 @@
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
-      "scope_note": "Geometry uses LCM only as a rotational-cycle application. Algebra I extends GCF to monomials; Algebra II extends LCM to least common denominators. No duplicate game is created."
+      "scope_note": "Geometry uses LCM only as a rotational-cycle application. Algebra I extends GCF to monomials; Algebra II extends LCM to least common denominators. No duplicate game is created.",
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-04-GCF-LCM-Challenge/index.html",
+        "courses/mathematics/pre-algebra/learning-games/GCF-LCM-Challenge/index.html"
+      ]
     },
     "operation-stepper": {
       "title": "Operation Stepper",
       "canonical_path": "courses/mathematics/assets/learning-games/operation-stepper/index.html",
       "status": "canonical-v3",
       "mastery_target": 80,
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-01-05-operation-stepper/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -258,7 +259,7 @@
           "course": "geometry",
           "unit": "10",
           "lesson": "03",
-          "lesson_title": "Heron’s Formula and Coordinate Area",
+          "lesson_title": "Heron\u2019s Formula and Coordinate Area",
           "mode": "geometry-formulas",
           "query": "?course=geometry&unit=10&lesson=u10-l03",
           "wired": true
@@ -275,17 +276,18 @@
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
-      "scope_note": "The shared game teaches evaluation sequence. Higher modes use formula and composition structure rather than merely larger arithmetic."
+      "scope_note": "The shared game teaches evaluation sequence. Higher modes use formula and composition structure rather than merely larger arithmetic.",
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-05-operation-stepper/index.html",
+        "courses/mathematics/pre-algebra/learning-games/05-operation-stepper/index.html",
+        "courses/mathematics/pre-algebra/learning-games/operation-stepper/index.html"
+      ]
     },
     "estimate-defender": {
       "title": "Estimate Defender",
       "canonical_path": "courses/mathematics/assets/learning-games/estimate-defender/index.html",
       "status": "canonical-v3",
       "mastery_target": 80,
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-01-06-estimate-defender/index.html",
-        "courses/mathematics/pre-algebra/learning-games/estimate-defender/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -326,17 +328,17 @@
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
-      "scope_note": "Algebra II measurement-error and modelling lessons remain available for later companions; this game owns the strongest direct progression without duplicating those future concepts."
+      "scope_note": "Algebra II measurement-error and modelling lessons remain available for later companions; this game owns the strongest direct progression without duplicating those future concepts.",
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-06-estimate-defender/index.html",
+        "courses/mathematics/pre-algebra/learning-games/estimate-defender/index.html"
+      ]
     },
     "integer-compass": {
       "title": "Integer Compass",
       "canonical_path": "courses/mathematics/assets/learning-games/integer-compass/index.html",
       "status": "canonical-v3",
       "mastery_target": 80,
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-02-01-integer-compass-signed-situation-sort/index.html",
-        "courses/mathematics/pre-algebra/learning-games/02-01-integer-compass-signed-situation-sort/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -377,7 +379,11 @@
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
-      "scope_note": "Progression is signed quantity → signed rate/slope → translation vector → vector components. Integer operation games remain separate to avoid duplication."
+      "scope_note": "Progression is signed quantity \u2192 signed rate/slope \u2192 translation vector \u2192 vector components. Integer operation games remain separate to avoid duplication.",
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-01-integer-compass-signed-situation-sort/index.html",
+        "courses/mathematics/pre-algebra/learning-games/02-01-integer-compass-signed-situation-sort/index.html"
+      ]
     },
     "opposite-mirror": {
       "title": "Opposite Mirror",
@@ -386,9 +392,6 @@
       "mastery_target": 80,
       "migration_state": "canonical-shared-wired-legacy-retained",
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-02-02-opposite-mirror/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -435,6 +438,9 @@
           "query": "?course=algebra2&unit=01&lesson=u01-l06",
           "wired": true
         }
+      ],
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-02-opposite-mirror/index.html"
       ]
     },
     "integer-rank": {
@@ -444,9 +450,6 @@
       "mastery_target": 80,
       "migration_state": "canonical-shared-wired-legacy-retained",
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-02-03-integer-rank/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -485,7 +488,10 @@
           "wired": true
         }
       ],
-      "scope_note": "Integer Rank owns order/interval representation and feasibility boundaries. Absolute-value solving remains with Opposite Mirror; later function-domain or inequality-solving games should extend other concepts rather than duplicate this ordering layer."
+      "scope_note": "Integer Rank owns order/interval representation and feasibility boundaries. Absolute-value solving remains with Opposite Mirror; later function-domain or inequality-solving games should extend other concepts rather than duplicate this ordering layer.",
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-03-integer-rank/index.html"
+      ]
     },
     "integer-sum-lab": {
       "title": "Integer Sum Lab",
@@ -494,9 +500,6 @@
       "mastery_target": 80,
       "migration_state": "canonical-shared-wired-legacy-retained",
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-02-04-integer-sum-lab/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -526,7 +529,10 @@
           "wired": true
         }
       ],
-      "scope_note": "Geometry is intentionally not assigned: Integer Compass already owns signed-coordinate/vector progression there. Algebra I polynomial addition remains available for a later polynomial-specific game, avoiding duplicate subject ownership."
+      "scope_note": "Geometry is intentionally not assigned: Integer Compass already owns signed-coordinate/vector progression there. Algebra I polynomial addition remains available for a later polynomial-specific game, avoiding duplicate subject ownership.",
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-04-integer-sum-lab/index.html"
+      ]
     },
     "opposite-shift": {
       "title": "Opposite Shift",
@@ -535,9 +541,6 @@
       "mastery_target": 80,
       "migration_state": "canonical-shared-wired-legacy-retained",
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-02-05-opposite-shift/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -567,7 +570,10 @@
           "wired": true
         }
       ],
-      "scope_note": "Geometry intentionally omitted: Integer Compass already owns signed-coordinate/vector progression. Complex subtraction remains with the complex-operations lesson family rather than duplicating Integer Sum Lab."
+      "scope_note": "Geometry intentionally omitted: Integer Compass already owns signed-coordinate/vector progression. Complex subtraction remains with the complex-operations lesson family rather than duplicating Integer Sum Lab.",
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-05-opposite-shift/index.html"
+      ]
     },
     "sign-forge": {
       "title": "Sign Forge",
@@ -576,9 +582,6 @@
       "mastery_target": 80,
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-02-06-sign-forge/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -616,18 +619,18 @@
           "query": "?course=algebra2&unit=04&lesson=u04-l02",
           "wired": true
         }
+      ],
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-06-sign-forge/index.html"
       ]
     },
     "dividing-integers": {
-      "title": "Quotient Check · Dividing Integers",
+      "title": "Quotient Check \u00b7 Dividing Integers",
       "canonical_path": "courses/mathematics/assets/learning-games/dividing-integers/index.html",
       "status": "canonical-v3",
       "mastery_target": 80,
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-02-07-dividing-integers/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -657,7 +660,10 @@
           "wired": true
         }
       ],
-      "scope_note": "This game owns quotient structure, inverse verification, and divisor/denominator restrictions. Geometry is intentionally omitted because ratio, similarity, scale, and trigonometric-ratio progressions belong to later proportional-reasoning games. Sign Forge retains multiplication/division of rational expressions so subject ownership does not overlap."
+      "scope_note": "This game owns quotient structure, inverse verification, and divisor/denominator restrictions. Geometry is intentionally omitted because ratio, similarity, scale, and trigonometric-ratio progressions belong to later proportional-reasoning games. Sign Forge retains multiplication/division of rational expressions so subject ownership does not overlap.",
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-07-dividing-integers/index.html"
+      ]
     },
     "coordinated-mission-control": {
       "title": "Coordinated Mission Control",
@@ -666,9 +672,6 @@
       "mastery_target": 80,
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
-      "legacy_paths": [
-        "courses/mathematics/pre-algebra/learning-games/unit-02-08-coordinated-mission-control/index.html"
-      ],
       "placements": [
         {
           "course": "pre-algebra",
@@ -716,7 +719,191 @@
           "wired": true
         }
       ],
-      "scope_note": "Integer Compass already owns Geometry U02-L01 and Algebra II U10-L10. Coordinated Mission Control is intentionally assigned to later coordinate, slope, and multi-step navigation lessons to avoid duplicate subject ownership."
+      "scope_note": "Integer Compass already owns Geometry U02-L01 and Algebra II U10-L10. Coordinated Mission Control is intentionally assigned to later coordinate, slope, and multi-step navigation lessons to avoid duplicate subject ownership.",
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-08-coordinated-mission-control/index.html"
+      ]
+    },
+    "common-ground": {
+      "title": "Common Ground",
+      "canonical_path": "courses/mathematics/assets/learning-games/common-ground/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-03-04-common-ground/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "03",
+          "lesson": "04",
+          "mode": "prealgebra",
+          "wired": true
+        }
+      ]
+    },
+    "decimal-signal": {
+      "title": "Decimal Signal",
+      "canonical_path": "courses/mathematics/assets/learning-games/decimal-signal/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-03-07-decimal-signal/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "03",
+          "lesson": "07",
+          "mode": "prealgebra",
+          "wired": true
+        }
+      ]
+    },
+    "fraction-forge": {
+      "title": "Fraction Forge",
+      "canonical_path": "courses/mathematics/assets/learning-games/fraction-forge/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-03-02-fraction-forge/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "03",
+          "lesson": "02",
+          "mode": "prealgebra",
+          "wired": true
+        }
+      ]
+    },
+    "fraction-quotient": {
+      "title": "Fraction Quotient",
+      "canonical_path": "courses/mathematics/assets/learning-games/fraction-quotient/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-03-01-fraction-quotient/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "03",
+          "lesson": "01",
+          "mode": "prealgebra",
+          "wired": true
+        }
+      ]
+    },
+    "group-or-cycle": {
+      "title": "Group Or Cycle",
+      "canonical_path": "courses/mathematics/assets/learning-games/group-or-cycle/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-04-group-or-cycle/index.html",
+        "courses/mathematics/pre-algebra/learning-games/group-or-cycle.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "01",
+          "lesson": "04",
+          "mode": "prealgebra",
+          "wired": true
+        }
+      ]
+    },
+    "ratio-atelier": {
+      "title": "Ratio Atelier",
+      "canonical_path": "courses/mathematics/assets/learning-games/ratio-atelier/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-04-01-ratio-atlier/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "04",
+          "lesson": "01",
+          "mode": "prealgebra",
+          "wired": true
+        }
+      ]
+    },
+    "rational-navigator": {
+      "title": "Rational Navigator",
+      "canonical_path": "courses/mathematics/assets/learning-games/rational-navigator/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-03-08-rational-navigator/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "03",
+          "lesson": "08",
+          "mode": "prealgebra",
+          "wired": true
+        }
+      ]
+    },
+    "rational-rank": {
+      "title": "Rational Rank",
+      "canonical_path": "courses/mathematics/assets/learning-games/rational-rank/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-03-03-rational-rank/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "03",
+          "lesson": "03",
+          "mode": "prealgebra",
+          "wired": true
+        }
+      ]
+    },
+    "reciprocal-relay": {
+      "title": "Reciprocal Relay",
+      "canonical_path": "courses/mathematics/assets/learning-games/reciprocal-relay/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-03-06-reciprocal-relay/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "03",
+          "lesson": "06",
+          "mode": "prealgebra",
+          "wired": true
+        }
+      ]
+    },
+    "scale-forge": {
+      "title": "Scale Forge",
+      "canonical_path": "courses/mathematics/assets/learning-games/scale-forge/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "retired_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-03-05-scale-forge/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "03",
+          "lesson": "05",
+          "mode": "prealgebra",
+          "wired": true
+        }
+      ]
     }
   }
 }

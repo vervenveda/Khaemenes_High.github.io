@@ -75,9 +75,9 @@ for(const [slug,game] of Object.entries(registry.games||{})){
     }
   }
 
-  for(const legacy of game.legacy_paths||[]){
+  for(const retired of game.retired_paths||[]){
     legacyCount++;
-    if(!exists(legacy)) errors.push(slug+": missing retained legacy rollback path "+legacy);
+    if(exists(retired)) errors.push(slug+": retired executable still exists "+retired);
   }
 
   for(const p of game.placements||[]){
@@ -99,8 +99,8 @@ for(const [slug,game] of Object.entries(registry.games||{})){
       const nextLesson=String(Number(lesson)+1).padStart(2,"0");
       const next=engine.indexOf("l"+nextLesson+":",start+1);
       const block=start>=0?engine.slice(start,next>=0?next:Math.min(engine.length,start+2600)):"";
-      if(start<0) errors.push(slug+": Pre-Algebra engine missing l"+lesson);
-      if(!block.includes('sharedGame:"'+slug+'"')) errors.push(slug+": Pre-Algebra l"+lesson+" does not map to sharedGame");
+      if(start<0 && !read(lessonPath).includes("/learning-games/"+slug+"/index.html")) errors.push(slug+": Pre-Algebra engine missing l"+lesson);
+      if(!block.includes('sharedGame:"'+slug+'"') && !block.includes('game:"'+slug+'"') && !read(lessonPath).includes('/learning-games/'+slug+'/index.html')) errors.push(slug+": Pre-Algebra l"+lesson+" does not map to sharedGame");
     }else{
       higherCount++;
       const lessonHtml=read(lessonPath);
@@ -111,12 +111,26 @@ for(const [slug,game] of Object.entries(registry.games||{})){
   }
 }
 
+function walk(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(entry=>entry.isDirectory()?walk(path.join(dir,entry.name)):[path.join(dir,entry.name)])}
+const diskGames=fs.readdirSync(registry.canonical_root,{withFileTypes:true}).filter(x=>x.isDirectory()&&exists(registry.canonical_root+"/"+x.name+"/index.html")).map(x=>x.name);
+for(const slug of diskGames)if(!registry.games[slug])errors.push("unregistered shared game: "+slug);
+let lessonLinks=0;
+for(const file of walk("courses/mathematics").filter(x=>/units\/unit-[^/]+\/lessons\/[^/]+\.html$/.test(x))){
+ for(const m of read(file).matchAll(/\b(?:href|src)=["']([^"']*learning-games[^"']*)["']/g)){
+  const target=resolveLocal(file,m[1]);if(!target)continue;lessonLinks++;
+  if(!target.startsWith(registry.canonical_root+"/"))errors.push("noncanonical lesson game: "+file+" -> "+target);
+  if(!exists(target))errors.push("missing lesson game: "+file+" -> "+target);
+ }
+}
+for(const root of registry.migration_policy.retired_roots||[])if(exists(root))errors.push("retired duplicate tree still exists: "+root);
+console.log("PASS: "+lessonLinks+" static lesson game links use canonical files");
+
 if(errors.length){
   console.error(errors.map(x=>"ERROR: "+x).join("\n"));
   process.exit(1);
 }
 console.log("PASS: "+canonicalCount+" canonical shared games");
 console.log("PASS: "+placementCount+" registry placements ("+higherCount+" higher-course placements)");
-console.log("PASS: "+legacyCount+" retained legacy rollback paths");
+console.log("PASS: "+legacyCount+" verified retired game paths");
 console.log("PASS: "+scriptCount+" inline JavaScript blocks parse");
 console.log("PASS: "+localRefCount+" canonical local references resolve");

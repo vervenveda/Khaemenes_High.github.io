@@ -146,7 +146,8 @@
 
   <footer><div class="shell footer-inner"><span>KH-MATH-PA-U04-L01-GAME · Ratio Atelier v1.0</span><span>Jennifer Kay Pearl · Local-first learning practice</span></div></footer>
 
-  <script>
+  <script src="../round-policy.js"></script>
+<script>
   (()=>{
     "use strict";
 
@@ -252,7 +253,7 @@
 
     function buildDeck(){
       const count=Math.max(8,Math.min(20,Number(el.size.value)||16)),factories=missionFactories(el.pathway.value),out=[];
-      const cycle=shuffle(factories);for(let i=0;i<count;i++)out.push(cycle[i%cycle.length]());return shuffle(out);
+      const cycle=shuffle(factories),seen=new Set();for(let i=0;i<count*20&&out.length<count;i++){const mission=cycle[i%cycle.length](),key=JSON.stringify(mission);if(!seen.has(key)){seen.add(key);out.push(mission)}}return shuffle(out);
     }
 
     function renderDots(container,count,color){container.innerHTML="";for(let i=0;i<count;i++){const dot=document.createElement("span");dot.className=`dot ${color}`;dot.setAttribute("aria-hidden","true");container.appendChild(dot)}}
@@ -297,15 +298,15 @@
 
     function showHint(){if(checked)return;setFeedback("","Reasoning hint",current().hint)}
     function next(){if(!checked)return;if(index>=deck.length-1){finishRound();return}index++;renderMission()}
-    function updateStats(){const total=deck.length||1,done=index+(checked?1:0),acc=done?Math.round(correct/done*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${acc}%`;el.fill.style.width=`${Math.round(done/total*100)}%`}
+    function updateStats(){window.MathGameRounds.lock(el,(index>0||checked)&&!lastRecord&&index<deck.length);const total=deck.length||1,done=index+(checked?1:0),acc=done?Math.round(correct/done*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${acc}%`;el.fill.style.width=`${Math.round(done/total*100)}%`}
 
-    function startRound(reviewDeck=null){deck=reviewDeck&&reviewDeck.length?shuffle(reviewDeck.map(cloneMission)):buildDeck();index=0;score=0;correct=0;streak=0;missed=[];lastRecord=null;el.mastery.classList.remove("show");renderMission()}
+    function startRound(reviewDeck=null){deck=reviewDeck&&reviewDeck.length?shuffle(window.MathGameRounds.unique(reviewDeck).map(cloneMission)):buildDeck();index=0;score=0;correct=0;streak=0;missed=[];lastRecord=null;el.mastery.classList.remove("show");renderMission()}
     function readStore(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||"{}")||{}}catch(_){return{}}}
     function writeStore(data){try{localStorage.setItem(STORE_KEY,JSON.stringify(data))}catch(_){}}
     function updateBest(){const data=readStore(),p=el.pathway.value,value=data.best&&Number(data.best[p]);el.best.textContent=Number.isFinite(value)?`Best ${p} mastery: ${value}%`:`Best ${p} mastery: —`}
     function saveRecord(record){const data=readStore(),best={...(data.best||{})},history=Array.isArray(data.history)?data.history:[];best[record.pathway]=Math.max(Number(best[record.pathway])||0,record.percent);history.unshift(record);writeStore({schema_version:"1.0",best,history:history.slice(0,20)});updateBest()}
 
-    function finishRound(){
+    function finishRound(){window.MathGameRounds.lock(el,false);
       const percent=Math.round(correct/deck.length*100);el.fill.style.width="100%";
       lastRecord={schema_version:"1.0",record_type:"lesson_game_practice",game_id:GAME_ID,course:"Pre-Algebra",unit:4,lesson:1,title:"Ratio Meaning, Language & Equivalent Ratios",pathway:el.pathway.value,missions:deck.length,correct,percent,score,mastery_threshold:80,status:percent>=80?"mastered":"practice_needed",completed_at:new Date().toISOString(),privacy:"No student name or identifier included."};
       saveRecord(lastRecord);el.mastery.classList.add("show");el.masteryMark.textContent=`${percent}%`;el.masteryTitle.textContent=percent>=80?"Ratio Atelier mastery earned":"Keep strengthening the ratio family";el.masteryText.textContent=percent>=80?`You preserved ${correct} of ${deck.length} ratio patterns and met the 80% game-mastery target.`:`You preserved ${correct} of ${deck.length} ratio patterns. Review the missed missions, then retry until the multiplicative comparison stays clear.`;el.review.disabled=missed.length===0;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";if(percent>=80){confetti();tone("mastery")}el.mastery.scrollIntoView({behavior:"smooth",block:"center"})

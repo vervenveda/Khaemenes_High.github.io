@@ -247,6 +247,7 @@ footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
 </main>
 <footer id="footerText">Khaemenes Mathematics Shared Game · Prime Spy / Composite Catch · 80% mastery</footer>
 </div>
+<script src="../round-policy.js"></script>
 <script>
 (()=>{
 "use strict";
@@ -406,7 +407,7 @@ function scan(d,b){
  if(hit){el.scan.textContent=`${evidence} ${n} ÷ ${d} = ${n/d}, so ${d} divides evenly.`}
  else{el.scan.textContent=`${evidence} ${n} is not divisible by ${d}.`}
 }
-function updateStats(){const total=deck.length||1;const a=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Case ${Math.min(index+1,total)} of ${total}`;el.acc.textContent=`Accuracy ${a}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+function updateStats(){window.MathGameRounds.lock(el,attempts>0&&index<deck.length);const total=deck.length||1;const a=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Case ${Math.min(index+1,total)} of ${total}`;el.acc.textContent=`Accuracy ${a}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
 el.choices.forEach(b=>b.addEventListener("click",()=>{if(checked)return;selected=b.dataset.choice;el.choices.forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))}));
 function hint(){
  if(!isFoundationMode()){const m=current();setFeedback("","Hint",m.hint);return}

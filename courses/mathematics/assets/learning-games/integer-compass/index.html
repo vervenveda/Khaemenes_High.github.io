@@ -72,6 +72,7 @@ button,a,select{font:inherit}button{touch-action:manipulation}a{color:inherit}bu
 <footer>Khaemenes Mathematics Shared Game · Integer Compass · sign · magnitude · reference · direction · 80% mastery</footer>
 </div>
 
+<script src="../round-policy.js"></script>
 <script>
 (()=>{"use strict";
 const COURSE_CONFIG={
@@ -175,7 +176,7 @@ function activeBank(){
  if(course==="algebra2")return ALGEBRA2_BANK;
  return BANK;
 }
-function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:activeBank().filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:activeBank().filter(x=>levels().has(x.l)),o=[];return src&&src.length?shuffle(window.MathGameRounds.unique(src)):window.MathGameRounds.sample(p,n)}
 function updateCourseMode(){
  const cfg=COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;
  el.courseHome.href=cfg.returnHref;
@@ -197,7 +198,7 @@ else if(course==="geometry")el.strategy.textContent="Read the x-component first 
 else if(course==="algebra2")el.strategy.textContent="Separate signed components from vector magnitude; components preserve direction relative to the chosen axes.";
 else el.strategy.textContent=c.b.includes("Reference")||c.b.includes("Changing")?"Ask what has been defined as zero before interpreting the sign.":c.b.includes("Magnitude")?"Separate direction (sign) from size (magnitude).":"Identify the reference, then decide the direction from it.";feedback("","Mission ready.","Start by identifying what zero means in this situation.");stats()}
 function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the statement best supported by the context.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Compass aligned.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
-function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
+function stats(){window.MathGameRounds.lock(el,attempts>0&&index<deck.length);const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
 function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
 function best(){try{const raw=localStorage.getItem(bestKey());if(raw===null)return null;const v=Number(raw);return Number.isFinite(v)?v:null}catch(e){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}

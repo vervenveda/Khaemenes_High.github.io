@@ -8,6 +8,7 @@ on:
       - "courses/mathematics/tools/validate-shared-games.mjs"
       - "courses/mathematics/tools/test-game-regressions.mjs"
       - "courses/mathematics/tools/test-game-storage-links.mjs"
+      - "courses/mathematics/tools/test-all-game-rounds.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -21,6 +22,7 @@ on:
       - "courses/mathematics/tools/validate-shared-games.mjs"
       - "courses/mathematics/tools/test-game-regressions.mjs"
       - "courses/mathematics/tools/test-game-storage-links.mjs"
+      - "courses/mathematics/tools/test-all-game-rounds.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -45,3 +47,6 @@ jobs:
 
       - name: Verify shared-game score storage and lesson links
         run: node courses/mathematics/tools/test-game-storage-links.mjs
+
+      - name: Verify every shared game round and review
+        run: node courses/mathematics/tools/test-all-game-rounds.mjs

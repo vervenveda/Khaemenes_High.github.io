@@ -1,7 +1,33 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-design-v23-parchment-20261008";
+const CACHE_VERSION = "khaemenes-high-design-v24-canonical-math-20261008";
 const PRECACHE_FILES = [
+  "./courses/mathematics/assets/learning-games/round-policy.js",
+  "./courses/mathematics/assets/learning-games/common-ground/index.html",
+  "./courses/mathematics/assets/learning-games/coordinated-mission-control/index.html",
+  "./courses/mathematics/assets/learning-games/decimal-signal/index.html",
+  "./courses/mathematics/assets/learning-games/dividing-integers/index.html",
+  "./courses/mathematics/assets/learning-games/estimate-defender/index.html",
+  "./courses/mathematics/assets/learning-games/factors-and-multiples/index.html",
+  "./courses/mathematics/assets/learning-games/fraction-forge/index.html",
+  "./courses/mathematics/assets/learning-games/fraction-quotient/index.html",
+  "./courses/mathematics/assets/learning-games/gcf-lcm-challenge/index.html",
+  "./courses/mathematics/assets/learning-games/group-or-cycle/index.html",
+  "./courses/mathematics/assets/learning-games/integer-compass/index.html",
+  "./courses/mathematics/assets/learning-games/integer-rank/index.html",
+  "./courses/mathematics/assets/learning-games/integer-sum-lab/index.html",
+  "./courses/mathematics/assets/learning-games/number-family/index.html",
+  "./courses/mathematics/assets/learning-games/operation-stepper/index.html",
+  "./courses/mathematics/assets/learning-games/opposite-mirror/index.html",
+  "./courses/mathematics/assets/learning-games/opposite-shift/index.html",
+  "./courses/mathematics/assets/learning-games/prime-spy-composite/index.html",
+  "./courses/mathematics/assets/learning-games/ratio-atelier/index.html",
+  "./courses/mathematics/assets/learning-games/rational-navigator/index.html",
+  "./courses/mathematics/assets/learning-games/rational-rank/index.html",
+  "./courses/mathematics/assets/learning-games/reciprocal-relay/index.html",
+  "./courses/mathematics/assets/learning-games/scale-forge/index.html",
+  "./courses/mathematics/assets/learning-games/sign-forge/index.html",
+
   "./assets/vervenveda-parchment.css",
   "./",
   "./index.html",

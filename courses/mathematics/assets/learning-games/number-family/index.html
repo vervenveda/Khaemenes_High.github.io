@@ -1204,6 +1204,7 @@
   </footer>
 </div>
 
+<script src="../round-policy.js"></script>
 <script>
 (() => {
   "use strict";
@@ -1533,9 +1534,7 @@
   function buildRound(source=null){
     const count=Math.max(9,Math.min(24,Number(el.size.value)||18));
     if(source&&source.length){
-      const arr=[];
-      while(arr.length<count)arr.push(...shuffle(source));
-      return arr.slice(0,count);
+      return shuffle(window.MathGameRounds.unique(source));
     }
 
     const allowed=allowedLevels(el.pathway.value);
@@ -1563,9 +1562,7 @@
     const desiredSpecific=Math.max(1,count-desiredMembership-desiredCompare);
 
     const takeRepeated=(pool,n)=>{
-      const out=[];
-      while(out.length<n)out.push(...shuffle(pool));
-      return out.slice(0,n);
+      return window.MathGameRounds.sample(pool,n);
     };
 
     return shuffle([
@@ -1797,7 +1794,7 @@
     updateStats();
   }
 
-  function updateStats(){
+  function updateStats(){window.MathGameRounds.lock(el,attempts>0&&index<deck.length);
     const total=deck.length||1;
     const acc=attempts?Math.round(correct/attempts*100):0;
     el.score.textContent=score;

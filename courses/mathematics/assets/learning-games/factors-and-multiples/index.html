@@ -501,6 +501,7 @@
   <footer>Khaemenes Mathematics Shared Game · Factor Structure Lab · Multi-course progression · 80% mastery · No external dependencies</footer>
 </div>
 
+<script src="../round-policy.js"></script>
 <script>
 (() => {
   "use strict";
@@ -796,9 +797,7 @@
   function buildRound(source=null){
     const count=Math.max(8,Math.min(20,Number(el.size.value)||16));
     if(source&&source.length){
-      const arr=[];
-      while(arr.length<count)arr.push(...shuffle(source));
-      return arr.slice(0,count);
+      return shuffle(window.MathGameRounds.unique(source));
     }
 
     const allowed=allowedLevels(el.pathway.value);
@@ -811,9 +810,7 @@
     const builders=Math.max(5,Math.round(count*.45));
     const choices=count-builders;
     const takeRepeated=(pool,n)=>{
-      const out=[];
-      while(out.length<n)out.push(...shuffle(pool));
-      return out.slice(0,n);
+      return window.MathGameRounds.sample(pool,n);
     };
     return shuffle([...takeRepeated(buildPool,builders),...takeRepeated(choicePool,choices)]);
   }
@@ -1095,7 +1092,7 @@
     renderMission();
   }
 
-  function updateStats(){
+  function updateStats(){window.MathGameRounds.lock(el,attempts>0&&index<deck.length);
     const total=deck.length||1;
     const acc=attempts?Math.round(correct/attempts*100):0;
     el.score.textContent=score;el.streak.textContent=streak;

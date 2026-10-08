@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v7-compact-course-shell`;
+const CACHE_NAME=`${CACHE_PREFIX}v7-compact-course-shell-math-canonical-20261008`;
 const CORE_FILES=[
   "./",
   "./index.html",
