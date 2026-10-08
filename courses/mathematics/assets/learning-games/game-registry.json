@@ -1041,6 +1041,88 @@
         }
       ],
       "scope_note": "Single-boundary inequalities only; compound and systems lessons intentionally excluded. Mode query is metadata; game v1 requires manual level selection. Browser QA pending."
+    },
+    "slope-and-rate-studio": {
+      "title": "Slope & Rate Studio",
+      "canonical_path": "courses/mathematics/assets/learning-games/slope-and-rate-studio/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "04",
+          "lesson": "03",
+          "lesson_title": "Rates, Unit Rates & Fair Comparisons",
+          "mode": "unit-rate",
+          "query": "?course=prealgebra&unit=04&lesson=03&mode=unit-rate",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "04",
+          "lesson": "04",
+          "lesson_title": "Proportional Tables, Graphs & Equations",
+          "mode": "table",
+          "query": "?course=prealgebra&unit=04&lesson=04&mode=table",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "10",
+          "lesson": "05",
+          "lesson_title": "Rate of Change from Tables, Graphs & Contexts",
+          "mode": "slope",
+          "query": "?course=prealgebra&unit=10&lesson=05&mode=slope",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "10",
+          "lesson": "06",
+          "lesson_title": "Slope, Intercepts & Linear Equations",
+          "mode": "intercept",
+          "query": "?course=prealgebra&unit=10&lesson=06&mode=intercept",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "01",
+          "lesson": "04",
+          "lesson_title": "Units, Rates & Dimensional Analysis",
+          "mode": "unit-rate",
+          "query": "?course=algebra1&unit=01&lesson=04&mode=unit-rate",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "06",
+          "lesson": "01",
+          "lesson_title": "Rate of Change & Slope",
+          "mode": "slope",
+          "query": "?course=algebra1&unit=06&lesson=01&mode=slope",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "06",
+          "lesson": "02",
+          "lesson_title": "Slope from Tables, Graphs & Points",
+          "mode": "two-points",
+          "query": "?course=algebra1&unit=06&lesson=02&mode=two-points",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "06",
+          "lesson": "03",
+          "lesson_title": "Slope-Intercept Form",
+          "mode": "intercept",
+          "query": "?course=algebra1&unit=06&lesson=03&mode=intercept",
+          "wired": true
+        }
+      ],
+      "scope_note": "Game reads mode query and selects initial level. Lessons include broader content beyond game's practice scope. Browser QA pending; no automatic course mastery writeback."
     }
   }
 }
