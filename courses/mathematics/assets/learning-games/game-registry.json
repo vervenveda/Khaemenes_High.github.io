@@ -686,7 +686,7 @@
           "lesson_title": "Slope from Tables, Graphs & Points",
           "mode": "coordinate-change-slope",
           "query": "?course=algebra1&unit=06&lesson=02&mode=coordinate-change-slope",
-          "wired": false
+          "wired": true
         },
         {
           "course": "algebra-1",
@@ -695,7 +695,7 @@
           "lesson_title": "Midpoint, Coordinate Geometry & Geometric Constraints",
           "mode": "coordinate-geometry",
           "query": "?course=algebra1&unit=11&lesson=11-05&mode=coordinate-geometry",
-          "wired": false
+          "wired": true
         },
         {
           "course": "geometry",
@@ -704,7 +704,7 @@
           "lesson_title": "Bearings, Vectors & Multi-Step Navigation",
           "mode": "vector-navigation",
           "query": "?course=geometry&unit=06&lesson=u06-l08&mode=vector-navigation",
-          "wired": false
+          "wired": true
         },
         {
           "course": "algebra-2",
@@ -713,7 +713,7 @@
           "lesson_title": "Navigation, Vectors & Multi-Step Triangle Models",
           "mode": "advanced-vector-navigation",
           "query": "?course=algebra2&unit=11&lesson=u11-l08&mode=advanced-vector-navigation",
-          "wired": false
+          "wired": true
         }
       ],
       "scope_note": "Integer Compass already owns Geometry U02-L01 and Algebra II U10-L10. Coordinated Mission Control is intentionally assigned to later coordinate, slope, and multi-step navigation lessons to avoid duplicate subject ownership."
