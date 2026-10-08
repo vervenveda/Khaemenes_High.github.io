@@ -24,3 +24,22 @@ And:
 where additive inverses simplify the expression before the remaining sum is evaluated.
 
 The same Foundation / Core / Extended pathways, 12/16/20 mission rounds, missed-item replay, local best score, and 80% mastery target are included.
+
+
+## Canonical Shared-Game Migration · Integer Sum Lab v3
+
+This directory is the canonical Mathematics copy.
+
+Supported placements:
+- Pre-Algebra U02-L04 — integer addition, number-line movement, zero pairs, additive inverses
+- Algebra I U02-L04 — signed coefficients and combining like terms
+- Algebra II U02-L05 — complex-number addition
+
+Geometry is deliberately not wired to this game because Integer Compass already owns the signed-coordinate/vector progression. Algebra I polynomial addition is also left open for a future polynomial-specific companion so concepts are not duplicated.
+
+Migration rule:
+1. Shared Mathematics copy is canonical.
+2. The legacy Pre-Algebra copy remains temporarily for rollback compatibility.
+3. Pre-Algebra U02-L04 resolves to the shared copy.
+4. Higher-course lesson cards launch the same shared game with course-specific modes.
+5. Do not delete the legacy copy until live production verification passes.

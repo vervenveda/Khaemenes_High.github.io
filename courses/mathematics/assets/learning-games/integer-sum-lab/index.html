@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Khaemenes Pre-Algebra Unit 2 Lesson 4 companion game: Adding Integers with Models and Meaning.">
+<meta name="description" content="Khaemenes Mathematics shared Integer Sum Lab: integer addition, signed coefficients, and complex-number addition across Pre-Algebra, Algebra I, and Algebra II.">
 <meta name="theme-color" content="#090d14">
-<title>Lesson 4 · Integer Sum Lab · Adding Integers</title>
+<title>Integer Sum Lab · Khaemenes Mathematics Shared Game</title>
 <style>
 :root{
 --bg:#090d14;--panel:#151d29;--ink:#f7f2e7;--muted:#c9c1b2;--line:#3b4655;
@@ -64,14 +64,14 @@ footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
 </head>
 <body><a class="skip" href="#game">Skip to game</a><div class="shell">
 <header class="topbar">
-<a class="brand" href="../units/unit-02/lessons/lesson-04-adding-integers.html"><div class="seal"><span>Σ</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 02</p><p class="crumb">Lesson 4 Companion · Adding Integers with Models & Meaning</p></div></a>
-<div class="actions"><a class="ghost" href="../units/unit-02/lessons/lesson-04-adding-integers.html">← Lesson 4</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
+<a class="brand" id="brandLink" href="../../../pre-algebra/units/unit-02/lessons/lesson-04-adding-integers.html"><div class="seal"><span>Σ</span></div><div><p class="kicker" id="courseKicker">Khaemenes Mathematics · Pre-Algebra</p><p class="crumb" id="courseCrumb">Unit 02 · Lesson 04 · Adding Integers</p></div></a>
+<div class="actions"><a class="ghost" id="topReturn" href="../../../pre-algebra/units/unit-02/lessons/lesson-04-adding-integers.html">← Return to Lesson</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
 </header>
 
 <section class="hero">
-<div class="eyebrow">Unit 2 · Lesson 4 · Companion Game</div>
-<h1>Integer Sum Lab</h1>
-<p>Move on the number line, build and cancel zero pairs, compare magnitudes, and defend the sign of every integer sum.</p>
+<div class="eyebrow" id="modeEyebrow">Pre-Algebra · Unit 02 · Lesson 04</div>
+<h1 id="gameTitle">Integer Sum Lab</h1>
+<p id="modeDescription">Move on the number line, build and cancel zero pairs, compare magnitudes, and defend the sign of every integer sum.</p>
 <div class="lesson-sync"><strong>Lesson sync:</strong> adding a positive moves right; adding a negative moves left. Same signs combine magnitudes and keep the common sign. Different signs compete by magnitude. Opposites cancel to zero.</div>
 </section>
 
@@ -110,22 +110,22 @@ footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
 <div class="choice-grid" id="choiceGrid"></div>
 <div class="action-row"><button class="secondary" id="hintBtn">Reasoning hint</button><button class="primary" id="checkBtn">Check reasoning</button><button class="secondary" id="nextBtn" hidden>Next mission →</button></div>
 <div class="feedback" id="feedback"><h3>Ready.</h3><p>Decide first: same signs, different signs, or additive inverses?</p></div>
-<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../units/unit-02/lessons/lesson-04-adding-integers.html">Return to Lesson 4</a></div></div>
+<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" id="returnToLesson" href="../../../pre-algebra/units/unit-02/lessons/lesson-04-adding-integers.html">Return to Pre-Algebra U02-L04</a></div></div>
 </section>
 
 <aside class="panel side">
-<h2>Lesson 4 Field Guide</h2>
+<h2 id="fieldGuideTitle">Integer Addition Field Guide</h2>
 <div class="concept"><b>Same signs</b><span>Add magnitudes and keep the common sign.</span></div>
 <div class="concept"><b>Different signs</b><span>Subtract magnitudes; use the sign of the greater magnitude.</span></div>
 <div class="concept"><b>Number line</b><span>Positive addend → right. Negative addend → left.</span></div>
 <div class="concept"><b>Zero pair</b><span>One positive and one negative unit cancel to zero.</span></div>
 <div class="concept"><b>Additive inverses</b><span>a + (−a) = 0.</span></div>
 <div class="tip"><strong>Sum question</strong><p id="strategyText">Are the signs the same, different, or exact opposites?</p></div>
-<div class="controls"><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
+<div class="controls"><div class="control"><label for="courseMode">Course level</label><select id="courseMode"><option value="prealgebra">Pre-Algebra · Integer Addition</option><option value="algebra1">Algebra I · Signed Coefficients</option><option value="algebra2">Algebra II · Complex Addition</option></select></div><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
 <p class="best" id="bestScore">Best mastery score: —</p>
 </aside>
 </main>
-<footer>KH-MATH-PA-U02-L4 · integer addition · number line · zero pairs · additive inverses · 80% mastery</footer>
+<footer>Khaemenes Mathematics Shared Game · Integer Sum Lab · integers → signed coefficients → complex addition · 80% mastery</footer>
 </div>
 
 <script>
@@ -158,22 +158,87 @@ const BANK=[
 {l:"Extended",b:"Running Total",v:"+12, −20, +5, +9",q:"What is the final net change?",o:["−6","+6","+46","−46"],a:1,h:"Pair or accumulate strategically.",w:"+12 −20 +5 +9 = +6."}
 ];
 
-const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
-const BEST="khaemenes-prealgebra-u02-l04-integer-sum-lab-v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+const COURSE_CONFIG={
+  prealgebra:{
+    label:"Pre-Algebra",mode:"Integer Addition",
+    description:"Model and defend integer sums with number-line movement, zero pairs, magnitude comparison, and additive inverses.",
+    eyebrow:"Pre-Algebra · Unit 02 · Lesson 04",
+    returnHref:"../../../pre-algebra/units/unit-02/lessons/lesson-04-adding-integers.html",
+    returnLabel:"Return to Pre-Algebra U02-L04"
+  },
+  algebra1:{
+    label:"Algebra I",mode:"Signed Coefficients & Like Terms",
+    description:"Extend integer addition into algebra by combining signed coefficients of like terms and preserving variable structure.",
+    eyebrow:"Algebra I · Unit 02 · Lesson 04",
+    returnHref:"../../../algebra-1/units/unit-02/lessons/lesson-04-distributive-property-combining-like-terms.html",
+    returnLabel:"Return to Algebra I U02-L04"
+  },
+  algebra2:{
+    label:"Algebra II",mode:"Complex-Number Addition",
+    description:"Add complex numbers component-wise: combine signed real parts with real parts and signed imaginary coefficients with imaginary coefficients.",
+    eyebrow:"Algebra II · Unit 02 · Lesson 05",
+    returnHref:"../../../algebra-2/units/unit-02/lessons/u02-l05.html",
+    returnLabel:"Return to Algebra II U02-L05"
+  }
+};
+
+const ALGEBRA1_BANK=[
+{l:"Foundation",b:"Like Terms",v:"−3x + 8x",q:"What is the simplified sum?",o:["5x","−11x","11x","5"],a:0,h:"The variable parts match, so add the signed coefficients.",w:"−3 + 8 = 5, so the result is 5x."},
+{l:"Foundation",b:"Like Terms",v:"7a + (−12a)",q:"What is the simplified sum?",o:["19a","−5a","5a","−19a"],a:1,h:"Combine the coefficients 7 and −12.",w:"7 + (−12) = −5, so the result is −5a."},
+{l:"Foundation",b:"Unlike Terms",v:"4x + 3y",q:"Can these terms be combined into one term?",o:["Yes, 7xy","Yes, 7x","No, the variable parts differ","No, because both are positive"],a:2,h:"Like terms must have identical variable parts.",w:"4x and 3y are unlike terms, so they remain 4x + 3y."},
+{l:"Core",b:"Signed Coefficients",v:"−9m + 4m + 7m",q:"What is the simplified expression?",o:["2m","−20m","12m","−2m"],a:0,h:"Add the signed coefficients strategically.",w:"−9 + 4 + 7 = 2, so the result is 2m."},
+{l:"Core",b:"Zero Pair",v:"13p + (−13p) + 6",q:"What remains after combining like terms?",o:["26p + 6","6","13p","−6"],a:1,h:"13p and −13p are additive inverses.",w:"The p-terms cancel to zero, leaving 6."},
+{l:"Core",b:"Distribution Then Sum",v:"3(x+2) − 5x",q:"Which equivalent expression is correct?",o:["8x+6","−2x+6","2x+6","−2x−6"],a:1,h:"Distribute first: 3x+6−5x.",w:"3x−5x = −2x, so the result is −2x+6."},
+{l:"Core",b:"Error Analysis",v:"−4x + 9x",q:"A student writes −13x. What is the correction?",o:["Add magnitudes and keep negative","Use 9−4 and the sign of 9: 5x","Change both signs","The student is correct"],a:1,h:"The coefficients have different signs.",w:"−4 + 9 = 5, so the correct sum is 5x."},
+{l:"Extended",b:"Multi-Term Structure",v:"−6x + 4 − 3x − 9",q:"What is the simplified expression?",o:["−9x−5","−3x−5","−9x+13","9x−5"],a:0,h:"Combine x-terms separately from constants.",w:"−6x−3x = −9x and 4−9 = −5, giving −9x−5."},
+{l:"Extended",b:"Parameter Reasoning",v:"ax + bx",q:"Which expression is equivalent for all real a and b?",o:["abx","(a+b)x","(a−b)x","a+b+x"],a:1,h:"Factor the shared x after adding coefficients.",w:"ax+bx=(a+b)x."},
+{l:"Extended",b:"Cancellation",v:"5y − 2 + (−5y) + 11",q:"What is the simplified value?",o:["9","13","10y+9","−9"],a:0,h:"Look for additive-inverse like terms first.",w:"5y and −5y cancel; −2+11=9."}
+];
+
+const ALGEBRA2_BANK=[
+{l:"Foundation",b:"Complex Addition",v:"(3+2i)+(5+4i)",q:"What is the sum?",o:["8+6i","8+8i","2−2i","15+8i"],a:0,h:"Combine real parts and imaginary parts separately.",w:"3+5=8 and 2i+4i=6i, so the sum is 8+6i."},
+{l:"Foundation",b:"Complex Addition",v:"(−2+7i)+(6−3i)",q:"What is the sum?",o:["4+4i","−8+10i","4+10i","−8+4i"],a:0,h:"Add real components, then imaginary coefficients.",w:"−2+6=4 and 7+(−3)=4, so the sum is 4+4i."},
+{l:"Foundation",b:"Pure Imaginary",v:"5i+(−9i)",q:"What is the sum?",o:["14i","−4i","4","−14"],a:1,h:"The imaginary unit is the shared variable-like part.",w:"5+(−9)=−4, so the sum is −4i."},
+{l:"Core",b:"Additive Inverse",v:"(4−3i)+(−4+3i)",q:"What is the sum?",o:["8","−6i","0","8−6i"],a:2,h:"Both components are opposites.",w:"The real parts cancel and the imaginary parts cancel, so the sum is 0."},
+{l:"Core",b:"Signed Components",v:"(−7−5i)+(2+9i)",q:"What is the sum?",o:["−5+4i","−9+14i","5−4i","−5−14i"],a:0,h:"Combine −7+2 and −5+9.",w:"The result is −5+4i."},
+{l:"Core",b:"Structure",v:"(a+bi)+(c+di)",q:"Which general sum is correct?",o:["(ac)+(bd)i","(a+c)+(b+d)i","(a+b)+(c+d)i","(a−c)+(b−d)i"],a:1,h:"Add corresponding real and imaginary components.",w:"Complex addition is component-wise: (a+c)+(b+d)i."},
+{l:"Core",b:"Error Analysis",v:"(2+3i)+(4−8i)",q:"A student writes 6+11i. What went wrong?",o:["The real parts should multiply","The imaginary coefficients have different signs","i must be squared","Complex numbers cannot be added"],a:1,h:"3+(−8) is not 11.",w:"The correct imaginary coefficient is −5, so the sum is 6−5i."},
+{l:"Extended",b:"Three-Term Sum",v:"(2−i)+(−5+4i)+(7−6i)",q:"What is the sum?",o:["4−3i","14−11i","4+9i","−4−3i"],a:0,h:"Accumulate real and imaginary components separately.",w:"2−5+7=4 and −1+4−6=−3, so the sum is 4−3i."},
+{l:"Extended",b:"Solve by Addition",v:"z+(−3+5i)=4−2i",q:"What is z?",o:["1+3i","7−7i","−7+7i","1−7i"],a:1,h:"Add the opposite of −3+5i to both sides.",w:"z=(4−2i)+(3−5i)=7−7i."},
+{l:"Extended",b:"Component Check",v:"z₁=−6+2i, z₂=9−7i",q:"Which statement about z₁+z₂ is true?",o:["Real part is −15","Imaginary part is +9","Real part is 3 and imaginary part is −5","The sum is purely imaginary"],a:2,h:"Add −6+9 and 2+(−7).",w:"z₁+z₂=3−5i."}
+];
+
+const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),course:$("courseMode"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),brandLink:$("brandLink"),topReturn:$("topReturn"),returnLink:$("returnToLesson"),kicker:$("courseKicker"),crumb:$("courseCrumb"),eyebrow:$("modeEyebrow"),gameTitle:$("gameTitle"),modeDescription:$("modeDescription"),fieldGuideTitle:$("fieldGuideTitle"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
+const params=new URLSearchParams(location.search);const requestedCourse=params.get("course");if(COURSE_CONFIG[requestedCourse])el.course.value=requestedCourse;const modeKey=()=>el.course.value||"prealgebra";const bestKey=()=>`khaemenes-math-integer-sum-lab-${modeKey()}-v3`;let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
 function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
-function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function activeBank(){if(el.course.value==="algebra1")return ALGEBRA1_BANK;if(el.course.value==="algebra2")return ALGEBRA2_BANK;return BANK}function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:activeBank().filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
 function start(src=null){deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
-function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;el.strategy.textContent=c.b.includes("Same")?"Same signs: add magnitudes and keep the sign.":c.b.includes("Inverse")||c.b.includes("Pair")?"Look for opposite values that cancel to zero.":"If signs differ, compare magnitudes or model the movement.";feedback("","Mission ready.","Decide first: same signs, different signs, or additive inverses?");stats()}
+function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;const cfg=COURSE_CONFIG[el.course.value];el.strategy.textContent=el.course.value==="algebra2"?"Combine real parts with real parts and imaginary coefficients with imaginary coefficients.":el.course.value==="algebra1"?"Combine only like terms; add their signed coefficients while preserving the shared variable part.":c.b.includes("Same")?"Same signs: add magnitudes and keep the sign.":c.b.includes("Inverse")||c.b.includes("Pair")?"Look for opposite values that cancel to zero.":"If signs differ, compare magnitudes or model the movement.";feedback("","Mission ready.","Decide first: same signs, different signs, or additive inverses?");stats()}
 function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by the model or sign reasoning.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Sum defended.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
 function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
 function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
-function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(e){return null}}
+function best(){try{const v=Number(localStorage.getItem(bestKey()));return Number.isFinite(v)?v:null}catch(e){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
-function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(BEST,String(p))}catch(e){}updateBest()}
-function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Integer Sum Lab mastery passed":"Rebuild the model";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} Lesson 4 missions correctly and met the 80% mastery target. Return to Lesson 4 for practice and reflection.`:`You solved ${correct} of ${attempts} missions correctly. Review the missed sums, especially sign selection, zero pairs, and magnitude reasoning.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
-el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
+function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(bestKey(),String(p))}catch(e){}updateBest()}
+function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;const cfg=COURSE_CONFIG[el.course.value];el.mTitle.textContent=p>=80?`${cfg.mode} mastery passed`:"Rebuild the model";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} ${cfg.label} missions correctly and met the 80% mastery target. Return to the mapped lesson for practice and reflection.`:`You solved ${correct} of ${attempts} missions correctly. Review the missed addition structure and retry.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+function updateCourseMode(){
+  const cfg=COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;
+  el.kicker.textContent=`Khaemenes Mathematics · ${cfg.label}`;
+  el.crumb.textContent=cfg.eyebrow;
+  el.eyebrow.textContent=cfg.eyebrow;
+  el.gameTitle.textContent=`Integer Sum Lab · ${cfg.mode}`;
+  el.modeDescription.textContent=cfg.description;
+  el.fieldGuideTitle.textContent=`${cfg.mode} Field Guide`;
+  el.brandLink.href=cfg.returnHref;
+  el.topReturn.href=cfg.returnHref;
+  el.topReturn.textContent="← "+cfg.returnLabel;
+  el.returnLink.href=cfg.returnHref;
+  el.returnLink.textContent=cfg.returnLabel;
+  updateBest();
+}
+el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.course.onchange=()=>{const u=new URL(location.href);u.searchParams.set("course",el.course.value);history.replaceState(null,"",u);updateCourseMode();start()};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(bestKey())}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
 el.tabs.forEach((b,i)=>b.onclick=()=>{el.tabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));el.scenes.forEach((s,j)=>s.classList.toggle("active",j===i))});
 const later=(f,m)=>setTimeout(f,m);
 
@@ -186,7 +251,7 @@ $("playDuelDemo").onclick=()=>{["fightNeg","fightPos","fightResult"].forEach(id=
 $("playInverseDemo").onclick=()=>{["inv1","inv2","inv3","inv4"].forEach(id=>$(id).classList.remove("on"));["inv1","inv2","inv3","inv4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*380))};
 
 document.addEventListener("keydown",e=>{if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName))return;if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();feedback("","Reasoning hint",deck[index].h)}});
-updateBest();start();
+updateCourseMode();start();
 })();
 </script>
 </body></html>

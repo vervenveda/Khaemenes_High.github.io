@@ -486,6 +486,47 @@
         }
       ],
       "scope_note": "Integer Rank owns order/interval representation and feasibility boundaries. Absolute-value solving remains with Opposite Mirror; later function-domain or inequality-solving games should extend other concepts rather than duplicate this ordering layer."
+    },
+    "integer-sum-lab": {
+      "title": "Integer Sum Lab",
+      "canonical_path": "courses/mathematics/assets/learning-games/integer-sum-lab/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-04-integer-sum-lab/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "02",
+          "lesson": "04",
+          "lesson_title": "Adding Integers",
+          "mode": "integer-addition",
+          "query": "?course=prealgebra&unit=02&lesson=04",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "02",
+          "lesson": "04",
+          "lesson_title": "Distributive Property & Combining Like Terms",
+          "mode": "signed-coefficients",
+          "query": "?course=algebra1&unit=02&lesson=04&mode=signed-coefficients",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "05",
+          "lesson_title": "Operations with Complex Numbers",
+          "mode": "complex-addition",
+          "query": "?course=algebra2&unit=02&lesson=u02-l05&mode=complex-addition",
+          "wired": true
+        }
+      ],
+      "scope_note": "Geometry is intentionally not assigned: Integer Compass already owns signed-coordinate/vector progression there. Algebra I polynomial addition remains available for a later polynomial-specific game, avoiding duplicate subject ownership."
     }
   }
 }
