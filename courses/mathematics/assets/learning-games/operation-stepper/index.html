@@ -169,7 +169,7 @@ const cfg=()=>COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;
 const bestKey=()=>`khaemenes-math-operation-stepper-${cfg().key}-v3`;
 let deck=[],index=0,step=0,score=0,correctExpr=0,attemptedExpr=0,streak=0,missed=[],madeError=false;
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function best(){try{const v=Number(localStorage.getItem(bestKey()));return Number.isFinite(v)?v:null}catch(_){return null}}
+function best(){try{const raw=localStorage.getItem(bestKey());if(raw===null)return null;const v=Number(raw);return Number.isFinite(v)?v:null}catch(_){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
 function saveBest(p){try{const old=best();if(old===null||p>old)localStorage.setItem(bestKey(),String(p))}catch(_){}updateBest()}
 function setFeedback(k,t,p){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${p}</p>`}

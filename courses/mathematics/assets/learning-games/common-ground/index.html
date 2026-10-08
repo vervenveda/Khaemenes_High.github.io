@@ -49,8 +49,8 @@ footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
 </head>
 <body><a class="skip" href="#game">Skip to game</a><div class="shell">
 <header class="topbar">
-<a class="brand" href="../units/unit-03/lessons/lesson-04-add-subtract-rational-numbers.html"><div class="seal"><span>±</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 03</p><p class="crumb">Lesson 4 Companion · Adding & Subtracting Rational Numbers</p></div></a>
-<div class="actions"><a class="ghost" href="../units/unit-03/lessons/lesson-04-add-subtract-rational-numbers.html">← Lesson 4</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
+<a class="brand" href="../../../pre-algebra/units/unit-03/lessons/lesson-04-add-subtract-rational-numbers.html"><div class="seal"><span>±</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 03</p><p class="crumb">Lesson 4 Companion · Adding & Subtracting Rational Numbers</p></div></a>
+<div class="actions"><a class="ghost" href="../../../pre-algebra/units/unit-03/lessons/lesson-04-add-subtract-rational-numbers.html">← Lesson 4</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
 </header>
 
 <section class="hero">
@@ -93,7 +93,7 @@ footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
 <div class="choice-grid" id="choiceGrid"></div>
 <div class="action-row"><button class="secondary" id="hintBtn">Reasoning hint</button><button class="primary" id="checkBtn">Check reasoning</button><button class="secondary" id="nextBtn" hidden>Next mission →</button></div>
 <div class="feedback" id="feedback"><h3>Ready.</h3><p>First ask whether the fractions already use compatible units.</p></div>
-<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../units/unit-03/lessons/lesson-04-add-subtract-rational-numbers.html">Return to Lesson 4</a></div></div>
+<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../../../pre-algebra/units/unit-03/lessons/lesson-04-add-subtract-rational-numbers.html">Return to Lesson 4</a></div></div>
 </section>
 
 <aside class="panel side">
@@ -157,7 +157,7 @@ feedback("","Mission ready.","Create compatible units first; then combine signed
 function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by common-denominator and signed-number reasoning.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Common ground established.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
 function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
 function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
-function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(e){return null}}
+function best(){try{const raw=localStorage.getItem(BEST);if(raw===null)return null;const v=Number(raw);return Number.isFinite(v)?v:null}catch(e){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
 function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(BEST,String(p))}catch(e){}updateBest()}
 function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Common Ground mastery passed":"Rebuild the common units";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} Unit 3 Lesson 4 missions correctly and met the 80% mastery target. Return to the lesson for practice and reflection.`:`You solved ${correct} of ${attempts} missions correctly. Review LCDs, signed rational operations, mixed-number strategy, and estimation, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}

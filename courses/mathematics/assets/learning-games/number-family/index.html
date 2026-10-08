@@ -1819,7 +1819,7 @@
 
   function bestValue(){
     try{
-      const v=Number(localStorage.getItem(bestKey()));
+      const raw=localStorage.getItem(bestKey());if(raw===null)return null;const v=Number(raw);
       return Number.isFinite(v)?v:null;
     }catch(_){return null}
   }

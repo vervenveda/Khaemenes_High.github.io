@@ -7,6 +7,7 @@ on:
       - "courses/mathematics/assets/shared-game-launcher.js"
       - "courses/mathematics/tools/validate-shared-games.mjs"
       - "courses/mathematics/tools/test-game-regressions.mjs"
+      - "courses/mathematics/tools/test-game-storage-links.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -19,6 +20,7 @@ on:
       - "courses/mathematics/assets/shared-game-launcher.js"
       - "courses/mathematics/tools/validate-shared-games.mjs"
       - "courses/mathematics/tools/test-game-regressions.mjs"
+      - "courses/mathematics/tools/test-game-storage-links.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -40,3 +42,6 @@ jobs:
 
       - name: Verify repaired game behavior
         run: node courses/mathematics/tools/test-game-regressions.mjs
+
+      - name: Verify shared-game score storage and lesson links
+        run: node courses/mathematics/tools/test-game-storage-links.mjs

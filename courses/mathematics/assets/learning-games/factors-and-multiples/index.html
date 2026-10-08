@@ -1105,7 +1105,7 @@
   }
 
   function bestValue(){
-    try{const v=Number(localStorage.getItem(bestKey()));return Number.isFinite(v)?v:null}catch(_){return null}
+    try{const raw=localStorage.getItem(bestKey());if(raw===null)return null;const v=Number(raw);return Number.isFinite(v)?v:null}catch(_){return null}
   }
   function updateBest(){const v=bestValue();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
   function saveBest(p){try{const old=bestValue();if(old===null||p>old)localStorage.setItem(bestKey(),String(p))}catch(_){}updateBest()}
