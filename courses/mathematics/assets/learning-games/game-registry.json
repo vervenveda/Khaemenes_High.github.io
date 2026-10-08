@@ -1224,6 +1224,52 @@
         }
       ],
       "scope_note": "Supports binomial expansion, monic/nonmonic quadratic factoring and zero-product solving; does not fully cover difference of squares, polynomial modelling or graph analysis. Browser QA and mastery writeback not certified."
+    },
+    "quadratic-graph-lab": {
+      "title": "Quadratic Graph Lab",
+      "canonical_path": "courses/mathematics/assets/learning-games/quadratic-graph-lab/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "10",
+          "lesson": "01",
+          "lesson_title": "Quadratic Functions, Parabolas & Key Features",
+          "mode": "parabola",
+          "query": "?course=algebra1&unit=10&lesson=01&mode=parabola",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "10",
+          "lesson": "02",
+          "lesson_title": "Vertex, Axis of Symmetry & Transformations",
+          "mode": "transform",
+          "query": "?course=algebra1&unit=10&lesson=02&mode=transform",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "10",
+          "lesson": "03",
+          "lesson_title": "Factored Form, Zeros & Graphs",
+          "mode": "roots",
+          "query": "?course=algebra1&unit=10&lesson=03&mode=roots",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "10",
+          "lesson": "07",
+          "lesson_title": "Quadratic Modelling, Projectiles & Optimization",
+          "mode": "vertex",
+          "query": "?course=algebra1&unit=10&lesson=07&mode=vertex",
+          "wired": true
+        }
+      ],
+      "scope_note": "Covers vertices, symmetry, roots, and transformations. Unit 10 Lesson 07 is supplemental only; game does not teach full projectile modelling or optimization. Browser QA and mastery writeback not certified."
     }
   }
 }
