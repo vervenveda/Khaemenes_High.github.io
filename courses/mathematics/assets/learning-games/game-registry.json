@@ -175,6 +175,57 @@
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
       "scope_note": "Geometry and Algebra II Rational Root placements were deliberately not duplicated because those lessons already have canonical shared-game companions."
+    },
+    "gcf-lcm-challenge": {
+      "title": "GCF / LCM Challenge",
+      "canonical_path": "courses/mathematics/assets/learning-games/gcf-lcm-challenge/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-04-GCF-LCM-Challenge/index.html",
+        "courses/mathematics/pre-algebra/learning-games/GCF-LCM-Challenge/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "01",
+          "lesson": "04",
+          "lesson_title": "Greatest Common Factor & Least Common Multiple",
+          "mode": "integer-gcf-lcm",
+          "query": "?course=prealgebra&unit=01&lesson=04",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "09",
+          "lesson": "05",
+          "lesson_title": "Factoring the Greatest Common Factor",
+          "mode": "polynomial-gcf",
+          "query": "?course=algebra1&unit=09&lesson=05",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "02",
+          "lesson": "06",
+          "lesson_title": "Line, Rotational & Point Symmetry",
+          "mode": "rotation-cycle-lcm",
+          "query": "?course=geometry&unit=02&lesson=u02-l06",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "04",
+          "lesson": "03",
+          "lesson_title": "Adding and Subtracting Rational Expressions",
+          "mode": "least-common-denominator",
+          "query": "?course=algebra2&unit=04&lesson=u04-l03",
+          "wired": true
+        }
+      ],
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "scope_note": "Geometry uses LCM only as a rotational-cycle application. Algebra I extends GCF to monomials; Algebra II extends LCM to least common denominators. No duplicate game is created."
     }
   }
 }

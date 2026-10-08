@@ -46,3 +46,15 @@ and a link to:
 learning-games/GCF-LCM-Challenge.html
 
 for students who want more actual calculation after mastering the decision skill.
+
+
+## Canonical Shared-Game Migration · GCF / LCM Challenge v3
+
+This shared Mathematics copy is canonical.
+
+- `?course=prealgebra&unit=01&lesson=04` — integer GCF / LCM
+- `?course=algebra1&unit=09&lesson=05` — greatest common monomial factor
+- `?course=geometry&unit=02&lesson=u02-l06` — rotational-cycle synchronization using LCM
+- `?course=algebra2&unit=04&lesson=u04-l03` — least common denominators as algebraic LCM
+
+The legacy Pre-Algebra copies remain temporarily for rollback and bookmarks. Do not delete them until the shared route is verified in production.
