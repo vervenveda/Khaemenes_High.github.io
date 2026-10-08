@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "course_id": "KH-MATH-A1",
+  "course": "algebra-1",
+  "shared_library": "../assets/video-library/",
+  "activation_policy": "disabled until playback, captions, transcript fallback, and lesson rendering verified",
+  "placements": [
+    {
+      "lesson_id": "KH-MATH-A1-U01-L02",
+      "lesson_file": "units/unit-01/lessons/lesson-02-the-real-number-system-interval-representations.html",
+      "asset_id": "MATH-NUMBER-SYSTEMS-001",
+      "shared_file": "../assets/video-library/number-systems.json",
+      "placement_status": "topic_matched_pending_playback_and_accessibility",
+      "enabled": false,
+      "optional": true,
+      "usage": "prerequisite_or_supplemental",
+      "alignment_note": "real number classification"
+    },
+    {
+      "lesson_id": "KH-MATH-A1-U01-L03",
+      "lesson_file": "units/unit-01/lessons/lesson-03-operations-properties-order-of-operations.html",
+      "asset_id": "MATH-ORDER-OF-OPERATIONS-001",
+      "shared_file": "../assets/video-library/order-of-operations.json",
+      "placement_status": "topic_matched_pending_playback_and_accessibility",
+      "enabled": false,
+      "optional": true,
+      "usage": "prerequisite_or_supplemental",
+      "alignment_note": "order of operations"
+    }
+  ]
+}
