@@ -97,3 +97,6 @@ jobs:
 
       - name: Verify authored foundation lessons
         run: node courses/mathematics/algebra-1/tools/test-foundation-lessons.mjs
+
+      - name: Verify inequalities, functions and linear-model lessons
+        run: node courses/mathematics/algebra-1/tools/test-middle-lessons.mjs

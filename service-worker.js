@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-design-v27-algebra-foundations-20261008";
+const CACHE_VERSION = "khaemenes-high-design-v28-algebra-middle-20261008";
 const PRECACHE_FILES = [
   "./courses/mathematics/assets/learning-games/round-policy.js",
   "./courses/mathematics/assets/learning-games/common-ground/index.html",
