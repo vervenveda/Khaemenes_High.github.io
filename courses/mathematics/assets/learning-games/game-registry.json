@@ -32,7 +32,7 @@
           "lesson_title": "The Real Number System & Interval Representations",
           "mode": "real-exact-forms",
           "query": "?course=algebra1&unit=01&lesson=02",
-          "wired": false
+          "wired": true
         },
         {
           "course": "geometry",
@@ -41,7 +41,7 @@
           "lesson_title": "Distance, Midpoint & Segment Partition",
           "mode": "exact-measurement",
           "query": "?course=geometry&unit=01&lesson=03",
-          "wired": false
+          "wired": true
         },
         {
           "course": "geometry",
@@ -50,7 +50,7 @@
           "lesson_title": "Pythagorean Theorem & Its Converse",
           "mode": "pythagorean-exact-lengths",
           "query": "?course=geometry&unit=06&lesson=u06-l01",
-          "wired": false
+          "wired": true
         },
         {
           "course": "algebra-2",
@@ -59,7 +59,7 @@
           "lesson_title": "The Imaginary Unit & Powers of i",
           "mode": "complex-system",
           "query": "?course=algebra2&unit=02&lesson=u02-l04",
-          "wired": false
+          "wired": true
         },
         {
           "course": "algebra-2",
@@ -68,9 +68,11 @@
           "lesson_title": "Conjugates, Modulus & the Complex Plane",
           "mode": "complex-plane",
           "query": "?course=algebra2&unit=02&lesson=u02-l07",
-          "wired": false
+          "wired": true
         }
-      ]
+      ],
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "canonical-shared-wired-legacy-retained"
     }
   }
 }
