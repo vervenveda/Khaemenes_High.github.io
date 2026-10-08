@@ -2,8 +2,8 @@
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Khaemenes Pre-Algebra Unit 2 Lesson 1 companion game: Integers in Context and on the Number Line.">
-<meta name="theme-color" content="#090d14"><title>Lesson 1 · Integer Compass · Signed Situation Sort</title>
+<meta name="description" content="Khaemenes Mathematics shared Integer Compass game: progressive signed-quantity, rate, translation, and vector reasoning across Pre-Algebra, Algebra I, Geometry, and Algebra II.">
+<meta name="theme-color" content="#090d14"><title>Integer Compass · Khaemenes Mathematics Shared Game</title>
 <style>
 :root{--bg:#090d14;--panel:#151d29;--ink:#f7f2e7;--muted:#c9c1b2;--line:#3b4655;--gold:#d8bd7a;--gold2:#f0d99b;--green:#8fd4ad;--red:#ef9a9a;--shadow:0 18px 55px rgba(0,0,0,.36);--serif:Cinzel,Georgia,"Times New Roman",serif;--sans:"Avenir Next","Brandon Grotesque","Futura","Trebuchet MS",system-ui,sans-serif;--max:1180px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--sans);line-height:1.5;background:radial-gradient(circle at 15% 0%,rgba(216,189,122,.11),transparent 28rem),radial-gradient(circle at 90% 20%,rgba(84,122,164,.11),transparent 30rem),linear-gradient(180deg,var(--bg),#0c121a 60%,#090d14)}
@@ -27,11 +27,11 @@ button,a,select{font:inherit}button{touch-action:manipulation}a{color:inherit}bu
 </style></head>
 <body><a class="skip" href="#game">Skip to game</a><div class="shell">
 <header class="topbar">
-<a class="brand" href="../units/unit-02/lessons/lesson-01-integers-in-context.html"><div class="seal"><span>±</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 02</p><p class="crumb">Lesson 1 Companion · Integers in Context & on the Number Line</p></div></a>
-<div class="actions"><a class="ghost" href="../units/unit-02/lessons/lesson-01-integers-in-context.html">← Lesson 1</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
+<a class="brand" id="courseHomeLink" href="../../../pre-algebra/units/unit-02/lessons/lesson-01-integers-in-context.html"><div class="seal"><span>±</span></div><div><p class="kicker" id="courseKicker">Khaemenes Mathematics · Pre-Algebra</p><p class="crumb" id="courseCrumb">Unit 02 · Lesson 01 · Integers in Context</p></div></a>
+<div class="actions"><a class="ghost" id="topReturnLink" href="../../../pre-algebra/units/unit-02/lessons/lesson-01-integers-in-context.html">← Return to Lesson</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
 </header>
 
-<section class="hero"><div class="eyebrow">Unit 2 · Lesson 1 · Companion Game</div><h1>Integer Compass</h1><p>Read the situation, find the reference point, choose the sign, measure the magnitude, and place the value where it belongs.</p><div class="lesson-sync"><strong>Lesson sync:</strong> zero is the reference point. The sign tells direction relative to zero; the magnitude tells size or distance.</div></section>
+<section class="hero"><div class="eyebrow" id="modeEyebrow">Shared Mathematics Game · Pre-Algebra</div><h1>Integer Compass</h1><p id="modeLead">Read the situation, find the reference point, choose the sign, measure the magnitude, and place the value where it belongs.</p><div class="lesson-sync" id="modeSync"><strong>Lesson sync:</strong> zero is the reference point. The sign tells direction relative to zero; the magnitude tells size or distance.</div></section>
 
 <section class="panel studio">
 <div class="section-head"><div><div class="eyebrow">Animated instruction studio</div><h2>Build meaning before memorizing signs.</h2></div><p>Reference point, sign and magnitude, real contexts, and changing zero.</p></div>
@@ -58,16 +58,82 @@ button,a,select{font:inherit}button{touch-action:manipulation}a{color:inherit}bu
 <div class="choice-grid" id="choiceGrid"></div>
 <div class="action-row"><button class="secondary" id="hintBtn">Reasoning hint</button><button class="primary" id="checkBtn">Check reasoning</button><button class="secondary" id="nextBtn" hidden>Next mission →</button></div>
 <div class="feedback" id="feedback"><h3>Ready.</h3><p>Start by identifying what zero means in the situation.</p></div>
-<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../units/unit-02/lessons/lesson-01-integers-in-context.html">Return to Lesson 1</a></div></div>
+<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" id="masteryReturnLink" href="../../../pre-algebra/units/unit-02/lessons/lesson-01-integers-in-context.html">Return to Lesson</a></div></div>
 </section>
 
-<aside class="panel side"><h2>Lesson 1 Field Guide</h2><div class="concept"><b>Integer</b><span>A whole number, its opposite, or zero.</span></div><div class="concept"><b>Reference point</b><span>The location or state defined as zero.</span></div><div class="concept"><b>Sign</b><span>Shows direction relative to the reference.</span></div><div class="concept"><b>Magnitude</b><span>The size or distance from zero.</span></div><div class="concept"><b>Zero</b><span>An integer that is neither positive nor negative.</span></div><div class="tip"><strong>Compass question</strong><p id="strategyText">What does zero mean here, and which direction does the situation move?</p></div><div class="controls"><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div><p class="best" id="bestScore">Best mastery score: —</p></aside>
+<aside class="panel side"><h2>Lesson 1 Field Guide</h2><div class="concept"><b>Integer</b><span>A whole number, its opposite, or zero.</span></div><div class="concept"><b>Reference point</b><span>The location or state defined as zero.</span></div><div class="concept"><b>Sign</b><span>Shows direction relative to the reference.</span></div><div class="concept"><b>Magnitude</b><span>The size or distance from zero.</span></div><div class="concept"><b>Zero</b><span>An integer that is neither positive nor negative.</span></div><div class="tip"><strong>Compass question</strong><p id="strategyText">What does zero mean here, and which direction does the situation move?</p></div><div class="controls"><div class="control"><label for="courseMode">Course level</label><select id="courseMode">
+<option value="prealgebra">Pre-Algebra · Signed Contexts</option>
+<option value="algebra1">Algebra I · Signed Rate & Slope</option>
+<option value="geometry">Geometry · Translation Vectors</option>
+<option value="algebra2">Algebra II · Vector Components</option>
+</select></div><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div><p class="best" id="bestScore">Best mastery score: —</p></aside>
 </main>
-<footer>KH-MATH-PA-U02-L1 · reference point · sign · magnitude · number line · 80% mastery</footer>
+<footer>Khaemenes Mathematics Shared Game · Integer Compass · sign · magnitude · reference · direction · 80% mastery</footer>
 </div>
 
 <script>
 (()=>{"use strict";
+const COURSE_CONFIG={
+prealgebra:{
+ label:"Pre-Algebra",mode:"Signed Contexts",
+ lead:"Read the situation, find the reference point, choose the sign, measure the magnitude, and place the value where it belongs.",
+ sync:"Zero is the reference point. The sign tells direction relative to zero; the magnitude tells size or distance.",
+ returnHref:"../../../pre-algebra/units/unit-02/lessons/lesson-01-integers-in-context.html",
+ returnLabel:"Return to Pre-Algebra U02-L01",key:"prealgebra"
+},
+algebra1:{
+ label:"Algebra I",mode:"Signed Rate & Slope",
+ lead:"Interpret positive, negative, and zero rates as direction of change, then connect sign, magnitude, and units to slope.",
+ sync:"For rate of change, the sign tells direction, the magnitude tells how fast, and the units tell what is changing per input unit.",
+ returnHref:"../../../algebra-1/units/unit-06/lessons/lesson-01-rate-of-change-slope.html",
+ returnLabel:"Return to Algebra I U06-L01",key:"algebra1"
+},
+geometry:{
+ label:"Geometry",mode:"Translation Vectors",
+ lead:"Use signed horizontal and vertical changes to describe translations precisely on the coordinate plane.",
+ sync:"A translation vector ⟨a,b⟩ uses signed components: a controls horizontal direction; b controls vertical direction.",
+ returnHref:"../../../geometry/units/unit-02/lessons/u02-l01.html",
+ returnLabel:"Return to Geometry U02-L01",key:"geometry"
+},
+algebra2:{
+ label:"Algebra II",mode:"Vector Components",
+ lead:"Interpret signed vector components, direction, magnitude, and coordinate change in navigation and component models.",
+ sync:"Vector components are signed changes relative to coordinate axes; magnitude records size while signs preserve direction.",
+ returnHref:"../../../algebra-2/units/unit-10/lessons/u10-l10.html",
+ returnLabel:"Return to Algebra II U10-L10",key:"algebra2"
+}
+};
+
+const ALGEBRA1_BANK=[
+{l:"Foundation",b:"Signed Rate",v:"Temperature falls 3°C each hour",q:"Which rate of change represents the situation?",o:["−3 °C/h","+3 °C/h","0 °C/h","−1/3 °C/h"],a:0,h:"A fall is a negative change in output as time increases.",w:"The signed rate is −3 °C per hour."},
+{l:"Foundation",b:"Slope Direction",v:"A line rises from left to right",q:"What sign must its nonzero slope have?",o:["Positive","Negative","Zero","Undefined"],a:0,h:"As x increases, y also increases.",w:"Rise with increasing x gives positive slope."},
+{l:"Core",b:"Slope Direction",v:"A line falls from left to right",q:"What sign must its nonzero slope have?",o:["Negative","Positive","Zero","Always undefined"],a:0,h:"As x increases, y decreases.",w:"A decreasing line has negative slope."},
+{l:"Core",b:"Signed Rate",v:"Δy=−18, Δx=6",q:"What is the slope?",o:["−3","3","−12","−108"],a:0,h:"Slope is Δy/Δx.",w:"−18/6=−3."},
+{l:"Core",b:"Magnitude vs Direction",v:"m=−4.5",q:"What does 4.5 describe?",o:["Magnitude of the rate","Positive direction","The y-intercept","The x-coordinate"],a:0,h:"Separate the negative sign from the size of the rate.",w:"The magnitude is 4.5; the negative sign supplies direction."},
+{l:"Extended",b:"Reference & Change",v:"Profit changes by −$240 per week",q:"Which interpretation is correct?",o:["Profit decreases by $240 each week.","Profit is always −$240.","Profit increases by $240 each week.","The starting profit is $240."],a:0,h:"A rate describes change per unit, not necessarily the starting value.",w:"−$240/week means a weekly decrease of $240."},
+{l:"Extended",b:"Zero Rate",v:"m=0",q:"What does zero slope communicate?",o:["No vertical change as x changes.","The line has no points.","The line is vertical.","Every coordinate is zero."],a:0,h:"Zero is a reference for change.",w:"A horizontal line has no change in y as x changes."}
+];
+
+const GEOMETRY_BANK=[
+{l:"Foundation",b:"Translation Vector",v:"Right 5, up 2",q:"Which vector represents the translation?",o:["⟨5,2⟩","⟨−5,2⟩","⟨5,−2⟩","⟨2,5⟩"],a:0,h:"Right is positive x; up is positive y.",w:"The vector is ⟨5,2⟩."},
+{l:"Foundation",b:"Translation Vector",v:"Left 4, down 3",q:"Which vector represents the translation?",o:["⟨−4,−3⟩","⟨4,3⟩","⟨−4,3⟩","⟨3,−4⟩"],a:0,h:"Left and down are negative relative to the coordinate axes.",w:"The vector is ⟨−4,−3⟩."},
+{l:"Core",b:"Signed Components",v:"⟨−7,5⟩",q:"What movement does this vector describe?",o:["Left 7 and up 5","Right 7 and up 5","Left 5 and down 7","Right 7 and down 5"],a:0,h:"Read the x-component first, then the y-component.",w:"Negative x means left 7; positive y means up 5."},
+{l:"Core",b:"Coordinate Change",v:"P(3,−2) translated by ⟨−5,4⟩",q:"What is P′?",o:["(−2,2)","(8,2)","(−2,−6)","(7,−7)"],a:0,h:"Add each signed component to the matching coordinate.",w:"(3−5,−2+4)=(−2,2)."},
+{l:"Core",b:"Magnitude vs Direction",v:"⟨−6,0⟩",q:"What does the negative sign communicate?",o:["Horizontal direction to the left","A negative distance","Movement downward","No movement"],a:0,h:"Magnitude and direction are different ideas.",w:"The movement has magnitude 6 and points left."},
+{l:"Extended",b:"Reference Frame",v:"Same move: 4 units east",q:"If positive x is defined west instead of east, what signed x-change represents the same physical move?",o:["−4","+4","0","Cannot be represented"],a:0,h:"Changing the reference orientation changes the sign convention.",w:"With west positive, east is the negative x direction."},
+{l:"Extended",b:"Inverse Translation",v:"Translation ⟨8,−3⟩",q:"Which vector undoes it?",o:["⟨−8,3⟩","⟨8,3⟩","⟨−8,−3⟩","⟨3,−8⟩"],a:0,h:"Reverse each signed component.",w:"The inverse translation is ⟨−8,3⟩."}
+];
+
+const ALGEBRA2_BANK=[
+{l:"Foundation",b:"Vector Components",v:"v=⟨6,−8⟩",q:"Which direction pattern is correct?",o:["Right and down","Left and up","Right and up","Left and down"],a:0,h:"Positive x points right; negative y points down.",w:"⟨6,−8⟩ points right and down."},
+{l:"Core",b:"Component from Context",v:"12 m/s west, 5 m/s north",q:"With east as +x and north as +y, which vector is correct?",o:["⟨−12,5⟩","⟨12,5⟩","⟨−12,−5⟩","⟨5,−12⟩"],a:0,h:"West is negative x; north is positive y.",w:"The component vector is ⟨−12,5⟩."},
+{l:"Core",b:"Magnitude vs Components",v:"v=⟨−3,4⟩",q:"What is |v|?",o:["5","1","7","−5"],a:0,h:"Magnitude is a nonnegative length.",w:"√((-3)²+4²)=5."},
+{l:"Core",b:"Resultant Change",v:"⟨4,−1⟩+⟨−7,6⟩",q:"What is the resultant vector?",o:["⟨−3,5⟩","⟨11,−7⟩","⟨3,−5⟩","⟨−3,−7⟩"],a:0,h:"Add corresponding signed components.",w:"4+(−7)=−3 and −1+6=5."},
+{l:"Extended",b:"Bearing Components",v:"A vector has x<0 and y>0",q:"In which coordinate quadrant does its terminal point lie?",o:["Quadrant II","Quadrant I","Quadrant III","Quadrant IV"],a:0,h:"Negative x means left; positive y means up.",w:"Left and up is Quadrant II."},
+{l:"Extended",b:"Reference Axes",v:"A navigation model reverses the positive y-axis",q:"What happens to the y-component of every unchanged physical vector?",o:["Its sign reverses.","Its magnitude doubles.","It becomes zero.","Its x-component reverses."],a:0,h:"The physical vector stays fixed while the reference direction changes.",w:"Reversing the positive y convention reverses the y-component sign."},
+{l:"Extended",b:"Direction & Magnitude",v:"v=⟨0,−9⟩",q:"Which description is exact?",o:["Magnitude 9, directed along negative y","Magnitude −9, directed along positive y","Magnitude 0, directed down","Magnitude 9, directed along positive x"],a:0,h:"Magnitude is nonnegative; component signs carry direction.",w:"The vector has magnitude 9 and points along negative y."}
+];
+
 const BANK=[
 {l:"Foundation",b:"Context → Integer",v:"4°F below zero",q:"Which integer represents the temperature?",o:["−4","+4","0","40"],a:0,h:"The reference is 0°F. Below the reference is negative.",w:"4 degrees below zero is −4."},
 {l:"Foundation",b:"Context → Integer",v:"$45 deposit",q:"Which signed account change is correct?",o:["−45","+45","0","4.5"],a:1,h:"A deposit increases the account balance.",w:"An increase is represented by +45."},
@@ -92,22 +158,51 @@ const BANK=[
 {l:"Extended",b:"Reasonableness Check",v:"0",q:"Which claim is incorrect?",o:["Zero can mark sea level.","Zero can mean no net change.","Zero is neither positive nor negative.","Zero always means nothing exists."],a:3,h:"Zero is a reference value and its contextual meaning can vary.",w:"Zero does not necessarily mean nothing exists."},
 {l:"Extended",b:"Integer Meaning",v:"−3.0",q:"Is −3.0 an integer value?",o:["Yes, because it equals −3.","No, because it has a decimal point.","No, because it is negative.","Only for temperature."],a:0,h:"Classification depends on value, not written appearance.",w:"−3.0 equals −3, which is an integer."}
 ];
-const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
-const BEST="khaemenes-prealgebra-u02-l01-integer-context-game-v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),course:$("courseMode"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),courseHome:$("courseHomeLink"),topReturn:$("topReturnLink"),masteryReturn:$("masteryReturnLink"),modeEyebrow:$("modeEyebrow"),modeLead:$("modeLead"),modeSync:$("modeSync"),courseKicker:$("courseKicker"),courseCrumb:$("courseCrumb"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
+const params=new URLSearchParams(location.search);
+const requestedCourse=params.get("course");
+if(COURSE_CONFIG[requestedCourse])el.course.value=requestedCourse;
+const modeKey=()=>COURSE_CONFIG[el.course.value]?.key||"prealgebra";
+const bestKey=()=>`khaemenes-math-integer-compass-${modeKey()}-v3`;let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
 function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
-function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
-function start(src=null){deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
-function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;el.strategy.textContent=c.b.includes("Reference")||c.b.includes("Changing")?"Ask what has been defined as zero before interpreting the sign.":c.b.includes("Magnitude")?"Separate direction (sign) from size (magnitude).":"Identify the reference, then decide the direction from it.";feedback("","Mission ready.","Start by identifying what zero means in this situation.");stats()}
+function activeBank(){
+ const course=el.course.value;
+ if(course==="algebra1")return ALGEBRA1_BANK;
+ if(course==="geometry")return GEOMETRY_BANK;
+ if(course==="algebra2")return ALGEBRA2_BANK;
+ return BANK;
+}
+function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:activeBank().filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function updateCourseMode(){
+ const cfg=COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;
+ el.courseHome.href=cfg.returnHref;
+ el.topReturn.href=cfg.returnHref;
+ el.topReturn.textContent="← "+cfg.returnLabel;
+ el.masteryReturn.href=cfg.returnHref;
+ el.masteryReturn.textContent=cfg.returnLabel;
+ el.modeEyebrow.textContent=`Shared Mathematics Game · ${cfg.label}`;
+ el.modeLead.textContent=cfg.lead;
+ el.modeSync.innerHTML=`<strong>Lesson sync:</strong> ${cfg.sync}`;
+ el.courseKicker.textContent=`Khaemenes Mathematics · ${cfg.label}`;
+ el.courseCrumb.textContent=cfg.mode;
+ updateBest();
+}
+function start(src=null){updateCourseMode();deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
+function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;const course=el.course.value;
+if(course==="algebra1")el.strategy.textContent="Read the sign as direction of change, the magnitude as rate size, and keep the units attached.";
+else if(course==="geometry")el.strategy.textContent="Read the x-component first and y-component second; signs encode direction on the coordinate axes.";
+else if(course==="algebra2")el.strategy.textContent="Separate signed components from vector magnitude; components preserve direction relative to the chosen axes.";
+else el.strategy.textContent=c.b.includes("Reference")||c.b.includes("Changing")?"Ask what has been defined as zero before interpreting the sign.":c.b.includes("Magnitude")?"Separate direction (sign) from size (magnitude).":"Identify the reference, then decide the direction from it.";feedback("","Mission ready.","Start by identifying what zero means in this situation.");stats()}
 function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the statement best supported by the context.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Compass aligned.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
 function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
 function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
-function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(e){return null}}
+function best(){try{const v=Number(localStorage.getItem(bestKey()));return Number.isFinite(v)?v:null}catch(e){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
-function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(BEST,String(p))}catch(e){}updateBest()}
-function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Integer Compass mastery passed":"Recalibrate the compass";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} missions correctly and met the 80% mastery target. Return to Lesson 1 for practice and reflection.`:`You solved ${correct} of ${attempts} missions correctly. Review the missed situations, especially reference point and sign/magnitude reasoning.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
-el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
+function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(bestKey(),String(p))}catch(e){}updateBest()}
+function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Integer Compass mastery passed":"Recalibrate the compass";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} ${COURSE_CONFIG[el.course.value].label} missions correctly and met the 80% mastery target. Return to the mapped lesson for the full instructional sequence.`:`You solved ${correct} of ${attempts} missions correctly. Review the missed situations, especially sign, magnitude, reference, and direction reasoning.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.course.onchange=()=>{const u=new URL(location.href);u.searchParams.set("course",el.course.value);history.replaceState(null,"",u);start()};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(bestKey())}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
 el.tabs.forEach((b,i)=>b.onclick=()=>{el.tabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));el.scenes.forEach((s,j)=>s.classList.toggle("active",j===i))});
 const later=(f,m)=>setTimeout(f,m);$("playZeroDemo").onclick=()=>{const m=$("zeroMarker");m.style.left="50%";m.textContent="0";later(()=>{m.style.left="30%";m.textContent="−2"},450);later(()=>{m.style.left="70%";m.textContent="+2"},1100);later(()=>{m.style.left="50%";m.textContent="0"},1750)};
 $("playSignDemo").onclick=()=>{const a=$("signBox"),b=$("magBox");a.style.transform="scale(1.05)";a.style.borderColor="var(--gold2)";later(()=>{a.style.transform="";b.style.transform="scale(1.05)";b.style.borderColor="var(--gold2)"},550);later(()=>{b.style.transform="";a.style.borderColor="";b.style.borderColor=""},1200)};

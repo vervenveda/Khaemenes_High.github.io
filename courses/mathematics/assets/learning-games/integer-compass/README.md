@@ -48,3 +48,16 @@ So −12 might mean 12 feet below a reference, a decrease of 12, or movement 12 
 That should give Unit 2 a strong opening learning loop:
 
 context → identify zero → determine direction → assign sign → interpret magnitude → check reasonableness → place meaning on the number line.
+
+
+## Canonical Shared-Game Migration · Integer Compass v3
+
+This shared Mathematics copy is canonical.
+
+Course modes:
+- `?course=prealgebra&unit=02&lesson=01` — signed contexts, zero, sign, magnitude
+- `?course=algebra1&unit=06&lesson=01` — signed rate of change and slope
+- `?course=geometry&unit=02&lesson=u02-l01` — signed translation vectors
+- `?course=algebra2&unit=10&lesson=u10-l10` — signed vector components and magnitude
+
+The original Pre-Algebra copies remain temporarily for rollback compatibility and must not be purged until live route verification is complete.

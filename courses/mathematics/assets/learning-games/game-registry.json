@@ -327,6 +327,57 @@
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
       "scope_note": "Algebra II measurement-error and modelling lessons remain available for later companions; this game owns the strongest direct progression without duplicating those future concepts."
+    },
+    "integer-compass": {
+      "title": "Integer Compass",
+      "canonical_path": "courses/mathematics/assets/learning-games/integer-compass/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-01-integer-compass-signed-situation-sort/index.html",
+        "courses/mathematics/pre-algebra/learning-games/02-01-integer-compass-signed-situation-sort/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "02",
+          "lesson": "01",
+          "lesson_title": "Integers in Context",
+          "mode": "signed-contexts",
+          "query": "?course=prealgebra&unit=02&lesson=01",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "06",
+          "lesson": "01",
+          "lesson_title": "Rate of Change & Slope",
+          "mode": "signed-rate-slope",
+          "query": "?course=algebra1&unit=06&lesson=01",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "02",
+          "lesson": "01",
+          "lesson_title": "Translations on the Coordinate Plane",
+          "mode": "translation-vectors",
+          "query": "?course=geometry&unit=02&lesson=u02-l01",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "10",
+          "lesson": "10",
+          "lesson_title": "Vectors, Bearings & Component Models",
+          "mode": "vector-components",
+          "query": "?course=algebra2&unit=10&lesson=u10-l10",
+          "wired": true
+        }
+      ],
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "scope_note": "Progression is signed quantity → signed rate/slope → translation vector → vector components. Integer operation games remain separate to avoid duplication."
     }
   }
 }
