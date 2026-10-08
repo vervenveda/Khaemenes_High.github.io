@@ -259,7 +259,7 @@
           "course": "geometry",
           "unit": "10",
           "lesson": "03",
-          "lesson_title": "Heron\u2019s Formula and Coordinate Area",
+          "lesson_title": "Heron’s Formula and Coordinate Area",
           "mode": "geometry-formulas",
           "query": "?course=geometry&unit=10&lesson=u10-l03",
           "wired": true
@@ -379,7 +379,7 @@
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
-      "scope_note": "Progression is signed quantity \u2192 signed rate/slope \u2192 translation vector \u2192 vector components. Integer operation games remain separate to avoid duplication.",
+      "scope_note": "Progression is signed quantity → signed rate/slope → translation vector → vector components. Integer operation games remain separate to avoid duplication.",
       "retired_paths": [
         "courses/mathematics/pre-algebra/learning-games/unit-02-01-integer-compass-signed-situation-sort/index.html",
         "courses/mathematics/pre-algebra/learning-games/02-01-integer-compass-signed-situation-sort/index.html"
@@ -625,7 +625,7 @@
       ]
     },
     "dividing-integers": {
-      "title": "Quotient Check \u00b7 Dividing Integers",
+      "title": "Quotient Check · Dividing Integers",
       "canonical_path": "courses/mathematics/assets/learning-games/dividing-integers/index.html",
       "status": "canonical-v3",
       "mastery_target": 80,
@@ -904,6 +904,34 @@
           "wired": true
         }
       ]
+    },
+    "equation-balance-lab": {
+      "title": "Equation Balance Lab",
+      "canonical_path": "courses/mathematics/assets/learning-games/equation-balance-lab/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "03",
+          "lesson": "02",
+          "lesson_title": "One-Step & Two-Step Linear Equations",
+          "mode": "one-two-step",
+          "query": "?course=algebra1&unit=03&lesson=02&mode=one-two-step",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "03",
+          "lesson": "03",
+          "lesson_title": "Multi-Step Equations with Distribution & Like Terms",
+          "mode": "multi-step",
+          "query": "?course=algebra1&unit=03&lesson=03&mode=multi-step",
+          "wired": true
+        }
+      ],
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Game v1 currently chooses level in its own UI; query mode is placement metadata, not enforced difficulty. Student-facing runtime and mathematical accuracy tests pending."
     }
   }
 }
