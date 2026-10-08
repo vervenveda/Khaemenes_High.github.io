@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "course_id": "KH-MATH-A2",
+  "course": "algebra-2",
+  "shared_library": "../assets/video-library/",
+  "activation_policy": "disabled until playback, captions, transcript fallback, and lesson rendering verified",
+  "placements": [
+    {
+      "lesson_id": "KH-MATH-A2-U01-L01",
+      "lesson_file": "units/unit-01/lessons/u01-l01.html",
+      "asset_id": "MATH-FUNCTIONS-001",
+      "shared_file": "../assets/video-library/functions-introduction.json",
+      "placement_status": "topic_matched_pending_playback_and_accessibility",
+      "enabled": false,
+      "optional": true,
+      "usage": "prerequisite_or_supplemental",
+      "alignment_note": "function notation prerequisite review"
+    }
+  ]
+}
