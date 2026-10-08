@@ -968,6 +968,79 @@
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "scope_note": "Game v1 does not interpret mode parameters; learner selects difficulty manually. Pre-Algebra L02/L03 should use Level 1; L04 Level 2; L05 Level 3 (variables on both sides is advanced enrichment). Browser QA pending."
+    },
+    "inequality-number-line": {
+      "title": "Inequality Number Line",
+      "canonical_path": "courses/mathematics/assets/learning-games/inequality-number-line/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "09",
+          "lesson": "01",
+          "lesson_title": "Inequality Meaning, Symbols & Solution Sets",
+          "mode": "graph",
+          "query": "?course=prealgebra&unit=09&lesson=01&mode=graph",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "09",
+          "lesson": "02",
+          "lesson_title": "Number-Line Graphs & Interval Descriptions",
+          "mode": "graph",
+          "query": "?course=prealgebra&unit=09&lesson=02&mode=graph",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "09",
+          "lesson": "03",
+          "lesson_title": "One-Step Inequalities & Order Preservation",
+          "mode": "solve",
+          "query": "?course=prealgebra&unit=09&lesson=03&mode=solve",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "09",
+          "lesson": "04",
+          "lesson_title": "Negative Multipliers & Reversal",
+          "mode": "negative",
+          "query": "?course=prealgebra&unit=09&lesson=04&mode=negative",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "04",
+          "lesson": "01",
+          "lesson_title": "Inequality Meaning, Number Lines & Interval Notation",
+          "mode": "graph",
+          "query": "?course=algebra1&unit=04&lesson=01&mode=graph",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "04",
+          "lesson": "02",
+          "lesson_title": "One-Step & Multi-Step Linear Inequalities",
+          "mode": "solve",
+          "query": "?course=algebra1&unit=04&lesson=02&mode=solve",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "04",
+          "lesson": "03",
+          "lesson_title": "Negative Multipliers & Sign Reversal",
+          "mode": "negative",
+          "query": "?course=algebra1&unit=04&lesson=03&mode=negative",
+          "wired": true
+        }
+      ],
+      "scope_note": "Single-boundary inequalities only; compound and systems lessons intentionally excluded. Mode query is metadata; game v1 requires manual level selection. Browser QA pending."
     }
   }
 }
