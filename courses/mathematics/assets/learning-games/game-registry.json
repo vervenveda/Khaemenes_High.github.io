@@ -1270,6 +1270,79 @@
         }
       ],
       "scope_note": "Covers vertices, symmetry, roots, and transformations. Unit 10 Lesson 07 is supplemental only; game does not teach full projectile modelling or optimization. Browser QA and mastery writeback not certified."
+    },
+    "proof-path-builder": {
+      "title": "Proof Path Builder",
+      "canonical_path": "courses/mathematics/assets/learning-games/proof-path-builder/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "placements": [
+        {
+          "course": "geometry",
+          "unit": "01",
+          "lesson": "02",
+          "lesson_title": "Segments, Rays, Angles & Notation",
+          "mode": "angles",
+          "query": "?course=geometry&unit=01&lesson=02&mode=angles",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "01",
+          "lesson": "06",
+          "lesson_title": "Two-Column, Flow & Paragraph Proofs",
+          "mode": "proof",
+          "query": "?course=geometry&unit=01&lesson=06&mode=proof",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "03",
+          "lesson": "02",
+          "lesson_title": "SSS and SAS Congruence",
+          "mode": "triangles",
+          "query": "?course=geometry&unit=03&lesson=02&mode=triangles",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "03",
+          "lesson": "03",
+          "lesson_title": "ASA, AAS and HL Congruence",
+          "mode": "triangles",
+          "query": "?course=geometry&unit=03&lesson=03&mode=triangles",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "03",
+          "lesson": "04",
+          "lesson_title": "CPCTC and Multi-Step Triangle Proofs",
+          "mode": "triangles",
+          "query": "?course=geometry&unit=03&lesson=04&mode=triangles",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "04",
+          "lesson": "01",
+          "lesson_title": "Parallel Lines Cut by a Transversal",
+          "mode": "parallel",
+          "query": "?course=geometry&unit=04&lesson=01&mode=parallel",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "04",
+          "lesson": "02",
+          "lesson_title": "Proving Lines Parallel from Angle Relationships",
+          "mode": "parallel",
+          "query": "?course=geometry&unit=04&lesson=02&mode=parallel",
+          "wired": true
+        }
+      ],
+      "scope_note": "Guided proof steps for angles, triangle congruence, parallel lines, and proof logic. Not an unrestricted proof editor; individual lessons may include theorems beyond this game. Live browser QA and mastery writeback not certified."
     }
   }
 }
