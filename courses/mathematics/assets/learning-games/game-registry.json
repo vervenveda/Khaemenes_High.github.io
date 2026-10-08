@@ -658,6 +658,65 @@
         }
       ],
       "scope_note": "This game owns quotient structure, inverse verification, and divisor/denominator restrictions. Geometry is intentionally omitted because ratio, similarity, scale, and trigonometric-ratio progressions belong to later proportional-reasoning games. Sign Forge retains multiplication/division of rational expressions so subject ownership does not overlap."
+    },
+    "coordinated-mission-control": {
+      "title": "Coordinated Mission Control",
+      "canonical_path": "courses/mathematics/assets/learning-games/coordinated-mission-control/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-08-coordinated-mission-control/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "02",
+          "lesson": "08",
+          "lesson_title": "Coordinate Plane & Multi-Step Integer Applications",
+          "mode": "coordinate-integer-applications",
+          "query": "?course=prealgebra&unit=02&lesson=08&mode=coordinate-integer-applications",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "06",
+          "lesson": "02",
+          "lesson_title": "Slope from Tables, Graphs & Points",
+          "mode": "coordinate-change-slope",
+          "query": "?course=algebra1&unit=06&lesson=02&mode=coordinate-change-slope",
+          "wired": false
+        },
+        {
+          "course": "algebra-1",
+          "unit": "11",
+          "lesson": "05",
+          "lesson_title": "Midpoint, Coordinate Geometry & Geometric Constraints",
+          "mode": "coordinate-geometry",
+          "query": "?course=algebra1&unit=11&lesson=11-05&mode=coordinate-geometry",
+          "wired": false
+        },
+        {
+          "course": "geometry",
+          "unit": "06",
+          "lesson": "08",
+          "lesson_title": "Bearings, Vectors & Multi-Step Navigation",
+          "mode": "vector-navigation",
+          "query": "?course=geometry&unit=06&lesson=u06-l08&mode=vector-navigation",
+          "wired": false
+        },
+        {
+          "course": "algebra-2",
+          "unit": "11",
+          "lesson": "08",
+          "lesson_title": "Navigation, Vectors & Multi-Step Triangle Models",
+          "mode": "advanced-vector-navigation",
+          "query": "?course=algebra2&unit=11&lesson=u11-l08&mode=advanced-vector-navigation",
+          "wired": false
+        }
+      ],
+      "scope_note": "Integer Compass already owns Geometry U02-L01 and Algebra II U10-L10. Coordinated Mission Control is intentionally assigned to later coordinate, slope, and multi-step navigation lessons to avoid duplicate subject ownership."
     }
   }
 }

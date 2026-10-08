@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Khaemenes Pre-Algebra Unit 2 Lesson 8 companion game: Coordinate Plane and Multi-Step Integer Applications.">
+<meta name="description" content="Khaemenes Mathematics shared Coordinated Mission Control game: progressive coordinate, slope, vector, and multi-step navigation reasoning for Pre-Algebra through Algebra II.">
 <meta name="theme-color" content="#090d14">
-<title>Lesson 8 · Coordinate Mission Control</title>
+<title>Coordinated Mission Control · Khaemenes Mathematics Shared Game</title>
 <style>
 :root{
 --bg:#090d14;--panel:#151d29;--ink:#f7f2e7;--muted:#c9c1b2;--line:#3b4655;
@@ -60,15 +60,15 @@ footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
 </head>
 <body><a class="skip" href="#game">Skip to game</a><div class="shell">
 <header class="topbar">
-<a class="brand" href="../units/unit-02/lessons/lesson-08-multi-step-integer-applications.html"><div class="seal"><span>⌖</span></div><div><p class="kicker">Khaemenes High · Pre-Algebra · Unit 02</p><p class="crumb">Lesson 8 Companion · Coordinate Plane & Multi-Step Applications</p></div></a>
-<div class="actions"><a class="ghost" href="../units/unit-02/lessons/lesson-08-multi-step-integer-applications.html">← Lesson 8</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
+<a class="brand" id="courseHome" href="../../../pre-algebra/units/unit-02/lessons/lesson-08-multi-step-integer-applications.html"><div class="seal"><span>⌖</span></div><div><p class="kicker" id="courseKicker">Khaemenes Mathematics · Pre-Algebra</p><p class="crumb" id="courseCrumb">Coordinate Plane & Multi-Step Integer Applications</p></div></a>
+<div class="actions"><a class="ghost" id="topReturn" href="../../../pre-algebra/units/unit-02/lessons/lesson-08-multi-step-integer-applications.html">← Return to Pre-Algebra U02-L08</a><button class="ghost" id="printBtn">Print reference</button><button class="ghost" id="resetBestBtn">Reset best</button></div>
 </header>
 
 <section class="hero">
-<div class="eyebrow">Unit 2 · Lesson 8 · Companion Game</div>
-<h1>Coordinate Mission Control</h1>
-<p>Track signed horizontal and vertical movement, choose the right integer operation, and solve multi-step missions while checking sign, magnitude, and context.</p>
-<div class="lesson-sync"><strong>Lesson sync:</strong> ordered pairs locate position, signed changes describe movement, and all four integer operations work together to model multi-stage situations. Translate first, calculate second, and verify the final sign and magnitude.</div>
+<div class="eyebrow" id="modeEyebrow">Shared Mathematics Game · Pre-Algebra</div>
+<h1>Coordinated Mission Control</h1>
+<p id="modeLead">Track signed horizontal and vertical movement, choose the right integer operation, and solve multi-step missions while checking sign, magnitude, and context.</p>
+<div class="lesson-sync" id="modeSync"><strong>Lesson sync:</strong> ordered pairs locate position, signed changes describe movement, and all four integer operations work together to model multi-stage situations. Translate first, calculate second, and verify the final sign and magnitude.</div>
 </section>
 
 <section class="panel studio">
@@ -104,26 +104,77 @@ footer{text-align:center;color:#847e73;font-size:.76rem;padding:26px 0 0}
 <div class="choice-grid" id="choiceGrid"></div>
 <div class="action-row"><button class="secondary" id="hintBtn">Reasoning hint</button><button class="primary" id="checkBtn">Check reasoning</button><button class="secondary" id="nextBtn" hidden>Next mission →</button></div>
 <div class="feedback" id="feedback"><h3>Ready.</h3><p>Translate the position or change before calculating.</p></div>
-<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" href="../units/unit-02/lessons/lesson-08-multi-step-integer-applications.html">Return to Lesson 8</a></div></div>
+<div class="mastery" id="mastery"><div class="mastery-mark" id="masteryMark">80%</div><h2 id="masteryTitle">Round complete</h2><p id="masteryText"></p><div class="action-row"><button class="primary" id="newRoundBtn">Play another round</button><button class="secondary" id="reviewBtn">Review missed missions</button><a class="secondary" id="masteryReturn" href="../../../pre-algebra/units/unit-02/lessons/lesson-08-multi-step-integer-applications.html">Return to Pre-Algebra U02-L08</a></div></div>
 </section>
 
 <aside class="panel side">
-<h2>Lesson 8 Field Guide</h2>
+<h2 id="referenceTitle">Pre-Algebra Coordinate Field Guide</h2>
 <div class="concept"><b>Coordinates</b><span>(x,y): horizontal first, vertical second.</span></div>
 <div class="concept"><b>Signed movement</b><span>Right/up positive; left/down negative.</span></div>
 <div class="concept"><b>Operation choice</b><span>Add combined change; subtract difference; multiply repeated change; divide rates/groups.</span></div>
 <div class="concept"><b>Multi-step order</b><span>Translate first and preserve the required operation order.</span></div>
 <div class="concept"><b>Reasonableness</b><span>Check direction, magnitude, and context.</span></div>
 <div class="tip"><strong>Mission question</strong><p id="strategyText">Which coordinate or operation is changing first?</p></div>
-<div class="controls"><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
+<div class="controls"><div class="control"><label for="courseMode">Course level</label><select id="courseMode">
+<option value="prealgebra">Pre-Algebra · Coordinate Applications</option>
+<option value="algebra1">Algebra I · Coordinate Change, Slope & Midpoint</option>
+<option value="geometry">Geometry · Vectors & Multi-Step Navigation</option>
+<option value="algebra2">Algebra II · Vector Components & Navigation</option>
+</select></div><div class="control"><label for="pathwaySelect">Pathway</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><div class="control"><label for="roundSize">Round length</label><select id="roundSize"><option value="12">12 missions</option><option value="16" selected>16 missions</option><option value="20">20 missions</option></select></div></div>
 <p class="best" id="bestScore">Best mastery score: —</p>
 </aside>
 </main>
-<footer>KH-MATH-PA-U02-L8 · coordinates · signed movement · all four integer operations · multi-step reasoning · 80% mastery</footer>
+<footer>Khaemenes Mathematics Shared Game · Coordinated Mission Control · coordinates · slope · vectors · navigation · 80% mastery</footer>
 </div>
 
 <script>
 (()=>{"use strict";
+const COURSE_CONFIG={
+prealgebra:{label:"Pre-Algebra",mode:"Coordinate Plane & Multi-Step Integer Applications",lead:"Track signed horizontal and vertical movement, choose the right integer operation, and solve multi-step missions while checking sign, magnitude, and context.",sync:"Ordered pairs locate position, signed changes describe movement, and all four integer operations work together to model multi-stage situations.",returnHref:"../../../pre-algebra/units/unit-02/lessons/lesson-08-multi-step-integer-applications.html",returnLabel:"Return to Pre-Algebra U02-L08",key:"prealgebra"},
+algebra1:{label:"Algebra I",mode:"Coordinate Change, Slope & Midpoint",lead:"Use signed coordinate change to calculate slope, midpoint, distance, and geometric constraints while preserving exact reasoning.",sync:"Coordinate change becomes Δx and Δy; slope compares those changes, while midpoint and distance turn coordinates into algebraic structure.",returnHref:"../../../algebra-1/units/unit-06/lessons/lesson-02-slope-from-tables-graphs-points.html",returnLabel:"Return to Algebra I U06-L02",key:"algebra1"},
+geometry:{label:"Geometry",mode:"Vectors & Multi-Step Navigation",lead:"Translate coordinate movement into vectors, compose routes, verify direction and magnitude, and solve multi-step navigation problems.",sync:"Coordinate movement becomes geometric transformation and navigation: components preserve direction, while distance and resultant movement preserve magnitude.",returnHref:"../../../geometry/units/unit-06/lessons/u06-l08.html",returnLabel:"Return to Geometry U06-L08",key:"geometry"},
+algebra2:{label:"Algebra II",mode:"Vector Components & Navigation",lead:"Combine vector components, scalar changes, magnitudes, and multi-stage routes in advanced coordinate and navigation models.",sync:"Signed components encode direction; vector addition, scalar multiplication, magnitude, and resultant displacement extend coordinate reasoning into advanced models.",returnHref:"../../../algebra-2/units/unit-11/lessons/u11-l08.html",returnLabel:"Return to Algebra II U11-L08",key:"algebra2"}
+};
+
+const ALGEBRA1_BANK=[
+{l:"Foundation",b:"Coordinate Change",v:"A(−2,1) → B(4,7)",q:"What is Δx?",o:["6","−6","8","2"],a:0,h:"Compute final x minus initial x.",w:"Δx=4−(−2)=6."},
+{l:"Foundation",b:"Coordinate Change",v:"A(−2,1) → B(4,7)",q:"What is Δy?",o:["6","−6","8","2"],a:0,h:"Compute final y minus initial y.",w:"Δy=7−1=6."},
+{l:"Foundation",b:"Slope",v:"A(−2,1), B(4,7)",q:"What is the slope?",o:["1","6","−1","1/6"],a:0,h:"Slope is Δy/Δx.",w:"m=6/6=1."},
+{l:"Core",b:"Slope",v:"P(2,−3), Q(6,5)",q:"What is the slope?",o:["2","1/2","−2","8"],a:0,h:"Find Δy=8 and Δx=4.",w:"m=8/4=2."},
+{l:"Core",b:"Midpoint",v:"A(−4,6), B(8,−2)",q:"What is the midpoint?",o:["(2,2)","(4,4)","(2,4)","(−2,2)"],a:0,h:"Average the x-coordinates and y-coordinates separately.",w:"((−4+8)/2,(6−2)/2)=(2,2)."},
+{l:"Core",b:"Distance",v:"A(1,2), B(4,6)",q:"What is the distance?",o:["5","7","√7","25"],a:0,h:"The changes are 3 and 4.",w:"√(3²+4²)=5."},
+{l:"Core",b:"Slope",v:"x=4",q:"What is the slope of this vertical line?",o:["Undefined","0","4","1"],a:0,h:"A vertical line has Δx=0.",w:"Division by zero makes the slope undefined."},
+{l:"Extended",b:"Slope",v:"A(−3,4), B(5,−8)",q:"What is the slope?",o:["−3/2","3/2","−2/3","12/8"],a:0,h:"Δy=−12 and Δx=8.",w:"m=−12/8=−3/2."},
+{l:"Extended",b:"Coordinate Constraint",v:"Midpoint M(3,−1); A(−1,5)",q:"What is endpoint B?",o:["(7,−7)","(5,−3)","(7,3)","(2,4)"],a:0,h:"Use the midpoint relation in each coordinate.",w:"x₂=7 and y₂=−7, so B=(7,−7)."},
+{l:"Extended",b:"Signed Change",v:"Δx=−6, Δy=9",q:"Which slope is represented?",o:["−3/2","3/2","−2/3","2/3"],a:0,h:"Slope is Δy/Δx.",w:"9/(−6)=−3/2."}
+];
+
+const GEOMETRY_BANK=[
+{l:"Foundation",b:"Translation Vector",v:"P(2,−1)+⟨−5,4⟩",q:"What is P′?",o:["(−3,3)","(7,3)","(−3,−5)","(6,−6)"],a:0,h:"Add corresponding components.",w:"(2−5,−1+4)=(−3,3)."},
+{l:"Foundation",b:"Vector Change",v:"A(−2,3) → B(4,−1)",q:"Which translation vector maps A to B?",o:["⟨6,−4⟩","⟨−6,4⟩","⟨2,2⟩","⟨4,−1⟩"],a:0,h:"Compute final minus initial for each coordinate.",w:"⟨4−(−2),−1−3⟩=⟨6,−4⟩."},
+{l:"Foundation",b:"Inverse Route",v:"Translation ⟨7,−3⟩",q:"Which vector returns to the start?",o:["⟨−7,3⟩","⟨7,3⟩","⟨−7,−3⟩","⟨3,−7⟩"],a:0,h:"Reverse each component.",w:"The inverse is ⟨−7,3⟩."},
+{l:"Core",b:"Vector Composition",v:"⟨3,−2⟩ + ⟨−5,7⟩",q:"What is the resultant vector?",o:["⟨−2,5⟩","⟨8,−9⟩","⟨2,−5⟩","⟨−8,9⟩"],a:0,h:"Add x-components and y-components.",w:"⟨3−5,−2+7⟩=⟨−2,5⟩."},
+{l:"Core",b:"Navigation",v:"6 east, 8 north",q:"What is the straight-line displacement magnitude?",o:["10","14","2","48"],a:0,h:"Use the Pythagorean theorem on the components.",w:"√(6²+8²)=10."},
+{l:"Core",b:"Quadrant Route",v:"Resultant vector ⟨−4,9⟩",q:"Where does the terminal point lie from the origin?",o:["Quadrant II","Quadrant I","Quadrant III","Quadrant IV"],a:0,h:"Negative x and positive y.",w:"Left and up places the terminal point in Quadrant II."},
+{l:"Core",b:"Multi-Step Route",v:"Start (1,−2); +⟨4,5⟩; +⟨−7,1⟩",q:"What is the final point?",o:["(−2,4)","(12,4)","(−2,−8)","(5,3)"],a:0,h:"Combine the two vectors, then add to the start.",w:"Net vector ⟨−3,6⟩ gives (−2,4)."},
+{l:"Extended",b:"Navigation Check",v:"Route ⟨8,0⟩ then ⟨0,−6⟩",q:"What is the direct displacement magnitude?",o:["10","14","2","48"],a:0,h:"The net components are 8 and −6.",w:"√(8²+6²)=10."},
+{l:"Extended",b:"Vector Scale",v:"2⟨−3,5⟩",q:"What is the scaled vector?",o:["⟨−6,10⟩","⟨−3,10⟩","⟨6,−10⟩","⟨−1,7⟩"],a:0,h:"Multiply both components by the scalar.",w:"2⟨−3,5⟩=⟨−6,10⟩."},
+{l:"Extended",b:"Reasonableness",v:"Net vector ⟨−12,5⟩",q:"Which statement must be true?",o:["The route ends left and above the start.","The route ends right and above the start.","The displacement magnitude is negative.","The route has no vertical change."],a:0,h:"Read both component signs before discussing magnitude.",w:"Negative x means left; positive y means above."}
+];
+
+const ALGEBRA2_BANK=[
+{l:"Foundation",b:"Vector Addition",v:"⟨4,−1⟩+⟨−7,6⟩",q:"What is the resultant?",o:["⟨−3,5⟩","⟨11,−7⟩","⟨3,−5⟩","⟨−3,−7⟩"],a:0,h:"Add corresponding components.",w:"4−7=−3 and −1+6=5."},
+{l:"Foundation",b:"Scalar Multiple",v:"−2⟨3,−4⟩",q:"What vector results?",o:["⟨−6,8⟩","⟨6,−8⟩","⟨−6,−8⟩","⟨1,−2⟩"],a:0,h:"Multiply both components by −2.",w:"−2⟨3,−4⟩=⟨−6,8⟩."},
+{l:"Foundation",b:"Magnitude",v:"v=⟨−6,8⟩",q:"What is |v|?",o:["10","14","2","−10"],a:0,h:"Magnitude is nonnegative.",w:"√(36+64)=10."},
+{l:"Core",b:"Average Velocity",v:"Displacement ⟨12,−8⟩ over 4 s",q:"What is the average velocity vector?",o:["⟨3,−2⟩","⟨48,−32⟩","⟨8,−4⟩","⟨−3,2⟩"],a:0,h:"Divide each displacement component by time.",w:"⟨12/4,−8/4⟩=⟨3,−2⟩."},
+{l:"Core",b:"Resultant Navigation",v:"v=⟨8,6⟩, w=⟨−3,4⟩",q:"What is v+w?",o:["⟨5,10⟩","⟨11,2⟩","⟨−5,−10⟩","⟨24,24⟩"],a:0,h:"Add x with x and y with y.",w:"⟨8−3,6+4⟩=⟨5,10⟩."},
+{l:"Core",b:"Vector Difference",v:"v=⟨5,−2⟩, w=⟨−1,7⟩",q:"What is v−w?",o:["⟨6,−9⟩","⟨4,5⟩","⟨−6,9⟩","⟨5,−14⟩"],a:0,h:"Subtract corresponding components.",w:"⟨5−(−1),−2−7⟩=⟨6,−9⟩."},
+{l:"Core",b:"Terminal Position",v:"Start (−4,3); displacement ⟨9,−11⟩",q:"What is the terminal point?",o:["(5,−8)","(−13,14)","(5,14)","(−8,5)"],a:0,h:"Add displacement to initial coordinates.",w:"(−4+9,3−11)=(5,−8)."},
+{l:"Extended",b:"Resultant Magnitude",v:"⟨8,6⟩+⟨−3,4⟩",q:"What is the magnitude of the resultant?",o:["5√5","15","√5","25"],a:0,h:"First find the resultant ⟨5,10⟩.",w:"|⟨5,10⟩|=√125=5√5."},
+{l:"Extended",b:"Multi-Stage Navigation",v:"⟨6,2⟩+2⟨−4,3⟩",q:"What is the net vector?",o:["⟨−2,8⟩","⟨2,8⟩","⟨−8,5⟩","⟨−2,5⟩"],a:0,h:"Scale the second vector before adding.",w:"2⟨−4,3⟩=⟨−8,6⟩; add to get ⟨−2,8⟩."},
+{l:"Extended",b:"Direction Check",v:"Resultant ⟨−9,−12⟩",q:"Which quadrant contains its terminal point from the origin?",o:["Quadrant III","Quadrant I","Quadrant II","Quadrant IV"],a:0,h:"Both components are negative.",w:"Negative x and negative y place the terminal point in Quadrant III."}
+];
+
 const BANK=[
 {l:"Foundation",b:"Coordinates",v:"x=−4, y=3",q:"Which ordered pair is correct?",o:["(3,−4)","(−4,3)","(4,−3)","(−3,4)"],a:1,h:"Ordered pairs are written (x,y).",w:"The point is (−4,3)."},
 {l:"Foundation",b:"Coordinates",v:"Point on y-axis",q:"What must be true?",o:["y=0","x=y","Both coordinates positive","x=0"],a:3,h:"The y-axis is the vertical axis through x=0.",w:"Every point on the y-axis has x=0."},
@@ -155,24 +206,26 @@ const BANK=[
 {l:"Extended",b:"Reasonableness",v:"Robot moves left 12 total, then right 5",q:"Which final sign is reasonable?",o:["Positive","Negative","Zero","Undefined"],a:1,h:"The leftward movement has greater magnitude.",w:"Net movement is leftward, so the final signed position/change should be negative."}
 ];
 
-const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn")};
-const BEST="khaemenes-prealgebra-u02-l08-coordinate-mission-control-v1";let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),course:$("courseMode"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn"),courseHome:$("courseHome"),topReturn:$("topReturn"),masteryReturn:$("masteryReturn"),modeEyebrow:$("modeEyebrow"),modeLead:$("modeLead"),modeSync:$("modeSync"),courseKicker:$("courseKicker"),courseCrumb:$("courseCrumb"),referenceTitle:$("referenceTitle")};
+const params=new URLSearchParams(location.search);if(COURSE_CONFIG[params.get("course")])el.course.value=params.get("course");const bestKey=()=>`khaemenes-math-coordinated-mission-control-${COURSE_CONFIG[el.course.value]?.key||"prealgebra"}-v3`;let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
 function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
-function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:BANK.filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
-function start(src=null){deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
+function activeBank(){const c=el.course.value;if(c==="algebra1")return ALGEBRA1_BANK;if(c==="geometry")return GEOMETRY_BANK;if(c==="algebra2")return ALGEBRA2_BANK;return BANK}
+function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:activeBank().filter(x=>levels().has(x.l)),o=[];while(o.length<n)o.push(...shuffle(p));return o.slice(0,n)}
+function updateCourseMode(){const cfg=COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;let href=cfg.returnHref,label=cfg.returnLabel;const lesson=params.get("lesson");if(el.course.value==="algebra1"&&(lesson==="11-05"||lesson==="u11-l05")){href="../../../algebra-1/units/unit-11/lessons/lesson-05-midpoint-coordinate-geometry-geometric-constraints.html";label="Return to Algebra I U11-L05"}el.courseHome.href=href;el.topReturn.href=href;el.topReturn.textContent="← "+label;el.masteryReturn.href=href;el.masteryReturn.textContent=label;el.modeEyebrow.textContent=`Shared Mathematics Game · ${cfg.label}`;el.modeLead.textContent=cfg.lead;el.modeSync.innerHTML=`<strong>Lesson sync:</strong> ${cfg.sync}`;el.courseKicker.textContent=`Khaemenes Mathematics · ${cfg.label}`;el.courseCrumb.textContent=cfg.mode;el.referenceTitle.textContent=`${cfg.label} Coordinate Field Guide`;updateBest()}
+function start(src=null){updateCourseMode();deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
 function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;
-el.strategy.textContent=c.b.includes("Coordinate")||c.b.includes("Quadrant")||c.b.includes("Movement")||c.b.includes("Vector")?"Track x horizontally and y vertically.":c.b.includes("Operation Choice")?"Translate the context before choosing an operation.":c.b.includes("Reason")?"Check whether sign, direction, and magnitude match the situation.":"Follow the operation order and track every sign.";
+if(el.course.value==="algebra1")el.strategy.textContent="Compute coordinate change first; then connect Δx and Δy to slope, midpoint, distance, or the stated constraint.";else if(el.course.value==="geometry")el.strategy.textContent="Translate the route into signed vector components, combine them in order, then verify direction and magnitude.";else if(el.course.value==="algebra2")el.strategy.textContent="Separate components, scalar changes, and magnitude; preserve the coordinate reference throughout the multi-stage model.";else el.strategy.textContent=c.b.includes("Coordinate")||c.b.includes("Quadrant")||c.b.includes("Movement")||c.b.includes("Vector")?"Track x horizontally and y vertically.":c.b.includes("Operation Choice")?"Translate the context before choosing an operation.":c.b.includes("Reason")?"Check whether sign, direction, and magnitude match the situation.":"Follow the operation order and track every sign.";
 feedback("","Mission ready.","Translate the position or change before calculating.");stats()}
 function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by coordinate and integer-operation reasoning.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Mission confirmed.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
 function stats(){const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
 function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
-function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(e){return null}}
+function best(){try{const v=Number(localStorage.getItem(bestKey()));return Number.isFinite(v)?v:null}catch(e){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
-function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(BEST,String(p))}catch(e){}updateBest()}
-function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Coordinate Mission mastery passed":"Rebuild the route";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} Lesson 8 missions correctly and met the 80% mastery target. Return to Lesson 8 for practice, reflection, and Unit 2 mastery work.`:`You solved ${correct} of ${attempts} missions correctly. Review missed coordinate moves, operation choices, and multi-step sign checks, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
-el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(BEST)}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
+function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(bestKey(),String(p))}catch(e){}updateBest()}
+function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Coordinated Mission mastery passed":"Rebuild the route";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} ${COURSE_CONFIG[el.course.value].label} missions correctly and met the 80% mastery target. Return to the mapped lesson for the full instructional sequence.`:`You solved ${correct} of ${attempts} missions correctly. Review missed coordinate changes, vector components, operation choices, and multi-step checks, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.course.onchange=()=>{const u=new URL(location.href);u.searchParams.set("course",el.course.value);history.replaceState(null,"",u);start()};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(bestKey())}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
 el.tabs.forEach((b,i)=>b.onclick=()=>{el.tabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));el.scenes.forEach((s,j)=>s.classList.toggle("active",j===i))});
 const later=(f,m)=>setTimeout(f,m);
 
