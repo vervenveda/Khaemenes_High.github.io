@@ -24,7 +24,7 @@ html:root:root body :is(.panel,.panel2,.card,.lesson,.assignment,.question,.q,.c
 html:root:root body :is(h1,h2,h3,h4,h5,h6,p,label,summary,.lead,.comment,.small,.eyebrow,.kicker,.subline,.brand-copy,.brand-copy strong,.brand small,.brand strong,.hero p,.footer strong,.heading p,.heading h2,.panel h3,.card h3,.card h4,.metric strong) {color:#20241f !important;}
 html:root:root body :is(a,button,input,select,textarea,.btn,.button,.nav-button,.icon-button,.menu-link,.navlinks a,.top .btn.secondary) {color:#20241f !important;}
 html:root:root body :is(button,input,select,textarea,.btn,.button,.nav-button,.icon-button,.menu-link,.navlinks a) {background:#faf7ef !important; border-color:#bfb29c !important;}
-html:root:root body :is(.btn.primary,.button-primary,.btn.gold,button.primary,.navBtn.active,.weekBtn.active,.tab.active,[aria-current="page"]) {background:#ead9b6 !important; color:#20241f !important; border-color:#967342 !important;}
+html:root:root body :is(.btn.primary,a.primary,.button-primary,.btn.gold,button.primary,.navBtn.active,.weekBtn.active,.tab.active,[aria-current="page"]) {background:#ead9b6 !important; color:#20241f !important; border-color:#967342 !important;}
 html:root:root body :is(.good,.success,.correct) {background:#e7f0e5 !important;color:#285039 !important;}
 html:root:root body :is(.bad,.error,.incorrect) {background:#f8e8e5 !important;color:#83343c !important;}
 html:root:root body :is(th,td,pre,code,.tag,.chip,.pinned-chip) {color:#20241f !important; background:#f8f5ed !important; border-color:#c8beab !important;}
