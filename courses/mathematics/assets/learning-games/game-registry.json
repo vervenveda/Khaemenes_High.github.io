@@ -1169,6 +1169,61 @@
         }
       ],
       "scope_note": "Graph/intersection, substitution, elimination, and classification supported. Systems of inequalities and optimization excluded. Live browser QA and mastery writeback not certified."
+    },
+    "polynomial-factoring-forge": {
+      "title": "Polynomial Factoring Forge",
+      "canonical_path": "courses/mathematics/assets/learning-games/polynomial-factoring-forge/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "09",
+          "lesson": "03",
+          "lesson_title": "Multiplying Monomials & Polynomials",
+          "mode": "expand",
+          "query": "?course=algebra1&unit=09&lesson=03&mode=expand",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "09",
+          "lesson": "06",
+          "lesson_title": "Factoring Trinomials & Difference of Squares",
+          "mode": "factor",
+          "query": "?course=algebra1&unit=09&lesson=06&mode=factor",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "09",
+          "lesson": "07",
+          "lesson_title": "Zeros, Factors & Polynomial Modelling",
+          "mode": "zeros",
+          "query": "?course=algebra1&unit=09&lesson=07&mode=zeros",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "10",
+          "lesson": "03",
+          "lesson_title": "Factored Form, Zeros & Graphs",
+          "mode": "zeros",
+          "query": "?course=algebra1&unit=10&lesson=03&mode=zeros",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "10",
+          "lesson": "04",
+          "lesson_title": "Solving Quadratics by Factoring",
+          "mode": "zeros",
+          "query": "?course=algebra1&unit=10&lesson=04&mode=zeros",
+          "wired": true
+        }
+      ],
+      "scope_note": "Supports binomial expansion, monic/nonmonic quadratic factoring and zero-product solving; does not fully cover difference of squares, polynomial modelling or graph analysis. Browser QA and mastery writeback not certified."
     }
   }
 }
