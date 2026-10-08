@@ -241,6 +241,7 @@ footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
     <label for="roundSize">Round length</label>
     <select id="roundSize"><option value="12">12 cases</option><option value="18" selected>18 cases</option><option value="24">24 cases</option></select>
   </div>
+  <p>Settings stay fixed after your first checked answer until the round ends. Review includes each missed case once.</p>
   <p class="best" id="bestScore">Best mastery score: —</p>
 </aside>
 </main>
@@ -334,6 +335,8 @@ function missionPool(){
  return BANK;
 }
 let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+const previousRounds=new Map();
+function lockSettings(locked){[el.course,el.focus,el.size].forEach(control=>control.disabled=locked)}
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function isPrime(n){if(n<2)return false;if(n===2)return true;if(n%2===0)return false;for(let d=3;d*d<=n;d+=2)if(n%d===0)return false;return true}
 function kind(n){if(n===0||n===1)return"Neither";return isPrime(n)?"Prime":"Composite"}
@@ -347,10 +350,18 @@ function saveBest(p){try{const old=best();if(old===null||p>old)localStorage.setI
 function current(){return deck[index]}
 function start(source=null){
  const count=Math.max(6,Math.min(24,Number(el.size.value)||18));
- const pool=source&&source.length?source:missionPool();
- const arr=[];while(arr.length<count)arr.push(...shuffle(pool));
- deck=arr.slice(0,count);index=0;selected=null;checked=false;score=0;correct=0;attempts=0;streak=0;missed=[];
- el.mastery.classList.remove("show");render();updateStats()
+ if(source&&source.length){
+   // A review is only the missed cases, once each; never pad it to round length.
+   deck=shuffle([...new Set(source)]);
+ }else{
+   const pool=[...new Set(missionPool())],key=courseKey()+":"+focusKey();
+   const previous=new Set(previousRounds.get(key)||[]);
+   // Prefer cases outside the previous round before reusing any.
+   deck=[...shuffle(pool.filter(item=>!previous.has(item))),...shuffle(pool.filter(item=>previous.has(item)))].slice(0,count);
+   previousRounds.set(key,deck.slice());
+ }
+ index=0;selected=null;checked=false;score=0;correct=0;attempts=0;streak=0;missed=[];
+ lockSettings(false);el.mastery.classList.remove("show");render();updateStats()
 }
 function setChoiceButton(button,label,small,value){
  button.dataset.choice=String(value);button.querySelector("strong").textContent=label;button.querySelector("small").textContent=small||"";
@@ -406,7 +417,7 @@ function hint(){
 }
 function submit(){
  if(checked)return;if(selected===null){setFeedback("bad","Choose a classification.","Select one response before submitting.");return}
- checked=true;attempts++;let ok=false,why="",answerLabel="";
+ checked=true;attempts++;lockSettings(true);let ok=false,why="",answerLabel="";
  if(isFoundationMode()){
    const n=current(),answer=kind(n);ok=selected===answer;answerLabel=answer;
    if(answer==="Composite"){const [a,b]=factorWitness(n);why=`${n} is composite because ${a} × ${b} = ${n}. Prime factorization: ${factorizationText(n)}.`}
@@ -470,13 +481,13 @@ function applyMode(){
  updateBest()
 }
 
-function next(){if(!checked)return;if(index>=deck.length-1){finish();return}index++;render()}
-function finish(){index=deck.length;updateStats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Mastery gate passed":"Continue the investigation";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} cases correctly and met the 80% mastery goal for ${el.focus.options[el.focus.selectedIndex]?.textContent||"factor reasoning"}.`:`You solved ${correct} of ${attempts} cases correctly. Review the factor evidence and retry the missed cases to reach 80%.`;el.review.disabled=missed.length===0;el.review.textContent=missed.length?`Review missed cases (${missed.length})`:"No missed cases";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+function next(){if(!checked||index>=deck.length)return;if(index>=deck.length-1){finish();return}index++;render()}
+function finish(){lockSettings(false);index=deck.length;updateStats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Practice goal met":"Continue the investigation";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} cases correctly and met the 80% practice goal for ${el.focus.options[el.focus.selectedIndex]?.textContent||"factor reasoning"}.`:`You solved ${correct} of ${attempts} cases correctly. Review the factor evidence and retry the missed cases to reach 80%.`;el.review.disabled=missed.length===0;el.review.textContent=missed.length?`Review missed cases (${missed.length})`:"No missed cases";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
 el.check.addEventListener("click",submit);el.next.addEventListener("click",next);el.hint.addEventListener("click",hint);el.newRound.addEventListener("click",()=>start());el.review.addEventListener("click",()=>{if(missed.length)start(missed)});el.size.addEventListener("change",()=>start());
 el.course.addEventListener("change",()=>{configureFocuses();applyMode();start()});
 el.focus.addEventListener("change",()=>{applyMode();start()});
 el.print.addEventListener("click",()=>window.print());el.resetBest.addEventListener("click",()=>{try{localStorage.removeItem(bestKey())}catch(_){}updateBest();setFeedback("","Best score reset.","The saved best score on this device was cleared.")});
-document.addEventListener("keydown",e=>{const t=document.activeElement&&document.activeElement.tagName;if(["INPUT","TEXTAREA","SELECT"].includes(t))return;if(e.key==="1"||e.key==="2"||e.key==="3"){const b=el.choices[Number(e.key)-1];if(!b.disabled)b.click()}else if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();hint()}});
+document.addEventListener("keydown",e=>{const t=document.activeElement&&document.activeElement.tagName;if(e.repeat||["INPUT","TEXTAREA","SELECT","BUTTON","A"].includes(t))return;if(e.key==="1"||e.key==="2"||e.key==="3"){const b=el.choices[Number(e.key)-1];if(!b.disabled)b.click()}else if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();hint()}});
 
 const lessonTabs=[...document.querySelectorAll(".studio-tab")];
 const lessonScenes=[...document.querySelectorAll(".scene")];
