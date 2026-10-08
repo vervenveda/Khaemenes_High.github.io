@@ -106,3 +106,23 @@ Mastery is synchronized too
 The game retains the 80% mastery target, matching the lesson's assignment requirement to reach 80% before Lesson 2 unlocks.
 
 It also now tells a successful student to return to the actual lesson for the worked examples and 20-question assignment rather than pretending the game replaces the lesson.
+
+
+## Canonical Shared-Game Migration · Number Family v3
+
+This directory is the canonical Mathematics copy.
+
+Supported course modes:
+- `?course=prealgebra&unit=01&lesson=01` — real-number foundations
+- `?course=algebra1&unit=01&lesson=02` — real numbers and exact forms
+- `?course=geometry&unit=01&lesson=03` — exact geometric measurement and radicals
+- `?course=geometry&unit=06&lesson=u06-l01` — Pythagorean exact-length application
+- `?course=algebra2&unit=02&lesson=u02-l04` — imaginary unit and complex-number extension
+- `?course=algebra2&unit=02&lesson=u02-l07` — complex-plane reinforcement
+
+Migration rule:
+1. Shared Mathematics copy is canonical.
+2. Existing Pre-Algebra copy remains temporarily as a rollback/compatibility copy.
+3. Pre-Algebra U01-L01 now resolves to the shared copy.
+4. Legacy copy must not be deleted until the shared route is verified in production.
+5. Future existing games should migrate one at a time under the same rule.

@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "canonical_root": "courses/mathematics/assets/learning-games",
+  "migration_policy": {
+    "strategy": "one-existing-game-at-a-time",
+    "legacy_pre_algebra_root": "courses/mathematics/pre-algebra/learning-games",
+    "delete_legacy_only_after_live_verification": true
+  },
+  "games": {
+    "number-family": {
+      "title": "Number Family",
+      "canonical_path": "courses/mathematics/assets/learning-games/number-family/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-01-number-family/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "01",
+          "lesson": "01",
+          "lesson_title": "Number Families & the Real Number System",
+          "mode": "real-foundations",
+          "query": "?course=prealgebra&unit=01&lesson=01",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "01",
+          "lesson": "02",
+          "lesson_title": "The Real Number System & Interval Representations",
+          "mode": "real-exact-forms",
+          "query": "?course=algebra1&unit=01&lesson=02",
+          "wired": false
+        },
+        {
+          "course": "geometry",
+          "unit": "01",
+          "lesson": "03",
+          "lesson_title": "Distance, Midpoint & Segment Partition",
+          "mode": "exact-measurement",
+          "query": "?course=geometry&unit=01&lesson=03",
+          "wired": false
+        },
+        {
+          "course": "geometry",
+          "unit": "06",
+          "lesson": "01",
+          "lesson_title": "Pythagorean Theorem & Its Converse",
+          "mode": "pythagorean-exact-lengths",
+          "query": "?course=geometry&unit=06&lesson=u06-l01",
+          "wired": false
+        },
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "04",
+          "lesson_title": "The Imaginary Unit & Powers of i",
+          "mode": "complex-system",
+          "query": "?course=algebra2&unit=02&lesson=u02-l04",
+          "wired": false
+        },
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "07",
+          "lesson_title": "Conjugates, Modulus & the Complex Plane",
+          "mode": "complex-plane",
+          "query": "?course=algebra2&unit=02&lesson=u02-l07",
+          "wired": false
+        }
+      ]
+    }
+  }
+}

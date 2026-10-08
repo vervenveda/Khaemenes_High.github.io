@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Khaemenes High Pre-Algebra Lesson 1 companion game: Number Families & the Real Number System." />
+  <meta name="description" content="Khaemenes Mathematics shared Number Family game: progressive real- and complex-number reasoning for Pre-Algebra, Algebra I, Geometry, and Algebra II." />
   <meta name="theme-color" content="#090b10" />
-  <title>Lesson 1 · Number Family Sort · Lesson Sync Edition</title>
+  <title>Number Family · Khaemenes Mathematics Shared Game</title>
   <style>
     :root{
       --bg:#090b10;
@@ -44,7 +44,7 @@
       overflow-x:clip;
     }
 
-    button,a,select{font:inherit}
+    .complex-choice[hidden]{display:none!important}\n    button,a,select{font:inherit}
     button{touch-action:manipulation}
     a{color:inherit}
     button:focus-visible,a:focus-visible,select:focus-visible{
@@ -1089,6 +1089,8 @@
           <button class="family-btn" type="button" data-set="Rational" aria-pressed="false"><strong>Rational ℚ</strong><small>fractions; ending/repeating decimals</small></button>
           <button class="family-btn" type="button" data-set="Irrational" aria-pressed="false"><strong>Irrational</strong><small>nonending, nonrepeating</small></button>
           <button class="family-btn" type="button" data-set="Real" aria-pressed="false"><strong>Real ℝ</strong><small>all rational + irrational values</small></button>
+          <button class="family-btn complex-choice" type="button" data-set="Imaginary" aria-pressed="false"><strong>Pure Imaginary</strong><small>bi where b ≠ 0</small></button>
+          <button class="family-btn complex-choice" type="button" data-set="Complex" aria-pressed="false"><strong>Complex ℂ</strong><small>a + bi</small></button>
         </div>
 
         <div class="compare-options" id="compareChoices" hidden>
@@ -1118,6 +1120,8 @@
           <span class="chain-chip" data-chain="Rational">Rational</span>
           <span class="chain-chip" data-chain="Irrational">Irrational</span>
           <span class="chain-chip" data-chain="Real">Real</span>
+          <span class="chain-chip complex-choice" data-chain="Imaginary">Pure Imaginary</span>
+          <span class="chain-chip complex-choice" data-chain="Complex">Complex</span>
         </div>
       </div>
 
@@ -1128,7 +1132,7 @@
         <div class="action-row">
           <button class="primary" id="newRoundBtn" type="button">Play another round</button>
           <button class="secondary" id="reviewBtn" type="button">Review missed missions</button>
-          <a class="secondary btn" href="../units/unit-01/lessons/lesson-01-number-systems.html">Return to Lesson 1</a>
+          <a class="secondary btn" id="returnToLesson" href="../../../pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html">Return to Lesson</a>
         </div>
       </div>
     </section>
@@ -1164,6 +1168,15 @@
 
       <div class="controls">
         <div class="control-line">
+          <label for="courseMode">Course level</label>
+          <select id="courseMode">
+            <option value="prealgebra">Pre-Algebra · Real Number Foundations</option>
+            <option value="algebra1">Algebra I · Real Numbers & Exact Forms</option>
+            <option value="geometry">Geometry · Exact Measurement & Radicals</option>
+            <option value="algebra2">Algebra II · Real → Complex Number System</option>
+          </select>
+        </div>
+        <div class="control-line">
           <label for="pathwaySelect">Pathway</label>
           <select id="pathwaySelect">
             <option value="Foundation">Foundation</option>
@@ -1186,7 +1199,7 @@
   </main>
 
   <footer>
-    KH-MATH-PA-U01-L1 · Lesson-synced local practice · 80% mastery · No external dependencies
+    Khaemenes Mathematics Shared Game · Number Family · Multi-course progression · 80% mastery · No external dependencies
   </footer>
 </div>
 
@@ -1194,7 +1207,93 @@
 (() => {
   "use strict";
 
-  const SET_ORDER = ["Natural","Whole","Integer","Rational","Irrational","Real"];
+  const SET_ORDER = ["Natural","Whole","Integer","Rational","Irrational","Real","Imaginary","Complex"];
+
+  const COURSE_CONFIG = {
+    prealgebra:{
+      label:"Pre-Algebra",
+      mode:"Real Number Foundations",
+      context:"Classify, simplify, compare, and order rational and irrational real numbers.",
+      returnHref:"../../../pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html",
+      returnLabel:"Return to Pre-Algebra U01-L01",
+      key:"prealgebra"
+    },
+    algebra1:{
+      label:"Algebra I",
+      mode:"Real Numbers & Exact Forms",
+      context:"Strengthen real-number classification while simplifying algebraic and radical forms used throughout Algebra I.",
+      returnHref:"../../../algebra-1/units/unit-01/lessons/lesson-02-the-real-number-system-interval-representations.html",
+      returnLabel:"Return to Algebra I U01-L02",
+      key:"algebra1"
+    },
+    geometry:{
+      label:"Geometry",
+      mode:"Exact Measurement & Radicals",
+      context:"Classify exact geometric measurements and compare radical lengths without discarding exact form.",
+      returnHref:"../../../geometry/units/unit-01/lessons/lesson-03-distance-midpoint-segment-partition.html",
+      returnLabel:"Return to Geometry",
+      key:"geometry"
+    },
+    algebra2:{
+      label:"Algebra II",
+      mode:"Real → Complex Number System",
+      context:"Extend the real-number hierarchy into pure imaginary and non-real complex numbers; simplify before classifying.",
+      returnHref:"../../../algebra-2/units/unit-02/lessons/lesson-04-the-imaginary-unit-powers-of-i.html",
+      returnLabel:"Return to Algebra II U02-L04",
+      key:"algebra2"
+    }
+  };
+
+  const ALGEBRA1_CLASSIFY_BANK = [
+    {level:"Foundation",v:"√81",most:"Natural",all:["Natural","Whole","Integer","Rational","Real"],why:"√81 = 9. Simplify first; 9 is Natural."},
+    {level:"Core",v:"−|−7|",most:"Integer",all:["Integer","Rational","Real"],why:"|−7| = 7, so −|−7| = −7, an Integer."},
+    {level:"Core",v:"√18",most:"Irrational",all:["Irrational","Real"],why:"√18 = 3√2, which remains Irrational."},
+    {level:"Extended",v:"(6²−20)/4",most:"Natural",all:["Natural","Whole","Integer","Rational","Real"],why:"(36−20)/4 = 4, so the simplified value is Natural."},
+    {level:"Extended",v:"0.121212…",most:"Rational",all:["Rational","Real"],why:"A repeating decimal is Rational."}
+  ];
+  const ALGEBRA1_MEMBERSHIP_BANK = [
+    {level:"Foundation",v:"−12/3",all:["Integer","Rational","Real"],why:"−12/3 = −4, so it is Integer, Rational, and Real."},
+    {level:"Core",v:"√32/2",all:["Irrational","Real"],why:"√32/2 = 2√2, which is Irrational and Real."},
+    {level:"Extended",v:"5−√25",all:["Whole","Integer","Rational","Real"],why:"5−√25 = 0, which is Whole, Integer, Rational, and Real."}
+  ];
+  const ALGEBRA1_COMPARE_BANK = [
+    {level:"Foundation",left:"√25",right:"4.9",answer:">",why:"√25 = 5, and 5 > 4.9.",hint:"Simplify the radical first."},
+    {level:"Core",left:"√18",right:"4.2",answer:">",why:"√18 ≈ 4.243, so it is slightly greater than 4.2.",hint:"Use 4.2² = 17.64 as an anchor."},
+    {level:"Extended",left:"3√2",right:"4.25",answer:"<",why:"3√2 ≈ 4.243, so it is slightly less than 4.25.",hint:"Approximate √2 only after preserving the exact form."}
+  ];
+
+  const GEOMETRY_CLASSIFY_BANK = [
+    {level:"Foundation",v:"√25",most:"Natural",all:["Natural","Whole","Integer","Rational","Real"],why:"A 3-4-5 distance can produce √25 = 5, a Natural number."},
+    {level:"Core",v:"√13",most:"Irrational",all:["Irrational","Real"],why:"13 is not a perfect square, so the exact distance √13 is Irrational."},
+    {level:"Core",v:"5√2",most:"Irrational",all:["Irrational","Real"],why:"5√2 is an exact irrational length."},
+    {level:"Extended",v:"√72",most:"Irrational",all:["Irrational","Real"],why:"√72 = 6√2, which remains Irrational."}
+  ];
+  const GEOMETRY_MEMBERSHIP_BANK = [
+    {level:"Foundation",v:"√144",all:["Natural","Whole","Integer","Rational","Real"],why:"√144 = 12, so the exact length belongs to every nested rational family through Real."},
+    {level:"Core",v:"3√5",all:["Irrational","Real"],why:"3√5 is Irrational and therefore Real."},
+    {level:"Extended",v:"√50/5",all:["Irrational","Real"],why:"√50/5 = √2, an Irrational real number."}
+  ];
+  const GEOMETRY_COMPARE_BANK = [
+    {level:"Foundation",left:"√36",right:"5.9",answer:">",why:"√36 = 6, and 6 > 5.9.",hint:"Simplify the perfect square."},
+    {level:"Core",left:"√50",right:"7",answer:">",why:"√50 ≈ 7.071, so the exact length exceeds 7.",hint:"Compare 7² with 50."},
+    {level:"Extended",left:"3√2",right:"4.3",answer:"<",why:"3√2 ≈ 4.243, so it is less than 4.3.",hint:"Keep the exact radical until comparison is needed."}
+  ];
+
+  const ALGEBRA2_CLASSIFY_BANK = [
+    {level:"Foundation",v:"i",most:"Imaginary",all:["Imaginary","Complex"],why:"i is pure imaginary and therefore Complex."},
+    {level:"Foundation",v:"5i",most:"Imaginary",all:["Imaginary","Complex"],why:"5i has zero real part and nonzero imaginary part."},
+    {level:"Core",v:"3+2i",most:"Complex",all:["Complex"],why:"3+2i is a non-real Complex number."},
+    {level:"Core",v:"i²",most:"Integer",all:["Integer","Rational","Real","Complex"],why:"i² = −1. Simplify first: −1 is Integer, Rational, Real, and Complex."},
+    {level:"Core",v:"√(−9)",most:"Imaginary",all:["Imaginary","Complex"],why:"√(−9) = 3i, a pure imaginary Complex number."},
+    {level:"Extended",v:"(2+i)+(3−i)",most:"Natural",all:["Natural","Whole","Integer","Rational","Real","Complex"],why:"The imaginary parts cancel, leaving 5."},
+    {level:"Extended",v:"(1+i)(1−i)",most:"Natural",all:["Natural","Whole","Integer","Rational","Real","Complex"],why:"(1+i)(1−i)=1−i²=2."}
+  ];
+  const ALGEBRA2_MEMBERSHIP_BANK = [
+    {level:"Foundation",v:"−4",all:["Integer","Rational","Real","Complex"],why:"Every real number is also Complex."},
+    {level:"Core",v:"−7i",all:["Imaginary","Complex"],why:"−7i is pure imaginary and Complex."},
+    {level:"Core",v:"4−3i",all:["Complex"],why:"A nonzero real and imaginary part makes this non-real Complex."},
+    {level:"Extended",v:"i⁴",all:["Natural","Whole","Integer","Rational","Real","Complex"],why:"i⁴ = 1, so the simplified value belongs to the full real-number chain and Complex."}
+  ];
 
   const CLASSIFY_BANK = [
     {level:"Foundation",v:"25",most:"Natural",all:["Natural","Whole","Integer","Rational","Real"],why:"25 is a counting number. Natural is the smallest set that contains it."},
@@ -1293,7 +1392,12 @@
     accuracy:document.getElementById("accuracyLabel"),
     fill:document.getElementById("progressFill"),
     strategy:document.getElementById("strategyText"),
+    course:document.getElementById("courseMode"),
     pathway:document.getElementById("pathwaySelect"),
+    returnLink:document.getElementById("returnToLesson"),
+    gameTitle:document.getElementById("gameTitle"),
+    missionHelp:document.getElementById("missionHelp"),
+    referenceTitle:document.getElementById("referenceTitle"),
     size:document.getElementById("roundSize"),
     best:document.getElementById("bestScore"),
     mastery:document.getElementById("mastery"),
@@ -1306,7 +1410,11 @@
     resetBest:document.getElementById("resetBestBtn")
   };
 
-  const BEST_KEY = "khaemenes-prealgebra-u01-l01-number-family-game-v2";
+  const params=new URLSearchParams(location.search);
+  const requestedCourse=params.get("course");
+  if(COURSE_CONFIG[requestedCourse])el.course.value=requestedCourse;
+  const modeKey=()=>COURSE_CONFIG[el.course.value]?.key||"prealgebra";
+  const bestKey=()=>`khaemenes-math-number-family-${modeKey()}-v3`;
   let timers = [];
   let deck = [];
   let index = 0;
@@ -1430,13 +1538,28 @@
     }
 
     const allowed=allowedLevels(el.pathway.value);
-    const c=CLASSIFY_BANK.filter(x=>allowed.has(x.level)).map(x=>({...x,type:"specific"}));
-    const m=MEMBERSHIP_BANK.filter(x=>allowed.has(x.level)).map(x=>({...x,type:"membership"}));
-    const p=COMPARE_BANK.filter(x=>allowed.has(x.level)).map(x=>({...x,type:"compare"}));
+    const course=el.course.value;
+    let classify=CLASSIFY_BANK,membership=MEMBERSHIP_BANK,compare=COMPARE_BANK;
+    if(course==="algebra1"){
+      classify=[...CLASSIFY_BANK,...ALGEBRA1_CLASSIFY_BANK];
+      membership=[...MEMBERSHIP_BANK,...ALGEBRA1_MEMBERSHIP_BANK];
+      compare=[...COMPARE_BANK,...ALGEBRA1_COMPARE_BANK];
+    }else if(course==="geometry"){
+      classify=[...GEOMETRY_CLASSIFY_BANK];
+      membership=[...GEOMETRY_MEMBERSHIP_BANK];
+      compare=[...GEOMETRY_COMPARE_BANK];
+    }else if(course==="algebra2"){
+      classify=[...ALGEBRA2_CLASSIFY_BANK];
+      membership=[...ALGEBRA2_MEMBERSHIP_BANK];
+      compare=[];
+    }
+    const c=classify.filter(x=>allowed.has(x.level)).map(x=>({...x,type:"specific"}));
+    const m=membership.filter(x=>allowed.has(x.level)).map(x=>({...x,type:"membership"}));
+    const p=compare.filter(x=>allowed.has(x.level)).map(x=>({...x,type:"compare"}));
 
-    const desiredSpecific=Math.max(5,Math.round(count*.55));
-    const desiredMembership=Math.max(2,Math.round(count*.25));
-    const desiredCompare=Math.max(2,count-desiredSpecific-desiredMembership);
+    const desiredCompare=p.length?Math.max(2,Math.round(count*.20)):0;
+    const desiredMembership=Math.max(2,Math.round(count*.30));
+    const desiredSpecific=Math.max(1,count-desiredMembership-desiredCompare);
 
     const takeRepeated=(pool,n)=>{
       const out=[];
@@ -1447,7 +1570,7 @@
     return shuffle([
       ...takeRepeated(c,desiredSpecific),
       ...takeRepeated(m,desiredMembership),
-      ...takeRepeated(p,desiredCompare)
+      ...(desiredCompare?takeRepeated(p,desiredCompare):[])
     ]).slice(0,count);
   }
 
@@ -1525,7 +1648,29 @@
     updateStats();
   }
 
+  function updateCourseMode(){
+    const cfg=COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;
+    const isComplex=el.course.value==="algebra2";
+    document.querySelectorAll(".complex-choice").forEach(node=>node.hidden=!isComplex);
+    el.gameTitle.textContent=`${cfg.label} · ${cfg.mode}`;
+    el.missionHelp.textContent=cfg.context;
+    el.referenceTitle.textContent=`${cfg.label} Number System Field Guide`;
+    el.returnLink.href=cfg.returnHref;
+    el.returnLink.textContent=cfg.returnLabel;
+    const lesson=params.get("lesson");
+    if(el.course.value==="geometry" && lesson==="u06-l01"){
+      el.returnLink.href="../../../geometry/units/unit-06/lessons/lesson-01-pythagorean-theorem-its-converse.html";
+      el.returnLink.textContent="Return to Geometry U06-L01";
+    }
+    if(el.course.value==="algebra2" && lesson==="u02-l07"){
+      el.returnLink.href="../../../algebra-2/units/unit-02/lessons/lesson-07-conjugates-modulus-complex-plane.html";
+      el.returnLink.textContent="Return to Algebra II U02-L07";
+    }
+    updateBest();
+  }
+
   function startRound(source=null){
+    updateCourseMode();
     deck=buildRound(source);
     index=0;
     score=0;
@@ -1673,7 +1818,7 @@
 
   function bestValue(){
     try{
-      const v=Number(localStorage.getItem(BEST_KEY));
+      const v=Number(localStorage.getItem(bestKey()));
       return Number.isFinite(v)?v:null;
     }catch(_){return null}
   }
@@ -1686,7 +1831,7 @@
   function saveBest(p){
     try{
       const old=bestValue();
-      if(old===null||p>old)localStorage.setItem(BEST_KEY,String(p));
+      if(old===null||p>old)localStorage.setItem(bestKey(),String(p));
     }catch(_){}
     updateBest();
   }
@@ -1703,8 +1848,8 @@
     el.masteryTitle.textContent=percent>=80?"Lesson-game mastery passed":"Keep building the family tree";
 
     el.masteryText.textContent=percent>=80
-      ? `You solved ${correct} of ${attempts} mixed Lesson 1 missions correctly and met the 80% mastery target. Return to the lesson for worked examples and the 20-question assignment.`
-      : `You solved ${correct} of ${attempts} missions correctly. Review the missed classifications and animated instruction, then retry until the family relationships feel automatic.`;
+      ? `You solved ${correct} of ${attempts} ${COURSE_CONFIG[el.course.value].label} missions correctly and met the 80% mastery target. Return to the mapped lesson for the full instructional sequence.`
+      : `You solved ${correct} of ${attempts} missions correctly. Review the missed classifications and reasoning, then retry until the number-system relationships feel automatic.`;
 
     el.review.disabled=missed.length===0;
     el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";
@@ -1716,12 +1861,13 @@
   el.hint.addEventListener("click",hint);
   el.newRound.addEventListener("click",()=>startRound());
   el.review.addEventListener("click",()=>{if(missed.length)startRound(missed)});
+  el.course.addEventListener("change",()=>{const u=new URL(location.href);u.searchParams.set("course",el.course.value);history.replaceState(null,"",u);startRound()});
   el.pathway.addEventListener("change",()=>startRound());
   el.size.addEventListener("change",()=>startRound());
   el.print.addEventListener("click",()=>window.print());
 
   el.resetBest.addEventListener("click",()=>{
-    try{localStorage.removeItem(BEST_KEY)}catch(_){}
+    try{localStorage.removeItem(bestKey())}catch(_){}
     updateBest();
     setFeedback("","Best score reset.","The saved game mastery score on this device was cleared.");
   });
