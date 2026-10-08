@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Lesson 5 Order of Operations Game: Operation Stepper Challenge. Tap the next legal operation using PEMDAS and left-to-right reasoning.">
-<title>Lesson 5 · Operation Stepper Challenge</title>
+<meta name="description" content="Khaemenes Mathematics shared Operation Stepper: progressive evaluation order for Pre-Algebra, Algebra I, Geometry formulas, and Algebra II function composition.">
+<title>Operation Stepper · Khaemenes Mathematics Shared Game</title>
 <style>
 :root{
   --bg:#090b10;--panel:#141a22;--panel2:#10161e;--ink:#f7f1e3;--muted:#c8c1b3;
@@ -55,12 +55,12 @@ footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
 <body>
 <div class="shell">
 <header class="topbar">
-<div class="brand"><div class="seal" aria-hidden="true"><span>PEM</span></div><div><p class="kicker">Mathematics · Lesson 5</p><p class="crumb">Order of Operations · Operation Stepper Challenge</p></div></div>
+<div class="brand"><div class="seal" aria-hidden="true"><span>PEM</span></div><div><p class="kicker" id="courseKicker">Mathematics · Pre-Algebra</p><p class="crumb" id="courseCrumb">Order of Operations · Operation Stepper Challenge</p></div></div>
 <div class="actions"><button class="ghost" id="printBtn" type="button">Print reference</button><button class="ghost" id="resetBestBtn" type="button">Reset best</button></div>
 </header>
 <section class="hero">
-<div class="eyebrow">Operation Stepper Challenge</div><h1>Tap the next legal move.</h1>
-<p>Do not race to the final answer. At each step, choose the operation that is legally next under <strong>PEMDAS</strong>, including the crucial left-to-right rule for multiplication/division and addition/subtraction.</p>
+<div class="eyebrow">Operation Stepper Challenge</div><h1 id="modeTitle">Tap the next legal move.</h1>
+<p id="modeDescription">Do not race to the final answer. At each step, choose the operation that is legally next under <strong>PEMDAS</strong>, including the crucial left-to-right rule for multiplication/division and addition/subtraction.</p>
 <div class="rules">
 <div class="rule"><b>P · Parentheses</b><small>Simplify grouped expressions first.</small></div>
 <div class="rule"><b>E · Exponents</b><small>Evaluate powers after grouping.</small></div>
@@ -71,7 +71,7 @@ footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
 <section class="panel play">
 <div class="status"><div><div class="progress-label"><span id="roundLabel">Expression 1 of 12</span><span id="accuracyLabel">Accuracy 0%</span></div><div class="track"><div class="fill" id="progressFill"></div></div></div><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="streak">0</b><span>Streak</span></div></div>
 
-<div class="stage"><div class="inside"><div class="label">Current expression</div><div class="expression" id="expression"></div><div class="question">Which operation must be performed next?</div></div></div>
+<div class="stage"><div class="inside"><div class="label" id="expressionContext">Current expression</div><div class="expression" id="expression"></div><div class="question">Which operation must be performed next?</div></div></div>
 <div class="op-grid" id="opGrid"></div>
 <div class="row"><button class="secondary" id="hintBtn" type="button">Rule hint</button><button class="secondary" id="nextBtn" type="button" hidden>Next expression →</button></div>
 
@@ -82,17 +82,28 @@ footer{text-align:center;color:#847e73;font-size:.78rem;padding:26px 0 0}
 </section>
 
 <aside class="panel side">
-<h2>PEMDAS Precision Guide</h2>
+<h2 id="guideTitle">PEMDAS Precision Guide</h2>
 <div class="concept"><b>1 · Parentheses</b><span>Work inside grouping symbols before outside operations.</span></div>
 <div class="concept"><b>2 · Exponents</b><span>Evaluate powers after grouped work is simplified.</span></div>
 <div class="concept"><b>3 · Multiply / Divide</b><span>Equal priority. Perform whichever occurs first from the left.</span></div>
 <div class="concept"><b>4 · Add / Subtract</b><span>Equal priority. Perform whichever occurs first from the left.</span></div>
 <div class="tip"><strong>Common error</strong><p id="strategyText">PEMDAS does not mean multiplication always comes before division or addition always before subtraction.</p></div>
-<div class="controls"><label for="roundSize">Round length</label><select id="roundSize"><option value="8">8 expressions</option><option value="12" selected>12 expressions</option><option value="16">16 expressions</option></select></div>
+<div class="controls">
+<label for="courseMode">Course level</label>
+<select id="courseMode">
+<option value="prealgebra">Pre-Algebra · Order of Operations</option>
+<option value="algebra1">Algebra I · Formula Evaluation</option>
+<option value="geometry">Geometry · Formula Evaluation</option>
+<option value="algebra2">Algebra II · Function Composition</option>
+</select>
+<label for="roundSize">Round length</label>
+<select id="roundSize"><option value="8">8 expressions</option><option value="12" selected>12 expressions</option><option value="16">16 expressions</option></select>
+<a class="ghost" id="returnToLesson" href="../../../pre-algebra/units/unit-01/lessons/lesson-05-order-operations.html">Return to mapped lesson</a>
+</div>
 <p class="best" id="bestScore">Best mastery score: —</p>
 </aside>
 </main>
-<footer>Lesson 5 · Order of Operations · PEMDAS · Left-to-right reasoning · Standalone HTML/CSS/vanilla JavaScript</footer>
+<footer>Khaemenes Mathematics Shared Game · Operation Stepper · Progressive evaluation reasoning · 80% mastery · No external dependencies</footer>
 </div>
 <script>
 (()=>{
@@ -115,24 +126,74 @@ const BANK=[
 {start:"16 − 8 ÷ 2 + 3",steps:[{ops:["8 ÷ 2"],next:"16 − 4 + 3",why:"Division first."},{ops:["16 − 4"],next:"12 + 3",why:"Subtraction and addition tie; move left to right."},{ops:["12 + 3"],next:"15",why:"Add last."}]},
 {start:"3 × (4 + 2²)",steps:[{ops:["2²"],next:"3 × (4 + 4)",why:"Inside parentheses, the exponent has priority."},{ops:["4 + 4"],next:"3 × 8",why:"Finish simplifying the parentheses."},{ops:["3 × 8"],next:"24",why:"Multiply last."}]}
 ];
-const el={expr:document.getElementById("expression"),grid:document.getElementById("opGrid"),steps:document.getElementById("stepList"),hint:document.getElementById("hintBtn"),next:document.getElementById("nextBtn"),feedback:document.getElementById("feedback"),score:document.getElementById("score"),streak:document.getElementById("streak"),round:document.getElementById("roundLabel"),acc:document.getElementById("accuracyLabel"),fill:document.getElementById("progressFill"),size:document.getElementById("roundSize"),best:document.getElementById("bestScore"),mastery:document.getElementById("mastery"),mark:document.getElementById("masteryMark"),mTitle:document.getElementById("masteryTitle"),mText:document.getElementById("masteryText"),newRound:document.getElementById("newRoundBtn"),review:document.getElementById("reviewBtn"),print:document.getElementById("printBtn"),resetBest:document.getElementById("resetBestBtn")};
-const BEST="khaemenes_operation_stepper_best_v1";let deck=[],index=0,step=0,score=0,correctExpr=0,attemptedExpr=0,streak=0,missed=[],madeError=false;
+
+const ALGEBRA1_BANK=[
+{context:"Formula substitution · evaluate after values have been substituted",start:"3 × (4 + 2²) − 5",steps:[{ops:["2²"],next:"3 × (4 + 4) − 5",why:"Evaluate the exponent inside the grouping first."},{ops:["4 + 4"],next:"3 × 8 − 5",why:"Finish the grouped expression."},{ops:["3 × 8"],next:"24 − 5",why:"Multiply before subtracting."},{ops:["24 − 5"],next:"19",why:"Subtract last."}]},
+{context:"Expression evaluation · preserve precedence after substitution",start:"2 × 5² + 18 ÷ 3",steps:[{ops:["5²"],next:"2 × 25 + 18 ÷ 3",why:"Exponents come before multiplication and division."},{ops:["2 × 25"],next:"50 + 18 ÷ 3",why:"Multiplication and division share priority; work left to right."},{ops:["18 ÷ 3"],next:"50 + 6",why:"Complete division before addition."},{ops:["50 + 6"],next:"56",why:"Add last."}]},
+{context:"Formula evaluation · grouping and exponent structure",start:"48 ÷ (3 + 5) + 2³",steps:[{ops:["3 + 5"],next:"48 ÷ 8 + 2³",why:"Resolve the grouping first."},{ops:["2³"],next:"48 ÷ 8 + 8",why:"Evaluate the exponent before division or addition."},{ops:["48 ÷ 8"],next:"6 + 8",why:"Divide before adding."},{ops:["6 + 8"],next:"14",why:"Add last."}]},
+{context:"Expression evaluation · power of a grouped quantity",start:"4 × (6 − 2)² ÷ 8",steps:[{ops:["6 − 2"],next:"4 × 4² ÷ 8",why:"Simplify the grouped quantity first."},{ops:["4²"],next:"4 × 16 ÷ 8",why:"Evaluate the exponent next."},{ops:["4 × 16"],next:"64 ÷ 8",why:"Multiplication and division tie; work left to right."},{ops:["64 ÷ 8"],next:"8",why:"Complete the division."}]},
+{context:"Formula substitution · grouped difference before scaling",start:"7 + 3 × (10 − 4) ÷ 2",steps:[{ops:["10 − 4"],next:"7 + 3 × 6 ÷ 2",why:"Grouping first."},{ops:["3 × 6"],next:"7 + 18 ÷ 2",why:"Multiply and divide left to right."},{ops:["18 ÷ 2"],next:"7 + 9",why:"Finish division before addition."},{ops:["7 + 9"],next:"16",why:"Add last."}]},
+{context:"Expression evaluation · exponent and grouped sum",start:"6² ÷ (4 + 2) + 3",steps:[{ops:["4 + 2"],next:"6² ÷ 6 + 3",why:"Resolve grouping first."},{ops:["6²"],next:"36 ÷ 6 + 3",why:"Evaluate the exponent next."},{ops:["36 ÷ 6"],next:"6 + 3",why:"Divide before addition."},{ops:["6 + 3"],next:"9",why:"Add last."}]}
+];
+
+const GEOMETRY_BANK=[
+{context:"Heron’s formula · compute semiperimeter for sides 5, 5, 6",start:"(5 + 5 + 6) ÷ 2",steps:[{ops:["5 + 5"],next:"(10 + 6) ÷ 2",why:"Work inside the grouping symbol first."},{ops:["10 + 6"],next:"16 ÷ 2",why:"Finish the grouped sum."},{ops:["16 ÷ 2"],next:"8",why:"Divide by 2 to obtain the semiperimeter."}]},
+{context:"Heron’s formula · evaluate the radicand after s = 8",start:"8 × (8 − 5) × 3 × 2",steps:[{ops:["8 − 5"],next:"8 × 3 × 3 × 2",why:"Resolve the grouped difference before multiplication."},{ops:["8 × 3"],next:"24 × 3 × 2",why:"Multiplication ties with multiplication; work left to right."},{ops:["24 × 3"],next:"72 × 2",why:"Continue left to right."},{ops:["72 × 2"],next:"144",why:"The radicand is 144; the lesson can then take √144."}]},
+{context:"Triangle area · base 12 and height 7",start:"12 × 7 ÷ 2",steps:[{ops:["12 × 7"],next:"84 ÷ 2",why:"Multiplication and division have equal priority; work left to right."},{ops:["84 ÷ 2"],next:"42",why:"Divide by 2 to finish the area calculation."}]},
+{context:"Coordinate-area shoelace · positive diagonal sum",start:"2 × 5 + 6 × 1 + 4 × 3",steps:[{ops:["2 × 5"],next:"10 + 6 × 1 + 4 × 3",why:"Perform multiplication before addition, starting at the left."},{ops:["6 × 1"],next:"10 + 6 + 4 × 3",why:"Continue the remaining multiplication."},{ops:["4 × 3"],next:"10 + 6 + 12",why:"Finish multiplication before adding."},{ops:["10 + 6"],next:"16 + 12",why:"Addition ties with addition; work left to right."},{ops:["16 + 12"],next:"28",why:"Complete the sum."}]},
+{context:"Coordinate-area shoelace · opposite diagonal sum",start:"5 × 6 + 1 × 4 + 3 × 2",steps:[{ops:["5 × 6"],next:"30 + 1 × 4 + 3 × 2",why:"Multiplication before addition."},{ops:["1 × 4"],next:"30 + 4 + 3 × 2",why:"Continue multiplication from left to right."},{ops:["3 × 2"],next:"30 + 4 + 6",why:"Finish multiplication first."},{ops:["30 + 4"],next:"34 + 6",why:"Add from left to right."},{ops:["34 + 6"],next:"40",why:"Complete the sum."}]},
+{context:"Coordinate area · difference then halve",start:"52 − 34 ÷ 2",steps:[{ops:["34 ÷ 2"],next:"52 − 17",why:"Division has priority over subtraction."},{ops:["52 − 17"],next:"35",why:"Subtract after the division is complete."}]}
+];
+
+const ALGEBRA2_BANK=[
+{context:"Function composition · f(x)=2x+3, g(x)=x²+1; evaluate f(g(3))",start:"2 × (3² + 1) + 3",steps:[{ops:["3²"],next:"2 × (9 + 1) + 3",why:"Evaluate the inner function’s exponent first."},{ops:["9 + 1"],next:"2 × 10 + 3",why:"Finish the inner function value before applying the outer function."},{ops:["2 × 10"],next:"20 + 3",why:"Apply the outer multiplication."},{ops:["20 + 3"],next:"23",why:"Complete the outer addition."}]},
+{context:"Function composition · f(x)=x²+4, g(x)=3x−1; evaluate f(g(2))",start:"(3 × 2 − 1)² + 4",steps:[{ops:["3 × 2"],next:"(6 − 1)² + 4",why:"Evaluate multiplication inside the inner function first."},{ops:["6 − 1"],next:"5² + 4",why:"Finish g(2) before squaring it in f."},{ops:["5²"],next:"25 + 4",why:"Evaluate the outer exponent."},{ops:["25 + 4"],next:"29",why:"Complete the outer addition."}]},
+{context:"Function composition · f(x)=5x−2; evaluate f(3)²",start:"(5 × 3 − 2)²",steps:[{ops:["5 × 3"],next:"(15 − 2)²",why:"Evaluate multiplication inside the function value first."},{ops:["15 − 2"],next:"13²",why:"Finish the grouped function value."},{ops:["13²"],next:"169",why:"Square only after the inner evaluation is complete."}]},
+{context:"Nested evaluation · h(x)=x²+2, then scale and shift",start:"3 × (4² + 2) − 1",steps:[{ops:["4²"],next:"3 × (16 + 2) − 1",why:"Evaluate the inner exponent first."},{ops:["16 + 2"],next:"3 × 18 − 1",why:"Finish the inner function value."},{ops:["3 × 18"],next:"54 − 1",why:"Apply the outer scale."},{ops:["54 − 1"],next:"53",why:"Apply the final shift."}]},
+{context:"Function composition · rational outer rule after inner evaluation",start:"24 ÷ (2² + 2) + 1",steps:[{ops:["2²"],next:"24 ÷ (4 + 2) + 1",why:"Evaluate the inner exponent first."},{ops:["4 + 2"],next:"24 ÷ 6 + 1",why:"Finish the inner grouped value."},{ops:["24 ÷ 6"],next:"4 + 1",why:"Apply the outer division."},{ops:["4 + 1"],next:"5",why:"Complete the outer addition."}]},
+{context:"Composition structure · grouped input transformed before division",start:"(4 + 2)² ÷ 3",steps:[{ops:["4 + 2"],next:"6² ÷ 3",why:"Evaluate the inner grouped input first."},{ops:["6²"],next:"36 ÷ 3",why:"Apply the exponent to the completed inner value."},{ops:["36 ÷ 3"],next:"12",why:"Complete the outer division."}]}
+];
+
+const COURSE_CONFIG={
+ prealgebra:{label:"Pre-Algebra",crumb:"Order of Operations & Evaluating Expressions",title:"Tap the next legal move.",description:"Choose the operation that is legally next under PEMDAS, including left-to-right reasoning for equal-priority operations.",guide:"PEMDAS Precision Guide",returnHref:"../../../pre-algebra/units/unit-01/lessons/lesson-05-order-operations.html",returnLabel:"Return to Pre-Algebra U01-L05",bank:BANK,key:"prealgebra"},
+ algebra1:{label:"Algebra I",crumb:"Formula Evaluation & Substitution",title:"Evaluate structure before arithmetic.",description:"After substitution, preserve grouping, exponents, and equal-priority left-to-right rules so an algebraic formula keeps its intended meaning.",guide:"Algebra I Evaluation Guide",returnHref:"../../../algebra-1/units/unit-02/lessons/lesson-02-evaluating-expressions-formula-substitution.html",returnLabel:"Return to Algebra I U02-L02",bank:ALGEBRA1_BANK,key:"algebra1"},
+ geometry:{label:"Geometry",crumb:"Heron’s Formula & Coordinate Area",title:"Evaluate geometric formulas in legal order.",description:"Use operation order to compute semiperimeters, area expressions, and coordinate-area components without changing the geometry represented by the formula.",guide:"Geometry Formula Evaluation Guide",returnHref:"../../../geometry/units/unit-10/lessons/u10-l03.html",returnLabel:"Return to Geometry U10-L03",bank:GEOMETRY_BANK,key:"geometry"},
+ algebra2:{label:"Algebra II",crumb:"Function Composition & Decomposition",title:"Evaluate from the inside out.",description:"Treat composition as structured evaluation: complete the inner function value, then apply the outer function without violating operation order.",guide:"Composition Evaluation Guide",returnHref:"../../../algebra-2/units/unit-01/lessons/u01-l04.html",returnLabel:"Return to Algebra II U01-L04",bank:ALGEBRA2_BANK,key:"algebra2"}
+};
+const params=new URLSearchParams(location.search);
+
+const el={expr:document.getElementById("expression"),context:document.getElementById("expressionContext"),grid:document.getElementById("opGrid"),steps:document.getElementById("stepList"),hint:document.getElementById("hintBtn"),next:document.getElementById("nextBtn"),feedback:document.getElementById("feedback"),score:document.getElementById("score"),streak:document.getElementById("streak"),round:document.getElementById("roundLabel"),acc:document.getElementById("accuracyLabel"),fill:document.getElementById("progressFill"),course:document.getElementById("courseMode"),size:document.getElementById("roundSize"),best:document.getElementById("bestScore"),mastery:document.getElementById("mastery"),mark:document.getElementById("masteryMark"),mTitle:document.getElementById("masteryTitle"),mText:document.getElementById("masteryText"),newRound:document.getElementById("newRoundBtn"),review:document.getElementById("reviewBtn"),print:document.getElementById("printBtn"),resetBest:document.getElementById("resetBestBtn"),kicker:document.getElementById("courseKicker"),crumb:document.getElementById("courseCrumb"),modeTitle:document.getElementById("modeTitle"),modeDescription:document.getElementById("modeDescription"),guideTitle:document.getElementById("guideTitle"),returnLink:document.getElementById("returnToLesson")};
+if(COURSE_CONFIG[params.get("course")])el.course.value=params.get("course");
+const cfg=()=>COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;
+const bestKey=()=>`khaemenes-math-operation-stepper-${cfg().key}-v3`;
+let deck=[],index=0,step=0,score=0,correctExpr=0,attemptedExpr=0,streak=0,missed=[],madeError=false;
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function best(){try{const v=Number(localStorage.getItem(BEST));return Number.isFinite(v)?v:null}catch(_){return null}}
+function best(){try{const v=Number(localStorage.getItem(bestKey()));return Number.isFinite(v)?v:null}catch(_){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
-function saveBest(p){try{const old=best();if(old===null||p>old)localStorage.setItem(BEST,String(p))}catch(_){}updateBest()}
+function saveBest(p){try{const old=best();if(old===null||p>old)localStorage.setItem(bestKey(),String(p))}catch(_){}updateBest()}
 function setFeedback(k,t,p){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${p}</p>`}
-function start(source=null){const count=Math.max(6,Math.min(16,Number(el.size.value)||12));const pool=source&&source.length?source:BANK;const arr=[];while(arr.length<count)arr.push(...shuffle(pool));deck=arr.slice(0,count);index=0;step=0;score=0;correctExpr=0;attemptedExpr=0;streak=0;missed=[];el.mastery.classList.remove("show");renderExpr();updateStats()}
+function updateMode(){
+ const c=cfg();
+ el.kicker.textContent=`Mathematics · ${c.label}`;
+ el.crumb.textContent=`${c.crumb} · Operation Stepper`;
+ el.modeTitle.textContent=c.title;
+ el.modeDescription.textContent=c.description;
+ el.guideTitle.textContent=c.guide;
+ el.returnLink.href=c.returnHref;
+ el.returnLink.textContent=c.returnLabel;
+ updateBest();
+}
+function start(source=null){updateMode();const count=Math.max(6,Math.min(16,Number(el.size.value)||12));const pool=source&&source.length?source:cfg().bank;const arr=[];while(arr.length<count)arr.push(...shuffle(pool));deck=arr.slice(0,count);index=0;step=0;score=0;correctExpr=0;attemptedExpr=0;streak=0;missed=[];el.mastery.classList.remove("show");renderExpr();updateStats()}
 function current(){return deck[index]}
-function renderExpr(){step=0;madeError=false;el.expr.textContent=current().start;el.steps.innerHTML='<div class="step-item">Choose the next legal operation to begin.</div>';el.next.hidden=true;el.hint.disabled=false;setFeedback("","Ready.","Choose the operation that must be performed next.");renderOps();updateStats()}
+function renderExpr(){step=0;madeError=false;el.context.textContent=current().context||"Current expression";el.expr.textContent=current().start;el.steps.innerHTML='<div class="step-item">Choose the next legal operation to begin.</div>';el.next.hidden=true;el.hint.disabled=false;setFeedback("","Ready.","Choose the operation that must be performed next.");renderOps();updateStats()}
 function candidates(expression){const tokens=[];const re=/\([^()]*\)|\d+²|\d+\s*[×÷]\s*\d+|\d+\s*[+−]\s*\d+/g;let m;while((m=re.exec(expression)))tokens.push(m[0]);return tokens}
 function renderOps(){const c=current(),s=c.steps[step];if(!s)return;const expr=el.expr.textContent;let opts=candidates(expr);const correct=s.ops[0];if(!opts.includes(correct))opts.unshift(correct);opts=[...new Set(opts)].slice(0,6);el.grid.innerHTML="";opts.forEach(op=>{const b=document.createElement("button");b.type="button";b.className="op-btn";b.textContent=op;b.addEventListener("click",()=>choose(op,b));el.grid.appendChild(b)})}
 function choose(op,b){const c=current(),s=c.steps[step];if(!s)return;if(s.ops.includes(op)){score+=100;b.classList.add("correct");const old=el.expr.textContent;el.expr.textContent=s.next;const item=document.createElement("div");item.className="step-item";item.textContent=`${old} → ${s.next}`;el.steps.appendChild(item);setFeedback("good","Legal step.",s.why);step++;if(step>=c.steps.length){attemptedExpr++;if(!madeError){correctExpr++;streak++;score+=100}else streak=0;el.grid.innerHTML="";el.next.hidden=false;el.next.textContent=index===deck.length-1?"See round results →":"Next expression →";el.hint.disabled=true}else renderOps();updateStats()}else{madeError=true;streak=0;setFeedback("bad","That operation is not next.","Check grouping, exponents, then equal-priority operations from left to right.");updateStats()}}
 function hint(){const s=current().steps[step];if(s)setFeedback("","Rule hint",s.why)}
 function updateStats(){const total=deck.length||1,a=attemptedExpr?Math.round(correctExpr/attemptedExpr*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Expression ${Math.min(index+1,total)} of ${total}`;el.acc.textContent=`Accuracy ${a}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
 function next(){if(step<current().steps.length)return;if(index>=deck.length-1){finish();return}index++;renderExpr()}
-function finish(){index=deck.length;updateStats();el.fill.style.width="100%";const p=attemptedExpr?Math.round(correctExpr/attemptedExpr*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Mastery gate passed":"Keep stepping carefully";el.mText.textContent=p>=80?`You completed ${correctExpr} of ${attemptedExpr} expressions without an illegal step and met the 80% mastery target.`:`You completed ${correctExpr} of ${attemptedExpr} expressions without an illegal step. Review left-to-right reasoning and retry.`;const misses=deck.filter((_,i)=>false);el.review.disabled=true;el.review.textContent="Review by replaying round";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
-el.hint.addEventListener("click",hint);el.next.addEventListener("click",next);el.newRound.addEventListener("click",()=>start());el.size.addEventListener("change",()=>start());el.print.addEventListener("click",()=>window.print());el.resetBest.addEventListener("click",()=>{try{localStorage.removeItem(BEST)}catch(_){}updateBest();setFeedback("","Best score reset.","The saved best score on this device was cleared.")});
+function finish(){index=deck.length;updateStats();el.fill.style.width="100%";const p=attemptedExpr?Math.round(correctExpr/attemptedExpr*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Mastery gate passed":"Keep stepping carefully";el.mText.textContent=p>=80?`You completed ${correctExpr} of ${attemptedExpr} ${cfg().label} expressions without an illegal step and met the 80% mastery target.`:`You completed ${correctExpr} of ${attemptedExpr} expressions without an illegal step. Review the evaluation structure for this course mode and retry.`;const misses=deck.filter((_,i)=>false);el.review.disabled=true;el.review.textContent="Review by replaying round";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+el.hint.addEventListener("click",hint);el.next.addEventListener("click",next);el.course.addEventListener("change",()=>{const u=new URL(location.href);u.searchParams.set("course",el.course.value);history.replaceState(null,"",u);start()});el.newRound.addEventListener("click",()=>start());el.size.addEventListener("change",()=>start());el.print.addEventListener("click",()=>window.print());el.resetBest.addEventListener("click",()=>{try{localStorage.removeItem(bestKey())}catch(_){}updateBest();setFeedback("","Best score reset.","The saved best score on this device was cleared.")});
 updateBest();start();
 })();
 </script>

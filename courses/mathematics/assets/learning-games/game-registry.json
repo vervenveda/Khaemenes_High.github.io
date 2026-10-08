@@ -226,6 +226,56 @@
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
       "scope_note": "Geometry uses LCM only as a rotational-cycle application. Algebra I extends GCF to monomials; Algebra II extends LCM to least common denominators. No duplicate game is created."
+    },
+    "operation-stepper": {
+      "title": "Operation Stepper",
+      "canonical_path": "courses/mathematics/assets/learning-games/operation-stepper/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-01-05-operation-stepper/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "01",
+          "lesson": "05",
+          "lesson_title": "Order of Operations & Evaluating Expressions",
+          "mode": "order-of-operations",
+          "query": "?course=prealgebra&unit=01&lesson=05",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "02",
+          "lesson": "02",
+          "lesson_title": "Evaluating Expressions & Formula Substitution",
+          "mode": "formula-evaluation",
+          "query": "?course=algebra1&unit=02&lesson=02",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "10",
+          "lesson": "03",
+          "lesson_title": "Heron’s Formula and Coordinate Area",
+          "mode": "geometry-formulas",
+          "query": "?course=geometry&unit=10&lesson=u10-l03",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "01",
+          "lesson": "04",
+          "lesson_title": "Function Composition & Decomposition",
+          "mode": "function-composition",
+          "query": "?course=algebra2&unit=01&lesson=u01-l04",
+          "wired": true
+        }
+      ],
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "scope_note": "The shared game teaches evaluation sequence. Higher modes use formula and composition structure rather than merely larger arithmetic."
     }
   }
 }

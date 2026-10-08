@@ -58,3 +58,16 @@ The mastery loop remains synchronized:
 animated instruction → step-by-step game → immediate explanation → missed-expression review → 80% mastery → return to Lesson 5
 
 The lesson itself requires 16/20, or 80%, to unlock Lesson 6, so the game uses the same mastery standard.
+
+
+## Canonical Shared-Game Migration · Operation Stepper v3
+
+This shared Mathematics copy is canonical.
+
+Course modes:
+- `?course=prealgebra&unit=01&lesson=05` — numerical order of operations and simple expression evaluation
+- `?course=algebra1&unit=02&lesson=02` — formula substitution and algebraic expression evaluation
+- `?course=geometry&unit=10&lesson=u10-l03` — Heron’s formula and coordinate-area evaluation
+- `?course=algebra2&unit=01&lesson=u01-l04` — function composition evaluated from the inside out
+
+The legacy Pre-Algebra copy remains temporarily for rollback compatibility. It must not be deleted until the canonical shared route is verified in production.
