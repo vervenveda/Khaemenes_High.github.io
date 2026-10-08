@@ -18,6 +18,15 @@ assert.equal(2**2-4*2+4,0);assert.ok(2**2-4*1*5<0);
 assert.equal(Math.hypot(4-(-2),9-1),10);
 assert.deepEqual([(-2+4)/2,(1+9)/2],[1,5]);
 assert.deepEqual([(0+6)/2,(0+3)/2],[(4+2)/2,(0+3)/2]);
+// Confirm the revised checks retain valid keys and test the promised methods.
+const bankContext={window:{}};vm.createContext(bankContext);vm.runInContext(fs.readFileSync(`${root}/assets/question-bank.js`,'utf8'),bankContext);
+const revised=bankContext.window.ALGEBRA1_QUESTIONS.filter(q=>q.unit===10&&[5,6].includes(q.lesson));
+assert.equal(revised.length,10);assert.equal(new Set(revised.map(q=>q.prompt)).size,10);
+for(const q of revised){assert.equal(q.answer_text,q.options[q.answer]);assert.equal(new Set(q.options).size,4)}
+for(const x of [3,-5])assert.equal(3*(x+1)**2,48);
+for(const x of [2-Math.sqrt(6),2+Math.sqrt(6)])assert.ok(Math.abs(x*x-4*x-2)<1e-12);
+for(const x of [(3-Math.sqrt(13))/2,(3+Math.sqrt(13))/2])assert.ok(Math.abs(x*x-3*x-1)<1e-12);
+assert.equal(5**2-4*2*(-3),49);assert.equal((-6)**2-4*9,0);assert.equal(4**2-4*8,-16);
 class Node {
  constructor(tag='DIV'){this.tagName=tag;this.dataset={};this.attrs={};this.events={};this.children=[];this.value='';this.type='';this.textContent='';this.classList={add(){}};this.labels=[];}
  setAttribute(k,v){this.attrs[k]=v}getAttribute(k){return this.attrs[k]??null}
