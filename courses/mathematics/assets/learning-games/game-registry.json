@@ -617,6 +617,47 @@
           "wired": true
         }
       ]
+    },
+    "dividing-integers": {
+      "title": "Quotient Check · Dividing Integers",
+      "canonical_path": "courses/mathematics/assets/learning-games/dividing-integers/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-07-dividing-integers/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "02",
+          "lesson": "07",
+          "lesson_title": "Dividing Integers",
+          "mode": "integer-division",
+          "query": "?course=prealgebra&unit=02&lesson=07&mode=integer-division",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "03",
+          "lesson": "01",
+          "lesson_title": "Equality, Inverse Operations & Solution Verification",
+          "mode": "inverse-operations",
+          "query": "?course=algebra1&unit=03&lesson=01&mode=inverse-operations",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "04",
+          "lesson": "01",
+          "lesson_title": "Simplifying Rational Expressions & Restrictions",
+          "mode": "rational-restrictions",
+          "query": "?course=algebra2&unit=04&lesson=u04-l01&mode=rational-restrictions",
+          "wired": true
+        }
+      ],
+      "scope_note": "This game owns quotient structure, inverse verification, and divisor/denominator restrictions. Geometry is intentionally omitted because ratio, similarity, scale, and trigonometric-ratio progressions belong to later proportional-reasoning games. Sign Forge retains multiplication/division of rational expressions so subject ownership does not overlap."
     }
   }
 }

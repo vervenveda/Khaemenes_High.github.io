@@ -8,7 +8,7 @@ const COMPANIONS={
  l04:{game:"unit-02-04-integer-sum-lab",sharedGame:"integer-sum-lab",gameMode:"prealgebra",video:{id:"3LUTYhmltQY",title:"Adding Integers Using a Number Line",alignment:"core",note:"Core-aligned companion: reinforces integer addition through directional movement on a number line."}},
  l05:{game:"unit-02-05-opposite-shift",sharedGame:"opposite-shift",gameMode:"prealgebra"},
  l06:{game:"unit-02-06-sign-forge",sharedGame:"sign-forge",gameMode:"prealgebra",video:{id:"K9aN_GoATqI",title:"Multiplying Integers — Positive and Negative Numbers",alignment:"core",note:"Core-aligned companion: reinforces multiplication sign rules and products of positive and negative integers."}},
- l07:{game:"unit-02-07-dividing-integers",video:{id:"oUJkA7dlaUI",title:"Dividing Integers — Negative & Positive Numbers",alignment:"core",note:"Core-aligned companion: reinforces integer division sign rules and quotient reasoning."}},
+ l07:{game:"unit-02-07-dividing-integers",sharedGame:"dividing-integers",gameMode:"prealgebra",video:{id:"oUJkA7dlaUI",title:"Dividing Integers — Negative & Positive Numbers",alignment:"core",note:"Core-aligned companion: reinforces integer division sign rules and quotient reasoning."}},
  l08:{game:"unit-02-08-coordinated-mission-control",video:{id:"xXU8SS1BQUk",title:"Integers and the Coordinate Plane",alignment:"core",note:"Core-aligned companion: reinforces ordered pairs, signed coordinates, quadrants, and coordinate-plane applications."}}
 };
 function read(k){try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}}
