@@ -1,0 +1,32 @@
+/* Verve N Veda parchment surfaces; presentation only, no learner-state changes. */
+:root, html[data-theme], html.dark, body.light {
+  color-scheme: light !important;
+  --bg:#f4f0e7 !important; --bg2:#ece6da !important; --page:#f4f0e7 !important;
+  --bg-soft:#f8f5ed !important; --paper:#fffefa !important; --paper2:#f8f5ed !important;
+  --paper-2:#f8f5ed !important; --paper-soft:#f8f5ed !important;
+  --panel:#fffefa !important; --panel2:#f3eee3 !important; --surface:#fffefa !important;
+  --card:#fffefa !important; --ink:#20241f !important; --text:#20241f !important;
+  --muted:#596057 !important; --soft-line:#ddd4c4 !important; --line:#c8beab !important;
+  --darkline:#c8beab !important; --silver:#4d5853 !important; --silver-soft:#f8f5ed !important;
+  --steel:#596057 !important; --gold:#8b6529 !important; --gold2:#d8bd84 !important;
+  --gold-2:#d8bd84 !important; --blue:#315c7c !important; --green:#346349 !important;
+  --red:#963f46 !important; --danger:#963f46 !important; --success:#346349 !important;
+  --shadow:0 14px 34px rgba(57,45,28,.09) !important;
+}
+html, html:root:root body {background:#f4f0e7 !important; color:#20241f !important; color-scheme:light !important;}
+html:root:root body::before, html:root:root body::after {background:none !important;}
+html:root:root body :is(header,footer,aside,section,nav,.sidebar,.top,.hero,.unit-hero,.bench-hero,.exam-hero,.dark,.site-header,.quick-nav,.course-quick-nav,.breadcrumb,.course-breadcrumb,.app-header,.course-sidebar,.footer,.brand) {
+  background:#f3eee3 !important; color:#20241f !important; border-color:#c8beab !important;
+}
+html:root:root body :is(.panel,.panel2,.card,.lesson,.assignment,.question,.q,.choice,.option,.notice,.lab,.boss,.metric,.snapshot-item,.day-card,.unit-card,.week-card,.week-block,.requirement,.action-group,.content-main,.content-side,.score-panel,.student-work,.beta,.chat,.message,.chatbox,.dialog,.modal,.modal-content,.drawer,.menu-drawer,.course-shell,.workspace,.course-nav,.readout,.display,.start-card,.door,.course,.map-step,.map-card,.stat,.tool-card,.navBtn,.weekBtn,.tab) {
+  background:#fffefa !important; color:#20241f !important; border-color:#c8beab !important;
+}
+html:root:root body :is(h1,h2,h3,h4,h5,h6,p,label,summary,.lead,.comment,.small,.eyebrow,.kicker,.subline,.brand-copy,.brand-copy strong,.brand small,.brand strong,.hero p,.footer strong,.heading p,.heading h2,.panel h3,.card h3,.card h4,.metric strong) {color:#20241f !important;}
+html:root:root body :is(a,button,input,select,textarea,.btn,.button,.nav-button,.icon-button,.menu-link,.navlinks a,.top .btn.secondary) {color:#20241f !important;}
+html:root:root body :is(button,input,select,textarea,.btn,.button,.nav-button,.icon-button,.menu-link,.navlinks a) {background:#faf7ef !important; border-color:#bfb29c !important;}
+html:root:root body :is(.btn.primary,.button-primary,.btn.gold,button.primary,.navBtn.active,.weekBtn.active,.tab.active,[aria-current="page"]) {background:#ead9b6 !important; color:#20241f !important; border-color:#967342 !important;}
+html:root:root body :is(.good,.success,.correct) {background:#e7f0e5 !important;color:#285039 !important;}
+html:root:root body :is(.bad,.error,.incorrect) {background:#f8e8e5 !important;color:#83343c !important;}
+html:root:root body :is(th,td,pre,code,.tag,.chip,.pinned-chip) {color:#20241f !important; background:#f8f5ed !important; border-color:#c8beab !important;}
+html:root:root body :focus-visible {outline:3px solid #815c21 !important;outline-offset:3px;}
+@media print {html,html:root:root body {background:#fff !important;color:#111 !important;}}

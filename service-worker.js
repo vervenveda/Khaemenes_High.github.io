@@ -1,7 +1,8 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-design-v22-frontend-recovery-20261006";
+const CACHE_VERSION = "khaemenes-high-design-v23-parchment-20261008";
 const PRECACHE_FILES = [
+  "./assets/vervenveda-parchment.css",
   "./",
   "./index.html",
   "./README.md",

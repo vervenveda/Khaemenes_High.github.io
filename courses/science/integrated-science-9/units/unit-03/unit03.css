@@ -1,3 +1,4 @@
+@import url("../../../../../assets/vervenveda-parchment.css");
 
 :root{--u:#82d9d2;--u2:#df8f9a;--u3:#bea7ef;--warm:#f3c784;--cool:#87bde8}
 .unit-shell{width:min(var(--max),calc(100% - 2rem));margin:auto}.unit-hero{text-align:center;padding:clamp(4rem,9vw,7rem) 0 3rem}.unit-hero h1{font-size:clamp(2.5rem,7vw,5.2rem)}.unit-lead{max-width:900px;margin:auto;color:var(--muted);font-size:clamp(1rem,2vw,1.2rem)}.unit-nav,.lesson-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
