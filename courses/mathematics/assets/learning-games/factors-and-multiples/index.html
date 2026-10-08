@@ -830,7 +830,7 @@
     document.getElementById("lessonSync").innerHTML=`<strong>Mapped progression:</strong> ${cfg.context}`;
     document.querySelector(".kicker").textContent=`Khaemenes Mathematics · ${cfg.label}`;
     document.querySelector(".crumb").textContent=cfg.mode;
-    el.returnLinks.forEach((a,i)=>{a.href=cfg.returnHref;a.textContent=i===1?`← ${cfg.returnLabel}`:cfg.returnLabel;});
+    el.returnLinks.forEach((a,i)=>{a.href=cfg.returnHref;if(i===1)a.textContent=`← ${cfg.returnLabel}`;else if(i>1)a.textContent=cfg.returnLabel;});
     updateBest();
   }
 
