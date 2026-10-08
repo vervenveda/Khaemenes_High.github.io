@@ -28,3 +28,8 @@ then
 so students see that a negative sign outside absolute-value bars is different from a negative number inside the bars.
 
 The same Foundation / Core / Extended pathways and 80% mastery gate are included, matching the lesson’s pathway structure and mastery threshold.
+
+
+## Canonical Shared-Game Migration · Opposite Mirror v3
+
+Canonical shared path for Pre-Algebra U02-L02, Algebra I U04-L05/U04-L06, Geometry U02-L02, and Algebra II U01-L06. The legacy Pre-Algebra copy remains as rollback compatibility until live verification is complete.

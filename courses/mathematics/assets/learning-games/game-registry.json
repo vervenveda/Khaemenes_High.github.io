@@ -378,6 +378,64 @@
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "canonical-shared-wired-legacy-retained",
       "scope_note": "Progression is signed quantity → signed rate/slope → translation vector → vector components. Integer operation games remain separate to avoid duplication."
+    },
+    "opposite-mirror": {
+      "title": "Opposite Mirror",
+      "canonical_path": "courses/mathematics/assets/learning-games/opposite-mirror/index.html",
+      "status": "canonical-v3",
+      "mastery_target": 80,
+      "migration_state": "canonical-shared-wired-legacy-retained",
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "legacy_paths": [
+        "courses/mathematics/pre-algebra/learning-games/unit-02-02-opposite-mirror/index.html"
+      ],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "02",
+          "lesson": "02",
+          "lesson_title": "Opposites & Absolute Value",
+          "mode": "opposites-absolute-value",
+          "query": "?course=prealgebra&unit=02&lesson=02",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "04",
+          "lesson": "05",
+          "lesson_title": "Absolute Value Equations",
+          "mode": "absolute-value-equations",
+          "query": "?course=algebra1&unit=04&lesson=05",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "04",
+          "lesson": "06",
+          "lesson_title": "Absolute Value Inequalities & Contextual Constraints",
+          "mode": "absolute-value-constraints",
+          "query": "?course=algebra1&unit=04&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "02",
+          "lesson": "02",
+          "lesson_title": "Reflections Across Axes and Lines",
+          "mode": "coordinate-reflections",
+          "query": "?course=geometry&unit=02&lesson=u02-l02",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "01",
+          "lesson": "06",
+          "lesson_title": "Piecewise, Absolute-Value & Step Functions",
+          "mode": "absolute-value-functions",
+          "query": "?course=algebra2&unit=01&lesson=u01-l06",
+          "wired": true
+        }
+      ]
     }
   }
 }
