@@ -94,3 +94,6 @@ jobs:
 
       - name: Verify lesson reading and draft recovery
         run: node courses/mathematics/algebra-1/tools/test-lesson-reading-drafts.mjs
+
+      - name: Verify authored foundation lessons
+        run: node courses/mathematics/algebra-1/tools/test-foundation-lessons.mjs

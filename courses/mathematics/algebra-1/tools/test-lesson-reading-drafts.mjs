@@ -77,3 +77,5 @@ studentA.notes.value='Do not write A work into B';studentA.main.fire('input');as
 const studentB=fixture({storage:family});assert.equal(studentB.notes.value,'');studentB.notes.value='B notes';studentB.main.fire('input');
 family.set('khaemenes_active_learner_v1',JSON.stringify('A'));assert.equal(fixture({storage:family}).notes.value,'A private notes');
 console.log('PASS: priority example mathematics; inline reading; draft reload/reset/storage failure; locked-page protection; writing labels; print expansion; stable question identity.');
+
+export {fixture};
