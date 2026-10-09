@@ -1343,6 +1343,61 @@
         }
       ],
       "scope_note": "Guided proof steps for angles, triangle congruence, parallel lines, and proof logic. Not an unrestricted proof editor; individual lessons may include theorems beyond this game. Live browser QA and mastery writeback not certified."
+    },
+    "transformation-plane": {
+      "title": "Transformation Plane",
+      "canonical_path": "courses/mathematics/assets/learning-games/transformation-plane/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "placements": [
+        {
+          "course": "geometry",
+          "unit": "02",
+          "lesson": "01",
+          "lesson_title": "Translations on the Coordinate Plane",
+          "mode": "translate",
+          "query": "?course=geometry&unit=02&lesson=01&mode=translate",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "02",
+          "lesson": "02",
+          "lesson_title": "Reflections Across Axes and Lines",
+          "mode": "reflect",
+          "query": "?course=geometry&unit=02&lesson=02&mode=reflect",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "02",
+          "lesson": "03",
+          "lesson_title": "Rotations About the Origin and Other Centers",
+          "mode": "rotate",
+          "query": "?course=geometry&unit=02&lesson=03&mode=rotate",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "02",
+          "lesson": "04",
+          "lesson_title": "Compositions of Transformations",
+          "mode": "mixed",
+          "query": "?course=geometry&unit=02&lesson=04&mode=mixed",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "02",
+          "lesson": "05",
+          "lesson_title": "Rigid Motion Definition of Congruence",
+          "mode": "mixed",
+          "query": "?course=geometry&unit=02&lesson=05&mode=mixed",
+          "wired": true
+        }
+      ],
+      "scope_note": "Point-based translation, reflection, rotation, dilation and mixed practice. Lessons 04–05 use supplemental point transformations; full composition, polygon congruence and rotations about arbitrary centers are not covered. Live browser QA and mastery writeback not certified."
     }
   }
 }
