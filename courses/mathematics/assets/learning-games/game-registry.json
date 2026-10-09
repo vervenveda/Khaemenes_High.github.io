@@ -1489,6 +1489,61 @@
         }
       ],
       "scope_note": "Guided congruence, correspondence, similarity, and scale factor challenges. Lessons involving CPCTC proofs, center-based dilations, side-splitter theorems, and scale drawings receive supplemental practice only; no full proof or construction coverage. Live browser QA and mastery writeback not certified."
+    },
+    "circle-theorem-studio": {
+      "title": "Circle Theorem Studio",
+      "canonical_path": "courses/mathematics/assets/learning-games/circle-theorem-studio/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "placements": [
+        {
+          "course": "geometry",
+          "unit": "08",
+          "lesson": "01",
+          "lesson_title": "Circle Vocabulary, Radius, Diameter & Chords",
+          "mode": "mixed",
+          "query": "?course=geometry&unit=08&lesson=01&mode=mixed",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "08",
+          "lesson": "02",
+          "lesson_title": "Central Angles, Arcs & Arc Length",
+          "mode": "central",
+          "query": "?course=geometry&unit=08&lesson=02&mode=central",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "08",
+          "lesson": "03",
+          "lesson_title": "Inscribed Angles & Intercepted Arcs",
+          "mode": "inscribed",
+          "query": "?course=geometry&unit=08&lesson=03&mode=inscribed",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "08",
+          "lesson": "04",
+          "lesson_title": "Chords, Perpendicular Bisectors & Distances",
+          "mode": "chords",
+          "query": "?course=geometry&unit=08&lesson=04&mode=chords",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "08",
+          "lesson": "05",
+          "lesson_title": "Tangents and Radius Relationships",
+          "mode": "tangent",
+          "query": "?course=geometry&unit=08&lesson=05&mode=tangent",
+          "wired": true
+        }
+      ],
+      "scope_note": "Foundational central/inscribed angles, chords, tangents and radius relationships. U08 L01 is supplemental vocabulary practice; U08 L02 does not cover full arc-length computation. Secant power, sector area and circle equations excluded. Browser QA and mastery writeback not certified."
     }
   }
 }
