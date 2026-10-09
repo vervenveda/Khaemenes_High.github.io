@@ -1544,6 +1544,61 @@
         }
       ],
       "scope_note": "Foundational central/inscribed angles, chords, tangents and radius relationships. U08 L01 is supplemental vocabulary practice; U08 L02 does not cover full arc-length computation. Secant power, sector area and circle equations excluded. Browser QA and mastery writeback not certified."
+    },
+    "right-triangle-trig": {
+      "title": "Right Triangle Trig",
+      "canonical_path": "courses/mathematics/assets/learning-games/right-triangle-trig/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "placements": [
+        {
+          "course": "geometry",
+          "unit": "06",
+          "lesson": "01",
+          "lesson_title": "Pythagorean Theorem & Its Converse",
+          "mode": "pythagorean",
+          "query": "?course=geometry&unit=06&lesson=01&mode=pythagorean",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "06",
+          "lesson": "05",
+          "lesson_title": "Sine, Cosine & Tangent Ratios",
+          "mode": "ratios",
+          "query": "?course=geometry&unit=06&lesson=05&mode=ratios",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "06",
+          "lesson": "06",
+          "lesson_title": "Inverse Trigonometry & Angle Measure",
+          "mode": "angles",
+          "query": "?course=geometry&unit=06&lesson=06&mode=angles",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "06",
+          "lesson": "07",
+          "lesson_title": "Angles of Elevation and Depression",
+          "mode": "sides",
+          "query": "?course=geometry&unit=06&lesson=07&mode=sides",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "06",
+          "lesson": "08",
+          "lesson_title": "Bearings, Vectors & Multi-Step Navigation",
+          "mode": "mixed",
+          "query": "?course=geometry&unit=06&lesson=08&mode=mixed",
+          "wired": true
+        }
+      ],
+      "scope_note": "Right-triangle trigonometric ratios, missing sides, inverse trig and Pythagorean relationships. U06 L01 does not fully assess converse; U06 L07 and L08 receive supplemental numerical practice rather than complete elevation, bearings, vector, or navigation scenarios. Live browser QA and mastery writeback not certified."
     }
   }
 }
