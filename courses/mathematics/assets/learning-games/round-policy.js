@@ -9,8 +9,11 @@
   pool=unique(pool);const bucket=pool.map(key).sort().join('|'),last=previous.get(bucket)||new Set();
   const storageKey='khaemenes-math-game-round-history-v1:'+String(bucket.length)+':'+hash(bucket);
   let remembered=last;
-  try{const saved=JSON.parse(sessionStorage.getItem(storageKey)||'null');if(Array.isArray(saved))remembered=new Set(saved)}catch{}
-  const out=[...shuffle(pool.filter(x=>!remembered.has(key(x)))),...shuffle(pool.filter(x=>remembered.has(key(x))))].slice(0,Math.max(0,count));
+  try{const saved=JSON.parse(sessionStorage.getItem(storageKey)||'null');if(Array.isArray(saved))remembered=new Set(saved.filter(id=>typeof id==='string'))}catch{}
+  const unseen=shuffle(pool.filter(x=>!remembered.has(key(x))));
+  const repeats=shuffle(pool.filter(x=>remembered.has(key(x))));
+  const requested=Math.max(0,Math.floor(Number(count)||0));
+  const out=[...unseen,...repeats].slice(0,requested);
   const selected=new Set(out.map(key));previous.set(bucket,selected);
   try{sessionStorage.setItem(storageKey,JSON.stringify([...selected]))}catch{}
   return out;
