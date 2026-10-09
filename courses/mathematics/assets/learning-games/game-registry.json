@@ -1398,6 +1398,97 @@
         }
       ],
       "scope_note": "Point-based translation, reflection, rotation, dilation and mixed practice. Lessons 04–05 use supplemental point transformations; full composition, polygon congruence and rotations about arbitrary centers are not covered. Live browser QA and mastery writeback not certified."
+    },
+    "congruence-similarity-lab": {
+      "title": "Congruence & Similarity Lab",
+      "canonical_path": "courses/mathematics/assets/learning-games/congruence-similarity-lab/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "placements": [
+        {
+          "course": "geometry",
+          "unit": "03",
+          "lesson": "02",
+          "lesson_title": "SSS and SAS Congruence",
+          "mode": "congruence",
+          "query": "?course=geometry&unit=03&lesson=02&mode=congruence",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "03",
+          "lesson": "03",
+          "lesson_title": "ASA, AAS and HL Congruence",
+          "mode": "congruence",
+          "query": "?course=geometry&unit=03&lesson=03&mode=congruence",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "03",
+          "lesson": "04",
+          "lesson_title": "CPCTC and Multi-Step Triangle Proofs",
+          "mode": "correspondence",
+          "query": "?course=geometry&unit=03&lesson=04&mode=correspondence",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "05",
+          "lesson": "01",
+          "lesson_title": "Dilations from a Center",
+          "mode": "scale",
+          "query": "?course=geometry&unit=05&lesson=01&mode=scale",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "05",
+          "lesson": "02",
+          "lesson_title": "Similarity Through Transformations",
+          "mode": "similarity",
+          "query": "?course=geometry&unit=05&lesson=02&mode=similarity",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "05",
+          "lesson": "03",
+          "lesson_title": "AA Similarity and Triangle Proportions",
+          "mode": "similarity",
+          "query": "?course=geometry&unit=05&lesson=03&mode=similarity",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "05",
+          "lesson": "04",
+          "lesson_title": "SSS and SAS Similarity",
+          "mode": "similarity",
+          "query": "?course=geometry&unit=05&lesson=04&mode=similarity",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "05",
+          "lesson": "05",
+          "lesson_title": "Side-Splitter and Proportional Segments",
+          "mode": "scale",
+          "query": "?course=geometry&unit=05&lesson=05&mode=scale",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "05",
+          "lesson": "06",
+          "lesson_title": "Scale Drawings, Maps & Models",
+          "mode": "scale",
+          "query": "?course=geometry&unit=05&lesson=06&mode=scale",
+          "wired": true
+        }
+      ],
+      "scope_note": "Guided congruence, correspondence, similarity, and scale factor challenges. Lessons involving CPCTC proofs, center-based dilations, side-splitter theorems, and scale drawings receive supplemental practice only; no full proof or construction coverage. Live browser QA and mastery writeback not certified."
     }
   }
 }
