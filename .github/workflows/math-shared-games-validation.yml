@@ -15,6 +15,7 @@ on:
       - "courses/mathematics/tools/test-polynomial-zeros-explorer.mjs"
       - "courses/mathematics/tools/test-matrix-mission-control.mjs"
       - "courses/mathematics/tools/test-sequence-series-studio.mjs"
+      - "courses/mathematics/tools/test-complex-plane-lab.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -35,6 +36,7 @@ on:
       - "courses/mathematics/tools/test-polynomial-zeros-explorer.mjs"
       - "courses/mathematics/tools/test-matrix-mission-control.mjs"
       - "courses/mathematics/tools/test-sequence-series-studio.mjs"
+      - "courses/mathematics/tools/test-complex-plane-lab.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -77,6 +79,9 @@ jobs:
 
       - name: Validate Sequence and Series Studio mathematics
         run: node courses/mathematics/tools/test-sequence-series-studio.mjs
+
+      - name: Validate Complex Plane Lab mathematics
+        run: node courses/mathematics/tools/test-complex-plane-lab.mjs
 
       - name: Verify Algebra I shared-game launch and return routes
         run: node courses/mathematics/tools/test-algebra-game-routes.mjs

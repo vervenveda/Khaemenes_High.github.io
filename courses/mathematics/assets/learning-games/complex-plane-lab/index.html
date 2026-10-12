@@ -1,0 +1,275 @@
+<!doctype html><html lang="en"><head>
+<script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4ecda">
+<title>Complex Plane Lab · Khaemenes Academy</title>
+<style>
+:root{color-scheme:light;--paper:#f4ecda;--card:#fffdf8;--ink:#281f18;--line:#c9b696;--navy:#246289;--amber:#b4762d;--good:#196a48;--bad:#9e3834}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0%,#fffdf2,transparent 55%),var(--paper);color:var(--ink);font:16px/1.54 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1150px;margin:auto;padding:24px 16px 60px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.8rem;font-weight:700;color:#80572c}
+h1,h2{font-family:Georgia,serif;line-height:1.2}h1{font-size:clamp(2.05rem,5vw,3.05rem);margin:.15em 0}h2{font-size:1.36rem;margin:0 0 12px}
+.lead{color:#57493a;max-width:865px}.panel{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:18px;box-shadow:0 3px 0 #e5dac6}
+.layout{display:grid;grid-template-columns:minmax(0,1.13fr) minmax(300px,1fr);gap:16px;margin:16px 0}
+.row{display:flex;align-items:center;flex-wrap:wrap;gap:10px}.stats{margin-top:14px}
+.stat{background:#faf1e4;border:1px solid var(--line);padding:8px 10px;border-radius:7px}
+label{display:block;font-weight:650}input,select,button{font:inherit;border:1px solid #897353;border-radius:7px;padding:9px 10px;color:var(--ink);background:white}
+input[type=number]{width:100%;max-width:170px}input[type=range]{width:100%;accent-color:var(--amber);padding:4px}
+button{cursor:pointer;background:#eadcc1;font-weight:650}button:hover{background:#dfcca8}button:disabled{opacity:.53;cursor:not-allowed}
+button.primary{background:#43362b;color:white}.small{color:#5d4f42;font-size:.89rem}a{color:#1e5a85}
+:focus-visible{outline:3px solid #286997;outline-offset:2px}
+#plot{width:100%;height:auto;display:block;background:#fffefa;border:1px solid var(--line);border-radius:7px}
+#formula{font:700 1.23rem/1.5 Georgia,serif;white-space:pre-line;overflow-wrap:anywhere}#scenario{font-weight:650}
+.legend{font-size:.83rem;display:inline-block;border:1px solid var(--line);border-radius:7px;padding:4px 8px;margin:4px}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.fields>div{border:1px solid #dfceb1;background:#faf4e7;border-radius:7px;padding:10px}
+#feedback{min-height:76px;background:#f8efdf;border-left:5px solid var(--amber);border-radius:4px;padding:13px}
+#feedback.good{border-color:var(--good)}#feedback.bad{border-color:var(--bad)}#celebrate{color:var(--good);min-height:25px;font-weight:700}
+#workshop{background:#f9f1e3;border:1px solid var(--line);border-radius:7px;padding:12px}
+.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:10px 0}progress{width:100%;accent-color:var(--good)}
+#history{max-height:180px;overflow:auto}footer{margin-top:25px;font-size:.85rem;color:#66574a}[hidden]{display:none!important}
+@media(max-width:810px){.layout{grid-template-columns:1fr}}
+@media(max-width:520px){.fields,.controls{grid-template-columns:1fr}.panel{padding:13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+<script src="../../game-return-route.js?v=20261012"></script>
+</head><body><main>
+<p class="eyebrow">Khaemenes Academy · Mathematics · Imaginary &amp; Complex Numbers</p>
+<h1>Complex Plane Lab</h1>
+<p class="lead">Discover why i² = −1, combine complex numbers, divide using conjugates, solve quadratics with non-real zeros, and explore modulus, reflection, and rotation on the complex plane. Errors are learning opportunities—not reasons to restart.</p>
+<section class="panel"><div class="row">
+<label for="mode">Mission pathway <select id="mode">
+<option value="powers">Powers of i · cyclic reasoning</option>
+<option value="add">Complex addition &amp; subtraction</option>
+<option value="multiply">Complex multiplication</option>
+<option value="divide">Division using a conjugate</option>
+<option value="quadratic">Quadratic equations with complex roots</option>
+<option value="conjugate">Complex conjugation &amp; reflection</option>
+<option value="modulus">Modulus, distance &amp; quadrants</option>
+<option value="rotate">Multiplication by i · rotations</option>
+</select></label>
+<button id="new" class="primary" type="button">New mission</button>
+<button id="explore" type="button">Free plane workshop</button>
+<label for="lowStim">Low stimulation <input id="lowStim" type="checkbox"></label>
+</div><p id="context" class="small">Browser-local practice only. No official grade or mastery record is changed.</p></section>
+<div class="row stats">
+<span class="stat">Solved <b id="solved">0</b></span><span class="stat">Checked <b id="attempted">0</b></span>
+<span class="stat">First-try <b id="accuracy">—</b></span><span class="stat">Best streak <b id="streak">0</b></span>
+<span class="stat">80% practice <b id="mastery">In progress</b></span>
+</div>
+<div class="layout">
+<section class="panel">
+<h2>Interactive complex plane</h2>
+<svg id="plot" viewBox="0 0 620 430" role="img" aria-labelledby="plotTitle plotDesc">
+<title id="plotTitle">Complex-number coordinate plane</title>
+<desc id="plotDesc">Horizontal coordinates represent real parts and vertical coordinates imaginary parts. Blue and amber vectors mark operands and transformations; their exact coordinates are written below.</desc>
+<g id="grid"></g><g id="vectors"></g>
+</svg>
+<p><span class="legend">Blue · z / first operand</span><span class="legend">Amber · conjugate, transformed result or second operand</span></p>
+<p id="plotNote" aria-live="polite" class="small"></p><p id="formula" aria-live="polite"></p>
+<div id="workshop" hidden><h2>Free complex-number workshop</h2>
+<p class="small">Move the sliders to plot z = a + bi and its reflection. The length from the origin is |z| = √(a²+b²). Exploration never affects your score.</p>
+<div class="controls">
+<div><label for="realSlider">Real part a: <output id="realOut">3</output></label><input type="range" id="realSlider" min="-7" max="7" step="1" value="3"></div>
+<div><label for="imagSlider">Imaginary part b: <output id="imagOut">4</output></label><input type="range" id="imagSlider" min="-7" max="7" step="1" value="4"></div>
+</div></div>
+</section>
+<section class="panel"><h2>Mission console</h2>
+<p id="scenario"></p><p id="prompt"></p>
+<div class="fields">
+<div><label for="answer">First answer <small id="firstLabel">Real part</small></label><input id="answer" type="number" step="any" inputmode="decimal" autocomplete="off"></div>
+<div id="secondBlock"><label for="second">Second answer <small id="secondLabel">Imaginary coefficient</small></label><input id="second" type="number" step="any" inputmode="decimal" autocomplete="off"></div>
+</div>
+<div id="choiceBlock" hidden><label for="choice">Where is the point located?</label>
+<select id="choice"><option value="">Choose a quadrant</option><option value="I">Quadrant I</option><option value="II">Quadrant II</option><option value="III">Quadrant III</option><option value="IV">Quadrant IV</option><option value="axis">On an axis</option></select></div>
+<p class="small">Give components in a + bi form. Write 0 for a zero component; decimals within 0.02 of the exact value are accepted.</p>
+<div class="row"><button class="primary" id="check" type="button">Check reasoning</button>
+<button id="hint" type="button">Hint</button><button id="solution" type="button">Worked reasoning</button><button id="next" type="button" disabled>Next mission →</button></div>
+<p id="feedback" role="status" aria-live="polite">Explore the plane, then check your answer.</p><p id="celebrate" aria-live="polite"></p>
+</section></div>
+<section class="panel"><h2>Personal learning journal</h2><progress id="progress" value="0" max="10"></progress>
+<p class="small">The most recent ten checked missions determine the local 80% practice goal. Hints, incorrect answers, or a browser refresh never force a mission restart. Official course mastery is assessed separately.</p>
+<div class="row"><button id="export" type="button">Export JSON progress</button><button id="reset" type="button">Reset this pathway (confirm)</button><a href="../../../index.html">Mathematics home</a></div><ol id="history" aria-label="Recent mission results"></ol></section>
+<footer>© Jennifer Kay Pearl · Khaemenes Academy · Single-file offline-capable HTML/CSS/JavaScript · No third-party dependencies or tracking.</footer>
+</main>
+<script>
+(()=>{'use strict';
+// PURE_MODEL_BEGIN
+const near=(a,b,eps=.02)=>Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=eps;
+const pick=(a,rng)=>a[Math.floor(rng()*a.length)];
+const z=(re,im)=>({re,im});
+const add=(a,b)=>z(a.re+b.re,a.im+b.im);
+const sub=(a,b)=>z(a.re-b.re,a.im-b.im);
+const mul=(a,b)=>z(a.re*b.re-a.im*b.im,a.re*b.im+a.im*b.re);
+const conj=a=>z(a.re,-a.im);
+const modulus=a=>Math.hypot(a.re,a.im);
+const div=(a,b)=>{const den=b.re*b.re+b.im*b.im;return den===0?null:z((a.re*b.re+a.im*b.im)/den,(a.im*b.re-a.re*b.im)/den);};
+const powerI=n=>{const r=((n%4)+4)%4;return [z(1,0),z(0,1),z(-1,0),z(0,-1)][r];};
+const rotate=(a,steps)=>{let v=z(a.re,a.im);for(let k=0;k<((steps%4)+4)%4;k++)v=mul(v,z(0,1));return v;};
+const quadrant=a=>a.re===0||a.im===0?'axis':a.re>0?(a.im>0?'I':'IV'):(a.im>0?'II':'III');
+function makeTask(mode,rng=Math.random){
+ const R=()=>pick([-5,-4,-3,-2,-1,0,1,2,3,4,5],rng),I=()=>pick([-5,-4,-3,-2,-1,1,2,3,4,5],rng);
+ const t={mode};
+ if(mode==='powers'){t.n=Math.floor(rng()*121)-60;}
+ else if(mode==='add'||mode==='multiply'){t.a=z(R(),R());t.b=z(R(),R());if(mode==='add')t.op=pick(['add','subtract'],rng);}
+ else if(mode==='divide'){t.a=z(R(),R());do{t.b=z(R(),R());}while(t.b.re===0&&t.b.im===0);}
+ else if(mode==='quadratic'){t.p=R();t.q=pick([1,2,3,4,5],rng);t.c=t.p*t.p+t.q*t.q;}
+ else if(mode==='conjugate'){t.a=z(R(),I());}
+ else if(mode==='modulus'){
+  const triple=pick([[3,4,5],[5,12,13],[8,15,17]],rng),flip=pick([false,true],rng),sx=pick([-1,1],rng),sy=pick([-1,1],rng);
+  t.a=z(sx*(flip?triple[1]:triple[0]),sy*(flip?triple[0]:triple[1]));t.m=triple[2];
+ }
+ else if(mode==='rotate'){t.a=z(R(),I());t.steps=pick([1,2,3],rng);}
+ else throw Error('Unknown complex mode: '+mode);
+ t.id=JSON.stringify(t);return t;
+}
+function expected(t){
+ switch(t.mode){
+ case 'powers':return powerI(t.n);
+ case 'add':return t.op==='add'?add(t.a,t.b):sub(t.a,t.b);
+ case 'multiply':return mul(t.a,t.b);
+ case 'divide':return div(t.a,t.b);
+ case 'quadratic':return z(t.p,t.q);
+ case 'conjugate':return conj(t.a);
+ case 'modulus':return {re:modulus(t.a),quadrant:quadrant(t.a)};
+ case 'rotate':return rotate(t.a,t.steps);
+ }
+ return null;
+}
+function correct(t,re,im,choice){
+ const v=expected(t);
+ if(!v||!near(re,v.re))return false;
+ if('im' in v&&!near(im,v.im))return false;
+ if('quadrant' in v&&choice!==v.quadrant)return false;
+ return true;
+}
+// PURE_MODEL_END
+window.ComplexPlaneCore=Object.freeze({near,z,add,sub,mul,conj,modulus,div,powerI,rotate,quadrant,makeTask,expected,correct});
+const $=id=>document.getElementById(id),query=new URLSearchParams(location.search);
+const MODES=['powers','add','multiply','divide','quadratic','conjugate','modulus','rotate'];
+let mode=MODES.includes(query.get('mode'))?query.get('mode'):'powers',task=null,record,streak=0,exploring=false;
+const context=[query.get('course')||'standalone',query.get('unit')||'',query.get('lesson')||''].map(t=>t.replace(/[^a-z0-9_-]/gi,'_')).join('|');
+const fresh=()=>({solved:0,attempted:0,firstTries:0,bestStreak:0,outcomes:[],history:[],recent:[],task:null,checked:false,wrong:false,helped:false,entry:{re:'',im:'',choice:''}});
+const key=()=>['KHAE_COMPLEX_PLANE_V1',context,mode].join('|');
+const fmt=v=>Number.isFinite(v)?String(Number(v.toFixed(3))):'undefined';
+const label=a=>fmt(a.re)+(a.im<0?' − ':' + ')+fmt(Math.abs(a.im))+'i';
+function load(){
+ record=fresh();try{const saved=JSON.parse(localStorage.getItem(key())||'null');if(saved&&Number.isFinite(saved.solved)&&Array.isArray(saved.recent)&&Array.isArray(saved.history)){
+ record={...record,...saved,entry:{...record.entry,...(saved.entry||{})},recent:saved.recent.slice(-30),history:saved.history.slice(-10),outcomes:(saved.outcomes||[]).slice(-10)};}}catch{}
+ task=record.task||null;streak=0;
+}
+function save(){record.task=task;try{localStorage.setItem(key(),JSON.stringify(record));}catch{$('context').textContent='Local storage unavailable. Export JSON to keep your progress.';}}
+function feedback(msg,kind=''){$('feedback').textContent=msg;$('feedback').className=kind;$('celebrate').textContent='';}
+function challenge(){
+ exploring=false;record.entry={re:'',im:'',choice:''};record.checked=false;record.wrong=false;record.helped=false;
+ const seen=new Set(record.recent);let next=null;
+ for(let j=0;j<170;j++){const t=makeTask(mode);if(!seen.has(t.id)){next=t;break;}}
+ if(!next){record.recent=[];next=makeTask(mode);}
+ task=next;record.recent.push(task.id);record.recent=record.recent.slice(-30);
+ show();feedback('Solve with care, and use the plane to check your reasoning. Incorrect tries never restart the problem.');save();
+}
+function scenario(){
+ const t=task;
+ if(mode==='powers')return ['Evaluate i^('+t.n+').','Find the real and imaginary components of the result. Remember i⁰=1 and i⁴=1.','Real component','Imaginary coefficient'];
+ if(mode==='add')return ['Compute ('+label(t.a)+') '+(t.op==='add'?'+':'−')+' ('+label(t.b)+').','Combine like components. Enter the resulting real and imaginary coefficients.','Real component','Imaginary coefficient'];
+ if(mode==='multiply')return ['Compute ('+label(t.a)+') × ('+label(t.b)+').','Distribute, use i²=−1, and collect like terms.','Real component','Imaginary coefficient'];
+ if(mode==='divide')return ['Compute ('+label(t.a)+') ÷ ('+label(t.b)+').','Multiply numerator and denominator by the denominator’s conjugate. Round components to two decimals.','Real component','Imaginary coefficient'];
+ if(mode==='quadratic')return ['Solve x² − ('+(2*t.p)+')x + '+t.c+' = 0.','The discriminant is negative. Give the real part and positive imaginary coefficient of the root with Im(x)>0.','Real component of x','Positive imaginary coefficient'];
+ if(mode==='conjugate')return ['Find the conjugate of z='+label(t.a)+'.','Reflect the given point across the real axis. The real coordinate stays the same.','Real component','Imaginary coefficient'];
+ if(mode==='modulus')return ['The complex point z='+label(t.a)+' represents a vector from the origin.','Find its modulus |z| (distance) and select its correct quadrant.','Distance |z|',''];
+ return ['Rotate z='+label(t.a)+' counterclockwise by '+(t.steps*90)+'° around the origin.','Multiplication by i gives a 90° counterclockwise rotation. Enter the coordinates of the rotated complex number.','New real component','New imaginary coefficient'];
+}
+function explanation(){
+ const t=task,v=expected(t);
+ if(mode==='powers')return 'Reduce exponent '+t.n+' modulo 4: remainder '+((t.n%4)+4)%4+'. The cycle 1, i, −1, −i yields '+label(v)+'.';
+ if(mode==='add')return 'Combine components separately: '+t.a.re+(t.op==='add'?' + ':' − ')+t.b.re+' = '+v.re+' (real) and '+t.a.im+(t.op==='add'?' + ':' − ')+t.b.im+' = '+v.im+' (imaginary). Result '+label(v)+'.';
+ if(mode==='multiply')return '(a+bi)(c+di)=(ac−bd)+(ad+bc)i because i²=−1. Here the result is '+label(v)+'.';
+ if(mode==='divide')return '(a+bi)/(c+di)=[(ac+bd)+(bc−ad)i]/(c²+d²). The positive denominator is '+(t.b.re**2+t.b.im**2)+'; the result is '+label(v)+'.';
+ if(mode==='quadratic')return 'Complete the square: (x−('+t.p+'))²=−'+(t.q*t.q)+'. So x='+t.p+' ± '+t.q+'i. The requested positive-imaginary root is '+label(v)+'.';
+ if(mode==='conjugate')return 'Conjugation changes the imaginary sign: conjugate(a+bi)=a−bi. The result '+label(v)+' is a reflection across the real axis.';
+ if(mode==='modulus')return '|z|=√(a²+b²)=√('+(t.a.re**2)+'+'+(t.a.im**2)+')='+v.re+'. Both component signs locate z in quadrant '+v.quadrant+'.';
+ return 'Multiplying by i transforms (a,b) to (−b,a). Repeating '+t.steps+' times rotates '+(t.steps*90)+'°: '+label(v)+'.';
+}
+function stats(){
+ $('solved').textContent=String(record.solved);$('attempted').textContent=String(record.attempted);
+ $('accuracy').textContent=record.attempted?Math.round(record.firstTries*100/record.attempted)+'%':'—';
+ $('streak').textContent=String(record.bestStreak);$('progress').value=record.outcomes.length;
+ $('mastery').textContent=record.outcomes.length===10&&record.outcomes.filter(Boolean).length>=8?'Achieved':'In progress';
+ const box=$('history');box.replaceChildren();for(const h of record.history.slice(-10).reverse()){const li=document.createElement('li');li.textContent=h;box.appendChild(li);}
+}
+function show(){
+ $('mode').value=mode;$('workshop').hidden=!exploring;
+ const d=scenario();$('scenario').textContent=d[0];$('prompt').textContent=d[1];$('firstLabel').textContent=d[2];$('secondLabel').textContent=d[3];
+ $('secondBlock').hidden=mode==='modulus';
+ $('choiceBlock').hidden=mode!=='modulus';
+ $('answer').value=record.entry.re;$('second').value=record.entry.im;$('choice').value=record.entry.choice;
+ $('check').disabled=record.checked||exploring;$('hint').disabled=record.checked||exploring;$('solution').disabled=record.checked||exploring;$('next').disabled=!record.checked||exploring;
+ $('formula').textContent=mode==='powers'?'i²=−1  ·  i³=−i  ·  i⁴=1':mode==='divide'?'z₁/z₂ = z₁×conj(z₂)/|z₂|²':mode==='modulus'?'|a+bi|=√(a²+b²)':mode==='quadratic'?'x=[−b±√(b²−4ac)]/(2a)':'z=a+bi  ·  Re(z)=a  ·  Im(z)=b';
+ stats();draw();
+}
+const coordinateX=x=>310+x*29,coordinateY=y=>215-y*24;
+function draw(){
+ let grid='';
+ for(let n=-9;n<=9;n++){const x=coordinateX(n),y=coordinateY(n);
+  if(x>=35&&x<=585)grid+='<line x1="'+x+'" x2="'+x+'" y1="20" y2="415" stroke="'+(n?'#e9dfd1':'#938672')+'" stroke-width="'+(n?1:2)+'"/>';
+  if(y>=20&&y<=415)grid+='<line x1="38" x2="585" y1="'+y+'" y2="'+y+'" stroke="'+(n?'#e9dfd1':'#938672')+'" stroke-width="'+(n?1:2)+'"/>';
+ }
+ grid+='<text x="586" y="235" font-size="14" fill="#544735">Real</text><text x="320" y="19" font-size="14" fill="#544735">Imaginary</text>';
+ $('grid').innerHTML=grid;
+ let primary=null,secondary=null,note='';
+ if(exploring){
+  primary=z(+$('realSlider').value,+$('imagSlider').value);secondary=conj(primary);
+  $('formula').textContent='z='+label(primary)+';  conj(z)='+label(secondary)+';  |z|='+fmt(modulus(primary));
+  note='Free point z='+label(primary)+' and reflected point '+label(secondary)+'. Both have the same modulus '+fmt(modulus(primary))+'.';
+ }else{
+  const t=task;
+  primary=mode==='powers'?powerI(t.n):mode==='quadratic'?z(t.p,t.q):t.a;
+  secondary=mode==='powers'?z(0,1):mode==='quadratic'?z(t.p,-t.q):mode==='modulus'?null:
+   mode==='add'||mode==='multiply'||mode==='divide'?t.b:expected(t);
+  note='The blue vector is '+label(primary)+'. '+(secondary?'The amber vector is '+label(secondary)+'. ':'')+
+   (mode==='modulus'?'Its modulus is the distance from the origin.':mode==='quadratic'?'The two complex zeros are reflections across the real axis.':'The horizontal axis is real; the vertical axis is imaginary.');
+ }
+ let max=Math.max(1,Math.abs(primary.re),Math.abs(primary.im),secondary?Math.abs(secondary.re):0,secondary?Math.abs(secondary.im):0);
+ const scale=max>8?8/max:1;
+ const point=(v,color,name)=>{const x=coordinateX(v.re*scale),y=coordinateY(v.im*scale);
+  return '<line x1="310" y1="215" x2="'+x+'" y2="'+y+'" stroke="'+color+'" stroke-width="3"/><circle cx="'+x+'" cy="'+y+'" r="7" fill="'+color+'" stroke="white" stroke-width="2"/><text x="'+(x+10)+'" y="'+(y-11)+'" font-size="12" fill="'+color+'">'+name+'</text>';};
+ $('vectors').innerHTML=point(primary,'#246289','z')+(secondary?point(secondary,'#af6d28','w'):'');
+ $('plotNote').textContent=note+(scale===1?'':' Vector lengths are scaled uniformly to keep large results visible; numerical coordinates above are exact.');
+}
+function check(){
+ if(!task||record.checked||exploring)return;
+ const raw=$('answer').value.trim(),raw2=$('second').value.trim();
+ const re=raw===''?NaN:Number(raw),im=$('secondBlock').hidden?NaN:raw2===''?NaN:Number(raw2);
+ if(!Number.isFinite(re)||(!$('secondBlock').hidden&&!Number.isFinite(im))){feedback('Enter finite numbers in the required fields; an empty field does not mean zero.','bad');return;}
+ const ok=correct(task,re,im,$('choiceBlock').hidden?'':$('choice').value);
+ if(!record.wrong){record.attempted++;record.outcomes.push(ok&&!record.helped);record.outcomes=record.outcomes.slice(-10);}
+ if(ok){
+  record.checked=true;record.solved++;
+  if(!record.wrong&&!record.helped){record.firstTries++;streak++;}else streak=0;
+  record.bestStreak=Math.max(record.bestStreak,streak);
+  record.history.push(mode+' · solved '+task.id.slice(0,45));record.history=record.history.slice(-10);
+  show();feedback('Correct! '+explanation(),'good');
+  if(!$('lowStim').checked&&!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches))$('celebrate').textContent='✦ Complex-number mission complete ✦';
+ }else{record.wrong=true;streak=0;feedback('Try again. Check the sign of i², component order, division by conjugates, and your point coordinates. Your mission is unchanged.','bad');stats();}
+ save();
+}
+function hint(){
+ if(!task||record.checked||exploring)return;record.helped=true;
+ const tips={powers:'Powers of i repeat every four exponents. Use the nonnegative remainder modulo 4.',add:'Add or subtract the real components together, and the imaginary coefficients together.',multiply:'Expand four products. Convert i² to −1 before collecting terms.',divide:'Multiply top and bottom by c−di. The denominator becomes c²+d², which is positive.',quadratic:'A negative discriminant gives two conjugate non-real roots. Complete the square for this form.',conjugate:'Reflect across the real axis: a+bi becomes a−bi.',modulus:'Distance from (0,0) is √(a²+b²); a and b determine the quadrant.',rotate:'Each multiplication by i rotates (a,b) to (−b,a).'};
+ feedback(tips[mode]);save();
+}
+function worked(){if(!task||record.checked||exploring)return;record.helped=true;feedback('Worked reasoning: '+explanation()+' Enter the numerical answer and verify.');save();}
+function changeMode(next){if(!MODES.includes(next))return;mode=next;exploring=false;load();if(task)show();else challenge();}
+function explore(){exploring=true;show();feedback('Free plane workshop active. Move the sliders; return with New mission. No score changes.');}
+$('mode').addEventListener('change',e=>changeMode(e.target.value));$('new').addEventListener('click',challenge);$('next').addEventListener('click',challenge);$('explore').addEventListener('click',explore);
+$('check').addEventListener('click',check);$('hint').addEventListener('click',hint);$('solution').addEventListener('click',worked);
+for(const [id,field] of [['answer','re'],['second','im'],['choice','choice']])$(id).addEventListener(id==='choice'?'change':'input',e=>{if(!exploring){record.entry[field]=e.target.value;save();}});
+for(const [id,out] of [['realSlider','realOut'],['imagSlider','imagOut']])$(id).addEventListener('input',e=>{if(exploring){$(out).textContent=e.target.value;draw();}});
+$('reset').addEventListener('click',()=>{if(!confirm('Clear only this game pathway? Official lesson records and other courses are unchanged.'))return;try{localStorage.removeItem(key());}catch{}record=fresh();challenge();});
+$('export').addEventListener('click',()=>{
+ const blob=new Blob([JSON.stringify({schema:1,game:'complex-plane-lab',context,mode,progress:record,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='complex-plane-lab-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+});
+$('context').textContent='Lesson: '+context.replace(/\|/g,' / ')+' · browser-local practice · official grades remain separate.';
+load();if(task)show();else challenge();
+})();
+</script></body></html>

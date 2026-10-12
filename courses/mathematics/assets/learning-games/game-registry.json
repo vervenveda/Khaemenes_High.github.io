@@ -51,24 +51,6 @@
           "mode": "pythagorean-exact-lengths",
           "query": "?course=geometry&unit=06&lesson=u06-l01",
           "wired": true
-        },
-        {
-          "course": "algebra-2",
-          "unit": "02",
-          "lesson": "04",
-          "lesson_title": "The Imaginary Unit & Powers of i",
-          "mode": "complex-system",
-          "query": "?course=algebra2&unit=02&lesson=u02-l04",
-          "wired": true
-        },
-        {
-          "course": "algebra-2",
-          "unit": "02",
-          "lesson": "07",
-          "lesson_title": "Conjugates, Modulus & the Complex Plane",
-          "mode": "complex-plane",
-          "query": "?course=algebra2&unit=02&lesson=u02-l07",
-          "wired": true
         }
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
@@ -517,15 +499,6 @@
           "lesson_title": "Distributive Property & Combining Like Terms",
           "mode": "signed-coefficients",
           "query": "?course=algebra1&unit=02&lesson=04&mode=signed-coefficients",
-          "wired": true
-        },
-        {
-          "course": "algebra-2",
-          "unit": "02",
-          "lesson": "05",
-          "lesson_title": "Operations with Complex Numbers",
-          "mode": "complex-addition",
-          "query": "?course=algebra2&unit=02&lesson=u02-l05&mode=complex-addition",
           "wired": true
         }
       ],
@@ -2051,6 +2024,52 @@
           "lesson_title": "Exponential Functions: Growth & Decay",
           "mode": "growth",
           "query": "?course=algebra1&unit=08&lesson=05&mode=growth",
+          "wired": true
+        }
+      ]
+    },
+    "complex-plane-lab": {
+      "title": "Complex Plane Lab",
+      "canonical_path": "courses/mathematics/assets/learning-games/complex-plane-lab/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Eight complex-number modes: signed powers of i, addition/subtraction, multiplication, conjugate division, complex quadratic zeros, conjugation, modulus/quadrant, and multiplication by i as rotations. The reusable lab replaces three introductory duplicate lesson companions, preserving their other placements and the separately linked Polynomial Zeros Explorer.",
+      "placements": [
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "u02-l04",
+          "lesson_title": "The Imaginary Unit & Powers of i",
+          "mode": "powers",
+          "query": "?course=algebra2&unit=02&lesson=u02-l04&mode=powers",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "u02-l05",
+          "lesson_title": "Operations with Complex Numbers",
+          "mode": "add",
+          "query": "?course=algebra2&unit=02&lesson=u02-l05&mode=add",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "u02-l06",
+          "lesson_title": "Quadratic Equations with Complex Solutions",
+          "mode": "quadratic",
+          "query": "?course=algebra2&unit=02&lesson=u02-l06&mode=quadratic",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "u02-l07",
+          "lesson_title": "Conjugates, Modulus & the Complex Plane",
+          "mode": "conjugate",
+          "query": "?course=algebra2&unit=02&lesson=u02-l07&mode=conjugate",
           "wired": true
         }
       ]
