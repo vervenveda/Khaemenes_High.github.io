@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en"><head>
+<script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f4ecda">
+<title>Function Transformation Studio · Khaemenes Academy</title>
+<style>
+:root{color-scheme:light;--paper:#f4ecda;--ink:#231c16;--card:#fffdf7;--line:#cab99c;--gold:#8d612c;--green:#18654b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 90% 0%,#fffdf3,transparent 65%),var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,sans-serif}
+main{max-width:1130px;margin:auto;padding:22px 16px 66px}h1,h2{font-family:Georgia,serif;line-height:1.17}h1{font-size:clamp(2rem,4vw,3rem);margin:6px 0}h2{font-size:1.45rem;margin:0 0 12px}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;font-weight:700;color:#71512f}.lead{max-width:850px;color:#4f453a}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:18px;box-shadow:0 3px 0 #e2d5be}
+.layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(300px,1fr);gap:16px;margin:17px 0}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.gap{margin-top:14px}.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+label{display:block;font-weight:650}label small{display:block;font-weight:400}
+button,input,select{font:inherit;color:var(--ink);border:1px solid #876f50;border-radius:7px;padding:9px;background:#fff}button{background:#ecdec3;font-weight:650;cursor:pointer}
+button:hover{background:#ddc9a0}button.primary{color:#fff;background:#403329}button:disabled{opacity:.55;cursor:not-allowed}
+:focus-visible{outline:3px solid #276ba8;outline-offset:2px}input[type=range]{width:100%;padding:4px 0;accent-color:var(--gold)}
+.stat{border:1px solid var(--line);padding:8px;border-radius:7px;background:#faf3e8}svg{display:block;width:100%;height:auto;border:1px solid var(--line);background:#fffefa;border-radius:7px}
+.small{font-size:.9rem;color:#51483f}.legend{display:inline-block;margin:5px;padding:4px 7px;border:1px solid var(--line);border-radius:7px;font-size:.83rem}
+#formula{font:700 1.4rem Georgia,serif;overflow-wrap:anywhere}#feedback{padding:12px;min-height:64px;background:#f7efdf;border-left:5px solid var(--gold);border-radius:4px}
+#feedback.good{border-color:var(--green)}#feedback.bad{border-color:#a02e39}
+#celebrate{color:var(--green);font-weight:700;min-height:22px}
+progress{width:100%;accent-color:var(--green)}footer{margin-top:26px;font-size:.85rem;color:#5e5243}
+a{color:#195c90}[hidden]{display:none!important}
+@media(max-width:800px){.layout{grid-template-columns:1fr}}
+@media(max-width:510px){.fields{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<script src="../../game-return-route.js?v=20261012"></script>
+</head><body><main>
+<div class="eyebrow">Khaemenes Academy · Sovereign Mathematics Game Library</div>
+<h1>Function Transformation Studio</h1>
+<p class="lead">Match transformed graphs, investigate horizontal and vertical shifts, reflect and stretch functions, and reverse lines to reveal their inverses. Incorrect answers never erase your mission.</p>
+<section class="panel">
+<div class="row">
+<label for="mode">Pathway <select id="mode">
+<option value="transforms-basic">Algebra I · Transform parent functions</option>
+<option value="transforms-advanced">Algebra II · Advanced transformations</option>
+<option value="inverse-linear">Algebra II · Inverse function mission</option></select></label>
+<button id="new" type="button" class="primary">New mission</button>
+<button id="explore" type="button">Free exploration</button>
+<label for="lowStim">Reduced stimulation <input type="checkbox" id="lowStim"></label>
+</div><p id="context" class="small">Local practice, not a formal course grade.</p>
+</section>
+<div class="row gap"><span class="stat">Solved <b id="solved">0</b></span><span class="stat">First-try accuracy <b id="accuracy">—</b></span><span class="stat">Best streak <b id="streak">0</b></span><span class="stat">80% practice goal <b id="mastery">In progress</b></span></div>
+<div class="layout">
+<section class="panel"><h2>Coordinate laboratory</h2>
+<svg id="graph" viewBox="0 0 600 500" role="img" aria-labelledby="graphTitle graphDesc">
+<title id="graphTitle">Coordinate function studio</title>
+<desc id="graphDesc">Gray dashed line is the parent or original function. Amber dashed line is the target. Green line is your function. Controls and textual descriptions make the chart usable without dragging.</desc>
+<g id="grid"></g>
+<path id="parentCurve" stroke="#758395" stroke-width="2.5" stroke-dasharray="5 7" fill="none"/>
+<path id="targetCurve" stroke="#c16e2c" stroke-width="4" stroke-dasharray="8 6" fill="none"/>
+<path id="userCurve" stroke="#176a4f" stroke-width="3.5" fill="none"/>
+<path id="mirror" stroke="#aaa" stroke-width="1.8" stroke-dasharray="2 8" fill="none"/>
+</svg>
+<div class="small"><span class="legend">Gray: parent/original</span><span class="legend">Amber: target</span><span class="legend">Green: yours</span></div>
+<p id="graphText" class="small" aria-live="polite"></p>
+<p id="formula" aria-live="polite"></p><p id="targetText" class="small"></p></section>
+<section class="panel"><h2>Mission console</h2>
+<p id="prompt" aria-live="polite"></p>
+<div id="parentBlock"><label for="parent">Parent family</label><select id="parent">
+<option value="quadratic">Quadratic · x²</option><option value="absolute">Absolute · |x|</option>
+<option value="cubic">Cubic · x³</option><option value="sqrt">Square root · √x</option></select></div>
+<div id="transformControls" class="fields gap">
+<div><label for="a">Vertical scale a: <output id="aOut">1</output></label><input type="range" id="a" min="-3" max="3" step=".5" value="1"></div>
+<div><label for="h">Horizontal shift h: <output id="hOut">0</output></label><input type="range" id="h" min="-4" max="4" step="1" value="0"></div>
+<div><label for="k">Vertical shift k: <output id="kOut">0</output></label><input type="range" id="k" min="-4" max="4" step="1" value="0"></div>
+</div>
+<div id="inverseControls" class="fields gap" hidden>
+<div><label for="p">Inverse slope: <output id="pOut">1</output></label><input type="range" id="p" min="-3" max="3" step=".5" value="1"></div>
+<div><label for="q">Inverse intercept: <output id="qOut">0</output></label><input type="range" id="q" min="-4" max="4" step=".5" value="0"></div>
+</div>
+<p id="rule" class="small gap"></p><div class="row gap">
+<button id="check" type="button" class="primary">Check model</button><button id="hint" type="button">Hint</button><button id="solution" type="button">Explain / reveal</button>
+</div><p id="feedback" role="status" aria-live="polite">Match the amber graph using the controls.</p><div id="celebrate" aria-live="polite"></div>
+</section></div>
+<section class="panel"><h2>Learning record</h2>
+<progress id="progress" value="0" max="10"></progress>
+<p class="small">Complete ten missions. Eight correct on the first unaided attempt earn the local 80% practice goal. Hints, mistakes, and refreshes never force you to restart; official mastery is determined by course assessments.</p>
+<div class="row"><button id="export" type="button">Export practice JSON</button><button id="reset" type="button">Reset this pathway (confirm)</button><a href="../../../../index.html">Mathematics home</a></div><ol id="history" aria-label="Recent successes"></ol>
+</section>
+<footer>© Jennifer Kay Pearl · Khaemenes Academy · Local HTML/CSS/JS · No third-party dependencies.</footer>
+</main>
+<script>
+(()=>{'use strict';
+// PURE_MODEL_BEGIN
+const close=(x,y)=>Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x-y)<1e-9;
+function parentY(type,x){if(type==='quadratic')return x*x;if(type==='absolute')return Math.abs(x);if(type==='cubic')return x*x*x;if(type==='sqrt')return x<0?NaN:Math.sqrt(x);return NaN;}
+function transformY(type,a,h,k,x){return a*parentY(type,x-h)+k;}
+function inverseY(m,b,x){return (x-b)/m;}
+function isInverse(m,b,p,q){return m!==0&&close(p,1/m)&&close(q,-b/m);}
+function makeTask(mode,rng=Math.random){
+ const choose=arr=>arr[Math.floor(rng()*arr.length)];
+ if(mode==='inverse-linear'){const m=choose([-2,-1,1,2]),b=choose([-4,-2,0,2,4]);return {kind:'inverse-linear',m,b,id:'i:'+m+':'+b};}
+ const kind=choose(mode==='transforms-basic'?['quadratic','absolute']:['quadratic','absolute','cubic','sqrt']);
+ const a=choose([-2,-1,-.5,.5,1,2]),h=choose([-3,-2,-1,0,1,2,3]);let k=choose([-3,-2,-1,0,1,2,3]);
+ if(a===1&&h===0&&k===0)k=2;
+ return {kind,a,h,k,id:kind+':'+a+':'+h+':'+k};
+}
+// PURE_MODEL_END
+window.FunctionTransformationCore=Object.freeze({parentY,transformY,inverseY,isInverse,makeTask});
+const $=id=>document.getElementById(id),qs=new URLSearchParams(location.search);
+const modes=['transforms-basic','transforms-advanced','inverse-linear'];
+const first=modes.includes(qs.get('mode'))?qs.get('mode'):(qs.get('course')==='algebra2'?'transforms-advanced':'transforms-basic');
+const context=[qs.get('course')||'standalone',qs.get('unit')||'',qs.get('lesson')||''].map(x=>x.replace(/[^a-z0-9_-]/gi,'_')).join('|');
+let mode=first,task=null,free=false,answered=false,usedHelp=false,hadWrong=false,params={a:1,h:0,k:0,p:1,q:0};
+const fresh=()=>({solved:0,attempted:0,firstTries:0,bestStreak:0,recent:[],history:[],task:null,answered:false,usedHelp:false,hadWrong:false});
+let record=fresh(),streak=0;
+const key=()=>['KHAE_FTS_V1',context,mode].join('|');
+function load(){
+ record=fresh();try{const r=JSON.parse(localStorage.getItem(key())||'null');if(r&&Number.isFinite(r.solved)&&Array.isArray(r.recent))record={...record,...r,recent:r.recent.slice(-30),history:(r.history||[]).slice(-10)};}catch{}
+ task=record.task||null;answered=!!record.answered;usedHelp=!!record.usedHelp;hadWrong=!!record.hadWrong;streak=0;
+}
+function save(){try{localStorage.setItem(key(),JSON.stringify({...record,task,answered,usedHelp,hadWrong}));}catch{$('context').textContent='Storage unavailable; export your work to keep a copy.';}}
+function setFeedback(message,status){$('feedback').textContent=message;$('feedback').className=status||'';$('celebrate').textContent='';}
+function challenge(){
+ free=false;answered=false;usedHelp=false;hadWrong=false;
+ let next=null;const seen=new Set(record.recent);
+ for(let i=0;i<150;i++){const v=makeTask(mode);if(!seen.has(v.id)){next=v;break;}}
+ if(!next){record.recent=[];next=makeTask(mode);}
+ task=next;record.recent.push(task.id);record.recent=record.recent.slice(-30);params={a:1,h:0,k:0,p:1,q:0};
+ update();setFeedback('Match the amber graph. Your work is preserved after a missed answer.','');save();
+}
+const sx=x=>300+27*x,sy=y=>250-27*y;
+function graphPath(fn,lower=-8){
+ let path='',pen=false;
+ for(let i=0;i<=360;i++){const x=-8+16*i/360,y=fn(x),valid=x>=lower-1e-8&&Number.isFinite(y)&&y>=-8.4&&y<=8.4;
+  if(valid){path+=(pen?' L ':'M ')+sx(x).toFixed(2)+' '+sy(y).toFixed(2);pen=true;}else pen=false;
+ }
+ return path;
+}
+function drawGrid(){
+ let out='';for(let v=-8;v<=8;v++){
+  const c=v===0?'#8c8070':'#ece6dd',w=v===0?2:1;
+  out+='<line x1="'+sx(v)+'" x2="'+sx(v)+'" y1="'+sy(-8)+'" y2="'+sy(8)+'" stroke="'+c+'" stroke-width="'+w+'"/>';
+  out+='<line x1="'+sx(-8)+'" x2="'+sx(8)+'" y1="'+sy(v)+'" y2="'+sy(v)+'" stroke="'+c+'" stroke-width="'+w+'"/>';
+  if(v%2===0)out+='<text x="'+sx(v)+'" y="'+(sy(0)+14)+'" font-size="11" fill="#706254" text-anchor="middle">'+v+'</text>';
+ }
+ $('grid').innerHTML=out;
+}
+const sign=n=>n===0?'':n>0?' + '+n:' − '+Math.abs(n);
+function expression(kind,a,h,k){
+ const x=h===0?'x':'(x'+(h>0?' − '+h:' + '+Math.abs(h))+')';
+ const body=kind==='quadratic'?x+'²':kind==='absolute'?'|'+x+'|':kind==='cubic'?x+'³':'√'+x;
+ return 'y = '+(a===1?'':a===-1?'−':a+'·')+body+sign(k);
+}
+function line(m,b){return 'y = '+m+'x'+sign(b);}
+function draw(){
+ const inv=mode==='inverse-linear',kind=inv?'linear':(task?task.kind:$('parent').value);
+ const original=x=>inv?(task?task.m*x+task.b:x):parentY(kind,x);
+ const wanted=x=>inv?(task?inverseY(task.m,task.b,x):NaN):(task?transformY(kind,task.a,task.h,task.k,x):NaN);
+ const ours=x=>inv?params.p*x+params.q:transformY(kind,params.a,params.h,params.k,x);
+ $('parentCurve').setAttribute('d',graphPath(original,kind==='sqrt'?0:-8));
+ $('targetCurve').setAttribute('d',free?'':graphPath(wanted,kind==='sqrt'&&!inv?task.h:-8));
+ $('userCurve').setAttribute('d',graphPath(ours,kind==='sqrt'?params.h:-8));
+ $('mirror').setAttribute('d',inv?graphPath(x=>x):'');
+ $('formula').textContent=inv?line(params.p,params.q):expression(kind,params.a,params.h,params.k);
+ $('targetText').textContent=free?'Free exploration has no answer target.':inv?'Supplied line: '+line(task.m,task.b)+'; amber is its inverse.':'Amber shows the unknown a, h and k. Determine them from the graph.';
+ $('graphText').textContent=inv?'Gray is the original function, amber its reflection over y=x, green your proposed inverse.':'Parent family: '+kind+'. Your scale is '+params.a+', shift right '+params.h+', shift up '+params.k+'.';
+}
+function stats(){
+ $('solved').textContent=String(record.solved);$('accuracy').textContent=record.attempted?Math.round(100*record.firstTries/record.attempted)+'%':'—';
+ $('streak').textContent=String(record.bestStreak);
+ $('progress').value=Math.min(10,record.solved%10||(record.solved?10:0));
+ $('mastery').textContent=record.attempted>=10&&record.firstTries/record.attempted>=.8?'Achieved':'In progress';
+ $('history').replaceChildren();
+ for(const entry of record.history.slice(-10).reverse()){const li=document.createElement('li');li.textContent=entry;$('history').appendChild(li);}
+}
+function update(){
+ const inv=mode==='inverse-linear';$('mode').value=mode;$('inverseControls').hidden=!inv;$('transformControls').hidden=inv;
+ $('parentBlock').hidden=inv;$('parent').disabled=!free;
+ if(task&&!inv)$('parent').value=task.kind;
+ for(const id of ['a','h','k','p','q']){$(id).value=String(params[id]);$(id+'Out').textContent=String(params[id]);}
+ $('check').disabled=free||answered;$('hint').disabled=free||answered;$('solution').disabled=free||answered;
+ $('prompt').textContent=free?'Adjust the sliders to explore; select New mission when ready.':inv?'Find the inverse of the original gray line; match the amber target.':'Choose the vertical scale a and horizontal/vertical shifts h and k to match the target.';
+ $('rule').textContent=inv?'Inverse of f(x)=mx+b is f⁻¹(x)=(x−b)/m.':'Transformation formula: g(x)=a·f(x−h)+k. Negative a reflects; positive h shifts right.';
+ stats();draw();
+}
+function reason(){
+ if(mode==='inverse-linear')return 'Swap input and output for f(x)='+task.m+'x'+sign(task.b)+', then solve for y: f⁻¹(x)=(x'+(task.b<0?' + '+Math.abs(task.b):' − '+task.b)+')/'+task.m+'. Verify by composition.';
+ return 'Start with the '+task.kind+' parent, scale by '+Math.abs(task.a)+(task.a<0?', reflect over the x-axis':'')+', shift '+(task.h>=0?'right ':'left ')+Math.abs(task.h)+', then '+(task.k>=0?'up ':'down ')+Math.abs(task.k)+'.';
+}
+function check(){
+ if(!task||answered||free)return;
+ const good=mode==='inverse-linear'?isInverse(task.m,task.b,params.p,params.q):close(task.a,params.a)&&task.h===params.h&&task.k===params.k;
+ if(!hadWrong&&!usedHelp)record.attempted++;
+ if(good){
+  answered=true;record.solved++;
+  if(!hadWrong&&!usedHelp){record.firstTries++;streak++;}else streak=0;
+  record.bestStreak=Math.max(record.bestStreak,streak);
+  record.history.push(task.id+(hadWrong||usedHelp?' · completed with practice':' · first try'));record.history=record.history.slice(-10);
+  update();setFeedback('Correct! '+reason(),'good');
+  if(!$('lowStim').checked&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches)$('celebrate').textContent='✦ Mission complete ✦';
+ }else{hadWrong=true;streak=0;setFeedback('Not yet. Your mission stays open. Compare the curves, adjust one parameter, and try again.','bad');}
+ save();
+}
+function hint(){if(!task||answered||free)return;usedHelp=true;setFeedback(mode==='inverse-linear'?'Hint: slope 1/m and intercept −b/m.':'Hint: find the horizontal shift first, then identify reflection and vertical scale, then vertical shift.','');save();}
+function reveal(){if(!task||answered||free)return;usedHelp=true;setFeedback('Worked reasoning: '+reason()+(mode==='inverse-linear'?' Slope '+(1/task.m)+', intercept '+(-task.b/task.m)+'.':' Target a='+task.a+', h='+task.h+', k='+task.k+'.'),'');save();}
+function explore(){free=true;task=null;answered=false;params={a:1,h:0,k:0,p:1,q:0};update();setFeedback('Explore freely. This does not change your practice score.','');save();}
+function switchMode(selected){if(!modes.includes(selected))return;mode=selected;free=false;params={a:1,h:0,k:0,p:1,q:0};load();if(task)update();else challenge();}
+$('mode').addEventListener('change',e=>switchMode(e.target.value));
+$('new').addEventListener('click',challenge);$('explore').addEventListener('click',explore);$('check').addEventListener('click',check);$('hint').addEventListener('click',hint);$('solution').addEventListener('click',reveal);
+$('parent').addEventListener('change',()=>{if(free)draw();});
+for(const id of ['a','h','k','p','q'])$(id).addEventListener('input',()=>{let n=Number($(id).value);if((id==='a'||id==='p')&&n===0)n=.5;params[id]=n;$(id).value=String(n);$(id+'Out').textContent=String(n);draw();});
+$('reset').addEventListener('click',()=>{if(!confirm('Reset this one practice pathway? Other paths and formal course grades are not affected.'))return;try{localStorage.removeItem(key());}catch{}record=fresh();challenge();});
+$('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({schema:1,game:'function-transformation-studio',context,mode,progress:record,date:new Date().toISOString()},null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='function-transformation-studio-practice.json';a.click();});
+$('context').textContent='Lesson: '+context.replace(/\|/g,' / ')+' · your practice is locally stored; formal grades stay in course assessments.';
+drawGrid();load();if(task)update();else challenge();
+})();
+</script></body></html>

@@ -1599,6 +1599,43 @@
         }
       ],
       "scope_note": "Right-triangle trigonometric ratios, missing sides, inverse trig and Pythagorean relationships. U06 L01 does not fully assess converse; U06 L07 and L08 receive supplemental numerical practice rather than complete elevation, bearings, vector, or navigation scenarios. Live browser QA and mastery writeback not certified."
+    },
+    "function-transformation-studio": {
+      "title": "Function Transformation Studio",
+      "canonical_path": "courses/mathematics/assets/learning-games/function-transformation-studio/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Two transformation depths and a separate inverse-linear mission. Local practice does not change formal grades.",
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "05",
+          "lesson": "05",
+          "lesson_title": "Transformations of Parent Functions",
+          "mode": "transforms-basic",
+          "query": "?course=algebra1&unit=05&lesson=05&mode=transforms-basic",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "01",
+          "lesson": "u01-l03",
+          "lesson_title": "Transformations of Parent Functions",
+          "mode": "transforms-advanced",
+          "query": "?course=algebra2&unit=01&lesson=u01-l03&mode=transforms-advanced",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "01",
+          "lesson": "u01-l05",
+          "lesson_title": "Inverse Functions & One-to-One Relationships",
+          "mode": "inverse-linear",
+          "query": "?course=algebra2&unit=01&lesson=u01-l05&mode=inverse-linear",
+          "wired": true
+        }
+      ]
     }
   }
 }
