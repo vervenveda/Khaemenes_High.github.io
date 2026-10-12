@@ -1772,6 +1772,133 @@
           "wired": true
         }
       ]
+    },
+    "polynomial-zeros-explorer": {
+      "title": "Polynomial Zeros Explorer",
+      "canonical_path": "courses/mathematics/assets/learning-games/polynomial-zeros-explorer/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Twelve polynomial missions covering degree, expansion, parity/end behavior, nonreal quadratic roots and conjugates, FTA, long/synthetic division, remainder and factor theorems, rational roots, distinct zeros, multiplicity, and interpolation. Standalone i-powers and complex arithmetic are reserved for Complex Plane Lab.",
+      "placements": [
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "u02-l01",
+          "lesson_title": "Polynomial Vocabulary, Degree & Structure",
+          "mode": "structure",
+          "query": "?course=algebra2&unit=02&lesson=u02-l01&mode=structure",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "u02-l02",
+          "lesson_title": "Polynomial Operations & Equivalent Forms",
+          "mode": "expand",
+          "query": "?course=algebra2&unit=02&lesson=u02-l02&mode=expand",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "u02-l03",
+          "lesson_title": "Power Functions & End Behavior",
+          "mode": "end",
+          "query": "?course=algebra2&unit=02&lesson=u02-l03&mode=end",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "u02-l06",
+          "lesson_title": "Quadratic Equations with Complex Solutions",
+          "mode": "complex",
+          "query": "?course=algebra2&unit=02&lesson=u02-l06&mode=complex",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "u02-l07",
+          "lesson_title": "Conjugates, Modulus & the Complex Plane",
+          "mode": "conjugate",
+          "query": "?course=algebra2&unit=02&lesson=u02-l07&mode=conjugate",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "02",
+          "lesson": "u02-l08",
+          "lesson_title": "Fundamental Theorem of Algebra & Complete Factorization",
+          "mode": "fta",
+          "query": "?course=algebra2&unit=02&lesson=u02-l08&mode=fta",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "03",
+          "lesson": "u03-l01",
+          "lesson_title": "Long Division of Polynomials",
+          "mode": "division",
+          "query": "?course=algebra2&unit=03&lesson=u03-l01&mode=division",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "03",
+          "lesson": "u03-l02",
+          "lesson_title": "Synthetic Division & Efficient Evaluation",
+          "mode": "division",
+          "query": "?course=algebra2&unit=03&lesson=u03-l02&mode=division",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "03",
+          "lesson": "u03-l03",
+          "lesson_title": "Remainder and Factor Theorems",
+          "mode": "remainder",
+          "query": "?course=algebra2&unit=03&lesson=u03-l03&mode=remainder",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "03",
+          "lesson": "u03-l04",
+          "lesson_title": "Rational Root Theorem & Candidate Zeros",
+          "mode": "rational",
+          "query": "?course=algebra2&unit=03&lesson=u03-l04&mode=rational",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "03",
+          "lesson": "u03-l05",
+          "lesson_title": "Solving Higher-Degree Polynomial Equations",
+          "mode": "roots",
+          "query": "?course=algebra2&unit=03&lesson=u03-l05&mode=roots",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "03",
+          "lesson": "u03-l06",
+          "lesson_title": "Zeros, Multiplicity & Graph Behavior",
+          "mode": "multiplicity",
+          "query": "?course=algebra2&unit=03&lesson=u03-l06&mode=multiplicity",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "03",
+          "lesson": "u03-l07",
+          "lesson_title": "Polynomial Regression, Interpolation & Model Limits",
+          "mode": "model",
+          "query": "?course=algebra2&unit=03&lesson=u03-l07&mode=model",
+          "wired": true
+        }
+      ]
     }
   }
 }

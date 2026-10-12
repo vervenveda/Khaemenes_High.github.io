@@ -12,6 +12,7 @@ on:
       - "courses/mathematics/tools/test-algebra-game-routes.mjs"
       - "courses/mathematics/tools/test-function-transformation-studio.mjs"
       - "courses/mathematics/tools/test-exponential-logarithm-lab.mjs"
+      - "courses/mathematics/tools/test-polynomial-zeros-explorer.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -29,6 +30,7 @@ on:
       - "courses/mathematics/tools/test-algebra-game-routes.mjs"
       - "courses/mathematics/tools/test-function-transformation-studio.mjs"
       - "courses/mathematics/tools/test-exponential-logarithm-lab.mjs"
+      - "courses/mathematics/tools/test-polynomial-zeros-explorer.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -62,6 +64,9 @@ jobs:
 
       - name: Verify Exponential and Logarithm Lab mathematics
         run: node courses/mathematics/tools/test-exponential-logarithm-lab.mjs
+
+      - name: Verify Polynomial Zeros Explorer mathematics
+        run: node courses/mathematics/tools/test-polynomial-zeros-explorer.mjs
 
       - name: Verify Algebra I shared-game launch and return routes
         run: node courses/mathematics/tools/test-algebra-game-routes.mjs

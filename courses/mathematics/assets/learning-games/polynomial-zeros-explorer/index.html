@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en"><head>
+<script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f4ecda">
+<title>Polynomial Zeros Explorer · Khaemenes Academy</title>
+<style>
+:root{color-scheme:light;--paper:#f4ecda;--card:#fffdf8;--ink:#231d17;--edge:#c7b698;--blue:#23658c;--gold:#9d6c30;--green:#196641;--red:#993332}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 92% 0%,#fffdfa,transparent 48%),var(--paper);color:var(--ink);font:16px/1.54 system-ui,-apple-system,Arial,sans-serif}
+main{max-width:1160px;margin:auto;padding:24px 16px 65px}h1,h2{font-family:Georgia,serif;line-height:1.21}h1{font-size:clamp(2rem,5vw,3rem);margin:.15em 0}h2{font-size:1.35rem;margin:0 0 12px}
+.eyebrow{color:#70512b;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.lead{max-width:870px;color:#51473b}.panel{background:var(--card);border:1px solid var(--edge);padding:18px;border-radius:7px;box-shadow:0 3px 0 #e5dac5}
+.layout{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(310px,1fr);gap:15px;margin:17px 0}
+.row,.stats{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.stats{margin-top:14px}.stat{background:#f9f1e4;border:1px solid var(--edge);border-radius:7px;padding:7px 10px}
+label{display:block;font-weight:650}label small{display:block;color:#51483e;font-weight:400}
+input,select,button{font:inherit;color:var(--ink);border:1px solid #806c4d;border-radius:7px;padding:9px;background:white}
+input[type=number]{width:100%;max-width:165px}input[type=range]{width:100%;padding:4px;accent-color:var(--gold)}
+button{background:#eaddc3;cursor:pointer;font-weight:650}button:hover{background:#dac49c}button.primary{background:#41342b;color:white}button:disabled{opacity:.53;cursor:not-allowed}
+:focus-visible{outline:3px solid #266aa1;outline-offset:2px}a{color:#185d90}
+#graph{display:block;width:100%;height:auto;background:#fffdf8;border:1px solid var(--edge);border-radius:7px;touch-action:pan-y}
+.legend{display:inline-block;padding:4px 8px;border:1px solid var(--edge);border-radius:7px;margin:5px 6px 0 0;font-size:.81rem}
+#expression{font:700 clamp(1.05rem,2.5vw,1.5rem)/1.4 Georgia,serif;overflow-wrap:anywhere}
+#prompt{font-weight:650}#feedback{border-left:5px solid var(--gold);border-radius:4px;background:#f8efdf;min-height:75px;padding:13px}
+#feedback.good{border-color:var(--green)}#feedback.bad{border-color:var(--red)}
+#celebrate{color:var(--green);font-weight:700;min-height:24px}.small{font-size:.88rem;color:#534a3f}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.fields>div{background:#f9f2e6;border:1px solid #dfd0b5;border-radius:7px;padding:10px}
+#explorerControls{background:#f8f0e0;padding:12px;border-radius:7px;border:1px solid var(--edge)}
+.sliders{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#dataText{min-height:24px}progress{width:100%;accent-color:var(--green)}
+footer{margin-top:26px;color:#66594b;font-size:.84rem}[hidden]{display:none!important}
+@media(max-width:820px){.layout{grid-template-columns:1fr}}
+@media(max-width:520px){.fields,.sliders{grid-template-columns:1fr}.panel{padding:13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<script src="../../game-return-route.js?v=20261012"></script>
+</head><body><main>
+<div class="eyebrow">Khaemenes Academy · Sovereign Mathematics · Algebra II</div>
+<h1>Polynomial Zeros Explorer</h1>
+<p class="lead">Build functions from their zeros, investigate repeated roots and complex conjugates, use synthetic division, and reveal what polynomial graphs can—and cannot—tell us. Every mission preserves your progress and gives mathematical feedback.</p>
+<section class="panel"><div class="row">
+<label for="mode">Lesson pathway <select id="mode">
+<option value="structure">Degree &amp; polynomial structure</option>
+<option value="expand">Expand factors &amp; coefficients</option>
+<option value="end">Leading coefficient &amp; end behavior</option>
+<option value="complex">Complex zeros of quadratics</option>
+<option value="conjugate">Conjugate-root symmetry</option>
+<option value="fta">Fundamental Theorem of Algebra</option>
+<option value="division">Long / synthetic division</option>
+<option value="remainder">Remainder &amp; factor theorem</option>
+<option value="rational">Rational-root investigation</option>
+<option value="roots">Higher-degree polynomial zeros</option>
+<option value="multiplicity">Multiplicity: crossing vs touching</option>
+<option value="model">Interpolation &amp; model checking</option>
+</select></label>
+<button class="primary" id="new" type="button">New mission</button>
+<button id="explore" type="button">Explore roots freely</button>
+<label for="lowStim">Low stimulation <input type="checkbox" id="lowStim"></label>
+</div><p id="context" class="small">Independent learning practice · official unit assessment and mastery stay separate.</p></section>
+<div class="stats"><span class="stat">Solved <b id="solved">0</b></span><span class="stat">Checked <b id="attempted">0</b></span><span class="stat">First-try accuracy <b id="accuracy">—</b></span><span class="stat">Best streak <b id="streak">0</b></span><span class="stat">Practice goal <b id="mastery">In progress</b></span></div>
+<div class="layout">
+<section class="panel">
+<h2>Live function laboratory</h2>
+<svg id="graph" viewBox="0 0 620 440" role="img" aria-labelledby="gtitle gdesc">
+<title id="gtitle">Polynomial graph and zeros</title><desc id="gdesc">The coordinate plane shows polynomial curves and labeled zero locations. For complex-root missions it shows a complex plane. The curve and data are described in text.</desc>
+<g id="grid"></g><path id="curve" fill="none" stroke="#246487" stroke-width="3.5"/><path id="companion" fill="none" stroke="#ba783b" stroke-dasharray="7 6" stroke-width="2.6"/><g id="markers"></g><circle id="sweep" r="6" fill="#1d754b" hidden/>
+</svg>
+<div><span class="legend">Blue — polynomial</span><span class="legend">Amber — roots and key data</span><span class="legend">Green — animated probe (optional)</span></div>
+<p id="graphText" class="small" aria-live="polite"></p><p id="expression" aria-live="polite"></p><p id="dataText" class="small"></p>
+<div class="row"><button id="animate" type="button">Animate graph probe</button><button id="stopAnim" type="button" disabled>Stop animation</button></div>
+<div id="explorerControls" class="gap" hidden>
+<h2>Free root workshop</h2>
+<p class="small">Move the sliders—or drag the marked roots—to shape a factored cubic. Overlapping roots demonstrate multiplicity. This exploratory tool never changes your assessment.</p>
+<div class="sliders">
+<div><label for="root1">Root 1: <output id="root1Out">−2</output></label><input id="root1" type="range" min="-4" max="4" value="-2" step=".5"></div>
+<div><label for="root2">Root 2: <output id="root2Out">0</output></label><input id="root2" type="range" min="-4" max="4" value="0" step=".5"></div>
+<div><label for="root3">Root 3: <output id="root3Out">2</output></label><input id="root3" type="range" min="-4" max="4" value="2" step=".5"></div>
+<div><label for="lead">Leading coefficient: <output id="leadOut">1</output></label><input id="lead" type="range" min="-3" max="3" value="1" step=".5"></div>
+</div>
+</div>
+</section>
+<section class="panel">
+<h2>Mission console</h2><p id="scenario"></p><p id="prompt"></p>
+<div class="fields">
+<div><label for="answer">Primary answer <small id="primaryLabel">Enter a value.</small></label><input id="answer" type="number" step="any" inputmode="decimal"></div>
+<div id="secondBlock"><label for="second">Second answer <small id="secondLabel">Enter a value.</small></label><input id="second" type="number" step="any" inputmode="decimal"></div>
+</div>
+<div id="choiceBlock" class="gap" hidden><label for="choice" id="choiceLabel">Choose your conclusion</label>
+<select id="choice"><option value="">Choose one</option></select></div>
+<p class="small" id="precision">Use exact values when possible and check the question's required precision.</p>
+<div class="row">
+<button id="check" class="primary" type="button">Check answer</button><button id="hint" type="button">Hint</button><button id="solution" type="button">Worked reasoning</button><button id="next" type="button" disabled>Next mission →</button>
+</div><p id="feedback" role="status" aria-live="polite">Study the graph and submit your reasoning.</p><p id="celebrate" aria-live="polite"></p>
+</section></div>
+<section class="panel"><h2>Learning record</h2><progress id="progress" value="0" max="10"></progress>
+<p class="small">The local 80% practice goal uses the most recent ten checked missions. An incorrect attempt does not reset a lesson or repeat a completed question immediately. Hints and worked solutions support learning but do not count as unaided first tries. Official mastery is determined by the Academy's separate assessment engine.</p>
+<div class="row"><button id="export" type="button">Export progress JSON</button><button id="reset" type="button">Reset this pathway (confirm)</button><a href="../../../index.html">Mathematics home</a></div>
+<ol id="history" aria-label="Recent missions"></ol></section>
+<footer>© Jennifer Kay Pearl · Khaemenes Academy · Vanilla HTML/CSS/JavaScript · No third-party runtimes, tracking or game server.</footer>
+</main>
+<script>
+(()=>{'use strict';
+// PURE_MODEL_BEGIN
+const near=(a,b,eps=.012)=>Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=eps;
+const pick=(list,rng)=>list[Math.floor(rng()*list.length)];
+const multiply=(a,b)=>{const out=Array(a.length+b.length-1).fill(0);a.forEach((x,i)=>b.forEach((y,j)=>{out[i+j]+=x*y;}));return out;};
+const scale=(a,m)=>a.map(v=>v*m);
+const polyFromRoots=(roots,lead=1)=>scale(roots.reduce((c,r)=>multiply(c,[-r,1]),[1]),lead);
+const evaluate=(coeffs,x)=>coeffs.reduceRight((s,c)=>s*x+c,0);
+const conjugateFactor=(re,im)=>[re*re+im*im,-2*re,1];
+const synthetic=(coeff,r)=>{
+ const descending=[...coeff].reverse(),steps=[descending[0]];
+ for(let i=1;i<descending.length;i++)steps.push(descending[i]+steps[i-1]*r);
+ return {quotient:steps.slice(0,-1).reverse(),remainder:steps[steps.length-1]};
+};
+const endBehavior=(degree,lead)=>degree%2===0?(lead>0?'up/up':'down/down'):(lead>0?'down/up':'up/down');
+const distinct=(a,b)=>a.filter(x=>x!==b);
+const GCD=(a,b)=>b?GCD(b,a%b):Math.abs(a);
+function makeTask(mode,rng=Math.random){
+ const R=()=>pick([-3,-2,-1,0,1,2,3],rng),NZ=()=>pick([-3,-2,-1,1,2,3],rng);
+ const t={mode};
+ switch(mode){
+ case 'structure':t.roots=[R(),R(),R()];t.degree=pick([2,3],rng);t.roots=t.roots.slice(0,t.degree);t.a=pick([-2,-1,1,2],rng);t.coeff=polyFromRoots(t.roots,t.a);break;
+ case 'expand':t.roots=[R(),R()];t.a=pick([-2,-1,1,2],rng);t.coeff=polyFromRoots(t.roots,t.a);break;
+ case 'end':t.degree=pick([2,3,4,5],rng);t.a=pick([-3,-2,-1,1,2,3],rng);t.k=R();t.coeff=Array(t.degree+1).fill(0);t.coeff[0]=t.k;t.coeff[t.degree]=t.a;break;
+ case 'complex':t.re=R();t.im=pick([1,2,3],rng);t.coeff=conjugateFactor(t.re,t.im);break;
+ case 'conjugate':t.re=R();t.im=pick([1,2,3],rng);t.coeff=conjugateFactor(t.re,t.im);break;
+ case 'fta':t.roots=[R(),R()];t.pairs=pick([1,2],rng);t.re=R();t.im=pick([1,2],rng);t.coeff=polyFromRoots(t.roots);for(let j=0;j<t.pairs;j++)t.coeff=multiply(t.coeff,conjugateFactor(t.re+j,t.im));t.degree=t.coeff.length-1;break;
+ case 'division':t.coeff=[R(),R(),R(),NZ()];t.r=R();break;
+ case 'remainder':t.coeff=[R(),R(),R(),NZ()];t.r=R();break;
+ case 'rational':t.p=pick([-3,-2,-1,1,2,3],rng);t.q=pick([2,3,4,5],rng);if(GCD(Math.abs(t.p),t.q)>1||t.p%t.q===0)t.p=pick([-1,1],rng);t.s=R();t.coeff=multiply([-t.p,t.q],[-t.s,1]);break;
+ case 'roots':{t.roots=[R()];while(t.roots.length<3){const r=R();if(!t.roots.includes(r))t.roots.push(r);}t.roots.sort((a,b)=>a-b);t.coeff=polyFromRoots(t.roots,pick([-1,1],rng));break;}
+ case 'multiplicity':t.r=R();t.other=pick(distinct([-3,-2,-1,0,1,2,3],t.r),rng);t.mult=pick([2,3,4],rng);t.coeff=polyFromRoots([...Array(t.mult).fill(t.r),t.other],pick([-1,1],rng));break;
+ case 'model':t.degree=pick([2,3],rng);t.coeff=[R(),NZ(),pick([-2,-1,1,2],rng)];if(t.degree===3)t.coeff.push(pick([-1,1],rng));break;
+ default:throw Error('Unknown polynomial mode '+mode);
+ }
+ t.id=JSON.stringify(t);return t;
+}
+function expected(t){
+ switch(t.mode){
+ case 'structure':return {one:t.degree};
+ case 'expand':return {one:t.coeff[1]};
+ case 'end':return {one:t.degree,choice:endBehavior(t.degree,t.a)};
+ case 'complex':return {one:t.re,two:t.im};
+ case 'conjugate':return {one:t.re,two:-t.im};
+ case 'fta':return {one:t.pairs*2,two:t.degree};
+ case 'division':{const s=synthetic(t.coeff,t.r);return {one:s.remainder,two:s.quotient[0]};}
+ case 'remainder':{const s=synthetic(t.coeff,t.r);return {one:s.remainder,choice:near(s.remainder,0,1e-10)?'yes':'no'};}
+ case 'rational':return {one:t.p/t.q};
+ case 'roots':return {one:t.roots[2],two:t.roots.length};
+ case 'multiplicity':return {one:t.mult,choice:t.mult%2===0?'touch':'cross'};
+ case 'model':return {one:evaluate(t.coeff,3),choice:String(t.degree)};
+ }
+ return {};
+}
+function correct(t,one,two,choice){
+ const e=expected(t);
+ if(!near(one,e.one))return false;
+ if('two' in e&&!near(two,e.two))return false;
+ if('choice' in e&&choice!==e.choice)return false;
+ return true;
+}
+// PURE_MODEL_END
+window.PolynomialZerosCore=Object.freeze({near,multiply,polyFromRoots,evaluate,conjugateFactor,synthetic,endBehavior,makeTask,expected,correct});
+const $=id=>document.getElementById(id),q=new URLSearchParams(location.search);
+const MODES=['structure','expand','end','complex','conjugate','fta','division','remainder','rational','roots','multiplicity','model'];
+let mode=MODES.includes(q.get('mode'))?q.get('mode'):'multiplicity',exploring=false,task=null,record,streak=0;
+const context=[q.get('course')||'standalone',q.get('unit')||'',q.get('lesson')||''].map(s=>s.replace(/[^a-z0-9_-]/gi,'_')).join('|');
+const fresh=()=>({solved:0,attempted:0,firstTries:0,bestStreak:0,outcomes:[],history:[],recent:[],task:null,checked:false,wrong:false,helped:false,entry:{one:'',two:'',choice:''}});
+const key=()=>['KHAE_POLY_V1',context,mode].join('|');
+function load(){
+ record=fresh();try{const value=JSON.parse(localStorage.getItem(key())||'null');if(value&&Number.isFinite(value.solved)&&Array.isArray(value.recent)&&Array.isArray(value.history)){record={...record,...value,history:value.history.slice(-10),recent:value.recent.slice(-30),outcomes:(value.outcomes||[]).slice(-10),entry:{...record.entry,...(value.entry||{})}};}}catch{}
+ task=record.task||null;streak=0;
+}
+function save(){record.task=task;try{localStorage.setItem(key(),JSON.stringify(record));}catch{$('context').textContent='Local storage unavailable. Export your progress for safekeeping.';}}
+function message(txt,status=''){$('feedback').textContent=txt;$('feedback').className=status;$('celebrate').textContent='';}
+function challenge(){
+ stopAnimation();exploring=false;record.checked=false;record.wrong=false;record.helped=false;record.entry={one:'',two:'',choice:''};
+ const seen=new Set(record.recent);let found=null;
+ for(let i=0;i<160;i++){const t=makeTask(mode);if(!seen.has(t.id)){found=t;break;}}
+ if(!found){record.recent=[];found=makeTask(mode);}
+ task=found;record.recent.push(task.id);record.recent=record.recent.slice(-30);
+ show();message('Investigate the model. Your answer and mission are preserved until you choose a new one.');save();
+}
+function number(n){return n<0?'−'+Math.abs(n):String(n);}
+function polyText(coeff){
+ let parts=[];
+ for(let j=coeff.length-1;j>=0;j--){
+ const v=coeff[j];if(!v)continue;
+ const atom=j===0?String(Math.abs(v)):(Math.abs(v)===1?'':Math.abs(v))+'x'+(j===1?'':'^'+j);
+ parts.push((parts.length?(v<0?' − ':' + '):(v<0?'−':''))+atom);
+ }
+ return parts.join('')||'0';
+}
+const formatRoot=r=>'('+(r<0?'x + '+Math.abs(r):r>0?'x − '+r:'x')+')';
+function displayTask(){
+ const t=task,coeff=t.coeff||[],expr='P(x) = '+polyText(coeff);
+ switch(mode){
+ case 'structure':return ['A polynomial has the expanded equation below.','Determine its degree (largest exponent with nonzero coefficient).',expr,'Degree'];
+ case 'expand':return ['Expand the factored quadratic '+t.a+formatRoot(t.roots[0])+formatRoot(t.roots[1])+'.','Find the coefficient of x in standard form.','P(x) = '+t.a+formatRoot(t.roots[0])+formatRoot(t.roots[1]),'Coefficient of x'];
+ case 'end':return ['Analyze the ends of '+expr+'.','Enter the polynomial degree, then identify the left/right end directions.',expr,'Degree'];
+ case 'complex':return ['This real-coefficient quadratic has two non-real complex zeros.','Enter the real and positive imaginary parts of the zero a+bi.',expr,'Real part a'];
+ case 'conjugate':return ['A real polynomial has known root '+number(t.re)+' + '+t.im+'i.','Find the real and imaginary components of its conjugate root.','Given root: '+number(t.re)+' + '+t.im+'i','Real part'];
+ case 'fta':return ['The polynomial below has real zeros and '+t.pairs+' complex-conjugate pair(s).','How many non-real complex zeros occur counting multiplicity, and what is the total degree?',expr,'Non-real zeros'];
+ case 'division':return ['Divide '+expr+' by '+formatRoot(t.r)+'.','Enter the remainder and the constant coefficient of the quotient.',expr+' ÷ '+formatRoot(t.r),'Remainder'];
+ case 'remainder':return ['Apply the remainder theorem to '+expr+' divided by '+formatRoot(t.r)+'.','Find P('+t.r+'), then decide whether '+formatRoot(t.r)+' is a factor.',expr,'Remainder'];
+ case 'rational':return ['Investigate the rational zeros of '+expr+'.','Find the noninteger rational zero. Use a decimal accurate to 0.01.',expr,'Noninteger rational zero'];
+ case 'roots':return ['Find real zeros of '+expr+'.','Enter the largest real root and the number of distinct real roots.',expr,'Largest root'];
+ case 'multiplicity':return ['The graph of '+expr+' contains a repeated zero at x='+t.r+'.','Find its multiplicity and determine whether the curve crosses or touches the x-axis there.',expr,'Multiplicity at x='+t.r];
+ default:return ['A set of polynomial observations is shown below.','Identify the polynomial degree and calculate the model output at x=3.',expr,'P(3)'];
+ }
+}
+function explanation(){
+ const t=task,e=expected(t);
+ switch(mode){
+ case 'structure':return 'After combining like terms, the greatest nonzero power of x in P(x) is '+t.degree+'.';
+ case 'expand':return 'Multiply the binomials and collect the x terms. The coefficient of x is '+t.coeff[1]+'.';
+ case 'end':return 'Degree '+t.degree+' is '+(t.degree%2?'odd':'even')+'; the leading coefficient '+t.a+' is '+(t.a>0?'positive':'negative')+'. Thus the left/right ends are '+e.choice+'.';
+ case 'complex':return 'Complete the square: P(x)=(x−('+t.re+'))²+'+(t.im*t.im)+'. Therefore (x−('+t.re+'))²=−'+(t.im*t.im)+' and x='+t.re+' ± '+t.im+'i.';
+ case 'conjugate':return 'Non-real zeros of polynomials with real coefficients occur in conjugate pairs. The companion root is '+t.re+' − '+t.im+'i.';
+ case 'fta':return 'Degree '+t.degree+' means '+t.degree+' complex roots counted with multiplicity. '+t.pairs+' conjugate pair(s) contribute '+(2*t.pairs)+' non-real roots; the remaining '+(t.degree-2*t.pairs)+' are real.';
+ case 'division':{const d=synthetic(t.coeff,t.r);return 'Synthetic division at r='+t.r+' gives quotient '+polyText(d.quotient)+' and remainder '+d.remainder+'. The quotient constant term is '+d.quotient[0]+'.';}
+ case 'remainder':return 'The remainder theorem states remainder=P('+t.r+')='+e.one+'. This '+(e.choice==='yes'?'does':'does not')+' make the proposed divisor a factor.';
+ case 'rational':return 'For the integer-coefficient factor '+t.q+'x−('+t.p+'), the noninteger zero is x='+t.p+'/'+t.q+'='+Number((t.p/t.q).toFixed(5))+'. The Rational Root Theorem predicts candidates p/q from constant and leading coefficient divisors.';
+ case 'roots':return 'Factoring gives roots '+t.roots.join(', ')+'. The largest is '+e.one+', with '+e.two+' distinct real zeros.';
+ case 'multiplicity':return 'The factor (x−('+t.r+')) appears '+t.mult+' times. '+(t.mult%2?'Odd multiplicity crosses':'Even multiplicity touches')+' the axis at x='+t.r+'.';
+ default:return 'Finite differences identify the polynomial degree '+t.degree+'. Substituting x=3 yields P(3)='+e.one+'. A polynomial that matches sampled data can still extrapolate poorly.';
+ }
+}
+function options(items){const s=$('choice');s.replaceChildren();for(const [v,label] of [['','Choose one'],...items]){const opt=document.createElement('option');opt.value=v;opt.textContent=label;s.appendChild(opt);}}
+function setupFields(){
+ $('secondBlock').hidden=!['complex','conjugate','fta','division','roots'].includes(mode);
+ $('choiceBlock').hidden=!['end','remainder','multiplicity','model'].includes(mode);
+ const second={complex:'Positive imaginary coefficient b',conjugate:'Imaginary coefficient b',fta:'Total polynomial degree',division:'Quotient constant term',roots:'Number of distinct real zeros'};
+ $('secondLabel').textContent=second[mode]||'Second number';
+ const items=mode==='end'?[['up/up','Up / up'],['down/down','Down / down'],['down/up','Down / up'],['up/down','Up / down']]:
+ mode==='remainder'?[['yes','Yes · factor'],['no','No · not a factor']]:
+ mode==='multiplicity'?[['cross','Crosses the x-axis'],['touch','Touches and turns']]:
+ [['2','Quadratic · degree 2'],['3','Cubic · degree 3']];
+ if(!$('choiceBlock').hidden)options(items);
+ $('choiceLabel').textContent=mode==='end'?'End behavior · left/right':mode==='remainder'?'Is the divisor a factor?':mode==='multiplicity'?'Graph behavior at this zero':'Model degree from finite differences';
+ $('answer').value=record.entry.one;$('second').value=record.entry.two;
+ $('choice').value=record.entry.choice;
+ $('check').disabled=record.checked||exploring;$('hint').disabled=record.checked||exploring;$('solution').disabled=record.checked||exploring;$('next').disabled=!record.checked||exploring;
+}
+function stats(){
+ $('solved').textContent=String(record.solved);$('attempted').textContent=String(record.attempted);
+ $('accuracy').textContent=record.attempted?Math.round(record.firstTries*100/record.attempted)+'%':'—';
+ $('streak').textContent=String(record.bestStreak);$('progress').value=record.outcomes.length;
+ $('mastery').textContent=record.outcomes.length===10&&record.outcomes.filter(Boolean).length>=8?'Achieved':'In progress';
+ const h=$('history');h.replaceChildren();for(const line of record.history.slice(-10).reverse()){const li=document.createElement('li');li.textContent=line;h.appendChild(li);}
+}
+function show(){
+ $('mode').value=mode;$('explorerControls').hidden=!exploring;
+ if(!exploring){const p=displayTask();$('scenario').textContent=p[0];$('prompt').textContent=p[1];$('expression').textContent=p[2];$('primaryLabel').textContent=p[3];}
+ else{$('scenario').textContent='Free workshop: drag the gold zero markers or move the four sliders.';$('prompt').textContent='Place roots on top of one another to create a repeated factor. Observe what changes.';syncSliders();}
+ setupFields();stats();draw();
+}
+const wX=x=>310+x*43,wY=y=>220-y*33;
+function draw(){
+ const g=$('grid');let grid='';
+ for(let n=-6;n<=6;n++){const x=wX(n);grid+='<line x1="'+x+'" x2="'+x+'" y1="20" y2="420" stroke="'+(n?'#eae1d4':'#877d70')+'" stroke-width="'+(n?1:2)+'"/><text x="'+x+'" y="237" text-anchor="middle" font-size="12" fill="#655a4a">'+n+'</text>';}
+ for(let n=-6;n<=6;n++){const y=wY(n);grid+='<line x1="35" x2="585" y1="'+y+'" y2="'+y+'" stroke="'+(n?'#eae1d4':'#877d70')+'" stroke-width="'+(n?1:2)+'"/>';}
+ g.innerHTML=grid;
+ const t=task;
+ const isComplex=!exploring&&['complex','conjugate'].includes(mode);
+ let coeff=exploring?polyFromRoots([Number($('root1').value),Number($('root2').value),Number($('root3').value)],Number($('lead').value)||.5):t?.coeff;
+ if(exploring){$('expression').textContent='P(x) = '+polyText(coeff);}
+ if(!coeff)return;
+ let d='',pen=false;for(let i=0;i<=700;i++){
+ const x=-6+i*12/700,y=evaluate(coeff,x);
+ if(Number.isFinite(y)&&Math.abs(y)<=6.1){d+=(pen?' L ':' M ')+wX(x).toFixed(2)+' '+wY(y).toFixed(2);pen=true;}else pen=false;
+ }
+ $('curve').setAttribute('d',isComplex?'':d);
+ $('companion').setAttribute('d','');
+ let marks='';
+ const roots=exploring?[+$('root1').value,+$('root2').value,+$('root3').value]:
+ mode==='structure'||mode==='expand'||mode==='roots'||mode==='fta'?t.roots||[]:
+ mode==='rational'?[t.s,t.p/t.q]:mode==='multiplicity'?[t.r,t.other]:[];
+ if(isComplex){
+  const cx=wX(t.re),up=wY(t.im),down=wY(-t.im);
+  marks='<circle cx="'+cx+'" cy="'+up+'" r="7" fill="#bf752e"/><circle cx="'+cx+'" cy="'+down+'" r="7" fill="#bf752e"/>';
+  marks+='<text x="'+(cx+10)+'" y="'+(up-12)+'" fill="#67451a" font-size="12">'+t.re+' + '+t.im+'i</text>';
+  marks+='<text x="'+(cx+10)+'" y="'+(down+18)+'" fill="#67451a" font-size="12">'+t.re+' − '+t.im+'i</text>';
+ }else for(let i=0;i<roots.length;i++){
+  const x=wX(roots[i]);marks+='<circle data-root="'+i+'" cx="'+x+'" cy="'+wY(0)+'" r="7" fill="#b87935" stroke="#fff" stroke-width="2"/>';
+ }
+ $('markers').innerHTML=marks;
+ $('graphText').textContent=isComplex?'This is the complex plane: the amber markers are conjugates mirrored across the real axis. The graph cannot show their non-real zeros as ordinary x-intercepts.':
+ exploring?'The editable roots are '+roots.join(', ')+'. Coincident roots create multiplicity. The polynomial is '+polyText(coeff)+'.':
+ 'The blue graph depicts the polynomial in the mission. Amber markers, where shown, identify selected zero locations; the graph is clipped to the visible coordinate range.';
+ $('dataText').textContent=mode==='model'&&!exploring?'Observed samples: '+[-2,-1,0,1,2].map(x=>'('+x+', '+evaluate(t.coeff,x)+')').join(' · '):'';
+}
+function correctCurrent(){
+ if(!task||record.checked||exploring)return;
+ const raw=$('answer').value.trim(),raw2=$('second').value.trim();
+ const a=raw===''?NaN:Number(raw),b=$('secondBlock').hidden?NaN:raw2===''?NaN:Number(raw2),choice=$('choiceBlock').hidden?'':$('choice').value;
+ if(!Number.isFinite(a)||(!$('secondBlock').hidden&&!Number.isFinite(b))){message('Enter finite numeric answers in the required fields; a blank answer is not zero.','bad');return;}
+ const ok=correct(task,a,b,choice);
+ if(!record.wrong){record.attempted++;record.outcomes.push(ok&&!record.helped);record.outcomes=record.outcomes.slice(-10);}
+ if(ok){
+  record.solved++;record.checked=true;
+  if(!record.wrong&&!record.helped){record.firstTries++;streak++;}else streak=0;
+  record.bestStreak=Math.max(record.bestStreak,streak);
+  record.history.push(mode+' · solved '+task.id.slice(0,43));record.history=record.history.slice(-10);
+  show();message('Correct! '+explanation(),'good');
+  if(!$('lowStim').checked&&!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches))$('celebrate').textContent='✦ Polynomial mission solved ✦';
+ }else{record.wrong=true;streak=0;message('Keep this same mission. Check signs, repeated factors, division order, or rounding. You can retry without restarting.','bad');stats();}
+ save();
+}
+function hint(){
+ if(!task||record.checked||exploring)return;
+ record.helped=true;
+ const hints={structure:'The degree equals the highest power of x with a nonzero coefficient.',expand:'Distribute each factor, then combine the two x terms.',end:'Even degree: same end direction. Odd degree: opposite ends. The leading sign controls right-end direction.',complex:'Complete the square, then use √(−1)=i.',conjugate:'For real coefficients, complex roots come in a+bi and a−bi pairs.',fta:'Count every zero with multiplicity. Each non-real root has a conjugate.',division:'Synthetic division: bring down the leading coefficient, multiply by r, then add.',remainder:'The divisor (x−r) is a factor precisely when P(r)=0.',rational:'Candidates have numerator dividing the constant term and denominator dividing the leading coefficient.',roots:'Use the graph to bracket intercepts, then factor and verify each one.',multiplicity:'An even power touches the axis; an odd power crosses. Count factor repetition.',model:'Constant second differences suggest a quadratic; constant third differences a cubic.'};
+ message(hints[mode]);save();
+}
+function solution(){if(!task||record.checked||exploring)return;record.helped=true;message('Worked reasoning: '+explanation()+' Enter the values and check to finish your mission.');save();}
+function switchMode(m){if(!MODES.includes(m))return;stopAnimation();mode=m;exploring=false;load();if(task)show();else challenge();}
+function syncSliders(){for(const id of ['root1','root2','root3','lead'])$(id+'Out').textContent=$([id][0]).value;}
+function explore(){stopAnimation();exploring=true;setupFields();show();message('Free exploration. No practice score is changed. Start New mission to return.');}
+let raf=0,animationStart=0,animationCoeff=null;
+function stopAnimation(){if(raf){cancelAnimationFrame(raf);raf=0;}$('sweep').hidden=true;$('animate').disabled=false;$('stopAnim').disabled=true;}
+function tick(now){
+ if(!raf)return;
+ const x=-5+((now-animationStart)/420)%10,y=evaluate(animationCoeff,x);
+ $('sweep').hidden=!(Number.isFinite(y)&&Math.abs(y)<=6);
+ if(!$('sweep').hidden){$('sweep').setAttribute('cx',wX(x));$('sweep').setAttribute('cy',wY(y));}
+ raf=requestAnimationFrame(tick);
+}
+$('animate').addEventListener('click',()=>{
+ if($('lowStim').checked||(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)){message('Animation is disabled by reduced-motion settings. All graph controls remain available.');return;}
+ stopAnimation();
+ animationCoeff=exploring?polyFromRoots([+$('root1').value,+$('root2').value,+$('root3').value],+$('lead').value||.5):task?.coeff;
+ if(!animationCoeff)return;animationStart=performance.now();$('animate').disabled=true;$('stopAnim').disabled=false;raf=requestAnimationFrame(tick);
+});
+$('stopAnim').addEventListener('click',stopAnimation);$('lowStim').addEventListener('change',()=>{if($('lowStim').checked)stopAnimation();});
+$('mode').addEventListener('change',e=>switchMode(e.target.value));$('new').addEventListener('click',challenge);$('next').addEventListener('click',challenge);$('explore').addEventListener('click',explore);
+$('check').addEventListener('click',correctCurrent);$('hint').addEventListener('click',hint);$('solution').addEventListener('click',solution);
+for(const id of ['answer','second','choice'])$(id).addEventListener(id==='choice'?'change':'input',e=>{if(!exploring){record.entry[id==='answer'?'one':id==='second'?'two':'choice']=e.target.value;save();}});
+for(const id of ['root1','root2','root3','lead'])$(id).addEventListener('input',()=>{if(exploring){stopAnimation();syncSliders();draw();}});
+let dragged=-1;
+$('graph').addEventListener('pointerdown',e=>{
+ if(!exploring)return;
+ const box=$('graph').getBoundingClientRect(),svgX=(e.clientX-box.left)*620/box.width;
+ const roots=['root1','root2','root3'].map(id=>+$ (id).value);
+ let best=1e6;for(let i=0;i<roots.length;i++){const dist=Math.abs(svgX-wX(roots[i]));if(dist<best&&dist<22){best=dist;dragged=i;}}
+ if(dragged>=0){e.preventDefault();$('graph').setPointerCapture?.(e.pointerId);}
+});
+$('graph').addEventListener('pointermove',e=>{
+ if(!exploring||dragged<0)return;
+ const box=$('graph').getBoundingClientRect(),x=(e.clientX-box.left)*620/box.width;
+ const value=Math.max(-4,Math.min(4,Math.round(((x-310)/43)*2)/2));
+ $('root'+(dragged+1)).value=String(value);syncSliders();draw();
+});
+$('graph').addEventListener('pointerup',()=>{dragged=-1;});$('graph').addEventListener('pointercancel',()=>{dragged=-1;});
+$('reset').addEventListener('click',()=>{if(!confirm('Reset only this practice pathway? Other course records are preserved.'))return;try{localStorage.removeItem(key());}catch{}record=fresh();challenge();});
+$('export').addEventListener('click',()=>{
+ const b=new Blob([JSON.stringify({schema:1,game:'polynomial-zeros-explorer',mode,context,progress:record,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='polynomial-zeros-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+});
+$('context').textContent='Lesson context: '+context.replace(/\|/g,' / ')+' · locally saved game practice; official mastery remains separate.';
+load();if(task)show();else challenge();
+})();
+</script></body></html>
