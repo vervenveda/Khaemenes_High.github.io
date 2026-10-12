@@ -103,8 +103,11 @@ function makeTask(mode,rng=Math.random){
   t.roots=[r(),r()];if(t.roots[0]===t.roots[1])t.roots[1]+=1;
   t.roots.sort((a,b)=>a-b);t.m=t.roots[0]+t.roots[1];t.b=-t.roots[0]*t.roots[1];
  }else if(mode==='substitution'){
-  const pair=pick([[3,4,5],[4,3,5],[5,12,13],[8,6,10]],rng);
-  t.x=pair[0];t.y=pair[1];t.radius=pair[2];
+  const triple=pick([[3,4,5],[5,12,13],[8,15,17],[7,24,25],[20,21,29],[9,40,41]],rng);
+  const swap=pick([false,true],rng),scale=pick([1,2],rng);
+  t.x=(swap?triple[1]:triple[0])*scale;
+  t.y=(swap?triple[0]:triple[1])*scale;
+  t.radius=triple[2]*scale;
  }else if(mode==='radical'){
   t.y=pick([2,3,4],rng);t.k=pick([-2,-1,0,1,2],rng);t.x=t.y+t.k;t.s=t.y*t.y-t.x;
  }else if(mode==='operations'){
