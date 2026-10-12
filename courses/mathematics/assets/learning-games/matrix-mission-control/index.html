@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en"><head>
+<script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f4ecda"><title>Matrix Mission Control · Khaemenes Academy</title>
+<style>
+:root{color-scheme:light;--paper:#f4ecda;--card:#fffdf8;--ink:#292118;--line:#c9b598;--navy:#246487;--amber:#b97536;--green:#206743;--red:#a23a38}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0%,#fffdf2,transparent 57%),var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Arial,sans-serif}
+main{max-width:1140px;margin:auto;padding:24px 16px 64px}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;font-weight:700;color:#76502c}
+h1,h2{font-family:Georgia,serif;line-height:1.2}h1{font-size:clamp(2.1rem,5vw,3.1rem);margin:6px 0}h2{font-size:1.38rem;margin:0 0 12px}
+.lead{max-width:850px;color:#55483b}.panel{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:18px;box-shadow:0 3px 0 #e7d9c2}
+.layout{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(300px,1fr);gap:16px;margin:17px 0}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.gap{margin-top:13px}
+.stat{border:1px solid var(--line);border-radius:7px;padding:8px 10px;background:#faf1e1}label{display:block;font-weight:650}
+input,select,button{font:inherit;color:var(--ink);border:1px solid #856e51;border-radius:7px;padding:9px 10px;background:#fff}
+input[type=number]{width:100%;max-width:190px}input[type=range]{width:100%;accent-color:#95652f}
+button{cursor:pointer;background:#eadcc1;font-weight:650}button:hover{background:#ddc79d}button:disabled{opacity:.5;cursor:not-allowed}
+button.primary{background:#453428;color:#fff}button.primary:hover{background:#604a37}
+:focus-visible{outline:3px solid #286a9a;outline-offset:2px}
+#visual{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:7px;background:#fffefa}
+#equation{font:700 1.18rem/1.45 Georgia,serif;white-space:pre-line;overflow-wrap:anywhere}
+#prompt{font-weight:650}#feedback{min-height:70px;background:#f8f0df;border-left:5px solid #997035;padding:13px;border-radius:4px}
+#feedback.good{border-color:var(--green)}#feedback.bad{border-color:var(--red)}#celebrate{color:var(--green);min-height:22px;font-weight:bold}
+.small{font-size:.9rem;color:#574c3e}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:14px 0}
+.fields>div{border:1px solid #dfceb2;background:#faf3e7;border-radius:7px;padding:10px}
+#visualNote{min-height:44px}.legend{display:inline-block;border:1px solid var(--line);border-radius:7px;padding:4px 8px;margin:3px;font-size:.84rem}
+progress{width:100%;accent-color:var(--green)}#history{max-height:190px;overflow:auto}
+footer{margin:28px 0 0;font-size:.86rem;color:#675a4a}a{color:#1d5687}
+[hidden]{display:none!important}
+@media(max-width:810px){.layout{grid-template-columns:1fr}}
+@media(max-width:500px){.fields{grid-template-columns:1fr}.panel{padding:13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+<script src="../../game-return-route.js?v=20261012"></script>
+</head><body><main>
+<p class="eyebrow">Khaemenes Academy · Sovereign Mathematics · Algebra II</p>
+<h1>Matrix Mission Control</h1>
+<p class="lead">Navigate systems of equations and the matrix workbench. Trace intersections, rule out extraneous solutions, combine matrices, solve by row reduction, and test determinants and inverses. Incorrect answers never erase a mission.</p>
+<section class="panel"><div class="row">
+<label for="mode">Select mission <select id="mode">
+<option value="graph">01 · Graphical linear–nonlinear systems</option>
+<option value="substitution">02 · Nonlinear substitution</option>
+<option value="radical">03 · Radical systems &amp; domain checks</option>
+<option value="operations">04 · Matrix dimensions &amp; operations</option>
+<option value="rows">05 · Row reduction &amp; solutions</option>
+<option value="det-inverse">06 · Determinants, inverses &amp; transformations</option>
+</select></label>
+<button id="new" class="primary" type="button">New mission</button><label for="lowStim">Reduce stimulation <input id="lowStim" type="checkbox"></label>
+</div><p class="small" id="context">Practice only. Official mathematics assessments are independent of this game.</p></section>
+<div class="row gap">
+<span class="stat">Solved <strong id="solved">0</strong></span><span class="stat">Checked <strong id="attempted">0</strong></span>
+<span class="stat">First-try <strong id="accuracy">—</strong></span><span class="stat">Best streak <strong id="streak">0</strong></span>
+<span class="stat">80% practice <strong id="mastery">In progress</strong></span>
+</div>
+<div class="layout">
+<section class="panel">
+<h2>Visual mission display</h2>
+<svg id="visual" viewBox="0 0 620 440" role="img" aria-labelledby="visualTitle visualDesc">
+<title id="visualTitle">Interactive systems and matrix display</title><desc id="visualDesc">Blue and amber curves illustrate equation intersections, or numbered cells show a matrix. An equivalent written description follows below.</desc>
+<g id="grid"></g><path id="blue" fill="none" stroke="#21618b" stroke-width="3.6"/>
+<path id="amber" fill="none" stroke="#b67730" stroke-width="3.2" stroke-dasharray="8 5"/><g id="dots"></g>
+</svg>
+<p class="small"><span class="legend">Blue · first relation</span><span class="legend">Amber · second relation or values</span></p>
+<p id="visualNote" class="small" aria-live="polite"></p>
+<div class="row gap" id="probeBlock"><label for="probe">Inspect graph at x = <output id="probeOut">0</output></label>
+<input type="range" id="probe" min="-5" max="5" step=".25" value="0"></div>
+<p id="equation" aria-live="polite"></p>
+</section>
+<section class="panel">
+<h2>Mission console</h2><p id="scenario"></p><p id="prompt"></p>
+<div class="fields">
+<div><label for="answer">First answer <small id="label1">Number</small></label><input id="answer" type="number" step="any" inputmode="decimal" autocomplete="off"></div>
+<div id="secondBlock"><label for="second">Second answer <small id="label2">Number</small></label><input id="second" type="number" step="any" inputmode="decimal" autocomplete="off"></div>
+</div>
+<div id="choiceBlock" class="gap" hidden><label for="choice" id="choiceLabel">Select your conclusion</label>
+<select id="choice"><option value="">Choose</option></select></div>
+<p class="small" id="precision">All mission values are generated mathematically. Fractions may be entered as decimals (two decimal places).</p>
+<div class="row"><button id="check" class="primary" type="button">Check reasoning</button><button id="hint" type="button">Hint</button><button id="solution" type="button">Worked solution</button><button id="next" type="button" disabled>Next challenge →</button></div>
+<p id="feedback" role="status" aria-live="polite">Choose a mission or investigate the current problem.</p><p id="celebrate" aria-live="polite"></p>
+</section></div>
+<section class="panel">
+<h2>Local practice journal</h2><progress id="progress" value="0" max="10"></progress>
+<p class="small">Eight correct, unaided first attempts in your latest ten checked challenges meets the local 80% practice goal. Corrections, hints, browser refreshes and repeated practice never restart a unit or rewrite Academy grades.</p>
+<div class="row"><button id="export" type="button">Export JSON record</button><button id="reset" type="button">Reset this pathway (confirm)</button><a href="../../../index.html">Mathematics home</a></div><ol id="history" aria-label="Recent missions"></ol>
+</section>
+<footer>© Jennifer Kay Pearl · Khaemenes Academy · Original HTML/CSS/JavaScript · Offline-capable · No external libraries, analytics or accounts.</footer>
+</main>
+<script>
+(()=>{'use strict';
+// PURE_MODEL_BEGIN
+const near=(a,b,tol=.015)=>Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tol;
+const pick=(list,rng)=>list[Math.floor(rng()*list.length)];
+const det=A=>A[0][0]*A[1][1]-A[0][1]*A[1][0];
+const add=(A,B)=>A.map((row,i)=>row.map((v,j)=>v+B[i][j]));
+const multiply=(A,B)=>A.map(row=>B[0].map((_,j)=>row.reduce((s,v,k)=>s+v*B[k][j],0)));
+const inverse=A=>{const d=det(A);return d===0?null:[[A[1][1]/d,-A[0][1]/d],[-A[1][0]/d,A[0][0]/d]];};
+const matVec=(A,v)=>A.map(row=>row.reduce((s,a,i)=>s+a*v[i],0));
+const solve2=(A,b)=>{const I=inverse(A);return I?matVec(I,b):null;};
+function makeTask(mode,rng=Math.random){
+ const r=()=>pick([-3,-2,-1,0,1,2,3],rng),nz=()=>pick([-3,-2,-1,1,2,3],rng),t={mode};
+ if(mode==='graph'){
+  t.roots=[r(),r()];if(t.roots[0]===t.roots[1])t.roots[1]+=1;
+  t.roots.sort((a,b)=>a-b);t.m=t.roots[0]+t.roots[1];t.b=-t.roots[0]*t.roots[1];
+ }else if(mode==='substitution'){
+  const pair=pick([[3,4,5],[4,3,5],[5,12,13],[8,6,10]],rng);
+  t.x=pair[0];t.y=pair[1];t.radius=pair[2];
+ }else if(mode==='radical'){
+  t.y=pick([2,3,4],rng);t.k=pick([-2,-1,0,1,2],rng);t.x=t.y+t.k;t.s=t.y*t.y-t.x;
+ }else if(mode==='operations'){
+  t.A=[[r(),r()],[r(),r()]];t.B=[[r(),r()],[r(),r()]];t.op=pick(['add','multiply'],rng);t.i=pick([0,1],rng);t.j=pick([0,1],rng);
+ }else if(mode==='rows'){
+  do{t.A=[[r(),r()],[r(),r()]];}while(det(t.A)===0);
+  t.solution=[r(),r()];t.b=matVec(t.A,t.solution);
+ }else if(mode==='det-inverse'){
+  t.kind=pick(['det','inverse'],rng);
+  t.singular=t.kind==='det'&&pick([true,false],rng);
+  if(t.singular){const a=nz(),b=r(),factor=pick([-2,-1,1,2],rng);t.A=[[a,b],[a*factor,b*factor]];}
+  else{do{t.A=[[r(),r()],[r(),r()]];}while(det(t.A)===0);}
+  t.i=pick([0,1],rng);t.j=pick([0,1],rng);
+ }else throw Error('Unknown matrix mission '+mode);
+ t.id=JSON.stringify(t);return t;
+}
+function expected(t){
+ if(t.mode==='graph')return {one:t.roots[0],two:t.roots[0]*t.roots[0]};
+ if(t.mode==='substitution')return {one:t.x,two:t.y};
+ if(t.mode==='radical')return {one:t.x,two:t.y,choice:'valid'};
+ if(t.mode==='operations')return {one:(t.op==='add'?add(t.A,t.B):multiply(t.A,t.B))[t.i][t.j]};
+ if(t.mode==='rows')return {one:t.solution[0],two:t.solution[1]};
+ if(t.mode==='det-inverse'){
+  if(t.kind==='det')return {one:det(t.A),choice:det(t.A)===0?'singular':'invertible'};
+  return {one:inverse(t.A)[t.i][t.j],choice:'invertible'};
+ }
+ return {};
+}
+function correct(t,one,two,choice){
+ const e=expected(t);
+ if(!near(one,e.one))return false;
+ if('two' in e&&!near(two,e.two))return false;
+ if('choice' in e&&choice!==e.choice)return false;
+ return true;
+}
+// PURE_MODEL_END
+window.MatrixMissionCore=Object.freeze({near,det,add,multiply,inverse,matVec,solve2,makeTask,expected,correct});
+const $=id=>document.getElementById(id),query=new URLSearchParams(location.search);
+const MODES=['graph','substitution','radical','operations','rows','det-inverse'];
+let mode=MODES.includes(query.get('mode'))?query.get('mode'):'operations',task=null,record=null,streak=0;
+const context=[query.get('course')||'standalone',query.get('unit')||'',query.get('lesson')||''].map(x=>x.replace(/[^a-z0-9_-]/gi,'_')).join('|');
+const emptyEntry=()=>({one:'',two:'',choice:''});
+const fresh=()=>({solved:0,attempted:0,firstTries:0,bestStreak:0,outcomes:[],history:[],recent:[],task:null,checked:false,wrong:false,helped:false,entry:emptyEntry()});
+const key=()=>['KHAE_MATRIX_MISSION_V1',context,mode].join('|');
+const display=x=>Number.isFinite(x)?String(+x.toFixed(4)):'undefined';
+function load(){
+ record=fresh();
+ try{const saved=JSON.parse(localStorage.getItem(key())||'null');
+ if(saved&&Array.isArray(saved.recent)&&Array.isArray(saved.history)&&Number.isFinite(saved.solved)&&Number.isFinite(saved.attempted))
+ record={...record,...saved,recent:saved.recent.slice(-30),history:saved.history.slice(-10),outcomes:(saved.outcomes||[]).slice(-10),entry:{...emptyEntry(),...(saved.entry||{})}};
+ }catch{}
+ task=record.task||null;streak=0;
+}
+function save(){
+ record.task=task;try{localStorage.setItem(key(),JSON.stringify(record));}
+ catch{$('context').textContent='Storage unavailable. Use Export JSON to preserve completed practice.';}
+}
+function message(txt,status=''){$('feedback').textContent=txt;$('feedback').className=status;$('celebrate').textContent='';}
+function challenge(){
+ record.checked=false;record.wrong=false;record.helped=false;record.entry=emptyEntry();
+ const seen=new Set(record.recent);let next=null;
+ for(let i=0;i<140;i++){const t=makeTask(mode);if(!seen.has(t.id)){next=t;break;}}
+ if(!next){record.recent=[];next=makeTask(mode);}
+ task=next;record.recent.push(next.id);record.recent=record.recent.slice(-30);
+ $('probe').value='0';show();message('Your mission remains available until you choose Next or New mission.');save();
+}
+function matrixText(A){return '[ '+A[0].join(' , ')+' ; '+A[1].join(' , ')+' ]';}
+function scenario(){
+ const t=task;
+ if(mode==='graph')return ['Solve graphically and verify algebraically: the blue parabola y=x² and amber line y='+t.m+'x '+(t.b>=0?'+ '+t.b:'− '+(-t.b))+'.','Enter the smaller x-coordinate of an intersection and the corresponding y-coordinate.','Smaller x-coordinate','y-coordinate'];
+ if(mode==='substitution')return ['A circle x²+y²='+t.radius*t.radius+' meets the horizontal line y='+t.y+'.','Find the intersection with positive x. Verify both relations.','Positive x','y'];
+ if(mode==='radical')return ['The two relations are y=√(x + ('+t.s+')) and y=x−('+t.k+').','Find their valid intersection and confirm the square-root domain. Squaring a radical can produce extraneous candidates.','x','y'];
+ if(mode==='operations')return ['Given two 2×2 matrices A and B below, compute '+(t.op==='add'?'A+B':'AB')+'.','Enter the entry in row '+(t.i+1)+', column '+(t.j+1)+'.','Entry ('+(t.i+1)+','+(t.j+1)+')',''];
+ if(mode==='rows')return ['Use row reduction to solve A·[x,y]ᵀ = b.','Enter the solution x and y. Verify by multiplication A·[x,y]ᵀ.','x','y'];
+ return t.kind==='det'?['Find det(A), then classify whether A has an inverse.','Enter the determinant and choose singular or invertible.','det(A)','']:['Compute A⁻¹ using its determinant and adjugate.','Enter entry ('+(t.i+1)+','+(t.j+1)+') of A⁻¹ and confirm invertibility.','Inverse entry ('+(t.i+1)+','+(t.j+1)+')',''];
+}
+function explanation(){
+ const t=task,e=expected(t);
+ if(mode==='graph')return 'Set x²='+t.m+'x + ('+t.b+'). Rearrange (x−('+t.roots[0]+'))(x−('+t.roots[1]+'))=0. The smaller intersection is ('+e.one+','+e.two+').';
+ if(mode==='substitution')return 'Substitute y='+t.y+' into x²+y²='+t.radius*t.radius+'. Then x²='+(t.radius*t.radius-t.y*t.y)+' and choose the positive square root x='+t.x+'. Both equations hold.';
+ if(mode==='radical')return 'Use x=y+'+t.k+' in y²=x+'+t.s+'. The nonnegative solution is y='+t.y+', giving x='+t.x+'. Check the square root is defined and y≥0.';
+ if(mode==='operations'){const result=t.op==='add'?add(t.A,t.B):multiply(t.A,t.B);return t.op==='add'?'Add corresponding entries: row '+(t.i+1)+', column '+(t.j+1)+' is '+t.A[t.i][t.j]+' + '+t.B[t.i][t.j]+' = '+e.one+'.':'Multiply row '+(t.i+1)+' of A by column '+(t.j+1)+' of B: '+t.A[t.i][0]+'×'+t.B[0][t.j]+' + '+t.A[t.i][1]+'×'+t.B[1][t.j]+' = '+e.one+'. Full result '+matrixText(result)+'.';}
+ if(mode==='rows')return 'The coefficient determinant is '+det(t.A)+' (nonzero), so the system has one solution. Row operations reduce [A|b] to [I|solution]; x='+e.one+', y='+e.two+'. Check A·[x,y]ᵀ=['+t.b.join(', ')+']ᵀ.';
+ return t.kind==='det'?'For A=[a b; c d], det(A)=ad−bc='+e.one+'. Thus A is '+e.choice+'.':'For A=[a b; c d], det(A)='+det(t.A)+' and A⁻¹=[d −b; −c a]/det(A). Its requested entry is '+display(e.one)+'. Multiply AA⁻¹ to verify I.';
+}
+function choices(){
+ const s=$('choice');s.replaceChildren();
+ const opts=mode==='radical'?[['valid','The radical argument is nonnegative and both equations hold'],['invalid','The candidate is extraneous']]:
+ [['invertible','Invertible (det ≠ 0)'],['singular','Singular (det = 0)']];
+ for(const [value,label] of [['','Choose your conclusion'],...opts]){const o=document.createElement('option');o.value=value;o.textContent=label;s.appendChild(o);}
+}
+function stats(){
+ $('solved').textContent=String(record.solved);$('attempted').textContent=String(record.attempted);
+ $('accuracy').textContent=record.attempted?Math.round(record.firstTries*100/record.attempted)+'%':'—';
+ $('streak').textContent=String(record.bestStreak);$('progress').value=record.outcomes.length;
+ $('mastery').textContent=record.outcomes.length===10&&record.outcomes.filter(Boolean).length>=8?'Achieved':'In progress';
+ $('history').replaceChildren();for(const h of record.history.slice(-10).reverse()){const li=document.createElement('li');li.textContent=h;$('history').appendChild(li);}
+}
+function show(){
+ if(!task)return;$('mode').value=mode;
+ const s=scenario();$('scenario').textContent=s[0];$('prompt').textContent=s[1];$('label1').textContent=s[2];$('label2').textContent=s[3];
+ $('secondBlock').hidden=!['graph','substitution','radical','rows'].includes(mode);
+ $('choiceBlock').hidden=!['radical','det-inverse'].includes(mode);
+ if(!$('choiceBlock').hidden)choices();
+ $('choiceLabel').textContent=mode==='radical'?'Verify square-root solution':'Classify the matrix';
+ $('answer').value=record.entry.one;$('second').value=record.entry.two;$('choice').value=record.entry.choice;
+ $('check').disabled=record.checked;$('hint').disabled=record.checked;$('solution').disabled=record.checked;$('next').disabled=!record.checked;
+ $('probeBlock').hidden=!['graph','substitution','radical'].includes(mode);
+ $('equation').textContent=['operations','rows','det-inverse'].includes(mode)?
+ 'A = '+matrixText(task.A)+(task.B?'   B = '+matrixText(task.B):task.b?'   b = [ '+task.b.join(', ')+' ]ᵀ':''):
+ s[0];
+ stats();draw();
+}
+function draw(){
+ const t=task;if(!t)return;
+ const group=$('grid');let grid='',curve='',ref='',dots='',note='';
+ if(['graph','substitution','radical'].includes(mode)){
+  const max=mode==='substitution'?Math.max(t.radius+1,6):mode==='radical'?Math.max(7,t.x+2,Math.abs(t.s)+2):Math.max(6,...t.roots.map(x=>Math.abs(x)+2));
+  const ySpan=mode==='graph'?Math.max(max,...t.roots.map(x=>x*x+2)):max;
+  const xmin=-max,xmax=max,ymin=-ySpan,ymax=ySpan,xscale=x=>310+x/max*245,yscale=y=>220-y/ySpan*170;
+  for(let n=-5;n<=5;n++){const x=310+n*49,y=220+n*34;grid+='<line x1="'+x+'" x2="'+x+'" y1="50" y2="390" stroke="#e9e1d6"/><line x1="65" x2="555" y1="'+y+'" y2="'+y+'" stroke="#e9e1d6"/>';}
+  grid+='<line x1="65" x2="555" y1="220" y2="220" stroke="#8e8070" stroke-width="2"/><line x1="310" x2="310" y1="50" y2="390" stroke="#8e8070" stroke-width="2"/>';
+  const path=fn=>{let d='',pen=false;for(let i=0;i<=380;i++){const x=xmin+(xmax-xmin)*i/380,y=fn(x);
+   if(Number.isFinite(y)&&y>=ymin&&y<=ymax){d+=(pen?'L':'M')+xscale(x).toFixed(2)+' '+yscale(y).toFixed(2)+' ';pen=true;}else pen=false;}return d;};
+  if(mode==='graph'){curve=path(x=>x*x);ref=path(x=>t.m*x+t.b);note='Parabola and line intersect at two real points. Use the smaller x-coordinate, then compute y=x².';}
+  if(mode==='substitution'){const upper=path(x=>Math.abs(x)<=t.radius?Math.sqrt(t.radius*t.radius-x*x):NaN);
+   const lower=path(x=>Math.abs(x)<=t.radius?-Math.sqrt(t.radius*t.radius-x*x):NaN);
+   curve=upper+' '+lower;ref=path(()=>t.y);note='Circle of radius '+t.radius+' and line y='+t.y+'. The system has two intersections; report the one with x>0.';}
+  if(mode==='radical'){curve=path(x=>x+t.s>=0?Math.sqrt(x+t.s):NaN);ref=path(x=>x-t.k);note='Square-root curve and straight line. Solutions need y≥0; verify the original unsquared equations.';}
+  const x=Number($('probe').value),y=mode==='graph'?x*x:mode==='substitution'?(Math.abs(x)<=t.radius?Math.sqrt(t.radius*t.radius-x*x):NaN):(x+t.s>=0?Math.sqrt(x+t.s):NaN);
+  note+=' Graph probe: x='+display(x)+', first-curve y='+(Number.isFinite(y)?display(y):'outside its real domain')+'.';
+ }else{
+  const A=t.A,B=t.B;
+  grid='<rect x="72" y="65" width="208" height="250" rx="7" fill="#f0e8dc" stroke="#af9471"/>';
+  grid+='<text x="165" y="100" text-anchor="middle" font-size="22" fill="#342a20">A</text>';
+  A.forEach((row,i)=>row.forEach((v,j)=>{const x=103+j*88,y=175+i*90;
+   grid+='<rect x="'+x+'" y="'+(y-36)+'" width="68" height="68" rx="7" fill="#fffdfa" stroke="#b9a58b"/><text x="'+(x+34)+'" y="'+(y+9)+'" text-anchor="middle" font-size="28" fill="#265f85">'+v+'</text>'; }));
+  if(B){grid+='<rect x="340" y="65" width="208" height="250" rx="7" fill="#f6ead9" stroke="#af9471"/>';
+   grid+='<text x="440" y="100" text-anchor="middle" font-size="22" fill="#342a20">B</text>';
+   B.forEach((row,i)=>row.forEach((v,j)=>{const x=370+j*88,y=175+i*90;
+    grid+='<rect x="'+x+'" y="'+(y-36)+'" width="68" height="68" rx="7" fill="#fffdfa" stroke="#b9a58b"/><text x="'+(x+34)+'" y="'+(y+9)+'" text-anchor="middle" font-size="28" fill="#b16d30">'+v+'</text>'; }));}
+  else if(t.b){grid+='<text x="370" y="120" font-size="21" fill="#52402b">b vector</text><text x="385" y="190" font-size="32" fill="#b16d30">'+t.b[0]+'</text><text x="385" y="280" font-size="32" fill="#b16d30">'+t.b[1]+'</text>';}
+  else{grid+='<text x="340" y="155" font-size="19" fill="#52402b">det A = ad − bc</text><text x="340" y="200" font-size="16" fill="#52402b">Inverse exists iff det A ≠ 0</text>';}
+  note='Matrix A is '+matrixText(A)+(B?'; B is '+matrixText(B):t.b?'; right-hand vector is ['+t.b.join(', ')+']':'')+'. All matrix indices begin at row 1, column 1.';
+ }
+ group.innerHTML=grid;$('blue').setAttribute('d',curve);$('amber').setAttribute('d',ref);$('dots').innerHTML=dots;
+ $('visualNote').textContent=note;
+}
+function check(){
+ if(record.checked||!task)return;
+ const raw=String($('answer').value).trim(),raw2=String($('second').value).trim();
+ const one=raw===''?NaN:Number(raw),two=$('secondBlock').hidden?NaN:raw2===''?NaN:Number(raw2);
+ if(!Number.isFinite(one)||(!$('secondBlock').hidden&&!Number.isFinite(two))){message('Enter finite numbers in the required answer fields. Blank input is not zero.','bad');return;}
+ const yes=correct(task,one,two,$('choiceBlock').hidden?'':$('choice').value);
+ if(!record.wrong){record.attempted++;record.outcomes.push(yes&&!record.helped);record.outcomes=record.outcomes.slice(-10);}
+ if(yes){record.solved++;record.checked=true;
+  if(!record.wrong&&!record.helped){record.firstTries++;streak++;}else streak=0;
+  record.bestStreak=Math.max(record.bestStreak,streak);
+  record.history.push(mode+' · solved '+task.id.slice(0,55));record.history=record.history.slice(-10);
+  show();message('Correct! '+explanation(),'good');
+  if(!$('lowStim').checked&&!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches))$('celebrate').textContent='✦ Mission accomplished ✦';
+ }else{record.wrong=true;streak=0;message('Try again without restarting. Check the signs, row/column order, domain restrictions and mathematical model.','bad');stats();}
+ save();
+}
+function hint(){
+ if(!task||record.checked)return;record.helped=true;
+ const hints={graph:'Set the parabola equation equal to the line, solve the quadratic, then substitute the smaller root.',substitution:'Replace y in x²+y²=r² with the horizontal line’s y value. Use positive x.',radical:'Square only after isolating √(x+s), then test candidates in the original equations.',operations:'For addition, use matching positions. For multiplication, take the dot product of the requested row and column.',rows:'The augmented matrix [A|b] can be reduced to [I|solution] because det(A)≠0. Check by multiplication.','det-inverse':'For a 2×2 matrix, determinant = ad−bc; the inverse is [d −b; −c a]/det if det is nonzero.'};
+ message(hints[mode]);save();
+}
+function worked(){if(!task||record.checked)return;record.helped=true;message('Worked reasoning: '+explanation()+' Enter the result and check your answer.');save();}
+function changeMode(next){if(!MODES.includes(next))return;mode=next;load();if(task)show();else challenge();}
+$('mode').addEventListener('change',e=>changeMode(e.target.value));$('new').addEventListener('click',challenge);$('next').addEventListener('click',challenge);
+$('check').addEventListener('click',check);$('hint').addEventListener('click',hint);$('solution').addEventListener('click',worked);
+for(const [id,name] of [['answer','one'],['second','two'],['choice','choice']])$(id).addEventListener(id==='choice'?'change':'input',e=>{record.entry[name]=e.target.value;save();});
+$('probe').addEventListener('input',e=>{$('probeOut').textContent=e.target.value;draw();});
+$('reset').addEventListener('click',()=>{if(!confirm('Reset only this mission pathway? No lesson grades will be affected.'))return;
+ try{localStorage.removeItem(key());}catch{}record=fresh();challenge();});
+$('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({schema:1,game:'matrix-mission-control',context,mode,progress:record,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='matrix-mission-control-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);});
+$('context').textContent='Lesson: '+context.replace(/\|/g,' / ')+' · local independent practice, not formal grading.';
+load();if(task)show();else challenge();
+})();
+</script></body></html>

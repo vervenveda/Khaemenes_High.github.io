@@ -1899,6 +1899,70 @@
           "wired": true
         }
       ]
+    },
+    "matrix-mission-control": {
+      "title": "Matrix Mission Control",
+      "canonical_path": "courses/mathematics/assets/learning-games/matrix-mission-control/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Six modes: graphical nonlinear systems, substitution of a circle and line, radical-domain verification, 2x2 matrix operations, nonsingular row-reduced linear systems, determinants and inverse entries. Optional practice does not modify formal lesson grades.",
+      "placements": [
+        {
+          "course": "algebra-2",
+          "unit": "08",
+          "lesson": "u08-l01",
+          "lesson_title": "Graphical Solutions of Linear–Nonlinear Systems",
+          "mode": "graph",
+          "query": "?course=algebra2&unit=08&lesson=u08-l01&mode=graph",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "08",
+          "lesson": "u08-l02",
+          "lesson_title": "Solving Nonlinear Systems by Substitution",
+          "mode": "substitution",
+          "query": "?course=algebra2&unit=08&lesson=u08-l02&mode=substitution",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "08",
+          "lesson": "u08-l03",
+          "lesson_title": "Polynomial, Rational & Radical Systems",
+          "mode": "radical",
+          "query": "?course=algebra2&unit=08&lesson=u08-l03&mode=radical",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "08",
+          "lesson": "u08-l04",
+          "lesson_title": "Matrix Vocabulary, Dimensions & Operations",
+          "mode": "operations",
+          "query": "?course=algebra2&unit=08&lesson=u08-l04&mode=operations",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "08",
+          "lesson": "u08-l05",
+          "lesson_title": "Matrix Equations, Row Reduction & Systems",
+          "mode": "rows",
+          "query": "?course=algebra2&unit=08&lesson=u08-l05&mode=rows",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "08",
+          "lesson": "u08-l06",
+          "lesson_title": "Determinants, Inverses & Transformation Models",
+          "mode": "det-inverse",
+          "query": "?course=algebra2&unit=08&lesson=u08-l06&mode=det-inverse",
+          "wired": true
+        }
+      ]
     }
   }
 }
