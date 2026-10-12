@@ -1,4 +1,30 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Grade 12 Teacher & Evaluator Portal</title><link rel="stylesheet" href="../styles.css"></head><body><main class="main" style="max-width:1200px;margin:auto">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Grade 12 Teacher & Evaluator Portal</title><link rel="stylesheet" href="../styles.css"><style id="khaemenes-typography-standard">
+/* Khaemenes High typography standard: 55 / 33 / 24 px.
+   Embedded in public HTML for standalone and offline use.
+   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-size:55px !important;
+  line-height:1.15 !important;
+  letter-spacing:.02em !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h1 {
+  font-size:33px !important;
+  line-height:1.2 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size:24px !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+</style>
+</head><body><main class="main" style="max-width:1200px;margin:auto">
 <header class="hero"><div class="eyebrow">Khaemenes High · Teacher and Homeschool Evaluator</div><h1>Grade 12 Graduation-Credit Portal</h1><p>Global Politics, International Relations &amp; Senior Research Honors</p><div class="heroActions noPrint"><a class="button secondary" href="../index.html">Student Portal</a><a class="button ghost" href="../docs/GRADUATION_REQUIREMENTS.md">Graduation Rules</a><button onclick="window.print()">Print Current Audit</button></div></header>
 <section id="gate" class="card" style="max-width:680px;margin:20px auto"><h2>Evaluator Access</h2><p>Enter the local course passcode. Change it in this file if desired. This browser-only gate is a convenience, not secure authentication.</p><label>Passcode<input id="pass" type="password" autocomplete="off"></label><button id="open">Open Evaluator Portal</button><p id="gateMsg" class="statusFail"></p></section>
 <section id="portal" hidden>
@@ -14,7 +40,7 @@
 <section class="card col12"><h2>Graduation-Credit Audit</h2><div id="auditSummary" class="gateSummary"></div><div id="auditGrid" class="auditGrid"></div><div class="actions noPrint"><button id="issueCredit">Issue Final Credit</button><button id="revokeCredit" class="danger">Revoke / Return to Incomplete</button></div><p id="issueMsg"></p></section>
 <section class="card col12"><h2>Teacher Resources</h2><div class="actions"><a class="button" href="ANSWER_KEY_INDEX.html">36 Weekly Answer Keys</a><a class="button" href="SEMESTER_EXAM_ANSWER_KEY.html">Semester Key</a><a class="button" href="CUMULATIVE_FINAL_ANSWER_KEY.html">Final Key</a><a class="button secondary" href="TEACHER_HANDBOOK.md">Teacher Handbook</a><a class="button secondary" href="GRADUATION_AUDIT_GUIDE.md">Audit Guide</a><a class="button ghost" href="RUBRICS.md">Rubrics</a></div></section>
 </div></section>
-<footer class="footer">Khaemenes High · Grade 12 Teacher and Evaluator Portal · Jennifer Pearl and Autumn Pearl · 2026</footer>
+<footer class="footer">Khaemenes High · Grade 12 Teacher and Evaluator Portal · Jennifer Kay Pearl · 2026</footer>
 </main><script src="../course-data.js"></script><script>
 const EXPECTED="KHAE12CAPSTONE",COURSE=window.KHAEMENES_GRADE12_DATA,META=COURSE.metadata,KEY=META.storageKey;
 const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));

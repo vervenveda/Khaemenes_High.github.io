@@ -39,6 +39,7 @@ for base in scopes:
         txt=f.read_text(errors='ignore')
         for val in re.findall(r'\b(?:href|src)\s*=\s*["\']([^"\']+)["\']',txt,re.I):
             val=val.strip()
+            if '${' in val: continue
             if not val or val.startswith(('#','http://','https://','mailto:','tel:','data:','javascript:','blob:','${')): continue
             p=urllib.parse.urlsplit(val).path
             if not p or p.startswith('/stos/'): continue

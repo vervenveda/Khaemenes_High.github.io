@@ -11,7 +11,33 @@
 .print-question{break-inside:avoid;margin:0 0 1rem;padding:1rem;border:1px solid var(--line);border-radius:var(--radius-small)}.print-question ol{margin:.55rem 0 0;padding-left:1.6rem}.answer-sheet{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}.answer-row{padding:.55rem;border-bottom:1px solid var(--line)}.unit-section{margin-top:2.5rem}.unit-section>h2{border-bottom:2px solid var(--final);padding-bottom:.4rem}.signature-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}.signature-line{padding-top:.45rem;border-top:1px solid var(--text);text-align:center;font-size:.78rem}
 .formula-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.formula-card{padding:1rem}.formula-card h3{color:var(--final)}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--bg-soft);padding:.45rem;border-radius:7px;margin:.35rem 0}
 @media(max-width:1080px){.summary-grid{grid-template-columns:repeat(3,1fr)}.unit-results,.record-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:900px){.app-layout{grid-template-columns:1fr}.app-side{position:static}.formula-grid{grid-template-columns:1fr 1fr}}@media(max-width:720px){.constructed-grid,.form-grid,.summary-grid,.unit-results,.record-grid,.answer-sheet,.signature-grid,.formula-grid{grid-template-columns:1fr}.full{grid-column:auto}.question-dots{grid-template-columns:repeat(6,1fr)}}@media print{.site-header,.course-breadcrumb,.exam-actions,.app-side,.app-nav,.no-print,.footer,.toast{display:none!important}body{background:white;color:black}.card,.print-question{box-shadow:none;background:white;color:black;border-color:#777}.exam-hero{padding:0 0 1rem}.exam-shell{width:100%}.response-lines{min-height:440px}}
-</style><script>document.addEventListener("DOMContentLoaded",()=>{const k="khaemenes_theme",b=document.querySelector("#themeToggle");function set(t){t=["dark","light"].includes(t)?t:"dark";document.documentElement.dataset.theme=t;localStorage.setItem(k,t);if(b)b.textContent=t==="dark"?"☼":"◐"}set(localStorage.getItem(k)||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));if(b)b.onclick=()=>set(document.documentElement.dataset.theme==="dark"?"light":"dark")});document.addEventListener("DOMContentLoaded",()=>{document.querySelector("#printPage").onclick=()=>print()});</script></head><body><a class="skip-link" href="#main">Skip to main content</a>
+</style><script>document.addEventListener("DOMContentLoaded",()=>{const k="khaemenes_theme",b=document.querySelector("#themeToggle");function set(t){t=["dark","light"].includes(t)?t:"dark";document.documentElement.dataset.theme=t;localStorage.setItem(k,t);if(b)b.textContent=t==="dark"?"☼":"◐"}set(localStorage.getItem(k)||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));if(b)b.onclick=()=>set(document.documentElement.dataset.theme==="dark"?"light":"dark")});document.addEventListener("DOMContentLoaded",()=>{document.querySelector("#printPage").onclick=()=>print()});</script><style id="khaemenes-typography-standard">
+/* Khaemenes High typography standard: 55 / 33 / 24 px.
+   Embedded in public HTML for standalone and offline use.
+   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-size:55px !important;
+  line-height:1.15 !important;
+  letter-spacing:.02em !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h1 {
+  font-size:33px !important;
+  line-height:1.2 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size:24px !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+</style>
+</head><body><a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header"><div class="wrap header-inner">
 <a class="brand" href="../../"><span class="brand-mark">S9</span><span class="brand-copy">
 <strong>INTEGRATED SCIENCE 9</strong><small>Comprehensive Final Examination</small></span></a>

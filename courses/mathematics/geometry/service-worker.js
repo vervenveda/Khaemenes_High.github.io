@@ -1,7 +1,7 @@
 "use strict";
-const CACHE="khaemenes-geometry-v5-math-entry";
+const CACHE="khaemenes-geometry-v5-math-entry-repair-20261012";
 const CACHE_PREFIX="khaemenes-geometry-";
-const CORE=[
+const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
  "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
  "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js","./assets/question-bank.js","./assets/diagnostic-bank-v2.js","./assets/assessment-engine.js","./assets/lesson-tools.js","./assets/unit-progress.js","./course-data.js","./course-map.json","./manifest.webmanifest","./diagnostic/","./assessments/",
  "./assets/geometry-archaemenes-upgrade.js","./assets/strict-course-progression.js","./assets/unit-index-gates.js","./assets/unit-mastery-source-v2.js",
@@ -167,7 +167,9 @@ self.addEventListener("fetch",event=>{
    return;
  }
  if(event.request.mode==="navigate"){
-   event.respondWith(fetch(event.request,{cache:"no-store"}).then(response=>{if(response&&response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy))}return response}).catch(()=>caches.match(event.request).then(hit=>hit||caches.match("./index.html")).then(hit=>hit||caches.match("./offline.html"))));return;
+   event.respondWith(fetch(event.request,{cache:"no-store"}).then(response=>{if(response&&response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy))}return response}).catch(()=>matchReleaseCache(event.request).then(hit=>hit||matchReleaseCache("./index.html")).then(hit=>hit||matchReleaseCache("./offline.html"))));return;
  }
- event.respondWith(caches.match(event.request).then(hit=>{const network=fetch(event.request).then(response=>{if(response&&response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy))}return response}).catch(()=>null);if(hit){event.waitUntil(network);return hit}return network.then(response=>response||caches.match("./offline.html"))}));
+ event.respondWith(matchReleaseCache(event.request).then(hit=>{const network=fetch(event.request).then(response=>{if(response&&response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy))}return response}).catch(()=>null);if(hit){event.waitUntil(network);return hit}return network.then(response=>response||matchReleaseCache("./offline.html"))}));
 });
+
+function matchReleaseCache(request){return caches.open(CACHE).then(cache=>cache.match(request));}

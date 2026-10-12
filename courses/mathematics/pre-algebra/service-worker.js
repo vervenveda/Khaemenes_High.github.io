@@ -2,7 +2,7 @@
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
 const CACHE_NAME=`${CACHE_PREFIX}v7-compact-course-shell-math-canonical-20261008`;
-const CORE_FILES=[
+const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "./",
   "./index.html",
   "./offline.html",
@@ -48,6 +48,8 @@ self.addEventListener("fetch",event=>{
   }
 
   if(CORE_FILES.some(file=>new URL(file,self.registration.scope).href===url.href)){
-    event.respondWith(caches.match(request,{ignoreSearch:true}).then(cached=>cached||fetch(request)));
+    event.respondWith(matchReleaseCache(request,{ignoreSearch:true}).then(cached=>cached||fetch(request)));
   }
 });
+
+function matchReleaseCache(request){return caches.open(CACHE_NAME).then(cache=>cache.match(request));}

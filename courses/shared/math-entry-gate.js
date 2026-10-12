@@ -73,6 +73,7 @@
       ? writeScopedTarget(key, profile)
       : readScopedTarget(key, profile);
   };
+  if (!window.KhaemenesLearnerScope) {
   Storage.prototype.getItem = function(key) {
     const target = scoped(String(key), "read");
     return target === null ? null : raw.get.call(this, target);
@@ -85,6 +86,7 @@
     const target = scoped(String(key), "write");
     if (target !== null) raw.remove.call(this, target);
   };
+  }
   function parse(value) { try { return JSON.parse(value || "null"); } catch { return null; } }
   function readScoped(base, profile) {
     if (!profile || !base) return null;

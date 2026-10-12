@@ -14,7 +14,33 @@ $("#constructedScore").textContent=constructed+" / 40";$("#overallScore").textCo
 S.finalRecord={constructedScores:scores,constructedTotal:constructed,overall,objectivePassed,allConstructedScored:allScored,overallPassed,updatedAt:new Date().toISOString()};localStorage.setItem(KEY,JSON.stringify(S))}
 function exportFinal(){render();const blob=new Blob([JSON.stringify({schema:"khaemenes-science-units05-07-final-record-v1",course:"KH-SCI-IIS9",state:S},null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="KH-SCI-IIS9-units05-07-final-record.json";a.click();URL.revokeObjectURL(url)}
 document.addEventListener("DOMContentLoaded",()=>{const prior=S.finalRecord?.constructedScores||[];["cr1","cr2","cr3","cr4"].forEach((id,i)=>{$("#"+id).value=prior[i]??"";$("#"+id).oninput=render});$("#printRecord").onclick=()=>print();$("#exportFinalRecord").onclick=exportFinal;render()});
-</script></head><body><a class="skip-link" href="#main">Skip to main content</a>
+</script><style id="khaemenes-typography-standard">
+/* Khaemenes High typography standard: 55 / 33 / 24 px.
+   Embedded in public HTML for standalone and offline use.
+   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-size:55px !important;
+  line-height:1.15 !important;
+  letter-spacing:.02em !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h1 {
+  font-size:33px !important;
+  line-height:1.2 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size:24px !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+</style>
+</head><body><a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header"><div class="wrap header-inner">
 <a class="brand" href="../../"><span class="brand-mark">S9</span><span class="brand-copy">
 <strong>INTEGRATED SCIENCE 9</strong><small>Units 05–07 Cumulative Benchmark</small></span></a>

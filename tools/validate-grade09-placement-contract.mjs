@@ -28,8 +28,8 @@ must(pre.conditional_unit_0?.duration_weeks === contract.foundation_duration_wee
 must(pre.readiness_gateway?.mastery_threshold_percent === contract.mastery_threshold_percent, "Pre-Algebra readiness threshold disagrees with Grade 09 contract");
 
 const scienceRouting = read("courses/science/integrated-science-9/diagnostic/readiness-routing.js");
-must(/const MASTERY = 80;/.test(scienceRouting), "Science 9 overall readiness threshold must be 80%");
-must(/const ESSENTIAL_MIN = 80;/.test(scienceRouting), "Science 9 essential-strand threshold must be 80%");
+must(/const MASTERY = (?:80|contract\?\.overallReadyPercent \|\| 80);/.test(scienceRouting), "Science 9 overall readiness threshold must be 80%");
+must(/const ESSENTIAL_MIN = (?:80|contract\?\.essentialStrandFloorPercent \|\| 80);/.test(scienceRouting), "Science 9 essential-strand threshold must be 80%");
 must(fs.existsSync(path.join(root, "courses/science/integrated-science-9/foundations/week-06.html")), "Science 9 must preserve all six Foundation Weeks");
 must(fs.existsSync(path.join(root, "courses/science/integrated-science-9/units/unit-01/unit01-entry-gate.js")), "Science 9 Unit 01 entry gate is missing");
 
@@ -38,7 +38,7 @@ const socialGate = read("courses/social-studies/grade-09/assets/grade09-entry-ga
 must(/course-data\.js/.test(socialShell) && /app\.js/.test(socialShell), "Social Studies official course shell is incomplete");
 must(/grade09-entry-gate\.js/.test(socialShell), "Social Studies official course shell must load its entry gate");
 must(/supported_42_week/.test(socialGate) && /core_36_week/.test(socialGate), "Social Studies gate must distinguish 36- and 42-week pathways");
-must(/scores\.length === 6/.test(socialGate) && /score >= MASTERY/.test(socialGate), "Social Studies must verify all six Foundation Weeks at 80%");
+must(/\['P1','P2','P3','P4','P5','P6'\]\.every/.test(socialGate) && /best>=80/.test(socialGate), "Social Studies must verify all six Foundation Weeks at 80%");
 
 const required = [
   "courses/language-arts/english-9",

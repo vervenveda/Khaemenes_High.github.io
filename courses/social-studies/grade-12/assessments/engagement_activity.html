@@ -1,5 +1,31 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Political Engagement Activity · Grade 12</title><link rel="stylesheet" href="../styles.css"></head><body><main class="main" style="max-width:1050px;margin:auto">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Political Engagement Activity · Grade 12</title><link rel="stylesheet" href="../styles.css"><style id="khaemenes-typography-standard">
+/* Khaemenes High typography standard: 55 / 33 / 24 px.
+   Embedded in public HTML for standalone and offline use.
+   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-size:55px !important;
+  line-height:1.15 !important;
+  letter-spacing:.02em !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h1 {
+  font-size:33px !important;
+  line-height:1.2 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size:24px !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+</style>
+</head><body><main class="main" style="max-width:1050px;margin:auto">
 <header class="hero"><div class="eyebrow">Khaemenes High · Mandatory Grade 12 Assessment</div><h1>Political Engagement Activity</h1><p>Week 35 · Engagement Portfolio · Required score: 70%</p><div class="heroActions noPrint"><a class="button secondary" href="../index.html">Course Home</a><button onclick="window.print()">Print</button></div></header>
 <section class="integrity"><strong>Academic integrity:</strong> Submit only work you can explain and defend. Every material source and automated assistance must be disclosed. Fabricated evidence, falsified citations, plagiarism, or undisclosed generated work invalidates this assessment until corrected.</section>
 <section class="card"><h2>Purpose</h2><p>Complete a lawful, nonpartisan engagement activity and document stakeholders, evidence, action, effect, and reflection.</p><h3>Required components</h3><ul><li>Approved lawful and nonpartisan activity</li><li>Stakeholder and authority map</li><li>Evidence-based preparation</li><li>Documented participation or service</li><li>Public communication product</li><li>1,000-word reflection</li></ul><h3>Common rubric</h3><ul><li>Disciplinary accuracy and concepts — 20%</li><li>Source authority and evidence — 20%</li><li>Analysis, method, and reasoning — 25%</li><li>Comparison, counterargument, and limitations — 15%</li><li>Communication, citation, and integrity — 20%</li></ul></section>
-<section class="card"><h2>Student Submission</h2><p id="studentInfo">Loading active student…</p><label>Draft, response, or submission record<textarea id="response" rows="18"></textarea></label><label>Sources and disclosure<textarea id="sources" rows="8" placeholder="List sources, citations, data files, interviews, and material AI assistance."></textarea></label><div class="actions noPrint"><button id="save">Save Draft</button><button id="submit" class="secondary">Submit for Evaluator Scoring</button></div><p id="status"></p></section><footer class="footer">Khaemenes High · Political Engagement Activity · Jennifer Pearl and Autumn Pearl · 2026</footer></main><script>const KEY="khaemenes_grade12_global_politics_v1",ID="engagement_activity";let db;try{db=JSON.parse(localStorage.getItem(KEY))}catch(e){};const s=db?.students?.find(x=>x.id===db.activeId),info=document.getElementById('studentInfo');info.textContent=s?`Active student: ${s.name}`:'No active student. Return to the course portal and select a student.';if(s){s.major||={};const r=s.major[ID]||{};document.getElementById('response').value=r.response||'';document.getElementById('sources').value=r.sources||''}function store(submitted){if(!s){alert('Select a student first.');return}s.major[ID]=Object.assign(s.major[ID]||{},{response:document.getElementById('response').value,sources:document.getElementById('sources').value,submitted:submitted||(s.major[ID]?.submitted||false),studentSubmitted:submitted||(s.major[ID]?.studentSubmitted||false),updated:new Date().toLocaleString()});localStorage.setItem(KEY,JSON.stringify(db));document.getElementById('status').textContent=submitted?'Submitted. The evaluator must apply the rubric and record a score.':'Draft saved.'}document.getElementById('save').onclick=()=>store(false);document.getElementById('submit').onclick=()=>store(true);</script></body></html>
+<section class="card"><h2>Student Submission</h2><p id="studentInfo">Loading active student…</p><label>Draft, response, or submission record<textarea id="response" rows="18"></textarea></label><label>Sources and disclosure<textarea id="sources" rows="8" placeholder="List sources, citations, data files, interviews, and material AI assistance."></textarea></label><div class="actions noPrint"><button id="save">Save Draft</button><button id="submit" class="secondary">Submit for Evaluator Scoring</button></div><p id="status"></p></section><footer class="footer">Khaemenes High · Political Engagement Activity · Jennifer Kay Pearl · 2026</footer></main><script>const KEY="khaemenes_grade12_global_politics_v1",ID="engagement_activity";let db;try{db=JSON.parse(localStorage.getItem(KEY))}catch(e){};const s=db?.students?.find(x=>x.id===db.activeId),info=document.getElementById('studentInfo');info.textContent=s?`Active student: ${s.name}`:'No active student. Return to the course portal and select a student.';if(s){s.major||={};const r=s.major[ID]||{};document.getElementById('response').value=r.response||'';document.getElementById('sources').value=r.sources||''}function store(submitted){if(!s){alert('Select a student first.');return}s.major[ID]=Object.assign(s.major[ID]||{},{response:document.getElementById('response').value,sources:document.getElementById('sources').value,submitted:submitted||(s.major[ID]?.submitted||false),studentSubmitted:submitted||(s.major[ID]?.studentSubmitted||false),updated:new Date().toLocaleString()});localStorage.setItem(KEY,JSON.stringify(db));document.getElementById('status').textContent=submitted?'Submitted. The evaluator must apply the rubric and record a score.':'Draft saved.'}document.getElementById('save').onclick=()=>store(false);document.getElementById('submit').onclick=()=>store(true);</script></body></html>

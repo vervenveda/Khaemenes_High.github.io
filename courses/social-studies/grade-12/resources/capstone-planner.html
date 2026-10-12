@@ -1,4 +1,30 @@
-<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Senior Research Capstone Planner</title><link rel='stylesheet' href='../styles.css'></head><body><main class='main' style='max-width:1000px;margin:auto'><header class="hero"><div class="eyebrow">Khaemenes High · Grade 12 Research Laboratory</div><h1>Senior Research Capstone Planner</h1><div class="heroActions noPrint"><a class="button secondary" href="index.html">Research Tools</a><a class="button ghost" href="../index.html">Course Home</a><button onclick="window.print()">Print</button></div></header><section class="card"><p>Name: ______________________________ Date: ______________ Week/Assessment: __________________</p><label><strong>Research question</strong><textarea rows='5'></textarea></label><label><strong>Significance and audience</strong><textarea rows='5'></textarea></label><label><strong>Scope: cases, geography, time period, and exclusions</strong><textarea rows='5'></textarea></label><label><strong>Conceptual framework</strong><textarea rows='5'></textarea></label><label><strong>Preliminary claim or hypothesis</strong><textarea rows='5'></textarea></label><label><strong>Ethical methodology</strong><textarea rows='5'></textarea></label><label><strong>Primary evidence</strong><textarea rows='5'></textarea></label><label><strong>Secondary research</strong><textarea rows='5'></textarea></label><label><strong>Data or qualitative analysis plan</strong><textarea rows='5'></textarea></label><label><strong>Competing explanations</strong><textarea rows='5'></textarea></label><label><strong>Schedule and checkpoint plan</strong><textarea rows='5'></textarea></label><label><strong>AI-assistance disclosure plan</strong><textarea rows='5'></textarea></label><label><strong>Limitations</strong><textarea rows='5'></textarea></label><label><strong>Revision conditions</strong><textarea rows='5'></textarea></label><div class="actions noPrint"><button id="save">Save Local Draft</button><button id="clear" class="danger">Clear</button></div><p id="msg"></p></section><footer class='footer'>Khaemenes High · Grade 12 Research Laboratory · Jennifer Pearl and Autumn Pearl · 2026</footer></main><script>
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Senior Research Capstone Planner</title><link rel='stylesheet' href='../styles.css'><style id="khaemenes-typography-standard">
+/* Khaemenes High typography standard: 55 / 33 / 24 px.
+   Embedded in public HTML for standalone and offline use.
+   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-size:55px !important;
+  line-height:1.15 !important;
+  letter-spacing:.02em !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h1 {
+  font-size:33px !important;
+  line-height:1.2 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size:24px !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+</style>
+</head><body><main class='main' style='max-width:1000px;margin:auto'><header class="hero"><div class="eyebrow">Khaemenes High · Grade 12 Research Laboratory</div><h1>Senior Research Capstone Planner</h1><div class="heroActions noPrint"><a class="button secondary" href="index.html">Research Tools</a><a class="button ghost" href="../index.html">Course Home</a><button onclick="window.print()">Print</button></div></header><section class="card"><p>Name: ______________________________ Date: ______________ Week/Assessment: __________________</p><label><strong>Research question</strong><textarea rows='5'></textarea></label><label><strong>Significance and audience</strong><textarea rows='5'></textarea></label><label><strong>Scope: cases, geography, time period, and exclusions</strong><textarea rows='5'></textarea></label><label><strong>Conceptual framework</strong><textarea rows='5'></textarea></label><label><strong>Preliminary claim or hypothesis</strong><textarea rows='5'></textarea></label><label><strong>Ethical methodology</strong><textarea rows='5'></textarea></label><label><strong>Primary evidence</strong><textarea rows='5'></textarea></label><label><strong>Secondary research</strong><textarea rows='5'></textarea></label><label><strong>Data or qualitative analysis plan</strong><textarea rows='5'></textarea></label><label><strong>Competing explanations</strong><textarea rows='5'></textarea></label><label><strong>Schedule and checkpoint plan</strong><textarea rows='5'></textarea></label><label><strong>AI-assistance disclosure plan</strong><textarea rows='5'></textarea></label><label><strong>Limitations</strong><textarea rows='5'></textarea></label><label><strong>Revision conditions</strong><textarea rows='5'></textarea></label><div class="actions noPrint"><button id="save">Save Local Draft</button><button id="clear" class="danger">Clear</button></div><p id="msg"></p></section><footer class='footer'>Khaemenes High · Grade 12 Research Laboratory · Jennifer Kay Pearl · 2026</footer></main><script>
 const K='khae12_tool_'+location.pathname.split('/').pop(), fields=[...document.querySelectorAll('textarea,input[type="text"]')];
 try{const d=JSON.parse(localStorage.getItem(K)||'{}');fields.forEach((x,i)=>x.value=d[i]||'')}catch(e){}
 document.getElementById('save').onclick=()=>{const d={};fields.forEach((x,i)=>d[i]=x.value);localStorage.setItem(K,JSON.stringify(d));document.getElementById('msg').textContent='Draft saved in this browser.'};

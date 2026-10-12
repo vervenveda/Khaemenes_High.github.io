@@ -99,8 +99,9 @@ for(const [slug,game] of Object.entries(registry.games||{})){
       const nextLesson=String(Number(lesson)+1).padStart(2,"0");
       const next=engine.indexOf("l"+nextLesson+":",start+1);
       const block=start>=0?engine.slice(start,next>=0?next:Math.min(engine.length,start+2600)):"";
-      if(start<0 && !read(lessonPath).includes("/learning-games/"+slug+"/index.html")) errors.push(slug+": Pre-Algebra engine missing l"+lesson);
-      if(!block.includes('sharedGame:"'+slug+'"') && !block.includes('game:"'+slug+'"') && !read(lessonPath).includes('/learning-games/'+slug+'/index.html')) errors.push(slug+": Pre-Algebra l"+lesson+" does not map to sharedGame");
+      const launcherWired = new RegExp(`shared-game-launcher[^>]*data-game="${slug}"`).test(read(lessonPath));
+      if(start<0 && !launcherWired && !read(lessonPath).includes("/learning-games/"+slug+"/index.html")) errors.push(slug+": Pre-Algebra engine missing l"+lesson);
+      if(!launcherWired && !block.includes('sharedGame:"'+slug+'"') && !block.includes('game:"'+slug+'"') && !read(lessonPath).includes('/learning-games/'+slug+'/index.html')) errors.push(slug+": Pre-Algebra l"+lesson+" does not map to sharedGame");
     }else{
       higherCount++;
       const lessonHtml=read(lessonPath);

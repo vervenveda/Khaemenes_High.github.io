@@ -17,6 +17,32 @@ main{padding:54px 0 82px}.intro{max-width:880px;margin:0 auto 34px;text-align:ce
 @media(max-width:780px){.header-inner{grid-template-columns:1fr}.brand{justify-content:center}.header-nav{justify-content:center}.course-grid{grid-template-columns:1fr}.card{min-height:0}}@media(max-width:560px){.wrap{width:min(calc(100% - 22px),var(--max))}.header-nav a,.hero-actions .btn,.card .actions .btn{width:100%}.card{padding:20px}}@media print{.site-header,.hero-actions,.actions{display:none!important}body{background:#fff}.card{box-shadow:none;break-inside:avoid}}
 </style>
 <link rel="stylesheet" href="../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
+<style id="khaemenes-typography-standard">
+/* Khaemenes High typography standard: 55 / 33 / 24 px.
+   Embedded in public HTML for standalone and offline use.
+   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-size:55px !important;
+  line-height:1.15 !important;
+  letter-spacing:.02em !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h1 {
+  font-size:33px !important;
+  line-height:1.2 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size:24px !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>

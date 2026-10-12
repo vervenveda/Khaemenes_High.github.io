@@ -1,7 +1,43 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-design-v30-algebra-complete-20261008";
+const CACHE_VERSION = "khaemenes-high-design-v30-algebra-complete-20261008-repair-20261012";
 const PRECACHE_FILES = [
+"./courses/mathematics/assets/game-return-route.js",
+"./courses/mathematics/assets/learning-games/circle-theorem-studio/index.html",
+"./courses/mathematics/assets/learning-games/common-ground/index.html",
+"./courses/mathematics/assets/learning-games/congruence-similarity-lab/index.html",
+"./courses/mathematics/assets/learning-games/coordinated-mission-control/index.html",
+"./courses/mathematics/assets/learning-games/decimal-signal/index.html",
+"./courses/mathematics/assets/learning-games/dividing-integers/index.html",
+"./courses/mathematics/assets/learning-games/equation-balance-lab/index.html",
+"./courses/mathematics/assets/learning-games/estimate-defender/index.html",
+"./courses/mathematics/assets/learning-games/factors-and-multiples/index.html",
+"./courses/mathematics/assets/learning-games/fraction-forge/index.html",
+"./courses/mathematics/assets/learning-games/fraction-quotient/index.html",
+"./courses/mathematics/assets/learning-games/gcf-lcm-challenge/index.html",
+"./courses/mathematics/assets/learning-games/group-or-cycle/index.html",
+"./courses/mathematics/assets/learning-games/inequality-number-line/index.html",
+"./courses/mathematics/assets/learning-games/integer-compass/index.html",
+"./courses/mathematics/assets/learning-games/integer-rank/index.html",
+"./courses/mathematics/assets/learning-games/integer-sum-lab/index.html",
+"./courses/mathematics/assets/learning-games/linear-systems-mission/index.html",
+"./courses/mathematics/assets/learning-games/number-family/index.html",
+"./courses/mathematics/assets/learning-games/operation-stepper/index.html",
+"./courses/mathematics/assets/learning-games/opposite-mirror/index.html",
+"./courses/mathematics/assets/learning-games/opposite-shift/index.html",
+"./courses/mathematics/assets/learning-games/polynomial-factoring-forge/index.html",
+"./courses/mathematics/assets/learning-games/prime-spy-composite/index.html",
+"./courses/mathematics/assets/learning-games/proof-path-builder/index.html",
+"./courses/mathematics/assets/learning-games/quadratic-graph-lab/index.html",
+"./courses/mathematics/assets/learning-games/ratio-atelier/index.html",
+"./courses/mathematics/assets/learning-games/rational-navigator/index.html",
+"./courses/mathematics/assets/learning-games/rational-rank/index.html",
+"./courses/mathematics/assets/learning-games/reciprocal-relay/index.html",
+"./courses/mathematics/assets/learning-games/right-triangle-trig/index.html",
+"./courses/mathematics/assets/learning-games/scale-forge/index.html",
+"./courses/mathematics/assets/learning-games/sign-forge/index.html",
+"./courses/mathematics/assets/learning-games/slope-and-rate-studio/index.html",
+"./courses/mathematics/assets/learning-games/transformation-plane/index.html","./courses/shared/course-entry-contract.js","./courses/shared/learner-scope-v1.js","./courses/shared/upper-english-records.js",
   "./courses/mathematics/assets/learning-games/round-policy.js",
   "./courses/mathematics/assets/learning-games/common-ground/index.html",
   "./courses/mathematics/assets/learning-games/coordinated-mission-control/index.html",
@@ -413,10 +449,12 @@ self.addEventListener("fetch", event => {
     return;
   }
   if (request.mode === "navigate") {
-    event.respondWith(fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(async () => (await caches.match(request)) || (await caches.match(fallbackFor(url))) || caches.match("./index.html")));
+    event.respondWith(fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(async () => (await matchReleaseCache(request)) || (await matchReleaseCache(fallbackFor(url))) || matchReleaseCache("./index.html")));
     return;
   }
-  event.respondWith(caches.match(request).then(cached => { const network = fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(() => cached); return cached || network; }));
+  event.respondWith(matchReleaseCache(request).then(cached => { const network = fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(() => cached); return cached || network; }));
 });
 
 self.addEventListener("message", event => { if (event.data === "SKIP_WAITING") self.skipWaiting(); });
+
+function matchReleaseCache(request){return caches.open(CACHE_VERSION).then(cache=>cache.match(request));}

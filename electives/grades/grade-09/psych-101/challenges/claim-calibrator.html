@@ -1,1 +1,27 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claim Calibrator — Psychology 101</title><link rel="stylesheet" href="../assets/psych101.css"><link rel="manifest" href="../manifest.webmanifest"><script src="../assets/register-sw.js" defer></script></head><body><main><section class="hero"><div class="eyebrow">Optional · Non-graded</div><h1>Claim Calibrator</h1><p class="lead">Choose the conclusion that best matches the evidence. Nothing is stored.</p></section><section class="section"><div class="card"><p>A small fictional study finds an association between two measured variables. Which claim is strongest?</p><div class="actions"><button class="btn" data-v="0">One variable definitely causes the other.</button><button class="btn" data-v="1">They were associated in this sample; causal direction and generalizability require more evidence.</button><button class="btn" data-v="0">The association describes every person.</button></div></div><div id="f" class="feedback"></div><a class="btn" href="../lessons/index.html">Return</a></section></main><script>document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{document.getElementById('f').textContent=b.dataset.v==='1'?'Strong calibration: evidence first, limits named.':'Too strong for the evidence. Look for causation, person-level, or generalization overclaim.';});</script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claim Calibrator — Psychology 101</title><link rel="stylesheet" href="../assets/psych101.css"><link rel="manifest" href="../manifest.webmanifest"><script src="../assets/register-sw.js" defer></script><style id="khaemenes-typography-standard">
+/* Khaemenes High typography standard: 55 / 33 / 24 px.
+   Embedded in public HTML for standalone and offline use.
+   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-size:55px !important;
+  line-height:1.15 !important;
+  letter-spacing:.02em !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h1 {
+  font-size:33px !important;
+  line-height:1.2 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size:24px !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+</style>
+</head><body><main><section class="hero"><div class="eyebrow">Optional · Non-graded</div><h1>Claim Calibrator</h1><p class="lead">Choose the conclusion that best matches the evidence. Nothing is stored.</p></section><section class="section"><div class="card"><p>A small fictional study finds an association between two measured variables. Which claim is strongest?</p><div class="actions"><button class="btn" data-v="0">One variable definitely causes the other.</button><button class="btn" data-v="1">They were associated in this sample; causal direction and generalizability require more evidence.</button><button class="btn" data-v="0">The association describes every person.</button></div></div><div id="f" class="feedback"></div><a class="btn" href="../lessons/index.html">Return</a></section></main><script>document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{document.getElementById('f').textContent=b.dataset.v==='1'?'Strong calibration: evidence first, limits named.':'Too strong for the evidence. Look for causation, person-level, or generalization overclaim.';});</script></body></html>

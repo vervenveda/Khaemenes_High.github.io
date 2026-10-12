@@ -1,7 +1,7 @@
 "use strict";
 const CACHE_PREFIX="khaemenes-algebra2-";
 const CACHE=`${CACHE_PREFIX}v3-math-entry`;
-const CORE=[
+const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
   "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js",
   "./assets/question-bank.js","./assets/assessment-engine.js","./assets/lesson-tools.js",
@@ -40,15 +40,15 @@ self.addEventListener("fetch",event=>{
           }
           return response;
         })
-        .catch(()=>caches.match(event.request)
-          .then(hit=>hit||caches.match("./index.html"))
-          .then(hit=>hit||caches.match("./offline.html")))
+        .catch(()=>matchReleaseCache(event.request)
+          .then(hit=>hit||matchReleaseCache("./index.html"))
+          .then(hit=>hit||matchReleaseCache("./offline.html")))
     );
     return;
   }
 
   event.respondWith(
-    caches.match(event.request).then(hit=>{
+    matchReleaseCache(event.request).then(hit=>{
       const network=fetch(event.request).then(response=>{
         if(response&&response.ok){
           const copy=response.clone();
@@ -60,7 +60,9 @@ self.addEventListener("fetch",event=>{
         event.waitUntil(network);
         return hit;
       }
-      return network.then(response=>response||caches.match("./offline.html"));
+      return network.then(response=>response||matchReleaseCache("./offline.html"));
     })
   );
 });
+
+function matchReleaseCache(request){return caches.open(CACHE).then(cache=>cache.match(request));}

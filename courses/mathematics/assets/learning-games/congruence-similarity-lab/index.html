@@ -1,5 +1,35 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Congruence &amp; Similarity Lab | Khaemenes Academy</title><style>
-:root{color-scheme:light;--paper:#f7f0df;--ink:#22201c;--line:#9b825b;--accent:#694d24;--good:#205d3b;--bad:#9b3030}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,sans-serif}header,main,footer{max-width:1050px;margin:auto;padding:20px}h1,h2{font-family:Georgia,serif}h1{margin:0;font-size:clamp(1.8rem,4vw,3rem)}.sub{margin:.2rem 0;color:#514635}.panel{background:#fffaf0;border:1px solid #cbb993;border-radius:7px;padding:20px;margin:16px 0}.layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px}@media(max-width:750px){.layout{grid-template-columns:1fr}}label{display:block;font-weight:700;margin:12px 0 5px}select,input,button{font:inherit;border:1px solid #856d49;border-radius:7px;padding:10px;background:white;color:var(--ink)}input{width:100%;max-width:230px}button{cursor:pointer;background:#eee0c2}button.primary{background:var(--accent);color:white}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #bd7d1e;outline-offset:2px}button:disabled{opacity:.5;cursor:not-allowed}.controls{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:15px 0}.choices button{min-height:55px;text-align:left}.choices button.selected{outline:3px solid #88622c;background:#f3dca8}.graph{width:100%;height:auto;max-height:380px;background:#fffdf8;border:1px solid #d3c5ab;border-radius:7px}.muted{color:#5c5040}.feedback{padding:12px;border-left:4px solid #aa8a56;background:#f7eedc;min-height:50px}.feedback.good{border-color:var(--good)}.feedback.bad{border-color:var(--bad)}.small{font-size:.9rem}.stats{display:flex;flex-wrap:wrap;gap:18px;font-weight:700}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.pill{display:inline-block;border:1px solid #b49a6b;border-radius:7px;padding:4px 9px;font-size:.85rem}svg text{font-family:system-ui,sans-serif;fill:#333;font-size:13px}footer{font-size:.85rem;color:#655944}#explain[hidden]{display:none}noscript{display:block;padding:20px;background:#fff}</style></head><body>
+<!doctype html><html lang="en"><head>
+<script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Congruence &amp; Similarity Lab | Khaemenes Academy</title><style>
+:root{color-scheme:light;--paper:#f7f0df;--ink:#22201c;--line:#9b825b;--accent:#694d24;--good:#205d3b;--bad:#9b3030}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,sans-serif}header,main,footer{max-width:1050px;margin:auto;padding:20px}h1,h2{font-family:Georgia,serif}h1{margin:0;font-size:clamp(1.8rem,4vw,3rem)}.sub{margin:.2rem 0;color:#514635}.panel{background:#fffaf0;border:1px solid #cbb993;border-radius:7px;padding:20px;margin:16px 0}.layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px}@media(max-width:750px){.layout{grid-template-columns:1fr}}label{display:block;font-weight:700;margin:12px 0 5px}select,input,button{font:inherit;border:1px solid #856d49;border-radius:7px;padding:10px;background:white;color:var(--ink)}input{width:100%;max-width:230px}button{cursor:pointer;background:#eee0c2}button.primary{background:var(--accent);color:white}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #bd7d1e;outline-offset:2px}button:disabled{opacity:.5;cursor:not-allowed}.controls{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:15px 0}.choices button{min-height:55px;text-align:left}.choices button.selected{outline:3px solid #88622c;background:#f3dca8}.graph{width:100%;height:auto;max-height:380px;background:#fffdf8;border:1px solid #d3c5ab;border-radius:7px}.muted{color:#5c5040}.feedback{padding:12px;border-left:4px solid #aa8a56;background:#f7eedc;min-height:50px}.feedback.good{border-color:var(--good)}.feedback.bad{border-color:var(--bad)}.small{font-size:.9rem}.stats{display:flex;flex-wrap:wrap;gap:18px;font-weight:700}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.pill{display:inline-block;border:1px solid #b49a6b;border-radius:7px;padding:4px 9px;font-size:.85rem}svg text{font-family:system-ui,sans-serif;fill:#333;font-size:13px}footer{font-size:.85rem;color:#655944}#explain[hidden]{display:none}noscript{display:block;padding:20px;background:#fff}</style><script src="../../game-return-route.js?v=20261012"></script>
+<style id="khaemenes-typography-standard">
+/* Khaemenes High typography standard: 55 / 33 / 24 px.
+   Embedded in public HTML for standalone and offline use.
+   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-size:55px !important;
+  line-height:1.15 !important;
+  letter-spacing:.02em !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h1 {
+  font-size:33px !important;
+  line-height:1.2 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size:24px !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+</style>
+</head><body>
 <header><div class="pill">Khaemenes Academy · Sovereign Mathematics</div><h1>Congruence &amp; Similarity Lab</h1><p class="sub">Investigate corresponding parts, triangle tests, scale factors, and proportional reasoning.</p></header>
 <main><div class="panel"><label for="mode">Choose your mission</label><select id="mode"><option value="congruence">01 · Congruence criteria</option><option value="correspondence">02 · Corresponding parts</option><option value="similarity">03 · Similarity criteria</option><option value="scale">04 · Scale factors &amp; missing sides</option><option value="mixed">05 · Mixed investigation</option></select><div class="stats" aria-live="polite"><span id="count">Challenge 1</span><span id="score">Solved 0 / 0</span><span id="streak">Streak 0</span></div></div>
 <div class="layout"><section class="panel"><h2 id="question">Preparing challenge…</h2><p id="prompt" class="muted"></p><svg id="figure" class="graph" viewBox="0 0 520 340" role="img" aria-label="Two labeled triangles, not necessarily drawn to scale"></svg><p class="small muted">Diagrams illustrate correspondence; do not assume measurements from appearance.</p></section><section class="panel"><h2>Forge your reasoning</h2><div id="answer" aria-labelledby="question"></div><div class="controls"><button class="primary" id="check">Check answer</button><button id="hint">Hint</button><button id="reveal">Worked explanation</button><button id="next">New challenge</button></div><div id="feedback" class="feedback" role="status" aria-live="polite">Choose an answer, then check your reasoning.</div><div id="explain" class="panel" hidden></div></section></div>

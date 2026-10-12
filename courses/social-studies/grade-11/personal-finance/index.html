@@ -1,12 +1,38 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Personal Financial Literacy &amp; Money Management Honors: Income, Banking, Budgeting, Taxes, Credit, Consumer Law, Housing, Insurance, Saving, Investing, Education Finance, and Fraud Protection."><meta name="theme-color" content="#07111f">
-<title>Personal Financial Literacy &amp; Money Management Honors · Khaemenes High</title><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css"></head>
+<title>Personal Financial Literacy &amp; Money Management Honors · Khaemenes High</title><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css"><style id="khaemenes-typography-standard">
+/* Khaemenes High typography standard: 55 / 33 / 24 px.
+   Embedded in public HTML for standalone and offline use.
+   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-size:55px !important;
+  line-height:1.15 !important;
+  letter-spacing:.02em !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h1 {
+  font-size:33px !important;
+  line-height:1.2 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size:24px !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+</style>
+</head>
 <body><div class="app"><aside class="sidebar noPrint"><div class="brand"><div class="seal" aria-hidden="true">XI</div><h2>Khaemenes High</h2><p>Personal Financial Literacy &amp; Money Management Honors</p>
 <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../../../index.html">High School</a><span>›</span><a href="../../index.html">Social Studies</a><span>›</span><span>Grade 11</span></nav></div>
 <section class="panel"><h3>Student Record</h3><label for="studentSelect">Active student</label><select id="studentSelect"></select><label for="studentName">Add student</label><div class="inline"><input id="studentName" autocomplete="off" placeholder="Student name"><button id="addStudentBtn">Add</button></div><div class="actions"><button class="secondary" id="demoBtn">Add Demo</button><button class="danger" id="deleteStudentBtn">Delete</button></div><p class="small">Records remain in this browser unless exported.</p></section>
 <nav class="panel" aria-label="Course views"><button class="navBtn active" data-view="dashboard">Dashboard</button><button class="navBtn" data-view="week">Weekly Lessons</button><button class="navBtn" data-view="scope">18-Week Scope</button><button class="navBtn" data-view="exams">Assessments</button><button class="navBtn" data-view="reports">Reports &amp; Backups</button><button class="navBtn" data-view="standards">Standards &amp; Sources</button><a class="button ghost" href="teacher/index.html" style="width:100%;margin-top:7px">Teacher Portal</a></nav>
 <section class="panel"><h3>Weeks</h3><div class="weekList" id="weekList"></div></section><section class="panel"><h3>Accessibility</h3><div class="actions"><button class="secondary" id="themeBtn">Light / Dark</button><button class="secondary" id="fontDown">A−</button><button class="secondary" id="fontUp">A+</button></div></section></aside>
 <main class="main"><header class="hero"><div class="eyebrow">Khaemenes Academy · International and National Program</div><h1>Personal Financial Literacy &amp; Money Management Honors</h1><p class="subtitle">Grade 11 · Separate ½ Credit · Income, Banking, Budgeting, Taxes, Credit, Consumer Law, Housing, Insurance, Saving, Investing, Education Finance, and Fraud Protection</p><p>An advanced 18-week personal-finance course in which students build and defend a documented independent-living plan while mastering income, taxes, banking, budgeting, credit, contracts, housing, insurance, saving, investing, education finance, and fraud protection.</p><div class="notice" style="max-width:940px;margin:18px auto 0"><strong>Credit note:</strong> A separate one-half-credit Personal Financial Literacy and Money Management Honors course. It is not merged into the Government or Economics credit record.</div><div class="heroActions noPrint"><button data-go="week">Enter the Lessons</button><button class="secondary" data-go="scope">Explore the Curriculum</button><a class="button ghost" href="resources/index.html">Learning Tools</a><a class="button ghost" href="../index.html">Return to Government &amp; Economics</a><a class="button ghost" href="docs/README.md">Documentation</a></div></header>
-<nav class="tabs noPrint" aria-label="Course tabs"><button class="tab active" data-view="dashboard">Dashboard</button><button class="tab" data-view="week">Lessons</button><button class="tab" data-view="scope">Scope</button><button class="tab" data-view="exams">Assessments</button><button class="tab" data-view="reports">Reports</button><button class="tab" data-view="standards">Standards</button></nav><section id="content" aria-live="polite"></section><footer class="footer">Khaemenes High · Personal Financial Literacy &amp; Money Management Honors · Jennifer Pearl and Autumn Pearl · 2026</footer></main></div>
+<nav class="tabs noPrint" aria-label="Course tabs"><button class="tab active" data-view="dashboard">Dashboard</button><button class="tab" data-view="week">Lessons</button><button class="tab" data-view="scope">Scope</button><button class="tab" data-view="exams">Assessments</button><button class="tab" data-view="reports">Reports</button><button class="tab" data-view="standards">Standards</button></nav><section id="content" aria-live="polite"></section><footer class="footer">Khaemenes High · Personal Financial Literacy &amp; Money Management Honors · Jennifer Kay Pearl · 2026</footer></main></div>
 <script src="course-data.js"></script><script src="app.js"></script><script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));}</script></body></html>

@@ -1,5 +1,5 @@
-const CACHE_NAME = "khae-english10-v1";
-const PRECACHE = [
+const CACHE_NAME = "khae-english10-v2-repair-20261012";
+const PRECACHE = ["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js","../../shared/upper-english-records.js",
   "./404.html",
   "./assessments/diagnostic/index.html",
   "./assessments/final/index.html",
@@ -96,7 +96,7 @@ self.addEventListener("install", event => {
 });
 
 self.addEventListener("activate", event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim()));
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key=>key.startsWith("khae-english10-")&&key!==CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim()));
 });
 
 self.addEventListener("fetch", event => {
@@ -109,15 +109,17 @@ self.addEventListener("fetch", event => {
         const copy=response.clone();
         caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy));
         return response;
-      }).catch(()=>caches.match(event.request).then(hit=>hit||caches.match("./offline.html")))
+      }).catch(()=>matchReleaseCache(event.request).then(hit=>hit||matchReleaseCache("./offline.html")))
     );
     return;
   }
   event.respondWith(
-    caches.match(event.request).then(hit => hit || fetch(event.request).then(response => {
+    matchReleaseCache(event.request).then(hit => hit || fetch(event.request).then(response => {
       const copy=response.clone();
       caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy));
       return response;
     }))
   );
 });
+
+function matchReleaseCache(request){return caches.open(CACHE_NAME).then(cache=>cache.match(request));}

@@ -81,7 +81,7 @@ refresherLessons.forEach((lesson,index)=>{
   const relative=`units/unit-00/${lesson.file}`,source=fs.readFileSync(path.join(courseRoot,relative),"utf8"),match=/window\.REFRESHER_WEEK\s*=\s*\{([\s\S]*?)\}/.exec(source),label=`Unit 00 lesson ${index+1}`;
   if(!match){fail(`${label}: REFRESHER_WEEK contract was not found`);return;}
   const block=match[1],value=(key)=>new RegExp(`${key}\\s*:\\s*["']([^"']+)["']`).exec(block)?.[1]||"";
-  if(Number(value("week"))!==lesson.week)fail(`${label}: embedded week differs from unit map`);
+  if(Number(/week\s*:\s*(\d+)/.exec(block)?.[1] || value("week"))!==lesson.week)fail(`${label}: embedded week differs from unit map`);
   if(value("title")!==lesson.title)fail(`${label}: embedded title differs from unit map`);
   if(!source.includes('src="../assets/refresher-engine.js"'))fail(`${label}: refresher engine is not loaded`);
   if(!fs.existsSync(path.join(courseRoot,relative.replace(/\.html$/,".md"))))fail(`${label}: paired Markdown lesson is missing`);

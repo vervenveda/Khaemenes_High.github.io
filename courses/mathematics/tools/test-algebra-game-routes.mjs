@@ -22,7 +22,11 @@ for(const unit of fs.readdirSync(units)){
   }
  }
 }
-assert.equal(placements.length,17,'Update the reviewed Algebra I coverage count when adding placements.');
+const registry=JSON.parse(fs.readFileSync(path.join(base,'game-registry.json'),'utf8'));
+const expected=Object.values(registry.games).flatMap(game=>(game.placements||[]).filter(p=>p.course==='algebra-1'));
+assert.ok(placements.length>0,'No Algebra I game placements found');
+for(const item of expected)assert.ok(placements.some(p=>Number(p.unit)===Number(item.unit)&&Number(String(p.number).match(/\d+$/)?.[0])===Number(String(item.lesson).match(/\d+$/)?.[0])),`Missing registered placement U${item.unit} L${item.lesson}`);
+assert.equal(new Set(placements.map(p=>p.lesson+'|'+p.game)).size,placements.length,'Duplicate lesson/game placements');
 const results=[];for(const placement of placements){
 const slug=placement.game;
 const html=fs.readFileSync(path.join(base,slug,'index.html'),'utf8');const scripts=[...html.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)].map(x=>x[1]);
@@ -30,8 +34,17 @@ const nodes=new Map();const node=id=>{if(nodes.has(id))return nodes.get(id);cons
 const documentEvents=new Map();
 const document={getElementById:node,querySelector:node,querySelectorAll:s=>s==='[data-return-lesson]'?[node('return-anchor-1'),node('return-anchor-2'),node('return-anchor-3')]:[],createElement:()=>node('new'+Math.random()),documentElement:node('html'),body:node('body'),addEventListener(name,fn){documentEvents.set(name,fn)}};
 const store=new Map();const context={document,window:{location:{search:'',href:'https://example.test/'+slug+'/',pathname:'/'+slug+'/'},matchMedia:()=>({matches:true,addEventListener(){}}),addEventListener(){},innerWidth:1000},location:{search:placement.query,href:'https://example.test/'+slug+'/index.html'+placement.query},localStorage:{getItem:k=>store.has(k)?store.get(k):null,setItem:(k,v)=>store.set(k,v),removeItem:k=>store.delete(k)},URLSearchParams,URL,console,setTimeout:()=>0,clearTimeout(){},setInterval:()=>0,clearInterval(){},requestAnimationFrame:()=>0,cancelAnimationFrame(){},performance:{now:()=>0},navigator:{},Blob,Math,confirm:()=>false};context.window.document=document;vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(base,"round-policy.js"),"utf8"),context);
+if(!/function (best|bestValue)\(\)/.test(html)){
+ const events={};const routeContext={window:{},document:{currentScript:{src:'https://audit.test/courses/mathematics/assets/game-return-route.js'},readyState:'loading',addEventListener:(n,f)=>events[n]=f},URL,URLSearchParams};
+ vm.runInNewContext(fs.readFileSync('courses/mathematics/assets/game-return-route.js','utf8'),routeContext);
+ const unitMap=JSON.parse(fs.readFileSync(path.join(units,`unit-${String(placement.unit).padStart(2,'0')}`,'unit-map.json'),'utf8'));
+ const route=routeContext.window.KhaemenesGameReturn.resolveLesson('algebra1',placement.unit,placement.number,unitMap);
+ assert.equal(path.resolve('courses/mathematics/assets',route),path.resolve(placement.lesson));
+ assert.ok(html.includes('../../game-return-route.js'),slug+': shared return helper missing');
+ console.log('PASS: Algebra I '+slug+' canonical query, lesson map and return helper');continue;
+}
 const extra=[...new Set([...scripts.join('\n').matchAll(/const\s+([A-Z_][A-Z_0-9]*)\s*=/g)].map(x=>x[1]))];const names=[...new Set([...extra,'BANK','COURSE_BANKS','BANKS','COURSE_CONFIG','SINGLE_LEVEL','BEST','best','bestValue','bestKey','makeDeck','buildDeck','levels','activeBank','isPrime','primeFactors','kind','gcd','lcm','factors','expected','buildRound','start','startRound','render','submit','next','finish','finishRound','intValue','el','hint','reveal','saveBest','stats','updateStats'])];
-let error=null;try{for(let script of scripts){const exports='globalThis.auditExports={'+names.map(n=>n+':typeof '+n+'==="undefined"?null:'+n).join(',')+',state:()=>({deck:typeof deck==="undefined"?null:deck,index:typeof index==="undefined"?null:index,attempts:typeof attempts==="undefined"?null:attempts,correct:typeof correct==="undefined"?null:correct}),setProgress:()=>{if(typeof attempts!=="undefined")attempts=1;if(typeof attemptedExpr!=="undefined")attemptedExpr=1;index=1;if(typeof checked!=="undefined")checked=true},choose:i=>{selected=i}};';script=script.replace(/\}\)\(\);?\s*$/,exports+'})();');vm.runInContext(script,context,{timeout:500})}}catch(e){error=e.message}
+let error=null;try{for(let script of scripts){const exports=';globalThis.auditExports={'+names.map(n=>n+':typeof '+n+'==="undefined"?null:'+n).join(',')+',state:()=>({deck:typeof deck==="undefined"?null:deck,index:typeof index==="undefined"?null:index,attempts:typeof attempts==="undefined"?null:attempts,correct:typeof correct==="undefined"?null:correct}),setProgress:()=>{if(typeof attempts!=="undefined")attempts=1;if(typeof attemptedExpr!=="undefined")attemptedExpr=1;index=1;if(typeof checked!=="undefined")checked=true},choose:i=>{selected=i}};';script=script.replace(/\}\)\(\);?\s*$/,exports+'})();');vm.runInContext(script,context,{timeout:500})}}catch(e){error=e.message}
 assert.equal(error,null,slug);
 const e=context.auditExports;
 const target=path.resolve(placement.lesson);

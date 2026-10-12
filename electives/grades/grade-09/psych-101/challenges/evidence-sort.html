@@ -1,1 +1,27 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evidence Sort — Psychology 101</title><link rel="stylesheet" href="../assets/psych101.css"><link rel="manifest" href="../manifest.webmanifest"><script src="../assets/register-sw.js" defer></script></head><body><main id="main"><section class="hero"><div class="eyebrow">Optional · Non-graded</div><h1>Evidence Sort</h1><p class="lead">Classify each statement as Observation or Inference. This score is not stored and is never used as evidence about you.</p></section><section class="section"><div id="card" class="card"></div><div class="actions"><button class="btn" data-choice="Observation">Observation</button><button class="btn" data-choice="Inference">Inference</button><a class="btn" href="../lessons/index.html">Return</a></div><div id="feedback" class="feedback"></div></section></main><script>const items=[['The participant selected option B.','Observation'],['The participant was confused.','Inference'],['The graph shows a higher mean in Condition 2.','Observation'],['Condition 2 made everyone more motivated.','Inference'],['The survey response was 4 on a five-point scale.','Observation'],['The respondent has a fixed personality trait.','Inference']];let i=0,score=0;const card=document.getElementById('card'),fb=document.getElementById('feedback');function show(){card.innerHTML=`<h2>${i+1}/${items.length}</h2><p>${items[i][0]}</p>`;}document.querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>{if(b.dataset.choice===items[i][1])score++;i++;if(i<items.length)show();else{card.innerHTML='<h2>Complete</h2>';fb.textContent=`${score}/${items.length} correct. Optional practice only — no mastery record changed.`;}});show();</script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evidence Sort — Psychology 101</title><link rel="stylesheet" href="../assets/psych101.css"><link rel="manifest" href="../manifest.webmanifest"><script src="../assets/register-sw.js" defer></script><style id="khaemenes-typography-standard">
+/* Khaemenes High typography standard: 55 / 33 / 24 px.
+   Embedded in public HTML for standalone and offline use.
+   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-size:55px !important;
+  line-height:1.15 !important;
+  letter-spacing:.02em !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h1 {
+  font-size:33px !important;
+  line-height:1.2 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size:24px !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+</style>
+</head><body><main id="main"><section class="hero"><div class="eyebrow">Optional · Non-graded</div><h1>Evidence Sort</h1><p class="lead">Classify each statement as Observation or Inference. This score is not stored and is never used as evidence about you.</p></section><section class="section"><div id="card" class="card"></div><div class="actions"><button class="btn" data-choice="Observation">Observation</button><button class="btn" data-choice="Inference">Inference</button><a class="btn" href="../lessons/index.html">Return</a></div><div id="feedback" class="feedback"></div></section></main><script>const items=[['The participant selected option B.','Observation'],['The participant was confused.','Inference'],['The graph shows a higher mean in Condition 2.','Observation'],['Condition 2 made everyone more motivated.','Inference'],['The survey response was 4 on a five-point scale.','Observation'],['The respondent has a fixed personality trait.','Inference']];let i=0,score=0;const card=document.getElementById('card'),fb=document.getElementById('feedback');function show(){card.innerHTML=`<h2>${i+1}/${items.length}</h2><p>${items[i][0]}</p>`;}document.querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>{if(b.dataset.choice===items[i][1])score++;i++;if(i<items.length)show();else{card.innerHTML='<h2>Complete</h2>';fb.textContent=`${score}/${items.length} correct. Optional practice only — no mastery record changed.`;}});show();</script></body></html>

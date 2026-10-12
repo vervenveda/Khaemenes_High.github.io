@@ -1,0 +1,24 @@
+name: High School Record and Route Validation
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Check all public page dependencies and routes
+        run: python3 tools/validate-sitewide-routes.py
+      - name: Verify learner isolation, ownership recovery and direct math routes
+        run: node scripts/validate_learner_scoped_persistence.mjs
+      - name: Verify English records, scores and recovery
+        run: node tools/test-upper-english-records.mjs
+      - name: Verify offline cache ownership
+        run: node tools/test-offline-cache-ownership.mjs

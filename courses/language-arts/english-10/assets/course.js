@@ -22,13 +22,11 @@
     records: {attendance:[], reading:[]},
     profile: {schoolYear:"", instructor:"", startDate:"", completionDate:""}
   });
-  let state = (() => {
-    try {
-      const saved = safeParse(localStorage.getItem(STATE_KEY) || "", null);
-      return saved && saved.courseId === COURSE_ID ? saved : defaultState();
-    } catch { return defaultState(); }
-  })();
-  const save = () => { try{localStorage.setItem(STATE_KEY, JSON.stringify(state))}catch{} };
+  const recordStore = window.KhaemenesEnglishRecords.create(COURSE_ID, STATE_KEY, defaultState);
+  let state = recordStore.state;
+  const save = () => recordStore.save(state);
+  const score = window.KhaemenesEnglishRecords.score;
+  const fmt = value => value === null || value === undefined ? "—" : `${value}%`;
   const weekState = w => {
     const key=String(Number(w));
     state.weeks[key] ||= {days:{},quiz:{best:0,attempts:[]},notes:{},reflection:""};
@@ -138,7 +136,7 @@
     renderQuestionSet($("[data-question-container]",form),questions,`week-${week}`);
     const result=$("[data-quiz-result]");
     const best=$("[data-quiz-best]");
-    const syncBest=()=>{if(best)best.textContent=weekState(week).quiz.best?`${weekState(week).quiz.best}%`:"—"};
+    const syncBest=()=>{if(best)best.textContent=fmt(score(weekState(week).quiz))};
     syncBest();
     form.addEventListener("submit",e=>{
       e.preventDefault();
@@ -159,8 +157,8 @@
       const record=weekState(week).quiz;
       record.attempts.push({date:nowISO(),score,correct,total:questions.length});
       record.best=Math.max(record.best||0,score);
-      save();syncBest();updateProgress();
-      result.innerHTML=`Score: <strong>${score}%</strong> (${correct}/${questions.length}). Best score retained: <strong>${record.best}%</strong>. ${score<80?"Complete corrections, review the lesson, and retake.":"Mastery target met."}`;
+      const saved=save();syncBest();updateProgress();
+      result.innerHTML=`${saved?"Saved. ":"Not saved — export a recovery copy. "}Score: <strong>${score}%</strong> (${correct}/${questions.length}). Best score retained: <strong>${record.best}%</strong>. ${score<80?"Complete corrections, review the lesson, and retake.":"Mastery target met."}`;
     });
     $("[data-reset-quiz]")?.addEventListener("click",()=>{form.reset();$$(".quiz-feedback",form).forEach(x=>{x.hidden=true;x.textContent=""});if(result)result.textContent=""});
   }
@@ -173,7 +171,7 @@
     const result=$("[data-assessment-result]");
     const best=$("[data-assessment-best]");
     const getRecord=()=>kind==="unit"?unitState(Number(form.dataset.unit)).assessment:examState(id);
-    const sync=()=>{if(best)best.textContent=getRecord().best?`${getRecord().best}%`:"—"};sync();
+    const sync=()=>{if(best)best.textContent=fmt(score(getRecord()))};sync();
     form.addEventListener("submit",e=>{
       e.preventDefault();
       let correct=0,complete=true,answers=[];
@@ -189,8 +187,8 @@
       if(!complete){result.textContent="Please answer every question.";return}
       const score=Math.round(correct/questions.length*100), record=getRecord();
       record.attempts.push({date:nowISO(),score,correct,total:questions.length,answers});
-      record.best=Math.max(record.best||0,score);save();sync();updateProgress();
-      result.innerHTML=`Score: <strong>${score}%</strong> (${correct}/${questions.length}). Best retained: <strong>${record.best}%</strong>.`;
+      record.best=Math.max(record.best||0,score);const saved=save();sync();updateProgress();
+      result.innerHTML=`${saved?"Saved. ":"Not saved — export a recovery copy. "}Score: <strong>${score}%</strong> (${correct}/${questions.length}). Best retained: <strong>${record.best}%</strong>.`;
     });
     $("[data-reset-assessment]")?.addEventListener("click",()=>{form.reset();$$(".quiz-feedback",form).forEach(x=>{x.hidden=true;x.textContent=""});if(result)result.textContent=""});
   }
@@ -200,24 +198,24 @@
     const days=weekState(week).days;
     return ["Monday","Tuesday","Wednesday","Thursday","Friday"].filter(d=>days[d]).length;
   }
-  function average(values){const nums=values.map(Number).filter(v=>Number.isFinite(v)&&v>0);return nums.length?Math.round(nums.reduce((a,b)=>a+b,0)/nums.length):0}
+  function average(values){const nums=values.filter(v=>typeof v==="number"&&Number.isFinite(v)&&v>=0&&v<=100);return nums.length?Math.round(nums.reduce((a,b)=>a+b,0)/nums.length):null}
   function calcStats(){
-    const weekly=Array.from({length:36},(_,i)=>weekState(i+1).quiz.best||0);
-    const units=Array.from({length:12},(_,i)=>unitState(i+1).assessment.best||0);
-    const projects=Array.from({length:12},(_,i)=>Number(unitState(i+1).projectScore)||0);
-    const mid=examState("midterm").best||0, fin=examState("final").best||0;
+    const weekly=Array.from({length:36},(_,i)=>score(weekState(i+1).quiz));
+    const units=Array.from({length:12},(_,i)=>score(unitState(i+1).assessment));
+    const projects=Array.from({length:12},(_,i)=>unitState(i+1).projectScore===""?null:Number(unitState(i+1).projectScore));
+    const mid=score(examState("midterm")), fin=score(examState("final"));
     const dayDone=Array.from({length:36},(_,i)=>completedDays(i+1)).reduce((a,b)=>a+b,0);
     const lessonPct=Math.round(dayDone/180*100);
     const quizAvg=average(weekly),unitAvg=average(units),projectAvg=average(projects);
     const weights=[
-      {value:quizAvg,weight:30,active:weekly.some(Boolean)},
-      {value:unitAvg,weight:25,active:units.some(Boolean)},
-      {value:projectAvg,weight:20,active:projects.some(Boolean)},
-      {value:mid,weight:10,active:Boolean(mid)},
-      {value:fin,weight:15,active:Boolean(fin)}
+      {value:quizAvg,weight:30,active:quizAvg!==null},
+      {value:unitAvg,weight:25,active:unitAvg!==null},
+      {value:projectAvg,weight:20,active:projectAvg!==null},
+      {value:mid,weight:10,active:mid!==null},
+      {value:fin,weight:15,active:fin!==null}
     ];
     const activeWeight=weights.filter(x=>x.active).reduce((a,b)=>a+b.weight,0);
-    const grade=activeWeight?Math.round(weights.filter(x=>x.active).reduce((a,b)=>a+b.value*b.weight,0)/activeWeight):0;
+    const grade=activeWeight?Math.round(weights.filter(x=>x.active).reduce((a,b)=>a+b.value*b.weight,0)/activeWeight):null;
     return {dayDone,lessonPct,quizAvg,unitAvg,projectAvg,mid,fin,grade};
   }
   function updateProgress(){
@@ -225,24 +223,24 @@
     $$("[data-course-progress]").forEach(bar=>bar.style.width=`${st.lessonPct}%`);
     $$("[data-course-progress-label]").forEach(el=>el.textContent=`${st.dayDone} of 180 daily lessons complete · ${st.lessonPct}%`);
     $$("[data-stat='lessons']").forEach(el=>el.textContent=`${st.lessonPct}%`);
-    $$("[data-stat='quiz']").forEach(el=>el.textContent=st.quizAvg?`${st.quizAvg}%`:"—");
-    $$("[data-stat='unit']").forEach(el=>el.textContent=st.unitAvg?`${st.unitAvg}%`:"—");
-    $$("[data-stat='grade']").forEach(el=>el.textContent=st.grade?`${st.grade}%`:"—");
+    $$("[data-stat='quiz']").forEach(el=>el.textContent=fmt(st.quizAvg));
+    $$("[data-stat='unit']").forEach(el=>el.textContent=fmt(st.unitAvg));
+    $$("[data-stat='grade']").forEach(el=>el.textContent=fmt(st.grade));
   }
   updateProgress();
 
   // Unit project score
   $$("[data-project-score]").forEach(field=>{
     const unit=Number(field.dataset.projectScore);
-    field.value=unitState(unit).projectScore||"";
+    field.value=unitState(unit).projectScore??"";
     field.addEventListener("input",()=>{unitState(unit).projectScore=field.value===""?"":clamp(field.value);save();updateProgress()});
   });
 
   // Dashboard week cards
   $$("[data-week-status]").forEach(el=>{
     const w=Number(el.dataset.weekStatus), ws=weekState(w);
-    const days=completedDays(w), quiz=ws.quiz.best||0;
-    el.textContent=`${days}/5 lessons · Quiz ${quiz?quiz+"%":"—"}`;
+    const days=completedDays(w), quiz=score(ws.quiz);
+    el.textContent=`${days}/5 lessons · Quiz ${fmt(quiz)}`;
   });
 
   // Gradebook
@@ -250,17 +248,17 @@
   if(gradeBody){
     gradeBody.innerHTML=Array.from({length:36},(_,i)=>{
       const w=i+1, ws=weekState(w), days=completedDays(w);
-      return `<tr><td>Week ${String(w).padStart(2,"0")}</td><td>${days}/5</td><td>${ws.quiz.best?ws.quiz.best+"%":"—"}</td><td>${ws.quiz.attempts.length}</td><td><a href="../weeks/week-${String(w).padStart(2,"0")}/index.html">Open</a></td></tr>`;
+      return `<tr><td>Week ${String(w).padStart(2,"0")}</td><td>${days}/5</td><td>${fmt(score(ws.quiz))}</td><td>${ws.quiz.attempts.length}</td><td><a href="../weeks/week-${String(w).padStart(2,"0")}/index.html">Open</a></td></tr>`;
     }).join("");
     const unitBody=$("[data-unit-gradebook-body]");
     if(unitBody)unitBody.innerHTML=Array.from({length:12},(_,i)=>{
       const u=i+1, us=unitState(u);
-      return `<tr><td>Unit ${String(u).padStart(2,"0")}</td><td>${us.assessment.best?us.assessment.best+"%":"—"}</td><td><input type="number" min="0" max="100" value="${esc(us.projectScore)}" data-inline-project="${u}" aria-label="Unit ${u} project score"></td><td>${us.assessment.attempts.length}</td></tr>`;
+      return `<tr><td>Unit ${String(u).padStart(2,"0")}</td><td>${fmt(score(us.assessment))}</td><td><input type="number" min="0" max="100" value="${esc(us.projectScore)}" data-inline-project="${u}" aria-label="Unit ${u} project score"></td><td>${us.assessment.attempts.length}</td></tr>`;
     }).join("");
     $$("[data-inline-project]").forEach(field=>field.addEventListener("input",()=>{unitState(field.dataset.inlineProject).projectScore=field.value===""?"":clamp(field.value);save();renderSummary()}));
     function renderSummary(){
       const s=calcStats();
-      $("[data-grade-summary]").innerHTML=`Weekly quiz average: <strong>${s.quizAvg||"—"}</strong> · Unit assessment average: <strong>${s.unitAvg||"—"}</strong> · Project average: <strong>${s.projectAvg||"—"}</strong> · Midterm: <strong>${s.mid||"—"}</strong> · Final: <strong>${s.fin||"—"}</strong> · Current weighted grade: <strong>${s.grade||"—"}${s.grade?"%":""}</strong>`;
+      $("[data-grade-summary]").innerHTML=`Weekly quiz average: <strong>${fmt(s.quizAvg)}</strong> · Unit assessment average: <strong>${fmt(s.unitAvg)}</strong> · Project average: <strong>${fmt(s.projectAvg)}</strong> · Midterm: <strong>${fmt(s.mid)}</strong> · Final: <strong>${fmt(s.fin)}</strong> · Provisional weighted grade: <strong>${fmt(s.grade)}</strong>`;
     }
     renderSummary();
   }
@@ -297,18 +295,18 @@
   $$("[data-export-backup]").forEach(b=>b.addEventListener("click",()=>download(`ELA10_${(state.studentName||"Student").replace(/[^a-z0-9_-]+/gi,"_")}_Backup.json`,JSON.stringify(state,null,2))));
   $$("[data-export-csv]").forEach(b=>b.addEventListener("click",()=>{
     const rows=[["Week","Daily Lessons Complete","Weekly Quiz Best","Quiz Attempts"]];
-    for(let w=1;w<=36;w++){const ws=weekState(w);rows.push([w,completedDays(w),ws.quiz.best||"",ws.quiz.attempts.length])}
+    for(let w=1;w<=36;w++){const ws=weekState(w);rows.push([w,completedDays(w),score(ws.quiz)??"",ws.quiz.attempts.length])}
     rows.push([]);rows.push(["Unit","Unit Assessment Best","Project Score","Attempts"]);
-    for(let u=1;u<=12;u++){const us=unitState(u);rows.push([u,us.assessment.best||"",us.projectScore||"",us.assessment.attempts.length])}
-    rows.push([]);const st=calcStats();rows.push(["Midterm",st.mid||""]);rows.push(["Final",st.fin||""]);rows.push(["Weighted Grade",st.grade||""]);
+    for(let u=1;u<=12;u++){const us=unitState(u);rows.push([u,score(us.assessment)??"",us.projectScore??"",us.assessment.attempts.length])}
+    rows.push([]);const st=calcStats();rows.push(["Midterm",st.mid??""]);rows.push(["Final",st.fin??""]);rows.push(["Provisional Weighted Grade",st.grade??""]);
     const csv=rows.map(r=>r.map(v=>`"${String(v??"").replaceAll('"','""')}"`).join(",")).join("\n");
     download("ELA10_Gradebook.csv",csv,"text/csv");
   }));
   $$("[data-import-backup]").forEach(input=>input.addEventListener("change",e=>{
     const file=e.target.files?.[0];if(!file)return;
-    const reader=new FileReader();reader.onload=()=>{const obj=safeParse(reader.result,null);if(!obj||obj.courseId!==COURSE_ID)return alert("This is not a valid English 10 backup.");state=obj;save();location.reload()};reader.readAsText(file);
+    const reader=new FileReader();reader.onload=()=>{const parsed=safeParse(reader.result,null),obj=parsed?.lessonRecord||parsed;if(recordStore.replace(obj)){state=obj;location.reload()}};reader.readAsText(file);
   }));
-  $$("[data-reset-course]").forEach(b=>b.addEventListener("click",()=>{if(confirm("Delete all locally stored English 10 progress on this browser?")){state=defaultState();save();location.reload()}}));
+  $$("[data-reset-course]").forEach(b=>b.addEventListener("click",()=>{if(confirm("Delete all locally stored English 10 progress on this browser?")){const next=defaultState();if(recordStore.replace(next)){state=next;location.reload()}}}));
 
   // Certificate
   const certName=$("[data-certificate-name]"),certDate=$("[data-certificate-date]");
