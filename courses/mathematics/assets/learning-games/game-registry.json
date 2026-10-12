@@ -1963,6 +1963,97 @@
           "wired": true
         }
       ]
+    },
+    "sequence-series-studio": {
+      "title": "Sequence & Series Studio",
+      "canonical_path": "courses/mathematics/assets/learning-games/sequence-series-studio/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Eight independent mathematical modes: arithmetic and geometric recursion, difference-table pattern classification, finite series, infinite geometric convergence, sigma notation, binomial coefficients, and percent-change growth. Canonical reusable game with browser-local practice and no official mastery side effects.",
+      "placements": [
+        {
+          "course": "algebra-2",
+          "unit": "09",
+          "lesson": "u09-l01",
+          "lesson_title": "Arithmetic Sequences: Explicit & Recursive Forms",
+          "mode": "arithmetic",
+          "query": "?course=algebra2&unit=09&lesson=u09-l01&mode=arithmetic",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "09",
+          "lesson": "u09-l02",
+          "lesson_title": "Geometric Sequences: Growth, Decay & Recursion",
+          "mode": "geometric",
+          "query": "?course=algebra2&unit=09&lesson=u09-l02&mode=geometric",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "09",
+          "lesson": "u09-l03",
+          "lesson_title": "General Sequences, Patterns & Difference Tables",
+          "mode": "patterns",
+          "query": "?course=algebra2&unit=09&lesson=u09-l03&mode=patterns",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "09",
+          "lesson": "u09-l04",
+          "lesson_title": "Finite Arithmetic & Geometric Series",
+          "mode": "finite",
+          "query": "?course=algebra2&unit=09&lesson=u09-l04&mode=finite",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "09",
+          "lesson": "u09-l05",
+          "lesson_title": "Infinite Geometric Series & Convergence",
+          "mode": "infinite",
+          "query": "?course=algebra2&unit=09&lesson=u09-l05&mode=infinite",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "09",
+          "lesson": "u09-l06",
+          "lesson_title": "Sigma Notation & Summation Properties",
+          "mode": "sigma",
+          "query": "?course=algebra2&unit=09&lesson=u09-l06&mode=sigma",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "09",
+          "lesson": "u09-l07",
+          "lesson_title": "Pascal’s Triangle & the Binomial Theorem",
+          "mode": "binomial",
+          "query": "?course=algebra2&unit=09&lesson=u09-l07&mode=binomial",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "08",
+          "lesson": "04",
+          "lesson_title": "Arithmetic & Geometric Sequences",
+          "mode": "patterns",
+          "query": "?course=algebra1&unit=08&lesson=04&mode=patterns",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "08",
+          "lesson": "05",
+          "lesson_title": "Exponential Functions: Growth & Decay",
+          "mode": "growth",
+          "query": "?course=algebra1&unit=08&lesson=05&mode=growth",
+          "wired": true
+        }
+      ]
     }
   }
 }

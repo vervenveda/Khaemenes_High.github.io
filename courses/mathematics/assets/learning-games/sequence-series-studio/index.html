@@ -1,0 +1,309 @@
+<!doctype html><html lang="en"><head>
+<script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f4ecda"><title>Sequence &amp; Series Studio · Khaemenes Academy</title>
+<style>
+:root{color-scheme:light;--paper:#f4ecda;--card:#fffdf8;--ink:#272017;--line:#cab99f;--blue:#23658b;--gold:#af7432;--good:#176746;--bad:#9e3933}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 94% 0%,#fffdf8,transparent 55%),var(--paper);color:var(--ink);font:16px/1.53 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1130px;margin:auto;padding:23px 16px 65px}.eyebrow{color:#77512d;text-transform:uppercase;letter-spacing:.13em;font-size:.79rem;font-weight:700}
+h1,h2{font-family:Georgia,serif;line-height:1.2}h1{font-size:clamp(2rem,4.6vw,3rem);margin:5px 0}h2{font-size:1.32rem;margin:0 0 11px}.lead{max-width:860px;color:#554b40}
+.panel{background:var(--card);border:1px solid var(--line);padding:18px;border-radius:7px;box-shadow:0 3px 0 #e7dbc7}
+.layout{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(305px,1fr);gap:16px;margin:17px 0}
+.row{display:flex;align-items:center;flex-wrap:wrap;gap:10px}.stats{margin:14px 0}.stat{border:1px solid var(--line);border-radius:7px;padding:8px 10px;background:#f9f1e4}
+label{display:block;font-weight:650}input,select,button{border:1px solid #867051;color:var(--ink);background:white;padding:9px 11px;font:inherit;border-radius:7px}
+input[type=number]{width:100%;max-width:188px}input[type=range]{accent-color:var(--gold);width:100%;padding:5px}
+button{cursor:pointer;background:#eadcc2;font-weight:650}button:hover{background:#ddc99f}button.primary{background:#44352a;color:white}button:disabled{cursor:not-allowed;opacity:.55}
+:focus-visible{outline:3px solid #23619b;outline-offset:2px}
+#graph{display:block;width:100%;height:auto;background:#fffefa;border:1px solid var(--line);border-radius:7px}
+#formula{white-space:pre-line;font:700 1.15rem/1.45 Georgia,serif;overflow-wrap:anywhere}
+.small{color:#574b3c;font-size:.89rem}#scenario{font-weight:700}#feedback{border-left:5px solid var(--gold);border-radius:4px;background:#f9f0e2;padding:13px;min-height:70px}#feedback.good{border-color:var(--good)}#feedback.bad{border-color:var(--bad)}
+#celebrate{min-height:23px;color:var(--good);font-weight:700}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:13px 0}.fields>div,.explorer{border:1px solid #ddcdb3;background:#faf3e7;padding:10px;border-radius:7px}
+.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:11px 0}
+.legend{font-size:.84rem;display:inline-block;padding:4px 8px;margin:5px 4px 0 0;border:1px solid var(--line);border-radius:7px}
+progress{width:100%;accent-color:var(--good)}#history{max-height:170px;overflow:auto}footer{margin:25px 0 0;color:#67594a;font-size:.84rem}a{color:#1b5688}
+[hidden]{display:none!important}
+@media(max-width:830px){.layout{grid-template-columns:1fr}}
+@media(max-width:510px){.fields,.controls{grid-template-columns:1fr}.panel{padding:13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<script src="../../game-return-route.js?v=20261012"></script>
+</head><body><main>
+<div class="eyebrow">Khaemenes Academy · Sovereign Mathematics · Patterns &amp; Change</div>
+<h1>Sequence &amp; Series Studio</h1>
+<p class="lead">Follow arithmetic and geometric patterns, build recursive rules, collect partial sums, decide when infinite series converge, explore sigma notation, and uncover binomial coefficients. Learn at your own pace—no forced restarts.</p>
+<section class="panel"><div class="row">
+<label for="mode">Mission pathway <select id="mode">
+<option value="arithmetic">Arithmetic sequences · explicit &amp; recursive</option>
+<option value="geometric">Geometric sequences · ratios &amp; recursion</option>
+<option value="patterns">Pattern detective · difference tables</option>
+<option value="finite">Finite arithmetic &amp; geometric series</option>
+<option value="infinite">Infinite geometric series · convergence</option>
+<option value="sigma">Sigma notation · finite summation</option>
+<option value="binomial">Pascal's triangle · binomial coefficients</option>
+<option value="growth">Repeated percent change · exponential growth</option>
+</select></label>
+<button id="new" class="primary" type="button">New mission</button>
+<button id="explore" type="button">Free sequence workshop</button>
+<label for="lowStim">Low-stimulation mode <input id="lowStim" type="checkbox"></label>
+</div><p id="context" class="small">Game scores are independent practice. Official lesson completion and assessments are unaffected.</p></section>
+<div class="row stats">
+<span class="stat">Solved <b id="solved">0</b></span><span class="stat">Checked <b id="attempted">0</b></span><span class="stat">First-try accuracy <b id="accuracy">—</b></span><span class="stat">Best streak <b id="streak">0</b></span><span class="stat">80% practice <b id="mastery">In progress</b></span>
+</div>
+<div class="layout">
+<section class="panel"><h2>Visual pattern laboratory</h2>
+<svg id="graph" viewBox="0 0 620 400" role="img" aria-labelledby="gTitle gDesc">
+<title id="gTitle">Sequence term and partial-sum graph</title><desc id="gDesc">Blue vertical bars indicate sequence terms and amber points show accumulated sums when appropriate. Values and formulas appear in accessible text below.</desc>
+<g id="grid"></g><g id="marks"></g></svg>
+<p><span class="legend">Blue · terms</span><span class="legend">Amber · partial sums, if shown</span></p>
+<p id="graphText" class="small" aria-live="polite"></p><p id="formula" aria-live="polite"></p><p id="tableText" class="small"></p>
+<div id="workshop" class="explorer" hidden>
+<h2>Free sequence workshop</h2>
+<p class="small">Choose additive or multiplicative change, adjust values, and watch how the first eight terms behave. Explore without changing your practice score.</p>
+<div class="controls">
+<div><label for="workKind">Pattern family</label><select id="workKind"><option value="arithmetic">Arithmetic</option><option value="geometric">Geometric</option></select></div>
+<div><label for="workFirst">First term: <output id="workFirstOut">3</output></label><input type="range" id="workFirst" min="-8" max="12" step="1" value="3"></div>
+<div><label for="workStep">Difference / ratio: <output id="workStepOut">2</output></label><input type="range" id="workStep" min="-3" max="3" step=".5" value="2"></div>
+</div></div>
+</section>
+<section class="panel"><h2>Mission console</h2>
+<p id="scenario"></p><p id="prompt"></p>
+<div class="fields">
+<div><label for="answer">Primary answer <small id="label1">Numerical result</small></label><input id="answer" type="number" inputmode="decimal" autocomplete="off" step="any"></div>
+<div id="secondBlock"><label for="second">Second answer <small id="label2">Numerical result</small></label><input id="second" type="number" inputmode="decimal" autocomplete="off" step="any"></div>
+</div>
+<div id="choiceBlock" hidden><label for="choice" id="choiceLabel">Select a conclusion</label><select id="choice"></select></div>
+<p class="small" id="precision">Enter numbers, not equations. Exact values or a result rounded to two decimal places are accepted.</p>
+<div class="row">
+<button id="check" class="primary" type="button">Check my answer</button><button id="hint" type="button">Hint</button>
+<button id="solution" type="button">Worked reasoning</button><button id="next" type="button" disabled>Next mission →</button>
+</div>
+<p id="feedback" role="status" aria-live="polite">Study the pattern and submit your answer.</p><p id="celebrate" aria-live="polite"></p>
+</section></div>
+<section class="panel"><h2>Local practice journal</h2><progress id="progress" value="0" max="10"></progress>
+<p class="small">The latest ten checked missions determine the 80% local practice goal. A hint, incorrect answer, or refresh does not force a restart. Correcting a first attempt is encouraged but never recorded as unaided first-try success. Official course grades are kept separate.</p>
+<div class="row"><button id="export" type="button">Export practice JSON</button><button id="reset" type="button">Reset this pathway (confirm)</button><a href="../../../index.html">Mathematics home</a></div>
+<ol id="history" aria-label="Recent missions"></ol></section>
+<footer>© Jennifer Kay Pearl · Khaemenes Academy · Original offline-capable HTML/CSS/JS · No external dependencies or tracking.</footer>
+</main>
+<script>
+(()=>{'use strict';
+// PURE_MODEL_BEGIN
+const near=(a,b,tol=.015)=>Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tol;
+const pick=(xs,rng)=>xs[Math.floor(rng()*xs.length)];
+const arithmetic=(a,d,n)=>a+(n-1)*d;
+const geometric=(a,r,n)=>a*Math.pow(r,n-1);
+const sumArithmetic=(a,d,n)=>n*(2*a+(n-1)*d)/2;
+const sumGeometric=(a,r,n)=>r===1?a*n:a*(1-Math.pow(r,n))/(1-r);
+const infiniteSum=(a,r)=>Math.abs(r)<1?a/(1-r):NaN;
+const choose=(n,k)=>{
+ if(!Number.isInteger(n)||!Number.isInteger(k)||k<0||k>n)return 0;
+ k=Math.min(k,n-k);let v=1;
+ for(let j=1;j<=k;j++)v=v*(n-j+1)/j;
+ return Math.round(v);
+};
+const sigmaLinear=(from,to,c,d)=>{let s=0;for(let k=from;k<=to;k++)s+=c*k+d;return s;};
+function patternValue(t,n){
+ if(t.family==='arithmetic')return arithmetic(t.a,t.d,n);
+ if(t.family==='quadratic')return t.a+t.d*n+t.c*n*n;
+ if(t.family==='geometric')return geometric(t.a,t.r,n);
+ return NaN;
+}
+function makeTask(mode,rng=Math.random){
+ const R=()=>pick([-7,-5,-3,-1,0,1,3,5,7],rng);
+ const t={mode};
+ switch(mode){
+ case 'arithmetic':t.a=R();t.d=pick([-6,-4,-3,-2,-1,1,2,3,4,6],rng);t.n=pick([5,6,7,8,9,10,11,12],rng);break;
+ case 'geometric':t.a=pick([-5,-3,2,3,4,5,6,10],rng);t.r=pick([-2,-.5,.5,1.5,2,3],rng);t.n=pick([3,4,5,6,7],rng);break;
+ case 'patterns':t.family=pick(['arithmetic','quadratic','geometric'],rng);t.a=pick([2,3,4,5,8],rng);t.d=pick([-3,-2,1,2,3],rng);t.c=pick([-2,-1,1,2,3],rng);t.r=pick([-2,.5,2,3],rng);break;
+ case 'finite':t.kind=pick(['arithmetic','geometric'],rng);t.a=pick([-5,-3,2,3,5,7,10],rng);t.d=pick([-4,-2,1,2,3,5],rng);t.r=pick([-.5,.5,1,1.5,2,-2],rng);t.n=pick([4,5,6,7,8,9],rng);break;
+ case 'infinite':t.a=pick([2,3,4,5,6,8,10,12],rng);t.r=pick([-1.5,-1,-.75,-.5,-.25,.25,.5,.75,1,1.25,2],rng);break;
+ case 'sigma':t.from=pick([0,1,2,3],rng);t.to=t.from+pick([3,4,5,6],rng);t.c=pick([-4,-3,-2,-1,1,2,3,4],rng);t.d=R();break;
+ case 'binomial':t.n=pick([3,4,5,6,7,8],rng);t.k=pick(Array.from({length:t.n-1},(_,j)=>j+1),rng);t.a=pick([1,2,3],rng);break;
+ case 'growth':t.a=pick([40,50,80,100,120,200],rng);t.rate=pick([-.3,-.2,-.1,.1,.2,.3],rng);t.periods=pick([2,3,4,5,6],rng);break;
+ default:throw Error('Unknown sequence mission '+mode);
+ }
+ t.id=JSON.stringify(t);return t;
+}
+function expected(t){
+ switch(t.mode){
+ case 'arithmetic':return {one:arithmetic(t.a,t.d,t.n),two:arithmetic(t.a,t.d,t.n+1)};
+ case 'geometric':return {one:geometric(t.a,t.r,t.n),two:geometric(t.a,t.r,t.n+1)};
+ case 'patterns':return {one:patternValue(t,6),choice:t.family};
+ case 'finite':return {one:t.kind==='arithmetic'?sumArithmetic(t.a,t.d,t.n):sumGeometric(t.a,t.r,t.n),two:t.kind==='arithmetic'?arithmetic(t.a,t.d,t.n):geometric(t.a,t.r,t.n)};
+ case 'infinite':return Math.abs(t.r)<1?{one:infiniteSum(t.a,t.r),choice:'converges'}:{one:Math.abs(t.r),choice:'diverges'};
+ case 'sigma':return {one:sigmaLinear(t.from,t.to,t.c,t.d),two:t.to-t.from+1};
+ case 'binomial':return {one:choose(t.n,t.k)*Math.pow(t.a,t.n-t.k),two:choose(t.n,t.k)};
+ case 'growth':return {one:t.a*Math.pow(1+t.rate,t.periods),two:t.a*Math.pow(1+t.rate,t.periods+1)};
+ }
+ return {};
+}
+function correct(t,one,two,choice){
+ const e=expected(t);
+ if(!near(one,e.one))return false;
+ if('two' in e&&!near(two,e.two))return false;
+ if('choice' in e&&choice!==e.choice)return false;
+ return true;
+}
+// PURE_MODEL_END
+window.SequenceSeriesCore=Object.freeze({near,arithmetic,geometric,sumArithmetic,sumGeometric,infiniteSum,choose,sigmaLinear,patternValue,makeTask,expected,correct});
+const $=id=>document.getElementById(id),params=new URLSearchParams(location.search);
+const MODES=['arithmetic','geometric','patterns','finite','infinite','sigma','binomial','growth'];
+let mode=MODES.includes(params.get('mode'))?params.get('mode'):'arithmetic',task=null,record=null,streak=0,exploring=false;
+const context=[params.get('course')||'standalone',params.get('unit')||'',params.get('lesson')||''].map(s=>s.replace(/[^a-z0-9_-]/gi,'_')).join('|');
+const fresh=()=>({solved:0,attempted:0,firstTries:0,bestStreak:0,outcomes:[],history:[],recent:[],task:null,checked:false,wrong:false,helped:false,entry:{one:'',two:'',choice:''}});
+const key=()=>['KHAE_SEQUENCE_SERIES_V1',context,mode].join('|');
+const fmt=(v,d=2)=>Number.isFinite(v)?String(+v.toFixed(d)):'undefined';
+function load(){record=fresh();
+ try{const v=JSON.parse(localStorage.getItem(key())||'null');if(v&&Array.isArray(v.recent)&&Array.isArray(v.history)&&Number.isFinite(v.solved)&&Number.isFinite(v.attempted))
+ record={...record,...v,recent:v.recent.slice(-30),history:v.history.slice(-10),outcomes:(v.outcomes||[]).slice(-10),entry:{...record.entry,...(v.entry||{})}};
+ }catch{}
+ task=record.task||null;streak=0;
+}
+function save(){record.task=task;try{localStorage.setItem(key(),JSON.stringify(record));}catch{$('context').textContent='Local storage is unavailable; export progress JSON for safekeeping.';}}
+function message(s,status=''){$('feedback').textContent=s;$('feedback').className=status;$('celebrate').textContent='';}
+function challenge(){
+ exploring=false;record.checked=false;record.wrong=false;record.helped=false;record.entry={one:'',two:'',choice:''};
+ const seen=new Set(record.recent);let next=null;
+ for(let i=0;i<180;i++){const candidate=makeTask(mode);if(!seen.has(candidate.id)){next=candidate;break;}}
+ if(!next){record.recent=[];next=makeTask(mode);}
+ task=next;record.recent.push(task.id);record.recent=record.recent.slice(-30);
+ show();message('Investigate this pattern, then check your result. Mistakes never restart your mission.');save();
+}
+function expr(){
+ const t=task;
+ if(mode==='arithmetic')return 'a₁ = '+t.a+'; common difference d = '+t.d+'.\naₙ = a₁ + (n−1)d; aₙ₊₁ = aₙ + d.';
+ if(mode==='geometric')return 'a₁ = '+t.a+'; ratio r = '+t.r+'.\naₙ = a₁rⁿ⁻¹; aₙ₊₁ = r aₙ.';
+ if(mode==='patterns')return 'Given a₁ through a₅, classify the growth rule and predict a₆.';
+ if(mode==='finite')return t.kind==='arithmetic'?'Arithmetic series: a₁ = '+t.a+', d = '+t.d+', n = '+t.n+'.\nSₙ = n(a₁+aₙ)/2.':'Geometric series: a₁ = '+t.a+', r = '+t.r+', n = '+t.n+'.\nSₙ = a₁(1−rⁿ)/(1−r), or na₁ when r=1.';
+ if(mode==='infinite')return 'a₁ = '+t.a+', r = '+t.r+'.\nS∞ = a₁/(1−r) only if |r|<1.';
+ if(mode==='sigma')return 'Σ from k='+t.from+' through '+t.to+' of ('+t.c+'k '+(t.d<0?'− '+(-t.d):'+ '+t.d)+').';
+ if(mode==='binomial')return 'Coefficient of x^'+t.k+' in ('+t.a+' + x)^'+t.n+'.\nBy the binomial theorem: C(n,k) a^(n−k).';
+ return 'Initial quantity = '+t.a+', signed rate = '+Math.round(t.rate*100)+'%, time = '+t.periods+' periods.\nA(t) = P(1+r)^t.';
+}
+function description(){
+ const t=task;
+ if(mode==='arithmetic')return ['A sequence changes by the constant difference d='+t.d+'.','Find term '+t.n+' and the very next term '+(t.n+1)+'.','a'+t.n,'a'+(t.n+1)];
+ if(mode==='geometric')return ['A sequence changes by multiplication with a constant ratio r='+t.r+'.','Find term '+t.n+' and the very next term '+(t.n+1)+'.','a'+t.n,'a'+(t.n+1)];
+ if(mode==='patterns')return ['First five values: '+[1,2,3,4,5].map(n=>fmt(patternValue(t,n),3)).join(', ')+'.','Choose a pattern family and forecast term 6.','a₆',''];
+ if(mode==='finite')return [t.kind==='arithmetic'?'Add the first '+t.n+' terms of an arithmetic sequence.':'Add the first '+t.n+' terms of a geometric sequence.','Give the total S'+t.n+' and the final term a'+t.n+'.','S'+t.n,'a'+t.n];
+ if(mode==='infinite')return ['An infinite geometric series begins with '+t.a+' and ratio '+t.r+'.','Decide whether it converges. If it converges, calculate the infinite sum; if it diverges, enter |r| to demonstrate why no finite sum exists.',Math.abs(t.r)<1?'Finite sum S∞':'|r| (no finite sum)',''];
+ if(mode==='sigma')return ['Evaluate a sum written in sigma notation.','Compute the sum and the number of included terms.','Summation result','Number of terms'];
+ if(mode==='binomial')return ['Expand the binomial ('+t.a+' + x)^'+t.n+' by coefficients.','Find the coefficient of x^'+t.k+' and the Pascal triangle entry C('+t.n+','+t.k+').','Coefficient of x^'+t.k,'C(n,k)'];
+ return ['A quantity starts at '+t.a+' and changes by '+Math.round(t.rate*100)+'% each period.','Forecast the quantity after '+t.periods+' periods and one period later.','Amount after '+t.periods+' periods','Amount after '+(t.periods+1)+' periods'];
+}
+function explanation(){
+ const t=task,e=expected(t);
+ if(mode==='arithmetic')return 'aₙ = '+t.a+' + (n−1)×('+t.d+'). At n='+t.n+', aₙ='+fmt(e.one,4)+'; one more step gives '+fmt(e.two,4)+'.';
+ if(mode==='geometric')return 'aₙ='+t.a+'×('+t.r+')^(n−1). At n='+t.n+', aₙ='+fmt(e.one,4)+'; multiply by '+t.r+' to obtain '+fmt(e.two,4)+'.';
+ if(mode==='patterns')return 'The generating family is '+t.family+'. Inspect consecutive differences and ratios, then extend to a₆='+fmt(e.one,4)+'.';
+ if(mode==='finite')return t.kind==='arithmetic'?'aₙ=a₁+(n−1)d='+fmt(e.two,4)+'; Sₙ=n(a₁+aₙ)/2='+fmt(e.one,4)+'.':'aₙ=a₁r^(n−1)='+fmt(e.two,4)+'; Sₙ=a₁(1−rⁿ)/(1−r)='+fmt(e.one,4)+(t.r===1?' using Sₙ=na₁':'')+'.';
+ if(mode==='infinite')return e.choice==='converges'?'Since |r|='+Math.abs(t.r)+'<1, the terms decay toward zero and S∞='+t.a+'/(1−('+t.r+'))='+fmt(e.one,5)+'.':'Because |r|='+Math.abs(t.r)+'≥1, the geometric series does not converge to a finite sum. Reporting |r| demonstrates the convergence test; it is NOT an infinite sum.';
+ if(mode==='sigma')return 'Count integers '+t.from+' through '+t.to+': '+e.two+' terms. Substitute each integer and add: '+fmt(e.one,4)+'.';
+ if(mode==='binomial')return 'C('+t.n+','+t.k+')='+e.two+'; multiply by '+t.a+'^('+t.n+'−'+t.k+') to obtain coefficient '+fmt(e.one,4)+'.';
+ return 'Use A=P(1+r)^t = '+t.a+'×(1+'+t.rate+')^t. After '+t.periods+' periods A='+fmt(e.one,4)+', and one period later A='+fmt(e.two,4)+'.';
+}
+function setChoice(){
+ const options=mode==='patterns'?[['arithmetic','Arithmetic / constant first difference'],['quadratic','Quadratic / constant second difference'],['geometric','Geometric / constant ratio']]:
+ [['converges','Converges to a finite sum'],['diverges','Diverges · no finite sum']];
+ const c=$('choice');c.replaceChildren();
+ for(const [value,label] of [['','Choose'],...options]){const o=document.createElement('option');o.value=value;o.textContent=label;c.appendChild(o);}
+}
+function stats(){
+ $('solved').textContent=String(record.solved);$('attempted').textContent=String(record.attempted);
+ $('accuracy').textContent=record.attempted?Math.round(record.firstTries*100/record.attempted)+'%':'—';
+ $('streak').textContent=String(record.bestStreak);$('progress').value=record.outcomes.length;
+ $('mastery').textContent=record.outcomes.length===10&&record.outcomes.filter(Boolean).length>=8?'Achieved':'In progress';
+ const h=$('history');h.replaceChildren();for(const line of record.history.slice(-10).reverse()){const li=document.createElement('li');li.textContent=line;h.appendChild(li);}
+}
+function show(){
+ if(!task)return;$('mode').value=mode;$('workshop').hidden=!exploring;
+ const p=description();$('scenario').textContent=p[0];$('prompt').textContent=p[1];$('label1').textContent=p[2];$('label2').textContent=p[3];
+ $('formula').textContent=expr();$('secondBlock').hidden=!['arithmetic','geometric','finite','sigma','binomial','growth'].includes(mode);
+ $('choiceBlock').hidden=!['patterns','infinite'].includes(mode);
+ if(!$('choiceBlock').hidden)setChoice();
+ $('choiceLabel').textContent=mode==='patterns'?'Pattern family':'Convergence classification';
+ $('answer').value=record.entry.one;$('second').value=record.entry.two;$('choice').value=record.entry.choice;
+ $('check').disabled=record.checked||exploring;$('hint').disabled=record.checked||exploring;$('solution').disabled=record.checked||exploring;$('next').disabled=!record.checked||exploring;
+ stats();draw();
+}
+function draw(){
+ const t=task;if(!t)return;const nmax=8;
+ let terms=[],sums=[],labels=[],modeLabel='';
+ if(exploring){
+  const kind=$('workKind').value,first=+$('workFirst').value,step=+$('workStep').value;
+  terms=Array.from({length:nmax},(_,i)=>kind==='arithmetic'?arithmetic(first,step,i+1):geometric(first,step,i+1));
+  modeLabel='Free '+kind+' explorer. First term '+first+', '+(kind==='arithmetic'?'difference ':'ratio ')+step+'.';
+  $('formula').textContent=kind==='arithmetic'?'aₙ='+first+'+(n−1)×('+step+')':'aₙ='+first+'×('+step+')^(n−1)';
+ }else if(mode==='arithmetic'){terms=Array.from({length:nmax},(_,i)=>arithmetic(t.a,t.d,i+1));}
+ else if(mode==='geometric'){terms=Array.from({length:nmax},(_,i)=>geometric(t.a,t.r,i+1));}
+ else if(mode==='patterns'){terms=Array.from({length:nmax},(_,i)=>patternValue(t,i+1));}
+ else if(mode==='finite'){terms=Array.from({length:t.n},(_,i)=>t.kind==='arithmetic'?arithmetic(t.a,t.d,i+1):geometric(t.a,t.r,i+1));}
+ else if(mode==='infinite'){terms=Array.from({length:nmax},(_,i)=>geometric(t.a,t.r,i+1));}
+ else if(mode==='sigma'){terms=Array.from({length:t.to-t.from+1},(_,i)=>t.c*(t.from+i)+t.d);labels=terms.map((_,i)=>t.from+i);}
+ else if(mode==='binomial'){terms=Array.from({length:t.n+1},(_,k)=>choose(t.n,k));labels=terms.map((_,k)=>k);modeLabel='Pascal row '+t.n+': '+terms.map(x=>fmt(x,0)).join(' · ')+'. The specified binomial coefficient also includes the factor '+t.a+'^(n−k).';}
+ else if(mode==='growth'){terms=Array.from({length:t.periods+2},(_,i)=>t.a*Math.pow(1+t.rate,i));labels=terms.map((_,i)=>i);modeLabel='These are the amounts at times t=0, 1, 2, …; unlike sequence indexing, growth starts at t=0.';}
+ if(mode==='finite'||mode==='infinite'||mode==='sigma'){let total=0;sums=terms.map(v=>total+=v);}
+ let max=Math.max(1,...terms.map(x=>Math.abs(x)),...sums.map(x=>Math.abs(x)));
+ let min=Math.min(0,...terms,...sums),top=Math.max(0,...terms,...sums);
+ if(min===top){min-=1;top+=1;}
+ const pad=(top-min)*.12||1;min-=pad;top+=pad;
+ const y=v=>345-(v-min)/(top-min)*292;
+ const x=i=>65+(i+.5)*500/terms.length;
+ const baseline=y(0);
+ let grid='';
+ for(let j=0;j<=4;j++){
+  const value=min+(top-min)*j/4,yy=y(value);
+  grid+='<line x1="52" x2="585" y1="'+yy+'" y2="'+yy+'" stroke="#e5dbce"/><text x="45" y="'+(yy+4)+'" text-anchor="end" fill="#615748" font-size="11">'+fmt(value,1)+'</text>';
+ }
+ grid+='<line x1="52" x2="585" y1="'+baseline+'" y2="'+baseline+'" stroke="#796d5c" stroke-width="2"/>';
+ let marks='';
+ terms.forEach((v,i)=>{
+  const xx=x(i),yy=y(v);
+  marks+='<line x1="'+xx+'" x2="'+xx+'" y1="'+baseline+'" y2="'+yy+'" stroke="#23658b" stroke-width="3"/><circle cx="'+xx+'" cy="'+yy+'" r="5.5" fill="#23658b"/>';
+  if(sums.length)marks+='<circle cx="'+xx+'" cy="'+y(sums[i])+'" r="5" fill="#b77a34"/>';
+  marks+='<text x="'+xx+'" y="369" text-anchor="middle" fill="#615748" font-size="12">'+(labels[i]??(i+1))+'</text>';
+ });
+ $('grid').innerHTML=grid;$('marks').innerHTML=marks;
+ $('graphText').textContent=modeLabel||'Discrete term values are drawn at their integer indices. Amber markers trace partial sums where applicable. The vertical axis scales to show all displayed values.';
+ $('tableText').textContent='Displayed terms: '+terms.map((v,i)=>(labels[i]??(i+1))+': '+fmt(v,2)).join('  ·  ')+(sums.length?' | Partial sums: '+sums.map(v=>fmt(v,2)).join(', '):'');
+}
+function check(){
+ if(!task||record.checked||exploring)return;
+ const a=$('answer').value.trim(),b=$('second').value.trim(),one=a===''?NaN:Number(a),two=$('secondBlock').hidden?NaN:b===''?NaN:Number(b);
+ if(!Number.isFinite(one)||(!$('secondBlock').hidden&&!Number.isFinite(two))){message('Enter finite numbers in the required fields. A blank entry is not the number zero.','bad');return;}
+ const yes=correct(task,one,two,$('choiceBlock').hidden?'':$('choice').value);
+ if(!record.wrong){record.attempted++;record.outcomes.push(yes&&!record.helped);record.outcomes=record.outcomes.slice(-10);}
+ if(yes){
+  record.solved++;record.checked=true;
+  if(!record.wrong&&!record.helped){record.firstTries++;streak++;}else streak=0;
+  record.bestStreak=Math.max(record.bestStreak,streak);
+  record.history.push(mode+' · solved '+task.id.slice(0,45));record.history=record.history.slice(-10);
+  show();message('Correct! '+explanation(),'good');
+  if(!$('lowStim').checked&&!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches))$('celebrate').textContent='✦ Mission complete ✦';
+ }else{record.wrong=true;streak=0;message('Keep the same mission and try again. Check indexing, ratio signs, number of terms and rounding.','bad');stats();}
+ save();
+}
+function hint(){
+ if(!task||record.checked||exploring)return;record.helped=true;
+ const tips={arithmetic:'The first term is at n=1, so only n−1 differences have occurred.',geometric:'Multiply by r once to go from one term to the next. Negative ratios alternate signs.',patterns:'Constant first differences suggest arithmetic; constant second differences quadratic; constant ratios geometric.',finite:'Arithmetic sum: n(first+last)/2. Geometric sum: first×(1−rⁿ)/(1−r); handle r=1 separately.',infinite:'A geometric infinite series converges exactly when |r|<1. Divergent series have no finite sum.',sigma:'Both endpoints are included. Substitute each integer k before adding.',binomial:'The coefficient of x^k in (a+x)^n is C(n,k)×a^(n−k).',growth:'Apply the multiplier (1+r) once per period. Negative rates use a multiplier below 1.'};
+ message(tips[mode]);save();
+}
+function solution(){if(!task||record.checked||exploring)return;record.helped=true;message('Worked explanation: '+explanation()+' Enter your results and verify.');save();}
+function changeMode(v){if(!MODES.includes(v))return;mode=v;exploring=false;load();if(task)show();else challenge();}
+function explore(){exploring=true;show();$('workshop').hidden=false;message('Free workshop active. Adjust values to explore. New mission returns to practice without losing previous scores.');}
+function drawWorkshop(){if(!exploring)return;for(const id of ['workFirst','workStep'])$(id+'Out').textContent=$(id).value;draw();}
+$('mode').addEventListener('change',e=>changeMode(e.target.value));$('new').addEventListener('click',challenge);$('next').addEventListener('click',challenge);$('explore').addEventListener('click',explore);
+$('check').addEventListener('click',check);$('hint').addEventListener('click',hint);$('solution').addEventListener('click',solution);
+for(const [id,field] of [['answer','one'],['second','two'],['choice','choice']])$(id).addEventListener(id==='choice'?'change':'input',e=>{if(!exploring){record.entry[field]=e.target.value;save();}});
+for(const id of ['workKind','workFirst','workStep'])$(id).addEventListener(id==='workKind'?'change':'input',drawWorkshop);
+$('reset').addEventListener('click',()=>{if(!confirm('Reset only this one game pathway? Other learner data and course records remain unchanged.'))return;try{localStorage.removeItem(key());}catch{}record=fresh();challenge();});
+$('export').addEventListener('click',()=>{
+ const b=new Blob([JSON.stringify({schema:1,game:'sequence-series-studio',mode,context,progress:record,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='sequence-series-studio-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+});
+$('context').textContent='Lesson context: '+context.replace(/\|/g,' / ')+' · local practice only · formal grades unchanged.';
+load();if(task)show();else challenge();
+})();
+</script></body></html>
