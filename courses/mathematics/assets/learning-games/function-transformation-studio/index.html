@@ -186,7 +186,7 @@ function reason(){
 function check(){
  if(!task||answered||free)return;
  const good=mode==='inverse-linear'?isInverse(task.m,task.b,params.p,params.q):close(task.a,params.a)&&task.h===params.h&&task.k===params.k;
- if(!hadWrong&&!usedHelp)record.attempted++;
+ if(!hadWrong)record.attempted++;
  if(good){
   answered=true;record.solved++;
   if(!hadWrong&&!usedHelp){record.firstTries++;streak++;}else streak=0;

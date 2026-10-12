@@ -27,5 +27,9 @@ for(const mode of ['transforms-basic','transforms-advanced','inverse-linear']){
  assert.ok(seen.size>=15,'question diversity '+mode);
 }
 for(const file of ['courses/mathematics/algebra-1/units/unit-05/lessons/lesson-05-transformations-of-parent-functions.html','courses/mathematics/algebra-2/units/unit-01/lessons/u01-l03.html','courses/mathematics/algebra-2/units/unit-01/lessons/u01-l05.html'])
- assert.ok(fs.readFileSync(file,'utf8').includes('data-game="function-transformation-studio"'),file+' linked');
+ {
+ const html=fs.readFileSync(file,'utf8');
+ assert.ok(html.includes('data-game="function-transformation-studio"'),file+' linked');
+ assert.ok(html.includes('src="../../../../assets/shared-game-launcher.js"'),file+' launcher');
+ }
 console.log('PASS: Function Transformation Studio graph math, inverse composition, domain, diversity, 3 lesson routes, script syntax');
