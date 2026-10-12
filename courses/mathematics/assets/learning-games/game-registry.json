@@ -2164,6 +2164,52 @@
           "wired": true
         }
       ]
+    },
+    "probability-quest": {
+      "title": "Probability Quest",
+      "canonical_path": "courses/mathematics/assets/learning-games/probability-quest/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Ten self-contained probability modes: multi-stage counting, permutations, combinations, complement, union/intersection, conditional rates, independence, Bayes with true/false positives, binomial PMF and expected successes, and fair expected net value. Local-only practice, accessible graphical explanations and retry without forced restart.",
+      "placements": [
+        {
+          "course": "algebra-2",
+          "unit": "12",
+          "lesson": "u12-l01",
+          "lesson_title": "Fundamental Counting Principle, Permutations & Combinations",
+          "mode": "counting",
+          "query": "?course=algebra2&unit=12&lesson=u12-l01&mode=counting",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "12",
+          "lesson": "u12-l02",
+          "lesson_title": "Probability Rules, Complements & Unions",
+          "mode": "union",
+          "query": "?course=algebra2&unit=12&lesson=u12-l02&mode=union",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "12",
+          "lesson": "u12-l03",
+          "lesson_title": "Conditional Probability, Independence & Bayes Reasoning",
+          "mode": "bayes",
+          "query": "?course=algebra2&unit=12&lesson=u12-l03&mode=bayes",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "12",
+          "lesson": "u12-l04",
+          "lesson_title": "Binomial Experiments & Expected Value",
+          "mode": "binomial",
+          "query": "?course=algebra2&unit=12&lesson=u12-l04&mode=binomial",
+          "wired": true
+        }
+      ]
     }
   }
 }

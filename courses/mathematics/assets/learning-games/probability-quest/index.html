@@ -1,0 +1,378 @@
+<!doctype html><html lang="en"><head>
+<script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5edda">
+<title>Probability Quest · Khaemenes Academy</title>
+<style>
+:root{color-scheme:light;--paper:#f5edda;--card:#fffdf9;--ink:#29241c;--border:#c8b697;--navy:#27658a;--gold:#b67a35;--good:#206345;--bad:#a13e36}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 92% 0%,#fffef7,transparent 50%),var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+main{max-width:1160px;margin:auto;padding:22px 16px 58px}h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.2}h1{font-size:clamp(2.1rem,4.8vw,3rem);margin:.18em 0}h2{font-size:1.32rem;margin:0 0 10px}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.77rem;font-weight:650;color:#765029}.lead{color:#5e5040;max-width:890px}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:17px;box-shadow:0 3px 0 #e8ddc7}
+.layout{display:grid;grid-template-columns:minmax(0,1.17fr) minmax(310px,1fr);gap:16px;margin:17px 0}
+.row{display:flex;align-items:center;flex-wrap:wrap;gap:9px}.stats{margin-top:15px}.stat{background:#f8f0e3;border:1px solid var(--border);border-radius:7px;padding:7px 10px}
+label{display:block;font-weight:560}input,select,button{font:inherit;border:1px solid #856c49;border-radius:7px;padding:9px 10px;background:white;color:var(--ink)}
+input[type=number]{max-width:195px;width:100%}input[type=checkbox]{accent-color:#9b652f}
+button{cursor:pointer;background:#e9dac0}button:hover{background:#ddc9a8}button:disabled{opacity:.54;cursor:not-allowed}button.primary{background:#46372b;color:white}
+:focus-visible{outline:3px solid #245f99;outline-offset:2px}#visual{display:block;width:100%;height:auto;background:#fffdf9;border:1px solid var(--border);border-radius:7px}
+#formula{white-space:pre-line;overflow-wrap:anywhere;font:600 1.11rem/1.48 Georgia,serif}
+#visualText{color:#5b4d3f;font-size:.91rem;min-height:50px}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:13px 0}.fields>div{background:#faf2e5;border:1px solid #e0ceb0;padding:10px;border-radius:7px}
+.legend{display:inline-block;border:1px solid var(--border);padding:4px 8px;border-radius:7px;margin:5px 4px 0 0;font-size:.8rem}
+#scenario{font-weight:570}#feedback{min-height:79px;background:#f7eedf;border-left:5px solid var(--gold);padding:12px;border-radius:4px}#feedback.good{border-color:var(--good)}#feedback.bad{border-color:var(--bad)}
+#celebrate{color:var(--good);min-height:25px;font-weight:650}.small{font-size:.89rem;color:#655442}
+progress{width:100%;accent-color:var(--good)}#history{max-height:172px;overflow:auto}footer{margin-top:25px;font-size:.85rem;color:#655845}a{color:#1f5b83}[hidden]{display:none!important}
+@media(max-width:840px){.layout{grid-template-columns:1fr}}
+@media(max-width:510px){.fields{grid-template-columns:1fr}.panel{padding:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+<script src="../../game-return-route.js?v=20261012"></script>
+</head><body><main>
+<div class="eyebrow">Khaemenes Academy · Mathematics · Chance and Evidence</div>
+<h1>Probability Quest</h1>
+<p class="lead">Explore sample spaces, counting choices, overlapping events, conditional probabilities, independence, Bayes' theorem, binomial distributions and fair expected values. Every case includes a visual model and a reasoned explanation.</p>
+<section class="panel"><div class="row">
+<label for="mode">Investigation pathway <select id="mode">
+<option value="counting">Counting principle · multi-stage choices</option>
+<option value="permutations">Permutations · order matters</option>
+<option value="combinations">Combinations · order does not matter</option>
+<option value="complement">Complements · event and not-event</option>
+<option value="union">Overlapping events · unions &amp; intersections</option>
+<option value="conditional">Conditional probability · correct denominator</option>
+<option value="independence">Independence · compare event rates</option>
+<option value="bayes">Bayes' theorem · interpreting a positive result</option>
+<option value="binomial">Binomial experiments · exact probability</option>
+<option value="expectation">Expected value · risk and fair price</option>
+</select></label>
+<button class="primary" id="new" type="button">New mission</button>
+<label for="lowStim">Low stimulation <input type="checkbox" id="lowStim"></label>
+</div><p class="small" id="context">Practice only; official Academy course assessments and grades remain separate.</p></section>
+<div class="row stats">
+<span class="stat">Cases solved <b id="solved">0</b></span>
+<span class="stat">Cases checked <b id="attempted">0</b></span>
+<span class="stat">Unaided first tries <b id="accuracy">—</b></span>
+<span class="stat">Best streak <b id="streak">0</b></span>
+<span class="stat">80% practice goal <b id="mastery">In progress</b></span>
+</div>
+<div class="layout">
+<section class="panel"><h2>Visual evidence</h2>
+<svg id="visual" viewBox="0 0 620 430" role="img" aria-labelledby="plotTitle plotDesc">
+<title id="plotTitle">Probability investigation diagram</title>
+<desc id="plotDesc">The diagram adapts to each probability topic, showing choices, Venn regions, a two-way table, event trees, or binomial bars. The numbers are also described in accessible text below.</desc>
+<g id="plot"></g></svg>
+<p class="small"><span class="legend">Blue · primary event</span><span class="legend">Amber · comparison / overlapping event</span></p>
+<p id="visualText" aria-live="polite"></p><p id="formula" aria-live="polite"></p>
+</section>
+<section class="panel"><h2>Mission notebook</h2><p id="scenario"></p><p id="prompt"></p>
+<div class="fields">
+<div><label for="answer">Primary answer <small id="firstLabel">Enter a number.</small></label><input id="answer" type="number" step="any" inputmode="decimal" autocomplete="off"></div>
+<div id="secondBlock"><label for="second">Second answer <small id="secondLabel">Enter a number.</small></label><input id="second" type="number" step="any" inputmode="decimal" autocomplete="off"></div>
+</div>
+<div id="choiceBlock" hidden><label for="choice" id="choiceLabel">Choose a conclusion</label><select id="choice"></select></div>
+<p class="small" id="precision">Probabilities should be entered as percentages from 0 to 100. Enter counts and money as ordinary numbers. Rounding to two decimal places is accepted.</p>
+<div class="row">
+<button class="primary" id="check" type="button">Check evidence</button>
+<button id="hint" type="button">Hint</button>
+<button id="worked" type="button">Worked reasoning</button>
+<button id="next" type="button" disabled>Next mission →</button>
+</div>
+<p id="feedback" role="status" aria-live="polite">Explore the diagram, then present your evidence.</p>
+<p id="celebrate" aria-live="polite"></p></section></div>
+<section class="panel"><h2>Personal practice journal</h2><progress id="progress" value="0" max="10"></progress>
+<p class="small">The latest ten checked missions determine the local 80% practice goal. A wrong answer, hint, or browser refresh never causes a forced restart. Corrected work earns completion but not unaided first-try credit. Your official lesson progress stays separate.</p>
+<div class="row"><button id="export" type="button">Export progress JSON</button><button id="reset" type="button">Reset this pathway (confirm)</button><a href="../../../index.html">Mathematics home</a></div>
+<ol id="history" aria-label="Recent missions"></ol></section>
+<footer>© Jennifer Kay Pearl · Khaemenes Academy · Vanilla HTML/CSS/JS · Offline-capable · No external libraries, tracking or accounts. All scenarios are fictional.</footer>
+</main>
+<script>
+(()=>{'use strict';
+// PURE_MODEL_BEGIN
+const near=(a,b,tol=.035)=>Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tol;
+const pick=(items,rng)=>items[Math.floor(rng()*items.length)];
+const factorial=n=>{if(!Number.isInteger(n)||n<0)return NaN;let p=1;for(let k=2;k<=n;k++)p*=k;return p;};
+const permutation=(n,r)=>Number.isInteger(n)&&Number.isInteger(r)&&r>=0&&r<=n?factorial(n)/factorial(n-r):NaN;
+const combination=(n,r)=>Number.isInteger(n)&&Number.isInteger(r)&&r>=0&&r<=n?Math.round(permutation(n,r)/factorial(r)):NaN;
+const percentage=(a,b)=>100*a/b;
+const unionProbability=(a,b,both,total)=>percentage(a+b-both,total);
+const conditionalProbability=(joint,condition)=>percentage(joint,condition);
+const independent=(aYes,aTotal,bYes,bTotal)=>aYes*bTotal===bYes*aTotal;
+const bayesPosterior=(prevalence,sensitivity,falsePositive)=>100*prevalence*sensitivity/(prevalence*sensitivity+(1-prevalence)*falsePositive);
+const binomialProbability=(n,k,p)=>combination(n,k)*Math.pow(p,k)*Math.pow(1-p,n-k);
+const expectedNet=(p,payout,fee)=>p*payout-fee;
+function makeTask(mode,rng=Math.random){
+ const R=(a,b)=>a+Math.floor(rng()*(b-a+1));
+ const t={mode};
+ switch(mode){
+ case 'counting':t.stages=[R(2,7),R(2,6),R(2,5)];break;
+ case 'permutations':t.n=R(5,10);t.r=R(2,Math.min(5,t.n));break;
+ case 'combinations':t.n=R(5,12);t.r=R(2,Math.min(5,t.n-1));break;
+ case 'complement':t.total=pick([40,50,60,80,100,120],rng);t.success=R(5,t.total-5);break;
+ case 'union':{
+  t.onlyA=R(5,24);t.onlyB=R(5,24);t.both=R(3,21);t.neither=R(5,25);
+  t.total=t.onlyA+t.onlyB+t.both+t.neither;break;
+ }
+ case 'conditional':{
+  t.ay=R(5,35);t.an=R(5,35);t.by=R(5,35);t.bn=R(5,35);break;
+ }
+ case 'independence':{
+  t.aTotal=pick([20,30,40,50],rng);t.bTotal=pick([20,30,40,50],rng);
+  t.rate=pick([.2,.3,.4,.5,.6,.7,.8],rng);
+  t.aYes=Math.round(t.aTotal*t.rate);
+  t.truth=pick([true,false],rng);
+  const expectedB=Math.round(t.bTotal*t.rate);
+  t.bYes=t.truth?expectedB:Math.max(1,Math.min(t.bTotal-1,expectedB+pick([-6,-4,-2,2,4,6],rng)));
+  break;
+ }
+ case 'bayes':{
+  t.prev=pick([.05,.10,.15,.20,.25,.30],rng);
+  t.sens=pick([.70,.80,.90,.95],rng);
+  t.falsePositive=pick([.05,.10,.15,.20,.25],rng);
+  break;
+ }
+ case 'binomial':{
+  t.n=R(3,8);t.k=R(0,t.n);t.p=pick([.2,.25,.4,.5,.6,.75,.8],rng);break;
+ }
+ case 'expectation':{
+  t.p=pick([.1,.2,.25,.4,.5,.6,.75],rng);t.payout=pick([10,15,20,25,30,40,50],rng);
+  t.fee=pick([2,3,4,5,6,8,10],rng);break;
+ }
+ default:throw Error('Unknown probability mode '+mode);
+ }
+ t.id=JSON.stringify(t);return t;
+}
+function expected(t){
+ switch(t.mode){
+ case 'counting':return {one:t.stages.reduce((a,b)=>a*b,1)};
+ case 'permutations':return {one:permutation(t.n,t.r),two:combination(t.n,t.r)};
+ case 'combinations':return {one:combination(t.n,t.r)};
+ case 'complement':return {one:percentage(t.total-t.success,t.total),two:percentage(t.success,t.total)};
+ case 'union':return {one:percentage(t.onlyA+t.onlyB+t.both,t.total),two:percentage(t.both,t.total)};
+ case 'conditional':return {one:conditionalProbability(t.ay,t.ay+t.by),two:conditionalProbability(t.ay,t.ay+t.an)};
+ case 'independence':return {one:percentage(t.aYes,t.aTotal),two:percentage(t.bYes,t.bTotal),choice:independent(t.aYes,t.aTotal,t.bYes,t.bTotal)?'independent':'dependent'};
+ case 'bayes':return {one:bayesPosterior(t.prev,t.sens,t.falsePositive),two:(1-t.prev)*t.falsePositive*100};
+ case 'binomial':return {one:100*binomialProbability(t.n,t.k,t.p),two:t.n*t.p};
+ case 'expectation':return {one:expectedNet(t.p,t.payout,t.fee),two:t.p*t.payout};
+ }
+ return {};
+}
+function correct(t,one,two,choice){
+ const v=expected(t);
+ if(!near(one,v.one))return false;
+ if('two' in v&&!near(two,v.two))return false;
+ if('choice' in v&&choice!==v.choice)return false;
+ return true;
+}
+// PURE_MODEL_END
+window.ProbabilityQuestCore=Object.freeze({near,factorial,permutation,combination,percentage,unionProbability,conditionalProbability,independent,bayesPosterior,binomialProbability,expectedNet,makeTask,expected,correct});
+const $=id=>document.getElementById(id),query=new URLSearchParams(location.search);
+const MODES=['counting','permutations','combinations','complement','union','conditional','independence','bayes','binomial','expectation'];
+let mode=MODES.includes(query.get('mode'))?query.get('mode'):'counting',task,record,streak=0;
+const context=[query.get('course')||'standalone',query.get('unit')||'',query.get('lesson')||''].map(s=>s.replace(/[^a-z0-9_-]/gi,'_')).join('|');
+const fresh=()=>({solved:0,attempted:0,firstTries:0,bestStreak:0,outcomes:[],recent:[],history:[],task:null,checked:false,wrong:false,helped:false,entry:{one:'',two:'',choice:''}});
+const key=()=>['KHAE_PROBABILITY_QUEST_V1',context,mode].join('|');
+const fmt=(n,d=2)=>Number.isFinite(n)?String(+n.toFixed(d)):'undefined';
+function load(){
+ record=fresh();try{const v=JSON.parse(localStorage.getItem(key())||'null');if(v&&Number.isFinite(v.solved)&&Number.isFinite(v.attempted)&&Array.isArray(v.recent)&&Array.isArray(v.history)){
+  record={...record,...v,outcomes:(v.outcomes||[]).slice(-10),recent:v.recent.slice(-30),history:v.history.slice(-10),entry:{...record.entry,...(v.entry||{})}};
+ }}catch{}
+ task=record.task||null;streak=0;
+}
+function save(){record.task=task;try{localStorage.setItem(key(),JSON.stringify(record));}catch{$('context').textContent='Local storage unavailable. Export JSON to preserve your practice.';}}
+function message(str,tone=''){$('feedback').textContent=str;$('feedback').className=tone;$('celebrate').textContent='';}
+function challenge(){
+ record.checked=false;record.wrong=false;record.helped=false;record.entry={one:'',two:'',choice:''};
+ const seen=new Set(record.recent);let candidate=null;
+ for(let i=0;i<170;i++){const t=makeTask(mode);if(!seen.has(t.id)){candidate=t;break;}}
+ if(!candidate){record.recent=[];candidate=makeTask(mode);}
+ task=candidate;record.recent.push(candidate.id);record.recent=record.recent.slice(-30);
+ show();message('Your mission stays available through retries and browser refreshes.');save();
+}
+function scenario(){
+ const t=task;
+ switch(mode){
+ case 'counting':return ['A fictional workshop lets students choose from '+t.stages[0]+' designs, '+t.stages[1]+' materials, and '+t.stages[2]+' colors. Each choice can be combined with any other.',
+  'How many complete combinations are possible?','Total complete choices',''];
+ case 'permutations':return ['A team has '+t.n+' different finalists and will assign '+t.r+' DISTINCT ranked roles, without replacement.',
+  'How many ordered assignments exist? Also compute the number of unranked groups of the same size.','Ordered nPr','Unordered nCr'];
+ case 'combinations':return ['A class chooses a committee of '+t.r+' from '+t.n+' different volunteers. Committee order does not matter.',
+  'How many distinct committees are possible?','Unordered nCr',''];
+ case 'complement':return ['From '+t.total+' equally likely outcomes, '+t.success+' meet event A.',
+  'Find the percentage NOT in A and the percentage IN A. They must total 100%.','P(not A) (%)','P(A) (%)'];
+ case 'union':return ['Among '+t.total+' equally likely outcomes: '+t.onlyA+' are only A, '+t.onlyB+' only B, '+t.both+' both, and '+t.neither+' neither.',
+  'Find P(A or B) and P(A and B), both as percentages. Do not double-count the intersection.','P(A ∪ B) (%)','P(A ∩ B) (%)'];
+ case 'conditional':return ['A fictional survey shows group A: '+t.ay+' yes, '+t.an+' no; group B: '+t.by+' yes, '+t.bn+' no.',
+  'Find P(group A | yes) and P(yes | group A). Notice these condition on different populations.','P(A | yes) (%)','P(yes | A) (%)'];
+ case 'independence':return ['Group A has '+t.aYes+' yes from '+t.aTotal+' trials; group B has '+t.bYes+' yes from '+t.bTotal+' trials.',
+  'Find each yes percentage and decide if the observed success rate is exactly the same in both groups. This models independence of group and outcome within the displayed contingency table; it does not establish causation.','Group A yes (%)','Group B yes (%)'];
+ case 'bayes':return ['A hypothetical screening process applies to a population where '+fmt(t.prev*100)+'% have a condition. Sensitivity is '+fmt(t.sens*100)+'% and false-positive rate is '+fmt(t.falsePositive*100)+'%.',
+  'If a result is positive, what percent actually have the condition? Also find the percent of the WHOLE population who test positive without the condition.','P(condition | positive) (%)','False positives of all people (%)'];
+ case 'binomial':return ['A binomial experiment has '+t.n+' independent, identical trials, each with success probability '+fmt(t.p*100)+'%.',
+  'What is the probability of EXACTLY '+t.k+' successes (percent), and the expected number of successes?','P(X = '+t.k+') (%)','Expected successes'];
+ default:return ['A fictional prize costs '+t.fee+' credits to enter and pays '+t.payout+' credits with probability '+fmt(t.p*100)+'%, otherwise paying zero.',
+  'Find expected NET gain per play (include the entry fee) and the break-even entry fee. A negative expectation describes the model—not a person’s worth.','Expected net gain (credits)','Break-even fee (credits)'];
+ }
+}
+function explanation(){
+ const t=task,e=expected(t);
+ switch(mode){
+ case 'counting':return 'Fundamental counting principle: '+t.stages.join(' × ')+' = '+e.one+' distinct complete outcomes. These choices are independent stages of a counting process.';
+ case 'permutations':return 'Order matters for roles: '+t.n+'P'+t.r+'='+t.n+'! / ('+(t.n-t.r)+')! = '+e.one+'. When order does not matter: '+t.n+'C'+t.r+'='+t.n+'P'+t.r+'/'+t.r+'! = '+e.two+'.';
+ case 'combinations':return 'A committee is an unordered subset. C('+t.n+','+t.r+')='+t.n+'! / ['+t.r+'!('+t.n+'−'+t.r+')!] = '+e.one+'.';
+ case 'complement':return 'P(not A)=1−P(A). '+(t.total-t.success)+' out of '+t.total+' are not A: '+fmt(e.one)+'%. The '+t.success+' favorable outcomes account for '+fmt(e.two)+'%.';
+ case 'union':return 'P(A∪B)=P(A)+P(B)−P(A∩B). Unique outcomes in the union: '+(t.onlyA+t.onlyB+t.both)+' out of '+t.total+' = '+fmt(e.one)+'%. The shared '+t.both+' outcomes = '+fmt(e.two)+'%.';
+ case 'conditional':return 'For P(A|yes), the denominator is ALL yes outcomes: '+t.ay+'/('+t.ay+'+'+t.by+') = '+fmt(e.one)+'%. For P(yes|A), denominator is ALL of group A: '+t.ay+'/('+t.ay+'+'+t.an+') = '+fmt(e.two)+'%.';
+ case 'independence':return 'Compare exact fractions '+t.aYes+'/'+t.aTotal+' and '+t.bYes+'/'+t.bTotal+'. They correspond to '+fmt(e.one)+'% and '+fmt(e.two)+'%. These displayed outcomes are '+e.choice+' in the empirical contingency table. Equal sample rates alone do not prove independence of an underlying population or causal effects.';
+ case 'bayes':return 'Bayes: prevalence×sensitivity / [prevalence×sensitivity + (1−prevalence)×false-positive rate]. Posterior = '+fmt(e.one)+'%. The fraction of all people who are false-positive = (1−prevalence)×false-positive rate = '+fmt(e.two)+'%. Screening scenarios are simplified models, not medical advice.';
+ case 'binomial':return 'P(X=k)=C(n,k)p^k(1−p)^(n−k) = '+fmt(e.one,4)+'%. Expected successes = np = '+fmt(e.two,4)+'. Trials must be independent with a constant success probability.';
+ default:return 'Expected payout = probability×payout = '+fmt(e.two,4)+' credits. Expected NET = payout expectation − entry cost = '+fmt(e.one,4)+' credits. '+fmt(e.two,4)+' is the fair break-even fee for this mathematical model.';
+ }
+}
+function choices(){
+ const select=$('choice');select.replaceChildren();
+ for(const [value,title] of [['','Choose one'],['independent','Equal observed yes rates'],['dependent','Different observed yes rates']]){
+  const o=document.createElement('option');o.value=value;o.textContent=title;select.appendChild(o);
+ }
+}
+function stats(){
+ $('solved').textContent=String(record.solved);$('attempted').textContent=String(record.attempted);
+ $('accuracy').textContent=record.attempted?Math.round(100*record.firstTries/record.attempted)+'%':'—';
+ $('streak').textContent=String(record.bestStreak);$('progress').value=record.outcomes.length;
+ $('mastery').textContent=record.outcomes.length===10&&record.outcomes.filter(Boolean).length>=8?'Achieved':'In progress';
+ $('history').replaceChildren();for(const h of record.history.slice(-10).reverse()){const li=document.createElement('li');li.textContent=h;$('history').appendChild(li);}
+}
+function show(){
+ const info=scenario();$('mode').value=mode;$('scenario').textContent=info[0];$('prompt').textContent=info[1];
+ $('firstLabel').textContent=info[2];$('secondLabel').textContent=info[3];
+ $('secondBlock').hidden=!['permutations','complement','union','conditional','independence','bayes','binomial','expectation'].includes(mode);
+ $('choiceBlock').hidden=mode!=='independence';if(!$('choiceBlock').hidden)choices();
+ $('choiceLabel').textContent='Observed group-outcome relationship';
+ $('answer').value=record.entry.one;$('second').value=record.entry.two;$('choice').value=record.entry.choice;
+ $('check').disabled=record.checked;$('hint').disabled=record.checked;$('worked').disabled=record.checked;$('next').disabled=!record.checked;
+ const rules={counting:'Multiply the number of choices at each independent stage.',permutations:'P(n,r)=n!/(n−r)! · order matters.',combinations:'C(n,r)=n!/[r!(n−r)!] · order does not matter.',
+ complement:'P(not A)=1−P(A).',union:'P(A∪B)=P(A)+P(B)−P(A∩B).',
+ conditional:'P(A|B)=P(A∩B)/P(B), when P(B)>0.',independence:'A and B are independent when P(A|B)=P(A); check exact contingency rates.',
+ bayes:'P(H|+)=[P(+|H)P(H)] / [P(+|H)P(H)+P(+|not H)P(not H)].',
+ binomial:'P(X=k)=C(n,k)pᵏ(1−p)ⁿ⁻ᵏ, E[X]=np.',
+ expectation:'Expected net = Σ(outcome probability × payout) − entry fee.'};
+ $('formula').textContent=rules[mode];stats();draw();
+}
+const esc=s=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const rect=(x,y,w,h,c)=>'<rect x="'+x+'" y="'+y+'" width="'+Math.max(0,w)+'" height="'+Math.max(0,h)+'" rx="4" fill="'+c+'"/>';
+const tx=(x,y,v,size=16)=>'<text x="'+x+'" y="'+y+'" font-size="'+size+'" text-anchor="middle" fill="#4c3c2c">'+esc(v)+'</text>';
+function draw(){
+ const t=task;let graphic='',summary='';
+ if(mode==='counting'){
+  const colors=['#27658a','#b77938','#64896d'];
+  for(let i=0;i<3;i++){
+   graphic+=rect(80+i*165,80,139,235,colors[i]);
+   graphic+=tx(149+i*165,124,'Stage '+(i+1),16);
+   graphic+=tx(149+i*165,204,t.stages[i]+' choices',19);
+  }
+  summary='Three choice stages with '+t.stages.join(', ')+' options. Multiply stage counts rather than adding them.';
+ }else if(mode==='permutations'||mode==='combinations'){
+  const n=t.n,r=t.r;
+  graphic+=tx(310,74,mode==='permutations'?'Choose ordered roles':'Choose an unordered committee',22);
+  for(let i=0;i<n;i++){
+   const columns=Math.min(n,6),row=Math.floor(i/columns),col=i%columns;
+   graphic+=rect(80+col*79,102+row*88,54,52,i<r?'#27658a':'#d7d5c9');
+   graphic+=tx(107+col*79,134+row*88,String(i+1));
+  }
+  summary=n+' distinct people, '+r+' positions. '+(mode==='permutations'?'Changing their order changes an assignment.':'Reordering the same members does not create a new committee.');
+ }else if(mode==='union'){
+  const total=t.total,areas=[t.onlyA,t.both,t.onlyB,t.neither];
+  graphic+='<circle cx="250" cy="207" r="140" fill="#719db8" fill-opacity=".45" stroke="#27658a" stroke-width="2"/>';
+  graphic+='<circle cx="382" cy="207" r="140" fill="#e5b679" fill-opacity=".48" stroke="#b77938" stroke-width="2"/>';
+  graphic+=tx(170,203,t.onlyA,26)+tx(316,203,t.both,26)+tx(462,203,t.onlyB,26)+tx(312,399,'Neither: '+t.neither,16);
+  summary='Venn diagram: A only '+t.onlyA+', B only '+t.onlyB+', overlap '+t.both+', outside '+t.neither+'; total '+total+'.';
+ }else if(mode==='conditional'||mode==='independence'){
+  const cells=mode==='conditional'?[[t.ay,t.an],[t.by,t.bn]]:[[t.aYes,t.aTotal-t.aYes],[t.bYes,t.bTotal-t.bYes]];
+  for(let row=0;row<2;row++){
+   graphic+=rect(74,111+row*121,469,90,row?'#f4e6d3':'#e1eaf0');
+   graphic+=tx(141,149+row*121,row?'Group B':'Group A');
+   graphic+=tx(306,149+row*121,'Yes: '+cells[row][0]);
+   graphic+=tx(440,149+row*121,'No: '+cells[row][1]);
+   graphic+=tx(310,185+row*121,'Row total: '+(cells[row][0]+cells[row][1]),14);
+  }
+  summary='Two-way table: A yes '+cells[0][0]+', A no '+cells[0][1]+'; B yes '+cells[1][0]+', B no '+cells[1][1]+'. Conditioning changes the denominator.';
+ }else if(mode==='bayes'){
+  const truth=t.prev*t.sens,miss=t.prev*(1-t.sens),falsePos=(1-t.prev)*t.falsePositive,trueNeg=(1-t.prev)*(1-t.falsePositive);
+  const data=[['True +',truth,'#27658a'],['False +',falsePos,'#ba7938'],['False −',miss,'#a5b6be'],['True −',trueNeg,'#d7d3c7']];
+  let current=55;
+  for(const [name,p,color] of data){const w=510*p;graphic+=rect(current,153,w,110,color);current+=w;}
+  data.forEach(([name,p],i)=>{graphic+=rect(74+(i%2)*257,296+Math.floor(i/2)*38,14,14,p===truth?'#27658a':p===falsePos?'#ba7938':i===2?'#a5b6be':'#d7d3c7');
+   graphic+=tx(170+(i%2)*257,310+Math.floor(i/2)*38,name+': '+fmt(p*100)+'%',12);});
+  summary='Population partitions: true positive '+fmt(truth*100)+'%, false positive '+fmt(falsePos*100)+'%, false negative '+fmt(miss*100)+'%, true negative '+fmt(trueNeg*100)+'%. Among positive tests, both true and false positives enter the denominator.';
+ }else if(mode==='binomial'){
+  const distribution=Array.from({length:t.n+1},(_,k)=>binomialProbability(t.n,k,t.p));
+  const max=Math.max(...distribution);
+  for(let k=0;k<=t.n;k++){
+   const w=420/(t.n+1),h=238*distribution[k]/max,x=90+k*w+4;
+   graphic+=rect(x,337-h,w-8,h,k===t.k?'#b67938':'#27658a');
+   graphic+=tx(x+(w-8)/2,361,k,14);
+  }
+  graphic+=tx(306,68,'P(X = k) · selected k='+t.k,21);
+  summary='Binomial probabilities for k = 0 through '+t.n+' with p='+fmt(t.p*100)+'%. Amber marks the exact number of successes requested; all probabilities sum to 100%.';
+ }else{
+  let values=[],labels=[],colors=['#27658a','#b77938'];
+  if(mode==='complement'){values=[t.total-t.success,t.success];labels=['Not A','A'];}
+  else if(mode==='expectation'){values=[t.payout,0];labels=['Win payout','No win payout'];}
+  const baseline=mode==='expectation'?0:0;
+  const max=Math.max(1,...values);
+  values.forEach((value,i)=>{
+   const h=(value-baseline)/max*234;
+   graphic+=rect(144+i*233,333-h,136,h,colors[i]);
+   graphic+=tx(212+i*233,355,labels[i]);graphic+=tx(212+i*233,325-h,fmt(value),19);
+  });
+  if(mode==='expectation')summary='Outcome amounts: '+t.payout+' credits with probability '+fmt(t.p*100)+'%; zero payout otherwise. Entry cost of '+t.fee+' credits is paid in either case.';
+  else summary='Of '+t.total+' equally likely outcomes, '+t.success+' are in A and '+(t.total-t.success)+' are outside A.';
+ }
+ $('plot').innerHTML=graphic;$('visualText').textContent=summary;
+}
+function check(){
+ if(record.checked||!task)return;
+ const raw=$('answer').value.trim(),secondRaw=$('second').value.trim();
+ const a=raw===''?NaN:Number(raw),b=$('secondBlock').hidden?NaN:secondRaw===''?NaN:Number(secondRaw);
+ if(!Number.isFinite(a)||(!$('secondBlock').hidden&&!Number.isFinite(b))){message('Enter finite numbers in every required field; empty fields are not zero.','bad');return;}
+ const okay=correct(task,a,b,$('choiceBlock').hidden?'':$('choice').value);
+ if(!record.wrong){record.attempted++;record.outcomes.push(okay&&!record.helped);record.outcomes=record.outcomes.slice(-10);}
+ if(okay){
+  record.solved++;record.checked=true;
+  if(!record.wrong&&!record.helped){record.firstTries++;streak++;}else streak=0;
+  record.bestStreak=Math.max(record.bestStreak,streak);
+  record.history.push(mode+' · solved '+task.id.slice(0,46));record.history=record.history.slice(-10);
+  show();message('Correct! '+explanation(),'good');
+  if(!$('lowStim').checked&&!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches))$('celebrate').textContent='✦ Probability mission complete ✦';
+ }else{record.wrong=true;streak=0;message('Try this same mission again. Check the denominator, order versus unordered choices, the overlap, or the percentage units.','bad');stats();}
+ save();
+}
+function hint(){
+ if(record.checked||!task)return;record.helped=true;
+ const hints={
+ counting:'Multiply the number of options at each independent stage.',
+ permutations:'An ordered assignment uses n!/(n−r)!. An unordered selection divides by r! too.',
+ combinations:'Order does not matter; use nCr, not nPr.',
+ complement:'An event and its complement partition the whole space and add to 100%.',
+ union:'The intersection belongs to both events. Subtract the double-counted overlap once.',
+ conditional:'P(A|B) means look ONLY among outcomes in B. Swap the condition, and the denominator changes.',
+ independence:'Compute the two exact yes rates; equal conditional rates describe independence within the displayed table.',
+ bayes:'Of all positive tests, some are true positives and some are false positives. Divide true positives by BOTH types of positives.',
+ binomial:'Exactly k successes: C(n,k) × p^k × (1−p)^(n−k). The mean count is np.',
+ expectation:'Expected payout is p×prize. Subtract the fee for expected NET gain.'
+ };
+ message(hints[mode]);save();
+}
+function worked(){if(record.checked||!task)return;record.helped=true;message('Worked solution: '+explanation()+' Enter the results and check.');save();}
+function switchMode(m){if(!MODES.includes(m))return;mode=m;load();if(task)show();else challenge();}
+$('mode').addEventListener('change',e=>switchMode(e.target.value));
+$('new').addEventListener('click',challenge);$('next').addEventListener('click',challenge);
+$('check').addEventListener('click',check);$('hint').addEventListener('click',hint);$('worked').addEventListener('click',worked);
+for(const [id,field] of [['answer','one'],['second','two'],['choice','choice']])$(id).addEventListener(id==='choice'?'change':'input',e=>{record.entry[field]=e.target.value;save();});
+$('reset').addEventListener('click',()=>{if(!confirm('Clear only this game pathway? Formal grades and other courses are untouched.'))return;try{localStorage.removeItem(key());}catch{}record=fresh();challenge();});
+$('export').addEventListener('click',()=>{
+ const blob=new Blob([JSON.stringify({schema:1,game:'probability-quest',mode,context,progress:record,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='probability-quest-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+});
+$('context').textContent='Lesson '+context.replace(/\|/g,' / ')+' · local practice only, not an official exam.';
+load();if(task)show();else challenge();
+})();
+</script></body></html>
