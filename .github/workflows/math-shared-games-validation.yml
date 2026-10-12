@@ -16,6 +16,7 @@ on:
       - "courses/mathematics/tools/test-matrix-mission-control.mjs"
       - "courses/mathematics/tools/test-sequence-series-studio.mjs"
       - "courses/mathematics/tools/test-complex-plane-lab.mjs"
+      - "courses/mathematics/tools/test-statistics-detective.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -37,6 +38,7 @@ on:
       - "courses/mathematics/tools/test-matrix-mission-control.mjs"
       - "courses/mathematics/tools/test-sequence-series-studio.mjs"
       - "courses/mathematics/tools/test-complex-plane-lab.mjs"
+      - "courses/mathematics/tools/test-statistics-detective.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -82,6 +84,9 @@ jobs:
 
       - name: Validate Complex Plane Lab mathematics
         run: node courses/mathematics/tools/test-complex-plane-lab.mjs
+
+      - name: Validate Statistics Detective mathematical investigations
+        run: node courses/mathematics/tools/test-statistics-detective.mjs
 
       - name: Verify Algebra I shared-game launch and return routes
         run: node courses/mathematics/tools/test-algebra-game-routes.mjs

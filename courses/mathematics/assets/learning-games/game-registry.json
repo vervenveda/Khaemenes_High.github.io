@@ -2073,6 +2073,97 @@
           "wired": true
         }
       ]
+    },
+    "statistics-detective": {
+      "title": "Statistics Detective",
+      "canonical_path": "courses/mathematics/assets/learning-games/statistics-detective/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Eight source-free investigative modes: ethical research design, center/population SD, median/IQR box plots, least-squares regression, two-way conditional frequencies, misleading/truncated charts, normal z-scores/percentiles, and biased/random sampling. Fictional datasets, local-only practice, zero tracking or grade side effects.",
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "12",
+          "lesson": "01",
+          "lesson_title": "Statistical Questions, Study Design & Data Ethics",
+          "mode": "design",
+          "query": "?course=algebra1&unit=12&lesson=01&mode=design",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "12",
+          "lesson": "02",
+          "lesson_title": "Distributions, Center, Spread & Standard Deviation",
+          "mode": "center",
+          "query": "?course=algebra1&unit=12&lesson=02&mode=center",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "12",
+          "lesson": "03",
+          "lesson_title": "Box Plots, Histograms & Comparing Groups",
+          "mode": "box",
+          "query": "?course=algebra1&unit=12&lesson=03&mode=box",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "12",
+          "lesson": "04",
+          "lesson_title": "Bivariate Data, Correlation, Causation & Residuals",
+          "mode": "regression",
+          "query": "?course=algebra1&unit=12&lesson=04&mode=regression",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "12",
+          "lesson": "05",
+          "lesson_title": "Two-Way Tables, Conditional Relative Frequency & Probability",
+          "mode": "conditional",
+          "query": "?course=algebra1&unit=12&lesson=05&mode=conditional",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "12",
+          "lesson": "07",
+          "lesson_title": "Evaluating Quantitative Claims & Communicating Evidence",
+          "mode": "claims",
+          "query": "?course=algebra1&unit=12&lesson=07&mode=claims",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "12",
+          "lesson": "u12-l05",
+          "lesson_title": "Normal Distributions, z-Scores & Percentiles",
+          "mode": "zscore",
+          "query": "?course=algebra2&unit=12&lesson=u12-l05&mode=zscore",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "12",
+          "lesson": "u12-l06",
+          "lesson_title": "Sampling, Bias, Margin of Error & Study Design",
+          "mode": "sampling",
+          "query": "?course=algebra2&unit=12&lesson=u12-l06&mode=sampling",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "12",
+          "lesson": "u12-l07",
+          "lesson_title": "Evaluating Statistical Claims & Communicating Uncertainty",
+          "mode": "claims",
+          "query": "?course=algebra2&unit=12&lesson=u12-l07&mode=claims",
+          "wired": true
+        }
+      ]
     }
   }
 }
