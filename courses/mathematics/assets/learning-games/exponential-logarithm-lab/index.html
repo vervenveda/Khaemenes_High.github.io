@@ -1,0 +1,256 @@
+<!doctype html><html lang="en"><head>
+<script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4ecda">
+<title>Exponential &amp; Logarithm Lab · Khaemenes Academy</title>
+<script src="../../game-return-route.js?v=20261012"></script>
+<style>
+:root{color-scheme:light;--paper:#f4ecda;--card:#fffdf8;--ink:#251d15;--line:#c9b89b;--good:#176545;--bad:#9b3434;--accent:#98692e}*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 90% 0%,#fffef5,transparent 55%),var(--paper);color:var(--ink);font:16px/1.55 system-ui,sans-serif}
+main{max-width:1160px;margin:auto;padding:24px 16px 60px}h1,h2{font-family:Georgia,serif;line-height:1.2}h1{font-size:clamp(2rem,5vw,3rem);margin:5px 0}h2{font-size:1.35rem;margin:0 0 12px}
+.eyebrow{letter-spacing:.14em;text-transform:uppercase;color:#73502b;font-size:.77rem;font-weight:700}.lead{max-width:850px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:18px;box-shadow:0 3px 0 #e5dac4}
+.row,.stats{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.stats{margin-top:14px}.stat{padding:8px 10px;border:1px solid var(--line);border-radius:7px;background:#f9f2e6}
+.layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(315px,1fr);gap:16px;margin:17px 0}
+label{display:block;font-weight:650}input,select,button{font:inherit;border:1px solid #887457;border-radius:7px;padding:9px 10px;color:var(--ink);background:#fff}
+button{background:#ecdec4;font-weight:650;cursor:pointer}button:hover{background:#decca5}button:disabled{opacity:.5;cursor:not-allowed}.primary{background:#403328;color:#fff}
+:focus-visible{outline:3px solid #27639b;outline-offset:2px}input[type=number]{width:100%;max-width:180px}input[type=range]{width:100%;accent-color:var(--accent)}
+#chart{width:100%;height:auto;display:block;background:#fffefa;border:1px solid var(--line);border-radius:7px}
+#formula{font:700 1.25rem/1.4 Georgia,serif;overflow-wrap:anywhere}#scenario{font-weight:700}
+.small{color:#51483d;font-size:.89rem}.gap{margin-top:15px}
+#feedback{min-height:66px;border-left:5px solid var(--accent);background:#f8efdf;padding:12px;border-radius:4px}
+#feedback.good{border-color:var(--good)}#feedback.bad{border-color:var(--bad)}
+#celebrate{min-height:25px;color:var(--good);font-weight:700}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.formgrid>div{border:1px solid #dacbb0;background:#faf5eb;border-radius:7px;padding:10px}
+progress{width:100%;accent-color:var(--good)}a{color:#1a568a}footer{font-size:.85rem;color:#665648;margin:25px 0 0}
+[hidden]{display:none!important}@media(max-width:800px){.layout{grid-template-columns:1fr}}@media(max-width:520px){.formgrid{grid-template-columns:1fr}.panel{padding:13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style></head><body><main>
+<div class="eyebrow">Khaemenes Academy · Sovereign Mathematics</div>
+<h1>Exponential &amp; Logarithm Lab</h1>
+<p class="lead">Animate growth and decay, investigate compound interest, solve exponential and logarithmic equations, and compare real-world models. Every activity is local, accessible, and designed for mathematical reasoning.</p>
+<section class="panel"><div class="row">
+<label for="mode">Choose a mission <select id="mode">
+<option value="growth">Growth &amp; decay curve matching</option><option value="finance">Compound interest</option><option value="continuous">Continuous growth / decay</option>
+<option value="exp-common">Exponential equations · common bases</option><option value="model-compare">Model detective · regression</option>
+<option value="log-inverse">Logarithms as inverse operations</option><option value="log-laws">Logarithmic properties</option>
+<option value="exp-log">Solve exponential equations with logs</option><option value="log-domain">Logarithmic domain investigation</option>
+<option value="change-base">Change-of-base estimation</option>
+</select></label>
+<button id="new" class="primary" type="button">New mission</button>
+<label for="lowStim">Reduced stimulation <input id="lowStim" type="checkbox"></label>
+</div><p id="context" class="small">Independent practice: official course grades are never modified here.</p></section>
+<div class="stats"><div class="stat">Solved <b id="solved">0</b></div><div class="stat">Checked <b id="attempted">0</b></div><div class="stat">First-try accuracy <b id="accuracy">—</b></div><div class="stat">Best streak <b id="streak">0</b></div><div class="stat">Practice goal <b id="mastery">In progress</b></div></div>
+<div class="layout">
+<section class="panel"><h2>Interactive graph laboratory</h2>
+<svg id="chart" viewBox="0 0 640 390" role="img" aria-labelledby="chartTitle chartDesc">
+<title id="chartTitle">Dynamic mathematical model</title><desc id="chartDesc">Blue is the model curve. Amber indicates a target or sample data. Numeric labels and a textual description accompany the plot.</desc>
+<g id="grid"></g><path id="curve" fill="none" stroke="#175e8c" stroke-width="3.6"/><path id="reference" fill="none" stroke="#bb772d" stroke-width="3" stroke-dasharray="8 6"/><g id="points"></g></svg>
+<p class="small">Blue — function or your predicted curve; amber — comparison target or observations.</p>
+<p id="chartText" class="small" aria-live="polite"></p><p id="formula" aria-live="polite"></p>
+<p id="dataTable" class="small"></p>
+</section>
+<section class="panel"><h2>Mission console</h2><p id="scenario"></p><p id="prompt"></p>
+<div id="rateBlock" class="gap" hidden><label for="rate">Your percent rate <output id="rateOut">0%</output></label><input type="range" id="rate" min="-50" max="75" value="0" step="5"><p class="small">Move the slider to match the amber target before calculating.</p></div>
+<div id="methodBlock" class="gap" hidden><label for="method">Compounding method</label><select id="method"><option value="">Select a method</option><option value="1">Annual</option><option value="2">Semiannual</option><option value="4">Quarterly</option><option value="12">Monthly</option><option value="continuous">Continuous</option></select></div>
+<div id="propertyBlock" class="gap" hidden><label for="property">Identity</label><select id="property"><option value="">Select the law</option><option value="product">Product</option><option value="quotient">Quotient</option><option value="power">Power</option></select></div>
+<div id="modelBlock" class="gap" hidden><label for="model">Data model</label><select id="model"><option value="">Select the family</option><option value="linear">Linear</option><option value="quadratic">Quadratic</option><option value="exponential">Exponential</option><option value="logarithmic">Logarithmic</option></select></div>
+<div id="domainBlock" class="gap" hidden><label for="domain">Check the logarithm's domain</label><select id="domain"><option value="">Choose your conclusion</option><option value="valid">Argument strictly positive</option><option value="invalid">Argument zero or negative</option></select></div>
+<div class="formgrid"><div><label for="answer">Numerical answer</label><input id="answer" type="number" step="any" inputmode="decimal" autocomplete="off"><p id="units" class="small"></p></div><div><p class="small">Calculate first, then round to two decimals unless an exact value is requested. Enter a number, not an expression.</p></div></div>
+<div class="row"><button id="check" class="primary" type="button">Check answer</button><button id="hint" type="button">Hint</button><button id="solution" type="button">Worked explanation</button><button id="next" type="button" disabled>Next →</button></div>
+<p id="feedback" role="status" aria-live="polite">Complete the mission and check the result.</p><p id="celebrate" aria-live="polite"></p>
+</section></div>
+<section class="panel"><h2>Learning record</h2><progress id="progress" max="10" value="0"></progress>
+<p class="small">Practice target: at least 8 unaided first-try answers in the most recent 10 checked missions. Hints and mistakes do not erase progress; a browser refresh restores the current mission. Formal mastery is controlled by the lesson assessment engine.</p>
+<div class="row"><button id="export" type="button">Export progress JSON</button><button id="reset" type="button">Reset this mission pathway (confirm)</button><a href="../../../index.html">Mathematics home</a></div>
+<ol id="history" aria-label="Recent mission outcomes"></ol>
+</section>
+<footer>© Jennifer Kay Pearl · Khaemenes Academy · Sovereign vanilla HTML/CSS/JS · No third-party dependencies or tracking.</footer>
+</main>
+<script>
+(()=>{'use strict';
+// PURE_MODEL_BEGIN
+const near=(a,b,e=1e-8)=>Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=e*Math.max(1,Math.abs(a),Math.abs(b));
+const exponential=(p,r,t)=>p*Math.pow(1+r,t);
+const compound=(p,r,n,t)=>p*Math.pow(1+r/n,n*t);
+const continuous=(p,r,t)=>p*Math.exp(r*t);
+const logBase=(x,b)=>x>0&&b>0&&b!==1?Math.log(x)/Math.log(b):NaN;
+const modelValue=(family,p,d,x)=>family==='linear'?p+d*x:family==='quadratic'?p+d*x*x:family==='exponential'?exponential(p,d,x):family==='logarithmic'?p+d*Math.log1p(x):NaN;
+function makeTask(mode,rng=Math.random){
+ const pick=xs=>xs[Math.floor(rng()*xs.length)];
+ let t={mode};
+ switch(mode){
+ case 'growth':t.p=pick([50,100,200,400]);t.rate=pick([-40,-30,-20,-10,10,20,30,50]);t.time=pick([2,3,4,5]);break;
+ case 'finance':t.p=pick([500,1000,1500,2500]);t.r=pick([.04,.06,.08,.1]);t.n=pick([1,2,4,12]);t.time=pick([1,2,3,5]);break;
+ case 'continuous':t.p=pick([500,1000,2000]);t.r=pick([-.15,-.08,.04,.08,.12]);t.time=pick([1,2,3,4]);break;
+ case 'exp-common':t.base=pick([2,3,4,5]);t.power=pick([1,2,3,4]);t.value=t.base**t.power;break;
+ case 'exp-log':t.base=pick([1.2,1.5,1.8,2.5]);t.value=pick([3,5,7,11,20]);break;
+ case 'log-inverse':t.base=pick([2,3,5,10]);t.power=pick([-2,-1,0,1,2]);break;
+ case 'log-laws':t.base=pick([2,3,5]);t.law=pick(['product','quotient','power']);t.a=pick([2,3,4,5]);t.b=pick([2,3,4]);break;
+ case 'log-domain':t.base=pick([2,3,5]);t.shift=pick([-5,-3,-1,1,3,5]);t.power=pick([1,2,3]);break;
+ case 'change-base':t.base=pick([2,3,5,7,10]);t.value=pick([3,6,11,15,20]);break;
+ case 'model-compare':t.family=pick(['linear','quadratic','exponential','logarithmic']);t.p=pick([5,10,20,30]);t.d=t.family==='exponential'?pick([.2,.3,.5]):pick([2,3,5]);t.time=5;break;
+ default:throw Error('Unexpected pathway '+mode);
+ }
+ t.id=JSON.stringify(t);return t;
+}
+function expected(t){
+ switch(t.mode){
+ case 'growth':return exponential(t.p,t.rate/100,t.time);
+ case 'finance':return compound(t.p,t.r,t.n,t.time);
+ case 'continuous':return continuous(t.p,t.r,t.time);
+ case 'exp-common':return t.power;
+ case 'exp-log':case 'change-base':return logBase(t.value,t.base);
+ case 'log-inverse':return t.base**t.power;
+ case 'log-laws':return t.law==='product'?t.a*t.b:t.law==='quotient'?t.a/t.b:t.a**t.b;
+ case 'log-domain':return t.base**t.power+t.shift;
+ case 'model-compare':return modelValue(t.family,t.p,t.d,t.time);
+ }
+ return NaN;
+}
+function checkAnswer(t,x,e={}){
+ if(!Number.isFinite(x))return false;
+ const tolerance=['finance','continuous','exp-log','change-base'].includes(t.mode)?0.015:t.mode==='model-compare'?0.08:.005;
+ if(Math.abs(x-expected(t))>tolerance+Math.abs(expected(t))*1e-11)return false;
+ if(t.mode==='growth'&&Number(e.rate)!==t.rate)return false;
+ if(t.mode==='finance'&&String(e.method)!==String(t.n))return false;
+ if(t.mode==='continuous'&&e.method!=='continuous')return false;
+ if(t.mode==='log-laws'&&e.property!==t.law)return false;
+ if(t.mode==='log-domain'&&e.domain!=='valid')return false;
+ if(t.mode==='model-compare'&&e.model!==t.family)return false;
+ return true;
+}
+// PURE_MODEL_END
+window.ExponentialLogarithmCore=Object.freeze({near,exponential,compound,continuous,logBase,modelValue,makeTask,expected,checkAnswer});
+const $=id=>document.getElementById(id),query=new URLSearchParams(location.search);
+const MODES=['growth','finance','continuous','exp-common','model-compare','log-inverse','log-laws','exp-log','log-domain','change-base'];
+let mode=MODES.includes(query.get('mode'))?query.get('mode'):'growth';
+const context=[query.get('course')||'standalone',query.get('unit')||'',query.get('lesson')||''].map(x=>x.replace(/[^a-z0-9_-]/gi,'_')).join('|');
+const emptyEntry=()=>({answer:'',rate:0,method:'',property:'',model:'',domain:''});
+const fresh=()=>({solved:0,attempted:0,firstTries:0,bestStreak:0,recent:[],history:[],outcomes:[],task:null,checked:false,wrong:false,helped:false,entry:emptyEntry()});
+let record=fresh(),task=null,streak=0;
+const key=()=>['KHAE_EXPLOG_V1',context,mode].join('|');
+const fmt=(x,d=2)=>Number.isFinite(x)?String(Number(x.toFixed(d))):'undefined';
+function load(){
+ record=fresh();
+ try{const o=JSON.parse(localStorage.getItem(key())||'null');if(o&&Array.isArray(o.recent)&&Array.isArray(o.history)&&Number.isFinite(o.solved)&&Number.isFinite(o.attempted)){record={...record,...o,entry:{...emptyEntry(),...(o.entry||{})},recent:o.recent.slice(-30),history:o.history.slice(-10),outcomes:(o.outcomes||[]).slice(-10)};}}catch{}
+ task=record.task||null;streak=0;
+}
+function save(){record.task=task;try{localStorage.setItem(key(),JSON.stringify(record));}catch{$('context').textContent='Storage unavailable: export practice to preserve it.';}}
+function feedback(txt,kind=''){$('feedback').textContent=txt;$('feedback').className=kind;$('celebrate').textContent='';}
+function challenge(){
+ let next=null,seen=new Set(record.recent);
+ for(let i=0;i<180;i++){const t=makeTask(mode);if(!seen.has(t.id)){next=t;break;}}
+ if(!next){record.recent=[];next=makeTask(mode);}
+ task=next;record.recent.push(task.id);record.recent=record.recent.slice(-30);
+ record.entry=emptyEntry();record.checked=false;record.wrong=false;record.helped=false;
+ show();feedback('Match or analyze the model and calculate your answer. Incorrect answers never reset a mission.');save();
+}
+function problem(){
+ const t=task;
+ switch(mode){
+ case 'growth':return ['A starting quantity is '+t.p+'. Amber shows an unknown '+(t.rate>0?'growth':'decay')+' curve.','Match its signed rate using the slider and predict the quantity after '+t.time+' periods.','Final quantity (two decimals).'];
+ case 'finance':return ['A savings account starts at $'+t.p+' and earns '+(t.r*100)+'% annual interest, compounded '+({1:'annually',2:'semiannually',4:'quarterly',12:'monthly'}[t.n])+'.','Select the compounding schedule and calculate the amount after '+t.time+' years.','Amount in dollars (two decimals).'];
+ case 'continuous':return ['Starting quantity '+t.p+' changes continuously at '+(t.r*100)+'% per year.','Select continuous compounding and calculate the amount after '+t.time+' years.','Amount after '+t.time+' years.'];
+ case 'exp-common':return ['Find x in '+t.base+'^x = '+t.value+'.','Use equivalent powers and verify by substitution.','Exact exponent x.'];
+ case 'exp-log':return ['Find x in '+t.base+'^x = '+t.value+'.','Use logarithms to solve when powers are not convenient.','Exponent x (two decimals).'];
+ case 'log-inverse':return ['Find x in log base '+t.base+' of x = '+t.power+'.','Rewrite as an exponential equation. Be sure x is positive.','Positive x (two decimals).'];
+ case 'log-laws':return ['Combine '+(t.law==='product'?'log_'+t.base+'('+t.a+') + log_'+t.base+'('+t.b+')':t.law==='quotient'?'log_'+t.base+'('+t.a+') − log_'+t.base+'('+t.b+')':t.b+' · log_'+t.base+'('+t.a+')')+' into one logarithm.','Choose the logarithm identity and enter the single combined argument.','Positive argument inside log_'+t.base+'( ? ).'];
+ case 'log-domain':return ['Solve log_'+t.base+'(x − ('+t.shift+')) = '+t.power+'.','Determine x and verify that x − ('+t.shift+') is strictly positive.','x and a valid-domain choice.'];
+ case 'change-base':return ['Estimate log base '+t.base+' of '+t.value+'.','Apply log_b(A) = ln(A) / ln(b).','Answer to two decimal places.'];
+ default:return ['A dataset has been generated by one function family.','Identify the model from its observations and predict its value when x='+t.time+'.','Forecast to two decimals.'];
+ }
+}
+function explanation(){
+ const t=task,v=expected(t);
+ switch(mode){
+ case 'growth':return 'P(1+r)^t = '+t.p+'(1'+(t.rate<0?' − '+Math.abs(t.rate)/100:' + '+t.rate/100)+')^'+t.time+' = '+fmt(v,5)+'.';
+ case 'finance':return 'A=P(1+r/n)^(nt)='+t.p+'(1+'+t.r+'/'+t.n+')^('+t.n+'×'+t.time+') = '+fmt(v,5)+'.';
+ case 'continuous':return 'A=Pe^(rt)='+t.p+'e^('+t.r+'×'+t.time+') = '+fmt(v,5)+'.';
+ case 'exp-common':return t.base+'^'+t.power+' = '+t.value+', so x='+t.power+'.';
+ case 'exp-log':return 'Taking logarithms yields x=ln('+t.value+')/ln('+t.base+') = '+fmt(v,5)+'.';
+ case 'log-inverse':return 'Rewriting as an exponential equation gives x='+t.base+'^('+t.power+') = '+fmt(v,5)+' > 0.';
+ case 'log-laws':return t.law==='product'?'Product property: add logs by multiplying arguments, '+t.a+'×'+t.b+'='+fmt(v,5)+'.':t.law==='quotient'?'Quotient property: subtract logs by dividing arguments, '+t.a+'/'+t.b+'='+fmt(v,5)+'.':'Power property: multiply a logarithm by c by raising its argument to c, '+t.a+'^'+t.b+'='+fmt(v,5)+'.';
+ case 'log-domain':return 'Rewrite x−('+t.shift+')='+t.base+'^'+t.power+'. Then x='+fmt(v,5)+'. The logarithm argument is '+t.base**t.power+', which is positive.';
+ case 'change-base':return 'ln('+t.value+')/ln('+t.base+') = '+fmt(v,5)+'.';
+ default:return 'Check the first differences, second differences, and ratios. The exact family is '+t.family+'; its value at x='+t.time+' is '+fmt(v,5)+'.';
+ }
+}
+function stats(){
+ $('solved').textContent=String(record.solved);$('attempted').textContent=String(record.attempted);
+ $('accuracy').textContent=record.attempted?Math.round(100*record.firstTries/record.attempted)+'%':'—';
+ $('streak').textContent=String(record.bestStreak);
+ $('progress').value=Math.min(10,record.outcomes.length);
+ const wins=record.outcomes.filter(Boolean).length;
+ $('mastery').textContent=record.outcomes.length===10&&wins>=8?'Achieved (last 10)':'In progress';
+ const box=$('history');box.replaceChildren();for(const s of record.history.slice(-10).reverse()){const li=document.createElement('li');li.textContent=s;box.appendChild(li);}
+}
+function plot(){
+ if(!task)return;
+ const t=task,e=record.entry;let f=x=>x,g=null,pts=[],xmin=0,xmax=6,ymin=0,ymax=10;
+ if(mode==='growth'){xmax=Math.max(6,t.time+1);f=x=>exponential(t.p,Number(e.rate)/100,x);g=x=>exponential(t.p,t.rate/100,x);ymax=1.12*Math.max(t.p,f(xmax),g(xmax));}
+ else if(mode==='finance'){f=x=>compound(t.p,t.r,t.n,x);ymax=f(6)*1.15;}
+ else if(mode==='continuous'){f=x=>continuous(t.p,t.r,x);ymax=1.15*Math.max(t.p,f(6));}
+ else if(mode==='exp-common'||mode==='exp-log'){f=x=>t.base**x;g=x=>t.value;ymax=1.13*Math.max(t.value,f(4));}
+ else if(mode==='log-inverse'){xmin=.1;xmax=12;ymin=-3;ymax=4;f=x=>logBase(x,t.base);g=x=>t.base**x;}
+ else if(mode==='log-laws'){xmin=.1;xmax=10;ymin=-3;ymax=4;f=x=>logBase(x,t.base);}
+ else if(mode==='log-domain'){xmin=Math.min(0,t.shift-1);xmax=Math.max(10,t.shift+t.base**t.power+2);ymin=-3;ymax=4;f=x=>logBase(x-t.shift,t.base);}
+ else if(mode==='change-base'){xmin=.1;xmax=Math.max(12,t.value+2);ymin=-3;ymax=5;f=x=>logBase(x,t.base);}
+ else if(mode==='model-compare'){f=x=>modelValue(t.family,t.p,t.d,x);pts=[0,1,2,3,4].map(x=>({x,y:f(x)}));ymax=f(5)*1.14;}
+ if(!Number.isFinite(ymax)||ymax<=ymin)ymax=ymin+10;
+ const sx=x=>55+(x-xmin)/(xmax-xmin)*565,sy=y=>340-(y-ymin)/(ymax-ymin)*300;
+ let grid='';for(let i=0;i<=6;i++){const x=55+i*565/6,y=340-i*300/6;grid+='<line x1="'+x+'" y1="40" x2="'+x+'" y2="340" stroke="#e7ded1"/><line x1="55" y1="'+y+'" x2="620" y2="'+y+'" stroke="#e7ded1"/><text x="'+x+'" y="365" fill="#706458" font-size="11" text-anchor="middle">'+fmt(xmin+i*(xmax-xmin)/6,1)+'</text><text x="48" y="'+(y+4)+'" fill="#706458" font-size="11" text-anchor="end">'+fmt(ymin+i*(ymax-ymin)/6,1)+'</text>';}
+ $('grid').innerHTML=grid;
+ const path=fn=>{let d='',pen=false;for(let i=0;i<=320;i++){const x=xmin+i*(xmax-xmin)/320,y=fn(x);if(Number.isFinite(y)&&y>=ymin&&y<=ymax){d+=(pen?'L':'M')+sx(x).toFixed(2)+' '+sy(y).toFixed(2)+' ';pen=true;}else pen=false;}return d;};
+ $('curve').setAttribute('d',path(f));$('reference').setAttribute('d',g?path(g):'');
+ $('points').innerHTML=pts.map(p=>'<circle cx="'+sx(p.x)+'" cy="'+sy(p.y)+'" r="5" fill="#be772f"/>').join('');
+ $('chartText').textContent=mode==='growth'?'Blue: '+e.rate+'% predicted rate; amber: the hidden target rate. Match the shapes.':mode==='model-compare'?'Amber marks observed samples. Analyze them before selecting a model.':'The blue curve illustrates the function for this mission.';
+ $('dataTable').textContent=mode==='model-compare'?'Observed (x, y): '+pts.map(p=>'('+p.x+', '+fmt(p.y,2)+')').join(' • '):'';
+}
+function show(){
+ if(!task)return;
+ const s=problem();$('scenario').textContent=s[0];$('prompt').textContent=s[1];$('units').textContent=s[2];
+ $('formula').textContent=mode==='growth'?'P(1+r)^t':mode==='finance'?'A=P(1+r/n)^(nt)':mode==='continuous'?'A=Pe^(rt)':mode==='model-compare'?'Find the correct function family':mode==='log-laws'?'logarithm identities':mode==='log-domain'?'log_b(x−c)=k':mode==='exp-common'||mode==='exp-log'?'y=b^x':'y=log_b(x)';
+ for(const id of ['rateBlock','methodBlock','propertyBlock','modelBlock','domainBlock'])$(id).hidden=true;
+ if(mode==='growth')$('rateBlock').hidden=false;
+ if(mode==='finance'||mode==='continuous')$('methodBlock').hidden=false;
+ if(mode==='log-laws')$('propertyBlock').hidden=false;
+ if(mode==='model-compare')$('modelBlock').hidden=false;
+ if(mode==='log-domain')$('domainBlock').hidden=false;
+ $('mode').value=mode;
+ for(const id of ['answer','method','property','model','domain'])$(id).value=record.entry[id];
+ $('rate').value=String(record.entry.rate);$('rateOut').textContent=record.entry.rate+'%';
+ $('check').disabled=record.checked;$('hint').disabled=record.checked;$('solution').disabled=record.checked;$('next').disabled=!record.checked;
+ stats();plot();
+}
+function check(){
+ if(!task||record.checked)return;
+ const raw=String($('answer').value).trim(),x=raw===''?NaN:Number(raw);
+ if(!Number.isFinite(x)){feedback('Enter a finite number. Blank input is not zero.','bad');return;}
+ const e=record.entry;
+ const ok=checkAnswer(task,x,{rate:e.rate,method:e.method,property:e.property,model:e.model,domain:e.domain});
+ if(!record.wrong){record.attempted++;record.outcomes.push(ok&&!record.helped);record.outcomes=record.outcomes.slice(-10);}
+ if(ok){
+  record.checked=true;record.solved++;
+  if(!record.wrong&&!record.helped){record.firstTries++;streak++;}else streak=0;
+  record.bestStreak=Math.max(record.bestStreak,streak);
+  record.history.push(mode+' · solved '+task.id.slice(0,46));record.history=record.history.slice(-10);
+  show();feedback('Correct! '+explanation(),'good');
+  if(!$('lowStim').checked&&!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches))$('celebrate').textContent='✦ Mission complete ✦';
+ }else{record.wrong=true;streak=0;feedback('Not quite—keep the same mission. Check the domain, units, function family and rounding, then try again.','bad');stats();}
+ save();
+}
+function hint(){if(!task||record.checked)return;record.helped=true;feedback(mode==='growth'?'The multiplier is 1 + rate/100. Use the curve to identify rate before calculating.':mode==='model-compare'?'Constant first differences: linear. Constant second differences: quadratic. Constant ratios: exponential. Slowing increases: logarithmic.':mode==='log-domain'?'A logarithm needs a strictly positive argument. Convert to exponential form.':'Hint: write the governing logarithm or exponential identity, then substitute before rounding.');save();}
+function solution(){if(!task||record.checked)return;record.helped=true;feedback('Worked explanation: '+explanation()+' Enter your answer and verify.');save();}
+function switchMode(m){if(!MODES.includes(m))return;mode=m;streak=0;load();if(task)show();else challenge();}
+$('mode').addEventListener('change',e=>switchMode(e.target.value));$('new').addEventListener('click',challenge);$('next').addEventListener('click',challenge);
+$('check').addEventListener('click',check);$('hint').addEventListener('click',hint);$('solution').addEventListener('click',solution);
+$('answer').addEventListener('input',e=>{record.entry.answer=e.target.value;save();});
+for(const id of ['method','property','model','domain'])$(id).addEventListener('change',e=>{record.entry[id]=e.target.value;save();});
+$('rate').addEventListener('input',e=>{record.entry.rate=Number(e.target.value);$('rateOut').textContent=record.entry.rate+'%';plot();save();});
+$('reset').addEventListener('click',()=>{if(!confirm('Clear this pathway only? Other learner progress and formal grades will be preserved.'))return;try{localStorage.removeItem(key());}catch{}record=fresh();challenge();});
+$('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({schema:1,game:'exponential-logarithm-lab',context,mode,progress:record,exported:new Date().toISOString()},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='exponential-logarithm-lab-progress.json';a.click();});
+$('context').textContent='Lesson context: '+context.replace(/\|/g,' / ')+' · browser-local independent practice, formal mastery unaffected.';
+load();if(task)show();else challenge();
+})();
+</script></body></html>

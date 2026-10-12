@@ -1636,6 +1636,142 @@
           "wired": true
         }
       ]
+    },
+    "exponential-logarithm-lab": {
+      "title": "Exponential & Logarithm Lab",
+      "canonical_path": "courses/mathematics/assets/learning-games/exponential-logarithm-lab/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Ten distinct modes across Algebra II Unit 06 (growth, finance, continuous exponentials, equations, model fitting) and Unit 07 (log inverses, rules, equations/domains, base changes, data interpretation); independent practice only.",
+      "placements": [
+        {
+          "course": "algebra-2",
+          "unit": "06",
+          "lesson": "u06-l01",
+          "lesson_title": "Exponential Function Structure & Parameters",
+          "mode": "growth",
+          "query": "?course=algebra2&unit=06&lesson=u06-l01&mode=growth",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "06",
+          "lesson": "u06-l02",
+          "lesson_title": "Growth, Decay & Percent Change",
+          "mode": "growth",
+          "query": "?course=algebra2&unit=06&lesson=u06-l02&mode=growth",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "06",
+          "lesson": "u06-l03",
+          "lesson_title": "Compound Interest & Effective Rates",
+          "mode": "finance",
+          "query": "?course=algebra2&unit=06&lesson=u06-l03&mode=finance",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "06",
+          "lesson": "u06-l04",
+          "lesson_title": "Continuous Growth, Decay & the Constant e",
+          "mode": "continuous",
+          "query": "?course=algebra2&unit=06&lesson=u06-l04&mode=continuous",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "06",
+          "lesson": "u06-l05",
+          "lesson_title": "Solving Exponential Equations by Common Bases",
+          "mode": "exp-common",
+          "query": "?course=algebra2&unit=06&lesson=u06-l05&mode=exp-common",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "06",
+          "lesson": "u06-l06",
+          "lesson_title": "Exponential Regression & Data Modelling",
+          "mode": "model-compare",
+          "query": "?course=algebra2&unit=06&lesson=u06-l06&mode=model-compare",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "06",
+          "lesson": "u06-l07",
+          "lesson_title": "Comparing Linear, Quadratic & Exponential Models",
+          "mode": "model-compare",
+          "query": "?course=algebra2&unit=06&lesson=u06-l07&mode=model-compare",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "07",
+          "lesson": "u07-l01",
+          "lesson_title": "Logarithms as Inverses of Exponentials",
+          "mode": "log-inverse",
+          "query": "?course=algebra2&unit=07&lesson=u07-l01&mode=log-inverse",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "07",
+          "lesson": "u07-l02",
+          "lesson_title": "Common, Natural & Other Logarithmic Bases",
+          "mode": "log-inverse",
+          "query": "?course=algebra2&unit=07&lesson=u07-l02&mode=log-inverse",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "07",
+          "lesson": "u07-l03",
+          "lesson_title": "Product, Quotient & Power Properties",
+          "mode": "log-laws",
+          "query": "?course=algebra2&unit=07&lesson=u07-l03&mode=log-laws",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "07",
+          "lesson": "u07-l04",
+          "lesson_title": "Solving Exponential Equations with Logarithms",
+          "mode": "exp-log",
+          "query": "?course=algebra2&unit=07&lesson=u07-l04&mode=exp-log",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "07",
+          "lesson": "u07-l05",
+          "lesson_title": "Solving Logarithmic Equations & Domain Checks",
+          "mode": "log-domain",
+          "query": "?course=algebra2&unit=07&lesson=u07-l05&mode=log-domain",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "07",
+          "lesson": "u07-l06",
+          "lesson_title": "Change of Base, Technology & Estimation",
+          "mode": "change-base",
+          "query": "?course=algebra2&unit=07&lesson=u07-l06&mode=change-base",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "07",
+          "lesson": "u07-l07",
+          "lesson_title": "Logarithmic Scales, Data & Model Interpretation",
+          "mode": "model-compare",
+          "query": "?course=algebra2&unit=07&lesson=u07-l07&mode=model-compare",
+          "wired": true
+        }
+      ]
     }
   }
 }
