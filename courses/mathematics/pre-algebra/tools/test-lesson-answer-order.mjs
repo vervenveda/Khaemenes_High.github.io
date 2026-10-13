@@ -51,7 +51,7 @@ const numeric=fs.readFileSync(root+"unit-00/assets/refresher-engine.js","utf8");
 assert.ok(numeric.includes('inputmode="decimal"'),"Refresher uses numerical inputs and needs no choice shuffle");
 
 function run({bank,core,unit},rng,stored=null,submit=false){
- const host={innerHTML:""},quick={innerHTML:""},score={textContent:""},callbacks={};
+ const host={innerHTML:"",addEventListener(){}},quick={innerHTML:"",addEventListener(){}},score={textContent:""},callbacks={};
  const saved=new Map(stored?Object.entries(stored):[]);
  const key="audit-prealgebra-unit-"+pad(unit);
  const localStorage={getItem:k=>saved.get(k)||null,setItem:(k,v)=>saved.set(k,String(v))};
