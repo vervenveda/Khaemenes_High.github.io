@@ -1,0 +1,97 @@
+/* Grade 9 parchment consistency: presentation only; no learner-state or STOS changes. */
+html:root:root {
+ --g9-bg: #f4f0e7; --g9-paper: #fffefa; --g9-side: #eee7db;
+ --g9-soft: #f8f3e8; --g9-line: #c8beab;
+ --g9-text: #20241f; --g9-muted: #465047; --g9-accent: #77551f;
+ --g9-focus: #245786; --g9-shadow: 0 9px 26px rgba(57,45,28,.075);
+}
+html:root:root[data-theme="dark"] {
+ /* Previously saved "dark" preference is a higher-contrast LIGHT parchment, not a black screen. */
+ --g9-bg: #e9e0d1; --g9-paper: #fffaf0; --g9-side: #dfd1ba;
+ --g9-soft: #f3ead9; --g9-line: #857256;
+ --g9-text: #141914; --g9-muted: #333e34; --g9-accent: #674514;
+ --g9-focus: #153e6b; --g9-shadow: none;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) {
+ min-width:0;overflow-x:clip;background:var(--g9-bg)!important;color:var(--g9-text)!important;
+ font-family: "Brandon Grotesque","Avenir Next","Segoe UI",Arial,sans-serif!important;
+ font-weight:400!important;line-height:1.62;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.app,.main,.grid,.sidebar,.card,.lesson,.lab,.labPanel,.topline,.course-note) {min-width:0}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.sidebar,.navBox,.studentBox,.sideBox,.topline,.hero,.ticker) {
+ background:var(--g9-side)!important;color:var(--g9-text)!important;border-color:var(--g9-line)!important;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.card,.lesson,.lab,.labPanel,.quizQ,.weekButton,.readingCard,.annotationItem,.materialItem,.material,.problem,.graphBox,.unit-picker,.course-note) {
+ background:var(--g9-paper)!important;color:var(--g9-text)!important;border-color:var(--g9-line)!important;
+ border-radius: 7px !important;box-shadow:var(--g9-shadow)!important;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.choice,.navBtn,.tab,.weekBtn,.courseLink,.feedback,.notice) {
+ background:var(--g9-soft)!important;color:var(--g9-text)!important;border-color:var(--g9-line)!important;
+ border-radius:7px!important;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.tab.active,.navBtn.active,.weekButton.active,.weekBtn.active,[aria-pressed="true"]) {
+ background:#ead9b6!important;border-color:var(--g9-accent)!important;color:var(--g9-text)!important;
+ box-shadow:inset 0 0 0 1px var(--g9-accent)!important;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.card p,.card li,.lesson p,.lesson li,.hero p,.small,.footer,.brand p,.vocabRow,.dataGrid,.weekButton small,td) {
+ color:var(--g9-muted)!important;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.pill.good,.feedback.good) {
+ color:#285039!important;background:#e6f0e6!important;border-color:#7aa383!important;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.pill.bad,.feedback.bad) {
+ color:#83343c!important;background:#f9e9e6!important;border-color:#be8989!important;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.pill.warn,.notice) {
+ color:#634b26!important;background:#f7edda!important;border-color:var(--g9-accent)!important;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.feedback,.notice) {border-left-width:4px!important;border-left-style:solid!important}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(input,select,textarea) {
+ background:var(--g9-paper)!important;color:var(--g9-text)!important;
+ border:1px solid var(--g9-line)!important;border-radius:7px!important;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(button,.button,.courseLink) {
+ min-height: 44px;font-weight:500!important;box-shadow:none!important;border-radius:7px!important;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.card h3,.card h4,.check,.score,.kpi strong,.vocabWord) {
+ color:var(--g9-text)!important;font-weight:500!important;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(a,button,input,select,textarea,summary):focus-visible {
+ outline:3px solid var(--g9-focus)!important;outline-offset:3px!important;
+}
+html:root:root body[data-science9-require-entry] .tickerTrack {color:var(--g9-muted)!important}
+html:root:root body[data-science9-require-entry] #themeBtn {min-height:44px;border:1px solid var(--g9-line)!important}
+html:root:root body[data-science9-require-entry] .tabs {display:flex;gap:8px;flex-wrap:wrap}
+.grade9-skip-link {
+ position:fixed;z-index:7000;left:12px;top:12px;transform:translateY(-180%);
+ display:inline-block;padding:10px 14px;border:2px solid var(--g9-focus);
+ border-radius:7px;background:var(--g9-paper);color:var(--g9-text);text-decoration:none;
+}
+.grade9-skip-link:focus-visible {transform:none}
+html:root:root body[data-english9-require-entry] .skip-link:focus-visible {
+ position:fixed;left:12px;top:12px;z-index:7000;transform:none;
+ background:var(--g9-paper)!important;color:var(--g9-text)!important;border:2px solid var(--g9-focus);
+}
+@media (max-width: 960px) {
+ html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) .app {grid-template-columns:minmax(0,1fr)!important}
+ html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) .sidebar {
+  position:relative;height:auto;min-height:0;padding:12px 14px;overflow:visible;
+ }
+ html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) .main {width:100%;max-width:100%;padding:15px 14px}
+ html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) .hero {padding:18px}
+ html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) .sidebar .weekList {max-height:240px;overflow-y:auto}
+}
+@media (max-width: 560px) {
+ html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.lab,.labPanel,.kpi,.col3,.col4,.col5,.col6,.col7,.col8,.col9,.col12) {grid-column:1/-1}
+ html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) table {display:block;max-width:100%;overflow-x:auto}
+}
+@media (prefers-reduced-motion: reduce) {
+ html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) .tickerTrack {animation:none!important}
+}
+@media print {
+ html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]),
+ html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) :is(.card,.lesson,.lab,.labPanel,.hero) {
+ background:white!important;color:#111!important;box-shadow:none!important;
+ }
+ .grade9-skip-link {display:none!important}
+}

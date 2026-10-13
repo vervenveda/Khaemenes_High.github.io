@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html data-theme="dark" lang="en">
+<html data-theme="light" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="Khaemenes High International Integrated Science 9 student portal with a 36-week curriculum, phenomenon-based lessons, investigations, data tools, CER writing, assessments, reports, and local records." name="description"/>
-<meta content="#07131d" name="theme-color"/>
+<meta content="#f4f0e7" name="theme-color"/>
 <title>International Integrated Science 9 — 36 Week Student Portal</title>
 <style>
 :root{
@@ -111,8 +111,10 @@ html:root:root body .hero .comment {
   overflow-wrap:anywhere;
 }
 </style>
+<link rel="stylesheet" href="../../../assets/grade09-subject-parchment.css?v=20261013" data-grade09-consistency>
 </head>
 <body data-science9-require-entry>
+<a class="grade9-skip-link" href="#content">Skip to student science workspace</a>
 <div class="app">
 <aside class="sidebar">
 <div class="brand"><div class="seal">S9</div><div><h1>Integrated Science 9</h1><p>36 Week Student Portal</p></div></div>
@@ -122,18 +124,18 @@ html:root:root body .hero .comment {
 <div class="actions"><button class="secondary" id="demoBtn">Add Demo</button><button class="danger" id="deleteStudentBtn">Delete</button></div>
 </div>
 <div class="sideBox"><label for="pathway">Learning pathway</label><select id="pathway"></select><p class="small" id="pathwayMessage"></p></div>
-<div class="sideBox">
+<nav class="sideBox" aria-label="Science 9 course navigation">
 <button class="navBtn active" data-view="dashboard">Dashboard</button><button class="navBtn" data-view="week">Weekly Lessons</button>
 <button class="navBtn" data-view="scope">36 Week Scope</button><button class="navBtn" data-view="lab">Science Lab</button>
 <button class="navBtn" data-view="assessments">Assessments</button><button class="navBtn" data-view="reports">Reports</button>
 <button class="navBtn" data-view="standards">Course Charter &amp; Mastery</button>
-</div>
+</nav>
 <div class="sideBox"><h3>Weeks</h3><div class="weekList" id="weekList"></div></div>
 </aside>
 <main class="main">
 <div class="topline noPrint">
 <div class="crumbs"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Khaemenes Academy</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/">High School</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/">Integrated Science 9</a><span>›</span><span>Grade 09 Portal</span></div>
-<button class="secondary" id="themeBtn">Light</button>
+<button class="secondary" id="themeBtn" type="button" aria-pressed="false" title="Toggle high contrast parchment">Higher contrast</button>
 </div>
 <section class="hero">
 <h2>Integrated Science 9</h2>
@@ -142,8 +144,8 @@ html:root:root body .hero .comment {
 <div class="heroLinks noPrint"><a class="button secondary" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/">Complete Course Hall</a><a class="button ghost" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/diagnostic/">Safety &amp; Diagnostic</a><a class="button secondary" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/assessments/">Assessment Center</a></div>
 </section>
 <div class="ticker"><div class="tickerTrack"><span>Observe before interpreting</span><span>Safety before materials and procedures</span><span>Use SI units and record uncertainty</span><span>Distinguish evidence, models, inference and worldview</span><span>Correct work and reassess essential outcomes</span><span>Life · Matter · Energy · Earth Systems · Engineering</span><span>Observe before interpreting</span><span>Safety before materials and procedures</span><span>Use SI units and record uncertainty</span><span>Distinguish evidence, models, inference and worldview</span><span>Correct work and reassess essential outcomes</span><span>Life · Matter · Energy · Earth Systems · Engineering</span></div></div>
-<div class="tabs noPrint"><button class="tab active" data-view="dashboard">Dashboard</button><button class="tab" data-view="week">Lessons</button><button class="tab" data-view="scope">Scope</button><button class="tab" data-view="lab">Lab</button><button class="tab" data-view="assessments">Tests</button><button class="tab" data-view="reports">Reports</button><button class="tab" data-view="standards">Mastery</button></div>
-<section id="content"></section>
+<nav class="tabs noPrint" aria-label="Science 9 workspace tabs"><button class="tab active" data-view="dashboard">Dashboard</button><button class="tab" data-view="week">Lessons</button><button class="tab" data-view="scope">Scope</button><button class="tab" data-view="lab">Lab</button><button class="tab" data-view="assessments">Tests</button><button class="tab" data-view="reports">Reports</button><button class="tab" data-view="standards">Mastery</button></nav>
+<section id="content" tabindex="-1" aria-label="Student science workspace"></section>
 <p class="footer">Khaemenes Academy · Integrated Science 9 · Jennifer Kay Pearl · 2026</p>
 </main>
 </div>
@@ -154,7 +156,7 @@ const KEY=ENTRY?.scopedKey?.("khae-grade09-integrated-science-portal-v1",ENTRY_P
 const ENTRY_DECISION=window.KhaemenesScience9Entry?.decision?.()||{allow:false};
 const ENTRY_BLOCKED=!ENTRY_DECISION.allow||!ENTRY_PROFILE;
 let state=loadState(),currentView="dashboard",selectedWeek=1,sets={},labSet=[];
-function blankState(){return {students:[],activeId:null,theme:"dark"}}
+function blankState(){return {students:[],activeId:null,theme:"light"}}
 function loadState(){try{return JSON.parse(localStorage.getItem(KEY))||blankState()}catch{return blankState()}}
 function save(){if(ENTRY_BLOCKED)return;try{if(ENTRY?.identityRaw?.()!==JSON.stringify(ENTRY_PROFILE.learnerId))throw Error("The Academy learner changed.");localStorage.setItem(KEY,JSON.stringify(state))}catch{}}
 function uid(){return "s_"+Date.now()+"_"+Math.random().toString(36).slice(2,8)}
@@ -172,7 +174,7 @@ function weekState(n){const s=active();return {days:s.days?.[n]||{},notes:s.note
 function renderAll(){renderStudent();renderPathway();renderWeeks();renderNav();renderView()}
 function renderStudent(){$("#studentSelect").innerHTML=state.students.map(s=>`<option value="${s.id}" ${s.id===state.activeId?"selected":""}>${esc(s.name)}</option>`).join("")}
 function renderPathway(){const s=active();$("#pathway").innerHTML=APP.pathways.map(p=>`<option ${p===s.pathway?"selected":""}>${p}</option>`).join("");$("#pathwayMessage").textContent=s.pathway==="Foundation"?"Vocabulary support, visual models, smaller steps, guided calculations, scaffolded investigations, and confidence-building practice.":s.pathway==="Extended"?"Honors depth, unfamiliar applications, independent investigation, advanced data interpretation, research, modelling, and deeper evaluation.":"The complete Grade 9 sequence and required scientific practices."}
-function renderNav(){$$(".navBtn,.tab").forEach(b=>b.classList.toggle("active",b.dataset.view===currentView))}
+function renderNav(){$(".navBtn,.tab").forEach(b=>{const active=b.dataset.view===currentView;b.classList.toggle("active",active);b.setAttribute("aria-pressed",active?"true":"false")})}
 function renderWeeks(){const s=active();$("#weekList").innerHTML=APP.weeks.map(w=>{const d=Object.values(s.days?.[w.week]||{}).filter(Boolean).length,sc=s.scores?.[w.week]||0;return `<button class="weekButton ${selectedWeek===w.week?"active":""}" data-week="${w.week}"><span><strong>Week ${w.week}</strong><small>${esc(w.title)}</small></span><span>${d===5?"✓":sc?sc+"%":""}</span></button>`}).join("");$$(".weekButton").forEach(b=>b.onclick=()=>{selectedWeek=Number(b.dataset.week);setView("week")})}
 function setView(v){currentView=v;renderAll();window.scrollTo({top:0,behavior:"smooth"})}
 function renderView(){({dashboard:renderDashboard,week:renderWeek,scope:renderScope,lab:renderScienceLab,assessments:renderAssessments,reports:renderReports,standards:renderStandards}[currentView]||renderDashboard)()}
@@ -297,7 +299,7 @@ function downloadReportHTML(){const s=active();downloadText(`Science9_${safeName
 function downloadBackup(){downloadText("Khaemenes_Grade09_Integrated_Science_Backup.json",JSON.stringify({version:1,exported:new Date().toISOString(),state},null,2),"application/json")}
 function importBackup(e){const f=e.target.files?.[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(!x.state||!Array.isArray(x.state.students))throw Error("Invalid backup");state=x.state;ensure();save();renderAll();alert("Backup imported.")}catch(err){alert("Could not import backup: "+err.message)}};r.readAsText(f)}
 function packetHTML(n){const w=APP.weeks[n-1];return `<!doctype html><meta charset="utf-8"><title>Science 9 Week ${w.week} Packet</title><style>body{font:16px/1.55 Arial;max-width:900px;margin:25px auto;padding:25px;color:#111}h1,h2,h3{font-family:Georgia}section{border:1px solid #aaa;padding:15px;margin:12px 0}@media print{body{margin:0}}</style><h1>Integrated Science 9 · Week ${w.week}</h1><h2>${esc(w.title)}</h2><p><strong>Unit:</strong> ${esc(w.unit)}</p><section><h3>Phenomenon</h3><p>${esc(w.phenomenon)}</p><p>Observations:</p><div style="height:90px;border-bottom:1px solid #aaa"></div><p>Questions:</p><div style="height:90px;border-bottom:1px solid #aaa"></div></section><section><h3>Essential question</h3><p>${esc(w.essentialQuestion)}</p><p><strong>Reading/source:</strong> ${esc(w.readingSuggestion)}</p></section>${w.lessons.map(l=>`<section><h3>${l.day} · ${esc(l.title)}</h3><p><strong>Activity:</strong> ${esc(l.activity)}</p><div style="height:130px;border-bottom:1px solid #aaa"></div></section>`).join("")}<section><h3>Investigation & safety</h3><p>${esc(w.investigation)}</p><p><strong>Mode:</strong> ${esc(w.mode)}</p><p>Hazards, controls, supervision, disposal, and stop conditions:</p><div style="height:110px;border-bottom:1px solid #aaa"></div></section><section><h3>Claim–Evidence–Reasoning</h3><p>Claim:</p><div style="height:70px;border-bottom:1px solid #aaa"></div><p>Evidence:</p><div style="height:100px;border-bottom:1px solid #aaa"></div><p>Reasoning and limitations:</p><div style="height:120px;border-bottom:1px solid #aaa"></div></section>`}
-if(!ENTRY_BLOCKED){$("#studentSelect").onchange=e=>{state.activeId=e.target.value;save();renderAll()};$("#addStudentBtn").onclick=()=>{const n=$("#studentName").value.trim();if(!n)return;const s=blankStudent(n);state.students.push(s);state.activeId=s.id;$("#studentName").value="";save();renderAll()};$("#demoBtn").onclick=()=>{const s=blankStudent("Demo Scientist");for(let w=1;w<=4;w++){s.days[w]={Monday:true,Tuesday:true,Wednesday:true,Thursday:w<4,Friday:w<3};s.scores[w]=70+w*5;s.attempts[w]=1;s.safety[w]=true;s.exit[w]="Demo science reflection for Week "+w}state.students.push(s);state.activeId=s.id;save();renderAll()};$("#deleteStudentBtn").onclick=()=>{const s=active();if(!confirm(`Delete ${s.name} and all local records?`))return;state.students=state.students.filter(x=>x.id!==s.id);state.activeId=state.students[0]?.id||null;ensure();save();renderAll()};$("#pathway").onchange=e=>{active().pathway=e.target.value;sets={};save();renderAll()};$$(".navBtn,.tab").forEach(b=>b.onclick=()=>setView(b.dataset.view));$("#themeBtn").onclick=()=>{state.theme=state.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=state.theme;$("#themeBtn").textContent=state.theme==="dark"?"Light":"Dark";save()};document.documentElement.dataset.theme=state.theme||"dark";$("#themeBtn").textContent=(state.theme||"dark")==="dark"?"Light":"Dark";renderAll();}
+if(!ENTRY_BLOCKED){$("#studentSelect").onchange=e=>{state.activeId=e.target.value;save();renderAll()};$("#addStudentBtn").onclick=()=>{const n=$("#studentName").value.trim();if(!n)return;const s=blankStudent(n);state.students.push(s);state.activeId=s.id;$("#studentName").value="";save();renderAll()};$("#demoBtn").onclick=()=>{const s=blankStudent("Demo Scientist");for(let w=1;w<=4;w++){s.days[w]={Monday:true,Tuesday:true,Wednesday:true,Thursday:w<4,Friday:w<3};s.scores[w]=70+w*5;s.attempts[w]=1;s.safety[w]=true;s.exit[w]="Demo science reflection for Week "+w}state.students.push(s);state.activeId=s.id;save();renderAll()};$("#deleteStudentBtn").onclick=()=>{const s=active();if(!confirm(`Delete ${s.name} and all local records?`))return;state.students=state.students.filter(x=>x.id!==s.id);state.activeId=state.students[0]?.id||null;ensure();save();renderAll()};$("#pathway").onchange=e=>{active().pathway=e.target.value;sets={};save();renderAll()};$$(".navBtn,.tab").forEach(b=>b.onclick=()=>setView(b.dataset.view));const applyReadingContrast=()=>{const high=state.theme==="dark";document.documentElement.dataset.theme=high?"dark":"light";$("#themeBtn").textContent=high?"Standard contrast":"Higher contrast";$("#themeBtn").setAttribute("aria-pressed",high?"true":"false")};$("#themeBtn").onclick=()=>{state.theme=state.theme==="dark"?"light":"dark";applyReadingContrast();save()};applyReadingContrast();renderAll();}
 </script>
 </body>
 </html>

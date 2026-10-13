@@ -163,6 +163,7 @@ html:root:root body .hero .comment {
   overflow-wrap:anywhere;
 }
 </style>
+<link rel="stylesheet" href="../../../assets/grade09-subject-parchment.css?v=20261013" data-grade09-consistency>
 </head>
 <body data-english9-require-entry>
 <a class="skip-link" href="#content">Skip to student workspace</a>
@@ -408,7 +409,12 @@ function renderStudentSelect(){
   sel.innerHTML = state.students.map(s => `<option value="${esc(s.id)}" ${s.id===state.activeId?"selected":""}>${esc(s.name)}</option>`).join("");
 }
 function renderNavState(){
-  document.querySelectorAll(".tab,.navBtn").forEach(b => b.classList.toggle("active", b.dataset.view === currentView));
+  document.querySelectorAll(".tab,.navBtn").forEach(b => {
+    if(!b.dataset.view)return;
+    const active=b.dataset.view === currentView;
+    b.classList.toggle("active",active);
+    b.setAttribute("aria-pressed",active?"true":"false");
+  });
 }
 function renderWeekList(){
   const s = activeStudent();
