@@ -17,7 +17,7 @@ assert.equal(m.normalize(-30),330);assert.equal(m.normalize(750),30);assert.equa
 assert.equal(m.piToken(30),'π/6');assert.equal(m.piToken(45),'π/4');
 assert.equal(m.piToken(90),'π/2');assert.equal(m.piToken(120),'2π/3');
 assert.equal(m.piToken(180),'π');assert.equal(m.piToken(270),'3π/2');
-assert.equal(m.piToken(360),'2π');assert.equal(m.piToken(-450),'−5π/2');
+assert.equal(m.piToken(360),'2π');assert.equal(m.piToken(-450),'-5π/2');
 assert.equal(m.piToken(0),'0');assert.equal(m.piToken(15),'π/12');
 assert.equal(m.refAngle(150),30);assert.equal(m.refAngle(210),30);
 assert.equal(m.refAngle(315),45);assert.equal(m.refAngle(270),90);
