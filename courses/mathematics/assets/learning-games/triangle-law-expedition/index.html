@@ -117,11 +117,11 @@ function makeTask(mode,rng=Math.random){
   t.b=t.A>90?8:10;t.a=pick(t.A>90?[4,6,8,10,12,15]:[3,4,5,7,8,9,10,12,15],rng);break;
  }
  case 'ssa-pair':{
-  t.A=pick([30,40],rng);t.b=10;t.a=pick([7,8,9],rng);break;
+  t.A=pick([30,40],rng);t.b=pick([8,9,10,12,14],rng);t.a=+(t.b*pick([.7,.75,.8,.85,.9],rng)).toFixed(2);break;
  }
  case 'cosine-sas':{t.b=R(4,16);t.c=R(4,16);t.A=pick([35,45,60,75,90,105,120,135],rng);break;}
- case 'cosine-sss':{[t.a,t.b,t.c]=pick(TRIANGLES,rng);break;}
- case 'heron':{[t.a,t.b,t.c]=pick(TRIANGLES,rng);break;}
+ case 'cosine-sss':{const factor=pick([1,1.25,1.5,2,2.5],rng);[t.a,t.b,t.c]=pick(TRIANGLES,rng).map(x=>x*factor);break;}
+ case 'heron':{const factor=pick([1,1.25,1.5,2,2.5],rng);[t.a,t.b,t.c]=pick(TRIANGLES,rng).map(x=>x*factor);break;}
  case 'area':{t.b=R(4,17);t.c=R(4,17);t.A=pick([30,40,45,60,70,75,90,110,120,135],rng);break;}
  case 'bearings':{t.length=R(4,22);t.bearing=pick([0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330],rng);break;}
  case 'navigation':{
