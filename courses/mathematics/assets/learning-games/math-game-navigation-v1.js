@@ -8,7 +8,7 @@
   const unit = String(Number(params.get("unit")) || 1).padStart(2,"0");
   const lesson = params.get("lesson") || "";
   const returnRaw = params.get("returnTo") || "";
-  const labels = {"pre-algebra":"Pre-Algebra","algebra-1":"Algebra I","algebra-2":"Algebra II","geometry":"Geometry"};
+  const labels = {"pre-algebra":"Pre-Algebra","algebra-1":"Algebra I","algebra1":"Algebra I","algebra-2":"Algebra II","algebra2":"Algebra II","geometry":"Geometry"};
   let returnURL = null;
   try {
     const candidate = new URL(returnRaw,location.href);
