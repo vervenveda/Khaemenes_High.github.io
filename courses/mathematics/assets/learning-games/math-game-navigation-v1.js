@@ -25,7 +25,7 @@
     nav.className = "math-game-breadcrumb";
     nav.setAttribute("aria-label","Game breadcrumb");
     const crumb = [];
-    crumb.push('<a href="https://khaemenesacademy.org/">Khaemenes Academy</a>');
+    crumb.push('<a href="https://vervenveda.com/Khaemenes_High.github.io/">Khaemenes Academy</a>');
     if (labels[course]) crumb.push('<span aria-hidden="true">›</span><span>' + labels[course] + '</span>');
     crumb.push('<span aria-hidden="true">›</span><span aria-current="page">Learning Game</span>');
     if (returnURL) crumb.push('<span aria-hidden="true">›</span><a class="math-game-return" href="' + returnURL.href.replace(/&/g,"&amp;").replace(/"/g,"&quot;") + '">Return to Lesson' + (lesson ? " " + lesson.replace(/[^a-z0-9-]/gi,"").slice(0,24) : "") + '</a>');
