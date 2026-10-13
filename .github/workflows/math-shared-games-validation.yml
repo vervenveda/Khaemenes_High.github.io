@@ -25,6 +25,7 @@ on:
       - "courses/mathematics/tools/test-algebra2-trig-student-journey.mjs"
       - "courses/mathematics/tools/test-algebra2-deep-trig-lessons.mjs"
       - "courses/mathematics/tools/test-algebra2-trig-resume-flow.mjs"
+      - "courses/mathematics/tools/test-algebra2-trig-lesson-depth.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -55,6 +56,7 @@ on:
       - "courses/mathematics/tools/test-algebra2-trig-student-journey.mjs"
       - "courses/mathematics/tools/test-algebra2-deep-trig-lessons.mjs"
       - "courses/mathematics/tools/test-algebra2-trig-resume-flow.mjs"
+      - "courses/mathematics/tools/test-algebra2-trig-lesson-depth.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -127,6 +129,9 @@ jobs:
 
       - name: Verify Algebra II trigonometry and navigation game round-trip resume
         run: node courses/mathematics/tools/test-algebra2-trig-resume-flow.mjs
+
+      - name: Verify Algebra II Unit 10–11 instructional depth and mathematical accuracy
+        run: node courses/mathematics/tools/test-algebra2-trig-lesson-depth.mjs
 
       - name: Verify Algebra I shared-game launch and return routes
         run: node courses/mathematics/tools/test-algebra-game-routes.mjs
