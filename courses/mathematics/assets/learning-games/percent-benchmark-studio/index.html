@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Percent Benchmark Studio · Pre-Algebra Unit 05 Lesson 01</title>
+<style>
+:root{color-scheme:light;font-family:system-ui,sans-serif;color:#30291f;background:#f7f0e3}
+*{box-sizing:border-box}body{margin:0}main{max-width:850px;margin:auto;padding:24px 18px 80px}
+h1{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:500}h2{font-weight:500}
+.card{background:#fffdf8;border:1px solid #c7b69a;border-radius:7px;padding:22px;margin:18px 0}
+button,.button{font:inherit;cursor:pointer;border:1px solid #8c7656;border-radius:7px;padding:12px 16px;background:#fffaf0;color:#30291f;text-decoration:none;display:inline-block}
+button:hover,.button:hover{background:#e9dec9}button:focus-visible,a:focus-visible{outline:3px solid #20638d;outline-offset:3px}
+.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+#feedback{min-height:3em}small{color:#645742}progress{width:100%;height:18px}
+</style></head><body><main>
+<p>Pre-Algebra · Unit 05 · Lesson 01</p><h1>Percent Benchmark Studio</h1>
+<p>Practice converting among fractions, decimals, and percentages. A percent means “out of 100.” Choose the equivalent form and read the explanation after each answer.</p>
+<div class="card"><p id="counter" aria-live="polite"></p><progress id="progress" max="10" value="0"></progress><h2 id="question"></h2><div id="options" class="options"></div><p id="feedback" role="status" aria-live="polite"></p><button id="next" hidden>Next question →</button><div id="results" hidden></div></div>
+<a class="button" href="../../../pre-algebra/units/unit-05/lessons/lesson-01-percent-meaning-benchmarks-equivalent-forms.html">← Return to Lesson 01</a>
+<script>
+(()=>{'use strict';
+const bank=[
+['50% is equivalent to which decimal?','0.5',['0.05','0.5','5','0.005'],'50 ÷ 100 = 0.5.'],
+['25% is equivalent to which fraction in simplest form?','1/4',['1/2','1/5','1/4','2/5'],'25/100 simplifies to 1/4.'],
+['0.75 is equivalent to what percent?','75%',['7.5%','75%','0.75%','750%'],'Multiply the decimal by 100: 0.75 = 75%.'],
+['1/5 is equivalent to what percent?','20%',['5%','10%','20%','25%'],'1 ÷ 5 = 0.2 = 20%.'],
+['0.08 is equivalent to what percent?','8%',['0.8%','8%','80%','800%'],'0.08 × 100 = 8%.'],
+['125% is equivalent to which decimal?','1.25',['0.125','12.5','1.25','0.0125'],'125 ÷ 100 = 1.25; percentages may exceed 100%.'],
+['3/4 is equivalent to what percent?','75%',['25%','30%','60%','75%'],'3 ÷ 4 = 0.75 = 75%.'],
+['10% is equivalent to which fraction?','1/10',['1/100','1/10','1/5','10/1'],'10/100 reduces to 1/10.'],
+['0.005 is equivalent to what percent?','0.5%',['0.005%','0.05%','0.5%','5%'],'0.005 × 100 = 0.5%.'],
+['150% is equivalent to which fraction?','3/2',['2/3','3/2','1/5','15/100'],'150/100 simplifies to 3/2.']
+];
+let index=0,correct=0,answered=false;
+const $=id=>document.getElementById(id);
+function render(){answered=false;const q=bank[index];$('counter').textContent='Question '+(index+1)+' of '+bank.length;$('progress').value=index;$('question').textContent=q[0];$('feedback').textContent='';$('next').hidden=true;$('options').replaceChildren();q[2].forEach(choice=>{const b=document.createElement('button');b.type='button';b.textContent=choice;b.addEventListener('click',()=>answer(choice));$('options').appendChild(b)})}
+function answer(choice){if(answered)return;answered=true;const q=bank[index],ok=choice===q[1];if(ok)correct++;$('feedback').textContent=(ok?'Correct! ':'Not quite. The answer is '+q[1]+'. ')+q[3];$('options').querySelectorAll('button').forEach(b=>{b.disabled=true;if(b.textContent===q[1])b.style.borderColor='#27603a'});$('next').hidden=false;$('next').textContent=index===bank.length-1?'See results →':'Next question →'}
+$('next').addEventListener('click',()=>{index++;if(index<bank.length){render();return}$('progress').value=bank.length;$('counter').textContent='Completed';$('question').textContent='Your results';$('options').replaceChildren();$('feedback').textContent='You answered '+correct+' of '+bank.length+' correctly ('+Math.round(correct/bank.length*100)+'%). Review the explanations and try again to strengthen your understanding.';$('next').hidden=true;const restart=document.createElement('button');restart.textContent='Play again';restart.addEventListener('click',()=>{index=0;correct=0;render()});$('options').appendChild(restart)});
+render();
+})();
+</script></main></body></html>
