@@ -1,7 +1,7 @@
 # Mathematics Course Consistency Sweep
 
-**Review branch:** `audit/math-course-consistency`  
-**Date:** 2026-10-12  
+**Review branch:** `audit/math-course-consistency`
+**Date:** 2026-10-12
 **Courses in scope:** Pre-Algebra, Algebra I, Algebra II, and Geometry.
 
 ## Shared repairs staged
