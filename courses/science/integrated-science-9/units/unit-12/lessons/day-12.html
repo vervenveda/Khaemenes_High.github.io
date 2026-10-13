@@ -1,27 +1,54 @@
 <!doctype html><html lang="en" dir="ltr" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07131d"><title>Day 12: Risk, Reliability & Resilience Laboratory · Khaemenes Science 9</title><link rel="stylesheet" href="../../../course-ui.css"><link rel="stylesheet" href="../unit12.css"><script src="../unit12.js" defer></script><style id="khaemenes-typography-standard">
-/* Khaemenes High typography standard: 55 / 33 / 24 px.
-   Embedded in public HTML for standalone and offline use.
-   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
+   All public pages receive this local, embedded policy for offline use.
+   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
+   Font names are optional installed system fonts; no downloads or third-party font services. */
+html:root:root body {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+html:root:root body :is(button, input, select, textarea) {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+}
+html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
 html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-size:55px !important;
-  line-height:1.15 !important;
-  letter-spacing:.02em !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h1 {
-  font-size:33px !important;
-  line-height:1.2 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 33px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h2,
 html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
 html:root:root body .hero .comment {
-  font-size:24px !important;
-  line-height:1.35 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+/* Do not replace responsive grids or fixed elements; prevent oversized titles from
+   demanding horizontal scrolling on narrow phone and tablet displays. */
+html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
+  min-width: 0;
+}
+@media print {
+  html:root:root body { font-size: 14px !important; }
 }
 </style>
 </head><body><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../../../"><span class="brand-mark">S9</span><span class="brand-copy"><strong>INTEGRATED SCIENCE 9</strong><small>Unit 12 · Sustainable Engineering Capstone</small></span></a><div class="header-actions"><a class="nav-button secondary" href="../../../../../../grades/grade-09/">Grade 9</a><a class="nav-button" href="../">Unit 12</a><button class="icon-button" id="themeToggle" type="button">☼</button></div></div></header><nav class="course-breadcrumb"><div class="wrap"><a href="../../../../../../index.html">High School</a><span>›</span><a href="../../../../../../grades/grade-09/">Grade 9</a><span>›</span><a href="../../../">Science 9</a><span>›</span><a href="../">Unit 12</a><span>›</span><span>Day 12</span></div></nav><main id="main"><article class="card lesson-page"><p class="eyebrow">Unit 12 · Day 12</p><h1>Risk, Reliability & Resilience Laboratory</h1><p class="unit-lead">Calculate screening risk, mitigation benefit, series-system reliability, and recovery performance.</p><div class="lesson-meta"><span class="pill">45–75 minutes</span><span class="pill">Engineering evidence</span><span class="pill">Safe capstone boundaries</span></div><section class="lesson-section"><h2>Learning objectives</h2><ul><li>Calculate probability × severity screening scores</li><li>Calculate reliability for independent series components</li><li>Compare prevention, redundancy, monitoring, and recovery strategies</li></ul></section><section class="lesson-section"><h2>Materials</h2><ul><li>Notebook or digital portfolio</li><li>Calculator, supplied records, and low-risk modeling materials</li><li>Only teacher- or parent-approved prototype materials and procedures</li></ul></section><div class="safety-panel"><strong>Capstone safety and authorization</strong><p>No mains electricity, combustion, pressure vessels, structural loading of people, medical testing, human-subject experiments, private-data collection without consent, road testing, water-entry, hazardous chemicals, biological culturing, weapons, drones, lasers, radio transmitters, construction-site access, or deployment into public infrastructure is required. Use models, simulations, supplied data, and low-risk prototypes.</p></div><div class="source-panel"><strong>Evidence and accountability standard</strong><p>Record source, stakeholder, baseline, unit, method, calibration, trial count, uncertainty, assumptions, conflicts of interest, system boundary, impacts, and who is authorized to accept residual risk. Distinguish measured, calculated, modeled, estimated, assumed, projected, and preferred values.</p></div><section class="lesson-section"><h2>Screening scores</h2><p>Ordinal risk scores help prioritize review but do not represent precise probabilities.</p></section><section class="lesson-section"><h2>Series systems</h2><p>If every independent component must work, system reliability is the product of component reliabilities.</p></section><section class="lesson-section"><h2>Residual risk</h2><p>A control can reduce risk without eliminating it; remaining risk must be documented and accepted by authorized stakeholders.</p></section><section class="lesson-section"><h2>Portfolio evidence</h2><p>Complete the Risk & Reliability Laboratory and its 8-question check.</p><div class="response-lines"></div></section><div class="model-note"><strong>Model boundary</strong><p>Decision matrices, prototypes, simulations, life-cycle estimates, risk scores, and optimization results depend on selected boundaries, data quality, assumptions, stakeholder priorities, and explored alternatives. They support decisions but do not certify a product or eliminate professional review.</p></div><div class="pathway-panel"><strong>Pathway choices</strong><div class="pathway-grid"><div><strong>Foundation</strong>Use guided specifications, supplied data, and one-variable comparisons.</div><div><strong>Core</strong>Complete all matrices, tests, life-cycle accounts, risks, and revisions.</div><div><strong>Extended</strong>Run sensitivity analysis, alternate boundaries, and multi-objective optimization.</div></div></div><div class="lesson-actions no-print"><a class="btn" href="day-11.html">Previous</a><button class="btn primary complete-button" data-page-complete="day12" type="button">Mark Lesson Complete</button><a class="btn" href="day-13.html">Next</a><button class="btn" id="printPage" type="button">Print Lesson</button></div></article></main><footer class="footer"><div class="wrap footer-inner"><span>Khaemenes Academy™ · International Integrated Science 9</span><span>Unit 12 · Sustainable Engineering Capstone</span></div></footer><div class="toast" id="toast" role="status" hidden></div></body></html>

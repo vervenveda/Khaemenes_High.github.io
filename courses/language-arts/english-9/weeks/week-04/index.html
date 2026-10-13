@@ -12,29 +12,56 @@
 .lesson-detail{padding:clamp(18px,3vw,30px)}.lesson-head{display:grid;gap:8px;margin-bottom:20px}.lesson-head h2{margin:0;color:var(--navy);font:444 clamp(2rem,4vw,3.6rem)/1.02 var(--serif)}.lesson-question{margin:0;color:var(--blue);font:444 clamp(1.1rem,2vw,1.45rem)/1.35 var(--serif)}.lesson-meta{display:flex;gap:6px;flex-wrap:wrap}.lesson-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,.42fr);gap:14px;align-items:start}.lesson-panel{padding:17px;border:1px solid var(--soft-line);border-radius:7px;background:var(--panel)}.lesson-panel h3{margin:0 0 10px;color:var(--navy);font:444 20px/1.2 var(--serif)}.lesson-panel p{margin:8px 0;color:var(--muted)}.flow{display:grid;gap:11px}.flow-step{padding:14px 15px;border-left:3px solid var(--blue);background:var(--paper);border-radius:0 7px 7px 0}.flow-step strong{display:block;margin-bottom:5px;color:var(--navy);font-size:12px;letter-spacing:.07em;text-transform:uppercase}.flow-step p,.flow-step ul,.flow-step ol{margin:6px 0;color:var(--muted)}.flow-step ul,.flow-step ol{padding-left:21px}.text-passage{padding:20px;border:1px solid var(--line);border-radius:7px;background:var(--paper)}.text-passage h3{margin:0 0 12px;color:var(--navy);font:444 26px/1.15 var(--serif)}.text-passage p{margin:0 0 13px;color:var(--ink);line-height:1.84}.text-passage p:last-child{margin-bottom:0}.media-wrap{aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line);border-radius:7px;background:#000}.media-wrap iframe{width:100%;height:100%;border:0}.media-note{margin:9px 0 0;color:var(--muted);font-size:11px}.tool-rule{padding:14px;border-left:4px solid var(--green);background:color-mix(in srgb,var(--green) 9%,var(--panel));color:var(--muted)}.tool-rule strong{color:var(--ink)}.mastery-check{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.mastery-item{padding:10px;border:1px solid var(--soft-line);border-radius:7px;background:var(--paper);color:var(--muted);font-size:12px}.pathway-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.pathway{padding:12px;border:1px solid var(--soft-line);border-radius:7px;background:var(--paper)}.pathway strong{display:block;color:var(--navy);font-size:11px;letter-spacing:.08em;text-transform:uppercase}.pathway p{margin:6px 0 0;color:var(--muted);font-size:12px}.rubric-mini{width:100%;border-collapse:collapse;font-size:12px}.rubric-mini th,.rubric-mini td{padding:9px;border:1px solid var(--line);vertical-align:top}.rubric-mini th{background:var(--navy);color:var(--paper);text-align:left}.day-card .btn{width:100%;margin-top:auto}.day-card{gap:8px}.day-card ul{margin:0 0 8px}.day-card p{font-size:12px}.day-card h3{font-size:20px}.lesson-response{margin-top:12px}.lesson-response textarea{width:100%;min-height:130px;padding:12px;border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink);resize:vertical}.lesson-response label{display:block;margin-bottom:6px;color:var(--muted);font-size:12px;font-weight:444}.micro-lab{padding:13px;border:1px dashed var(--gold);border-radius:7px;background:color-mix(in srgb,var(--gold) 7%,var(--paper))}.micro-lab strong{color:var(--navy)}.week-arc{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:18px}.week-arc span{padding:9px 6px;border:1px solid var(--soft-line);border-radius:7px;background:var(--panel);color:var(--muted);font-size:10px;text-align:center;text-transform:uppercase;letter-spacing:.05em}.source-card{padding:15px;border:1px solid var(--soft-line);border-radius:7px;background:var(--paper)}.source-card h4{margin:0 0 7px;color:var(--navy);font:444 18px/1.2 var(--serif)}.source-card p{margin:6px 0;color:var(--muted)}.source-card a{font-size:11px}.compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.respect-note{padding:14px;border-left:4px solid var(--gold);background:color-mix(in srgb,var(--gold) 8%,var(--panel));color:var(--muted)}.respect-note strong{color:var(--ink)}.resource-shelf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.resource-shelf .source-card .btn{margin-top:8px;width:100%}.mini-media{display:grid;gap:10px;margin-top:12px}@media(max-width:900px){.lesson-grid{grid-template-columns:1fr}.pathway-grid,.compare-grid,.resource-shelf{grid-template-columns:1fr}.week-arc{grid-template-columns:1fr 1fr}.mastery-check{grid-template-columns:1fr}}@media print{.media-wrap,.media-note{display:none!important}.lesson-detail{break-inside:auto}.flow-step,.lesson-panel,.text-passage,.source-card{break-inside:avoid}}
 </style>
 <style id="khaemenes-typography-standard">
-/* Khaemenes High typography standard: 55 / 33 / 24 px.
-   Embedded in public HTML for standalone and offline use.
-   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
+   All public pages receive this local, embedded policy for offline use.
+   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
+   Font names are optional installed system fonts; no downloads or third-party font services. */
+html:root:root body {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+html:root:root body :is(button, input, select, textarea) {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+}
+html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
 html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-size:55px !important;
-  line-height:1.15 !important;
-  letter-spacing:.02em !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h1 {
-  font-size:33px !important;
-  line-height:1.2 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 33px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h2,
 html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
 html:root:root body .hero .comment {
-  font-size:24px !important;
-  line-height:1.35 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+/* Do not replace responsive grids or fixed elements; prevent oversized titles from
+   demanding horizontal scrolling on narrow phone and tablet displays. */
+html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
+  min-width: 0;
+}
+@media print {
+  html:root:root body { font-size: 14px !important; }
 }
 </style>
 </head>

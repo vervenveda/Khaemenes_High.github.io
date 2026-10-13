@@ -2,29 +2,56 @@
 <script src="../../../shared/course-entry-contract.js?v=20261012"></script>
 <script src="../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="algebra-1"></script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Algebra I Applied Labs</title><link rel="stylesheet" href="../assets/styles.css"><style id="khaemenes-typography-standard">
-/* Khaemenes High typography standard: 55 / 33 / 24 px.
-   Embedded in public HTML for standalone and offline use.
-   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
+   All public pages receive this local, embedded policy for offline use.
+   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
+   Font names are optional installed system fonts; no downloads or third-party font services. */
+html:root:root body {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+html:root:root body :is(button, input, select, textarea) {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+}
+html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
 html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-size:55px !important;
-  line-height:1.15 !important;
-  letter-spacing:.02em !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h1 {
-  font-size:33px !important;
-  line-height:1.2 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 33px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h2,
 html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
 html:root:root body .hero .comment {
-  font-size:24px !important;
-  line-height:1.35 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+/* Do not replace responsive grids or fixed elements; prevent oversized titles from
+   demanding horizontal scrolling on narrow phone and tablet displays. */
+html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
+  min-width: 0;
+}
+@media print {
+  html:root:root body { font-size: 14px !important; }
 }
 </style>
 </head><body><a class="skip" href="#main">Skip to main content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../"><span class="brand-mark">A1</span><span class="brand-copy"><strong>KHAEMENES ACADEMY</strong><small>Applied Mathematics Labs</small></span></a><nav class="header-nav"><a href="../">Course Home</a><a href="#labs">Labs</a><a href="../projects/">Projects</a></nav></div></header><main id="main"><section class="hero"><div class="wrap"><p class="eyebrow">Applied Mathematical Evidence</p><h1>Algebra I Labs</h1><p class="lead">Six complete investigations connect equations, functions, data, modelling, finance, optimization, and decision-making to observable evidence.</p><div class="notice"><strong>Lab evidence standard:</strong> each lab preserves learner work locally and uses a 0–4 evaluator rubric. A complete review of at least 80% records lab mastery. Lab mastery is supplemental evidence and does not silently bypass or replace lesson, weekly, unit, Midterm, Final, or capstone gates.</div></div></section><section class="block" id="labs"><div class="wrap"><div class="card-grid"><a class="card" href="linear-model-lab.html"><p class="eyebrow">Lab 01 · Unit 06</p><h3>Linear Model Lab</h3><p>Use paired data, build and test a linear model, interpret slope/intercept, inspect residuals, and defend limitations.</p><span class="btn primary">Open Lab</span></a><a class="card" href="systems-constraints-lab.html"><p class="eyebrow">Lab 02 · Unit 07</p><h3>Systems &amp; Constraints Lab</h3><p>Translate simultaneous resource limits, identify the feasible region, compare candidate solutions, and justify a decision.</p><span class="btn primary">Open Lab</span></a><a class="card" href="exponential-change-lab.html"><p class="eyebrow">Lab 03 · Unit 08</p><h3>Exponential Change Lab</h3><p>Compare additive and percent change, measure divergence, test a threshold, and analyze sensitivity to the growth rate.</p><span class="btn primary">Open Lab</span></a><a class="card" href="quadratic-design-lab.html"><p class="eyebrow">Lab 04 · Unit 10</p><h3>Quadratic Design Lab</h3><p>Derive a constrained-area quadratic, interpret its forms and physical domain, verify the maximum, and defend the design.</p><span class="btn primary">Open Lab</span></a><a class="card" href="financial-evidence-lab.html"><p class="eyebrow">Lab 05 · Unit 12</p><h3>Financial Evidence Lab</h3><p>Model compounding, fees, time, break-even behavior, and assumptions instead of ranking options by headline rate.</p><span class="btn primary">Open Lab</span></a><a class="card" href="integrated-modelling-lab.html"><p class="eyebrow">Lab 06 · Unit 13</p><h3>Integrated Modelling Lab</h3><p>Practice the complete modelling cycle: frame, constrain, represent, calculate, validate, test sensitivity, and defend limitations.</p><span class="btn primary">Open Lab</span></a></div><p class="notice">Browser-local lab records are editable, unsigned learning evidence. Evaluator review is required for the lab-mastery mark; these records are not self-authenticating transcripts or credentials.</p></div></section></main></body></html>

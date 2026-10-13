@@ -2,29 +2,56 @@
 <script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
 <script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="pre-algebra"></script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Teacher Guide · Unit 12</title><link rel="stylesheet" href="assets/unit.css"><style id="khaemenes-typography-standard">
-/* Khaemenes High typography standard: 55 / 33 / 24 px.
-   Embedded in public HTML for standalone and offline use.
-   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
+   All public pages receive this local, embedded policy for offline use.
+   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
+   Font names are optional installed system fonts; no downloads or third-party font services. */
+html:root:root body {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+html:root:root body :is(button, input, select, textarea) {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+}
+html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
 html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-size:55px !important;
-  line-height:1.15 !important;
-  letter-spacing:.02em !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h1 {
-  font-size:33px !important;
-  line-height:1.2 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 33px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h2,
 html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
 html:root:root body .hero .comment {
-  font-size:24px !important;
-  line-height:1.35 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+/* Do not replace responsive grids or fixed elements; prevent oversized titles from
+   demanding horizontal scrolling on narrow phone and tablet displays. */
+html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
+  min-width: 0;
+}
+@media print {
+  html:root:root body { font-size: 14px !important; }
 }
 </style>
 </head><body><main><section class="hero"><div class="wrap"><p class="eyebrow">Educator Resource</p><h1>Unit 12 Teacher Guide</h1><p class="lead">Three-week pacing, misconceptions, differentiation, ethical data routines, probability simulation, and assessment guidance.</p></div></section><section><div class="wrap grid" style="gap:1rem"><article class="card" style="padding:1.3rem"><h2>Pacing</h2><p>Week 1: questions, sampling, displays, and center. Week 2: variability, comparisons, misleading graphs, and simple probability. Week 3: compound probability, simulation, bias, inference, mastery, and project.</p></article><article class="card" style="padding:1.3rem"><h2>High-priority misconceptions</h2><ul><li>Mean is not always the best “typical” value.</li><li>Range and IQR describe different parts of spread.</li><li>Histogram bars touch because intervals are continuous; bar-graph bars represent separate categories.</li><li>Experimental probability need not equal theoretical probability in a small number of trials.</li><li>Association does not by itself establish causation.</li><li>Random selection and random assignment serve different purposes.</li></ul></article><article class="card" style="padding:1.3rem"><h2>Assessment use</h2><p>Use static items for formative review. Vary values and contexts for high-stakes use. Require written interpretation, source checks, denominators, and uncertainty—not only calculations.</p></article><article class="card" style="padding:1.3rem"><h2>Ethics and privacy</h2><p>Prefer public, fictional, aggregated, or anonymous data. Avoid collecting sensitive personal data. Discuss consent, data minimization, misleading displays, accessibility, and limitations.</p></article></div></section><section><div class="wrap"><article class="card"><p class="eyebrow">Paper Learning</p><h2>Unit 12 Print Center</h2><p>Eight handwriting-friendly data worksheets, cumulative review, evidence decision investigation, and teacher key.</p><a class="btn primary" href="worksheets/index.html">Open Print Center</a></article></div></section></main></body></html>

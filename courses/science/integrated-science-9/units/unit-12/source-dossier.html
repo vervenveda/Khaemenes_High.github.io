@@ -1,27 +1,54 @@
 <!doctype html><html lang="en" dir="ltr" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07131d"><title>Sustainable Engineering Source Dossier · Khaemenes Science 9</title><link rel="stylesheet" href="../../course-ui.css"><link rel="stylesheet" href="unit12.css"><script src="unit12.js" defer></script><style id="khaemenes-typography-standard">
-/* Khaemenes High typography standard: 55 / 33 / 24 px.
-   Embedded in public HTML for standalone and offline use.
-   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
+   All public pages receive this local, embedded policy for offline use.
+   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
+   Font names are optional installed system fonts; no downloads or third-party font services. */
+html:root:root body {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+html:root:root body :is(button, input, select, textarea) {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+}
+html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
 html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-size:55px !important;
-  line-height:1.15 !important;
-  letter-spacing:.02em !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h1 {
-  font-size:33px !important;
-  line-height:1.2 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 33px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h2,
 html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
 html:root:root body .hero .comment {
-  font-size:24px !important;
-  line-height:1.35 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+/* Do not replace responsive grids or fixed elements; prevent oversized titles from
+   demanding horizontal scrolling on narrow phone and tablet displays. */
+html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
+  min-width: 0;
+}
+@media print {
+  html:root:root body { font-size: 14px !important; }
 }
 </style>
 </head><body><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../../"><span class="brand-mark">S9</span><span class="brand-copy"><strong>INTEGRATED SCIENCE 9</strong><small>Unit 12 · Sustainable Engineering Capstone</small></span></a><div class="header-actions"><a class="nav-button secondary" href="../../../../../grades/grade-09/">Grade 9</a><a class="nav-button" href="./">Unit 12</a><button class="icon-button" id="themeToggle" type="button">☼</button></div></div></header><nav class="course-breadcrumb"><div class="wrap"><a href="../../../../../index.html">High School</a><span>›</span><a href="../../../../../grades/grade-09/">Grade 9</a><span>›</span><a href="../../">Science 9</a><span>›</span><a href="./">Unit 12</a><span>›</span><span>Source Dossier</span></div></nav><main id="main"><section class="unit-hero"><div class="unit-shell"><p class="eyebrow">Unit 12 · Standards and source literacy</p><h1>Sustainable Engineering Source Dossier</h1><p class="unit-lead">Use official engineering, design, sustainability, materials, reliability, and resilience sources.</p></div></section><section><div class="unit-shell"><div class="source-grid"><article class="card source-card"><p class="eyebrow">High-school engineering standards</p><h3>NGSS · HS Engineering Design</h3><p>Official criteria, constraints, decomposition, tradeoffs, modeling, simulation, evaluation, and optimization expectations.</p><a class="btn" href="https://www.nextgenscience.org/topic-arrangement/hsengineering-design" target="_blank" rel="noopener">Open Source</a></article><article class="card source-card"><p class="eyebrow">International design syllabus</p><h3>Cambridge IGCSE Design & Technology 0445</h3><p>Official creative problem solving, planning, technical awareness, communication, materials, making, and project expectations.</p><a class="btn" href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-design-and-technology-0445/" target="_blank" rel="noopener">Open Source</a></article><article class="card source-card"><p class="eyebrow">Sustainable engineering</p><h3>UNESCO Engineering for Sustainable Development</h3><p>Official global engineering context connecting design capacity with human needs and Sustainable Development Goals.</p><a class="btn" href="https://www.unesco.org/en/articles/engineering-sustainable-development-delivering-sustainable-development-goals" target="_blank" rel="noopener">Open Source</a></article><article class="card source-card"><p class="eyebrow">Education for sustainability</p><h3>UNESCO ESD for 2030</h3><p>Official framework for informed decisions and action supporting environmental integrity, economic viability, and just societies.</p><a class="btn" href="https://www.unesco.org/en/sustainable-development/education" target="_blank" rel="noopener">Open Source</a></article><article class="card source-card"><p class="eyebrow">Design and preferred futures</p><h3>Australian Curriculum · Design and Technologies 9–10</h3><p>Official design thinking, criteria, sustainability, ethics, project management, and life-cycle thinking context.</p><a class="btn" href="https://v8.australiancurriculum.edu.au/f-10-curriculum/technologies/design-and-technologies/?elaborations=false&isFirstPageLoad=false&scotterms=false&strand=Design+and+Technologies+Processes+and+Production+Skills&year=12976&year=12977" target="_blank" rel="noopener">Open Source</a></article><article class="card source-card"><p class="eyebrow">Materials life cycles</p><h3>US EPA · Sustainable Materials Management</h3><p>Official whole-life-cycle approach to using and reusing materials productively.</p><a class="btn" href="https://www.epa.gov/smm" target="_blank" rel="noopener">Open Source</a></article><article class="card source-card"><p class="eyebrow">Life-cycle assessment</p><h3>US EPA · LCA Principles and Practice</h3><p>Official introduction to goal and scope, inventory, impact assessment, and interpretation.</p><a class="btn" href="https://cfpub.epa.gov/si/si_public_record_report.cfm?dirEntryId=155087" target="_blank" rel="noopener">Open Source</a></article><article class="card source-card"><p class="eyebrow">Systems trustworthiness</p><h3>NIST · Trustworthiness</h3><p>Official systems-engineering context linking privacy, reliability, resilience, safety, and security.</p><a class="btn" href="https://csrc.nist.gov/topics/security-and-privacy/systems-security-engineering/trustworthiness" target="_blank" rel="noopener">Open Source</a></article><article class="card source-card"><p class="eyebrow">Community resilience</p><h3>FEMA · National Resilience Guidance</h3><p>Official whole-community planning context for chronic stresses, shocks, partnerships, and resilience action.</p><a class="btn" href="https://www.fema.gov/emergency-managers/national-preparedness/plan/resilience-guidance" target="_blank" rel="noopener">Open Source</a></article></div><div class="warning"><strong>Source-use rule</strong><p>Record publication date, jurisdiction, method, scope, units, system boundary, assumptions, uncertainty, affected stakeholders, conflicts of interest, and whether a statement is measured, calculated, modeled, estimated, projected, required, or preferred.</p></div><div class="lesson-actions no-print"><button class="btn" id="printPage" type="button">Print Dossier</button><a class="btn primary" href="./">Unit Home</a></div></div></section></main><footer class="footer"><div class="wrap footer-inner"><span>Khaemenes Academy™ · International Integrated Science 9</span><span>Unit 12 · Sustainable Engineering Capstone</span></div></footer><div class="toast" id="toast" role="status" hidden></div></body></html>

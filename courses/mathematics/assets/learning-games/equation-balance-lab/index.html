@@ -6,29 +6,56 @@
 :root{color-scheme:light;--paper:#f4ecda;--card:#fffdf7;--ink:#211c17;--gold:#9a6c28;--line:#c8bda7;--good:#195b39;--bad:#9b3030}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,Arial,sans-serif}main{max-width:940px;margin:auto;padding:24px 16px 65px}h1,h2{font-family:Georgia,serif;letter-spacing:.04em}h1{font-size:clamp(1.9rem,5vw,3rem);margin:0}.eyebrow{color:#694b23;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;font-weight:700}.panel{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:20px;margin:18px 0;box-shadow:0 3px 0 #dfd3bc}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.row>*{flex:0 0 auto}.grow{flex:1}.stat{border:1px solid var(--line);padding:8px 12px;border-radius:7px;background:#f9f2e4}button,select,input{font:inherit;border-radius:7px;border:1px solid #7b684f;padding:10px 12px;background:#fff;color:var(--ink)}button{cursor:pointer;background:#ede0c6;font-weight:650}button:hover{background:#dfc99d}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #285e98;outline-offset:2px}button:disabled{opacity:.55;cursor:not-allowed}.primary{background:#3d352c;color:#fff}.primary:hover{background:#574838}.equation{font:700 clamp(2rem,6vw,3.3rem)/1.4 Georgia,serif;text-align:center;padding:25px 6px}.balance{position:relative;height:110px;margin:5px auto 15px;max-width:420px}.beam{position:absolute;top:32px;left:10%;width:80%;height:8px;background:#8a6b43;border-radius:8px}.post{position:absolute;left:calc(50% - 4px);top:33px;height:64px;width:8px;background:#8a6b43}.base{position:absolute;bottom:4px;left:39%;width:22%;height:8px;background:#8a6b43}.pan{position:absolute;top:41px;width:32%;text-align:center;border-bottom:5px solid #8a6b43;padding:10px 2px;font-size:1.1rem;font-weight:700}.pan.left{left:3%}.pan.right{right:3%}.muted{color:#514a42}.feedback{min-height:54px;border-left:4px solid var(--gold);padding:9px 12px;background:#f5eddd}.feedback.good{border-color:var(--good)}.feedback.bad{border-color:var(--bad)}.history{padding-left:25px}.history li{margin:6px 0}.tiny{font-size:.85rem}.hidden{display:none!important}label{font-weight:650}input[type=number]{width:150px}progress{width:100%;height:16px;accent-color:#7b5a2b}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}@media(max-width:520px){.row>*{flex:1 1 100%}button{width:100%}}
 </style><script src="../../game-return-route.js?v=20261012"></script>
 <style id="khaemenes-typography-standard">
-/* Khaemenes High typography standard: 55 / 33 / 24 px.
-   Embedded in public HTML for standalone and offline use.
-   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
+   All public pages receive this local, embedded policy for offline use.
+   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
+   Font names are optional installed system fonts; no downloads or third-party font services. */
+html:root:root body {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+html:root:root body :is(button, input, select, textarea) {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+}
+html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
 html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-size:55px !important;
-  line-height:1.15 !important;
-  letter-spacing:.02em !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h1 {
-  font-size:33px !important;
-  line-height:1.2 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 33px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h2,
 html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
 html:root:root body .hero .comment {
-  font-size:24px !important;
-  line-height:1.35 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+/* Do not replace responsive grids or fixed elements; prevent oversized titles from
+   demanding horizontal scrolling on narrow phone and tablet displays. */
+html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
+  min-width: 0;
+}
+@media print {
+  html:root:root body { font-size: 14px !important; }
 }
 </style>
 </head><body><main><p class="eyebrow">Khaemenes Academy · Sovereign Mathematics</p><h1>Equation Balance Lab</h1><p>Original offline learning game · Solve equations by preserving equality. No accounts, tracking, third-party scripts, or external game assets.</p>

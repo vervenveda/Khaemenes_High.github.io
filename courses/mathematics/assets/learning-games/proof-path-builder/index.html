@@ -3,29 +3,56 @@
 <script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Proof Path Builder · Khaemenes Academy</title><style>:root{color-scheme:light;--paper:#f7f0df;--ink:#211c16;--gold:#8b6530;--line:#c8b797;--white:#fffdf7}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Georgia,serif}header,main,footer{max-width:1000px;margin:auto;padding:20px}header{border-bottom:2px solid var(--gold)}h1{font-size:clamp(1.8rem,4vw,3rem);margin:0}h2{margin:.3em 0}small,.muted{color:#665b4b}.panel{background:var(--white);border:1px solid var(--line);border-radius:7px;padding:20px;margin:16px 0}button,select{font:inherit;border:1px solid #80673e;border-radius:7px;padding:9px 12px;background:#fffaf0;color:#211c16;cursor:pointer}button:hover,button:focus-visible{outline:2px solid var(--gold)}button:disabled{opacity:.45;cursor:not-allowed}button.primary{background:#29251f;color:#fff}button.choice{width:100%;text-align:left;margin:5px 0}.flex{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.badge{padding:3px 9px;border:1px solid var(--line);border-radius:7px}#diagram{width:100%;max-width:460px;height:220px;background:#fbf8ee;border:1px solid var(--line);border-radius:7px}#feedback{min-height:52px;border-left:4px solid var(--gold);padding:10px;background:#f6f0e1}ol{padding-left:25px}li{margin:7px 0}.correct{border-color:#287046!important;background:#eaf6eb!important}.wrong{border-color:#a33131!important;background:#fff0ee!important}.step{padding:9px;border:1px solid var(--line);border-radius:7px;margin:8px 0}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}footer{font-size:.85rem}</style><script src="../../game-return-route.js?v=20261012"></script>
 <style id="khaemenes-typography-standard">
-/* Khaemenes High typography standard: 55 / 33 / 24 px.
-   Embedded in public HTML for standalone and offline use.
-   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
+   All public pages receive this local, embedded policy for offline use.
+   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
+   Font names are optional installed system fonts; no downloads or third-party font services. */
+html:root:root body {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+html:root:root body :is(button, input, select, textarea) {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+}
+html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
 html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-size:55px !important;
-  line-height:1.15 !important;
-  letter-spacing:.02em !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h1 {
-  font-size:33px !important;
-  line-height:1.2 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 33px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h2,
 html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
 html:root:root body .hero .comment {
-  font-size:24px !important;
-  line-height:1.35 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+/* Do not replace responsive grids or fixed elements; prevent oversized titles from
+   demanding horizontal scrolling on narrow phone and tablet displays. */
+html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
+  min-width: 0;
+}
+@media print {
+  html:root:root body { font-size: 14px !important; }
 }
 </style>
 </head><body><header><div class="muted">KHAEMENES ACADEMY · SOVEREIGN MATHEMATICS</div><h1>Proof Path Builder</h1><div>Build valid geometric arguments, one justified step at a time.</div></header><main><section class="panel"><div class="flex"><label for="mode">Mission</label><select id="mode"><option value="angles">01 · Angle Relationships</option><option value="triangles">02 · Triangle Congruence</option><option value="parallel">03 · Parallel Lines</option><option value="proof">04 · Proof Logic</option></select><button id="new">New proof</button><button id="hint">Hint</button><button id="reset">Reset progress</button><button id="export">Export progress</button></div><p class="flex"><span class="badge" id="score">Mastery: 0%</span><span class="badge" id="streak">Streak: 0</span><span class="badge" id="count">Proof 1</span></p></section><section class="panel"><h2 id="problemTitle">Loading…</h2><p id="given"></p><svg id="diagram" viewBox="0 0 460 220" role="img" aria-labelledby="diagramTitle diagramDesc"><title id="diagramTitle">Geometric illustration</title><desc id="diagramDesc">Illustrative diagram; use the written givens for the proof.</desc><g id="drawing"></g></svg><h3>Proof chain</h3><ol id="chain"></ol><h3 id="prompt">Choose the next justified step</h3><div id="choices"></div><p id="feedback" role="status" aria-live="polite">Choose a statement supported by the givens.</p><div class="flex"><button id="retry" hidden>Try this step again</button><button id="next" class="primary" hidden>Next proof →</button></div></section><section class="panel"><h2>How to play</h2><p>Read the givens and the goal. Select the mathematically valid next statement. Incorrect choices explain why they do not follow. Hints are optional. Finish every step to complete the proof; repeat as often as you like. The diagram is illustrative, not a substitute for the givens.</p><p class="muted">All challenges are authored in this file. The game runs without accounts, third-party scripts, analytics, or network access. Progress stays on this device unless you export it.</p></section></main><footer>© Khaemenes Academy · Jennifer Kay Pearl · Educational use</footer><script>

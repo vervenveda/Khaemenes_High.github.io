@@ -1,27 +1,54 @@
 <!doctype html><html lang="en" dir="ltr" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07131d"><title>Day 14: Analog, Digital Signals, Noise & Information Transfer · Khaemenes Science 9</title><link rel="stylesheet" href="../../../course-ui.css"><link rel="stylesheet" href="../unit09.css"><script src="../unit09.js" defer></script><style id="khaemenes-typography-standard">
-/* Khaemenes High typography standard: 55 / 33 / 24 px.
-   Embedded in public HTML for standalone and offline use.
-   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
+   All public pages receive this local, embedded policy for offline use.
+   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
+   Font names are optional installed system fonts; no downloads or third-party font services. */
+html:root:root body {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+html:root:root body :is(button, input, select, textarea) {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+}
+html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
 html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-size:55px !important;
-  line-height:1.15 !important;
-  letter-spacing:.02em !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h1 {
-  font-size:33px !important;
-  line-height:1.2 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 33px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h2,
 html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
 html:root:root body .hero .comment {
-  font-size:24px !important;
-  line-height:1.35 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+/* Do not replace responsive grids or fixed elements; prevent oversized titles from
+   demanding horizontal scrolling on narrow phone and tablet displays. */
+html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
+  min-width: 0;
+}
+@media print {
+  html:root:root body { font-size: 14px !important; }
 }
 </style>
 </head><body><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../../../"><span class="brand-mark">S9</span><span class="brand-copy"><strong>INTEGRATED SCIENCE 9</strong><small>Unit 09 · Electricity, Waves &amp; Information</small></span></a><div class="header-actions"><a class="nav-button secondary" href="../../../../../../grades/grade-09/">Grade 9</a><a class="nav-button" href="../">Unit 09</a><button class="icon-button" id="themeToggle" type="button">☼</button></div></div></header><nav class="course-breadcrumb"><div class="wrap"><a href="../../../../../../index.html">High School</a><span>›</span><a href="../../../../../../grades/grade-09/">Grade 9</a><span>›</span><a href="../../../">Science 9</a><span>›</span><a href="../">Unit 09</a><span>›</span><span>Day 14</span></div></nav><main id="main"><article class="card lesson-page"><p class="eyebrow">Unit 09 · Day 14</p><h1>Analog, Digital Signals, Noise & Information Transfer</h1><p class="unit-lead">Model how information is encoded, transmitted, corrupted, checked, and recovered.</p><div class="lesson-meta"><span class="pill">45–60 minutes</span><span class="pill">Evidence &amp; models</span><span class="pill">Low-voltage safety</span></div><section class="lesson-section"><h2>Learning objectives</h2><ul><li>Compare analog and digital representations</li><li>Encode information using binary patterns</li><li>Evaluate sampling, noise, error detection, storage, security, and accessibility</li></ul></section><section class="lesson-section"><h2>Materials</h2><ul><li>Notebook or digital record</li><li>Calculator and supplied reference tables</li><li>Optional approved low-voltage circuit kit with adult supervision</li></ul></section><div class="safety-panel"><strong>Electrical, sound, light, and magnet safety</strong><p>Use only approved battery-powered circuits of 6 V or less with current limiting. Never access wall outlets, mains wiring, chargers, power supplies, internal appliance parts, or damaged batteries. Do not short batteries, heat wires, use laser pointers, create loud headphone or speaker exposure, place strong magnets near medical implants, or build improvised radio transmitters.</p></div><div class="source-panel"><strong>Evidence standard</strong><p>Separate measured values, published records, calculations, circuit and wave models, digital simulations, and engineering inferences. State units, conditions, uncertainty, system boundary, and signal assumptions.</p></div><section class="lesson-section"><h2>Analog and digital</h2><p>Analog signals vary continuously; digital systems represent information with discrete symbols.</p></section><section class="lesson-section"><h2>Reliability</h2><p>Thresholding, repeaters, error checks, and redundant encoding can improve recovery from noise.</p></section><section class="lesson-section"><h2>Tradeoffs</h2><p>Digital systems support copying and error detection but introduce sampling limits, data size, energy use, security, privacy, and access concerns.</p></section><section class="lesson-section"><h2>Portfolio evidence</h2><p>Complete the Information Signal Laboratory and its 8-question check.</p><div class="response-lines"></div></section><div class="model-note"><strong>Model boundary</strong><p>Circuit diagrams, field lines, ray diagrams, sinusoidal waves, photons, binary channels, and ideal transformers are purposeful simplifications. They do not show literal scale, all microscopic interactions, every loss mechanism, or complete quantum behavior.</p></div><div class="pathway-panel"><strong>Pathway choices</strong><div class="pathway-grid"><div><strong>Foundation</strong>Use guided circuit tables, diagrams, and one-step equations.</div><div><strong>Core</strong>Complete series/parallel, wave, signal, and energy calculations.</div><div><strong>Extended</strong>Analyze transformer ratios, non-ohmic curves, sampling limits, and model tradeoffs.</div></div></div><div class="lesson-actions no-print"><a class="btn" href="day-13.html">Previous</a><button class="btn primary complete-button" data-page-complete="day14" type="button">Mark Lesson Complete</button><a class="btn" href="day-15.html">Next</a><button class="btn" id="printPage" type="button">Print Lesson</button></div></article></main><footer class="footer"><div class="wrap footer-inner"><span>Khaemenes Academy™ · International Integrated Science 9</span><span>Unit 09 · Electricity, Waves &amp; Information</span></div></footer><div class="toast" id="toast" role="status" hidden></div></body></html>

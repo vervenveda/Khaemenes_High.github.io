@@ -2,29 +2,56 @@
 <script src="../../../shared/course-entry-contract.js?v=20261012"></script>
 <script src="../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="algebra-1"></script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17344a"><title>Systems &amp; Constraints Lab · Khaemenes Algebra I</title><link rel="stylesheet" href="../assets/styles.css"><style id="khaemenes-typography-standard">
-/* Khaemenes High typography standard: 55 / 33 / 24 px.
-   Embedded in public HTML for standalone and offline use.
-   Keep grids, spacing, colors, font families and learner behavior in page styles. */
+/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
+   All public pages receive this local, embedded policy for offline use.
+   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
+   Font names are optional installed system fonts; no downloads or third-party font services. */
+html:root:root body {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+html:root:root body :is(button, input, select, textarea) {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+}
+html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
 html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-size:55px !important;
-  line-height:1.15 !important;
-  letter-spacing:.02em !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h1 {
-  font-size:33px !important;
-  line-height:1.2 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 33px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 html:root:root body h2,
 html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
 html:root:root body .hero .comment {
-  font-size:24px !important;
-  line-height:1.35 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+/* Do not replace responsive grids or fixed elements; prevent oversized titles from
+   demanding horizontal scrolling on narrow phone and tablet displays. */
+html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
+  min-width: 0;
+}
+@media print {
+  html:root:root body { font-size: 14px !important; }
 }
 </style>
 </head><body><a class="skip" href="#main">Skip to main content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../"><span class="brand-mark">A1</span><span class="brand-copy"><strong>KHAEMENES ACADEMY</strong><small>Algebra I · Applied Mathematics Lab</small></span></a><nav class="header-nav"><a href="../">Course Home</a><a href="index.html">Labs</a><a href="../units/unit-07/">Unit 07</a></nav></div></header><main id="main"></main><footer class="footer"><div class="wrap footer-inner"><span>KH-MATH-A1-LAB-02</span><span>Systems · Feasible regions · 80% lab mastery</span></div></footer><script>window.KHAE_ALGEBRA1_LAB={id:"systems-constraints",eyebrow:"Applied Lab 02 · Systems & Constraints",title:"Systems & Constraints Lab",purpose:"Translate simultaneous resource limits into a system, identify feasible choices, and defend a decision using more than one constraint at once.",question:"Which production plans satisfy every resource constraint, and which feasible plan best supports the stated goal?",scenario:"A free community learning booth prepares two take-home resources: activity kits x and reference binders y. Each kit uses 12 minutes of assembly and 8 printed pages. Each binder uses 20 minutes of assembly and 24 printed pages. The team has at most 360 assembly minutes and 480 printed pages, and it wants at least 6 activity kits. A kit contributes 18 impact points and a binder contributes 30 impact points.",data:[["Resource / goal","Activity kit x","Reference binder y","Limit"],["Assembly minutes","12","20","≤ 360"],["Printed pages","8","24","≤ 480"],["Minimum kits","1","0","x ≥ 6"],["Impact points","18","30","maximize within feasible choices"]],objectives:["Define variables and translate verbal limits into linear inequalities.","Graph or otherwise determine the intersection of all feasible constraints.","Test candidate points against every original condition.","Evaluate an objective expression at feasible candidates.","Defend a decision while acknowledging integer and contextual restrictions."],procedure:["Define x and y and write every constraint, including nonnegative/integer restrictions that make sense in context.","Graph the boundary lines and shade the common feasible region, or produce an equivalent table of feasible integer solutions.","Identify boundary intersections/corner points and verify them in the original inequalities.","Evaluate 18x + 30y for the feasible corner points or strongest candidate integer plans.","Recommend one plan and explain how the recommendation would change if assembly time or printing capacity changed."],sections:[{id:"system",title:"Translate the Constraints",prompt:"Write the complete system of inequalities and the impact objective. Explain what each symbol, coefficient, and inequality means in context.",rows:9,full:true},{id:"feasible",title:"Feasible Region",prompt:"Describe or sketch the common feasible region. List the important boundary intersections/corner points and show how you verified that each candidate is feasible.",rows:10},{id:"decision",title:"Evaluate Candidate Plans",prompt:"Calculate the impact score for the important feasible candidates. If a corner point is not an integer, explain how you handled the real-world whole-number requirement.",rows:9},{id:"sensitivity",title:"Constraint Sensitivity",prompt:"Choose one resource limit and change it. Predict which part of the feasible region changes and whether your recommended plan is still best.",rows:8},{id:"defense",title:"Decision Defense",prompt:"Recommend a production plan. Defend it using all constraints, the objective, units, and at least one limitation of the model or impact-point assumption.",rows:9,full:true}],checklist:["Every verbal condition appears as a mathematical constraint.","Boundary lines/solutions are distinguished from the feasible region.","Candidate solutions are checked in the original system.","The objective is evaluated only at feasible plans.","Whole-number and nonnegative restrictions are addressed.","The recommendation includes a sensitivity or limitation statement."],rubric:["Accuracy of variables, equations, and inequalities","Feasible-region representation and verification","Objective calculations and candidate comparison","Sensitivity/constraint reasoning","Decision defense, units, and limitations"]};</script><script src="assets/lab-engine-v1.js"></script></body></html>
