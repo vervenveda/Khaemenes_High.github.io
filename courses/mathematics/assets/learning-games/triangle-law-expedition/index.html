@@ -100,7 +100,7 @@ const includedArea=(b,c,A)=>.5*b*c*Math.sin(rad(A));
 function ambiguousSSA(A,a,b){
  if(!(A>0&&A<180&&a>0&&b>0))return [];
  const ratio=b*Math.sin(rad(A))/a;if(ratio>1+1e-11)return [];
- const B1=deg(Math.asin(clamp(ratio,-1,1)));
+ const B1=deg(Math.asin(ratio>=1-1e-10?1:clamp(ratio,-1,1)));
  const options=[B1,180-B1].filter(B=>B>0&&A+B<180-1e-9);
  return options.filter((B,i)=>options.findIndex(v=>Math.abs(v-B)<1e-8)===i).sort((x,y)=>x-y);
 }
