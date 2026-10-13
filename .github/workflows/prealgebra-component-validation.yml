@@ -37,6 +37,8 @@ jobs:
         run: node courses/mathematics/pre-algebra/tools/validate-study-scorebook.mjs
       - name: Audit local navigation and resource paths
         run: node courses/mathematics/pre-algebra/tools/audit-navigation.mjs
+      - name: Verify dynamic lesson and game return navigation
+        run: node courses/mathematics/pre-algebra/tools/validate-dynamic-game-routes.mjs
       - name: Verify all Pre-Algebra lesson answer choices and original mastery keys
         run: node courses/mathematics/pre-algebra/tools/test-lesson-answer-order.mjs
       - name: Audit JavaScript runtime integrity
