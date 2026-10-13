@@ -25,6 +25,8 @@ jobs:
         run: node courses/mathematics/pre-algebra/tools/validate-components.mjs
       - name: Validate Pre-Algebra assessment depth
         run: node courses/mathematics/pre-algebra/tools/validate-assessment-depth.mjs
+      - name: Audit Pre-Algebra official assessment integrity across all units
+        run: node courses/mathematics/pre-algebra/tools/audit-assessment-integrity.mjs
       - name: Validate Academy mastery gates
         run: node courses/mathematics/pre-algebra/tools/validate-mastery-gates.mjs
       - name: Validate student navigation, theme, pin, and continue paths
