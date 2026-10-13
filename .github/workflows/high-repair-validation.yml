@@ -26,3 +26,5 @@ jobs:
         run: node tools/test-math-game-offline-cache.mjs
       - name: Verify correct-course offline routing and read-only lesson recovery
         run: node tools/test-course-aware-offline-recovery.mjs
+      - name: Verify Algebra II lesson note drafts, recovery and concurrent tab safety
+        run: node tools/test-algebra2-note-preservation.mjs
