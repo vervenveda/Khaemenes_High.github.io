@@ -1,4 +1,14 @@
 /* Grade 9 parchment consistency: presentation only; no learner-state or STOS changes. */
+/* Explicit first-paint title and body typography, even before embedded course overrides. */
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) {
+ font-size:14px!important;
+}
+html:root:root body:is([data-english9-require-entry],[data-science9-require-entry])
+ :is(h1,h2,h3,h4,h5,h6,.brand h1,.hero-title,.page-title) {
+ font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;
+ font-weight:400!important;overflow-wrap:anywhere;
+}
+
 html:root:root {
  --g9-bg: #f4f0e7; --g9-paper: #fffefa; --g9-side: #eee7db;
  --g9-soft: #f8f3e8; --g9-line: #c8beab;

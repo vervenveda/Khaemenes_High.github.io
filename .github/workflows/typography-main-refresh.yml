@@ -1,0 +1,74 @@
+name: Apply High School Typography to Main
+
+# One-shot release maintenance on template changes, keeping all public documents
+# offline/self-contained. No candidate branches, packages, or STOS modifications.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/typography-standard.css"
+      - "tools/apply-typography-standard.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: main-typography-refresh
+  cancel-in-progress: false
+
+jobs:
+  apply-and-validate:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Check out canonical main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+
+      - name: Set up Node for source validation
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Apply typography to public HTML only
+        run: python3 tools/apply-typography-standard.py
+
+      - name: Verify exact typography and Grade 9 parchment
+        run: |
+          python3 tools/apply-typography-standard.py --check
+          node tools/test-sitewide-typography.mjs
+          node tools/test-grade09-visual-consistency.mjs
+          python3 tools/validate-sitewide-routes.py
+          node scripts/validate_learner_scoped_persistence.mjs
+          node tools/test-upper-english-records.mjs
+          git diff --check
+
+      - name: Confirm STOS files are untouched
+        run: |
+          if git diff --name-only | grep -E '(^|/)stos/'; then
+            echo "Refusing to publish changes to STOS files."
+            exit 1
+          fi
+
+      - name: Publish validated public typography directly to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="$(git rev-parse HEAD)"
+          git add -u -- '*.html'
+          if git diff --cached --quiet; then
+            echo "Public typography was already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Apply 55 33 24 14 typography across public High School pages"
+          git fetch origin main
+          if [[ "$(git rev-parse origin/main)" != "$BASE" ]]; then
+            echo "Main changed during typography validation. No remote changes were overwritten."
+            exit 1
+          fi
+          git push origin HEAD:main
