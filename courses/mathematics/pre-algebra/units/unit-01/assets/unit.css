@@ -118,7 +118,8 @@ section{padding-block:var(--space-55)}.section-tight{padding-block:var(--space-3
    This patch standardizes the visible student action without changing
    the existing JavaScript handlers or stored progress keys.
 */
-#submitPractice,#markComplete{color:transparent!important;font-size:0!important;text-shadow:none!important}#submitPractice::after,#markComplete::after{display:inline-flex;align-items:center;justify-content:center;color:var(--ink);font:var(--fw-regular) var(--fs-14)/1.1 var(--font-body);letter-spacing:.08em;text-transform:uppercase}#submitPractice::after{content:"Submit Assignment"}#markComplete::after{content:"Save Lesson Review"}#submitPractice.btn.primary::after,#markComplete.btn.primary::after{color:#fff}#scoreMessage.notice::before{content:"Assignment status: ";color:var(--gold);font-weight:var(--fw-regular)}#practice .section-head .help-text,#practice .help-text{font-size:var(--fs-17);line-height:1.7}
+/* Actual button text supplies visible, accessible and translatable labels. */
+#submitPractice,#markComplete{font-size:1rem;white-space:normal;}#scoreMessage.notice::before{content:"Assignment status: ";color:var(--gold);font-weight:var(--fw-regular)}#practice .section-head .help-text,#practice .help-text{font-size:var(--fs-17);line-height:1.7}
 
 /* =========================================================
    RESPONSIVE AND PRINT RESCUE

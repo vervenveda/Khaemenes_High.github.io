@@ -12,26 +12,8 @@
    This patch standardizes the visible student action without changing
    the existing JavaScript handlers or stored progress keys.
 */
-#submitPractice,
-#markComplete{
-  color:transparent!important;
-  font-size:0!important;
-  text-shadow:none!important;
-}
-#submitPractice::after,
-#markComplete::after{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--text);
-  font:850 1rem/1.1 var(--sans);
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-#submitPractice::after{content:"Submit Assignment";}
-#markComplete::after{content:"Save Lesson Review";}
-#submitPractice.btn.primary::after,
-#markComplete.btn.primary::after{color:#16120a;}
+/* Actual button text supplies visible, accessible and translatable labels. */
+#submitPractice,#markComplete{font-size:1rem;white-space:normal;}
 #scoreMessage.notice::before{
   content:"Assignment status: ";
   color:var(--gold2);

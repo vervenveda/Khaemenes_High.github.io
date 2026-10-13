@@ -49,3 +49,5 @@ jobs:
         run: node courses/mathematics/pre-algebra/tools/audit-runtime-integrity.mjs
       - name: Audit accessibility and printable resources
         run: node courses/mathematics/pre-algebra/tools/audit-accessibility.mjs
+      - name: Verify Pre-Algebra assignment and review accessible names
+        run: node courses/mathematics/pre-algebra/tools/test-lesson-action-accessibility.mjs
