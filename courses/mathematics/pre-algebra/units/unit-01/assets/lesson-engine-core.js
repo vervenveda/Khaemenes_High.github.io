@@ -465,10 +465,10 @@
         <fieldset>
           <legend><span class="question-number">${index + 1}</span>${escapeHTML(check.prompt)}</legend>
           <div class="options">
-            ${(check.options || []).map((option, optionIndex) => `
+            ${QUICK_CHECK_ORDERS[index].map(optionIndex => `
               <label class="option">
                 <input type="radio" name="quick${index}" value="${optionIndex}">
-                <span>${escapeHTML(option)}</span>
+                <span>${escapeHTML(check.options[optionIndex])}</span>
               </label>`).join("")}
           </div>
           <button class="btn compact quick-check-button" type="button" data-check="${index}">Check</button>
@@ -572,6 +572,23 @@
       </tr>`).join("");
   }
 
+  // Each lesson receives one randomized display order per page load. Radio values
+  // remain ORIGINAL option indices, preserving stored drafts and scoring contracts.
+  // Repeat renders do not reshuffle a question underneath a student's answer.
+  function shuffledOrder(question) {
+    const order=(question.options||[]).map((_,i)=>i);
+    for(let i=order.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [order[i],order[j]]=[order[j],order[i]];
+    }
+    if(order.length>1&&order.every((value,i)=>value===i)){
+      [order[0],order[1]]=[order[1],order[0]];
+    }
+    return order;
+  }
+  const QUESTION_ORDERS=(lesson.questions||[]).map(shuffledOrder);
+  const QUICK_CHECK_ORDERS=(lesson.quick_checks||[]).map(shuffledOrder);
+
   function draftForLesson() {
     const draft = progress.practiceDrafts?.[lesson.id];
     return draft && typeof draft === "object" ? draft : {};
@@ -586,10 +603,10 @@
         <fieldset>
           <legend><span class="question-number">${index + 1}</span>${escapeHTML(question.prompt)}</legend>
           <div class="options">
-            ${(question.options || []).map((option, optionIndex) => `
+            ${QUESTION_ORDERS[index].map(optionIndex => `
               <label class="option">
                 <input type="radio" name="q${index}" value="${optionIndex}" ${Number(draft[index]) === optionIndex ? "checked" : ""}>
-                <span>${escapeHTML(option)}</span>
+                <span>${escapeHTML(question.options[optionIndex])}</span>
               </label>`).join("")}
           </div>
           <div class="feedback" id="feedback-${index}" role="status" aria-live="polite" hidden></div>
