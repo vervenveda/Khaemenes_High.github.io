@@ -2210,6 +2210,52 @@
           "wired": true
         }
       ]
+    },
+    "unit-circle-navigator": {
+      "title": "Unit Circle Navigator",
+      "canonical_path": "courses/mathematics/assets/learning-games/unit-circle-navigator/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Eight unit-circle investigation modes: exact π radians, coterminal turns, circle coordinates, acute reference angles/quadrants, symbolic sine/cosine, exact tangent with undefined detection, reciprocal sec/csc/cot, and rotations. Free 15°-step workshop has safe numerical fallbacks for non-special angles; offline local practice never changes official grades.",
+      "placements": [
+        {
+          "course": "algebra-2",
+          "unit": "10",
+          "lesson": "u10-l01",
+          "lesson_title": "Angle Measure, Radians & Coterminal Angles",
+          "mode": "radians",
+          "query": "?course=algebra2&unit=10&lesson=u10-l01&mode=radians",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "10",
+          "lesson": "u10-l02",
+          "lesson_title": "The Unit Circle & Coordinate Definitions",
+          "mode": "coordinates",
+          "query": "?course=algebra2&unit=10&lesson=u10-l02&mode=coordinates",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "10",
+          "lesson": "u10-l03",
+          "lesson_title": "Exact Trigonometric Values & Reference Angles",
+          "mode": "reference",
+          "query": "?course=algebra2&unit=10&lesson=u10-l03&mode=reference",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "10",
+          "lesson": "u10-l04",
+          "lesson_title": "Six Trigonometric Functions & Reciprocal Relationships",
+          "mode": "reciprocal",
+          "query": "?course=algebra2&unit=10&lesson=u10-l04&mode=reciprocal",
+          "wired": true
+        }
+      ]
     }
   }
 }
