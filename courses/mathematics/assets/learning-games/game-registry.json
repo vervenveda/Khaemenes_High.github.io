@@ -2311,6 +2311,61 @@
           "wired": true
         }
       ]
+    },
+    "trigonometric-identity-forge": {
+      "title": "Trigonometric Identity Forge",
+      "canonical_path": "courses/mathematics/assets/learning-games/trigonometric-identity-forge/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Nine trigonometric-identity and equation pathways: Pythagorean, reciprocal, quotient, symbolic proof transformations, sum, difference, double angle, half angle with signs, and two-solution trig equations on [0°,360°). Offline SVG coordinate evidence, no false claim that numerical samples constitute proof; local per-lesson 80% first-try practice and JSON export; no official grade or STOS interactions.",
+      "placements": [
+        {
+          "course": "algebra-2",
+          "unit": "11",
+          "lesson": "u11-l01",
+          "lesson_title": "Fundamental, Reciprocal & Pythagorean Identities",
+          "mode": "fundamental",
+          "query": "?course=algebra2&unit=11&lesson=u11-l01&mode=fundamental",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "11",
+          "lesson": "u11-l02",
+          "lesson_title": "Verifying Identities with Equivalent Transformations",
+          "mode": "proof",
+          "query": "?course=algebra2&unit=11&lesson=u11-l02&mode=proof",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "11",
+          "lesson": "u11-l03",
+          "lesson_title": "Sum and Difference Identities",
+          "mode": "sum",
+          "query": "?course=algebra2&unit=11&lesson=u11-l03&mode=sum",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "11",
+          "lesson": "u11-l04",
+          "lesson_title": "Double-Angle and Half-Angle Identities",
+          "mode": "double",
+          "query": "?course=algebra2&unit=11&lesson=u11-l04&mode=double",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "11",
+          "lesson": "u11-l05",
+          "lesson_title": "Solving Trigonometric Equations on Intervals",
+          "mode": "equations",
+          "query": "?course=algebra2&unit=11&lesson=u11-l05&mode=equations",
+          "wired": true
+        }
+      ]
     }
   }
 }

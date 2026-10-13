@@ -1,0 +1,337 @@
+<!doctype html><html lang="en"><head>
+<script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5eddc">
+<title>Trigonometric Identity Forge · Khaemenes Academy</title>
+<style>
+:root{color-scheme:light;--paper:#f5eddc;--card:#fffdf8;--ink:#2c241c;--border:#ccb899;--blue:#28658c;--amber:#aa7136;--good:#22674b;--bad:#a2413a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0%,#fffdf8,transparent 55%),var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1170px;margin:auto;padding:24px 16px 62px}.eyebrow{font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;color:#765029;font-weight:620}
+h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.22}h1{font-size:clamp(2.05rem,4.7vw,3.1rem);margin:.15em 0}h2{font-size:1.36rem;margin:0 0 10px}.lead{max-width:900px;color:#5e4d3e}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:18px;box-shadow:0 3px 0 #e9deca}
+.layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(315px,1fr);gap:16px;margin:16px 0}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.stats{margin-top:14px}.stat{background:#f9f0e2;border:1px solid var(--border);border-radius:7px;padding:7px 10px}
+label{display:block;font-weight:560}input,select,button{font:inherit;padding:9px 10px;border:1px solid #897354;border-radius:7px;background:white;color:var(--ink)}
+input[type=number]{width:100%;max-width:180px}input[type=checkbox]{accent-color:var(--blue)}
+button{background:#e8d9c0;cursor:pointer}button:hover{background:#ddc8a4}button.primary{background:#48392c;color:white}button:disabled{opacity:.54;cursor:not-allowed}
+:focus-visible{outline:3px solid #27618a;outline-offset:2px}
+#plot{display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:7px;background:#fffefb}
+#diagramNote{color:#554939;font-size:.89rem;min-height:52px}
+#identity{white-space:pre-line;overflow-wrap:anywhere;font:600 1.12rem/1.55 Georgia,serif}
+.legend{display:inline-block;border:1px solid var(--border);border-radius:7px;padding:4px 8px;margin:4px 4px 0 0;font-size:.81rem}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}.fields>div{background:#faf2e7;border:1px solid #e0ceb0;padding:10px;border-radius:7px}
+#feedback{padding:13px;min-height:84px;background:#f8f0e1;border-left:5px solid var(--amber);border-radius:4px}#feedback.good{border-color:var(--good)}#feedback.bad{border-color:var(--bad)}
+#celebrate{color:var(--good);min-height:24px;font-weight:600}#scenario{font-weight:570}.small{color:#665647;font-size:.89rem}
+.evidence{background:#f9f1e4;border:1px solid var(--border);padding:10px;border-radius:7px}
+progress{width:100%;accent-color:var(--good)}#history{max-height:170px;overflow:auto}a{color:#245d84}
+footer{color:#655747;font-size:.85rem;margin-top:28px}[hidden]{display:none!important}
+@media(max-width:840px){.layout{grid-template-columns:1fr}}
+@media(max-width:520px){.fields{grid-template-columns:1fr}.panel{padding:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+<script src="../../game-return-route.js?v=20261012"></script>
+</head><body><main>
+<p class="eyebrow">Khaemenes Academy · Algebra II · Identity and Equation Reasoning</p>
+<h1>Trigonometric Identity Forge</h1>
+<p class="lead">Forge mathematical reasoning through reciprocal, quotient, Pythagorean, sum-and-difference, double-angle, and half-angle identities. Then solve trigonometric equations on a specified interval. Numerical evidence supports understanding; symbolic equivalence establishes an identity.</p>
+<section class="panel"><div class="row">
+<label for="mode">Practice mission <select id="mode">
+<option value="fundamental">Pythagorean identity &amp; complements</option>
+<option value="reciprocal">Reciprocal identities</option>
+<option value="quotient">Quotient identities</option>
+<option value="proof">Identity proof · valid symbolic step</option>
+<option value="sum">Sum-angle identities</option>
+<option value="difference">Difference-angle identities</option>
+<option value="double">Double-angle identities</option>
+<option value="half">Half-angle identities &amp; signs</option>
+<option value="equations">Solve sin / cos equations on [0°, 360°)</option>
+</select></label>
+<button id="new" class="primary" type="button">New mission</button>
+<button id="inspect" type="button">Inspect identity</button>
+<label for="quiet">Low stimulation <input id="quiet" type="checkbox"></label>
+</div><p id="context" class="small">Browser-local, unaffiliated with official course grades. All examples use mathematical models.</p></section>
+<div class="row stats">
+<span class="stat">Solved <b id="solved">0</b></span>
+<span class="stat">Checked <b id="checked">0</b></span>
+<span class="stat">Unaided first-try <b id="accuracy">—</b></span>
+<span class="stat">Best streak <b id="streak">0</b></span>
+<span class="stat">80% practice <b id="mastery">In progress</b></span>
+</div>
+<div class="layout">
+<section class="panel"><h2>Unit-circle evidence</h2>
+<svg id="plot" viewBox="0 0 620 435" role="img" aria-labelledby="plotTitle plotDesc">
+<title id="plotTitle">Unit-circle relationship for trigonometric identity</title>
+<desc id="plotDesc">Blue radius shows the first angle. Amber radius shows a transformed, combined or paired angle when relevant. Horizontal and vertical components are cosine and sine. Exact numeric descriptions appear below.</desc>
+<g id="grid"></g><g id="vectors"></g></svg>
+<p><span class="legend">Blue · θ or α</span><span class="legend">Amber · β, 2θ or partner solution</span></p>
+<p id="diagramNote" aria-live="polite"></p><p id="identity" aria-live="polite"></p>
+<div id="inspection" class="evidence" hidden>
+<h2>Evidence vs. proof</h2>
+<p class="small" id="inspectionText"></p>
+<p class="small">Sampling coordinates can expose a mistake, but it cannot prove an equation for every angle. A proof uses valid algebra and an identity, with domain restrictions respected.</p>
+</div>
+</section>
+<section class="panel"><h2>Identity workbench</h2>
+<p id="scenario"></p><p id="prompt"></p>
+<div class="fields">
+<div><label for="answer">First result <small id="firstLabel">Value</small></label><input id="answer" type="number" step="any" inputmode="decimal" autocomplete="off"></div>
+<div id="secondBlock"><label for="second">Second result <small id="secondLabel">Value</small></label><input id="second" type="number" step="any" inputmode="decimal" autocomplete="off"></div>
+</div>
+<div id="choiceBlock" hidden><label for="choice" id="choiceLabel">Valid symbolic transformation</label><select id="choice"></select></div>
+<p class="small" id="precision">Enter decimals to two places (±0.035 tolerance), including zeros. For equation solutions enter angles in degrees, in ascending order. Undefined trigonometric expressions are excluded from these numeric challenges.</p>
+<div class="row"><button id="check" class="primary" type="button">Check reasoning</button><button id="hint" type="button">Hint</button><button id="worked" type="button">Worked proof / solution</button><button id="next" type="button" disabled>Next mission →</button></div>
+<p id="feedback" role="status" aria-live="polite">Check the equation, then provide your reasoning.</p><p id="celebrate" aria-live="polite"></p>
+</section></div>
+<section class="panel"><h2>Local practice journal</h2><progress id="progress" max="10" value="0"></progress>
+<p class="small">At least eight unaided first-try successes across the last ten checked missions meets the practice goal. Incorrect attempts never reset a problem. Hints and worked examples allow correction without counting as an unaided first try. Official course mastery is assessed separately.</p>
+<div class="row"><button id="export" type="button">Export progress JSON</button><button id="reset" type="button">Reset current mission pathway (confirm)</button><a href="../../../index.html">Mathematics home</a></div>
+<ol id="history" aria-label="Recent missions"></ol></section>
+<footer>© Jennifer Kay Pearl · Khaemenes Academy · Vanilla HTML/CSS/JS · Local-first, offline-capable · No third-party packages, tracking or STOS backend dependencies.</footer>
+</main>
+<script>
+(()=>{'use strict';
+// PURE_MODEL_BEGIN
+const PI=Math.PI;
+const DEG=[30,45,60,120,135,150,210,225,240,300,315,330];
+const HALF=[30,45,60,90,120,135,150,180,210,240,270,300,330];
+const near=(a,b,eps=.035)=>Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=eps;
+const pick=(list,rng)=>list[Math.floor(rng()*list.length)];
+const rad=deg=>deg*PI/180;
+const normalize=deg=>((deg%360)+360)%360;
+const components=deg=>({c:Math.abs(Math.cos(rad(deg)))<1e-12?0:Math.cos(rad(deg)),s:Math.abs(Math.sin(rad(deg)))<1e-12?0:Math.sin(rad(deg))});
+const quotient=(a,b)=>Math.abs(b)<1e-12?null:a/b;
+const reciprocal=a=>Math.abs(a)<1e-12?null:1/a;
+const pythagorean=deg=>{const v=components(deg);return {sin2:v.s*v.s,cos2:v.c*v.c,sum:v.s*v.s+v.c*v.c};};
+const sumAngle=(a,b)=>({s:Math.sin(rad(a))*Math.cos(rad(b))+Math.cos(rad(a))*Math.sin(rad(b)),
+ c:Math.cos(rad(a))*Math.cos(rad(b))-Math.sin(rad(a))*Math.sin(rad(b))});
+const diffAngle=(a,b)=>({s:Math.sin(rad(a))*Math.cos(rad(b))-Math.cos(rad(a))*Math.sin(rad(b)),
+ c:Math.cos(rad(a))*Math.cos(rad(b))+Math.sin(rad(a))*Math.sin(rad(b))});
+const doubleAngle=deg=>({s:2*Math.sin(rad(deg))*Math.cos(rad(deg)),c:Math.cos(rad(deg))**2-Math.sin(rad(deg))**2});
+const halfAngle=deg=>{
+ const h=normalize(deg)/2,sgnS=Math.sin(rad(h))<0?-1:1,sgnC=Math.cos(rad(h))<0?-1:1;
+ return {s:sgnS*Math.sqrt(Math.max(0,(1-Math.cos(rad(deg)))/2)),
+  c:sgnC*Math.sqrt(Math.max(0,(1+Math.cos(rad(deg)))/2))};
+};
+const proofCatalog=[
+ {id:'pythagorean',lhs:'1 − sin²θ',right:'cos²θ',step:'Subtract sin²θ from sin²θ + cos²θ = 1.',wrong:['sin²θ','1 + cos²θ','tan²θ'],evaluate:deg=>components(deg).c**2},
+ {id:'tan',lhs:'sinθ / cosθ',right:'tanθ',step:'Apply tanθ = sinθ/cosθ where cosθ ≠ 0.',wrong:['cotθ','secθ','sinθ + cosθ'],evaluate:deg=>quotient(components(deg).s,components(deg).c)},
+ {id:'sec',lhs:'1 / cosθ',right:'secθ',step:'Apply secθ = 1/cosθ where cosθ ≠ 0.',wrong:['cscθ','cosθ','tanθ'],evaluate:deg=>reciprocal(components(deg).c)},
+ {id:'onePlusTan',lhs:'1 + tan²θ',right:'sec²θ',step:'Divide sin²θ + cos²θ = 1 by cos²θ (cosθ ≠ 0).',wrong:['csc²θ','sin²θ','1 − sec²θ'],evaluate:deg=>1+(quotient(components(deg).s,components(deg).c))**2},
+ {id:'onePlusCot',lhs:'1 + cot²θ',right:'csc²θ',step:'Divide sin²θ + cos²θ = 1 by sin²θ (sinθ ≠ 0).',wrong:['sec²θ','cos²θ','1 − csc²θ'],evaluate:deg=>1+(quotient(components(deg).c,components(deg).s))**2}
+];
+function equationSolutions(fn,deg){
+ const d=normalize(deg),other=fn==='sin'?normalize(180-d):normalize(360-d);
+ return [d,other].sort((a,b)=>a-b);
+}
+function makeTask(mode,rng=Math.random){
+ const task={mode};
+ if(mode==='fundamental'){task.deg=pick(DEG,rng);}
+ else if(mode==='reciprocal'){task.deg=pick(DEG,rng);task.fn=pick(['sec','csc'],rng);}
+ else if(mode==='quotient'){task.deg=pick(DEG,rng);}
+ else if(mode==='proof'){task.deg=pick(DEG,rng);task.proofId=pick(proofCatalog.map(x=>x.id),rng);}
+ else if(mode==='sum'||mode==='difference'){task.a=pick(DEG,rng);task.b=pick([30,45,60,90,120,135,150],rng);}
+ else if(mode==='double'){task.deg=pick(DEG,rng);}
+ else if(mode==='half'){task.deg=pick(HALF,rng);}
+ else if(mode==='equations'){task.fn=pick(['sin','cos'],rng);task.deg=pick(DEG,rng);}
+ else throw Error('Unknown identity mission '+mode);
+ task.id=JSON.stringify(task);return task;
+}
+function expected(t){
+ const v=components(t.deg||0);
+ switch(t.mode){
+ case 'fundamental':return {one:v.s*v.s,two:1-v.s*v.s};
+ case 'reciprocal':return {one:t.fn==='sec'?reciprocal(v.c):reciprocal(v.s),two:t.fn==='sec'?v.c:v.s};
+ case 'quotient':return {one:quotient(v.s,v.c),two:quotient(v.c,v.s)};
+ case 'proof':{
+  const p=proofCatalog.find(x=>x.id===t.proofId);
+  return {one:p.evaluate(t.deg),choice:p.right};
+ }
+ case 'sum':return {one:sumAngle(t.a,t.b).s,two:sumAngle(t.a,t.b).c};
+ case 'difference':return {one:diffAngle(t.a,t.b).s,two:diffAngle(t.a,t.b).c};
+ case 'double':return {one:doubleAngle(t.deg).s,two:doubleAngle(t.deg).c};
+ case 'half':return {one:halfAngle(t.deg).s,two:halfAngle(t.deg).c};
+ case 'equations':{const xs=equationSolutions(t.fn,t.deg);return {one:xs[0],two:xs[1]};}
+ }
+ return {};
+}
+function correct(t,a,b,choice=''){
+ const want=expected(t);
+ if(!near(a,want.one))return false;
+ if('two' in want&&!near(b,want.two))return false;
+ if('choice' in want&&choice!==want.choice)return false;
+ return true;
+}
+// PURE_MODEL_END
+window.TrigIdentityForgeCore=Object.freeze({DEG,HALF,near,normalize,components,quotient,reciprocal,pythagorean,sumAngle,diffAngle,doubleAngle,halfAngle,proofCatalog,equationSolutions,makeTask,expected,correct});
+const $=id=>document.getElementById(id),params=new URLSearchParams(location.search);
+const MODES=['fundamental','reciprocal','quotient','proof','sum','difference','double','half','equations'];
+const context=[params.get('course')||'standalone',params.get('unit')||'',params.get('lesson')||''].map(s=>s.replace(/[^a-z0-9_-]/gi,'_')).join('|');
+let mode=MODES.includes(params.get('mode'))?params.get('mode'):'fundamental',task=null,record,streak=0;
+const fresh=()=>({solved:0,attempted:0,firstTries:0,bestStreak:0,outcomes:[],history:[],recent:[],task:null,checked:false,wrong:false,helped:false,entry:{one:'',two:'',choice:''}});
+const key=()=>['KHAE_TRIG_IDENTITY_FORGE_V1',context,mode].join('|');
+const fmt=(v,d=4)=>Number.isFinite(v)?String(+v.toFixed(d)):'undefined';
+function load(){
+ record=fresh();try{const data=JSON.parse(localStorage.getItem(key())||'null');
+ if(data&&Number.isFinite(data.solved)&&Number.isFinite(data.attempted)&&Array.isArray(data.recent)&&Array.isArray(data.history)){
+  record={...record,...data,recent:data.recent.slice(-30),history:data.history.slice(-10),outcomes:(data.outcomes||[]).slice(-10),entry:{...record.entry,...(data.entry||{})}};
+ }}catch{}
+ task=record.task||null;streak=0;
+}
+function save(){record.task=task;try{localStorage.setItem(key(),JSON.stringify(record));}catch{$('context').textContent='Local storage unavailable. Export JSON to preserve your practice.';}}
+function message(str,status=''){$('feedback').textContent=str;$('feedback').className=status;$('celebrate').textContent='';}
+function challenge(){
+ record.checked=false;record.wrong=false;record.helped=false;record.entry={one:'',two:'',choice:''};$('inspection').hidden=true;
+ const seen=new Set(record.recent);let candidate=null;
+ for(let i=0;i<160;i++){const test=makeTask(mode);if(!seen.has(test.id)){candidate=test;break;}}
+ if(!candidate){record.recent=[];candidate=makeTask(mode);}
+ task=candidate;record.recent.push(candidate.id);record.recent=record.recent.slice(-30);
+ show();message('Work on this mission at your own pace. Mistakes do not restart it.');save();
+}
+function proof(){return proofCatalog.find(x=>x.id===task.proofId);}
+function situation(){
+ const t=task;
+ if(mode==='fundamental')return ['At θ='+t.deg+'°, use the Pythagorean identity sin²θ + cos²θ = 1.',
+  'Find sin²θ and then 1−sin²θ.','sin²θ','1 − sin²θ'];
+ if(mode==='reciprocal')return ['At θ='+t.deg+'°, calculate '+t.fn+'θ using its reciprocal identity.',
+  'Give '+t.fn+'θ and the corresponding base function '+(t.fn==='sec'?'cos':'sin')+'θ.','Reciprocal value','Base trig value'];
+ if(mode==='quotient')return ['At θ='+t.deg+'°, compare tangent and cotangent.',
+  'Use tanθ=sinθ/cosθ and cotθ=cosθ/sinθ. These angles keep both denominators nonzero.','tan θ','cot θ'];
+ if(mode==='proof')return ['Prove the symbolic equivalence: '+proof().lhs+' ≡ ?',
+  'Choose the correct expression reached by a valid identity step. Then evaluate its value at θ='+t.deg+'° as a numerical CHECK—not as the proof.','Numerical check at '+t.deg+'°',''];
+ if(mode==='sum')return ['Two directed angles α='+t.a+'° and β='+t.b+'° are combined.',
+  'Using the sum-angle identities, find sin(α+β) and cos(α+β).','sin(α+β)','cos(α+β)'];
+ if(mode==='difference')return ['Two angles α='+t.a+'° and β='+t.b+'° are compared.',
+  'Using difference-angle identities, find sin(α−β) and cos(α−β).','sin(α−β)','cos(α−β)'];
+ if(mode==='double')return ['For θ='+t.deg+'°, use formulas for 2θ.',
+  'Find sin(2θ) and cos(2θ) using identities, not only calculator substitution.','sin(2θ)','cos(2θ)'];
+ if(mode==='half')return ['Find exact-value components for θ/2 when θ='+t.deg+'° and θ/2='+t.deg/2+'°.',
+  'Use half-angle formulas and choose signs from the quadrant of θ/2. Find sin(θ/2) and cos(θ/2).','sin(θ/2)','cos(θ/2)'];
+ return ['Solve '+t.fn+'θ = '+fmt(t.fn==='sin'?components(t.deg).s:components(t.deg).c,5)+' for θ on the interval [0°,360°).',
+  'Give both distinct solutions in ASCENDING order, in degrees. 360° is excluded.','Smaller solution (°)','Larger solution (°)'];
+}
+function explanation(){
+ const t=task,e=expected(t);
+ if(mode==='fundamental')return 'For every real θ, sin²θ+cos²θ=1. At '+t.deg+'°, sin²θ='+fmt(e.one,5)+' and 1−sin²θ='+fmt(e.two,5)+'=cos²θ. Identity holds for all angles, not just this one.';
+ if(mode==='reciprocal')return (t.fn==='sec'?'secθ=1/cosθ':'cscθ=1/sinθ')+' on its defined domain. At '+t.deg+'°, '+t.fn+'θ='+fmt(e.one,5)+' and the denominator value is '+fmt(e.two,5)+'.';
+ if(mode==='quotient')return 'tanθ=sinθ/cosθ='+fmt(e.one,5)+' and cotθ=cosθ/sinθ='+fmt(e.two,5)+'. Both are defined at this angle. Their product is 1.';
+ if(mode==='proof')return proof().step+' Thus '+proof().lhs+' ≡ '+proof().right+' for all angles where both expressions are defined. The sample value at θ='+t.deg+'° is '+fmt(e.one,5)+', which checks but does not establish the identity.';
+ if(mode==='sum')return 'sin(α+β)=sinα cosβ+cosα sinβ='+fmt(e.one,5)+'. cos(α+β)=cosα cosβ−sinα sinβ='+fmt(e.two,5)+'.';
+ if(mode==='difference')return 'sin(α−β)=sinα cosβ−cosα sinβ='+fmt(e.one,5)+'. cos(α−β)=cosα cosβ+sinα sinβ='+fmt(e.two,5)+'.';
+ if(mode==='double')return 'sin2θ=2sinθ cosθ='+fmt(e.one,5)+'. cos2θ=cos²θ−sin²θ=1−2sin²θ=2cos²θ−1='+fmt(e.two,5)+'.';
+ if(mode==='half')return 'sin(θ/2)=±√((1−cosθ)/2)='+fmt(e.one,5)+' and cos(θ/2)=±√((1+cosθ)/2)='+fmt(e.two,5)+'. The signs come from θ/2='+t.deg/2+'°, not from θ alone.';
+ return 'Within [0°,360°), '+t.fn+'θ='+fmt(t.fn==='sin'?components(t.deg).s:components(t.deg).c,5)+' has precisely two distinct solutions: '+e.one+'° and '+e.two+'°. For sine, θ and 180°−θ share a value; for cosine, θ and 360°−θ share a value (after normalization).';
+}
+function setupChoices(){
+ const choice=$('choice');choice.replaceChildren();
+ const p=proof();
+ const options=[p.right,...p.wrong].sort((a,b)=>a.localeCompare(b));
+ for(const [v,title] of [['','Choose a valid identity transformation'],...options.map(x=>[x,x])]){
+  const opt=document.createElement('option');opt.value=v;opt.textContent=title;choice.appendChild(opt);
+ }
+}
+function stats(){
+ $('solved').textContent=String(record.solved);$('checked').textContent=String(record.attempted);
+ $('accuracy').textContent=record.attempted?Math.round(100*record.firstTries/record.attempted)+'%':'—';
+ $('streak').textContent=String(record.bestStreak);$('progress').value=record.outcomes.length;
+ $('mastery').textContent=record.outcomes.length===10&&record.outcomes.filter(Boolean).length>=8?'Achieved':'In progress';
+ $('history').replaceChildren();for(const h of record.history.slice(-10).reverse()){const li=document.createElement('li');li.textContent=h;$('history').appendChild(li);}
+}
+function show(){
+ const text=situation();$('mode').value=mode;$('scenario').textContent=text[0];$('prompt').textContent=text[1];
+ $('firstLabel').textContent=text[2];$('secondLabel').textContent=text[3];
+ $('secondBlock').hidden=mode==='proof';$('choiceBlock').hidden=mode!=='proof';
+ if(mode==='proof')setupChoices();
+ $('answer').value=record.entry.one;$('second').value=record.entry.two;$('choice').value=record.entry.choice;
+ $('check').disabled=record.checked;$('hint').disabled=record.checked;$('worked').disabled=record.checked;$('next').disabled=!record.checked;
+ $('identity').textContent=mode==='fundamental'?'sin²θ + cos²θ = 1':
+ mode==='reciprocal'?'secθ=1/cosθ · cscθ=1/sinθ (nonzero denominators)':
+ mode==='quotient'?'tanθ=sinθ/cosθ · cotθ=cosθ/sinθ':
+ mode==='proof'?'Valid equivalent transformations are true across their common domain.':
+ mode==='sum'?'sin(α+β)=sinαcosβ+cosαsinβ\ncos(α+β)=cosαcosβ−sinαsinβ':
+ mode==='difference'?'sin(α−β)=sinαcosβ−cosαsinβ\ncos(α−β)=cosαcosβ+sinαsinβ':
+ mode==='double'?'sin2θ=2sinθcosθ\ncos2θ=cos²θ−sin²θ':
+ mode==='half'?'sin(θ/2)=±√((1−cosθ)/2)\ncos(θ/2)=±√((1+cosθ)/2)':
+ 'Solve on [0°,360°); include each distinct solution once.';
+ stats();draw();
+}
+const cx=310,cy=216,r=162;
+function draw(){
+ const t=task;if(!t)return;
+ let deg=t.deg||0,second=null;
+ if(mode==='sum'){deg=t.a;second=t.a+t.b;}
+ else if(mode==='difference'){deg=t.a;second=t.a-t.b;}
+ else if(mode==='double')second=2*t.deg;
+ else if(mode==='half')second=t.deg/2;
+ else if(mode==='equations')second=expected(t).two;
+ else if(mode==='proof')second=null;
+ const one=components(deg);
+ let svg='<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="#fdfcf8" stroke="#b9aa91" stroke-width="2"/>'+
+  '<line x1="62" x2="558" y1="'+cy+'" y2="'+cy+'" stroke="#887b68" stroke-width="2"/>'+
+  '<line x1="'+cx+'" x2="'+cx+'" y1="22" y2="409" stroke="#887b68" stroke-width="2"/>'+
+  '<text x="565" y="207" font-size="14" fill="#64533f">cos</text><text x="320" y="18" font-size="14" fill="#64533f">sin</text>';
+ for(let d=0;d<360;d+=30){const p=components(d);svg+='<circle cx="'+(cx+r*p.c)+'" cy="'+(cy-r*p.s)+'" r="3" fill="#b6aa95"/>';}
+ const vector=(v,color,txt)=>{
+  const x=cx+r*v.c,y=cy-r*v.s;
+  return '<line x1="'+cx+'" y1="'+cy+'" x2="'+x+'" y2="'+y+'" stroke="'+color+'" stroke-width="4"/>'+
+   '<line x1="'+x+'" y1="'+cy+'" x2="'+x+'" y2="'+y+'" stroke="'+color+'" stroke-dasharray="5 4" stroke-width="1.5"/>'+
+   '<circle cx="'+x+'" cy="'+y+'" r="7" fill="'+color+'" stroke="#fffefa" stroke-width="2"/>'+
+   '<text x="'+(x+9)+'" y="'+(y-10)+'" fill="'+color+'" font-size="12">'+txt+'</text>';
+ };
+ svg+=vector(one,'#28658c','θ');
+ if(second!==null)svg+=vector(components(second),'#aa7136','result');
+ $('grid').innerHTML=svg;$('vectors').innerHTML='';
+ $('diagramNote').textContent='Blue ray: '+deg+'°, coordinates (cos,sin)=('+fmt(one.c,4)+', '+fmt(one.s,4)+'). '+
+ (second===null?'':('Amber ray: '+normalize(second)+'°, coordinates=('+fmt(components(second).c,4)+', '+fmt(components(second).s,4)+'). '))+
+ 'The diagram illustrates one or two angles; a symbolic proof must hold for all valid angles.';
+}
+function check(){
+ if(!task||record.checked)return;
+ const raw=$('answer').value.trim(),raw2=$('second').value.trim();
+ const a=raw===''?NaN:Number(raw),b=raw2===''?NaN:Number(raw2);
+ if(!Number.isFinite(a)||(!$('secondBlock').hidden&&!Number.isFinite(b))){
+  message('Enter all required finite numbers; blank fields are not zero.','bad');return;
+ }
+ const ok=correct(task,a,b,$('choiceBlock').hidden?'':$('choice').value);
+ if(!record.wrong){record.attempted++;record.outcomes.push(ok&&!record.helped);record.outcomes=record.outcomes.slice(-10);}
+ if(ok){
+  record.solved++;record.checked=true;
+  if(!record.wrong&&!record.helped){record.firstTries++;streak++;}else streak=0;
+  record.bestStreak=Math.max(record.bestStreak,streak);
+  record.history.push(mode+' · solved '+task.id.slice(0,44));record.history=record.history.slice(-10);
+  show();message('Correct! '+explanation(),'good');
+  if(!$('quiet').checked&&!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches))$('celebrate').textContent='✦ Identity reasoning complete ✦';
+ }else{record.wrong=true;streak=0;message('Try this same case again. Check the angle signs, the selected identity, the denominator and whether the equation interval includes the endpoint.','bad');stats();}
+ save();
+}
+function hint(){
+ if(!task||record.checked)return;record.helped=true;
+ const tips={
+ fundamental:'Move sin²θ to the other side of sin²θ+cos²θ=1.',
+ reciprocal:'sec=1/cos; csc=1/sin. Evaluate the base function before taking its reciprocal.',
+ quotient:'tan=sin/cos and cot=cos/sin. Pay attention to signs in different quadrants.',
+ proof:'Choose a symbolic transformation valid for all angles in the common domain; substituting an angle is only a check.',
+ sum:'In the cosine SUM identity, the sine product has a MINUS sign.',
+ difference:'In the cosine DIFFERENCE identity, the sine product has a PLUS sign.',
+ double:'sin(2θ)=2sinθcosθ and cos(2θ)=cos²θ−sin²θ.',
+ half:'Square roots give magnitudes. Determine the signs using the quadrant of θ/2.',
+ equations:'Find the reference angle and both quadrants with the required sign. Write solutions between 0° inclusive and 360° exclusive.'
+ };message(tips[mode]);save();
+}
+function worked(){if(!task||record.checked)return;record.helped=true;message('Worked reasoning: '+explanation()+' Now verify by entering the answer.');save();}
+function changeMode(m){if(!MODES.includes(m))return;mode=m;load();if(task)show();else challenge();$('inspection').hidden=true;}
+$('mode').addEventListener('change',e=>changeMode(e.target.value));
+$('new').addEventListener('click',challenge);$('next').addEventListener('click',challenge);
+$('check').addEventListener('click',check);$('hint').addEventListener('click',hint);$('worked').addEventListener('click',worked);
+$('inspect').addEventListener('click',()=>{
+ if(!task)return;
+ $('inspection').hidden=!$('inspection').hidden;
+ $('inspectionText').textContent=$('inspection').hidden?'':explanation();
+});
+for(const [id,field] of [['answer','one'],['second','two'],['choice','choice']])$(id).addEventListener(id==='choice'?'change':'input',e=>{record.entry[field]=e.target.value;save();});
+$('reset').addEventListener('click',()=>{if(!confirm('Clear only this mission pathway? Formal grades and other courses remain untouched.'))return;try{localStorage.removeItem(key());}catch{}record=fresh();challenge();});
+$('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({schema:1,game:'trigonometric-identity-forge',mode,context,progress:record,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='trigonometric-identity-forge-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);});
+$('context').textContent='Lesson context: '+context.replace(/\|/g,' / ')+' · learner-scoped local practice; formal grades unchanged.';
+load();if(task)show();else challenge();
+})();
+</script></body></html>
