@@ -80,6 +80,9 @@
       });
       return;
     }
+    // A shared launcher already owns the companion card for this lesson.
+    // Do not add a second generic card while its content is being rendered.
+    if (document.querySelector('script[data-game][data-course]')) return;
     if (document.querySelector(".math-standard-game")) return;
     const slug = chooseGame();
     const section = document.createElement("section");
