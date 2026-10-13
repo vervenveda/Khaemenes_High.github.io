@@ -1,0 +1,331 @@
+<!doctype html><html lang="en"><head>
+<script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5eddb">
+<title>Triangle Law Expedition · Khaemenes Academy</title>
+<style>
+:root{color-scheme:light;--paper:#f5eddb;--card:#fffdf8;--ink:#2c241c;--line:#c9b899;--blue:#28658a;--amber:#ad7131;--green:#206747;--bad:#a43e38}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0%,#fffdf7,transparent 54%),var(--paper);color:var(--ink);font:16px/1.52 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1170px;margin:auto;padding:22px 16px 62px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.79rem;font-weight:650;color:#75502d}
+h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.21}h1{font-size:clamp(2.1rem,4.9vw,3.1rem);margin:.14em 0}h2{font-size:1.35rem;margin:0 0 11px}.lead{max-width:900px;color:#5d4d3d}
+.panel{background:var(--card);padding:18px;border:1px solid var(--line);border-radius:7px;box-shadow:0 3px 0 #e9ddc8}
+.layout{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(310px,1fr);gap:16px;margin:16px 0}.row{display:flex;align-items:center;flex-wrap:wrap;gap:9px}.stats{margin-top:15px}
+.stat{padding:8px 11px;border:1px solid var(--line);background:#f9f0e2;border-radius:7px}label{display:block;font-weight:550}
+input,select,button{font:inherit;color:var(--ink);background:white;border:1px solid #89714d;border-radius:7px;padding:9px 10px}
+input[type=number]{max-width:190px;width:100%}input[type=range]{width:100%;accent-color:var(--amber);padding:4px}input[type=checkbox]{accent-color:var(--blue)}
+button{background:#e8d9c0;cursor:pointer}button:hover{background:#dcc7a3}button.primary{background:#49382a;color:white}button:disabled{opacity:.53;cursor:not-allowed}
+:focus-visible{outline:3px solid #28658a;outline-offset:2px}
+#diagram{width:100%;height:auto;display:block;background:#fffefb;border:1px solid var(--line);border-radius:7px}
+#description{font-size:.9rem;color:#564a3d;min-height:47px}#formula{font:600 1.12rem/1.55 Georgia,serif;white-space:pre-line;overflow-wrap:anywhere}
+.legend{display:inline-block;border:1px solid var(--line);padding:4px 8px;margin:4px 4px 0 0;border-radius:7px;font-size:.81rem}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}.fields>div{background:#f9f1e5;border:1px solid #e0ceb2;border-radius:7px;padding:10px}
+#scenario{font-weight:560}#feedback{min-height:83px;padding:12px;background:#f8f0e2;border-left:5px solid var(--amber);border-radius:4px}#feedback.good{border-color:var(--green)}#feedback.bad{border-color:var(--bad)}
+#celebrate{min-height:25px;color:var(--green);font-weight:650}.small{font-size:.89rem;color:#625344}
+#workshop{background:#faf2e5;border:1px solid var(--line);border-radius:7px;padding:12px}.controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+progress{width:100%;accent-color:var(--green)}#history{max-height:165px;overflow:auto}a{color:#245d84}
+footer{font-size:.85rem;color:#655746;margin-top:26px}[hidden]{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr}}
+@media(max-width:530px){.fields,.controls{grid-template-columns:1fr}.panel{padding:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}}
+@media print{button,#workshop,.stats{display:none!important}.panel{break-inside:avoid}body{background:white}}
+</style><script src="../../game-return-route.js?v=20261012"></script></head><body><main>
+<p class="eyebrow">Khaemenes Academy · Algebra II · Triangles &amp; Navigation</p>
+<h1>Triangle Law Expedition</h1>
+<p class="lead">Investigate the Law of Sines, the ambiguous SSA case, the Law of Cosines, Heron's formula, triangular areas, and bearings. Every challenge explains when its formula applies, and corrections never restart the problem.</p>
+<section class="panel"><div class="row">
+<label for="mode">Mission pathway <select id="mode">
+<option value="sines">Law of Sines · missing side and angle</option>
+<option value="ssa-count">Ambiguous SSA · zero, one or two triangles</option>
+<option value="ssa-pair">Ambiguous SSA · find both possibilities</option>
+<option value="cosine-sas">Law of Cosines · two sides and included angle</option>
+<option value="cosine-sss">Law of Cosines · find unknown angles</option>
+<option value="heron">Heron's formula · area from three sides</option>
+<option value="area">Area · two sides and included angle</option>
+<option value="bearings">Compass bearings · east and north components</option>
+<option value="navigation">Two-leg navigation · displacement and bearing</option>
+</select></label>
+<button id="new" class="primary" type="button">New expedition</button>
+<button id="explore" type="button">Triangle workshop</button>
+<label for="quiet">Low stimulation <input id="quiet" type="checkbox"></label>
+</div><p id="context" class="small">Local independent practice. Official student grades and existing lesson records remain unchanged.</p></section>
+<div class="row stats">
+<span class="stat">Completed <b id="solved">0</b></span><span class="stat">Checked <b id="attempted">0</b></span>
+<span class="stat">Unaided first-try <b id="accuracy">—</b></span><span class="stat">Best streak <b id="streak">0</b></span>
+<span class="stat">80% practice <b id="mastery">In progress</b></span>
+</div>
+<div class="layout">
+<section class="panel"><h2>Triangle &amp; navigation diagram</h2>
+<svg id="diagram" viewBox="0 0 640 440" role="img" aria-labelledby="diagramTitle diagramDesc">
+<title id="diagramTitle">Triangle and vector expedition diagram</title>
+<desc id="diagramDesc">Blue lines show the constructed triangle or compass route. Amber lines show an alternate ambiguous-case solution or compass guide. Numeric side lengths, angles, directions, and areas appear in the text beneath the diagram.</desc>
+<g id="draw"></g></svg>
+<p><span class="legend">Blue · first triangle or route</span><span class="legend">Amber · second possibility or compass reference</span></p>
+<p id="description" aria-live="polite"></p><p id="formula" aria-live="polite"></p>
+<div id="workshop" hidden><h2>Free SAS triangle workshop</h2>
+<p class="small">Change the included angle A and the two adjacent sides b and c. Explore side a from the Law of Cosines and area from ½bc sin A. Exploration does not affect scores.</p>
+<div class="controls">
+<div><label for="angleSlider">A: <output id="angleOut">60°</output></label><input id="angleSlider" type="range" min="15" max="165" step="5" value="60"></div>
+<div><label for="sideB">Side b: <output id="sideBOut">8</output></label><input id="sideB" type="range" min="3" max="18" step="1" value="8"></div>
+<div><label for="sideC">Side c: <output id="sideCOut">10</output></label><input id="sideC" type="range" min="3" max="18" step="1" value="10"></div>
+</div></div>
+</section>
+<section class="panel"><h2>Investigation workbench</h2>
+<p id="scenario"></p><p id="prompt"></p>
+<div class="fields">
+<div><label for="answer">First answer <small id="firstLabel">Number</small></label><input id="answer" type="number" step="any" inputmode="decimal" autocomplete="off"></div>
+<div id="secondBlock"><label for="second">Second answer <small id="secondLabel">Number</small></label><input id="second" type="number" step="any" inputmode="decimal" autocomplete="off"></div>
+</div>
+<p class="small" id="precision">Round lengths, areas and angles to two decimal places (±0.035 accepted). Bearings are measured clockwise from north. If two angles are requested, enter them in ascending order.</p>
+<div class="row"><button id="check" class="primary" type="button">Check reasoning</button><button id="hint" type="button">Hint</button><button id="worked" type="button">Worked solution</button><button id="next" type="button" disabled>Next expedition →</button></div>
+<p id="feedback" role="status" aria-live="polite">Use the diagram and check the geometry.</p><p id="celebrate" aria-live="polite"></p>
+</section></div>
+<section class="panel"><h2>Private practice journal</h2><progress id="progress" value="0" max="10"></progress>
+<p class="small">The latest ten checked missions determine the independent 80% practice goal. Incorrect answers, hints, browser refreshes and the workshop do not restart a mission. Practice never changes official lesson grades.</p>
+<div class="row"><button id="export" type="button">Export JSON progress</button><button id="reset" type="button">Reset this pathway (confirm)</button><a href="../../../index.html">Mathematics home</a></div><ol id="history" aria-label="Recent expeditions"></ol>
+</section>
+<footer>© Jennifer Kay Pearl · Khaemenes Academy · Standalone offline-capable HTML/CSS/JS · No external packages, telemetry or STOS backend dependencies.</footer>
+</main><script>
+(()=>{'use strict';
+// PURE_MODEL_BEGIN
+const PI=Math.PI,rad=d=>d*PI/180,deg=r=>r*180/PI;
+const near=(a,b,eps=.035)=>Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=eps;
+const pick=(a,rng)=>a[Math.floor(rng()*a.length)];
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const normalize=d=>((d%360)+360)%360;
+const lawSines=(knownSide,knownOpposite,otherOpposite)=>knownSide*Math.sin(rad(otherOpposite))/Math.sin(rad(knownOpposite));
+const lawCosines=(b,c,A)=>Math.sqrt(Math.max(0,b*b+c*c-2*b*c*Math.cos(rad(A))));
+const angleCosines=(a,b,c)=>deg(Math.acos(clamp((b*b+c*c-a*a)/(2*b*c),-1,1)));
+const heron=(a,b,c)=>{if(a<=0||b<=0||c<=0||a+b<=c||a+c<=b||b+c<=a)return null;const s=(a+b+c)/2;return Math.sqrt(Math.max(0,s*(s-a)*(s-b)*(s-c)));};
+const includedArea=(b,c,A)=>.5*b*c*Math.sin(rad(A));
+function ambiguousSSA(A,a,b){
+ if(!(A>0&&A<180&&a>0&&b>0))return [];
+ const ratio=b*Math.sin(rad(A))/a;if(ratio>1+1e-11)return [];
+ const B1=deg(Math.asin(clamp(ratio,-1,1)));
+ const options=[B1,180-B1].filter(B=>B>0&&A+B<180-1e-9);
+ return options.filter((B,i)=>options.findIndex(v=>Math.abs(v-B)<1e-8)===i).sort((x,y)=>x-y);
+}
+const bearingComponents=(length,bearing)=>({east:length*Math.sin(rad(bearing)),north:length*Math.cos(rad(bearing))});
+const bearingFrom=(east,north)=>normalize(deg(Math.atan2(east,north)));
+const resultant=(legs)=>legs.reduce((out,v)=>{const d=bearingComponents(v.length,v.bearing);return {east:out.east+d.east,north:out.north+d.north};},{east:0,north:0});
+const TRIANGLES=[[3,4,5],[5,5,6],[5,7,8],[6,8,10],[7,8,9],[8,9,13],[4,5,6],[9,10,11],[10,10,12]];
+function makeTask(mode,rng=Math.random){
+ const R=(a,b)=>a+Math.floor(rng()*(b-a+1)),t={mode};
+ switch(mode){
+ case 'sines':{t.A=pick([30,40,45,50,60,65,75],rng);t.B=pick([35,45,50,60,70,80],rng);if(t.A+t.B>=175)t.B=35;t.a=R(5,16);break;}
+ case 'ssa-count':{
+  t.A=pick([30,40,110],rng);
+  t.b=t.A>90?8:10;t.a=pick(t.A>90?[4,6,8,10,12,15]:[3,4,5,7,8,9,10,12,15],rng);break;
+ }
+ case 'ssa-pair':{
+  t.A=pick([30,40],rng);t.b=10;t.a=pick([7,8,9],rng);break;
+ }
+ case 'cosine-sas':{t.b=R(4,16);t.c=R(4,16);t.A=pick([35,45,60,75,90,105,120,135],rng);break;}
+ case 'cosine-sss':{[t.a,t.b,t.c]=pick(TRIANGLES,rng);break;}
+ case 'heron':{[t.a,t.b,t.c]=pick(TRIANGLES,rng);break;}
+ case 'area':{t.b=R(4,17);t.c=R(4,17);t.A=pick([30,40,45,60,70,75,90,110,120,135],rng);break;}
+ case 'bearings':{t.length=R(4,22);t.bearing=pick([0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330],rng);break;}
+ case 'navigation':{
+  t.legs=Array.from({length:2},()=>({length:R(4,19),bearing:pick([0,30,45,60,90,120,150,180,210,240,270,300,330],rng)}));
+  const v=resultant(t.legs);
+  if(Math.hypot(v.east,v.north)<.5)t.legs[1].bearing=normalize(t.legs[1].bearing+60);
+  break;
+ }
+ default:throw Error('Unknown expedition mode '+mode);
+ }
+ t.id=JSON.stringify(t);return t;
+}
+function expected(t){
+ switch(t.mode){
+ case 'sines':{const C=180-t.A-t.B;return {one:C,two:lawSines(t.a,t.A,C)};}
+ case 'ssa-count':return {one:ambiguousSSA(t.A,t.a,t.b).length};
+ case 'ssa-pair':{const B=ambiguousSSA(t.A,t.a,t.b);return {one:B[0],two:B[1]};}
+ case 'cosine-sas':return {one:lawCosines(t.b,t.c,t.A),two:includedArea(t.b,t.c,t.A)};
+ case 'cosine-sss':return {one:angleCosines(t.a,t.b,t.c),two:angleCosines(t.b,t.a,t.c)};
+ case 'heron':{const s=(t.a+t.b+t.c)/2;return {one:s,two:heron(t.a,t.b,t.c)};}
+ case 'area':return {one:includedArea(t.b,t.c,t.A),two:t.b*Math.sin(rad(t.A))};
+ case 'bearings':{const v=bearingComponents(t.length,t.bearing);return {one:v.east,two:v.north};}
+ case 'navigation':{const v=resultant(t.legs);return {one:Math.hypot(v.east,v.north),two:bearingFrom(v.east,v.north)};}
+ }
+ return null;
+}
+const correct=(t,one,two)=>{const e=expected(t);return !!e&&near(one,e.one)&&(!('two' in e)||near(two,e.two));};
+// PURE_MODEL_END
+window.TriangleLawCore=Object.freeze({near,rad,deg,normalize,lawSines,lawCosines,angleCosines,heron,includedArea,ambiguousSSA,bearingComponents,bearingFrom,resultant,makeTask,expected,correct});
+const $=id=>document.getElementById(id),params=new URLSearchParams(location.search);
+const MODES=['sines','ssa-count','ssa-pair','cosine-sas','cosine-sss','heron','area','bearings','navigation'];
+let mode=MODES.includes(params.get('mode'))?params.get('mode'):'sines',task=null,record,streak=0,exploring=false;
+const context=[params.get('course')||'standalone',params.get('unit')||'',params.get('lesson')||''].map(x=>x.replace(/[^a-z0-9_-]/gi,'_')).join('|');
+const blank=()=>({solved:0,attempted:0,firstTries:0,bestStreak:0,outcomes:[],history:[],recent:[],task:null,wrong:false,checked:false,helped:false,entry:{one:'',two:''}});
+const key=()=>['KHAE_TRIANGLE_EXPEDITION_V1',context,mode].join('|');
+const fmt=(v,n=3)=>Number.isFinite(v)?String(+v.toFixed(n)):'undefined';
+function load(){
+ record=blank();try{const saved=JSON.parse(localStorage.getItem(key())||'null');if(saved&&Number.isFinite(saved.solved)&&Number.isFinite(saved.attempted)&&Array.isArray(saved.recent)&&Array.isArray(saved.history)){
+ record={...record,...saved,outcomes:(saved.outcomes||[]).slice(-10),history:saved.history.slice(-10),recent:saved.recent.slice(-30),entry:{...record.entry,...(saved.entry||{})}};
+ }}catch{}
+ task=record.task||null;streak=0;
+}
+function save(){record.task=task;try{localStorage.setItem(key(),JSON.stringify(record));}catch{$('context').textContent='Local storage unavailable; export JSON to preserve progress.';}}
+function status(text,kind=''){$('feedback').textContent=text;$('feedback').className=kind;$('celebrate').textContent='';}
+function challenge(){
+ exploring=false;record.checked=false;record.wrong=false;record.helped=false;record.entry={one:'',two:''};
+ const seen=new Set(record.recent);let candidate;
+ for(let i=0;i<180;i++){const t=makeTask(mode);if(!seen.has(t.id)){candidate=t;break;}}
+ if(!candidate){record.recent=[];candidate=makeTask(mode);}
+ task=candidate;record.recent.push(task.id);record.recent=record.recent.slice(-30);
+ show();status('Use the diagram and your formulas. Mistakes will not restart the problem.');save();
+}
+function question(){
+ const t=task;
+ switch(mode){
+ case 'sines':return ['Triangle ABC has A='+t.A+'°, B='+t.B+'°, and side a='+t.a+' opposite angle A.',
+ 'Find angle C and side c opposite C using the angle sum and Law of Sines.','Angle C (°)','Side c'];
+ case 'ssa-count':return ['The SSA measurements are A='+t.A+'°, opposite side a='+t.a+', and another side b='+t.b+'.',
+ 'How many DISTINCT nondegenerate triangles are possible: 0, 1, or 2?','Number of triangles',''];
+ case 'ssa-pair':return ['Ambiguous SSA: A='+t.A+'°, a='+t.a+', b='+t.b+'. Two different triangles satisfy this information.',
+ 'Find both possible values of angle B in ascending order.','Smaller B (°)','Larger B (°)'];
+ case 'cosine-sas':return ['Two sides b='+t.b+' and c='+t.c+' meet at included angle A='+t.A+'°.',
+ 'Use the Law of Cosines to find opposite side a, and the included-angle formula to find area.','Opposite side a','Area (square units)'];
+ case 'cosine-sss':return ['A triangle has sides a='+t.a+', b='+t.b+', c='+t.c+', opposite angles A, B, C.',
+ 'Use the Law of Cosines to determine angles A and B.','Angle A (°)','Angle B (°)'];
+ case 'heron':return ['A triangle has side lengths '+t.a+', '+t.b+', and '+t.c+'.',
+ 'Use Heron’s formula. Calculate the semiperimeter s and area.','Semiperimeter s','Area (square units)'];
+ case 'area':return ['The sides b='+t.b+' and c='+t.c+' enclose angle A='+t.A+'°.',
+ 'Find the triangle’s area and the perpendicular altitude to base c.','Area (square units)','Altitude to side c'];
+ case 'bearings':return ['A traveler goes '+t.length+' km on a bearing of '+t.bearing+'° (clockwise from north).',
+ 'Find signed east and north components in km. Negative east means west; negative north means south.','East component (km)','North component (km)'];
+ default:return ['A two-leg journey travels '+t.legs[0].length+' km on bearing '+t.legs[0].bearing+'°, then '+t.legs[1].length+' km on bearing '+t.legs[1].bearing+'°.',
+ 'Find straight-line displacement from the starting point and its initial bearing clockwise from north.','Resultant distance (km)','Initial bearing (°)'];
+ }
+}
+function solution(){
+ const t=task,e=expected(t);
+ switch(mode){
+ case 'sines':return 'Angle C=180°−A−B='+e.one+'°. By a/sin A=c/sin C, c='+t.a+'×sin('+e.one+'°)/sin('+t.A+'°)='+fmt(e.two,5)+'.';
+ case 'ssa-count':{const h=t.b*Math.sin(rad(t.A)),Bs=ambiguousSSA(t.A,t.a,t.b);
+ return 'Apply sin B=(b sin A)/a; here altitude h=b sin A='+fmt(h,5)+'. Valid choices must have A+B<180°, and each triangle must have all angles positive. There are '+Bs.length+' valid triangle(s)'+(Bs.length?' with B='+Bs.map(x=>fmt(x,3)+'°').join(' or '):'')+'. For an obtuse A, the opposite side a must be the longest.';}
+ case 'ssa-pair':return 'sin B=b sin A/a='+fmt(t.b*Math.sin(rad(t.A))/t.a,6)+'. The principal arcsine gives B₁='+fmt(e.one,5)+'°. Its supplement B₂='+fmt(e.two,5)+'° also works because A+B₂<180°. These produce distinct nondegenerate triangles.';
+ case 'cosine-sas':return 'a²=b²+c²−2bc cos A. Therefore a='+fmt(e.one,5)+'. The included-angle area is ½bc sin A='+fmt(e.two,5)+' square units.';
+ case 'cosine-sss':return 'cos A=(b²+c²−a²)/(2bc) gives A='+fmt(e.one,5)+'°. cos B=(a²+c²−b²)/(2ac) gives B='+fmt(e.two,5)+'°. All three angles must sum to 180°.';
+ case 'heron':return 's=(a+b+c)/2='+fmt(e.one)+'. Area=√[s(s−a)(s−b)(s−c)]='+fmt(e.two,5)+' square units. The triangle inequality holds for these sides.';
+ case 'area':return 'Area=½bc sin A='+fmt(e.one,5)+'. Using side c as base, the altitude is h=b sin A='+fmt(e.two,5)+'; ½×c×h gives the same area.';
+ case 'bearings':return 'Bearing is measured clockwise from north, so east=d sin θ='+fmt(e.one,5)+' km and north=d cos θ='+fmt(e.two,5)+' km. Coordinate signs indicate the direction.';
+ default:{const v=resultant(t.legs);return 'Sum vectors in east/north components: east='+fmt(v.east,5)+' km, north='+fmt(v.north,5)+' km. Distance=√(east²+north²)='+fmt(e.one,5)+' km. Bearing=atan2(east,north), normalized into [0°,360°), giving '+fmt(e.two,5)+'°.';}
+ }
+}
+function stats(){
+ $('solved').textContent=String(record.solved);$('attempted').textContent=String(record.attempted);
+ $('accuracy').textContent=record.attempted?Math.round(100*record.firstTries/record.attempted)+'%':'—';
+ $('streak').textContent=String(record.bestStreak);$('progress').value=record.outcomes.length;
+ $('mastery').textContent=record.outcomes.length===10&&record.outcomes.filter(Boolean).length>=8?'Achieved':'In progress';
+ const history=$('history');history.replaceChildren();for(const entry of record.history.slice(-10).reverse()){const li=document.createElement('li');li.textContent=entry;history.appendChild(li);}
+}
+function show(){
+ $('mode').value=mode;$('workshop').hidden=!exploring;
+ const q=question();$('scenario').textContent=q[0];$('prompt').textContent=q[1];$('firstLabel').textContent=q[2];$('secondLabel').textContent=q[3];
+ $('secondBlock').hidden=mode==='ssa-count';$('answer').value=record.entry.one;$('second').value=record.entry.two;
+ $('check').disabled=record.checked||exploring;$('hint').disabled=record.checked||exploring;$('worked').disabled=record.checked||exploring;$('next').disabled=!record.checked||exploring;
+ $('formula').textContent=mode==='sines'||mode==='ssa-count'||mode==='ssa-pair'?'Law of Sines: a/sin A=b/sin B=c/sin C\nSSA requires checking both arcsine branches and angle sums.':
+ mode==='cosine-sas'||mode==='cosine-sss'?'Law of Cosines: a²=b²+c²−2bc cos A':
+ mode==='heron'?'Heron: s=(a+b+c)/2 · Area=√(s(s−a)(s−b)(s−c))':
+ mode==='area'?'Area=½bc sin A = ½c×altitude':
+ 'Compass: east=d sin(bearing), north=d cos(bearing)\nBearings run clockwise from north.';
+ stats();draw();
+}
+const line=(x1,y1,x2,y2,c='#28658a',dash='')=>'<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+c+'" stroke-width="3"'+(dash?' stroke-dasharray="7 5"':'')+'/>';
+const textAt=(x,y,t)=>'<text x="'+x+'" y="'+y+'" fill="#453b30" font-size="13" text-anchor="middle">'+t+'</text>';
+function triangleGeometry(t){
+ if(t.mode==='sines'){const C=180-t.A-t.B;return {A:t.A,b:lawSines(t.a,t.A,t.B),c:lawSines(t.a,t.A,C)};}
+ if(t.mode==='ssa-count'||t.mode==='ssa-pair'){
+  const Bs=ambiguousSSA(t.A,t.a,t.b);if(!Bs.length)return null;
+  return {A:t.A,b:t.b,c:lawSines(t.a,t.A,180-t.A-Bs[0]),alternative:Bs.length===2?lawSines(t.a,t.A,180-t.A-Bs[1]):null};
+ }
+ if(t.mode==='cosine-sss'||t.mode==='heron')return {A:angleCosines(t.a,t.b,t.c),b:t.b,c:t.c};
+ return {A:t.A,b:t.b,c:t.c};
+}
+function draw(){
+ if(!task)return;
+ let geometry=exploring?{A:+$('angleSlider').value,b:+$('sideB').value,c:+$('sideC').value}:triangleGeometry(task);
+ let graphic='',description='';
+ if(!exploring&&(mode==='bearings'||mode==='navigation')){
+  const t=task,legs=mode==='bearings'?[{length:t.length,bearing:t.bearing}]:t.legs;
+  let x=0,y=0,points=[[0,0]];
+  for(const leg of legs){const v=bearingComponents(leg.length,leg.bearing);x+=v.east;y+=v.north;points.push([x,y]);}
+  const extent=Math.max(2,...points.flat().map(Math.abs)),scale=155/extent;
+  const px=v=>310+v*scale,py=v=>220-v*scale;
+  graphic+=line(70,220,550,220,'#b5a890')+line(310,34,310,404,'#b5a890');
+  graphic+=textAt(559,213,'East')+textAt(345,22,'North');
+  points.slice(1).forEach((point,i)=>{
+   graphic+=line(px(points[i][0]),py(points[i][1]),px(point[0]),py(point[1]),'#28658a');
+   graphic+='<circle cx="'+px(point[0])+'" cy="'+py(point[1])+'" r="6" fill="#28658a" stroke="white" stroke-width="2"/>';
+   graphic+=textAt(px(point[0])+20,py(point[1])-10,String(i+1));
+  });
+  graphic+=line(310,220,px(x),py(y),'#ad7131',true);
+  description='Route points (east,north) km: '+points.map(p=>'('+fmt(p[0],3)+', '+fmt(p[1],3)+')').join(' → ')+'. The amber line is resultant displacement from the starting point.';
+ }else if(geometry){
+  const {A,b,c,alternative}=geometry;
+  const cx=b*Math.cos(rad(A)),cy=b*Math.sin(rad(A)),max=Math.max(b,c,alternative||0,1),scale=Math.min(360/Math.max(c,alternative||0,1),260/Math.max(cy,1),440/max);
+  const left=110,bottom=344,px=x=>left+x*scale,py=y=>bottom-y*scale;
+  graphic+=line(px(0),py(0),px(c),py(0),'#28658a')+line(px(0),py(0),px(cx),py(cy),'#28658a')+line(px(c),py(0),px(cx),py(cy),'#28658a');
+  if(alternative!==undefined&&alternative!==null)graphic+=line(px(alternative),py(0),px(cx),py(cy),'#ad7131',true)+line(px(0),py(0),px(alternative),py(0),'#ad7131',true);
+  for(const [x,y,name] of [[0,0,'A'],[c,0,'B'],[cx,cy,'C']]){
+   graphic+='<circle cx="'+px(x)+'" cy="'+py(y)+'" r="6" fill="#28658a"/>'+textAt(px(x)+12,py(y)-13,name);
+  }
+  if(alternative!==undefined&&alternative!==null)graphic+=textAt(px(alternative)+10,py(0)+20,'B₂');
+  if(exploring){const side=lawCosines(b,c,A),area=includedArea(b,c,A);
+   $('formula').textContent='a²=b²+c²−2bc cos A\nSide a='+fmt(side,4)+' · area='+fmt(area,4);
+   description='Workshop: A='+A+'°, b='+b+', c='+c+', calculated a='+fmt(side,4)+' and area='+fmt(area,4)+'. No practice record changed.';
+  }else{description='Triangle diagram (scaled): included A='+fmt(A,3)+'°, side b='+fmt(b,3)+', side c='+fmt(c,3)+(alternative?' and second valid SSA side c='+fmt(alternative,3):'')+'.';}
+ }else{
+  graphic+=textAt(310,205,'No valid triangle exists for these SSA measurements.');
+  description='The provided side lengths and angle cannot form a nondegenerate triangle. This is a valid zero-solution SSA investigation.';
+ }
+ $('draw').innerHTML=graphic;$('description').textContent=description;
+ if(exploring){$('angleOut').textContent=$('angleSlider').value+'°';$('sideBOut').textContent=$('sideB').value;$('sideCOut').textContent=$('sideC').value;}
+}
+function check(){
+ if(!task||record.checked||exploring)return;
+ const raw=$('answer').value.trim(),second=$('second').value.trim(),a=raw===''?NaN:Number(raw),b=$('secondBlock').hidden?NaN:second===''?NaN:Number(second);
+ if(!Number.isFinite(a)||(!$('secondBlock').hidden&&!Number.isFinite(b))){status('Enter all required finite numbers. Empty fields do not mean zero.','bad');return;}
+ const ok=correct(task,a,b);
+ if(!record.wrong){record.attempted++;record.outcomes.push(ok&&!record.helped);record.outcomes=record.outcomes.slice(-10);}
+ if(ok){
+  record.solved++;record.checked=true;
+  if(!record.wrong&&!record.helped){record.firstTries++;streak++;}else streak=0;
+  record.bestStreak=Math.max(record.bestStreak,streak);
+  record.history.push(mode+' · solved '+task.id.slice(0,48));record.history=record.history.slice(-10);
+  show();status('Correct! '+solution(),'good');
+  if(!$('quiet').checked&&!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches))$('celebrate').textContent='✦ Triangle expedition complete ✦';
+ }else{record.wrong=true;streak=0;status('Try this same case again. Check angle opposites, supplementary SSA angles, included angles, compass direction, and units.','bad');stats();}
+ save();
+}
+function hint(){
+ if(!task||record.checked||exploring)return;record.helped=true;
+ const hints={sines:'Find C=180−A−B first, then pair each side with its OPPOSITE angle in a/sin A=c/sin C.',
+ 'ssa-count':'Compute sin B=b sin A/a. Check the principal and supplementary arcsines, and require A+B<180 for each.',
+ 'ssa-pair':'B₁=arcsin(b sin A/a). The second B is 180−B₁ only if the remaining angle stays positive.',
+ 'cosine-sas':'Use a²=b²+c²−2bc cos A. Included-angle area is ½bc sin A.',
+ 'cosine-sss':'Cos A=(b²+c²−a²)/(2bc), and use the cyclic version for angle B.',
+ heron:'Find s=(a+b+c)/2, then square-root s(s−a)(s−b)(s−c).',
+ area:'Area=½bc sin A, and the altitude to base c is b sin A.',
+ bearings:'Bearings start at north, clockwise. East=d sin θ; north=d cos θ.',
+ navigation:'Add east and north components separately, then use distance and atan2(east,north) for the bearing.'};
+ status(hints[mode]);save();
+}
+function worked(){if(!task||record.checked||exploring)return;record.helped=true;status('Worked solution: '+solution()+' Enter your result to verify.');save();}
+function switchMode(v){if(!MODES.includes(v))return;mode=v;exploring=false;load();if(task)show();else challenge();}
+function workshop(){exploring=true;$('workshop').hidden=false;show();status('Free triangle workshop. Move the controls and observe SAS consequences without affecting scores.');}
+$('mode').addEventListener('change',e=>switchMode(e.target.value));
+$('new').addEventListener('click',challenge);$('next').addEventListener('click',challenge);
+$('check').addEventListener('click',check);$('hint').addEventListener('click',hint);$('worked').addEventListener('click',worked);
+$('explore').addEventListener('click',workshop);
+for(const [id,field] of [['answer','one'],['second','two']])$(id).addEventListener('input',e=>{if(!exploring){record.entry[field]=e.target.value;save();}});
+for(const id of ['angleSlider','sideB','sideC'])$(id).addEventListener('input',()=>{if(exploring)draw();});
+$('reset').addEventListener('click',()=>{if(!confirm('Reset only this local practice pathway? Other courses and grades remain untouched.'))return;try{localStorage.removeItem(key());}catch{}record=blank();challenge();});
+$('export').addEventListener('click',()=>{const data={schema:1,game:'triangle-law-expedition',mode,context,progress:record,exportedAt:new Date().toISOString()};
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),a=document.createElement('a');
+ a.href=URL.createObjectURL(blob);a.download='triangle-law-expedition-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+});
+$('context').textContent='Lesson context: '+context.replace(/\|/g,' / ')+' · browser-local practice, no official grades.';
+load();if(task)show();else challenge();
+})();
+</script></body></html>

@@ -21,6 +21,7 @@ on:
       - "courses/mathematics/tools/test-unit-circle-navigator.mjs"
       - "courses/mathematics/tools/test-trigonometric-wave-studio.mjs"
       - "courses/mathematics/tools/test-trigonometric-identity-forge.mjs"
+      - "courses/mathematics/tools/test-triangle-law-expedition.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -47,6 +48,7 @@ on:
       - "courses/mathematics/tools/test-unit-circle-navigator.mjs"
       - "courses/mathematics/tools/test-trigonometric-wave-studio.mjs"
       - "courses/mathematics/tools/test-trigonometric-identity-forge.mjs"
+      - "courses/mathematics/tools/test-triangle-law-expedition.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -107,6 +109,9 @@ jobs:
 
       - name: Validate Trigonometric Identity Forge symbolic and numerical reasoning
         run: node courses/mathematics/tools/test-trigonometric-identity-forge.mjs
+
+      - name: Validate Triangle Law Expedition geometry and navigation
+        run: node courses/mathematics/tools/test-triangle-law-expedition.mjs
 
       - name: Verify Algebra I shared-game launch and return routes
         run: node courses/mathematics/tools/test-algebra-game-routes.mjs

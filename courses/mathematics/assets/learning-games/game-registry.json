@@ -2366,6 +2366,43 @@
           "wired": true
         }
       ]
+    },
+    "triangle-law-expedition": {
+      "title": "Triangle Law Expedition",
+      "canonical_path": "courses/mathematics/assets/learning-games/triangle-law-expedition/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Nine triangle and navigational modes: Law of Sines ASA/AAS, SSA zero/one/two cases, solving both SSA candidates, Law of Cosines SAS/SSS, Heron area, included-angle area and altitude, compass components, and two-leg resultant displacement and bearing. Offline triangular SVGs, unscored SAS workshop, per-lesson and per-mode local progress, explicit angle/domain checks and retry without restart. Preserves the separate coordinated navigation game and official student grading.",
+      "placements": [
+        {
+          "course": "algebra-2",
+          "unit": "11",
+          "lesson": "u11-l06",
+          "lesson_title": "Law of Sines, Ambiguous Case & Applications",
+          "mode": "sines",
+          "query": "?course=algebra2&unit=11&lesson=u11-l06&mode=sines",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "11",
+          "lesson": "u11-l07",
+          "lesson_title": "Law of Cosines & Heron-Type Area Reasoning",
+          "mode": "cosine-sas",
+          "query": "?course=algebra2&unit=11&lesson=u11-l07&mode=cosine-sas",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "11",
+          "lesson": "u11-l08",
+          "lesson_title": "Navigation, Vectors & Multi-Step Triangle Models",
+          "mode": "navigation",
+          "query": "?course=algebra2&unit=11&lesson=u11-l08&mode=navigation",
+          "wired": true
+        }
+      ]
     }
   }
 }
