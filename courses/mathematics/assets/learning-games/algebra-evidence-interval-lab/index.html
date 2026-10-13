@@ -127,7 +127,7 @@ function chooseNext(){const used=new Set(state.completed.slice(-Math.max(3,total
 if(!pool.length){state.completed=[];pool=questions().map((_,i)=>i);}
 const n=pool[Math.floor(Math.random()*pool.length)];state.active=n;state.selection=null;state.checked=false;state.helped=false;state.wrong=false;save();}
 function status(){const recent=state.firstTries.slice(-10);const accuracy=recent.length?Math.round(100*recent.filter(Boolean).length/recent.length):0;
-el.stats.textContent="Independent first tries: "+state.independent+" / "+state.attempts+" · Recent practice: "+accuracy+"%"+(recent.length>=5&&accuracy>=80?" · Practice goal reached":" · Goal: 80%");
+el.stats.textContent="Independent first tries: "+state.independent+" / "+state.attempts+" · Recent practice: "+accuracy+"%"+(recent.length>=10&&accuracy>=80?" · Practice goal reached":" · Goal: 80% over ten checks");
 el.mastery.value=accuracy;}
 function render(){
 const info=MODES[mode];el.focus.value=mode;
@@ -162,7 +162,7 @@ save();render();
 function hint(){if(state.checked)return;state.helped=true;save();el.feedback.textContent="Hint: "+questions()[state.active][5];}
 function showWorked(){state.helped=true;save();el.worked.hidden=false;el.workedText.textContent=questions()[state.active][4];el.feedback.textContent="Worked reasoning shown. This attempt is assisted practice.";}
 function next(){chooseNext();render();}
-function switchMode(value){if(!MODES[value])return;mode=value;state=load();render();}
+function switchMode(value){if(!MODES[value])return;mode=value;state=load();render();const nav=document.getElementById("canonicalGameReturn");if(nav){nav.href=new URL(el.return.href,location.href).href;nav.textContent="← Return to Lesson "+(mode==="argument"?"01":"02");}}
 document.getElementById("check").addEventListener("click",check);
 document.getElementById("hint").addEventListener("click",hint);
 document.getElementById("solution").addEventListener("click",showWorked);
