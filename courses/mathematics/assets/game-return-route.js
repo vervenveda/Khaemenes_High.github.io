@@ -49,7 +49,14 @@
         if (response.ok) map = await response.json();
       } catch { /* Keep the course return as a safe fallback. */ }
     }
-    const relative = resolveLesson(course, unit, lesson, map);
+    let relative = resolveLesson(course, unit, lesson, map);
+    // Verify the map-derived destination before offering a lesson return link.
+    if (relative) {
+      try {
+        const response = await fetch(new URL(relative, root), { method: "GET", cache: "no-store" });
+        if (!response.ok) relative = null;
+      } catch { relative = null; }
+    }
     const lessonHref = new URL(relative || "../" + dir + "/", root).href;
     const unitHref = new URL("../" + dir + "/units/unit-" + String(unit).padStart(2, "0") + "/", root).href;
     const homeHref = new URL("../index.html", root).href;
