@@ -1,0 +1,148 @@
+/* Khaemenes Mathematics visual continuity v1 (2026-10-13)
+   Presentation ONLY for Algebra I, Geometry and Algebra II.
+   Shares the Pre-Algebra parchment, black type and radius-7 language.
+   Does not touch enrollment, grade calculation, records, games or STOS. */
+
+/* The main parchment stylesheet is the source of truth for light surfaces.
+   These course-only rules normalize legacy spacing and card geometry. */
+html:root:root {
+  color-scheme: light !important;
+  --math-visual-line: #c8beab;
+  --math-visual-paper: #fffefa;
+  --math-visual-ground: #f4f0e7;
+  --math-visual-ink: #20241f;
+  --math-visual-muted: #566056;
+  --math-visual-accent: #815c21;
+}
+html:root:root body {
+  background:var(--math-visual-ground) !important;
+  color:var(--math-visual-ink) !important;
+  font-family:"Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif;
+  font-weight:400;
+  overflow-x:clip;
+}
+html:root:root body :is(h1,h2,h3,h4) {
+  font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-weight:400 !important;
+  overflow-wrap:anywhere;
+}
+html:root:root body :is(.hero,.unit-hero,.lesson-hero,.lesson-header) {
+  min-width:0;
+  text-align:center;
+  border-color:var(--math-visual-line) !important;
+  background:var(--math-visual-ground) !important;
+  box-shadow:none !important;
+}
+html:root:root body :is(.hero,.unit-hero,.lesson-hero) {
+  padding-top:clamp(30px,4.5vw,64px) !important;
+  padding-bottom:clamp(24px,3.7vw,50px) !important;
+}
+html:root:root body .hero::before,
+html:root:root body .hero::after,
+html:root:root body .lesson-hero::before,
+html:root:root body .unit-hero::before {opacity:.13 !important;pointer-events:none;}
+html:root:root body :is(.lead,.hero-subtitle,.lesson-header p,.lesson-hero p,.unit-hero p) {
+  max-width:850px;
+  margin-inline:auto;
+  color:var(--math-visual-muted) !important;
+  overflow-wrap:break-word;
+}
+html:root:root body :is(.eyebrow,.kicker) {
+  max-width:min(100%,950px);
+  margin-inline:auto;
+  text-wrap:balance;
+  overflow-wrap:anywhere;
+}
+html:root:root body :is(.wrap,.shell,.lesson-shell,.unit-shell) {min-width:0;}
+html:root:root body :is(.unit-grid,.lesson-grid,.resource-grid,.daily-grid,.start-grid,.snapshot,.grid,.pathway-grid) {
+  min-width:0;
+  align-items:stretch;
+}
+html:root:root body :is(.unit-grid,.lesson-grid,.resource-grid,.daily-grid,.start-grid,.grid,.pathway-grid) > * {
+  min-width:0;
+  max-width:100%;
+}
+html:root:root body :is(.unit-grid,.lesson-grid,.resource-grid,.start-grid) > :is(.card,.unit-card,.resource-card,.lesson-card) {
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  justify-content:flex-start;
+}
+html:root:root body :is(.unit-grid,.lesson-grid,.resource-grid,.start-grid) > :is(.card,.unit-card,.resource-card,.lesson-card) > :is(.actions,.card-actions,.links) {
+  margin-top:auto;
+}
+html:root:root body :is(.card,.unit-card,.lesson-card,.resource-card,.tool-card,.metric,.snapshot-item,
+  .lesson-section,.lesson-header,.unit-header,.visual-card,.print-sheet,.question,.assessment-head,.pathway,.notice) {
+  border-radius:7px !important;
+  border-color:var(--math-visual-line) !important;
+  box-shadow:0 3px 10px rgba(44,39,29,.045) !important;
+}
+html:root:root body :is(.card,.unit-card,.lesson-card,.resource-card,.tool-card,.metric,.snapshot-item,
+  .lesson-section,.visual-card,.print-sheet,.question,.pathway) {
+  background:var(--math-visual-paper) !important;
+  color:var(--math-visual-ink) !important;
+}
+html:root:root body :is(.card,.lesson-section,.visual-card,.pathway) :is(p,li,small) {
+  color:var(--math-visual-muted) !important;
+}
+html:root:root body :is(.lesson-layout,.practice-layout,.course-layout,.workspace-layout) {min-width:0;}
+html:root:root body :is(.lesson-main,.lesson-side,.lesson-sidebar,.practice-main,.practice-side) {
+  min-width:0;
+}
+html:root:root body :is(.formula,.math-box,.math-display,pre) {
+  background:#f8f5ed !important;
+  color:var(--math-visual-ink) !important;
+  border-color:var(--math-visual-line) !important;
+  max-width:100%;
+  overflow-x:auto;
+}
+html:root:root body :is(button,.btn,.button,.header-control,.nav-link) {
+  border-radius:7px !important;
+  min-height:44px;
+  font-weight:450 !important;
+}
+html:root:root body :is(.btn.primary,.button.primary,button.primary) {
+  color:var(--math-visual-ink) !important;
+  background:#ead9b6 !important;
+  border-color:#967342 !important;
+}
+html:root:root body :is(a,button,input,select,textarea):focus-visible {
+  outline:3px solid var(--math-visual-accent) !important;
+  outline-offset:3px;
+}
+@media(max-width:900px) {
+  html:root:root body :is(.lesson-layout,.practice-layout) {
+    grid-template-columns:minmax(0,1fr) !important;
+  }
+  html:root:root body :is(.lesson-side,.lesson-sidebar,.practice-side) {
+    position:static !important;
+    width:auto;
+    max-width:100%;
+  }
+}
+@media(max-width:680px) {
+  html:root:root body :is(.hero,.unit-hero,.lesson-hero) {
+    padding-top:30px !important;
+    padding-bottom:28px !important;
+  }
+  html:root:root body :is(.unit-grid,.lesson-grid,.resource-grid,.start-grid,.daily-grid,.pathway-grid) {
+    grid-template-columns:minmax(0,1fr) !important;
+  }
+  html:root:root body :is(.wrap,.shell,.lesson-shell) {
+    max-width:100%;
+  }
+  html:root:root body :is(.card,.lesson-section,.visual-card) {
+    overflow-wrap:anywhere;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  html:root:root body :is(.card,.btn,button,a){transition:none!important;animation:none!important;}
+}
+@media print {
+  html:root:root body {background:#fff!important;color:#111!important;}
+  html:root:root body :is(.card,.lesson-section,.visual-card,.print-sheet) {
+    box-shadow:none!important;
+    border-color:#777!important;
+    break-inside:avoid;
+  }
+}

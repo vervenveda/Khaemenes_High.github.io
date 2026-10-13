@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-design-v32-course-aware-offline-20261013";
+const CACHE_VERSION = "khaemenes-high-v33-math-visual-20261013";
 // Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
 // Every canonical game and its shared runtime must be available on a newly installed offline worker.
 const GAME_PRECACHE_FILES = [
@@ -400,7 +400,8 @@ const COURSE_OFFLINE_FILES = [
   "./courses/mathematics/geometry/index.html",
   "./courses/mathematics/algebra-2/index.html"
 ];
-const PRECACHE_FILES = [...new Set([...GAME_PRECACHE_FILES, ...GAME_RUNTIME_FILES, ...COURSE_OFFLINE_FILES, ...OTHER_PRECACHE_FILES])];
+const COURSE_VISUAL_FILES = ["./assets/math-course-visual-unifier.css?v=20261013"];
+const PRECACHE_FILES = [...new Set([...GAME_PRECACHE_FILES, ...GAME_RUNTIME_FILES, ...COURSE_OFFLINE_FILES, ...COURSE_VISUAL_FILES, ...OTHER_PRECACHE_FILES])];
 
 const SENSITIVE_CACHE_PATTERNS = [
   /\/teacher(?:\/|$)/i,
@@ -417,7 +418,7 @@ function shouldNeverCache(url){
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_VERSION).then(async cache => {
     // The game bundle is atomic: do not activate a release with missing canonical games.
-    const required = [...new Set([...GAME_PRECACHE_FILES, ...GAME_RUNTIME_FILES, ...COURSE_OFFLINE_FILES])];
+    const required = [...new Set([...GAME_PRECACHE_FILES, ...GAME_RUNTIME_FILES, ...COURSE_OFFLINE_FILES, ...COURSE_VISUAL_FILES])];
     await cache.addAll(required.map(path => new Request(path, { cache: "reload" })));
     const needed = new Set(required);
     // Preserve the existing best-effort caching policy for all other course material.
