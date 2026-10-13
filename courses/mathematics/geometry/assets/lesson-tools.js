@@ -1,5 +1,5 @@
 (() => {
-"use strict";
+"use strict";try{const pageStandard=document.createElement("script");pageStandard.src=new URL("../../../../assets/math-course-page-standard-v1.js",location.href).href;pageStandard.async=false;document.head.append(pageStandard)}catch{}
 const id=document.body.dataset.lessonId;if(!id)return;
 const MASTERY=80,KEY="khaemenes-geometry-lesson-progress-v1",ASSESS="khaemenes-geometry-assessment-records-v1",WEEK_STORE="khaemenes-geometry-weekly-mastery-v2";
 const UNIT_WEEKS={1:[1,2],2:[3,4,5],3:[6,7,8],4:[9,10],5:[11,12,13],6:[14,15,16,17],7:[19,20,21],8:[22,23,24],9:[25,26,27],10:[28,29],11:[30,31],12:[32,33,34],13:[35,36]};
