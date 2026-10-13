@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-design-v31-math-offline-20261013";
+const CACHE_VERSION = "khaemenes-high-design-v32-course-aware-offline-20261013";
 // Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
 // Every canonical game and its shared runtime must be available on a newly installed offline worker.
 const GAME_PRECACHE_FILES = [
@@ -392,7 +392,15 @@ const OTHER_PRECACHE_FILES = [
   "./docs/releases/ASSESSMENT_RECORDS_RELEASE.md",
   "./docs/audits/ASSESSMENT_RECORDS_VALIDATION.md",
 ];
-const PRECACHE_FILES = [...new Set([...GAME_PRECACHE_FILES, ...GAME_RUNTIME_FILES, ...OTHER_PRECACHE_FILES])];
+// Offline entrances for all four mathematics courses. Use the correct course as
+// a fallback if the requested unit/lesson was not previously cached.
+const COURSE_OFFLINE_FILES = [
+  "./courses/mathematics/pre-algebra/index.html",
+  "./courses/mathematics/algebra-1/index.html",
+  "./courses/mathematics/geometry/index.html",
+  "./courses/mathematics/algebra-2/index.html"
+];
+const PRECACHE_FILES = [...new Set([...GAME_PRECACHE_FILES, ...GAME_RUNTIME_FILES, ...COURSE_OFFLINE_FILES, ...OTHER_PRECACHE_FILES])];
 
 const SENSITIVE_CACHE_PATTERNS = [
   /\/teacher(?:\/|$)/i,
@@ -409,7 +417,7 @@ function shouldNeverCache(url){
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_VERSION).then(async cache => {
     // The game bundle is atomic: do not activate a release with missing canonical games.
-    const required = [...new Set([...GAME_PRECACHE_FILES, ...GAME_RUNTIME_FILES])];
+    const required = [...new Set([...GAME_PRECACHE_FILES, ...GAME_RUNTIME_FILES, ...COURSE_OFFLINE_FILES])];
     await cache.addAll(required.map(path => new Request(path, { cache: "reload" })));
     const needed = new Set(required);
     // Preserve the existing best-effort caching policy for all other course material.
@@ -424,25 +432,32 @@ self.addEventListener("activate", event => {
 
 function fallbackFor(url) {
   const path = url.pathname;
-  if (path.includes("/units/unit-13")) return "./courses/mathematics/pre-algebra/units/unit-13/index.html";
-  if (path.includes("/units/unit-12")) return "./courses/mathematics/pre-algebra/units/unit-12/index.html";
-  if (path.includes("/units/unit-11")) return "./courses/mathematics/pre-algebra/units/unit-11/index.html";
-  if (path.includes("/units/unit-10")) return "./courses/mathematics/pre-algebra/units/unit-10/index.html";
-  if (path.includes("/units/unit-09")) return "./courses/mathematics/pre-algebra/units/unit-09/index.html";
-  if (path.includes("/units/unit-08")) return "./courses/mathematics/pre-algebra/units/unit-08/index.html";
-  if (path.includes("/units/unit-07")) return "./courses/mathematics/pre-algebra/units/unit-07/index.html";
-  if (path.includes("/units/unit-06")) return "./courses/mathematics/pre-algebra/units/unit-06/index.html";
-  if (path.includes("/units/unit-05")) return "./courses/mathematics/pre-algebra/units/unit-05/index.html";
-  if (path.includes("/units/unit-04")) return "./courses/mathematics/pre-algebra/units/unit-04/index.html";
-  if (path.includes("/units/unit-03")) return "./courses/mathematics/pre-algebra/units/unit-03/index.html";
-  if (path.includes("/units/unit-02")) return "./courses/mathematics/pre-algebra/units/unit-02/index.html";
-  if (path.includes("/units/unit-01")) return "./courses/mathematics/pre-algebra/units/unit-01/index.html";
-  if (path.includes("/courses/mathematics/pre-algebra/assessments")) return "./courses/mathematics/pre-algebra/assessments/index.html";
-  if (path.includes("/courses/mathematics/pre-algebra/records")) return "./courses/mathematics/pre-algebra/records/course-completion-certificate.html";
-  if (path.includes("/courses/mathematics/pre-algebra/diagnostic")) return "./courses/mathematics/pre-algebra/diagnostic/index.html";
-  if (path.includes("/courses/mathematics/pre-algebra")) return "./courses/mathematics/pre-algebra/index.html";
-  if (path.includes("/grades/grade-09")) return "./grades/grade-09/index.html";
-  return "./index.html";
+  // A unit number without its course is ambiguous. Resolve the course prefix first.
+  const course = path.match(/\/courses\/mathematics\/(pre-algebra|algebra-1|algebra-2|geometry)(?:\/|$)/i);
+  if (course) {
+    const base = "./courses/mathematics/" + course[1].toLowerCase() + "/";
+    const suffix = path.slice(course.index + course[0].length);
+    const unit = suffix.match(/^units\/unit-(0[1-9]|1[0-3])(?:\/|$)/i);
+    const choices = unit ? [base + "units/unit-" + unit[1] + "/index.html"] : [];
+    // Retain the pre-Algebra assessment and record fallbacks, but only for pre-Algebra.
+    if (course[1].toLowerCase() === "pre-algebra") {
+      if (suffix.startsWith("assessments/")) choices.push(base + "assessments/index.html");
+      if (suffix.startsWith("records/")) choices.push(base + "records/course-completion-certificate.html");
+      if (suffix.startsWith("diagnostic/")) choices.push(base + "diagnostic/index.html");
+    }
+    choices.push(base + "index.html");
+    return choices;
+  }
+  if (/\/grades\/grade-09(?:\/|$)/.test(path)) return ["./grades/grade-09/index.html"];
+  return ["./index.html"];
+}
+
+async function cachedCourseFallback(url) {
+  for (const path of fallbackFor(url)) {
+    const cached = await matchReleaseCache(path);
+    if (cached) return cached;
+  }
+  return null;
 }
 
 // A game launched from a lesson has ?course=...&lesson=...&mode=... parameters.
@@ -468,7 +483,7 @@ self.addEventListener("fetch", event => {
     return;
   }
   if (request.mode === "navigate") {
-    event.respondWith(fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(async () => (await cachedNavigation(request)) || (await matchReleaseCache(fallbackFor(url))) || matchReleaseCache("./index.html")));
+    event.respondWith(fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(async () => (await cachedNavigation(request)) || (await cachedCourseFallback(url)) || matchReleaseCache("./index.html")));
     return;
   }
   event.respondWith(matchReleaseCache(request).then(cached => { const network = fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(() => cached); return cached || network; }));

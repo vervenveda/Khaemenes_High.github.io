@@ -24,3 +24,5 @@ jobs:
         run: node tools/test-offline-cache-ownership.mjs
       - name: Verify canonical mathematics games are offline-ready
         run: node tools/test-math-game-offline-cache.mjs
+      - name: Verify correct-course offline routing and read-only lesson recovery
+        run: node tools/test-course-aware-offline-recovery.mjs
