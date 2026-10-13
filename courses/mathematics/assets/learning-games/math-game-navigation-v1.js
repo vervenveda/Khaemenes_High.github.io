@@ -14,6 +14,12 @@
     const candidate = new URL(returnRaw,location.href);
     if (candidate.origin === location.origin && /\/courses\/mathematics\/(pre-algebra|algebra-1|algebra-2|geometry)\/units\/unit-\d+\/lessons\//.test(candidate.pathname)) returnURL = candidate;
   } catch {}
+  if (!document.getElementById("mathGameBreadcrumbStyles")) {
+    const style = document.createElement("style");
+    style.id = "mathGameBreadcrumbStyles";
+    style.textContent = ".math-game-breadcrumb{width:min(calc(100% - 32px),1180px);margin:18px auto;padding:12px 16px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;border:1px solid rgba(160,140,100,.45);border-radius:12px;background:rgba(250,247,239,.96);color:#172033;font:600 13px/1.5 system-ui,sans-serif}.math-game-breadcrumb a{display:inline-flex;align-items:center;min-height:40px;padding:8px 12px;border:1px solid #b48b45;border-radius:8px;color:inherit;text-decoration:none}.math-game-breadcrumb a:focus-visible{outline:3px solid #b48b45;outline-offset:3px}@media(max-width:600px){.math-game-breadcrumb{margin:10px auto;padding:10px;font-size:12px}}";
+    document.head.append(style);
+  }
   if (!document.querySelector(".math-game-breadcrumb")) {
     const nav = document.createElement("nav");
     nav.className = "math-game-breadcrumb";
