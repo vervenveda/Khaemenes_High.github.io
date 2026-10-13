@@ -1,5 +1,5 @@
 (()=>{
-"use strict";
+"use strict";try{const pageStandard=document.createElement("script");pageStandard.src=new URL("../../../../assets/math-course-page-standard-v1.js",location.href).href;pageStandard.async=false;document.head.append(pageStandard)}catch{}
 const current=document.currentScript;
 const base=new URL(".",current?.src||location.href);
 window.KhaemenesAlgebra1DedicatedGateConfig={unit:7,lesson_weeks:[19,19,19,20,20,21,21]};
