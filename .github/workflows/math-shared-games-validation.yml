@@ -22,6 +22,7 @@ on:
       - "courses/mathematics/tools/test-trigonometric-wave-studio.mjs"
       - "courses/mathematics/tools/test-trigonometric-identity-forge.mjs"
       - "courses/mathematics/tools/test-triangle-law-expedition.mjs"
+      - "courses/mathematics/tools/test-algebra2-trig-student-journey.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -49,6 +50,7 @@ on:
       - "courses/mathematics/tools/test-trigonometric-wave-studio.mjs"
       - "courses/mathematics/tools/test-trigonometric-identity-forge.mjs"
       - "courses/mathematics/tools/test-triangle-law-expedition.mjs"
+      - "courses/mathematics/tools/test-algebra2-trig-student-journey.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
       - "courses/mathematics/geometry/units/**"
@@ -112,6 +114,9 @@ jobs:
 
       - name: Validate Triangle Law Expedition geometry and navigation
         run: node courses/mathematics/tools/test-triangle-law-expedition.mjs
+
+      - name: Audit Algebra II Units 10–11 lesson and game student journeys
+        run: node courses/mathematics/tools/test-algebra2-trig-student-journey.mjs
 
       - name: Verify Algebra I shared-game launch and return routes
         run: node courses/mathematics/tools/test-algebra-game-routes.mjs

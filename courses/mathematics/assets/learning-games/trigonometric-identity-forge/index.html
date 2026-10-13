@@ -324,7 +324,9 @@ $('new').addEventListener('click',challenge);$('next').addEventListener('click',
 $('check').addEventListener('click',check);$('hint').addEventListener('click',hint);$('worked').addEventListener('click',worked);
 $('inspect').addEventListener('click',()=>{
  if(!task)return;
- $('inspection').hidden=!$('inspection').hidden;
+ const opening=$('inspection').hidden;
+ $('inspection').hidden=!opening;
+ if(opening&&!record.checked){record.helped=true;save();}
  $('inspectionText').textContent=$('inspection').hidden?'':explanation();
 });
 for(const [id,field] of [['answer','one'],['second','two'],['choice','choice']])$(id).addEventListener(id==='choice'?'change':'input',e=>{record.entry[field]=e.target.value;save();});

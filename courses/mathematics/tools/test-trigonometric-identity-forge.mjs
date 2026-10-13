@@ -148,4 +148,17 @@ el('answer').value=String(proofExpected.one);el('choice').value=proofExpected.ch
 context.audit.check();state=context.audit.state();
 assert.equal(state.record.solved,1,'proof with numeric check and valid symbolic transformation completes');
 assert.equal(state.record.firstTries,0,'hinted proof does not count unaided');
+context.audit.challenge();
+state=context.audit.state();
+assert.equal(state.task.mode,'proof','fresh proof after assisted case');
+el('inspect').handlers.get('click')();
+state=context.audit.state();
+assert.equal(state.record.helped,true,'opening worked identity marks assistance');
+assert.equal(el('inspection').hidden,false,'inspection displays explanation');
+const inspected=m.expected(state.task);
+el('answer').value=String(inspected.one);el('choice').value=inspected.choice;
+context.audit.check();state=context.audit.state();
+assert.equal(state.record.solved,2,'inspected proof still completable');
+assert.equal(state.record.firstTries,0,'inspected proof cannot earn unaided first-try credit');
+
 console.log('PASS: Trigonometric Identity Forge 9 mathematical modes, symbolic proofs, sum/difference/double/half identities, bounded equation roots, 5 lesson routes, retries, saved state and hints');
