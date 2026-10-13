@@ -90,6 +90,7 @@ function page({progression=null,currentScript=true}={}){
    style:{cssText:""},addEventListener(k,fn){this.listeners[k]=fn;},
    setAttribute(k,v){this.attrs[k]=v;},
    append(...items){this.children.push(...items);},
+   appendChild(child){this.children.push(child);return child;},
    insertBefore(node,before){const index=this.children.indexOf(before);this.children.splice(index<0?0:index,0,node);},
    get firstChild(){return this.children[0]||null}};
   elements.set(id,item);return item;
