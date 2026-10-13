@@ -28,16 +28,30 @@ for (const id of courseIds) {
   for (const file of lessonFiles) {
     const html = read(file);
     const rel = path.relative(root,file).split(path.sep).join("/");
+    const unitMatch = rel.match(/units\/(unit-\d+)\//);
+    const unitName = unitMatch?.[1] || "";
+    const unitNumber = Number(unitName.replace("unit-","")) || 0;
     if (id === "pre-algebra") {
-      check(html.includes("assets/lesson-engine.js"), rel+": expected lesson engine reference.");
-      const match = rel.match(/units\/(unit-\d+)\//);
-      const cssPath = match ? path.join(courseRoot,"units",match[1],"assets","unit.css") : "";
+      let cssPath;
+      if (unitNumber === 0) {
+        check(html.includes("refresher-engine.js"), rel+": expected Unit 0 refresher engine.");
+        cssPath = path.join(courseRoot,"units","unit-00","assets","refresher.css");
+      } else {
+        check(html.includes("assets/lesson-engine.js"), rel+": expected Pre-Algebra lesson engine.");
+        cssPath = path.join(courseRoot,"units",unitName,"assets","unit.css");
+      }
       check(cssPath && exists(cssPath), rel+": unit stylesheet missing.");
       if (cssPath && exists(cssPath)) check(read(cssPath).includes("math-course-standard-v1.css"), path.relative(root,cssPath)+": shared UI contract not imported.");
     } else if (id === "algebra-1") {
-      check(html.includes("deep-lesson-engine-v1.js"), rel+": expected shared lesson engine reference.");
-      const match = rel.match(/units\/(unit-\d+)\//);
-      const cssPath = match ? path.join(courseRoot,"units",match[1],"assets",match[1].replace("unit-","unit")+".css") : "";
+      let cssPath;
+      if (unitNumber >= 1 && unitNumber <= 9) {
+        const unitScript = "unit"+String(unitNumber).padStart(2,"0")+".js";
+        check(html.includes(unitScript), rel+": expected unit lesson renderer "+unitScript+".");
+        cssPath = path.join(courseRoot,"units",unitName,"assets","unit"+String(unitNumber).padStart(2,"0")+".css");
+      } else {
+        check(html.includes("unit-page.js"), rel+": expected shared Unit 10–13 lesson renderer.");
+        cssPath = path.join(courseRoot,"assets","styles.css");
+      }
       check(cssPath && exists(cssPath), rel+": unit stylesheet missing.");
       if (cssPath && exists(cssPath)) check(read(cssPath).includes("math-course-standard-v1.css"), path.relative(root,cssPath)+": shared UI contract not imported.");
     } else {
@@ -85,11 +99,20 @@ for (const file of gamePages) {
 summary.learningGames = {pages:gamePages.length,returnNavigationScriptLoaded:gamePages.filter(file=>read(file).includes("math-game-navigation-v1.js")).length};
 const preEngines = walk(path.join(mathRoot,"pre-algebra","units")).filter(file => file.endsWith(path.sep+"lesson-engine.js"));
 for (const file of preEngines) check(read(file).includes("math-course-page-standard-v1.js"), path.relative(root,file)+": shared page standard not loaded.");
+const preRefresher = path.join(mathRoot,"pre-algebra","units","unit-00","assets","refresher-engine.js");
+check(exists(preRefresher) && read(preRefresher).includes("math-course-page-standard-v1.js"), "Pre-Algebra Unit 0 refresher engine does not load shared page standard.");
+for (let n=2;n<=9;n++) {
+  const file=path.join(mathRoot,"algebra-1","units","unit-"+String(n).padStart(2,"0"),"assets","unit"+String(n).padStart(2,"0")+".js");
+  check(exists(file) && read(file).includes("math-course-page-standard-v1.js"), path.relative(root,file)+": shared page standard not loaded.");
+}
 for (const file of [
   path.join(mathRoot,"algebra-1","assets","deep-lesson-engine-v1.js"),
+  path.join(mathRoot,"algebra-1","assets","unit-page.js"),
   path.join(mathRoot,"algebra-2","assets","lesson-tools.js"),
   path.join(mathRoot,"geometry","assets","lesson-tools.js")
-]) check(exists(file) && read(file).includes("math-course-page-standard-v1.js"), path.relative(root,file)+": shared page standard not loaded.");
+]) check(exists(file) && read(file).includes("math-course-page-standard-v1.js") || file.endsWith("unit-page.js") && exists(file) && read(file).includes("deep-lesson-engine-v1.js"), path.relative(root,file)+": shared page standard integration missing.");
+const launcher = path.join(mathRoot,"assets","shared-game-launcher.js");
+check(exists(launcher) && read(launcher).includes('searchParams.set("returnTo"'), "Shared game launcher does not pass the return-to-lesson URL.");
 const gameSlugs = new Set(gamePages.map(file=>path.basename(path.dirname(file))));
 for (const file of preEngines) {
   const source = read(file);
