@@ -73,6 +73,7 @@ class Node {
  insertAdjacentElement(where,child){assert.equal(where,'afterend');const siblings=this.parentNode.children;this.parentNode.insertBefore(child,siblings[siblings.indexOf(this)+1]||null);}
  setAttribute(k,v){this.attrs[k]=v;}
  get firstElementChild(){return this.children[0]||null;}
+ get firstChild(){return this.children[0]||null;}
  all(){return this.children.flatMap(n=>[n,...n.all()]);}
  matches(s){if(s==='main'||s==='h2')return this.tag===s;if(s==='section.block')return this.tag==='section'&&this.className.split(/\s+/).includes('block');
  return s.startsWith('.')&&this.className.split(/\s+/).includes(s.slice(1));}
@@ -98,9 +99,9 @@ launch('coordinated-mission-control','advanced-vector-navigation','Coordinated M
 launch('triangle-law-expedition','navigation','Triangle Law Expedition');
 const companions=site.column.querySelectorAll('.math-shared-game-companion');
 assert.equal(companions.length,2,'both companion cards visible');
-assert.equal(site.column.children[0],site.guided);
-assert.equal(site.column.children[1],companions[0],'first game placed after guided practice');
-assert.equal(site.column.children[2],companions[1],'second game remains adjacent');
+assert.equal(site.column.children[0],companions[0],'first game placed at top of lesson learning column');
+assert.equal(site.column.children[1],companions[1],'second game follows first at top');
+assert.equal(site.column.children[2],site.guided,'guided practice remains after prominent game entries');
 for(const [i,slug] of ['coordinated-mission-control','triangle-law-expedition'].entries()){
  const item=companions[i],anchor=item.all().find(n=>n.tag==='a');
  assert.ok(item.className.includes('lesson-section'),'lesson grid integration');

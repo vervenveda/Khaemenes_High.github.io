@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-v33-math-visual-20261013";
+const CACHE_VERSION = "khaemenes-high-v34-math-lesson-alignment-20261013";
 // Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
 // Every canonical game and its shared runtime must be available on a newly installed offline worker.
 const GAME_PRECACHE_FILES = [
@@ -51,10 +51,12 @@ const GAME_PRECACHE_FILES = [
   "./courses/mathematics/assets/learning-games/trigonometric-wave-studio/index.html",
   "./courses/mathematics/assets/learning-games/trigonometric-identity-forge/index.html",
   "./courses/mathematics/assets/learning-games/triangle-law-expedition/index.html",
+  "./courses/mathematics/assets/learning-games/algebra-evidence-interval-lab/index.html",
 ];
 const GAME_RUNTIME_FILES = [
   "./courses/mathematics/assets/game-return-route.js",
   "./courses/mathematics/assets/shared-game-launcher.js",
+  "./courses/mathematics/pre-algebra/assets/prealgebra-game-spotlight-v1.js",
   "./courses/mathematics/assets/learning-games/round-policy.js",
   "./courses/shared/course-entry-contract.js",
   "./courses/shared/learner-scope-v1.js",

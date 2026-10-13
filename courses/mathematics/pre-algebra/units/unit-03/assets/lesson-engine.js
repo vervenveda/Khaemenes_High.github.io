@@ -18,9 +18,23 @@ function lessonProgress(){return read(map?.unit?.progress_key)||{}}
 function lessonBest(p,id){return Math.max(Number(p?.lessonBestScores?.[id])||0,Number(p?.lessonScores?.[id])||0)}
 function gate(){if(unitNo>1&&!unitMastered(unitNo-1))return{ok:false,title:`Unit ${unitNo} locked`,message:`Unit ${unitNo-1} requires at least 80% mastery before Unit ${unitNo} begins.`,href:new URL(`../../unit-${pad(unitNo-1)}/`,location.href).href,label:`Return to Unit ${unitNo-1}`};const list=map?.lessons||[],idx=list.findIndex(x=>x.id===lesson?.id);if(idx>0){const prior=list[idx-1],p=lessonProgress();if(lessonBest(p,prior.id)<MIN)return{ok:false,title:`Lesson ${lesson?.number||idx+1} locked`,message:`${prior.title} requires at least 80% mastery before this lesson begins.`,href:new URL(prior.file.split("/").pop(),location.href).href,label:`Return to ${prior.title}`}}return{ok:true}}
 function block(g){const style=document.createElement("style");style.textContent="#academyDirectGate{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:24px;background:rgba(15,23,20,.96);color:#fff;font-family:Arial,sans-serif}#academyDirectGate article{max-width:680px;padding:32px;border:1px solid rgba(255,255,255,.28);border-radius:8px;background:#17251f;text-align:center}#academyDirectGate h1{font-family:Georgia,serif;font-weight:500}#academyDirectGate a{display:inline-flex;margin-top:16px;padding:10px 16px;border:1px solid #fff;border-radius:7px;color:#fff;text-decoration:none}";document.head.appendChild(style);const div=document.createElement("div");div.id="academyDirectGate";div.setAttribute("role","dialog");div.setAttribute("aria-modal","true");div.innerHTML=`<article><p>Khaemenes Academy Mastery Gate</p><h1>${g.title}</h1><p>${g.message}</p><a href="${g.href}">${g.label}</a></article>`;document.body.appendChild(div)}
+function mountProminentLessonGame(url,c){
+ if(!url)return;
+ const data=window.LESSON_DATA||{};
+ const info=(map?.lessons||[]).find(x=>x.id===data.id||Number(x.number)===Number(data.number));
+ const options={url,game:c.game,title:c.gameTitle||c.game.replace(/-/g," "),
+ focus:(info?.objectives||data.objectives||[])[0]||info?.title||data.title||"lesson skill",
+ extra:c.secondaryGame?new URL("../../../../assets/learning-games/"+c.secondaryGame+"/index.html?course=prealgebra&unit=01&lesson=04",location.href).href:null};
+ const show=()=>window.KhaemenesPreAlgebraGameSpotlight?.mount(options);
+ if(window.KhaemenesPreAlgebraGameSpotlight){show();return;}
+ const file=document.createElement("script");
+ file.src=new URL("../../../assets/prealgebra-game-spotlight-v1.js",scriptEl?.src||location.href).href;
+ file.async=false;file.onload=show;document.head.appendChild(file);
+}
 function syncCompanions(){
  const c=COMPANIONS[lesson?.id];if(!c)return;
  const gameURL=c.game?new URL(`../../../../assets/learning-games/${c.game}/index.html?course=prealgebra&unit=${pad(unitNo)}&lesson=${pad(lesson?.number||Number(String(lesson?.id||"").replace(/^l/,""))||0)}`,location.href).href:"";
+ if(gameURL)mountProminentLessonGame(gameURL,c);
  let gameAnchors=[];
  if(gameURL){gameAnchors=[...document.querySelectorAll('a[href*="learning-games"]')];gameAnchors.forEach(a=>{if(!a.href.includes("/assets/learning-games/"))a.href=gameURL;a.removeAttribute("aria-disabled")});document.querySelectorAll('iframe[src*="learning-games"]').forEach(f=>{if(!f.src.includes("/assets/learning-games/"))f.src=gameURL})}
  if(document.getElementById("lessonCompanionHub"))return;

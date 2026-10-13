@@ -50,8 +50,9 @@ function makeFocusedCompanion() {
   section.appendChild(heading);
   section.appendChild(make("p", "", focusByGame[game] || "Apply the mathematics in this lesson through independent practice."));
   section.appendChild(make("p", "",
-    "Read the worked examples above, practice the linked mission, then use the visible return-to-lesson link in the game. Record a strategy, correction or question in your private lesson note."));
+    "Use the lesson explanations and worked examples, practice the matching skill, then return here to explain your strategy. The game reinforces one part of the lesson and does not replace its assignment."));
   section.appendChild(make("p", "", "Game progress is local practice, not an official course assessment."));
+  section.style.cssText = "border:2px solid #a98954;border-radius:7px;padding:18px;margin-bottom:18px;background:#fff9ed;color:#30281e;";
   const actions = make("div", "actions");
   actions.appendChild(makeLink("Practice with " + title + " →"));
   section.appendChild(actions);
@@ -63,12 +64,15 @@ function makeGeneralCompanion() {
   section.id = sectionId;
   section.setAttribute("aria-labelledby", titleId);
   const wrap = make("div", "wrap"), card = make("article", "card");
-  card.appendChild(make("span", "pill good", "Shared Mathematics Game"));
+  const label = make("span", "math-game-companion-kicker", "Lesson game · skill practice");
+  label.style.cssText = "display:block;font-size:14px;font-weight:600;letter-spacing:.04em;margin-bottom:8px;";
+  card.appendChild(label);
   const heading = make("h2", "", title);
   heading.id = titleId;
   card.appendChild(heading);
+  card.style.cssText = "border:2px solid #a98954;border-radius:7px;background:#fff9ed;color:#30281e;";
   card.appendChild(make("p", "",
-    "This lesson is connected to the canonical Khaemenes Mathematics game library. The same game grows in mathematical depth across courses rather than being duplicated."));
+    focusByGame[game] || "Practice a related mathematical skill, then return to the lesson to explain what it shows. This game supports, but does not replace, the full lesson."));
   const actions = make("div", "actions");
   actions.appendChild(makeLink("Open Learning Game"));
   card.appendChild(actions);wrap.appendChild(card);section.appendChild(wrap);
@@ -79,26 +83,25 @@ function inject() {
   if (document.getElementById(sectionId)) return true;
   const main = document.querySelector("main");
   if (!main) return false;
-  const lessonColumn = course === "algebra2" && (unit === "10" || unit === "11")
-    ? main.querySelector(".lesson-main") : null;
-
+  // Place the companion at the top of the learning content in every math course.
+  // The first lesson content remains directly below it and keeps its original order.
+  const lessonColumn = main.querySelector(".lesson-main") ||
+    main.querySelector(".lesson-content") ||
+    main.querySelector(".lesson-body");
   if (lessonColumn) {
     const section = makeFocusedCompanion();
     const companions = [...lessonColumn.querySelectorAll(".math-shared-game-companion")];
-    const guided = [...lessonColumn.querySelectorAll(".lesson-section")].find(block =>
-      block.querySelector("h2")?.textContent?.trim() === "Guided and independent practice");
-    const target = companions.length ? companions[companions.length - 1] : (guided || null);
-    if (target && target.parentNode === lessonColumn) target.insertAdjacentElement("afterend", section);
-    else lessonColumn.appendChild(section);
+    if (companions.length) companions[companions.length - 1].insertAdjacentElement("afterend", section);
+    else lessonColumn.insertBefore(section, lessonColumn.firstChild);
     return true;
   }
 
   const section = makeGeneralCompanion();
   const companions = [...main.querySelectorAll(".math-shared-game-companion")];
-  const blocks = [...main.querySelectorAll("section.block")];
-  const target = companions.length ? companions[companions.length - 1] : (blocks[0] || main.firstElementChild);
-  if (target && target.parentNode) target.insertAdjacentElement("afterend", section);
-  else main.appendChild(section);
+  const hero = main.querySelector(".lesson-hero, .lesson-header, .hero, .page-header");
+  if (companions.length) companions[companions.length - 1].insertAdjacentElement("afterend", section);
+  else if (hero && hero.parentNode === main) hero.insertAdjacentElement("afterend", section);
+  else main.insertBefore(section, main.firstChild);
   return true;
 }
 

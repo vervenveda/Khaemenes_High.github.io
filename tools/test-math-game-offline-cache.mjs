@@ -7,7 +7,7 @@ const registry = JSON.parse(fs.readFileSync("courses/mathematics/assets/learning
 new vm.Script(script, { filename: "service-worker.js" });
 const host = "https://academy.example/Khaemenes_High.github.io/";
 const gamePaths = Object.values(registry.games).map(game => "./" + game.canonical_path);
-assert.equal(gamePaths.length, 47, "canonical shared game count");
+assert.equal(gamePaths.length, 48, "canonical shared game count");
 
 function boot({failCritical = false} = {}) {
   const events = {}, namedCaches = new Map(), fetched = [], call = { skipWaiting: 0, claim: 0, addAll: 0 };
@@ -75,8 +75,9 @@ const everything = Array.from(worker.evaluate("PRECACHE_FILES"));
 const expected = new Set(gamePaths);
 assert.equal(new Set(actualGames).size, actualGames.length, "canonical game paths unique");
 assert.deepEqual(actualGames.slice().sort(), gamePaths.slice().sort(), "precache matches canonical registry");
-assert.equal(runtime.length, 6, "core game runtime dependencies");
+assert.equal(runtime.length, 7, "core game runtime dependencies");
 assert.ok(runtime.includes("./courses/mathematics/assets/shared-game-launcher.js"));
+assert.ok(runtime.includes("./courses/mathematics/pre-algebra/assets/prealgebra-game-spotlight-v1.js"));
 assert.ok(runtime.includes("./courses/mathematics/assets/game-return-route.js"));
 assert.ok(runtime.includes("./courses/shared/learner-scope-v1.js"));
 assert.ok(runtime.includes("./courses/shared/course-entry-contract.js"));

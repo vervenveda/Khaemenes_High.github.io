@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light"><title>Evidence & Interval Studio · Algebra I</title>
+<script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
+<script src="../../game-return-route.js?v=20261012"></script>
+<style>
+:root{color-scheme:light;--paper:#f7f0df;--surface:#fffdf7;--ink:#30281e;--line:#c8b797;--accent:#715432;--muted:#655949}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 "Brandon Grotesque","Avenir Next",Arial,sans-serif}
+.wrap{width:min(100% - 28px,1020px);margin:auto}
+header,main,footer{padding:18px 0}h1,h2{font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.25}
+h1{font-size:33px}h2{font-size:24px}p{margin:8px 0}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:22px;margin:16px 0}
+.highlight{border:2px solid #98744a;background:#fbf4e6}.kicker{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.controls{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-top:13px}
+button,a.cta,select{min-height:44px;border:1px solid var(--accent);border-radius:7px;padding:9px 14px;background:#fff;color:var(--ink);font:inherit}
+button{cursor:pointer}button.primary,a.cta{background:#473a2d;color:white;text-decoration:none}
+button:disabled{opacity:.56;cursor:not-allowed}
+button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #176c91;outline-offset:3px}
+#choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.choice{text-align:left;min-height:63px;white-space:normal;overflow-wrap:anywhere;background:#fffdf7}
+.choice[aria-pressed="true"]{border:2px solid #405f77;background:#e7eff2}
+.proof{border-left:4px solid #a48452;background:#f6eddb;padding:14px 16px;margin:14px 0;border-radius:5px}
+.status{font-weight:500}.secondary{color:var(--muted);font-size:14px}
+.progress{width:100%;height:12px;accent-color:#5f7957}
+@media(max-width:640px){#choices{grid-template-columns:1fr}.panel{padding:15px}h1{font-size:30px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+@media print{.controls,button{display:none!important}.panel{break-inside:avoid}}
+</style></head>
+<body><header class="wrap"><p class="kicker">Khaemenes High School · Algebra I · Unit 01</p>
+<h1>Evidence & Interval Studio</h1>
+<p>Two lesson-specific investigations. Explain a mathematical claim in Lesson 01; interpret number sets and intervals in Lesson 02.</p>
+<div class="controls"><a id="lessonReturn" class="cta" href="../../../algebra-1/units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html">← Return to the lesson</a>
+<a href="../../../algebra-1/units/unit-01/" class="cta">Unit 01 overview</a></div></header>
+<main class="wrap">
+<section class="panel highlight" aria-labelledby="missionHeading">
+<p class="kicker">The lesson comes first · This practice does not affect official grades</p>
+<h2 id="missionHeading">Choose your lesson mission</h2>
+<div class="controls">
+<label for="courseMode">Course</label><select id="courseMode"><option value="algebra1" selected>Algebra I</option></select>
+<label for="focusMode">Lesson focus</label><select id="focusMode"><option value="argument">01 · Mathematical Argument</option><option value="interval">02 · Number Sets & Intervals</option></select>
+<button type="button" id="newMission">New challenge</button>
+</div><p id="lessonTarget">Lesson 01: explain the reason, verify the solution, or disprove a claim using a counterexample.</p>
+<p id="startGuide" class="secondary">Read the question. Choose the best mathematical explanation. Use a hint if needed; it will count as assisted practice. Wrong choices may be corrected without restarting.</p>
+</section>
+<section class="panel" aria-labelledby="questionHeading">
+<p class="kicker" id="skillLabel">Evidence and justification</p>
+<h2 id="questionHeading">Loading challenge…</h2>
+<div id="choices" role="group" aria-label="Possible mathematical responses"></div>
+<div class="controls"><button type="button" id="hint">Show a hint</button>
+<button type="button" class="primary" id="check">Check my reasoning</button>
+<button type="button" id="next" hidden>Next challenge →</button>
+<button type="button" id="solution">Show the worked explanation</button></div>
+<p id="feedback" role="status" aria-live="polite" aria-atomic="true">Select an answer when you are ready.</p>
+<div class="proof" id="worked" hidden><strong>Mathematical evidence</strong><p id="workedText"></p></div>
+</section>
+<section class="panel" aria-labelledby="progressHeading">
+<h2 id="progressHeading">Independent practice</h2>
+<p id="stats" class="status">0 independently correct out of 0 checked questions</p>
+<progress id="mastery" class="progress" max="100" value="0" aria-label="Unaided first-attempt practice percentage"></progress>
+<p class="secondary">80% or higher on your most recent ten first attempts is the practice goal. Hints and explanations are welcome, but a helped attempt does not count as unaided mastery. This never replaces the lesson's official assessment.</p>
+<button type="button" id="export">Export local practice JSON</button>
+</section></main>
+<footer class="wrap secondary">Offline capable · Learner-local independent practice · Khaemenes Academy · Jennifer Kay Pearl</footer>
+<script>
+(()=>{
+"use strict";
+// Model is kept pure so every authored question is checked in automated tests.
+const BANK={
+argument:[
+["An answer says x = 5 solves 4x − 7 = 13. Which statement verifies the original equation?","4(5) − 7 = 13.","4 + 5 − 7 = 13.","5 − 7 = 13.","The original equation is verified by substituting x=5: 20−7=13. Testing a rearranged or incomplete expression is not an independent check.","Substitute the candidate into every occurrence of x in the original equation.","Verification of a candidate"],
+["Why is the step 3x + 7 = 19 → 3x = 12 valid?","Subtract 7 from both sides; equality is preserved.","Move 7 across and change its sign without explanation.","Divide both sides by 7.","The subtraction property of equality justifies the transformation: 3x+7−7=19−7.","Name the same operation applied to both sides.","Equality-preserving reasoning"],
+["A student claims every prime number is odd. What is a valid counterexample?","2, because it is prime and even.","9, because it is odd and composite.","3, because it is prime and odd.","The number 2 belongs to the stated domain of primes but is even; one such case disproves an always claim.","A counterexample must satisfy the claim's conditions but not its conclusion.","Counterexample"],
+["Is x² ≥ x true for every real x?","No. x = 1/2 gives 1/4 < 1/2.","Yes, because x = 2 works.","Yes, because squares are never negative.","The allowed real input 1/2 gives (1/2)²=1/4, which is smaller than 1/2.","Test a real number strictly between 0 and 1.","Universal claim"],
+["How can you justify 3(a + 2) = 3a + 6 for every real a?","Distributive property.","It works for a = 1, so it works for all real a.","Divide both sides by a.","Distribution gives 3a+3·2=3a+6 for every permitted a, not just sampled values.","Name the property that multiplies both terms inside parentheses.","Equivalent expressions"],
+["What does checking x = 1 and x = 2 show about a claimed identity?","Only that the identity works at those tested inputs.","It proves the identity for every real number.","It proves the identity for every integer.","Finite sample checks support a conjecture or find errors; they cannot alone prove a universal identity.","Distinguish examples from a general proof.","Evidence versus proof"],
+["A student divides both sides of ax = a by a. What must be stated?","a ≠ 0, because division by zero is undefined.","a can be any real number, including zero.","a must be positive.","Dividing by a is justified only when a is nonzero; for a=0 the original equation 0=0 allows any x.","Ask whether the operation is defined for the entire stated domain.","Domain restrictions"],
+["Which is a complete argument for 2(x + 4) + 3(x + 4) = 5(x + 4)?","Factor the common (x + 4), giving (2 + 3)(x + 4) = 5(x + 4).","The expressions look similar.","Both expressions equal 25 when x = 1.","Reverse distribution establishes the identity for every real x.","Identify the common factor and the named property.","Factoring justification"],
+["A proposed solution of 2x + 5 = 15 is x = 5. Which evidence is sufficient?","Substituting gives 2(5)+5=15 in the original equation.","The answer is close to 15.","The equation has an x, so x=5 must work.","Evaluate both sides of the original equation at the candidate.","Verification requires both original sides to match.","Solution check"],
+["For the claim every integer is positive, what disproves it?","−1 is an integer that is not positive.","1 is a positive integer.","1/2 is not an integer.","−1 is an allowed integer, so it contradicts the word every; a noninteger would not be an allowed counterexample.","Use an example from the specified domain.","Domain-aware counterexample"],
+["Which step correctly preserves equality from 5x = 20?","Divide both sides by 5 to obtain x = 4.","Subtract 5 from only the left side.","Multiply only the right side by 5.","Since 5 ≠ 0, dividing both sides by 5 maintains equality and gives x=4.","Perform the same valid operation on each side.","Equal transformations"],
+["When are 2(x + 3) and 2x + 6 equivalent?","For every real x, by distribution.","Only when x = 3.","Only when x is a positive integer.","2(x+3)=2x+6 by the distributive property for all real inputs.","An identity follows from a property, not a lucky test value.","General equivalence"]
+],
+interval:[
+["A sensor accepts −3 < t ≤ 8. Choose its interval.","(−3, 8]","[−3, 8]","(−3, 8)","A strict bound at −3 is excluded, so use (. An inclusive bound at 8 is included, so use ].","Match < to an open endpoint and ≤ to a closed endpoint.","Mixed endpoints"],
+["What inequality corresponds to [−2, 5)?","−2 ≤ x < 5","−2 < x ≤ 5","−2 ≤ x ≤ 5","The left bracket includes −2 and the right parenthesis excludes 5.","Read each endpoint independently.","Interval to inequality"],
+["Which interval represents x > 4?","(4, ∞)","[4, ∞]","(−∞, 4)","Four is excluded; infinity is not a number and always uses a parenthesis.","Infinity is never included as an endpoint.","Unbounded interval"],
+["Which interval describes x ≤ −1?","(−∞, −1]","[−∞, −1]","(−1, ∞)","The set extends without lower bound and includes −1, giving (−∞,−1].","An included finite endpoint uses ].","Closed upper boundary"],
+["Classify 0.333… (3 repeating) by the smallest listed set.","Rational","Irrational","Integer","0.333…=1/3; a repeating decimal is a ratio of integers.","Repeating decimal expansions are rational.","Repeating decimals"],
+["Classify √2 by the smallest listed set.","Irrational real","Integer","Rational","√2 is not a ratio of integers; its decimal expansion is nonterminating and nonrepeating.","Compare perfect-square roots with nonperfect-square roots.","Irrational numbers"],
+["Classify −7 by the smallest listed set.","Integer","Natural","Irrational","−7 is an integer. It is also rational and real, but integer is the most specific available category.","Find the smallest set among the listed choices.","Nested number sets"],
+["Under this course's convention, classify 0 by the smallest listed set.","Whole number","Natural number","Irrational number","Whole numbers include zero, whereas natural numbers begin at 1 in this course.","Check whether the natural set starts at 0 or 1 for this lesson.","Natural versus whole"],
+["How should √2 be recorded when an exact result is required?","√2","1.41","1.4","√2 is exact; 1.41 and 1.4 are rounded approximations.","Exact symbols preserve the value without rounding.","Exact versus approximate"],
+["Choose the rational number.","0.125","π","√3","0.125=1/8 is rational; π and √3 are irrational.","A terminating decimal can be written as a fraction.","Rational classification"],
+["Which statement about √16 is correct?","√16 = 4, an integer.","√16 is irrational.","√16 ≈ 3.9 is its exact value.","The principal square root of 16 is exactly 4.","A perfect square has an integer principal square root.","Exact radical"],
+["What is the interval for −1 ≤ x ≤ 2?","[−1, 2]","(−1, 2)","[−1, 2)","Both endpoints are included, so both require brackets.","Read the ≤ symbols separately.","Closed interval"],
+["Which statement is correct about the notation (1, 6)?","The endpoints 1 and 6 are excluded.","Both endpoints are included.","Only 6 is included.","Parentheses indicate an open interval, excluding both finite endpoints.","Open means endpoint not included.","Open interval"],
+["Translate (−∞, 3) into words.","Every real number strictly less than 3.","Every real number at least 3.","Every real number no greater than −∞.","All real numbers below 3; 3 itself is excluded.","Decide which side of 3 the interval extends toward.","Interval language"],
+["What is the most precise relationship for 5?","Natural, whole, integer, rational, and real.","Irrational and real only.","Real, but not rational.","Every natural number is whole, integer, rational, and real using this lesson's natural-number convention.","Number families are nested.","Set nesting"],
+["The decimal 0.1010010001… has increasingly many zeros between ones. How is it classified?","Irrational","Rational, because it has digits 0 and 1","Integer","The shown pattern has no repeating fixed block and does not terminate, so it is irrational.","Nonterminating alone is not enough; check whether digits eventually repeat.","Nonrepeating decimals"]
+]
+};
+const MODES={argument:{title:"Mathematical Argument",target:"Lesson 01 · Explain a claim using definitions and valid properties, verify a proposed solution in the original equation, and find counterexamples to false always-statements."},
+interval:{title:"Number Sets & Intervals",target:"Lesson 02 · Classify rational and irrational values, interpret included and excluded interval endpoints, and distinguish exact values from decimal approximations."}};
+const params=new URLSearchParams(location.search),course="algebra1",unit="01";
+const el={course:document.getElementById("courseMode"),focus:document.getElementById("focusMode"),
+question:document.getElementById("questionHeading"),choices:document.getElementById("choices"),
+feedback:document.getElementById("feedback"),worked:document.getElementById("worked"),
+workedText:document.getElementById("workedText"),target:document.getElementById("lessonTarget"),
+return:document.getElementById("lessonReturn"),label:document.getElementById("skillLabel"),
+check:document.getElementById("check"),next:document.getElementById("next"),
+mastery:document.getElementById("mastery"),stats:document.getElementById("stats")};
+let mode=params.get("mode")==="interval"?"interval":"argument";el.focus.value=mode;el.course.value=course;
+const id=()=>course+"|"+unit+"|"+(mode==="argument"?"01":"02")+"|"+mode;
+const key=()=> "KHAE_ALGEBRA_EVIDENCE_V1:"+id();
+function fresh(){return {attempts:0,independent:0,firstTries:[],completed:[],active:null,selection:null,checked:false,helped:false,wrong:false};}
+function valid(s){return s&&typeof s==="object"&&Array.isArray(s.firstTries)&&s.firstTries.length<=100&&
+Array.isArray(s.completed)&&s.completed.every(n=>Number.isInteger(n)&&n>=0&&n<BANK[mode].length)&&
+Number.isInteger(s.attempts)&&s.attempts>=0&&Number.isInteger(s.independent)&&s.independent>=0&&s.independent<=s.attempts&&
+(s.active===null||Number.isInteger(s.active)&&s.active>=0&&s.active<BANK[mode].length)&&
+(s.selection===null||Number.isInteger(s.selection)&&s.selection>=0&&s.selection<3);}
+function load(){try{const s=JSON.parse(localStorage.getItem(key()));if(valid(s))return s;}catch{}return fresh();}
+let state=load();
+function save(){try{localStorage.setItem(key(),JSON.stringify(state));}catch{}}
+const questions=()=>BANK[mode];const total=()=>questions().length;
+function chooseNext(){const used=new Set(state.completed.slice(-Math.max(3,total()-2)));let pool=questions().map((_,i)=>i).filter(i=>!used.has(i));
+if(!pool.length){state.completed=[];pool=questions().map((_,i)=>i);}
+const n=pool[Math.floor(Math.random()*pool.length)];state.active=n;state.selection=null;state.checked=false;state.helped=false;state.wrong=false;save();}
+function status(){const recent=state.firstTries.slice(-10);const accuracy=recent.length?Math.round(100*recent.filter(Boolean).length/recent.length):0;
+el.stats.textContent="Independent first tries: "+state.independent+" / "+state.attempts+" · Recent practice: "+accuracy+"%"+(recent.length>=5&&accuracy>=80?" · Practice goal reached":" · Goal: 80%");
+el.mastery.value=accuracy;}
+function render(){
+const info=MODES[mode];el.focus.value=mode;
+el.target.textContent=info.target;
+el.return.href="../../../algebra-1/units/unit-01/lessons/"+(mode==="argument"?"lesson-01-algebraic-habits-notation-mathematical-argument.html":"lesson-02-the-real-number-system-interval-representations.html");
+el.return.textContent="← Return to Lesson "+(mode==="argument"?"01":"02");
+if(state.active===null)chooseNext();
+const [prompt,correct,distractor1,distractor2,expl,tip,skill]=questions()[state.active];
+el.question.textContent=prompt;el.label.textContent=skill;
+const arr=[correct,distractor1,distractor2];
+// Rotate the correct answer among three slots deterministically for each question to avoid guessing pattern.
+const position=(state.active*7+2)%3;const ordered=[...arr.slice(1)];ordered.splice(position,0,correct);
+el.choices.replaceChildren();
+ordered.forEach((answer,i)=>{const b=document.createElement("button");b.type="button";b.className="choice";b.textContent=answer;
+b.setAttribute("aria-pressed",String(i===state.selection));b.disabled=state.checked;
+b.addEventListener("click",()=>{if(state.checked)return;state.selection=i;save();render();});el.choices.appendChild(b);});
+el.check.hidden=!!state.checked;el.check.disabled=state.selection===null;
+el.next.hidden=!state.checked;el.worked.hidden=!state.checked;
+el.workedText.textContent=state.checked?expl:"";
+el.feedback.textContent=state.checked?(state.selection===position?"Correct. "+expl:"Review the worked reason. "+expl):state.wrong?"Not quite. Revisit the hint and try another choice.":"Choose the explanation supported by the lesson.";
+status();
+}
+function selectAnswer(i){if(state.checked)return;state.selection=i;save();render();}
+function check(){
+if(state.active===null||state.selection===null||state.checked)return;
+const position=(state.active*7+2)%3,ok=state.selection===position;
+if(!state.wrong){state.attempts++;state.firstTries.push(ok&&!state.helped);if(state.firstTries.length>100)state.firstTries.shift();if(ok&&!state.helped)state.independent++;}
+if(!ok){state.wrong=true;state.helped=true;state.selection=null;save();render();return;}
+state.checked=true;state.completed.push(state.active);if(state.completed.length>total()*2)state.completed=state.completed.slice(-total());
+save();render();
+}
+function hint(){if(state.checked)return;state.helped=true;save();el.feedback.textContent="Hint: "+questions()[state.active][5];}
+function showWorked(){state.helped=true;save();el.worked.hidden=false;el.workedText.textContent=questions()[state.active][4];el.feedback.textContent="Worked reasoning shown. This attempt is assisted practice.";}
+function next(){chooseNext();render();}
+function switchMode(value){if(!MODES[value])return;mode=value;state=load();render();}
+document.getElementById("check").addEventListener("click",check);
+document.getElementById("hint").addEventListener("click",hint);
+document.getElementById("solution").addEventListener("click",showWorked);
+document.getElementById("next").addEventListener("click",next);
+document.getElementById("newMission").addEventListener("click",next);
+el.focus.addEventListener("change",()=>switchMode(el.focus.value));
+document.getElementById("export").addEventListener("click",()=>{
+const blob=new Blob([JSON.stringify({version:1,game:"Evidence & Interval Studio",scope:id(),savedAt:new Date().toISOString(),progress:state},null,2)],{type:"application/json"});
+const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="algebra-evidence-"+mode+"-practice.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),500);});
+render();
+})();
+</script></body></html>

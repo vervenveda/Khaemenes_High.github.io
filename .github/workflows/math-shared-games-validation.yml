@@ -10,6 +10,7 @@ on:
       - "courses/mathematics/tools/test-game-storage-links.mjs"
       - "courses/mathematics/tools/test-all-game-rounds.mjs"
       - "courses/mathematics/tools/test-algebra-game-routes.mjs"
+      - "courses/mathematics/tools/test-algebra1-lesson-specific-games.mjs"
       - "courses/mathematics/tools/test-function-transformation-studio.mjs"
       - "courses/mathematics/tools/test-exponential-logarithm-lab.mjs"
       - "courses/mathematics/tools/test-polynomial-zeros-explorer.mjs"
@@ -41,6 +42,7 @@ on:
       - "courses/mathematics/tools/test-game-storage-links.mjs"
       - "courses/mathematics/tools/test-all-game-rounds.mjs"
       - "courses/mathematics/tools/test-algebra-game-routes.mjs"
+      - "courses/mathematics/tools/test-algebra1-lesson-specific-games.mjs"
       - "courses/mathematics/tools/test-function-transformation-studio.mjs"
       - "courses/mathematics/tools/test-exponential-logarithm-lab.mjs"
       - "courses/mathematics/tools/test-polynomial-zeros-explorer.mjs"
@@ -135,3 +137,6 @@ jobs:
 
       - name: Verify Algebra I shared-game launch and return routes
         run: node courses/mathematics/tools/test-algebra-game-routes.mjs
+
+      - name: Validate Algebra I lesson-specific evidence and interval missions
+        run: node courses/mathematics/tools/test-algebra1-lesson-specific-games.mjs

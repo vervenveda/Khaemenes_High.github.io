@@ -2403,6 +2403,34 @@
           "wired": true
         }
       ]
+    },
+    "algebra-evidence-interval-lab": {
+      "title": "Evidence & Interval Studio",
+      "canonical_path": "courses/mathematics/assets/learning-games/algebra-evidence-interval-lab/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Lesson 01 argument verification, equality preservation, counterexamples, and general equivalence; Lesson 02 exact forms, nested real-number classes and open/closed interval notation. Curated question banks; hints and retry do not award unaided mastery; local learner-scoped practice only.",
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "01",
+          "lesson": "01",
+          "lesson_title": "Algebraic Habits, Notation & Mathematical Argument",
+          "mode": "argument",
+          "query": "?course=algebra1&unit=01&lesson=01&mode=argument",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "01",
+          "lesson": "02",
+          "lesson_title": "The Real Number System & Interval Representations",
+          "mode": "interval",
+          "query": "?course=algebra1&unit=01&lesson=02&mode=interval",
+          "wired": true
+        }
+      ]
     }
   }
 }
