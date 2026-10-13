@@ -301,4 +301,4 @@ $("playRefDemo").onclick=()=>["r1","r2","r3"].forEach((id,i)=>later(()=>$ (id).c
 document.addEventListener("keydown",e=>{if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName))return;if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();feedback("","Reasoning hint",deck[index].h)}});
 updateBest();if(!resumeRound())start();
 })();
-</script></body></html>
+</script><script src="../math-game-navigation-v1.js" defer></script></body></html>
