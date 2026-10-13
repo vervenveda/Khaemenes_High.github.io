@@ -7,7 +7,7 @@ const run=()=>{
 const KEY="khaemenes-algebra2-lesson-progress-v1";
 const progress=window.KhaemenesAlgebra2Progression;
 const scopedKey=key=>typeof progress.storageKey==="function"?progress.storageKey(key):key;
-const read=()=>progress.readJSON(KEY,{})||{};
+const read=()=>scopedKey(KEY)===scopedProgressKey?(progress.readJSON(KEY,{})||{}):{};
 const record=()=>read()[id]||{};
 const noteString=value=>typeof value==="string"?value:"";
 const now=()=>new Date().toISOString();
@@ -19,14 +19,11 @@ const card=saveButton?.parentNode?.parentNode || (note?.closest ? note.closest("
 const draftPrefix=scopedKey("khaemenes-algebra2-note-drafts-v2")+":"+id+":";
 const scopedProgressKey=scopedKey(KEY);
 const MAX_NOTE=25000;
-let tabId="";
-try{
- const sessionKey="khaemenes-algebra2-note-tab-v2:"+draftPrefix;
- tabId=sessionStorage.getItem(sessionKey)||"t"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2);
- sessionStorage.setItem(sessionKey,tabId);
-}catch{tabId="t"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2);}
+// A unique ID per page instance avoids collisions when a browser duplicates a tab
+// and clones sessionStorage. Drafts survive reload via their shared lesson prefix.
+const tabId="t"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2);
 const draftKey=draftPrefix+tabId;
-let seenNote=noteString(record().note),conflict=false,saveTimer=null;
+let seenNote=noteString(record().note),conflict=false,saveTimer=null,learnerScopePaused=false;
 let draftPresent=false;
 const feedback=document.createElement("p");
 feedback.id="algebra2NoteFeedback";
@@ -52,6 +49,22 @@ const overwrite=makeButton("Review and overwrite newer saved note",()=>overwrite
 overwrite.hidden=true;
 if(card){card.appendChild(feedback);card.appendChild(buttons);card.appendChild(fileInput);}
 function announce(text){feedback.textContent=text;}
+function scopeReady(){
+ if(!learnerScopePaused&&scopedKey(KEY)===scopedProgressKey)return true;
+ if(!learnerScopePaused){
+  learnerScopePaused=true;
+  // Preserve the original learner's unsaved text under the ORIGINAL learner key.
+  if(note&&note.value!==seenNote){
+   try{localStorage.setItem(draftKey,JSON.stringify({schema:2,lesson:id,note:note.value,
+      changedAt:Date.now(),reason:"learner-changed"}));}catch{}
+  }
+  for(const control of [note,box,saveButton,overwrite]){
+   if(control){control.disabled=true;control.setAttribute("aria-disabled","true");}
+  }
+  announce("The active learner profile changed. This lesson is paused to protect both learners' records. Export your note if needed, then reopen the lesson under the intended learner.");
+ }
+ return false;
+}
 function updateStatus(){
  if(status)status.textContent=box?.checked?"Marked complete on this device.":"Not yet marked complete.";
 }
@@ -77,6 +90,7 @@ function refreshRecovery(){
  overwrite.hidden=!conflict;
 }
 function writeDraft(value,reason="typing"){
+ if(!scopeReady())return false;
  if(value.length>MAX_NOTE){announce("Note exceeds 25,000 characters. Shorten it or export your work before saving.");return false;}
  try{
   localStorage.setItem(draftKey,JSON.stringify({schema:2,lesson:id,note:value,changedAt:Date.now(),reason}));
@@ -94,7 +108,7 @@ function safeWrite(next){
  try{return progress.writeJSON(KEY,next)===true;}catch{return false;}
 }
 function saveNote(force=false){
- if(!note)return false;
+ if(!note||!scopeReady())return false;
  flushDraft();
  const value=note.value;
  if(value.length>MAX_NOTE){announce("Note too long. Keep it under 25,000 characters before saving.");return false;}
@@ -118,9 +132,14 @@ function saveNote(force=false){
  return true;
 }
 function overwriteNote(){
- if(!conflict||!note)return;
+ if(!conflict||!note||!scopeReady())return;
  const latest=noteString(record().note);
  if(!window.confirm("A newer note exists in another tab. Replace that saved note with your current draft? You can export your draft first."))return;
+ if(!scopeReady()||noteString(record().note)!==latest){
+  writeDraft(note.value,"conflict");
+  announce("The saved note changed again. Review its latest version before deciding whether to replace it.");
+  return;
+ }
  // Archive the newer stored version separately so the intentional replacement can be reversed.
  const archiveKey=draftPrefix+"saved-copy-"+Date.now()+"-"+Math.random().toString(36).slice(2);
  try{localStorage.setItem(archiveKey,JSON.stringify({schema:2,lesson:id,note:latest,changedAt:Date.now(),reason:"overwritten-saved-copy"}));}
@@ -128,6 +147,7 @@ function overwriteNote(){
  seenNote=latest;saveNote(true);
 }
 function restoreDraft(){
+ if(!scopeReady())return;
  const candidate=freshestDraft();
  if(!candidate||!note){announce("No unsaved draft to restore.");refreshRecovery();return;}
  const saved=noteString(record().note);
@@ -148,6 +168,7 @@ function exportNote(){
 }
 fileInput.addEventListener("change",async()=>{
  const file=fileInput.files?.[0];if(!file)return;
+ if(!scopeReady()){fileInput.value="";return;}
  try{
   if(file.size>150000)throw Error("The backup file is too large.");
   const data=JSON.parse(await file.text());
@@ -170,12 +191,14 @@ if(recovered&&note&&recovered.changedAt>(Date.parse(record().noteUpdated||record
 }else announce("Your saved lesson note is loaded. Unsaved edits are kept in a separate local draft.");
 refreshRecovery();
 note?.addEventListener("input",()=>{
+ if(!scopeReady())return;
  if(saveTimer!==null)clearTimeout(saveTimer);
  saveTimer=setTimeout(()=>{saveTimer=null;writeDraft(note.value);},350);
  if(conflict){writeDraft(note.value,"conflict");refreshRecovery();}
 });
 saveButton?.addEventListener("click",()=>saveNote());
 box?.addEventListener("change",()=>{
+ if(!scopeReady()){box.checked=!box.checked;return;}
  const latest=read(),current=latest[id]||{};
  const next={...latest,[id]:{...current,complete:box.checked,updated:now()}};
  if(!safeWrite(next)||record().complete!==box.checked){
@@ -188,6 +211,10 @@ document.getElementById("printLesson")?.addEventListener("click",()=>print());
 window.addEventListener?.("pagehide",flushDraft);
 window.addEventListener?.("visibilitychange",()=>{if(document.visibilityState==="hidden")flushDraft();});
 window.addEventListener?.("storage",event=>{
+ if(event.key==="khaemenes_active_learner_v1"||event.key==="khaemenes_family_registry_v1"){
+  scopeReady();return;
+ }
+ if(!scopeReady())return;
  if(event.key!==scopedProgressKey&&!event.key?.startsWith(draftPrefix))return;
  if(event.key===scopedProgressKey){
   const latest=record(),incoming=noteString(latest.note);

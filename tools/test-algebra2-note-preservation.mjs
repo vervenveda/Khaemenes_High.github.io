@@ -33,7 +33,8 @@ function page({lesson="u11-l08",learner="student-a",session=store(),existingStor
  const status=make("p","lessonStatus"),print=make("button","printLesson");
  main.appendChild(card);card.append(note,complete,status,actions);actions.appendChild(save);actions.appendChild(print);
  const body={dataset:{lessonId:lesson}};
- const scope=(key)=>key+":learner:"+learner;
+ let activeLearner=learner;
+ const scope=(key)=>key+":learner:"+activeLearner;
  const progression={
   storageKey:scope,
   readJSON:(key,fallback)=>{try{return JSON.parse(existingStore.getItem(scope(key))||"null")||fallback;}catch{return fallback;}},
@@ -63,8 +64,9 @@ function page({lesson="u11-l08",learner="student-a",session=store(),existingStor
  const setText=text=>{note.value=text;event(note,"input");};
  const flush=()=>listeners.get("pagehide")?.();
  const clickSave=()=>event(save,"click");
+ const switchLearner=id=>{activeLearner=id;listeners.get("storage")?.({key:"khaemenes_active_learner_v1"});};
  return {window,document,elements,main,card,actions,buttons,label,event,flush,setText,clickSave,state,key,record,
-  note,complete,status,save,session,progression,storage:existingStore,learner,lesson,downloads:download,pending,scope};
+  note,complete,status,save,session,progression,storage:existingStore,learner,lesson,downloads:download,pending,scope,switchLearner};
 }
 let a=page();
 assert.equal(a.state().seenNote,"");
@@ -148,5 +150,55 @@ importPage.clickSave();assert.equal(importPage.record().note,"Imported notes");
 fileInput.files=[{size:180,text:async()=>JSON.stringify({...payload,lesson:"u11-l09"})}];
 await importPage.event(fileInput,"change");
 assert.equal(importPage.record().note,"Imported notes","wrong-lesson import rejected");
-reports.push("unsaved draft recovery","cross-lesson merge","completion merge","two-tab conflict","confirmed overwrite backup","per-learner separation","storage failure","safe JSON export/import");
+// Duplicated tabs may inherit sessionStorage values. Their drafts must still be separate.
+const copiedSession=store();
+copiedSession.setItem("cloned-session-placeholder","same-session-value");
+const originalTab=page({lesson:"u11-l03",session:copiedSession});
+const clonedSession=store();
+for(const [key,value] of copiedSession.data)clonedSession.setItem(key,value);
+const duplicateTab=page({lesson:"u11-l03",session:clonedSession});
+originalTab.setText("Original tab's unfinished paragraph");
+originalTab.flush();
+duplicateTab.setText("Duplicated tab's separate notes");
+duplicateTab.flush();
+const siblingDrafts=[...storage.data].filter(([key])=>key.includes("note-drafts-v2")&&key.includes("u11-l03"))
+ .map(([key,raw])=>({key,...JSON.parse(raw)}));
+assert.ok(siblingDrafts.some(d=>d.note==="Original tab's unfinished paragraph"),"original tab's draft retained");
+assert.ok(siblingDrafts.some(d=>d.note==="Duplicated tab's separate notes"),"duplicate tab did not overwrite original");
+assert.ok(new Set(siblingDrafts.map(d=>d.key)).size>=2,"separate physical draft records");
+
+// Switching the active learner while a lesson is open must not save the former
+// learner's note or completion checkbox into the second student's records.
+const staleTab=page({lesson:"u11-l02",learner:"student-switch-a"});
+staleTab.setText("Private evidence belonging to student A");
+staleTab.switchLearner("student-switch-b");
+staleTab.clickSave();
+assert.equal(staleTab.note.disabled,true,"stale note editor locked");
+assert.equal(staleTab.save.disabled,true,"stale save control locked");
+assert.equal(staleTab.complete.disabled,true,"stale completion control locked");
+assert.equal(storage.getItem(staleTab.scope(lessonKey)),null,"no course record created for student B");
+assert.ok(staleTab.card.children.find(n=>n.id==="algebra2NoteFeedback")?.textContent.includes("profile changed"));
+assert.ok([...storage.data].some(([key,raw])=>key.includes("student-switch-a")&&key.includes("u11-l02")&&
+ (()=>{try{return JSON.parse(raw).note==="Private evidence belonging to student A"}catch{return false}})()),
+ "old learner's in-progress text retained only under original learner's draft prefix");
+
+// If another tab saves while the overwrite confirmation is on screen, the
+// overwrite must stop and require a new review instead of deleting that update.
+const waitingTab=page({lesson:"u11-l01"});
+const firstWriter=page({lesson:"u11-l01"});
+firstWriter.setText("Initial newer saved note");firstWriter.clickSave();
+waitingTab.setText("Waiting tab's revision");waitingTab.clickSave();
+assert.equal(waitingTab.state().conflict,true);
+waitingTab.window.confirm=()=>{
+ const simultaneous=page({lesson:"u11-l01"});
+ simultaneous.setText("Third tab saved while the dialog was open");
+ simultaneous.clickSave();return true;
+};
+waitingTab.event(waitingTab.label("Review and overwrite newer saved note"),"click");
+assert.equal(waitingTab.record().note,"Third tab saved while the dialog was open",
+ "newest cross-tab note must not be overwritten during confirmation");
+assert.equal(waitingTab.state().conflict,true);
+assert.ok(waitingTab.card.children.find(n=>n.id==="algebra2NoteFeedback")?.textContent.includes("changed again"));
+
+reports.push("unsaved draft recovery","cross-lesson merge","completion merge","two-tab conflict","confirmed overwrite backup","per-learner separation","storage failure","safe JSON export/import","duplicated tab isolation","learner-switch protection","overwrite confirmation race protection");
 console.log("PASS: Algebra II local note protection: "+reports.join(", ")+".");
