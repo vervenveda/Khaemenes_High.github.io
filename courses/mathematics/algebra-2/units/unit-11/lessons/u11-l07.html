@@ -44,8 +44,38 @@ html:root:root body .hero .comment {
 <div class="lesson-main">
 <section class="lesson-section"><h2>Learning objectives</h2><ul><li>Explain the central structure of law of cosines &amp; heron-type area reasoning using precise mathematical language.</li><li>Apply the governing relationship and verify results with an alternate representation or substitution.</li><li>State domain, unit, precision, and context restrictions whenever they affect the result.</li><li>Analyze a misconception and communicate a correction with evidence.</li></ul><p class="notice"><strong>Essential question:</strong> How do identities and triangle laws transform expressions, solve periodic equations, and determine unknown measurements?</p></section>
 <section class="lesson-section"><h2>Governing relationship</h2><div class="formula">c²=a²+b²−2ab cosC.</div><p>The Law of Cosines generalizes the Pythagorean theorem and solves SAS or SSS triangles. It also supports classification and distance models.</p></section>
-<section class="lesson-section"><h2>Worked examples</h2><p>Read each example, close it, and reconstruct the reasoning independently. Then verify by substitution, graph, table, or alternate method.</p><div class="worked"><article><strong>a=5,b=8,C=60°. Find c.</strong><span>c²=25+64−80·0.5=49, so c=7.</span></article><article><strong>Find C when a=3,b=4,c=6.</strong><span>cosC=(9+16−36)/(24)=−11/24, so C is obtuse.</span></article></div></section>
-<section class="lesson-section"><h2>Guided and independent practice</h2><ol><li>Solve an SAS triangle.</li><li>Find an angle from SSS.</li><li>Compare with the Pythagorean theorem.</li><li>Create one original example involving law of cosines &amp; heron-type area reasoning and solve it completely.</li><li>Use the Khaemenes Scientific Calculator to verify one result, then document the setup and reasonableness check.</li><li>Write a one-paragraph explanation connecting symbolic, graphical, numerical, and contextual representations.</li></ol></section>
+<section class="lesson-section"><h2>Worked examples</h2><p>Choose the formula from the information given. <strong>SAS</strong> means two sides and their included angle; <strong>SSS</strong> means all three sides.</p>
+<div class="worked"><article><strong>Investigation A · SAS: a=5, b=8, included angle C=60°.</strong>
+<ol><li>Write the Law of Cosines for the side opposite C: c²=a²+b²−2ab cos C.</li><li>Substitute: c²=25+64−(2×5×8)cos60°=89−40=49, so c=7 (take the positive side length).</li>
+<li>Find the area using the included angle: K=½ab sin C=½×5×8×sin60°=10√3≈17.32 square units.</li>
+<li>Independently check with Heron's formula: s=(5+8+7)/2=10; K=√[10(10−5)(10−8)(10−7)]=√300=10√3. Agreement confirms the model.</li></ol>
+<p><strong>Cross-check:</strong> 5²+7²&gt;8², so this triangle is acute at the angle opposite side 8, consistent with the included 60° and side lengths.</p></article>
+<article><strong>Investigation B · SSS: a=3, b=4, c=6. Find angle C and area.</strong>
+<ol><li>Check the triangle inequality: 3+4&gt;6, so a nondegenerate triangle exists.</li><li>Rearrange the Law of Cosines: cos C=(a²+b²−c²)/(2ab)=(9+16−36)/24=−11/24.</li>
+<li>Therefore C=arccos(−11/24)≈117.28°, which is obtuse. Side c=6 is the longest, so its opposite angle C must be the largest.</li>
+<li>Heron's semiperimeter is s=(3+4+6)/2=6.5. Thus K=√[6.5×3.5×2.5×0.5]≈5.33 square units.</li>
+<li>Verify using ½ab sin C≈½×3×4×sin117.28°≈5.33.</li></ol></article></div></section>
+<section class="lesson-section"><h2>Visual model · included angles and opposite sides</h2>
+<figure style="margin:12px 0"><svg viewBox="0 0 600 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="u11l07-title u11l07-desc" style="width:100%;height:auto;max-width:600px;background:#fffdf7;border:1px solid #c5b494;border-radius:7px">
+<title id="u11l07-title">SAS triangle with included C and opposite side c</title><desc id="u11l07-desc">A triangle has vertex C at the upper left, A below left and B below right. Side CA is labeled b, side CB is labeled a, and AB is labeled c. Angle C lies between sides a and b. Diagram is not to scale.</desc>
+<polygon points="170,39 88,220 510,220" fill="#e9f0f2" stroke="#28658a" stroke-width="3"/>
+<text x="166" y="28" font-size="19" fill="#30251e">C</text><text x="69" y="244" font-size="19" fill="#30251e">A</text><text x="516" y="241" font-size="19" fill="#30251e">B</text>
+<text x="111" y="137" font-size="18" fill="#30251e">b</text><text x="349" y="132" font-size="18" fill="#30251e">a</text><text x="305" y="245" font-size="18" fill="#30251e">c</text>
+<text x="192" y="78" font-size="14" fill="#94612a">included C</text>
+<text x="305" y="261" font-size="12" fill="#554738" text-anchor="middle">SAS: angle C is between sides a and b; c is opposite angle C</text></svg>
+<figcaption>Set the labels before substituting into c²=a²+b²−2ab cos C. Heron's formula uses the resulting three side lengths, independent of which side you choose as a base.</figcaption></figure></section>
+<section class="lesson-section"><h2>Guided and independent practice</h2><ol>
+<li>Explain why the Law of Cosines reduces to the Pythagorean theorem when C=90°.</li>
+<li>Using a=7, b=9, C=60°, solve for c and the included-angle area. Carry exact radicals before rounding.</li>
+<li>For sides 5, 5, 6, use Heron's formula to determine the area and then check with an altitude.</li>
+<li>Explain why a=2, b=3, c=6 cannot be used in Heron's formula for a real triangle.</li>
+<li>Verify your model in Triangle Law Expedition; record which quantities were SAS or SSS.</li></ol></section>
+<section class="lesson-section"><h2>Independent transfer · check only after solving</h2>
+<ol><li>When a=3, b=4 and C=90°, find c and the area, then verify using Heron.</li><li>For side lengths 5, 5, 6, find s and K exactly.</li><li>For a=7, b=9, C=60°, express c in radical form.</li></ol>
+<details><summary>Reveal worked verification and answers</summary><ol>
+<li>c=√(9+16)=5, K=½×3×4=6; s=6 and Heron K=√[6×3×2×1]=6.</li>
+<li>s=8 and K=√[8×3×3×2]=√144=12 square units.</li>
+<li>c²=49+81−2×7×9×½=67, so c=√67≈8.19.</li></ol></details></section>
 <section class="lesson-section"><h2>Differentiated pathways</h2><div class="pathway-grid">
 <div class="pathway"><h4>Foundation</h4><p>Review prerequisite vocabulary, annotate each worked step, complete the first four prompts, and use a table or graph to support symbolic work.</p></div>
 <div class="pathway"><h4>Core</h4><p>Complete every prompt, explain domain and verification, correct errors, and submit the applied task with clear mathematical communication.</p></div>

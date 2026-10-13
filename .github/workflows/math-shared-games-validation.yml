@@ -23,6 +23,7 @@ on:
       - "courses/mathematics/tools/test-trigonometric-identity-forge.mjs"
       - "courses/mathematics/tools/test-triangle-law-expedition.mjs"
       - "courses/mathematics/tools/test-algebra2-trig-student-journey.mjs"
+      - "courses/mathematics/tools/test-algebra2-deep-trig-lessons.mjs"
       - "courses/mathematics/tools/test-algebra2-trig-resume-flow.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
@@ -52,6 +53,7 @@ on:
       - "courses/mathematics/tools/test-trigonometric-identity-forge.mjs"
       - "courses/mathematics/tools/test-triangle-law-expedition.mjs"
       - "courses/mathematics/tools/test-algebra2-trig-student-journey.mjs"
+      - "courses/mathematics/tools/test-algebra2-deep-trig-lessons.mjs"
       - "courses/mathematics/tools/test-algebra2-trig-resume-flow.mjs"
       - "courses/mathematics/pre-algebra/units/**"
       - "courses/mathematics/algebra-1/units/**"
@@ -116,6 +118,9 @@ jobs:
 
       - name: Validate Triangle Law Expedition geometry and navigation
         run: node courses/mathematics/tools/test-triangle-law-expedition.mjs
+
+      - name: Validate Algebra II deep trigonometry and triangle instruction
+        run: node courses/mathematics/tools/test-algebra2-deep-trig-lessons.mjs
 
       - name: Audit Algebra II Units 10–11 lesson and game student journeys
         run: node courses/mathematics/tools/test-algebra2-trig-student-journey.mjs

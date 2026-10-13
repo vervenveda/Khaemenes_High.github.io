@@ -44,8 +44,50 @@ html:root:root body .hero .comment {
 <div class="lesson-main">
 <section class="lesson-section"><h2>Learning objectives</h2><ul><li>Explain the central structure of navigation, vectors &amp; multi-step triangle models using precise mathematical language.</li><li>Apply the governing relationship and verify results with an alternate representation or substitution.</li><li>State domain, unit, precision, and context restrictions whenever they affect the result.</li><li>Analyze a misconception and communicate a correction with evidence.</li></ul><p class="notice"><strong>Essential question:</strong> How do identities and triangle laws transform expressions, solve periodic equations, and determine unknown measurements?</p></section>
 <section class="lesson-section"><h2>Governing relationship</h2><div class="formula">Combine bearings, vectors, triangle laws, and area formulas.</div><p>Multi-step trigonometric models require a diagram, angle convention, units, and reasonableness checks. Rounding should be delayed.</p></section>
-<section class="lesson-section"><h2>Worked examples</h2><p>Read each example, close it, and reconstruct the reasoning independently. Then verify by substitution, graph, table, or alternate method.</p><div class="worked"><article><strong>Two routes form a 70° included angle with lengths 12 and 18.</strong><span>Use the Law of Cosines for the direct separation.</span></article><article><strong>A bearing is N30°E.</strong><span>Translate carefully to a standard-position or component angle before calculation.</span></article></div></section>
-<section class="lesson-section"><h2>Guided and independent practice</h2><ol><li>Draw and label a bearing diagram.</li><li>Combine two triangle laws.</li><li>Analyze sensitivity to angle measurement.</li><li>Create one original example involving navigation, vectors &amp; multi-step triangle models and solve it completely.</li><li>Use the Khaemenes Scientific Calculator to verify one result, then document the setup and reasonableness check.</li><li>Write a one-paragraph explanation connecting symbolic, graphical, numerical, and contextual representations.</li></ol></section>
+<section class="lesson-section"><h2>Worked examples</h2><p>First decide whether you are comparing <strong>two endpoints from one origin</strong> or combining <strong>successive travel legs</strong>. The models are different. A compass bearing is measured clockwise from north.</p>
+<div class="worked"><article><strong>Investigation A · Direct separation between two endpoints.</strong>
+<ol><li>Two straight routes leave the same origin, with lengths 12 km and 18 km and an included angle of 70° between them.</li>
+<li>The segment between their endpoints is opposite the included 70° angle, so d²=12²+18²−2(12)(18)cos70°.</li>
+<li>Calculate d²=468−432cos70°≈320.25, hence <strong>d≈17.90 km</strong>.</li>
+<li>Reasonableness check: |18−12|&lt;17.90&lt;18+12, i.e. 6&lt;d&lt;30. A diagram and triangle inequality support the result.</li></ol>
+<p><strong>Interpretation:</strong> This is the <em>distance between two destination points</em>, not the sum of two consecutive travel legs. Do not assume 12+18=30 km is the straight-line separation.</p></article>
+<article><strong>Investigation B · Add successive compass legs by components.</strong>
+<ol><li>Travel 12 km on bearing N30°E, then 8 km due east. N30°E means clockwise 30° from north, not a standard x-axis angle of 30°.</li>
+<li>Use east and north components: leg 1 has east=12sin30°=6 and north=12cos30°=6√3≈10.39 km. Leg 2 has east=8 and north=0.</li>
+<li>Combine: total east=6+8=14 km, total north=6√3 km.</li>
+<li>Resultant straight-line distance is √[14²+(6√3)²]=√304=4√19≈17.44 km.</li>
+<li>Its bearing clockwise from north is atan2(east,north)=atan2(14,6√3)≈53.41° (equivalently N53.41°E).</li>
+<li>Verification: resolving 17.44 km at bearing 53.41° returns approximately 14 km east and 10.39 km north.</li></ol>
+<p><strong>Model limit:</strong> Bearings are idealized as flat-plane directions here; over long distances, Earth curvature, terrain, and navigation corrections must be considered.</p></article></div></section>
+<section class="lesson-section"><h2>Visual model · two-leg bearing displacement</h2>
+<figure style="margin:12px 0"><svg viewBox="0 0 600 285" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="u11l08-route-title u11l08-route-desc" style="width:100%;max-width:600px;height:auto;background:#fffdf7;border:1px solid #c5b494;border-radius:7px">
+<title id="u11l08-route-title">12 kilometers north 30 degrees east, followed by 8 kilometers east</title><desc id="u11l08-route-desc">Starting in the lower-left, a blue slanted line travels northeast 12 kilometers; a blue horizontal line continues east 8 kilometers; an amber dashed line runs directly from start to finish showing the resultant vector. North is up and east is right.</desc>
+<line x1="75" y1="238" x2="75" y2="32" stroke="#96836a" stroke-width="2"/><line x1="75" y1="238" x2="550" y2="238" stroke="#96836a" stroke-width="2"/>
+<path d="M69 40 L75 28 L81 40" fill="none" stroke="#96836a" stroke-width="2"/>
+<text x="85" y="35" font-size="16" fill="#3e342b">N</text><text x="554" y="244" font-size="16" fill="#3e342b">E</text>
+<polyline points="75,238 135,134 215,134" fill="none" stroke="#28658a" stroke-width="4" stroke-linejoin="round"/>
+<line x1="75" y1="238" x2="215" y2="134" stroke="#a56c28" stroke-width="3" stroke-dasharray="9 6"/>
+<circle cx="75" cy="238" r="5" fill="#28658a"/><circle cx="135" cy="134" r="5" fill="#28658a"/><circle cx="215" cy="134" r="5" fill="#28658a"/>
+<text x="103" y="178" font-size="15" fill="#28658a">12 km · N30°E</text>
+<text x="175" y="122" font-size="15" fill="#28658a">8 km east</text>
+<text x="288" y="177" font-size="16" fill="#966123">Resultant: 4√19 km</text>
+<text x="288" y="200" font-size="15" fill="#966123">Bearing ≈53.41°</text>
+<text x="75" y="262" font-size="14" fill="#44362a" text-anchor="middle">Start</text><text x="215" y="119" font-size="14" fill="#44362a">End</text>
+</svg><figcaption>Component diagram (schematic). For compass bearings, east=d sin θ and north=d cos θ when θ is measured clockwise from north. The amber path is the direct displacement—not a third travel leg.</figcaption></figure></section>
+<section class="lesson-section"><h2>Guided and independent practice</h2><ol>
+<li>Draw a north arrow and label 0° north, 90° east, 180° south, 270° west before calculating a bearing.</li>
+<li>For two straight routes from a common start of 6 km and 8 km separated by 60°, compute the distance between endpoints using the Law of Cosines.</li>
+<li>For a successive route of 10 km north then 10 km east, find resultant magnitude and initial bearing from north.</li>
+<li>For 6 km N60°E followed by 4 km south, find signed east/north components, displacement, and bearing. Explain the quadrant.</li>
+<li>Compare your methods in Coordinated Mission Control and Triangle Law Expedition; use your private note to describe why the angle convention changes the components.</li></ol></section>
+<section class="lesson-section"><h2>Independent transfer · check only after solving</h2>
+<ol><li>Two endpoints are 6 km and 8 km from the same point, with a 60° included angle. What is their separation?</li>
+<li>Travel 10 km due north then 10 km due east. Give exact resultant length and compass bearing.</li>
+<li>Travel 6 km N60°E then 4 km due south. Calculate signed components and the resultant magnitude; is the final bearing north or south of east?</li></ol>
+<details><summary>Reveal worked verification and answers</summary><ol>
+<li>d²=6²+8²−2×6×8cos60°=52, so d=2√13≈7.21 km. These are endpoints, not consecutive legs.</li>
+<li>East=10, north=10; resultant=√200=10√2≈14.14 km, bearing=45° clockwise from north.</li>
+<li>East=6sin60°=3√3≈5.20 km, north=6cos60°−4=−1 km; distance=√(27+1)=2√7≈5.29 km. Bearing≈100.89° clockwise from north, so the final displacement is south of east.</li></ol></details></section>
 <section class="lesson-section"><h2>Differentiated pathways</h2><div class="pathway-grid">
 <div class="pathway"><h4>Foundation</h4><p>Review prerequisite vocabulary, annotate each worked step, complete the first four prompts, and use a table or graph to support symbolic work.</p></div>
 <div class="pathway"><h4>Core</h4><p>Complete every prompt, explain domain and verification, correct errors, and submit the applied task with clear mathematical communication.</p></div>

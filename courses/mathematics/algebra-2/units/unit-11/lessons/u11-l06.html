@@ -44,8 +44,39 @@ html:root:root body .hero .comment {
 <div class="lesson-main">
 <section class="lesson-section"><h2>Learning objectives</h2><ul><li>Explain the central structure of law of sines, ambiguous case &amp; applications using precise mathematical language.</li><li>Apply the governing relationship and verify results with an alternate representation or substitution.</li><li>State domain, unit, precision, and context restrictions whenever they affect the result.</li><li>Analyze a misconception and communicate a correction with evidence.</li></ul><p class="notice"><strong>Essential question:</strong> How do identities and triangle laws transform expressions, solve periodic equations, and determine unknown measurements?</p></section>
 <section class="lesson-section"><h2>Governing relationship</h2><div class="formula">a/sinA=b/sinB=c/sinC.</div><p>The Law of Sines solves AAS, ASA, and sometimes SSA triangles. SSA may yield zero, one, or two triangles, so the ambiguous case must be checked.</p></section>
-<section class="lesson-section"><h2>Worked examples</h2><p>Read each example, close it, and reconstruct the reasoning independently. Then verify by substitution, graph, table, or alternate method.</p><div class="worked"><article><strong>A=40°,B=65°,a=10. Find b.</strong><span>b=10sin65°/sin40°≈14.10.</span></article><article><strong>SSA produces sinB=0.8.</strong><span>Both B≈53.13° and 126.87° may be possible if angle sums permit.</span></article></div></section>
-<section class="lesson-section"><h2>Guided and independent practice</h2><ol><li>Solve an AAS triangle.</li><li>Analyze an ambiguous SSA case.</li><li>Use area K=1/2 ab sinC.</li><li>Create one original example involving law of sines, ambiguous case &amp; applications and solve it completely.</li><li>Use the Khaemenes Scientific Calculator to verify one result, then document the setup and reasonableness check.</li><li>Write a one-paragraph explanation connecting symbolic, graphical, numerical, and contextual representations.</li></ol></section>
+<section class="lesson-section"><h2>Worked examples</h2><p>Always label lowercase side a opposite uppercase angle A, and similarly for B and C. Keep the calculator in degree mode for examples using °.</p>
+<div class="worked"><article><strong>Investigation A · AAS triangle with A=40°, B=65°, a=10.</strong>
+<ol><li>Find the third angle: C=180°−40°−65°=75°.</li><li>Use paired opposites: a/sin A=b/sin B, so b=10 sin65°/sin40°≈14.10.</li>
+<li>Likewise c=10 sin75°/sin40°≈15.03.</li><li>Check that the longest side c is opposite the largest angle C. Verify b/sin65°≈a/sin40°.</li></ol>
+<p><strong>Domain:</strong> The denominator sin40° is not zero. The given A+B=105° leaves a valid positive third angle.</p></article>
+<article><strong>Investigation B · Ambiguous SSA: A=30°, a=7, b=10.</strong>
+<ol><li>Compute the perpendicular altitude h=b sin A=10 sin30°=5. Here 5&lt;7&lt;10, so two triangles may exist.</li>
+<li>Law of Sines gives sin B=(b sin A)/a=5/7. The principal solution is B₁≈45.58°.</li>
+<li>Sine also has the supplementary angle B₂=180°−B₁≈134.42°. Check <strong>both angle sums</strong>: C₁=180°−30°−45.58°≈104.42° and C₂=180°−30°−134.42°≈15.58°. Both are positive.</li>
+<li>Compute c₁=7sin C₁/sin30°≈13.56 and c₂=7sin C₂/sin30°≈3.76. These are two different, valid triangles.</li>
+<li>Verify both with a/sin A=b/sin B. The first triangle has a large c and the second a much smaller c; do not discard either without checking.</li></ol>
+<p><strong>Why there are sometimes 0, 1 or 2:</strong> For the same acute A=30° and b=10: a=4 is below h=5 (zero); a=5 is tangent, giving B=90° (one); a=7 yields two; a=12 is at least b (one). For an obtuse A, side a must be the longest.</p></article></div></section>
+<section class="lesson-section"><h2>Visual model · side–angle correspondence</h2><figure style="margin:12px 0"><svg viewBox="0 0 600 285" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="u11l06-triangle-title u11l06-triangle-desc" style="width:100%;max-width:600px;height:auto;border:1px solid #c4b397;background:#fffdf7;border-radius:7px">
+<title id="u11l06-triangle-title">Triangle ABC with correctly opposed sides</title><desc id="u11l06-triangle-desc">A is the lower left vertex, B lower right, and C the top vertex. Lowercase a marks side BC opposite angle A; lowercase b marks side AC opposite B; lowercase c marks baseline AB opposite C. Diagram is not to scale.</desc>
+<polygon points="80,228 510,228 225,45" fill="#e9f0f2" stroke="#28658a" stroke-width="3"/>
+<text x="60" y="250" fill="#2d241a" font-size="19">A</text><text x="517" y="246" fill="#2d241a" font-size="19">B</text><text x="220" y="32" fill="#2d241a" font-size="19">C</text>
+<text x="390" y="132" fill="#2d241a" font-size="18">a</text><text x="135" y="127" fill="#2d241a" font-size="18">b</text><text x="299" y="252" fill="#2d241a" font-size="18">c</text>
+<text x="300" y="274" fill="#574737" font-size="13" text-anchor="middle">Each lowercase side is opposite its matching uppercase angle · not to scale</text></svg>
+<figcaption>When the information is SSA, use the altitude and both possible inverse-sine angles; the sketch alone cannot rule out the second triangle.</figcaption></figure></section>
+<section class="lesson-section"><h2>Guided and independent practice</h2><ol>
+<li>AAS: Given A=35°, B=70°, and a=8, compute C and side b. Check which side should be the largest.</li>
+<li>SSA classification: with A=30° and b=10, classify a=4, a=5, a=7 and a=12 as zero, one or two triangles. Explain using altitude and triangle angle sums.</li>
+<li>Explain why A=110°, a=8, b=8 has no nondegenerate solution, although the ratio sin B may be numerically valid.</li>
+<li>For the two-solution A=30°, a=7, b=10 case, compute both C values before using the Law of Sines for c.</li>
+<li>Open Triangle Law Expedition and check the independent result while keeping game practice separate from formal mastery.</li></ol></section>
+<section class="lesson-section"><h2>Independent transfer · check only after solving</h2><ol>
+<li>With A=30°, b=10 and a=5, find B and C. Why is the triangle unique?</li>
+<li>With A=110°, b=8 and a=8, state the number of valid triangles and justify your answer.</li>
+<li>In the A=40°, B=65°, a=10 example, what is the value of c to two decimals?</li></ol>
+<details><summary>Reveal worked verification and answers</summary><ol>
+<li>The altitude is h=10sin30°=5, exactly a. Hence B=90°, C=60° and there is one right triangle.</li>
+<li>Zero. Because A is obtuse, a must be strictly longer than side b, but a=b. Equivalently sin B=sin110° gives B=70° or 110°, neither leaving a positive C.</li>
+<li>c=10sin75°/sin40°≈15.03; C is the largest angle, so c must be the largest side.</li></ol></details></section>
 <section class="lesson-section"><h2>Differentiated pathways</h2><div class="pathway-grid">
 <div class="pathway"><h4>Foundation</h4><p>Review prerequisite vocabulary, annotate each worked step, complete the first four prompts, and use a table or graph to support symbolic work.</p></div>
 <div class="pathway"><h4>Core</h4><p>Complete every prompt, explain domain and verification, correct errors, and submit the applied task with clear mathematical communication.</p></div>
