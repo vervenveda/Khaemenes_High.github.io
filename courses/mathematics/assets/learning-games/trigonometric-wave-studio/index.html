@@ -1,0 +1,329 @@
+<!doctype html><html lang="en"><head>
+<script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6efdf">
+<title>Trigonometric Wave Studio · Khaemenes Academy</title>
+<style>
+:root{color-scheme:light;--paper:#f6efdf;--card:#fffdf8;--ink:#2d251c;--edge:#ccb99b;--blue:#28668d;--amber:#ad7031;--good:#206746;--bad:#9f3e36}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 100% 0%,#fffcf7,transparent 53%),var(--paper);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+main{max-width:1160px;margin:auto;padding:23px 16px 62px}
+.eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#76512d;font-weight:600}
+h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.18}h1{font-size:clamp(2rem,5vw,3.1rem);margin:6px 0}h2{font-size:1.36rem;margin:0 0 10px}.lead{max-width:880px;color:#594a3a}
+.panel{padding:18px;background:var(--card);border:1px solid var(--edge);border-radius:7px;box-shadow:0 3px 0 #e7dac5}
+.layout{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(315px,1fr);gap:16px;margin:16px 0}
+.row{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.stats{margin-top:15px}.stat{background:#f7eee0;border:1px solid var(--edge);border-radius:7px;padding:8px 11px}
+label{display:block;font-weight:550}input,select,button{font:inherit;border:1px solid #927a58;border-radius:7px;background:white;color:var(--ink);padding:9px 10px}
+input[type=number]{width:100%;max-width:185px}input[type=range]{width:100%;padding:4px;accent-color:var(--amber)}input[type=checkbox]{accent-color:var(--blue)}
+button{cursor:pointer;background:#e9dac1}button:hover{background:#ddc79e}button:disabled{opacity:.5;cursor:not-allowed}button.primary{background:#45362b;color:white}
+:focus-visible{outline:3px solid #27648c;outline-offset:2px}
+#graph{display:block;width:100%;height:auto;background:#fffefb;border:1px solid var(--edge);border-radius:7px}
+#description{color:#5c4c3b;font-size:.9rem;min-height:48px}#formula{font:600 1.1rem/1.5 Georgia,serif;white-space:pre-line;overflow-wrap:anywhere}
+.legend{display:inline-block;border:1px solid var(--edge);border-radius:7px;padding:3px 8px;font-size:.81rem;margin:5px 4px 0 0}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:15px 0}
+.fields>div{background:#f9f1e4;border:1px solid #dfcdb0;padding:10px;border-radius:7px}
+#feedback{min-height:82px;background:#f7efdf;padding:12px;border-left:5px solid var(--amber);border-radius:4px}#feedback.good{border-color:var(--good)}#feedback.bad{border-color:var(--bad)}
+#celebrate{min-height:24px;color:var(--good);font-weight:650}#scenario{font-weight:570}.small{color:#635445;font-size:.88rem}
+#workshop{background:#faf1e4;border:1px solid var(--edge);border-radius:7px;padding:12px}
+.sliders{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+progress{width:100%;accent-color:var(--good)}#history{max-height:180px;overflow:auto}footer{color:#655747;font-size:.85rem;margin-top:24px}a{color:#245d84}
+[hidden]{display:none!important}
+@media(max-width:840px){.layout{grid-template-columns:1fr}}
+@media(max-width:510px){.fields,.sliders{grid-template-columns:1fr}.panel{padding:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style><script src="../../game-return-route.js?v=20261012"></script></head><body><main>
+<p class="eyebrow">Khaemenes Academy · Algebra II · Periodic Modeling</p>
+<h1>Trigonometric Wave Studio</h1>
+<p class="lead">See how sine, cosine and reciprocal waves behave. Change amplitude, period, phase and midline, identify asymptotes, interpret inverse trigonometric functions, and fit a wave to data. Incorrect answers can always be corrected without restarting.</p>
+<section class="panel"><div class="row">
+<label for="mode">Mission <select id="mode">
+<option value="waves">Sine &amp; cosine · read the wave</option>
+<option value="amplitude">Amplitude &amp; midline</option>
+<option value="period">Period &amp; angular frequency</option>
+<option value="phase">Phase shift &amp; period</option>
+<option value="vertical">Vertical shifts, highs &amp; lows</option>
+<option value="asymptotes">Tangent, cotangent, secant &amp; cosecant asymptotes</option>
+<option value="inverse">Inverse trig · principal values</option>
+<option value="fit">Periodic data &amp; sinusoidal regression</option>
+<option value="tangent">Tangent &amp; cotangent values</option>
+</select></label>
+<button id="new" type="button" class="primary">New mission</button>
+<button id="explore" type="button">Wave workshop</button>
+<label for="quiet">Low stimulation <input id="quiet" type="checkbox"></label>
+</div><p id="context" class="small">Local independent practice, separate from official student grades.</p></section>
+<div class="row stats"><span class="stat">Solved <b id="solved">0</b></span><span class="stat">Checked <b id="attempted">0</b></span><span class="stat">First-try <b id="accuracy">—</b></span><span class="stat">Best streak <b id="best">0</b></span><span class="stat">80% goal <b id="mastery">In progress</b></span></div>
+<div class="layout">
+<section class="panel"><h2>Interactive periodic graph</h2>
+<svg id="graph" viewBox="0 0 640 440" role="img" aria-labelledby="graphTitle graphDesc">
+<title id="graphTitle">Wave and periodic dataset graph</title><desc id="graphDesc">Horizontal axis is angle x in radians from zero to four pi. Vertical axis is function y. Blue shows a wave or fitted curve; amber indicates observations or guide lines. Discontinuities are not connected.</desc>
+<g id="axis"></g><g id="curves"></g></svg>
+<p><span class="legend">Blue · wave/model</span><span class="legend">Amber · midline, data, or comparison</span></p>
+<p id="description" aria-live="polite" class="small"></p><p id="formula" aria-live="polite"></p>
+<div id="workshop" hidden><h2>Free wave workshop</h2>
+<p class="small">Move the four controls to transform a sine or cosine wave. C is measured as a multiple of π; the displayed model is y=A·f(B(x−Cπ))+D. Workshop changes do not change a mission score.</p>
+<div class="sliders">
+<div><label for="amp">Signed amplitude A: <output id="ampOut">2</output></label><input id="amp" type="range" min="-4" max="4" step="1" value="2"></div>
+<div><label for="freq">Frequency B: <output id="freqOut">1</output></label><input id="freq" type="range" min="0.5" max="3" step="0.5" value="1"></div>
+<div><label for="phase">Horizontal shift C (π units): <output id="phaseOut">0.5</output></label><input id="phase" type="range" min="-2" max="2" step="0.25" value="0.5"></div>
+<div><label for="mid">Midline D: <output id="midOut">0</output></label><input id="mid" type="range" min="-2" max="2" step="1" value="0"></div>
+</div>
+<label for="family">Function family <select id="family"><option value="sin">Sine</option><option value="cos">Cosine</option></select></label>
+</div>
+</section>
+<section class="panel"><h2>Reasoning console</h2><p id="scenario"></p><p id="prompt"></p>
+<div class="fields">
+<div><label for="answer">First answer <small id="label1">Number</small></label><input id="answer" type="number" inputmode="decimal" step="any" autocomplete="off"></div>
+<div id="secondBlock"><label for="second">Second answer <small id="label2">Number</small></label><input id="second" type="number" inputmode="decimal" step="any" autocomplete="off"></div>
+</div>
+<p class="small">For angles in radians, enter the numerical coefficient of π. For example, π/2 is 0.5. For other values, round to two decimals; tolerance is ±0.035.</p>
+<div class="row"><button id="check" type="button" class="primary">Check reasoning</button><button id="hint" type="button">Hint</button><button id="worked" type="button">Worked solution</button><button id="next" type="button" disabled>Next case →</button></div>
+<p id="feedback" role="status" aria-live="polite">Investigate the graph, then enter your answers.</p><p id="celebrate" aria-live="polite"></p></section></div>
+<section class="panel"><h2>Private learning journal</h2><progress id="progress" max="10" value="0"></progress>
+<p class="small">Eight independent first-try successes across your latest ten checked questions achieve the 80% practice goal. Hints and corrections never restart a question. Results are stored locally per lesson and mode, with no impact on official grades.</p>
+<div class="row"><button id="export" type="button">Export JSON</button><button id="reset" type="button">Reset current mission mode (confirm)</button><a href="../../../index.html">Mathematics home</a></div>
+<ol id="history" aria-label="Recent cases"></ol></section>
+<footer>© Jennifer Kay Pearl · Khaemenes Academy · Offline-capable vanilla HTML, CSS and JavaScript · No third-party libraries or tracking.</footer>
+</main>
+<script>
+(()=>{'use strict';
+// PURE_MODEL_BEGIN
+const PI=Math.PI,near=(x,y,tol=.035)=>Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x-y)<=tol;
+const pick=(items,rng)=>items[Math.floor(rng()*items.length)];
+const SIN=Math.sin,COS=Math.cos;
+const model=(t,x)=>t.D+t.A*(t.family==='cos'?COS(t.B*(x-t.C*PI)):SIN(t.B*(x-t.C*PI)));
+const properties=t=>({amplitude:Math.abs(t.A),midline:t.D,periodPi:2/Math.abs(t.B),phasePi:t.C,min:t.D-Math.abs(t.A),max:t.D+Math.abs(t.A)});
+function periodicValue(fn,x){
+ const s=SIN(x),c=COS(x);
+ const denom=fn==='tan'||fn==='sec'?c:s;
+ if(Math.abs(denom)<1e-10)return null;
+ if(fn==='tan')return s/c;if(fn==='cot')return c/s;
+ if(fn==='sec')return 1/c;if(fn==='csc')return 1/s;
+ throw Error('unknown reciprocal function');
+}
+const asymptotePi=fn=>fn==='tan'||fn==='sec'?[.5,1.5]:fn==='cot'||fn==='csc'?[0,1]:null;
+function inverseValue(fn,value){
+ if(!Number.isFinite(value))return null;
+ if(fn==='asin')return value>=-1&&value<=1?Math.asin(value)*180/PI:null;
+ if(fn==='acos')return value>=-1&&value<=1?Math.acos(value)*180/PI:null;
+ if(fn==='atan')return Math.atan(value)*180/PI;
+ return null;
+}
+function fitPeriodic(points){
+ const n=points.length,sin=points.reduce((s,p)=>s+p[1]*SIN(p[0]),0)*2/n;
+ const cos=points.reduce((s,p)=>s+p[1]*COS(p[0]),0)*2/n;
+ const D=points.reduce((s,p)=>s+p[1],0)/n;
+ const amplitude=Math.hypot(sin,cos),phase=Math.atan2(cos,sin);
+ return {sin,cos,D,amplitude,phase,predict:x=>D+sin*SIN(x)+cos*COS(x)};
+}
+function makeTask(mode,rng=Math.random){
+ const R=(a,b)=>a+Math.floor(rng()*(b-a+1)),sgn=()=>pick([-1,1],rng);
+ const t={mode};
+ if(mode==='waves'){t.deg=pick([0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330],rng);}
+ else if(mode==='amplitude'){t.A=sgn()*R(1,4);t.B=1;t.C=0;t.D=R(-3,3);t.family=pick(['sin','cos'],rng);}
+ else if(mode==='period'){t.A=1;t.B=pick([.5,1,1.5,2,2.5,3],rng);t.C=0;t.D=0;t.family=pick(['sin','cos'],rng);}
+ else if(mode==='phase'){t.A=sgn()*R(1,3);t.B=pick([.5,1,2],rng);t.C=pick([-.75,-.5,-.25,.25,.5,.75,1,1.5],rng);t.D=0;t.family=pick(['sin','cos'],rng);}
+ else if(mode==='vertical'){t.A=sgn()*R(1,4);t.B=1;t.C=0;t.D=R(-3,3);t.family=pick(['sin','cos'],rng);}
+ else if(mode==='asymptotes'){t.fn=pick(['tan','cot','sec','csc'],rng);}
+ else if(mode==='inverse'){
+  t.fn=pick(['asin','acos','atan'],rng);
+  const degrees=t.fn==='asin'?[-90,-60,-45,-30,0,30,45,60,90]:t.fn==='acos'?[0,30,45,60,90,120,135,150,180]:[-60,-45,-30,0,30,45,60];
+  t.deg=pick(degrees,rng);
+  t.input=t.fn==='asin'?SIN(t.deg*PI/180):t.fn==='acos'?COS(t.deg*PI/180):Math.tan(t.deg*PI/180);
+ }
+ else if(mode==='fit'){
+  t.A=pick([1,2,3,4],rng);t.B=1;t.C=0;t.D=R(-3,3);t.family='sin';
+  t.cosCoef=pick([-2,-1,0,1,2],rng);
+  t.noise=Array.from({length:8},()=>pick([-.3,0,.3],rng));
+  t.points=t.noise.map((noise,k)=>[k*PI/4,t.D+t.A*SIN(k*PI/4)+t.cosCoef*COS(k*PI/4)+noise]);
+ }
+ else if(mode==='tangent'){t.deg=pick([30,45,60,120,135,150,210,225,240,300,315,330],rng);}
+ else throw Error('unknown wave mode '+mode);
+ t.id=JSON.stringify(t);return t;
+}
+function expected(t){
+ switch(t.mode){
+ case 'waves':return {one:SIN(t.deg*PI/180),two:COS(t.deg*PI/180)};
+ case 'amplitude':return {one:properties(t).amplitude,two:properties(t).midline};
+ case 'period':return {one:properties(t).periodPi,two:t.B};
+ case 'phase':return {one:t.C,two:properties(t).periodPi};
+ case 'vertical':return {one:properties(t).max,two:properties(t).min};
+ case 'asymptotes':{const p=asymptotePi(t.fn);return {one:p[0],two:p[1]};}
+ case 'inverse':return {one:inverseValue(t.fn,t.input),two:inverseValue(t.fn,t.input)/180};
+ case 'fit':{const f=fitPeriodic(t.points);return {one:f.amplitude,two:f.D};}
+ case 'tangent':return {one:periodicValue('tan',t.deg*PI/180),two:periodicValue('cot',t.deg*PI/180)};
+ }
+ return {};
+}
+function correct(t,a,b){const e=expected(t);return near(a,e.one)&&near(b,e.two);}
+// PURE_MODEL_END
+window.TrigonometricWaveCore=Object.freeze({near,model,properties,periodicValue,asymptotePi,inverseValue,fitPeriodic,makeTask,expected,correct});
+const $=id=>document.getElementById(id),params=new URLSearchParams(location.search);
+const MODES=['waves','amplitude','period','phase','vertical','asymptotes','inverse','fit','tangent'];
+const context=[params.get('course')||'standalone',params.get('unit')||'',params.get('lesson')||''].map(s=>s.replace(/[^a-z0-9_-]/gi,'_')).join('|');
+let mode=MODES.includes(params.get('mode'))?params.get('mode'):'waves',task=null,record,streak=0,exploring=false;
+const empty=()=>({solved:0,attempted:0,firstTries:0,bestStreak:0,outcomes:[],recent:[],history:[],task:null,checked:false,wrong:false,helped:false,entry:{one:'',two:''}});
+const key=()=>['KHAE_TRIG_WAVE_STUDIO_V1',context,mode].join('|');
+const fmt=(n,d=3)=>Number.isFinite(n)?String(+n.toFixed(d)):'undefined';
+function load(){
+ record=empty();try{const v=JSON.parse(localStorage.getItem(key())||'null');if(v&&Number.isFinite(v.solved)&&Number.isFinite(v.attempted)&&Array.isArray(v.recent)&&Array.isArray(v.history)){
+ record={...record,...v,recent:v.recent.slice(-30),history:v.history.slice(-10),outcomes:(v.outcomes||[]).slice(-10),entry:{...record.entry,...(v.entry||{})}};}}catch{}
+ task=record.task||null;streak=0;
+}
+function save(){record.task=task;try{localStorage.setItem(key(),JSON.stringify(record));}catch{$('context').textContent='Local storage unavailable. Export JSON to preserve practice results.';}}
+function message(str,status=''){$('feedback').textContent=str;$('feedback').className=status;$('celebrate').textContent='';}
+function challenge(){
+ exploring=false;record.checked=false;record.wrong=false;record.helped=false;record.entry={one:'',two:''};
+ const seen=new Set(record.recent);let t=null;
+ for(let i=0;i<150;i++){const candidate=makeTask(mode);if(!seen.has(candidate.id)){t=candidate;break;}}
+ if(!t){record.recent=[];t=makeTask(mode);}
+ task=t;record.recent.push(task.id);record.recent=record.recent.slice(-30);
+ show();message('Inspect the model carefully. You may retry without changing the question.');save();
+}
+function formula(t){
+ return t.A+' '+t.family+'('+t.B+'(x − '+t.C+'π)) '+(t.D<0?'− '+Math.abs(t.D):'+ '+t.D);
+}
+function scenario(){
+ const t=task;
+ if(mode==='waves')return ['The unit-wave angle is '+t.deg+'° (radians = '+fmt(t.deg/180)+'π).','Find sin(θ) and cos(θ). Give two numerical components.','sin θ','cos θ'];
+ if(mode==='amplitude')return ['The transformation is y = '+formula(t)+'.','Find the amplitude (always nonnegative) and midline of this wave.','Amplitude |A|','Midline D'];
+ if(mode==='period')return ['The periodic model is y = '+formula(t)+'.','Find the period as a coefficient of π and the angular frequency B.','Period / π','Angular frequency B'];
+ if(mode==='phase')return ['The transformed wave is y = '+formula(t)+'. Here C is inside B(x−Cπ).','Identify the signed horizontal shift in multiples of π and the period in multiples of π.','Horizontal shift / π','Period / π'];
+ if(mode==='vertical')return ['A trigonometric signal is modeled by y = '+formula(t)+'.','Find the absolute maximum and minimum y-values, accounting for the sign of A.','Maximum y','Minimum y'];
+ if(mode==='asymptotes')return ['Study y = '+t.fn+'(x) over 0 ≤ x < 2π.','Find the first two vertical asymptote positions, giving coefficients of π. Do not join graph branches across undefined points.','First asymptote / π','Second asymptote / π'];
+ if(mode==='inverse')return ['The inverse function is '+t.fn+'('+fmt(t.input,5)+'). This is an inverse trigonometric function, not a reciprocal.','Find its PRINCIPAL value in degrees and its coefficient of π in radians.','Principal angle (degrees)','Principal angle / π'];
+ if(mode==='fit')return ['Eight fictional readings sampled at x = kπ/4 (k=0,…,7): '+t.points.map(p=>fmt(p[1],2)).join(', ')+'.','Fit y=D+u sin(x)+v cos(x) by least squares (one cycle). Find fitted amplitude √(u²+v²) and midline D.','Fitted amplitude','Fitted midline'];
+ return ['Compare tan('+t.deg+'°) and cot('+t.deg+'°) for a non-axis angle.','Compute the two values as decimals, using tan=sin/cos and cot=cos/sin.','tan θ','cot θ'];
+}
+function explanation(){
+ const t=task,e=expected(t);
+ if(mode==='waves')return 'Unit circle coordinates are (cosθ, sinθ). For '+t.deg+'°, sinθ='+fmt(e.one,5)+' and cosθ='+fmt(e.two,5)+'.';
+ if(mode==='amplitude')return 'Amplitude is |A|='+e.one+' regardless of reflection. The midline is D='+e.two+'.';
+ if(mode==='period')return 'Sine and cosine repeat when their argument increases by 2π. Period=2π/|B|='+fmt(e.one,5)+'π; angular frequency B='+e.two+'.';
+ if(mode==='phase')return 'Writing the argument as B(x−Cπ) makes the signed horizontal shift exactly '+fmt(e.one)+'π. Period is 2π/|B|='+fmt(e.two)+'π. Beware Bx−Cπ has a different shift.';
+ if(mode==='vertical')return 'Range is [D−|A|, D+|A|]. Here maximum='+e.one+', minimum='+e.two+'; reflecting the wave does not swap the numeric order.';
+ if(mode==='asymptotes')return t.fn+' has denominator '+(t.fn==='tan'||t.fn==='sec'?'cos(x)':'sin(x)')+', which equals zero at the asymptotes. On [0,2π), they are '+e.one+'π and '+e.two+'π.';
+ if(mode==='inverse')return 'The principal range of '+t.fn+' is '+(t.fn==='asin'?'[−90°,90°]':t.fn==='acos'?'[0°,180°]':'(−90°,90°)')+'. Thus '+fmt(t.input,5)+' maps to '+fmt(e.one)+'°, or '+fmt(e.two,5)+'π.';
+ if(mode==='fit'){const f=fitPeriodic(t.points);return 'For eight evenly spaced points spanning one cycle, D is the sample mean: '+fmt(f.D,5)+'. Least-squares coefficients u=2Σ(y sin x)/8='+fmt(f.sin,5)+' and v=2Σ(y cos x)/8='+fmt(f.cos,5)+'. Amplitude=√(u²+v²)='+fmt(e.one,5)+'. A phase form is D+A sin(x+φ) with φ=atan2(v,u).';}
+ return 'tan θ=sin θ/cos θ='+fmt(e.one,5)+' and cot θ=cos θ/sin θ='+fmt(e.two,5)+'. Both are defined because neither sine nor cosine is zero.';
+}
+function stats(){
+ $('solved').textContent=String(record.solved);$('attempted').textContent=String(record.attempted);
+ $('accuracy').textContent=record.attempted?Math.round(100*record.firstTries/record.attempted)+'%':'—';
+ $('best').textContent=String(record.bestStreak);$('progress').value=record.outcomes.length;
+ $('mastery').textContent=record.outcomes.length===10&&record.outcomes.filter(Boolean).length>=8?'Achieved':'In progress';
+ $('history').replaceChildren();for(const h of record.history.slice(-10).reverse()){const li=document.createElement('li');li.textContent=h;$('history').appendChild(li);}
+}
+function show(){
+ const arr=scenario();$('mode').value=mode;$('workshop').hidden=!exploring;
+ $('scenario').textContent=arr[0];$('prompt').textContent=arr[1];$('label1').textContent=arr[2];$('label2').textContent=arr[3];
+ $('answer').value=record.entry.one;$('second').value=record.entry.two;
+ $('check').disabled=record.checked||exploring;$('hint').disabled=record.checked||exploring;$('worked').disabled=record.checked||exploring;$('next').disabled=!record.checked||exploring;
+ $('formula').textContent=mode==='asymptotes'?'tan=sin/cos · cot=cos/sin · sec=1/cos · csc=1/sin':
+ mode==='fit'?'y=D+u sin(x)+v cos(x)\nAmplitude=√(u²+v²) · midline=D':
+ mode==='inverse'?'arcsin range [−π/2,π/2] · arccos [0,π] · arctan (−π/2,π/2)':
+ 'y=A·f(B(x−Cπ))+D\nAmplitude=|A| · period=2π/|B| · midline=D';
+ stats();draw();
+}
+const X=x=>59+528*x/(4*PI),Y=y=>215-39*y;
+const escapeText=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function draw(){
+ const t=task;if(!t)return;
+ let axes='<line x1="59" y1="215" x2="587" y2="215" stroke="#776e5d" stroke-width="2"/>'+
+ '<line x1="59" y1="20" x2="59" y2="410" stroke="#776e5d" stroke-width="2"/>';
+ for(let k=0;k<=4;k++){const px=X(k*PI);axes+='<line x1="'+px+'" x2="'+px+'" y1="24" y2="410" stroke="#e8e1d4"/><text x="'+px+'" y="428" text-anchor="middle" font-size="12" fill="#685747">'+(k?k===1?'π':k+'π':'0')+'</text>';}
+ for(let y=-4;y<=4;y++){const py=Y(y);axes+='<line x1="59" y1="'+py+'" x2="587" y2="'+py+'" stroke="#eee8dc"/><text x="42" y="'+(py+5)+'" text-anchor="middle" font-size="12" fill="#685747">'+y+'</text>';}
+ $('axis').innerHTML=axes;
+ let f=null,guide=0,formulaNote='',points=null,discontinuous=false;
+ if(exploring){
+  const A=+$('amp').value,B=+$('freq').value,C=+$('phase').value,D=+$('mid').value,family=$('family').value;
+  const p={A,B,C,D,family};
+  f=x=>model(p,x);guide=D;formulaNote='Workshop: A='+A+', B='+B+', C='+C+'π, D='+D+', family='+family+'. Amplitude '+Math.abs(A)+', period '+fmt(2/B)+'π, shift '+C+'π, midline '+D+'.';
+  $('formula').textContent='y = '+formula(p)+'\nAmplitude '+Math.abs(A)+' · period '+fmt(2/B)+'π · midline '+D;
+ }else if(mode==='asymptotes'){
+  discontinuous=true;f=x=>periodicValue(t.fn,x);
+  formulaNote='The blue branches show '+t.fn+'(x). Dashed amber lines mark denominator zeros, where this function is undefined. Curves stop at these discontinuities.';
+ }else if(mode==='fit'){
+  const p=fitPeriodic(t.points);
+  f=x=>p.predict(x);guide=p.D;points=t.points;
+  formulaNote='Blue is the least-squares sinusoidal fit; amber dots are eight observations with small measurement variations. Fitted model: D='+fmt(p.D,4)+', u='+fmt(p.sin,4)+', v='+fmt(p.cos,4)+'.';
+ }else if(mode==='inverse'){
+  const theta=t.deg*PI/180;
+  f=x=>t.fn==='asin'?SIN(x):t.fn==='acos'?COS(x):periodicValue('tan',x);
+  discontinuous=t.fn==='atan';
+  formulaNote='The source '+(t.fn==='asin'?'sine':t.fn==='acos'?'cosine':'tangent')+' graph repeats, but its inverse selects the principal branch. '+t.fn+'('+fmt(t.input,4)+')='+t.deg+'°.';
+ }else if(mode==='waves'){
+  f=x=>SIN(x);guide=0;
+  formulaNote='The blue sine wave is y=sin(x). Cosine is the same wave shifted horizontally by π/2. At '+t.deg+'°, sin='+fmt(Math.sin(t.deg*PI/180),5)+', cos='+fmt(Math.cos(t.deg*PI/180),5)+'.';
+ }else if(mode==='tangent'){
+  f=x=>periodicValue('tan',x);discontinuous=true;
+  formulaNote='The tangent wave has period π and gaps at x=π/2 and 3π/2 (repeated). Cotangent is its reciprocal where both are defined.';
+ }else{
+  f=x=>model(t,x);guide=t.D;
+  formulaNote='Wave model y = '+formula(t)+'. The period is '+fmt(2/t.B)+'π, amplitude='+Math.abs(t.A)+', midline='+t.D+', and horizontal shift='+t.C+'π.';
+ }
+ let graphic='';
+ if(!discontinuous)graphic+='<line x1="59" x2="587" y1="'+Y(guide)+'" y2="'+Y(guide)+'" stroke="#ad7031" stroke-dasharray="5 5" stroke-width="2"/>';
+ if(discontinuous){
+  const fn=mode==='asymptotes'?t.fn:'tan';
+  const cuts=asymptotePi(fn);
+  for(let k=0;k<2;k++)for(let turn=0;turn<=1;turn++){
+   const pos=(cuts[k]+2*turn)*PI;
+   if(pos>=0&&pos<=4*PI)graphic+='<line x1="'+X(pos)+'" x2="'+X(pos)+'" y1="22" y2="410" stroke="#ad7031" stroke-width="2" stroke-dasharray="6 6"/>';
+  }
+ }
+ let path='',previous=null,segments=0;
+ const N=700;
+ for(let i=0;i<=N;i++){
+  const x=4*PI*i/N,v=f(x),screen=typeof v==='number'&&Number.isFinite(v)?Y(v):NaN;
+  const safe=Number.isFinite(screen)&&screen>=23&&screen<=408;
+  // A new path begins after undefined, clipping, or large jumps; never draw across an asymptote.
+  const separated=previous!==null&&(Math.abs(screen-previous)>58);
+  if(safe){
+   const px=X(x).toFixed(2),py=screen.toFixed(2);
+   path+=(previous===null||separated?'M ':' L ')+px+' '+py;
+   segments++;
+  }
+  previous=safe&&!separated?screen:safe?screen:null;
+ }
+ graphic+='<path d="'+path+'" fill="none" stroke="#28668d" stroke-width="3" stroke-linejoin="round"/>';
+ if(points)for(const point of points)graphic+='<circle cx="'+X(point[0])+'" cy="'+Y(point[1])+'" r="5.5" stroke="#fffdf8" stroke-width="1.5" fill="#ad7031"/>';
+ $('curves').innerHTML=graphic;
+ $('description').textContent=formulaNote+' Horizontal axis: radians 0 to 4π; vertical axis: function output −4 to 4. Out-of-range branches are clipped.';
+}
+function check(){
+ if(!task||record.checked||exploring)return;
+ const one=$('answer').value.trim(),two=$('second').value.trim(),a=one===''?NaN:Number(one),b=two===''?NaN:Number(two);
+ if(!Number.isFinite(a)||!Number.isFinite(b)){message('Enter both numeric answers. Zero must be written as 0, not left blank.','bad');return;}
+ const ok=correct(task,a,b);
+ if(!record.wrong){record.attempted++;record.outcomes.push(ok&&!record.helped);record.outcomes=record.outcomes.slice(-10);}
+ if(ok){
+  record.checked=true;record.solved++;
+  if(!record.wrong&&!record.helped){record.firstTries++;streak++;}else streak=0;
+  record.bestStreak=Math.max(record.bestStreak,streak);
+  record.history.push(mode+' · solved '+task.id.slice(0,44));record.history=record.history.slice(-10);
+  show();message('Correct! '+explanation(),'good');
+  if(!$('quiet').checked&&!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches))$('celebrate').textContent='✦ Wave investigation solved ✦';
+ }else{record.wrong=true;streak=0;message('Try again on this same case. Check degrees versus π coefficients, the signed phase shift, reciprocal-function gaps, and the difference between amplitude and midline.','bad');stats();}
+ save();
+}
+function hint(){
+ if(!task||record.checked||exploring)return;record.helped=true;
+ const hints={waves:'Read sine from the y-coordinate, cosine from x. Quadrant signs matter.',amplitude:'Amplitude is |A|, and midline is D—even when A is negative.',period:'Sine/cosine period in radians is 2π divided by |B|. The coefficient of π is 2/|B|.',phase:'The horizontal shift is C in B(x−Cπ). Positive shifts go right.',vertical:'Maximum = D+|A|, minimum = D−|A|.',asymptotes:'Tangent and secant fail where cos x=0. Cotangent and cosecant fail where sin x=0.',inverse:'Choose the principal inverse branch: arcsin [−90°,90°], arccos [0°,180°], arctan (−90°,90°).',fit:'Eight equally spaced observations complete a cycle. Mean gives D; multiply readings by sin and cos to estimate u and v.',tangent:'Use tangent = sin/cos and cotangent = cos/sin. Both are defined at this non-axis angle.'};
+ message(hints[mode]);save();
+}
+function worked(){if(!task||record.checked||exploring)return;record.helped=true;message('Worked reasoning: '+explanation()+' Enter the answer to complete your mission.');save();}
+function switchMode(m){if(!MODES.includes(m))return;mode=m;exploring=false;load();if(task)show();else challenge();}
+function explore(){exploring=true;$('workshop').hidden=false;show();message('Free wave workshop: move the sliders to explore transformations. This does not change your score.');}
+$('mode').addEventListener('change',e=>switchMode(e.target.value));
+$('new').addEventListener('click',challenge);$('next').addEventListener('click',challenge);
+$('explore').addEventListener('click',explore);$('check').addEventListener('click',check);
+$('hint').addEventListener('click',hint);$('worked').addEventListener('click',worked);
+for(const [id,field] of [['answer','one'],['second','two']])$(id).addEventListener('input',e=>{if(!exploring){record.entry[field]=e.target.value;save();}});
+for(const id of ['amp','freq','phase','mid'])$(id).addEventListener('input',e=>{if(exploring){$(id+'Out').textContent=e.target.value;draw();}});
+$('family').addEventListener('change',()=>{if(exploring)draw();});
+$('reset').addEventListener('click',()=>{if(!confirm('Clear only this mission mode? No official grades or other lesson progress will be affected.'))return;try{localStorage.removeItem(key());}catch{}record=empty();challenge();});
+$('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({schema:1,game:'trigonometric-wave-studio',context,mode,progress:record,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='trigonometric-wave-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);});
+$('context').textContent='Lesson: '+context.replace(/\|/g,' / ')+' · locally saved practice (not an official grade).';
+load();if(task)show();else challenge();
+})();
+</script></body></html>

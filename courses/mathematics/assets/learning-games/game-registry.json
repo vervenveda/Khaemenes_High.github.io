@@ -2256,6 +2256,61 @@
           "wired": true
         }
       ]
+    },
+    "trigonometric-wave-studio": {
+      "title": "Trigonometric Wave Studio",
+      "canonical_path": "courses/mathematics/assets/learning-games/trigonometric-wave-studio/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "Nine wave investigation modes: sine/cosine values, amplitude/midline, period/frequency, phase, extrema/vertical shifts, tan/cot/sec/csc asymptotes, inverse trig restricted principal branches, sinusoidal least-squares data fitting, and tangent/cotangent values. Live free wave workshop with amplitude/frequency/phase/midline sliders, accessible SVG chart, local-only 80% practice tracking, JSON export, no third parties or grading side effects.",
+      "placements": [
+        {
+          "course": "algebra-2",
+          "unit": "10",
+          "lesson": "u10-l05",
+          "lesson_title": "Graphs of Sine and Cosine",
+          "mode": "waves",
+          "query": "?course=algebra2&unit=10&lesson=u10-l05&mode=waves",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "10",
+          "lesson": "u10-l06",
+          "lesson_title": "Amplitude, Period, Phase & Vertical Shifts",
+          "mode": "amplitude",
+          "query": "?course=algebra2&unit=10&lesson=u10-l06&mode=amplitude",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "10",
+          "lesson": "u10-l07",
+          "lesson_title": "Graphs of Tangent, Cotangent, Secant & Cosecant",
+          "mode": "asymptotes",
+          "query": "?course=algebra2&unit=10&lesson=u10-l07&mode=asymptotes",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "10",
+          "lesson": "u10-l08",
+          "lesson_title": "Inverse Trigonometric Functions & Restricted Domains",
+          "mode": "inverse",
+          "query": "?course=algebra2&unit=10&lesson=u10-l08&mode=inverse",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "10",
+          "lesson": "u10-l09",
+          "lesson_title": "Sinusoidal Regression & Periodic Data",
+          "mode": "fit",
+          "query": "?course=algebra2&unit=10&lesson=u10-l09&mode=fit",
+          "wired": true
+        }
+      ]
     }
   }
 }
