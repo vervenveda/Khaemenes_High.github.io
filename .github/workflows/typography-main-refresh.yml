@@ -8,6 +8,8 @@ on:
     paths:
       - "assets/typography-standard.css"
       - "tools/apply-typography-standard.py"
+      - "tools/test-sitewide-typography.mjs"
+      - ".github/workflows/typography-main-refresh.yml"
   workflow_dispatch:
 
 permissions:
