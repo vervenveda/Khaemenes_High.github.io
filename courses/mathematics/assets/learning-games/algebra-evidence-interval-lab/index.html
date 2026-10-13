@@ -162,7 +162,7 @@ save();render();
 function hint(){if(state.checked)return;state.helped=true;save();el.feedback.textContent="Hint: "+questions()[state.active][5];}
 function showWorked(){state.helped=true;save();el.worked.hidden=false;el.workedText.textContent=questions()[state.active][4];el.feedback.textContent="Worked reasoning shown. This attempt is assisted practice.";}
 function next(){chooseNext();render();}
-function switchMode(value){if(!MODES[value])return;mode=value;state=load();render();const nav=document.getElementById("canonicalGameReturn");if(nav){nav.href=new URL(el.return.href,location.href).href;nav.textContent="← Return to Lesson "+(mode==="argument"?"01":"02");}}
+function switchMode(value){if(!MODES[value])return;mode=value;state=load();render();const nav=document.getElementById("canonicalGameReturn");if(nav){nav.href=el.return.href;nav.textContent="← Return to Lesson "+(mode==="argument"?"01":"02");}}
 document.getElementById("check").addEventListener("click",check);
 document.getElementById("hint").addEventListener("click",hint);
 document.getElementById("solution").addEventListener("click",showWorked);
