@@ -1,71 +1,69 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-design-v30-algebra-complete-20261008-repair-20261012";
-const PRECACHE_FILES = [
-"./courses/mathematics/assets/game-return-route.js",
-"./courses/mathematics/assets/learning-games/circle-theorem-studio/index.html",
-"./courses/mathematics/assets/learning-games/common-ground/index.html",
-"./courses/mathematics/assets/learning-games/congruence-similarity-lab/index.html",
-"./courses/mathematics/assets/learning-games/coordinated-mission-control/index.html",
-"./courses/mathematics/assets/learning-games/decimal-signal/index.html",
-"./courses/mathematics/assets/learning-games/dividing-integers/index.html",
-"./courses/mathematics/assets/learning-games/equation-balance-lab/index.html",
-"./courses/mathematics/assets/learning-games/estimate-defender/index.html",
-"./courses/mathematics/assets/learning-games/factors-and-multiples/index.html",
-"./courses/mathematics/assets/learning-games/fraction-forge/index.html",
-"./courses/mathematics/assets/learning-games/fraction-quotient/index.html",
-"./courses/mathematics/assets/learning-games/gcf-lcm-challenge/index.html",
-"./courses/mathematics/assets/learning-games/group-or-cycle/index.html",
-"./courses/mathematics/assets/learning-games/inequality-number-line/index.html",
-"./courses/mathematics/assets/learning-games/integer-compass/index.html",
-"./courses/mathematics/assets/learning-games/integer-rank/index.html",
-"./courses/mathematics/assets/learning-games/integer-sum-lab/index.html",
-"./courses/mathematics/assets/learning-games/linear-systems-mission/index.html",
-"./courses/mathematics/assets/learning-games/number-family/index.html",
-"./courses/mathematics/assets/learning-games/operation-stepper/index.html",
-"./courses/mathematics/assets/learning-games/opposite-mirror/index.html",
-"./courses/mathematics/assets/learning-games/opposite-shift/index.html",
-"./courses/mathematics/assets/learning-games/polynomial-factoring-forge/index.html",
-"./courses/mathematics/assets/learning-games/prime-spy-composite/index.html",
-"./courses/mathematics/assets/learning-games/proof-path-builder/index.html",
-"./courses/mathematics/assets/learning-games/quadratic-graph-lab/index.html",
-"./courses/mathematics/assets/learning-games/ratio-atelier/index.html",
-"./courses/mathematics/assets/learning-games/rational-navigator/index.html",
-"./courses/mathematics/assets/learning-games/rational-rank/index.html",
-"./courses/mathematics/assets/learning-games/reciprocal-relay/index.html",
-"./courses/mathematics/assets/learning-games/right-triangle-trig/index.html",
-"./courses/mathematics/assets/learning-games/scale-forge/index.html",
-"./courses/mathematics/assets/learning-games/sign-forge/index.html",
-"./courses/mathematics/assets/learning-games/slope-and-rate-studio/index.html",
-"./courses/mathematics/assets/learning-games/transformation-plane/index.html","./courses/shared/course-entry-contract.js","./courses/shared/learner-scope-v1.js","./courses/shared/upper-english-records.js",
-  "./courses/mathematics/assets/learning-games/round-policy.js",
-  "./courses/mathematics/assets/learning-games/common-ground/index.html",
-  "./courses/mathematics/assets/learning-games/coordinated-mission-control/index.html",
-  "./courses/mathematics/assets/learning-games/decimal-signal/index.html",
-  "./courses/mathematics/assets/learning-games/dividing-integers/index.html",
-  "./courses/mathematics/assets/learning-games/estimate-defender/index.html",
+const CACHE_VERSION = "khaemenes-high-design-v31-math-offline-20261013";
+// Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
+// Every canonical game and its shared runtime must be available on a newly installed offline worker.
+const GAME_PRECACHE_FILES = [
+  "./courses/mathematics/assets/learning-games/number-family/index.html",
   "./courses/mathematics/assets/learning-games/factors-and-multiples/index.html",
-  "./courses/mathematics/assets/learning-games/fraction-forge/index.html",
-  "./courses/mathematics/assets/learning-games/fraction-quotient/index.html",
+  "./courses/mathematics/assets/learning-games/prime-spy-composite/index.html",
   "./courses/mathematics/assets/learning-games/gcf-lcm-challenge/index.html",
-  "./courses/mathematics/assets/learning-games/group-or-cycle/index.html",
+  "./courses/mathematics/assets/learning-games/operation-stepper/index.html",
+  "./courses/mathematics/assets/learning-games/estimate-defender/index.html",
   "./courses/mathematics/assets/learning-games/integer-compass/index.html",
+  "./courses/mathematics/assets/learning-games/opposite-mirror/index.html",
   "./courses/mathematics/assets/learning-games/integer-rank/index.html",
   "./courses/mathematics/assets/learning-games/integer-sum-lab/index.html",
-  "./courses/mathematics/assets/learning-games/number-family/index.html",
-  "./courses/mathematics/assets/learning-games/operation-stepper/index.html",
-  "./courses/mathematics/assets/learning-games/opposite-mirror/index.html",
   "./courses/mathematics/assets/learning-games/opposite-shift/index.html",
-  "./courses/mathematics/assets/learning-games/prime-spy-composite/index.html",
+  "./courses/mathematics/assets/learning-games/sign-forge/index.html",
+  "./courses/mathematics/assets/learning-games/dividing-integers/index.html",
+  "./courses/mathematics/assets/learning-games/coordinated-mission-control/index.html",
+  "./courses/mathematics/assets/learning-games/common-ground/index.html",
+  "./courses/mathematics/assets/learning-games/decimal-signal/index.html",
+  "./courses/mathematics/assets/learning-games/fraction-forge/index.html",
+  "./courses/mathematics/assets/learning-games/fraction-quotient/index.html",
+  "./courses/mathematics/assets/learning-games/group-or-cycle/index.html",
   "./courses/mathematics/assets/learning-games/ratio-atelier/index.html",
   "./courses/mathematics/assets/learning-games/rational-navigator/index.html",
   "./courses/mathematics/assets/learning-games/rational-rank/index.html",
   "./courses/mathematics/assets/learning-games/reciprocal-relay/index.html",
   "./courses/mathematics/assets/learning-games/scale-forge/index.html",
-  "./courses/mathematics/assets/learning-games/sign-forge/index.html",
-
+  "./courses/mathematics/assets/learning-games/equation-balance-lab/index.html",
+  "./courses/mathematics/assets/learning-games/inequality-number-line/index.html",
+  "./courses/mathematics/assets/learning-games/slope-and-rate-studio/index.html",
+  "./courses/mathematics/assets/learning-games/linear-systems-mission/index.html",
+  "./courses/mathematics/assets/learning-games/polynomial-factoring-forge/index.html",
+  "./courses/mathematics/assets/learning-games/quadratic-graph-lab/index.html",
+  "./courses/mathematics/assets/learning-games/proof-path-builder/index.html",
+  "./courses/mathematics/assets/learning-games/transformation-plane/index.html",
+  "./courses/mathematics/assets/learning-games/congruence-similarity-lab/index.html",
+  "./courses/mathematics/assets/learning-games/circle-theorem-studio/index.html",
+  "./courses/mathematics/assets/learning-games/right-triangle-trig/index.html",
+  "./courses/mathematics/assets/learning-games/function-transformation-studio/index.html",
+  "./courses/mathematics/assets/learning-games/exponential-logarithm-lab/index.html",
+  "./courses/mathematics/assets/learning-games/polynomial-zeros-explorer/index.html",
+  "./courses/mathematics/assets/learning-games/matrix-mission-control/index.html",
+  "./courses/mathematics/assets/learning-games/sequence-series-studio/index.html",
+  "./courses/mathematics/assets/learning-games/complex-plane-lab/index.html",
+  "./courses/mathematics/assets/learning-games/statistics-detective/index.html",
+  "./courses/mathematics/assets/learning-games/probability-quest/index.html",
+  "./courses/mathematics/assets/learning-games/unit-circle-navigator/index.html",
+  "./courses/mathematics/assets/learning-games/trigonometric-wave-studio/index.html",
+  "./courses/mathematics/assets/learning-games/trigonometric-identity-forge/index.html",
+  "./courses/mathematics/assets/learning-games/triangle-law-expedition/index.html",
+];
+const GAME_RUNTIME_FILES = [
+  "./courses/mathematics/assets/game-return-route.js",
+  "./courses/mathematics/assets/shared-game-launcher.js",
+  "./courses/mathematics/assets/learning-games/round-policy.js",
+  "./courses/shared/course-entry-contract.js",
+  "./courses/shared/learner-scope-v1.js",
+  "./courses/mathematics/assets/learning-games/game-registry.json",
+];
+// Legacy Pre-Algebra/course pages are kept, with duplicate entries removed.
+const OTHER_PRECACHE_FILES = [
+  "./courses/shared/upper-english-records.js",
   "./assets/vervenveda-parchment.css",
-  "./",
   "./index.html",
   "./README.md",
   "./LICENSE",
@@ -359,8 +357,7 @@ const PRECACHE_FILES = [
   "./courses/mathematics/pre-algebra/units/unit-12/projects/community-data-evidence-investigation.html",
   "./courses/mathematics/pre-algebra/units/unit-12/standards-map.json",
   "./courses/mathematics/pre-algebra/units/unit-12/unit-map.json",
-  "./courses/mathematics/pre-algebra/units/unit-12/vocabulary.json"
-,
+  "./courses/mathematics/pre-algebra/units/unit-12/vocabulary.json",
   "./courses/mathematics/pre-algebra/units/unit-13/README.md",
   "./courses/mathematics/pre-algebra/units/unit-13/assessment/mastery-check.html",
   "./courses/mathematics/pre-algebra/units/unit-13/assets/assessment-engine.js",
@@ -395,6 +392,7 @@ const PRECACHE_FILES = [
   "./docs/releases/ASSESSMENT_RECORDS_RELEASE.md",
   "./docs/audits/ASSESSMENT_RECORDS_VALIDATION.md",
 ];
+const PRECACHE_FILES = [...new Set([...GAME_PRECACHE_FILES, ...GAME_RUNTIME_FILES, ...OTHER_PRECACHE_FILES])];
 
 const SENSITIVE_CACHE_PATTERNS = [
   /\/teacher(?:\/|$)/i,
@@ -409,7 +407,15 @@ function shouldNeverCache(url){
 }
 
 self.addEventListener("install", event => {
-  event.waitUntil(caches.open(CACHE_VERSION).then(cache => Promise.allSettled(PRECACHE_FILES.map(path => cache.add(new Request(path, { cache: "reload" }))))).then(() => self.skipWaiting()));
+  event.waitUntil(caches.open(CACHE_VERSION).then(async cache => {
+    // The game bundle is atomic: do not activate a release with missing canonical games.
+    const required = [...new Set([...GAME_PRECACHE_FILES, ...GAME_RUNTIME_FILES])];
+    await cache.addAll(required.map(path => new Request(path, { cache: "reload" })));
+    const needed = new Set(required);
+    // Preserve the existing best-effort caching policy for all other course material.
+    await Promise.allSettled(PRECACHE_FILES.filter(path => !needed.has(path))
+      .map(path => cache.add(new Request(path, { cache: "reload" }))));
+  }).then(() => self.skipWaiting()));
 });
 
 self.addEventListener("activate", event => {
@@ -439,6 +445,19 @@ function fallbackFor(url) {
   return "./index.html";
 }
 
+// A game launched from a lesson has ?course=...&lesson=...&mode=... parameters.
+// The HTML is the same canonical file, so offline lookup may omit those parameters
+// without changing the URL or any learner-scoped localStorage records.
+async function cachedNavigation(request) {
+  const exact = await matchReleaseCache(request);
+  if (exact) return exact;
+  const url = new URL(request.url);
+  const match = url.pathname.match(/\/courses\/mathematics\/assets\/learning-games\/[a-z0-9-]+\/(?:index\.html)?$/i);
+  if (!match) return null;
+  const canonicalPath = url.pathname.endsWith("/") ? url.pathname + "index.html" : url.pathname;
+  return matchReleaseCache(url.origin + canonicalPath);
+}
+
 self.addEventListener("fetch", event => {
   const request = event.request;
   if (request.method !== "GET") return;
@@ -449,7 +468,7 @@ self.addEventListener("fetch", event => {
     return;
   }
   if (request.mode === "navigate") {
-    event.respondWith(fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(async () => (await matchReleaseCache(request)) || (await matchReleaseCache(fallbackFor(url))) || matchReleaseCache("./index.html")));
+    event.respondWith(fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(async () => (await cachedNavigation(request)) || (await matchReleaseCache(fallbackFor(url))) || matchReleaseCache("./index.html")));
     return;
   }
   event.respondWith(matchReleaseCache(request).then(cached => { const network = fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(() => cached); return cached || network; }));
