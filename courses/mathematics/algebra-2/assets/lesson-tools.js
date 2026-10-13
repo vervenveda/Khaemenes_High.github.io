@@ -1,5 +1,5 @@
 (() => {
-"use strict";
+"use strict";try{const pageStandard=document.createElement("script");pageStandard.src=new URL("../../../../assets/math-course-page-standard-v1.js",location.href).href;pageStandard.async=false;document.head.append(pageStandard)}catch{}
 const id=document.body.dataset.lessonId;
 if(!id)return;
 const current=document.currentScript;

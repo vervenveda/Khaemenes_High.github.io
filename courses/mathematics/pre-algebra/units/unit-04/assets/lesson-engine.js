@@ -1,4 +1,4 @@
-(()=>{"use strict";
+(()=>{"use strict";try{const pageStandard=document.createElement("script");pageStandard.src=new URL("../../../../assets/math-course-page-standard-v1.js",location.href).href;pageStandard.async=false;document.head.append(pageStandard)}catch{}
 const MIN=80,scriptEl=document.currentScript,coreSrc=new URL("lesson-engine-core.js",scriptEl?.src||location.href).href,map=window.UNIT_MAP_FALLBACK,lesson=window.LESSON_DATA;
 const pad=n=>String(n).padStart(2,"0"),unitNo=Number(map?.unit?.number)||Number(location.pathname.match(/unit-(\d+)/)?.[1])||0;
 function read(k){try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}}

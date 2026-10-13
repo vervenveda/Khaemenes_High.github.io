@@ -1,0 +1,26 @@
+name: Mathematics Course UI Contract
+on:
+  pull_request:
+    paths:
+      - "courses/mathematics/**"
+      - ".github/workflows/math-course-ui-contract.yml"
+  push:
+    branches: [main, "audit/math-course-consistency"]
+    paths:
+      - "courses/mathematics/**"
+      - ".github/workflows/math-course-ui-contract.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Validate mathematics course presentation and navigation contracts
+        run: node courses/mathematics/tools/validate-math-course-ui-contract.mjs

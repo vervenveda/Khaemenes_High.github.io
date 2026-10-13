@@ -1,4 +1,4 @@
-(()=>{"use strict";
+(()=>{"use strict";try{const pageStandard=document.createElement("script");pageStandard.src=new URL("../../../../assets/math-course-page-standard-v1.js",location.href).href;pageStandard.async=false;document.head.append(pageStandard)}catch{}
 const scriptEl=document.currentScript,map=window.UNIT_MAP_FALLBACK;if(!map?.unit)return;const KEY=map.unit.progress_key,MIN=80,NAIB_KEY="khaemenes-naib-readiness-profile-v1",EXIT_KEY="khaemenes-prealgebra-unit00-exit-v1",nativeSet=Storage.prototype.setItem;let internal=false;
 const COMPANIONS={
  l01:{game:"number-family",sharedGame:"number-family",gameMode:"prealgebra",gameUnit:"01",gameLesson:"01",video:{id:"WxXZaP8Y8pI",title:"Types of Numbers — Natural, Whole, Integers, Rational, Irrational, Real & Imaginary",alignment:"core",note:"Core-aligned companion: reinforces natural, whole, integer, rational, irrational, and real-number classification; imaginary numbers appear only as an extension beyond the lesson's core objectives."}},
