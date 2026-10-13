@@ -11,6 +11,7 @@ const gameURL = new URL("learning-games/" + game + "/index.html", script.src);
 gameURL.searchParams.set("course", course);
 if (unit) gameURL.searchParams.set("unit", unit);
 if (lesson) gameURL.searchParams.set("lesson", lesson);
+if (lesson) gameURL.searchParams.set("returnTo", location.href.split("#")[0]);
 if (mode) gameURL.searchParams.set("mode", mode);
 
 const sectionId = "mathSharedGameCompanion-" + game;
