@@ -99,7 +99,8 @@ function page({progression=null,currentScript=true}={}){
  const doc={
   body:{dataset:{lessonId:"u11-l08"}},
   currentScript:currentScript?{src:host+"courses/mathematics/algebra-2/assets/lesson-tools.js"}:null,
-  getElementById:el,querySelector:q=>q==="main"?main:null,
+  getElementById:id=>id==="algebra2ProgressionRecovery" ? ([...elements.values()].find(item=>item.id===id)||null) : el(id),
+  querySelector:q=>q==="main"?main:null,
   createElement:tag=>{const n=el("generated-"+elements.size);n.tagName=tag;return n;},
   head:{appendChild:n=>written.push(n)}
  };
@@ -114,7 +115,7 @@ for(const outcome of ["download-error","silent-loader","missing-script"]){
  if(outcome==="download-error"){
   assert.equal(p.written.length,1);p.written[0].onerror();
  }else if(outcome==="silent-loader"){assert.equal(p.written.length,1);p.written[0].onload();}
- const message=p.el("algebra2ProgressionRecovery");
+ const message=p.doc.getElementById("algebra2ProgressionRecovery");
  assert.ok(p.main.children.includes(message),"warning inserted inside lesson "+outcome);
  assert.equal(message.attrs.role,"alert");
  assert.ok(message.children.some(c=>c.textContent?.includes("verification")),"read-only explanation");
