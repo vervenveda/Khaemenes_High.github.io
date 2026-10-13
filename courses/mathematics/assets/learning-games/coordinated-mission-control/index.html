@@ -240,23 +240,81 @@ const BANK=[
 
 const $=id=>document.getElementById(id),el={tabs:[...document.querySelectorAll(".studio-tab")],scenes:[...document.querySelectorAll(".scene")],badge:$("missionBadge"),value:$("challengeValue"),prompt:$("questionPrompt"),grid:$("choiceGrid"),hint:$("hintBtn"),check:$("checkBtn"),next:$("nextBtn"),feedback:$("feedback"),score:$("score"),streak:$("streak"),round:$("roundLabel"),accuracy:$("accuracyLabel"),fill:$("progressFill"),strategy:$("strategyText"),course:$("courseMode"),pathway:$("pathwaySelect"),size:$("roundSize"),best:$("bestScore"),mastery:$("mastery"),mark:$("masteryMark"),mTitle:$("masteryTitle"),mText:$("masteryText"),newRound:$("newRoundBtn"),review:$("reviewBtn"),courseHome:$("courseHome"),topReturn:$("topReturn"),masteryReturn:$("masteryReturn"),modeEyebrow:$("modeEyebrow"),modeLead:$("modeLead"),modeSync:$("modeSync"),courseKicker:$("courseKicker"),courseCrumb:$("courseCrumb"),referenceTitle:$("referenceTitle")};
 const params=new URLSearchParams(location.search);if(COURSE_CONFIG[params.get("course")])el.course.value=params.get("course");const bestKey=()=>`khaemenes-math-coordinated-mission-control-${COURSE_CONFIG[el.course.value]?.key||"prealgebra"}-v3`;let deck=[],index=0,selected=null,checked=false,score=0,correct=0,attempts=0,streak=0,missed=[];
+
+const resumeKey=()=>`khaemenes-math-coordinated-mission-control-resume-v1:${COURSE_CONFIG[el.course.value]?.key||"prealgebra"}:${String(params.get("unit")||"").replace(/[^a-z0-9_-]/gi,"_")}:${String(params.get("lesson")||"").replace(/[^a-z0-9_-]/gi,"_")}`;
+const questionId=q=>JSON.stringify(q);
+function saveRound(){
+ if(!deck.length||index>=deck.length)return;
+ try{
+  const bank=new Set(activeBank().map(questionId));
+  const questions=deck.map(questionId),missedIds=missed.map(questionId);
+  if(questions.some(q=>!bank.has(q))||missedIds.some(q=>!bank.has(q)))return;
+  const data={version:1,deck:questions,index,selected,checked,score,correct,attempts,streak,missed:missedIds,
+   pathway:el.pathway.value,size:el.size.value};
+  localStorage.setItem(resumeKey(),JSON.stringify(data));
+ }catch(e){/* Private mode and storage quotas must not block games. */}
+}
+function clearRound(){try{localStorage.removeItem(resumeKey())}catch(e){}}
+function resumeRound(){
+ try{
+  const state=JSON.parse(localStorage.getItem(resumeKey())||"null");
+  if(!state||state.version!==1||!Array.isArray(state.deck)||!Array.isArray(state.missed)||
+   state.deck.length<1||state.deck.length>40||new Set(state.deck).size!==state.deck.length||
+   !Number.isInteger(state.index)||state.index<0||state.index>=state.deck.length||
+   typeof state.checked!=="boolean"||!Number.isInteger(state.attempts)||
+   state.attempts!==state.index+(state.checked?1:0)||
+   !Number.isInteger(state.correct)||state.correct<0||state.correct>state.attempts||
+   !Number.isInteger(state.score)||state.score<0||state.score>state.attempts*150||
+   !Number.isInteger(state.streak)||state.streak<0||state.streak>state.correct||
+   state.missed.length!==state.attempts-state.correct||
+   !["Foundation","Core","Extended"].includes(state.pathway)||
+   !["12","16","20"].includes(String(state.size)))return false;
+  const bank=new Map(activeBank().map(q=>[questionId(q),q]));
+  if(state.deck.some(id=>typeof id!=="string"||!bank.has(id))||
+   state.missed.some(id=>typeof id!=="string"||!bank.has(id)))return false;
+  const questions=state.deck.map(id=>bank.get(id)),faults=state.missed.map(id=>bank.get(id));
+  const selection=state.selected===null?null:state.selected;
+  if(selection!==null&&(!Number.isInteger(selection)||selection<0||selection>=questions[state.index].o.length))return false;
+  if(state.checked&&selection===null)return false;
+  el.pathway.value=state.pathway;el.size.value=String(state.size);
+  updateCourseMode();deck=questions;index=state.index;selected=null;checked=false;
+  score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");
+  render();
+  selected=selection;checked=state.checked;score=state.score;correct=state.correct;
+  attempts=state.attempts;streak=state.streak;missed=faults;
+  if(selected!==null){
+   [...el.grid.children].forEach((b,n)=>b.setAttribute("aria-pressed",n===selected?"true":"false"));
+  }
+  if(checked){
+   [...el.grid.children].forEach(b=>b.disabled=true);
+   el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;
+   const q=deck[index],ok=selected===q.a;
+   if(ok)feedback("good","Mission restored.",q.w);
+   else feedback("bad",`Best answer: ${q.o[q.a]}`,q.w,q.h);
+   el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";
+  }else{
+   feedback("","Mission restored.","Continue this same question. Your previous answers remain in this round.");
+  }
+  stats();return true;
+ }catch(e){return false}
+}
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function feedback(k,t,x,d=""){el.feedback.className="feedback"+(k?` ${k}`:"");el.feedback.innerHTML=`<h3>${t}</h3><p>${x}</p>${d?`<div class="detail">${d}</div>`:""}`}
 function levels(){const p=el.pathway.value;return p==="Foundation"?new Set(["Foundation"]):p==="Core"?new Set(["Foundation","Core"]):new Set(["Foundation","Core","Extended"])}
 function activeBank(){const c=el.course.value;if(c==="algebra1")return ALGEBRA1_BANK;if(c==="geometry")return GEOMETRY_BANK;if(c==="algebra2")return ALGEBRA2_BANK;return BANK}
 function makeDeck(src=null){const n=+el.size.value||16,p=src&&src.length?src:activeBank().filter(x=>levels().has(x.l)),o=[];return src&&src.length?shuffle(window.MathGameRounds.unique(src)):window.MathGameRounds.sample(p,n)}
 function updateCourseMode(){const cfg=COURSE_CONFIG[el.course.value]||COURSE_CONFIG.prealgebra;let href=cfg.returnHref,label=cfg.returnLabel;const lesson=params.get("lesson");if(el.course.value==="algebra1"&&(lesson==="11-05"||lesson==="u11-l05")){href="../../../algebra-1/units/unit-11/lessons/lesson-05-midpoint-coordinate-geometry-geometric-constraints.html";label="Return to Algebra I U11-L05"}el.courseHome.href=href;el.topReturn.href=href;el.topReturn.textContent="← "+label;el.masteryReturn.href=href;el.masteryReturn.textContent=label;el.modeEyebrow.textContent=`Shared Mathematics Game · ${cfg.label}`;el.modeLead.textContent=cfg.lead;el.modeSync.innerHTML=`<strong>Lesson sync:</strong> ${cfg.sync}`;el.courseKicker.textContent=`Khaemenes Mathematics · ${cfg.label}`;el.courseCrumb.textContent=cfg.mode;el.referenceTitle.textContent=`${cfg.label} Coordinate Field Guide`;updateBest()}
-function start(src=null){updateCourseMode();deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats()}
-function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;
+function start(src=null){updateCourseMode();deck=makeDeck(src);index=0;selected=null;checked=false;score=correct=attempts=streak=0;missed=[];el.mastery.classList.remove("show");render();stats();saveRound()}
+function render(){const c=deck[index];selected=null;checked=false;el.badge.textContent=c.b;el.value.textContent=c.v;el.prompt.textContent=c.q;el.grid.innerHTML="";c.o.forEach((v,i)=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<strong>${v}</strong>`;b.setAttribute("aria-pressed","false");b.onclick=()=>{if(checked)return;selected=i;[...el.grid.children].forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));saveRound()};el.grid.appendChild(b)});el.check.hidden=false;el.hint.disabled=false;el.next.hidden=true;
 if(el.course.value==="algebra1")el.strategy.textContent="Compute coordinate change first; then connect Δx and Δy to slope, midpoint, distance, or the stated constraint.";else if(el.course.value==="geometry")el.strategy.textContent="Translate the route into signed vector components, combine them in order, then verify direction and magnitude.";else if(el.course.value==="algebra2")el.strategy.textContent="Separate components, scalar changes, and magnitude; preserve the coordinate reference throughout the multi-stage model.";else el.strategy.textContent=c.b.includes("Coordinate")||c.b.includes("Quadrant")||c.b.includes("Movement")||c.b.includes("Vector")?"Track x horizontally and y vertically.":c.b.includes("Operation Choice")?"Translate the context before choosing an operation.":c.b.includes("Reason")?"Check whether sign, direction, and magnitude match the situation.":"Follow the operation order and track every sign.";
 feedback("","Mission ready.","Translate the position or change before calculating.");stats()}
-function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by coordinate and integer-operation reasoning.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Mission confirmed.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats()}
+function submit(){if(checked)return;if(selected===null){feedback("bad","Choose an answer.","Select the option best supported by coordinate and integer-operation reasoning.");return}checked=true;attempts++;const c=deck[index],ok=selected===c.a;[...el.grid.children].forEach(b=>b.disabled=true);el.check.hidden=true;el.hint.disabled=true;el.next.hidden=false;if(ok){correct++;streak++;score+=100+Math.min(50,(streak-1)*10);feedback("good","Mission confirmed.",c.w)}else{streak=0;missed.push(c);feedback("bad",`Best answer: ${c.o[c.a]}`,c.w,c.h)}el.next.textContent=index===deck.length-1?"See round results →":"Next mission →";stats();saveRound()}
 function stats(){window.MathGameRounds.lock(el,attempts>0&&index<deck.length);const total=deck.length||1,p=attempts?Math.round(correct/attempts*100):0;el.score.textContent=score;el.streak.textContent=streak;el.round.textContent=`Mission ${Math.min(index+1,total)} of ${total}`;el.accuracy.textContent=`Accuracy ${p}%`;el.fill.style.width=`${Math.round(index/total*100)}%`}
-function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render()}
+function next(){if(!checked)return;if(index>=deck.length-1)return finish();index++;render();saveRound()}
 function best(){try{const raw=localStorage.getItem(bestKey());if(raw===null)return null;const v=Number(raw);return Number.isFinite(v)?v:null}catch(e){return null}}
 function updateBest(){const v=best();el.best.textContent=v===null?"Best mastery score: —":`Best mastery score: ${v}%`}
 function saveBest(p){try{const o=best();if(o===null||p>o)localStorage.setItem(bestKey(),String(p))}catch(e){}updateBest()}
-function finish(){index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Coordinated Mission mastery passed":"Rebuild the route";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} ${COURSE_CONFIG[el.course.value].label} missions correctly and met the 80% mastery target. Return to the mapped lesson for the full instructional sequence.`:`You solved ${correct} of ${attempts} missions correctly. Review missed coordinate changes, vector components, operation choices, and multi-step checks, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
+function finish(){clearRound();index=deck.length;stats();el.fill.style.width="100%";const p=attempts?Math.round(correct/attempts*100):0;saveBest(p);el.mastery.classList.add("show");el.mark.textContent=`${p}%`;el.mTitle.textContent=p>=80?"Coordinated Mission mastery passed":"Rebuild the route";el.mText.textContent=p>=80?`You solved ${correct} of ${attempts} ${COURSE_CONFIG[el.course.value].label} missions correctly and met the 80% mastery target. Return to the mapped lesson for the full instructional sequence.`:`You solved ${correct} of ${attempts} missions correctly. Review missed coordinate changes, vector components, operation choices, and multi-step checks, then try again.`;el.review.disabled=!missed.length;el.review.textContent=missed.length?`Review missed missions (${missed.length})`:"No missed missions";el.mastery.scrollIntoView({behavior:"smooth",block:"center"})}
 el.check.onclick=submit;el.hint.onclick=()=>feedback("","Reasoning hint",deck[index].h);el.next.onclick=next;el.newRound.onclick=()=>start();el.review.onclick=()=>{if(missed.length)start(missed)};el.course.onchange=()=>{const u=new URL(location.href);u.searchParams.set("course",el.course.value);history.replaceState(null,"",u);start()};el.pathway.onchange=()=>start();el.size.onchange=()=>start();$("printBtn").onclick=()=>print();$("resetBestBtn").onclick=()=>{try{localStorage.removeItem(bestKey())}catch(e){}updateBest();feedback("","Best score reset.","The saved score on this device was cleared.")};
 el.tabs.forEach((b,i)=>b.onclick=()=>{el.tabs.forEach((x,j)=>x.setAttribute("aria-selected",j===i?"true":"false"));el.scenes.forEach((s,j)=>s.classList.toggle("active",j===i))});
 const later=(f,m)=>setTimeout(f,m);
@@ -267,7 +325,7 @@ $("playMultiDemo").onclick=()=>{["m1","m2","m3","m4"].forEach(id=>$(id).classLis
 $("playReasonDemo").onclick=()=>{["rr1","rr2","rr3","rr4"].forEach(id=>$(id).classList.remove("on"));["rr1","rr2","rr3","rr4"].forEach((id,i)=>later(()=>$(id).classList.add("on"),i*360))};
 
 document.addEventListener("keydown",e=>{if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName))return;if(e.key==="Enter"){e.preventDefault();checked?next():submit()}else if(e.key.toLowerCase()==="h"){e.preventDefault();feedback("","Reasoning hint",deck[index].h)}});
-updateBest();start();
+updateBest();if(!resumeRound())start();
 })();
 </script>
 </body></html>
