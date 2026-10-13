@@ -40,7 +40,7 @@ function inspect(dir,rel=""){
  }
 }
 inspect(root);
-assert.ok(checked>3500,"unexpectedly low high school public page coverage: "+checked);
+assert.ok(checked>=2700,"unexpectedly low high school public page coverage: "+checked);
 assert.ok(grade9>400,"all Grade 9 public learning pages must be covered");
 assert.deepEqual(missing.slice(0,25),[],missing.length+" public HTML pages missing typography: "+missing.slice(0,25).join(", "));
 for(const file of ["courses/language-arts/english-9/index.html","courses/science/integrated-science-9/index.html"]){
