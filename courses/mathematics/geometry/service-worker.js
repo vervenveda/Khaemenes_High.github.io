@@ -1,6 +1,6 @@
 "use strict";
 // Applied Mission Studio v1.4.0 · SHA-256 portable evidence integrity refresh.
-const CACHE="khaemenes-geometry-v5-math-entry-repair-20261012";
+const CACHE="khaemenes-geometry-v6-ams-v1.4.0-atomic-r2-20261014";
 const CACHE_PREFIX="khaemenes-geometry-";
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
  "../assets/applied-mission-studio-v1.js",
@@ -158,7 +158,15 @@ const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-
 const NEVER_CACHE=/(?:^|\/)(?:teacher|teacher-keys)(?:\/|$)/i;
 function shouldNeverCache(url){return NEVER_CACHE.test(url.pathname)}
 
-self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(CORE.map(url=>cache.add(new Request(url,{cache:"reload"}))))).then(()=>self.skipWaiting()))});
+
+const MISSION_OFFLINE_RELEASE="ams-v1.4.0-atomic-r2-20261014";
+const MISSION_CRITICAL=["./","./index.html","./offline.html","../assets/applied-mission-studio-v1.js","./units/unit-01/projects/01-project.html","./units/unit-02/projects/02-project.html","./units/unit-03/projects/03-project.html","./units/unit-04/projects/04-project.html","./units/unit-05/projects/05-project.html","./units/unit-06/projects/06-project.html","./units/unit-07/projects/07-project.html","./units/unit-08/projects/08-project.html","./units/unit-09/projects/09-project.html","./units/unit-10/projects/10-project.html","./units/unit-11/projects/11-project.html","./units/unit-12/projects/12-project.html","./units/unit-13/projects/13-project.html"];
+async function installMissionCritical(){
+  const cache=await caches.open(CACHE);
+  try{await cache.addAll(MISSION_CRITICAL.map(file=>new Request(file,{cache:"reload"})))}
+  catch(error){await caches.delete(CACHE);throw error}
+}
+self.addEventListener("install",event=>{event.waitUntil((async()=>{await installMissionCritical();const cache=await caches.open(CACHE),extras=CORE.filter(file=>!MISSION_CRITICAL.includes(file));await Promise.allSettled(extras.map(file=>cache.add(new Request(file,{cache:"reload"}))));await self.skipWaiting()})())});
 async function purgeSensitiveCacheEntries(){const cache=await caches.open(CACHE);const requests=await cache.keys();await Promise.all(requests.filter(request=>shouldNeverCache(new URL(request.url))).map(request=>cache.delete(request)))}
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(CACHE_PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(purgeSensitiveCacheEntries).then(()=>self.clients.claim()))});
 self.addEventListener("fetch",event=>{
