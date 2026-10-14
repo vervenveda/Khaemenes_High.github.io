@@ -1,0 +1,25 @@
+name: Physics 12 Week 11 Potential Energy and Conservation Validation
+on:
+  push:
+    paths:
+      - 'courses/science/physics-engineering-12/weeks/week-11/**'
+      - 'courses/science/physics-engineering-12/tools/validate-week11.mjs'
+      - 'courses/science/physics-engineering-12/tools/smoke-week11.mjs'
+      - '.github/workflows/physics12-week11-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/science/physics-engineering-12/weeks/week-11/**'
+      - 'courses/science/physics-engineering-12/tools/validate-week11.mjs'
+      - 'courses/science/physics-engineering-12/tools/smoke-week11.mjs'
+      - '.github/workflows/physics12-week11-validation.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate energy conservation equations, datasets and learning routes
+        run: node courses/science/physics-engineering-12/tools/validate-week11.mjs
+      - name: Exercise quizzes, energy ledgers, interaction and portable notebooks
+        run: node courses/science/physics-engineering-12/tools/smoke-week11.mjs
