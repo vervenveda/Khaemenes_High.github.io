@@ -159,19 +159,44 @@
 
   function mount(result) {
     if (result.allow) { html.dataset.mathEntryOpen = "true"; return; }
+    if (document.getElementById("khaemenesMathEntryGate")) return;
     html.dataset.mathEntryBlocked = "true";
     const gate = document.createElement("section");
-    gate.setAttribute("role", "dialog"); gate.setAttribute("aria-modal", "true"); gate.setAttribute("aria-labelledby", "mathEntryTitle");
-    gate.style.cssText = "position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:20px;background:rgba(7,14,24,.78);color:#f7f2e8";
-    const card = document.createElement("article"); card.style.cssText = "width:min(640px,100%);padding:26px;border:1px solid #d8b45f;border-radius:12px;background:#151d28;font:400 16px/1.6 system-ui,sans-serif";
-    const title = document.createElement("h1"); title.id = "mathEntryTitle"; title.textContent = result.title; title.style.cssText = "margin:0 0 12px;font:400 1.65rem/1.2 system-ui,sans-serif";
-    const text = document.createElement("p"); text.textContent = result.message;
-    const open = document.createElement("a"); open.href = result.href; open.textContent = result.label; open.style.cssText = "display:inline-block;padding:11px 15px;border:1px solid #d8b45f;border-radius:8px;color:#f7f2e8;text-decoration:none";
-    const home = document.createElement("a"); home.href = academyHref; home.textContent = "Academy sign-in"; home.style.cssText = "display:inline-block;margin-left:10px;padding:11px 15px;border:1px solid #75879a;border-radius:8px;color:#f7f2e8;text-decoration:none";
-    title.style.setProperty("color", "#fff8eb", "important"); text.style.cssText = "color:#f7f2e8!important;font:400 16px/1.65 system-ui,sans-serif;margin:0 0 18px"; card.style.color="#f7f2e8";
-    card.append(title, text, open, home); gate.append(card);
+    gate.id = "khaemenesMathEntryGate";
+    gate.setAttribute("role", "dialog");
+    gate.setAttribute("aria-modal", "true");
+    gate.setAttribute("aria-labelledby", "mathEntryTitle");
+    gate.style.cssText = "position:fixed;inset:0;z-index:99999;overflow:auto;display:flex;align-items:center;justify-content:center;padding:clamp(20px,5vw,64px);background:#f4f0e7;color:#15251f";
+    const card = document.createElement("article");
+    card.style.cssText = "width:min(720px,100%);padding:clamp(22px,4vw,44px);border:1px solid #c9c2b2;border-radius:7px;background:#fffefa;box-shadow:0 14px 40px rgba(27,34,29,.12);font:400 18px/1.65 system-ui,sans-serif";
+    const kicker = document.createElement("p");
+    kicker.textContent = "Khaemenes Academy · Algebra I";
+    kicker.style.cssText = "margin:0 0 16px;color:#526459;font:500 14px/1.5 system-ui,sans-serif;letter-spacing:.04em";
+    const title = document.createElement("h1");
+    title.id = "mathEntryTitle";
+    title.textContent = result.title;
+    title.style.cssText = "margin:0 0 16px;font:400 clamp(28px,4vw,36px)/1.25 Georgia,serif";
+    title.style.setProperty("color","#15251f","important");
+    const explanation = document.createElement("p");
+    explanation.textContent = result.message;
+    explanation.style.cssText = "margin:0 0 22px;font:400 18px/1.65 system-ui,sans-serif";
+    explanation.style.setProperty("color","#30413d","important");
+    const actions = document.createElement("div");
+    actions.style.cssText = "display:flex;flex-wrap:wrap;gap:12px";
+    const open = document.createElement("a");
+    open.href = result.href;
+    open.textContent = result.label;
+    open.style.cssText = "display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 16px;border:1px solid #243d33;border-radius:7px;background:#243d33;color:#fffefa;text-decoration:none;font:500 15px/1.4 system-ui,sans-serif";
+    const home = document.createElement("a");
+    home.href = academyHref;
+    home.textContent = "Academy sign-in";
+    home.style.cssText = "display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 16px;border:1px solid #aab2a7;border-radius:7px;background:#fff;color:#15251f;text-decoration:none;font:500 15px/1.4 system-ui,sans-serif";
+    actions.append(open,home);
+    card.append(kicker,title,explanation,actions);
+    gate.append(card);
     document.querySelectorAll("body > :not(script)").forEach(node => { node.inert = true; });
-    document.body.append(gate); open.focus();
+    document.body.append(gate);
+    open.focus();
   }
 
   window.KhaemenesMathEntry = Object.freeze({ decision, publishReadiness, scopedKey: scoped });
