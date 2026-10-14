@@ -12,8 +12,8 @@ const entries=[
  ['algebra-reasoning-foundations',4],
  ['algebra-structure-balance-challenge',9],
  ['algebra-functions-systems-challenge',12],
- ['algebra-exponents-radicals-challenge',16],
- ['algebra-evidence-modelling-challenge',16]
+ ['algebra-exponents-radicals-challenge',20],
+ ['algebra-evidence-modelling-challenge',20]
 ];
 let totalChecks=0;
 for(const [slug,expected] of entries){
