@@ -29,3 +29,5 @@ jobs:
       - uses: actions/checkout@v6
       - name: Verify Physics lessons scientific CSV data assessment and routes
         run: node courses/science/physics-engineering-12/tools/validate-advanced.mjs
+      - name: Exercise quiz, projectile and model detective interactions
+        run: node courses/science/physics-engineering-12/tools/smoke-advanced.mjs
