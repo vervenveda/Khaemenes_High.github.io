@@ -17,3 +17,5 @@ jobs:
       - uses: actions/checkout@v6
       - name: Verify lessons, model science, math keys, links, offline JavaScript
         run: node courses/science/chemistry-11/weeks/week-14/tools/validate-week14.mjs
+      - name: Test live quiz/game/lab interactions with built-in Node DOM stubs
+        run: node courses/science/chemistry-11/weeks/week-14/tools/smoke-week14.mjs
