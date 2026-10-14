@@ -4,7 +4,8 @@ import path from 'node:path';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 const base=path.resolve('courses/mathematics/assets/learning-games');
-let games=0,links=0,readers=0;
+const registry=JSON.parse(fs.readFileSync(path.join(base,'game-registry.json'),'utf8'));
+let games=0,links=0,readers=0,formative=0;
 for(const slug of fs.readdirSync(base)){
  const file=path.join(base,slug,'index.html');if(!fs.existsSync(file))continue;
  games++;
@@ -17,7 +18,14 @@ for(const slug of fs.readdirSync(base)){
  }
  // Execute the shipped storage reader with the game's existing key interface.
  const match=html.match(/function (best|bestValue)\(\)\{\s*try\{([\s\S]*?)\}\s*catch\([^)]*\)\{return null\}\s*\}/);
- if(!match){assert.ok(returnLinks>0 || /(?:localStorage|game-return-route)/.test(html),`${slug}: missing persistence or return contract`);continue}
+ if(!match){
+  if(registry.games[slug]?.migration_state==='formative-standalone-no-mastery-integration'){
+   assert.ok(!/\b(?:localStorage|sessionStorage|indexedDB)\s*[.(]/.test(html),`${slug}: formative game must not write learner storage`);
+   assert.ok(/role="status"[^>]*aria-live="polite"/.test(html),`${slug}: accessible feedback required`);
+   assert.ok(/id="restart"/.test(html),`${slug}: restart required`);
+   formative++;continue;
+  }
+  assert.ok(returnLinks>0 || /(?:localStorage|game-return-route)/.test(html),`${slug}: missing persistence or return contract`);continue}
  readers++;
  let stored=null,unavailable=false;
  const context=vm.createContext({BEST:'test-key',bestKey:()=> 'test-key',localStorage:{getItem:()=>{if(unavailable)throw Error('storage unavailable');return stored}}});
@@ -28,7 +36,6 @@ for(const slug of fs.readdirSync(base)){
  stored='invalid';assert.equal(read(),null,`${slug}: invalid score`);
  unavailable=true;assert.equal(read(),null,`${slug}: blocked storage`);
 }
-const registry=JSON.parse(fs.readFileSync(path.join(base,'game-registry.json'),'utf8'));
 assert.equal(games,Object.keys(registry.games).length,'Game directories and registry differ');
 assert.ok(readers>0,'No score-reader contracts exercised');
-console.log(`PASS: ${games} shared games, ${links} lesson links, ${readers} storage readers (missing, zero, saved, invalid, unavailable)`);
+console.log(`PASS: ${games} shared games, ${links} lesson links, ${readers} storage readers, ${formative} ungraded standalone games (missing, zero, saved, invalid, unavailable)`);
