@@ -1,6 +1,6 @@
 # algebra exponents radicals challenge
 
-A standalone, free Algebra I formative practice game covering **Units 08–11**. Contains **16** questions, explanations for each answer, a one-check-per-question flow, a Next control, and Restart. Works as a single HTML file without dependencies.
+A standalone, free Algebra I formative practice game covering **Units 08–11**. Contains **20** questions, explanations for each answer, a one-check-per-question flow, a Next control, and Restart. Works as a single HTML file without dependencies.
 
 - Entry point: [index.html](./index.html)
 - Original review source: [units-08-11-challenge.html](../../../algebra-1/instructional-repair-pack/resource-studio/units-08-11-challenge.html)
@@ -11,3 +11,6 @@ A standalone, free Algebra I formative practice game covering **Units 08–11**.
 - Validation: check incorrect selections, unanswered Check, Next before Check, full round, end state, restart and content accuracy. Preserve all existing mathematics games and learner records.
 
 **No automatic integration:** lesson links, game registry, service worker, and graded activities remain unchanged during beta testing.
+
+## Higher-math extension
+Four additional explanation-rich problems cover multi-period modelling, algebraic structure, root verification, statistical interpretation, or decisions under uncertainty. They remain formative and do not change official course scores.
