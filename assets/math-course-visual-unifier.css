@@ -146,3 +146,83 @@ html:root:root body :is(a,button,input,select,textarea):focus-visible {
     break-inside:avoid;
   }
 }
+
+
+/* Mathematics presentation standard v2 — lessons, reading and student interactions.
+   Scope: visual styles only. No alterations to record ownership, marks, lesson gates,
+   student profiles, STOS, or the mathematics games themselves. */
+html:root:root body {
+  --math-reading-width:74ch;
+  --math-content-gap:clamp(14px,2vw,24px);
+  --math-focus-ring:#73501a;
+}
+html:root:root body :is(.lesson-section,.deep-section,.reading-section,.lesson-reading,.lesson-content) :is(p,li) {
+  max-width:var(--math-reading-width);
+  line-height:1.7;
+  overflow-wrap:break-word;
+}
+html:root:root body :is(.lesson-section,.deep-section,.reading-section,.lesson-reading) :is(h2,h3,h4) {
+  line-height:1.35;
+  text-wrap:balance;
+}
+html:root:root body :is(.unit-grid,.lesson-grid,.resource-grid,.start-grid,.pathway-grid) {
+  gap:var(--math-content-gap);
+}
+html:root:root body :is(.card,.unit-card,.lesson-card,.resource-card,.tool-card) {
+  min-width:0;
+}
+html:root:root body :is(.lesson-grid,.resource-grid,.unit-grid) > :is(a,.card,.unit-card,.lesson-card,.resource-card) {
+  min-width:0;
+}
+html:root:root body :is(.card,.lesson-card,.unit-card,.resource-card) :is(img,svg,canvas,video) {
+  max-width:100%;
+}
+html:root:root body :is(.card,.lesson-section,.question) :is(table) {
+  border-collapse:collapse;
+}
+html:root:root body :is(.card,.lesson-section,.question) :is(th,td) {
+  overflow-wrap:break-word;
+}
+html:root:root body :is(.card,.lesson-section,.question) :is(input,textarea,select) {
+  max-width:100%;
+  border-radius:7px;
+}
+html:root:root body :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible {
+  outline:3px solid var(--math-focus-ring) !important;
+  outline-offset:3px !important;
+}
+html:root:root body :is(button,.btn,.button,[role="button"])[aria-disabled="true"],
+html:root:root body :is(button,.btn,.button)[disabled] {
+  cursor:not-allowed;
+  opacity:.7;
+}
+html:root:root body :is(.card,.lesson-section,.question) :is(details) > summary {
+  cursor:pointer;
+  min-height:40px;
+  padding-block:7px;
+}
+html:root:root body :is(.question,.lesson-section,.card) :is(.feedback,[role="status"],[aria-live]) {
+  overflow-wrap:break-word;
+}
+@media(max-width:680px) {
+  html:root:root body :is(.lesson-section,.deep-section,.reading-section,.lesson-reading) :is(p,li) {
+    max-width:100%;
+  }
+  html:root:root body :is(.card,.unit-card,.lesson-card,.resource-card,.lesson-section) {
+    min-width:0;
+  }
+}
+@media print {
+  html:root:root body :is(.lesson-section,.deep-section,.reading-section,.lesson-reading) :is(p,li) {
+    max-width:none!important;
+    color:#111!important;
+  }
+  html:root:root body :is(.card,.lesson-section,.deep-section,.question) {
+    background:#fff!important;
+    color:#111!important;
+    box-shadow:none!important;
+  }
+  html:root:root body :is(.card,.lesson-section,.question) :is(input,textarea) {
+    color:#111!important;
+  }
+}
