@@ -518,3 +518,33 @@ self.addEventListener("fetch", event => {
 self.addEventListener("message", event => { if (event.data === "SKIP_WAITING") self.skipWaiting(); });
 
 function matchReleaseCache(request){return caches.open(CACHE_VERSION).then(cache=>cache.match(request));}
+
+
+/* Student-requested offline course pack caching. Do not cache restricted materials. */
+self.addEventListener("message",event=>{
+  const data=event.data;
+  if(!data||data.type!=="KHAE_OFFLINE_PACK_V1")return;
+  const port=event.ports&&event.ports[0];
+  const incoming=Array.isArray(data.paths)?data.paths:[];
+  const safe=incoming.slice(0,1500).filter(path=>
+    typeof path==="string"&&/^courses\/[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9_./-]+\.(?:html|css|js|json|svg|png|webp)$/i.test(path)&&
+    !path.includes("..")&&!shouldNeverCache(new URL(path,self.registration.scope))
+  );
+  event.waitUntil((async()=>{
+    let ok=0,failed=0;const errors=[];
+    try{
+      const cache=await caches.open(CACHE_VERSION);
+      for(const path of safe){
+        try{
+          const url=new URL(path,self.registration.scope);
+          const response=await fetch(new Request(url.href,{cache:"reload",credentials:"same-origin"}));
+          if(!response.ok)throw Error("HTTP "+response.status);
+          await cache.put(url.href,response);
+          ok++;
+        }catch(e){failed++;if(errors.length<8)errors.push(path+" "+String(e?.message||e))}
+        if((ok+failed)%10===0)port?.postMessage({type:"progress",ok,failed,total:safe.length});
+      }
+      port?.postMessage({type:"done",ok,failed,total:safe.length,errors});
+    }catch(e){port?.postMessage({type:"error",message:String(e?.message||e),ok,failed})}
+  })());
+});
