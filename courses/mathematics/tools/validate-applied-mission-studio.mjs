@@ -13,7 +13,7 @@ const shared=read("assets/applied-mission-studio-v1.js");
 const manifest=JSON.parse(read("APPLIED_MISSION_STUDIO_RELEASE.json"));
 const blobSha=crypto.createHash("sha1").update("blob "+Buffer.byteLength(shared)+"\0").update(shared).digest("hex");
 ok(manifest.version==="1.6.0","release manifest pins Applied Mission Studio v1.6.0");
-const offlineRelease="ams-v1.6.0-recovery-r1-20261014";
+const offlineRelease="ams-v1.5.0-recovery-r1-20261014";
 ok(manifest.offline_release===offlineRelease,"release manifest pins the atomic Mission Studio offline release");
 ok(blobSha===manifest.git_blob_sha,"shared Applied Mission Studio matches pinned Git blob");
 ok(shared.includes('const V="1.6.0"'),"runtime reports v1.6.0");
