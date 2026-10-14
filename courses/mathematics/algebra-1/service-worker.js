@@ -1,6 +1,6 @@
 "use strict";
 // Applied Mission Studio v1.4.0 · SHA-256 portable evidence integrity refresh.
-const CACHE_VERSION="khaemenes-algebra1-v15-applied-mission-20261014";
+const CACHE_VERSION="khaemenes-algebra1-v16-ams-v1.4.0-atomic-r2-20261014";
 const LEGACY_SOURCE="./service-worker-precache-v1.js";
 const RELEASE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
  "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
@@ -35,7 +35,15 @@ const RELEASE_FILES=["../../shared/course-entry-contract.js","../../shared/learn
   "./units/unit-12/projects/evidence-financial-decision-audit.html"];
 function normalizeLegacyPath(p){if(p==="./assessments/answer-keys.json")return"./assessments/answer-key.json";if(p==="./assessments/unit-13-mastery-blueprint.js")return null;if(p.startsWith("./units/unit-12/unit-12/"))return null;return p}
 async function legacyFiles(){try{const response=await fetch(new Request(LEGACY_SOURCE,{cache:"reload"}));if(!response.ok)throw new Error(`precache source ${response.status}`);const text=await response.text(),match=text.match(/const PRECACHE=(\[[\s\S]*?\]);/);if(!match)throw new Error("legacy PRECACHE array not found");const parsed=JSON.parse(match[1]);return Array.isArray(parsed)?parsed.map(normalizeLegacyPath).filter(Boolean):[]}catch(error){console.warn("Algebra I legacy precache list could not be recovered; release core will still be cached.",error);return[]}}
-self.addEventListener("install",event=>{event.waitUntil((async()=>{const old=await legacyFiles(),files=[...new Set([...old,...RELEASE_FILES])],cache=await caches.open(CACHE_VERSION);await Promise.allSettled(files.map(p=>cache.add(new Request(p,{cache:"reload"}))));await self.skipWaiting()})())});
+
+const MISSION_OFFLINE_RELEASE="ams-v1.4.0-atomic-r2-20261014";
+const MISSION_CRITICAL=["./","./index.html","./offline.html","../assets/applied-mission-studio-v1.js","./units/unit-01/projects/precision-measurement-audit.html","./units/unit-02/projects/expression-structure-design-brief.html","./units/unit-03/projects/equation-based-decision-model.html","./units/unit-04/projects/constraint-tolerance-design.html","./units/unit-05/projects/multiple-representation-function-portfolio.html","./units/unit-06/projects/linear-data-story-model-defence.html","./units/unit-07/projects/systems-feasible-region-decision-lab.html","./units/unit-08/projects/exponential-change-investigation.html","./units/unit-09/projects/polynomial-design-factor-analysis.html","./units/unit-10/projects/quadratic-model-optimization-defence.html","./units/unit-11/projects/coordinate-geometry-accessibility-design.html","./units/unit-12/projects/evidence-financial-decision-audit.html","./units/unit-13/projects/algebra-i-integrated-modelling-portfolio-oral-defence.html"];
+async function installMissionCritical(){
+  const cache=await caches.open(CACHE_VERSION);
+  try{await cache.addAll(MISSION_CRITICAL.map(file=>new Request(file,{cache:"reload"})))}
+  catch(error){await caches.delete(CACHE_VERSION);throw error}
+}
+self.addEventListener("install",event=>{event.waitUntil((async()=>{await installMissionCritical();const old=await legacyFiles(),files=[...new Set([...old,...RELEASE_FILES])],cache=await caches.open(CACHE_VERSION),extras=files.filter(file=>!MISSION_CRITICAL.includes(file));await Promise.allSettled(extras.map(p=>cache.add(new Request(p,{cache:"reload"}))));await self.skipWaiting()})())});
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith("khaemenes-algebra1-")&&key!==CACHE_VERSION).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
 self.addEventListener("fetch",event=>{const request=event.request;if(request.method!=="GET")return;const url=new URL(request.url);if(url.origin!==self.location.origin)return;if(request.mode==="navigate"){event.respondWith(fetch(request).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE_VERSION).then(cache=>cache.put(request,copy))}return response}).catch(async()=>await matchReleaseCache(request)||await matchReleaseCache("./offline.html")||await matchReleaseCache("./index.html")));return}event.respondWith(matchReleaseCache(request).then(cached=>cached||fetch(request).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE_VERSION).then(cache=>cache.put(request,copy))}return response}).catch(()=>cached))) });
 self.addEventListener("message",event=>{if(event.data==="SKIP_WAITING")self.skipWaiting()});
