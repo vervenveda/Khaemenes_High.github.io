@@ -15,7 +15,7 @@ const rad=p.deg*Math.PI/180,vx=p.v*Math.cos(rad),vy=p.v*Math.sin(rad),disc=vy*vy
 let t=(vy+Math.sqrt(Math.max(0,disc)))/p.g;
 if(!Number.isFinite(t)||t<0)t=0;
 const range=vx*t,apexT=Math.max(0,vy/p.g),apexHeight=p.h+vy*vy/(2*p.g);
-return{vx,vy,t,range,apexT,apexHeight,at(time){return{x:vx*time,y:Math.max(0,p.h+vy*time-0.5*p.g*time*time),vx,vy:vy-p.g*time}}}
+return{vx,vy,t,range,apexT,apexHeight,at(time){return{x:vx*time,y:Math.max(0,p.h+vy*time-0.5*p.g*time*time),vx,vy:vy-p.g*time}}}}
 function store(){record.prediction=$('prediction').value;record.analysis=$('analysis').value;try{localStorage.setItem(KEY,JSON.stringify(record))}catch{$('storageStatus').textContent='Storage unavailable/full: export your trial notes before leaving.'}}
 try{const raw=localStorage.getItem(KEY);if(raw){const p=JSON.parse(raw);if(p&&p.schema===record.schema&&p.course===record.course){record.trials=Array.isArray(p.trials)?p.trials.filter(q=>q&&valid(q.p)).slice(-80):[];record.prediction=String(p.prediction||'').slice(0,15000);record.analysis=String(p.analysis||'').slice(0,15000)}}localStorage.setItem(KEY+':probe','1');localStorage.removeItem(KEY+':probe');$('storageStatus').textContent='Browser-local records available; export before changing devices.'}catch{$('storageStatus').textContent='Browser storage blocked: export your records before leaving.'}
 $('prediction').value=record.prediction;$('analysis').value=record.analysis;
