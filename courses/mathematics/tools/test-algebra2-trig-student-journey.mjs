@@ -117,13 +117,14 @@ payload.document.currentScript={src:'https://academy.example/courses/mathematics
 vm.runInNewContext(launcher,{document:payload.document,URL,console},{timeout:2000});
 assert.ok(payload.column.all().some(n=>n.tag==='h2'&&n.textContent.includes('<img')),'title handled as literal text');
 
-function checkReturn(unit,lesson){
+async function checkReturn(unit,lesson){
  const doc=freshDocument(),existing={href:'../../old'};
  doc.document.currentScript={src:'https://academy.example/courses/mathematics/assets/game-return-route.js'};
  doc.document.querySelectorAll=s=>s==='[data-return-lesson]'?[existing]:[];
  const context=vm.createContext({document:doc.document,window:{},URL,URLSearchParams,
  location:{search:'?course=algebra2&unit='+unit+'&lesson='+lesson},console,fetch:async()=>({ok:true})});
  vm.runInContext(route,context,{timeout:2000});
+ await new Promise(resolve=>setImmediate(resolve)); // Allow asynchronous URL validation and navigation mount.
  const nav=doc.body.children.find(n=>n.id==='mathGameReturnNavigation');
  assert.ok(nav,'game return navigation missing');
  assert.ok(doc.body.children.indexOf(nav)<doc.body.children.indexOf(doc.main),'return navigation must precede main content');
@@ -137,7 +138,7 @@ function checkReturn(unit,lesson){
  const resolver=context.window.KhaemenesGameReturn.resolveLesson;
  assert.equal(resolver('algebra2',String(unit),lesson),'../algebra-2/units/unit-'+unit+'/lessons/'+lesson+'.html');
 }
-checkReturn(10,'u10-l03');checkReturn(11,'u11-l08');
+await checkReturn(10,'u10-l03');await checkReturn(11,'u11-l08');
 
 const identity=fs.readFileSync(assets+'learning-games/trigonometric-identity-forge/index.html','utf8');
 assert.ok(identity.includes('if(opening&&!record.checked){record.helped=true;save();}'),
