@@ -27,7 +27,7 @@ a{color:#195c90}[hidden]{display:none!important}
 @media(max-width:800px){.layout{grid-template-columns:1fr}}
 @media(max-width:510px){.fields{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
+.transformation-explainer{margin-top:16px;background:#fcf8ed;box-shadow:none}.transformation-explainer h3{font-size:1.13rem;margin:0 0 8px}.comparison-table{width:100%;border-collapse:collapse;margin:10px 0;font-variant-numeric:tabular-nums}.comparison-table th,.comparison-table td{padding:7px;border:1px solid var(--line);text-align:left}.comparison-table caption{text-align:left;font-weight:500;margin-bottom:5px}@media(max-width:550px){.comparison-table{font-size:14px}.comparison-table th,.comparison-table td{padding:5px}}@media print{.transformation-explainer{break-inside:avoid}}</style>
 <script src="../../game-return-route.js?v=20261012"></script>
 <style id="khaemenes-typography-standard">
 /* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
@@ -111,6 +111,13 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 </svg>
 <div class="small"><span class="legend">Gray: parent/original</span><span class="legend">Amber: target</span><span class="legend">Green: yours</span></div>
 <p id="graphText" class="small" aria-live="polite"></p>
+<aside class="panel transformation-explainer" aria-labelledby="explainHeading">
+<h3 id="explainHeading">Compare parent and transformed function</h3>
+<p id="parameterExplanation" aria-live="polite"></p>
+<p id="domainExplanation" class="small"></p>
+<table class="comparison-table"><caption>Function values at three sample inputs</caption><thead><tr><th scope="col">Input x</th><th scope="col">Parent / original</th><th scope="col">Your function</th></tr></thead><tbody id="comparisonRows"></tbody></table>
+<p class="small">Parent (gray dashed) and your curve (green) are shown together. Mission target (amber dashed) appears during a challenge.</p>
+</aside>
 <p id="formula" aria-live="polite"></p><p id="targetText" class="small"></p></section>
 <section class="panel"><h2>Mission console</h2>
 <p id="prompt" aria-live="polite"></p>
@@ -212,6 +219,20 @@ function draw(){
  $('mirror').setAttribute('d',inv?graphPath(x=>x):'');
  $('formula').textContent=inv?line(params.p,params.q):expression(kind,params.a,params.h,params.k);
  $('targetText').textContent=free?'Free exploration has no answer target.':inv?'Supplied line: '+line(task.m,task.b)+'; amber is its inverse.':'Amber shows the unknown a, h and k. Determine them from the graph.';
+ const display=n=>Number.isFinite(n)?String(Math.round(n*100)/100):'outside domain';
+ const sampleXs=inv?[-2,0,2]:kind==='sqrt'?[Math.max(0,params.h),Math.max(0,params.h)+1,Math.max(0,params.h)+4]:[-2,0,2];
+ const tbody=$('comparisonRows');tbody.replaceChildren();
+ for(const x of sampleXs){const tr=document.createElement('tr');for(const v of [x,original(x),ours(x)]){const td=document.createElement('td');td.textContent=display(v);tr.appendChild(td)}tbody.appendChild(tr)}
+ if(inv){
+  $('parameterExplanation').textContent='Inverse comparison: reflect the original line over y = x. Your coefficients p and q describe a proposed inverse; substitution in both compositions confirms correctness.';
+  $('domainExplanation').textContent='An inverse linear function exists when the original slope is nonzero. The plotted line uses the real-number domain.';
+ }else{
+  const directions=['a = '+params.a+': '+(params.a<0?'reflection across the x-axis; ':'')+(Math.abs(params.a)>1?'vertical stretch':Math.abs(params.a)<1?'vertical compression':'no vertical rescaling'),
+   'h = '+params.h+': '+(params.h>0?'move right '+params.h:params.h<0?'move left '+Math.abs(params.h):'no horizontal translation'),
+   'k = '+params.k+': '+(params.k>0?'move up '+params.k:params.k<0?'move down '+Math.abs(params.k):'no vertical translation')];
+  $('parameterExplanation').textContent='For g(x)=a·f(x−h)+k: '+directions.join('; ')+'.';
+  $('domainExplanation').textContent=kind==='sqrt'?'Square-root parent requires x ≥ 0; your shifted function requires x ≥ '+params.h+'.':'For this '+kind+' parent family, both the parent and transformed functions have all real inputs.';
+ }
  $('graphText').textContent=inv?'Gray is the original function, amber its reflection over y=x, green your proposed inverse.':'Parent family: '+kind+'. Your scale is '+params.a+', shift right '+params.h+', shift up '+params.k+'.';
 }
 function stats(){
