@@ -106,3 +106,6 @@ jobs:
 
       - name: Verify complete Units 10–13 authored lessons
         run: node courses/mathematics/algebra-1/tools/test-complete-course-lessons.mjs
+
+      - name: Verify standalone Algebra I Resource Studio
+        run: node courses/mathematics/algebra-1/tools/test-resource-studio.mjs
