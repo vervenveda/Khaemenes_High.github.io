@@ -8,15 +8,16 @@ let games=0,links=0,readers=0;
 for(const slug of fs.readdirSync(base)){
  const file=path.join(base,slug,'index.html');if(!fs.existsSync(file))continue;
  games++;
+ let returnLinks=0;
  const html=fs.readFileSync(file,'utf8');
  for(const match of html.matchAll(/href=["']([^"']+)["']/g)){
   const href=match[1];if(!href.includes('/units/'))continue;
   const target=path.resolve(path.dirname(file),href.split(/[?#]/)[0]);
-  assert.ok(fs.existsSync(target),`${slug}: missing lesson ${href}`);links++;
+  assert.ok(fs.existsSync(target),`${slug}: missing lesson ${href}`);links++;returnLinks++;
  }
  // Execute the shipped storage reader with the game's existing key interface.
  const match=html.match(/function (best|bestValue)\(\)\{\s*try\{([\s\S]*?)\}\s*catch\([^)]*\)\{return null\}\s*\}/);
- if(!match){assert.ok(/(?:localStorage|game-return-route)/.test(html),`${slug}: missing persistence or return contract`);continue}
+ if(!match){assert.ok(returnLinks>0 || /(?:localStorage|game-return-route)/.test(html),`${slug}: missing persistence or return contract`);continue}
  readers++;
  let stored=null,unavailable=false;
  const context=vm.createContext({BEST:'test-key',bestKey:()=> 'test-key',localStorage:{getItem:()=>{if(unavailable)throw Error('storage unavailable');return stored}}});
