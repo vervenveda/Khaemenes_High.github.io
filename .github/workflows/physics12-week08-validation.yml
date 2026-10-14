@@ -21,3 +21,5 @@ jobs:
       - uses: actions/checkout@v6
       - name: Validate physics explanations, math datasets, lesson links and original student records
         run: node courses/science/physics-engineering-12/tools/validate-week08.mjs
+      - name: Smoke test browser local quizzes, friction and circular motion models
+        run: node courses/science/physics-engineering-12/tools/smoke-week08.mjs
