@@ -1,6 +1,6 @@
 # algebra functions systems challenge
 
-A standalone, free Algebra I formative practice game covering **Units 05–07**. Contains **12** questions, explanations for each answer, a one-check-per-question flow, a Next control, and Restart. Works as a single HTML file without dependencies.
+A standalone, free Algebra I formative practice game covering **Units 05–07**. Contains **16** questions, explanations for each answer, a one-check-per-question flow, a Next control, and Restart. Works as a single HTML file without dependencies.
 
 - Entry point: [index.html](./index.html)
 - Original review source: [units-05-07-challenge.html](../../../algebra-1/instructional-repair-pack/resource-studio/units-05-07-challenge.html)
