@@ -334,6 +334,20 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   html:root:root body { font-size: 14px !important; }
 }
 </style>
+<style id="khaemenes-campus-hero-readability-20261014">
+/* Presentation only: keep navigation, cards, assessments, learner state, and STOS unchanged. */
+.hero{min-height:0}
+.hero-inner{min-height:0;padding:clamp(44px,6vw,76px) 0 clamp(42px,5vw,66px)}
+.hero-stage{gap:clamp(20px,3vw,32px)}
+html:root:root body .hero .eyebrow{font-size:clamp(30px,4vw,44px)!important;line-height:1.16!important;letter-spacing:.02em!important;text-transform:none}
+html:root:root body .hero h1{font-size:clamp(26px,3vw,33px)!important;line-height:1.25!important;margin-top:14px}
+html:root:root body .hero .hero-lead{font-size:clamp(18px,2vw,24px)!important;line-height:1.52!important;max-width:860px}
+@media(max-width:700px){
+  .hero-inner{padding:44px 0 46px}
+  html:root:root body .hero .eyebrow{font-size:clamp(26px,7vw,36px)!important}
+  html:root:root body .hero .hero-lead{font-size:18px!important}
+}
+</style>
 </head>
 <body id="top">
 <a class="skip-link" href="#main">Skip to main content</a>
