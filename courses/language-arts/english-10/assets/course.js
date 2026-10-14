@@ -428,4 +428,43 @@
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",enableReadingDesk,{once:true});
   else enableReadingDesk();
+
+  // Learner-scoped reading notebook. Portable JSON; no automatic cross-origin synchronization.
+  function enableReadingNotebook(){
+    const u=location.pathname.match(/\/units\/unit-(\d{2})\/(?:index\.html)?$/);
+    if(!u)return;
+    const target=document.getElementById("assigned-reading");
+    if(!target)return;
+    const learner=window.KhaemenesCourseEntryContract?.readAcademyProfile?.() || (typeof academyProfile!=="undefined"?academyProfile:null);
+    if(!learner?.learnerId)return; // Fail closed: never share anonymous notes across learners.
+    const learnerId=String(learner.learnerId), unit=u[1], course=(location.pathname.match(/english-(\d+)/)||[])[1]||"unknown";
+    const base="khaemenes-reading-notebook-v1:"+course+":"+unit+":learner:"+encodeURIComponent(learnerId);
+    let notes=[];
+    try{const parsed=JSON.parse(localStorage.getItem(base)||"[]");if(Array.isArray(parsed))notes=parsed.filter(v=>v&&typeof v.quote==="string"&&typeof v.note==="string").slice(0,200)}catch{}
+    const section=document.createElement("section");section.className="card";section.style.cssText="margin:16px auto;padding:18px;max-width:1100px;border-radius:7px;background:#faf7ef;color:#191919;border:1px solid #c8bda9";
+    const title=document.createElement("h2");title.textContent="My Reading Notebook · Unit "+Number(unit);
+    const help=document.createElement("p");help.textContent="Select a passage in the reading, then capture a quote and your interpretation. Bookmarks, notes and highlights are private to this learner on this device until exported.";
+    const status=document.createElement("p");status.setAttribute("role","status");
+    const quote=document.createElement("textarea");quote.rows=3;quote.placeholder="Selected quotation or passage";quote.setAttribute("aria-label","Reading quotation");
+    const note=document.createElement("textarea");note.rows=3;note.placeholder="What does this detail suggest?";note.setAttribute("aria-label","My annotation");
+    for(const box of [quote,note])box.style.cssText="display:block;box-sizing:border-box;width:100%;margin:.6rem 0;padding:10px;border-radius:7px;border:1px solid #a99b82;background:white;color:black";
+    const toolbar=document.createElement("div");toolbar.style.cssText="display:flex;flex-wrap:wrap;gap:8px;margin:.8rem 0";
+    const list=document.createElement("ol");
+    const btn=(name,fn)=>{const b=document.createElement("button");b.type="button";b.textContent=name;b.style.cssText="padding:9px 12px;border:1px solid #847354;border-radius:7px;background:white;color:black;cursor:pointer";b.addEventListener("click",fn);toolbar.append(b);return b};
+    const persist=()=>{try{localStorage.setItem(base,JSON.stringify(notes));status.textContent="Saved on this device."}catch{status.textContent="Storage unavailable. Export your notebook before leaving."}};
+    const render=()=>{list.replaceChildren();notes.forEach((item,index)=>{const li=document.createElement("li");li.style.marginBottom="12px";const q=document.createElement("blockquote");q.textContent=item.quote;const p=document.createElement("p");p.textContent=item.note||"(Bookmark)";const remove=document.createElement("button");remove.type="button";remove.textContent="Delete entry";remove.addEventListener("click",()=>{notes.splice(index,1);persist();render()});li.append(q,p,remove);list.append(li)})};
+    btn("Capture selection",()=>{const selection=window.getSelection()?.toString()?.trim()||"";if(selection){quote.value=selection.slice(0,1200);status.textContent="Selection captured; add a note or bookmark."}else status.textContent="Select text in the page first, then capture."});
+    btn("Save annotation",()=>{const q=quote.value.trim();if(!q){status.textContent="Add a quotation first.";return}notes.push({quote:q.slice(0,1200),note:note.value.trim().slice(0,3000),date:new Date().toISOString(),kind:"annotation"});notes=notes.slice(-200);persist();render();quote.value="";note.value=""});
+    btn("Bookmark",()=>{const q=quote.value.trim();if(!q){status.textContent="Capture or paste the sentence to bookmark.";return}notes.push({quote:q.slice(0,1200),note:"",date:new Date().toISOString(),kind:"bookmark"});notes=notes.slice(-200);persist();render();quote.value=""});
+    btn("Export JSON",()=>{const data=JSON.stringify({schema:"khaemenes-reading-notebook-v1",course,unit,entries:notes},null,2);const blob=new Blob([data],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="khaemenes-english-"+course+"-unit-"+unit+"-reading-notes.json";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+    const file=document.createElement("input");file.type="file";file.accept=".json,application/json";file.hidden=true;
+    btn("Import JSON",()=>file.click());file.addEventListener("change",async()=>{const f=file.files?.[0];if(!f||f.size>1000000){status.textContent="Choose a JSON file under 1 MB.";return}try{const data=JSON.parse(await f.text());if(data.schema!=="khaemenes-reading-notebook-v1"||data.course!==course||data.unit!==unit||!Array.isArray(data.entries)||data.entries.length>200)throw Error("format");const incoming=data.entries.filter(x=>x&&typeof x.quote==="string"&&x.quote.length<=1200&&typeof x.note==="string"&&x.note.length<=3000).map(x=>({quote:x.quote,note:x.note,date:typeof x.date==="string"?x.date:"",kind:x.kind==="bookmark"?"bookmark":"annotation"}));if(!window.confirm("Import "+incoming.length+" entries into this learner's notebook? Existing notes will be retained."))return;notes=notes.concat(incoming).slice(-200);persist();render()}catch{status.textContent="Invalid or incompatible notebook file."}file.value=""});
+    const companion=document.createElement("p");companion.textContent="Optional ProReSources tools: ";
+    const links=[["Reading Response","templates/packs/khaemenes-academic-core/reading-response.html"],["Academic Notes","templates/packs/khaemenes-academic-core/academic-notes.html"],["Evidence & Citation Studio","Protools/Evidence_Citation_Studio/index.html"],["PROSE Editorial Suite","Protools/PROSE/Editorial%20Suite/editorial-suite_core.html"]];
+    links.forEach(([name,path],i)=>{const a=document.createElement("a");a.href="https://vervenveda.github.io/proresource_hub.github.io/"+path;a.target="_blank";a.rel="noopener noreferrer";a.textContent=name;companion.append(a,document.createTextNode(i<links.length-1?" · ":""))});
+    const privacy=document.createElement("p");privacy.textContent="Export/import transfers a copy manually. ProReSources applications keep separate workspaces; opening a tool does not sync or upload this notebook.";
+    section.append(title,help,quote,note,toolbar,file,status,list,companion,privacy);target.after(section);render();
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",enableReadingNotebook,{once:true});
+  else enableReadingNotebook();
 })();
