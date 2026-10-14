@@ -11,7 +11,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../assets/
 const entries=[
  ['algebra-reasoning-foundations',4],
  ['algebra-structure-balance-challenge',9],
- ['algebra-functions-systems-challenge',12],
+ ['algebra-functions-systems-challenge',16],
  ['algebra-exponents-radicals-challenge',20],
  ['algebra-evidence-modelling-challenge',20]
 ];
