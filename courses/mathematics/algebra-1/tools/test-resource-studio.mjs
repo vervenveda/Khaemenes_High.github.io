@@ -32,7 +32,7 @@ for(const file of pages){
  const challenge=file.includes('challenge');
  if(challenge){
   ok(/id="restart"/.test(html),file+' reset button');
-  ok(/id="feedback"[^>]*aria-live="polite"/.test(html),file+' announced feedback');
+  ok(/id="(?:feedback|status)"[^>]*aria-live="polite"/.test(html),file+' announced feedback');
   ok(/disabled>Next|id="next" disabled/.test(html),file+' next starts disabled');
   ok(/practice|formative/i.test(html),file+' clearly ungraded');
  }else{
