@@ -21,3 +21,5 @@ jobs:
       - uses: actions/checkout@v6
       - name: Check scientific formulas, original student records, quiz banks and lesson routes
         run: node courses/science/physics-engineering-12/tools/validate-week09.mjs
+      - name: Execute Newtonian orbit and inverse-square labs, quizzes and local records
+        run: node courses/science/physics-engineering-12/tools/smoke-week09.mjs
