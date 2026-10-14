@@ -200,7 +200,7 @@
     button("− Text",()=>{font=Math.max(14,font-2);content.style.fontSize=font+"px"});
     button("+ Text",()=>{font=Math.min(34,font+2);content.style.fontSize=font+"px"});
     button("Reset",()=>{font=18;content.style.fontSize="18px";panel.style.width="";panel.style.height=""});
-    button("Print",()=>{document.body.classList.add("khae-print-reading");window.print();document.body.classList.remove("khae-print-reading")});
+    button("Print",()=>{document.body.classList.add("khae-print-reading");window.addEventListener("afterprint",()=>document.body.classList.remove("khae-print-reading"),{once:true});window.print()});
     button("Export .txt",()=>{const txt=content.innerText||content.textContent||"";const blob=new Blob([txt],{type:"text/plain;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="khaemenes-reading-"+(location.pathname.match(/unit-\d{2}/)?.[0]||"selection")+".txt";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
     const closeBtn=button("Close ×",close);
     panel.append(bar,content);overlay.append(panel);document.body.append(overlay);
