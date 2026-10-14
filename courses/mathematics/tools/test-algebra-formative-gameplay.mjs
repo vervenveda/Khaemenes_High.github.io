@@ -61,6 +61,10 @@ for(const [slug,expected] of entries){
   assert.equal(check.disabled,true,slug+': score only once on question '+i);
   assert.equal(next.disabled,false,slug+': continue allowed after checked question '+i);
   assert.ok((elements.feedback.textContent||elements.status.textContent).length>=8,slug+': mathematical explanation '+i);
+  if(i%2===1 && (slug==='algebra-exponents-radicals-challenge'||slug==='algebra-evidence-modelling-challenge')){
+   assert.ok(elements.feedback.textContent.includes(q[2][key]),slug+': wrong-answer feedback identifies correct choice '+i);
+   totalChecks++;
+  }
   next.click();totalChecks+=4;
  }
  assert.equal(check.disabled,true,slug+': complete cannot score again');totalChecks++;
