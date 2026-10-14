@@ -1,0 +1,50 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+import {fileURLToPath} from 'node:url';
+const home=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const read=p=>fs.readFileSync(path.join(home,p),'utf8');
+let checks=0;function check(ok,message){assert.ok(ok,message);checks++;console.log('PASS '+message)}
+const week='weeks/week-06/',hub=read(week+'index.html'),lessonJS=read(week+'assets/force-lesson.js'),lab=read(week+'labs/force-builder.html');
+check(hub.includes('physics-week06-force-studio'),'new lesson directory included on weekly page');
+for(const day of ['monday','tuesday','wednesday','thursday','friday'])check(hub.includes('sci-physics-&-engineering-12-w06-'+day),'original '+day+' student evidence preserved');
+check(hub.includes("khae_high_science_evidence_v1:"),'original localStorage prefix retained');
+check(hub.includes('labs/force-builder.html'),'weekly hub links canonical lab');
+check(hub.includes('teacher/guide.html'),'weekly hub links teacher guide');
+check(hub.includes('resources/force-data.csv'),'weekly hub links synthetic CSV');
+new vm.Script(lessonJS,{filename:'force-lesson.js'});
+const a=lessonJS.indexOf('const Q=')+8,b=lessonJS.indexOf(';let picked=',a);
+check(a>=8&&b>a,'quiz question bank recognized');
+const questions=JSON.parse(lessonJS.slice(a,b));
+check(questions.length===20,'20 unique practice questions');
+check(new Set(questions.map(q=>q[1])).size===20,'no duplicate question text');
+check(lessonJS.includes('day===5?10:4'),'Friday draws randomized ten');
+check(lessonJS.includes('if(locked)return'),'one score per quiz submission');
+check(lessonJS.includes('khae:phys12:w06:forces:day:'),'distinct Week 06 note namespace');
+check(lessonJS.includes('khae-phys12-force-lesson-v1'),'dedicated import/export identity schema');
+for(let d=1;d<=5;d++){const page=read(week+'lessons/day-0'+d+'.html'),pool=questions.filter(q=>q[0]===6).slice((d-1)*4,d*4);
+check(page.includes('data-week="6" data-day="'+d+'"'),'student lesson day '+d+' identifies date correctly');
+check(page.includes('id="quiz"')&&page.includes('id="submitQuiz"')&&page.includes('id="newQuiz"'),'lesson '+d+' exposes quiz controls');
+check(page.includes('id="mainNote"')&&page.includes('id="thoughtNote"')&&page.includes('id="exportNotes"'),'lesson '+d+' has independent journal');
+check((page.match(/<dt>/g)||[]).length===5,'lesson '+d+' defines five vocabulary terms');
+check((page.match(/<h3>/g)||[]).length>=4,'lesson '+d+' has four reading sections');
+check(hub.includes('lessons/day-0'+d+'.html'),'weekly hub links day '+d);
+check(pool.length===4,'four daily-relevant questions day '+d);
+for(const q of pool)check(q.length===5&&q[2].length===4&&new Set(q[2]).size===4&&Number.isInteger(q[3])&&q[3]>=0&&q[3]<4,'valid answer index '+q[1].slice(0,32))}
+const match=lab.match(/<script>([\s\S]*?)<\/script>/);check(!!match,'vanilla JS laboratory engine exists');new vm.Script(match[1],{filename:'force-builder.js'});
+check(!/\bfetch\(|WebSocket\(|XMLHttpRequest|sendBeacon\(/.test(lab+lessonJS),'no remote services or telemetry');
+check(lab.includes('id="forceSvg"')&&lab.includes('id="forceRows"'),'force visualization plus accessible numerical ledger');
+for(const id of ['record','export','import','clear','start','next','loadPreset','challengeAnswers'])check(lab.includes('id="'+id+'"'),'Force Builder control: '+id);
+check(lab.includes('no automatic friction law')||lab.includes('no automatic kinetic'),'force model states friction limitation');
+const m=match[1].match(/const CASES=(\[[\s\S]*?\]);\s*const ids=/);check(!!m,'seven-round challenge scenarios parsed');
+const cases=JSON.parse(m[1]);check(cases.length===11,'11 independent challenge scenarios');
+cases.forEach(c=>check(c.m>=2&&c.m<=10&&c.up<=10&&c.m*9.8+c.down-c.up>0&&Number.isFinite((c.right-c.left)/c.m),'valid contact and acceleration for challenge m='+c.m+' force '+c.right+'−'+c.left));
+const csv=read(week+'resources/force-data.csv').split(/\r?\n/).filter(line=>/^[A-Za-z_]+,/.test(line)&&!line.startsWith('Case,'));
+check(csv.length===8,'eight fictional dataset records');
+for(const line of csv){const [id,...numbers]=line.split(',');check(numbers.length===11,'CSV column count '+id);const [mass,right,left,up,down,v0,weight,normal,fx,fy,ax]=numbers.map(Number);
+check(Math.abs(weight-mass*9.8)<1e-8,'dataset weight '+id);check(Math.abs(normal-(weight+down-up))<1e-8&&normal>0,'dataset normal '+id);check(Math.abs(fx-(right-left))<1e-8&&Math.abs(fy-(normal+up-down-weight))<1e-8,'dataset vector sums '+id);check(Math.abs(ax-fx/mass)<1e-8,'dataset acceleration '+id)}
+const teacher=read(week+'teacher/guide.html');check(teacher.includes('20-point CER')&&teacher.includes('Third Law')===false,'teacher guide rubric and scientific notes');
+const pages=[week+'index.html',week+'teacher/guide.html',week+'labs/force-builder.html',...Array.from({length:5},(_,i)=>week+'lessons/day-0'+(i+1)+'.html')];
+for(const file of pages){const html=read(file);for(const r of html.matchAll(/(?:href|src)="([^"]+)"/g)){const url=r[1];if(!url||url.startsWith('#')||/^(https?:|mailto:|data:)/.test(url))continue;const target=path.resolve(path.dirname(path.join(home,file)),url.split('#')[0].split('?')[0]);check(fs.existsSync(target)||fs.existsSync(path.join(target,'index.html')),'local route '+file+' -> '+url)}}
+console.log('PHYSICS12_WEEK06_VALIDATION=PASS checks='+checks);
