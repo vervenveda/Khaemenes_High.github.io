@@ -26,3 +26,18 @@
  html:root:root body input[type=radio],html:root:root body input[type=checkbox]{appearance:auto!important;print-color-adjust:exact}
  html:root:root body details:not([open])> *:not(summary){display:none!important}
 }
+
+
+/* Paper workspace: students can show calculations without the web application. */
+@media print{
+ html:root:root body .question::after{
+  content:"Work / reasoning:  ____________________________________________________________";
+  display:block!important;white-space:normal!important;
+  min-height:46pt;margin-top:10pt;padding-top:8pt;
+  border-top:1px dotted #777!important;
+  font-size:9pt!important;line-height:1.6!important;color:#333!important;
+ }
+ html:root:root body .question{break-inside:avoid;page-break-inside:avoid}
+ html:root:root body .question .feedback{display:none!important}
+ html:root:root body .question input[type=radio]{appearance:auto!important}
+}
