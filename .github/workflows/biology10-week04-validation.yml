@@ -1,0 +1,19 @@
+name: Biology 10 Week 04 Science Studio Validation
+on:
+  push:
+    paths:
+      - 'courses/science/biology-10/weeks/week-04/**'
+      - '.github/workflows/biology10-week04-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/science/biology-10/weeks/week-04/**'
+      - '.github/workflows/biology10-week04-validation.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate offline lesson pages, quiz bank, link targets, and simulator syntax
+        run: node courses/science/biology-10/weeks/week-04/tools/validate-week04.mjs

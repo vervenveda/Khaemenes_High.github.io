@@ -1,0 +1,7 @@
+# Synthetic teaching dataset; NOT real enzyme observations. Fixed pH and substrate conditions, arbitrary relative product units/minute.
+Temperature_C,Trial_1_rel_units_per_min,Trial_2_rel_units_per_min,Trial_3_rel_units_per_min,Mean_rel_units_per_min,Range_rel_units_per_min
+15,18,20,19,19,2
+25,35,37,36,36,2
+35,63,65,64,64,2
+45,46,48,47,47,2
+55,10,12,11,11,2
