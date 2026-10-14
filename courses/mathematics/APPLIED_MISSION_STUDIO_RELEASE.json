@@ -1,7 +1,7 @@
 {
   "schema": "khaemenes-applied-mission-studio-release-v1",
-  "version": "1.4.0",
-  "git_blob_sha": "56e0819cb25cba8aef08d33adcbbea1e9bf08e1d",
+  "version": "1.5.0",
+  "git_blob_sha": "4a7364cbe6561d51909dfc55b0a1160e2e4a084e",
   "protections": [
     "learner-scoped-storage",
     "competing-tab-revision-guard",
@@ -11,7 +11,11 @@
     "behavioral-contract-validation",
     "sha256-portable-evidence-integrity",
     "atomic-mission-critical-precache",
-    "course-scoped-cache-retirement"
+    "course-scoped-cache-retirement",
+    "seven-point-evidence-recovery-journal",
+    "restore-as-new-revision",
+    "sealed-recovery-export",
+    "preserved-emergency-draft-discovery"
   ],
-  "offline_release": "ams-v1.4.0-atomic-r2-20261014"
+  "offline_release": "ams-v1.5.0-recovery-r1-20261014"
 }

@@ -12,16 +12,20 @@ const ok=(v,m)=>{if(v)console.log("OK "+m);else{failed=true;console.error("FAIL 
 const shared=read("assets/applied-mission-studio-v1.js");
 const manifest=JSON.parse(read("APPLIED_MISSION_STUDIO_RELEASE.json"));
 const blobSha=crypto.createHash("sha1").update("blob "+Buffer.byteLength(shared)+"\0").update(shared).digest("hex");
-ok(manifest.version==="1.4.0","release manifest pins Applied Mission Studio v1.4.0");
-const offlineRelease="ams-v1.4.0-atomic-r2-20261014";
+ok(manifest.version==="1.5.0","release manifest pins Applied Mission Studio v1.5.0");
+const offlineRelease="ams-v1.5.0-recovery-r1-20261014";
 ok(manifest.offline_release===offlineRelease,"release manifest pins the atomic Mission Studio offline release");
 ok(blobSha===manifest.git_blob_sha,"shared Applied Mission Studio matches pinned Git blob");
-ok(shared.includes('const V="1.4.0"'),"runtime reports v1.4.0");
+ok(shared.includes('const V="1.5.0"'),"runtime reports v1.5.0");
 ok(shared.includes("pageOwnerId")&&shared.includes("ownerOk"),"runtime binds writes to the active Academy learner");
 ok(shared.includes("Review & Replace Newer Version")&&shared.includes("competing-tab"),"runtime protects competing tabs");
 ok(shared.includes("importBytes:524288")&&shared.includes("verifiedWrite"),"runtime bounds imports and verifies writes");
 ok(shared.includes("khaemenes-evidence-integrity-v1")&&shared.includes("sealEnvelope")&&shared.includes("verifyEnvelope"),"runtime seals and verifies portable evidence with SHA-256");
 ok(shared.includes("course_progression_authority:false"),"mission evidence remains outside mastery authority");
+ok(shared.includes("RECOVERY_JOURNAL")&&shared.includes("Evidence Recovery"),"runtime exposes learner-scoped Evidence Recovery");
+ok(shared.includes("Restore as New Revision")&&shared.includes("recovery-restore"),"recovery restores evidence as a new revision");
+ok(shared.includes("khaemenes-math-applied-mission-recovery-export-v1"),"recovery exports are integrity-sealed first-party evidence packages");
+ok(!shared.includes("limits.text+' data-as-field")&&!shared.includes("limits.evaluator+' value="),"Mission Studio bounded-field markup is well formed");
 
 const coreMatch=shared.match(/\/\*__AMS_CORE_BEGIN__\*\/([\s\S]*?)\/\*__AMS_CORE_END__\*\//);
 ok(!!coreMatch,"testable persistence core is embedded in the runtime");
@@ -45,6 +49,10 @@ if(core){
  ok(first.ok&&first.revision===1,"first verified mission commit creates revision 1");
  ok(stale.conflict===true,"stale competing-tab commit is refused");
  ok(forced.ok&&forced.revision===2,"explicit forced replacement advances the revision");
+ const recoveryKey="recovery:learner:a:unit-01";
+ for(let i=1;i<=9;i++)core.appendRecovery(st,recoveryKey,{course:"geometry",unit:1,reason:"test-"+i,record:{...base,revision:i,record_id:"r1"}},7);
+ const recovery=core.recoveryPoints(st,recoveryKey);
+ ok(recovery.length===7&&recovery[0].revision===3&&recovery.at(-1).revision===9,"recovery journal retains the newest seven restore points");
  const before=st.getItem(key);const bad={getItem:k=>st.getItem(k),setItem(){throw Error("blocked")},removeItem(){}};
  ok(core.verifiedWrite(bad,key,{x:1})===false&&st.getItem(key)===before,"failed verified write preserves previous storage");
  const deterministicA=core.canonicalize({b:2,a:{z:1,y:[3,2]}});
@@ -77,7 +85,7 @@ for(const [course,routes] of Object.entries(routeSets)){
  }
 }
 const native=read("algebra-1/assets/applied-mission-studio-v1.js");
-for(const token of ["AMSCore=SHARED?.core","STORE=scoped(STORE_BASE)","Review & Replace Newer Version","importBytes","verifiedWrite","khaemenes-algebra1-applied-mission-export-v2","verifyEnvelope"])ok(native.includes(token),"Algebra I native studio hardening contains "+token);
+for(const token of ["AMSCore=SHARED?.core","STORE=scoped(STORE_BASE)","Review & Replace Newer Version","importBytes","verifiedWrite","khaemenes-algebra1-applied-mission-export-v2","verifyEnvelope","RECOVERY_JOURNAL","Evidence Recovery","recovery-restore","khaemenes-algebra1-applied-mission-recovery-export-v1"])ok(native.includes(token),"Algebra I native studio hardening contains "+token);
 const contract=read("../shared/course-entry-contract.js");
 ok(contract.includes("data-khae-applied-mission-studio"),"High School lesson/project entry contract still loads the shared Mission Studio");
 for(const [course,stem] of [["geometry","geometry"],["algebra-2","algebra2"]]){
