@@ -2,7 +2,7 @@
 // Applied Mission Studio v1.4.0 · SHA-256 portable evidence integrity refresh.
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v7-compact-course-shell-math-canonical-20261008`;
+const CACHE_NAME=`${CACHE_PREFIX}v8-ams-v1.4.0-atomic-r2-20261014`;
 const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "./",
   "./index.html",
@@ -31,8 +31,22 @@ const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-
   "./units/unit-12/projects/community-data-evidence-investigation.html",
   "./units/unit-13/projects/mathematical-modelling-capstone-portfolio.html"];
 
+
+const MISSION_OFFLINE_RELEASE="ams-v1.4.0-atomic-r2-20261014";
+const MISSION_CRITICAL=["./","./index.html","./offline.html","../assets/applied-mission-studio-v1.js","./units/unit-01/projects/number-systems-investigation.html","./units/unit-02/projects/signed-data-investigation.html","./units/unit-03/projects/rational-quantity-investigation.html","./units/unit-04/projects/community-scale-rate-investigation.html","./units/unit-05/projects/consumer-financial-decision-investigation.html","./units/unit-06/projects/scale-of-universe-investigation.html","./units/unit-07/projects/algebraic-model-design-investigation.html","./units/unit-08/projects/equation-formula-design-investigation.html","./units/unit-09/projects/constraint-design-investigation.html","./units/unit-10/projects/linear-relationship-data-story-investigation.html","./units/unit-11/projects/accessible-space-scale-design-investigation.html","./units/unit-12/projects/community-data-evidence-investigation.html","./units/unit-13/projects/mathematical-modelling-capstone-portfolio.html"];
+async function installMissionCritical(){
+  const cache=await caches.open(CACHE_NAME);
+  try{await cache.addAll(MISSION_CRITICAL.map(file=>new Request(file,{cache:"reload"})))}
+  catch(error){await caches.delete(CACHE_NAME);throw error}
+}
 self.addEventListener("install",event=>{
-  event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(CORE_FILES)).then(()=>self.skipWaiting()));
+  event.waitUntil((async()=>{
+    await installMissionCritical();
+    const cache=await caches.open(CACHE_NAME);
+    const extras=CORE_FILES.filter(file=>!MISSION_CRITICAL.includes(file));
+    await Promise.allSettled(extras.map(file=>cache.add(new Request(file,{cache:"reload"}))));
+    await self.skipWaiting();
+  })());
 });
 self.addEventListener("activate",event=>{
   event.waitUntil(
