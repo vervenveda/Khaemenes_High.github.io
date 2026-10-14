@@ -1,0 +1,34 @@
+import fs from 'node:fs';import path from 'node:path';import vm from 'node:vm';import assert from 'node:assert/strict';import{fileURLToPath}from'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
+class E{constructor(tag='div'){this.tag=tag;this.children=[];this.events={};this.dataset={};this.style={};this.attrs={};this.value='';this.textContent='';this.disabled=false;this.checked=false;this.name='';this.parent=null;this.files=[]}
+appendChild(x){x.parent=this;this.children.push(x);return x}replaceChildren(...items){this.children=[];for(const x of items)this.appendChild(x)}
+addEventListener(k,fn){this.events[k]=fn}trigger(k,extra={}){return this.events[k]?.({target:this,...extra})}click(){return this.trigger('click')}
+setAttribute(k,v){this.attrs[k]=String(v)}remove(){if(this.parent)this.parent.children=this.parent.children.filter(x=>x!==this)}}
+const walk=e=>[e,...e.children.flatMap(walk)];
+function environment(mode='work',day=1){const elements=new Map(),memory=new Map();const document={body:new E('body'),createElement:t=>new E(t),createElementNS:(_,t)=>new E(t),
+getElementById(id){if(!elements.has(id))elements.set(id,new E());return elements.get(id)},
+querySelectorAll(s){if(s==='textarea[data-note]')return[this.getElementById('mainNote'),this.getElementById('thoughtNote')];const m=s.match(/^input\[name="([^"]+)"\]$/);return m?walk(this.getElementById('quiz')).filter(x=>x.tag==='input'&&x.name===m[1]):[]},
+querySelector(s){const m=s.match(/^input\[name="([^"]+)"\]:checked$/);return m?this.querySelectorAll('input[name="'+m[1]+'"]').find(x=>x.checked)||null:null}};
+document.body.dataset.week='10';document.body.dataset.day=String(day);document.body.dataset.lab=mode;document.getElementById('mainNote').dataset.note='main';document.getElementById('thoughtNote').dataset.note='thought';
+for(const [k,v]of Object.entries({F:20,d:3,angle:60,t:4,m:4,v:3,W:32}))document.getElementById(k).value=String(v);
+const localStorage={getItem:k=>memory.get(k)??null,setItem:(k,v)=>memory.set(k,String(v)),removeItem:k=>memory.delete(k)};
+const ctx=vm.createContext({document,localStorage,Math,Number,String,Date,JSON,Blob,console,confirm:()=>true,setTimeout:f=>f(),window:{print(){}},URL:{createObjectURL:()=> 'blob:local',revokeObjectURL(){}}});return{document,localStorage,ctx}}
+const lesson=read('weeks/week-10/assets/week10-lesson.js'),bank=JSON.parse(lesson.slice(lesson.indexOf('const Q=')+8,lesson.indexOf(';let picked=')));
+for(const day of [1,3,5]){const b=environment('work',day);vm.runInContext(lesson,b.ctx,{timeout:9000});const fields=b.document.getElementById('quiz').children;assert.equal(fields.length,day===5?10:4);
+const seen=new Set();for(const field of fields){const title=field.children.find(e=>e.tag==='legend').textContent.replace(/^\d+\. /,'');assert.ok(!seen.has(title));seen.add(title);const q=bank.find(x=>x[1]===title);assert.ok(q);if(day<5){const k=bank.findIndex(x=>x[1]===title);assert.ok(k>=(day-1)*4&&k<day*4)}const label=field.children.find(e=>e.tag==='label'&&e.children.some(x=>x.tag==='span'&&x.textContent===q[2][q[3]]));assert.ok(label);label.children.find(x=>x.tag==='input').checked=true}
+b.document.getElementById('submitQuiz').click();assert.match(b.document.getElementById('results').textContent,/100%/);const first=b.document.getElementById('results').textContent;
+b.document.getElementById('submitQuiz').click();assert.equal(b.document.getElementById('results').textContent,first,'one score per quiz');
+b.document.getElementById('newQuiz').click();assert.equal(b.document.getElementById('submitQuiz').disabled,false,'new set available');
+const note=b.document.getElementById('mainNote');note.value='Week 10 notebook day '+day;note.trigger('input');assert.equal(b.localStorage.getItem('khae:phys12:w10:energy:day:'+day+':v1:main'),note.value);b.document.getElementById('exportNotes').click();
+console.log('PASS Week 10 Day '+day+' randomized quiz, correct score, retry, journal persistence and export')}
+const engine=read('weeks/week-10/labs/energy-engine.js'),mark='render();history();',idx=engine.lastIndexOf(mark);assert.ok(idx>0);
+const injected=engine.slice(0,idx)+'globalThis.__probe={compute,valid,params,CASES};'+engine.slice(idx);
+const near=(a,b,msg)=>assert.ok(Math.abs(a-b)<1e-8,msg+': '+a+' vs '+b);
+for(const mode of ['work','energy']){const b=environment(mode);vm.runInContext(injected,b.ctx,{timeout:10000});const core=b.ctx.__probe;
+if(mode==='work'){const x=core.compute({F:20,d:3,angle:60,t:4});near(x.projection,10,'force parallel');near(x.W,30,'positive work');near(x.P,7.5,'average watts');near(core.compute({F:20,d:3,angle:90,t:4}).W,0,'perpendicular work');near(core.compute({F:20,d:3,angle:120,t:4}).W,-30,'negative cosine work');near(core.compute({F:12,d:5,angle:180,t:5}).W,-60,'opposed force');assert.equal(core.CASES.length,11)}else{const x=core.compute({m:4,v:3,W:32});near(x.initial,18,'initial kinetic energy');near(x.final,50,'final kinetic energy');near(x.finalSpeed,5,'final speed magnitude');assert.equal(x.feasible,true);const stop=core.compute({m:4,v:3,W:-18});near(stop.final,0,'energy threshold');near(stop.finalSpeed,0,'stopping speed');const wrong=core.compute({m:4,v:3,W:-25});assert.equal(wrong.feasible,false);assert.equal(wrong.finalSpeed,null);assert.match(b.document.getElementById('readout').textContent,/Final kinetic/);assert.equal(core.CASES.length,11)}
+assert.ok(b.document.getElementById('diagram').children.length>=4,'visual explanation works');assert.ok(b.document.getElementById('plot').children.length>=8,'numeric plot works');assert.equal(b.document.getElementById('tableRows').children.length,7,'accessible calculated comparison table');
+b.document.getElementById('record').click();assert.equal(b.document.getElementById('history').children.length,1,'trial record');assert.ok(b.localStorage.getItem('khae:phys12:w10:'+mode+':v1'),'stored work exists');
+b.document.getElementById('newGame').click();assert.equal(b.document.getElementById('choices').children.length,4,'four game choices');b.document.getElementById('choices').children[0].click();const first=b.document.getElementById('gameScore').textContent;b.document.getElementById('choices').children[0].click();assert.equal(b.document.getElementById('gameScore').textContent,first,'repeated clicks cannot score');
+b.document.getElementById('next').click();assert.equal(b.document.getElementById('choices').children.length,4,'next distinct challenge');b.document.getElementById('export').click();b.document.getElementById('reset').click();b.document.getElementById('clear').click();assert.equal(b.document.getElementById('history').children.length,0,'clear trial history');
+console.log('PASS Week 10 '+mode+' calculations, graph, game, scoring, local storage, reset, export and clear')}
+console.log('PHYSICS12_WEEK10_INTERACTION_SMOKE=PASS');
