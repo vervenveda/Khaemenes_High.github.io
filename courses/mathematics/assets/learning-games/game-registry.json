@@ -2643,10 +2643,13 @@
       "mastery_target": 80,
       "placements": [],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "migration_state": "canonical-asset-registered-placement-not-yet-audited",
+      "migration_state": "lesson-match-reviewed-link-not-wired",
       "retired_paths": [],
       "placement_review": {
-        "review_status": "requires-scope-and-lesson-check",
+        "course": "pre-algebra",
+        "unit": "04",
+        "lesson": "05",
+        "review_status": "matched-by-title-tasks-and-existing-return-link",
         "wired": false
       }
     },
