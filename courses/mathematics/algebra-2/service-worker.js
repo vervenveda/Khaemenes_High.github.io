@@ -1,7 +1,7 @@
 "use strict";
 // Applied Mission Studio v1.4.0 · SHA-256 portable evidence integrity refresh.
 const CACHE_PREFIX="khaemenes-algebra2-";
-const CACHE=`${CACHE_PREFIX}v3-math-entry`;
+const CACHE=`${CACHE_PREFIX}v4-ams-v1.4.0-atomic-r2-20261014`;
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "../assets/applied-mission-studio-v1.js",
   "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
@@ -23,12 +23,21 @@ const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-
   "./units/unit-12/projects/12-project.html",
   "./units/unit-13/projects/13-project.html"];
 
+
+const MISSION_OFFLINE_RELEASE="ams-v1.4.0-atomic-r2-20261014";
+const MISSION_CRITICAL=["./","./index.html","./offline.html","../assets/applied-mission-studio-v1.js","./units/unit-01/projects/01-project.html","./units/unit-02/projects/02-project.html","./units/unit-03/projects/03-project.html","./units/unit-04/projects/04-project.html","./units/unit-05/projects/05-project.html","./units/unit-06/projects/06-project.html","./units/unit-07/projects/07-project.html","./units/unit-08/projects/08-project.html","./units/unit-09/projects/09-project.html","./units/unit-10/projects/10-project.html","./units/unit-11/projects/11-project.html","./units/unit-12/projects/12-project.html","./units/unit-13/projects/13-project.html"];
+async function installMissionCritical(){
+  const cache=await caches.open(CACHE);
+  try{await cache.addAll(MISSION_CRITICAL.map(file=>new Request(file,{cache:"reload"})))}
+  catch(error){await caches.delete(CACHE);throw error}
+}
 self.addEventListener("install",event=>{
-  event.waitUntil(
-    caches.open(CACHE)
-      .then(cache=>Promise.allSettled(CORE.map(url=>cache.add(new Request(url,{cache:"reload"})))))
-      .then(()=>self.skipWaiting())
-  );
+  event.waitUntil((async()=>{
+    await installMissionCritical();
+    const cache=await caches.open(CACHE),extras=CORE.filter(file=>!MISSION_CRITICAL.includes(file));
+    await Promise.allSettled(extras.map(file=>cache.add(new Request(file,{cache:"reload"}))));
+    await self.skipWaiting();
+  })());
 });
 
 self.addEventListener("activate",event=>{
