@@ -35,7 +35,7 @@ b.document.getElementById('submitQuiz').click();assert.match(b.document.getEleme
 b.document.getElementById('newQuiz').click();assert.equal(b.document.getElementById('submitQuiz').disabled,false,'quiz retry');
 const note=b.document.getElementById('mainNote');note.value='week08 lesson '+day+' evidence';note.trigger('input');assert.equal(b.localStorage.getItem('khae:phys12:w08:motion:day:'+day+':v1:main'),note.value,'journal persisted');
 b.document.getElementById('exportNotes').click();console.log('PASS Week 08 day '+day+' quiz, journal and export')}
-function engine(name,marker){const html=read('weeks/week-08/labs/'+name+'.html'),m=html.match(/<script>([\s\S]*?)<\/script>/);assert.ok(m);const script=m[1],at=script.lastIndexOf(marker);assert.ok(at>=0,'init marker '+name);return script.slice(0,at)+'globalThis.__test={solve,valid,params,cases};'+script.slice(at)}
+function engine(name,marker){const html=read('weeks/week-08/labs/'+name+'.html'),m=html.match(/<script>([\s\S]*?)<\/script>/);assert.ok(m);const script=m[1],at=script.lastIndexOf(marker);assert.ok(at>=0,'init marker '+name);return script.slice(0,at)+(name==='friction-contact-lab'?'globalThis.__test={solve,valid,params:parameters,cases};':'globalThis.__test={solve,valid,params,cases};')+script.slice(at)}
 const f=browser(),fScript=engine('friction-contact-lab','render();history();');vm.runInContext(fScript,f.ctx,{timeout:9000});const fm=f.ctx.__test;
 const p={m:5,push:12,muS:.4,muK:.3},r=fm.solve(p);near(r.normal,49,'block normal');near(r.max,19.6,'static max');assert.equal(r.slip,false,'below threshold static');near(r.friction,-12,'actual static friction');near(r.acceleration,0,'block rest');
 const atLimit=fm.solve({...p,push:19.6});assert.equal(atLimit.slip,false,'at limit static');
