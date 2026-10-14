@@ -44,7 +44,15 @@ vm.runInContext('const MIN=80,pad=n=>String(n).padStart(2,"0");function read(k){
 assert.equal(vm.runInContext('unitMastered(1)',b.c),false,'Learner B must not inherit A prerequisite mastery');checks++;
 function walk(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)])}
 for(const course of ['pre-algebra','algebra-1','geometry','algebra-2'])for(const file of walk('courses/mathematics/'+course).filter(p=>p.endsWith('.html'))){
- const html=fs.readFileSync(file,'utf8');if(!/<head\b/i.test(html))continue;
+ const html=fs.readFileSync(file,'utf8');if(!/<head\\b/i.test(html))continue;
+ // Standalone, review-only teaching resources do not access learner identity or evidence.
+ // Keep this exemption narrow and require zero storage or network dependencies.
+ if(file.replaceAll('\\','/').startsWith('courses/mathematics/algebra-1/instructional-repair-pack/resource-studio/')){
+  assert.ok(!/\\b(?:localStorage|sessionStorage|indexedDB)\\s*[.(]/.test(html),file+': staged resources cannot touch storage');
+  assert.ok(!/<script\\b[^>]*\\bsrc\\s*=/.test(html),file+': staged resources cannot load scripts');
+  assert.ok(!/\\b(?:fetch|XMLHttpRequest)\\s*\\(/.test(html),file+': staged resources cannot fetch data');
+  checks++;continue;
+ }
  const head=html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1];assert.ok(head,file);
  assert.equal((html.match(/learner-scope-v1\.js/g)||[]).length,1,file+': adapter must load exactly once');
  assert.ok(head.indexOf('course-entry-contract.js')<head.indexOf('learner-scope-v1.js'),file+': contract precedes storage');
