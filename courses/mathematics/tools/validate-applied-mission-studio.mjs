@@ -13,6 +13,8 @@ const shared=read("assets/applied-mission-studio-v1.js");
 const manifest=JSON.parse(read("APPLIED_MISSION_STUDIO_RELEASE.json"));
 const blobSha=crypto.createHash("sha1").update("blob "+Buffer.byteLength(shared)+"\0").update(shared).digest("hex");
 ok(manifest.version==="1.4.0","release manifest pins Applied Mission Studio v1.4.0");
+const offlineRelease="ams-v1.4.0-atomic-r2-20261014";
+ok(manifest.offline_release===offlineRelease,"release manifest pins the atomic Mission Studio offline release");
 ok(blobSha===manifest.git_blob_sha,"shared Applied Mission Studio matches pinned Git blob");
 ok(shared.includes('const V="1.4.0"'),"runtime reports v1.4.0");
 ok(shared.includes("pageOwnerId")&&shared.includes("ownerOk"),"runtime binds writes to the active Academy learner");
@@ -64,6 +66,10 @@ const routeSets={
 };
 for(const [course,routes] of Object.entries(routeSets)){
  const sw=read(course+"/service-worker.js");
+ ok(sw.includes('MISSION_OFFLINE_RELEASE="'+offlineRelease+'"'),course+" service worker pins the atomic offline release");
+ ok(sw.includes("const MISSION_CRITICAL=")&&sw.includes("cache.addAll(MISSION_CRITICAL"),course+" mission-critical offline routes install atomically");
+ ok(sw.includes("await caches.delete("),course+" failed mission-critical install removes its incomplete candidate cache");
+
  ok(sw.includes("../assets/applied-mission-studio-v1.js"),course+" offline release caches the shared Mission Studio");
  for(const route of routes){
   ok(sw.includes(route),course+" first-use offline cache includes "+route);
