@@ -198,8 +198,8 @@ html:root:root body :is(button,.btn,.button)[disabled] {
 }
 html:root:root body :is(.card,.lesson-section,.question) :is(details) > summary {
   cursor:pointer;
-  min-height:40px;
-  padding-block:7px;
+  min-height:44px;
+  padding-block:9px;
 }
 html:root:root body :is(.question,.lesson-section,.card) :is(.feedback,[role="status"],[aria-live]) {
   overflow-wrap:break-word;
