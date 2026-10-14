@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v7-compact-course-shell-math-canonical-20261008`;
+const CACHE_NAME=`${CACHE_PREFIX}v8-applied-mission-studio-20261014`;
 const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "./",
   "./index.html",
@@ -14,7 +14,8 @@ const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-
   "./assets/prealgebra-course-gates-v1.js",
   "./assets/prealgebra-course-navigator-v1.js",
   "./assets/prealgebra-student-navigation.js",
-  "./assets/prealgebra-study-scorebook-v1.js"
+  "./assets/prealgebra-study-scorebook-v1.js",
+  "../assets/applied-mission-studio-v1.js"
 ];
 
 self.addEventListener("install",event=>{

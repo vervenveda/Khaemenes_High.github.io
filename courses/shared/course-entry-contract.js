@@ -99,4 +99,20 @@
     isReady,
     routeFor
   });
+  // Mathematics Applied Mission Studio loader.
+  // Narrowly scoped to canonical High School math lesson/project routes.
+  // The shared asset remains portfolio evidence only; it does not own mastery gates.
+  const appliedMissionSource=document.currentScript?.src||"";
+  function loadAppliedMissionStudio(){
+    if(!/\/courses\/mathematics\/(pre-algebra|geometry|algebra-2)\/units\/unit-\d{2}\/(lessons|projects)\//i.test(location.pathname))return;
+    if(document.querySelector('script[data-khae-applied-mission-studio="shared-v1"]'))return;
+    const script=document.createElement("script");
+    script.async=false;
+    script.dataset.khaeAppliedMissionStudio="shared-v1";
+    script.src=new URL("../mathematics/assets/applied-mission-studio-v1.js",appliedMissionSource||location.href).href;
+    document.head.appendChild(script);
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",loadAppliedMissionStudio,{once:true});
+  else loadAppliedMissionStudio();
+
 })();

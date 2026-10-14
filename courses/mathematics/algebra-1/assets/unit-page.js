@@ -10,6 +10,7 @@ if(unit===12) scripts.push(new URL("unit-12-content-upgrade.js",base).href);
 if(unit===13) scripts.push(new URL("unit-13-content-upgrade.js",base).href);
 scripts.push(new URL("mastery-authority-v1.js",base).href);
 scripts.push(new URL("unit-page-core.js",base).href);
+if(ref.type==="project") scripts.push(new URL("../../assets/applied-mission-studio-v1.js",base).href);
 if(unit===13) scripts.push(new URL("../units/unit-13/projects/unit-13-project-upgrade.js",base).href);
 if(ref.type==="project"&&unit!==13) scripts.push(new URL("applied-mission-studio-v1.js",base).href);
 scripts.push(new URL("strict-mastery-gates.js",base).href);

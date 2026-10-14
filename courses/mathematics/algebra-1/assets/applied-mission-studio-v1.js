@@ -2,6 +2,7 @@
 "use strict";
 const D=window.ALGEBRA1_DATA,R=window.PAGE_REF;
 if(!D||!R||R.type!=="project")return;
+window.KhaemenesAppliedMissionStudio?.registerNative?.({course:"algebra-1",mode:"native-algebra1-v1",version:"1.0.0"});
 const U=Number(R.unit),unit=D.units?.find(x=>x.number===U),root=R.root||"../../../",C=DATA[U];
 if(!unit||!C)return;
 const STORE="khaemenes-algebra1-applied-missions-v1",PORT="khaemenes-algebra1-applied-mission-portfolio-v1",TARGET=80;

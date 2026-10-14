@@ -1,0 +1,33 @@
+name: Mathematics Applied Mission Studio Validation
+
+on:
+  pull_request:
+    paths:
+      - 'courses/mathematics/**'
+      - 'courses/shared/course-entry-contract.js'
+      - '.github/workflows/math-applied-mission-studio-validation.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'courses/mathematics/**'
+      - 'courses/shared/course-entry-contract.js'
+      - '.github/workflows/math-applied-mission-studio-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: JavaScript syntax
+        run: |
+          node --check courses/mathematics/assets/applied-mission-studio-v1.js
+          node --check courses/mathematics/algebra-1/assets/applied-mission-studio-v1.js
+          node --check courses/shared/course-entry-contract.js
+      - name: Validate mathematics Applied Mission Studio
+        run: node courses/mathematics/tools/validate-applied-mission-studio.mjs

@@ -2,6 +2,7 @@
 const CACHE_PREFIX="khaemenes-algebra2-";
 const CACHE=`${CACHE_PREFIX}v3-math-entry`;
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
+  "../assets/applied-mission-studio-v1.js",
   "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
   "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js",
   "./assets/question-bank.js","./assets/assessment-engine.js","./assets/lesson-tools.js",
