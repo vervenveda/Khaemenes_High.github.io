@@ -4,9 +4,22 @@ import path from 'node:path';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 const base='courses/mathematics/assets/learning-games';
+const registry=JSON.parse(fs.readFileSync(path.join(base,'game-registry.json'),'utf8'));
+
 const names=['generate','answerFor','correct','next','challenge','start','check','qCongruence','qCorrespondence','qSimilarity','qScale','formula','solution','expected','KEY'];
 for(const slug of fs.readdirSync(base).filter(s=>fs.existsSync(path.join(base,s,'index.html')))){
  const html=fs.readFileSync(path.join(base,slug,'index.html'),'utf8');
+ // Standalone Pre-Algebra form games have a different interaction contract:
+ // preserve their existing UI and verify they offer a usable form and a real return path.
+ if(registry.games[slug]?.status==='canonical-unplaced'){
+  assert.match(html,/<form\\b[^>]*>/i,slug+': standalone practice missing answer form');
+  assert.match(html,/<button\\b[^>]*type=["']submit["']/i,slug+': standalone practice missing submit action');
+  const links=[...html.matchAll(/href=["']([^"']+\\.html)["']/g)].map(m=>m[1]);
+  assert.ok(links.some(ref=>fs.existsSync(path.resolve(base,slug,ref))),slug+': standalone practice missing working return');
+  console.log('PASS:',slug,'standalone form and verified return navigation');
+  continue;
+ }
+
  if(/function (best|bestValue)\(\)/.test(html)||slug==='ratio-atelier')continue;
  const nodes=new Map(),stored=new Map();
  function node(id){
