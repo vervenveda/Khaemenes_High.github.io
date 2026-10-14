@@ -1,0 +1,10 @@
+# SYNTHETIC stationary-on-level-support friction model; when force exceeds static limit, initial kinetic regime only.
+Case,Mass_kg,Applied_Force_N,Mu_s,Mu_k,Normal_N,Static_Max_N,Actual_Friction_N,Net_Force_N,Acceleration_m_per_s2,Mode
+rest_12N,5,12,0.4,0.3,49,19.6,-12,0,0,static
+slip_25N,5,25,0.4,0.3,49,19.6,-14.7,10.3,2.06,kinetic
+balanced_zero,5,0,0.4,0.3,49,19.6,0,0,0,static
+threshold,5,19.6,0.4,0.3,49,19.6,-19.6,0,0,static
+negative_push,5,-25,0.4,0.3,49,19.6,14.7,-10.3,-2.06,kinetic
+mass_up,10,25,0.4,0.3,98,39.2,-25,0,0,static
+low_normal,2,12,0.4,0.3,19.6,7.84,-5.88,6.12,3.06,kinetic
+higher_coefficient,5,25,0.8,0.4,49,39.2,-25,0,0,static

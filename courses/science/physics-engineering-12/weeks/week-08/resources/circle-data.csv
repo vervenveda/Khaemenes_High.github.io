@@ -1,0 +1,10 @@
+# SYNTHETIC theoretical uniform-circular-motion cases. They are not real measurements or driving safety guidance.
+Case,Mass_kg,Speed_m_per_s,Radius_m,Mu_s,Inward_Acceleration_m_per_s2,Required_Radial_Force_N,Flat_Friction_Limit_N,Within_Ideal_Friction_Limit
+baseline,2,4,8,0.4,2,4,7.84,yes
+double_speed,2,8,8,0.4,8,16,7.84,no
+double_radius,2,4,16,0.4,1,2,7.84,yes
+double_mass,4,4,8,0.4,2,8,15.68,yes
+gentle_turn,5,3,15,0.6,0.6,3,29.4,yes
+high_required,2,12,8,0.4,18,36,7.84,no
+zero_speed,2,0,8,0.4,0,0,7.84,yes
+small_radius,3,6,3,0.7,12,36,20.58,no
