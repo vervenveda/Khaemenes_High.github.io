@@ -21,3 +21,5 @@ jobs:
       - uses: actions/checkout@v6
       - name: Verify academic content force-vector science student-record preservation and links
         run: node courses/science/physics-engineering-12/tools/validate-forces.mjs
+      - name: Verify running Force Builder calculations and game interactions
+        run: node courses/science/physics-engineering-12/tools/smoke-forces.mjs
