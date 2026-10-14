@@ -1,0 +1,19 @@
+name: Chemistry 11 Week 14 Studio Validation
+on:
+  push:
+    paths:
+      - 'courses/science/chemistry-11/weeks/week-14/**'
+      - '.github/workflows/chemistry11-week14-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/science/chemistry-11/weeks/week-14/**'
+      - '.github/workflows/chemistry11-week14-validation.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Verify lessons, model science, math keys, links, offline JavaScript
+        run: node courses/science/chemistry-11/weeks/week-14/tools/validate-week14.mjs
