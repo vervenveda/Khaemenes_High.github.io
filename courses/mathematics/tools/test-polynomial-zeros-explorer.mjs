@@ -28,7 +28,7 @@ for(const n of [2,3,4,5])for(const a of [-2,-1,1,2]){
  const expected=(n%2===0?(a>0?'up/up':'down/down'):(a>0?'down/up':'up/down'));
  assert.equal(math.endBehavior(n,a),expected);
 }
-const modes=['structure','expand','end','complex','conjugate','fta','division','remainder','rational','roots','multiplicity','model'];
+const modes=['structure','expand','end','complex','conjugate','fta','division','remainder','rational','roots','multiplicity','factorgraph','model'];
 for(const mode of modes){
  const seen=new Set();
  for(let i=0;i<280;i++){
@@ -43,6 +43,12 @@ for(const mode of modes){
   if(mode==='rational')assert.ok(!Number.isInteger(answer.one),'rational mission requires noninteger rational zero');
   if(mode==='roots')assert.equal(new Set(t.roots).size,3,'exactly three distinct real roots');
   if(mode==='fta')assert.equal(t.degree,t.coeff.length-1,'polynomial degree');
+  if(mode==='factorgraph'){
+   assert.equal(t.degree,t.mult+1,'factor multiplicity adds to total degree');
+   assert.equal(answer.choice,t.mult%2===0?'touch':'cross','crossing follows multiplicity parity');
+   assert.ok(eq(math.evaluate(t.coeff,t.r),0),'repeated zero evaluates to zero');
+   assert.ok(eq(math.evaluate(t.coeff,t.other),0),'distinct simple zero evaluates to zero');
+  }
   seen.add(t.id);
  }
  assert.ok(seen.size>=12,'question variation for '+mode);
