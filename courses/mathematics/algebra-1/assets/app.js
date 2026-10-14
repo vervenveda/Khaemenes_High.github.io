@@ -277,14 +277,22 @@ function renderGradebook(){
  <h3>Calculated course grade: ${percent(grade)}</h3><div class="actions"><button class="btn" id="gradeCsv">Download Gradebook CSV</button><button class="btn" onclick="print()">Print</button></div></article></div>`;
  $("#gradeCsv").onclick=downloadGradebook;
 }
+function appliedMissionPortfolio(){
+ try{
+  const x=JSON.parse(localStorage.getItem("khaemenes-algebra1-applied-mission-portfolio-v1")||'{"units":{}}');
+  return x&&x.units&&typeof x.units==="object"?x:{units:{}};
+ }catch{return{units:{}}}
+}
 function renderPortfolio(){
- const s=activeStudent();
+ const s=activeStudent(),missions=appliedMissionPortfolio(),missionRows=Object.values(missions.units||{}).sort((a,b)=>(a.unit||0)-(b.unit||0));
  $("#view-portfolio").innerHTML=`<div class="wrap"><div class="section-head"><p class="eyebrow">Representative evidence</p><h2>Portfolio Record</h2></div>
  <div class="grid">${D.weeks.map(w=>{const r=weekRecord(w.week);return `<article class="card col4"><span class="pill">Week ${w.week}</span><h3>${esc(w.title)}</h3>
  <p><strong>Evidence:</strong> ${esc(r.evidence||"Not yet recorded.")}</p><p><strong>Reflection:</strong> ${esc(r.reflection||"Not yet recorded.")}</p>
  <p>Classwork ${percent(r.classwork)} · Mastery ${percent(r.masteryBest)} · Portfolio ${percent(r.portfolio)}</p></article>`}).join("")}</div>
+ <div class="section-head" style="margin-top:34px"><p class="eyebrow">Applied Connection</p><h2>Mission Studio Evidence</h2><p>These entries are learner-selected portfolio evidence. They do not replace formal lesson, weekly, unit, Midterm, Final, or capstone mastery.</p></div>
+ <div class="grid">${missionRows.length?missionRows.map(r=>`<article class="card col4"><span class="pill">Unit ${String(r.unit||"").padStart(2,"0")}</span><h3>${esc(r.project||"Applied Mission")}</h3><p><strong>Mission:</strong> ${esc(r.mission||"Saved mission")}</p><p><strong>Best evaluator review:</strong> ${r.best_review==null?"Not yet reviewed":percent(r.best_review)}</p><p><strong>Portfolio saved:</strong> ${r.saved_at?esc(new Date(r.saved_at).toLocaleString()):"Saved locally"}</p></article>`).join(""):`<article class="card full"><p>No Applied Mission Studio evidence has been added yet. Open an Applied Connection from a lesson, complete the evidence workspace, then choose <strong>Add to Algebra I Portfolio</strong>.</p></article>`}</div>
  <div class="actions"><button class="btn" id="portfolioJson">Export Portfolio JSON</button><button class="btn" onclick="print()">Print</button></div></div>`;
- $("#portfolioJson").onclick=()=>download("algebra1-portfolio.json",JSON.stringify({course:D.course,learner:s,exported:new Date().toISOString()},null,2),"application/json");
+ $("#portfolioJson").onclick=()=>download("algebra1-portfolio.json",JSON.stringify({course:D.course,learner:s,applied_missions:missions,exported:new Date().toISOString()},null,2),"application/json");
 }
 function renderTeacher(){
  $("#view-teacher").innerHTML=`<div class="wrap"><div class="section-head"><p class="eyebrow">Administration &amp; records</p><h2>Teacher and Home-Education Tools</h2></div>
