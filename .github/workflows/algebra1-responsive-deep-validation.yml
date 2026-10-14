@@ -70,7 +70,7 @@ jobs:
                   errors.append(f'focused assessment engine missing {token}')
 
           sw = (root/'service-worker.js').read_text(encoding='utf-8')
-          for asset in ['responsive-layout-v1.css','readiness-entry-gate-v1.js','deep-lesson-engine-v1.js','lesson-resource-map.js','lesson-resource-bridge-v1.js','focused-assessment-v1.js']:
+          for asset in ['responsive-layout-v1.css','readiness-entry-gate-v1.js','deep-lesson-engine-v1.js','lesson-resource-map.js','lesson-resource-bridge-v1.js','focused-assessment-v1.js','applied-mission-studio-v1.js']:
               if asset not in sw:
                   errors.append(f'service worker does not cache {asset}')
 
@@ -100,7 +100,32 @@ jobs:
           node --check courses/mathematics/algebra-1/assets/readiness-entry-gate-v1.js
           node --check courses/mathematics/algebra-1/assets/deep-lesson-engine-v1.js
           node --check courses/mathematics/algebra-1/assets/focused-assessment-v1.js
+          node --check courses/mathematics/algebra-1/assets/applied-mission-studio-v1.js
           node --check courses/mathematics/algebra-1/service-worker.js
+
+      - name: Validate Applied Mission Studio
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, sys
+          root=Path('courses/mathematics/algebra-1')
+          engine=(root/'assets/applied-mission-studio-v1.js').read_text(encoding='utf-8')
+          errors=[]
+          for token in ['khaemenes-algebra1-applied-missions-v1','khaemenes-algebra1-applied-mission-portfolio-v1','course_progression_authority:false','Applied Mission Studio','Add to Algebra I Portfolio','Export Evidence']:
+              if token not in engine: errors.append('mission engine missing '+token)
+          if engine.count('missions') < 13: errors.append('mission engine does not expose the full unit mission catalog')
+          loader=(root/'assets/unit-page.js').read_text(encoding='utf-8')
+          if 'ref.type==="project"&&unit!==13' not in loader or 'applied-mission-studio-v1.js' not in loader:
+              errors.append('project loader does not preserve Unit 13 while enabling Units 01–12 mission studio')
+          bridge=(root/'assets/lesson-resource-bridge-v1.js').read_text(encoding='utf-8')
+          if '?from=' not in bridge: errors.append('Applied Connection does not preserve lesson provenance')
+          u1=(root/'units/unit-01/projects/precision-measurement-audit.html').read_text(encoding='utf-8')
+          if 'window.PAGE_REF={"type":"project","unit":1' not in u1 or 'assets/unit-page.js' not in u1:
+              errors.append('Unit 01 project is not on the shared mission renderer')
+          if errors:
+              print('\n'.join('ERROR: '+x for x in errors));sys.exit(1)
+          print('PASS: Algebra I Applied Mission Studio contract.')
+          PY
 
       - name: Verify lesson reading and draft recovery
         run: node courses/mathematics/algebra-1/tools/test-lesson-reading-drafts.mjs
