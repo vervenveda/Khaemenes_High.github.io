@@ -379,4 +379,53 @@
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",attachReadingResponseGuide,{once:true});
   else attachReadingResponseGuide();
+
+  // Accessible, device-local reading desk; no new network services, storage keys or grades.
+  function enableReadingDesk(){
+    if(!/\/units\/unit-\d{2}\/(?:index\.html)?$/.test(location.pathname))return;
+    const main=document.querySelector("main");if(!main)return;
+    const candidates=Array.from(main.querySelectorAll('#assigned-reading, [aria-label="Extended literary reading"], [aria-label="Extended required reading"], [aria-label="Extended reading"], section:has([id^="literature-depth-"])')).filter(el=>!el.closest('#khae-reading-desk'));
+    if(!candidates.length)return;
+    const style=document.createElement("style");
+    style.textContent=`
+      .khae-read-open{margin:.6rem .4rem .6rem 0;padding:.55rem .9rem;border:1px solid #8b7855;border-radius:7px;background:#fffaf1;color:#242018;cursor:pointer}
+      #khae-reading-desk{position:fixed;inset:0;z-index:100000;display:flex;align-items:center;justify-content:center;padding:12px;background:rgba(16,20,24,.72)}
+      #khae-reading-desk[hidden]{display:none}
+      #khae-reading-desk .khae-read-panel{box-sizing:border-box;width:min(900px,96vw);height:min(85vh,900px);min-width:min(320px,96vw);min-height:260px;max-width:98vw;max-height:95vh;resize:both;overflow:auto;background:#faf7ef;color:#191919;border:2px solid #ac9673;border-radius:7px;padding:16px;box-shadow:0 12px 45px #0005}
+      #khae-reading-desk .khae-read-tools{position:sticky;top:-16px;background:#faf7ef;z-index:1;display:flex;flex-wrap:wrap;gap:8px;padding:8px 0;border-bottom:1px solid #d6cbbb;align-items:center}
+      #khae-reading-desk button{border:1px solid #8b7855;border-radius:7px;background:white;color:#191919;padding:8px 12px;cursor:pointer;min-height:42px}
+      #khae-reading-desk button:focus-visible,.khae-read-open:focus-visible{outline:3px solid #2369a0;outline-offset:2px}
+      #khae-reading-desk .khae-read-content{font-family:Georgia,serif;line-height:1.7;font-size:18px;max-width:72ch;margin:auto}
+      #khae-reading-desk .khae-read-content p,#khae-reading-desk .khae-read-content li{font-size:1em!important;line-height:1.7!important}
+      #khae-reading-desk .khae-read-content h2{font-size:1.6em!important}
+      #khae-reading-desk .khae-read-content h3{font-size:1.25em!important}
+      @media print{body.khae-print-reading>*:not(#khae-reading-desk){display:none!important}body.khae-print-reading #khae-reading-desk{position:static;display:block!important;background:white;padding:0}body.khae-print-reading #khae-reading-desk .khae-read-panel{width:auto!important;height:auto!important;max-height:none!important;overflow:visible;resize:none;box-shadow:none;border:0;background:white;color:black}body.khae-print-reading #khae-reading-desk .khae-read-tools{display:none!important}body.khae-print-reading #khae-reading-desk .khae-read-content{max-width:none}}
+    `;
+    document.head.append(style);
+    const overlay=document.createElement("div");overlay.id="khae-reading-desk";overlay.hidden=true;
+    overlay.setAttribute("role","dialog");overlay.setAttribute("aria-modal","true");overlay.setAttribute("aria-label","Adjustable reading desk");
+    const panel=document.createElement("div");panel.className="khae-read-panel";panel.tabIndex=-1;
+    const bar=document.createElement("div");bar.className="khae-read-tools";
+    const content=document.createElement("div");content.className="khae-read-content";
+    let font=18;let source=null;let opener=null;
+    const button=(label,fn)=>{const el=document.createElement("button");el.type="button";el.textContent=label;el.addEventListener("click",fn);bar.append(el);return el};
+    const close=()=>{overlay.hidden=true;document.body.style.overflow="";if(opener?.isConnected)opener.focus()};
+    button("− Text",()=>{font=Math.max(14,font-2);content.style.fontSize=font+"px"});
+    button("+ Text",()=>{font=Math.min(34,font+2);content.style.fontSize=font+"px"});
+    button("Reset",()=>{font=18;content.style.fontSize="18px";panel.style.width="";panel.style.height=""});
+    button("Print",()=>{document.body.classList.add("khae-print-reading");window.print();document.body.classList.remove("khae-print-reading")});
+    button("Export .txt",()=>{const txt=content.innerText||content.textContent||"";const blob=new Blob([txt],{type:"text/plain;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="khaemenes-reading-"+(location.pathname.match(/unit-\d{2}/)?.[0]||"selection")+".txt";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+    const closeBtn=button("Close ×",close);
+    panel.append(bar,content);overlay.append(panel);document.body.append(overlay);
+    overlay.addEventListener("mousedown",ev=>{if(ev.target===overlay)close()});
+    overlay.addEventListener("keydown",ev=>{if(ev.key==="Escape"){ev.preventDefault();close()}else if(ev.key==="Tab"){const controls=Array.from(bar.querySelectorAll("button"));if(ev.shiftKey&&document.activeElement===controls[0]){ev.preventDefault();controls[controls.length-1].focus()}else if(!ev.shiftKey&&document.activeElement===controls[controls.length-1]){ev.preventDefault();controls[0].focus()}}});
+    for(const candidate of candidates){
+      if(candidate.querySelector(".khae-read-open"))continue;
+      const launch=document.createElement("button");launch.className="khae-read-open";launch.type="button";launch.textContent="Open adjustable reading · Zoom / Print / Export";
+      candidate.prepend(launch);
+      launch.addEventListener("click",()=>{source=candidate;opener=launch;content.replaceChildren();const copy=candidate.cloneNode(true);copy.querySelectorAll(".khae-read-open, button, input, textarea, script").forEach(el=>el.remove());content.append(copy);overlay.hidden=false;document.body.style.overflow="hidden";panel.focus();closeBtn.focus()});
+    }
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",enableReadingDesk,{once:true});
+  else enableReadingDesk();
 })();
