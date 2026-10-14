@@ -326,4 +326,30 @@
     }
   }
 
+
+  // Reuse vetted metadata from the shared ELA video registry; videos are optional.
+  function attachOptionalELAStudyVideo(){
+    const m=location.pathname.match(/\/weeks\/week-(\d{2})\/(?:index\.html)?$/);
+    if(!m || document.querySelector('[data-shared-ela-video]'))return;
+    const week=Number(m[1]);
+    const choices=[[1,3,"Close reading and annotation","J2KHX1Pm5co"],[7,9,"Identifying theme","C2XYTlnfjgA"],[10,12,"Rhetorical analysis","FnAR2GtFy-E"]];
+    const chosen=choices.find(x=>week>=x[0]&&week<=x[1]);
+    if(!chosen)return;
+    const main=document.querySelector("main");if(!main)return;
+    const box=document.createElement("aside");
+    box.dataset.sharedElaVideo="1";
+    box.setAttribute("aria-label","Optional video study resource");
+    box.style.cssText="max-width:1100px;margin:14px auto;padding:16px;border:1px solid #d7d1c5;border-radius:7px;background:#faf7f0;color:#191919";
+    const label=document.createElement("strong");
+    label.textContent="Optional video study · "+chosen[2]+": ";
+    const a=document.createElement("a");
+    a.href="https://www.youtube.com/watch?v="+encodeURIComponent(chosen[3]);
+    a.target="_blank";a.rel="noopener noreferrer";
+    a.textContent="Watch lesson support";
+    const note=document.createElement("p");
+    note.textContent="This external video is supplementary; the written reading and assignments remain available offline. Captions and transcripts have not been verified.";
+    box.append(label,a,note);main.insertBefore(box,main.firstChild);
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",attachOptionalELAStudyVideo,{once:true});
+  else attachOptionalELAStudyVideo();
 })();
