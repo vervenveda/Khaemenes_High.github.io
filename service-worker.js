@@ -1,9 +1,15 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-v35-math-game-registry-20261014";
+const CACHE_VERSION = "khaemenes-high-v36-five-algebra-formative-games-20261014";
 // Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
 // Every canonical game and its shared runtime must be available on a newly installed offline worker.
 const GAME_PRECACHE_FILES = [
+  "./courses/mathematics/assets/learning-games/algebra-evidence-modelling-challenge/index.html",
+  "./courses/mathematics/assets/learning-games/algebra-exponents-radicals-challenge/index.html",
+  "./courses/mathematics/assets/learning-games/algebra-functions-systems-challenge/index.html",
+  "./courses/mathematics/assets/learning-games/algebra-reasoning-foundations/index.html",
+  "./courses/mathematics/assets/learning-games/algebra-structure-balance-challenge/index.html",
+
   "./courses/mathematics/assets/learning-games/number-family/index.html",
   "./courses/mathematics/assets/learning-games/factors-and-multiples/index.html",
   "./courses/mathematics/assets/learning-games/prime-spy-composite/index.html",
