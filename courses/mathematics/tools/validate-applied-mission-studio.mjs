@@ -12,16 +12,24 @@ const ok=(v,m)=>{if(v)console.log("OK "+m);else{failed=true;console.error("FAIL 
 const shared=read("assets/applied-mission-studio-v1.js");
 const manifest=JSON.parse(read("APPLIED_MISSION_STUDIO_RELEASE.json"));
 const blobSha=crypto.createHash("sha1").update("blob "+Buffer.byteLength(shared)+"\0").update(shared).digest("hex");
-ok(manifest.version==="1.5.0","release manifest pins Applied Mission Studio v1.5.0");
-const offlineRelease="ams-v1.5.0-recovery-r1-20261014";
+ok(manifest.version==="1.6.0","release manifest pins Applied Mission Studio v1.6.0");
+const offlineRelease="ams-v1.6.0-recovery-r1-20261014";
 ok(manifest.offline_release===offlineRelease,"release manifest pins the atomic Mission Studio offline release");
 ok(blobSha===manifest.git_blob_sha,"shared Applied Mission Studio matches pinned Git blob");
-ok(shared.includes('const V="1.5.0"'),"runtime reports v1.5.0");
+ok(shared.includes('const V="1.6.0"'),"runtime reports v1.6.0");
 ok(shared.includes("pageOwnerId")&&shared.includes("ownerOk"),"runtime binds writes to the active Academy learner");
 ok(shared.includes("Review & Replace Newer Version")&&shared.includes("competing-tab"),"runtime protects competing tabs");
 ok(shared.includes("importBytes:524288")&&shared.includes("verifiedWrite"),"runtime bounds imports and verifies writes");
 ok(shared.includes("khaemenes-evidence-integrity-v1")&&shared.includes("sealEnvelope")&&shared.includes("verifyEnvelope"),"runtime seals and verifies portable evidence with SHA-256");
 ok(shared.includes("course_progression_authority:false"),"mission evidence remains outside mastery authority");
+const vault=read("evidence-vault/index.html"),vaultSw=read("evidence-vault/service-worker.js");
+ok(shared.includes('href="../../../../evidence-vault/"'),"Mission Studio exposes the Evidence Vault");
+ok(vault.includes("Khaemenes Mathematics Evidence Vault"),"Evidence Vault route is present");
+ok(vault.includes("khaemenes-math-evidence-vault-export-v1")&&vault.includes("SHA-256"),"Evidence Vault creates sealed full-program backups");
+ok(vault.includes("Verify Bundle")&&vault.includes("read-only"),"Evidence Vault verification is read-only");
+ok(vault.includes("prealgebra")&&vault.includes("algebra1")&&vault.includes("geometry")&&vault.includes("algebra2")&&vault.includes("precalculus-trigonometry")&&vault.includes("calculus1"),"Evidence Vault inventories all six mathematics courses");
+ok(vaultSw.includes("khaemenes-math-evidence-vault-v1"),"Evidence Vault has its own offline shell");
+
 ok(shared.includes("RECOVERY_JOURNAL")&&shared.includes("Evidence Recovery"),"runtime exposes learner-scoped Evidence Recovery");
 ok(shared.includes("Restore as New Revision")&&shared.includes("recovery-restore"),"recovery restores evidence as a new revision");
 ok(shared.includes("khaemenes-math-applied-mission-recovery-export-v1"),"recovery exports are integrity-sealed first-party evidence packages");

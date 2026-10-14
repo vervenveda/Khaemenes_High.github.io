@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Khaemenes Mathematics Evidence Vault</title>
+<style>
+:root{--paper:#fffdf8;--paper2:#f5efe4;--ink:#171513;--muted:#665f56;--line:#d5c7b2;--navy:#17344a;--forest:#315b4b;--wine:#6f1f2d;--gold:#a67b35;--rose:#842b36;--r:7px;--shadow:0 10px 28px rgba(52,38,22,.08);--display:Cinzel,"Iowan Old Style","Palatino Linotype",Georgia,serif;--sans:"Avenir Next",Avenir,"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:var(--sans);background:linear-gradient(180deg,#fbf7ef,#efe7da);min-height:100vh}.shell{width:min(calc(100% - 30px),1220px);margin:auto}.top{border-bottom:1px solid var(--line);background:rgba(255,253,248,.97);position:sticky;top:0;z-index:5}.top .shell{min-height:62px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:11px}.seal{width:39px;height:39px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--wine);font:600 10px var(--display);background:#fffaf0}.brand strong{font:500 17px var(--display);letter-spacing:.03em}.brand small{display:block;color:var(--wine);font-size:9px;letter-spacing:.13em;text-transform:uppercase}.btn{min-height:34px;padding:7px 11px;border:1px solid #bca98b;border-radius:var(--r);background:var(--paper);color:var(--ink);font:600 10px var(--sans);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn:hover{background:#f1e7d8}.btn.primary{background:var(--wine);border-color:var(--wine);color:#fff}.btn.gold{background:#ead7ad;border-color:#b28b47}.hero{text-align:center;padding:42px 0 28px}.k{margin:0 0 8px;color:var(--gold);font:500 11px var(--display);letter-spacing:.16em;text-transform:uppercase}.hero h1{margin:0;font:500 clamp(32px,5vw,52px)/1.08 var(--display);color:#1b1712}.hero p{max-width:800px;margin:14px auto 0;color:var(--muted);line-height:1.65}.notice{margin:0 auto 22px;padding:13px 15px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--muted)}.notice strong{color:var(--forest)}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}.metric,.card{border:1px solid var(--line);border-radius:var(--r);background:var(--paper);box-shadow:var(--shadow)}.metric{padding:15px;text-align:center}.metric strong{display:block;color:var(--wine);font:500 25px var(--display)}.metric span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}.actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 24px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding-bottom:34px}.card{padding:18px}.card h2{margin:3px 0 10px;font:500 22px var(--display)}.pills{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.pill{padding:4px 7px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper2);font-size:9px}.pill.good{border-color:#9bb5a8;color:var(--forest)}.pill.warn{border-color:#cfb17a;color:#805820}.meta{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}.meta div{padding:9px;border:1px solid #e1d6c6;border-radius:var(--r);background:#faf6ee}.meta b{display:block;font:500 18px var(--display);color:var(--navy)}.meta span{font-size:9px;color:var(--muted)}.status{margin-top:12px;color:var(--muted);font-size:11px}.verify{margin:0 0 38px;padding:18px;border:1px solid var(--line);border-radius:var(--r);background:#fff8e8}.verify.good{border-color:#9bb5a8;background:#f0f7f2}.verify.bad{border-color:#c99298;background:#fbefef}.footer{padding:20px 0;border-top:1px solid var(--line);color:var(--muted);font-size:10px;text-align:center}@media(max-width:760px){.metrics,.grid{grid-template-columns:1fr 1fr}.top .shell{align-items:flex-start;padding:8px 0;flex-direction:column}}@media(max-width:520px){.metrics,.grid,.meta{grid-template-columns:1fr}.hero{padding-top:28px}}@media print{.top,.actions,.verify{display:none}.grid{grid-template-columns:1fr 1fr}body{background:#fff}.card,.metric{box-shadow:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="shell"><div class="brand"><div class="seal">KHAE</div><div><strong>Khaemenes Mathematics</strong><small>Evidence Vault · sovereign local record</small></div></div><button class="btn" type="button" id="backBtn">Return</button></div></header>
+<main class="shell">
+<section class="hero"><p class="k">Verve N Veda · Evidence Continuity</p><h1>Khaemenes Mathematics Evidence Vault</h1><p>One read-only view of Applied Mission evidence, portfolios, restore points and preserved emergency drafts available for the active Academy learner on this browser.</p></section>
+<div class="notice" id="ownerNotice"><strong>Checking learner authority…</strong></div>
+<section class="metrics" aria-label="Evidence summary">
+<div class="metric"><strong id="mCourses">0</strong><span>Courses with evidence</span></div>
+<div class="metric"><strong id="mUnits">0</strong><span>Saved mission units</span></div>
+<div class="metric"><strong id="mRecovery">0</strong><span>Restore points</span></div>
+<div class="metric"><strong id="mEmergency">0</strong><span>Emergency copies</span></div>
+</section>
+<div class="actions">
+<button class="btn primary" type="button" id="refreshBtn">Refresh Inventory</button>
+<button class="btn gold" type="button" id="exportBtn">Export Sealed Vault</button>
+<label class="btn" for="verifyFile">Verify Bundle</label><input id="verifyFile" type="file" accept=".json" hidden>
+<button class="btn" type="button" id="printBtn">Print Summary</button>
+</div>
+<section id="verifyBox" class="verify" hidden aria-live="polite"></section>
+<section class="grid" id="courseGrid"></section>
+</main>
+<footer class="footer"><div class="shell">Read-only evidence inventory. This page does not delete, rewrite, restore, grade, or unlock course progress. Recovery remains an explicit action inside the individual Mission Studio.</div></footer>
+<script>
+(function(){
+"use strict";
+var ACTIVE="khaemenes_active_learner_v1",REG="khaemenes_family_registry_v1",MAX_FILE=5242880;
+var COURSES=[
+ {course:"pre-algebra",label:"Pre-Algebra",stem:"prealgebra"},
+ {course:"algebra-1",label:"Algebra I",stem:"algebra1"},
+ {course:"geometry",label:"Geometry",stem:"geometry"},
+ {course:"algebra-2",label:"Algebra II",stem:"algebra2"},
+ {course:"precalculus-trigonometry",label:"Precalculus & Trigonometry",stem:"precalculus-trigonometry"},
+ {course:"calculus-1",label:"Calculus I",stem:"calculus1"}
+];
+var $=function(id){return document.getElementById(id)},parse=function(v,f){try{var x=JSON.parse(v);return x==null?f:x}catch(e){return f}},esc=function(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})};
+function profile(){try{var id=parse(localStorage.getItem(ACTIVE),null),reg=parse(localStorage.getItem(REG),null),l=typeof id==="string"&&reg&&reg.learners?reg.learners[id]:null;return l&&l.learnerId===id?{learnerId:id,name:String(l.nickname||l.name||"Learner")}:null}catch(e){return null}}
+function scoped(base,id){return base+":learner:"+encodeURIComponent(id)}
+function meaningful(r){if(!r||typeof r!=="object")return false;if(String(r.mission_id||r.custom||"").trim())return true;var values=Object.values(r.fields||{}).concat(Object.values(r.legacy_fields||{}));return values.some(function(v){return String(v||"").trim().length>2})||Array.isArray(r.review&&r.review.attempts)&&r.review.attempts.length>0}
+function latestOf(current,value){if(!value)return current;return !current||String(value)>String(current)?String(value):current}
+function scanCourse(c,p){
+ var base="khaemenes-"+c.stem+"-applied-missions-v1",portBase="khaemenes-"+c.stem+"-applied-mission-portfolio-v1",suffix=":learner:"+encodeURIComponent(p.learnerId);
+ var storeKey=scoped(base,p.learnerId),portKey=scoped(portBase,p.learnerId),store=parse(localStorage.getItem(storeKey),null),port=parse(localStorage.getItem(portKey),null);
+ var units=store&&store.units&&typeof store.units==="object"?store.units:{},saved=Object.values(units).filter(meaningful),portfolio=port&&port.units&&typeof port.units==="object"?port.units:{};
+ var journals=[],emergency=[],latest=null;
+ saved.forEach(function(r){latest=latestOf(latest,r.updated_at)});
+ for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(!k||!k.endsWith(suffix)||!k.startsWith(base+":"))continue;var d=parse(localStorage.getItem(k),null);
+   if(k.indexOf(":recovery-journal-v1:")>=0){if(d&&Array.isArray(d.points)){journals.push({key:k,data:d});d.points.forEach(function(x){latest=latestOf(latest,x.saved_at)})}}
+   else if(k.indexOf(":draft:")>=0||k.indexOf(":recovery:")>=0){if(d&&d.record){emergency.push({key:k,data:d});latest=latestOf(latest,d.saved_at)}}
+ }
+ var recoveryCount=journals.reduce(function(n,j){return n+j.data.points.length},0),portfolioCount=Object.keys(portfolio).length;
+ return{course:c.course,label:c.label,stem:c.stem,store_key:storeKey,portfolio_key:portKey,saved_units:saved.length,portfolio_units:portfolioCount,recovery_points:recoveryCount,emergency_copies:emergency.length,latest:latest,current_store:store,portfolio_store:port,recovery_journals:journals,emergency_copies_data:emergency};
+}
+function inventory(){
+ var p=profile();if(!p)return{profile:null,courses:[]};
+ return{profile:p,courses:COURSES.map(function(c){return scanCourse(c,p)})};
+}
+function render(){
+ var inv=inventory(),notice=$("ownerNotice"),grid=$("courseGrid");
+ if(!inv.profile){notice.innerHTML="<strong>No Academy learner is selected.</strong> Evidence is not enumerated until a learner is selected. This prevents one family member’s local records from being shown under another learner.";grid.innerHTML="";["mCourses","mUnits","mRecovery","mEmergency"].forEach(function(id){$(id).textContent="0"});$("exportBtn").disabled=true;return}
+ $("exportBtn").disabled=false;notice.innerHTML="<strong>Active learner:</strong> "+esc(inv.profile.name)+" · Inventory is limited to this learner’s scoped browser records.";
+ var coursesWith=inv.courses.filter(function(c){return c.saved_units||c.portfolio_units||c.recovery_points||c.emergency_copies}).length;
+ var sums=inv.courses.reduce(function(a,c){a.units+=c.saved_units;a.recovery+=c.recovery_points;a.emergency+=c.emergency_copies;return a},{units:0,recovery:0,emergency:0});
+ $("mCourses").textContent=coursesWith;$("mUnits").textContent=sums.units;$("mRecovery").textContent=sums.recovery;$("mEmergency").textContent=sums.emergency;
+ grid.innerHTML=inv.courses.map(function(c){
+   var has=c.saved_units||c.portfolio_units||c.recovery_points||c.emergency_copies,status=has?(c.recovery_points?"Recovery protected":"Evidence saved; no restore point yet"):"No local mission evidence on this browser";
+   return'<article class="card"><p class="k">'+esc(c.course)+'</p><h2>'+esc(c.label)+'</h2><div class="pills"><span class="pill '+(has?"good":"")+'">'+esc(status)+'</span>'+(c.emergency_copies?'<span class="pill warn">Emergency copy available</span>':'')+'</div><div class="meta"><div><b>'+c.saved_units+'</b><span>Saved units</span></div><div><b>'+c.portfolio_units+'</b><span>Portfolio units</span></div><div><b>'+c.recovery_points+'</b><span>Restore points</span></div><div><b>'+c.emergency_copies+'</b><span>Emergency copies</span></div></div><p class="status">Latest local evidence: '+esc(c.latest?new Date(c.latest).toLocaleString():"none recorded")+'</p></article>'
+ }).join("");
+}
+function canonical(v){if(Array.isArray(v))return v.map(canonical);if(v&&typeof v==="object"){var o={};Object.keys(v).sort().forEach(function(k){if(v[k]!==undefined)o[k]=canonical(v[k])});return o}return v}
+function canon(v){return JSON.stringify(canonical(v))}
+async function sha256(text){if(!crypto||!crypto.subtle)throw Error("SHA-256 is unavailable in this browser.");var bytes=new TextEncoder().encode(text),dig=await crypto.subtle.digest("SHA-256",bytes);return Array.from(new Uint8Array(dig),function(b){return b.toString(16).padStart(2,"0")}).join("")}
+async function seal(payload){return Object.assign({},payload,{integrity:{schema:"khaemenes-evidence-integrity-v1",algorithm:"SHA-256",canonical:"json-key-sort-v1",digest:await sha256(canon(payload))}})}
+async function verify(env){if(!env||!env.integrity)return false;var copy=Object.assign({},env);delete copy.integrity;return env.integrity.schema==="khaemenes-evidence-integrity-v1"&&env.integrity.algorithm==="SHA-256"&&env.integrity.canonical==="json-key-sort-v1"&&await sha256(canon(copy))===String(env.integrity.digest||"").toLowerCase()}
+function download(name,text){var u=URL.createObjectURL(new Blob([text],{type:"application/json"})),a=document.createElement("a");a.href=u;a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(u)},900)}
+async function exportVault(){
+ var inv=inventory();if(!inv.profile)return;
+ var payload={schema:"khaemenes-math-evidence-vault-export-v1",version:1,generated_at:new Date().toISOString(),learner:{id:inv.profile.learnerId,name:inv.profile.name},courses:inv.courses,trust:{authoritative:false,course_progression_authority:false,read_only_snapshot:true,contains_recovery_evidence:true}};
+ try{var sealed=await seal(payload),day=new Date().toISOString().slice(0,10);download("khaemenes-math-evidence-vault-"+day+".json",JSON.stringify(sealed,null,2));showVerify(true,"Sealed vault exported. The bundle contains the learner’s local mathematics mission, portfolio and recovery records available on this browser.")}catch(e){showVerify(false,e.message||"Could not create the sealed vault.")}
+}
+function showVerify(good,msg){var b=$("verifyBox");b.hidden=false;b.className="verify "+(good?"good":"bad");b.innerHTML="<strong>"+(good?"Verified":"Attention")+"</strong><br>"+esc(msg)}
+async function verifyFile(file){
+ try{if(!file||file.size>MAX_FILE)throw Error("Bundle is larger than the 5 MiB verification limit.");var d=JSON.parse(await file.text());if(d.schema!=="khaemenes-math-evidence-vault-export-v1")throw Error("This is not a Khaemenes Mathematics Evidence Vault bundle.");var ok=await verify(d);if(!ok)throw Error("SHA-256 integrity verification failed. The bundle changed after it was sealed.");showVerify(true,"SHA-256 integrity PASS · "+String(d.courses&&d.courses.length||0)+" course records · generated "+new Date(d.generated_at).toLocaleString()+". Verification is read-only; nothing was imported or changed.")}catch(e){showVerify(false,e.message||"Bundle verification failed.")}
+}
+$("refreshBtn").onclick=render;$("exportBtn").onclick=exportVault;$("printBtn").onclick=function(){print()};$("backBtn").onclick=function(){history.length>1?history.back():location.href="../"};$("verifyFile").onchange=function(e){var f=e.target.files&&e.target.files[0];if(f)verifyFile(f);e.target.value=""};
+render();
+if("serviceWorker" in navigator)navigator.serviceWorker.register("./service-worker.js").catch(function(){});
+})();
+</script>
+</body>
+</html>
