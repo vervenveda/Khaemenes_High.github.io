@@ -1,0 +1,8 @@
+# Synthetic position observations. Noise values are invented for model-selection teaching. First five time points are training, last point t=5 s is held out.
+Time_s,UniformMotion_Position_m,AcceleratedMotion_Position_m,Split
+0,1.10,1.10,training
+1,2.94,3.42,training
+2,5.08,6.91,training
+3,6.96,11.52,training
+4,9.07,17.03,training
+5,10.98,23.62,holdout
