@@ -36,7 +36,7 @@ check(hub.includes('sci-physics-&-engineering-12-w0'+w+'-monday')&&hub.includes(
 check(hub.includes('physics-advanced-week'+w),'new studio link section Week '+w);
 check(hub.includes(w===4?'projectile-explorer.html':'model-detective.html'),'canonical tool link Week '+w);
 const teach=read(dir+'/teacher/guide.html');check(teach.includes('20-point')&&teach.includes('Teacher / Parent Educator'),'teacher scoring guidance Week '+w);
-const lines=read(dir+'/resources/model-data.csv').split(/\r?\n/).filter(x=>/^\d+,/.test(x));check(lines.length===5||lines.length===6,'synthetic dataset count Week '+w);
+const lines=read(dir+'/resources/model-data.csv').split(/\r?\n/).filter(x=>/^\d+(?:\.\d+)?,/.test(x));check(lines.length===5||lines.length===6,'synthetic dataset count Week '+w);
 if(w===4){for(const row of lines){const [t,x,y,vx,vy]=row.split(',').map(Number);const tt=(5+Math.sqrt(25))/9.8;check(Math.abs(x-10*Math.cos(Math.PI/6)*t)<0.001&&Math.abs(y-Math.max(0,5*t-4.9*t*t))<0.0015&&Math.abs(vx-10*Math.cos(Math.PI/6))<0.001&&Math.abs(vy-(5-9.8*t))<0.0015&&t<=tt+0.001,'trajectory CSV math t='+t)}}
 else{for(const row of lines){const [t,linear,curve,part]=row.split(',');check(Number.isFinite(Number(t))&&Number.isFinite(Number(linear))&&Number.isFinite(Number(curve))&&['training','holdout'].includes(part),'model data row at t='+t);check(Math.abs(Number(linear)-(1+2*Number(t)))<0.2&&Math.abs(Number(curve)-(1+2*Number(t)+0.5*Number(t)**2))<0.2,'models plausible near generating formula t='+t)}}
 }
