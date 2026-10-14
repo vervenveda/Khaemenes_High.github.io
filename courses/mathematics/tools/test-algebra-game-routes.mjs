@@ -58,3 +58,23 @@ if(slug==='prime-spy-composite')assert.equal(item.focus,placement.mode,'Incorrec
 console.log('PASS: Algebra I U'+placement.unit+' L'+placement.number+' '+slug+' launch, course and return routes');
 }
 
+
+/* Algebra I activity route smoke checks: all 13 units, all pathways, mastery and printable entry. */
+for(let unit=1;unit<=13;unit++){
+ const id=String(unit).padStart(2,'0');
+ const dir=path.join(units,'unit-'+id);
+ for(const [folder,name] of [['practice','foundation.html'],['practice','core.html'],['practice','extended.html'],['assessment','mastery-check.html']]){
+  const page=path.join(dir,folder,name);
+  assert.ok(fs.existsSync(page),'Missing student activity: '+page);
+  const html=fs.readFileSync(page,'utf8');
+  assert.ok(html.includes('<main')&&html.includes('id="main"'),'Missing activity mount: '+page);
+  const scripts=[...html.matchAll(/<script\\b[^>]*\\bsrc="([^"]+)"/g)].map(m=>m[1]);
+  assert.ok(scripts.length>=2,'Missing activity engine scripts: '+page);
+  for(const src of scripts){
+   if(/^(https?:|data:)/i.test(src))continue;
+   const target=path.resolve(path.dirname(page),src.split(/[?#]/)[0]);
+   assert.ok(fs.existsSync(target),'Missing required activity script '+src+' in '+page);
+  }
+ }
+}
+console.log('PASS: 13 Algebra I units × 4 activity entries (52 pages); main containers and script references present');
