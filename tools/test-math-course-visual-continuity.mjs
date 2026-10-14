@@ -15,6 +15,7 @@ assert.ok(visualText.includes("border-radius:7px"),"consistent card corner radiu
 assert.ok(visualText.includes("Brandon Grotesque"),"consistent body typography");
 assert.ok(visualText.includes("Cinzel"),"consistent display typography");
 assert.ok(visualText.includes("prefers-reduced-motion"),"reduced-motion accessible");
+assert.ok(/:is\(details\)\s*>\s*summary\s*\{[^}]*min-height:44px/s.test(visualText),"accessible disclosure touch targets must be at least 44px");
 
 const normalize=(cssFile,href)=>path.posix.normalize(path.posix.join(path.posix.dirname(cssFile),href.split(/[?#]/)[0]));
 let sheetsChecked=0,pagesChecked=0;
