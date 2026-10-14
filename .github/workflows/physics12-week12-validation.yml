@@ -1,0 +1,25 @@
+name: Physics 12 Week 12 Power and Efficiency Validation
+on:
+  push:
+    paths:
+      - 'courses/science/physics-engineering-12/weeks/week-12/**'
+      - 'courses/science/physics-engineering-12/tools/validate-week12.mjs'
+      - 'courses/science/physics-engineering-12/tools/smoke-week12.mjs'
+      - '.github/workflows/physics12-week12-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/science/physics-engineering-12/weeks/week-12/**'
+      - 'courses/science/physics-engineering-12/tools/validate-week12.mjs'
+      - 'courses/science/physics-engineering-12/tools/smoke-week12.mjs'
+      - '.github/workflows/physics12-week12-validation.yml'
+permissions:
+  contents: read
+jobs:
+  validation:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Verify student records, work and efficiency mathematics, datasets and page routes
+        run: node courses/science/physics-engineering-12/tools/validate-week12.mjs
+      - name: Execute work rate and efficiency lab and quiz interaction smoke tests
+        run: node courses/science/physics-engineering-12/tools/smoke-week12.mjs
