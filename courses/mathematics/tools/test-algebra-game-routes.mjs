@@ -68,7 +68,7 @@ for(let unit=1;unit<=13;unit++){
   assert.ok(fs.existsSync(page),'Missing student activity: '+page);
   const html=fs.readFileSync(page,'utf8');
   assert.ok(html.includes('<main')&&html.includes('id="main"'),'Missing activity mount: '+page);
-  const scripts=[...html.matchAll(/<script\\b[^>]*\\bsrc="([^"]+)"/g)].map(m=>m[1]);
+  const scripts=[...html.matchAll(/<script[^>]*src="([^"]+)"/g)].map(m=>m[1]);
   assert.ok(scripts.length>=2,'Missing activity engine scripts: '+page);
   for(const src of scripts){
    if(/^(https?:|data:)/i.test(src))continue;
