@@ -105,6 +105,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <option value="rational">Rational-root investigation</option>
 <option value="roots">Higher-degree polynomial zeros</option>
 <option value="multiplicity">Multiplicity: crossing vs touching</option>
+<option value="factorgraph">Factored degree, zeros &amp; graph behavior</option>
 <option value="model">Interpolation &amp; model checking</option>
 </select></label>
 <button class="primary" id="new" type="button">New mission</button>
@@ -184,6 +185,7 @@ function makeTask(mode,rng=Math.random){
  case 'remainder':t.coeff=[R(),R(),R(),NZ()];t.r=R();break;
  case 'rational':t.p=pick([-3,-2,-1,1,2,3],rng);t.q=pick([2,3,4,5],rng);if(GCD(Math.abs(t.p),t.q)>1||t.p%t.q===0)t.p=pick([-1,1],rng);t.s=R();t.coeff=multiply([-t.p,t.q],[-t.s,1]);break;
  case 'roots':{t.roots=[R()];while(t.roots.length<3){const r=R();if(!t.roots.includes(r))t.roots.push(r);}t.roots.sort((a,b)=>a-b);t.coeff=polyFromRoots(t.roots,pick([-1,1],rng));break;}
+ case 'factorgraph':t.r=R();t.other=pick(distinct([-3,-2,-1,0,1,2,3],t.r),rng);t.mult=pick([2,3,4],rng);t.coeff=polyFromRoots([...Array(t.mult).fill(t.r),t.other],pick([-1,1],rng));t.degree=t.mult+1;break;
  case 'multiplicity':t.r=R();t.other=pick(distinct([-3,-2,-1,0,1,2,3],t.r),rng);t.mult=pick([2,3,4],rng);t.coeff=polyFromRoots([...Array(t.mult).fill(t.r),t.other],pick([-1,1],rng));break;
  case 'model':t.degree=pick([2,3],rng);t.coeff=[R(),NZ(),pick([-2,-1,1,2],rng)];if(t.degree===3)t.coeff.push(pick([-1,1],rng));break;
  default:throw Error('Unknown polynomial mode '+mode);
@@ -202,6 +204,7 @@ function expected(t){
  case 'remainder':{const s=synthetic(t.coeff,t.r);return {one:s.remainder,choice:near(s.remainder,0,1e-10)?'yes':'no'};}
  case 'rational':return {one:t.p/t.q};
  case 'roots':return {one:t.roots[2],two:t.roots.length};
+ case 'factorgraph':return {one:t.degree,choice:t.mult%2===0?'touch':'cross'};
  case 'multiplicity':return {one:t.mult,choice:t.mult%2===0?'touch':'cross'};
  case 'model':return {one:evaluate(t.coeff,3),choice:String(t.degree)};
  }
@@ -217,7 +220,7 @@ function correct(t,one,two,choice){
 // PURE_MODEL_END
 window.PolynomialZerosCore=Object.freeze({near,multiply,polyFromRoots,evaluate,conjugateFactor,synthetic,endBehavior,makeTask,expected,correct});
 const $=id=>document.getElementById(id),q=new URLSearchParams(location.search);
-const MODES=['structure','expand','end','complex','conjugate','fta','division','remainder','rational','roots','multiplicity','model'];
+const MODES=['structure','expand','end','complex','conjugate','fta','division','remainder','rational','roots','multiplicity','factorgraph','model'];
 let mode=MODES.includes(q.get('mode'))?q.get('mode'):'multiplicity',exploring=false,task=null,record,streak=0;
 const context=[q.get('course')||'standalone',q.get('unit')||'',q.get('lesson')||''].map(s=>s.replace(/[^a-z0-9_-]/gi,'_')).join('|');
 const fresh=()=>({solved:0,attempted:0,firstTries:0,bestStreak:0,outcomes:[],history:[],recent:[],task:null,checked:false,wrong:false,helped:false,entry:{one:'',two:'',choice:''}});
@@ -260,6 +263,7 @@ function displayTask(){
  case 'remainder':return ['Apply the remainder theorem to '+expr+' divided by '+formatRoot(t.r)+'.','Find P('+t.r+'), then decide whether '+formatRoot(t.r)+' is a factor.',expr,'Remainder'];
  case 'rational':return ['Investigate the rational zeros of '+expr+'.','Find the noninteger rational zero. Use a decimal accurate to 0.01.',expr,'Noninteger rational zero'];
  case 'roots':return ['Find real zeros of '+expr+'.','Enter the largest real root and the number of distinct real roots.',expr,'Largest root'];
+ case 'factorgraph':return ['Analyze P(x) = '+polyText(t.coeff)+'. It factors as '+(t.mult%2?'a repeated odd-power factor':'a repeated even-power factor')+' at x='+t.r+' and a single factor at x='+t.other+'.','Enter the total degree, then decide whether the graph crosses or touches the x-axis at x='+t.r+'.',expr,'Total degree'];
  case 'multiplicity':return ['The graph of '+expr+' contains a repeated zero at x='+t.r+'.','Find its multiplicity and determine whether the curve crosses or touches the x-axis there.',expr,'Multiplicity at x='+t.r];
  default:return ['A set of polynomial observations is shown below.','Identify the polynomial degree and calculate the model output at x=3.',expr,'P(3)'];
  }
@@ -277,6 +281,7 @@ function explanation(){
  case 'remainder':return 'The remainder theorem states remainder=P('+t.r+')='+e.one+'. This '+(e.choice==='yes'?'does':'does not')+' make the proposed divisor a factor.';
  case 'rational':return 'For the integer-coefficient factor '+t.q+'x−('+t.p+'), the noninteger zero is x='+t.p+'/'+t.q+'='+Number((t.p/t.q).toFixed(5))+'. The Rational Root Theorem predicts candidates p/q from constant and leading coefficient divisors.';
  case 'roots':return 'Factoring gives roots '+t.roots.join(', ')+'. The largest is '+e.one+', with '+e.two+' distinct real zeros.';
+ case 'factorgraph':return 'P(x) has factor (x−('+t.r+')) repeated '+t.mult+' times and factor (x−('+t.other+')) once. Degree '+t.degree+' counts repeated factors; there are two distinct real zeros. At x='+t.r+', '+(t.mult%2?'odd multiplicity crosses':'even multiplicity touches')+' the axis. Confirm P('+t.r+')=P('+t.other+')=0.';
  case 'multiplicity':return 'The factor (x−('+t.r+')) appears '+t.mult+' times. '+(t.mult%2?'Odd multiplicity crosses':'Even multiplicity touches')+' the axis at x='+t.r+'.';
  default:return 'Finite differences identify the polynomial degree '+t.degree+'. Substituting x=3 yields P(3)='+e.one+'. A polynomial that matches sampled data can still extrapolate poorly.';
  }
@@ -284,15 +289,15 @@ function explanation(){
 function options(items){const s=$('choice');s.replaceChildren();for(const [v,label] of [['','Choose one'],...items]){const opt=document.createElement('option');opt.value=v;opt.textContent=label;s.appendChild(opt);}}
 function setupFields(){
  $('secondBlock').hidden=!['complex','conjugate','fta','division','roots'].includes(mode);
- $('choiceBlock').hidden=!['end','remainder','multiplicity','model'].includes(mode);
+ $('choiceBlock').hidden=!['end','remainder','multiplicity','factorgraph','model'].includes(mode);
  const second={complex:'Positive imaginary coefficient b',conjugate:'Imaginary coefficient b',fta:'Total polynomial degree',division:'Quotient constant term',roots:'Number of distinct real zeros'};
  $('secondLabel').textContent=second[mode]||'Second number';
  const items=mode==='end'?[['up/up','Up / up'],['down/down','Down / down'],['down/up','Down / up'],['up/down','Up / down']]:
  mode==='remainder'?[['yes','Yes · factor'],['no','No · not a factor']]:
- mode==='multiplicity'?[['cross','Crosses the x-axis'],['touch','Touches and turns']]:
+ ['multiplicity','factorgraph'].includes(mode)?[['cross','Crosses the x-axis'],['touch','Touches and turns']]:
  [['2','Quadratic · degree 2'],['3','Cubic · degree 3']];
  if(!$('choiceBlock').hidden)options(items);
- $('choiceLabel').textContent=mode==='end'?'End behavior · left/right':mode==='remainder'?'Is the divisor a factor?':mode==='multiplicity'?'Graph behavior at this zero':'Model degree from finite differences';
+ $('choiceLabel').textContent=mode==='end'?'End behavior · left/right':mode==='remainder'?'Is the divisor a factor?':['multiplicity','factorgraph'].includes(mode)?'Graph behavior at the repeated zero':'Model degree from finite differences';
  $('answer').value=record.entry.one;$('second').value=record.entry.two;
  $('choice').value=record.entry.choice;
  $('check').disabled=record.checked||exploring;$('hint').disabled=record.checked||exploring;$('solution').disabled=record.checked||exploring;$('next').disabled=!record.checked||exploring;
@@ -330,7 +335,7 @@ function draw(){
  let marks='';
  const roots=exploring?[+$('root1').value,+$('root2').value,+$('root3').value]:
  mode==='structure'||mode==='expand'||mode==='roots'||mode==='fta'?t.roots||[]:
- mode==='rational'?[t.s,t.p/t.q]:mode==='multiplicity'?[t.r,t.other]:[];
+ mode==='rational'?[t.s,t.p/t.q]:['multiplicity','factorgraph'].includes(mode)?[t.r,t.other]:[];
  if(isComplex){
   const cx=wX(t.re),up=wY(t.im),down=wY(-t.im);
   marks='<circle cx="'+cx+'" cy="'+up+'" r="7" fill="#bf752e"/><circle cx="'+cx+'" cy="'+down+'" r="7" fill="#bf752e"/>';
