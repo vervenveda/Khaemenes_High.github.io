@@ -17,3 +17,5 @@ jobs:
       - uses: actions/checkout@v6
       - name: Validate offline lesson pages, quiz bank, link targets, and simulator syntax
         run: node courses/science/biology-10/weeks/week-04/tools/validate-week04.mjs
+      - name: Test learning interactions with built-in Node DOM stubs
+        run: node courses/science/biology-10/weeks/week-04/tools/smoke-week04.mjs
