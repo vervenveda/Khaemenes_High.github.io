@@ -1,0 +1,12 @@
+# SYNTHETIC Hooke-linear spring: x in meters converted from cm. Initial U0=0.5*k*(H/100)^2. Lost fraction is prescribed, not actual damping.
+Case,Mass_kg,Stiffness_N_per_m,Initial_Compression_cm,Current_Compression_cm,Transfer_Percent,Initial_Total_J,Potential_J,Kinetic_J,Other_Forms_J,Final_Total_J,Speed_Magnitude_m_per_s
+ideal_20_to10,1.5,200,20,10,0,4,1,3,0,4,2
+quarter_transfer,1.5,200,20,10,25,4,1,2.25,0.75,4,1.73205081
+half_transfer,1.5,200,20,10,50,4,1,1.5,1.5,4,1.41421356
+full_release,2,100,20,0,0,2,0,2,0,2,1.41421356
+double_stiffness,2,200,20,0,0,4,0,4,0,4,2
+double_compression,2,100,40,0,0,8,0,8,0,8,2.82842712
+unchanged_compression,1,200,20,20,25,4,4,0,0,4,0
+partial_release,2,250,30,10,20,11.25,1.25,8,2,11.25,2.82842712
+small_compression,1,300,10,5,25,1.5,0.375,0.84375,0.28125,1.5,1.29903811
+strong_spring,4,400,20,10,10,8,2,5.4,0.6,8,1.64316767

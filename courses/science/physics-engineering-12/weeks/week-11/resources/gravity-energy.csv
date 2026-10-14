@@ -1,0 +1,12 @@
+# SYNTHETIC model: gravitational initial U0=m*g*H, remaining U=m*g*h, released=U0-U, other=released*loss/100, K=released-other; g=9.8.
+Case,Mass_kg,Start_Height_m,Current_Height_m,Transfer_Percent,Initial_Total_J,Potential_J,Kinetic_J,Other_Forms_J,Final_Total_J,Speed_Magnitude_m_per_s
+baseline,2,5,3,0,98,58.8,39.2,0,98,6.26099034
+quarter_transfer,2,5,3,25,98,58.8,29.4,9.8,98,5.42217668
+half_transfer,2,5,3,50,98,58.8,19.6,19.6,98,4.42718872
+at_release,2,5,5,25,98,98,0,0,98,0
+near_reference,2,5,0,0,98,0,98,0,98,9.89949494
+mass_double,4,5,3,25,196,117.6,58.8,19.6,196,5.42217668
+height_double,2,10,3,25,196,58.8,102.9,34.3,196,10.14396372
+partial_drop,3,8,6,20,235.2,176.4,47.04,11.76,235.2,5.6
+another_trial,5,4,2,10,196,98,88.2,9.8,196,5.93969696
+full_transfer,6,5,4,50,294,235.2,29.4,29.4,294,3.13049517
