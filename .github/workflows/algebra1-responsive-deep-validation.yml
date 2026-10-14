@@ -4,12 +4,22 @@ on:
   pull_request:
     paths:
       - 'courses/mathematics/algebra-1/**'
+      - 'courses/mathematics/geometry/assets/styles.css'
+      - 'courses/mathematics/algebra-2/assets/styles.css'
+      - 'assets/math-course-visual-unifier.css'
+      - 'assets/MATHEMATICS-DESIGN-STANDARD.md'
+      - 'tools/test-math-visual-standard.mjs'
       - '.github/workflows/algebra1-responsive-deep-validation.yml'
   push:
     branches:
       - main
     paths:
       - 'courses/mathematics/algebra-1/**'
+      - 'courses/mathematics/geometry/assets/styles.css'
+      - 'courses/mathematics/algebra-2/assets/styles.css'
+      - 'assets/math-course-visual-unifier.css'
+      - 'assets/MATHEMATICS-DESIGN-STANDARD.md'
+      - 'tools/test-math-visual-standard.mjs'
       - '.github/workflows/algebra1-responsive-deep-validation.yml'
 
 jobs:
@@ -109,3 +119,6 @@ jobs:
 
       - name: Verify standalone Algebra I Resource Studio
         run: node courses/mathematics/algebra-1/tools/test-resource-studio.mjs
+
+      - name: Verify shared mathematics design standard
+        run: node tools/test-math-visual-standard.mjs
