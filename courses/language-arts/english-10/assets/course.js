@@ -333,7 +333,9 @@
     if(!m || document.querySelector('[data-shared-ela-video]'))return;
     const week=Number(m[1]);
     const choices=[[1,3,"Close reading and annotation","J2KHX1Pm5co"],[7,9,"Identifying theme","C2XYTlnfjgA"],[10,12,"Rhetorical analysis","FnAR2GtFy-E"]];
-    const chosen=choices.find(x=>week>=x[0]&&week<=x[1]);
+    const title=(document.querySelector("main h1")?.textContent||document.title).toLowerCase();
+    const matched=[["character","Character development","dO5UP9jI4bw"],["diction","Diction analysis","ZDe6FwRiB5o"],["poet","Reading poetry","G5GUUgHVruQ"],["source","Evaluating source credibility","1dOip0k9NgE"],["debate","Debate skills","1TSkkxu8on0"],["drama","Elements of drama","MOD9d5Eo9so"],["revision","Revision process","Mi8tpmuzVw8"],["citation","MLA citations","ypWxhhpGeyM"],["synthesis","Synthesis","uBX01y4sRwA"],["rhetor","Rhetorical appeals","9L_G82HH9Tg"],["symbol","Symbolism","GR9VbSXxouM"],["research","Research questions","71-GucBaM8U"]].find(x=>title.includes(x[0]));
+    const chosen=matched?[0,36,matched[1],matched[2]]:choices.find(x=>week>=x[0]&&week<=x[1]);
     if(!chosen)return;
     const main=document.querySelector("main");if(!main)return;
     const box=document.createElement("aside");
