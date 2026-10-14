@@ -48,9 +48,9 @@ for(const course of ['pre-algebra','algebra-1','geometry','algebra-2'])for(const
  // Standalone, review-only teaching resources do not access learner identity or evidence.
  // Keep this exemption narrow and require zero storage or network dependencies.
  if(file.replaceAll('\\','/').startsWith('courses/mathematics/algebra-1/instructional-repair-pack/resource-studio/')){
-  assert.ok(!/\\b(?:localStorage|sessionStorage|indexedDB)\\s*[.(]/.test(html),file+': staged resources cannot touch storage');
-  assert.ok(!/<script\\b[^>]*\\bsrc\\s*=/.test(html),file+': staged resources cannot load scripts');
-  assert.ok(!/\\b(?:fetch|XMLHttpRequest)\\s*\\(/.test(html),file+': staged resources cannot fetch data');
+  assert.ok(!/\b(?:localStorage|sessionStorage|indexedDB)\s*[.(]/.test(html),file+': staged resources cannot touch storage');
+  assert.ok(!/<script\b[^>]*\bsrc\s*=/.test(html),file+': staged resources cannot load scripts');
+  assert.ok(!/\b(?:fetch|XMLHttpRequest)\s*\(/.test(html),file+': staged resources cannot fetch data');
   checks++;continue;
  }
  const head=html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1];assert.ok(head,file);
