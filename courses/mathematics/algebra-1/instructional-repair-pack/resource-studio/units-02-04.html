@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Algebra I · Structure, Equations & Constraints · Resource Studio</title>
+<style>
+:root{font:16px/1.65 system-ui,Arial,sans-serif;color:#24221e;background:#f5eddf}*{box-sizing:border-box}
+body{margin:0}header,main,footer{max-width:1050px;margin:auto;padding:24px}h1,h2,h3{font-weight:500;line-height:1.25}h1,h2{font-family:Georgia,serif}
+h1{font-size:clamp(2rem,5vw,2.8rem)}.card{border:1px solid #cab798;background:#fffdfa;border-radius:7px;padding:19px;margin:16px 0}
+nav{display:flex;gap:8px;flex-wrap:wrap}a,button,select,input{font:inherit}nav a,button{padding:8px 12px;color:#24221e;background:#fff8e8;border:1px solid #957f60;border-radius:7px;text-decoration:none;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #216a9e;outline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px}
+label{display:block;margin:10px 0}input,select{padding:8px;background:white;border:1px solid #897a66;border-radius:7px;max-width:100%}
+input[type=number]{width:110px}.muted{color:#5e5143}.exercise{border-top:1px solid #cabcab;margin:13px 0;padding:12px 0;break-inside:avoid}
+.writing{height:85px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 30px,#d9cebd 31px)}
+details{margin:15px 0}summary{cursor:pointer;font-weight:500}svg{display:block;width:100%;height:auto}
+#visual{border:1px solid #c6b59b;border-radius:7px;background:white;min-height:130px}
+.output{border-left:3px solid #78674e;padding:10px;background:#faf4e9}
+@media print{@page{size:letter portrait;margin:.65in}body{background:white;color:#111;font-size:11pt}header,footer,.no-print,#teachers,section:not(#worksheets){display:none!important}
+main{padding:0}#worksheets{display:block!important}.card{border:0;padding:0}.exercise{page-break-inside:avoid}.writing{height:78pt}#questions{display:block!important}}
+</style></head><body>
+<header><p class="muted">Khaemenes Academy · Algebra I · Teacher-review resource, not official assessment</p><h1>Structure, Equations & Constraints</h1><p>Units 02–04 reading, printable independent work, and a visual reasoning tool. This standalone resource does not alter official grades, gates, or learner data.</p>
+<nav><a href="index.html">Unit 01 studio</a><a href="#read">Readings</a><a href="#worksheets">Worksheets</a><a href="#visuals">Visual mathematics</a></nav></header>
+<main><section id="read"><h2>Read and reason</h2>
+<article class="card"><h3>Unit 02 — Expression structure</h3><p>An expression represents a value without asserting an equality. Terms are joined by addition or subtraction; a coefficient multiplies a variable or term. In <strong>3(2x−5)+4x</strong>, distribution gives 6x−15+4x, then combining like terms gives <strong>10x−15</strong>.</p><p><strong>Why?</strong> Distributing 3 means multiplying both 2x and −5. Combining 6x and 4x uses the distributive property in reverse. Testing x=2 gives 5 in both expressions, but testing one input alone does not prove equivalence.</p><p><strong>Common mistake:</strong> 3(2x−5)=6x−5 ignores the −5 factor. Re-expand to check.</p></article>
+<article class="card"><h3>Unit 03 — Equation balance</h3><p>Each equality step must preserve the solution set. To solve <strong>3x+5=20</strong>, subtract 5 from each side: 3x=15. Divide both sides by the nonzero number 3: x=5. Substitute in the original: 3(5)+5=20.</p><p><strong>Compare:</strong> 2(x+1)=2x+2 is true for every real x (identity); 2(x+1)=2x+3 has no solution (contradiction). Solving should reveal that difference rather than invent an x-value.</p></article>
+<article class="card"><h3>Unit 04 — Inequalities and order</h3><p>Multiplying or dividing an inequality by a negative number reverses the inequality because multiplication by a negative reverses order. For <strong>−2x &lt; 6</strong>, divide both sides by −2: <strong>x &gt; −3</strong>.</p><p>Test x=0: 0&lt;6 is true. Test x=−4: 8&lt;6 is false. Draw an open circle at −3 and shade right. In compound inequalities, AND represents intersection; OR represents union.</p></article></section>
+<section id="worksheets" class="card"><h2>Printable practice sheets</h2><div class="no-print"><label for="unit">Select focus
+<select id="unit"><option value="2">Unit 02 · Expressions</option><option value="3">Unit 03 · Equations</option><option value="4">Unit 04 · Inequalities</option></select></label>
+<button type="button" id="print">Print blank student sheet</button>
+<button type="button" id="keyToggle" aria-controls="teachers" aria-expanded="false">Show teacher key</button></div>
+<p>Name: ______________________________ Date: ______________</p><div id="questions"></div><aside id="teachers" hidden><h3>Teacher reasoning and answer key</h3><div id="answers"></div></aside></section>
+<section id="visuals" class="card"><h2>Visual reasoning studio</h2><p>Choose a model to inspect mathematical structure. Diagrams include text explanations and do not change assessed results.</p>
+<label for="model">Select model
+<select id="model"><option value="distribution">Distribution area model · Unit 02</option><option value="balance">Equation balance · Unit 03</option><option value="inequality">Inequality number line · Unit 04</option></select></label>
+<div class="grid"><label for="value">Model value <input id="value" type="number" value="2" min="-5" max="5" step="1"></label></div>
+<button id="update" type="button">Update model</button>
+<svg id="visual" viewBox="0 0 720 240" role="img" aria-label="Mathematics diagram"></svg>
+<p class="output" id="description" role="status" aria-live="polite"></p></section>
+</main><footer class="muted">Local, dependency-free formative resources · Preserve the official 80% mastery requirement.</footer>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const sheets={
+"2":[["Simplify 3(2x−5)+4x. Explain each legal transformation.","10x−15; distribute to 6x−15+4x, then combine 6x+4x."],["Write an expression for fifteen less than ten times n.","10n−15."],["Show whether 2(x+3)+x and 3x+6 are equivalent for every real x.","Yes. Distribute 2x+6+x=3x+6 for all x."],["Find the first error in 4(x−2)=4x−2, and repair it.","−2 must also be multiplied by 4; correct: 4x−8."]],
+"3":[["Solve 3x+5=20 and verify in the original equation.","x=5. 3(5)+5=20."],["Solve 2(x−3)=x+4 and verify.","2x−6=x+4; x=10; both sides=14."],["Classify 2(x+1)=2x+2: one, none, or infinitely many solutions?","Infinitely many; both sides simplify to 2x+2."],["Classify 2(x+1)=2x+3 and explain.","No solution; subtract 2x to obtain 2=3, false."]],
+"4":[["Solve −2x<6. Explain why the inequality reverses.","x>−3; dividing by the negative value −2 reverses order."],["Write x≥1 AND x<4 in interval notation.","[1,4). Intersection includes 1 and excludes 4."],["Write x<−2 OR x≥3 using a union of intervals.","(−∞,−2) ∪ [3,∞)."],["Test x=0 and x=−4 in −2x<6. Which satisfies it?","x=0 satisfies 0<6; x=−4 gives 8<6, false."]]
+};
+function renderWorksheet(){const id=$("unit").value;$("questions").replaceChildren();$("answers").replaceChildren();for(const [i,[q,a]] of sheets[id].entries()){const sec=document.createElement("div");sec.className="exercise";const prompt=document.createElement("p");prompt.textContent=(i+1)+". "+q;const space=document.createElement("div");space.className="writing";space.setAttribute("aria-hidden","true");sec.append(prompt,space);$("questions").append(sec);const ans=document.createElement("p");ans.textContent=(i+1)+". "+a;$("answers").append(ans)}}$("unit").addEventListener("change",renderWorksheet);$("print").addEventListener("click",()=>window.print());$("keyToggle").addEventListener("click",()=>{let open=$("teachers").hidden;$("teachers").hidden=!open;$("keyToggle").setAttribute("aria-expanded",String(open));$("keyToggle").textContent=open?"Hide teacher key":"Show teacher key"});renderWorksheet();
+const ns="http://www.w3.org/2000/svg";function draw(){const svg=$("visual");svg.replaceChildren();const model=$("model").value;const v=Number($("value").value);if(!Number.isInteger(v)||v < -5||v > 5){$("description").textContent="Choose an integer from −5 to 5.";return}
+function e(tag,props,text){let n=document.createElementNS(ns,tag);for(const [k,val]of Object.entries(props))n.setAttribute(k,String(val));if(text!==undefined)n.textContent=text;svg.append(n);return n}function rect(x,y,w,h,color){e("rect",{x,y,width:w,height:h,fill:color,stroke:"#6f6251","stroke-width":2,rx:5})}function label(x,y,text){e("text",{x,y,fill:"#28231d","font-size":20,"text-anchor":"middle"},text)}
+if(model==="distribution"){rect(70,45,240,145,"#d9e9f3");rect(350,45,240,145,"#f4e1ba");label(190,120,"3 × 2x = 6x");label(470,120,"3 × (−5) = −15");$("description").textContent="Distributive property: 3(2x − 5) = 6x − 15. Both terms must be multiplied by 3. For x="+v+", both forms equal "+(3*(2*v-5))+"."}
+else if(model==="balance"){e("line",{x1:360,y1:30,x2:360,y2:190,stroke:"#6b5945","stroke-width":6});e("line",{x1:100,y1:120,x2:620,y2:120,stroke:"#6b5945","stroke-width":5});rect(110,125,200,65,"#deecdc");rect(410,125,200,65,"#f4e1ba");label(210,165,"3x + 5");label(510,165,"20");$("description").textContent="Balanced equation 3x+5=20: subtract 5 from both sides, then divide both sides by 3. The unique solution is x=5. Current example x="+v+" makes the left side "+(3*v+5)+", which "+(v===5?"matches":"does not match")+" 20."}
+else{const x=t=>360+t*45;e("line",{x1:70,y1:130,x2:650,y2:130,stroke:"#352d27","stroke-width":3});for(let n=-6;n<=6;n++){e("line",{x1:x(n),x2:x(n),y1:123,y2:137,stroke:"#352d27"});label(x(n),166,String(n))}e("line",{x1:x(-3),x2:640,y1:130,y2:130,stroke:"#246b9d","stroke-width":8});e("circle",{cx:x(-3),cy:130,r:9,fill:"#fff",stroke:"#246b9d","stroke-width":3});$("description").textContent="The solution of −2x < 6 is x > −3: open at −3 and shade right. At x="+v+", −2x="+(-2*v)+", so the original inequality is "+(-2*v<6?"true":"false")+"."}
+svg.setAttribute("aria-label",$("description").textContent)}
+$("update").addEventListener("click",draw);$("model").addEventListener("change",draw);draw();
+</script></body></html>
