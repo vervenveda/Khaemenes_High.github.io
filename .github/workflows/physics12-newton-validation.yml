@@ -21,3 +21,5 @@ jobs:
       - uses: actions/checkout@v6
       - name: Verify Newton curriculum, conservation of force-pair vectors, quiz banks and local routes
         run: node courses/science/physics-engineering-12/tools/validate-newton.mjs
+      - name: Test live quizzes, Newton calculations, SVG graphs and recording interactions
+        run: node courses/science/physics-engineering-12/tools/smoke-newton.mjs
