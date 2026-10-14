@@ -1,0 +1,55 @@
+(()=>{'use strict';
+const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg',kind=document.body.dataset.lab;
+const rate=kind==='rate',CASES={"rate":[{"E":360,"t":6},{"E":360,"t":3},{"E":600,"t":10},{"E":120,"t":4},{"E":720,"t":6},{"E":500,"t":5},{"E":240,"t":8},{"E":900,"t":9},{"E":300,"t":10},{"E":450,"t":3},{"E":800,"t":20}],"efficiency":[{"E":400,"eta":75,"t":5},{"E":400,"eta":60,"t":5},{"E":500,"eta":80,"t":6},{"E":400,"eta":90,"t":4},{"E":600,"eta":50,"t":5},{"E":250,"eta":80,"t":4},{"E":500,"eta":60,"t":6},{"E":300,"eta":100,"t":5},{"E":700,"eta":40,"t":7},{"E":450,"eta":70,"t":6},{"E":500,"eta":75,"t":5}]}[kind],KEY='khae:phys12:w12:'+kind+':v1';
+let notebook={schema:'khae-phys12-w12-model-v1',course:'KH-SCI-PHYS12',week:12,kind,prediction:'',analysis:'',trials:[]};
+let deck=[],round=0,score=0,answered=true;
+const fix=(v,d=3)=>Number(v.toFixed(d));
+function valid(p){return !!p&&typeof p==='object'&&[p.E,p.t,...(rate?[]:[p.eta])].every(Number.isFinite)&&p.E>=20&&p.E<=1000&&p.t>=1&&p.t<=30&&(rate||(p.eta>=0&&p.eta<=100))}
+function solve(p){if(!valid(p))throw Error('Model inputs out of range');if(rate)return{power:p.E/p.t,energy:p.E,interval:p.t};
+const useful=p.E*p.eta/100,other=p.E-useful,inputPower=p.E/p.t,usefulPower=useful/p.t,otherPower=other/p.t;
+return{useful,other,inputPower,usefulPower,otherPower,eta:p.eta,feasible:p.E<=500+1e-9&&useful>=300-1e-9&&p.t<=6+1e-9,energyBalanced:Math.abs(p.E-useful-other)<1e-7}}
+function params(){return rate?{E:Number($('energy').value),t:Number($('time').value)}:{E:Number($('energy').value),eta:Number($('efficiency').value),t:Number($('time').value)}}
+function store(){notebook.prediction=$('prediction').value;notebook.analysis=$('analysis').value;try{localStorage.setItem(KEY,JSON.stringify(notebook))}catch{$('status').textContent='Local browser saving is blocked or full. Export a copy.'}}
+try{const raw=localStorage.getItem(KEY);if(raw){const d=JSON.parse(raw);if(d&&d.schema===notebook.schema&&d.course===notebook.course&&d.week===12&&d.kind===kind){notebook.trials=Array.isArray(d.trials)?d.trials.filter(valid).slice(-80):[];notebook.prediction=String(d.prediction||'').slice(0,20000);notebook.analysis=String(d.analysis||'').slice(0,20000)}}localStorage.setItem(KEY+':probe','1');localStorage.removeItem(KEY+':probe');$('status').textContent='Browser-local saving active. Export for work on another device.'}catch{$('status').textContent='Browser storage unavailable. Export evidence before leaving.'}
+$('prediction').value=notebook.prediction;$('analysis').value=notebook.analysis;
+const node=(tag,a={},text)=>{const e=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(a))e.setAttribute(k,String(v));if(text!==undefined)e.textContent=String(text);return e};
+function bars(p,r){const svg=$('diagram');svg.replaceChildren();const input=p.E,values=rate?[['Energy transferred',input,'#26766c']]:[['Useful',r.useful,'#26766c'],['Other forms',r.other,'#a77a3b']];
+const max=input||1;svg.appendChild(node('text',{x:25,y:27,fill:'#243d43','font-size':16},rate?'Same joules can be delivered at different rates':'Input energy = useful output + other transfers'));
+svg.appendChild(node('line',{x1:30,y1:249,x2:648,y2:249,stroke:'#6e7c80','stroke-width':2}));
+values.forEach(([name,value,color],i)=>{const center=rate?340:225+i*230,height=value/max*175,x=center-65;svg.appendChild(node('rect',{x,y:249-height,width:130,height,rx:4,fill:color}));svg.appendChild(node('text',{x:center,y:273,'text-anchor':'middle'},name));svg.appendChild(node('text',{x:center,y:237-height,'text-anchor':'middle'},fix(value,2)+' J'))});
+svg.appendChild(node('text',{x:340,y:310,'text-anchor':'middle'},rate?'Average power = total energy / time':'Energy from other transfers is accounted, not destroyed'))}
+function graph(p,r){const svg=$('graph');svg.replaceChildren();const L=64,U=27,W=570,H=217,xmax=rate?30:100,ymax=(rate?p.E:p.E)*1.1,tx=x=>L+W*(x-(rate?1:0))/(xmax-(rate?1:0)),ty=y=>U+H*(1-y/ymax);
+for(let i=0;i<=5;i++){const x=L+W*i/5,y=U+H*i/5;svg.appendChild(node('line',{x1:x,y1:U,x2:x,y2:U+H,stroke:'#e2e4dd'}));svg.appendChild(node('line',{x1:L,y1:y,x2:L+W,y2:y,stroke:'#e2e4dd'}));svg.appendChild(node('text',{x,y:U+H+18,'text-anchor':'middle'},fix((rate?1:0)+(xmax-(rate?1:0))*i/5,1)));svg.appendChild(node('text',{x:L-7,y:y+4,'text-anchor':'end'},fix(ymax*(1-i/5),1)))}
+const curve=Array.from({length:61},(_,i)=>{const x=(rate?1:0)+(xmax-(rate?1:0))*i/60;const y=rate?p.E/x:p.E*x/100;return tx(x).toFixed(2)+','+ty(y).toFixed(2)}).join(' ');
+svg.appendChild(node('polyline',{points:curve,stroke:'#287e70','stroke-width':3,fill:'none'}));
+const x=rate?p.t:p.eta,y=rate?r.power:r.useful;
+svg.appendChild(node('circle',{cx:tx(x),cy:ty(y),r:5,fill:'#a87436'}));
+svg.appendChild(node('text',{x:L,y:17},rate?'Average power (W) versus time (s)':'Useful output energy (J) versus efficiency (%)'));
+svg.appendChild(node('text',{x:350,y:283,'text-anchor':'middle'},rate?'Elapsed time (s)':'Useful fraction (%)'));
+const table=$('comparisonRows');table.replaceChildren();for(const t of rate?[2,3,4,5,6,8,10,15,20,30]:[0,10,25,40,50,60,75,80,90,100]){
+const tr=document.createElement('tr'),arr=rate?[t,fix(p.E/t,3),p.E]:[t,fix(p.E*t/100,3),fix(p.E*(1-t/100),3)];for(const value of arr){const td=document.createElement('td');td.textContent=String(value);tr.appendChild(td)}table.appendChild(tr)}}
+function history(){const table=$('historyRows');table.replaceChildren();notebook.trials.forEach((p,i)=>{const r=solve(p),tr=document.createElement('tr'),cols=rate?[i+1,p.E,p.t,fix(r.power,2)]:[i+1,p.E,p.eta,p.t,fix(r.useful,2),fix(r.other,2),r.feasible?'meets':'fails'];
+for(const c of cols){const td=document.createElement('td');td.textContent=String(c);tr.appendChild(td)}table.appendChild(tr)})}
+function render(){const p=params(),r=solve(p);$('energyOut').textContent=p.E+' J';$('timeOut').textContent=p.t+' s';if(!rate)$('efficiencyOut').textContent=p.eta+'%';
+$('result').textContent=rate?'Specified transfer: '+p.E+' J over '+p.t+' s.\nAverage power = E/t = '+fix(r.power,3)+' W.\nChanging time alone does not change the prescribed total energy.':
+'Input E = '+p.E+' J; useful efficiency = '+p.eta+'%.\nUseful E = '+fix(r.useful,3)+' J; other transferred E = '+fix(r.other,3)+' J.\nInput power = '+fix(r.inputPower,3)+' W; useful output power = '+fix(r.usefulPower,3)+' W; other power = '+fix(r.otherPower,3)+' W.\nBudget ≤500 J, useful output ≥300 J, deadline ≤6 s: '+(r.feasible?'all three constraints MET.':'one or more constraints NOT met.')+'\nAssumes no net change of device-stored energy during the interval.';
+bars(p,r);graph(p,r)}
+for(const id of ['energy','time',...(rate?[]:['efficiency'])])$(id).addEventListener('input',render);
+['prediction','analysis'].forEach(id=>$(id).addEventListener('input',store));
+$('record').addEventListener('click',()=>{notebook.trials.push(params());notebook.trials=notebook.trials.slice(-80);store();history()});
+$('reset').addEventListener('click',()=>{const defaults=rate?{energy:360,time:6}:{energy:400,efficiency:75,time:5};for(const [id,value]of Object.entries(defaults))$(id).value=String(value);render()});
+$('clear').addEventListener('click',()=>{if(!confirm('Clear recorded simulated trials? Export first if needed.'))return;notebook.trials=[];store();history()});
+function exportData(){store();const o={...notebook,exportedAt:new Date().toISOString(),provenance:'Synthetic energy rate and efficiency model; not equipment measurements'};
+const blob=new Blob([JSON.stringify(o,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='physics12-week12-'+kind+'-evidence.json';document.body.appendChild(a);a.click();setTimeout(()=>{a.remove();URL.revokeObjectURL(url)},1000)}
+$('export').addEventListener('click',exportData);
+$('import').addEventListener('change',async ev=>{const f=ev.target.files?.[0];if(!f)return;try{if(f.size>400000)throw Error('Backup is above 400 KB');const d=JSON.parse(await f.text());if(!d||d.schema!==notebook.schema||d.course!==notebook.course||d.week!==12||d.kind!==kind||!Array.isArray(d.trials))throw Error('Mismatched Week 12 notebook');const trials=d.trials.slice(-80);if(!trials.every(valid))throw Error('Invalid saved parameters');if(!confirm('Replace local notebook? Export your existing data first.'))return;notebook={schema:notebook.schema,course:notebook.course,week:12,kind,trials,prediction:String(d.prediction||'').slice(0,20000),analysis:String(d.analysis||'').slice(0,20000)};$('prediction').value=notebook.prediction;$('analysis').value=notebook.analysis;store();history();$('status').textContent='Matching Week 12 notebook imported.'}catch(e){$('status').textContent='Import failed: '+e.message}finally{ev.target.value=''}});
+function shuffle(items){for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]]}return items}
+function gameRound(){if(round>=deck.length){answered=true;$('roundTitle').textContent='Game completed';$('prompt').textContent='Final score: '+score+' / 7. Review the worked examples and try another set.';$('choices').replaceChildren();$('next').disabled=true;return}
+const p=deck[round],r=solve(p),correct=fix(rate?r.power:r.useful,2);
+$('roundTitle').textContent='Round '+(round+1)+' / 7';$('prompt').textContent=rate?'A device transfers '+p.E+' J in '+p.t+' s. Calculate average power (W).':'A device receives '+p.E+' J, has useful efficiency '+p.eta+'% and runs for '+p.t+' s. How much useful energy (J) is delivered?';
+$('feedback').textContent='';$('choices').replaceChildren();$('next').disabled=true;answered=false;
+const options=[correct];for(const n of [5,-5,10,-10,15,20,-20,30,50]){const v=fix(correct+n,2);if(v>=0&&!options.includes(v))options.push(v);if(options.length===4)break}if(options.length<4)for(let n=1;options.length<4;n++){const v=fix(correct+10*n,2);if(!options.includes(v))options.push(v)}
+shuffle(options.slice(0,4)).forEach(v=>{const button=document.createElement('button');button.type='button';button.className='btn';button.textContent=v.toFixed(2)+(rate?' W':' J');button.addEventListener('click',()=>{if(answered)return;answered=true;const good=Math.abs(v-correct)<.00001;if(good)score++;$('gameScore').textContent='Score: '+score+' / 7';$('feedback').textContent=(good?'Correct. ':'Review: ')+(rate?'P=E/t='+p.E+'/'+p.t+'='+correct.toFixed(2)+' W.':'Useful E=input×fraction='+p.E+'×'+p.eta+'/100='+correct.toFixed(2)+' J.')+' Power is not the same unit as efficiency.';Array.from($('choices').children).forEach(e=>e.disabled=true);$('next').disabled=false});$('choices').appendChild(button)})}
+$('newGame').addEventListener('click',()=>{deck=shuffle(CASES.slice()).slice(0,7);round=0;score=0;$('gameScore').textContent='Score: 0 / 7';gameRound()});$('next').addEventListener('click',()=>{if(!answered)return;round++;gameRound()});$('print').addEventListener('click',()=>window.print());
+render();history();
+})();
