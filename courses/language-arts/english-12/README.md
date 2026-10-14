@@ -24,4 +24,4 @@ There is no single federal national ELA curriculum. This course is cross-aligned
 
 ## Credits
 
-Jennifer Pearl and Autumn Pearl · Khaemenes Academy · Verve N Veda · 2026
+Jennifer Kay Pearl · Khaemenes Academy · Verve N Veda · 2026
