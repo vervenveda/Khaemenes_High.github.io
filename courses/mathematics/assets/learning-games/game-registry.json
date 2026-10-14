@@ -2656,18 +2656,28 @@
     "ratio-table-trail": {
       "title": "Ratio Table Trail",
       "canonical_path": "courses/mathematics/assets/learning-games/ratio-table-trail/index.html",
-      "status": "canonical-unplaced",
+      "status": "canonical-v3",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "04",
+          "lesson": "02",
+          "lesson_title": "Ratio Tables & Double Number Lines",
+          "mode": "equivalent-ratio-tables",
+          "query": "?course=prealgebra&unit=4&lesson=2",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "migration_state": "lesson-match-reviewed-link-not-wired",
+      "migration_state": "canonical-shared-lesson-linked",
       "retired_paths": [],
       "placement_review": {
         "course": "pre-algebra",
         "unit": "04",
         "lesson": "02",
-        "review_status": "matched-by-game-title-and-verified-lesson-file",
-        "wired": false
+        "review_status": "verified-existing-canonical-lesson-link",
+        "wired": true
       }
     },
     "scientific-notation-operations-mission": {
