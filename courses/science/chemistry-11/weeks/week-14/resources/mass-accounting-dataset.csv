@@ -1,0 +1,7 @@
+# FICTIONAL data for practice only; not a real experiment; initial modeled mass 120.0 g
+Scenario,Boundary,Modeled_gas_g,Measured_inside_g,Gas_outside_g,Accounted_total_g
+A,closed,3.6,120.0,0.0,120.0
+B,open,3.6,116.4,3.6,120.0
+C,open,1.5,118.5,1.5,120.0
+D,closed,5.0,120.0,0.0,120.0
+E,open,5.0,115.0,5.0,120.0
