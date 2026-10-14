@@ -122,7 +122,7 @@ function checkReturn(unit,lesson){
  doc.document.currentScript={src:'https://academy.example/courses/mathematics/assets/game-return-route.js'};
  doc.document.querySelectorAll=s=>s==='[data-return-lesson]'?[existing]:[];
  const context=vm.createContext({document:doc.document,window:{},URL,URLSearchParams,
- location:{search:'?course=algebra2&unit='+unit+'&lesson='+lesson},console});
+ location:{search:'?course=algebra2&unit='+unit+'&lesson='+lesson},console,fetch:async()=>({ok:true})});
  vm.runInContext(route,context,{timeout:2000});
  const nav=doc.body.children.find(n=>n.id==='mathGameReturnNavigation');
  assert.ok(nav,'game return navigation missing');
