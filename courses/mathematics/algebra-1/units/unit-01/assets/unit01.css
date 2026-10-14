@@ -12,3 +12,22 @@ html:root:root body .card{border-radius:7px}
 html:root:root body .card p,html:root:root body .question{font-size:clamp(16px,1.3vw,18px);line-height:1.7}
 html:root:root body .card .eyebrow{font-size:13px!important;line-height:1.5!important;letter-spacing:.07em!important}
 @media print{html:root:root body .hero{padding:14px 0!important}html:root:root body .block{padding:12px 0!important}}
+
+
+/* Unit 01 printable assessment presentation. */
+@media print{
+ @page{size:letter portrait;margin:.6in}
+ html:root:root body{background:#fff!important;color:#111!important;font-size:11pt!important;line-height:1.45!important}
+ html:root:root body .hero{display:block!important;background:#fff!important;padding:0 0 14pt!important;margin-bottom:12pt!important;border-bottom:1px solid #888}
+ html:root:root body .hero .eyebrow{font-size:12pt!important;color:#333!important}
+ html:root:root body .hero h1{font-size:22pt!important;color:#111!important}
+ html:root:root body .hero .lead{font-size:11pt!important;color:#222!important;line-height:1.45!important}
+ html:root:root body .nav,html:root:root body .actions,html:root:root body .snapshot,html:root:root body .btn{display:none!important}
+ html:root:root body .block{padding:0!important;margin:0 0 14pt!important}
+ html:root:root body .wrap{width:100%!important;max-width:none!important}
+ html:root:root body .question{break-inside:avoid;page-break-inside:avoid;background:#fff!important;color:#111!important;border:1px solid #999!important;margin:0 0 12pt!important}
+ html:root:root body .option,html:root:root body .question strong{color:#111!important}
+ html:root:root body .feedback,html:root:root body #result{display:none!important}
+ html:root:root body .card,html:root:root body .notice{background:#fff!important;color:#111!important;border-color:#999!important;box-shadow:none!important}
+ html:root:root body input[type=radio]{appearance:auto!important}
+}
