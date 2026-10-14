@@ -500,4 +500,34 @@
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",attachArshifReadingReference,{once:true});
   else attachArshifReadingReference();
+
+  function enableBookReportProgram(){
+    if(!/\/reading-list\.html$/.test(location.pathname))return;
+    const main=document.querySelector("main");if(!main||document.getElementById("khae-book-report-program"))return;
+    const grade=Number((location.pathname.match(/english-(\d+)/)||[])[1]);
+    const choices={"9":["The Wonderful Wizard of Oz — L. Frank Baum","The Secret Garden — Frances Hodgson Burnett","Anne of Green Gables — L. M. Montgomery","Treasure Island — Robert Louis Stevenson"],"10":["Little Women — Louisa May Alcott","The Call of the Wild — Jack London","The Time Machine — H. G. Wells","The Adventures of Tom Sawyer — Mark Twain"],"11":["Narrative of the Life of Frederick Douglass — Frederick Douglass","Frankenstein — Mary Shelley","Great Expectations — Charles Dickens","The Adventures of Huckleberry Finn — Mark Twain","Jane Eyre — Charlotte Brontë"],"12":["Pride and Prejudice — Jane Austen","Jane Eyre — Charlotte Brontë","Frankenstein — Mary Shelley","The Picture of Dorian Gray — Oscar Wilde","The Souls of Black Folk — W. E. B. Du Bois"]}[grade];if(!choices)return;
+    const count=grade>=11?4:2;
+    const section=document.createElement("section");section.id="khae-book-report-program";
+    section.style.cssText="max-width:1100px;margin:22px auto;padding:22px;border:1px solid #b9a581;background:#faf6ea;color:#211d19;border-radius:7px";
+    const title=document.createElement("h2");title.textContent="Independent Reading · "+count+" Full Book Reports";
+    const intro=document.createElement("p");intro.textContent="Choose a grade-appropriate complete book for each report. You may propose another book of equivalent reading challenge for teacher approval. Read the entire work rather than a plot summary. Keep page or chapter references to support your analysis.";
+    section.append(title,intro);
+    const reportSections=["Bibliographic information and reading dates","Accurate summary of the complete narrative or argument","Central conflict, ideas and major turning points","Character, perspective, form and author's craft","At least three specific passages with page or chapter references","Your interpretation and a plausible alternative reading","Historical or cultural context where relevant","A thoughtful recommendation with reasons","Reflection on feedback and your revision"];
+    for(let i=1;i<=count;i++){
+      const card=document.createElement("article");card.style.cssText="padding:14px;border:1px solid #d3c6ae;border-radius:7px;margin:12px 0;background:#fffdf8";
+      const h=document.createElement("h3");h.textContent="Book Report "+i+" of "+count;
+      const select=document.createElement("select");select.setAttribute("aria-label","Choose book for report "+i);select.style.cssText="max-width:100%;padding:9px;border-radius:7px;background:white;color:black";
+      for(const t of ["Choose a book",...choices,"Teacher-approved alternative"]){const opt=document.createElement("option");opt.textContent=t;opt.value=t==="Choose a book"?"":t;select.append(opt)}
+      const draft=document.createElement("textarea");draft.rows=10;draft.setAttribute("aria-label","Book report draft "+i);draft.placeholder=reportSections.map((t,j)=>(j+1)+". "+t).join("\n\n");draft.style.cssText="width:100%;box-sizing:border-box;display:block;min-height:230px;margin:12px 0;padding:12px;font:16px/1.6 Georgia,serif;border:1px solid #bcae95;border-radius:7px;background:white;color:black";
+      const exportButton=document.createElement("button");exportButton.type="button";exportButton.textContent="Export this report (.txt)";exportButton.style.cssText="padding:9px 12px;background:#fff;border:1px solid #9d8a64;border-radius:7px;color:#222;cursor:pointer";
+      exportButton.addEventListener("click",()=>{const data="English "+grade+" Book Report "+i+"\nBook: "+(select.value||"not selected")+"\n\n"+reportSections.map((x,j)=>(j+1)+". "+x).join("\n")+"\n\nDRAFT\n"+draft.value;const url=URL.createObjectURL(new Blob([data],{type:"text/plain;charset=utf-8"}));const a=document.createElement("a");a.href=url;a.download="english-"+grade+"-book-report-"+i+".txt";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+      const print=document.createElement("button");print.type="button";print.textContent="Print";print.style.cssText=exportButton.style.cssText+";margin-left:8px";print.addEventListener("click",()=>window.print());
+      const reminder=document.createElement("p");reminder.textContent="This draft is not automatically saved. Export to a dependable device frequently and keep a second backup. The teacher uses the existing reading-response rubric; this worksheet does not change grades or unlock lessons.";
+      card.append(h,select,draft,exportButton,print,reminder);section.append(card);
+    }
+    const standards=document.createElement("p");standards.textContent="Suggested pacing: Grades 9–10: one report each semester. Grades 11–12: two reports each semester. Teacher-approved accessibility accommodations and equivalent texts are welcome. Public-domain status varies by jurisdiction and edition; use legally accessible copies.";
+    section.append(standards);main.append(section);
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",enableBookReportProgram,{once:true});
+  else enableBookReportProgram();
 })();
