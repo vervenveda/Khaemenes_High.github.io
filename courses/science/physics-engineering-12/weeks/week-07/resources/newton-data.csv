@@ -1,0 +1,10 @@
+# FICTIONAL ideal constant-net-force cart data, not instrument observations. Right is positive. 1 N=1 kg*m/s^2.
+Case,Mass_kg,Net_Force_N,Initial_Velocity_m_per_s,Duration_s,Acceleration_m_per_s2,Final_Velocity_m_per_s,Displacement_m
+Balanced_rest,4,0,0,2,0,0,0
+Balanced_moving,4,0,3,2,0,3,6
+Force_8_mass_2,2,8,0,2,4,8,8
+Force_8_mass_4,4,8,0,2,2,4,4
+Force_12_mass_3,3,12,0,2,4,8,8
+Force_12_mass_6,6,12,0,2,2,4,4
+Negative_net_force,3,-12,2,2,-4,-6,-4
+Negative_initial_velocity,4,0,-2,3,0,-2,-6

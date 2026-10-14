@@ -1,0 +1,7 @@
+# FICTIONAL two-body reciprocal force data. A on B positive; B on A negative. Acceleration assumes each force is the only net horizontal force on its body.
+Case,Mass_A_kg,Mass_B_kg,Force_A_on_B_N,Force_B_on_A_N,Accel_A_m_per_s2,Accel_B_m_per_s2
+Equal_masses,4,4,12,-12,-3,3
+Different_masses,3,6,12,-12,-4,2
+Force_6,2,3,6,-6,-3,2
+Different_masses_large,5,10,20,-20,-4,2
+Zero_interaction,3,6,0,0,0,0
