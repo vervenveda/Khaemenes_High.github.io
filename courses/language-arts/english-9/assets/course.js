@@ -254,4 +254,17 @@
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",enableReadingNotebook,{once:true});
   else enableReadingNotebook();
+
+  function showCourseBackupReminder(){
+    const main=document.querySelector("main");if(!main||document.getElementById("khae-course-backup-reminder"))return;
+    const notice=document.createElement("aside");
+    notice.id="khae-course-backup-reminder";
+    notice.setAttribute("aria-label","Student work backup reminder");
+    notice.style.cssText="box-sizing:border-box;max-width:1100px;margin:12px auto;padding:12px 16px;border-radius:7px;border:1px solid #aa9468;background:#fff6e1;color:#252017;font-size:14px;line-height:1.5";
+    const strong=document.createElement("strong");strong.textContent="Protect your work · Students, teachers and parents: ";
+    notice.append(strong,document.createTextNode("Save assignments, notebooks, portfolios, assessments and reports to a dependable device regularly. Use the course export and print tools where available; check your downloaded files and keep a separate backup. Browser-only storage can be lost or cleared."));
+    main.insertBefore(notice,main.firstChild);
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",showCourseBackupReminder,{once:true});
+  else showCourseBackupReminder();
 })();
