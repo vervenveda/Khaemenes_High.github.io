@@ -348,6 +348,22 @@ html:root:root body .hero .hero-lead{font-size:clamp(18px,2vw,24px)!important;li
   html:root:root body .hero .hero-lead{font-size:18px!important}
 }
 </style>
+<style id="vnv-sacred-balance-20261014">
+/* Source-preserving visual repair: 7px radius, 14/24/33/55px typography, symmetrical grid. */
+:root{--radius:7px;--radius-lg:7px;--paper:#faf8f3;--paper2:#fffdf8}
+html:root:root body{background:#faf8f3;color:#17251f}
+html:root:root body :is(.grade-grid,.course-grid,.department-grid,.pathway-grid,.network-grid,.portal-grid){align-items:stretch;gap:14px}
+html:root:root body :is(.grade-card,.course-card,.department-card,.pathway-card,.network-card,.portal-card){height:100%;border-radius:7px;padding:24px 18px;background:#fffefa;border-color:#d7cbb7;box-shadow:0 7px 24px rgba(20,35,29,.045)}
+html:root:root body :is(.grade-card,.course-card,.department-card,.pathway-card,.network-card,.portal-card) :is(h2,h3){line-height:1.4;min-height:2.8em;display:flex;align-items:center;justify-content:center;text-align:center}
+html:root:root body :is(.grade-card,.course-card,.department-card,.pathway-card,.network-card,.portal-card) :is(p,.card-description){line-height:1.65}
+html:root:root body :is(.course-actions,.card-actions){margin-top:auto;align-self:stretch}
+html:root:root body :is(.course-actions a,.pin-button,.card-actions a){border-radius:7px}
+html:root:root body .hero .eyebrow{font-size:14px!important;line-height:1.5!important;letter-spacing:.18em!important;text-transform:uppercase!important;color:#ae864c}
+html:root:root body .hero h1{font-size:clamp(33px,5vw,55px)!important;line-height:1.22!important;letter-spacing:.01em!important;max-width:1020px;margin:14px auto!important;text-align:center}
+html:root:root body .hero .hero-lead{font-size:clamp(16px,2vw,24px)!important;line-height:1.65!important;margin-inline:auto}
+@media(max-width:650px){html:root:root body :is(.grade-grid,.course-grid,.department-grid,.pathway-grid,.network-grid){grid-template-columns:repeat(2,minmax(0,1fr))}html:root:root body :is(.grade-card,.course-card,.department-card,.pathway-card,.network-card){padding:16px 11px}}
+@media(max-width:400px){html:root:root body :is(.grade-grid,.course-grid,.department-grid,.pathway-grid,.network-grid){grid-template-columns:1fr}}
+</style>
 </head>
 <body id="top">
 <a class="skip-link" href="#main">Skip to main content</a>
