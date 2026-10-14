@@ -1,0 +1,11 @@
+# Synthetic work by ONE constant force and average signed power: W=F*d*cos(theta), P=W/t. Not automatically net work and not sensor measurements.
+Case,Force_N,Displacement_m,Angle_deg,Duration_s,Parallel_Force_N,Work_J,Average_Power_W
+aligned,12,5,0,3,12.000000,60.000000,20.000000
+perpendicular,12,5,90,4,0.000000,0.000000,0.000000
+opposed,12,5,180,5,-12.000000,-60.000000,-12.000000
+sixty_degrees,20,3,60,2,10.000000,30.000000,15.000000
+one_twenty,20,3,120,3,-10.000000,-30.000000,-10.000000
+high_work,30,4,0,4,30.000000,120.000000,30.000000
+zero_distance,15,0,0,3,15.000000,0.000000,0.000000
+half_projection,16,4,60,2,8.000000,32.000000,16.000000
+negative_power,18,2,180,3,-18.000000,-36.000000,-12.000000

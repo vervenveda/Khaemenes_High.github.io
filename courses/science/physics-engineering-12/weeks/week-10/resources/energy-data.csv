@@ -1,0 +1,11 @@
+# Synthetic ideal work-energy theorem with prescribed NET work: Ki=.5*m*v0^2; Kf=Ki+Wnet. Negative final energy is invalid; such cases require revised assumptions.
+Case,Mass_kg,Initial_Speed_m_per_s,NET_Work_J,Initial_K_J,Raw_Final_K_J,Feasible,Final_Speed_m_per_s
+speed_three_plus32,4,3,32,18.000000,50.000000,yes,5.000000
+speed_three_minus18,4,3,-18,18.000000,0.000000,yes,0.000000
+energy_unchanged,2,4,0,16.000000,16.000000,yes,4.000000
+net_negative_valid,5,4,-10,40.000000,30.000000,yes,3.464102
+net_negative_infeasible,4,3,-25,18.000000,-7.000000,no,NA
+more_mass,8,3,28,36.000000,64.000000,yes,4.000000
+high_speed,2,6,14,36.000000,50.000000,yes,7.071068
+stopped,6,2,-12,12.000000,0.000000,yes,0.000000
+net_positive,5,2,15,10.000000,25.000000,yes,3.162278
