@@ -1,0 +1,12 @@
+# SYNTHETIC no-stored-energy-change model: E_useful=E_in*eta/100, E_other=E_in-E_useful, input/useful power are measured over same t. Design: E_in <= 500 J, useful >= 300 J, t <= 6 s.
+Case,Input_J,Useful_Efficiency_Percent,Duration_s,Useful_J,Other_J,Input_Power_W,Useful_Power_W,Other_Power_W,Meets_All_Design_Constraints
+baseline,400,75,5,300,100,80,60,20,yes
+low_fraction,400,60,5,240,160,80,48,32,no
+large_input,500,80,6,400,100,83.333333,66.666667,16.666667,yes
+high_fraction,400,90,4,360,40,100,90,10,yes
+slow_and_inefficient,600,50,8,300,300,75,37.5,37.5,no
+budget_below,250,80,4,200,50,62.5,50,12.5,no
+constraint_boundary,500,60,6,300,200,83.333333,50,33.333333,yes
+perfect_ideal,300,100,5,300,0,60,60,0,yes
+input_too_high,700,50,5,350,350,140,70,70,no
+meeting_target,450,70,6,315,135,75,52.5,22.5,yes
