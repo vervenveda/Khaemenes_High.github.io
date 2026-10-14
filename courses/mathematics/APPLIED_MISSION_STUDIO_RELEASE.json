@@ -1,13 +1,14 @@
 {
   "schema": "khaemenes-applied-mission-studio-release-v1",
-  "version": "1.3.0",
-  "git_blob_sha": "e778b4a29faac1bc773a0406045ebea36f2b3ec1",
+  "version": "1.4.0",
+  "git_blob_sha": "56e0819cb25cba8aef08d33adcbbea1e9bf08e1d",
   "protections": [
     "learner-scoped-storage",
     "competing-tab-revision-guard",
     "bounded-sanitized-import",
     "verified-write-rollback",
     "first-use-offline-project-coverage",
-    "behavioral-contract-validation"
+    "behavioral-contract-validation",
+    "sha256-portable-evidence-integrity"
   ]
 }

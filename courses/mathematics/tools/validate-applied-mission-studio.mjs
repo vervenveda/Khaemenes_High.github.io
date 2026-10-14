@@ -12,19 +12,20 @@ const ok=(v,m)=>{if(v)console.log("OK "+m);else{failed=true;console.error("FAIL 
 const shared=read("assets/applied-mission-studio-v1.js");
 const manifest=JSON.parse(read("APPLIED_MISSION_STUDIO_RELEASE.json"));
 const blobSha=crypto.createHash("sha1").update("blob "+Buffer.byteLength(shared)+"\0").update(shared).digest("hex");
-ok(manifest.version==="1.3.0","release manifest pins Applied Mission Studio v1.3.0");
+ok(manifest.version==="1.4.0","release manifest pins Applied Mission Studio v1.4.0");
 ok(blobSha===manifest.git_blob_sha,"shared Applied Mission Studio matches pinned Git blob");
-ok(shared.includes('const V="1.3.0"'),"runtime reports v1.3.0");
+ok(shared.includes('const V="1.4.0"'),"runtime reports v1.4.0");
 ok(shared.includes("pageOwnerId")&&shared.includes("ownerOk"),"runtime binds writes to the active Academy learner");
 ok(shared.includes("Review & Replace Newer Version")&&shared.includes("competing-tab"),"runtime protects competing tabs");
 ok(shared.includes("importBytes:524288")&&shared.includes("verifiedWrite"),"runtime bounds imports and verifies writes");
+ok(shared.includes("khaemenes-evidence-integrity-v1")&&shared.includes("sealEnvelope")&&shared.includes("verifyEnvelope"),"runtime seals and verifies portable evidence with SHA-256");
 ok(shared.includes("course_progression_authority:false"),"mission evidence remains outside mastery authority");
 
 const coreMatch=shared.match(/\/\*__AMS_CORE_BEGIN__\*\/([\s\S]*?)\/\*__AMS_CORE_END__\*\//);
 ok(!!coreMatch,"testable persistence core is embedded in the runtime");
 let core=null;
 if(coreMatch){
- const box={};vm.createContext(box);vm.runInContext(coreMatch[1]+";globalThis.__AMSCore=AMSCore;",box);core=box.__AMSCore;
+ const box={TextEncoder,Uint8Array,crypto:crypto.webcrypto};vm.createContext(box);vm.runInContext(coreMatch[1]+";globalThis.__AMSCore=AMSCore;",box);core=box.__AMSCore;
 }
 if(core){
  ok(core.scopeKey("record","learner-a")!==core.scopeKey("record","learner-b"),"learner-scoped keys are distinct");
@@ -44,6 +45,12 @@ if(core){
  ok(forced.ok&&forced.revision===2,"explicit forced replacement advances the revision");
  const before=st.getItem(key);const bad={getItem:k=>st.getItem(k),setItem(){throw Error("blocked")},removeItem(){}};
  ok(core.verifiedWrite(bad,key,{x:1})===false&&st.getItem(key)===before,"failed verified write preserves previous storage");
+ const deterministicA=core.canonicalize({b:2,a:{z:1,y:[3,2]}});
+ const deterministicB=core.canonicalize({a:{y:[3,2],z:1},b:2});
+ ok(deterministicA===deterministicB,"integrity canonicalization is deterministic across object key order");
+ const sealedEvidence=await core.sealEnvelope({schema:"mission-test",course:"geometry",unit:1,record:{mission_id:"m1",fields:{question:"test"}}});
+ ok(await core.verifyEnvelope(sealedEvidence),"SHA-256 evidence seal verifies unchanged payload");
+ ok(!(await core.verifyEnvelope({...sealedEvidence,unit:2})),"SHA-256 evidence seal rejects changed payload");
 }
 
 const preNames=["number-systems-investigation.html","signed-data-investigation.html","rational-quantity-investigation.html","community-scale-rate-investigation.html","consumer-financial-decision-investigation.html","scale-of-universe-investigation.html","algebraic-model-design-investigation.html","equation-formula-design-investigation.html","constraint-design-investigation.html","linear-relationship-data-story-investigation.html","accessible-space-scale-design-investigation.html","community-data-evidence-investigation.html","mathematical-modelling-capstone-portfolio.html"];
@@ -64,7 +71,7 @@ for(const [course,routes] of Object.entries(routeSets)){
  }
 }
 const native=read("algebra-1/assets/applied-mission-studio-v1.js");
-for(const token of ["AMSCore=SHARED?.core","STORE=scoped(STORE_BASE)","Review & Replace Newer Version","importBytes","verifiedWrite"])ok(native.includes(token),"Algebra I native studio hardening contains "+token);
+for(const token of ["AMSCore=SHARED?.core","STORE=scoped(STORE_BASE)","Review & Replace Newer Version","importBytes","verifiedWrite","khaemenes-algebra1-applied-mission-export-v2","verifyEnvelope"])ok(native.includes(token),"Algebra I native studio hardening contains "+token);
 const contract=read("../shared/course-entry-contract.js");
 ok(contract.includes("data-khae-applied-mission-studio"),"High School lesson/project entry contract still loads the shared Mission Studio");
 for(const [course,stem] of [["geometry","geometry"],["algebra-2","algebra2"]]){

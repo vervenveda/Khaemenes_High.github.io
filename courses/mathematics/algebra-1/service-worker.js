@@ -1,4 +1,5 @@
 "use strict";
+// Applied Mission Studio v1.4.0 · SHA-256 portable evidence integrity refresh.
 const CACHE_VERSION="khaemenes-algebra1-v15-applied-mission-20261014";
 const LEGACY_SOURCE="./service-worker-precache-v1.js";
 const RELEASE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",

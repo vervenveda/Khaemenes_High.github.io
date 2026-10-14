@@ -1,4 +1,5 @@
 "use strict";
+// Applied Mission Studio v1.4.0 · SHA-256 portable evidence integrity refresh.
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
 const CACHE_NAME=`${CACHE_PREFIX}v7-compact-course-shell-math-canonical-20261008`;

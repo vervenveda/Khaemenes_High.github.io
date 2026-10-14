@@ -1,4 +1,5 @@
 "use strict";
+// Applied Mission Studio v1.4.0 · SHA-256 portable evidence integrity refresh.
 const CACHE_PREFIX="khaemenes-algebra2-";
 const CACHE=`${CACHE_PREFIX}v3-math-entry`;
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
