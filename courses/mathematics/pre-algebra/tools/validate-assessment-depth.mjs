@@ -115,7 +115,7 @@ ok(map.cumulative_scoring?.mastery_requires?.selected_response_percent===80&&map
 ok(map.assessments?.[0]?.constructed_responses===7&&map.assessments?.[1]?.constructed_responses===10,"assessment map matches midterm/final constructed-response counts");
 
 const sw=fs.readFileSync(path.join(root,"service-worker.js"),"utf8");
-ok(sw.includes('v7-compact-course-shell'),"service worker uses the compact v7 course-shell cache");
+ok(sw.includes('v9-ams-v1.5.0-recovery-r1-20261014')&&sw.includes('MISSION_OFFLINE_RELEASE="ams-v1.5.0-recovery-r1-20261014"'),"service worker uses the v1.5 recovery-aware course-shell cache");
 ok(sw.includes('request.mode==="navigate"')&&sw.includes('fetch(request)'),"navigation is network-first with an honest offline fallback");
 const onDemandAssessmentAssets=["prealgebra-assessment-depth-v2.js",...parts.map(rel=>path.basename(rel)),"exam-engine.js","exam-depth-v2.js"];
 for(const rel of onDemandAssessmentAssets){
