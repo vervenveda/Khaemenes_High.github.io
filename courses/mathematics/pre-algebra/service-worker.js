@@ -15,8 +15,20 @@ const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-
   "./assets/prealgebra-course-navigator-v1.js",
   "./assets/prealgebra-student-navigation.js",
   "./assets/prealgebra-study-scorebook-v1.js",
-  "../assets/applied-mission-studio-v1.js"
-];
+  "../assets/applied-mission-studio-v1.js",
+  "./units/unit-01/projects/number-systems-investigation.html",
+  "./units/unit-02/projects/signed-data-investigation.html",
+  "./units/unit-03/projects/rational-quantity-investigation.html",
+  "./units/unit-04/projects/community-scale-rate-investigation.html",
+  "./units/unit-05/projects/consumer-financial-decision-investigation.html",
+  "./units/unit-06/projects/scale-of-universe-investigation.html",
+  "./units/unit-07/projects/algebraic-model-design-investigation.html",
+  "./units/unit-08/projects/equation-formula-design-investigation.html",
+  "./units/unit-09/projects/constraint-design-investigation.html",
+  "./units/unit-10/projects/linear-relationship-data-story-investigation.html",
+  "./units/unit-11/projects/accessible-space-scale-design-investigation.html",
+  "./units/unit-12/projects/community-data-evidence-investigation.html",
+  "./units/unit-13/projects/mathematical-modelling-capstone-portfolio.html"];
 
 self.addEventListener("install",event=>{
   event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(CORE_FILES)).then(()=>self.skipWaiting()));

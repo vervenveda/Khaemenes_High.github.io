@@ -29,5 +29,5 @@ jobs:
           node --check courses/mathematics/assets/applied-mission-studio-v1.js
           node --check courses/mathematics/algebra-1/assets/applied-mission-studio-v1.js
           node --check courses/shared/course-entry-contract.js
-      - name: Validate mathematics Applied Mission Studio
+      - name: Behavioral and offline contract
         run: node courses/mathematics/tools/validate-applied-mission-studio.mjs

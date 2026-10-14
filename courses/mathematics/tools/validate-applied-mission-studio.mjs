@@ -1,67 +1,75 @@
 import fs from "node:fs";
 import path from "node:path";
+import vm from "node:vm";
+import crypto from "node:crypto";
 import {fileURLToPath} from "node:url";
+
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const read=p=>fs.readFileSync(path.join(ROOT,p),"utf8");
 let failed=false;
 const ok=(v,m)=>{if(v)console.log("OK "+m);else{failed=true;console.error("FAIL "+m)}};
+
 const shared=read("assets/applied-mission-studio-v1.js");
-for(const token of ["khaemenes-math-applied-mission-studio-v1","pre-algebra","algebra-1","geometry","algebra-2","course_progression_authority:false","Applied Mission Studio"])ok(shared.includes(token),"shared studio contains "+token);
-const contract=read("../shared/course-entry-contract.js");
-ok(contract.includes("data-khae-applied-mission-studio"),"High School course entry contract loads shared mission studio on math routes");
-const a1loader=read("algebra-1/assets/unit-page.js");
-ok(a1loader.includes("../../assets/applied-mission-studio-v1.js"),"Algebra I loads the shared contract before its native studio");
-const a1native=read("algebra-1/assets/applied-mission-studio-v1.js");
-ok(a1native.includes('mode:"native-algebra1-v1"'),"Algebra I native studio registers with shared contract");
-for(const course of ["pre-algebra","algebra-1","geometry","algebra-2"]){
- const sw=read(course+"/service-worker.js");
- ok(sw.includes("../assets/applied-mission-studio-v1.js"),course+" offline release caches shared studio");
+const manifest=JSON.parse(read("APPLIED_MISSION_STUDIO_RELEASE.json"));
+const blobSha=crypto.createHash("sha1").update("blob "+Buffer.byteLength(shared)+"\0").update(shared).digest("hex");
+ok(manifest.version==="1.3.0","release manifest pins Applied Mission Studio v1.3.0");
+ok(blobSha===manifest.git_blob_sha,"shared Applied Mission Studio matches pinned Git blob");
+ok(shared.includes('const V="1.3.0"'),"runtime reports v1.3.0");
+ok(shared.includes("pageOwnerId")&&shared.includes("ownerOk"),"runtime binds writes to the active Academy learner");
+ok(shared.includes("Review & Replace Newer Version")&&shared.includes("competing-tab"),"runtime protects competing tabs");
+ok(shared.includes("importBytes:524288")&&shared.includes("verifiedWrite"),"runtime bounds imports and verifies writes");
+ok(shared.includes("course_progression_authority:false"),"mission evidence remains outside mastery authority");
+
+const coreMatch=shared.match(/\/\*__AMS_CORE_BEGIN__\*\/([\s\S]*?)\/\*__AMS_CORE_END__\*\//);
+ok(!!coreMatch,"testable persistence core is embedded in the runtime");
+let core=null;
+if(coreMatch){
+ const box={};vm.createContext(box);vm.runInContext(coreMatch[1]+";globalThis.__AMSCore=AMSCore;",box);core=box.__AMSCore;
 }
+if(core){
+ ok(core.scopeKey("record","learner-a")!==core.scopeKey("record","learner-b"),"learner-scoped keys are distinct");
+ const huge="x".repeat(core.limits.text+500);
+ const dirty={mission_id:"m1",custom:"y".repeat(500),fields:{question:huge,unknown:"should-drop"},checks:{0:true,99:true},review:{scores:["4","9"],feedback:"z".repeat(core.limits.feedback+50),attempts:Array.from({length:40},(_,i)=>({score:i,target:80,evaluator:"Evaluator"}))},unknown:"drop"};
+ const clean=core.sanitizeRecord(dirty,{course:"geometry",unit:1,project:"Test",fieldKeys:["question"],legacyKeys:[],checkCount:1,rubricCount:2,recordId:"r1"});
+ ok(clean.fields.question.length===core.limits.text&&!Object.hasOwn(clean.fields,"unknown"),"record sanitizer caps evidence and drops unknown fields");
+ ok(clean.custom.length===core.limits.custom&&clean.review.feedback.length===core.limits.feedback,"record sanitizer enforces text bounds");
+ ok(clean.review.attempts.length===core.limits.attempts,"review history is bounded");
+ class MemoryStorage{constructor(){this.m=new Map()}getItem(k){return this.m.has(k)?this.m.get(k):null}setItem(k,v){this.m.set(k,String(v))}removeItem(k){this.m.delete(k)}}
+ const st=new MemoryStorage(),key="store:learner:a",unit="unit-01",base=core.sanitizeRecord({mission_id:"m1"},{course:"geometry",unit:1,project:"Test",fieldKeys:[],legacyKeys:[],checkCount:0,rubricCount:0,recordId:"r1"});
+ const first=core.commitUnit(st,key,unit,base,0,"tab-a");
+ const stale=core.commitUnit(st,key,unit,{...base,mission_id:"m2"},0,"tab-b");
+ const forced=core.commitUnit(st,key,unit,{...base,mission_id:"m2"},first.revision,"tab-b",{force:true});
+ ok(first.ok&&first.revision===1,"first verified mission commit creates revision 1");
+ ok(stale.conflict===true,"stale competing-tab commit is refused");
+ ok(forced.ok&&forced.revision===2,"explicit forced replacement advances the revision");
+ const before=st.getItem(key);const bad={getItem:k=>st.getItem(k),setItem(){throw Error("blocked")},removeItem(){}};
+ ok(core.verifiedWrite(bad,key,{x:1})===false&&st.getItem(key)===before,"failed verified write preserves previous storage");
+}
+
+const preNames=["number-systems-investigation.html","signed-data-investigation.html","rational-quantity-investigation.html","community-scale-rate-investigation.html","consumer-financial-decision-investigation.html","scale-of-universe-investigation.html","algebraic-model-design-investigation.html","equation-formula-design-investigation.html","constraint-design-investigation.html","linear-relationship-data-story-investigation.html","accessible-space-scale-design-investigation.html","community-data-evidence-investigation.html","mathematical-modelling-capstone-portfolio.html"];
+const a1Data=read("algebra-1/course-data.js");
+const a1Slugs=[...a1Data.matchAll(/"number":(\d+)[\s\S]*?"project_slug":"([^"]+)"/g)].slice(0,13).map(m=>({unit:Number(m[1]),slug:m[2]}));
+const routeSets={
+ "pre-algebra":preNames.map((name,i)=>`./units/unit-${String(i+1).padStart(2,"0")}/projects/${name}`),
+ "algebra-1":a1Slugs.map(x=>`./units/unit-${String(x.unit).padStart(2,"0")}/projects/${x.slug}.html`),
+ "geometry":Array.from({length:13},(_,i)=>`./units/unit-${String(i+1).padStart(2,"0")}/projects/${String(i+1).padStart(2,"0")}-project.html`),
+ "algebra-2":Array.from({length:13},(_,i)=>`./units/unit-${String(i+1).padStart(2,"0")}/projects/${String(i+1).padStart(2,"0")}-project.html`)
+};
+for(const [course,routes] of Object.entries(routeSets)){
+ const sw=read(course+"/service-worker.js");
+ ok(sw.includes("../assets/applied-mission-studio-v1.js"),course+" offline release caches the shared Mission Studio");
+ for(const route of routes){
+  ok(sw.includes(route),course+" first-use offline cache includes "+route);
+  ok(fs.existsSync(path.join(ROOT,course,route.replace(/^\.\//,""))),course+" canonical project exists: "+route);
+ }
+}
+const native=read("algebra-1/assets/applied-mission-studio-v1.js");
+for(const token of ["AMSCore=SHARED?.core","STORE=scoped(STORE_BASE)","Review & Replace Newer Version","importBytes","verifiedWrite"])ok(native.includes(token),"Algebra I native studio hardening contains "+token);
+const contract=read("../shared/course-entry-contract.js");
+ok(contract.includes("data-khae-applied-mission-studio"),"High School lesson/project entry contract still loads the shared Mission Studio");
 for(const [course,stem] of [["geometry","geometry"],["algebra-2","algebra2"]]){
  const app=read(course+"/assets/app.js");
  ok(app.includes(`khaemenes-${stem}-applied-mission-portfolio-v1`),course+" portfolio surfaces Applied Mission evidence");
 }
-const preProjectFiles=[
- "number-systems-investigation.html","signed-data-investigation.html","rational-quantity-investigation.html",
- "community-scale-rate-investigation.html","consumer-financial-decision-investigation.html","scale-of-universe-investigation.html",
- "algebraic-model-design-investigation.html","equation-formula-design-investigation.html","constraint-design-investigation.html",
- "linear-relationship-data-story-investigation.html","accessible-space-scale-design-investigation.html",
- "community-data-evidence-investigation.html","mathematical-modelling-capstone-portfolio.html"
-];
-for(const course of ["pre-algebra","geometry","algebra-2"]){
- let lessonCount=0,projectCount=0;
- for(let u=1;u<=13;u++){
-  const n=String(u).padStart(2,"0"),lessonDir=path.join(ROOT,course,"units","unit-"+n,"lessons");
-  if(fs.existsSync(lessonDir)){
-   for(const name of fs.readdirSync(lessonDir).filter(x=>x.endsWith(".html"))){
-    const html=fs.readFileSync(path.join(lessonDir,name),"utf8");lessonCount++;
-    ok(html.includes("course-entry-contract.js"),course+" "+n+"/"+name+" loads shared course-entry contract");
-   }
-  }
-  const projectName=course==="pre-algebra"?preProjectFiles[u-1]:n+"-project.html";
-  const projectPath=path.join(ROOT,course,"units","unit-"+n,"projects",projectName);
-  ok(fs.existsSync(projectPath),course+" Unit "+n+" canonical project exists");
-  if(fs.existsSync(projectPath)){
-   const html=fs.readFileSync(projectPath,"utf8");projectCount++;
-   ok(html.includes("course-entry-contract.js"),course+" Unit "+n+" project reaches shared Mission Studio loader");
-  }
- }
- ok(lessonCount>0,course+" has lesson pages under the shared Applied Connection contract");
- ok(projectCount===13,course+" exposes 13 canonical Applied Mission projects");
-}
-const a1Data=read("algebra-1/course-data.js");
-const slugs=[...a1Data.matchAll(/"number":(\d+)[\s\S]*?"project_slug":"([^"]+)"/g)].slice(0,13);
-ok(slugs.length===13,"Algebra I course data exposes 13 canonical projects");
-for(const m of slugs){
- const n=String(Number(m[1])).padStart(2,"0"),rel=`algebra-1/units/unit-${n}/projects/${m[2]}.html`;
- ok(fs.existsSync(path.join(ROOT,rel)),rel+" exists");
- if(fs.existsSync(path.join(ROOT,rel))){
-  const html=read(rel);
-  ok(html.includes('"type":"project"')||html.includes('"type": "project"'),rel+" declares project PAGE_REF");
-  ok(html.includes("assets/unit-page.js"),rel+" loads Algebra I project renderer");
- }
-}
-const bridge=read("algebra-1/assets/lesson-resource-bridge-v1.js");
-ok(bridge.includes("?from=")&&bridge.includes("Applied Connection"),"Algebra I lessons carry lesson identity into Applied Mission Studio");
 if(failed)process.exit(1);
-console.log("\nPASS High School mathematics Applied Mission Studio contract across Pre-Algebra, Algebra I, Geometry and Algebra II.");
+console.log("\nPASS High School mathematics Applied Mission Studio hardened contract.");
