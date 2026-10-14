@@ -480,4 +480,24 @@
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",showCourseBackupReminder,{once:true});
   else showCourseBackupReminder();
+
+  function attachArshifReadingReference(){
+    if(!/\/units\/unit-\d{2}\/(?:index\.html)?$/.test(location.pathname))return;
+    const main=document.querySelector("main");
+    if(!main||document.getElementById("arshif-reading-reference"))return;
+    const reference=document.createElement("aside");
+    reference.id="arshif-reading-reference";
+    reference.setAttribute("aria-label","ARSHIF Archives reading reference");
+    reference.style.cssText="margin:12px auto;max-width:1100px;padding:14px;border:1px solid #b9a47a;border-radius:7px;background:#faf4e9;color:#242018";
+    const label=document.createElement("strong");
+    label.textContent="ARSHIF Archives · Main Reading Reference: ";
+    const link=document.createElement("a");
+    link.href="https://vervenveda.github.io/Arshif.github.io/catalog/index.html";
+    link.target="_blank";link.rel="noopener noreferrer";
+    link.textContent="Open the Khaemenes High reading catalog";
+    reference.append(label,link,document.createTextNode(". The complete assigned reading remains on this Academy page for offline study. Save student work separately; ARSHIF contains public references only."));
+    main.insertBefore(reference,main.firstChild);
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",attachArshifReadingReference,{once:true});
+  else attachArshifReadingReference();
 })();
