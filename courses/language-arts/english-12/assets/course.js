@@ -377,4 +377,29 @@
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",attachOptionalELAStudyVideo,{once:true});
   else attachOptionalELAStudyVideo();
+
+  // Non-grading reading-response guide; preserves existing records and assessment contracts.
+  function attachReadingResponseGuide(){
+    if(!/\/units\/unit-\d{2}\/(?:index\.html)?$/.test(location.pathname))return;
+    if(document.getElementById("reading-rubric-heading"))return;
+    const main=document.querySelector("main");if(!main)return;
+    const section=document.createElement("section");
+    section.className="wrap";
+    section.setAttribute("aria-labelledby","reading-rubric-heading");
+    section.style.margin="1rem auto";
+    const article=document.createElement("article");article.className="card";
+    const title=document.createElement("h2");title.id="reading-rubric-heading";title.textContent="Unit reading-response guide · 100 points";
+    const introduction=document.createElement("p");introduction.textContent="Submit your interpretation and revised draft in the existing portfolio. Teacher-scored guide only; this does not automatically change grades, mastery, or completion.";
+    const rows=[["Comprehension",20,"Accurate account of the text"],["Textual evidence",25,"Precise quotations or contextualized details"],["Interpretation",25,"Reasoned and nuanced explanation"],["Writing clarity",15,"Clear and coherent organization"],["Revision",15,"Substantive improvement supported by reflection"]];
+    const table=document.createElement("table");const cap=document.createElement("caption");cap.textContent="Reading response scoring criteria";table.append(cap);
+    const head=document.createElement("thead");const hr=document.createElement("tr");
+    for(const v of ["Criterion","Points","Strong evidence"]){const th=document.createElement("th");th.scope="col";th.textContent=v;hr.append(th)}head.append(hr);table.append(head);
+    const body=document.createElement("tbody");
+    for(const [name,points,description] of rows){const tr=document.createElement("tr");const th=document.createElement("th");th.scope="row";th.textContent=name;const td=document.createElement("td");td.textContent=String(points);const explain=document.createElement("td");explain.textContent=description;tr.append(th,td,explain);body.append(tr)}table.append(body);
+    const note=document.createElement("p");note.textContent="Read → annotate → draft → cite → receive feedback → revise → preserve both versions. Short microtexts supplement, rather than replace, extended literature.";
+    article.append(title,introduction,table,note);section.append(article);
+    const weeks=main.querySelector("#weeks");main.insertBefore(section,weeks||null);
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",attachReadingResponseGuide,{once:true});
+  else attachReadingResponseGuide();
 })();
