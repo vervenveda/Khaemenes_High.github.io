@@ -47,14 +47,14 @@ const cases=JSON.parse(game[1]);pass(cases.length===11,'11 distinct learning cha
 pass(cases.filter(x=>x.type==='accel').length>=6,'more than six acceleration cases');
 pass(cases.filter(x=>x.type==='reaction').length>=3,'third-law questions included');
 for(const c of cases){pass((c.type==='accel'&&Number.isFinite(c.m)&&c.m>0&&Number.isFinite(c.f)&&Number.isFinite(c.f/c.m))||(c.type==='reaction'&&Number.isFinite(c.f)),'numeric scenario is sound')}
-const cartCSV=read(prefix+'resources/newton-data.csv').split(/\r?\n/).filter(x=>/^[A-Za-z_]+,/.test(x)&&!x.startsWith('Case,'));
+const cartCSV=read(prefix+'resources/newton-data.csv').split(/\r?\n/).filter(x=>/^[A-Za-z0-9_]+,/.test(x)&&!x.startsWith('Case,'));
 pass(cartCSV.length===8,'eight synthetic cart model examples');
 for(const line of cartCSV){const [label,...cols]=line.split(','),[m,f,v,T,a,vf,dx]=cols.map(Number);
 pass(cols.length===7,'cart CSV has complete columns for '+label);
 pass(Math.abs(a-f/m)<1e-8,'cart acceleration valid for '+label);
 pass(Math.abs(vf-(v+a*T))<1e-8,'cart final velocity valid for '+label);
 pass(Math.abs(dx-(v*T+.5*a*T*T))<1e-8,'cart displacement valid for '+label)}
-const pairCSV=read(prefix+'resources/interaction-pairs.csv').split(/\r?\n/).filter(x=>/^[A-Za-z_]+,/.test(x)&&!x.startsWith('Case,'));
+const pairCSV=read(prefix+'resources/interaction-pairs.csv').split(/\r?\n/).filter(x=>/^[A-Za-z0-9_]+,/.test(x)&&!x.startsWith('Case,'));
 pass(pairCSV.length===5,'five third-law force pair examples');
 for(const line of pairCSV){const [label,...cols]=line.split(','),[mA,mB,fAB,fBA,aA,aB]=cols.map(Number);
 pass(cols.length===6,'pair CSV complete for '+label);
