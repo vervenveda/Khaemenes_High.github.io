@@ -2520,69 +2520,109 @@
     "percent-benchmark-studio": {
       "title": "Percent Benchmark Studio",
       "canonical_path": "courses/mathematics/assets/learning-games/percent-benchmark-studio/index.html",
-      "status": "canonical-unplaced",
+      "status": "canonical-v3",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "05",
+          "lesson": "01",
+          "lesson_title": "Percent Meaning, Benchmarks & Equivalent Forms",
+          "mode": "prealgebra-practice",
+          "query": "?course=prealgebra&unit=5&lesson=1",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "migration_state": "lesson-match-reviewed-link-not-wired",
+      "migration_state": "canonical-shared-lesson-linked",
       "retired_paths": [],
       "placement_review": {
         "course": "pre-algebra",
         "unit": "05",
         "lesson": "01",
-        "review_status": "matched-by-game-title-and-verified-lesson-file",
-        "wired": false
+        "review_status": "verified-existing-canonical-lesson-link",
+        "wired": true
       }
     },
     "percent-change-mission": {
       "title": "Percent Change Mission",
       "canonical_path": "courses/mathematics/assets/learning-games/percent-change-mission/index.html",
-      "status": "canonical-unplaced",
+      "status": "canonical-v3",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "05",
+          "lesson": "04",
+          "lesson_title": "Percent Increase, Decrease & Relative Change",
+          "mode": "prealgebra-practice",
+          "query": "?course=prealgebra&unit=5&lesson=4",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "migration_state": "lesson-match-reviewed-link-not-wired",
+      "migration_state": "canonical-shared-lesson-linked",
       "retired_paths": [],
       "placement_review": {
         "course": "pre-algebra",
         "unit": "05",
         "lesson": "04",
-        "review_status": "matched-by-game-title-and-verified-lesson-file",
-        "wired": false
+        "review_status": "verified-existing-canonical-lesson-link",
+        "wired": true
       }
     },
     "percent-of-quantity-lab": {
       "title": "Percent Of Quantity Lab",
       "canonical_path": "courses/mathematics/assets/learning-games/percent-of-quantity-lab/index.html",
-      "status": "canonical-unplaced",
+      "status": "canonical-v3",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "05",
+          "lesson": "02",
+          "lesson_title": "Finding Percent of a Quantity",
+          "mode": "prealgebra-practice",
+          "query": "?course=prealgebra&unit=5&lesson=2",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "migration_state": "lesson-match-reviewed-link-not-wired",
+      "migration_state": "canonical-shared-lesson-linked",
       "retired_paths": [],
       "placement_review": {
         "course": "pre-algebra",
         "unit": "05",
         "lesson": "02",
-        "review_status": "matched-by-game-title-and-verified-lesson-file",
-        "wired": false
+        "review_status": "verified-existing-canonical-lesson-link",
+        "wired": true
       }
     },
     "percent-rate-whole-detective": {
       "title": "Percent Rate Whole Detective",
       "canonical_path": "courses/mathematics/assets/learning-games/percent-rate-whole-detective/index.html",
-      "status": "canonical-unplaced",
+      "status": "canonical-v3",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "05",
+          "lesson": "03",
+          "lesson_title": "Finding Percent, Rate or Whole",
+          "mode": "prealgebra-practice",
+          "query": "?course=prealgebra&unit=5&lesson=3",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "migration_state": "lesson-match-reviewed-link-not-wired",
+      "migration_state": "canonical-shared-lesson-linked",
       "retired_paths": [],
       "placement_review": {
         "course": "pre-algebra",
         "unit": "05",
         "lesson": "03",
-        "review_status": "matched-by-game-title-and-verified-lesson-file",
-        "wired": false
+        "review_status": "verified-existing-canonical-lesson-link",
+        "wired": true
       }
     },
     "percentage-point-change-studio": {
@@ -2639,18 +2679,28 @@
     "proportion-solver-mission": {
       "title": "Proportion Solver Mission",
       "canonical_path": "courses/mathematics/assets/learning-games/proportion-solver-mission/index.html",
-      "status": "canonical-unplaced",
+      "status": "canonical-v3",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "04",
+          "lesson": "05",
+          "lesson_title": "Solving Proportions & Direct Variation",
+          "mode": "prealgebra-practice",
+          "query": "?course=prealgebra&unit=4&lesson=5",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "migration_state": "lesson-match-reviewed-link-not-wired",
+      "migration_state": "canonical-shared-lesson-linked",
       "retired_paths": [],
       "placement_review": {
         "course": "pre-algebra",
         "unit": "04",
         "lesson": "05",
-        "review_status": "matched-by-title-tasks-and-existing-return-link",
-        "wired": false
+        "review_status": "verified-existing-canonical-lesson-link",
+        "wired": true
       }
     },
     "ratio-table-trail": {
