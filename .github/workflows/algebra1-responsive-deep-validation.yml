@@ -111,7 +111,7 @@ jobs:
           root=Path('courses/mathematics/algebra-1')
           engine=(root/'assets/applied-mission-studio-v1.js').read_text(encoding='utf-8')
           errors=[]
-          for token in ['khaemenes-algebra1-applied-missions-v1','khaemenes-algebra1-applied-mission-portfolio-v1','course_progression_authority:false','Applied Mission Studio','Add to Algebra I Portfolio','Export Evidence']:
+          for token in ['khaemenes-algebra1-applied-missions-v1','khaemenes-algebra1-applied-mission-portfolio-v1','course_progression_authority:false','Applied Mission Studio','Add to Algebra I Portfolio','Export Sealed Evidence']:
               if token not in engine: errors.append('mission engine missing '+token)
           if engine.count('missions') < 13: errors.append('mission engine does not expose the full unit mission catalog')
           loader=(root/'assets/unit-page.js').read_text(encoding='utf-8')
