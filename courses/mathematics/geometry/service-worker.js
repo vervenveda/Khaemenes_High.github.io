@@ -1,5 +1,5 @@
 "use strict";
-const CACHE="khaemenes-geometry-v6-applied-mission-studio-20261014";
+const CACHE="khaemenes-geometry-v5-math-entry-repair-20261012";
 const CACHE_PREFIX="khaemenes-geometry-";
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
  "../assets/applied-mission-studio-v1.js",
