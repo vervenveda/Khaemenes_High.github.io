@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-v34-math-lesson-alignment-20261013";
+const CACHE_VERSION = "khaemenes-high-v35-math-game-registry-20261014";
 // Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
 // Every canonical game and its shared runtime must be available on a newly installed offline worker.
 const GAME_PRECACHE_FILES = [
@@ -52,6 +52,23 @@ const GAME_PRECACHE_FILES = [
   "./courses/mathematics/assets/learning-games/trigonometric-identity-forge/index.html",
   "./courses/mathematics/assets/learning-games/triangle-law-expedition/index.html",
   "./courses/mathematics/assets/learning-games/algebra-evidence-interval-lab/index.html",
+  "./courses/mathematics/assets/learning-games/exponent-pattern-explorer/index.html",
+  "./courses/mathematics/assets/learning-games/exponent-properties-lab/index.html",
+  "./courses/mathematics/assets/learning-games/interest-fees-decision-lab/index.html",
+  "./courses/mathematics/assets/learning-games/irrational-root-estimation-quest/index.html",
+  "./courses/mathematics/assets/learning-games/market-math-mission/index.html",
+  "./courses/mathematics/assets/learning-games/percent-benchmark-studio/index.html",
+  "./courses/mathematics/assets/learning-games/percent-change-mission/index.html",
+  "./courses/mathematics/assets/learning-games/percent-of-quantity-lab/index.html",
+  "./courses/mathematics/assets/learning-games/percent-rate-whole-detective/index.html",
+  "./courses/mathematics/assets/learning-games/percentage-point-change-studio/index.html",
+  "./courses/mathematics/assets/learning-games/perfect-powers-roots-quest/index.html",
+  "./courses/mathematics/assets/learning-games/power-grouping-quest/index.html",
+  "./courses/mathematics/assets/learning-games/proportion-solver-mission/index.html",
+  "./courses/mathematics/assets/learning-games/ratio-table-trail/index.html",
+  "./courses/mathematics/assets/learning-games/scientific-notation-operations-mission/index.html",
+  "./courses/mathematics/assets/learning-games/scientific-notation-signal-lab/index.html",
+  "./courses/mathematics/assets/learning-games/small-business-math-lab/index.html",
 ];
 const GAME_RUNTIME_FILES = [
   "./courses/mathematics/assets/game-return-route.js",
