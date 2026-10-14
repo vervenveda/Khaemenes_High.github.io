@@ -68,3 +68,16 @@ html:root:root body .card .eyebrow{font-size:13px!important;line-height:1.5!impo
  html:root:root body .question .feedback{display:none!important}
  html:root:root body .question input[type=radio]{appearance:auto!important}
 }
+
+
+/* Always print a blank answer marker, even when on-screen radios were selected. */
+@media print{
+ html:root:root body .question input[type="radio"],html:root:root body .question input[type="radio"]:checked{
+  -webkit-appearance:none!important;appearance:none!important;
+  display:inline-block!important;width:11pt!important;height:11pt!important;
+  border:1pt solid #444!important;border-radius:50%!important;
+  background:#fff!important;background-image:none!important;
+  box-shadow:none!important;accent-color:transparent!important;
+  vertical-align:middle!important;margin:0 5pt 0 0!important;
+ }
+}
