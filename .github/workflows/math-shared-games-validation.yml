@@ -8,6 +8,7 @@ on:
       - "courses/mathematics/tools/validate-shared-games.mjs"
       - "courses/mathematics/tools/test-game-regressions.mjs"
       - "courses/mathematics/tools/test-algebra-formative-gameplay.mjs"
+      - "courses/mathematics/tools/test-cross-course-game-sync.mjs"
       - "courses/mathematics/tools/test-game-storage-links.mjs"
       - "courses/mathematics/tools/test-all-game-rounds.mjs"
       - "courses/mathematics/tools/test-extended-game-behavior.mjs"
@@ -42,6 +43,7 @@ on:
       - "courses/mathematics/tools/validate-shared-games.mjs"
       - "courses/mathematics/tools/test-game-regressions.mjs"
       - "courses/mathematics/tools/test-algebra-formative-gameplay.mjs"
+      - "courses/mathematics/tools/test-cross-course-game-sync.mjs"
       - "courses/mathematics/tools/test-game-storage-links.mjs"
       - "courses/mathematics/tools/test-all-game-rounds.mjs"
       - "courses/mathematics/tools/test-extended-game-behavior.mjs"
@@ -84,6 +86,9 @@ jobs:
 
       - name: Verify repaired game behavior
         run: node courses/mathematics/tools/test-game-regressions.mjs
+
+      - name: Validate exact lesson game mode synchronization across courses
+        run: node courses/mathematics/tools/test-cross-course-game-sync.mjs
 
       - name: Simulate standalone Algebra I formative game rounds
         run: node courses/mathematics/tools/test-algebra-formative-gameplay.mjs
