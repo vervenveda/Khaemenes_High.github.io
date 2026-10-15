@@ -1,0 +1,132 @@
+
+/* English 9 · Week 10 individual lesson and spiral curriculum */
+.week10-lesson .wrap{max-width:none;margin:0;padding:0}
+.week10-lesson>section{display:block}
+.week10-lesson .lesson-detail{padding:0;border:0;background:transparent}
+.week10-lesson .lesson-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,.85fr);gap:15px}
+.week10-lesson .lesson-panel,.week10-lesson .flow-step,.week10-lesson .text-passage,.week10-lesson .source-card,.week10-lesson .micro-lab,.week10-lesson .pathway,.week10-lesson .lesson-response{border:1px solid #ddd0bc;border-radius:7px;padding:14px;background:#fffefa;color:#231f19;margin:8px 0}
+.week10-lesson :is(h2,h3){font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.3;overflow-wrap:break-word}
+.week10-lesson h2{font-size:24px}.week10-lesson h3{font-size:19px}
+.week10-lesson .lesson-meta{display:flex;gap:8px;flex-wrap:wrap}
+.week10-lesson .tag{border:1px solid #d4c6af;border-radius:7px;padding:4px 8px}
+.week10-lesson :is(.pathway-grid,.compare-grid){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week10-lesson .pathway-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.week10-lesson .lesson-response textarea{width:100%;min-height:170px}
+.week10-lesson :is(table,tbody,th,td){max-width:100%}
+.week10-lesson table{width:100%;border-collapse:collapse}
+.week10-lesson :is(th,td){padding:8px;border:1px solid #d4c6af;text-align:left}
+.week10-lesson a{overflow-wrap:anywhere}
+.week10-lesson .media-wrap{aspect-ratio:16/9}
+.week10-lesson iframe{width:100%;height:100%;border:0}
+.week10-spiral,.week10-studio,.week10-assessment,.week10-support{background:#fffefa;color:#241e17;border:1px solid #ddd0bc;border-radius:7px;padding:19px;margin:20px 0}
+.week10-spiral h2,.week10-studio h2,.week10-assessment h2{font:400 24px/1.35 Cinzel,Georgia,serif}
+.week10-spiral-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.week10-spiral-grid>div{padding:13px;border:1px solid #e8dccb;border-radius:7px;background:#f8f4ed}
+.week10-spiral-grid h3{font-size:17px;font-weight:500;margin:0 0 8px}
+.week10-spiral-grid p{margin:0;line-height:1.65}
+.week10-spiral a{color:#285b83}
+.week10-studio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.week10-studio-grid label,.week10-assessment label{display:block;margin:9px 0 5px}
+.week10-studio-grid textarea,.week10-assessment textarea{width:100%;box-sizing:border-box;min-height:120px;padding:10px;border:1px solid #c7b9a7;border-radius:7px;background:#fff;color:#211f1b;line-height:1.6}
+.week10-assessment textarea{min-height:180px}
+#week10-draft{min-height:320px}
+.week10-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.week10-actions button,.week10-actions a{border-radius:7px;padding:9px 14px;background:#205b48;color:#fff;cursor:pointer;border:0;text-decoration:none;line-height:1.4}
+.week10-actions button:disabled{opacity:.5;cursor:not-allowed}
+.week10-actions .secondary{background:#e7e0d1;color:#26201a}
+.week10-note{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65}
+.week10-practice fieldset{border:1px solid #dfd2c0;border-radius:7px;padding:12px;margin:12px 0}
+.week10-practice legend{font-weight:500}
+.week10-practice label{display:block;padding:6px 0}
+.week10-next[hidden],.week10-locked-route[hidden]{display:none!important}
+.week10-next{text-align:center;background:#f2f9f1;border:1px solid #9dc7ab;border-radius:7px;padding:18px;margin:18px 0}
+.week10-next a{background:#205b48;color:#fff;display:inline-block;padding:11px 17px;border-radius:7px;text-decoration:none}
+.week10-support summary{cursor:pointer;font-weight:500}
+.week10-status{padding:10px 13px;border:1px solid #d8c9ae;border-radius:7px;background:#faf6ed}
+.week10-error{color:#9c302b}
+.week10-assessment .rubric-row{border:1px solid #ddd0bc;padding:11px;border-radius:7px;margin:8px 0}
+.week10-assessment select{padding:8px;border:1px solid #cab9a7;background:#fff;color:#222;border-radius:7px}
+.week10-index{background:#fffefa;border:1px solid #d7c8b1;border-radius:7px;padding:18px;max-width:1100px;margin:20px auto}
+.week10-index a{color:#285b83}
+.week10-index li{padding:5px 0}
+.week10-index [data-week10-daily-status]{font-size:13px;margin-left:12px;color:#555}
+@media(max-width:850px){.week10-lesson .lesson-grid,.week10-studio-grid,.week10-spiral-grid{grid-template-columns:1fr}.week10-lesson .pathway-grid{grid-template-columns:1fr}}
+@media print{.week10-actions button,.week10-next,.daily-nav{display:none!important}}
+
+/* Epic Heroes: timing guidance, two-text evidence and non-punitive accommodations */
+.week10-lesson .text-passage{line-height:1.7}
+.week10-lesson .lesson-head{padding:12px 0}
+.week10-lesson .media-note{color:#655b4d;font-size:13px}
+.week10-lesson .compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week10-assessment .week10-evidence-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week10-assessment input[type=text],.week10-assessment select{border:1px solid #c6b9a7;border-radius:7px;background:#fff;color:#222;padding:8px;max-width:100%}
+.week10-timer{border:1px solid #d6c6ab;padding:12px 15px;border-radius:7px;margin:12px 0;background:#faf7ef}
+.week10-timer-output{font-variant-numeric:tabular-nums;font-size:20px;font-weight:500}
+.week10-locked-warning{font-size:13px;color:#805d25}
+.week10-independent-note{border-left:3px solid #9b875f;padding:12px;background:#faf5e9;margin:12px 0}
+.week10-review-feedback{white-space:pre-wrap;line-height:1.65}
+@media(max-width:800px){.week10-lesson .compare-grid,.week10-assessment .week10-evidence-fields{grid-template-columns:1fr}}
+@media print{.week10-timer{display:none}}
+
+.week10-context-pill{border:1px solid #cdb89b;padding:6px 9px;border-radius:7px;font-size:13px;background:#fbf8f1}
+.week10-assessment .week10-map-entry{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.week10-assessment .week10-map-entry textarea{min-height:100px}
+.week10-assessment label{display:block;margin:10px 0 5px}
+.week10-assessment textarea{box-sizing:border-box;width:100%;min-height:155px}
+.week10-assessment input[type=text],.week10-assessment select{border:1px solid #c6b9a7;border-radius:7px;background:#fff;color:#222;padding:8px;max-width:100%}
+.week10-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.week10-lesson .compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.week10-lesson .text-passage{padding:15px;line-height:1.72}
+.week10-assessment .daily-subheading{font-size:18px;font-weight:400;margin-top:20px}
+.week10-integrity-note{padding:12px;background:#faf6e9;border-left:3px solid #ae8a54;border-radius:0 7px 7px 0}
+.week10-next[hidden],.week10-next-link[hidden]{display:none!important}
+@media(max-width:850px){.week10-evidence-grid,.week10-lesson .compare-grid,.week10-assessment .week10-map-entry{grid-template-columns:1fr}}
+
+/* Week 7 original fiction craft studios */
+.week10-lesson .text-passage{max-width:100%;line-height:1.75}
+.week10-lesson .flow-step{min-width:0}
+.week10-lesson .lesson-grid{align-items:start}
+.week10-assessment .week10-writing-area{min-height:210px}
+.week10-assessment #week10-analytical-response,.week10-assessment #week10-scene-draft,.week10-assessment #week10-scene-final{min-height:320px}
+.week10-assessment input[type=text],.week10-assessment select{border:1px solid #c6b9a7;border-radius:7px;background:#fff;color:#222;padding:8px;max-width:100%}
+.week10-assessment :is(textarea,input,select):focus-visible{outline:2px solid #285b83;outline-offset:2px}
+.week10-craft-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.week10-next[hidden],.week10-next-link[hidden]{display:none!important}
+.week10-local-boundary{padding:12px;background:#faf6e9;border-left:3px solid #b29c69}
+.week10-feedback{white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:850px){.week10-craft-grid{grid-template-columns:1fr}}
+
+/* Week 10 narrator information design & structural revision */
+.week10-lesson .text-passage{line-height:1.75}
+.week10-access-grid,.week10-craft-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week10-assessment textarea{width:100%;box-sizing:border-box;line-height:1.65;min-height:155px}
+.week10-assessment #week10-analysis-draft,.week10-assessment #week10-analysis-final,.week10-assessment #week10-perspective-draft,.week10-assessment #week10-perspective-final{min-height:275px}
+.week10-assessment label{display:block;margin:11px 0 5px}
+.week10-assessment select,.week10-assessment input[type=text]{border:1px solid #c6b9a7;background:#fff;color:#222;border-radius:7px;padding:8px;max-width:100%}
+.week10-integrity-notice{border-left:3px solid #a48b55;padding:12px;background:#faf6e9}
+.week10-next[hidden],.week10-next-link[hidden]{display:none!important}
+@media(max-width:850px){.week10-access-grid,.week10-craft-grid{grid-template-columns:1fr}}
+
+/* Week 10 personal narrative studio and six-annotation portfolio */
+.week10-assessment textarea{box-sizing:border-box;width:100%;min-height:165px;line-height:1.65}
+.week10-assessment #week10-story-draft,.week10-assessment #week10-story-final{min-height:360px}
+.week10-assessment label{display:block;margin:11px 0 5px}
+.week10-assessment select,.week10-assessment input[type=text]{background:#fff;color:#221f19;border:1px solid #c4b5a1;border-radius:7px;padding:8px;max-width:100%}
+.week10-annotations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week10-annotations textarea{min-height:115px}
+.week10-study-intro{line-height:1.7}
+.week10-local-note{border-left:3px solid #a89064;background:#faf6ec;padding:12px}
+.week10-next[hidden],.week10-next-link[hidden]{display:none!important}
+@media(max-width:800px){.week10-annotations{grid-template-columns:1fr}}
+
+.week10-lesson .text-passage{line-height:1.8}
+.week10-poem{font-family:Georgia,serif;white-space:pre-wrap;line-height:1.9}
+.week10-poetry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week10-poetry-grid textarea{min-height:170px}
+.week10-assessment label,.week10-studio label{display:block;margin-top:12px}
+.week10-assessment textarea{width:100%;box-sizing:border-box;min-height:145px}
+.week10-assessment #week10-analysis,.week10-assessment #week10-poem1-final,.week10-assessment #week10-poem2-final{min-height:300px}
+.week10-assessment select,.week10-assessment input[type=text]{background:#fff;border:1px solid #c7baa4;border-radius:7px;color:#222;padding:8px}
+.week10-boundary{background:#faf6ec;border-left:3px solid #9f8454;padding:12px}
+.week10-next[hidden],[data-week10-next-link][hidden]{display:none!important}
+@media(max-width:740px){.week10-poetry-grid{grid-template-columns:1fr}}
