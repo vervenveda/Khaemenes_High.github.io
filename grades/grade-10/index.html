@@ -1,124 +1,115 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Khaemenes High Grade 10 learning portal with grade-year courses and a placement-based mathematics pathway.">
-<meta name="theme-color" content="#f4f0e7">
+<meta name="theme-color" content="#102b43">
+<meta name="color-scheme" content="light">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()">
-<title>Khaemenes High · Grade 10 Learning Portal</title>
-<style>
-:root{--page:#ece9e2;--page2:#f7f4ed;--paper:#fffefa;--ink:#101315;--muted:#586166;--navy:#17344a;--blue:#426f91;--green:#4f7657;--gold:#a67b35;--line:#c9c4b9;--line2:#aeb8bc;--shadow:0 16px 38px rgba(22,42,54,.10);--soft:0 8px 20px rgba(22,42,54,.07);--r:7px;--r2:11px;--max:1180px;--formal:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:"Brandon Grotesque","Avenir Next","Segoe UI",Arial,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:300px;overflow-x:hidden;color:var(--ink);background:radial-gradient(circle at 14% 0,rgba(66,111,145,.10),transparent 28rem),radial-gradient(circle at 86% 0,rgba(166,123,53,.09),transparent 28rem),var(--page);font:400 17px/1.68 var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.wrap{width:min(calc(100% - 34px),var(--max));margin-inline:auto}.skip{position:fixed;left:12px;top:-80px;z-index:5000;padding:10px 14px;border-radius:var(--r);color:#fff;background:#111}.skip:focus{top:12px}
-.site-header{position:sticky;top:0;z-index:1200;border-top:4px solid var(--gold);border-bottom:1px solid var(--line);background:rgba(255,254,250,.95);backdrop-filter:blur(14px)}.header-inner{min-height:74px;display:grid;grid-template-columns:minmax(240px,1fr) auto;align-items:center;gap:18px;padding-block:9px}.brand{min-width:0;display:flex;align-items:center;gap:12px}.brand-mark{width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;border:1px solid var(--ink);border-radius:var(--r);color:#fff;background:var(--ink);font:500 16px/1 var(--formal)}.brand-copy{display:grid;line-height:1.15}.brand-copy strong{font:500 14px/1.2 var(--formal);letter-spacing:.08em}.brand-copy small{margin-top:4px;color:var(--muted);font-size:10px;letter-spacing:.06em;text-transform:uppercase}.header-nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px}.header-nav a{min-height:40px;display:inline-flex;align-items:center;padding:8px 10px;border:1px solid transparent;border-radius:var(--r);font-size:11px}.header-nav a:hover{border-color:var(--line2);background:var(--page2)}
-.hero{padding:clamp(72px,9vw,112px) 0 68px;text-align:center;border-bottom:1px solid var(--line);background:linear-gradient(rgba(255,254,250,.93),rgba(247,244,237,.96)),repeating-linear-gradient(0deg,transparent 0 39px,rgba(16,19,21,.035) 40px)}.eyebrow{margin:0 0 14px;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}h1,h2,h3{margin-top:0;font-family:var(--formal);font-weight:444;text-wrap:balance}h1{max-width:1000px;margin:0 auto 20px;font-size:clamp(48px,7vw,82px);line-height:.98}.lead{max-width:870px;margin:0 auto;color:var(--muted);font-size:clamp(17px,2vw,21px)}.hero-actions,.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:9px 14px;border:1px solid var(--line2);border-radius:var(--r);color:var(--ink);background:var(--paper);font-size:12px;font-weight:650}.btn:hover{border-color:var(--navy);transform:translateY(-1px)}.btn.primary{color:#fff;border-color:var(--navy);background:var(--navy)}.btn.gold{color:#17120a;border-color:var(--gold);background:#dbc08a}.btn[disabled]{opacity:.55;cursor:not-allowed;transform:none}
-main{padding:54px 0 82px}.intro{max-width:880px;margin:0 auto 34px;text-align:center}.intro h2{margin-bottom:10px;font-size:clamp(32px,5vw,50px)}.intro p{margin:0;color:var(--muted)}.course-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{min-width:0;min-height:300px;display:flex;flex-direction:column;padding:24px;border:1px solid var(--line);border-radius:var(--r2);background:var(--paper);box-shadow:var(--soft)}.card.math{border-top:5px solid var(--blue)}.card.ela{border-top:5px solid #725f82}.card.social{border-top:5px solid #96594e}.card.science{border-top:5px solid #4f7f7a}.pill{align-self:flex-start;display:inline-flex;align-items:center;padding:5px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:var(--page2);font-size:10px;letter-spacing:.06em;text-transform:uppercase}.pill.good{color:var(--green)}.pill.placement{color:var(--blue);border-color:rgba(66,111,145,.35);background:rgba(66,111,145,.07)}.card h2{margin:16px 0 10px;font-size:clamp(26px,3vw,36px)}.card p{margin:0;color:var(--muted)}.card .actions{justify-content:flex-start;margin-top:auto;padding-top:22px}.notice{max-width:980px;margin:34px auto 0;padding:17px 19px;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:var(--r);background:#fff9eb;color:#66502b}.notice strong{color:#3d3425}.footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);background:var(--page2);text-align:center;font-size:12px}
-@media(max-width:780px){.header-inner{grid-template-columns:1fr}.brand{justify-content:center}.header-nav{justify-content:center}.course-grid{grid-template-columns:1fr}.card{min-height:0}}@media(max-width:560px){.wrap{width:min(calc(100% - 22px),var(--max))}.header-nav a,.hero-actions .btn,.card .actions .btn{width:100%}.card{padding:20px}}@media print{.site-header,.hero-actions,.actions{display:none!important}body{background:#fff}.card{box-shadow:none;break-inside:avoid}}
-</style>
+<meta name="description" content="Khaemenes Academy High School Grade 10 learning portal — courses, support, student pathways, and Academy resources.">
+<title>Khaemenes Academy · High School · Grade 10</title>
 <link rel="stylesheet" href="../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
-<style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
-}
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-}
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
-}
-@media print {
-  html:root:root body { font-size: 14px !important; }
-}
-</style>
+<link rel="stylesheet" href="../../assets/khaemenes-grade-landing-v1.css">
 </head>
-<body>
+<body id="top">
 <a class="skip" href="#main">Skip to main content</a>
+<div class="ribbon"><strong>Khaemenes Academy</strong><span>High School</span><span>Grade 10</span><a href="https://vervenveda.com/Khaemenes_Academy.github.io/" rel="noopener">Academy Home</a></div>
 <header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="../../"><span class="brand-mark">X</span><span class="brand-copy"><strong>KHAEMENES HIGH</strong><small>Grade 10 Learning Portal</small></span></a>
-    <nav class="header-nav" aria-label="Grade 10 navigation"><a href="../../">High School</a><a href="../../courses/">Course Directory</a><a href="../../courses/mathematics/">Mathematics Hall</a></nav>
+  <div class="shell header-inner">
+    <a class="brand" href="../../"><span class="seal">X</span><span class="brand-copy"><strong>Khaemenes Academy</strong><small>High School · Grade 10</small></span></a>
+    <nav class="navlinks" aria-label="Grade 10 navigation">
+      <a href="../../">High School</a><a href="../../courses/">Courses</a><a href="../../courses/mathematics/">Mathematics</a><a href="../../mentor/?stage=high&amp;subject=general&amp;course=grade-10">Mentor</a>
+    </nav>
+    <div class="head-actions"><a class="head-btn primary" href="#courses">Open Courses</a></div>
   </div>
 </header>
+<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/" rel="noopener">Khaemenes Academy</a><span>›</span><a href="../../">High School</a><span>›</span><strong>Grade 10</strong></nav>
 <section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Khaemenes Academy · High School · Grade 10</p>
-    <h1>Grade 10 Learning Portal</h1>
-    <p class="lead">Your Grade 10 home keeps the year together while each subject follows its own academic pathway. Mathematics is placement-based: the learner enters the mathematics course supported by readiness and mastery evidence rather than by grade ownership.</p>
-    <div class="hero-actions"><a class="btn primary" href="../../courses/mathematics/">Open Mathematics Hall</a><a class="btn" href="../../courses/">All High School Courses</a></div>
+  <div class="shell hero-inner">
+    <p class="eyebrow">Grade 10 Learning Portal</p>
+    <h1>Khaemenes Academy</h1>
+    <h2 class="grade-title">High School · Grade 10</h2>
+    <p class="hero-lead">Your Grade 10 home keeps the year together while each subject follows its own academic pathway. Mathematics remains placement-based: learners enter the course supported by readiness, prerequisite evidence, and mastery.</p>
+    <div class="hero-actions"><a class="btn primary" href="#courses">Open Grade 10 Courses</a><a class="btn gold" href="../../courses/mathematics/">Mathematics Hall</a><a class="btn" href="../../">High School Home</a></div>
   </div>
 </section>
 <main id="main">
-  <div class="wrap">
-    <div class="intro"><p class="eyebrow">Your academic pathways</p><h2>Choose the course you are actually studying.</h2><p>Grade 10 describes the learner's yearly campus context. It does not assign ownership of a mathematics course.</p></div>
-    <div class="course-grid">
-      <article class="card math">
-        <span class="pill placement">Placement-based</span>
-        <h2>Mathematics Pathway</h2>
-        <p>Your mathematics course is determined by readiness and demonstrated mastery. Pre-Algebra, Algebra I, Geometry, Algebra II, and later mathematics remain course names—not grade labels. If Algebra I is the current placement, begin with its readiness assessment before normal Unit 01 progression.</p>
-        <div class="actions"><a class="btn primary" href="../../courses/mathematics/">Mathematics Hall</a><a class="btn" href="../../courses/mathematics/algebra-1/">Algebra I</a><a class="btn" href="../../courses/mathematics/algebra-1/diagnostic/">Algebra I Readiness Assessment</a></div>
+<section class="section">
+  <div class="shell">
+    <div class="heading"><p class="kicker">Grade 10 Front Desk</p><h2>A focused sophomore portal with clear academic pathways.</h2><p>Start from the doorway that matches what you need today. The grade page keeps navigation simple while each course remains responsible for its own learning and mastery records.</p></div>
+    <div class="front-grid"><article class="front-card" style="--accent:#315f86">
+        <span class="front-mark">C</span>
+        <h3>Course Directory</h3>
+        
+        <p>See the full High School catalog and move into the active course without changing placement authority.</p>
+        <a class="btn primary" href="../../courses/">Open Course Directory</a>
       </article>
-      <article class="card ela">
-        <span class="pill good">Live course</span>
-        <h2>English 10</h2>
-        <p>Grade 10 language arts course portal and weekly reading pathway.</p>
+<article class="front-card" style="--accent:#4f7f7a">
+        <span class="front-mark">M</span>
+        <h3>Mathematics Hall</h3>
+        
+        <p>Enter the mathematics pathway through readiness and demonstrated mastery rather than the Grade 10 label.</p>
+        <a class="btn" href="../../courses/mathematics/">Open Mathematics Hall</a>
+      </article>
+<article class="front-card" style="--accent:#96594e">
+        <span class="front-mark">S</span>
+        <h3>Student Portal</h3>
+        
+        <p>Return to the High School student area for learner tools, course access, records, and daily navigation.</p>
+        <a class="btn" href="../../#student-portal">Open Student Portal</a>
+      </article></div>
+  </div>
+</section>
+<section class="section paper" id="courses">
+  <div class="shell">
+    <div class="heading"><p class="kicker">Core Learning</p><h2>Choose the course you are actually studying.</h2><p>Mathematics remains placement-based. Grade level describes the learner's yearly campus context; readiness, prerequisite evidence, and demonstrated mastery determine the mathematics pathway.</p></div>
+    <div class="course-grid"><article class="course-card" style="--accent:#315f86">
+        <span class="status">Placement based</span>
+        <h3>Mathematics Pathway</h3>
+        <p>Pre-Algebra, Algebra I, Geometry, Algebra II, and later mathematics remain course names—not grade labels.</p>
+        <div class="actions"><a class="btn primary" href="../../courses/mathematics/">Mathematics Hall</a><a class="btn" href="../../courses/mathematics/algebra-1/">Algebra I</a><a class="btn" href="../../courses/mathematics/algebra-1/diagnostic/">Algebra I Readiness</a></div>
+      </article>
+<article class="course-card" style="--accent:#725f82">
+        <span class="status">Live course</span>
+        <h3>English 10</h3>
+        <p>Grade 10 language arts, reading, writing, research, discussion, revision, and portfolio evidence.</p>
         <div class="actions"><a class="btn" href="../../courses/language-arts/english-10/">Open English 10</a></div>
       </article>
-      <article class="card social">
-        <span class="pill good">Live course</span>
-        <h2>Grade 10 Social Studies</h2>
-        <p>Comprehensive Grade 10 social studies curriculum, source analysis, civics, history, geography, and records.</p>
-        <div class="actions"><a class="btn" href="../../courses/social-studies/grade-10/">Open Social Studies</a></div>
-      </article>
-      <article class="card science">
-        <span class="pill">Live · 36 weeks</span>
-        <h2>Biology 10</h2>
-        <p>A complete 36-week Biology and Biotechnology pathway with 180 instructional blocks, quantitative reasoning, inquiry/lab work, CER, corrections, and portfolio evidence.</p>
+<article class="course-card" style="--accent:#4f7f7a">
+        <span class="status">Live · 36 weeks</span>
+        <h3>Biology 10</h3>
+        <p>Biology and Biotechnology with 180 instructional blocks, quantitative reasoning, inquiry/lab work, CER, corrections, and portfolio evidence.</p>
         <div class="actions"><a class="btn" href="../../courses/science/biology-10/">Open Biology 10</a></div>
       </article>
-    </div>
-    <p class="notice"><strong>Mathematics placement rule:</strong> Grade 09, Grade 10, Grade 11, and Grade 12 describe student-year context. They do not rename or own mathematics courses. Readiness, prerequisite evidence, and mastery determine the learner's mathematics pathway.</p>
+<article class="course-card" style="--accent:#96594e">
+        <span class="status">Live course</span>
+        <h3>Social Studies 10</h3>
+        <p>Source analysis, civics, history, geography, economics, and disciplined evidence-based reasoning.</p>
+        <div class="actions"><a class="btn" href="../../courses/social-studies/grade-10/">Open Social Studies</a></div>
+      </article></div>
+    <aside class="note"><strong>Mathematics placement rule:</strong> Grade 09, 10, 11, and 12 describe student-year context. They do not rename or own mathematics courses. Readiness, prerequisite evidence, and mastery determine the learner's mathematics pathway.</aside>
   </div>
+</section>
+<section class="section dark" id="support">
+  <div class="shell">
+    <div class="heading"><p class="kicker">Student Support</p><h2>Clear doors for help, records, and next steps.</h2><p>Use these routes when you need planning, course navigation, progress records, or Academy support.</p></div>
+    <div class="support-grid"><article class="support-card">
+        <h3>Mentor Support</h3><p>Ask for planning, study direction, course navigation, or help deciding what to do next.</p>
+        <a class="btn" href="../../mentor/?stage=high&subject=general&course=grade-10&source=grades%2Fgrade-10%2F">Ask Mentor</a>
+      </article>
+<article class="support-card">
+        <h3>Course Directory</h3><p>Browse all High School courses without changing the learner's formal placement or mastery record.</p>
+        <a class="btn" href="../../courses/">Open Course Directory</a>
+      </article>
+<article class="support-card">
+        <h3>High School Home</h3><p>Return to the High School campus for grade pathways, resources, student tools, and Academy services.</p>
+        <a class="btn" href="../../">Return to High School</a>
+      </article></div>
+  </div>
+</section>
 </main>
-<footer class="footer"><div class="wrap">Khaemenes High · Grade 10 Learning Portal · Mathematics placement remains independent of grade ownership.</div></footer>
+<footer class="footer"><strong>Khaemenes Academy · High School · Grade 10</strong><br>Centered learning pathways · readable course access · mastery remains course-authoritative</footer>
+
 </body>
 </html>
