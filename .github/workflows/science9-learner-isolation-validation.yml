@@ -17,6 +17,7 @@ on:
       - 'courses/science/integrated-science-9/units/unit-12/**'
       - 'courses/science/integrated-science-9/diagnostic/**'
       - 'courses/science/integrated-science-9/tools/check-science9-course-qa.mjs'
+      - 'courses/science/integrated-science-9/tools/audit-science9-question-banks.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit10-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit09-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit08-records.mjs'
@@ -44,6 +45,7 @@ on:
       - 'courses/science/integrated-science-9/units/unit-12/**'
       - 'courses/science/integrated-science-9/diagnostic/**'
       - 'courses/science/integrated-science-9/tools/check-science9-course-qa.mjs'
+      - 'courses/science/integrated-science-9/tools/audit-science9-question-banks.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit10-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit09-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit08-records.mjs'
@@ -103,5 +105,7 @@ jobs:
         run: node courses/science/integrated-science-9/tools/check-science9-course-qa.mjs
       - name: Audit Science 9 local resource references
         run: node courses/science/integrated-science-9/tools/audit-local-resource-links.mjs
+      - name: Audit science assessment answer-bank structure
+        run: node courses/science/integrated-science-9/tools/audit-science9-question-banks.mjs
       - name: Verify science runtime syntax
         run: node courses/science/integrated-science-9/tools/validate-course-runtime.mjs
