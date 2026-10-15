@@ -58,7 +58,7 @@ for(let day=16;day<=20;day++){
 assert.match(generic,/a newer record exists in another tab/);
 assert.match(generic,/quiz\.best>=80/);
 assert.match(generic,/r\.score===sum/);
-assert.match(exam,/score>=8/);
+assert.match(exam,/total>=8/);
 assert.match(exam,/if\(!consistent\(\)\|\|W\.frozen/);
 assert.match(exam,/submission\.hashes/);
 console.log("PASS English 9 Week 04: 5 pages, 20 formative questions, preserved original lesson fields, source passages, unique nav, rubric and route regression.");
