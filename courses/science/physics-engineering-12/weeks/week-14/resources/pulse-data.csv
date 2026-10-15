@@ -1,0 +1,12 @@
+# SYNTHETIC ideal net force pulses. Rectangle: peak=impulse/duration. Symmetric triangle: peak=2*impulse/duration. Identical signed areas can have unequal peaks. NOT safety data.
+Case,Net_Impulse_N_s,Duration_s,Assumed_Shape,Mean_Net_Force_N,Signed_Peak_Force_N,Peak_Force_Magnitude_N,Calculated_Impulse_Area_N_s
+rect_short,-12,0.2,rectangle,-60,-60,60,-12
+rect_long,-12,0.6,rectangle,-20,-20,20,-12
+rect_standard,-12,0.4,rectangle,-30,-30,30,-12
+triangle_standard,-12,0.4,triangle,-30,-60,60,-12
+triangle_long,-12,0.6,triangle,-20,-40,40,-12
+negative_rebound,-8,0.8,rectangle,-10,-10,10,-8
+negative_triangle,-8,0.8,triangle,-10,-20,20,-8
+positive_rect,6,0.3,rectangle,20,20,20,6
+positive_triangle,6,0.3,triangle,20,40,40,6
+zero_impulse,0,1,rectangle,0,0,0,0

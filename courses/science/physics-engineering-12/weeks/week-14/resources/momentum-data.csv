@@ -1,0 +1,12 @@
+# SYNTHETIC one-dimensional, constant-mass models. Right positive. Impulse J=m*(vf-vi), equivalent mean net force J/t. No measured collision data.
+Case,Mass_kg,Initial_Velocity_m_per_s,Final_Velocity_m_per_s,Duration_s,Initial_Momentum_kg_m_per_s,Final_Momentum_kg_m_per_s,Impulse_N_s,Average_Net_Force_N
+rebound_short,2,3,-1,0.2,6,-2,-8,-40
+rebound_long,2,3,-1,0.8,6,-2,-8,-10
+stop_short,1.5,4,0,0.2,6,0,-6,-30
+stop_long,1.5,4,0,0.6,6,0,-6,-10
+left_to_right,4,-2,1,0.4,-8,4,12,30
+speed_up,3,1,5,0.6,3,15,12,20
+stop_heavier,5,2,0,0.5,10,0,-10,-20
+reverse_left,2,-4,4,0.8,-8,8,16,20
+unchanged_velocity,4,3,3,0.5,12,12,0,0
+negative_impulse,6,1,-1,0.6,6,-6,-12,-20
