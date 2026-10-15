@@ -25,6 +25,19 @@
       try { sessionStorage.setItem(ACTIVE_LEARNER_KEY,cleaned); location.reload(); }
       catch { window.alert("Session storage unavailable; no record was changed."); }
     });
+    const contract=window.KhaemenesCourseEntryContract;
+    const academy=contract?.readAcademyProfile?.();
+    if(academy){
+      const rawId=String(academy.learnerId||"");
+      const canonical=rawId.toLowerCase();
+      const compatible=/^[a-z0-9_-]{3,32}$/.test(canonical);
+      if(learnerId() && (!compatible || canonical!==learnerId())){
+        status.textContent="Identity mismatch: Academy profile and Science 9 selection differ. Progress editing is disabled until the identities are reconciled; existing records are preserved.";
+        recordConflict=true;
+      }else if(!learnerId()){
+        status.textContent="Academy learner active, but Science 9 has no selected learner. Choose the matching learner identifier; no records will be transferred automatically.";
+      }
+    }
     banner.append(status,button);target.prepend(banner);
     if(!learnerId()){
       for(const id of ["pathwaySelect","importProgress","progressFile","resetProgress","confirmReset"]){
