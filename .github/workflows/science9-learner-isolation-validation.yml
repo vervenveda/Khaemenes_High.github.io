@@ -43,5 +43,7 @@ jobs:
         run: node courses/science/integrated-science-9/tools/check-unit03-scope.mjs
       - name: Verify cross-unit records and dashboard
         run: node courses/science/integrated-science-9/tools/check-cross-unit-records.mjs
+      - name: Verify competing-tab record safeguards
+        run: node courses/science/integrated-science-9/tools/check-concurrent-records.mjs
       - name: Verify science runtime syntax
         run: node courses/science/integrated-science-9/tools/validate-course-runtime.mjs
