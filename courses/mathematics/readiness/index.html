@@ -115,5 +115,6 @@ $("startButton").onclick=()=>{learner=$("learnerName").value.trim();if(!learner)
 try{const previous=JSON.parse(localStorage.getItem(STORAGE_KEY));if(previous?.recommendedCourse?.label){result=previous;learner=previous.learnerName||"";renderResult()}}catch{}
 })();
 </script>
+<script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script>
 </body>
 </html>

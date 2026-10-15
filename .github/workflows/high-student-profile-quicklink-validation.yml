@@ -1,0 +1,36 @@
+name: High School Student Profile Quick Link Validation
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'index.html'
+      - 'grades/**/index.html'
+      - 'courses/**/index.html'
+      - 'assets/vnv-beta-link.js'
+      - 'tools/validate-student-profile-quicklink.mjs'
+      - '.github/workflows/high-student-profile-quicklink-validation.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'grades/**/index.html'
+      - 'courses/**/index.html'
+      - 'assets/vnv-beta-link.js'
+      - 'tools/validate-student-profile-quicklink.mjs'
+      - '.github/workflows/high-student-profile-quicklink-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Syntax check widget
+        run: node --check assets/vnv-beta-link.js
+      - name: Validate profile quick-link coverage
+        run: node tools/validate-student-profile-quicklink.mjs
