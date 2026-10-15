@@ -1,0 +1,36 @@
+
+/* Khaemenes Academy English 9 · Week 02 · supplementary daily layout */
+.week2-lesson{margin:16px 0}
+.week2-lesson>.section-alt,.week2-lesson>section{display:block!important}
+.week2-lesson .wrap{max-width:none;margin:0;padding:0}
+.week2-lesson .lesson-detail,.week2-lesson .flow-step,.week2-lesson .micro-lab,.week2-lesson .lesson-panel,.week2-lesson .pathway,.week2-lesson .quote-model,.daily-support-text{
+ background:#fffefa;color:#211f1b;border:1px solid #d9cfc0;border-radius:7px;padding:16px;margin:12px 0
+}
+.week2-lesson .lesson-detail{background:transparent;border:none;padding:0}
+.week2-lesson .lesson-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(230px,.85fr);gap:17px}
+.week2-lesson .lesson-head{padding:12px 0}
+.week2-lesson .lesson-meta{display:flex;gap:7px;flex-wrap:wrap}
+.week2-lesson .tag{border:1px solid #c9b998;border-radius:7px;padding:4px 8px;font-size:13px}
+.week2-lesson h2,.daily-lab h2{font:400 24px/1.35 Cinzel,Georgia,serif;overflow-wrap:break-word}
+.week2-lesson h3{font-size:19px;font-weight:500}
+.week2-lesson .lesson-panel iframe{max-width:100%;width:100%;aspect-ratio:16/9;border:0;border-radius:7px}
+.week2-lesson .lesson-response textarea{width:100%;min-height:170px}
+.week2-lesson .lesson-response label{display:block;margin:10px 0}
+.week2-lesson .pathway-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.week2-lesson .pathway{margin:0}
+.week2-lesson .table-wrap{overflow:auto}
+.week2-lesson table{width:100%;border-collapse:collapse}
+.week2-lesson :is(th,td){border:1px solid #d9cfc0;padding:9px;text-align:left;vertical-align:top}
+.week2-lesson .media-note{font-size:14px;color:#655b4d}
+.week2-lesson a{overflow-wrap:anywhere}
+.daily-lab{border:1px solid #d9cfc0;background:#fffefa;border-radius:7px;padding:17px;margin:18px 0}
+.daily-lab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.daily-lab-grid label{display:block;margin:8px 0;font-weight:500}
+.daily-lab textarea{min-height:120px}
+#week2-lab-preview{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}
+.daily-support-text{padding:18px}
+.daily-support-text summary{font-size:18px}
+.daily-notice strong{color:#5b3a14}
+@media(max-width:850px){.week2-lesson .lesson-grid{grid-template-columns:1fr}.week2-lesson .pathway-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.daily-lab-grid{grid-template-columns:1fr}}
+@media print{.daily-lab .daily-actions,.daily-nav{display:none!important}.week2-lesson .lesson-panel iframe{display:none}}

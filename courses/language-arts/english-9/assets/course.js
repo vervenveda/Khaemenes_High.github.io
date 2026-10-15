@@ -106,7 +106,7 @@
   updateProgress();
 
   document.querySelectorAll("[data-save-field]").forEach(field=>{
-    if(field.dataset.managedSave==="week1")return;
+    if(field.dataset.managedSave==="week1"||field.dataset.managedSave==="week2")return;
     const key=scopedKey(`khae-ela9-field:${field.dataset.saveField}`);
     try{field.value=localStorage.getItem(key)||""}catch{}
     field.addEventListener("input",()=>{try{localStorage.setItem(key,field.value)}catch{}});

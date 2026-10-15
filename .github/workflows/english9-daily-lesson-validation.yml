@@ -23,3 +23,4 @@ jobs:
         run: |
           node courses/language-arts/english-9/tests/daily-lesson-regression.mjs
           node courses/language-arts/english-9/tests/daily-lesson-behavior.mjs
+          node courses/language-arts/english-9/tests/week02-daily-regression.mjs
