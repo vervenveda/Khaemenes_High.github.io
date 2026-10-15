@@ -26,7 +26,7 @@ const ASSESSMENT_QUESTIONS=[
 {id:"a24",domain:"Safety & design",prompt:"During planning, an investigator discovers a hazard that cannot be reasonably controlled with available equipment or supervision. What should happen?",options:["Continue because data are important.","Remove the hazard from the written record.","Revise, replace, or postpone the method before collecting data.","Use fewer trials and proceed anyway."],answer:2,explanation:"Scientific value does not justify an uncontrolled hazard; the method must be made acceptably safe before data collection."}
 ];
 (() => {
- const QUESTIONS=ASSESSMENT_QUESTIONS, FIELD="assessment", TOTAL=QUESTIONS.length, PASSING=Math.ceil(TOTAL*0.80), KEY="khaemenes_science_u01_v1";
+ const QUESTIONS=ASSESSMENT_QUESTIONS, FIELD="assessment", TOTAL=QUESTIONS.length, PASSING=Math.ceil(TOTAL*0.80), KEY=window.KhaemenesScienceU01Scope.key()||"kh_sci9_u01_unselected_v1";
  let answers=new Array(TOTAL).fill(null),current=0;
  const $=(s,p=document)=>p.querySelector(s);
  function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch{return {}}}
