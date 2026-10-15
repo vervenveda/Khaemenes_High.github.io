@@ -1,0 +1,27 @@
+name: Science 9 learner isolation validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/integrated-science-9/units/unit-04/**'
+      - 'courses/science/integrated-science-9/tools/test-unit04-learner-scope.mjs'
+      - '.github/workflows/science9-learner-isolation-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/science/integrated-science-9/units/unit-04/**'
+      - 'courses/science/integrated-science-9/tools/test-unit04-learner-scope.mjs'
+      - '.github/workflows/science9-learner-isolation-validation.yml'
+permissions:
+  contents: read
+jobs:
+  learner-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify learner isolation and mastery
+        run: node courses/science/integrated-science-9/tools/test-unit04-learner-scope.mjs
+      - name: Verify science runtime syntax
+        run: node courses/science/integrated-science-9/tools/validate-course-runtime.mjs
