@@ -1,6 +1,61 @@
+/* Science 9 Unit 03 learner isolation pilot. No legacy records are moved or deleted. */
+(function(){
+  "use strict";
+  const ACTIVE="kh_sci9_u04_active_learner_v1",PREFIX="kh_sci9_u03_learner_v1:";
+  const ORIGINAL="khaemenes_science_u03_v1";
+  const safeId=v=>typeof v==="string"&&/^[a-z0-9_-]{3,32}$/i.test(v)?v.toLowerCase():null;
+  function active(){try{return safeId(sessionStorage.getItem(ACTIVE))}catch{return null}}
+  function key(){const id=active();return id?PREFIX+id+":"+ORIGINAL:null}
+  function choose(){
+    const raw=window.prompt("Science 9 Unit 03: enter a learner ID (3–32 letters, numbers, - or _). Use the same ID on this device to resume. Existing shared-browser records stay preserved separately.","");
+    if(raw===null)return false;
+    const id=safeId(raw.trim());if(!id){window.alert("Invalid learner ID; no record was changed.");return false}
+    try{sessionStorage.setItem(ACTIVE,id);window.location.reload();return true}catch{window.alert("Browser session storage is unavailable; no record was changed.");return false}
+  }
+  function recoverLegacy(){
+    const target=key();if(!target){window.alert("Select a learner first.");return false}
+    try{
+      const raw=localStorage.getItem(ORIGINAL);
+      if(!raw){window.alert("No earlier shared Unit 03 record was found on this browser.");return false}
+      if(localStorage.getItem(target)!==null){window.alert("This learner already has a record. Export that record before requesting any merge. No data was changed.");return false}
+      const parsed=JSON.parse(raw);
+      if(!parsed||typeof parsed!=="object"||Array.isArray(parsed)){window.alert("Legacy record format is invalid; nothing was changed.");return false}
+      const snapshot=new Blob([raw],{type:"application/json"});
+      const url=URL.createObjectURL(snapshot),a=document.createElement("a");
+      a.href=url;a.download="KH-SCI9-U03-legacy-backup.json";a.click();
+      setTimeout(()=>URL.revokeObjectURL(url),30000);
+      if(!window.confirm("A backup download was requested. Only continue if you have verified that the shared-browser record belongs to learner '"+active()+"'. Copy it to this learner? The original will remain untouched."))return false;
+      localStorage.setItem(target,raw);window.location.reload();return true;
+    }catch(e){window.alert("Recovery was not completed. Original records remain unchanged.");return false}
+  }
+  function guard(){
+    if(active()){
+      if(!document.getElementById("scienceLearnerSwitch")){
+        const bar=document.createElement("div");bar.id="scienceLearnerSwitch";
+        bar.style.cssText="position:fixed;z-index:9998;right:8px;bottom:8px;padding:8px 12px;border:1px solid #8c826b;border-radius:7px;background:#fff;color:#181818;font:14px Arial,sans-serif";
+        const name=document.createElement("span");name.textContent="Science 9 learner: "+active()+" ";
+        const switchButton=document.createElement("button");switchButton.type="button";switchButton.textContent="Switch learner";switchButton.style.cssText="margin-left:8px;border-radius:7px;padding:6px 10px";
+        switchButton.addEventListener("click",choose);const restoreButton=document.createElement("button");restoreButton.type="button";restoreButton.textContent="Recover legacy";restoreButton.style.cssText="margin-left:8px;border-radius:7px;padding:6px 10px";restoreButton.addEventListener("click",recoverLegacy);bar.append(name,switchButton,restoreButton);document.body.append(bar);
+      }
+      return true;
+    }
+    if(document.getElementById("scienceLearnerGuard"))return false;
+    const panel=document.createElement("aside");
+    panel.id="scienceLearnerGuard";panel.setAttribute("role","alert");
+    panel.style.cssText="position:fixed;z-index:2147483647;inset:0;background:#f7f3e9;color:#181818;display:grid;place-items:center;padding:24px";
+    const inner=document.createElement("div");inner.style.cssText="max-width:580px;background:white;border:1px solid #aaa;border-radius:7px;padding:24px;text-align:center";
+    const title=document.createElement("h2");title.textContent="Choose a Science 9 learner record";
+    const msg=document.createElement("p");msg.textContent="This Unit 03 pilot keeps selected learners in separate local browser records. Earlier shared records are preserved, not assigned automatically. This is not password-protected authentication, and other units and labs are not yet isolated.";
+    const button=document.createElement("button");button.type="button";button.textContent="Select learner";button.style.cssText="border-radius:7px;padding:12px 20px;cursor:pointer";button.onclick=choose;
+    inner.append(title,msg,button);panel.append(inner);document.body.append(panel);return false;
+  }
+  window.KhaemenesScienceU03Scope={active,key,choose,guard,recoverLegacy,legacyKey:ORIGINAL};
+  document.addEventListener("DOMContentLoaded",guard);
+})();
+
 "use strict";
 (()=>{
- const KEY="khaemenes_science_u03_v1",ROOT="khaemenes_science_integrated9_v1",THEME="khaemenes_theme";
+ const KEY=window.KhaemenesScienceU03Scope.key()||"kh_sci9_u03_unselected_v1",ROOT=window.KhaemenesScienceU03Scope.active()?"kh_sci9_learner_v1:"+window.KhaemenesScienceU03Scope.active()+":khaemenes_science_integrated9_v1":"kh_sci9_u03_root_unselected_v1",THEME="khaemenes_theme";
  const REQ=["day01","day02","day03","day04","day05","day06","day07","day08","day09","day10","day11","day12","day13","day14","day15","simulator","circulation","exercise","feedback","case","quiz","assessment","verification","reflection"];
  const DEFAULT={completedPages:[],lessonEvidence:{},simulator:{complete:false},circulation:{passed:false,score:0,total:8,bestScore:0,bestPercent:0,attempts:0},exercise:{complete:false},feedback:{passed:false,score:0,total:8,bestScore:0,bestPercent:0,attempts:0},case:{submitted:false,title:""},quiz:{passed:false,score:0,total:20,bestScore:0,bestPercent:0,attempts:0},assessment:{passed:false,score:0,total:30,bestScore:0,bestPercent:0,attempts:0},verification:{complete:false,caseScore:null,caseTotal:40,cr1Score:null,cr1Total:20,cr2Score:null,cr2Total:20,reviewer:"",reviewedAt:null},reflection:{complete:false,text:""},updatedAt:null};
  const $=(s,p=document)=>p.querySelector(s),$$=(s,p=document)=>[...p.querySelectorAll(s)];
