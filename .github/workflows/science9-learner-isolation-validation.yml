@@ -101,5 +101,7 @@ jobs:
         run: node courses/science/integrated-science-9/tools/check-unit12-records.mjs
       - name: Verify cross-course readiness and capstone QA
         run: node courses/science/integrated-science-9/tools/check-science9-course-qa.mjs
+      - name: Audit Science 9 local resource references
+        run: node courses/science/integrated-science-9/tools/audit-local-resource-links.mjs
       - name: Verify science runtime syntax
         run: node courses/science/integrated-science-9/tools/validate-course-runtime.mjs
