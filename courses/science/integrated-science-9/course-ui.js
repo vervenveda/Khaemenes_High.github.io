@@ -322,6 +322,7 @@
         if (payload.schema !== "khaemenes-science-progress-v1" || payload.course !== "KH-SCI-IIS9") {
           throw new Error("This is not a valid Science 9 progress file.");
         }
+        if(recordConflict || checkRecordConflict()) return;
         const imported = payload.state || {};
         state = {
           ...DEFAULT_STATE,
@@ -342,6 +343,7 @@
 
   function resetProgress() {
     if(!learnerId()){announce("Select a learner before resetting progress.");return;}
+    if(recordConflict || checkRecordConflict()) return;
     state = { ...DEFAULT_STATE, completedUnits: [], notes: {} };
     if (recordConflict || checkRecordConflict()) return;
     localStorage.removeItem(STORAGE_KEY);
