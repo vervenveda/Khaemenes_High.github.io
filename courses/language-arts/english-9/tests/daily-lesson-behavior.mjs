@@ -22,6 +22,7 @@ function harness(day=1,values=new Map(),learner="learner-a"){
     appendChild(x){this.children.push(x);return x;}
     addEventListener(type,fn){this.handlers[type]=fn;}
     trigger(type){if(this.handlers[type])this.handlers[type]({type});}
+    dispatchEvent(event){this.trigger(event.type);return true;}
     setAttribute(k,v){this.attributes[k]=v;}
     getAttribute(k){return this.attributes[k]||null;}
     querySelectorAll(selector){return selector===".practice-feedback"?feedback:[];}
