@@ -15,11 +15,11 @@ on:
 permissions:
   contents: read
 jobs:
-  validation:
+  science-validation:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
-      - name: Verify student records, work and efficiency mathematics, datasets and page routes
+      - name: Validate lessons, physics equations, learner records and URLs
         run: node courses/science/physics-engineering-12/tools/validate-week12.mjs
-      - name: Execute work rate and efficiency lab and quiz interaction smoke tests
+      - name: Exercise browser-local labs, quizzes, games and saves
         run: node courses/science/physics-engineering-12/tools/smoke-week12.mjs
