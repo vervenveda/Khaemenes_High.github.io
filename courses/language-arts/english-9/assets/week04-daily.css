@@ -1,0 +1,54 @@
+
+/* English 9 · Week 04 individual lesson and spiral curriculum */
+.week4-lesson .wrap{max-width:none;margin:0;padding:0}
+.week4-lesson>section{display:block}
+.week4-lesson .lesson-detail{padding:0;border:0;background:transparent}
+.week4-lesson .lesson-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,.85fr);gap:15px}
+.week4-lesson .lesson-panel,.week4-lesson .flow-step,.week4-lesson .text-passage,.week4-lesson .source-card,.week4-lesson .micro-lab,.week4-lesson .pathway,.week4-lesson .lesson-response{border:1px solid #ddd0bc;border-radius:7px;padding:14px;background:#fffefa;color:#231f19;margin:8px 0}
+.week4-lesson :is(h2,h3){font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.3;overflow-wrap:break-word}
+.week4-lesson h2{font-size:24px}.week4-lesson h3{font-size:19px}
+.week4-lesson .lesson-meta{display:flex;gap:8px;flex-wrap:wrap}
+.week4-lesson .tag{border:1px solid #d4c6af;border-radius:7px;padding:4px 8px}
+.week4-lesson :is(.pathway-grid,.compare-grid){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week4-lesson .pathway-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.week4-lesson .lesson-response textarea{width:100%;min-height:170px}
+.week4-lesson :is(table,tbody,th,td){max-width:100%}
+.week4-lesson table{width:100%;border-collapse:collapse}
+.week4-lesson :is(th,td){padding:8px;border:1px solid #d4c6af;text-align:left}
+.week4-lesson a{overflow-wrap:anywhere}
+.week4-lesson .media-wrap{aspect-ratio:16/9}
+.week4-lesson iframe{width:100%;height:100%;border:0}
+.week4-spiral,.week4-studio,.week4-assessment,.week4-support{background:#fffefa;color:#241e17;border:1px solid #ddd0bc;border-radius:7px;padding:19px;margin:20px 0}
+.week4-spiral h2,.week4-studio h2,.week4-assessment h2{font:400 24px/1.35 Cinzel,Georgia,serif}
+.week4-spiral-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.week4-spiral-grid>div{padding:13px;border:1px solid #e8dccb;border-radius:7px;background:#f8f4ed}
+.week4-spiral-grid h3{font-size:17px;font-weight:500;margin:0 0 8px}
+.week4-spiral-grid p{margin:0;line-height:1.65}
+.week4-spiral a{color:#285b83}
+.week4-studio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.week4-studio-grid label,.week4-assessment label{display:block;margin:9px 0 5px}
+.week4-studio-grid textarea,.week4-assessment textarea{width:100%;box-sizing:border-box;min-height:120px;padding:10px;border:1px solid #c7b9a7;border-radius:7px;background:#fff;color:#211f1b;line-height:1.6}
+.week4-assessment textarea{min-height:180px}
+#week4-draft{min-height:320px}
+.week4-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.week4-actions button,.week4-actions a{border-radius:7px;padding:9px 14px;background:#205b48;color:#fff;cursor:pointer;border:0;text-decoration:none;line-height:1.4}
+.week4-actions button:disabled{opacity:.5;cursor:not-allowed}
+.week4-actions .secondary{background:#e7e0d1;color:#26201a}
+.week4-note{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65}
+.week4-practice fieldset{border:1px solid #dfd2c0;border-radius:7px;padding:12px;margin:12px 0}
+.week4-practice legend{font-weight:500}
+.week4-practice label{display:block;padding:6px 0}
+.week4-next[hidden],.week4-locked-route[hidden]{display:none!important}
+.week4-next{text-align:center;background:#f2f9f1;border:1px solid #9dc7ab;border-radius:7px;padding:18px;margin:18px 0}
+.week4-next a{background:#205b48;color:#fff;display:inline-block;padding:11px 17px;border-radius:7px;text-decoration:none}
+.week4-support summary{cursor:pointer;font-weight:500}
+.week4-status{padding:10px 13px;border:1px solid #d8c9ae;border-radius:7px;background:#faf6ed}
+.week4-error{color:#9c302b}
+.week4-assessment .rubric-row{border:1px solid #ddd0bc;padding:11px;border-radius:7px;margin:8px 0}
+.week4-assessment select{padding:8px;border:1px solid #cab9a7;background:#fff;color:#222;border-radius:7px}
+.week4-index{background:#fffefa;border:1px solid #d7c8b1;border-radius:7px;padding:18px;max-width:1100px;margin:20px auto}
+.week4-index a{color:#285b83}
+.week4-index li{padding:5px 0}
+.week4-index [data-week4-daily-status]{font-size:13px;margin-left:12px;color:#555}
+@media(max-width:850px){.week4-lesson .lesson-grid,.week4-studio-grid,.week4-spiral-grid{grid-template-columns:1fr}.week4-lesson .pathway-grid{grid-template-columns:1fr}}
+@media print{.week4-actions button,.week4-next,.daily-nav{display:none!important}}
