@@ -17,7 +17,7 @@ const QUIZ_QUESTIONS=[
 {id:"q15",domain:"Safety and design",prompt:"A planned investigation has a hazard that cannot be reasonably controlled with the available equipment and supervision. What should happen before data collection?",options:["Continue because completing the dataset is more important.","Hide the hazard from the record.","Revise, replace, or postpone the method until the risk can be acceptably controlled.","Collect fewer trials so exposure is shorter."],answer:2,explanation:"Scientific work does not justify an uncontrolled hazard. The design must be changed or postponed before beginning."}
 ];
 (() => {
- const QUESTIONS=QUIZ_QUESTIONS, FIELD="quiz", TOTAL=QUESTIONS.length, PASSING=Math.ceil(TOTAL*0.80), KEY="khaemenes_science_u01_v1";
+ const QUESTIONS=QUIZ_QUESTIONS, FIELD="quiz", TOTAL=QUESTIONS.length, PASSING=Math.ceil(TOTAL*0.80), KEY=window.KhaemenesScienceU01Scope.key()||"kh_sci9_u01_unselected_v1";
  let answers=new Array(TOTAL).fill(null), current=0;
  const $=(s,p=document)=>p.querySelector(s);
  function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch{return {}}}
