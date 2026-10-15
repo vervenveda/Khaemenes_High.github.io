@@ -110,5 +110,23 @@ const recordHtml=read("records/course-completion-certificate.html"),recordEngine
 
 const sw=read("service-worker.js"),legacySw="service-worker-precache-v1.js";ok(exists(legacySw),"legacy full-course precache source is preserved");ok(Number(sw.match(/khaemenes-algebra1-v(\d+)-/)?.[1])>=9,"service worker cache includes the lesson-reading release or newer");ok(sw.includes("service-worker-precache-v1.js")&&sw.includes("legacyFiles"),"service worker rebuilds the preserved broad precache list");for(const name of ["weekly-mastery.html","weekly-mastery-engine-v2.js","exam-depth-v2.js","exam-engine.js","legacy-mastery-engine-v2.js","record-engine.js","records/course-completion-certificate.html","strict-mastery-gates.js","course-progression-gates.js","mastery-authority-v1.js","dedicated-unit-gates-v1.js","focused-assessment-v1.js","responsive-layout-v1.css"])ok(sw.includes(name),`release cache explicitly includes ${name}`);for(let unit=2;unit<=9;unit++){const id=String(unit).padStart(2,"0");ok(sw.includes(`unit${id}.js`)&&sw.includes(`unit${id}-core.js`),`release cache explicitly includes Unit ${id} bootstrap and preserved core`)}
 
+
+const u1Engine=read("units/unit-01/assets/unit01.js");
+const u1Html=read("units/unit-01/lessons/lesson-04-units-rates-dimensional-analysis.html");
+ok(u1Engine.includes('id="lessonNextStep"')&&u1Engine.includes("Go to Next Lesson · ")&&u1Engine.includes('nextBox.style.display=pct>=MASTERY?"flex":"none"'),"Unit 01 lesson completion exposes a visible next-step button after 80% mastery");
+ok(u1Engine.includes('weekly?"../../../assessments/weekly-mastery.html?week=2":D.lessons[n-2].file'),"locked Unit 01 lesson recovery links to the correct sibling lesson or weekly gate");
+ok(u1Engine.includes('if(n===3&&!mastered)')&&u1Engine.includes('if(n===6&&!week3)'),"Unit 01 next-step navigation preserves both weekly mastery boundaries");
+ok(u1Html.includes('data-lesson="4"')&&u1Html.includes('data-mode="lesson"')&&u1Html.includes('src="../assets/unit01.js"'),"Unit 01 Lesson 04 launches the canonical lesson renderer");
+const u1Context={window:{}};vm.runInNewContext(read("units/unit-01/assets/unit01-data.js"),u1Context);
+const u1Data=u1Context.window.KHAE_UNIT01;
+const expectedLesson4={"u01-l04-q01":"350 cm","u01-l04-q02":"60 mi/h","u01-l04-q03":"square meters","u01-l04-q04":"100 cm/1 m","u01-l04-q05":"20 m/s","u01-l04-q06":"75 g/serving","u01-l04-q07":"hours","u01-l04-q08":"52 km","u01-l04-q09":"The unit order; it is 40 miles/hour","u01-l04-q10":"3600"};
+const lesson4Questions=u1Data.questions.filter(q=>q.lesson===4);
+ok(lesson4Questions.length===10,"Unit 01 Lesson 04 has ten keyed questions");
+for(const [qid,expected] of Object.entries(expectedLesson4)){
+ const q=u1Data.questions.find(item=>item.id===qid);
+ ok(Boolean(q)&&q.options[q.answer]===expected,"Unit 01 Lesson 04 answer key is correct for "+qid);
+ ok(Boolean(q)&&Number.isInteger(q.answer)&&q.answer>=0&&q.answer<q.options.length,"Unit 01 Lesson 04 answer index is in bounds for "+qid);
+}
+
 if(failures){console.error(`\nAlgebra I assessment-depth validation failed: ${failures} problem(s).`);process.exit(1)}
 console.log("\nAlgebra I assessment-depth validation passed: 36 weekly checks / 360 unique prompts, canonical Week 2-36 lesson gating, focused one-problem assessment presentation, Units 01-09 fixed mastery with direct-route protection, Units 10-13 lesson-balanced formal mastery with canonical prerequisites, mixed-evidence cumulative mastery, evidence-gated completion, and current offline release coverage.");
