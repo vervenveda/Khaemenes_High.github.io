@@ -12,6 +12,22 @@
     const id=safeId(raw.trim());if(!id){window.alert("Invalid learner ID; no record was changed.");return false}
     try{sessionStorage.setItem(ACTIVE,id);window.location.reload();return true}catch{window.alert("Browser session storage is unavailable; no record was changed.");return false}
   }
+  function recoverLegacy(){
+    const target=key();if(!target){window.alert("Select a learner first.");return false}
+    try{
+      const raw=localStorage.getItem(ORIGINAL);
+      if(!raw){window.alert("No earlier shared Unit 04 record was found on this browser.");return false}
+      if(localStorage.getItem(target)!==null){window.alert("This learner already has a record. Export that record before requesting any merge. No data was changed.");return false}
+      const parsed=JSON.parse(raw);
+      if(!parsed||typeof parsed!=="object"||Array.isArray(parsed)){window.alert("Legacy record format is invalid; nothing was changed.");return false}
+      const snapshot=new Blob([raw],{type:"application/json"});
+      const url=URL.createObjectURL(snapshot),a=document.createElement("a");
+      a.href=url;a.download="KH-SCI9-U04-legacy-backup.json";a.click();
+      setTimeout(()=>URL.revokeObjectURL(url),30000);
+      if(!window.confirm("A backup download was requested. Only continue if you have verified that the shared-browser record belongs to learner '"+active()+"'. Copy it to this learner? The original will remain untouched."))return false;
+      localStorage.setItem(target,raw);window.location.reload();return true;
+    }catch(e){window.alert("Recovery was not completed. Original records remain unchanged.");return false}
+  }
   function guard(){
     if(active()){
       if(!document.getElementById("scienceLearnerSwitch")){
@@ -19,7 +35,7 @@
         bar.style.cssText="position:fixed;z-index:9998;right:8px;bottom:8px;padding:8px 12px;border:1px solid #8c826b;border-radius:7px;background:#fff;color:#181818;font:14px Arial,sans-serif";
         const name=document.createElement("span");name.textContent="Science 9 learner: "+active()+" ";
         const switchButton=document.createElement("button");switchButton.type="button";switchButton.textContent="Switch learner";switchButton.style.cssText="margin-left:8px;border-radius:7px;padding:6px 10px";
-        switchButton.addEventListener("click",choose);bar.append(name,switchButton);document.body.append(bar);
+        switchButton.addEventListener("click",choose);const restoreButton=document.createElement("button");restoreButton.type="button";restoreButton.textContent="Recover legacy";restoreButton.style.cssText="margin-left:8px;border-radius:7px;padding:6px 10px";restoreButton.addEventListener("click",recoverLegacy);bar.append(name,switchButton,restoreButton);document.body.append(bar);
       }
       return true;
     }
@@ -33,7 +49,7 @@
     const button=document.createElement("button");button.type="button";button.textContent="Select learner";button.style.cssText="border-radius:7px;padding:12px 20px;cursor:pointer";button.onclick=choose;
     inner.append(title,msg,button);panel.append(inner);document.body.append(panel);return false;
   }
-  window.KhaemenesScienceU04Scope={active,key,choose,guard,legacyKey:ORIGINAL};
+  window.KhaemenesScienceU04Scope={active,key,choose,guard,recoverLegacy,legacyKey:ORIGINAL};
   document.addEventListener("DOMContentLoaded",guard);
 })();
 
