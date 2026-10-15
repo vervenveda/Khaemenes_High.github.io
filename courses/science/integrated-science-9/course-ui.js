@@ -7,6 +7,12 @@
     try { const id = sessionStorage.getItem(ACTIVE_LEARNER_KEY); return typeof id === "string" && /^[a-z0-9_-]{3,32}$/.test(id) ? id : null; }
     catch { return null; }
   }
+  function academyIdentityMismatch() {
+    const profile=window.KhaemenesCourseEntryContract?.readAcademyProfile?.();
+    if(!profile||!learnerId())return false;
+    const id=String(profile.learnerId||"");
+    return !/^[a-z0-9_-]{3,32}$/.test(id)||id!==learnerId();
+  }
   const STORAGE_KEY = learnerId() ? "kh_sci9_learner_v1:" + learnerId() + ":" + LEGACY_STORAGE_KEY : "kh_sci9_dashboard_unselected_v1";
   function learnerBanner() {
     const target = document.querySelector("main") || document.body;
@@ -39,7 +45,7 @@
       }
     }
     banner.append(status,button);target.prepend(banner);
-    if(!learnerId()){
+    if(!learnerId()||academyIdentityMismatch()){
       for(const id of ["pathwaySelect","importProgress","progressFile","resetProgress","confirmReset"]){
         const el=document.getElementById(id);
         if(el){el.disabled=true;el.setAttribute("aria-disabled","true");}
@@ -113,7 +119,7 @@
   let activeFilter = "all";
 
   function saveState() {
-    if(!learnerId()){ announce("Select a learner before saving Science 9 progress."); return; }
+    if(!learnerId()||academyIdentityMismatch()){ announce("Resolve the Academy and Science 9 learner selection before saving."); return; }
     if (recordConflict || checkRecordConflict()) return;
     state.updatedAt = new Date().toISOString();
     const serialized = JSON.stringify(state);
@@ -326,7 +332,7 @@
   }
 
   function importProgress(file) {
-    if(!learnerId()){announce("Select a learner before importing progress.");return;}
+    if(!learnerId()||academyIdentityMismatch()){announce("Resolve the learner identity mismatch before importing progress.");return;}
     if (!file) return;
     const reader = new FileReader();
     reader.onload = () => {
@@ -355,7 +361,7 @@
   }
 
   function resetProgress() {
-    if(!learnerId()){announce("Select a learner before resetting progress.");return;}
+    if(!learnerId()||academyIdentityMismatch()){announce("Resolve the learner identity mismatch before resetting progress.");return;}
     if(recordConflict || checkRecordConflict()) return;
     state = { ...DEFAULT_STATE, completedUnits: [], notes: {} };
     if (recordConflict || checkRecordConflict()) return;
