@@ -603,6 +603,32 @@ html:root:root body #grades{padding-top:52px}
 }
 </style>
 
+
+<style id="khaemenes-grade-hall-card-repair">
+#grades{padding:clamp(48px,5vw,68px) 20px;scroll-margin-top:95px}
+#grades .heading{margin-bottom:28px}
+#grades .grade-grid{align-items:stretch}
+#grades .grade-card{min-height:390px;display:flex;flex-direction:column;gap:9px;padding:23px 19px;border-radius:7px;text-align:center}
+#grades .grade-card h3{margin-top:8px;font-size:25px;line-height:1.1}
+#grades .grade-card>p{margin:4px auto 0;max-width:30rem;line-height:1.6}
+.grade-card-actions{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
+.grade-card-actions a{min-height:42px;display:flex;align-items:center;justify-content:center;padding:8px 10px;border:1px solid var(--line-strong);border-radius:7px;color:var(--forest-deep);background:#faf8f2;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;text-align:center}
+.grade-card-actions a:first-child{border-color:rgba(180,139,69,.38);background:linear-gradient(145deg,#ead9b8,#caa96d);color:#14283d}
+.grade-language-slot{width:100%;margin-top:2px}
+.grade-language-details{width:100%;border:1px solid var(--line);border-radius:7px;background:#fffdf9;overflow:hidden}
+.grade-language-details summary{min-height:39px;display:flex;align-items:center;justify-content:center;padding:8px 11px;cursor:pointer;color:var(--forest-deep);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;list-style:none}
+.grade-language-details summary::-webkit-details-marker{display:none}
+.grade-language-details summary::after{content:"＋";margin-left:8px;color:var(--gold)}
+.grade-language-details[open] summary::after{content:"−"}
+.grade-language-panel{display:grid;gap:8px;padding:10px;border-top:1px solid var(--line);background:#faf8f2}
+.grade-language-panel label{margin:0!important;color:var(--muted);font-size:10px!important;line-height:1.45}
+.grade-language-panel select{width:100%;min-height:38px;padding:7px 9px;border:1px solid var(--line-strong);border-radius:7px;color:var(--ink);background:#fff;text-align:center}
+.grade-language-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.grade-language-actions a,.grade-language-actions button{min-height:37px;display:flex;align-items:center;justify-content:center;padding:7px 8px;border:1px solid var(--line);border-radius:7px;color:var(--forest-deep);background:#fff;font-size:9px;font-weight:600;text-align:center;text-transform:uppercase}
+.grade-language-note{margin:0!important;color:var(--muted)!important;font-size:9px!important;line-height:1.45!important}
+@media(max-width:1120px){#grades .grade-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){#grades{padding:44px 12px 52px}#grades .grade-grid{grid-template-columns:1fr}.grade-card-actions,.grade-language-actions{grid-template-columns:1fr}}
+</style>
 </head>
 <body id="top">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -797,61 +823,9 @@ html:root:root body #grades{padding-top:52px}
 
 
 <aside class="high-offline-aside" aria-label="Offline access for every high school subject" style="margin:18px auto;max-width:1140px;padding:18px;border:1px solid #aa956b;border-radius:7px;background:#fff3d7;color:#201e1a"><h2 style="font-size:24px;font-weight:400">Study without a continuous internet connection</h2><p>Students and families: save public high-school lessons for offline reading while you have access, even if you only connect occasionally. Download standalone English reading packs or use the all-course offline study installer. Always export and back up student work separately.</p><p><a href="offline/index.html">Open the High School Offline Learning Hub →</a></p></aside>
-  <section class="section section-alt" id="grade-nine">
-    <div class="section-inner">
-      <div class="heading"><p class="kicker">Grade 9 Learning Hall</p><h2>Foundations, evidence, and academic fluency.</h2><p>Pre-Algebra, Integrated Science 9, English 9, Social Studies 9, and the department entrances that support the first high-school year.</p></div>
-      <div class="language-pathway" style="text-align:center;margin:14px auto 21px;max-width:620px">
-        <label for="grade9Language" style="display:block;margin-bottom:7px">World language · Year I · Two-year required sequence</label>
-        <select id="grade9Language" data-world-language-grade="9" aria-label="Choose Grade 9 world language" style="max-width:100%;padding:10px;border-radius:7px">
-          <option value="spanish">Spanish</option><option value="french">French</option><option value="german">German</option><option value="mandarin">Mandarin Chinese</option><option value="japanese">Japanese</option><option value="arabic">Arabic · developing</option><option value="russian">Russian · developing</option>
-        </select>
-        <p style="font-size:12px;margin:8px auto">Choose your language, then pin its course card to your student shelf. Prior placement may change the level.</p>
-      </div>
-      <div class="course-grid" id="grade9Grid"></div>
-    </div>
-  </section>
-
-  <section class="section" id="grade-ten">
-    <div class="section-inner">
-      <div class="heading"><p class="kicker">Grade 10 Learning Hall</p><h2>Sophomore depth and stronger independence.</h2><p>Placement-based mathematics, English 10, Biology 10, United States History Honors, electives, and growing career awareness.</p></div>
-      <div class="language-pathway" style="text-align:center;margin:14px auto 21px;max-width:620px">
-        <label for="grade10Language" style="display:block;margin-bottom:7px">World language · Year II · Two-year required sequence</label>
-        <select id="grade10Language" data-world-language-grade="10" aria-label="Choose Grade 10 world language" style="max-width:100%;padding:10px;border-radius:7px">
-          <option value="spanish">Spanish</option><option value="french">French</option><option value="german">German</option><option value="mandarin">Mandarin Chinese</option><option value="japanese">Japanese</option><option value="arabic">Arabic · developing</option><option value="russian">Russian · developing</option>
-        </select>
-        <p style="font-size:12px;margin:8px auto">Choose your language, then pin its course card to your student shelf. Prior placement may change the level.</p>
-      </div>
-      <div class="course-grid" id="grade10Grid"></div>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="grade-eleven">
-    <div class="section-inner">
-      <div class="heading"><p class="kicker">Grade 11 Learning Hall</p><h2>Analysis, research, and future planning.</h2><p>English 11, Chemistry 11, Government/Law/Economics, placement-based mathematics, Personal Finance, research tools, and deliberate postsecondary planning.</p></div>
-      <div class="language-pathway" style="text-align:center;margin:14px auto 21px;max-width:620px">
-        <label for="grade11Language" style="display:block;margin-bottom:7px">World language · Year III · Optional third/fourth year</label>
-        <select id="grade11Language" data-world-language-grade="11" aria-label="Choose Grade 11 world language" style="max-width:100%;padding:10px;border-radius:7px">
-          <option value="spanish">Spanish</option><option value="french">French</option><option value="german">German</option><option value="mandarin">Mandarin Chinese</option><option value="japanese">Japanese</option><option value="arabic">Arabic · developing</option><option value="russian">Russian · developing</option>
-        </select>
-        <p style="font-size:12px;margin:8px auto">Choose your language, then pin its course card to your student shelf. Prior placement may change the level.</p>
-      </div>
-      <div class="course-grid" id="grade11Grid"></div>
-    </div>
-  </section>
-
-  <section class="section" id="grade-twelve">
-    <div class="section-inner">
-      <div class="heading"><p class="kicker">Grade 12 Learning Hall</p><h2>Senior synthesis and transition.</h2><p>English 12, Physics & Engineering 12, Global Politics/Senior Research, placement-based mathematics, portfolio evidence, capstone work, and transition planning.</p></div>
-      <div class="language-pathway" style="text-align:center;margin:14px auto 21px;max-width:620px">
-        <label for="grade12Language" style="display:block;margin-bottom:7px">World language · Year IV · Optional third/fourth year</label>
-        <select id="grade12Language" data-world-language-grade="12" aria-label="Choose Grade 12 world language" style="max-width:100%;padding:10px;border-radius:7px">
-          <option value="spanish">Spanish</option><option value="french">French</option><option value="german">German</option><option value="mandarin">Mandarin Chinese</option><option value="japanese">Japanese</option><option value="arabic">Arabic · developing</option><option value="russian">Russian · developing</option>
-        </select>
-        <p style="font-size:12px;margin:8px auto">Choose your language, then pin its course card to your student shelf. Prior placement may change the level.</p>
-      </div>
-      <div class="course-grid" id="grade12Grid"></div>
-    </div>
-  </section>
+  <!-- Grade 9–12 front-hall access is intentionally centralized in #grades.
+       Individual grade pages own their full class listings; this prevents duplicated
+       course grids and keeps World Language from displacing the other doorways. -->
 
   <section class="section section-alt" id="departments">
     <div class="section-inner">
@@ -1020,7 +994,7 @@ html:root:root body #grades{padding-top:52px}
   const LANGUAGE_CHOICE_KEY="khaemenes-high-language-choices-v1";
   const LINGUISTICS_CAMPUS="https://vervenveda.github.io/Khaemenes_Linguistics.github.io/Halls/index.html";
   const WORLD_LANGUAGE_LEVELS={"9":1,"10":2,"11":3,"12":4};
-  const chosenLanguages=readJSON(LANGUAGE_CHOICE_KEY,{})||{};
+  const chosenLanguages=(()=>{try{const raw=localStorage.getItem(LANGUAGE_CHOICE_KEY);const value=raw?JSON.parse(raw):{};return value&&typeof value==="object"?value:{}}catch{return {}}})();
   for(const grade of ["9","10","11","12"]){
     const level=WORLD_LANGUAGE_LEVELS[grade];
     for(const language of WORLD_LANGUAGES){
@@ -1089,18 +1063,87 @@ html:root:root body #grades{padding-top:52px}
   const toast = message => { const node=$("toast"); node.textContent=message; node.classList.add("show"); clearTimeout(toast.timer); toast.timer=setTimeout(()=>node.classList.remove("show"),2200); };
   const normalize = value => String(value||"").toLowerCase().normalize("NFKD").replace(/[^\p{L}\p{N}]+/gu," ").trim();
 
+  function gradeLanguageLevelLabel(grade){
+    return grade==="9"?"Year I · required sequence":grade==="10"?"Year II · required sequence":grade==="11"?"Year III · optional continuation":"Year IV · optional continuation";
+  }
+
   function renderGrades(){
-    $("gradeGrid").innerHTML=GRADES.map(item=>`<article class="grade-card" style="--accent:${item.accent}"><span class="grade-emblem">${item.grade}</span><h3>${item.title}</h3><span class="grade-range">${item.range}</span><p>${item.description}</p><a class="card-link" href="${item.url}">Enter Grade ${item.grade} Classes</a><div class="grade-language-slot" id="gradeLanguageSlot${item.grade}"></div></article>`).join("");
+    const pinned=getPinned();
+    $("gradeGrid").innerHTML=GRADES.map(item=>{
+      const selected=WORLD_LANGUAGES.some(x=>x.id===chosenLanguages[item.grade])?chosenLanguages[item.grade]:"spanish";
+      const selectedCourse="world-language-"+item.grade+"-"+selected;
+      const isPinned=pinned.includes(selectedCourse);
+      const options=WORLD_LANGUAGES.map(language=>`<option value="${language.id}" ${language.id===selected?"selected":""}>${escapeHTML(language.name)}${language.developing?" · developing":""}</option>`).join("");
+      return `<article class="grade-card" style="--accent:${item.accent}">
+        <span class="grade-emblem">${item.grade}</span>
+        <h3>${escapeHTML(item.title)}</h3>
+        <span class="grade-range">${escapeHTML(item.range)}</span>
+        <p>${escapeHTML(item.description)}</p>
+        <div class="grade-card-actions">
+          <a href="${item.url}">Grade ${item.grade} Classes</a>
+          <a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student Profile</a>
+        </div>
+        <div class="grade-language-slot">
+          <details class="grade-language-details">
+            <summary>World Language</summary>
+            <div class="grade-language-panel">
+              <label for="grade${item.grade}Language">World language · ${gradeLanguageLevelLabel(item.grade)}</label>
+              <select id="grade${item.grade}Language" data-world-language-grade="${item.grade}" aria-label="Choose Grade ${item.grade} world language">${options}</select>
+              <div class="grade-language-actions">
+                <a href="${LINGUISTICS_CAMPUS}">Open Language Hall</a>
+                <button type="button" data-grade-language-pin="${item.grade}" aria-pressed="${isPinned}">${isPinned?"★ Pinned":"☆ Pin Language"}</button>
+              </div>
+              <p class="grade-language-note">Language choice stays separate from the grade-class doorway and never replaces the other subjects.</p>
+            </div>
+          </details>
+        </div>
+      </article>`;
+    }).join("");
+    bindGradeLanguageControls();
+  }
+
+  function refreshGradeLanguageControls(){
+    const pinned=getPinned();
     GRADES.forEach(item=>{
       const selector=$("grade"+item.grade+"Language");
-      const pathway=selector&&selector.closest(".language-pathway");
-      const slot=$("gradeLanguageSlot"+item.grade);
-      if(pathway&&slot){
-        slot.appendChild(pathway);
-        pathway.classList.add("grade-language-compact");
-        const note=pathway.querySelector("p");
-        if(note)note.textContent="Choose a language. Open its course below to pin it.";
+      if(!selector)return;
+      const selected=WORLD_LANGUAGES.some(x=>x.id===chosenLanguages[item.grade])?chosenLanguages[item.grade]:"spanish";
+      selector.value=selected;
+      const button=document.querySelector(`[data-grade-language-pin="${item.grade}"]`);
+      if(button){
+        const on=pinned.includes("world-language-"+item.grade+"-"+selected);
+        button.setAttribute("aria-pressed",String(on));
+        button.textContent=on?"★ Pinned":"☆ Pin Language";
       }
+    });
+  }
+
+  function bindGradeLanguageControls(){
+    $$("[data-world-language-grade]").forEach(selector=>{
+      selector.addEventListener("change",()=>{
+        const grade=selector.dataset.worldLanguageGrade;
+        if(!WORLD_LANGUAGES.some(x=>x.id===selector.value))return;
+        chosenLanguages[grade]=selector.value;
+        writeJSON(LANGUAGE_CHOICE_KEY,chosenLanguages);
+        const oldPins=getPinned();
+        const clean=oldPins.filter(id=>!id.startsWith("world-language-"+grade+"-")||id==="world-language-"+grade+"-"+selector.value);
+        if(clean.length!==oldPins.length)setPinned(clean);
+        else refreshGradeLanguageControls();
+      });
+    });
+    $$("[data-grade-language-pin]").forEach(button=>{
+      button.addEventListener("click",()=>{
+        const grade=button.dataset.gradeLanguagePin;
+        const selector=$("grade"+grade+"Language");
+        const selected=selector?.value||chosenLanguages[grade]||"spanish";
+        const id="world-language-"+grade+"-"+selected;
+        const current=getPinned();
+        const already=current.includes(id);
+        const next=current.filter(courseId=>!courseId.startsWith("world-language-"+grade+"-"));
+        if(!already)next.push(id);
+        setPinned(next);
+        toast(already?"World language removed from the student shelf.":"World language pinned to the student shelf.");
+      });
     });
   }
 
@@ -1128,6 +1171,7 @@ html:root:root body #grades{padding-top:52px}
 
   function renderCourseGrid(grade){
     const target=$(`grade${grade}Grid`);
+    if(!target)return;
     const pinned=getPinned();
     target.innerHTML=COURSES[grade].filter(course=>!course.id.startsWith("world-language-")||course.id==="world-language-"+grade+"-"+(chosenLanguages[grade]||"spanish")).map(course=>{
       const isPinned=pinned.includes(course.id);
@@ -1136,33 +1180,17 @@ html:root:root body #grades{padding-top:52px}
   }
 
   function renderAllCourses(){
-    ["9","10","11","12"].forEach(grade=>{
-      const selector=$("grade"+grade+"Language");
-      if(selector)selector.value=WORLD_LANGUAGES.some(x=>x.id===chosenLanguages[grade])?chosenLanguages[grade]:"spanish";
-      renderCourseGrid(grade);
-    });
+    ["9","10","11","12"].forEach(renderCourseGrid);
     $$("[data-pin]").forEach(button=>button.addEventListener("click",()=>{
       const id=button.dataset.pin, next=getPinned(), idx=next.indexOf(id);
       if(idx>=0){next.splice(idx,1);toast("Course removed from the pinned shelf.");}
       else{next.push(id);toast("Course pinned to the student shelf.");}
       setPinned(next);
     }));
+    refreshGradeLanguageControls();
   }
-
-  $("[data-world-language-grade]").forEach(selector=>{
-    selector.addEventListener("change",()=>{
-      const grade=selector.dataset.worldLanguageGrade;
-      if(!WORLD_LANGUAGES.some(x=>x.id===selector.value))return;
-      chosenLanguages[grade]=selector.value;
-      writeJSON(LANGUAGE_CHOICE_KEY,chosenLanguages);
-      // Changing a choice unpins a different language for that grade; do not pin without consent.
-      const oldPins=getPinned();
-      const clean=oldPins.filter(id=>!id.startsWith("world-language-"+grade+"-")||id==="world-language-"+grade+"-"+selector.value);
-      if(clean.length!==oldPins.length){setPinned(clean);}
-      else renderAllCourses();
-    });
-  });
   
+
   function renderProfile(){
     const profile=getProfile(), pinned=getPinned();
     const grade=profile && ["9","10","11","12"].includes(profile.grade)?profile.grade:null;
