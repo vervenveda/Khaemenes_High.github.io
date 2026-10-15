@@ -13,7 +13,16 @@
     try{sessionStorage.setItem(ACTIVE,id);window.location.reload();return true}catch{window.alert("Browser session storage is unavailable; no record was changed.");return false}
   }
   function guard(){
-    if(active())return true;
+    if(active()){
+      if(!document.getElementById("scienceLearnerSwitch")){
+        const bar=document.createElement("div");bar.id="scienceLearnerSwitch";
+        bar.style.cssText="position:fixed;z-index:9998;right:8px;bottom:8px;padding:8px 12px;border:1px solid #8c826b;border-radius:7px;background:#fff;color:#181818;font:14px Arial,sans-serif";
+        const name=document.createElement("span");name.textContent="Science 9 learner: "+active()+" ";
+        const switchButton=document.createElement("button");switchButton.type="button";switchButton.textContent="Switch learner";switchButton.style.cssText="margin-left:8px;border-radius:7px;padding:6px 10px";
+        switchButton.addEventListener("click",choose);bar.append(name,switchButton);document.body.append(bar);
+      }
+      return true;
+    }
     if(document.getElementById("scienceLearnerGuard"))return false;
     const panel=document.createElement("aside");
     panel.id="scienceLearnerGuard";panel.setAttribute("role","alert");
