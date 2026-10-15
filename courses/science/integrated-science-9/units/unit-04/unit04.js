@@ -108,11 +108,12 @@
       updatedAt:new Date().toISOString()
     }));
   }
-  function save() {
-    state.updatedAt = new Date().toISOString();
-    localStorage.setItem(KEY, JSON.stringify(state));
-    syncRoot();
-    updatePage();
+  let scienceLastSeen=localStorage.getItem(KEY),scienceConflict=false;
+  window.addEventListener("storage",event=>{if(event.key===KEY&&event.newValue!==scienceLastSeen){scienceConflict=true;window.alert("This learner's Unit 04 record changed in another tab. Reload before saving to protect newer work.");}});
+  function save(){
+    if(scienceConflict||localStorage.getItem(KEY)!==scienceLastSeen){scienceConflict=true;window.alert("Unit 04 has newer work in another tab. Reload before saving.");return}
+    state.updatedAt=new Date().toISOString();const serialized=JSON.stringify(state);
+    localStorage.setItem(KEY,serialized);scienceLastSeen=serialized;syncRoot();updatePage()
   }
   function toast(message) {
     const box = $("#toast");
