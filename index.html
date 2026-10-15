@@ -548,7 +548,7 @@ html:root:root body .hero .hero-lead{font-size:clamp(16px,2vw,24px)!important;li
       <div class="language-pathway" style="text-align:center;margin:14px auto 21px;max-width:620px">
         <label for="grade9Language" style="display:block;margin-bottom:7px">World language · Year I · Two-year required sequence</label>
         <select id="grade9Language" data-world-language-grade="9" aria-label="Choose Grade 9 world language" style="max-width:100%;padding:10px;border-radius:7px">
-          <option value="spanish">Spanish</option><option value="french">French</option><option value="german">German</option><option value="mandarin">Mandarin Chinese</option><option value="japanese">Japanese</option>
+          <option value="spanish">Spanish</option><option value="french">French</option><option value="german">German</option><option value="mandarin">Mandarin Chinese</option><option value="japanese">Japanese</option><option value="arabic">Arabic · developing</option><option value="russian">Russian · developing</option>
         </select>
         <p style="font-size:12px;margin:8px auto">Choose your language, then pin its course card to your student shelf. Prior placement may change the level.</p>
       </div>
@@ -562,7 +562,7 @@ html:root:root body .hero .hero-lead{font-size:clamp(16px,2vw,24px)!important;li
       <div class="language-pathway" style="text-align:center;margin:14px auto 21px;max-width:620px">
         <label for="grade10Language" style="display:block;margin-bottom:7px">World language · Year II · Two-year required sequence</label>
         <select id="grade10Language" data-world-language-grade="10" aria-label="Choose Grade 10 world language" style="max-width:100%;padding:10px;border-radius:7px">
-          <option value="spanish">Spanish</option><option value="french">French</option><option value="german">German</option><option value="mandarin">Mandarin Chinese</option><option value="japanese">Japanese</option>
+          <option value="spanish">Spanish</option><option value="french">French</option><option value="german">German</option><option value="mandarin">Mandarin Chinese</option><option value="japanese">Japanese</option><option value="arabic">Arabic · developing</option><option value="russian">Russian · developing</option>
         </select>
         <p style="font-size:12px;margin:8px auto">Choose your language, then pin its course card to your student shelf. Prior placement may change the level.</p>
       </div>
@@ -576,7 +576,7 @@ html:root:root body .hero .hero-lead{font-size:clamp(16px,2vw,24px)!important;li
       <div class="language-pathway" style="text-align:center;margin:14px auto 21px;max-width:620px">
         <label for="grade11Language" style="display:block;margin-bottom:7px">World language · Year III · Optional third/fourth year</label>
         <select id="grade11Language" data-world-language-grade="11" aria-label="Choose Grade 11 world language" style="max-width:100%;padding:10px;border-radius:7px">
-          <option value="spanish">Spanish</option><option value="french">French</option><option value="german">German</option><option value="mandarin">Mandarin Chinese</option><option value="japanese">Japanese</option>
+          <option value="spanish">Spanish</option><option value="french">French</option><option value="german">German</option><option value="mandarin">Mandarin Chinese</option><option value="japanese">Japanese</option><option value="arabic">Arabic · developing</option><option value="russian">Russian · developing</option>
         </select>
         <p style="font-size:12px;margin:8px auto">Choose your language, then pin its course card to your student shelf. Prior placement may change the level.</p>
       </div>
@@ -590,7 +590,7 @@ html:root:root body .hero .hero-lead{font-size:clamp(16px,2vw,24px)!important;li
       <div class="language-pathway" style="text-align:center;margin:14px auto 21px;max-width:620px">
         <label for="grade12Language" style="display:block;margin-bottom:7px">World language · Year IV · Optional third/fourth year</label>
         <select id="grade12Language" data-world-language-grade="12" aria-label="Choose Grade 12 world language" style="max-width:100%;padding:10px;border-radius:7px">
-          <option value="spanish">Spanish</option><option value="french">French</option><option value="german">German</option><option value="mandarin">Mandarin Chinese</option><option value="japanese">Japanese</option>
+          <option value="spanish">Spanish</option><option value="french">French</option><option value="german">German</option><option value="mandarin">Mandarin Chinese</option><option value="japanese">Japanese</option><option value="arabic">Arabic · developing</option><option value="russian">Russian · developing</option>
         </select>
         <p style="font-size:12px;margin:8px auto">Choose your language, then pin its course card to your student shelf. Prior placement may change the level.</p>
       </div>
@@ -759,7 +759,8 @@ html:root:root body .hero .hero-lead{font-size:clamp(16px,2vw,24px)!important;li
   // Grade cards are entry points. Prior placement can change the appropriate level.
   const WORLD_LANGUAGES=[
     {id:"spanish",name:"Spanish"},{id:"french",name:"French"},
-    {id:"german",name:"German"},{id:"mandarin",name:"Mandarin Chinese"},{id:"japanese",name:"Japanese"}
+    {id:"german",name:"German"},{id:"mandarin",name:"Mandarin Chinese"},{id:"japanese",name:"Japanese"},
+    {id:"arabic",name:"Arabic",developing:true},{id:"russian",name:"Russian",developing:true}
   ];
   const LANGUAGE_CHOICE_KEY="khaemenes-high-language-choices-v1";
   const LINGUISTICS_CAMPUS="https://vervenveda.github.io/Khaemenes_Linguistics.github.io/Halls/index.html";
@@ -771,9 +772,9 @@ html:root:root body .hero .hero-lead{font-size:clamp(16px,2vw,24px)!important;li
       COURSES[grade].push({
         id:"world-language-"+grade+"-"+language.id,icon:"WL",
         title:language.name+" "+["I","II","III","IV"][level-1],
-        status:level<=2?"Required pathway":"Optional continuation",
+        status:language.developing?"Curriculum in development":level<=2?"Required pathway":"Optional continuation",
         url:LINGUISTICS_CAMPUS,
-        description:"Year "+level+" of the selected world-language pathway. "+(level<=2?"Part of the two-year language requirement.":"Optional Year "+level+" of a four-year sequence.")+" Choose and study your language in the Linguistics Hall."
+        description:language.developing?"Requested "+language.name+" Year "+level+" pathway; materials and assessments are being developed. The Linguistics Hall offers related resources, not yet a verified complete credit course.":"Year "+level+" of the selected world-language pathway. "+(level<=2?"Part of the two-year language requirement.":"Optional Year "+level+" of a four-year sequence.")+" Choose and study your language in the Linguistics Hall."
       });
     }
   }
