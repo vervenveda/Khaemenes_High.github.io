@@ -1,4 +1,4 @@
-"use strict";const scienceActivityKey=window.KhaemenesScienceU01Scope.key()||"kh_sci9_u01_unselected_v1";let scienceActivitySnapshot=localStorage.getItem(scienceActivityKey);
+"use strict";
 const scienceActivityKey=window.KhaemenesScienceU01Scope.key()||"kh_sci9_u01_unselected_v1";
 let scienceActivitySnapshot=localStorage.getItem(scienceActivityKey);
 
