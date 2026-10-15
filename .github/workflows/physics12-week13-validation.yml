@@ -1,0 +1,25 @@
+name: Physics 12 Week 13 Energy Systems Engineering Validation
+on:
+  push:
+    paths:
+      - 'courses/science/physics-engineering-12/weeks/week-13/**'
+      - 'courses/science/physics-engineering-12/tools/validate-week13.mjs'
+      - 'courses/science/physics-engineering-12/tools/smoke-week13.mjs'
+      - '.github/workflows/physics12-week13-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/science/physics-engineering-12/weeks/week-13/**'
+      - 'courses/science/physics-engineering-12/tools/validate-week13.mjs'
+      - 'courses/science/physics-engineering-12/tools/smoke-week13.mjs'
+      - '.github/workflows/physics12-week13-validation.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate energy balances, constraints, quizzes, student journals and course links
+        run: node courses/science/physics-engineering-12/tools/validate-week13.mjs
+      - name: Execute energy-flow and engineering-design interaction tests
+        run: node courses/science/physics-engineering-12/tools/smoke-week13.mjs
