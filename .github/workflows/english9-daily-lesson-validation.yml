@@ -20,4 +20,6 @@ jobs:
         with:
           node-version: '22'
       - name: Validate individual English 9 lessons
-        run: node courses/language-arts/english-9/tests/daily-lesson-regression.mjs
+        run: |
+          node courses/language-arts/english-9/tests/daily-lesson-regression.mjs
+          node courses/language-arts/english-9/tests/daily-lesson-behavior.mjs
