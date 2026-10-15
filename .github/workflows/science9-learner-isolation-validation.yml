@@ -7,6 +7,8 @@ on:
       - 'courses/science/integrated-science-9/units/unit-01/**'
       - 'courses/science/integrated-science-9/units/unit-02/**'
       - 'courses/science/integrated-science-9/units/unit-03/**'
+      - 'courses/science/integrated-science-9/units/unit-05/**'
+      - 'courses/science/integrated-science-9/tools/check-unit05-records.mjs'
       - 'courses/science/integrated-science-9/course-ui.js'
       - 'courses/science/integrated-science-9/tools/check-cross-unit-records.mjs'
       - 'courses/science/integrated-science-9/tools/test-unit04-learner-scope.mjs'
@@ -18,6 +20,8 @@ on:
       - 'courses/science/integrated-science-9/units/unit-01/**'
       - 'courses/science/integrated-science-9/units/unit-02/**'
       - 'courses/science/integrated-science-9/units/unit-03/**'
+      - 'courses/science/integrated-science-9/units/unit-05/**'
+      - 'courses/science/integrated-science-9/tools/check-unit05-records.mjs'
       - 'courses/science/integrated-science-9/course-ui.js'
       - 'courses/science/integrated-science-9/tools/check-cross-unit-records.mjs'
       - 'courses/science/integrated-science-9/tools/test-unit04-learner-scope.mjs'
@@ -51,5 +55,7 @@ jobs:
         run: node courses/science/integrated-science-9/tools/check-activity-concurrency.mjs
       - name: Verify all scored activity stale-save guards
         run: node courses/science/integrated-science-9/tools/check-all-activity-stale-saves.mjs
+      - name: Verify Unit 05 progress and mastery safeguards
+        run: node courses/science/integrated-science-9/tools/check-unit05-records.mjs
       - name: Verify science runtime syntax
         run: node courses/science/integrated-science-9/tools/validate-course-runtime.mjs
