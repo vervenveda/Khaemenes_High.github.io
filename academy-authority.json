@@ -18,5 +18,13 @@
   "progressionAuthority": "course-engine",
   "masteryThresholdMinimum": 80,
   "teacherAiMentorAuthority": "deferred",
-  "assessmentPolicy": "courses/shared/assessment-authority/"
+  "assessmentPolicy": "courses/shared/assessment-authority/",
+  "mentorVoicePresentation": {
+    "profileId": "archaemenes-high-v1",
+    "authority": "presentation-only",
+    "assessmentAuthority": false,
+    "progressionAuthority": false,
+    "gradeAuthority": false,
+    "microphoneRequired": false
+  }
 }
