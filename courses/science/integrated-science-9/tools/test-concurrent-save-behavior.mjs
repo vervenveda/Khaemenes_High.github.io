@@ -8,8 +8,8 @@ for(const unit of ["01","02","03","04"]){
   const file="units/unit-"+unit+"/unit"+unit+".js";
   const source=fs.readFileSync(new URL(file,root),"utf8");
   const declaration=source.match(/let scienceLastSeen=localStorage\.getItem\(KEY\),scienceConflict=false;/);
-  const start=source.indexOf("function save(){",source.indexOf(declaration?.[0]||"@@@@"));
-  const next=source.indexOf("function ",start+9);
+  const start=source.search(/function save\s*\(\)\s*\{/g);
+  const next=source.indexOf("function ",start+15);
   const snippet=source.slice(start,next);
   assert.ok(declaration&&start>=0&&snippet.includes("scienceConflict")&&snippet.includes("scienceLastSeen"),file+" missing guard");
   const key="learner:alex:unit:"+unit;
