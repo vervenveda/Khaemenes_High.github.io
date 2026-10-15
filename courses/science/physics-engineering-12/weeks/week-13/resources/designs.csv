@@ -1,0 +1,13 @@
+# FICTIONAL synthetic energy transfer model. No net device energy storage change; common positive interval; four design criteria are purely instructional.
+Case,Input_J,Useful_Percent,Thermal_Percent,Duration_s,Useful_Output_J,Thermal_Transfer_J,Other_Pathways_J,Total_Out_J,Input_Power_W,Useful_Power_W,Meets_All_Four_Constraints
+feasible_baseline,500,60,25,5,300,125,75,500,100,60,yes
+thermal_exceeds,500,70,30,5,350,150,0,500,100,70,no
+input_exceeds,650,60,20,5,390,130,130,650,130,78,no
+useful_too_low,500,50,20,5,250,100,150,500,100,50,no
+boundary_pass,600,50,20,8,300,120,180,600,75,37.5,yes
+thermal_pass,600,55,20,7,330,120,150,600,85.714286,47.142857,yes
+feasible_450,450,70,25,6,315,112.5,22.5,450,75,52.5,yes
+feasible_400,400,75,20,5,300,80,20,400,80,60,yes
+too_slow,550,60,25,9,330,137.5,82.5,550,61.111111,36.666667,no
+moderate,500,65,20,8,325,100,75,500,62.5,40.625,yes
+heat_exceeds,600,50,30,8,300,180,120,600,75,37.5,no
