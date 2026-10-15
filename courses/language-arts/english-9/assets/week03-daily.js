@@ -96,6 +96,8 @@ if(!day){
  return;
 }
 if(day===15){
+ const reviewContract=window.KhaemenesEnglish9Week03Review;
+ if(!reviewContract){freeze("Independent review validator is missing.");return;}
  const items=Object.fromEntries(writing.map(field=>[field.dataset.saveField,field]));
  const getField=suffix=>items["week-03-day15-"+suffix];
  const draft=getField("draft1"),final=getField("final"),conventions=getField("conventions"),revision=getField("revision");
@@ -104,13 +106,13 @@ if(day===15){
  const dayFlag="week-03-day-15";
  const lockState=$("week3-lock-state"),countWords=s=>String(s||"").trim().split(/\s+/).filter(Boolean).length;
  let locked=lockKey?readJson(lockKey,null,obj=>obj&&obj.version===1&&typeof obj.text==="string"&&obj.text.length>0&&Number.isFinite(obj.wordCount)):null;
- let receipt=receiptKey?readJson(receiptKey,null,obj=>obj&&obj.schema==="english9-week03-review-v1"&&typeof obj.submittedAt==="string"):null;
+ let receipt=receiptKey?readJson(receiptKey,null,reviewContract.validateSubmission):null;
  const independent=$("week3-independent"),ack=$("week3-acknowledge");
  window.addEventListener("storage",event=>{
   if(event.key!==receiptKey)return;
   try{
    const parsed=event.newValue?JSON.parse(event.newValue):null;
-   if(parsed && parsed.schema!=="english9-week03-review-v1")throw Error("unexpected schema");
+   if(parsed && !reviewContract.validateSubmission(parsed))throw Error("invalid assessment record");
    receipt=parsed;
    snapshot.set(receiptKey,event.newValue);
    update();
@@ -122,15 +124,14 @@ if(day===15){
  });
  const nextWrap=$("week3-next-wrap");
  function evaluatorPassed(){
-  return !!receipt && receipt.schema==="english9-week03-review-v1"
-   && receipt.gradeStatus==="passed" && receipt.masteryAwarded===true
-   && Number.isInteger(receipt.rubricScore) && receipt.rubricScore>=8 && receipt.rubricScore<=10
-   && typeof receipt.evaluatedBy==="string" && receipt.evaluatedBy.trim().length>0
-   && typeof receipt.evaluatedAt==="string" && !Number.isNaN(Date.parse(receipt.evaluatedAt));
+  return !!(reviewContract.validateReview(receipt)&&receipt.gradeStatus==="passed"&&
+   receipt.rubricScore>=8&&locked&&receipt.independentDraftWordCount===locked.wordCount&&
+   receipt.finalWordCount===countWords(final.value));
  }
  function refreshAssessmentNext(){
   const passed=!!(ready&&!frozen&&evaluatorPassed());
   nextWrap.hidden=!passed;
+  document.querySelectorAll("[data-week03-next-unit-route]").forEach(link=>{link.hidden=!passed;});
   if(passed)$("week3-next-status").textContent="Evaluator-recorded mastery · "+receipt.rubricScore+"/10";
  }
  function updateCounts(){
@@ -175,11 +176,40 @@ if(day===15){
   if(!independent.checked||!ack.checked)reasons.push("complete both declarations");
   $("week3-finish-hint").textContent=reasons.length?"Before review submission: "+reasons.join("; ")+".":
     "Evidence is ready for evaluator review. This is NOT an automatic 8/10 mastery judgment.";
+  const reviewed=reviewContract.validateReview(receipt);
   $("week3-assessment-status").textContent=evaluatorPassed()
-  ?"Evaluator recorded "+receipt.rubricScore+"/10 on "+new Date(receipt.evaluatedAt).toLocaleString()+". Continue button unlocked."
-  :receipt?"Evidence submitted for review on "+new Date(receipt.submittedAt).toLocaleString()+". Awaiting evaluator review; not automatically passed."
-  :"No assessment submission recorded yet.";
+   ?"Evaluator recorded "+receipt.rubricScore+"/10 on "+new Date(receipt.evaluatedAt).toLocaleString()+". Continue button unlocked."
+   :reviewed?"Evaluation: "+receipt.rubricScore+"/10. Corrective revision required before advancing. Edit the Final and Revision notes, then resubmit for educator review."
+   :receipt?"Evidence submitted for review on "+new Date(receipt.submittedAt).toLocaleString()+". Awaiting evaluator review; not automatically passed."
+   :"No assessment submission recorded yet.";
+  const feedback=$("week3-teacher-feedback");
+  feedback.hidden=!reviewed;
+  feedback.textContent=reviewed?"Educator feedback ("+receipt.evaluatedBy+"): "+receipt.teacherFeedback:"";
  }
+ $("week3-import-evaluation").addEventListener("change",async event=>{
+  const file=event.target.files?.[0];event.target.value="";
+  if(!file)return;
+  const info=$("week3-import-status");
+  try{
+   if(!ready||frozen||!profile||!receipt)throw Error("Select the learner and submit the original assessment before importing an evaluation.");
+   if(file.size>300000)throw Error("Evaluation file is too large.");
+   const payload=JSON.parse(await file.text());
+   const reviewed=reviewContract.parseEvaluationFile(payload);
+   if(!reviewContract.reviewMatchesSubmission(reviewed,receipt))
+     throw Error("Evaluation does not match this learner's exact submission and evidence counts.");
+   if(locked&&locked.wordCount!==reviewed.independentDraftWordCount)
+     throw Error("Saved Draft 1 does not match the evaluation.");
+   if(countWords(final.value)!==reviewed.finalWordCount)
+     throw Error("Your final draft has changed since the review; preserve an accurate revision record first.");
+   if(reviewContract.validateReview(receipt)&&
+     !confirm("Replace the previously recorded evaluation with this reviewed file?"))return;
+   if(!write(receiptKey,JSON.stringify(reviewed)))
+     throw Error("The assessment changed in another tab or browser storage is unavailable.");
+   receipt=reviewed;update();
+   info.textContent="Evaluation imported: "+reviewed.rubricScore+"/10 · "+(reviewed.masteryAwarded?
+    "Mastery reached; next-unit button unlocked.":"Corrective revision required.");
+  }catch(error){info.textContent="Not imported: "+error.message;}
+ });
  $("week3-lock-draft").addEventListener("click",()=>{
   if(!ready||frozen||locked)return;
   const words=countWords(draft.value);

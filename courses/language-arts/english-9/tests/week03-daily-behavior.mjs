@@ -5,6 +5,9 @@ import assert from "node:assert/strict";
 import {fileURLToPath} from "node:url";
 const base=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const code=fs.readFileSync(path.join(base,"assets/week03-daily.js"),"utf8");
+const reviewModule={exports:{}};
+vm.runInNewContext(fs.readFileSync(path.join(base,"assets/week03-review-contract.js"),"utf8"),{module:reviewModule,Date,Number,String,Object,JSON,Set});
+const Review=reviewModule.exports;
 class El {
  constructor(id=""){this.id=id;this.dataset={};this.value="";this.textContent="";this.readOnly=false;this.checked=false;this.disabled=false;this.hidden=true;this.events=new Map();this.children=[];this.style={};this.classList={toggle(){}};}
  addEventListener(type,fn){const list=this.events.get(type)||[];list.push(fn);this.events.set(type,list);}
@@ -31,7 +34,7 @@ function boot(day,store=new Map(),learner="A"){
   querySelector:query,querySelectorAll:sel=>sel==='[data-save-field][data-managed-save="week3"]'?fields:[],
   createElement:k=>new El(k),createTextNode:text=>({textContent:text})};
  const storage={getItem:key=>store.has(key)?store.get(key):null,setItem:(key,v)=>store.set(key,String(v))};
- const win={KhaemenesCourseEntryContract:{readAcademyProfile:()=>learner?{learnerId:learner}:null,
+ const win={KhaemenesEnglish9Week03Review:Review,KhaemenesCourseEntryContract:{readAcademyProfile:()=>learner?{learnerId:learner}:null,
   scopedKey:(key,p)=>key+":learner:"+p.learnerId,readJSON:()=>({}),isReady:()=>!!learner},addEventListener(){}};
  const data=html.match(/id="week3-questions-data">([\s\S]*?)<\/script>/);
  if(data){
@@ -77,8 +80,15 @@ const receiptKey=exam.scoped("khae-ela9-field:week-03-day15-review-receipt-v1");
 const receipt=JSON.parse(exam.store.get(receiptKey));
 assert.equal(receipt.masteryAwarded,false);
 Object.assign(receipt,{gradeStatus:"passed",masteryAwarded:true,rubricScore:8,
- evaluatedBy:"School evaluator record",evaluatedAt:"2026-10-15T12:00:00Z"});
+ evaluatedBy:"Unverified legacy reviewer",evaluatedAt:"2026-10-15T12:00:00Z"});
 exam.store.set(receiptKey,JSON.stringify(receipt));
+const forged=boot(15,exam.store);
+assert.equal(forged.el("week3-next-wrap").hidden,true,"Unscored legacy review cannot unlock");
+const rows={inquiry:2,evidence:2,synthesis:2,reasoning:1,clarity:1};
+const evaluated=Review.makeReview(receipt,rows,"Educator Record",
+ "The evidence is precise; strengthen two connections between the texts.","2026-10-15T12:00:00Z");
+assert.equal(evaluated.rubricScore,8);
+exam.store.set(receiptKey,JSON.stringify(evaluated));
 const reviewed=boot(15,exam.store);
 assert.equal(reviewed.el("week3-next-wrap").hidden,false,"Recorded 8/10 review reveals next unit");
 assert.equal(JSON.parse(exam.store.get(exam.scoped("khae-ela9-progress-v1")))["week-03"],undefined,"No automatic unit completion grade");
