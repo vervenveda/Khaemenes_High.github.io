@@ -9,7 +9,7 @@ function extract(source,file){
   const ch=source[i];
   if(quote){if(escaped)escaped=false;else if(ch==="\\")escaped=true;else if(ch===quote)quote=null;continue;}
   if(ch==='"'||ch==="'"){quote=ch;continue;}
-  if(ch==="[")depth++;else if(ch==="]"&&!--depth)return vm.runInNewContext(source.slice(begin,i+1),Object.create(null),{timeout:1000});
+  if(ch==="[")depth++;else if(ch==="]"){depth--;if(depth===0)return vm.runInNewContext(source.slice(begin,i+1),Object.create(null),{timeout:1000});}
  }
  findings.push(file+": unmatched array");return null;
 }
