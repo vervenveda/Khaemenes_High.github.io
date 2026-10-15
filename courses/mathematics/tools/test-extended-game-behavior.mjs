@@ -38,8 +38,8 @@ for(const slug of fs.readdirSync(base).filter(s=>fs.existsSync(path.join(base,s,
   vm.runInContext(code,context,{timeout:1500});
  }
  const api=context.gameAudit;
- const next=api.challenge||api.next||api.start;
- assert.equal(typeof next,'function',slug+': no challenge interface');
+ const next=[api.challenge,api.next,api.start].find(candidate=>typeof candidate==='function');
+ assert.equal(typeof next,'function',slug+': no callable challenge interface');
  // Repeated challenges must remain usable and contain a fresh valid problem.
  for(let i=0;i<30;i++){
   next(); const snapshot=api.snapshot();const problem=snapshot.task||snapshot.problem;
