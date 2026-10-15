@@ -85,13 +85,27 @@
   }
 
   let state = loadState();
+  let lastSeenRecord = localStorage.getItem(STORAGE_KEY);
+  let recordConflict = false;
+  function checkRecordConflict() {
+    const latest = localStorage.getItem(STORAGE_KEY);
+    if (latest !== lastSeenRecord) {
+      recordConflict = true;
+      announce("Science 9 progress changed in another tab. Reload before saving to avoid overwriting newer work.");
+      return true;
+    }
+    return false;
+  }
   let units = FALLBACK_UNITS;
   let activeFilter = "all";
 
   function saveState() {
     if(!learnerId()){ announce("Select a learner before saving Science 9 progress."); return; }
+    if (recordConflict || checkRecordConflict()) return;
     state.updatedAt = new Date().toISOString();
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    const serialized = JSON.stringify(state);
+    localStorage.setItem(STORAGE_KEY, serialized);
+    lastSeenRecord = serialized;
     updateProgress();
   }
 
@@ -329,7 +343,9 @@
   function resetProgress() {
     if(!learnerId()){announce("Select a learner before resetting progress.");return;}
     state = { ...DEFAULT_STATE, completedUnits: [], notes: {} };
+    if (recordConflict || checkRecordConflict()) return;
     localStorage.removeItem(STORAGE_KEY);
+    lastSeenRecord = null;
     updateProgress();
     renderUnits();
     announce("Local Science 9 progress was reset.");
@@ -370,6 +386,12 @@
       }
     });
 
+    window.addEventListener("storage", event => {
+      if (event.key === STORAGE_KEY && event.newValue !== lastSeenRecord) {
+        recordConflict = true;
+        announce("Another Science 9 tab changed this learner's progress. Reload before editing.");
+      }
+    });
     window.addEventListener("online", updateOnlineStatus);
     window.addEventListener("offline", updateOnlineStatus);
   }
