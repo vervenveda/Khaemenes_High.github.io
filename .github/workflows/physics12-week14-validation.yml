@@ -1,0 +1,25 @@
+name: Physics 12 Week 14 Momentum and Impulse Validation
+on:
+  push:
+    paths:
+      - 'courses/science/physics-engineering-12/weeks/week-14/**'
+      - 'courses/science/physics-engineering-12/tools/validate-week14.mjs'
+      - 'courses/science/physics-engineering-12/tools/smoke-week14.mjs'
+      - '.github/workflows/physics12-week14-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/science/physics-engineering-12/weeks/week-14/**'
+      - 'courses/science/physics-engineering-12/tools/validate-week14.mjs'
+      - 'courses/science/physics-engineering-12/tools/smoke-week14.mjs'
+      - '.github/workflows/physics12-week14-validation.yml'
+permissions:
+  contents: read
+jobs:
+  validation:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Check the momentum equations, sample datasets, quizzes and every lesson route
+        run: node courses/science/physics-engineering-12/tools/validate-week14.mjs
+      - name: Execute momentum and pulse engines, practice tests, and saved evidence controls
+        run: node courses/science/physics-engineering-12/tools/smoke-week14.mjs
