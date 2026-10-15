@@ -3,8 +3,10 @@ import vm from "node:vm";
 const root=new URL("../",import.meta.url);
 const cases=[
  ["course-ui.js",["lastSeenRecord","checkRecordConflict()","recordConflict","addEventListener(\"storage\""]],
+ ["units/unit-01/unit01.js",["scienceLastSeen","scienceConflict"]],
  ["units/unit-02/unit02.js",["scienceLastSeen","scienceConflict","addEventListener(\"storage\""]],
- ["units/unit-03/unit03.js",["scienceLastSeen","scienceConflict","addEventListener(\"storage\""]]
+ ["units/unit-03/unit03.js",["scienceLastSeen","scienceConflict","addEventListener(\"storage\""]],
+ ["units/unit-04/unit04.js",["scienceLastSeen","scienceConflict"]]
 ];
 for(const [file,required] of cases){
  const source=fs.readFileSync(new URL(file,root),"utf8");
