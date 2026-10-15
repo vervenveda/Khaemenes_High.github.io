@@ -3,6 +3,9 @@ import assert from "node:assert/strict";
 
 const doorway=fs.readFileSync("assets/khaemenes-mentor-link.js","utf8");
 const surface=fs.readFileSync("mentor/index.html","utf8");
+const voice=fs.readFileSync("assets/khaemenes-archaemenes-voice.js","utf8");
+const mentorManifest=JSON.parse(fs.readFileSync("mentor-manifest.json","utf8"));
+const authority=JSON.parse(fs.readFileSync("academy-authority.json","utf8"));
 const neutralFiles=[
   "stos/mentor/index.html",
   "stos/khaemenes/student/index.html",
@@ -33,5 +36,23 @@ assert.ok(surface.includes("reveal locked quiz/test items"),"mentor surface must
 assert.ok(surface.includes("allowLockedAssessmentDisclosure:false"),"transport context must explicitly forbid locked assessment disclosure");
 assert.ok(surface.includes("allowProgressionBypass:false"),"transport context must explicitly forbid progression bypass");
 assert.ok(surface.includes("/stos/khaemenes/assets/vnv-beta-link.js"),"mentor surface must retain canonical Beta doorway");
+
+assert.ok(surface.includes("../assets/khaemenes-archaemenes-voice.js"),"mentor surface must load the Archaemenes voice bridge");
+assert.ok(surface.includes('id="voicePreview"')&&surface.includes('id="voiceMode"')&&surface.includes('id="voiceAuto"'),"mentor surface must expose optional voice controls");
+assert.ok(surface.includes("Voice is presentation only"),"mentor surface must state the voice authority boundary");
+assert.ok(surface.includes("microphone=()"),"mentor surface must keep microphone permission disabled");
+
+assert.ok(voice.includes("speechSynthesis")&&voice.includes("SpeechSynthesisUtterance"),"voice bridge must provide browser-local speech fallback");
+assert.ok(voice.includes("registerProvider"),"voice bridge must reserve a custom provider contract");
+assert.ok(voice.includes("custom-provider-unavailable"),"voice bridge must fail closed when custom voice is selected without a provider");
+assert.ok(voice.includes("storesConversationText:false")&&voice.includes("microphoneRequired:false"),"voice bridge must declare privacy-safe presentation behavior");
+assert.ok(!voice.includes("fetch(")&&!voice.includes("XMLHttpRequest")&&!voice.includes("WebSocket")&&!voice.includes("http://")&&!voice.includes("https://"),"voice bridge must not call a network");
+assert.ok(mentorManifest.mentorVoice?.profileId==="archaemenes-high-v1","mentor manifest must pin the Archaemenes voice profile");
+assert.equal(mentorManifest.mentorVoice?.authority,"presentation-only","mentor manifest must keep voice presentation-only");
+assert.equal(mentorManifest.mentorVoice?.requiresMicrophone,false,"mentor voice must not require a microphone");
+assert.equal(authority.mentorVoicePresentation?.authority,"presentation-only","Academy authority must deny voice any instructional authority");
+assert.equal(authority.mentorVoicePresentation?.assessmentAuthority,false,"voice must have no assessment authority");
+assert.equal(authority.mentorVoicePresentation?.progressionAuthority,false,"voice must have no progression authority");
+assert.equal(authority.mentorVoicePresentation?.gradeAuthority,false,"voice must have no grade authority");
 
 console.log("Khaemenes High mentor bridge: PASS");
