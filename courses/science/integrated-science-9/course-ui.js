@@ -1,7 +1,38 @@
 "use strict";
 
 (() => {
-  const STORAGE_KEY = "khaemenes_science_integrated9_v1";
+  const LEGACY_STORAGE_KEY = "khaemenes_science_integrated9_v1";
+  const ACTIVE_LEARNER_KEY = "kh_sci9_u04_active_learner_v1";
+  function learnerId() {
+    try { const id = sessionStorage.getItem(ACTIVE_LEARNER_KEY); return typeof id === "string" && /^[a-z0-9_-]{3,32}$/.test(id) ? id : null; }
+    catch { return null; }
+  }
+  const STORAGE_KEY = learnerId() ? "kh_sci9_learner_v1:" + learnerId() + ":" + LEGACY_STORAGE_KEY : "kh_sci9_dashboard_unselected_v1";
+  function learnerBanner() {
+    const target = document.querySelector("main") || document.body;
+    const banner = document.createElement("section");
+    banner.setAttribute("aria-label","Science 9 learner record");
+    banner.style.cssText = "max-width:980px;margin:16px auto;padding:16px;text-align:center;border:1px solid #b4aa95;border-radius:7px;background:#fffaf0;color:#18212a";
+    const status = document.createElement("p");
+    status.textContent = learnerId() ? "Active Science 9 learner: " + learnerId() + ". Progress is stored locally for this learner." : "No learner selected. Select a learner before editing or importing Science 9 progress. Older shared-browser records remain preserved.";
+    const button = document.createElement("button");
+    button.type="button";button.textContent="Select / switch learner";button.style.cssText="border-radius:7px;padding:10px 16px";
+    button.addEventListener("click",()=>{
+      const id = window.prompt("Science 9 learner ID (3–32 letters, numbers, underscores or hyphens):",learnerId()||"");
+      if(id===null)return;
+      const cleaned=id.trim().toLowerCase();
+      if(!/^[a-z0-9_-]{3,32}$/.test(cleaned)){window.alert("Invalid learner ID; progress was not changed.");return;}
+      try { sessionStorage.setItem(ACTIVE_LEARNER_KEY,cleaned); location.reload(); }
+      catch { window.alert("Session storage unavailable; no record was changed."); }
+    });
+    banner.append(status,button);target.prepend(banner);
+    if(!learnerId()){
+      for(const id of ["pathwaySelect","importProgress","progressFile","resetProgress","confirmReset"]){
+        const el=document.getElementById(id);
+        if(el){el.disabled=true;el.setAttribute("aria-disabled","true");}
+      }
+    }
+  }
   const THEME_KEY = "khaemenes_theme";
   const DEFAULT_STATE = {
     pathway: "Core",
@@ -58,6 +89,7 @@
   let activeFilter = "all";
 
   function saveState() {
+    if(!learnerId()){ announce("Select a learner before saving Science 9 progress."); return; }
     state.updatedAt = new Date().toISOString();
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     updateProgress();
@@ -267,6 +299,7 @@
   }
 
   function importProgress(file) {
+    if(!learnerId()){announce("Select a learner before importing progress.");return;}
     if (!file) return;
     const reader = new FileReader();
     reader.onload = () => {
@@ -294,6 +327,7 @@
   }
 
   function resetProgress() {
+    if(!learnerId()){announce("Select a learner before resetting progress.");return;}
     state = { ...DEFAULT_STATE, completedUnits: [], notes: {} };
     localStorage.removeItem(STORAGE_KEY);
     updateProgress();
@@ -342,6 +376,7 @@
 
   function initialize() {
     initializeTheme();
+    learnerBanner();
     initializeControls();
     updateOnlineStatus();
 
