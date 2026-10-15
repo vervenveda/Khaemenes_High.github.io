@@ -1,0 +1,69 @@
+
+/* English 9 · Week 05 individual lesson and spiral curriculum */
+.week5-lesson .wrap{max-width:none;margin:0;padding:0}
+.week5-lesson>section{display:block}
+.week5-lesson .lesson-detail{padding:0;border:0;background:transparent}
+.week5-lesson .lesson-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,.85fr);gap:15px}
+.week5-lesson .lesson-panel,.week5-lesson .flow-step,.week5-lesson .text-passage,.week5-lesson .source-card,.week5-lesson .micro-lab,.week5-lesson .pathway,.week5-lesson .lesson-response{border:1px solid #ddd0bc;border-radius:7px;padding:14px;background:#fffefa;color:#231f19;margin:8px 0}
+.week5-lesson :is(h2,h3){font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.3;overflow-wrap:break-word}
+.week5-lesson h2{font-size:24px}.week5-lesson h3{font-size:19px}
+.week5-lesson .lesson-meta{display:flex;gap:8px;flex-wrap:wrap}
+.week5-lesson .tag{border:1px solid #d4c6af;border-radius:7px;padding:4px 8px}
+.week5-lesson :is(.pathway-grid,.compare-grid){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week5-lesson .pathway-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.week5-lesson .lesson-response textarea{width:100%;min-height:170px}
+.week5-lesson :is(table,tbody,th,td){max-width:100%}
+.week5-lesson table{width:100%;border-collapse:collapse}
+.week5-lesson :is(th,td){padding:8px;border:1px solid #d4c6af;text-align:left}
+.week5-lesson a{overflow-wrap:anywhere}
+.week5-lesson .media-wrap{aspect-ratio:16/9}
+.week5-lesson iframe{width:100%;height:100%;border:0}
+.week5-spiral,.week5-studio,.week5-assessment,.week5-support{background:#fffefa;color:#241e17;border:1px solid #ddd0bc;border-radius:7px;padding:19px;margin:20px 0}
+.week5-spiral h2,.week5-studio h2,.week5-assessment h2{font:400 24px/1.35 Cinzel,Georgia,serif}
+.week5-spiral-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.week5-spiral-grid>div{padding:13px;border:1px solid #e8dccb;border-radius:7px;background:#f8f4ed}
+.week5-spiral-grid h3{font-size:17px;font-weight:500;margin:0 0 8px}
+.week5-spiral-grid p{margin:0;line-height:1.65}
+.week5-spiral a{color:#285b83}
+.week5-studio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.week5-studio-grid label,.week5-assessment label{display:block;margin:9px 0 5px}
+.week5-studio-grid textarea,.week5-assessment textarea{width:100%;box-sizing:border-box;min-height:120px;padding:10px;border:1px solid #c7b9a7;border-radius:7px;background:#fff;color:#211f1b;line-height:1.6}
+.week5-assessment textarea{min-height:180px}
+#week5-draft{min-height:320px}
+.week5-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.week5-actions button,.week5-actions a{border-radius:7px;padding:9px 14px;background:#205b48;color:#fff;cursor:pointer;border:0;text-decoration:none;line-height:1.4}
+.week5-actions button:disabled{opacity:.5;cursor:not-allowed}
+.week5-actions .secondary{background:#e7e0d1;color:#26201a}
+.week5-note{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65}
+.week5-practice fieldset{border:1px solid #dfd2c0;border-radius:7px;padding:12px;margin:12px 0}
+.week5-practice legend{font-weight:500}
+.week5-practice label{display:block;padding:6px 0}
+.week5-next[hidden],.week5-locked-route[hidden]{display:none!important}
+.week5-next{text-align:center;background:#f2f9f1;border:1px solid #9dc7ab;border-radius:7px;padding:18px;margin:18px 0}
+.week5-next a{background:#205b48;color:#fff;display:inline-block;padding:11px 17px;border-radius:7px;text-decoration:none}
+.week5-support summary{cursor:pointer;font-weight:500}
+.week5-status{padding:10px 13px;border:1px solid #d8c9ae;border-radius:7px;background:#faf6ed}
+.week5-error{color:#9c302b}
+.week5-assessment .rubric-row{border:1px solid #ddd0bc;padding:11px;border-radius:7px;margin:8px 0}
+.week5-assessment select{padding:8px;border:1px solid #cab9a7;background:#fff;color:#222;border-radius:7px}
+.week5-index{background:#fffefa;border:1px solid #d7c8b1;border-radius:7px;padding:18px;max-width:1100px;margin:20px auto}
+.week5-index a{color:#285b83}
+.week5-index li{padding:5px 0}
+.week5-index [data-week5-daily-status]{font-size:13px;margin-left:12px;color:#555}
+@media(max-width:850px){.week5-lesson .lesson-grid,.week5-studio-grid,.week5-spiral-grid{grid-template-columns:1fr}.week5-lesson .pathway-grid{grid-template-columns:1fr}}
+@media print{.week5-actions button,.week5-next,.daily-nav{display:none!important}}
+
+/* Epic Heroes: timing guidance, two-text evidence and non-punitive accommodations */
+.week5-lesson .text-passage{line-height:1.7}
+.week5-lesson .lesson-head{padding:12px 0}
+.week5-lesson .media-note{color:#655b4d;font-size:13px}
+.week5-lesson .compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week5-assessment .week5-evidence-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week5-assessment input[type=text],.week5-assessment select{border:1px solid #c6b9a7;border-radius:7px;background:#fff;color:#222;padding:8px;max-width:100%}
+.week5-timer{border:1px solid #d6c6ab;padding:12px 15px;border-radius:7px;margin:12px 0;background:#faf7ef}
+.week5-timer-output{font-variant-numeric:tabular-nums;font-size:20px;font-weight:500}
+.week5-locked-warning{font-size:13px;color:#805d25}
+.week5-independent-note{border-left:3px solid #9b875f;padding:12px;background:#faf5e9;margin:12px 0}
+.week5-review-feedback{white-space:pre-wrap;line-height:1.65}
+@media(max-width:800px){.week5-lesson .compare-grid,.week5-assessment .week5-evidence-fields{grid-template-columns:1fr}}
+@media print{.week5-timer{display:none}}
