@@ -21,6 +21,7 @@ on:
       - 'courses/science/integrated-science-9/tools/check-unit01-03-answer-integrity.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit04-06-answer-integrity.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit07-09-assessment-quality.mjs'
+      - 'courses/science/integrated-science-9/tools/check-unit10-12-assessment-quality.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit10-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit09-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit08-records.mjs'
@@ -52,6 +53,7 @@ on:
       - 'courses/science/integrated-science-9/tools/check-unit01-03-answer-integrity.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit04-06-answer-integrity.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit07-09-assessment-quality.mjs'
+      - 'courses/science/integrated-science-9/tools/check-unit10-12-assessment-quality.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit10-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit09-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit08-records.mjs'
@@ -119,5 +121,7 @@ jobs:
         run: node courses/science/integrated-science-9/tools/check-unit04-06-answer-integrity.mjs
       - name: Verify Unit 07-09 assessment content structure
         run: node courses/science/integrated-science-9/tools/check-unit07-09-assessment-quality.mjs
+      - name: Verify Unit 10-12 assessment quality
+        run: node courses/science/integrated-science-9/tools/check-unit10-12-assessment-quality.mjs
       - name: Verify science runtime syntax
         run: node courses/science/integrated-science-9/tools/validate-course-runtime.mjs
