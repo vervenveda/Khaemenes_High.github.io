@@ -1,6 +1,6 @@
 "use strict";
 (()=>{
- const KEY="khaemenes_science_u05_v1",$=(s,p=document)=>p.querySelector(s);
+ const KEY=window.KhaemenesScienceU05Scope.key()||"kh_sci9_u05_unselected_v1",$=(s,p=document)=>p.querySelector(s);
  let rows=[];
  function esc(v){return String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
  function load(){try{const s=JSON.parse(localStorage.getItem(KEY))||{};rows=Array.isArray(s.biodiversity?.rows)?s.biodiversity.rows:[];$("#datasetSource").value=s.biodiversity?.source||"";$("#surveyEffort").value=s.biodiversity?.effort||""}catch{rows=[]}if(!rows.length)for(let i=0;i<5;i++)rows.push({name:"",count:0})}
