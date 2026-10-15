@@ -7,6 +7,8 @@ on:
       - 'courses/science/integrated-science-9/units/unit-01/**'
       - 'courses/science/integrated-science-9/units/unit-02/**'
       - 'courses/science/integrated-science-9/units/unit-03/**'
+      - 'courses/science/integrated-science-9/course-ui.js'
+      - 'courses/science/integrated-science-9/tools/check-cross-unit-records.mjs'
       - 'courses/science/integrated-science-9/tools/test-unit04-learner-scope.mjs'
       - 'courses/science/integrated-science-9/tools/validate-unit01-learner-scope.mjs'
       - '.github/workflows/science9-learner-isolation-validation.yml'
@@ -16,6 +18,8 @@ on:
       - 'courses/science/integrated-science-9/units/unit-01/**'
       - 'courses/science/integrated-science-9/units/unit-02/**'
       - 'courses/science/integrated-science-9/units/unit-03/**'
+      - 'courses/science/integrated-science-9/course-ui.js'
+      - 'courses/science/integrated-science-9/tools/check-cross-unit-records.mjs'
       - 'courses/science/integrated-science-9/tools/test-unit04-learner-scope.mjs'
       - 'courses/science/integrated-science-9/tools/validate-unit01-learner-scope.mjs'
       - '.github/workflows/science9-learner-isolation-validation.yml'
@@ -37,5 +41,7 @@ jobs:
         run: node courses/science/integrated-science-9/tools/check-unit02-scope.mjs
       - name: Verify Unit 03 learner scope
         run: node courses/science/integrated-science-9/tools/check-unit03-scope.mjs
+      - name: Verify cross-unit records and dashboard
+        run: node courses/science/integrated-science-9/tools/check-cross-unit-records.mjs
       - name: Verify science runtime syntax
         run: node courses/science/integrated-science-9/tools/validate-course-runtime.mjs
