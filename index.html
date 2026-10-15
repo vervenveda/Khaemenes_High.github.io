@@ -293,6 +293,27 @@ footer{padding:36px 20px;color:rgba(255,255,255,.64);background:#030a11;border-t
 .portal-links a{white-space:normal;overflow-wrap:normal;text-align:center;}
 @media(max-width:900px){.grade-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:570px){.grade-grid{grid-template-columns:minmax(0,1fr);}}
+
+/* Student-first High School home, coordinated with the Academy front desk. */
+.high-frontdesk-hero .hero-inner{min-height:0!important;padding-top:clamp(48px,6vw,80px)!important;padding-bottom:clamp(40px,5vw,64px)!important}
+.high-frontdesk-hero .hero-stage{gap:20px!important;justify-items:center;text-align:center}
+.high-frontdesk-hero h1{font-size:clamp(40px,5.1vw,66px)!important;line-height:1.18!important;letter-spacing:.005em;text-wrap:balance;margin:11px auto 0}
+.high-hero-sub{font-family:var(--ceremonial);font-size:clamp(14px,1.3vw,19px);color:var(--gold);letter-spacing:.08em;margin:13px auto 0;text-wrap:balance}
+.high-frontdesk-hero .hero-lead{max-width:720px!important;font-size:clamp(16px,1.6vw,19px)!important;line-height:1.65!important}
+.high-frontdesk-hero .hero-actions{gap:10px!important}
+.high-frontdesk-hero .hero-actions .button{width:auto!important;min-width:0!important;min-height:39px!important;padding:9px 17px!important;font-weight:400!important;line-height:1.4!important;box-shadow:none!important;border-radius:7px!important}
+.high-quick-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;width:min(100%,960px);margin:16px auto 0}
+.high-quick-grid a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-width:0;min-height:148px;padding:18px 12px;border:1px solid var(--line);border-radius:7px;background:#fffdf9;color:var(--forest-deep);text-align:center;box-shadow:0 3px 13px rgba(20,28,24,.04);text-decoration:none}
+.high-quick-grid a:hover,.high-quick-grid a:focus-visible{border-color:var(--gold);background:white}
+.high-quick-mark{display:grid;place-items:center;min-width:39px;height:39px;padding:0 6px;border-radius:7px;background:#243d33;color:#fff;font:400 13px var(--ceremonial)}
+.high-quick-grid strong{font:400 17px var(--ceremonial);overflow-wrap:normal}
+.high-quick-grid small{font-size:11px;line-height:1.45;color:var(--muted);text-wrap:balance}
+.high-offline-aside{width:min(calc(100% - 32px),960px);margin:28px auto!important;padding:18px 22px!important;background:#faf8f2!important;border:1px solid var(--line)!important;text-align:center}
+.high-offline-aside h2{font-size:20px!important}
+.high-offline-aside p{line-height:1.6}
+#grades{scroll-margin-top:95px}
+@media(max-width:700px){.high-quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.high-frontdesk-hero .hero-inner{padding-top:43px!important}.high-frontdesk-hero .hero-actions{display:flex;flex-wrap:wrap;justify-content:center}}
+@media(max-width:430px){.high-quick-grid{gap:9px}.high-quick-grid a{padding:13px 8px;min-height:127px}.high-frontdesk-hero .hero-actions .button{width:100%!important}}
 </style>
 <link rel="stylesheet" href="assets/vervenveda-parchment.css" data-vervenveda-parchment>
 <style id="khaemenes-typography-standard">
@@ -459,28 +480,39 @@ html:root:root body .hero .hero-lead{font-size:clamp(16px,2vw,24px)!important;li
   </aside>
 </div>
 
-<main id="main"><aside aria-label="Offline access for every high school subject" style="margin:18px auto;max-width:1140px;padding:18px;border:1px solid #aa956b;border-radius:7px;background:#fff3d7;color:#201e1a"><h2 style="font-size:24px;font-weight:400">Study without a continuous internet connection</h2><p>Students and families: save public high-school lessons for offline reading while you have access, even if you only connect occasionally. Download standalone English reading packs or use the all-course offline study installer. Always export and back up student work separately.</p><p><a href="offline/index.html">Open the High School Offline Learning Hub →</a></p></aside>
-  <section class="hero">
+<main id="main">
+  <section class="hero high-frontdesk-hero">
     <div class="shell hero-inner">
       <div class="hero-stage">
         <div>
-          <p class="eyebrow">Verve N Veda Educational Network</p>
+          <p class="eyebrow">Welcome to Khaemenes Academy</p>
           <h1>Khaemenes High School</h1>
+          <p class="high-hero-sub">Your Classes. Your Profile. Your Path Forward.</p>
         </div>
-        <p class="hero-lead">A calm, rigorous Grades 9–12 campus connecting academic courses, student and family records, health, research, professional tools, creativity, career preparation, and the transition into Higher Learning.</p>
+        <p class="hero-lead">Choose your grade to begin studying, return to your student profile, or open the full course directory. Every learning pathway begins with a clear doorway.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#grades">Enter Grades 9–12</a>
-          <a class="button button-secondary" href="#portals">Student &amp; Family</a>
-          <a class="button button-career" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/Career/">Career &amp; Future</a>
+          <a class="button button-primary" href="#grades">Find My Classes</a>
+          <a class="button button-secondary" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student Profile</a>
+          <a class="button button-secondary" href="./courses/">All Courses</a>
         </div>
-        <div class="hero-stat-grid" aria-label="High School overview">
-          <div class="hero-stat"><strong>Grades 9–12</strong><span>Four connected grade pathways from foundations through senior synthesis.</span></div>
-          <div class="hero-stat"><strong>Family Registry</strong><span>Central Khaemenes family bridge remains connected while local controls stay available.</span></div>
-          <div class="hero-stat"><strong>Career Ready</strong><span>Career assessment, exploration, professional tools, and postsecondary planning now have a clear doorway.</span></div>
-          <div class="hero-stat"><strong>Live Resources</strong><span>The study shelf reads the ecosystem federation instead of depending on a giant manual app list.</span></div>
-        </div>
+        <nav class="high-quick-grid" aria-label="High School quick access">
+          <a href="#grades"><span class="high-quick-mark">9–12</span><strong>My Grade</strong><small>Enter your classes</small></a>
+          <a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/"><span class="high-quick-mark">S</span><strong>Student</strong><small>Resume your profile</small></a>
+          <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/"><span class="high-quick-mark">F</span><strong>Family</strong><small>Family records and support</small></a>
+          <a href="./courses/"><span class="high-quick-mark">C</span><strong>Courses</strong><small>Browse every subject</small></a>
+        </nav>
       </div>
-      <button class="scroll-cue" data-scroll="#portals">Explore the campus</button>
+    </div>
+  </section>
+
+  <section class="section" id="grades">
+    <div class="section-inner">
+      <div class="heading">
+        <p class="kicker">Four Connected Grade Years</p>
+        <h2>One campus. Four distinct stages.</h2>
+        <p>Each grade has a clear landing point, while department doors, research resources, and career preparation remain available across the full secondary sequence.</p>
+      </div>
+      <div class="grade-grid" id="gradeGrid"></div>
     </div>
   </section>
 
@@ -545,17 +577,8 @@ html:root:root body .hero .hero-lead{font-size:clamp(16px,2vw,24px)!important;li
     </div>
   </section>
 
-  <section class="section" id="grades">
-    <div class="section-inner">
-      <div class="heading">
-        <p class="kicker">Four Connected Grade Years</p>
-        <h2>One campus. Four distinct stages.</h2>
-        <p>Each grade has a clear landing point, while department doors, research resources, and career preparation remain available across the full secondary sequence.</p>
-      </div>
-      <div class="grade-grid" id="gradeGrid"></div>
-    </div>
-  </section>
 
+<aside class="high-offline-aside" aria-label="Offline access for every high school subject" style="margin:18px auto;max-width:1140px;padding:18px;border:1px solid #aa956b;border-radius:7px;background:#fff3d7;color:#201e1a"><h2 style="font-size:24px;font-weight:400">Study without a continuous internet connection</h2><p>Students and families: save public high-school lessons for offline reading while you have access, even if you only connect occasionally. Download standalone English reading packs or use the all-course offline study installer. Always export and back up student work separately.</p><p><a href="offline/index.html">Open the High School Offline Learning Hub →</a></p></aside>
   <section class="section section-alt" id="grade-nine">
     <div class="section-inner">
       <div class="heading"><p class="kicker">Grade 9 Learning Hall</p><h2>Foundations, evidence, and academic fluency.</h2><p>Pre-Algebra, Integrated Science 9, English 9, Social Studies 9, and the department entrances that support the first high-school year.</p></div>
