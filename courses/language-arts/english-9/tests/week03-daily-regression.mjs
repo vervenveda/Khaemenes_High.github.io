@@ -49,7 +49,7 @@ for(let day=11;day<=15;day++){
   assert.match(html,/450–650/);
   assert.doesNotMatch(html,/week3-questions-data/);
   assert.match(html,/Lock and preserve Draft 1/);
-  assert.match(html,/href="../../week-04\/index.html"/);
+  assert.ok(html.includes('href="../../week-04/index.html"'));
  }
 }
 assert.match(css,/\.spiral-steps/);assert.match(css,/\.daily-next\[hidden\]/);
