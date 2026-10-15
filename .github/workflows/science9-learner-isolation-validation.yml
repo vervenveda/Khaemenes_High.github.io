@@ -10,6 +10,8 @@ on:
       - 'courses/science/integrated-science-9/units/unit-05/**'
       - 'courses/science/integrated-science-9/units/unit-06/**'
       - 'courses/science/integrated-science-9/units/unit-07/**'
+      - 'courses/science/integrated-science-9/units/unit-08/**'
+      - 'courses/science/integrated-science-9/tools/check-unit08-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit07-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit06-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit05-records.mjs'
@@ -27,6 +29,8 @@ on:
       - 'courses/science/integrated-science-9/units/unit-05/**'
       - 'courses/science/integrated-science-9/units/unit-06/**'
       - 'courses/science/integrated-science-9/units/unit-07/**'
+      - 'courses/science/integrated-science-9/units/unit-08/**'
+      - 'courses/science/integrated-science-9/tools/check-unit08-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit07-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit06-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit05-records.mjs'
@@ -69,5 +73,7 @@ jobs:
         run: node courses/science/integrated-science-9/tools/check-unit06-records.mjs
       - name: Verify Unit 07 chemistry records
         run: node courses/science/integrated-science-9/tools/check-unit07-records.mjs
+      - name: Verify Unit 08 physics records
+        run: node courses/science/integrated-science-9/tools/check-unit08-records.mjs
       - name: Verify science runtime syntax
         run: node courses/science/integrated-science-9/tools/validate-course-runtime.mjs
