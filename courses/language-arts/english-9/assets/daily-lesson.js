@@ -113,6 +113,34 @@
    var next=Object.assign({},progress);next[evidenceKey]=true;
    if(write(progressKey,JSON.stringify(next))){progress=next;checkFinish();}
  });
+ 
+ // The Day 4 composer never grades writing and never stores a parallel essay.
+ // It appends student-authored text through the exact original field's input handler.
+ if(day===4){
+   var composerPanel=document.getElementById("daily-claim-builder");
+   if(composerPanel){
+     var cClaim=document.getElementById("composer-claim"),cEvidence=document.getElementById("composer-evidence"),
+       cReason=document.getElementById("composer-reason"),cOutput=document.getElementById("composer-output");
+     function compose(){
+       if(!cClaim.value.trim()||!cEvidence.value.trim()||!cReason.value.trim()){
+         cOutput.textContent="Complete all three parts in your own words before assembling the analysis.";return null;
+       }
+       var draft="Claim: "+cClaim.value.trim()+"\nEvidence: "+cEvidence.value.trim()+"\nReasoning and limitation: "+cReason.value.trim();
+       cOutput.textContent=draft;return draft;
+     }
+     document.getElementById("composer-preview").addEventListener("click",compose);
+     document.getElementById("composer-append").addEventListener("click",function(){
+       var draft=compose();if(!draft||!ready||frozen)return;
+       var field=fields.find(function(f){return f.dataset.saveField==="week-01-day4-plan";});
+       if(!field)return;
+       if(field.value.includes(draft)){cOutput.textContent="This same passage is already in your Day 4 plan.";return;}
+       field.value=(field.value.trim()?field.value.trim()+"\n\n":"")+draft;
+       field.dispatchEvent(new Event("input",{bubbles:true}));
+       if(!frozen)cOutput.textContent="Added to your original Day 4 plan and saved on this device.\n\n"+draft;
+     });
+   }
+ }
+
  var baselineSaved=false;
  var baseline=document.getElementById("preserve-baseline");
  if(day===1&&baseline){

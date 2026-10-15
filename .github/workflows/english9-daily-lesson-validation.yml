@@ -1,0 +1,23 @@
+name: English 9 Daily Lesson Validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/english-9/**'
+      - '.github/workflows/english9-daily-lesson-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/language-arts/english-9/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  daily-lessons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate individual English 9 lessons
+        run: node courses/language-arts/english-9/tests/daily-lesson-regression.mjs
