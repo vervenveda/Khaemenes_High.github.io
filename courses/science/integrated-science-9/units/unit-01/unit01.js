@@ -89,7 +89,13 @@
   function verificationPassed(){const v=state.verification||{};return Boolean(v.complete)&&Number(v.designScore)>=32&&Number(v.cr1Score)>=16&&Number(v.cr2Score)>=16}
   function requirementComplete(id){if(/^day\d\d$/.test(id))return state.completedPages.includes(id);if(id==="helicopter")return Boolean(state.helicopter.complete);if(id==="dataset")return Boolean(state.dataset.complete);if(id==="quiz")return quizPassed();if(id==="design")return Boolean(state.design.submitted)&&Number(state.verification.designScore)>=32;if(id==="assessment")return assessmentPassed();if(id==="verification")return verificationPassed();if(id==="reflection")return Boolean(state.reflection.complete);return false}
   function unitComplete(){return REQUIREMENTS.every(requirementComplete)}
-  function save(){state.updatedAt=new Date().toISOString();localStorage.setItem(KEY,JSON.stringify(state));syncRoot();updatePage()}
+  let scienceLastSeen=localStorage.getItem(KEY),scienceConflict=false;
+  window.addEventListener("storage",event=>{if(event.key===KEY&&event.newValue!==scienceLastSeen){scienceConflict=true;window.alert("This learner's Unit 01 record changed in another tab. Reload before saving to protect newer work.");}});
+  function save(){
+    if(scienceConflict||localStorage.getItem(KEY)!==scienceLastSeen){scienceConflict=true;window.alert("Unit 01 has newer work in another tab. Reload before saving.");return}
+    state.updatedAt=new Date().toISOString();const serialized=JSON.stringify(state);
+    localStorage.setItem(KEY,serialized);scienceLastSeen=serialized;syncRoot();updatePage()
+  }
   function syncRoot(){const root=parse(localStorage.getItem(ROOT_KEY),{}),completed=new Set(Array.isArray(root.completedUnits)?root.completedUnits:[]);if(unitComplete())completed.add("u01");else completed.delete("u01");const courseSequenceComplete=["u00","u01","u02","u03","u04","u05","u06","u07","u08","u09","u10","u11","u12"].every(id=>completed.has(id));localStorage.setItem(ROOT_KEY,JSON.stringify({...root,pathway:root.pathway||"Core",completedUnits:[...completed],notes:root.notes&&typeof root.notes==="object"?root.notes:{},lastVisitedUnit:"u01",courseSequenceComplete,updatedAt:new Date().toISOString()}))}
   function applyTheme(theme){const resolved=["dark","light"].includes(theme)?theme:"dark";document.documentElement.dataset.theme=resolved;localStorage.setItem(THEME_KEY,resolved);const b=$("#themeToggle");if(b){b.textContent=resolved==="dark"?"☼":"◐";b.setAttribute("aria-label",`Switch to ${resolved==="dark"?"light":"dark"} theme`)}}
   function initializeTheme(){const saved=localStorage.getItem(THEME_KEY),preferred=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";applyTheme(saved||preferred);$("#themeToggle")?.addEventListener("click",()=>applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark"))}
