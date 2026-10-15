@@ -1,7 +1,8 @@
 "use strict";
 (()=>{
   const $ = selector => document.querySelector(selector);
-  const KEY = "khaemenes_science_u08_motion_data_v1";
+  const KEY = window.KhaemenesScienceU08Scope.active() ? "kh_sci9_u08_learner_v1:" + window.KhaemenesScienceU08Scope.active() + ":khaemenes_science_u08_motion_data_v1" : "kh_sci9_u08_motion_unselected_v1";
+  let lastSeen = localStorage.getItem(KEY);
   const rows = 5;
 
   function values(){
@@ -103,7 +104,10 @@
     ).join("");
 
     draw(data);
-    localStorage.setItem(KEY, JSON.stringify(data));
+    if(localStorage.getItem(KEY)!==lastSeen){window.alert("Motion Lab data changed in another tab. Reload before saving.");return;}
+    const serialized=JSON.stringify(data);
+    localStorage.setItem(KEY, serialized);
+    lastSeen=serialized;
   }
 
   function loadPractice(){
