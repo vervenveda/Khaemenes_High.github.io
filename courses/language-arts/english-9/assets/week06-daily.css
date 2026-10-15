@@ -1,0 +1,83 @@
+
+/* English 9 · Week 06 individual lesson and spiral curriculum */
+.week6-lesson .wrap{max-width:none;margin:0;padding:0}
+.week6-lesson>section{display:block}
+.week6-lesson .lesson-detail{padding:0;border:0;background:transparent}
+.week6-lesson .lesson-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,.85fr);gap:15px}
+.week6-lesson .lesson-panel,.week6-lesson .flow-step,.week6-lesson .text-passage,.week6-lesson .source-card,.week6-lesson .micro-lab,.week6-lesson .pathway,.week6-lesson .lesson-response{border:1px solid #ddd0bc;border-radius:7px;padding:14px;background:#fffefa;color:#231f19;margin:8px 0}
+.week6-lesson :is(h2,h3){font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.3;overflow-wrap:break-word}
+.week6-lesson h2{font-size:24px}.week6-lesson h3{font-size:19px}
+.week6-lesson .lesson-meta{display:flex;gap:8px;flex-wrap:wrap}
+.week6-lesson .tag{border:1px solid #d4c6af;border-radius:7px;padding:4px 8px}
+.week6-lesson :is(.pathway-grid,.compare-grid){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week6-lesson .pathway-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.week6-lesson .lesson-response textarea{width:100%;min-height:170px}
+.week6-lesson :is(table,tbody,th,td){max-width:100%}
+.week6-lesson table{width:100%;border-collapse:collapse}
+.week6-lesson :is(th,td){padding:8px;border:1px solid #d4c6af;text-align:left}
+.week6-lesson a{overflow-wrap:anywhere}
+.week6-lesson .media-wrap{aspect-ratio:16/9}
+.week6-lesson iframe{width:100%;height:100%;border:0}
+.week6-spiral,.week6-studio,.week6-assessment,.week6-support{background:#fffefa;color:#241e17;border:1px solid #ddd0bc;border-radius:7px;padding:19px;margin:20px 0}
+.week6-spiral h2,.week6-studio h2,.week6-assessment h2{font:400 24px/1.35 Cinzel,Georgia,serif}
+.week6-spiral-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.week6-spiral-grid>div{padding:13px;border:1px solid #e8dccb;border-radius:7px;background:#f8f4ed}
+.week6-spiral-grid h3{font-size:17px;font-weight:500;margin:0 0 8px}
+.week6-spiral-grid p{margin:0;line-height:1.65}
+.week6-spiral a{color:#285b83}
+.week6-studio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.week6-studio-grid label,.week6-assessment label{display:block;margin:9px 0 5px}
+.week6-studio-grid textarea,.week6-assessment textarea{width:100%;box-sizing:border-box;min-height:120px;padding:10px;border:1px solid #c7b9a7;border-radius:7px;background:#fff;color:#211f1b;line-height:1.6}
+.week6-assessment textarea{min-height:180px}
+#week6-draft{min-height:320px}
+.week6-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.week6-actions button,.week6-actions a{border-radius:7px;padding:9px 14px;background:#205b48;color:#fff;cursor:pointer;border:0;text-decoration:none;line-height:1.4}
+.week6-actions button:disabled{opacity:.5;cursor:not-allowed}
+.week6-actions .secondary{background:#e7e0d1;color:#26201a}
+.week6-note{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65}
+.week6-practice fieldset{border:1px solid #dfd2c0;border-radius:7px;padding:12px;margin:12px 0}
+.week6-practice legend{font-weight:500}
+.week6-practice label{display:block;padding:6px 0}
+.week6-next[hidden],.week6-locked-route[hidden]{display:none!important}
+.week6-next{text-align:center;background:#f2f9f1;border:1px solid #9dc7ab;border-radius:7px;padding:18px;margin:18px 0}
+.week6-next a{background:#205b48;color:#fff;display:inline-block;padding:11px 17px;border-radius:7px;text-decoration:none}
+.week6-support summary{cursor:pointer;font-weight:500}
+.week6-status{padding:10px 13px;border:1px solid #d8c9ae;border-radius:7px;background:#faf6ed}
+.week6-error{color:#9c302b}
+.week6-assessment .rubric-row{border:1px solid #ddd0bc;padding:11px;border-radius:7px;margin:8px 0}
+.week6-assessment select{padding:8px;border:1px solid #cab9a7;background:#fff;color:#222;border-radius:7px}
+.week6-index{background:#fffefa;border:1px solid #d7c8b1;border-radius:7px;padding:18px;max-width:1100px;margin:20px auto}
+.week6-index a{color:#285b83}
+.week6-index li{padding:5px 0}
+.week6-index [data-week6-daily-status]{font-size:13px;margin-left:12px;color:#555}
+@media(max-width:850px){.week6-lesson .lesson-grid,.week6-studio-grid,.week6-spiral-grid{grid-template-columns:1fr}.week6-lesson .pathway-grid{grid-template-columns:1fr}}
+@media print{.week6-actions button,.week6-next,.daily-nav{display:none!important}}
+
+/* Epic Heroes: timing guidance, two-text evidence and non-punitive accommodations */
+.week6-lesson .text-passage{line-height:1.7}
+.week6-lesson .lesson-head{padding:12px 0}
+.week6-lesson .media-note{color:#655b4d;font-size:13px}
+.week6-lesson .compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week6-assessment .week6-evidence-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week6-assessment input[type=text],.week6-assessment select{border:1px solid #c6b9a7;border-radius:7px;background:#fff;color:#222;padding:8px;max-width:100%}
+.week6-timer{border:1px solid #d6c6ab;padding:12px 15px;border-radius:7px;margin:12px 0;background:#faf7ef}
+.week6-timer-output{font-variant-numeric:tabular-nums;font-size:20px;font-weight:500}
+.week6-locked-warning{font-size:13px;color:#805d25}
+.week6-independent-note{border-left:3px solid #9b875f;padding:12px;background:#faf5e9;margin:12px 0}
+.week6-review-feedback{white-space:pre-wrap;line-height:1.65}
+@media(max-width:800px){.week6-lesson .compare-grid,.week6-assessment .week6-evidence-fields{grid-template-columns:1fr}}
+@media print{.week6-timer{display:none}}
+
+.week6-context-pill{border:1px solid #cdb89b;padding:6px 9px;border-radius:7px;font-size:13px;background:#fbf8f1}
+.week6-assessment .week6-map-entry{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.week6-assessment .week6-map-entry textarea{min-height:100px}
+.week6-assessment label{display:block;margin:10px 0 5px}
+.week6-assessment textarea{box-sizing:border-box;width:100%;min-height:155px}
+.week6-assessment input[type=text],.week6-assessment select{border:1px solid #c6b9a7;border-radius:7px;background:#fff;color:#222;padding:8px;max-width:100%}
+.week6-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.week6-lesson .compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.week6-lesson .text-passage{padding:15px;line-height:1.72}
+.week6-assessment .daily-subheading{font-size:18px;font-weight:400;margin-top:20px}
+.week6-integrity-note{padding:12px;background:#faf6e9;border-left:3px solid #ae8a54;border-radius:0 7px 7px 0}
+.week6-next[hidden],.week6-next-link[hidden]{display:none!important}
+@media(max-width:850px){.week6-evidence-grid,.week6-lesson .compare-grid,.week6-assessment .week6-map-entry{grid-template-columns:1fr}}
