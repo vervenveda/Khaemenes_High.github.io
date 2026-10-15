@@ -13,7 +13,7 @@ button:hover,.button:hover{background:#e9dec9}button:focus-visible,a:focus-visib
 </style></head><body><main>
 <p>Pre-Algebra · Unit 05 · Lesson 01</p><h1>Percent Benchmark Studio</h1>
 <p>Practice converting among fractions, decimals, and percentages. A percent means “out of 100.” Choose the equivalent form and read the explanation after each answer.</p>
-<div class="card"><p id="counter" aria-live="polite"></p><progress id="progress" max="10" value="0"></progress><h2 id="question"></h2><div id="options" class="options"></div><p id="feedback" role="status" aria-live="polite"></p><button id="next" hidden>Next question →</button><div id="results" hidden></div></div>
+<div class="card"><p id="counter" aria-live="polite"></p><progress id="progress" max="10" value="0"></progress><p id="savedRecord" aria-live="polite"></p><h2 id="question"></h2><div id="options" class="options"></div><p id="feedback" role="status" aria-live="polite"></p><button id="next" hidden>Next question →</button><div id="results" hidden></div></div>
 <a class="button" href="../../../pre-algebra/units/unit-05/lessons/lesson-01-percent-meaning-benchmarks-equivalent-forms.html">← Return to Lesson 01</a>
 <script>
 (()=>{'use strict';
@@ -30,11 +30,15 @@ const bank=[
 ['150% is equivalent to which fraction?','3/2',['2/3','3/2','1/5','15/100'],'150/100 simplifies to 3/2.']
 ];
 let index=0,correct=0,answered=false;
+const STORAGE_KEY="khae-percent-benchmark-studio-v1";
 const $=id=>document.getElementById(id);
+function readRecord(){try{const value=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");return value&&typeof value==="object"?{bestPercent:Number(value.bestPercent)||0,attempts:Array.isArray(value.attempts)?value.attempts:[]}: {bestPercent:0,attempts:[]}}catch{return {bestPercent:0,attempts:[]}}}
+function showSavedRecord(){const record=readRecord();$("savedRecord").textContent=record.attempts.length?"Saved best: "+record.bestPercent+"% · "+record.attempts.length+" completed attempt(s).":"Completed scores save locally in this browser."}
+function saveResult(percent){try{const record=readRecord();record.bestPercent=Math.max(record.bestPercent,percent);record.attempts.push({percent,correct,total:bank.length,completedAt:new Date().toISOString()});record.attempts=record.attempts.slice(-100);localStorage.setItem(STORAGE_KEY,JSON.stringify(record));showSavedRecord();return true}catch{ $("savedRecord").textContent="Score shown, but local saving is unavailable in this browser.";return false}}
 function challenge(){index=(index+1)%bank.length;render()}
 function render(){answered=false;const q=bank[index];$('counter').textContent='Question '+(index+1)+' of '+bank.length;$('progress').value=index;$('question').textContent=q[0];$('feedback').textContent='';$('next').hidden=true;$('options').replaceChildren();q[2].forEach(choice=>{const b=document.createElement('button');b.type='button';b.textContent=choice;b.addEventListener('click',()=>answer(choice));$('options').appendChild(b)})}
 function answer(choice){if(answered)return;answered=true;const q=bank[index],ok=choice===q[1];if(ok)correct++;$('feedback').textContent=(ok?'Correct! ':'Not quite. The answer is '+q[1]+'. ')+q[3];$('options').querySelectorAll('button').forEach(b=>{b.disabled=true;if(b.textContent===q[1])b.style.borderColor='#27603a'});$('next').hidden=false;$('next').textContent=index===bank.length-1?'See results →':'Next question →'}
-$('next').addEventListener('click',()=>{index++;if(index<bank.length){render();return}$('progress').value=bank.length;$('counter').textContent='Completed';$('question').textContent='Your results';$('options').replaceChildren();$('feedback').textContent='You answered '+correct+' of '+bank.length+' correctly ('+Math.round(correct/bank.length*100)+'%). Review the explanations and try again to strengthen your understanding.';$('next').hidden=true;const restart=document.createElement('button');restart.textContent='Play again';restart.addEventListener('click',()=>{index=0;correct=0;render()});$('options').appendChild(restart)});
-render();
+$('next').addEventListener('click',()=>{index++;if(index<bank.length){render();return}$('progress').value=bank.length;$('counter').textContent='Completed';$('question').textContent='Your results';$('options').replaceChildren();$('feedback').textContent='You answered '+correct+' of '+bank.length+' correctly ('+Math.round(correct/bank.length*100)+'%). Review the explanations and try again to strengthen your understanding.';saveResult(Math.round(correct/bank.length*100));$('next').hidden=true;const restart=document.createElement('button');restart.textContent='Play again';restart.addEventListener('click',()=>{index=0;correct=0;render()});$('options').appendChild(restart)});
+showSavedRecord();render();
 })();
 </script></main></body></html>
