@@ -47,5 +47,7 @@ jobs:
         run: node courses/science/integrated-science-9/tools/check-concurrent-records.mjs
       - name: Exercise two-tab stale-save behavior
         run: node courses/science/integrated-science-9/tools/test-concurrent-save-behavior.mjs
+      - name: Verify activity-level concurrency
+        run: node courses/science/integrated-science-9/tools/check-activity-concurrency.mjs
       - name: Verify science runtime syntax
         run: node courses/science/integrated-science-9/tools/validate-course-runtime.mjs
