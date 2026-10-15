@@ -399,6 +399,210 @@ html:root:root body .hero .hero-lead{font-size:clamp(16px,2vw,24px)!important;li
 @media(max-width:650px){html:root:root body :is(.grade-grid,.course-grid,.department-grid,.pathway-grid,.network-grid){grid-template-columns:repeat(2,minmax(0,1fr))}html:root:root body :is(.grade-card,.course-card,.department-card,.pathway-card,.network-card){padding:16px 11px}}
 @media(max-width:400px){html:root:root body :is(.grade-grid,.course-grid,.department-grid,.pathway-grid,.network-grid){grid-template-columns:1fr}}
 </style>
+
+<style id="khaemenes-high-frontdesk-parity-20261015">
+/* High School front-door parity with the Khaemenes Academy home.
+   Presentation only: course data, learner records, gates, routes and STOS remain unchanged. */
+html:root:root body .site-header{
+  height:78px;
+  background:rgba(244,240,231,.97);
+  border-bottom:1px solid var(--line);
+}
+html:root:root body .header-inner{min-height:78px;height:78px}
+html:root:root body .brand-mark{
+  width:46px;height:46px;flex-basis:46px;
+  background:linear-gradient(145deg,#173326,#071a13);
+  border-color:#173326;
+  font-size:13px;
+}
+html:root:root body .breadcrumb-bar{background:#fbf8f1}
+
+html:root:root body .high-frontdesk-hero{
+  position:relative;
+  min-height:500px!important;
+  overflow:hidden;
+  color:#fff;
+  border-bottom:0;
+  background:
+    radial-gradient(circle at 50% -8%,rgba(234,217,184,.18),transparent 31rem),
+    radial-gradient(circle at 8% 10%,rgba(105,145,176,.14),transparent 26rem),
+    linear-gradient(145deg,#1d405d,#122b43 52%,#091827)!important;
+}
+html:root:root body .high-frontdesk-hero::before{
+  content:"KH";
+  position:absolute;right:3vw;bottom:-96px;
+  color:rgba(255,255,255,.035);
+  font:400 18rem/1 var(--display);
+  pointer-events:none;
+}
+html:root:root body .high-frontdesk-hero .hero-inner{
+  position:relative;z-index:1;
+  min-height:500px!important;
+  padding:76px 0 112px!important;
+  display:grid;place-items:center;
+}
+html:root:root body .high-frontdesk-hero .hero-stage{
+  max-width:980px;
+  margin:auto;
+  gap:19px!important;
+}
+html:root:root body .high-frontdesk-hero .eyebrow{
+  color:var(--gold2)!important;
+  font:400 10px/1.5 var(--ceremonial)!important;
+  letter-spacing:.18em!important;
+  text-transform:uppercase!important;
+}
+html:root:root body .high-frontdesk-hero h1{
+  max-width:1100px;
+  margin:10px auto 0!important;
+  color:#fff!important;
+  font:400 clamp(4.3rem,7.3vw,7rem)/.94 var(--display)!important;
+  letter-spacing:-.025em!important;
+  text-align:center;
+  overflow-wrap:normal!important;
+}
+html:root:root body .high-frontdesk-hero .high-hero-sub{
+  margin:13px auto 0;
+  color:var(--gold2);
+  font:400 clamp(12px,1.1vw,16px)/1.45 var(--ceremonial);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+html:root:root body .high-frontdesk-hero .hero-lead{
+  max-width:770px!important;
+  margin:2px auto 0!important;
+  color:rgba(255,255,255,.77)!important;
+  font:400 clamp(15px,1.3vw,18px)/1.7 var(--display)!important;
+}
+html:root:root body .high-frontdesk-hero .hero-actions{
+  margin-top:4px;
+  gap:10px!important;
+}
+html:root:root body .high-frontdesk-hero .hero-actions .button{
+  min-height:44px!important;
+  min-width:154px!important;
+  padding:10px 15px!important;
+  border-radius:7px!important;
+  border-color:rgba(255,255,255,.26)!important;
+  color:#fff!important;
+  background:transparent!important;
+  font-size:9px!important;
+  font-weight:400!important;
+  letter-spacing:.075em!important;
+}
+html:root:root body .high-frontdesk-hero .hero-actions .button-primary{
+  color:#142218!important;
+  background:#fff!important;
+  border-color:#fff!important;
+}
+html:root:root body .high-frontdesk-hero .hero-actions .button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 22px rgba(0,0,0,.15)!important;
+}
+
+html:root:root body .high-frontdesk{
+  position:relative;z-index:4;
+  margin-top:-50px;
+  padding:0 0 68px;
+  background:transparent;
+}
+html:root:root body .high-desk{
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:rgba(255,255,255,.985);
+  box-shadow:0 18px 42px rgba(19,31,25,.08);
+}
+html:root:root body .high-desk-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(280px,520px);
+  gap:22px;
+  align-items:end;
+  padding:8px 8px 20px;
+  text-align:left;
+}
+html:root:root body .high-desk-head .kicker{
+  color:var(--gold)!important;
+  font:400 10px/1.5 var(--ceremonial)!important;
+  letter-spacing:.18em!important;
+  text-transform:uppercase!important;
+}
+html:root:root body .high-desk-head h2{
+  min-height:0!important;
+  margin:5px 0 0;
+  color:var(--forest);
+  font:400 clamp(32px,3.6vw,46px)/1.05 var(--display)!important;
+  display:block!important;
+  text-align:left!important;
+}
+html:root:root body .high-desk-head>p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.55;
+}
+html:root:root body .high-quick-grid{
+  width:100%;
+  max-width:none;
+  margin:0;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+html:root:root body .high-quick-grid a{
+  min-height:206px;
+  align-items:flex-start;
+  justify-content:flex-start;
+  gap:8px;
+  padding:20px;
+  border:1px solid var(--line);
+  border-top:4px solid var(--quick-accent,var(--navy-2));
+  border-radius:7px;
+  background:var(--paper2);
+  color:var(--forest-deep);
+  text-align:left;
+  box-shadow:0 8px 22px rgba(19,31,25,.055);
+}
+html:root:root body .high-quick-grid a:nth-child(1){--quick-accent:#315f86}
+html:root:root body .high-quick-grid a:nth-child(2){--quick-accent:#315f86}
+html:root:root body .high-quick-grid a:nth-child(3){--quick-accent:#96594e}
+html:root:root body .high-quick-grid a:nth-child(4){--quick-accent:#6d8374}
+html:root:root body .high-quick-mark{
+  min-width:46px;height:46px;
+  background:var(--quick-accent,var(--navy));
+  color:#fff;
+  font:400 12px var(--ceremonial);
+}
+html:root:root body .high-quick-grid strong{
+  margin-top:4px;
+  color:#10251d;
+  font:400 25px/1.1 var(--display)!important;
+}
+html:root:root body .high-quick-grid small{
+  margin-top:0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.6;
+  text-align:left;
+}
+html:root:root body #grades{padding-top:52px}
+
+@media(max-width:900px){
+  html:root:root body .high-desk-head{grid-template-columns:1fr;text-align:center}
+  html:root:root body .high-desk-head h2{text-align:center!important}
+  html:root:root body .high-desk-head>p{max-width:620px;margin:auto}
+  html:root:root body .high-quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px){
+  html:root:root body .high-frontdesk-hero{min-height:460px!important}
+  html:root:root body .high-frontdesk-hero .hero-inner{min-height:460px!important;padding:58px 0 94px!important}
+  html:root:root body .high-frontdesk-hero h1{font-size:clamp(3.35rem,15vw,4.7rem)!important}
+  html:root:root body .high-frontdesk{margin-top:-42px;padding-bottom:54px}
+  html:root:root body .high-desk{padding:14px}
+  html:root:root body .high-quick-grid{grid-template-columns:1fr}
+  html:root:root body .high-quick-grid a{min-height:0;padding:17px}
+}
+</style>
+
 </head>
 <body id="top">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -495,10 +699,24 @@ html:root:root body .hero .hero-lead{font-size:clamp(16px,2vw,24px)!important;li
           <a class="button button-secondary" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student Profile</a>
           <a class="button button-secondary" href="./courses/">All Courses</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="high-frontdesk" aria-labelledby="highFrontDeskTitle">
+    <div class="shell">
+      <div class="high-desk">
+        <div class="high-desk-head">
+          <div>
+            <p class="kicker">High School Front Desk</p>
+            <h2 id="highFrontDeskTitle">Where do you need to go?</h2>
+          </div>
+          <p>Choose the doorway that matches what you need right now. Your grade, learner profile, family records, and full course directory remain connected without crowding the main learning path.</p>
+        </div>
         <nav class="high-quick-grid" aria-label="High School quick access">
           <a href="#grades"><span class="high-quick-mark">9–12</span><strong>My Grade</strong><small>Enter your classes</small></a>
-          <a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/"><span class="high-quick-mark">S</span><strong>Student</strong><small>Resume your profile</small></a>
-          <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/"><span class="high-quick-mark">F</span><strong>Family</strong><small>Family records and support</small></a>
+          <a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/"><span class="high-quick-mark">S</span><strong>Student</strong><small>Resume your learner profile</small></a>
+          <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/"><span class="high-quick-mark">F</span><strong>Family</strong><small>Records, placement and support</small></a>
           <a href="./courses/"><span class="high-quick-mark">C</span><strong>Courses</strong><small>Browse every subject</small></a>
         </nav>
       </div>
