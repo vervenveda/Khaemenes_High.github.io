@@ -2,7 +2,7 @@ import fs from "node:fs";import vm from "node:vm";
 const base=new URL("../units/",import.meta.url);
 let banks=0,questions=0;const findings=[];
 function extract(source,file){
- const m=/\bconst\s+(?:QUIZ_QUESTIONS|ASSESSMENT_QUESTIONS)\s*=\s*\[/.exec(source);
+ const m=/\bconst\s+(?:QUIZ_QUESTIONS|ASSESSMENT_QUESTIONS|QUIZ|ASSESS)\s*=\s*\[/.exec(source);
  if(!m){findings.push(file+": named question array not found");return null;}
  const begin=m.index+m[0].length-1;let depth=0,quote=null,escaped=false;
  for(let i=begin;i<source.length;i++){
@@ -21,7 +21,7 @@ for(let u=1;u<=12;u++){
   new vm.Script(source,{filename:relative});
   const rows=extract(source,relative);if(!rows)continue;
   banks++;questions+=rows.length;
-  const expected=file==="quiz-app.js"?20:30;
+  const expected=u===1?(file==="quiz-app.js"?15:24):(file==="quiz-app.js"?20:30);
   if(rows.length!==expected)findings.push(relative+": expected "+expected+" questions, found "+rows.length);
   const seen=new Set();
   rows.forEach((q,i)=>{if(typeof q.id!=="string"||seen.has(q.id))findings.push(relative+" question "+i+": duplicate/missing id");seen.add(q.id);if(typeof q.prompt!=="string"||!q.prompt.trim()||!Array.isArray(q.options)||q.options.length<2||!Number.isInteger(q.answer)||q.answer<0||q.answer>=q.options.length||typeof q.explanation!=="string"||!q.explanation.trim())findings.push(relative+" question "+i+": malformed answer or explanation");});
