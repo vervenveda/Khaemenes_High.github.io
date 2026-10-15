@@ -37,6 +37,7 @@
  var progress={};var attempts={version:1,best:0,latest:0,attemptCount:0,attempts:[]};
  function alertSave(message){frozen=true;status.textContent="Saving paused: "+message+" Keep this page open and export your current writing before reloading.";status.classList.add("daily-warning");status.setAttribute("role","alert");}
  function read(key){
+   if(!profile){snapshot.set(key,null);return null;}
    try{var value=localStorage.getItem(key);snapshot.set(key,value);return value;}
    catch(e){alertSave("Browser storage could not be read.");return null;}
  }
@@ -100,7 +101,7 @@
  paper.addEventListener("change",checkFinish);
  var evidenceKey="week-01-day-"+num;
  var evidenceButton=document.getElementById("daily-evidence-button");
- function isComplete(){return Number(attempts.best)>=80&&(paper.checked||fields.every(function(f){return f.value.trim().length>0;}));}
+ function isComplete(){return Number(attempts.best)>=80&&(paper.checked||fields.every(function(f){return f.value.trim().length>0;}))&&(day!==1||paper.checked||!!baselineSaved);}
  function checkFinish(){
    evidenceButton.disabled=!ready||frozen||!isComplete()||!!progress[evidenceKey];
    document.getElementById("daily-evidence-hint").textContent=progress[evidenceKey]?
@@ -112,15 +113,16 @@
    var next=Object.assign({},progress);next[evidenceKey]=true;
    if(write(progressKey,JSON.stringify(next))){progress=next;checkFinish();}
  });
+ var baselineSaved=false;
  var baseline=document.getElementById("preserve-baseline");
  if(day===1&&baseline){
-   var current=read(baselineKey),snap=document.getElementById("baseline-copy"),bs=document.getElementById("baseline-status");
+   var current=read(baselineKey),snap=document.getElementById("baseline-copy"),bs=document.getElementById("baseline-status");baselineSaved=!!current;
    function showBaseline(){snap.textContent=current||"";bs.textContent=current?"Original baseline preserved. Changes to your draft will not replace it.":"Preserve your original response before revising.";baseline.disabled=!!current||!ready||frozen;}
    showBaseline();
    baseline.addEventListener("click",function(){
      var field=fields.find(function(f){return f.dataset.saveField==="week-01-day1-baseline";});
      if(!field||!field.value.trim()){bs.textContent="Write your baseline before preserving it.";return;}
-     if(write(baselineKey,field.value)){current=field.value;showBaseline();}
+     if(write(baselineKey,field.value)){current=field.value;baselineSaved=true;showBaseline();checkFinish();}
    });
  }
  function saveFile(name,data){
@@ -135,8 +137,7 @@
    if(event.key==="khaemenes_active_learner_v1"||snapshot.has(event.key)){alertSave("The learner or a saved field changed in another tab.");checkFinish();}
  });
  if(!ready){
-   gate.hidden=false;gate.textContent=profile?"English 9 readiness is required before saving official Week 1 work. ";
-   if(!profile)gate.textContent="Select your Academy learner before saving this lesson. ";
+   gate.hidden=false;gate.textContent=profile?"English 9 readiness is required before saving official Week 1 work. ":"Select your Academy learner before saving this lesson. ";
    var a=document.createElement("a");a.href=profile?"../../../assessments/diagnostic/index.html":"https://vervenveda.github.io/Khaemenes_Academy.github.io/";a.textContent=profile?"Open English 9 readiness":"Open Academy learner portal";gate.append(a);
    fields.forEach(function(f){f.readOnly=true;});document.getElementById("check-practice").disabled=true;
    if(baseline)baseline.disabled=true;
