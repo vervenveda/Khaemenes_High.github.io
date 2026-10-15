@@ -1,7 +1,7 @@
 {
   "schema": "khaemenes-applied-mission-studio-release-v1",
-  "version": "1.6.0",
-  "git_blob_sha": "47d974f6ce60bd49125c6098498e372b9e26c739",
+  "version": "1.7.0",
+  "git_blob_sha": "934d282200a564d3807e52a3f1a7813ca0b0a993",
   "protections": [
     "learner-scoped-storage",
     "competing-tab-revision-guard",
@@ -19,7 +19,10 @@
     "cross-course-evidence-vault",
     "sealed-full-evidence-backup",
     "read-only-evidence-health-inventory",
-    "bundle-integrity-verification"
+    "bundle-integrity-verification",
+    "popout-evidence-recovery-dialog",
+    "recovery-copy-preview",
+    "sealed-recovery-bundle-export"
   ],
-  "offline_release": "ams-v1.5.0-recovery-r1-20261014"
+  "offline_release": "ams-v1.7.0-recovery-popout-r1-20261015"
 }

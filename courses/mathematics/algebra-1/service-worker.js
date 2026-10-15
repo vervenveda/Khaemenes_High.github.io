@@ -1,6 +1,6 @@
 "use strict";
-// Applied Mission Studio v1.5.0 · learner-scoped evidence recovery refresh.
-const CACHE_VERSION="khaemenes-algebra1-v17-ams-v1.5.0-recovery-r1-20261014";
+// Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
+const CACHE_VERSION="khaemenes-algebra1-v17-ams-v1.7.0-recovery-popout-r1-20261015";
 const LEGACY_SOURCE="./service-worker-precache-v1.js";
 const RELEASE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
  "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
@@ -36,7 +36,7 @@ const RELEASE_FILES=["../../shared/course-entry-contract.js","../../shared/learn
 function normalizeLegacyPath(p){if(p==="./assessments/answer-keys.json")return"./assessments/answer-key.json";if(p==="./assessments/unit-13-mastery-blueprint.js")return null;if(p.startsWith("./units/unit-12/unit-12/"))return null;return p}
 async function legacyFiles(){try{const response=await fetch(new Request(LEGACY_SOURCE,{cache:"reload"}));if(!response.ok)throw new Error(`precache source ${response.status}`);const text=await response.text(),match=text.match(/const PRECACHE=(\[[\s\S]*?\]);/);if(!match)throw new Error("legacy PRECACHE array not found");const parsed=JSON.parse(match[1]);return Array.isArray(parsed)?parsed.map(normalizeLegacyPath).filter(Boolean):[]}catch(error){console.warn("Algebra I legacy precache list could not be recovered; release core will still be cached.",error);return[]}}
 
-const MISSION_OFFLINE_RELEASE="ams-v1.5.0-recovery-r1-20261014";
+const MISSION_OFFLINE_RELEASE="ams-v1.7.0-recovery-popout-r1-20261015";
 const MISSION_CRITICAL=["./","./index.html","./offline.html","../assets/applied-mission-studio-v1.js","./units/unit-01/projects/precision-measurement-audit.html","./units/unit-02/projects/expression-structure-design-brief.html","./units/unit-03/projects/equation-based-decision-model.html","./units/unit-04/projects/constraint-tolerance-design.html","./units/unit-05/projects/multiple-representation-function-portfolio.html","./units/unit-06/projects/linear-data-story-model-defence.html","./units/unit-07/projects/systems-feasible-region-decision-lab.html","./units/unit-08/projects/exponential-change-investigation.html","./units/unit-09/projects/polynomial-design-factor-analysis.html","./units/unit-10/projects/quadratic-model-optimization-defence.html","./units/unit-11/projects/coordinate-geometry-accessibility-design.html","./units/unit-12/projects/evidence-financial-decision-audit.html","./units/unit-13/projects/algebra-i-integrated-modelling-portfolio-oral-defence.html"];
 async function installMissionCritical(){
   const cache=await caches.open(CACHE_VERSION);

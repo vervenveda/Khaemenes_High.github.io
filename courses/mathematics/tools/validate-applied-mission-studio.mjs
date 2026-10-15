@@ -12,11 +12,11 @@ const ok=(v,m)=>{if(v)console.log("OK "+m);else{failed=true;console.error("FAIL 
 const shared=read("assets/applied-mission-studio-v1.js");
 const manifest=JSON.parse(read("APPLIED_MISSION_STUDIO_RELEASE.json"));
 const blobSha=crypto.createHash("sha1").update("blob "+Buffer.byteLength(shared)+"\0").update(shared).digest("hex");
-ok(manifest.version==="1.6.0","release manifest pins Applied Mission Studio v1.6.0");
-const offlineRelease="ams-v1.5.0-recovery-r1-20261014";
+ok(manifest.version==="1.7.0","release manifest pins Applied Mission Studio v1.7.0");
+const offlineRelease="ams-v1.7.0-recovery-popout-r1-20261015";
 ok(manifest.offline_release===offlineRelease,"release manifest pins the atomic Mission Studio offline release");
 ok(blobSha===manifest.git_blob_sha,"shared Applied Mission Studio matches pinned Git blob");
-ok(shared.includes('const V="1.6.0"'),"runtime reports v1.6.0");
+ok(shared.includes('const V="1.7.0"'),"runtime reports v1.7.0");
 ok(shared.includes("pageOwnerId")&&shared.includes("ownerOk"),"runtime binds writes to the active Academy learner");
 ok(shared.includes("Review & Replace Newer Version")&&shared.includes("competing-tab"),"runtime protects competing tabs");
 ok(shared.includes("importBytes:524288")&&shared.includes("verifiedWrite"),"runtime bounds imports and verifies writes");
@@ -33,6 +33,10 @@ ok(vaultSw.includes("khaemenes-math-evidence-vault-v1"),"Evidence Vault has its 
 ok(shared.includes("RECOVERY_JOURNAL")&&shared.includes("Evidence Recovery"),"runtime exposes learner-scoped Evidence Recovery");
 ok(shared.includes("Restore as New Revision")&&shared.includes("recovery-restore"),"recovery restores evidence as a new revision");
 ok(shared.includes("khaemenes-math-applied-mission-recovery-export-v1"),"recovery exports are integrity-sealed first-party evidence packages");
+ok(shared.includes('id="asRecoveryDialog"')&&shared.includes("showModal"),"Evidence Recovery uses a compact pop-out dialog instead of expanding the lesson page");
+ok(shared.includes("data-as-recovery-preview")&&shared.includes("Export Recovery Bundle"),"recovery dialog supports preview and sealed bundle export");
+const nativeStudio=read("algebra-1/assets/applied-mission-studio-v1.js");
+ok(nativeStudio.includes('id="missionRecoveryDialog"')&&nativeStudio.includes("data-mission-recovery-preview"),"Algebra I native Mission Studio uses the same pop-out recovery model");
 ok(!shared.includes("limits.text+' data-as-field")&&!shared.includes("limits.evaluator+' value="),"Mission Studio bounded-field markup is well formed");
 
 const coreMatch=shared.match(/\/\*__AMS_CORE_BEGIN__\*\/([\s\S]*?)\/\*__AMS_CORE_END__\*\//);

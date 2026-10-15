@@ -1,7 +1,7 @@
 "use strict";
-// Applied Mission Studio v1.5.0 · learner-scoped evidence recovery refresh.
+// Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
 const CACHE_PREFIX="khaemenes-algebra2-";
-const CACHE=`${CACHE_PREFIX}v5-ams-v1.5.0-recovery-r1-20261014`;
+const CACHE=`${CACHE_PREFIX}v5-ams-v1.7.0-recovery-popout-r1-20261015`;
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "../assets/applied-mission-studio-v1.js",
   "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
@@ -24,7 +24,7 @@ const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-
   "./units/unit-13/projects/13-project.html"];
 
 
-const MISSION_OFFLINE_RELEASE="ams-v1.5.0-recovery-r1-20261014";
+const MISSION_OFFLINE_RELEASE="ams-v1.7.0-recovery-popout-r1-20261015";
 const MISSION_CRITICAL=["./","./index.html","./offline.html","../assets/applied-mission-studio-v1.js","./units/unit-01/projects/01-project.html","./units/unit-02/projects/02-project.html","./units/unit-03/projects/03-project.html","./units/unit-04/projects/04-project.html","./units/unit-05/projects/05-project.html","./units/unit-06/projects/06-project.html","./units/unit-07/projects/07-project.html","./units/unit-08/projects/08-project.html","./units/unit-09/projects/09-project.html","./units/unit-10/projects/10-project.html","./units/unit-11/projects/11-project.html","./units/unit-12/projects/12-project.html","./units/unit-13/projects/13-project.html"];
 async function installMissionCritical(){
   const cache=await caches.open(CACHE);
