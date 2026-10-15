@@ -1,7 +1,7 @@
 (()=>{'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg',kind=document.body.dataset.lab,momentum=kind==='momentum',KEY='khae:phys12:w14:'+kind+':v1',CASES={"momentum":[{"m":2,"vi":3,"vf":-1,"t":0.2},{"m":2,"vi":3,"vf":-1,"t":0.8},{"m":1.5,"vi":4,"vf":0,"t":0.2},{"m":1.5,"vi":4,"vf":0,"t":0.6},{"m":4,"vi":-2,"vf":1,"t":0.4},{"m":3,"vi":1,"vf":5,"t":0.6},{"m":5,"vi":2,"vf":0,"t":0.5},{"m":2,"vi":-4,"vf":4,"t":0.8},{"m":4,"vi":3,"vf":3,"t":0.5},{"m":6,"vi":1,"vf":-1,"t":0.6},{"m":5,"vi":0,"vf":2,"t":0.4}],"pulse":[{"J":-12,"t":0.4,"shape":"rectangle"},{"J":-12,"t":0.4,"shape":"triangle"},{"J":-12,"t":0.2,"shape":"triangle"},{"J":-12,"t":0.6,"shape":"rectangle"},{"J":-8,"t":0.8,"shape":"rectangle"},{"J":-8,"t":0.8,"shape":"triangle"},{"J":6,"t":0.3,"shape":"rectangle"},{"J":6,"t":0.3,"shape":"triangle"},{"J":10,"t":1,"shape":"rectangle"},{"J":10,"t":0.5,"shape":"triangle"},{"J":0,"t":1,"shape":"rectangle"}]}[kind];
 let book={schema:'khae-phys12-w14-model-v1',course:'KH-SCI-PHYS12',week:14,kind,prediction:'',analysis:'',trials:[]};
-let game=[],round=0,score=0,locked=true;
+let deck=[],round=0,score=0,locked=true;
 const roundN=(n,p=3)=>Number(n.toFixed(p));
 function valid(p){if(!p||typeof p!=='object')return false;const f=momentum?[p.m,p.vi,p.vf,p.t]:[p.J,p.t];return f.every(Number.isFinite)&&(momentum?(p.m>=.5&&p.m<=10&&p.vi>=-10&&p.vi<=10&&p.vf>=-10&&p.vf<=10&&p.t>=.1&&p.t<=2):(p.J>=-50&&p.J<=50&&p.t>=.1&&p.t<=2&&['rectangle','triangle'].includes(p.shape)))}
 function solve(p){if(!valid(p))throw Error('Model parameters outside permitted limits');
