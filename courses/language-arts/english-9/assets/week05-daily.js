@@ -108,7 +108,7 @@ bank.forEach((q,i)=>{
  const group=document.createElement("fieldset"),legend=document.createElement("legend");
  legend.textContent=(i+1)+". "+q.question;group.append(legend);
  q.options.forEach((opt,j)=>{const label=document.createElement("label"),input=document.createElement("input");
- input.type="radio";input.name="w4q-"+i;input.value=String(j);
+ input.type="radio";input.name="w5q-"+i;input.value=String(j);
  label.append(input,document.createTextNode(" "+opt));group.append(label);});
  const p=document.createElement("p");p.setAttribute("aria-live","polite");group.append(p);notes.push(p);$("week5-questions").append(group);
 });
@@ -122,7 +122,7 @@ function refreshScore(){$("week5-score").textContent=quiz.attempts.length?
 $("week5-check").disabled=!ready;
 $("week5-check").addEventListener("click",()=>{
  if(!ready||frozen||bank.length!==5)return;
- const nodes=bank.map((q,i)=>document.querySelector('input[name="w4q-'+i+'"]:checked'));
+ const nodes=bank.map((q,i)=>document.querySelector('input[name="w5q-'+i+'"]:checked'));
  if(nodes.some(n=>!n)){$("week5-score").textContent="Answer all five questions first.";return;}
  const picks=nodes.map(n=>Number(n.value)),score=picks.filter((n,i)=>n===bank[i].answer).length*20;
  const next={best:Math.max(quiz.best,score),latest:score,attempts:quiz.attempts.concat([{date:new Date().toISOString(),score,answers:picks}]).slice(-30)};
