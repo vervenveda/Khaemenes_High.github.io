@@ -38,7 +38,7 @@ for(let d=41;d<=45;d++){
    assert.equal(q.options.length,3);assert.equal(new Set(q.options).size,3);
    assert.ok(q.question&&q.explanation&&Number.isInteger(q.answer)&&q.answer>=0&&q.answer<3);
   }
-  assert.match(h,/id="week9-next-wrap" hidden/);
+  assert.match(h,/id="week9-next-wrap"[^>]*hidden/);
   assert.equal((h.match(/id="week9-next"/g)||[]).length,1);
   if(d===42)assert.match(h,/data-save-field="week-09-day42-opening"/);
   if(d===43)assert.match(h,/data-save-field="week-09-day43-draft"/);
@@ -50,7 +50,7 @@ for(let d=41;d<=45;d++){
   assert.equal((h.match(/data-week9-rubric=/g)||[]).length,5);
   assert.equal((h.match(/id="week9-craft-\d"/g)||[]).length,6);
   assert.match(h,/week09-assessment\.js/);
-  assert.match(h,/id="week9-next-wrap" hidden/);
+  assert.match(h,/id="week9-next-wrap"[^>]*hidden/);
   assert.doesNotMatch(h,/id="week9-question-data"/);
  }
 }
