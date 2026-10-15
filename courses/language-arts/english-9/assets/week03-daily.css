@@ -1,0 +1,72 @@
+
+/* Khaemenes Academy English 9 · Week 02 · supplementary daily layout */
+.week3-lesson{margin:16px 0}
+.week3-lesson>.section-alt,.week3-lesson>section{display:block!important}
+.week3-lesson .wrap{max-width:none;margin:0;padding:0}
+.week3-lesson .lesson-detail,.week3-lesson .flow-step,.week3-lesson .micro-lab,.week3-lesson .lesson-panel,.week3-lesson .pathway,.week3-lesson .quote-model,.daily-support-text{
+ background:#fffefa;color:#211f1b;border:1px solid #d9cfc0;border-radius:7px;padding:16px;margin:12px 0
+}
+.week3-lesson .lesson-detail{background:transparent;border:none;padding:0}
+.week3-lesson .lesson-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(230px,.85fr);gap:17px}
+.week3-lesson .lesson-head{padding:12px 0}
+.week3-lesson .lesson-meta{display:flex;gap:7px;flex-wrap:wrap}
+.week3-lesson .tag{border:1px solid #c9b998;border-radius:7px;padding:4px 8px;font-size:13px}
+.week3-lesson h2,.daily-lab h2{font:400 24px/1.35 Cinzel,Georgia,serif;overflow-wrap:break-word}
+.week3-lesson h3{font-size:19px;font-weight:500}
+.week3-lesson .lesson-panel iframe{max-width:100%;width:100%;aspect-ratio:16/9;border:0;border-radius:7px}
+.week3-lesson .lesson-response textarea{width:100%;min-height:170px}
+.week3-lesson .lesson-response label{display:block;margin:10px 0}
+.week3-lesson .pathway-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.week3-lesson .pathway{margin:0}
+.week3-lesson .table-wrap{overflow:auto}
+.week3-lesson table{width:100%;border-collapse:collapse}
+.week3-lesson :is(th,td){border:1px solid #d9cfc0;padding:9px;text-align:left;vertical-align:top}
+.week3-lesson .media-note{font-size:14px;color:#655b4d}
+.week3-lesson a{overflow-wrap:anywhere}
+.daily-lab{border:1px solid #d9cfc0;background:#fffefa;border-radius:7px;padding:17px;margin:18px 0}
+.daily-lab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.daily-lab-grid label{display:block;margin:8px 0;font-weight:500}
+.daily-lab textarea{min-height:120px}
+#week2-lab-preview{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}
+.daily-support-text{padding:18px}
+.daily-support-text summary{font-size:18px}
+.daily-notice strong{color:#5b3a14}
+@media(max-width:850px){.week3-lesson .lesson-grid{grid-template-columns:1fr}.week3-lesson .pathway-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.daily-lab-grid{grid-template-columns:1fr}}
+@media print{.daily-lab .daily-actions,.daily-nav{display:none!important}.week3-lesson .lesson-panel iframe{display:none}}
+
+
+/* Day 15 assessment: readable paired texts and student-owned writing */
+.assessment-sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.assessment-sources article,.assessment-sources aside{padding:15px;border-radius:7px;border:1px solid #d9cfc0}
+.assessment-sources p{line-height:1.75}
+#week3-independent-work textarea{width:100%;min-height:170px;line-height:1.7}
+#week3-draft1-panel textarea,#week3-final-panel textarea{min-height:340px}
+#week3-lock-state{display:inline-block;margin:0}
+#week3-independent-work label{display:block;margin:10px 0}
+.week3-lesson .text-passage{padding:16px;border:1px solid #d9cfc0;border-radius:7px}
+.week3-lesson .lesson-response textarea{background:#fffefa}
+.week3-lesson .lesson-panel{min-width:0}
+.week3-lesson table{max-width:100%}
+.daily-support-text{overflow-wrap:break-word}
+.week3-lesson .lesson-question{line-height:1.5}
+@media(max-width:850px){.assessment-sources{grid-template-columns:1fr}}
+@media print{#week3-lock-draft,#week3-finish,#week3-export{display:none!important}}
+
+/* Spiral retrieval practice and mastery-linked onward action */
+.spiral-review{background:#fffefa;color:#211f1b;border:1px solid #d7c8b1;border-radius:7px;padding:20px;margin:18px 0}
+.spiral-review h2{font:400 24px/1.35 Cinzel,Georgia,serif;margin:0 0 10px}
+.spiral-context{font-size:14px;color:#625341}
+.spiral-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}
+.spiral-steps>div{background:#f7f5ef;border:1px solid #e7dccd;border-radius:7px;padding:14px}
+.spiral-steps h3{font-size:18px;font-weight:500;margin:0 0 7px}
+.spiral-steps p{line-height:1.6;margin:0}
+.spiral-links a{color:#285b83;overflow-wrap:break-word}
+.spiral-note{font-size:14px;color:#665744}
+.daily-next{margin:18px 0;border:1px solid #b6cbb6;border-radius:7px;padding:20px;background:#f5faf5;text-align:center;color:#1f3320}
+.daily-next[hidden]{display:none!important}
+.daily-next-link{display:inline-block;text-decoration:none!important;padding:12px 22px;border-radius:7px;background:#205b48;color:#fff!important;font-size:18px;line-height:1.5}
+.daily-next-link:hover,.daily-next-link:focus-visible{background:#164232;color:#fff!important;outline-offset:3px}
+.daily-next p:last-child{font-size:14px;max-width:660px;margin:12px auto 0}
+@media(max-width:820px){.spiral-steps{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.daily-next-link{transition:none}}

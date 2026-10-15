@@ -81,7 +81,7 @@
   const save=data=>{try{localStorage.setItem(courseKey,JSON.stringify(data))}catch{}};
   const progress=load();
   document.querySelectorAll("[data-progress-key]").forEach(button=>{
-    if(button.dataset.managedProgress==="week1")return;
+    if(button.dataset.managedProgress==="week1"||button.dataset.managedProgress==="week3")return;
     const key=button.dataset.progressKey;
     const on=Boolean(progress[key]);
     button.setAttribute("aria-pressed",String(on));
@@ -106,7 +106,7 @@
   updateProgress();
 
   document.querySelectorAll("[data-save-field]").forEach(field=>{
-    if(field.dataset.managedSave==="week1"||field.dataset.managedSave==="week2")return;
+    if(field.dataset.managedSave==="week1"||field.dataset.managedSave==="week2"||field.dataset.managedSave==="week3")return;
     const key=scopedKey(`khae-ela9-field:${field.dataset.saveField}`);
     try{field.value=localStorage.getItem(key)||""}catch{}
     field.addEventListener("input",()=>{try{localStorage.setItem(key,field.value)}catch{}});
