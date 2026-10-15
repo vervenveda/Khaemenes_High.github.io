@@ -15,6 +15,8 @@ on:
       - 'courses/science/integrated-science-9/units/unit-10/**'
       - 'courses/science/integrated-science-9/units/unit-11/**'
       - 'courses/science/integrated-science-9/units/unit-12/**'
+      - 'courses/science/integrated-science-9/diagnostic/**'
+      - 'courses/science/integrated-science-9/tools/check-science9-course-qa.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit10-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit09-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit08-records.mjs'
@@ -40,6 +42,8 @@ on:
       - 'courses/science/integrated-science-9/units/unit-10/**'
       - 'courses/science/integrated-science-9/units/unit-11/**'
       - 'courses/science/integrated-science-9/units/unit-12/**'
+      - 'courses/science/integrated-science-9/diagnostic/**'
+      - 'courses/science/integrated-science-9/tools/check-science9-course-qa.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit10-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit09-records.mjs'
       - 'courses/science/integrated-science-9/tools/check-unit08-records.mjs'
@@ -95,5 +99,7 @@ jobs:
         run: node courses/science/integrated-science-9/tools/check-unit11-records.mjs
       - name: Verify Unit 12 capstone records
         run: node courses/science/integrated-science-9/tools/check-unit12-records.mjs
+      - name: Verify cross-course readiness and capstone QA
+        run: node courses/science/integrated-science-9/tools/check-science9-course-qa.mjs
       - name: Verify science runtime syntax
         run: node courses/science/integrated-science-9/tools/validate-course-runtime.mjs
