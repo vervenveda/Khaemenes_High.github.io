@@ -14,4 +14,5 @@ for(let i=1;i<=12;i++){
  const n=String(i).padStart(2,"0");const src=read("units/unit-"+n+"/unit"+n+".js");new vm.Script(src);
  if(!src.includes("kh_sci9_learner_v1:")||!src.includes("recoverLegacy"))throw Error("Learner scope/recovery missing Unit "+n);
 }
+for(const id of ["saveCapstoneDraft","exportCapstoneRecord","capstoneRevisionList","capstoneSaveStatus"]){if(!page.includes(`id="${id}"`))throw Error("Missing student portfolio control "+id);if(id!=="capstoneSaveStatus"&&!capstone.includes(id))throw Error("Control not wired "+id);}
 console.log("PASS Science 9 readiness script syntax, twelve learner controllers and capstone evidence contract.");
