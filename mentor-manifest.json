@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "sourceId": "khaemenes.high",
   "name": "Khaemenes Academy High School",
   "classification": "educational",
@@ -324,5 +324,16 @@
   "mentorAuthority": "Archaemenes · School Principal",
   "administrationAuthority": "NAIB",
   "backendChancellor": "Noema",
-  "teacherAiMentorAuthority": "deferred"
+  "teacherAiMentorAuthority": "deferred",
+  "mentorVoice": {
+    "profileId": "archaemenes-high-v1",
+    "displayName": "Archaemenes",
+    "status": "custom-provider-ready",
+    "defaultPlayback": "browser-speech-synthesis",
+    "customProviderContract": "KhaemenesArchaemenesVoice.registerProvider",
+    "requiresMicrophone": false,
+    "storesConversationText": false,
+    "storesConversationAudio": false,
+    "authority": "presentation-only"
+  }
 }
