@@ -1,0 +1,47 @@
+
+:root{--paper:#f8f6f0;--paper-card:#fffefa;--ink:#211f1b;--line:#d6cdbd;--gold:#765c2f;--link:#285b83}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Brandon Grotesque","Avenir Next",Arial,sans-serif;font-size:16px;line-height:1.66}
+a{color:var(--link);text-underline-offset:3px}
+button,input,textarea{font:inherit}
+button,.daily-action{border:1px solid var(--gold);border-radius:7px;padding:10px 14px;background:#765c2f;color:white;cursor:pointer;text-decoration:none;display:inline-block}
+button.secondary,.daily-action.secondary{background:#fffefa;color:#40341e;border-color:var(--line)}
+button:disabled{opacity:.55;cursor:not-allowed}
+:focus-visible{outline:3px solid #285b83;outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:10px;top:10px;background:white;z-index:10;padding:9px}
+.daily-shell{max-width:940px;margin:auto;padding:22px clamp(14px,4vw,30px)}
+.daily-top,.daily-nav,.daily-actions{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.daily-top{justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:16px}
+.daily-brand{font-family:Cinzel,Georgia,serif;font-size:20px;font-weight:400;text-decoration:none;color:var(--ink)}
+.daily-crumbs{font-size:14px;margin:16px 0;color:#625b50}
+.daily-eyebrow{margin:0;font-size:14px;letter-spacing:.06em;color:#665639;text-transform:uppercase}
+.daily-hero h1{font:400 33px/1.25 Cinzel,Georgia,serif;overflow-wrap:break-word;margin:10px 0}
+.daily-hero p{max-width:70ch}
+.daily-nav{margin:16px 0 22px}
+.daily-nav a{border:1px solid var(--line);border-radius:7px;padding:8px 10px;background:var(--paper-card);text-decoration:none}
+.phase,.daily-tool,.daily-finish,.daily-notice,.daily-index{background:var(--paper-card);border:1px solid var(--line);border-radius:7px;padding:clamp(14px,3.2vw,26px);margin:18px 0}
+.phase h2,.daily-tool h2,.daily-finish h2{font:400 24px/1.35 Cinzel,Georgia,serif;margin:0 0 12px;overflow-wrap:break-word}
+.phase h3,.daily-tool h3{font-size:19px;margin:13px 0 8px;font-weight:500}
+.phase p,.daily-tool p{max-width:74ch}
+.text-passage,.model{background:#f7f3e8;border:1px solid #e4dac6;border-radius:7px;padding:16px;margin:14px 0}
+.text-passage p{font-family:Georgia,serif;line-height:1.85}
+.writing-field{margin:16px 0}
+.writing-field label{display:block;margin-bottom:6px;font-weight:500}
+textarea{display:block;width:100%;min-height:144px;resize:vertical;border:1px solid #ab9e8c;background:#fff;color:#191919;border-radius:7px;padding:12px;line-height:1.6}
+details{margin:10px 0}summary{cursor:pointer}
+.practice-question{border:1px solid var(--line);padding:13px;border-radius:7px;margin:12px 0}
+.practice-question legend{padding:0 4px;font-weight:500}
+.practice-question label{display:block;margin:10px 0;cursor:pointer}
+.practice-feedback{font-size:14px;margin:6px 0}
+.practice-feedback.good{color:#245837}.practice-feedback.bad{color:#8a3232}
+.daily-status{padding:12px;border:1px solid var(--line);border-radius:7px;background:#f3eee2;margin:12px 0}
+.daily-warning{background:#fff0e8;border-color:#a74b4b;color:#491d1d}
+.daily-gate a{margin-right:14px}
+.daily-index h2{font-size:21px;margin-top:0}
+.daily-index ol{padding-left:24px;display:grid;gap:6px}
+.daily-index li{padding:3px}
+.daily-index a{margin-right:12px}
+.daily-finish label{display:flex;gap:8px;align-items:center;margin:12px 0}
+.daily-footer{border-top:1px solid var(--line);padding:22px 0;font-size:14px;color:#605a50;margin-top:30px}
+@media(max-width:640px){.daily-shell{padding:12px}.daily-hero h1{font-size:28px}.phase h2{font-size:21px}.daily-brand{font-size:18px}.daily-nav a{flex:1;text-align:center}}
+@media print{body{background:white;font-size:12pt}.daily-tool button,.daily-finish button,.daily-nav,.daily-top,.daily-actions,.no-print{display:none!important}.daily-shell{max-width:none}.phase,.daily-tool,.daily-finish{border:0;border-bottom:1px solid #bbb;break-inside:avoid}textarea{min-height:110px}}
