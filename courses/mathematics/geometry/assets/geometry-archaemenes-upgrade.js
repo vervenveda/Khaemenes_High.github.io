@@ -89,11 +89,10 @@ input,select,textarea{color:var(--k-ink)!important;background:#fff!important;bor
 .khae-geo-actions a{min-height:43px;display:flex;align-items:center;justify-content:center;padding:9px 13px;border:1px solid var(--k-line);border-radius:8px;font-size:.68rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;text-decoration:none}
 .khae-geo-actions .primary{color:#fff;background:var(--k-forest)}.khae-geo-actions .secondary{color:var(--k-forest);background:#fff}
 .khae-geo-note{margin-top:13px!important;font-size:.78rem!important;color:#7a817d!important}
-.khae-geo-beta{position:fixed;right:18px;bottom:18px;z-index:1300;min-width:112px;min-height:42px;display:flex;align-items:center;justify-content:center;padding:9px 15px;border:1px solid #cbaa64;border-radius:999px;color:#2c2618!important;background:linear-gradient(145deg,#f5e6c0,#d9b66a);box-shadow:0 11px 28px rgba(18,34,28,.16);font:600 .61rem var(--k-formal);letter-spacing:.11em;text-transform:uppercase;text-decoration:none}
 @media(max-width:980px){.khae-geo-actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:860px){.khae-geo-mentor{grid-template-columns:1fr;text-align:center}.khae-geo-copy{text-align:center}.khae-geo-actions{grid-template-columns:1fr}}
-@media(max-width:620px){.hero h1{font-size:clamp(3rem,13vw,4.8rem)!important}.khae-geo-mentor{width:min(calc(100% - 28px),1240px);padding:22px 16px}.khae-geo-beta{right:10px;bottom:10px;min-width:96px;min-height:38px;font-size:.55rem}}
-@media print{.khae-geo-mentor,.khae-geo-beta{display:none!important}}
+@media(max-width:620px){.hero h1{font-size:clamp(3rem,13vw,4.8rem)!important}.khae-geo-mentor{width:min(calc(100% - 28px),1240px);padding:22px 16px}}
+@media print{.khae-geo-mentor{display:none!important}}
 `;
 
 const style=document.createElement("style");
@@ -143,7 +142,6 @@ function createMentor(){
   main.prepend(s);refresh();
 }
 function refresh(){const c=document.getElementById("khaeGeoContext"),l=document.getElementById("khaeGeoMentorLink");if(c)c.textContent=contextText();if(l)l.href=mentorHref()}
-function addBeta(){if(document.getElementById("khaeGeoBeta"))return;const a=document.createElement("a");a.id="khaeGeoBeta";a.className="khae-geo-beta";a.href=BETA_URL;a.textContent="Beta Program";a.setAttribute("aria-label","Open the Verve N Veda Beta Program");document.body.appendChild(a)}
 function hardenMenus(){
   const menus=[...document.querySelectorAll("details.course-menu")];
   menus.forEach(menu=>menu.addEventListener("toggle",()=>{if(menu.open)menus.forEach(other=>{if(other!==menu)other.open=false})}));
@@ -159,7 +157,7 @@ function loadStrictProgression(){
   document.body.appendChild(s);
 }
 function boot(){
-  createMentor();addBeta();hardenMenus();loadStrictProgression();
+  createMentor();hardenMenus();loadStrictProgression();
   document.addEventListener("click",e=>{if(e.target.closest(".quick-nav button,.week-chip,[data-view],[data-go]"))setTimeout(refresh,30)});
   const main=document.querySelector("main");if(main)new MutationObserver(refresh).observe(main,{subtree:true,childList:true,attributes:true,attributeFilter:["class"]});
 }
