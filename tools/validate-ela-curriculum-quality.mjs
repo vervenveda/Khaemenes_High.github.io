@@ -16,7 +16,7 @@ for(const course of courses){
  const ctx={window:{}};
  new vm.Script(js,{filename:base+"/assets/curriculum-data.js"}).runInNewContext(ctx,{timeout:2000});
  assert.deepEqual(JSON.parse(JSON.stringify(ctx.window[course.global])),curriculum,course.slug+" browser data diverges from curriculum.json");
- assert.equal(curriculum.quizBankVersion,"2026-10-16-v2-contextual");
+ assert.equal(curriculum.quizBankVersion,"2026-10-16-v3-instructional");
  assert.equal(curriculum.weeksCount,36);
  assert.equal(curriculum.unitsCount,12);
  assert.equal(curriculum.weeks.length,36);
@@ -42,6 +42,10 @@ for(const course of courses){
  assert(courseJs.includes('const saved=save();syncBest();updateProgress();'),"Existing learner score-saving path changed");
  assert(courseJs.includes('record.best=Math.max(record.best||0,score)'),"Best-score preservation changed");
  const seen=new Set(),counts=[0,0,0,0],themes=new Set();
+ const bank=JSON.parse(fs.readFileSync(base+"/assets/quiz-specific-bank.json","utf8"));
+ assert.equal(bank.version,"v3-instructional");
+ assert.equal(bank.rows.length,36);
+ assert.equal(bank.course,course.slug);
  for(let number=1;number<=36;number++){
   const item=curriculum.weeks[number-1];
   assert.equal(item.week,number);
@@ -62,6 +66,16 @@ for(const course of courses){
   }
   for(let qn=0;qn<5;qn++){
    const q=item.quiz[qn];
+   if(qn>=3){
+     const seed=bank.rows[number-1][qn-3];
+     assert.equal(seed.length,4,"Quiz source schema mismatch");
+     assert(q.question.endsWith(seed[0]),"Quiz prompt deviates from authored bank");
+     assert.equal(q.explanation,seed[2],"Quiz explanation deviates from authored bank");
+     assert.equal(q.skill,seed[3],"Quiz skill tag missing");
+     assert.deepEqual([...q.choices].sort(),[...seed[1]].sort(),"Answer options diverge from authored source");
+     assert.equal(q.choices[q.answer],seed[1][0],"Wrong authored correct answer");
+     assert(!/Two sources about the same question differ in their conclusions|Which sentence pair corrects a comma splice/i.test(q.question),"Repetitive v2 template survived");
+   }
    assert.equal(typeof q.question,"string");
    assert(q.question.length>=(qn>=3?18:8),"Question too short in "+course.slug+" week "+number+" Q"+(qn+1));
    assert.equal(q.choices.length,4,"Each question has four choices");
@@ -101,5 +115,5 @@ for(let n=1;n<=36;n++){
 assert(isolated>=65,"Previously upgraded English 9 daily lessons not preserved");
 assert.equal(checkedWeeks,108);
 assert.equal(checkedQuizItems,540);
-console.log("PASS: "+checkedWeeks+" English 10–12 weeks, "+checkedQuizItems+" checked quiz items, 216 distinct applied prompts, canonical/browser parity, balanced answer locations and preserved English 9 daily studios.");
+console.log("PASS: "+checkedWeeks+" English 10–12 weeks, "+checkedQuizItems+" checked quiz items, 216 authored context-specific prompts, canonical/browser parity, balanced answer locations and preserved English 9 daily studios.");
 console.log("Answer positions: "+JSON.stringify(rotations));
