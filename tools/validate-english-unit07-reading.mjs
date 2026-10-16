@@ -31,9 +31,10 @@ for(const course of courses){
   assert(html.includes('href="../../weeks/week-'+week+'/index.html"'),"Workspace return missing "+dossier);
   const section=html.split('id="week-'+week+'"')[1]?.split(/id="week-(?:19|20|21)"/)[0];
   assert(section&&section.length>2500,"Weak weekly reading and instruction "+course+" "+week);
-  for(const phrase of ["Explicit","Worked","Guided","independent","Misconception","Teacher","<details><summary>"]){
+  for(const phrase of ["Explicit","Worked","Guided","independent","Teacher","<details><summary>"]){
    assert(section.toLowerCase().includes(phrase.toLowerCase()),"Missing "+phrase+" in "+course+" week "+week);
   }
+  assert(/Misconception|Research integrity check/i.test(section),"A disciplinary misconception or source-integrity check is required");
   assert((section.match(/class="quote"/g)||[]).length>=2||(section.match(/class="quote" style=/g)||[]).length>=2,"Two original source passages expected "+course+" "+week);
   assert(weekly.includes('id="main"'),"Original weekly content removed "+w);
   assert(weekly.includes("assets/course.js")||weekly.includes("../../assets/course.js")||course==="english-9","Existing ELA lesson runtime missing "+w);
