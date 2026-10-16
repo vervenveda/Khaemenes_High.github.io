@@ -17,7 +17,7 @@ for(const course of courses){
  assert(unitHtml.includes('href="reading-dossier.html#week-13"'),course+" unit entry missing");
  assert(!/<script\b/i.test(html),"Dossier must be read-only: "+dossier);
  assert(!/localStorage|sessionStorage|setItem\s*\(/.test(html),"Dossier must not change learner records");
- assert(html.includes("Jennifer Kay Pearl")&&html.includes("../../../shared/daily-instruction.css"));
+ assert(html.includes("Jennifer Kay Pearl")&&html.includes("../../../../shared/daily-instruction.css"));
  const raw=JSON.parse(source(root+"curriculum.json"));
  const schedule=raw.weekPlans||raw.weeks;
  for(const week of weeks){
