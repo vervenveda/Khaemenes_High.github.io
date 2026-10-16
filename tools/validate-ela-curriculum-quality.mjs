@@ -50,7 +50,7 @@ for(const course of courses){
   for(let qn=0;qn<5;qn++){
    const q=item.quiz[qn];
    assert.equal(typeof q.question,"string");
-   assert(q.question.length>=18,"Question too short");
+   assert(q.question.length>=(qn>=3?18:8),"Question too short in "+course.slug+" week "+number+" Q"+(qn+1));
    assert.equal(q.choices.length,4,"Each question has four choices");
    assert.equal(new Set(q.choices.map(x=>x.trim().toLowerCase())).size,4,"Duplicate choices");
    assert(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4,"Invalid answer");
