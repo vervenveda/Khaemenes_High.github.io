@@ -76,14 +76,19 @@ const list=byId("vocabularyList"),status=byId("status"),title=byId("unitTitle");
 let current=null,loadCount=0;
 course.value=validCourses.has(params.get("course"))?params.get("course"):"algebra-2";
 lang.value=validLanguages.has(params.get("lang"))?params.get("lang"):"en";
-for(let n=1;n<=13;n++){
+for(let n=0;n<=13;n++){
  const item=document.createElement("option");
  item.value=String(n).padStart(2,"0");
  item.textContent="Unit "+String(n).padStart(2,"0");
  unit.append(item);
 }
 const incoming=Number(params.get("unit"));
-unit.value=Number.isInteger(incoming)&&incoming>=1&&incoming<=13?String(incoming).padStart(2,"0"):"01";
+unit.value=Number.isInteger(incoming)&&incoming>=(course.value==="pre-algebra"?0:1)&&incoming<=13?String(incoming).padStart(2,"0"):"01";
+function unitAvailability(){
+ const unit00=unit.querySelector('option[value="00"]');
+ if(unit00)unit00.hidden=unit00.disabled=course.value!=="pre-algebra";
+ if(course.value!=="pre-algebra"&&unit.value==="00")unit.value="01";
+}
 function sync(){
  const p=new URLSearchParams({course:course.value,unit:unit.value,lang:lang.value});
  history.replaceState(null,"","?"+p.toString());
@@ -149,10 +154,11 @@ async function load(){
   status.textContent=error.message+" Try again while online; previously cached units may remain available offline.";
  }
 }
-course.addEventListener("change",load);
+course.addEventListener("change",()=>{unitAvailability();load()});
 unit.addEventListener("change",load);
 lang.addEventListener("change",()=>{sync();render()});
 query.addEventListener("input",render);
+unitAvailability();
 load();
 })();
 </script>

@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0",
+  "unit": "KH-MATH-PA-U00",
+  "title": "Readiness Refresher · Six-Week Bridge",
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ar": "العربية",
+    "pt": "Português"
+  },
+  "terms": [
+    {
+      "id": "natural-number",
+      "en": "natural number",
+      "definition": "A counting number, usually 1, 2, 3, and so on.",
+      "es": "número natural",
+      "fr": "nombre naturel",
+      "ar": "عدد طبيعي",
+      "pt": "número natural"
+    },
+    {
+      "id": "integer",
+      "en": "integer",
+      "definition": "A whole number, its opposite, or zero.",
+      "es": "entero",
+      "fr": "entier relatif",
+      "ar": "عدد صحيح",
+      "pt": "número inteiro"
+    },
+    {
+      "id": "factor",
+      "en": "factor",
+      "definition": "A whole number that divides another whole number with no remainder.",
+      "es": "factor",
+      "fr": "facteur",
+      "ar": "عامل",
+      "pt": "fator"
+    },
+    {
+      "id": "exponent",
+      "en": "exponent",
+      "definition": "A number that tells how many times a base is used as a factor.",
+      "es": "exponente",
+      "fr": "exposant",
+      "ar": "أس",
+      "pt": "expoente"
+    },
+    {
+      "id": "order-of-operations",
+      "en": "order of operations",
+      "definition": "Grouping, exponents, multiplication/division left to right, then addition/subtraction left to right.",
+      "es": "orden de las operaciones",
+      "fr": "priorité des opérations",
+      "ar": "ترتيب العمليات",
+      "pt": "ordem das operações"
+    },
+    {
+      "id": "estimate",
+      "en": "estimate",
+      "definition": "A close, useful approximation rather than an exact value.",
+      "es": "estimación",
+      "fr": "estimation",
+      "ar": "تقدير",
+      "pt": "estimativa"
+    },
+    {
+      "id": "absolute-value",
+      "en": "absolute value",
+      "definition": "A number's nonnegative distance from zero.",
+      "es": "valor absoluto",
+      "fr": "valeur absolue",
+      "ar": "القيمة المطلقة",
+      "pt": "valor absoluto"
+    },
+    {
+      "id": "number-line",
+      "en": "number line",
+      "definition": "A line on which numbers are placed in order at equal intervals.",
+      "es": "recta numérica",
+      "fr": "droite numérique",
+      "ar": "خط الأعداد",
+      "pt": "reta numérica"
+    },
+    {
+      "id": "opposites",
+      "en": "opposites",
+      "definition": "Two numbers the same distance from zero on opposite sides.",
+      "es": "opuestos",
+      "fr": "opposés",
+      "ar": "عددان متعاكسان",
+      "pt": "opostos"
+    },
+    {
+      "id": "rational-number",
+      "en": "rational number",
+      "definition": "A number that can be written as a/b, where a and b are integers and b is not zero.",
+      "es": "número racional",
+      "fr": "nombre rationnel",
+      "ar": "عدد نسبي",
+      "pt": "número racional"
+    },
+    {
+      "id": "fraction",
+      "en": "fraction",
+      "definition": "A number written as one quantity divided by another.",
+      "es": "fracción",
+      "fr": "fraction",
+      "ar": "كسر",
+      "pt": "fração"
+    },
+    {
+      "id": "numerator",
+      "en": "numerator",
+      "definition": "The number above the fraction bar that counts selected parts.",
+      "es": "numerador",
+      "fr": "numérateur",
+      "ar": "بسط",
+      "pt": "numerador"
+    },
+    {
+      "id": "denominator",
+      "en": "denominator",
+      "definition": "The number below the fraction bar that names the size of equal parts.",
+      "es": "denominador",
+      "fr": "dénominateur",
+      "ar": "مقام",
+      "pt": "denominador"
+    },
+    {
+      "id": "variable",
+      "en": "Variable",
+      "es": "variable",
+      "fr": "variable",
+      "ar": "متغير",
+      "pt": "variável",
+      "definition": "A symbol representing an unknown, changing, or generalized quantity."
+    },
+    {
+      "id": "coefficient",
+      "en": "Coefficient",
+      "es": "coeficiente",
+      "fr": "coefficient",
+      "ar": "معامل",
+      "pt": "coeficiente",
+      "definition": "A numerical factor multiplying a variable term."
+    },
+    {
+      "id": "equation",
+      "en": "Equation",
+      "definition": "A statement that two expressions have equal value.",
+      "es": "ecuación",
+      "fr": "équation",
+      "ar": "معادلة",
+      "pt": "equação"
+    },
+    {
+      "id": "equality",
+      "en": "Equality",
+      "definition": "The relationship of having the same value.",
+      "es": "igualdad",
+      "fr": "égalité",
+      "ar": "مساواة",
+      "pt": "igualdade"
+    },
+    {
+      "id": "inverse-operation",
+      "en": "Inverse Operation",
+      "definition": "An operation that undoes another operation.",
+      "es": "operación inversa",
+      "fr": "opération inverse",
+      "ar": "عملية عكسية",
+      "pt": "operação inversa"
+    },
+    {
+      "id": "solution",
+      "en": "Solution",
+      "definition": "A value that makes an equation true.",
+      "es": "solución",
+      "fr": "solution",
+      "ar": "حل",
+      "pt": "solução"
+    },
+    {
+      "id": "coordinate-plane",
+      "en": "coordinate plane",
+      "es": "plano cartesiano",
+      "fr": "plan repéré",
+      "ar": "المستوى الإحداثي",
+      "pt": "plano cartesiano",
+      "definition": "A two-dimensional system formed by perpendicular number lines."
+    },
+    {
+      "id": "function",
+      "en": "function",
+      "es": "función",
+      "fr": "fonction",
+      "ar": "دالة",
+      "pt": "função",
+      "definition": "A relation assigning exactly one output to each input."
+    },
+    {
+      "id": "input",
+      "en": "input",
+      "es": "entrada",
+      "fr": "entrée",
+      "ar": "مدخل",
+      "pt": "entrada",
+      "definition": "A value supplied to a relation or function."
+    },
+    {
+      "id": "output",
+      "en": "output",
+      "es": "salida",
+      "fr": "sortie",
+      "ar": "مخرج",
+      "pt": "saída",
+      "definition": "A value produced by a relation or function."
+    },
+    {
+      "id": "slope",
+      "en": "slope",
+      "es": "pendiente",
+      "fr": "pente",
+      "ar": "ميل",
+      "pt": "inclinação",
+      "definition": "Rate of change of a line."
+    },
+    {
+      "id": "angle",
+      "en": "angle",
+      "es": "ángulo",
+      "fr": "angle",
+      "ar": "زاوية",
+      "pt": "ângulo",
+      "definition": "A figure formed by two rays sharing a vertex."
+    },
+    {
+      "id": "perimeter",
+      "en": "perimeter",
+      "es": "perímetro",
+      "fr": "périmètre",
+      "ar": "محيط",
+      "pt": "perímetro",
+      "definition": "Total length around a polygon or region."
+    },
+    {
+      "id": "area",
+      "en": "area",
+      "es": "área",
+      "fr": "aire",
+      "ar": "مساحة",
+      "pt": "área",
+      "definition": "Measure of two-dimensional coverage."
+    },
+    {
+      "id": "pythagorean-theorem",
+      "en": "Pythagorean theorem",
+      "es": "teorema de Pitágoras",
+      "fr": "théorème de Pythagore",
+      "ar": "نظرية فيثاغورس",
+      "pt": "teorema de Pitágoras",
+      "definition": "The relationship a²+b²=c² in a right triangle."
+    },
+    {
+      "id": "statistics",
+      "en": "statistics",
+      "es": "estadística",
+      "fr": "statistique",
+      "ar": "إحصاء",
+      "pt": "estatística",
+      "definition": "The study of data, variation, and uncertainty."
+    },
+    {
+      "id": "data",
+      "en": "data",
+      "es": "datos",
+      "fr": "données",
+      "ar": "بيانات",
+      "pt": "dados",
+      "definition": "Recorded observations or information."
+    },
+    {
+      "id": "probability",
+      "en": "probability",
+      "es": "probabilidad",
+      "fr": "probabilité",
+      "ar": "احتمال",
+      "pt": "probabilidade",
+      "definition": "A number from 0 to 1 describing likelihood."
+    },
+    {
+      "id": "mean",
+      "en": "mean",
+      "es": "media",
+      "fr": "moyenne",
+      "ar": "متوسط حسابي",
+      "pt": "média",
+      "definition": "The sum of values divided by their count."
+    }
+  ]
+}
