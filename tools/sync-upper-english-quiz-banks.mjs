@@ -74,7 +74,7 @@ for(const course of courses){
  const swPath=base+"service-worker.js";
  const currentSw=read(swPath);
  const olderRelease={"english-10":"v5","english-11":"v4","english-12":"v4"};
- const expectedName="khae-"+course.slug+"-"+olderRelease[course.slug]+"-ela-curriculum-20261016-v3-quiz72-"+fingerprint(JSON.stringify(bank.rows));
+ const expectedName="khae-"+course.slug.replace("english-","english")+"-"+olderRelease[course.slug]+"-ela-curriculum-20261016-v3-quiz72-"+fingerprint(JSON.stringify(bank.rows));
  const cacheRe=/(const CACHE_NAME = ")[^"]+(";)/;
  assert(cacheRe.test(currentSw),"Service worker cache name absent: "+course.slug);
  if(!write)assert(currentSw.includes('const CACHE_NAME = "'+expectedName+'";'),course.slug+" offline cache not bumped for bank");
