@@ -247,8 +247,8 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 
   async function renderLearningToday(){
     const summary=document.getElementById("learningTodaySummary"),actions=document.getElementById("learningTodayActions"),others=document.getElementById("learningTodayCourses");
-    const pinned=registry.pinnedCourses(),math=registry.mathPathway();
-    const priority=pinned.find(c=>c.id===math)||pinned[0]||null;
+    const pinned=registry.pinnedCourses();
+    const priority=registry.resumePriorityCourse?.()||pinned[0]||null;
     if(!priority){
       summary.textContent="Choose your regular subjects below, or begin with the Daily Lessons guide.";
       actions.replaceChildren();const a=document.createElement("a");a.className="btn gold";a.href="daily-lessons/";a.textContent="Start Daily Lessons →";actions.append(a);others.replaceChildren();return;
@@ -260,10 +260,12 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
     const daily=document.createElement("a");daily.className="btn secondary";daily.href="daily-lessons/";daily.textContent="View Daily Lessons";actions.append(daily);
     others.replaceChildren();
     for(const course of pinned.filter(c=>c.id!==priority.id).slice(0,3)){
+      const current=await registry.resolveContinueFor(course.id);
       const card=document.createElement("div");card.className="lesson-card";
       const h=document.createElement("h3");h.textContent=course.title;
-      const a=document.createElement("a");a.className="btn secondary";a.dataset.launchCourse=course.id;a.href=course.home;a.textContent="Open "+course.short;
-      card.append(h,a);others.append(card);
+      const detail=document.createElement("p");detail.textContent=current?.detail||"Ready to continue.";
+      const a=document.createElement("a");a.className="btn secondary";a.dataset.launchCourse=course.id;a.href=current?.url||course.home;a.textContent=current?.actionLabel||("Open "+course.short);
+      card.append(h,detail,a);others.append(card);
     }
     bindLaunches(document.getElementById("learningToday"));
   }
@@ -272,15 +274,13 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
     const focus=document.getElementById('todayFocus');
     if(note&&note.trim()){focus.textContent=note.trim();return}
     const pinned=registry.pinnedCourses();
-    const mathId=registry.mathPathway();
-    if(mathId){
-      const math=registry.getCourse(mathId),next=await registry.resolveContinueFor(mathId);
-      focus.textContent=`Mathematics: ${math?.title||'current pathway'}. ${next?.detail||'Open Daily Lessons to continue.'}`;
+    const priority=registry.resumePriorityCourse?.()||pinned[0]||null;
+    if(priority){
+      const next=await registry.resolveContinueFor(priority.id);
+      focus.textContent=`Resume ${priority.title}: ${next?.detail||'your next learning step is ready.'}`;
       return;
     }
-    focus.textContent=pinned.length
-      ? `${pinned.length} pinned ${pinned.length===1?'class is':'classes are'} ready. Open Daily Lessons and choose today’s first class.`
-      : 'Open Daily Lessons and choose the first assigned class. You can pin regular classes and choose the current mathematics pathway below.';
+    focus.textContent='Open Daily Lessons and choose the first assigned class. You can pin regular classes and choose the current mathematics pathway below.';
   }
 
   async function renderAll(){await Promise.all([renderPinned(),renderManager(),renderToday(),renderLearningToday()])}

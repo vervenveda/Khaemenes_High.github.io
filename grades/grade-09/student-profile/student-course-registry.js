@@ -304,6 +304,20 @@ async function resolveAlgebraNext(){
 }
 async function resolveContinueFor(id){return id==="algebra-1"?resolveAlgebraNext():continueFor(id)}
 
+function resumePriorityCourse(){
+  const pins=pinnedIds();
+  if(!pins.length)return null;
+  const launches=readJSON(LAST_LAUNCH_KEY,{});
+  const recent=pins.map(id=>{
+    const at=Date.parse(launches?.[id]?.at||"");
+    return {id,at:Number.isFinite(at)?at:-1};
+  }).filter(item=>item.at>=0).sort((a,b)=>b.at-a.at);
+  if(recent.length)return COURSE_MAP.get(recent[0].id)||null;
+  const math=mathPathway(pins);
+  if(math&&pins.includes(math))return COURSE_MAP.get(math)||null;
+  return COURSE_MAP.get(pins[0])||null;
+}
+
 function recordLaunch(id,url,title){
   const course=COURSE_MAP.get(id);
   if(!course)return false;
@@ -326,6 +340,6 @@ function shouldRefreshForStorageKey(key){
 
 window.KhaemenesGrade09Courses=Object.freeze({
   PIN_KEY,MATH_PATHWAY_KEY,PREALGEBRA_CONTINUE_KEY,LAST_LAUNCH_KEY,A1_DIAGNOSTIC_RESULT_KEY,A1_WEEKLY_KEY,A1_MIDTERM_KEY,A1_FINAL_KEY,
-  courses:COURSES,getCourse,pinnedIds,pinnedCourses,isPinned,isMathCourse,setPinned,togglePinned,setMathPathway,mathPathway,continueFor,resolveContinueFor,recordLaunch,mentorFor,shouldRefreshForStorageKey
+  courses:COURSES,getCourse,pinnedIds,pinnedCourses,isPinned,isMathCourse,setPinned,togglePinned,setMathPathway,mathPathway,continueFor,resolveContinueFor,resumePriorityCourse,recordLaunch,mentorFor,shouldRefreshForStorageKey
 });
 })();

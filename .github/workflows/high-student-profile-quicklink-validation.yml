@@ -6,6 +6,10 @@ on:
     paths:
       - 'index.html'
       - 'grades/**/index.html'
+      - 'grades/grade-09/student-profile/student-course-registry.js'
+      - 'tools/validate-grade09-resume-convenience.mjs'
+      - 'grades/grade-09/student-profile/student-course-registry.js'
+      - 'tools/validate-grade09-resume-convenience.mjs'
       - 'courses/**/index.html'
       - 'assets/vnv-beta-link.js'
       - 'tools/validate-student-profile-quicklink.mjs'
@@ -34,3 +38,5 @@ jobs:
         run: node --check assets/vnv-beta-link.js
       - name: Validate profile quick-link coverage
         run: node tools/validate-student-profile-quicklink.mjs
+      - name: Validate Grade 09 resume convenience
+        run: node tools/validate-grade09-resume-convenience.mjs

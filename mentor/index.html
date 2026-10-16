@@ -85,7 +85,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 </style>
 </head>
 <body>
-<header class="top"><div class="shell"><span class="brand">Khaemenes Academy · High School</span><a class="back" href="../">Back to High School</a></div></header>
+<header class="top"><div class="shell"><span class="brand">Khaemenes Academy · High School</span><a class="back" id="mentorReturnLink" href="../">Back to High School</a></div></header>
 <main class="shell">
 <section class="hero">
 <p class="kicker">NAIB · learner mentor routing</p>
@@ -127,7 +127,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <form class="form" id="form"><textarea id="question" maxlength="1200" aria-label="Ask the mentor" placeholder="Ask about the lesson, concept, evidence, or reasoning you are working on now."></textarea><button class="send" type="submit">Ask Mentor</button></form>
 <p class="status" id="status"></p>
 </section>
-<nav class="links" aria-label="Academy links"><a href="/stos/khaemenes/student/">Student Portal</a><a href="/stos/khaemenes/family/">Family Profile</a><a href="https://vervenveda.com/beta/">Beta Program</a></nav>
+<nav class="links" aria-label="Academy links"><a id="mentorReturnFooter" href="../">Return to Learning</a><a href="/stos/khaemenes/student/">Student Portal</a><a href="/stos/khaemenes/family/">Family Profile</a><a href="https://vervenveda.com/beta/">Beta Program</a></nav>
 </main>
 <script src="/stos/khaemenes/assets/khaemenes-family-registry.js"></script>
 <script src="/stos/khaemenes/assets/khaemenes-naib-mentor-router.js"></script>
@@ -142,6 +142,9 @@ const requestedSubject=safe(q.get("subject")||"general",60).toLowerCase();
 const subject=allowedSubjects.has(requestedSubject)?requestedSubject:"general";
 const requestedSource=safe(q.get("source")||"",240);
 const source=requestedSource.startsWith("/Khaemenes_High.github.io/")||requestedSource.startsWith("/stos/khaemenes/high/")?requestedSource:"/Khaemenes_High.github.io/";
+const returnToLearning=!source.includes("/mentor/")&&source!=="/Khaemenes_High.github.io/"&&source!=="/stos/khaemenes/high/"?source:"/Khaemenes_High.github.io/";
+const returnLabel=returnToLearning==="/Khaemenes_High.github.io/"?"Back to High School":"Return to Class";
+for(const id of ["mentorReturnLink","mentorReturnFooter"]){const link=document.getElementById(id);if(link){link.href=returnToLearning;link.textContent=id==="mentorReturnFooter"?(returnToLearning==="/Khaemenes_High.github.io/"?"High School Home":"Return to Learning"):returnLabel}}
 const course=safe(q.get("course")||"",100).replace(/[^A-Za-z0-9 _-]/g,"").trim();
 const learner=window.KhaemenesFamilyRegistry?.getLearner?.()||null;
 const pageLearnerId=learner?.learnerId||null;

@@ -194,7 +194,8 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
           <a class="btn secondary" href="${escapeHTML(registry.mentorFor(course.id))}">Ask Mentor</a>
         </div>
       </article>`).join('');
-    const first=resolved[0];
+    const preferred=registry.resumePriorityCourse?.()||pinned[0];
+    const first=resolved.find(item=>item.course.id===preferred?.id)||resolved[0];
     primary.href=first.current?.url||first.course.home;
     primary.dataset.launchCourse=first.course.id;
     primary.textContent=first.current?.actionLabel||`Open ${first.course.short}`;

@@ -53,6 +53,8 @@ assert.ok(surface.includes("Assessment/protected requests and guest previews sta
 assert.ok(surface.includes("withMentorTimeout")&&surface.includes("mentor-transport-timeout"),"mentor transport must be time bounded");
 assert.ok(surface.includes("allowGradeChange:false")&&surface.includes("allowMasteryAward:false")&&surface.includes("allowPlacementChange:false"),"mentor transport context must deny grade/mastery/placement mutation");
 assert.ok(surface.includes("requestedSource.startsWith")&&surface.includes("/Khaemenes_High.github.io/")&&surface.includes("/stos/khaemenes/high/"),"mentor source context must be restricted to trusted High School prefixes");
+assert.ok(surface.includes('id="mentorReturnLink"')&&surface.includes('id="mentorReturnFooter"'),"mentor surface must expose source-aware return controls");
+assert.ok(surface.includes("returnToLearning")&&surface.includes('!source.includes("/mentor/")'),"mentor return route must use the trusted source and reject mentor loops");
 
 assert.ok(surface.includes("../assets/khaemenes-archaemenes-voice.js"),"mentor surface must load the Archaemenes voice bridge");
 assert.ok(surface.includes('id="voicePreview"')&&surface.includes('id="voiceMode"')&&surface.includes('id="voiceAuto"'),"mentor surface must expose optional voice controls");
