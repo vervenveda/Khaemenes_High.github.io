@@ -21,6 +21,19 @@ for(const course of courses){
  assert.equal(curriculum.unitsCount,12);
  assert.equal(curriculum.weeks.length,36);
  assert.equal(curriculum.units.length,12);
+ const sw=fs.readFileSync(base+"/service-worker.js","utf8");
+ new vm.Script(sw,{filename:base+"/service-worker.js"});
+ assert(/ela-curriculum-20261016/.test(sw),"Offline cache release not updated for "+course.slug);
+ for(const cached of ["./assets/course.js","./assets/curriculum-data.js","./curriculum.json"]){
+  assert(sw.includes('"'+cached+'"'),"Offline cache lacks "+cached+" in "+course.slug);
+ }
+ if(course.grade>=11){
+  assert(sw.includes('"../../shared/daily-instruction.css"'),"Standalone instructional stylesheet not precached");
+  for(let day=1;day<=5;day++){
+   const entry='./weeks/week-01/lessons/day-'+String(day).padStart(2,"0")+'.html';
+   assert(sw.includes('"'+entry+'"'),"Uncached Week 01 daily lesson: "+entry);
+  }
+ }
  const courseJs=fs.readFileSync(base+"/assets/course.js","utf8");
  new vm.Script(courseJs,{filename:base+"/assets/course.js"});
  assert(courseJs.includes("window."+course.global+"?.weeks?.find(item=>item.week===week)?.quiz"),
