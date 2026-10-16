@@ -958,10 +958,10 @@ html:root:root body #grades{padding-top:52px}
       {id:"algebra-1",icon:"A1",title:"Algebra I",status:"Placement",url:"courses/mathematics/algebra-1/index.html",description:"Readiness-based Algebra I. Placement and mastery requirements remain unchanged."},
       {id:"psychology-101",icon:"P",title:"Psychology 101",status:"Elective",url:"electives/grades/grade-09/psych-101/index.html",description:"Introduction to psychological science, research, and ethics."},
       {id:"calculator",icon:"∑",title:"Scientific Calculator",status:"Tool",url:"courses/mathematics/tools/calculator",description:"Safe scientific computation with degree/radian modes, history, constants, and keyboard support."},
-      {id:"science-9",icon:"S9",title:"Integrated Science 9",status:"Active",url:"courses/science/integrated-science-9/index.html",description:"Life, matter, energy, Earth systems, engineering, inquiry, evidence literacy, and cumulative assessment."},
+      {id:"integrated-science-9",icon:"S9",title:"Integrated Science 9",status:"Active",url:"courses/science/integrated-science-9/index.html",description:"Life, matter, energy, Earth systems, engineering, inquiry, evidence literacy, and cumulative assessment."},
       {id:"english-9",icon:"E9",title:"English 9",status:"Active",url:"courses/language-arts/english-9/index.html",description:"Reading, literature, writing, rhetoric, research, speaking, and media literacy."},
       {id:"language-arts",icon:"LA",title:"Language Arts Department",status:"Active",url:"courses/language-arts/index.html",description:"English 9–12, literature, writing, research, communication, and publication."},
-      {id:"social-studies-9",icon:"SS9",title:"Social Studies 9",status:"Active",url:"courses/social-studies/grade-09/index.html",description:"Global Studies Honors with geography, history, civics, economics, sources, and evidence-based writing."},
+      {id:"global-studies-9",icon:"SS9",title:"Social Studies 9",status:"Active",url:"courses/social-studies/grade-09/index.html",description:"Global Studies Honors with geography, history, civics, economics, sources, and evidence-based writing."},
       {id:"social-studies",icon:"SS",title:"Social Studies Department",status:"Active",url:"courses/social-studies/index.html",description:"Social Studies 9–12, civic learning, history, government, economics, and senior research."}
     ],
     "10":[
@@ -1160,7 +1160,7 @@ html:root:root body #grades{padding-top:52px}
   function getPinned(){
     if(PIN_STORE.hasPinRecord()||PIN_STORE.activeLearner())return PIN_STORE.readPins();
     const profile=getProfile();
-    const legacyMap={"Pre-Algebra":"pre-algebra","English I":"english-9","Physical Science":"science-9"};
+    const legacyMap={"Pre-Algebra":"pre-algebra","English I":"english-9","Physical Science":"integrated-science-9"};
     const migrated=profile?[...new Set(profile.courses.map(name=>legacyMap[name]).filter(Boolean))]:[];
     PIN_STORE.writePins(migrated);
     return migrated;

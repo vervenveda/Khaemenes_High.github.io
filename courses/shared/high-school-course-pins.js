@@ -25,7 +25,8 @@ function write(base,value){
 function cleanPins(value){
  if(!Array.isArray(value))return [];
  const seen=new Set();
- return value.filter(id=>typeof id==="string"&&/^[a-z0-9][a-z0-9-]{0,95}$/.test(id)&&!seen.has(id)&&seen.add(id));
+ const aliases={"science-9":"integrated-science-9","social-studies-9":"global-studies-9"};
+ return value.map(id=>aliases[id]||id).filter(id=>typeof id==="string"&&/^[a-z0-9][a-z0-9-]{0,95}$/.test(id)&&!seen.has(id)&&seen.add(id));
 }
 function readPins(){return cleanPins(read(PIN_KEY,[]))}
 function writePins(value){return write(PIN_KEY,cleanPins(value))}

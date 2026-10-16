@@ -68,7 +68,7 @@ const COURSES=Object.freeze([
     mentorSubject:"language-arts"
   }),
   Object.freeze({
-    id:"science-9",
+    id:"integrated-science-9",
     title:"Integrated Science 9",
     subject:"Science",
     short:"Science",
@@ -79,7 +79,7 @@ const COURSES=Object.freeze([
     mentorSubject:"science"
   }),
   Object.freeze({
-    id:"social-studies-9",
+    id:"global-studies-9",
     title:"Global Studies Honors",
     subject:"Social Studies",
     short:"Social Studies",
@@ -108,7 +108,7 @@ const COURSES=Object.freeze([
     mentorSubject:"language-arts"
   }))
 ]);
-const PIN_ALIASES=Object.freeze({"integrated-science-9":"science-9","global-studies-9":"social-studies-9"});
+const PIN_ALIASES=Object.freeze({"science-9":"integrated-science-9","social-studies-9":"global-studies-9"});
 const canonicalPin=id=>PIN_ALIASES[id]||id;
 
 const COURSE_MAP=new Map(COURSES.map(course=>[course.id,course]));
@@ -371,7 +371,7 @@ window.KhaemenesGrade09Courses=Object.freeze({
   get courses(){
     const pins=new Set(pinnedIds());
     const selected=pinStore?.readLanguageChoices()?.["9"]||"spanish";
-    return COURSES.filter(c=>["pre-algebra","algebra-1","english-9","science-9","social-studies-9","psychology-101","world-language-9-"+selected].includes(c.id)||pins.has(c.id));
+    return COURSES.filter(c=>["pre-algebra","algebra-1","english-9","integrated-science-9","global-studies-9","psychology-101","world-language-9-"+selected].includes(c.id)||pins.has(c.id));
   },
   getCourse,pinnedIds,pinnedCourses,isPinned,isMathCourse,setPinned,togglePinned,setMathPathway,mathPathway,continueFor,resolveContinueFor,resumePriorityCourse,recordLaunch,mentorFor,shouldRefreshForStorageKey
 });
