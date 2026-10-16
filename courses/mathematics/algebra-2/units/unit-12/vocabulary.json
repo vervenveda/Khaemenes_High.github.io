@@ -3,164 +3,165 @@
   "title": "Probability, Distributions & Statistical Inference",
   "terms": [
     {
-      "en": "fundamental",
-      "es": "fundamental",
-      "fr": "fundamental",
-      "ar": "fundamental",
-      "pt": "fundamental",
-      "definition": "Core term used in Fundamental Counting Principle, Permutations & Combinations."
+      "en": "fundamental counting principle",
+      "es": "principio fundamental del conteo",
+      "fr": "principe fondamental de dénombrement",
+      "ar": "مبدأ العد الأساسي",
+      "pt": "princípio fundamental da contagem",
+      "definition": "If one stage has m outcomes and another n, their combined ordered choices number mn."
     },
     {
-      "en": "counting",
-      "es": "counting",
-      "fr": "counting",
-      "ar": "counting",
-      "pt": "counting",
-      "definition": "Core term used in Fundamental Counting Principle, Permutations & Combinations."
+      "en": "permutation",
+      "es": "permutación",
+      "fr": "permutation",
+      "ar": "تبديل",
+      "pt": "permutação",
+      "definition": "An ordered arrangement of selected objects."
     },
     {
-      "en": "principle",
-      "es": "principle",
-      "fr": "principle",
-      "ar": "principle",
-      "pt": "principle",
-      "definition": "Core term used in Fundamental Counting Principle, Permutations & Combinations."
+      "en": "combination",
+      "es": "combinación",
+      "fr": "combinaison",
+      "ar": "توافيق",
+      "pt": "combinação",
+      "definition": "A selection of objects where order does not matter."
     },
     {
       "en": "probability",
-      "es": "probability",
-      "fr": "probability",
-      "ar": "probability",
-      "pt": "probability",
-      "definition": "Core term used in Probability Rules, Complements & Unions."
+      "es": "probabilidad",
+      "fr": "probabilité",
+      "ar": "احتمال",
+      "pt": "probabilidade",
+      "definition": "A numerical measure between 0 and 1 of the likelihood of an event."
     },
     {
-      "en": "rules",
-      "es": "rules",
-      "fr": "rules",
-      "ar": "rules",
-      "pt": "rules",
-      "definition": "Core term used in Probability Rules, Complements & Unions."
+      "en": "addition rule",
+      "es": "regla de adición",
+      "fr": "règle d'addition",
+      "ar": "قاعدة الجمع للاحتمالات",
+      "pt": "regra da adição",
+      "definition": "P(A or B)=P(A)+P(B)-P(A and B)."
     },
     {
-      "en": "complements",
-      "es": "complements",
-      "fr": "complements",
-      "ar": "complements",
-      "pt": "complements",
-      "definition": "Core term used in Probability Rules, Complements & Unions."
+      "en": "complement rule",
+      "es": "regla del complemento",
+      "fr": "règle du complément",
+      "ar": "قاعدة المتمم",
+      "pt": "regra do complemento",
+      "definition": "P(not A)=1-P(A)."
     },
     {
-      "en": "conditional",
-      "es": "conditional",
-      "fr": "conditional",
-      "ar": "conditional",
-      "pt": "conditional",
-      "definition": "Core term used in Conditional Probability, Independence & Bayes Reasoning."
+      "en": "conditional probability",
+      "es": "probabilidad condicional",
+      "fr": "probabilité conditionnelle",
+      "ar": "احتمال شرطي",
+      "pt": "probabilidade condicional",
+      "definition": "P(A given B)=P(A and B)/P(B) when P(B)>0."
     },
     {
       "en": "independence",
-      "es": "independence",
-      "fr": "independence",
-      "ar": "independence",
-      "pt": "independence",
-      "definition": "Core term used in Conditional Probability, Independence & Bayes Reasoning."
+      "es": "independencia",
+      "fr": "indépendance",
+      "ar": "استقلال الأحداث",
+      "pt": "independência",
+      "definition": "Events A and B are independent when P(A and B)=P(A)P(B)."
     },
     {
-      "en": "binomial",
-      "es": "binomial",
-      "fr": "binomial",
-      "ar": "binomial",
-      "pt": "binomial",
-      "definition": "Core term used in Binomial Experiments & Expected Value."
+      "en": "binomial distribution",
+      "es": "distribución binomial",
+      "fr": "loi binomiale",
+      "ar": "توزيع ثنائي الحدين",
+      "pt": "distribuição binomial",
+      "definition": "A distribution counting successes across independent Bernoulli trials with fixed success probability."
     },
     {
-      "en": "experiments",
-      "es": "experiments",
-      "fr": "experiments",
-      "ar": "experiments",
-      "pt": "experiments",
-      "definition": "Core term used in Binomial Experiments & Expected Value."
+      "en": "Bernoulli trial",
+      "es": "ensayo de Bernoulli",
+      "fr": "épreuve de Bernoulli",
+      "ar": "تجربة برنولي",
+      "pt": "ensaio de Bernoulli",
+      "definition": "A trial with success and failure outcomes."
     },
     {
-      "en": "expected",
-      "es": "expected",
-      "fr": "expected",
-      "ar": "expected",
-      "pt": "expected",
-      "definition": "Core term used in Binomial Experiments & Expected Value."
+      "en": "expected value",
+      "es": "valor esperado",
+      "fr": "espérance mathématique",
+      "ar": "القيمة المتوقعة",
+      "pt": "valor esperado",
+      "definition": "The probability-weighted mean of a random variable."
     },
     {
-      "en": "normal",
-      "es": "normal",
-      "fr": "normal",
-      "ar": "normal",
-      "pt": "normal",
-      "definition": "Core term used in Normal Distributions, z-Scores & Percentiles."
+      "en": "normal distribution",
+      "es": "distribución normal",
+      "fr": "loi normale",
+      "ar": "التوزيع الطبيعي",
+      "pt": "distribuição normal",
+      "definition": "A symmetric bell-shaped continuous probability distribution specified by mean and standard deviation."
     },
     {
-      "en": "distributions",
-      "es": "distributions",
-      "fr": "distributions",
-      "ar": "distributions",
-      "pt": "distributions",
-      "definition": "Core term used in Normal Distributions, z-Scores & Percentiles."
+      "en": "standard deviation",
+      "es": "desviación estándar",
+      "fr": "écart-type",
+      "ar": "الانحراف المعياري",
+      "pt": "desvio padrão",
+      "definition": "A measure of data or distribution spread around its mean."
     },
     {
-      "en": "z-scores",
-      "es": "z-scores",
-      "fr": "z-scores",
-      "ar": "z-scores",
-      "pt": "z-scores",
-      "definition": "Core term used in Normal Distributions, z-Scores & Percentiles."
+      "en": "z-score",
+      "es": "puntuación z",
+      "fr": "cote z",
+      "ar": "درجة معيارية",
+      "pt": "escore z",
+      "definition": "The number of standard deviations a value lies above or below a mean."
     },
     {
-      "en": "sampling",
-      "es": "sampling",
-      "fr": "sampling",
-      "ar": "sampling",
-      "pt": "sampling",
-      "definition": "Core term used in Sampling, Bias, Margin of Error & Study Design."
+      "en": "random sampling",
+      "es": "muestreo aleatorio",
+      "fr": "échantillonnage aléatoire",
+      "ar": "أخذ عينات عشوائية",
+      "pt": "amostragem aleatória",
+      "definition": "A sampling procedure where selection probabilities are specified."
     },
     {
-      "en": "bias",
-      "es": "bias",
-      "fr": "bias",
-      "ar": "bias",
-      "pt": "bias",
-      "definition": "Core term used in Sampling, Bias, Margin of Error & Study Design."
+      "en": "sampling bias",
+      "es": "sesgo de muestreo",
+      "fr": "biais d'échantillonnage",
+      "ar": "انحياز العينة",
+      "pt": "viés de amostragem",
+      "definition": "Systematic selection effects that distort representation of the target population."
     },
     {
-      "en": "margin",
-      "es": "margin",
-      "fr": "margin",
-      "ar": "margin",
-      "pt": "margin",
-      "definition": "Core term used in Sampling, Bias, Margin of Error & Study Design."
+      "en": "margin of error",
+      "es": "margen de error",
+      "fr": "marge d'erreur",
+      "ar": "هامش الخطأ",
+      "pt": "margem de erro",
+      "definition": "A stated bound on estimation error under a given method and confidence level."
     },
     {
-      "en": "evaluating",
-      "es": "evaluating",
-      "fr": "evaluating",
-      "ar": "evaluating",
-      "pt": "evaluating",
-      "definition": "Core term used in Evaluating Statistical Claims & Communicating Uncertainty."
+      "en": "confidence interval",
+      "es": "intervalo de confianza",
+      "fr": "intervalle de confiance",
+      "ar": "فترة الثقة",
+      "pt": "intervalo de confiança",
+      "definition": "An interval procedure designed to contain a fixed population parameter in a specified fraction of repeated samples."
     },
     {
-      "en": "statistical",
-      "es": "statistical",
-      "fr": "statistical",
-      "ar": "statistical",
-      "pt": "statistical",
-      "definition": "Core term used in Evaluating Statistical Claims & Communicating Uncertainty."
+      "en": "statistical inference",
+      "es": "inferencia estadística",
+      "fr": "inférence statistique",
+      "ar": "استدلال إحصائي",
+      "pt": "inferência estatística",
+      "definition": "Drawing population conclusions using sample evidence and uncertainty."
     },
     {
-      "en": "claims",
-      "es": "claims",
-      "fr": "claims",
-      "ar": "claims",
-      "pt": "claims",
-      "definition": "Core term used in Evaluating Statistical Claims & Communicating Uncertainty."
+      "en": "statistical claim",
+      "es": "afirmación estadística",
+      "fr": "affirmation statistique",
+      "ar": "ادعاء إحصائي",
+      "pt": "afirmação estatística",
+      "definition": "A statement about data or a population requiring evidence and an uncertainty check."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
