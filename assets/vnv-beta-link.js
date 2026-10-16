@@ -1,4 +1,4 @@
-/* Verve N Veda · Beta Program universal button widget · v1.5.0 */
+/* Verve N Veda · Beta Program + Khaemenes learner rail widget · v1.7.2 */
 (() => {
   "use strict";
 
@@ -11,7 +11,12 @@
   const BAZAAR_LIVE_URL="https://vervenveda.github.io/333.github.io/app/Bazaar_Art_Live_index.html";
   const HIGH_PROFILE_ID="khaemenesHighStudentProfileLink";
   const HIGH_PROFILE_STYLE_ID="khaemenesHighStudentProfileLinkStyles";
-  const HIGH_PROFILE_URL="https://vervenveda.com/Khaemenes_Academy.github.io/student/";
+  const EDUCATION_TOOLBAR_ID="khaemenesLearnerUtilityToolbar";
+  const EDUCATION_TOOLBAR_STYLE_ID="khaemenesLearnerUtilityToolbarStyles";
+  const ACADEMY_STUDENT_URL="https://vervenveda.com/Khaemenes_Academy.github.io/student/";
+  const ACADEMY_FAMILY_URL="https://vervenveda.com/Khaemenes_Academy.github.io/family/";
+  const HIGHER_SCHOLAR_URL="https://vervenveda.com/Khaemenes_Academy.github.io/adult/";
+  const LINGUISTICS_CONTINUATION_URL="https://vervenveda.com/Khaemenes_Linguistics.github.io/assets/khaemenes-linguistics-continuation.js";
 
   const clean=(value,max)=>String(value??"").replace(/[\u0000-\u001f\u007f]/g,"").slice(0,max);
 
@@ -56,13 +61,144 @@
   };
 
 
-  const isHighSchoolSurface=()=>{
+  const educationProfileConfig=()=>{
     try{
       const host=String(location.hostname||"").toLowerCase();
       const path=String(location.pathname||"/").toLowerCase();
-      return host.includes("khaemenes-high")||/(^|\/)khaemenes_high\.github\.io(\/|$)/.test(path);
-    }catch{return false}
+      const match=(hostNeedle,pathNeedle)=>host.includes(hostNeedle)||path.includes(pathNeedle);
+
+      if(match("khaemenes-preschool","/khaemenes_preschool.github.io/")){
+        return {
+          label:"Learner Profile",
+          mark:"P",
+          url:ACADEMY_FAMILY_URL,
+          aria:"Open the Khaemenes Academy family learner profile",
+          title:"Learner Profile · family-managed child identity and curriculum continuity"
+        };
+      }
+      if(match("khaemenes-kindergarden","/khaemenes_kindergarden.github.io/")){
+        return {
+          label:"Student Profile",
+          mark:"K",
+          url:ACADEMY_STUDENT_URL,
+          aria:"Open the Khaemenes Academy Student Profile",
+          title:"Student Profile · learner identity, pinned learning and curriculum continuity"
+        };
+      }
+      if(match("khaemenes-elementary","/khaemenes_elementary.github.io/")){
+        return {
+          label:"Student Profile",
+          mark:"E",
+          url:ACADEMY_STUDENT_URL,
+          aria:"Open the Khaemenes Academy Student Profile",
+          title:"Student Profile · pinned courses, learning records and next steps"
+        };
+      }
+      if(match("khaemenes-middle","/khaemenes_middle.github.io/")){
+        return {
+          label:"Student Profile",
+          mark:"M",
+          url:ACADEMY_STUDENT_URL,
+          aria:"Open the Khaemenes Academy Student Profile",
+          title:"Student Profile · pinned courses, learning records and next steps"
+        };
+      }
+      if(match("khaemenes-high","/khaemenes_high.github.io/")){
+        return {
+          label:"Student Profile",
+          mark:"S",
+          url:ACADEMY_STUDENT_URL,
+          aria:"Open Khaemenes Academy Student Profile and pinned courses",
+          title:"Student Profile · pinned courses and learning schedule"
+        };
+      }
+      if(match("khaemenes-linguistics","/khaemenes_linguistics.github.io/")){
+        return {
+          label:"Learner Profile",
+          mark:"L",
+          url:ACADEMY_STUDENT_URL,
+          aria:"Open the Khaemenes Academy learner profile",
+          title:"Learner Profile · language pathways, pinned learning and records"
+        };
+      }
+      if(match("khaemenes-higher-learning","/khaemenes_higher_learning.github.io/")){
+        return {
+          label:"Scholar Profile",
+          mark:"H",
+          url:HIGHER_SCHOLAR_URL,
+          aria:"Open the Khaemenes Academy Adult Learner Portal",
+          title:"Scholar Profile · adult learner identity, study preferences and next steps"
+        };
+      }
+      return null;
+    }catch{return null}
   };
+
+  function ensureEducationToolbar(){
+    if(!educationProfileConfig()||!document.body)return null;
+    let toolbar=document.getElementById(EDUCATION_TOOLBAR_ID);
+    if(!document.getElementById(EDUCATION_TOOLBAR_STYLE_ID)){
+      const style=document.createElement("style");
+      style.id=EDUCATION_TOOLBAR_STYLE_ID;
+      style.textContent=`
+        #${EDUCATION_TOOLBAR_ID}{
+          position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));
+          z-index:2147482100;display:flex;align-items:stretch;justify-content:flex-end;gap:6px;
+          padding:6px;border:1px solid rgba(180,139,69,.48);border-radius:7px;
+          background:rgba(255,253,248,.96);box-shadow:0 10px 30px rgba(15,25,37,.16);
+          backdrop-filter:blur(10px)
+        }
+        #${EDUCATION_TOOLBAR_ID}>button,#${EDUCATION_TOOLBAR_ID}>a{
+          position:static!important;right:auto!important;bottom:auto!important;z-index:auto!important;
+          width:126px!important;height:42px!important;min-height:42px!important;max-height:42px!important;
+          display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;
+          margin:0!important;padding:7px 9px!important;border-radius:7px!important;
+          box-sizing:border-box!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;
+          box-shadow:none!important;font:600 10px/1.15 "Avenir Next","Segoe UI",Arial,sans-serif!important;
+          letter-spacing:.035em!important;text-decoration:none!important
+        }
+        #${EDUCATION_TOOLBAR_ID}>#learnerRecordNoticeButton{
+          order:10;color:#493719!important;background:#fff4d8!important;border:1px solid #b48b45!important
+        }
+        #${EDUCATION_TOOLBAR_ID}>#${HIGH_PROFILE_ID}{
+          order:20;color:#17392f!important;background:#fffdf8!important;border:1px solid rgba(180,139,69,.72)!important
+        }
+        #${EDUCATION_TOOLBAR_ID}>#${ID}{
+          order:30;color:#f7efe0!important;background:#0f1925!important;border:1px solid rgba(183,147,77,.72)!important
+        }
+        #${EDUCATION_TOOLBAR_ID}>button:hover,#${EDUCATION_TOOLBAR_ID}>a:hover{transform:translateY(-1px)}
+        #${EDUCATION_TOOLBAR_ID}>button:focus-visible,#${EDUCATION_TOOLBAR_ID}>a:focus-visible{outline:3px solid #b48b45;outline-offset:2px}
+        @media(max-width:520px){
+          #${EDUCATION_TOOLBAR_ID}{right:max(8px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));gap:4px;padding:4px}
+          #${EDUCATION_TOOLBAR_ID}>button,#${EDUCATION_TOOLBAR_ID}>a{
+            width:96px!important;height:40px!important;min-height:40px!important;max-height:40px!important;
+            padding:6px!important;font-size:9px!important;letter-spacing:.01em!important
+          }
+        }
+        @media(max-width:330px){
+          #${EDUCATION_TOOLBAR_ID}>button,#${EDUCATION_TOOLBAR_ID}>a{width:90px!important}
+        }
+        @media print{#${EDUCATION_TOOLBAR_ID}{display:none!important}}
+        @media(prefers-reduced-motion:reduce){#${EDUCATION_TOOLBAR_ID}>button,#${EDUCATION_TOOLBAR_ID}>a{transition:none!important;transform:none!important}}
+      `;
+      (document.head||document.documentElement).append(style);
+    }
+    if(!toolbar){
+      toolbar=document.createElement("nav");
+      toolbar.id=EDUCATION_TOOLBAR_ID;
+      toolbar.setAttribute("aria-label","Khaemenes learner utilities");
+      document.body.append(toolbar);
+    }
+    return toolbar;
+  }
+
+  function dockEducationUtility(control,order){
+    const toolbar=ensureEducationToolbar();
+    if(!toolbar||!control)return false;
+    control.style.order=String(order);
+    if(control.parentElement!==toolbar)toolbar.append(control);
+    return true;
+  }
 
   function betaStackOffset(){
     const beta=document.getElementById(ID);
@@ -71,25 +207,47 @@
   }
 
   function alignHighProfileSurface(){
-    if(!isHighSchoolSurface()||!document.body)return false;
-    const offset=betaStackOffset();
+    const config=educationProfileConfig();
+    if(!config||!document.body)return false;
     const bridge=document.getElementById("khaemenesFamilyBridge");
     const quick=document.getElementById(HIGH_PROFILE_ID);
+    const beta=document.getElementById(ID);
+
     if(bridge){
-      bridge.style.right="max(12px, env(safe-area-inset-right))";
-      bridge.style.bottom=`calc(max(12px, env(safe-area-inset-bottom)) + ${offset}px)`;
-      bridge.style.borderRadius="7px";
+      const toolbar=ensureEducationToolbar();
+      if(toolbar&&bridge.parentElement!==toolbar){
+        bridge.style.order="20";
+        toolbar.append(bridge);
+      }
       if(quick)quick.remove();
-      return true;
+    }else if(quick){
+      dockEducationUtility(quick,20);
     }
-    if(quick){
-      quick.style.bottom=`calc(max(12px, env(safe-area-inset-bottom)) + ${offset}px)`;
+    if(beta)dockEducationUtility(beta,30);
+
+    const preserved=[...document.querySelectorAll("button,a")].find(el=>{
+      const id=String(el.id||"").toLowerCase();
+      const text=String(el.textContent||"").trim().toLowerCase();
+      return id==="learnerrecordnoticebutton"||
+        /preserv(ed)?[-_ ]?work|legacy[-_ ]?work|work[-_ ]?recovery/.test(id)||
+        text==="preserved work"||text.startsWith("preserved work ·");
+    });
+    if(preserved&&preserved!==quick&&preserved!==beta)dockEducationUtility(preserved,10);
+
+    const panel=document.getElementById("learnerRecordNoticePanel");
+    const toolbar=document.getElementById(EDUCATION_TOOLBAR_ID);
+    if(panel&&toolbar){
+      const h=Math.ceil(toolbar.getBoundingClientRect?.().height||54);
+      panel.style.right="max(12px, env(safe-area-inset-right))";
+      panel.style.bottom=`calc(max(12px, env(safe-area-inset-bottom)) + ${h+10}px)`;
+      panel.style.borderRadius="7px";
     }
-    return false;
+    return !!bridge;
   }
 
   function mountHighStudentProfile(){
-    if(!isHighSchoolSurface()||!document.body)return;
+    const config=educationProfileConfig();
+    if(!config||!document.body)return;
 
     if(alignHighProfileSurface())return;
 
@@ -98,15 +256,11 @@
       style.id=HIGH_PROFILE_STYLE_ID;
       style.textContent=`
         #${HIGH_PROFILE_ID}{
-          position:fixed;right:max(12px,env(safe-area-inset-right));
-          bottom:calc(max(12px,env(safe-area-inset-bottom)) + 62px);
-          z-index:2147481999;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+          display:inline-flex;align-items:center;justify-content:center;gap:8px;
           min-height:40px;padding:8px 12px;border:1px solid rgba(180,139,69,.72);
           border-radius:7px;color:#17392f;background:rgba(255,253,248,.97);
-          box-shadow:0 8px 24px rgba(23,57,47,.14);
           font:600 10px/1.2 "Avenir Next","Segoe UI",Arial,sans-serif;
-          letter-spacing:.045em;text-decoration:none;backdrop-filter:blur(9px);
-          cursor:pointer;-webkit-tap-highlight-color:transparent
+          letter-spacing:.045em;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent
         }
         #${HIGH_PROFILE_ID}:hover{transform:translateY(-1px);border-color:#b48b45;background:#fffaf0}
         #${HIGH_PROFILE_ID}:focus-visible{outline:3px solid #b48b45;outline-offset:3px}
@@ -114,9 +268,7 @@
           width:20px;height:20px;display:grid;place-items:center;border-radius:50%;
           color:#fff;background:#17392f;font:600 10px/1 Georgia,serif
         }
-        @media(max-width:520px){
-          #${HIGH_PROFILE_ID}{right:max(8px,env(safe-area-inset-right));min-height:38px;padding:7px 10px}
-        }
+        @media(max-width:520px){#${HIGH_PROFILE_ID}{min-height:38px;padding:7px 10px}}
         @media print{#${HIGH_PROFILE_ID}{display:none!important}}
         @media(prefers-reduced-motion:reduce){#${HIGH_PROFILE_ID}{transition:none!important;transform:none!important}}
       `;
@@ -127,21 +279,22 @@
       const button=document.createElement("button");
       button.id=HIGH_PROFILE_ID;
       button.type="button";
-      button.setAttribute("aria-label","Open Khaemenes Academy Student Profile and pinned courses");
-      button.title="Student Profile · pinned courses and learning schedule";
+      button.setAttribute("aria-label",config.aria);
+      button.title=config.title;
       const mark=document.createElement("span");
       mark.className="khae-profile-mark";
       mark.setAttribute("aria-hidden","true");
-      mark.textContent="S";
+      mark.textContent=config.mark;
       const label=document.createElement("span");
-      label.textContent="Student Profile";
+      label.textContent=config.label;
       button.append(mark,label);
       button.addEventListener("click",()=>{
-        try{window.location.assign(HIGH_PROFILE_URL)}catch{window.location.href=HIGH_PROFILE_URL}
+        try{window.location.assign(config.url)}catch{window.location.href=config.url}
       });
-      document.body.append(button);
+      (ensureEducationToolbar()||document.body).append(button);
     }
 
+    dockEducationUtility(document.getElementById(HIGH_PROFILE_ID),20);
     alignHighProfileSurface();
 
     if(typeof MutationObserver==="function"&&!document.documentElement.dataset.khaeHighProfileStackBound){
@@ -227,6 +380,20 @@
     }
   }
 
+  function ensureLinguisticsContinuation(){
+    try{
+      const path=String(location.pathname||"").toLowerCase();
+      if(!path.includes("/khaemenes_linguistics.github.io/"))return;
+      if(!/\/halls\/courses\/(arabic-1|russian-1)(\/|$)/.test(path))return;
+      if(document.querySelector('script[data-khaemenes-linguistics-continuation]'))return;
+      const script=document.createElement("script");
+      script.src=LINGUISTICS_CONTINUATION_URL;
+      script.async=false;
+      script.dataset.khaemenesLinguisticsContinuation="1";
+      (document.head||document.documentElement).append(script);
+    }catch{}
+  }
+
   function mount(){
     if(document.getElementById(ID)||!document.body)return;
 
@@ -273,7 +440,9 @@
     button.addEventListener("click",()=>{
       try{window.location.assign(betaHref())}catch{window.location.href=BETA_URL}
     });
-    document.body.append(button);
+    const toolbar=ensureEducationToolbar();
+    (toolbar||document.body).append(button);
+    if(toolbar)dockEducationUtility(button,30);
   }
 
   function attachToFrame(frame){
@@ -311,9 +480,9 @@
     observer.observe(document.documentElement,{childList:true,subtree:true});
   }
 
-  function start(){mount();mountHighStudentProfile();bindVisibleFrames();enhanceBazaarLanding()}
+  function start(){mount();mountHighStudentProfile();ensureLinguisticsContinuation();bindVisibleFrames();enhanceBazaarLanding()}
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});
   else start();
 
-  window.VNVBetaProgram=Object.freeze({version:"1.5.0",mount,source:safeSource,surface:safeSurface,href:betaHref,studentProfile:mountHighStudentProfile});
+  window.VNVBetaProgram=Object.freeze({version:"1.7.2",mount,source:safeSource,surface:safeSurface,href:betaHref,studentProfile:mountHighStudentProfile,educationProfile:educationProfileConfig});
 })();
