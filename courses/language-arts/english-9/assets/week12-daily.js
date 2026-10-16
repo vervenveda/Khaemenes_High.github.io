@@ -114,7 +114,7 @@ if(day===60){
  return;
 }
 if(day<56||day>59)return;
-const answer=writing.find(f=>f.dataset.saveField==="week-12-day-"+day);
+const answer=writing.find(f=>f.dataset.saveField==="week-12-day"+day);
 if([56,57,58,59].includes(day)){
  const cases={
   56:["week-12-day56-comparison","week12-comparison-count","180–250 words"],
