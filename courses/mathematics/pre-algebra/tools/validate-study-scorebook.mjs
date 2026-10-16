@@ -63,7 +63,10 @@ expect(navigatorIndex>=0&&scorebookIndex>navigatorIndex,"Study Scorebook must lo
 expect(serviceWorker.includes('./assets/prealgebra-study-scorebook-v1.js'),"Compact offline shell must cache the Study Scorebook component.");
 expect(serviceWorker.includes('./assets/prealgebra-course-navigator-v1.js'),"Compact offline shell must preserve the Course Navigator component.");
 expect(!serviceWorker.includes('./assets/prealgebra-assessment-depth-v2-core.js'),"Study Scorebook release must keep assessment-depth content on-demand.");
-expect(serviceWorker.includes('v9-ams-v1.5.0-recovery-r1-20261014')&&serviceWorker.includes('MISSION_OFFLINE_RELEASE="ams-v1.5.0-recovery-r1-20261014"'),"Study Scorebook validation must target the v1.5 evidence-recovery offline-shell release.");
+const cacheRelease=serviceWorker.match(/CACHE_NAME=\x60\$\{CACHE_PREFIX\}(v\d+-ams-[^\x60]+)\x60/);
+const missionRelease=serviceWorker.match(/MISSION_OFFLINE_RELEASE="(ams-[^"]+)"/);
+expect(Boolean(cacheRelease&&missionRelease&&cacheRelease[1].includes(missionRelease[1])),
+  "Study Scorebook offline-shell cache and mission release must match.");
 
 for(const relative of ["assets/prealgebra-study-scorebook-v1.js","assets/prealgebra-assessment-depth-v2.js","service-worker.js"]){
   const check=spawnSync(process.execPath,["--check",path.join(root,relative)],{encoding:"utf8"});
