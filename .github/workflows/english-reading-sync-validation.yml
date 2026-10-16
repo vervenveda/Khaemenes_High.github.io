@@ -1,0 +1,31 @@
+name: English Reading and Instruction Alignment
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/english-9/weeks/week-02/**'
+      - 'courses/language-arts/english-9/units/unit-01/**'
+      - 'courses/language-arts/english-10/**'
+      - 'courses/language-arts/english-11/**'
+      - 'courses/language-arts/english-12/**'
+      - 'courses/shared/daily-instruction.css'
+      - 'tools/validate-english-reading-sync.mjs'
+      - '.github/workflows/english-reading-sync-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/language-arts/english-9/weeks/week-02/**'
+      - 'courses/language-arts/english-10/**'
+      - 'courses/language-arts/english-11/**'
+      - 'courses/language-arts/english-12/**'
+      - 'courses/shared/daily-instruction.css'
+      - 'tools/validate-english-reading-sync.mjs'
+      - '.github/workflows/english-reading-sync-validation.yml'
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify reading dossiers and lesson alignment
+        run: node tools/validate-english-reading-sync.mjs
