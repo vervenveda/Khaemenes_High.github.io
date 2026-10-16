@@ -59,8 +59,14 @@ self.addEventListener("activate",event=>{
 // Capture successfully visited course lessons and local support assets only.
 // Local learner scores, notes, and mastery remain solely in existing record storage.
 const scopeURL=new URL(self.registration.scope);
+function isReusableLessonPage(url){
+  return url.href.startsWith(scopeURL.href) &&
+    /\/units\/unit-(?:0[0-9]|1[0-3])\/(?:lessons\/[^/]+\.html|index\.html)$/.test(url.pathname);
+}
 function isCourseAsset(url){
-  return url.href.startsWith(scopeURL.href)&&/\.(?:css|js|json|svg|png|jpg|jpeg|webp)$/i.test(url.pathname);
+  const inCourse=url.href.startsWith(scopeURL.href);
+  const restricted=/\/(?:assessment|assessments|teacher-keys|records|diagnostic)\//i.test(url.pathname);
+  return inCourse&&!restricted&&/\.(?:css|js|json|svg|png|jpg|jpeg|webp)$/i.test(url.pathname);
 }
 async function cacheGoodResponse(request,response){
   if(!response || !response.ok || response.type==="opaque")return;
@@ -81,7 +87,7 @@ self.addEventListener("fetch",event=>{
     event.respondWith((async()=>{
       try{
         const response=await fetch(request);
-        await cacheGoodResponse(request,response);
+        if(isReusableLessonPage(url))await cacheGoodResponse(request,response);
         return response;
       }catch{
         const cached=await releaseMatch(request,{ignoreSearch:true});
