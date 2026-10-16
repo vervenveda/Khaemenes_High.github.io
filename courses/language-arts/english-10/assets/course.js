@@ -145,6 +145,18 @@
 
   // Quiz and assessment engine
   function readQuestions(scriptId){
+    // The versioned curriculum JSON is authoritative for weekly quizzes.
+    // Legacy inline question data is retained as a read-only fallback.
+    // The same learner-scoped score keys and best-score logic are preserved.
+    if(scriptId==="quiz-data"){
+      const week=Number(document.querySelector("[data-quiz-form]")?.dataset.week);
+      const canonical=window.ELA10_COURSE?.weeks?.find(item=>item.week===week)?.quiz;
+      if(Array.isArray(canonical)&&canonical.length===5 &&
+         canonical.every(q=>Array.isArray(q.choices)&&q.choices.length===4 &&
+           Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4)){
+        return canonical;
+      }
+    }
     const node=document.getElementById(scriptId);
     return node ? safeParse(node.textContent,[]) : [];
   }

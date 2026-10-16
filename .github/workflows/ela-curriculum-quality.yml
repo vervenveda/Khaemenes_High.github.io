@@ -1,0 +1,28 @@
+name: Language Arts Curriculum Quality
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/english-9/**'
+      - 'courses/language-arts/english-10/**'
+      - 'courses/language-arts/english-11/**'
+      - 'courses/language-arts/english-12/**'
+      - 'tools/validate-ela-curriculum-quality.mjs'
+      - '.github/workflows/ela-curriculum-quality.yml'
+  pull_request:
+    paths:
+      - 'courses/language-arts/english-9/**'
+      - 'courses/language-arts/english-10/**'
+      - 'courses/language-arts/english-11/**'
+      - 'courses/language-arts/english-12/**'
+      - 'tools/validate-ela-curriculum-quality.mjs'
+      - '.github/workflows/ela-curriculum-quality.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify four English curricula and versioned weekly quizzes
+        run: node tools/validate-ela-curriculum-quality.mjs

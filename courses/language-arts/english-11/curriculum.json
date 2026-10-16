@@ -340,12 +340,12 @@
         {
           "question": "What is the strongest description of 11th grade ELA work?",
           "choices": [
-            "Memorizing summaries only",
-            "Evaluating layers of meaning, rhetoric, research, and style with evidence",
             "Avoiding older texts",
-            "Writing only personal narratives"
+            "Writing only personal narratives",
+            "Memorizing summaries only",
+            "Evaluating layers of meaning, rhetoric, research, and style with evidence"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Grade 11 moves toward evaluation, synthesis, and mature interpretation.",
           "skill": ""
         },
@@ -364,38 +364,38 @@
         {
           "question": "Which action best demonstrates mastery of Week 01: Course Launch: English III Scholar Habits?",
           "choices": [
-            "Rely on summary without testing evidence",
-            "read closely, reason from evidence, communicate clearly, revise purposefully, and reflect on mastery",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence",
+            "read closely, reason from evidence, communicate clearly, revise purposefully, and reflect on mastery"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "This week requires students to read closely, reason from evidence, communicate clearly, revise purposefully, and reflect on mastery.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 01 (Course Launch: English III Scholar Habits), a learner is studying evaluation. Two sources about the same question differ in their conclusions. How should a research writer proceed?",
           "choices": [
-            "a polished diagnostic literary analysis paragraph and personal growth plan supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Check provenance and methods, compare relevant evidence, and explain any remaining disagreement in the synthesis.",
+            "Select the longer source because page count indicates reliability.",
+            "Average the two conclusions without examining what each measured.",
+            "Omit the conflicting source to make the paragraph appear consistent."
           ],
           "answer": 0,
-          "explanation": "The strongest evidence is a polished diagnostic literary analysis paragraph and personal growth plan supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "explanation": "Research synthesis evaluates evidence and records disagreement rather than hiding it.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 01 (Course Launch: English III Scholar Habits), the language focus includes sentence boundaries, paragraph coherence, diagnostic honesty, and academic tone. Which sentence pair corrects a comma splice and preserves the meaning?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "sentence boundaries, paragraph coherence, diagnostic honesty, and academic tone"
+            "The writer compared two accounts she then revised her conclusion.",
+            "After comparing the two accounts. Revised her conclusion.",
+            "The writer compared two accounts. She then revised her conclusion.",
+            "The writer compared two accounts, she then revised her conclusion."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is sentence boundaries, paragraph coherence, diagnostic honesty, and academic tone.",
-          "skill": "Language and Revision"
+          "answer": 2,
+          "explanation": "Two complete independent clauses require correct separation or joining.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -510,62 +510,62 @@
         {
           "question": "A close reading annotation should identify...",
           "choices": [
+            "Only the title",
             "Only page numbers",
             "A meaningful detail, pattern, question, or author choice",
-            "The price of a book",
-            "Only the title"
+            "The price of a book"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Annotations should help explain meaning.",
           "skill": ""
         },
         {
           "question": "Paraphrasing grade-level text means...",
           "choices": [
-            "Copying exactly",
             "Restating accurately in original wording",
             "Changing one word",
-            "Adding unsupported opinions"
+            "Adding unsupported opinions",
+            "Copying exactly"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Paraphrase preserves meaning in new wording.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 02: Close Reading, Inference, and Paraphrase?",
           "choices": [
+            "Focus on formatting while ignoring reasoning",
             "Rely on summary without testing evidence",
             "read closely, reason from evidence, communicate clearly, revise purposefully, and reflect on mastery",
-            "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Choose a conclusion before reading the sources"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "This week requires students to read closely, reason from evidence, communicate clearly, revise purposefully, and reflect on mastery.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 02 (Close Reading, Inference, and Paraphrase), a learner is studying paraphrase. Two passages appear to share a theme. Which interpretation shows careful close reading?",
           "choices": [
-            "a polished evidence table, paraphrase set, and inference paragraph supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
-          ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished evidence table, paraphrase set, and inference paragraph supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
-        },
-        {
-          "question": "Which revision priority most directly matches this week’s language focus?",
-          "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "quotation integration, paraphrase accuracy, inference verbs, and commentary"
+            "Identify the topic and call it a theme without considering either text.",
+            "Assume the same theme means the passages have identical messages.",
+            "Use a summary of one passage as complete evidence for both.",
+            "Use a detail from each passage, explain the differing author choices, and qualify the common theme."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is quotation integration, paraphrase accuracy, inference verbs, and commentary.",
-          "skill": "Language and Revision"
+          "explanation": "Themes emerge from analyzed textual details and context, not a topic label alone.",
+          "skill": "Interpretation and Evidence Transfer"
+        },
+        {
+          "question": "For Week 02 (Close Reading, Inference, and Paraphrase), the language focus includes quotation integration, paraphrase accuracy, inference verbs, and commentary. Which sentence distinguishes sourced words from analysis?",
+          "choices": [
+            "Quotation marks are unnecessary if the borrowed phrase is short.",
+            "The report uses the phrase “limited sample”; the writer then explains how that constraint narrows the conclusion and records the citation.",
+            "The report proves everything; no attribution is needed.",
+            "A close synonym makes a copied sentence independent writing."
+          ],
+          "answer": 1,
+          "explanation": "Quoted language and borrowed ideas must be credited and analytically distinguished.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -694,12 +694,12 @@
         {
           "question": "Expository analysis should use...",
           "choices": [
-            "Logical organization and tone/voice appropriate to task and audience",
-            "No structure",
             "Only slang",
-            "Only questions"
+            "Only questions",
+            "Logical organization and tone/voice appropriate to task and audience",
+            "No structure"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Organization and tone matter.",
           "skill": ""
         },
@@ -716,28 +716,28 @@
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 03 (Academic Vocabulary, Syntax & Revision), a learner is studying etymology. A learner selects a revised piece to show growth. Which evidence makes the reflection credible?",
           "choices": [
-            "a polished vocabulary map using roots, affixes, denotation, and connotation; revision practice: sentence flow, punctuation, and style supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Use the total page count as the main proof of learning.",
+            "Remove all recorded mistakes so the process appears flawless.",
+            "Present the earlier draft, a substantial revision, and an explanation of changes tied to feedback or new evidence.",
+            "Present only the polished final copy and claim improvement is self-evident."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished vocabulary map using roots, affixes, denotation, and connotation; revision practice: sentence flow, punctuation, and style supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 2,
+          "explanation": "Authentic learning evidence includes process, justification, and preserved revision history.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 03 (Academic Vocabulary, Syntax & Revision), the language focus includes etymology, precise diction, sentence variety, punctuation, and revision for flow. Which sentence pair corrects a comma splice and preserves the meaning?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "etymology, precise diction, sentence variety, punctuation, and revision for flow"
+            "The writer compared two accounts. She then revised her conclusion.",
+            "The writer compared two accounts, she then revised her conclusion.",
+            "The writer compared two accounts she then revised her conclusion.",
+            "After comparing the two accounts. Revised her conclusion."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is etymology, precise diction, sentence variety, punctuation, and revision for flow.",
-          "skill": "Language and Revision"
+          "answer": 0,
+          "explanation": "Two complete independent clauses require correct separation or joining.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -844,62 +844,62 @@
         {
           "question": "Layers of meaning may include...",
           "choices": [
-            "Literal meaning, mood, tone, purpose, style, symbol, and implication",
             "Only page numbers",
             "Only setting",
-            "Only grammar"
+            "Only grammar",
+            "Literal meaning, mood, tone, purpose, style, symbol, and implication"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Layered analysis moves beyond one surface meaning.",
           "skill": ""
         },
         {
           "question": "Style is created by...",
           "choices": [
+            "The publisher only",
             "Diction, syntax, grammar, figurative language, and structure",
             "The author’s photo",
-            "Page count only",
-            "The publisher only"
+            "Page count only"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Style is the effect of language and structure choices.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 04: Literary Elements: Evaluating Layers of Meaning?",
           "choices": [
-            "Rely on summary without testing evidence",
             "evaluate author choices and build a defensible interpretation with precise textual evidence",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "This week requires students to evaluate author choices and build a defensible interpretation with precise textual evidence.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 04 (Literary Elements: Evaluating Layers of Meaning), a learner is studying layer. Two passages appear to share a theme. Which interpretation shows careful close reading?",
           "choices": [
-            "a polished layered literary analysis paragraph supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Use a summary of one passage as complete evidence for both.",
+            "Use a detail from each passage, explain the differing author choices, and qualify the common theme.",
+            "Identify the topic and call it a theme without considering either text.",
+            "Assume the same theme means the passages have identical messages."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished layered literary analysis paragraph supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 1,
+          "explanation": "Themes emerge from analyzed textual details and context, not a topic label alone.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 04 (Literary Elements: Evaluating Layers of Meaning), the language focus includes analytical verbs, literal versus figurative meaning, and paragraph architecture. Which sentence explains a literary device rather than just naming it?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "analytical verbs, literal versus figurative meaning, and paragraph architecture"
+            "The poem contains alliteration, which is always good.",
+            "The author is emotional because poetry is emotional.",
+            "The poem has lines and therefore expresses the same mood throughout.",
+            "The repeated consonant sound slows the line's pace, emphasizing the speaker's hesitation."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is analytical verbs, literal versus figurative meaning, and paragraph architecture.",
-          "skill": "Language and Revision"
+          "explanation": "Analysis identifies a device and explains its particular effect in context.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -1006,12 +1006,12 @@
         {
           "question": "Layers of meaning may include...",
           "choices": [
-            "Literal meaning, mood, tone, purpose, style, symbol, and implication",
-            "Only page numbers",
             "Only setting",
-            "Only grammar"
+            "Only grammar",
+            "Literal meaning, mood, tone, purpose, style, symbol, and implication",
+            "Only page numbers"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Layered analysis moves beyond one surface meaning.",
           "skill": ""
         },
@@ -1030,38 +1030,38 @@
         {
           "question": "Which action best demonstrates mastery of Week 05: Style, Diction, Syntax, and Author Voice?",
           "choices": [
-            "Rely on summary without testing evidence",
-            "evaluate author choices and build a defensible interpretation with precise textual evidence",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence",
+            "evaluate author choices and build a defensible interpretation with precise textual evidence"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "This week requires students to evaluate author choices and build a defensible interpretation with precise textual evidence.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 05 (Style, Diction, Syntax, and Author Voice), a learner is studying diction. A writer asserts that a sentence's style changes its effect. What supports that claim?",
           "choices": [
-            "a polished style imitation and analytical note supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Compare the actual wording or syntax in context and explain how it changes emphasis, tone, or clarity.",
+            "Count unfamiliar words and treat the total as proof of sophistication.",
+            "Replace every short word with a longer synonym regardless of audience.",
+            "Comment only on punctuation without relating it to meaning."
           ],
           "answer": 0,
-          "explanation": "The strongest evidence is a polished style imitation and analytical note supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "explanation": "A style claim must connect an identifiable language choice to a meaningful reader effect.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 05 (Style, Diction, Syntax, and Author Voice), the language focus includes diction, syntax, voice, connotation, and purposeful sentence rhythm. Which sentence pair corrects a comma splice and preserves the meaning?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "diction, syntax, voice, connotation, and purposeful sentence rhythm"
+            "The writer compared two accounts she then revised her conclusion.",
+            "After comparing the two accounts. Revised her conclusion.",
+            "The writer compared two accounts. She then revised her conclusion.",
+            "The writer compared two accounts, she then revised her conclusion."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is diction, syntax, voice, connotation, and purposeful sentence rhythm.",
-          "skill": "Language and Revision"
+          "answer": 2,
+          "explanation": "Two complete independent clauses require correct separation or joining.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -1168,62 +1168,62 @@
         {
           "question": "A universal theme is...",
           "choices": [
+            "A single vocabulary word",
             "A broad insight that can apply across time, place, or culture",
             "A character’s name",
-            "A chapter number",
-            "A single vocabulary word"
+            "A chapter number"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Universal themes cross contexts.",
           "skill": ""
         },
         {
           "question": "Tracking a theme means...",
           "choices": [
-            "Following how it develops through patterns, conflicts, language, and resolution",
             "Only finding it once",
             "Only using the title",
-            "Ignoring changes"
+            "Ignoring changes",
+            "Following how it develops through patterns, conflicts, language, and resolution"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Themes develop over time.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 06: Universal Themes from Different Times and Places?",
           "choices": [
+            "Focus on formatting while ignoring reasoning",
             "Rely on summary without testing evidence",
             "evaluate author choices and build a defensible interpretation with precise textual evidence",
-            "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Choose a conclusion before reading the sources"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "This week requires students to evaluate author choices and build a defensible interpretation with precise textual evidence.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 06 (Universal Themes from Different Times and Places), a learner is studying universal theme. Two passages appear to share a theme. Which interpretation shows careful close reading?",
           "choices": [
-            "a polished theme tracker and comparative response supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
-          ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished theme tracker and comparative response supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
-        },
-        {
-          "question": "Which revision priority most directly matches this week’s language focus?",
-          "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "comparative transitions, thematic statements, contextual framing, and qualification"
+            "Identify the topic and call it a theme without considering either text.",
+            "Assume the same theme means the passages have identical messages.",
+            "Use a summary of one passage as complete evidence for both.",
+            "Use a detail from each passage, explain the differing author choices, and qualify the common theme."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is comparative transitions, thematic statements, contextual framing, and qualification.",
-          "skill": "Language and Revision"
+          "explanation": "Themes emerge from analyzed textual details and context, not a topic label alone.",
+          "skill": "Interpretation and Evidence Transfer"
+        },
+        {
+          "question": "For Week 06 (Universal Themes from Different Times and Places), the language focus includes comparative transitions, thematic statements, contextual framing, and qualification. Which comparison gives the reader a meaningful, qualified contrast?",
+          "choices": [
+            "Both accounts are interesting, interesting, and interesting.",
+            "Although both accounts describe the meeting, only the second supplies a date; the sequence therefore remains uncertain.",
+            "The accounts are both about a meeting, so they must agree.",
+            "The first is better because it is the first one read."
+          ],
+          "answer": 1,
+          "explanation": "Strong comparison explains an evidence-based similarity or difference and its significance.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -1342,12 +1342,12 @@
         {
           "question": "Authors may use juxtaposition to define...",
           "choices": [
-            "Character perspective, values, conflict, or theme",
-            "Only paragraph length",
             "Only the title",
-            "Only page numbers"
+            "Only page numbers",
+            "Character perspective, values, conflict, or theme",
+            "Only paragraph length"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Contrasts can reveal perspective.",
           "skill": ""
         },
@@ -1364,28 +1364,28 @@
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 07 (Juxtaposition and Character Perspective), a learner is studying juxtaposition. An interpretation claims a character's perspective evolves over a text. What would support it?",
           "choices": [
-            "a polished juxtaposition analysis paragraph supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Retell the plot chronologically without evaluating perspective.",
+            "Assume the narrator and author share every belief.",
+            "Compare details from two distinct moments and explain how the differences revise the reader's understanding.",
+            "Cite one line and treat it as proof of every later choice."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished juxtaposition analysis paragraph supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 2,
+          "explanation": "Character and narrative claims must connect evidence across a text.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 07 (Juxtaposition and Character Perspective), the language focus includes juxtaposition, contrast structures, perspective verbs, and evidence sequencing. Which comparison gives the reader a meaningful, qualified contrast?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "juxtaposition, contrast structures, perspective verbs, and evidence sequencing"
+            "Although both accounts describe the meeting, only the second supplies a date; the sequence therefore remains uncertain.",
+            "The accounts are both about a meeting, so they must agree.",
+            "The first is better because it is the first one read.",
+            "Both accounts are interesting, interesting, and interesting."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is juxtaposition, contrast structures, perspective verbs, and evidence sequencing.",
-          "skill": "Language and Revision"
+          "answer": 0,
+          "explanation": "Strong comparison explains an evidence-based similarity or difference and its significance.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -1492,62 +1492,62 @@
         {
           "question": "A close reading annotation should identify...",
           "choices": [
-            "Only page numbers",
             "A meaningful detail, pattern, question, or author choice",
             "The price of a book",
-            "Only the title"
+            "Only the title",
+            "Only page numbers"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Annotations should help explain meaning.",
           "skill": ""
         },
         {
           "question": "Paraphrasing grade-level text means...",
           "choices": [
+            "Adding unsupported opinions",
             "Copying exactly",
             "Restating accurately in original wording",
-            "Changing one word",
-            "Adding unsupported opinions"
+            "Changing one word"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Paraphrase preserves meaning in new wording.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 08: Mood Through Figurative Language?",
           "choices": [
-            "Rely on summary without testing evidence",
             "evaluate author choices and build a defensible interpretation with precise textual evidence",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "This week requires students to evaluate author choices and build a defensible interpretation with precise textual evidence.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 08 (Mood Through Figurative Language), a learner is studying metaphor. A reader says an image changes the poem's tone. What evidence would actually support that interpretation?",
           "choices": [
-            "a polished mood and figurative language chart supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Restate the poem's topic without considering the image.",
+            "Quote the image and explain how its connotations and placement affect the speaker's attitude.",
+            "Describe the poet's biography without connecting it to the line.",
+            "Count stanza breaks and assume every poem has the same mood."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished mood and figurative language chart supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 1,
+          "explanation": "Poetic analysis connects a particular choice to a supported effect.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 08 (Mood Through Figurative Language), the language focus includes figurative language terminology, mood vocabulary, and interpretive precision. Which sentence explains a literary device rather than just naming it?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "figurative language terminology, mood vocabulary, and interpretive precision"
+            "The poem contains alliteration, which is always good.",
+            "The author is emotional because poetry is emotional.",
+            "The poem has lines and therefore expresses the same mood throughout.",
+            "The repeated consonant sound slows the line's pace, emphasizing the speaker's hesitation."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is figurative language terminology, mood vocabulary, and interpretive precision.",
-          "skill": "Language and Revision"
+          "explanation": "Analysis identifies a device and explains its particular effect in context.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -1664,12 +1664,12 @@
         {
           "question": "A final portfolio should prove...",
           "choices": [
-            "Growth, mastery, revision, evidence, and readiness for senior-level ELA",
-            "Only perfect scores",
             "Only one test",
-            "Only a cover page"
+            "Only a cover page",
+            "Growth, mastery, revision, evidence, and readiness for senior-level ELA",
+            "Only perfect scores"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Portfolios show learning over time.",
           "skill": ""
         },
@@ -1688,38 +1688,38 @@
         {
           "question": "Which action best demonstrates mastery of Week 09: Literary Analysis, Revision & Portfolio?",
           "choices": [
-            "Rely on summary without testing evidence",
-            "evaluate author choices and build a defensible interpretation with precise textual evidence",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence",
+            "evaluate author choices and build a defensible interpretation with precise textual evidence"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "This week requires students to evaluate author choices and build a defensible interpretation with precise textual evidence.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 09 (Literary Analysis, Revision & Portfolio), a learner is studying thesis. A learner selects a revised piece to show growth. Which evidence makes the reflection credible?",
           "choices": [
-            "a polished literary analysis essay draft; revised literary analysis and publication checklist; portfolio artifact and short oral explanation supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Present the earlier draft, a substantial revision, and an explanation of changes tied to feedback or new evidence.",
+            "Present only the polished final copy and claim improvement is self-evident.",
+            "Use the total page count as the main proof of learning.",
+            "Remove all recorded mistakes so the process appears flawless."
           ],
           "answer": 0,
-          "explanation": "The strongest evidence is a polished literary analysis essay draft; revised literary analysis and publication checklist; portfolio artifact and short oral explanation supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "explanation": "Authentic learning evidence includes process, justification, and preserved revision history.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 09 (Literary Analysis, Revision & Portfolio), the language focus includes thesis complexity, evidence integration, commentary, cohesion, and publication editing. Which sentence pair corrects a comma splice and preserves the meaning?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "thesis complexity, evidence integration, commentary, cohesion, and publication editing"
+            "The writer compared two accounts she then revised her conclusion.",
+            "After comparing the two accounts. Revised her conclusion.",
+            "The writer compared two accounts. She then revised her conclusion.",
+            "The writer compared two accounts, she then revised her conclusion."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is thesis complexity, evidence integration, commentary, cohesion, and publication editing.",
-          "skill": "Language and Revision"
+          "answer": 2,
+          "explanation": "Two complete independent clauses require correct separation or joining.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -1826,62 +1826,62 @@
         {
           "question": "Evaluating text structure means judging...",
           "choices": [
+            "Only the font",
             "How effectively organization supports meaning and purpose",
             "Only whether the text has headings",
-            "Only if the text is short",
-            "Only the font"
+            "Only if the text is short"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Evaluation asks how well structure works.",
           "skill": ""
         },
         {
           "question": "Text features can include...",
           "choices": [
-            "Headings, captions, graphs, charts, footnotes, annotations, appendices, and images",
             "Only plot and theme",
             "Only rhyme",
-            "Only dialogue"
+            "Only dialogue",
+            "Headings, captions, graphs, charts, footnotes, annotations, appendices, and images"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Features guide readers through information.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 10: Classical Period Speeches and Essays: Context?",
           "choices": [
+            "Focus on formatting while ignoring reasoning",
             "Rely on summary without testing evidence",
             "evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences",
-            "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Choose a conclusion before reading the sources"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "This week requires students to evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 10 (Classical Period Speeches and Essays: Context), a learner is studying Classical Period. A learner identifies a persuasive strategy in a speech. What is the strongest next analytical step?",
           "choices": [
-            "a polished central idea and purpose map supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
-          ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished central idea and purpose map supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
-        },
-        {
-          "question": "Which revision priority most directly matches this week’s language focus?",
-          "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "historical context, central-idea language, attribution, and objective summary"
+            "List persuasive devices without citing the speaker's words.",
+            "Assume persuasion succeeds because the speaker sounds confident.",
+            "Treat an unsupported guess about the speaker's motives as evidence.",
+            "Connect a specific phrase to its audience, purpose, and probable effect while distinguishing inference from fact."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is historical context, central-idea language, attribution, and objective summary.",
-          "skill": "Language and Revision"
+          "explanation": "Rhetorical claims require textual support and audience-focused reasoning.",
+          "skill": "Interpretation and Evidence Transfer"
+        },
+        {
+          "question": "For Week 10 (Classical Period Speeches and Essays: Context), the language focus includes historical context, central-idea language, attribution, and objective summary. Which sentence distinguishes sourced words from analysis?",
+          "choices": [
+            "Quotation marks are unnecessary if the borrowed phrase is short.",
+            "The report uses the phrase “limited sample”; the writer then explains how that constraint narrows the conclusion and records the citation.",
+            "The report proves everything; no attribution is needed.",
+            "A close synonym makes a copied sentence independent writing."
+          ],
+          "answer": 1,
+          "explanation": "Quoted language and borrowed ideas must be credited and analytically distinguished.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -2000,12 +2000,12 @@
         {
           "question": "Text features can include...",
           "choices": [
-            "Headings, captions, graphs, charts, footnotes, annotations, appendices, and images",
-            "Only plot and theme",
             "Only rhyme",
-            "Only dialogue"
+            "Only dialogue",
+            "Headings, captions, graphs, charts, footnotes, annotations, appendices, and images",
+            "Only plot and theme"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Features guide readers through information.",
           "skill": ""
         },
@@ -2022,28 +2022,28 @@
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 11 (Evaluating Text Structures and Features), a learner is studying structure. A student makes a confident claim about the week's text. Which next step demonstrates transferable analytical reasoning?",
           "choices": [
-            "a polished structure evaluation chart supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Replace interpretation with a list of isolated quotations.",
+            "Discard any detail that complicates the preferred conclusion.",
+            "Locate specific evidence, explain the inference step, and name one reasonable limitation or alternative.",
+            "Repeat the claim more forcefully without adding evidence."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished structure evaluation chart supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 2,
+          "explanation": "Sound interpretation requires evidence, explanation, and acknowledgement of scope.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 11 (Evaluating Text Structures and Features), the language focus includes organizational patterns, text-feature analysis, transitions, and explanatory clarity. Which comparison gives the reader a meaningful, qualified contrast?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "organizational patterns, text-feature analysis, transitions, and explanatory clarity"
+            "Although both accounts describe the meeting, only the second supplies a date; the sequence therefore remains uncertain.",
+            "The accounts are both about a meeting, so they must agree.",
+            "The first is better because it is the first one read.",
+            "Both accounts are interesting, interesting, and interesting."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is organizational patterns, text-feature analysis, transitions, and explanatory clarity.",
-          "skill": "Language and Revision"
+          "answer": 0,
+          "explanation": "Strong comparison explains an evidence-based similarity or difference and its significance.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -2150,62 +2150,62 @@
         {
           "question": "Evaluating rhetoric means judging...",
           "choices": [
-            "Appropriateness of appeals and effectiveness of devices",
             "Only identifying one metaphor",
             "Only liking the speech",
-            "Only counting paragraphs"
+            "Only counting paragraphs",
+            "Appropriateness of appeals and effectiveness of devices"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Evaluation goes beyond identification.",
           "skill": ""
         },
         {
           "question": "Which set contains rhetorical devices named for Grade 11 work?",
           "choices": [
+            "Only setting and plot",
             "Irony, rhetorical question, antithesis, metonymy, synecdoche, asyndeton, chiasmus",
             "Only title and subtitle",
-            "Only comma and period",
-            "Only setting and plot"
+            "Only comma and period"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "These devices appear in Grade 11 clarification language.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 12: Rhetorical Appeals: Logos, Ethos, Pathos, Kairos?",
           "choices": [
-            "Rely on summary without testing evidence",
             "evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "This week requires students to evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 12 (Rhetorical Appeals: Logos, Ethos, Pathos, Kairos), a learner is studying logos. A learner identifies a persuasive strategy in a speech. What is the strongest next analytical step?",
           "choices": [
-            "a polished appeals evaluation chart supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Treat an unsupported guess about the speaker's motives as evidence.",
+            "Connect a specific phrase to its audience, purpose, and probable effect while distinguishing inference from fact.",
+            "List persuasive devices without citing the speaker's words.",
+            "Assume persuasion succeeds because the speaker sounds confident."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished appeals evaluation chart supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 1,
+          "explanation": "Rhetorical claims require textual support and audience-focused reasoning.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 12 (Rhetorical Appeals: Logos, Ethos, Pathos, Kairos), the language focus includes rhetorical situation, appeals, kairos, audience, purpose, and ethical qualification. Which sentence makes a fair, supportable concession?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "rhetorical situation, appeals, kairos, audience, purpose, and ethical qualification"
+            "Anyone who disagrees has clearly ignored the facts.",
+            "The opposing evidence is irrelevant because it complicates my point.",
+            "Every possible reader will accept the proposal.",
+            "Although Source A supports the proposal, Source B documents a cost the argument must address."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is rhetorical situation, appeals, kairos, audience, purpose, and ethical qualification.",
-          "skill": "Language and Revision"
+          "explanation": "Intellectual fairness acknowledges the strongest relevant objection and responds with evidence.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -2312,12 +2312,12 @@
         {
           "question": "Evaluating rhetoric means judging...",
           "choices": [
-            "Appropriateness of appeals and effectiveness of devices",
-            "Only identifying one metaphor",
             "Only liking the speech",
-            "Only counting paragraphs"
+            "Only counting paragraphs",
+            "Appropriateness of appeals and effectiveness of devices",
+            "Only identifying one metaphor"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Evaluation goes beyond identification.",
           "skill": ""
         },
@@ -2336,38 +2336,38 @@
         {
           "question": "Which action best demonstrates mastery of Week 13: Rhetorical Devices and Figurative Force?",
           "choices": [
-            "Rely on summary without testing evidence",
-            "evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence",
+            "evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "This week requires students to evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 13 (Rhetorical Devices and Figurative Force), a learner is studying antithesis. A reader says an image changes the poem's tone. What evidence would actually support that interpretation?",
           "choices": [
-            "a polished rhetorical device analysis paragraph supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Quote the image and explain how its connotations and placement affect the speaker's attitude.",
+            "Describe the poet's biography without connecting it to the line.",
+            "Count stanza breaks and assume every poem has the same mood.",
+            "Restate the poem's topic without considering the image."
           ],
           "answer": 0,
-          "explanation": "The strongest evidence is a polished rhetorical device analysis paragraph supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "explanation": "Poetic analysis connects a particular choice to a supported effect.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 13 (Rhetorical Devices and Figurative Force), the language focus includes rhetorical devices, syntax, repetition, figurative force, and analytical commentary. Which sentence pair corrects a comma splice and preserves the meaning?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "rhetorical devices, syntax, repetition, figurative force, and analytical commentary"
+            "The writer compared two accounts she then revised her conclusion.",
+            "After comparing the two accounts. Revised her conclusion.",
+            "The writer compared two accounts. She then revised her conclusion.",
+            "The writer compared two accounts, she then revised her conclusion."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is rhetorical devices, syntax, repetition, figurative force, and analytical commentary.",
-          "skill": "Language and Revision"
+          "answer": 2,
+          "explanation": "Two complete independent clauses require correct separation or joining.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -2474,62 +2474,62 @@
         {
           "question": "Comparing multiple arguments on the same topic requires analyzing...",
           "choices": [
+            "Only whether one is famous",
             "Claims, reasoning, evidence, validity, effectiveness, and use of shared information",
             "Only which is longer",
-            "Only the first sentence",
-            "Only whether one is famous"
+            "Only the first sentence"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Grade 11 asks for deeper argument comparison.",
           "skill": ""
         },
         {
           "question": "Validity refers to...",
           "choices": [
-            "Soundness of reasoning and claims",
             "Popularity only",
             "Length only",
-            "Emotion only"
+            "Emotion only",
+            "Soundness of reasoning and claims"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Validity concerns sound logic and support.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 14: Multiple Arguments on the Same Topic?",
           "choices": [
+            "Focus on formatting while ignoring reasoning",
             "Rely on summary without testing evidence",
             "evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences",
-            "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Choose a conclusion before reading the sources"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "This week requires students to evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 14 (Multiple Arguments on the Same Topic), a learner is studying validity. A learner identifies a persuasive strategy in a speech. What is the strongest next analytical step?",
           "choices": [
-            "a polished multiple-argument comparison matrix supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
-          ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished multiple-argument comparison matrix supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
-        },
-        {
-          "question": "Which revision priority most directly matches this week’s language focus?",
-          "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "claims, counterclaims, warrants, fallacies, concessions, and rebuttal"
+            "List persuasive devices without citing the speaker's words.",
+            "Assume persuasion succeeds because the speaker sounds confident.",
+            "Treat an unsupported guess about the speaker's motives as evidence.",
+            "Connect a specific phrase to its audience, purpose, and probable effect while distinguishing inference from fact."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is claims, counterclaims, warrants, fallacies, concessions, and rebuttal.",
-          "skill": "Language and Revision"
+          "explanation": "Rhetorical claims require textual support and audience-focused reasoning.",
+          "skill": "Interpretation and Evidence Transfer"
+        },
+        {
+          "question": "For Week 14 (Multiple Arguments on the Same Topic), the language focus includes claims, counterclaims, warrants, fallacies, concessions, and rebuttal. Which sentence makes a fair, supportable concession?",
+          "choices": [
+            "Every possible reader will accept the proposal.",
+            "Although Source A supports the proposal, Source B documents a cost the argument must address.",
+            "Anyone who disagrees has clearly ignored the facts.",
+            "The opposing evidence is irrelevant because it complicates my point."
+          ],
+          "answer": 1,
+          "explanation": "Intellectual fairness acknowledges the strongest relevant objection and responds with evidence.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -2648,12 +2648,12 @@
         {
           "question": "Comparing authors from the same period should include...",
           "choices": [
-            "Topic, reasoning, context, perspective, and style",
-            "Only birth dates",
             "Only title length",
-            "Only word count"
+            "Only word count",
+            "Topic, reasoning, context, perspective, and style",
+            "Only birth dates"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Comparative reading connects context and craft.",
           "skill": ""
         },
@@ -2670,28 +2670,28 @@
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 15 (Contemporaneous Authors and Shared Topics), a learner is studying contemporaneous. A student makes a confident claim about the week's text. Which next step demonstrates transferable analytical reasoning?",
           "choices": [
-            "a polished contemporaneous author comparison response supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Replace interpretation with a list of isolated quotations.",
+            "Discard any detail that complicates the preferred conclusion.",
+            "Locate specific evidence, explain the inference step, and name one reasonable limitation or alternative.",
+            "Repeat the claim more forcefully without adding evidence."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished contemporaneous author comparison response supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 2,
+          "explanation": "Sound interpretation requires evidence, explanation, and acknowledgement of scope.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 15 (Contemporaneous Authors and Shared Topics), the language focus includes comparison of contemporaneous authors, synthesis transitions, and contextual nuance. Which comparison gives the reader a meaningful, qualified contrast?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "comparison of contemporaneous authors, synthesis transitions, and contextual nuance"
+            "Although both accounts describe the meeting, only the second supplies a date; the sequence therefore remains uncertain.",
+            "The accounts are both about a meeting, so they must agree.",
+            "The first is better because it is the first one read.",
+            "Both accounts are interesting, interesting, and interesting."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is comparison of contemporaneous authors, synthesis transitions, and contextual nuance.",
-          "skill": "Language and Revision"
+          "answer": 0,
+          "explanation": "Strong comparison explains an evidence-based similarity or difference and its significance.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -2798,62 +2798,62 @@
         {
           "question": "Evaluating rhetoric means judging...",
           "choices": [
-            "Appropriateness of appeals and effectiveness of devices",
             "Only identifying one metaphor",
             "Only liking the speech",
-            "Only counting paragraphs"
+            "Only counting paragraphs",
+            "Appropriateness of appeals and effectiveness of devices"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Evaluation goes beyond identification.",
           "skill": ""
         },
         {
           "question": "Which set contains rhetorical devices named for Grade 11 work?",
           "choices": [
+            "Only setting and plot",
             "Irony, rhetorical question, antithesis, metonymy, synecdoche, asyndeton, chiasmus",
             "Only title and subtitle",
-            "Only comma and period",
-            "Only setting and plot"
+            "Only comma and period"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "These devices appear in Grade 11 clarification language.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 16: Rhetorical Analysis Essay Workshop?",
           "choices": [
-            "Rely on summary without testing evidence",
             "evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "This week requires students to evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 16 (Rhetorical Analysis Essay Workshop), a learner is studying rhetorical situation. A learner identifies a persuasive strategy in a speech. What is the strongest next analytical step?",
           "choices": [
-            "a polished rhetorical analysis essay draft supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Treat an unsupported guess about the speaker's motives as evidence.",
+            "Connect a specific phrase to its audience, purpose, and probable effect while distinguishing inference from fact.",
+            "List persuasive devices without citing the speaker's words.",
+            "Assume persuasion succeeds because the speaker sounds confident."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished rhetorical analysis essay draft supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 1,
+          "explanation": "Rhetorical claims require textual support and audience-focused reasoning.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 16 (Rhetorical Analysis Essay Workshop), the language focus includes rhetorical analysis thesis, line of reasoning, embedded evidence, and style analysis. Which analytical sentence integrates evidence and reasoning responsibly?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "rhetorical analysis thesis, line of reasoning, embedded evidence, and style analysis"
+            "The account proves everyone agreed, even though other views were not recorded.",
+            "Because a detail appears in print, it needs no contextual examination.",
+            "The writer can omit conflicting evidence to keep the argument simple.",
+            "The account reports a specific action; this supports a narrower claim, although the motives of absent participants remain unknown."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is rhetorical analysis thesis, line of reasoning, embedded evidence, and style analysis.",
-          "skill": "Language and Revision"
+          "explanation": "Clear analysis distinguishes recorded observation, plausible inference, and unresolved uncertainty.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -2960,12 +2960,12 @@
         {
           "question": "Evaluating rhetoric means judging...",
           "choices": [
-            "Appropriateness of appeals and effectiveness of devices",
-            "Only identifying one metaphor",
             "Only liking the speech",
-            "Only counting paragraphs"
+            "Only counting paragraphs",
+            "Appropriateness of appeals and effectiveness of devices",
+            "Only identifying one metaphor"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Evaluation goes beyond identification.",
           "skill": ""
         },
@@ -2984,38 +2984,38 @@
         {
           "question": "Which action best demonstrates mastery of Week 17: Oral Rhetoric and Seminar?",
           "choices": [
-            "Rely on summary without testing evidence",
-            "evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence",
+            "evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "This week requires students to evaluate rhetorical choices, claims, evidence, assumptions, audience, purpose, and consequences.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 17 (Oral Rhetoric and Seminar), a learner is studying seminar. A learner identifies a persuasive strategy in a speech. What is the strongest next analytical step?",
           "choices": [
-            "a polished short oral presentation using one rhetorical device supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Connect a specific phrase to its audience, purpose, and probable effect while distinguishing inference from fact.",
+            "List persuasive devices without citing the speaker's words.",
+            "Assume persuasion succeeds because the speaker sounds confident.",
+            "Treat an unsupported guess about the speaker's motives as evidence."
           ],
           "answer": 0,
-          "explanation": "The strongest evidence is a polished short oral presentation using one rhetorical device supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "explanation": "Rhetorical claims require textual support and audience-focused reasoning.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 17 (Oral Rhetoric and Seminar), the language focus includes oral transitions, emphasis, pacing, listening notes, and audience adaptation. Which comparison gives the reader a meaningful, qualified contrast?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "oral transitions, emphasis, pacing, listening notes, and audience adaptation"
+            "The first is better because it is the first one read.",
+            "Both accounts are interesting, interesting, and interesting.",
+            "Although both accounts describe the meeting, only the second supplies a date; the sequence therefore remains uncertain.",
+            "The accounts are both about a meeting, so they must agree."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is oral transitions, emphasis, pacing, listening notes, and audience adaptation.",
-          "skill": "Language and Revision"
+          "answer": 2,
+          "explanation": "Strong comparison explains an evidence-based similarity or difference and its significance.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -3126,62 +3126,62 @@
         {
           "question": "A close reading annotation should identify...",
           "choices": [
+            "Only the title",
             "Only page numbers",
             "A meaningful detail, pattern, question, or author choice",
-            "The price of a book",
-            "Only the title"
+            "The price of a book"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Annotations should help explain meaning.",
           "skill": ""
         },
         {
           "question": "Paraphrasing grade-level text means...",
           "choices": [
-            "Copying exactly",
             "Restating accurately in original wording",
             "Changing one word",
-            "Adding unsupported opinions"
+            "Adding unsupported opinions",
+            "Copying exactly"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Paraphrase preserves meaning in new wording.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 18: Midterm Review and Midterm Test?",
           "choices": [
+            "Focus on formatting while ignoring reasoning",
             "Rely on summary without testing evidence",
             "synthesize course learning, manage timed tasks, explain corrections, and set evidence-based next steps",
-            "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Choose a conclusion before reading the sources"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "This week requires students to synthesize course learning, manage timed tasks, explain corrections, and set evidence-based next steps.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 18 (Midterm Review and Midterm Test), a learner is studying midterm. A learner selects a revised piece to show growth. Which evidence makes the reflection credible?",
           "choices": [
-            "a completed cumulative assessment, corrections log, reflection, and targeted improvement plan",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
-          ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a completed cumulative assessment, corrections log, reflection, and targeted improvement plan.",
-          "skill": "Mastery Evidence"
-        },
-        {
-          "question": "Which revision priority most directly matches this week’s language focus?",
-          "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "cumulative editing: syntax, usage, punctuation, source integration, and timed planning"
+            "Present only the polished final copy and claim improvement is self-evident.",
+            "Use the total page count as the main proof of learning.",
+            "Remove all recorded mistakes so the process appears flawless.",
+            "Present the earlier draft, a substantial revision, and an explanation of changes tied to feedback or new evidence."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is cumulative editing: syntax, usage, punctuation, source integration, and timed planning.",
-          "skill": "Language and Revision"
+          "explanation": "Authentic learning evidence includes process, justification, and preserved revision history.",
+          "skill": "Interpretation and Evidence Transfer"
+        },
+        {
+          "question": "For Week 18 (Midterm Review and Midterm Test), the language focus includes cumulative editing: syntax, usage, punctuation, source integration, and timed planning. Which sentence distinguishes sourced words from analysis?",
+          "choices": [
+            "Quotation marks are unnecessary if the borrowed phrase is short.",
+            "The report uses the phrase “limited sample”; the writer then explains how that constraint narrows the conclusion and records the citation.",
+            "The report proves everything; no attribution is needed.",
+            "A close synonym makes a copied sentence independent writing."
+          ],
+          "answer": 1,
+          "explanation": "Quoted language and borrowed ideas must be credited and analytically distinguished.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -3300,12 +3300,12 @@
         {
           "question": "A literary period is...",
           "choices": [
-            "A historical/cultural grouping of texts with shared concerns or forms",
-            "A punctuation mark",
             "A book price",
-            "A spelling rule"
+            "A spelling rule",
+            "A historical/cultural grouping of texts with shared concerns or forms",
+            "A punctuation mark"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Literary periods help readers contextualize texts.",
           "skill": ""
         },
@@ -3322,28 +3322,28 @@
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 19 (Poetry and the Issues of Its Time Period), a learner is studying literary period. A reader says an image changes the poem's tone. What evidence would actually support that interpretation?",
           "choices": [
-            "a polished period/context poetry annotation supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Count stanza breaks and assume every poem has the same mood.",
+            "Restate the poem's topic without considering the image.",
+            "Quote the image and explain how its connotations and placement affect the speaker's attitude.",
+            "Describe the poet's biography without connecting it to the line."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished period/context poetry annotation supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 2,
+          "explanation": "Poetic analysis connects a particular choice to a supported effect.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 19 (Poetry and the Issues of Its Time Period), the language focus includes poetic speaker, form, imagery, sound, ambiguity, and contextual vocabulary. Which sentence explains a literary device rather than just naming it?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "poetic speaker, form, imagery, sound, ambiguity, and contextual vocabulary"
+            "The repeated consonant sound slows the line's pace, emphasizing the speaker's hesitation.",
+            "The poem contains alliteration, which is always good.",
+            "The author is emotional because poetry is emotional.",
+            "The poem has lines and therefore expresses the same mood throughout."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is poetic speaker, form, imagery, sound, ambiguity, and contextual vocabulary.",
-          "skill": "Language and Revision"
+          "answer": 0,
+          "explanation": "Analysis identifies a device and explains its particular effect in context.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -3460,62 +3460,62 @@
         {
           "question": "A close reading annotation should identify...",
           "choices": [
-            "Only page numbers",
             "A meaningful detail, pattern, question, or author choice",
             "The price of a book",
-            "Only the title"
+            "Only the title",
+            "Only page numbers"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Annotations should help explain meaning.",
           "skill": ""
         },
         {
           "question": "Paraphrasing grade-level text means...",
           "choices": [
+            "Adding unsupported opinions",
             "Copying exactly",
             "Restating accurately in original wording",
-            "Changing one word",
-            "Adding unsupported opinions"
+            "Changing one word"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Paraphrase preserves meaning in new wording.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 20: Poetry Across Classical, Medieval, Renaissance, British & Colonial Traditions?",
           "choices": [
-            "Rely on summary without testing evidence",
             "analyze how form, speaker, sound, imagery, context, and ambiguity create meaning",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "This week requires students to analyze how form, speaker, sound, imagery, context, and ambiguity create meaning.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 20 (Poetry Across Classical, Medieval, Renaissance, British & Colonial Traditions), a learner is studying Classical. A reader says an image changes the poem's tone. What evidence would actually support that interpretation?",
           "choices": [
-            "a polished theme and period comparison chart; contextual poetry response supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Restate the poem's topic without considering the image.",
+            "Quote the image and explain how its connotations and placement affect the speaker's attitude.",
+            "Describe the poet's biography without connecting it to the line.",
+            "Count stanza breaks and assume every poem has the same mood."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished theme and period comparison chart; contextual poetry response supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 1,
+          "explanation": "Poetic analysis connects a particular choice to a supported effect.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 20 (Poetry Across Classical, Medieval, Renaissance, British & Colonial Traditions), the language focus includes period terminology, translation awareness, comparative syntax, and cultural context. Which comparison gives the reader a meaningful, qualified contrast?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "period terminology, translation awareness, comparative syntax, and cultural context"
+            "The accounts are both about a meeting, so they must agree.",
+            "The first is better because it is the first one read.",
+            "Both accounts are interesting, interesting, and interesting.",
+            "Although both accounts describe the meeting, only the second supplies a date; the sequence therefore remains uncertain."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is period terminology, translation awareness, comparative syntax, and cultural context.",
-          "skill": "Language and Revision"
+          "explanation": "Strong comparison explains an evidence-based similarity or difference and its significance.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -3622,12 +3622,12 @@
         {
           "question": "Poetry can reflect its time period through...",
           "choices": [
-            "Themes, issues, forms, values, diction, and imagery",
-            "Only page count",
             "Only author initials",
-            "Only rhyme"
+            "Only rhyme",
+            "Themes, issues, forms, values, diction, and imagery",
+            "Only page count"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Poetry responds to cultural and historical contexts.",
           "skill": ""
         },
@@ -3646,38 +3646,38 @@
         {
           "question": "Which action best demonstrates mastery of Week 21: Realism, Naturalism, Modernism, and Contemporary Poetry?",
           "choices": [
-            "Rely on summary without testing evidence",
-            "analyze how form, speaker, sound, imagery, context, and ambiguity create meaning",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence",
+            "analyze how form, speaker, sound, imagery, context, and ambiguity create meaning"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "This week requires students to analyze how form, speaker, sound, imagery, context, and ambiguity create meaning.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 21 (Realism, Naturalism, Modernism, and Contemporary Poetry), a learner is studying Realism. A reader says an image changes the poem's tone. What evidence would actually support that interpretation?",
           "choices": [
-            "a polished mood and issue analysis supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Quote the image and explain how its connotations and placement affect the speaker's attitude.",
+            "Describe the poet's biography without connecting it to the line.",
+            "Count stanza breaks and assume every poem has the same mood.",
+            "Restate the poem's topic without considering the image."
           ],
           "answer": 0,
-          "explanation": "The strongest evidence is a polished mood and issue analysis supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "explanation": "Poetic analysis connects a particular choice to a supported effect.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 21 (Realism, Naturalism, Modernism, and Contemporary Poetry), the language focus includes modern and contemporary poetic form, fragmentation, voice, and interpretive qualification. Which sentence makes a fair, supportable concession?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "modern and contemporary poetic form, fragmentation, voice, and interpretive qualification"
+            "The opposing evidence is irrelevant because it complicates my point.",
+            "Every possible reader will accept the proposal.",
+            "Although Source A supports the proposal, Source B documents a cost the argument must address.",
+            "Anyone who disagrees has clearly ignored the facts."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is modern and contemporary poetic form, fragmentation, voice, and interpretive qualification.",
-          "skill": "Language and Revision"
+          "answer": 2,
+          "explanation": "Intellectual fairness acknowledges the strongest relevant objection and responds with evidence.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -3784,62 +3784,62 @@
         {
           "question": "Contemporaneous authors are...",
           "choices": [
+            "Authors who never published",
             "Authors writing in the same time period",
             "Authors with the same first name",
-            "Authors from the future",
-            "Authors who never published"
+            "Authors from the future"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Contemporaries share a historical context.",
           "skill": ""
         },
         {
           "question": "Comparing authors from the same period should include...",
           "choices": [
-            "Topic, reasoning, context, perspective, and style",
             "Only birth dates",
             "Only title length",
-            "Only word count"
+            "Only word count",
+            "Topic, reasoning, context, perspective, and style"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Comparative reading connects context and craft.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 22: Comparing Contemporaneous Poets?",
           "choices": [
+            "Focus on formatting while ignoring reasoning",
             "Rely on summary without testing evidence",
             "analyze how form, speaker, sound, imagery, context, and ambiguity create meaning",
-            "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Choose a conclusion before reading the sources"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "This week requires students to analyze how form, speaker, sound, imagery, context, and ambiguity create meaning.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 22 (Comparing Contemporaneous Poets), a learner is studying contemporaneous. A reader says an image changes the poem's tone. What evidence would actually support that interpretation?",
           "choices": [
-            "a polished comparative poetry discussion notes supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
-          ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished comparative poetry discussion notes supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
-        },
-        {
-          "question": "Which revision priority most directly matches this week’s language focus?",
-          "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "comparative claims, parallel structure, synthesis transitions, and precise quotation"
+            "Describe the poet's biography without connecting it to the line.",
+            "Count stanza breaks and assume every poem has the same mood.",
+            "Restate the poem's topic without considering the image.",
+            "Quote the image and explain how its connotations and placement affect the speaker's attitude."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is comparative claims, parallel structure, synthesis transitions, and precise quotation.",
-          "skill": "Language and Revision"
+          "explanation": "Poetic analysis connects a particular choice to a supported effect.",
+          "skill": "Interpretation and Evidence Transfer"
+        },
+        {
+          "question": "For Week 22 (Comparing Contemporaneous Poets), the language focus includes comparative claims, parallel structure, synthesis transitions, and precise quotation. Which sentence distinguishes sourced words from analysis?",
+          "choices": [
+            "Quotation marks are unnecessary if the borrowed phrase is short.",
+            "The report uses the phrase “limited sample”; the writer then explains how that constraint narrows the conclusion and records the citation.",
+            "The report proves everything; no attribution is needed.",
+            "A close synonym makes a copied sentence independent writing."
+          ],
+          "answer": 1,
+          "explanation": "Quoted language and borrowed ideas must be credited and analytically distinguished.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -3958,12 +3958,12 @@
         {
           "question": "A literary period is...",
           "choices": [
-            "A historical/cultural grouping of texts with shared concerns or forms",
-            "A punctuation mark",
             "A book price",
-            "A spelling rule"
+            "A spelling rule",
+            "A historical/cultural grouping of texts with shared concerns or forms",
+            "A punctuation mark"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Literary periods help readers contextualize texts.",
           "skill": ""
         },
@@ -3980,28 +3980,28 @@
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 23 (Poetry Analysis Essay), a learner is studying thesis. A reader says an image changes the poem's tone. What evidence would actually support that interpretation?",
           "choices": [
-            "a polished poetry analysis essay draft supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Count stanza breaks and assume every poem has the same mood.",
+            "Restate the poem's topic without considering the image.",
+            "Quote the image and explain how its connotations and placement affect the speaker's attitude.",
+            "Describe the poet's biography without connecting it to the line."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished poetry analysis essay draft supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 2,
+          "explanation": "Poetic analysis connects a particular choice to a supported effect.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 23 (Poetry Analysis Essay), the language focus includes poetry analysis thesis, line-by-line evidence, commentary, and cohesive organization. Which analytical sentence integrates evidence and reasoning responsibly?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "poetry analysis thesis, line-by-line evidence, commentary, and cohesive organization"
+            "The account reports a specific action; this supports a narrower claim, although the motives of absent participants remain unknown.",
+            "The account proves everyone agreed, even though other views were not recorded.",
+            "Because a detail appears in print, it needs no contextual examination.",
+            "The writer can omit conflicting evidence to keep the argument simple."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is poetry analysis thesis, line-by-line evidence, commentary, and cohesive organization.",
-          "skill": "Language and Revision"
+          "answer": 0,
+          "explanation": "Clear analysis distinguishes recorded observation, plausible inference, and unresolved uncertainty.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -4108,62 +4108,62 @@
         {
           "question": "Poetry can reflect its time period through...",
           "choices": [
-            "Themes, issues, forms, values, diction, and imagery",
             "Only page count",
             "Only author initials",
-            "Only rhyme"
+            "Only rhyme",
+            "Themes, issues, forms, values, diction, and imagery"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Poetry responds to cultural and historical contexts.",
           "skill": ""
         },
         {
           "question": "A literary period is...",
           "choices": [
+            "A spelling rule",
             "A historical/cultural grouping of texts with shared concerns or forms",
             "A punctuation mark",
-            "A book price",
-            "A spelling rule"
+            "A book price"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Literary periods help readers contextualize texts.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 24: Poetry Performance and Digital Interpretation?",
           "choices": [
-            "Rely on summary without testing evidence",
             "analyze how form, speaker, sound, imagery, context, and ambiguity create meaning",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "This week requires students to analyze how form, speaker, sound, imagery, context, and ambiguity create meaning.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 24 (Poetry Performance and Digital Interpretation), a learner is studying performance. A reader says an image changes the poem's tone. What evidence would actually support that interpretation?",
           "choices": [
-            "a polished oral/digital poetry interpretation supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Restate the poem's topic without considering the image.",
+            "Quote the image and explain how its connotations and placement affect the speaker's attitude.",
+            "Describe the poet's biography without connecting it to the line.",
+            "Count stanza breaks and assume every poem has the same mood."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished oral/digital poetry interpretation supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 1,
+          "explanation": "Poetic analysis connects a particular choice to a supported effect.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 24 (Poetry Performance and Digital Interpretation), the language focus includes oral delivery, pacing, emphasis, multimodal captions, attribution, and accessibility. A hypothetical bar chart compares three labeled samples. Which caption helps a reader interpret it?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "oral delivery, pacing, emphasis, multimodal captions, attribution, and accessibility"
+            "The bars are interesting; readers should work out the scale themselves.",
+            "Everyone knows the third group performed best.",
+            "The chart proves the program worked, regardless of the measures.",
+            "The chart compares three groups on a labeled scale; the third group's bar is tallest."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is oral delivery, pacing, emphasis, multimodal captions, attribution, and accessibility.",
-          "skill": "Language and Revision"
+          "explanation": "A useful caption names what is shown without adding an unsupported causal conclusion.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -4270,12 +4270,12 @@
         {
           "question": "Literary research begins with...",
           "choices": [
-            "A focused interpretive question about a text or author",
-            "A random source list",
             "A copied essay",
-            "A yes/no answer only"
+            "A yes/no answer only",
+            "A focused interpretive question about a text or author",
+            "A random source list"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Research should serve interpretation.",
           "skill": ""
         },
@@ -4294,38 +4294,38 @@
         {
           "question": "Which action best demonstrates mastery of Week 25: Literary Research Questions and Scope?",
           "choices": [
-            "Rely on summary without testing evidence",
-            "form a focused inquiry, evaluate source quality, integrate evidence ethically, and explain relationships among sources",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence",
+            "form a focused inquiry, evaluate source quality, integrate evidence ethically, and explain relationships among sources"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "This week requires students to form a focused inquiry, evaluate source quality, integrate evidence ethically, and explain relationships among sources.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 25 (Literary Research Questions and Scope), a learner is studying literary research. Two sources about the same question differ in their conclusions. How should a research writer proceed?",
           "choices": [
-            "a polished focused literary research question and scope statement supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Check provenance and methods, compare relevant evidence, and explain any remaining disagreement in the synthesis.",
+            "Select the longer source because page count indicates reliability.",
+            "Average the two conclusions without examining what each measured.",
+            "Omit the conflicting source to make the paragraph appear consistent."
           ],
           "answer": 0,
-          "explanation": "The strongest evidence is a polished focused literary research question and scope statement supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "explanation": "Research synthesis evaluates evidence and records disagreement rather than hiding it.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 25 (Literary Research Questions and Scope), the language focus includes research-question syntax, keyword precision, scope, inquiry language, and neutral framing. Which sentence pair corrects a comma splice and preserves the meaning?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "research-question syntax, keyword precision, scope, inquiry language, and neutral framing"
+            "The writer compared two accounts she then revised her conclusion.",
+            "After comparing the two accounts. Revised her conclusion.",
+            "The writer compared two accounts. She then revised her conclusion.",
+            "The writer compared two accounts, she then revised her conclusion."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is research-question syntax, keyword precision, scope, inquiry language, and neutral framing.",
-          "skill": "Language and Revision"
+          "answer": 2,
+          "explanation": "Two complete independent clauses require correct separation or joining.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -4432,62 +4432,62 @@
         {
           "question": "Literary research begins with...",
           "choices": [
+            "A yes/no answer only",
             "A focused interpretive question about a text or author",
             "A random source list",
-            "A copied essay",
-            "A yes/no answer only"
+            "A copied essay"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Research should serve interpretation.",
           "skill": ""
         },
         {
           "question": "Primary sources may include...",
           "choices": [
-            "The literary text itself, letters, speeches, journals, or original documents",
             "Only student comments",
             "Only encyclopedia summaries",
-            "Only ads"
+            "Only ads",
+            "The literary text itself, letters, speeches, journals, or original documents"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Primary sources come from the period or original creator.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 26: Primary and Secondary Sources?",
           "choices": [
+            "Focus on formatting while ignoring reasoning",
             "Rely on summary without testing evidence",
             "form a focused inquiry, evaluate source quality, integrate evidence ethically, and explain relationships among sources",
-            "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Choose a conclusion before reading the sources"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "This week requires students to form a focused inquiry, evaluate source quality, integrate evidence ethically, and explain relationships among sources.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 26 (Primary and Secondary Sources), a learner is studying primary source. Two sources about the same question differ in their conclusions. How should a research writer proceed?",
           "choices": [
-            "a polished source evaluation and relevance notes supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
-          ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished source evaluation and relevance notes supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
-        },
-        {
-          "question": "Which revision priority most directly matches this week’s language focus?",
-          "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "source attribution, credibility language, citation conventions, and bias qualification"
+            "Select the longer source because page count indicates reliability.",
+            "Average the two conclusions without examining what each measured.",
+            "Omit the conflicting source to make the paragraph appear consistent.",
+            "Check provenance and methods, compare relevant evidence, and explain any remaining disagreement in the synthesis."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is source attribution, credibility language, citation conventions, and bias qualification.",
-          "skill": "Language and Revision"
+          "explanation": "Research synthesis evaluates evidence and records disagreement rather than hiding it.",
+          "skill": "Interpretation and Evidence Transfer"
+        },
+        {
+          "question": "For Week 26 (Primary and Secondary Sources), the language focus includes source attribution, credibility language, citation conventions, and bias qualification. Which sentence distinguishes sourced words from analysis?",
+          "choices": [
+            "Quotation marks are unnecessary if the borrowed phrase is short.",
+            "The report uses the phrase “limited sample”; the writer then explains how that constraint narrows the conclusion and records the citation.",
+            "The report proves everything; no attribution is needed.",
+            "A close synonym makes a copied sentence independent writing."
+          ],
+          "answer": 1,
+          "explanation": "Quoted language and borrowed ideas must be credited and analytically distinguished.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -4606,12 +4606,12 @@
         {
           "question": "Primary sources may include...",
           "choices": [
-            "The literary text itself, letters, speeches, journals, or original documents",
-            "Only student comments",
             "Only encyclopedia summaries",
-            "Only ads"
+            "Only ads",
+            "The literary text itself, letters, speeches, journals, or original documents",
+            "Only student comments"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Primary sources come from the period or original creator.",
           "skill": ""
         },
@@ -4628,28 +4628,28 @@
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 27 (Synthesis and Source Integration), a learner is studying synthesis. Two sources about the same question differ in their conclusions. How should a research writer proceed?",
           "choices": [
-            "a polished synthesis note cards and integrated paragraph supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Average the two conclusions without examining what each measured.",
+            "Omit the conflicting source to make the paragraph appear consistent.",
+            "Check provenance and methods, compare relevant evidence, and explain any remaining disagreement in the synthesis.",
+            "Select the longer source because page count indicates reliability."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished synthesis note cards and integrated paragraph supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 2,
+          "explanation": "Research synthesis evaluates evidence and records disagreement rather than hiding it.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 27 (Synthesis and Source Integration), the language focus includes paraphrase, synthesis, quotation integration, signal phrases, and source relationships. Which sentence distinguishes sourced words from analysis?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "paraphrase, synthesis, quotation integration, signal phrases, and source relationships"
+            "The report uses the phrase “limited sample”; the writer then explains how that constraint narrows the conclusion and records the citation.",
+            "The report proves everything; no attribution is needed.",
+            "A close synonym makes a copied sentence independent writing.",
+            "Quotation marks are unnecessary if the borrowed phrase is short."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is paraphrase, synthesis, quotation integration, signal phrases, and source relationships.",
-          "skill": "Language and Revision"
+          "answer": 0,
+          "explanation": "Quoted language and borrowed ideas must be credited and analytically distinguished.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -4756,62 +4756,62 @@
         {
           "question": "Literary research begins with...",
           "choices": [
-            "A focused interpretive question about a text or author",
             "A random source list",
             "A copied essay",
-            "A yes/no answer only"
+            "A yes/no answer only",
+            "A focused interpretive question about a text or author"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Research should serve interpretation.",
           "skill": ""
         },
         {
           "question": "Primary sources may include...",
           "choices": [
+            "Only ads",
             "The literary text itself, letters, speeches, journals, or original documents",
             "Only student comments",
-            "Only encyclopedia summaries",
-            "Only ads"
+            "Only encyclopedia summaries"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Primary sources come from the period or original creator.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 28: Literary Analysis with Research?",
           "choices": [
-            "Rely on summary without testing evidence",
             "form a focused inquiry, evaluate source quality, integrate evidence ethically, and explain relationships among sources",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "This week requires students to form a focused inquiry, evaluate source quality, integrate evidence ethically, and explain relationships among sources.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 28 (Literary Analysis with Research), a learner is studying claim. Two sources about the same question differ in their conclusions. How should a research writer proceed?",
           "choices": [
-            "a polished research-supported literary analysis draft supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Omit the conflicting source to make the paragraph appear consistent.",
+            "Check provenance and methods, compare relevant evidence, and explain any remaining disagreement in the synthesis.",
+            "Select the longer source because page count indicates reliability.",
+            "Average the two conclusions without examining what each measured."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished research-supported literary analysis draft supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 1,
+          "explanation": "Research synthesis evaluates evidence and records disagreement rather than hiding it.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 28 (Literary Analysis with Research), the language focus includes research thesis, organizational logic, MLA-style documentation, and formal tone. Which research question is precise enough for a defensible investigation?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "research thesis, organizational logic, MLA-style documentation, and formal tone"
+            "Is the whole world fair?",
+            "Why does every source agree with my initial view?",
+            "What is the single best explanation for all human behavior?",
+            "How do two named contemporary sources differ in their evidence about one specified policy and time period?"
           ],
           "answer": 3,
-          "explanation": "The stated language focus is research thesis, organizational logic, MLA-style documentation, and formal tone.",
-          "skill": "Language and Revision"
+          "explanation": "A well-scoped research question names comparable evidence and a manageable boundary.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -4918,12 +4918,12 @@
         {
           "question": "A literary analysis should support claims with...",
           "choices": [
-            "Logical reasoning, credible evidence, and elaboration",
-            "Only plot summary",
             "Only personal opinion",
-            "Only one word"
+            "Only one word",
+            "Logical reasoning, credible evidence, and elaboration",
+            "Only plot summary"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Grade 11 writing emphasizes researched, elaborated analysis.",
           "skill": ""
         },
@@ -4942,38 +4942,38 @@
         {
           "question": "Which action best demonstrates mastery of Week 29: Expository Analysis of Complex Texts?",
           "choices": [
-            "Rely on summary without testing evidence",
-            "read closely, reason from evidence, communicate clearly, revise purposefully, and reflect on mastery",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence",
+            "read closely, reason from evidence, communicate clearly, revise purposefully, and reflect on mastery"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "This week requires students to read closely, reason from evidence, communicate clearly, revise purposefully, and reflect on mastery.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 29 (Expository Analysis of Complex Texts), a learner is studying expository analysis. Two passages appear to share a theme. Which interpretation shows careful close reading?",
           "choices": [
-            "a polished expository analysis essay section supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Use a detail from each passage, explain the differing author choices, and qualify the common theme.",
+            "Identify the topic and call it a theme without considering either text.",
+            "Assume the same theme means the passages have identical messages.",
+            "Use a summary of one passage as complete evidence for both."
           ],
           "answer": 0,
-          "explanation": "The strongest evidence is a polished expository analysis essay section supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "explanation": "Themes emerge from analyzed textual details and context, not a topic label alone.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 29 (Expository Analysis of Complex Texts), the language focus includes expository structure, data commentary, definitions, transitions, and reader guidance. Which comparison gives the reader a meaningful, qualified contrast?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "expository structure, data commentary, definitions, transitions, and reader guidance"
+            "The first is better because it is the first one read.",
+            "Both accounts are interesting, interesting, and interesting.",
+            "Although both accounts describe the meeting, only the second supplies a date; the sequence therefore remains uncertain.",
+            "The accounts are both about a meeting, so they must agree."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is expository structure, data commentary, definitions, transitions, and reader guidance.",
-          "skill": "Language and Revision"
+          "answer": 2,
+          "explanation": "Strong comparison explains an evidence-based similarity or difference and its significance.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -5090,62 +5090,62 @@
         {
           "question": "A close reading annotation should identify...",
           "choices": [
+            "Only the title",
             "Only page numbers",
             "A meaningful detail, pattern, question, or author choice",
-            "The price of a book",
-            "Only the title"
+            "The price of a book"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Annotations should help explain meaning.",
           "skill": ""
         },
         {
           "question": "Paraphrasing grade-level text means...",
           "choices": [
-            "Copying exactly",
             "Restating accurately in original wording",
             "Changing one word",
-            "Adding unsupported opinions"
+            "Adding unsupported opinions",
+            "Copying exactly"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Paraphrase preserves meaning in new wording.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 30: Narrative Perspective, Digital Publication & Presentation?",
           "choices": [
+            "Focus on formatting while ignoring reasoning",
             "Rely on summary without testing evidence",
             "read closely, reason from evidence, communicate clearly, revise purposefully, and reflect on mastery",
-            "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Choose a conclusion before reading the sources"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "This week requires students to read closely, reason from evidence, communicate clearly, revise purposefully, and reflect on mastery.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 30 (Narrative Perspective, Digital Publication & Presentation), a learner is studying multiple perspectives. A presentation uses a chart and a short quotation as evidence. Which revision makes the analysis more trustworthy?",
           "choices": [
-            "a polished original complex narrative scene; digital presentation storyboard; published/exported project and reflection supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
-          ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished original complex narrative scene; digital presentation storyboard; published/exported project and reflection supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
-        },
-        {
-          "question": "Which revision priority most directly matches this week’s language focus?",
-          "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "narrative perspective, dialogue punctuation, multimedia rhetoric, accessibility, and publication polish"
+            "Enlarge the chart until its visual impact replaces a written explanation.",
+            "Present a percentage without its underlying denominator.",
+            "Repeat the quotation without distinguishing source text from commentary.",
+            "Name the chart's units and denominator, attribute the quotation, and explain what each source can actually establish."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is narrative perspective, dialogue punctuation, multimedia rhetoric, accessibility, and publication polish.",
-          "skill": "Language and Revision"
+          "explanation": "Visual and textual evidence need accurate labels, attribution, and bounded interpretation.",
+          "skill": "Interpretation and Evidence Transfer"
+        },
+        {
+          "question": "For Week 30 (Narrative Perspective, Digital Publication & Presentation), the language focus includes narrative perspective, dialogue punctuation, multimedia rhetoric, accessibility, and publication polish. A hypothetical bar chart compares three labeled samples. Which caption helps a reader interpret it?",
+          "choices": [
+            "The chart proves the program worked, regardless of the measures.",
+            "The chart compares three groups on a labeled scale; the third group's bar is tallest.",
+            "The bars are interesting; readers should work out the scale themselves.",
+            "Everyone knows the third group performed best."
+          ],
+          "answer": 1,
+          "explanation": "A useful caption names what is shown without adding an unsupported causal conclusion.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -5264,12 +5264,12 @@
         {
           "question": "Authors may use juxtaposition to define...",
           "choices": [
-            "Character perspective, values, conflict, or theme",
-            "Only paragraph length",
             "Only the title",
-            "Only page numbers"
+            "Only page numbers",
+            "Character perspective, values, conflict, or theme",
+            "Only paragraph length"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Contrasts can reveal perspective.",
           "skill": ""
         },
@@ -5286,28 +5286,28 @@
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 31 (Drama Study: Juxtaposition, Rhetoric, and Conflict), a learner is studying drama. A learner identifies a persuasive strategy in a speech. What is the strongest next analytical step?",
           "choices": [
-            "a polished drama analysis chart supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Assume persuasion succeeds because the speaker sounds confident.",
+            "Treat an unsupported guess about the speaker's motives as evidence.",
+            "Connect a specific phrase to its audience, purpose, and probable effect while distinguishing inference from fact.",
+            "List persuasive devices without citing the speaker's words."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished drama analysis chart supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 2,
+          "explanation": "Rhetorical claims require textual support and audience-focused reasoning.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 31 (Drama Study: Juxtaposition, Rhetoric, and Conflict), the language focus includes drama terminology, stage directions, dramatic irony, conflict, and interpretive claims. Which analytical sentence integrates evidence and reasoning responsibly?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "drama terminology, stage directions, dramatic irony, conflict, and interpretive claims"
+            "The account reports a specific action; this supports a narrower claim, although the motives of absent participants remain unknown.",
+            "The account proves everyone agreed, even though other views were not recorded.",
+            "Because a detail appears in print, it needs no contextual examination.",
+            "The writer can omit conflicting evidence to keep the argument simple."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is drama terminology, stage directions, dramatic irony, conflict, and interpretive claims.",
-          "skill": "Language and Revision"
+          "answer": 0,
+          "explanation": "Clear analysis distinguishes recorded observation, plausible inference, and unresolved uncertainty.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -5414,62 +5414,62 @@
         {
           "question": "A drama analysis should consider...",
           "choices": [
-            "Dialogue, staging, conflict, rhetoric, perspective, and structure",
             "Only cast list",
             "Only title page",
-            "Only publication date"
+            "Only publication date",
+            "Dialogue, staging, conflict, rhetoric, perspective, and structure"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Drama blends text and performance.",
           "skill": ""
         },
         {
           "question": "Dramatic irony occurs when...",
           "choices": [
+            "A paragraph is long",
             "The audience knows something a character does not",
             "A line rhymes",
-            "A source is cited",
-            "A paragraph is long"
+            "A source is cited"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Dramatic irony depends on audience knowledge.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 32: Drama Performance and Oral Interpretation?",
           "choices": [
-            "Rely on summary without testing evidence",
             "interpret dramatic or oral choices and justify how performance changes audience understanding",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "This week requires students to interpret dramatic or oral choices and justify how performance changes audience understanding.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 32 (Drama Performance and Oral Interpretation), a learner is studying performance. A learner identifies a persuasive strategy in a speech. What is the strongest next analytical step?",
           "choices": [
-            "a polished oral performance and reflection supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Treat an unsupported guess about the speaker's motives as evidence.",
+            "Connect a specific phrase to its audience, purpose, and probable effect while distinguishing inference from fact.",
+            "List persuasive devices without citing the speaker's words.",
+            "Assume persuasion succeeds because the speaker sounds confident."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished oral performance and reflection supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "answer": 1,
+          "explanation": "Rhetorical claims require textual support and audience-focused reasoning.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 32 (Drama Performance and Oral Interpretation), the language focus includes oral interpretation, performance notes, vocal emphasis, collaboration, and reflection. Which oral transition gives an audience a clear line of reasoning?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "oral interpretation, performance notes, vocal emphasis, collaboration, and reflection"
+            "This proves the point; further explanation is unnecessary.",
+            "Everyone knows my conclusion, so I'll skip the evidence.",
+            "The next topic is unrelated, but there is no need to signal the change.",
+            "First, consider the claim; next, inspect its evidence; finally, weigh an alternative explanation."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is oral interpretation, performance notes, vocal emphasis, collaboration, and reflection.",
-          "skill": "Language and Revision"
+          "explanation": "Effective delivery makes the logic and evidentiary sequence audible.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -5576,12 +5576,12 @@
         {
           "question": "Tracking a long work requires notes on...",
           "choices": [
-            "Character, motif, theme, structure, style, vocabulary, and evidence",
-            "Only page count",
             "Only chapter titles",
-            "Only cover art"
+            "Only cover art",
+            "Character, motif, theme, structure, style, vocabulary, and evidence",
+            "Only page count"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Long texts require ongoing evidence tracking.",
           "skill": ""
         },
@@ -5600,38 +5600,38 @@
         {
           "question": "Which action best demonstrates mastery of Week 33: Long-Form Novel Study Launch?",
           "choices": [
-            "Rely on summary without testing evidence",
-            "sustain close reading across a long work and connect motifs, structure, perspective, and theme",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence",
+            "sustain close reading across a long work and connect motifs, structure, perspective, and theme"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "This week requires students to sustain close reading across a long work and connect motifs, structure, perspective, and theme.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 33 (Long-Form Novel Study Launch), a learner is studying novel. An interpretation claims a character's perspective evolves over a text. What would support it?",
           "choices": [
-            "a polished reading schedule and novel notebook supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Compare details from two distinct moments and explain how the differences revise the reader's understanding.",
+            "Cite one line and treat it as proof of every later choice.",
+            "Retell the plot chronologically without evaluating perspective.",
+            "Assume the narrator and author share every belief."
           ],
           "answer": 0,
-          "explanation": "The strongest evidence is a polished reading schedule and novel notebook supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
+          "explanation": "Character and narrative claims must connect evidence across a text.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 33 (Long-Form Novel Study Launch), the language focus includes sustained annotation, reading schedules, motif tracking, seminar questions, and summary control. Which oral transition gives an audience a clear line of reasoning?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "sustained annotation, reading schedules, motif tracking, seminar questions, and summary control"
+            "Everyone knows my conclusion, so I'll skip the evidence.",
+            "The next topic is unrelated, but there is no need to signal the change.",
+            "First, consider the claim; next, inspect its evidence; finally, weigh an alternative explanation.",
+            "This proves the point; further explanation is unnecessary."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is sustained annotation, reading schedules, motif tracking, seminar questions, and summary control.",
-          "skill": "Language and Revision"
+          "answer": 2,
+          "explanation": "Effective delivery makes the logic and evidentiary sequence audible.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -5738,62 +5738,62 @@
         {
           "question": "A universal theme is...",
           "choices": [
+            "A single vocabulary word",
             "A broad insight that can apply across time, place, or culture",
             "A character’s name",
-            "A chapter number",
-            "A single vocabulary word"
+            "A chapter number"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Universal themes cross contexts.",
           "skill": ""
         },
         {
           "question": "Tracking a theme means...",
           "choices": [
-            "Following how it develops through patterns, conflicts, language, and resolution",
             "Only finding it once",
             "Only using the title",
-            "Ignoring changes"
+            "Ignoring changes",
+            "Following how it develops through patterns, conflicts, language, and resolution"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Themes develop over time.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 34: Novel Themes, Motifs, and Author Choices?",
           "choices": [
+            "Focus on formatting while ignoring reasoning",
             "Rely on summary without testing evidence",
             "sustain close reading across a long work and connect motifs, structure, perspective, and theme",
-            "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Choose a conclusion before reading the sources"
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "This week requires students to sustain close reading across a long work and connect motifs, structure, perspective, and theme.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 34 (Novel Themes, Motifs, and Author Choices), a learner is studying motif. An interpretation claims a character's perspective evolves over a text. What would support it?",
           "choices": [
-            "a polished theme/motif/perspective tracker supported by annotations, planning, feedback, revision, and reflection",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
-          ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a polished theme/motif/perspective tracker supported by annotations, planning, feedback, revision, and reflection.",
-          "skill": "Mastery Evidence"
-        },
-        {
-          "question": "Which revision priority most directly matches this week’s language focus?",
-          "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "motif, theme, structure, comparative evidence, and long-form analytical coherence"
+            "Cite one line and treat it as proof of every later choice.",
+            "Retell the plot chronologically without evaluating perspective.",
+            "Assume the narrator and author share every belief.",
+            "Compare details from two distinct moments and explain how the differences revise the reader's understanding."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is motif, theme, structure, comparative evidence, and long-form analytical coherence.",
-          "skill": "Language and Revision"
+          "explanation": "Character and narrative claims must connect evidence across a text.",
+          "skill": "Interpretation and Evidence Transfer"
+        },
+        {
+          "question": "For Week 34 (Novel Themes, Motifs, and Author Choices), the language focus includes motif, theme, structure, comparative evidence, and long-form analytical coherence. Which comparison gives the reader a meaningful, qualified contrast?",
+          "choices": [
+            "Both accounts are interesting, interesting, and interesting.",
+            "Although both accounts describe the meeting, only the second supplies a date; the sequence therefore remains uncertain.",
+            "The accounts are both about a meeting, so they must agree.",
+            "The first is better because it is the first one read."
+          ],
+          "answer": 1,
+          "explanation": "Strong comparison explains an evidence-based similarity or difference and its significance.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -5912,12 +5912,12 @@
         {
           "question": "A student-led conference should include...",
           "choices": [
-            "Selected artifacts, scores, reflections, and next steps",
-            "Only parent comments",
             "Only a quiz key",
-            "Only a certificate"
+            "Only a certificate",
+            "Selected artifacts, scores, reflections, and next steps",
+            "Only parent comments"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Students should explain their own learning.",
           "skill": ""
         },
@@ -5934,28 +5934,28 @@
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 35 (Final Portfolio and Student-Led Conference), a learner is studying portfolio. A learner selects a revised piece to show growth. Which evidence makes the reflection credible?",
           "choices": [
-            "a completed cumulative assessment, corrections log, reflection, and targeted improvement plan",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Use the total page count as the main proof of learning.",
+            "Remove all recorded mistakes so the process appears flawless.",
+            "Present the earlier draft, a substantial revision, and an explanation of changes tied to feedback or new evidence.",
+            "Present only the polished final copy and claim improvement is self-evident."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a completed cumulative assessment, corrections log, reflection, and targeted improvement plan.",
-          "skill": "Mastery Evidence"
+          "answer": 2,
+          "explanation": "Authentic learning evidence includes process, justification, and preserved revision history.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 35 (Final Portfolio and Student-Led Conference), the language focus includes portfolio curation, metacognitive reflection, standards language, and conference delivery. Which oral transition gives an audience a clear line of reasoning?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "portfolio curation, metacognitive reflection, standards language, and conference delivery"
+            "First, consider the claim; next, inspect its evidence; finally, weigh an alternative explanation.",
+            "This proves the point; further explanation is unnecessary.",
+            "Everyone knows my conclusion, so I'll skip the evidence.",
+            "The next topic is unrelated, but there is no need to signal the change."
           ],
-          "answer": 3,
-          "explanation": "The stated language focus is portfolio curation, metacognitive reflection, standards language, and conference delivery.",
-          "skill": "Language and Revision"
+          "answer": 0,
+          "explanation": "Effective delivery makes the logic and evidentiary sequence audible.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -6066,62 +6066,62 @@
         {
           "question": "A final portfolio should prove...",
           "choices": [
-            "Growth, mastery, revision, evidence, and readiness for senior-level ELA",
             "Only perfect scores",
             "Only one test",
-            "Only a cover page"
+            "Only a cover page",
+            "Growth, mastery, revision, evidence, and readiness for senior-level ELA"
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Portfolios show learning over time.",
           "skill": ""
         },
         {
           "question": "A student-led conference should include...",
           "choices": [
+            "Only a certificate",
             "Selected artifacts, scores, reflections, and next steps",
             "Only parent comments",
-            "Only a quiz key",
-            "Only a certificate"
+            "Only a quiz key"
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Students should explain their own learning.",
           "skill": ""
         },
         {
           "question": "Which action best demonstrates mastery of Week 36: Final Review and Final Test?",
           "choices": [
-            "Rely on summary without testing evidence",
             "synthesize course learning, manage timed tasks, explain corrections, and set evidence-based next steps",
             "Choose a conclusion before reading the sources",
-            "Focus on formatting while ignoring reasoning"
+            "Focus on formatting while ignoring reasoning",
+            "Rely on summary without testing evidence"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "This week requires students to synthesize course learning, manage timed tasks, explain corrections, and set evidence-based next steps.",
           "skill": "Weekly Transfer"
         },
         {
-          "question": "Which product provides the strongest evidence of this week’s mastery?",
+          "question": "In ENGLISH-11 Week 36 (Final Review and Final Test), a learner is studying final. A learner selects a revised piece to show growth. Which evidence makes the reflection credible?",
           "choices": [
-            "a completed cumulative assessment, corrections log, reflection, and targeted improvement plan",
-            "An unannotated copied passage",
-            "A vocabulary list with no application",
-            "A score with no corrections or supporting work"
+            "Remove all recorded mistakes so the process appears flawless.",
+            "Present the earlier draft, a substantial revision, and an explanation of changes tied to feedback or new evidence.",
+            "Present only the polished final copy and claim improvement is self-evident.",
+            "Use the total page count as the main proof of learning."
           ],
-          "answer": 0,
-          "explanation": "The strongest evidence is a completed cumulative assessment, corrections log, reflection, and targeted improvement plan.",
-          "skill": "Mastery Evidence"
+          "answer": 1,
+          "explanation": "Authentic learning evidence includes process, justification, and preserved revision history.",
+          "skill": "Interpretation and Evidence Transfer"
         },
         {
-          "question": "Which revision priority most directly matches this week’s language focus?",
+          "question": "For Week 36 (Final Review and Final Test), the language focus includes cumulative analysis, timed writing, editing, synthesis, and senior-readiness planning. Which comparison gives the reader a meaningful, qualified contrast?",
           "choices": [
-            "basic spelling only",
-            "informal personal preference",
-            "page decoration and font choice",
-            "cumulative analysis, timed writing, editing, synthesis, and senior-readiness planning"
+            "The accounts are both about a meeting, so they must agree.",
+            "The first is better because it is the first one read.",
+            "Both accounts are interesting, interesting, and interesting.",
+            "Although both accounts describe the meeting, only the second supplies a date; the sequence therefore remains uncertain."
           ],
           "answer": 3,
-          "explanation": "The stated language focus is cumulative analysis, timed writing, editing, synthesis, and senior-readiness planning.",
-          "skill": "Language and Revision"
+          "explanation": "Strong comparison explains an evidence-based similarity or difference and its significance.",
+          "skill": "Language-in-Context Revision"
         }
       ],
       "lessons": [
@@ -6229,5 +6229,6 @@
     "This is a portable, advanced English III curriculum, not a guarantee of automatic approval by every state, district, school, scholarship, umbrella, accreditation, AP, or IB program.",
     "The course intentionally combines literary study, rhetoric, argument, research, media literacy, oral communication, language conventions, and global/cross-cultural text study.",
     "Teachers should document text selections, instructional hours, student work, accommodations, assessment results, and local standards crosswalks."
-  ]
+  ],
+  "quizBankVersion": "2026-10-16-v2-contextual"
 }
