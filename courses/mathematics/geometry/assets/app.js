@@ -154,27 +154,120 @@ function bindStudentControls(){
 function nextWeek(){
  return D.weeks.find(w=>Object.values(weekRecord(w.week).days).filter(Boolean).length<5)||D.weeks.at(-1);
 }
+
+/* Student-facing continuation reads the same strict evidence used by Geometry's
+   progression gates. It never unlocks or awards anything; it only explains the
+   next authoritative requirement. */
+const STRICT_MASTERY=80;
+const STRICT_LESSONS="khaemenes-geometry-lesson-progress-v1";
+const STRICT_ASSESS="khaemenes-geometry-assessment-records-v1";
+const STRICT_WEEKS="khaemenes-geometry-weekly-mastery-v2";
+function strictRead(key,fallback={}){
+ try{return JSON.parse(localStorage.getItem(key)||"null")||fallback}catch{return fallback}
+}
+function strictLessonMastered(id){
+ const r=strictRead(STRICT_LESSONS,{})[id];
+ return Number(r?.bestScore??r?.score)>=STRICT_MASTERY&&(r?.mastery===true||r?.complete===true);
+}
+function strictUnitMastered(n){
+ const r=strictRead(STRICT_ASSESS,{})[`unit-${String(n).padStart(2,"0")}`];
+ return r?.mastery===true||Number(r?.bestScore)>=STRICT_MASTERY||Array.isArray(r?.attempts)&&r.attempts.some(a=>Number(a.score)>=STRICT_MASTERY);
+}
+function strictMidtermMastered(){
+ const r=strictRead(STRICT_ASSESS,{}).midterm;
+ return r?.mastery===true||Number(r?.bestScore)>=STRICT_MASTERY;
+}
+function strictFinalMastered(){
+ const r=strictRead(STRICT_ASSESS,{}).final;
+ return r?.mastery===true||Number(r?.bestScore)>=STRICT_MASTERY;
+}
+function strictWeekMastered(n){
+ const r=strictRead(STRICT_WEEKS,{weeks:{}})?.weeks?.[n];
+ return Number(r?.best)>=STRICT_MASTERY||r?.attempts?.some(a=>a.mastery_met===true);
+}
+function strictUnitUnlocked(n){
+ if(n===1)return true;
+ if(n===7)return strictUnitMastered(6)&&strictMidtermMastered();
+ return strictUnitMastered(n-1);
+}
+function weekForLesson(id){return D.weeks.find(w=>Array.isArray(w.lesson_ids)&&w.lesson_ids.includes(id))}
+function previousWeekInUnit(w){
+ if(!w?.unit)return null;
+ const weeks=D.weeks.filter(x=>x.unit===w.unit);
+ const i=weeks.findIndex(x=>x.week===w.week);
+ return i>0?weeks[i-1]:null;
+}
+function nextLearningAction(){
+ const lessonState=strictRead(STRICT_LESSONS,{});
+ const assess=strictRead(STRICT_ASSESS,{});
+ const hasLessonEvidence=Object.values(lessonState).some(r=>Number(r?.bestScore??r?.score)>0||r?.complete===true||r?.mastery===true);
+ const diagnostic=assess.diagnostic;
+ const diagnosticEvidence=diagnostic?.mastery===true||Number(diagnostic?.bestScore??diagnostic?.score)>0;
+ if(!hasLessonEvidence&&!diagnosticEvidence){
+   return {kind:"diagnostic",label:"Recommended first step",title:"Readiness Diagnostic",description:"Confirm Algebra I readiness and identify the right support pathway before beginning Unit 01.",href:"diagnostic/",action:"Begin Diagnostic"};
+ }
+ for(const u of D.units){
+   if(!strictUnitUnlocked(u.number)){
+     if(u.number===7){
+       return {kind:"midterm",label:"Mastery gate required",title:"Midterm Mastery",description:"Unit 06 and the Midterm must both reach 80% before Unit 07 opens.",href:"assessments/midterm.html",action:"Open Midterm"};
+     }
+     const prior=u.number-1;
+     return {kind:"unit",label:"Mastery gate required",title:`Unit ${String(prior).padStart(2,"0")} Mastery`,description:`Complete the prior unit mastery requirement at ${STRICT_MASTERY}% before continuing.`,href:`units/unit-${String(prior).padStart(2,"0")}/assessment/mastery-check.html`,action:"Open Unit Mastery"};
+   }
+
+   for(let i=0;i<u.lessons.length;i++){
+     const lesson=u.lessons[i];
+     if(strictLessonMastered(lesson.id))continue;
+     const w=weekForLesson(lesson.id);
+     const priorWeek=previousWeekInUnit(w);
+     const beginsWeek=w?.lesson_ids?.[0]===lesson.id;
+     if(beginsWeek&&priorWeek&&!strictWeekMastered(priorWeek.week)){
+       return {kind:"week",label:"Weekly mastery required",title:`Week ${priorWeek.week} Mastery`,description:`Complete the canonical Week ${priorWeek.week} mastery gate at ${STRICT_MASTERY}% before opening the next lesson block.`,href:`assessments/weekly-mastery.html?week=${priorWeek.week}`,action:"Open Weekly Mastery"};
+     }
+     return {kind:"lesson",label:"Continue learning",title:`Unit ${String(u.number).padStart(2,"0")} · Lesson ${String(lesson.number).padStart(2,"0")}`,description:lesson.title,href:`units/unit-${String(u.number).padStart(2,"0")}/lessons/${lesson.id}.html`,action:"Continue Lesson"};
+   }
+
+   const pendingWeek=D.weeks.filter(w=>w.unit===u.number).find(w=>!strictWeekMastered(w.week));
+   if(pendingWeek){
+     return {kind:"week",label:"Weekly mastery required",title:`Week ${pendingWeek.week} Mastery`,description:`Lesson evidence is complete. Demonstrate ${STRICT_MASTERY}% weekly mastery before the unit gate.`,href:`assessments/weekly-mastery.html?week=${pendingWeek.week}`,action:"Open Weekly Mastery"};
+   }
+   if(!strictUnitMastered(u.number)){
+     return {kind:"unit",label:"Unit mastery required",title:`Unit ${String(u.number).padStart(2,"0")} Mastery`,description:"Review corrections and complete the unit mastery check before advancing.",href:`units/unit-${String(u.number).padStart(2,"0")}/assessment/mastery-check.html`,action:"Open Unit Mastery"};
+   }
+   if(u.number===6&&!strictMidtermMastered()){
+     return {kind:"midterm",label:"Cumulative evidence required",title:"Midterm Examination",description:"The first six units are mastered. Complete the Midterm at 80% before Unit 07.",href:"assessments/midterm.html",action:"Open Midterm"};
+   }
+ }
+ if(!strictFinalMastered()){
+   return {kind:"final",label:"Final evidence required",title:"Comprehensive Final Examination",description:"All unit pathways are complete. Finish the cumulative final and required corrections.",href:"assessments/final.html",action:"Open Final"};
+ }
+ return {kind:"complete",label:"Course evidence complete",title:"Completion Record",description:"Review the capstone, portfolio, final evidence, and completion record with the evaluator.",href:"records/course-completion-certificate.html",action:"Open Completion Record"};
+}
 function renderDashboard(){
- const s=activeStudent(),done=completeWeeks(),next=nextWeek(),grade=courseGrade();
+ const s=activeStudent(),done=completeWeeks(),grade=courseGrade(),action=nextLearningAction();
+ const canonicalWeeks=Array.from({length:36},(_,i)=>i+1).filter(strictWeekMastered).length;
  $("#view-dashboard").innerHTML=`<div class="wrap">
- <div class="section-head"><p class="eyebrow">Local learner dashboard</p><h2>${esc(s.name)} · Geometry</h2>
- <p>Progress, mastery, assessment evidence, portfolio notes, and exports remain on this device unless deliberately downloaded or printed.</p></div>
+ <div class="section-head"><p class="eyebrow">Your Geometry workspace</p><h2>${esc(s.name)} · Geometry</h2>
+ <p>One clear path through lessons, mastery, practice, tools, portfolio evidence, and assessments.</p></div>
  <div class="grid">
-  <article class="card col4"><h3>Learner Record</h3>${studentControls()}<p class="notice">Prerequisite: Algebra I or equivalent demonstrated readiness. Placement is based on mastery, not age or grade.</p></article>
-  <article class="card col8"><span class="pill good">Next recommended week</span><h3>Week ${next.week} · ${esc(next.title)}</h3><p>${esc(next.essential)}</p>
-   <div class="progress"><span style="width:${done/36*100}%"></span></div><p>${done}/36 weeks fully checked · ${Math.round(done/36*100)}%</p>
-   <div class="actions"><button class="btn primary" id="openNext" type="button">Open Week ${next.week}</button><a class="btn" href="${esc(next.unit_path)}">Open Detailed Route</a></div>
+  <article class="card col4"><h3>Learner Record</h3>${studentControls()}<p class="notice">Placement is based on demonstrated readiness and mastery. Local planning records do not override canonical course gates.</p></article>
+  <article class="card col8 course-next-step">
+   <p class="next-step-label">${esc(action.label)}</p>
+   <h3>${esc(action.title)}</h3>
+   <p>${esc(action.description)}</p>
+   <div class="progress" aria-label="Canonical weekly mastery progress"><span style="width:${canonicalWeeks/36*100}%"></span></div>
+   <p>${canonicalWeeks}/36 weekly mastery gates complete · ${Math.round(canonicalWeeks/36*100)}%</p>
+   <div class="actions"><a class="btn primary" href="${esc(action.href)}">${esc(action.action)}</a><button class="btn" data-view="units" type="button">Course Map</button><button class="btn" data-view="practice" type="button">Practice</button></div>
   </article>
   <article class="card col3"><h4>Coursework Average</h4><p class="score">${pct(avg(D.weeks.map(w=>weekRecord(w.week).classwork)))}</p></article>
-  <article class="card col3"><h4>Mastery Average</h4><p class="score">${pct(avg(D.weeks.map(w=>weekRecord(w.week).masteryBest)))}</p></article>
+  <article class="card col3"><h4>Canonical Weekly Mastery</h4><p class="score">${canonicalWeeks}/36</p></article>
   <article class="card col3"><h4>Final Examination</h4><p class="score">${pct(s.formal.final)}</p></article>
-  <article class="card col3"><h4>Strict Completion Gates</h4><p class="score">Evidence-gated</p><p>Completion requires canonical lesson, weekly, unit, reviewed-exam, investigation, and capstone evidence.</p></article>
-  <article class="card col4"><h3>90 Visual Printable Lessons</h3><p>Topic-specific explanations, large vector diagrams, worked examples, six-problem printable worksheets, differentiated pathways, misconceptions, applications, reflection, and local completion.</p><button class="btn" data-view="units">Browse Units</button></article>
-  <article class="card col4"><h3>Scientific Calculator v4</h3><p>Use the connected calculator for exploration, logarithms, trigonometry, complex-number support, history, and verification. Written reasoning and domain checks remain required.</p><a class="btn primary" href="../tools/calculator" target="_blank" rel="noopener">Open Calculator</a></article>
-  <article class="card col4"><h3>Formal Evidence</h3><p>40-question readiness diagnostic, 13 mastery checks, 60-question midterm, 100-question final, portfolio, and modelling defense.</p><button class="btn" data-view="assessments">Assessment Center</button></article>
+  <article class="card col3"><h4>Strict Completion Gates</h4><p class="score">Evidence-gated</p><p>Lessons, weeks, units, cumulative exams, investigation, and capstone evidence remain authoritative.</p></article>
+  <article class="card col4"><h3>Lessons &amp; Units</h3><p>90 visual printable lessons with diagrams, worked reasoning, differentiated pathways, misconception checks, applications, reflection, and local notes.</p><button class="btn" data-view="units">Browse Course Map</button></article>
+  <article class="card col4"><h3>Games &amp; Tools</h3><p>Use geometry studios, construction activities, scientific calculator support, CAD, and focused practice without losing your place.</p><button class="btn" type="button" data-games-view>Open Games &amp; Tools</button></article>
+  <article class="card col4"><h3>Assessment &amp; Portfolio</h3><p>Weekly mastery, 13 unit gates, cumulative examinations, portfolio evidence, modelling, and capstone defense.</p><div class="actions"><button class="btn" data-view="assessments">Assessments</button><button class="btn" data-view="portfolio">Portfolio</button></div></article>
  </div></div>`;
  bindStudentControls();
- $("#openNext")?.addEventListener("click",()=>{state.selectedWeek=next.week;save();setView("week")});
 }
 function dailyPlan(w){
  const focus=w.focus||w.title;
