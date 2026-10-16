@@ -4,211 +4,212 @@
   "terms": [
     {
       "en": "angle",
-      "es": "angle",
+      "es": "ángulo",
       "fr": "angle",
-      "ar": "angle",
-      "pt": "angle",
-      "definition": "Core term used in Angle Measure, Radians & Coterminal Angles."
+      "ar": "زاوية",
+      "pt": "ângulo",
+      "definition": "Two rays sharing a vertex, measured in degrees or radians."
     },
     {
-      "en": "measure",
-      "es": "measure",
-      "fr": "measure",
-      "ar": "measure",
-      "pt": "measure",
-      "definition": "Core term used in Angle Measure, Radians & Coterminal Angles."
+      "en": "radian",
+      "es": "radián",
+      "fr": "radian",
+      "ar": "راديان",
+      "pt": "radiano",
+      "definition": "Angle subtending an arc equal in length to the circle radius."
     },
     {
-      "en": "radians",
-      "es": "radians",
-      "fr": "radians",
-      "ar": "radians",
-      "pt": "radians",
-      "definition": "Core term used in Angle Measure, Radians & Coterminal Angles."
+      "en": "degree",
+      "es": "grado",
+      "fr": "degré",
+      "ar": "درجة زاوية",
+      "pt": "grau",
+      "definition": "One 360th of a full turn."
     },
     {
-      "en": "unit",
-      "es": "unit",
-      "fr": "unit",
-      "ar": "unit",
-      "pt": "unit",
-      "definition": "Core term used in The Unit Circle & Coordinate Definitions."
+      "en": "unit circle",
+      "es": "circunferencia unitaria",
+      "fr": "cercle trigonométrique",
+      "ar": "دائرة الوحدة",
+      "pt": "círculo trigonométrico",
+      "definition": "A circle with radius 1 centered at the origin."
     },
     {
-      "en": "circle",
-      "es": "circle",
-      "fr": "circle",
-      "ar": "circle",
-      "pt": "circle",
-      "definition": "Core term used in The Unit Circle & Coordinate Definitions."
+      "en": "reference angle",
+      "es": "ángulo de referencia",
+      "fr": "angle de référence",
+      "ar": "زاوية مرجعية",
+      "pt": "ângulo de referência",
+      "definition": "The acute angle between a terminal side and the x-axis."
     },
     {
-      "en": "coordinate",
-      "es": "coordinate",
-      "fr": "coordinate",
-      "ar": "coordinate",
-      "pt": "coordinate",
-      "definition": "Core term used in The Unit Circle & Coordinate Definitions."
+      "en": "exact trig value",
+      "es": "valor trigonométrico exacto",
+      "fr": "valeur trigonométrique exacte",
+      "ar": "قيمة مثلثية دقيقة",
+      "pt": "valor trigonométrico exato",
+      "definition": "An exact ratio or radical rather than a rounded decimal."
     },
     {
-      "en": "exact",
-      "es": "exact",
-      "fr": "exact",
-      "ar": "exact",
-      "pt": "exact",
-      "definition": "Core term used in Exact Trigonometric Values & Reference Angles."
+      "en": "sine function",
+      "es": "función seno",
+      "fr": "fonction sinus",
+      "ar": "دالة الجيب",
+      "pt": "função seno",
+      "definition": "The y-coordinate of the unit-circle point at angle θ."
     },
     {
-      "en": "trigonometric",
-      "es": "trigonometric",
-      "fr": "trigonometric",
-      "ar": "trigonometric",
-      "pt": "trigonometric",
-      "definition": "Core term used in Exact Trigonometric Values & Reference Angles."
+      "en": "cosine function",
+      "es": "función coseno",
+      "fr": "fonction cosinus",
+      "ar": "دالة جيب التمام",
+      "pt": "função cosseno",
+      "definition": "The x-coordinate of the unit-circle point at angle θ."
     },
     {
-      "en": "values",
-      "es": "values",
-      "fr": "values",
-      "ar": "values",
-      "pt": "values",
-      "definition": "Core term used in Exact Trigonometric Values & Reference Angles."
+      "en": "tangent function",
+      "es": "función tangente",
+      "fr": "fonction tangente",
+      "ar": "دالة الظل",
+      "pt": "função tangente",
+      "definition": "sin(θ)/cos(θ), where cos(θ) is nonzero."
     },
     {
-      "en": "functions",
-      "es": "functions",
-      "fr": "functions",
-      "ar": "functions",
-      "pt": "functions",
-      "definition": "Core term used in Six Trigonometric Functions & Reciprocal Relationships."
+      "en": "reciprocal trig function",
+      "es": "función trigonométrica recíproca",
+      "fr": "fonction trigonométrique réciproque",
+      "ar": "دالة مثلثية مقلوبة",
+      "pt": "função trigonométrica recíproca",
+      "definition": "A function such as secant, cosecant, or cotangent formed from reciprocal ratios."
     },
     {
-      "en": "reciprocal",
-      "es": "reciprocal",
-      "fr": "reciprocal",
-      "ar": "reciprocal",
-      "pt": "reciprocal",
-      "definition": "Core term used in Six Trigonometric Functions & Reciprocal Relationships."
+      "en": "trig graph",
+      "es": "gráfica trigonométrica",
+      "fr": "graphe trigonométrique",
+      "ar": "منحنى دالة مثلثية",
+      "pt": "gráfico trigonométrico",
+      "definition": "A plot of a trigonometric output against its angle input."
     },
     {
-      "en": "graphs",
-      "es": "graphs",
-      "fr": "graphs",
-      "ar": "graphs",
-      "pt": "graphs",
-      "definition": "Core term used in Graphs of Sine and Cosine."
+      "en": "sinusoidal model",
+      "es": "modelo sinusoidal",
+      "fr": "modèle sinusoïdal",
+      "ar": "نموذج جيبي",
+      "pt": "modelo senoidal",
+      "definition": "A model y=A sin(B(x-C))+D or its cosine equivalent."
     },
     {
-      "en": "sine",
-      "es": "sine",
-      "fr": "sine",
-      "ar": "sine",
-      "pt": "sine",
-      "definition": "Core term used in Graphs of Sine and Cosine."
-    },
-    {
-      "en": "cosine",
-      "es": "cosine",
-      "fr": "cosine",
-      "ar": "cosine",
-      "pt": "cosine",
-      "definition": "Core term used in Graphs of Sine and Cosine."
+      "en": "midline",
+      "es": "línea media",
+      "fr": "droite médiane",
+      "ar": "خط المنتصف",
+      "pt": "linha média",
+      "definition": "The horizontal line halfway between a sinusoid's maximum and minimum."
     },
     {
       "en": "amplitude",
-      "es": "amplitude",
+      "es": "amplitud",
       "fr": "amplitude",
-      "ar": "amplitude",
+      "ar": "سعة الموجة",
       "pt": "amplitude",
-      "definition": "Core term used in Amplitude, Period, Phase & Vertical Shifts."
+      "definition": "Half a sinusoid's peak-to-trough distance."
     },
     {
       "en": "period",
-      "es": "period",
-      "fr": "period",
-      "ar": "period",
-      "pt": "period",
-      "definition": "Core term used in Amplitude, Period, Phase & Vertical Shifts."
+      "es": "período",
+      "fr": "période",
+      "ar": "الدورة",
+      "pt": "período",
+      "definition": "The smallest positive horizontal interval after which a periodic function repeats."
     },
     {
-      "en": "phase",
-      "es": "phase",
-      "fr": "phase",
-      "ar": "phase",
-      "pt": "phase",
-      "definition": "Core term used in Amplitude, Period, Phase & Vertical Shifts."
+      "en": "phase shift",
+      "es": "desfase",
+      "fr": "déphasage",
+      "ar": "إزاحة الطور",
+      "pt": "deslocamento de fase",
+      "definition": "The horizontal displacement of a periodic graph relative to its reference."
     },
     {
-      "en": "tangent",
-      "es": "tangent",
-      "fr": "tangent",
-      "ar": "tangent",
-      "pt": "tangent",
-      "definition": "Core term used in Graphs of Tangent, Cotangent, Secant & Cosecant."
+      "en": "vertical shift",
+      "es": "desplazamiento vertical",
+      "fr": "décalage vertical",
+      "ar": "إزاحة رأسية",
+      "pt": "deslocamento vertical",
+      "definition": "Adding a constant to all output values."
     },
     {
       "en": "cotangent",
-      "es": "cotangent",
-      "fr": "cotangent",
-      "ar": "cotangent",
-      "pt": "cotangent",
-      "definition": "Core term used in Graphs of Tangent, Cotangent, Secant & Cosecant."
+      "es": "cotangente",
+      "fr": "cotangente",
+      "ar": "ظل التمام",
+      "pt": "cotangente",
+      "definition": "cos(θ)/sin(θ), defined when sin(θ) is nonzero."
     },
     {
-      "en": "inverse",
-      "es": "inverse",
-      "fr": "inverse",
-      "ar": "inverse",
-      "pt": "inverse",
-      "definition": "Core term used in Inverse Trigonometric Functions & Restricted Domains."
+      "en": "secant",
+      "es": "secante",
+      "fr": "sécante",
+      "ar": "القاطع",
+      "pt": "secante",
+      "definition": "1/cos(θ), defined when cosine is nonzero."
     },
     {
-      "en": "sinusoidal",
-      "es": "sinusoidal",
-      "fr": "sinusoidal",
-      "ar": "sinusoidal",
-      "pt": "sinusoidal",
-      "definition": "Core term used in Sinusoidal Regression & Periodic Data."
+      "en": "inverse trigonometric function",
+      "es": "función trigonométrica inversa",
+      "fr": "fonction trigonométrique réciproque au sens inverse",
+      "ar": "دالة مثلثية عكسية",
+      "pt": "função trigonométrica inversa",
+      "definition": "A principal-angle function such as arcsin that reverses sine on a restricted domain."
     },
     {
-      "en": "regression",
-      "es": "regression",
-      "fr": "regression",
-      "ar": "regression",
-      "pt": "regression",
-      "definition": "Core term used in Sinusoidal Regression & Periodic Data."
+      "en": "trigonometric regression",
+      "es": "regresión trigonométrica",
+      "fr": "régression trigonométrique",
+      "ar": "الانحدار المثلثي",
+      "pt": "regressão trigonométrica",
+      "definition": "Fitting a periodic sine or cosine model to observations."
     },
     {
-      "en": "periodic",
-      "es": "periodic",
-      "fr": "periodic",
-      "ar": "periodic",
-      "pt": "periodic",
-      "definition": "Core term used in Sinusoidal Regression & Periodic Data."
+      "en": "periodic data",
+      "es": "datos periódicos",
+      "fr": "données périodiques",
+      "ar": "بيانات دورية",
+      "pt": "dados periódicos",
+      "definition": "Measurements that repeat a pattern at regular intervals."
     },
     {
-      "en": "vectors",
-      "es": "vectors",
-      "fr": "vectors",
-      "ar": "vectors",
-      "pt": "vectors",
-      "definition": "Core term used in Vectors, Bearings & Component Models."
+      "en": "vector",
+      "es": "vector",
+      "fr": "vecteur",
+      "ar": "متجه",
+      "pt": "vetor",
+      "definition": "A quantity with magnitude and direction."
     },
     {
-      "en": "bearings",
-      "es": "bearings",
-      "fr": "bearings",
-      "ar": "bearings",
-      "pt": "bearings",
-      "definition": "Core term used in Vectors, Bearings & Component Models."
+      "en": "vector magnitude",
+      "es": "magnitud vectorial",
+      "fr": "norme vectorielle",
+      "ar": "مقدار المتجه",
+      "pt": "módulo do vetor",
+      "definition": "The length of a vector, sqrt(x²+y²) in two dimensions."
     },
     {
-      "en": "component",
-      "es": "component",
-      "fr": "component",
-      "ar": "component",
-      "pt": "component",
-      "definition": "Core term used in Vectors, Bearings & Component Models."
+      "en": "bearing",
+      "es": "rumbo",
+      "fr": "relèvement",
+      "ar": "اتجاه ملاحي",
+      "pt": "rumo",
+      "definition": "A compass-referenced angle describing direction."
+    },
+    {
+      "en": "vector component",
+      "es": "componente vectorial",
+      "fr": "composante vectorielle",
+      "ar": "مركبة المتجه",
+      "pt": "componente vetorial",
+      "definition": "The projection of a vector along a coordinate axis."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
