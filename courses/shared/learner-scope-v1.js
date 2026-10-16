@@ -144,3 +144,16 @@
   window.KhaemenesLearnerScope = Object.freeze({ version: 2, course: scope, profile, claimLegacy, legacyKeys, scopedKey(base) { return targetForKey(base, "read"); } });
   scheduleNotice();
 })();
+
+/* Separate lesson vocabulary bootstrap; does not modify learner state. */
+(() => {
+  "use strict";
+  if(!/\/courses\/mathematics\/(pre-algebra|algebra-1|geometry|algebra-2)\/units\/unit-(?:0[0-9]|1[0-3])\/lessons\/[^/]+\.html$/.test(location.pathname))return;
+  const current=document.currentScript;
+  if(!current)return;
+  const script=document.createElement("script");
+  script.src=new URL("./math-lesson-vocabulary-link.js",current.src).href;
+  script.async=true;
+  script.onerror=()=>console.warn("Vocabulary helper unavailable. Lesson remains usable.");
+  document.head.appendChild(script);
+})();
