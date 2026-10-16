@@ -18,5 +18,75 @@
     "feasible set",
     "constraint",
     "sign reversal"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "inequality": "A comparison of expressions using <, >, ≤, or ≥ instead of equality.",
+    "solution set": "All values satisfying an inequality or set of conditions.",
+    "boundary": "A value separating included and excluded regions of a number-line solution.",
+    "open endpoint": "A boundary value not included in the solution, shown with an open circle.",
+    "closed endpoint": "A boundary value included in the solution, shown with a filled circle.",
+    "interval notation": "A way of writing intervals using brackets for included endpoints and parentheses for excluded endpoints.",
+    "compound inequality": "A statement joining two inequalities, often using AND or OR.",
+    "intersection": "Values common to every named solution set, used for an AND condition.",
+    "union": "Values belonging to at least one named solution set, used for an OR condition.",
+    "AND": "The logical requirement that both stated conditions must hold.",
+    "OR": "The logical requirement that at least one stated condition must hold.",
+    "absolute value": "The nonnegative distance of a real number from zero, written |x|.",
+    "distance": "The nonnegative length between two points, such as |a-b| on a number line.",
+    "tolerance": "An allowed amount of variation from a target value.",
+    "feasible set": "The values satisfying all the constraints in a mathematical model.",
+    "constraint": "A requirement or limit an acceptable value or solution must satisfy.",
+    "sign reversal": "When multiplying or dividing an inequality by a negative number, reverse its comparison symbol."
+  },
+  "translations": {
+    "inequality": {
+      "es": "desigualdad",
+      "fr": "inégalité",
+      "ar": "متباينة",
+      "pt": "desigualdade"
+    },
+    "solution set": {
+      "es": "conjunto solución",
+      "fr": "ensemble solution",
+      "ar": "مجموعة الحل",
+      "pt": "conjunto solução"
+    },
+    "boundary": {
+      "es": "límite",
+      "fr": "borne",
+      "ar": "حد",
+      "pt": "limite"
+    },
+    "compound inequality": {
+      "es": "desigualdad compuesta",
+      "fr": "inégalité composée",
+      "ar": "متباينة مركبة",
+      "pt": "desigualdade composta"
+    },
+    "intersection": {
+      "es": "intersección",
+      "fr": "intersection",
+      "ar": "تقاطع",
+      "pt": "interseção"
+    },
+    "union": {
+      "es": "unión",
+      "fr": "union",
+      "ar": "اتحاد",
+      "pt": "união"
+    },
+    "feasible set": {
+      "es": "conjunto factible",
+      "fr": "ensemble réalisable",
+      "ar": "مجموعة ممكنة",
+      "pt": "conjunto viável"
+    },
+    "constraint": {
+      "es": "restricción",
+      "fr": "contrainte",
+      "ar": "قيد",
+      "pt": "restrição"
+    }
+  }
 }
