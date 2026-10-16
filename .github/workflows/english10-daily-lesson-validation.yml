@@ -1,0 +1,24 @@
+name: English 10 Daily Lesson Validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/english-10/**'
+      - '.github/workflows/english10-daily-lesson-validation.yml'
+  workflow_dispatch:
+jobs:
+  english10-week01:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Week 01 pages and browser behavior
+        run: |
+          node --check courses/language-arts/english-10/assets/course.js
+          node --check courses/language-arts/english-10/assets/week01-studios.js
+          node courses/language-arts/english-10/tests/week01-daily-regression.mjs
+          node courses/language-arts/english-10/tests/week01-daily-behavior.mjs

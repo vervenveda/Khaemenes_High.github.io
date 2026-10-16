@@ -49,6 +49,25 @@
     return state.exams[id];
   };
 
+  // Week 01 lesson studios use this existing learner-scoped course record,
+  // never a second localStorage copy of the gradebook.
+  window.KhaemenesEnglish10Week01Bridge = Object.freeze({
+    read() {
+      return JSON.parse(JSON.stringify(weekState(1)));
+    },
+    commit(next) {
+      if (!next || typeof next !== "object" || Array.isArray(next)) return false;
+      const previous = state.weeks["1"];
+      state.weeks["1"] = next;
+      if (!save()) { state.weeks["1"] = previous; return false; }
+      updateProgress();
+      return true;
+    },
+    score() {
+      return score(weekState(1).quiz);
+    }
+  });
+
   // Theme
   try{root.dataset.theme=localStorage.getItem(THEME_KEY)||"light"}catch{root.dataset.theme="light"}
   const themeBtn=$("[data-theme-toggle]");
@@ -85,6 +104,10 @@
   $$("[data-week-day]").forEach(box=>{
     const week=box.dataset.week, day=box.dataset.weekDay;
     box.checked=Boolean(weekState(week).days[day]);
+    if (box.dataset.english10StudioManaged === "week01") {
+      box.disabled = true; // evidence and mastery are recorded by the lesson studio
+      return;
+    }
     box.addEventListener("change",()=>{weekState(week).days[day]=box.checked;save();updateProgress()});
   });
   $$("[data-progress-key]").forEach(button=>{
@@ -92,6 +115,11 @@
     const match=key.match(/^week-(\d+)$/);
     if(!match)return;
     const week=match[1], ws=weekState(week);
+    if (button.dataset.english10StudioManaged === "week01") {
+      button.disabled = true; // no more one-click marking of Week 01
+      button.textContent = "Complete the five lessons and weekly quiz";
+      return;
+    }
     const completed=()=>["Monday","Tuesday","Wednesday","Thursday","Friday"].every(d=>ws.days[d]);
     const sync=()=>{const on=completed();button.setAttribute("aria-pressed",String(on));button.textContent=on?"Week Completed ✓":"Mark All Days Complete"};
     sync();

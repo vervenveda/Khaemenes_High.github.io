@@ -1,0 +1,22 @@
+/* English 10 Week 01 · preserve existing parchment course styles and 7px corners */
+.ela10-w01-index,.ela10-w01-studio{width:min(100% - 32px,1100px);margin:24px auto;}
+.ela10-w01-index{background:var(--paper-2,#faf7ef);border:1px solid var(--line,#cec2ae);border-radius:7px;padding:21px;color:var(--ink,#20242a)}
+.ela10-w01-index h2,.ela10-w01-studio h2{font-weight:400;margin:0 0 12px;}
+.ela10-w01-days{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,205px),1fr));gap:12px;margin:16px 0;}
+.ela10-w01-days a{display:flex;flex-direction:column;gap:8px;text-align:center;justify-content:center;min-height:94px;padding:14px;border-radius:7px;border:1px solid var(--line,#ccc);background:var(--paper,#f4efe3);text-decoration:none;}
+.ela10-w01-days a:hover,.ela10-w01-days a:focus-visible{border-color:var(--gold,#b08c54);outline-offset:2px}
+.ela10-w01-days small{font-size:.8rem;color:var(--muted,#595959)}
+.ela10-w01-studio{background:var(--paper-2,#faf7ef);border-radius:7px;border:1px solid var(--line,#ccc);padding:18px;color:var(--ink,#20242a);}
+.ela10-w01-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.ela10-w01-studio label{display:block;margin:7px 0;font-size:.95rem}
+.ela10-w01-studio textarea{display:block;box-sizing:border-box;width:100%;min-height:145px;padding:10px;border-radius:7px;border:1px solid var(--line,#aaa);background:var(--paper,#fff);color:var(--ink,#20242a);line-height:1.6;resize:vertical;overflow-wrap:break-word;}
+.ela10-w01-studio fieldset{border:1px solid var(--line,#ccc);border-radius:7px;margin:13px 0;padding:12px;}
+.ela10-w01-studio legend{font-weight:400;line-height:1.5;padding:0 5px}
+.ela10-w01-studio .ela10-w01-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:16px 0}
+.ela10-w01-studio button,.ela10-w01-studio .btn{border-radius:7px}
+.ela10-w01-feedback{font-size:.93rem;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}
+.ela10-w01-status{padding:8px 0;font-size:.94rem}
+.ela10-w01-studio [hidden],.ela10-w01-index [hidden]{display:none!important}
+.ela10-w01-studio .ela10-w01-guard{border-left:3px solid var(--gold,#b88a2c);padding:10px 14px;background:var(--paper,#fff)}
+@media(max-width:720px){.ela10-w01-grid{grid-template-columns:1fr}.ela10-w01-index,.ela10-w01-studio{padding:13px;width:calc(100% - 24px)}}
+@media print{.ela10-w01-studio .ela10-w01-actions,.ela10-w01-studio fieldset{display:none}}
