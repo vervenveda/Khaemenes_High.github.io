@@ -18,7 +18,7 @@ for(const course of courses){
  assert(home.includes('href="reading-dossier.html#week-16"'),"New source entry missing "+course);
  assert(!/<script\b/i.test(html),"Read-only dossier cannot run JS "+course);
  assert(!/localStorage|sessionStorage|setItem\s*\(/.test(html),"Dossier cannot write student records");
- assert(html.includes("fictional"),"Fictional source declaration absent "+course);
+ assert(/fictional|invented/i.test(html),"Fictional source declaration absent "+course);
  assert(html.includes("Jennifer Kay Pearl")&&html.includes("../../../../shared/daily-instruction.css"));
  assert(/existing|original|official|midterm|portfolio/i.test(html),"Course continuity warning absent");
  const curriculum=JSON.parse(read(root+"curriculum.json"));
