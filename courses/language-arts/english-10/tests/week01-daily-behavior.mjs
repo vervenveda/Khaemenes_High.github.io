@@ -24,7 +24,7 @@ function boot(day,profile="A",record){
   const m=selector.match(/input\[name="studio-([a-z]+)-(\d+)"\]:checked/);
   return m&&selections[Number(m[2])]!==undefined?{value:String(selections[Number(m[2])])}:null;
  };
- const html=fs.readFileSync(path.join(base,"weeks/week-01/"+(day||"index")+(day?"/index.html":".html")),"utf8");
+ const html=fs.readFileSync(path.join(base,"weeks/week-01/"+(day?day.toLowerCase():"index")+(day?"/index.html":".html")),"utf8");
  const bank=day?JSON.parse(html.match(/id="ela10-w01-bank">([\s\S]*?)<\/script>/)[1]):null;
  if(bank)el("ela10-w01-bank").textContent=JSON.stringify(bank);
  el("ela10-w01-evidence").value="";el("ela10-w01-next").hidden=true;el("ela10-w01-week-next").hidden=true;
