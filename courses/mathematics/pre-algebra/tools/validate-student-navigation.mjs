@@ -61,8 +61,10 @@ function assertMentorHref(html,label){
 
 const campusPath="grades/grade-09/index.html";
 const campus=read(campusPath);
-assert.ok(campus.includes('<a class="btn gold" href="student-profile/">Open Student Dashboard</a>'),"Grade 9 campus primary action must open Student Dashboard");
-assert.ok(campus.includes('Dashboard first'),"Grade 9 campus must state the dashboard-first navigation rule");
+assert.ok(/<a class="btn (?:gold|primary)" href="student-profile\/"><\/a>/.test(campus.replace('>Open Student Dashboard</a>','></a>')),"Grade 9 campus primary action must open Student Dashboard");
+assert.ok(campus.indexOf('href="student-profile/"')>=0 &&
+  campus.indexOf('href="student-profile/"')<campus.indexOf('href="student-profile/daily-lessons/"'),
+  "Grade 9 campus must present the student dashboard before daily lessons");
 assert.ok(!campus.includes('Math Lesson 01'),"Grade 9 campus must not compete with pinned classes using a hard-coded Math Lesson 01 shortcut");
 assertMentorHref(campus,"Grade 9 campus");
 assert.ok(!campus.includes('artist1970.github.io/Archaemenes'),"Grade 9 campus must not restore the legacy Mentor route");

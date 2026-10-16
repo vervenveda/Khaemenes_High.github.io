@@ -18,6 +18,8 @@ jobs:
         run: python3 tools/validate-sitewide-routes.py
       - name: Verify learner isolation, ownership recovery and direct math routes
         run: node scripts/validate_learner_scoped_persistence.mjs
+      - name: Verify learner-owned course pins and language selections
+        run: node tools/test-high-course-pins.mjs
       - name: Verify English records, scores and recovery
         run: node tools/test-upper-english-records.mjs
       - name: Verify offline cache ownership
