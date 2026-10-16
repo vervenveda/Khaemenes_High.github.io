@@ -43,6 +43,7 @@ for(const course of courses){
   const tokens=quoted.join(" ").replace(/<[^>]*>/g," ").split(/\s+/).filter(Boolean);
   assert(tokens.length>=190,course+" Week "+week+" too brief: "+tokens.length);
   assert(section.includes("Worked")||section.includes("worked"),course+" Week "+week+" needs model");
+  assert(section.includes("Reading self-check")&&section.includes("Reveal the model response"),course+" Week "+week+" needs formative feedback");
   assert(section.includes("<ol>")&&section.includes("Teacher"),course+" Week "+week+" practice and teacher notes");
   const wkReturn='../../weeks/week-'+week+'/index.html';
   assert(section.includes('href="'+wkReturn+'"'),course+" Week "+week+" learning record return missing");
