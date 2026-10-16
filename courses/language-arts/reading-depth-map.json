@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "description": "ELA reading and instruction companions. Originals are preserved; links return to existing student workspaces. No new authoritative scores.",
+  "week_03_grade_09": {
+    "course": "english-9",
+    "mode": "existing-isolated-daily-pages",
+    "week": 3,
+    "unit": 1,
+    "day_paths": [
+      "day-11/index.html",
+      "day-12/index.html",
+      "day-13/index.html",
+      "day-14/index.html",
+      "day-15/index.html"
+    ]
+  },
+  "week_02_companions": [
+    {
+      "course": "english-10",
+      "week": 2,
+      "unit": 1,
+      "reading": "reading-dossier.html",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ],
+      "status": "preserved"
+    },
+    {
+      "course": "english-11",
+      "week": 2,
+      "unit": 1,
+      "reading": "reading-dossier.html",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ],
+      "status": "preserved"
+    },
+    {
+      "course": "english-12",
+      "week": 2,
+      "unit": 1,
+      "reading": "reading-dossier.html",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ],
+      "status": "preserved"
+    }
+  ],
+  "week_03_companions": [
+    {
+      "course": "english-10",
+      "week": 3,
+      "unit": 1,
+      "title": "Paraphrase, Summary, Academic Integrity & FAST Baseline",
+      "focus": "source attribution, accurate paraphrase, summary denominator and corrections",
+      "reading": "reading-dossier.html",
+      "day_anchors": [
+        "day-1",
+        "day-2",
+        "day-3",
+        "day-4",
+        "day-5"
+      ],
+      "workspaces": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ],
+      "assessment_authority": "preexisting weekly class and teacher-scored work"
+    },
+    {
+      "course": "english-11",
+      "week": 3,
+      "unit": 1,
+      "title": "Academic Vocabulary, Syntax & Revision",
+      "focus": "diction, conditional clauses, textual scope and thesis revision",
+      "reading": "reading-dossier.html",
+      "day_anchors": [
+        "day-1",
+        "day-2",
+        "day-3",
+        "day-4",
+        "day-5"
+      ],
+      "workspaces": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ],
+      "assessment_authority": "preexisting weekly class and teacher-scored work"
+    },
+    {
+      "course": "english-12",
+      "week": 3,
+      "unit": 1,
+      "title": "Academic Language, Revision & Responsible Technology",
+      "focus": "research denominator, digital-summary verification, modality and documented authorship",
+      "reading": "reading-dossier.html",
+      "day_anchors": [
+        "day-1",
+        "day-2",
+        "day-3",
+        "day-4",
+        "day-5"
+      ],
+      "workspaces": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ],
+      "assessment_authority": "preexisting weekly class and teacher-scored work"
+    }
+  ]
+}

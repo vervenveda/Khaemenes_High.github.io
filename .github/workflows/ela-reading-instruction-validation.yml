@@ -1,0 +1,31 @@
+name: ELA Reading and Instruction Validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/english-9/weeks/week-03/**'
+      - 'courses/language-arts/english-10/weeks/week-02/**'
+      - 'courses/language-arts/english-10/weeks/week-03/**'
+      - 'courses/language-arts/english-11/weeks/week-02/**'
+      - 'courses/language-arts/english-11/weeks/week-03/**'
+      - 'courses/language-arts/english-12/weeks/week-02/**'
+      - 'courses/language-arts/english-12/weeks/week-03/**'
+      - 'courses/language-arts/reading-depth-map.json'
+      - 'courses/shared/daily-instruction.css'
+      - 'tools/validate-ela-reading-instruction.mjs'
+      - '.github/workflows/ela-reading-instruction-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/language-arts/**/weeks/week-03/**'
+      - 'courses/language-arts/reading-depth-map.json'
+      - 'tools/validate-ela-reading-instruction.mjs'
+      - '.github/workflows/ela-reading-instruction-validation.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate reading and five-day lesson synchronization
+        run: node tools/validate-ela-reading-instruction.mjs
