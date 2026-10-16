@@ -54,8 +54,25 @@ English 10, 11, and 12 service workers now precache their Unit 05 dossier and th
 
 ## Recommended subsequent sequence
 
-**Next pass:** audit and strengthen **Unit 06 / Weeks 16–18** across English 9–12, paying particular attention to actual reading selections, instructional modeling, and midterm boundaries. Afterward prioritize other units where source genre or length does not support their stated assessments. Follow with a full grade-by-grade media/source authenticity and writing-rubric check, then end-to-end student switching and offline beta testing.
+**Completed next pass (2026-10-16):** Unit 06 / Weeks 16–18 now has three substantial new original reading sets per grade in `units/unit-06/reading-dossier.html`, linked from each Unit 06 homepage and all twelve Week 16–18 classrooms. The originals remain present. All four reading dossiers offer a worked analysis, independent application, misconception and self-check, teacher guidance, a link back to each weekly record, and explicit fictional-source declarations. English 10–12 offline caches were updated. The reading-only additions do not create grades or replace the official midterm.
+
+**Next priority:** audit **Unit 07 / Weeks 19–21** for reading genre, provenance, sufficient length, accessible texts, teacher modeling and standards-specific assessments. English 11–12 poetry and global-literature selections particularly need verified actual authors/editions rather than only invented practice texts. Follow with a full grade-by-grade media/source authenticity and writing-rubric check, then end-to-end student switching and offline family beta testing.
 
 **Verification:** `node tools/validate-english-unit05-reading.mjs`, the existing `tools/validate-ela-curriculum-quality.mjs`, the English 9 and 10 daily-lesson validators, route validation, learner record integrity checks, and GitHub Pages deployment.
 
 This is **the completed Unit 05 alignment pass and a course-wide risk inventory**, not a claim that every source in all 144 weekly classrooms has been substantially rewritten or professionally reviewed.
+
+## Unit 06 hardening audit · English 9–12 · 2026-10-16
+
+| Grade | Week 16 | Week 17 | Week 18 |
+| --- | --- | --- | --- |
+| English 9 | Rhetorical situation and audience | Evidence quality and fallacies | Speech structure, revision and delivery |
+| English 10 | Expository synthesis across sources | Grammar, substantive revision, portfolio | Midyear evidence, transfer and review |
+| English 11 | Rhetorical analysis essay | Evidence-based seminar and listening | Midyear rhetorical transfer and conference |
+| English 12 | Survey-scope synthesis and counterreadings | Research scope and verified bibliography | Midyear independent defense and limits |
+
+- **12 original reading sets**, each comprising at least three full reading paragraphs of at least 190 words total, plus modeled analysis, guided/independent tasks, misconception check, self-check response and teacher notes. The new readings are marked as invented classroom sources, not authentic historical records or scholarly citations.
+- Four Unit 06 landing pages and twelve Week 16–18 student classrooms link directly to the appropriate reading anchor; all reading dossiers link back to the existing weekly learner workspaces.
+- The shared parchment stylesheet is reused. Upper-English service workers precache the new Unit 06 dossier and advance their cache versions; English 9 continues using its established local-first course mechanism without adding a new service worker.
+- The new `tools/validate-english-unit06-reading.mjs` and `.github/workflows/english-unit06-reading.yml` enforce reading length, link integrity, the intended 36-week unit alignment, clean read-only source behavior, instructor support and retention of Unit 05.
+- **Audit limitation:** This validates a targeted three-week unit across four courses. It does not certify every literature selection, rubric, licensed excerpt, cross-device learner profile or supervised midterm. Continue human editorial/source review and browser-based learner tests.
