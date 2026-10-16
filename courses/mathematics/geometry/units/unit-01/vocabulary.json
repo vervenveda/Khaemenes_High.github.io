@@ -11,5 +11,18 @@
     "counterexample",
     "theorem",
     "proof"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "point": "A position with no length, width, or thickness.",
+    "line": "A straight path extending without end in both directions.",
+    "plane": "A flat surface extending indefinitely in two dimensions.",
+    "segment": "Part of a line bounded by two endpoints.",
+    "ray": "Part of a line with one endpoint extending without end.",
+    "angle": "Two rays meeting at a common endpoint called the vertex.",
+    "conjecture": "A proposed mathematical statement requiring proof.",
+    "counterexample": "An example disproving a universal claim.",
+    "theorem": "A mathematical statement established by proof.",
+    "proof": "A chain of justified statements establishing a mathematical conclusion."
+  }
 }

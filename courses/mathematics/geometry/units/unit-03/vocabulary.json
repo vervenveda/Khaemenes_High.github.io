@@ -12,5 +12,19 @@
     "bisector",
     "circumcenter",
     "incenter"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "congruent": "Two figures of identical shape and size.",
+    "corresponding": "Parts of two figures that match under a specified vertex correspondence.",
+    "included angle": "The angle between two named sides.",
+    "hypotenuse": "The side opposite the right angle in a right triangle.",
+    "leg": "A side forming the right angle in a right triangle.",
+    "CPCTC": "Corresponding Parts of Congruent Triangles are Congruent, after triangle congruence is proven.",
+    "median": "A segment joining a triangle vertex to the midpoint of the opposite side.",
+    "altitude": "A perpendicular segment from a triangle vertex to the line containing its opposite side.",
+    "bisector": "A line or segment dividing an angle or segment into two equal parts.",
+    "circumcenter": "Intersection of the perpendicular bisectors of a triangle; equidistant from its vertices.",
+    "incenter": "Intersection of the angle bisectors of a triangle; equidistant from its sides."
+  }
 }

@@ -10,5 +10,17 @@
     "isometry",
     "symmetry",
     "tessellation"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "preimage": "A figure before a transformation.",
+    "image": "A figure after a transformation.",
+    "translation": "A rigid motion shifting every point by the same distance and direction.",
+    "reflection": "A rigid motion mapping each point across a mirror line.",
+    "rotation": "A rigid motion turning points around a fixed center by a given angle.",
+    "composition": "Applying transformations successively, in a specific order.",
+    "isometry": "A transformation that preserves distances.",
+    "symmetry": "A correspondence mapping a figure onto itself by rotation or reflection.",
+    "tessellation": "A pattern covering a plane without gaps or overlapping interiors."
+  }
 }
