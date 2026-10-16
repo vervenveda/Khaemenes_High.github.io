@@ -87,7 +87,7 @@ function eligible(){
   const keys={daily:"",planA:"plan-a",planB:"plan-b",directorNote:"director-note",
    rehearsal:"rehearsal",analysis:"analysis",reflection:"reflection"};
   return Object.keys(keys).every(k=>hash(localStorage.getItem(scoped(
-   "khae-ela9-field:week-13-day-65"+(keys[k]?"-"+keys[k]:"")) )||"")===sub.hashes[k]);
+   "khae-ela9-field:"+(keys[k]?"week-13-day65-"+keys[k]:"week-13-day-65")) )||"")===sub.hashes[k]);
  }catch{return false;}
 }
 if(!day){

@@ -10,7 +10,7 @@ const by=Object.fromEntries(writing.map(f=>[f.dataset.saveField,f]));
 const keys={daily:"",planA:"plan-a",planB:"plan-b",directorNote:"director-note",
  rehearsal:"rehearsal",analysis:"analysis",reflection:"reflection"};
 const f=Object.fromEntries(Object.entries(keys).map(([k,v])=>
- [k,by["week-13-day-65"+(v?"-"+v:"")]]));
+ [k,by[v?"week-13-day65-"+v:"week-13-day-65"]]));
 if(Object.values(f).some(x=>!x)){halt("Assessment fields unavailable");return;}
 const count=s=>String(s||"").trim().split(/\s+/).filter(Boolean).length,
  object=x=>!!x&&typeof x==="object"&&!Array.isArray(x),

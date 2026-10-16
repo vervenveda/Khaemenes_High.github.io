@@ -41,6 +41,7 @@ for(let day=61;day<=65;day++){
   for(const k of ["plan-a","plan-b","director-note","rehearsal","analysis","reflection"])
    assert.match(h,new RegExp('data-save-field="week-13-day65-'+k+'"'));
   assert.match(h,/week13-assessment\.js/);
+  assert.match(assess,/by\[v\?"week-13-day65-"\+v:"week-13-day-65"\]/);
   assert.match(h,/id="week13-next-wrap" hidden/);
   assert.doesNotMatch(h,/id="week13-question-data"/);
  }

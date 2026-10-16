@@ -53,7 +53,7 @@ stale.store.set(k,"Newer learner writing");
 stale.writing[0].value="Stale tab";stale.writing[0].fire("input");
 assert.equal(stale.store.get(k),"Newer learner writing","Concurrent tab protection");
 const exam=boot(65),by=Object.fromEntries(exam.writing.map(x=>[x.dataset.saveField,x]));
-const f=key=>by["week-13-day-65"+(key?"-"+key:"")],wc=x=>x.trim().split(/\s+/).length;
+const f=key=>by[key?"week-13-day65-"+key:"week-13-day-65"],wc=x=>x.trim().split(/\s+/).length;
 const analysis=("Mara and Elias reveal competing objectives through interrupted gestures and narrowly framed statements while the audience still lacks complete knowledge about the envelope. ").repeat(19);
 const reflection=("The scene shows that dialogue and physical staging create different interpretive possibilities. I can support a choice without claiming the characters' unseen motives are certain. ").repeat(8);
 assert.ok(wc(analysis)>=400&&wc(analysis)<=550);
