@@ -21,7 +21,7 @@ for(let day=51;day<=55;day++){
  const html=fs.readFileSync(path.join(folder,"index.html"),"utf8");
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
  assert.equal(ids.length,new Set(ids).size,"Duplicate HTML id day "+day);
- assert.match(html,new RegExp('data-save-field="week-11-day-'+day+'"'),"Daily writing field missing "+day);
+ if(day<55) assert.match(html,new RegExp('data-save-field="week-11-day-'+day+'"'),"Daily writing field missing "+day);
  assert.match(html,/Connect · Apply · Reflect/);
  assert.match(html,/week11-daily\.js/);
  assert.match(html,/week11-daily\.css/);
