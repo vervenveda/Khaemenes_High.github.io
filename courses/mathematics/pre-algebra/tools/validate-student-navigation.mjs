@@ -10,7 +10,11 @@ const helper=read(helperPath);
 
 new Function(helper);
 assert.ok(helper.includes('const THEME_KEY="khaemenes-theme"'),"student navigation must use the canonical theme key");
-assert.ok(helper.includes('const PIN_KEY="khaemenes-high-pinned-courses-v2"'),"student navigation must use the course-home pin key");
+assert.ok(helper.includes('const PIN_KEY="khaemenes-high-pinned-courses-v2"'),"student navigation retains canonical pin key");
+assert.ok(helper.includes('pinStore()?.readPins()'),"lesson buttons must read learner-specific course pins");
+assert.ok(helper.includes('store.writePins(next)'),"lesson buttons must write through canonical pin store");
+assert.ok(helper.includes('loadPinStore()'),"lesson buttons must load canonical store before allowing writes");
+assert.ok(!helper.includes('writeJSON(PIN_KEY,next)'),"lesson buttons must not write raw global pin storage");
 assert.ok(helper.includes('const COURSE_ID="pre-algebra"'),"student navigation must identify Pre-Algebra consistently");
 assert.ok(helper.includes('const CONTINUE_KEY="khaemenes-grade09-last-open-v1"'),"student navigation must preserve the Grade 9 continue key");
 assert.ok(helper.includes('a.id="studentHomeButton"'),"lesson helper must add Student Home");
@@ -26,6 +30,10 @@ const courseHome=read(`${courseRoot}/index.html`);
 assert.ok(courseHome.includes('id="pinCourseButton"'),"Pre-Algebra course home must expose its Pin to Profile control");
 assert.ok(courseHome.includes('PROFILE_PIN_KEY = "khaemenes-high-pinned-courses-v2"'),"course home and lesson helper must share the pin key");
 assert.ok(courseHome.includes('PROFILE_COURSE_ID = "pre-algebra"'),"course home and lesson helper must share the course id");
+assert.ok(courseHome.includes('high-school-course-pins.js'),"course home must load canonical learner pin helper");
+assert.ok(courseHome.includes('store.writePins(pinned)'),"course home must write via canonical pin helper");
+assert.ok(courseHome.includes('window.KhaemenesHighCoursePins?.readPins()'),"course home must read learner-specific pins");
+assert.ok(!courseHome.includes('localStorage.setItem(PROFILE_PIN_KEY,'),"course home must not write raw global pin storage");
 
 for(let unit=1;unit<=13;unit++){
   const n=String(unit).padStart(2,"0");

@@ -4,6 +4,8 @@
 const THEME_KEY="khaemenes-theme";
 const PIN_KEY="khaemenes-high-pinned-courses-v2";
 const COURSE_ID="pre-algebra";
+const PIN_HELPER_SCRIPT=document.currentScript?.src||"";
+const pinStore=()=>window.KhaemenesHighCoursePins||null;
 const CONTINUE_KEY="khaemenes-grade09-last-open-v1";
 const COURSE_HOME="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/";
 const STUDENT_HOME="/Khaemenes_High.github.io/grades/grade-09/student-profile/";
@@ -40,17 +42,16 @@ function initTheme(){
   },true);
 }
 
-function readPins(){
-  const value=readJSON(PIN_KEY,[]);
-  return Array.isArray(value)?value:[];
-}
+function readPins(){return pinStore()?.readPins()||[]}
 function isPinned(){return readPins().includes(COURSE_ID)}
 function updatePinButton(){
   const button=document.getElementById("pinPreAlgebraClass");
   if(!button)return;
-  const pinned=isPinned();
+  const ready=!!pinStore();
+  const pinned=ready&&isPinned();
+  button.disabled=!ready;
   button.setAttribute("aria-pressed",String(pinned));
-  button.textContent=pinned?"★ Class Pinned":"☆ Pin Class";
+  button.textContent=!ready?"Pins unavailable":pinned?"★ Class Pinned":"☆ Pin Class";
   button.title=pinned?"Remove Pre-Algebra from the student profile":"Pin Pre-Algebra to the student profile";
   const status=document.getElementById("preAlgebraNavStatus");
   if(status&&pinned&&status.dataset.initialized!=="true"){
@@ -59,10 +60,12 @@ function updatePinButton(){
   }
 }
 function togglePin(){
+  const store=pinStore();
+  if(!store)return;
   const pins=readPins();
   const wasPinned=pins.includes(COURSE_ID);
   const next=wasPinned?pins.filter(id=>id!==COURSE_ID):[COURSE_ID,...pins.filter(id=>id!==COURSE_ID)];
-  if(!writeJSON(PIN_KEY,next)){
+  if(!store.writePins(next)){
     const status=document.getElementById("preAlgebraNavStatus");
     if(status)status.textContent="This browser could not save the profile pin.";
     return;
@@ -73,6 +76,16 @@ function togglePin(){
     status.dataset.initialized="true";
     status.textContent=wasPinned?"Pre-Algebra was removed from the student profile.":"Pre-Algebra was pinned. It will appear on the student dashboard with a Continue button.";
   }
+}
+
+function loadPinStore(){
+  if(pinStore())return;
+  if(!PIN_HELPER_SCRIPT){updatePinButton();return}
+  const script=document.createElement("script");
+  script.src=new URL("../../../shared/high-school-course-pins.js",PIN_HELPER_SCRIPT).href;
+  script.onload=()=>{updatePinButton();};
+  script.onerror=()=>{const status=document.getElementById("preAlgebraNavStatus");if(status)status.textContent="Course pins are temporarily unavailable; lesson progress is not affected.";updatePinButton()};
+  document.head.appendChild(script);
 }
 
 function mentorURL(){
@@ -166,12 +179,15 @@ function addStyles(){
 function init(){
   addStyles();
   ensureHeaderControls();
+  loadPinStore();
   if(document.readyState==="complete")setTimeout(recordContinue,0);
   else window.addEventListener("load",recordContinue,{once:true});
   window.addEventListener("storage",event=>{
-    if(event.key===PIN_KEY)updatePinButton();
+    if(event.key===pinStore()?.scopedKey(PIN_KEY)||event.key==="khaemenes_active_learner_v1")updatePinButton();
     if(event.key===THEME_KEY)setTheme(event.newValue||"dark");
   });
+  window.addEventListener("focus",updatePinButton);
+  window.addEventListener("pageshow",updatePinButton);
 }
 
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
