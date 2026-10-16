@@ -8,6 +8,7 @@ on:
       - 'courses/language-arts/english-11/**'
       - 'courses/language-arts/english-12/**'
       - 'tools/validate-ela-curriculum-quality.mjs'
+      - 'tools/sync-upper-english-quiz-banks.mjs'
       - '.github/workflows/ela-curriculum-quality.yml'
   pull_request:
     paths:
@@ -16,6 +17,7 @@ on:
       - 'courses/language-arts/english-11/**'
       - 'courses/language-arts/english-12/**'
       - 'tools/validate-ela-curriculum-quality.mjs'
+      - 'tools/sync-upper-english-quiz-banks.mjs'
       - '.github/workflows/ela-curriculum-quality.yml'
 permissions:
   contents: read
@@ -25,4 +27,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Verify four English curricula and versioned weekly quizzes
-        run: node tools/validate-ela-curriculum-quality.mjs
+        run: |
+          node tools/sync-upper-english-quiz-banks.mjs --check
+          node tools/validate-ela-curriculum-quality.mjs

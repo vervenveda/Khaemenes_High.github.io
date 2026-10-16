@@ -1,4 +1,4 @@
-const CACHE_NAME = "khae-english-10-ela-curriculum-20261016-v3-quiz72";
+const CACHE_NAME = "khae-english-10-ela-curriculum-20261016-v3-quiz72-25f8167e";
 const PRECACHE = ["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js","../../shared/upper-english-records.js",
   "./404.html",
   "./assessments/diagnostic/index.html",
