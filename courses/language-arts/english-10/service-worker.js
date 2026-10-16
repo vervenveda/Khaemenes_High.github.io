@@ -1,4 +1,4 @@
-const CACHE_NAME = "khae-english10-v2-repair-20261012";
+const CACHE_NAME = "khae-english10-v3-studios-20261016";
 const PRECACHE = ["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js","../../shared/upper-english-records.js",
   "./404.html",
   "./assessments/diagnostic/index.html",
@@ -19,6 +19,8 @@ const PRECACHE = ["../../shared/course-entry-contract.js","../../shared/learner-
   "./assessments/unit-12/index.html",
   "./assets/course.css",
   "./assets/course.js",
+  "./assets/week01-studios.js",
+  "./assets/week01-studios.css",
   "./assets/curriculum-data.js",
   "./curriculum.json",
   "./grades/grade-10/index.html",
@@ -54,6 +56,11 @@ const PRECACHE = ["../../shared/course-entry-contract.js","../../shared/learner-
   "./units/unit-11/index.html",
   "./units/unit-12/index.html",
   "./weeks/week-01/index.html",
+  "./weeks/week-01/monday/index.html",
+  "./weeks/week-01/tuesday/index.html",
+  "./weeks/week-01/wednesday/index.html",
+  "./weeks/week-01/thursday/index.html",
+  "./weeks/week-01/friday/index.html",
   "./weeks/week-02/index.html",
   "./weeks/week-03/index.html",
   "./weeks/week-04/index.html",

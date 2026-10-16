@@ -15,6 +15,12 @@ assert.match(hub,/id="ela10-w01-week-next" hidden/);
 assert.match(core,/KhaemenesEnglish10Week01Bridge/);
 assert.match(core,/button\.dataset\.english10StudioManaged === "week01"/);
 assert.match(core,/box\.dataset\.english10StudioManaged === "week01"/);
+const sw=fs.readFileSync(path.join(base,"service-worker.js"),"utf8");
+new vm.Script(sw);
+assert.match(sw,/khae-english10-v3-studios-20261016/);
+assert.match(sw,/\.\/assets\/week01-studios\.js/);
+assert.match(sw,/\.\/assets\/week01-studios\.css/);
+
 const days=["Monday","Tuesday","Wednesday","Thursday","Friday"];
 for(const [i,d] of days.entries()){
  const folder=path.join(base,"weeks/week-01",d.toLowerCase()),html=fs.readFileSync(path.join(folder,"index.html"),"utf8");
@@ -28,6 +34,8 @@ for(const [i,d] of days.entries()){
  assert.match(html,/assets\/week01-studios\.js/);
  assert.match(html,/assets\/course\.js/);
  assert.match(hub,new RegExp('href="'+d.toLowerCase()+'/index.html"'));
+ assert.ok(sw.includes('./weeks/week-01/'+d.toLowerCase()+'/index.html'),"Offline pre-cache missing "+d);
+
  const match=html.match(/<script type="application\/json" id="ela10-w01-bank">([\s\S]*?)<\/script>/);
  assert.ok(match,"missing practice bank "+d);
  const bank=JSON.parse(match[1]);assert.equal(bank.length,5);
