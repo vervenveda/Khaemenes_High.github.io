@@ -51,12 +51,12 @@ select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 <main id="main">
 <section class="panel" aria-label="Vocabulary study controls">
 <div class="controls">
-<div><label for="course">Course</label><select id="course"><option value="algebra-2">Algebra II</option><option value="geometry">Geometry</option></select></div>
+<div><label for="course">Course</label><select id="course"><option value="pre-algebra">Pre-Algebra</option><option value="algebra-1">Algebra I</option><option value="geometry">Geometry</option><option value="algebra-2">Algebra II</option></select></div>
 <div><label for="unit">Unit</label><select id="unit"></select></div>
 <div><label for="language">Vocabulary language</label><select id="language"><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="ar">العربية</option><option value="pt">Português</option></select></div>
 <div><label for="search">Find a term</label><input id="search" type="search" autocomplete="off" placeholder="Search the unit"></div>
 </div>
-<p class="meta">Algebra II offers translated terms with English mathematical explanations. Geometry definitions are currently supplied in English. Translations support learning but do not replace the teacher's precise mathematical notation.</p>
+<p class="meta">Pre-Algebra and Algebra II provide multilingual terms. Algebra I provides multilingual terms where available; all of its entries have English explanations. Geometry currently offers English definitions. Translations support learning and do not replace precise mathematical notation.</p>
 </section>
 <h2 id="unitTitle">Unit vocabulary</h2>
 <p id="status" class="status" role="status" aria-live="polite">Loading local vocabulary…</p>
@@ -67,7 +67,8 @@ select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 (()=>{
 "use strict";
 const byId=id=>document.getElementById(id);
-const validCourses=new Set(["algebra-2","geometry"]);
+const courseNames=Object.freeze({"pre-algebra":"Pre-Algebra","algebra-1":"Algebra I","geometry":"Geometry","algebra-2":"Algebra II"});
+const validCourses=new Set(Object.keys(courseNames));
 const validLanguages=new Set(["en","es","fr","ar","pt"]);
 const params=new URLSearchParams(location.search);
 const course=byId("course"),unit=byId("unit"),lang=byId("language"),query=byId("search");
@@ -99,8 +100,15 @@ function render(){
  list.replaceChildren();
  if(!current)return;
  const source=Array.isArray(current.terms)?current.terms:[];
- const records=source.map(item=>typeof item==="string"?
-   {en:item,definition:current.definitions?.[item]||""}:item);
+ const records=source.map(item=>{
+   if(typeof item==="string"){
+     return {en:item,definition:current.definitions?.[item]||"",
+       ...(current.translations?.[item]||{})};
+   }
+   const en=String(item.en||item.term||"");
+   return {...item,en,definition:item.definition||current.definitions?.[en]||"",
+     ...(current.translations?.[en]||{})};
+ }).filter(item=>item.en);
  const q=query.value.trim().toLocaleLowerCase();
  const matched=records.filter(item=>([item.en,item[lang.value],item.definition].join(" ").toLocaleLowerCase().includes(q)));
  const frag=document.createDocumentFragment();
@@ -116,7 +124,11 @@ function render(){
    frag.append(card);
  }
  list.append(frag);
- status.textContent=matched.length+" of "+records.length+" terms displayed"+(q?" for this search":"")+".";
+ const translated=lang.value==="en"?records.length:records.filter(item=>
+   typeof item[lang.value]==="string"&&item[lang.value].trim().length>0).length;
+ status.textContent=matched.length+" of "+records.length+" terms displayed"+(q?" for this search":"")+"."
+   +(lang.value!=="en"?" "+translated+" of "+records.length+
+     " have translations in the selected language; untranslated terms remain in English.":"");
 }
 async function load(){
  const n=++loadCount;current=null;list.replaceChildren();
@@ -129,7 +141,7 @@ async function load(){
   if(n!==loadCount)return;
   if(!Array.isArray(data.terms))throw new Error("Vocabulary data has an invalid format.");
   current=data;
-  title.textContent=(course.value==="geometry"?"Geometry": "Algebra II")+" · "+(data.title||"Unit "+unit.value);
+  title.textContent=courseNames[course.value]+" · "+(data.title||"Unit "+unit.value);
   render();
  }catch(error){
   if(n!==loadCount)return;

@@ -3,19 +3,32 @@ on:
   push:
     branches: [main]
     paths:
-      - 'courses/mathematics/algebra-2/units/**/vocabulary.json'
+      - 'courses/mathematics/pre-algebra/units/**/vocabulary.json'
+      - 'courses/mathematics/algebra-1/units/**/vocabulary.json'
       - 'courses/mathematics/geometry/units/**/vocabulary.json'
-      - 'courses/mathematics/algebra-2/index.html'
+      - 'courses/mathematics/algebra-2/units/**/vocabulary.json'
+      - 'courses/mathematics/pre-algebra/index.html'
+      - 'courses/mathematics/algebra-1/index.html'
       - 'courses/mathematics/geometry/index.html'
+      - 'courses/mathematics/algebra-2/index.html'
       - 'courses/mathematics/tools/vocabulary-studio.html'
       - 'tools/validate-math-vocabulary.mjs'
       - '.github/workflows/math-vocabulary-validation.yml'
   pull_request:
     paths:
-      - 'courses/mathematics/algebra-2/units/**/vocabulary.json'
+      - 'courses/mathematics/pre-algebra/units/**/vocabulary.json'
+      - 'courses/mathematics/algebra-1/units/**/vocabulary.json'
       - 'courses/mathematics/geometry/units/**/vocabulary.json'
+      - 'courses/mathematics/algebra-2/units/**/vocabulary.json'
+      - 'courses/mathematics/pre-algebra/index.html'
+      - 'courses/mathematics/algebra-1/index.html'
+      - 'courses/mathematics/geometry/index.html'
+      - 'courses/mathematics/algebra-2/index.html'
       - 'courses/mathematics/tools/vocabulary-studio.html'
       - 'tools/validate-math-vocabulary.mjs'
+      - '.github/workflows/math-vocabulary-validation.yml'
+permissions:
+  contents: read
 jobs:
   validate:
     runs-on: ubuntu-latest

@@ -37,12 +37,46 @@ assert.equal(inline.length,1);
 new vm.Script(inline[0][1]);
 assert(studio.includes("credentials:\"same-origin\""));
 assert(!/<script[^>]*src=/i.test(studio));
-for(const course of ["algebra-2","geometry"]){
+for(const course of ["pre-algebra","algebra-1","geometry","algebra-2"]){
  const home=source("courses/mathematics/"+course+"/index.html");
  assert(home.includes("../tools/vocabulary-studio.html?course="+course),"course homepage must link study page");
 }
+
+// Pre-Algebra and Algebra I retain their canonical unit vocabulary shapes.
+let preTotal=0,algOneTotal=0,withTranslation=0;
+for(let u=1;u<=13;u++){
+ const n=String(u).padStart(2,"0");
+ const pre=JSON.parse(source("courses/mathematics/pre-algebra/units/unit-"+n+"/vocabulary.json"));
+ const alg=JSON.parse(source("courses/mathematics/algebra-1/units/unit-"+n+"/vocabulary.json"));
+ assert(Array.isArray(pre.terms)&&pre.terms.length>0,"Pre-Algebra Unit "+n);
+ assert(Array.isArray(alg.terms)&&alg.terms.length>0,"Algebra I Unit "+n);
+ for(const item of pre.terms){
+  assert(typeof item.en==="string"&&item.en.trim(),"Pre-Algebra term in "+n);
+  assert(typeof item.definition==="string"&&item.definition.trim().length>=7,"Pre-Algebra definition in "+n);
+  for(const lang of ["es","fr","ar","pt"]){
+   assert(typeof item[lang]==="string"&&item[lang].trim(),"Pre-Algebra missing "+lang+" in "+n);
+  }
+ }
+ for(const item of alg.terms){
+  const term=typeof item==="string"?item:item.en||item.term;
+  const definition=typeof item==="string"?alg.definitions?.[item]:item.definition||alg.definitions?.[term];
+  assert(typeof term==="string"&&term.trim(),"Algebra I term in "+n);
+  assert(typeof definition==="string"&&definition.trim().length>=20,"Algebra I definition for "+term);
+  const translated=typeof item==="string"?alg.translations?.[term]:alg.translations?.[term]||item;
+  if(["es","fr","ar","pt"].every(l=>typeof translated?.[l]==="string"&&translated[l].trim()))withTranslation++;
+ }
+ preTotal+=pre.terms.length;algOneTotal+=alg.terms.length;
+}
+assert.equal(preTotal,771,"Pre-Algebra term inventory");
+assert.equal(algOneTotal,138,"Algebra I term inventory");
+assert(withTranslation>=80,"Algebra I inherited and original multilingual entries");
+assert(studio.includes('value="pre-algebra"')&&studio.includes('value="algebra-1"'),"Both courses in selector");
+assert(studio.includes('item.en||item.term'),"Studio accepts Algebra I term objects");
+assert(studio.includes('current.translations?.[item]'),"Studio accepts inherited translations");
+assert(studio.includes('current.definitions?.[item]'),"Studio accepts string-term definitions");
+
 const log=JSON.parse(source("courses/mathematics/algebra-2/units/unit-07/vocabulary.json"));
 assert(log.terms.some(t=>t.en==="logarithmic domain"&&t.definition.includes("strictly positive")));
 const prob=JSON.parse(source("courses/mathematics/algebra-2/units/unit-12/vocabulary.json"));
 assert(prob.terms.some(t=>t.en==="independence"&&t.definition.includes("P(A and B)")));
-console.log("PASS: "+termsA+" Algebra II translated definitions; "+termsG+" Geometry definitions; course links and studio runtime.");
+console.log("PASS: "+preTotal+" Pre-Algebra, "+algOneTotal+" Algebra I ("+withTranslation+" translated), "+termsG+" Geometry and "+termsA+" Algebra II glossary entries; course links and Studio runtime.");
