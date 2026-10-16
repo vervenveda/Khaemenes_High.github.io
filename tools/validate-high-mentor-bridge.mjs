@@ -6,6 +6,7 @@ const surface=fs.readFileSync("mentor/index.html","utf8");
 const voice=fs.readFileSync("assets/khaemenes-archaemenes-voice.js","utf8");
 const mentorManifest=JSON.parse(fs.readFileSync("mentor-manifest.json","utf8"));
 const authority=JSON.parse(fs.readFileSync("academy-authority.json","utf8"));
+const mentorContract=JSON.parse(fs.readFileSync("mentor-contract.json","utf8"));
 const neutralFiles=[
   "stos/mentor/index.html",
   "stos/khaemenes/student/index.html",
@@ -36,6 +37,22 @@ assert.ok(surface.includes("reveal locked quiz/test items"),"mentor surface must
 assert.ok(surface.includes("allowLockedAssessmentDisclosure:false"),"transport context must explicitly forbid locked assessment disclosure");
 assert.ok(surface.includes("allowProgressionBypass:false"),"transport context must explicitly forbid progression bypass");
 assert.ok(surface.includes("/stos/khaemenes/assets/vnv-beta-link.js"),"mentor surface must retain canonical Beta doorway");
+
+assert.equal(mentorContract.version,3,"mentor contract must use hardened v3 boundaries");
+assert.equal(mentorContract.sessionBoundary?.bindLearnerAtPageOpen,true,"mentor contract must bind the learner at page open");
+assert.equal(mentorContract.sessionBoundary?.crossLearnerContinuation,false,"mentor contract must forbid cross-learner continuation");
+assert.equal(mentorContract.sessionBoundary?.guestPreviewTransport,"local-only","guest mentor sessions must remain local-only");
+assert.equal(mentorContract.transportBoundary?.timeoutMilliseconds,8000,"mentor transport must have a bounded timeout");
+assert.deepEqual(mentorContract.transportBoundary?.localOnlyIntents,["assessment","protected"],"assessment and protected intents must stay local");
+assert.equal(mentorContract.transportBoundary?.allowGradeChange,false,"mentor transport must not change grades");
+assert.equal(mentorContract.transportBoundary?.allowMasteryAward,false,"mentor transport must not award mastery");
+assert.ok(surface.includes("pageLearnerId")&&surface.includes("learnerSessionCurrent")&&surface.includes("blockLearnerSession"),"mentor surface must bind and freeze learner identity");
+assert.ok(surface.includes("khaemenes:learner-changed")&&surface.includes('window.addEventListener("storage"'),"mentor surface must react to learner changes");
+assert.ok(surface.includes('transportableIntents=new Set(["concept","mistake","study","plan"])'),"mentor transport must use an explicit tutoring-intent allowlist");
+assert.ok(surface.includes("Assessment/protected requests and guest previews stay local-only"),"mentor must fail closed before transport for protected scopes");
+assert.ok(surface.includes("withMentorTimeout")&&surface.includes("mentor-transport-timeout"),"mentor transport must be time bounded");
+assert.ok(surface.includes("allowGradeChange:false")&&surface.includes("allowMasteryAward:false")&&surface.includes("allowPlacementChange:false"),"mentor transport context must deny grade/mastery/placement mutation");
+assert.ok(surface.includes("requestedSource.startsWith")&&surface.includes("/Khaemenes_High.github.io/")&&surface.includes("/stos/khaemenes/high/"),"mentor source context must be restricted to trusted High School prefixes");
 
 assert.ok(surface.includes("../assets/khaemenes-archaemenes-voice.js"),"mentor surface must load the Archaemenes voice bridge");
 assert.ok(surface.includes('id="voicePreview"')&&surface.includes('id="voiceMode"')&&surface.includes('id="voiceAuto"'),"mentor surface must expose optional voice controls");
