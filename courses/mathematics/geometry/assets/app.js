@@ -243,9 +243,49 @@ function nextLearningAction(){
  }
  return {kind:"complete",label:"Course evidence complete",title:"Completion Record",description:"Review the capstone, portfolio, final evidence, and completion record with the evaluator.",href:"records/course-completion-certificate.html",action:"Open Completion Record"};
 }
+function publishGeometryContinuation(action,canonicalWeeks){
+ const C=window.KhaemenesLearningContinuation,learner=window.KhaemenesLearnerScope?.profile?.();
+ if(!C?.publish||!learner?.learnerId||!action)return false;
+ let status="continue",best=null,nextLabel=action.action||"Continue Learning";
+ if(action.kind==="diagnostic")status="assessment";
+ if(["week","unit","midterm","final"].includes(action.kind))status="assessment";
+ if(action.kind==="complete")status="complete";
+ if(action.kind==="lesson"){
+   const id=String(action.href||"").split("/").pop()?.replace(/\.html$/,"");
+   const rec=id?strictRead(STRICT_LESSONS,{})[id]:null;
+   best=Number(rec?.bestScore??rec?.score);
+   if(Number.isFinite(best)&&best>0&&best<STRICT_MASTERY){status="corrections";nextLabel="Review & Retry"}
+ }
+ if(action.kind==="week"){
+   const m=String(action.href||"").match(/[?&]week=(\d+)/),n=m?Number(m[1]):null;
+   const rec=n?strictRead(STRICT_WEEKS,{weeks:{}})?.weeks?.[n]:null;
+   best=Number(rec?.best);
+   if(Number.isFinite(best)&&best>0&&best<STRICT_MASTERY){status="corrections";nextLabel="Review Weekly Mastery"}
+ }
+ if(action.kind==="midterm"){
+   const rec=strictRead(STRICT_ASSESS,{}).midterm;best=Number(rec?.bestScore);
+   if(Number.isFinite(best)&&best>0&&best<STRICT_MASTERY){status="corrections";nextLabel="Review Midterm"}
+ }
+ if(action.kind==="final"){
+   const rec=strictRead(STRICT_ASSESS,{}).final;best=Number(rec?.bestScore);
+   if(Number.isFinite(best)&&best>0&&best<STRICT_MASTERY){status="corrections";nextLabel="Review Final"}
+ }
+ try{
+   C.publish({
+     learnerId:learner.learnerId,courseId:"geometry",school:"Khaemenes High School",stage:"high",grade:"High School",
+     subject:"Mathematics",courseTitle:"Geometry & Spatial Design",status,nextLabel,nextTitle:action.title,nextHref:action.href,
+     summary:action.description,progress:{completed:canonicalWeeks,total:36,percent:Math.round(canonicalWeeks/36*100)},
+     mastery:{best:Number.isFinite(best)?best:null,threshold:STRICT_MASTERY,mastered:status==="complete"},
+     family:{needsAction:false,label:"",summary:"",href:""},
+     source:"geometry-strict-progression"
+   });
+   return true;
+ }catch{return false}
+}
 function renderDashboard(){
  const s=activeStudent(),done=completeWeeks(),grade=courseGrade(),action=nextLearningAction();
  const canonicalWeeks=Array.from({length:36},(_,i)=>i+1).filter(strictWeekMastered).length;
+ publishGeometryContinuation(action,canonicalWeeks);
  $("#view-dashboard").innerHTML=`<div class="wrap">
  <div class="section-head"><p class="eyebrow">Your Geometry workspace</p><h2>${esc(s.name)} · Geometry</h2>
  <p>One clear path through lessons, mastery, practice, tools, portfolio evidence, and assessments.</p></div>
