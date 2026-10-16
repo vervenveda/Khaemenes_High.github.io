@@ -10,6 +10,8 @@ const assess=fs.readFileSync(path.join(base,"assets/week11-assessment.js"),"utf8
 const course=fs.readFileSync(path.join(base,"assets/course.js"),"utf8");
 new vm.Script(daily);new vm.Script(assess);new vm.Script(course);
 assert.match(hub,/data-english9-week11-index/);
+assert.doesNotMatch(hub,/Jennifer Pearl and Jennifer Kay Pearl/);
+assert.match(hub,/Jennifer Kay Pearl · 2026/);
 assert.match(hub,/data-progress-key="week-11" data-managed-progress="week11"/);
 assert.equal((hub.match(/data-week11-next-link hidden/g)||[]).length,1);
 assert.match(course,/field\.dataset\.managedSave==="week11"/);
