@@ -3,6 +3,7 @@ import fs from "node:fs";
 import vm from "node:vm";
 import path from "node:path";
 
+const pre="courses/mathematics/pre-algebra/";
 const source=fs.readFileSync("courses/mathematics/pre-algebra/service-worker.js","utf8");
 new vm.Script(source);
 assert(!/localStorage|sessionStorage/.test(source),"Offline worker must never manipulate student records");
