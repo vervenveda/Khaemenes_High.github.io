@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "course": "english-11",
+  "description": "Canonical passage-based questions for quiz positions 1 and 2, Weeks 01–03; no learner records modified.",
+  "weeks": [
+    {
+      "week": 1,
+      "quiz": [
+        {
+          "question": "In a fictional account, a mayor calls a new school proof of 'unanimous civic progress.' A petition written before the opening asks for lower fees and safer roads. Which conclusion best evaluates both sources?",
+          "choices": [
+            "The petition proves that no one welcomed the school.",
+            "The speech confirms that every family could attend.",
+            "The school opening and unresolved access barriers could both be true.",
+            "The speech proves its author deliberately hid the petition."
+          ],
+          "answer": 2,
+          "explanation": "The documents may describe a real achievement and also reveal unmet access needs; neither excerpt establishes the mayor's intent.",
+          "skill": "Rhetorical purpose and evidence"
+        },
+        {
+          "question": "An archive displays a September letter next to a note signed by an editor twenty years later. Which attribution is best supported?",
+          "choices": [
+            "Describe the editor's note as a later interpretation distinct from the letter.",
+            "Quote the editor's note as a statement by the original letter writer.",
+            "Treat both passages as one eyewitness account of September.",
+            "Ignore the date difference because the passages share a page."
+          ],
+          "answer": 0,
+          "explanation": "The letter and later editor's note have different authors and dates, so their statements must be attributed separately.",
+          "skill": "Archival provenance"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "quiz": [
+        {
+          "question": "Two witnesses describe a meeting: one recalls applause, while another recalls silence after a challenging question. What is the strongest annotation?",
+          "choices": [
+            "The witnesses are both unreliable and should be excluded.",
+            "The audience certainly fell silent before the applause.",
+            "The difference proves that one witness intentionally lied.",
+            "The accounts may refer to different moments; a recording could clarify sequence."
+          ],
+          "answer": 3,
+          "explanation": "Without a shared timeline, the responses could have occurred at different moments, so independent evidence is needed to determine sequence.",
+          "skill": "Corroborating testimony"
+        },
+        {
+          "question": "A fictional source states: 'The committee delayed publication because supporting evidence was incomplete.' Which paraphrase conveys the meaning accurately?",
+          "choices": [
+            "The committee published promptly despite incomplete evidence.",
+            "Missing supporting information led the committee to postpone release.",
+            "The committee concealed complete evidence to delay publication.",
+            "A shortage of members prevented the scheduled release."
+          ],
+          "answer": 1,
+          "explanation": "The committee postponed publication because of incomplete evidence; the other options reverse, invent, or alter the stated cause.",
+          "skill": "Accurate paraphrase"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "quiz": [
+        {
+          "question": "In 'The report qualified its conclusion because records were missing,' what does 'qualified' mean?",
+          "choices": [
+            "Missing records automatically invalidated every finding.",
+            "The report's author had gained a professional license.",
+            "The conclusion was limited by the evidence available.",
+            "The report established which archives were accredited."
+          ],
+          "answer": 2,
+          "explanation": "Here qualified means narrowed or made conditional; the missing records limit the supported scope of the conclusion.",
+          "skill": "Academic diction"
+        },
+        {
+          "question": "A draft says, 'The witness described an empty square the footage showed a crowd.' Which revision correctly separates independent clauses and preserves the contrast?",
+          "choices": [
+            "The witness described an empty square, the footage showed a crowd.",
+            "The witness described an empty square because the footage showed a crowd.",
+            "The witness described an empty square although, the footage showed a crowd.",
+            "The witness described an empty square; the footage showed a crowd."
+          ],
+          "answer": 3,
+          "explanation": "The semicolon separates independent clauses without a comma splice or invented causal relationship.",
+          "skill": "Clause boundaries"
+        }
+      ]
+    }
+  ]
+}
