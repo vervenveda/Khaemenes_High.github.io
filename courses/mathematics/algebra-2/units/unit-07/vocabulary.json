@@ -3,148 +3,149 @@
   "title": "Logarithmic Functions & Equations",
   "terms": [
     {
-      "en": "logarithms",
-      "es": "logarithms",
-      "fr": "logarithms",
-      "ar": "logarithms",
-      "pt": "logarithms",
-      "definition": "Core term used in Logarithms as Inverses of Exponentials."
+      "en": "logarithm",
+      "es": "logaritmo",
+      "fr": "logarithme",
+      "ar": "لوغاريتم",
+      "pt": "logaritmo",
+      "definition": "The exponent y satisfying b^y=x for base b>0 and b≠1 and argument x>0."
     },
     {
-      "en": "inverses",
-      "es": "inverses",
-      "fr": "inverses",
-      "ar": "inverses",
-      "pt": "inverses",
-      "definition": "Core term used in Logarithms as Inverses of Exponentials."
+      "en": "inverse of exponential",
+      "es": "inversa de la exponencial",
+      "fr": "réciproque de l'exponentielle",
+      "ar": "معكوس الدالة الأسية",
+      "pt": "inversa da exponencial",
+      "definition": "The logarithm reverses exponentiation with the same valid base."
     },
     {
-      "en": "exponentials",
-      "es": "exponentials",
-      "fr": "exponentials",
-      "ar": "exponentials",
-      "pt": "exponentials",
-      "definition": "Core term used in Logarithms as Inverses of Exponentials."
+      "en": "exponential form",
+      "es": "forma exponencial",
+      "fr": "forme exponentielle",
+      "ar": "الصيغة الأسية",
+      "pt": "forma exponencial",
+      "definition": "The equality b^y=x equivalent to log_b(x)=y."
     },
     {
-      "en": "common",
-      "es": "common",
-      "fr": "common",
-      "ar": "common",
-      "pt": "common",
-      "definition": "Core term used in Common, Natural & Other Logarithmic Bases."
+      "en": "common logarithm",
+      "es": "logaritmo decimal",
+      "fr": "logarithme décimal",
+      "ar": "اللوغاريتم العشري",
+      "pt": "logaritmo decimal",
+      "definition": "A logarithm with base 10."
     },
     {
-      "en": "natural",
-      "es": "natural",
-      "fr": "natural",
-      "ar": "natural",
-      "pt": "natural",
-      "definition": "Core term used in Common, Natural & Other Logarithmic Bases."
+      "en": "natural logarithm",
+      "es": "logaritmo natural",
+      "fr": "logarithme népérien",
+      "ar": "اللوغاريتم الطبيعي",
+      "pt": "logaritmo natural",
+      "definition": "A logarithm with base e, written ln(x)."
     },
     {
-      "en": "other",
-      "es": "other",
-      "fr": "other",
-      "ar": "other",
-      "pt": "other",
-      "definition": "Core term used in Common, Natural & Other Logarithmic Bases."
+      "en": "logarithmic base",
+      "es": "base logarítmica",
+      "fr": "base du logarithme",
+      "ar": "أساس اللوغاريتم",
+      "pt": "base logarítmica",
+      "definition": "The positive number b other than 1 used in log_b(x)."
     },
     {
-      "en": "product",
-      "es": "product",
-      "fr": "product",
-      "ar": "product",
-      "pt": "product",
-      "definition": "Core term used in Product, Quotient & Power Properties."
+      "en": "product rule for logs",
+      "es": "regla del producto de logaritmos",
+      "fr": "règle du produit des logarithmes",
+      "ar": "قاعدة ضرب اللوغاريتمات",
+      "pt": "regra do produto dos logaritmos",
+      "definition": "For positive a and c, log_b(ac)=log_b(a)+log_b(c)."
     },
     {
-      "en": "quotient",
-      "es": "quotient",
-      "fr": "quotient",
-      "ar": "quotient",
-      "pt": "quotient",
-      "definition": "Core term used in Product, Quotient & Power Properties."
+      "en": "quotient rule for logs",
+      "es": "regla del cociente de logaritmos",
+      "fr": "règle du quotient des logarithmes",
+      "ar": "قاعدة قسمة اللوغاريتمات",
+      "pt": "regra do quociente dos logaritmos",
+      "definition": "For positive a and c, log_b(a/c)=log_b(a)-log_b(c)."
     },
     {
-      "en": "power",
-      "es": "power",
-      "fr": "power",
-      "ar": "power",
-      "pt": "power",
-      "definition": "Core term used in Product, Quotient & Power Properties."
+      "en": "power rule for logs",
+      "es": "regla de la potencia logarítmica",
+      "fr": "règle de puissance des logarithmes",
+      "ar": "قاعدة قوة اللوغاريتم",
+      "pt": "regra da potência dos logaritmos",
+      "definition": "For a>0, log_b(a^k)=k log_b(a)."
     },
     {
-      "en": "solving",
-      "es": "solving",
-      "fr": "solving",
-      "ar": "solving",
-      "pt": "solving",
-      "definition": "Core term used in Solving Exponential Equations with Logarithms."
+      "en": "logarithmic solution",
+      "es": "solución logarítmica",
+      "fr": "solution logarithmique",
+      "ar": "حل لوغاريتمي",
+      "pt": "solução logarítmica",
+      "definition": "Solving an exponential equation by applying a logarithm."
     },
     {
-      "en": "exponential",
-      "es": "exponential",
-      "fr": "exponential",
-      "ar": "exponential",
-      "pt": "exponential",
-      "definition": "Core term used in Solving Exponential Equations with Logarithms."
+      "en": "exponential equation",
+      "es": "ecuación exponencial",
+      "fr": "équation exponentielle",
+      "ar": "معادلة أسية",
+      "pt": "equação exponencial",
+      "definition": "An equation with a variable in an exponent."
     },
     {
-      "en": "equations",
-      "es": "equations",
-      "fr": "equations",
-      "ar": "equations",
-      "pt": "equations",
-      "definition": "Core term used in Solving Exponential Equations with Logarithms."
+      "en": "logarithmic equation",
+      "es": "ecuación logarítmica",
+      "fr": "équation logarithmique",
+      "ar": "معادلة لوغاريتمية",
+      "pt": "equação logarítmica",
+      "definition": "An equation containing one or more logarithmic expressions."
     },
     {
-      "en": "logarithmic",
-      "es": "logarithmic",
-      "fr": "logarithmic",
-      "ar": "logarithmic",
-      "pt": "logarithmic",
-      "definition": "Core term used in Solving Logarithmic Equations & Domain Checks."
+      "en": "logarithmic domain",
+      "es": "dominio logarítmico",
+      "fr": "domaine logarithmique",
+      "ar": "مجال اللوغاريتم",
+      "pt": "domínio logarítmico",
+      "definition": "Real logarithm arguments must be strictly positive."
     },
     {
-      "en": "change",
-      "es": "change",
-      "fr": "change",
-      "ar": "change",
-      "pt": "change",
-      "definition": "Core term used in Change of Base, Technology & Estimation."
+      "en": "change of base",
+      "es": "cambio de base",
+      "fr": "changement de base",
+      "ar": "تغيير الأساس",
+      "pt": "mudança de base",
+      "definition": "The identity log_b(x)=ln(x)/ln(b) for valid b and x."
     },
     {
-      "en": "base",
-      "es": "base",
-      "fr": "base",
-      "ar": "base",
-      "pt": "base",
-      "definition": "Core term used in Change of Base, Technology & Estimation."
+      "en": "base ten",
+      "es": "base diez",
+      "fr": "base dix",
+      "ar": "الأساس عشرة",
+      "pt": "base dez",
+      "definition": "The base of common logarithms and the decimal number system."
     },
     {
-      "en": "technology",
-      "es": "technology",
-      "fr": "technology",
-      "ar": "technology",
-      "pt": "technology",
-      "definition": "Core term used in Change of Base, Technology & Estimation."
+      "en": "calculator logarithm",
+      "es": "logaritmo en calculadora",
+      "fr": "logarithme à la calculatrice",
+      "ar": "حساب اللوغاريتم آلياً",
+      "pt": "logaritmo na calculadora",
+      "definition": "Evaluating a logarithm numerically, checking base and argument."
     },
     {
-      "en": "scales",
-      "es": "scales",
-      "fr": "scales",
-      "ar": "scales",
-      "pt": "scales",
-      "definition": "Core term used in Logarithmic Scales, Data & Model Interpretation."
+      "en": "logarithmic scale",
+      "es": "escala logarítmica",
+      "fr": "échelle logarithmique",
+      "ar": "مقياس لوغاريتمي",
+      "pt": "escala logarítmica",
+      "definition": "A scale where equal distances correspond to equal multiplicative ratios."
     },
     {
-      "en": "data",
-      "es": "data",
-      "fr": "data",
-      "ar": "data",
-      "pt": "data",
-      "definition": "Core term used in Logarithmic Scales, Data & Model Interpretation."
+      "en": "logarithmic data interpretation",
+      "es": "interpretación de datos logarítmicos",
+      "fr": "interprétation de données logarithmiques",
+      "ar": "تفسير البيانات اللوغاريتمية",
+      "pt": "interpretação de dados logarítmicos",
+      "definition": "Reasoning about multiplicative differences represented on a log scale."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
