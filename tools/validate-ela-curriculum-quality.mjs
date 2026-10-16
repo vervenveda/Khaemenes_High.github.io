@@ -44,6 +44,7 @@ for(const course of courses){
  const seen=new Set(),counts=[0,0,0,0],themes=new Set();
  const bank=JSON.parse(fs.readFileSync(base+"/assets/quiz-specific-bank.json","utf8"));
  assert.equal(bank.version,"v3-instructional");
+ assert(/ela-curriculum-20261016-v3-quiz72/.test(sw),"Offline cache version not bumped for "+course.slug);
  assert.equal(bank.rows.length,36);
  assert.equal(bank.course,course.slug);
  for(let number=1;number<=36;number++){
@@ -58,7 +59,11 @@ for(const course of courses){
   const index=base+"/weeks/week-"+String(number).padStart(2,"0")+"/index.html";
   const html=fs.readFileSync(index,"utf8");
   assert(/data-quiz-form/.test(html),"Weekly quiz form missing: "+index);
-  assert(/id="quiz-data"/.test(html),"Legacy offline-fallback quiz missing: "+index);
+  assert(/id="quiz-data"/.test(html),"Offline-fallback quiz missing: "+index);
+  const fallbackMatch=html.match(/<script\s+type="application\/json"\s+id="quiz-data">([\s\S]*?)<\/script>/);
+  assert(fallbackMatch,"Cannot read standalone weekly fallback JSON: "+index);
+  const fallback=JSON.parse(fallbackMatch[1]);
+  assert.deepEqual(fallback,item.quiz,"Offline fallback and canonical quiz are not identical: "+index);
   assert(/assets\/curriculum-data\.js/.test(html),"Canonical curriculum not loaded: "+index);
   assert(html.indexOf("assets/curriculum-data.js")<html.indexOf("assets/course.js"),"Canonical data must load before quiz runtime: "+index);
   for(const day of ["monday","tuesday","wednesday","thursday","friday"]){
@@ -95,6 +100,7 @@ for(const course of courses){
  }
  for(const [i,n] of counts.entries())assert(n>=26,course.slug+" answer position "+i+" scarcely used ("+n+")");
  assert.equal(seen.size,72,course.slug+" needs 72 distinct applied reasoning and revision prompts");
+ assert(themes.size>=35,course.slug+" needs substantial variation in what the quizzes assess");
  rotations[course.slug]=counts;
 }
 const english9=JSON.parse(fs.readFileSync("courses/language-arts/english-9/curriculum.json","utf8"));
