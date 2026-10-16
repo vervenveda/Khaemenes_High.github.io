@@ -12,5 +12,19 @@
     "tolerance",
     "SVG",
     "DXF"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "CAD": "Computer-aided design used to construct and revise digital geometric models.",
+    "grid": "A reference network of regularly spaced horizontal and vertical lines.",
+    "snap": "Automatic alignment to a point, line, or grid interval.",
+    "dimension": "A recorded length, angle, or other measured quantity.",
+    "scale": "A ratio linking model size and real size.",
+    "layer": "A controllable grouping of drawing objects.",
+    "object": "A distinct shape or element in a drawing.",
+    "coordinate": "A position specified by values relative to coordinate axes.",
+    "tolerance": "Permitted deviation from a target measurement.",
+    "SVG": "Scalable Vector Graphics, a standard for two-dimensional vector graphics.",
+    "DXF": "Drawing Exchange Format, for sharing CAD drawing information."
+  }
 }

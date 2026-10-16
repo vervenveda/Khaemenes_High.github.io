@@ -10,5 +10,17 @@
     "portfolio",
     "defense",
     "revision"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "design brief": "A description of the problem, user, requirements, and deliverables.",
+    "constraint": "A rule or bound that the design must obey.",
+    "assumption": "A condition accepted for modeling that requires disclosure and checking.",
+    "validation": "Testing whether a result satisfies specified criteria.",
+    "sensitivity": "How a result changes as model inputs change.",
+    "limitation": "A boundary on what available evidence supports.",
+    "portfolio": "An organized collection of work, evidence, and revisions.",
+    "defense": "An evidence-based explanation responding to critique.",
+    "revision": "An improved version guided by testing and feedback."
+  }
 }
