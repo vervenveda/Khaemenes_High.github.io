@@ -20,7 +20,52 @@ if(!unlocked()){lockPage();return}
 let data=parse(KEY,{}),old=data[id]||{},best=Number(old.bestScore??old.score)||0,rec={complete:best>=MASTERY&&(old.mastery===true||old.complete===true),note:String(old.note||""),updated:old.updated||null,bestScore:best,mastery:best>=MASTERY&&(old.mastery===true||old.complete===true),attempts:Array.isArray(old.attempts)?old.attempts:[]};
 const box=document.getElementById("lessonComplete"),note=document.getElementById("lessonNote"),status=document.getElementById("lessonStatus");if(box){box.checked=rec.mastery;box.disabled=true;box.setAttribute("aria-describedby","lessonStatus")}if(note)note.value=rec.note;
 const completion=box?.closest("section")||box?.parentElement?.parentElement;if(completion&&!document.getElementById("lessonMasteryScore")){const gate=document.createElement("div");gate.className="lesson-mastery-gate";gate.innerHTML=`<h3>Lesson mastery gate</h3><p>Score the completed lesson/worksheet evidence from 0–100. A score of ${MASTERY}% or higher is required before progression.</p><label>Evaluator lesson score<input id="lessonMasteryScore" type="number" min="0" max="100" step="1" value="${rec.bestScore||""}" inputmode="numeric"></label><button class="btn primary" id="saveLessonMastery" type="button">Record Mastery Attempt</button><p class="notice">Lower attempts remain in local history for correction and retake. At a week boundary, the weekly 80% gate must also be met before the next lesson opens.</p>`;completion.insertBefore(gate,completion.firstChild)}
-function updateStatus(){if(!status)return;status.textContent=rec.mastery?`Mastery demonstrated · Best ${rec.bestScore}% · progression evidence recorded.`:`Not yet mastered · ${rec.bestScore?`best ${rec.bestScore}% · `:""}${MASTERY}% required.`}
+function nextStepSpec(){
+ const groups=LESSON_GROUPS[unit]||[],weeks=UNIT_WEEKS[unit]||[];
+ const groupIndex=groups.findIndex(g=>g.includes(lesson));
+ const group=groups[groupIndex]||[];
+ const currentWeek=weeks[groupIndex]||null;
+ if(!rec.mastery){
+   return {label:"Review and retry",title:"Master this lesson before moving on",text:`Best score: ${rec.bestScore||0}%. Review the worked reasoning, correct errors, and record ${MASTERY}% mastery before progression.`,href:"#lessonMain",action:"Review Lesson"};
+ }
+ const position=group.indexOf(lesson);
+ if(position>=0&&position<group.length-1){
+   const next=group[position+1];
+   return {label:"Continue learning",title:`Lesson ${String(next).padStart(2,"0")}`,text:"This lesson is mastered. Continue to the next unlocked lesson in the current week.",href:`u${String(unit).padStart(2,"0")}-l${String(next).padStart(2,"0")}.html`,action:"Next Lesson"};
+ }
+ if(currentWeek&&!weekMastered(currentWeek)){
+   return {label:"Weekly mastery required",title:`Week ${currentWeek} Mastery`,text:`The assigned lesson block is complete. Demonstrate ${MASTERY}% weekly mastery before the next lesson block opens.`,href:`../../../assessments/weekly-mastery.html?week=${currentWeek}`,action:"Open Weekly Mastery"};
+ }
+ if(groupIndex>=0&&groupIndex<groups.length-1){
+   const next=groups[groupIndex+1][0];
+   return {label:"Continue learning",title:`Lesson ${String(next).padStart(2,"0")}`,text:"Weekly mastery is recorded. Continue to the next lesson block.",href:`u${String(unit).padStart(2,"0")}-l${String(next).padStart(2,"0")}.html`,action:"Next Lesson"};
+ }
+ if(!unitMastered(unit)){
+   return {label:"Unit mastery required",title:`Unit ${String(unit).padStart(2,"0")} Mastery`,text:"All unit lessons and weekly gates are complete. Demonstrate unit mastery before advancing.",href:"../assessment/mastery-check.html",action:"Open Unit Mastery"};
+ }
+ if(unit===6&&!midtermMastered()){
+   return {label:"Cumulative evidence required",title:"Midterm Examination",text:"Unit 06 is mastered. Complete the Midterm at 80% before Unit 07 opens.",href:"../../../assessments/midterm.html",action:"Open Midterm"};
+ }
+ if(unit<13){
+   const nextUnit=unit+1;
+   return {label:"Continue learning",title:`Unit ${String(nextUnit).padStart(2,"0")} · Lesson 01`,text:"This unit is mastered. Continue to the next unlocked unit.",href:`../../unit-${String(nextUnit).padStart(2,"0")}/lessons/u${String(nextUnit).padStart(2,"0")}-l01.html`,action:"Begin Next Unit"};
+ }
+ if(!finalMastered()){
+   return {label:"Final evidence required",title:"Comprehensive Final Examination",text:"The full lesson sequence is complete. Finish the final examination and corrections.",href:"../../../assessments/final.html",action:"Open Final"};
+ }
+ return {label:"Course evidence complete",title:"Review Completion Record",text:"Final mastery is recorded. Review portfolio, capstone, and completion evidence with the evaluator.",href:"../../../records/course-completion-certificate.html",action:"Completion Record"};
+}
+function renderNextStep(){
+ if(!completion)return;
+ let card=document.getElementById("lessonNextStep");
+ if(!card){card=document.createElement("div");card.id="lessonNextStep";card.className="lesson-next-step";completion.append(card)}
+ const next=nextStepSpec();
+ card.innerHTML=`<p class="next-step-label">${next.label}</p><h3>${next.title}</h3><p>${next.text}</p><div class="actions"><a class="btn primary" href="${next.href}">${next.action} →</a><a class="btn" href="../../../index.html">Course Home</a></div>`;
+}
+function updateStatus(){
+ if(status)status.textContent=rec.mastery?`Mastery demonstrated · Best ${rec.bestScore}% · progression evidence recorded.`:`Not yet mastered · ${rec.bestScore?`best ${rec.bestScore}% · `:""}${MASTERY}% required.`;
+ renderNextStep();
+}
 document.getElementById("saveLessonMastery")?.addEventListener("click",()=>{const score=Number(document.getElementById("lessonMasteryScore")?.value);if(!Number.isFinite(score)||score<0||score>100){alert("Enter a score from 0 to 100.");return}rec.attempts.push({score,mastery_threshold:MASTERY,mastery_met:score>=MASTERY,recorded_at:new Date().toISOString(),classification:"local-evaluator-score"});rec.bestScore=Math.max(rec.bestScore||0,score);rec.mastery=rec.bestScore>=MASTERY;rec.complete=rec.mastery;rec.updated=new Date().toISOString();data[id]=rec;save(data);if(box)box.checked=rec.mastery;updateStatus();alert(rec.mastery?"Lesson mastery recorded. Continue to the weekly gate when this week's assigned lessons are complete.":`Score recorded. ${MASTERY}% mastery is required before progression.`)});
 document.getElementById("saveLessonNote")?.addEventListener("click",()=>{rec.note=note?.value.trim()||"";rec.updated=new Date().toISOString();data[id]=rec;save(data);alert("Lesson note saved locally.")});document.getElementById("printLesson")?.addEventListener("click",()=>print());updateStatus();
 })();
