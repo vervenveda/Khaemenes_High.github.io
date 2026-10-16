@@ -24,5 +24,105 @@
     "substitution",
     "greatest common factor",
     "factorization"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "variable": "A symbol representing an unspecified or changing number.",
+    "constant": "A value that does not vary in the given expression or model.",
+    "term": "A single addend in an algebraic expression, including its sign.",
+    "coefficient": "A numerical factor multiplying a variable or a variable product.",
+    "factor": "A value or expression multiplied by another to form a product.",
+    "degree": "The greatest exponent in a nonzero single-variable polynomial after simplification.",
+    "monomial": "A polynomial consisting of exactly one nonzero term.",
+    "binomial": "A polynomial consisting of exactly two nonzero terms after combining like terms.",
+    "trinomial": "A polynomial consisting of exactly three nonzero terms after combining like terms.",
+    "polynomial": "A finite sum of terms with variables raised to nonnegative integer powers.",
+    "standard form": "A polynomial written with terms in descending order of power.",
+    "leading term": "The highest-degree nonzero term when a polynomial is in standard form.",
+    "leading coefficient": "The coefficient of the highest-degree nonzero term.",
+    "equivalent expressions": "Different expressions yielding the same value for every input in their common domain.",
+    "commutative property": "Changing the order of addition or multiplication does not change the result.",
+    "associative property": "Regrouping numbers in addition or multiplication does not change the result.",
+    "distributive property": "The rule a(b+c)=ab+ac, which also works in reverse for factoring.",
+    "identity": "An equality true for all allowed values of its variables, or a value unchanged by an identity operation, depending on context.",
+    "inverse": "An operation reversing another, such as addition and subtraction.",
+    "like terms": "Terms that have identical variable factors and exponents, so their coefficients can be combined.",
+    "substitution": "Replacing a variable with a specified number or expression.",
+    "greatest common factor": "The largest positive integer factor dividing all of the listed integer coefficients or terms, as applicable.",
+    "factorization": "Rewriting an expression as a product of factors."
+  },
+  "translations": {
+    "variable": {
+      "es": "variable",
+      "fr": "variable",
+      "ar": "متغير",
+      "pt": "variável"
+    },
+    "constant": {
+      "es": "constante",
+      "fr": "constante",
+      "ar": "ثابت",
+      "pt": "constante"
+    },
+    "term": {
+      "es": "término",
+      "fr": "terme",
+      "ar": "حد",
+      "pt": "termo"
+    },
+    "coefficient": {
+      "es": "coeficiente",
+      "fr": "coefficient",
+      "ar": "معامل",
+      "pt": "coeficiente"
+    },
+    "factor": {
+      "es": "factor",
+      "fr": "facteur",
+      "ar": "عامل",
+      "pt": "fator"
+    },
+    "equivalent expressions": {
+      "es": "expresiones equivalentes",
+      "fr": "expressions équivalentes",
+      "ar": "تعبيرات متكافئة",
+      "pt": "expressões equivalentes"
+    },
+    "commutative property": {
+      "es": "propiedad conmutativa",
+      "fr": "propriété commutative",
+      "ar": "خاصية الإبدال",
+      "pt": "propriedade comutativa"
+    },
+    "associative property": {
+      "es": "propiedad asociativa",
+      "fr": "propriété associative",
+      "ar": "خاصية التجميع",
+      "pt": "propriedade associativa"
+    },
+    "distributive property": {
+      "es": "propiedad distributiva",
+      "fr": "propriété distributive",
+      "ar": "خاصية التوزيع",
+      "pt": "propriedade distributiva"
+    },
+    "like terms": {
+      "es": "términos semejantes",
+      "fr": "termes semblables",
+      "ar": "حدود متشابهة",
+      "pt": "termos semelhantes"
+    },
+    "substitution": {
+      "es": "sustitución",
+      "fr": "substitution",
+      "ar": "تعويض",
+      "pt": "substituição"
+    },
+    "greatest common factor": {
+      "es": "máximo factor común",
+      "fr": "plus grand facteur commun",
+      "ar": "العامل المشترك الأكبر",
+      "pt": "máximo fator comum"
+    }
+  }
 }
