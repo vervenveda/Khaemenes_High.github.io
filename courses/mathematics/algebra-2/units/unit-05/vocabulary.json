@@ -3,116 +3,117 @@
   "title": "Radical Functions & Rational Exponents",
   "terms": [
     {
-      "en": "rational",
-      "es": "rational",
-      "fr": "rational",
-      "ar": "rational",
-      "pt": "rational",
-      "definition": "Core term used in Rational Exponents & Radical Equivalence."
+      "en": "rational exponent",
+      "es": "exponente racional",
+      "fr": "exposant rationnel",
+      "ar": "أس نسبي",
+      "pt": "expoente racional",
+      "definition": "A fractional exponent linked to a root, such as x^(1/n)."
     },
     {
-      "en": "exponents",
-      "es": "exponents",
-      "fr": "exponents",
-      "ar": "exponents",
-      "pt": "exponents",
-      "definition": "Core term used in Rational Exponents & Radical Equivalence."
+      "en": "nth root",
+      "es": "raíz enésima",
+      "fr": "racine n-ième",
+      "ar": "الجذر النوني",
+      "pt": "raiz enésima",
+      "definition": "A value whose nth power equals the radicand."
     },
     {
-      "en": "radical",
-      "es": "radical",
-      "fr": "radical",
-      "ar": "radical",
-      "pt": "radical",
-      "definition": "Core term used in Rational Exponents & Radical Equivalence."
+      "en": "radical expression",
+      "es": "expresión radical",
+      "fr": "expression radicale",
+      "ar": "تعبير جذري",
+      "pt": "expressão radical",
+      "definition": "An expression containing a root symbol."
     },
     {
-      "en": "simplifying",
-      "es": "simplifying",
-      "fr": "simplifying",
-      "ar": "simplifying",
-      "pt": "simplifying",
-      "definition": "Core term used in Simplifying Radical Expressions."
+      "en": "radical simplification",
+      "es": "simplificación de radicales",
+      "fr": "simplification des radicaux",
+      "ar": "تبسيط الجذور",
+      "pt": "simplificação de radicais",
+      "definition": "Rewriting a radical in an equivalent simpler form while preserving its domain."
     },
     {
-      "en": "expressions",
-      "es": "expressions",
-      "fr": "expressions",
-      "ar": "expressions",
-      "pt": "expressions",
-      "definition": "Core term used in Simplifying Radical Expressions."
+      "en": "radicand",
+      "es": "radicando",
+      "fr": "radicande",
+      "ar": "العدد تحت الجذر",
+      "pt": "radicando",
+      "definition": "The expression appearing under a radical sign."
     },
     {
-      "en": "operations",
-      "es": "operations",
-      "fr": "operations",
-      "ar": "operations",
-      "pt": "operations",
-      "definition": "Core term used in Operations with Radicals & Rationalizing."
+      "en": "like radicals",
+      "es": "radicales semejantes",
+      "fr": "radicaux semblables",
+      "ar": "جذور متشابهة",
+      "pt": "radicais semelhantes",
+      "definition": "Radicals with equal indices and radicands after simplification."
     },
     {
-      "en": "with",
-      "es": "with",
-      "fr": "with",
-      "ar": "with",
-      "pt": "with",
-      "definition": "Core term used in Operations with Radicals & Rationalizing."
+      "en": "rationalizing the denominator",
+      "es": "racionalización del denominador",
+      "fr": "rationalisation du dénominateur",
+      "ar": "إزالة الجذر من المقام",
+      "pt": "racionalização do denominador",
+      "definition": "Multiplying by an equivalent factor to remove a radical from the denominator."
     },
     {
-      "en": "radicals",
-      "es": "radicals",
-      "fr": "radicals",
-      "ar": "radicals",
-      "pt": "radicals",
-      "definition": "Core term used in Operations with Radicals & Rationalizing."
+      "en": "conjugate radical",
+      "es": "conjugado radical",
+      "fr": "conjugué radical",
+      "ar": "المرافق الجذري",
+      "pt": "conjugado radical",
+      "definition": "A paired expression such as a+sqrt(b) and a-sqrt(b)."
     },
     {
-      "en": "solving",
-      "es": "solving",
-      "fr": "solving",
-      "ar": "solving",
-      "pt": "solving",
-      "definition": "Core term used in Solving Radical Equations & Checking Solutions."
+      "en": "radical equation",
+      "es": "ecuación radical",
+      "fr": "équation avec radicaux",
+      "ar": "معادلة جذرية",
+      "pt": "equação radical",
+      "definition": "An equation with a variable under a radical."
     },
     {
-      "en": "equations",
-      "es": "equations",
-      "fr": "equations",
-      "ar": "equations",
-      "pt": "equations",
-      "definition": "Core term used in Solving Radical Equations & Checking Solutions."
+      "en": "solution verification",
+      "es": "comprobación de solución",
+      "fr": "vérification de solution",
+      "ar": "التحقق من الحل",
+      "pt": "verificação da solução",
+      "definition": "Substituting candidates in the original equation to reject extraneous roots."
     },
     {
-      "en": "functions",
-      "es": "functions",
-      "fr": "functions",
-      "ar": "functions",
-      "pt": "functions",
-      "definition": "Core term used in Radical Functions, Domains & Transformations."
+      "en": "square-root function",
+      "es": "función raíz cuadrada",
+      "fr": "fonction racine carrée",
+      "ar": "دالة الجذر التربيعي",
+      "pt": "função raiz quadrada",
+      "definition": "A function modeled by f(x)=sqrt(x), with real domain x>=0."
     },
     {
-      "en": "domains",
-      "es": "domains",
-      "fr": "domains",
-      "ar": "domains",
-      "pt": "domains",
-      "definition": "Core term used in Radical Functions, Domains & Transformations."
+      "en": "radical domain",
+      "es": "dominio de un radical",
+      "fr": "domaine d'un radical",
+      "ar": "مجال التعبير الجذري",
+      "pt": "domínio de radical",
+      "definition": "For even real roots, the radicand must be nonnegative."
     },
     {
-      "en": "models",
-      "es": "models",
-      "fr": "models",
-      "ar": "models",
-      "pt": "models",
-      "definition": "Core term used in Radical Models, Geometry & Measurement Error."
+      "en": "geometric radical model",
+      "es": "modelo geométrico con radicales",
+      "fr": "modèle géométrique radical",
+      "ar": "نموذج هندسي بالجذور",
+      "pt": "modelo geométrico com radicais",
+      "definition": "A length model that uses roots, as in the Pythagorean theorem."
     },
     {
-      "en": "geometry",
-      "es": "geometry",
-      "fr": "geometry",
-      "ar": "geometry",
-      "pt": "geometry",
-      "definition": "Core term used in Radical Models, Geometry & Measurement Error."
+      "en": "measurement uncertainty",
+      "es": "incertidumbre de medición",
+      "fr": "incertitude de mesure",
+      "ar": "عدم يقين القياس",
+      "pt": "incerteza de medição",
+      "definition": "A quantified range expressing limits on how precisely a measure is known."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
