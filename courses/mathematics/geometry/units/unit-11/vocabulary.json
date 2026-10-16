@@ -11,5 +11,18 @@
     "lateral area",
     "surface area",
     "volume"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "prism": "A solid with two parallel congruent polygonal bases.",
+    "cylinder": "A solid with two parallel congruent circular bases.",
+    "pyramid": "A solid whose polygonal base joins an apex via triangular faces.",
+    "cone": "A solid with a circular base and one apex.",
+    "sphere": "All points in three-dimensional space at a fixed distance from a center.",
+    "net": "A flat arrangement of faces that folds into a solid.",
+    "cross-section": "The region formed where a plane slices a solid.",
+    "lateral area": "Area of side surfaces excluding bases where appropriate.",
+    "surface area": "Combined area of every exposed face or curved surface.",
+    "volume": "Space occupied by a solid, in cubic units."
+  }
 }

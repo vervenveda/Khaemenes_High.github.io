@@ -9,5 +9,16 @@
     "relative error",
     "geometric probability",
     "optimization"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "area": "The region enclosed by a plane figure, measured in square units.",
+    "composite figure": "A figure assembled from smaller shapes whose areas may be added or subtracted.",
+    "apothem": "The perpendicular distance from a regular polygon's center to a side.",
+    "semiperimeter": "Half the perimeter of a triangle, as used in Heron's formula.",
+    "precision": "How finely a measured quantity is reported, without overstating accuracy.",
+    "relative error": "Absolute error divided by the absolute accepted value when nonzero.",
+    "geometric probability": "The ratio of favorable geometric measure to total measure for a uniform choice.",
+    "optimization": "Choosing the best feasible value of an objective under constraints."
+  }
 }
