@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "course": "english-12",
+  "description": "Authored source-analysis first and second quiz questions for Weeks 01–03. Existing learner scores and assessments unchanged.",
+  "weeks": [
+    {
+      "week": 1,
+      "quiz": [
+        {
+          "question": "In a fictional narrative, an official memorandum records an agreement, but several affected communities have no listed representatives. Which claim is defensible?",
+          "choices": [
+            "The agreement is authentic only if all residents signed it.",
+            "The memorandum documents official terms but cannot alone establish broad community consent.",
+            "Missing signatures prove every absent community opposed the agreement.",
+            "The record should be discarded because it is incomplete."
+          ],
+          "answer": 1,
+          "explanation": "The document establishes the officials' terms but does not itself represent everyone affected by the agreement.",
+          "skill": "Official-source limits"
+        },
+        {
+          "question": "One translation of a poem ends 'I remain'; another uses 'I belong.' The original-language text is unavailable. What can a careful reader conclude?",
+          "choices": [
+            "The first phrase must be the poet's precise literal meaning.",
+            "The second phrase proves the speaker found acceptance.",
+            "The renderings have identical interpretive implications.",
+            "The phrases evoke different effects, but original accuracy remains unverified."
+          ],
+          "answer": 3,
+          "explanation": "Different English expressions can suggest endurance versus membership, but neither can be verified against an unseen source text.",
+          "skill": "Translation and interpretive limits"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "quiz": [
+        {
+          "question": "An official registry lists four applicants, and a witness recalls six people seeking assistance. Which synthesis is best justified without further records?",
+          "choices": [
+            "The sources differ, but counting definitions and record completeness need verification.",
+            "The witness must have exaggerated because official lists are exhaustive.",
+            "The registry proves only four people ever sought assistance.",
+            "The witness's memory is definitive because it is personally observed."
+          ],
+          "answer": 0,
+          "explanation": "Different counts may reflect different definitions, times, or coverage; the complete total requires corroboration.",
+          "skill": "Reconciling source evidence"
+        },
+        {
+          "question": "A news report quotes a public official, but an essay attributes the quoted sentence to the reporter. Which correction improves source ethics?",
+          "choices": [
+            "Remove quotation marks and leave the sentence unattributed.",
+            "Attribute the official's words to the reporter who published the story.",
+            "Identify the official as speaker and credit the report where the quotation was found.",
+            "Treat the reporter and official as interchangeable sources."
+          ],
+          "answer": 2,
+          "explanation": "Separate the original speaker from the journalist or publication that transmitted the statement.",
+          "skill": "Quotation provenance"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "quiz": [
+        {
+          "question": "A writing assistant suggests a scholarly citation, but no corresponding publication appears in the stated journal or catalog. What is the responsible next step?",
+          "choices": [
+            "Use the citation because the formatting seems academic.",
+            "Independently verify the publication and omit it if its existence cannot be established.",
+            "Cite the writing assistant as proof that the original source exists.",
+            "Replace the title while preserving the unverified author and publication."
+          ],
+          "answer": 1,
+          "explanation": "A plausible reference is not evidence of a real publication; check the publication itself before citing it.",
+          "skill": "Responsible technology and citation checks"
+        },
+        {
+          "question": "A draft reads: 'When Maya met Lena after she revised the essay, she explained the changes.' Which revision makes both actions unambiguous if Lena revised and Maya explained?",
+          "choices": [
+            "When Maya met Lena after she revised the essay, Maya explained the changes.",
+            "When Maya met Lena, she explained the changes after she revised the essay.",
+            "After Maya and Lena revised the essay, Maya explained its changes.",
+            "After Lena revised the essay, Maya met her and explained the changes."
+          ],
+          "answer": 3,
+          "explanation": "Naming Lena as reviser and Maya as explainer removes both pronoun ambiguities without changing the intended actions.",
+          "skill": "Pronoun clarity and syntax"
+        }
+      ]
+    }
+  ]
+}
