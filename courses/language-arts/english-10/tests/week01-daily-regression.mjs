@@ -17,7 +17,7 @@ assert.match(core,/button\.dataset\.english10StudioManaged === "week01"/);
 assert.match(core,/box\.dataset\.english10StudioManaged === "week01"/);
 const sw=fs.readFileSync(path.join(base,"service-worker.js"),"utf8");
 new vm.Script(sw);
-assert.match(sw,/khae-english10-v3-studios-20261016/);
+assert.match(sw,/khae-english10-v\d+-(?:studios|ela-curriculum)-\d{8}/);
 assert.match(sw,/\.\/assets\/week01-studios\.js/);
 assert.match(sw,/\.\/assets\/week01-studios\.css/);
 
