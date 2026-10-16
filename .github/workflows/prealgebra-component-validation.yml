@@ -29,6 +29,8 @@ jobs:
         run: node courses/mathematics/pre-algebra/tools/audit-assessment-integrity.mjs
       - name: Validate Academy mastery gates
         run: node courses/mathematics/pre-algebra/tools/validate-mastery-gates.mjs
+      - name: Check lesson-level offline recovery, scoped cache, and safe response handling
+        run: node courses/mathematics/pre-algebra/tools/validate-offline-lesson-recovery.mjs
       - name: Validate student navigation, theme, pin, and continue paths
         run: node courses/mathematics/pre-algebra/tools/validate-student-navigation.mjs
       - name: Validate Unit 1 daily workroom and mastery handoff

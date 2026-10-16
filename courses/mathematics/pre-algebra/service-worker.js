@@ -2,7 +2,7 @@
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v9-ams-v1.7.0-recovery-popout-r1-20261015`;
+const CACHE_NAME=`${CACHE_PREFIX}v10-ams-v1.7.0-recovery-popout-r2-20261016`;
 const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "./",
   "./index.html",
@@ -32,7 +32,7 @@ const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-
   "./units/unit-13/projects/mathematical-modelling-capstone-portfolio.html"];
 
 
-const MISSION_OFFLINE_RELEASE="ams-v1.7.0-recovery-popout-r1-20261015";
+const MISSION_OFFLINE_RELEASE="ams-v1.7.0-recovery-popout-r2-20261016";
 const MISSION_CRITICAL=["./","./index.html","./offline.html","../assets/applied-mission-studio-v1.js","./units/unit-01/projects/number-systems-investigation.html","./units/unit-02/projects/signed-data-investigation.html","./units/unit-03/projects/rational-quantity-investigation.html","./units/unit-04/projects/community-scale-rate-investigation.html","./units/unit-05/projects/consumer-financial-decision-investigation.html","./units/unit-06/projects/scale-of-universe-investigation.html","./units/unit-07/projects/algebraic-model-design-investigation.html","./units/unit-08/projects/equation-formula-design-investigation.html","./units/unit-09/projects/constraint-design-investigation.html","./units/unit-10/projects/linear-relationship-data-story-investigation.html","./units/unit-11/projects/accessible-space-scale-design-investigation.html","./units/unit-12/projects/community-data-evidence-investigation.html","./units/unit-13/projects/mathematical-modelling-capstone-portfolio.html"];
 async function installMissionCritical(){
   const cache=await caches.open(CACHE_NAME);
@@ -56,6 +56,20 @@ self.addEventListener("activate",event=>{
   );
 });
 
+// Capture successfully visited course lessons and local support assets only.
+// Local learner scores, notes, and mastery remain solely in existing record storage.
+const scopeURL=new URL(self.registration.scope);
+function isCourseAsset(url){
+  return url.href.startsWith(scopeURL.href)&&/\.(?:css|js|json|svg|png|jpg|jpeg|webp)$/i.test(url.pathname);
+}
+async function cacheGoodResponse(request,response){
+  if(!response || !response.ok || response.type==="opaque")return;
+  try{const cache=await caches.open(CACHE_NAME);await cache.put(request,response.clone());}
+  catch(error){console.warn("Pre-Algebra offline copy unavailable; online lesson is still usable.",error);}
+}
+function releaseMatch(request,options={ignoreSearch:true}){
+  return caches.open(CACHE_NAME).then(cache=>cache.match(request,options));
+}
 self.addEventListener("fetch",event=>{
   const request=event.request;
   if(request.method!=="GET")return;
@@ -63,21 +77,28 @@ self.addEventListener("fetch",event=>{
   if(url.origin!==self.location.origin)return;
 
   if(request.mode==="navigate"){
-    event.respondWith(
-      fetch(request)
-        .then(response=>response)
-        .catch(async()=>{
-          const cache=await caches.open(CACHE_NAME);
-          return (await cache.match(request,{ignoreSearch:true}))||
-            (await cache.match("./offline.html"));
-        })
-    );
+    if(!url.href.startsWith(scopeURL.href))return;
+    event.respondWith((async()=>{
+      try{
+        const response=await fetch(request);
+        await cacheGoodResponse(request,response);
+        return response;
+      }catch{
+        const cached=await releaseMatch(request,{ignoreSearch:true});
+        return cached || await releaseMatch(new URL("./offline.html",scopeURL.href).href,{ignoreSearch:true}) || Response.error();
+      }
+    })());
     return;
   }
 
-  if(CORE_FILES.some(file=>new URL(file,self.registration.scope).href===url.href)){
-    event.respondWith(matchReleaseCache(request,{ignoreSearch:true}).then(cached=>cached||fetch(request)));
+  const isCore=CORE_FILES.some(file=>new URL(file,scopeURL.href).href===url.href);
+  if(isCore||isCourseAsset(url)){
+    event.respondWith((async()=>{
+      const cached=await releaseMatch(request,{ignoreSearch:true});
+      if(cached)return cached;
+      const response=await fetch(request);
+      if(isCourseAsset(url))await cacheGoodResponse(request,response);
+      return response;
+    })());
   }
 });
-
-function matchReleaseCache(request){return caches.open(CACHE_NAME).then(cache=>cache.match(request));}
