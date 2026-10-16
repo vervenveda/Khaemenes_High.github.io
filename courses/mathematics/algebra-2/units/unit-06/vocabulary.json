@@ -3,140 +3,141 @@
   "title": "Exponential Functions & Growth Models",
   "terms": [
     {
-      "en": "exponential",
-      "es": "exponential",
-      "fr": "exponential",
-      "ar": "exponential",
-      "pt": "exponential",
-      "definition": "Core term used in Exponential Function Structure & Parameters."
+      "en": "exponential function",
+      "es": "función exponencial",
+      "fr": "fonction exponentielle",
+      "ar": "دالة أسية",
+      "pt": "função exponencial",
+      "definition": "A function of the form a*b^x, with b>0 and b not equal to 1."
     },
     {
-      "en": "function",
-      "es": "function",
-      "fr": "function",
-      "ar": "function",
-      "pt": "function",
-      "definition": "Core term used in Exponential Function Structure & Parameters."
+      "en": "initial value",
+      "es": "valor inicial",
+      "fr": "valeur initiale",
+      "ar": "القيمة الابتدائية",
+      "pt": "valor inicial",
+      "definition": "The model value at the chosen starting time, commonly x=0."
     },
     {
-      "en": "structure",
-      "es": "structure",
-      "fr": "structure",
-      "ar": "structure",
-      "pt": "structure",
-      "definition": "Core term used in Exponential Function Structure & Parameters."
+      "en": "growth factor",
+      "es": "factor de crecimiento",
+      "fr": "facteur de croissance",
+      "ar": "عامل النمو",
+      "pt": "fator de crescimento",
+      "definition": "The multiplier greater than 1 applied in each equal time interval."
     },
     {
-      "en": "growth",
-      "es": "growth",
-      "fr": "growth",
-      "ar": "growth",
-      "pt": "growth",
-      "definition": "Core term used in Growth, Decay & Percent Change."
+      "en": "exponential growth",
+      "es": "crecimiento exponencial",
+      "fr": "croissance exponentielle",
+      "ar": "نمو أسي",
+      "pt": "crescimento exponencial",
+      "definition": "Growth by a constant positive proportional change per interval."
     },
     {
-      "en": "decay",
-      "es": "decay",
-      "fr": "decay",
-      "ar": "decay",
-      "pt": "decay",
-      "definition": "Core term used in Growth, Decay & Percent Change."
+      "en": "exponential decay",
+      "es": "decaimiento exponencial",
+      "fr": "décroissance exponentielle",
+      "ar": "اضمحلال أسي",
+      "pt": "decaimento exponencial",
+      "definition": "Decrease by a constant percentage per equal time interval."
     },
     {
-      "en": "percent",
-      "es": "percent",
-      "fr": "percent",
-      "ar": "percent",
-      "pt": "percent",
-      "definition": "Core term used in Growth, Decay & Percent Change."
+      "en": "percent change",
+      "es": "cambio porcentual",
+      "fr": "variation en pourcentage",
+      "ar": "التغير المئوي",
+      "pt": "variação percentual",
+      "definition": "Change divided by the original value, expressed per hundred."
     },
     {
-      "en": "compound",
-      "es": "compound",
-      "fr": "compound",
-      "ar": "compound",
-      "pt": "compound",
-      "definition": "Core term used in Compound Interest & Effective Rates."
+      "en": "compound interest",
+      "es": "interés compuesto",
+      "fr": "intérêts composés",
+      "ar": "الفائدة المركبة",
+      "pt": "juros compostos",
+      "definition": "Interest calculated on principal and previously accrued interest."
     },
     {
-      "en": "interest",
-      "es": "interest",
-      "fr": "interest",
-      "ar": "interest",
-      "pt": "interest",
-      "definition": "Core term used in Compound Interest & Effective Rates."
+      "en": "compounding period",
+      "es": "período de capitalización",
+      "fr": "période de capitalisation",
+      "ar": "فترة الرسملة",
+      "pt": "período de capitalização",
+      "definition": "The interval at whose end accumulated interest is credited."
     },
     {
-      "en": "effective",
-      "es": "effective",
-      "fr": "effective",
-      "ar": "effective",
-      "pt": "effective",
-      "definition": "Core term used in Compound Interest & Effective Rates."
+      "en": "effective annual rate",
+      "es": "tasa anual efectiva",
+      "fr": "taux annuel effectif",
+      "ar": "معدل الفائدة السنوي الفعلي",
+      "pt": "taxa anual efetiva",
+      "definition": "An annualized rate incorporating the stated compounding frequency."
     },
     {
-      "en": "continuous",
-      "es": "continuous",
-      "fr": "continuous",
-      "ar": "continuous",
-      "pt": "continuous",
-      "definition": "Core term used in Continuous Growth, Decay & the Constant e."
+      "en": "continuous compounding",
+      "es": "capitalización continua",
+      "fr": "capitalisation continue",
+      "ar": "التركيب المستمر للفائدة",
+      "pt": "capitalização contínua",
+      "definition": "The limiting interest model A=Pe^(rt)."
     },
     {
-      "en": "solving",
-      "es": "solving",
-      "fr": "solving",
-      "ar": "solving",
-      "pt": "solving",
-      "definition": "Core term used in Solving Exponential Equations by Common Bases."
+      "en": "natural base e",
+      "es": "base natural e",
+      "fr": "base naturelle e",
+      "ar": "الأساس الطبيعي هـ",
+      "pt": "base natural e",
+      "definition": "The positive constant approximately 2.71828 used in natural growth models."
     },
     {
-      "en": "equations",
-      "es": "equations",
-      "fr": "equations",
-      "ar": "equations",
-      "pt": "equations",
-      "definition": "Core term used in Solving Exponential Equations by Common Bases."
+      "en": "common-base method",
+      "es": "método de base común",
+      "fr": "méthode de base commune",
+      "ar": "طريقة الأساس المشترك",
+      "pt": "método da base comum",
+      "definition": "Solving exponential equations by expressing both sides with the same base."
     },
     {
-      "en": "regression",
-      "es": "regression",
-      "fr": "regression",
-      "ar": "regression",
-      "pt": "regression",
-      "definition": "Core term used in Exponential Regression & Data Modelling."
+      "en": "exponential equation",
+      "es": "ecuación exponencial",
+      "fr": "équation exponentielle",
+      "ar": "معادلة أسية",
+      "pt": "equação exponencial",
+      "definition": "An equation with the unknown appearing in an exponent."
     },
     {
-      "en": "data",
-      "es": "data",
-      "fr": "data",
-      "ar": "data",
-      "pt": "data",
-      "definition": "Core term used in Exponential Regression & Data Modelling."
+      "en": "exponential regression",
+      "es": "regresión exponencial",
+      "fr": "régression exponentielle",
+      "ar": "الانحدار الأسي",
+      "pt": "regressão exponencial",
+      "definition": "Fitting parameters of an exponential model to observations."
     },
     {
-      "en": "comparing",
-      "es": "comparing",
-      "fr": "comparing",
-      "ar": "comparing",
-      "pt": "comparing",
-      "definition": "Core term used in Comparing Linear, Quadratic & Exponential Models."
+      "en": "data residual",
+      "es": "residuo de datos",
+      "fr": "résidu de données",
+      "ar": "الباقي الإحصائي",
+      "pt": "resíduo dos dados",
+      "definition": "Observed value minus predicted value, used to assess a model."
     },
     {
-      "en": "linear",
-      "es": "linear",
-      "fr": "linear",
-      "ar": "linear",
-      "pt": "linear",
-      "definition": "Core term used in Comparing Linear, Quadratic & Exponential Models."
+      "en": "linear model",
+      "es": "modelo lineal",
+      "fr": "modèle linéaire",
+      "ar": "نموذج خطي",
+      "pt": "modelo linear",
+      "definition": "A model with constant additive rate of change."
     },
     {
-      "en": "quadratic",
-      "es": "quadratic",
-      "fr": "quadratic",
-      "ar": "quadratic",
-      "pt": "quadratic",
-      "definition": "Core term used in Comparing Linear, Quadratic & Exponential Models."
+      "en": "quadratic model",
+      "es": "modelo cuadrático",
+      "fr": "modèle quadratique",
+      "ar": "نموذج تربيعي",
+      "pt": "modelo quadrático",
+      "definition": "A degree-two polynomial model with constant second differences for equally spaced inputs."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
