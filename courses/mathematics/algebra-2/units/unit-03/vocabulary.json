@@ -3,156 +3,157 @@
   "title": "Polynomial Equations, Division & Graphs",
   "terms": [
     {
-      "en": "long",
-      "es": "long",
-      "fr": "long",
-      "ar": "long",
-      "pt": "long",
-      "definition": "Core term used in Long Division of Polynomials."
+      "en": "polynomial long division",
+      "es": "división larga de polinomios",
+      "fr": "division euclidienne des polynômes",
+      "ar": "القسمة المطولة لكثيرات الحدود",
+      "pt": "divisão longa de polinômios",
+      "definition": "Finding quotient and remainder by repeated polynomial division."
     },
     {
-      "en": "division",
-      "es": "division",
-      "fr": "division",
-      "ar": "division",
-      "pt": "division",
-      "definition": "Core term used in Long Division of Polynomials."
+      "en": "dividend",
+      "es": "dividendo",
+      "fr": "dividende",
+      "ar": "المقسوم",
+      "pt": "dividendo",
+      "definition": "The polynomial being divided."
     },
     {
-      "en": "polynomials",
-      "es": "polynomials",
-      "fr": "polynomials",
-      "ar": "polynomials",
-      "pt": "polynomials",
-      "definition": "Core term used in Long Division of Polynomials."
+      "en": "divisor",
+      "es": "divisor",
+      "fr": "diviseur",
+      "ar": "المقسوم عليه",
+      "pt": "divisor",
+      "definition": "A nonzero polynomial used to divide another."
     },
     {
-      "en": "synthetic",
-      "es": "synthetic",
-      "fr": "synthetic",
-      "ar": "synthetic",
-      "pt": "synthetic",
-      "definition": "Core term used in Synthetic Division & Efficient Evaluation."
+      "en": "synthetic division",
+      "es": "división sintética",
+      "fr": "division synthétique",
+      "ar": "القسمة التركيبية",
+      "pt": "divisão sintética",
+      "definition": "Coefficient shortcut for division by x-c."
     },
     {
-      "en": "efficient",
-      "es": "efficient",
-      "fr": "efficient",
-      "ar": "efficient",
-      "pt": "efficient",
-      "definition": "Core term used in Synthetic Division & Efficient Evaluation."
+      "en": "Horner method",
+      "es": "método de Horner",
+      "fr": "méthode de Horner",
+      "ar": "طريقة هورنر",
+      "pt": "método de Horner",
+      "definition": "Evaluating a polynomial by nested multiplications."
     },
     {
       "en": "remainder",
-      "es": "remainder",
-      "fr": "remainder",
-      "ar": "remainder",
-      "pt": "remainder",
-      "definition": "Core term used in Remainder and Factor Theorems."
+      "es": "resto",
+      "fr": "reste",
+      "ar": "الباقي",
+      "pt": "resto",
+      "definition": "The leftover polynomial with degree below that of the divisor."
     },
     {
-      "en": "factor",
-      "es": "factor",
-      "fr": "factor",
-      "ar": "factor",
-      "pt": "factor",
-      "definition": "Core term used in Remainder and Factor Theorems."
+      "en": "remainder theorem",
+      "es": "teorema del resto",
+      "fr": "théorème du reste",
+      "ar": "نظرية الباقي",
+      "pt": "teorema do resto",
+      "definition": "The remainder of f(x) divided by x-c equals f(c)."
     },
     {
-      "en": "theorems",
-      "es": "theorems",
-      "fr": "theorems",
-      "ar": "theorems",
-      "pt": "theorems",
-      "definition": "Core term used in Remainder and Factor Theorems."
+      "en": "factor theorem",
+      "es": "teorema del factor",
+      "fr": "théorème du facteur",
+      "ar": "نظرية العامل",
+      "pt": "teorema do fator",
+      "definition": "x-c is a factor of f(x) precisely when f(c)=0."
     },
     {
-      "en": "rational",
-      "es": "rational",
-      "fr": "rational",
-      "ar": "rational",
-      "pt": "rational",
-      "definition": "Core term used in Rational Root Theorem & Candidate Zeros."
+      "en": "rational root theorem",
+      "es": "teorema de la raíz racional",
+      "fr": "théorème des racines rationnelles",
+      "ar": "نظرية الجذر النسبي",
+      "pt": "teorema da raiz racional",
+      "definition": "For integer coefficients a reduced root p/q requires p to divide the constant and q the leading coefficient."
     },
     {
-      "en": "root",
-      "es": "root",
-      "fr": "root",
-      "ar": "root",
-      "pt": "root",
-      "definition": "Core term used in Rational Root Theorem & Candidate Zeros."
+      "en": "candidate rational root",
+      "es": "posible raíz racional",
+      "fr": "racine rationnelle candidate",
+      "ar": "جذر نسبي محتمل",
+      "pt": "possível raiz racional",
+      "definition": "A rational number to test from the rational-root theorem."
     },
     {
-      "en": "theorem",
-      "es": "theorem",
-      "fr": "theorem",
-      "ar": "theorem",
-      "pt": "theorem",
-      "definition": "Core term used in Rational Root Theorem & Candidate Zeros."
+      "en": "polynomial equation",
+      "es": "ecuación polinómica",
+      "fr": "équation polynomiale",
+      "ar": "معادلة كثيرة حدود",
+      "pt": "equação polinomial",
+      "definition": "An equation expressible as f(x)=0 for a polynomial f."
     },
     {
-      "en": "solving",
-      "es": "solving",
-      "fr": "solving",
-      "ar": "solving",
-      "pt": "solving",
-      "definition": "Core term used in Solving Higher-Degree Polynomial Equations."
+      "en": "factoring",
+      "es": "factorización",
+      "fr": "factorisation",
+      "ar": "التحليل إلى عوامل",
+      "pt": "fatoração",
+      "definition": "Rewriting an expression as a product."
     },
     {
-      "en": "higher-degree",
-      "es": "higher-degree",
-      "fr": "higher-degree",
-      "ar": "higher-degree",
-      "pt": "higher-degree",
-      "definition": "Core term used in Solving Higher-Degree Polynomial Equations."
+      "en": "higher-degree polynomial",
+      "es": "polinomio de grado superior",
+      "fr": "polynôme de degré supérieur",
+      "ar": "كثيرة حدود من درجة أعلى",
+      "pt": "polinômio de grau superior",
+      "definition": "A polynomial of degree at least three."
     },
     {
-      "en": "polynomial",
-      "es": "polynomial",
-      "fr": "polynomial",
-      "ar": "polynomial",
-      "pt": "polynomial",
-      "definition": "Core term used in Solving Higher-Degree Polynomial Equations."
-    },
-    {
-      "en": "zeros",
-      "es": "zeros",
-      "fr": "zeros",
-      "ar": "zeros",
-      "pt": "zeros",
-      "definition": "Core term used in Zeros, Multiplicity & Graph Behavior."
+      "en": "polynomial zero",
+      "es": "cero polinómico",
+      "fr": "zéro polynomial",
+      "ar": "صفر كثيرة الحدود",
+      "pt": "zero polinomial",
+      "definition": "An input r such that f(r)=0."
     },
     {
       "en": "multiplicity",
-      "es": "multiplicity",
-      "fr": "multiplicity",
-      "ar": "multiplicity",
-      "pt": "multiplicity",
-      "definition": "Core term used in Zeros, Multiplicity & Graph Behavior."
+      "es": "multiplicidad",
+      "fr": "multiplicité",
+      "ar": "تعدد الجذر",
+      "pt": "multiplicidade",
+      "definition": "How many times a root appears as a linear factor."
     },
     {
-      "en": "graph",
-      "es": "graph",
-      "fr": "graph",
-      "ar": "graph",
-      "pt": "graph",
-      "definition": "Core term used in Zeros, Multiplicity & Graph Behavior."
+      "en": "graph crossing",
+      "es": "cruce del eje x",
+      "fr": "croisement de l'axe x",
+      "ar": "عبور محور السينات",
+      "pt": "cruzamento do eixo x",
+      "definition": "A real root with odd multiplicity crosses the x-axis."
     },
     {
-      "en": "regression",
-      "es": "regression",
-      "fr": "regression",
-      "ar": "regression",
-      "pt": "regression",
-      "definition": "Core term used in Polynomial Regression, Interpolation & Model Limits."
+      "en": "polynomial regression",
+      "es": "regresión polinómica",
+      "fr": "régression polynomiale",
+      "ar": "الانحدار بكثيرة حدود",
+      "pt": "regressão polinomial",
+      "definition": "Fitting polynomial coefficients to observed data."
     },
     {
       "en": "interpolation",
-      "es": "interpolation",
+      "es": "interpolación",
       "fr": "interpolation",
-      "ar": "interpolation",
-      "pt": "interpolation",
-      "definition": "Core term used in Polynomial Regression, Interpolation & Model Limits."
+      "ar": "الاستيفاء",
+      "pt": "interpolação",
+      "definition": "Estimating within the measured data range."
+    },
+    {
+      "en": "extrapolation",
+      "es": "extrapolación",
+      "fr": "extrapolation",
+      "ar": "الاستقراء خارج البيانات",
+      "pt": "extrapolação",
+      "definition": "Predicting beyond the observed data range."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
