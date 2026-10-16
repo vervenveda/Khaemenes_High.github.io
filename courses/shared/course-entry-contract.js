@@ -108,76 +108,61 @@
 
     const PROFILE_ID = "khaemenesHighStudentProfileLink";
     const BETA_ID = "vnvBetaProgramLink";
-    const PROFILE_STYLE_ID = "khaemenesHighStudentProfileLinkStyles";
-    const BETA_STYLE_ID = "vnvBetaProgramLinkStyles";
+    const TOOLBAR_ID = "khaemenesLearnerUtilityToolbar";
+    const TOOLBAR_STYLE_ID = "khaemenesLearnerUtilityToolbarStyles";
     const PROFILE_URL = "https://vervenveda.com/Khaemenes_Academy.github.io/student/";
     const BETA_URL = "https://vervenveda.com/beta/";
 
-    if (!document.getElementById(BETA_STYLE_ID)) {
+    if (!document.getElementById(TOOLBAR_STYLE_ID)) {
       const style = document.createElement("style");
-      style.id = BETA_STYLE_ID;
+      style.id = TOOLBAR_STYLE_ID;
       style.textContent = `
-        #${BETA_ID}{
+        #${TOOLBAR_ID}{
           position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));
-          z-index:2147482000;display:inline-flex;align-items:center;justify-content:center;gap:7px;
-          min-height:40px;padding:8px 12px;border:1px solid rgba(183,147,77,.72);border-radius:7px;
-          color:#f7efe0;background:rgba(15,25,37,.94);box-shadow:0 8px 24px rgba(0,0,0,.18);
-          font:600 10px/1.2 "Avenir Next","Segoe UI",Arial,sans-serif;letter-spacing:.045em;cursor:pointer
+          z-index:2147482100;display:flex;align-items:stretch;justify-content:flex-end;gap:6px;
+          padding:6px;border:1px solid rgba(180,139,69,.48);border-radius:7px;
+          background:rgba(255,253,248,.96);box-shadow:0 10px 30px rgba(15,25,37,.16);
+          backdrop-filter:blur(10px)
         }
-        #${BETA_ID}:hover{transform:translateY(-1px);border-color:#dfc48e;background:#152538}
-        #${BETA_ID}:focus-visible{outline:3px solid #dfc48e;outline-offset:3px}
+        #${TOOLBAR_ID}>button,#${TOOLBAR_ID}>a{
+          position:static!important;right:auto!important;bottom:auto!important;z-index:auto!important;
+          width:126px!important;height:42px!important;min-height:42px!important;max-height:42px!important;
+          display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;
+          margin:0!important;padding:7px 9px!important;border-radius:7px!important;box-sizing:border-box!important;
+          white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;
+          box-shadow:none!important;font:600 10px/1.15 "Avenir Next","Segoe UI",Arial,sans-serif!important;
+          letter-spacing:.035em!important;cursor:pointer!important
+        }
+        #${TOOLBAR_ID}>#learnerRecordNoticeButton{order:10;color:#493719!important;background:#fff4d8!important;border:1px solid #b48b45!important}
+        #${TOOLBAR_ID}>#${PROFILE_ID}{order:20;color:#17392f!important;background:#fffdf8!important;border:1px solid rgba(180,139,69,.72)!important}
+        #${TOOLBAR_ID}>#${BETA_ID}{order:30;color:#f7efe0!important;background:#0f1925!important;border:1px solid rgba(183,147,77,.72)!important}
+        #${TOOLBAR_ID}>button:hover,#${TOOLBAR_ID}>a:hover{transform:translateY(-1px)}
+        #${TOOLBAR_ID}>button:focus-visible,#${TOOLBAR_ID}>a:focus-visible{outline:3px solid #b48b45;outline-offset:2px}
+        #${PROFILE_ID} .khae-profile-mark{width:20px;height:20px;display:grid;place-items:center;border-radius:50%;color:#fff;background:#17392f;font:600 10px/1 Georgia,serif}
         #${BETA_ID} .vnv-beta-mark{font:600 15px/1 Georgia,serif;color:#dfc48e}
-        @media(max-width:520px){#${BETA_ID}{right:max(8px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));min-height:38px;padding:7px 10px}}
-        @media print{#${BETA_ID}{display:none!important}}
+        @media(max-width:520px){
+          #${TOOLBAR_ID}{right:max(8px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));gap:4px;padding:4px}
+          #${TOOLBAR_ID}>button,#${TOOLBAR_ID}>a{width:96px!important;height:40px!important;min-height:40px!important;max-height:40px!important;padding:6px!important;font-size:9px!important}
+        }
+        @media(max-width:330px){#${TOOLBAR_ID}>button,#${TOOLBAR_ID}>a{width:90px!important}}
+        @media print{#${TOOLBAR_ID}{display:none!important}}
       `;
       (document.head || document.documentElement).append(style);
     }
 
-    if (!document.getElementById(PROFILE_STYLE_ID)) {
-      const style = document.createElement("style");
-      style.id = PROFILE_STYLE_ID;
-      style.textContent = `
-        #${PROFILE_ID}{
-          position:fixed;right:max(12px,env(safe-area-inset-right));bottom:calc(max(12px,env(safe-area-inset-bottom)) + 62px);
-          z-index:2147481999;display:inline-flex;align-items:center;justify-content:center;gap:8px;
-          min-height:40px;padding:8px 12px;border:1px solid rgba(180,139,69,.72);border-radius:7px;
-          color:#17392f;background:rgba(255,253,248,.97);box-shadow:0 8px 24px rgba(23,57,47,.14);
-          font:600 10px/1.2 "Avenir Next","Segoe UI",Arial,sans-serif;letter-spacing:.045em;cursor:pointer
-        }
-        #${PROFILE_ID}:hover{transform:translateY(-1px);border-color:#b48b45;background:#fffaf0}
-        #${PROFILE_ID}:focus-visible{outline:3px solid #b48b45;outline-offset:3px}
-        #${PROFILE_ID} .khae-profile-mark{
-          width:20px;height:20px;display:grid;place-items:center;border-radius:50%;
-          color:#fff;background:#17392f;font:600 10px/1 Georgia,serif
-        }
-        @media(max-width:520px){#${PROFILE_ID}{right:max(8px,env(safe-area-inset-right));min-height:38px;padding:7px 10px}}
-        @media print{#${PROFILE_ID}{display:none!important}}
-      `;
-      (document.head || document.documentElement).append(style);
-    }
-
-    if (!document.getElementById(BETA_ID)) {
-      const beta = document.createElement("button");
-      beta.id = BETA_ID;
-      beta.type = "button";
-      beta.setAttribute("aria-label", "Open the Verve N Veda Beta Program for this page");
-      const mark = document.createElement("span");
-      mark.className = "vnv-beta-mark";
-      mark.setAttribute("aria-hidden", "true");
-      mark.textContent = "β";
-      const label = document.createElement("span");
-      label.textContent = "Beta Program";
-      beta.append(mark, label);
-      beta.addEventListener("click", () => {
-        try { window.location.assign(BETA_URL); } catch { window.location.href = BETA_URL; }
-      });
-      document.body.append(beta);
+    let toolbar=document.getElementById(TOOLBAR_ID);
+    if(!toolbar){
+      toolbar=document.createElement("nav");
+      toolbar.id=TOOLBAR_ID;
+      toolbar.setAttribute("aria-label","Khaemenes learner utilities");
+      document.body.append(toolbar);
     }
 
     if (!document.getElementById(PROFILE_ID)) {
       const profile = document.createElement("button");
       profile.id = PROFILE_ID;
       profile.type = "button";
+      profile.style.order="20";
       profile.setAttribute("aria-label", "Open Khaemenes Academy Student Profile and pinned courses");
       profile.title = "Student Profile · pinned courses and learning schedule";
       const mark = document.createElement("span");
@@ -190,14 +175,40 @@
       profile.addEventListener("click", () => {
         try { window.location.assign(PROFILE_URL); } catch { window.location.href = PROFILE_URL; }
       });
-      document.body.append(profile);
+      toolbar.append(profile);
+    } else {
+      const profile=document.getElementById(PROFILE_ID);
+      profile.style.order="20";
+      if(profile.parentElement!==toolbar)toolbar.append(profile);
     }
 
-    const beta = document.getElementById(BETA_ID);
-    const profile = document.getElementById(PROFILE_ID);
-    if (beta && profile) {
-      const height = beta.getBoundingClientRect?.().height || 40;
-      profile.style.bottom = `calc(max(12px, env(safe-area-inset-bottom)) + ${Math.max(58, Math.ceil(height) + 22)}px)`;
+    if (!document.getElementById(BETA_ID)) {
+      const beta = document.createElement("button");
+      beta.id = BETA_ID;
+      beta.type = "button";
+      beta.style.order="30";
+      beta.setAttribute("aria-label", "Open the Verve N Veda Beta Program for this page");
+      const mark = document.createElement("span");
+      mark.className = "vnv-beta-mark";
+      mark.setAttribute("aria-hidden", "true");
+      mark.textContent = "β";
+      const label = document.createElement("span");
+      label.textContent = "Beta Program";
+      beta.append(mark, label);
+      beta.addEventListener("click", () => {
+        try { window.location.assign(BETA_URL); } catch { window.location.href = BETA_URL; }
+      });
+      toolbar.append(beta);
+    } else {
+      const beta=document.getElementById(BETA_ID);
+      beta.style.order="30";
+      if(beta.parentElement!==toolbar)toolbar.append(beta);
+    }
+
+    const preserved=document.getElementById("learnerRecordNoticeButton");
+    if(preserved){
+      preserved.style.order="10";
+      if(preserved.parentElement!==toolbar)toolbar.prepend(preserved);
     }
   }
 
