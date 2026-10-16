@@ -141,7 +141,7 @@
       trigger.setAttribute("aria-haspopup", "dialog");
       trigger.setAttribute("aria-controls", "learnerRecordNoticePanel");
       trigger.setAttribute("aria-expanded", "false");
-      trigger.style.cssText = "position:fixed;right:14px;bottom:84px;z-index:2147483000;padding:8px 11px;border:1px solid #967342;border-radius:7px;background:#fff8e8;color:#20241f;box-shadow:0 4px 18px rgba(34,31,27,.16);font:inherit;font-size:13px;font-weight:400;line-height:1.2;cursor:pointer";
+      trigger.style.cssText = "position:fixed;right:14px;bottom:122px;z-index:2147483000;padding:8px 11px;border:1px solid #967342;border-radius:7px;background:#fff8e8;color:#20241f;box-shadow:0 4px 18px rgba(34,31,27,.16);font:inherit;font-size:13px;font-weight:400;line-height:1.2;cursor:pointer";
       document.body.append(trigger);
     }
 
@@ -151,11 +151,44 @@
       panel.hidden = true;
       panel.setAttribute("role", "dialog");
       panel.setAttribute("aria-labelledby", "learnerRecordNoticeTitle");
-      panel.style.cssText = "position:fixed;right:14px;bottom:128px;z-index:2147483001;width:min(430px,calc(100vw - 28px));max-height:min(70vh,560px);overflow:auto;padding:14px;border:1px solid #967342;border-radius:7px;background:#fff8e8;color:#20241f;box-shadow:0 14px 40px rgba(34,31,27,.24);font:inherit";
+      panel.style.cssText = "position:fixed;right:14px;bottom:170px;z-index:2147483001;width:min(430px,calc(100vw - 28px));max-height:min(70vh,560px);overflow:auto;padding:14px;border:1px solid #967342;border-radius:7px;background:#fff8e8;color:#20241f;box-shadow:0 14px 40px rgba(34,31,27,.24);font:inherit";
       document.body.append(panel);
     }
 
     panel.replaceChildren();
+
+    function positionRecoveryRail() {
+      const safeBottom = 12;
+      const gap = 8;
+      const profileButton = document.getElementById("khaemenesHighStudentProfileLink");
+      const betaButton = document.getElementById("vnvBetaProgramLink");
+
+      let triggerBottom = 122;
+      if (profileButton) {
+        const rect = profileButton.getBoundingClientRect();
+        if (rect.height > 0) triggerBottom = Math.max(110, Math.ceil(window.innerHeight - rect.top + gap));
+      } else if (betaButton) {
+        const rect = betaButton.getBoundingClientRect();
+        if (rect.height > 0) {
+          /* Reserve the normal Student Profile slot even if it mounts a moment later. */
+          triggerBottom = Math.max(110, Math.ceil(window.innerHeight - rect.top + rect.height + 30));
+        }
+      } else {
+        triggerBottom = safeBottom + 110;
+      }
+
+      trigger.style.right = "max(12px, env(safe-area-inset-right))";
+      trigger.style.bottom = `calc(max(12px, env(safe-area-inset-bottom)) + ${Math.max(98, triggerBottom - safeBottom)}px)`;
+
+      requestAnimationFrame(() => {
+        const rect = trigger.getBoundingClientRect();
+        const panelBottom = Math.max(156, Math.ceil(window.innerHeight - rect.top + gap));
+        panel.style.right = "max(12px, env(safe-area-inset-right))";
+        panel.style.bottom = `calc(max(12px, env(safe-area-inset-bottom)) + ${Math.max(144, panelBottom - safeBottom)}px)`;
+      });
+    }
+
+    positionRecoveryRail();
 
     const head = document.createElement("div");
     head.style.cssText = "display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:8px";
@@ -269,6 +302,15 @@
     trigger.setAttribute("aria-label", problem ? "Preserved work requires attention" : "Review preserved work");
     trigger.onclick = () => setOpen(panel.hidden);
     close.onclick = () => setOpen(false);
+
+    if (!trigger.dataset.utilityRailBound) {
+      trigger.dataset.utilityRailBound = "1";
+      window.addEventListener("resize", positionRecoveryRail, { passive: true });
+      if (typeof MutationObserver === "function") {
+        const railObserver = new MutationObserver(() => positionRecoveryRail());
+        railObserver.observe(document.body, { childList: true });
+      }
+    }
 
     if (!panel.dataset.escapeBound) {
       panel.dataset.escapeBound = "1";
