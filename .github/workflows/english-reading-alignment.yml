@@ -1,0 +1,31 @@
+name: English 9–12 Reading Alignment Validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/english-9/units/unit-05/**'
+      - 'courses/language-arts/english-10/units/unit-05/**'
+      - 'courses/language-arts/english-11/units/unit-05/**'
+      - 'courses/language-arts/english-12/units/unit-05/**'
+      - 'courses/language-arts/english-*/weeks/week-13/index.html'
+      - 'courses/language-arts/english-*/weeks/week-14/index.html'
+      - 'courses/language-arts/english-*/weeks/week-15/index.html'
+      - 'courses/shared/daily-instruction.css'
+      - 'tools/validate-english-unit05-reading.mjs'
+      - '.github/workflows/english-reading-alignment.yml'
+  pull_request:
+    paths:
+      - 'courses/language-arts/english-*/units/unit-05/**'
+      - 'courses/language-arts/english-*/weeks/week-13/index.html'
+      - 'courses/language-arts/english-*/weeks/week-14/index.html'
+      - 'courses/language-arts/english-*/weeks/week-15/index.html'
+      - 'tools/validate-english-unit05-reading.mjs'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate reading, unit alignment and existing learning records
+        run: node tools/validate-english-unit05-reading.mjs
