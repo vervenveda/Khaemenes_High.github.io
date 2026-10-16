@@ -80,7 +80,7 @@ for(let n=1;n<=36;n++){
  const listing=fs.readdirSync(dir);
  assert(listing.includes("index.html"),"English 9 week page missing: "+dir);
  if(n<=13){
-  const daily=listing.filter(file=>file.endsWith(".html")&&file!=="index.html");
+  const daily=listing.filter(file=>file.startsWith("day-")&&fs.existsSync(dir+"/"+file+"/index.html"));
   assert(daily.length>=5,"Previously isolated English 9 week was reduced: "+dir);
   isolated+=daily.length;
  }
