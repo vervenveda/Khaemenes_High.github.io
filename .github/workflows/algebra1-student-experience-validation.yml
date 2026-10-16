@@ -1,0 +1,24 @@
+name: Algebra I Student Experience Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "courses/mathematics/algebra-1/**"
+      - "tools/validate-algebra1-student-experience.mjs"
+      - ".github/workflows/algebra1-student-experience-validation.yml"
+  pull_request:
+    paths:
+      - "courses/mathematics/algebra-1/**"
+      - "tools/validate-algebra1-student-experience.mjs"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate Algebra I student experience
+        run: node tools/validate-algebra1-student-experience.mjs

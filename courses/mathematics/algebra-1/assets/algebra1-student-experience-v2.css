@@ -1,0 +1,252 @@
+/* Algebra I student-experience parity v2
+   Brings the Algebra I presentation closer to the stronger Pre-Algebra
+   student workflow without changing mastery authority, scores, or gates. */
+:root{
+  --a1-paper:#f4f0e7;
+  --a1-paper-bright:#fffdf8;
+  --a1-ink:#111315;
+  --a1-muted:#58645f;
+  --a1-navy:#17344a;
+  --a1-blue:#426f91;
+  --a1-green:#4f7657;
+  --a1-gold:#a67b35;
+  --a1-line:rgba(17,19,21,.16);
+  --a1-shadow:0 14px 34px rgba(22,42,54,.09);
+  --a1-radius:7px;
+}
+html:root:root body{
+  background:var(--a1-paper)!important;
+  color:var(--a1-ink)!important;
+  font-size:16px!important;
+  line-height:1.7!important;
+}
+html:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){
+  margin-bottom:8px!important;
+  color:var(--a1-blue)!important;
+  font-size:12px!important;
+  font-weight:500!important;
+  line-height:1.45!important;
+  letter-spacing:.11em!important;
+  text-transform:uppercase!important;
+  overflow-wrap:normal!important;
+}
+html:root:root body h1{
+  font-size:clamp(34px,5vw,52px)!important;
+  line-height:1.08!important;
+  font-weight:400!important;
+  text-wrap:balance;
+}
+html:root:root body h2{
+  font-size:clamp(26px,3.5vw,36px)!important;
+  line-height:1.16!important;
+  font-weight:400!important;
+  text-wrap:balance;
+}
+html:root:root body h3{
+  font-size:clamp(19px,2.2vw,24px)!important;
+  line-height:1.25!important;
+  font-weight:400!important;
+}
+html:root:root body :is(.hero,.block,.section){min-width:0}
+html:root:root body .hero{
+  min-height:0!important;
+  padding:44px 0 38px!important;
+  background:
+    radial-gradient(circle at 18% 8%,rgba(66,111,145,.11),transparent 28rem),
+    radial-gradient(circle at 82% 8%,rgba(79,118,87,.08),transparent 28rem),
+    linear-gradient(180deg,#fff,#f7f5ef)!important;
+  border-bottom:1px solid var(--a1-line)!important;
+  text-align:center;
+}
+html:root:root body .hero :is(.wrap,.shell){max-width:1040px}
+html:root:root body .hero .lead{
+  max-width:820px!important;
+  margin-inline:auto!important;
+  color:#313937!important;
+  font-size:17px!important;
+  line-height:1.7!important;
+}
+html:root:root body :is(.block,.section){padding:48px 0!important}
+html:root:root body :is(.wrap,.shell){width:min(calc(100% - 36px),1180px)}
+html:root:root body :is(.card,.question,.notice,.start-card,.structure-card,.support-card,.unit-drawer){
+  border-radius:var(--a1-radius)!important;
+}
+html:root:root body .card{
+  border:1px solid var(--a1-line)!important;
+  background:var(--a1-paper-bright)!important;
+  box-shadow:var(--a1-shadow)!important;
+}
+html:root:root body :is(.btn,button,.nav-button,.header-control,.profile-button){
+  border-radius:var(--a1-radius)!important;
+  font-weight:400!important;
+}
+html:root:root body textarea{
+  width:100%;
+  min-height:160px;
+  padding:14px;
+  border:1px solid rgba(17,19,21,.25);
+  border-radius:var(--a1-radius);
+  background:#fff;
+  color:#111;
+  font:400 16px/1.55 "Brandon Grotesque","Avenir Next","Segoe UI",Arial,sans-serif;
+}
+html:root:root body .grid{gap:18px}
+html:root:root body .lesson-grid{gap:16px}
+html:root:root body .lesson-card{min-height:210px}
+html:root:root body .question{
+  padding:20px!important;
+  border:1px solid var(--a1-line)!important;
+  background:#fff!important;
+  box-shadow:none!important;
+}
+html:root:root body .option{
+  border-radius:var(--a1-radius)!important;
+  background:#fbfaf6!important;
+}
+html:root:root body .option:hover{border-color:var(--a1-blue)!important}
+html:root:root body .notice{border-left:3px solid var(--a1-navy)!important}
+html:root:root body #main:empty::before{
+  content:"Loading Algebra I…";
+  display:block;
+  width:min(calc(100% - 36px),920px);
+  margin:48px auto;
+  padding:28px;
+  border:1px solid var(--a1-line);
+  border-radius:var(--a1-radius);
+  background:#fffdf8;
+  color:var(--a1-muted);
+  text-align:center;
+  box-shadow:var(--a1-shadow);
+}
+.algebra1-quick-nav{
+  position:sticky;
+  top:0;
+  z-index:1100;
+  border-bottom:1px solid var(--a1-line);
+  background:rgba(248,246,240,.96);
+  backdrop-filter:blur(12px);
+}
+.algebra1-has-header .algebra1-quick-nav{top:72px}
+.algebra1-course-home .algebra1-quick-nav{top:var(--sticky-stack,108px)}
+.algebra1-quick-nav-inner{
+  width:min(calc(100% - 28px),1180px);
+  min-height:48px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  overflow-x:auto;
+  padding:7px 0;
+}
+.algebra1-quick-nav a{
+  flex:0 0 auto;
+  padding:7px 10px;
+  border:1px solid transparent;
+  border-radius:var(--a1-radius);
+  color:var(--a1-navy);
+  font-size:12px;
+  text-decoration:none;
+}
+.algebra1-quick-nav a:hover,.algebra1-quick-nav a:focus-visible{
+  border-color:var(--a1-line);
+  background:#fff;
+}
+.algebra1-student-dashboard{
+  padding:36px 0 42px;
+  border-bottom:1px solid var(--a1-line);
+  background:#f8f6f0;
+}
+.algebra1-dashboard-shell{width:min(calc(100% - 36px),1180px);margin:auto}
+.algebra1-dashboard-head{max-width:780px;margin:0 auto 22px;text-align:center}
+.algebra1-dashboard-head p{margin:0;color:var(--a1-muted)}
+.algebra1-dashboard-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+.algebra1-dashboard-card{
+  min-height:150px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:20px;
+  border:1px solid var(--a1-line);
+  border-radius:var(--a1-radius);
+  background:#fff;
+  box-shadow:var(--a1-shadow);
+  text-align:left;
+}
+.algebra1-dashboard-card strong{
+  color:var(--a1-navy);
+  font:400 28px/1.1 Cinzel,Georgia,serif;
+}
+.algebra1-dashboard-card span{margin-top:7px;color:var(--a1-muted);font-size:13px}
+.algebra1-dashboard-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  margin-top:16px;
+}
+.algebra1-dashboard-actions a{
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 12px;
+  border:1px solid var(--a1-line);
+  border-radius:var(--a1-radius);
+  background:#fff;
+  color:var(--a1-ink);
+  text-decoration:none;
+  font-size:13px;
+}
+.algebra1-dashboard-actions a.primary{background:var(--a1-navy);border-color:var(--a1-navy);color:#fff}
+.algebra1-progress-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-top:10px;
+  color:var(--a1-muted);
+  font-size:12px;
+}
+.algebra1-progress-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--a1-gold)}
+body[data-mode="lesson"] #main>.block>.wrap.grid{align-items:start}
+body[data-mode="lesson"] #main>.block>.wrap.grid>.card{padding:24px!important}
+body[data-mode="lesson"] #lesson-check{grid-column:1/-1}
+body[data-mode="lesson"] .lesson-stage-card{scroll-margin-top:132px}
+body[data-mode="lesson"] .lesson-stage-card h2{margin-top:0}
+body[data-mode="lesson"] .lesson-reading{scroll-margin-top:132px}
+.algebra1-lesson-meter{
+  min-width:150px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--a1-muted);
+  font-size:11px;
+  white-space:nowrap;
+}
+.algebra1-meter-track{width:76px;height:7px;border-radius:999px;background:#ded8cb;overflow:hidden}
+.algebra1-meter-track span{display:block;height:100%;width:0;background:var(--a1-green);transition:width .16s ease}
+.algebra1-lazy-note{padding:14px 18px;color:var(--a1-muted);font-size:13px;text-align:center}
+@media(max-width:900px){
+  .algebra1-dashboard-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .algebra1-has-header .algebra1-quick-nav{top:68px}
+}
+@media(max-width:700px){
+  html:root:root body{font-size:15.5px!important}
+  html:root:root body .hero{padding:34px 0 30px!important}
+  html:root:root body :is(.block,.section){padding:38px 0!important}
+  html:root:root body[data-mode="lesson"] #main>.block>.wrap.grid{grid-template-columns:1fr!important}
+  .algebra1-dashboard-grid{grid-template-columns:1fr}
+  .algebra1-quick-nav-inner{justify-content:flex-start}
+  .algebra1-lesson-meter{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .algebra1-meter-track span{transition:none}
+}
+@media print{
+  .algebra1-quick-nav,.algebra1-student-dashboard .algebra1-dashboard-actions{display:none!important}
+  html:root:root body .card{box-shadow:none!important}
+}

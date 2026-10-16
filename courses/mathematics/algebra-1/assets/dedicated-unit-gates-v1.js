@@ -3,6 +3,7 @@
 const MASTERY=80;
 const current=document.currentScript;
 const deepSrc=new URL("deep-lesson-engine-v1.js",current?.src||location.href).href;
+const studentExperienceSrc=new URL("algebra1-student-experience-v2.js",current?.src||location.href).href;
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function config(){return window.KhaemenesAlgebra1DedicatedGateConfig||null}
 function authority(){return window.KhaemenesAlgebra1MasteryAuthority||null}
@@ -35,6 +36,11 @@ function prerequisite(c,A,D,mode,lessonNumber){
 }
 function before(){const c=config(),A=authority(),D=data(c),mode=document.body?.dataset?.mode||"",lesson=Number(document.body?.dataset?.lesson||0);if(!c||!D){lock("Unit configuration unavailable","The dedicated-unit gate could not confirm this page's curriculum metadata.",rootFromMode(mode)+"index.html");return false}const p=prerequisite(c,A,D,mode,lesson);if(!p.ok){lock(p.title,p.detail,p.href);return false}return true}
 function disableLink(a,text){if(!a)return;a.removeAttribute("href");a.setAttribute("aria-disabled","true");a.classList.remove("primary");a.textContent=text;a.addEventListener("click",e=>e.preventDefault())}
+function loadStudentExperience(){
+ if(window.KhaemenesAlgebra1StudentExperience){window.KhaemenesAlgebra1StudentExperience.enhance();return}
+ if(document.getElementById("algebra1StudentExperienceV2"))return;
+ const s=document.createElement("script");s.id="algebra1StudentExperienceV2";s.src=studentExperienceSrc;s.defer=true;s.onload=()=>window.KhaemenesAlgebra1StudentExperience?.enhance();s.onerror=()=>console.warn("Algebra I student experience enhancement could not load; core lesson remains available.");document.head.appendChild(s);
+}
 function loadLearningExperience(){
  if(window.KhaemenesAlgebra1LearningExperience){window.KhaemenesAlgebra1LearningExperience.enhance();return}
  if(document.getElementById("algebra1DeepLessonEngine"))return;
@@ -68,6 +74,7 @@ function after(){const c=config(),A=authority(),D=data(c),mode=document.body?.da
  }else if(mode==="lesson"){
   const result=document.getElementById("result");if(result&&!document.getElementById("dedicatedGateNotice")){const p=document.createElement("p");p.id="dedicatedGateNotice";p.className="notice";p.innerHTML=`<strong>Progression gate:</strong> this lesson check must reach ${MASTERY}%. At an instructional-week boundary, the prior weekly mastery check must also reach ${MASTERY}% before the next lesson opens.`;result.before(p)}
  }
+ loadStudentExperience();
  loadLearningExperience();
 }
 window.KhaemenesAlgebra1DedicatedGate={version:"1.1",before,after,lessonUnlocked,allLessonsMastered,allWeeksMastered};
