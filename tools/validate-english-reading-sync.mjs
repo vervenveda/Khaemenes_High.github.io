@@ -42,7 +42,7 @@ for(const course of courses){
  }
  const textA=dossierHtml.split('id="text-a"')[1]?.split('id="text-b"')[0]||"";
  const textB=dossierHtml.split('id="text-b"')[1]?.split("</section>")[0]||"";
- assert(/worked (?:critical )?(?:reasoning |analysis |synthesis|inference|model)/i.test(dossierHtml),course.slug+" lacks worked model");
+ assert(/<h2>(?:Model:|Teacher-modeled|Worked)/i.test(dossierHtml),course.slug+" lacks an explicit worked model");
  const wordCount=s=>s.replace(/<[^>]+>/g," ").replace(/&[^;]+;/g," ").trim().split(/\s+/).length;
  assert(wordCount(textA)>300,course.slug+" sustained story too short");
  assert(wordCount(textB)>150,course.slug+" source packet too short");
