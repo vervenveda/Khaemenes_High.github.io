@@ -4,163 +4,164 @@
   "terms": [
     {
       "en": "polynomial",
-      "es": "polynomial",
-      "fr": "polynomial",
-      "ar": "polynomial",
-      "pt": "polynomial",
-      "definition": "Core term used in Polynomial Vocabulary, Degree & Structure."
+      "es": "polinomio",
+      "fr": "polynôme",
+      "ar": "كثيرة حدود",
+      "pt": "polinômio",
+      "definition": "A finite sum of nonnegative integer powers of a variable with coefficients."
     },
     {
-      "en": "vocabulary",
-      "es": "vocabulary",
-      "fr": "vocabulary",
-      "ar": "vocabulary",
-      "pt": "vocabulary",
-      "definition": "Core term used in Polynomial Vocabulary, Degree & Structure."
+      "en": "coefficient",
+      "es": "coeficiente",
+      "fr": "coefficient",
+      "ar": "معامل",
+      "pt": "coeficiente",
+      "definition": "A numerical factor multiplying a variable term."
     },
     {
       "en": "degree",
-      "es": "degree",
-      "fr": "degree",
-      "ar": "degree",
-      "pt": "degree",
-      "definition": "Core term used in Polynomial Vocabulary, Degree & Structure."
+      "es": "grado",
+      "fr": "degré",
+      "ar": "درجة كثيرة الحدود",
+      "pt": "grau",
+      "definition": "The highest exponent of the variable in a nonzero polynomial."
     },
     {
-      "en": "operations",
-      "es": "operations",
-      "fr": "operations",
-      "ar": "operations",
-      "pt": "operations",
-      "definition": "Core term used in Polynomial Operations & Equivalent Forms."
+      "en": "polynomial term",
+      "es": "término polinómico",
+      "fr": "terme polynomial",
+      "ar": "حد كثير الحدود",
+      "pt": "termo polinomial",
+      "definition": "A coefficient multiplied by variables raised to nonnegative integer powers."
     },
     {
-      "en": "equivalent",
-      "es": "equivalent",
-      "fr": "equivalent",
-      "ar": "equivalent",
-      "pt": "equivalent",
-      "definition": "Core term used in Polynomial Operations & Equivalent Forms."
+      "en": "equivalent polynomial forms",
+      "es": "formas polinómicas equivalentes",
+      "fr": "formes polynomiales équivalentes",
+      "ar": "صيغ كثيرة حدود متكافئة",
+      "pt": "formas polinomiais equivalentes",
+      "definition": "Expressions producing identical values for all inputs in their common domain."
     },
     {
-      "en": "power",
-      "es": "power",
-      "fr": "power",
-      "ar": "power",
-      "pt": "power",
-      "definition": "Core term used in Power Functions & End Behavior."
+      "en": "power function",
+      "es": "función potencia",
+      "fr": "fonction puissance",
+      "ar": "دالة القوة",
+      "pt": "função potência",
+      "definition": "A function of the form f(x)=a x^n for constant a and exponent n."
     },
     {
-      "en": "functions",
-      "es": "functions",
-      "fr": "functions",
-      "ar": "functions",
-      "pt": "functions",
-      "definition": "Core term used in Power Functions & End Behavior."
+      "en": "leading coefficient",
+      "es": "coeficiente principal",
+      "fr": "coefficient dominant",
+      "ar": "المعامل الرئيسي",
+      "pt": "coeficiente líder",
+      "definition": "The coefficient of the highest-degree nonzero term."
     },
     {
-      "en": "behavior",
-      "es": "behavior",
-      "fr": "behavior",
-      "ar": "behavior",
-      "pt": "behavior",
-      "definition": "Core term used in Power Functions & End Behavior."
+      "en": "end behavior",
+      "es": "comportamiento en los extremos",
+      "fr": "comportement aux extrémités",
+      "ar": "سلوك الدالة عند الأطراف",
+      "pt": "comportamento nas extremidades",
+      "definition": "How a graph behaves as x approaches positive or negative infinity."
     },
     {
-      "en": "imaginary",
-      "es": "imaginary",
-      "fr": "imaginary",
-      "ar": "imaginary",
-      "pt": "imaginary",
-      "definition": "Core term used in The Imaginary Unit & Powers of i."
+      "en": "imaginary unit",
+      "es": "unidad imaginaria",
+      "fr": "unité imaginaire",
+      "ar": "الوحدة التخيلية",
+      "pt": "unidade imaginária",
+      "definition": "The number i satisfying i²=-1."
     },
     {
-      "en": "unit",
-      "es": "unit",
-      "fr": "unit",
-      "ar": "unit",
-      "pt": "unit",
-      "definition": "Core term used in The Imaginary Unit & Powers of i."
+      "en": "powers of i",
+      "es": "potencias de i",
+      "fr": "puissances de i",
+      "ar": "قوى العدد التخيلي i",
+      "pt": "potências de i",
+      "definition": "The repeating cycle i, -1, -i, 1 for successive positive integer powers."
     },
     {
-      "en": "powers",
-      "es": "powers",
-      "fr": "powers",
-      "ar": "powers",
-      "pt": "powers",
-      "definition": "Core term used in The Imaginary Unit & Powers of i."
+      "en": "complex number",
+      "es": "número complejo",
+      "fr": "nombre complexe",
+      "ar": "عدد مركب",
+      "pt": "número complexo",
+      "definition": "A number of the form a+bi, where a and b are real."
     },
     {
-      "en": "with",
-      "es": "with",
-      "fr": "with",
-      "ar": "with",
-      "pt": "with",
-      "definition": "Core term used in Operations with Complex Numbers."
+      "en": "complex conjugate",
+      "es": "conjugado complejo",
+      "fr": "conjugué complexe",
+      "ar": "المرافق المركب",
+      "pt": "conjugado complexo",
+      "definition": "The number a-bi corresponding to a+bi."
     },
     {
-      "en": "complex",
-      "es": "complex",
-      "fr": "complex",
-      "ar": "complex",
-      "pt": "complex",
-      "definition": "Core term used in Operations with Complex Numbers."
+      "en": "complex addition",
+      "es": "suma de números complejos",
+      "fr": "addition des nombres complexes",
+      "ar": "جمع الأعداد المركبة",
+      "pt": "adição de números complexos",
+      "definition": "Adding real parts and imaginary parts separately."
     },
     {
-      "en": "quadratic",
-      "es": "quadratic",
-      "fr": "quadratic",
-      "ar": "quadratic",
-      "pt": "quadratic",
-      "definition": "Core term used in Quadratic Equations with Complex Solutions."
+      "en": "complex multiplication",
+      "es": "multiplicación de números complejos",
+      "fr": "multiplication des nombres complexes",
+      "ar": "ضرب الأعداد المركبة",
+      "pt": "multiplicação de números complexos",
+      "definition": "Distributing factors and using i²=-1."
     },
     {
-      "en": "equations",
-      "es": "equations",
-      "fr": "equations",
-      "ar": "equations",
-      "pt": "equations",
-      "definition": "Core term used in Quadratic Equations with Complex Solutions."
+      "en": "quadratic discriminant",
+      "es": "discriminante cuadrático",
+      "fr": "discriminant quadratique",
+      "ar": "مميز المعادلة التربيعية",
+      "pt": "discriminante quadrático",
+      "definition": "The value b²-4ac that determines the type of roots of ax²+bx+c=0."
     },
     {
-      "en": "conjugates",
-      "es": "conjugates",
-      "fr": "conjugates",
-      "ar": "conjugates",
-      "pt": "conjugates",
-      "definition": "Core term used in Conjugates, Modulus & the Complex Plane."
+      "en": "complex roots",
+      "es": "raíces complejas",
+      "fr": "racines complexes",
+      "ar": "جذور مركبة",
+      "pt": "raízes complexas",
+      "definition": "Solutions of a polynomial equation that may have nonzero imaginary parts."
+    },
+    {
+      "en": "complex plane",
+      "es": "plano complejo",
+      "fr": "plan complexe",
+      "ar": "المستوى المركب",
+      "pt": "plano complexo",
+      "definition": "A coordinate plane representing a+bi at the point (a,b)."
     },
     {
       "en": "modulus",
-      "es": "modulus",
-      "fr": "modulus",
-      "ar": "modulus",
-      "pt": "modulus",
-      "definition": "Core term used in Conjugates, Modulus & the Complex Plane."
+      "es": "módulo",
+      "fr": "module",
+      "ar": "المقياس المطلق للعدد المركب",
+      "pt": "módulo",
+      "definition": "The distance of a+bi from the origin, equal to sqrt(a²+b²)."
     },
     {
-      "en": "fundamental",
-      "es": "fundamental",
-      "fr": "fundamental",
-      "ar": "fundamental",
-      "pt": "fundamental",
-      "definition": "Core term used in Fundamental Theorem of Algebra & Complete Factorization."
+      "en": "fundamental theorem of algebra",
+      "es": "teorema fundamental del álgebra",
+      "fr": "théorème fondamental de l'algèbre",
+      "ar": "النظرية الأساسية في الجبر",
+      "pt": "teorema fundamental da álgebra",
+      "definition": "Every nonconstant one-variable polynomial with complex coefficients has a complex root."
     },
     {
-      "en": "theorem",
-      "es": "theorem",
-      "fr": "theorem",
-      "ar": "theorem",
-      "pt": "theorem",
-      "definition": "Core term used in Fundamental Theorem of Algebra & Complete Factorization."
-    },
-    {
-      "en": "algebra",
-      "es": "algebra",
-      "fr": "algebra",
-      "ar": "algebra",
-      "pt": "algebra",
-      "definition": "Core term used in Fundamental Theorem of Algebra & Complete Factorization."
+      "en": "complete factorization",
+      "es": "factorización completa",
+      "fr": "factorisation complète",
+      "ar": "التحليل الكامل إلى عوامل",
+      "pt": "fatoração completa",
+      "definition": "Writing a degree-n complex polynomial as a product of n linear factors counting multiplicity."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
