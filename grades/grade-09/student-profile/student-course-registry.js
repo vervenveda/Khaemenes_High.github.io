@@ -2,6 +2,7 @@
 "use strict";
 
 const PIN_KEY="khaemenes-high-pinned-courses-v2";
+const pinStore=window.KhaemenesHighCoursePins||null;
 const MATH_PATHWAY_KEY="khaemenes-high-math-pathway-v1";
 const PREALGEBRA_CONTINUE_KEY="khaemenes-grade09-last-open-v1";
 const LAST_LAUNCH_KEY="khaemenes-grade09-course-launches-v1";
@@ -67,7 +68,7 @@ const COURSES=Object.freeze([
     mentorSubject:"language-arts"
   }),
   Object.freeze({
-    id:"integrated-science-9",
+    id:"science-9",
     title:"Integrated Science 9",
     subject:"Science",
     short:"Science",
@@ -78,7 +79,7 @@ const COURSES=Object.freeze([
     mentorSubject:"science"
   }),
   Object.freeze({
-    id:"global-studies-9",
+    id:"social-studies-9",
     title:"Global Studies Honors",
     subject:"Social Studies",
     short:"Social Studies",
@@ -87,8 +88,28 @@ const COURSES=Object.freeze([
     defaultContinue:repoPath("courses/social-studies/grade-09/"),
     prefix:repoPath("courses/social-studies/grade-09/"),
     mentorSubject:"social-studies"
-  })
+  }),
+  Object.freeze({
+    id:"psychology-101",title:"Psychology 101",subject:"Electives",short:"Psychology",
+    className:"ela",home:repoPath("electives/grades/grade-09/psych-101/"),
+    defaultContinue:repoPath("electives/grades/grade-09/psych-101/"),
+    prefix:repoPath("electives/grades/grade-09/psych-101/"),mentorSubject:"general"
+  }),
+  ...[
+    ["spanish","Spanish"],["french","French"],["german","German"],
+    ["mandarin","Mandarin Chinese"],["japanese","Japanese"],
+    ["arabic","Arabic"],["russian","Russian"]
+  ].map(([id,name])=>Object.freeze({
+    id:"world-language-9-"+id,title:name+" I",subject:"World Languages",
+    short:name,className:"ela",
+    home:"https://vervenveda.github.io/Khaemenes_Linguistics.github.io/Halls/index.html",
+    defaultContinue:"https://vervenveda.github.io/Khaemenes_Linguistics.github.io/Halls/index.html",
+    prefix:"https://vervenveda.github.io/Khaemenes_Linguistics.github.io/Halls/",
+    mentorSubject:"language-arts"
+  }))
 ]);
+const PIN_ALIASES=Object.freeze({"integrated-science-9":"science-9","global-studies-9":"social-studies-9"});
+const canonicalPin=id=>PIN_ALIASES[id]||id;
 
 const COURSE_MAP=new Map(COURSES.map(course=>[course.id,course]));
 const entryContract=window.KhaemenesCourseEntryContract||null;
@@ -145,10 +166,16 @@ const A1_WEEK_LESSONS=Object.freeze({
 const A1_UNIT_END_WEEK=Object.freeze({1:3,2:6,3:9,4:11,5:14,6:18,7:21,8:23,9:26,10:30,11:32,12:35,13:36});
 let a1UnitMapsPromise=null;
 
-function rawPins(value=readJSON(PIN_KEY,[])){
+function allStoredPins(){return pinStore?.readPins()||readJSON(PIN_KEY,[])}
+function rawPins(value=allStoredPins()){
   const source=Array.isArray(value)?value:[];
   const seen=new Set();
-  return source.filter(id=>COURSE_MAP.has(id)&&!seen.has(id)&&seen.add(id));
+  return source.map(canonicalPin).filter(id=>COURSE_MAP.has(id)&&!seen.has(id)&&seen.add(id));
+}
+function saveSelectedPins(selected){
+  const other=allStoredPins().filter(id=>!COURSE_MAP.has(canonicalPin(id)));
+  const next=[...other,...selected];
+  return pinStore?.writePins(next)??writeJSON(PIN_KEY,next);
 }
 function hasDiagnosticEvidence(){
   const result=readJSON(A1_DIAGNOSTIC_RESULT_KEY,null);
@@ -208,32 +235,33 @@ function mathPathway(pinSource=rawPins()){
   const mathPins=pinSource.filter(id=>MATH_ID_SET.has(id));
   return mathPins.length===1?mathPins[0]:null;
 }
-function normalizePins(value=readJSON(PIN_KEY,[])){
+function normalizePins(value=allStoredPins()){
   const source=rawPins(value),mathPins=source.filter(id=>MATH_ID_SET.has(id));
   if(mathPins.length<2)return source;
   const chosen=mathPathway(source)||mathPins[0];
   return source.filter(id=>!MATH_ID_SET.has(id)||id===chosen);
 }
 function pinnedIds(){
-  const original=rawPins(),normalized=normalizePins(original);
-  if(original.join("|")!==normalized.join("|"))writeJSON(PIN_KEY,normalized);
+  const source=allStoredPins(),original=rawPins(source),normalized=normalizePins(source);
+  if(original.join("|")!==normalized.join("|")||source.some(id=>PIN_ALIASES[id])||
+    normalized.some(id=>!source.includes(id)))saveSelectedPins(normalized);
   return normalized;
 }
 function pinnedCourses(){return pinnedIds().map(id=>COURSE_MAP.get(id)).filter(Boolean)}
-function isPinned(id){return pinnedIds().includes(id)}
+function isPinned(id){return pinnedIds().includes(canonicalPin(id))}
 function isMathCourse(id){return MATH_ID_SET.has(id)}
 function setMathPathway(id,{pin=true}={}){
   if(!MATH_ID_SET.has(id))return false;
   if(!writeJSON(MATH_PATHWAY_KEY,id))return false;
   if(!pin)return true;
   const next=[id,...pinnedIds().filter(item=>!MATH_ID_SET.has(item))];
-  return writeJSON(PIN_KEY,next);
+  return saveSelectedPins(next);
 }
 function setPinned(id,shouldPin){
   if(!COURSE_MAP.has(id))return false;
   if(shouldPin&&MATH_ID_SET.has(id))return setMathPathway(id,{pin:true});
   const current=pinnedIds().filter(item=>item!==id),next=shouldPin?[id,...current]:current;
-  return writeJSON(PIN_KEY,next);
+  return saveSelectedPins(next);
 }
 function togglePinned(id){const next=!isPinned(id);return setPinned(id,next)?next:null}
 
@@ -330,7 +358,7 @@ function mentorFor(id,source=location.pathname){
   const course=COURSE_MAP.get(id),params=new URLSearchParams({stage:"high",subject:course?.mentorSubject||"general",course:course?.id||"grade-09",source});
   return `${repoPath("mentor/")}?${params.toString()}`;
 }
-function getCourse(id){return COURSE_MAP.get(id)||null}
+function getCourse(id){return COURSE_MAP.get(canonicalPin(id))||null}
 function shouldRefreshForStorageKey(key){
   if(!key)return true;
   const bases=[PIN_KEY,MATH_PATHWAY_KEY,PREALGEBRA_CONTINUE_KEY,LAST_LAUNCH_KEY,A1_DIAGNOSTIC_RESULT_KEY,A1_WEEKLY_KEY,A1_MIDTERM_KEY,A1_FINAL_KEY];
@@ -340,6 +368,11 @@ function shouldRefreshForStorageKey(key){
 
 window.KhaemenesGrade09Courses=Object.freeze({
   PIN_KEY,MATH_PATHWAY_KEY,PREALGEBRA_CONTINUE_KEY,LAST_LAUNCH_KEY,A1_DIAGNOSTIC_RESULT_KEY,A1_WEEKLY_KEY,A1_MIDTERM_KEY,A1_FINAL_KEY,
-  courses:COURSES,getCourse,pinnedIds,pinnedCourses,isPinned,isMathCourse,setPinned,togglePinned,setMathPathway,mathPathway,continueFor,resolveContinueFor,resumePriorityCourse,recordLaunch,mentorFor,shouldRefreshForStorageKey
+  get courses(){
+    const pins=new Set(pinnedIds());
+    const selected=pinStore?.readLanguageChoices()?.["9"]||"spanish";
+    return COURSES.filter(c=>["pre-algebra","algebra-1","english-9","science-9","social-studies-9","psychology-101","world-language-9-"+selected].includes(c.id)||pins.has(c.id));
+  },
+  getCourse,pinnedIds,pinnedCourses,isPinned,isMathCourse,setPinned,togglePinned,setMathPathway,mathPathway,continueFor,resolveContinueFor,resumePriorityCourse,recordLaunch,mentorFor,shouldRefreshForStorageKey
 });
 })();
