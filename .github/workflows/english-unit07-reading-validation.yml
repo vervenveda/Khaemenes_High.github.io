@@ -1,0 +1,39 @@
+name: English Unit 07 Reading Alignment
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/reading-depth-map.json'
+      - 'courses/language-arts/english-9/units/unit-07/**'
+      - 'courses/language-arts/english-10/units/unit-07/**'
+      - 'courses/language-arts/english-11/units/unit-07/**'
+      - 'courses/language-arts/english-12/units/unit-07/**'
+      - 'courses/language-arts/english-9/weeks/week-19/**'
+      - 'courses/language-arts/english-9/weeks/week-20/**'
+      - 'courses/language-arts/english-9/weeks/week-21/**'
+      - 'courses/language-arts/english-10/weeks/week-19/**'
+      - 'courses/language-arts/english-10/weeks/week-20/**'
+      - 'courses/language-arts/english-10/weeks/week-21/**'
+      - 'courses/language-arts/english-11/weeks/week-19/**'
+      - 'courses/language-arts/english-11/weeks/week-20/**'
+      - 'courses/language-arts/english-11/weeks/week-21/**'
+      - 'courses/language-arts/english-12/weeks/week-19/**'
+      - 'courses/language-arts/english-12/weeks/week-20/**'
+      - 'courses/language-arts/english-12/weeks/week-21/**'
+      - 'tools/validate-english-unit07-reading.mjs'
+      - '.github/workflows/english-unit07-reading-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/language-arts/**/units/unit-07/**'
+      - 'courses/language-arts/reading-depth-map.json'
+      - 'tools/validate-english-unit07-reading.mjs'
+      - '.github/workflows/english-unit07-reading-validation.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate original reading, lesson return routes and progress protection
+        run: node tools/validate-english-unit07-reading.mjs

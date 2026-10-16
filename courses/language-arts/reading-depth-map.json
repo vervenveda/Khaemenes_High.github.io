@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "description": "ELA reading and instruction companions. Originals are preserved; links return to existing student workspaces. No new authoritative scores.",
   "week_03_grade_09": {
     "course": "english-9",
@@ -127,6 +127,64 @@
         "friday"
       ],
       "assessment_authority": "preexisting weekly class and teacher-scored work"
+    }
+  ],
+  "unit_07_companions": [
+    {
+      "course": "english-9",
+      "unit": 7,
+      "weeks": [
+        19,
+        20,
+        21
+      ],
+      "reading": "units/unit-07/reading-dossier.html",
+      "status": "published",
+      "type": "fictional research source literacy",
+      "assessment_authority": "existing weekly classroom, unit assessment and teacher-scored portfolio",
+      "preserve_unit_original": true
+    },
+    {
+      "course": "english-10",
+      "unit": 7,
+      "weeks": [
+        19,
+        20,
+        21
+      ],
+      "reading": "units/unit-07/reading-dossier.html",
+      "status": "published",
+      "type": "original comparative poetry",
+      "assessment_authority": "existing weekly classroom, unit assessment and teacher-scored portfolio",
+      "preserve_unit_original": true
+    },
+    {
+      "course": "english-11",
+      "unit": 7,
+      "weeks": [
+        19,
+        20,
+        21
+      ],
+      "reading": "units/unit-07/reading-dossier.html",
+      "status": "published",
+      "type": "original poetry with historical source-provenance caveats",
+      "assessment_authority": "existing weekly classroom, unit assessment and teacher-scored portfolio",
+      "preserve_unit_original": true
+    },
+    {
+      "course": "english-12",
+      "unit": 7,
+      "weeks": [
+        19,
+        20,
+        21
+      ],
+      "reading": "units/unit-07/reading-dossier.html",
+      "status": "published",
+      "type": "original comparative global fiction exercises",
+      "assessment_authority": "existing weekly classroom, unit assessment and teacher-scored portfolio",
+      "preserve_unit_original": true
     }
   ]
 }
