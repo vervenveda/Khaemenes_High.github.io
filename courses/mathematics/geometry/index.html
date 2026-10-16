@@ -13,7 +13,7 @@
 <title>Khaemenes Open-Age Geometry & Spatial Design</title>
 <link rel="canonical" href="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/geometry/">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="assets/styles.css?v=20260806-geometry-1">
+<link rel="stylesheet" href="assets/styles.css?v=20260806-geometry-1">\n<link rel="stylesheet" href="../../shared/khaemenes-course-experience-v1.css?v=20261016">
 <style id="geometry-critical-styles">
 /* Self-contained landing-page styles. The external sheet remains for all course subpages. */
 :root{
@@ -238,6 +238,9 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
           <button type="button" data-view="week">Weekly Classroom</button>
           <button type="button" data-view="units">All Units</button>
           <button type="button" data-view="practice">Practice Lab</button>
+          <button type="button" data-view="scope">36-Week Scope</button>
+          <button type="button" data-view="gradebook">Progress &amp; Gradebook</button>
+          <button type="button" data-view="portfolio">Portfolio</button>
           <a href="diagnostic/">Readiness Diagnostic</a>
           <a href="assessments/">Assessment Center</a>
           <a href="../tools/vocabulary-studio.html?course=geometry">Vocabulary Studio</a>
@@ -246,10 +249,10 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
           <div class="course-menu-label">Academy &amp; Verve N Veda</div>
           <a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Khaemenes Academy</a>
           <a href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Khaemenes Higher Learning</a>
+          <a href="https://vervenveda.com/beta/">Beta Program</a>
           <a href="https://vervenveda.com/">Verve N Veda Gateway</a>
         </div>
       </details>
-      <button class="header-control" id="themeToggle" type="button" aria-label="Toggle light and dark theme">◐ Theme</button>
       <span class="sr-only" id="pinCourseStatus" aria-live="polite"></span>
     </div>
   </div>
@@ -269,15 +272,9 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
     <h1>Geometry &amp; Spatial Design</h1>
     <p class="lead">A rigorous, mastery-based course in constructions, proof, transformations, congruence, similarity, trigonometry, polygons, circles, analytic geometry, measurement, solids, printable visual reasoning, Arcade investigations, OHMIC CAD design, and a defensible geometric capstone.</p>
     <div class="actions">
-      <button class="btn primary" data-view="dashboard">Enter Course</button>
-      <button class="btn" data-view="week">Open Weekly Classroom</button>
-      <a class="btn gold" href="diagnostic/">Begin Diagnostic</a>
-      <a class="btn" href="assessments/">Assessment Center</a>
-      <a class="btn" href="../tools/vocabulary-studio.html?course=geometry">Vocabulary Studio</a>
-      <button class="btn" type="button" data-games-view>Math Games &amp; Tools</button>
-      <button class="btn" type="button" data-launch-title="Khaemenes Scientific Calculator" data-launch-url="../tools/calculator">Scientific Calculator v4</button>
-      <button class="btn" type="button" data-launch-title="OHMIC CAD Studio" data-launch-url="https://vervenveda.com/proresource_hub.github.io/Protools/Ohmic_CAD_Studio.html">Open OHMIC CAD</button>
-      <button class="btn" type="button" data-launch-title="Sacred Geometry" data-launch-url="https://vervenveda.com/arcade.github.io/Geometry/sacred_geometry_game_index.html">Geometry Arcade Lab</button>
+      <button class="btn primary" data-view="dashboard">Continue Learning</button>
+      <button class="btn" data-view="units">Course Map</button>
+      <button class="btn" type="button" data-games-view>Games &amp; Tools</button>
     </div>
     <div class="snapshot" aria-label="Course overview">
       <div class="metric"><strong>36</strong><span>Weeks</span></div>
@@ -290,17 +287,13 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   </div>
 </section>
 
-<nav class="quick-nav no-print" aria-label="Course sections"><div class="wrap quick-nav-inner">
-  <button data-view="dashboard">Dashboard</button>
-  <button data-view="week">Weekly Classroom</button>
-  <button data-view="scope">36-Week Scope</button>
-  <button data-view="units">Units</button>
-  <button data-view="practice">Practice Lab</button>
+<nav class="quick-nav no-print" aria-label="Primary course sections"><div class="wrap quick-nav-inner">
+  <button data-view="dashboard">Today</button>
+  <button data-view="week">This Week</button>
+  <button data-view="units">Course Map</button>
+  <button data-view="practice">Practice</button>
   <button data-view="assessments">Assessments</button>
-  <button data-view="gradebook">Gradebook</button>
   <button data-view="portfolio">Portfolio</button>
-  <button type="button" data-games-view>Games &amp; Tools</button>
-  <button data-view="teacher">Teacher &amp; Records</button>
 </div></nav>
 
 <main id="main">
