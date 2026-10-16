@@ -1,0 +1,24 @@
+name: Algebra I Synthesis Challenge Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "courses/mathematics/algebra-1/units/**"
+      - "tools/validate-algebra1-synthesis-challenges.mjs"
+      - ".github/workflows/algebra1-synthesis-challenge-validation.yml"
+  pull_request:
+    paths:
+      - "courses/mathematics/algebra-1/units/**"
+      - "tools/validate-algebra1-synthesis-challenges.mjs"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate Algebra I synthesis challenges
+        run: node tools/validate-algebra1-synthesis-challenges.mjs
