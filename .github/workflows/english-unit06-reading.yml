@@ -1,0 +1,43 @@
+name: English Unit 06 Reading Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/english-9/units/unit-06/**'
+      - 'courses/language-arts/english-10/units/unit-06/**'
+      - 'courses/language-arts/english-11/units/unit-06/**'
+      - 'courses/language-arts/english-12/units/unit-06/**'
+      - 'courses/language-arts/english-9/weeks/week-16/**'
+      - 'courses/language-arts/english-9/weeks/week-17/**'
+      - 'courses/language-arts/english-9/weeks/week-18/**'
+      - 'courses/language-arts/english-10/weeks/week-16/**'
+      - 'courses/language-arts/english-10/weeks/week-17/**'
+      - 'courses/language-arts/english-10/weeks/week-18/**'
+      - 'courses/language-arts/english-11/weeks/week-16/**'
+      - 'courses/language-arts/english-11/weeks/week-17/**'
+      - 'courses/language-arts/english-11/weeks/week-18/**'
+      - 'courses/language-arts/english-12/weeks/week-16/**'
+      - 'courses/language-arts/english-12/weeks/week-17/**'
+      - 'courses/language-arts/english-12/weeks/week-18/**'
+      - 'courses/language-arts/english-10/service-worker.js'
+      - 'courses/language-arts/english-11/service-worker.js'
+      - 'courses/language-arts/english-12/service-worker.js'
+      - 'tools/validate-english-unit06-reading.mjs'
+      - '.github/workflows/english-unit06-reading.yml'
+  pull_request:
+    paths:
+      - 'courses/language-arts/**/units/unit-06/**'
+      - 'courses/language-arts/**/weeks/week-16/**'
+      - 'courses/language-arts/**/weeks/week-17/**'
+      - 'courses/language-arts/**/weeks/week-18/**'
+      - 'tools/validate-english-unit06-reading.mjs'
+      - '.github/workflows/english-unit06-reading.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Unit 06 reading and assessment continuity
+        run: node tools/validate-english-unit06-reading.mjs
