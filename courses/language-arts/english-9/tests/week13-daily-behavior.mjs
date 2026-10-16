@@ -64,7 +64,7 @@ f("plan-a").value="Mara stands beside the envelope close to the audience while E
 f("plan-a").fire("input");
 f("plan-b").value="Elias stands near the envelope, but refuses to cross the space. Mara stays by the window until the train sounds, then slowly turns toward the audience, creating a different focus.";
 f("plan-b").fire("input");
-f("director-note").value="The envelope placement draws attention to the unspoken argument. The halted reach signals possible withholding without proving motive, and Mara's audience-facing gaze invites the viewers to test the wording of Elias's denial.";
+f("director-note").value="The envelope placement draws attention to the unspoken argument. The halted reach signals possible withholding without proving motive, and Mara's audience-facing gaze invites the viewers to test the wording of Elias's denial. The director can stage that uncertainty without inventing facts.";
 f("director-note").fire("input");
 f("rehearsal").value="After a table read, I slowed Mara's final turn and shortened the earlier pause. That lets Elias's distinction register before Mara confronts the audience.";
 f("rehearsal").fire("input");
