@@ -16,6 +16,8 @@ A learner should be able to enter a course and immediately understand who they a
 
 Every major course home should make these actions easy to find:
 
+**Persistent learner rail:** a compact Student Profile button remains directly above the Beta Program button on High School learning surfaces. The profile control routes to the Academy student profile/pinned-course workspace; neither control should displace lesson or course content.
+
 1. Continue Learning
 2. Current Unit / Week
 3. Current Mastery
