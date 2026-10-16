@@ -8,5 +8,15 @@
     "proportion",
     "indirect measurement",
     "scale drawing"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "similar": "Figures with congruent matching angles and proportional corresponding side lengths.",
+    "dilation": "A transformation scaling distances from a fixed center by one factor.",
+    "scale factor": "Image length divided by matching preimage length in a dilation.",
+    "corresponding sides": "Sides occupying matching positions in two corresponding figures.",
+    "proportion": "An equation asserting equality of two ratios.",
+    "indirect measurement": "Determining an unreachable distance from similar figures or measured scale ratios.",
+    "scale drawing": "A representation drawn to a constant ratio of drawing length to actual length."
+  }
 }

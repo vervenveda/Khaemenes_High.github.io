@@ -11,5 +11,18 @@
     "depression",
     "bearing",
     "vector"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "hypotenuse": "The side opposite the right angle and longest side of a right triangle.",
+    "leg": "One of two sides forming the right angle.",
+    "sine": "For an acute right-triangle angle, opposite leg divided by hypotenuse.",
+    "cosine": "For an acute right-triangle angle, adjacent leg divided by hypotenuse.",
+    "tangent": "For an acute right-triangle angle, opposite leg divided by adjacent leg.",
+    "inverse trigonometry": "Finding an angle from a trigonometric ratio using an inverse trigonometric function.",
+    "elevation": "An angle measured upward from horizontal sight.",
+    "depression": "An angle measured downward from horizontal sight.",
+    "bearing": "A direction expressed as an angle relative to a stated compass reference.",
+    "vector": "A quantity with magnitude and direction, often drawn as an arrow."
+  }
 }

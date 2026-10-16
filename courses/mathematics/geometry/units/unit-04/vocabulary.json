@@ -8,5 +8,15 @@
     "parallel",
     "perpendicular",
     "coordinate proof"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "transversal": "A line intersecting two or more lines at distinct points.",
+    "alternate interior": "Interior angles on opposite sides of a transversal; congruent for parallel lines.",
+    "corresponding angles": "Angles at matching positions formed by a transversal.",
+    "slope": "Change in vertical position divided by nonzero horizontal change.",
+    "parallel": "Distinct coplanar lines that do not meet.",
+    "perpendicular": "Lines meeting at a right angle; their nonvertical slopes have product −1.",
+    "coordinate proof": "A proof using coordinate facts such as slope, midpoint, and distance."
+  }
 }
