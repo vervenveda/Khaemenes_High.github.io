@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "school": "Khaemenes Academy High School",
   "stage": "high",
   "audience": [
@@ -34,7 +34,9 @@
     "The Academy Family Registry supplies learner identity and formal placement.",
     "Course and assessment engines remain authoritative for mastery, grades, progression, certificates, and protected assessment state.",
     "Other AI personalities may appear only as non-authoritative guides, narrators, characters, or specialists until teacher-AI cross-pollination is deliberately commissioned after Academy certification.",
-    "Archaemenes may support concepts, planning, evidence, research, reflection, and handoff without taking protected grading, signing, or assessment custody."
+    "Archaemenes may support concepts, planning, evidence, research, reflection, and handoff without taking protected grading, signing, or assessment custody.",
+    "Mentor sessions are bound to the learner active when the page opens; changing learners freezes the open mentor session until it is reopened.",
+    "Protected assessment and answer-key requests remain local-only and never cross the optional mentor transport boundary."
   ],
   "authority": {
     "awardsMastery": false,
@@ -82,6 +84,35 @@
     "scope": [
       "protected backend academic coordination",
       "assessment/record service handoff"
+    ]
+  },
+  "sessionBoundary": {
+    "bindLearnerAtPageOpen": true,
+    "crossLearnerContinuation": false,
+    "guestPreviewTransport": "local-only",
+    "onLearnerChange": "freeze-and-reopen"
+  },
+  "transportBoundary": {
+    "remoteEligibleIntents": [
+      "concept",
+      "mistake",
+      "study",
+      "plan"
+    ],
+    "localOnlyIntents": [
+      "assessment",
+      "protected"
+    ],
+    "timeoutMilliseconds": 8000,
+    "allowLockedAssessmentDisclosure": false,
+    "allowProgressionBypass": false,
+    "allowGradeChange": false,
+    "allowMasteryAward": false,
+    "allowPlacementChange": false,
+    "allowLearnerIdentityChange": false,
+    "trustedSourcePrefixes": [
+      "/Khaemenes_High.github.io/",
+      "/stos/khaemenes/high/"
     ]
   }
 }
