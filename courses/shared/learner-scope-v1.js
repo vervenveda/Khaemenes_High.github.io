@@ -148,6 +148,7 @@
 /* Separate lesson vocabulary bootstrap; does not modify learner state. */
 (() => {
   "use strict";
+  if(typeof location==="undefined"||typeof location.pathname!=="string")return;
   if(!/\/courses\/mathematics\/(pre-algebra|algebra-1|geometry|algebra-2)\/units\/unit-(?:0[0-9]|1[0-3])\/lessons\/[^/]+\.html$/.test(location.pathname))return;
   const current=document.currentScript;
   if(!current)return;
