@@ -3,140 +3,141 @@
   "title": "Nonlinear Systems & Matrices",
   "terms": [
     {
-      "en": "graphical",
-      "es": "graphical",
-      "fr": "graphical",
-      "ar": "graphical",
-      "pt": "graphical",
-      "definition": "Core term used in Graphical Solutions of Linear–Nonlinear Systems."
+      "en": "graphical solution",
+      "es": "solución gráfica",
+      "fr": "solution graphique",
+      "ar": "حل بياني",
+      "pt": "solução gráfica",
+      "definition": "A point where graphs representing simultaneous equations intersect."
     },
     {
-      "en": "solutions",
-      "es": "solutions",
-      "fr": "solutions",
-      "ar": "solutions",
-      "pt": "solutions",
-      "definition": "Core term used in Graphical Solutions of Linear–Nonlinear Systems."
+      "en": "solution set",
+      "es": "conjunto solución",
+      "fr": "ensemble des solutions",
+      "ar": "مجموعة الحلول",
+      "pt": "conjunto solução",
+      "definition": "All ordered pairs or tuples satisfying each equation in a system."
     },
     {
-      "en": "linear",
-      "es": "linear",
-      "fr": "linear",
-      "ar": "linear",
-      "pt": "linear",
-      "definition": "Core term used in Graphical Solutions of Linear–Nonlinear Systems."
+      "en": "linear system",
+      "es": "sistema lineal",
+      "fr": "système linéaire",
+      "ar": "نظام خطي",
+      "pt": "sistema linear",
+      "definition": "A set of equations in which each variable has degree at most one."
     },
     {
-      "en": "solving",
-      "es": "solving",
-      "fr": "solving",
-      "ar": "solving",
-      "pt": "solving",
-      "definition": "Core term used in Solving Nonlinear Systems by Substitution."
+      "en": "substitution method",
+      "es": "método de sustitución",
+      "fr": "méthode de substitution",
+      "ar": "طريقة التعويض",
+      "pt": "método da substituição",
+      "definition": "Solve one equation for a variable and replace it in another."
     },
     {
-      "en": "nonlinear",
-      "es": "nonlinear",
-      "fr": "nonlinear",
-      "ar": "nonlinear",
-      "pt": "nonlinear",
-      "definition": "Core term used in Solving Nonlinear Systems by Substitution."
+      "en": "nonlinear system",
+      "es": "sistema no lineal",
+      "fr": "système non linéaire",
+      "ar": "نظام غير خطي",
+      "pt": "sistema não linear",
+      "definition": "A system containing at least one nonlinear equation."
     },
     {
-      "en": "systems",
-      "es": "systems",
-      "fr": "systems",
-      "ar": "systems",
-      "pt": "systems",
-      "definition": "Core term used in Solving Nonlinear Systems by Substitution."
+      "en": "elimination method",
+      "es": "método de eliminación",
+      "fr": "méthode d'élimination",
+      "ar": "طريقة الحذف",
+      "pt": "método da eliminação",
+      "definition": "Combine equations to cancel one variable."
     },
     {
-      "en": "polynomial",
-      "es": "polynomial",
-      "fr": "polynomial",
-      "ar": "polynomial",
-      "pt": "polynomial",
-      "definition": "Core term used in Polynomial, Rational & Radical Systems."
+      "en": "polynomial system",
+      "es": "sistema polinómico",
+      "fr": "système polynomial",
+      "ar": "نظام كثيرات الحدود",
+      "pt": "sistema polinomial",
+      "definition": "A system of equations formed from polynomial expressions."
     },
     {
-      "en": "rational",
-      "es": "rational",
-      "fr": "rational",
-      "ar": "rational",
-      "pt": "rational",
-      "definition": "Core term used in Polynomial, Rational & Radical Systems."
+      "en": "rational system",
+      "es": "sistema racional",
+      "fr": "système rationnel",
+      "ar": "نظام معادلات نسبية",
+      "pt": "sistema racional",
+      "definition": "A system containing rational expressions with excluded denominator values."
     },
     {
-      "en": "radical",
-      "es": "radical",
-      "fr": "radical",
-      "ar": "radical",
-      "pt": "radical",
-      "definition": "Core term used in Polynomial, Rational & Radical Systems."
+      "en": "radical system",
+      "es": "sistema radical",
+      "fr": "système à radicaux",
+      "ar": "نظام معادلات جذرية",
+      "pt": "sistema com radicais",
+      "definition": "A system involving radicals and possible extraneous solutions."
     },
     {
       "en": "matrix",
-      "es": "matrix",
-      "fr": "matrix",
-      "ar": "matrix",
-      "pt": "matrix",
-      "definition": "Core term used in Matrix Vocabulary, Dimensions & Operations."
+      "es": "matriz",
+      "fr": "matrice",
+      "ar": "مصفوفة",
+      "pt": "matriz",
+      "definition": "A rectangular array of values arranged into rows and columns."
     },
     {
-      "en": "vocabulary",
-      "es": "vocabulary",
-      "fr": "vocabulary",
-      "ar": "vocabulary",
-      "pt": "vocabulary",
-      "definition": "Core term used in Matrix Vocabulary, Dimensions & Operations."
+      "en": "matrix entry",
+      "es": "elemento de matriz",
+      "fr": "élément de matrice",
+      "ar": "عنصر المصفوفة",
+      "pt": "elemento de matriz",
+      "definition": "A value at a specified row and column of a matrix."
     },
     {
-      "en": "dimensions",
-      "es": "dimensions",
-      "fr": "dimensions",
-      "ar": "dimensions",
-      "pt": "dimensions",
-      "definition": "Core term used in Matrix Vocabulary, Dimensions & Operations."
+      "en": "matrix dimensions",
+      "es": "dimensiones de la matriz",
+      "fr": "dimensions de matrice",
+      "ar": "أبعاد المصفوفة",
+      "pt": "dimensões da matriz",
+      "definition": "The number of rows by the number of columns."
     },
     {
-      "en": "equations",
-      "es": "equations",
-      "fr": "equations",
-      "ar": "equations",
-      "pt": "equations",
-      "definition": "Core term used in Matrix Equations, Row Reduction & Systems."
+      "en": "augmented matrix",
+      "es": "matriz ampliada",
+      "fr": "matrice augmentée",
+      "ar": "مصفوفة موسعة",
+      "pt": "matriz aumentada",
+      "definition": "A coefficient matrix with constants appended to encode a linear system."
     },
     {
-      "en": "reduction",
-      "es": "reduction",
-      "fr": "reduction",
-      "ar": "reduction",
-      "pt": "reduction",
-      "definition": "Core term used in Matrix Equations, Row Reduction & Systems."
+      "en": "row reduction",
+      "es": "reducción por filas",
+      "fr": "réduction par lignes",
+      "ar": "اختزال الصفوف",
+      "pt": "redução por linhas",
+      "definition": "Applying elementary row operations to simplify a matrix."
     },
     {
-      "en": "determinants",
-      "es": "determinants",
-      "fr": "determinants",
-      "ar": "determinants",
-      "pt": "determinants",
-      "definition": "Core term used in Determinants, Inverses & Transformation Models."
+      "en": "determinant",
+      "es": "determinante",
+      "fr": "déterminant",
+      "ar": "محدد المصفوفة",
+      "pt": "determinante",
+      "definition": "A scalar associated with a square matrix; nonzero implies invertibility."
     },
     {
-      "en": "inverses",
-      "es": "inverses",
-      "fr": "inverses",
-      "ar": "inverses",
-      "pt": "inverses",
-      "definition": "Core term used in Determinants, Inverses & Transformation Models."
+      "en": "inverse matrix",
+      "es": "matriz inversa",
+      "fr": "matrice inverse",
+      "ar": "المصفوفة المعكوسة",
+      "pt": "matriz inversa",
+      "definition": "A square matrix A^-1 satisfying AA^-1=I when it exists."
     },
     {
-      "en": "transformation",
-      "es": "transformation",
-      "fr": "transformation",
-      "ar": "transformation",
-      "pt": "transformation",
-      "definition": "Core term used in Determinants, Inverses & Transformation Models."
+      "en": "linear transformation",
+      "es": "transformación lineal",
+      "fr": "transformation linéaire",
+      "ar": "تحويل خطي",
+      "pt": "transformação linear",
+      "definition": "A map T preserving vector addition and scalar multiplication."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
