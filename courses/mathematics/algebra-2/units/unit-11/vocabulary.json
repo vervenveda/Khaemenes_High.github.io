@@ -3,172 +3,173 @@
   "title": "Trigonometric Identities, Equations & Oblique Triangles",
   "terms": [
     {
-      "en": "fundamental",
-      "es": "fundamental",
-      "fr": "fundamental",
-      "ar": "fundamental",
-      "pt": "fundamental",
-      "definition": "Core term used in Fundamental, Reciprocal & Pythagorean Identities."
+      "en": "Pythagorean identity",
+      "es": "identidad pitagórica",
+      "fr": "identité pythagoricienne",
+      "ar": "متطابقة فيثاغورس المثلثية",
+      "pt": "identidade pitagórica",
+      "definition": "The identity sin²θ+cos²θ=1 for all real θ."
     },
     {
-      "en": "reciprocal",
-      "es": "reciprocal",
-      "fr": "reciprocal",
-      "ar": "reciprocal",
-      "pt": "reciprocal",
-      "definition": "Core term used in Fundamental, Reciprocal & Pythagorean Identities."
+      "en": "reciprocal identity",
+      "es": "identidad recíproca",
+      "fr": "identité réciproque",
+      "ar": "متطابقة المقلوب",
+      "pt": "identidade recíproca",
+      "definition": "An identity such as secθ=1/cosθ wherever defined."
     },
     {
-      "en": "pythagorean",
-      "es": "pythagorean",
-      "fr": "pythagorean",
-      "ar": "pythagorean",
-      "pt": "pythagorean",
-      "definition": "Core term used in Fundamental, Reciprocal & Pythagorean Identities."
+      "en": "angle sum formula",
+      "es": "fórmula de suma de ángulos",
+      "fr": "formule de somme des angles",
+      "ar": "صيغة مجموع زاويتين",
+      "pt": "fórmula da soma de ângulos",
+      "definition": "A formula expressing sin(a+b) or cos(a+b) in terms of a and b."
     },
     {
-      "en": "verifying",
-      "es": "verifying",
-      "fr": "verifying",
-      "ar": "verifying",
-      "pt": "verifying",
-      "definition": "Core term used in Verifying Identities with Equivalent Transformations."
+      "en": "identity verification",
+      "es": "verificación de identidades",
+      "fr": "vérification des identités",
+      "ar": "التحقق من المتطابقات",
+      "pt": "verificação de identidades",
+      "definition": "Transforming one side into the other with valid algebraic identities."
     },
     {
-      "en": "identities",
-      "es": "identities",
-      "fr": "identities",
-      "ar": "identities",
-      "pt": "identities",
-      "definition": "Core term used in Verifying Identities with Equivalent Transformations."
+      "en": "trigonometric identity",
+      "es": "identidad trigonométrica",
+      "fr": "identité trigonométrique",
+      "ar": "متطابقة مثلثية",
+      "pt": "identidade trigonométrica",
+      "definition": "An equality true for every input common to both sides' domains."
     },
     {
-      "en": "with",
-      "es": "with",
-      "fr": "with",
-      "ar": "with",
-      "pt": "with",
-      "definition": "Core term used in Verifying Identities with Equivalent Transformations."
+      "en": "sum identity",
+      "es": "identidad de suma",
+      "fr": "identité de somme",
+      "ar": "متطابقة المجموع",
+      "pt": "identidade de soma",
+      "definition": "A trigonometric equality relating a sum of angles to separate terms."
     },
     {
-      "en": "difference",
-      "es": "difference",
-      "fr": "difference",
-      "ar": "difference",
-      "pt": "difference",
-      "definition": "Core term used in Sum and Difference Identities."
+      "en": "difference identity",
+      "es": "identidad de diferencia",
+      "fr": "identité de différence",
+      "ar": "متطابقة الفرق",
+      "pt": "identidade de diferença",
+      "definition": "A trigonometric equality for expressions involving a-b."
     },
     {
-      "en": "double-angle",
-      "es": "double-angle",
-      "fr": "double-angle",
-      "ar": "double-angle",
-      "pt": "double-angle",
-      "definition": "Core term used in Double-Angle and Half-Angle Identities."
+      "en": "double-angle identity",
+      "es": "identidad del ángulo doble",
+      "fr": "identité d'angle double",
+      "ar": "متطابقة الزاوية المضاعفة",
+      "pt": "identidade do ângulo duplo",
+      "definition": "An identity relating functions of 2θ to functions of θ."
     },
     {
-      "en": "half-angle",
-      "es": "half-angle",
-      "fr": "half-angle",
-      "ar": "half-angle",
-      "pt": "half-angle",
-      "definition": "Core term used in Double-Angle and Half-Angle Identities."
+      "en": "half-angle identity",
+      "es": "identidad del ángulo mitad",
+      "fr": "identité de demi-angle",
+      "ar": "متطابقة نصف الزاوية",
+      "pt": "identidade do meio ângulo",
+      "definition": "An identity relating functions of θ/2 to functions of θ with sign restrictions."
     },
     {
-      "en": "solving",
-      "es": "solving",
-      "fr": "solving",
-      "ar": "solving",
-      "pt": "solving",
-      "definition": "Core term used in Solving Trigonometric Equations on Intervals."
+      "en": "trigonometric equation",
+      "es": "ecuación trigonométrica",
+      "fr": "équation trigonométrique",
+      "ar": "معادلة مثلثية",
+      "pt": "equação trigonométrica",
+      "definition": "An equation whose solutions are angles satisfying a trigonometric relation."
     },
     {
-      "en": "trigonometric",
-      "es": "trigonometric",
-      "fr": "trigonometric",
-      "ar": "trigonometric",
-      "pt": "trigonometric",
-      "definition": "Core term used in Solving Trigonometric Equations on Intervals."
+      "en": "principal value",
+      "es": "valor principal",
+      "fr": "valeur principale",
+      "ar": "القيمة الرئيسية",
+      "pt": "valor principal",
+      "definition": "The output chosen from a restricted interval by an inverse trig function."
     },
     {
-      "en": "equations",
-      "es": "equations",
-      "fr": "equations",
-      "ar": "equations",
-      "pt": "equations",
-      "definition": "Core term used in Solving Trigonometric Equations on Intervals."
+      "en": "general solution",
+      "es": "solución general",
+      "fr": "solution générale",
+      "ar": "الحل العام",
+      "pt": "solução geral",
+      "definition": "All solutions described using periodicity and integer parameters."
     },
     {
-      "en": "sines",
-      "es": "sines",
-      "fr": "sines",
-      "ar": "sines",
-      "pt": "sines",
-      "definition": "Core term used in Law of Sines, Ambiguous Case & Applications."
+      "en": "law of sines",
+      "es": "ley de los senos",
+      "fr": "loi des sinus",
+      "ar": "قانون الجيوب",
+      "pt": "lei dos senos",
+      "definition": "For a triangle a/sin A=b/sin B=c/sin C."
     },
     {
-      "en": "ambiguous",
-      "es": "ambiguous",
-      "fr": "ambiguous",
-      "ar": "ambiguous",
-      "pt": "ambiguous",
-      "definition": "Core term used in Law of Sines, Ambiguous Case & Applications."
+      "en": "ambiguous SSA case",
+      "es": "caso ambiguo LLA",
+      "fr": "cas ambigu SSA",
+      "ar": "الحالة الملتبسة ضلع ضلع زاوية",
+      "pt": "caso ambíguo LLA",
+      "definition": "Two sides and a nonincluded angle may determine zero, one, or two triangles."
     },
     {
-      "en": "case",
-      "es": "case",
-      "fr": "case",
-      "ar": "case",
-      "pt": "case",
-      "definition": "Core term used in Law of Sines, Ambiguous Case & Applications."
+      "en": "triangle altitude",
+      "es": "altura del triángulo",
+      "fr": "hauteur du triangle",
+      "ar": "ارتفاع المثلث",
+      "pt": "altura do triângulo",
+      "definition": "A perpendicular segment from a vertex to the opposite side's line."
     },
     {
-      "en": "cosines",
-      "es": "cosines",
-      "fr": "cosines",
-      "ar": "cosines",
-      "pt": "cosines",
-      "definition": "Core term used in Law of Cosines & Heron-Type Area Reasoning."
+      "en": "law of cosines",
+      "es": "ley de los cosenos",
+      "fr": "loi des cosinus",
+      "ar": "قانون جيب التمام",
+      "pt": "lei dos cossenos",
+      "definition": "For opposite side c, c²=a²+b²-2ab cos C."
     },
     {
-      "en": "heron-type",
-      "es": "heron-type",
-      "fr": "heron-type",
-      "ar": "heron-type",
-      "pt": "heron-type",
-      "definition": "Core term used in Law of Cosines & Heron-Type Area Reasoning."
+      "en": "Heron formula",
+      "es": "fórmula de Herón",
+      "fr": "formule de Héron",
+      "ar": "صيغة هيرون",
+      "pt": "fórmula de Heron",
+      "definition": "For semiperimeter s, area=sqrt(s(s-a)(s-b)(s-c))."
     },
     {
-      "en": "area",
-      "es": "area",
-      "fr": "area",
-      "ar": "area",
-      "pt": "area",
-      "definition": "Core term used in Law of Cosines & Heron-Type Area Reasoning."
+      "en": "triangle area",
+      "es": "área del triángulo",
+      "fr": "aire du triangle",
+      "ar": "مساحة المثلث",
+      "pt": "área do triângulo",
+      "definition": "Half the product of two sides and the sine of their included angle."
     },
     {
-      "en": "navigation",
-      "es": "navigation",
-      "fr": "navigation",
-      "ar": "navigation",
-      "pt": "navigation",
-      "definition": "Core term used in Navigation, Vectors & Multi-Step Triangle Models."
+      "en": "navigation bearing",
+      "es": "rumbo de navegación",
+      "fr": "relèvement de navigation",
+      "ar": "اتجاه ملاحي",
+      "pt": "rumo de navegação",
+      "definition": "A direction angle based on a specified compass convention."
     },
     {
-      "en": "vectors",
-      "es": "vectors",
-      "fr": "vectors",
-      "ar": "vectors",
-      "pt": "vectors",
-      "definition": "Core term used in Navigation, Vectors & Multi-Step Triangle Models."
+      "en": "vector resolution",
+      "es": "descomposición vectorial",
+      "fr": "décomposition vectorielle",
+      "ar": "تحليل المتجه إلى مركبات",
+      "pt": "decomposição vetorial",
+      "definition": "Separating a vector into coordinate-direction components."
     },
     {
-      "en": "multi-step",
-      "es": "multi-step",
-      "fr": "multi-step",
-      "ar": "multi-step",
-      "pt": "multi-step",
-      "definition": "Core term used in Navigation, Vectors & Multi-Step Triangle Models."
+      "en": "multi-step trig model",
+      "es": "modelo trigonométrico de varios pasos",
+      "fr": "modèle trigonométrique à étapes",
+      "ar": "نموذج مثلثي متعدد الخطوات",
+      "pt": "modelo trigonométrico em etapas",
+      "definition": "A problem requiring several justified trigonometric relationships and checks."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
