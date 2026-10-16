@@ -36,7 +36,7 @@ function load(){
 }
 let state=load();
 let activeSet=[];
-function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch{alert("This browser could not save local course records.")}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));window.dispatchEvent(new CustomEvent("khaemenes-high-course-state-changed",{detail:{courseId:"algebra-2"}}))}catch{alert("This browser could not save local course records.")}}
 function activeStudent(){return state.students.find(s=>s.id===state.activeId)||state.students[0]}
 function scoreValue(v){if(v==null||v==="")return null;const n=Number(v);return Number.isFinite(n)?Math.max(0,Math.min(100,n)):null}
 function weekRecord(n){
@@ -337,5 +337,9 @@ function downloadReport(){
  const body=`<!doctype html><meta charset="utf-8"><title>Algebra II Progress Report</title><style>body{font:16px Arial;max-width:1000px;margin:40px auto}table{border-collapse:collapse;width:100%}td,th{border:1px solid #999;padding:7px;text-align:left}</style><h1>${esc(s.name)} · Algebra II Progress Report</h1><p>Exported ${new Date().toLocaleString()}</p><p>Pathway: ${esc(s.pathway)} · Calculated course grade: ${pct(g)}</p><p>Diagnostic ${pct(s.formal.diagnostic)} · Midterm ${pct(s.formal.midterm)} · Final ${pct(s.formal.final)} · Capstone ${pct(s.formal.capstone)}</p><table><thead><tr><th>Week</th><th>Focus</th><th>Classwork</th><th>Mastery</th><th>Portfolio</th></tr></thead><tbody>${D.weeks.map(w=>{const r=weekRecord(w.week);return `<tr><td>${w.week}</td><td>${esc(w.title)}</td><td>${pct(r.classwork)}</td><td>${pct(r.masteryBest)}</td><td>${pct(r.portfolio)}</td></tr>`}).join("")}</tbody></table>`;
  download("algebra2-progress-report.html",body,"text/html");
 }
+try{
+ const params=new URLSearchParams(location.search),requestedWeek=Number(params.get("continueWeek"));
+ if(Number.isInteger(requestedWeek)&&requestedWeek>=1&&requestedWeek<=36){state.selectedWeek=requestedWeek;save()}
+}catch{}
 setView(VALID_VIEWS.includes(location.hash.slice(1))?location.hash.slice(1):"dashboard",false);
 })();
