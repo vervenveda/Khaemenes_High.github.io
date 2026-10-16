@@ -113,6 +113,21 @@
   }
   ensureLearningContinuationContract();
 
+  // High School mathematics continuation publisher. It summarizes existing
+  // course evidence only; it never changes progression, grades, or mastery.
+  function ensureMathContinuationPublisher() {
+    if (typeof document === "undefined") return;
+    const path=String(window.location?.pathname||"").toLowerCase();
+    if(!/\/courses\/mathematics\/(pre-algebra|algebra-1|algebra-2)(?:\/|$)/.test(path))return;
+    if(document.querySelector('script[data-khaemenes-high-math-continuation]'))return;
+    const script=document.createElement("script");
+    script.src="https://vervenveda.com/Khaemenes_High.github.io/courses/shared/high-school-math-continuation.js";
+    script.async=false;
+    script.dataset.khaemenesHighMathContinuation="1";
+    (document.head||document.documentElement).append(script);
+  }
+  ensureMathContinuationPublisher();
+
   // Persistent High School learner rail.
   // This is a local fallback for pages that use the course-entry contract but do
   // not separately load the universal Verve N Veda beta/profile widget. Existing
