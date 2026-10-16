@@ -10,6 +10,11 @@ assert(fs.existsSync(css),"Shared parchment CSS missing");
 assert(source(css).includes("border-radius:7px"),"Expected seven-pixel Academy radius");
 for(const course of courses){
  const root="courses/language-arts/"+course+"/";
+ if(course!=="english-9"){
+  const sw=source(root+"service-worker.js");
+  assert(sw.includes('"./units/unit-05/reading-dossier.html"'),course+" missing offline reading cache");
+  assert(sw.includes('"../../shared/daily-instruction.css"'),course+" missing offline stylesheet");
+ }
  const dossier=root+"units/unit-05/reading-dossier.html";
  const unit=root+"units/unit-05/index.html";
  const html=source(dossier),unitHtml=source(unit);
