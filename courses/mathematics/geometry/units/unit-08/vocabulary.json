@@ -11,5 +11,18 @@
     "secant",
     "sector",
     "segment"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "radius": "A segment from a circle's center to a point on its circle.",
+    "diameter": "A chord passing through the center, twice the radius in length.",
+    "chord": "A segment joining two points on a circle.",
+    "arc": "A connected portion of the circumference between two points.",
+    "central angle": "An angle with its vertex at the circle center.",
+    "inscribed angle": "An angle with its vertex on a circle and sides passing through two circle points.",
+    "tangent": "A line meeting a circle at exactly one point.",
+    "secant": "A line intersecting a circle at two points.",
+    "sector": "A region bounded by two radii and their connecting arc.",
+    "segment": "A circular segment is bounded by a chord and its arc; distinguish it from a line segment."
+  }
 }

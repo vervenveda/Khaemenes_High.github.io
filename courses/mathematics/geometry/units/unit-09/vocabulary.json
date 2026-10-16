@@ -10,5 +10,17 @@
     "focus",
     "directrix",
     "Voronoi region"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "locus": "The set of all points satisfying a specified distance or position condition.",
+    "equidistant": "At the same distance from specified points, lines, or other objects.",
+    "boundary": "The locus separating geometric regions, often where two distances tie.",
+    "intersection": "Points common to two geometric sets or loci.",
+    "tangent": "A line touching a curve locally at a point; for a circle it is perpendicular to the radius there.",
+    "parabola": "A locus whose points are equidistant from a fixed focus and directrix.",
+    "focus": "A fixed point used to define a parabola.",
+    "directrix": "A fixed line used with the focus to define a parabola.",
+    "Voronoi region": "The points nearest to one seed than to any other seed, with ties on the boundary."
+  }
 }

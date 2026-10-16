@@ -11,5 +11,18 @@
     "trapezoid",
     "kite",
     "apothem"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "polygon": "A closed plane figure formed by three or more straight segments.",
+    "interior angle": "An angle inside a polygon between adjacent edges.",
+    "exterior angle": "An angle formed by extending a polygon side; one per vertex sums to 360° for a convex polygon.",
+    "parallelogram": "A quadrilateral with both pairs of opposite sides parallel.",
+    "rectangle": "A parallelogram having four right angles.",
+    "rhombus": "A parallelogram with four congruent sides.",
+    "square": "A quadrilateral with four right angles and four congruent sides.",
+    "trapezoid": "A quadrilateral with at least one pair of parallel sides; definitions may vary by convention.",
+    "kite": "A quadrilateral with two pairs of adjacent congruent sides.",
+    "apothem": "A perpendicular segment from the center of a regular polygon to one of its sides."
+  }
 }
