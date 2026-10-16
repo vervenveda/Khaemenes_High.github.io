@@ -1,0 +1,30 @@
+name: Upper High School Daily Instruction Validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/english-11/weeks/week-01/**'
+      - 'courses/language-arts/english-12/weeks/week-01/**'
+      - 'courses/science/biology-10/weeks/week-01/**'
+      - 'courses/science/chemistry-11/weeks/week-01/**'
+      - 'courses/shared/daily-instruction.css'
+      - 'tools/validate-upper-daily-instruction.mjs'
+      - '.github/workflows/upper-daily-instruction-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/language-arts/english-11/weeks/week-01/**'
+      - 'courses/language-arts/english-12/weeks/week-01/**'
+      - 'courses/science/biology-10/weeks/week-01/**'
+      - 'courses/science/chemistry-11/weeks/week-01/**'
+      - 'courses/shared/daily-instruction.css'
+      - 'tools/validate-upper-daily-instruction.mjs'
+      - '.github/workflows/upper-daily-instruction-validation.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify lesson content and course continuity
+        run: node tools/validate-upper-daily-instruction.mjs
