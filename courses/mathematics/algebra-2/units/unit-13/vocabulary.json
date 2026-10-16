@@ -3,124 +3,125 @@
   "title": "Advanced Mathematical Modelling Capstone",
   "terms": [
     {
-      "en": "frame",
-      "es": "frame",
-      "fr": "frame",
-      "ar": "frame",
-      "pt": "frame",
-      "definition": "Core term used in Frame a Meaningful, Ethical & Answerable Question."
+      "en": "research question",
+      "es": "pregunta de investigación",
+      "fr": "question de recherche",
+      "ar": "سؤال بحثي",
+      "pt": "pergunta de pesquisa",
+      "definition": "A precise question answerable using a defined mathematical model and evidence."
     },
     {
-      "en": "meaningful",
-      "es": "meaningful",
-      "fr": "meaningful",
-      "ar": "meaningful",
-      "pt": "meaningful",
-      "definition": "Core term used in Frame a Meaningful, Ethical & Answerable Question."
+      "en": "meaningful model",
+      "es": "modelo significativo",
+      "fr": "modèle pertinent",
+      "ar": "نموذج ذو معنى",
+      "pt": "modelo significativo",
+      "definition": "A model connected to a real interpretive purpose and an explicit context."
     },
     {
-      "en": "ethical",
-      "es": "ethical",
-      "fr": "ethical",
-      "ar": "ethical",
-      "pt": "ethical",
-      "definition": "Core term used in Frame a Meaningful, Ethical & Answerable Question."
+      "en": "ethical use of data",
+      "es": "uso ético de datos",
+      "fr": "usage éthique des données",
+      "ar": "الاستخدام الأخلاقي للبيانات",
+      "pt": "uso ético de dados",
+      "definition": "Collecting and interpreting data with consent, privacy, and fair representation where applicable."
     },
     {
-      "en": "select",
-      "es": "select",
-      "fr": "select",
-      "ar": "select",
-      "pt": "select",
-      "definition": "Core term used in Select Variables, Functions, Data & Assumptions."
+      "en": "model selection",
+      "es": "selección de modelos",
+      "fr": "sélection de modèle",
+      "ar": "اختيار النموذج",
+      "pt": "seleção de modelo",
+      "definition": "Choosing a mathematical form suited to observed behavior and assumptions."
     },
     {
-      "en": "variables",
-      "es": "variables",
-      "fr": "variables",
-      "ar": "variables",
-      "pt": "variables",
-      "definition": "Core term used in Select Variables, Functions, Data & Assumptions."
+      "en": "model variable",
+      "es": "variable del modelo",
+      "fr": "variable du modèle",
+      "ar": "متغير النموذج",
+      "pt": "variável do modelo",
+      "definition": "A measurable quantity represented by a symbol in a mathematical model."
     },
     {
-      "en": "functions",
-      "es": "functions",
-      "fr": "functions",
-      "ar": "functions",
-      "pt": "functions",
-      "definition": "Core term used in Select Variables, Functions, Data & Assumptions."
+      "en": "function model",
+      "es": "modelo funcional",
+      "fr": "modèle fonctionnel",
+      "ar": "نموذج دالي",
+      "pt": "modelo funcional",
+      "definition": "A function relating an independent input to an outcome."
     },
     {
-      "en": "build",
-      "es": "build",
-      "fr": "build",
-      "ar": "build",
-      "pt": "build",
-      "definition": "Core term used in Build, Compute, Visualize & Validate the Model."
+      "en": "model construction",
+      "es": "construcción del modelo",
+      "fr": "construction du modèle",
+      "ar": "بناء النموذج",
+      "pt": "construção de modelo",
+      "definition": "Translating assumptions and relationships into a mathematical representation."
     },
     {
-      "en": "compute",
-      "es": "compute",
-      "fr": "compute",
-      "ar": "compute",
-      "pt": "compute",
-      "definition": "Core term used in Build, Compute, Visualize & Validate the Model."
+      "en": "numerical computation",
+      "es": "cálculo numérico",
+      "fr": "calcul numérique",
+      "ar": "حساب عددي",
+      "pt": "cálculo numérico",
+      "definition": "Evaluating a model with documented values, units, and precision."
     },
     {
-      "en": "visualize",
-      "es": "visualize",
-      "fr": "visualize",
-      "ar": "visualize",
-      "pt": "visualize",
-      "definition": "Core term used in Build, Compute, Visualize & Validate the Model."
+      "en": "data visualization",
+      "es": "visualización de datos",
+      "fr": "visualisation de données",
+      "ar": "تصور البيانات",
+      "pt": "visualização de dados",
+      "definition": "Representing observations or model results in a clearly labeled graphic."
     },
     {
-      "en": "test",
-      "es": "test",
-      "fr": "test",
-      "ar": "test",
-      "pt": "test",
-      "definition": "Core term used in Test Sensitivity, Uncertainty, Fairness & Limitations."
+      "en": "model validation",
+      "es": "validación del modelo",
+      "fr": "validation du modèle",
+      "ar": "التحقق من صلاحية النموذج",
+      "pt": "validação de modelo",
+      "definition": "Comparing predictions with independent evidence and stated criteria."
     },
     {
-      "en": "sensitivity",
-      "es": "sensitivity",
-      "fr": "sensitivity",
-      "ar": "sensitivity",
-      "pt": "sensitivity",
-      "definition": "Core term used in Test Sensitivity, Uncertainty, Fairness & Limitations."
+      "en": "sensitivity analysis",
+      "es": "análisis de sensibilidad",
+      "fr": "analyse de sensibilité",
+      "ar": "تحليل الحساسية",
+      "pt": "análise de sensibilidade",
+      "definition": "Studying how model outputs change as inputs or parameters vary."
     },
     {
       "en": "uncertainty",
-      "es": "uncertainty",
-      "fr": "uncertainty",
-      "ar": "uncertainty",
-      "pt": "uncertainty",
-      "definition": "Core term used in Test Sensitivity, Uncertainty, Fairness & Limitations."
+      "es": "incertidumbre",
+      "fr": "incertitude",
+      "ar": "عدم اليقين",
+      "pt": "incerteza",
+      "definition": "Limited knowledge represented by plausible ranges, assumptions, or error estimates."
     },
     {
-      "en": "present",
-      "es": "present",
-      "fr": "present",
-      "ar": "present",
-      "pt": "present",
-      "definition": "Core term used in Present, Defend, Revise & Reflect."
+      "en": "model presentation",
+      "es": "presentación del modelo",
+      "fr": "présentation du modèle",
+      "ar": "عرض النموذج",
+      "pt": "apresentação do modelo",
+      "definition": "Communicating the question, method, results, assumptions, and limits."
     },
     {
-      "en": "defend",
-      "es": "defend",
-      "fr": "defend",
-      "ar": "defend",
-      "pt": "defend",
-      "definition": "Core term used in Present, Defend, Revise & Reflect."
+      "en": "mathematical defense",
+      "es": "defensa matemática",
+      "fr": "soutenance mathématique",
+      "ar": "دفاع رياضي عن النتائج",
+      "pt": "defesa matemática",
+      "definition": "Justifying a result under questioning with derivations and evidence."
     },
     {
-      "en": "revise",
-      "es": "revise",
-      "fr": "revise",
-      "ar": "revise",
-      "pt": "revise",
-      "definition": "Core term used in Present, Defend, Revise & Reflect."
+      "en": "model revision",
+      "es": "revisión del modelo",
+      "fr": "révision du modèle",
+      "ar": "مراجعة النموذج",
+      "pt": "revisão de modelo",
+      "definition": "Improving a model in response to diagnostics, feedback, or new data."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
