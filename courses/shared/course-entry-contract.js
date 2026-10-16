@@ -99,6 +99,20 @@
     isReady,
     routeFor
   });
+  // Shared Academy continuation contract. This only publishes summary/next-step
+  // metadata; it cannot award mastery, change scores, placement, or unlock lessons.
+  function ensureLearningContinuationContract() {
+    if (typeof document === "undefined" || window.KhaemenesLearningContinuation) return;
+    if (document.querySelector('script[data-khaemenes-learning-continuation]')) return;
+    const script=document.createElement("script");
+    script.src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-learning-continuation.js";
+    script.async=false;
+    script.dataset.khaemenesLearningContinuation="1";
+    script.addEventListener("load",()=>window.dispatchEvent(new CustomEvent("khaemenes-learning-continuation-ready")));
+    (document.head||document.documentElement).append(script);
+  }
+  ensureLearningContinuationContract();
+
   // Persistent High School learner rail.
   // This is a local fallback for pages that use the course-entry contract but do
   // not separately load the universal Verve N Veda beta/profile widget. Existing
