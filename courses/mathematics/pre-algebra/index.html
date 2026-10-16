@@ -4316,7 +4316,7 @@ function loadState(){
   }catch(error){console.warn("Progress could not be loaded.",error)}
   return{schemaVersion:2,students:[],activeId:null};
 }
-function save(){state.schemaVersion=2;localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}
+function save(){state.schemaVersion=2;localStorage.setItem(STORAGE_KEY,JSON.stringify(state));window.dispatchEvent(new CustomEvent("khaemenes-high-course-state-changed",{detail:{courseId:"pre-algebra"}}))}
 function uid(){return"s_"+Math.random().toString(36).slice(2,9)+Date.now().toString(36)}
 function student(){return state.students.find(s=>s.id===state.activeId)||null}
 function ensure(s){
@@ -4563,7 +4563,13 @@ activityFrame?.addEventListener("load",()=>{if(activityFrame.src!=="about:blank"
 activityClose?.addEventListener("click",closeActivity);
 activityDialog?.addEventListener("cancel",event=>{event.preventDefault();closeActivity()});
 activityDialog?.addEventListener("click",event=>{if(event.target===activityDialog)closeActivity()});
-$("pinCourseButton").onclick=toggleCoursePin;window.addEventListener("storage",event=>{const pins=window.KhaemenesHighCoursePins;if(event.key===pins?.scopedKey(PROFILE_PIN_KEY)||event.key==="khaemenes_active_learner_v1")updatePinButton()});window.addEventListener("pageshow",updatePinButton);window.addEventListener("focus",updatePinButton);$("addStudent").onclick=()=>{let n=$("studentName").value.trim();if(!n)return alert("Enter a learner name.");addStudent(n);$("studentName").value=""};$("studentSelect").onchange=e=>{state.activeId=e.target.value;save();render()};$("deleteStudent").onclick=()=>{let s=student();if(!s)return;if(!confirm(`Delete ${s.name}?`))return;state.students=state.students.filter(x=>x.id!==s.id);state.activeId=state.students[0]?.id||null;if(!state.students.length)addStudent("First Learner");save();render()};$("demo").onclick=()=>{addStudent("Demo Learner");let s=student();for(let i=1;i<=4;i++){let r=weekRec(s,i);["Monday","Tuesday","Wednesday"].forEach(d=>r.lessons[d]=true);r.assignments[0]=true;r.quiz.best=[100,80,85,70][i-1];r.quiz.attempts.push({date:new Date().toISOString(),score:r.quiz.best})}save();render()};if(!state.students.length)addStudent("First Learner");else render();
+$("pinCourseButton").onclick=toggleCoursePin;window.addEventListener("storage",event=>{const pins=window.KhaemenesHighCoursePins;if(event.key===pins?.scopedKey(PROFILE_PIN_KEY)||event.key==="khaemenes_active_learner_v1")updatePinButton()});window.addEventListener("pageshow",updatePinButton);window.addEventListener("focus",updatePinButton);$("addStudent").onclick=()=>{let n=$("studentName").value.trim();if(!n)return alert("Enter a learner name.");addStudent(n);$("studentName").value=""};$("studentSelect").onchange=e=>{state.activeId=e.target.value;save();render()};$("deleteStudent").onclick=()=>{let s=student();if(!s)return;if(!confirm(`Delete ${s.name}?`))return;state.students=state.students.filter(x=>x.id!==s.id);state.activeId=state.students[0]?.id||null;if(!state.students.length)addStudent("First Learner");save();render()};$("demo").onclick=()=>{addStudent("Demo Learner");let s=student();for(let i=1;i<=4;i++){let r=weekRec(s,i);["Monday","Tuesday","Wednesday"].forEach(d=>r.lessons[d]=true);r.assignments[0]=true;r.quiz.best=[100,80,85,70][i-1];r.quiz.attempts.push({date:new Date().toISOString(),score:r.quiz.best})}save();render()};
+try{
+  const params=new URLSearchParams(location.search),requestedWeek=Number(params.get("week")),requestedView=params.get("view");
+  if(Number.isInteger(requestedWeek)&&requestedWeek>=1&&requestedWeek<=36)activeWeek=requestedWeek;
+  if(["dashboard","overview","week","scope","tools","games","exams","capstone","reports","standards"].includes(requestedView))view=requestedView;
+}catch{}
+if(!state.students.length)addStudent("First Learner");else render();
 
 </script>
 <script src="assets/prealgebra-archaemenes-upgrade.js"></script>
