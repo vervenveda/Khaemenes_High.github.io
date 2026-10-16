@@ -11,7 +11,6 @@ const MENTOR_URL = "https://artist1970.github.io/Archaemenes.github.io/high/";
 const HIGH_URL = "https://vervenveda.com/Khaemenes_High.github.io/";
 const ALGEBRA1_URL = "https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/algebra-1/";
 const ALGEBRA2_URL = "https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/algebra-2/";
-const BETA_URL = "https://vervenveda.com/beta/";
 const UPGRADE_SCRIPT_URL = document.currentScript?.src || new URL("assets/geometry-archaemenes-upgrade.js", location.href).href;
 
 const css = `
