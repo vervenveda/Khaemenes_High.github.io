@@ -137,14 +137,31 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 "use strict";
 const q=new URLSearchParams(location.search);
 const safe=(v,m=160)=>String(v||"").replace(/[\u0000-\u001f\u007f]/g,"").slice(0,m);
-const subject=safe(q.get("subject")||"general",60).toLowerCase();
-const source=safe(q.get("source")||"/Khaemenes_High.github.io/",240);
-const course=safe(q.get("course")||"",100);
+const allowedSubjects=new Set(["general","language-arts","social-studies","mathematics","science","world-languages","arts","health","technology"]);
+const requestedSubject=safe(q.get("subject")||"general",60).toLowerCase();
+const subject=allowedSubjects.has(requestedSubject)?requestedSubject:"general";
+const requestedSource=safe(q.get("source")||"",240);
+const source=requestedSource.startsWith("/Khaemenes_High.github.io/")||requestedSource.startsWith("/stos/khaemenes/high/")?requestedSource:"/Khaemenes_High.github.io/";
+const course=safe(q.get("course")||"",100).replace(/[^A-Za-z0-9 _-]/g,"").trim();
 const learner=window.KhaemenesFamilyRegistry?.getLearner?.()||null;
+const pageLearnerId=learner?.learnerId||null;
+const currentLearner=()=>window.KhaemenesFamilyRegistry?.getLearner?.()||null;
+const learnerSessionCurrent=()=>{const now=currentLearner();return pageLearnerId?now?.learnerId===pageLearnerId:!now?.learnerId};
 const stage=learner?.stage==="high"?"high":"high";
 const assignment=window.KhaemenesNAIB?.assignMentor?.({role:"student",stage,grade:learner?.grade||null,learnerId:learner?.learnerId||null,ageBand:learner?.ageBand||"",interests:learner?.interests||[],surface:source,subject,courseId:course,intent:"academic-support"})||null;
 const mentor=assignment?.mentor||{name:"Archaemenes",title:"Scholar and School Principal · Academy Mentor of Khaemenes Academy",avatar:"🦉",intro:"I can help you reason through the material one step at a time."};
-const context=document.getElementById("context"),log=document.getElementById("log"),form=document.getElementById("form"),question=document.getElementById("question"),status=document.getElementById("status");
+const context=document.getElementById("context"),log=document.getElementById("log"),form=document.getElementById("form"),question=document.getElementById("question"),status=document.getElementById("status"),sendButton=form?.querySelector(".send");
+let learnerSessionBlocked=false,mentorRequestInFlight=false;
+function blockLearnerSession(){
+ if(learnerSessionBlocked)return false;
+ learnerSessionBlocked=true;
+ if(question)question.disabled=true;
+ if(sendButton)sendButton.disabled=true;
+ status.textContent="The active learner changed. Reopen the mentor from the intended learner profile before continuing.";
+ add("mentor","The active Academy learner changed while this mentor page was open. This mentor window is now read-only so one learner’s context cannot cross into another learner’s session.");
+ return false;
+}
+function verifyLearnerSession(){return learnerSessionCurrent()?true:blockLearnerSession()}
 const voice=window.KhaemenesArchaemenesVoice,voiceStatus=document.getElementById("voiceStatus"),voiceAuto=document.getElementById("voiceAuto"),voiceMode=document.getElementById("voiceMode"),voiceName=document.getElementById("voiceName"),voiceRate=document.getElementById("voiceRate"),voicePitch=document.getElementById("voicePitch"),voiceVolume=document.getElementById("voiceVolume");
 document.getElementById("mentorName").textContent=mentor.name||"Archaemenes";
 document.getElementById("mentorTitle").textContent=mentor.title||"Khaemenes Academy Mentor";
@@ -184,8 +201,49 @@ function add(who,text,{autoVoice=false}={}){
 }
 add("mentor",mentor.intro||"Tell me where the reasoning became unclear, and we will work from there.");
 function intent(text){const t=text.toLowerCase();if(/locked|future|next quiz|next test|answer key|test answers|quiz answers|exam answers|give me the answer/.test(t))return"protected";if(/quiz|test|exam|assessment|score|grade/.test(t))return"assessment";if(/mistake|wrong|missed|error|diagnose/.test(t))return"mistake";if(/study|review|remember|practice/.test(t))return"study";if(/plan|next step|behind|schedule/.test(t))return"plan";return"concept"}
+const transportableIntents=new Set(["concept","mistake","study","plan"]);
+const mentorPolicy=Object.freeze({
+ version:"archaemenes-high-mentor-policy-v3",
+ masteryThreshold:80,
+ allowLockedAssessmentDisclosure:false,
+ allowProgressionBypass:false,
+ allowGradeChange:false,
+ allowMasteryAward:false,
+ allowPlacementChange:false,
+ allowLearnerIdentityChange:false
+});
+function withMentorTimeout(promise,ms=8000){
+ let timer;
+ const timeout=new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error("mentor-transport-timeout")),ms)});
+ return Promise.race([Promise.resolve(promise),timeout]).finally(()=>clearTimeout(timer));
+}
 function localResponse(text){const i=intent(text);const label=subject==="general"?"this subject":subject.replace(/-/g," ");if(i==="protected")return"I can help you prepare, but I cannot reveal locked future quiz or test questions, protected answer keys, or bypass a prerequisite. Tell me the concept or skill you are preparing for, and we can practice it with a fresh example inside your current learning scope.";if(i==="assessment")return"Use the assessment as evidence: identify the skill being tested, what you did correctly, where the reasoning changed, and one similar problem or prompt you can now complete without help. I can help with that reasoning, but the course engine remains the authority for the recorded score and 80% mastery gate.";if(i==="mistake")return"Good place to start. Show me the step, sentence, claim, calculation, or evidence choice that was marked wrong—or describe what you expected to happen. We will compare your reasoning with the rule or evidence one step at a time instead of jumping straight to an answer.";if(i==="study")return`For ${label}, choose one unlocked skill. First explain it from memory in your own words, then do one fresh example without looking at the model, then check the result and write the specific correction you would make. That gives you evidence of understanding rather than recognition.`;if(i==="plan")return"Make the next step small and observable: name the current unlocked lesson, the exact task still incomplete, and the mastery evidence needed next. Work only that scope before planning farther ahead. The course gate—not the mentor—determines when the next required material opens.";return`For ${label}, tell me three things: what the task is asking, what you already understand, and the first point where the reasoning becomes uncertain. I will help you build the next valid step without completing scored work for you.`}
-async function ask(text){const cleaned=safe(text,1200).trim();if(!cleaned)return;add("student",cleaned);status.textContent="Working through the current learning context…";question.value="";try{if(window.KhaemenesMentorTransport?.ask){const response=await window.KhaemenesMentorTransport.ask({question:cleaned,context:{stage:"high",grade:learner?.grade||null,subject,courseId:course||null,surface:source,masteryThreshold:80,allowLockedAssessmentDisclosure:false,allowProgressionBypass:false}});add("mentor",safe(response?.text||response,4000)||localResponse(cleaned),{autoVoice:true});}else add("mentor",localResponse(cleaned),{autoVoice:true});}catch{add("mentor",localResponse(cleaned),{autoVoice:true});}finally{status.textContent=""}}
+async function ask(text){
+ if(mentorRequestInFlight||!verifyLearnerSession())return;
+ const cleaned=safe(text,1200).trim();if(!cleaned)return;
+ const kind=intent(cleaned);
+ add("student",cleaned);question.value="";
+ // Assessment/protected requests and guest previews stay local-only.
+ if(!transportableIntents.has(kind)||!pageLearnerId||!window.KhaemenesMentorTransport?.ask){
+  add("mentor",localResponse(cleaned),{autoVoice:true});status.textContent="";return;
+ }
+ mentorRequestInFlight=true;if(sendButton)sendButton.disabled=true;
+ status.textContent="Working through the current learning context…";
+ try{
+  const response=await withMentorTimeout(window.KhaemenesMentorTransport.ask({
+   question:cleaned,
+   context:{stage:"high",grade:learner?.grade||null,subject,courseId:course||null,surface:source,...mentorPolicy}
+  }),8000);
+  if(!verifyLearnerSession())return;
+  add("mentor",safe(response?.text||response,4000)||localResponse(cleaned),{autoVoice:true});
+ }catch{
+  if(!learnerSessionBlocked)add("mentor",localResponse(cleaned),{autoVoice:true});
+ }finally{
+  mentorRequestInFlight=false;
+  if(sendButton&&!learnerSessionBlocked)sendButton.disabled=false;
+  if(!learnerSessionBlocked)status.textContent="";
+ }
+}
 form.addEventListener("submit",e=>{e.preventDefault();ask(question.value)});document.querySelectorAll(".prompt").forEach(b=>b.addEventListener("click",()=>{question.value=b.textContent;question.focus()}));
 document.getElementById("voicePreview")?.addEventListener("click",()=>speakMentor("Welcome to Khaemenes Academy. I am Archaemenes. We can work through the reasoning one step at a time.",{explicit:true}));
 document.getElementById("voiceStop")?.addEventListener("click",()=>{voice?.cancel();setVoiceStatus("Voice playback stopped.")});
@@ -197,6 +255,8 @@ voicePitch?.addEventListener("input",()=>voice?.saveSettings({pitch:Number(voice
 voiceVolume?.addEventListener("input",()=>voice?.saveSettings({volume:Number(voiceVolume.value)}));
 window.addEventListener("khaemenes:archaemenes-voices-changed",populateVoices);
 window.addEventListener("khaemenes:archaemenes-custom-voice-provider",syncVoiceControls);
+window.addEventListener("khaemenes:learner-changed",verifyLearnerSession);
+window.addEventListener("storage",()=>verifyLearnerSession());
 syncVoiceControls();
 })();
 </script>
