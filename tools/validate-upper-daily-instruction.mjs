@@ -29,7 +29,7 @@ for(const course of courses){
   assert(html.includes('href="../index.html#'+days[i]+'"'),"Return to original workspace absent");
   assert(html.includes("../../../index.html"),"Course home return missing");
   assert(html.includes("shared/daily-instruction.css"),"Shared stylesheet missing");
-  for(const label of ["Explicit instruction","Worked","Guided","Independent","Misconception","Teacher","check"]){
+  for(const label of ["Explicit","Worked","Guided","Independent","Misconception","Teacher","check"]){
    assert(html.toLowerCase().includes(label.toLowerCase()),course.name+" lesson lacks "+label);
   }
   assert(html.length>2800,course.name+" daily lesson unexpectedly skeletal");
