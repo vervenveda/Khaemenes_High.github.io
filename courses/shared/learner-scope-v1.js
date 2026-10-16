@@ -142,7 +142,7 @@
       trigger.setAttribute("aria-controls", "learnerRecordNoticePanel");
       trigger.setAttribute("aria-expanded", "false");
       trigger.style.cssText = "position:fixed;right:14px;bottom:122px;z-index:2147483000;padding:8px 11px;border:1px solid #967342;border-radius:7px;background:#fff8e8;color:#20241f;box-shadow:0 4px 18px rgba(34,31,27,.16);font:inherit;font-size:13px;font-weight:400;line-height:1.2;cursor:pointer";
-      document.body.append(trigger);
+      (document.getElementById("khaemenesLearnerUtilityToolbar") || document.body).append(trigger);
     }
 
     if (!panel) {
@@ -158,33 +158,25 @@
     panel.replaceChildren();
 
     function positionRecoveryRail() {
-      const safeBottom = 12;
-      const gap = 8;
-      const profileButton = document.getElementById("khaemenesHighStudentProfileLink");
-      const betaButton = document.getElementById("vnvBetaProgramLink");
-
-      let triggerBottom = 122;
-      if (profileButton) {
-        const rect = profileButton.getBoundingClientRect();
-        if (rect.height > 0) triggerBottom = Math.max(110, Math.ceil(window.innerHeight - rect.top + gap));
-      } else if (betaButton) {
-        const rect = betaButton.getBoundingClientRect();
-        if (rect.height > 0) {
-          /* Reserve the normal Student Profile slot even if it mounts a moment later. */
-          triggerBottom = Math.max(110, Math.ceil(window.innerHeight - rect.top + rect.height + 30));
-        }
-      } else {
-        triggerBottom = safeBottom + 110;
+      const toolbar = document.getElementById("khaemenesLearnerUtilityToolbar");
+      if (toolbar) {
+        trigger.style.order = "10";
+        if (trigger.parentElement !== toolbar) toolbar.prepend(trigger);
+        const rect = toolbar.getBoundingClientRect();
+        const toolbarHeight = Math.ceil(rect.height || 54);
+        panel.style.right = "max(12px, env(safe-area-inset-right))";
+        panel.style.bottom = `calc(max(12px, env(safe-area-inset-bottom)) + ${toolbarHeight + 10}px)`;
+        return;
       }
 
+      /* Fallback for pages where the shared utility toolbar has not mounted yet. */
       trigger.style.right = "max(12px, env(safe-area-inset-right))";
-      trigger.style.bottom = `calc(max(12px, env(safe-area-inset-bottom)) + ${Math.max(98, triggerBottom - safeBottom)}px)`;
-
+      trigger.style.bottom = "122px";
       requestAnimationFrame(() => {
         const rect = trigger.getBoundingClientRect();
-        const panelBottom = Math.max(156, Math.ceil(window.innerHeight - rect.top + gap));
+        const panelBottom = Math.max(156, Math.ceil(window.innerHeight - rect.top + 8));
         panel.style.right = "max(12px, env(safe-area-inset-right))";
-        panel.style.bottom = `calc(max(12px, env(safe-area-inset-bottom)) + ${Math.max(144, panelBottom - safeBottom)}px)`;
+        panel.style.bottom = `calc(max(12px, env(safe-area-inset-bottom)) + ${Math.max(144, panelBottom - 12)}px)`;
       });
     }
 
