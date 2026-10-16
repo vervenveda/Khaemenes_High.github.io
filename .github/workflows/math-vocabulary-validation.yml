@@ -12,6 +12,9 @@ on:
       - 'courses/mathematics/geometry/index.html'
       - 'courses/mathematics/algebra-2/index.html'
       - 'courses/mathematics/tools/vocabulary-studio.html'
+      - 'courses/shared/learner-scope-v1.js'
+      - 'courses/shared/math-lesson-vocabulary-link.js'
+      - 'tools/validate-math-lesson-vocabulary.mjs'
       - 'tools/validate-math-vocabulary.mjs'
       - '.github/workflows/math-vocabulary-validation.yml'
   pull_request:
@@ -25,6 +28,9 @@ on:
       - 'courses/mathematics/geometry/index.html'
       - 'courses/mathematics/algebra-2/index.html'
       - 'courses/mathematics/tools/vocabulary-studio.html'
+      - 'courses/shared/learner-scope-v1.js'
+      - 'courses/shared/math-lesson-vocabulary-link.js'
+      - 'tools/validate-math-lesson-vocabulary.mjs'
       - 'tools/validate-math-vocabulary.mjs'
       - '.github/workflows/math-vocabulary-validation.yml'
 permissions:
@@ -35,4 +41,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Verify mathematics dictionaries and student studio
-        run: node tools/validate-math-vocabulary.mjs
+        run: |
+          node tools/validate-math-vocabulary.mjs
+          node tools/validate-math-lesson-vocabulary.mjs
