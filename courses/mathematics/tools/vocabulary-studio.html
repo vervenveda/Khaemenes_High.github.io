@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f7f2">
+<title>Mathematics Vocabulary Studio · Khaemenes Academy</title>
+<style>
+:root{color-scheme:light;--paper:#faf9f5;--ink:#222a32;--muted:#535d64;--line:#c8c9c4;--accent:#244f5c}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#fff,#f7f6f1 35%,#faf9f5);color:var(--ink);font:400 15px/1.6 "Brandon Grotesque","Avenir Next",Arial,sans-serif}
+main,header,footer{max-width:1080px;margin:auto;padding:20px 24px}
+header{text-align:center;padding-top:32px}
+h1,h2,h3{font-family:Cinzel,Georgia,serif;font-weight:400;overflow-wrap:normal}
+h1{font-size:33px;line-height:1.25;margin:8px 0}
+h2{font-size:24px}
+h3{font-size:19px;margin:0}
+.eyebrow{font-family:Cinzel,Georgia,serif;letter-spacing:.1em;color:var(--accent);font-size:14px}
+p{margin:6px 0 14px;overflow-wrap:normal}
+a{color:var(--accent);text-underline-offset:3px}
+.nav{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.panel,.entry{border:1px solid var(--line);border-radius:7px;background:#fff;padding:17px}
+.controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}
+label{display:block;font-size:14px;color:var(--muted);margin-bottom:4px}
+select,input{width:100%;border-radius:7px;border:1px solid #a9b0b1;background:#fff;color:var(--ink);padding:10px;font:inherit}
+select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0}
+.meta{font-size:13px;color:var(--muted)}
+.translation{margin:4px 0;color:var(--accent)}
+.description{margin:6px 0 0}
+.status{min-height:30px;color:var(--muted)}
+.end{text-align:center;border-top:1px solid var(--line);color:var(--muted)}
+[hidden]{display:none!important}
+@media(max-width:800px){.controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:570px){.controls,.list{grid-template-columns:minmax(0,1fr)}h1{font-size:30px}}
+@media print{.controls,.nav{display:none}.entry{break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">KHAEMENES ACADEMY · MATHEMATICS</div>
+<h1>Vocabulary Studio</h1>
+<p>Definitions that explain the mathematics, not just its name. Choose a course, unit, and study language.</p>
+<nav class="nav" aria-label="Course navigation">
+<a id="courseHome" href="../algebra-2/">Course Home</a>
+<a id="unitHome" href="../algebra-2/units/unit-01/">Unit Lessons</a>
+<a href="../">Mathematics Department</a>
+<a href="../../../index.html">High School</a>
+</nav>
+</header>
+<main id="main">
+<section class="panel" aria-label="Vocabulary study controls">
+<div class="controls">
+<div><label for="course">Course</label><select id="course"><option value="algebra-2">Algebra II</option><option value="geometry">Geometry</option></select></div>
+<div><label for="unit">Unit</label><select id="unit"></select></div>
+<div><label for="language">Vocabulary language</label><select id="language"><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="ar">العربية</option><option value="pt">Português</option></select></div>
+<div><label for="search">Find a term</label><input id="search" type="search" autocomplete="off" placeholder="Search the unit"></div>
+</div>
+<p class="meta">Algebra II offers translated terms with English mathematical explanations. Geometry definitions are currently supplied in English. Translations support learning but do not replace the teacher's precise mathematical notation.</p>
+</section>
+<h2 id="unitTitle">Unit vocabulary</h2>
+<p id="status" class="status" role="status" aria-live="polite">Loading local vocabulary…</p>
+<div id="vocabularyList" class="list" aria-live="polite"></div>
+</main>
+<footer class="end">Jennifer Kay Pearl · Verve N Veda · Local curriculum resources · No external vocabulary service</footer>
+<script>
+(()=>{
+"use strict";
+const byId=id=>document.getElementById(id);
+const validCourses=new Set(["algebra-2","geometry"]);
+const validLanguages=new Set(["en","es","fr","ar","pt"]);
+const params=new URLSearchParams(location.search);
+const course=byId("course"),unit=byId("unit"),lang=byId("language"),query=byId("search");
+const list=byId("vocabularyList"),status=byId("status"),title=byId("unitTitle");
+let current=null,loadCount=0;
+course.value=validCourses.has(params.get("course"))?params.get("course"):"algebra-2";
+lang.value=validLanguages.has(params.get("lang"))?params.get("lang"):"en";
+for(let n=1;n<=13;n++){
+ const item=document.createElement("option");
+ item.value=String(n).padStart(2,"0");
+ item.textContent="Unit "+String(n).padStart(2,"0");
+ unit.append(item);
+}
+const incoming=Number(params.get("unit"));
+unit.value=Number.isInteger(incoming)&&incoming>=1&&incoming<=13?String(incoming).padStart(2,"0"):"01";
+function sync(){
+ const p=new URLSearchParams({course:course.value,unit:unit.value,lang:lang.value});
+ history.replaceState(null,"","?"+p.toString());
+ byId("courseHome").href="../"+course.value+"/";
+ byId("unitHome").href="../"+course.value+"/units/unit-"+unit.value+"/";
+}
+function addText(tag,value,cls){
+ const node=document.createElement(tag);
+ node.textContent=String(value||"");
+ if(cls)node.className=cls;
+ return node;
+}
+function render(){
+ list.replaceChildren();
+ if(!current)return;
+ const source=Array.isArray(current.terms)?current.terms:[];
+ const records=source.map(item=>typeof item==="string"?
+   {en:item,definition:current.definitions?.[item]||""}:item);
+ const q=query.value.trim().toLocaleLowerCase();
+ const matched=records.filter(item=>([item.en,item[lang.value],item.definition].join(" ").toLocaleLowerCase().includes(q)));
+ const frag=document.createDocumentFragment();
+ for(const item of matched){
+   const card=document.createElement("article");card.className="entry";
+   card.append(addText("h3",item.en));
+   if(lang.value!=="en"&&item[lang.value]){
+      const translated=addText("p",item[lang.value],"translation");
+      if(lang.value==="ar")translated.dir="rtl";
+      card.append(translated);
+   }
+   card.append(addText("p",item.definition,"description"));
+   frag.append(card);
+ }
+ list.append(frag);
+ status.textContent=matched.length+" of "+records.length+" terms displayed"+(q?" for this search":"")+".";
+}
+async function load(){
+ const n=++loadCount;current=null;list.replaceChildren();
+ status.textContent="Loading local vocabulary…";sync();
+ const relative="../"+course.value+"/units/unit-"+unit.value+"/vocabulary.json";
+ try{
+  const response=await fetch(relative,{credentials:"same-origin"});
+  if(!response.ok)throw new Error("Vocabulary file unavailable ("+response.status+").");
+  const data=await response.json();
+  if(n!==loadCount)return;
+  if(!Array.isArray(data.terms))throw new Error("Vocabulary data has an invalid format.");
+  current=data;
+  title.textContent=(course.value==="geometry"?"Geometry": "Algebra II")+" · "+(data.title||"Unit "+unit.value);
+  render();
+ }catch(error){
+  if(n!==loadCount)return;
+  title.textContent="Unit "+unit.value+" · Vocabulary";
+  status.textContent=error.message+" Try again while online; previously cached units may remain available offline.";
+ }
+}
+course.addEventListener("change",load);
+unit.addEventListener("change",load);
+lang.addEventListener("change",()=>{sync();render()});
+query.addEventListener("input",render);
+load();
+})();
+</script>
+</body>
+</html>

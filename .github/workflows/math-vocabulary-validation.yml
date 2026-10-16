@@ -1,0 +1,25 @@
+name: Mathematics Vocabulary Validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/mathematics/algebra-2/units/**/vocabulary.json'
+      - 'courses/mathematics/geometry/units/**/vocabulary.json'
+      - 'courses/mathematics/algebra-2/index.html'
+      - 'courses/mathematics/geometry/index.html'
+      - 'courses/mathematics/tools/vocabulary-studio.html'
+      - 'tools/validate-math-vocabulary.mjs'
+      - '.github/workflows/math-vocabulary-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/mathematics/algebra-2/units/**/vocabulary.json'
+      - 'courses/mathematics/geometry/units/**/vocabulary.json'
+      - 'courses/mathematics/tools/vocabulary-studio.html'
+      - 'tools/validate-math-vocabulary.mjs'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify mathematics dictionaries and student studio
+        run: node tools/validate-math-vocabulary.mjs
