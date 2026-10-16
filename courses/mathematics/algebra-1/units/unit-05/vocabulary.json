@@ -21,5 +21,90 @@
     "common difference",
     "inverse relation",
     "one-to-one"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "relation": "A set of ordered pairs associating inputs with outputs.",
+    "function": "A relation assigning exactly one output to each input in its domain.",
+    "input": "A value supplied to a rule or function.",
+    "output": "The value a function or rule returns for a specified input.",
+    "function notation": "Notation such as f(x) representing the output of function f at input x.",
+    "domain": "The set of inputs for which a relation or function is defined.",
+    "range": "The set of outputs actually produced by the allowed inputs.",
+    "discrete": "Data or a function defined at separate distinct input values.",
+    "continuous": "A quantity or graph defined across an interval with no gaps or jumps at points of the interval.",
+    "representation": "One of several ways to express a relationship, such as a table, graph, words, or equation.",
+    "parent function": "A basic function used as the reference for transformed versions.",
+    "transformation": "A change to a function graph such as a shift, reflection, or stretch.",
+    "translation": "A rigid horizontal or vertical shift of a graph.",
+    "reflection": "Flipping a graph across an axis or another specified line.",
+    "stretch": "Multiplying a graph's distances from an axis by a constant scale factor.",
+    "piecewise function": "A function described by different rules for different portions of its domain.",
+    "sequence": "An ordered list of values indexed by positive integers or another specified index set.",
+    "common difference": "The fixed difference between consecutive terms of an arithmetic sequence.",
+    "inverse relation": "The relation obtained by reversing the input and output coordinates.",
+    "one-to-one": "A relation in which each output comes from at most one input; it passes the horizontal-line test when a function."
+  },
+  "translations": {
+    "relation": {
+      "es": "relación",
+      "fr": "relation",
+      "ar": "علاقة",
+      "pt": "relação"
+    },
+    "function": {
+      "es": "función",
+      "fr": "fonction",
+      "ar": "دالة",
+      "pt": "função"
+    },
+    "input": {
+      "es": "entrada",
+      "fr": "entrée",
+      "ar": "مدخل",
+      "pt": "entrada"
+    },
+    "output": {
+      "es": "salida",
+      "fr": "sortie",
+      "ar": "مخرج",
+      "pt": "saída"
+    },
+    "function notation": {
+      "es": "notación de función",
+      "fr": "notation fonctionnelle",
+      "ar": "ترميز الدالة",
+      "pt": "notação de função"
+    },
+    "domain": {
+      "es": "dominio",
+      "fr": "domaine",
+      "ar": "مجال",
+      "pt": "domínio"
+    },
+    "range": {
+      "es": "rango",
+      "fr": "ensemble image",
+      "ar": "مدى",
+      "pt": "imagem"
+    },
+    "representation": {
+      "es": "representación",
+      "fr": "représentation",
+      "ar": "تمثيل",
+      "pt": "representação"
+    },
+    "sequence": {
+      "es": "secuencia",
+      "fr": "suite",
+      "ar": "متتالية",
+      "pt": "sequência"
+    },
+    "common difference": {
+      "es": "diferencia común",
+      "fr": "raison arithmétique",
+      "ar": "الفرق المشترك",
+      "pt": "diferença comum"
+    }
+  }
 }
