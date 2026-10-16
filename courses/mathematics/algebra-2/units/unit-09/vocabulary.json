@@ -3,132 +3,133 @@
   "title": "Sequences, Series & the Binomial Theorem",
   "terms": [
     {
-      "en": "arithmetic",
-      "es": "arithmetic",
-      "fr": "arithmetic",
-      "ar": "arithmetic",
-      "pt": "arithmetic",
-      "definition": "Core term used in Arithmetic Sequences: Explicit & Recursive Forms."
+      "en": "arithmetic sequence",
+      "es": "sucesión aritmética",
+      "fr": "suite arithmétique",
+      "ar": "متتالية حسابية",
+      "pt": "sequência aritmética",
+      "definition": "A sequence with a constant difference between consecutive terms."
     },
     {
-      "en": "sequences",
-      "es": "sequences",
-      "fr": "sequences",
-      "ar": "sequences",
-      "pt": "sequences",
-      "definition": "Core term used in Arithmetic Sequences: Explicit & Recursive Forms."
+      "en": "common difference",
+      "es": "diferencia común",
+      "fr": "raison arithmétique",
+      "ar": "الفرق المشترك",
+      "pt": "diferença comum",
+      "definition": "The fixed value added to obtain each successive arithmetic term."
     },
     {
-      "en": "explicit",
-      "es": "explicit",
-      "fr": "explicit",
-      "ar": "explicit",
-      "pt": "explicit",
-      "definition": "Core term used in Arithmetic Sequences: Explicit & Recursive Forms."
+      "en": "explicit formula",
+      "es": "fórmula explícita",
+      "fr": "formule explicite",
+      "ar": "صيغة صريحة",
+      "pt": "fórmula explícita",
+      "definition": "A rule computing the nth term directly from its index."
     },
     {
-      "en": "geometric",
-      "es": "geometric",
-      "fr": "geometric",
-      "ar": "geometric",
-      "pt": "geometric",
-      "definition": "Core term used in Geometric Sequences: Growth, Decay & Recursion."
+      "en": "geometric sequence",
+      "es": "sucesión geométrica",
+      "fr": "suite géométrique",
+      "ar": "متتالية هندسية",
+      "pt": "sequência geométrica",
+      "definition": "A sequence with a constant nonzero ratio between consecutive terms where defined."
     },
     {
-      "en": "growth",
-      "es": "growth",
-      "fr": "growth",
-      "ar": "growth",
-      "pt": "growth",
-      "definition": "Core term used in Geometric Sequences: Growth, Decay & Recursion."
+      "en": "common ratio",
+      "es": "razón común",
+      "fr": "raison géométrique",
+      "ar": "النسبة المشتركة",
+      "pt": "razão comum",
+      "definition": "The multiplier connecting successive geometric terms."
     },
     {
-      "en": "general",
-      "es": "general",
-      "fr": "general",
-      "ar": "general",
-      "pt": "general",
-      "definition": "Core term used in General Sequences, Patterns & Difference Tables."
+      "en": "recursive formula",
+      "es": "fórmula recursiva",
+      "fr": "formule de récurrence",
+      "ar": "صيغة عودية",
+      "pt": "fórmula recursiva",
+      "definition": "A rule computing a term from one or more preceding terms."
     },
     {
-      "en": "patterns",
-      "es": "patterns",
-      "fr": "patterns",
-      "ar": "patterns",
-      "pt": "patterns",
-      "definition": "Core term used in General Sequences, Patterns & Difference Tables."
+      "en": "sequence pattern",
+      "es": "patrón de sucesión",
+      "fr": "motif de suite",
+      "ar": "نمط المتتالية",
+      "pt": "padrão de sequência",
+      "definition": "A consistent relationship among indexed terms."
     },
     {
-      "en": "finite",
-      "es": "finite",
-      "fr": "finite",
-      "ar": "finite",
-      "pt": "finite",
-      "definition": "Core term used in Finite Arithmetic & Geometric Series."
+      "en": "finite sequence",
+      "es": "sucesión finita",
+      "fr": "suite finie",
+      "ar": "متتالية منتهية",
+      "pt": "sequência finita",
+      "definition": "A sequence having a specified finite number of terms."
     },
     {
-      "en": "infinite",
-      "es": "infinite",
-      "fr": "infinite",
-      "ar": "infinite",
-      "pt": "infinite",
-      "definition": "Core term used in Infinite Geometric Series & Convergence."
+      "en": "infinite sequence",
+      "es": "sucesión infinita",
+      "fr": "suite infinie",
+      "ar": "متتالية غير منتهية",
+      "pt": "sequência infinita",
+      "definition": "A sequence with terms indexed indefinitely."
     },
     {
       "en": "series",
-      "es": "series",
-      "fr": "series",
-      "ar": "series",
-      "pt": "series",
-      "definition": "Core term used in Infinite Geometric Series & Convergence."
+      "es": "serie",
+      "fr": "série",
+      "ar": "متسلسلة",
+      "pt": "série",
+      "definition": "The sum of terms from a sequence."
     },
     {
-      "en": "sigma",
-      "es": "sigma",
-      "fr": "sigma",
-      "ar": "sigma",
-      "pt": "sigma",
-      "definition": "Core term used in Sigma Notation & Summation Properties."
+      "en": "sigma notation",
+      "es": "notación sigma",
+      "fr": "notation sigma",
+      "ar": "ترميز سيغما للمجموع",
+      "pt": "notação sigma",
+      "definition": "A compact notation expressing indexed sums using the symbol Σ."
     },
     {
-      "en": "notation",
-      "es": "notation",
-      "fr": "notation",
-      "ar": "notation",
-      "pt": "notation",
-      "definition": "Core term used in Sigma Notation & Summation Properties."
+      "en": "sequence index",
+      "es": "índice de sucesión",
+      "fr": "indice de suite",
+      "ar": "فهرس المتتالية",
+      "pt": "índice de sequência",
+      "definition": "The integer marking the position of a term."
     },
     {
       "en": "summation",
-      "es": "summation",
-      "fr": "summation",
-      "ar": "summation",
-      "pt": "summation",
-      "definition": "Core term used in Sigma Notation & Summation Properties."
+      "es": "sumatoria",
+      "fr": "sommation",
+      "ar": "المجموع المتسلسل",
+      "pt": "somatório",
+      "definition": "The operation of adding specified indexed terms."
     },
     {
-      "en": "pascal",
-      "es": "pascal",
-      "fr": "pascal",
-      "ar": "pascal",
-      "pt": "pascal",
-      "definition": "Core term used in Pascal’s Triangle & the Binomial Theorem."
+      "en": "Pascal triangle",
+      "es": "triángulo de Pascal",
+      "fr": "triangle de Pascal",
+      "ar": "مثلث باسكال",
+      "pt": "triângulo de Pascal",
+      "definition": "The array of binomial coefficients formed by adding adjacent numbers above."
     },
     {
-      "en": "triangle",
-      "es": "triangle",
-      "fr": "triangle",
-      "ar": "triangle",
-      "pt": "triangle",
-      "definition": "Core term used in Pascal’s Triangle & the Binomial Theorem."
+      "en": "binomial coefficient",
+      "es": "coeficiente binomial",
+      "fr": "coefficient binomial",
+      "ar": "معامل ثنائي الحدين",
+      "pt": "coeficiente binomial",
+      "definition": "The count n choose k of ways to select k objects from n."
     },
     {
-      "en": "binomial",
-      "es": "binomial",
-      "fr": "binomial",
-      "ar": "binomial",
-      "pt": "binomial",
-      "definition": "Core term used in Pascal’s Triangle & the Binomial Theorem."
+      "en": "binomial theorem",
+      "es": "teorema del binomio",
+      "fr": "théorème du binôme",
+      "ar": "نظرية ذات الحدين",
+      "pt": "teorema binomial",
+      "definition": "The formula expanding (a+b)^n using binomial coefficients for nonnegative integer n."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
