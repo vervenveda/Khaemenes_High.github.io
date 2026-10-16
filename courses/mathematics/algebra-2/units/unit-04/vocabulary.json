@@ -3,156 +3,157 @@
   "title": "Rational Expressions, Equations & Functions",
   "terms": [
     {
-      "en": "simplifying",
-      "es": "simplifying",
-      "fr": "simplifying",
-      "ar": "simplifying",
-      "pt": "simplifying",
-      "definition": "Core term used in Simplifying Rational Expressions & Restrictions."
+      "en": "rational expression",
+      "es": "expresión racional",
+      "fr": "expression rationnelle",
+      "ar": "تعبير نسبي",
+      "pt": "expressão racional",
+      "definition": "A quotient of two polynomials with a nonzero denominator."
     },
     {
-      "en": "rational",
-      "es": "rational",
-      "fr": "rational",
-      "ar": "rational",
-      "pt": "rational",
-      "definition": "Core term used in Simplifying Rational Expressions & Restrictions."
+      "en": "domain restriction",
+      "es": "restricción del dominio",
+      "fr": "restriction du domaine",
+      "ar": "قيد المجال",
+      "pt": "restrição de domínio",
+      "definition": "An input excluded because it makes a denominator zero."
     },
     {
-      "en": "expressions",
-      "es": "expressions",
-      "fr": "expressions",
-      "ar": "expressions",
-      "pt": "expressions",
-      "definition": "Core term used in Simplifying Rational Expressions & Restrictions."
+      "en": "equivalent rational expressions",
+      "es": "expresiones racionales equivalentes",
+      "fr": "expressions rationnelles équivalentes",
+      "ar": "تعبيرات نسبية متكافئة",
+      "pt": "expressões racionais equivalentes",
+      "definition": "Quotients equal throughout their shared allowed domain."
     },
     {
-      "en": "multiplying",
-      "es": "multiplying",
-      "fr": "multiplying",
-      "ar": "multiplying",
-      "pt": "multiplying",
-      "definition": "Core term used in Multiplying and Dividing Rational Expressions."
+      "en": "multiplication of rational expressions",
+      "es": "multiplicación de expresiones racionales",
+      "fr": "multiplication d'expressions rationnelles",
+      "ar": "ضرب التعابير النسبية",
+      "pt": "multiplicação de expressões racionais",
+      "definition": "Multiply numerators and denominators, then simplify without losing restrictions."
     },
     {
-      "en": "dividing",
-      "es": "dividing",
-      "fr": "dividing",
-      "ar": "dividing",
-      "pt": "dividing",
-      "definition": "Core term used in Multiplying and Dividing Rational Expressions."
+      "en": "division of rational expressions",
+      "es": "división de expresiones racionales",
+      "fr": "division d'expressions rationnelles",
+      "ar": "قسمة التعابير النسبية",
+      "pt": "divisão de expressões racionais",
+      "definition": "Multiply by the reciprocal of a nonzero divisor."
     },
     {
-      "en": "adding",
-      "es": "adding",
-      "fr": "adding",
-      "ar": "adding",
-      "pt": "adding",
-      "definition": "Core term used in Adding and Subtracting Rational Expressions."
+      "en": "least common denominator",
+      "es": "mínimo común denominador",
+      "fr": "plus petit dénominateur commun",
+      "ar": "المقام المشترك الأصغر",
+      "pt": "mínimo denominador comum",
+      "definition": "A common denominator divisible by each original denominator."
     },
     {
-      "en": "subtracting",
-      "es": "subtracting",
-      "fr": "subtracting",
-      "ar": "subtracting",
-      "pt": "subtracting",
-      "definition": "Core term used in Adding and Subtracting Rational Expressions."
+      "en": "addition of rational expressions",
+      "es": "suma de expresiones racionales",
+      "fr": "addition d'expressions rationnelles",
+      "ar": "جمع التعابير النسبية",
+      "pt": "adição de expressões racionais",
+      "definition": "Rewrite with a common denominator before adding numerators."
     },
     {
-      "en": "solving",
-      "es": "solving",
-      "fr": "solving",
-      "ar": "solving",
-      "pt": "solving",
-      "definition": "Core term used in Solving Rational Equations & Extraneous Solutions."
+      "en": "subtraction of rational expressions",
+      "es": "resta de expresiones racionales",
+      "fr": "soustraction d'expressions rationnelles",
+      "ar": "طرح التعابير النسبية",
+      "pt": "subtração de expressões racionais",
+      "definition": "Rewrite with a common denominator before subtracting numerators."
     },
     {
-      "en": "equations",
-      "es": "equations",
-      "fr": "equations",
-      "ar": "equations",
-      "pt": "equations",
-      "definition": "Core term used in Solving Rational Equations & Extraneous Solutions."
+      "en": "rational equation",
+      "es": "ecuación racional",
+      "fr": "équation rationnelle",
+      "ar": "معادلة نسبية",
+      "pt": "equação racional",
+      "definition": "An equation containing rational expressions and excluded denominator values."
     },
     {
-      "en": "reciprocal",
-      "es": "reciprocal",
-      "fr": "reciprocal",
-      "ar": "reciprocal",
-      "pt": "reciprocal",
-      "definition": "Core term used in Reciprocal Functions, Asymptotes & Holes."
+      "en": "extraneous solution",
+      "es": "solución extraña",
+      "fr": "solution extrinsèque",
+      "ar": "حل دخيل",
+      "pt": "solução extrínseca",
+      "definition": "A candidate root produced during algebraic steps that fails the original equation."
     },
     {
-      "en": "functions",
-      "es": "functions",
-      "fr": "functions",
-      "ar": "functions",
-      "pt": "functions",
-      "definition": "Core term used in Reciprocal Functions, Asymptotes & Holes."
+      "en": "reciprocal function",
+      "es": "función recíproca",
+      "fr": "fonction inverse multiplicative",
+      "ar": "دالة المقلوب",
+      "pt": "função recíproca",
+      "definition": "A function such as f(x)=1/x, undefined where its denominator is zero."
     },
     {
-      "en": "asymptotes",
-      "es": "asymptotes",
-      "fr": "asymptotes",
-      "ar": "asymptotes",
-      "pt": "asymptotes",
-      "definition": "Core term used in Reciprocal Functions, Asymptotes & Holes."
+      "en": "vertical asymptote",
+      "es": "asíntota vertical",
+      "fr": "asymptote verticale",
+      "ar": "خط تقارب رأسي",
+      "pt": "assíntota vertical",
+      "definition": "A vertical line approached by function values becoming unbounded."
     },
     {
-      "en": "transformations",
-      "es": "transformations",
-      "fr": "transformations",
-      "ar": "transformations",
-      "pt": "transformations",
-      "definition": "Core term used in Transformations and Features of Rational Functions."
+      "en": "horizontal asymptote",
+      "es": "asíntota horizontal",
+      "fr": "asymptote horizontale",
+      "ar": "خط تقارب أفقي",
+      "pt": "assíntota horizontal",
+      "definition": "A line y=L approached as x tends to positive or negative infinity."
     },
     {
-      "en": "features",
-      "es": "features",
-      "fr": "features",
-      "ar": "features",
-      "pt": "features",
-      "definition": "Core term used in Transformations and Features of Rational Functions."
+      "en": "removable discontinuity",
+      "es": "discontinuidad removible",
+      "fr": "discontinuité amovible",
+      "ar": "انقطاع قابل للإزالة",
+      "pt": "descontinuidade removível",
+      "definition": "A missing point where a finite two-sided limit exists."
     },
     {
-      "en": "direct",
-      "es": "direct",
-      "fr": "direct",
-      "ar": "direct",
-      "pt": "direct",
-      "definition": "Core term used in Direct, Inverse, Joint & Combined Variation."
+      "en": "rational transformation",
+      "es": "transformación racional",
+      "fr": "transformation rationnelle",
+      "ar": "تحويل الدالة النسبية",
+      "pt": "transformação racional",
+      "definition": "A shift, reflection, or scale of a rational parent function."
     },
     {
-      "en": "inverse",
-      "es": "inverse",
-      "fr": "inverse",
-      "ar": "inverse",
-      "pt": "inverse",
-      "definition": "Core term used in Direct, Inverse, Joint & Combined Variation."
+      "en": "direct variation",
+      "es": "variación directa",
+      "fr": "proportionnalité directe",
+      "ar": "تناسب طردي",
+      "pt": "variação direta",
+      "definition": "A relation y=kx with constant k."
     },
     {
-      "en": "joint",
-      "es": "joint",
-      "fr": "joint",
-      "ar": "joint",
-      "pt": "joint",
-      "definition": "Core term used in Direct, Inverse, Joint & Combined Variation."
+      "en": "inverse variation",
+      "es": "variación inversa",
+      "fr": "proportionnalité inverse",
+      "ar": "تناسب عكسي",
+      "pt": "variação inversa",
+      "definition": "A relation y=k/x for nonzero x and constant k."
     },
     {
-      "en": "models",
-      "es": "models",
-      "fr": "models",
-      "ar": "models",
-      "pt": "models",
-      "definition": "Core term used in Rational Models, Rates & Work Problems."
+      "en": "joint variation",
+      "es": "variación conjunta",
+      "fr": "variation conjointe",
+      "ar": "تناسب مشترك",
+      "pt": "variação conjunta",
+      "definition": "A relation such as z=kxy involving multiple factors."
     },
     {
-      "en": "rates",
-      "es": "rates",
-      "fr": "rates",
-      "ar": "rates",
-      "pt": "rates",
-      "definition": "Core term used in Rational Models, Rates & Work Problems."
+      "en": "rational rate model",
+      "es": "modelo racional de tasas",
+      "fr": "modèle rationnel de taux",
+      "ar": "نموذج نسبي للمعدلات",
+      "pt": "modelo racional de taxas",
+      "definition": "A quotient-based model of work rates, speeds, or related quantities."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
