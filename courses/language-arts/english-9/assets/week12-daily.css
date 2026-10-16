@@ -1,0 +1,159 @@
+
+/* English 9 · Week 12 individual lesson and spiral curriculum */
+.week12-lesson .wrap{max-width:none;margin:0;padding:0}
+.week12-lesson>section{display:block}
+.week12-lesson .lesson-detail{padding:0;border:0;background:transparent}
+.week12-lesson .lesson-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,.85fr);gap:15px}
+.week12-lesson .lesson-panel,.week12-lesson .flow-step,.week12-lesson .text-passage,.week12-lesson .source-card,.week12-lesson .micro-lab,.week12-lesson .pathway,.week12-lesson .lesson-response{border:1px solid #ddd0bc;border-radius:7px;padding:14px;background:#fffefa;color:#231f19;margin:8px 0}
+.week12-lesson :is(h2,h3){font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.3;overflow-wrap:break-word}
+.week12-lesson h2{font-size:24px}.week12-lesson h3{font-size:19px}
+.week12-lesson .lesson-meta{display:flex;gap:8px;flex-wrap:wrap}
+.week12-lesson .tag{border:1px solid #d4c6af;border-radius:7px;padding:4px 8px}
+.week12-lesson :is(.pathway-grid,.compare-grid){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week12-lesson .pathway-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.week12-lesson .lesson-response textarea{width:100%;min-height:170px}
+.week12-lesson :is(table,tbody,th,td){max-width:100%}
+.week12-lesson table{width:100%;border-collapse:collapse}
+.week12-lesson :is(th,td){padding:8px;border:1px solid #d4c6af;text-align:left}
+.week12-lesson a{overflow-wrap:anywhere}
+.week12-lesson .media-wrap{aspect-ratio:16/9}
+.week12-lesson iframe{width:100%;height:100%;border:0}
+.week12-spiral,.week12-studio,.week12-assessment,.week12-support{background:#fffefa;color:#241e17;border:1px solid #ddd0bc;border-radius:7px;padding:19px;margin:20px 0}
+.week12-spiral h2,.week12-studio h2,.week12-assessment h2{font:400 24px/1.35 Cinzel,Georgia,serif}
+.week12-spiral-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.week12-spiral-grid>div{padding:13px;border:1px solid #e8dccb;border-radius:7px;background:#f8f4ed}
+.week12-spiral-grid h3{font-size:17px;font-weight:500;margin:0 0 8px}
+.week12-spiral-grid p{margin:0;line-height:1.65}
+.week12-spiral a{color:#285b83}
+.week12-studio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.week12-studio-grid label,.week12-assessment label{display:block;margin:9px 0 5px}
+.week12-studio-grid textarea,.week12-assessment textarea{width:100%;box-sizing:border-box;min-height:120px;padding:10px;border:1px solid #c7b9a7;border-radius:7px;background:#fff;color:#211f1b;line-height:1.6}
+.week12-assessment textarea{min-height:180px}
+#week12-draft{min-height:320px}
+.week12-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.week12-actions button,.week12-actions a{border-radius:7px;padding:9px 14px;background:#205b48;color:#fff;cursor:pointer;border:0;text-decoration:none;line-height:1.4}
+.week12-actions button:disabled{opacity:.5;cursor:not-allowed}
+.week12-actions .secondary{background:#e7e0d1;color:#26201a}
+.week12-note{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65}
+.week12-practice fieldset{border:1px solid #dfd2c0;border-radius:7px;padding:12px;margin:12px 0}
+.week12-practice legend{font-weight:500}
+.week12-practice label{display:block;padding:6px 0}
+.week12-next[hidden],.week12-locked-route[hidden]{display:none!important}
+.week12-next{text-align:center;background:#f2f9f1;border:1px solid #9dc7ab;border-radius:7px;padding:18px;margin:18px 0}
+.week12-next a{background:#205b48;color:#fff;display:inline-block;padding:11px 17px;border-radius:7px;text-decoration:none}
+.week12-support summary{cursor:pointer;font-weight:500}
+.week12-status{padding:10px 13px;border:1px solid #d8c9ae;border-radius:7px;background:#faf6ed}
+.week12-error{color:#9c302b}
+.week12-assessment .rubric-row{border:1px solid #ddd0bc;padding:11px;border-radius:7px;margin:8px 0}
+.week12-assessment select{padding:8px;border:1px solid #cab9a7;background:#fff;color:#222;border-radius:7px}
+.week12-index{background:#fffefa;border:1px solid #d7c8b1;border-radius:7px;padding:18px;max-width:1100px;margin:20px auto}
+.week12-index a{color:#285b83}
+.week12-index li{padding:5px 0}
+.week12-index [data-week12-daily-status]{font-size:13px;margin-left:12px;color:#555}
+@media(max-width:850px){.week12-lesson .lesson-grid,.week12-studio-grid,.week12-spiral-grid{grid-template-columns:1fr}.week12-lesson .pathway-grid{grid-template-columns:1fr}}
+@media print{.week12-actions button,.week12-next,.daily-nav{display:none!important}}
+
+/* Epic Heroes: timing guidance, two-text evidence and non-punitive accommodations */
+.week12-lesson .text-passage{line-height:1.7}
+.week12-lesson .lesson-head{padding:12px 0}
+.week12-lesson .media-note{color:#655b4d;font-size:13px}
+.week12-lesson .compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week12-assessment .week12-evidence-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week12-assessment input[type=text],.week12-assessment select{border:1px solid #c6b9a7;border-radius:7px;background:#fff;color:#222;padding:8px;max-width:100%}
+.week12-timer{border:1px solid #d6c6ab;padding:12px 15px;border-radius:7px;margin:12px 0;background:#faf7ef}
+.week12-timer-output{font-variant-numeric:tabular-nums;font-size:20px;font-weight:500}
+.week12-locked-warning{font-size:13px;color:#805d25}
+.week12-independent-note{border-left:3px solid #9b875f;padding:12px;background:#faf5e9;margin:12px 0}
+.week12-review-feedback{white-space:pre-wrap;line-height:1.65}
+@media(max-width:800px){.week12-lesson .compare-grid,.week12-assessment .week12-evidence-fields{grid-template-columns:1fr}}
+@media print{.week12-timer{display:none}}
+
+.week12-context-pill{border:1px solid #cdb89b;padding:6px 9px;border-radius:7px;font-size:13px;background:#fbf8f1}
+.week12-assessment .week12-map-entry{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.week12-assessment .week12-map-entry textarea{min-height:100px}
+.week12-assessment label{display:block;margin:10px 0 5px}
+.week12-assessment textarea{box-sizing:border-box;width:100%;min-height:155px}
+.week12-assessment input[type=text],.week12-assessment select{border:1px solid #c6b9a7;border-radius:7px;background:#fff;color:#222;padding:8px;max-width:100%}
+.week12-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.week12-lesson .compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.week12-lesson .text-passage{padding:15px;line-height:1.72}
+.week12-assessment .daily-subheading{font-size:18px;font-weight:400;margin-top:20px}
+.week12-integrity-note{padding:12px;background:#faf6e9;border-left:3px solid #ae8a54;border-radius:0 7px 7px 0}
+.week12-next[hidden],.week12-next-link[hidden]{display:none!important}
+@media(max-width:850px){.week12-evidence-grid,.week12-lesson .compare-grid,.week12-assessment .week12-map-entry{grid-template-columns:1fr}}
+
+/* Week 7 original fiction craft studios */
+.week12-lesson .text-passage{max-width:100%;line-height:1.75}
+.week12-lesson .flow-step{min-width:0}
+.week12-lesson .lesson-grid{align-items:start}
+.week12-assessment .week12-writing-area{min-height:210px}
+.week12-assessment #week12-analytical-response,.week12-assessment #week12-scene-draft,.week12-assessment #week12-scene-final{min-height:320px}
+.week12-assessment input[type=text],.week12-assessment select{border:1px solid #c6b9a7;border-radius:7px;background:#fff;color:#222;padding:8px;max-width:100%}
+.week12-assessment :is(textarea,input,select):focus-visible{outline:2px solid #285b83;outline-offset:2px}
+.week12-craft-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.week12-next[hidden],.week12-next-link[hidden]{display:none!important}
+.week12-local-boundary{padding:12px;background:#faf6e9;border-left:3px solid #b29c69}
+.week12-feedback{white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:850px){.week12-craft-grid{grid-template-columns:1fr}}
+
+/* Week 12 narrator information design & structural revision */
+.week12-lesson .text-passage{line-height:1.75}
+.week12-access-grid,.week12-craft-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week12-assessment textarea{width:100%;box-sizing:border-box;line-height:1.65;min-height:155px}
+.week12-assessment #week12-analysis-draft,.week12-assessment #week12-analysis-final,.week12-assessment #week12-perspective-draft,.week12-assessment #week12-perspective-final{min-height:275px}
+.week12-assessment label{display:block;margin:11px 0 5px}
+.week12-assessment select,.week12-assessment input[type=text]{border:1px solid #c6b9a7;background:#fff;color:#222;border-radius:7px;padding:8px;max-width:100%}
+.week12-integrity-notice{border-left:3px solid #a48b55;padding:12px;background:#faf6e9}
+.week12-next[hidden],.week12-next-link[hidden]{display:none!important}
+@media(max-width:850px){.week12-access-grid,.week12-craft-grid{grid-template-columns:1fr}}
+
+/* Week 12 personal narrative studio and six-annotation portfolio */
+.week12-assessment textarea{box-sizing:border-box;width:100%;min-height:165px;line-height:1.65}
+.week12-assessment #week12-story-draft,.week12-assessment #week12-story-final{min-height:360px}
+.week12-assessment label{display:block;margin:11px 0 5px}
+.week12-assessment select,.week12-assessment input[type=text]{background:#fff;color:#221f19;border:1px solid #c4b5a1;border-radius:7px;padding:8px;max-width:100%}
+.week12-annotations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week12-annotations textarea{min-height:115px}
+.week12-study-intro{line-height:1.7}
+.week12-local-note{border-left:3px solid #a89064;background:#faf6ec;padding:12px}
+.week12-next[hidden],.week12-next-link[hidden]{display:none!important}
+@media(max-width:800px){.week12-annotations{grid-template-columns:1fr}}
+
+.week12-lesson .text-passage{line-height:1.8}
+.week12-poem{font-family:Georgia,serif;white-space:pre-wrap;line-height:1.9}
+.week12-poetry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week12-poetry-grid textarea{min-height:170px}
+.week12-assessment label,.week12-studio label{display:block;margin-top:12px}
+.week12-assessment textarea{width:100%;box-sizing:border-box;min-height:145px}
+.week12-assessment #week12-analysis,.week12-assessment #week12-poem1-final,.week12-assessment #week12-poem2-final{min-height:300px}
+.week12-assessment select,.week12-assessment input[type=text]{background:#fff;border:1px solid #c7baa4;border-radius:7px;color:#222;padding:8px}
+.week12-boundary{background:#faf6ec;border-left:3px solid #9f8454;padding:12px}
+.week12-next[hidden],[data-week12-next-link][hidden]{display:none!important}
+@media(max-width:740px){.week12-poetry-grid{grid-template-columns:1fr}}
+
+/* Week 12 sensory sound, stress and form experimentation */
+.week12-sound-lab{border:1px solid #d2c2a5;border-radius:7px;padding:14px;background:#fffdf8}
+.week12-sound-lab .week12-lab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week12-sound-lab label{display:block;margin:8px 0 5px}
+.week12-sound-lab textarea{min-height:90px}
+.week12-assessment .week12-workspaces{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week12-assessment textarea{width:100%;min-height:145px;box-sizing:border-box;line-height:1.7}
+.week12-assessment #week12-analysis,.week12-assessment #week12-draft,.week12-assessment #week12-final{min-height:290px}
+.week12-assessment label{display:block;margin:10px 0 5px}
+.week12-assessment select,.week12-assessment input[type=text]{border:1px solid #c6b9a7;border-radius:7px;padding:8px;background:#fff;color:#222;max-width:100%}
+.week12-next[hidden],.week12-next-link[hidden]{display:none!important}
+.week12-boundary{padding:12px;background:#faf6eb;border-left:3px solid #a88e5e}
+.week12-review-note{white-space:pre-wrap}
+@media(max-width:820px){.week12-assessment .week12-workspaces,.week12-sound-lab .week12-lab-grid{grid-template-columns:1fr}}
+
+/* Unit 04 poetry transfer: attribution, spoken interpretation and portfolio */
+.week12-lesson .poem{white-space:pre-wrap;line-height:1.8}
+.week12-source-warning{padding:12px;border-left:3px solid #927449;background:#faf6e9}
+.week12-assessment label{display:block;margin:12px 0 6px}
+.week12-assessment textarea{box-sizing:border-box;width:100%;min-height:140px;line-height:1.6}
+.week12-assessment #week12-translation{min-height:300px}
+.week12-assessment input[type=text],.week12-assessment select{border:1px solid #c6b9a7;border-radius:7px;background:#fff;color:#222;padding:8px;max-width:100%}
+.week12-poetry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.week12-poetry-grid textarea{min-height:170px}
+.week12-next[hidden],.week12-next-link[hidden]{display:none!important}
+@media(max-width:760px){.week12-poetry-grid{grid-template-columns:minmax(0,1fr)}}
