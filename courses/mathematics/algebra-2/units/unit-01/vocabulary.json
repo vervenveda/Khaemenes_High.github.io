@@ -4,131 +4,132 @@
   "terms": [
     {
       "en": "function",
-      "es": "function",
-      "fr": "function",
-      "ar": "function",
-      "pt": "function",
-      "definition": "Core term used in Function Language, Notation & Evaluation."
+      "es": "función",
+      "fr": "fonction",
+      "ar": "دالة",
+      "pt": "função",
+      "definition": "A relation assigning each permitted input exactly one output."
     },
     {
-      "en": "language",
-      "es": "language",
-      "fr": "language",
-      "ar": "language",
-      "pt": "language",
-      "definition": "Core term used in Function Language, Notation & Evaluation."
-    },
-    {
-      "en": "notation",
-      "es": "notation",
-      "fr": "notation",
-      "ar": "notation",
-      "pt": "notation",
-      "definition": "Core term used in Function Language, Notation & Evaluation."
+      "en": "function notation",
+      "es": "notación de funciones",
+      "fr": "notation fonctionnelle",
+      "ar": "ترميز الدوال",
+      "pt": "notação de função",
+      "definition": "The notation f(x) denotes the output of function f at input x, not f multiplied by x."
     },
     {
       "en": "domain",
-      "es": "domain",
-      "fr": "domain",
-      "ar": "domain",
-      "pt": "domain",
-      "definition": "Core term used in Domain, Range, Intervals & Constraints."
+      "es": "dominio",
+      "fr": "domaine de définition",
+      "ar": "مجال الدالة",
+      "pt": "domínio",
+      "definition": "The set of all permissible input values."
     },
     {
       "en": "range",
-      "es": "range",
-      "fr": "range",
-      "ar": "range",
-      "pt": "range",
-      "definition": "Core term used in Domain, Range, Intervals & Constraints."
+      "es": "recorrido",
+      "fr": "ensemble des valeurs",
+      "ar": "مدى الدالة",
+      "pt": "imagem",
+      "definition": "The set of outputs actually produced by inputs in the domain."
     },
     {
-      "en": "intervals",
-      "es": "intervals",
-      "fr": "intervals",
-      "ar": "intervals",
-      "pt": "intervals",
-      "definition": "Core term used in Domain, Range, Intervals & Constraints."
+      "en": "interval notation",
+      "es": "notación de intervalos",
+      "fr": "notation des intervalles",
+      "ar": "ترميز الفترات",
+      "pt": "notação de intervalos",
+      "definition": "A compact way to describe a real-number set using endpoints, brackets, and parentheses."
     },
     {
-      "en": "transformations",
-      "es": "transformations",
-      "fr": "transformations",
-      "ar": "transformations",
-      "pt": "transformations",
-      "definition": "Core term used in Transformations of Parent Functions."
+      "en": "function transformation",
+      "es": "transformación de funciones",
+      "fr": "transformation de fonction",
+      "ar": "تحويل الدوال",
+      "pt": "transformação de funções",
+      "definition": "A change to a graph caused by shifting, reflecting, or stretching its parent function."
     },
     {
-      "en": "parent",
-      "es": "parent",
-      "fr": "parent",
-      "ar": "parent",
-      "pt": "parent",
-      "definition": "Core term used in Transformations of Parent Functions."
+      "en": "parent function",
+      "es": "función madre",
+      "fr": "fonction de référence",
+      "ar": "الدالة الأم",
+      "pt": "função-mãe",
+      "definition": "A basic reference function from which transformed functions are derived."
     },
     {
-      "en": "functions",
-      "es": "functions",
-      "fr": "functions",
-      "ar": "functions",
-      "pt": "functions",
-      "definition": "Core term used in Transformations of Parent Functions."
+      "en": "vertical translation",
+      "es": "traslación vertical",
+      "fr": "translation verticale",
+      "ar": "إزاحة رأسية",
+      "pt": "translação vertical",
+      "definition": "A change f(x) to f(x)+k, shifting all y-values by k."
     },
     {
-      "en": "composition",
-      "es": "composition",
-      "fr": "composition",
-      "ar": "composition",
-      "pt": "composition",
-      "definition": "Core term used in Function Composition & Decomposition."
+      "en": "horizontal translation",
+      "es": "traslación horizontal",
+      "fr": "translation horizontale",
+      "ar": "إزاحة أفقية",
+      "pt": "translação horizontal",
+      "definition": "A change f(x) to f(x-h), shifting the graph right by h."
     },
     {
-      "en": "decomposition",
-      "es": "decomposition",
-      "fr": "decomposition",
-      "ar": "decomposition",
-      "pt": "decomposition",
-      "definition": "Core term used in Function Composition & Decomposition."
+      "en": "function composition",
+      "es": "composición de funciones",
+      "fr": "composition de fonctions",
+      "ar": "تركيب الدوال",
+      "pt": "composição de funções",
+      "definition": "The operation (f∘g)(x)=f(g(x)), requiring g(x) to lie in the domain of f."
     },
     {
-      "en": "inverse",
-      "es": "inverse",
-      "fr": "inverse",
-      "ar": "inverse",
-      "pt": "inverse",
-      "definition": "Core term used in Inverse Functions & One-to-One Relationships."
+      "en": "function decomposition",
+      "es": "descomposición de funciones",
+      "fr": "décomposition de fonctions",
+      "ar": "تحليل الدالة إلى مركبات",
+      "pt": "decomposição de funções",
+      "definition": "Writing a function as a composition of simpler functions."
     },
     {
-      "en": "one-to-one",
-      "es": "one-to-one",
-      "fr": "one-to-one",
-      "ar": "one-to-one",
-      "pt": "one-to-one",
-      "definition": "Core term used in Inverse Functions & One-to-One Relationships."
+      "en": "inverse function",
+      "es": "función inversa",
+      "fr": "fonction réciproque",
+      "ar": "الدالة العكسية",
+      "pt": "função inversa",
+      "definition": "A function that reverses the input-output correspondence of a one-to-one function."
     },
     {
-      "en": "piecewise",
-      "es": "piecewise",
-      "fr": "piecewise",
-      "ar": "piecewise",
-      "pt": "piecewise",
-      "definition": "Core term used in Piecewise, Absolute-Value & Step Functions."
+      "en": "one-to-one function",
+      "es": "función inyectiva",
+      "fr": "fonction injective",
+      "ar": "دالة واحد لواحد",
+      "pt": "função injetiva",
+      "definition": "A function whose distinct inputs always yield distinct outputs; it passes the horizontal-line test."
     },
     {
-      "en": "absolute-value",
-      "es": "absolute-value",
-      "fr": "absolute-value",
-      "ar": "absolute-value",
-      "pt": "absolute-value",
-      "definition": "Core term used in Piecewise, Absolute-Value & Step Functions."
+      "en": "piecewise function",
+      "es": "función definida a trozos",
+      "fr": "fonction définie par morceaux",
+      "ar": "دالة معرفة على أجزاء",
+      "pt": "função definida por partes",
+      "definition": "A function given by different rules on specified parts of its domain."
     },
     {
-      "en": "step",
-      "es": "step",
-      "fr": "step",
-      "ar": "step",
-      "pt": "step",
-      "definition": "Core term used in Piecewise, Absolute-Value & Step Functions."
+      "en": "absolute-value function",
+      "es": "función de valor absoluto",
+      "fr": "fonction valeur absolue",
+      "ar": "دالة القيمة المطلقة",
+      "pt": "função de valor absoluto",
+      "definition": "A function involving the absolute value of an input, which measures its nonnegative distance from zero."
+    },
+    {
+      "en": "step function",
+      "es": "función escalonada",
+      "fr": "fonction en escalier",
+      "ar": "دالة درجية",
+      "pt": "função degrau",
+      "definition": "A piecewise-constant function with fixed output levels on intervals."
     }
-  ]
+  ],
+  "schema_version": "1.1"
 }
