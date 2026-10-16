@@ -8,6 +8,7 @@ on:
       - 'courses/language-arts/english-11/**'
       - 'courses/language-arts/english-12/**'
       - 'tools/validate-ela-curriculum-quality.mjs'
+      - 'tools/validate-upper-english-offline.mjs'
       - 'tools/sync-upper-english-quiz-banks.mjs'
       - '.github/workflows/ela-curriculum-quality.yml'
   pull_request:
@@ -17,6 +18,7 @@ on:
       - 'courses/language-arts/english-11/**'
       - 'courses/language-arts/english-12/**'
       - 'tools/validate-ela-curriculum-quality.mjs'
+      - 'tools/validate-upper-english-offline.mjs'
       - 'tools/sync-upper-english-quiz-banks.mjs'
       - '.github/workflows/ela-curriculum-quality.yml'
 permissions:
@@ -30,3 +32,4 @@ jobs:
         run: |
           node tools/sync-upper-english-quiz-banks.mjs --check
           node tools/validate-ela-curriculum-quality.mjs
+          node tools/validate-upper-english-offline.mjs

@@ -1,4 +1,4 @@
-const CACHE_NAME = "khae-english12-v4-ela-curriculum-20261016-v3-quiz72-45d3804f";
+const CACHE_NAME = "khae-english12-v4-ela-curriculum-20261016-v3-quiz72-45d3804f-read1";
 const PRECACHE = ["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js","../../shared/upper-english-records.js",
   "./404.html",
   "./assessments/diagnostic/index.html",
@@ -28,6 +28,10 @@ const PRECACHE = ["../../shared/course-entry-contract.js","../../shared/learner-
   "./offline.html",
   "./portfolio/index.html",
   "./reading-list.html",
+  "./offline-reading-pack-weeks-01-06.html",
+  "./weeks/week-02/reading-dossier.html",
+  "./weeks/week-03/reading-dossier.html",
+  "./units/unit-07/reading-dossier.html",
   "./records/annual-calendar.html",
   "./records/attendance-log.html",
   "./records/completion-certificate.html",
@@ -114,8 +118,10 @@ self.addEventListener("fetch", event => {
   if(event.request.mode === "navigate"){
     event.respondWith(
       fetch(event.request).then(response => {
-        const copy=response.clone();
-        caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy));
+        if(response.ok){
+          const copy=response.clone();
+          caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy)).catch(()=>{});
+        }
         return response;
       }).catch(()=>matchReleaseCache(event.request).then(hit=>hit||matchReleaseCache("./offline.html")))
     );
@@ -123,8 +129,10 @@ self.addEventListener("fetch", event => {
   }
   event.respondWith(
     matchReleaseCache(event.request).then(hit => hit || fetch(event.request).then(response => {
-      const copy=response.clone();
-      caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy));
+      if(response.ok){
+        const copy=response.clone();
+        caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy)).catch(()=>{});
+      }
       return response;
     }))
   );
