@@ -44,6 +44,22 @@ for(const course of courses){
  assert.equal(bank.version,"v3-instructional");
  assert.equal(bank.rows.length,36);
  const current=JSON.parse(read(curriculumPath));
+ // Authored, self-contained early-year items replace repeated opening templates.
+ const primaryPath=base+"assets/quiz-primary-bank.json";
+ const primary=course.grade>=11?JSON.parse(read(primaryPath)):null;
+ if(primary){
+  assert.equal(primary.course,course.slug);
+  assert.deepEqual(primary.weeks.map(w=>w.week),[1,2,3]);
+  for(const row of primary.weeks){
+   assert.equal(row.quiz.length,2);
+   for(const q of row.quiz){
+    assert.equal(q.choices?.length,4);
+    assert.equal(new Set(q.choices).size,4);
+    assert(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4);
+    assert(q.question?.length>=75&&q.explanation?.length>=40&&q.skill?.length>=7);
+   }
+  }
+ }
  const next=structuredClone(current);
  assert.equal(next.weeks.length,36);
  for(let i=0;i<36;i++){
@@ -52,6 +68,7 @@ for(const course of courses){
   assert.equal(week.quiz.length,5);
   assert.equal(bank.rows[i].length,2);
   for(let k=0;k<2;k++)week.quiz[k+3]=toQuestion(bank.rows[i][k],week,course,k);
+  if(primary&&i<3)for(let k=0;k<2;k++)week.quiz[k]=structuredClone(primary.weeks[i].quiz[k]);
  }
  next.quizBankVersion="2026-10-16-v3-instructional";
  if(!write)equal(current,next,course.slug+" canonical quiz drift");
@@ -74,7 +91,7 @@ for(const course of courses){
  const swPath=base+"service-worker.js";
  const currentSw=read(swPath);
  const olderRelease={"english-10":"v5","english-11":"v4","english-12":"v4"};
- const expectedName="khae-"+course.slug.replace("english-","english")+"-"+olderRelease[course.slug]+"-ela-curriculum-20261016-v3-quiz72-"+fingerprint(JSON.stringify(bank.rows))+"-read1";
+ const expectedName="khae-"+course.slug.replace("english-","english")+"-"+olderRelease[course.slug]+"-ela-curriculum-20261016-v3-quiz72-"+fingerprint(JSON.stringify(bank.rows))+"-read1"+(primary?"-primary1":"");
  const cacheRe=/(const CACHE_NAME = ")[^"]+(";)/;
  assert(cacheRe.test(currentSw),"Service worker cache name absent: "+course.slug);
  if(!write)assert(currentSw.includes('const CACHE_NAME = "'+expectedName+'";'),course.slug+" offline cache not bumped for bank");

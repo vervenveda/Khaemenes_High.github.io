@@ -43,6 +43,27 @@ for(const course of courses){
  assert(courseJs.includes('record.best=Math.max(record.best||0,score)'),"Best-score preservation changed");
  const seen=new Set(),counts=[0,0,0,0],themes=new Set();
  const bank=JSON.parse(fs.readFileSync(base+"/assets/quiz-specific-bank.json","utf8"));
+ const primary=course.grade>=11?JSON.parse(fs.readFileSync(base+"/assets/quiz-primary-bank.json","utf8")):null;
+ if(primary){
+  assert.equal(primary.course,course.slug);
+  assert.deepEqual(primary.weeks.map(w=>w.week),[1,2,3]);
+  const stems=new Set();
+  for(const row of primary.weeks){
+   assert.equal(row.quiz.length,2);
+   for(let k=0;k<2;k++){
+    const q=row.quiz[k];
+    const authoritative=curriculum.weeks[row.week-1].quiz[k];
+    assert.deepEqual(authoritative,q,course.slug+" primary authored bank differs from curriculum");
+    assert(!stems.has(q.question),"Primary source-analysis question reused");
+    stems.add(q.question);
+    assert(q.question.length>=75&&q.explanation.length>=40);
+    assert(q.skill.length>=7);
+    assert(q.choices.length===4&&new Set(q.choices).size===4);
+    assert(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4);
+   }
+  }
+  assert.equal(stems.size,6);
+ }
  assert.equal(bank.version,"v3-instructional");
  assert(/ela-curriculum-20261016-v3-quiz72/.test(sw),"Offline cache version not bumped for "+course.slug);
  assert.equal(bank.rows.length,36);
