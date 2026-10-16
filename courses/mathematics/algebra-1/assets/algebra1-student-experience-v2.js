@@ -66,8 +66,8 @@ function unitExperience(){
   const practiceLink=main.querySelector('a[href*="practice/"]');
   const practiceSection=practiceLink?.closest("section");if(practiceSection&&!practiceSection.id)practiceSection.id="practice";
   const masteryLink=main.querySelector('a[href*="assessment/mastery-check"]');
-  const masterySection=masteryLink?.closest("section");if(masterySection&&!masterySection.id)masterySection.id="unit-evidence";
-  quickNav([{label:"Overview",href:"#main"},{label:"Continue",href:document.getElementById("algebra1NextStep")?"#algebra1NextStep":"#lessons"},{label:"Lessons",href:lessonSection?"#lessons":null},{label:"Practice",href:practiceSection?"#practice":null},{label:"Mastery",href:masterySection?"#unit-evidence":null}]);
+  if(masteryLink&&!masteryLink.id)masteryLink.id="unit-mastery-link";
+  quickNav([{label:"Overview",href:"#main"},{label:"Continue",href:document.getElementById("algebra1NextStep")?"#algebra1NextStep":"#lessons"},{label:"Lessons",href:lessonSection?"#lessons":null},{label:"Practice",href:practiceSection?"#practice":null},{label:"Mastery",href:masteryLink?"#unit-mastery-link":null}]);
 }
 function lessonExperience(){
   document.body.classList.toggle("algebra1-has-header",!!document.querySelector(".site-header"));
