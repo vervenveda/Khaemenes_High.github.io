@@ -23,5 +23,116 @@
     "domain",
     "constraint",
     "verification"
-  ]
+  ],
+  "schema_version": "1.1",
+  "definitions": {
+    "equation": "A mathematical statement that two expressions are equal.",
+    "equality": "The relationship indicating that two expressions have the same value.",
+    "solution": "A value of a variable that makes an equation true.",
+    "solution set": "The complete set of values satisfying an equation or system.",
+    "inverse operation": "An operation that undoes another, such as division undoing multiplication.",
+    "equivalent equation": "Equations that have exactly the same solutions in the specified domain.",
+    "identity": "An equation true for every permitted value of its variable.",
+    "contradiction": "An equation that has no solution because it implies a false statement, such as 0=5.",
+    "literal equation": "An equation involving two or more symbols, solved for one named symbol.",
+    "formula": "A rule expressing the relationship among quantities using mathematical symbols.",
+    "proportion": "An equation stating that two ratios are equal.",
+    "ratio": "A comparison of two quantities by division, with consistent units.",
+    "direct variation": "A relationship y=kx for a constant k, so y/x=k when x is nonzero.",
+    "constant of proportionality": "The constant k in a direct variation or other proportional equation.",
+    "percent equation": "An equation relating a part, base, and percent, often part=rate×base.",
+    "rate": "A comparison of change in one quantity per unit change in another.",
+    "distance": "How far an object travels; in constant-speed motion distance=rate×time.",
+    "mixture": "A model balancing the amounts or concentrations of combined materials.",
+    "simple interest": "Interest calculated on the original principal only: I=Prt for compatible units.",
+    "domain": "The set of allowed input values in a relation, function, or expression.",
+    "constraint": "A restriction a solution must obey, including values prohibited by denominators.",
+    "verification": "Testing a candidate in the original equation or context to confirm it is valid."
+  },
+  "translations": {
+    "equation": {
+      "es": "ecuación",
+      "fr": "équation",
+      "ar": "معادلة",
+      "pt": "equação"
+    },
+    "equality": {
+      "es": "igualdad",
+      "fr": "égalité",
+      "ar": "مساواة",
+      "pt": "igualdade"
+    },
+    "solution": {
+      "es": "solución",
+      "fr": "solution",
+      "ar": "حل",
+      "pt": "solução"
+    },
+    "solution set": {
+      "es": "conjunto solución",
+      "fr": "ensemble solution",
+      "ar": "مجموعة الحل",
+      "pt": "conjunto solução"
+    },
+    "inverse operation": {
+      "es": "operación inversa",
+      "fr": "opération inverse",
+      "ar": "عملية عكسية",
+      "pt": "operação inversa"
+    },
+    "equivalent equation": {
+      "es": "ecuación equivalente",
+      "fr": "équation équivalente",
+      "ar": "معادلة مكافئة",
+      "pt": "equação equivalente"
+    },
+    "identity": {
+      "es": "identidad",
+      "fr": "identité",
+      "ar": "متطابقة",
+      "pt": "identidade"
+    },
+    "contradiction": {
+      "es": "contradicción",
+      "fr": "contradiction",
+      "ar": "تناقض",
+      "pt": "contradição"
+    },
+    "literal equation": {
+      "es": "ecuación literal",
+      "fr": "équation littérale",
+      "ar": "معادلة حرفية",
+      "pt": "equação literal"
+    },
+    "formula": {
+      "es": "fórmula",
+      "fr": "formule",
+      "ar": "صيغة",
+      "pt": "fórmula"
+    },
+    "rate": {
+      "es": "tasa",
+      "fr": "taux",
+      "ar": "معدل",
+      "pt": "taxa"
+    },
+    "domain": {
+      "es": "dominio",
+      "fr": "domaine",
+      "ar": "مجال",
+      "pt": "domínio"
+    },
+    "constraint": {
+      "es": "restricción",
+      "fr": "contrainte",
+      "ar": "قيد",
+      "pt": "restrição"
+    },
+    "verification": {
+      "es": "verificación",
+      "fr": "vérification",
+      "ar": "تحقق",
+      "pt": "verificação"
+    }
+  }
 }
