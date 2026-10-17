@@ -1,5 +1,14 @@
 (() => {
   "use strict";
+  const continuationSrc="https://vervenveda.com/Khaemenes_High.github.io/courses/shared/high-school-english-continuation.js?v=20261016";
+  if(!window.KhaemenesHighEnglishContinuation && ![...document.scripts].some(s=>String(s.src||"").includes("/courses/shared/high-school-english-continuation.js"))){
+    const continuationScript=document.createElement("script");
+    continuationScript.src=continuationSrc;
+    continuationScript.defer=true;
+    continuationScript.dataset.khaeHighEnglishContinuation="1";
+    (document.head||document.documentElement).append(continuationScript);
+  }
+
   const COURSE_ID = "ela11";
   const STATE_KEY = "khae-ela11-state-v1";
   const THEME_KEY = "khae-ela11-theme-v1";
