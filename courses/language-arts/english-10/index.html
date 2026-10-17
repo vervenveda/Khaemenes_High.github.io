@@ -269,6 +269,7 @@ if(state.recoveryRequired)window.KhaemenesEnglishRecords.warning("The saved plan
 window.addEventListener("storage",e=>{if(e.key===window.KhaemenesLearnerScope.scopedKey(STORAGE_KEY))landingBlocked=true;if(e.key===window.KhaemenesLearnerScope.scopedKey(LESSON_KEY))renderAll()});
 if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js").catch(()=>{}))}
 </script>
+<script src="../../shared/high-school-english-continuation.js?v=20261016"></script>
 <script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script>
 </body>
 </html>
