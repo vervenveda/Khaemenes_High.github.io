@@ -191,9 +191,10 @@ const APP = {"title": "Grade 11 Government, Law & Economics Honors", "subtitle":
 const STORAGE_KEY = "KHAE_SS11_GLE_CIVIC_LEDGER_V1";
 
 /* 2. State and storage */
+const COURSE_QUERY = new URLSearchParams(location.search);
 let state = loadState();
-let view = "dashboard";
-let activeWeek = 1;
+let view = ["dashboard","week","scope","exams","capstone","reports","standards"].includes(COURSE_QUERY.get("view")) ? COURSE_QUERY.get("view") : "dashboard";
+let activeWeek = Math.max(1,Math.min(36,Number(COURSE_QUERY.get("week"))||1));
 const $ = id => document.getElementById(id);
 const esc = v => String(v ?? "").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 function loadState(){ try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {students:[],activeId:null}; } catch { return {students:[],activeId:null}; } }
