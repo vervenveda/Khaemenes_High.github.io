@@ -182,7 +182,8 @@ const ENTRY=window.KhaemenesCourseEntryContract, ENTRY_PROFILE=ENTRY?.readAcadem
 const KEY=ENTRY?.scopedKey?.("khae-grade09-integrated-science-portal-v1",ENTRY_PROFILE)||"khae-grade09-integrated-science-portal-v1";
 const ENTRY_DECISION=window.KhaemenesScience9Entry?.decision?.()||{allow:false};
 const ENTRY_BLOCKED=!ENTRY_DECISION.allow||!ENTRY_PROFILE;
-const COURSE_QUERY=new URLSearchParams(location.search),QUERY_WEEK=Math.max(1,Math.min(36,Number(COURSE_QUERY.get("week"))||1)),QUERY_VIEW=COURSE_QUERY.get("view");\nlet state=loadState(),currentView=["dashboard","week","scope","lab","assessments","reports","standards"].includes(QUERY_VIEW)?QUERY_VIEW:"dashboard",selectedWeek=QUERY_WEEK,sets={},labSet=[];
+const COURSE_QUERY=new URLSearchParams(location.search),QUERY_WEEK=Math.max(1,Math.min(36,Number(COURSE_QUERY.get("week"))||1)),QUERY_VIEW=COURSE_QUERY.get("view");
+let state=loadState(),currentView=["dashboard","week","scope","lab","assessments","reports","standards"].includes(QUERY_VIEW)?QUERY_VIEW:"dashboard",selectedWeek=QUERY_WEEK,sets={},labSet=[];
 function blankState(){return {students:[],activeId:null,theme:"light"}}
 function loadState(){try{return JSON.parse(localStorage.getItem(KEY))||blankState()}catch{return blankState()}}
 function save(){if(ENTRY_BLOCKED)return;try{if(ENTRY?.identityRaw?.()!==JSON.stringify(ENTRY_PROFILE.learnerId))throw Error("The Academy learner changed.");localStorage.setItem(KEY,JSON.stringify(state))}catch{}}
