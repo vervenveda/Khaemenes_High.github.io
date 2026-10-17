@@ -12,7 +12,10 @@
     "english-12": { prefixes: ["khae-ela12-state-v1", "KA_ENGLISH12_LANDING_V1"] },
     "biology-10": { prefixes: ["khaemenes-biology-10-v1"] },
     "chemistry-11": { prefixes: ["khaemenes-chemistry-11-v1"] },
-    "physics-engineering-12": { prefixes: ["khaemenes-physics-engineering-12-v1"] }
+    "physics-engineering-12": { prefixes: ["khaemenes-physics-engineering-12-v1"] },
+    "social-studies-10": { prefixes: ["KHAE_SS10_USH_CLEAN_PORTAL_V1"] },
+    "social-studies-11": { prefixes: ["KHAE_SS11_GLE_CIVIC_LEDGER_V1"] },
+    "social-studies-12": { prefixes: ["KHAE_SS12_GPIR_OBSERVATORY_V1"] }
   };
   const config = configs[scope];
   if (!config || typeof Storage === "undefined" || window.KhaemenesLearnerScope) return;
