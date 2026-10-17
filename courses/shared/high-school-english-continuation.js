@@ -1,5 +1,6 @@
 (function attachKhaemenesHighEnglishContinuation(global){
 "use strict";
+if(global.KhaemenesHighEnglishContinuation)return;
 const VERSION="1.0.0",PASS=80;
 const CONT_URL="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-learning-continuation.js";
 const ROOT="https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/";
