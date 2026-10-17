@@ -1,7 +1,7 @@
 (function attachKhaemenesHighScienceContinuation(global){
 "use strict";
 if(global.KhaemenesHighScienceContinuation)return;
-const VERSION="1.0.0",PASS=80;
+const VERSION="1.1.0",PASS=80;
 const ROOT="https://vervenveda.com/Khaemenes_High.github.io/courses/science/";
 const CONFIG={
  "integrated-science-9":{id:"integrated-science-9",title:"Integrated Science 9",grade:"Grade 9",home:ROOT+"integrated-science-9/",key:"khae-grade09-integrated-science-portal-v1",mode:"mastery"},
@@ -53,9 +53,22 @@ function upper(cfg){
  }
  return{courseId:cfg.id,courseTitle:cfg.title,grade:cfg.grade,status:"mastery",nextLabel:"Assessment & Portfolio Review",nextTitle:cfg.title+" · Completion Evidence Review",nextHref:cfg.home+"assessments/",summary:"All 36 weekly planning/evidence markers are complete. Review laboratory records, CERs, unit performance tasks, capstone evidence, and the approved supervised assessment process. Public practice Midterm/Final scores are not treated as official exam grades.",progress:{completed:36,total:36,percent:100},source:"upper-science-weekly-planner-v1"};
 }
-function run(){const name=course(),cfg=CONFIG[name],p=profile();if(!cfg||!p?.learnerId||!global.KhaemenesLearningContinuation)return false;return publish(cfg.mode==="mastery"?science9(cfg):upper(cfg))}
+function mountLearnerGate(cfg){
+ if(!cfg||cfg.mode!=="planner"||profile()?.learnerId||document.getElementById("scienceLearnerEntryGate"))return;
+ const overlay=document.createElement("section");overlay.id="scienceLearnerEntryGate";overlay.setAttribute("role","dialog");overlay.setAttribute("aria-modal","true");overlay.setAttribute("aria-labelledby","scienceLearnerEntryTitle");
+ overlay.style.cssText="position:fixed;inset:0;z-index:2147481500;display:grid;place-items:center;padding:20px;background:rgba(7,21,33,.72);backdrop-filter:blur(7px)";
+ const card=document.createElement("article");card.style.cssText="width:min(560px,100%);padding:24px;border:1px solid rgba(180,139,69,.55);border-radius:7px;background:#fffdf8;color:#17211d;box-shadow:0 24px 70px rgba(7,21,33,.28);text-align:center";
+ const eyebrow=document.createElement("p");eyebrow.textContent="Learner identity";eyebrow.style.cssText="margin:0;color:#8a682f;font:500 11px/1.2 Georgia,serif;letter-spacing:.12em;text-transform:uppercase";
+ const title=document.createElement("h2");title.id="scienceLearnerEntryTitle";title.textContent="Choose your Student Profile";title.style.cssText="margin:9px 0 0;color:#233e34;font:400 30px/1.1 Cinzel,'Iowan Old Style',Georgia,serif";
+ const p=document.createElement("p");p.textContent=cfg.title+" saves laboratory notes, weekly evidence, and progress separately for each Academy learner. Select the correct profile before beginning or changing course work.";p.style.cssText="margin:14px auto 0;max-width:470px;color:#5d6971;line-height:1.55";
+ const actions=document.createElement("div");actions.style.cssText="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px";
+ const profileLink=document.createElement("a");profileLink.href="https://vervenveda.com/Khaemenes_Academy.github.io/student/";profileLink.textContent="Open Student Profile";profileLink.style.cssText="min-height:42px;display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border:1px solid #102b43;border-radius:7px;background:#102b43;color:#fff;text-decoration:none;font-size:12px";
+ const academy=document.createElement("a");academy.href="https://vervenveda.com/Khaemenes_Academy.github.io/";academy.textContent="Academy Home";academy.style.cssText="min-height:42px;display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border:1px solid rgba(20,31,26,.2);border-radius:7px;background:#fff;color:#17211d;text-decoration:none;font-size:12px";
+ actions.append(profileLink,academy);card.append(eyebrow,title,p,actions);overlay.append(card);document.body.append(overlay);profileLink.focus();
+}
+function run(){const name=course(),cfg=CONFIG[name],p=profile();if(!cfg)return false;if(!p?.learnerId){mountLearnerGate(cfg);return false}document.getElementById("scienceLearnerEntryGate")?.remove();if(!global.KhaemenesLearningContinuation)return false;return publish(cfg.mode==="mastery"?science9(cfg):upper(cfg))}
 let timer=0;function schedule(d=100){clearTimeout(timer);timer=setTimeout(run,d)}
-function boot(){schedule(150);global.addEventListener("khaemenes-learning-continuation-ready",()=>schedule(30));global.addEventListener("pageshow",()=>schedule(50));global.addEventListener("focus",()=>schedule(80));global.addEventListener("storage",()=>schedule(100));document.addEventListener("change",()=>schedule(120),true);document.addEventListener("click",()=>schedule(180),true)}
+function boot(){const cfg=CONFIG[course()];if(cfg&&!profile()?.learnerId)mountLearnerGate(cfg);schedule(150);global.addEventListener("khaemenes-learning-continuation-ready",()=>schedule(30));global.addEventListener("pageshow",()=>schedule(50));global.addEventListener("focus",()=>schedule(80));global.addEventListener("storage",event=>{if(event.key==="khaemenes_active_learner_v1")location.reload();schedule(100)});document.addEventListener("change",()=>schedule(120),true);document.addEventListener("click",()=>schedule(180),true)}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
 global.KhaemenesHighScienceContinuation=Object.freeze({version:VERSION,run});
 })(window);
