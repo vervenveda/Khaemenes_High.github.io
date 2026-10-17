@@ -9,7 +9,10 @@
     "algebra-2": { prefixes: ["khaemenes-algebra2-", "khaemenes-math-algebra2-readiness-v1"] },
     "english-10": { prefixes: ["khae-ela10-state-v1", "KA_ENGLISH10_LANDING_V1"] },
     "english-11": { prefixes: ["khae-ela11-state-v1", "KA_ENGLISH11_LANDING_V1"] },
-    "english-12": { prefixes: ["khae-ela12-state-v1", "KA_ENGLISH12_LANDING_V1"] }
+    "english-12": { prefixes: ["khae-ela12-state-v1", "KA_ENGLISH12_LANDING_V1"] },
+    "biology-10": { prefixes: ["khaemenes-biology-10-v1"] },
+    "chemistry-11": { prefixes: ["khaemenes-chemistry-11-v1"] },
+    "physics-engineering-12": { prefixes: ["khaemenes-physics-engineering-12-v1"] }
   };
   const config = configs[scope];
   if (!config || typeof Storage === "undefined" || window.KhaemenesLearnerScope) return;
