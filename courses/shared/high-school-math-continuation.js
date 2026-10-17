@@ -1,6 +1,6 @@
 (function attachKhaemenesHighMathContinuation(global){
 "use strict";
-const VERSION="1.0.0";
+const VERSION="1.1.0";
 const PASS=80;
 const ROOT="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/";
 const COURSE={
@@ -69,59 +69,51 @@ function preAssignPct(r){
 function preQuizBest(r){return Math.round(number(r?.quiz?.best)||0)}
 function preAlgebraSnapshot(){
   const cfg=COURSE["pre-algebra"];
-  const state=parse("KHAE_OPEN_PREALGEBRA_FORGE_V2",null);
-  const s=activeStudent(state);
-  if(!s)return null;
+  const naib=parse("khaemenes-naib-readiness-profile-v1",null);
+  if(!naib){
+    return {courseId:"pre-algebra",subject:cfg.subject,courseTitle:cfg.title,status:"assessment",nextLabel:"Begin Readiness",nextTitle:"Pre-Algebra Readiness Diagnostic",nextHref:cfg.home+"diagnostic/",summary:"Begin with the NAIB pre-course readiness assessment before the mastery pathway.",progress:{completed:0,total:36,percent:0},mastery:{best:null,threshold:PASS,mastered:false},source:"pre-algebra-course-gates-v1"};
+  }
+  if(naib.route==="unit_0_refresher"){
+    const exit=parse("khaemenes-prealgebra-unit00-exit-v1",null),best=number(exit?.best_percent);
+    if(!(exit?.passed&&best!==null&&best>=PASS)){
+      return {courseId:"pre-algebra",subject:cfg.subject,courseTitle:cfg.title,status:best!==null&&best>0?"corrections":"mastery",nextLabel:best!==null&&best>0?"Review Unit 0":"Complete Unit 0",nextTitle:"Unit 0 · Readiness Refresher",nextHref:cfg.home+"units/unit-00/",summary:best!==null&&best>0?"Unit 0 exit evidence is "+Math.round(best)+"%. Review and retry to reach 80%.":"The readiness diagnostic assigned the refresher. Complete Unit 0 and its 80% exit mastery gate before Week 1.",progress:{completed:0,total:36,percent:0},mastery:{best:best,threshold:PASS,mastered:false},source:"pre-algebra-course-gates-v1"};
+    }
+  }
 
-  const mid=number(s?.progress?.exams?.midterm?.best)||0;
-  const fin=number(s?.progress?.exams?.final?.best)||0;
-  const cap=number(s?.progress?.capstone?.score)||0;
-  let mastered=0;
-  let first=null;
+  const state=parse("KHAE_OPEN_PREALGEBRA_FORGE_V2",null),s=activeStudent(state);
+  if(!s){
+    return {courseId:"pre-algebra",subject:cfg.subject,courseTitle:cfg.title,status:"continue",nextLabel:"Open Pre-Algebra",nextTitle:"Begin the 36-week pathway",nextHref:cfg.home,summary:"Readiness evidence is present. Open the course home to begin or resume Pre-Algebra.",progress:{completed:0,total:36,percent:0},mastery:{best:null,threshold:PASS,mastered:false},source:"pre-algebra-course-record-v2"};
+  }
 
+  let mastered=0,first=null;
   for(let w=1;w<=36;w++){
-    const r=preWeekRecord(s,w),lp=preLessonPct(r),ap=preAssignPct(r),qb=preQuizBest(r);
-    if(lp===100&&ap===100&&qb>=PASS)mastered++;
-    else if(!first)first={week:w,record:r,lessonPct:lp,assignPct:ap,quizBest:qb};
+    const rec=preWeekRecord(s,w),lessonPct=preLessonPct(rec),quizBest=preQuizBest(rec);
+    if(lessonPct===100&&quizBest>=PASS)mastered++;
+    else if(!first)first={week:w,record:rec,lessonPct,quizBest};
   }
 
   let status="continue",nextLabel="Continue Pre-Algebra",nextTitle="",nextHref="",summary="",best=null;
-  if(first&&first.week>18&&mastered>=18&&mid<PASS){
-    best=mid||null;
-    status=best?"corrections":"assessment";
-    nextLabel=best?"Review Midterm":"Open Midterm";
-    nextTitle="Pre-Algebra Midterm";
-    nextHref=cfg.home+"?view=exams#content";
-    summary=best?`Midterm best score is ${best}%. Review and retry to reach ${PASS}%.`:"Weeks 01–18 are mastered. The cumulative Midterm is the next formal step.";
-  }else if(first){
+  if(first){
     best=first.quizBest||null;
-    nextHref=cfg.home+`?view=week&week=${first.week}#content`;
-    nextTitle=`Week ${String(first.week).padStart(2,"0")}`;
-    if(first.lessonPct<100||first.assignPct<100){
+    nextHref=cfg.home+"?view=week&week="+first.week+"#content";
+    nextTitle="Week "+String(first.week).padStart(2,"0");
+    if(first.lessonPct<100){
       status="continue";
-      nextLabel="Continue Pre-Algebra";
-      summary=`Week ${String(first.week).padStart(2,"0")} has ${first.lessonPct}% lesson-plan completion and ${first.assignPct}% assignment completion. Continue the learning work before treating the week as complete.`;
-    }else if(first.quizBest<PASS){
-      status=first.quizBest>0?"corrections":"assessment";
+      summary="Complete the Week "+String(first.week).padStart(2,"0")+" lesson work. The course gate requires all five lesson days before weekly mastery.";
+    }else{
+      status=first.quizBest>0?"corrections":"mastery";
       nextLabel=first.quizBest>0?"Review & Retry":"Take Weekly Mastery";
-      summary=first.quizBest>0?`Week ${String(first.week).padStart(2,"0")} quiz best is ${first.quizBest}%. Review corrections and retry to reach ${PASS}%.`:`Week ${String(first.week).padStart(2,"0")} learning work is complete. The weekly mastery check is next.`;
+      summary=first.quizBest>0?"Week "+String(first.week).padStart(2,"0")+" quiz best is "+first.quizBest+"%. Review corrections and retry to reach 80%.":"Week "+String(first.week).padStart(2,"0")+" lesson work is complete. The weekly 80% mastery check is next.";
     }
-  }else if(mid<PASS){
-    best=mid||null;status=best?"corrections":"assessment";nextLabel=best?"Review Midterm":"Open Midterm";nextTitle="Pre-Algebra Midterm";nextHref=cfg.home+"?view=exams#content";summary="Complete the cumulative Midterm at 80% or higher.";
-  }else if(fin<PASS){
-    best=fin||null;status=best?"corrections":"assessment";nextLabel=best?"Review Final":"Open Final";nextTitle="Pre-Algebra Final";nextHref=cfg.home+"?view=exams#content";summary="Complete the cumulative Final at 80% or higher.";
-  }else if(cap<PASS){
-    best=cap||null;status=best?"corrections":"mastery";nextLabel=best?"Revise Capstone":"Complete Capstone";nextTitle="Mathematical Modelling Capstone";nextHref=cfg.home+"?view=capstone#content";summary="Complete or revise the modelling capstone to demonstrate Algebra I readiness.";
   }else{
-    status="complete";nextLabel="Review Completion Record";nextTitle="Pre-Algebra Complete";nextHref=cfg.home+"records/course-completion-certificate.html";summary="All detected weekly, cumulative, and capstone evidence gates are complete.";best=100;
+    const mid=number(s?.progress?.exams?.midterm?.best)||0,fin=number(s?.progress?.exams?.final?.best)||0,cap=number(s?.progress?.capstone?.score)||0;
+    if(mid<PASS){best=mid||null;status=best?"corrections":"assessment";nextLabel=best?"Review Midterm":"Open Midterm";nextTitle="Pre-Algebra Midterm";nextHref=cfg.home+"assessments/midterm-units-01-07.html";summary=best?"Midterm best score is "+best+"%. Review and retry to reach 80%.":"The 36 weekly mastery gates are complete. Complete the cumulative Midterm evidence.";}
+    else if(fin<PASS){best=fin||null;status=best?"corrections":"assessment";nextLabel=best?"Review Final":"Open Final";nextTitle="Pre-Algebra Final";nextHref=cfg.home+"assessments/final-exam-36-weeks.html";summary=best?"Final best score is "+best+"%. Review and retry to reach 80%.":"Complete the cumulative Final Examination.";}
+    else if(cap<PASS){best=cap||null;status=best?"corrections":"mastery";nextLabel=best?"Revise Capstone":"Complete Capstone";nextTitle="Mathematical Modelling Capstone";nextHref=cfg.home+"?view=capstone#content";summary=best?"Capstone score is "+best+"%. Revise the modelling evidence to reach the course benchmark.":"Weekly and cumulative assessment evidence is complete. Finish the modelling capstone and readiness defense.";}
+    else{status="complete";nextLabel="Review Completion Record";nextTitle="Pre-Algebra Complete";nextHref=cfg.home+"records/course-completion-certificate.html";summary="All detected weekly, cumulative, and capstone evidence gates are complete.";best=100;}
   }
 
-  return {
-    courseId:"pre-algebra",subject:cfg.subject,courseTitle:cfg.title,status,nextLabel,nextTitle,nextHref,summary,
-    progress:{completed:mastered,total:36,percent:Math.round(mastered/36*100)},
-    mastery:{best,threshold:PASS,mastered:status==="complete"},
-    source:"pre-algebra-course-record-v2"
-  };
+  return {courseId:"pre-algebra",subject:cfg.subject,courseTitle:cfg.title,status,nextLabel,nextTitle,nextHref,summary,progress:{completed:mastered,total:36,percent:Math.round(mastered/36*100)},mastery:{best,threshold:PASS,mastered:status==="complete"},source:"pre-algebra-course-gates-v1"};
 }
 
 /* -------------------- Algebra I -------------------- */
@@ -273,59 +265,40 @@ async function algebra1Snapshot(){
 
 /* -------------------- Algebra II -------------------- */
 function algebra2Snapshot(){
-  const cfg=COURSE["algebra-2"];
-  const D=global.ALGEBRA2_DATA;
-  const key=D?.course?.storage_key||"khaemenes-algebra2-course-v1";
-  const state=parse(key,null),s=activeStudent(state);
-  if(!s)return null;
-  const weeks=Array.isArray(D?.weeks)?D.weeks:Array.from({length:36},(_,i)=>({week:i+1,title:`Week ${i+1}`,unit_path:"./"}));
-  const target=number(D?.course?.mastery_target)||PASS;
-  const diagnostic=number(s?.formal?.diagnostic);
-  const mid=number(s?.formal?.midterm);
-  const fin=number(s?.formal?.final);
-  const cap=number(s?.formal?.capstone);
+  const cfg=COURSE["algebra-2"],P=global.KhaemenesAlgebra2Progression,D=global.ALGEBRA2_DATA;
+  if(!P||!D)return null;
+  const units=Array.isArray(D.units)?D.units:[],totalLessons=units.reduce((sum,u)=>sum+(Array.isArray(u.lessons)?u.lessons.length:0),0)||92;
+  let completedLessons=0;
 
-  let complete=0,first=null;
-  for(const w of weeks){
-    const r=s?.weeks?.[w.week]||s?.weeks?.[String(w.week)]||{};
-    const sessions=Object.values(r?.days||{}).filter(Boolean).length;
-    const mastery=number(r?.masteryBest);
-    if(sessions===5&&mastery!==null&&mastery>=target)complete++;
-    else if(!first)first={week:Number(w.week),title:w.title||`Week ${w.week}`,unitPath:w.unit_path||"./",sessions,mastery};
+  if(!P.readinessRecorded()){
+    return {courseId:"algebra-2",subject:cfg.subject,courseTitle:cfg.title,status:"assessment",nextLabel:"Begin Algebra II Readiness",nextTitle:"Week 01 · Readiness Diagnostic",nextHref:cfg.home+"diagnostic/",summary:"Complete the Algebra II readiness diagnostic at 80% or higher before the strict course sequence.",progress:{completed:0,total:totalLessons,percent:0},mastery:{best:null,threshold:PASS,mastered:false},source:"algebra2-progression-v1"};
   }
 
-  let status="continue",nextLabel="Continue Algebra II",nextTitle="",nextHref="",summary="",best=null;
-  if(complete===0&&diagnostic===null){
-    status="assessment";nextLabel="Begin Algebra II Readiness";nextTitle="Readiness Diagnostic";nextHref=cfg.home+"diagnostic/";summary="Begin with the Algebra II readiness diagnostic before the 36-week advanced-functions pathway.";
-  }else if(first&&first.week>18&&complete>=18&&(mid===null||mid<target)){
-    best=mid;status=best!==null&&best>0?"corrections":"assessment";nextLabel=status==="corrections"?"Review Midterm":"Open Midterm";nextTitle="Algebra II Midterm";nextHref=cfg.home+"assessments/midterm.html";summary=best!==null&&best>0?`Midterm is recorded at ${Math.round(best)}%. Review and retry to reach ${target}%.`:"The first half of the course is complete. The Midterm is the next formal step.";
-  }else if(first){
-    best=first.mastery;
-    nextTitle=`Week ${String(first.week).padStart(2,"0")} · ${first.title}`;
-    nextHref=cfg.home+`?continueWeek=${first.week}#week`;
-    if(first.sessions<5){
-      status="continue";nextLabel="Continue Algebra II";summary=`${first.sessions}/5 learning sessions are recorded for Week ${first.week}. Continue the weekly study sequence.`;
-    }else{
-      status=best!==null&&best>0?"corrections":"assessment";
-      nextLabel=status==="corrections"?"Review Weekly Mastery":"Take Weekly Mastery";
-      summary=best!==null&&best>0?`Week ${first.week} mastery best is ${Math.round(best)}%. Review and retry to reach ${target}%.`:`All five Week ${first.week} sessions are complete. The weekly mastery set is next.`;
+  for(const u of units){
+    const unit=Number(u.number);
+    for(const lesson of u.lessons||[]){
+      if(P.lessonComplete(lesson.id)){completedLessons++;continue}
+      return {courseId:"algebra-2",subject:cfg.subject,courseTitle:cfg.title,status:"continue",nextLabel:"Continue Algebra II",nextTitle:"Unit "+String(unit).padStart(2,"0")+" · "+String(lesson.title||lesson.id),nextHref:cfg.home+"units/unit-"+String(unit).padStart(2,"0")+"/lessons/"+lesson.id+".html",summary:"Continue the next unlocked Algebra II lesson. Lesson completion and unit gates remain authoritative.",progress:{completed:completedLessons,total:totalLessons,percent:Math.round(completedLessons/totalLessons*100)},mastery:{best:null,threshold:PASS,mastered:false},source:"algebra2-progression-v1"};
     }
-  }else if(mid===null||mid<target){
-    best=mid;status=best!==null&&best>0?"corrections":"assessment";nextLabel=status==="corrections"?"Review Midterm":"Open Midterm";nextTitle="Algebra II Midterm";nextHref=cfg.home+"assessments/midterm.html";summary="Complete the Midterm at the 80% mastery target.";
-  }else if(fin===null||fin<target){
-    best=fin;status=best!==null&&best>0?"corrections":"assessment";nextLabel=status==="corrections"?"Review Final":"Open Final";nextTitle="Algebra II Final";nextHref=cfg.home+"assessments/final.html";summary="Complete the comprehensive Final at the 80% mastery target.";
-  }else if(cap===null||cap<target){
-    best=cap;status=best!==null&&best>0?"corrections":"mastery";nextLabel=status==="corrections"?"Revise Capstone":"Complete Capstone";nextTitle="Algebra II Capstone / Defense";nextHref=cfg.home+"#portfolio";summary="Complete or revise the capstone and defense evidence at the course mastery target.";
-  }else{
-    status="complete";nextLabel="Review Completion Record";nextTitle="Algebra II Complete";nextHref=cfg.home+"records/course-completion-certificate.html";summary="All detected Algebra II study and formal evidence gates are complete.";best=100;
+
+    if(!P.unitMastered(unit)){
+      const records=P.readJSON("khaemenes-algebra2-assessment-records-v1",{}),rec=records?.["unit-"+String(unit).padStart(2,"0")+"-mastery"],best=number(rec?.bestScore);
+      return {courseId:"algebra-2",subject:cfg.subject,courseTitle:cfg.title,status:best!==null&&best>0?"corrections":"mastery",nextLabel:best!==null&&best>0?"Review Unit Mastery":"Take Unit Mastery",nextTitle:"Unit "+String(unit).padStart(2,"0")+" Mastery",nextHref:cfg.home+"units/unit-"+String(unit).padStart(2,"0")+"/assessment/mastery-check.html",summary:best!==null&&best>0?"Unit mastery best is "+Math.round(best)+"%. Review and retry to reach 80%.":"All lessons in this unit are complete. The 80% unit mastery check is next.",progress:{completed:completedLessons,total:totalLessons,percent:Math.round(completedLessons/totalLessons*100)},mastery:{best:best,threshold:PASS,mastered:false},source:"algebra2-progression-v1"};
+    }
+
+    if(unit===6&&!P.midtermMastered()){
+      const records=P.readJSON("khaemenes-algebra2-assessment-records-v1",{}),rec=records?.midterm,best=number(rec?.bestScore);
+      return {courseId:"algebra-2",subject:cfg.subject,courseTitle:cfg.title,status:best!==null&&best>0?"corrections":"assessment",nextLabel:best!==null&&best>0?"Review Midterm":"Open Midterm",nextTitle:"Algebra II Midterm",nextHref:cfg.home+"assessments/midterm.html",summary:best!==null&&best>0?"Midterm best is "+Math.round(best)+"%. Review and retry to reach 80%.":"Units 01–06 are mastered. The reviewed Midterm is the next formal step.",progress:{completed:completedLessons,total:totalLessons,percent:Math.round(completedLessons/totalLessons*100)},mastery:{best:best,threshold:PASS,mastered:false},source:"algebra2-progression-v1"};
+    }
   }
 
-  return {
-    courseId:"algebra-2",subject:cfg.subject,courseTitle:cfg.title,status,nextLabel,nextTitle,nextHref,summary,
-    progress:{completed:complete,total:36,percent:Math.round(complete/36*100)},
-    mastery:{best,threshold:target,mastered:status==="complete"},
-    source:"algebra2-course-record-v1"
-  };
+  const records=P.readJSON("khaemenes-algebra2-assessment-records-v1",{}),finalRecord=records?.final;
+  if(!P.recordMastered(finalRecord)){
+    const best=number(finalRecord?.bestScore);
+    return {courseId:"algebra-2",subject:cfg.subject,courseTitle:cfg.title,status:best!==null&&best>0?"corrections":"assessment",nextLabel:best!==null&&best>0?"Review Final":"Open Algebra II Final",nextTitle:"Algebra II Comprehensive Final",nextHref:cfg.home+"assessments/final.html",summary:best!==null&&best>0?"Final best is "+Math.round(best)+"%. Review and retry to reach 80%.":"All strict lesson and unit gates are complete. The comprehensive Final is the next formal evidence.",progress:{completed:totalLessons,total:totalLessons,percent:100},mastery:{best:best,threshold:PASS,mastered:false},source:"algebra2-progression-v1"};
+  }
+
+  return {courseId:"algebra-2",subject:cfg.subject,courseTitle:cfg.title,status:"mastery",nextLabel:"Capstone & Completion Review",nextTitle:"Algebra II Capstone / Evaluator Record",nextHref:cfg.home+"#portfolio",summary:"Strict progression and Final evidence are complete. Review the modelling capstone, oral defense, portfolio, and evaluator record before issuing completion.",progress:{completed:totalLessons,total:totalLessons,percent:100},mastery:{best:100,threshold:PASS,mastered:false},source:"algebra2-progression-v1"};
 }
 
 async function publish(){
