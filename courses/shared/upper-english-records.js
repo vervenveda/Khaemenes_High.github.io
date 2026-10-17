@@ -27,11 +27,79 @@
   function warning(message, getText) {
     const show = () => {
       if (!document.body) return;
-      let box = document.getElementById("englishRecordWarning");
-      if (!box) { box = document.createElement("aside"); box.id = "englishRecordWarning"; box.setAttribute("role", "alert"); box.style.cssText = "padding:14px;margin:14px;border:1px solid #963f46;border-radius:7px;background:#fff8e8;color:#20241f"; document.body.prepend(box); }
-      box.replaceChildren(); const p = document.createElement("p"); p.textContent = message; box.append(p);
-      const button = document.createElement("button"); button.type = "button"; button.textContent = "Export recovery copy"; button.onclick = () => exportText("english-record-recovery.json", getText()); box.append(button);
-      const reload = document.createElement("button"); reload.type = "button"; reload.textContent = "Reload saved record"; reload.onclick = () => { if (confirm("Export any unsaved work before reloading. Continue?")) location.reload(); }; box.append(reload);
+      const TOOLBAR_ID="khaemenesLearnerUtilityToolbar";
+      const BUTTON_ID="englishRecordWarningButton";
+      const PANEL_ID="englishRecordWarning";
+      let button=document.getElementById(BUTTON_ID);
+      let box=document.getElementById(PANEL_ID);
+      const toolbar=document.getElementById(TOOLBAR_ID);
+
+      if(!button){
+        button=document.createElement("button");
+        button.id=BUTTON_ID;
+        button.type="button";
+        button.textContent="Record Recovery";
+        button.setAttribute("aria-haspopup","dialog");
+        button.setAttribute("aria-controls",PANEL_ID);
+        button.setAttribute("aria-expanded","false");
+        button.style.cssText="position:fixed;right:14px;bottom:122px;z-index:2147483000;width:126px;height:42px;padding:7px 9px;border:1px solid #963f46;border-radius:7px;background:#fff2e6;color:#5b2529;font:600 10px/1.15 'Avenir Next','Segoe UI',Arial,sans-serif;letter-spacing:.035em;cursor:pointer";
+        (toolbar||document.body).append(button);
+      }
+      if(toolbar&&button.parentElement!==toolbar){
+        button.style.position="static";
+        button.style.order="12";
+        toolbar.append(button);
+      }
+
+      if(!box){
+        box=document.createElement("section");
+        box.id=PANEL_ID;
+        box.hidden=true;
+        box.setAttribute("role","dialog");
+        box.setAttribute("aria-modal","false");
+        box.setAttribute("aria-labelledby","englishRecordWarningTitle");
+        box.style.cssText="position:fixed;right:14px;bottom:170px;z-index:2147483001;width:min(430px,calc(100vw - 28px));max-height:min(70vh,560px);overflow:auto;padding:14px;border:1px solid #963f46;border-radius:7px;background:#fff8e8;color:#20241f;box-shadow:0 14px 40px rgba(34,31,27,.24);font:inherit";
+        document.body.append(box);
+      }
+
+      box.replaceChildren();
+      const head=document.createElement("div");
+      head.style.cssText="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px";
+      const title=document.createElement("h2");
+      title.id="englishRecordWarningTitle";
+      title.textContent="English Record Recovery";
+      title.style.cssText="margin:0;font:400 24px/1.2 Cinzel,'Iowan Old Style',Georgia,serif";
+      const close=document.createElement("button");
+      close.type="button";close.textContent="Close";
+      close.style.cssText="padding:6px 9px;border:1px solid #b9a37f;border-radius:7px;background:#fffdf7;color:#20241f;font:inherit;font-size:12px";
+      head.append(title,close);box.append(head);
+      const p=document.createElement("p");p.style.cssText="margin:0 0 10px;line-height:1.55";p.textContent=message;box.append(p);
+      const actions=document.createElement("div");actions.style.cssText="display:flex;flex-wrap:wrap;gap:7px";
+      const exportButton=document.createElement("button");exportButton.type="button";exportButton.textContent="Export recovery copy";
+      const reload=document.createElement("button");reload.type="button";reload.textContent="Reload saved record";
+      [exportButton,reload].forEach(x=>x.style.cssText="padding:7px 10px;border:1px solid #967342;border-radius:7px;background:#fffdf7;color:#20241f;font:inherit;font-size:12px");
+      exportButton.onclick=()=>exportText("english-record-recovery.json",getText());
+      reload.onclick=()=>{if(confirm("Export any unsaved work before reloading. Continue?"))location.reload()};
+      actions.append(exportButton,reload);box.append(actions);
+
+      const position=()=>{
+        const rail=document.getElementById(TOOLBAR_ID);
+        if(rail){
+          if(button.parentElement!==rail){button.style.position="static";button.style.order="12";rail.append(button)}
+          const h=Math.ceil(rail.getBoundingClientRect().height||54);
+          box.style.right="max(12px, env(safe-area-inset-right))";
+          box.style.bottom=`calc(max(12px, env(safe-area-inset-bottom)) + ${h+10}px)`;
+        }else{
+          button.style.right="14px";button.style.bottom="122px";
+          box.style.right="14px";box.style.bottom="170px";
+        }
+      };
+      const setOpen=open=>{box.hidden=!open;button.setAttribute("aria-expanded",String(open));position();if(open)close.focus();else button.focus()};
+      button.onclick=()=>setOpen(box.hidden);
+      close.onclick=()=>setOpen(false);
+      position();
+      setTimeout(position,500);
+      setTimeout(position,1600);
     };
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", show, { once: true }); else show();
   }
@@ -53,7 +121,7 @@
         if (!valid(next, courseId)) throw new Error("The record is incomplete or contains an invalid score. Saving was paused.");
         if (localStorage.getItem(key) !== snapshot) { blocked = true; throw new Error("Another tab changed this record. Export your unsaved work before reloading."); }
         const text = JSON.stringify(next); localStorage.setItem(key, text); snapshot = text;
-        const box = document.getElementById("englishRecordWarning"); if (box) box.remove();
+        const box = document.getElementById("englishRecordWarning"); if (box) box.remove(); const recoveryButton=document.getElementById("englishRecordWarningButton"); if(recoveryButton) recoveryButton.remove();
         return true;
       } catch (error) { warning(`${error.message} Your current work remains available for export.`, () => JSON.stringify(state, null, 2)); return false; }
     }
