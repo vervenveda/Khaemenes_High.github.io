@@ -1,0 +1,897 @@
+<!doctype html>
+<html data-theme="light" dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+  <meta content="#07131d" name="theme-color"/>
+  <meta content="dark light" name="color-scheme"/>
+  <title>
+   Units 10&ndash;12 Cumulative Benchmark &middot; Khaemenes Science 9
+  </title>
+  <script src="../../../../shared/course-entry-contract.js?v=20261018"></script><script src="../../../../shared/learner-scope-v1.js?v=20261018" data-learner-scope="integrated-science-9"></script><script src="../../../../shared/monte-carlo-assessment-v1.js?v=20261018"></script><script src="question-bank.js?v=20261018"></script><script>
+document.addEventListener("DOMContentLoaded",()=>{const k="khaemenes_theme",b=document.querySelector("#themeToggle");function set(t){t=["dark","light"].includes(t)?t:"dark";document.documentElement.dataset.theme=t;localStorage.setItem(k,t);if(b)b.textContent=t==="dark"?"☼":"◐"}set(localStorage.getItem(k)||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));if(b)b.onclick=()=>set(document.documentElement.dataset.theme==="dark"?"light":"dark")});
+const KEY="khaemenes_science_units10_12_benchmark_v1",PASS=48,FORM_COUNT=60,MC_KEY=KEY+"::mc::objective",MC=window.KhaeMonteCarloAssessment,BANK=window.KhaemenesScience9CumulativeQuestionBank||[],SESSION=MC.openSession(MC_KEY,BANK,{kind:"units10-12-benchmark-objective",count:FORM_COUNT,sourceQuotas:{"unit-10":20,"unit-11":20,"unit-12":20}}),Q=MC.materialize(BANK,SESSION),RESPONSES=MC.getResponses(MC_KEY);
+let S;try{S=JSON.parse(localStorage.getItem(KEY))||{}}catch{S={}}
+if(S.formId!==SESSION.id){S.formId=SESSION.id;S.answers=Q.map(q=>Number.isInteger(Number(RESPONSES[q.id]))?Number(RESPONSES[q.id]):null);S.current=0;localStorage.setItem(KEY,JSON.stringify(S));}else{S.answers=Array.isArray(S.answers)&&S.answers.length===Q.length?S.answers:Q.map(q=>Number.isInteger(Number(RESPONSES[q.id]))?Number(RESPONSES[q.id]):null);S.current=Number.isInteger(S.current)?Math.max(0,Math.min(Q.length-1,S.current)):0;}
+S.objective={score:0,total:FORM_COUNT,passed:false,attempts:0,unitScores:{},...(S.objective||{})};
+S.assessmentHistory=Array.isArray(S.assessmentHistory)?S.assessmentHistory:[];
+let snap=localStorage.getItem(KEY);
+const $=(x,p=document)=>p.querySelector(x),esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+function save(){S.updatedAt=new Date().toISOString();localStorage.setItem(KEY,JSON.stringify(S));snap=localStorage.getItem(KEY)}
+function dots(){$("#questionDots").innerHTML=Q.map((_,i)=>`<button class="dot ${i===S.current?"current":""} ${S.answers[i]!==null?"answered":""}" data-i="${i}">${i+1}</button>`).join("");$("#questionDots").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.current=+b.dataset.i;save();render()});$("#answeredCount").textContent=`${S.answers.filter(v=>v!==null).length} of ${Q.length} answered`}
+function render(){const q=Q[S.current];$("#questionUnit").textContent=q.unit+" · "+q.domain;$("#questionNumber").textContent=`Question ${S.current+1} of ${Q.length}`;$("#questionPrompt").textContent=q.prompt;$("#options").innerHTML=q.options.map((o,i)=>`<label class="option"><input type="radio" name="answer" value="${i}" ${S.answers[S.current]===i?"checked":""}><span>${esc(o)}</span></label>`).join("");$("#options").querySelectorAll("input").forEach(x=>x.onchange=e=>{S.answers[S.current]=+e.target.value;MC.saveResponse(MC_KEY,q.id,S.answers[S.current]);save();dots();$("#submitButton").disabled=S.answers.some(v=>v===null)});$("#previousButton").disabled=S.current===0;$("#nextButton").disabled=S.current===Q.length-1;dots();$("#submitButton").disabled=S.answers.some(v=>v===null)}
+function start(){$("#intro").hidden=true;$("#results").hidden=true;$("#assessment").hidden=false;render();scrollTo(0,0)}
+function submit(){if(localStorage.getItem(KEY)!==snap){alert("This learner record changed in another tab. Reload before submitting.");return}if(S.answers.some(v=>v===null))return;let score=0,u={};Q.forEach((q,i)=>{u[q.unit]||={correct:0,total:0};u[q.unit].total++;if(S.answers[i]===q.answer){score++;u[q.unit].correct++}});const passed=score>=PASS,pct=Math.round(score/Q.length*100),completedAt=new Date().toISOString();S.objective={score,total:Q.length,passed,attempts:(S.objective.attempts||0)+1,submittedAt:completedAt,unitScores:u,formId:SESSION.id,bankSize:BANK.length};S.assessmentHistory.push({kind:"units10-12-benchmark-objective",formId:SESSION.id,score,total:Q.length,percent:pct,passed,completedAt,unitScores:u,questionIds:SESSION.questionIds.slice()});S.assessmentHistory=S.assessmentHistory.slice(-24);save();MC.complete(MC_KEY,{score,total:Q.length,percent:pct,passed,unitScores:u});$("#intro").hidden=true;$("#assessment").hidden=true;$("#results").hidden=false;$("#score").textContent=score+" / "+Q.length;$("#resultTitle").textContent=passed?"Objective mastery threshold reached":"Objective mastery threshold not yet reached";$("#resultMessage").textContent=passed?"Complete the four educator-scored responses for the final 100-point benchmark score.":"Review explanations and complete corrections before a new randomized attempt. At least 48 of 60 is required.";$("#unitResults").innerHTML=Object.entries(u).map(([n,d])=>`<div class="unit-result"><strong>${d.correct} / ${d.total}</strong><span>${n}</span></div>`).join("");$("#reviewList").innerHTML=Q.map((q,i)=>`<article class="review-item ${S.answers[i]===q.answer?"correct":"incorrect"}"><strong>${i+1}. [${esc(q.unit)}] ${esc(q.prompt)}</strong><p>Your answer: ${esc(q.options[S.answers[i]])}</p><p>Correct answer: ${esc(q.options[q.answer])}</p><p>${esc(q.explanation)}</p><p class="small">Question ID: ${esc(q.id)} · Generated form: ${esc(SESSION.id)}</p></article>`).join("");scrollTo(0,0)}
+function exportRecord(){const blob=new Blob([JSON.stringify({schema:"khaemenes-science9-units10-12-benchmark-v2",course:"KH-SCI-IIS9",exportedAt:new Date().toISOString(),state:S,form:{id:SESSION.id,questionIds:SESSION.questionIds,bankSize:BANK.length}},null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="KH-SCI-IIS9-units10-12-benchmark.json";document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url)}
+document.addEventListener("DOMContentLoaded",()=>{$("#startButton").onclick=start;$("#resumeButton").hidden=!S.answers.some(v=>v!==null);$("#resumeButton").onclick=start;$("#previousButton").onclick=()=>{if(S.current>0){S.current--;save();render()}};$("#nextButton").onclick=()=>{if(S.current<Q.length-1){S.current++;save();render()}};$("#submitButton").onclick=submit;$("#retakeButton").onclick=()=>{MC.newAttempt(MC_KEY);S.answers=[];S.current=0;save();location.reload()};$("#printResults").onclick=()=>print();$("#exportRecord").onclick=exportRecord;if(S.objective.submittedAt){$("#priorResult").hidden=false;$("#priorResult").textContent=`Previous objective result: ${S.objective.score} / ${S.objective.total||60} · ${S.objective.passed?"Passed":"Not yet passed"}`}});
+
+</script>
+  <style>
+   :root{
+  --page:#f3f1eb;
+  --paper:#ffffff;
+  --paper-soft:#faf8f3;
+  --ink:#111315;
+  --muted:#50585d;
+  --navy:#17344a;
+  --navy-deep:#0e2536;
+  --ecology:#4f7657;
+  --atomic:#416f7a;
+  --chemistry:#8a5f4b;
+  --violet:#6e6387;
+  --gold:#a67b35;
+  --success:#4f7c62;
+  --danger:#a24f4f;
+  --line:#cfd5d7;
+  --line-dark:#aeb8bc;
+  --shadow:0 14px 34px rgba(22,42,54,.10);
+  --soft:0 8px 22px rgba(22,42,54,.07);
+  --radius:11px;
+  --radius-small:7px;
+  --max:1160px;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:"Avenir Next","Segoe UI",Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px;color-scheme:light}
+body{
+  margin:0;
+  min-width:300px;
+  color:var(--ink);
+  background:var(--page);
+  font:400 18px/1.72 var(--sans);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body,button,input,select,textarea{font-family:var(--sans)}
+a{color:var(--navy)}
+button{font:inherit;cursor:pointer}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap,.bench-shell{width:min(calc(100% - 36px),var(--max));margin-inline:auto}
+
+.skip-link{
+  position:fixed;
+  left:14px;
+  top:14px;
+  z-index:3000;
+  transform:translateY(-180%);
+  padding:10px 14px;
+  border-radius:7px;
+  color:#fff;
+  background:var(--navy-deep);
+  text-decoration:none;
+}
+.skip-link:focus{transform:none}
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-top:4px solid var(--gold);
+  border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.97);
+  box-shadow:0 6px 18px rgba(22,42,54,.08);
+  backdrop-filter:blur(12px);
+}
+.header-inner{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+.brand{
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--ink);
+  text-decoration:none;
+}
+.brand-mark{
+  width:48px;
+  height:48px;
+  flex:0 0 48px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--navy);
+  border-radius:7px;
+  color:#fff;
+  background:var(--navy);
+  font:400 16px/1 var(--serif);
+}
+.brand-copy{display:grid;line-height:1.1}
+.brand-copy strong{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:var(--ink);
+  font:400 16px/1.2 var(--serif);
+  letter-spacing:.08em;
+}
+.brand-copy small{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:.05em;
+}
+.header-actions{display:flex;align-items:center;gap:8px}
+.nav-button,.icon-button{
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:9px 13px;
+  border:1px solid var(--line-dark);
+  border-radius:7px;
+  color:var(--ink);
+  background:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:400;
+}
+.icon-button{min-width:42px}
+.nav-button:hover,.icon-button:hover{border-color:var(--navy);background:#f4f7f8}
+
+.course-breadcrumb{
+  border-bottom:1px solid var(--line);
+  background:#f7f7f5;
+}
+.course-breadcrumb .wrap{
+  min-height:48px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  color:var(--muted);
+  font-size:13px;
+}
+.course-breadcrumb a{color:var(--navy);text-decoration:none}
+.course-breadcrumb a:hover{text-decoration:underline;text-underline-offset:3px}
+
+.bench-hero{
+  padding:86px 0 72px;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(circle at 15% 8%,rgba(79,118,87,.13),transparent 28rem),
+    radial-gradient(circle at 50% 4%,rgba(65,111,122,.08),transparent 26rem),
+    radial-gradient(circle at 85% 8%,rgba(138,95,75,.10),transparent 28rem),
+    linear-gradient(180deg,#fff,#f7f6f2);
+  text-align:center;
+}
+.eyebrow{
+  margin:0 0 16px;
+  color:var(--ecology);
+  font-size:13px;
+  font-weight:400;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+h1,h2,h3{margin-top:0;color:var(--ink);font-family:var(--serif);font-weight:400}
+.bench-hero h1{
+  max-width:980px;
+  margin:0 auto 22px;
+  font-size:clamp(54px,7vw,84px);
+  line-height:.98;
+  letter-spacing:-.025em;
+}
+.bench-lead{
+  max-width:880px;
+  margin:0 auto;
+  color:#252b2f;
+  font-size:20px;
+  line-height:1.82;
+}
+.bench-actions{
+  width:min(980px,100%);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+  margin:28px auto 0;
+}
+.btn{
+  min-height:46px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border:1px solid var(--line-dark);
+  border-radius:7px;
+  color:var(--ink);
+  background:#fff;
+  text-decoration:none;
+  text-align:center;
+  font-size:14px;
+  font-weight:400;
+  line-height:1.3;
+}
+.btn:hover{border-color:var(--navy);background:#f2f6f8}
+.btn.primary{color:#fff;border-color:var(--navy);background:var(--navy)}
+
+.summary-grid{
+  width:min(960px,100%);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin:34px auto 0;
+}
+.summary-card{
+  min-height:114px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:#fff;
+  box-shadow:0 7px 18px rgba(22,42,54,.05);
+}
+.summary-card strong{
+  display:block;
+  color:var(--navy);
+  font:400 30px/1 var(--serif);
+}
+.summary-card span{
+  display:block;
+  margin-top:8px;
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.card{
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:var(--paper);
+  box-shadow:var(--shadow);
+}
+.assessment-brief{
+  max-width:1040px;
+  margin:26px auto 0;
+  padding:28px;
+  text-align:left;
+}
+.assessment-brief h2{text-align:center;font-size:34px}
+.brief-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.brief-item{
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--paper-soft);
+}
+.brief-item strong{
+  display:block;
+  color:var(--navy);
+  font:400 18px/1.25 var(--serif);
+}
+.brief-item p{margin:7px 0 0;color:var(--muted);font-size:14px}
+
+main>section:not(.bench-hero){padding:76px 0}
+main>section:nth-of-type(odd):not(.bench-hero){
+  border-block:1px solid var(--line);
+  background:#f8f7f3;
+}
+.section-head{
+  max-width:900px;
+  margin:0 auto 38px;
+  text-align:center;
+}
+.section-head h2{
+  margin-bottom:15px;
+  font-size:clamp(38px,5vw,62px);
+  line-height:1.05;
+}
+.section-head p{
+  margin:0;
+  color:#343b3f;
+  font-size:18px;
+  line-height:1.75;
+}
+
+.app-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 320px;
+  gap:18px;
+  align-items:start;
+}
+.question-panel,.app-side,.result-panel,.record-panel{padding:28px}
+.app-side{position:sticky;top:96px}
+.app-side h3{
+  margin-bottom:15px;
+  font-size:26px;
+  text-align:center;
+}
+.question-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  padding-bottom:15px;
+  border-bottom:1px solid var(--line);
+}
+.question-unit{
+  color:var(--ecology);
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+#questionNumber{color:var(--muted);font-size:13px}
+.question-panel h2{
+  max-width:850px;
+  margin:24px auto;
+  text-align:center;
+  font-size:clamp(28px,4vw,42px);
+  line-height:1.22;
+}
+.options{display:grid;gap:10px;max-width:900px;margin:auto}
+.option{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--paper-soft);
+  cursor:pointer;
+  color:var(--ink);
+}
+.option:hover,.option:has(input:checked){
+  border-color:var(--ecology);
+  background:#f1f7f3;
+}
+.option input{margin-top:5px;accent-color:var(--ecology)}
+.app-nav{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:22px;
+}
+.question-dots{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:7px;
+  margin:16px 0;
+}
+.dot{
+  aspect-ratio:1;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--paper-soft);
+  color:var(--muted);
+  font-size:12px;
+}
+.dot.current{border-color:var(--navy);color:#fff;background:var(--navy)}
+.dot.answered{color:#fff;background:var(--success);border-color:var(--success)}
+#answeredCount{display:block;text-align:center;color:var(--muted);font-size:13px}
+#submitButton{width:100%;margin-top:12px}
+
+.score{
+  display:block;
+  text-align:center;
+  color:var(--navy);
+  font:400 clamp(58px,9vw,96px)/1 var(--serif);
+}
+#resultTitle,#resultMessage{text-align:center}
+#resultTitle{font-size:42px}
+#resultMessage{color:var(--muted)}
+.unit-results{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:22px 0;
+}
+.unit-result,.record-card{
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--paper-soft);
+  text-align:center;
+}
+.unit-result:nth-child(1){border-top:4px solid var(--ecology)}
+.unit-result:nth-child(2){border-top:4px solid var(--atomic)}
+.unit-result:nth-child(3){border-top:4px solid var(--chemistry)}
+.unit-result strong,.record-card strong{
+  display:block;
+  color:var(--navy);
+  font:400 26px/1 var(--serif);
+}
+.review-list{display:grid;gap:10px;margin-top:22px}
+.review-item{
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--paper-soft);
+}
+.review-item.correct{border-left:5px solid var(--success)}
+.review-item.incorrect{border-left:5px solid var(--danger)}
+
+.notice-strong{
+  padding:18px;
+  border:1px solid var(--line);
+  border-left:4px solid var(--gold);
+  border-radius:7px;
+  background:var(--paper-soft);
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-grid label{display:grid;gap:6px;color:var(--muted);font-size:13px}
+.form-grid input,.form-grid select,.form-grid textarea{
+  width:100%;
+  min-height:46px;
+  padding:10px 12px;
+  border:1px solid var(--line-dark);
+  border-radius:7px;
+  color:var(--ink);
+  background:#fff;
+}
+.full{grid-column:1/-1}
+.record-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.constructed-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.constructed-card{padding:22px}
+.constructed-card h3{color:var(--navy);font-size:26px}
+.response-lines{
+  min-height:290px;
+  margin-top:12px;
+  border-bottom:1px solid var(--line);
+  background:repeating-linear-gradient(to bottom,transparent 0 29px,var(--line) 30px);
+}
+.print-question{
+  break-inside:avoid;
+  margin:0 0 16px;
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:#fff;
+}
+.toast{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:2000;
+  max-width:340px;
+  padding:12px 15px;
+  border-radius:7px;
+  color:#fff;
+  background:var(--navy-deep);
+  box-shadow:var(--shadow);
+}
+.footer{
+  padding:28px 0;
+  border-top:1px solid var(--line);
+  color:#fff;
+  background:var(--navy-deep);
+}
+.footer-inner{
+  min-height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  text-align:center;
+  font-size:13px;
+}
+
+@media(max-width:1000px){
+  .app-layout{grid-template-columns:1fr}
+  .app-side{position:static}
+  .unit-results,.record-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  body{font-size:17px}
+  .header-inner{min-height:68px}
+  .brand-copy small{display:none}
+  .header-actions .secondary{display:none}
+  .summary-grid{grid-template-columns:repeat(2,1fr)}
+  .brief-grid,.constructed-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .full{grid-column:auto}
+  .footer-inner{flex-direction:column;justify-content:center}
+}
+@media(max-width:580px){
+  .wrap,.bench-shell{width:min(calc(100% - 22px),var(--max))}
+  .bench-hero{padding:62px 0 54px}
+  .bench-hero h1{font-size:clamp(44px,14vw,64px)}
+  .bench-lead{font-size:18px}
+  .summary-grid,.unit-results,.record-grid{grid-template-columns:1fr}
+  .bench-actions .btn,.app-nav .btn{width:100%}
+  .app-nav{flex-direction:column}
+  .question-dots{grid-template-columns:repeat(5,1fr)}
+  .question-panel,.app-side,.result-panel,.record-panel{padding:20px}
+}
+@media print{
+  .site-header,.course-breadcrumb,.bench-actions,.app-side,.app-nav,.toast{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .bench-hero,main>section{padding:20px 0}
+  .card{box-shadow:none;border-color:#777}
+  .bench-shell,.wrap{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{scroll-behavior:auto!important;transition:none!important}
+}
+  </style>
+ <style id="khaemenes-typography-standard">
+/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
+   All public pages receive this local, embedded policy for offline use.
+   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
+   Font names are optional installed system fonts; no downloads or third-party font services. */
+html:root:root body {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+html:root:root body :is(button, input, select, textarea) {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+}
+html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+html:root:root body h1 {
+  font-size: 33px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+/* Do not replace responsive grids or fixed elements; prevent oversized titles from
+   demanding horizontal scrolling on narrow phone and tablet displays. */
+html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
+  min-width: 0;
+}
+@media print {
+  html:root:root body { font-size: 14px !important; }
+}
+</style>
+</head>
+ <body>
+  <a class="skip-link" href="#main">
+   Skip to main content
+  </a>
+  <header class="site-header">
+   <div class="wrap header-inner">
+    <a class="brand" href="../../">
+     <span class="brand-mark">
+      S9
+     </span>
+     <span class="brand-copy">
+      <strong>
+       INTEGRATED SCIENCE 9
+      </strong>
+      <small>
+       Units 10&ndash;12 Cumulative Benchmark
+      </small>
+     </span>
+    </a>
+    <div class="header-actions">
+     <a class="nav-button secondary" href="../../../../../grades/grade-09/">
+      Grade 9
+     </a>
+     <a class="nav-button" href="../">
+      Assessments
+     </a>
+     <button aria-label="Switch color theme" class="icon-button" id="themeToggle" title="Switch color theme" type="button">
+      ☼
+     </button>
+    </div>
+   </div>
+  </header>
+  <nav class="course-breadcrumb">
+   <div class="wrap">
+    <a href="../../../../../index.html">
+     High School
+    </a>
+    <span>
+     &rsaquo;
+    </span>
+    <a href="../../../../../grades/grade-09/">
+     Grade 9
+    </a>
+    <span>
+     &rsaquo;
+    </span>
+    <a href="../../">
+     Science 9
+    </a>
+    <span>
+     &rsaquo;
+    </span>
+    <a href="../">
+     Assessments
+    </a>
+    <span>
+     &rsaquo;
+    </span>
+    <span>
+     Interactive Test
+    </span>
+   </div>
+  </nav>
+  <main id="main">
+   <section class="bench-hero" id="intro">
+    <div class="bench-shell">
+     <p class="eyebrow">
+      KH-SCI-IIS9 &middot; After Unit 12 &middot; Transition Benchmark
+     </p>
+     <h1>
+      Units 10&ndash;12 Cumulative Chapter Test
+     </h1>
+     <p class="bench-lead">Earth-system evidence, astronomy and cosmic evidence, and sustainable engineering synthesis before the comprehensive final.</p>
+     <div class="summary-grid" style="margin-top:2rem">
+      <article class="card summary-card">
+       <strong>
+        60
+       </strong>
+       <span>
+        Definitive objective questions
+       </span>
+      </article>
+      <article class="card summary-card">
+       <strong>
+        20 each
+       </strong>
+       <span>
+        Unit 10, Unit 11, and Unit 12 diagnostics
+       </span>
+      </article>
+      <article class="card summary-card">
+       <strong>
+        4 &times; 10
+       </strong>
+       <span>
+        Educator-scored constructed responses
+       </span>
+      </article>
+      <article class="card summary-card">
+       <strong>
+        80 / 100
+       </strong>
+       <span>
+        Recommended overall mastery
+       </span>
+      </article>
+     </div>
+     <article aria-labelledby="assessmentBriefTitle" class="assessment-brief card">
+      <h2 id="assessmentBriefTitle">
+       Before you begin
+      </h2>
+      <div class="brief-grid">
+       <div class="brief-item">
+        <strong>
+         Work independently
+        </strong>
+        <p>
+         Use only the resources your instructor has approved.
+        </p>
+       </div>
+       <div class="brief-item">
+        <strong>
+         Complete every question
+        </strong>
+        <p>
+         Unanswered objective questions count as incorrect.
+        </p>
+       </div>
+       <div class="brief-item">
+        <strong>
+         Progress saves locally
+        </strong>
+        <p>
+         Your responses remain in this browser until submitted or cleared.
+        </p>
+       </div>
+       <div class="brief-item">
+        <strong>
+         Review before submitting
+        </strong>
+        <p>
+         Use the numbered navigator to revisit incomplete questions.
+        </p>
+       </div>
+      </div>
+     </article>
+     <div class="notice-strong" style="margin-top:1rem">
+      <strong>
+       Evidence and belief-neutral assessment
+      </strong>
+      <p>
+       Unit 10 questions distinguish observation, measurement, scientific inference, methodological naturalism, and worldview interpretation. Personal belief is not scored. Accuracy, evidence classification, reasoning, source fairness, and respect are scored.
+      </p>
+     </div>
+     <div class="bench-actions">
+      <button class="btn primary" id="startButton" type="button">
+       Begin Objective Test
+      </button>
+      <button class="btn" id="resumeButton" type="button">
+       Resume Saved Test
+      </button>
+      <a class="btn" href="printable-test.html">
+       Printable Edition
+      </a>
+      <a class="btn" href="student-record.html">
+       Student Record
+      </a>
+      <a class="btn" href="STUDENT_STUDY_GUIDE.md">
+       Study Guide
+      </a>
+     </div>
+     <p hidden="" id="priorResult">
+     </p>
+    </div>
+   </section>
+   <section hidden="" id="assessment">
+    <div class="bench-shell app-layout">
+     <div class="section-head assessment-heading">
+      <p class="eyebrow">
+       Objective assessment
+      </p>
+      <h2>
+       Complete all 60 questions
+      </h2>
+      <p>
+       Work carefully through Units 10&ndash;12, monitor your answered-question count, and submit only after reviewing the complete test.
+      </p>
+     </div>
+     <article class="card question-panel">
+      <div class="question-top">
+       <span class="question-unit" id="questionUnit">
+       </span>
+       <span class="pill" id="questionNumber">
+       </span>
+      </div>
+      <h2 id="questionPrompt">
+      </h2>
+      <div class="options" id="options">
+      </div>
+      <div class="app-nav">
+       <button class="btn" id="previousButton" type="button">
+        Previous
+       </button>
+       <button class="btn primary" id="nextButton" type="button">
+        Next
+       </button>
+      </div>
+     </article>
+     <aside class="card app-side">
+      <h3>
+       Question Navigator
+      </h3>
+      <p class="eyebrow">
+       Question map
+      </p>
+      <p id="answeredCount">
+       0 of 60 answered
+      </p>
+      <div class="question-dots" id="questionDots">
+      </div>
+      <button class="btn primary" disabled="" id="submitButton" type="button">
+       Submit Objective Test
+      </button>
+     </aside>
+    </div>
+   </section>
+   <section hidden="" id="results">
+    <div class="bench-shell">
+     <div class="section-head results-intro">
+      <p class="eyebrow">
+       Assessment results
+      </p>
+      <h2>
+       Review your performance
+      </h2>
+      <p>
+       Use the unit breakdown and question review to identify strengths, corrections, and the next steps required for mastery.
+      </p>
+     </div>
+     <article class="card result-panel">
+      <p class="eyebrow">
+       Objective Result
+      </p>
+      <div class="score" id="score">
+      </div>
+      <h2 id="resultTitle">
+      </h2>
+      <p id="resultMessage">
+      </p>
+      <div class="unit-results" id="unitResults">
+      </div>
+      <div class="bench-actions no-print">
+       <button class="btn primary" id="retakeButton" type="button">
+        Retake Objective Test
+       </button>
+       <button class="btn" id="printResults" type="button">
+        Print Results
+       </button>
+       <button class="btn" id="exportRecord" type="button">
+        Export Objective Record
+       </button>
+       <a class="btn" href="student-record.html">
+        Complete Final Record
+       </a>
+      </div>
+     </article>
+     <div class="review-list" id="reviewList">
+     </div>
+    </div>
+   </section>
+   <section>
+    <div class="bench-shell">
+     <div class="section-head">
+      <p class="eyebrow">
+       Constructed section
+      </p>
+      <h2>
+       Four responses complete the 100-point benchmark
+      </h2>
+      <p>
+       Each response is scored from 0&ndash;10 using the educator rubric.
+      </p>
+     </div>
+     <div class="constructed-grid">
+<article class="card constructed-card"><p class="eyebrow">Unit 10</p><h3>Earth Systems, Carbon Budgets, and Climate Evidence</h3><p>A reservoir contains 850 units of carbon. During one year, 120 units enter and 145 units leave. Calculate net change and final reservoir size. Explain reservoir, flux, feedback, and forcing. Use a simple global energy-budget model to distinguish reflected, absorbed, and outgoing energy, and explain why an observed energy imbalance is evidence about system change rather than proof of one single cause. Propose one hazard-resilience or stewardship action, one measurable outcome, and one uncertainty or justice consideration.</p><div class="response-lines"></div></article>
+<article class="card constructed-card"><p class="eyebrow">Unit 11</p><h3>Astronomical Scale, Spectra, Orbits, and Cosmic Evidence</h3><p>A star is 12 light-years away. Explain what that distance means for lookback time. A transit blocks 1% of a star’s light; calculate the planet-to-star radius ratio using transit depth ≈ (Rp/Rs)². Explain how spectra provide evidence about composition, temperature, or line-of-sight motion. Distinguish direct measurement from inference, and describe how redshift, the cosmic microwave background, and elemental abundance provide different evidence for modern cosmology. Include one instrument or selection-bias limitation.</p><div class="response-lines"></div></article>
+<article class="card constructed-card"><p class="eyebrow">Unit 12</p><h3>Sustainable Engineering: Criteria, Testing, Risk, and Iteration</h3><p>A proposed design has criterion scores 8, 6, and 9 with weights 0.40, 0.30, and 0.30. Calculate its weighted score. Identify one hard constraint that could still disqualify the design. Describe a predictive model, a safe prototype or simulation test, the raw evidence that should be preserved, one uncertainty source, and an evidence-based revision. Include a life-cycle or end-of-life consideration and one accessibility, equity, privacy, labor, cultural, or environmental-justice consideration.</p><div class="response-lines"></div></article>
+<article class="card constructed-card"><p class="eyebrow">Integration</p><h3>Earth–Space–Engineering Evidence Defense</h3><p>Design a monitoring system for an Earth-system risk using remote sensing or another defensible measurement approach. State the scientific question, measured variables and units, relevant Earth-system process, how electromagnetic or remote-sensing evidence becomes an inference, and engineering criteria and constraints. Include calibration, uncertainty, data stewardship, safety, maintenance, and a rule for deciding when new evidence should trigger a design or policy revision.</p><div class="response-lines"></div></article>
+</div>
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="wrap footer-inner">
+    <span>
+     Khaemenes Academy&trade; &middot; International Integrated Science 9
+    </span>
+    <span>
+     Units 10&ndash;12 Cumulative Benchmark
+    </span>
+   </div>
+  </footer>
+  <div class="toast" hidden="" id="toast" role="status">
+  </div>
+ </body>
+</html>
