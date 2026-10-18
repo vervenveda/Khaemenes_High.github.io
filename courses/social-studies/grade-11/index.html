@@ -204,6 +204,20 @@ function student(){ return state.students.find(s=>s.id===state.activeId) || null
 function ensure(s){ if(!s.progress)s.progress={weeks:{},exams:{},capstone:[]}; if(!s.progress.weeks)s.progress.weeks={}; if(!s.progress.exams)s.progress.exams={}; if(!s.progress.capstone)s.progress.capstone=[]; }
 function weekRec(s,w){ ensure(s); if(!s.progress.weeks[w])s.progress.weeks[w]={lessons:{},assignments:{},notes:{},quiz:{best:0,attempts:[]},constructed:"",repeats:0}; return s.progress.weeks[w]; }
 
+function highAssessmentDraw(kind,id,bank,count){
+  const adapter=window.KhaemenesHighAssessmentAdapter;
+  if(!adapter||!window.KhaeMonteCarloAssessment||!Array.isArray(bank)||!bank.length)return {adapter:null,opened:null,questions:bank||[],storageKey:null};
+  const storageKey=STORAGE_KEY+":monte-carlo:"+kind+":"+id;
+  try{
+    const opened=adapter.open({courseId:"government-economics-11",storageKey,bank,kind,count:count||adapter.countFor(kind,bank.length)});
+    return {adapter,opened,questions:opened.questions,storageKey};
+  }catch(_err){return {adapter:null,opened:null,questions:bank,storageKey:null}}
+}
+function highAssessmentComplete(draw,summary){if(draw?.adapter&&draw?.opened)draw.adapter.complete(draw.opened,summary)}
+function highAssessmentReviewSkills(questions,answers){
+  return [...new Set(questions.map((q,i)=>Number(answers[i])===Number(q.answer)?null:(q.skill||q.domain||"Review")).filter(Boolean))].slice(0,10);
+}
+
 /* 3. Calculations */
 function lessonPct(s,w){ const r=weekRec(s,w); return Math.round(["Monday","Tuesday","Wednesday","Thursday","Friday"].filter(d=>r.lessons[d]).length/5*100); }
 function assignPct(s,w){ const r=weekRec(s,w); return Math.round([0,1,2].filter(i=>r.assignments[i]).length/3*100); }
@@ -250,12 +264,20 @@ function week(){
 }
 function lessonCard(w,l,r){return `<div class="lesson"><div class="lessonHead"><div><h4>${esc(l.day)}: ${esc(l.title)}</h4><p><strong>Objective:</strong> ${esc(l.objective)}</p></div><label class="check"><input id="l_${l.day}" type="checkbox" ${r.lessons[l.day]?"checked":""}> Done</label></div><p>${esc(l.activity)}</p><p><strong>Assignment:</strong> ${esc(l.assignment)}</p><p class="small"><strong>Evidence:</strong> ${esc(l.evidence)}</p><label>Notes</label><textarea id="n_${l.day}">${esc(r.notes[l.day]||"")}</textarea></div>`}
 function assignmentCard(a,i,r){return `<div class="assignment"><label class="check"><input id="a_${i}" type="checkbox" ${r.assignments[i]?"checked":""}> Complete</label><h4>${esc(a.name)}</h4><p>${esc(a.description)}</p><p class="small">${a.points} points</p></div>`}
-function quizForm(w,r){return `<p class="score">Best: ${Math.round(r.quiz.best||0)||"—"}</p><p class="small">${r.quiz.attempts.length?`Attempts: ${r.quiz.attempts.map(a=>Math.round(a.score)+"%").join(" | ")}`:"No attempts yet."}</p><form>${w.quiz.map((q,i)=>`<div class="q"><p><strong>${i+1}. ${esc(q.q)}</strong></p>${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="q${i}" value="${j}"> ${esc(c)}</label>`).join("")}</div>`).join("")}<div class="actions"><button type="button" onclick="submitQuiz()">Submit</button><button class="secondary" type="reset">Clear</button></div></form>`}
+function quizForm(w,r){
+  const draw=highAssessmentDraw("weekly","week-"+w.week,w.quiz,w.quiz.length),qs=draw.questions;
+  const note=draw.opened?`<p class="notice">Randomized open-book mastery check · ${qs.length} questions · answer order randomized · active form persists across refresh · new form on retake.</p>`:"";
+  return `<p class="score">Best: ${Math.round(r.quiz.best||0)||"—"}</p><p class="small">${r.quiz.attempts.length?`Attempts: ${r.quiz.attempts.map(a=>Math.round(a.score)+"%").join(" | ")}`:"No attempts yet."}</p>${note}<form>${qs.map((q,i)=>`<div class="q"><p><strong>${i+1}. ${esc(q.q||q.question||q.prompt)}</strong></p>${(q.choices||q.options||[]).map((choice,j)=>`<label class="choice"><input type="radio" name="q${i}" value="${j}"> ${esc(choice)}</label>`).join("")}</div>`).join("")}<div class="actions"><button type="button" onclick="submitQuiz()">Submit</button><button class="secondary" type="reset">Clear</button></div></form>`;
+}
 function bindWeekInputs(w,r){w.lessons.forEach(l=>{$(`l_${l.day}`).onchange=e=>{r.lessons[l.day]=e.target.checked;save();render()}; $(`n_${l.day}`).oninput=e=>{r.notes[l.day]=e.target.value;save()}}); w.assignments.forEach((a,i)=>{$(`a_${i}`).onchange=e=>{r.assignments[i]=e.target.checked;save();render()}}); $("constructed").oninput=e=>{r.constructed=e.target.value;save()};}
 function scope(){ $("content").innerHTML=`<div class="card"><h3>36-Week Scope & Sequence</h3><p>This sequence preserves the GitHub grade-11 scope: government and law first, economics second, then policy synthesis and capstone defense.</p><div class="actions"><button onclick="downloadScope()">Download Scope CSV</button></div>${scopeTable(APP.weeks)}</div>`; }
 function scopeTable(list){return `<table><tr><th>Week</th><th>Unit</th><th>Title</th><th>Frame</th><th>Question</th></tr>${list.map(w=>`<tr><td>${w.week}</td><td>${esc(w.unit)}</td><td>${esc(w.title)}</td><td>${esc(w.frame)}</td><td>${esc(w.essentialQuestion)}</td></tr>`).join("")}</table>`}
 function exams(){const s=student(); ensure(s); $("content").innerHTML=`<div class="grid"><div class="card col6"><h3>Midterm</h3><p>Government + Law synthesis. Best: <span class="score">${Math.round(s.progress.exams.midterm?.best||0)||"—"}</span></p>${examForm("midterm",APP.midterm)}</div><div class="card col6"><h3>Final</h3><p>Government + Law + Economics. Best: <span class="score">${Math.round(s.progress.exams.final?.best||0)||"—"}</span></p>${examForm("final",APP.final)}</div></div>`}
-function examForm(name,qs){return `<form>${qs.map((q,i)=>`<details class="q"><summary><strong>${i+1}. ${esc(q.skill)}: ${esc(q.q)}</strong></summary>${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="${name}_${i}" value="${j}"> ${esc(c)}</label>`).join("")}</details>`).join("")}<div class="actions"><button type="button" onclick="submitExam('${name}')">Submit</button><button class="secondary" type="reset">Clear</button></div></form>`}
+function examForm(name,bank){
+  const kind=name==="midterm"?"midterm":"final",draw=highAssessmentDraw(kind,name,bank),qs=draw.questions;
+  const note=draw.opened?`<p class="notice">${kind==="midterm"?"Closed-book midterm":"Closed-book final"} randomized form · ${qs.length} questions drawn from ${draw.opened.bankSize} available items · answer order randomized.</p>`:"";
+  return `${note}<form>${qs.map((q,i)=>`<details class="q"><summary><strong>${i+1}. ${esc(q.skill||q.domain||"Evidence")}: ${esc(q.q||q.question||q.prompt)}</strong></summary>${(q.choices||q.options||[]).map((choice,j)=>`<label class="choice"><input type="radio" name="${name}_${i}" value="${j}"> ${esc(choice)}</label>`).join("")}</details>`).join("")}<div class="actions"><button type="button" onclick="submitExam('${name}')">Submit</button><button class="secondary" type="reset">Clear</button></div></form>`;
+}
 function capstone(){const s=student(); ensure(s); $("content").innerHTML=`<div class="grid"><div class="card col7"><h3>Policy Capstone Studio</h3><p>Students integrate constitutional authority, economic reasoning, data, stakeholder evidence, and civic responsibility into one defensible public recommendation.</p><ol><li>Define the policy problem and jurisdiction.</li><li>Build an evidence ledger and identify uncertainty.</li><li>Map stakeholders, rights, costs, benefits, and institutions.</li><li>Compare at least four policy alternatives.</li><li>Complete sensitivity analysis by changing assumptions.</li><li>Deliver an oral defense and reflection.</li></ol><button onclick="downloadCapstone()">Download Capstone Guide</button></div><div class="card col5"><h3>Capstone Log</h3><label>Stage</label><select id="stage"><option>Problem Definition</option><option>Evidence Ledger</option><option>Institution Map</option><option>Policy Alternatives</option><option>Sensitivity Analysis</option><option>Oral Defense</option><option>Reflection</option></select><label>Note</label><textarea id="capNote"></textarea><button onclick="addCapstone()">Save Log</button>${capstoneTable(s)}</div></div>`}
 function capstoneTable(s){return s.progress.capstone.length?`<table><tr><th>Date</th><th>Stage</th><th>Note</th></tr>${s.progress.capstone.slice().reverse().map(l=>`<tr><td>${new Date(l.date).toLocaleDateString()}</td><td>${esc(l.stage)}</td><td>${esc(l.note)}</td></tr>`).join("")}</table>`:`<p class="small">No capstone logs yet.</p>`}
 function reports(){const s=student(), st=stats(s); $("content").innerHTML=`<div class="grid"><div class="card kpi"><strong>${st.course}%</strong><span>Course</span></div><div class="card kpi"><strong>${st.lessons}%</strong><span>Lessons</span></div><div class="card kpi"><strong>${st.midterm||"—"}</strong><span>Midterm</span></div><div class="card kpi"><strong>${st.final||"—"}</strong><span>Final</span></div><div class="card col12"><h3>Reports & Backups</h3><p>Reports include daily lessons, principal assignments, ten-question weekly quizzes, constructed responses, retakes, exams, and capstone logs.</p><div class="actions"><button onclick="printReport()">Print</button><button class="secondary" onclick="downloadReport()">Download HTML</button><button class="secondary" onclick="downloadCSV()">Download CSV</button><button class="ghost" onclick="downloadBackup()">Export JSON</button><label class="button secondary">Import JSON <input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(event)"></label></div></div><div class="card col12">${progressTable(s)}</div></div>`}
@@ -263,8 +285,35 @@ function progressTable(s){return `<table><tr><th>Week</th><th>Ledger</th><th>Les
 function standards(){const coverage={}; APP.weeks.forEach(w=>w.standards.forEach(s=>{if(!coverage[s.code])coverage[s.code]={description:s.description,weeks:[]}; coverage[s.code].weeks.push(w.week)})); $("content").innerHTML=`<div class="grid"><div class="card col12"><h3>Standards & Repository Research</h3><p>This portal follows the Grade 11 GitHub course identity: Government, Law & Economics Honors, with civic participation, founding principles, institutions, rights, elections/media, foreign policy, economics, C3 inquiry, and senior-level history/social-studies literacy.</p></div><div class="card col6"><h3>Sources</h3><ul>${APP.sources.map(s=>`<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a><br><span class="small">${esc(s.note)}</span></li>`).join("")}</ul></div><div class="card col6"><h3>Architecture Notes</h3><ul><li>Single APP data object.</li><li>State and render logic are separated.</li><li>Views route through one render function.</li><li>Assessments preserve best score and retakes.</li><li>Reports/export tools are grouped in one section.</li><li>No external libraries or dependencies.</li></ul></div><div class="card col12"><h3>Coverage Matrix</h3><table><tr><th>Standard</th><th>Description</th><th>Weeks</th></tr>${Object.entries(coverage).sort().map(([c,v])=>`<tr><td>${esc(c)}</td><td>${esc(v.description)}</td><td>${v.weeks.join(", ")}</td></tr>`).join("")}</table></div></div>`}
 
 /* 6. User actions and exports */
-function submitQuiz(){const s=student(), w=APP.weeks.find(x=>x.week===activeWeek), r=weekRec(s,w.week); let correct=0, answers=[]; for(let i=0;i<w.quiz.length;i++){let chosen=document.querySelector(`input[name="q${i}"]:checked`); if(!chosen)return alert("Please answer every quiz question."); let val=+chosen.value; answers.push(val); if(val===w.quiz[i].answer)correct++;} let score=Math.round(correct/w.quiz.length*100); r.quiz.attempts.push({date:new Date().toISOString(),score,answers}); r.quiz.best=Math.max(r.quiz.best||0,score); save(); alert(`Quiz submitted: ${score}%. Best score kept.`); render();}
-function submitExam(name){const s=student(), qs=name==="midterm"?APP.midterm:APP.final; let correct=0,answers=[]; for(let i=0;i<qs.length;i++){let chosen=document.querySelector(`input[name="${name}_${i}"]:checked`); if(!chosen)return alert("Please answer every question."); let val=+chosen.value; answers.push(val); if(val===qs[i].answer)correct++;} let score=Math.round(correct/qs.length*100); ensure(s); if(!s.progress.exams[name])s.progress.exams[name]={best:0,attempts:[]}; s.progress.exams[name].attempts.push({date:new Date().toISOString(),score,answers}); s.progress.exams[name].best=Math.max(s.progress.exams[name].best||0,score); save(); alert(`${name} submitted: ${score}%.`); render();}
+function submitQuiz(){
+  const s=student(),w=APP.weeks.find(x=>x.week===activeWeek),r=weekRec(s,w.week),draw=highAssessmentDraw("weekly","week-"+w.week,w.quiz,w.quiz.length),qs=draw.questions;
+  let correct=0,answers=[];
+  for(let i=0;i<qs.length;i++){
+    const chosen=document.querySelector(`input[name="q${i}"]:checked`);
+    if(!chosen)return alert("Please answer every quiz question.");
+    const val=Number(chosen.value);answers.push(val);if(val===Number(qs[i].answer))correct++;
+  }
+  const score=Math.round(correct/qs.length*100),reviewSkills=highAssessmentReviewSkills(qs,answers);
+  const attempt={date:new Date().toISOString(),score,answers,mastered:score>=80,attemptId:draw.opened?.sessionId||null,questionIds:draw.opened?.questionIds||qs.map(q=>q.id).filter(Boolean),reviewSkills};
+  r.quiz.attempts.push(attempt);r.quiz.best=Math.max(r.quiz.best||0,score);
+  highAssessmentComplete(draw,{score,correct,total:qs.length,mastered:score>=80,reviewSkills});
+  save();alert(`Quiz submitted: ${score}%. Best score kept.`);render();
+}
+function submitExam(name){
+  const s=student(),bank=name==="midterm"?APP.midterm:APP.final,kind=name==="midterm"?"midterm":"final",draw=highAssessmentDraw(kind,name,bank),qs=draw.questions;
+  let correct=0,answers=[];
+  for(let i=0;i<qs.length;i++){
+    const chosen=document.querySelector(`input[name="${name}_${i}"]:checked`);
+    if(!chosen)return alert("Please answer every question.");
+    const val=Number(chosen.value);answers.push(val);if(val===Number(qs[i].answer))correct++;
+  }
+  const score=Math.round(correct/qs.length*100),reviewSkills=highAssessmentReviewSkills(qs,answers);
+  ensure(s);if(!s.progress.exams[name])s.progress.exams[name]={best:0,attempts:[]};
+  const attempt={date:new Date().toISOString(),score,answers,mastered:score>=80,attemptId:draw.opened?.sessionId||null,questionIds:draw.opened?.questionIds||qs.map(q=>q.id).filter(Boolean),reviewSkills};
+  s.progress.exams[name].attempts.push(attempt);s.progress.exams[name].best=Math.max(s.progress.exams[name].best||0,score);
+  highAssessmentComplete(draw,{score,correct,total:qs.length,mastered:score>=80,reviewSkills});
+  save();alert(`${name} submitted: ${score}%.`);render();
+}
 function repeatWeek(){let r=weekRec(student(),activeWeek); r.repeats=(r.repeats||0)+1; r.lastRepeat=new Date().toISOString(); save(); alert("Repeat logged. Review the ledger, correct errors, and retake when ready."); render();}
 function addCapstone(){const s=student(); ensure(s); const note=$("capNote").value.trim(); if(!note)return alert("Add a capstone note."); s.progress.capstone.push({date:new Date().toISOString(),stage:$("stage").value,note}); save(); render();}
 function addStudent(name){const s={id:uid(),name,created:new Date().toISOString(),progress:{weeks:{},exams:{},capstone:[]}}; state.students.push(s); state.activeId=s.id; save(); render();}
