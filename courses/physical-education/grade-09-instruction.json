@@ -2105,6 +2105,206 @@
           ],
           "correct": 0,
           "rationale": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues."
+        },
+        {
+          "prompt": "A learner walks at the same speed on level ground and uphill. Why might effort increase uphill?",
+          "options": [
+            "The uphill route generally requires more work against gravity",
+            "The distance becomes zero",
+            "Heart rate must always decrease"
+          ],
+          "correct": 0,
+          "rationale": "An incline generally increases mechanical demand even when walking speed stays constant."
+        },
+        {
+          "prompt": "Which log best supports a fair comparison between two sessions?",
+          "options": [
+            "Only the number of steps",
+            "Duration, route conditions, effort, and recovery notes",
+            "Only the learner's height"
+          ],
+          "correct": 1,
+          "rationale": "Context and perceived effort help interpret sessions without equating speed with fitness."
+        },
+        {
+          "prompt": "A student can speak in full sentences during a walk. What can they reasonably infer?",
+          "options": [
+            "Their exact heart rate",
+            "They have reached maximum effort",
+            "The talk test suggests a manageable relative effort"
+          ],
+          "correct": 2,
+          "rationale": "The talk test is a rough guide, not a precise physiological measurement."
+        },
+        {
+          "prompt": "A beginner is unable to sustain ten minutes of continuous activity comfortably. Which option is reasonable?",
+          "options": [
+            "Use shorter bouts with planned recovery",
+            "Ignore symptoms and finish ten minutes",
+            "Treat the activity as failed"
+          ],
+          "correct": 0,
+          "rationale": "Intervals can provide a feasible entry point without requiring maximal effort."
+        },
+        {
+          "prompt": "What is the main distinction between pace and perceived effort?",
+          "options": [
+            "Pace is personal feeling and effort is distance",
+            "Pace describes speed while perceived effort describes experienced demand",
+            "They are always identical"
+          ],
+          "correct": 1,
+          "rationale": "Speed and subjective effort measure different things."
+        },
+        {
+          "prompt": "Which factor could make the same walking route feel harder on a different day?",
+          "options": [
+            "The calendar's font",
+            "The color of a notebook",
+            "Heat, fatigue, or a change in terrain"
+          ],
+          "correct": 2,
+          "rationale": "Environment and readiness affect the effort experienced."
+        },
+        {
+          "prompt": "What is the strongest reason to include recovery in an endurance plan?",
+          "options": [
+            "It provides a planned opportunity to reduce demand and observe response",
+            "It guarantees no injury",
+            "It replaces all future activity"
+          ],
+          "correct": 0,
+          "rationale": "Recovery is part of sustainable, adaptable training."
+        },
+        {
+          "prompt": "Which claim about endurance is most accurate?",
+          "options": [
+            "Only running counts as endurance work",
+            "Different accessible rhythmic activities can develop endurance",
+            "Longer activity is always better regardless of symptoms"
+          ],
+          "correct": 1,
+          "rationale": "Endurance can be practiced through varied accessible activities at suitable intensity."
+        },
+        {
+          "prompt": "During activity, a student develops unusual dizziness. What should they do?",
+          "options": [
+            "Increase pace",
+            "Wait until the timer ends",
+            "Stop and seek appropriate help"
+          ],
+          "correct": 2,
+          "rationale": "Unusual dizziness is a reason to stop rather than pursue a target."
+        },
+        {
+          "prompt": "A learner selects seated aerobic marching rather than outdoor running. What should assessment focus on?",
+          "options": [
+            "Understanding effort, safe adaptation, and sustained movement",
+            "Comparison with runners' speed",
+            "Whether they disclose private medical details"
+          ],
+          "correct": 0,
+          "rationale": "Equivalent learning can be shown through adapted activity and reasoning."
+        },
+        {
+          "prompt": "Why is a one-day record insufficient to prove a long-term training effect?",
+          "options": [
+            "It is too detailed",
+            "Long-term adaptation requires observations across time and context",
+            "It must contain a competition score"
+          ],
+          "correct": 1,
+          "rationale": "A single observation cannot establish a sustained training change."
+        },
+        {
+          "prompt": "What is a defensible way to progress endurance activity?",
+          "options": [
+            "Double the duration every day",
+            "Ignore recovery needs",
+            "Increase demands gradually when comfortable and appropriate"
+          ],
+          "correct": 2,
+          "rationale": "Progression should respond to the learner's circumstances and recovery."
+        },
+        {
+          "prompt": "A student logs 'felt harder' on a humid day. Which interpretation is best?",
+          "options": [
+            "Humidity may be relevant, but other factors also need consideration",
+            "Humidity proves the student lost fitness",
+            "The log is invalid"
+          ],
+          "correct": 0,
+          "rationale": "Evidence should consider environmental conditions without overclaiming causation."
+        },
+        {
+          "prompt": "Why might a student prefer an indoor route during poor air quality?",
+          "options": [
+            "Indoor activity guarantees identical effort",
+            "It may reduce an avoidable environmental exposure",
+            "Outdoor activity is always unsafe"
+          ],
+          "correct": 1,
+          "rationale": "Adapting a route can help meet the learning objective while considering air quality."
+        },
+        {
+          "prompt": "Which statement about the talk test is incorrect?",
+          "options": [
+            "It can help approximate relative effort",
+            "It is useful alongside other observations",
+            "It gives an exact measurement of oxygen consumption"
+          ],
+          "correct": 2,
+          "rationale": "The talk test does not directly measure oxygen uptake."
+        },
+        {
+          "prompt": "What does 'sustainable' mean in a personal activity plan?",
+          "options": [
+            "A routine that can be adapted and maintained appropriately",
+            "An unchanging maximum-intensity routine",
+            "A routine with no rest"
+          ],
+          "correct": 0,
+          "rationale": "Sustainability involves feasibility, adaptability, and recovery."
+        },
+        {
+          "prompt": "A student wants to compare two walking sessions. Which variable should they document?",
+          "options": [
+            "Only their favorite music",
+            "Route and conditions, in addition to duration and effort",
+            "Only their shoe color"
+          ],
+          "correct": 1,
+          "rationale": "Conditions and route can influence interpretation of activity records."
+        },
+        {
+          "prompt": "Which response shows sound evidence reasoning?",
+          "options": [
+            "A single easy walk proves excellent endurance",
+            "A hard session proves the plan is harmful",
+            "Several contextualized observations are more informative than one isolated score"
+          ],
+          "correct": 2,
+          "rationale": "Repeated observations and context provide stronger evidence than a single number."
+        },
+        {
+          "prompt": "A student chooses alternating two-minute movement and one-minute rest periods. What is this an example of?",
+          "options": [
+            "Interval activity",
+            "A maximal sprint test",
+            "A flexibility assessment"
+          ],
+          "correct": 0,
+          "rationale": "Intervals alternate activity and recovery periods."
+        },
+        {
+          "prompt": "What is the best goal of the first endurance lesson for an independent learner?",
+          "options": [
+            "Beat another student's distance",
+            "Understand effort cues and select a feasible activity option",
+            "Complete a fixed intensity regardless of context"
+          ],
+          "correct": 1,
+          "rationale": "The academic goal is informed self-management, not peer comparison."
         }
       ],
       "focusSkill": "Describe how talk-test effort can guide accessible endurance practice.",
@@ -2112,7 +2312,8 @@
       "conceptExplanation": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues.",
       "biomechanicsAndTechnique": "Begin at comfortable effort, increase gradually when appropriate, and use the ability to speak in sentences as a rough talk-test cue. Rest and adaptations are part of the plan.",
       "workedExample": "A learner chooses a comfortable three-minute walk, notes they can talk in full sentences, and adjusts pace when a hill increases effort.",
-      "applicationTask": "Compare an easy continuous session with shorter movement-and-rest intervals. Explain which is more feasible for two fictional learners."
+      "applicationTask": "Compare an easy continuous session with shorter movement-and-rest intervals. Explain which is more feasible for two fictional learners.",
+      "questionBankVersion": "g9-w06-sovereign25-v1"
     },
     {
       "week": 7,
