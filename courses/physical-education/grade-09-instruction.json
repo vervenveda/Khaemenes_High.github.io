@@ -470,6 +470,256 @@
           ],
           "correct": 0,
           "rationale": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward."
+        },
+        {
+          "prompt": "Which warm-up best prepares a beginner for a comfortable walk?",
+          "options": [
+            "Begin with easy walking and gradually adjust pace",
+            "Begin with a maximal sprint",
+            "Skip preparation and force a long stride"
+          ],
+          "correct": 0,
+          "rationale": "Gradual, activity-specific preparation is preferable to sudden maximal demand."
+        },
+        {
+          "prompt": "Why should a warm-up be adaptable?",
+          "options": [
+            "Everyone must perform the same routine",
+            "Comfort, access and conditions can vary by day",
+            "A warm-up eliminates every risk"
+          ],
+          "correct": 1,
+          "rationale": "The warm-up should match the individual and current circumstances."
+        },
+        {
+          "prompt": "A learner plans wall push-ups. Which preparation is most relevant?",
+          "options": [
+            "A maximal-distance run",
+            "Holding a painful stretch",
+            "Comfortable shoulder and arm movement followed by easy wall presses"
+          ],
+          "correct": 2,
+          "rationale": "Specific, low-demand rehearsal prepares the intended movement pattern."
+        },
+        {
+          "prompt": "What does an activity-specific warm-up mean?",
+          "options": [
+            "Preparation resembles the movements that follow",
+            "It must include specialized equipment",
+            "It requires a competitive score"
+          ],
+          "correct": 0,
+          "rationale": "A specific warm-up rehearses related patterns at manageable demand."
+        },
+        {
+          "prompt": "Which observation suggests reducing warm-up difficulty?",
+          "options": [
+            "A comfortable easy pace",
+            "Pain or unusual dizziness",
+            "A planned rest interval"
+          ],
+          "correct": 1,
+          "rationale": "Pain or unusual symptoms warrant stopping or adapting, not forcing the routine."
+        },
+        {
+          "prompt": "Why is a gentle beginning useful?",
+          "options": [
+            "It guarantees no injury",
+            "It proves athletic superiority",
+            "It permits gradual demand and observation of comfort"
+          ],
+          "correct": 2,
+          "rationale": "A gradual start helps the learner gauge readiness."
+        },
+        {
+          "prompt": "Which claim about warm-ups is scientifically responsible?",
+          "options": [
+            "They may help prepare movement but cannot guarantee prevention of injury",
+            "They prevent every injury",
+            "They replace all technique and environmental checks"
+          ],
+          "correct": 0,
+          "rationale": "No single preparation routine can guarantee injury prevention."
+        },
+        {
+          "prompt": "A student has little room at home. What is a sensible preparation option?",
+          "options": [
+            "Jump into nearby furniture",
+            "Use comfortable seated or standing movements within clear space",
+            "Skip the lesson because a gym is required"
+          ],
+          "correct": 1,
+          "rationale": "Space-aware adaptations can preserve the learning objective."
+        },
+        {
+          "prompt": "Which detail belongs in a recovery plan?",
+          "options": [
+            "A demand to match peers",
+            "A rule never to pause",
+            "A gradual reduction in effort and a stop cue"
+          ],
+          "correct": 2,
+          "rationale": "Recovery includes lowering effort and monitoring response."
+        },
+        {
+          "prompt": "After a walk a student feels unexpectedly faint. What is appropriate?",
+          "options": [
+            "Stop and seek appropriate help",
+            "Push through to meet a time goal",
+            "Immediately begin a harder activity"
+          ],
+          "correct": 0,
+          "rationale": "Unexpected faintness is not a target to overcome."
+        },
+        {
+          "prompt": "How should a student judge a useful warm-up?",
+          "options": [
+            "By how painful it feels",
+            "By whether it suits the next activity and remains controlled",
+            "By whether classmates find it impressive"
+          ],
+          "correct": 1,
+          "rationale": "Suitability and control are stronger criteria than discomfort or comparison."
+        },
+        {
+          "prompt": "Which is an example of a controlled progression?",
+          "options": [
+            "Move immediately from rest to maximum intensity",
+            "Ignore changing conditions",
+            "Start with easy movements before adding appropriate demand"
+          ],
+          "correct": 2,
+          "rationale": "A progressive sequence increases demand in manageable steps."
+        },
+        {
+          "prompt": "Why might a student use a seated warm-up?",
+          "options": [
+            "It can be an accessible way to prepare movement",
+            "It is automatically less educational",
+            "It always requires medical disclosure"
+          ],
+          "correct": 0,
+          "rationale": "An accessible option can teach the same planning and preparation principles."
+        },
+        {
+          "prompt": "What distinguishes recovery from avoidance?",
+          "options": [
+            "Recovery is always unnecessary",
+            "Recovery is planned management of effort and readiness",
+            "Recovery means the student failed"
+          ],
+          "correct": 1,
+          "rationale": "Rest and recovery are legitimate elements of physical activity."
+        },
+        {
+          "prompt": "A social media video says stretching must hurt to work. What should a learner do?",
+          "options": [
+            "Repeat the claim without checking",
+            "Force a deeper range",
+            "Reject pain as a performance goal and choose a comfortable option"
+          ],
+          "correct": 2,
+          "rationale": "Pain is not a valid target for demonstrating mobility or preparation."
+        },
+        {
+          "prompt": "What is the best explanation for gradual warm-up intensity?",
+          "options": [
+            "It allows movement demands to increase while monitoring response",
+            "It makes every exercise safe",
+            "It removes the need for hydration or rest"
+          ],
+          "correct": 0,
+          "rationale": "Gradual change permits observation and adaptation."
+        },
+        {
+          "prompt": "Why should a learner record environmental conditions?",
+          "options": [
+            "They determine a student's intelligence",
+            "Heat, surfaces and available space affect safe choices",
+            "They replace all movement instruction"
+          ],
+          "correct": 1,
+          "rationale": "Environmental factors may require changes to the plan."
+        },
+        {
+          "prompt": "Which statement about muscle temperature is most accurate?",
+          "options": [
+            "It is unrelated to activity",
+            "It must reach a fixed number for all learners",
+            "It commonly increases as movement begins"
+          ],
+          "correct": 2,
+          "rationale": "Muscle temperature typically increases with activity; no universal fixed target is required."
+        },
+        {
+          "prompt": "What is a suitable alternative to physical demonstration during illness?",
+          "options": [
+            "Analyze and explain a fictional preparation sequence",
+            "Perform despite unusual symptoms",
+            "Copy another learner's private log"
+          ],
+          "correct": 0,
+          "rationale": "Observation and reasoned explanation can demonstrate conceptual understanding."
+        },
+        {
+          "prompt": "Which recovery reflection is most useful?",
+          "options": [
+            "I was better than someone else",
+            "I lowered effort, noted comfort, and adjusted my next plan",
+            "I completed the longest possible session"
+          ],
+          "correct": 1,
+          "rationale": "Specific observations and decisions provide meaningful evidence."
+        },
+        {
+          "prompt": "Why does warm-up design depend on the main activity?",
+          "options": [
+            "All activities demand identical movements",
+            "It makes the lesson harder to grade",
+            "Different movement patterns benefit from different preparation"
+          ],
+          "correct": 2,
+          "rationale": "Relevant preparation varies with the movement demands."
+        },
+        {
+          "prompt": "A learner feels comfortable after two minutes of easy movement. What next?",
+          "options": [
+            "Choose a suitable next step while continuing to monitor comfort",
+            "Immediately perform a maximal test",
+            "Ignore the planned activity"
+          ],
+          "correct": 0,
+          "rationale": "The next step should reflect purpose, readiness and continued monitoring."
+        },
+        {
+          "prompt": "Which is a poor warm-up success measure?",
+          "options": [
+            "Appropriate preparation",
+            "Maximum discomfort tolerated",
+            "Ability to explain adaptations"
+          ],
+          "correct": 1,
+          "rationale": "Discomfort is not an appropriate success target."
+        },
+        {
+          "prompt": "What makes a warm-up plan independently usable?",
+          "options": [
+            "Requiring a partner to approve every step",
+            "Assuming every home has a gym",
+            "Clear steps, adaptations and stop cues"
+          ],
+          "correct": 2,
+          "rationale": "Clear choices and stop cues support independent learning."
+        },
+        {
+          "prompt": "Which revision improves 'never rest until the workout ends'?",
+          "options": [
+            "Allow planned recovery and stop for concerning symptoms",
+            "Remove every adaptation",
+            "Increase intensity when tired"
+          ],
+          "correct": 0,
+          "rationale": "Recovery and symptom-responsive stopping are important parts of planning."
         }
       ],
       "focusSkill": "Explain why gradual preparation precedes the main activity.",
@@ -477,7 +727,8 @@
       "conceptExplanation": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward.",
       "biomechanicsAndTechnique": "Start with comfortable movements resembling the planned activity, increase effort gradually if appropriate, and avoid forcing painful stretches. Recovery includes rest and noticing how effort feels.",
       "workedExample": "Before a comfortable walk, a learner marches slowly and performs gentle ankle movements, then walks at a conversational pace; afterward they reduce the pace instead of stopping abruptly.",
-      "applicationTask": "Design two warm-ups: one for walking and one for a supported strength circuit. Explain why the movements differ."
+      "applicationTask": "Design two warm-ups: one for walking and one for a supported strength circuit. Explain why the movements differ.",
+      "assessmentBankVersion": "sovereign-weekly25-v1"
     },
     {
       "week": 3,
