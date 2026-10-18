@@ -335,5 +335,41 @@
     "storesConversationText": false,
     "storesConversationAudio": false,
     "authority": "presentation-only"
+  },
+  "learningEngine": {
+    "version": "high-school-learning-architecture-v1",
+    "masteryThreshold": 80,
+    "authorityRegistry": "courses/shared/high-school-learning-registry.json",
+    "monteCarloEngine": "courses/shared/monte-carlo-assessment-v1.js",
+    "assessmentAdapter": "courses/shared/high-school-assessment-adapter-v1.js",
+    "learnerScope": "courses/shared/learner-scope-v1.js",
+    "sanitizedLearningContext": "courses/shared/high-school-learning-context-v1.js",
+    "learningContextKey": "khaemenes_high_mentor_context_v1",
+    "learningLedgerKey": "khaemenes_high_learning_ledger_v1",
+    "adapterCoverage": {
+      "english10to12": 154,
+      "socialStudies10to12": 3,
+      "total": 157
+    },
+    "preservedCourseAuthorities": [
+      "English 9 specialized randomized/human-reviewed engine",
+      "Pre-Algebra, Algebra I, Geometry, and Algebra II course-specific assessment engines",
+      "Integrated Science 9 Monte Carlo/unit-bank architecture",
+      "Biology 10, Chemistry 11, and Physics & Engineering 12 supervised secure-evidence architecture",
+      "Global Studies 9 specialized records and mastery engine"
+    ],
+    "evidencePolicy": "Verified selected-response evidence complements rather than replaces essays, labs, research, projects, oral defense, capstones, thesis work, and portfolios.",
+    "mentorEvidencePolicy": {
+      "summaryOnly": true,
+      "receivesCourseAndScoreSummary": true,
+      "receivesReviewSkillNames": true,
+      "receivesQuestionText": false,
+      "receivesAnswerOptions": false,
+      "receivesLearnerSelections": false,
+      "receivesAnswerKeys": false
+    },
+    "unresolvedFederation": [
+      "World Languages canonical route is not present in this repository and must not be guessed."
+    ]
   }
 }
