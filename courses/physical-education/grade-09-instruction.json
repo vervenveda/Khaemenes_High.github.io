@@ -14,14 +14,14 @@
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce movement safety and self-assessment. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving movement safety and self-assessment. They have limited time, variable energy, and no specialized equipment.",
+          "instruction": "Read and discuss: Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone. Analyze the worked example: A learner plans a brisk walk outdoors during extreme heat. Instead of treating the scheduled walk as mandatory, they choose an indoor comfortable walk or a seated movement observation and explain the change.",
           "practice": "Write a three-part safety plan for movement safety and self-assessment: purpose, feasible option, and stop/modification cue.",
           "evidence": "A reasoned three-part plan with a specific observable cue."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to movement safety and self-assessment and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
+          "instruction": "Teacher models and explains technique: A safe start includes a clear route or space, appropriate support, a comfortable starting effort, and a plan to stop for pain, dizziness, or unusual symptoms. Compare a standard and an accessible option.",
           "practice": "Practice the week's decision with this exact prompt: Identify a personal stop cue and an alternative that meets the learning target. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
           "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
         },
@@ -29,13 +29,13 @@
           "day": 3,
           "phase": "Apply",
           "instruction": "Discuss how effort, environment, access and recovery change the best choice for movement safety and self-assessment.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
+          "practice": "Compare an indoor accessible movement plan with an outdoor plan during poor air quality. Explain the safer option and what evidence could demonstrate learning.",
           "evidence": "Three justified pathways and a brief risk assessment."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
+          "instruction": "Evaluate this misconception: A longer or harder session proves a learner has better fitness or deserves a higher grade. Explain why it fails using evidence.",
           "practice": "Analyze a learner's fictional plan for movement safety and self-assessment: it lacks a stop cue and adaptation. Rewrite it to satisfy: Identify a personal stop cue and an alternative that meets the learning target.",
           "evidence": "A revision justified by safety and observable learning evidence."
         },
@@ -43,12 +43,12 @@
           "day": 5,
           "phase": "Defend",
           "instruction": "Synthesize what safe and inclusive learning about movement safety and self-assessment requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
+          "practice": "Teach back the concept in a short explanation, annotated diagram or safe adapted demonstration. Defend your decision using: Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone.",
           "evidence": "Portfolio entry with claim, observation, adaptation and next step."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about movement safety and self-assessment.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+      "misconception": "A longer or harder session proves a learner has better fitness or deserves a higher grade.",
+      "correction": "PE grades assess demonstrated knowledge, decisions, technique, and evidence—not physical traits or comparison with classmates.",
       "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for movement safety and self-assessment.",
       "rubric": [
         {
@@ -80,57 +80,62 @@
       },
       "checks": [
         {
-          "prompt": "For movement safety and self-assessment, which statement demonstrates the week's target?",
+          "prompt": "Which information is most important before beginning an unfamiliar activity?",
           "options": [
-            "Identify a personal stop cue and an alternative that meets the learning target.",
-            "Increase difficulty even when it causes pain.",
-            "Rank classmates by body size."
+            "Current symptoms, environment, accessibility and safe stopping options",
+            "A classmate's best time",
+            "A body-size comparison"
           ],
           "correct": 0,
-          "rationale": "This week assesses the reasoning skill: Identify a personal stop cue and an alternative that meets the learning target."
+          "rationale": "Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone."
         },
         {
-          "prompt": "A learner encounters an access barrier while studying movement safety and self-assessment. What should happen?",
+          "prompt": "A student becomes dizzy while moving. What should happen first?",
           "options": [
-            "Adapt the task while preserving the learning objective.",
-            "Exclude the learner from assessment.",
-            "Require disclosure of a diagnosis."
+            "Stop activity and seek appropriate assistance",
+            "Complete the planned repetitions",
+            "Increase the pace"
           ],
           "correct": 0,
-          "rationale": "Equivalent pathways assess the same knowledge without demanding private health information."
+          "rationale": "Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone."
         },
         {
-          "prompt": "Which piece of evidence best supports a conclusion about movement safety and self-assessment?",
+          "prompt": "What makes a self-assessment useful?",
           "options": [
-            "A dated observation tied to the skill and a reflection on limitations.",
-            "A claim based on appearance.",
-            "An unrecorded comparison with a peer."
+            "It identifies current comfort, access and learning goals without diagnosing health",
+            "It assigns medical clearance",
+            "It ranks classmates"
           ],
           "correct": 0,
-          "rationale": "Evidence should be observable, contextual and tied to the learning goal."
+          "rationale": "Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone."
         },
         {
-          "prompt": "When demonstrating movement safety and self-assessment, a learner feels dizziness. What is the appropriate decision?",
+          "prompt": "A student cannot perform a standing task. Which response best preserves the objective?",
           "options": [
-            "Stop and seek appropriate guidance.",
-            "Continue until a target is reached.",
-            "Ignore the symptom if classmates continue."
+            "Use an agreed seated demonstration or reasoned observation",
+            "Record an automatic failure",
+            "Require private medical details"
           ],
           "correct": 0,
-          "rationale": "Safety overrides exercise completion."
+          "rationale": "Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone."
         },
         {
-          "prompt": "After reviewing evidence about movement safety and self-assessment, which revision is most justified?",
+          "prompt": "Which evidence supports a safety decision?",
           "options": [
-            "Revise the plan to better meet this target: Identify a personal stop cue and an alternative that meets the learning target.",
-            "Increase effort without reviewing the evidence.",
-            "Remove accommodations to make grading uniform."
+            "A documented hazard, adaptation and reason",
+            "A claim that hard work is always safe",
+            "A comparison of appearances"
           ],
           "correct": 0,
-          "rationale": "A justified revision responds to the week's specific learning target."
+          "rationale": "Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone."
         }
       ],
-      "focusSkill": "Identify a personal stop cue and an alternative that meets the learning target."
+      "focusSkill": "Identify a personal stop cue and an alternative that meets the learning target.",
+      "depthVersion": "grade9-lesson-depth-v2",
+      "conceptExplanation": "Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone.",
+      "biomechanicsAndTechnique": "A safe start includes a clear route or space, appropriate support, a comfortable starting effort, and a plan to stop for pain, dizziness, or unusual symptoms.",
+      "workedExample": "A learner plans a brisk walk outdoors during extreme heat. Instead of treating the scheduled walk as mandatory, they choose an indoor comfortable walk or a seated movement observation and explain the change.",
+      "applicationTask": "Compare an indoor accessible movement plan with an outdoor plan during poor air quality. Explain the safer option and what evidence could demonstrate learning."
     },
     {
       "week": 2,
@@ -142,14 +147,14 @@
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce warm-up and recovery. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving warm-up and recovery. They have limited time, variable energy, and no specialized equipment.",
+          "instruction": "Read and discuss: Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward. Analyze the worked example: Before a comfortable walk, a learner marches slowly and performs gentle ankle movements, then walks at a conversational pace; afterward they reduce the pace instead of stopping abruptly.",
           "practice": "Write a three-part safety plan for warm-up and recovery: purpose, feasible option, and stop/modification cue.",
           "evidence": "A reasoned three-part plan with a specific observable cue."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to warm-up and recovery and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
+          "instruction": "Teacher models and explains technique: Start with comfortable movements resembling the planned activity, increase effort gradually if appropriate, and avoid forcing painful stretches. Recovery includes rest and noticing how effort feels. Compare a standard and an accessible option.",
           "practice": "Practice the week's decision with this exact prompt: Explain why gradual preparation precedes the main activity. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
           "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
         },
@@ -157,13 +162,13 @@
           "day": 3,
           "phase": "Apply",
           "instruction": "Discuss how effort, environment, access and recovery change the best choice for warm-up and recovery.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
+          "practice": "Design two warm-ups: one for walking and one for a supported strength circuit. Explain why the movements differ.",
           "evidence": "Three justified pathways and a brief risk assessment."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
+          "instruction": "Evaluate this misconception: Stretching as far as possible or becoming exhausted is required for an effective warm-up. Explain why it fails using evidence.",
           "practice": "Analyze a learner's fictional plan for warm-up and recovery: it lacks a stop cue and adaptation. Rewrite it to satisfy: Explain why gradual preparation precedes the main activity.",
           "evidence": "A revision justified by safety and observable learning evidence."
         },
@@ -171,12 +176,12 @@
           "day": 5,
           "phase": "Defend",
           "instruction": "Synthesize what safe and inclusive learning about warm-up and recovery requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
+          "practice": "Teach back the concept in a short explanation, annotated diagram or safe adapted demonstration. Defend your decision using: Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward.",
           "evidence": "Portfolio entry with claim, observation, adaptation and next step."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about warm-up and recovery.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+      "misconception": "Stretching as far as possible or becoming exhausted is required for an effective warm-up.",
+      "correction": "A warm-up should be controlled, specific to the planned activity, and adjustable to the learner.",
       "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for warm-up and recovery.",
       "rubric": [
         {
@@ -208,57 +213,62 @@
       },
       "checks": [
         {
-          "prompt": "For warm-up and recovery, which statement demonstrates the week's target?",
+          "prompt": "Which warm-up best prepares a comfortable walk?",
           "options": [
-            "Explain why gradual preparation precedes the main activity.",
-            "Increase difficulty even when it causes pain.",
-            "Rank classmates by body size."
+            "A few minutes of easy marching or walking with gradual pace changes",
+            "A maximal sprint without preparation",
+            "A painful forced stretch"
           ],
           "correct": 0,
-          "rationale": "This week assesses the reasoning skill: Explain why gradual preparation precedes the main activity."
+          "rationale": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward."
         },
         {
-          "prompt": "A learner encounters an access barrier while studying warm-up and recovery. What should happen?",
+          "prompt": "Why should a warm-up resemble the main activity?",
           "options": [
-            "Adapt the task while preserving the learning objective.",
-            "Exclude the learner from assessment.",
-            "Require disclosure of a diagnosis."
+            "It rehearses relevant movement patterns at lower effort",
+            "It guarantees no injury can occur",
+            "It makes recovery unnecessary"
           ],
           "correct": 0,
-          "rationale": "Equivalent pathways assess the same knowledge without demanding private health information."
+          "rationale": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward."
         },
         {
-          "prompt": "Which piece of evidence best supports a conclusion about warm-up and recovery?",
+          "prompt": "What is an appropriate warm-up adjustment for limited standing tolerance?",
           "options": [
-            "A dated observation tied to the skill and a reflection on limitations.",
-            "A claim based on appearance.",
-            "An unrecorded comparison with a peer."
+            "Seated marching and comfortable joint movements",
+            "Skipping the learning objective",
+            "Requiring jumping"
           ],
           "correct": 0,
-          "rationale": "Evidence should be observable, contextual and tied to the learning goal."
+          "rationale": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward."
         },
         {
-          "prompt": "When demonstrating warm-up and recovery, a learner feels dizziness. What is the appropriate decision?",
+          "prompt": "Which sign means the learner should stop and ask for help?",
           "options": [
-            "Stop and seek appropriate guidance.",
-            "Continue until a target is reached.",
-            "Ignore the symptom if classmates continue."
+            "Unusual dizziness or pain",
+            "Comfortable breathing",
+            "A planned rest break"
           ],
           "correct": 0,
-          "rationale": "Safety overrides exercise completion."
+          "rationale": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward."
         },
         {
-          "prompt": "After reviewing evidence about warm-up and recovery, which revision is most justified?",
+          "prompt": "What distinguishes recovery from a performance test?",
           "options": [
-            "Revise the plan to better meet this target: Explain why gradual preparation precedes the main activity.",
-            "Increase effort without reviewing the evidence.",
-            "Remove accommodations to make grading uniform."
+            "Recovery supports a comfortable return to rest rather than maximizing output",
+            "Recovery requires competition",
+            "Recovery must always last exactly one minute"
           ],
           "correct": 0,
-          "rationale": "A justified revision responds to the week's specific learning target."
+          "rationale": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward."
         }
       ],
-      "focusSkill": "Explain why gradual preparation precedes the main activity."
+      "focusSkill": "Explain why gradual preparation precedes the main activity.",
+      "depthVersion": "grade9-lesson-depth-v2",
+      "conceptExplanation": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward.",
+      "biomechanicsAndTechnique": "Start with comfortable movements resembling the planned activity, increase effort gradually if appropriate, and avoid forcing painful stretches. Recovery includes rest and noticing how effort feels.",
+      "workedExample": "Before a comfortable walk, a learner marches slowly and performs gentle ankle movements, then walks at a conversational pace; afterward they reduce the pace instead of stopping abruptly.",
+      "applicationTask": "Design two warm-ups: one for walking and one for a supported strength circuit. Explain why the movements differ."
     },
     {
       "week": 3,
@@ -270,14 +280,14 @@
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce walking mechanics and pacing. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving walking mechanics and pacing. They have limited time, variable energy, and no specialized equipment.",
+          "instruction": "Read and discuss: Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels. Analyze the worked example: A learner who can speak comfortably while walking chooses a steady route; when a hill makes conversation difficult, they slow down or choose a flatter route.",
           "practice": "Write a three-part safety plan for walking mechanics and pacing: purpose, feasible option, and stop/modification cue.",
           "evidence": "A reasoned three-part plan with a specific observable cue."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to walking mechanics and pacing and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
+          "instruction": "Teacher models and explains technique: Choose a comfortable posture and stride, look toward the path, adjust pace to the environment, and use the talk test as a rough indicator of effort—not a medical measurement. Compare a standard and an accessible option.",
           "practice": "Practice the week's decision with this exact prompt: Compare a comfortable conversational pace with an effort that feels unsustainable. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
           "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
         },
@@ -285,13 +295,13 @@
           "day": 3,
           "phase": "Apply",
           "instruction": "Discuss how effort, environment, access and recovery change the best choice for walking mechanics and pacing.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
+          "practice": "Compare two fictional walking logs: one has a fast pace with discomfort, the other a comfortable pace with consistent technique. Explain what each log can and cannot show.",
           "evidence": "Three justified pathways and a brief risk assessment."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
+          "instruction": "Evaluate this misconception: A longer stride or faster speed is always more efficient and better for everyone. Explain why it fails using evidence.",
           "practice": "Analyze a learner's fictional plan for walking mechanics and pacing: it lacks a stop cue and adaptation. Rewrite it to satisfy: Compare a comfortable conversational pace with an effort that feels unsustainable.",
           "evidence": "A revision justified by safety and observable learning evidence."
         },
@@ -299,12 +309,12 @@
           "day": 5,
           "phase": "Defend",
           "instruction": "Synthesize what safe and inclusive learning about walking mechanics and pacing requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
+          "practice": "Teach back the concept in a short explanation, annotated diagram or safe adapted demonstration. Defend your decision using: Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels.",
           "evidence": "Portfolio entry with claim, observation, adaptation and next step."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about walking mechanics and pacing.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+      "misconception": "A longer stride or faster speed is always more efficient and better for everyone.",
+      "correction": "Comfortable stride and sustainable pacing depend on the person, route and purpose.",
       "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for walking mechanics and pacing.",
       "rubric": [
         {
@@ -336,57 +346,62 @@
       },
       "checks": [
         {
-          "prompt": "For walking mechanics and pacing, which statement demonstrates the week's target?",
+          "prompt": "A learner can no longer speak comfortably on a hill. What is a reasonable response?",
           "options": [
-            "Compare a comfortable conversational pace with an effort that feels unsustainable.",
-            "Increase difficulty even when it causes pain.",
-            "Rank classmates by body size."
+            "Slow the pace or change the route",
+            "Increase speed to finish sooner",
+            "Ignore discomfort"
           ],
           "correct": 0,
-          "rationale": "This week assesses the reasoning skill: Compare a comfortable conversational pace with an effort that feels unsustainable."
+          "rationale": "Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels."
         },
         {
-          "prompt": "A learner encounters an access barrier while studying walking mechanics and pacing. What should happen?",
+          "prompt": "Which factor can change walking effort without changing distance?",
           "options": [
-            "Adapt the task while preserving the learning objective.",
-            "Exclude the learner from assessment.",
-            "Require disclosure of a diagnosis."
+            "Terrain and incline",
+            "The student's grade level alone",
+            "The color of shoes"
           ],
           "correct": 0,
-          "rationale": "Equivalent pathways assess the same knowledge without demanding private health information."
+          "rationale": "Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels."
         },
         {
-          "prompt": "Which piece of evidence best supports a conclusion about walking mechanics and pacing?",
+          "prompt": "What does the talk test provide?",
           "options": [
-            "A dated observation tied to the skill and a reflection on limitations.",
-            "A claim based on appearance.",
-            "An unrecorded comparison with a peer."
+            "A rough self-monitoring cue for effort",
+            "A diagnosis of heart health",
+            "An exact measure of oxygen consumption"
           ],
           "correct": 0,
-          "rationale": "Evidence should be observable, contextual and tied to the learning goal."
+          "rationale": "Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels."
         },
         {
-          "prompt": "When demonstrating walking mechanics and pacing, a learner feels dizziness. What is the appropriate decision?",
+          "prompt": "What makes a walking log informative?",
           "options": [
-            "Stop and seek appropriate guidance.",
-            "Continue until a target is reached.",
-            "Ignore the symptom if classmates continue."
+            "Route conditions, effort, adaptations and observations",
+            "Only a ranking of classmates",
+            "Only body measurements"
           ],
           "correct": 0,
-          "rationale": "Safety overrides exercise completion."
+          "rationale": "Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels."
         },
         {
-          "prompt": "After reviewing evidence about walking mechanics and pacing, which revision is most justified?",
+          "prompt": "Which option can assess walking concepts without requiring outdoor walking?",
           "options": [
-            "Revise the plan to better meet this target: Compare a comfortable conversational pace with an effort that feels unsustainable.",
-            "Increase effort without reviewing the evidence.",
-            "Remove accommodations to make grading uniform."
+            "Analyze route and pacing choices using a fictional case",
+            "Assign zero credit",
+            "Require access to a treadmill"
           ],
           "correct": 0,
-          "rationale": "A justified revision responds to the week's specific learning target."
+          "rationale": "Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels."
         }
       ],
-      "focusSkill": "Compare a comfortable conversational pace with an effort that feels unsustainable."
+      "focusSkill": "Compare a comfortable conversational pace with an effort that feels unsustainable.",
+      "depthVersion": "grade9-lesson-depth-v2",
+      "conceptExplanation": "Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels.",
+      "biomechanicsAndTechnique": "Choose a comfortable posture and stride, look toward the path, adjust pace to the environment, and use the talk test as a rough indicator of effort—not a medical measurement.",
+      "workedExample": "A learner who can speak comfortably while walking chooses a steady route; when a hill makes conversation difficult, they slow down or choose a flatter route.",
+      "applicationTask": "Compare two fictional walking logs: one has a fast pace with discomfort, the other a comfortable pace with consistent technique. Explain what each log can and cannot show."
     },
     {
       "week": 4,
@@ -398,14 +413,14 @@
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce mobility and range of motion. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving mobility and range of motion. They have limited time, variable energy, and no specialized equipment.",
+          "instruction": "Read and discuss: Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical. Analyze the worked example: A learner notices that ankle circles feel comfortable seated but standing balance is difficult. They practice seated circles and describe how support changes the task.",
           "practice": "Write a three-part safety plan for mobility and range of motion: purpose, feasible option, and stop/modification cue.",
           "evidence": "A reasoned three-part plan with a specific observable cue."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to mobility and range of motion and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
+          "instruction": "Teacher models and explains technique: Move joints smoothly within a comfortable range without bouncing or forcing painful positions. Support and seated alternatives can preserve the movement-analysis objective. Compare a standard and an accessible option.",
           "practice": "Practice the week's decision with this exact prompt: Distinguish comfortable joint movement from forcing a range. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
           "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
         },
@@ -413,13 +428,13 @@
           "day": 3,
           "phase": "Apply",
           "instruction": "Discuss how effort, environment, access and recovery change the best choice for mobility and range of motion.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
+          "practice": "Design a three-movement mobility routine for preparing to walk, including a seated alternative and one stop cue.",
           "evidence": "Three justified pathways and a brief risk assessment."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
+          "instruction": "Evaluate this misconception: Greater range of motion always indicates better health, and everyone should reach the same position. Explain why it fails using evidence.",
           "practice": "Analyze a learner's fictional plan for mobility and range of motion: it lacks a stop cue and adaptation. Rewrite it to satisfy: Distinguish comfortable joint movement from forcing a range.",
           "evidence": "A revision justified by safety and observable learning evidence."
         },
@@ -427,12 +442,12 @@
           "day": 5,
           "phase": "Defend",
           "instruction": "Synthesize what safe and inclusive learning about mobility and range of motion requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
+          "practice": "Teach back the concept in a short explanation, annotated diagram or safe adapted demonstration. Defend your decision using: Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical.",
           "evidence": "Portfolio entry with claim, observation, adaptation and next step."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about mobility and range of motion.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+      "misconception": "Greater range of motion always indicates better health, and everyone should reach the same position.",
+      "correction": "Useful mobility is task-dependent; the goal is controlled, comfortable movement appropriate to the individual.",
       "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for mobility and range of motion.",
       "rubric": [
         {
@@ -464,57 +479,62 @@
       },
       "checks": [
         {
-          "prompt": "For mobility and range of motion, which statement demonstrates the week's target?",
+          "prompt": "Which describes controlled mobility practice?",
           "options": [
-            "Distinguish comfortable joint movement from forcing a range.",
-            "Increase difficulty even when it causes pain.",
-            "Rank classmates by body size."
+            "Comfortable movement through an available range without forcing pain",
+            "Bouncing into a painful position",
+            "Copying the deepest stretch in class"
           ],
           "correct": 0,
-          "rationale": "This week assesses the reasoning skill: Distinguish comfortable joint movement from forcing a range."
+          "rationale": "Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical."
         },
         {
-          "prompt": "A learner encounters an access barrier while studying mobility and range of motion. What should happen?",
+          "prompt": "How is mobility different from flexibility?",
           "options": [
-            "Adapt the task while preserving the learning objective.",
-            "Exclude the learner from assessment.",
-            "Require disclosure of a diagnosis."
+            "Mobility includes active control of movement; flexibility concerns available range",
+            "They are unrelated to movement",
+            "Mobility always requires equipment"
           ],
           "correct": 0,
-          "rationale": "Equivalent pathways assess the same knowledge without demanding private health information."
+          "rationale": "Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical."
         },
         {
-          "prompt": "Which piece of evidence best supports a conclusion about mobility and range of motion?",
+          "prompt": "Why might a learner use seated ankle circles?",
           "options": [
-            "A dated observation tied to the skill and a reflection on limitations.",
-            "A claim based on appearance.",
-            "An unrecorded comparison with a peer."
+            "To practice controlled ankle movement with additional support",
+            "Because seated work never counts",
+            "To avoid all technique learning"
           ],
           "correct": 0,
-          "rationale": "Evidence should be observable, contextual and tied to the learning goal."
+          "rationale": "Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical."
         },
         {
-          "prompt": "When demonstrating mobility and range of motion, a learner feels dizziness. What is the appropriate decision?",
+          "prompt": "Which evidence best demonstrates mobility understanding?",
           "options": [
-            "Stop and seek appropriate guidance.",
-            "Continue until a target is reached.",
-            "Ignore the symptom if classmates continue."
+            "A movement choice, range modification and reason",
+            "The largest range in the class",
+            "A body-size ranking"
           ],
           "correct": 0,
-          "rationale": "Safety overrides exercise completion."
+          "rationale": "Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical."
         },
         {
-          "prompt": "After reviewing evidence about mobility and range of motion, which revision is most justified?",
+          "prompt": "What should happen if a stretch causes sharp pain?",
           "options": [
-            "Revise the plan to better meet this target: Distinguish comfortable joint movement from forcing a range.",
-            "Increase effort without reviewing the evidence.",
-            "Remove accommodations to make grading uniform."
+            "Stop and adjust or seek guidance",
+            "Hold longer",
+            "Bounce repeatedly"
           ],
           "correct": 0,
-          "rationale": "A justified revision responds to the week's specific learning target."
+          "rationale": "Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical."
         }
       ],
-      "focusSkill": "Distinguish comfortable joint movement from forcing a range."
+      "focusSkill": "Distinguish comfortable joint movement from forcing a range.",
+      "depthVersion": "grade9-lesson-depth-v2",
+      "conceptExplanation": "Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical.",
+      "biomechanicsAndTechnique": "Move joints smoothly within a comfortable range without bouncing or forcing painful positions. Support and seated alternatives can preserve the movement-analysis objective.",
+      "workedExample": "A learner notices that ankle circles feel comfortable seated but standing balance is difficult. They practice seated circles and describe how support changes the task.",
+      "applicationTask": "Design a three-movement mobility routine for preparing to walk, including a seated alternative and one stop cue."
     },
     {
       "week": 5,
