@@ -36,7 +36,7 @@ function block(file){
   return MARKER+"\n"+SHARED.map(p=>'<script src="'+relScript(file,p)+'"></script>').join("\n");
 }
 
-const report={targets:0,changed:0,already:0,skipped:[],byFamily:{english:0,socialStudies:0}};
+const report={targets:0,changed:0,already:0,bankAdded:0,skipped:[],byFamily:{english:0,socialStudies:0},quizBankTargets:0};
 for(const file of walk(ROOT)){
   const rel=path.relative(ROOT,file);
   let html=fs.readFileSync(file,"utf8");
@@ -44,11 +44,30 @@ for(const file of walk(ROOT)){
   report.targets++;
   if(/courses\/language-arts\/english-/.test(posix(rel)))report.byFamily.english++;
   else report.byFamily.socialStudies++;
-  if(html.includes(MARKER)){report.already++;continue}
   if(!/<\/head>/i.test(html)){report.skipped.push(posix(rel)+": no </head>");continue}
-  html=html.replace(/<\/head>/i,block(file)+"\n</head>");
-  fs.writeFileSync(file,html,"utf8");
-  report.changed++;
+  let changed=false;
+  if(!html.includes(MARKER)){
+    html=html.replace(/<\/head>/i,block(file)+"\n</head>");
+    changed=true;
+  }else{
+    report.already++;
+  }
+  const relPosix=posix(rel);
+  const quizMatch=relPosix.match(/^courses\/language-arts\/english-(10|11|12)\//);
+  if(quizMatch&&/data-quiz-form/.test(html)){
+    report.quizBankTargets++;
+    if(!html.includes("quiz-specific-bank.js")){
+      const bankTarget="courses/language-arts/english-"+quizMatch[1]+"/assets/quiz-specific-bank.js";
+      const bankTag='<script src="'+relScript(file,bankTarget)+'"></script>';
+      html=html.replace(/<\/head>/i,bankTag+"\n</head>");
+      report.bankAdded++;
+      changed=true;
+    }
+  }
+  if(changed){
+    fs.writeFileSync(file,html,"utf8");
+    report.changed++;
+  }
 }
 console.log(JSON.stringify(report,null,2));
 if(report.skipped.length)process.exitCode=2;
