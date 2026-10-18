@@ -10,7 +10,8 @@
     "attempts": "persistent-randomized-form-plus-best-score",
     "performanceEvidence": "essays-labs-projects-research-oral-defense-and-portfolios-remain-separate",
     "learnerScope": "academy-active-learner-required-for-owned-records",
-    "mentor": "summary-only-no-locked-question-content"
+    "mentor": "summary-only-no-locked-question-content",
+    "formativeLessons": "learner-scoped-reflection-evidence-only-never-mastery"
   },
   "courses": [
     {
@@ -150,5 +151,24 @@
       "ownership": "federated",
       "rule": "Do not invent or hard-code a language-course URL until the Academy/Linguistics federation publishes the canonical route."
     }
-  ]
+  ],
+  "formativeLessonEvidence": {
+    "bridge": "courses/shared/high-school-formative-evidence-v1.js",
+    "ledger": "khaemenes_high_learning_ledger_v1",
+    "oneSavePerPagePerDay": true,
+    "totalSurfaces": 1482,
+    "byFamily": {
+      "english": 224,
+      "mathematics": 372,
+      "science": 720,
+      "socialStudies": 166
+    },
+    "authority": {
+      "awardsMastery": false,
+      "changesScore": false,
+      "unlocksCurriculum": false,
+      "changesPlacement": false,
+      "replacesPerformanceEvidence": false
+    }
+  }
 }
