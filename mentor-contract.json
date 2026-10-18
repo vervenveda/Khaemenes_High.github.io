@@ -36,7 +36,10 @@
     "Other AI personalities may appear only as non-authoritative guides, narrators, characters, or specialists until teacher-AI cross-pollination is deliberately commissioned after Academy certification.",
     "Archaemenes may support concepts, planning, evidence, research, reflection, and handoff without taking protected grading, signing, or assessment custody.",
     "Mentor sessions are bound to the learner active when the page opens; changing learners freezes the open mentor session until it is reopened.",
-    "Protected assessment and answer-key requests remain local-only and never cross the optional mentor transport boundary."
+    "Protected assessment and answer-key requests remain local-only and never cross the optional mentor transport boundary.",
+    "Formal High School mastery remains at or above the Academy 80% threshold unless a course-specific requirement is stronger.",
+    "Randomized selected-response evidence complements authentic human-reviewed performance evidence rather than replacing it.",
+    "Archaemenes may use sanitized progress and review-skill summaries but never receives locked assessment questions, displayed answer choices, learner selections, or answer keys."
   ],
   "authority": {
     "awardsMastery": false,
@@ -114,5 +117,29 @@
       "/Khaemenes_High.github.io/",
       "/stos/khaemenes/high/"
     ]
+  },
+  "learningEngine": {
+    "version": "high-school-learning-architecture-v1",
+    "masteryThreshold": 80,
+    "scoreAuthority": "course-specific engine or registered High School Monte Carlo adapter",
+    "selectedResponsePolicy": {
+      "weekly": "open-book unless a stronger course-specific policy applies",
+      "midterm": "closed-book or supervised course-specific policy",
+      "final": "closed-book or supervised course-specific policy",
+      "activeFormPersistsAcrossRefresh": true,
+      "retakeDrawsFreshForm": true,
+      "bestScorePreserved": true
+    },
+    "performanceEvidencePolicy": "Separate and preserved; essays, labs, research, projects, oral defense, capstones, thesis work, portfolios, and evaluator review are not overwritten by selected-response scores.",
+    "mentorRemediation": {
+      "receivesSanitizedProgress": true,
+      "receivesVerifiedScoreSummary": true,
+      "receivesReviewSkillNames": true,
+      "receivesQuestionText": false,
+      "receivesAnswerOptions": false,
+      "receivesLearnerSelections": false,
+      "receivesAnswerKeys": false
+    },
+    "languageFederation": "Academic requirement acknowledged; canonical route unresolved in this repository and must not be guessed."
   }
 }
