@@ -1,0 +1,145 @@
+{
+  "schema": "khaemenes-high-learning-registry-v1",
+  "version": 1,
+  "masteryThreshold": 80,
+  "policy": {
+    "weekly": "open-book-randomized-verified-learning-evidence",
+    "unit": "open-book-or-supervised-course-policy",
+    "midterm": "closed-book-or-supervised-course-policy",
+    "final": "closed-book-or-supervised-course-policy",
+    "attempts": "persistent-randomized-form-plus-best-score",
+    "performanceEvidence": "essays-labs-projects-research-oral-defense-and-portfolios-remain-separate",
+    "learnerScope": "academy-active-learner-required-for-owned-records",
+    "mentor": "summary-only-no-locked-question-content"
+  },
+  "courses": [
+    {
+      "id": "english-9",
+      "grade": 9,
+      "department": "language-arts",
+      "path": "courses/language-arts/english-9/",
+      "authority": "course-specific",
+      "status": "specialized-existing-engine"
+    },
+    {
+      "id": "english-10",
+      "grade": 10,
+      "department": "language-arts",
+      "path": "courses/language-arts/english-10/",
+      "authority": "high-school-assessment-adapter",
+      "status": "adapter-target"
+    },
+    {
+      "id": "english-11",
+      "grade": 11,
+      "department": "language-arts",
+      "path": "courses/language-arts/english-11/",
+      "authority": "high-school-assessment-adapter",
+      "status": "adapter-target"
+    },
+    {
+      "id": "english-12",
+      "grade": 12,
+      "department": "language-arts",
+      "path": "courses/language-arts/english-12/",
+      "authority": "high-school-assessment-adapter",
+      "status": "adapter-target"
+    },
+    {
+      "id": "pre-algebra",
+      "grade": 9,
+      "department": "mathematics",
+      "path": "courses/mathematics/pre-algebra/",
+      "authority": "course-specific",
+      "status": "deep-existing-engine"
+    },
+    {
+      "id": "algebra-1",
+      "grade": null,
+      "department": "mathematics",
+      "path": "courses/mathematics/algebra-1/",
+      "authority": "course-specific",
+      "status": "deep-existing-engine"
+    },
+    {
+      "id": "geometry",
+      "grade": null,
+      "department": "mathematics",
+      "path": "courses/mathematics/geometry/",
+      "authority": "course-specific",
+      "status": "course-specific-engine"
+    },
+    {
+      "id": "algebra-2",
+      "grade": null,
+      "department": "mathematics",
+      "path": "courses/mathematics/algebra-2/",
+      "authority": "course-specific",
+      "status": "course-specific-engine"
+    },
+    {
+      "id": "integrated-science-9",
+      "grade": 9,
+      "department": "science",
+      "path": "courses/science/integrated-science-9/",
+      "authority": "course-specific",
+      "status": "monte-carlo-existing-engine"
+    },
+    {
+      "id": "biology-10",
+      "grade": 10,
+      "department": "science",
+      "path": "courses/science/biology-10/",
+      "authority": "course-specific",
+      "status": "question-bank-and-supervised-evidence"
+    },
+    {
+      "id": "chemistry-11",
+      "grade": 11,
+      "department": "science",
+      "path": "courses/science/chemistry-11/",
+      "authority": "course-specific",
+      "status": "question-bank-and-supervised-evidence"
+    },
+    {
+      "id": "physics-engineering-12",
+      "grade": 12,
+      "department": "science",
+      "path": "courses/science/physics-engineering-12/",
+      "authority": "course-specific",
+      "status": "question-bank-and-supervised-evidence"
+    },
+    {
+      "id": "global-studies-9",
+      "grade": 9,
+      "department": "social-studies",
+      "path": "courses/social-studies/grade-09/",
+      "authority": "course-specific",
+      "status": "specialized-existing-engine"
+    },
+    {
+      "id": "us-history-10",
+      "grade": 10,
+      "department": "social-studies",
+      "path": "courses/social-studies/grade-10/",
+      "authority": "high-school-assessment-adapter",
+      "status": "adapter-target"
+    },
+    {
+      "id": "government-economics-11",
+      "grade": 11,
+      "department": "social-studies",
+      "path": "courses/social-studies/grade-11/",
+      "authority": "high-school-assessment-adapter",
+      "status": "adapter-target"
+    },
+    {
+      "id": "global-politics-12",
+      "grade": 12,
+      "department": "social-studies",
+      "path": "courses/social-studies/grade-12/",
+      "authority": "high-school-assessment-adapter",
+      "status": "adapter-target"
+    }
+  ]
+}
