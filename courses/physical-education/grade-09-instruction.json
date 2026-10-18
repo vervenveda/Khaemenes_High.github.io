@@ -153,6 +153,156 @@
           ],
           "correct": 0,
           "rationale": "Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone."
+        },
+        {
+          "prompt": "A route becomes slippery after rain. What is the strongest response?",
+          "options": [
+            "Select a stable alternative or observation task",
+            "Walk faster to reduce time outdoors",
+            "Ignore the change because the route was planned"
+          ],
+          "correct": 0,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "Which part of a plan makes adaptation possible?",
+          "options": [
+            "A strict rule never to pause",
+            "A stated alternative and stop condition",
+            "A classmate's performance target"
+          ],
+          "correct": 1,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "Why should a student examine the environment before moving?",
+          "options": [
+            "Surfaces, space and weather can change the risk",
+            "It guarantees injury prevention",
+            "It determines academic ability"
+          ],
+          "correct": 0,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "A student cannot safely demonstrate standing balance. What preserves learning?",
+          "options": [
+            "Force the standing version",
+            "Require a medical diagnosis",
+            "Explain the balance principle using a supported or seated model"
+          ],
+          "correct": 2,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "What is the most defensible definition of a stop cue?",
+          "options": [
+            "A specific signal to pause or seek help when conditions change",
+            "A sign to increase intensity",
+            "A comparison with other learners"
+          ],
+          "correct": 0,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "Which observation is evidence rather than assumption?",
+          "options": [
+            "This exercise is safe for everybody",
+            "The floor is wet and the available route has obstacles",
+            "Stronger students never need rest"
+          ],
+          "correct": 1,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "Why might a learner choose a lower-demand exercise?",
+          "options": [
+            "It means the learner has failed",
+            "It removes all learning",
+            "It matches current comfort and permits controlled practice"
+          ],
+          "correct": 2,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "What should a student do if unusual chest discomfort occurs during activity?",
+          "options": [
+            "Stop and seek appropriate help",
+            "Finish the planned repetitions first",
+            "Ignore symptoms unless a peer notices"
+          ],
+          "correct": 0,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "Which statement respects personal health privacy?",
+          "options": [
+            "Students must share diagnoses publicly",
+            "An accessible alternative can be offered without demanding private medical details",
+            "Students must prove why they need rest"
+          ],
+          "correct": 1,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "Which is a measurable learning outcome for Week 1?",
+          "options": [
+            "Being the fastest student",
+            "Performing the hardest exercise",
+            "Identifying a hazard and justifying an adaptation"
+          ],
+          "correct": 2,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "A stable chair is needed for a supported exercise. What should be checked?",
+          "options": [
+            "That it is secure and will not roll or slip",
+            "That it looks expensive",
+            "That it matches the classroom furniture"
+          ],
+          "correct": 0,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "What makes a written observation valid PE evidence?",
+          "options": [
+            "It copies a friend's answer",
+            "It accurately explains technique and a safety decision",
+            "It uses the longest possible answer"
+          ],
+          "correct": 1,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "Why is 'always push through fatigue' a flawed rule?",
+          "options": [
+            "Fatigue always means illness",
+            "It is required for improvement",
+            "It ignores individual circumstances and warning signs"
+          ],
+          "correct": 2,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "Which plan best supports independent activity?",
+          "options": [
+            "Goal, feasible option, adaptation and stop cue",
+            "Only a fixed repetition count",
+            "Only a ranking against classmates"
+          ],
+          "correct": 0,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "How should students respond to a change in air-quality conditions?",
+          "options": [
+            "Continue unchanged",
+            "Reassess the environment and consider a safer alternative",
+            "Increase pace to finish quickly"
+          ],
+          "correct": 1,
+          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
         }
       ],
       "focusSkill": "Identify a personal stop cue and an alternative that meets the learning target.",
@@ -168,7 +318,8 @@
           "path": "./movement-safety-studio.html",
           "type": "original-interactive"
         }
-      ]
+      ],
+      "weeklyQuizVersion": "khae-pe-g9-w1-weekly20-v1"
     },
     {
       "week": 2,
