@@ -128,7 +128,11 @@ for(const file of walk(ROOT)){
   if(!html.includes("high-school-learning-context-v1.js"))formativeCoverage.missing.push(rel+" missing high-school-learning-context-v1.js");
   if(!html.includes("high-school-formative-evidence-v1.js"))formativeCoverage.missing.push(rel+" missing high-school-formative-evidence-v1.js");
 }
-assert(formativeCoverage.targets>1000,"Unexpectedly small High School formative lesson target set: "+formativeCoverage.targets);
+assert(formativeCoverage.targets===1482,"Expected 1482 High School formative lesson surfaces; found "+formativeCoverage.targets);
+assert(formativeCoverage.byFamily.english===224,"Expected 224 English formative surfaces; found "+formativeCoverage.byFamily.english);
+assert(formativeCoverage.byFamily.mathematics===372,"Expected 372 Mathematics formative surfaces; found "+formativeCoverage.byFamily.mathematics);
+assert(formativeCoverage.byFamily.science===720,"Expected 720 Science formative surfaces; found "+formativeCoverage.byFamily.science);
+assert(formativeCoverage.byFamily.socialStudies===166,"Expected 166 Social Studies formative surfaces; found "+formativeCoverage.byFamily.socialStudies);
 assert(!formativeCoverage.missing.length,"High School formative coverage gaps:\n"+formativeCoverage.missing.slice(0,40).join("\n"));
 assert(!formativeCoverage.duplicates.length,"Duplicate High School formative markers:\n"+formativeCoverage.duplicates.slice(0,40).join("\n"));
 const formativeSource=read("courses/shared/high-school-formative-evidence-v1.js");
