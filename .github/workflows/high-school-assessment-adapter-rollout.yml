@@ -1,0 +1,53 @@
+name: High School Assessment Adapter Rollout
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/shared/monte-carlo-assessment-v1.js'
+      - 'courses/shared/high-school-learning-context-v1.js'
+      - 'courses/shared/high-school-assessment-adapter-v1.js'
+      - 'courses/language-arts/english-10/assets/course.js'
+      - 'courses/language-arts/english-11/assets/course.js'
+      - 'courses/language-arts/english-12/assets/course.js'
+      - 'courses/social-studies/grade-10/index.html'
+      - 'courses/social-studies/grade-11/index.html'
+      - 'courses/social-studies/grade-12/index.html'
+      - 'scripts/inject-high-school-assessment-adapter.mjs'
+      - '.github/workflows/high-school-assessment-adapter-rollout.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: high-school-assessment-adapter-rollout
+  cancel-in-progress: false
+
+jobs:
+  rollout:
+    if: "!contains(github.event.head_commit.message, '[skip high-assessment-rollout]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Inject assessment adapter scripts
+        run: node scripts/inject-high-school-assessment-adapter.mjs
+      - name: Commit rollout
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "All targeted High School assessment surfaces already include the shared adapter."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html' '**/*.html'
+          git commit -m "chore(high): roll out assessment adapter [skip high-assessment-rollout]"
+          git pull --rebase origin main
+          git push origin HEAD:main
