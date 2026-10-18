@@ -180,66 +180,110 @@
   }
   function runQuizPage(){
     const form=$("[data-quiz-form]"); if(!form)return;
-    const questions=readQuestions("quiz-data");
     const week=Number(form.dataset.week);
+    const rawQuestions=readQuestions("quiz-data");
+    const adapter=window.KhaemenesHighAssessmentAdapter||null;
+    const storageKey=`${STATE_KEY}:monte-carlo:week:${week}`;
+    let opened=null;
+    let questions=rawQuestions;
+    if(adapter&&window.KhaeMonteCarloAssessment&&rawQuestions.length){
+      try{
+        opened=adapter.open({courseId:COURSE_ID,storageKey,bank:rawQuestions,kind:"weekly",count:rawQuestions.length});
+        questions=opened.questions;
+      }catch(_err){opened=null;questions=rawQuestions}
+    }
     renderQuestionSet($("[data-question-container]",form),questions,`week-${week}`);
     const result=$("[data-quiz-result]");
     const best=$("[data-quiz-best]");
     const syncBest=()=>{if(best)best.textContent=fmt(score(weekState(week).quiz))};
     syncBest();
+    if(opened){
+      const note=document.createElement("p");note.className="notice";
+      note.textContent=`Randomized open-book weekly check · ${opened.count} questions drawn from ${opened.bankSize} available items · answer order randomized · 80% mastery target.`;
+      form.prepend(note);
+    }
     form.addEventListener("submit",e=>{
       e.preventDefault();
       let correct=0, complete=true;
+      const responses=[],reviewSkills=[];
       questions.forEach((q,i)=>{
         const selected=form.querySelector(`input[name="week-${week}-${i}"]:checked`);
         const field=form.querySelector(`[data-question="${i}"]`);
         const feedback=$(".quiz-feedback",field);
         if(!selected){complete=false;feedback.hidden=false;feedback.textContent="Choose an answer before submitting.";return}
         const answer=Number(selected.value), ok=answer===q.answer;
-        if(ok)correct++;
+        if(ok)correct++;else if(q.skill)reviewSkills.push(q.skill);
+        responses.push({id:q.id||null,selected:answer,correct:ok,skill:q.skill||q.domain||""});
         feedback.hidden=false;
         feedback.className=`quiz-feedback ${ok?"good":"bad"}`;
         feedback.innerHTML=`<strong>${ok?"Correct.":"Review."}</strong> ${esc(q.explanation||"")}`;
       });
       if(!complete){result.textContent="Please answer every question.";return}
-      const score=Math.round(correct/questions.length*100);
+      const attemptScore=Math.round(correct/questions.length*100);
       const record=weekState(week).quiz;
-      record.attempts.push({date:nowISO(),score,correct,total:questions.length});
-      record.best=Math.max(record.best||0,score);
+      const attempt={date:nowISO(),score:attemptScore,correct,total:questions.length,mastered:attemptScore>=80,attemptId:opened?.sessionId||null,questionIds:opened?.questionIds||questions.map(q=>q.id).filter(Boolean),reviewSkills:[...new Set(reviewSkills)].slice(0,8),responses};
+      record.attempts.push(attempt);
+      record.best=Math.max(record.best||0,attemptScore);
+      if(opened)adapter.complete(opened,{score:attemptScore,correct,total:questions.length,mastered:attemptScore>=80,reviewSkills:attempt.reviewSkills});
       const saved=save();syncBest();updateProgress();
-      result.innerHTML=`${saved?"Saved. ":"Not saved — export a recovery copy. "}Score: <strong>${score}%</strong> (${correct}/${questions.length}). Best score retained: <strong>${record.best}%</strong>. ${score<80?"Complete corrections, review the lesson, and retake.":"Mastery target met."}`;
+      result.innerHTML=`${saved?"Saved. ":"Not saved — export a recovery copy. "}Score: <strong>${attemptScore}%</strong> (${correct}/${questions.length}). Best score retained: <strong>${record.best}%</strong>. ${attemptScore<80?"Complete corrections, review the lesson, and draw a new attempt.":"Mastery target met."}`;
     });
-    $("[data-reset-quiz]")?.addEventListener("click",()=>{form.reset();$$(".quiz-feedback",form).forEach(x=>{x.hidden=true;x.textContent=""});if(result)result.textContent=""});
+    $("[data-reset-quiz]")?.addEventListener("click",()=>{
+      if(opened){adapter.newAttempt(storageKey);location.reload();return}
+      form.reset();$$(".quiz-feedback",form).forEach(x=>{x.hidden=true;x.textContent=""});if(result)result.textContent="";
+    });
   }
   function runAssessmentPage(){
     const form=$("[data-assessment-form]"); if(!form)return;
-    const questions=readQuestions("assessment-data");
+    const rawQuestions=readQuestions("assessment-data");
     const id=form.dataset.assessmentId;
     const kind=form.dataset.assessmentKind||"exam";
+    const adapter=window.KhaemenesHighAssessmentAdapter||null;
+    const storageKey=`${STATE_KEY}:monte-carlo:${id}`;
+    let opened=null;
+    let questions=rawQuestions;
+    if(adapter&&window.KhaeMonteCarloAssessment&&rawQuestions.length){
+      try{
+        opened=adapter.open({courseId:COURSE_ID,storageKey,bank:rawQuestions,kind,count:adapter.countFor(kind,rawQuestions.length)});
+        questions=opened.questions;
+      }catch(_err){opened=null;questions=rawQuestions}
+    }
     renderQuestionSet($("[data-question-container]",form),questions,id);
     const result=$("[data-assessment-result]");
     const best=$("[data-assessment-best]");
     const getRecord=()=>kind==="unit"?unitState(Number(form.dataset.unit)).assessment:examState(id);
     const sync=()=>{if(best)best.textContent=fmt(score(getRecord()))};sync();
+    if(opened){
+      const policy=adapter.policy(kind),note=document.createElement("p");note.className="notice";
+      note.textContent=`${policy.bookMode==="closed-book"?"Closed-book":"Open-book"} randomized ${kind} assessment · ${opened.count} questions drawn from ${opened.bankSize} available items · active form persists across refresh · a retake draws a new form.`;
+      form.prepend(note);
+    }
     form.addEventListener("submit",e=>{
       e.preventDefault();
-      let correct=0,complete=true,answers=[];
+      let correct=0,complete=true,answers=[],responses=[],reviewSkills=[];
       questions.forEach((q,i)=>{
         const selected=form.querySelector(`input[name="${id}-${i}"]:checked`);
         const field=form.querySelector(`[data-question="${i}"]`);
         const feedback=$(".quiz-feedback",field);
         if(!selected){complete=false;feedback.hidden=false;feedback.textContent="Choose an answer.";return}
-        const answer=Number(selected.value), ok=answer===q.answer;answers.push(answer);if(ok)correct++;
+        const answer=Number(selected.value), ok=answer===q.answer;answers.push(answer);if(ok)correct++;else if(q.skill)reviewSkills.push(q.skill);
+        responses.push({id:q.id||null,selected:answer,correct:ok,skill:q.skill||q.domain||""});
         feedback.hidden=false;feedback.className=`quiz-feedback ${ok?"good":"bad"}`;
         feedback.innerHTML=`<strong>${ok?"Correct.":"Review."}</strong> ${esc(q.explanation||"")}`;
       });
       if(!complete){result.textContent="Please answer every question.";return}
-      const score=Math.round(correct/questions.length*100), record=getRecord();
-      record.attempts.push({date:nowISO(),score,correct,total:questions.length,answers});
-      record.best=Math.max(record.best||0,score);const saved=save();sync();updateProgress();
-      result.innerHTML=`${saved?"Saved. ":"Not saved — export a recovery copy. "}Score: <strong>${score}%</strong> (${correct}/${questions.length}). Best retained: <strong>${record.best}%</strong>.`;
+      const attemptScore=Math.round(correct/questions.length*100), record=getRecord();
+      const attempt={date:nowISO(),score:attemptScore,correct,total:questions.length,answers,mastered:attemptScore>=80,attemptId:opened?.sessionId||null,questionIds:opened?.questionIds||questions.map(q=>q.id).filter(Boolean),reviewSkills:[...new Set(reviewSkills)].slice(0,10),responses};
+      record.attempts.push(attempt);
+      record.best=Math.max(record.best||0,attemptScore);
+      if(opened)adapter.complete(opened,{score:attemptScore,correct,total:questions.length,mastered:attemptScore>=80,reviewSkills:attempt.reviewSkills});
+      const saved=save();sync();updateProgress();
+      result.innerHTML=`${saved?"Saved. ":"Not saved — export a recovery copy. "}Score: <strong>${attemptScore}%</strong> (${correct}/${questions.length}). Best retained: <strong>${record.best}%</strong>. ${attemptScore<80?"Review the recorded skills, complete corrections, and draw a new attempt.":"80% mastery target met."}`;
     });
-    $("[data-reset-assessment]")?.addEventListener("click",()=>{form.reset();$$(".quiz-feedback",form).forEach(x=>{x.hidden=true;x.textContent=""});if(result)result.textContent=""});
+    $("[data-reset-assessment]")?.addEventListener("click",()=>{
+      if(opened){adapter.newAttempt(storageKey);location.reload();return}
+      form.reset();$$(".quiz-feedback",form).forEach(x=>{x.hidden=true;x.textContent=""});if(result)result.textContent="";
+    });
   }
   runQuizPage();runAssessmentPage();
 
