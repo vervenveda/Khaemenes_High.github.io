@@ -160,6 +160,79 @@ Curriculum is designed to support both instructor-led and independent study.
 
 ---
 
+## October 2026 — Course-Wide Learning Architecture
+
+High School now participates in the same Academy-wide mastery and evidence continuum as Elementary and Middle School while preserving the stronger subject-specific systems already built for Grades 9–12.
+
+The shared High School contract uses an **80% mastery minimum**, learner-scoped records, persistent randomized assessment forms, fresh retake forms, best-score preservation, and sanitized Mentor evidence. It does **not** replace stronger course-specific assessment engines.
+
+### Shared randomized adapter coverage
+
+The first standardized adapter rollout covers **157 active assessment surfaces**:
+
+- **154 English 10–12** weekly, unit, midterm, and final assessment pages
+- **3 Social Studies 10–12** course portals
+- **0 skipped rollout targets**
+
+Those surfaces load:
+
+```text
+courses/shared/monte-carlo-assessment-v1.js
+courses/shared/high-school-assessment-adapter-v1.js
+courses/shared/high-school-learning-context-v1.js
+```
+
+The active randomized form persists across a refresh. A completed retake draws a new form and answer order. Existing learner-scoped course gradebooks remain the score authority and retain the best verified score.
+
+### Preserved specialist authorities
+
+The shared layer intentionally does not flatten mature course engines:
+
+- **English 9** retains its specialized randomized exam and human-reviewed writing evidence architecture.
+- **Pre-Algebra, Algebra I, Geometry, and Algebra II** retain their dedicated randomized/balanced mathematics assessment engines.
+- **Integrated Science 9** retains its twelve-unit question-bank and cumulative Monte Carlo structure.
+- **Biology 10, Chemistry 11, and Physics & Engineering 12** retain the public-learning-evidence / supervised-secure-evidence boundary for confidential assessments.
+- **Global Studies 9** retains its specialized records and mastery engine.
+
+### Dual evidence model
+
+```text
+Verified randomized / supervised knowledge evidence
+                         +
+Essays · laboratories · research · projects · oral defense
+capstones · thesis work · revision · portfolios · evaluator review
+                         ↓
+              Complete High School evidence
+```
+
+A selected-response score does not erase or replace authentic performance evidence.
+
+### Learner and Mentor boundary
+
+Adapter-aware assessments publish a sanitized learner-scoped summary under:
+
+```text
+khaemenes_high_learning_ledger_v1
+khaemenes_high_mentor_context_v1
+```
+
+Archaemenes may use the course, verified score, mastery state, and broad review-skill names to help a student study. The shared context never contains assessment question text, displayed choices, the learner's selected answers, or answer keys. Course engines remain authoritative for grades, credit, mastery, progression, and certificates.
+
+### World Languages federation
+
+The High School academic pathway retains its World Languages requirement, but this repository currently contains **no verifiable canonical language-course route or federation metadata**. The learning registry therefore records the requirement as unresolved rather than inventing a URL. A future federation repair should connect the Academy/Linguistics canonical route while preserving the two-year required pathway and optional continuation.
+
+### Regression protection
+
+```text
+tools/validate-high-school-learning-architecture.mjs
+.github/workflows/high-school-learning-architecture-regression.yml
+```
+
+The regression gate checks shared adapter coverage, Monte Carlo persistence and retakes, 80% mastery, learner scoping, English and Social Studies integration, specialized Math/Science/English 9 authorities, the supervised Science evidence boundary, the one-Mentor authority model, and the sanitized evidence contract.
+
+---
+
 # Professional Resources
 
 The Academy integrates with the broader Verve N Veda ecosystem including:
