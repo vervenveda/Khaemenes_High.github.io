@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "course": "KH-SCI-IIS9",
   "exam_id": "comprehensive-final-exam",
-  "coverage": "Units 00\u201312",
+  "coverage": "Units 00–12",
   "objective_questions": 104,
   "questions_per_unit": 8,
   "constructed_responses": 6,
@@ -12,10 +12,15 @@
   "objective_mastery": "84/104",
   "recommended_unit_diagnostic": "6/8",
   "recommended_overall_mastery": "160/200",
-  "answer_distribution": {
+  "delivery": "public_practice",
+  "record_authority": "formative_practice_only",
+  "official_final_boundary": "Official final mastery is separately supervised, authenticated, and protected from the public learner repository.",
+  "answer_position_policy": "randomized_per_generated_form",
+  "answer_distribution_target": {
     "A": 26,
     "B": 26,
     "C": 26,
     "D": 26
-  }
+  },
+  "answer_distribution_note": "The Monte Carlo engine independently randomizes option order for each selected question. Exact A/B/C/D counts therefore vary by generated form; the target is not a fixed answer-position pattern."
 }

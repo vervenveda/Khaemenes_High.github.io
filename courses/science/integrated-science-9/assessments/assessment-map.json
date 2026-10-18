@@ -11,7 +11,9 @@
       "objective_questions": 60,
       "constructed_responses": 4,
       "objective_passing_score": "48/60",
-      "recommended_overall_mastery": "80/100"
+      "recommended_overall_mastery": "80/100",
+      "delivery": "public_formative_benchmark",
+      "record_authority": "formative_practice_only"
     },
     {
       "id": "units-05-07-cumulative",
@@ -24,7 +26,9 @@
       "questions_per_unit": 20,
       "constructed_responses": 4,
       "objective_passing_score": "48/60",
-      "recommended_overall_mastery": "80/100"
+      "recommended_overall_mastery": "80/100",
+      "delivery": "public_formative_benchmark",
+      "record_authority": "formative_practice_only"
     },
     {
       "id": "units-08-09-cumulative",
@@ -37,13 +41,15 @@
       "questions_per_unit": 30,
       "constructed_responses": 4,
       "objective_passing_score": "48/60",
-      "recommended_overall_mastery": "80/100"
+      "recommended_overall_mastery": "80/100",
+      "delivery": "public_formative_benchmark",
+      "record_authority": "formative_practice_only"
     },
     {
       "id": "comprehensive-final-exam",
-      "title": "Comprehensive Final Examination — Units 00–12",
+      "title": "Comprehensive Final Practice Assessment — Units 00–12",
       "path": "final-exam/",
-      "status": "open",
+      "status": "practice",
       "after_unit": "u12",
       "coverage_units": [
         "u00",
@@ -66,7 +72,10 @@
       "objective_passing_score": "84/104",
       "recommended_unit_diagnostic": "6/8",
       "recommended_overall_mastery": "160/200",
-      "total_points": 200
+      "total_points": 200,
+      "delivery": "public_practice",
+      "record_authority": "formative_practice_only",
+      "official_final_boundary": "Official final mastery remains separately supervised, authenticated, and protected."
     }
   ]
 }
