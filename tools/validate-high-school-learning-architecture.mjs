@@ -85,13 +85,13 @@ for(const file of walk(ROOT)){
     if(!html.includes(asset))coverage.missing.push(rel+" missing "+asset);
   }
   if(targetEnglish&&/data-quiz-form/.test(html)){
-    coverage.englishQuizBanks++;
     if(!html.includes("quiz-specific-bank.js"))coverage.missing.push(rel+" missing quiz-specific-bank.js");
+    if(/^courses\/language-arts\/english-(10|11|12)\/weeks\/week-\d{2}\/index\.html$/.test(rel))coverage.englishQuizBanks++;
   }
 }
 assert(coverage.english===154,"Expected 154 upper-English assessment surfaces; found "+coverage.english);
 assert(coverage.social===3,"Expected 3 Social Studies adapter portals; found "+coverage.social);
-assert(coverage.englishQuizBanks===108,"Expected 108 upper-English weekly quiz bank surfaces; found "+coverage.englishQuizBanks);
+assert(coverage.englishQuizBanks===108,"Expected 108 canonical upper-English weekly quiz bank surfaces; found "+coverage.englishQuizBanks);
 assert(!coverage.missing.length,"High School adapter coverage gaps:\n"+coverage.missing.slice(0,30).join("\n"));
 assert(!coverage.duplicates.length,"Duplicate High School adapter markers:\n"+coverage.duplicates.slice(0,30).join("\n"));
 
