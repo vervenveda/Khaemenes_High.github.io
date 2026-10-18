@@ -1,0 +1,46 @@
+name: High School Formative Evidence Rollout
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/shared/high-school-learning-context-v1.js'
+      - 'courses/shared/high-school-formative-evidence-v1.js'
+      - 'scripts/inject-high-school-formative-evidence.mjs'
+      - '.github/workflows/high-school-formative-evidence-rollout.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: high-school-formative-evidence-rollout
+  cancel-in-progress: false
+
+jobs:
+  rollout:
+    if: "!contains(github.event.head_commit.message, '[skip high-formative-rollout]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Inject High School formative evidence bridge
+        run: node scripts/inject-high-school-formative-evidence.mjs
+      - name: Commit rollout
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "Every targeted High School lesson surface already includes the formative evidence bridge."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html' '**/*.html'
+          git commit -m "chore(high): roll out formative lesson evidence [skip high-formative-rollout]"
+          git pull --rebase origin main
+          git push origin HEAD:main
