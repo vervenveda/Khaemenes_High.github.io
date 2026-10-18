@@ -1648,54 +1648,304 @@
       },
       "checks": [
         {
-          "prompt": "Why does a wider stance often feel more stable?",
+          "prompt": "Which combination supplies the body with balance information?",
           "options": [
-            "It creates a larger base of support",
-            "It eliminates the need for coordination",
-            "It guarantees no fall risk"
-          ],
-          "correct": 0,
-          "rationale": "Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute."
-        },
-        {
-          "prompt": "What is a safe way to progress balance?",
-          "options": [
-            "Add a small challenge while maintaining stable support nearby",
-            "Close eyes immediately on an unstable surface",
-            "Remove all support despite losing control"
-          ],
-          "correct": 0,
-          "rationale": "Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute."
-        },
-        {
-          "prompt": "Which body systems contribute to balance?",
-          "options": [
-            "Vision, vestibular input and body-position sense",
-            "Only arm strength",
+            "Only leg strength",
+            "Vision, inner-ear signals, and body-position sense",
             "Only breathing rate"
           ],
-          "correct": 0,
-          "rationale": "Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute."
+          "correct": 1,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Vision, inner-ear signals, and body-position sense."
         },
         {
-          "prompt": "A learner uses a chair for balance. How should learning be assessed?",
+          "prompt": "What is a base of support?",
           "options": [
-            "By control, explanation and safe choices",
-            "As an automatic failure",
-            "By comparison with an unsupported classmate"
+            "The distance walked in a session",
+            "The maximum height someone can jump",
+            "The contact area and arrangement supporting the body"
           ],
-          "correct": 0,
-          "rationale": "Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute."
+          "correct": 2,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. The contact area and arrangement supporting the body."
         },
         {
-          "prompt": "Which observation is most useful?",
+          "prompt": "Which stance generally provides a wider base of support?",
           "options": [
-            "The stance, support used and quality of control",
-            "Only the longest time",
-            "The student's height"
+            "Feet comfortably apart",
+            "Standing on one foot",
+            "Feet in a tight line"
           ],
           "correct": 0,
-          "rationale": "Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute."
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Feet comfortably apart."
+        },
+        {
+          "prompt": "A student wobbles during a balance activity. What is the best first adjustment?",
+          "options": [
+            "Close the eyes to increase difficulty",
+            "Use stable support and simplify the task",
+            "Move onto an unstable object"
+          ],
+          "correct": 1,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Use stable support and simplify the task."
+        },
+        {
+          "prompt": "Why might closing the eyes change balance difficulty?",
+          "options": [
+            "It strengthens every leg muscle instantly",
+            "It removes the effect of gravity",
+            "It removes a source of visual orientation information"
+          ],
+          "correct": 2,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. It removes a source of visual orientation information."
+        },
+        {
+          "prompt": "Which is a valid way to learn balance without standing?",
+          "options": [
+            "Analyze a supported movement sequence and explain control",
+            "Force an unsupported standing attempt",
+            "Assume observation never counts as learning"
+          ],
+          "correct": 0,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Analyze a supported movement sequence and explain control."
+        },
+        {
+          "prompt": "What does center of mass describe in basic balance analysis?",
+          "options": [
+            "The position of the largest muscle",
+            "A point representing how body mass is distributed",
+            "The number of steps taken"
+          ],
+          "correct": 1,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. A point representing how body mass is distributed."
+        },
+        {
+          "prompt": "Why can a slow reach challenge balance?",
+          "options": [
+            "It prevents all loss of control",
+            "It guarantees improved flexibility",
+            "It changes body position relative to the support area"
+          ],
+          "correct": 2,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. It changes body position relative to the support area."
+        },
+        {
+          "prompt": "Which environmental factor matters most for a supported balance practice?",
+          "options": [
+            "A stable, clear surface and dependable support",
+            "The loudest available music",
+            "The brightest available clothing color"
+          ],
+          "correct": 0,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. A stable, clear surface and dependable support."
+        },
+        {
+          "prompt": "What is a reasonable sign to stop a balance activity?",
+          "options": [
+            "Choosing a smaller movement",
+            "Dizziness or unusual discomfort",
+            "Needing to use a chair for support"
+          ],
+          "correct": 1,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Dizziness or unusual discomfort."
+        },
+        {
+          "prompt": "What does proprioception contribute?",
+          "options": [
+            "A guarantee of perfect posture",
+            "A direct measurement of blood oxygen",
+            "Information about the position and movement of body parts"
+          ],
+          "correct": 2,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Information about the position and movement of body parts."
+        },
+        {
+          "prompt": "Which statement about balance is most accurate?",
+          "options": [
+            "Balance strategies vary with task, person, and environment",
+            "The hardest variation is always best",
+            "Everyone must balance for identical durations"
+          ],
+          "correct": 0,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Balance strategies vary with task, person, and environment."
+        },
+        {
+          "prompt": "What is a safe progression from a wide stance?",
+          "options": [
+            "Remove support and close the eyes simultaneously",
+            "Narrow the stance slightly with stable support nearby",
+            "Stand on a moving chair"
+          ],
+          "correct": 1,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Narrow the stance slightly with stable support nearby."
+        },
+        {
+          "prompt": "A student can hold a supported stance but not an unsupported stance. What should the student do?",
+          "options": [
+            "Use a hazardous surface to compensate",
+            "Record a failure regardless of reasoning",
+            "Continue with a controlled supported option"
+          ],
+          "correct": 2,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Continue with a controlled supported option."
+        },
+        {
+          "prompt": "Why should balance practice include a stopping plan?",
+          "options": [
+            "Unexpected symptoms or instability may require an immediate adjustment",
+            "A stopping plan eliminates the need to observe surroundings",
+            "A stopping plan makes exercise ineffective"
+          ],
+          "correct": 0,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Unexpected symptoms or instability may require an immediate adjustment."
+        },
+        {
+          "prompt": "Which record best demonstrates thoughtful balance learning?",
+          "options": [
+            "Only the longest time achieved",
+            "Stance, support used, observed control, and an explanation",
+            "Only comparison with classmates"
+          ],
+          "correct": 1,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Stance, support used, observed control, and an explanation."
+        },
+        {
+          "prompt": "How can a learner compare two balance conditions fairly?",
+          "options": [
+            "Assume the harder condition is always better",
+            "Change surface, vision, and stance all at once",
+            "Change one condition at a time and observe the difference"
+          ],
+          "correct": 2,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Change one condition at a time and observe the difference."
+        },
+        {
+          "prompt": "What is a weight shift?",
+          "options": [
+            "Moving body weight gradually between support points",
+            "A mandatory jumping exercise",
+            "A measurement of body composition"
+          ],
+          "correct": 0,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Moving body weight gradually between support points."
+        },
+        {
+          "prompt": "Why are small controlled weight shifts useful for learning?",
+          "options": [
+            "They guarantee that no fall is possible",
+            "They allow observation of changing support and control",
+            "They require specialized gym equipment"
+          ],
+          "correct": 1,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. They allow observation of changing support and control."
+        },
+        {
+          "prompt": "Which adaptation supports inclusive participation?",
+          "options": [
+            "Requiring a private medical explanation",
+            "Excluding anyone who needs support",
+            "A stable seated or supported alternative targeting the same concept"
+          ],
+          "correct": 2,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. A stable seated or supported alternative targeting the same concept."
+        },
+        {
+          "prompt": "What does the vestibular system help detect?",
+          "options": [
+            "Head motion and orientation relevant to balance",
+            "The number of calories consumed",
+            "Exact muscle strength in kilograms"
+          ],
+          "correct": 0,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Head motion and orientation relevant to balance."
+        },
+        {
+          "prompt": "A student is asked to balance on an uneven outdoor surface. What is a sound choice?",
+          "options": [
+            "Proceed regardless of hazards",
+            "Select a safer stable surface or analyze the scenario instead",
+            "Use a smaller support without checking the surface"
+          ],
+          "correct": 1,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Select a safer stable surface or analyze the scenario instead."
+        },
+        {
+          "prompt": "Why is duration alone a weak balance assessment?",
+          "options": [
+            "It proves the same skill in every environment",
+            "It is the only scientific measure of learning",
+            "It omits technique, adaptations, safety, and reasoning"
+          ],
+          "correct": 2,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. It omits technique, adaptations, safety, and reasoning."
+        },
+        {
+          "prompt": "What makes a balance activity an experiment?",
+          "options": [
+            "A specific question, controlled change, observation, and interpretation",
+            "An unrecorded guess about performance",
+            "A contest for the highest score"
+          ],
+          "correct": 0,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. A specific question, controlled change, observation, and interpretation."
+        },
+        {
+          "prompt": "What is the best interpretation when a narrow stance feels harder?",
+          "options": [
+            "The learner has permanently lost balance ability",
+            "A smaller support area can demand greater control",
+            "The activity must be continued without support"
+          ],
+          "correct": 1,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. A smaller support area can demand greater control."
+        },
+        {
+          "prompt": "Which statement describes a useful balance goal?",
+          "options": [
+            "Never take a rest during practice",
+            "Stand unsupported longer than every peer",
+            "Explain how support and stance affect control using a safe demonstration or analysis"
+          ],
+          "correct": 2,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Explain how support and stance affect control using a safe demonstration or analysis."
+        },
+        {
+          "prompt": "What is a misconception about adaptations?",
+          "options": [
+            "Using support means a learner cannot demonstrate understanding",
+            "Adaptations can make an activity accessible",
+            "Support can help isolate a learning goal"
+          ],
+          "correct": 0,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Using support means a learner cannot demonstrate understanding."
+        },
+        {
+          "prompt": "What should be done if an exercise demonstration is confusing?",
+          "options": [
+            "Guess and perform the hardest variation",
+            "Consult the written technique cues and choose an observation pathway until clarified",
+            "Ignore safety cues"
+          ],
+          "correct": 1,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Consult the written technique cues and choose an observation pathway until clarified."
+        },
+        {
+          "prompt": "Which choice best protects personal autonomy?",
+          "options": [
+            "Treat assistance as unacceptable",
+            "Match the strongest classmate's activity",
+            "Select an appropriate challenge based on control and circumstances"
+          ],
+          "correct": 2,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. Select an appropriate challenge based on control and circumstances."
+        },
+        {
+          "prompt": "Why might a wide stance be useful when first practicing a reach?",
+          "options": [
+            "It usually gives a more forgiving support area while learning control",
+            "It automatically improves cardiovascular endurance",
+            "It makes gravity disappear"
+          ],
+          "correct": 0,
+          "rationale": "Balance learning depends on sensory information, base of support, controlled movement, environmental safety, and appropriate adaptations. It usually gives a more forgiving support area while learning control."
         }
       ],
       "focusSkill": "Identify a stable support and a safer progression.",
@@ -1703,7 +1953,8 @@
       "conceptExplanation": "Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute.",
       "biomechanicsAndTechnique": "Start with two-foot support near a stable surface. Narrowing the stance or adding a slow reach can increase difficulty, but only when control is maintained.",
       "workedExample": "A learner finds single-leg standing unstable. They first use fingertip support and a wide stance, then compare their control with a narrower stance without chasing a longer time.",
-      "applicationTask": "Design three balance stations progressing from wide support to an optional supported reach, with a seated observation pathway."
+      "applicationTask": "Design three balance stations progressing from wide support to an optional supported reach, with a seated observation pathway.",
+      "assessmentBankVersion": "grade9-week05-original-reviewed-draft-v1"
     },
     {
       "week": 6,
