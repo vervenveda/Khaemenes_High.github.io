@@ -6,7 +6,7 @@
   <meta content="#07131d" name="theme-color"/>
   <meta content="dark light" name="color-scheme"/>
   <title>
-   Comprehensive Final Examination &middot; Khaemenes Science 9
+   Comprehensive Final Practice Assessment &middot; Khaemenes Science 9
   </title><script src="../../../../shared/course-entry-contract.js?v=20261018"></script><script src="../../../../shared/learner-scope-v1.js?v=20261018" data-learner-scope="integrated-science-9"></script><script src="../../../../shared/monte-carlo-assessment-v1.js?v=20261018"></script><script src="final-question-bank.js?v=20261018"></script>
   <script>
    document.addEventListener("DOMContentLoaded",()=>{const k="khaemenes_theme",b=document.querySelector("#themeToggle");function set(t){t=["dark","light"].includes(t)?t:"dark";document.documentElement.dataset.theme=t;localStorage.setItem(k,t);if(b)b.textContent=t==="dark"?"☼":"◐"}set(localStorage.getItem(k)||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));if(b)b.onclick=()=>set(document.documentElement.dataset.theme==="dark"?"light":"dark")});
@@ -14,12 +14,13 @@ const KEY="khaemenes_science9_final_exam_v1",PASS=84,MC_KEY=KEY+"::mc::objective
 let S;try{S=JSON.parse(localStorage.getItem(KEY))||{}}catch{S={}}
 if(S.formId!==FINAL_SESSION.id){S.formId=FINAL_SESSION.id;S.answers=Array(Q.length).fill(null);S.current=0;localStorage.setItem(KEY,JSON.stringify(S));}else{S.answers=Array.isArray(S.answers)&&S.answers.length===Q.length?S.answers:Array(Q.length).fill(null);S.current=Number.isInteger(S.current)?Math.max(0,Math.min(Q.length-1,S.current)):0;}
 S.objective={score:0,total:104,passed:false,attempts:0,unitScores:{},...(S.objective||{})};
+let snap=localStorage.getItem(KEY);
 const $=(x,p=document)=>p.querySelector(x),esc=v=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
-function save(){S.updatedAt=new Date().toISOString();localStorage.setItem(KEY,JSON.stringify(S))}
+function save(){S.updatedAt=new Date().toISOString();localStorage.setItem(KEY,JSON.stringify(S));snap=localStorage.getItem(KEY)}
 function dots(){$("#questionDots").innerHTML=Q.map((_,i)=>`<button class="dot ${i===S.current?"current":""} ${S.answers[i]!==null?"answered":""}" data-i="${i}">${i+1}</button>`).join("");$("#questionDots").querySelectorAll("button").forEach(b=>b.onclick=()=>{S.current=+b.dataset.i;save();render()});$("#answeredCount").textContent=`${S.answers.filter(v=>v!==null).length} of ${Q.length} answered`}
 function render(){const q=Q[S.current];$("#questionUnit").textContent=q.unit+" · "+q.domain;$("#questionNumber").textContent=`Question ${S.current+1} of ${Q.length}`;$("#questionPrompt").textContent=q.prompt;$("#unitJump").value=q.unit;$("#options").innerHTML=q.options.map((o,i)=>`<label class="option"><input type="radio" name="answer" value="${i}" ${S.answers[S.current]===i?"checked":""}><span>${esc(o)}</span></label>`).join("");$("#options").querySelectorAll("input").forEach(x=>x.onchange=e=>{S.answers[S.current]=+e.target.value;save();dots();$("#submitButton").disabled=S.answers.some(v=>v===null)});$("#previousButton").disabled=S.current===0;$("#nextButton").disabled=S.current===Q.length-1;dots();$("#submitButton").disabled=S.answers.some(v=>v===null)}
 function start(){$("#intro").hidden=true;$("#results").hidden=true;$("#assessment").hidden=false;render();scrollTo(0,0)}
-function submit(){let score=0,u={};Q.forEach((q,i)=>{u[q.unit]||={correct:0,total:0};u[q.unit].total++;if(S.answers[i]===q.answer){score++;u[q.unit].correct++}});S.objective={score,total:Q.length,passed:score>=PASS,attempts:(S.objective.attempts||0)+1,submittedAt:new Date().toISOString(),unitScores:u,formId:FINAL_SESSION.id,bankSize:FINAL_BANK.length};MC.complete(MC_KEY,{score,total:Q.length,percent:Math.round(score/Q.length*100),passed:score>=PASS});save();$("#intro").hidden=true;$("#assessment").hidden=true;$("#results").hidden=false;$("#score").textContent=score+" / "+Q.length;$("#resultTitle").textContent=score>=PASS?"Objective mastery threshold reached":"Objective mastery threshold not yet reached";$("#resultMessage").textContent=score>=PASS?"Complete the six educator-scored responses for the final 200-point examination result.":"Review explanations and retake. At least 84 of 104 is required.";$("#unitResults").innerHTML=Object.entries(u).map(([n,d])=>`<div class="unit-result"><strong>${d.correct} / ${d.total}</strong><span>${n} · ${d.correct>=6?"Diagnostic met":"Review recommended"}</span></div>`).join("");$("#reviewList").innerHTML=Q.map((q,i)=>`<article class="review-item ${S.answers[i]===q.answer?"correct":"incorrect"}"><strong>${i+1}. [${q.unit}] ${esc(q.prompt)}</strong><p>Your answer: ${esc(q.options[S.answers[i]])}</p><p>Correct answer: ${esc(q.options[q.answer])}</p><p>${esc(q.explanation)}</p></article>`).join("");scrollTo(0,0)}
+function submit(){if(localStorage.getItem(KEY)!==snap){alert("This learner record changed in another tab. Reload before submitting.");return}let score=0,u={};Q.forEach((q,i)=>{u[q.unit]||={correct:0,total:0};u[q.unit].total++;if(S.answers[i]===q.answer){score++;u[q.unit].correct++}});S.objective={score,total:Q.length,passed:score>=PASS,attempts:(S.objective.attempts||0)+1,submittedAt:new Date().toISOString(),unitScores:u,formId:FINAL_SESSION.id,bankSize:FINAL_BANK.length};MC.complete(MC_KEY,{score,total:Q.length,percent:Math.round(score/Q.length*100),passed:score>=PASS});save();$("#intro").hidden=true;$("#assessment").hidden=true;$("#results").hidden=false;$("#score").textContent=score+" / "+Q.length;$("#resultTitle").textContent=score>=PASS?"Practice objective target reached":"Practice objective target not yet reached";$("#resultMessage").textContent=score>=PASS?"Complete the six educator-reviewed practice responses for a formative portfolio estimate. Official final mastery remains separately supervised and authenticated.":"Review explanations and retake. A score of 84/104 meets the public practice objective target.";$("#unitResults").innerHTML=Object.entries(u).map(([n,d])=>`<div class="unit-result"><strong>${d.correct} / ${d.total}</strong><span>${n} · ${d.correct>=6?"Diagnostic met":"Review recommended"}</span></div>`).join("");$("#reviewList").innerHTML=Q.map((q,i)=>`<article class="review-item ${S.answers[i]===q.answer?"correct":"incorrect"}"><strong>${i+1}. [${q.unit}] ${esc(q.prompt)}</strong><p>Your answer: ${esc(q.options[S.answers[i]])}</p><p>Correct answer: ${esc(q.options[q.answer])}</p><p>${esc(q.explanation)}</p></article>`).join("");scrollTo(0,0)}
 function exportRecord(){const blob=new Blob([JSON.stringify({schema:"khaemenes-science9-final-objective-v1",course:"KH-SCI-IIS9",exportedAt:new Date().toISOString(),state:S},null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="KH-SCI-IIS9-final-objective-record.json";document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url)}
 document.addEventListener("DOMContentLoaded",()=>{$("#startButton").onclick=start;$("#resumeButton").hidden=!S.answers.some(v=>v!==null);$("#resumeButton").onclick=start;$("#previousButton").onclick=()=>{if(S.current>0){S.current--;save();render()}};$("#nextButton").onclick=()=>{if(S.current<Q.length-1){S.current++;save();render()}};$("#unitJump").onchange=e=>{const i=Q.findIndex(q=>q.unit===e.target.value);if(i>=0){S.current=i;save();render()}};$("#submitButton").onclick=submit;$("#retakeButton").onclick=()=>{MC.newAttempt(MC_KEY);S.answers=[];S.current=0;save();location.reload()};$("#printResults").onclick=()=>print();$("#exportRecord").onclick=exportRecord;if(S.objective.submittedAt){$("#priorResult").hidden=false;$("#priorResult").textContent=`Previous objective result: ${S.objective.score} / 104 · ${S.objective.passed?"Passed":"Not yet passed"}`}});
   </script>
@@ -727,7 +728,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
        INTEGRATED SCIENCE 9
       </strong>
       <small>
-       Comprehensive Final Examination
+       Comprehensive Final Practice Assessment
       </small>
      </span>
     </a>
@@ -771,7 +772,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
      &rsaquo;
     </span>
     <span>
-     Interactive Final Exam
+     Interactive Final Practice
     </span>
    </div>
   </nav>
@@ -779,10 +780,10 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
    <section class="exam-hero" id="intro">
     <div class="exam-shell">
      <p class="eyebrow">
-      KH-SCI-IIS9 &middot; Units 00&ndash;12 &middot; Course Completion
+      KH-SCI-IIS9 &middot; Units 00&ndash;12 &middot; Public Practice &amp; Portfolio Preparation
      </p>
      <h1>
-      Comprehensive Final Examination
+      Comprehensive Final Practice Assessment
      </h1>
      <p class="exam-lead">
       Scientific habits, inquiry, life science, ecology, chemistry, physics, Earth systems, astronomy, information, and sustainable engineering.
@@ -855,7 +856,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
          Complete all written responses
         </strong>
         <p>
-         Six constructed responses are scored separately using the examination rubric.
+         Six public practice responses may be educator-scored separately for formative feedback; they are not the protected official final prompts.
         </p>
        </div>
        <div class="brief-item">
@@ -886,27 +887,27 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
      </article>
      <div class="notice-strong" style="margin-top:1rem">
       <strong>
-       Mastery requirements
+       Practice mastery targets
       </strong>
       <p>
-       Objective threshold: 84/104. Recommended diagnostic: 6/8 for each unit. All six constructed responses must be scored. Recommended overall mastery: 160/200. Corrections and retakes are permitted.
+       Public practice target: 84/104 objective and a recommended 6/8 diagnostic per unit. Six practice responses may be reviewed for a formative 200-point portfolio estimate. Official final mastery remains separately supervised and authenticated. Corrections and randomized retakes are encouraged.
       </p>
      </div>
      <div class="exam-actions">
       <button class="btn primary" id="startButton" type="button">
-       Begin Objective Exam
+       Begin Objective Practice
       </button>
       <button class="btn" id="resumeButton" type="button">
-       Resume Saved Exam
+       Resume Saved Practice
       </button>
       <a class="btn" href="printable-exam.html">
-       Printable Edition
+       Printable Practice
       </a>
       <a class="btn" href="formula-reference.html">
        Formula Reference
       </a>
       <a class="btn" href="student-record.html">
-       Final Record
+       Practice Record
       </a>
       <a class="btn" href="STUDENT_STUDY_GUIDE.md">
        Study Guide
@@ -920,10 +921,10 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
     <div class="exam-shell app-layout">
      <div class="section-head assessment-heading">
       <p class="eyebrow">
-       Comprehensive objective examination
+       Comprehensive objective practice
       </p>
       <h2>
-       Complete the generated 104-question objective form
+       Complete the generated 104-question practice form
       </h2>
       <p>
        Work methodically across every science domain. Monitor your answered-question count, move between units as needed, and submit only after reviewing the complete examination.
@@ -951,7 +952,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
      </article>
      <aside class="card app-side">
       <h3>
-       Examination Navigator
+       Practice Navigator
       </h3>
       <p class="eyebrow">
        Question navigation
@@ -1047,7 +1048,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
         Export Objective Record
        </button>
        <a class="btn" href="student-record.html">
-        Complete Final Record
+        Complete Practice Record
        </a>
       </div>
      </article>
@@ -1062,10 +1063,10 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
        Constructed section
       </p>
       <h2>
-       Six integrated responses complete the 200-point exam
+       Six integrated practice responses complete the 200-point formative portfolio
       </h2>
       <p>
-       Each response is scored from 0&ndash;16 using the educator rubric.
+       Each public practice response may be educator-scored from 0&ndash;16 for formative feedback. Official final scoring remains separately supervised and protected.
       </p>
      </div>
      <div class="constructed-grid">
@@ -1145,7 +1146,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
      Khaemenes Academy&trade; &middot; International Integrated Science 9
     </span>
     <span>
-     Comprehensive Final Examination
+     Comprehensive Final Practice Assessment
     </span>
    </div>
   </footer>
