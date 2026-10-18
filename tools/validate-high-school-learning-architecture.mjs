@@ -30,7 +30,7 @@ for(const id of ["english-9","english-10","english-11","english-12","pre-algebra
 }
 
 // Monte Carlo engine + adapter behavior in a sandbox.
-const sandbox={window:null,globalThis:null,localStorage:{_m:new Map(),getItem(k){return this._m.has(k)?this._m.get(k):null},setItem(k,v){this._m.set(k,String(v))},removeItem(k){this._m.delete(k)}},crypto:globalThis.crypto,CustomEvent:class{constructor(type,init){this.type=type;this.detail=init?.detail}},dispatchEvent(){},document:{readyState:"complete",addEventListener(){}}};
+const sandbox={window:null,globalThis:null,localStorage:{_m:new Map(),getItem(k){return this._m.has(k)?this._m.get(k):null},setItem(k,v){this._m.set(k,String(v))},removeItem(k){this._m.delete(k)}},crypto:globalThis.crypto,CustomEvent:class{constructor(type,init){this.type=type;this.detail=init?.detail}},dispatchEvent(){},addEventListener(){},setTimeout,clearTimeout,document:{readyState:"complete",addEventListener(){},querySelector(){return null}}};
 sandbox.window=sandbox;sandbox.globalThis=sandbox;vm.createContext(sandbox);
 vm.runInContext(read("courses/shared/monte-carlo-assessment-v1.js"),sandbox);
 vm.runInContext(read("courses/shared/high-school-learning-context-v1.js"),sandbox);
