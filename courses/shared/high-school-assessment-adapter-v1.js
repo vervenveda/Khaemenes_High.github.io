@@ -49,11 +49,23 @@ function open(config){
     explanation:q.explanation,explain:q.explanation,
     skill:q.domain,domain:q.domain,source:q.source,difficulty:q.difficulty,week:q.week,unit:q.unit
   }));
-  return Object.freeze({version:VERSION,sessionId:session.id,storageKey:String(config.storageKey),kind:String(config.kind||"assessment"),count:materialized.length,bankSize:bank.length,questionIds:[...session.questionIds],questions:materialized});
+  return Object.freeze({version:VERSION,sessionId:session.id,storageKey:String(config.storageKey),courseId:String(config.courseId||"high-school"),kind:String(config.kind||"assessment"),count:materialized.length,bankSize:bank.length,questionIds:[...session.questionIds],questions:materialized});
 }
 function complete(opened,summary){
   const mc=global.KhaeMonteCarloAssessment;if(!mc||!opened)return null;
-  return mc.complete(opened.storageKey,Object.assign({adapterVersion:VERSION,sessionId:opened.sessionId,questionCount:opened.count,bankSize:opened.bankSize,masteryThreshold:PASS},summary||{}));
+  const safeSummary=Object.assign({adapterVersion:VERSION,sessionId:opened.sessionId,questionCount:opened.count,bankSize:opened.bankSize,masteryThreshold:PASS},summary||{});
+  const record=mc.complete(opened.storageKey,safeSummary);
+  try{
+    global.KhaemenesHighLearningContext?.recordAssessment?.({
+      courseId:opened.courseId,
+      kind:opened.kind,
+      score:Number(safeSummary.score),
+      mastered:safeSummary.mastered===true,
+      reviewSkills:Array.isArray(safeSummary.reviewSkills)?safeSummary.reviewSkills:[],
+      completedAt:new Date().toISOString()
+    });
+  }catch{}
+  return record;
 }
 function newAttempt(openedOrKey){
   const mc=global.KhaeMonteCarloAssessment;if(!mc)return false;
