@@ -140,6 +140,17 @@
       "receivesLearnerSelections": false,
       "receivesAnswerKeys": false
     },
-    "languageFederation": "Academic requirement acknowledged; canonical route unresolved in this repository and must not be guessed."
+    "languageFederation": "Academic requirement acknowledged; canonical route unresolved in this repository and must not be guessed.",
+    "formativeLessonEvidence": {
+      "storage": "khaemenes_high_learning_ledger_v1",
+      "bridge": "courses/shared/high-school-formative-evidence-v1.js",
+      "oneSavePerPagePerDay": true,
+      "awardsMastery": false,
+      "changesGrades": false,
+      "unlocksCurriculum": false,
+      "changesPlacement": false,
+      "replacesPerformanceEvidence": false,
+      "mentorUse": "sanitized summary only"
+    }
   }
 }
