@@ -1,7 +1,7 @@
 "use strict";
-(()=>{const UNIT="01",FIELD="assessment",FORM_COUNT=20,PASSING=Math.ceil(FORM_COUNT*.80),SCOPE=window.KhaemenesScienceU01Scope,KEY=SCOPE?.key?.()||"kh_sci9_u01_unselected_v1",MC=window.KhaeMonteCarloAssessment,BANK=(window.KhaemenesScience9QuestionBanks||{})["unit-01"]||[],MC_KEY=KEY+"::mc::"+FIELD;
+(()=>{const UNIT="01",FIELD="assessment",FORM_COUNT=25,PASSING=Math.ceil(FORM_COUNT*.80),SCOPE=window.KhaemenesScienceU01Scope,KEY=SCOPE?.key?.()||"kh_sci9_u01_unselected_v1",MC=window.KhaeMonteCarloAssessment,BANK=(window.KhaemenesScience9QuestionBanks||{})["unit-01"]||[],MC_KEY=KEY+"::mc::"+FIELD;
 if(!MC||BANK.length<FORM_COUNT){console.error("Monte Carlo assessment unavailable",MC?.audit?.(BANK));return}
-const SESSION=MC.openSession(MC_KEY,BANK,{kind:FIELD,count:FORM_COUNT,sourceQuotas:{quiz:8,assessment:12}}),QUESTIONS=MC.materialize(BANK,SESSION),responses=MC.getResponses(MC_KEY);
+const SESSION=MC.openSession(MC_KEY,BANK,{kind:FIELD,count:FORM_COUNT,sourceQuotas:{quiz:10,assessment:15}}),QUESTIONS=MC.materialize(BANK,SESSION),responses=MC.getResponses(MC_KEY);
 let answers=QUESTIONS.map(q=>Number.isInteger(Number(responses[q.id]))?Number(responses[q.id]):null),current=0,activitySnapshot=localStorage.getItem(KEY);
 const $=(s,p=document)=>p.querySelector(s),esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch{return{}}}
