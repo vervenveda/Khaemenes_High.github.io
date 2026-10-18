@@ -8,6 +8,8 @@
   </title>
   <script defer="" src="../course-ui.js">
   </script>
+  <script defer src="../../../shared/course-entry-contract.js?v=20261018"></script>
+  <script defer src="../../../shared/learner-scope-v1.js?v=20261018" data-learner-scope="integrated-science-9"></script>
   <style>
    :root{
   --page:#f3f1eb;
@@ -104,6 +106,14 @@ h1,h2,h3{margin-top:0;color:var(--ink);font-family:var(--serif);font-weight:400}
 }
 
 .assessment-section{padding:78px 0}
+.record-section{padding:42px 0 14px;background:#fff;border-bottom:1px solid var(--line)}
+.record-head{max-width:900px;margin:0 auto 22px;text-align:center}
+.record-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.record-card{min-height:150px;padding:18px;border:1px solid var(--line);border-radius:7px;background:var(--paper-soft);text-align:center}
+.record-card strong{display:block;font:400 28px/1.1 var(--serif);color:var(--navy)}
+.record-card span{display:block;margin-top:8px;color:var(--muted);font-size:13px}
+.record-card small{display:block;margin-top:10px;color:#343b3f;line-height:1.45}
+.record-note{margin:16px auto 0;max-width:900px;color:var(--muted);font-size:13px;text-align:center}
 .assessment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .section-head{
   grid-column:1/-1;max-width:900px;margin:0 auto 28px;text-align:center;
@@ -144,6 +154,7 @@ h1,h2,h3{margin-top:0;color:var(--ink);font-family:var(--serif);font-weight:400}
 .footer{padding:28px 0;border-top:1px solid var(--line);color:#fff;background:var(--navy-deep)}
 .footer-inner{min-height:56px;display:flex;justify-content:space-between;align-items:center;gap:18px;font-size:13px}
 
+@media(max-width:900px){.record-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){
   body{font-size:17px}
   .brand-copy small{display:none}
@@ -152,6 +163,7 @@ h1,h2,h3{margin-top:0;color:var(--ink);font-family:var(--serif);font-weight:400}
   .footer-inner{flex-direction:column;justify-content:center}
 }
 @media(max-width:580px){
+  .record-grid{grid-template-columns:1fr}
   .wrap{width:min(calc(100% - 22px),var(--max))}
   .hero{padding:62px 0 54px}
   .hero h1{font-size:clamp(44px,14vw,64px)}
@@ -295,6 +307,22 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
      </div>
     </div>
    </section>
+<section class="record-section" aria-labelledby="record-title">
+    <div class="wrap">
+     <div class="record-head">
+      <p class="eyebrow">Learner assessment record</p>
+      <h2 id="record-title">Local objective-practice history</h2>
+      <p>These cards summarize the selected learner’s browser-local cumulative practice. They do not certify official supervised mastery.</p>
+     </div>
+     <div class="record-grid" id="assessmentRecordGrid">
+      <div class="record-card" data-record="u14"><strong>—</strong><span>Units 01–04</span><small>No local attempt yet.</small></div>
+      <div class="record-card" data-record="u57"><strong>—</strong><span>Units 05–07</span><small>No local attempt yet.</small></div>
+      <div class="record-card" data-record="u89"><strong>—</strong><span>Units 08–09</span><small>No local attempt yet.</small></div>
+      <div class="record-card" data-record="final"><strong>—</strong><span>Final Practice</span><small>No local attempt yet.</small></div>
+     </div>
+     <p class="record-note" id="assessmentRecordNote">Select an Academy learner to view learner-scoped assessment history.</p>
+    </div>
+   </section>
    <section class="assessment-section">
     <div class="wrap assessment-grid">
      <div class="section-head">
@@ -436,5 +464,38 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
     </span>
    </div>
   </footer>
+<script>
+(function(){
+ const defs=[
+  {slot:"u14",key:"khaemenes_science_units01_04_benchmark_v1",label:"Units 01–04",kind:"objective"},
+  {slot:"u57",key:"khaemenes_science_units05_07_benchmark_v1",label:"Units 05–07",kind:"objective"},
+  {slot:"u89",key:"khaemenes_science_units08_09_benchmark_v1",label:"Units 08–09",kind:"objective"},
+  {slot:"final",key:"khaemenes_science9_final_exam_v1",label:"Final Practice",kind:"practice"}
+ ];
+ const parse=v=>{try{return JSON.parse(v||"null")}catch{return null}};
+ function renderAssessmentRecord(){
+  const profile=window.KhaemenesCourseEntryContract?.readAcademyProfile?.()||null;
+  const note=document.getElementById("assessmentRecordNote");
+  if(note) note.textContent=profile?("Showing browser-local records for "+(profile.displayName||profile.learnerName||"the selected learner")+". Official mastery remains separately supervised and authenticated."):"Select an Academy learner to view learner-scoped assessment history.";
+  defs.forEach(def=>{
+   const card=document.querySelector('[data-record="'+def.slot+'"]'); if(!card)return;
+   const state=parse(localStorage.getItem(def.key))||{};
+   const history=Array.isArray(state.assessmentHistory)?state.assessmentHistory:[];
+   const latest=history.length?history[history.length-1]:null;
+   const objective=state.objective||{};
+   const total=latest?.total||objective.total||0;
+   const score=latest?.score??objective.score;
+   const percent=latest?.percent??(total&&Number.isFinite(Number(score))?Math.round(Number(score)/Number(total)*100):null);
+   const passed=latest?.passed??objective.passed??false;
+   const attempts=history.length||objective.attempts||0;
+   const strong=card.querySelector("strong"),small=card.querySelector("small");
+   if(percent===null||!attempts){strong.textContent="—";small.textContent="No local attempt yet.";return}
+   strong.textContent=percent+"%";
+   small.textContent=(passed?(def.kind==="practice"?"Practice target met":"Objective target met"):"Review recommended")+" · "+attempts+" attempt"+(attempts===1?"":"s");
+  });
+ }
+ document.addEventListener("DOMContentLoaded",renderAssessmentRecord);
+})();
+</script>
  </body>
 </html>
