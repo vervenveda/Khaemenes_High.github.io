@@ -166,6 +166,28 @@ High School now participates in the same Academy-wide mastery and evidence conti
 
 The shared High School contract uses an **80% mastery minimum**, learner-scoped records, persistent randomized assessment forms, fresh retake forms, best-score preservation, and sanitized Mentor evidence. It does **not** replace stronger course-specific assessment engines.
 
+### Course-wide formative lesson evidence
+
+High School lesson surfaces now publish learner-scoped formative evidence through:
+
+```text
+courses/shared/high-school-formative-evidence-v1.js
+courses/shared/high-school-learning-context-v1.js
+```
+
+The rollout covers **1,482 canonical instructional surfaces** with **0 skipped targets**:
+
+- **224 English**
+- **372 Mathematics**
+- **720 Science**
+- **166 Social Studies**
+
+Each surface offers a compact **Lesson Evidence** reflection card. A learner can record what they can now explain, what still needs review, and whether they need another example or Mentor support.
+
+This evidence is intentionally non-mastery. It cannot award mastery, change a score, unlock curriculum, alter placement, or replace essays, laboratories, projects, research, oral defense, capstones, thesis work, portfolios, or course-specific assessments.
+
+To reduce accidental duplicate evidence, the bridge accepts one saved reflection per learner/page/calendar day. The saved evidence remains local-first under the same sanitized High School learning ledger used by Archaemenes.
+
 ### Shared randomized adapter coverage
 
 The first standardized adapter rollout covers **157 active assessment surfaces**:
