@@ -71,7 +71,7 @@ function walk(dir,out=[]){
   }
   return out;
 }
-const coverage={english:0,social:0,missing:[],duplicates:[]};
+const coverage={english:0,social:0,englishQuizBanks:0,missing:[],duplicates:[]};
 for(const file of walk(ROOT)){
   const rel=path.relative(ROOT,file).split(path.sep).join("/"),html=fs.readFileSync(file,"utf8");
   const targetEnglish=/^courses\/language-arts\/english-(10|11|12)\//.test(rel)&&(/data-quiz-form/.test(html)||/data-assessment-form/.test(html));
@@ -84,17 +84,44 @@ for(const file of walk(ROOT)){
   for(const asset of ["monte-carlo-assessment-v1.js","high-school-learning-context-v1.js","high-school-assessment-adapter-v1.js"]){
     if(!html.includes(asset))coverage.missing.push(rel+" missing "+asset);
   }
+  if(targetEnglish&&/data-quiz-form/.test(html)){
+    coverage.englishQuizBanks++;
+    if(!html.includes("quiz-specific-bank.js"))coverage.missing.push(rel+" missing quiz-specific-bank.js");
+  }
 }
 assert(coverage.english===154,"Expected 154 upper-English assessment surfaces; found "+coverage.english);
 assert(coverage.social===3,"Expected 3 Social Studies adapter portals; found "+coverage.social);
+assert(coverage.englishQuizBanks===108,"Expected 108 upper-English weekly quiz bank surfaces; found "+coverage.englishQuizBanks);
 assert(!coverage.missing.length,"High School adapter coverage gaps:\n"+coverage.missing.slice(0,30).join("\n"));
 assert(!coverage.duplicates.length,"Duplicate High School adapter markers:\n"+coverage.duplicates.slice(0,30).join("\n"));
+
+// Upper-English supplemental week-specific banks.
+let supplementalQuestions=0;
+for(const grade of [10,11,12]){
+  const bankPath="courses/language-arts/english-"+grade+"/assets/quiz-specific-bank.json";
+  const jsBankPath="courses/language-arts/english-"+grade+"/assets/quiz-specific-bank.js";
+  assert(exists(bankPath),"Missing English "+grade+" supplemental JSON bank.");
+  assert(exists(jsBankPath),"Missing English "+grade+" executable supplemental bank.");
+  const bank=JSON.parse(read(bankPath));
+  assert(Array.isArray(bank.rows)&&bank.rows.length===36,"English "+grade+" supplemental bank must contain 36 week rows.");
+  for(let week=0;week<bank.rows.length;week++){
+    const rows=bank.rows[week];
+    assert(Array.isArray(rows)&&rows.length===2,"English "+grade+" Week "+String(week+1).padStart(2,"0")+" must have exactly two supplemental questions.");
+    for(const row of rows){
+      assert(Array.isArray(row)&&typeof row[0]==="string"&&Array.isArray(row[1])&&row[1].length===4&&typeof row[2]==="string"&&typeof row[3]==="string","Malformed English "+grade+" supplemental question.");
+      assert(new Set(row[1]).size===4,"English "+grade+" supplemental question has duplicate choices.");
+      supplementalQuestions++;
+    }
+  }
+  try{new Function(read(jsBankPath))}catch(e){throw new Error(jsBankPath+" syntax: "+e.message)}
+}
+assert(supplementalQuestions===216,"Expected 216 upper-English supplemental questions; found "+supplementalQuestions);
 
 // English 10–12 retain original gradebooks while using randomized sessions.
 for(const grade of [10,11,12]){
   const js=read("courses/language-arts/english-"+grade+"/assets/course.js");
   try{new Function(js)}catch(e){throw new Error("English "+grade+" course.js syntax: "+e.message)}
-  for(const token of ["KhaemenesHighAssessmentAdapter","KhaeMonteCarloAssessment","attemptId","questionIds","reviewSkills","record.best=Math.max"]){
+  for(const token of ["KhaemenesHighAssessmentAdapter","KhaeMonteCarloAssessment","KHAE_ENGLISH_SPECIFIC_QUIZ_BANK","candidateQuestions","supplementalRows","attemptId","questionIds","reviewSkills","record.best=Math.max"]){
     assert(js.includes(token),"English "+grade+" lost adapter/record contract token: "+token);
   }
   assert(/mastered:attemptScore>=80/.test(js),"English "+grade+" lost the 80% attempt mastery expression.");
@@ -169,6 +196,8 @@ for(const key of ["awardsMastery","changesGrades","changesPlacement","bypassesPr
 
 console.log("High School learning architecture regression: PASS");
 console.log("  upper-English adapter surfaces: "+coverage.english);
+console.log("  upper-English weekly Monte Carlo bank surfaces: "+coverage.englishQuizBanks);
+console.log("  supplemental week-specific questions validated: "+supplementalQuestions);
 console.log("  Social Studies adapter portals: "+coverage.social);
 console.log("  shared mastery threshold: 80%");
 console.log("  English 9: specialized randomized authority preserved");
