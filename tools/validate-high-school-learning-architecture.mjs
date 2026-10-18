@@ -94,9 +94,10 @@ assert(!coverage.duplicates.length,"Duplicate High School adapter markers:\n"+co
 for(const grade of [10,11,12]){
   const js=read("courses/language-arts/english-"+grade+"/assets/course.js");
   try{new Function(js)}catch(e){throw new Error("English "+grade+" course.js syntax: "+e.message)}
-  for(const token of ["KhaemenesHighAssessmentAdapter","KhaeMonteCarloAssessment","attemptId","questionIds","reviewSkills","score>=80","record.best=Math.max"]){
+  for(const token of ["KhaemenesHighAssessmentAdapter","KhaeMonteCarloAssessment","attemptId","questionIds","reviewSkills","record.best=Math.max"]){
     assert(js.includes(token),"English "+grade+" lost adapter/record contract token: "+token);
   }
+  assert(/mastered:attemptScore>=80/.test(js),"English "+grade+" lost the 80% attempt mastery expression.");
   assert(js.includes("projectScore"),"English "+grade+" lost separate project/performance evidence.");
 }
 
