@@ -303,6 +303,106 @@
           ],
           "correct": 1,
           "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+        },
+        {
+          "prompt": "A planned walk becomes unsuitable because of an air-quality alert. Which response best preserves the learning goal?",
+          "options": [
+            "Complete the original route despite the alert",
+            "Choose an indoor movement or observation alternative and explain why",
+            "Measure success only by distance"
+          ],
+          "correct": 1,
+          "rationale": "Changing the setting or activity while explaining the reason demonstrates independent safety judgment."
+        },
+        {
+          "prompt": "Why is a stable support important when learning a balance exercise?",
+          "options": [
+            "It can reduce the chance of losing control while practicing",
+            "It makes all balance activities equally difficult",
+            "It eliminates the need to observe symptoms"
+          ],
+          "correct": 0,
+          "rationale": "Appropriate support helps match the task to the learner's current balance and surroundings."
+        },
+        {
+          "prompt": "Which is the strongest evidence that a learner understands an adaptation?",
+          "options": [
+            "They select the most demanding variation",
+            "They copy another person's technique without explanation",
+            "They explain how the alternative maintains the learning purpose"
+          ],
+          "correct": 2,
+          "rationale": "Reasoned adaptation preserves the concept being learned without forcing an unsuitable performance."
+        },
+        {
+          "prompt": "A learner feels fine but the practice space has a loose rug. What should be addressed?",
+          "options": [
+            "Remove or avoid the trip hazard before beginning",
+            "Increase intensity to finish sooner",
+            "Ignore the rug because symptoms are absent"
+          ],
+          "correct": 0,
+          "rationale": "Environment checks complement personal comfort and technique checks."
+        },
+        {
+          "prompt": "Which statement about movement plans is scientifically defensible?",
+          "options": [
+            "One plan is best for every teenager",
+            "Plans should adapt to conditions, access and individual response",
+            "More discomfort always means more progress"
+          ],
+          "correct": 1,
+          "rationale": "Movement plans must account for changing conditions and individual needs."
+        },
+        {
+          "prompt": "What is the best interpretation of an observation-only movement assignment?",
+          "options": [
+            "It cannot demonstrate learning",
+            "It requires private medical disclosure",
+            "It can demonstrate technique analysis and safety reasoning"
+          ],
+          "correct": 2,
+          "rationale": "Observation and explanation can validly assess conceptual understanding."
+        },
+        {
+          "prompt": "Why should a student write down a stop cue before activity?",
+          "options": [
+            "To make a response plan before a problem occurs",
+            "To prove they will never need to stop",
+            "To compare symptoms with classmates"
+          ],
+          "correct": 0,
+          "rationale": "A clear stop cue makes a plan more actionable and less dependent on pressure in the moment."
+        },
+        {
+          "prompt": "Which detail belongs in an independent movement decision card?",
+          "options": [
+            "A ranking of peers",
+            "Goal, feasible option, adaptation and evidence of learning",
+            "A guarantee of injury prevention"
+          ],
+          "correct": 1,
+          "rationale": "A complete decision card documents purpose, feasibility, safe adjustment and evidence."
+        },
+        {
+          "prompt": "A student notices a new unusual symptom during practice. Which principle takes priority?",
+          "options": [
+            "Completing the assigned time",
+            "Keeping the same exercise variation",
+            "Stopping and seeking appropriate help"
+          ],
+          "correct": 2,
+          "rationale": "Unusual symptoms override numerical activity targets."
+        },
+        {
+          "prompt": "Why is an intense performance test a poor substitute for a Week 1 safety assessment?",
+          "options": [
+            "It measures only the student's willingness to compete",
+            "It may not show the student's ability to identify hazards and make decisions",
+            "It guarantees equal access for all learners"
+          ],
+          "correct": 1,
+          "rationale": "Week 1 focuses on safety reasoning and accessible decisions, not athletic comparison."
         }
       ],
       "focusSkill": "Identify a personal stop cue and an alternative that meets the learning target.",
@@ -319,7 +419,8 @@
           "type": "original-interactive"
         }
       ],
-      "weeklyQuizVersion": "khae-pe-g9-w1-weekly20-v1"
+      "weeklyQuizVersion": "khae-pe-g9-w1-weekly20-v1",
+      "assessmentBankVersion": "g9-week1-original-30-v2"
     },
     {
       "week": 2,
