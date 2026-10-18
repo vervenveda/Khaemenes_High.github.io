@@ -154,7 +154,7 @@ for(const course of ["biology-10","chemistry-11","physics-engineering-12"]){
 
 // Learner scope must cover the major adapted/high-value course families.
 const scope=read("courses/shared/learner-scope-v1.js");
-for(const token of ["english-10","english-11","english-12","social-studies-10","social-studies-11","social-studies-12","math-prealgebra","math-algebra1","math-geometry","math-algebra2","science-integrated9","science-biology10","science-chemistry11","science-physics12"]){
+for(const token of ["english-10","english-11","english-12","social-studies-10","social-studies-11","social-studies-12","pre-algebra","algebra-1","geometry","algebra-2","integrated-science-9","biology-10","chemistry-11","physics-engineering-12"]){
   assert(scope.includes(token),"Learner scope missing "+token);
 }
 
