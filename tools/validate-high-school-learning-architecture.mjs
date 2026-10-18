@@ -12,6 +12,7 @@ const shared=[
   "courses/shared/monte-carlo-assessment-v1.js",
   "courses/shared/high-school-assessment-adapter-v1.js",
   "courses/shared/high-school-learning-context-v1.js",
+  "courses/shared/high-school-formative-evidence-v1.js",
   "courses/shared/high-school-learning-registry.json",
   "courses/shared/learner-scope-v1.js"
 ];
@@ -94,6 +95,48 @@ assert(coverage.social===3,"Expected 3 Social Studies adapter portals; found "+c
 assert(coverage.englishQuizBanks===108,"Expected 108 canonical upper-English weekly quiz bank surfaces; found "+coverage.englishQuizBanks);
 assert(!coverage.missing.length,"High School adapter coverage gaps:\n"+coverage.missing.slice(0,30).join("\n"));
 assert(!coverage.duplicates.length,"Duplicate High School adapter markers:\n"+coverage.duplicates.slice(0,30).join("\n"));
+
+// Course-wide formative lesson evidence coverage.
+const FORMATIVE_MARKER="<!-- KHAEMENES_HIGH_FORMATIVE_EVIDENCE_V1 -->";
+function formativeTarget(rel){
+  const p=rel.split(path.sep).join("/");
+  if(/\/(?:assessments?|records?|teacher|teachers|resources?|tools?|games?|assets?|tests?|evidence|portfolio|certificates?)\//i.test(p))return false;
+  if(/(?:^|\/)(?:404|offline|gradebook|certificate|answer-key|answer_key)[^/]*\.html$/i.test(p))return false;
+  if(/^courses\/language-arts\/english-(9|10|11|12)\/weeks\/week-\d{2}\/index\.html$/i.test(p))return true;
+  if(/^courses\/language-arts\/english-(9|10|11|12)\/weeks\/week-\d{2}\/(?:lessons\/)?day-\d{2}\.html$/i.test(p))return true;
+  if(/^courses\/language-arts\/english-9\/weeks\/week-\d{2}\/day-\d{2}\/index\.html$/i.test(p))return true;
+  if(/^courses\/language-arts\/english-10\/weeks\/week-\d{2}\/(?:monday|tuesday|wednesday|thursday|friday)\/index\.html$/i.test(p))return true;
+  if(/^courses\/mathematics\/(?:pre-algebra|algebra-1|geometry|algebra-2)\/units\/unit-\d{2}\/lessons\/.+\.html$/i.test(p))return true;
+  if(/^courses\/science\/integrated-science-9\/(?:diagnostic|units\/unit-\d{2})\/lessons\/day-\d{2}\.html$/i.test(p))return true;
+  if(/^courses\/science\/(?:biology-10|chemistry-11|physics-engineering-12)\/weeks\/week-\d{2}\/lessons\/day-\d{2}\.html$/i.test(p))return true;
+  if(/^courses\/social-studies\/grade-(?:09|10|11|12)\/weeks\/week-\d{2}\/student-packet(?:-v2)?\.html$/i.test(p))return true;
+  if(/^courses\/social-studies\/grade-11\/personal-finance\/weeks\/week-\d{2}\/student-packet(?:-v2)?\.html$/i.test(p))return true;
+  return false;
+}
+const formativeCoverage={targets:0,missing:[],duplicates:[],byFamily:{english:0,mathematics:0,science:0,socialStudies:0}};
+for(const file of walk(ROOT)){
+  const rel=path.relative(ROOT,file).split(path.sep).join("/");
+  if(!formativeTarget(rel))continue;
+  formativeCoverage.targets++;
+  if(rel.includes("/language-arts/"))formativeCoverage.byFamily.english++;
+  else if(rel.includes("/mathematics/"))formativeCoverage.byFamily.mathematics++;
+  else if(rel.includes("/science/"))formativeCoverage.byFamily.science++;
+  else if(rel.includes("/social-studies/"))formativeCoverage.byFamily.socialStudies++;
+  const html=fs.readFileSync(file,"utf8"),markers=html.split(FORMATIVE_MARKER).length-1;
+  if(markers===0)formativeCoverage.missing.push(rel);
+  if(markers>1)formativeCoverage.duplicates.push(rel);
+  if(!html.includes("high-school-learning-context-v1.js"))formativeCoverage.missing.push(rel+" missing high-school-learning-context-v1.js");
+  if(!html.includes("high-school-formative-evidence-v1.js"))formativeCoverage.missing.push(rel+" missing high-school-formative-evidence-v1.js");
+}
+assert(formativeCoverage.targets>1000,"Unexpectedly small High School formative lesson target set: "+formativeCoverage.targets);
+assert(!formativeCoverage.missing.length,"High School formative coverage gaps:\n"+formativeCoverage.missing.slice(0,40).join("\n"));
+assert(!formativeCoverage.duplicates.length,"Duplicate High School formative markers:\n"+formativeCoverage.duplicates.slice(0,40).join("\n"));
+const formativeSource=read("courses/shared/high-school-formative-evidence-v1.js");
+for(const token of ["awardsMastery:false","changesScore:false","unlocksCurriculum:false","changesPlacement:false","replacesPerformanceEvidence:false"]){
+  assert(formativeSource.includes(token),"High School formative authority boundary missing "+token);
+}
+assert(formativeSource.includes("recordFormative"),"High School lesson bridge no longer records through the sanitized shared context.");
+assert(formativeSource.includes('kind:"lesson-reflection"'),"High School lesson evidence kind changed unexpectedly.");
 
 // Upper-English supplemental week-specific banks.
 let supplementalQuestions=0;
@@ -195,6 +238,11 @@ for(const key of ["awardsMastery","changesGrades","changesPlacement","bypassesPr
 }
 
 console.log("High School learning architecture regression: PASS");
+console.log("  formative lesson evidence surfaces: "+formativeCoverage.targets);
+console.log("    English: "+formativeCoverage.byFamily.english);
+console.log("    Mathematics: "+formativeCoverage.byFamily.mathematics);
+console.log("    Science: "+formativeCoverage.byFamily.science);
+console.log("    Social Studies: "+formativeCoverage.byFamily.socialStudies);
 console.log("  upper-English adapter surfaces: "+coverage.english);
 console.log("  upper-English weekly Monte Carlo bank surfaces: "+coverage.englishQuizBanks);
 console.log("  supplemental week-specific questions validated: "+supplementalQuestions);
