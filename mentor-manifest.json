@@ -370,6 +370,15 @@
     },
     "unresolvedFederation": [
       "World Languages canonical route is not present in this repository and must not be guessed."
-    ]
+    ],
+    "formativeEvidenceBridge": "courses/shared/high-school-formative-evidence-v1.js",
+    "formativeLessonCoverage": {
+      "total": 1482,
+      "english": 224,
+      "mathematics": 372,
+      "science": 720,
+      "socialStudies": 166
+    },
+    "formativeEvidencePolicy": "Learner-scoped lesson reflections are non-mastery evidence and cannot change scores, progression, placement, or replace authentic performance evidence."
   }
 }
