@@ -78,4 +78,4 @@ function record(){if(weekPassed(read(grade)[week],week))return;const p=$("practi
 function exportData(){const blob=new Blob([JSON.stringify({schema:"khae-pe-journal-v1",grade,entries:read(grade),dailyRecords:grade===9?Object.fromEntries(Array.from({length:36},(_,i)=>[i+1,dailyRecords(i+1)])):{},verified:false},null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="khaemenes-pe-grade-"+grade+"-journal.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 // Course-state authority: all browser evidence is provisional and cannot issue verified receipts.
 render();
-</script></body></html>
+</script><script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script></body></html>
