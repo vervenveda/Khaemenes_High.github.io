@@ -6,7 +6,7 @@ const scope=fs.readFileSync('courses/shared/learner-scope-v1.js','utf8');
 function harness(grade,values=new Map(),id='a'){
  class Store {getItem(k){return values.get(String(k))??null}setItem(k,v){if(this.fail)throw Error('Storage is full');values.set(String(k),String(v))}removeItem(k){values.delete(String(k))}key(i){return [...values.keys()][i]}get length(){return values.size}}
  let profile={learnerId:id,name:id};const local=new Store();
- const document={currentScript:{dataset:{learnerScope:`english-${grade}`}},readyState:'loading',addEventListener(){},documentElement:{dataset:{}},querySelector:()=>null,querySelectorAll:()=>[],getElementById:()=>null};
+ const document={currentScript:{dataset:{learnerScope:`english-${grade}`}},scripts:[],readyState:'loading',addEventListener(){},documentElement:{dataset:{}},querySelector:()=>null,querySelectorAll:()=>[],getElementById:()=>null,createElement:()=>({dataset:{},setAttribute(){},addEventListener(){}}),head:{appendChild(){}}};
  const c={window:{localStorage:local,addEventListener(){},KhaemenesCourseEntryContract:{readAcademyProfile:()=>profile}},document,Storage:Store,localStorage:local,location:{protocol:'file:'},navigator:{},Date,console,Blob,URL,setTimeout:()=>0};vm.createContext(c);vm.runInContext(scope,c);vm.runInContext(records,c);
  const engine=fs.readFileSync(`courses/language-arts/english-${grade}/assets/course.js`,'utf8').replace(/\}\)\(\);\s*$/,';window.engineAudit={calcStats,average,weekState,unitState,examState,getState:()=>state,save,recordStore};})();');
  vm.runInContext(engine,c);
