@@ -6,7 +6,7 @@
 (function attachHighLearningContext(global){
 "use strict";
 if(global.KhaemenesHighLearningContext)return;
-const VERSION="1.0.0";
+const VERSION="1.1.0";
 const LEDGER_KEY="khaemenes_high_learning_ledger_v1";
 const CONTEXT_KEY="khaemenes_high_mentor_context_v1";
 const PASS=80,MAX_EVENTS=240;
@@ -124,12 +124,42 @@ function publish(l=learner()){
   global.dispatchEvent(new CustomEvent("khaemenes-high-context-updated",{detail:{learnerId:l.learnerId,grade:l.grade,updatedAt:ctx.updatedAt}}));
   return ctx;
 }
+function enhanceScienceLessonNav(){
+  const d=global.document;if(!d)return false;
+  const p=String(global.location?.pathname||"");
+  const m=p.match(/\/courses\/science\/(biology-10|chemistry-11|physics-engineering-12)\/weeks\/week-(\d{1,2})\/lessons\/day-(\d{1,2})\.html$/i);
+  if(!m)return false;
+  const course=m[1].toLowerCase(),week=String(Number(m[2])).padStart(2,"0"),day=Number(m[3]);
+  if(day<1||day>5)return false;
+  const meta={
+    "biology-10":{label:"Biology Course",grade:"10"},
+    "chemistry-11":{label:"Chemistry Course",grade:"11"},
+    "physics-engineering-12":{label:"Physics Course",grade:"12"}
+  }[course];
+  if(!meta)return false;
+  const nav=d.querySelector("header nav, nav[aria-label='Lesson navigation'], nav.crumbs, nav");
+  if(!nav)return false;
+  if(!nav.getAttribute("aria-label"))nav.setAttribute("aria-label","Lesson navigation");
+  const useBtn=Boolean(nav.querySelector("a.btn"));
+  const add=(href,label,test)=>{
+    if(test?.())return;
+    const a=d.createElement("a");a.href=href;a.textContent=label;if(useBtn)a.className="btn";nav.appendChild(a);
+  };
+  const dayNames=["monday","tuesday","wednesday","thursday","friday"];
+  add("../index.html#"+dayNames[day-1],"Weekly Classroom & Evidence",()=>[...nav.querySelectorAll("a")].some(a=>/\.\.\/index\.html(?:#|$)/.test(a.getAttribute("href")||"")));
+  add("../../../index.html",meta.label,()=>[...nav.querySelectorAll("a")].some(a=>/\.\.\/\.\.\/\.\.\/(?:index\.html)?$/.test(a.getAttribute("href")||"")));
+  add("../../../../index.html","Science Hall",()=>[...nav.querySelectorAll("a")].some(a=>/\.\.\/\.\.\/\.\.\/\.\.\/(?:index\.html)?$/.test(a.getAttribute("href")||"")));
+  add("../../../../../../stos/mentor/?subject=science&course="+encodeURIComponent(course)+"&grade="+meta.grade+"&week="+week,"Archaemenes",()=>[...nav.querySelectorAll("a")].some(a=>/mentor\//i.test(a.getAttribute("href")||"")||/Archaemenes/i.test(a.textContent||"")));
+  if(day>1)add("day-"+String(day-1).padStart(2,"0")+".html","Previous Day",()=>[...nav.querySelectorAll("a")].some(a=>(a.getAttribute("href")||"").includes("day-"+String(day-1).padStart(2,"0")+".html")));
+  if(day<5)add("day-"+String(day+1).padStart(2,"0")+".html","Next Day",()=>[...nav.querySelectorAll("a")].some(a=>(a.getAttribute("href")||"").includes("day-"+String(day+1).padStart(2,"0")+".html")));
+  return true;
+}
 function clearStaleContext(){
   const l=learner(),ctx=read(CONTEXT_KEY,null);
   if(ctx&&!l){try{global.localStorage?.removeItem(CONTEXT_KEY)}catch{}}
   else if(l&&ctx?.learnerId!==l.learnerId)publish(l);
 }
-if(global.document?.readyState==="loading")global.document.addEventListener("DOMContentLoaded",()=>{clearStaleContext();publish()},{once:true});else{clearStaleContext();publish()}
+if(global.document?.readyState==="loading")global.document.addEventListener("DOMContentLoaded",()=>{clearStaleContext();publish();enhanceScienceLessonNav()},{once:true});else{clearStaleContext();publish();enhanceScienceLessonNav()}
 global.addEventListener("khaemenes-family-changed",()=>publish());
 global.KhaemenesHighLearningContext=Object.freeze({version:VERSION,ledgerKey:LEDGER_KEY,contextKey:CONTEXT_KEY,masteryThreshold:PASS,learner,recordAssessment,recordFormative,summary,publish});
 })(window);
