@@ -1,0 +1,118 @@
+{
+  "schema": "khaemenes-pe-grade9-assessments-v1",
+  "grade": 9,
+  "policy": {
+    "weeklyMastery": 80,
+    "cumulativeMastery": 80,
+    "teacherReviewRequired": true,
+    "localResults": "practice-only",
+    "bodyMetricsExcluded": true
+  },
+  "midterm": {
+    "afterWeek": 18,
+    "coverage": [
+      1,
+      18
+    ],
+    "tasks": [
+      {
+        "id": "m1",
+        "type": "case-analysis",
+        "prompt": "A student reports dizziness during a planned endurance activity. Explain the immediate response, an appropriate reporting step, and how the learning objective can still be assessed.",
+        "rubric": {
+          "safeResponse": 4,
+          "reasoning": 4,
+          "accessibleAlternative": 4
+        }
+      },
+      {
+        "id": "m2",
+        "type": "program-design",
+        "prompt": "Create an inclusive 5-day introductory movement plan that combines warm-up, comfortable aerobic activity, strength technique, mobility, recovery and two alternative participation pathways.",
+        "rubric": {
+          "sequence": 4,
+          "safety": 4,
+          "accessibility": 4,
+          "evidence": 4
+        }
+      },
+      {
+        "id": "m3",
+        "type": "evidence-analysis",
+        "prompt": "Two fictional learners show different practice logs. One has fewer minutes but specific technique reflections; the other records only duration. Explain what each log supports and what additional evidence is needed.",
+        "rubric": {
+          "interpretation": 4,
+          "limitations": 4,
+          "revision": 4
+        }
+      }
+    ]
+  },
+  "final": {
+    "afterWeek": 36,
+    "coverage": [
+      1,
+      36
+    ],
+    "tasks": [
+      {
+        "id": "f1",
+        "type": "lifelong-plan",
+        "prompt": "Develop a sustainable four-week activity plan with activity choices, safety cues, rest, adaptations, low-cost alternatives and observable process goals.",
+        "rubric": {
+          "feasibility": 4,
+          "safety": 4,
+          "inclusion": 4,
+          "evidence": 4
+        }
+      },
+      {
+        "id": "f2",
+        "type": "misconception-analysis",
+        "prompt": "Critique the statement 'the fastest and strongest students learned the most.' Explain why this is not a valid PE mastery criterion and propose an equitable evidence-based rubric.",
+        "rubric": {
+          "accuracy": 4,
+          "equity": 4,
+          "assessment": 4
+        }
+      },
+      {
+        "id": "f3",
+        "type": "case-analysis",
+        "prompt": "A student has limited access to equipment and a changing schedule. Compare two safe movement options, justify an accessible plan and explain how to monitor progress without collecting sensitive health data.",
+        "rubric": {
+          "options": 4,
+          "reasoning": 4,
+          "privacy": 4
+        }
+      },
+      {
+        "id": "f4",
+        "type": "portfolio-defense",
+        "prompt": "Select three dated examples of your learning across the year, identify one corrected misconception and defend one improvement to your future activity plan. A written, spoken, observed or adapted demonstration is acceptable.",
+        "rubric": {
+          "evidence": 4,
+          "reflection": 4,
+          "defense": 4
+        }
+      }
+    ]
+  },
+  "teacherContract": {
+    "issuer": "protected Khaemenes teacher administration",
+    "requireAuthenticatedLearner": true,
+    "requireRubricScores": true,
+    "requireReviewerIdentity": true,
+    "requireReviewTimestamp": true,
+    "receiptIssuedBy": "protected service only",
+    "browserCanIssueReceipt": false,
+    "gradeThresholdPercent": 80,
+    "recordStates": [
+      "draft",
+      "submitted-for-review",
+      "returned-for-revision",
+      "approved-by-authorized-service"
+    ],
+    "notes": "This file is an instructional assessment specification, not a grading service. Local journal submissions remain drafts until independently reviewed."
+  }
+}
