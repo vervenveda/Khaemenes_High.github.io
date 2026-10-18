@@ -141,5 +141,14 @@
       "authority": "high-school-assessment-adapter",
       "status": "adapter-target"
     }
+  ],
+  "federatedRequirements": [
+    {
+      "id": "world-languages",
+      "requirement": "Two years required in the High School pathway; continued study may extend through four years.",
+      "status": "academic-requirement-known-route-unresolved-in-this-repository",
+      "ownership": "federated",
+      "rule": "Do not invent or hard-code a language-course URL until the Academy/Linguistics federation publishes the canonical route."
+    }
   ]
 }
