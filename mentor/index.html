@@ -130,6 +130,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <nav class="links" aria-label="Academy links"><a id="mentorReturnFooter" href="../">Return to Learning</a><a href="/stos/khaemenes/student/">Student Portal</a><a href="/stos/khaemenes/family/">Family Profile</a><a href="https://vervenveda.com/beta/">Beta Program</a></nav>
 </main>
 <script src="/stos/khaemenes/assets/khaemenes-family-registry.js"></script>
+<script src="../courses/shared/high-school-learning-context-v1.js"></script>
 <script src="/stos/khaemenes/assets/khaemenes-naib-mentor-router.js"></script>
 <script src="../assets/khaemenes-archaemenes-voice.js"></script>
 <script>
@@ -147,6 +148,8 @@ const returnLabel=returnToLearning==="/Khaemenes_High.github.io/"?"Back to High 
 for(const id of ["mentorReturnLink","mentorReturnFooter"]){const link=document.getElementById(id);if(link){link.href=returnToLearning;link.textContent=id==="mentorReturnFooter"?(returnToLearning==="/Khaemenes_High.github.io/"?"High School Home":"Return to Learning"):returnLabel}}
 const course=safe(q.get("course")||"",100).replace(/[^A-Za-z0-9 _-]/g,"").trim();
 const learner=window.KhaemenesFamilyRegistry?.getLearner?.()||null;
+const learningSummary=window.KhaemenesHighLearningContext?.summary?.()||null;
+const latestVerified=learningSummary?.latestAssessment||null;
 const pageLearnerId=learner?.learnerId||null;
 const currentLearner=()=>window.KhaemenesFamilyRegistry?.getLearner?.()||null;
 const learnerSessionCurrent=()=>{const now=currentLearner();return pageLearnerId?now?.learnerId===pageLearnerId:!now?.learnerId};
@@ -169,7 +172,7 @@ const voice=window.KhaemenesArchaemenesVoice,voiceStatus=document.getElementById
 document.getElementById("mentorName").textContent=mentor.name||"Archaemenes";
 document.getElementById("mentorTitle").textContent=mentor.title||"Khaemenes Academy Mentor";
 document.getElementById("avatar").textContent=mentor.avatar||"🦉";
-const pills=[`High School`,subject!=="general"?subject.replace(/-/g," "):"general academic support",course?`course: ${course}`:null,learner?.grade?`Grade ${learner.grade}`:null,learner?.nickname?`Learner: ${learner.nickname}`:"Guest / preview context"].filter(Boolean);
+const pills=[`High School`,subject!=="general"?subject.replace(/-/g," "):"general academic support",course?`course: ${course}`:null,learner?.grade?`Grade ${learner.grade}`:null,learner?.nickname?`Learner: ${learner.nickname}`:"Guest / preview context",latestVerified?`Latest verified: ${latestVerified.score}%`:null].filter(Boolean);
 context.innerHTML=pills.map(x=>`<span class="pill">${x.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}</span>`).join("");
 function voiceContext(){return{stage:"high",subject,courseId:course||null,source,mentor:mentor.name||"Archaemenes"}}
 function setVoiceStatus(text){if(voiceStatus)voiceStatus.textContent=text||""}
@@ -203,7 +206,7 @@ function add(who,text,{autoVoice=false}={}){
  log.append(d);log.scrollTop=log.scrollHeight;if(who==="mentor"&&autoVoice)speakMentor(text)
 }
 add("mentor",mentor.intro||"Tell me where the reasoning became unclear, and we will work from there.");
-function intent(text){const t=text.toLowerCase();if(/locked|future|next quiz|next test|answer key|test answers|quiz answers|exam answers|give me the answer/.test(t))return"protected";if(/quiz|test|exam|assessment|score|grade/.test(t))return"assessment";if(/mistake|wrong|missed|error|diagnose/.test(t))return"mistake";if(/study|review|remember|practice/.test(t))return"study";if(/plan|next step|behind|schedule/.test(t))return"plan";return"concept"}
+function intent(text){const t=text.toLowerCase();if(/locked|future|next quiz|next test|answer key|test answers|quiz answers|exam answers|give me the answer/.test(t))return"protected";if(/how am i doing|my progress|what did i do|recent progress|current progress/.test(t))return"progress";if(/what should i review|where did i struggle|what did i miss|weak skill|review skill/.test(t))return"review";if(/quiz|test|exam|assessment|score|grade/.test(t))return"assessment";if(/mistake|wrong|missed|error|diagnose/.test(t))return"mistake";if(/study|review|remember|practice/.test(t))return"study";if(/plan|next step|behind|schedule/.test(t))return"plan";return"concept"}
 const transportableIntents=new Set(["concept","mistake","study","plan"]);
 const mentorPolicy=Object.freeze({
  version:"archaemenes-high-mentor-policy-v3",
@@ -220,7 +223,28 @@ function withMentorTimeout(promise,ms=8000){
  const timeout=new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error("mentor-transport-timeout")),ms)});
  return Promise.race([Promise.resolve(promise),timeout]).finally(()=>clearTimeout(timer));
 }
-function localResponse(text){const i=intent(text);const label=subject==="general"?"this subject":subject.replace(/-/g," ");if(i==="protected")return"I can help you prepare, but I cannot reveal locked future quiz or test questions, protected answer keys, or bypass a prerequisite. Tell me the concept or skill you are preparing for, and we can practice it with a fresh example inside your current learning scope.";if(i==="assessment")return"Use the assessment as evidence: identify the skill being tested, what you did correctly, where the reasoning changed, and one similar problem or prompt you can now complete without help. I can help with that reasoning, but the course engine remains the authority for the recorded score and 80% mastery gate.";if(i==="mistake")return"Good place to start. Show me the step, sentence, claim, calculation, or evidence choice that was marked wrong—or describe what you expected to happen. We will compare your reasoning with the rule or evidence one step at a time instead of jumping straight to an answer.";if(i==="study")return`For ${label}, choose one unlocked skill. First explain it from memory in your own words, then do one fresh example without looking at the model, then check the result and write the specific correction you would make. That gives you evidence of understanding rather than recognition.`;if(i==="plan")return"Make the next step small and observable: name the current unlocked lesson, the exact task still incomplete, and the mastery evidence needed next. Work only that scope before planning farther ahead. The course gate—not the mentor—determines when the next required material opens.";return`For ${label}, tell me three things: what the task is asking, what you already understand, and the first point where the reasoning becomes uncertain. I will help you build the next valid step without completing scored work for you.`}
+function localResponse(text){
+ const i=intent(text),label=subject==="general"?"this subject":subject.replace(/-/g," ");
+ if(i==="protected")return"I can help you prepare, but I cannot reveal locked future quiz or test questions, protected answer keys, or bypass a prerequisite. Tell me the concept or skill you are preparing for, and we can practice it with a fresh example inside your current learning scope.";
+ if(i==="progress"){
+  if(!learningSummary)return"I do not have a learner-scoped High School evidence summary in this browser yet. Open the registered course, complete or review the current learning evidence, and then reopen Mentor.";
+  const courses=learningSummary.courseSummaries||[],mastered=courses.filter(x=>x.latestMastered).length;
+  return`Your sanitized High School evidence summary currently includes ${courses.length} course${courses.length===1?"":"s"}, with ${mastered} showing mastery on the latest recorded assessment.${latestVerified?` Your latest verified result is ${latestVerified.score}% in ${latestVerified.courseId}.`:""} Course engines—not Mentor—remain authoritative for credit, grades, and progression.`;
+ }
+ if(i==="review"){
+  const skills=Array.isArray(latestVerified?.reviewSkills)?latestVerified.reviewSkills.filter(Boolean):[];
+  if(skills.length)return`Your latest verified assessment suggests reviewing ${skills.slice(0,5).join(", ")}. I can teach those skills with fresh examples without reproducing the assessment questions, choices, learner selections, or answer key.`;
+  return"I do not have a recent review-skill summary yet. Tell me the current course and concept that feels uncertain, and we will work from a fresh example.";
+ }
+ if(i==="assessment"){
+  const evidence=latestVerified?` Your latest verified summary is ${latestVerified.score}% in ${latestVerified.courseId}.`:"";
+  return`Use the assessment as evidence: identify the skill being tested, what you did correctly, where the reasoning changed, and one similar problem or prompt you can now complete without help.${evidence} I can help with reasoning, but the course engine remains the authority for the recorded score and 80% mastery gate.`;
+ }
+ if(i==="mistake")return"Good place to start. Show me the step, sentence, claim, calculation, or evidence choice that was marked wrong—or describe what you expected to happen. We will compare your reasoning with the rule or evidence one step at a time instead of jumping straight to an answer.";
+ if(i==="study"){const skill=latestVerified?.reviewSkills?.[0];return`For ${label}, choose one unlocked skill.${skill?` The latest verified summary identifies ${skill} as a review area.`:""} First explain it from memory in your own words, then do one fresh example without looking at the model, then check the result and write the specific correction you would make.`;}
+ if(i==="plan")return"Make the next step small and observable: name the current unlocked lesson, the exact task still incomplete, and the mastery evidence needed next. Work only that scope before planning farther ahead. The course gate—not the mentor—determines when the next required material opens.";
+ return`For ${label}, tell me three things: what the task is asking, what you already understand, and the first point where the reasoning becomes uncertain. I will help you build the next valid step without completing scored work for you.`;
+}
 async function ask(text){
  if(mentorRequestInFlight||!verifyLearnerSession())return;
  const cleaned=safe(text,1200).trim();if(!cleaned)return;
