@@ -546,14 +546,14 @@
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce balance and coordination. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving balance and coordination. They have limited time, variable energy, and no specialized equipment.",
+          "instruction": "Read and explain: Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute. Study the case: A learner finds single-leg standing unstable. They first use fingertip support and a wide stance, then compare their control with a narrower stance without chasing a longer time.",
           "practice": "Write a three-part safety plan for balance and coordination: purpose, feasible option, and stop/modification cue.",
           "evidence": "A reasoned three-part plan with a specific observable cue."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to balance and coordination and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
+          "instruction": "Teacher models: Start with two-foot support near a stable surface. Narrowing the stance or adding a slow reach can increase difficulty, but only when control is maintained. Show an accessible equivalent.",
           "practice": "Practice the week's decision with this exact prompt: Identify a stable support and a safer progression. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
           "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
         },
@@ -561,13 +561,13 @@
           "day": 3,
           "phase": "Apply",
           "instruction": "Discuss how effort, environment, access and recovery change the best choice for balance and coordination.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
+          "practice": "Design three balance stations progressing from wide support to an optional supported reach, with a seated observation pathway.",
           "evidence": "Three justified pathways and a brief risk assessment."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
+          "instruction": "Critique the misconception: A person who needs support has failed a balance activity. Use the concept to justify a correction.",
           "practice": "Analyze a learner's fictional plan for balance and coordination: it lacks a stop cue and adaptation. Rewrite it to satisfy: Identify a stable support and a safer progression.",
           "evidence": "A revision justified by safety and observable learning evidence."
         },
@@ -575,12 +575,12 @@
           "day": 5,
           "phase": "Defend",
           "instruction": "Synthesize what safe and inclusive learning about balance and coordination requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
+          "practice": "Create a short teach-back or adapted demonstration with a claim, an observation and a reason.",
           "evidence": "Portfolio entry with claim, observation, adaptation and next step."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about balance and coordination.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+      "misconception": "A person who needs support has failed a balance activity.",
+      "correction": "Support is a legitimate adaptation; the assessment concerns controlled decisions and technique.",
       "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for balance and coordination.",
       "rubric": [
         {
@@ -612,57 +612,62 @@
       },
       "checks": [
         {
-          "prompt": "For balance and coordination, which statement demonstrates the week's target?",
+          "prompt": "Why does a wider stance often feel more stable?",
           "options": [
-            "Identify a stable support and a safer progression.",
-            "Increase difficulty even when it causes pain.",
-            "Rank classmates by body size."
+            "It creates a larger base of support",
+            "It eliminates the need for coordination",
+            "It guarantees no fall risk"
           ],
           "correct": 0,
-          "rationale": "This week assesses the reasoning skill: Identify a stable support and a safer progression."
+          "rationale": "Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute."
         },
         {
-          "prompt": "A learner encounters an access barrier while studying balance and coordination. What should happen?",
+          "prompt": "What is a safe way to progress balance?",
           "options": [
-            "Adapt the task while preserving the learning objective.",
-            "Exclude the learner from assessment.",
-            "Require disclosure of a diagnosis."
+            "Add a small challenge while maintaining stable support nearby",
+            "Close eyes immediately on an unstable surface",
+            "Remove all support despite losing control"
           ],
           "correct": 0,
-          "rationale": "Equivalent pathways assess the same knowledge without demanding private health information."
+          "rationale": "Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute."
         },
         {
-          "prompt": "Which piece of evidence best supports a conclusion about balance and coordination?",
+          "prompt": "Which body systems contribute to balance?",
           "options": [
-            "A dated observation tied to the skill and a reflection on limitations.",
-            "A claim based on appearance.",
-            "An unrecorded comparison with a peer."
+            "Vision, vestibular input and body-position sense",
+            "Only arm strength",
+            "Only breathing rate"
           ],
           "correct": 0,
-          "rationale": "Evidence should be observable, contextual and tied to the learning goal."
+          "rationale": "Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute."
         },
         {
-          "prompt": "When demonstrating balance and coordination, a learner feels dizziness. What is the appropriate decision?",
+          "prompt": "A learner uses a chair for balance. How should learning be assessed?",
           "options": [
-            "Stop and seek appropriate guidance.",
-            "Continue until a target is reached.",
-            "Ignore the symptom if classmates continue."
+            "By control, explanation and safe choices",
+            "As an automatic failure",
+            "By comparison with an unsupported classmate"
           ],
           "correct": 0,
-          "rationale": "Safety overrides exercise completion."
+          "rationale": "Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute."
         },
         {
-          "prompt": "After reviewing evidence about balance and coordination, which revision is most justified?",
+          "prompt": "Which observation is most useful?",
           "options": [
-            "Revise the plan to better meet this target: Identify a stable support and a safer progression.",
-            "Increase effort without reviewing the evidence.",
-            "Remove accommodations to make grading uniform."
+            "The stance, support used and quality of control",
+            "Only the longest time",
+            "The student's height"
           ],
           "correct": 0,
-          "rationale": "A justified revision responds to the week's specific learning target."
+          "rationale": "Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute."
         }
       ],
-      "focusSkill": "Identify a stable support and a safer progression."
+      "focusSkill": "Identify a stable support and a safer progression.",
+      "depthVersion": "grade9-lesson-depth-v2",
+      "conceptExplanation": "Balance is the ability to keep the body's center of mass controlled over a base of support; visual information, body-position sense and inner-ear signals all contribute.",
+      "biomechanicsAndTechnique": "Start with two-foot support near a stable surface. Narrowing the stance or adding a slow reach can increase difficulty, but only when control is maintained.",
+      "workedExample": "A learner finds single-leg standing unstable. They first use fingertip support and a wide stance, then compare their control with a narrower stance without chasing a longer time.",
+      "applicationTask": "Design three balance stations progressing from wide support to an optional supported reach, with a seated observation pathway."
     },
     {
       "week": 6,
@@ -674,14 +679,14 @@
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce cardiorespiratory endurance. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving cardiorespiratory endurance. They have limited time, variable energy, and no specialized equipment.",
+          "instruction": "Read and explain: Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues. Study the case: A learner chooses a comfortable three-minute walk, notes they can talk in full sentences, and adjusts pace when a hill increases effort.",
           "practice": "Write a three-part safety plan for cardiorespiratory endurance: purpose, feasible option, and stop/modification cue.",
           "evidence": "A reasoned three-part plan with a specific observable cue."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to cardiorespiratory endurance and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
+          "instruction": "Teacher models: Begin at comfortable effort, increase gradually when appropriate, and use the ability to speak in sentences as a rough talk-test cue. Rest and adaptations are part of the plan. Show an accessible equivalent.",
           "practice": "Practice the week's decision with this exact prompt: Describe how talk-test effort can guide accessible endurance practice. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
           "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
         },
@@ -689,13 +694,13 @@
           "day": 3,
           "phase": "Apply",
           "instruction": "Discuss how effort, environment, access and recovery change the best choice for cardiorespiratory endurance.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
+          "practice": "Compare an easy continuous session with shorter movement-and-rest intervals. Explain which is more feasible for two fictional learners.",
           "evidence": "Three justified pathways and a brief risk assessment."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
+          "instruction": "Critique the misconception: Breathlessness is proof that an endurance session is effective. Use the concept to justify a correction.",
           "practice": "Analyze a learner's fictional plan for cardiorespiratory endurance: it lacks a stop cue and adaptation. Rewrite it to satisfy: Describe how talk-test effort can guide accessible endurance practice.",
           "evidence": "A revision justified by safety and observable learning evidence."
         },
@@ -703,12 +708,12 @@
           "day": 5,
           "phase": "Defend",
           "instruction": "Synthesize what safe and inclusive learning about cardiorespiratory endurance requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
+          "practice": "Create a short teach-back or adapted demonstration with a claim, an observation and a reason.",
           "evidence": "Portfolio entry with claim, observation, adaptation and next step."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about cardiorespiratory endurance.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+      "misconception": "Breathlessness is proof that an endurance session is effective.",
+      "correction": "A useful session is matched to the learner's goals and capacity; excessive symptoms are not achievement.",
       "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for cardiorespiratory endurance.",
       "rubric": [
         {
@@ -740,57 +745,62 @@
       },
       "checks": [
         {
-          "prompt": "For cardiorespiratory endurance, which statement demonstrates the week's target?",
+          "prompt": "What does cardiorespiratory endurance describe?",
           "options": [
-            "Describe how talk-test effort can guide accessible endurance practice.",
-            "Increase difficulty even when it causes pain.",
-            "Rank classmates by body size."
+            "The ability to sustain suitable activity over time",
+            "Only maximum sprint speed",
+            "The number of push-ups completed"
           ],
           "correct": 0,
-          "rationale": "This week assesses the reasoning skill: Describe how talk-test effort can guide accessible endurance practice."
+          "rationale": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues."
         },
         {
-          "prompt": "A learner encounters an access barrier while studying cardiorespiratory endurance. What should happen?",
+          "prompt": "What can the talk test estimate?",
           "options": [
-            "Adapt the task while preserving the learning objective.",
-            "Exclude the learner from assessment.",
-            "Require disclosure of a diagnosis."
+            "Relative exercise effort",
+            "Exact oxygen uptake",
+            "A medical diagnosis"
           ],
           "correct": 0,
-          "rationale": "Equivalent pathways assess the same knowledge without demanding private health information."
+          "rationale": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues."
         },
         {
-          "prompt": "Which piece of evidence best supports a conclusion about cardiorespiratory endurance?",
+          "prompt": "Why might intervals help a beginner?",
           "options": [
-            "A dated observation tied to the skill and a reflection on limitations.",
-            "A claim based on appearance.",
-            "An unrecorded comparison with a peer."
+            "They allow movement with planned recovery",
+            "They eliminate the need for safety checks",
+            "They require maximum effort"
           ],
           "correct": 0,
-          "rationale": "Evidence should be observable, contextual and tied to the learning goal."
+          "rationale": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues."
         },
         {
-          "prompt": "When demonstrating cardiorespiratory endurance, a learner feels dizziness. What is the appropriate decision?",
+          "prompt": "Which sign calls for stopping activity?",
           "options": [
-            "Stop and seek appropriate guidance.",
-            "Continue until a target is reached.",
-            "Ignore the symptom if classmates continue."
+            "Unusual dizziness or chest discomfort",
+            "A comfortable planned break",
+            "Choosing a slower pace"
           ],
           "correct": 0,
-          "rationale": "Safety overrides exercise completion."
+          "rationale": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues."
         },
         {
-          "prompt": "After reviewing evidence about cardiorespiratory endurance, which revision is most justified?",
+          "prompt": "Which log entry helps interpret endurance work?",
           "options": [
-            "Revise the plan to better meet this target: Describe how talk-test effort can guide accessible endurance practice.",
-            "Increase effort without reviewing the evidence.",
-            "Remove accommodations to make grading uniform."
+            "Duration, effort, conditions and recovery",
+            "Only class ranking",
+            "Only body mass"
           ],
           "correct": 0,
-          "rationale": "A justified revision responds to the week's specific learning target."
+          "rationale": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues."
         }
       ],
-      "focusSkill": "Describe how talk-test effort can guide accessible endurance practice."
+      "focusSkill": "Describe how talk-test effort can guide accessible endurance practice.",
+      "depthVersion": "grade9-lesson-depth-v2",
+      "conceptExplanation": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues.",
+      "biomechanicsAndTechnique": "Begin at comfortable effort, increase gradually when appropriate, and use the ability to speak in sentences as a rough talk-test cue. Rest and adaptations are part of the plan.",
+      "workedExample": "A learner chooses a comfortable three-minute walk, notes they can talk in full sentences, and adjusts pace when a hill increases effort.",
+      "applicationTask": "Compare an easy continuous session with shorter movement-and-rest intervals. Explain which is more feasible for two fictional learners."
     },
     {
       "week": 7,
@@ -802,14 +812,14 @@
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce strength fundamentals. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving strength fundamentals. They have limited time, variable energy, and no specialized equipment.",
+          "instruction": "Read and explain: Muscular strength is the capacity to exert force; learning safe movement patterns and recovery is more important than lifting the most weight. Study the case: A learner practices five controlled wall push-ups, pauses when form changes, and describes why slower quality repetitions are more informative than rushed ones.",
           "practice": "Write a three-part safety plan for strength fundamentals: purpose, feasible option, and stop/modification cue.",
           "evidence": "A reasoned three-part plan with a specific observable cue."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to strength fundamentals and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
+          "instruction": "Teacher models: For a supported sit-to-stand, place feet securely, hinge comfortably at the hips and rise with control. For a wall push-up, keep hands supported and move through a comfortable range. Show an accessible equivalent.",
           "practice": "Practice the week's decision with this exact prompt: Explain the purpose of controlled repetitions and recovery. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
           "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
         },
@@ -817,13 +827,13 @@
           "day": 3,
           "phase": "Apply",
           "instruction": "Discuss how effort, environment, access and recovery change the best choice for strength fundamentals.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
+          "practice": "Compare a rushed set of 15 repetitions with a controlled set of five. Evaluate technique evidence and suggest a safe progression.",
           "evidence": "Three justified pathways and a brief risk assessment."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
+          "instruction": "Critique the misconception: A learner must lift heavy equipment to develop or demonstrate strength knowledge. Use the concept to justify a correction.",
           "practice": "Analyze a learner's fictional plan for strength fundamentals: it lacks a stop cue and adaptation. Rewrite it to satisfy: Explain the purpose of controlled repetitions and recovery.",
           "evidence": "A revision justified by safety and observable learning evidence."
         },
@@ -831,12 +841,12 @@
           "day": 5,
           "phase": "Defend",
           "instruction": "Synthesize what safe and inclusive learning about strength fundamentals requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
+          "practice": "Create a short teach-back or adapted demonstration with a claim, an observation and a reason.",
           "evidence": "Portfolio entry with claim, observation, adaptation and next step."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about strength fundamentals.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+      "misconception": "A learner must lift heavy equipment to develop or demonstrate strength knowledge.",
+      "correction": "Controlled bodyweight, supported or explanatory alternatives can teach the principles without specialized equipment.",
       "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for strength fundamentals.",
       "rubric": [
         {
@@ -868,57 +878,62 @@
       },
       "checks": [
         {
-          "prompt": "For strength fundamentals, which statement demonstrates the week's target?",
+          "prompt": "Which definition best describes muscular strength?",
           "options": [
-            "Explain the purpose of controlled repetitions and recovery.",
-            "Increase difficulty even when it causes pain.",
-            "Rank classmates by body size."
+            "Ability to exert force",
+            "Ability to hold breath longest",
+            "Ability to stretch deepest"
           ],
           "correct": 0,
-          "rationale": "This week assesses the reasoning skill: Explain the purpose of controlled repetitions and recovery."
+          "rationale": "Muscular strength is the capacity to exert force; learning safe movement patterns and recovery is more important than lifting the most weight."
         },
         {
-          "prompt": "A learner encounters an access barrier while studying strength fundamentals. What should happen?",
+          "prompt": "Why are controlled repetitions important?",
           "options": [
-            "Adapt the task while preserving the learning objective.",
-            "Exclude the learner from assessment.",
-            "Require disclosure of a diagnosis."
+            "They help demonstrate technique and appropriate loading",
+            "They guarantee zero injury risk",
+            "They replace recovery"
           ],
           "correct": 0,
-          "rationale": "Equivalent pathways assess the same knowledge without demanding private health information."
+          "rationale": "Muscular strength is the capacity to exert force; learning safe movement patterns and recovery is more important than lifting the most weight."
         },
         {
-          "prompt": "Which piece of evidence best supports a conclusion about strength fundamentals?",
+          "prompt": "When should a learner reduce difficulty?",
           "options": [
-            "A dated observation tied to the skill and a reflection on limitations.",
-            "A claim based on appearance.",
-            "An unrecorded comparison with a peer."
+            "When control breaks down or discomfort develops",
+            "Whenever peers use a harder option",
+            "Only after completing a target count"
           ],
           "correct": 0,
-          "rationale": "Evidence should be observable, contextual and tied to the learning goal."
+          "rationale": "Muscular strength is the capacity to exert force; learning safe movement patterns and recovery is more important than lifting the most weight."
         },
         {
-          "prompt": "When demonstrating strength fundamentals, a learner feels dizziness. What is the appropriate decision?",
+          "prompt": "Which is a feasible no-equipment strength example?",
           "options": [
-            "Stop and seek appropriate guidance.",
-            "Continue until a target is reached.",
-            "Ignore the symptom if classmates continue."
+            "Supported sit-to-stand",
+            "A mandatory heavy barbell lift",
+            "A maximal competition"
           ],
           "correct": 0,
-          "rationale": "Safety overrides exercise completion."
+          "rationale": "Muscular strength is the capacity to exert force; learning safe movement patterns and recovery is more important than lifting the most weight."
         },
         {
-          "prompt": "After reviewing evidence about strength fundamentals, which revision is most justified?",
+          "prompt": "What evidence shows strength-technique learning?",
           "options": [
-            "Revise the plan to better meet this target: Explain the purpose of controlled repetitions and recovery.",
-            "Increase effort without reviewing the evidence.",
-            "Remove accommodations to make grading uniform."
+            "Specific cues, modifications and observed control",
+            "Only a heavier load",
+            "A comparison of body appearance"
           ],
           "correct": 0,
-          "rationale": "A justified revision responds to the week's specific learning target."
+          "rationale": "Muscular strength is the capacity to exert force; learning safe movement patterns and recovery is more important than lifting the most weight."
         }
       ],
-      "focusSkill": "Explain the purpose of controlled repetitions and recovery."
+      "focusSkill": "Explain the purpose of controlled repetitions and recovery.",
+      "depthVersion": "grade9-lesson-depth-v2",
+      "conceptExplanation": "Muscular strength is the capacity to exert force; learning safe movement patterns and recovery is more important than lifting the most weight.",
+      "biomechanicsAndTechnique": "For a supported sit-to-stand, place feet securely, hinge comfortably at the hips and rise with control. For a wall push-up, keep hands supported and move through a comfortable range.",
+      "workedExample": "A learner practices five controlled wall push-ups, pauses when form changes, and describes why slower quality repetitions are more informative than rushed ones.",
+      "applicationTask": "Compare a rushed set of 15 repetitions with a controlled set of five. Evaluate technique evidence and suggest a safe progression."
     },
     {
       "week": 8,
@@ -930,14 +945,14 @@
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce bodyweight movement patterns. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving bodyweight movement patterns. They have limited time, variable energy, and no specialized equipment.",
+          "instruction": "Read and explain: Bodyweight movement uses body mass as resistance and depends on joint position, balance, tempo and available support. Study the case: A learner chooses a higher wall surface for push-ups because it permits controlled motion, then explains how moving to a lower stable incline may increase demand.",
           "practice": "Write a three-part safety plan for bodyweight movement patterns: purpose, feasible option, and stop/modification cue.",
           "evidence": "A reasoned three-part plan with a specific observable cue."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to bodyweight movement patterns and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
+          "instruction": "Teacher models: In a sit-to-stand, use a stable chair, place feet securely and move at a controlled pace. In an incline push-up, use a sturdy surface and keep the body aligned within a comfortable range. Show an accessible equivalent.",
           "practice": "Practice the week's decision with this exact prompt: Name a technique cue for a sit-to-stand or supported movement. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
           "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
         },
@@ -945,13 +960,13 @@
           "day": 3,
           "phase": "Apply",
           "instruction": "Discuss how effort, environment, access and recovery change the best choice for bodyweight movement patterns.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
+          "practice": "Create a two-exercise bodyweight circuit with foundational and more challenging options, safety cues, and recovery.",
           "evidence": "Three justified pathways and a brief risk assessment."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
+          "instruction": "Critique the misconception: The hardest bodyweight variation is always the correct starting point. Use the concept to justify a correction.",
           "practice": "Analyze a learner's fictional plan for bodyweight movement patterns: it lacks a stop cue and adaptation. Rewrite it to satisfy: Name a technique cue for a sit-to-stand or supported movement.",
           "evidence": "A revision justified by safety and observable learning evidence."
         },
@@ -959,12 +974,12 @@
           "day": 5,
           "phase": "Defend",
           "instruction": "Synthesize what safe and inclusive learning about bodyweight movement patterns requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
+          "practice": "Create a short teach-back or adapted demonstration with a claim, an observation and a reason.",
           "evidence": "Portfolio entry with claim, observation, adaptation and next step."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about bodyweight movement patterns.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+      "misconception": "The hardest bodyweight variation is always the correct starting point.",
+      "correction": "Difficulty should match technique, access and current capacity; a suitable variation is a valid skill choice.",
       "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for bodyweight movement patterns.",
       "rubric": [
         {
@@ -996,57 +1011,62 @@
       },
       "checks": [
         {
-          "prompt": "For bodyweight movement patterns, which statement demonstrates the week's target?",
+          "prompt": "What changes when a wall push-up moves to a lower sturdy incline?",
           "options": [
-            "Name a technique cue for a sit-to-stand or supported movement.",
-            "Increase difficulty even when it causes pain.",
-            "Rank classmates by body size."
+            "The movement generally requires greater force",
+            "The activity becomes automatically safe for everyone",
+            "Recovery is no longer needed"
           ],
           "correct": 0,
-          "rationale": "This week assesses the reasoning skill: Name a technique cue for a sit-to-stand or supported movement."
+          "rationale": "Bodyweight movement uses body mass as resistance and depends on joint position, balance, tempo and available support."
         },
         {
-          "prompt": "A learner encounters an access barrier while studying bodyweight movement patterns. What should happen?",
+          "prompt": "What is a useful sit-to-stand cue?",
           "options": [
-            "Adapt the task while preserving the learning objective.",
-            "Exclude the learner from assessment.",
-            "Require disclosure of a diagnosis."
+            "Feet stable and controlled movement",
+            "Move as fast as possible",
+            "Use an unstable chair"
           ],
           "correct": 0,
-          "rationale": "Equivalent pathways assess the same knowledge without demanding private health information."
+          "rationale": "Bodyweight movement uses body mass as resistance and depends on joint position, balance, tempo and available support."
         },
         {
-          "prompt": "Which piece of evidence best supports a conclusion about bodyweight movement patterns?",
+          "prompt": "Why might someone choose a partial range?",
           "options": [
-            "A dated observation tied to the skill and a reflection on limitations.",
-            "A claim based on appearance.",
-            "An unrecorded comparison with a peer."
+            "It can preserve control within a comfortable movement range",
+            "It means they cannot learn",
+            "It removes all muscle activity"
           ],
           "correct": 0,
-          "rationale": "Evidence should be observable, contextual and tied to the learning goal."
+          "rationale": "Bodyweight movement uses body mass as resistance and depends on joint position, balance, tempo and available support."
         },
         {
-          "prompt": "When demonstrating bodyweight movement patterns, a learner feels dizziness. What is the appropriate decision?",
+          "prompt": "Which plan supports learning?",
           "options": [
-            "Stop and seek appropriate guidance.",
-            "Continue until a target is reached.",
-            "Ignore the symptom if classmates continue."
+            "Choose a manageable variation and explain technique",
+            "Copy the hardest classmate's variation",
+            "Skip adaptation and reflection"
           ],
           "correct": 0,
-          "rationale": "Safety overrides exercise completion."
+          "rationale": "Bodyweight movement uses body mass as resistance and depends on joint position, balance, tempo and available support."
         },
         {
-          "prompt": "After reviewing evidence about bodyweight movement patterns, which revision is most justified?",
+          "prompt": "What should be recorded in a bodyweight log?",
           "options": [
-            "Revise the plan to better meet this target: Name a technique cue for a sit-to-stand or supported movement.",
-            "Increase effort without reviewing the evidence.",
-            "Remove accommodations to make grading uniform."
+            "Variation, controlled repetitions, modifications and effort",
+            "Only total repetitions",
+            "Only class rank"
           ],
           "correct": 0,
-          "rationale": "A justified revision responds to the week's specific learning target."
+          "rationale": "Bodyweight movement uses body mass as resistance and depends on joint position, balance, tempo and available support."
         }
       ],
-      "focusSkill": "Name a technique cue for a sit-to-stand or supported movement."
+      "focusSkill": "Name a technique cue for a sit-to-stand or supported movement.",
+      "depthVersion": "grade9-lesson-depth-v2",
+      "conceptExplanation": "Bodyweight movement uses body mass as resistance and depends on joint position, balance, tempo and available support.",
+      "biomechanicsAndTechnique": "In a sit-to-stand, use a stable chair, place feet securely and move at a controlled pace. In an incline push-up, use a sturdy surface and keep the body aligned within a comfortable range.",
+      "workedExample": "A learner chooses a higher wall surface for push-ups because it permits controlled motion, then explains how moving to a lower stable incline may increase demand.",
+      "applicationTask": "Create a two-exercise bodyweight circuit with foundational and more challenging options, safety cues, and recovery."
     },
     {
       "week": 9,
