@@ -7,6 +7,8 @@ on:
       - 'courses/shared/monte-carlo-assessment-v1.js'
       - 'courses/shared/high-school-assessment-adapter-v1.js'
       - 'courses/shared/high-school-learning-context-v1.js'
+      - 'courses/shared/high-school-formative-evidence-v1.js'
+      - 'scripts/inject-high-school-formative-evidence.mjs'
       - 'courses/shared/high-school-learning-registry.json'
       - 'courses/shared/learner-scope-v1.js'
       - 'courses/language-arts/english-*/**'
