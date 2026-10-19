@@ -11813,49 +11813,74 @@
     {
       "week": 33,
       "title": "Portfolio construction",
-      "essentialQuestion": "How can we make a safe, evidence-based decision about portfolio construction?",
-      "scenario": "A Grade 9 learner is planning a safe, accessible activity involving portfolio construction. They have limited time, variable energy, and no specialized equipment.",
-      "model": "Worked example (portfolio): A learner wants to practice portfolio construction. First identify the specific skill: Select evidence showing revision rather than just performance. Next compare two feasible options, select one with a clear safety cue, and document the reason. A written, observed, seated or adapted demonstration can meet the same reasoning target.",
+      "essentialQuestion": "How can students select, annotate and defend portfolio artifacts that actually support specific PE learning claims while keeping activity completion separate from verified mastery?",
+      "scenario": "A fictional learner has a completed walking log, two versions of a safe-activity plan, a peer feedback note, a corrected work-to-recovery calculation and a photograph showing participation. Their portfolio lists everything as 'mastered' without linking artifacts to objectives or checking assessment results. Which artifacts provide relevant evidence, and which claims remain unverified?",
+      "model": "Worked evidence selection: Claim—'I can calculate an interval ratio accurately.' Artifact—an initial 30:60 calculation incorrectly labeled 2:1, followed by feedback and a corrected 1:2 explanation. Annotation—identify the original error, the correction and the reasoning. This supports improvement in the calculation but does not by itself certify course mastery; the specified assessment and teacher-reviewed requirements must still be met at the 80% threshold.",
       "days": [
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce portfolio construction. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving portfolio construction. They have limited time, variable energy, and no specialized equipment.",
-          "practice": "Write a three-part safety plan for portfolio construction: purpose, feasible option, and stop/modification cue.",
-          "evidence": "A reasoned three-part plan with a specific observable cue."
+          "studentTitle": "Distinguish completion, evidence and mastery",
+          "concept": "A finished task is not automatically proof of learning, and a good artifact is not itself a final grade. Match a claim to criteria and identify whether evidence reflects participation, conceptual knowledge or observed motor performance.",
+          "instruction": "A finished task is not automatically proof of learning, and a good artifact is not itself a final grade. Match a claim to criteria and identify whether evidence reflects participation, conceptual knowledge or observed motor performance.",
+          "practice": "Sort six fictional portfolio records into activity completed, formative work, knowledge evidence, direct movement evidence and verified assessment evidence.",
+          "workedExample": "A photo of attending an activity documents participation but cannot establish safe technique or an 80% assessment score.",
+          "independentTask": "Create a status key and classify the fictional learner's artifacts, including one unsupported 'mastered' label.",
+          "evidence": "Correct category distinctions and explicit separation of completion from verified mastery.",
+          "successCriteria": "I can label evidence honestly and explain why participation does not equal verified 80% mastery."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to portfolio construction and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
-          "practice": "Practice the week's decision with this exact prompt: Select evidence showing revision rather than just performance. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
-          "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
+          "studentTitle": "Select relevant, high-quality artifacts",
+          "concept": "Choose artifacts because they correspond to a learning objective and include meaningful observable information, not because they look impressive. Provide context, method and any limitations.",
+          "instruction": "Choose artifacts because they correspond to a learning objective and include meaningful observable information, not because they look impressive. Provide context, method and any limitations.",
+          "practice": "Compare an unlabeled picture, a corrected ratio explanation and a before-and-after training plan. Rank their usefulness for different claims.",
+          "workedExample": "The corrected 30:60 ratio explanation supports interval reasoning, not directly observed exercise endurance.",
+          "independentTask": "Build a claim-to-evidence table for five artifacts with objective, evidence type, date/sequence and relevance.",
+          "evidence": "Five mapped artifacts with accurate claims and limits.",
+          "successCriteria": "I can choose strong evidence for a stated learning criterion."
         },
         {
           "day": 3,
           "phase": "Apply",
-          "instruction": "Discuss how effort, environment, access and recovery change the best choice for portfolio construction.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
-          "evidence": "Three justified pathways and a brief risk assessment."
+          "studentTitle": "Show feedback and authentic revision",
+          "concept": "Revision is valuable when the original issue, feedback, change and reason are all visible. Copying a corrected answer without explaining why demonstrates less reasoning than an annotated correction.",
+          "instruction": "Revision is valuable when the original issue, feedback, change and reason are all visible. Copying a corrected answer without explaining why demonstrates less reasoning than an annotated correction.",
+          "practice": "Use the fictional 30:60 error: initially 2:1, correctly revised to 1:2. Explain why the work-to-recovery order determines the ratio.",
+          "workedExample": "'Movement 30 sec, recovery 60 sec, so 30:60 simplifies to 1:2' documents the correction and reasoning.",
+          "independentTask": "Annotate two before-and-after artifacts, identify who or what prompted each correction and write what improved.",
+          "evidence": "Two supported revision narratives with specific error, correction and learning claim.",
+          "successCriteria": "I can show how feedback changes my understanding without altering a graded attempt."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
-          "practice": "Analyze a learner's fictional plan for portfolio construction: it lacks a stop cue and adaptation. Rewrite it to satisfy: Select evidence showing revision rather than just performance.",
-          "evidence": "A revision justified by safety and observable learning evidence."
+          "studentTitle": "Audit gaps, privacy and evidence status",
+          "concept": "A responsible portfolio makes missing evidence visible. Grade records must not be rewritten merely because a student updates an artifact; retakes and mastery decisions follow their separate rules. Protect identities and sensitive data.",
+          "instruction": "A responsible portfolio makes missing evidence visible. Grade records must not be rewritten merely because a student updates an artifact; retakes and mastery decisions follow their separate rules. Protect identities and sensitive data.",
+          "practice": "Review a portfolio containing three practice records but no required assessment record. Identify why mastery remains unverified and propose a proper next step.",
+          "workedExample": "Practice shows an improving technique explanation, but a 75% graded result does not meet an 80% gate; revised notes cannot retroactively change that score.",
+          "independentTask": "Produce an evidence-gap checklist separating completed practice, teacher-reviewed performance, quiz/test results and mastery status; redact identifying details.",
+          "evidence": "Clear missing-evidence plan, correct 80% interpretation and privacy protection.",
+          "successCriteria": "I can locate evidence gaps and distinguish revisions from formal assessment and retake records."
         },
         {
           "day": 5,
           "phase": "Defend",
-          "instruction": "Synthesize what safe and inclusive learning about portfolio construction requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
-          "evidence": "Portfolio entry with claim, observation, adaptation and next step."
+          "studentTitle": "Defend a curated PE portfolio",
+          "concept": "The final defense should make bounded claims supported by selected artifacts and revisions. Evidence of conceptual mastery and direct movement observation may require different documentation. A portfolio presentation must work without expensive tools or identifiable photos.",
+          "instruction": "The final defense should make bounded claims supported by selected artifacts and revisions. Evidence of conceptual mastery and direct movement observation may require different documentation. A portfolio presentation must work without expensive tools or identifiable photos.",
+          "practice": "Model a one-page evidence index with five cards, two revision histories, a known assessment status and one next action.",
+          "workedExample": "A student concludes 'my planning and safety reasoning improved' while correctly marking formal mastery pending required assessment verification.",
+          "independentTask": "Submit the five-artifact portfolio and one-page defense with claims, evidence, revisions, limits, accessibility choices and honest mastery labels.",
+          "evidence": "Complete relevant index, at least two documented revisions, truthful evidence boundaries and next-step plan.",
+          "successCriteria": "I can defend my learning using curated evidence without claiming unverified mastery."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about portfolio construction.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-      "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for portfolio construction.",
+      "misconception": "Adding an artifact, completing an activity or editing a failed answer proves mastery and should automatically unlock the next lesson.",
+      "correction": "Portfolios document evidence and improvement; formal mastery depends on defined criteria, valid assessment attempts and verified achievement of the 80% threshold. Revised notes do not retroactively change graded attempts.",
+      "teacherNotes": "Keep practice artifacts separate from immutable graded-attempt records and teacher-reviewed evidence. No photo, biometric, health disclosure or paid platform is required. Accept written, diagrammed, printed and accessible formats. Label knowledge demonstrations separately from directly observed motor skills. Check that any mastery status comes from the assessment system, not a student's portfolio label.",
       "rubric": [
         {
           "criterion": "Knowledge and rationale",
@@ -12136,7 +12161,12 @@
           "rationale": "A strong reflection identifies evidence, limits, and future improvement."
         }
       ],
-      "focusSkill": "Select evidence showing revision rather than just performance."
+      "focusSkill": "Select evidence showing revision rather than just performance.",
+      "conceptExplanation": "A learning portfolio curates relevant evidence, not simply every activity completed. Each artifact should have a learning objective, date or sequence, description, observable evidence, feedback or revision, limitations and an honest status. Practice completion shows engagement; formative feedback helps improvement; verified mastery is a separate determination against defined criteria and assessment rules. Strong artifacts include before-and-after plans, accurate explanations, analyses and directly observed performance when motor skill is assessed. Written understanding must not be labeled direct motor proficiency. Student privacy and consent govern images or personal records.",
+      "biomechanicsAndTechnique": "A portfolio review does not require physical exertion. When documenting movement technique, describe objective cues such as stable support, comfortable range and controlled timing, without requiring identifiable photos, medical histories or body measurements. A fictional demonstration analysis or diagram can evidence technique understanding; direct motor performance requires appropriate observation and labeling. Use accessible formats including print, handwritten cards, recorded narration when consented, and offline documents.",
+      "workedExample": "Portfolio card: Objective—safe training decision. Draft artifact—'keep going despite dizziness.' Feedback—stop and seek appropriate adult help for concerning symptoms. Revision—a decision flow distinguishing continue, adapt, stop and seek assistance. Evidence claim—'I can explain a safer decision.' Status—'revision complete; formal mastery unverified' until required assessments and review satisfy the 80% rule.",
+      "applicationTask": "Compile a five-artifact miniature PE portfolio with an evidence index, objective-to-artifact mapping, at least two visible revisions, one honest limitation per artifact, an accessible presentation option and distinct labels for completed work, formative practice, assessment results and verified mastery. Include a one-page defense identifying an evidence gap and corrective next step.",
+      "depthVersion": "grade9-week33-topic-specific-2026-10-19"
     },
     {
       "week": 34,
