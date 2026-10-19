@@ -117,7 +117,7 @@ for (const course of courses) {
     assert.ok(html.includes("stateSnapshot"), "submission must detect a changed learner/course snapshot");
     assert.ok(html.includes('id="testFeedback" role="status" aria-live="polite" aria-atomic="true"'),
       "assessment results must be announced to assistive technology");
-    const untypedButtons = [...html.matchAll(/<button(?![^>]*\\btype\\s*=)[^>]*>/gi)];
+    const untypedButtons = [...html.matchAll(/<button(?![^>]*\btype\s*=)[^>]*>/gi)];
     assert.equal(untypedButtons.length, 0, "buttons should declare their action type explicitly");
   });
 
