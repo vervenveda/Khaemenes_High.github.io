@@ -4751,54 +4751,54 @@
       },
       "checks": [
         {
-          "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for personal activity planning?",
+          "prompt": "A learner plans an accessible activity on two days, identifies a backup option, and schedules a review. What conclusion is best supported by this plan?",
           "options": [
-            "The learner has mastered every related skill in every setting.",
-            "The learner should use the same activity and difficulty in all future sessions.",
-            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step."
+            "The learner will definitely improve health regardless of what happens.",
+            "The learner must use the same activity and intensity every week.",
+            "The learner has made a reviewable plan and can use the check-in to justify a next step."
           ],
           "correct": 2,
-          "rationale": "A learning record supports conclusions limited to the observed task; it does not prove universal mastery or a one-size-fits-all plan."
+          "rationale": "The plan shows goal-setting and review design; it does not guarantee a health outcome or require an inflexible routine."
         },
         {
-          "prompt": "During personal activity planning, which plan best applies the week's focus skill: set a feasible activity goal with a check-in point?",
+          "prompt": "The outdoor route in a learner's activity plan becomes unavailable. Which response best preserves the learning goal?",
           "options": [
-            "Choose the hardest version regardless of conditions.",
-            "Record only whether the task was finished, without explaining the decision.",
-            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence."
+            "Continue on the route even though it is no longer suitable.",
+            "Abandon the goal because only the original activity can count.",
+            "Use a safe, accessible backup activity and explain how it still fits the goal."
           ],
           "correct": 2,
-          "rationale": "The learner applies set a feasible activity goal with a check-in point by making a feasible, justified choice and pointing to evidence relevant to personal activity planning."
+          "rationale": "A planned alternative preserves the purpose while responding responsibly to changing access or environmental conditions."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for personal activity planning. Which next step best supports this week's learning?",
+          "prompt": "A learner has 15 minutes and no special equipment. Which planning decision best fits those constraints?",
           "options": [
-            "Identify the decision, compare realistic options, and explain the choice using the learning target.",
-            "Copy a classmate's decision without checking the case.",
-            "Use completion time as the only measure of learning."
+            "Choose a manageable, accessible activity with a clear purpose and stop/modify cue.",
+            "Choose the longest workout available and skip movement preparation.",
+            "Copy another learner's plan without checking whether it fits."
           ],
           "correct": 0,
-          "rationale": "A contextual decision responds to the actual constraints and makes its reasoning visible; speed or copying is insufficient."
+          "rationale": "A feasible plan responds to real time and equipment limits while retaining the learning purpose and safety awareness."
         },
         {
-          "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"set a feasible activity goal with a check-in point\"?",
+          "prompt": "Which record gives the strongest evidence for revising next week's activity plan?",
           "options": [
-            "A general statement that the learner looked more athletic.",
-            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
-            "A single score with no description of the task or conditions."
+            "A general statement that the week was good, with no examples.",
+            "A dated note of what was attempted, what changed, the relevant conditions, and one justified next step.",
+            "A comparison of who completed the most intense activity."
           ],
           "correct": 1,
-          "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
+          "rationale": "Dated contextual evidence supports a reasoned revision; vague impressions and peer rankings do not establish what change is appropriate."
         },
         {
-          "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about personal activity planning.\" Which response best corrects the reasoning?",
+          "prompt": "A peer says an activity plan should never change, even when weather, time, or access changes. Which response shows sound judgment?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective.",
-            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context."
+            "Agree, because changing the plan means the learner failed.",
+            "Increase intensity to compensate for every missed session.",
+            "Adapt the plan to conditions and safety, then record why the change was appropriate."
           ],
           "correct": 2,
-          "rationale": "The correction prioritizes learning evidence and avoids unsupported comparisons or unsafe generalizations."
+          "rationale": "A plan is a decision aid. Adapting for conditions, safety, access, or time can be evidence of sound planning rather than failure."
         },
         {
           "prompt": "Which goal is most useful for a learner planning personal activity?",
