@@ -26,7 +26,7 @@ jobs:
   bank-audit:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
       - name: Validate Grade 10–12 public practice banks
         run: node courses/science/tools/audit-upper-science-question-banks.mjs
       - name: Validate Chemistry-specific question-bank rules
