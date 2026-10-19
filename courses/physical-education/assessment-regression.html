@@ -106,6 +106,28 @@ byId("run").addEventListener("click",async()=>{
   assert(source.includes("retryWeekly")&&source.includes("weeklyAttempts.push(attempt)"),"Failed weekly retry/history wiring missing");
   checks.push({name:"Daily assessment page includes resumable drafts and retained weekly retries",ok:true});
  }catch(e){checks.push({name:"Daily assessment journey wiring validates",ok:false,error:e.message})}
+
+ try{
+  const courseResponse=await fetch("./grade-09-instruction.json",{cache:"no-store"});
+  assert(courseResponse.ok,"Could not load the full Grade 9 PE instruction bank");
+  const course=await courseResponse.json(),weeks=course.weeks||[];
+  assert(course.grade===9&&course.masteryThreshold===80&&weeks.length===36,"Instruction bank metadata or 36-week sequence is incorrect");
+  let itemCount=0;
+  for(let i=0;i<weeks.length;i++){
+   const wk=weeks[i],items=wk.checks||[],expected=wk.week<=5?30:25;
+   assert(wk.week===i+1,"Week sequence gap at position "+(i+1));
+   assert(items.length===expected,"Week "+wk.week+" expected "+expected+" questions, received "+items.length);
+   assert(new Set(items.map(q=>(q.prompt||"").trim().toLowerCase())).size===items.length,"Week "+wk.week+" contains duplicate prompts");
+   assert(new Set(items.map(q=>(q.rationale||"").trim())).size===items.length,"Week "+wk.week+" contains repeated or blank rationales");
+   assert(items.every(q=>q.prompt?.trim()&&q.options?.length===3&&Number.isInteger(q.correct)&&q.correct>=0&&q.correct<q.options.length&&q.rationale?.trim()),"Week "+wk.week+" has a malformed question");
+   const distribution=items.reduce((counts,q)=>(counts[q.correct]++,counts),[0,0,0]);
+   assert(Math.max(...distribution)-Math.min(...distribution)<=1,"Week "+wk.week+" answer positions are unbalanced: "+distribution.join("/"));
+   itemCount+=items.length;
+  }
+  assert(itemCount===925,"Expected 925 questions across 36 weeks; received "+itemCount);
+  checks.push({name:"Full Grade 9 PE instruction bank: 36 weeks, 925 unique prompts/rationales and balanced correct-answer positions",ok:true});
+ }catch(e){checks.push({name:"Full Grade 9 PE instruction bank validates",ok:false,error:e.message})}
+
  cleanup(keys);
  checks.forEach(c=>{if(c.ok)pass++;else fail++;const li=document.createElement("li");li.className=c.ok?"pass":"fail";li.innerHTML='<span class="status">'+(c.ok?"PASS":"FAIL")+'</span> — '+c.name+(c.error?'<div class="small">'+c.error.replace(/[&<>"]/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[x]))+'</div>':"");list.appendChild(li)});
  summary.textContent=pass+" passed · "+fail+" failed"+(fail===0?" — engine checks clear":" — investigate failures");summary.className=fail===0?"pass":"fail";
