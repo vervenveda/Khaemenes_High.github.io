@@ -6,6 +6,6 @@ for(const file of ["unit09.js","circuit-lab.js","information-lab.js","magnet-lab
  const s=fs.readFileSync(new URL(file,root),"utf8");new vm.Script(s,{filename:file});
  if(file==="unit09.js"&&(!scoped(s,"09")||!s.includes("scienceConflict")))throw Error("Unit controller missing protection");
  if(file==="circuit-lab.js"&&!s.includes("KhaemenesScienceU09Scope.active()"))throw Error("Circuit record not isolated");
- if(scored.includes(file)&&(!/(?:bestScore|\\bbest\\b)/.test(s)||!/(?:activitySnapshot|\\bsnap\\b)/.test(s)||!scoped(s,"09")))throw Error(file+" missing score guards");
+ if(scored.includes(file)&&(!/(?:bestScore|\bbest\b)/.test(s)||!/(?:activitySnapshot|\bsnap\b)/.test(s)||!scoped(s,"09")))throw Error(file+" missing score guards");
 }
 console.log("PASS Unit 09 scripts and learner mastery safeguards.");
