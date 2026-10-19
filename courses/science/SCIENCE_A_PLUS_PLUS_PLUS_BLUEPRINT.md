@@ -170,3 +170,23 @@ Biology 10, Chemistry 11, and Physics & Engineering 12 Week 35 now require at le
 #### Remaining boundary
 Step 2's *source-level repair pass* is complete. This does not mean all scientific answer keys have been independently validated or that every browser interaction has passed. Step 3 must still verify real student flows: browser-rendered choices, no double scoring, randomized sessions, local persistence and export, learner scoping, accessibility, and actual click/HTTP navigation. The new structural audit deliberately does not claim to replace those tests.
 
+## Step 3 update — student-experience regression automation (2026-10-19)
+
+### Added to main
+- `courses/science/tools/test-upper-science-student-regression.mjs` provides Node VM tests for the shared Monte Carlo engine: active-session resume, stable question and answer-option ordering after refresh, response persistence, stale-session rejection, single completion, and preference for unseen questions on the next attempt when the remaining bank is large enough.
+- The same test inspects the Biology 10, Chemistry 11, and Physics & Engineering 12 dashboards for course-specific learner-scope declarations, shared assessment-engine and bank loading, state-snapshot conflict checks, saved responses, assessment completion calls, 80% language, public-practice labeling, and local relative href/src targets.
+- `.github/workflows/science-student-experience-regression.yml` runs the Grade 10–12 regression script, syntax checks shared scope/contract/assessment modules, and invokes existing Grade 9 learner-scope, stale-save, runtime, and public-entry-route validators. It can run on relevant pushes/pull requests or manual dispatch.
+
+### What this establishes, and what it does not
+This improves repeatable source/engine regression coverage. It does not itself prove the course screens work in Chrome, Safari, Firefox, a tablet, or Linux; nor does it prove the GitHub Actions run passed. The workflow was committed, but no live run result was retrievable during this session. Treat the CI result as pending until GitHub Actions shows a green run.
+
+### Required browser verification
+1. Open each Grade 9–12 course with two different Academy learner profiles and confirm that saved notes, quiz responses, attempts, and progress remain separate.
+2. Begin a public practice midterm/final, answer some questions, refresh, and verify the same questions and option order return with responses preserved.
+3. Submit once and confirm a second submission cannot record a duplicate attempt; open a new attempt and confirm fresh questions are preferred.
+4. Open two tabs for the same learner, change the underlying record in one tab, then submit from the stale tab; the older form must refuse to overwrite the newer record.
+5. Verify no course reports mastery from activity completion alone; the essential mastery target remains 80%, and below-target work routes to correction/reassessment.
+6. Use keyboard only and narrow mobile widths to check focus order, labels, visible feedback, zoom/reflow, print/export, and all week/lesson links.
+
+Do not call the system production-verified until the new workflow passes and these browser checks are recorded. No STOS activation or network changes are part of this step.
+
