@@ -112,7 +112,7 @@
             "A body-size comparison"
           ],
           "correct": 0,
-          "rationale": "Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone."
+          "rationale": "Before activity, check the learner's current symptoms, available space, access needs and stop options; those factors determine whether the plan fits the situation."
         },
         {
           "prompt": "A student becomes dizzy while moving. What should happen first?",
@@ -122,17 +122,17 @@
             "Increase the pace"
           ],
           "correct": 0,
-          "rationale": "Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone."
+          "rationale": "Dizziness is an unusual symptom during movement. Stopping and getting appropriate help takes priority over finishing a task or preserving a score."
         },
         {
           "prompt": "What makes a self-assessment useful?",
           "options": [
-            "It identifies current comfort, access and learning goals without diagnosing health",
+            "It ranks classmates",
             "It assigns medical clearance",
-            "It ranks classmates"
+            "It identifies current comfort, access and learning goals without diagnosing health"
           ],
-          "correct": 0,
-          "rationale": "Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone."
+          "correct": 2,
+          "rationale": "A self-assessment records comfort, access and goals; it should guide learning choices rather than diagnose a health condition."
         },
         {
           "prompt": "A student cannot perform a standing task. Which response best preserves the objective?",
@@ -142,7 +142,7 @@
             "Require private medical details"
           ],
           "correct": 0,
-          "rationale": "Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone."
+          "rationale": "A seated observation can preserve the learning objective when a standing performance is unsuitable. The student can still explain the principle and why the alternative works."
         },
         {
           "prompt": "Which evidence supports a safety decision?",
@@ -152,17 +152,17 @@
             "A comparison of appearances"
           ],
           "correct": 0,
-          "rationale": "Safety decisions depend on symptoms, surroundings, access, and the specific activity; no single activity is suitable for everyone."
+          "rationale": "Documenting the hazard, the adjustment and the reason makes a safety decision reviewable rather than a guess."
         },
         {
           "prompt": "A route becomes slippery after rain. What is the strongest response?",
           "options": [
-            "Select a stable alternative or observation task",
             "Walk faster to reduce time outdoors",
+            "Select a stable alternative or observation task",
             "Ignore the change because the route was planned"
           ],
-          "correct": 0,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "correct": 1,
+          "rationale": "Rain can make a route slippery, so choosing a stable alternative or observation task responds to the actual hazard."
         },
         {
           "prompt": "Which part of a plan makes adaptation possible?",
@@ -172,17 +172,17 @@
             "A classmate's performance target"
           ],
           "correct": 1,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "rationale": "An alternative and a stop condition make a plan flexible when conditions or comfort change."
         },
         {
           "prompt": "Why should a student examine the environment before moving?",
           "options": [
-            "Surfaces, space and weather can change the risk",
+            "It determines academic ability",
             "It guarantees injury prevention",
-            "It determines academic ability"
+            "Surfaces, space and weather can change the risk"
           ],
-          "correct": 0,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "correct": 2,
+          "rationale": "Surface, crowding, space and weather can change the risks even when the movement itself stays the same."
         },
         {
           "prompt": "A student cannot safely demonstrate standing balance. What preserves learning?",
@@ -192,7 +192,7 @@
             "Explain the balance principle using a supported or seated model"
           ],
           "correct": 2,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "rationale": "A supported or seated model can show the balance principle without requiring an unsafe standing demonstration."
         },
         {
           "prompt": "What is the most defensible definition of a stop cue?",
@@ -202,7 +202,7 @@
             "A comparison with other learners"
           ],
           "correct": 0,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "rationale": "A stop cue is a specific condition or signal for pausing or asking for help, not a vague instruction to be careful."
         },
         {
           "prompt": "Which observation is evidence rather than assumption?",
@@ -212,37 +212,37 @@
             "Stronger students never need rest"
           ],
           "correct": 1,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "rationale": "A wet floor and obstacles are observable environmental facts; they are stronger evidence than assumptions about a person's ability."
         },
         {
           "prompt": "Why might a learner choose a lower-demand exercise?",
           "options": [
-            "It means the learner has failed",
+            "It matches current comfort and permits controlled practice",
             "It removes all learning",
-            "It matches current comfort and permits controlled practice"
+            "It means the learner has failed"
           ],
-          "correct": 2,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "correct": 0,
+          "rationale": "A lower-demand variation allows control to be practiced while matching current comfort and needs."
         },
         {
           "prompt": "What should a student do if unusual chest discomfort occurs during activity?",
           "options": [
-            "Stop and seek appropriate help",
+            "Ignore symptoms unless a peer notices",
             "Finish the planned repetitions first",
-            "Ignore symptoms unless a peer notices"
+            "Stop and seek appropriate help"
           ],
-          "correct": 0,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "correct": 2,
+          "rationale": "Unusual chest discomfort requires stopping and seeking appropriate help, not continuing to meet the exercise target."
         },
         {
           "prompt": "Which statement respects personal health privacy?",
           "options": [
-            "Students must share diagnoses publicly",
             "An accessible alternative can be offered without demanding private medical details",
+            "Students must share diagnoses publicly",
             "Students must prove why they need rest"
           ],
-          "correct": 1,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "correct": 0,
+          "rationale": "An accessible alternative can be offered while respecting privacy; students need not disclose private medical details to demonstrate learning."
         },
         {
           "prompt": "Which is a measurable learning outcome for Week 1?",
@@ -252,27 +252,27 @@
             "Identifying a hazard and justifying an adaptation"
           ],
           "correct": 2,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "rationale": "Identifying a hazard and justifying an adaptation can be observed and assessed directly."
         },
         {
           "prompt": "A stable chair is needed for a supported exercise. What should be checked?",
           "options": [
-            "That it is secure and will not roll or slip",
             "That it looks expensive",
+            "That it is secure and will not roll or slip",
             "That it matches the classroom furniture"
           ],
-          "correct": 0,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "correct": 1,
+          "rationale": "A chair used as support should be stable and secure so it does not slide or roll during the movement."
         },
         {
           "prompt": "What makes a written observation valid PE evidence?",
           "options": [
-            "It copies a friend's answer",
             "It accurately explains technique and a safety decision",
+            "It copies a friend's answer",
             "It uses the longest possible answer"
           ],
-          "correct": 1,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "correct": 0,
+          "rationale": "A written observation is meaningful PE evidence when it accurately names technique and explains the associated safety decision."
         },
         {
           "prompt": "Why is 'always push through fatigue' a flawed rule?",
@@ -282,96 +282,96 @@
             "It ignores individual circumstances and warning signs"
           ],
           "correct": 2,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "rationale": "Fatigue varies by person and circumstance; pushing through regardless ignores warning signs and can make an otherwise sound plan unsafe."
         },
         {
           "prompt": "Which plan best supports independent activity?",
           "options": [
-            "Goal, feasible option, adaptation and stop cue",
             "Only a fixed repetition count",
+            "Goal, feasible option, adaptation and stop cue",
             "Only a ranking against classmates"
           ],
-          "correct": 0,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "correct": 1,
+          "rationale": "A usable independent plan states the goal, a feasible activity option, a way to adapt and a clear stopping cue."
         },
         {
           "prompt": "How should students respond to a change in air-quality conditions?",
           "options": [
             "Continue unchanged",
-            "Reassess the environment and consider a safer alternative",
-            "Increase pace to finish quickly"
+            "Increase pace to finish quickly",
+            "Reassess the environment and consider a safer alternative"
           ],
-          "correct": 1,
-          "rationale": "The strongest answer prioritizes a specific, evidence-based and accessible safety decision."
+          "correct": 2,
+          "rationale": "Air-quality changes can alter environmental risk, so the learner should reassess and select an appropriate safer option."
         },
         {
           "prompt": "A planned walk becomes unsuitable because of an air-quality alert. Which response best preserves the learning goal?",
           "options": [
-            "Complete the original route despite the alert",
             "Choose an indoor movement or observation alternative and explain why",
+            "Complete the original route despite the alert",
             "Measure success only by distance"
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "Changing the setting or activity while explaining the reason demonstrates independent safety judgment."
         },
         {
           "prompt": "Why is a stable support important when learning a balance exercise?",
           "options": [
-            "It can reduce the chance of losing control while practicing",
+            "It eliminates the need to observe symptoms",
             "It makes all balance activities equally difficult",
-            "It eliminates the need to observe symptoms"
+            "It can reduce the chance of losing control while practicing"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Appropriate support helps match the task to the learner's current balance and surroundings."
         },
         {
           "prompt": "Which is the strongest evidence that a learner understands an adaptation?",
           "options": [
             "They select the most demanding variation",
-            "They copy another person's technique without explanation",
-            "They explain how the alternative maintains the learning purpose"
+            "They explain how the alternative maintains the learning purpose",
+            "They copy another person's technique without explanation"
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "Reasoned adaptation preserves the concept being learned without forcing an unsuitable performance."
         },
         {
           "prompt": "A learner feels fine but the practice space has a loose rug. What should be addressed?",
           "options": [
-            "Remove or avoid the trip hazard before beginning",
             "Increase intensity to finish sooner",
+            "Remove or avoid the trip hazard before beginning",
             "Ignore the rug because symptoms are absent"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Environment checks complement personal comfort and technique checks."
         },
         {
           "prompt": "Which statement about movement plans is scientifically defensible?",
           "options": [
             "One plan is best for every teenager",
-            "Plans should adapt to conditions, access and individual response",
-            "More discomfort always means more progress"
+            "More discomfort always means more progress",
+            "Plans should adapt to conditions, access and individual response"
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "Movement plans must account for changing conditions and individual needs."
         },
         {
           "prompt": "What is the best interpretation of an observation-only movement assignment?",
           "options": [
-            "It cannot demonstrate learning",
+            "It can demonstrate technique analysis and safety reasoning",
             "It requires private medical disclosure",
-            "It can demonstrate technique analysis and safety reasoning"
+            "It cannot demonstrate learning"
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "Observation and explanation can validly assess conceptual understanding."
         },
         {
           "prompt": "Why should a student write down a stop cue before activity?",
           "options": [
-            "To make a response plan before a problem occurs",
+            "To compare symptoms with classmates",
             "To prove they will never need to stop",
-            "To compare symptoms with classmates"
+            "To make a response plan before a problem occurs"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A clear stop cue makes a plan more actionable and less dependent on pressure in the moment."
         },
         {
@@ -388,10 +388,10 @@
           "prompt": "A student notices a new unusual symptom during practice. Which principle takes priority?",
           "options": [
             "Completing the assigned time",
-            "Keeping the same exercise variation",
-            "Stopping and seeking appropriate help"
+            "Stopping and seeking appropriate help",
+            "Keeping the same exercise variation"
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "Unusual symptoms override numerical activity targets."
         },
         {
@@ -530,47 +530,47 @@
             "A painful forced stretch"
           ],
           "correct": 0,
-          "rationale": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward."
+          "rationale": "An easy start with gradual pace changes rehearses walking while allowing the learner to notice comfort and readiness."
         },
         {
           "prompt": "Why should a warm-up resemble the main activity?",
           "options": [
-            "It rehearses relevant movement patterns at lower effort",
             "It guarantees no injury can occur",
+            "It rehearses relevant movement patterns at lower effort",
             "It makes recovery unnecessary"
           ],
-          "correct": 0,
-          "rationale": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward."
+          "correct": 1,
+          "rationale": "A warm-up that resembles the main task rehearses relevant patterns at a lower demand before the full activity."
         },
         {
           "prompt": "What is an appropriate warm-up adjustment for limited standing tolerance?",
           "options": [
-            "Seated marching and comfortable joint movements",
             "Skipping the learning objective",
+            "Seated marching and comfortable joint movements",
             "Requiring jumping"
           ],
-          "correct": 0,
-          "rationale": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward."
+          "correct": 1,
+          "rationale": "Seated marching and comfortable joint movement can prepare a learner who cannot comfortably tolerate standing for long."
         },
         {
           "prompt": "Which sign means the learner should stop and ask for help?",
           "options": [
-            "Unusual dizziness or pain",
+            "A planned rest break",
             "Comfortable breathing",
-            "A planned rest break"
+            "Unusual dizziness or pain"
           ],
-          "correct": 0,
-          "rationale": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward."
+          "correct": 2,
+          "rationale": "Unusual dizziness or pain is a reason to stop and seek guidance, rather than treat discomfort as a warm-up target."
         },
         {
           "prompt": "What distinguishes recovery from a performance test?",
           "options": [
-            "Recovery supports a comfortable return to rest rather than maximizing output",
             "Recovery requires competition",
+            "Recovery supports a comfortable return to rest rather than maximizing output",
             "Recovery must always last exactly one minute"
           ],
-          "correct": 0,
-          "rationale": "Warm-ups gradually prepare movement patterns and attention for the task; cool-down and recovery support a comfortable transition afterward."
+          "correct": 1,
+          "rationale": "Recovery lowers demand and supports a comfortable transition to rest; it is not another attempt to maximize performance."
         },
         {
           "prompt": "Which warm-up best prepares a beginner for a comfortable walk?",
@@ -585,11 +585,11 @@
         {
           "prompt": "Why should a warm-up be adaptable?",
           "options": [
-            "Everyone must perform the same routine",
             "Comfort, access and conditions can vary by day",
+            "Everyone must perform the same routine",
             "A warm-up eliminates every risk"
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "The warm-up should match the individual and current circumstances."
         },
         {
@@ -605,31 +605,31 @@
         {
           "prompt": "What does an activity-specific warm-up mean?",
           "options": [
-            "Preparation resembles the movements that follow",
             "It must include specialized equipment",
+            "Preparation resembles the movements that follow",
             "It requires a competitive score"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A specific warm-up rehearses related patterns at manageable demand."
         },
         {
           "prompt": "Which observation suggests reducing warm-up difficulty?",
           "options": [
-            "A comfortable easy pace",
             "Pain or unusual dizziness",
+            "A comfortable easy pace",
             "A planned rest interval"
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "Pain or unusual symptoms warrant stopping or adapting, not forcing the routine."
         },
         {
           "prompt": "Why is a gentle beginning useful?",
           "options": [
             "It guarantees no injury",
-            "It proves athletic superiority",
-            "It permits gradual demand and observation of comfort"
+            "It permits gradual demand and observation of comfort",
+            "It proves athletic superiority"
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "A gradual start helps the learner gauge readiness."
         },
         {
@@ -646,40 +646,40 @@
           "prompt": "A student has little room at home. What is a sensible preparation option?",
           "options": [
             "Jump into nearby furniture",
-            "Use comfortable seated or standing movements within clear space",
-            "Skip the lesson because a gym is required"
+            "Skip the lesson because a gym is required",
+            "Use comfortable seated or standing movements within clear space"
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "Space-aware adaptations can preserve the learning objective."
         },
         {
           "prompt": "Which detail belongs in a recovery plan?",
           "options": [
             "A demand to match peers",
-            "A rule never to pause",
-            "A gradual reduction in effort and a stop cue"
+            "A gradual reduction in effort and a stop cue",
+            "A rule never to pause"
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "Recovery includes lowering effort and monitoring response."
         },
         {
           "prompt": "After a walk a student feels unexpectedly faint. What is appropriate?",
           "options": [
-            "Stop and seek appropriate help",
             "Push through to meet a time goal",
+            "Stop and seek appropriate help",
             "Immediately begin a harder activity"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Unexpected faintness is not a target to overcome."
         },
         {
           "prompt": "How should a student judge a useful warm-up?",
           "options": [
-            "By how painful it feels",
             "By whether it suits the next activity and remains controlled",
+            "By how painful it feels",
             "By whether classmates find it impressive"
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "Suitability and control are stronger criteria than discomfort or comparison."
         },
         {
@@ -695,21 +695,21 @@
         {
           "prompt": "Why might a student use a seated warm-up?",
           "options": [
-            "It can be an accessible way to prepare movement",
+            "It always requires medical disclosure",
             "It is automatically less educational",
-            "It always requires medical disclosure"
+            "It can be an accessible way to prepare movement"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "An accessible option can teach the same planning and preparation principles."
         },
         {
           "prompt": "What distinguishes recovery from avoidance?",
           "options": [
             "Recovery is always unnecessary",
-            "Recovery is planned management of effort and readiness",
-            "Recovery means the student failed"
+            "Recovery means the student failed",
+            "Recovery is planned management of effort and readiness"
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "Rest and recovery are legitimate elements of physical activity."
         },
         {
@@ -725,41 +725,41 @@
         {
           "prompt": "What is the best explanation for gradual warm-up intensity?",
           "options": [
-            "It allows movement demands to increase while monitoring response",
+            "It removes the need for hydration or rest",
             "It makes every exercise safe",
-            "It removes the need for hydration or rest"
+            "It allows movement demands to increase while monitoring response"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Gradual change permits observation and adaptation."
         },
         {
           "prompt": "Why should a learner record environmental conditions?",
           "options": [
-            "They determine a student's intelligence",
             "Heat, surfaces and available space affect safe choices",
+            "They determine a student's intelligence",
             "They replace all movement instruction"
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "Environmental factors may require changes to the plan."
         },
         {
           "prompt": "Which statement about muscle temperature is most accurate?",
           "options": [
-            "It is unrelated to activity",
+            "It commonly increases as movement begins",
             "It must reach a fixed number for all learners",
-            "It commonly increases as movement begins"
+            "It is unrelated to activity"
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "Muscle temperature typically increases with activity; no universal fixed target is required."
         },
         {
           "prompt": "What is a suitable alternative to physical demonstration during illness?",
           "options": [
-            "Analyze and explain a fictional preparation sequence",
+            "Copy another learner's private log",
             "Perform despite unusual symptoms",
-            "Copy another learner's private log"
+            "Analyze and explain a fictional preparation sequence"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Observation and reasoned explanation can demonstrate conceptual understanding."
         },
         {
@@ -785,31 +785,31 @@
         {
           "prompt": "A learner feels comfortable after two minutes of easy movement. What next?",
           "options": [
-            "Choose a suitable next step while continuing to monitor comfort",
             "Immediately perform a maximal test",
+            "Choose a suitable next step while continuing to monitor comfort",
             "Ignore the planned activity"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "The next step should reflect purpose, readiness and continued monitoring."
         },
         {
           "prompt": "Which is a poor warm-up success measure?",
           "options": [
-            "Appropriate preparation",
             "Maximum discomfort tolerated",
+            "Appropriate preparation",
             "Ability to explain adaptations"
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "Discomfort is not an appropriate success target."
         },
         {
           "prompt": "What makes a warm-up plan independently usable?",
           "options": [
             "Requiring a partner to approve every step",
-            "Assuming every home has a gym",
-            "Clear steps, adaptations and stop cues"
+            "Clear steps, adaptations and stop cues",
+            "Assuming every home has a gym"
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "Clear choices and stop cues support independent learning."
         },
         {
@@ -1342,12 +1342,12 @@
         {
           "prompt": "Which describes controlled mobility practice?",
           "options": [
-            "Comfortable movement through an available range without forcing pain",
             "Bouncing into a painful position",
+            "Comfortable movement through an available range without forcing pain",
             "Copying the deepest stretch in class"
           ],
-          "correct": 0,
-          "rationale": "Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical."
+          "correct": 1,
+          "rationale": "Mobility practice aims for controlled, comfortable movement within available range; pain-forcing is not part of the definition."
         },
         {
           "prompt": "How is mobility different from flexibility?",
@@ -1357,56 +1357,56 @@
             "Mobility always requires equipment"
           ],
           "correct": 0,
-          "rationale": "Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical."
+          "rationale": "Flexibility refers to available range, while mobility also considers active control of the movement through that range."
         },
         {
           "prompt": "Why might a learner use seated ankle circles?",
           "options": [
-            "To practice controlled ankle movement with additional support",
+            "To avoid all technique learning",
             "Because seated work never counts",
-            "To avoid all technique learning"
+            "To practice controlled ankle movement with additional support"
           ],
-          "correct": 0,
-          "rationale": "Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical."
+          "correct": 2,
+          "rationale": "Seated ankle circles reduce balance demands while letting the learner practice control of the ankle joint."
         },
         {
           "prompt": "Which evidence best demonstrates mobility understanding?",
           "options": [
-            "A movement choice, range modification and reason",
+            "A body-size ranking",
             "The largest range in the class",
-            "A body-size ranking"
+            "A movement choice, range modification and reason"
           ],
-          "correct": 0,
-          "rationale": "Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical."
+          "correct": 2,
+          "rationale": "A movement choice plus a range modification and reason demonstrates understanding better than naming a stretch alone."
         },
         {
           "prompt": "What should happen if a stretch causes sharp pain?",
           "options": [
-            "Stop and adjust or seek guidance",
+            "Bounce repeatedly",
             "Hold longer",
-            "Bounce repeatedly"
+            "Stop and adjust or seek guidance"
           ],
-          "correct": 0,
-          "rationale": "Mobility is controlled movement through a comfortable available range; flexibility and mobility are related but not identical."
+          "correct": 2,
+          "rationale": "Sharp pain is a stop signal. Adjust the activity or seek appropriate guidance rather than forcing the stretch."
         },
         {
           "prompt": "Which joint action occurs when the ankle points the toes upward?",
           "options": [
             "Plantar flexion",
-            "Elbow extension",
-            "Dorsiflexion"
+            "Dorsiflexion",
+            "Elbow extension"
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "Ankle dorsiflexion raises the top of the foot toward the shin."
         },
         {
           "prompt": "What is the name for moving the foot downward as if pressing a pedal?",
           "options": [
-            "Plantar flexion",
+            "Knee flexion",
             "Shoulder abduction",
-            "Knee flexion"
+            "Plantar flexion"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Plantar flexion points the foot downward."
         },
         {
@@ -1423,10 +1423,10 @@
           "prompt": "Why does a stable chair help during seated ankle movements?",
           "options": [
             "It guarantees every range is safe",
-            "It eliminates the need to monitor symptoms",
-            "It offers support so the ankle movement can be observed"
+            "It offers support so the ankle movement can be observed",
+            "It eliminates the need to monitor symptoms"
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "Support can reduce balance demands while the target joint moves."
         },
         {
@@ -1442,31 +1442,31 @@
         {
           "prompt": "Which movement most directly demonstrates elbow flexion?",
           "options": [
-            "Straightening the knee",
             "Bending the elbow to bring the hand closer to the shoulder",
+            "Straightening the knee",
             "Pointing the toes"
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "Flexion at the elbow decreases its angle."
         },
         {
           "prompt": "Which movement demonstrates knee extension?",
           "options": [
-            "Bending the elbow",
+            "Straightening a bent knee within a comfortable range",
             "Turning the head",
-            "Straightening a bent knee within a comfortable range"
+            "Bending the elbow"
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "Knee extension increases the knee angle."
         },
         {
           "prompt": "What distinguishes a mobility goal from a flexibility-only goal?",
           "options": [
-            "It includes control while moving through a useful range",
             "It always seeks maximum range",
+            "It includes control while moving through a useful range",
             "It requires a gym"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Mobility combines available movement with control."
         },
         {
@@ -1482,41 +1482,41 @@
         {
           "prompt": "Why should a learner avoid bouncing into an uncomfortable stretch?",
           "options": [
-            "It always improves coordination",
+            "Rapid forcing can reduce control and increase discomfort",
             "It makes supports unnecessary",
-            "Rapid forcing can reduce control and increase discomfort"
+            "It always improves coordination"
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "Comfortable controlled movement is the appropriate learning target."
         },
         {
           "prompt": "Which observation best supports a claim of improved control?",
           "options": [
-            "A movement is smooth and can be stopped safely",
+            "The student ignores discomfort",
             "A joint moves farther than everyone else's",
-            "The student ignores discomfort"
+            "A movement is smooth and can be stopped safely"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Control includes managing and stopping motion."
         },
         {
           "prompt": "What is a practical seated mobility alternative?",
           "options": [
             "Jumping on an unstable stool",
-            "Slow ankle circles while seated securely",
-            "Forcing deep standing lunges"
+            "Forcing deep standing lunges",
+            "Slow ankle circles while seated securely"
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "Seated ankle movements can teach joint directions with support."
         },
         {
           "prompt": "Which statement about joint range is most accurate?",
           "options": [
-            "Every joint rotates equally",
+            "Different joints allow different types and amounts of movement",
             "All people have identical ranges",
-            "Different joints allow different types and amounts of movement"
+            "Every joint rotates equally"
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "Joint anatomy and individual variation affect movement."
         },
         {
@@ -1532,11 +1532,11 @@
         {
           "prompt": "What is the best first step before a new mobility sequence?",
           "options": [
-            "Attempt the deepest possible stretch",
             "Check space, support, comfort and available range",
+            "Attempt the deepest possible stretch",
             "Close your eyes and move quickly"
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "Preparation helps match the activity to current conditions."
         },
         {
@@ -1552,91 +1552,91 @@
         {
           "prompt": "Why is a smaller controlled reach sometimes preferable?",
           "options": [
-            "It preserves alignment and balance while demonstrating the skill",
+            "It prevents all learning",
             "It proves weakness",
-            "It prevents all learning"
+            "It preserves alignment and balance while demonstrating the skill"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Range without control does not demonstrate better movement."
         },
         {
           "prompt": "What should an observation-only student document?",
           "options": [
             "A comparison of body shapes",
-            "Joint, movement direction, control cue and adaptation",
-            "Only the exercise name"
+            "Only the exercise name",
+            "Joint, movement direction, control cue and adaptation"
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "Reasoned observation can demonstrate conceptual understanding."
         },
         {
           "prompt": "Which example combines mobility and stability?",
           "options": [
-            "A forced stretch held through pain",
+            "A slow supported reach followed by a controlled return",
             "A rushed reach with a fall",
-            "A slow supported reach followed by a controlled return"
+            "A forced stretch held through pain"
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "Movement quality includes controlled departure and return."
         },
         {
           "prompt": "What is the most useful response to a claim that pain proves a stretch works?",
           "options": [
-            "Reject the claim and prioritize comfortable control",
             "Accept it without evidence",
+            "Reject the claim and prioritize comfortable control",
             "Stretch more forcefully"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Pain is not a valid success metric for mobility practice."
         },
         {
           "prompt": "Which action is shoulder abduction?",
           "options": [
-            "Bending the knee",
             "Raising an arm sideways away from the body",
+            "Bending the knee",
             "Pointing the toes"
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "Abduction moves a limb away from the body's midline."
         },
         {
           "prompt": "Which action is hip flexion?",
           "options": [
             "Straightening the elbow",
-            "Turning the palm upward",
-            "Bringing the thigh toward the torso within a comfortable range"
+            "Bringing the thigh toward the torso within a comfortable range",
+            "Turning the palm upward"
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "Hip flexion decreases the angle between the thigh and torso."
         },
         {
           "prompt": "How can a learner compare two mobility options fairly?",
           "options": [
-            "Describe support, range, comfort and control in each",
             "Compare only the largest range",
+            "Describe support, range, comfort and control in each",
             "Ignore accessibility"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Multiple relevant observations provide a better comparison."
         },
         {
           "prompt": "Which plan is most independently usable?",
           "options": [
             "A vague instruction to stretch harder",
-            "Three named movements with supports, cues and stopping rules",
-            "An unmodified routine copied from a stranger"
+            "An unmodified routine copied from a stranger",
+            "Three named movements with supports, cues and stopping rules"
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "Specific safe instructions support independent decision-making."
         },
         {
           "prompt": "What is the strongest evidence that a mobility lesson was learned?",
           "options": [
             "The deepest stretch",
-            "The most repetitions regardless of form",
-            "A justified movement choice and an appropriate adaptation"
+            "A justified movement choice and an appropriate adaptation",
+            "The most repetitions regardless of form"
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "Learning evidence should reflect understanding, reasoning and technique."
         }
       ],
@@ -2160,12 +2160,12 @@
         {
           "prompt": "What does cardiorespiratory endurance describe?",
           "options": [
-            "The ability to sustain suitable activity over time",
             "Only maximum sprint speed",
+            "The ability to sustain suitable activity over time",
             "The number of push-ups completed"
           ],
-          "correct": 0,
-          "rationale": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues."
+          "correct": 1,
+          "rationale": "Cardiorespiratory endurance describes sustaining suitable activity over time as the heart, lungs and working muscles support movement."
         },
         {
           "prompt": "What can the talk test estimate?",
@@ -2175,56 +2175,56 @@
             "A medical diagnosis"
           ],
           "correct": 0,
-          "rationale": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues."
+          "rationale": "The talk test provides a rough estimate of relative effort based on speech comfort; it is not an exact physiological measure."
         },
         {
           "prompt": "Why might intervals help a beginner?",
           "options": [
-            "They allow movement with planned recovery",
             "They eliminate the need for safety checks",
+            "They allow movement with planned recovery",
             "They require maximum effort"
           ],
-          "correct": 0,
-          "rationale": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues."
+          "correct": 1,
+          "rationale": "Planned recovery periods can make an activity more manageable for a beginner while still allowing purposeful movement."
         },
         {
           "prompt": "Which sign calls for stopping activity?",
           "options": [
-            "Unusual dizziness or chest discomfort",
             "A comfortable planned break",
+            "Unusual dizziness or chest discomfort",
             "Choosing a slower pace"
           ],
-          "correct": 0,
-          "rationale": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues."
+          "correct": 1,
+          "rationale": "Unusual dizziness or chest discomfort requires stopping and seeking appropriate help instead of continuing the session."
         },
         {
           "prompt": "Which log entry helps interpret endurance work?",
           "options": [
-            "Duration, effort, conditions and recovery",
             "Only class ranking",
+            "Duration, effort, conditions and recovery",
             "Only body mass"
           ],
-          "correct": 0,
-          "rationale": "Cardiorespiratory endurance concerns sustaining movement with the heart, lungs and muscles working together; effort can be monitored with subjective cues."
+          "correct": 1,
+          "rationale": "Duration, perceived effort, route or environmental conditions, and recovery together make an endurance log interpretable."
         },
         {
           "prompt": "A learner walks at the same speed on level ground and uphill. Why might effort increase uphill?",
           "options": [
-            "The uphill route generally requires more work against gravity",
+            "Heart rate must always decrease",
             "The distance becomes zero",
-            "Heart rate must always decrease"
+            "The uphill route generally requires more work against gravity"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "An incline generally increases mechanical demand even when walking speed stays constant."
         },
         {
           "prompt": "Which log best supports a fair comparison between two sessions?",
           "options": [
-            "Only the number of steps",
             "Duration, route conditions, effort, and recovery notes",
+            "Only the number of steps",
             "Only the learner's height"
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "Context and perceived effort help interpret sessions without equating speed with fitness."
         },
         {
@@ -2260,11 +2260,11 @@
         {
           "prompt": "Which factor could make the same walking route feel harder on a different day?",
           "options": [
-            "The calendar's font",
+            "Heat, fatigue, or a change in terrain",
             "The color of a notebook",
-            "Heat, fatigue, or a change in terrain"
+            "The calendar's font"
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "Environment and readiness affect the effort experienced."
         },
         {
@@ -2281,90 +2281,90 @@
           "prompt": "Which claim about endurance is most accurate?",
           "options": [
             "Only running counts as endurance work",
-            "Different accessible rhythmic activities can develop endurance",
-            "Longer activity is always better regardless of symptoms"
+            "Longer activity is always better regardless of symptoms",
+            "Different accessible rhythmic activities can develop endurance"
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "Endurance can be practiced through varied accessible activities at suitable intensity."
         },
         {
           "prompt": "During activity, a student develops unusual dizziness. What should they do?",
           "options": [
-            "Increase pace",
+            "Stop and seek appropriate help",
             "Wait until the timer ends",
-            "Stop and seek appropriate help"
+            "Increase pace"
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "Unusual dizziness is a reason to stop rather than pursue a target."
         },
         {
           "prompt": "A learner selects seated aerobic marching rather than outdoor running. What should assessment focus on?",
           "options": [
-            "Understanding effort, safe adaptation, and sustained movement",
+            "Whether they disclose private medical details",
             "Comparison with runners' speed",
-            "Whether they disclose private medical details"
+            "Understanding effort, safe adaptation, and sustained movement"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Equivalent learning can be shown through adapted activity and reasoning."
         },
         {
           "prompt": "Why is a one-day record insufficient to prove a long-term training effect?",
           "options": [
-            "It is too detailed",
             "Long-term adaptation requires observations across time and context",
+            "It is too detailed",
             "It must contain a competition score"
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "A single observation cannot establish a sustained training change."
         },
         {
           "prompt": "What is a defensible way to progress endurance activity?",
           "options": [
-            "Double the duration every day",
+            "Increase demands gradually when comfortable and appropriate",
             "Ignore recovery needs",
-            "Increase demands gradually when comfortable and appropriate"
+            "Double the duration every day"
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "Progression should respond to the learner's circumstances and recovery."
         },
         {
           "prompt": "A student logs 'felt harder' on a humid day. Which interpretation is best?",
           "options": [
-            "Humidity may be relevant, but other factors also need consideration",
             "Humidity proves the student lost fitness",
+            "Humidity may be relevant, but other factors also need consideration",
             "The log is invalid"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Evidence should consider environmental conditions without overclaiming causation."
         },
         {
           "prompt": "Why might a student prefer an indoor route during poor air quality?",
           "options": [
-            "Indoor activity guarantees identical effort",
             "It may reduce an avoidable environmental exposure",
+            "Indoor activity guarantees identical effort",
             "Outdoor activity is always unsafe"
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "Adapting a route can help meet the learning objective while considering air quality."
         },
         {
           "prompt": "Which statement about the talk test is incorrect?",
           "options": [
             "It can help approximate relative effort",
-            "It is useful alongside other observations",
-            "It gives an exact measurement of oxygen consumption"
+            "It gives an exact measurement of oxygen consumption",
+            "It is useful alongside other observations"
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "The talk test does not directly measure oxygen uptake."
         },
         {
           "prompt": "What does 'sustainable' mean in a personal activity plan?",
           "options": [
-            "A routine that can be adapted and maintained appropriately",
+            "A routine with no rest",
             "An unchanging maximum-intensity routine",
-            "A routine with no rest"
+            "A routine that can be adapted and maintained appropriately"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Sustainability involves feasibility, adaptability, and recovery."
         },
         {
@@ -2390,21 +2390,21 @@
         {
           "prompt": "A student chooses alternating two-minute movement and one-minute rest periods. What is this an example of?",
           "options": [
-            "Interval activity",
+            "A flexibility assessment",
             "A maximal sprint test",
-            "A flexibility assessment"
+            "Interval activity"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Intervals alternate activity and recovery periods."
         },
         {
           "prompt": "What is the best goal of the first endurance lesson for an independent learner?",
           "options": [
             "Beat another student's distance",
-            "Understand effort cues and select a feasible activity option",
-            "Complete a fixed intensity regardless of context"
+            "Complete a fixed intensity regardless of context",
+            "Understand effort cues and select a feasible activity option"
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "The academic goal is informed self-management, not peer comparison."
         }
       ],
