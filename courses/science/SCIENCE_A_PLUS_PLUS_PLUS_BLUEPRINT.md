@@ -145,3 +145,28 @@ This update supersedes older gap statements where current source demonstrates th
 - Run live-browser regression for question randomization, score-once behavior, persistence across refresh, source-appropriate option rendering, accessibility, and learner-scoped records.
 - Recheck standards alignment, answer-key correctness, dataset mathematics, and lab safety separately. Structural bank checks do not establish scientific correctness or formal jurisdictional compliance.
 
+### Step 2 completion — all 108 upper-grade weekly overview pages scanned (2026-10-19)
+
+The overview sweep covered Biology 10 Weeks 01–36, Chemistry 11 Weeks 01–36, and Physics & Engineering 12 Weeks 01–36. All 108 overviews contained links to the five expected day pages in the source-level link-count scan. This is not an HTTP/browser click test.
+
+#### Reading-reference repairs
+Where a week said only “Open text …” even though its Tuesday lesson already contained the explanatory reading, its prompt now links directly to that lesson and names the subject focus:
+
+- Biology 10: Weeks 04, 06, 08, 09, 10, 13, 14, 15, 19, 22, 23, 24, 25, and 33.
+- Chemistry 11: Weeks 04, 06, 07, 08, 10, 12, 14, 16, 24, 27, and 30.
+- Physics & Engineering 12: Weeks 04, 07, 11, and 12.
+
+The direct links target each corresponding `lessons/day-02.html` file. Existing lab tools, datasets, daily lesson content, student evidence, and route structure were retained. Weeks not listed above had no matching “open text/textbook/coming soon” phrase under this targeted scan, and the five-day overview links were present in each scanned source.
+
+#### Capstone source instruction strengthened
+Biology 10, Chemistry 11, and Physics & Engineering 12 Week 35 now require at least two relevant credible sources, recording source identity/details, what claim the source supports, and a limitation or uncertainty. The assignment is no longer an unexplained “student-selected trusted sources” placeholder.
+
+#### Assessment verification and automation
+- Source-level JSON parsing and schema checks found Biology 10: 180 items / 36 weeks; Chemistry 11: 339 items / 34 tagged weeks; Physics & Engineering 12: 180 items / 36 weeks. Every inspected item had a unique ID and prompt, valid answer index, options array, explanation, and source/type tags. The Chemistry bank's Weeks 18 and 36 are not tagged, apparently because those are cumulative exam weeks; confirm this intentional design during the next assessment-map review rather than treating it as an automatic defect.
+- The Chemistry-specific option normalizer now preserves scientific signs and punctuation, preventing positive and negative numerical answers from being treated as duplicates.
+- Added `courses/science/tools/audit-upper-science-question-banks.mjs` and `.github/workflows/upper-science-question-bank-validation.yml`. The workflow runs the shared bank audit and Chemistry-specific audit on relevant pushes and pull requests, and supports manual dispatch.
+- The workflow file is committed. Its post-commit Actions result was not independently retrieved in this audit session; treat automated test execution as pending until a green run is observed.
+
+#### Remaining boundary
+Step 2's *source-level repair pass* is complete. This does not mean all scientific answer keys have been independently validated or that every browser interaction has passed. Step 3 must still verify real student flows: browser-rendered choices, no double scoring, randomized sessions, local persistence and export, learner scoping, accessibility, and actual click/HTTP navigation. The new structural audit deliberately does not claim to replace those tests.
+
