@@ -167,9 +167,9 @@ check("Monte Carlo resume preserves question and option order", () => {
   const resumedMaterialized = api.materialize(bank, resumed);
   assert.equal(resumed.id, first.id, "refresh/resume should keep the same active session");
   assert.deepEqual(Array.from(resumed.questionIds), Array.from(first.questionIds));
-  assert.deepEqual(
-    resumedMaterialized.map(q => [q.id, ...q.optionOrder]),
-    firstMaterialized.map(q => [q.id, ...q.optionOrder]),
+  assert.equal(
+    JSON.stringify(resumedMaterialized.map(q => [q.id, ...q.optionOrder])),
+    JSON.stringify(firstMaterialized.map(q => [q.id, ...q.optionOrder])),
     "refresh/resume must preserve randomized option order"
   );
 });
