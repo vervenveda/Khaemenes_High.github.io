@@ -298,3 +298,21 @@ The `Upper Science Question Bank Validation` workflow passed all steps after the
 - The test confirms the expected accessible attributes are added; it does not emulate every browser/screen-reader combination.
 - No question-bank content, mastery scores, learner records, or STOS activation state was intentionally modified in this batch.
 
+## Additional assessment-copy consistency repair — Grade 9 Units 01–12 (2026-10-19)
+
+A cross-check of each unit's public assessment page against its actual `assessment-app.js` found a learner-facing mismatch: every unit assessment app uses `FORM_COUNT=25` and calculates the passing threshold as `ceil(25 × 0.80) = 20`, while Units 02–12 still described a 30-item form and a 24/30 threshold. Unit 01 also had an old explanatory sentence referring to 20/24 despite having a correct 25-item header.
+
+Repairs on `main`:
+- Updated all 12 unit-assessment pages to state 25 objective questions and a 20/25 (80%) mastery threshold.
+- Removed obsolete 30-question / 24-of-30 copy from those unit pages.
+- Replaced Unit 01's 20/24 explanatory sentence with clear separation between the objective form's 20/25 mastery requirement and its separately rubric-scored constructed responses.
+- Extended `test-unit04-learner-scope.mjs` to inspect all 12 assessment apps and pages. It asserts each app configures 25 items and the dynamic 80% threshold; each student page states 25 items and 20/25; and none retains the stale 30/24 or 20/24 wording.
+- The same regression script now checks Grade 9 Units 01–12 quiz navigation has an accessible landmark, announced question number and answer state, `aria-current="step"`, and a radio group labelled by the question prompt.
+
+CI results:
+- Science Student Experience Regression passed on commit `5ca2c9b9e333b520b80971ec51eb95a7230e7bec`, including the new count-copy consistency checks.
+- Public Entry Route Validation and High School Record and Route Validation passed on the same commit.
+- The separate cumulative benchmark map retains its distinct 60/70/104-question exams; those are different cumulative practice assessments and were not changed.
+
+The audit now distinguishes unit assessment forms (25 items each) from larger cumulative benchmarks. No item banks, student responses, recorded mastery scores, or STOS activation settings were changed.
+
