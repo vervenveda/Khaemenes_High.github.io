@@ -3214,11 +3214,11 @@
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about movement skill feedback.\" Which response best corrects the reasoning?",
           "options": [
-            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+            "Keep the claim without checking the observation, adaptation, or learning objective.",
             "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The correction prioritizes learning evidence and avoids unsupported comparisons or unsafe generalizations."
         },
         {
@@ -3235,20 +3235,20 @@
           "prompt": "A learner cannot use the original movement format for movement skill feedback. Which adaptation is strongest?",
           "options": [
             "Remove the learner from the task without an alternative.",
-            "Require private medical details before offering an adjustment.",
-            "Choose a safe accessible demonstration, observation, or explanation that still measures \"turn a vague compliment into one observable technique cue\"."
+            "Choose a safe accessible demonstration, observation, or explanation that still measures \"turn a vague compliment into one observable technique cue\".",
+            "Require private medical details before offering an adjustment."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
         },
         {
           "prompt": "While practicing \"turn a vague compliment into one observable technique cue\", a learner notices a new safety concern. What is the best response?",
           "options": [
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
+            "Ask peers to vote on whether a warning sign should be ignored.",
             "Continue unchanged because the plan was already written.",
-            "Ask peers to vote on whether a warning sign should be ignored."
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
@@ -3304,21 +3304,21 @@
         {
           "prompt": "A feedback note says “bad form.” What revision makes it more useful?",
           "options": [
-            "Name the movement detail to notice and a safe next step.",
             "Repeat “bad form” more firmly.",
+            "Name the movement detail to notice and a safe next step.",
             "Add a score based on appearance."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Feedback should identify a concrete action or decision the learner can practice safely."
         },
         {
           "prompt": "A learner is uncomfortable with a movement. What should feedback emphasize?",
           "options": [
-            "Offer a safe variation while keeping the learning goal clear.",
+            "Tell the learner not to mention discomfort.",
             "Insist the original version is the only valid one.",
-            "Tell the learner not to mention discomfort."
+            "Offer a safe variation while keeping the learning goal clear."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "An adaptation can preserve the objective while respecting comfort and access."
         },
         {
@@ -3334,11 +3334,11 @@
         {
           "prompt": "Why should feedback distinguish observation from interpretation?",
           "options": [
-            "So the learner can see what was noticed and what is still uncertain.",
             "So the learner can avoid using evidence.",
+            "So the learner can see what was noticed and what is still uncertain.",
             "So every observation becomes a diagnosis."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Separating observations from assumptions improves accuracy and prevents overclaiming."
         },
         {
@@ -3364,11 +3364,11 @@
         {
           "prompt": "A peer says, “You are bad at this.” Which response best models constructive feedback?",
           "options": [
-            "Name one observable action and a kind suggestion.",
             "Repeat the insult more quietly.",
+            "Name one observable action and a kind suggestion.",
             "Rank both learners by ability."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Specific, respectful feedback supports learning and protects dignity."
         },
         {
@@ -3394,71 +3394,71 @@
         {
           "prompt": "Which record best supports a reflection on skill feedback?",
           "options": [
-            "The cue, the learner's response, and one limitation of the observation.",
+            "A comparison of body size and speed.",
             "Only a statement that the session went well.",
-            "A comparison of body size and speed."
+            "The cue, the learner's response, and one limitation of the observation."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A useful record links the feedback to observable evidence and acknowledges uncertainty."
         },
         {
           "prompt": "How should a teacher respond if a learner reports pain during the drill?",
           "options": [
-            "Stop the activity and follow appropriate safety guidance before resuming.",
             "Continue until the feedback form is finished.",
+            "Stop the activity and follow appropriate safety guidance before resuming.",
             "Treat the report as poor effort."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A symptom report takes priority over finishing a task."
         },
         {
           "prompt": "Which statement is an example of actionable self-feedback?",
           "options": [
-            "I drifted outside the lane on the second turn; I will widen the turn and check again.",
+            "Everyone else did better.",
             "I am terrible at sports.",
-            "Everyone else did better."
+            "I drifted outside the lane on the second turn; I will widen the turn and check again."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Actionable self-feedback identifies an observation and a reasonable next step."
         },
         {
           "prompt": "Why is it useful to ask learners what they noticed about their own movement?",
           "options": [
-            "It helps them interpret evidence and build self-monitoring skills.",
             "It replaces all teacher observations.",
+            "It helps them interpret evidence and build self-monitoring skills.",
             "It proves a learner has a medical condition."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Reflection complements external feedback and helps the learner understand their own evidence."
         },
         {
           "prompt": "What should a peer do before suggesting a change to another person's technique?",
           "options": [
-            "Ask whether feedback is welcome and offer one respectful observation.",
+            "Use a nickname about their body.",
             "Demand that the person change immediately.",
-            "Use a nickname about their body."
+            "Ask whether feedback is welcome and offer one respectful observation."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Permission and respect make peer feedback safer and more useful."
         },
         {
           "prompt": "A video looks different from the learner's experience. What is the best conclusion?",
           "options": [
-            "Use it as one source of evidence and discuss context and limits.",
+            "Use it to diagnose the learner.",
             "Assume the video tells the whole story.",
-            "Use it to diagnose the learner."
+            "Use it as one source of evidence and discuss context and limits."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Video can support observation but has limits and should be interpreted in context."
         },
         {
           "prompt": "Which feedback best supports improvement without creating a ranking?",
           "options": [
-            "Your next step is to keep the movement controlled through the finish.",
+            "Your body should look like the model.",
             "You must beat the fastest student.",
-            "Your body should look like the model."
+            "Your next step is to keep the movement controlled through the finish."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A personal next step focuses on learning rather than comparison."
         }
       ],
@@ -3553,30 +3553,30 @@
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for recreation and inclusive games?",
           "options": [
             "The learner has mastered every related skill in every setting.",
-            "The learner should use the same activity and difficulty in all future sessions.",
-            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step."
+            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
+            "The learner should use the same activity and difficulty in all future sessions."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "A learning record supports conclusions limited to the observed task; it does not prove universal mastery or a one-size-fits-all plan."
         },
         {
           "prompt": "During recreation and inclusive games, which plan best applies the week's focus skill: modify rules so more participants can contribute?",
           "options": [
-            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence.",
+            "Record only whether the task was finished, without explaining the decision.",
             "Choose the hardest version regardless of conditions.",
-            "Record only whether the task was finished, without explaining the decision."
+            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The learner applies modify rules so more participants can contribute by making a feasible, justified choice and pointing to evidence relevant to recreation and inclusive games."
         },
         {
           "prompt": "A learner has limited time and no specialized equipment while preparing for recreation and inclusive games. Which next step best supports this week's learning?",
           "options": [
             "Copy a classmate's decision without checking the case.",
-            "Identify the decision, compare realistic options, and explain the choice using the learning target.",
-            "Use completion time as the only measure of learning."
+            "Use completion time as the only measure of learning.",
+            "Identify the decision, compare realistic options, and explain the choice using the learning target."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "A contextual decision responds to the actual constraints and makes its reasoning visible; speed or copying is insufficient."
         },
         {
@@ -3622,11 +3622,11 @@
         {
           "prompt": "A small-sided game is crowded and collisions increase. What should be tried first?",
           "options": [
-            "Reduce the number of players per area or expand the safe space.",
             "Add more players to the same area.",
+            "Reduce the number of players per area or expand the safe space.",
             "Encourage contact to win possession."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Spacing and participant numbers can reduce congestion while preserving play."
         },
         {
@@ -3662,41 +3662,41 @@
         {
           "prompt": "A participant declines physical contact in a partner game. What is an appropriate response?",
           "options": [
-            "Offer a non-contact role or version and respect the choice.",
             "Require contact for a passing grade.",
+            "Offer a non-contact role or version and respect the choice.",
             "Ask them to explain private health information."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Participation should not depend on unwanted touch or personal disclosure."
         },
         {
           "prompt": "What does fair play mean when teams have different skill levels?",
           "options": [
-            "Use agreed rules and roles so everyone has a meaningful chance to participate.",
+            "Hide rule changes from participants.",
             "Make the stronger team choose every rule.",
-            "Hide rule changes from participants."
+            "Use agreed rules and roles so everyone has a meaningful chance to participate."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Fairness includes transparent rules and meaningful participation, not guaranteed equal outcomes."
         },
         {
           "prompt": "Which equipment choice is most appropriate for an introductory target game?",
           "options": [
-            "Soft, manageable equipment with enough clear space.",
             "Hard objects aimed toward people.",
+            "Soft, manageable equipment with enough clear space.",
             "Equipment too heavy for participants to control."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Equipment and space should match the task and learners' safe control."
         },
         {
           "prompt": "How should a group handle a disagreement about a game rule?",
           "options": [
-            "Pause play, consult the agreed rule, and decide respectfully.",
             "Continue arguing while moving.",
+            "Pause play, consult the agreed rule, and decide respectfully.",
             "Let the loudest person decide every time."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A shared process keeps decisions transparent and reduces conflict."
         },
         {
@@ -3712,41 +3712,41 @@
         {
           "prompt": "What should be considered before adding a scoring rule?",
           "options": [
-            "Whether it rewards the skill the lesson is teaching.",
             "Whether it rewards only physical size.",
+            "Whether it rewards the skill the lesson is teaching.",
             "Whether learners can understand it only after play begins."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Scoring should reinforce the instructional target and be explained clearly."
         },
         {
           "prompt": "A learner has low vision. Which game adaptation may help?",
           "options": [
-            "Use high-contrast markers, audible cues, and a clear route as appropriate.",
             "Remove all cues and ask them to guess.",
+            "Use high-contrast markers, audible cues, and a clear route as appropriate.",
             "Require speed as the only measure."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Multiple clear cues can improve access; adaptations should match the learner's needs."
         },
         {
           "prompt": "How can students evaluate whether a team game is inclusive?",
           "options": [
-            "Collect feedback about who had opportunities to contribute and what barriers remained.",
+            "Assume inclusion because everyone was present.",
             "Count only the winning team's points.",
-            "Assume inclusion because everyone was present."
+            "Collect feedback about who had opportunities to contribute and what barriers remained."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Participation evidence reveals whether learners could meaningfully contribute."
         },
         {
           "prompt": "Which approach is best when a new rule confuses several players?",
           "options": [
-            "Stop briefly, restate or demonstrate the rule, then try a short round.",
+            "Penalize everyone who asks a question.",
             "Keep playing without clarification.",
-            "Penalize everyone who asks a question."
+            "Stop briefly, restate or demonstrate the rule, then try a short round."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Clarification helps learners practice the rule consistently."
         },
         {
@@ -3762,11 +3762,11 @@
         {
           "prompt": "Why should game modifications be agreed on before play?",
           "options": [
-            "Participants can understand expectations and make informed choices.",
+            "Players will not need to consider safety.",
             "The teacher can change outcomes secretly.",
-            "Players will not need to consider safety."
+            "Participants can understand expectations and make informed choices."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Transparent expectations support fairness, informed participation, and safety."
         },
         {
@@ -3782,11 +3782,11 @@
         {
           "prompt": "Which reflection question best evaluates game design?",
           "options": [
-            "Who had a chance to contribute, what evidence shows it, and what should change?",
+            "Which team should be excluded next time?",
             "Who looked most athletic?",
-            "Which team should be excluded next time?"
+            "Who had a chance to contribute, what evidence shows it, and what should change?"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A reflective design review examines participation, evidence, and next steps."
         }
       ],
@@ -3870,41 +3870,41 @@
         {
           "prompt": "A learner has limited time and no specialized equipment while preparing for hydration and environmental safety. Which next step best supports this week's learning?",
           "options": [
-            "Copy a classmate's decision without checking the case.",
+            "Identify the decision, compare realistic options, and explain the choice using the learning target.",
             "Use completion time as the only measure of learning.",
-            "Identify the decision, compare realistic options, and explain the choice using the learning target."
+            "Copy a classmate's decision without checking the case."
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "A contextual decision responds to the actual constraints and makes its reasoning visible; speed or copying is insufficient."
         },
         {
           "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"compare water access and environmental conditions without prescribing a universal amount\"?",
           "options": [
-            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
             "A general statement that the learner looked more athletic.",
+            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
             "A single score with no description of the task or conditions."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
         },
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about hydration and environmental safety.\" Which response best corrects the reasoning?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
             "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "The correction prioritizes learning evidence and avoids unsupported comparisons or unsafe generalizations."
         },
         {
           "prompt": "The current plan for hydration and environmental safety is missing a clear success criterion. What revision is most useful?",
           "options": [
             "Add more activity without deciding what will be observed.",
-            "Judge success by effort alone and omit the learning evidence.",
-            "Name one observable criterion for \"compare water access and environmental conditions without prescribing a universal amount\", then record what happened and what remains uncertain."
+            "Name one observable criterion for \"compare water access and environmental conditions without prescribing a universal amount\", then record what happened and what remains uncertain.",
+            "Judge success by effort alone and omit the learning evidence."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "A clear criterion connects the activity to observable evidence and acknowledges uncertainty."
         },
         {
@@ -3920,11 +3920,11 @@
         {
           "prompt": "A class plans outdoor activity during a heat advisory. What should guide the decision?",
           "options": [
-            "Current conditions, available shade/water, activity demands, and local safety guidance.",
             "The original schedule regardless of conditions.",
+            "Current conditions, available shade/water, activity demands, and local safety guidance.",
             "Who can tolerate discomfort the longest."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Environmental decisions depend on current conditions and appropriate safety guidance, not endurance contests."
         },
         {
@@ -3940,31 +3940,31 @@
         {
           "prompt": "A water source is unavailable before a planned outdoor session. What is a sound response?",
           "options": [
-            "Arrange access to water or modify, postpone, or relocate the activity as appropriate.",
             "Begin anyway and assume no one will need water.",
+            "Arrange access to water or modify, postpone, or relocate the activity as appropriate.",
             "Tell participants not to drink until the end."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Planning should address basic needs before activity; modify the plan when resources are inadequate."
         },
         {
           "prompt": "Which environmental factor can change the risk of an outdoor route?",
           "options": [
-            "Heat, surface conditions, air quality, shade, or traffic exposure.",
             "The color of a student's shirt alone.",
+            "Heat, surface conditions, air quality, shade, or traffic exposure.",
             "A classmate's personal best."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Weather and route conditions can alter the suitability of an activity."
         },
         {
           "prompt": "A learner reports dizziness outdoors. What should happen?",
           "options": [
-            "Stop activity, move to an appropriate safe setting, and seek adult help.",
             "Encourage them to finish the lap.",
+            "Stop activity, move to an appropriate safe setting, and seek adult help.",
             "Ask them to prove they are unwell."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Dizziness is a reason to stop and seek appropriate help, not push through."
         },
         {
@@ -3980,11 +3980,11 @@
         {
           "prompt": "Which is a responsible way to use a weather forecast?",
           "options": [
-            "Treat it as planning information and recheck conditions before activity.",
+            "Ignore real conditions because the forecast looked good.",
             "Assume a forecast guarantees safety.",
-            "Ignore real conditions because the forecast looked good."
+            "Treat it as planning information and recheck conditions before activity."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Forecasts are useful but should be checked against conditions at the time and place."
         },
         {
@@ -4000,51 +4000,51 @@
         {
           "prompt": "Why are shade and rest options relevant in outdoor PE?",
           "options": [
-            "They offer ways to reduce exposure and adjust activity when conditions change.",
             "They guarantee no one can become unwell.",
+            "They offer ways to reduce exposure and adjust activity when conditions change.",
             "They only help people who do not like sports."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Rest and shade are risk-management options, not signs of low effort."
         },
         {
           "prompt": "What should a learner do if a surface becomes slippery after rain?",
           "options": [
-            "Choose a stable alternative or pause the activity.",
+            "Continue because the route was planned.",
             "Move faster across the surface.",
-            "Continue because the route was planned."
+            "Choose a stable alternative or pause the activity."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Changed surface conditions may make the original route unsuitable."
         },
         {
           "prompt": "Which observation helps evaluate whether a route is accessible?",
           "options": [
-            "Whether the path, surface, slope, width, and rest options fit the task and participants.",
+            "Whether the fastest person likes it.",
             "Whether the route looks challenging.",
-            "Whether the fastest person likes it."
+            "Whether the path, surface, slope, width, and rest options fit the task and participants."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Accessibility involves the actual route and the participants' requirements."
         },
         {
           "prompt": "When should environmental conditions be checked?",
           "options": [
-            "Before activity and again if conditions change.",
+            "Only after someone is hurt.",
             "Only once at the beginning of a semester.",
-            "Only after someone is hurt."
+            "Before activity and again if conditions change."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Conditions can change during a session and should be monitored appropriately."
         },
         {
           "prompt": "Which is a responsible sun-safety choice for outdoor activity?",
           "options": [
-            "Use available shade and suitable protective measures according to local guidance.",
+            "Assume clouds remove all risk.",
             "Look directly at the sun to check brightness.",
-            "Assume clouds remove all risk."
+            "Use available shade and suitable protective measures according to local guidance."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Sun protection should follow practical guidance and never involve looking directly at the sun."
         },
         {
@@ -4060,21 +4060,21 @@
         {
           "prompt": "A student has access needs that affect the route. What is appropriate?",
           "options": [
-            "Plan an equivalent accessible route or observation role before beginning.",
+            "Request a public diagnosis.",
             "Tell the student the activity cannot be adapted.",
-            "Request a public diagnosis."
+            "Plan an equivalent accessible route or observation role before beginning."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Planning alternatives in advance supports equitable participation without unnecessary disclosure."
         },
         {
           "prompt": "What is the purpose of a stop condition in an outdoor plan?",
           "options": [
-            "It identifies when the activity should pause or change because safety conditions changed.",
+            "It prevents every adaptation.",
             "It proves the plan failed.",
-            "It prevents every adaptation."
+            "It identifies when the activity should pause or change because safety conditions changed."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A stop condition makes a plan responsive to risk and individual circumstances."
         },
         {
@@ -4100,21 +4100,21 @@
         {
           "prompt": "Why should environmental safety plans allow flexibility?",
           "options": [
-            "Conditions, access needs, and comfort can change.",
             "A plan is only valid if nobody adjusts it.",
+            "Conditions, access needs, and comfort can change.",
             "Flexibility removes all safety responsibility."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A safe plan includes reasonable ways to adapt when circumstances change."
         },
         {
           "prompt": "Which statement best links hydration and environment?",
           "options": [
-            "Plan water access and adjust activity for the weather, route, and each learner's needs.",
+            "A single hydration rule fits every person and activity.",
             "Water makes every environment safe.",
-            "A single hydration rule fits every person and activity."
+            "Plan water access and adjust activity for the weather, route, and each learner's needs."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Hydration is one part of broader environmental planning, not a substitute for other safety decisions."
         }
       ],
@@ -4198,41 +4198,41 @@
         {
           "prompt": "The current plan for teamwork and fair play is missing a clear success criterion. What revision is most useful?",
           "options": [
-            "Name one observable criterion for \"describe consent and inclusive participation\", then record what happened and what remains uncertain.",
             "Add more activity without deciding what will be observed.",
+            "Name one observable criterion for \"describe consent and inclusive participation\", then record what happened and what remains uncertain.",
             "Judge success by effort alone and omit the learning evidence."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A clear criterion connects the activity to observable evidence and acknowledges uncertainty."
         },
         {
           "prompt": "A learner cannot use the original movement format for teamwork and fair play. Which adaptation is strongest?",
           "options": [
             "Remove the learner from the task without an alternative.",
-            "Choose a safe accessible demonstration, observation, or explanation that still measures \"describe consent and inclusive participation\".",
-            "Require private medical details before offering an adjustment."
+            "Require private medical details before offering an adjustment.",
+            "Choose a safe accessible demonstration, observation, or explanation that still measures \"describe consent and inclusive participation\"."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
         },
         {
           "prompt": "While practicing \"describe consent and inclusive participation\", a learner notices a new safety concern. What is the best response?",
           "options": [
             "Continue unchanged because the plan was already written.",
-            "Ask peers to vote on whether a warning sign should be ignored.",
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing."
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
+            "Ask peers to vote on whether a warning sign should be ignored."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for teamwork and fair play?",
           "options": [
-            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
+            "The learner should use the same activity and difficulty in all future sessions.",
             "The learner has mastered every related skill in every setting.",
-            "The learner should use the same activity and difficulty in all future sessions."
+            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A learning record supports conclusions limited to the observed task; it does not prove universal mastery or a one-size-fits-all plan."
         },
         {
@@ -4248,21 +4248,21 @@
         {
           "prompt": "Two students disagree about whether a player was out. What is the fairest next step?",
           "options": [
-            "Pause, consult the agreed rule, and resume respectfully.",
+            "Continue arguing while the game goes on.",
             "Let the louder player decide.",
-            "Continue arguing while the game goes on."
+            "Pause, consult the agreed rule, and resume respectfully."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A shared rule process resolves disagreement more fairly than dominance."
         },
         {
           "prompt": "What does consent mean in a PE activity?",
           "options": [
-            "People can agree, decline, or change their choice about participation or touch.",
             "Everyone must accept every partner activity.",
+            "People can agree, decline, or change their choice about participation or touch.",
             "A yes can never be changed."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Consent is voluntary and can change; participation needs respectful alternatives."
         },
         {
@@ -4278,11 +4278,11 @@
         {
           "prompt": "A partner does not want a high five. What should you do?",
           "options": [
-            "Respect the choice and use a wave or words instead.",
             "Give the high five anyway.",
+            "Respect the choice and use a wave or words instead.",
             "Tease them for saying no."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Boundaries should be respected and non-contact alternatives are appropriate."
         },
         {
@@ -4298,41 +4298,41 @@
         {
           "prompt": "A teammate makes a mistake. Which response supports teamwork?",
           "options": [
-            "Offer a respectful, specific suggestion or encouragement if welcome.",
+            "Stop passing to them for the rest of class.",
             "Call them useless.",
-            "Stop passing to them for the rest of class."
+            "Offer a respectful, specific suggestion or encouragement if welcome."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Constructive communication maintains dignity and supports learning."
         },
         {
           "prompt": "Why agree on rules before starting a game?",
           "options": [
-            "Players can understand expectations and use the same standard to resolve disputes.",
             "Rules should favor one team secretly.",
+            "Players can understand expectations and use the same standard to resolve disputes.",
             "It removes the need for safe play."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Shared expectations make play more transparent and fair."
         },
         {
           "prompt": "What is a fair response when a player needs an adaptation?",
           "options": [
-            "Make a reasonable change that preserves the learning goal and safety.",
+            "Require public medical details.",
             "Treat an adaptation as cheating.",
-            "Require public medical details."
+            "Make a reasonable change that preserves the learning goal and safety."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Fair play creates meaningful access while maintaining the objective."
         },
         {
           "prompt": "Which is an example of leadership rather than bossiness?",
           "options": [
-            "Invite ideas, explain the goal, and listen to others.",
             "Make every choice without discussion.",
+            "Invite ideas, explain the goal, and listen to others.",
             "Punish anyone who offers an idea."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Leadership guides the group while respecting other people's voices."
         },
         {
@@ -4358,11 +4358,11 @@
         {
           "prompt": "How should teams respond if a participant says an activity feels unsafe?",
           "options": [
-            "Pause and assess the concern with the teacher before deciding how to continue.",
+            "Tell the participant to prove it.",
             "Ignore it unless several people agree.",
-            "Tell the participant to prove it."
+            "Pause and assess the concern with the teacher before deciding how to continue."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Safety concerns deserve attention without requiring public proof or embarrassment."
         },
         {
@@ -4378,21 +4378,21 @@
         {
           "prompt": "A player disagrees with a call. What is a respectful way to respond?",
           "options": [
-            "Ask for clarification during an appropriate pause.",
             "Insult the person making the call.",
+            "Ask for clarification during an appropriate pause.",
             "Change the score secretly."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Calm clarification supports fairness and shared understanding."
         },
         {
           "prompt": "Which statement best describes a team agreement?",
           "options": [
-            "A shared expectation for safety, respect, and how decisions are made.",
+            "A rule that only the captain must follow.",
             "A secret rule used against new players.",
-            "A rule that only the captain must follow."
+            "A shared expectation for safety, respect, and how decisions are made."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Agreements work when they are understood and apply consistently."
         },
         {
@@ -4438,11 +4438,11 @@
         {
           "prompt": "What is the best way to evaluate whether play was fair?",
           "options": [
-            "Review the agreed rules, participation opportunities, and how disputes were handled.",
+            "Ask only the winning team.",
             "Look only at the final score.",
-            "Ask only the winning team."
+            "Review the agreed rules, participation opportunities, and how disputes were handled."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Fairness is broader than score; it includes process, access, and respectful decisions."
         }
       ],
