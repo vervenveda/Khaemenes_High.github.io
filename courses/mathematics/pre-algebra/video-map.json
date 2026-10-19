@@ -283,6 +283,54 @@
       "placement_status": "topic_matched_pending_embed_caption_review",
       "enabled": false,
       "optional": true
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U04-L01",
+      "unit": 4,
+      "lesson": 1,
+      "lesson_file": "units/unit-04/lessons/lesson-01-ratio-meaning-equivalent-ratios.html",
+      "asset_id": "MATH-RATIOS-RATES-MATHANTICS-001",
+      "shared_file": "../assets/video-library/ratios-rates-mathantics.json",
+      "placement_status": "topic_matched_pending_embed_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Introduce ratios and rates with visual explanation"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U04-L02",
+      "unit": 4,
+      "lesson": 2,
+      "lesson_file": "units/unit-04/lessons/lesson-02-ratio-tables-double-number-lines.html",
+      "asset_id": "MATH-PROPORTIONAL-TABLES-KHAN-001",
+      "shared_file": "../assets/video-library/proportional-tables-khan.json",
+      "placement_status": "topic_matched_pending_embed_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Proportionality checks using a table; double number lines remain in written lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U04-L04",
+      "unit": 4,
+      "lesson": 4,
+      "lesson_file": "units/unit-04/lessons/lesson-04-proportional-tables-graphs-equations.html",
+      "asset_id": "MATH-PROPORTIONAL-GRAPHS-KHAN-001",
+      "shared_file": "../assets/video-library/proportional-graphs-khan.json",
+      "placement_status": "topic_matched_pending_embed_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Identify graph of proportional relationship passing through origin"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U04-L05",
+      "unit": 4,
+      "lesson": 5,
+      "lesson_file": "units/unit-04/lessons/lesson-05-solving-proportions-direct-variation.html",
+      "asset_id": "MATH-PROPORTIONS-MATHANTICS-001",
+      "shared_file": "../assets/video-library/proportions-mathantics.json",
+      "placement_status": "topic_matched_pending_embed_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Introductory proportion solving and equivalent ratios"
     }
   ]
 }
