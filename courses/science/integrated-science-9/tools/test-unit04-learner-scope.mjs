@@ -69,4 +69,14 @@ for(let unit=1;unit<=12;unit++){
  assert.ok(quiz.includes('setAttribute("aria-labelledby","questionPrompt")'),"Unit "+up+" answer group needs a prompt label");
  assert.ok(page.includes('id="questionPrompt"')&&page.includes('id="options"')&&page.includes('id="questionDots"'),"Unit "+up+" assessment markup must expose prompt, options, and question navigation IDs");
 }
+for(let unit=1;unit<=12;unit++){
+ const up=String(unit).padStart(2,"0");
+ const app=fs.readFileSync(path.join(here,"../units/unit-"+up+"/assessment-app.js"),"utf8");
+ const page=fs.readFileSync(path.join(here,"../units/unit-"+up+"/unit-assessment.html"),"utf8");
+ assert.ok(app.includes("FORM_COUNT=25"),"Unit "+up+" assessment form must have 25 questions");
+ assert.ok(app.includes("PASSING=Math.ceil(FORM_COUNT*.80)"),"Unit "+up+" must calculate the mastery gate as 80%");
+ assert.ok(/25 Objective Questions|25 objective questions/.test(page),"Unit "+up+" public assessment page must state the 25-question form");
+ assert.ok(/20\/25|20 of 25/.test(page),"Unit "+up+" public assessment page must state its 20/25 mastery threshold");
+ assert.ok(!/30 Objective Questions|30 objective questions|24\/30|24 of 30 objective items|20\/24/.test(page),"Unit "+up+" page must not carry stale objective counts/thresholds");
+}
 console.log("PASS: Grade 9 Units 01–12 question navigator and radio-group accessibility; Unit 04 two-learner keys, recovery confirmation, overwrite protection, backup request, invalid ID, and scored activity contracts.");
