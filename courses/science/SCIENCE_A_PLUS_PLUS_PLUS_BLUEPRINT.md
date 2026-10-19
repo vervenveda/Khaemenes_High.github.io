@@ -121,3 +121,27 @@ Preserve current layout intent and adopt Verve N Veda's crisp, centered parchmen
 ## 13. First pilot: Biology 10 Week 04 acceptance rubric
 The week must teach activation energy, enzyme specificity, denaturation, reaction-rate graphs and limits of models; include correct original reading, five-day lessons, >5 vocabulary terms, at least two solved graph examples, a validated fictional temperature-vs-rate dataset with units and uncertainty, a local interactive enzyme-rate simulator with parameter controls and repeat trials, a safe/no-unknown-biological-sample alternative, 10+ diverse practice questions with feedback, a scored analysis/CER rubric, teacher keys outside public student practice UI as appropriate, progress export/restore and working links.
 **Do not claim completion until tested.**
+
+## Re-audit update — 2026-10-19 (upper-science Step 2)
+
+This update supersedes older gap statements where current source demonstrates that an upgrade has already landed. It does not certify every page or scientific answer.
+
+### Current state re-verified
+- Biology 10, Chemistry 11, and Physics & Engineering 12 each have 36 weekly overview pages and 180 daily lesson pages in the repository tree.
+- Current public practice banks structurally contain 180 Biology questions, 339 Chemistry questions, and 180 Physics questions. All three have unique IDs and prompts in the source-level scan; sampled records had valid option arrays, answer indices, explanations, week tags, source tags, and type tags.
+- All three course dashboards call the shared Monte Carlo assessment interface (`openSession` / `materialize`) and label these browser-delivered exams as practice. Assessment-boundary pages distinguish public formative learner evidence from confidential supervised examinations. Do not replace this working approach with fixed public question lists.
+- Representative day lessons exist and contain self-contained instructional readings. Biology 10 Week 04 Tuesday explains activation energy, active-site interactions, temperature limits, pH, and experimental controls. Chemistry 11 Week 14 Tuesday covers coefficients, subscripts, atom conservation, state symbols, and model limitations.
+
+### Repairs made in this pass
+- Biology 10 Week 04 overview now links the vague “Open text on enzymes and reaction-energy diagrams” reference directly to the self-contained Tuesday lesson.
+- Chemistry 11 Week 14 overview now links the vague “Open text on equations and conservation” reference directly to the self-contained Tuesday lesson.
+- Chemistry question-bank auditing now normalizes case and whitespace without stripping scientific signs. For example, `-150 kJ/mol` and `150 kJ/mol` must remain distinct answer choices; removing punctuation can incorrectly conflate them.
+- Added `courses/science/tools/audit-upper-science-question-banks.mjs`, a shared structural audit for all three upper-grade public practice banks. Run it with Node from the repository root. It checks IDs, prompt duplication, option duplication, answer indexes, explanations, week/source/type tags, bank size, and optional template/difficulty review notes.
+
+### Still open after Step 2
+- Run the new Node audit in a checkout and capture actual output; source-level inspection in this session is not a substitute for executing repository tests.
+- Review question families with repeated wording for cognitive variety and transfer. Parameterized calculation variants are useful practice, but the bank should also assess interpretation, model critique, evidence evaluation, and application.
+- Scan all 108 weekly overview pages for vague reading references and confirm each points to an actual lesson or a self-contained offline reading.
+- Run live-browser regression for question randomization, score-once behavior, persistence across refresh, source-appropriate option rendering, accessibility, and learner-scoped records.
+- Recheck standards alignment, answer-key correctness, dataset mathematics, and lab safety separately. Structural bank checks do not establish scientific correctness or formal jurisdictional compliance.
+
