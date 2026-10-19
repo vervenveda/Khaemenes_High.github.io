@@ -13,7 +13,7 @@ const rel=p=>path.relative(repoRoot,p).replaceAll(path.sep,"/");
 const need=(ok,msg)=>(ok?passes:failures).push(msg);
 const warn=(ok,msg)=>{if(!ok)warnings.push(msg)};
 const norm=s=>String(s??"").toLowerCase().replace(/[^\p{L}\p{N}]+/gu," ").trim();
-const normOption=s=>String(s??"").normalize("NFKC").toLowerCase().replace(/\s+/gu," ").trim();
+const normOption=s=>String(s??"").normalize("NFKC").replace(/\s+/gu," ").trim(); // Preserve case: RR, Rr, and rr are different genotypes.
 
 function parseAssignedArray(file){
   const raw=read(file),m=raw.match(/=\s*(\[[\s\S]*\]);?\s*$/);
@@ -85,7 +85,7 @@ function auditGrade9(){
   for(let u=1;u<=12;u++){
     const up=String(u).padStart(2,"0"),unit=path.join(root,"units","unit-"+up);
     const bank=auditBank(path.join(unit,"question-bank.js"),"Science 9 Unit "+up,{min:50});
-    if(bank)need(bank.length===50,"Science 9 Unit "+up+" bank has exactly 50 items");
+    if(bank)need(bank.length>=50,"Science 9 Unit "+up+" bank has at least 50 items (abundant bank)");
     for(const [name,count] of [["quiz-app.js",15],["assessment-app.js",25]]){
       const f=path.join(unit,name);need(exists(f),"Science 9 Unit "+up+" "+name+" exists");
       if(exists(f)){
