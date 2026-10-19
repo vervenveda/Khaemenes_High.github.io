@@ -168,6 +168,19 @@ byId("run").addEventListener("click",async()=>{
   assert(planningDistribution.join("/") === "9/8/8","Week 13 answer positions changed unexpectedly: "+planningDistribution.join("/"));
   checks.push({name:"Week 13 activity planning: five-day instructional depth, practical rubric, feasible goals, alternatives, evidence review, 80% threshold, unique questions, and balanced answers validate",ok:true});
 
+  const recoveryWeek=weeks.find(w=>w.week===14);
+  assert(recoveryWeek&&["essentialQuestion","scenario","model","focusSkill","conceptExplanation","biomechanicsAndTechnique","workedExample","applicationTask"].every(k=>typeof recoveryWeek[k]==="string"&&recoveryWeek[k].trim().length>40),"Week 14 recovery unit is missing required curriculum-validity fields");
+  assert(recoveryWeek.days?.length===5&&recoveryWeek.days.every(d=>["instruction","practice","evidence","workedExample","independentTask","successCriteria"].every(k=>typeof d[k]==="string"&&d[k].trim().length>20)),"Week 14 five-day sequence is missing instructional depth, worked examples, independent practice or criteria");
+  assert(recoveryWeek.rubric?.length===5&&recoveryWeek.rubric.reduce((sum,r)=>sum+r.points,0)===20&&recoveryWeek.assessment?.maxPoints===20&&recoveryWeek.assessment?.passPoints===16,"Week 14 rubric or 80% evidence threshold is inconsistent");
+  const recoveryItems=recoveryWeek.checks||[];
+  assert(recoveryItems.length===25,"Week 14 should retain 25 knowledge-check questions");
+  assert(new Set(recoveryItems.map(q=>q.prompt.trim().toLowerCase())).size===25&&new Set(recoveryItems.map(q=>q.rationale.trim())).size===25,"Week 14 contains duplicate prompts or rationales");
+  assert(recoveryItems.every(q=>q.options?.length===3&&Number.isInteger(q.correct)&&q.correct>=0&&q.correct<q.options.length&&q.rationale?.trim()),"Week 14 contains a malformed knowledge-check item");
+  assert(recoveryItems.slice(0,5).every(q=>/recovery|fatigue|soreness|log|alternative|symptom|rest/i.test(q.prompt)),"Week 14 opening questions must align with recovery decisions and evidence");
+  const recoveryDistribution=recoveryItems.reduce((counts,q)=>(counts[q.correct]++,counts),[0,0,0]);
+  assert(recoveryDistribution.join("/") === "9/8/8","Week 14 answer positions changed unexpectedly: "+recoveryDistribution.join("/"));
+  checks.push({name:"Week 14 recovery: five-day instructional depth, rest/log reasoning, safe alternatives, symptom response, 20-point rubric / 80% threshold, unique questions, and balanced answers validate",ok:true});
+
   checks.push({name:"Full Grade 9 PE instruction bank: 36 weeks, 925 unique prompts/rationales and balanced correct-answer positions",ok:true});
  }catch(e){checks.push({name:"Full Grade 9 PE instruction bank validates",ok:false,error:e.message})}
 
