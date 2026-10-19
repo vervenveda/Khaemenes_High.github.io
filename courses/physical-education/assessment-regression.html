@@ -141,6 +141,19 @@ byId("run").addEventListener("click",async()=>{
   const environmentDistribution=environmentItems.reduce((counts,q)=>(counts[q.correct]++,counts),[0,0,0]);
   assert(environmentDistribution.join("/") === "9/8/8","Week 11 answer positions changed unexpectedly: "+environmentDistribution.join("/"));
   checks.push({name:"Week 11 hydration/environmental safety: five-day instructional depth, safety scenarios, access planning, and 80% rubric validate",ok:true});
+
+  const teamworkWeek=weeks.find(w=>w.week===12);
+  assert(teamworkWeek&&["essentialQuestion","scenario","model","focusSkill","conceptExplanation","biomechanicsAndTechnique","workedExample","applicationTask"].every(k=>typeof teamworkWeek[k]==="string"&&teamworkWeek[k].trim().length>40),"Week 12 teamwork/fair-play unit is missing required instructional-depth fields");
+  assert(teamworkWeek.days?.length===5&&teamworkWeek.days.every(d=>["instruction","practice","evidence","workedExample","independentTask","successCriteria"].every(k=>typeof d[k]==="string"&&d[k].trim().length>20)),"Week 12 five-day sequence is missing instruction, practice, example, independent task, or success criteria");
+  assert(teamworkWeek.rubric?.length===5&&teamworkWeek.rubric.reduce((sum,r)=>sum+r.points,0)===20&&teamworkWeek.assessment?.maxPoints===20&&teamworkWeek.assessment?.passPoints===16,"Week 12 practical rubric or 80% evidence threshold is inconsistent");
+  const teamworkItems=teamworkWeek.checks||[];
+  assert(teamworkItems.length===25,"Week 12 should retain 25 knowledge-check questions");
+  assert(teamworkItems.slice(0,5).every(q=>/rule|consent|conflict|team agreement|feedback|teamwork|fair play|inclusion/i.test(q.prompt)),"Week 12 opening questions must directly assess teamwork, consent, fair play, and conflict-resolution objectives");
+  assert(new Set(teamworkItems.map(q=>q.prompt.trim().toLowerCase())).size===25&&new Set(teamworkItems.map(q=>q.rationale.trim())).size===25,"Week 12 contains duplicate prompts or rationales");
+  assert(teamworkItems.every(q=>q.options?.length===3&&Number.isInteger(q.correct)&&q.correct>=0&&q.correct<q.options.length&&q.rationale?.trim()),"Week 12 contains a malformed knowledge-check item");
+  const teamworkDistribution=teamworkItems.reduce((counts,q)=>(counts[q.correct]++,counts),[0,0,0]);
+  assert(teamworkDistribution.join("/") === "9/8/8","Week 12 answer positions changed unexpectedly: "+teamworkDistribution.join("/"));
+  checks.push({name:"Week 12 teamwork/fair play: five-day instruction, consent and conflict scenarios, rubric, 80% evidence gate, unique questions, and balanced answer positions validate",ok:true});
   checks.push({name:"Full Grade 9 PE instruction bank: 36 weeks, 925 unique prompts/rationales and balanced correct-answer positions",ok:true});
  }catch(e){checks.push({name:"Full Grade 9 PE instruction bank validates",ok:false,error:e.message})}
 
