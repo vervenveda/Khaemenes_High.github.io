@@ -68,6 +68,44 @@ byId("run").addEventListener("click",async()=>{
  check("Same attempt keeps its original randomized question snapshot",()=>{const a=A.build(bank,20,unique+"-frozen");keys.push(A.key(a.identity));A.store(a);let rejected=false;try{A.store({...a,items:a.items.slice().reverse()})}catch(e){rejected=true}assert(rejected,"Attempt item order was changed")});
  check("Submitted attempt cannot be edited or resubmitted",()=>{const a=A.build(bank,20,unique+"-readonly");keys.push(A.key(a.identity));const s=A.submit(a,a.items.map(q=>q.correct));A.store(s);let rejected=false;try{A.store({...s,score:0})}catch(e){rejected=true}assert(rejected,"Submitted snapshot was mutable");let reSubmit=false;try{A.submit(s,s.answers)}catch(e){reSubmit=true}assert(reSubmit,"Submitted attempt was accepted again")});
  check("Review snapshot stays explicitly unverified",()=>{const a=A.build(bank,20,unique+"-snapshot");keys.push(A.key(a.identity));const s=A.store(A.submit(a,a.items.map(q=>q.correct)));const snap=A.snapshot(s);assert(snap.verified===false&&snap.reviewStatus==="teacher-review-required","Snapshot must remain unverified")});
+ // Validate the real Grade 9 Week 1 data banks as deployed, not only synthetic test data.
+ try{
+  const dailyResponse=await fetch("./grade-09-week-01-question-bank.json",{cache:"no-store"});
+  assert(dailyResponse.ok,"Could not load daily assessment bank (HTTP "+dailyResponse.status+")");
+  const dailyBank=await dailyResponse.json();
+  assert(dailyBank.grade===9&&dailyBank.week===1&&dailyBank.daily?.length===5,"Daily bank metadata or day count incorrect");
+  const dailyItems=dailyBank.daily.flatMap(day=>day.questions||[]);
+  assert(dailyItems.length===25&&dailyBank.daily.every(day=>day.questions?.length===5),"Expected five questions on each of five learning days");
+  assert(new Set(dailyItems.map(q=>q.prompt.trim().toLowerCase())).size===dailyItems.length,"Duplicate daily prompts detected");
+  assert(dailyItems.every(q=>q.options?.length===3&&Number.isInteger(q.correct)&&q.correct>=0&&q.correct<q.options.length&&q.rationale?.trim()),"Incomplete daily question detected");
+  assert(dailyBank.daily.every(day=>{const d=day.questions.reduce((a,q)=>(a[q.correct]=(a[q.correct]||0)+1,a),{});const n=[0,1,2].map(i=>d[i]||0);return Math.max(...n)-Math.min(...n)<=1}),"Daily answer positions are unbalanced");
+  assert(new Set(dailyItems.map(q=>q.rationale)).size>=20,"Daily rationales are too repetitive");
+  const w=dailyBank.weekly?.questions||[];
+  assert(w.length===20,"Expected 20 weekly questions");
+  assert(new Set(w.map(q=>q.prompt.trim().toLowerCase())).size===w.length,"Duplicate weekly prompts detected");
+  assert(w.every(q=>q.options?.length===3&&Number.isInteger(q.correct)&&q.correct>=0&&q.correct<q.options.length&&q.rationale?.trim()),"Incomplete weekly question detected");
+  assert((()=>{const d=w.reduce((a,q)=>(a[q.correct]=(a[q.correct]||0)+1,a),{}),n=[0,1,2].map(i=>d[i]||0);return Math.max(...n)-Math.min(...n)<=1})(),"Weekly answer positions are unbalanced");
+  checks.push({name:"Real daily bank: 25 complete, unique questions with balanced answer positions and varied rationales",ok:true});
+  checks.push({name:"Real weekly bank: 20 complete unique questions with balanced answer positions",ok:true});
+ }catch(e){checks.push({name:"Real Grade 9 Week 1 banks validate",ok:false,error:e.message})}
+ try{
+  const studioResponse=await fetch("./assessment-bank-grade09-week01.json",{cache:"no-store"});
+  assert(studioResponse.ok,"Could not load Week 1 randomized practice bank");
+  const studioBank=await studioResponse.json(),items=studioBank.questions||[];
+  assert(items.length===30&&new Set(items.map(q=>q.prompt.trim().toLowerCase())).size===30,"Expected 30 distinct practice questions");
+  assert(items.every(q=>q.options?.length>=3&&Number.isInteger(q.correct)&&q.correct>=0&&q.correct<q.options.length&&q.rationale?.trim()),"Practice bank has incomplete items");
+  const d=items.reduce((a,q)=>(a[q.correct]=(a[q.correct]||0)+1,a),{}),n=[0,1,2].map(i=>d[i]||0);
+  assert(Math.max(...n)-Math.min(...n)<=1,"Practice bank answer positions are unbalanced");
+  checks.push({name:"Randomized practice bank: 30 distinct reviewed-shape items and balanced correct positions",ok:true});
+ }catch(e){checks.push({name:"Randomized practice bank validates",ok:false,error:e.message})}
+ try{
+  const pageResponse=await fetch("./grade-09-week-01-assessments.html",{cache:"no-store"});
+  assert(pageResponse.ok,"Could not load the daily assessment page");
+  const source=await pageResponse.text();
+  assert(source.includes("active-sessions-v1")&&source.includes("session.questions[qi].answer=Number(input.value)")&&source.includes("session.reflection=reflectionBox.value"),"In-progress answers/reflection persistence wiring missing");
+  assert(source.includes("retryWeekly")&&source.includes("weeklyAttempts.push(attempt)"),"Failed weekly retry/history wiring missing");
+  checks.push({name:"Daily assessment page includes resumable drafts and retained weekly retries",ok:true});
+ }catch(e){checks.push({name:"Daily assessment journey wiring validates",ok:false,error:e.message})}
  cleanup(keys);
  checks.forEach(c=>{if(c.ok)pass++;else fail++;const li=document.createElement("li");li.className=c.ok?"pass":"fail";li.innerHTML='<span class="status">'+(c.ok?"PASS":"FAIL")+'</span> — '+c.name+(c.error?'<div class="small">'+c.error.replace(/[&<>"]/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[x]))+'</div>':"");list.appendChild(li)});
  summary.textContent=pass+" passed · "+fail+" failed"+(fail===0?" — engine checks clear":" — investigate failures");summary.className=fail===0?"pass":"fail";
