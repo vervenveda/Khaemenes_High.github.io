@@ -280,3 +280,21 @@ GitHub Actions passed the full audit and all associated workflows after the fixe
 
 The new validation workflow's full Grade 9–12 audit step, including question-bank IDs/prompts/options/answer indexes/explanations and course/week/lesson structure, completed successfully. These are automated source-level validations; they do not replace scientific peer review or a real-device accessibility evaluation.
 
+## Next science "bubbles" — Grade 9 quiz navigation and bank audit (2026-10-19)
+
+### Repairs committed
+- Corrected the whole-program science auditor's option normalizer. Scientific answer options are now normalized for Unicode presentation and whitespace without lowercasing or stripping symbols. This prevents distinct genotype options such as `RR`, `Rr`, and `rr` from being falsely marked as duplicates.
+- Changed the Grade 9 unit-bank size invariant from exactly 50 questions to at least 50. Units 03, 08, and 09 contain 62, 58, and 62 questions respectively; these are valid expanded banks for question randomization, not extra questions to delete.
+- Grade 9 Unit 04 answer-option checks now preserve allele capitalization. Three inherited-genetics items in the unit bank and cumulative final bank were false positives caused by a case-insensitive option comparator.
+- Improved dynamic quiz navigation in Units 01–12. The question navigation is named as a navigation landmark, each control announces its question number and answered/unanswered state, and the current question is exposed with `aria-current="step"`.
+- Each Grade 9 unit quiz exposes generated answer choices as a radio group labelled by the visible question prompt.
+- Extended the existing Grade 9 learner-scope regression test to inspect accessibility contracts across all 12 unit assessment pages, including the required prompt, choices, and navigator IDs.
+
+### Verified automation after the fixes
+The `Upper Science Question Bank Validation` workflow passed all steps after the question-bank audit correction, including the full Grade 9–12 structural audit. The route validation workflow also passed at the same correction point. A new Grade 9 Units 01–12 accessibility assertion was then added to the existing regression test; wait for the resulting student-experience workflow to pass before calling that final test change verified.
+
+### Remaining boundaries
+- Automated source checks do not replace real keyboard-only and screen-reader testing of deployed pages.
+- The test confirms the expected accessible attributes are added; it does not emulate every browser/screen-reader combination.
+- No question-bank content, mastery scores, learner records, or STOS activation state was intentionally modified in this batch.
+
