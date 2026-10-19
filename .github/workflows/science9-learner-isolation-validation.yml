@@ -32,6 +32,7 @@ on:
       - 'courses/science/integrated-science-9/tools/check-cross-unit-records.mjs'
       - 'courses/science/integrated-science-9/tools/test-unit04-learner-scope.mjs'
       - 'courses/science/integrated-science-9/tools/validate-unit01-learner-scope.mjs'
+      - 'courses/science/integrated-science-9/tools/check-unit02-scope.mjs'
       - '.github/workflows/science9-learner-isolation-validation.yml'
   pull_request:
     paths:
@@ -64,6 +65,7 @@ on:
       - 'courses/science/integrated-science-9/tools/check-cross-unit-records.mjs'
       - 'courses/science/integrated-science-9/tools/test-unit04-learner-scope.mjs'
       - 'courses/science/integrated-science-9/tools/validate-unit01-learner-scope.mjs'
+      - 'courses/science/integrated-science-9/tools/check-unit02-scope.mjs'
       - '.github/workflows/science9-learner-isolation-validation.yml'
 permissions:
   contents: read
