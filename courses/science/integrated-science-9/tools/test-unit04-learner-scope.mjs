@@ -39,11 +39,23 @@ assert.ok(a.local.getItem(a.api.legacyKey),"legacy record must be preserved");
 const invalid=setup("bad id!",true);
 assert.equal(invalid.api.choose(),false);
 assert.equal(invalid.api.active(),null);
-for(const [file,threshold] of [["quiz-app.js",16],["assessment-app.js",24],["cell-cycle-app.js",7],["meiosis-app.js",7]]){
+for(const [file,contract] of [
+ ["quiz-app.js",{formCount:15}],
+ ["assessment-app.js",{formCount:25}],
+ ["cell-cycle-app.js",{literalThreshold:7}],
+ ["meiosis-app.js",{literalThreshold:7}]
+]){
  const src=fs.readFileSync(path.join(here,"../units/unit-04",file),"utf8");
  new vm.Script(src,{filename:file});
  assert.ok(src.includes("KhaemenesScienceU04Scope"),file+" missing scope");
- assert.ok(src.includes("passed:bestScore>="+threshold),file+" missing best-score threshold");
- assert.ok(src.includes("lastScore:score"),file+" missing latest attempt");
+ if(contract.formCount){
+   assert.ok(src.includes("FORM_COUNT="+contract.formCount),file+" form count changed; review mastery threshold");
+   assert.ok(src.includes("PASSING=Math.ceil(FORM_COUNT*.80)"),file+" should derive pass threshold from 80% mastery");
+   assert.ok(src.includes("passed=best>=PASSING"),file+" should derive saved mastery from best score and 80% threshold");
+   assert.equal(Math.ceil(contract.formCount*.80),contract.formCount===15?12:20,file+" expected 80% threshold");
+ }else{
+   assert.ok(src.includes("passed:bestScore>="+contract.literalThreshold),file+" missing best-score threshold");
+ }
+ assert.ok(src.includes("lastScore:score"),file+" missing latest-attempt record");
 }
 console.log("PASS: Unit 04 two-learner keys, recovery confirmation, overwrite protection, backup request, invalid ID, and scored activity contracts.");
