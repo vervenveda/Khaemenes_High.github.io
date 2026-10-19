@@ -5011,50 +5011,75 @@
     },
     {
       "week": 14,
-      "title": "Rest and recovery",
-      "essentialQuestion": "How can we make a safe, evidence-based decision about rest and recovery?",
-      "scenario": "A Grade 9 learner is planning a safe, accessible activity involving rest and recovery. They have limited time, variable energy, and no specialized equipment.",
-      "model": "Worked example (recovery): A learner wants to practice rest and recovery. First identify the specific skill: Explain why rest is part of training. Next compare two feasible options, select one with a clear safety cue, and document the reason. A written, observed, seated or adapted demonstration can meet the same reasoning target.",
+      "title": "Rest, Recovery, and Sustainable Training",
+      "essentialQuestion": "How can rest and recovery help a person adapt to activity while responding safely to changing needs?",
+      "scenario": "A Grade 9 learner has planned several activity sessions in one week. After a demanding day, the learner feels unusually tired and is deciding whether to continue as planned, reduce the demand, or rest. The learner has limited time and equipment and should not need to disclose private health or family information.",
+      "model": "Worked example: A learner completed a demanding activity yesterday and feels unusually fatigued today. The learner checks the planned demand, current comfort, environment, and available support; chooses rest or a lower-demand alternative; records the reason in neutral language; and reviews how the plan should change next time. The decision demonstrates self-monitoring, not weakness or failure. Pain, dizziness, chest symptoms, unusual breathlessness, or other concerning symptoms mean stop and seek appropriate help rather than trying to diagnose the cause.",
       "days": [
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce rest and recovery. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving rest and recovery. They have limited time, variable energy, and no specialized equipment.",
-          "practice": "Write a three-part safety plan for rest and recovery: purpose, feasible option, and stop/modification cue.",
-          "evidence": "A reasoned three-part plan with a specific observable cue."
+          "studentTitle": "Recovery is part of the plan",
+          "instruction": "Every activity plan has a demand and a recovery side. Rest may mean a break during a session, a lower-demand day, adequate sleep opportunity, or choosing not to exercise when the plan is not suitable. Recovery depends on context; there is no single routine that fits every learner. Soreness and exhaustion are not proof that a session was effective.",
+          "practice": "Read a fictional log: Monday was a comfortable walk; Tuesday included a demanding game; on Wednesday the learner feels unusually tired. List three reasonable options and identify what additional information would help the learner choose safely.",
+          "evidence": "Name at least two roles of recovery, identify a contextual factor, and justify one safe next-step option.",
+          "concept": "Recovery gives the body and mind time to respond to activity. It supports sustainable participation, but does not guarantee a precise result or make every recovery method appropriate for every person.",
+          "workedExample": "Riley has a planned workout after a late, demanding day. Riley considers current energy, the planned effort, and available time, then chooses a rest day and records the reason without calling it failure.",
+          "independentTask": "Explain in 3–5 sentences why recovery belongs in a movement plan. Use one fictional example and one statement about the limits of what the example proves.",
+          "successCriteria": "I can explain two purposes of recovery, apply them to a case, and avoid claiming that soreness or exhaustion proves success."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to rest and recovery and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
-          "practice": "Practice the week's decision with this exact prompt: Explain why rest is part of training. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
-          "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
+          "studentTitle": "Read a simple activity log",
+          "instruction": "A useful activity log records enough context to interpret a choice: activity type, approximate duration, perceived effort, recovery opportunity, conditions, and a short reflection. More data is not automatically better. A log is a learning tool, not a diagnosis or a ranking system.",
+          "practice": "Compare two fictional entries that differ in activity, effort, and rest. Circle the differences that make a direct performance comparison unfair. Rewrite one entry so that it records context without judging the learner.",
+          "evidence": "Identify relevant context, explain one comparison limit, and produce a neutral, usable log entry.",
+          "concept": "Self-monitoring is strongest when the learner records what happened and the context around it. It is weaker when a single number is treated as a complete explanation.",
+          "workedExample": "Entry A: 15-minute easy walk, comfortable effort, shade available, rested afterward. Entry B: 15-minute walk in hot weather after a demanding practice, higher perceived effort. The same duration does not mean the conditions or recovery needs were the same.",
+          "independentTask": "Write two sample log entries for fictional learners. Include activity, perceived effort, conditions, recovery, and one cautious conclusion for each.",
+          "successCriteria": "I can record relevant context, distinguish observation from inference, and name one limit to comparing two activity records."
         },
         {
           "day": 3,
           "phase": "Apply",
-          "instruction": "Discuss how effort, environment, access and recovery change the best choice for rest and recovery.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
-          "evidence": "Three justified pathways and a brief risk assessment."
+          "studentTitle": "Choose an appropriate recovery option",
+          "instruction": "A plan should respond to the learner's present context. Options may include a planned rest, a shorter comfortable activity, a lower-intensity task, or an observation and explanation task when movement is not appropriate. Adaptations must preserve the learning goal and must not require a learner to reveal private health information.",
+          "practice": "For a fictional learner with low energy and limited equipment, design three pathways: the original option if suitable, a lower-demand option, and a non-movement analysis option. Add one clear stop cue and justify how each pathway meets the learning target.",
+          "evidence": "Present three feasible pathways, connect each to the same learning objective, and explain the safety reason for the stop cue.",
+          "concept": "An adaptation changes the route to learning while preserving the learning target. It is not a penalty, and the most strenuous option is not automatically the best option.",
+          "workedExample": "The learning target is explaining the purpose of recovery. A learner may analyze a sample log, demonstrate a gentle mobility sequence if appropriate, or write a reasoned rest plan. Each pathway can show the same reasoning when assessed against the stated criterion.",
+          "independentTask": "Create a decision tree with at least three branches for continuing, adapting, or resting. Include a clear instruction to stop and seek appropriate help if concerning symptoms appear.",
+          "successCriteria": "I can compare three accessible options, justify a choice, and connect the evidence to the same learning target."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
-          "practice": "Analyze a learner's fictional plan for rest and recovery: it lacks a stop cue and adaptation. Rewrite it to satisfy: Explain why rest is part of training.",
-          "evidence": "A revision justified by safety and observable learning evidence."
+          "studentTitle": "Separate evidence from assumptions",
+          "instruction": "A record can show that two events occurred together without proving that one caused the other. Sleep, food and fluids, stress, environment, activity load, and other circumstances can influence how a session feels. Grade 9 learners should describe observations, consider plausible context, and avoid diagnosing or making universal claims from a small sample.",
+          "practice": "Review a fictional claim: “I felt sore after practice, so the practice must have worked.” Identify the unsupported assumption and rewrite the conclusion using only evidence available in the log.",
+          "evidence": "Mark one observation, one inference, one missing piece of context, and a more cautious conclusion.",
+          "concept": "Evidence-based reasoning uses the information available while stating uncertainty. A brief log can support reflection and planning; it cannot by itself diagnose a condition or establish cause.",
+          "workedExample": "Observation: the learner reported soreness the morning after practice. Unsupported inference: soreness proves the training was effective. Better conclusion: soreness was reported; more information and qualified guidance may be needed to understand it, and soreness alone does not measure learning or improvement.",
+          "independentTask": "Annotate a fictional recovery log using four labels: observation, inference, missing context, and sensible next step.",
+          "successCriteria": "I can separate a recorded fact from an assumption and state at least one limit to the evidence."
         },
         {
           "day": 5,
           "phase": "Defend",
-          "instruction": "Synthesize what safe and inclusive learning about rest and recovery requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
-          "evidence": "Portfolio entry with claim, observation, adaptation and next step."
+          "studentTitle": "Defend a safe, sustainable plan",
+          "instruction": "A sound recovery plan explains its purpose, names the evidence used, offers a practical adaptation, and states when the learner should stop and seek guidance. It uses respectful language and does not compare bodies, shame rest, or require personal medical disclosures.",
+          "practice": "Prepare a short teach-back, annotated log, or written explanation that recommends a next step for the fictional learner. Defend the choice using context and one observable criterion, then name what the evidence cannot establish.",
+          "evidence": "Submit a claim, evidence, safety/adaptation rationale, and next step in a format that is accessible to the learner.",
+          "concept": "A defensible plan connects the goal to observable evidence and adapts to circumstances. It is successful because the reasoning is clear and safe, not because it prescribes maximum effort.",
+          "workedExample": "Claim: the learner should choose a rest or lower-demand option today. Evidence: the fictional log records a demanding session and unusually low energy. Safety rationale: avoid forcing the planned intensity; stop for concerning symptoms. Limit: this log does not diagnose why the learner feels tired.",
+          "independentTask": "Create a one-page recovery decision summary with a claim, supporting log evidence, an alternative, a stop cue, a limitation, and a next-step review question.",
+          "successCriteria": "I can defend a context-aware choice, name a safe alternative, and acknowledge what the available evidence cannot prove."
         }
       ],
       "misconception": "More intensity or outperforming classmates always means better learning about rest and recovery.",
       "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-      "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for rest and recovery.",
+      "teacherNotes": "Use fictional logs so learners do not have to disclose medical, sleep, food, family, or body-measurement details. Teach observation versus inference. Emphasize that recovery is contextual, soreness is not a success metric, and activities can be modified or replaced by analysis while preserving the learning target. Stop activity for pain or concerning symptoms and refer to appropriate support; do not diagnose or prescribe treatment.",
       "rubric": [
         {
           "criterion": "Knowledge and rationale",
@@ -5085,54 +5110,54 @@
       },
       "checks": [
         {
-          "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"explain why rest is part of training\"?",
+          "prompt": "After a demanding session, a learner feels unusually fatigued. Which first decision best reflects safe recovery planning?",
           "options": [
-            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
-            "A single score with no description of the task or conditions.",
-            "A general statement that the learner looked more athletic."
+            "Choose rest or a lower-demand option and reassess rather than forcing the original plan.",
+            "Keep the original intensity because changing a plan means failure.",
+            "Double the workload so the missed effort is recovered immediately."
           ],
           "correct": 0,
-          "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
+          "rationale": "A recovery-aware plan responds to current context and avoids forcing intensity when the learner feels unusually fatigued."
         },
         {
-          "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about rest and recovery.\" Which response best corrects the reasoning?",
+          "prompt": "Which record gives the clearest context for reviewing recovery across two sessions?",
           "options": [
-            "Keep the claim without checking the observation, adaptation, or learning objective.",
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context."
+            "A single total with no activity details or conditions.",
+            "A comparison of appearance with another learner.",
+            "A log noting activity, perceived effort, rest opportunity, conditions, and a brief reflection."
           ],
           "correct": 2,
-          "rationale": "The correction prioritizes learning evidence and avoids unsupported comparisons or unsafe generalizations."
+          "rationale": "Several relevant contextual details support a more careful comparison than an isolated score or comparison with another person."
         },
         {
-          "prompt": "The current plan for rest and recovery is missing a clear success criterion. What revision is most useful?",
+          "prompt": "A learner claims that post-practice soreness proves the workout was effective. Which response is most accurate?",
           "options": [
-            "Add more activity without deciding what will be observed.",
-            "Judge success by effort alone and omit the learning evidence.",
-            "Name one observable criterion for \"explain why rest is part of training\", then record what happened and what remains uncertain."
+            "Agree because soreness is the best measure of learning.",
+            "Use soreness as the only criterion for increasing next session's effort.",
+            "Explain that soreness alone does not establish learning, improvement, or the cause of symptoms."
           ],
           "correct": 2,
-          "rationale": "A clear criterion connects the activity to observable evidence and acknowledges uncertainty."
+          "rationale": "Soreness is not a reliable stand-alone measure of learning or performance improvement and should not be used to diagnose the cause of symptoms."
         },
         {
-          "prompt": "A learner cannot use the original movement format for rest and recovery. Which adaptation is strongest?",
+          "prompt": "A learner cannot safely complete the planned movement activity today. Which alternative best preserves the learning target of recovery planning?",
           "options": [
-            "Remove the learner from the task without an alternative.",
-            "Choose a safe accessible demonstration, observation, or explanation that still measures \"explain why rest is part of training\".",
-            "Require private medical details before offering an adjustment."
+            "Remove the learner from learning without offering an alternative.",
+            "Have the learner analyze a fictional activity log and justify a safe rest or adaptation choice.",
+            "Require the learner to disclose private medical details before proceeding."
           ],
           "correct": 1,
-          "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
+          "rationale": "An analysis task can assess the same reasoning goal without requiring unsafe participation or unnecessary private disclosure."
         },
         {
-          "prompt": "While practicing \"explain why rest is part of training\", a learner notices a new safety concern. What is the best response?",
+          "prompt": "During an activity, a learner develops pain or another concerning symptom. What is the appropriate next step?",
           "options": [
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
-            "Continue unchanged because the plan was already written.",
-            "Ask peers to vote on whether a warning sign should be ignored."
+            "Stop the activity and seek appropriate guidance before deciding how to continue.",
+            "Finish the planned set before reassessing.",
+            "Ask classmates to vote on whether the symptom matters."
           ],
           "correct": 0,
-          "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
+          "rationale": "The learner should not push through concerning symptoms; stop and seek appropriate guidance rather than self-diagnosing."
         },
         {
           "prompt": "Why is rest part of a movement plan?",
@@ -5335,7 +5360,11 @@
           "rationale": "A good reflection evaluates the decision process rather than judging people."
         }
       ],
-      "focusSkill": "Explain why rest is part of training."
+      "focusSkill": "Explain the purpose of rest and recovery, interpret simple activity records, and justify a safe, accessible adjustment.",
+      "conceptExplanation": "Training creates a demand; recovery provides time for the body and mind to respond to that demand. Recovery is not one single technique and it does not guarantee a particular performance result. It can include sleep, rest between sessions, adequate food and fluids, lower-intensity movement when appropriate, and managing overall demands. A learner should not use soreness, sweat, exhaustion, appearance, or comparison with classmates as a stand-alone measure of training quality. Recovery needs vary with the activity, person, environment, recent load, and circumstances.",
+      "biomechanicsAndTechnique": "For PE planning, distinguish an activity's intensity, duration, frequency, and type from the recovery opportunities surrounding it. Use perceived effort as one subjective clue, not as a diagnosis. Compare like with like when reviewing a simple log: note the activity, approximate effort, rest, conditions, and the learner's own reflection. Increase activity gradually and change the plan when the original option is unsafe or impractical. Stop activity for pain or concerning symptoms and seek appropriate guidance; this curriculum is educational and does not diagnose injury or prescribe treatment.",
+      "workedExample": "Example activity-log comparison: On Monday, a learner records a moderate walk, comfortable breathing, and a short reflection. On Tuesday after a demanding practice, the learner reports unusually low energy. Instead of copying Monday's plan automatically, the learner selects rest or a shorter comfortable activity, explains the choice, and records the context. The log supports a thoughtful decision; it does not prove a medical cause or guarantee improved performance.",
+      "applicationTask": "Use a fictional three-day activity log to recommend a next step for a Grade 9 learner. Include one planned activity, one recovery choice, one lower-demand or non-movement alternative, one observable decision criterion, and a brief explanation of what the log cannot prove. Include a stop cue and avoid body comparisons or private medical disclosures."
     },
     {
       "week": 15,
