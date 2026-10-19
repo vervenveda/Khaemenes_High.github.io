@@ -9665,49 +9665,74 @@
     {
       "week": 27,
       "title": "Personal activity log analysis",
-      "essentialQuestion": "How can we make a safe, evidence-based decision about personal activity log analysis?",
-      "scenario": "A Grade 9 learner is planning a safe, accessible activity involving personal activity log analysis. They have limited time, variable energy, and no specialized equipment.",
-      "model": "Worked example (logs): A learner wants to practice personal activity log analysis. First identify the specific skill: Identify missing context before interpreting a trend. Next compare two feasible options, select one with a clear safety cue, and document the reason. A written, observed, seated or adapted demonstration can meet the same reasoning target.",
+      "essentialQuestion": "How can we interpret personal activity records fairly, distinguish patterns from incomplete evidence, and choose safe adjustments without using sensitive body measurements?",
+      "scenario": "A fictional learner, Kai, recorded four activity sessions: Monday—10 minutes of comfortable walking with a clear route; Wednesday—15 minutes indoors with a rest break; Friday—8 minutes with careful technique after rainy weather; Sunday—no movement session, but a thoughtful route safety analysis. A friend concludes Kai's fitness declined Friday and Sunday because the minutes were fewer. Is that conclusion supported?",
+      "model": "Worked interpretation: Monday, Wednesday and Friday show 10, 15 and 8 minutes, but different settings and purposes. A three-session total is 33 minutes and a mean of 11 minutes; neither measure proves a change in cardiovascular fitness. Friday's shorter session may reflect weather and intentional technique work. Sunday's route analysis documents decision-making, not active minutes. A defensible conclusion notes what the log records, identifies missing comparable context, and proposes a safe, skill-focused follow-up.",
       "days": [
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce personal activity log analysis. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving personal activity log analysis. They have limited time, variable energy, and no specialized equipment.",
-          "practice": "Write a three-part safety plan for personal activity log analysis: purpose, feasible option, and stop/modification cue.",
-          "evidence": "A reasoned three-part plan with a specific observable cue."
+          "studentTitle": "Read a log and recognize missing context",
+          "concept": "A useful log separates what occurred from the reasons someone thinks it occurred. Each entry should identify activity, purpose and relevant context. A shorter session does not by itself demonstrate less skill or poorer health.",
+          "instruction": "A useful log separates what occurred from the reasons someone thinks it occurred. Each entry should identify activity, purpose and relevant context. A shorter session does not by itself demonstrate less skill or poorer health.",
+          "practice": "Examine Kai's four entries; label activity data versus planning/reflection and list missing information needed before drawing a trend.",
+          "workedExample": "Sunday's route analysis shows planning knowledge, but it should not be counted as a measured exercise duration.",
+          "independentTask": "Annotate a four-row fictional log with activity type, context, technique observation and two unknowns.",
+          "evidence": "Correct classification and two relevant missing-context questions.",
+          "successCriteria": "I can read activity evidence without inventing missing data or judging a learner."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to personal activity log analysis and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
-          "practice": "Practice the week's decision with this exact prompt: Identify missing context before interpreting a trend. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
-          "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
+          "studentTitle": "Calculate and communicate summaries",
+          "concept": "Totals and averages describe the recorded numbers, not overall fitness. A denominator must match the stated question. Distinguish active-session averages from calendar-day averages; label units and missing values.",
+          "instruction": "Totals and averages describe the recorded numbers, not overall fitness. A denominator must match the stated question. Distinguish active-session averages from calendar-day averages; label units and missing values.",
+          "practice": "Calculate 10 + 15 + 8 = 33 minutes and 33 ÷ 3 = 11 minutes per recorded active session. Discuss why Sunday's analysis is not an active-session zero.",
+          "workedExample": "Saying '11 minutes per active session' is accurate for three logged sessions; saying 'Kai can only exercise 11 minutes' is unsupported.",
+          "independentTask": "Create a labeled table or simple bar-chart sketch and calculate total and mean from the three active entries.",
+          "evidence": "Correct arithmetic, units, denominator and accurate limitation statement.",
+          "successCriteria": "I can summarize activity data without turning a descriptive statistic into a fitness diagnosis."
         },
         {
           "day": 3,
           "phase": "Apply",
-          "instruction": "Discuss how effort, environment, access and recovery change the best choice for personal activity log analysis.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
-          "evidence": "Three justified pathways and a brief risk assessment."
+          "studentTitle": "Compare records and evaluate patterns",
+          "concept": "Meaningful comparisons require sufficiently similar objectives and circumstances. Changes in weather, space, activity type, supports, recovery and timing can affect entries; small samples rarely establish robust trends.",
+          "instruction": "Meaningful comparisons require sufficiently similar objectives and circumstances. Changes in weather, space, activity type, supports, recovery and timing can affect entries; small samples rarely establish robust trends.",
+          "practice": "Compare Friday's eight-minute technique session with Wednesday's 15-minute indoor session. Identify two non-fitness explanations for their difference.",
+          "workedExample": "Friday's reduced minutes could reflect rain, a different objective or a safer stopping decision; no decline in capacity follows from the record.",
+          "independentTask": "Write a claim-evidence-limitation paragraph and describe an observation that would permit a fairer comparison.",
+          "evidence": "Narrow supported claim, two confounding circumstances and a feasible comparison method.",
+          "successCriteria": "I can identify why a pattern might be misleading when contexts differ."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
-          "practice": "Analyze a learner's fictional plan for personal activity log analysis: it lacks a stop cue and adaptation. Rewrite it to satisfy: Identify missing context before interpreting a trend.",
-          "evidence": "A revision justified by safety and observable learning evidence."
+          "studentTitle": "Revise a plan from the evidence",
+          "concept": "The best next action follows the learning objective and the observed limitation, not a demand for more minutes. When a record is incomplete, improve the record rather than increase activity intensity. Rest and safe adaptations remain valid.",
+          "instruction": "The best next action follows the learning objective and the observed limitation, not a demand for more minutes. When a record is incomplete, improve the record rather than increase activity intensity. Rest and safe adaptations remain valid.",
+          "practice": "Critique the instruction 'Double Friday's walking time to fix the decline.' Rewrite it with a comparable skill cue, comfortable option and a pause/stop rule.",
+          "workedExample": "A revision asks Kai to document route conditions and a stable walking-technique cue in two optional comfortable sessions—or analyze equivalent fictional records.",
+          "independentTask": "Prepare a next-session observation card naming skill target, context, accessible alternative, safety cue and what evidence would justify revision.",
+          "evidence": "Specific and feasible observation plan, privacy protection and reasoned safety adaptations.",
+          "successCriteria": "I can use uncertainty to improve a learning plan rather than prescribe unsupported exertion."
         },
         {
           "day": 5,
           "phase": "Defend",
-          "instruction": "Synthesize what safe and inclusive learning about personal activity log analysis requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
-          "evidence": "Portfolio entry with claim, observation, adaptation and next step."
+          "studentTitle": "Defend a responsible data interpretation",
+          "concept": "A convincing analysis distinguishes observations, calculations, claims, limits and next steps. Graphs and summaries must label categories and should not disguise missing data; reflections should not be treated as diagnoses.",
+          "instruction": "A convincing analysis distinguishes observations, calculations, claims, limits and next steps. Graphs and summaries must label categories and should not disguise missing data; reflections should not be treated as diagnoses.",
+          "practice": "Present Kai's three active durations and separate Sunday analysis, then model a short defense of what the numbers do and do not show.",
+          "workedExample": "A student states that 33 minutes were logged across three active sessions, but weather and task differences prevent conclusions about fitness change.",
+          "independentTask": "Submit a four-entry annotated log, accurate summary, short claim-evidence-limitation defense and a safe, accessible next observation.",
+          "evidence": "Complete data record, accurate statistics, proportionate conclusions, limitations and justified adaptation.",
+          "successCriteria": "I can defend a fair interpretation of activity logs while respecting privacy and uncertainty."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about personal activity log analysis.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-      "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for personal activity log analysis.",
+      "misconception": "A shorter session or missing duration proves declining fitness, and an average number of minutes measures overall health.",
+      "correction": "Activity summaries describe only recorded observations; interpretation requires context, clearly defined denominators, attention to missing information and a relevant skill objective.",
+      "teacherNotes": "Use fictional, de-identified logs; do not request body measurements, diagnoses, precise routes or private app history. Treat analysis work separately from exercise minutes. Allow tables, diagrams, spoken explanations or written records. Evaluate reasoning, arithmetic, evidence and safety rather than duration.",
       "rubric": [
         {
           "criterion": "Knowledge and rationale",
@@ -9988,7 +10013,12 @@
           "rationale": "A careful summary distinguishes observations from causes and acknowledges limitations."
         }
       ],
-      "focusSkill": "Identify missing context before interpreting a trend."
+      "focusSkill": "Identify missing context before interpreting a trend.",
+      "conceptExplanation": "An activity log is a record of selected observations, not a comprehensive measure of health. Useful fields include date, activity purpose, setting, optional duration, technique cue, perceived comfort, modifications and reflection. Totals and averages summarize numbers but may hide variation; missing entries do not automatically mean inactivity or failure. To identify a trend, compare like tasks under reasonably similar conditions and avoid treating correlation as proof of cause. Protect privacy by using fictional data and avoiding diagnoses, body measurements, GPS routes or identifiable records.",
+      "biomechanicsAndTechnique": "A log can record observable movement features such as stable support, controlled stepping, accurate rhythm or use of recovery pauses, rather than intensity or body size. If an actual optional activity is discussed, emphasize a clear space, gradual start, comfortable effort and stopping for pain, dizziness or unusual symptoms. A written data-analysis task is an equivalent way to meet this week's analytical objective; no additional exercise is required to create records.",
+      "workedExample": "Kai's active-session minutes are 10 + 15 + 8 = 33, with average 33 ÷ 3 = 11 minutes per recorded active session. Including the Sunday reflection as a zero-minute exercise session would misrepresent the fact that it was an analysis task. A correct interpretation says Kai participated in three different movement sessions and one analysis; more controlled observations would be needed to identify a fitness trend.",
+      "applicationTask": "Create a privacy-safe four-entry fictional activity log, calculate one accurate summary, make a claim supported by specific entries, identify at least two contextual limitations, and propose a comfortable, accessible next observation. Present the work in a table, graph, annotated explanation or narrated alternative.",
+      "depthVersion": "grade9-week27-topic-specific-2026-10-19"
     },
     {
       "week": 28,
