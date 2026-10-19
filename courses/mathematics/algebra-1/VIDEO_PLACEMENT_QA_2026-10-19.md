@@ -32,3 +32,7 @@ All eight candidate placements have `enabled: false`; the existing two early Uni
 
 ## Next pass
 Run a real browser/media-accessibility inspection on the published GitHub Pages site; fix specific failing captions or fallbacks and activate reviewed placements individually, not as a blanket enable operation.
+
+## Review workspace added
+
+The repository now provides [`video-review.html`](./video-review.html), an independent browser workspace that reads the course `video-map.json` and canonical shared asset metadata, launches the same privacy-enhanced embed format as Pre-Algebra, and exports a human-reviewed playback/caption/accessibility checklist. This is **not an automated certification**, cannot detect ads or captions itself, and never changes video activation flags or learner records. The published URL and embed were not accessible through the external verification tool in this pass, so **no video was newly approved or enabled**.
