@@ -8462,11 +8462,11 @@
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about fitness information literacy.\" Which response best corrects the reasoning?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
             "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "The correction prioritizes learning evidence and avoids unsupported comparisons or unsafe generalizations."
         },
         {
@@ -8493,10 +8493,10 @@
           "prompt": "While practicing \"distinguish a marketing claim from supported exercise evidence\", a learner notices a new safety concern. What is the best response?",
           "options": [
             "Continue unchanged because the plan was already written.",
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
-            "Ask peers to vote on whether a warning sign should be ignored."
+            "Ask peers to vote on whether a warning sign should be ignored.",
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
@@ -8522,31 +8522,31 @@
         {
           "prompt": "Which statement is an example of a marketing claim rather than a supported conclusion?",
           "options": [
-            "This product guarantees the same outcome for everyone.",
+            "The source distinguishes observations from recommendations.",
             "The report describes its method and sample limitations.",
-            "The source distinguishes observations from recommendations."
+            "This product guarantees the same outcome for everyone."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A universal guarantee is suspicious because people and circumstances vary."
         },
         {
           "prompt": "How can a student assess the credibility of an exercise article?",
           "options": [
-            "Check author expertise, evidence, date, conflicts of interest, and source references.",
             "Trust it because its headline is confident.",
+            "Check author expertise, evidence, date, conflicts of interest, and source references.",
             "Accept it if it sells a product."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Source appraisal examines provenance, evidence, recency, and possible conflicts."
         },
         {
           "prompt": "A wellness influencer presents one personal story as proof. What is the main limitation?",
           "options": [
-            "One person's experience cannot establish that the result will happen for everyone.",
             "Personal stories are always lies.",
+            "One person's experience cannot establish that the result will happen for everyone.",
             "It means no further research is needed."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Anecdotes may illustrate experience but cannot by themselves establish general effectiveness."
         },
         {
@@ -8562,51 +8562,51 @@
         {
           "prompt": "What is a conflict of interest in fitness information?",
           "options": [
-            "A financial or other interest that could influence how a source presents a claim.",
             "A disagreement between classmates about a game rule.",
+            "A financial or other interest that could influence how a source presents a claim.",
             "A source that admits uncertainty."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Potential conflicts can influence promotion and should be considered when weighing claims."
         },
         {
           "prompt": "A source says “clinically proven” but gives no study details. What is a sound next step?",
           "options": [
-            "Look for the actual evidence and check what was tested and what the results support.",
+            "Share the claim without checking.",
             "Assume the phrase proves effectiveness.",
-            "Share the claim without checking."
+            "Look for the actual evidence and check what was tested and what the results support."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Specific methods and findings are needed to evaluate a broad claim."
         },
         {
           "prompt": "Why is the publication date relevant to fitness information?",
           "options": [
-            "Guidance, evidence, and products may change, so recency can matter.",
+            "Older information can never be useful.",
             "Newer information is always correct.",
-            "Older information can never be useful."
+            "Guidance, evidence, and products may change, so recency can matter."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Date is one criterion alongside source quality and evidence, not a guarantee of truth."
         },
         {
           "prompt": "Which evidence is strongest for a broad exercise claim?",
           "options": [
-            "A relevant body of credible research with transparent methods and appropriate limits.",
             "A single advertisement testimonial.",
+            "A relevant body of credible research with transparent methods and appropriate limits.",
             "A celebrity's personal preference."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Broad claims generally require more than an anecdote or promotion."
         },
         {
           "prompt": "How should a learner handle a claim that uses before-and-after photos?",
           "options": [
-            "Ask about selection, context, verification, and what the images can actually show.",
             "Assume the photos establish causation.",
+            "Ask about selection, context, verification, and what the images can actually show.",
             "Use appearance as the only evidence."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Images can be selected or affected by context and cannot alone establish what caused a change."
         },
         {
@@ -8622,11 +8622,11 @@
         {
           "prompt": "A product is advertised as essential for every athlete. What should a learner conclude?",
           "options": [
-            "The claim needs scrutiny because needs and circumstances vary.",
             "The product must be needed by everyone.",
+            "The claim needs scrutiny because needs and circumstances vary.",
             "An advertisement is equivalent to a teacher's assessment."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Universal necessity claims deserve scrutiny and should not override individual needs."
         },
         {
@@ -8642,11 +8642,11 @@
         {
           "prompt": "Why should students be cautious about supplement claims?",
           "options": [
-            "Marketing may overstate evidence, and safety or contamination questions can matter.",
             "All supplements are proven safe and effective.",
+            "Marketing may overstate evidence, and safety or contamination questions can matter.",
             "A label replaces independent evidence."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Supplement claims and product quality require careful, qualified appraisal."
         },
         {
@@ -8662,11 +8662,11 @@
         {
           "prompt": "How should a student quote an online fitness source in a project?",
           "options": [
-            "Identify the source and explain how it supports or fails to support the claim.",
+            "Replace evidence with a screenshot of an advertisement.",
             "Copy the claim without attribution.",
-            "Replace evidence with a screenshot of an advertisement."
+            "Identify the source and explain how it supports or fails to support the claim."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Attribution and explanation help readers evaluate the claim responsibly."
         },
         {
@@ -8682,21 +8682,21 @@
         {
           "prompt": "Which headline is the most responsible?",
           "options": [
-            "Study reports an association and notes limitations.",
             "One trick guarantees perfect fitness for everyone.",
+            "Study reports an association and notes limitations.",
             "This secret makes rest unnecessary."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Careful language avoids certainty beyond what the evidence supports."
         },
         {
           "prompt": "Why is transparency about study limitations useful?",
           "options": [
-            "It helps readers judge how confidently the findings can be applied.",
+            "It should be hidden to persuade readers.",
             "It makes every conclusion invalid.",
-            "It should be hidden to persuade readers."
+            "It helps readers judge how confidently the findings can be applied."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Limitations help calibrate conclusions and explain what remains uncertain."
         },
         {
@@ -8791,30 +8791,30 @@
           "prompt": "While practicing \"create a specific process goal rather than an appearance goal\", a learner notices a new safety concern. What is the best response?",
           "options": [
             "Continue unchanged because the plan was already written.",
-            "Ask peers to vote on whether a warning sign should be ignored.",
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing."
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
+            "Ask peers to vote on whether a warning sign should be ignored."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for goal-setting and feedback?",
           "options": [
-            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
             "The learner has mastered every related skill in every setting.",
+            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
             "The learner should use the same activity and difficulty in all future sessions."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A learning record supports conclusions limited to the observed task; it does not prove universal mastery or a one-size-fits-all plan."
         },
         {
           "prompt": "During goal-setting and feedback, which plan best applies the week's focus skill: create a specific process goal rather than an appearance goal?",
           "options": [
-            "Choose the hardest version regardless of conditions.",
             "Practice the focus skill in a feasible task, explain the choice, and record observable evidence.",
+            "Choose the hardest version regardless of conditions.",
             "Record only whether the task was finished, without explaining the decision."
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "The learner applies create a specific process goal rather than an appearance goal by making a feasible, justified choice and pointing to evidence relevant to goal-setting and feedback."
         },
         {
@@ -8830,11 +8830,11 @@
         {
           "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"create a specific process goal rather than an appearance goal\"?",
           "options": [
-            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
             "A general statement that the learner looked more athletic.",
+            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
             "A single score with no description of the task or conditions."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
         },
         {
@@ -8850,31 +8850,31 @@
         {
           "prompt": "A goal says “get fitter.” What change makes it more actionable?",
           "options": [
-            "Name a feasible activity, schedule, and way to review it.",
+            "Compare it with a classmate's goal.",
             "Make the goal more intense without details.",
-            "Compare it with a classmate's goal."
+            "Name a feasible activity, schedule, and way to review it."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Actionable goals describe an observable plan rather than a vague aspiration."
         },
         {
           "prompt": "Why should a learner set a check-in date for a goal?",
           "options": [
-            "It creates a planned opportunity to review evidence and revise the plan.",
+            "It prevents changes when circumstances shift.",
             "It guarantees the goal will be reached.",
-            "It prevents changes when circumstances shift."
+            "It creates a planned opportunity to review evidence and revise the plan."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Check-ins support responsive planning and reflection."
         },
         {
           "prompt": "A goal depends on equipment the learner cannot access. What is the best revision?",
           "options": [
-            "Choose an accessible alternative that preserves the learning purpose.",
             "Keep the goal unchanged and blame the learner.",
+            "Choose an accessible alternative that preserves the learning purpose.",
             "Require them to buy the equipment."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Goals should fit real resources and barriers."
         },
         {
@@ -8900,21 +8900,21 @@
         {
           "prompt": "Which is an outcome goal rather than a process goal?",
           "options": [
-            "Complete a particular event or reach a specified result.",
             "Record an activity and reflect on the experience.",
+            "Complete a particular event or reach a specified result.",
             "Practice a skill at a planned time."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "An outcome goal describes a result, while a process goal describes the action taken."
         },
         {
           "prompt": "Why should a goal avoid appearance-based targets?",
           "options": [
-            "PE learning should focus on skills, choices, and wellbeing rather than judging bodies.",
             "Appearance goals are always easy to measure.",
+            "PE learning should focus on skills, choices, and wellbeing rather than judging bodies.",
             "Appearance determines whether the plan is safe."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Educational goals should not define success by body shape or appearance."
         },
         {
@@ -8930,21 +8930,21 @@
         {
           "prompt": "A teacher gives two corrections at once and the learner gets confused. What may help?",
           "options": [
-            "Focus on one clear cue, model it, and check understanding.",
+            "Judge the learner for asking a question.",
             "Add more corrections immediately.",
-            "Judge the learner for asking a question."
+            "Focus on one clear cue, model it, and check understanding."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A manageable cue helps the learner understand what to try next."
         },
         {
           "prompt": "What makes a goal realistic?",
           "options": [
-            "It fits available time, access, current circumstances, and a safe starting point.",
+            "It requires no adaptation.",
             "It is identical to an elite athlete's routine.",
-            "It requires no adaptation."
+            "It fits available time, access, current circumstances, and a safe starting point."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Realism depends on the learner's context and available resources."
         },
         {
@@ -8960,41 +8960,41 @@
         {
           "prompt": "Why should goals be allowed to change?",
           "options": [
-            "New evidence or changing circumstances may make revision appropriate.",
+            "A goal becomes unsafe if it changes.",
             "Any revision proves the learner has no commitment.",
-            "A goal becomes unsafe if it changes."
+            "New evidence or changing circumstances may make revision appropriate."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Revision is part of responsible planning, not automatically a sign of failure."
         },
         {
           "prompt": "Which is the most constructive peer feedback?",
           "options": [
-            "I noticed your transitions were clear; would you like one suggestion for the next try?",
+            "Your body is not right for this activity.",
             "You should be better by now.",
-            "Your body is not right for this activity."
+            "I noticed your transitions were clear; would you like one suggestion for the next try?"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Specific observations plus permission support respectful feedback."
         },
         {
           "prompt": "What should a learner do when feedback conflicts with a safety cue?",
           "options": [
-            "Pause and clarify with the teacher rather than follow an unsafe suggestion.",
             "Follow the suggestion because it came from a peer.",
+            "Pause and clarify with the teacher rather than follow an unsafe suggestion.",
             "Keep going to avoid embarrassment."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Safety takes precedence and conflicting cues should be clarified."
         },
         {
           "prompt": "Which is a useful goal review question?",
           "options": [
-            "What did I try, what evidence did I collect, and what change will I test next?",
+            "How can I avoid recording setbacks?",
             "Who performed best in the class?",
-            "How can I avoid recording setbacks?"
+            "What did I try, what evidence did I collect, and what change will I test next?"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A useful review links actions, evidence, and a next step."
         },
         {
@@ -9010,11 +9010,11 @@
         {
           "prompt": "Why can a goal include an alternative pathway?",
           "options": [
-            "Plans may need to adapt for comfort, access, time, or changing conditions.",
             "An alternative means the goal is meaningless.",
+            "Plans may need to adapt for comfort, access, time, or changing conditions.",
             "A plan must never include choice."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Alternatives make a plan feasible and responsive while preserving its purpose."
         },
         {
@@ -9128,11 +9128,11 @@
         {
           "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"identify missing context before interpreting a trend\"?",
           "options": [
-            "A general statement that the learner looked more athletic.",
             "A dated before-and-after observation tied to a clear criterion, with limits noted.",
+            "A general statement that the learner looked more athletic.",
             "A single score with no description of the task or conditions."
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
         },
         {
@@ -9148,71 +9148,71 @@
         {
           "prompt": "The current plan for personal activity log analysis is missing a clear success criterion. What revision is most useful?",
           "options": [
-            "Name one observable criterion for \"identify missing context before interpreting a trend\", then record what happened and what remains uncertain.",
             "Add more activity without deciding what will be observed.",
+            "Name one observable criterion for \"identify missing context before interpreting a trend\", then record what happened and what remains uncertain.",
             "Judge success by effort alone and omit the learning evidence."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A clear criterion connects the activity to observable evidence and acknowledges uncertainty."
         },
         {
           "prompt": "A learner cannot use the original movement format for personal activity log analysis. Which adaptation is strongest?",
           "options": [
-            "Remove the learner from the task without an alternative.",
             "Choose a safe accessible demonstration, observation, or explanation that still measures \"identify missing context before interpreting a trend\".",
+            "Remove the learner from the task without an alternative.",
             "Require private medical details before offering an adjustment."
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
         },
         {
           "prompt": "A log shows fewer activity minutes during a week with poor weather. What is the best interpretation?",
           "options": [
-            "Note the weather as context and examine what alternative activities were available.",
             "Conclude the learner stopped caring about movement.",
+            "Note the weather as context and examine what alternative activities were available.",
             "Assume the minutes prove a change in health."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Logs need contextual details before conclusions are drawn."
         },
         {
           "prompt": "Which is a limit of a personal activity log?",
           "options": [
-            "It records what was entered, but may omit context, missed entries, or unmeasured experiences.",
+            "It automatically establishes a medical result.",
             "It always contains every relevant fact.",
-            "It automatically establishes a medical result."
+            "It records what was entered, but may omit context, missed entries, or unmeasured experiences."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A log can be useful but is not a complete record of every factor."
         },
         {
           "prompt": "A learner wants to compare two activity weeks. What makes the comparison stronger?",
           "options": [
-            "Use similar definitions and note differences in conditions, access, and recording.",
+            "Ignore missed entries.",
             "Compare only the largest number from each week.",
-            "Ignore missed entries."
+            "Use similar definitions and note differences in conditions, access, and recording."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Comparable definitions and context make interpretation more careful."
         },
         {
           "prompt": "What should a student do about a missing entry?",
           "options": [
-            "Mark it as missing and avoid inventing a value.",
             "Create an estimate and present it as exact.",
+            "Mark it as missing and avoid inventing a value.",
             "Treat the missing entry as proof of no activity."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Transparent missing-data notes prevent unsupported assumptions."
         },
         {
           "prompt": "A log shows an increase in walking time. What can be concluded?",
           "options": [
-            "The recorded walking time increased; reasons and broader effects need more evidence.",
+            "The increase guarantees the same change will continue.",
             "The increase proves improved overall health.",
-            "The increase guarantees the same change will continue."
+            "The recorded walking time increased; reasons and broader effects need more evidence."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A log supports conclusions about recorded measures, not every possible cause or effect."
         },
         {
@@ -9248,41 +9248,41 @@
         {
           "prompt": "What is the benefit of using consistent units in a log?",
           "options": [
-            "It makes entries easier to compare and interpret correctly.",
             "It guarantees the records are true.",
+            "It makes entries easier to compare and interpret correctly.",
             "It removes the need for context."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Consistent units improve comparability but do not eliminate other limitations."
         },
         {
           "prompt": "A learner changes from outdoor walking to indoor chair movement. How should the log reflect it?",
           "options": [
-            "Record the new activity and why the change was made.",
+            "Leave out the adaptation.",
             "Keep the old label to make the weeks look alike.",
-            "Leave out the adaptation."
+            "Record the new activity and why the change was made."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Transparent records should describe what actually happened."
         },
         {
           "prompt": "Which question helps identify missing context?",
           "options": [
-            "Were there changes in weather, schedule, access, rest, or how the activity was measured?",
+            "How can every number be made bigger?",
             "Which student had the highest number?",
-            "How can every number be made bigger?"
+            "Were there changes in weather, schedule, access, rest, or how the activity was measured?"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Relevant circumstances help explain variation in the data."
         },
         {
           "prompt": "Why should a student not use an activity log to diagnose a condition?",
           "options": [
-            "The log is a limited personal record, not a clinical assessment.",
             "All numbers are useless.",
+            "The log is a limited personal record, not a clinical assessment.",
             "Only peers can diagnose from a log."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Logs can support reflection but cannot establish a diagnosis."
         },
         {
@@ -9298,31 +9298,31 @@
         {
           "prompt": "A graph begins its vertical axis above zero. What should the reader do?",
           "options": [
-            "Notice the scale because it can visually exaggerate differences.",
+            "Ignore all labels.",
             "Assume the data are fabricated automatically.",
-            "Ignore all labels."
+            "Notice the scale because it can visually exaggerate differences."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Axis scales affect how visual differences are perceived and should be considered."
         },
         {
           "prompt": "How can a learner check the quality of their log entries?",
           "options": [
-            "Review dates, definitions, gaps, and whether entries match the actual activity.",
             "Delete the low numbers.",
+            "Review dates, definitions, gaps, and whether entries match the actual activity.",
             "Use only the entry they prefer."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A data-quality check looks for consistency and missing or inconsistent entries."
         },
         {
           "prompt": "Which conclusion is too strong for one week of activity data?",
           "options": [
-            "This exact schedule will produce the same result for everyone.",
+            "The log has a missing entry that limits interpretation.",
             "The recorded activity changed this week.",
-            "The log has a missing entry that limits interpretation."
+            "This exact schedule will produce the same result for everyone."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A single personal record cannot justify universal predictions."
         },
         {
@@ -9338,21 +9338,21 @@
         {
           "prompt": "Why should the log include a reflection as well as numbers?",
           "options": [
-            "Context and experience can explain what the numbers cannot show by themselves.",
             "Reflections make numbers unnecessary.",
+            "Context and experience can explain what the numbers cannot show by themselves.",
             "The log is only valid if the reflection is positive."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Qualitative context complements quantitative entries."
         },
         {
           "prompt": "Which is a sound revision after reviewing inconsistent records?",
           "options": [
-            "Simplify the recording method and use consistent definitions next time.",
             "Invent missing data to complete the chart.",
+            "Simplify the recording method and use consistent definitions next time.",
             "Ignore future recording."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A simpler and clearer method may improve future data quality."
         },
         {
@@ -9456,21 +9456,21 @@
         {
           "prompt": "A learner cannot use the original movement format for movement in daily life. Which adaptation is strongest?",
           "options": [
-            "Remove the learner from the task without an alternative.",
+            "Choose a safe accessible demonstration, observation, or explanation that still measures \"find opportunities for movement without assuming all learners have the same access\".",
             "Require private medical details before offering an adjustment.",
-            "Choose a safe accessible demonstration, observation, or explanation that still measures \"find opportunities for movement without assuming all learners have the same access\"."
+            "Remove the learner from the task without an alternative."
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
         },
         {
           "prompt": "While practicing \"find opportunities for movement without assuming all learners have the same access\", a learner notices a new safety concern. What is the best response?",
           "options": [
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
             "Continue unchanged because the plan was already written.",
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
             "Ask peers to vote on whether a warning sign should be ignored."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
@@ -9506,21 +9506,21 @@
         {
           "prompt": "A student has a long school day and little free time. What is a sensible plan?",
           "options": [
-            "Identify a feasible movement opportunity or short break that fits the schedule.",
+            "Ignore school and sleep needs.",
             "Assume only long sessions count.",
-            "Ignore school and sleep needs."
+            "Identify a feasible movement opportunity or short break that fits the schedule."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A realistic plan fits actual commitments and can include shorter opportunities."
         },
         {
           "prompt": "How can a movement break be made accessible?",
           "options": [
-            "Offer standing, seated, stretching, gesture, or other appropriate options.",
             "Require everyone to use the same posture.",
+            "Offer standing, seated, stretching, gesture, or other appropriate options.",
             "Use a location with obstacles."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Different pathways can support the same goal of taking a suitable movement break."
         },
         {
@@ -9536,21 +9536,21 @@
         {
           "prompt": "A student cannot safely use stairs to add movement. What is a better response?",
           "options": [
-            "Choose another accessible opportunity rather than use an unsafe route.",
+            "Assume the student cannot be active.",
             "Require stairs as the only valid option.",
-            "Assume the student cannot be active."
+            "Choose another accessible opportunity rather than use an unsafe route."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A different option can preserve the goal without forcing an unsafe route."
         },
         {
           "prompt": "Why might household or work tasks count as movement?",
           "options": [
-            "They involve bodily movement in daily routines, though their demands and safety vary.",
+            "They eliminate the need for rest.",
             "Every task has the same exercise effect.",
-            "They eliminate the need for rest."
+            "They involve bodily movement in daily routines, though their demands and safety vary."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Daily movement includes practical tasks, but activity type and demands still matter."
         },
         {
@@ -9566,21 +9566,21 @@
         {
           "prompt": "What should a learner consider before using a public space for movement?",
           "options": [
-            "Permission or access rules, safe surfaces, crowding, and available facilities.",
             "Only how popular the space is.",
+            "Permission or access rules, safe surfaces, crowding, and available facilities.",
             "Whether there are no people present at all."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Public settings have rules and conditions that need to be considered."
         },
         {
           "prompt": "A learner has no safe outdoor space. Which alternative is appropriate?",
           "options": [
-            "Use a clear indoor space or another accessible movement option.",
+            "Assume movement is impossible.",
             "Move in traffic because outdoor movement is needed.",
-            "Assume movement is impossible."
+            "Use a clear indoor space or another accessible movement option."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Movement can be adapted to the environment rather than tied to one setting."
         },
         {
@@ -9596,41 +9596,41 @@
         {
           "prompt": "Which is a helpful way to make a movement break more likely to happen?",
           "options": [
-            "Connect it to an existing routine and choose a manageable action.",
+            "Avoid deciding when it will happen.",
             "Set an unrealistic target that interrupts every task.",
-            "Avoid deciding when it will happen."
+            "Connect it to an existing routine and choose a manageable action."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Linking an action to a routine can make it easier to remember and review."
         },
         {
           "prompt": "How should movement in daily life be evaluated?",
           "options": [
-            "By whether the plan fits the learner's goal, access, comfort, and circumstances.",
             "Only by the number of calories burned.",
+            "By whether the plan fits the learner's goal, access, comfort, and circumstances.",
             "By comparing every learner's step count publicly."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Evaluation should be aligned with the plan and avoid body-focused ranking."
         },
         {
           "prompt": "A phone reminder suggests a movement break during an unsafe task. What should the learner do?",
           "options": [
-            "Prioritize the task's safety and choose a more suitable time.",
             "Stop immediately in the middle of a hazardous activity.",
+            "Prioritize the task's safety and choose a more suitable time.",
             "Follow the reminder no matter what."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Reminders do not replace judgment about the immediate environment."
         },
         {
           "prompt": "Which is a sustainable way to include movement while studying?",
           "options": [
-            "Take a suitable short break at a safe stopping point, if it fits the task.",
             "Ignore deadlines to move for a long period.",
+            "Take a suitable short break at a safe stopping point, if it fits the task.",
             "Force a movement that causes pain."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Movement breaks should be planned around safety and the task's demands."
         },
         {
@@ -9666,21 +9666,21 @@
         {
           "prompt": "Why should daily movement goals include choice?",
           "options": [
-            "Preferences, responsibilities, access, and energy can change.",
+            "Everyone must follow a single schedule.",
             "Choice prevents consistent habits.",
-            "Everyone must follow a single schedule."
+            "Preferences, responsibilities, access, and energy can change."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A plan is more responsive when learners can choose among appropriate options."
         },
         {
           "prompt": "How can a learner describe the limits of a daily movement plan?",
           "options": [
-            "Name what is feasible now and what conditions might require a change.",
+            "Avoid noting any barriers.",
             "Claim the plan works for all people.",
-            "Avoid noting any barriers."
+            "Name what is feasible now and what conditions might require a change."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Understanding limits supports adaptation and avoids overgeneralizing personal experience."
         },
         {
