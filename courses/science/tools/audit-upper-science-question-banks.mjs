@@ -35,7 +35,7 @@ const courses = [
 
 const failures = [];
 const notes = [];
-const normalizeText = value => String(value ?? "").toLowerCase().replace(/\\s+/gu, " ").trim();
+const normalizeText = value => String(value ?? "").toLowerCase().replace(/\s+/gu, " ").trim();
 // Keep signs and scientific punctuation: -150 and 150 are not duplicate answers.
 const normalizeOption = value => normalizeText(value);
 
@@ -48,7 +48,7 @@ function inspectCourse(course) {
 
   const raw = fs.readFileSync(file, "utf8");
   const assignment = new RegExp(
-    `window\\.\\${course.variable}\\s*=\\s*(\\[[\\s\\S]*\\])\\s*;?\\s*$`
+    `window\\.${course.variable}\\s*=\\s*(\\[[\\s\\S]*\\])\\s*;?\\s*$`
   );
   const match = raw.match(assignment);
   if (!match) {
@@ -132,12 +132,12 @@ function inspectCourse(course) {
 for (const course of courses) inspectCourse(course);
 
 if (notes.length) {
-  console.log("\\nNotes:");
+  console.log("\nNotes:");
   notes.forEach(note => console.log(" - " + note));
 }
 if (failures.length) {
-  console.error("\\nFAIL:");
+  console.error("\nFAIL:");
   failures.forEach(failure => console.error(" - " + failure));
   process.exit(1);
 }
-console.log("\\nPASS: structural question-bank checks completed. Scientific answer correctness and live UI behavior require separate review.");
+console.log("\nPASS: structural question-bank checks completed. Scientific answer correctness and live UI behavior require separate review.");
