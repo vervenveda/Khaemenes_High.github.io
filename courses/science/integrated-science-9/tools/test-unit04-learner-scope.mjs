@@ -58,4 +58,15 @@ for(const [file,contract] of [
  }
  assert.ok(src.includes("lastScore:score"),file+" missing latest-attempt record");
 }
-console.log("PASS: Unit 04 two-learner keys, recovery confirmation, overwrite protection, backup request, invalid ID, and scored activity contracts.");
+for(let unit=1;unit<=12;unit++){
+ const up=String(unit).padStart(2,"0");
+ const quiz=fs.readFileSync(path.join(here,"../units/unit-"+up+"/quiz-app.js"),"utf8");
+ const page=fs.readFileSync(path.join(here,"../units/unit-"+up+"/unit-assessment.html"),"utf8");
+ new vm.Script(quiz,{filename:"unit-"+up+"/quiz-app.js"});
+ assert.ok(quiz.includes('setAttribute("aria-label","Question navigation")'),"Unit "+up+" question navigation needs an accessible landmark name");
+ assert.ok(quiz.includes('aria-current="${i==='),"Unit "+up+" should mark the current question");
+ assert.ok(quiz.includes('setAttribute("role","radiogroup")'),"Unit "+up+" answers need a radio-group role");
+ assert.ok(quiz.includes('setAttribute("aria-labelledby","questionPrompt")'),"Unit "+up+" answer group needs a prompt label");
+ assert.ok(page.includes('id="questionPrompt"')&&page.includes('id="options"')&&page.includes('id="questionDots"'),"Unit "+up+" assessment markup must expose prompt, options, and question navigation IDs");
+}
+console.log("PASS: Grade 9 Units 01–12 question navigator and radio-group accessibility; Unit 04 two-learner keys, recovery confirmation, overwrite protection, backup request, invalid ID, and scored activity contracts.");
