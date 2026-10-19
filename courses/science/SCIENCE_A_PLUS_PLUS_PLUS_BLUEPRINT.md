@@ -190,3 +190,30 @@ This improves repeatable source/engine regression coverage. It does not itself p
 
 Do not call the system production-verified until the new workflow passes and these browser checks are recorded. No STOS activation or network changes are part of this step.
 
+### Step 3 verification update — CI pass recorded (2026-10-19)
+
+The first CI run exposed two problems, both repaired on `main`:
+
+1. The legacy Grade 9 Unit 04 regression test expected hard-coded pass counts of 16/15 and 24/25, which are impossible targets and contradicted the activity implementation. The test now asserts the actual contract: `PASSING = ceil(FORM_COUNT × 0.80)`, resulting in 12/15 for the 15-question quiz and 20/25 for the 25-question assessment; the 8-question mini-activities retain 7/8.
+2. The Monte Carlo engine's session-ID fallback could return all-zero random words when `crypto.getRandomValues` was absent and more than one session was created in the same millisecond. It now explicitly falls back to the engine's local random-number routine if Web Crypto is unavailable. This is a uniqueness fallback, not a cryptographic security guarantee.
+
+After both corrections, GitHub Actions reported the complete `Science Student Experience Regression` workflow as **success** on commit `a76c1a0e7f74a648c3c3b28a0f3b73434bb23ad5`. All workflow steps passed:
+- syntax checks for the shared assessment, learner-scope, entry-contract, and regression modules;
+- Grade 10–12 student regression (13 checks, 0 failures);
+- Grade 9 Unit 04 learner-scope / scored-activity regression;
+- Grade 9 cross-tab stale-save protection;
+- Grade 9 course-runtime validation;
+- established public entry-route validation.
+
+The separate Public Entry Route Validation workflow also passed on that commit. Subsequent commits corrected the Grade 9 threshold assertions and then the engine fallback; the final green run above includes both fixes.
+
+### Remaining live-browser verification
+
+CI establishes source/engine regression behavior under the test harness and local-route integrity; it does not prove the live UI is fully accessible or behaves identically on Safari, Chrome, tablets, phones, or Linux. Still required before production sign-off:
+- two-profile browser isolation and preserved-work recovery;
+- real two-tab conflict scenario in the browser;
+- keyboard-only navigation, screen-reader labels/announcements, focus visibility, zoom and narrow-screen reflow;
+- print/export flow and direct lesson navigation from the deployed site.
+
+Current status: **CI regression checks green; hands-on browser/device pass still pending.** Do not label browser accessibility or cross-device behavior as tested until those checks are performed.
+
