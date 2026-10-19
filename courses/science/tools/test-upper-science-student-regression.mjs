@@ -192,8 +192,23 @@ check("Monte Carlo rejects stale session writes and prevents double completion",
     explanation: "Because", domain: "d" + i, source: "core", type: "concept", week: i + 1
   }));
   const session = api.openSession("learner-a::quiz", bank, { kind: "quiz", count: 5 });
-  const chosen = Array.from(session.questionIds)[0];
+  const [chosen, nullId, badId] = Array.from(session.questionIds);
   assert.equal(api.saveResponse("learner-a::quiz", chosen, 1, session.id), true);
+  assert.equal(api.saveResponse("learner-a::quiz", nullId, null, session.id), false,
+    "null must not silently coerce to option index zero");
+  assert.equal(api.saveResponse("learner-a::quiz", nullId, "", session.id), false,
+    "empty response must not be stored");
+  assert.equal(api.saveResponse("learner-a::quiz", badId, 2, session.id), false,
+    "an option index outside this question's range must be rejected");
+  const storedRecord = JSON.parse(localStorage.getItem("learner-a::quiz"));
+  storedRecord.active.responses[nullId] = null;
+  storedRecord.active.responses[badId] = 99;
+  localStorage.setItem("learner-a::quiz", JSON.stringify(storedRecord));
+  const recovered = api.getResponses("learner-a::quiz", session.id);
+  assert.equal(Object.hasOwn(recovered, nullId), false,
+    "a legacy null response must remain unanswered on resume");
+  assert.equal(Object.hasOwn(recovered, badId), false,
+    "a corrupt out-of-range response must be omitted on resume");
   assert.equal(api.saveResponse("learner-a::quiz", "not-in-session", 0, session.id), false);
   assert.equal(api.complete("learner-a::quiz", { score: 4, total: 5 }, session.id).attempts.length, 1);
   assert.equal(api.isActive("learner-a::quiz", session.id), false, "completed attempt must no longer be active");
