@@ -163,10 +163,13 @@ check("Monte Carlo resume preserves question and option order", () => {
   const opts = { kind: "test", count: 20 };
   const first = api.openSession("course::test", bank, opts);
   const firstMaterialized = api.materialize(bank, first);
+  assert.equal(api.saveResponse("course::test", first.questionIds[0], 2, first.id), true);
   const resumed = api.openSession("course::test", bank, opts);
   const resumedMaterialized = api.materialize(bank, resumed);
   assert.equal(resumed.id, first.id, "refresh/resume should keep the same active session");
   assert.deepEqual(Array.from(resumed.questionIds), Array.from(first.questionIds));
+  assert.equal(api.getResponses("course::test", resumed.id)[first.questionIds[0]], 2,
+    "saved response must remain available after refresh/resume");
   assert.equal(
     JSON.stringify(resumedMaterialized.map(q => [q.id, ...q.optionOrder])),
     JSON.stringify(firstMaterialized.map(q => [q.id, ...q.optionOrder])),
@@ -176,7 +179,7 @@ check("Monte Carlo resume preserves question and option order", () => {
 
 check("Monte Carlo rejects stale session writes and prevents double completion", () => {
   const { api, localStorage } = loadEngine();
-  const bank = Array.from({ length: 8 }, (_, i) => ({
+  const bank = Array.from({ length: 20 }, (_, i) => ({
     id: "id" + i, prompt: "Prompt " + i, options: ["yes", "no"], answer: i % 2,
     explanation: "Because", domain: "d" + i, source: "core", type: "concept", week: i + 1
   }));
@@ -191,6 +194,10 @@ check("Monte Carlo rejects stale session writes and prevents double completion",
   const stored = JSON.parse(localStorage.getItem("learner-a::quiz"));
   assert.equal(stored.attempts.length, 1, "repeated completion must not duplicate an attempt");
   assert.equal(secondComplete.conflict, true, "completion with no matching active session should report conflict");
+  const next = api.openSession("learner-a::quiz", bank, { kind: "quiz", count: 5 });
+  assert.notEqual(next.id, session.id, "a new attempt should receive a new session ID");
+  assert.equal(Array.from(next.questionIds).some(id => session.questionIds.includes(id)), false,
+    "the next attempt should prefer unseen questions when the bank has enough items");
 });
 
 check("80% mastery messaging and public-practice boundary are explicit", () => {
