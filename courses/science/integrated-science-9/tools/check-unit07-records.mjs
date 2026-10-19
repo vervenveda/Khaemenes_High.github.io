@@ -8,6 +8,6 @@ for(const file of ["unit07.js","energy-rate-workbench.js",...scored,"equation-ba
  new vm.Script(source,{filename:file});
  if(file==="unit07.js"&&(!scoped(source,"07")||!source.includes("scienceConflict")))throw Error("Unit controller not protected");
  if(file==="energy-rate-workbench.js"&&!source.includes("KhaemenesScienceU07Scope.active()"))throw Error("Rate observations not isolated");
- if(scored.includes(file)&&(!scoped(source,"07")||!/(?:bestScore|\\bbest\\b)/.test(source)||!/(?:activitySnapshot|\\bsnap\\b)/.test(source)))throw Error(file+" missing scored safeguards");
+ if(scored.includes(file)&&(!scoped(source,"07")||!/(?:bestScore|\bbest\b)/.test(source)||!/(?:activitySnapshot|\bsnap\b)/.test(source)))throw Error(file+" missing scored safeguards");
 }
 console.log("PASS Unit 07 chemistry tools, learner isolation and mastery safeguards.");
