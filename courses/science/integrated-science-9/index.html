@@ -86,6 +86,7 @@ table{width:100%;border-collapse:collapse}th,td{padding:.7rem;border-bottom:1px 
 <script src="../../shared/course-entry-contract.js?v=20261007"></script><script src="assets/science9-entry-gate.js?v=20261007"></script>
 <script src="../../shared/monte-carlo-assessment-v1.js?v=20261018"></script>
 <script src="units/unit-01/question-bank.js?v=20261018"></script><script src="units/unit-02/question-bank.js?v=20261018"></script><script src="units/unit-03/question-bank.js?v=20261018"></script><script src="units/unit-04/question-bank.js?v=20261018"></script><script src="units/unit-05/question-bank.js?v=20261018"></script><script src="units/unit-06/question-bank.js?v=20261018"></script><script src="units/unit-07/question-bank.js?v=20261018"></script><script src="units/unit-08/question-bank.js?v=20261018"></script><script src="units/unit-09/question-bank.js?v=20261018"></script><script src="units/unit-10/question-bank.js?v=20261018"></script><script src="units/unit-11/question-bank.js?v=20261018"></script><script src="units/unit-12/question-bank.js?v=20261018"></script>
+<script src="diagnostic/weekly-readiness-question-bank.js?v=20261018"></script>
 <link rel="stylesheet" href="../../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
 <link rel="stylesheet" href="../../../assets/grade09-subject-parchment.css?v=20261013" data-grade09-consistency>
 <style id="khaemenes-typography-standard">
@@ -233,7 +234,7 @@ function renderWeek(){
  <div class="card col8"><div class="phenomenon"><h3>Weekly phenomenon</h3><p>${esc(w.phenomenon)}</p></div><h4 style="margin-top:16px">Reading or source suggestion</h4><p>${esc(w.readingSuggestion)}</p><h4>Investigation mode</h4><div class="notice"><strong>${esc(w.mode)}</strong> · Safety instructions must appear before materials or procedures. Stop if supervision, equipment, or conditions are not appropriate.</div><div style="margin-top:12px">${w.vocabulary.map(v=>`<span class="pill">${esc(v)}</span>`).join("")}</div></div>
  <div class="card col12"><h3>Monday–Friday classroom</h3>${w.lessons.map(l=>lessonHTML(w,l,p)).join("")}</div>
  <div class="card col12"><h3>Interactive science notebook</h3>${notebookHTML(w,p)}</div>
- <div class="card col12"><h3>Open-book formative mastery check</h3><p class="small">Objective items have one intended answer and provide explanations. Best score is retained; 80% unlocks the next week. Official midterm/final mastery remains separately supervised.</p><div id="problemSet">${problemSetHTML(w)}</div></div>
+ <div class="card col12"><h3>Open-book formative mastery check</h3><p class="small">Ten randomized objective items draw from a larger reviewed bank, retain the generated form and answers through refresh, and provide explanations. Best score is retained; 80% unlocks the next week. Official midterm/final mastery remains separately supervised.</p><div id="problemSet">${problemSetHTML(w)}</div></div>
  </div>`;
  $$("[data-day]").forEach(x=>x.onchange=()=>{active().days[w.week]??={};active().days[w.week][x.dataset.day]=x.checked;save();renderWeeks()});
  $$("[data-note]").forEach(x=>x.oninput=()=>{active().notes[w.week]??={};active().notes[w.week][x.dataset.note]=x.value;save()});
@@ -315,10 +316,10 @@ const WEEKLY_BANK_CONFIG={
  cells:{unit:2,domains:["Cell theory","Cell types","Organelles","Plant cells","Microscopy","Cell size","Models","Evidence"]},
  membrane:{unit:2,domains:["Membranes","Diffusion","Osmosis","Transport","Cell size"]},
  cell_energy:{unit:2,domains:["Energy","Organelles","Plant cells","Models","Evidence"]},
- organization:{unit:2,domains:["Specialization","Organization","Cell types"]},
+ organization:{unit:2,domains:["Specialization","Organization","Cell types","Cell size","Organelles","Models"]},
  body_systems:{unit:3,domains:["Systems and homeostasis","Circulation model","Respiratory response"],prompt:/ventricle|atrium|circulat|capillar|blood|oxygen|alveol|breath|respirat|digest|bile|villi|intestin|kidney|excret|exercise/i},
  homeostasis:{unit:3,domains:["Systems and homeostasis","Thermoregulation data","Feedback data","Water balance","Respiratory response","Thermal energy","Negative feedback evidence","Controlled physiological comparison","Correlation and causation","Model limitation","Data quality","Physiological data ethics"],prompt:/homeostas|feedback|regulat|temperature|thermoreg|dehydrat|ADH|glucose|insulin|glucagon|heat loss|sweat|physiolog|water balance/i},
- mitosis:{unit:4,domains:["Cell cycle","Mitosis","Differentiation","Cell-cycle control"]},
+ mitosis:{unit:4,domains:["Cell cycle","Mitosis","Differentiation","Cell-cycle control","Genetic information"]},
  meiosis:{unit:4,domains:["Reproduction","Meiosis","Variation","Fertilization"]},
  genetics:{unit:4,domains:["Genetic information","Inheritance language","Probability","Non-simple inheritance","Mutation","Trait expression","Evidence and ethics"]},
  ecology:{unit:5,domains:["Ecological organization","Niche","Food webs","Energy transfer","Matter cycles","Biodiversity","Trophic roles","Food-web effects","Energy calculation","Energy","Matter and energy"]},
@@ -335,7 +336,7 @@ const WEEKLY_BANK_CONFIG={
  energy:{unit:8,domains:["Work","Kinetic energy","Potential energy","Conservation","Power","Efficiency","GPE","Energy system","Machine","Energy accounting","Efficiency evidence","Model evaluation"]},
  electricity:{unit:9,domains:["Current","Voltage","Ohm","Series","Parallel","Power","Energy","Electromagnet","Induction","Charge","Resistance","Junction","I–V graph","Magnetic field","Motor effect","Transformer","Circuit model","Induction model","Transformer model","Ohmic evidence","Circuit comparison","Induction evidence","Safety"]},
  waves:{unit:9,domains:["Wave speed","Amplitude","Reflection","Sound","EM spectrum","Vacuum","Wave model","Wave equation","Period","Refraction","Frequency in refraction","Diffraction","Decibels","EM order","Photon energy","Wave evidence","Photon model","Wave-equation evidence","Safety"]},
- information:{unit:9,domains:["Digital","Noise","Access","Digital sampling","Parity","Digital tradeoff","System model","Digital information model","Signal error data","Sampling evidence","Communication engineering evidence"]},
+ information:{unit:9,domains:["Digital","Noise","Access","Digital sampling","Parity","Digital tradeoff","System model","Digital information model","Signal error data","Sampling evidence","Communication engineering evidence","Sound","EM spectrum","Wave model","Wave evidence","Photon model"]},
  earth_systems:{unit:10,domains:["Systems","Feedback","Interior","Plate boundary","Rock cycle","Weathering","System boundary","Density","Seismic lag","Epicenter","Convection","Divergent boundary","Subduction","Deposition"]},
  cycles:{unit:10,domains:["Water budget","Groundwater","Carbon","Nitrogen","Phosphorus","Residence time","Flux units","Infiltration","Aquifer","Carbon balance","Carbon pathway","Nitrogen fixation","Nitrification","Eutrophication"]},
  environment:{unit:10,domains:["Climate","Albedo","Greenhouse gas","Climate evidence","Human modification","Hazards","Justice","Safety","Energy imbalance","Weather","Climate forcing","Positive feedback","Uncertainty","Mitigation","Adaptation","Risk"]},
@@ -347,25 +348,26 @@ const WEEKLY_BANK_CONFIG={
  capstone:{unit:12,domains:["Life cycle","Functional unit","Material impact","Transport impact","Use impact","Annualized impact","Recovery","Life-cycle comparison","Accessibility","Ethics","Communication","Course completion","Privacy","Capstone","Optimization"]}
 };
 function weeklyBankPool(w){
+ if(w.week===1)return window.KhaemenesScience9WeeklyReadinessBank||[];
  const cfg=WEEKLY_BANK_CONFIG[w.quizType];if(!cfg)return[];
  const bank=(window.KhaemenesScience9QuestionBanks||{})["unit-"+String(cfg.unit).padStart(2,"0")]||[],domains=new Set(cfg.domains||[]);
  return bank.filter(q=>domains.has(q.domain)&&(!cfg.prompt||cfg.prompt.test(String(q.prompt||"")+" "+String(q.explanation||""))));
 }
 function weeklyMCKey(w){return KEY+"::weekly-mc::"+String(w.week).padStart(2,"0")}
-function openWeeklySet(w,n=6){
+function openWeeklySet(w,n=10){
  const MC=window.KhaeMonteCarloAssessment,pool=weeklyBankPool(w);
  if(!MC||pool.length<n)return null;
  const key=weeklyMCKey(w),session=MC.openSession(key,pool,{kind:"science9-weekly-"+String(w.week).padStart(2,"0"),count:n}),materialized=MC.materialize(pool,session),responses=MC.getResponses(key,session.id);
  const questions=materialized.map(q=>({id:q.id,q:q.prompt,choices:q.options,answer:q.options[q.answer],answerIndex:q.answer,explanation:q.explanation,domain:q.domain,mc:true,selected:Number.isInteger(Number(responses[q.id]))?Number(responses[q.id]):null}));
  return {mode:"mc",key,session,questions,poolSize:pool.length,completed:false};
 }
-function getSet(w,n=6){
+function getSet(w,n=10){
  if(sets[w.week])return sets[w.week].questions;
- const mc=w.week===1?null:openWeeklySet(w,n);
+ const mc=openWeeklySet(w,n);
  if(mc){sets[w.week]=mc;return mc.questions}
  const questions=Array.from({length:n},()=>makeQuestion(w.quizType));sets[w.week]={mode:"legacy",questions,completed:false};return questions
 }
-function problemSetHTML(w){const set=getSet(w),meta=sets[w.week];return set.map((p,i)=>`<div class="problem"><p><strong>${i+1}.</strong> ${esc(p.q)}</p>${p.domain?`<p class="small">${esc(p.domain)}${meta?.mode==="mc"?` · randomized from ${meta.poolSize}-question reviewed weekly pool`:""}</p>`:""}${p.choices?`<select data-answer="${i}" ${p.mc?`data-qid="${esc(p.id)}"`:""}><option value="">Choose an answer</option>${p.choices.map((choice,oi)=>`<option ${p.mc?`value="${oi}" ${p.selected===oi?"selected":""}`:`value="${esc(choice)}"`}>${esc(choice)}</option>`).join("")}</select>`:`<input data-answer="${i}" inputmode="decimal" placeholder="Enter answer">`}<div class="feedback hidden" id="fb_${w.week}_${i}"></div></div>`).join("")+`<div class="actions"><button id="submitPractice">Submit Mastery Check</button><button class="secondary" id="newPractice">New Randomized Set</button></div><p class="small">${meta?.mode==="mc"?`Generated form ${esc(meta.session.id)} persists through refresh; a new form opens only after submission.`:"Week 1 uses the readiness generator; formal course assessments remain separate."}</p><p id="practiceScore"></p>`}
+function problemSetHTML(w){const set=getSet(w),meta=sets[w.week];return set.map((p,i)=>`<div class="problem"><p><strong>${i+1}.</strong> ${esc(p.q)}</p>${p.domain?`<p class="small">${esc(p.domain)}${meta?.mode==="mc"?` · randomized from ${meta.poolSize}-question reviewed weekly pool`:""}</p>`:""}${p.choices?`<select data-answer="${i}" ${p.mc?`data-qid="${esc(p.id)}"`:""}><option value="">Choose an answer</option>${p.choices.map((choice,oi)=>`<option ${p.mc?`value="${oi}" ${p.selected===oi?"selected":""}`:`value="${esc(choice)}"`}>${esc(choice)}</option>`).join("")}</select>`:`<input data-answer="${i}" inputmode="decimal" placeholder="Enter answer">`}<div class="feedback hidden" id="fb_${w.week}_${i}"></div></div>`).join("")+`<div class="actions"><button id="submitPractice">Submit Mastery Check</button><button class="secondary" id="newPractice">New Randomized Set</button></div><p class="small">${meta?.mode==="mc"?`Generated form ${esc(meta.session.id)} persists through refresh; a new form opens only after submission.`:"Formative weekly mastery uses reviewed sovereign question banks; formal course assessments remain separate."}</p><p id="practiceScore"></p>`}
 function correct(v,p){if(p.choices)return String(v).trim().toLowerCase()===String(p.answer).trim().toLowerCase();const n=Number(String(v).replace(/,/g,""));return Number.isFinite(n)&&Math.abs(n-p.answer)<=Math.max(p.tolerance||.001,Math.abs(p.answer)*.001)}
 function wireWeeklyMastery(w){
  const meta=sets[w.week];if(meta?.mode!=="mc")return;
