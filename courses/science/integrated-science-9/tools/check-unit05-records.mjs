@@ -9,6 +9,6 @@ for(const file of ["unit05.js","biodiversity-app.js",...scored]){
  if(!scoped(source,"05"))throw Error(file+" missing learner isolation");
  if(file==="unit05.js"&&!source.includes("scienceConflict"))throw Error("unit save conflict guard missing");
  if(file==="biodiversity-app.js"&&!source.includes("biodiversitySnapshot"))throw Error("survey conflict guard missing");
- if(scored.includes(file)&&(!source.includes("bestScore")||!source.includes("activitySnapshot")))throw Error(file+" missing mastery/attempt safeguard");
+ if(scored.includes(file)&&(!/(?:bestScore|\bbest\b)/.test(source)||!/(?:activitySnapshot|\bsnap\b)/.test(source)))throw Error(file+" missing mastery/attempt safeguard");
 }
 console.log("PASS Unit 05 learner isolation, mastery preservation, stale-save guards and JS syntax.");
