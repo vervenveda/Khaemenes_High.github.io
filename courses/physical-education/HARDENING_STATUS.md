@@ -101,3 +101,45 @@ This pass includes source checks and logic-level simulations, **not a live brows
 - Local scores and journals are learning evidence, not authenticated teacher approval, transcript credit, or enrollment records.
 - Pre-K remains a separate repository and developmentally distinct PE program: `Khaemenes_Preschool.github.io`.
 - This status describes source review and logic-level checks, not formal standards certification or live-browser testing.
+
+## Course-wide question-bank hardening — Grade 9 PE — 2026-10-19
+
+**Scope:** `courses/physical-education/grade-09-instruction.json`, the 36-week Grade 9 PE instruction bank, and `assessment-regression.html`. The separate reading portal and assessment experience remain separate; no lesson/reader merger was performed.
+
+### Repairs applied
+
+- Rebalanced the correct-answer positions across all 36 weeks. For 30-question banks, the stored key now distributes 10 correct choices to each of A/B/C. For 25-question banks, the distribution is 9/8/8 in a deterministic shuffled sequence.
+- Preserved each original prompt, the intended correct answer text, and the existing rationale while reordering choices and updating the correct index in a coordinated change.
+- Rewrote the repeated rationale clusters in Weeks 1, 2, 4 and 6 so that all questions in those banks have question-specific explanations.
+- Added individually authored, concept-specific rationales for all 30 Week 3 questions and all 25 questions in each of Weeks 7 and 8.
+- Extended the regression runner to fetch and validate the full instruction bank, including grade/mastery metadata, 36-week sequencing, required question counts, three-option structure, in-range answer indices, unique prompts, unique nonblank rationales, balanced answer positions and total question count.
+
+### Validation completed
+
+- Instruction bank parses as JSON.
+- 36 weeks validated in sequential order.
+- Total: 925 questions (Weeks 1–5: 30 each; Weeks 6–36: 25 each).
+- All 925 prompts are unique within their respective week banks; all 925 rationales are nonblank and unique within their respective week banks.
+- All weeks pass correct-answer position balance: max difference between A/B/C counts is no more than 1.
+- Weeks 1–5 have 10/10/10 distribution; Weeks 6–36 have 9/8/8 distribution.
+- When choices were rebalanced, the originally intended answer text was checked to remain at the newly stored correct index.
+- Regression runner now includes an automated full-course bank check alongside existing assessment-engine and Week 1 daily/practice checks.
+
+### Verification boundary and next priority
+
+This pass is **source/data validation**, not a completed live browser/device test. The regression runner must still be opened on the deployed site and run after Pages serves the updated assets. Manually check keyboard navigation, a tablet-width viewport, a reload during an unfinished attempt, weekly retry after a score below 80%, an 80% passing attempt, export/import, and the course's official progression/lock flow.
+
+Balanced keys and distinct rationales do not establish that every distractor is equally plausible, every item is free of ambiguity, or every explanation is pedagogically optimal. The next content-quality pass should sample each week's items against the lesson objectives and check reading level, accessibility, physiological accuracy and suitability of distractors. Keep the 80% mastery threshold and teacher-review boundary intact.
+
+### Commits for this pass (main)
+
+- Weeks 3, 7 and 8 rationale/answer-position repair: `90dcdf62bf88e1a3a2edf8b3d2f73332a14479c8`
+- Weeks 9–12 answer-position repair: `9d286811dfb15517ce1f16453d525d55608a37da`
+- Weeks 13–16 answer-position repair: `506a288047d03327ab39097d074362b9f038cbcf`
+- Weeks 17–20 answer-position repair: `1a678db777149ff84c07ae69b79fc6c252ff7958`
+- Weeks 21–24 answer-position repair: `3e979b1b6d49831fbb8ac19790d9b22836cd27b5`
+- Weeks 25–28 answer-position repair: `6974e5321b8b02a5d2f6399b03e317e5286ae6a9`
+- Weeks 29–32 answer-position repair: `45a2d25e39db259697d80237d71ccb14207d05b5`
+- Weeks 33–36 answer-position repair: `eb3985eed5ff8f6984ebad39f6f27cb1cf6f6c5b`
+- Weeks 1, 2, 4 and 6 rationale/answer-position repair: `9a6a707f441e8daec980a07bc7f1b756d09cd13d`
+- Full-course question-bank regression checks: `c54dda0aac8ad39eb121d85d8eb4b6998a4e74ea`
