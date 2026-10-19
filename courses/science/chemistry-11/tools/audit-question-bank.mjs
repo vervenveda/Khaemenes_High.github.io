@@ -15,7 +15,7 @@ const ids=new Set();
 const prompts=new Map();
 const templates=new Map();
 
-const norm=s=>String(s??"").toLowerCase().replace(/[^\p{L}\p{N}]+/gu," ").trim();
+const norm=s=>String(s??"").toLowerCase().replace(/\s+/gu," ").trim();
 const template=s=>String(s??"").toLowerCase()
   .replace(/\b\d+(?:\.\d+)?\b/g,"#")
   .replace(/[^\p{L}\p{N}#]+/gu," ").trim().split(" ").slice(0,8).join(" ");
