@@ -125,6 +125,11 @@ byId("run").addEventListener("click",async()=>{
    itemCount+=items.length;
   }
   assert(itemCount===925,"Expected 925 questions across 36 weeks; received "+itemCount);
+  const feedbackWeek=weeks.find(w=>w.week===9);
+  assert(feedbackWeek&&["essentialQuestion","scenario","model","focusSkill","conceptExplanation","biomechanicsAndTechnique","workedExample","applicationTask"].every(k=>typeof feedbackWeek[k]==="string"&&feedbackWeek[k].trim().length>40),"Week 9 movement-feedback unit is missing required instructional-depth fields");
+  assert(feedbackWeek.days?.length===5&&feedbackWeek.days.every(d=>["instruction","practice","evidence","workedExample","independentTask","successCriteria"].every(k=>typeof d[k]==="string"&&d[k].trim().length>20)),"Week 9 daily sequence is missing instruction/practice/example/independent task/success criteria");
+  assert(feedbackWeek.rubric?.length===5&&feedbackWeek.rubric.reduce((sum,r)=>sum+r.points,0)===20&&feedbackWeek.assessment?.passPoints===16,"Week 9 rubric or 80% practical-evidence threshold is inconsistent");
+  checks.push({name:"Week 9 movement-feedback curriculum: daily instructional depth, examples, criteria, and rubric validate",ok:true});
   checks.push({name:"Full Grade 9 PE instruction bank: 36 weeks, 925 unique prompts/rationales and balanced correct-answer positions",ok:true});
  }catch(e){checks.push({name:"Full Grade 9 PE instruction bank validates",ok:false,error:e.message})}
 
