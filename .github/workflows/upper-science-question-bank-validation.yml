@@ -7,6 +7,7 @@ on:
       - 'courses/science/chemistry-11/question-bank.js'
       - 'courses/science/physics-engineering-12/question-bank.js'
       - 'courses/science/tools/audit-upper-science-question-banks.mjs'
+      - 'courses/science/tools/audit-high-school-science.mjs'
       - 'courses/science/chemistry-11/tools/audit-question-bank.mjs'
       - '.github/workflows/upper-science-question-bank-validation.yml'
   pull_request:
@@ -15,6 +16,7 @@ on:
       - 'courses/science/chemistry-11/question-bank.js'
       - 'courses/science/physics-engineering-12/question-bank.js'
       - 'courses/science/tools/audit-upper-science-question-banks.mjs'
+      - 'courses/science/tools/audit-high-school-science.mjs'
       - 'courses/science/chemistry-11/tools/audit-question-bank.mjs'
       - '.github/workflows/upper-science-question-bank-validation.yml'
   workflow_dispatch:
@@ -29,3 +31,5 @@ jobs:
         run: node courses/science/tools/audit-upper-science-question-banks.mjs
       - name: Validate Chemistry-specific question-bank rules
         run: node courses/science/chemistry-11/tools/audit-question-bank.mjs
+      - name: Run full Grade 9–12 science structural audit
+        run: node courses/science/tools/audit-high-school-science.mjs
