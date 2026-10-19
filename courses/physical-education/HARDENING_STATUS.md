@@ -1,3 +1,35 @@
+# Curriculum-validity and learner-journey pass — Grade 9 PE Week 9 — 2026-10-19
+
+**Scope:** Week 9, “Movement skill feedback,” in `grade-09-instruction.json`; the Grade 9 course portal remains separate from the reading portal.
+
+### Repair applied
+
+- Replaced Week 9's generic feedback lesson frame with a focused essential question, scenario, and worked model about observable, respectful, consent-aware movement feedback.
+- Added the missing week-level concept explanation, technique/observation principles, worked example, and application task.
+- Expanded all five daily lessons (Investigate → Demonstrate → Apply → Analyze → Defend) with a topic-specific example, independent task, and explicit success criteria.
+- Emphasized observation versus interpretation, consent before feedback or touch, privacy, accessible alternatives, safe stop cues, and limitations of small samples.
+- Preserved the existing 25-question Week 9 knowledge bank, its answer/rationale records, the 20-point teacher-reviewed rubric, and its 16/20 (80%) evidence threshold. No mastery policy or portal/reader crossover was introduced.
+- Added the Week 9 instructional-depth assertions to the browser regression runner while preserving the 36-week / 925-item bank checks.
+
+### Validation completed
+
+- Instruction JSON parses and the Week 9 record reloads from `main`.
+- Five daily lessons each contain instruction, practice, evidence, worked example, independent task and success criteria.
+- Week-level instructional-depth fields and 20-point rubric / 16-point passing threshold are present.
+- The course portal source already renders these optional week/day fields; the separate reading portal remains untouched.
+- Existing question bank count remains 25; prior question data was preserved during the targeted edit.
+
+### Validation boundary
+
+The regression checks were added to the deployed runner source but have **not been executed inside a live browser session here**. After Pages deploys, open `assessment-regression.html` and run the checks, then manually test Week 9 day navigation, learner journal submission, reload/resume, quiz retry, keyboard access and tablet width. This is a source-and-data validation, not formal standards certification or a live visual sign-off.
+
+### Commits
+
+- Curriculum depth repair: `50d35ef6959867bb955bf6897713850adceed54f`
+- Week 9 regression coverage: `4987b63174e85687f786112867f074432cae2185`
+
+---
+
 # High School Physical Education Hardening Status
 
 ## Fresh forensic pass — Grade 9 Week 1 assessment journey — 2026-10-19
