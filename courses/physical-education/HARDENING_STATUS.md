@@ -175,3 +175,28 @@ Balanced keys and distinct rationales do not establish that every distractor is 
 - Weeks 33–36 answer-position repair: `eb3985eed5ff8f6984ebad39f6f27cb1cf6f6c5b`
 - Weeks 1, 2, 4 and 6 rationale/answer-position repair: `9a6a707f441e8daec980a07bc7f1b756d09cd13d`
 - Full-course question-bank regression checks: `c54dda0aac8ad39eb121d85d8eb4b6998a4e74ea`
+
+## Grade 9 Week 10 curriculum-validity and learner-journey pass — 2026-10-19
+
+**Scope:** Week 10, “Recreation and inclusive games,” in `grade-09-instruction.json`. The separate mini-textbook reader remains independent; assessment threshold and engine behavior were not changed.
+
+### Findings and repairs
+
+- Confirmed the week provides five sequenced instructional days, each with instruction/practice/evidence/success criteria, a worked model, misconception correction, inclusion-aware teacher notes, a 20-point rubric, a 16/20 performance-evidence threshold, and 25 weekly knowledge-check items.
+- Strengthened five assessment items (items 4, 7, 15, 17, and 20) to use clearer, scenario-led decisions and plausible alternatives rather than overly obvious distractors or generic prompts.
+- Kept each correct answer paired with its correct rationale and preserved its answer position while editing the item; the 25-item key remains balanced at 9/8/8 across the three answer positions.
+- Preserved the Grade 9 80% weekly knowledge gate, independent practice/reflection requirements, teacher-review boundary, and existing standalone reading portal.
+- Standards mapping remains flagged for teacher review; indicator codes use the SHAPE America 2024 Grades 9–12+ indicator span and should not be described as state-specific approval.
+
+### Verification
+
+- Updated instruction JSON parses successfully.
+- Week 10 still has 25 checks, three distinct options per item, valid answer indices, unique prompts, and non-empty unique rationales.
+- Correct-answer distribution remains balanced: 9 / 8 / 8.
+- Five-day instructional sequence and practical assessment/rubric structures were preserved.
+- Source/data inspection only; a live browser walkthrough on the deployed Pages site is still required for reload/resume, retries, export/import, and next-week unlocking.
+
+### Commit
+
+- Week 10 assessment validity repair: `03a1732c54eacdf7526b14ea7394a1cb6229e22f`
+
