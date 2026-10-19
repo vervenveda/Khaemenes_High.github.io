@@ -3215,14 +3215,14 @@
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about movement skill feedback.\" Which response best corrects the reasoning?",
           "options": [
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-            "Keep the claim because it sounds confident, even without evidence.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence."
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
           "correct": 0,
           "rationale": "The correction prioritizes the actual learning evidence and avoids unsupported comparisons or unsafe generalizations."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for movement skill feedback. Which next step best supports this week's learning?",
+          "prompt": "The current plan for movement skill feedback is missing a clear way to judge success. What revision is most useful?",
           "options": [
             "Add more activity without deciding what will be observed.",
             "Name one observable criterion for turn a vague compliment into one observable technique cue., then record what happened and what remains uncertain.",
@@ -3245,8 +3245,8 @@
           "prompt": "While applying turn a vague compliment into one observable technique cue., a learner notices a safety concern that was not in the original plan. What is the best response?",
           "options": [
             "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Continue unchanged because the plan was already written.",
+            "Ask peers to vote on whether a warning sign should be ignored."
           ],
           "correct": 0,
           "rationale": "A plan must adapt to new information; safety concerns take priority over completing a preset task."
@@ -3550,7 +3550,7 @@
           "rationale": "A plan must adapt to new information; safety concerns take priority over completing a preset task."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for recreation and inclusive games. Which next step best supports this week's learning?",
+          "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for recreation and inclusive games?",
           "options": [
             "The learner has mastered every related skill in every setting.",
             "The learner should be assigned the same activity and difficulty in all future sessions.",
@@ -3570,11 +3570,11 @@
           "rationale": "The target is applied when the learner makes a feasible, justified choice and can point to observable evidence for recreation and inclusive games."
         },
         {
-          "prompt": "A learner is reviewing this case: recreation and inclusive games. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for recreation and inclusive games. Which next step best supports this week's learning?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Copy a classmate's decision without checking the case.",
             "Identify the specific decision, compare realistic options, and explain the choice using the week's learning target.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Use completion time as the only measure of learning."
           ],
           "correct": 1,
           "rationale": "A contextual decision should respond to the actual constraints and make its reasoning visible; speed or copying is insufficient."
@@ -3868,7 +3868,7 @@
       },
       "checks": [
         {
-          "prompt": "A learner is reviewing this case: hydration and environmental safety. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for hydration and environmental safety. Which next step best supports this week's learning?",
           "options": [
             "Copy a classmate's decision without checking the case.",
             "Use completion time as the only measure of learning.",
@@ -3878,7 +3878,7 @@
           "rationale": "A contextual decision should respond to the actual constraints and make its reasoning visible; speed or copying is insufficient."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for hydration and environmental safety. Which next step best supports this week's learning?",
+          "prompt": "Which observation would give the strongest evidence that a learner has improved at compare water access and environmental conditions without prescribing a universal amount.?",
           "options": [
             "A dated before-and-after observation tied to a clear criterion, with limits noted.",
             "A general statement that the learner looked more athletic.",
@@ -3890,9 +3890,9 @@
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about hydration and environmental safety.\" Which response best corrects the reasoning?",
           "options": [
-            "Keep the claim because it sounds confident, even without evidence.",
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence."
+            "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
           "correct": 1,
           "rationale": "The correction prioritizes the actual learning evidence and avoids unsupported comparisons or unsafe generalizations."
@@ -3900,8 +3900,8 @@
         {
           "prompt": "The current plan for hydration and environmental safety is missing a clear way to judge success. What revision is most useful?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective.",
+            "Add more activity without deciding what will be observed.",
+            "Judge success by effort alone and omit the learning evidence.",
             "Name one observable criterion for compare water access and environmental conditions without prescribing a universal amount., then record what happened and what remains uncertain."
           ],
           "correct": 2,
@@ -4206,7 +4206,7 @@
           "rationale": "A clear criterion makes the task assessable and connects the planned activity with evidence, while acknowledging uncertainty."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for teamwork and fair play. Which next step best supports this week's learning?",
+          "prompt": "A learner cannot use the activity's original movement format while studying teamwork and fair play. Which adaptation is strongest?",
           "options": [
             "Remove the learner from the learning task without an alternative.",
             "Choose a safe accessible demonstration, observation, or explanation that still measures describe consent and inclusive participation..",
@@ -4229,8 +4229,8 @@
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for teamwork and fair play?",
           "options": [
             "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "The learner has mastered every related skill in every setting.",
+            "The learner should be assigned the same activity and difficulty in all future sessions."
           ],
           "correct": 0,
           "rationale": "A learning record supports conclusions limited to the observed task and evidence; it does not prove universal mastery or a one-size-fits-all prescription."
@@ -4534,7 +4534,7 @@
           "rationale": "A learning record supports conclusions limited to the observed task and evidence; it does not prove universal mastery or a one-size-fits-all prescription."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for personal activity planning. Which next step best supports this week's learning?",
+          "prompt": "During personal activity planning, which plan best applies the learning target when time and equipment are limited?",
           "options": [
             "Choose the hardest version regardless of conditions.",
             "Skip the reasoning and record only whether the task was finished.",
@@ -4544,7 +4544,7 @@
           "rationale": "The target is applied when the learner makes a feasible, justified choice and can point to observable evidence for personal activity planning."
         },
         {
-          "prompt": "A learner is reviewing this case: personal activity planning. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for personal activity planning. Which next step best supports this week's learning?",
           "options": [
             "Identify the specific decision, compare realistic options, and explain the choice using the week's learning target.",
             "Copy a classmate's decision without checking the case.",
@@ -4556,9 +4556,9 @@
         {
           "prompt": "Which observation would give the strongest evidence that a learner has improved at set a feasible activity goal with a check-in point.?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "A general statement that the learner looked more athletic.",
             "A dated before-and-after observation tied to a clear criterion, with limits noted.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "A single score with no description of the task or conditions."
           ],
           "correct": 1,
           "rationale": "Relevant, dated evidence tied to a criterion supports a more defensible conclusion than appearance or an unexplained score."
@@ -4566,8 +4566,8 @@
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about personal activity planning.\" Which response best corrects the reasoning?",
           "options": [
-            "Keep the claim because it sounds confident, even without evidence.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence.",
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Keep the claim without checking the observation, adaptation, or learning objective.",
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context."
           ],
           "correct": 2,
@@ -4862,11 +4862,11 @@
           "rationale": "Relevant, dated evidence tied to a criterion supports a more defensible conclusion than appearance or an unexplained score."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for rest and recovery. Which next step best supports this week's learning?",
+          "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about rest and recovery.\" Which response best corrects the reasoning?",
           "options": [
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-            "Keep the claim because it sounds confident, even without evidence.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence."
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
           "correct": 0,
           "rationale": "The correction prioritizes the actual learning evidence and avoids unsupported comparisons or unsafe generalizations."
@@ -4884,8 +4884,8 @@
         {
           "prompt": "A learner cannot use the activity's original movement format while studying rest and recovery. Which adaptation is strongest?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective.",
+            "Remove the learner from the learning task without an alternative.",
+            "Require private medical details before offering any adjustment.",
             "Choose a safe accessible demonstration, observation, or explanation that still measures explain why rest is part of training.."
           ],
           "correct": 2,
@@ -5190,7 +5190,7 @@
           "rationale": "An equivalent accessible pathway preserves the learning objective without excluding the learner or demanding unnecessary health disclosure."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for movement and mental wellbeing. Which next step best supports this week's learning?",
+          "prompt": "While applying separate possible mood benefits from guarantees or medical treatment claims., a learner notices a safety concern that was not in the original plan. What is the best response?",
           "options": [
             "Continue unchanged because the plan was already written.",
             "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
@@ -5213,14 +5213,14 @@
           "prompt": "During movement and mental wellbeing, which plan best applies the learning target when time and equipment are limited?",
           "options": [
             "Use separate possible mood benefits from guarantees or medical treatment claims. in a feasible task, state the reason, and record observable evidence.",
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Choose the hardest version regardless of conditions.",
+            "Skip the reasoning and record only whether the task was finished."
           ],
           "correct": 0,
           "rationale": "The target is applied when the learner makes a feasible, justified choice and can point to observable evidence for movement and mental wellbeing."
         },
         {
-          "prompt": "A learner is reviewing this case: movement and mental wellbeing. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for movement and mental wellbeing. Which next step best supports this week's learning?",
           "options": [
             "Copy a classmate's decision without checking the case.",
             "Identify the specific decision, compare realistic options, and explain the choice using the week's learning target.",
@@ -5838,15 +5838,15 @@
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about movement circuits.\" Which response best corrects the reasoning?",
           "options": [
-            "Keep the claim because it sounds confident, even without evidence.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence.",
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Keep the claim without checking the observation, adaptation, or learning objective.",
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context."
           ],
           "correct": 2,
           "rationale": "The correction prioritizes the actual learning evidence and avoids unsupported comparisons or unsafe generalizations."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for movement circuits. Which next step best supports this week's learning?",
+          "prompt": "The current plan for movement circuits is missing a clear way to judge success. What revision is most useful?",
           "options": [
             "Name one observable criterion for choose a safe order of movement and recovery stations., then record what happened and what remains uncertain.",
             "Add more activity without deciding what will be observed.",
@@ -5868,8 +5868,8 @@
         {
           "prompt": "While applying choose a safe order of movement and recovery stations., a learner notices a safety concern that was not in the original plan. What is the best response?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective.",
+            "Continue unchanged because the plan was already written.",
+            "Ask peers to vote on whether a warning sign should be ignored.",
             "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing."
           ],
           "correct": 2,
@@ -6174,7 +6174,7 @@
           "rationale": "A plan must adapt to new information; safety concerns take priority over completing a preset task."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for rhythm and dance. Which next step best supports this week's learning?",
+          "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for rhythm and dance?",
           "options": [
             "The learner has mastered every related skill in every setting.",
             "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
@@ -6194,11 +6194,11 @@
           "rationale": "The target is applied when the learner makes a feasible, justified choice and can point to observable evidence for rhythm and dance."
         },
         {
-          "prompt": "A learner is reviewing this case: rhythm and dance. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for rhythm and dance. Which next step best supports this week's learning?",
           "options": [
             "Identify the specific decision, compare realistic options, and explain the choice using the week's learning target.",
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Copy a classmate's decision without checking the case.",
+            "Use completion time as the only measure of learning."
           ],
           "correct": 0,
           "rationale": "A contextual decision should respond to the actual constraints and make its reasoning visible; speed or copying is insufficient."
@@ -6492,7 +6492,7 @@
       },
       "checks": [
         {
-          "prompt": "A learner is reviewing this case: outdoor walking and route planning. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for outdoor walking and route planning. Which next step best supports this week's learning?",
           "options": [
             "Copy a classmate's decision without checking the case.",
             "Identify the specific decision, compare realistic options, and explain the choice using the week's learning target.",
@@ -6502,7 +6502,7 @@
           "rationale": "A contextual decision should respond to the actual constraints and make its reasoning visible; speed or copying is insufficient."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for outdoor walking and route planning. Which next step best supports this week's learning?",
+          "prompt": "Which observation would give the strongest evidence that a learner has improved at check route, weather, visibility and accessible alternatives.?",
           "options": [
             "A general statement that the learner looked more athletic.",
             "A single score with no description of the task or conditions.",
@@ -6515,8 +6515,8 @@
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about outdoor walking and route planning.\" Which response best corrects the reasoning?",
           "options": [
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-            "Keep the claim because it sounds confident, even without evidence.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence."
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
           "correct": 0,
           "rationale": "The correction prioritizes the actual learning evidence and avoids unsupported comparisons or unsafe generalizations."
@@ -6524,9 +6524,9 @@
         {
           "prompt": "The current plan for outdoor walking and route planning is missing a clear way to judge success. What revision is most useful?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Add more activity without deciding what will be observed.",
             "Name one observable criterion for check route, weather, visibility and accessible alternatives., then record what happened and what remains uncertain.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Judge success by effort alone and omit the learning evidence."
           ],
           "correct": 1,
           "rationale": "A clear criterion makes the task assessable and connects the planned activity with evidence, while acknowledging uncertainty."
@@ -6830,7 +6830,7 @@
           "rationale": "A clear criterion makes the task assessable and connects the planned activity with evidence, while acknowledging uncertainty."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for recreational skill choice. Which next step best supports this week's learning?",
+          "prompt": "A learner cannot use the activity's original movement format while studying recreational skill choice. Which adaptation is strongest?",
           "options": [
             "Choose a safe accessible demonstration, observation, or explanation that still measures defend a recreational activity choice using access and enjoyment..",
             "Remove the learner from the learning task without an alternative.",
@@ -6852,8 +6852,8 @@
         {
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for recreational skill choice?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective.",
+            "The learner has mastered every related skill in every setting.",
+            "The learner should be assigned the same activity and difficulty in all future sessions.",
             "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step."
           ],
           "correct": 2,
@@ -7158,7 +7158,7 @@
           "rationale": "A learning record supports conclusions limited to the observed task and evidence; it does not prove universal mastery or a one-size-fits-all prescription."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for aerobic intervals. Which next step best supports this week's learning?",
+          "prompt": "During aerobic intervals, which plan best applies the learning target when time and equipment are limited?",
           "options": [
             "Choose the hardest version regardless of conditions.",
             "Use compare comfortable work and recovery intervals. in a feasible task, state the reason, and record observable evidence.",
@@ -7168,7 +7168,7 @@
           "rationale": "The target is applied when the learner makes a feasible, justified choice and can point to observable evidence for aerobic intervals."
         },
         {
-          "prompt": "A learner is reviewing this case: aerobic intervals. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for aerobic intervals. Which next step best supports this week's learning?",
           "options": [
             "Copy a classmate's decision without checking the case.",
             "Use completion time as the only measure of learning.",
@@ -7181,8 +7181,8 @@
           "prompt": "Which observation would give the strongest evidence that a learner has improved at compare comfortable work and recovery intervals.?",
           "options": [
             "A dated before-and-after observation tied to a clear criterion, with limits noted.",
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "A general statement that the learner looked more athletic.",
+            "A single score with no description of the task or conditions."
           ],
           "correct": 0,
           "rationale": "Relevant, dated evidence tied to a criterion supports a more defensible conclusion than appearance or an unexplained score."
@@ -7190,9 +7190,9 @@
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about aerobic intervals.\" Which response best corrects the reasoning?",
           "options": [
-            "Keep the claim because it sounds confident, even without evidence.",
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence."
+            "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
           "correct": 1,
           "rationale": "The correction prioritizes the actual learning evidence and avoids unsupported comparisons or unsafe generalizations."
@@ -7486,10 +7486,10 @@
           "rationale": "Relevant, dated evidence tied to a criterion supports a more defensible conclusion than appearance or an unexplained score."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for strength technique refinement. Which next step best supports this week's learning?",
+          "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about strength technique refinement.\" Which response best corrects the reasoning?",
           "options": [
-            "Keep the claim because it sounds confident, even without evidence.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence.",
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Keep the claim without checking the observation, adaptation, or learning objective.",
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context."
           ],
           "correct": 2,
@@ -7508,9 +7508,9 @@
         {
           "prompt": "A learner cannot use the activity's original movement format while studying strength technique refinement. Which adaptation is strongest?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Remove the learner from the learning task without an alternative.",
             "Choose a safe accessible demonstration, observation, or explanation that still measures identify controlled movement and a safe stopping point..",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Require private medical details before offering any adjustment."
           ],
           "correct": 1,
           "rationale": "An equivalent accessible pathway preserves the learning objective without excluding the learner or demanding unnecessary health disclosure."
@@ -7814,7 +7814,7 @@
           "rationale": "An equivalent accessible pathway preserves the learning objective without excluding the learner or demanding unnecessary health disclosure."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for mobility routines. Which next step best supports this week's learning?",
+          "prompt": "While applying design a comfortable mobility sequence., a learner notices a safety concern that was not in the original plan. What is the best response?",
           "options": [
             "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
             "Continue unchanged because the plan was already written.",
@@ -7836,15 +7836,15 @@
         {
           "prompt": "During mobility routines, which plan best applies the learning target when time and equipment are limited?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective.",
+            "Choose the hardest version regardless of conditions.",
+            "Skip the reasoning and record only whether the task was finished.",
             "Use design a comfortable mobility sequence. in a feasible task, state the reason, and record observable evidence."
           ],
           "correct": 2,
           "rationale": "The target is applied when the learner makes a feasible, justified choice and can point to observable evidence for mobility routines."
         },
         {
-          "prompt": "A learner is reviewing this case: mobility routines. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for mobility routines. Which next step best supports this week's learning?",
           "options": [
             "Identify the specific decision, compare realistic options, and explain the choice using the week's learning target.",
             "Copy a classmate's decision without checking the case.",
@@ -8462,15 +8462,15 @@
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about fitness information literacy.\" Which response best corrects the reasoning?",
           "options": [
-            "Keep the claim because it sounds confident, even without evidence.",
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence."
+            "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
           "correct": 1,
           "rationale": "The correction prioritizes the actual learning evidence and avoids unsupported comparisons or unsafe generalizations."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for fitness information literacy. Which next step best supports this week's learning?",
+          "prompt": "The current plan for fitness information literacy is missing a clear way to judge success. What revision is most useful?",
           "options": [
             "Add more activity without deciding what will be observed.",
             "Judge success by effort alone and omit the learning evidence.",
@@ -8492,9 +8492,9 @@
         {
           "prompt": "While applying distinguish a marketing claim from supported exercise evidence., a learner notices a safety concern that was not in the original plan. What is the best response?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Continue unchanged because the plan was already written.",
             "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Ask peers to vote on whether a warning sign should be ignored."
           ],
           "correct": 1,
           "rationale": "A plan must adapt to new information; safety concerns take priority over completing a preset task."
@@ -8798,7 +8798,7 @@
           "rationale": "A plan must adapt to new information; safety concerns take priority over completing a preset task."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for goal-setting and feedback. Which next step best supports this week's learning?",
+          "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for goal-setting and feedback?",
           "options": [
             "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
             "The learner has mastered every related skill in every setting.",
@@ -8818,10 +8818,10 @@
           "rationale": "The target is applied when the learner makes a feasible, justified choice and can point to observable evidence for goal-setting and feedback."
         },
         {
-          "prompt": "A learner is reviewing this case: goal-setting and feedback. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for goal-setting and feedback. Which next step best supports this week's learning?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective.",
+            "Copy a classmate's decision without checking the case.",
+            "Use completion time as the only measure of learning.",
             "Identify the specific decision, compare realistic options, and explain the choice using the week's learning target."
           ],
           "correct": 2,
@@ -9116,7 +9116,7 @@
       },
       "checks": [
         {
-          "prompt": "A learner is reviewing this case: personal activity log analysis. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for personal activity log analysis. Which next step best supports this week's learning?",
           "options": [
             "Identify the specific decision, compare realistic options, and explain the choice using the week's learning target.",
             "Copy a classmate's decision without checking the case.",
@@ -9126,7 +9126,7 @@
           "rationale": "A contextual decision should respond to the actual constraints and make its reasoning visible; speed or copying is insufficient."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for personal activity log analysis. Which next step best supports this week's learning?",
+          "prompt": "Which observation would give the strongest evidence that a learner has improved at identify missing context before interpreting a trend.?",
           "options": [
             "A general statement that the learner looked more athletic.",
             "A dated before-and-after observation tied to a clear criterion, with limits noted.",
@@ -9138,8 +9138,8 @@
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about personal activity log analysis.\" Which response best corrects the reasoning?",
           "options": [
-            "Keep the claim because it sounds confident, even without evidence.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence.",
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Keep the claim without checking the observation, adaptation, or learning objective.",
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context."
           ],
           "correct": 2,
@@ -9149,8 +9149,8 @@
           "prompt": "The current plan for personal activity log analysis is missing a clear way to judge success. What revision is most useful?",
           "options": [
             "Name one observable criterion for identify missing context before interpreting a trend., then record what happened and what remains uncertain.",
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Add more activity without deciding what will be observed.",
+            "Judge success by effort alone and omit the learning evidence."
           ],
           "correct": 0,
           "rationale": "A clear criterion makes the task assessable and connects the planned activity with evidence, while acknowledging uncertainty."
@@ -9454,7 +9454,7 @@
           "rationale": "A clear criterion makes the task assessable and connects the planned activity with evidence, while acknowledging uncertainty."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for movement in daily life. Which next step best supports this week's learning?",
+          "prompt": "A learner cannot use the activity's original movement format while studying movement in daily life. Which adaptation is strongest?",
           "options": [
             "Remove the learner from the learning task without an alternative.",
             "Require private medical details before offering any adjustment.",
@@ -9476,9 +9476,9 @@
         {
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for movement in daily life?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "The learner has mastered every related skill in every setting.",
             "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "The learner should be assigned the same activity and difficulty in all future sessions."
           ],
           "correct": 1,
           "rationale": "A learning record supports conclusions limited to the observed task and evidence; it does not prove universal mastery or a one-size-fits-all prescription."
@@ -9782,7 +9782,7 @@
           "rationale": "A learning record supports conclusions limited to the observed task and evidence; it does not prove universal mastery or a one-size-fits-all prescription."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for adapted recreation. Which next step best supports this week's learning?",
+          "prompt": "During adapted recreation, which plan best applies the learning target when time and equipment are limited?",
           "options": [
             "Use compare two equivalent demonstrations of skill. in a feasible task, state the reason, and record observable evidence.",
             "Choose the hardest version regardless of conditions.",
@@ -9792,7 +9792,7 @@
           "rationale": "The target is applied when the learner makes a feasible, justified choice and can point to observable evidence for adapted recreation."
         },
         {
-          "prompt": "A learner is reviewing this case: adapted recreation. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for adapted recreation. Which next step best supports this week's learning?",
           "options": [
             "Copy a classmate's decision without checking the case.",
             "Identify the specific decision, compare realistic options, and explain the choice using the week's learning target.",
@@ -9804,8 +9804,8 @@
         {
           "prompt": "Which observation would give the strongest evidence that a learner has improved at compare two equivalent demonstrations of skill.?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective.",
+            "A general statement that the learner looked more athletic.",
+            "A single score with no description of the task or conditions.",
             "A dated before-and-after observation tied to a clear criterion, with limits noted."
           ],
           "correct": 2,
@@ -9815,8 +9815,8 @@
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about adapted recreation.\" Which response best corrects the reasoning?",
           "options": [
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-            "Keep the claim because it sounds confident, even without evidence.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence."
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
           "correct": 0,
           "rationale": "The correction prioritizes the actual learning evidence and avoids unsupported comparisons or unsafe generalizations."
@@ -10110,11 +10110,11 @@
           "rationale": "Relevant, dated evidence tied to a criterion supports a more defensible conclusion than appearance or an unexplained score."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for safe training choices. Which next step best supports this week's learning?",
+          "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about safe training choices.\" Which response best corrects the reasoning?",
           "options": [
-            "Keep the claim because it sounds confident, even without evidence.",
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence."
+            "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
           "correct": 1,
           "rationale": "The correction prioritizes the actual learning evidence and avoids unsupported comparisons or unsafe generalizations."
@@ -10133,8 +10133,8 @@
           "prompt": "A learner cannot use the activity's original movement format while studying safe training choices. Which adaptation is strongest?",
           "options": [
             "Choose a safe accessible demonstration, observation, or explanation that still measures recognize a condition that requires stopping or modifying activity..",
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Remove the learner from the learning task without an alternative.",
+            "Require private medical details before offering any adjustment."
           ],
           "correct": 0,
           "rationale": "An equivalent accessible pathway preserves the learning objective without excluding the learner or demanding unnecessary health disclosure."
@@ -10438,7 +10438,7 @@
           "rationale": "An equivalent accessible pathway preserves the learning objective without excluding the learner or demanding unnecessary health disclosure."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for community activity options. Which next step best supports this week's learning?",
+          "prompt": "While applying compare cost, transport and accessibility barriers., a learner notices a safety concern that was not in the original plan. What is the best response?",
           "options": [
             "Continue unchanged because the plan was already written.",
             "Ask peers to vote on whether a warning sign should be ignored.",
@@ -10460,15 +10460,15 @@
         {
           "prompt": "During community activity options, which plan best applies the learning target when time and equipment are limited?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Choose the hardest version regardless of conditions.",
             "Use compare cost, transport and accessibility barriers. in a feasible task, state the reason, and record observable evidence.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Skip the reasoning and record only whether the task was finished."
           ],
           "correct": 1,
           "rationale": "The target is applied when the learner makes a feasible, justified choice and can point to observable evidence for community activity options."
         },
         {
-          "prompt": "A learner is reviewing this case: community activity options. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for community activity options. Which next step best supports this week's learning?",
           "options": [
             "Copy a classmate's decision without checking the case.",
             "Use completion time as the only measure of learning.",
@@ -11087,14 +11087,14 @@
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about portfolio construction.\" Which response best corrects the reasoning?",
           "options": [
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-            "Keep the claim because it sounds confident, even without evidence.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence."
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
           "correct": 0,
           "rationale": "The correction prioritizes the actual learning evidence and avoids unsupported comparisons or unsafe generalizations."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for portfolio construction. Which next step best supports this week's learning?",
+          "prompt": "The current plan for portfolio construction is missing a clear way to judge success. What revision is most useful?",
           "options": [
             "Add more activity without deciding what will be observed.",
             "Name one observable criterion for select evidence showing revision rather than just performance., then record what happened and what remains uncertain.",
@@ -11117,8 +11117,8 @@
           "prompt": "While applying select evidence showing revision rather than just performance., a learner notices a safety concern that was not in the original plan. What is the best response?",
           "options": [
             "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Continue unchanged because the plan was already written.",
+            "Ask peers to vote on whether a warning sign should be ignored."
           ],
           "correct": 0,
           "rationale": "A plan must adapt to new information; safety concerns take priority over completing a preset task."
@@ -11422,7 +11422,7 @@
           "rationale": "A plan must adapt to new information; safety concerns take priority over completing a preset task."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for program revision. Which next step best supports this week's learning?",
+          "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for program revision?",
           "options": [
             "The learner has mastered every related skill in every setting.",
             "The learner should be assigned the same activity and difficulty in all future sessions.",
@@ -11442,11 +11442,11 @@
           "rationale": "The target is applied when the learner makes a feasible, justified choice and can point to observable evidence for program revision."
         },
         {
-          "prompt": "A learner is reviewing this case: program revision. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for program revision. Which next step best supports this week's learning?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Copy a classmate's decision without checking the case.",
             "Identify the specific decision, compare realistic options, and explain the choice using the week's learning target.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Use completion time as the only measure of learning."
           ],
           "correct": 1,
           "rationale": "A contextual decision should respond to the actual constraints and make its reasoning visible; speed or copying is insufficient."
@@ -11740,7 +11740,7 @@
       },
       "checks": [
         {
-          "prompt": "A learner is reviewing this case: lifelong activity plan. They have limited time, variable energy, and no specialized equipment.. Which next step best supports this week's learning?",
+          "prompt": "A learner has limited time and no specialized equipment while preparing for lifelong activity plan. Which next step best supports this week's learning?",
           "options": [
             "Copy a classmate's decision without checking the case.",
             "Use completion time as the only measure of learning.",
@@ -11750,7 +11750,7 @@
           "rationale": "A contextual decision should respond to the actual constraints and make its reasoning visible; speed or copying is insufficient."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for lifelong activity plan. Which next step best supports this week's learning?",
+          "prompt": "Which observation would give the strongest evidence that a learner has improved at plan activity around changing schedules and access.?",
           "options": [
             "A dated before-and-after observation tied to a clear criterion, with limits noted.",
             "A general statement that the learner looked more athletic.",
@@ -11762,9 +11762,9 @@
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about lifelong activity plan.\" Which response best corrects the reasoning?",
           "options": [
-            "Keep the claim because it sounds confident, even without evidence.",
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-            "Replace the claim with a ranking of classmates and do not revisit the evidence."
+            "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
           "correct": 1,
           "rationale": "The correction prioritizes the actual learning evidence and avoids unsupported comparisons or unsafe generalizations."
@@ -11772,8 +11772,8 @@
         {
           "prompt": "The current plan for lifelong activity plan is missing a clear way to judge success. What revision is most useful?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective.",
+            "Add more activity without deciding what will be observed.",
+            "Judge success by effort alone and omit the learning evidence.",
             "Name one observable criterion for plan activity around changing schedules and access., then record what happened and what remains uncertain."
           ],
           "correct": 2,
@@ -12078,7 +12078,7 @@
           "rationale": "A clear criterion makes the task assessable and connects the planned activity with evidence, while acknowledging uncertainty."
         },
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for final demonstration and reflection. Which next step best supports this week's learning?",
+          "prompt": "A learner cannot use the activity's original movement format while studying final demonstration and reflection. Which adaptation is strongest?",
           "options": [
             "Remove the learner from the learning task without an alternative.",
             "Choose a safe accessible demonstration, observation, or explanation that still measures defend a safe personal plan with evidence and an alternative..",
@@ -12101,8 +12101,8 @@
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for final demonstration and reflection?",
           "options": [
             "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "The learner has mastered every related skill in every setting.",
+            "The learner should be assigned the same activity and difficulty in all future sessions."
           ],
           "correct": 0,
           "rationale": "A learning record supports conclusions limited to the observed task and evidence; it does not prove universal mastery or a one-size-fits-all prescription."
@@ -12324,6 +12324,6 @@
   "revision": {
     "itemBankDiversity": "grade9-topic-specific-v2",
     "lastRevised": "2026-10-19",
-    "note": "Weeks 9–36 first five items replaced with topic-specific applied scenarios, evidence analysis, misconception correction, criterion-setting, accessibility, safety adaptation, and bounded-conclusion items. Correct choice indices distributed across positions."
+    "note": "Weeks 9–36 first five items authored from each week's topic, focus skill, misconception, correction, and learning goals. Items assess applied decisions, evidence quality, misconception correction, success criteria, access, safety adaptation, and limits of conclusions; correct answer positions are balanced."
   }
 }
