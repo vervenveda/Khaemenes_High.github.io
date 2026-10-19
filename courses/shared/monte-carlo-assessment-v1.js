@@ -18,8 +18,33 @@ function createSession(bank,opts,record){const chosen=choose(bank,opts.count,rec
 function openSession(storageKey,bank,opts){const record=read(storageKey,{version:1,seenIds:[],attempts:[],active:null}),ids=new Set(bank.map((q,i)=>norm(q,i).id));if(record.active&&!record.active.submitted&&record.active.questionIds?.every(id=>ids.has(id)))return record.active;record.active=createSession(bank,opts||{},record);record.version=1;write(storageKey,record);return record.active}
 function materialize(bank,session){const byId=new Map(bank.map((q,i)=>{const n=norm(q,i);return[n.id,n]}));return(session.questionIds||[]).map(id=>{const q=byId.get(id);if(!q)return null;const order=session.optionOrders?.[id]||q.options.map((_,i)=>i),options=order.map(i=>q.options[i]),answer=order.indexOf(q.answer);return{...q,options,answer,originalAnswer:q.answer,optionOrder:[...order]}}).filter(Boolean)}
 function isActive(storageKey,sessionId){const active=read(storageKey,null)?.active;return!!active&&(!sessionId||active.id===String(sessionId))}
-function saveResponse(storageKey,questionId,value,sessionId){const record=read(storageKey,null);if(!record?.active)return false;if(sessionId&&record.active.id!==String(sessionId))return false;const id=String(questionId);if(!record.active.questionIds?.includes(id))return false;record.active.responses=record.active.responses||{};record.active.responses[id]=Number(value);record.active.updatedAt=new Date().toISOString();return write(storageKey,record)}
-function getResponses(storageKey,sessionId){const active=read(storageKey,null)?.active;if(!active||(sessionId&&active.id!==String(sessionId)))return{};return active.responses||{}}
+function saveResponse(storageKey,questionId,value,sessionId){
+const record=read(storageKey,null);
+if(!record?.active||record.active.submitted)return false;
+if(sessionId&&record.active.id!==String(sessionId))return false;
+const id=String(questionId);
+if(!record.active.questionIds?.includes(id))return false;
+if(value===null||value===undefined||value==="")return false;
+const numeric=Number(value);
+if(!Number.isInteger(numeric)||numeric<0)return false;
+const order=record.active.optionOrders?.[id];
+if(Array.isArray(order)&&numeric>=order.length)return false;
+record.active.responses=record.active.responses||{};
+record.active.responses[id]=numeric;
+record.active.updatedAt=new Date().toISOString();
+return write(storageKey,record)}
+function getResponses(storageKey,sessionId){
+const active=read(storageKey,null)?.active;
+if(!active||(sessionId&&active.id!==String(sessionId)))return{};
+const stored=active.responses||{},valid={};
+for(const id of (active.questionIds||[])){
+const raw=stored[id];
+if(raw===null||raw===undefined||raw==="")continue;
+const value=Number(raw),order=active.optionOrders?.[id];
+if(!Number.isInteger(value)||value<0||(Array.isArray(order)&&value>=order.length))continue;
+valid[id]=value;
+}
+return valid}
 function complete(storageKey,summary,sessionId){const record=read(storageKey,{version:1,seenIds:[],attempts:[],active:null});if(!record.active)return{...record,conflict:!!sessionId};if(sessionId&&record.active.id!==String(sessionId))return{...record,conflict:true};const active=record.active;active.submitted=true;active.completedAt=new Date().toISOString();active.summary=summary||{};const prior=Array.isArray(record.seenIds)?record.seenIds:[],merged=[...prior.filter(id=>!active.questionIds.includes(id)),...active.questionIds];record.seenIds=merged.slice(-1000);record.attempts=Array.isArray(record.attempts)?record.attempts:[];record.attempts.push({id:active.id,kind:active.kind,createdAt:active.createdAt,completedAt:active.completedAt,questionIds:[...active.questionIds],summary:active.summary});record.attempts=record.attempts.slice(-50);record.active=null;write(storageKey,record);return record}
 function newAttempt(storageKey,sessionId){const record=read(storageKey,{version:1,seenIds:[],attempts:[],active:null});if(record.active&&sessionId&&record.active.id!==String(sessionId))return false;record.active=null;write(storageKey,record);return true}
 function audit(bank){const qs=bank.map(norm),ids=new Set(),prompts=new Map(),findings=[];for(const q of qs){if(ids.has(q.id))findings.push({type:"duplicate_id",id:q.id});ids.add(q.id);const p=q.prompt.toLowerCase().replace(/[^\p{L}\p{N}]+/gu," ").trim();if(prompts.has(p))findings.push({type:"duplicate_prompt",ids:[prompts.get(p),q.id]});else prompts.set(p,q.id);if(q.options.length<2||!Number.isInteger(q.answer)||q.answer<0||q.answer>=q.options.length)findings.push({type:"malformed",id:q.id})}return{count:qs.length,domains:[...new Set(qs.map(q=>q.domain))],sources:[...new Set(qs.map(q=>q.source))],types:[...new Set(qs.map(q=>q.type))],findingCount:findings.length,findings}}
