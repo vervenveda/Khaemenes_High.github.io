@@ -934,22 +934,22 @@
         {
           "prompt": "A learner can no longer speak comfortably on a hill. What is a reasonable response?",
           "options": [
-            "Slow the pace or change the route",
             "Increase speed to finish sooner",
+            "Slow the pace or change the route",
             "Ignore discomfort"
           ],
-          "correct": 0,
-          "rationale": "Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels."
+          "correct": 1,
+          "rationale": "The talk test is a self-monitoring signal, not a race standard. If speech becomes uncomfortable, reducing effort or choosing an easier route is a sensible adaptation."
         },
         {
           "prompt": "Which factor can change walking effort without changing distance?",
           "options": [
-            "Terrain and incline",
+            "The color of shoes",
             "The student's grade level alone",
-            "The color of shoes"
+            "Terrain and incline"
           ],
-          "correct": 0,
-          "rationale": "Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels."
+          "correct": 2,
+          "rationale": "An incline changes the work required from the body even when the distance is identical. Route profile belongs in any fair comparison of walking sessions."
         },
         {
           "prompt": "What does the talk test provide?",
@@ -959,47 +959,47 @@
             "An exact measure of oxygen consumption"
           ],
           "correct": 0,
-          "rationale": "Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels."
+          "rationale": "The talk test estimates relative effort from speaking comfort; it does not provide an exact heart rate or a clinical diagnosis."
         },
         {
           "prompt": "What makes a walking log informative?",
           "options": [
-            "Route conditions, effort, adaptations and observations",
+            "Only body measurements",
             "Only a ranking of classmates",
-            "Only body measurements"
+            "Route conditions, effort, adaptations and observations"
           ],
-          "correct": 0,
-          "rationale": "Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels."
+          "correct": 2,
+          "rationale": "A useful log records context as well as duration: conditions, perceived effort, adjustments and observations help explain why a session felt different."
         },
         {
           "prompt": "Which option can assess walking concepts without requiring outdoor walking?",
           "options": [
-            "Analyze route and pacing choices using a fictional case",
             "Assign zero credit",
+            "Analyze route and pacing choices using a fictional case",
             "Require access to a treadmill"
           ],
-          "correct": 0,
-          "rationale": "Walking speed, stride length, terrain and perceived effort affect how demanding a walking activity feels."
+          "correct": 1,
+          "rationale": "A fictional route case allows a learner to demonstrate planning and safety reasoning without requiring outdoor access or physical participation."
         },
         {
           "prompt": "Walking alternates which primary supports?",
           "options": [
-            "Left and right feet",
+            "The shoulders",
             "Both hands",
-            "The shoulders"
+            "Left and right feet"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 2,
+          "rationale": "Walking uses alternating steps, ordinarily with at least one foot in contact with the ground. That contact pattern helps distinguish walking from running."
         },
         {
           "prompt": "Why can an exaggerated long stride be uncomfortable?",
           "options": [
-            "It may cause overreaching and disrupt natural control",
             "It guarantees greater efficiency",
+            "It may cause overreaching and disrupt natural control",
             "It removes the need for balance"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 1,
+          "rationale": "An exaggerated stride can overreach the body's comfortable control and alter natural gait. A longer step is not automatically more efficient."
         },
         {
           "prompt": "What does walking cadence describe?",
@@ -1009,47 +1009,47 @@
             "Exact energy expenditure"
           ],
           "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "rationale": "Cadence means steps per unit of time. It is different from total distance, route incline or the effort a person perceives."
         },
         {
           "prompt": "Which cue supports comfortable walking?",
           "options": [
-            "Relaxed, controlled steps",
             "Locked knees at all times",
+            "Relaxed, controlled steps",
             "Forced maximum stride length"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 1,
+          "rationale": "Relaxed, controlled steps emphasize comfort and stability. A rigid or forced pattern is not a universal technique target for every walker."
         },
         {
           "prompt": "Why might a learner slow on a hill?",
           "options": [
-            "The same speed may require greater effort",
+            "Slowing removes all exercise benefit",
             "Hills always require sprinting",
-            "Slowing removes all exercise benefit"
+            "The same speed may require greater effort"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 2,
+          "rationale": "Hills increase the demand at the same speed because the body must work against gravity. Slowing can preserve a manageable effort."
         },
         {
           "prompt": "What does the talk test estimate?",
           "options": [
-            "Relative effort using ability to speak",
+            "Medical fitness clearance",
             "Exact heart rate",
-            "Medical fitness clearance"
+            "Relative effort using ability to speak"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 2,
+          "rationale": "The talk test offers a practical estimate of relative effort by noticing whether speech remains comfortable; it is not a precise laboratory measure."
         },
         {
           "prompt": "Which comparison distinguishes pace from effort?",
           "options": [
-            "Pace is speed; effort is perceived demand",
+            "Effort is measured only by distance",
             "Both are always identical",
-            "Effort is measured only by distance"
+            "Pace is speed; effort is perceived demand"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 2,
+          "rationale": "Pace describes movement speed, while effort describes how demanding that movement feels to the individual. They can change independently."
         },
         {
           "prompt": "Which walking route is most accessible?",
@@ -1059,37 +1059,37 @@
             "A route selected by peer ranking"
           ],
           "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "rationale": "An accessible route is selected for the learner's needs and circumstances, including surface, slope, distance and available support."
         },
         {
           "prompt": "What is a reason to inspect a walking surface?",
           "options": [
-            "Loose gravel or obstacles can affect footing",
+            "Smooth surfaces eliminate all risks",
             "Surfaces determine intelligence",
-            "Smooth surfaces eliminate all risks"
+            "Loose gravel or obstacles can affect footing"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 2,
+          "rationale": "Loose gravel and obstacles can affect traction and footing. Inspecting the route helps a learner choose a safer path before starting."
         },
         {
           "prompt": "What should a student do when walking causes unusual dizziness?",
           "options": [
-            "Stop and seek appropriate help",
+            "Continue until a step goal is reached",
             "Increase speed",
-            "Continue until a step goal is reached"
+            "Stop and seek appropriate help"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 2,
+          "rationale": "Unusual dizziness during activity is a reason to stop and seek appropriate help, rather than pushing through to complete a target."
         },
         {
           "prompt": "Which log helps interpret a walking session?",
           "options": [
-            "Duration, perceived effort, conditions and adaptations",
+            "Only appearance",
             "Only number of friends present",
-            "Only appearance"
+            "Duration, perceived effort, conditions and adaptations"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 2,
+          "rationale": "Duration, perceived effort, environmental conditions and adaptations make a log interpretable; a time alone rarely explains the whole session."
         },
         {
           "prompt": "What is a reasonable pacing progression?",
@@ -1099,17 +1099,17 @@
             "Never adjust the plan"
           ],
           "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "rationale": "A gradual progression gives the learner time to assess comfort and control before increasing demand. Sudden increases are not required for progress."
         },
         {
           "prompt": "Why might an indoor walking option be appropriate?",
           "options": [
-            "Weather or accessibility can change the safer choice",
             "Indoor walking never counts",
+            "Weather or accessibility can change the safer choice",
             "Outdoor routes are always better"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 1,
+          "rationale": "Weather and access can change the safest available choice. An indoor alternative can preserve the learning objective without insisting on one setting."
         },
         {
           "prompt": "What does a walking adaptation demonstrate?",
@@ -1119,7 +1119,7 @@
             "A lack of commitment"
           ],
           "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "rationale": "A thoughtful adaptation changes the method while keeping the purpose of learning intact. It is evidence of decision-making, not failure."
         },
         {
           "prompt": "How should a student assess a crowded sidewalk?",
@@ -1129,7 +1129,7 @@
             "Close their eyes to focus"
           ],
           "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "rationale": "Considering obstacles and selecting a clearer option shows environmental awareness and active risk reduction."
         },
         {
           "prompt": "What is a useful recovery decision after walking?",
@@ -1139,7 +1139,7 @@
             "Avoid rest under all conditions"
           ],
           "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "rationale": "Reducing effort and checking comfort allows recovery to guide the next decision, instead of treating a planned pace as mandatory."
         },
         {
           "prompt": "Why is the fastest pace not a universal goal?",
@@ -1149,57 +1149,57 @@
             "Speed is the only measure of learning"
           ],
           "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "rationale": "Walking goals depend on the person's capacity, context and purpose. The highest speed is not automatically the healthiest or most useful target."
         },
         {
           "prompt": "What evidence supports choosing a shorter route?",
           "options": [
-            "The route matches conditions and current comfort",
             "It is always easier to grade",
+            "The route matches conditions and current comfort",
             "It avoids all movement"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 1,
+          "rationale": "A shorter route can be justified when it better fits current comfort and conditions; the reason should be recorded rather than hidden."
         },
         {
           "prompt": "Which statement about walking posture is most accurate?",
           "options": [
-            "Comfortable alignment varies between people",
             "Everyone needs an identical stride",
+            "Comfortable alignment varies between people",
             "Arm movement must be completely fixed"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 1,
+          "rationale": "Comfortable alignment varies with each person's anatomy and needs. Coaching should focus on function and comfort, not one rigid appearance."
         },
         {
           "prompt": "How can a student study gait without walking?",
           "options": [
-            "Analyze a fictional movement sequence and explain foot placement",
             "Only running can demonstrate learning",
+            "Analyze a fictional movement sequence and explain foot placement",
             "No alternative is possible"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 1,
+          "rationale": "Analyzing a fictional sequence can demonstrate understanding of gait phases and foot placement without requiring a learner to perform the movement."
         },
         {
           "prompt": "Why should a walking plan include a stop cue?",
           "options": [
-            "Conditions and symptoms may change during activity",
             "It guarantees no injuries",
+            "Conditions and symptoms may change during activity",
             "It prevents any progression"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 1,
+          "rationale": "A planned stop cue anticipates that symptoms or conditions can change. It supports safer decisions during, not just before, an activity."
         },
         {
           "prompt": "Which factor might alter perceived walking effort?",
           "options": [
-            "Terrain and environmental conditions",
+            "Only calendar date",
             "Only shoe color",
-            "Only calendar date"
+            "Terrain and environmental conditions"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 2,
+          "rationale": "Terrain and environmental conditions can make the same route feel harder or easier. This is why perceived effort should be recorded alongside distance."
         },
         {
           "prompt": "What is a useful distinction between walking and running?",
@@ -1209,7 +1209,7 @@
             "Walking is defined only by speed"
           ],
           "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "rationale": "Walking generally keeps at least one foot on the ground; running includes a flight phase in which both feet can be off the ground."
         },
         {
           "prompt": "What should be included in a seven-day walking plan?",
@@ -1219,17 +1219,17 @@
             "Only competitive targets"
           ],
           "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "rationale": "A feasible seven-day plan includes realistic sessions, recovery or adaptation options, and a review so the plan can respond to evidence."
         },
         {
           "prompt": "Which observation most directly shows learning?",
           "options": [
-            "A justified pace choice with a safe alternative",
             "A comparison of body shape",
+            "A justified pace choice with a safe alternative",
             "A copied classmate's distance"
           ],
-          "correct": 0,
-          "rationale": "Walking decisions should be grounded in movement mechanics, personal effort, accessibility and environmental safety."
+          "correct": 1,
+          "rationale": "A justified pace choice plus a safe alternative shows application: the learner uses observations to explain a decision rather than merely naming a term."
         }
       ],
       "focusSkill": "Compare a comfortable conversational pace with an effort that feels unsustainable.",
@@ -2524,47 +2524,47 @@
             "Ability to stretch deepest"
           ],
           "correct": 0,
-          "rationale": "Muscular strength is the capacity to exert force; learning safe movement patterns and recovery is more important than lifting the most weight."
+          "rationale": "Muscular strength is the capacity to exert force. It is distinct from flexibility, breath-holding or how long a person can repeat a task."
         },
         {
           "prompt": "Why are controlled repetitions important?",
           "options": [
-            "They help demonstrate technique and appropriate loading",
+            "They replace recovery",
             "They guarantee zero injury risk",
-            "They replace recovery"
+            "They help demonstrate technique and appropriate loading"
           ],
-          "correct": 0,
-          "rationale": "Muscular strength is the capacity to exert force; learning safe movement patterns and recovery is more important than lifting the most weight."
+          "correct": 2,
+          "rationale": "Controlled repetitions make position and movement quality easier to observe and help the learner choose a manageable load; speed alone is not proof of quality."
         },
         {
           "prompt": "When should a learner reduce difficulty?",
           "options": [
-            "When control breaks down or discomfort develops",
             "Whenever peers use a harder option",
+            "When control breaks down or discomfort develops",
             "Only after completing a target count"
           ],
-          "correct": 0,
-          "rationale": "Muscular strength is the capacity to exert force; learning safe movement patterns and recovery is more important than lifting the most weight."
+          "correct": 1,
+          "rationale": "When control deteriorates or discomfort appears, reducing difficulty supports safer practice and helps the learner retain useful movement feedback."
         },
         {
           "prompt": "Which is a feasible no-equipment strength example?",
           "options": [
-            "Supported sit-to-stand",
+            "A maximal competition",
             "A mandatory heavy barbell lift",
-            "A maximal competition"
+            "Supported sit-to-stand"
           ],
-          "correct": 0,
-          "rationale": "Muscular strength is the capacity to exert force; learning safe movement patterns and recovery is more important than lifting the most weight."
+          "correct": 2,
+          "rationale": "A supported sit-to-stand uses a familiar daily movement and can be scaled without equipment. Stability and a controlled pace make it a feasible starting choice."
         },
         {
           "prompt": "What evidence shows strength-technique learning?",
           "options": [
-            "Specific cues, modifications and observed control",
             "Only a heavier load",
+            "Specific cues, modifications and observed control",
             "A comparison of body appearance"
           ],
-          "correct": 0,
-          "rationale": "Muscular strength is the capacity to exert force; learning safe movement patterns and recovery is more important than lifting the most weight."
+          "correct": 1,
+          "rationale": "Specific cues, appropriate modifications and observed control are direct evidence of technique learning; repetition count alone is incomplete evidence."
         },
         {
           "prompt": "A learner can rise from a chair but loses control when rushing. What is the best first change?",
@@ -2574,7 +2574,7 @@
             "Increase repetitions until fatigued"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Slowing the movement and using stable support addresses the observed loss of control before adding speed or difficulty."
         },
         {
           "prompt": "Which statement distinguishes strength from muscular endurance?",
@@ -2584,17 +2584,17 @@
             "They are exactly the same"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Strength concerns the force that can be exerted; muscular endurance concerns sustaining or repeating effort. The distinction helps match a task to its goal."
         },
         {
           "prompt": "Why should a learner select a manageable exercise variation?",
           "options": [
-            "It permits safe technique practice and gradual adjustment",
+            "It avoids learning any technique",
             "It guarantees maximum muscle growth",
-            "It avoids learning any technique"
+            "It permits safe technique practice and gradual adjustment"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 2,
+          "rationale": "A manageable variation lets the learner practice technique while adapting demand. More difficult is not inherently more educational."
         },
         {
           "prompt": "Which observation best supports a claim of improved technique?",
@@ -2604,7 +2604,7 @@
             "A higher score than a classmate"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Consistent, controlled repetitions at the same variation provide a clearer comparison than changing several variables at once."
         },
         {
           "prompt": "A wall push-up feels uncomfortable in the wrist. What is appropriate?",
@@ -2614,27 +2614,27 @@
             "Move faster to finish"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Wrist discomfort should not be ignored. Stop or modify the movement, and use an observation alternative when active practice is not appropriate."
         },
         {
           "prompt": "What is a useful role for recovery between strength sessions?",
           "options": [
-            "Allow time for adaptation and monitor how the body responds",
+            "Replace the need for safe technique",
             "Prove a learner is unmotivated",
-            "Replace the need for safe technique"
+            "Allow time for adaptation and monitor how the body responds"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 2,
+          "rationale": "Recovery provides time to adapt and lets the learner monitor response between sessions. More frequent work is not automatically better."
         },
         {
           "prompt": "Which is an example of lower-body strength work without equipment?",
           "options": [
-            "Supported sit-to-stand",
             "A maximum barbell competition",
+            "Supported sit-to-stand",
             "An unsupported jump from a height"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 1,
+          "rationale": "Supported sit-to-stand trains a practical lower-body movement without equipment and can be adjusted to the learner's current control."
         },
         {
           "prompt": "What does hip extension describe?",
@@ -2644,67 +2644,67 @@
             "Bending the elbow"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Hip extension describes the thigh moving backward relative to the pelvis or the hip joint straightening. It is a joint action, not a synonym for knee movement."
         },
         {
           "prompt": "Why is a stable chair important for sit-to-stand practice?",
           "options": [
-            "It reduces avoidable movement of the support surface",
+            "It guarantees identical results for everyone",
             "It makes the exercise effortless",
-            "It guarantees identical results for everyone"
+            "It reduces avoidable movement of the support surface"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 2,
+          "rationale": "A stable chair reduces avoidable movement of the support surface so the learner can focus on the movement rather than managing an unstable seat."
         },
         {
           "prompt": "Which plan best respects different starting abilities?",
           "options": [
-            "Offer supported and independent variations with clear criteria",
+            "Rank students by appearance",
             "Require identical repetitions from all learners",
-            "Rank students by appearance"
+            "Offer supported and independent variations with clear criteria"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 2,
+          "rationale": "Providing supported and independent variations with clear criteria respects different starting abilities while maintaining a common learning objective."
         },
         {
           "prompt": "What does elbow extension contribute to during a push-up?",
           "options": [
-            "Straightening the arm in the pushing phase",
             "Rotating the ankle",
+            "Straightening the arm in the pushing phase",
             "Bending the knee"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 1,
+          "rationale": "Elbow extension is the straightening phase of the arm during a pushing action. Naming the joint action connects a visible movement to anatomy."
         },
         {
           "prompt": "A student completes fewer repetitions with better control. What should the student conclude?",
           "options": [
-            "Technique quality is useful evidence even when counts are lower",
             "The session automatically failed",
+            "Technique quality is useful evidence even when counts are lower",
             "More repetitions are always safer"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 1,
+          "rationale": "Fewer repetitions performed with better control can represent improved technique. Counts should be interpreted together with quality and task demands."
         },
         {
           "prompt": "Why might a wall push-up be preferable to a floor push-up for a beginner?",
           "options": [
-            "It generally reduces the resistance demand",
             "It removes the need for muscle action",
+            "It generally reduces the resistance demand",
             "It is a test of medical fitness"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 1,
+          "rationale": "A wall push-up usually reduces the resistance demand compared with a floor push-up because body position changes how much body mass the arms support."
         },
         {
           "prompt": "Which statement about muscle soreness is most accurate?",
           "options": [
-            "Soreness is not a reliable measure of workout quality",
             "More soreness always means more learning",
+            "Soreness is not a reliable measure of workout quality",
             "Pain should always be ignored"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 1,
+          "rationale": "Soreness varies and is not a dependable score for workout quality. Technique, appropriate challenge, recovery and progress are more useful evidence."
         },
         {
           "prompt": "What is progressive overload in a beginner-friendly context?",
@@ -2714,17 +2714,17 @@
             "Using maximum load in every session"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Progressive overload means gradually adjusting demand when technique and recovery support it. It does not mean increasing everything at once."
         },
         {
           "prompt": "Which change could increase difficulty without adding equipment?",
           "options": [
-            "A slower controlled movement at an appropriate range",
+            "Holding the breath",
             "An unstable support surface",
-            "Holding the breath"
+            "A slower controlled movement at an appropriate range"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 2,
+          "rationale": "A slower controlled movement can increase challenge without equipment, provided the range and control remain appropriate for the learner."
         },
         {
           "prompt": "Why should breathing remain comfortable during basic strength practice?",
@@ -2734,7 +2734,7 @@
             "The number of breaths determines the grade"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Comfortable breathing supports controlled practice; breath-holding is not required to demonstrate the basic learning objective."
         },
         {
           "prompt": "What should a student record after a strength session?",
@@ -2744,27 +2744,27 @@
             "Only body weight"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Recording the exercise variation, control cues, adaptations and perceived effort provides context for evaluating and adjusting the next session."
         },
         {
           "prompt": "Which is the best response to an online claim that one exercise works for everyone?",
           "options": [
-            "Consider individual access, comfort, goals and evidence",
+            "Assume harder is always better",
             "Accept the claim without question",
-            "Assume harder is always better"
+            "Consider individual access, comfort, goals and evidence"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 2,
+          "rationale": "Claims that one exercise works for everyone should be assessed against individual access, comfort, goals and available evidence."
         },
         {
           "prompt": "Which evidence best demonstrates independent strength knowledge?",
           "options": [
-            "A justified, accessible exercise plan with technique cues",
             "A photograph of expensive equipment",
+            "A justified, accessible exercise plan with technique cues",
             "A competition medal"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 1,
+          "rationale": "An accessible plan with justified exercise choices and specific technique cues shows independent understanding as well as knowledge of movement."
         }
       ],
       "focusSkill": "Explain the purpose of controlled repetitions and recovery.",
@@ -2884,57 +2884,57 @@
             "Recovery is no longer needed"
           ],
           "correct": 0,
-          "rationale": "Bodyweight movement uses body mass as resistance and depends on joint position, balance, tempo and available support."
+          "rationale": "A lower sturdy incline increases the proportion of body mass that must be moved through the arms in a push-up pattern, so the exercise generally demands more force."
         },
         {
           "prompt": "What is a useful sit-to-stand cue?",
           "options": [
-            "Feet stable and controlled movement",
+            "Use an unstable chair",
             "Move as fast as possible",
-            "Use an unstable chair"
+            "Feet stable and controlled movement"
           ],
-          "correct": 0,
-          "rationale": "Bodyweight movement uses body mass as resistance and depends on joint position, balance, tempo and available support."
+          "correct": 2,
+          "rationale": "Stable feet and controlled movement provide a reliable base for rising from a chair and make the action easier to assess."
         },
         {
           "prompt": "Why might someone choose a partial range?",
           "options": [
-            "It can preserve control within a comfortable movement range",
+            "It removes all muscle activity",
             "It means they cannot learn",
-            "It removes all muscle activity"
+            "It can preserve control within a comfortable movement range"
           ],
-          "correct": 0,
-          "rationale": "Bodyweight movement uses body mass as resistance and depends on joint position, balance, tempo and available support."
+          "correct": 2,
+          "rationale": "A partial range can keep movement within a tolerable, controllable area while a learner develops confidence or adapts to current needs."
         },
         {
           "prompt": "Which plan supports learning?",
           "options": [
-            "Choose a manageable variation and explain technique",
             "Copy the hardest classmate's variation",
+            "Choose a manageable variation and explain technique",
             "Skip adaptation and reflection"
           ],
-          "correct": 0,
-          "rationale": "Bodyweight movement uses body mass as resistance and depends on joint position, balance, tempo and available support."
+          "correct": 1,
+          "rationale": "A manageable variation with an explanation links practice to technique and decision-making instead of selecting difficulty without a reason."
         },
         {
           "prompt": "What should be recorded in a bodyweight log?",
           "options": [
-            "Variation, controlled repetitions, modifications and effort",
             "Only total repetitions",
+            "Variation, controlled repetitions, modifications and effort",
             "Only class rank"
           ],
-          "correct": 0,
-          "rationale": "Bodyweight movement uses body mass as resistance and depends on joint position, balance, tempo and available support."
+          "correct": 1,
+          "rationale": "Recording variation, controlled repetitions, modifications and effort makes a bodyweight log useful for tracking progression and adaptation."
         },
         {
           "prompt": "What is a movement pattern?",
           "options": [
-            "A repeatable coordination of joints and muscles for a task",
             "A fixed body shape everyone must match",
+            "A repeatable coordination of joints and muscles for a task",
             "A measurement of appearance"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 1,
+          "rationale": "A movement pattern is a repeatable coordination of joints and muscles used to complete a task, not a single isolated muscle action."
         },
         {
           "prompt": "Which option is a squat-related daily movement?",
@@ -2944,17 +2944,17 @@
             "Blinking"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Rising from a stable chair resembles a squat-related pattern because the hips and knees work together to lower and raise the body."
         },
         {
           "prompt": "Why does a more upright wall push-up usually feel easier?",
           "options": [
-            "Less body weight is resisted through the arms",
+            "It uses no muscles",
             "It eliminates gravity",
-            "It uses no muscles"
+            "Less body weight is resisted through the arms"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 2,
+          "rationale": "A more upright push-up angle usually reduces the load resisted through the arms, making the task easier to scale for beginners."
         },
         {
           "prompt": "Which change can increase the demand of an incline push-up?",
@@ -2964,37 +2964,37 @@
             "Lock the breath"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Lowering the height of a sturdy incline typically increases the force demand. The surface must remain stable and technique must stay controlled."
         },
         {
           "prompt": "What does a comfortable range of motion mean?",
           "options": [
-            "Moving within a controllable, tolerable range",
             "Forcing the largest possible motion",
+            "Moving within a controllable, tolerable range",
             "Copying another person's range"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 1,
+          "rationale": "A comfortable range is one the learner can control and tolerate. Range should not be forced to satisfy an arbitrary depth target."
         },
         {
           "prompt": "Why is a controlled tempo useful in bodyweight practice?",
           "options": [
-            "It makes technique and balance easier to observe",
             "It always guarantees no injury",
+            "It makes technique and balance easier to observe",
             "It eliminates fatigue"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 1,
+          "rationale": "Controlled tempo makes balance, alignment and joint movement more visible, which supports useful technique feedback."
         },
         {
           "prompt": "Which is an accessible way to learn a push pattern?",
           "options": [
-            "Wall press or written movement analysis",
+            "Maximum-repetition contest",
             "Mandatory floor push-ups",
-            "Maximum-repetition contest"
+            "Wall press or written movement analysis"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 2,
+          "rationale": "A wall press offers a low-equipment entry to a pushing pattern; written movement analysis is another way to demonstrate understanding when performance is not appropriate."
         },
         {
           "prompt": "What is the purpose of a stable base of support?",
@@ -3004,7 +3004,7 @@
             "It removes the need for attention"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "A stable base of support helps maintain balance and control while joints and the body's center of mass move."
         },
         {
           "prompt": "When should a bodyweight movement be adapted?",
@@ -3014,7 +3014,7 @@
             "Never during a lesson"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Symptoms, a challenging environment or loss of control are signals to adapt a movement rather than persisting with the same version."
         },
         {
           "prompt": "Which statement about bodyweight exercise is accurate?",
@@ -3024,7 +3024,7 @@
             "Equipment is always required"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Body position and external support alter how much force and balance a bodyweight exercise demands. The label 'bodyweight' does not mean every version is equally difficult."
         },
         {
           "prompt": "What is a safe cue for a sit-to-stand?",
@@ -3034,47 +3034,47 @@
             "Rush to finish"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Stable feet and a controlled rise make sit-to-stand practice more consistent and easier to adapt safely."
         },
         {
           "prompt": "Why might a partial-range movement be useful?",
           "options": [
-            "It can provide a controlled starting variation",
+            "It proves weakness",
             "It is automatically ineffective",
-            "It proves weakness"
+            "It can provide a controlled starting variation"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 2,
+          "rationale": "A partial range provides a starting variation that can preserve control, with range expanded only when appropriate."
         },
         {
           "prompt": "Which action demonstrates technique analysis?",
           "options": [
-            "Identify the joint movement and propose a correction",
             "Count repetitions without observing form",
+            "Identify the joint movement and propose a correction",
             "Compare body shapes"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 1,
+          "rationale": "Identifying the joint action and proposing a specific correction demonstrates analysis instead of simply labeling a movement good or bad."
         },
         {
           "prompt": "What is an appropriate response to unstable balance during a reach?",
           "options": [
-            "Reduce the reach and use stable support",
+            "Move faster",
             "Close the eyes immediately",
-            "Move faster"
+            "Reduce the reach and use stable support"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 2,
+          "rationale": "Reducing the reach and using stable support lowers the balance demand while allowing a learner to work on the intended movement skill."
         },
         {
           "prompt": "Which two components matter when planning a beginner circuit?",
           "options": [
-            "Appropriate challenge and recovery",
+            "Competition and body measurements",
             "Maximum effort and no rest",
-            "Competition and body measurements"
+            "Appropriate challenge and recovery"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 2,
+          "rationale": "Appropriate challenge and recovery help make a beginner circuit feasible. A plan needs both a suitable task and time to respond to it."
         },
         {
           "prompt": "Why should a learner describe an adaptation?",
@@ -3084,27 +3084,27 @@
             "It guarantees medical safety"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Describing an adaptation explains how access, safety and learning purpose shaped a decision; it turns modification into evidence of reasoning."
         },
         {
           "prompt": "Which is an example of a push movement?",
           "options": [
-            "Pressing gently against a wall",
+            "Walking downhill",
             "Pulling a drawer open",
-            "Walking downhill"
+            "Pressing gently against a wall"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 2,
+          "rationale": "Pressing gently against a wall is a pushing action because the arms apply force away from the body against resistance."
         },
         {
           "prompt": "What is the most appropriate criterion for increasing difficulty?",
           "options": [
-            "Consistent control and suitable recovery",
             "Matching a classmate's performance",
+            "Consistent control and suitable recovery",
             "A random daily target"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 1,
+          "rationale": "Consistent control and suitable recovery provide a reason to progress. A single successful repetition is not enough to justify any increase."
         },
         {
           "prompt": "How can an observation-only student show understanding?",
@@ -3114,17 +3114,17 @@
             "Complete a mandatory timed test"
           ],
           "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "rationale": "Annotating movement phases and explaining safety cues allows an observer to show conceptual understanding without having to perform the exercise."
         },
         {
           "prompt": "What is the strongest evidence for an independent circuit design?",
           "options": [
-            "Clear exercise choices, technique cues, adaptations and reasons",
             "The largest number of exercises",
+            "Clear exercise choices, technique cues, adaptations and reasons",
             "The hardest variation in every station"
           ],
-          "correct": 0,
-          "rationale": "The correct choice reflects safe technique, appropriate progression, accessible alternatives, and evidence-based movement reasoning."
+          "correct": 1,
+          "rationale": "A strong circuit design states the exercises, technique cues, adaptations and reasons, so another learner can understand and apply the plan."
         }
       ],
       "focusSkill": "Name a technique cue for a sit-to-stand or supported movement.",
