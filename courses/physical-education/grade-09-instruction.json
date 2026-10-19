@@ -7159,49 +7159,74 @@
     {
       "week": 20,
       "title": "Recreational skill choice",
-      "essentialQuestion": "How can we make a safe, evidence-based decision about recreational skill choice?",
-      "scenario": "A Grade 9 learner is planning a safe, accessible activity involving recreational skill choice. They have limited time, variable energy, and no specialized equipment.",
-      "model": "Worked example (choice): A learner wants to practice recreational skill choice. First identify the specific skill: Defend a recreational activity choice using access and enjoyment. Next compare two feasible options, select one with a clear safety cue, and document the reason. A written, observed, seated or adapted demonstration can meet the same reasoning target.",
+      "essentialQuestion": "How can learners compare recreational activities, practice a transferable skill, and choose an accessible, enjoyable activity using evidence rather than competition or assumptions?",
+      "scenario": "Three fictional students are choosing recreation with limited time and equipment. Riley enjoys a solo target-toss game with soft rolled socks; Casey prefers a cooperative passing challenge; Morgan prefers an accessible seated aiming or observation option. The group has a small clear room and wants to improve accuracy, cooperation and safe decision-making without ranking classmates.",
+      "model": "Worked skill example: For a soft-object target toss, position the target on a stable surface, check a clear lane, choose a comfortable distance, face the target and release smoothly toward its center. Record how many of five gentle trials land near the target under the same conditions. Instead of assuming more force is better, adjust one variable (distance, release direction or target size) and repeat when comfortable. Seated toss or a diagrammed video-free fictional analysis assesses the same skill-selection and feedback objectives.",
       "days": [
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce recreational skill choice. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving recreational skill choice. They have limited time, variable energy, and no specialized equipment.",
-          "practice": "Write a three-part safety plan for recreational skill choice: purpose, feasible option, and stop/modification cue.",
-          "evidence": "A reasoned three-part plan with a specific observable cue."
+          "studentTitle": "Compare recreation choices",
+          "concept": "A good recreation choice considers enjoyment, skill goal, available space, equipment, affordability, inclusion and safety. A target toss, cooperative passing task and movement pattern each create different opportunities for learning.",
+          "instruction": "A good recreation choice considers enjoyment, skill goal, available space, equipment, affordability, inclusion and safety. A target toss, cooperative passing task and movement pattern each create different opportunities for learning.",
+          "practice": "Compare the three fictional options using a simple chart: purpose, skill, resources, access, safety and possible enjoyment. Explain why no option is universally best.",
+          "workedExample": "Target toss may work independently with soft objects; cooperative passing requires willing partners; a step-touch pattern requires no object and can be seated.",
+          "independentTask": "Rank the options for one fictional learner using three stated constraints, not classmate performance or appearance.",
+          "evidence": "Three options correctly compared, justified choice and one meaningful adaptation.",
+          "successCriteria": "I can choose an activity using goals, circumstances and access rather than popularity or ranking."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to recreational skill choice and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
-          "practice": "Practice the week's decision with this exact prompt: Defend a recreational activity choice using access and enjoyment. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
-          "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
+          "studentTitle": "Learn an aiming and control skill",
+          "concept": "Skill development begins with a technique cue that another observer can see. For a gentle target toss, choose a stable position, face a safe target and make a controlled release. Aiming and accuracy are distinct from throwing hard.",
+          "instruction": "Skill development begins with a technique cue that another observer can see. For a gentle target toss, choose a stable position, face a safe target and make a controlled release. Aiming and accuracy are distinct from throwing hard.",
+          "practice": "Model a rolled-sock toss to a soft target from a comfortable distance; show how seated positioning and a closer target preserve the aiming objective.",
+          "workedExample": "A learner notes the toss travels to the right of a target. They change release direction instead of throwing with more force.",
+          "independentTask": "Prepare an annotated four-step technique card, using a seated, standing, observed or diagrammed demonstration and two safety checks.",
+          "evidence": "Clear starting position, controlled release cue, observation and accessible variant.",
+          "successCriteria": "I can describe and analyze a controlled aiming skill with safe technique."
         },
         {
           "day": 3,
           "phase": "Apply",
-          "instruction": "Discuss how effort, environment, access and recovery change the best choice for recreational skill choice.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
-          "evidence": "Three justified pathways and a brief risk assessment."
+          "studentTitle": "Apply cooperation and feedback",
+          "concept": "Recreation can involve communication and timing as well as individual technique. A cooperative passing task works best with consent, a clear readiness signal, gentle passes and feedback about observable actions, not a judgment about people.",
+          "instruction": "Recreation can involve communication and timing as well as individual technique. A cooperative passing task works best with consent, a clear readiness signal, gentle passes and feedback about observable actions, not a judgment about people.",
+          "practice": "Compare 'You're bad at catching' with 'The pass arrived before the receiver signaled ready.' Model a willing-partner soft-object exchange or a fictional observation pathway.",
+          "workedExample": "A pair pauses until the receiver says 'ready,' reduces passing distance and uses a soft object; a solo learner diagrams how the same timing decision works.",
+          "independentTask": "Design a three-step cooperative challenge with a readiness cue, partner-choice alternative and specific feedback sentence.",
+          "evidence": "A safe cooperation plan, usable cue, nonjudgmental feedback and independent alternative.",
+          "successCriteria": "I can apply communication and observation to improve a cooperative recreational skill."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
-          "practice": "Analyze a learner's fictional plan for recreational skill choice: it lacks a stop cue and adaptation. Rewrite it to satisfy: Defend a recreational activity choice using access and enjoyment.",
-          "evidence": "A revision justified by safety and observable learning evidence."
+          "studentTitle": "Analyze practice and change one variable",
+          "concept": "A small practice log reveals what was observed, not whether a student is inherently skilled. To evaluate an adjustment, keep the task reasonably comparable, change one factor where possible and explain limits of conclusions.",
+          "instruction": "A small practice log reveals what was observed, not whether a student is inherently skilled. To evaluate an adjustment, keep the task reasonably comparable, change one factor where possible and explain limits of conclusions.",
+          "practice": "Compare two fictional five-trial toss records with different target distances; identify why percentages alone cannot establish improvement when conditions changed.",
+          "workedExample": "At the same distance, three tosses veer right; the learner adjusts release direction and records the next five trials. Any difference is tentative and tied to these attempts.",
+          "independentTask": "Create a two-attempt fictional log, identify a pattern, propose one safe change and explain one limitation.",
+          "evidence": "Two meaningful observations, targeted adjustment and appropriately cautious conclusion.",
+          "successCriteria": "I can use specific practice evidence to revise a recreational skill without overclaiming."
         },
         {
           "day": 5,
           "phase": "Defend",
-          "instruction": "Synthesize what safe and inclusive learning about recreational skill choice requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
-          "evidence": "Portfolio entry with claim, observation, adaptation and next step."
+          "studentTitle": "Defend a sustainable recreation choice",
+          "concept": "A sound final choice balances interest, skill learning, safety, access and feasibility. Evidence of learning may be a technique explanation, annotated observation, optional gentle practice or demonstrated adaptation. The goal is continued agency rather than compulsory performance.",
+          "instruction": "A sound final choice balances interest, skill learning, safety, access and feasibility. Evidence of learning may be a technique explanation, annotated observation, optional gentle practice or demonstrated adaptation. The goal is continued agency rather than compulsory performance.",
+          "practice": "Model a short defense selecting target toss for a small space, naming the controlled release cue, comparing it with another activity and proposing a safe improvement plan.",
+          "workedExample": "A learner chooses an activity they can access, explains why another activity may suit someone else better and links feedback to a feasible future session.",
+          "independentTask": "Submit a choice chart, technique cues, safety plan, accessible alternative, two-observation practice reflection and a justified next step.",
+          "evidence": "Reasoned choice among three activities, accurate skill explanation, inclusion and evidence-based revision.",
+          "successCriteria": "I can defend a recreational choice and a practical next step using evidence and personal circumstances."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about recreational skill choice.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-      "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for recreational skill choice.",
+      "misconception": "The most competitive, difficult or popular recreational activity is the best choice for every student.",
+      "correction": "A high-quality recreational choice aligns with the learner's interests, resources, access, safety and a teachable skill objective; improvement is demonstrated through reasoning and relevant evidence rather than ranking.",
+      "teacherNotes": "Avoid fragile or heavy throwing objects. Do not require a partner, competitive scoring or equipment purchase. Offer seated, solo, diagrammed and observation-based alternatives. Assess technique and reasoning rather than athletic performance or personal disclosure.",
       "rubric": [
         {
           "criterion": "Knowledge and rationale",
@@ -7482,7 +7507,12 @@
           "rationale": "A useful reflection links experience to the next realistic and safe choice."
         }
       ],
-      "focusSkill": "Defend a recreational activity choice using access and enjoyment."
+      "focusSkill": "Defend a recreational activity choice using access and enjoyment.",
+      "conceptExplanation": "Recreation is voluntary activity chosen for enjoyment, connection, skill growth or relaxation. Different activities emphasize different skills: target toss uses aiming and controlled release, cooperative passing uses timing and communication, walking or movement patterns use pacing and route choice. Compare options by interest, space, equipment, access, cost, safety, opportunities to improve and available alternatives. Transferable skills include aiming, coordination, pacing, feedback, cooperation and thoughtful adjustment. Enjoyment and accessibility matter; the fastest, most competitive or most demanding option is not necessarily the best choice.",
+      "biomechanicsAndTechnique": "Use only light, soft objects and a nonbreakable target in a clear space, with no throws toward people, windows or fragile objects. For aiming, stabilize posture or seated support, look at the target, control the release direction and stop if uncomfortable. For cooperative passing, use consent, clear signals, appropriate spacing and an easily caught soft object. Walking/movement alternatives can use step-touch or seated reaches at a comfortable pace. The same learning goal can be evaluated through observed or diagrammed technique and reasoned adjustments.",
+      "workedExample": "A learner compares target toss, cooperative passing and a short movement sequence. Target toss needs rolled socks and a safe target; passing needs a willing partner and clear communication; movement sequences need space but no object. The learner chooses target toss, completes five comfortable trials, notices three passes veer right, moves the target closer and adjusts release direction. The next attempt is evaluated for specific technique changes, not competitive ranking.",
+      "applicationTask": "Create a three-option recreation comparison chart; choose one option and identify two technique cues, a safety rule, and an accessible alternative. Document a short fictional or optional real practice attempt, make one evidence-based adjustment, and defend the choice in a one-page recreation plan or accessible oral/diagrammed equivalent.",
+      "depthVersion": "grade9-week20-topic-specific-2026-10-19"
     },
     {
       "week": 21,
