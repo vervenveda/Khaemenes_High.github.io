@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "policy": "Preserve Pre-Algebra embeds; prefer existing selected educators; verify publisher from source video before attribution, re-use or deployment.",
+  "source": "courses/mathematics/assets/video-library/",
+  "instructors": [
+    {
+      "id": "organic-chemistry-tutor",
+      "name": "The Organic Chemistry Tutor",
+      "status": "candidate_attribution_needs_direct_video_verification",
+      "video_ids_to_verify": [
+        "saTBf8AO4Ok"
+      ],
+      "priority_topics": [
+        "linear equations",
+        "inequalities",
+        "slope",
+        "systems",
+        "factoring",
+        "quadratic equations"
+      ]
+    },
+    {
+      "id": "tabletclass-math",
+      "name": "TabletClass Math",
+      "status": "candidate_attribution_needs_direct_video_verification",
+      "video_ids_to_verify": [
+        "lGfsp2CWjok"
+      ],
+      "priority_topics": [
+        "functions",
+        "algebra foundations",
+        "equations"
+      ]
+    }
+  ],
+  "unattributed_example_video_ids": [
+    "WxXZaP8Y8pI",
+    "IAJDI52kmiU"
+  ],
+  "acceptance": [
+    "Confirm channel owner and current video URL",
+    "Review mathematical accuracy and level",
+    "Check actual playback in privacy-enhanced embed",
+    "Check captions and transcript/text alternative",
+    "Check absence of unwanted distractions; no embed provider guarantees ad-free playback",
+    "Link optional content only; never award mastery for watching"
+  ]
+}
