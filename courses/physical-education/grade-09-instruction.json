@@ -5369,49 +5369,74 @@
     {
       "week": 15,
       "title": "Movement and mental wellbeing",
-      "essentialQuestion": "How can we make a safe, evidence-based decision about movement and mental wellbeing?",
-      "scenario": "A Grade 9 learner is planning a safe, accessible activity involving movement and mental wellbeing. They have limited time, variable energy, and no specialized equipment.",
-      "model": "Worked example (wellbeing): A learner wants to practice movement and mental wellbeing. First identify the specific skill: Separate possible mood benefits from guarantees or medical treatment claims. Next compare two feasible options, select one with a clear safety cue, and document the reason. A written, observed, seated or adapted demonstration can meet the same reasoning target.",
+      "essentialQuestion": "How can movement sometimes support mental wellbeing, and how do we evaluate personal experience and public claims without treating exercise as a guaranteed cure?",
+      "scenario": "Two fictional learners have stressful weeks. Mina likes a quiet walk; Devon prefers seated rhythm exercises and sometimes chooses rest. A fitness advertisement promises its workout will 'cure stress for everyone.' Each learner has limited time and no special equipment. What reasonable choices and evidence can they use without disclosing private health information?",
+      "model": "Worked model: Mina chooses a comfortable ten-minute walk after checking the route and weather. In a private reflection, she notes that she felt calmer afterward today, but she does not conclude that the walk treats a health condition or will work for everyone. Devon chooses seated rhythmic movement or rest according to comfort. Both explain their safety decisions and compare the advertisement's universal promise with the limited evidence of one experience.",
       "days": [
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce movement and mental wellbeing. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving movement and mental wellbeing. They have limited time, variable energy, and no specialized equipment.",
-          "practice": "Write a three-part safety plan for movement and mental wellbeing: purpose, feasible option, and stop/modification cue.",
-          "evidence": "A reasoned three-part plan with a specific observable cue."
+          "studentTitle": "What wellbeing claims actually mean",
+          "concept": "Wellbeing experiences vary; feeling calmer, enjoying a game and connecting with a friend are different observations, not diagnoses. Explain the difference between possibility, personal experience and a guaranteed result.",
+          "instruction": "Wellbeing experiences vary; feeling calmer, enjoying a game and connecting with a friend are different observations, not diagnoses. Explain the difference between possibility, personal experience and a guaranteed result.",
+          "workedExample": "Sort the advertisement in the week's scenario and identify which words make the claim overconfident.",
+          "practice": "Show three statements: 'I enjoyed walking today', 'Movement can help some people feel better', and 'This workout cures everyone.' Sort them into personal observation, cautious general claim and unsupported universal promise.",
+          "independentTask": "The advertisement's word 'everyone' converts a possible benefit into a universal guarantee; one enjoyable walk cannot validate it.",
+          "evidence": "Annotate two fictional statements and rewrite the strongest claim as a qualified, evidence-aware sentence.",
+          "successCriteria": "Three accurately labeled statements and a revised claim that avoids diagnosis or guaranteed outcomes."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to movement and mental wellbeing and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
-          "practice": "Practice the week's decision with this exact prompt: Separate possible mood benefits from guarantees or medical treatment claims. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
-          "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
+          "studentTitle": "Model a comfortable movement choice",
+          "concept": "A wellbeing-oriented movement choice starts with consent and preference rather than a demand to improve mood. Before beginning, examine space, personal comfort, activity options and a stop cue; participation can be movement, observation or an explanation.",
+          "instruction": "A wellbeing-oriented movement choice starts with consent and preference rather than a demand to improve mood. Before beginning, examine space, personal comfort, activity options and a stop cue; participation can be movement, observation or an explanation.",
+          "workedExample": "Use the Mina/Devon scenario: select an activity and an equivalent seated, rest or observation pathway, explaining the skill demonstrated by both.",
+          "practice": "Model an optional two-minute comfortable walk or seated step-touch pattern, with a short gradual start. Show how to replace movement with an annotated sequence if a learner needs to rest.",
+          "independentTask": "Mina checks her walking route and chooses a comfortable pace; Devon makes a seated arm sequence and writes down a safe stop cue. Neither must report how they feel.",
+          "evidence": "Describe or safely perform one option, document two preparation checks, and explain an alternate pathway without requiring personal disclosure.",
+          "successCriteria": "A clear sequence, two concrete safety checks, one stop cue and an accessible option."
         },
         {
           "day": 3,
           "phase": "Apply",
-          "instruction": "Discuss how effort, environment, access and recovery change the best choice for movement and mental wellbeing.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
-          "evidence": "Three justified pathways and a brief risk assessment."
+          "studentTitle": "Observe without diagnosing",
+          "concept": "Before-and-after observations may be useful for reflection but are not experiments that prove a treatment works. Timing, social context, rest, expectations and many other factors can influence an experience. No learner must provide private ratings.",
+          "instruction": "Before-and-after observations may be useful for reflection but are not experiments that prove a treatment works. Timing, social context, rest, expectations and many other factors can influence an experience. No learner must provide private ratings.",
+          "workedExample": "Compare Mina's walk and Devon's seated pattern. Identify one valid conclusion and two things the reports cannot prove.",
+          "practice": "Demonstrate a fictional journal: 'before: distracted; activity: short walk; after: enjoyed talking with a friend.' Explain why the observation does not isolate the cause or establish medical effectiveness.",
+          "independentTask": "Mina's note supports that she enjoyed this walk today; it does not establish whether walking, company, weather or something else caused the change.",
+          "evidence": "Create a fictional two-entry reflection log recording choice, context, optional observation and an explicit limitation. Students may avoid mood statements entirely.",
+          "successCriteria": "Two clear records and a limitation that respects uncertainty and privacy."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
-          "practice": "Analyze a learner's fictional plan for movement and mental wellbeing: it lacks a stop cue and adaptation. Rewrite it to satisfy: Separate possible mood benefits from guarantees or medical treatment claims.",
-          "evidence": "A revision justified by safety and observable learning evidence."
+          "studentTitle": "Evaluate a misleading wellness claim",
+          "concept": "Good information appraisal asks who made a claim, what evidence is offered, whom the evidence concerns, and which limitations are missing. Ads and testimonials may be useful to discuss but cannot replace credible explanations of research.",
+          "instruction": "Good information appraisal asks who made a claim, what evidence is offered, whom the evidence concerns, and which limitations are missing. Ads and testimonials may be useful to discuss but cannot replace credible explanations of research.",
+          "workedExample": "Analyze the advertisement. Rewrite it for scientific caution and include one recommendation to consult a trusted adult or qualified support when needed.",
+          "practice": "Model a four-question check on the fictional 'cures stress for everyone' advertisement: source, evidence, scope and possible harms of the promise.",
+          "independentTask": "A testimonial describes one person's experience, not a controlled comparison. A more defensible claim says enjoyable movement may support some aspects of wellbeing for some people.",
+          "evidence": "Complete a four-part evidence check for one fictional fitness claim, then write a two-sentence correction suitable for a school poster.",
+          "successCriteria": "Source/evidence/scope/limitations are identified, with a corrected claim and no medical guarantees."
         },
         {
           "day": 5,
           "phase": "Defend",
-          "instruction": "Synthesize what safe and inclusive learning about movement and mental wellbeing requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
-          "evidence": "Portfolio entry with claim, observation, adaptation and next step."
+          "studentTitle": "Defend an inclusive wellbeing activity plan",
+          "concept": "A quality wellbeing plan preserves agency: activity is an option, not a test of mood. Reflection evaluates thoughtful choices, not whether a student feels happy. Plans should offer equivalent learning routes and appropriate support for concerns.",
+          "instruction": "A quality wellbeing plan preserves agency: activity is an option, not a test of mood. Reflection evaluates thoughtful choices, not whether a student feels happy. Plans should offer equivalent learning routes and appropriate support for concerns.",
+          "workedExample": "Combine the week's work into a private or fictional movement-and-wellbeing plan and defend why its wording and adaptations are responsible.",
+          "practice": "Model a concise choice card containing a purpose, two access options, a safety cue, a claim-quality check and an evidence limitation.",
+          "independentTask": "A learner chooses a gentle rhythm activity or an observation task, notes a stable space and pause cue, and states that today's experience cannot predict anyone else's mental-health outcome.",
+          "evidence": "Submit a choice-and-evidence card and a short defense covering safety, learner choice, privacy, a cautious claim and a next step.",
+          "successCriteria": "All five elements appear; claims stay within evidence and no sensitive health details are solicited."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about movement and mental wellbeing.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-      "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for movement and mental wellbeing.",
+      "misconception": "Exercise always improves everyone's mood and can replace mental-health care.",
+      "correction": "Some individuals experience wellbeing benefits from movement, but outcomes vary; exercise is not a guaranteed treatment, and personal reflections do not establish diagnoses or causal proof.",
+      "teacherNotes": "Offer movement, seated, observation and written pathways. Use fictional cases for discussion. Never require mood disclosures, diagnoses, medication details, or body measurements. Do not grade emotional improvement. If a learner reports distress, follow school safeguarding and appropriate support procedures.",
       "rubric": [
         {
           "criterion": "Knowledge and rationale",
@@ -5692,7 +5717,12 @@
           "rationale": "Serious safety concerns require appropriate safeguarding or support pathways."
         }
       ],
-      "focusSkill": "Separate possible mood benefits from guarantees or medical treatment claims."
+      "focusSkill": "Separate possible mood benefits from guarantees or medical treatment claims.",
+      "conceptExplanation": "Mental wellbeing includes changing experiences such as mood, stress and sense of connection. Movement can be enjoyable, provide routine or social contact, and may help some people manage stress; experiences vary and exercise is not a diagnosis or guaranteed treatment. A single before/after observation cannot establish causation. Learners should distinguish a personal observation ('I felt calmer today') from a population-level claim ('everyone will feel calmer') and a medical promise ('this cures anxiety'). Sharing feelings or health history is always optional.",
+      "biomechanicsAndTechnique": "Choose a comfortable, accessible movement such as walking, step-touch, seated arm patterns or gentle mobility. Check clear space and suitable support, begin gradually, keep movement within a comfortable range, and pause for pain, dizziness or distress. Avoid mandatory breath-holding or intense mindfulness exercises. Rest, observation, diagramming and analysis of fictional cases are equivalent participation pathways when they address the objective. Do not assess learners by mood improvement, body metrics or disclosure.",
+      "workedExample": "Claim: 'A 20-minute workout cures stress for everyone.' Evidence: one person's journal says they enjoyed a short walk. Analysis: the journal supports only a personal observation, not universal benefit or treatment. Revised claim: 'Some people may find enjoyable movement helpful for their wellbeing; effects vary, and support needs differ.'",
+      "applicationTask": "Create a choice-and-evidence card comparing two low-cost movement or recovery options. Include a feasible setting, warm-up or preparation, stop/adapt cue, optional private observation method, a privacy-preserving alternative, and one appropriately qualified statement about potential wellbeing benefits.",
+      "depthVersion": "grade9-week15-topic-specific-2026-10-19"
     },
     {
       "week": 16,
