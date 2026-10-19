@@ -427,6 +427,30 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Tax, discounts and tip worked examples; commission remains written lesson content"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U06-L02",
+      "unit": 6,
+      "lesson": 2,
+      "lesson_file": "units/unit-06/lessons/lesson-02-zero-negative-exponents-patterns.html",
+      "asset_id": "MATH-ZERO-NEGATIVE-EXPONENTS-KHAN-001",
+      "shared_file": "../assets/video-library/zero-negative-exponents-khan.json",
+      "placement_status": "topic_matched_pending_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Zero and negative exponent rules; fractional exponent material is optional extension"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U06-L03",
+      "unit": 6,
+      "lesson": 3,
+      "lesson_file": "units/unit-06/lessons/lesson-03-exponent-properties-equivalent-expressions.html",
+      "asset_id": "MATH-EXPONENT-RULES-KHAN-001",
+      "shared_file": "../assets/video-library/exponent-rules-khan.json",
+      "placement_status": "topic_matched_pending_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Exponent properties introductory instruction"
     }
   ]
 }
