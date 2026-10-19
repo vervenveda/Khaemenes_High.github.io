@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PE Assessment Regression Runner — Khaemenes Academy</title>
+<style>
+:root{color-scheme:light;--paper:#f7f3ea;--ink:#182235;--muted:#4a566a;--line:#d8d2c6;--blue:#1b5f91;--pass:#176b42;--fail:#a22b2b;--warn:#81520b}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{max-width:900px;margin:0 auto;padding:24px 18px 48px}h1{font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.15;margin:.2em 0}.sub{color:var(--muted)}.panel{border:1px solid var(--line);border-radius:10px;background:#fffdf8;padding:16px;margin:16px 0}
+button,.button{border:0;border-radius:7px;padding:9px 13px;background:var(--blue);color:white;font:inherit;font-weight:650;cursor:pointer;text-decoration:none;display:inline-block}button:focus-visible,.button:focus-visible{outline:3px solid #d19d36;outline-offset:3px}.secondary{background:transparent;border:1px solid var(--line);color:var(--ink)}.results{list-style:none;margin:0;padding:0}.results li{padding:10px 0;border-bottom:1px solid var(--line)}.results li:last-child{border:0}.status{font-weight:750}.pass{color:var(--pass)}.fail{color:var(--fail)}.warn{color:var(--warn)}code{overflow-wrap:anywhere}.small{font-size:.9rem;color:var(--muted)}#summary{font-size:1.1rem;font-weight:750}.toplinks{display:flex;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<main>
+  <p class="sub">Khaemenes Academy · High School Physical Education</p>
+  <h1>Assessment Regression Runner</h1>
+  <p>This tool exercises the actual <code>assessment-engine.js</code> in this browser. Test attempts use temporary IDs and are removed after the run; existing student progress is not cleared or overwritten.</p>
+  <div class="toplinks">
+    <a class="button" href="./index.html">Open PE course portal</a>
+    <a class="button secondary" href="./HARDENING_STATUS.md">Hardening status</a>
+  </div>
+  <section class="panel">
+    <h2>Run checks</h2>
+    <p>Run this in the same browser used to host the portal after the latest commit has deployed. This runner checks engine and storage behavior; it does not replace the student-facing mouse, keyboard, visual layout, or hosted import/export walkthrough.</p>
+    <button id="run" type="button">Run regression tests</button>
+    <button id="clear" class="secondary" type="button">Clear results</button>
+    <p id="summary" role="status" aria-live="polite">Not run yet</p>
+    <ul id="results" class="results"></ul>
+  </section>
+  <section class="panel">
+    <h2>Manual learner-journey checklist</h2>
+    <ol>
+      <li>Open Grade 9 Week 1 and begin the randomized 20-question assessment.</li>
+      <li>Answer several questions, reload the page, and confirm both the question order and selected answers are retained.</li>
+      <li>Submit 15/20 correct (75%): it must not unlock Week 2.</li>
+      <li>Retry and submit 16/20 correct (80%): the weekly knowledge threshold should be met; practice evidence and reflection are also required for the local next-week rule.</li>
+      <li>Export a journal. In a separate browser profile or device, open the portal, select Grade 9, and import that file. Confirm the saved attempt and daily entries return without altering teacher-verification status.</li>
+      <li>Confirm midterm readiness requires all first 18 validated weekly records, and final readiness requires all 36 plus the approved midterm state.</li>
+      <li>Repeat navigation with keyboard only and at a narrow/mobile viewport. Confirm locked and review-only states are understandable.</li>
+    </ol>
+    <p class="small">Browser-local data is provisional and can be edited by a device owner. The runner never grants teacher verification or academic credit.</p>
+  </section>
+  <p class="small">No account data is sent to a server by this test page. Temporary test keys are cleaned up when the run completes.</p>
+</main>
+<script src="./assessment-engine.js"></script>
+<script>
+(function(){
+"use strict";
+const byId=id=>document.getElementById(id);
+function assert(ok,message){if(!ok)throw new Error(message)}
+function testBank(){return Array.from({length:30},(_,i)=>({prompt:"Regression question "+(i+1)+" asks for a reasoned and safe movement decision.",options:["Evidence-based choice "+i,"Unsafe choice "+i,"Unrelated choice "+i],correct:0,rationale:"The evidence-based choice best follows the stated safety and learning criteria."}))}
+function cleanup(keys){keys.forEach(k=>{try{localStorage.removeItem(k)}catch(e){}})}
+byId("clear").addEventListener("click",()=>{byId("results").innerHTML="";byId("summary").textContent="Not run yet"});
+byId("run").addEventListener("click",async()=>{
+ const list=byId("results"),summary=byId("summary");list.innerHTML="";summary.textContent="Running…";
+ const A=window.KhaeAssessment,keys=[],checks=[];let pass=0,fail=0;
+ const check=(name,fn)=>{try{fn();checks.push({name,ok:true})}catch(e){checks.push({name,ok:false,error:e.message})}};
+ if(!A){summary.textContent="FAILED — assessment engine not available";list.innerHTML="<li class='fail'>Could not load assessment-engine.js. Check hosted path and deployment.</li>";return}
+ const unique="regression-"+Date.now()+"-"+Math.random().toString(36).slice(2,8);
+ const bank=testBank();
+ check("Builds exactly 20 questions from a larger bank",()=>{const a=A.build(bank,20,unique+"-build");keys.push(A.key(a.identity));assert(a.items.length===20,"Expected 20 questions");assert(new Set(a.items.map(q=>q.sourceIndex)).size===20,"Question selection was not unique")});
+ check("Randomized option order preserves answer correctness",()=>{const a=A.build(bank,20,unique+"-align");keys.push(A.key(a.identity));assert(a.items.every(q=>q.options[q.correct].startsWith("Evidence-based choice")),"Correct answer moved out of alignment")});
+ check("Rejects an incomplete attempt",()=>{const a=A.build(bank,20,unique+"-blank");keys.push(A.key(a.identity));const answers=a.items.map((q,i)=>i<19?q.correct:null);let rejected=false;try{A.submit(a,answers)}catch(e){rejected=e.message==="Answer every question"}assert(rejected,"Missing answer was accepted")});
+ check("75% does not pass mastery",()=>{const a=A.build(bank,20,unique+"-75");keys.push(A.key(a.identity));const answers=a.items.map((q,i)=>i<15?q.correct:(q.correct+1)%q.options.length);const s=A.submit(a,answers);A.store(s);assert(s.score===75&&!s.passed,"75% should not pass")});
+ check("80% meets mastery threshold",()=>{const a=A.build(bank,20,unique+"-80");keys.push(A.key(a.identity));const answers=a.items.map((q,i)=>i<16?q.correct:(q.correct+1)%q.options.length);const s=A.submit(a,answers);A.store(s);assert(s.score===80&&s.passed,"80% should pass")});
+ check("In-progress answers survive storage reload",()=>{const a=A.build(bank,20,unique+"-resume");keys.push(A.key(a.identity));const answers=a.items.map((q,i)=>i%2===0?q.correct:null);A.store({...a,answers});const loaded=A.load(a.identity);assert(loaded&&JSON.stringify(loaded.answers)===JSON.stringify(answers),"Answers were not restored")});
+ check("Same attempt keeps its original randomized question snapshot",()=>{const a=A.build(bank,20,unique+"-frozen");keys.push(A.key(a.identity));A.store(a);let rejected=false;try{A.store({...a,items:a.items.slice().reverse()})}catch(e){rejected=true}assert(rejected,"Attempt item order was changed")});
+ check("Submitted attempt cannot be edited or resubmitted",()=>{const a=A.build(bank,20,unique+"-readonly");keys.push(A.key(a.identity));const s=A.submit(a,a.items.map(q=>q.correct));A.store(s);let rejected=false;try{A.store({...s,score:0})}catch(e){rejected=true}assert(rejected,"Submitted snapshot was mutable");let reSubmit=false;try{A.submit(s,s.answers)}catch(e){reSubmit=true}assert(reSubmit,"Submitted attempt was accepted again")});
+ check("Review snapshot stays explicitly unverified",()=>{const a=A.build(bank,20,unique+"-snapshot");keys.push(A.key(a.identity));const s=A.store(A.submit(a,a.items.map(q=>q.correct)));const snap=A.snapshot(s);assert(snap.verified===false&&snap.reviewStatus==="teacher-review-required","Snapshot must remain unverified")});
+ cleanup(keys);
+ checks.forEach(c=>{if(c.ok)pass++;else fail++;const li=document.createElement("li");li.className=c.ok?"pass":"fail";li.innerHTML='<span class="status">'+(c.ok?"PASS":"FAIL")+'</span> — '+c.name+(c.error?'<div class="small">'+c.error.replace(/[&<>"]/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[x]))+'</div>':"");list.appendChild(li)});
+ summary.textContent=pass+" passed · "+fail+" failed"+(fail===0?" — engine checks clear":" — investigate failures");summary.className=fail===0?"pass":"fail";
+});
+})();
+</script>
+</body>
+</html>
