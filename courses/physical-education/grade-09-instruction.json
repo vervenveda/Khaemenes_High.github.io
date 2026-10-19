@@ -5727,49 +5727,74 @@
     {
       "week": 16,
       "title": "Progress review and adaptation",
-      "essentialQuestion": "How can we make a safe, evidence-based decision about progress review and adaptation?",
-      "scenario": "A Grade 9 learner is planning a safe, accessible activity involving progress review and adaptation. They have limited time, variable energy, and no specialized equipment.",
-      "model": "Worked example (review): A learner wants to practice progress review and adaptation. First identify the specific skill: Use a practice log to identify one change. Next compare two feasible options, select one with a clear safety cue, and document the reason. A written, observed, seated or adapted demonstration can meet the same reasoning target.",
+      "essentialQuestion": "How can we use specific, comparable evidence to recognize skill growth, explain uncertainty, and revise a safe, inclusive movement plan without ranking bodies or learners?",
+      "scenario": "A fictional student, Ari, has three weekly logs. Week A: 4 seated step-touch sets, with 'lost count twice.' Week B: 4 sets, with 'lost count once after slowing down.' Week C: 3 sets, with 'kept an eight-count sequence accurately, paused when tired.' Another student, Noor, has only one entry and recently changed equipment and practice space. What conclusions are justified, and what next steps are fair?",
+      "model": "Worked comparison: Ari's records suggest improved eight-count accuracy under changed conditions, not a general increase in fitness. Fewer sets in Week C do not mean less learning. Noor's single entry cannot establish a trend. A reasonable adaptation is to repeat a comfortable eight-count sequence with one consistent observation cue, allow pauses, and record context and precision rather than competing over repetitions.",
       "days": [
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce progress review and adaptation. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving progress review and adaptation. They have limited time, variable energy, and no specialized equipment.",
-          "practice": "Write a three-part safety plan for progress review and adaptation: purpose, feasible option, and stop/modification cue.",
-          "evidence": "A reasoned three-part plan with a specific observable cue."
+          "studentTitle": "Define meaningful progress",
+          "concept": "Progress must refer to a chosen learning target. Completion alone is not proof of improvement, and the number of repetitions cannot tell us whether technique or reasoning improved. Distinguish process evidence (a clear stop cue), skill evidence (accurate counts), and an unsupported body or fitness conclusion.",
+          "instruction": "Progress must refer to a chosen learning target. Completion alone is not proof of improvement, and the number of repetitions cannot tell us whether technique or reasoning improved. Distinguish process evidence (a clear stop cue), skill evidence (accurate counts), and an unsupported body or fitness conclusion.",
+          "practice": "Sort six fictional log statements by process evidence, movement-skill evidence, or claim that cannot be supported. Explain what each statement actually shows.",
+          "workedExample": "Ari completed fewer sets in Week C but recorded accurate counting and a timely pause. That supports a skill and safety judgment, not a conclusion about physical fitness.",
+          "independentTask": "Name a movement or analysis learning target, then write two observations that would be relevant and one common measure that would not establish it.",
+          "evidence": "A specific objective, two observable indicators and one appropriately rejected proxy measure.",
+          "successCriteria": "I can define progress using evidence relevant to the lesson rather than personal comparison."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to progress review and adaptation and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
-          "practice": "Practice the week's decision with this exact prompt: Use a practice log to identify one change. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
-          "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
+          "studentTitle": "Build a reliable observation log",
+          "concept": "A usable practice record separates what happened from why it might have happened. Date or sequence, task, conditions, observed cue, rest/adaptation and the next question help make an entry interpretable. Leave private health details out.",
+          "instruction": "A usable practice record separates what happened from why it might have happened. Date or sequence, task, conditions, observed cue, rest/adaptation and the next question help make an entry interpretable. Leave private health details out.",
+          "practice": "Teacher models two fictional entries: 'Did great' and 'Kept all eight counts in two comfortable sets, seated, with one rest.' Identify why the latter can be reviewed.",
+          "workedExample": "Rewrite a vague log about Noor's first attempt using a provided fictional observation and add one note about different equipment or setting.",
+          "independentTask": "'Balanced better' becomes 'with the same support, kept feet inside a marked area for the entire illustrated sequence'; this identifies a checkable cue while avoiding a body judgment.",
+          "evidence": "Create a two-entry template and populate it with fictional observations; provide a seated, narrated or diagrammed version of the same skill.",
+          "successCriteria": "Records identify the task, cue, context, adaptation and next question in neutral language."
         },
         {
           "day": 3,
           "phase": "Apply",
-          "instruction": "Discuss how effort, environment, access and recovery change the best choice for progress review and adaptation.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
-          "evidence": "Three justified pathways and a brief risk assessment."
+          "studentTitle": "Compare attempts fairly",
+          "concept": "Compare records only to the extent their tasks and conditions permit. Changes in environment, supports, pace, number of attempts and task instructions may explain differences. One observation rarely establishes a trend; an improvement claim should be narrow and revisable.",
+          "instruction": "Compare records only to the extent their tasks and conditions permit. Changes in environment, supports, pace, number of attempts and task instructions may explain differences. One observation rarely establishes a trend; an improvement claim should be narrow and revisable.",
+          "practice": "Use a side-by-side example of Ari's three entries to identify one improvement and two limits. Show why fewer sets with better counting may still represent meaningful learning.",
+          "workedExample": "Contrast Ari's three entries with Noor's one entry. Choose what each log supports and where more evidence is needed.",
+          "independentTask": "Ari appears to improve counting accuracy; Noor's one entry shows current performance only. Neither record proves overall physical fitness or a permanent result.",
+          "evidence": "Write a claim-evidence-limitation paragraph and design one consistent next observation for Noor without demanding extra exertion.",
+          "successCriteria": "One precise claim, a cited observation, at least one limit and a feasible additional data point."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
-          "practice": "Analyze a learner's fictional plan for progress review and adaptation: it lacks a stop cue and adaptation. Rewrite it to satisfy: Use a practice log to identify one change.",
-          "evidence": "A revision justified by safety and observable learning evidence."
+          "studentTitle": "Revise a plan using feedback",
+          "concept": "Revision is not always 'work harder.' A strong adjustment addresses the observed learning barrier while preserving choice, access, rest and safe technique. Change one instructional factor when practical so the next observation has a useful comparison.",
+          "instruction": "Revision is not always 'work harder.' A strong adjustment addresses the observed learning barrier while preserving choice, access, rest and safe technique. Change one instructional factor when practical so the next observation has a useful comparison.",
+          "practice": "Model the revision: if an eight-count rhythm is lost at high speed, slow the tempo, practice in shorter phrases, allow rest, and observe correct counts before increasing complexity.",
+          "workedExample": "Given a flawed plan requiring Ari to do twice as many sets despite fatigue, identify the unsupported assumption and propose a targeted revision with an accessible pathway.",
+          "independentTask": "Flawed: 'Double the sets next time.' Better: 'Choose a comfortable pace and note eight-count accuracy, pauses and conditions for two short attempts; narrate the counts as an alternative.'",
+          "evidence": "Produce a revision card with target, evidence, one adjustment, stop cue, equivalent access pathway and observation plan.",
+          "successCriteria": "Revision is linked to a specific observation and avoids forced intensity, exclusion or unsupported claims."
         },
         {
           "day": 5,
           "phase": "Defend",
-          "instruction": "Synthesize what safe and inclusive learning about progress review and adaptation requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
-          "evidence": "Portfolio entry with claim, observation, adaptation and next step."
+          "studentTitle": "Defend a progress review",
+          "concept": "A defensible reflection distinguishes evidence, interpretation and next step. It communicates what changed, what remains uncertain, and how an adaptation keeps the same learning target accessible. The student is evaluated for reasoning, not physical traits.",
+          "instruction": "A defensible reflection distinguishes evidence, interpretation and next step. It communicates what changed, what remains uncertain, and how an adaptation keeps the same learning target accessible. The student is evaluated for reasoning, not physical traits.",
+          "practice": "Demonstrate a brief teacher conference: identify Ari's strongest evidence, explain a limitation, describe the revised plan and predict how its success would be observed.",
+          "workedExample": "Create a one-page review of Ari or a fully fictional learner, using a table, annotated diagram, written account or oral transcript.",
+          "independentTask": "The final defense cites accurate counts in comparable entries, acknowledges the change in set count, proposes a comfortable rehearsal and an alternate seated or narrated analysis.",
+          "evidence": "Submit a three-entry mini-portfolio, claim-evidence-limitation defense, next-session revision and explicit accessibility/safety rationale.",
+          "successCriteria": "Portfolio includes observable entries, justified claim, limitation, feasible revision, safety cue and equivalent participation option."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about progress review and adaptation.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-      "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for progress review and adaptation.",
+      "misconception": "More minutes or repetitions always prove more progress, and a single successful attempt shows permanent mastery.",
+      "correction": "Progress claims require appropriate observations, comparable context and acknowledgment of uncertainty; technique, reasoning, safety and adaptation can improve even when the activity dose is reduced.",
+      "teacherNotes": "Assess the quality of evidence and reasoning; never rank learners by body metrics, duration, speed, exertion or disability. Use fictional practice logs if students prefer privacy. Offer seated, observed, written and narrated pathways. Treat rests and adaptations as appropriate decisions, not deductions.",
       "rubric": [
         {
           "criterion": "Knowledge and rationale",
@@ -6050,7 +6075,12 @@
           "rationale": "A strong review identifies evidence, limits, and a specific next step."
         }
       ],
-      "focusSkill": "Use a practice log to identify one change."
+      "focusSkill": "Use a practice log to identify one change.",
+      "conceptExplanation": "Progress is change toward a stated learning target using relevant evidence over time. A useful record names the task, conditions, observable behavior, feedback, and adjustment. Compare like with like: a different space, equipment, level of support or fatigue can affect an observation. One log is a snapshot, not a trend. Progress can mean more accurate technique, better decision-making, more effective adaptation, clearer reasoning or increased independence; it is not defined by body size, speed, total time or comparison with classmates.",
+      "biomechanicsAndTechnique": "Review one manageable skill such as seated/standing step-touch, a supported balance hold, a safe hip-hinge explanation, or an eight-count sequence. Specify observable technique cues (controlled range, stable support, appropriate spacing and ability to pause). Use the same cue across comparable practice attempts where appropriate; note any changes in context. Never repeat movement through pain, dizziness or distress to improve a score. Written diagrams, observation of a fictional demonstration and accessible movement variants can show the same analysis skill.",
+      "workedExample": "Ari's Week A record says 'lost count twice in four sets'; Week B says 'lost count once in four sets'; Week C says 'accurate eight-count sequence in three sets, with a rest.' Defensible claim: Ari documented improved counting accuracy across these attempts. Limitation: conditions and set numbers differ, so this does not prove overall fitness improvement. Revision: choose a comfortable pace, use one counting cue and note accuracy, rests and conditions for the next two sessions.",
+      "applicationTask": "Build a three-entry progress-review sheet using fictional or non-sensitive learner evidence. Include a precise goal, comparable observations and context notes, one supported claim, one limitation, one safe revised next-step plan, an accessible alternative, and a way to check the new plan.",
+      "depthVersion": "grade9-week16-topic-specific-2026-10-19"
     },
     {
       "week": 17,
