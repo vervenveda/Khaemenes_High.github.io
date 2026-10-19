@@ -117,6 +117,10 @@ for (const course of courses) {
     assert.ok(html.includes("stateSnapshot"), "submission must detect a changed learner/course snapshot");
     assert.ok(html.includes('id="testFeedback" role="status" aria-live="polite" aria-atomic="true"'),
       "assessment results must be announced to assistive technology");
+    assert.ok(html.includes('role="group" aria-labelledby="question-title-${i}"'),
+      "each generated question must be programmatically grouped under its prompt");
+    assert.ok(html.includes('data-qid="${esc(q.id)}" required'),
+      "each randomized question must require a selected response before scoring");
     const untypedButtons = [...html.matchAll(/<button(?![^>]*\btype\s*=)[^>]*>/gi)];
     assert.equal(untypedButtons.length, 0, "buttons should declare their action type explicitly");
   });
