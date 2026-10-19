@@ -316,3 +316,27 @@ CI results:
 
 The audit now distinguishes unit assessment forms (25 items each) from larger cumulative benchmarks. No item banks, student responses, recorded mastery scores, or STOS activation settings were changed.
 
+## Next-bubble update — canonical banks and response recovery (2026-10-19)
+
+### Repairs completed
+- Rebalanced correct-answer positions in the canonical shared Science 9 banks for Units 01, 03, 08, and 09. The correct answer text, prompt, and question ID for each item were verified unchanged; only option ordering and the corresponding answer index were changed. Quiz and assessment source classes are now balanced to within one response per option position.
+- Replaced the stale per-activity-array answer-integrity validators for Units 01–12 with canonical shared-bank checks. These now validate the bank consumed by the Monte Carlo engine, rather than looking for embedded question arrays that no longer exist in the app source.
+- Reworked the Grade 9 question-bank auditor to inspect all 12 canonical unit banks and verify IDs, prompts, four-option questions, answer indices, explanations, source classes, and duplicate options. The audit reported **12 banks, 632 questions, 253 quiz-source items, 379 assessment-source items, and zero structural findings**.
+- Hardened `courses/shared/monte-carlo-assessment-v1.js`: `saveResponse` now rejects null, empty, non-integer, negative, and out-of-range answer indices and refuses writes to completed sessions. `getResponses` now filters invalid or legacy-null values on resume so a stored `null` cannot be coerced to answer index zero.
+- Expanded `courses/science/tools/test-upper-science-student-regression.mjs` to explicitly test null/empty writes, out-of-range answers, and corrupted/legacy responses on resume.
+
+### Verification results
+- Science 9 learner-isolation workflow passed on commit `5a1e2d36395080b0f99243340d62716b8da6c08d`, including the canonical-bank audit and answer-integrity checks.
+- Science Student Experience Regression passed on commit `723635f56daac8f3c9e3cd9801a56273e1f272bd`.
+- Public Entry Route Validation and High School Record and Route Validation passed on that same commit.
+- GitHub Pages build and deployment completed successfully on commit `723635f56daac8f3c9e3cd9801a56273e1f272bd`.
+
+Links:
+- https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/39322247845
+- https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/39322753399
+- https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/39322753424
+- https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/39322753603
+- https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/39322752802
+
+These are source-level and CI regressions. Manual browser/device accessibility, screen-reader behavior, and physical lab safety review remain separate sign-off tasks.
+
