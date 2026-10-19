@@ -3994,54 +3994,54 @@
       },
       "checks": [
         {
-          "prompt": "A learner has limited time and no specialized equipment while preparing for hydration and environmental safety. Which next step best supports this week's learning?",
+          "prompt": "A class is scheduled for a long outdoor activity during a heat advisory. Shade is limited and water access has not been confirmed. What is the safest planning decision?",
           "options": [
-            "Identify the decision, compare realistic options, and explain the choice using the learning target.",
-            "Use completion time as the only measure of learning.",
-            "Copy a classmate's decision without checking the case."
+            "Check current guidance, confirm water and rest access, and shorten, relocate, reschedule, or replace the session if conditions warrant.",
+            "Keep the schedule unchanged so students can show persistence.",
+            "Ask students to compete to see who can tolerate the heat longest."
           ],
           "correct": 0,
-          "rationale": "A contextual decision responds to the actual constraints and makes its reasoning visible; speed or copying is insufficient."
+          "rationale": "Heat, shade, duration, and reliable water access affect whether the activity should proceed as planned; verify conditions and adapt before exposing learners to avoidable risk."
         },
         {
-          "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"compare water access and environmental conditions without prescribing a universal amount\"?",
+          "prompt": "During an outdoor activity, a learner reports feeling dizzy. Which response best follows the week's safety learning?",
           "options": [
-            "A general statement that the learner looked more athletic.",
-            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
-            "A single score with no description of the task or conditions."
+            "Ask the learner to finish the lap before taking a break.",
+            "Stop the activity for the learner and promptly alert the responsible adult or follow the established safety procedure.",
+            "Compare the learner's symptoms with a classmate before deciding."
           ],
           "correct": 1,
-          "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
+          "rationale": "Dizziness during activity is a stop cue, not a challenge to push through or diagnose; the learner should stop and receive appropriate adult guidance."
         },
         {
-          "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about hydration and environmental safety.\" Which response best corrects the reasoning?",
+          "prompt": "A planned route is long, has no reliable water source, and offers little shade. What should the organizer do before the group begins?",
           "options": [
-            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Confirm safe access to water and a feasible break/alternative plan, or modify the route or activity before starting.",
+            "Tell participants to avoid drinking until the route is complete.",
+            "Assume water needs will be low because everyone is participating in the same class."
           ],
           "correct": 0,
-          "rationale": "The correction prioritizes learning evidence and avoids unsupported comparisons or unsafe generalizations."
+          "rationale": "The organizer should address practical access, breaks, and a safe alternative before starting; a shared class activity does not make everyone's needs identical."
         },
         {
-          "prompt": "The current plan for hydration and environmental safety is missing a clear success criterion. What revision is most useful?",
+          "prompt": "Halfway through an outdoor lesson, the temperature rises and the shaded rest area becomes unavailable. What is the strongest next step?",
           "options": [
-            "Add more activity without deciding what will be observed.",
-            "Name one observable criterion for \"compare water access and environmental conditions without prescribing a universal amount\", then record what happened and what remains uncertain.",
-            "Judge success by effort alone and omit the learning evidence."
+            "Continue because the original plan was approved earlier.",
+            "Reassess conditions and move, shorten, pause, or replace the activity using current guidance and available safer options.",
+            "Increase the pace so the group finishes before conditions worsen."
           ],
           "correct": 1,
-          "rationale": "A clear criterion connects the activity to observable evidence and acknowledges uncertainty."
+          "rationale": "A safety plan must respond to changing conditions; rechecking the risk and adapting the session is safer than treating the original schedule as fixed."
         },
         {
-          "prompt": "A learner cannot use the original movement format for hydration and environmental safety. Which adaptation is strongest?",
+          "prompt": "A learner needs an accessible route, and the outdoor plan also requires water breaks and shade. Which adaptation best preserves the learning objective?",
           "options": [
-            "Choose a safe accessible demonstration, observation, or explanation that still measures \"compare water access and environmental conditions without prescribing a universal amount\".",
-            "Remove the learner from the task without an alternative.",
-            "Require private medical details before offering an adjustment."
+            "Plan an equivalent accessible route or observation pathway with practical water, shade, and rest access, without demanding private medical details.",
+            "Exclude the learner because the original route cannot be used.",
+            "Ask the learner to announce a diagnosis to the group before offering an adjustment."
           ],
           "correct": 0,
-          "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
+          "rationale": "An equivalent accessible pathway can preserve the learning goal while planning for environmental conditions and protecting the learner's privacy."
         },
         {
           "prompt": "A class plans outdoor activity during a heat advisory. What should guide the decision?",
