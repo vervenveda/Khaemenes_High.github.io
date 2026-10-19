@@ -9775,10 +9775,10 @@
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for adapted recreation?",
           "options": [
             "The learner has mastered every related skill in every setting.",
-            "The learner should use the same activity and difficulty in all future sessions.",
-            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step."
+            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
+            "The learner should use the same activity and difficulty in all future sessions."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "A learning record supports conclusions limited to the observed task; it does not prove universal mastery or a one-size-fits-all plan."
         },
         {
@@ -9804,51 +9804,51 @@
         {
           "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"compare two equivalent demonstrations of skill\"?",
           "options": [
-            "A general statement that the learner looked more athletic.",
+            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
             "A single score with no description of the task or conditions.",
-            "A dated before-and-after observation tied to a clear criterion, with limits noted."
+            "A general statement that the learner looked more athletic."
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
         },
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about adapted recreation.\" Which response best corrects the reasoning?",
           "options": [
-            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+            "Keep the claim without checking the observation, adaptation, or learning objective.",
             "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The correction prioritizes learning evidence and avoids unsupported comparisons or unsafe generalizations."
         },
         {
           "prompt": "What does an adapted recreation activity aim to preserve?",
           "options": [
-            "The central learning or recreation goal while changing a barrier or format.",
             "The exact same movement form for everyone.",
+            "The central learning or recreation goal while changing a barrier or format.",
             "A requirement to disclose medical information."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Adaptation supports meaningful participation while maintaining the intended goal."
         },
         {
           "prompt": "Two learners demonstrate the same throwing concept, one standing and one seated. How should the evidence be compared?",
           "options": [
-            "Evaluate relevant control, direction, decision-making, and the stated objective.",
             "Automatically score the seated version lower.",
+            "Evaluate relevant control, direction, decision-making, and the stated objective.",
             "Require identical body positions."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Assessment should match the learning target rather than the posture used."
         },
         {
           "prompt": "Which is a useful question when choosing an adapted game?",
           "options": [
-            "What is the target skill, and which rule or equipment change would make it accessible?",
             "How can the adaptation make the game harder for one person?",
+            "What is the target skill, and which rule or equipment change would make it accessible?",
             "How can a learner be excluded from the game?"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Useful adaptation starts by identifying the objective and barrier."
         },
         {
@@ -9874,11 +9874,11 @@
         {
           "prompt": "Which adaptation is most appropriate for a learner who has difficulty tracking a fast-moving ball?",
           "options": [
-            "Slow the pace, use a larger or higher-contrast object, or provide a clear cue.",
+            "Remove all information about the ball's path.",
             "Make the ball move faster.",
-            "Remove all information about the ball's path."
+            "Slow the pace, use a larger or higher-contrast object, or provide a clear cue."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Pace and sensory cues can be adjusted to support skill practice."
         },
         {
@@ -9894,11 +9894,11 @@
         {
           "prompt": "What is a risk of assuming all learners need the same adaptation?",
           "options": [
-            "An adaptation that helps one person may not fit another person's preferences or access needs.",
             "Every learner will always prefer identical adjustments.",
+            "An adaptation that helps one person may not fit another person's preferences or access needs.",
             "Adaptation removes the need to ask learners."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Adaptations should be responsive to the task and participant, not automatic assumptions."
         },
         {
@@ -9924,21 +9924,21 @@
         {
           "prompt": "How should an adapted activity be introduced to a group?",
           "options": [
-            "Explain the goal and rules respectfully without singling out a learner.",
+            "Describe adaptation as a penalty.",
             "Announce private information about a participant.",
-            "Describe adaptation as a penalty."
+            "Explain the goal and rules respectfully without singling out a learner."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Respectful framing normalizes options and avoids disclosing private information."
         },
         {
           "prompt": "Which is an example of universal design in PE?",
           "options": [
-            "Offer clear instructions and multiple ways to participate from the beginning.",
+            "Require everyone to perform exactly one version.",
             "Wait for a learner to fail before considering access.",
-            "Require everyone to perform exactly one version."
+            "Offer clear instructions and multiple ways to participate from the beginning."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Multiple participation pathways can reduce barriers for many learners."
         },
         {
@@ -9954,41 +9954,41 @@
         {
           "prompt": "A recreation game needs a partner, but a learner wants to work independently. What could preserve the goal?",
           "options": [
-            "Provide a solo equivalent using the same skill or decision-making objective.",
             "Record an automatic failure.",
+            "Provide a solo equivalent using the same skill or decision-making objective.",
             "Require contact regardless of consent."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "An equivalent independent pathway can preserve the goal without forcing partnership."
         },
         {
           "prompt": "Which question is most useful after testing an adaptation?",
           "options": [
-            "Did the change reduce the barrier and preserve the intended challenge?",
+            "Did it remove all choice?",
             "Did it make the learner look like everyone else?",
-            "Did it remove all choice?"
+            "Did the change reduce the barrier and preserve the intended challenge?"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Adaptations should be evaluated against access and objective alignment."
         },
         {
           "prompt": "What should a teacher do if an adapted equipment item is unstable?",
           "options": [
-            "Replace it or redesign the task before use.",
+            "Ask a learner to hold an unstable item in place.",
             "Use it because adaptation is required.",
-            "Ask a learner to hold an unstable item in place."
+            "Replace it or redesign the task before use."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Safety remains essential when choosing alternate equipment."
         },
         {
           "prompt": "How can groups avoid treating an adapted version as a lesser task?",
           "options": [
-            "Use the same stated learning objective and assess relevant evidence consistently.",
+            "Discuss the learner's body publicly.",
             "Assign lower grades before observing work.",
-            "Discuss the learner's body publicly."
+            "Use the same stated learning objective and assess relevant evidence consistently."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Equity means assessing the intended learning rather than assuming differences imply lower achievement."
         },
         {
@@ -10004,21 +10004,21 @@
         {
           "prompt": "What is the purpose of asking a learner which option works best?",
           "options": [
-            "Their experience helps identify a suitable and respectful participation path.",
             "The learner must design the whole course alone.",
+            "Their experience helps identify a suitable and respectful participation path.",
             "The teacher can avoid safety planning."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Participant input helps refine options while educators remain responsible for safe setup."
         },
         {
           "prompt": "Which reflection best evaluates adapted recreation?",
           "options": [
-            "What barrier changed, what skill remained central, and what evidence showed access?",
+            "Why should alternatives be eliminated?",
             "Who did the movement most like the example?",
-            "Why should alternatives be eliminated?"
+            "What barrier changed, what skill remained central, and what evidence showed access?"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Reflecting on barriers, objectives, and evidence helps improve future activity design."
         }
       ],
@@ -10102,71 +10102,71 @@
         {
           "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"recognize a condition that requires stopping or modifying activity\"?",
           "options": [
-            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
             "A general statement that the learner looked more athletic.",
+            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
             "A single score with no description of the task or conditions."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
         },
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about safe training choices.\" Which response best corrects the reasoning?",
           "options": [
-            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
             "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+            "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
             "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "The correction prioritizes learning evidence and avoids unsupported comparisons or unsafe generalizations."
         },
         {
           "prompt": "The current plan for safe training choices is missing a clear success criterion. What revision is most useful?",
           "options": [
             "Add more activity without deciding what will be observed.",
-            "Judge success by effort alone and omit the learning evidence.",
-            "Name one observable criterion for \"recognize a condition that requires stopping or modifying activity\", then record what happened and what remains uncertain."
+            "Name one observable criterion for \"recognize a condition that requires stopping or modifying activity\", then record what happened and what remains uncertain.",
+            "Judge success by effort alone and omit the learning evidence."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "A clear criterion connects the activity to observable evidence and acknowledges uncertainty."
         },
         {
           "prompt": "A learner cannot use the original movement format for safe training choices. Which adaptation is strongest?",
           "options": [
-            "Choose a safe accessible demonstration, observation, or explanation that still measures \"recognize a condition that requires stopping or modifying activity\".",
+            "Require private medical details before offering an adjustment.",
             "Remove the learner from the task without an alternative.",
-            "Require private medical details before offering an adjustment."
+            "Choose a safe accessible demonstration, observation, or explanation that still measures \"recognize a condition that requires stopping or modifying activity\"."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
         },
         {
           "prompt": "While practicing \"recognize a condition that requires stopping or modifying activity\", a learner notices a new safety concern. What is the best response?",
           "options": [
             "Continue unchanged because the plan was already written.",
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
-            "Ask peers to vote on whether a warning sign should be ignored."
+            "Ask peers to vote on whether a warning sign should be ignored.",
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
           "prompt": "Which condition is a clear reason to stop an activity and seek appropriate help?",
           "options": [
-            "Dizziness, unusual chest discomfort, or another concerning symptom during movement.",
             "A learner chooses a lower-demand variation.",
+            "Dizziness, unusual chest discomfort, or another concerning symptom during movement.",
             "A timer reaches its planned end."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Concerning symptoms should take priority over completing the session."
         },
         {
           "prompt": "A warm-up area has loose equipment and a slippery patch. What should happen before starting?",
           "options": [
-            "Clear the hazard or choose a safer space.",
             "Begin carefully and hope nobody slips.",
+            "Clear the hazard or choose a safer space.",
             "Ask participants to avoid looking down."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Hazards should be addressed before the activity rather than left unmanaged."
         },
         {
@@ -10182,31 +10182,31 @@
         {
           "prompt": "An online routine encourages users to continue despite pain. What is the most appropriate response?",
           "options": [
-            "Do not follow that advice; stop the painful movement and seek appropriate guidance.",
+            "Increase the range until pain goes away.",
             "Trust the routine because it is popular.",
-            "Increase the range until pain goes away."
+            "Do not follow that advice; stop the painful movement and seek appropriate guidance."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Pain should not be treated as a requirement for completing an exercise."
         },
         {
           "prompt": "Which is a useful environmental safety check?",
           "options": [
-            "Surface, clearance, equipment condition, weather or air conditions, and available support.",
             "Only the number of reps planned.",
+            "Surface, clearance, equipment condition, weather or air conditions, and available support.",
             "Only the music tempo."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Safe planning considers both the physical space and relevant conditions."
         },
         {
           "prompt": "A participant's activity becomes unsafe because the space is crowded. What should the teacher do?",
           "options": [
-            "Pause and adjust spacing, station size, or activity format.",
+            "Encourage people to push through.",
             "Keep going to maintain the schedule.",
-            "Encourage people to push through."
+            "Pause and adjust spacing, station size, or activity format."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The plan should change when spacing no longer supports safe participation."
         },
         {
@@ -10242,21 +10242,21 @@
         {
           "prompt": "What is a misconception about safety rules?",
           "options": [
-            "Stopping or modifying activity means a learner has failed.",
+            "Conditions and comfort can change during a session.",
             "Safety cues support informed decisions.",
-            "Conditions and comfort can change during a session."
+            "Stopping or modifying activity means a learner has failed."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Pausing or adapting may be the most appropriate evidence-based choice."
         },
         {
           "prompt": "Which response fits a hot outdoor setting with limited shade or water access?",
           "options": [
-            "Modify, relocate, or postpone the session based on conditions and guidance.",
             "Use the original plan regardless of conditions.",
+            "Modify, relocate, or postpone the session based on conditions and guidance.",
             "Make the session more intense to finish faster."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Environmental safety can require substantial changes to the plan."
         },
         {
@@ -10272,11 +10272,11 @@
         {
           "prompt": "A learner feels unwell while training alone. What should the safety plan emphasize?",
           "options": [
-            "Stop and contact appropriate help or a trusted adult rather than continuing alone.",
             "Finish the planned set before telling anyone.",
+            "Stop and contact appropriate help or a trusted adult rather than continuing alone.",
             "Keep the event secret."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A safety plan should identify a response and support pathway."
         },
         {
@@ -10292,11 +10292,11 @@
         {
           "prompt": "Which evidence best supports a safe training decision?",
           "options": [
-            "The identified hazard, the chosen mitigation or stop decision, and why it fits.",
             "A claim that nothing bad ever happens.",
+            "The identified hazard, the chosen mitigation or stop decision, and why it fits.",
             "A comparison with another student's tolerance."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A defensible decision shows reasoning linking a condition and a response."
         },
         {
@@ -10312,11 +10312,11 @@
         {
           "prompt": "Which is a responsible response to an injury in a group activity?",
           "options": [
-            "Stop the relevant activity and follow the appropriate adult or emergency protocol.",
+            "Ask untrained peers to diagnose the injury.",
             "Continue while the injured person catches up.",
-            "Ask untrained peers to diagnose the injury."
+            "Stop the relevant activity and follow the appropriate adult or emergency protocol."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Injury response should follow appropriate safety procedures rather than unqualified diagnosis."
         },
         {
@@ -10332,21 +10332,21 @@
         {
           "prompt": "Which practice supports safer independent training?",
           "options": [
-            "Use familiar directions, clear space, manageable progressions, and a plan for stopping or seeking help.",
+            "Follow every online challenge.",
             "Train in an unknown area with no support plan.",
-            "Follow every online challenge."
+            "Use familiar directions, clear space, manageable progressions, and a plan for stopping or seeking help."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Independent practice should be planned around clear controls and safety boundaries."
         },
         {
           "prompt": "Which reflection is most useful after modifying a training session for safety?",
           "options": [
-            "What changed, what cue prompted the decision, and what plan will I use next time?",
+            "Who handled the most discomfort?",
             "How can I ignore the cue next time?",
-            "Who handled the most discomfort?"
+            "What changed, what cue prompted the decision, and what plan will I use next time?"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Reflection should turn a safety decision into better future planning."
         }
       ],
@@ -10430,21 +10430,21 @@
         {
           "prompt": "A learner cannot use the original movement format for community activity options. Which adaptation is strongest?",
           "options": [
-            "Remove the learner from the task without an alternative.",
             "Choose a safe accessible demonstration, observation, or explanation that still measures \"compare cost, transport and accessibility barriers\".",
+            "Remove the learner from the task without an alternative.",
             "Require private medical details before offering an adjustment."
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
         },
         {
           "prompt": "While practicing \"compare cost, transport and accessibility barriers\", a learner notices a new safety concern. What is the best response?",
           "options": [
             "Continue unchanged because the plan was already written.",
-            "Ask peers to vote on whether a warning sign should be ignored.",
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing."
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
+            "Ask peers to vote on whether a warning sign should be ignored."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
@@ -10460,41 +10460,41 @@
         {
           "prompt": "During community activity options, which plan best applies the week's focus skill: compare cost, transport and accessibility barriers?",
           "options": [
-            "Choose the hardest version regardless of conditions.",
             "Practice the focus skill in a feasible task, explain the choice, and record observable evidence.",
+            "Choose the hardest version regardless of conditions.",
             "Record only whether the task was finished, without explaining the decision."
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "The learner applies compare cost, transport and accessibility barriers by making a feasible, justified choice and pointing to evidence relevant to community activity options."
         },
         {
           "prompt": "A learner has limited time and no specialized equipment while preparing for community activity options. Which next step best supports this week's learning?",
           "options": [
             "Copy a classmate's decision without checking the case.",
-            "Use completion time as the only measure of learning.",
-            "Identify the decision, compare realistic options, and explain the choice using the learning target."
+            "Identify the decision, compare realistic options, and explain the choice using the learning target.",
+            "Use completion time as the only measure of learning."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "A contextual decision responds to the actual constraints and makes its reasoning visible; speed or copying is insufficient."
         },
         {
           "prompt": "What should be checked when comparing community recreation options?",
           "options": [
-            "Cost, transport, time, accessibility, safety, equipment, and personal interest.",
             "Only the venue's logo.",
+            "Cost, transport, time, accessibility, safety, equipment, and personal interest.",
             "Whether the option is the most expensive."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A useful comparison examines practical access factors and preferences."
         },
         {
           "prompt": "A community program is free but far away and has no suitable transport. What should the learner consider?",
           "options": [
-            "Its transport and schedule barriers, plus a more feasible alternative.",
+            "Ignore whether the learner can get there.",
             "Assume free means accessible.",
-            "Ignore whether the learner can get there."
+            "Its transport and schedule barriers, plus a more feasible alternative."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Cost is only one part of practical access."
         },
         {
@@ -10510,11 +10510,11 @@
         {
           "prompt": "A community activity requires a membership cost outside the learner's budget. What is a constructive response?",
           "options": [
-            "Search for a free, low-cost, or school/community alternative that meets a similar goal.",
+            "Borrow money without permission.",
             "Assume recreation requires spending more money.",
-            "Borrow money without permission."
+            "Search for a free, low-cost, or school/community alternative that meets a similar goal."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Budget constraints are legitimate and can guide equivalent choices."
         },
         {
@@ -10530,41 +10530,41 @@
         {
           "prompt": "A listed venue says it is accessible, but details are unclear. What should the learner do?",
           "options": [
-            "Check specific access features or contact the venue before relying on the listing.",
+            "Wait until arrival to discover barriers.",
             "Assume every feature meets every need.",
-            "Wait until arrival to discover barriers."
+            "Check specific access features or contact the venue before relying on the listing."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Specific information helps avoid assumptions about accessibility."
         },
         {
           "prompt": "Which makes a community activity more sustainable for a learner?",
           "options": [
-            "It fits interest, cost, time, transport, and available support over time.",
+            "It requires ignoring school and rest.",
             "It is fashionable this month.",
-            "It requires ignoring school and rest."
+            "It fits interest, cost, time, transport, and available support over time."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Sustainability depends on whether the option fits the learner's real life."
         },
         {
           "prompt": "A student finds several activity programs. How can they compare schedules?",
           "options": [
-            "Check start/end times, travel time, and conflicts with existing commitments.",
             "Compare only the advertising images.",
+            "Check start/end times, travel time, and conflicts with existing commitments.",
             "Choose all programs regardless of overlap."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Time and travel should be considered together when evaluating feasibility."
         },
         {
           "prompt": "Which is a reasonable safety question for a community activity organizer?",
           "options": [
-            "What supervision, equipment, and participation guidance are provided?",
             "Can you guarantee nothing can ever happen?",
+            "What supervision, equipment, and participation guidance are provided?",
             "Which participants look most athletic?"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Practical safety information is more useful than impossible guarantees."
         },
         {
@@ -10580,21 +10580,21 @@
         {
           "prompt": "Why should learners check the date of a community schedule online?",
           "options": [
-            "Hours, fees, programs, or access conditions may change.",
             "A date proves the site is official.",
+            "Hours, fees, programs, or access conditions may change.",
             "Older schedules are always more accurate."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Current information matters when planning a visit."
         },
         {
           "prompt": "Which is an example of community recreation beyond organized sport?",
           "options": [
-            "A public walking group, accessible dance session, or open recreation area when appropriate.",
+            "Only an activity that requires a team uniform.",
             "Only a competitive league.",
-            "Only an activity that requires a team uniform."
+            "A public walking group, accessible dance session, or open recreation area when appropriate."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Community recreation includes many forms outside formal competition."
         },
         {
@@ -10610,21 +10610,21 @@
         {
           "prompt": "How should community activity marketing be treated?",
           "options": [
-            "As a starting point to investigate, not complete proof of access, quality, or safety.",
+            "As more reliable than direct program details.",
             "As a guarantee of what will happen.",
-            "As more reliable than direct program details."
+            "As a starting point to investigate, not complete proof of access, quality, or safety."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Promotional information may omit details and should be checked."
         },
         {
           "prompt": "Which plan is strongest for trying a new community activity?",
           "options": [
-            "Confirm time, route, cost, access, equipment, and who to contact if plans change.",
             "Show up without checking anything.",
+            "Confirm time, route, cost, access, equipment, and who to contact if plans change.",
             "Depend on an unknown person to provide all details."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Planning logistics ahead of time reduces avoidable surprises."
         },
         {
@@ -10640,21 +10640,21 @@
         {
           "prompt": "What does “accessible” mean in a community recreation decision?",
           "options": [
-            "The activity and location can be used by the learner with relevant access needs and options considered.",
+            "Everyone must use the same equipment.",
             "The venue has a ramp, so every need is automatically met.",
-            "Everyone must use the same equipment."
+            "The activity and location can be used by the learner with relevant access needs and options considered."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Accessibility includes more than one feature and should be considered in context."
         },
         {
           "prompt": "A venue's information is confusing. What is the most responsible next step?",
           "options": [
-            "Ask the venue or a trusted adult for clarification, or choose an option with clear details.",
             "Guess and hope the information is correct.",
+            "Ask the venue or a trusted adult for clarification, or choose an option with clear details.",
             "Share an unverified claim."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Clarification reduces uncertainty before committing to an activity."
         },
         {
@@ -10670,11 +10670,11 @@
         {
           "prompt": "What is the best reflection after exploring community options?",
           "options": [
-            "Which option fits my needs and resources now, what remains uncertain, and what should I check next?",
+            "Why should every person pick the same activity?",
             "Which program looks hardest?",
-            "Why should every person pick the same activity?"
+            "Which option fits my needs and resources now, what remains uncertain, and what should I check next?"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A strong reflection supports a feasible next decision and identifies unknowns."
         }
       ],
@@ -10759,30 +10759,30 @@
           "prompt": "During independent practice, which plan best applies the week's focus skill: explain how to choose and self-monitor a feasible session?",
           "options": [
             "Choose the hardest version regardless of conditions.",
-            "Record only whether the task was finished, without explaining the decision.",
-            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence."
+            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence.",
+            "Record only whether the task was finished, without explaining the decision."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "The learner applies explain how to choose and self-monitor a feasible session by making a feasible, justified choice and pointing to evidence relevant to independent practice."
         },
         {
           "prompt": "A learner has limited time and no specialized equipment while preparing for independent practice. Which next step best supports this week's learning?",
           "options": [
-            "Identify the decision, compare realistic options, and explain the choice using the learning target.",
             "Copy a classmate's decision without checking the case.",
+            "Identify the decision, compare realistic options, and explain the choice using the learning target.",
             "Use completion time as the only measure of learning."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A contextual decision responds to the actual constraints and makes its reasoning visible; speed or copying is insufficient."
         },
         {
           "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"explain how to choose and self-monitor a feasible session\"?",
           "options": [
             "A general statement that the learner looked more athletic.",
-            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
-            "A single score with no description of the task or conditions."
+            "A single score with no description of the task or conditions.",
+            "A dated before-and-after observation tied to a clear criterion, with limits noted."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
         },
         {
@@ -10808,11 +10808,11 @@
         {
           "prompt": "What is independent practice?",
           "options": [
-            "Planning and carrying out an appropriate task while monitoring choices and evidence.",
             "Doing a task without any safety consideration.",
+            "Planning and carrying out an appropriate task while monitoring choices and evidence.",
             "Always training alone without guidance."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Independent practice includes planning and self-monitoring, not the absence of support."
         },
         {
@@ -10838,21 +10838,21 @@
         {
           "prompt": "A learner discovers the planned equipment is missing. What should happen?",
           "options": [
-            "Use a safe alternative that meets the objective, or postpone the task.",
+            "Abandon all reflection.",
             "Improvise with an unstable object.",
-            "Abandon all reflection."
+            "Use a safe alternative that meets the objective, or postpone the task."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A substitution should be appropriate to the goal and safe to use."
         },
         {
           "prompt": "Which is an example of self-monitoring?",
           "options": [
-            "Notice effort or comfort, check the plan, and adapt when needed.",
+            "Use only a classmate's opinion.",
             "Ignore symptoms to finish the plan.",
-            "Use only a classmate's opinion."
+            "Notice effort or comfort, check the plan, and adapt when needed."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Self-monitoring means checking one's response against the goal and conditions."
         },
         {
@@ -10868,11 +10868,11 @@
         {
           "prompt": "What should a learner do if an independent session feels unsafe?",
           "options": [
-            "Stop and seek appropriate help or choose a safer alternative.",
             "Continue because independence requires finishing.",
+            "Stop and seek appropriate help or choose a safer alternative.",
             "Hide the issue."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Independence includes knowing when to stop or ask for support."
         },
         {
@@ -10888,41 +10888,41 @@
         {
           "prompt": "A learner has a busy week and cannot complete the plan. What is a useful next step?",
           "options": [
-            "Review what was feasible and adjust the schedule or task.",
             "Double every future session automatically.",
+            "Review what was feasible and adjust the schedule or task.",
             "Assume the plan must never change."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Plans should be revised based on the learner's actual circumstances."
         },
         {
           "prompt": "Which task can show independent planning without physical performance?",
           "options": [
-            "Create a session plan with goal, setup, adaptation, stop cue, and review evidence.",
             "Write a list of the hardest exercises.",
+            "Create a session plan with goal, setup, adaptation, stop cue, and review evidence.",
             "Copy another student's log."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A detailed plan can demonstrate the reasoning target."
         },
         {
           "prompt": "What is one limit of self-reported activity notes?",
           "options": [
-            "They may omit details or depend on memory, so conclusions should be cautious.",
             "They always give a complete scientific account.",
+            "They may omit details or depend on memory, so conclusions should be cautious.",
             "They can diagnose injuries."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Self-report is useful evidence but has known limits."
         },
         {
           "prompt": "A learner wants to use an online workout video independently. What should they check?",
           "options": [
-            "Source, instructions, space, equipment, appropriateness, and whether it allows safe adaptation.",
+            "Whether the video promises guaranteed results.",
             "Only view count.",
-            "Whether the video promises guaranteed results."
+            "Source, instructions, space, equipment, appropriateness, and whether it allows safe adaptation."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Online instructions should be checked for credibility and fit before use."
         },
         {
@@ -10968,41 +10968,41 @@
         {
           "prompt": "Which helps make independent practice more inclusive?",
           "options": [
-            "Provide multiple ways to demonstrate the target and ask for appropriate support when needed.",
+            "Punish requests for clarification.",
             "Assume independent means every learner uses the same activity.",
-            "Punish requests for clarification."
+            "Provide multiple ways to demonstrate the target and ask for appropriate support when needed."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Independent practice should not remove reasonable supports or equivalent pathways."
         },
         {
           "prompt": "What is a reasonable role for a teacher in independent practice?",
           "options": [
-            "Set expectations, review evidence, provide feedback, and help with safety or access questions.",
+            "Make every decision for the learner.",
             "Require no instructions or support at all.",
-            "Make every decision for the learner."
+            "Set expectations, review evidence, provide feedback, and help with safety or access questions."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Independence develops within clear boundaries and appropriate support."
         },
         {
           "prompt": "Which is an example of evidence-based revision?",
           "options": [
-            "I moved the session indoors because the outdoor route was unsafe and recorded why.",
             "I changed every part of the plan without noting a reason.",
+            "I moved the session indoors because the outdoor route was unsafe and recorded why.",
             "I followed a suggestion because it was popular."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Evidence-based revisions connect conditions to a reasoned change."
         },
         {
           "prompt": "Which reflection best evaluates independent practice?",
           "options": [
-            "Did I plan safely, monitor my response, adapt when needed, and record what I learned?",
+            "Was my performance better than everyone else's?",
             "Did I avoid every break?",
-            "Was my performance better than everyone else's?"
+            "Did I plan safely, monitor my response, adapt when needed, and record what I learned?"
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The reflection checks planning, monitoring, adaptation, and evidence."
         }
       ],
