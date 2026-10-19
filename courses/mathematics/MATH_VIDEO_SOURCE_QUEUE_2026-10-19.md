@@ -56,3 +56,15 @@ Search additional videos from the instructors already selected by the Academy fi
 7. Confirm offline reading remains available if video cannot load.
 
 This queue is a sourcing plan, not certification that its proposed videos already exist.
+
+## Candidate videos sourced from Academy-selected instructor (October 19, 2026)
+
+These are **staged, disabled** canonical video records. Publisher verified through video listings; student playback, subtitles and transcript alternatives **not yet checked**.
+
+| Instructor | Video title | Shared record | Intended Algebra I skill |
+|---|---|---|---|
+| The Organic Chemistry Tutor | How To Solve Linear Equations In Algebra | `solving-linear-equations.json` | Solve and verify linear equations |
+| The Organic Chemistry Tutor | The Slope Formula - Algebra | `slope-formula.json` | Find slope between two points |
+| The Organic Chemistry Tutor | Factoring Trinomials & Polynomials, Basic Introduction - Algebra | `factoring-trinomials-introduction.json` | Introductory polynomial factoring |
+
+Do not turn on course placement until classroom-level checking of the video, embed, captions and lesson alignment is complete. New candidates remain disabled and do not change mastery.
