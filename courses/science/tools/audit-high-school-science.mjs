@@ -13,6 +13,7 @@ const rel=p=>path.relative(repoRoot,p).replaceAll(path.sep,"/");
 const need=(ok,msg)=>(ok?passes:failures).push(msg);
 const warn=(ok,msg)=>{if(!ok)warnings.push(msg)};
 const norm=s=>String(s??"").toLowerCase().replace(/[^\p{L}\p{N}]+/gu," ").trim();
+const normOption=s=>String(s??"").normalize("NFKC").toLowerCase().replace(/\s+/gu," ").trim();
 
 function parseAssignedArray(file){
   const raw=read(file),m=raw.match(/=\s*(\[[\s\S]*\]);?\s*$/);
@@ -34,7 +35,7 @@ function auditBank(file,label,{min=1}={}){
     prompts.set(p,q.id);
     need(Array.isArray(q.options)&&q.options.length>=2,label+" options "+String(q.id));
     if(Array.isArray(q.options)){
-      const opts=q.options.map(norm);
+      const opts=q.options.map(normOption);
       need(new Set(opts).size===opts.length,label+" unique options "+String(q.id));
       need(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<q.options.length,label+" answer index "+String(q.id));
     }
