@@ -154,6 +154,20 @@ byId("run").addEventListener("click",async()=>{
   const teamworkDistribution=teamworkItems.reduce((counts,q)=>(counts[q.correct]++,counts),[0,0,0]);
   assert(teamworkDistribution.join("/") === "9/8/8","Week 12 answer positions changed unexpectedly: "+teamworkDistribution.join("/"));
   checks.push({name:"Week 12 teamwork/fair play: five-day instruction, consent and conflict scenarios, rubric, 80% evidence gate, unique questions, and balanced answer positions validate",ok:true});
+
+  const planningWeek=weeks.find(w=>w.week===13);
+  assert(planningWeek&&["essentialQuestion","scenario","model","focusSkill","conceptExplanation","biomechanicsAndTechnique","workedExample","applicationTask"].every(k=>typeof planningWeek[k]==="string"&&planningWeek[k].trim().length>40),"Week 13 activity-planning unit is missing required instructional-depth fields");
+  assert(planningWeek.days?.length===5&&planningWeek.days.every(d=>["instruction","practice","evidence","workedExample","independentTask","successCriteria"].every(k=>typeof d[k]==="string"&&d[k].trim().length>20)),"Week 13 five-day sequence is missing instruction, practice, examples, independent task, or success criteria");
+  assert(planningWeek.rubric?.length===5&&planningWeek.rubric.reduce((sum,r)=>sum+r.points,0)===20&&planningWeek.assessment?.maxPoints===20&&planningWeek.assessment?.passPoints===16,"Week 13 rubric or 80% practical-evidence threshold is inconsistent");
+  const planningItems=planningWeek.checks||[];
+  assert(planningItems.length===25,"Week 13 should retain 25 knowledge-check questions");
+  assert(new Set(planningItems.map(q=>q.prompt.trim().toLowerCase())).size===25&&new Set(planningItems.map(q=>q.rationale.trim())).size===25,"Week 13 contains duplicate prompts or rationales");
+  assert(planningItems.every(q=>q.options?.length===3&&Number.isInteger(q.correct)&&q.correct>=0&&q.correct<q.options.length&&q.rationale?.trim()),"Week 13 contains a malformed knowledge-check item");
+  assert(planningItems.slice(0,5).every(q=>/goal|activity|route|equipment|plan|record|peer|weather|access|review/i.test(q.prompt)),"Week 13 opening questions must assess feasible goal-setting, alternatives, real constraints, evidence review, and adaptation");
+  const planningDistribution=planningItems.reduce((counts,q)=>(counts[q.correct]++,counts),[0,0,0]);
+  assert(planningDistribution.join("/") === "9/8/8","Week 13 answer positions changed unexpectedly: "+planningDistribution.join("/"));
+  checks.push({name:"Week 13 activity planning: five-day instructional depth, practical rubric, feasible goals, alternatives, evidence review, 80% threshold, unique questions, and balanced answers validate",ok:true});
+
   checks.push({name:"Full Grade 9 PE instruction bank: 36 weeks, 925 unique prompts/rationales and balanced correct-answer positions",ok:true});
  }catch(e){checks.push({name:"Full Grade 9 PE instruction bank validates",ok:false,error:e.message})}
 
