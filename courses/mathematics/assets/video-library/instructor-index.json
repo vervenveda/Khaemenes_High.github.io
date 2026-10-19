@@ -6,7 +6,7 @@
     {
       "id": "organic-chemistry-tutor",
       "name": "The Organic Chemistry Tutor",
-      "status": "candidate_attribution_needs_direct_video_verification",
+      "status": "confirmed_for_new_video_candidates_existing_saTBf8AO4Ok_attribution_supported_by_secondary_listing",
       "video_ids_to_verify": [
         "saTBf8AO4Ok"
       ],
@@ -17,12 +17,18 @@
         "systems",
         "factoring",
         "quadratic equations"
-      ]
+      ],
+      "confirmed_video_ids": [
+        "7DPWeBszNSM",
+        "jvjZ4rnERmM",
+        "9MUDAr1PnlE"
+      ],
+      "publisher_source": "Published YouTube video listings for confirmed candidates; existing saTBf8AO4Ok matched through secondary index"
     },
     {
       "id": "tabletclass-math",
       "name": "TabletClass Math",
-      "status": "candidate_attribution_needs_direct_video_verification",
+      "status": "existing_lGfsp2CWjok_attribution_supported_by_secondary_listing",
       "video_ids_to_verify": [
         "lGfsp2CWjok"
       ],
@@ -44,5 +50,6 @@
     "Check captions and transcript/text alternative",
     "Check absence of unwanted distractions; no embed provider guarantees ad-free playback",
     "Link optional content only; never award mastery for watching"
-  ]
+  ],
+  "new_candidate_records_enabled": false
 }
