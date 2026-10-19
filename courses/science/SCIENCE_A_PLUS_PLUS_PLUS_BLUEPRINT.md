@@ -248,3 +248,35 @@ Workflow links:
 ### Step 3 status
 Automated source/engine, learner-scope, stale-save, route, and assessment feedback semantics checks are green. Manual cross-browser, device-width, keyboard-only, and screen-reader operation still needs to be observed directly. Do not imply that CI provided those manual observations. The science course records and STOS activation state were not changed by this accessibility patch.
 
+## Step 4 — Next science-quality bubbles closed (2026-10-19)
+
+### 1. Question-bank option comparison corrected
+The whole-program audit now compares answer choices with Unicode compatibility normalization and whitespace normalization while preserving case and scientific symbols. This matters for genetic notation: `RR`, `Rr`, and `rr` are distinct genotypes and must not be reported as duplicate options merely because a checker lowercases every choice. Scientific signs such as plus/minus must also remain meaningful.
+
+### 2. Abundant Grade 9 banks are no longer treated as defects
+The structural audit now requires each Grade 9 unit bank to contain *at least* 50 items rather than exactly 50. Verified banks with 58–62 items in Units 03, 08, and 09 are retained, preserving the larger randomization pool. No questions were deleted to satisfy an outdated validator.
+
+### 3. Upper-grade practice assessment completion and accessibility
+Biology 10, Chemistry 11, and Physics & Engineering 12 now:
+- require one selected answer per generated multiple-choice question before the browser permits scoring;
+- expose each generated question as a named `role="group"` with `aria-labelledby` referencing the question stem;
+- retain the accessible live feedback region for result/correction messages;
+- keep explicit button types to distinguish navigation/actions from assessment submission.
+
+The regression test now guards the required-answer and labeled-question-group requirements.
+
+### 4. Full audit incorporated into CI
+The Upper Science Question Bank Validation workflow now executes three layers:
+- Grade 10–12 bank schema checks;
+- Chemistry-specific bank checks;
+- the full Grade 9–12 science structural audit.
+
+### Verification
+GitHub Actions passed the full audit and all associated workflows after the fixes. Latest successful runs:
+- Upper Science Question Bank Validation: https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/39314667831
+- Science Student Experience Regression: https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/39314667792
+- Public Entry Route Validation: https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/39314667843
+- High School Record and Route Validation: https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/39314667910
+
+The new validation workflow's full Grade 9–12 audit step, including question-bank IDs/prompts/options/answer indexes/explanations and course/week/lesson structure, completed successfully. These are automated source-level validations; they do not replace scientific peer review or a real-device accessibility evaluation.
+
