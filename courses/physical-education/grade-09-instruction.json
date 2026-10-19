@@ -6801,49 +6801,74 @@
     {
       "week": 19,
       "title": "Outdoor walking and route planning",
-      "essentialQuestion": "How can we make a safe, evidence-based decision about outdoor walking and route planning?",
-      "scenario": "A Grade 9 learner is planning a safe, accessible activity involving outdoor walking and route planning. They have limited time, variable energy, and no specialized equipment.",
-      "model": "Worked example (outdoor): A learner wants to practice outdoor walking and route planning. First identify the specific skill: Check route, weather, visibility and accessible alternatives. Next compare two feasible options, select one with a clear safety cue, and document the reason. A written, observed, seated or adapted demonstration can meet the same reasoning target.",
+      "essentialQuestion": "How can we choose, estimate, evaluate, and revise a walking route using credible environmental information, accessible options, and clear safety decisions?",
+      "scenario": "Three fictional routes connect a school and nearby public spaces. Route A is 1.2 km along a shaded, continuous sidewalk with marked crossings; Route B is 0.8 km but has a missing sidewalk, fast traffic and no safe crossing; Route C is a 0.5 km accessible indoor loop. The forecast suggests high heat in the afternoon and rain later. Students have different mobility needs and limited time. Which route is most appropriate under different conditions, and why?",
+      "model": "Worked calculation: At an assumed comfortable walking speed of 3 km/hour, a 1.2 km route takes 1.2 ÷ 3 = 0.4 hours, or 24 minutes of travel, before crossings, breaks or delays. The shorter 0.8 km route is not automatically safer because it lacks a sidewalk and crossing. Compare route features, actual conditions, accessibility and the option to use an indoor loop or written map analysis; do not publish home addresses or live locations.",
       "days": [
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce outdoor walking and route planning. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving outdoor walking and route planning. They have limited time, variable energy, and no specialized equipment.",
-          "practice": "Write a three-part safety plan for outdoor walking and route planning: purpose, feasible option, and stop/modification cue.",
-          "evidence": "A reasoned three-part plan with a specific observable cue."
+          "studentTitle": "Read a route for safety and accessibility",
+          "concept": "A useful route map shows start/finish, length, crossings, path continuity and potential barriers. Evaluate sidewalk continuity, traffic separation, surface hazards, lighting and access without assuming the shortest route is best.",
+          "instruction": "A useful route map shows start/finish, length, crossings, path continuity and potential barriers. Evaluate sidewalk continuity, traffic separation, surface hazards, lighting and access without assuming the shortest route is best.",
+          "practice": "Compare Routes A, B and C on a table of sidewalk/crossing, traffic, surface, visibility and accessible alternatives. Mark what remains unknown.",
+          "workedExample": "Route B is shorter but lacks a safe crossing; Route A offers continuous sidewalk and marked crossings; C is indoors and accessible.",
+          "independentTask": "Annotate a fictional route map with at least four route features and identify two missing facts before choosing.",
+          "evidence": "Four observable features, two uncertainties and a reasoned preliminary route choice.",
+          "successCriteria": "I can evaluate a route's safety and access using specific map evidence rather than distance alone."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to outdoor walking and route planning and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
-          "practice": "Practice the week's decision with this exact prompt: Check route, weather, visibility and accessible alternatives. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
-          "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
+          "studentTitle": "Estimate distance and time",
+          "concept": "Time depends on distance and assumed speed: time = distance ÷ speed. Convert fractions of hours to minutes by multiplying by 60. Estimates exclude crossing delays, stops, uneven terrain and individual variation; no walking speed is required of any learner.",
+          "instruction": "Time depends on distance and assumed speed: time = distance ÷ speed. Convert fractions of hours to minutes by multiplying by 60. Estimates exclude crossing delays, stops, uneven terrain and individual variation; no walking speed is required of any learner.",
+          "practice": "Teacher models Route A at an illustrative 3 km/hour: 1.2 ÷ 3 = 0.4 hours = 24 minutes. Model Route C: 0.5 ÷ 3 = 0.167 hours ≈ 10 minutes before rests.",
+          "workedExample": "At an assumed 3 km/hour, Route B would be 0.8 ÷ 3 × 60 = 16 minutes, but the 16-minute estimate does not justify an unsafe crossing.",
+          "independentTask": "Compute two estimated times using stated speeds and units; explain two reasons actual trip time might differ and provide an accessible planning alternative.",
+          "evidence": "Correct calculations with units, explicitly labeled assumptions and two limitations.",
+          "successCriteria": "I can estimate route time and distinguish a mathematical estimate from a promise or a safety judgment."
         },
         {
           "day": 3,
           "phase": "Apply",
-          "instruction": "Discuss how effort, environment, access and recovery change the best choice for outdoor walking and route planning.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
-          "evidence": "Three justified pathways and a brief risk assessment."
+          "studentTitle": "Check weather, visibility and backup options",
+          "concept": "Environmental conditions can turn an otherwise usable route into a poor choice. Consider heat, air quality, storms/lightning, rain-related surfaces and daylight visibility. Current advisories and real observations matter more than a fixed weekly schedule. A backup must preserve the lesson objective without requiring exposure.",
+          "instruction": "Environmental conditions can turn an otherwise usable route into a poor choice. Consider heat, air quality, storms/lightning, rain-related surfaces and daylight visibility. Current advisories and real observations matter more than a fixed weekly schedule. A backup must preserve the lesson objective without requiring exposure.",
+          "practice": "Compare a hypothetical afternoon heat alert with a comfortable indoor space; demonstrate decisions to move indoors, reschedule, rest or complete a written route analysis.",
+          "workedExample": "Route A might be reasonable in mild conditions but should not be used during severe weather. Route C or a route-analysis assignment keeps learning possible.",
+          "independentTask": "Write a go/modify/no-go table with environmental triggers, a trusted advisory to check before an actual outing, and an indoor/observation alternative.",
+          "evidence": "Relevant conditions, clear change/stop decisions and an accessible fallback route.",
+          "successCriteria": "I can revise a route plan when weather or visibility changes rather than treating completion as mandatory."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
-          "practice": "Analyze a learner's fictional plan for outdoor walking and route planning: it lacks a stop cue and adaptation. Rewrite it to satisfy: Check route, weather, visibility and accessible alternatives.",
-          "evidence": "A revision justified by safety and observable learning evidence."
+          "studentTitle": "Evaluate flawed route decisions",
+          "concept": "Responsible planning combines map features, calculations and uncertainty. A route that 'saves eight minutes' is not better if a crossing is unsafe. Real conditions may differ from a fictional diagram; privacy and supervision remain central.",
+          "instruction": "Responsible planning combines map features, calculations and uncertainty. A route that 'saves eight minutes' is not better if a crossing is unsafe. Real conditions may differ from a fictional diagram; privacy and supervision remain central.",
+          "practice": "Analyze a fictional plan choosing Route B only because its estimated time is 16 minutes. Identify unsafe assumptions about crossings, weather, visibility and available support.",
+          "workedExample": "Revised: choose Route A if conditions and supervision permit, or C during unsafe weather. State the time assumptions and avoid requiring students to share real-time locations.",
+          "independentTask": "Rewrite the flawed route plan with a supported choice, two hazards, an estimated time, a return/stop rule and an access adaptation.",
+          "evidence": "Evidence-based correction with a defensible choice, time estimate, stop rule and accessibility rationale.",
+          "successCriteria": "I can reject an unsafe shortcut and justify a route revision using competing evidence."
         },
         {
           "day": 5,
           "phase": "Defend",
-          "instruction": "Synthesize what safe and inclusive learning about outdoor walking and route planning requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
-          "evidence": "Portfolio entry with claim, observation, adaptation and next step."
+          "studentTitle": "Defend an independent route plan",
+          "concept": "A strong route defense states the goal, compares alternatives, uses correct distance/time reasoning, checks conditions and explains an alternate pathway. Evidence of learning is the quality of the planning decisions, not how far or fast a learner travels.",
+          "instruction": "A strong route defense states the goal, compares alternatives, uses correct distance/time reasoning, checks conditions and explains an alternate pathway. Evidence of learning is the quality of the planning decisions, not how far or fast a learner travels.",
+          "practice": "Model a short presentation: select A for sidewalk and crossings in suitable weather; reject B despite a shorter estimate; choose C during unsafe conditions; note time and accessibility assumptions.",
+          "workedExample": "Prepare a final annotated route-selection sheet, time calculations and a brief defense suitable for written, oral or map-based presentation.",
+          "independentTask": "The plan compares all three routes, cites crossings and surface, shows 24- and 10-minute illustrative estimates, and names weather and accessibility triggers for changing plans.",
+          "evidence": "Submit a comparison, at least two unit-checked estimates, hazard/access notes, a backup and a defended decision.",
+          "successCriteria": "I can defend a realistic, privacy-preserving route choice while acknowledging uncertainty and changing conditions."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about outdoor walking and route planning.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-      "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for outdoor walking and route planning.",
+      "misconception": "The shortest route or fastest walking time is necessarily the safest and best outdoor activity choice.",
+      "correction": "Distance and travel time are only two planning factors; safe crossings, surfaces, visibility, environmental conditions, accessible pathways and alternatives can outweigh a shorter route.",
+      "teacherNotes": "Use fictional routes and do not solicit home addresses, GPS traces or real-time location. Any optional outdoor practice requires appropriate school supervision and current local safety checks. Allow indoor, seated, written and map-analysis alternatives. Assess route reasoning and calculation rather than speed or distance walked.",
       "rubric": [
         {
           "criterion": "Knowledge and rationale",
@@ -7124,7 +7149,12 @@
           "rationale": "Reflection should focus on evidence, decisions, and future planning."
         }
       ],
-      "focusSkill": "Check route, weather, visibility and accessible alternatives."
+      "focusSkill": "Check route, weather, visibility and accessible alternatives.",
+      "conceptExplanation": "Route planning is a decision process: identify the purpose and available time; compare continuous safe paths, crossings, traffic separation, surface condition, visibility, weather and accessibility; estimate distance and travel time with units; and prepare an alternate route and stop/return plan. A map estimate is not a guarantee of real travel time. Shortest distance does not necessarily mean safest or most accessible. Public advisories and on-the-ground conditions must be checked before real activity.",
+      "biomechanicsAndTechnique": "For actual optional walking, choose comfortable pacing, stable footing, suitable footwear or mobility support, and gradual start and finish. Use marked crossings and established paths; avoid poorly visible or isolated routes, severe heat, lightning, flooding and unsafe air quality. Do not attempt outdoor activity to complete an assignment when conditions are hazardous. Indoor movement, seated activity, fictional route analysis and annotated accessibility maps can assess the same planning objective. Learners should follow school supervision and local travel rules.",
+      "workedExample": "Route A: 1.2 km, safe sidewalk and crossings; 24-minute estimate at 3 km/hour before delays. Route B: 0.8 km, missing sidewalk and crossing; the shorter trip does not offset substantial traffic hazards. Route C: 0.5 km indoor accessible loop, which may be preferable during a dangerous weather advisory. A strong plan notes that assumed speed and conditions can change, provides rest/return options and never requires sharing a student's real address.",
+      "applicationTask": "Create a fictional route comparison sheet for Routes A, B and C. Include at least two distance/time calculations, walking/crossing and surface risks, visibility and forecast checks, an accessibility analysis, one weather-triggered alternative, a pause/stop cue and a short defense of the safest feasible choice.",
+      "depthVersion": "grade9-week19-topic-specific-2026-10-19"
     },
     {
       "week": 20,
