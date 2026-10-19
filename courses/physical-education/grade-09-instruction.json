@@ -4527,10 +4527,10 @@
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for personal activity planning?",
           "options": [
             "The learner has mastered every related skill in every setting.",
-            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
-            "The learner should use the same activity and difficulty in all future sessions."
+            "The learner should use the same activity and difficulty in all future sessions.",
+            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "A learning record supports conclusions limited to the observed task; it does not prove universal mastery or a one-size-fits-all plan."
         },
         {
@@ -4586,71 +4586,71 @@
         {
           "prompt": "A learner has limited time and no equipment. What planning approach makes sense?",
           "options": [
-            "Select a short, accessible activity using available space and body-weight or everyday movement.",
             "Delay planning until special equipment is purchased.",
+            "Select a short, accessible activity using available space and body-weight or everyday movement.",
             "Choose the longest possible workout."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A plan can be built around real constraints instead of assuming equipment or unlimited time."
         },
         {
           "prompt": "Which is the clearest example of a measurable check-in?",
           "options": [
-            "At the end of the week, review which planned sessions were attempted and what changed.",
             "Decide whether the plan felt successful sometime later.",
+            "At the end of the week, review which planned sessions were attempted and what changed.",
             "Compare the plan with the fastest learner."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A dated review tied to a plan gives concrete evidence for revision."
         },
         {
           "prompt": "A plan includes a 45-minute session every day, but the learner has only 15 minutes available. What is the best revision?",
           "options": [
-            "Choose a feasible 15-minute or shorter option and keep the learning goal clear.",
             "Keep the original plan and mark every missed session as failure.",
+            "Choose a feasible 15-minute or shorter option and keep the learning goal clear.",
             "Skip warm-up and recovery to fit more work."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A realistic plan should match available time while retaining appropriate safety and purpose."
         },
         {
           "prompt": "What should come before selecting a daily activity?",
           "options": [
-            "Consider goal, current circumstances, space, access, and ways to stop or adapt.",
             "Choose the activity that looks hardest.",
+            "Consider goal, current circumstances, space, access, and ways to stop or adapt.",
             "Use a peer's pace as the only guide."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Planning begins with needs and constraints, not comparison."
         },
         {
           "prompt": "Which statement describes a process goal rather than an outcome goal?",
           "options": [
-            "I will record my chosen activity and one reflection after practice.",
+            "I will guarantee a particular health result.",
             "I will always outperform every classmate.",
-            "I will guarantee a particular health result."
+            "I will record my chosen activity and one reflection after practice."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A process goal focuses on an action within the learner's control."
         },
         {
           "prompt": "Why is it helpful to identify a barrier before a week begins?",
           "options": [
-            "The learner can plan a realistic alternative before the barrier occurs.",
             "It guarantees the week will go exactly as planned.",
+            "The learner can plan a realistic alternative before the barrier occurs.",
             "It proves the goal should be abandoned."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Anticipating a barrier helps the learner choose a workable adaptation."
         },
         {
           "prompt": "A learner's energy varies from day to day. Which plan is strongest?",
           "options": [
-            "Include a comfortable option, a lower-demand alternative, and a rest choice.",
+            "Treat rest as a missed goal.",
             "Require the same intensity regardless of how the learner feels.",
-            "Treat rest as a missed goal."
+            "Include a comfortable option, a lower-demand alternative, and a rest choice."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Flexible plans can respond to changing circumstances while supporting consistency."
         },
         {
@@ -4676,11 +4676,11 @@
         {
           "prompt": "A learner cannot access the planned outdoor route. What should they do?",
           "options": [
-            "Select an equivalent accessible alternative and record why it meets the goal.",
             "Force the route despite the barrier.",
+            "Select an equivalent accessible alternative and record why it meets the goal.",
             "Assume no other activity can count."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A different pathway can achieve the same learning objective."
         },
         {
@@ -4696,31 +4696,31 @@
         {
           "prompt": "Which is the best first step if a plan repeatedly does not fit the learner's schedule?",
           "options": [
-            "Review the constraints and revise the schedule or activity choice.",
+            "Hide the missed sessions.",
             "Increase the target to compensate.",
-            "Hide the missed sessions."
+            "Review the constraints and revise the schedule or activity choice."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Repeated barriers are evidence that the plan may need revision."
         },
         {
           "prompt": "How should a learner choose among two suitable activities?",
           "options": [
-            "Compare access, enjoyment, available time, safety, and the intended goal.",
+            "Choose by expected calorie burn only.",
             "Choose the one that impresses others most.",
-            "Choose by expected calorie burn only."
+            "Compare access, enjoyment, available time, safety, and the intended goal."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A good choice uses relevant personal and environmental factors without body-focused pressure."
         },
         {
           "prompt": "What does a check-in point do?",
           "options": [
-            "Creates a planned moment to examine evidence and decide whether to continue or adapt.",
+            "Prevents any change to the plan.",
             "Guarantees a particular result.",
-            "Prevents any change to the plan."
+            "Creates a planned moment to examine evidence and decide whether to continue or adapt."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A check-in is an opportunity for informed revision, not a guarantee."
         },
         {
@@ -4736,11 +4736,11 @@
         {
           "prompt": "A weather change makes the planned activity unsuitable. What is the best response?",
           "options": [
-            "Use the planned alternative or choose a safe replacement and note the change.",
             "Complete the original plan regardless of conditions.",
+            "Use the planned alternative or choose a safe replacement and note the change.",
             "Treat the adaptation as dishonesty."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Plans should adapt when environmental conditions change."
         },
         {
@@ -4854,41 +4854,41 @@
         {
           "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"explain why rest is part of training\"?",
           "options": [
-            "A general statement that the learner looked more athletic.",
+            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
             "A single score with no description of the task or conditions.",
-            "A dated before-and-after observation tied to a clear criterion, with limits noted."
+            "A general statement that the learner looked more athletic."
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
         },
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about rest and recovery.\" Which response best corrects the reasoning?",
           "options": [
-            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
+            "Keep the claim without checking the observation, adaptation, or learning objective.",
             "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
-            "Keep the claim without checking the observation, adaptation, or learning objective."
+            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The correction prioritizes learning evidence and avoids unsupported comparisons or unsafe generalizations."
         },
         {
           "prompt": "The current plan for rest and recovery is missing a clear success criterion. What revision is most useful?",
           "options": [
             "Add more activity without deciding what will be observed.",
-            "Name one observable criterion for \"explain why rest is part of training\", then record what happened and what remains uncertain.",
-            "Judge success by effort alone and omit the learning evidence."
+            "Judge success by effort alone and omit the learning evidence.",
+            "Name one observable criterion for \"explain why rest is part of training\", then record what happened and what remains uncertain."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "A clear criterion connects the activity to observable evidence and acknowledges uncertainty."
         },
         {
           "prompt": "A learner cannot use the original movement format for rest and recovery. Which adaptation is strongest?",
           "options": [
             "Remove the learner from the task without an alternative.",
-            "Require private medical details before offering an adjustment.",
-            "Choose a safe accessible demonstration, observation, or explanation that still measures \"explain why rest is part of training\"."
+            "Choose a safe accessible demonstration, observation, or explanation that still measures \"explain why rest is part of training\".",
+            "Require private medical details before offering an adjustment."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
         },
         {
@@ -4924,31 +4924,31 @@
         {
           "prompt": "Which statement about recovery is most accurate?",
           "options": [
-            "Needs differ; sleep, rest, food, hydration, and stress can all matter.",
             "One recovery routine works identically for every person.",
+            "Needs differ; sleep, rest, food, hydration, and stress can all matter.",
             "More soreness always means better progress."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Recovery depends on multiple factors and individual circumstances."
         },
         {
           "prompt": "What is a useful sign that a planned break is working as a learning strategy?",
           "options": [
-            "The learner can reflect, reset, and choose an appropriate next step.",
+            "The rest break is used to rank people.",
             "The learner feels pressured to hide fatigue.",
-            "The rest break is used to rank people."
+            "The learner can reflect, reset, and choose an appropriate next step."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Rest can support thoughtful self-monitoring and a safe return to activity."
         },
         {
           "prompt": "A learner missed a session because they needed rest. What is the most constructive response?",
           "options": [
-            "Review the plan and choose a reasonable next step without punishment.",
+            "Describe the learner as lazy.",
             "Double the next session automatically.",
-            "Describe the learner as lazy."
+            "Review the plan and choose a reasonable next step without punishment."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A missed session can be considered within a flexible plan, not treated as a character flaw."
         },
         {
@@ -4964,61 +4964,61 @@
         {
           "prompt": "Why should learners avoid using soreness as the only measure of training quality?",
           "options": [
-            "Soreness does not reliably prove that learning or improvement occurred.",
+            "Soreness makes reflection unnecessary.",
             "Soreness always confirms a safe exercise.",
-            "Soreness makes reflection unnecessary."
+            "Soreness does not reliably prove that learning or improvement occurred."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Pain or soreness alone is not a valid measure of educational or training success."
         },
         {
           "prompt": "A learner experiences pain during a movement. What should happen first?",
           "options": [
-            "Stop that movement and seek appropriate guidance before deciding how to proceed.",
+            "Ignore it if a peer does not feel pain.",
             "Continue until the timer ends.",
-            "Ignore it if a peer does not feel pain."
+            "Stop that movement and seek appropriate guidance before deciding how to proceed."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Pain signals a need to stop and assess the activity rather than push through."
         },
         {
           "prompt": "Which observation best supports a recovery reflection?",
           "options": [
-            "A record of the activity, perceived effort, rest, and factors that affected readiness.",
+            "Only the total number of repetitions.",
             "A guess about another learner's condition.",
-            "Only the total number of repetitions."
+            "A record of the activity, perceived effort, rest, and factors that affected readiness."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Contextual notes give more useful information than one isolated number."
         },
         {
           "prompt": "Why does sleep matter in a discussion of recovery?",
           "options": [
-            "It is one factor that supports general restoration and daily functioning.",
             "It guarantees an exact athletic result.",
+            "It is one factor that supports general restoration and daily functioning.",
             "It replaces all other recovery considerations."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Sleep is important but should be discussed as one factor among several."
         },
         {
           "prompt": "A student has limited control over their sleep schedule. What is an appropriate learning task?",
           "options": [
-            "Analyze a fictional schedule and identify realistic recovery choices without blaming the student.",
             "Demand private family details.",
+            "Analyze a fictional schedule and identify realistic recovery choices without blaming the student.",
             "Grade the student's sleep duration."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Fictional cases permit analysis without collecting private information or judging circumstances."
         },
         {
           "prompt": "What is a reasonable way to return after a rest day?",
           "options": [
-            "Begin with an appropriate, comfortable plan and adjust based on how things feel.",
+            "Assume the learner has lost all progress.",
             "Automatically double the workload.",
-            "Assume the learner has lost all progress."
+            "Begin with an appropriate, comfortable plan and adjust based on how things feel."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Return should be gradual and responsive rather than punitive."
         },
         {
@@ -5054,41 +5054,41 @@
         {
           "prompt": "How can a teacher assess understanding of recovery without demanding exercise?",
           "options": [
-            "Ask the learner to analyze a case and justify a rest or adaptation choice.",
             "Require a strenuous fitness test.",
+            "Ask the learner to analyze a case and justify a rest or adaptation choice.",
             "Grade the learner's appearance."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "The objective is reasoning about recovery; a case analysis can demonstrate that knowledge."
         },
         {
           "prompt": "Which factor is relevant when planning a recovery day?",
           "options": [
-            "The previous activity, current comfort, schedule, and available alternatives.",
             "A classmate's personal best alone.",
+            "The previous activity, current comfort, schedule, and available alternatives.",
             "A rule that rest is never allowed."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Recovery decisions require context rather than a universal formula."
         },
         {
           "prompt": "Why should learners be cautious about online recovery claims?",
           "options": [
-            "Claims can overstate evidence or ignore individual needs; check credible sources and limits.",
             "Every advertised product has proven benefits.",
+            "Claims can overstate evidence or ignore individual needs; check credible sources and limits.",
             "A testimonial is always stronger than evidence."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Critical appraisal protects learners from unsupported or overly broad claims."
         },
         {
           "prompt": "Which is the best reason to record an adaptation?",
           "options": [
-            "It shows how the learning goal was pursued under the circumstances.",
             "It proves the learner should be marked down.",
+            "It shows how the learning goal was pursued under the circumstances.",
             "It makes the adaptation permanent."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Recording a change helps explain the decision and inform future planning."
         },
         {
@@ -5182,11 +5182,11 @@
         {
           "prompt": "A learner cannot use the original movement format for movement and mental wellbeing. Which adaptation is strongest?",
           "options": [
-            "Choose a safe accessible demonstration, observation, or explanation that still measures \"separate possible mood benefits from guarantees or medical treatment claims\".",
+            "Require private medical details before offering an adjustment.",
             "Remove the learner from the task without an alternative.",
-            "Require private medical details before offering an adjustment."
+            "Choose a safe accessible demonstration, observation, or explanation that still measures \"separate possible mood benefits from guarantees or medical treatment claims\"."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
         },
         {
@@ -5203,30 +5203,30 @@
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for movement and mental wellbeing?",
           "options": [
             "The learner has mastered every related skill in every setting.",
-            "The learner should use the same activity and difficulty in all future sessions.",
-            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step."
+            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
+            "The learner should use the same activity and difficulty in all future sessions."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "A learning record supports conclusions limited to the observed task; it does not prove universal mastery or a one-size-fits-all plan."
         },
         {
           "prompt": "During movement and mental wellbeing, which plan best applies the week's focus skill: separate possible mood benefits from guarantees or medical treatment claims?",
           "options": [
-            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence.",
+            "Record only whether the task was finished, without explaining the decision.",
             "Choose the hardest version regardless of conditions.",
-            "Record only whether the task was finished, without explaining the decision."
+            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The learner applies separate possible mood benefits from guarantees or medical treatment claims by making a feasible, justified choice and pointing to evidence relevant to movement and mental wellbeing."
         },
         {
           "prompt": "A learner has limited time and no specialized equipment while preparing for movement and mental wellbeing. Which next step best supports this week's learning?",
           "options": [
             "Copy a classmate's decision without checking the case.",
-            "Identify the decision, compare realistic options, and explain the choice using the learning target.",
-            "Use completion time as the only measure of learning."
+            "Use completion time as the only measure of learning.",
+            "Identify the decision, compare realistic options, and explain the choice using the learning target."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "A contextual decision responds to the actual constraints and makes its reasoning visible; speed or copying is insufficient."
         },
         {
@@ -5252,11 +5252,11 @@
         {
           "prompt": "Which is a valid way to reflect on mood without making a diagnosis?",
           "options": [
-            "Describe how the learner felt before and after an activity, if they wish, using their own words.",
+            "Require disclosure of treatment history.",
             "Diagnose a condition from one mood rating.",
-            "Require disclosure of treatment history."
+            "Describe how the learner felt before and after an activity, if they wish, using their own words."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Personal reflection may be descriptive but is not a diagnostic instrument."
         },
         {
@@ -5292,11 +5292,11 @@
         {
           "prompt": "Which evidence is appropriate for a class project on movement and wellbeing?",
           "options": [
-            "A careful summary of sources plus optional, non-identifying reflection.",
+            "A claim that one person's experience proves the rule for everyone.",
             "Classmates' private diagnoses.",
-            "A claim that one person's experience proves the rule for everyone."
+            "A careful summary of sources plus optional, non-identifying reflection."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Appropriate evidence respects privacy and distinguishes individual experience from general claims."
         },
         {
@@ -5322,11 +5322,11 @@
         {
           "prompt": "How can a learner support a classmate without acting as a therapist?",
           "options": [
-            "Offer respectful listening and encourage reaching a trusted adult or professional support when needed.",
             "Give a diagnosis and treatment plan.",
+            "Offer respectful listening and encourage reaching a trusted adult or professional support when needed.",
             "Tell them not to seek help."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Supportive peers should not be expected to diagnose or provide professional treatment."
         },
         {
@@ -5342,81 +5342,81 @@
         {
           "prompt": "A student chooses walking rather than a competitive game. What does that indicate?",
           "options": [
-            "A valid movement choice that may fit their preferences or circumstances.",
+            "That their wellbeing is better than others'.",
             "A lack of interest in learning by definition.",
-            "That their wellbeing is better than others'."
+            "A valid movement choice that may fit their preferences or circumstances."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Different movement options can be valid without being compared or ranked."
         },
         {
           "prompt": "Which is a balanced conclusion from one student's reflection?",
           "options": [
-            "This activity helped me feel calmer today, though experiences may differ.",
             "This activity always treats stress for everyone.",
+            "This activity helped me feel calmer today, though experiences may differ.",
             "Anyone who feels different is doing it wrong."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Personal observations are useful but should not be generalized to all people."
         },
         {
           "prompt": "Why should teachers avoid requiring students to share mood ratings publicly?",
           "options": [
-            "Wellbeing information can be personal, and participation should preserve privacy.",
             "Public disclosure makes every reflection accurate.",
+            "Wellbeing information can be personal, and participation should preserve privacy.",
             "A score can diagnose a condition."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Privacy matters when reflecting on mental wellbeing."
         },
         {
           "prompt": "Which action is suitable when stress is high and a planned workout feels overwhelming?",
           "options": [
-            "Choose a gentle alternative or pause and seek appropriate support if needed.",
+            "Tell oneself that help is not allowed.",
             "Force the full workout to prove resilience.",
-            "Tell oneself that help is not allowed."
+            "Choose a gentle alternative or pause and seek appropriate support if needed."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Flexible choices can protect safety and keep movement from becoming coercive."
         },
         {
           "prompt": "What is the best role of a movement journal in this topic?",
           "options": [
-            "Record optional observations and reflect on choices, without diagnosing or guaranteeing results.",
             "Determine a medical condition from one entry.",
+            "Record optional observations and reflect on choices, without diagnosing or guaranteeing results.",
             "Rank students by happiness."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Journals can support reflection but cannot replace professional assessment."
         },
         {
           "prompt": "Which statement respects people whose mental health needs require additional support?",
           "options": [
-            "Movement can be one part of wellbeing, while support and treatment needs differ.",
             "Movement should replace all professional care.",
+            "Movement can be one part of wellbeing, while support and treatment needs differ.",
             "Needing support means a person did not try hard enough."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Movement should not be presented as a substitute for individualized care."
         },
         {
           "prompt": "A learner does not want to discuss personal feelings. How can they still meet the learning goal?",
           "options": [
-            "Analyze a fictional scenario or discuss general evidence.",
             "Be required to explain private experiences.",
+            "Analyze a fictional scenario or discuss general evidence.",
             "Receive no access to the lesson."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Fictional analysis demonstrates the concept without requiring personal disclosure."
         },
         {
           "prompt": "Which outcome is a defensible learning target for this week?",
           "options": [
-            "Evaluate a claim about movement and wellbeing and explain its limits.",
+            "Diagnose a peer.",
             "Guarantee a change in mood.",
-            "Diagnose a peer."
+            "Evaluate a claim about movement and wellbeing and explain its limits."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Critical understanding is an assessable target; required emotional outcomes and diagnoses are not."
         },
         {
@@ -5511,30 +5511,30 @@
           "prompt": "During progress review and adaptation, which plan best applies the week's focus skill: use a practice log to identify one change?",
           "options": [
             "Choose the hardest version regardless of conditions.",
-            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence.",
-            "Record only whether the task was finished, without explaining the decision."
+            "Record only whether the task was finished, without explaining the decision.",
+            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "The learner applies use a practice log to identify one change by making a feasible, justified choice and pointing to evidence relevant to progress review and adaptation."
         },
         {
           "prompt": "A learner has limited time and no specialized equipment while preparing for progress review and adaptation. Which next step best supports this week's learning?",
           "options": [
-            "Copy a classmate's decision without checking the case.",
+            "Identify the decision, compare realistic options, and explain the choice using the learning target.",
             "Use completion time as the only measure of learning.",
-            "Identify the decision, compare realistic options, and explain the choice using the learning target."
+            "Copy a classmate's decision without checking the case."
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "A contextual decision responds to the actual constraints and makes its reasoning visible; speed or copying is insufficient."
         },
         {
           "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"use a practice log to identify one change\"?",
           "options": [
-            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
             "A general statement that the learner looked more athletic.",
+            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
             "A single score with no description of the task or conditions."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
         },
         {
@@ -5550,21 +5550,21 @@
         {
           "prompt": "The current plan for progress review and adaptation is missing a clear success criterion. What revision is most useful?",
           "options": [
-            "Add more activity without deciding what will be observed.",
+            "Name one observable criterion for \"use a practice log to identify one change\", then record what happened and what remains uncertain.",
             "Judge success by effort alone and omit the learning evidence.",
-            "Name one observable criterion for \"use a practice log to identify one change\", then record what happened and what remains uncertain."
+            "Add more activity without deciding what will be observed."
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "A clear criterion connects the activity to observable evidence and acknowledges uncertainty."
         },
         {
           "prompt": "What makes a practice log useful for reviewing progress?",
           "options": [
-            "It records a goal, what was attempted, relevant context, and a reflection.",
+            "It ranks every learner by performance.",
             "It records only an ideal result.",
-            "It ranks every learner by performance."
+            "It records a goal, what was attempted, relevant context, and a reflection."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A log is more useful when it connects actions and context to a learning goal."
         },
         {
@@ -5590,21 +5590,21 @@
         {
           "prompt": "A student wants to compare two weeks of activity. What should be checked first?",
           "options": [
-            "Whether the entries record comparable measures and relevant circumstances.",
+            "Which week makes the student look best.",
             "Whether one week has a larger number in every column.",
-            "Which week makes the student look best."
+            "Whether the entries record comparable measures and relevant circumstances."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Comparisons require consistent measures and consideration of context."
         },
         {
           "prompt": "Why should progress review include adaptations?",
           "options": [
-            "They explain how the learner accessed the goal and what might work next.",
+            "They must always be removed from the next plan.",
             "They invalidate the log.",
-            "They must always be removed from the next plan."
+            "They explain how the learner accessed the goal and what might work next."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Adaptations are meaningful evidence of decision-making and access."
         },
         {
@@ -5620,31 +5620,31 @@
         {
           "prompt": "Which change is most justified after reviewing a log?",
           "options": [
-            "Adjust one part of the plan based on a documented barrier or response.",
             "Change every variable without a reason.",
+            "Adjust one part of the plan based on a documented barrier or response.",
             "Ignore the recorded evidence."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A focused revision makes it easier to evaluate whether the change helped."
         },
         {
           "prompt": "What should a learner do when records conflict with memory?",
           "options": [
-            "Check the dates, definitions, and original entries before drawing conclusions.",
+            "Choose whichever number sounds best.",
             "Delete the inconvenient record immediately.",
-            "Choose whichever number sounds best."
+            "Check the dates, definitions, and original entries before drawing conclusions."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Verification and context help resolve inconsistencies."
         },
         {
           "prompt": "Which is an example of data privacy in activity logging?",
           "options": [
-            "Record only information needed for the assignment and keep personal health details private.",
             "Publish classmates' activity logs without permission.",
+            "Record only information needed for the assignment and keep personal health details private.",
             "Collect diagnoses whether needed or not."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Data minimization and privacy are important even for classroom records."
         },
         {
@@ -5660,41 +5660,41 @@
         {
           "prompt": "How can a learner avoid overinterpreting a fitness measurement?",
           "options": [
-            "Consider measurement limits, conditions, and multiple sources of evidence.",
+            "Compare it only with the highest class result.",
             "Treat every number as a complete explanation.",
-            "Compare it only with the highest class result."
+            "Consider measurement limits, conditions, and multiple sources of evidence."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Measurements have limits and should be interpreted in context."
         },
         {
           "prompt": "Which reflection is most evidence-based?",
           "options": [
-            "The shorter route helped me follow the plan on a busy day, so I will keep it as an option.",
             "I am a failure because the numbers changed.",
+            "The shorter route helped me follow the plan on a busy day, so I will keep it as an option.",
             "The number proves the cause of every feeling."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "The best reflection links a specific observation to a practical next step without overclaiming."
         },
         {
           "prompt": "What does adapting a plan demonstrate?",
           "options": [
-            "The learner used evidence and circumstances to make a reasoned choice.",
             "The learner ignored the goal automatically.",
+            "The learner used evidence and circumstances to make a reasoned choice.",
             "The learner must be less capable."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Adaptation is part of thoughtful planning and can preserve the goal."
         },
         {
           "prompt": "A device reports a very high activity value that seems inconsistent with the session. What should the learner do?",
           "options": [
-            "Check the device, the measurement definition, and the context before relying on it.",
+            "Use it to diagnose a condition.",
             "Treat the value as unquestionably true.",
-            "Use it to diagnose a condition."
+            "Check the device, the measurement definition, and the context before relying on it."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Devices can misread or measure different things; data require scrutiny."
         },
         {
@@ -5710,31 +5710,31 @@
         {
           "prompt": "A learner's activity changed because of weather. How should that be recorded?",
           "options": [
-            "Note the weather barrier, the activity chosen instead, and why it was reasonable.",
             "Hide the change to keep the plan looking perfect.",
+            "Note the weather barrier, the activity chosen instead, and why it was reasonable.",
             "Compare the learner's weather tolerance with peers."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Context explains why the record differs from the initial plan."
         },
         {
           "prompt": "Which statement is appropriate about progress over time?",
           "options": [
-            "Patterns may emerge across several entries, but context and missing information matter.",
             "One entry guarantees a lasting trend.",
+            "Patterns may emerge across several entries, but context and missing information matter.",
             "Progress must always be a straight line."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Progress can vary and trends need multiple observations and context."
         },
         {
           "prompt": "How should a teacher review an adapted practical record?",
           "options": [
-            "Evaluate the stated learning criteria and the evidence from the chosen pathway.",
+            "Ask the learner to disclose a diagnosis to the class.",
             "Automatically award a lower score for adaptation.",
-            "Ask the learner to disclose a diagnosis to the class."
+            "Evaluate the stated learning criteria and the evidence from the chosen pathway."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The assessment should measure the intended learning target and respect privacy."
         },
         {
