@@ -6,6 +6,6 @@ for(const file of ["unit10.js","watershed-lab.js","climate-lab.js","cycle-lab.js
  const s=fs.readFileSync(new URL(file,root),"utf8");new vm.Script(s,{filename:file});
  if(file==="unit10.js"&&(!scoped(s,"10")||!s.includes("scienceConflict")))throw Error("Unit controller missing safeguards");
  if(file==="watershed-lab.js"&&(!s.includes("KhaemenesScienceU10Scope.active()")||!s.includes("calculate(false)")))throw Error("Watershed data scope/recovery missing");
- if(scored.includes(file)&&(!/(?:bestScore|\\bbest\\b)/.test(s)||!/(?:activitySnapshot|\\bsnap\\b)/.test(s)||!scoped(s,"10")))throw Error(file+" score safeguards missing");
+ if(scored.includes(file)&&(!/(?:bestScore|\bbest\b)/.test(s)||!/(?:activitySnapshot|\bsnap\b)/.test(s)||!scoped(s,"10")))throw Error(file+" score safeguards missing");
 }
 console.log("PASS Unit 10 syntax, scope and mastery checks.");
