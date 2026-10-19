@@ -29,3 +29,10 @@ Videos remain optional until transcript and caption accessibility are actually v
 ## Migration rule
 
 Copy first, map second, verify, and only then consider retiring legacy copies. Never delete a legacy record simply because a shared copy exists.
+
+## Preferred instructor expansion (October 2026)
+
+- `instructor-index.json` records candidate channels and the video IDs requiring publisher verification before attribution.
+- `../../MATH_VIDEO_SOURCE_QUEUE_2026-10-19.md` is the cross-course acquisition backlog, starting with Algebra I.
+- Follow the established Pre-Algebra privacy-enhanced lesson player pattern; use course-level placement maps and leave unverified new placements disabled.
+- Privacy-enhanced embeds cannot guarantee advertisements never appear; verify each actual playback environment.
