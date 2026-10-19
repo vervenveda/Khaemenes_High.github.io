@@ -37,11 +37,11 @@
       "id": "PE09-W01-Q003",
       "prompt": "A student feels dizzy during a movement session. What should happen first?",
       "options": [
-        "Stop and seek appropriate help",
         "Complete the planned count",
-        "Ignore the symptom if peers continue"
+        "Ignore the symptom if peers continue",
+        "Stop and seek appropriate help"
       ],
-      "correct": 0,
+      "correct": 2,
       "rationale": "Dizziness is a reason to stop, not a performance challenge.",
       "topic": "symptoms",
       "difficulty": "understand",
@@ -65,11 +65,11 @@
       "id": "PE09-W01-Q005",
       "prompt": "What is the best reason to check a walking route beforehand?",
       "options": [
-        "To identify surfaces, access barriers, crossings and rest options",
         "To guarantee a personal record",
+        "To identify surfaces, access barriers, crossings and rest options",
         "To avoid all planning alternatives"
       ],
-      "correct": 0,
+      "correct": 1,
       "rationale": "Route checks support informed decisions about accessibility and safety.",
       "topic": "environment",
       "difficulty": "understand",
@@ -80,10 +80,10 @@
       "prompt": "Why is a stable support important during a beginner balance activity?",
       "options": [
         "It makes every activity risk-free",
-        "It provides a way to maintain or regain control",
-        "It proves the activity is too easy"
+        "It proves the activity is too easy",
+        "It provides a way to maintain or regain control"
       ],
-      "correct": 1,
+      "correct": 2,
       "rationale": "Appropriate support helps learners practice control.",
       "topic": "adaptation",
       "difficulty": "understand",
@@ -122,10 +122,10 @@
       "prompt": "A student notices a loose rug in the movement area. What is the best next step?",
       "options": [
         "Ignore it if the session is short",
-        "Remove the hazard or select another clear area",
-        "Jump over it during the warm-up"
+        "Jump over it during the warm-up",
+        "Remove the hazard or select another clear area"
       ],
-      "correct": 1,
+      "correct": 2,
       "rationale": "Hazard reduction comes before attempting the activity.",
       "topic": "environment",
       "difficulty": "understand",
@@ -135,11 +135,11 @@
       "id": "PE09-W01-Q010",
       "prompt": "Which plan includes a useful stop cue?",
       "options": [
-        "Continue regardless of symptoms",
         "Stop or adapt when pain, dizziness, or unusual symptoms occur",
+        "Continue regardless of symptoms",
         "Stop only after meeting a score target"
       ],
-      "correct": 1,
+      "correct": 0,
       "rationale": "Clear stop cues help prevent pressure to push through warning signs.",
       "topic": "symptoms",
       "difficulty": "apply",
@@ -149,11 +149,11 @@
       "id": "PE09-W01-Q011",
       "prompt": "What is the purpose of a movement adaptation?",
       "options": [
-        "To maintain the learning goal with a feasible option",
         "To make every student perform identically",
+        "To maintain the learning goal with a feasible option",
         "To eliminate the need for explanation"
       ],
-      "correct": 0,
+      "correct": 1,
       "rationale": "An adaptation changes the pathway, not necessarily the learning objective.",
       "topic": "adaptation",
       "difficulty": "understand",
@@ -163,11 +163,11 @@
       "id": "PE09-W01-Q012",
       "prompt": "A learner uses seated movements instead of standing movements. How should this be evaluated?",
       "options": [
-        "By whether the relevant concept and decision are demonstrated",
         "As an automatic failure",
-        "Only by counting standing repetitions"
+        "Only by counting standing repetitions",
+        "By whether the relevant concept and decision are demonstrated"
       ],
-      "correct": 0,
+      "correct": 2,
       "rationale": "Assessment should align with the objective and accessible evidence.",
       "topic": "access",
       "difficulty": "understand",
@@ -177,11 +177,11 @@
       "id": "PE09-W01-Q013",
       "prompt": "Which statement is a scientifically cautious safety claim?",
       "options": [
-        "Warm-ups guarantee no injury",
         "Preparation can support readiness but cannot eliminate all risk",
+        "Warm-ups guarantee no injury",
         "Stretching always prevents every injury"
       ],
-      "correct": 1,
+      "correct": 0,
       "rationale": "Avoid guarantees; multiple factors influence risk.",
       "topic": "claims",
       "difficulty": "apply",
@@ -191,11 +191,11 @@
       "id": "PE09-W01-Q014",
       "prompt": "What makes a movement plan sustainable?",
       "options": [
-        "A realistic starting point, options to adapt, and review",
         "Maximum intensity every day",
+        "A realistic starting point, options to adapt, and review",
         "A fixed target regardless of circumstances"
       ],
-      "correct": 0,
+      "correct": 1,
       "rationale": "A workable plan accounts for capacity, conditions and recovery.",
       "topic": "planning",
       "difficulty": "understand",
@@ -205,11 +205,11 @@
       "id": "PE09-W01-Q015",
       "prompt": "A fictional student plans a walk but finds the route inaccessible. Which response best preserves learning?",
       "options": [
-        "Select an accessible route or analyze a route-planning alternative",
         "Pretend the barrier does not exist",
-        "Record failure without evaluating options"
+        "Record failure without evaluating options",
+        "Select an accessible route or analyze a route-planning alternative"
       ],
-      "correct": 0,
+      "correct": 2,
       "rationale": "Accessible alternatives can satisfy the route-planning objective.",
       "topic": "access",
       "difficulty": "understand",
@@ -233,11 +233,11 @@
       "id": "PE09-W01-Q017",
       "prompt": "What does a clear activity goal describe?",
       "options": [
-        "What the learner aims to understand or practice",
         "How to outperform classmates",
+        "What the learner aims to understand or practice",
         "A compulsory body measurement"
       ],
-      "correct": 0,
+      "correct": 1,
       "rationale": "Goals should connect to learning rather than body comparisons.",
       "topic": "planning",
       "difficulty": "understand",
@@ -248,10 +248,10 @@
       "prompt": "A student is unsure whether a chair is stable enough for sit-to-stand. What is the best decision?",
       "options": [
         "Use it anyway",
-        "Choose verified stable support or a written analysis instead",
-        "Move faster to reduce contact time"
+        "Move faster to reduce contact time",
+        "Choose verified stable support or a written analysis instead"
       ],
-      "correct": 1,
+      "correct": 2,
       "rationale": "Stable equipment is a prerequisite for supported movement.",
       "topic": "environment",
       "difficulty": "understand",
@@ -289,11 +289,11 @@
       "id": "PE09-W01-Q021",
       "prompt": "A student chooses a shorter comfortable session rather than a longer unsuitable one. What matters most academically?",
       "options": [
-        "The rationale and alignment with a feasible goal",
         "The longer session always wins",
-        "The number of spectators"
+        "The number of spectators",
+        "The rationale and alignment with a feasible goal"
       ],
-      "correct": 0,
+      "correct": 2,
       "rationale": "A reasoned decision demonstrates judgment.",
       "topic": "decision",
       "difficulty": "understand",
@@ -317,11 +317,11 @@
       "id": "PE09-W01-Q023",
       "prompt": "Why should a student have a rest or pause option?",
       "options": [
-        "To adjust when effort or conditions change",
         "To avoid ever learning technique",
+        "To adjust when effort or conditions change",
         "Because all activities must be maximal"
       ],
-      "correct": 0,
+      "correct": 1,
       "rationale": "Pause options support sustainable, responsive activity.",
       "topic": "planning",
       "difficulty": "understand",
@@ -331,11 +331,11 @@
       "id": "PE09-W01-Q024",
       "prompt": "What distinguishes a hazard from a personal preference?",
       "options": [
-        "A hazard can introduce avoidable risk; preference expresses a choice",
         "Hazards only exist outdoors",
-        "Preferences are always unsafe"
+        "Preferences are always unsafe",
+        "A hazard can introduce avoidable risk; preference expresses a choice"
       ],
-      "correct": 0,
+      "correct": 2,
       "rationale": "Identify risk separately from individual preference.",
       "topic": "decision",
       "difficulty": "understand",
@@ -359,11 +359,11 @@
       "id": "PE09-W01-Q026",
       "prompt": "What should an independent learning journal contain?",
       "options": [
-        "A decision, relevant evidence, and a reason",
         "Only an exercise count",
+        "A decision, relevant evidence, and a reason",
         "Only a pass/fail label"
       ],
-      "correct": 0,
+      "correct": 1,
       "rationale": "Evidence and reasoning make progress meaningful.",
       "topic": "evidence",
       "difficulty": "understand",
@@ -373,11 +373,11 @@
       "id": "PE09-W01-Q027",
       "prompt": "What is an example of evaluating rather than merely following a plan?",
       "options": [
-        "Rechecking conditions and revising a route",
         "Repeating a routine regardless of hazards",
-        "Ignoring discomfort"
+        "Ignoring discomfort",
+        "Rechecking conditions and revising a route"
       ],
-      "correct": 0,
+      "correct": 2,
       "rationale": "Evaluation means using new information to revise choices.",
       "topic": "decision",
       "difficulty": "understand",
@@ -387,11 +387,11 @@
       "id": "PE09-W01-Q028",
       "prompt": "Which statement respects student privacy?",
       "options": [
-        "A student must reveal a diagnosis to receive an alternative",
         "A student may show learning through an agreed accessible method without public medical disclosure",
+        "A student must reveal a diagnosis to receive an alternative",
         "All health information belongs on a public progress board"
       ],
-      "correct": 1,
+      "correct": 0,
       "rationale": "Learning accommodations should respect privacy.",
       "topic": "access",
       "difficulty": "apply",
@@ -401,11 +401,11 @@
       "id": "PE09-W01-Q029",
       "prompt": "What does an accessible movement task prioritize?",
       "options": [
-        "A meaningful learning objective with feasible ways to participate",
         "One mandatory physical technique for everyone",
+        "A meaningful learning objective with feasible ways to participate",
         "A requirement to purchase equipment"
       ],
-      "correct": 0,
+      "correct": 1,
       "rationale": "Accessibility is designed into the activity rather than treated as an exception.",
       "topic": "access",
       "difficulty": "understand",
@@ -415,11 +415,11 @@
       "id": "PE09-W01-Q030",
       "prompt": "Which scenario shows responsible self-care?",
       "options": [
-        "A learner notices unusual symptoms, stops, and seeks suitable assistance",
         "A learner conceals dizziness to maintain a streak",
-        "A learner chooses intensity based on another student's score"
+        "A learner chooses intensity based on another student's score",
+        "A learner notices unusual symptoms, stops, and seeks suitable assistance"
       ],
-      "correct": 0,
+      "correct": 2,
       "rationale": "Responsible self-care includes recognizing limits and seeking help when appropriate.",
       "topic": "symptoms",
       "difficulty": "understand",
