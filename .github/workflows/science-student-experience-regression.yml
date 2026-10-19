@@ -1,0 +1,46 @@
+name: Science Student Experience Regression
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/**'
+      - 'courses/shared/monte-carlo-assessment-v1.js'
+      - 'courses/shared/learner-scope-v1.js'
+      - 'courses/shared/course-entry-contract.js'
+      - 'tools/validate-public-entry-routes.mjs'
+      - '.github/workflows/science-student-experience-regression.yml'
+  pull_request:
+    paths:
+      - 'courses/science/**'
+      - 'courses/shared/monte-carlo-assessment-v1.js'
+      - 'courses/shared/learner-scope-v1.js'
+      - 'courses/shared/course-entry-contract.js'
+      - 'tools/validate-public-entry-routes.mjs'
+      - '.github/workflows/science-student-experience-regression.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  student-experience:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check shared assessment and regression modules
+        run: |
+          node --check courses/shared/monte-carlo-assessment-v1.js
+          node --check courses/shared/learner-scope-v1.js
+          node --check courses/shared/course-entry-contract.js
+          node --check courses/science/tools/test-upper-science-student-regression.mjs
+      - name: Test Grades 10–12 assessment flow and local dashboard routes
+        run: node courses/science/tools/test-upper-science-student-regression.mjs
+      - name: Test Grade 9 learner-scope recovery and scored activities
+        run: node courses/science/integrated-science-9/tools/test-unit04-learner-scope.mjs
+      - name: Test Grade 9 cross-tab stale-save protection
+        run: node courses/science/integrated-science-9/tools/test-concurrent-save-behavior.mjs
+      - name: Validate Grade 9 course runtime
+        run: node courses/science/integrated-science-9/tools/validate-course-runtime.mjs
+      - name: Validate established public entry routes
+        run: node tools/validate-public-entry-routes.mjs
