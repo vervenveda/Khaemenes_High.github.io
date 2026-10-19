@@ -228,3 +228,23 @@ Repairs committed:
 
 This is source-level accessibility hardening, not a complete WCAG audit or screen-reader certification. A keyboard-only and screen-reader pass is still required in real browsers and on narrow screens.
 
+### Step 3 latest verification — accessibility assertions green (2026-10-19)
+
+The three Grade 10–12 course dashboards now explicitly type their non-submit buttons and expose assessment results through a live status region:
+- `#testFeedback` has `role="status"`, `aria-live="polite"`, and `aria-atomic="true"`.
+- All dashboard buttons declare `type="button"` or `type="submit"` explicitly.
+- The shared regression suite asserts both requirements for Biology 10, Chemistry 11, and Physics & Engineering 12.
+
+The first CI run of these additional assertions failed because the validator regex was over-escaped and incorrectly identified explicitly typed buttons as untyped. The validator pattern has been corrected. The subsequent run on commit `ce3c227596ef78af5706482da5a73e1bbf0d8834` passed:
+- Science Student Experience Regression: success
+- Public Entry Route Validation: success
+- High School Record and Route Validation: success
+
+Workflow links:
+- https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/39296321875
+- https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/39296321738
+- https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/39296321602
+
+### Step 3 status
+Automated source/engine, learner-scope, stale-save, route, and assessment feedback semantics checks are green. Manual cross-browser, device-width, keyboard-only, and screen-reader operation still needs to be observed directly. Do not imply that CI provided those manual observations. The science course records and STOS activation state were not changed by this accessibility patch.
+
