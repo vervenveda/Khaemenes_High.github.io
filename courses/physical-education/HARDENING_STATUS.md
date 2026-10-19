@@ -227,3 +227,29 @@ Source-level validation confirms the revised data remains structurally consisten
 ### Next bounded pass
 
 Continue to Week 12, “Teamwork and fair play,” checking that the instruction teaches conflict resolution, role clarity, inclusive collaboration and fair-play decisions before the weekly knowledge check measures them. Preserve the same lesson/assessment separation, practical-evidence rubric, and 80% knowledge mastery gate.
+
+## Grade 9 Week 12 curriculum-validity and learner-journey pass — 2026-10-19
+
+**Scope:** Week 12, “Teamwork and fair play,” in `grade-09-instruction.json`, plus its checks in `assessment-regression.html`. The separate reading portal remains independent. The existing question-bank schema, local assessment engine, and 80% mastery policy were not changed.
+
+### Findings and repairs
+
+- The five-day instructional sequence already covers neutral descriptions of disputes, a rule-based conflict protocol, consent and boundaries, evaluating fairness, inclusive roles, and a team agreement. The 20-point practical/written rubric and 16/20 evidence threshold were retained.
+- Replaced the first five overly generic knowledge-check questions with scenario-based items directly assessing conflict resolution, consent and non-contact alternatives, de-escalation, observable team-agreement evidence, and respectful feedback.
+- Kept the five correct-answer indices in their prior positions, preserving the balanced 25-question distribution of 9 / 8 / 8 across A/B/C.
+- Added regression checks for instructional-depth fields, all five complete days, rubric totals and 80% pass points, 25 unique knowledge-check prompts and rationales, valid item structure, topic relevance of the opening five items, and answer-position distribution.
+- Safety and inclusion remain central: consent may be declined, learners are not asked to disclose private medical information, and meaningful alternatives retain the learning target.
+
+### Verification boundary
+
+Source-level validation after the content edit confirmed 25 questions and the expected 9/8/8 answer distribution. The regression checks were added to the browser test runner. They have **not** been executed in a browser in this pass, so a live-run pass is not claimed. The existing requirement for teacher review of formal standards alignment remains unchanged.
+
+### Commits
+
+- Week 12 assessment alignment repair: `8b71355ab49ca8420706492e2bde7a95218ccb5c`
+- Week 12 curriculum regression checks: `ce7cfe50786f2fb2b3b146f4cbff3b3cc5b44d8c`
+
+### Next bounded pass
+
+Run the assessment regression page in a browser after deployment, then continue the curriculum-validity audit with Week 13 while preserving the standalone reading portal and existing mastery/progress boundaries.
+
