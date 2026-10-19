@@ -1,5 +1,40 @@
 # High School Physical Education Hardening Status
 
+## Fresh forensic pass — Grade 9 Week 1 assessment journey — 2026-10-19
+
+**Scope:** Grade 9 PE student assessment path and its adjacent supplemental Week 1 practice resources. The separate reading resource was not merged into the class portal.
+
+### Bubbles identified and repaired
+
+1. **Daily check answer-position bias and low-value feedback.** The active five-day Grade 9 Week 1 bank stored all 25 daily questions with the correct response at option A and repeated one generic rationale. Correct responses are now balanced within each five-question day (2/2/1 across A/B/C) and within the 20-question weekly check (7/7/6). Options were reordered while retaining the correct answer, and each of the 45 daily/weekly items now has its own rationale grounded in the prompt and correct response.
+2. **Separate 30-question Week 1 randomized practice bank.** The bank previously used correct answer positions 21/9/0 across A/B/C. It now uses 10/10/10, with all 30 prompts and 30 rationales retained. The practice bank remains distinct from the daily evidence record and the main Grade 9 course path.
+3. **Lost in-progress daily attempts and no failed-weekly retry.** The standalone daily assessment page now stores randomized question order, option order, selected answers and the reflection draft in a separate local session key. Reloading can resume the unfinished attempt. A weekly result below 80% exposes a retry path; each submitted weekly attempt is retained in `weeklyAttempts`, and the latest result remains the current result. Daily submissions stay read-only after submission.
+4. **Discoverability.** The PE landing page now names and links the supplemental Grade 9 Week 1 Daily Checks separately from the randomized practice studio, avoiding a hidden/unreachable utility and making its supplemental nature explicit.
+5. **Regression coverage.** The browser regression runner now checks the real daily and weekly banks for counts, completeness, unique prompts, varied rationales and balanced answer positions. It also checks the separate 30-question bank and verifies that draft persistence and retry wiring remain present in the deployed daily assessment source.
+
+### Checks performed after the patch
+
+- Updated daily assessment page inline JavaScript syntax: PASS.
+- Updated regression runner inline JavaScript syntax: PASS.
+- Daily assessment data: 5 daily sections × 5 questions, 20 weekly questions; 45 unique prompts across daily + weekly checks; 45 unique rationales.
+- Daily answer positions: each five-question day is 2/2/1 across A/B/C. Weekly answer positions are 7/7/6.
+- Randomized practice bank: 30 unique prompts, 30 unique rationales, answer positions balanced 10/10/10.
+- Source wiring for saved answers, saved reflection drafts, immutable daily submissions, retry button, retained weekly attempts and landing-page link: PASS.
+- Assessment-engine threshold, randomized alignment, attempt immutability and provisional review checks remain covered by the regression runner.
+
+### Validation boundary and remaining next bubble
+
+This is a source/logic audit; **a live browser/device run has not been completed here**. After deployment, run the regression page and manually test a refresh mid-day, a 75% weekly attempt, a retry at 80%, export, keyboard use and a narrow tablet viewport. The next content-quality bubble is independent teacher review of a sample from each Grade 9 week: balanced answer positions and structurally valid items do not by themselves prove distractor quality, reading-level fit or instructional validity.
+
+**Commits for this pass (main):**
+- Grade 9 daily + weekly bank rationale/position repair: `0a6a3774cdc0dea7805a672cc8e8187263786f80`
+- Separate 30-question bank answer-position repair: `3441a78653f842470f6079609bc2e3d6b3e6931d`
+- Daily session persistence and weekly retry: `7ab3377893473bd5af30096ab65696d0c1e50532`, `675ac5e74c14c0de94c451029a0e595d5ea97ea0`
+- Regression runner real-bank checks: `8b79fc1b8c895fba9b1f2ef6be4838446b42e36b`
+- Supplemental practice link: `1616b9b8a3933c9a552c0e6e00eb2bb88c2f4b3b`
+
+---
+
 ## Learner-path regression pass — 2026-10-19
 
 **Portal repair commit:** `2a1b5e4229240745d9ef817ff8f7bbcbfb1479b5`
