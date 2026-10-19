@@ -130,6 +130,17 @@ byId("run").addEventListener("click",async()=>{
   assert(feedbackWeek.days?.length===5&&feedbackWeek.days.every(d=>["instruction","practice","evidence","workedExample","independentTask","successCriteria"].every(k=>typeof d[k]==="string"&&d[k].trim().length>20)),"Week 9 daily sequence is missing instruction/practice/example/independent task/success criteria");
   assert(feedbackWeek.rubric?.length===5&&feedbackWeek.rubric.reduce((sum,r)=>sum+r.points,0)===20&&feedbackWeek.assessment?.passPoints===16,"Week 9 rubric or 80% practical-evidence threshold is inconsistent");
   checks.push({name:"Week 9 movement-feedback curriculum: daily instructional depth, examples, criteria, and rubric validate",ok:true});
+  const environmentWeek=weeks.find(w=>w.week===11);
+  assert(environmentWeek&&["essentialQuestion","scenario","model","focusSkill","conceptExplanation","biomechanicsAndTechnique","workedExample","applicationTask"].every(k=>typeof environmentWeek[k]==="string"&&environmentWeek[k].trim().length>40),"Week 11 environmental-safety unit is missing required instructional-depth fields");
+  assert(environmentWeek.days?.length===5&&environmentWeek.days.every(d=>["instruction","practice","evidence","workedExample","independentTask","successCriteria"].every(k=>typeof d[k]==="string"&&d[k].trim().length>20)),"Week 11 daily sequence is missing instruction/practice/example/independent task/success criteria");
+  assert(environmentWeek.rubric?.length===5&&environmentWeek.rubric.reduce((sum,r)=>sum+r.points,0)===20&&environmentWeek.assessment?.passPoints===16,"Week 11 rubric or 80% practical-evidence threshold is inconsistent");
+  const environmentItems=environmentWeek.checks||[];
+  assert(environmentItems.length===25,"Week 11 should retain 25 knowledge-check questions");
+  assert(environmentItems.slice(0,5).every(q=>/heat|water|dizz|shade|route|accessib|environment|outdoor|water source/i.test(q.prompt)),"Week 11 opening questions must directly assess hydration and environmental-safety decisions");
+  assert(new Set(environmentItems.map(q=>q.prompt.trim().toLowerCase())).size===25&&new Set(environmentItems.map(q=>q.rationale.trim())).size===25,"Week 11 contains duplicate prompts or rationales");
+  const environmentDistribution=environmentItems.reduce((counts,q)=>(counts[q.correct]++,counts),[0,0,0]);
+  assert(environmentDistribution.join("/") === "9/8/8","Week 11 answer positions changed unexpectedly: "+environmentDistribution.join("/"));
+  checks.push({name:"Week 11 hydration/environmental safety: five-day instructional depth, safety scenarios, access planning, and 80% rubric validate",ok:true});
   checks.push({name:"Full Grade 9 PE instruction bank: 36 weeks, 925 unique prompts/rationales and balanced correct-answer positions",ok:true});
  }catch(e){checks.push({name:"Full Grade 9 PE instruction bank validates",ok:false,error:e.message})}
 
