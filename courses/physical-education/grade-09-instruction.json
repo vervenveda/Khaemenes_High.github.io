@@ -11455,49 +11455,74 @@
     {
       "week": 32,
       "title": "Independent practice",
-      "essentialQuestion": "How can we make a safe, evidence-based decision about independent practice?",
-      "scenario": "A Grade 9 learner is planning a safe, accessible activity involving independent practice. They have limited time, variable energy, and no specialized equipment.",
-      "model": "Worked example (independent): A learner wants to practice independent practice. First identify the specific skill: Explain how to choose and self-monitor a feasible session. Next compare two feasible options, select one with a clear safety cue, and document the reason. A written, observed, seated or adapted demonstration can meet the same reasoning target.",
+      "essentialQuestion": "How can a learner plan, self-monitor, document and revise independent practice that is safe, feasible and aligned with a clearly stated movement-skill goal?",
+      "scenario": "A fictional Grade 9 learner wants to independently practice an eight-count rhythm and controlled wall-press technique. They have two short time windows, variable energy and limited equipment. Their first plan says 'practice hard every day until perfect' but contains no cue, recovery, evidence or stop rule. Redesign it so practice remains voluntary, measurable, accessible and realistic.",
+      "model": "Worked independent practice plan: Goal—explain or perform an eight-count rhythm with a steady pace. Preparation—check space and comfortable support. Optional attempt—work through one manageable sequence, pause and note whether counts 1–8 were clear; repeat only if comfortable. Alternative—tap the rhythm seated or annotate a fictional demonstration. Self-check—identify one accurate element and one improvement. Stop if uncomfortable or unwell; record a decision and review next time. No forced duration, intensity or personal health disclosure.",
       "days": [
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce independent practice. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving independent practice. They have limited time, variable energy, and no specialized equipment.",
-          "practice": "Write a three-part safety plan for independent practice: purpose, feasible option, and stop/modification cue.",
-          "evidence": "A reasoned three-part plan with a specific observable cue."
+          "studentTitle": "Define a feasible independent goal",
+          "concept": "Independent work begins with a controllable process goal, not a promise about appearance or pushing harder. A good plan states the skill, available setting, evidence and when to review.",
+          "instruction": "Independent work begins with a controllable process goal, not a promise about appearance or pushing harder. A good plan states the skill, available setting, evidence and when to review.",
+          "practice": "Compare an unsafe daily repetition quota with a goal to explain or show an eight-count sequence while checking timing and comfort.",
+          "workedExample": "'Practice until perfect' provides no observable success measure; 'identify correct counts and one improvement' can be evaluated.",
+          "independentTask": "Write one skill-based goal, two success cues and a realistic optional practice window.",
+          "evidence": "Specific process goal, relevant cues and feasible access choice.",
+          "successCriteria": "I can choose an independent learning goal I can evaluate safely."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to independent practice and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
-          "practice": "Practice the week's decision with this exact prompt: Explain how to choose and self-monitor a feasible session. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
-          "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
+          "studentTitle": "Prepare a self-directed practice sequence",
+          "concept": "Preparation includes checking space and support, deciding on a gentle familiar task, preparing an accessible option and planning recovery. A written plan may be more appropriate than movement in unsafe circumstances.",
+          "instruction": "Preparation includes checking space and support, deciding on a gentle familiar task, preparing an accessible option and planning recovery. A written plan may be more appropriate than movement in unsafe circumstances.",
+          "practice": "Model a brief optional step-touch or seated rhythm sequence: scan surroundings, move comfortably, count the pattern, pause and reflect.",
+          "workedExample": "A learner finds the floor cluttered and chooses a seated tap or annotated video description instead; the planning objective is still met.",
+          "independentTask": "Construct a five-step practice card covering setup, movement/analysis, cues, stop rule and a seated or written alternative.",
+          "evidence": "Complete safe setup, realistic sequence, explicit stop decision and accessible equivalent.",
+          "successCriteria": "I can organize independent practice without relying on high demands or specialized gear."
         },
         {
           "day": 3,
           "phase": "Apply",
-          "instruction": "Discuss how effort, environment, access and recovery change the best choice for independent practice.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
-          "evidence": "Three justified pathways and a brief risk assessment."
+          "studentTitle": "Monitor technique and collect evidence",
+          "concept": "Self-monitoring means gathering task-related observations, not diagnosing health. Useful evidence includes stable support, controlled timing, successful identification of a cue or an accurately explained correction. Keep records brief and private.",
+          "instruction": "Self-monitoring means gathering task-related observations, not diagnosing health. Useful evidence includes stable support, controlled timing, successful identification of a cue or an accurately explained correction. Keep records brief and private.",
+          "practice": "Fill a two-entry fictional log, noting observed rhythm counts, environmental context, pauses and corrections; distinguish observation from inference.",
+          "workedExample": "'I identified counts 1–8 correctly after slowing down' supports rhythm understanding; 'my cardiovascular fitness improved' does not follow.",
+          "independentTask": "Write two short practice or analysis entries with what happened, context, two cues and one limitation.",
+          "evidence": "Specific relevant observations, clear limits and privacy-safe documentation.",
+          "successCriteria": "I can collect useful evidence while avoiding unsupported fitness conclusions."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
-          "practice": "Analyze a learner's fictional plan for independent practice: it lacks a stop cue and adaptation. Rewrite it to satisfy: Explain how to choose and self-monitor a feasible session.",
-          "evidence": "A revision justified by safety and observable learning evidence."
+          "studentTitle": "Revise practice from feedback and recovery",
+          "concept": "Practice adjustments should respond to the evidence and conditions. A learner may keep difficulty stable, shorten an activity, change modality, ask a teacher or choose rest rather than automatically increasing demand.",
+          "instruction": "Practice adjustments should respond to the evidence and conditions. A learner may keep difficulty stable, shorten an activity, change modality, ask a teacher or choose rest rather than automatically increasing demand.",
+          "practice": "Compare fictional attempts with rushed movement and a later controlled attempt. Determine whether the evidence supports repeating, adapting or pausing.",
+          "workedExample": "A controlled seated sequence with accurate counts meets the timing objective more clearly than an extended attempt with repeated errors.",
+          "independentTask": "Rewrite an inflexible 'add more every day' plan with one specific correction, a recovery option and a review question.",
+          "evidence": "Reasoned adjustment based on recorded cues and safety rather than intensity.",
+          "successCriteria": "I can use feedback and recovery needs to improve my practice choices."
         },
         {
           "day": 5,
           "phase": "Defend",
-          "instruction": "Synthesize what safe and inclusive learning about independent practice requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
-          "evidence": "Portfolio entry with claim, observation, adaptation and next step."
+          "studentTitle": "Defend an independent learning plan",
+          "concept": "An effective final portfolio links objective, feasible actions, observations, accessible paths, stop choices and a justified next step. Written evidence of skill understanding and direct motor performance must be labeled accurately.",
+          "instruction": "An effective final portfolio links objective, feasible actions, observations, accessible paths, stop choices and a justified next step. Written evidence of skill understanding and direct motor performance must be labeled accurately.",
+          "practice": "Present the modeled eight-count plan, two observations and revision, explaining what was actually demonstrated versus only analyzed.",
+          "workedExample": "The student can defend why a shorter controlled attempt or a diagrammed alternative better serves the learning target than forced repetitions.",
+          "independentTask": "Submit a two-opportunity portfolio with goal, preparation, technique criteria, evidence, feedback, accessibility choice and revision.",
+          "evidence": "Complete aligned portfolio, honest evidence labeling, safety, self-reflection and justified future plan.",
+          "successCriteria": "I can manage and explain an independent practice cycle based on evidence and choice."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about independent practice.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-      "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for independent practice.",
+      "misconception": "Independent practice means training alone without limits and increasing repetitions or intensity each time.",
+      "correction": "Responsible independent practice uses an attainable skill goal, safe setup, relevant observations, appropriate support and recovery, plus justified adjustments rather than mandatory escalation.",
+      "teacherNotes": "Independent does not mean unsupervised hazardous exercise. Permit seated, diagrammed, narrated and fictional-record options. Never require body metrics, private health disclosure, home exercise proof or maximum repetitions. Score reasoning and appropriate evidence; document directly observed movement separately.",
       "rubric": [
         {
           "criterion": "Knowledge and rationale",
@@ -11778,7 +11803,12 @@
           "rationale": "The reflection checks planning, monitoring, adaptation, and evidence."
         }
       ],
-      "focusSkill": "Explain how to choose and self-monitor a feasible session."
+      "focusSkill": "Explain how to choose and self-monitor a feasible session.",
+      "conceptExplanation": "Independent practice is planned skill learning without continuous teacher prompting, not unsupervised high-risk exercise. An effective cycle states one skill target, selects a suitable activity or analysis, checks conditions, practices with relevant cues, records observable evidence, seeks feedback when appropriate and decides whether to repeat, adjust or rest. Self-monitoring cannot diagnose fitness or medical conditions. Brief, controlled attempts and thoughtful observations can demonstrate stronger learning than many unexamined repetitions. A plan should specify when adult supervision or professional assistance is required.",
+      "biomechanicsAndTechnique": "Choose familiar low-risk tasks such as a comfortable step-touch rhythm, supported wall press or seated arm pattern; inspect stable surfaces and clear space, move gradually and use controllable range. Do not use heavy loads, extreme balance challenges, risky equipment or unsupervised tasks requiring spotting. Stop for pain, dizziness, unusual symptoms or instability and follow appropriate adult/school assistance procedures. Students can use diagrams, narrated analysis or fictional records when physical performance is unsuitable.",
+      "workedExample": "Vague plan: 'Every day do 50 wall presses faster than yesterday.' Revised: 'When a safe practice opportunity is available, complete or analyze a few comfortable wall presses using stable footing and smooth motion. Record whether the two cues were met, identify one correction and choose rest or a seated palm press if appropriate.' This shows independently managed skill learning without implying that more repetitions equal mastery.",
+      "applicationTask": "Create a two-opportunity independent practice portfolio with a specific process goal, safe preparation checklist, movement or analysis option, at least two technique cues, two brief observation entries (fictional or optional personal), reflection on evidence, a stop/rest rule, and an adjusted next practice plan. Label planning evidence separately from any directly observed motor demonstration.",
+      "depthVersion": "grade9-week32-topic-specific-2026-10-19"
     },
     {
       "week": 33,
