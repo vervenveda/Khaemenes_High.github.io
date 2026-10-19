@@ -253,3 +253,35 @@ Source-level validation after the content edit confirmed 25 questions and the ex
 
 Run the assessment regression page in a browser after deployment, then continue the curriculum-validity audit with Week 13 while preserving the standalone reading portal and existing mastery/progress boundaries.
 
+
+## Curriculum-validity and learner-journey pass — Grade 9 PE Week 14 — 2026-10-19
+
+**Scope:** Week 14, “Rest, Recovery, and Sustainable Training,” in `grade-09-instruction.json`. The Grade 9 class portal and separate reading portal remain separate.
+
+### Repair applied
+
+- Replaced Week 14's generic recovery lesson frame with an explicit essential question, realistic learner scenario, worked model, focus skill, concept explanation, planning/technique principles, applied example, and evidence-based application task.
+- Expanded all five daily lessons (Investigate → Demonstrate → Apply → Analyze → Defend) with topic-specific instruction, practice, evidence, worked examples, independent tasks, and success criteria.
+- Strengthened instruction on contextual recovery decisions, simple activity logs, perceived effort limits, observation versus inference, accessible alternative pathways, and the difference between soreness and evidence of learning or improvement.
+- Added clear safety guidance: do not force a prewritten plan when the learner feels unusually fatigued; stop for pain or concerning symptoms and seek appropriate guidance. Avoid diagnosis, body comparisons, shame around rest, and unnecessary private health disclosures.
+- Replaced the first five generic evidence-framing questions with Week 14-aligned recovery decisions while preserving the 25-question bank, the stored answer-position distribution (9/8/8), the 20-point rubric, and the 16/20 (80%) teacher-reviewed evidence threshold.
+- Added Week 14-specific checks to the browser regression runner. The 36-week course bank and all other weeks' question records were preserved.
+
+### Validation completed
+
+- Instruction JSON parsed before commit.
+- Week 14 has five daily records; each includes instruction, practice, evidence, worked example, independent task, and success criteria.
+- Week 14 retains 25 questions, unique prompts and rationales, three distinct choices per item, in-range correct indices, and 9/8/8 correct-answer position distribution.
+- Week 14 retains five rubric criteria totaling 20 points and the 16-point passing threshold.
+- Regression runner assertions now cover instructional-depth fields, five-day sequence, question-bank structure/alignment, rubric, and answer distribution.
+- Separate reader architecture was not changed.
+
+### Validation boundary
+
+This is a source/data and structural validation pass. The updated browser regression runner has **not yet been executed in a live browser session here**. After deployment, run `assessment-regression.html` and manually check Week 14 display/navigation, weekly knowledge-check retry, reload/resume, export/import, keyboard access, and a narrow tablet viewport. Stored local evidence is not tamper-proof, and teacher review remains distinct from an automatically calculated score.
+
+### Commits
+
+- Week 14 instructional-depth and question-alignment repair: `10ec9f04bc3a9d212f9881336e2b98189366233c`
+- Week 14 regression coverage: `aa0c52a4d1cd9b1c222069a2a0f4867172da4d96`
+
