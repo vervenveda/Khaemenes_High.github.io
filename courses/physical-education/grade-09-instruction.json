@@ -6443,49 +6443,74 @@
     {
       "week": 18,
       "title": "Rhythm and dance",
-      "essentialQuestion": "How can we make a safe, evidence-based decision about rhythm and dance?",
-      "scenario": "A Grade 9 learner is planning a safe, accessible activity involving rhythm and dance. They have limited time, variable energy, and no specialized equipment.",
-      "model": "Worked example (rhythm): A learner wants to practice rhythm and dance. First identify the specific skill: Adapt tempo or movement size without losing the learning objective. Next compare two feasible options, select one with a clear safety cue, and document the reason. A written, observed, seated or adapted demonstration can meet the same reasoning target.",
+      "essentialQuestion": "How can we recognize a steady beat, create and adapt an eight-count movement phrase, and explain rhythmic choices while respecting different cultural traditions and individual abilities?",
+      "scenario": "Two fictional learners design an eight-count dance phrase for a shared classroom demonstration. Sam prefers step-touch movements; Lee uses seated arm gestures. Their music has a steady beat, but Sam rushes counts 5–8. A third student suggests imitating a cultural dance seen online without learning its origin. How can the group improve timing, preserve equal access, and represent cultural traditions respectfully?",
+      "model": "Model an eight-count phrase with two blocks of four: counts 1–4 alternating gentle steps or seated reaches, counts 5–8 four controlled side-to-side arm gestures. Count evenly aloud (1,2,3,4,5,6,7,8), then repeat at a slower comfortable tempo without deleting counts. Both standing and seated phrases preserve timing, sequencing, and coordination. Discuss the source and context of any named traditional dance rather than claiming to recreate it from a single clip.",
       "days": [
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce rhythm and dance. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving rhythm and dance. They have limited time, variable energy, and no specialized equipment.",
-          "practice": "Write a three-part safety plan for rhythm and dance: purpose, feasible option, and stop/modification cue.",
-          "evidence": "A reasoned three-part plan with a specific observable cue."
+          "studentTitle": "Beat, rhythm and tempo",
+          "concept": "A beat is a steady recurring pulse; tempo is its speed; rhythm organizes patterns over the beat. An eight-count sequence names eight equal count positions. Distinguish the count pattern from how quickly or widely the body moves.",
+          "instruction": "A beat is a steady recurring pulse; tempo is its speed; rhythm organizes patterns over the beat. An eight-count sequence names eight equal count positions. Distinguish the count pattern from how quickly or widely the body moves.",
+          "practice": "Mark eight evenly spaced beats using spoken numbers, taps or a written count strip. Compare a slow count with a faster count without changing the number of beats.",
+          "workedExample": "An eight-count phrase contains eight beats at either tempo; rushing the final four movements changes the relationship between moves and the beat.",
+          "independentTask": "Write two count strips labeled 1–8, explain beat versus tempo, and identify where Sam rushed counts 5–8.",
+          "evidence": "Correct eight-count representation, accurate terms and a specific timing observation.",
+          "successCriteria": "I can identify a steady beat, explain tempo and recognize timing errors."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to rhythm and dance and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
-          "practice": "Practice the week's decision with this exact prompt: Adapt tempo or movement size without losing the learning objective. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
-          "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
+          "studentTitle": "Build and demonstrate a movement phrase",
+          "concept": "A movement phrase maps particular actions to selected counts. In a two-part phrase, counts 1–4 may use step-touch or seated taps and counts 5–8 may use relaxed reaches; transitions should be planned. A learner can describe or annotate each count instead of physically performing it.",
+          "instruction": "A movement phrase maps particular actions to selected counts. In a two-part phrase, counts 1–4 may use step-touch or seated taps and counts 5–8 may use relaxed reaches; transitions should be planned. A learner can describe or annotate each count instead of physically performing it.",
+          "practice": "Model 1–4 as alternating comfortable steps or seated foot taps and 5–8 as four controlled arm gestures. Count aloud and show where each movement starts and ends.",
+          "workedExample": "For counts 5–8, the learner uses four gentle reaches, one per beat. An observer can verify all eight counts without judging appearance.",
+          "independentTask": "Create a count-by-count movement table naming the action on each count; show a seated or narrated equivalent and one safety cue.",
+          "evidence": "Eight specified counts, an understandable transition, accessible equivalent and safe movement description.",
+          "successCriteria": "I can construct and communicate a complete eight-count phrase."
         },
         {
           "day": 3,
           "phase": "Apply",
-          "instruction": "Discuss how effort, environment, access and recovery change the best choice for rhythm and dance.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
-          "evidence": "Three justified pathways and a brief risk assessment."
+          "studentTitle": "Adapt tempo and movement without losing meaning",
+          "concept": "Adaptation may change speed, reach size, posture or mode, but the learning objective remains recognizing and sequencing eight counts. A slower tempo or seated movement can demonstrate the same rhythmic understanding. Practice should remain comfortable and optional.",
+          "instruction": "Adaptation may change speed, reach size, posture or mode, but the learning objective remains recognizing and sequencing eight counts. A slower tempo or seated movement can demonstrate the same rhythmic understanding. Practice should remain comfortable and optional.",
+          "practice": "Compare a standard step-touch sequence with a smaller seated reach sequence at the same count rate; then slow both while maintaining eight counts.",
+          "workedExample": "Sam slows the sequence to count evenly; Lee remains seated and uses gestures. Both preserve 1–8 even though the movement patterns differ.",
+          "independentTask": "Produce two versions of an original phrase and annotate what changes, what stays constant, and why the adjustment supports safety or access.",
+          "evidence": "Two documented sequences, unchanged eight-count goal, explicit adaptation and a feasible stop/pause cue.",
+          "successCriteria": "I can modify tempo or movement size while preserving rhythmic sequence accuracy."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
-          "practice": "Analyze a learner's fictional plan for rhythm and dance: it lacks a stop cue and adaptation. Rewrite it to satisfy: Adapt tempo or movement size without losing the learning objective.",
-          "evidence": "A revision justified by safety and observable learning evidence."
+          "studentTitle": "Observe timing and cultural context",
+          "concept": "Feedback should identify observable timing rather than personal labels. Cultural context requires knowing the source, meaning and setting of a dance form; a brief video alone is insufficient to represent a whole tradition. Learners may create original phrases without assigning them to any culture.",
+          "instruction": "Feedback should identify observable timing rather than personal labels. Cultural context requires knowing the source, meaning and setting of a dance form; a brief video alone is insufficient to represent a whole tradition. Learners may create original phrases without assigning them to any culture.",
+          "practice": "Analyze Sam's rushing of counts 5–8; separate observation from criticism. Review a hypothetical unlabeled internet clip and identify what information is needed before describing its cultural origin.",
+          "workedExample": "Better feedback: 'Counts 5–8 were completed during two beats; try a slower steady count.' Better cultural note: 'Origin and context not confirmed; do not label this as a traditional dance.'",
+          "independentTask": "Write a neutral timing-feedback card and four questions for evaluating a cultural source: who created it, what community or tradition, context, and permission/credit.",
+          "evidence": "Specific feedback and respectful source questions without invented cultural claims.",
+          "successCriteria": "I can critique rhythmic timing and discuss dance traditions without stereotyping or unsupported attribution."
         },
         {
           "day": 5,
           "phase": "Defend",
-          "instruction": "Synthesize what safe and inclusive learning about rhythm and dance requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
-          "evidence": "Portfolio entry with claim, observation, adaptation and next step."
+          "studentTitle": "Defend and revise an original sequence",
+          "concept": "A strong final demonstration explains beat, tempo, count sequence, safe choice, inclusive adaptation and one revision supported by evidence. Confidence or athletic performance is not a grading criterion. Written and annotated alternatives can show the same understanding.",
+          "instruction": "A strong final demonstration explains beat, tempo, count sequence, safe choice, inclusive adaptation and one revision supported by evidence. Confidence or athletic performance is not a grading criterion. Written and annotated alternatives can show the same understanding.",
+          "practice": "Teacher models a concise defense: 'My phrase has eight evenly spaced counts; I slowed counts 5–8 after observation and designed a seated equivalent.'",
+          "workedExample": "Combine the phrase, adapted version, observed timing error and corrected practice plan into a short portfolio entry.",
+          "independentTask": "The revised phrase keeps counts 1–8; the accompanying explanation identifies a steady count, one timing fix, a safe adaptation and any cultural sources appropriately.",
+          "evidence": "Submit a count chart, original/adapted phrase, evidence-based feedback, brief defense and optional source citation.",
+          "successCriteria": "Complete eight-count sequence, correct terminology, justified adaptation, observable revision and respectful cultural framing."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about rhythm and dance.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-      "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for rhythm and dance.",
+      "misconception": "Only fast or physically complex dance movements demonstrate rhythm, and any popular video is sufficient evidence of a cultural dance tradition.",
+      "correction": "Accurate timing and sequencing can be shown through seated, standing, spoken or annotated work. Dance traditions should be described with sourced cultural context, not guesses or imitation presented as authenticity.",
+      "teacherNotes": "Allow counting without recorded music and seated, spoken, annotated or observed alternatives. Check clear space and movement comfort; avoid forced touch or personal performance comparisons. Introduce named dance traditions only with credible context and attribution. Grade counts, reasoning, adaptation and respectful interpretation.",
       "rubric": [
         {
           "criterion": "Knowledge and rationale",
@@ -6766,7 +6791,12 @@
           "rationale": "The outcome focuses on observable sequencing and rhythm rather than preferences or labels."
         }
       ],
-      "focusSkill": "Adapt tempo or movement size without losing the learning objective."
+      "focusSkill": "Adapt tempo or movement size without losing the learning objective.",
+      "conceptExplanation": "A beat is a recurring pulse; tempo describes how quickly beats occur; rhythm organizes sounds and movements in patterns. An eight-count phrase gives a repeatable structure, and coordination means aligning movement changes with selected counts, not performing at a particular speed or difficulty. Learners can use quiet counting, clapping, tapping, gestures or spoken annotation without music. Dance has diverse social and cultural meanings; when examining a tradition, use accurately identified sources and avoid stereotypes or uncredited imitation.",
+      "biomechanicsAndTechnique": "Prepare a clear and stable space. Stand, sit or observe by choice. Use small controlled step-touch motions, seated reaches or comfortable arm patterns; avoid forced twisting, deep bends, impact or fast turns. Keep shoulders and joints within a comfortable range and use stable support if needed. Reduce tempo, movement size or complexity without losing the chosen count structure; pause for pain, dizziness or distress. Assess beat identification, accurate sequencing, adaptation, explanation and respect—not athleticism or appearance.",
+      "workedExample": "First attempt: Sam uses counts 1–4 correctly but fits counts 5–8 into two beats. Teacher models eight evenly spaced spoken numbers and a gentle gesture on each count. Revised attempt: four slow steps followed by four arm reaches, with one movement change per count; Lee shows the same count pattern with seated alternating reaches. Both demonstrate the rhythmic objective.",
+      "applicationTask": "Create an original eight-count phrase and an equivalent accessible alternative. Submit a count-by-count diagram or performance description, identify beat and tempo, explain one corrective cue, demonstrate or analyze a revised attempt, and provide a short source-aware cultural-context note if a named tradition is discussed.",
+      "depthVersion": "grade9-week18-topic-specific-2026-10-19"
     },
     {
       "week": 19,
