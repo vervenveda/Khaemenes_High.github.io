@@ -403,6 +403,30 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Simple interest formula; fees and product comparisons require lesson content"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U05-L03",
+      "unit": 5,
+      "lesson": 3,
+      "lesson_file": "units/unit-05/lessons/lesson-03-finding-percent-rate-or-whole.html",
+      "asset_id": "MATH-WHAT-PERCENT-MATHANTICS-001",
+      "shared_file": "../assets/video-library/what-percent-is-it-mathantics.json",
+      "placement_status": "topic_matched_pending_embed_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Finding percent rate or whole via part-whole relationships"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U05-L05",
+      "unit": 5,
+      "lesson": 5,
+      "lesson_file": "units/unit-05/lessons/lesson-05-discounts-tax-tips-commission.html",
+      "asset_id": "MATH-TAX-DISCOUNT-KHAN-001",
+      "shared_file": "../assets/video-library/tax-discount-khan.json",
+      "placement_status": "topic_matched_pending_embed_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Tax, discounts and tip worked examples; commission remains written lesson content"
     }
   ]
 }
