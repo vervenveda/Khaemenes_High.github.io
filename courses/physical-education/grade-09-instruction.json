@@ -8949,49 +8949,74 @@
     {
       "week": 25,
       "title": "Fitness information literacy",
-      "essentialQuestion": "How can we make a safe, evidence-based decision about fitness information literacy?",
-      "scenario": "A Grade 9 learner is planning a safe, accessible activity involving fitness information literacy. They have limited time, variable energy, and no specialized equipment.",
-      "model": "Worked example (literacy): A learner wants to practice fitness information literacy. First identify the specific skill: Distinguish a marketing claim from supported exercise evidence. Next compare two feasible options, select one with a clear safety cue, and document the reason. A written, observed, seated or adapted demonstration can meet the same reasoning target.",
+      "essentialQuestion": "How can students distinguish fitness advertising from trustworthy evidence, examine uncertainty and conflicts of interest, and make safe activity decisions without believing exaggerated promises?",
+      "scenario": "A fictional social-media influencer sells a 'seven-day transformation' plan, cites before-and-after photographs and promises it is safe for everyone. Another source describes possible benefits, who was studied, risks and limitations. A Grade 9 learner has little equipment and wants to select an enjoyable activity. Which information deserves confidence, and what additional checks are needed?",
+      "model": "Worked claim check: 'This routine guarantees fitness in seven days' is a sweeping prediction without a defined outcome, suitable comparison or meaningful evidence. A photo may reflect lighting, selection or other factors. Ask who authored the claim, what evidence supports it, who was studied, whether the claim is selling something, and what uncertainty or safety limitations are acknowledged. Prefer clear public-health guidance to a guaranteed transformation promise.",
       "days": [
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce fitness information literacy. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving fitness information literacy. They have limited time, variable energy, and no specialized equipment.",
-          "practice": "Write a three-part safety plan for fitness information literacy: purpose, feasible option, and stop/modification cue.",
-          "evidence": "A reasoned three-part plan with a specific observable cue."
+          "studentTitle": "Identify claims, ads and testimonials",
+          "concept": "An advertisement sells or persuades; a testimonial reports one experience; a research-based explanation states the question, method, evidence and limits. Words such as 'everyone,' 'guaranteed' and 'instant' deserve scrutiny rather than automatic belief.",
+          "instruction": "An advertisement sells or persuades; a testimonial reports one experience; a research-based explanation states the question, method, evidence and limits. Words such as 'everyone,' 'guaranteed' and 'instant' deserve scrutiny rather than automatic belief.",
+          "practice": "Sort five fictional statements into promotional claim, personal account or evidence-oriented explanation; highlight undefined outcomes.",
+          "workedExample": "'I liked this walk' describes one person; 'this walk cures everyone's stress' is an unsupported universal promise.",
+          "independentTask": "Annotate the influencer advertisement, identifying its intended audience, financial purpose and two unsupported phrases.",
+          "evidence": "Accurate source categories and two grounded reasons for skepticism.",
+          "successCriteria": "I can distinguish persuasion and personal experience from a carefully supported fitness claim."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to fitness information literacy and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
-          "practice": "Practice the week's decision with this exact prompt: Distinguish a marketing claim from supported exercise evidence. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
-          "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
+          "studentTitle": "Inspect source credibility",
+          "concept": "Credibility depends on relevant expertise, transparency, evidence, publication date, independence and acknowledgment of limitations. Institutional reputation helps but cannot replace inspection of actual methods and claims.",
+          "instruction": "Credibility depends on relevant expertise, transparency, evidence, publication date, independence and acknowledgment of limitations. Institutional reputation helps but cannot replace inspection of actual methods and claims.",
+          "practice": "Model a source-check card: author, qualifications, funding, date, evidence and corrections/limits; apply to a fictional public-health page and sponsored influencer post.",
+          "workedExample": "The sponsored post has a financial incentive but no described testing; a public-health resource offers context and may disclose uncertainty.",
+          "independentTask": "Complete comparison cards for two fictional sources and identify one missing piece of information for each.",
+          "evidence": "Six source-check fields and a reasoned credibility comparison without asserting infallibility.",
+          "successCriteria": "I can evaluate sources using authorship, evidence, timing and potential conflicts."
         },
         {
           "day": 3,
           "phase": "Apply",
-          "instruction": "Discuss how effort, environment, access and recovery change the best choice for fitness information literacy.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
-          "evidence": "Three justified pathways and a brief risk assessment."
+          "studentTitle": "Reason about evidence and causation",
+          "concept": "A photograph or before-after account cannot isolate exercise effects from other changes. Sample size, selection, outcomes, comparators and timeframes affect conclusions. Correlation is not proof of cause, and one study rarely guarantees a result for every individual.",
+          "instruction": "A photograph or before-after account cannot isolate exercise effects from other changes. Sample size, selection, outcomes, comparators and timeframes affect conclusions. Correlation is not proof of cause, and one study rarely guarantees a result for every individual.",
+          "practice": "Examine three fictional testimonials versus a study summary with stated population and limits. List the conclusions each can and cannot support.",
+          "workedExample": "An improvement reported after starting an activity does not establish the activity caused it; sleep, schedule and measurement variation may also matter.",
+          "independentTask": "Write a claim-evidence-limitation paragraph that corrects an exaggerated seven-day promise.",
+          "evidence": "Precise claim, relevant evidence description, alternative explanation and bounded conclusion.",
+          "successCriteria": "I can explain why anecdotes and correlations do not establish universal exercise effects."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
-          "practice": "Analyze a learner's fictional plan for fitness information literacy: it lacks a stop cue and adaptation. Rewrite it to satisfy: Distinguish a marketing claim from supported exercise evidence.",
-          "evidence": "A revision justified by safety and observable learning evidence."
+          "studentTitle": "Correct misleading fitness advice",
+          "concept": "Responsible communication replaces guarantees with appropriately qualified wording and identifies safety, access and individual variation. A promoted routine is not appropriate just because it is popular. Do not share classmates' sensitive information to test claims.",
+          "instruction": "Responsible communication replaces guarantees with appropriately qualified wording and identifies safety, access and individual variation. A promoted routine is not appropriate just because it is popular. Do not share classmates' sensitive information to test claims.",
+          "practice": "Edit a flawed advertisement promising 100 daily jumps for all students, identifying accessibility, risk, unsupported outcome and financial-interest concerns.",
+          "workedExample": "Revised copy avoids a cure or transformation guarantee and suggests comfortable activity choices, appropriate alternatives and trusted guidance.",
+          "independentTask": "Produce a short fact-check with three red flags, a revised claim, and a safe choice for a fictional learner who cannot jump.",
+          "evidence": "Fact-check explains evidence and risk, offers equivalent participation and avoids body-based judgments.",
+          "successCriteria": "I can correct a misleading claim without replacing it with another unsupported promise."
         },
         {
           "day": 5,
           "phase": "Defend",
-          "instruction": "Synthesize what safe and inclusive learning about fitness information literacy requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
-          "evidence": "Portfolio entry with claim, observation, adaptation and next step."
+          "studentTitle": "Defend an informed activity decision",
+          "concept": "A responsible activity recommendation explains what is known, what remains uncertain, why the evidence applies imperfectly and what safe, accessible choice meets the learner's objective. The assessment evaluates inquiry and reasoning, not appearance or exercise output.",
+          "instruction": "A responsible activity recommendation explains what is known, what remains uncertain, why the evidence applies imperfectly and what safe, accessible choice meets the learner's objective. The assessment evaluates inquiry and reasoning, not appearance or exercise output.",
+          "practice": "Model a brief defense selecting a comfortable walk, seated movement or analytical option rather than an influencer challenge, citing source questions and uncertainty.",
+          "workedExample": "The student compares two sources, rejects a guaranteed transformation claim and selects a feasible activity with a safety/stop cue and alternative.",
+          "independentTask": "Submit a two-source credibility chart, corrected claim and evidence-based decision brief that identifies one further fact to verify.",
+          "evidence": "Source comparison, bounded conclusion, safety/access plan and clear uncertainty statement.",
+          "successCriteria": "I can defend a fitness information decision using credible reasoning and respectful, safe alternatives."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about fitness information literacy.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-      "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for fitness information literacy.",
+      "misconception": "A compelling transformation image, influential endorsement or fast result proves that a fitness claim is true and suitable for everyone.",
+      "correction": "Strong claims require relevant transparent evidence, attention to study limitations and conflicts, and decisions adapted to individual access and safety.",
+      "teacherNotes": "Use fictional posts and anonymized examples; never solicit body photographs, personal diagnoses or fitness-platform data. Avoid promoting unverified supplements, extreme diets or high-risk exercise challenges. Permit source analysis without physical participation. Assess reasoning and source critique.",
       "rubric": [
         {
           "criterion": "Knowledge and rationale",
@@ -9272,7 +9297,12 @@
           "rationale": "A structured evaluation follows claims back to evidence and avoids appearance-based judgment."
         }
       ],
-      "focusSkill": "Distinguish a marketing claim from supported exercise evidence."
+      "focusSkill": "Distinguish a marketing claim from supported exercise evidence.",
+      "conceptExplanation": "Information literacy means asking who created a fitness claim, which outcome is actually measured, what evidence supports it, what alternative explanations exist, and whether the source discloses uncertainty or financial interest. Testimonials report individual experiences; advertisements aim to persuade; systematic research considers methods, populations and limitations. Correlation does not necessarily prove causation. A credible source can still be wrong or out of date. A learner should compare claims with reputable public-health or professional guidance without sharing private body metrics or health information.",
+      "biomechanicsAndTechnique": "Evaluating evidence does not require performing a promoted workout. Any optional comparison should use comfortable, known movements and appropriate supervision, with gradual preparation, accessible variants and permission to stop. Do not experiment with dangerous challenges, extreme diets, supplements or promised cures. Respect personal privacy and avoid collecting weights, diagnoses, photos or fitness-app account data. Written, narrated and annotated source analysis meets the academic objective.",
+      "workedExample": "Ad: 'Everyone who does these 100 daily jumps gets healthier in a week.' Evidence: three selected testimonials and staged photographs. Problems: undefined 'healthier,' no comparison group, selection bias, one-size-fits-all demands, and no discussion of contraindications. Better statement: 'Some people may enjoy appropriate movement; activity choices and benefits vary. Consider credible guidance, comfort and safe adaptations.'",
+      "applicationTask": "Complete a five-part fitness-claim investigation of two fictional sources: author and purpose, exact claim, type/quality of evidence, limitations or conflicts, and safe conclusion. Produce a corrected claim and a brief feasible, inclusive activity decision, with citations to trusted public guidance when available.",
+      "depthVersion": "grade9-week25-topic-specific-2026-10-19"
     },
     {
       "week": 26,
