@@ -5848,11 +5848,11 @@
         {
           "prompt": "The current plan for movement circuits is missing a clear success criterion. What revision is most useful?",
           "options": [
-            "Name one observable criterion for \"choose a safe order of movement and recovery stations\", then record what happened and what remains uncertain.",
+            "Judge success by effort alone and omit the learning evidence.",
             "Add more activity without deciding what will be observed.",
-            "Judge success by effort alone and omit the learning evidence."
+            "Name one observable criterion for \"choose a safe order of movement and recovery stations\", then record what happened and what remains uncertain."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A clear criterion connects the activity to observable evidence and acknowledges uncertainty."
         },
         {
@@ -5868,11 +5868,11 @@
         {
           "prompt": "While practicing \"choose a safe order of movement and recovery stations\", a learner notices a new safety concern. What is the best response?",
           "options": [
-            "Continue unchanged because the plan was already written.",
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
             "Ask peers to vote on whether a warning sign should be ignored.",
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing."
+            "Continue unchanged because the plan was already written."
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
@@ -5888,11 +5888,11 @@
         {
           "prompt": "What is the main purpose of a fitness circuit?",
           "options": [
-            "Organize several activities or stations toward a stated learning or fitness goal.",
+            "Remove all rest from a lesson.",
             "Make every participant use the same intensity.",
-            "Remove all rest from a lesson."
+            "Organize several activities or stations toward a stated learning or fitness goal."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A circuit organizes stations and should be designed around an appropriate objective."
         },
         {
@@ -5928,51 +5928,51 @@
         {
           "prompt": "A station makes the movement target difficult to access. What is the best adjustment?",
           "options": [
-            "Offer a lower-demand, seated, supported, or equivalent version.",
             "Remove the learner from the circuit.",
+            "Offer a lower-demand, seated, supported, or equivalent version.",
             "Keep the station unchanged regardless of risk."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "An adaptation can preserve the learning goal while addressing an access barrier."
         },
         {
           "prompt": "Which statement best describes a station instruction?",
           "options": [
-            "It states the task, safe space or equipment, and a way to pause or adapt.",
             "It says only “work harder.”",
+            "It states the task, safe space or equipment, and a way to pause or adapt.",
             "It leaves the purpose and safety rules unstated."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Clear instructions help learners understand both the target and safe participation."
         },
         {
           "prompt": "How can a teacher make transitions between circuit stations safer?",
           "options": [
-            "Use a clear signal and allow participants to move through a planned route.",
+            "Place the next station in a crossing path.",
             "Tell everyone to race between stations.",
-            "Place the next station in a crossing path."
+            "Use a clear signal and allow participants to move through a planned route."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Predictable transitions and traffic flow reduce avoidable collisions."
         },
         {
           "prompt": "Which is the best way to compare two possible circuit designs?",
           "options": [
-            "Check how well each meets the goal, available space, access, and recovery needs.",
             "Choose the design with the most stations regardless of setup.",
+            "Check how well each meets the goal, available space, access, and recovery needs.",
             "Choose the one that looks toughest."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Design decisions should be based on purpose, constraints, and safety."
         },
         {
           "prompt": "A station requires equipment the class does not have. What can the teacher do?",
           "options": [
-            "Substitute an appropriate low-cost or no-equipment task that targets the same idea.",
             "Cancel all learning for that station automatically.",
+            "Substitute an appropriate low-cost or no-equipment task that targets the same idea.",
             "Ask students to bring unsafe substitutes."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "The learning target can often be preserved with feasible equipment alternatives."
         },
         {
@@ -5988,11 +5988,11 @@
         {
           "prompt": "Why should a circuit plan name an emergency or stop signal?",
           "options": [
-            "Participants need a clear way to pause activity when safety changes.",
+            "It is needed only in competitions.",
             "It guarantees no accident can happen.",
-            "It is needed only in competitions."
+            "Participants need a clear way to pause activity when safety changes."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A stop signal establishes a shared response when something becomes unsafe."
         },
         {
@@ -6008,21 +6008,21 @@
         {
           "prompt": "How can a student evaluate a station instruction after trying it?",
           "options": [
-            "Describe what was clear, what was difficult, and one change that would help.",
             "Rate classmates' bodies.",
+            "Describe what was clear, what was difficult, and one change that would help.",
             "Ignore whether the station met its goal."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Reflection helps improve instructions and align practice to the learning objective."
         },
         {
           "prompt": "What is a practical circuit-planning constraint?",
           "options": [
-            "Available room, equipment, participant needs, time, and safe transitions.",
+            "A rule that everyone must perform the same version.",
             "Only the favorite color of the designer.",
-            "A rule that everyone must perform the same version."
+            "Available room, equipment, participant needs, time, and safe transitions."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A feasible design accounts for the environment and the people using it."
         },
         {
@@ -6038,11 +6038,11 @@
         {
           "prompt": "Why rotate through different types of stations?",
           "options": [
-            "They can practice different movement ideas and reduce repetitive demands.",
             "It ensures every learner has identical capacity.",
+            "They can practice different movement ideas and reduce repetitive demands.",
             "It eliminates the need for instruction."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Varied stations can support broader learning when each station has a clear purpose."
         },
         {
@@ -6058,31 +6058,31 @@
         {
           "prompt": "How can feedback improve a circuit after a trial?",
           "options": [
-            "Use observations and participant comments to revise one or more stations.",
+            "Ignore access barriers because the circuit is already built.",
             "Change the design randomly without checking the result.",
-            "Ignore access barriers because the circuit is already built."
+            "Use observations and participant comments to revise one or more stations."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Post-trial evidence helps identify and address specific design problems."
         },
         {
           "prompt": "A learner does not want to perform a station physically. What alternative can still show learning?",
           "options": [
-            "Explain, map, or demonstrate the station's safe setup and intended purpose.",
+            "Require private medical details.",
             "Mark them as having learned nothing.",
-            "Require private medical details."
+            "Explain, map, or demonstrate the station's safe setup and intended purpose."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Instructional understanding can be demonstrated through a reasoned alternative."
         },
         {
           "prompt": "What should happen before a new circuit begins?",
           "options": [
-            "Explain stations, equipment use, transitions, stop signals, and options for adapting.",
             "Begin immediately so learners discover every rule by collision.",
+            "Explain stations, equipment use, transitions, stop signals, and options for adapting.",
             "Set up equipment on an uninspected surface."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Pre-briefing establishes expectations and prevents avoidable hazards."
         }
       ],
@@ -6166,51 +6166,51 @@
         {
           "prompt": "While practicing \"adapt tempo or movement size without losing the learning objective\", a learner notices a new safety concern. What is the best response?",
           "options": [
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
+            "Ask peers to vote on whether a warning sign should be ignored.",
             "Continue unchanged because the plan was already written.",
-            "Ask peers to vote on whether a warning sign should be ignored."
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for rhythm and dance?",
           "options": [
             "The learner has mastered every related skill in every setting.",
-            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
-            "The learner should use the same activity and difficulty in all future sessions."
+            "The learner should use the same activity and difficulty in all future sessions.",
+            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "A learning record supports conclusions limited to the observed task; it does not prove universal mastery or a one-size-fits-all plan."
         },
         {
           "prompt": "During rhythm and dance, which plan best applies the week's focus skill: adapt tempo or movement size without losing the learning objective?",
           "options": [
             "Choose the hardest version regardless of conditions.",
-            "Record only whether the task was finished, without explaining the decision.",
-            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence."
+            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence.",
+            "Record only whether the task was finished, without explaining the decision."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "The learner applies adapt tempo or movement size without losing the learning objective by making a feasible, justified choice and pointing to evidence relevant to rhythm and dance."
         },
         {
           "prompt": "A learner has limited time and no specialized equipment while preparing for rhythm and dance. Which next step best supports this week's learning?",
           "options": [
-            "Identify the decision, compare realistic options, and explain the choice using the learning target.",
+            "Use completion time as the only measure of learning.",
             "Copy a classmate's decision without checking the case.",
-            "Use completion time as the only measure of learning."
+            "Identify the decision, compare realistic options, and explain the choice using the learning target."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A contextual decision responds to the actual constraints and makes its reasoning visible; speed or copying is insufficient."
         },
         {
           "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"adapt tempo or movement size without losing the learning objective\"?",
           "options": [
             "A general statement that the learner looked more athletic.",
-            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
-            "A single score with no description of the task or conditions."
+            "A single score with no description of the task or conditions.",
+            "A dated before-and-after observation tied to a clear criterion, with limits noted."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
         },
         {
@@ -6226,21 +6226,21 @@
         {
           "prompt": "A dance sequence feels too fast for a learner. What is a sensible adaptation?",
           "options": [
-            "Slow the tempo or use fewer counts while preserving the sequence idea.",
+            "Remove all choices from the activity.",
             "Require the learner to match the original speed.",
-            "Remove all choices from the activity."
+            "Slow the tempo or use fewer counts while preserving the sequence idea."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Changing tempo or complexity can preserve the learning objective while improving access."
         },
         {
           "prompt": "Which is a clear way to describe an eight-count sequence?",
           "options": [
-            "Name or show the movement associated with each count group.",
+            "Give unrelated instructions at the same time.",
             "Say “just move correctly” without a model.",
-            "Give unrelated instructions at the same time."
+            "Name or show the movement associated with each count group."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Counts provide an organized framework that can be modeled and practiced."
         },
         {
@@ -6256,21 +6256,21 @@
         {
           "prompt": "Which is a valid way to participate in a rhythm lesson?",
           "options": [
-            "Step, clap, tap, sway, wheel, or use a gesture that matches the pattern.",
+            "Stay excluded unless every step is copied exactly.",
             "Only perform a standing jump sequence.",
-            "Stay excluded unless every step is copied exactly."
+            "Step, clap, tap, sway, wheel, or use a gesture that matches the pattern."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Different movements can represent the same rhythm objective."
         },
         {
           "prompt": "What makes a choreographed sequence easier to learn?",
           "options": [
-            "Break it into short parts, model them, and connect the parts gradually.",
             "Perform the whole routine once without explanation.",
+            "Break it into short parts, model them, and connect the parts gradually.",
             "Change every cue on each repetition."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Chunking and modeling support memory and sequencing."
         },
         {
@@ -6296,51 +6296,51 @@
         {
           "prompt": "Which feedback is most useful for a rhythm sequence?",
           "options": [
-            "The second and fourth counts were clear; let's practice the transition between them.",
             "You are a bad dancer.",
+            "The second and fourth counts were clear; let's practice the transition between them.",
             "Your body does not look like the model."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Specific timing feedback is actionable and avoids appearance-based judgment."
         },
         {
           "prompt": "A movement sequence includes a large jump that feels unsuitable. What should the designer do?",
           "options": [
-            "Replace it with a step, reach, or smaller movement that preserves the count pattern.",
             "Require the jump because it is in the first draft.",
+            "Replace it with a step, reach, or smaller movement that preserves the count pattern.",
             "Remove the participant from the group."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Movement complexity can be adapted while retaining sequence and rhythm goals."
         },
         {
           "prompt": "How can students check whether a group sequence uses rhythm consistently?",
           "options": [
-            "Follow the agreed count or beat and notice where timing changes.",
             "Judge only who looks most confident.",
+            "Follow the agreed count or beat and notice where timing changes.",
             "Ignore the count and compare body shapes."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "The agreed beat provides a reference for evaluating timing."
         },
         {
           "prompt": "What should a group do if music or audio is unavailable?",
           "options": [
-            "Use counting, clapping, a visual cue, or a leader's signal.",
             "Cancel rhythm learning entirely.",
+            "Use counting, clapping, a visual cue, or a leader's signal.",
             "Tell learners to guess the timing."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Rhythm can be represented through several cues, including visual and tactile patterns."
         },
         {
           "prompt": "Which reflection shows understanding of sequencing?",
           "options": [
-            "We practiced the first four counts before linking them to the next four.",
+            "Everyone else was wrong.",
             "The routine was good because it was hard.",
-            "Everyone else was wrong."
+            "We practiced the first four counts before linking them to the next four."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Describing a practice method shows understanding of how to organize a sequence."
         },
         {
@@ -6366,11 +6366,11 @@
         {
           "prompt": "A student worries about making a mistake during dance. What teaching strategy may help?",
           "options": [
-            "Practice in small groups and emphasize learning, choice, and respectful feedback.",
             "Make errors public for laughs.",
+            "Practice in small groups and emphasize learning, choice, and respectful feedback.",
             "Grade confidence by loudness."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A psychologically safe environment supports practice without humiliating learners."
         },
         {
@@ -6406,11 +6406,11 @@
         {
           "prompt": "Which outcome best fits a PE rhythm lesson?",
           "options": [
-            "Explain and perform or represent a safe movement sequence using an agreed beat.",
             "Guarantee that every participant enjoys the same music.",
+            "Explain and perform or represent a safe movement sequence using an agreed beat.",
             "Determine who has natural talent."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "The outcome focuses on observable sequencing and rhythm rather than preferences or labels."
         }
       ],
@@ -6494,11 +6494,11 @@
         {
           "prompt": "A learner has limited time and no specialized equipment while preparing for outdoor walking and route planning. Which next step best supports this week's learning?",
           "options": [
-            "Copy a classmate's decision without checking the case.",
             "Identify the decision, compare realistic options, and explain the choice using the learning target.",
+            "Copy a classmate's decision without checking the case.",
             "Use completion time as the only measure of learning."
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "A contextual decision responds to the actual constraints and makes its reasoning visible; speed or copying is insufficient."
         },
         {
@@ -6514,31 +6514,31 @@
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about outdoor walking and route planning.\" Which response best corrects the reasoning?",
           "options": [
-            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
             "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
             "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "The correction prioritizes learning evidence and avoids unsupported comparisons or unsafe generalizations."
         },
         {
           "prompt": "The current plan for outdoor walking and route planning is missing a clear success criterion. What revision is most useful?",
           "options": [
-            "Add more activity without deciding what will be observed.",
             "Name one observable criterion for \"check route, weather, visibility and accessible alternatives\", then record what happened and what remains uncertain.",
+            "Add more activity without deciding what will be observed.",
             "Judge success by effort alone and omit the learning evidence."
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "A clear criterion connects the activity to observable evidence and acknowledges uncertainty."
         },
         {
           "prompt": "A learner cannot use the original movement format for outdoor walking and route planning. Which adaptation is strongest?",
           "options": [
             "Remove the learner from the task without an alternative.",
-            "Require private medical details before offering an adjustment.",
-            "Choose a safe accessible demonstration, observation, or explanation that still measures \"check route, weather, visibility and accessible alternatives\"."
+            "Choose a safe accessible demonstration, observation, or explanation that still measures \"check route, weather, visibility and accessible alternatives\".",
+            "Require private medical details before offering an adjustment."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
         },
         {
@@ -6554,11 +6554,11 @@
         {
           "prompt": "A route crosses a busy road without a safe crossing. What is the best decision?",
           "options": [
-            "Choose another route or arrange a safe crossing before starting.",
             "Run quickly across between cars.",
+            "Choose another route or arrange a safe crossing before starting.",
             "Assume all drivers will stop."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A safe route must avoid unmanaged traffic hazards."
         },
         {
@@ -6584,81 +6584,81 @@
         {
           "prompt": "Which map information most directly helps a walker avoid a hazard?",
           "options": [
-            "Route lines, crossings, path surfaces, closures, and landmarks.",
             "A classmate's fastest time.",
+            "Route lines, crossings, path surfaces, closures, and landmarks.",
             "Decorative icons without a legend."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Map features are useful when they identify navigation decisions and hazards."
         },
         {
           "prompt": "A learner needs a step-free route. What is appropriate route planning?",
           "options": [
-            "Check surface, slope, width, and step-free access before choosing the route.",
             "Assume the shortest route is accessible.",
+            "Check surface, slope, width, and step-free access before choosing the route.",
             "Wait until the group arrives to consider barriers."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Accessibility should be assessed before the activity rather than improvised after a barrier appears."
         },
         {
           "prompt": "Why should a route plan include a meeting point or regrouping procedure?",
           "options": [
-            "It helps the group respond if people become separated.",
+            "It permits everyone to travel independently without agreement.",
             "It guarantees nobody can get lost.",
-            "It permits everyone to travel independently without agreement."
+            "It helps the group respond if people become separated."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A clear regrouping procedure supports communication and group safety."
         },
         {
           "prompt": "What is one limitation of a map or digital route estimate?",
           "options": [
-            "Conditions may change, and the route may not represent current closures or accessibility.",
+            "The route estimate guarantees personal comfort.",
             "A map always includes every temporary hazard.",
-            "The route estimate guarantees personal comfort."
+            "Conditions may change, and the route may not represent current closures or accessibility."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Navigation tools provide information but may not reflect real-time conditions or individual needs."
         },
         {
           "prompt": "A walking route passes through a construction area. What should the group do?",
           "options": [
-            "Avoid the closed or hazardous area and select an approved alternative.",
+            "Move barriers out of the way.",
             "Enter the area if it shortens the route.",
-            "Move barriers out of the way."
+            "Avoid the closed or hazardous area and select an approved alternative."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Closures and hazards should be respected."
         },
         {
           "prompt": "Which choice supports a comfortable group pace?",
           "options": [
-            "Agree on regroup points and adapt the route or pace to participants and conditions.",
+            "Penalize people for needing to stop.",
             "Use only the fastest person's pace.",
-            "Penalize people for needing to stop."
+            "Agree on regroup points and adapt the route or pace to participants and conditions."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A group plan should allow the group to stay together or use safe regrouping practices."
         },
         {
           "prompt": "What should be recorded after using an unfamiliar route?",
           "options": [
-            "Actual conditions, any changes made, and what should be checked next time.",
+            "Private health information from every participant.",
             "Only the number of people who arrived first.",
-            "Private health information from every participant."
+            "Actual conditions, any changes made, and what should be checked next time."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A route log can inform future decisions if it records relevant conditions and changes."
         },
         {
           "prompt": "Why should route planners check for rest opportunities?",
           "options": [
-            "They help participants manage time and comfort during the route.",
+            "They are useful only on the longest route.",
             "They guarantee the route is safe in every respect.",
-            "They are useful only on the longest route."
+            "They help participants manage time and comfort during the route."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Rest opportunities are one component of accessible route planning."
         },
         {
@@ -6684,21 +6684,21 @@
         {
           "prompt": "What does a route legend do?",
           "options": [
-            "Explains what the map's symbols mean.",
             "Guarantees that all routes are open.",
+            "Explains what the map's symbols mean.",
             "Ranks the routes by difficulty for every person."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A legend supports accurate interpretation of map symbols."
         },
         {
           "prompt": "A group member reports feeling unwell on the walk. What is the priority?",
           "options": [
-            "Pause, ensure the person is supported, and seek appropriate help or revise the route.",
+            "Leave them behind to keep the schedule.",
             "Tell them to finish the distance before resting.",
-            "Leave them behind to keep the schedule."
+            "Pause, ensure the person is supported, and seek appropriate help or revise the route."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The plan must respond to safety and wellbeing, not force completion."
         },
         {
@@ -6724,21 +6724,21 @@
         {
           "prompt": "Why should walkers avoid sharing precise location publicly during a class activity?",
           "options": [
-            "Location information can be sensitive; share only what is needed through appropriate channels.",
             "A public location post guarantees safety.",
+            "Location information can be sensitive; share only what is needed through appropriate channels.",
             "Location sharing replaces supervision."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Privacy and responsible communication are part of outdoor planning."
         },
         {
           "prompt": "Which is the best post-route reflection?",
           "options": [
-            "What conditions did we notice, what decisions did we make, and what would we check differently next time?",
             "Who walked fastest?",
+            "What conditions did we notice, what decisions did we make, and what would we check differently next time?",
             "Why should a route never be changed?"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Reflection should focus on evidence, decisions, and future planning."
         }
       ],
@@ -6832,21 +6832,21 @@
         {
           "prompt": "A learner cannot use the original movement format for recreational skill choice. Which adaptation is strongest?",
           "options": [
-            "Choose a safe accessible demonstration, observation, or explanation that still measures \"defend a recreational activity choice using access and enjoyment\".",
             "Remove the learner from the task without an alternative.",
+            "Choose a safe accessible demonstration, observation, or explanation that still measures \"defend a recreational activity choice using access and enjoyment\".",
             "Require private medical details before offering an adjustment."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
         },
         {
           "prompt": "While practicing \"defend a recreational activity choice using access and enjoyment\", a learner notices a new safety concern. What is the best response?",
           "options": [
             "Continue unchanged because the plan was already written.",
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
-            "Ask peers to vote on whether a warning sign should be ignored."
+            "Ask peers to vote on whether a warning sign should be ignored.",
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
@@ -6862,21 +6862,21 @@
         {
           "prompt": "During recreational skill choice, which plan best applies the week's focus skill: defend a recreational activity choice using access and enjoyment?",
           "options": [
-            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence.",
+            "Record only whether the task was finished, without explaining the decision.",
             "Choose the hardest version regardless of conditions.",
-            "Record only whether the task was finished, without explaining the decision."
+            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The learner applies defend a recreational activity choice using access and enjoyment by making a feasible, justified choice and pointing to evidence relevant to recreational skill choice."
         },
         {
           "prompt": "Which factors are most useful when choosing a recreational activity?",
           "options": [
-            "Interest, access, available time, safe conditions, and personal goals.",
             "Only how difficult it looks.",
+            "Interest, access, available time, safe conditions, and personal goals.",
             "Whether it burns more calories than another activity."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A sustainable choice aligns with preferences, constraints, safety, and purpose."
         },
         {
@@ -6902,11 +6902,11 @@
         {
           "prompt": "A recreational option requires equipment the learner cannot access. What should happen?",
           "options": [
-            "Find an accessible substitute, loan option, or equivalent activity.",
+            "Buy the equipment regardless of cost.",
             "Assume the learner cannot participate in recreation.",
-            "Buy the equipment regardless of cost."
+            "Find an accessible substitute, loan option, or equivalent activity."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Access and cost are legitimate planning constraints."
         },
         {
@@ -6932,21 +6932,21 @@
         {
           "prompt": "What should be considered before trying an unfamiliar recreational activity?",
           "options": [
-            "Instruction, equipment, space, personal comfort, access, and how to stop.",
+            "Whether others will notice.",
             "Only whether it looks exciting.",
-            "Whether others will notice."
+            "Instruction, equipment, space, personal comfort, access, and how to stop."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "An unfamiliar activity requires basic planning and safe entry."
         },
         {
           "prompt": "A learner tries an activity and does not enjoy it. What is the best next step?",
           "options": [
-            "Reflect on why and try another suitable option if desired.",
             "Assume they dislike all movement.",
+            "Reflect on why and try another suitable option if desired.",
             "Force continued participation to prove commitment."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A trial helps inform future choices; enjoyment may vary by activity and circumstance."
         },
         {
@@ -6962,21 +6962,21 @@
         {
           "prompt": "How can a learner assess whether an activity fits their schedule?",
           "options": [
-            "Compare realistic time needs with the weekly routine and available alternatives.",
+            "Use a classmate's schedule as the standard.",
             "Promise to do it regardless of conflicts.",
-            "Use a classmate's schedule as the standard."
+            "Compare realistic time needs with the weekly routine and available alternatives."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Time feasibility affects whether a plan can be sustained."
         },
         {
           "prompt": "What is a useful way to investigate a community activity?",
           "options": [
-            "Check access, cost, timing, safety arrangements, and what equipment is needed.",
             "Rely only on an advertisement's slogan.",
+            "Check access, cost, timing, safety arrangements, and what equipment is needed.",
             "Assume that all venues are accessible."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Practical information helps learners evaluate whether the activity is suitable."
         },
         {
@@ -6992,21 +6992,21 @@
         {
           "prompt": "Which criterion should not be used to rank the value of recreational choices?",
           "options": [
-            "A person's body size or appearance.",
             "Whether the activity is accessible.",
+            "A person's body size or appearance.",
             "Whether it fits the learner's interest and schedule."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Body appearance does not determine the educational value of a recreational activity."
         },
         {
           "prompt": "Why is choice important in lifelong recreation?",
           "options": [
-            "Preferences, access, schedules, and abilities can change over time.",
             "One choice must last for life without changes.",
+            "Preferences, access, schedules, and abilities can change over time.",
             "People must choose the activity their peers select."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Lifelong engagement can require changing activities as circumstances change."
         },
         {
@@ -7022,11 +7022,11 @@
         {
           "prompt": "A recreational activity is too costly. What is a responsible decision?",
           "options": [
-            "Consider a low-cost alternative or free community option with a similar purpose.",
+            "Assume meaningful recreation requires expensive equipment.",
             "Borrow equipment without permission.",
-            "Assume meaningful recreation requires expensive equipment."
+            "Consider a low-cost alternative or free community option with a similar purpose."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Cost matters, and lower-cost alternatives may meet the same goal."
         },
         {
@@ -7042,11 +7042,11 @@
         {
           "prompt": "Which is a useful question when evaluating online recreation advice?",
           "options": [
-            "Who produced it, what evidence supports it, and what limits or costs are disclosed?",
             "Does it promise a perfect result?",
+            "Who produced it, what evidence supports it, and what limits or costs are disclosed?",
             "Does it say everyone must follow the same plan?"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Critical appraisal helps distinguish useful information from overpromises."
         },
         {
@@ -7062,11 +7062,11 @@
         {
           "prompt": "Which reflection best supports a sustainable recreational plan?",
           "options": [
-            "What did I enjoy, what barrier did I notice, and what feasible option will I try next?",
             "How can I prove I am better than my classmates?",
+            "What did I enjoy, what barrier did I notice, and what feasible option will I try next?",
             "Which activity makes rest unnecessary?"
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A useful reflection links experience to the next realistic and safe choice."
         }
       ],
