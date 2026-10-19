@@ -7517,49 +7517,74 @@
     {
       "week": 21,
       "title": "Aerobic intervals",
-      "essentialQuestion": "How can we make a safe, evidence-based decision about aerobic intervals?",
-      "scenario": "A Grade 9 learner is planning a safe, accessible activity involving aerobic intervals. They have limited time, variable energy, and no specialized equipment.",
-      "model": "Worked example (intervals): A learner wants to practice aerobic intervals. First identify the specific skill: Compare comfortable work and recovery intervals. Next compare two feasible options, select one with a clear safety cue, and document the reason. A written, observed, seated or adapted demonstration can meet the same reasoning target.",
+      "essentialQuestion": "How can a learner design, interpret and adjust comfortable aerobic intervals using time, effort, recovery and safety evidence?",
+      "scenario": "Two fictional learners compare a steady, comfortable six-minute activity with three short activity-and-recovery rounds. One enjoys walking; another uses seated alternating arm movements. A proposed interval plan increases effort every round and removes recovery whenever a student slows. The group must redesign the plan without judging students by speed or pulse.",
+      "model": "Worked planning model: after comfortable preparation, use three optional rounds of 30 seconds of comfortable rhythmic movement followed by 60 seconds of gentle recovery or complete rest. Three cycles total 270 seconds (4 minutes 30 seconds), of which 90 seconds is movement and 180 seconds recovery. These are example planning figures, not exercise prescriptions; duration, effort and rounds may be reduced or replaced with a written analysis. Ask whether the learner can speak comfortably and whether symptoms or conditions require stopping.",
       "days": [
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce aerobic intervals. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving aerobic intervals. They have limited time, variable energy, and no specialized equipment.",
-          "practice": "Write a three-part safety plan for aerobic intervals: purpose, feasible option, and stop/modification cue.",
-          "evidence": "A reasoned three-part plan with a specific observable cue."
+          "studentTitle": "Continuous activity versus intervals",
+          "concept": "Continuous movement is a sustained block of rhythmic activity; interval activity alternates movement bouts and recovery. Neither format is automatically superior. The purpose, effort, learner preference and context determine which plan is appropriate.",
+          "instruction": "Continuous movement is a sustained block of rhythmic activity; interval activity alternates movement bouts and recovery. Neither format is automatically superior. The purpose, effort, learner preference and context determine which plan is appropriate.",
+          "practice": "Classify four fictional schedules as continuous or interval activity. Identify what is missing when a plan records time but not effort or rest.",
+          "workedExample": "Six comfortable minutes of walking is continuous; three 30-second bouts with 60-second breaks are intervals. These schedules cannot be ranked for intensity from time alone.",
+          "independentTask": "Create two simple timelines with matching descriptions of activity, pauses, and possible seated options.",
+          "evidence": "Accurately labeled timelines and a clear distinction between duration, intensity and recovery.",
+          "successCriteria": "I can recognize interval structure and explain how it differs from continuous activity."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to aerobic intervals and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
-          "practice": "Practice the week's decision with this exact prompt: Compare comfortable work and recovery intervals. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
-          "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
+          "studentTitle": "Calculate work and recovery",
+          "concept": "The work:recovery ratio expresses relative durations of planned bouts. For three rounds of 30 seconds movement and 60 seconds recovery, movement totals 90 seconds, recovery 180 seconds and total 270 seconds; the ratio 30:60 simplifies to 1:2. Rests count as planned time, not failure.",
+          "instruction": "The work:recovery ratio expresses relative durations of planned bouts. For three rounds of 30 seconds movement and 60 seconds recovery, movement totals 90 seconds, recovery 180 seconds and total 270 seconds; the ratio 30:60 simplifies to 1:2. Rests count as planned time, not failure.",
+          "practice": "Work through a color-free timeline on paper: label 0–30 seconds movement and 30–90 seconds recovery, then repeat twice. Check totals and units.",
+          "workedExample": "Three rounds times 90 seconds per round equals 270 seconds or 4 minutes 30 seconds. The active portion is 90 seconds, not 270 seconds.",
+          "independentTask": "Calculate the total for two alternative fictional plans and explain which has more recovery time without assuming physiological superiority.",
+          "evidence": "Correct calculations, units, simplified ratio and an explanation of the limits of the comparison.",
+          "successCriteria": "I can calculate an interval plan and distinguish work duration from total session duration."
         },
         {
           "day": 3,
           "phase": "Apply",
-          "instruction": "Discuss how effort, environment, access and recovery change the best choice for aerobic intervals.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
-          "evidence": "Three justified pathways and a brief risk assessment."
+          "studentTitle": "Monitor comfortable effort",
+          "concept": "Perceived effort is subjective. A simple conversational check can guide whether activity remains comfortable, but it does not diagnose health or require a pulse reading. Learners can lower effort, lengthen rest, choose seated motions or stop entirely.",
+          "instruction": "Perceived effort is subjective. A simple conversational check can guide whether activity remains comfortable, but it does not diagnose health or require a pulse reading. Learners can lower effort, lengthen rest, choose seated motions or stop entirely.",
+          "practice": "Compare fictional learners: one can converse during an easy step-touch; another cannot speak comfortably and feels dizzy. Describe safe responses without requiring either to finish.",
+          "workedExample": "The first learner may continue by choice. The second stops, informs an appropriate adult or supervisor and seeks appropriate help rather than merely reducing a timer.",
+          "independentTask": "Write a decision tree with continue, adapt, rest and stop/help pathways, plus a nonmovement observation option.",
+          "evidence": "Specific observable cues, safe stop action and a viable accessible alternative.",
+          "successCriteria": "I can select a safe response to changing effort or warning signs."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
-          "practice": "Analyze a learner's fictional plan for aerobic intervals: it lacks a stop cue and adaptation. Rewrite it to satisfy: Compare comfortable work and recovery intervals.",
-          "evidence": "A revision justified by safety and observable learning evidence."
+          "studentTitle": "Critique and revise an interval plan",
+          "concept": "A plan demanding increasing intensity without recovery ignores technique, learner choice and warning signs. Evidence for revision includes the stated goal, observed comfort, space, recovery options and a reasoned alternative; it is not a race or calorie target.",
+          "instruction": "A plan demanding increasing intensity without recovery ignores technique, learner choice and warning signs. Evidence for revision includes the stated goal, observed comfort, space, recovery options and a reasoned alternative; it is not a race or calorie target.",
+          "practice": "Review a fictional proposal: 'Do four faster rounds, skip recovery if behind, and keep going even if dizzy.' Underline three unsafe assumptions and demonstrate corrections.",
+          "workedExample": "Revised: choose manageable movement, allow adequate or longer recovery, stop for dizziness, and use a seated or analytic alternative; the learner does not owe additional rounds.",
+          "independentTask": "Rewrite the proposed schedule with times, recovery, safety triggers and an accessible pathway, and justify two changes.",
+          "evidence": "A complete and safer timeline with at least two evidence-based justifications.",
+          "successCriteria": "I can identify unsafe interval instructions and defend a feasible revision."
         },
         {
           "day": 5,
           "phase": "Defend",
-          "instruction": "Synthesize what safe and inclusive learning about aerobic intervals requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
-          "evidence": "Portfolio entry with claim, observation, adaptation and next step."
+          "studentTitle": "Defend an independent interval design",
+          "concept": "A strong interval defense describes objective, rhythm of activity and recovery, correct calculations, effort decisions, inclusive alternatives and one limitation. Students are evaluated for planning and interpretation, not stamina, speed or body measures.",
+          "instruction": "A strong interval defense describes objective, rhythm of activity and recovery, correct calculations, effort decisions, inclusive alternatives and one limitation. Students are evaluated for planning and interpretation, not stamina, speed or body measures.",
+          "practice": "Model a four-part presentation explaining the illustrative 30:60 timeline, 1:2 ratio, talk-test limitations and a rest/stop choice.",
+          "workedExample": "Create a final diagram, short explanation or optional demonstration of a three-round plan and a comparison with a continuous alternative.",
+          "independentTask": "The learner shows 90 seconds movement and 180 seconds recovery, gives an access alternative, and notes that the duration ratio alone cannot prove fitness gains.",
+          "evidence": "Submit a time diagram, ratio calculation, safety/effort cues, accessible variant and evidence-based plan defense.",
+          "successCriteria": "I can design and defend a safe, inclusive aerobic interval plan without unsupported fitness claims."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about aerobic intervals.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-      "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for aerobic intervals.",
+      "misconception": "Intervals are only valuable when every bout gets harder, recovery is minimized and students are judged by intensity.",
+      "correction": "An interval is defined by planned activity and recovery periods. Safe, meaningful learning focuses on appropriate planning, understandable effort cues, recovery decisions and accessible alternatives, not maximal performance.",
+      "teacherNotes": "All times and ratios are illustrative, not mandatory exercise prescriptions. Do not require vigorous exertion, pulse measurement, calorie tracking or private medical information. Permit seated movement, extra recovery, rest, observation and written timelines. Stop unsafe activity and follow appropriate supervision procedures.",
       "rubric": [
         {
           "criterion": "Knowledge and rationale",
@@ -7840,7 +7865,12 @@
           "rationale": "A useful reflection connects an observed response to a practical next decision."
         }
       ],
-      "focusSkill": "Compare comfortable work and recovery intervals."
+      "focusSkill": "Compare comfortable work and recovery intervals.",
+      "conceptExplanation": "Aerobic activity generally involves sustained, rhythmic use of large muscle groups. Continuous activity maintains a broadly steady manageable effort; interval activity alternates planned bouts with lower-demand recovery. An interval's work-to-recovery ratio is a description of time, not a required intensity or a measure of student worth. For example, 30 seconds of movement to 60 seconds of recovery is a 1:2 time ratio. Learners should distinguish duration from intensity, monitor perceived effort subjectively, and revise plans for safety, access and adequate recovery. A single observation does not establish cardiovascular fitness.",
+      "biomechanicsAndTechnique": "Choose a safe clear space, stable footing or seated support, gradual beginning and ending, and comfortable rhythmic movements such as walking, low-impact step-touch or seated alternating arm motions. Recovery may be slower movement or rest. The talk test is a general observational cue, not a diagnostic test: if talking becomes difficult or the learner feels unwell, reduce demand or stop. Pain, dizziness, unusual symptoms, adverse environmental conditions or distress require stopping and appropriate help. Do not require heart-rate collection or disclose health data.",
+      "workedExample": "Compare Plan A: continuous comfortable movement for 6 minutes, and Plan B: three rounds of 30 seconds comfortable movement plus 60 seconds recovery. Plan B has 90 seconds of movement and 180 seconds of recovery, total 270 seconds; the 1:2 ratio does not imply it is harder or easier than Plan A without information about effort. A revised plan can use fewer rounds, an indoor seated option, or evidence-only analysis.",
+      "applicationTask": "Build an illustrated three-round optional interval plan identifying movement and recovery periods, total time and a work:recovery ratio. Add perceived-effort and talk-test cues, a concrete stop/adapt decision, an accessible equivalent and one evidence-based revision to a flawed interval proposal.",
+      "depthVersion": "grade9-week21-topic-specific-2026-10-19"
     },
     {
       "week": 22,
