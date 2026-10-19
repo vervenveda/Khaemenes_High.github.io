@@ -11086,21 +11086,21 @@
         {
           "prompt": "A peer says, \"More intensity or outperforming classmates always means better learning about portfolio construction.\" Which response best corrects the reasoning?",
           "options": [
-            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
             "Treat effort or peer comparison as the main evidence, even when task conditions differ.",
+            "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
             "Keep the claim without checking the observation, adaptation, or learning objective."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "The correction prioritizes learning evidence and avoids unsupported comparisons or unsafe generalizations."
         },
         {
           "prompt": "The current plan for portfolio construction is missing a clear success criterion. What revision is most useful?",
           "options": [
             "Add more activity without deciding what will be observed.",
-            "Name one observable criterion for \"select evidence showing revision rather than just performance\", then record what happened and what remains uncertain.",
-            "Judge success by effort alone and omit the learning evidence."
+            "Judge success by effort alone and omit the learning evidence.",
+            "Name one observable criterion for \"select evidence showing revision rather than just performance\", then record what happened and what remains uncertain."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "A clear criterion connects the activity to observable evidence and acknowledges uncertainty."
         },
         {
@@ -11116,11 +11116,11 @@
         {
           "prompt": "While practicing \"select evidence showing revision rather than just performance\", a learner notices a new safety concern. What is the best response?",
           "options": [
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
             "Continue unchanged because the plan was already written.",
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
             "Ask peers to vote on whether a warning sign should be ignored."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
@@ -11136,11 +11136,11 @@
         {
           "prompt": "What should a PE portfolio demonstrate beyond a completed activity?",
           "options": [
-            "Evidence of learning, reflection, and how the plan or skill changed.",
             "Only the strongest result.",
+            "Evidence of learning, reflection, and how the plan or skill changed.",
             "A ranking of classmates."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A portfolio should show the learning process as well as the outcome."
         },
         {
@@ -11166,11 +11166,11 @@
         {
           "prompt": "Which portfolio entry best respects privacy?",
           "options": [
-            "A description of the learning decision without unnecessary medical or personal details.",
+            "A public ranking of participants.",
             "A classmate's private health record.",
-            "A public ranking of participants."
+            "A description of the learning decision without unnecessary medical or personal details."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The portfolio should include only information needed to demonstrate learning."
         },
         {
@@ -11196,11 +11196,11 @@
         {
           "prompt": "How should a student select artifacts for a portfolio?",
           "options": [
-            "Choose evidence aligned with the learning outcomes and explain why it is relevant.",
+            "Include every private detail available.",
             "Choose only the most colorful file.",
-            "Include every private detail available."
+            "Choose evidence aligned with the learning outcomes and explain why it is relevant."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Relevant selection is more useful than unfiltered or decorative evidence."
         },
         {
@@ -11216,51 +11216,51 @@
         {
           "prompt": "A portfolio contains conflicting entries from two dates. What should the learner do?",
           "options": [
-            "Check dates and context, preserve the record, and explain the difference if known.",
             "Delete the entry that looks less successful.",
+            "Check dates and context, preserve the record, and explain the difference if known.",
             "Pretend the difference does not exist."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Conflicts should be investigated and explained rather than hidden."
         },
         {
           "prompt": "Why include an adaptation in the portfolio?",
           "options": [
-            "It documents how the learner accessed the goal and made a reasoned choice.",
+            "It is private information that must be public.",
             "It automatically lowers the grade.",
-            "It is private information that must be public."
+            "It documents how the learner accessed the goal and made a reasoned choice."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Adaptations can be evidence of problem-solving and access-aware planning."
         },
         {
           "prompt": "What is a weakness of a portfolio containing only scores?",
           "options": [
-            "It may omit reasoning, process, context, and improvement over time.",
+            "The portfolio is always invalid.",
             "Scores are never evidence.",
-            "The portfolio is always invalid."
+            "It may omit reasoning, process, context, and improvement over time."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Scores alone often do not show the reasoning or process behind a result."
         },
         {
           "prompt": "Which caption best explains an artifact?",
           "options": [
-            "This revision changed the route after a safety check and kept the navigation objective.",
             "This is good because it is good.",
+            "This revision changed the route after a safety check and kept the navigation objective.",
             "This proves I am better than everyone."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A useful caption links the artifact to a specific decision and learning target."
         },
         {
           "prompt": "How can a learner check a portfolio for completeness?",
           "options": [
-            "Compare entries against the course criteria and note any missing evidence.",
             "Assume any number of entries is enough.",
+            "Compare entries against the course criteria and note any missing evidence.",
             "Use only the most recent item."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A checklist of criteria helps identify gaps before submission."
         },
         {
@@ -11276,11 +11276,11 @@
         {
           "prompt": "Which artifact helps show progress in feedback skills?",
           "options": [
-            "A sample of a feedback cue and a later reflection on how it was used.",
+            "A list of classmate rankings.",
             "Only a picture of the learner.",
-            "A list of classmate rankings."
+            "A sample of a feedback cue and a later reflection on how it was used."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Specific feedback evidence can show how the learner translated a cue into action."
         },
         {
@@ -11296,21 +11296,21 @@
         {
           "prompt": "A student wants to include a peer's work in their portfolio. What should they consider?",
           "options": [
-            "Permission, privacy, attribution, and whether the peer's work is necessary.",
             "Assume all peer work is free to publish.",
+            "Permission, privacy, attribution, and whether the peer's work is necessary.",
             "Include private comments without asking."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Permission and responsible attribution matter when using another person's work."
         },
         {
           "prompt": "Which organization method helps a teacher review the portfolio?",
           "options": [
-            "Group evidence by learning target or week with clear labels.",
+            "Remove the explanations.",
             "Mix everything without headings.",
-            "Remove the explanations."
+            "Group evidence by learning target or week with clear labels."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Organization makes the evidence easier to trace to outcomes."
         },
         {
@@ -11415,50 +11415,50 @@
           "prompt": "While practicing \"use feedback to change one training decision\", a learner notices a new safety concern. What is the best response?",
           "options": [
             "Continue unchanged because the plan was already written.",
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
-            "Ask peers to vote on whether a warning sign should be ignored."
+            "Ask peers to vote on whether a warning sign should be ignored.",
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for program revision?",
           "options": [
-            "The learner has mastered every related skill in every setting.",
+            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
             "The learner should use the same activity and difficulty in all future sessions.",
-            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step."
+            "The learner has mastered every related skill in every setting."
           ],
-          "correct": 2,
+          "correct": 0,
           "rationale": "A learning record supports conclusions limited to the observed task; it does not prove universal mastery or a one-size-fits-all plan."
         },
         {
           "prompt": "During program revision, which plan best applies the week's focus skill: use feedback to change one training decision?",
           "options": [
-            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence.",
+            "Record only whether the task was finished, without explaining the decision.",
             "Choose the hardest version regardless of conditions.",
-            "Record only whether the task was finished, without explaining the decision."
+            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The learner applies use feedback to change one training decision by making a feasible, justified choice and pointing to evidence relevant to program revision."
         },
         {
           "prompt": "A learner has limited time and no specialized equipment while preparing for program revision. Which next step best supports this week's learning?",
           "options": [
-            "Copy a classmate's decision without checking the case.",
             "Identify the decision, compare realistic options, and explain the choice using the learning target.",
+            "Copy a classmate's decision without checking the case.",
             "Use completion time as the only measure of learning."
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "A contextual decision responds to the actual constraints and makes its reasoning visible; speed or copying is insufficient."
         },
         {
           "prompt": "Which observation gives the strongest evidence of progress on the focus skill \"use feedback to change one training decision\"?",
           "options": [
             "A general statement that the learner looked more athletic.",
-            "A single score with no description of the task or conditions.",
-            "A dated before-and-after observation tied to a clear criterion, with limits noted."
+            "A dated before-and-after observation tied to a clear criterion, with limits noted.",
+            "A single score with no description of the task or conditions."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "Relevant, dated evidence tied to a criterion supports a defensible conclusion better than appearance or an unexplained score."
         },
         {
@@ -11474,11 +11474,11 @@
         {
           "prompt": "A plan is repeatedly too long for the learner's schedule. Which change is most reasonable?",
           "options": [
-            "Shorten or rearrange it while preserving the intended goal.",
             "Keep the same plan and hide missed sessions.",
+            "Shorten or rearrange it while preserving the intended goal.",
             "Add more work to compensate."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A repeated barrier is a reason to make the plan more feasible."
         },
         {
@@ -11494,31 +11494,31 @@
         {
           "prompt": "Which is the best revision after a route becomes unsafe?",
           "options": [
-            "Choose a safer route and record how it still meets the navigation goal.",
             "Keep the route because it is in the original plan.",
+            "Choose a safer route and record how it still meets the navigation goal.",
             "Remove safety checks."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Revisions should preserve the objective while responding to safety information."
         },
         {
           "prompt": "How can feedback inform program revision?",
           "options": [
-            "Identify a specific cue or barrier, make a reasoned change, and review the result.",
+            "Use feedback to rank classmates.",
             "Change the entire program without a reason.",
-            "Use feedback to rank classmates."
+            "Identify a specific cue or barrier, make a reasoned change, and review the result."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Feedback is most useful when it leads to a concrete, reviewable change."
         },
         {
           "prompt": "A revised plan shows less activity time but better access and consistency. What can be concluded?",
           "options": [
-            "The plan may fit the learner's circumstances better; review the goal and evidence rather than one number alone.",
             "The revised plan must be worse.",
+            "The plan may fit the learner's circumstances better; review the goal and evidence rather than one number alone.",
             "Less time always means no learning."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Plan quality depends on the learning goal and context, not just one quantity."
         },
         {
@@ -11534,31 +11534,31 @@
         {
           "prompt": "Why should a learner record why a plan was revised?",
           "options": [
-            "It connects the evidence or barrier to the decision.",
             "It guarantees the revision works.",
+            "It connects the evidence or barrier to the decision.",
             "It prevents further changes."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A rationale makes the decision traceable and useful for future reflection."
         },
         {
           "prompt": "Which is an overreaction to one unsuccessful practice attempt?",
           "options": [
-            "Changing every part of the plan without checking what happened.",
+            "Noting the conditions and limitations.",
             "Examining the cue and trying one reasonable change.",
-            "Noting the conditions and limitations."
+            "Changing every part of the plan without checking what happened."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "One attempt usually provides limited evidence; revisions should be proportionate."
         },
         {
           "prompt": "What should a learner do if the new plan causes pain or other concerning symptoms?",
           "options": [
-            "Stop the activity and seek appropriate guidance before deciding how to proceed.",
+            "Ignore the symptoms until the review date.",
             "Continue because the plan is new.",
-            "Ignore the symptoms until the review date."
+            "Stop the activity and seek appropriate guidance before deciding how to proceed."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Safety concerns take priority over testing a revision."
         },
         {
@@ -11574,11 +11574,11 @@
         {
           "prompt": "A learner revises a goal after discovering a cost barrier. What should they record?",
           "options": [
-            "The barrier, the alternative chosen, and how the alternative still supports the purpose.",
+            "A classmate's financial information.",
             "A claim that cost never matters.",
-            "A classmate's financial information."
+            "The barrier, the alternative chosen, and how the alternative still supports the purpose."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The portfolio should connect real constraints to the selected alternative."
         },
         {
@@ -11594,21 +11594,21 @@
         {
           "prompt": "What does it mean to evaluate a revision?",
           "options": [
-            "Compare what happened with the goal and decide what evidence supports a next step.",
+            "Never reconsider the plan.",
             "Assume every change succeeds.",
-            "Never reconsider the plan."
+            "Compare what happened with the goal and decide what evidence supports a next step."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Evaluation checks the revision against the stated target."
         },
         {
           "prompt": "A learner gets conflicting feedback on their plan. What is appropriate?",
           "options": [
-            "Clarify the learning goal and compare the reasoning behind each suggestion.",
             "Follow the strictest suggestion automatically.",
+            "Clarify the learning goal and compare the reasoning behind each suggestion.",
             "Ignore safety to avoid disagreement."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Conflicting feedback should be assessed against the objective and safety."
         },
         {
@@ -11624,31 +11624,31 @@
         {
           "prompt": "A new plan relies on an inaccessible venue. What should happen?",
           "options": [
-            "Revise the venue or choose an accessible alternative before relying on the plan.",
             "Assume access will somehow work out.",
+            "Revise the venue or choose an accessible alternative before relying on the plan.",
             "Tell the learner to manage alone."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Access barriers should be addressed at the planning stage."
         },
         {
           "prompt": "Which is the best reason to preserve an earlier version of a plan?",
           "options": [
-            "It allows the learner to show what changed and why.",
+            "It prevents anyone from reviewing improvements.",
             "It proves the first version was correct.",
-            "It prevents anyone from reviewing improvements."
+            "It allows the learner to show what changed and why."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Earlier versions make revision visible and support process reflection."
         },
         {
           "prompt": "How can a student distinguish a revision from a random change?",
           "options": [
-            "Explain what evidence or constraint led to the change and how it fits the goal.",
             "Make several unexplained changes.",
+            "Explain what evidence or constraint led to the change and how it fits the goal.",
             "Copy a different plan without checking it."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A revision responds to evidence and preserves a clear purpose."
         },
         {
@@ -11792,11 +11792,11 @@
         {
           "prompt": "What makes a lifelong activity plan realistic?",
           "options": [
-            "It can adapt to changing schedules, access, preferences, and resources.",
+            "It depends on expensive equipment only.",
             "It requires a fixed routine regardless of circumstances.",
-            "It depends on expensive equipment only."
+            "It can adapt to changing schedules, access, preferences, and resources."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Lifelong planning must be flexible enough to fit changing circumstances."
         },
         {
@@ -11812,31 +11812,31 @@
         {
           "prompt": "Which is a useful feature of a long-term activity plan?",
           "options": [
-            "More than one suitable activity or fallback option.",
+            "A rule never to take rest.",
             "Only one option with no alternative.",
-            "A rule never to take rest."
+            "More than one suitable activity or fallback option."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Options help the plan remain feasible when conditions change."
         },
         {
           "prompt": "Why can recreation preferences change over time?",
           "options": [
-            "Interests, access, social settings, responsibilities, and abilities can change.",
+            "Changing a preference proves failure.",
             "Preferences must stay the same forever.",
-            "Changing a preference proves failure."
+            "Interests, access, social settings, responsibilities, and abilities can change."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A lifelong plan should support changing interests and constraints."
         },
         {
           "prompt": "Which is an example of an accessible long-term option?",
           "options": [
-            "A suitable low-cost activity in a reachable place with a practical schedule.",
+            "A task that requires unsafe conditions.",
             "A program the learner cannot reach or afford.",
-            "A task that requires unsafe conditions."
+            "A suitable low-cost activity in a reachable place with a practical schedule."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Practical access and resources are part of sustainable planning."
         },
         {
@@ -11852,21 +11852,21 @@
         {
           "prompt": "Which goal is more sustainable across different life stages?",
           "options": [
-            "Keep a flexible menu of activities and periodically review what fits.",
             "Commit to one exact session plan for all future years.",
+            "Keep a flexible menu of activities and periodically review what fits.",
             "Never adapt equipment or timing."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Flexible planning is more resilient to changing circumstances."
         },
         {
           "prompt": "How should a learner discuss long-term activity with someone who has different preferences?",
           "options": [
-            "Respect differences and compare options without prescribing one universal routine.",
             "Claim everyone should choose the same activity.",
+            "Respect differences and compare options without prescribing one universal routine.",
             "Rank preferences as better or worse."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Different choices may be suitable for different people and contexts."
         },
         {
@@ -11882,11 +11882,11 @@
         {
           "prompt": "A future plan includes an activity that may require instruction. What is appropriate?",
           "options": [
-            "Identify where to learn the skill safely before participating independently.",
             "Begin without understanding the equipment.",
+            "Identify where to learn the skill safely before participating independently.",
             "Assume all online advice is accurate."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Planning for instruction is part of safe participation in unfamiliar activities."
         },
         {
@@ -11902,41 +11902,41 @@
         {
           "prompt": "Which is a useful contingency plan?",
           "options": [
-            "If the weather or venue changes, use a suitable indoor or alternate option.",
             "Continue on the same route regardless of conditions.",
+            "If the weather or venue changes, use a suitable indoor or alternate option.",
             "Cancel all future activity after one change."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Fallbacks help a plan respond to predictable barriers."
         },
         {
           "prompt": "Why should a long-term plan include rest and flexibility?",
           "options": [
-            "It supports a realistic approach as needs and schedules vary.",
             "Rest always prevents progress.",
+            "It supports a realistic approach as needs and schedules vary.",
             "A lifelong plan must be constant."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Flexibility and rest can be part of maintaining a realistic approach."
         },
         {
           "prompt": "Which evidence helps evaluate a community activity over time?",
           "options": [
-            "Notes on access, cost, enjoyment, safety, and whether it continues to fit the goal.",
+            "A promise never to stop.",
             "Only its popularity in the first week.",
-            "A promise never to stop."
+            "Notes on access, cost, enjoyment, safety, and whether it continues to fit the goal."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "The suitability of an activity can be reviewed as experience accumulates."
         },
         {
           "prompt": "A learner expects future access needs may change. What is a sensible plan?",
           "options": [
-            "Identify activities with adaptable versions and revisit access information when needed.",
             "Assume no changes will occur.",
+            "Identify activities with adaptable versions and revisit access information when needed.",
             "Require the same physical version indefinitely."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Anticipating change can make future choices more resilient."
         },
         {
@@ -11952,11 +11952,11 @@
         {
           "prompt": "What information might be useful in a transition resource list?",
           "options": [
-            "Trusted activity providers, cost, travel details, accessibility information, and contact methods.",
             "Unverified promises about results.",
+            "Trusted activity providers, cost, travel details, accessibility information, and contact methods.",
             "Private records of other participants."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A practical resource list helps the learner evaluate future options."
         },
         {
@@ -11972,11 +11972,11 @@
         {
           "prompt": "Which is a strong strategy for maintaining an activity habit through disruption?",
           "options": [
-            "Choose a small backup option and a way to restart when circumstances improve.",
+            "Increase all activity immediately after every disruption.",
             "Treat one missed session as permanent failure.",
-            "Increase all activity immediately after every disruption."
+            "Choose a small backup option and a way to restart when circumstances improve."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A backup and a restart plan make the routine more adaptable."
         },
         {
@@ -12070,71 +12070,71 @@
         {
           "prompt": "The current plan for final demonstration and reflection is missing a clear success criterion. What revision is most useful?",
           "options": [
-            "Name one observable criterion for \"defend a safe personal plan with evidence and an alternative\", then record what happened and what remains uncertain.",
+            "Judge success by effort alone and omit the learning evidence.",
             "Add more activity without deciding what will be observed.",
-            "Judge success by effort alone and omit the learning evidence."
+            "Name one observable criterion for \"defend a safe personal plan with evidence and an alternative\", then record what happened and what remains uncertain."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A clear criterion connects the activity to observable evidence and acknowledges uncertainty."
         },
         {
           "prompt": "A learner cannot use the original movement format for final demonstration and reflection. Which adaptation is strongest?",
           "options": [
-            "Remove the learner from the task without an alternative.",
             "Choose a safe accessible demonstration, observation, or explanation that still measures \"defend a safe personal plan with evidence and an alternative\".",
+            "Remove the learner from the task without an alternative.",
             "Require private medical details before offering an adjustment."
           ],
-          "correct": 1,
+          "correct": 0,
           "rationale": "An equivalent accessible pathway preserves the objective without exclusion or unnecessary health disclosure."
         },
         {
           "prompt": "While practicing \"defend a safe personal plan with evidence and an alternative\", a learner notices a new safety concern. What is the best response?",
           "options": [
             "Continue unchanged because the plan was already written.",
-            "Ask peers to vote on whether a warning sign should be ignored.",
-            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing."
+            "Pause, assess the concern, and choose a safer option or seek appropriate guidance before continuing.",
+            "Ask peers to vote on whether a warning sign should be ignored."
           ],
-          "correct": 2,
+          "correct": 1,
           "rationale": "A plan must adapt to new information; safety takes priority over completing a preset task."
         },
         {
           "prompt": "Which conclusion is best supported after a learner completes the five-day sequence for final demonstration and reflection?",
           "options": [
-            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
             "The learner has mastered every related skill in every setting.",
+            "The learner can explain a choice, provide relevant evidence, and identify a limitation or next step.",
             "The learner should use the same activity and difficulty in all future sessions."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A learning record supports conclusions limited to the observed task; it does not prove universal mastery or a one-size-fits-all plan."
         },
         {
           "prompt": "During final demonstration and reflection, which plan best applies the week's focus skill: defend a safe personal plan with evidence and an alternative?",
           "options": [
             "Choose the hardest version regardless of conditions.",
-            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence.",
-            "Record only whether the task was finished, without explaining the decision."
+            "Record only whether the task was finished, without explaining the decision.",
+            "Practice the focus skill in a feasible task, explain the choice, and record observable evidence."
           ],
-          "correct": 1,
+          "correct": 2,
           "rationale": "The learner applies defend a safe personal plan with evidence and an alternative by making a feasible, justified choice and pointing to evidence relevant to final demonstration and reflection."
         },
         {
           "prompt": "What should a final PE demonstration or portfolio defense include?",
           "options": [
-            "The goal, evidence, safety decisions, adaptations, and a reasoned reflection.",
             "Only a claim that the learner performed perfectly.",
+            "The goal, evidence, safety decisions, adaptations, and a reasoned reflection.",
             "A ranking of classmates."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A capstone should show both evidence and the reasoning behind the learner's choices."
         },
         {
           "prompt": "A learner cannot safely perform a planned demonstration. How can they show the learning target?",
           "options": [
-            "Use a suitable adapted demonstration, case analysis, or clear explanation based on the rubric.",
+            "Be required to disclose a diagnosis publicly.",
             "Receive an automatic failure.",
-            "Be required to disclose a diagnosis publicly."
+            "Use a suitable adapted demonstration, case analysis, or clear explanation based on the rubric."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Equivalent evidence can demonstrate the target without forcing unsafe participation or disclosure."
         },
         {
@@ -12150,31 +12150,31 @@
         {
           "prompt": "Why should final reflection include limitations?",
           "options": [
-            "It shows the learner understands what the evidence cannot establish and what could be improved.",
             "It cancels all previous learning.",
+            "It shows the learner understands what the evidence cannot establish and what could be improved.",
             "A final project must claim certainty."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Recognizing limitations is part of evidence-based reasoning."
         },
         {
           "prompt": "Which item best demonstrates learning across the course?",
           "options": [
-            "An early plan, an informed revision, and a reflection on why the change was made.",
+            "A photo of the learner.",
             "One final score without context.",
-            "A photo of the learner."
+            "An early plan, an informed revision, and a reflection on why the change was made."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "A sequence of evidence can show growth in reasoning and revision."
         },
         {
           "prompt": "How should a learner respond to a rubric criterion they do not understand?",
           "options": [
-            "Ask for clarification and connect their evidence to the criterion.",
+            "Ignore the criterion.",
             "Guess what the teacher wants and hide uncertainty.",
-            "Ignore the criterion."
+            "Ask for clarification and connect their evidence to the criterion."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Clarification helps ensure the evidence aligns with the actual learning target."
         },
         {
@@ -12200,11 +12200,11 @@
         {
           "prompt": "Which final reflection is most defensible?",
           "options": [
-            "My evidence supports this choice under these conditions; another context could require a change.",
             "My plan is right for every person.",
+            "My evidence supports this choice under these conditions; another context could require a change.",
             "I have no more to learn."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "A defensible conclusion is specific about conditions and acknowledges uncertainty."
         },
         {
@@ -12220,31 +12220,31 @@
         {
           "prompt": "How should teacher feedback be handled before finalizing the portfolio?",
           "options": [
-            "Use relevant feedback to clarify claims or revise the evidence and document the change.",
+            "Change the plan without noting why.",
             "Ignore every comment.",
-            "Change the plan without noting why."
+            "Use relevant feedback to clarify claims or revise the evidence and document the change."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Feedback can improve accuracy and clarity when applied thoughtfully."
         },
         {
           "prompt": "Which evidence should not be used as the sole basis for awarding PE learning?",
           "options": [
-            "Physical appearance or a single raw performance number without reference to the learning criteria.",
             "A reasoned safety decision.",
+            "Physical appearance or a single raw performance number without reference to the learning criteria.",
             "An explanation of how an adaptation met the target."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Assessment should align with explicit learning criteria, not appearance or one isolated metric."
         },
         {
           "prompt": "A student has a strong written explanation but limited practical evidence. What should the teacher do?",
           "options": [
-            "Use the published rubric and request any needed evidence through an accessible pathway.",
+            "Lower the grade based on assumptions.",
             "Invent performance evidence.",
-            "Lower the grade based on assumptions."
+            "Use the published rubric and request any needed evidence through an accessible pathway."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Assessment decisions should use actual evidence and transparent criteria."
         },
         {
@@ -12260,31 +12260,31 @@
         {
           "prompt": "Why is it helpful to connect a final plan to earlier weekly work?",
           "options": [
-            "It shows how goals, evidence, and revisions developed over time.",
+            "It means no final reflection is needed.",
             "It guarantees a specific transcript grade.",
-            "It means no final reflection is needed."
+            "It shows how goals, evidence, and revisions developed over time."
           ],
-          "correct": 0,
+          "correct": 2,
           "rationale": "Connections make the learning process visible across the course."
         },
         {
           "prompt": "Which is an appropriate final demonstration when physical activity would be unsuitable?",
           "options": [
-            "Analyze a scenario, design a safe plan, and explain the movement principles and adaptations.",
             "Perform the unsafe task for evidence.",
+            "Analyze a scenario, design a safe plan, and explain the movement principles and adaptations.",
             "Skip all learning criteria."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Reasoned alternatives can assess knowledge without requiring unsuitable physical activity."
         },
         {
           "prompt": "How should a learner discuss uncertainty in a final defense?",
           "options": [
-            "Identify what the evidence shows, what remains unknown, and what could be checked next.",
             "Pretend there are no limitations.",
+            "Identify what the evidence shows, what remains unknown, and what could be checked next.",
             "Use uncertainty to avoid explaining the evidence."
           ],
-          "correct": 0,
+          "correct": 1,
           "rationale": "Accurate communication distinguishes evidence from assumptions."
         },
         {
