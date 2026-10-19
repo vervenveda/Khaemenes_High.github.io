@@ -217,3 +217,14 @@ CI establishes source/engine regression behavior under the test harness and loca
 
 Current status: **CI regression checks green; hands-on browser/device pass still pending.** Do not label browser accessibility or cross-device behavior as tested until those checks are performed.
 
+### Step 3 accessibility source hardening — 2026-10-19
+
+Further source inspection found that the three Grade 10–12 dashboards dynamically insert scored assessment feedback into `#testFeedback`, but the destination was not exposed as an accessible live status region. It also found untyped buttons that rely on the browser's default button behavior.
+
+Repairs committed:
+- Biology 10, Chemistry 11, and Physics & Engineering 12 dashboards now give `#testFeedback` `role="status"`, `aria-live="polite"`, and `aria-atomic="true"` so score/correction feedback can be announced by compatible assistive technology.
+- Untyped buttons in those dashboards now declare `type="button"`; the intentionally submitting assessment button remains `type="submit"`.
+- The upper-science regression suite now checks both properties for all three dashboards.
+
+This is source-level accessibility hardening, not a complete WCAG audit or screen-reader certification. A keyboard-only and screen-reader pass is still required in real browsers and on narrow screens.
+
