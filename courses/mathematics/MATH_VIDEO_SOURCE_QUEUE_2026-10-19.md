@@ -68,3 +68,16 @@ These are **staged, disabled** canonical video records. Publisher verified throu
 | The Organic Chemistry Tutor | Factoring Trinomials & Polynomials, Basic Introduction - Algebra | `factoring-trinomials-introduction.json` | Introductory polynomial factoring |
 
 Do not turn on course placement until classroom-level checking of the video, embed, captions and lesson alignment is complete. New candidates remain disabled and do not change mastery.
+
+## Second sourcing pass — confirmed preferred-instructor candidates
+
+The following four records are staged in the canonical Mathematics library and **disabled**. YouTube listings identify The Organic Chemistry Tutor as publisher, and descriptions match the broad subject. No student playback, caption support, transcript alternative or specific lesson placement has yet been certified.
+
+| Title | Video ID | Shared record |
+|---|---|---|
+| How To Solve Linear Inequalities, Basic Introduction, Algebra | DrZJKdXlZ3I | `linear-inequalities-introduction.json` |
+| Solving Systems of Equations By Elimination & Substitution With 2 Variables | oKqtgz2eo-Y | `systems-elimination-substitution.json` |
+| Evaluating Functions - Basic Introduction \| Algebra | HyNie_PYgsY | `evaluating-functions-introduction.json` |
+| How To Solve Quadratic Equations By Factoring - Algebra Introduction | aj4akBeGjuo | `quadratic-equations-factoring.json` |
+
+Review full videos, mathematical rigor, student age, captions, transcripts, embed behavior and the precise lesson objective before enabling any placement. Existing Pre-Algebra embeds and all 80% mastery records remain unchanged.
