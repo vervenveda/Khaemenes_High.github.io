@@ -6,7 +6,7 @@
 
 ## Repairs applied
 
-- Aligned the Grade 9 completion predicate with the assessment engine's released range: Weeks 1–8 may use the randomized 20-question attempt when the week supplies at least 20 reviewed-format items.
+- Aligned the Grade 9 completion predicate and attempt creation with each week's validated bank and the 80% mastery threshold.
 - All 36 Grade 9 weeks can now use randomized 20-question attempts. Each bank has at least 25 questions. The portal selects 20 per attempt, shuffles question and answer order, and applies the 80% threshold. Teacher review remains required for formal credit.
 - Marked Grades 10–12 current three-question checks as formative. Their topic spines are not represented as grade-specific randomized mastery banks or teacher-verified credit.
 - Fixed a retake blocker: failed Grade 9 attempts no longer reuse a submitted attempt ID. Every retry receives a new attempt identity; prior attempt snapshots remain immutable and reviewable with the learner's answers, correct answers and rationales.
@@ -19,8 +19,7 @@ The Grade 9 instructional source contains 36 weekly units and five instructional
 | Weeks | Questions available per week |
 |---|---:|
 | 1–5 | 30 each |
-| 6–12 | 25 each |
-| 13–36 | 5 each |
+| 6–36 | 25 each |
 
 For all 36 weeks, source-level validation found unique prompts within each week's bank, at least three distinct choices per question, an in-range correct index, and a non-empty rationale. The engine selects 20 questions and shuffles both question order and answer order.
 
