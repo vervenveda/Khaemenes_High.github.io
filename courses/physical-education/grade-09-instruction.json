@@ -11097,49 +11097,74 @@
     {
       "week": 31,
       "title": "Community activity options",
-      "essentialQuestion": "How can we make a safe, evidence-based decision about community activity options?",
-      "scenario": "A Grade 9 learner is planning a safe, accessible activity involving community activity options. They have limited time, variable energy, and no specialized equipment.",
-      "model": "Worked example (community): A learner wants to practice community activity options. First identify the specific skill: Compare cost, transport and accessibility barriers. Next compare two feasible options, select one with a clear safety cue, and document the reason. A written, observed, seated or adapted demonstration can meet the same reasoning target.",
+      "essentialQuestion": "How can students compare community recreation opportunities using real access constraints, reliable information, safety and affordability rather than assuming the nearest or cheapest choice works for everyone?",
+      "scenario": "A fictional family compares three options: a free outdoor path 2 km away with uncertain accessible crossings; a community-center activity costing $4 per visit plus $3 round-trip transport; and a free at-home seated movement or route-analysis option. The learner has two available afternoons, changing weather and a limited weekly budget. Which options are feasible and what facts need confirmation?",
+      "model": "Worked comparison: Two community-center visits cost 2 × ($4 admission + $3 round-trip transport) = $14. The free outdoor path has no admission charge but unknown crossing access and weather exposure; 'free' does not mean barrier-free. An at-home movement or written investigation has no admission or transport cost, but offers a different experience. A defensible decision names costs, schedules, access, supervision, current conditions and a fallback, and verifies unknown details rather than inventing them.",
       "days": [
         {
           "day": 1,
           "phase": "Investigate",
-          "instruction": "Introduce community activity options. Discuss the difference between participation, movement skill and health status. Analyze the case: A Grade 9 learner is planning a safe, accessible activity involving community activity options. They have limited time, variable energy, and no specialized equipment.",
-          "practice": "Write a three-part safety plan for community activity options: purpose, feasible option, and stop/modification cue.",
-          "evidence": "A reasoned three-part plan with a specific observable cue."
+          "studentTitle": "Discover community recreation choices",
+          "concept": "Recreational opportunities can be formal or informal: accessible parks, school facilities, local programs and home activities. Identify the learning benefit and constraints before judging a listing.",
+          "instruction": "Recreational opportunities can be formal or informal: accessible parks, school facilities, local programs and home activities. Identify the learning benefit and constraints before judging a listing.",
+          "practice": "Classify the three fictional choices by location, type, equipment, participation and information still missing.",
+          "workedExample": "A path may provide independent movement, a center may provide structured instruction and at-home movement can offer accessible practice.",
+          "independentTask": "Make a three-option comparison table identifying a purpose, two potential benefits and two facts requiring verification.",
+          "evidence": "Distinct options, realistic strengths and clearly identified unknowns.",
+          "successCriteria": "I can identify community options without assuming every resource is equally accessible."
         },
         {
           "day": 2,
           "phase": "Demonstrate",
-          "instruction": "Teacher models one safe approach to community activity options and one accessible seated, low-impact, observation or explanation alternative. Compare what each demonstrates.",
-          "practice": "Practice the week's decision with this exact prompt: Compare cost, transport and accessibility barriers. Demonstrate it physically when safe, or explain/annotate an equivalent demonstration.",
-          "evidence": "Two technique cues, an error correction, and an accessibility adaptation."
+          "studentTitle": "Calculate realistic participation costs",
+          "concept": "Sticker prices omit transport, equipment and repeat visits. Multiply per-visit admission plus return travel cost by the number of visits, noting when fees are uncertain.",
+          "instruction": "Sticker prices omit transport, equipment and repeat visits. Multiply per-visit admission plus return travel cost by the number of visits, noting when fees are uncertain.",
+          "practice": "Calculate two community-center visits: (4 + 3) × 2 = $14. Explain why a $0 trail might still present transport or access costs.",
+          "workedExample": "A $4 program with $3 round-trip transport costs $7 per visit, not $4. An unknown transport cost must be labeled unknown.",
+          "independentTask": "Compare weekly costs for one versus two center visits and identify a no-purchase alternative.",
+          "evidence": "Correct arithmetic and units; no unverified amounts represented as actual local prices.",
+          "successCriteria": "I can calculate total recreation costs and qualify missing information."
         },
         {
           "day": 3,
           "phase": "Apply",
-          "instruction": "Discuss how effort, environment, access and recovery change the best choice for community activity options.",
-          "practice": "Use the week's case to propose an activity, a lower-intensity alternative and a nonparticipation observation pathway.",
-          "evidence": "Three justified pathways and a brief risk assessment."
+          "studentTitle": "Evaluate access, schedules and safe travel",
+          "concept": "Access includes route crossings, transportation, hours, age rules, supervision, sensory needs, restrooms and communication. A public description cannot replace checking current conditions.",
+          "instruction": "Access includes route crossings, transportation, hours, age rules, supervision, sensory needs, restrooms and communication. A public description cannot replace checking current conditions.",
+          "practice": "Review a hypothetical activity listing and write questions about entry routes, support, age eligibility, schedule and weather closure.",
+          "workedExample": "A nearby trail with a missing safe crossing may be less feasible than a farther program with supported access; distance alone cannot decide.",
+          "independentTask": "Create a verification checklist and identify a backup if rain, unavailable transport or a program closure prevents attendance.",
+          "evidence": "Relevant access questions, safety checks and a feasible fallback.",
+          "successCriteria": "I can evaluate participation barriers while protecting student privacy and safety."
         },
         {
           "day": 4,
           "phase": "Analyze",
-          "instruction": "Examine a fictional activity log: Session A used an easy effort and adequate rest; Session B used uncomfortable effort without recovery. Compare the decisions rather than body outcomes.",
-          "practice": "Analyze a learner's fictional plan for community activity options: it lacks a stop cue and adaptation. Rewrite it to satisfy: Compare cost, transport and accessibility barriers.",
-          "evidence": "A revision justified by safety and observable learning evidence."
+          "studentTitle": "Compare claims and revise the plan",
+          "concept": "A defensible recommendation distinguishes confirmed facts from assumptions. Changes in fees, schedules, transport or access can invalidate a plan; revising the plan is evidence of sound judgment.",
+          "instruction": "A defensible recommendation distinguishes confirmed facts from assumptions. Changes in fees, schedules, transport or access can invalidate a plan; revising the plan is evidence of sound judgment.",
+          "practice": "Analyze a fictional student plan that selects the trail solely because it is free and requires an unaccompanied visit despite an unsafe crossing.",
+          "workedExample": "Revised plan: verify crossing safety and supervision before visiting; meanwhile choose an at-home or supervised alternative.",
+          "independentTask": "Rewrite the flawed decision with two verified-or-unverified labels, a cost estimate, a stop/no-go trigger and accessible backup.",
+          "evidence": "Clear correction, bounded claims, equitable options and safety justification.",
+          "successCriteria": "I can revise a community activity plan when key constraints are unresolved."
         },
         {
           "day": 5,
           "phase": "Defend",
-          "instruction": "Synthesize what safe and inclusive learning about community activity options requires.",
-          "practice": "Create a brief teach-back, annotated movement plan or accessible explanation; reflect on a misconception.",
-          "evidence": "Portfolio entry with claim, observation, adaptation and next step."
+          "studentTitle": "Defend an inclusive community recreation decision",
+          "concept": "A strong decision uses purpose, interest, complete estimated cost, feasible timing, access, current-information checks, and a safe alternative. Academic credit depends on planning quality, not attendance or spending.",
+          "instruction": "A strong decision uses purpose, interest, complete estimated cost, feasible timing, access, current-information checks, and a safe alternative. Academic credit depends on planning quality, not attendance or spending.",
+          "practice": "Model a short comparison of all three fictional choices with the $14 example, unknown trail crossing and flexible at-home option.",
+          "workedExample": "The student chooses a feasible option and explains the facts to confirm before acting, rather than declaring one activity universally best.",
+          "independentTask": "Submit an annotated matrix, cost calculation, verification checklist, chosen option and a no-cost/no-travel backup.",
+          "evidence": "Three compared options, correct calculation, honest uncertainty, access/safety plan and defensible choice.",
+          "successCriteria": "I can justify a feasible community recreation option without assuming paid travel or uniform access."
         }
       ],
-      "misconception": "More intensity or outperforming classmates always means better learning about community activity options.",
-      "correction": "Learning is evaluated by informed choices, safe technique, explanation, reflection and documented progress relative to a learner's own context.",
-      "teacherNotes": "Check for accessible alternatives and informed consent. Never require disclosure of medical history or body measurements. Model neutral language for community activity options.",
+      "misconception": "The cheapest or nearest listed recreation opportunity is always the most accessible and suitable choice.",
+      "correction": "Responsible community recreation planning accounts for all costs, safe transportation, actual program rules, accessibility, current conditions, learner choice and a fallback.",
+      "teacherNotes": "Use fictional locations and costs unless authentic current information has been independently verified. Never request student home addresses, disability status or family finances; do not require travel, payment or unaccompanied visits. Grade comparison, arithmetic, source verification and inclusive decisions.",
       "rubric": [
         {
           "criterion": "Knowledge and rationale",
@@ -11420,7 +11445,12 @@
           "rationale": "A strong reflection supports a feasible next decision and identifies unknowns."
         }
       ],
-      "focusSkill": "Compare cost, transport and accessibility barriers."
+      "focusSkill": "Compare cost, transport and accessibility barriers.",
+      "conceptExplanation": "Community recreation includes parks, trails, community centers, school programs, libraries and organized groups. Compare the *total* cost (fees, transport, equipment), opening or session times, route safety, age or supervision rules, physical and sensory access, restrooms, communication access, and individual interests. An accessible facility description must be checked for the needs of the specific activity and learner. Public listings can be outdated; call or verify with a trustworthy provider before a real visit. A fictional planning assignment never requires disclosure of a home address, disability or private finances.",
+      "biomechanicsAndTechnique": "Activity suitability includes a clear and safe travel route, appropriate supervision, weather and air-quality checks, reliable supports, comfortable effort and a way to stop or leave. Do not send minors to unfamiliar locations for an assignment or assume all public spaces are safe. At-home seated mobility, optional familiar movement, observation and written comparison can meet the decision-making goal. Never require paid admission, equipment purchase or travel for credit.",
+      "workedExample": "Plan A: outdoor path, $0 admission but unknown safe crossing and weather access. Plan B: center program, $4 admission and $3 return transport per visit, or $14 for two visits; verify age rules, schedule and accessibility. Plan C: home activity/analysis, no admission or transport cost, flexible timing but different social opportunities. A student with limited transport might select C while researching A; another might choose B after verifying support and cost. Neither choice is academically superior by default.",
+      "applicationTask": "Develop a three-option community recreation decision matrix with full estimated cost, schedule, transport, physical and communication access, weather/safety, information still to verify and a no-cost or no-travel backup. Calculate one weekly cost scenario and defend a feasible, inclusive choice.",
+      "depthVersion": "grade9-week31-topic-specific-2026-10-19"
     },
     {
       "week": 32,
