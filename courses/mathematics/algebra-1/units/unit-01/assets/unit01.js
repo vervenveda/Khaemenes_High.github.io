@@ -6,22 +6,7 @@ function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math
 function archHref(extra={}){const q=new URLSearchParams({course:"Algebra I",unit:"Unit 01 — The Language of Mathematical Truth",...extra});return "https://artist1970.github.io/Archaemenes.github.io/high/?"+q.toString()}
 function lockPage(title,detail,href){$("#main").innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Strict 80% Mastery Gate</p><h1>${esc(title)}</h1><p class="lead">${esc(detail)}</p><div class="nav"><a class="btn primary" href="${href}">Return to required mastery step</a><a class="btn" href="../../../index.html">Course Home</a></div></div></section><section class="block"><div class="wrap"><article class="card"><h2>Progression rule</h2><p>Each lesson check and each graded weekly mastery gate must reach ${MASTERY}% before progression. Both Week 2 and Week 3 must be mastered before Unit 01 formal mastery opens.</p></article></div></section>`}
 function qhtml(items){return items.map((q,i)=>`<div class="question"><strong>${i+1}. ${esc(q.prompt)}</strong>${q.options.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${esc(o)}</label>`).join("")}<div id="f${i}" class="feedback" hidden></div></div>`).join("")}
-function installRetry(){
- const score=document.getElementById("score");
- if(!score||document.getElementById("practiceRetry"))return;
- const retry=document.createElement("button");
- retry.type="button";retry.id="practiceRetry";retry.className="btn";
- retry.textContent="Try again · clear current answers";retry.setAttribute("aria-label","Begin a fresh attempt; keep previously saved scores");
- retry.style.marginLeft="10px";
- retry.addEventListener("click",()=>{
-  document.querySelectorAll('#main .question input[type="radio"]').forEach(input=>{input.checked=false});
-  document.querySelectorAll("#main .question .feedback").forEach(el=>{el.hidden=true;el.textContent="";el.classList.remove("good","bad")});
-  const message=document.getElementById("result");
-  if(message)message.textContent="New attempt ready. Current answers and feedback cleared; previously saved scores and mastery evidence remain unchanged.";
-  document.querySelector('#main .question input[type="radio"]')?.focus();
- });
- score.after(retry);
-}
+function installRetry(){/* Retakes are controlled by bind: graded attempts are immutable. */}
 function nextStepHtml(n){
  const mastered=weekMastered(2),week3=weekMastered(3);
  if(n===3&&!mastered)return {href:"../../../assessments/weekly-mastery.html?week=2",label:"Complete Week 02 Mastery",kind:"gate"};
@@ -32,8 +17,56 @@ function nextStepHtml(n){
  if(n===3)return {href:D.lessons[3].file,label:"Go to Next Lesson · 04",kind:"lesson"};
  return {href:"../index.html",label:"Return to Unit Pathway",kind:"unit"};
 }
-function bind(items,key){installRetry();$("#score")?.addEventListener("click",()=>{let c=0,done=true;items.forEach((q,i)=>{let a=document.querySelector(`input[name=q${i}]:checked`),f=$(`#f${i}`);f.hidden=false;if(!a){done=false;f.className="feedback bad";f.textContent="Choose an answer.";return}let ok=+a.value===q.answer;c+=ok;f.className="feedback "+(ok?"good":"bad");f.textContent=(ok?"Correct. ":"Review. ")+q.explanation});if(!done){$("#result").textContent="Answer every item before scoring.";return}let pct=Math.round(100*c/items.length),r=load();r.attempts.push({key,score:pct,correct:c,total:items.length,at:new Date().toISOString(),items:items.map(q=>q.id),mastery_threshold:MASTERY,mastery_met:pct>=MASTERY});r.best[key]=Math.max(r.best[key]||0,pct);save(r);const gated=key.startsWith("lesson-")||key==="mastery";$("#result").innerHTML=`<strong>${pct}%</strong> · ${c}/${items.length} correct · Best: ${r.best[key]}%${gated?(pct>=MASTERY?" · Mastery demonstrated.":` · Below ${MASTERY}%; review and retake.`):""}`;const nextBox=$("#lessonNextStep");if(nextBox&&key.startsWith("lesson-")){nextBox.hidden=pct<MASTERY;nextBox.style.display=pct>=MASTERY?"flex":"none";nextBox.innerHTML="";if(pct>=MASTERY){const n=Number(key.slice(7));const next=nextStepHtml(n);const link=document.createElement("a");link.className="btn primary";link.href=next.href;link.textContent=next.label;nextBox.appendChild(link);}}})}
-function lesson(n){if(!lessonUnlocked(n)){const weekly=n===4&&!weekMastered(2);return lockPage(`Lesson ${String(n).padStart(2,"0")} is locked`,weekly?`Reach ${MASTERY}% on Week 02 mastery before beginning the Week 03 lesson sequence.`:`Reach ${MASTERY}% on Lesson ${String(n-1).padStart(2,"0")} before opening this lesson.`,weekly?"../../../assessments/weekly-mastery.html?week=2":D.lessons[n-2].file)}let l=D.lessons[n-1],items=D.questions.filter(q=>q.lesson===n);$("#main").innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Unit 01 · Lesson ${String(n).padStart(2,"0")} · Week ${lessonWeek(n)}</p><h1>${esc(l.title)}</h1><p class="lead">${esc(D.unit.essential)}</p><div class="nav"><a class="btn" href="../index.html">Unit Home</a><a class="btn" href="../../../index.html">Course Home</a><a class="btn" href="${archHref({lesson:l.title})}">Ask Arch</a><button class="btn" onclick="print()">Print</button></div></div></section><section class="block"><div class="wrap grid"><article class="card movement"><p class="eyebrow">1 · Mystery</p><h2>Notice before naming</h2><p>${esc(l.mystery)}</p><details><summary>Reveal after you reason</summary><p>${esc(l.mystery_answer)}</p></details></article><article class="card"><p class="eyebrow">2 · Discover</p><h2>What structure do you notice?</h2><p>Write a prediction, identify the quantities or statements involved, and name one feature that must stay true.</p><textarea aria-label="Discovery notes"></textarea></article><article class="card full"><p class="eyebrow">3 · Learn</p><h2>Objectives</h2><ul>${l.objectives.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><div class="grid">${l.concepts.map((x,i)=>`<div class="card"><h3>Idea ${i+1}</h3><p>${esc(x)}</p></div>`).join("")}</div></article><article class="card lab"><p class="eyebrow">4 · Experiment</p><h2>Algebra Lab</h2><p>Change an example, test a boundary case, and verify whether the original reasoning still works. Record what changes and what remains invariant.</p><textarea aria-label="Lab notes"></textarea></article><article class="card boss"><p class="eyebrow">5 · Challenge</p><h2>Wrong Answer Museum</h2><p>${esc(l.wrong)}</p><details><summary>Repair exhibit</summary><p>${esc(l.wrong_answer)}</p></details></article><article class="card"><p class="eyebrow">6 · Defend</p><h2>Arch's Scratchpad</h2><p>Explain one result using a named property, definition, unit relationship, or verification.</p><textarea aria-label="Mathematical defense"></textarea></article><article class="card full"><p class="eyebrow">7 · Reflect & Retrieve</p><h2>Lesson Check</h2><p class="notice"><strong>Progression gate:</strong> score ${MASTERY}% or higher. At the Week 2→3 boundary, Week 2 mastery must also reach ${MASTERY}%.</p>${qhtml(items)}<div class="actions"><button class="btn primary" id="score">Submit & Score</button></div><p id="result" role="status" aria-live="polite" aria-atomic="true"></p><div id="lessonNextStep" class="actions" aria-live="polite" hidden style="display:none"></div></article></div></section>`;bind(items,`lesson-${n}`)}
+function bind(items,key){
+ const score=$("#score"),result=$("#result");if(!score)return;
+ const questionBank=[...items];let current=[],graded=false,attempt=0;
+ const card=score.closest(".card")||score.closest(".block")||document.getElementById("main");
+ const retry=document.createElement("button");retry.type="button";retry.id="practiceRetry";retry.className="btn";retry.textContent="Begin a new randomized attempt";retry.style.marginLeft="10px";
+ score.after(retry);
+ function fresh(){
+  const previous=current.map(q=>q.id).join("|");
+  let chosen=shuffle(questionBank);
+  if(key.startsWith("lesson-")&&chosen.length>8)chosen=chosen.slice(0,8);
+  if(questionBank.length>chosen.length&&previous===chosen.map(q=>q.id).join("|"))chosen=shuffle(questionBank).slice(-chosen.length);
+  current=chosen.map(q=>{
+   const options=shuffle(q.options.map((text,i)=>({text,i})));
+   return {...q,options:options.map(o=>o.text),answer:options.findIndex(o=>o.i===q.answer)};
+  });
+  const old=[...card.querySelectorAll(".question")];
+  if(!old.length)throw new Error("lesson-check-questions-missing");
+  old[0].insertAdjacentHTML("beforebegin",qhtml(current));old.forEach(q=>q.remove());
+  graded=false;attempt++;score.disabled=false;score.textContent="Submit & Score";
+  retry.disabled=true;retry.hidden=true;result.textContent="Fresh attempt "+attempt+" · "+current.length+" randomized questions. Answer all items before grading.";
+ }
+ function seal(){
+  graded=true;score.disabled=true;score.textContent="Attempt graded";
+  card.querySelectorAll('.question input').forEach(input=>{input.disabled=true});
+  retry.hidden=false;retry.disabled=false;
+ }
+ score.addEventListener("click",()=>{
+  if(graded)return;
+  let correct=0,complete=true;
+  current.forEach((q,i)=>{const answer=card.querySelector('input[name="q'+i+'"]:checked');if(!answer){complete=false;return}if(+answer.value===q.answer)correct++});
+  if(!complete){result.textContent="Answer every item before submitting. Nothing has been graded.";return}
+  const pct=Math.round(100*correct/current.length),record=load();
+  record.attempts=Array.isArray(record.attempts)?record.attempts:[];
+  record.best=record.best||{};
+  record.attempts.push({key,score:pct,correct,total:current.length,at:new Date().toISOString(),items:current.map(q=>q.id),answerSnapshot:current.map((q,i)=>({id:q.id,option:Number(card.querySelector('input[name="q'+i+'"]:checked').value),answer:q.answer})),mastery_threshold:MASTERY,mastery_met:pct>=MASTERY,attemptNumber:attempt});
+  record.best[key]=Math.max(record.best[key]||0,pct);
+  try{localStorage.setItem(KEY,JSON.stringify(record))}catch{result.textContent="Evidence could not be saved; this attempt was not submitted. Check device storage.";return}
+  current.forEach((q,i)=>{const answer=card.querySelector('input[name="q'+i+'"]:checked'),f=card.querySelector("#f"+i),ok=Number(answer.value)===q.answer;if(f){f.hidden=false;f.className="feedback "+(ok?"good":"bad");f.textContent=(ok?"Correct. ":"Review. ")+q.explanation}});
+  seal();
+  result.innerHTML='<strong>'+pct+'%</strong> · '+correct+'/'+current.length+' correct · Best: '+record.best[key]+'% · Graded answers are locked. '+(pct>=MASTERY?"Mastery demonstrated.":"Below 80%; use New Attempt for different questions.");
+  const nextBox=$("#lessonNextStep");
+  if(nextBox&&key.startsWith("lesson-")){
+   nextBox.hidden=pct<MASTERY;nextBox.style.display=pct>=MASTERY?"flex":"none";nextBox.innerHTML="";
+   if(pct>=MASTERY){const next=nextStepHtml(Number(key.slice(7))),a=document.createElement("a");a.className="btn primary";a.href=next.href;a.textContent=next.label;nextBox.appendChild(a)}
+  }
+ });
+ retry.addEventListener("click",()=>{if(!graded)return;fresh()});
+ fresh();
+}
+function lesson(n){if(!lessonUnlocked(n)){const weekly=n===4&&!weekMastered(2);return lockPage(`Lesson ${String(n).padStart(2,"0")} is locked`,weekly?`Reach ${MASTERY}% on Week 02 mastery before beginning the Week 03 lesson sequence.`:`Reach ${MASTERY}% on Lesson ${String(n-1).padStart(2,"0")} before opening this lesson.`,weekly?"../../../assessments/weekly-mastery.html?week=2":D.lessons[n-2].file)}let l=D.lessons[n-1],items=D.questions.filter(q=>q.lesson===n);$("#main").innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Unit 01 · Lesson ${String(n).padStart(2,"0")} · Week ${lessonWeek(n)}</p><h1>${esc(l.title)}</h1><p class="lead">${esc(D.unit.essential)}</p><div class="nav"><a class="btn" href="../index.html">Unit Home</a><a class="btn" href="../../../index.html">Course Home</a><a class="btn" href="${archHref({lesson:l.title})}">Ask Arch</a><button class="btn" onclick="print()">Print</button></div></div></section><section class="block"><div class="wrap grid"><article class="card movement"><p class="eyebrow">1 · Mystery</p><h2>Notice before naming</h2><p>${esc(l.mystery)}</p><details><summary>Reveal after you reason</summary><p>${esc(l.mystery_answer)}</p></details></article><article class="card"><p class="eyebrow">2 · Discover</p><h2>What structure do you notice?</h2><p>Write a prediction, identify the quantities or statements involved, and name one feature that must stay true.</p><textarea aria-label="Discovery notes"></textarea></article><article class="card full"><p class="eyebrow">3 · Learn</p><h2>Objectives</h2><ul>${l.objectives.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><div class="grid">${l.concepts.map((x,i)=>`<div class="card"><h3>Idea ${i+1}</h3><p>${esc(x)}</p></div>`).join("")}</div></article><article class="card lab"><p class="eyebrow">4 · Experiment</p><h2>Algebra Lab</h2><p>Change an example, test a boundary case, and verify whether the original reasoning still works. Record what changes and what remains invariant.</p><textarea aria-label="Lab notes"></textarea></article><article class="card boss"><p class="eyebrow">5 · Challenge</p><h2>Wrong Answer Museum</h2><p>${esc(l.wrong)}</p><details><summary>Repair exhibit</summary><p>${esc(l.wrong_answer)}</p></details></article><article class="card"><p class="eyebrow">6 · Defend</p><h2>Arch's Scratchpad</h2><p>Explain one result using a named property, definition, unit relationship, or verification.</p><textarea aria-label="Mathematical defense"></textarea></article><article class="card full">${n===6?`<div class="card" style="margin-bottom:20px"><h3>Lesson 6 · Algebra Reasoning Game</h3><p>Practice identifying flawed steps, justifying corrections, and reasoning with numbers before the lesson check. This optional game does not grant mastery credit.</p><a class="btn primary" href="../../../../assets/learning-games/algebra-reasoning-foundations/index.html">Play Algebra Reasoning Foundations</a></div>`:""}<p class="eyebrow">7 · Reflect & Retrieve</p><h2>Lesson Check</h2><p class="notice"><strong>Progression gate:</strong> score ${MASTERY}% or higher. At the Week 2→3 boundary, Week 2 mastery must also reach ${MASTERY}%.</p>${qhtml(items)}<div class="actions"><button class="btn primary" id="score">Submit & Score</button></div><p id="result" role="status" aria-live="polite" aria-atomic="true"></p><div id="lessonNextStep" class="actions" aria-live="polite" hidden style="display:none"></div></article></div></section>`;bind(items,`lesson-${n}`)}
 function unit(){let u=D.unit;const lessonCards=D.lessons.map(l=>{const unlocked=lessonUnlocked(l.number),mastered=lessonMastered(l.number),weeklyBlock=l.number===4&&!weekMastered(2);return `<article class="card"><p class="eyebrow">Lesson ${String(l.number).padStart(2,"0")} · Week ${lessonWeek(l.number)}</p>${mastered?'<span class="pill">80% mastery met</span>':''}<h3>${esc(l.title)}</h3><p>${esc(l.objectives[0])}</p>${unlocked?`<a class="btn primary" href="lessons/${l.file}">${mastered?"Review Lesson":"Open Lesson"}</a>`:`<span class="btn" aria-disabled="true">${weeklyBlock?"Locked · Week 02 mastery ≥80%":`Locked · Master Lesson ${String(l.number-1).padStart(2,"0")} at 80%`}</span>`}</article>`}).join("");const nextLesson=D.lessons.find(l=>lessonUnlocked(l.number)&&!lessonMastered(l.number));
 const completedCount=D.lessons.filter(l=>lessonMastered(l.number)).length;
 const nextAction=nextLesson
