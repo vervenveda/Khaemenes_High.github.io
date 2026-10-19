@@ -1,0 +1,31 @@
+name: Upper Science Question Bank Validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/biology-10/question-bank.js'
+      - 'courses/science/chemistry-11/question-bank.js'
+      - 'courses/science/physics-engineering-12/question-bank.js'
+      - 'courses/science/tools/audit-upper-science-question-banks.mjs'
+      - 'courses/science/chemistry-11/tools/audit-question-bank.mjs'
+      - '.github/workflows/upper-science-question-bank-validation.yml'
+  pull_request:
+    paths:
+      - 'courses/science/biology-10/question-bank.js'
+      - 'courses/science/chemistry-11/question-bank.js'
+      - 'courses/science/physics-engineering-12/question-bank.js'
+      - 'courses/science/tools/audit-upper-science-question-banks.mjs'
+      - 'courses/science/chemistry-11/tools/audit-question-bank.mjs'
+      - '.github/workflows/upper-science-question-bank-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bank-audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate Grade 10–12 public practice banks
+        run: node courses/science/tools/audit-upper-science-question-banks.mjs
+      - name: Validate Chemistry-specific question-bank rules
+        run: node courses/science/chemistry-11/tools/audit-question-bank.mjs
