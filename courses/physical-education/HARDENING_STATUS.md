@@ -200,3 +200,30 @@ Balanced keys and distinct rationales do not establish that every distractor is 
 
 - Week 10 assessment validity repair: `03a1732c54eacdf7526b14ea7394a1cb6229e22f`
 
+
+
+## Grade 9 Week 11 curriculum-validity and learner-journey pass — 2026-10-19
+
+**Scope:** Week 11, “Hydration and environmental safety,” in `grade-09-instruction.json`. The separate reading portal remains independent. This pass does not change the assessment engine, local progress format, or 80% mastery gate.
+
+### Findings and repairs
+
+- The five-day sequence already taught environmental-condition checks, water access and breaks, stop cues, plan comparison, and an actionable safety brief; its 20-point practical rubric and 16/20 evidence threshold were retained.
+- Replaced the first five generic assessment prompts with scenario-based decisions directly targeting heat advisories, dizziness/stop cues, unreliable water and shade access, conditions changing mid-session, and inclusive route adaptation.
+- Each revised item includes plausible but clearly inferior alternatives and a topic-specific rationale. The intended correct answer remains at the original index for each revised item.
+- Preserved the 25-question bank and the balanced correct-answer distribution of 9/8/8 across options A/B/C.
+- Extended `assessment-regression.html` with Week 11 checks for required instructional-depth fields, five complete days, the 20-point rubric and 80% practical threshold, question count, scenario relevance, prompt/rationale uniqueness, and answer-position distribution.
+- Safety content remains educational, not diagnostic: it directs learners to stop and seek appropriate adult or emergency help for concerning symptoms and avoids universal fluid prescriptions or forced exercise.
+
+### Verification boundary
+
+Source-level validation confirms the revised data remains structurally consistent and preserves the 80% mastery policy. The regression runner's new checks have been committed, but they must still be executed in a browser on the deployed Pages site to claim a live-run pass. The pre-existing teacher-review boundary for standards mapping remains in place.
+
+### Commits
+
+- Week 11 assessment validity repair: `4f7cf7414a19b44c2fd4192649bbcb8b4a39928e`
+- Week 11 curriculum regression checks: `ef9e6413944005cfdd0abc3b8bed0556d4913104`
+
+### Next bounded pass
+
+Continue to Week 12, “Teamwork and fair play,” checking that the instruction teaches conflict resolution, role clarity, inclusive collaboration and fair-play decisions before the weekly knowledge check measures them. Preserve the same lesson/assessment separation, practical-evidence rubric, and 80% knowledge mastery gate.
