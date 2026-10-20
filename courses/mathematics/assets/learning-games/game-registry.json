@@ -3835,6 +3835,140 @@
           "wired": true
         }
       ]
+    },
+    "angle-polygon-studio": {
+      "title": "Angle & Polygon Studio",
+      "canonical_path": "courses/mathematics/assets/learning-games/angle-polygon-studio/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "new-canonical-shared",
+      "scope_note": "Angle relationships, transversals, triangle/polygon sums, regular-polygon angle reasoning. Formative only.",
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "11",
+          "lesson": "02",
+          "lesson_title": "Angles Lines Transversals Polygons",
+          "mode": "angles-transversals-polygons",
+          "query": "?course=prealgebra&unit=11&lesson=02",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "07",
+          "lesson": "01",
+          "lesson_title": "Interior and Exterior Angles of Polygons",
+          "mode": "polygon-angle-sums",
+          "query": "?course=geometry&unit=07&lesson=u07-l01",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "07",
+          "lesson": "06",
+          "lesson_title": "Regular Polygons, Apothem & Central Angles",
+          "mode": "regular-polygon-angle-structure",
+          "query": "?course=geometry&unit=07&lesson=u07-l06",
+          "wired": true
+        }
+      ]
+    },
+    "boundary-area-lab": {
+      "title": "Boundary & Area Lab",
+      "canonical_path": "courses/mathematics/assets/learning-games/boundary-area-lab/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "new-canonical-shared",
+      "scope_note": "Perimeter/circumference, area, composite figures, and scale effects on perimeter/area. Formative only.",
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "11",
+          "lesson": "03",
+          "lesson_title": "Perimeter Circumference Composite Boundaries",
+          "mode": "boundary-measurement",
+          "query": "?course=prealgebra&unit=11&lesson=03",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "11",
+          "lesson": "04",
+          "lesson_title": "Area Polygons Circles Composite Figures",
+          "mode": "area-composite-figures",
+          "query": "?course=prealgebra&unit=11&lesson=04",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "10",
+          "lesson": "01",
+          "lesson_title": "Area of Triangles, Parallelograms & Trapezoids",
+          "mode": "polygon-area",
+          "query": "?course=geometry&unit=10&lesson=u10-l01",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "10",
+          "lesson": "02",
+          "lesson_title": "Area of Regular Polygons and Composite Figures",
+          "mode": "regular-composite-area",
+          "query": "?course=geometry&unit=10&lesson=u10-l02",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "10",
+          "lesson": "04",
+          "lesson_title": "Effects of Scale on Perimeter and Area",
+          "mode": "scale-perimeter-area",
+          "query": "?course=geometry&unit=10&lesson=u10-l04",
+          "wired": true
+        }
+      ]
+    },
+    "pythagorean-distance-mission": {
+      "title": "Pythagorean Distance Mission",
+      "canonical_path": "courses/mathematics/assets/learning-games/pythagorean-distance-mission/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "new-canonical-shared",
+      "scope_note": "Right triangles, missing sides, Pythagorean converse, and coordinate distance. Formative only.",
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "11",
+          "lesson": "06",
+          "lesson_title": "Right Triangles Pythagorean Distance",
+          "mode": "pythagorean-distance",
+          "query": "?course=prealgebra&unit=11&lesson=06",
+          "wired": true
+        }
+      ]
+    },
+    "surface-volume-studio": {
+      "title": "Surface & Volume Studio",
+      "canonical_path": "courses/mathematics/assets/learning-games/surface-volume-studio/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "new-canonical-shared",
+      "scope_note": "Nets, surface area, volume, square/cubic units, prisms and cylinders. Formative only.",
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "11",
+          "lesson": "07",
+          "lesson_title": "Surface Area Nets Volume",
+          "mode": "surface-area-volume",
+          "query": "?course=prealgebra&unit=11&lesson=07",
+          "wired": true
+        }
+      ]
     }
   }
 }
