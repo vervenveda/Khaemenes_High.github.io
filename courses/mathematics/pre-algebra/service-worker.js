@@ -2,7 +2,7 @@
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v10-ams-v1.7.0-recovery-popout-r1-20261015-lesson-cache-20261016`;
+const CACHE_NAME=`${CACHE_PREFIX}v11-readiness-submit-gate-20261020-ams-v1.7.0-recovery-popout-r1`;
 const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "./",
   "./index.html",
