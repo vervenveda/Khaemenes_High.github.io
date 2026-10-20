@@ -191,6 +191,50 @@
       "optional": true,
       "usage": "prerequisite_or_supplemental",
       "alignment_note": "Tangent-angle/arc relationships support the lesson; full chord/secant/tangent power-theorem coverage remains additional content."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U03-L07",
+      "lesson_file": "units/unit-03/lessons/u03-l07.html",
+      "asset_id": "MATH-TRIANGLE-CENTERS-OCT-001",
+      "shared_file": "../assets/video-library/triangle-centers-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for perpendicular bisectors, angle bisectors and triangle centers."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U08-L02",
+      "lesson_file": "units/unit-08/lessons/u08-l02.html",
+      "asset_id": "MATH-CIRCLE-CENTRAL-INSCRIBED-OCT-001",
+      "shared_file": "../assets/video-library/circle-central-inscribed-overview-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Listing description explicitly covers arc length, sectors and central angles."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U08-L03",
+      "lesson_file": "units/unit-08/lessons/u08-l03.html",
+      "asset_id": "MATH-CIRCLE-CENTRAL-INSCRIBED-OCT-001",
+      "shared_file": "../assets/video-library/circle-central-inscribed-overview-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Listing description explicitly covers inscribed angles and intercepted arcs."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U08-L06",
+      "lesson_file": "units/unit-08/lessons/u08-l06.html",
+      "asset_id": "MATH-CIRCLE-POWER-THEOREMS-OCT-001",
+      "shared_file": "../assets/video-library/circle-power-theorems-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for chord-chord, secant-tangent and secant-secant power theorems."
     }
   ]
 }
