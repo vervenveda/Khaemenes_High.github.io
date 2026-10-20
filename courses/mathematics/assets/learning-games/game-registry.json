@@ -254,6 +254,15 @@
           "mode": "function-composition",
           "query": "?course=algebra2&unit=01&lesson=u01-l04",
           "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "07",
+          "lesson": "03",
+          "lesson_title": "Evaluating Expressions & Substitution",
+          "mode": "expression-substitution",
+          "query": "?course=prealgebra&unit=07&lesson=03",
+          "wired": true
         }
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
@@ -708,6 +717,15 @@
           "mode": "coordinate-proof",
           "query": "?course=geometry&unit=04&lesson=u04-l05",
           "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "10",
+          "lesson": "01",
+          "lesson_title": "Coordinate Plane, Ordered Pairs & Quadrants",
+          "mode": "coordinate-foundations",
+          "query": "?course=prealgebra&unit=10&lesson=01",
+          "wired": true
         }
       ],
       "scope_note": "Integer Compass already owns Geometry U02-L01 and Algebra II U10-L10. Coordinated Mission Control is intentionally assigned to later coordinate, slope, and multi-step navigation lessons to avoid duplicate subject ownership.",
@@ -955,6 +973,24 @@
           "mode": "multi-step",
           "query": "?course=prealgebra&unit=08&lesson=05&mode=multi-step",
           "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "08",
+          "lesson": "01",
+          "lesson_title": "Equality, Solutions & the Balance Model",
+          "mode": "balance-foundations",
+          "query": "?course=prealgebra&unit=08&lesson=01",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "09",
+          "lesson": "05",
+          "lesson_title": "Multistep Inequalities with Variables on Both Sides",
+          "mode": "multi-step-balance-transfer",
+          "query": "?course=prealgebra&unit=09&lesson=05",
+          "wired": true
         }
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
@@ -1028,6 +1064,24 @@
           "lesson_title": "Negative Multipliers & Sign Reversal",
           "mode": "negative",
           "query": "?course=algebra1&unit=04&lesson=03&mode=negative",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "09",
+          "lesson": "06",
+          "lesson_title": "Compound Inequalities: AND / OR",
+          "mode": "compound-inequalities",
+          "query": "?course=prealgebra&unit=09&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "09",
+          "lesson": "07",
+          "lesson_title": "Contextual Constraints & Discrete Solutions",
+          "mode": "contextual-constraints",
+          "query": "?course=prealgebra&unit=09&lesson=07",
           "wired": true
         }
       ],
@@ -1119,6 +1173,24 @@
           "lesson_title": "Slope as Direction and Rate",
           "mode": "geometric-slope-direction",
           "query": "?course=geometry&unit=04&lesson=u04-l03",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "04",
+          "lesson": "07",
+          "lesson_title": "Proportional vs. Nonproportional Relationships",
+          "mode": "proportional-vs-nonproportional",
+          "query": "?course=prealgebra&unit=04&lesson=07",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "04",
+          "lesson": "08",
+          "lesson_title": "Conversions & Multistep Proportional Modelling",
+          "mode": "proportional-modelling",
+          "query": "?course=prealgebra&unit=04&lesson=08",
           "wired": true
         }
       ],
@@ -1494,6 +1566,24 @@
           "lesson_title": "Scale Drawings, Maps & Models",
           "mode": "scale",
           "query": "?course=geometry&unit=05&lesson=06&mode=scale",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "04",
+          "lesson": "06",
+          "lesson_title": "Scale Drawings, Maps & Similar Figures",
+          "mode": "scale-similarity-foundations",
+          "query": "?course=prealgebra&unit=04&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "11",
+          "lesson": "05",
+          "lesson_title": "Scale Drawings, Similarity & Dilations",
+          "mode": "scale-dilations",
+          "query": "?course=prealgebra&unit=11&lesson=05",
           "wired": true
         }
       ],
@@ -2115,6 +2205,15 @@
           "mode": "growth",
           "query": "?course=algebra1&unit=08&lesson=05&mode=growth",
           "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "10",
+          "lesson": "02",
+          "lesson_title": "Patterns, Sequences & Rules",
+          "mode": "sequence-pattern-foundations",
+          "query": "?course=prealgebra&unit=10&lesson=02",
+          "wired": true
         }
       ]
     },
@@ -2252,6 +2351,69 @@
           "mode": "claims",
           "query": "?course=algebra2&unit=12&lesson=u12-l07&mode=claims",
           "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "10",
+          "lesson": "08",
+          "lesson_title": "Linear Modelling, Prediction & Residuals",
+          "mode": "residuals-model-fit",
+          "query": "?course=prealgebra&unit=10&lesson=08",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "12",
+          "lesson": "01",
+          "lesson_title": "Data Questions, Variables, Populations & Samples",
+          "mode": "statistical-questions",
+          "query": "?course=prealgebra&unit=12&lesson=01",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "12",
+          "lesson": "02",
+          "lesson_title": "Frequency Tables, Dot Plots, Histograms & Box Plots",
+          "mode": "data-displays",
+          "query": "?course=prealgebra&unit=12&lesson=02",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "12",
+          "lesson": "03",
+          "lesson_title": "Measures of Center",
+          "mode": "measures-center",
+          "query": "?course=prealgebra&unit=12&lesson=03",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "12",
+          "lesson": "04",
+          "lesson_title": "Variability, IQR, MAD & Outliers",
+          "mode": "variability-outliers",
+          "query": "?course=prealgebra&unit=12&lesson=04",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "12",
+          "lesson": "05",
+          "lesson_title": "Comparing Distributions & Misleading Displays",
+          "mode": "distribution-comparison",
+          "query": "?course=prealgebra&unit=12&lesson=05",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "12",
+          "lesson": "08",
+          "lesson_title": "Sampling, Bias, Association & Evidence Decisions",
+          "mode": "sampling-bias-evidence",
+          "query": "?course=prealgebra&unit=12&lesson=08",
+          "wired": true
         }
       ]
     },
@@ -2297,6 +2459,24 @@
           "lesson_title": "Binomial Experiments & Expected Value",
           "mode": "binomial",
           "query": "?course=algebra2&unit=12&lesson=u12-l04&mode=binomial",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "12",
+          "lesson": "06",
+          "lesson_title": "Probability Models, Sample Spaces & Relative Frequency",
+          "mode": "probability-foundations",
+          "query": "?course=prealgebra&unit=12&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "12",
+          "lesson": "07",
+          "lesson_title": "Compound Probability, Tree Diagrams & Simulation",
+          "mode": "compound-probability",
+          "query": "?course=prealgebra&unit=12&lesson=07",
           "wired": true
         }
       ]
@@ -3037,6 +3217,24 @@
           "mode": "equation-structure-balance",
           "query": "?course=algebra1&unit=03&lesson=04",
           "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "08",
+          "lesson": "06",
+          "lesson_title": "Variables on Both Sides; Identities & Contradictions",
+          "mode": "variables-both-sides",
+          "query": "?course=prealgebra&unit=08&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "08",
+          "lesson": "08",
+          "lesson_title": "Context Equations, Verification & Error Analysis",
+          "mode": "equation-error-analysis",
+          "query": "?course=prealgebra&unit=08&lesson=08",
+          "wired": true
         }
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
@@ -3060,6 +3258,24 @@
           "lesson_title": "Systems from Contexts: Cost, Mixture & Motion",
           "mode": "contextual-systems",
           "query": "?course=algebra1&unit=07&lesson=05",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "10",
+          "lesson": "03",
+          "lesson_title": "Relations, Inputs, Outputs & Functions",
+          "mode": "function-foundations",
+          "query": "?course=prealgebra&unit=10&lesson=03",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "10",
+          "lesson": "07",
+          "lesson_title": "Linear / Nonlinear & Function Notation",
+          "mode": "linear-nonlinear-functions",
+          "query": "?course=prealgebra&unit=10&lesson=07",
           "wired": true
         }
       ],
