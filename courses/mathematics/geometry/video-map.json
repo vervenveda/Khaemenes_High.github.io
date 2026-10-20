@@ -246,6 +246,61 @@
       "optional": true,
       "usage": "optional_lesson_companion",
       "alignment_note": "Exact cross-sections/solids-of-revolution match; new instructor requires full Academy-fit review before activation."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U03-L03",
+      "lesson_file": "units/unit-03/lessons/u03-l03.html",
+      "asset_id": "MATH-HL-POSTULATE-OCT-001",
+      "shared_file": "../assets/video-library/hl-postulate-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct HL congruence/two-column proof support for the lesson's HL component."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U08-L08",
+      "lesson_file": "units/unit-08/lessons/u08-l08.html",
+      "asset_id": "MATH-CIRCLE-STANDARD-EQUATION-KHAN-001",
+      "shared_file": "../assets/video-library/circle-standard-equation-khan.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for standard equation of a circle using center and radius."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U11-L02",
+      "lesson_file": "units/unit-11/lessons/u11-l02.html",
+      "asset_id": "MATH-VOLUME-PYRAMID-OCT-001",
+      "shared_file": "../assets/video-library/volume-pyramid-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct pyramid-volume companion."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U11-L02",
+      "lesson_file": "units/unit-11/lessons/u11-l02.html",
+      "asset_id": "MATH-VOLUME-CONE-OCT-001",
+      "shared_file": "../assets/video-library/volume-cone-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct cone-volume companion for the same lesson."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U11-L03",
+      "lesson_file": "units/unit-11/lessons/u11-l03.html",
+      "asset_id": "MATH-VOLUME-SPHERE-OCT-001",
+      "shared_file": "../assets/video-library/volume-sphere-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct sphere-volume support; surface-area portion remains lesson content."
     }
   ]
 }
