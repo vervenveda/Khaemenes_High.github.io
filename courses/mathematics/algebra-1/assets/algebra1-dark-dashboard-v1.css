@@ -1,0 +1,99 @@
+/* Khaemenes Academy · Algebra I · Pre-Algebra dark dashboard alignment v1
+   Presentation only. No mastery, scoring, assessment, record, or gate logic. */
+:root{
+  --a1-paper:#07111d;
+  --a1-paper-bright:#0d1a2a;
+  --a1-panel:#101f31;
+  --a1-panel2:#13263b;
+  --a1-ink:#f5f1e8;
+  --a1-muted:#b7c2cf;
+  --a1-navy:#10243b;
+  --a1-blue:#78a9d0;
+  --a1-green:#78b58a;
+  --a1-gold:#c9a35f;
+  --a1-gold-pale:#ead7aa;
+  --a1-line:rgba(224,232,241,.16);
+  --a1-line-strong:rgba(234,215,170,.30);
+  --a1-shadow:0 18px 44px rgba(0,0,0,.28);
+  --a1-radius:7px;
+}
+html:root:root body{
+  background:linear-gradient(180deg,#07111d 0%,#0a1624 45%,#07111d 100%)!important;
+  color:var(--a1-ink)!important;
+}
+html:root:root body .hero{
+  color:var(--a1-ink)!important;
+  border-bottom-color:var(--a1-line)!important;
+  background:
+    radial-gradient(circle at 16% 10%,rgba(120,169,208,.16),transparent 28rem),
+    radial-gradient(circle at 84% 8%,rgba(201,163,95,.12),transparent 26rem),
+    linear-gradient(180deg,#0d1a2a,#07111d)!important;
+}
+html:root:root body .hero :is(h1,h2,h3){color:var(--a1-ink)!important}
+html:root:root body .hero .lead{color:var(--a1-muted)!important}
+html:root:root body :is(.section-alt,.algebra1-student-dashboard){background:#091524!important;border-color:var(--a1-line)!important}
+html:root:root body :is(.card,.question,.notice,.start-card,.structure-card,.support-card,.unit-drawer,.snapshot-item){
+  color:var(--a1-ink)!important;
+  border-color:var(--a1-line)!important;
+  background:var(--a1-panel)!important;
+  box-shadow:var(--a1-shadow)!important;
+}
+html:root:root body :is(.card,.question,.start-card,.structure-card,.support-card,.unit-drawer,.snapshot-item) :is(p,li,small,span){color:var(--a1-muted)}
+html:root:root body :is(.card,.start-card,.structure-card,.support-card,.unit-drawer,.snapshot-item) :is(h2,h3,strong){color:var(--a1-ink)!important}
+html:root:root body .notice{color:var(--a1-muted)!important;border-left-color:var(--a1-gold)!important}
+html:root:root body :is(.btn,button,.nav-button,.header-control,.profile-button){
+  color:var(--a1-ink);
+  border-color:var(--a1-line-strong);
+  background:var(--a1-panel2);
+}
+html:root:root body :is(.btn,button,.nav-button,.header-control,.profile-button):hover{border-color:var(--a1-gold);background:#172d45}
+html:root:root body .btn.primary,
+html:root:root body .profile-button,
+.algebra1-dashboard-actions a.primary{
+  color:#fff!important;
+  border-color:var(--a1-gold)!important;
+  background:linear-gradient(180deg,#1a3a5d,#10243b)!important;
+}
+html:root:root body :is(input,select,textarea){
+  color:var(--a1-ink)!important;
+  border-color:var(--a1-line-strong)!important;
+  background:#081421!important;
+}
+html:root:root body .option{background:var(--a1-panel2)!important}
+html:root:root body .option:hover{border-color:var(--a1-blue)!important}
+html:root:root body .algebra1-quick-nav{
+  border-bottom-color:var(--a1-line);
+  background:rgba(7,17,29,.96);
+}
+html:root:root body .algebra1-quick-nav a{color:var(--a1-gold-pale)}
+html:root:root body .algebra1-quick-nav a:hover,
+html:root:root body .algebra1-quick-nav a:focus-visible{border-color:var(--a1-line);background:var(--a1-panel2)}
+.algebra1-dashboard-card{
+  color:var(--a1-ink);
+  border-color:var(--a1-line);
+  background:var(--a1-panel)!important;
+  box-shadow:var(--a1-shadow);
+}
+.algebra1-dashboard-card strong{color:var(--a1-gold-pale)!important}
+.algebra1-dashboard-card span,.algebra1-dashboard-head p{color:var(--a1-muted)!important}
+.algebra1-dashboard-actions a{
+  color:var(--a1-ink)!important;
+  border-color:var(--a1-line)!important;
+  background:var(--a1-panel2)!important;
+}
+.algebra1-meter-track{background:#243549}
+html:root:root body .khae-workflow{
+  --kfw-bg:var(--a1-panel);
+  --kfw-bg2:var(--a1-panel2);
+  --kfw-ink:var(--a1-ink);
+  --kfw-muted:var(--a1-muted);
+  --kfw-line:var(--a1-line);
+  --kfw-accent:#173b60;
+  --kfw-gold:var(--a1-gold);
+  --kfw-good:var(--a1-green);
+}
+@media print{
+  html:root:root body{background:#fff!important;color:#000!important}
+  html:root:root body :is(.card,.question,.notice,.start-card,.structure-card,.support-card,.unit-drawer,.snapshot-item){background:#fff!important;color:#000!important;box-shadow:none!important}
+  html:root:root body :is(.card,.question,.notice,.start-card,.structure-card,.support-card,.unit-drawer,.snapshot-item) *{color:#000!important}
+}
