@@ -23,3 +23,7 @@
 - **RH.11-12.7** — Integrate and evaluate multiple sources of information in diverse formats.
 - **RH.11-12.8** — Evaluate an author’s premises, claims, and evidence by corroborating or challenging them.
 - **WHST.11-12.1** — Write arguments focused on discipline-specific content.
+
+## Shared Constitutional Studies Laboratory
+
+The optional, free [Khaemenes Academy Living Bill of Rights gateway](https://vervenveda.github.io/Khaemenes_Higher_Learning.github.io/courses/constitutional-studies/) provides amendment summaries, age-appropriate introductory practice, and links to authoritative primary sources. It supplements — and does not replace — this week's lessons, graded work, or mastery requirements.
