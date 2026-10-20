@@ -78,3 +78,4 @@ document.getElementById("saveLessonNote")?.addEventListener("click",()=>{rec.not
  }
  document.readyState==="loading"?document.addEventListener("DOMContentLoaded",load,{once:true}):load();
 })();
+;(()=>{if(document.querySelector('script[data-khae-video-companion]'))return;const s=document.createElement('script');s.src=new URL('../../assets/video-companion-v1.js',document.currentScript?.src||location.href).href;s.dataset.khaeVideoCompanion='1';document.head.appendChild(s)})();
