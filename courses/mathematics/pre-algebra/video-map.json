@@ -607,6 +607,54 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Evaluating expressions with multiple variables; formulas remain in lesson text; new instructor pending quality review"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U08-L01",
+      "unit": 8,
+      "lesson": 1,
+      "lesson_file": "units/unit-08/lessons/lesson-01-equality-solutions-balance-model.html",
+      "asset_id": "MATH-EQUATIONS-BASIC-MATHANTICS-001",
+      "shared_file": "../assets/video-library/equations-basic-mathantics.json",
+      "placement_status": "topic_matched_pending_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Introduces solving basic equations; balance-model representations remain written lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U08-L02",
+      "unit": 8,
+      "lesson": 2,
+      "lesson_file": "units/unit-08/lessons/lesson-02-one-step-addition-subtraction.html",
+      "asset_id": "MATH-ONE-STEP-KHAN-001",
+      "shared_file": "../assets/video-library/one-step-khan.json",
+      "placement_status": "topic_matched_pending_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Solves one-step addition/subtraction equations"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U08-L03",
+      "unit": 8,
+      "lesson": 3,
+      "lesson_file": "units/unit-08/lessons/lesson-03-one-step-multiplication-division.html",
+      "asset_id": "MATH-ONE-STEP-MULT-MATHANTICS-001",
+      "shared_file": "../assets/video-library/one-step-multiplication-mathantics.json",
+      "placement_status": "topic_matched_pending_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Solves one-step multiplication/division equations"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U08-L04",
+      "unit": 8,
+      "lesson": 4,
+      "lesson_file": "units/unit-08/lessons/lesson-04-two-step-equations-operation-order.html",
+      "asset_id": "MATH-TWO-STEP-MATHANTICS-001",
+      "shared_file": "../assets/video-library/two-step-mathantics.json",
+      "placement_status": "topic_matched_pending_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Two-step equations, updated creator version"
     }
   ]
 }
