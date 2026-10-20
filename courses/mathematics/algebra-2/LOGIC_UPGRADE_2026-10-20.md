@@ -33,3 +33,21 @@ The readiness diagnostic, 13 unit assessments, projects, Midterm, Final, course 
 - Algebra II workflow adapter parses successfully.
 - Updated service worker JavaScript parses successfully.
 - Course structural counts remain unchanged.
+
+
+## Presentation convergence — dark mathematics dashboard
+
+Algebra II now uses the preferred Pre-Algebra dark dashboard language as a presentation-only layer.
+
+### Changed
+
+- Course entry defaults to dark presentation.
+- New `assets/algebra2-dark-dashboard-v1.css` loads after the existing course presentation styles.
+- Deep navy/charcoal surfaces, warm light text, restrained blue accents, gold highlights, 7 px corners, and the Academy Cinzel / Brandon Grotesque hierarchy are applied consistently.
+- The shared lesson workflow inherits the same dark palette.
+- Print mode remains white and evidence-friendly.
+- The service-worker release cache includes the new dark-dashboard stylesheet.
+
+### Preserved
+
+No mastery, scoring, assessment, learner-record, question-bank, lesson-engine, unit-gate, cumulative exam, project, capstone, or progression logic was modified for this visual conversion.
