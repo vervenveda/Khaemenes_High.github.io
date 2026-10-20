@@ -69,7 +69,7 @@
 
     body{
       margin:0;
-      min-width:320px;
+      min-width:0;
       overflow-x:hidden;
       color:var(--ink);
       background:var(--page);
@@ -1388,6 +1388,36 @@
       .brand-copy small{display:none}
       .portal-menu > summary{font-size:10px}
       .profile-button{font-size:10px}
+    }
+
+    /* 255px containment hardening */
+    @media(max-width:320px){
+      html,body{max-width:100%;overflow-x:hidden}
+      .wrap{width:calc(100% - 12px)}
+      .header-inner{grid-template-columns:1fr;gap:6px}
+      .brand{justify-content:center;min-width:0}
+      .brand-copy{min-width:0}
+      .brand-copy strong{white-space:normal;text-align:center;overflow-wrap:anywhere}
+      .brand-mark{width:38px;height:38px;flex-basis:38px}
+      .header-actions{grid-template-columns:1fr 1fr;width:100%;gap:5px}
+      .header-actions > *{min-width:0}
+      .portal-menu > summary,.profile-button{width:100%;min-width:0;padding:7px 6px;white-space:normal;line-height:1.2}
+      .games-menu{grid-column:1/-1}
+      .portal-menu-panel{right:6px;width:calc(100vw - 12px)}
+      .academy-title{white-space:normal;font-size:clamp(2rem,15vw,2.7rem);overflow-wrap:anywhere}
+      .academy-comment{font-size:clamp(1.15rem,8vw,1.6rem)}
+      .hero{padding:54px 0 48px}
+      .snapshot,.grade-grid,.catalog-summary,.catalog-toolbar,.course-grid,.pathway-grid,.activity-grid,.resource-grid,.teacher-tools{grid-template-columns:1fr}
+      .card,.grade-card,.catalog-card,.pathway-card,.activity-card,.resource-card,.sequence-panel,.teacher-panel{min-width:0}
+      .course-actions,.hero-actions,.teacher-actions{grid-template-columns:1fr}
+      .hero-actions,.teacher-actions{display:grid}
+      .hero-actions .btn,.teacher-actions .btn,.grade-card .btn{width:100%;min-width:0}
+      .quick-nav-inner{max-width:100%;overflow-x:auto}
+      .quick-nav a{white-space:nowrap}
+      .breadcrumb .wrap{font-size:9px;gap:5px}
+      .section{padding:48px 0}
+      .section-head h2{font-size:clamp(26px,13vw,34px)}
+      .catalog-toolbar{padding:10px}
     }
 
     @media(prefers-reduced-motion:reduce){
