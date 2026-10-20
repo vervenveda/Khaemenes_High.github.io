@@ -1,6 +1,6 @@
 "use strict";
-const CACHE_PREFIX="khaemenes-math-shared-games-";
-const CACHE_NAME=CACHE_PREFIX+"v1-20261020";
+const CACHE_PREFIX="khaemenes-math-shared-resources-";
+const CACHE_NAME=CACHE_PREFIX+"v2-20261020";
 const GAME_FILES=[
   "./",
   "./index.html",
@@ -90,10 +90,74 @@ const GAME_FILES=[
   "./assets/learning-games/geometric-probability-lab/index.html"
 ];
 
+const VIDEO_FILES=[
+  "./assets/video-library/number-systems.json",
+  "./assets/video-library/order-of-operations.json",
+  "./assets/video-library/solving-linear-equations.json",
+  "./assets/video-library/linear-inequalities-introduction.json",
+  "./assets/video-library/evaluating-functions-introduction.json",
+  "./assets/video-library/slope-formula.json",
+  "./assets/video-library/systems-elimination-substitution.json",
+  "./assets/video-library/factoring-trinomials-introduction.json",
+  "./assets/video-library/quadratic-equations-factoring.json",
+  "./assets/video-library/transversal-angles-khan.json",
+  "./assets/video-library/scale-drawings-khan.json",
+  "./assets/video-library/pythagorean-mathantics.json",
+  "./assets/video-library/area-mathantics.json",
+  "./assets/video-library/surface-area-nets-khan.json",
+  "./assets/video-library/geometry-two-column-proof-khan.json",
+  "./assets/video-library/geometric-transformations-organic.json",
+  "./assets/video-library/right-triangle-trig-organic.json",
+  "./assets/video-library/circles-geometry-organic.json",
+  "./assets/video-library/triangular-prism-volume-organic.json",
+  "./assets/video-library/angle-bisector-construction-khan.json",
+  "./assets/video-library/triangle-congruence-organic.json",
+  "./assets/video-library/similar-triangles-organic.json",
+  "./assets/video-library/circle-tangent-secant-organic.json",
+  "./assets/video-library/circle-tangent-angle-theorems-organic.json",
+  "./assets/video-library/triangle-centers-organic.json",
+  "./assets/video-library/circle-central-inscribed-overview-organic.json",
+  "./assets/video-library/circle-power-theorems-organic.json",
+  "./assets/video-library/solid-cross-sections-emath.json",
+  "./assets/video-library/hl-postulate-organic.json",
+  "./assets/video-library/circle-standard-equation-khan.json",
+  "./assets/video-library/volume-pyramid-organic.json",
+  "./assets/video-library/volume-cone-organic.json",
+  "./assets/video-library/volume-sphere-organic.json",
+  "./assets/video-library/cpctc-proofs-organic.json",
+  "./assets/video-library/3d-volume-scaling-khan.json",
+  "./assets/video-library/functions-introduction.json",
+  "./assets/video-library/parent-functions-transformations-organic.json",
+  "./assets/video-library/solving-logarithmic-equations-organic.json",
+  "./assets/video-library/conditional-probability-independence-khan.json",
+  "./assets/video-library/rational-functions-asymptotes-holes-organic.json",
+  "./assets/video-library/geometric-series-introduction-khan.json",
+  "./assets/video-library/trig-equations-multiple-angles-organic.json",
+  "./assets/video-library/law-of-cosines-organic.json",
+  "./assets/video-library/normal-distribution-introduction-khan.json",
+  "./assets/video-library/matrix-row-operations-organic.json",
+  "./assets/video-library/infinite-geometric-series-khan.json",
+  "./assets/video-library/complex-numbers-basic-operations-organic.json",
+  "./assets/video-library/polynomial-long-division-organic.json",
+  "./assets/video-library/synthetic-division-polynomials-organic.json",
+  "./assets/video-library/exponential-growth-decay-organic.json",
+  "./assets/video-library/rational-zero-theorem-organic.json",
+  "./assets/video-library/solving-exponential-equations-organic.json",
+  "./assets/video-library/matrix-inverse-row-reduction-organic.json",
+  "./assets/video-library/sigma-notation-sums-khan.json",
+  "./assets/video-library/law-of-sines-ambiguous-case-organic.json",
+  "./assets/video-library/polynomial-multiplicity-graph-organic.json",
+  "./assets/video-library/determinant-3x3-organic.json",
+  "./assets/video-library/binomial-theorem-khan-india.json",
+  "./assets/video-library/pythagorean-identities-organic.json",
+  "./assets/video-library/zscore-comparison-khan.json"
+];
+const SHARED_FILES=[...new Set([...GAME_FILES,...VIDEO_FILES])];
+
 self.addEventListener("install",event=>{
   event.waitUntil((async()=>{
     const cache=await caches.open(CACHE_NAME);
-    await cache.addAll(GAME_FILES.map(path=>new Request(path,{cache:"reload"})));
+    await cache.addAll(SHARED_FILES.map(path=>new Request(path,{cache:"reload"})));
     await self.skipWaiting();
   })());
 });
@@ -106,17 +170,19 @@ self.addEventListener("activate",event=>{
   );
 });
 
-function isSharedMathGame(url){
+function isSharedMathResource(url){
   return url.origin===self.location.origin &&
     (url.pathname.includes("/courses/mathematics/assets/learning-games/") ||
-     url.pathname.endsWith("/courses/mathematics/assets/shared-game-launcher.js"));
+     url.pathname.includes("/courses/mathematics/assets/video-library/") ||
+     url.pathname.endsWith("/courses/mathematics/assets/shared-game-launcher.js") ||
+     url.pathname.endsWith("/courses/mathematics/assets/video-companion-v1.js"));
 }
 
 self.addEventListener("fetch",event=>{
   const request=event.request;
   if(request.method!=="GET")return;
   const url=new URL(request.url);
-  if(!isSharedMathGame(url))return;
+  if(!isSharedMathResource(url))return;
   event.respondWith((async()=>{
     const cache=await caches.open(CACHE_NAME);
     const hit=await cache.match(request,{ignoreSearch:true});
