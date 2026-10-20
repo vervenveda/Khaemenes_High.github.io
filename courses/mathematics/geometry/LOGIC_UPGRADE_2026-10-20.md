@@ -99,3 +99,15 @@ Current unique lesson coverage: **41 covered / 49 remaining game-tool gaps**.
 Placement policy: use direct mathematical matches only; ambiguous matches remain gaps. Game completion remains formative support and never grants the course's 80% mastery or bypasses progression gates. The authoritative source of truth remains the course assessment/progression system.
 
 See `../RESOURCE_COVERAGE_AUDIT_2026-10-20.md` and `../resource-coverage-v1.json` for the synchronized cross-course matrix.
+
+## Geometry visual-reasoning game cluster complete
+
+New canonical Geometry companions:
+- Geometry Foundations Sort — U01-L01
+- Quadrilateral Detective — U07-L02 through U07-L05
+- Polygon Design Lab — U07-L07
+- Geometric Probability Lab — U10-L06
+
+The earlier geometry/measurement reuse cluster also added direct support for U07-L01, U07-L06, U10-L01, U10-L02 and U10-L04.
+
+Geometry now has **63/90** lessons with canonical game companions. The remaining 27 are intentionally tool-sufficient (CAD, analytic geometry tools, 3D modelling, or capstone/evidence work). Genuine new-game gaps: **0**.
