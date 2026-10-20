@@ -106,3 +106,38 @@ Representative custom and generic unit wrappers parse successfully after integra
 2. Verify workflow rendering on representative early, middle, and late lessons at desktop/tablet/phone widths.
 3. Confirm lesson submission, retry, 80% unlock, print evidence, JSON export, games, videos, and offline recovery remain intact.
 4. Only after those checks, use the preserved Pre-Algebra dark visual language as the reference for Algebra I, Geometry, and Algebra II.
+
+
+---
+
+## Repair wave 03 — learner isolation, mastery-boundary and semantic regression pass
+
+### Verified
+
+- Pre-Algebra is covered by the shared `learner-scope-v1.js` configuration. All `khaemenes-prealgebra-` and readiness-prefixed records are redirected to the active Academy learner.
+- If the Academy learner changes while a lesson page remains open, the shared learner-scope layer blocks further course-record writes until the page is reloaded.
+- Native lesson mastery remains a strict `>= 80` comparison. A 79% result remains below mastery; an 80% result satisfies the lesson gate.
+- Retry attempts preserve the best demonstrated score rather than allowing a later lower score to erase prior mastery.
+- Shared workflow review markers remain non-authoritative and cannot unlock progression.
+- Shared workflow Continue is derived only from an already-unlocked native next-step link.
+- Lesson evidence export and print controls remain present in the native lesson engines; the shared workflow adds its own clearly non-authoritative supporting-evidence export and Academy print header.
+- The service worker release caches the Pre-Algebra workflow adapter and shared workflow CSS/JavaScript, while visited lesson pages and local course assets continue to be cached through the existing runtime policy.
+
+### Semantic repair completed
+
+The generic lesson-engine cores for Units 02–13 now use:
+
+- **Submit Assignment** for the native scored action.
+- **Save Lesson Review** / **Remove Lesson Review** for the separate review marker.
+
+The element IDs, event handlers, score calculation, attempt history, best-score preservation, lesson gates, and unit gates were not changed.
+
+Unit 01 keeps its custom lesson architecture; its existing wrapper already normalizes the same student-facing action language after native rendering.
+
+### Source integrity
+
+All files changed in this repair were parsed before commit. No question bank, answer key, video record, game placement, unit map, assessment bank, project, mastery threshold, or learner record schema was rewritten.
+
+### Browser-level follow-up
+
+A final human/browser smoke test is still recommended for one early lesson, one middle lesson, and one late lesson on desktop/tablet/phone, including profile switching after reload, 79% and 80% attempts, retry, print, export, game/video launch, and offline revisit. This is a runtime presentation check, not a known source defect.
