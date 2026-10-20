@@ -89,8 +89,10 @@ These games are formative support only. They never award official 80% mastery, m
 - U13-L03 — Build, Compute, Visualize & Validate the Model
 - U13-L04 — Test Sensitivity, Uncertainty, Fairness & Limitations
 
-## Next systems-level bubble
+## Shared-game offline architecture
 
-The canonical game library is shared under `courses/mathematics/assets/learning-games/`, while each course currently owns its own service-worker scope. Course-local caches therefore should **not yet be described as guaranteeing offline top-level navigation into every shared game**.
+The canonical game library remains shared under `courses/mathematics/assets/learning-games/`.
 
-Next hardening work should design and validate an offline-safe shared-game launch path without duplicating the canonical game library or weakening learner/mastery boundaries.
+A mathematics-root service worker at `courses/mathematics/service-worker.js` now precaches the shared game library, registry, and launcher. It is registered from both the mathematics landing page and the shared game launcher. The four course-specific workers remain authoritative for course-local pages and records.
+
+Source validation confirms the root worker and launcher parse successfully and all 82 canonical game paths exist. Live browser/offline navigation QA is still required before claiming runtime certification.
