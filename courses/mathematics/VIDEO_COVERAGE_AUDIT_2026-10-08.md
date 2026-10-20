@@ -43,3 +43,17 @@ Do not delete legacy assets, assume a YouTube embed is live, or represent staged
 - External source checks locate public descriptions for the three proposed videos: number systems (`WxXZaP8Y8pI`), order of operations (`saTBf8AO4Ok`), and functions (`lGfsp2CWjok`). These support preliminary topic alignment only; embedded playback and caption accessibility remain untested.
 - Preserve `enabled:false` on all staged placements until a browser-level verification and transcript fallback review.
 - Caution: third-party video summaries are not definitive proof of mathematical accuracy; evaluate the actual lesson content before promoting a resource.
+
+## Geometry candidate-backbone update — 2026-10-20
+
+Geometry moved from **0 mapped candidates** to **11 staged disabled lesson placements**.
+
+This is a conservative candidate map, not deployed student-facing video coverage. No Geometry placement is enabled.
+
+Newly sourced listing-verified candidates include:
+- Khan Academy: two-column geometric proof example.
+- The Organic Chemistry Tutor: geometric transformations; right-triangle sine/cosine/tangent; introductory circle geometry; triangular-prism volume.
+
+Existing Academy records were also reused for transversal angles, slope, scale drawings, Pythagorean theorem, elementary area, and surface-area nets.
+
+Release status remains unchanged: `enabled:false` until whole-video review, playback, captions/transcript fallback, privacy-enhanced embed behavior, responsive lesson rendering, and exact objective alignment are verified.
