@@ -163,3 +163,16 @@ The course home summarizes the learner's current unit, current lesson, latest av
 Where a true latest-attempt value is not stored, the interface shows an em dash rather than substituting the best score. Geometry weekly boundary gates, cumulative Midterm gates, Algebra II readiness, and course-specific unit mastery remain intact.
 
 The shared journey assets are cached for offline course-home use.
+
+
+## Mathematics-wide lesson learning parity
+
+Pre-Algebra now participates in the shared full lesson path:
+
+`Learn → Worked Example → Practice → Game / Tool → Optional Video → Submit Assignment → 80% Mastery → Review → Evidence → Continue`
+
+This is a presentation and learner-orientation upgrade built on the existing shared lesson workflow. The authoritative progression stages remain Submit, canonical mastery, and the course's existing continuation gate.
+
+Worked Example, Game / Tool, Optional Video, and Evidence are support stages. Their availability is detected from existing lesson content and companion elements; they never grant mastery. When a reviewed video or game companion is not attached, the workflow reports that honestly rather than fabricating a resource.
+
+Print/export evidence remains browser-local supporting evidence unless separately validated by an evaluator. The shared workflow JavaScript and all four course service workers parse successfully after the synchronized update.
