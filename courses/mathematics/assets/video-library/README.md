@@ -48,3 +48,13 @@ node courses/mathematics/assets/video-library/validate-library.js
 ```
 
 The check flags broken references, inconsistent names, invalid JSON, duplicate asset IDs, and unexpected embed URLs. It does not change any video, student record, or mastery gate. Legacy enabled videos may trigger warnings if they predate the newer playback-verification metadata; warnings are not proof of failure.
+
+## Student-facing platform boundary
+
+Khaemenes Academy is the instructional authority. Third-party education platforms must not be presented as if their curriculum, branding, logo, or learning environment is part of the Academy.
+
+- Khan Academy records, if retained for research/history, are **research-only** and are not eligible for student-facing rendering.
+- Course `video-map.json` files must not contain Khan Academy placements.
+- The shared student renderer blocks Khan Academy assets as a defense-in-depth safeguard.
+- The mathematics shared-resource service worker does not precache Khan Academy video records.
+- Student-facing videos should be supplemental media, not imported curriculum-platform experiences, and must remain optional/non-mastery-bearing.
