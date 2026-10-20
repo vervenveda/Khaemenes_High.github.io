@@ -141,7 +141,6 @@ html:root:root body .wrap{width:min(calc(100% - 32px),1240px)!important}
 html:root:root body .header-inner{min-height:72px!important}
 html:root:root body .quick-nav{top:72px!important}
 html:root:root body .quick-nav-inner{min-height:50px!important}
-html:root:root body main{padding-top:clamp(38px,5vw,60px)!important}
 html:root:root body .section{padding:clamp(40px,5vw,66px) 0!important}
 html:root:root body .section-head{margin-bottom:26px!important}
 html:root:root body .section-head h2{font-size:clamp(27px,4vw,40px)!important}
