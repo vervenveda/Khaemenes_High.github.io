@@ -2,6 +2,11 @@
 "use strict";
 const script = document.currentScript;
 if (!script) return;
+if ("serviceWorker" in navigator) {
+  const mathWorker = new URL("../service-worker.js", script.src);
+  const mathScope = new URL("../", script.src);
+  navigator.serviceWorker.register(mathWorker.href,{scope:mathScope.pathname}).catch(()=>{});
+}
 const game = script.dataset.game, course = script.dataset.course;
 const unit = script.dataset.unit || "", lesson = script.dataset.lesson || "";
 const mode = script.dataset.mode || "", title = script.dataset.title || "Learning Game";
