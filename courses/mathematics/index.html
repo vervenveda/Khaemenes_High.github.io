@@ -2715,5 +2715,11 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   })();
   </script>
 <script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js",{scope:"./"}).catch(()=>{}),{once:true});
+}
+</script>
 </body>
 </html>
