@@ -35,7 +35,7 @@ select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 @media(max-width:570px){.controls,.list{grid-template-columns:minmax(0,1fr)}h1{font-size:30px}}
 @media print{.controls,.nav{display:none}.entry{break-inside:avoid}body{background:#fff}}
 </style>
-</head>
+<style id="khae-week-vocab-quiz-style">.weekly-vocab{background:#fffdf9;border:1px solid #d9d1c2;border-radius:7px;padding:22px;margin:22px 0}.weekly-vocab h2{margin:0 0 10px}.vocab-question{padding:16px 0;border-top:1px solid #e4ddcf}.vocab-question fieldset{border:0;padding:0;margin:0}.vocab-question legend{font-size:16px;font-weight:400;margin-bottom:9px}.vocab-question label{display:block;padding:7px 10px;border-radius:7px;cursor:pointer}.vocab-question label:hover{background:#f1ebdf}.quiz-actions{display:flex;gap:12px;flex-wrap:wrap}.quiz-actions button{font-weight:400}.quiz-feedback{margin:12px 0;line-height:1.6}@media print{.quiz-actions{display:none}.vocab-question{break-inside:avoid-page}}@media(max-width:330px){.weekly-vocab{padding:12px}}</style></head>
 <body>
 <header>
 <div class="eyebrow">KHAEMENES ACADEMY · CROSS-SUBJECT</div>
@@ -62,7 +62,7 @@ select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 <p id="status" class="status" role="status" aria-live="polite">Loading local vocabulary…</p>
 <div id="vocabularyList" class="list" aria-live="polite"></div>
 </main>
-<footer class="end">Jennifer Kay Pearl · Verve N Veda · Local curriculum resources · No external vocabulary service</footer>
+<section id="weeklyVocabularyQuiz" class="weekly-vocab" hidden><h2 id="weeklyQuizTitle">Weekly vocabulary practice</h2><p id="weeklyQuizNote">Check your understanding of the highlighted terms from this lesson.</p><div id="weeklyQuizQuestions"></div><div class="quiz-actions"><button type="button" id="gradeWeeklyVocabulary">Check vocabulary · 80% target</button><button type="button" id="retryWeeklyVocabulary">Try a new form</button></div><p id="weeklyQuizFeedback" class="quiz-feedback" role="status" aria-live="polite"></p></section><footer class="end">Jennifer Kay Pearl · Verve N Veda · Local curriculum resources · No external vocabulary service</footer>
 <script>
 (()=>{
 "use strict";
@@ -138,9 +138,14 @@ function render(){
    +(lang.value!=="en"?" "+translated+" of "+records.length+
      " have translations in the selected language; untranslated terms remain in English.":"");
 }
+const vocabWeek=Number(params.get("week"));const weekQuiz=byId("weeklyVocabularyQuiz");let quizItems=[];
+function shuffled(items){const a=items.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function drawWeekQuiz(){weekQuiz.hidden=true;quizItems=[];if(course.value!=="social-studies-10"||!current||!Number.isInteger(vocabWeek)||vocabWeek<1||vocabWeek>36)return;const words=current.terms.filter(t=>t.week===vocabWeek&&t.definition&&t.term);if(words.length<4)return;const pool=current.terms.filter(t=>t.definition&&t.term);quizItems=shuffled(words).slice(0,5).map(t=>{const others=shuffled(pool.filter(x=>x.term!==t.term)).slice(0,3);return {term:t.term,definition:t.definition,choices:shuffled([t,...others])}});const wrap=byId("weeklyQuizQuestions");wrap.replaceChildren();byId("weeklyQuizTitle").textContent="Week "+vocabWeek+" · Vocabulary practice";byId("weeklyQuizNote").textContent="Five lesson-specific terms · select the definition that best fits. Target: 80%. Practice does not update the course mastery gate.";quizItems.forEach((q,i)=>{const box=document.createElement("div");box.className="vocab-question";const field=document.createElement("fieldset");const legend=document.createElement("legend");legend.textContent=(i+1)+". What is the meaning of “"+q.term+"”?";field.append(legend);q.choices.forEach((choice,j)=>{const label=document.createElement("label");const radio=document.createElement("input");radio.type="radio";radio.name="vocabq"+i;radio.value=String(j);label.append(radio,document.createTextNode(" "+choice.definition));field.append(label)});box.append(field);wrap.append(box)});byId("weeklyQuizFeedback").textContent="";weekQuiz.hidden=false}
+byId("gradeWeeklyVocabulary").addEventListener("click",()=>{if(!quizItems.length)return;let correct=0;for(let i=0;i<quizItems.length;i++){const chosen=document.querySelector('input[name="vocabq'+i+'"]:checked');if(!chosen){byId("weeklyQuizFeedback").textContent="Answer all five questions before checking.";return}if(quizItems[i].choices[Number(chosen.value)].term===quizItems[i].term)correct++}const score=Math.round(correct/quizItems.length*100);byId("weeklyQuizFeedback").textContent=correct+" / "+quizItems.length+" · "+score+"%. "+(score>=80?"Practice target reached.":"Review the unit definitions and try another form.")+" This formative result is not recorded as verified weekly course mastery."});
+byId("retryWeeklyVocabulary").addEventListener("click",drawWeekQuiz);
 async function load(){
  const n=++loadCount;current=null;list.replaceChildren();
- status.textContent="Loading local vocabulary…";sync();
+ status.textContent="Loading local vocabulary…";weekQuiz.hidden=true;sync();
  const relative=course.value==="social-studies-10"?"../../social-studies/grade-10/units/unit-"+unit.value+"/vocabulary.json":course.value==="social-studies-09"?"../../social-studies/grade-09/data/vocabulary-studio.json":"../"+course.value+"/units/unit-"+unit.value+"/vocabulary.json";
  try{
   const response=await fetch(relative,{credentials:"same-origin"});
@@ -150,7 +155,7 @@ async function load(){
   if(!Array.isArray(data.terms))throw new Error("Vocabulary data has an invalid format.");
   current=data;
   title.textContent=courseNames[course.value]+" · "+(data.title||"Unit "+unit.value);
-  render();
+  render();drawWeekQuiz();
  }catch(error){
   if(n!==loadCount)return;
   title.textContent="Unit "+unit.value+" · Vocabulary";
