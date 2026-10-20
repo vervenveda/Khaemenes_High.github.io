@@ -1,11 +1,11 @@
 "use strict";
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
-const CACHE="khaemenes-geometry-v7-ams-v1.7.0-recovery-popout-r1-20261015";
+const CACHE="khaemenes-geometry-v8-shared-workflow-v1-20261020";
 const CACHE_PREFIX="khaemenes-geometry-";
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
  "../assets/applied-mission-studio-v1.js",
  "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
- "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js","./assets/question-bank.js","./assets/diagnostic-bank-v2.js","./assets/assessment-engine.js","./assets/lesson-tools.js","./assets/unit-progress.js","./course-data.js","./course-map.json","./manifest.webmanifest","./diagnostic/","./assessments/",
+ "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js","./assets/question-bank.js","./assets/diagnostic-bank-v2.js","./assets/assessment-engine.js","./assets/lesson-tools.js","./assets/geometry-workflow-adapter-v1.js","../assets/course-lesson-workflow-v1.js","../assets/course-lesson-workflow-v1.css","./assets/unit-progress.js","./course-data.js","./course-map.json","./manifest.webmanifest","./diagnostic/","./assessments/",
  "./assets/geometry-archaemenes-upgrade.js","./assets/strict-course-progression.js","./assets/unit-index-gates.js","./assets/unit-mastery-source-v2.js",
  "./assessments/index.html","./assessments/administration-guide.html","./assessments/assessment-map.json","./assessments/weekly-mastery.html","./assessments/midterm.html","./assessments/final.html",
  "./assessments/assets/exam-depth-v2.js","./assessments/assets/weekly-mastery-engine-v2.js",

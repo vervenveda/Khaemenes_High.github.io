@@ -69,3 +69,12 @@ function updateStatus(){
 document.getElementById("saveLessonMastery")?.addEventListener("click",()=>{const score=Number(document.getElementById("lessonMasteryScore")?.value);if(!Number.isFinite(score)||score<0||score>100){alert("Enter a score from 0 to 100.");return}rec.attempts.push({score,mastery_threshold:MASTERY,mastery_met:score>=MASTERY,recorded_at:new Date().toISOString(),classification:"local-evaluator-score"});rec.bestScore=Math.max(rec.bestScore||0,score);rec.mastery=rec.bestScore>=MASTERY;rec.complete=rec.mastery;rec.updated=new Date().toISOString();data[id]=rec;save(data);if(box)box.checked=rec.mastery;updateStatus();alert(rec.mastery?"Lesson mastery recorded. Continue to the weekly gate when this week's assigned lessons are complete.":`Score recorded. ${MASTERY}% mastery is required before progression.`)});
 document.getElementById("saveLessonNote")?.addEventListener("click",()=>{rec.note=note?.value.trim()||"";rec.updated=new Date().toISOString();data[id]=rec;save(data);alert("Lesson note saved locally.")});document.getElementById("printLesson")?.addEventListener("click",()=>print());updateStatus();
 })();
+/* Shared Learn → Practice → Submit → Mastery → Review workflow. */
+(()=>{
+ const source=document.currentScript;
+ function load(){
+  if(document.getElementById("geometryWorkflowAdapterV1"))return;
+  const s=document.createElement("script");s.id="geometryWorkflowAdapterV1";s.src=new URL("geometry-workflow-adapter-v1.js",source?.src||location.href).href;s.async=false;document.head.appendChild(s);
+ }
+ document.readyState==="loading"?document.addEventListener("DOMContentLoaded",load,{once:true}):load();
+})();
