@@ -201,3 +201,38 @@ Newly added in this pass:
 - U08-L06 — chord-chord, secant-tangent and secant-secant power theorems (The Organic Chemistry Tutor).
 
 All placements remain `enabled:false`.
+
+## Fourth higher-math sourcing checkpoint — 2026-10-20
+
+### Algebra II
+Algebra II now has **21 staged disabled placements**.
+
+Newly added:
+- U03-L04 — Rational Zero Theorem and polynomial zeros (The Organic Chemistry Tutor).
+- U06-L05 — solving exponential equations with logarithms (The Organic Chemistry Tutor).
+- U08-L06 — matrix inverse by row reduction (The Organic Chemistry Tutor).
+- U09-L06 — sigma notation and summation (Khan Academy).
+- U11-L06 — Law of Sines with SSA ambiguous case (The Organic Chemistry Tutor).
+
+Remaining Algebra II priorities:
+1. Dedicated powers-of-i / imaginary-unit source.
+2. Multiplicity/graph behavior and complete factorization.
+3. Continuous growth and the constant e.
+4. Determinants and matrix transformations.
+5. Arithmetic sequences and binomial theorem.
+6. Fundamental trig identities.
+7. Binomial distributions, z-scores, percentiles and inference.
+
+### Geometry
+Geometry now has **22 staged disabled placements**.
+
+Newly added:
+- U11-L06 — cross-sections of prisms, cylinders, pyramids and cones plus solids of revolution (eMATHinstruction).
+
+Remaining Geometry priorities:
+1. HL congruence / CPCTC multi-step proof support.
+2. Circle equations and coordinate-circle applications.
+3. Pyramids, cones, spheres and volume/surface-area relationships.
+4. Similarity scaling in three dimensions.
+
+All placements remain `enabled:false`.
