@@ -133,3 +133,51 @@ Recommended next phase:
 4. Confirm exact lesson alignment and age/reading level.
 5. Enable only reviewed placements one by one.
 6. Validate responsive rendering and no mastery/progression coupling.
+
+## Video certification workflow initiated — 2026-10-20
+
+The higher-math candidate library now has a shared lesson-side renderer at `courses/mathematics/assets/video-companion-v1.js`.
+
+Architecture:
+- Algebra I, Geometry and Algebra II load the shared renderer through their existing shared lesson engines.
+- The renderer reads the course `video-map.json`.
+- A video renders only when the lesson placement has `enabled:true` and the shared video record is not disabled.
+- Current staged higher-math placements remain disabled, so this infrastructure change creates no new student-facing playback.
+- The video card explicitly states that optional video support does not award mastery or unlock progression.
+
+Course service-worker release caches now include `video-map.json` and the shared renderer.
+
+Source validation:
+- shared video renderer: JavaScript parse PASS
+- Algebra I renderer hook: parse PASS
+- Geometry renderer hook: parse PASS
+- Algebra II renderer hook: parse PASS
+- Algebra I service worker: parse PASS
+- Geometry service worker: parse PASS
+- Algebra II service worker: parse PASS
+
+### First partial certifications
+
+Two records now carry structured certification metadata:
+
+1. `polynomial-multiplicity-graph-organic.json`
+   - provider/title: verified
+   - topic alignment: verified for polynomial end behavior and multiplicity
+   - whole-video review: pending
+   - privacy embed: pending
+   - captions: pending
+   - transcript/text fallback: pending
+   - responsive lesson rendering: pending
+   - student release: **not approved**
+
+2. `circle-standard-equation-khan.json`
+   - provider/title: verified
+   - topic alignment: verified for standard circle equation from center/radius
+   - whole-video review: pending
+   - privacy embed: pending
+   - captions: pending
+   - transcript/text fallback: pending
+   - responsive lesson rendering: pending
+   - student release: **not approved**
+
+Certification policy: do not set `enabled:true` until all required release gates are verified.
