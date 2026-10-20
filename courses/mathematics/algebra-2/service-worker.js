@@ -1,7 +1,7 @@
 "use strict";
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
 const CACHE_PREFIX="khaemenes-algebra2-";
-const CACHE=`${CACHE_PREFIX}v11-video-companion-v1-20261020`;
+const CACHE=`${CACHE_PREFIX}v12-video-cert-offline-v2-20261020`;
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "../assets/applied-mission-studio-v1.js",
   "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
@@ -24,6 +24,8 @@ const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-
   "./units/unit-13/projects/13-project.html"];
 
 
+const VIDEO_FILES=["../assets/video-library/functions-introduction.json","../assets/video-library/parent-functions-transformations-organic.json","../assets/video-library/solving-logarithmic-equations-organic.json","../assets/video-library/conditional-probability-independence-khan.json","../assets/video-library/rational-functions-asymptotes-holes-organic.json","../assets/video-library/geometric-series-introduction-khan.json","../assets/video-library/trig-equations-multiple-angles-organic.json","../assets/video-library/law-of-cosines-organic.json","../assets/video-library/normal-distribution-introduction-khan.json","../assets/video-library/matrix-row-operations-organic.json","../assets/video-library/infinite-geometric-series-khan.json","../assets/video-library/complex-numbers-basic-operations-organic.json","../assets/video-library/polynomial-long-division-organic.json","../assets/video-library/synthetic-division-polynomials-organic.json","../assets/video-library/exponential-growth-decay-organic.json","../assets/video-library/rational-zero-theorem-organic.json","../assets/video-library/solving-exponential-equations-organic.json","../assets/video-library/matrix-inverse-row-reduction-organic.json","../assets/video-library/sigma-notation-sums-khan.json","../assets/video-library/law-of-sines-ambiguous-case-organic.json","../assets/video-library/polynomial-multiplicity-graph-organic.json","../assets/video-library/determinant-3x3-organic.json","../assets/video-library/binomial-theorem-khan-india.json","../assets/video-library/pythagorean-identities-organic.json","../assets/video-library/zscore-comparison-khan.json"];
+
 const MISSION_OFFLINE_RELEASE="ams-v1.7.0-recovery-popout-r1-20261015";
 const MISSION_CRITICAL=["./","./index.html","./offline.html","../assets/applied-mission-studio-v1.js","./units/unit-01/projects/01-project.html","./units/unit-02/projects/02-project.html","./units/unit-03/projects/03-project.html","./units/unit-04/projects/04-project.html","./units/unit-05/projects/05-project.html","./units/unit-06/projects/06-project.html","./units/unit-07/projects/07-project.html","./units/unit-08/projects/08-project.html","./units/unit-09/projects/09-project.html","./units/unit-10/projects/10-project.html","./units/unit-11/projects/11-project.html","./units/unit-12/projects/12-project.html","./units/unit-13/projects/13-project.html"];
 async function installMissionCritical(){
@@ -34,7 +36,7 @@ async function installMissionCritical(){
 self.addEventListener("install",event=>{
   event.waitUntil((async()=>{
     await installMissionCritical();
-    const cache=await caches.open(CACHE),extras=CORE.filter(file=>!MISSION_CRITICAL.includes(file));
+    const cache=await caches.open(CACHE),extras=[...new Set([...CORE,...VIDEO_FILES])].filter(file=>!MISSION_CRITICAL.includes(file));
     await Promise.allSettled(extras.map(file=>cache.add(new Request(file,{cache:"reload"}))));
     await self.skipWaiting();
   })());
