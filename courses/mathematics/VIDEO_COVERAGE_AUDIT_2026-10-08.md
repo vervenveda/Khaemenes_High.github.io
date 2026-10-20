@@ -181,3 +181,27 @@ Two records now carry structured certification metadata:
    - student release: **not approved**
 
 Certification policy: do not set `enabled:true` until all required release gates are verified.
+
+## Video architecture hardening checkpoint — 2026-10-20
+
+Three audit bubbles were repaired:
+
+1. **Authoritative certification gate**
+   - Higher-math video rendering now requires both placement-level `release_approved:true` and canonical asset `certification.student_release_approved:true`, in addition to `enabled:true`.
+   - All current higher-math placements explicitly carry `release_approved:false`.
+   - The renderer supports multiple independently approved resources for one lesson and remains formative-only.
+
+2. **Offline canonical metadata**
+   - The mathematics-root shared-resource service worker now includes canonical video-library JSON alongside the shared game library.
+   - Algebra I, Geometry and Algebra II course workers also precache the exact canonical video records referenced by their own maps, because their more-specific worker scopes control lesson pages.
+   - This avoids depending on a parent-scope worker that cannot control a page already owned by a more-specific course worker.
+
+3. **Honest coverage accounting**
+   - Algebra I: **10 candidate placements / 10 unique lessons / 0 multi-candidate lessons**.
+   - Geometry: **29 candidate placements / 26 unique lessons / 3 multi-candidate lessons**.
+   - Algebra II: **26 candidate placements / 24 unique lessons / 2 multi-candidate lessons**.
+   - Video maps now store `coverage_summary` with candidate placements, unique lessons, duplicate-candidate lessons, enabled placements and release-approved placements.
+
+Current release-approved higher-math placements: **0**.
+
+Source validation: video renderer and all four affected service workers parse successfully. Browser-level offline and embedded-playback certification is still required before enabling any candidate.
