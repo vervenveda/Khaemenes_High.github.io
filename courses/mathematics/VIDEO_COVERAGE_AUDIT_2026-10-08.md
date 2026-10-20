@@ -57,3 +57,14 @@ Newly sourced listing-verified candidates include:
 Existing Academy records were also reused for transversal angles, slope, scale drawings, Pythagorean theorem, elementary area, and surface-area nets.
 
 Release status remains unchanged: `enabled:false` until whole-video review, playback, captions/transcript fallback, privacy-enhanced embed behavior, responsive lesson rendering, and exact objective alignment are verified.
+
+## Algebra II candidate update — 2026-10-20
+
+Algebra II increased from **1 staged placement** to **4 staged disabled placements**.
+
+New listing-verified candidates:
+- Parent-function transformations/end behavior — The Organic Chemistry Tutor.
+- Solving logarithmic equations — The Organic Chemistry Tutor.
+- Conditional probability and independence — Khan Academy.
+
+No Algebra II placement is enabled. Complex numbers and rational-function/asymptote candidates remain intentionally unsourced after the current search did not return sufficiently trustworthy exact matches. No video IDs were guessed.
