@@ -3989,6 +3989,113 @@
           "wired": true
         }
       ]
+    },
+    "geometry-foundations-sort": {
+      "title": "Geometry Foundations Sort",
+      "canonical_path": "courses/mathematics/assets/learning-games/geometry-foundations-sort/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "new-canonical-shared",
+      "scope_note": "Points, lines, planes, collinearity, coplanarity, intersections, and defined terms. Formative only.",
+      "placements": [
+        {
+          "course": "geometry",
+          "unit": "01",
+          "lesson": "01",
+          "lesson_title": "Points, Lines, Planes & Defined Terms",
+          "mode": "geometry-defined-terms",
+          "query": "?course=geometry&unit=01&lesson=u01-l01",
+          "wired": true
+        }
+      ]
+    },
+    "quadrilateral-detective": {
+      "title": "Quadrilateral Detective",
+      "canonical_path": "courses/mathematics/assets/learning-games/quadrilateral-detective/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "new-canonical-shared",
+      "scope_note": "Parallelograms, rectangles, rhombi, squares, trapezoids, kites, midsegments, and coordinate proof strategy. Formative only.",
+      "placements": [
+        {
+          "course": "geometry",
+          "unit": "07",
+          "lesson": "02",
+          "lesson_title": "Parallelogram Properties & Tests",
+          "mode": "parallelogram-tests",
+          "query": "?course=geometry&unit=07&lesson=u07-l02",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "07",
+          "lesson": "03",
+          "lesson_title": "Rectangles, Rhombi & Squares",
+          "mode": "special-quadrilaterals",
+          "query": "?course=geometry&unit=07&lesson=u07-l03",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "07",
+          "lesson": "04",
+          "lesson_title": "Trapezoids, Kites & Midsegments",
+          "mode": "trapezoids-kites-midsegments",
+          "query": "?course=geometry&unit=07&lesson=u07-l04",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "07",
+          "lesson": "05",
+          "lesson_title": "Quadrilateral Coordinate Proofs",
+          "mode": "coordinate-quadrilateral-proof",
+          "query": "?course=geometry&unit=07&lesson=u07-l05",
+          "wired": true
+        }
+      ]
+    },
+    "polygon-design-lab": {
+      "title": "Polygon Design Lab",
+      "canonical_path": "courses/mathematics/assets/learning-games/polygon-design-lab/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "new-canonical-shared",
+      "scope_note": "Polygon decomposition, area recomposition, design constraints, unit discipline, and verification. Formative only.",
+      "placements": [
+        {
+          "course": "geometry",
+          "unit": "07",
+          "lesson": "07",
+          "lesson_title": "Polygon Decomposition & Design Constraints",
+          "mode": "polygon-design-constraints",
+          "query": "?course=geometry&unit=07&lesson=u07-l07",
+          "wired": true
+        }
+      ]
+    },
+    "geometric-probability-lab": {
+      "title": "Geometric Probability Lab",
+      "canonical_path": "courses/mathematics/assets/learning-games/geometric-probability-lab/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "new-canonical-shared",
+      "scope_note": "Probability by length, area, angular measure, and uniform geometric selection. Formative only.",
+      "placements": [
+        {
+          "course": "geometry",
+          "unit": "10",
+          "lesson": "06",
+          "lesson_title": "Geometric Probability by Length and Area",
+          "mode": "length-area-probability",
+          "query": "?course=geometry&unit=10&lesson=u10-l06",
+          "wired": true
+        }
+      ]
     }
   }
 }
