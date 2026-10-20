@@ -931,6 +931,78 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Surface area via nets; volume needs separate video"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U11-L01",
+      "unit": 11,
+      "lesson": 1,
+      "lesson_file": "units/unit-11/lessons/lesson-01-measurement-systems-units-precision.html",
+      "asset_id": "MATH-METRIC-MEASUREMENT-KHAN-001",
+      "shared_file": "../assets/video-library/metric-measurement-khan.json",
+      "placement_status": "topic_matched_partial_scope_pending_player_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Metric unit conversions only; measurement precision and customary units require additional material"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U11-L03",
+      "unit": 11,
+      "lesson": 3,
+      "lesson_file": "units/unit-11/lessons/lesson-03-perimeter-circumference-composite-boundaries.html",
+      "asset_id": "MATH-PERIMETER-MATHANTICS-001",
+      "shared_file": "../assets/video-library/perimeter-mathantics.json",
+      "placement_status": "topic_matched_partial_scope_pending_player_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Basic perimeter only; circumference and composite boundaries need additional resources"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U11-L03",
+      "unit": 11,
+      "lesson": 3,
+      "lesson_file": "units/unit-11/lessons/lesson-03-perimeter-circumference-composite-boundaries.html",
+      "asset_id": "MATH-CIRCLE-MEASUREMENT-MATHANTICS-001",
+      "shared_file": "../assets/video-library/circle-area-circumference-mathantics.json",
+      "placement_status": "topic_matched_partial_scope_pending_player_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Supplementary circumference and circle measurement"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U11-L04",
+      "unit": 11,
+      "lesson": 4,
+      "lesson_file": "units/unit-11/lessons/lesson-04-area-polygons-circles-composite-figures.html",
+      "asset_id": "MATH-AREA-MATHANTICS-001",
+      "shared_file": "../assets/video-library/area-mathantics.json",
+      "placement_status": "topic_matched_partial_scope_pending_player_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Basic area only; circles and composite figures need additional material"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U11-L04",
+      "unit": 11,
+      "lesson": 4,
+      "lesson_file": "units/unit-11/lessons/lesson-04-area-polygons-circles-composite-figures.html",
+      "asset_id": "MATH-CIRCLE-MEASUREMENT-MATHANTICS-001",
+      "shared_file": "../assets/video-library/circle-area-circumference-mathantics.json",
+      "placement_status": "topic_matched_partial_scope_pending_player_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Supplementary circle area"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U11-L08",
+      "unit": 11,
+      "lesson": 8,
+      "lesson_file": "units/unit-11/lessons/lesson-08-coordinate-geometry-design-constraints-error.html",
+      "asset_id": "MATH-COORDINATE-PLANE-MATHANTICS-001",
+      "shared_file": "../assets/video-library/coordinate-plane-mathantics.json",
+      "placement_status": "topic_matched_partial_scope_pending_player_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Coordinates prerequisite only; design constraints and error analysis remain missing from video coverage"
     }
   ]
 }
