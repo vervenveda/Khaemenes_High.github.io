@@ -263,6 +263,24 @@
           "mode": "expression-substitution",
           "query": "?course=prealgebra&unit=07&lesson=03",
           "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "01",
+          "lesson": "03",
+          "lesson_title": "Operations, Properties & Order of Operations",
+          "mode": "algebra-order-properties",
+          "query": "?course=algebra1&unit=01&lesson=03",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "05",
+          "lesson": "02",
+          "lesson_title": "Function Notation & Evaluation",
+          "mode": "function-evaluation",
+          "query": "?course=algebra1&unit=05&lesson=02",
+          "wired": true
         }
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
@@ -1083,6 +1101,33 @@
           "mode": "contextual-constraints",
           "query": "?course=prealgebra&unit=09&lesson=07",
           "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "04",
+          "lesson": "04",
+          "lesson_title": "Compound Inequalities: AND, OR & Intersections",
+          "mode": "compound-intervals",
+          "query": "?course=algebra1&unit=04&lesson=04",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "07",
+          "lesson": "06",
+          "lesson_title": "Systems of Linear Inequalities",
+          "mode": "systems-inequalities",
+          "query": "?course=algebra1&unit=07&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "07",
+          "lesson": "07",
+          "lesson_title": "Feasible Regions, Constraints & Introductory Optimization",
+          "mode": "feasible-regions",
+          "query": "?course=algebra1&unit=07&lesson=07",
+          "wired": true
         }
       ],
       "scope_note": "Single-boundary inequalities only; compound and systems lessons intentionally excluded. Mode query is metadata; game v1 requires manual level selection. Browser QA pending."
@@ -1192,6 +1237,24 @@
           "mode": "proportional-modelling",
           "query": "?course=prealgebra&unit=04&lesson=08",
           "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "06",
+          "lesson": "04",
+          "lesson_title": "Point-Slope & Standard Form",
+          "mode": "point-slope-standard-form",
+          "query": "?course=algebra1&unit=06&lesson=04",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "06",
+          "lesson": "05",
+          "lesson_title": "Parallel & Perpendicular Lines",
+          "mode": "parallel-perpendicular-slopes",
+          "query": "?course=algebra1&unit=06&lesson=05",
+          "wired": true
         }
       ],
       "scope_note": "Game reads mode query and selects initial level. Lessons include broader content beyond game's practice scope. Browser QA pending; no automatic course mastery writeback."
@@ -1293,6 +1356,15 @@
           "mode": "zeros",
           "query": "?course=algebra1&unit=10&lesson=04&mode=zeros",
           "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "09",
+          "lesson": "04",
+          "lesson_title": "Binomial Products & Special Products",
+          "mode": "special-products",
+          "query": "?course=algebra1&unit=09&lesson=04",
+          "wired": true
         }
       ],
       "scope_note": "Supports binomial expansion, monic/nonmonic quadratic factoring and zero-product solving; does not fully cover difference of squares, polynomial modelling or graph analysis. Browser QA and mastery writeback not certified."
@@ -1338,6 +1410,33 @@
           "lesson_title": "Quadratic Modelling, Projectiles & Optimization",
           "mode": "vertex",
           "query": "?course=algebra1&unit=10&lesson=07&mode=vertex",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "10",
+          "lesson": "05",
+          "lesson_title": "Solving by Square Roots & Completing the Square",
+          "mode": "quadratic-solution-methods",
+          "query": "?course=algebra1&unit=10&lesson=05",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "10",
+          "lesson": "06",
+          "lesson_title": "Quadratic Formula & Discriminant",
+          "mode": "quadratic-formula-discriminant",
+          "query": "?course=algebra1&unit=10&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "10",
+          "lesson": "08",
+          "lesson_title": "Linear-Quadratic Systems & Model Comparison",
+          "mode": "linear-quadratic-comparison",
+          "query": "?course=algebra1&unit=10&lesson=08",
           "wired": true
         }
       ],
@@ -1649,6 +1748,15 @@
           "mode": "circle-power-theorems",
           "query": "?course=geometry&unit=08&lesson=u08-l06",
           "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "11",
+          "lesson": "06",
+          "lesson_title": "Circle Equations, Radical Models & Verification",
+          "mode": "circle-equation-verification",
+          "query": "?course=algebra1&unit=11&lesson=06",
+          "wired": true
         }
       ],
       "scope_note": "Foundational central/inscribed angles, chords, tangents and radius relationships. U08 L01 is supplemental vocabulary practice; U08 L02 does not cover full arc-length computation. Secant power, sector area and circle equations excluded. Browser QA and mastery writeback not certified."
@@ -1721,6 +1829,15 @@
           "lesson_title": "Special Right Triangles: 30-60-90",
           "mode": "special-right-30-60-90",
           "query": "?course=geometry&unit=06&lesson=u06-l03",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "11",
+          "lesson": "04",
+          "lesson_title": "Pythagorean Theorem & Distance",
+          "mode": "pythagorean-distance",
+          "query": "?course=algebra1&unit=11&lesson=04",
           "wired": true
         }
       ],
@@ -2214,6 +2331,15 @@
           "mode": "sequence-pattern-foundations",
           "query": "?course=prealgebra&unit=10&lesson=02",
           "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "05",
+          "lesson": "07",
+          "lesson_title": "Arithmetic Sequences as Functions & Inverse Thinking",
+          "mode": "arithmetic-sequence-functions",
+          "query": "?course=algebra1&unit=05&lesson=07",
+          "wired": true
         }
       ]
     },
@@ -2413,6 +2539,24 @@
           "lesson_title": "Sampling, Bias, Association & Evidence Decisions",
           "mode": "sampling-bias-evidence",
           "query": "?course=prealgebra&unit=12&lesson=08",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "06",
+          "lesson": "06",
+          "lesson_title": "Scatterplots, Correlation & Lines of Fit",
+          "mode": "scatterplots-correlation",
+          "query": "?course=algebra1&unit=06&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "06",
+          "lesson": "07",
+          "lesson_title": "Regression, Residuals & Model Limitations",
+          "mode": "regression-residuals",
+          "query": "?course=algebra1&unit=06&lesson=07",
           "wired": true
         }
       ]
@@ -2716,6 +2860,15 @@
           "mode": "zero-negative-exponents",
           "query": "?course=prealgebra&unit=06&lesson=02",
           "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "08",
+          "lesson": "02",
+          "lesson_title": "Zero, Negative & Rational Exponents",
+          "mode": "zero-negative-rational-exponents",
+          "query": "?course=algebra1&unit=08&lesson=02",
+          "wired": true
         }
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
@@ -2778,6 +2931,24 @@
           "lesson_title": "Simple Interest, Fees & Financial Comparisons",
           "mode": "interest-fee-comparisons",
           "query": "?course=prealgebra&unit=05&lesson=07",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "08",
+          "lesson": "06",
+          "lesson_title": "Compound Interest, Half-Life & Exponential Modelling",
+          "mode": "compound-interest-comparison",
+          "query": "?course=algebra1&unit=08&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "12",
+          "lesson": "06",
+          "lesson_title": "Financial Mathematics: Growth, Loans, Taxes & Risk",
+          "mode": "financial-risk-comparisons",
+          "query": "?course=algebra1&unit=12&lesson=06",
           "wired": true
         }
       ],
@@ -2994,6 +3165,15 @@
           "lesson_title": "Square & Cube Roots; Perfect Powers",
           "mode": "perfect-powers-roots",
           "query": "?course=prealgebra&unit=06&lesson=04",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "11",
+          "lesson": "01",
+          "lesson_title": "Radical Expressions & Principal Roots",
+          "mode": "principal-roots-radicals",
+          "query": "?course=algebra1&unit=11&lesson=01",
           "wired": true
         }
       ],
@@ -3235,6 +3415,15 @@
           "mode": "equation-error-analysis",
           "query": "?course=prealgebra&unit=08&lesson=08",
           "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "02",
+          "lesson": "03",
+          "lesson_title": "Properties, Equivalence & Structural Reasoning",
+          "mode": "structural-equivalence",
+          "query": "?course=algebra1&unit=02&lesson=03",
+          "wired": true
         }
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
@@ -3276,6 +3465,33 @@
           "lesson_title": "Linear / Nonlinear & Function Notation",
           "mode": "linear-nonlinear-functions",
           "query": "?course=prealgebra&unit=10&lesson=07",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "05",
+          "lesson": "01",
+          "lesson_title": "Relations, Inputs, Outputs & Function Tests",
+          "mode": "function-tests",
+          "query": "?course=algebra1&unit=05&lesson=01",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "05",
+          "lesson": "03",
+          "lesson_title": "Domain & Range from Tables, Graphs & Contexts",
+          "mode": "domain-range-functions",
+          "query": "?course=algebra1&unit=05&lesson=03",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "05",
+          "lesson": "04",
+          "lesson_title": "Multiple Representations & Function Rules",
+          "mode": "multiple-representations",
+          "query": "?course=algebra1&unit=05&lesson=04",
           "wired": true
         }
       ],
