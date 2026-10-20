@@ -1538,6 +1538,33 @@
           "mode": "conditional-proof-reasoning",
           "query": "?course=geometry&unit=01&lesson=u01-l05",
           "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "03",
+          "lesson": "01",
+          "lesson_title": "Triangle Classification & Angle Relationships",
+          "mode": "triangle-angle-reasoning",
+          "query": "?course=geometry&unit=03&lesson=u03-l01",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "03",
+          "lesson": "05",
+          "lesson_title": "Isosceles and Equilateral Triangle Theorems",
+          "mode": "isosceles-equilateral-proof",
+          "query": "?course=geometry&unit=03&lesson=u03-l05",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "03",
+          "lesson": "07",
+          "lesson_title": "Perpendicular Bisectors, Angle Bisectors & Centers",
+          "mode": "bisectors-centers-proof",
+          "query": "?course=geometry&unit=03&lesson=u03-l07",
+          "wired": true
         }
       ],
       "scope_note": "Guided proof steps for angles, triangle congruence, parallel lines, and proof logic. Not an unrestricted proof editor; individual lessons may include theorems beyond this game. Live browser QA and mastery writeback not certified."
@@ -1592,6 +1619,15 @@
           "lesson_title": "Rigid Motion Definition of Congruence",
           "mode": "mixed",
           "query": "?course=geometry&unit=02&lesson=05&mode=mixed",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "02",
+          "lesson": "07",
+          "lesson_title": "Tessellations, Frieze Patterns & Design Rules",
+          "mode": "tessellation-transformations",
+          "query": "?course=geometry&unit=02&lesson=u02-l07",
           "wired": true
         }
       ],
@@ -1783,6 +1819,24 @@
           "lesson_title": "Circle Equations, Radical Models & Verification",
           "mode": "circle-equation-verification",
           "query": "?course=algebra1&unit=11&lesson=06",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "08",
+          "lesson": "07",
+          "lesson_title": "Sector Area, Segment Area & Annuli",
+          "mode": "sector-segment-area",
+          "query": "?course=geometry&unit=08&lesson=u08-l07",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "08",
+          "lesson": "08",
+          "lesson_title": "Equation of a Circle & Coordinate Applications",
+          "mode": "circle-equation-coordinate",
+          "query": "?course=geometry&unit=08&lesson=u08-l08",
           "wired": true
         }
       ],
