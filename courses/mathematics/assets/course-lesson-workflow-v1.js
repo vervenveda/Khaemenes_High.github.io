@@ -74,9 +74,13 @@ function enhance(){
   }
   function bindSubmit(){
     const next=cfg.getSubmitButton?.()||null;
-    if(!next||next===submitButton)return;
+    if(!next)return;
+    if(next===submitButton){
+      if(cfg.submitLabel!==false&&!submitButton.disabled){submitButton.textContent="Submit Assignment";submitButton.setAttribute("aria-label","Submit Assignment");}
+      return;
+    }
     submitButton=next;
-    if(cfg.submitLabel!==false){submitButton.textContent="Submit Assignment";submitButton.setAttribute("aria-label","Submit Assignment");}
+    if(cfg.submitLabel!==false&&!submitButton.disabled){submitButton.textContent="Submit Assignment";submitButton.setAttribute("aria-label","Submit Assignment");}
     submitButton.addEventListener("click",()=>{
       const rec=read();
       write({submittedAt:rec.submittedAt||now(),lastSubmittedAt:now(),submissionCount:(Number(rec.submissionCount)||0)+1,reviewComplete:false});
@@ -118,7 +122,10 @@ function enhance(){
     const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=(cfg.filePrefix||"khaemenes-math")+"-"+identity.id+"-lesson-record.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),700);status.textContent="Lesson record exported. It remains supporting local evidence, not a self-authenticating transcript.";
   });
   $("khaeWorkflowPrint").addEventListener("click",()=>window.print());
-  const observer=new MutationObserver(()=>{bindSubmit();refresh()});
+  const observer=new MutationObserver(mutations=>{
+    if(mutations.every(m=>section.contains(m.target)))return;
+    bindSubmit();refresh();
+  });
   const observeRoot=document.getElementById("main")||document.getElementById("lessonMain")||document.body;
   observer.observe(observeRoot,{childList:true,subtree:true});
   window.addEventListener("storage",refresh);
