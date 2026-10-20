@@ -80,9 +80,10 @@
       "asset_id": "MATH-FRACTIONS-NUMBER-LINE-001",
       "shared_file": "../assets/video-library/fractions-number-line.json",
       "legacy_file": "assets/legacy-video-manifest/transcripts/unit-02-01-fractions-number-line.md",
-      "placement_status": "aligned",
-      "enabled": true,
-      "optional": true
+      "placement_status": "misaligned_legacy_preserved_disabled",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Fractions number-line video does not match Unit 02 Lesson 01 Integers in Context; retain legacy provenance but do not display for this lesson."
     },
     {
       "lesson_id": "KH-MATH-PA-U02-L01",
