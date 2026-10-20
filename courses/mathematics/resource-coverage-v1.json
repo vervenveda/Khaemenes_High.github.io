@@ -1027,9 +1027,9 @@
         "note": "87/87 course-data lessons contain structured examples."
       },
       "game_tool": {
-        "covered": 80,
-        "missing": 7,
-        "new_game_needed": 1,
+        "covered": 81,
+        "missing": 6,
+        "new_game_needed": 0,
         "tool_sufficient": 6
       },
       "video": {
@@ -1391,10 +1391,8 @@
           "path": "units/unit-05/lessons/lesson-06-piecewise-functions-discrete-models.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u05-l07",
@@ -3967,5 +3965,10 @@
     "games_created": 4,
     "placements_added": 10,
     "policy": "Four canonical shared formative games close all remaining genuine Pre-Algebra game-development gaps and directly reuse into matching Geometry lessons only."
+  },
+  "piecewise_boundary_lab": {
+    "games_created": 1,
+    "placements_added": 1,
+    "policy": "Canonical formative piecewise/discrete-model game closes Algebra I's final genuine new-game need."
   }
 }
