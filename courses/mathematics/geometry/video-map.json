@@ -301,6 +301,17 @@
       "optional": true,
       "usage": "optional_lesson_companion",
       "alignment_note": "Direct sphere-volume support; surface-area portion remains lesson content."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U03-L04",
+      "lesson_file": "units/unit-03/lessons/u03-l04.html",
+      "asset_id": "MATH-CPCTC-PROOFS-OCT-001",
+      "shared_file": "../assets/video-library/cpctc-proofs-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct CPCTC/multi-step triangle-proof match."
     }
   ]
 }
