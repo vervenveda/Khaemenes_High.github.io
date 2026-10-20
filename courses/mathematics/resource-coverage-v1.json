@@ -15,9 +15,9 @@
         "note": "Generic lesson engine renders LESSON_DATA examples; exact per-file example payload remains a follow-up verification target."
       },
       "game_tool": {
-        "covered": 81,
-        "missing": 16,
-        "new_game_needed": 5,
+        "covered": 86,
+        "missing": 11,
+        "new_game_needed": 0,
         "tool_sufficient": 11
       },
       "video": {
@@ -813,10 +813,8 @@
           "title": "Angles Lines Transversals Polygons",
           "path": "units/unit-11/lessons/lesson-02-angles-lines-transversals-polygons.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
-          "video": "candidate_pending",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "candidate_pending"
         },
         {
           "id": "u11-l03",
@@ -825,10 +823,8 @@
           "title": "Perimeter Circumference Composite Boundaries",
           "path": "units/unit-11/lessons/lesson-03-perimeter-circumference-composite-boundaries.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
-          "video": "candidate_pending",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "candidate_pending"
         },
         {
           "id": "u11-l04",
@@ -837,10 +833,8 @@
           "title": "Area Polygons Circles Composite Figures",
           "path": "units/unit-11/lessons/lesson-04-area-polygons-circles-composite-figures.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
-          "video": "candidate_pending",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "candidate_pending"
         },
         {
           "id": "u11-l05",
@@ -859,10 +853,8 @@
           "title": "Right Triangles Pythagorean Distance",
           "path": "units/unit-11/lessons/lesson-06-right-triangles-pythagorean-distance.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
-          "video": "candidate_pending",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "candidate_pending"
         },
         {
           "id": "u11-l07",
@@ -871,10 +863,8 @@
           "title": "Surface Area Nets Volume",
           "path": "units/unit-11/lessons/lesson-07-surface-area-nets-volume.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
-          "video": "candidate_pending",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "candidate_pending"
         },
         {
           "id": "u11-l08",
@@ -2028,9 +2018,9 @@
         "note": "Course architecture declares 90 visual lessons with worked reasoning; representative static lesson verified with a worked-example section."
       },
       "game_tool": {
-        "covered": 51,
-        "missing": 39,
-        "new_game_needed": 12,
+        "covered": 56,
+        "missing": 34,
+        "new_game_needed": 7,
         "tool_sufficient": 27
       },
       "video": {
@@ -2460,10 +2450,8 @@
           "title": "Interior and Exterior Angles of Polygons",
           "path": "units/unit-07/lessons/u07-l01.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u07-l02",
@@ -2520,10 +2508,8 @@
           "title": "Regular Polygons, Apothem & Central Angles",
           "path": "units/unit-07/lessons/u07-l06.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u07-l07",
@@ -2706,10 +2692,8 @@
           "title": "Area of Triangles, Parallelograms & Trapezoids",
           "path": "units/unit-10/lessons/u10-l01.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u10-l02",
@@ -2718,10 +2702,8 @@
           "title": "Area of Regular Polygons and Composite Figures",
           "path": "units/unit-10/lessons/u10-l02.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u10-l03",
@@ -2740,10 +2722,8 @@
           "title": "Effects of Scale on Perimeter and Area",
           "path": "units/unit-10/lessons/u10-l04.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u10-l05",
@@ -3982,5 +3962,10 @@
     "games_created": 3,
     "placements_added": 9,
     "policy": "Three canonical shared games cover Pre-Algebra algebra-language foundations and direct Algebra I extensions; formative only."
+  },
+  "geometry_measurement_cluster": {
+    "games_created": 4,
+    "placements_added": 10,
+    "policy": "Four canonical shared formative games close all remaining genuine Pre-Algebra game-development gaps and directly reuse into matching Geometry lessons only."
   }
 }
