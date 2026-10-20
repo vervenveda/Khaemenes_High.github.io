@@ -15,9 +15,9 @@
         "note": "Generic lesson engine renders LESSON_DATA examples; exact per-file example payload remains a follow-up verification target."
       },
       "game_tool": {
-        "covered": 76,
-        "missing": 21,
-        "new_game_needed": 10,
+        "covered": 81,
+        "missing": 16,
+        "new_game_needed": 5,
         "tool_sufficient": 11
       },
       "video": {
@@ -483,10 +483,8 @@
           "title": "Variables Terms Coefficients Constants",
           "path": "units/unit-07/lessons/lesson-01-variables-terms-coefficients-constants.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
-          "video": "candidate_pending",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "candidate_pending"
         },
         {
           "id": "u07-l02",
@@ -495,10 +493,8 @@
           "title": "Translating Words Contexts Expressions",
           "path": "units/unit-07/lessons/lesson-02-translating-words-contexts-expressions.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
-          "video": "candidate_pending",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "candidate_pending"
         },
         {
           "id": "u07-l03",
@@ -517,10 +513,8 @@
           "title": "Properties Operations Equivalent Structure",
           "path": "units/unit-07/lessons/lesson-04-properties-operations-equivalent-structure.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
-          "video": "candidate_pending",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "candidate_pending"
         },
         {
           "id": "u07-l05",
@@ -529,10 +523,8 @@
           "title": "Distributive Property Factoring",
           "path": "units/unit-07/lessons/lesson-05-distributive-property-factoring.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
-          "video": "candidate_pending",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "candidate_pending"
         },
         {
           "id": "u07-l06",
@@ -541,10 +533,8 @@
           "title": "Combining Like Terms Simplifying",
           "path": "units/unit-07/lessons/lesson-06-combining-like-terms-simplifying.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
-          "video": "candidate_pending",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "candidate_pending"
         },
         {
           "id": "u07-l07",
@@ -1047,9 +1037,9 @@
         "note": "87/87 course-data lessons contain structured examples."
       },
       "game_tool": {
-        "covered": 76,
-        "missing": 11,
-        "new_game_needed": 5,
+        "covered": 80,
+        "missing": 7,
+        "new_game_needed": 1,
         "tool_sufficient": 6
       },
       "video": {
@@ -1132,10 +1122,8 @@
           "path": "units/unit-02/lessons/lesson-01-variables-terms-factors-coefficients-degree.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u02-l02",
@@ -1178,10 +1166,8 @@
           "path": "units/unit-02/lessons/lesson-05-monomials-introductory-polynomial-classification.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u02-l06",
@@ -1670,10 +1656,8 @@
           "path": "units/unit-09/lessons/lesson-01-polynomial-vocabulary-standard-form.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u09-l02",
@@ -1683,10 +1667,8 @@
           "path": "units/unit-09/lessons/lesson-02-adding-subtracting-polynomials.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u09-l03",
@@ -3995,5 +3977,10 @@
   "reuse_wave_2": {
     "policy": "Second conservative reuse wave plus final direct matches before development classification.",
     "classification_policy": "Remaining missing lessons are classified as tool-sufficient or new-game-needed; tool-sufficient lessons are intentionally not forced into a game."
+  },
+  "algebra_language_cluster": {
+    "games_created": 3,
+    "placements_added": 9,
+    "policy": "Three canonical shared games cover Pre-Algebra algebra-language foundations and direct Algebra I extensions; formative only."
   }
 }
