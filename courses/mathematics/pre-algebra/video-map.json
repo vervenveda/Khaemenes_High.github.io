@@ -703,6 +703,90 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Forming equations from one-step word problems; checking solutions and error analysis remain in written lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U09-L01",
+      "unit": 9,
+      "lesson": 1,
+      "lesson_file": "units/unit-09/lessons/lesson-01-inequality-meaning-symbols-solution-sets.html",
+      "asset_id": "MATH-LINEAR-INEQUALITIES-001",
+      "shared_file": "../assets/video-library/linear-inequalities-introduction.json",
+      "placement_status": "topic_matched_pending_full_playback_caption_and_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Introduction to inequality meaning and solving; explicit solution-set language stays in the written lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U09-L02",
+      "unit": 9,
+      "lesson": 2,
+      "lesson_file": "units/unit-09/lessons/lesson-02-number-line-graphs-interval-descriptions.html",
+      "asset_id": "MATH-LINEAR-INEQUALITIES-001",
+      "shared_file": "../assets/video-library/linear-inequalities-introduction.json",
+      "placement_status": "topic_matched_pending_full_playback_caption_and_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Number-line graphs and interval notation; verify coverage in the video"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U09-L03",
+      "unit": 9,
+      "lesson": 3,
+      "lesson_file": "units/unit-09/lessons/lesson-03-one-step-inequalities-order-preservation.html",
+      "asset_id": "MATH-LINEAR-INEQUALITIES-001",
+      "shared_file": "../assets/video-library/linear-inequalities-introduction.json",
+      "placement_status": "topic_matched_pending_full_playback_caption_and_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "One-step inequalities; positive-operation preservation relies on lesson examples"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U09-L04",
+      "unit": 9,
+      "lesson": 4,
+      "lesson_file": "units/unit-09/lessons/lesson-04-negative-multipliers-reversal.html",
+      "asset_id": "MATH-INEQUALITY-NEGATIVE-KHAN-001",
+      "shared_file": "../assets/video-library/inequality-negative-khan.json",
+      "placement_status": "topic_matched_pending_full_playback_caption_and_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Khan Academy explanation of multiplying/dividing inequalities by negative numbers"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U09-L05",
+      "unit": 9,
+      "lesson": 5,
+      "lesson_file": "units/unit-09/lessons/lesson-05-multistep-variables-both-sides.html",
+      "asset_id": "MATH-LINEAR-INEQUALITIES-001",
+      "shared_file": "../assets/video-library/linear-inequalities-introduction.json",
+      "placement_status": "topic_matched_pending_full_playback_caption_and_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "General inequality method as prerequisite; multi-step and variables both sides need focused instruction"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U09-L06",
+      "unit": 9,
+      "lesson": 6,
+      "lesson_file": "units/unit-09/lessons/lesson-06-compound-inequalities-and-or.html",
+      "asset_id": "MATH-COMPOUND-INEQUALITIES-KHAN-001",
+      "shared_file": "../assets/video-library/compound-inequalities-khan.json",
+      "placement_status": "topic_matched_pending_full_playback_caption_and_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Conjunction and disjunction of inequalities"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U09-L07",
+      "unit": 9,
+      "lesson": 7,
+      "lesson_file": "units/unit-09/lessons/lesson-07-contextual-constraints-discrete-solutions.html",
+      "asset_id": "MATH-INEQUALITY-WORD-PROBLEMS-KHAN-001",
+      "shared_file": "../assets/video-library/inequalities-word-problems-khan.json",
+      "placement_status": "topic_matched_pending_full_playback_caption_and_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Translate contexts to inequalities; discrete-domain modeling requires written lesson"
     }
   ]
 }
