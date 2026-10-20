@@ -112,3 +112,24 @@ This pass added exact lesson-level candidates for Rational Zero Theorem, exponen
 One new instructor candidate (eMATHinstruction) was introduced only for an exact cross-sections/solids-of-revolution match and must receive full Academy-fit review before activation.
 
 No placement is enabled.
+
+## Fifth candidate-backbone checkpoint — 2026-10-20
+
+Current staged disabled placement counts:
+- Algebra I: **10**
+- Geometry: **29**
+- Algebra II: **26**
+
+This pass closed several high-priority sourcing gaps:
+- Algebra II multiplicity, determinants, binomial theorem, Pythagorean identities and z-score interpretation.
+- Geometry HL/CPCTC proof support, circle equations, pyramid/cone/sphere volume and 3D scaling.
+
+The higher-math video problem has shifted from **candidate scarcity** toward **candidate certification**.
+
+Recommended next phase:
+1. Whole-video mathematical review.
+2. Verify playback from privacy-enhanced embed URLs.
+3. Verify captions and transcript/text fallback.
+4. Confirm exact lesson alignment and age/reading level.
+5. Enable only reviewed placements one by one.
+6. Validate responsive rendering and no mastery/progression coupling.
