@@ -70,6 +70,61 @@
       "optional": true,
       "usage": "optional_lesson_companion",
       "alignment_note": "Direct match for nets and surface area of polyhedra; verify prism/pyramid coverage and captions before activation."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U01-L06",
+      "lesson_file": "units/unit-01/lessons/u01-l06.html",
+      "asset_id": "MATH-GEOMETRY-TWO-COLUMN-PROOF-KHAN-001",
+      "shared_file": "../assets/video-library/geometry-two-column-proof-khan.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Worked two-column geometric proof example; lesson still owns proof-form comparison and general reasoning."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U02-L01",
+      "lesson_file": "units/unit-02/lessons/u02-l01.html",
+      "asset_id": "MATH-GEOMETRIC-TRANSFORMATIONS-OCT-001",
+      "shared_file": "../assets/video-library/geometric-transformations-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Covers translations with coordinate-plane context; same source may support later reflection/rotation lessons after review."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U06-L05",
+      "lesson_file": "units/unit-06/lessons/u06-l05.html",
+      "asset_id": "MATH-RIGHT-TRIANGLE-TRIG-OCT-001",
+      "shared_file": "../assets/video-library/right-triangle-trig-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for sine, cosine and tangent ratios in right triangles."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U08-L01",
+      "lesson_file": "units/unit-08/lessons/u08-l01.html",
+      "asset_id": "MATH-CIRCLES-GEOMETRY-OCT-001",
+      "shared_file": "../assets/video-library/circles-geometry-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Introductory circle vocabulary and relationships; advanced arc/tangent theorem coverage remains separate."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U11-L01",
+      "lesson_file": "units/unit-11/lessons/u11-l01.html",
+      "asset_id": "MATH-TRIANGULAR-PRISM-VOLUME-OCT-001",
+      "shared_file": "../assets/video-library/triangular-prism-volume-organic.json",
+      "placement_status": "prerequisite_or_partial_match_pending_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "prerequisite_or_supplemental",
+      "alignment_note": "Prism-volume reasoning through base area times height; does not replace Cavalieri or cylinder content."
     }
   ]
 }
