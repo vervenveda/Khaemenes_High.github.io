@@ -306,6 +306,15 @@
           "mode": "technology-estimation",
           "query": "?course=algebra2&unit=07&lesson=u07-l06&mode=technology-estimation",
           "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "05",
+          "lesson": "06",
+          "lesson_title": "Radical Models, Geometry & Measurement Error",
+          "mode": "radical-model-measurement-error",
+          "query": "?course=algebra2&unit=05&lesson=u05-l06",
+          "wired": true
         }
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
@@ -689,6 +698,15 @@
           "lesson_title": "Navigation, Vectors & Multi-Step Triangle Models",
           "mode": "advanced-vector-navigation",
           "query": "?course=algebra2&unit=11&lesson=u11-l08&mode=advanced-vector-navigation",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "04",
+          "lesson": "05",
+          "lesson_title": "Coordinate Proof with Distance, Midpoint & Slope",
+          "mode": "coordinate-proof",
+          "query": "?course=geometry&unit=04&lesson=u04-l05",
           "wired": true
         }
       ],
@@ -1093,6 +1111,15 @@
           "mode": "intercept",
           "query": "?course=algebra1&unit=06&lesson=03&mode=intercept",
           "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "04",
+          "lesson": "03",
+          "lesson_title": "Slope as Direction and Rate",
+          "mode": "geometric-slope-direction",
+          "query": "?course=geometry&unit=04&lesson=u04-l03",
+          "wired": true
         }
       ],
       "scope_note": "Game reads mode query and selects initial level. Lessons include broader content beyond game's practice scope. Browser QA pending; no automatic course mastery writeback."
@@ -1313,6 +1340,15 @@
           "mode": "parallel",
           "query": "?course=geometry&unit=04&lesson=02&mode=parallel",
           "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "01",
+          "lesson": "05",
+          "lesson_title": "Conditional Statements, Converses & Counterexamples",
+          "mode": "conditional-proof-reasoning",
+          "query": "?course=geometry&unit=01&lesson=u01-l05",
+          "wired": true
         }
       ],
       "scope_note": "Guided proof steps for angles, triangle congruence, parallel lines, and proof logic. Not an unrestricted proof editor; individual lessons may include theorems beyond this game. Live browser QA and mastery writeback not certified."
@@ -1514,6 +1550,15 @@
           "mode": "tangent",
           "query": "?course=geometry&unit=08&lesson=05&mode=tangent",
           "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "08",
+          "lesson": "06",
+          "lesson_title": "Secant, Chord & Tangent Power Theorems",
+          "mode": "circle-power-theorems",
+          "query": "?course=geometry&unit=08&lesson=u08-l06",
+          "wired": true
         }
       ],
       "scope_note": "Foundational central/inscribed angles, chords, tangents and radius relationships. U08 L01 is supplemental vocabulary practice; U08 L02 does not cover full arc-length computation. Secant power, sector area and circle equations excluded. Browser QA and mastery writeback not certified."
@@ -1569,6 +1614,24 @@
           "mode": "mixed",
           "query": "?course=geometry&unit=06&lesson=08&mode=mixed",
           "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "06",
+          "lesson": "02",
+          "lesson_title": "Special Right Triangles: 45-45-90",
+          "mode": "special-right-45-45-90",
+          "query": "?course=geometry&unit=06&lesson=u06-l02",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "06",
+          "lesson": "03",
+          "lesson_title": "Special Right Triangles: 30-60-90",
+          "mode": "special-right-30-60-90",
+          "query": "?course=geometry&unit=06&lesson=u06-l03",
+          "wired": true
         }
       ],
       "scope_note": "Right-triangle trigonometric ratios, missing sides, inverse trig and Pythagorean relationships. U06 L01 does not fully assess converse; U06 L07 and L08 receive supplemental numerical practice rather than complete elevation, bearings, vector, or navigation scenarios. Live browser QA and mastery writeback not certified."
@@ -1606,6 +1669,33 @@
           "lesson_title": "Inverse Functions & One-to-One Relationships",
           "mode": "inverse-linear",
           "query": "?course=algebra2&unit=01&lesson=u01-l05&mode=inverse-linear",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "04",
+          "lesson": "05",
+          "lesson_title": "Reciprocal Functions, Asymptotes & Holes",
+          "mode": "reciprocal-function-features",
+          "query": "?course=algebra2&unit=04&lesson=u04-l05",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "04",
+          "lesson": "06",
+          "lesson_title": "Transformations and Features of Rational Functions",
+          "mode": "rational-function-transformations",
+          "query": "?course=algebra2&unit=04&lesson=u04-l06",
+          "wired": true
+        },
+        {
+          "course": "algebra-2",
+          "unit": "05",
+          "lesson": "05",
+          "lesson_title": "Radical Functions, Domains & Transformations",
+          "mode": "radical-function-transformations",
+          "query": "?course=algebra2&unit=05&lesson=u05-l05",
           "wired": true
         }
       ]
@@ -2437,7 +2527,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/exponent-pattern-explorer/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "06",
+          "lesson": "02",
+          "lesson_title": "Zero & Negative Exponents Through Patterns",
+          "mode": "zero-negative-exponents",
+          "query": "?course=prealgebra&unit=06&lesson=02",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "lesson-match-reviewed-link-not-wired",
       "retired_paths": [],
@@ -2454,7 +2554,26 @@
       "canonical_path": "courses/mathematics/assets/learning-games/exponent-properties-lab/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "06",
+          "lesson": "03",
+          "lesson_title": "Exponent Properties & Equivalent Expressions",
+          "mode": "exponent-properties",
+          "query": "?course=prealgebra&unit=06&lesson=03",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "08",
+          "lesson": "01",
+          "lesson_title": "Exponent Laws & Equivalent Forms",
+          "mode": "algebra1-exponent-laws",
+          "query": "?course=algebra1&unit=08&lesson=01",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "lesson-match-reviewed-link-not-wired",
       "retired_paths": [],
@@ -2471,7 +2590,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/interest-fees-decision-lab/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "05",
+          "lesson": "07",
+          "lesson_title": "Simple Interest, Fees & Financial Comparisons",
+          "mode": "interest-fee-comparisons",
+          "query": "?course=prealgebra&unit=05&lesson=07",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "lesson-match-reviewed-link-not-wired",
       "retired_paths": [],
@@ -2488,7 +2617,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/irrational-root-estimation-quest/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "06",
+          "lesson": "05",
+          "lesson_title": "Estimating Irrational Roots",
+          "mode": "irrational-root-estimation",
+          "query": "?course=prealgebra&unit=06&lesson=05",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "lesson-match-reviewed-link-not-wired",
       "retired_paths": [],
@@ -2505,7 +2644,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/market-math-mission/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "05",
+          "lesson": "05",
+          "lesson_title": "Discounts, Tax, Tips & Commission",
+          "mode": "market-percent-decisions",
+          "query": "?course=prealgebra&unit=05&lesson=05",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "lesson-match-reviewed-link-not-wired",
       "retired_paths": [],
@@ -2630,7 +2779,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/percentage-point-change-studio/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "05",
+          "lesson": "08",
+          "lesson_title": "Percentage Points, Repeated Change & Decisions",
+          "mode": "percentage-points-repeated-change",
+          "query": "?course=prealgebra&unit=05&lesson=08",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "lesson-match-reviewed-link-not-wired",
       "retired_paths": [],
@@ -2647,7 +2806,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/perfect-powers-roots-quest/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "06",
+          "lesson": "04",
+          "lesson_title": "Square & Cube Roots; Perfect Powers",
+          "mode": "perfect-powers-roots",
+          "query": "?course=prealgebra&unit=06&lesson=04",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "lesson-match-reviewed-link-not-wired",
       "retired_paths": [],
@@ -2664,7 +2833,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/power-grouping-quest/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "06",
+          "lesson": "01",
+          "lesson_title": "Exponent Meaning, Powers & Grouping",
+          "mode": "powers-grouping",
+          "query": "?course=prealgebra&unit=06&lesson=01",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "lesson-match-reviewed-link-not-wired",
       "retired_paths": [],
@@ -2735,7 +2914,26 @@
       "canonical_path": "courses/mathematics/assets/learning-games/scientific-notation-operations-mission/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "06",
+          "lesson": "07",
+          "lesson_title": "Operations with Scientific Notation & Applications",
+          "mode": "scientific-notation-operations",
+          "query": "?course=prealgebra&unit=06&lesson=07",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "08",
+          "lesson": "03",
+          "lesson_title": "Scientific Notation & Operations",
+          "mode": "algebra1-scientific-notation",
+          "query": "?course=algebra1&unit=08&lesson=03",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "lesson-match-reviewed-link-not-wired",
       "retired_paths": [],
@@ -2752,7 +2950,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/scientific-notation-signal-lab/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "06",
+          "lesson": "06",
+          "lesson_title": "Scientific Notation & Powers of Ten",
+          "mode": "scientific-notation-forms",
+          "query": "?course=prealgebra&unit=06&lesson=06",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "lesson-match-reviewed-link-not-wired",
       "retired_paths": [],
@@ -2769,7 +2977,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/small-business-math-lab/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "05",
+          "lesson": "06",
+          "lesson_title": "Markup, Profit, Loss & Break-Even",
+          "mode": "small-business-decisions",
+          "query": "?course=prealgebra&unit=05&lesson=06",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "lesson-match-reviewed-link-not-wired",
       "retired_paths": [],
@@ -2786,7 +3004,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/algebra-reasoning-foundations/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "01",
+          "lesson": "06",
+          "lesson_title": "Algebra Readiness Synthesis & Error Analysis",
+          "mode": "reasoning-readiness-synthesis",
+          "query": "?course=algebra1&unit=01&lesson=06",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "formative-standalone-no-mastery-integration",
       "retired_paths": [],
@@ -2800,7 +3028,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/algebra-structure-balance-challenge/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "03",
+          "lesson": "04",
+          "lesson_title": "Variables on Both Sides; Identities & Contradictions",
+          "mode": "equation-structure-balance",
+          "query": "?course=algebra1&unit=03&lesson=04",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "formative-standalone-no-mastery-integration",
       "retired_paths": [],
@@ -2814,7 +3052,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/algebra-functions-systems-challenge/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "07",
+          "lesson": "05",
+          "lesson_title": "Systems from Contexts: Cost, Mixture & Motion",
+          "mode": "contextual-systems",
+          "query": "?course=algebra1&unit=07&lesson=05",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "formative-standalone-no-mastery-integration",
       "retired_paths": [],
@@ -2828,7 +3076,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/algebra-exponents-radicals-challenge/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "11",
+          "lesson": "03",
+          "lesson_title": "Rational Exponents & Equivalent Radical Forms",
+          "mode": "exponents-radicals-bridge",
+          "query": "?course=algebra1&unit=11&lesson=03",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "formative-standalone-no-mastery-integration",
       "retired_paths": [],
@@ -2842,7 +3100,17 @@
       "canonical_path": "courses/mathematics/assets/learning-games/algebra-evidence-modelling-challenge/index.html",
       "status": "canonical-unplaced",
       "mastery_target": 80,
-      "placements": [],
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "13",
+          "lesson": "05",
+          "lesson_title": "Present, Defend & Reflect on Algebra I Readiness",
+          "mode": "modelling-defense-reflection",
+          "query": "?course=algebra1&unit=13&lesson=05",
+          "wired": true
+        }
+      ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
       "migration_state": "formative-standalone-no-mastery-integration",
       "retired_paths": [],
