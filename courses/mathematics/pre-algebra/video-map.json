@@ -787,6 +787,102 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Translate contexts to inequalities; discrete-domain modeling requires written lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U10-L01",
+      "unit": 10,
+      "lesson": 1,
+      "lesson_file": "units/unit-10/lessons/lesson-01-coordinate-plane-ordered-pairs-quadrants.html",
+      "asset_id": "MATH-COORDINATE-PLANE-MATHANTICS-001",
+      "shared_file": "../assets/video-library/coordinate-plane-mathantics.json",
+      "placement_status": "topic_matched_pending_content_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Direct match: graphing ordered pairs and quadrants"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U10-L02",
+      "unit": 10,
+      "lesson": 2,
+      "lesson_file": "units/unit-10/lessons/lesson-02-patterns-sequences-rules.html",
+      "asset_id": "MATH-NUMBER-PATTERNS-MATHANTICS-001",
+      "shared_file": "../assets/video-library/number-patterns-mathantics.json",
+      "placement_status": "topic_matched_pending_content_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Reuses Unit 7 patterns video; symbolic sequence rules remain written instruction"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U10-L03",
+      "unit": 10,
+      "lesson": 3,
+      "lesson_file": "units/unit-10/lessons/lesson-03-relations-inputs-outputs-functions.html",
+      "asset_id": "MATH-FUNCTIONS-001",
+      "shared_file": "../assets/video-library/functions-introduction.json",
+      "placement_status": "topic_matched_pending_content_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Function introductions and inputs/outputs; formal function tests remain written instruction"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U10-L04",
+      "unit": 10,
+      "lesson": 4,
+      "lesson_file": "units/unit-10/lessons/lesson-04-tables-graphs-equations-words.html",
+      "asset_id": "MATH-EVALUATING-FUNCTIONS-001",
+      "shared_file": "../assets/video-library/evaluating-functions-introduction.json",
+      "placement_status": "topic_matched_pending_content_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Function notation supplement; tables and graphs still require written lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U10-L05",
+      "unit": 10,
+      "lesson": 5,
+      "lesson_file": "units/unit-10/lessons/lesson-05-rate-change-tables-graphs-contexts.html",
+      "asset_id": "MATH-SLOPE-TABLES-KHAN-001",
+      "shared_file": "../assets/video-library/slope-from-tables-khan.json",
+      "placement_status": "topic_matched_pending_content_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Rate of change from tables; other representations covered in text"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U10-L06",
+      "unit": 10,
+      "lesson": 6,
+      "lesson_file": "units/unit-10/lessons/lesson-06-slope-intercepts-linear-equations.html",
+      "asset_id": "MATH-SLOPE-FORMULA-001",
+      "shared_file": "../assets/video-library/slope-formula.json",
+      "placement_status": "topic_matched_pending_content_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Slope formula supplement; intercepts need explicit lesson instruction"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U10-L07",
+      "unit": 10,
+      "lesson": 7,
+      "lesson_file": "units/unit-10/lessons/lesson-07-linear-nonlinear-function-notation.html",
+      "asset_id": "MATH-LINEAR-NONLINEAR-KHAN-001",
+      "shared_file": "../assets/video-library/linear-nonlinear-functions-khan.json",
+      "placement_status": "topic_matched_pending_content_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Linear versus nonlinear functions; function notation remains written instruction"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U10-L08",
+      "unit": 10,
+      "lesson": 8,
+      "lesson_file": "units/unit-10/lessons/lesson-08-linear-modelling-prediction-residuals.html",
+      "asset_id": "MATH-PREDICTING-LINEAR-MODELS-KHAN-001",
+      "shared_file": "../assets/video-library/predicting-linear-models-khan.json",
+      "placement_status": "topic_matched_pending_content_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Linear prediction only; residual analysis remains written instruction"
     }
   ]
 }
