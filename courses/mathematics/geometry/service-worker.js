@@ -1,6 +1,6 @@
 "use strict";
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
-const CACHE="khaemenes-geometry-v14-video-companion-v1-20261020";
+const CACHE="khaemenes-geometry-v15-video-cert-offline-v2-20261020";
 const CACHE_PREFIX="khaemenes-geometry-";
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
  "../assets/applied-mission-studio-v1.js",
@@ -159,6 +159,8 @@ const NEVER_CACHE=/(?:^|\/)(?:teacher|teacher-keys)(?:\/|$)/i;
 function shouldNeverCache(url){return NEVER_CACHE.test(url.pathname)}
 
 
+const VIDEO_FILES=["../assets/video-library/transversal-angles-khan.json","../assets/video-library/slope-formula.json","../assets/video-library/scale-drawings-khan.json","../assets/video-library/pythagorean-mathantics.json","../assets/video-library/area-mathantics.json","../assets/video-library/surface-area-nets-khan.json","../assets/video-library/geometry-two-column-proof-khan.json","../assets/video-library/geometric-transformations-organic.json","../assets/video-library/right-triangle-trig-organic.json","../assets/video-library/circles-geometry-organic.json","../assets/video-library/triangular-prism-volume-organic.json","../assets/video-library/angle-bisector-construction-khan.json","../assets/video-library/triangle-congruence-organic.json","../assets/video-library/similar-triangles-organic.json","../assets/video-library/circle-tangent-secant-organic.json","../assets/video-library/circle-tangent-angle-theorems-organic.json","../assets/video-library/triangle-centers-organic.json","../assets/video-library/circle-central-inscribed-overview-organic.json","../assets/video-library/circle-power-theorems-organic.json","../assets/video-library/solid-cross-sections-emath.json","../assets/video-library/hl-postulate-organic.json","../assets/video-library/circle-standard-equation-khan.json","../assets/video-library/volume-pyramid-organic.json","../assets/video-library/volume-cone-organic.json","../assets/video-library/volume-sphere-organic.json","../assets/video-library/cpctc-proofs-organic.json","../assets/video-library/3d-volume-scaling-khan.json"];
+
 const MISSION_OFFLINE_RELEASE="ams-v1.7.0-recovery-popout-r1-20261015";
 const MISSION_CRITICAL=["./","./index.html","./offline.html","../assets/applied-mission-studio-v1.js","./units/unit-01/projects/01-project.html","./units/unit-02/projects/02-project.html","./units/unit-03/projects/03-project.html","./units/unit-04/projects/04-project.html","./units/unit-05/projects/05-project.html","./units/unit-06/projects/06-project.html","./units/unit-07/projects/07-project.html","./units/unit-08/projects/08-project.html","./units/unit-09/projects/09-project.html","./units/unit-10/projects/10-project.html","./units/unit-11/projects/11-project.html","./units/unit-12/projects/12-project.html","./units/unit-13/projects/13-project.html"];
 async function installMissionCritical(){
@@ -166,7 +168,7 @@ async function installMissionCritical(){
   try{await cache.addAll(MISSION_CRITICAL.map(file=>new Request(file,{cache:"reload"})))}
   catch(error){await caches.delete(CACHE);throw error}
 }
-self.addEventListener("install",event=>{event.waitUntil((async()=>{await installMissionCritical();const cache=await caches.open(CACHE),extras=CORE.filter(file=>!MISSION_CRITICAL.includes(file));await Promise.allSettled(extras.map(file=>cache.add(new Request(file,{cache:"reload"}))));await self.skipWaiting()})())});
+self.addEventListener("install",event=>{event.waitUntil((async()=>{await installMissionCritical();const cache=await caches.open(CACHE),extras=[...new Set([...CORE,...VIDEO_FILES])].filter(file=>!MISSION_CRITICAL.includes(file));await Promise.allSettled(extras.map(file=>cache.add(new Request(file,{cache:"reload"}))));await self.skipWaiting()})())});
 async function purgeSensitiveCacheEntries(){const cache=await caches.open(CACHE);const requests=await cache.keys();await Promise.all(requests.filter(request=>shouldNeverCache(new URL(request.url))).map(request=>cache.delete(request)))}
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(CACHE_PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(purgeSensitiveCacheEntries).then(()=>self.clients.claim()))});
 self.addEventListener("fetch",event=>{
