@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "asset_id": "MATH-ZSCORE-COMPARISON-KHAN-001",
   "title": "Comparing with z-scores | Modeling data distributions | AP Statistics | Khan Academy",
   "provider": "youtube",
@@ -25,7 +25,38 @@
   "enabled": false,
   "playback_verified": false,
   "captions_verified": false,
-  "transcript": null,
-  "alignment_status": "candidate_pending_review",
-  "alignment_note": "Publisher/topic verified from current YouTube listing. Full playback, captions/transcript and exact lesson fit remain pending."
+  "transcript": {
+    "status": "verified_official_provider_transcript",
+    "url": "https://www.khanacademy.org/v/comparing-with-z-scores",
+    "provider": "Khan Academy",
+    "verified_on": "2026-10-20"
+  },
+  "alignment_status": "release_candidate_runtime_pending",
+  "alignment_note": "Publisher/topic verified from current YouTube listing. Full playback, captions/transcript and exact lesson fit remain pending.",
+  "provider_page_url": "https://www.khanacademy.org/v/comparing-with-z-scores",
+  "provider_page_title": "Comparing with z-scores",
+  "certification": {
+    "reviewed_on": "2026-10-20",
+    "batch_id": "MATH-VIDEO-CERT-BATCH-01",
+    "status": "release_candidate_runtime_pending",
+    "provider_title_verified": true,
+    "provider_page_verified": true,
+    "topic_alignment_verified": true,
+    "official_transcript_verified": true,
+    "transcript_or_text_fallback_verified": true,
+    "whole_video_reviewed": false,
+    "privacy_embed_verified": false,
+    "captions_verified": false,
+    "responsive_lesson_rendering_verified": false,
+    "student_release_approved": false,
+    "target_lesson_id": "KH-MATH-A2-U12-L05",
+    "evidence_note": "Official Khan Academy page exposes an About tab and Video transcript. The lesson uses standardized scores to compare values from different distributions, directly supporting Algebra II U12-L05 Normal Distributions, z-Scores & Percentiles.",
+    "remaining_gates": [
+      "Review the complete video from start to finish for mathematical accuracy and pacing.",
+      "Verify privacy-enhanced youtube-nocookie embed playback in the published Academy lesson.",
+      "Verify captions in the actual playback environment.",
+      "Verify responsive rendering on phone/tablet/desktop.",
+      "Confirm the placement remains optional and cannot alter 80% mastery/progression."
+    ]
+  }
 }
