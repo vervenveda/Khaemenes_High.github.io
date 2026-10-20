@@ -35,3 +35,21 @@ The shared workflow now makes Draft, Submitted, Scored, Mastered, and Reviewed v
 - Updated lesson-tools JavaScript parses successfully.
 - Updated service worker JavaScript parses successfully.
 - No lesson HTML, question bank, assessment engine, strict progression engine, or completion-record engine was replaced.
+
+
+## Presentation convergence — dark mathematics dashboard
+
+Geometry now uses the preferred Pre-Algebra dark dashboard language as a presentation-only layer.
+
+### Changed
+
+- Course entry defaults to dark presentation.
+- New `assets/geometry-dark-dashboard-v1.css` loads after the existing course presentation styles.
+- Deep navy/charcoal surfaces, warm light text, restrained blue accents, gold highlights, 7 px corners, and the Academy Cinzel / Brandon Grotesque hierarchy are applied consistently.
+- The shared lesson workflow inherits the same dark palette.
+- Print mode remains white and evidence-friendly.
+- The service-worker release cache includes the new dark-dashboard stylesheet.
+
+### Preserved
+
+No mastery, scoring, assessment, learner-record, question-bank, lesson-engine, unit-gate, cumulative exam, project, capstone, or progression logic was modified for this visual conversion.
