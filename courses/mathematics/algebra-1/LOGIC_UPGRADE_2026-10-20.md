@@ -116,3 +116,9 @@ Three new canonical shared formative games were added to the mathematics game li
 Algebra I now has **80 lessons with canonical game/tool coverage**, with **7 lessons intentionally still without a game companion**. Of those, **1** remain classified as genuinely needing new game development; the rest are tool-sufficient.
 
 The new games use randomized 10-question rounds, local best-score storage, immediate explanatory feedback, and remain non-authoritative. They do not award 80% course mastery or bypass progression gates.
+
+## Piecewise game gap resolved
+
+The final genuine Algebra I game-development target is now covered by **Piecewise Boundary Lab** at U05-L06.
+
+Algebra I now has **81/87** lessons with canonical game companions. The remaining six are intentionally tool-sufficient. Genuine new-game gaps: **0**.
