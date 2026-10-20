@@ -50,7 +50,7 @@ function start(){tasks=shuffle(BANK).slice(0,10);i=0;score=0;render()}
 function render(){graded=false;const t=tasks[i];$("counter").textContent="Question "+(i+1)+" of "+tasks.length;$("progress").value=i;$("questionTitle").textContent=t[0];$("choices").replaceChildren();t[1].forEach((choice,n)=>{const label=document.createElement("label"),radio=document.createElement("input");radio.type="radio";radio.name="answer";radio.value=n;label.append(radio,document.createTextNode(choice));$("choices").append(label)});$("status").textContent="Choose the strongest answer.";$("check").disabled=false;$("next").disabled=true;$("next").textContent=i===tasks.length-1?"See results":"Next"}
 $("check").onclick=()=>{if(graded)return;const picked=document.querySelector('input[name="answer"]:checked');if(!picked){$("status").textContent="Choose an answer first.";return}graded=true;const ok=Number(picked.value)===t[2];if(ok)score++;$("status").textContent=(ok?"Correct. ":"Review: ")+t[3];document.querySelectorAll('input[name="answer"]').forEach(r=>r.disabled=true);$("check").disabled=true;$("next").disabled=false};
 $("next").onclick=()=>{if(!graded)return;i++;if(i<tasks.length){render();return}const pct=Math.round(score/tasks.length*100);save(pct);$("progress").value=tasks.length;$("counter").textContent="Round complete";$("questionTitle").textContent=score+" / "+tasks.length+" correct ("+pct+"%)";$("choices").replaceChildren();$("status").textContent=pct>=80?"Strong formative result. Official mastery remains separate.":"Review the explanations and try a fresh randomized round.";$("check").disabled=true;$("next").disabled=true;showSaved()};
-$("restart").onclick=start}
+$("restart").onclick=start;}
 showSaved();start();
 })();
 </script>
