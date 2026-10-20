@@ -167,3 +167,37 @@ Remaining Algebra II sourcing priorities:
 7. Binomial distributions, expected value, z-scores and statistical inference.
 
 All staged placements remain `enabled:false`.
+
+## Third higher-math sourcing checkpoint — 2026-10-20
+
+### Algebra II
+Algebra II now has **16 staged disabled placements**.
+
+Newly added in this pass:
+- U02-L05 — complex-number operations (The Organic Chemistry Tutor).
+- U02-L07 — complex plane / modulus support from the same source.
+- U03-L01 — polynomial long division (The Organic Chemistry Tutor).
+- U03-L02 — synthetic division and remainder-theorem support (The Organic Chemistry Tutor).
+- U06-L02 — exponential growth and decay word problems at Algebra/Precalculus level (The Organic Chemistry Tutor).
+- U08-L05 — elementary row operations with matrices (The Organic Chemistry Tutor).
+- U09-L05 — infinite geometric series (Khan Academy).
+
+Remaining Algebra II priorities:
+1. Powers of i / introductory imaginary unit if a cleaner dedicated source is found.
+2. Rational Root Theorem, multiplicity and complete factorization.
+3. Exponential equations / continuous growth beyond the current growth-decay companion.
+4. Matrix inverse/determinant and nonlinear-system matrix applications.
+5. Arithmetic sequences, sigma notation and binomial theorem.
+6. Fundamental trig identities, Law of Sines and ambiguous case.
+7. Binomial distributions, z-scores and inference.
+
+### Geometry
+Geometry now has **21 staged disabled placements**.
+
+Newly added in this pass:
+- U03-L07 — incenter, circumcenter, orthocenter and centroid (The Organic Chemistry Tutor).
+- U08-L02 — central angles / arc-length support from a circle-geometry overview.
+- U08-L03 — inscribed angles / intercepted arcs support from the same source.
+- U08-L06 — chord-chord, secant-tangent and secant-secant power theorems (The Organic Chemistry Tutor).
+
+All placements remain `enabled:false`.
