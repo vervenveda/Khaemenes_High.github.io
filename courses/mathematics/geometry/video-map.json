@@ -6,18 +6,6 @@
   "activation_policy": "disabled until playback, captions, transcript fallback, and lesson rendering verified",
   "placements": [
     {
-      "lesson_id": "KH-MATH-GEO-U04-L01",
-      "lesson_file": "units/unit-04/lessons/u04-l01.html",
-      "asset_id": "MATH-TRANSVERSAL-ANGLES-KHAN-001",
-      "shared_file": "../assets/video-library/transversal-angles-khan.json",
-      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
-      "enabled": false,
-      "optional": true,
-      "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for parallel lines cut by a transversal and corresponding/alternate angle relationships.",
-      "release_approved": false
-    },
-    {
       "lesson_id": "KH-MATH-GEO-U04-L03",
       "lesson_file": "units/unit-04/lessons/u04-l03.html",
       "asset_id": "MATH-SLOPE-FORMULA-001",
@@ -27,18 +15,6 @@
       "optional": true,
       "usage": "optional_lesson_companion",
       "alignment_note": "Direct match for slope as direction/rate from coordinate points.",
-      "release_approved": false
-    },
-    {
-      "lesson_id": "KH-MATH-GEO-U05-L06",
-      "lesson_file": "units/unit-05/lessons/u05-l06.html",
-      "asset_id": "MATH-SCALE-DRAWINGS-KHAN-001",
-      "shared_file": "../assets/video-library/scale-drawings-khan.json",
-      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
-      "enabled": false,
-      "optional": true,
-      "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for scale drawings, maps, and scale-factor reasoning.",
       "release_approved": false
     },
     {
@@ -63,30 +39,6 @@
       "optional": true,
       "usage": "prerequisite_or_supplemental",
       "alignment_note": "Area prerequisite/review for triangles, parallelograms, and trapezoids; verify exact shape coverage before activation.",
-      "release_approved": false
-    },
-    {
-      "lesson_id": "KH-MATH-GEO-U11-L04",
-      "lesson_file": "units/unit-11/lessons/u11-l04.html",
-      "asset_id": "MATH-SURFACE-AREA-NETS-KHAN-001",
-      "shared_file": "../assets/video-library/surface-area-nets-khan.json",
-      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
-      "enabled": false,
-      "optional": true,
-      "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for nets and surface area of polyhedra; verify prism/pyramid coverage and captions before activation.",
-      "release_approved": false
-    },
-    {
-      "lesson_id": "KH-MATH-GEO-U01-L06",
-      "lesson_file": "units/unit-01/lessons/u01-l06.html",
-      "asset_id": "MATH-GEOMETRY-TWO-COLUMN-PROOF-KHAN-001",
-      "shared_file": "../assets/video-library/geometry-two-column-proof-khan.json",
-      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
-      "enabled": false,
-      "optional": true,
-      "usage": "optional_lesson_companion",
-      "alignment_note": "Worked two-column geometric proof example; lesson still owns proof-form comparison and general reasoning.",
       "release_approved": false
     },
     {
@@ -136,19 +88,6 @@
       "usage": "prerequisite_or_supplemental",
       "alignment_note": "Prism-volume reasoning through base area times height; does not replace Cavalieri or cylinder content.",
       "release_approved": false
-    },
-    {
-      "lesson_id": "KH-MATH-GEO-U01-L04",
-      "lesson_file": "units/unit-01/lessons/u01-l04.html",
-      "asset_id": "MATH-ANGLE-BISECTOR-CONSTRUCTION-KHAN-001",
-      "shared_file": "../assets/video-library/angle-bisector-construction-khan.json",
-      "placement_status": "release_candidate_runtime_pending",
-      "enabled": false,
-      "optional": true,
-      "usage": "prerequisite_or_supplemental",
-      "alignment_note": "Exact construction example for angle bisectors; lesson remains responsible for broader compass-and-straightedge constructions.",
-      "release_approved": false,
-      "certification_batch": "MATH-VIDEO-CERT-BATCH-02"
     },
     {
       "lesson_id": "KH-MATH-GEO-U03-L02",
@@ -283,19 +222,6 @@
       "release_approved": false
     },
     {
-      "lesson_id": "KH-MATH-GEO-U08-L08",
-      "lesson_file": "units/unit-08/lessons/u08-l08.html",
-      "asset_id": "MATH-CIRCLE-STANDARD-EQUATION-KHAN-001",
-      "shared_file": "../assets/video-library/circle-standard-equation-khan.json",
-      "placement_status": "release_candidate_runtime_pending",
-      "enabled": false,
-      "optional": true,
-      "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for standard equation of a circle using center and radius.",
-      "release_approved": false,
-      "certification_batch": "MATH-VIDEO-CERT-BATCH-02"
-    },
-    {
       "lesson_id": "KH-MATH-GEO-U11-L02",
       "lesson_file": "units/unit-11/lessons/u11-l02.html",
       "asset_id": "MATH-VOLUME-PYRAMID-OCT-001",
@@ -342,24 +268,12 @@
       "usage": "optional_lesson_companion",
       "alignment_note": "Direct CPCTC/multi-step triangle-proof match.",
       "release_approved": false
-    },
-    {
-      "lesson_id": "KH-MATH-GEO-U11-L07",
-      "lesson_file": "units/unit-11/lessons/u11-l07.html",
-      "asset_id": "MATH-3D-VOLUME-SCALING-KHAN-001",
-      "shared_file": "../assets/video-library/3d-volume-scaling-khan.json",
-      "placement_status": "prerequisite_or_partial_match_pending_review",
-      "enabled": false,
-      "optional": true,
-      "usage": "prerequisite_or_supplemental",
-      "alignment_note": "Supports cubic volume scaling under dimension changes; full similar-solid and surface-area scale relationships remain lesson content.",
-      "release_approved": false
     }
   ],
   "release_gate": "Placement requires enabled=true and release_approved=true; canonical asset requires enabled=true and certification.student_release_approved=true.",
   "coverage_summary": {
-    "candidate_placements": 29,
-    "unique_lessons_covered": 26,
+    "candidate_placements": 22,
+    "unique_lessons_covered": 19,
     "lessons_with_multiple_candidates": 3,
     "multiple_candidate_lessons": [
       {
