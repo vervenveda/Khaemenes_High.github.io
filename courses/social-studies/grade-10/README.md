@@ -27,3 +27,9 @@
 - Week 18 complete but midterm below 80%: Week 19 disabled.
 - Import/export retains previously saved records and the same storage key.
 - Academic grade is not inferred from checkboxes.
+
+## Midterm paths (October 2026)
+- The **active student portal** (`index.html`) contains a 40-item reviewed objective midterm pool. Its shared Monte Carlo assessment adapter normally draws **30** questions, randomizing question and answer order while retaining the same 80% objective mastery threshold.
+- The **standalone printable exam** (`assessments/midterm.html`) remains a separate 50-objective-question form with three teacher-scored written responses and its own browser draft store. It is **not** a synchronized view of the portal bank, and completing it does **not automatically update the portal's 80% midterm gate**.
+- For official progression, use the portal midterm; use the separate exam only as a supervised supplementary/printable assessment until a deliberate grading/record bridge is developed. Teacher-scored written work must be reviewed separately and should not be represented as an automatically certified course grade.
+- Follow-up: verify randomized form persistence, offline printing, teacher rubric, and cross-path evidence reporting in a browser.
