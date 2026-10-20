@@ -64,3 +64,14 @@ The pass standardizes Academy-first title hierarchy, hero proportions, lighter t
 The shared layer is cached by this course's service worker for offline use. No mastery authority, score calculation, question bank, assessment engine, learner record, course gate, project, lab, or curriculum file was modified as part of this component-parity pass.
 
 Khaemenes Mathematics upgrade sequencing policy: shared upgrades are applied to Pre-Algebra, Algebra I, Geometry, and Algebra II before the next upgrade category begins.
+
+
+## Mathematics-wide student journey status pass
+
+Geometry now participates in the shared read-only student journey layer through `../assets/math-student-journey-v1.js` and `../assets/math-student-journey-v1.css`.
+
+The course home summarizes the learner's current unit, current lesson, latest available attempt, best mastery evidence, next requirement, gate state, and one primary **Continue Learning** action. The summary reads the course's existing learner-scoped evidence and authoritative progression rules; it cannot write scores, award mastery, or bypass gates.
+
+Where a true latest-attempt value is not stored, the interface shows an em dash rather than substituting the best score. Geometry weekly boundary gates, cumulative Midterm gates, Algebra II readiness, and course-specific unit mastery remain intact.
+
+The shared journey assets are cached for offline course-home use.
