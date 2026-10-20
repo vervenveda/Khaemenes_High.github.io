@@ -1,6 +1,6 @@
 (()=>{
 "use strict";
-const VERSION="1.0.0";
+const VERSION="1.1.0";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const now=()=>new Date().toISOString();
 const safeJSON=(raw,fallback)=>{try{const v=JSON.parse(raw||"null");return v&&typeof v==="object"?v:fallback}catch{return fallback}};
@@ -42,13 +42,18 @@ function enhance(){
   const section=document.createElement("section");
   section.id="khaeLessonWorkflow";section.className="khae-workflow";
   section.innerHTML='<div class="khae-workflow-print-head"><strong>Khaemenes Academy · '+esc(cfg.courseTitle||"Mathematics")+' · Unit '+esc(identity.unitLabel||identity.unit||"—")+' · Lesson '+esc(identity.lessonLabel||identity.lesson||"—")+'</strong><div class="khae-workflow-print-lines"><span>Name: <b id="khaeWorkflowPrintName"></b></span><span>Date: ____________________</span></div></div>'+
-  '<div class="khae-workflow-head"><p class="khae-workflow-kicker">Khaemenes Mathematics · Lesson Workflow</p><h2>Learn → Practice → Submit → Mastery → Review</h2><p>Completion and mastery are separate. Practice supports learning; only the course’s canonical evidence system determines whether the '+target+'% mastery gate has been met.</p></div>'+
+  '<div class="khae-workflow-head"><p class="khae-workflow-kicker">Khaemenes Mathematics · Lesson Workflow</p><h2>Learn → Example → Practice → Game → Video → Submit → Mastery → Review → Evidence → Continue</h2><p>Learning supports are clearly separated from mastery. Games and videos may strengthen understanding, but only the course’s canonical evidence system determines whether the '+target+'% mastery gate has been met.</p></div>'+
   '<div class="khae-workflow-stages">'+
-    '<article class="khae-workflow-stage" data-stage="learn" data-step="1"><strong>Learn</strong><span>Read, study examples, and identify the governing ideas.</span></article>'+
-    '<article class="khae-workflow-stage" data-stage="practice" data-step="2"><strong>Practice</strong><span>Work problems, explain reasoning, and correct errors.</span></article>'+
-    '<article class="khae-workflow-stage" data-stage="submit" data-step="3"><strong>Submit</strong><span>Submit the lesson assignment or evaluated evidence.</span></article>'+
-    '<article class="khae-workflow-stage" data-stage="mastery" data-step="4"><strong>Mastery</strong><span>The canonical course record must show at least '+target+'%.</span></article>'+
-    '<article class="khae-workflow-stage" data-stage="review" data-step="5"><strong>Review & Continue</strong><span>Save a local review note, then follow the existing course gate.</span></article>'+
+    '<article class="khae-workflow-stage" data-stage="learn" data-step="1"><strong>Learn</strong><span>Read the lesson and identify the governing ideas.</span></article>'+
+    '<article class="khae-workflow-stage is-support" data-stage="example" data-step="2"><strong>Worked Example</strong><span>Study a solved example or guided reasoning model.</span></article>'+
+    '<article class="khae-workflow-stage" data-stage="practice" data-step="3"><strong>Practice</strong><span>Work problems, explain reasoning, and correct errors.</span></article>'+
+    '<article class="khae-workflow-stage is-support" data-stage="game" data-step="4"><strong>Game / Tool</strong><span>Use the attached learning game or mathematical tool when available.</span></article>'+
+    '<article class="khae-workflow-stage is-support" data-stage="video" data-step="5"><strong>Optional Video</strong><span>Watch an attached lesson video when one has been reviewed and enabled.</span></article>'+
+    '<article class="khae-workflow-stage" data-stage="submit" data-step="6"><strong>Submit Assignment</strong><span>Submit the lesson assignment or evaluated evidence.</span></article>'+
+    '<article class="khae-workflow-stage" data-stage="mastery" data-step="7"><strong>'+target+'% Mastery</strong><span>The canonical course record must meet the mastery threshold.</span></article>'+
+    '<article class="khae-workflow-stage" data-stage="review" data-step="8"><strong>Review</strong><span>Record corrections, reflection, or what still needs practice.</span></article>'+
+    '<article class="khae-workflow-stage is-support" data-stage="evidence" data-step="9"><strong>Evidence</strong><span>Print or export learner evidence for the portfolio.</span></article>'+
+    '<article class="khae-workflow-stage is-support" data-stage="continue" data-step="10"><strong>Continue</strong><span>Follow the course’s existing gate to the next required step.</span></article>'+
   '</div>'+
   '<div class="khae-workflow-record"><article class="khae-workflow-panel"><h3>Assignment state</h3><div class="khae-workflow-states">'+
     '<span class="khae-workflow-chip" data-state="draft">Draft</span><span class="khae-workflow-chip" data-state="submitted">Submitted</span><span class="khae-workflow-chip" data-state="scored">Scored</span><span class="khae-workflow-chip" data-state="mastered">Mastered</span><span class="khae-workflow-chip" data-state="reviewed">Reviewed</span>'+
@@ -87,13 +92,38 @@ function enhance(){
       setTimeout(refresh,0);setTimeout(refresh,120);
     });
   }
+  function supportAvailability(){
+    const root=document.getElementById("main")||document.getElementById("lessonMain")||document.body;
+    const example=!!root.querySelector(".worked,.worked-example,.deep-worked,.example,.example-card,[data-worked-example],.worked-example-card");
+    const game=!!root.querySelector(".math-shared-game-companion,[data-game-companion],[data-launch-title],[data-launch-url]");
+    const video=!!root.querySelector(".math-video-companion,.video-companion,[data-video-companion],iframe[src*='youtube-nocookie.com'],iframe[src*='youtube.com/embed'],iframe[src*='youtu.be']");
+    return {example,game,video,evidence:true};
+  }
+  function syncSupportStages(canonicalMastery){
+    const available=supportAvailability(),c=continueLink();
+    const states={
+      example:{available:available.example,label:available.example?"Example available":"Example within lesson"},
+      game:{available:available.game,label:available.game?"Game / tool available":"No companion attached"},
+      video:{available:available.video,label:available.video?"Optional video available":"No reviewed video attached"},
+      evidence:{available:true,label:"Print / export available"},
+      continue:{available:canonicalMastery&&!!c?.href,label:canonicalMastery&&c?.href?"Next gate available":"Unlocks after mastery"}
+    };
+    for(const [name,state] of Object.entries(states)){
+      const el=section.querySelector('[data-stage="'+name+'"]');if(!el)continue;
+      el.classList.toggle("is-available",!!state.available);
+      el.classList.toggle("is-unavailable",!state.available);
+      let badge=el.querySelector(".khae-workflow-support-status");
+      if(!badge){badge=document.createElement("em");badge.className="khae-workflow-support-status";el.appendChild(badge)}
+      badge.textContent=state.label;
+    }
+  }
   function refresh(){
     bindSubmit();
     const rec=read(),ev=canonical();
     const submitted=!!rec.submittedAt,scored=ev.best!==null,mastered=ev.mastery,reviewed=rec.reviewComplete===true;
     const done={learn:rec.learnComplete===true,practice:rec.practiceComplete===true||rec.practiceStarted===true,submit:submitted,mastery:mastered,review:reviewed};
     const firstIncomplete=["learn","practice","submit","mastery","review"].find(x=>!done[x]);
-    section.querySelectorAll("[data-stage]").forEach(el=>{const name=el.dataset.stage;el.classList.toggle("is-done",!!done[name]);el.classList.toggle("is-active",name===firstIncomplete)});
+    section.querySelectorAll("[data-stage]").forEach(el=>{const name=el.dataset.stage,tracked=Object.prototype.hasOwnProperty.call(done,name);el.classList.toggle("is-done",tracked&&!!done[name]);el.classList.toggle("is-active",tracked&&name===firstIncomplete)});
     const states={draft:!submitted,submitted,scored,mastered,reviewed};
     section.querySelectorAll("[data-state]").forEach(el=>el.classList.toggle("is-on",!!states[el.dataset.state]));
     $("khaeWorkflowScore").innerHTML=scored?'<strong>Recorded score: '+Math.round(ev.best*10)/10+'%</strong> · '+(mastered?"Mastery gate met.":"Below "+target+"%; review, correct, and submit a new attempt."):'<strong>No canonical score recorded yet.</strong>';
@@ -101,7 +131,7 @@ function enhance(){
     $("khaeWorkflowSubmitJump").disabled=!native;
     $("khaeWorkflowSaveReview").disabled=!submitted&&!scored;
     const c=continueLink(),a=$("khaeWorkflowContinue");
-    if(mastered&&c?.href){a.href=c.href;a.textContent=c.label||"Continue to next required step";a.hidden=false}else a.hidden=true;
+    if(mastered&&c?.href){a.href=c.href;a.textContent=c.label||"Continue to next required step";a.hidden=false}else a.hidden=true;syncSupportStages(mastered);
     status.textContent=mastered?(reviewed?"Mastery and local review are recorded. Continue using the course’s existing gate.":"Mastery is recorded. A local review note may be saved before continuing."):(submitted?(scored?"Assignment scored below mastery; corrections and a new submission are available.":"Assignment submitted; awaiting a recorded score."):"Work remains in draft until the assignment is submitted.");
   }
   $("khaeWorkflowLearn").addEventListener("click",()=>{write({learnComplete:true,learnCompletedAt:now()});refresh()});
