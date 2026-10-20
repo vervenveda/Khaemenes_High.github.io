@@ -18,7 +18,7 @@ const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-
   "./assets/prealgebra-study-scorebook-v1.js",
   "./assets/prealgebra-workflow-adapter-v1.js",
   "../assets/course-lesson-workflow-v1.js",
-  "../assets/course-lesson-workflow-v1.css","../assets/math-dashboard-parity-v1.css",
+  "../assets/course-lesson-workflow-v1.css","../assets/math-dashboard-parity-v1.css","../assets/math-student-journey-v1.js","../assets/math-student-journey-v1.css",
   "../assets/applied-mission-studio-v1.js",
   "./units/unit-01/projects/number-systems-investigation.html",
   "./units/unit-02/projects/signed-data-investigation.html",
