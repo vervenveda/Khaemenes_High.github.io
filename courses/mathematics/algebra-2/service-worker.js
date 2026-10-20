@@ -1,7 +1,7 @@
 "use strict";
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
 const CACHE_PREFIX="khaemenes-algebra2-";
-const CACHE=`${CACHE_PREFIX}v9-full-lesson-path-v1-20261020`;
+const CACHE=`${CACHE_PREFIX}v10-full-lesson-path-v1-20261020`;
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "../assets/applied-mission-studio-v1.js",
   "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
