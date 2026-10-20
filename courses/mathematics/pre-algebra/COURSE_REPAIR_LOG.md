@@ -59,3 +59,50 @@ The intended student flow is:
 2. Replace compressed lesson HTML labels directly when safe.
 3. Continue the shared stylesheet patch through Units 05–13.
 4. Audit assessments and tests for the same language standard: **Submit Test**, **Score Recorded**, **Parent/Teacher Review Available**.
+
+
+---
+
+## Repair wave 02 — shared lesson workflow, non-invasive integration
+
+### Completed
+
+The Academy-wide mathematics lesson workflow is now attached to Pre-Algebra through the existing per-unit lesson-engine wrappers rather than by rewriting individual lesson pages.
+
+The visible sequence is:
+
+> **Learn → Practice → Submit → Mastery → Review & Continue**
+
+### Integrity protections
+
+- Existing Pre-Algebra lesson engines remain authoritative.
+- Existing lesson score and best-score records remain the source of the 80% lesson mastery decision.
+- The workflow reads canonical Pre-Algebra progress; it does not write a passing score.
+- The workflow points **Submit Assignment** to the existing native submission control.
+- A Continue link appears only when the existing lesson navigation is already unlocked.
+- Review/reflection markers are browser-local supporting evidence only and cannot unlock progression.
+- Existing games, video companions, question banks, readiness routing, unit gates, assessments, records, projects, and course styling were not replaced.
+- The strong dark Pre-Algebra dashboard aesthetic remains unchanged.
+
+### Shared files
+
+- `assets/prealgebra-workflow-adapter-v1.js`
+- `../assets/course-lesson-workflow-v1.js`
+- `../assets/course-lesson-workflow-v1.css`
+
+All Unit 01–13 lesson-engine wrappers load the adapter only after their native lesson engine is available.
+
+### Offline support
+
+The Pre-Algebra service-worker release cache was bumped and now pre-caches the adapter plus the shared workflow JavaScript and CSS. Existing runtime caching of visited lesson pages and local support assets remains intact.
+
+### Source validation
+
+Representative custom and generic unit wrappers parse successfully after integration, including Units 01, 02, 04, 10, and 13. The adapter and updated service worker also pass JavaScript parse validation.
+
+### Next surgical pass
+
+1. Behavioral regression test: two learner profiles on one browser.
+2. Verify workflow rendering on representative early, middle, and late lessons at desktop/tablet/phone widths.
+3. Confirm lesson submission, retry, 80% unlock, print evidence, JSON export, games, videos, and offline recovery remain intact.
+4. Only after those checks, use the preserved Pre-Algebra dark visual language as the reference for Algebra I, Geometry, and Algebra II.
