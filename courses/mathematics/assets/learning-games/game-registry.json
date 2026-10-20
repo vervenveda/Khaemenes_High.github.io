@@ -744,6 +744,15 @@
           "mode": "coordinate-foundations",
           "query": "?course=prealgebra&unit=10&lesson=01",
           "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "09",
+          "lesson": "04",
+          "lesson_title": "Coordinate Intersections and Geometric Systems",
+          "mode": "geometry-intersections",
+          "query": "?course=geometry&unit=09&lesson=u09-l04",
+          "wired": true
         }
       ],
       "scope_note": "Integer Compass already owns Geometry U02-L01 and Algebra II U10-L10. Coordinated Mission Control is intentionally assigned to later coordinate, slope, and multi-step navigation lessons to avoid duplicate subject ownership.",
@@ -1255,6 +1264,15 @@
           "mode": "parallel-perpendicular-slopes",
           "query": "?course=algebra1&unit=06&lesson=05",
           "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "04",
+          "lesson": "06",
+          "lesson_title": "Equations of Lines in Geometric Context",
+          "mode": "geometry-line-equations",
+          "query": "?course=geometry&unit=04&lesson=u04-l06",
+          "wired": true
         }
       ],
       "scope_note": "Game reads mode query and selects initial level. Lessons include broader content beyond game's practice scope. Browser QA pending; no automatic course mastery writeback."
@@ -1684,6 +1702,15 @@
           "mode": "scale-dilations",
           "query": "?course=prealgebra&unit=11&lesson=05",
           "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "05",
+          "lesson": "07",
+          "lesson_title": "Indirect Measurement, Shadows & Mirrors",
+          "mode": "indirect-measurement-similarity",
+          "query": "?course=geometry&unit=05&lesson=u05-l07",
+          "wired": true
         }
       ],
       "scope_note": "Guided congruence, correspondence, similarity, and scale factor challenges. Lessons involving CPCTC proofs, center-based dilations, side-splitter theorems, and scale drawings receive supplemental practice only; no full proof or construction coverage. Live browser QA and mastery writeback not certified."
@@ -1838,6 +1865,15 @@
           "lesson_title": "Pythagorean Theorem & Distance",
           "mode": "pythagorean-distance",
           "query": "?course=algebra1&unit=11&lesson=04",
+          "wired": true
+        },
+        {
+          "course": "geometry",
+          "unit": "06",
+          "lesson": "04",
+          "lesson_title": "Geometric Mean & Right-Triangle Altitudes",
+          "mode": "right-triangle-altitudes",
+          "query": "?course=geometry&unit=06&lesson=u06-l04",
           "wired": true
         }
       ],
