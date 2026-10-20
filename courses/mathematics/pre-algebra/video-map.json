@@ -883,6 +883,54 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Linear prediction only; residual analysis remains written instruction"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U11-L02",
+      "unit": 11,
+      "lesson": 2,
+      "lesson_file": "units/unit-11/lessons/lesson-02-angles-lines-transversals-polygons.html",
+      "asset_id": "MATH-TRANSVERSAL-ANGLES-KHAN-001",
+      "shared_file": "../assets/video-library/transversal-angles-khan.json",
+      "placement_status": "topic_matched_pending_playback_caption_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Transversal angles only; polygon relations remain written instruction"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U11-L05",
+      "unit": 11,
+      "lesson": 5,
+      "lesson_file": "units/unit-11/lessons/lesson-05-scale-drawings-similarity-dilations.html",
+      "asset_id": "MATH-SCALE-DRAWINGS-KHAN-001",
+      "shared_file": "../assets/video-library/scale-drawings-khan.json",
+      "placement_status": "topic_matched_pending_playback_caption_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Scale drawings support; similarity and dilations need fuller coverage"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U11-L06",
+      "unit": 11,
+      "lesson": 6,
+      "lesson_file": "units/unit-11/lessons/lesson-06-right-triangles-pythagorean-distance.html",
+      "asset_id": "MATH-PYTHAGOREAN-MATHANTICS-001",
+      "shared_file": "../assets/video-library/pythagorean-mathantics.json",
+      "placement_status": "topic_matched_pending_playback_caption_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Pythagorean theorem; coordinate distance remains in written instruction"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U11-L07",
+      "unit": 11,
+      "lesson": 7,
+      "lesson_file": "units/unit-11/lessons/lesson-07-surface-area-nets-volume.html",
+      "asset_id": "MATH-SURFACE-AREA-NETS-KHAN-001",
+      "shared_file": "../assets/video-library/surface-area-nets-khan.json",
+      "placement_status": "topic_matched_pending_playback_caption_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Surface area via nets; volume needs separate video"
     }
   ]
 }
