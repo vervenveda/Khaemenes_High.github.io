@@ -2,7 +2,9 @@
 "use strict";
 if(window.KhaemenesMathStudentJourney)return;
 const M=80,pad=n=>String(Number(n)||0).padStart(2,"0");
-const read=(k,f=null)=>{try{const v=JSON.parse(localStorage.getItem(k)||"null");return v&&typeof v==="object"?v:f}catch{return f}};
+const activeLearner=()=>window.KhaemenesLearnerScope?.profile?.()||null;
+const scopedStorageKey=k=>{const S=window.KhaemenesLearnerScope;if(!S||typeof S.scopedKey!=="function")return k;return S.scopedKey(k)||null};
+const read=(k,f=null)=>{try{const target=scopedStorageKey(k);if(!target)return f;const v=JSON.parse(localStorage.getItem(target)||"null");return v&&typeof v==="object"?v:f}catch{return f}};
 const bestFrom=r=>{if(!r||typeof r!=="object")return null;const vals=[r.bestScore,r.best_percent,r.percent,r.latest_percent,r.score,...(Array.isArray(r.attempts)?r.attempts.map(a=>a?.score??a?.percent):[])].map(Number).filter(Number.isFinite);return vals.length?Math.max(...vals):null};
 const latestFrom=r=>{if(!r||typeof r!=="object")return null;const a=Array.isArray(r.attempts)?r.attempts:[];const last=a.at(-1);for(const v of [last?.score,last?.percent,r.score,r.latest_percent,r.percent]){const n=Number(v);if(Number.isFinite(n))return n}return null};
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
@@ -87,10 +89,10 @@ function algebra2State(){
  }
  const f=P.assessmentData()?.final;return{state:"Course sequence mastered",summary:"The Algebra II unit sequence is mastered. Continue to final cumulative evidence and completion review.",unit:"13/13 mastered",lesson:"Sequence complete",latest:latestFrom(f),best:bestFrom(f),requirement:P.recordMastered(f)?"Completion review":"80% final mastery",nextTitle:"Algebra II Final Examination",nextText:" Complete or review the final cumulative evidence.",href:"assessments/final.html",action:"Open Final"};
 }
-async function compute(){const slug=courseSlug();if(!slug)return null;if(slug==="pre-algebra")return preAlgebraState();if(slug==="algebra-1")return algebra1State();if(slug==="geometry")return geometryState();if(slug==="algebra-2")return algebra2State();return null}
+async function compute(){const slug=courseSlug();if(!slug)return null;if(!activeLearner())return{state:"Learner profile required",summary:"Select an Academy learner to display personal mathematics progress on this shared device. Course content remains available without changing any mastery records.",unit:"—",lesson:"—",latest:null,best:null,requirement:"Select active learner",nextTitle:"Academy Learner Profile",nextText:" Choose the learner whose progress should appear here.",href:"../../../index.html",action:"Select Learner"};if(slug==="pre-algebra")return preAlgebraState();if(slug==="algebra-1")return algebra1State();if(slug==="geometry")return geometryState();if(slug==="algebra-2")return algebra2State();return null}
 let token=0;async function refresh(){const t=++token;try{const state=await compute();if(t!==token||!state)return;renderCard(state)}catch(e){console.warn("Math journey summary unavailable; course remains usable.",e)}}
 function boot(){refresh();setTimeout(refresh,300);setTimeout(refresh,1200)}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
 window.addEventListener("pageshow",refresh);window.addEventListener("focus",refresh);document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")refresh()});
-window.KhaemenesMathStudentJourney=Object.freeze({version:"1.0",refresh});
+window.KhaemenesMathStudentJourney=Object.freeze({version:"1.1",refresh});
 })();
