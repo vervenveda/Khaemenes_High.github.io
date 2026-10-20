@@ -583,3 +583,28 @@ This synchronized repair wave reused existing canonical games only. **No new gam
 - U13-L03 — Build, Compute, Visualize & Validate the Model
 - U13-L04 — Test Sensitivity, Uncertainty, Fairness & Limitations
 - U13-L05 — Present, Defend, Revise & Reflect
+
+## Current checkpoint — game layer complete
+
+The canonical mathematics game registry now contains **82 games**, and all registered canonical paths exist in the repository.
+
+Current game/tool coverage:
+
+| Course | Lessons | Canonical game coverage | Intentional tool-sufficient lessons | Genuine new-game gaps |
+|---|---:|---:|---:|---:|
+| Pre-Algebra | 97 | **86** | 11 | **0** |
+| Algebra I | 87 | **81** | 6 | **0** |
+| Geometry | 90 | **63** | 27 | **0** |
+| Algebra II | 92 | **87** | 5 | **0** |
+
+The remaining uncovered lessons are intentionally classified as tool-sufficient because calculator, CAD, modelling, project, lab, or evidence workflows are pedagogically stronger than forcing a game.
+
+A mathematics-root service worker at `courses/mathematics/service-worker.js` now precaches the shared game library, registry, and launcher. It is registered from both the mathematics landing page and `assets/shared-game-launcher.js`. This preserves the canonical shared-game architecture while giving shared game paths their own offline scope.
+
+Source validation:
+- mathematics root service worker: JavaScript parse PASS
+- shared game launcher: JavaScript parse PASS
+- registry: 82 canonical games
+- missing canonical game paths: 0
+
+Browser runtime/offline navigation still requires live browser QA before release certification.
