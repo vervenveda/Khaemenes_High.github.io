@@ -20,3 +20,12 @@ html:root:root body main .card .eyebrow{font-size:13px!important;line-height:1.5
   (document.head||document.documentElement).appendChild(style);
 })();
 (()=>{'use strict';function id(){const u=(location.pathname.match(/unit-(\d+)/)||[])[1],n=(document.body?.dataset?.lesson)||(location.pathname.match(/lesson-(\d+)/)||[])[1];if(!u||!n)return null;return `u${String(Number(u)).padStart(2,'0')}-l${String(Number(n)).padStart(2,'0')}`}function render(){const key=id(),map=window.KhaemenesAlgebra1LessonResources?.entries,rec=key&&map?.[key],main=document.getElementById('main');if(!rec||!main||document.getElementById('a1LessonResourceBridge'))return;const host=main.querySelector('.block .wrap')||main;const s=document.createElement('section');s.id='a1LessonResourceBridge';s.className='block';s.innerHTML=`<div class="wrap"><article class="card full"><p class="eyebrow">Applied Connection · ${key}</p><h2>Connect this lesson to a real mathematical product</h2><p>${rec.application_prompt}</p><div class="nav">${rec.project?`<a class="btn primary" href="${rec.project}?from=${encodeURIComponent(key)}">Open Unit Project · ${rec.project_title}</a>`:''}${rec.lab?`<a class="btn" href="${rec.lab}">Open Related Local Lab</a>`:''}</div><details><summary>Choose a readiness pathway</summary><p><strong>Foundation:</strong> ${rec.pathways.Foundation}</p><p><strong>Core:</strong> ${rec.pathways.Core}</p><p><strong>Extended:</strong> ${rec.pathways.Extended}</p></details><p class="lead" style="font-size:.95rem">Games and video companions are intentionally not fabricated here. They can be attached later through the same lesson ID without changing the lesson or project paths.</p></article></div>`;main.appendChild(s)}function boot(){render();new MutationObserver(render).observe(document.getElementById('main')||document.body,{childList:true,subtree:true})}document.readyState==='loading'?document.addEventListener('DOMContentLoaded',boot,{once:true}):boot();})();
+/* Shared Learn → Practice → Submit → Mastery → Review workflow. */
+(()=>{
+ const bridgeScript=document.currentScript;
+ function load(){
+  if(document.getElementById("algebra1WorkflowAdapterV1"))return;
+  const s=document.createElement("script");s.id="algebra1WorkflowAdapterV1";s.src=new URL("algebra1-workflow-adapter-v1.js",bridgeScript?.src||location.href).href;s.async=false;document.head.appendChild(s);
+ }
+ document.readyState==="loading"?document.addEventListener("DOMContentLoaded",load,{once:true}):load();
+})();

@@ -1,0 +1,67 @@
+/* Khaemenes Mathematics · shared lesson workflow v1 */
+.khae-workflow{
+  --kfw-bg:var(--panel,#fff);
+  --kfw-bg2:var(--panel2,#f8f6f0);
+  --kfw-ink:var(--ink,#172438);
+  --kfw-muted:var(--muted,#667382);
+  --kfw-line:var(--line,rgba(23,36,56,.16));
+  --kfw-accent:var(--navy,#17344a);
+  --kfw-gold:var(--gold,#b89a61);
+  --kfw-good:var(--green,#4f7657);
+  width:min(calc(100% - 36px),1180px);
+  margin:28px auto 36px;
+  padding:clamp(22px,3vw,34px);
+  border:1px solid var(--kfw-line);
+  border-top:3px solid var(--kfw-gold);
+  border-radius:var(--radius,7px);
+  color:var(--kfw-ink);
+  background:var(--kfw-bg);
+  box-shadow:var(--shadow-small,0 10px 28px rgba(12,28,47,.08));
+  text-align:left;
+}
+.khae-workflow *{box-sizing:border-box}
+.khae-workflow-head{max-width:880px;margin:0 auto 22px;text-align:center}
+.khae-workflow-kicker{margin:0 0 7px;color:var(--kfw-gold);font:500 12px/1.5 Cinzel,"Iowan Old Style",Georgia,serif;letter-spacing:.13em;text-transform:uppercase}
+.khae-workflow h2{margin:0;font:400 clamp(25px,3vw,36px)/1.15 Cinzel,"Iowan Old Style",Georgia,serif}
+.khae-workflow-head p:last-child{max-width:760px;margin:10px auto 0;color:var(--kfw-muted);font-size:14px;line-height:1.65}
+.khae-workflow-stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.khae-workflow-stage{min-width:0;min-height:116px;padding:15px;border:1px solid var(--kfw-line);border-radius:var(--radius,7px);background:var(--kfw-bg2)}
+.khae-workflow-stage strong{display:block;font:500 15px/1.25 Cinzel,"Iowan Old Style",Georgia,serif}
+.khae-workflow-stage span{display:block;margin-top:6px;color:var(--kfw-muted);font-size:12px;line-height:1.45}
+.khae-workflow-stage::before{content:attr(data-step);width:26px;height:26px;display:grid;place-items:center;margin-bottom:9px;border:1px solid var(--kfw-line);border-radius:50%;color:var(--kfw-muted);font-size:11px}
+.khae-workflow-stage.is-done{border-color:color-mix(in srgb,var(--kfw-good) 55%,var(--kfw-line));box-shadow:inset 0 3px var(--kfw-good)}
+.khae-workflow-stage.is-done::before{content:"✓";color:#fff;border-color:var(--kfw-good);background:var(--kfw-good)}
+.khae-workflow-stage.is-active{border-color:color-mix(in srgb,var(--kfw-gold) 70%,var(--kfw-line));box-shadow:inset 0 3px var(--kfw-gold)}
+.khae-workflow-record{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:14px;margin-top:16px}
+.khae-workflow-panel{padding:16px;border:1px solid var(--kfw-line);border-radius:var(--radius,7px);background:var(--kfw-bg2)}
+.khae-workflow-panel h3{margin:0 0 10px;font:400 19px/1.3 Cinzel,"Iowan Old Style",Georgia,serif}
+.khae-workflow-states{display:flex;flex-wrap:wrap;gap:6px}
+.khae-workflow-chip{padding:5px 8px;border:1px solid var(--kfw-line);border-radius:999px;color:var(--kfw-muted);font-size:11px}
+.khae-workflow-chip.is-on{color:var(--kfw-ink);border-color:var(--kfw-gold);background:color-mix(in srgb,var(--kfw-gold) 10%,transparent)}
+.khae-workflow-score{margin:12px 0 0;color:var(--kfw-muted);font-size:13px}
+.khae-workflow-score strong{color:var(--kfw-ink)}
+.khae-workflow label{display:grid;gap:7px;color:var(--kfw-muted);font-size:12px}
+.khae-workflow textarea{width:100%;min-height:112px;padding:11px;border:1px solid var(--kfw-line);border-radius:var(--radius,7px);color:var(--kfw-ink);background:var(--kfw-bg);font:400 14px/1.55 "Brandon Grotesque","Avenir Next","Segoe UI",Arial,sans-serif;resize:vertical}
+.khae-workflow-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.khae-workflow-button,.khae-workflow-link{min-height:42px;display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border:1px solid var(--kfw-line);border-radius:var(--radius,7px);color:var(--kfw-ink);background:var(--kfw-bg);font:400 12px/1.35 "Brandon Grotesque","Avenir Next","Segoe UI",Arial,sans-serif;text-decoration:none;cursor:pointer}
+.khae-workflow-button:hover,.khae-workflow-link:hover{border-color:var(--kfw-accent)}
+.khae-workflow-button.primary,.khae-workflow-link.primary{color:#fff;border-color:var(--kfw-accent);background:var(--kfw-accent)}
+.khae-workflow-button:disabled{opacity:.48;cursor:not-allowed}
+.khae-workflow-note{margin:11px 0 0;color:var(--kfw-muted);font-size:12px;line-height:1.55}
+.khae-workflow-status{min-height:1.4em;margin:10px 0 0;color:var(--kfw-muted);font-size:12px}
+.khae-workflow-print-head{display:none}
+@media(max-width:900px){.khae-workflow-stages{grid-template-columns:repeat(2,minmax(0,1fr))}.khae-workflow-record{grid-template-columns:1fr}}
+@media(max-width:560px){.khae-workflow{width:min(calc(100% - 20px),1180px);padding:18px}.khae-workflow-stages{grid-template-columns:1fr}.khae-workflow-actions>*{width:100%}}
+@media(prefers-reduced-motion:reduce){.khae-workflow *{scroll-behavior:auto!important;transition:none!important}}
+@media print{
+  .khae-workflow{width:100%;margin:12px 0;padding:12px;border:1px solid #888;box-shadow:none;background:#fff;color:#111}
+  .khae-workflow-head,.khae-workflow-actions,.khae-workflow-note{display:none!important}
+  .khae-workflow-print-head{display:block!important;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid #777;text-align:center;color:#111}
+  .khae-workflow-print-head strong{display:block;font:400 18px/1.3 Cinzel,Georgia,serif}
+  .khae-workflow-print-lines{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:12px;text-align:left;font-size:12px}
+  .khae-workflow-print-lines span{display:block;padding-bottom:4px;border-bottom:1px solid #777}
+  .khae-workflow-stages{grid-template-columns:repeat(5,1fr)}
+  .khae-workflow-stage,.khae-workflow-panel{min-height:0;padding:8px;border:1px solid #aaa;background:#fff;color:#111;box-shadow:none}
+  .khae-workflow-stage span,.khae-workflow-score,.khae-workflow-chip,.khae-workflow label,.khae-workflow textarea,.khae-workflow-status{color:#222!important}
+  .khae-workflow textarea{border:1px solid #999;background:#fff}
+}
