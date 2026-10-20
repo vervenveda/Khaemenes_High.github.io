@@ -42,18 +42,6 @@
       "release_approved": false
     },
     {
-      "lesson_id": "KH-MATH-A2-U12-L03",
-      "lesson_file": "units/unit-12/lessons/u12-l03.html",
-      "asset_id": "MATH-CONDITIONAL-PROBABILITY-KHAN-001",
-      "shared_file": "../assets/video-library/conditional-probability-independence-khan.json",
-      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
-      "enabled": false,
-      "optional": true,
-      "usage": "optional_lesson_companion",
-      "alignment_note": "Direct conditional-probability and independence match; Bayes reasoning remains additional lesson content.",
-      "release_approved": false
-    },
-    {
       "lesson_id": "KH-MATH-A2-U04-L05",
       "lesson_file": "units/unit-04/lessons/u04-l05.html",
       "asset_id": "MATH-RATIONAL-ASYMPTOTES-HOLES-OCT-001",
@@ -63,18 +51,6 @@
       "optional": true,
       "usage": "optional_lesson_companion",
       "alignment_note": "Direct match for reciprocal/rational function holes and asymptotes; verify exact transformation/domain coverage before activation.",
-      "release_approved": false
-    },
-    {
-      "lesson_id": "KH-MATH-A2-U09-L04",
-      "lesson_file": "units/unit-09/lessons/u09-l04.html",
-      "asset_id": "MATH-GEOMETRIC-SERIES-KHAN-001",
-      "shared_file": "../assets/video-library/geometric-series-introduction-khan.json",
-      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
-      "enabled": false,
-      "optional": true,
-      "usage": "optional_lesson_companion",
-      "alignment_note": "Direct introductory match for finite geometric series and sequence-to-series connection.",
       "release_approved": false
     },
     {
@@ -102,18 +78,6 @@
       "release_approved": false
     },
     {
-      "lesson_id": "KH-MATH-A2-U12-L05",
-      "lesson_file": "units/unit-12/lessons/u12-l05.html",
-      "asset_id": "MATH-NORMAL-DISTRIBUTION-KHAN-001",
-      "shared_file": "../assets/video-library/normal-distribution-introduction-khan.json",
-      "placement_status": "prerequisite_or_partial_match_pending_review",
-      "enabled": false,
-      "optional": true,
-      "usage": "prerequisite_or_supplemental",
-      "alignment_note": "Normal-distribution foundation; z-scores and percentiles require additional lesson-specific instruction.",
-      "release_approved": false
-    },
-    {
       "lesson_id": "KH-MATH-A2-U08-L05",
       "lesson_file": "units/unit-08/lessons/u08-l05.html",
       "asset_id": "MATH-MATRIX-ROW-OPERATIONS-OCT-001",
@@ -123,18 +87,6 @@
       "optional": true,
       "usage": "optional_lesson_companion",
       "alignment_note": "Direct support for row operations and row-echelon form in matrix systems; verify exact Gauss-Jordan scope before activation.",
-      "release_approved": false
-    },
-    {
-      "lesson_id": "KH-MATH-A2-U09-L05",
-      "lesson_file": "units/unit-09/lessons/u09-l05.html",
-      "asset_id": "MATH-INFINITE-GEOMETRIC-SERIES-KHAN-001",
-      "shared_file": "../assets/video-library/infinite-geometric-series-khan.json",
-      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
-      "enabled": false,
-      "optional": true,
-      "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for infinite geometric series and convergence.",
       "release_approved": false
     },
     {
@@ -234,19 +186,6 @@
       "release_approved": false
     },
     {
-      "lesson_id": "KH-MATH-A2-U09-L06",
-      "lesson_file": "units/unit-09/lessons/u09-l06.html",
-      "asset_id": "MATH-SIGMA-NOTATION-KHAN-001",
-      "shared_file": "../assets/video-library/sigma-notation-sums-khan.json",
-      "placement_status": "release_candidate_runtime_pending",
-      "enabled": false,
-      "optional": true,
-      "usage": "optional_lesson_companion",
-      "alignment_note": "Direct sigma-notation/summation match.",
-      "release_approved": false,
-      "certification_batch": "MATH-VIDEO-CERT-BATCH-01"
-    },
-    {
       "lesson_id": "KH-MATH-A2-U11-L06",
       "lesson_file": "units/unit-11/lessons/u11-l06.html",
       "asset_id": "MATH-LAW-OF-SINES-AMBIGUOUS-OCT-001",
@@ -283,18 +222,6 @@
       "release_approved": false
     },
     {
-      "lesson_id": "KH-MATH-A2-U09-L07",
-      "lesson_file": "units/unit-09/lessons/u09-l07.html",
-      "asset_id": "MATH-BINOMIAL-THEOREM-KHAN-001",
-      "shared_file": "../assets/video-library/binomial-theorem-khan-india.json",
-      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
-      "enabled": false,
-      "optional": true,
-      "usage": "optional_lesson_companion",
-      "alignment_note": "Direct binomial-theorem expansion match; Pascal-triangle linkage remains lesson content.",
-      "release_approved": false
-    },
-    {
       "lesson_id": "KH-MATH-A2-U11-L01",
       "lesson_file": "units/unit-11/lessons/u11-l01.html",
       "asset_id": "MATH-PYTHAGOREAN-IDENTITIES-OCT-001",
@@ -305,31 +232,14 @@
       "usage": "optional_lesson_companion",
       "alignment_note": "Direct Pythagorean-identity match; reciprocal/fundamental identities remain additional lesson content.",
       "release_approved": false
-    },
-    {
-      "lesson_id": "KH-MATH-A2-U12-L05",
-      "lesson_file": "units/unit-12/lessons/u12-l05.html",
-      "asset_id": "MATH-ZSCORE-COMPARISON-KHAN-001",
-      "shared_file": "../assets/video-library/zscore-comparison-khan.json",
-      "placement_status": "release_candidate_runtime_pending",
-      "enabled": false,
-      "optional": true,
-      "usage": "optional_lesson_companion",
-      "alignment_note": "Direct z-score interpretation/comparison support alongside the existing normal-distribution introduction.",
-      "release_approved": false,
-      "certification_batch": "MATH-VIDEO-CERT-BATCH-01"
     }
   ],
   "release_gate": "Placement requires enabled=true and release_approved=true; canonical asset requires enabled=true and certification.student_release_approved=true.",
   "coverage_summary": {
-    "candidate_placements": 26,
-    "unique_lessons_covered": 24,
-    "lessons_with_multiple_candidates": 2,
+    "candidate_placements": 19,
+    "unique_lessons_covered": 18,
+    "lessons_with_multiple_candidates": 1,
     "multiple_candidate_lessons": [
-      {
-        "lesson_id": "KH-MATH-A2-U12-L05",
-        "candidate_count": 2
-      },
       {
         "lesson_id": "KH-MATH-A2-U08-L06",
         "candidate_count": 2
