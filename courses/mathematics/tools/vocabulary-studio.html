@@ -85,9 +85,12 @@ for(let n=0;n<=13;n++){
 const incoming=Number(params.get("unit"));
 unit.value=Number.isInteger(incoming)&&incoming>=(course.value==="pre-algebra"?0:1)&&incoming<=13?String(incoming).padStart(2,"0"):"01";
 function unitAvailability(){
- const unit00=unit.querySelector('option[value="00"]');
- if(unit00)unit00.hidden=unit00.disabled=course.value!=="pre-algebra";
- if(course.value!=="pre-algebra"&&unit.value==="00")unit.value="01";for(const choice of unit.options){if(choice.value!=="00")choice.disabled=choice.hidden=(course.value==="social-studies-10"&&Number(choice.value)>(course.value==="social-studies-10"?8:1))}if(course.value==="social-studies-10"&&Number(unit.value)>(course.value==="social-studies-10"?8:1))unit.value="01";
+ const limit=course.value==="social-studies-10"?8:course.value==="social-studies-09"?1:13;
+ for(const choice of unit.options){
+   const number=Number(choice.value);
+   choice.hidden=choice.disabled=number===0?course.value!=="pre-algebra":number>limit;
+ }
+ if(Number(unit.value)>limit||(unit.value==="00"&&course.value!=="pre-algebra"))unit.value="01";
 }
 function sync(){
  const p=new URLSearchParams({course:course.value,unit:unit.value,lang:lang.value});
