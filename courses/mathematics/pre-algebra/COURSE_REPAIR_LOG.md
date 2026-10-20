@@ -187,3 +187,16 @@ Current unique lesson coverage: **52 covered / 45 remaining game-tool gaps**.
 Placement policy: use direct mathematical matches only; ambiguous matches remain gaps. Game completion remains formative support and never grants the course's 80% mastery or bypasses progression gates. The authoritative source of truth remains the course assessment/progression system.
 
 See `../RESOURCE_COVERAGE_AUDIT_2026-10-20.md` and `../resource-coverage-v1.json` for the synchronized cross-course matrix.
+
+
+## Shared algebra-language game cluster
+
+Three new canonical shared formative games were added to the mathematics game library:
+
+- `algebra-language-lab`
+- `expression-translator-studio`
+- `equivalence-forge`
+
+Pre-Algebra now has **81 lessons with canonical game/tool coverage**, with **16 lessons intentionally still without a game companion**. Of those, **5** remain classified as genuinely needing new game development; the rest are tool-sufficient.
+
+The new games use randomized 10-question rounds, local best-score storage, immediate explanatory feedback, and remain non-authoritative. They do not award 80% course mastery or bypass progression gates.
