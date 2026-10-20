@@ -103,6 +103,28 @@
       "optional": true,
       "usage": "prerequisite_or_supplemental",
       "alignment_note": "Normal-distribution foundation; z-scores and percentiles require additional lesson-specific instruction."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U08-L05",
+      "lesson_file": "units/unit-08/lessons/u08-l05.html",
+      "asset_id": "MATH-MATRIX-ROW-OPERATIONS-OCT-001",
+      "shared_file": "../assets/video-library/matrix-row-operations-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct support for row operations and row-echelon form in matrix systems; verify exact Gauss-Jordan scope before activation."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U09-L05",
+      "lesson_file": "units/unit-09/lessons/u09-l05.html",
+      "asset_id": "MATH-INFINITE-GEOMETRIC-SERIES-KHAN-001",
+      "shared_file": "../assets/video-library/infinite-geometric-series-khan.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for infinite geometric series and convergence."
     }
   ]
 }
