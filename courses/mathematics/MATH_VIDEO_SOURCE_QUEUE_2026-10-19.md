@@ -81,3 +81,24 @@ The following four records are staged in the canonical Mathematics library and *
 | How To Solve Quadratic Equations By Factoring - Algebra Introduction | aj4akBeGjuo | `quadratic-equations-factoring.json` |
 
 Review full videos, mathematical rigor, student age, captions, transcripts, embed behavior and the precise lesson objective before enabling any placement. Existing Pre-Algebra embeds and all 80% mastery records remain unchanged.
+
+## Geometry sourcing pass — 2026-10-20
+
+Geometry now has **11 staged disabled placements** in `geometry/video-map.json`.
+
+Six placements reuse existing Academy library records:
+- U04-L01 — transversal angles (Khan Academy)
+- U04-L03 — slope formula (The Organic Chemistry Tutor)
+- U05-L06 — scale drawings (Khan Academy)
+- U06-L01 — Pythagorean theorem (Math Antics)
+- U10-L01 — area prerequisite/review (Math Antics)
+- U11-L04 — surface area from nets (Khan Academy)
+
+Five additional canonical records were sourced and staged:
+- U01-L06 — two-column proof example (Khan Academy)
+- U02-L01 — translations/reflections/rotations candidate (The Organic Chemistry Tutor)
+- U06-L05 — sine/cosine/tangent right-triangle candidate (The Organic Chemistry Tutor)
+- U08-L01 — introductory circle geometry candidate (The Organic Chemistry Tutor)
+- U11-L01 — prism-volume candidate (The Organic Chemistry Tutor)
+
+All remain `enabled:false`. Publisher/topic listing checks are complete for the five newly sourced records; full playback, captions/transcript fallback, age/lesson fit, and privacy-enhanced embed behavior remain release gates.
