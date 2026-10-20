@@ -4,5 +4,72 @@
   "course": "geometry",
   "shared_library": "../assets/video-library/",
   "activation_policy": "disabled until playback, captions, transcript fallback, and lesson rendering verified",
-  "placements": []
+  "placements": [
+    {
+      "lesson_id": "KH-MATH-GEO-U04-L01",
+      "lesson_file": "units/unit-04/lessons/u04-l01.html",
+      "asset_id": "MATH-TRANSVERSAL-ANGLES-KHAN-001",
+      "shared_file": "../assets/video-library/transversal-angles-khan.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for parallel lines cut by a transversal and corresponding/alternate angle relationships."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U04-L03",
+      "lesson_file": "units/unit-04/lessons/u04-l03.html",
+      "asset_id": "MATH-SLOPE-FORMULA-001",
+      "shared_file": "../assets/video-library/slope-formula.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for slope as direction/rate from coordinate points."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U05-L06",
+      "lesson_file": "units/unit-05/lessons/u05-l06.html",
+      "asset_id": "MATH-SCALE-DRAWINGS-KHAN-001",
+      "shared_file": "../assets/video-library/scale-drawings-khan.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for scale drawings, maps, and scale-factor reasoning."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U06-L01",
+      "lesson_file": "units/unit-06/lessons/u06-l01.html",
+      "asset_id": "MATH-PYTHAGOREAN-MATHANTICS-001",
+      "shared_file": "../assets/video-library/pythagorean-mathantics.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct Pythagorean theorem supplement; converse and formal proof remain lesson responsibilities."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U10-L01",
+      "lesson_file": "units/unit-10/lessons/u10-l01.html",
+      "asset_id": "MATH-AREA-MATHANTICS-001",
+      "shared_file": "../assets/video-library/area-mathantics.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "prerequisite_or_supplemental",
+      "alignment_note": "Area prerequisite/review for triangles, parallelograms, and trapezoids; verify exact shape coverage before activation."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U11-L04",
+      "lesson_file": "units/unit-11/lessons/u11-l04.html",
+      "asset_id": "MATH-SURFACE-AREA-NETS-KHAN-001",
+      "shared_file": "../assets/video-library/surface-area-nets-khan.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for nets and surface area of polyhedra; verify prism/pyramid coverage and captions before activation."
+    }
+  ]
 }
