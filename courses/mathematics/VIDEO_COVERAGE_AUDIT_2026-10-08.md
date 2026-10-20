@@ -205,3 +205,26 @@ Three audit bubbles were repaired:
 Current release-approved higher-math placements: **0**.
 
 Source validation: video renderer and all four affected service workers parse successfully. Browser-level offline and embedded-playback certification is still required before enabling any candidate.
+
+## Video Certification Batch 02 — 2026-10-20
+
+Two Khan Academy Geometry assets have been promoted from generic candidates to documented release candidates:
+
+1. `MATH-CIRCLE-STANDARD-EQUATION-KHAN-001` → Geometry U08-L08.
+2. `MATH-ANGLE-BISECTOR-CONSTRUCTION-KHAN-001` → Geometry U01-L04.
+
+For both assets:
+- official Khan provider page verified;
+- official provider transcript verified;
+- exact lesson alignment verified;
+- `alignment_status: release_candidate_runtime_pending`;
+- `certification.student_release_approved:false`;
+- placement remains `enabled:false` and `release_approved:false`.
+
+Batch record:
+`courses/mathematics/VIDEO_CERTIFICATION_BATCH_02_2026-10-20.md`
+
+Open gates remain whole-video review, privacy-enhanced embed playback, caption verification, responsive rendering, fallback reachability, and confirmation of zero coupling to mastery/progression.
+
+Batch 01 remains in the same runtime-pending state and contains Sigma Notation and Comparing with z-scores.
+
