@@ -102,3 +102,26 @@ Five additional canonical records were sourced and staged:
 - U11-L01 — prism-volume candidate (The Organic Chemistry Tutor)
 
 All remain `enabled:false`. Publisher/topic listing checks are complete for the five newly sourced records; full playback, captions/transcript fallback, age/lesson fit, and privacy-enhanced embed behavior remain release gates.
+
+## Algebra II sourcing pass — 2026-10-20
+
+Algebra II now has **4 staged disabled placements** in `algebra-2/video-map.json`:
+
+- U01-L01 — existing function-notation prerequisite review.
+- U01-L03 — parent-function transformations and end behavior (The Organic Chemistry Tutor).
+- U07-L05 — solving logarithmic equations (The Organic Chemistry Tutor).
+- U12-L03 — conditional probability and independence (Khan Academy).
+
+All remain `enabled:false`.
+
+Highest-priority Algebra II sourcing gaps now:
+1. Imaginary unit, powers of i, complex-number operations and complex plane.
+2. Polynomial division, rational roots, multiplicity and complete factorization.
+3. Rational functions: restrictions, holes and asymptotes.
+4. Exponential structure, continuous growth and exponential equations.
+5. Matrix operations and row reduction.
+6. Arithmetic/geometric sequences, finite/infinite series and sigma notation.
+7. Trigonometric identities/equations and oblique triangles.
+8. Binomial/normal distributions and statistical inference.
+
+Do not activate any staged placement until full playback, captions/transcript fallback, privacy-enhanced embed behavior and exact lesson alignment are verified.
