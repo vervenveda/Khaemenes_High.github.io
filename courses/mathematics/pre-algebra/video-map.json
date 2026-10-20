@@ -1063,6 +1063,42 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Data and graphs introduction only; dot plots, histograms and box plots require lesson instruction"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U12-L01",
+      "unit": 12,
+      "lesson": 1,
+      "lesson_file": "units/unit-12/lessons/lesson-01-data-questions-variables-populations-samples.html",
+      "asset_id": "MATH-STATISTICAL-QUESTIONS-KHAN-001",
+      "shared_file": "../assets/video-library/statistical-questions-khan.json",
+      "placement_status": "topic_matched_partial_pending_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Statistical question foundation; populations and samples need lesson text"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U12-L05",
+      "unit": 12,
+      "lesson": 5,
+      "lesson_file": "units/unit-12/lessons/lesson-05-comparing-distributions-misleading-displays.html",
+      "asset_id": "MATH-MISLEADING-GRAPHS-TEDED-001",
+      "shared_file": "../assets/video-library/misleading-graphs-teded.json",
+      "placement_status": "topic_matched_partial_pending_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Critical interpretation of misleading graphs; distribution comparison taught in lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U12-L08",
+      "unit": 12,
+      "lesson": 8,
+      "lesson_file": "units/unit-12/lessons/lesson-08-sampling-bias-association-evidence-decisions.html",
+      "asset_id": "MATH-SAMPLING-BIAS-KHAN-001",
+      "shared_file": "../assets/video-library/random-sampling-bias-khan.json",
+      "placement_status": "topic_matched_partial_pending_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Sampling and bias methods; this advanced video requires age-level review"
     }
   ]
 }
