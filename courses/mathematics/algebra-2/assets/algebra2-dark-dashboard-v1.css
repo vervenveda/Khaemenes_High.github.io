@@ -1,0 +1,48 @@
+/* Khaemenes Academy · Algebra II · Pre-Algebra dark dashboard alignment v1
+   Presentation only. No mastery, scoring, assessment, record, or gate logic. */
+:root{
+  --bg:#07111d!important;
+  --bg2:#050b13!important;
+  --panel:#101f31!important;
+  --panel2:#13263b!important;
+  --surface:#172d45!important;
+  --ink:#f5f1e8!important;
+  --muted:#b7c2cf!important;
+  --gold:#c9a35f!important;
+  --gold2:#ead7aa!important;
+  --blue:#78a9d0!important;
+  --green:#78b58a!important;
+  --line:rgba(234,215,170,.28)!important;
+  --soft:rgba(224,232,241,.14)!important;
+  --grid:rgba(255,255,255,.045)!important;
+  --shadow:0 18px 44px rgba(0,0,0,.30)!important;
+  --radius:7px!important;
+  --sans:"Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif!important;
+  --display:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;
+}
+html[data-theme="dark"],html:not([data-theme]){color-scheme:dark}
+html:root:root body{font-weight:400!important}
+html:root:root body :is(h1,h2,h3,h4,h5,h6,.brand-copy strong,.section-head h2,.lesson-hero h1,.unit-hero h1,.assessment-head h1){
+  font-family:var(--display)!important;
+  font-weight:400!important;
+}
+html:root:root body :is(.eyebrow,.day,.course-menu-label){font-weight:400!important}
+html:root:root body :is(.card,.day-card,.question,.lesson-section,.snapshot,.course-menu-panel,.activity-dialog,.assessment-result,.formula,.worked article,.pathway,.option,input,select,textarea,.btn,.button,.header-control,.course-menu>summary,.icon-btn,.unit-number,.game-mark){
+  border-radius:7px!important;
+}
+html:root:root body :is(.btn,.button,.header-control,.course-menu>summary,.icon-btn,label,.quick-nav button,.brand-copy strong,.unit-number,.game-mark,.question legend){font-weight:400!important}
+html:root:root body .khae-workflow{
+  --kfw-bg:var(--panel);
+  --kfw-bg2:var(--panel2);
+  --kfw-ink:var(--ink);
+  --kfw-muted:var(--muted);
+  --kfw-line:var(--soft);
+  --kfw-accent:#173b60;
+  --kfw-gold:var(--gold);
+  --kfw-good:var(--green);
+}
+@media print{
+  html:root:root body{background:#fff!important;color:#000!important}
+  html:root:root body :is(.card,.day-card,.question,.lesson-section,.assessment-result){background:#fff!important;color:#000!important;box-shadow:none!important}
+  html:root:root body :is(.card,.day-card,.question,.lesson-section,.assessment-result) *{color:#000!important}
+}
