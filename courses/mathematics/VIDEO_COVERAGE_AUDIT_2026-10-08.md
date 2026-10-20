@@ -84,3 +84,18 @@ Quality-control decisions preserved:
 - A calculus-heavy exponential-growth result was rejected for Algebra II despite topical overlap.
 - Circle, congruence and construction candidates were mapped only where their described scope matches the lesson objective.
 - All release gates remain: whole-video review, playback, captions/transcript fallback, privacy-enhanced embed behavior, responsive rendering and exact objective alignment.
+
+## Third candidate-backbone checkpoint — 2026-10-20
+
+Current staged disabled placement counts:
+- Algebra I: **10**
+- Geometry: **21**
+- Algebra II: **16**
+
+This pass materially strengthened Algebra II polynomial/complex/exponential/matrix/series coverage and Geometry triangle-center/circle-theorem coverage.
+
+Quality control remains conservative:
+- no guessed video IDs;
+- no activation from search-result metadata alone;
+- descriptive Academy title used only once where the provider search surfaced the video ID and detailed description but not its rendered title;
+- all records remain pending whole-video playback, captions/transcript fallback, embed behavior, and exact lesson-objective review.
