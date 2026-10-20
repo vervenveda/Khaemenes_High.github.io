@@ -48,6 +48,61 @@
       "optional": true,
       "usage": "optional_lesson_companion",
       "alignment_note": "Direct conditional-probability and independence match; Bayes reasoning remains additional lesson content."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U04-L05",
+      "lesson_file": "units/unit-04/lessons/u04-l05.html",
+      "asset_id": "MATH-RATIONAL-ASYMPTOTES-HOLES-OCT-001",
+      "shared_file": "../assets/video-library/rational-functions-asymptotes-holes-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for reciprocal/rational function holes and asymptotes; verify exact transformation/domain coverage before activation."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U09-L04",
+      "lesson_file": "units/unit-09/lessons/u09-l04.html",
+      "asset_id": "MATH-GEOMETRIC-SERIES-KHAN-001",
+      "shared_file": "../assets/video-library/geometric-series-introduction-khan.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct introductory match for finite geometric series and sequence-to-series connection."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U11-L05",
+      "lesson_file": "units/unit-11/lessons/u11-l05.html",
+      "asset_id": "MATH-TRIG-EQUATIONS-OCT-001",
+      "shared_file": "../assets/video-library/trig-equations-multiple-angles-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for solving trigonometric equations on intervals; verify course notation and identity prerequisites."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U11-L07",
+      "lesson_file": "units/unit-11/lessons/u11-l07.html",
+      "asset_id": "MATH-LAW-OF-COSINES-OCT-001",
+      "shared_file": "../assets/video-library/law-of-cosines-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct Law of Cosines match for SSS/SAS oblique triangles; Heron-type area remains lesson content."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U12-L05",
+      "lesson_file": "units/unit-12/lessons/u12-l05.html",
+      "asset_id": "MATH-NORMAL-DISTRIBUTION-KHAN-001",
+      "shared_file": "../assets/video-library/normal-distribution-introduction-khan.json",
+      "placement_status": "prerequisite_or_partial_match_pending_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "prerequisite_or_supplemental",
+      "alignment_note": "Normal-distribution foundation; z-scores and percentiles require additional lesson-specific instruction."
     }
   ]
 }
