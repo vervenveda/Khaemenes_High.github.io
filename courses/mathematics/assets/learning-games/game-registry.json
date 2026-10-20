@@ -3721,6 +3721,120 @@
         "review_status": "broad-multi-lesson-review-only",
         "wired": false
       }
+    },
+    "algebra-language-lab": {
+      "title": "Algebra Language Lab",
+      "canonical_path": "courses/mathematics/assets/learning-games/algebra-language-lab/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "new-canonical-shared",
+      "scope_note": "Algebra vocabulary and polynomial-structure fluency. Formative only; never awards course mastery.",
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "07",
+          "lesson": "01",
+          "lesson_title": "Variables, Terms, Coefficients & Constants",
+          "mode": "algebra-vocabulary-foundations",
+          "query": "?course=prealgebra&unit=07&lesson=01&mode=algebra-vocabulary-foundations",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "02",
+          "lesson": "01",
+          "lesson_title": "Variables, Terms, Factors, Coefficients & Degree",
+          "mode": "algebra1-structure-vocabulary",
+          "query": "?course=algebra1&unit=02&lesson=01&mode=algebra1-structure-vocabulary",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "02",
+          "lesson": "05",
+          "lesson_title": "Monomials & Introductory Polynomial Classification",
+          "mode": "monomial-polynomial-classification",
+          "query": "?course=algebra1&unit=02&lesson=05&mode=monomial-polynomial-classification",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "09",
+          "lesson": "01",
+          "lesson_title": "Polynomial Vocabulary & Standard Form",
+          "mode": "polynomial-vocabulary-standard-form",
+          "query": "?course=algebra1&unit=09&lesson=01&mode=polynomial-vocabulary-standard-form",
+          "wired": true
+        }
+      ]
+    },
+    "expression-translator-studio": {
+      "title": "Expression Translator Studio",
+      "canonical_path": "courses/mathematics/assets/learning-games/expression-translator-studio/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "new-canonical-shared",
+      "scope_note": "Words-to-symbols translation, grouping language, rates and contextual expression structure.",
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "07",
+          "lesson": "02",
+          "lesson_title": "Translating Words & Contexts into Expressions",
+          "mode": "words-to-expressions",
+          "query": "?course=prealgebra&unit=07&lesson=02&mode=words-to-expressions",
+          "wired": true
+        }
+      ]
+    },
+    "equivalence-forge": {
+      "title": "Equivalence Forge",
+      "canonical_path": "courses/mathematics/assets/learning-games/equivalence-forge/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "new-canonical-shared",
+      "scope_note": "Equivalent expressions, properties, distribution, factoring, combining like terms and polynomial addition/subtraction.",
+      "placements": [
+        {
+          "course": "pre-algebra",
+          "unit": "07",
+          "lesson": "04",
+          "lesson_title": "Properties of Operations & Equivalent Structure",
+          "mode": "properties-equivalence",
+          "query": "?course=prealgebra&unit=07&lesson=04&mode=properties-equivalence",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "07",
+          "lesson": "05",
+          "lesson_title": "Distributive Property & Factoring",
+          "mode": "distribution-factoring",
+          "query": "?course=prealgebra&unit=07&lesson=05&mode=distribution-factoring",
+          "wired": true
+        },
+        {
+          "course": "pre-algebra",
+          "unit": "07",
+          "lesson": "06",
+          "lesson_title": "Combining Like Terms & Simplifying",
+          "mode": "combine-like-terms",
+          "query": "?course=prealgebra&unit=07&lesson=06&mode=combine-like-terms",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "09",
+          "lesson": "02",
+          "lesson_title": "Adding & Subtracting Polynomials",
+          "mode": "polynomial-add-subtract",
+          "query": "?course=algebra1&unit=09&lesson=02&mode=polynomial-add-subtract",
+          "wired": true
+        }
+      ]
     }
   }
 }
