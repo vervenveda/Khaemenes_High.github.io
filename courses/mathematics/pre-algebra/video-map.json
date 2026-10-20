@@ -511,6 +511,42 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Estimate between consecutive perfect squares using non-perfect-square examples"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U07-L01",
+      "unit": 7,
+      "lesson": 1,
+      "lesson_file": "units/unit-07/lessons/lesson-01-variables-terms-coefficients-constants.html",
+      "asset_id": "MATH-ALGEBRA-INTRO-MATHANTICS-001",
+      "shared_file": "../assets/video-library/algebra-intro-mathantics.json",
+      "placement_status": "topic_matched_pending_embed_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Variables and meaning of algebra; terms and coefficients require lesson reading"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U07-L02",
+      "unit": 7,
+      "lesson": 2,
+      "lesson_file": "units/unit-07/lessons/lesson-02-translating-words-contexts-expressions.html",
+      "asset_id": "MATH-WRITING-VARIABLE-EXPRESSIONS-KHAN-001",
+      "shared_file": "../assets/video-library/writing-variable-expressions-khan.json",
+      "placement_status": "topic_matched_pending_embed_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Writing simple expressions with variables from verbal statements"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U07-L05",
+      "unit": 7,
+      "lesson": 5,
+      "lesson_file": "units/unit-07/lessons/lesson-05-distributive-property-factoring.html",
+      "asset_id": "MATH-DISTRIBUTIVE-PROPERTY-KHAN-001",
+      "shared_file": "../assets/video-library/distributive-property-khan.json",
+      "placement_status": "topic_matched_pending_embed_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Expanding expressions with distributive property; factoring requires separate coverage"
     }
   ]
 }
