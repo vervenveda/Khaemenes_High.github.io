@@ -655,6 +655,30 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Two-step equations, updated creator version"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U08-L05",
+      "unit": 8,
+      "lesson": 5,
+      "lesson_file": "units/unit-08/lessons/lesson-05-multistep-distribution-like-terms.html",
+      "asset_id": "MATH-MULTISTEP-VARIABLES-KHAN-001",
+      "shared_file": "../assets/video-library/multi-step-variables-khan.json",
+      "placement_status": "topic_matched_pending_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Worked multi-step equation with variables on both sides; supplement distribution and like terms in lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U08-L06",
+      "unit": 8,
+      "lesson": 6,
+      "lesson_file": "units/unit-08/lessons/lesson-06-variables-both-sides-identities-contradictions.html",
+      "asset_id": "MATH-VARIABLES-BOTH-SIDES-KHAN-001",
+      "shared_file": "../assets/video-library/variables-both-sides-khan.json",
+      "placement_status": "topic_matched_pending_playback_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Intro to variables on both sides; identities and contradictions remain in written lesson"
     }
   ]
 }
