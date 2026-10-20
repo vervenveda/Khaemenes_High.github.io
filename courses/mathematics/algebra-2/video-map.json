@@ -235,6 +235,61 @@
       "optional": true,
       "usage": "optional_lesson_companion",
       "alignment_note": "Direct Law of Sines and SSA ambiguous-case match."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U03-L06",
+      "lesson_file": "units/unit-03/lessons/u03-l06.html",
+      "asset_id": "MATH-POLYNOMIAL-MULTIPLICITY-OCT-001",
+      "shared_file": "../assets/video-library/polynomial-multiplicity-graph-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for zeros, multiplicity and graph behavior."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U08-L06",
+      "lesson_file": "units/unit-08/lessons/u08-l06.html",
+      "asset_id": "MATH-DETERMINANT-3X3-OCT-001",
+      "shared_file": "../assets/video-library/determinant-3x3-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct determinant support for the determinants/inverses lesson; transformation models remain lesson content."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U09-L07",
+      "lesson_file": "units/unit-09/lessons/u09-l07.html",
+      "asset_id": "MATH-BINOMIAL-THEOREM-KHAN-001",
+      "shared_file": "../assets/video-library/binomial-theorem-khan-india.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct binomial-theorem expansion match; Pascal-triangle linkage remains lesson content."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U11-L01",
+      "lesson_file": "units/unit-11/lessons/u11-l01.html",
+      "asset_id": "MATH-PYTHAGOREAN-IDENTITIES-OCT-001",
+      "shared_file": "../assets/video-library/pythagorean-identities-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct Pythagorean-identity match; reciprocal/fundamental identities remain additional lesson content."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U12-L05",
+      "lesson_file": "units/unit-12/lessons/u12-l05.html",
+      "asset_id": "MATH-ZSCORE-COMPARISON-KHAN-001",
+      "shared_file": "../assets/video-library/zscore-comparison-khan.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct z-score interpretation/comparison support alongside the existing normal-distribution introduction."
     }
   ]
 }
