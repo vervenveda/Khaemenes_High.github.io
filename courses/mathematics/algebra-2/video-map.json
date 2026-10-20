@@ -238,12 +238,13 @@
       "lesson_file": "units/unit-09/lessons/u09-l06.html",
       "asset_id": "MATH-SIGMA-NOTATION-KHAN-001",
       "shared_file": "../assets/video-library/sigma-notation-sums-khan.json",
-      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "placement_status": "release_candidate_runtime_pending",
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
       "alignment_note": "Direct sigma-notation/summation match.",
-      "release_approved": false
+      "release_approved": false,
+      "certification_batch": "MATH-VIDEO-CERT-BATCH-01"
     },
     {
       "lesson_id": "KH-MATH-A2-U11-L06",
@@ -310,12 +311,13 @@
       "lesson_file": "units/unit-12/lessons/u12-l05.html",
       "asset_id": "MATH-ZSCORE-COMPARISON-KHAN-001",
       "shared_file": "../assets/video-library/zscore-comparison-khan.json",
-      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "placement_status": "release_candidate_runtime_pending",
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
       "alignment_note": "Direct z-score interpretation/comparison support alongside the existing normal-distribution introduction.",
-      "release_approved": false
+      "release_approved": false,
+      "certification_batch": "MATH-VIDEO-CERT-BATCH-01"
     }
   ],
   "release_gate": "Placement requires enabled=true and release_approved=true; canonical asset requires enabled=true and certification.student_release_approved=true.",
