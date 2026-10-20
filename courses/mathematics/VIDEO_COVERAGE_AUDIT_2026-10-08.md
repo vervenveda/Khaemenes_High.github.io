@@ -99,3 +99,16 @@ Quality control remains conservative:
 - no activation from search-result metadata alone;
 - descriptive Academy title used only once where the provider search surfaced the video ID and detailed description but not its rendered title;
 - all records remain pending whole-video playback, captions/transcript fallback, embed behavior, and exact lesson-objective review.
+
+## Fourth candidate-backbone checkpoint — 2026-10-20
+
+Current staged disabled placement counts:
+- Algebra I: **10**
+- Geometry: **22**
+- Algebra II: **21**
+
+This pass added exact lesson-level candidates for Rational Zero Theorem, exponential equations, matrix inverse/row reduction, sigma notation, Law of Sines with ambiguous case, and Geometry cross-sections.
+
+One new instructor candidate (eMATHinstruction) was introduced only for an exact cross-sections/solids-of-revolution match and must receive full Academy-fit review before activation.
+
+No placement is enabled.
