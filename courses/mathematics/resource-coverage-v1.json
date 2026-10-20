@@ -15,8 +15,10 @@
         "note": "Generic lesson engine renders LESSON_DATA examples; exact per-file example payload remains a follow-up verification target."
       },
       "game_tool": {
-        "covered": 52,
-        "missing": 45
+        "covered": 76,
+        "missing": 21,
+        "new_game_needed": 10,
+        "tool_sufficient": 11
       },
       "video": {
         "enabled_reviewed": 20,
@@ -301,7 +303,7 @@
           "title": "Scale Drawings Maps Similar Figures",
           "path": "units/unit-04/lessons/lesson-06-scale-drawings-maps-similar-figures.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -311,7 +313,7 @@
           "title": "Proportional Vs Nonproportional",
           "path": "units/unit-04/lessons/lesson-07-proportional-vs-nonproportional.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -321,7 +323,7 @@
           "title": "Conversions Multistep Proportional Modelling",
           "path": "units/unit-04/lessons/lesson-08-conversions-multistep-proportional-modelling.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -482,7 +484,9 @@
           "path": "units/unit-07/lessons/lesson-01-variables-terms-coefficients-constants.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u07-l02",
@@ -492,7 +496,9 @@
           "path": "units/unit-07/lessons/lesson-02-translating-words-contexts-expressions.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u07-l03",
@@ -501,7 +507,7 @@
           "title": "Evaluating Expressions Substitution",
           "path": "units/unit-07/lessons/lesson-03-evaluating-expressions-substitution.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -512,7 +518,9 @@
           "path": "units/unit-07/lessons/lesson-04-properties-operations-equivalent-structure.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u07-l05",
@@ -522,7 +530,9 @@
           "path": "units/unit-07/lessons/lesson-05-distributive-property-factoring.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u07-l06",
@@ -532,7 +542,9 @@
           "path": "units/unit-07/lessons/lesson-06-combining-like-terms-simplifying.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u07-l07",
@@ -542,7 +554,9 @@
           "path": "units/unit-07/lessons/lesson-07-formulas-multivariable-expressions.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Scientific calculator/formula evaluation is sufficient."
         },
         {
           "id": "u07-l08",
@@ -552,7 +566,9 @@
           "path": "units/unit-07/lessons/lesson-08-structural-modelling-patterns-error-analysis.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Calculator plus modelling/error-analysis task is more appropriate than a game."
         },
         {
           "id": "u08-l01",
@@ -561,7 +577,7 @@
           "title": "Equality Solutions Balance Model",
           "path": "units/unit-08/lessons/lesson-01-equality-solutions-balance-model.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -611,7 +627,7 @@
           "title": "Variables Both Sides Identities Contradictions",
           "path": "units/unit-08/lessons/lesson-06-variables-both-sides-identities-contradictions.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -622,7 +638,9 @@
           "path": "units/unit-08/lessons/lesson-07-rearranging-formulas-literal-equations.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Calculator/formula rearrangement practice is sufficient."
         },
         {
           "id": "u08-l08",
@@ -631,7 +649,7 @@
           "title": "Context Equations Verification Error Analysis",
           "path": "units/unit-08/lessons/lesson-08-context-equations-verification-error-analysis.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -681,7 +699,7 @@
           "title": "Multistep Variables Both Sides",
           "path": "units/unit-09/lessons/lesson-05-multistep-variables-both-sides.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -691,7 +709,7 @@
           "title": "Compound Inequalities And Or",
           "path": "units/unit-09/lessons/lesson-06-compound-inequalities-and-or.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -701,7 +719,7 @@
           "title": "Contextual Constraints Discrete Solutions",
           "path": "units/unit-09/lessons/lesson-07-contextual-constraints-discrete-solutions.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -711,7 +729,7 @@
           "title": "Coordinate Plane Ordered Pairs Quadrants",
           "path": "units/unit-10/lessons/lesson-01-coordinate-plane-ordered-pairs-quadrants.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -721,7 +739,7 @@
           "title": "Patterns Sequences Rules",
           "path": "units/unit-10/lessons/lesson-02-patterns-sequences-rules.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -731,7 +749,7 @@
           "title": "Relations Inputs Outputs Functions",
           "path": "units/unit-10/lessons/lesson-03-relations-inputs-outputs-functions.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -742,7 +760,9 @@
           "path": "units/unit-10/lessons/lesson-04-tables-graphs-equations-words.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Calculator/graphing representations are sufficient."
         },
         {
           "id": "u10-l05",
@@ -771,7 +791,7 @@
           "title": "Linear Nonlinear Function Notation",
           "path": "units/unit-10/lessons/lesson-07-linear-nonlinear-function-notation.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -781,7 +801,7 @@
           "title": "Linear Modelling Prediction Residuals",
           "path": "units/unit-10/lessons/lesson-08-linear-modelling-prediction-residuals.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -792,7 +812,9 @@
           "path": "units/unit-11/lessons/lesson-01-measurement-systems-units-precision.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Measurement/precision work is tool-oriented."
         },
         {
           "id": "u11-l02",
@@ -802,7 +824,9 @@
           "path": "units/unit-11/lessons/lesson-02-angles-lines-transversals-polygons.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u11-l03",
@@ -812,7 +836,9 @@
           "path": "units/unit-11/lessons/lesson-03-perimeter-circumference-composite-boundaries.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u11-l04",
@@ -822,7 +848,9 @@
           "path": "units/unit-11/lessons/lesson-04-area-polygons-circles-composite-figures.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u11-l05",
@@ -831,7 +859,7 @@
           "title": "Scale Drawings Similarity Dilations",
           "path": "units/unit-11/lessons/lesson-05-scale-drawings-similarity-dilations.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -842,7 +870,9 @@
           "path": "units/unit-11/lessons/lesson-06-right-triangles-pythagorean-distance.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u11-l07",
@@ -852,7 +882,9 @@
           "path": "units/unit-11/lessons/lesson-07-surface-area-nets-volume.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u11-l08",
@@ -862,7 +894,9 @@
           "path": "units/unit-11/lessons/lesson-08-coordinate-geometry-design-constraints-error.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Coordinate design and error analysis are tool/project-oriented."
         },
         {
           "id": "u12-l01",
@@ -871,7 +905,7 @@
           "title": "Data Questions Variables Populations Samples",
           "path": "units/unit-12/lessons/lesson-01-data-questions-variables-populations-samples.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -881,7 +915,7 @@
           "title": "Frequency Tables Dot Plots Histograms Box Plots",
           "path": "units/unit-12/lessons/lesson-02-frequency-tables-dot-plots-histograms-box-plots.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -891,7 +925,7 @@
           "title": "Measures Center Mean Median Mode Weighted Mean",
           "path": "units/unit-12/lessons/lesson-03-measures-center-mean-median-mode-weighted-mean.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -901,7 +935,7 @@
           "title": "Variability Range Iqr Mad Outliers",
           "path": "units/unit-12/lessons/lesson-04-variability-range-iqr-mad-outliers.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -911,7 +945,7 @@
           "title": "Comparing Distributions Misleading Displays",
           "path": "units/unit-12/lessons/lesson-05-comparing-distributions-misleading-displays.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -921,7 +955,7 @@
           "title": "Probability Models Sample Spaces Relative Frequency",
           "path": "units/unit-12/lessons/lesson-06-probability-models-sample-spaces-relative-frequency.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -931,7 +965,7 @@
           "title": "Compound Probability Tree Diagrams Simulation",
           "path": "units/unit-12/lessons/lesson-07-compound-probability-tree-diagrams-simulation.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -941,7 +975,7 @@
           "title": "Sampling Bias Association Evidence Decisions",
           "path": "units/unit-12/lessons/lesson-08-sampling-bias-association-evidence-decisions.html",
           "worked_example": "engine-backed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -952,7 +986,9 @@
           "path": "units/unit-13/lessons/lesson-01-frame-meaningful-safe-answerable-question.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone inquiry framing is project work, not a game target."
         },
         {
           "id": "u13-l02",
@@ -962,7 +998,9 @@
           "path": "units/unit-13/lessons/lesson-02-select-variables-mathematics-data-representations.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone variable/data selection is project work."
         },
         {
           "id": "u13-l03",
@@ -972,7 +1010,9 @@
           "path": "units/unit-13/lessons/lesson-03-build-calculate-verify-revise-model.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone build/verify/revise work is project/tool work."
         },
         {
           "id": "u13-l04",
@@ -982,7 +1022,9 @@
           "path": "units/unit-13/lessons/lesson-04-test-assumptions-sensitivity-uncertainty-fairness.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "candidate_pending"
+          "video": "candidate_pending",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone sensitivity/fairness analysis is project/tool work."
         },
         {
           "id": "u13-l05",
@@ -992,7 +1034,9 @@
           "path": "units/unit-13/lessons/lesson-05-communicate-defend-reflect-readiness.html",
           "worked_example": "engine-backed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone communication/reflection is portfolio work."
         }
       ]
     },
@@ -1003,8 +1047,10 @@
         "note": "87/87 course-data lessons contain structured examples."
       },
       "game_tool": {
-        "covered": 50,
-        "missing": 37
+        "covered": 76,
+        "missing": 11,
+        "new_game_needed": 5,
+        "tool_sufficient": 6
       },
       "video": {
         "enabled_reviewed": 0,
@@ -1042,7 +1088,7 @@
           "path": "units/unit-01/lessons/lesson-03-operations-properties-order-of-operations.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -1087,7 +1133,9 @@
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u02-l02",
@@ -1108,7 +1156,7 @@
           "path": "units/unit-02/lessons/lesson-03-properties-equivalence-structural-reasoning.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1131,7 +1179,9 @@
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u02-l06",
@@ -1208,7 +1258,9 @@
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Scientific calculator/formula manipulation is sufficient."
         },
         {
           "id": "u03-l06",
@@ -1218,7 +1270,7 @@
           "path": "units/unit-03/lessons/lesson-06-proportions-direct-variation-percent-equations.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1230,7 +1282,9 @@
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Calculator plus applied financial/rate modelling is sufficient."
         },
         {
           "id": "u04-l01",
@@ -1273,7 +1327,7 @@
           "path": "units/unit-04/lessons/lesson-04-compound-inequalities-and-or-intersections.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1306,7 +1360,7 @@
           "path": "units/unit-05/lessons/lesson-01-relations-inputs-outputs-function-tests.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1317,7 +1371,7 @@
           "path": "units/unit-05/lessons/lesson-02-function-notation-evaluation.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -1328,7 +1382,7 @@
           "path": "units/unit-05/lessons/lesson-03-domain-range-from-tables-graphs-contexts.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1339,7 +1393,7 @@
           "path": "units/unit-05/lessons/lesson-04-multiple-representations-function-rules.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1362,7 +1416,9 @@
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u05-l07",
@@ -1372,7 +1428,7 @@
           "path": "units/unit-05/lessons/lesson-07-arithmetic-sequences-as-functions-inverse-thinking.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1416,7 +1472,7 @@
           "path": "units/unit-06/lessons/lesson-04-point-slope-standard-form.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1427,7 +1483,7 @@
           "path": "units/unit-06/lessons/lesson-05-parallel-perpendicular-lines.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1438,7 +1494,7 @@
           "path": "units/unit-06/lessons/lesson-06-scatterplots-correlation-lines-of-fit.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1449,7 +1505,7 @@
           "path": "units/unit-06/lessons/lesson-07-regression-residuals-model-limitations.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1460,7 +1516,7 @@
           "path": "units/unit-06/lessons/lesson-08-linear-modelling-prediction-decision-making.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1526,7 +1582,7 @@
           "path": "units/unit-07/lessons/lesson-06-systems-of-linear-inequalities.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1537,7 +1593,7 @@
           "path": "units/unit-07/lessons/lesson-07-feasible-regions-constraints-introductory-optimization.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1559,7 +1615,7 @@
           "path": "units/unit-08/lessons/lesson-02-zero-negative-rational-exponents.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1603,7 +1659,7 @@
           "path": "units/unit-08/lessons/lesson-06-compound-interest-half-life-exponential-modelling.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1615,7 +1671,9 @@
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u09-l02",
@@ -1626,7 +1684,9 @@
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u09-l03",
@@ -1647,7 +1707,7 @@
           "path": "units/unit-09/lessons/lesson-04-binomial-products-special-products.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1735,7 +1795,7 @@
           "path": "units/unit-10/lessons/lesson-05-solving-by-square-roots-completing-the-square.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1746,7 +1806,7 @@
           "path": "units/unit-10/lessons/lesson-06-quadratic-formula-discriminant.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1768,7 +1828,7 @@
           "path": "units/unit-10/lessons/lesson-08-linear-quadratic-systems-model-comparison.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1779,7 +1839,7 @@
           "path": "units/unit-11/lessons/lesson-01-radical-expressions-principal-roots.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1812,7 +1872,7 @@
           "path": "units/unit-11/lessons/lesson-04-pythagorean-theorem-distance.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1834,7 +1894,7 @@
           "path": "units/unit-11/lessons/lesson-06-circle-equations-radical-models-verification.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1900,7 +1960,7 @@
           "path": "units/unit-12/lessons/lesson-06-financial-mathematics-growth-loans-taxes-risk.html",
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -1923,7 +1983,9 @@
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone inquiry framing is project work."
         },
         {
           "id": "u13-l02",
@@ -1934,7 +1996,9 @@
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone assumptions/data selection is project work."
         },
         {
           "id": "u13-l03",
@@ -1945,7 +2009,9 @@
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone build/validate/revise work is project/tool work."
         },
         {
           "id": "u13-l04",
@@ -1956,7 +2022,9 @@
           "worked_example_status": "confirmed_structured",
           "worked_example": "confirmed_structured",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone sensitivity/fairness analysis is project work."
         },
         {
           "id": "u13-l05",
@@ -1978,8 +2046,10 @@
         "note": "Course architecture declares 90 visual lessons with worked reasoning; representative static lesson verified with a worked-example section."
       },
       "game_tool": {
-        "covered": 41,
-        "missing": 49
+        "covered": 51,
+        "missing": 39,
+        "new_game_needed": 12,
+        "tool_sufficient": 27
       },
       "video": {
         "enabled_reviewed": 0,
@@ -1995,7 +2065,9 @@
           "path": "units/unit-01/lessons/u01-l01.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u01-l02",
@@ -2025,7 +2097,9 @@
           "path": "units/unit-01/lessons/u01-l04.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Compass/straightedge or CAD construction tool is the correct companion."
         },
         {
           "id": "u01-l05",
@@ -2114,7 +2188,7 @@
           "title": "Tessellations, Frieze Patterns & Design Rules",
           "path": "units/unit-02/lessons/u02-l07.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -2124,7 +2198,7 @@
           "title": "Triangle Classification & Angle Relationships",
           "path": "units/unit-03/lessons/u03-l01.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -2164,7 +2238,7 @@
           "title": "Isosceles and Equilateral Triangle Theorems",
           "path": "units/unit-03/lessons/u03-l05.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -2184,7 +2258,7 @@
           "title": "Perpendicular Bisectors, Angle Bisectors & Centers",
           "path": "units/unit-03/lessons/u03-l07.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -2244,7 +2318,7 @@
           "title": "Equations of Lines in Geometric Context",
           "path": "units/unit-04/lessons/u04-l06.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -2314,7 +2388,7 @@
           "title": "Indirect Measurement, Shadows & Mirrors",
           "path": "units/unit-05/lessons/u05-l07.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -2354,7 +2428,7 @@
           "title": "Geometric Mean & Right-Triangle Altitudes",
           "path": "units/unit-06/lessons/u06-l04.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -2405,7 +2479,9 @@
           "path": "units/unit-07/lessons/u07-l01.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u07-l02",
@@ -2415,7 +2491,9 @@
           "path": "units/unit-07/lessons/u07-l02.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u07-l03",
@@ -2425,7 +2503,9 @@
           "path": "units/unit-07/lessons/u07-l03.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u07-l04",
@@ -2435,7 +2515,9 @@
           "path": "units/unit-07/lessons/u07-l04.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u07-l05",
@@ -2445,7 +2527,9 @@
           "path": "units/unit-07/lessons/u07-l05.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u07-l06",
@@ -2455,7 +2539,9 @@
           "path": "units/unit-07/lessons/u07-l06.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u07-l07",
@@ -2465,7 +2551,9 @@
           "path": "units/unit-07/lessons/u07-l07.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u08-l01",
@@ -2534,7 +2622,7 @@
           "title": "Sector Area, Segment Area & Annuli",
           "path": "units/unit-08/lessons/u08-l07.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -2544,7 +2632,7 @@
           "title": "Equation of a Circle & Coordinate Applications",
           "path": "units/unit-08/lessons/u08-l08.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -2555,7 +2643,9 @@
           "path": "units/unit-09/lessons/u09-l01.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Dynamic geometry/CAD locus exploration is more appropriate than a game."
         },
         {
           "id": "u09-l02",
@@ -2565,7 +2655,9 @@
           "path": "units/unit-09/lessons/u09-l02.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Dynamic geometry/CAD bisector-locus exploration is more appropriate than a game."
         },
         {
           "id": "u09-l03",
@@ -2575,7 +2667,9 @@
           "path": "units/unit-09/lessons/u09-l03.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Coordinate/CAD distance construction is tool-oriented."
         },
         {
           "id": "u09-l04",
@@ -2584,7 +2678,7 @@
           "title": "Coordinate Intersections and Geometric Systems",
           "path": "units/unit-09/lessons/u09-l04.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -2595,7 +2689,9 @@
           "path": "units/unit-09/lessons/u09-l05.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Circle-line intersection/tangency exploration is tool-oriented."
         },
         {
           "id": "u09-l06",
@@ -2605,7 +2701,9 @@
           "path": "units/unit-09/lessons/u09-l06.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Parabola locus construction is tool-oriented."
         },
         {
           "id": "u09-l07",
@@ -2615,7 +2713,9 @@
           "path": "units/unit-09/lessons/u09-l07.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Voronoi/nearest-point design is CAD/design-tool work."
         },
         {
           "id": "u10-l01",
@@ -2625,7 +2725,9 @@
           "path": "units/unit-10/lessons/u10-l01.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u10-l02",
@@ -2635,7 +2737,9 @@
           "path": "units/unit-10/lessons/u10-l02.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u10-l03",
@@ -2655,7 +2759,9 @@
           "path": "units/unit-10/lessons/u10-l04.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u10-l05",
@@ -2675,7 +2781,9 @@
           "path": "units/unit-10/lessons/u10-l06.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "new-game-needed",
+          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
         },
         {
           "id": "u10-l07",
@@ -2695,7 +2803,9 @@
           "path": "units/unit-11/lessons/u11-l01.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "3D measurement/modelling is better served by calculator/CAD."
         },
         {
           "id": "u11-l02",
@@ -2705,7 +2815,9 @@
           "path": "units/unit-11/lessons/u11-l02.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "3D measurement/modelling is better served by calculator/CAD."
         },
         {
           "id": "u11-l03",
@@ -2715,7 +2827,9 @@
           "path": "units/unit-11/lessons/u11-l03.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "3D measurement/modelling is better served by calculator/CAD."
         },
         {
           "id": "u11-l04",
@@ -2725,7 +2839,9 @@
           "path": "units/unit-11/lessons/u11-l04.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Net/surface-area construction is CAD/printable-tool work."
         },
         {
           "id": "u11-l05",
@@ -2735,7 +2851,9 @@
           "path": "units/unit-11/lessons/u11-l05.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Surface-area modelling is calculator/CAD work."
         },
         {
           "id": "u11-l06",
@@ -2745,7 +2863,9 @@
           "path": "units/unit-11/lessons/u11-l06.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Cross-section/solid exploration is CAD/visual-tool work."
         },
         {
           "id": "u11-l07",
@@ -2755,7 +2875,9 @@
           "path": "units/unit-11/lessons/u11-l07.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Scale/volume modelling is calculator/CAD work."
         },
         {
           "id": "u12-l01",
@@ -2765,7 +2887,9 @@
           "path": "units/unit-12/lessons/u12-l01.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "CAD workspace lesson is itself a tool lesson."
         },
         {
           "id": "u12-l02",
@@ -2775,7 +2899,9 @@
           "path": "units/unit-12/lessons/u12-l02.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "CAD precision lesson is itself a tool lesson."
         },
         {
           "id": "u12-l03",
@@ -2785,7 +2911,9 @@
           "path": "units/unit-12/lessons/u12-l03.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "CAD layers/objects lesson is itself a tool lesson."
         },
         {
           "id": "u12-l04",
@@ -2795,7 +2923,9 @@
           "path": "units/unit-12/lessons/u12-l04.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Scale-plan lesson is itself a CAD tool lesson."
         },
         {
           "id": "u12-l05",
@@ -2805,7 +2935,9 @@
           "path": "units/unit-12/lessons/u12-l05.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Materials schedule lesson is CAD/calculator work."
         },
         {
           "id": "u12-l06",
@@ -2815,7 +2947,9 @@
           "path": "units/unit-12/lessons/u12-l06.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Modular design lesson is CAD tool work."
         },
         {
           "id": "u12-l07",
@@ -2825,7 +2959,9 @@
           "path": "units/unit-12/lessons/u12-l07.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Export/technical-defense lesson is CAD/portfolio work."
         },
         {
           "id": "u13-l01",
@@ -2835,7 +2971,9 @@
           "path": "units/unit-13/lessons/u13-l01.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone design framing is project work."
         },
         {
           "id": "u13-l02",
@@ -2845,7 +2983,9 @@
           "path": "units/unit-13/lessons/u13-l02.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone construction/model/proof development is project/tool work."
         },
         {
           "id": "u13-l03",
@@ -2855,7 +2995,9 @@
           "path": "units/unit-13/lessons/u13-l03.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone sensitivity/limitations work is project/tool work."
         },
         {
           "id": "u13-l04",
@@ -2865,7 +3007,9 @@
           "path": "units/unit-13/lessons/u13-l04.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Technical portfolio preparation is evidence work."
         },
         {
           "id": "u13-l05",
@@ -2875,7 +3019,9 @@
           "path": "units/unit-13/lessons/u13-l05.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Design defense/revision is portfolio work."
         },
         {
           "id": "u13-l06",
@@ -2885,7 +3031,9 @@
           "path": "units/unit-13/lessons/u13-l06.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Final synthesis/completion record is assessment/evidence work."
         }
       ]
     },
@@ -2896,8 +3044,10 @@
         "note": "Course architecture declares 92 detailed lessons with worked examples; representative static lesson verified with a worked-examples section."
       },
       "game_tool": {
-        "covered": 80,
-        "missing": 12
+        "covered": 87,
+        "missing": 5,
+        "new_game_needed": 0,
+        "tool_sufficient": 5
       },
       "video": {
         "enabled_reviewed": 0,
@@ -2912,7 +3062,7 @@
           "title": "Function Language, Notation & Evaluation",
           "path": "units/unit-01/lessons/u01-l01.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "candidate_pending"
         },
         {
@@ -3152,7 +3302,7 @@
           "title": "Solving Rational Equations & Extraneous Solutions",
           "path": "units/unit-04/lessons/u04-l04.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -3182,7 +3332,7 @@
           "title": "Direct, Inverse, Joint & Combined Variation",
           "path": "units/unit-04/lessons/u04-l07.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -3193,7 +3343,9 @@
           "path": "units/unit-04/lessons/u04-l08.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Rational modelling/rate/work problems are calculator and modelling tasks."
         },
         {
           "id": "u05-l01",
@@ -3202,7 +3354,7 @@
           "title": "Rational Exponents & Radical Equivalence",
           "path": "units/unit-05/lessons/u05-l01.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -3222,7 +3374,7 @@
           "title": "Operations with Radicals & Rationalizing",
           "path": "units/unit-05/lessons/u05-l03.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -3232,7 +3384,7 @@
           "title": "Solving Radical Equations & Checking Solutions",
           "path": "units/unit-05/lessons/u05-l04.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         },
         {
@@ -3783,7 +3935,9 @@
           "path": "units/unit-13/lessons/u13-l01.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone inquiry framing is project work."
         },
         {
           "id": "u13-l02",
@@ -3793,7 +3947,9 @@
           "path": "units/unit-13/lessons/u13-l02.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone variables/data/assumptions selection is project work."
         },
         {
           "id": "u13-l03",
@@ -3803,7 +3959,9 @@
           "path": "units/unit-13/lessons/u13-l03.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone build/visualize/validate work is project/tool work."
         },
         {
           "id": "u13-l04",
@@ -3813,7 +3971,9 @@
           "path": "units/unit-13/lessons/u13-l04.html",
           "worked_example": "template-confirmed",
           "game_tool": "missing",
-          "video": "missing"
+          "video": "missing",
+          "resource_gap_classification": "tool-sufficient",
+          "resource_gap_note": "Capstone sensitivity/fairness analysis is project work."
         },
         {
           "id": "u13-l05",
@@ -3822,7 +3982,7 @@
           "title": "Present, Defend, Revise & Reflect",
           "path": "units/unit-13/lessons/u13-l05.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
+          "game_tool": "covered",
           "video": "missing"
         }
       ]
@@ -3831,5 +3991,9 @@
   "reuse_wave_1": {
     "placements_added": 28,
     "policy": "Existing canonical games only; direct concept matches; no new games created."
+  },
+  "reuse_wave_2": {
+    "policy": "Second conservative reuse wave plus final direct matches before development classification.",
+    "classification_policy": "Remaining missing lessons are classified as tool-sufficient or new-game-needed; tool-sufficient lessons are intentionally not forced into a game."
   }
 }
