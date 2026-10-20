@@ -1027,6 +1027,18 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Basic probability concepts; relative frequency and sample-space construction remain written lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U12-L04",
+      "unit": 12,
+      "lesson": 4,
+      "lesson_file": "units/unit-12/lessons/lesson-04-variability-range-iqr-mad-outliers.html",
+      "asset_id": "MATH-STATISTICS-IQR-KHAN-001",
+      "shared_file": "../assets/video-library/statistics-iqr-khan.json",
+      "placement_status": "topic_matched_pending_playback_caption_and_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Interquartile range only; MAD, range, and outliers remain in written instruction"
     }
   ]
 }
