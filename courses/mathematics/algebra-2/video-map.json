@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "course_id": "KH-MATH-A2",
   "course": "algebra-2",
   "shared_library": "../assets/video-library/",
@@ -14,7 +14,8 @@
       "enabled": false,
       "optional": true,
       "usage": "prerequisite_or_supplemental",
-      "alignment_note": "function notation prerequisite review"
+      "alignment_note": "function notation prerequisite review",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U01-L03",
@@ -25,7 +26,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct parent-function transformation review with end-behavior preview."
+      "alignment_note": "Direct parent-function transformation review with end-behavior preview.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U07-L05",
@@ -36,7 +38,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for solving logarithmic equations; lesson remains responsible for domain checks."
+      "alignment_note": "Direct match for solving logarithmic equations; lesson remains responsible for domain checks.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U12-L03",
@@ -47,7 +50,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct conditional-probability and independence match; Bayes reasoning remains additional lesson content."
+      "alignment_note": "Direct conditional-probability and independence match; Bayes reasoning remains additional lesson content.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U04-L05",
@@ -58,7 +62,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for reciprocal/rational function holes and asymptotes; verify exact transformation/domain coverage before activation."
+      "alignment_note": "Direct match for reciprocal/rational function holes and asymptotes; verify exact transformation/domain coverage before activation.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U09-L04",
@@ -69,7 +74,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct introductory match for finite geometric series and sequence-to-series connection."
+      "alignment_note": "Direct introductory match for finite geometric series and sequence-to-series connection.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U11-L05",
@@ -80,7 +86,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for solving trigonometric equations on intervals; verify course notation and identity prerequisites."
+      "alignment_note": "Direct match for solving trigonometric equations on intervals; verify course notation and identity prerequisites.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U11-L07",
@@ -91,7 +98,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct Law of Cosines match for SSS/SAS oblique triangles; Heron-type area remains lesson content."
+      "alignment_note": "Direct Law of Cosines match for SSS/SAS oblique triangles; Heron-type area remains lesson content.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U12-L05",
@@ -102,7 +110,8 @@
       "enabled": false,
       "optional": true,
       "usage": "prerequisite_or_supplemental",
-      "alignment_note": "Normal-distribution foundation; z-scores and percentiles require additional lesson-specific instruction."
+      "alignment_note": "Normal-distribution foundation; z-scores and percentiles require additional lesson-specific instruction.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U08-L05",
@@ -113,7 +122,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct support for row operations and row-echelon form in matrix systems; verify exact Gauss-Jordan scope before activation."
+      "alignment_note": "Direct support for row operations and row-echelon form in matrix systems; verify exact Gauss-Jordan scope before activation.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U09-L05",
@@ -124,7 +134,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for infinite geometric series and convergence."
+      "alignment_note": "Direct match for infinite geometric series and convergence.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U02-L05",
@@ -135,7 +146,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for operations with complex numbers; the same source also previews graphing/modulus for U02-L07."
+      "alignment_note": "Direct match for operations with complex numbers; the same source also previews graphing/modulus for U02-L07.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U02-L07",
@@ -146,7 +158,8 @@
       "enabled": false,
       "optional": true,
       "usage": "prerequisite_or_supplemental",
-      "alignment_note": "Source description includes graphing complex numbers and absolute value; verify conjugate coverage separately."
+      "alignment_note": "Source description includes graphing complex numbers and absolute value; verify conjugate coverage separately.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U03-L01",
@@ -157,7 +170,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct long-division match including remainders and missing terms."
+      "alignment_note": "Direct long-division match including remainders and missing terms.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U03-L02",
@@ -168,7 +182,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct synthetic-division match; listing also identifies remainder-theorem evaluation."
+      "alignment_note": "Direct synthetic-division match; listing also identifies remainder-theorem evaluation.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U06-L02",
@@ -179,7 +194,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct growth/decay and applied exponential-model match at Algebra/Precalculus level."
+      "alignment_note": "Direct growth/decay and applied exponential-model match at Algebra/Precalculus level.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U03-L04",
@@ -190,7 +206,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct Rational Root/Zero Theorem match; listing also includes synthetic-division follow-through."
+      "alignment_note": "Direct Rational Root/Zero Theorem match; listing also includes synthetic-division follow-through.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U06-L05",
@@ -201,7 +218,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for solving exponential equations using logarithms and natural logs."
+      "alignment_note": "Direct match for solving exponential equations using logarithms and natural logs.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U08-L06",
@@ -212,7 +230,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct matrix-inverse-by-row-reduction support; determinant/transformation-model portions remain lesson content."
+      "alignment_note": "Direct matrix-inverse-by-row-reduction support; determinant/transformation-model portions remain lesson content.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U09-L06",
@@ -223,7 +242,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct sigma-notation/summation match."
+      "alignment_note": "Direct sigma-notation/summation match.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U11-L06",
@@ -234,7 +254,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct Law of Sines and SSA ambiguous-case match."
+      "alignment_note": "Direct Law of Sines and SSA ambiguous-case match.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U03-L06",
@@ -245,7 +266,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for zeros, multiplicity and graph behavior."
+      "alignment_note": "Direct match for zeros, multiplicity and graph behavior.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U08-L06",
@@ -256,7 +278,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct determinant support for the determinants/inverses lesson; transformation models remain lesson content."
+      "alignment_note": "Direct determinant support for the determinants/inverses lesson; transformation models remain lesson content.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U09-L07",
@@ -267,7 +290,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct binomial-theorem expansion match; Pascal-triangle linkage remains lesson content."
+      "alignment_note": "Direct binomial-theorem expansion match; Pascal-triangle linkage remains lesson content.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U11-L01",
@@ -278,7 +302,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct Pythagorean-identity match; reciprocal/fundamental identities remain additional lesson content."
+      "alignment_note": "Direct Pythagorean-identity match; reciprocal/fundamental identities remain additional lesson content.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A2-U12-L05",
@@ -289,7 +314,9 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct z-score interpretation/comparison support alongside the existing normal-distribution introduction."
+      "alignment_note": "Direct z-score interpretation/comparison support alongside the existing normal-distribution introduction.",
+      "release_approved": false
     }
-  ]
+  ],
+  "release_gate": "Placement requires enabled=true and release_approved=true; canonical asset requires enabled=true and certification.student_release_approved=true."
 }
