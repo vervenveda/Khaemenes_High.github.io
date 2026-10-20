@@ -583,6 +583,30 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Pattern discovery only; modeling and error analysis require written lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U07-L04",
+      "unit": 7,
+      "lesson": 4,
+      "lesson_file": "units/unit-07/lessons/lesson-04-properties-operations-equivalent-structure.html",
+      "asset_id": "MATH-EQUIVALENT-EXPRESSIONS-KHAN-001",
+      "shared_file": "../assets/video-library/equivalent-expressions-khan.json",
+      "placement_status": "topic_matched_pending_playback_caption_content_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Equivalent algebraic expression practice, with properties of operations supported by lesson text"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U07-L07",
+      "unit": 7,
+      "lesson": 7,
+      "lesson_file": "units/unit-07/lessons/lesson-07-formulas-multivariable-expressions.html",
+      "asset_id": "MATH-MULTIVARIABLE-EXPRESSIONS-NOTES-001",
+      "shared_file": "../assets/video-library/multiple-variables-notes-examples.json",
+      "placement_status": "topic_matched_pending_playback_caption_content_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Evaluating expressions with multiple variables; formulas remain in lesson text; new instructor pending quality review"
     }
   ]
 }
