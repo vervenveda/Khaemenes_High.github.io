@@ -2016,9 +2016,9 @@
         "note": "Course architecture declares 90 visual lessons with worked reasoning; representative static lesson verified with a worked-example section."
       },
       "game_tool": {
-        "covered": 56,
-        "missing": 34,
-        "new_game_needed": 7,
+        "covered": 63,
+        "missing": 27,
+        "new_game_needed": 0,
         "tool_sufficient": 27
       },
       "video": {
@@ -2034,10 +2034,8 @@
           "title": "Points, Lines, Planes & Defined Terms",
           "path": "units/unit-01/lessons/u01-l01.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u01-l02",
@@ -2458,10 +2456,8 @@
           "title": "Parallelogram Properties & Tests",
           "path": "units/unit-07/lessons/u07-l02.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u07-l03",
@@ -2470,10 +2466,8 @@
           "title": "Rectangles, Rhombi & Squares",
           "path": "units/unit-07/lessons/u07-l03.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u07-l04",
@@ -2482,10 +2476,8 @@
           "title": "Trapezoids, Kites & Midsegments",
           "path": "units/unit-07/lessons/u07-l04.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u07-l05",
@@ -2494,10 +2486,8 @@
           "title": "Quadrilateral Coordinate Proofs",
           "path": "units/unit-07/lessons/u07-l05.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u07-l06",
@@ -2516,10 +2506,8 @@
           "title": "Polygon Decomposition & Design Constraints",
           "path": "units/unit-07/lessons/u07-l07.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u08-l01",
@@ -2740,10 +2728,8 @@
           "title": "Geometric Probability by Length and Area",
           "path": "units/unit-10/lessons/u10-l06.html",
           "worked_example": "template-confirmed",
-          "game_tool": "missing",
-          "video": "missing",
-          "resource_gap_classification": "new-game-needed",
-          "resource_gap_note": "A focused interactive practice game would add distinct instructional value."
+          "game_tool": "covered",
+          "video": "missing"
         },
         {
           "id": "u10-l07",
@@ -3970,5 +3956,11 @@
     "games_created": 1,
     "placements_added": 1,
     "policy": "Canonical formative piecewise/discrete-model game closes Algebra I's final genuine new-game need."
-  }
+  },
+  "geometry_visual_reasoning_cluster": {
+    "games_created": 4,
+    "placements_added": 7,
+    "policy": "Final Geometry-focused formative cluster resolves all remaining genuine game-development gaps without attaching games to tool/project lessons."
+  },
+  "game_development_status": "No remaining genuine new-game gaps across Pre-Algebra, Algebra I, Geometry, or Algebra II. All uncovered lessons are intentionally tool-sufficient."
 }
