@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "course_id": "KH-MATH-GEO",
   "course": "geometry",
   "shared_library": "../assets/video-library/",
@@ -14,7 +14,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for parallel lines cut by a transversal and corresponding/alternate angle relationships."
+      "alignment_note": "Direct match for parallel lines cut by a transversal and corresponding/alternate angle relationships.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U04-L03",
@@ -25,7 +26,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for slope as direction/rate from coordinate points."
+      "alignment_note": "Direct match for slope as direction/rate from coordinate points.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U05-L06",
@@ -36,7 +38,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for scale drawings, maps, and scale-factor reasoning."
+      "alignment_note": "Direct match for scale drawings, maps, and scale-factor reasoning.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U06-L01",
@@ -47,7 +50,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct Pythagorean theorem supplement; converse and formal proof remain lesson responsibilities."
+      "alignment_note": "Direct Pythagorean theorem supplement; converse and formal proof remain lesson responsibilities.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U10-L01",
@@ -58,7 +62,8 @@
       "enabled": false,
       "optional": true,
       "usage": "prerequisite_or_supplemental",
-      "alignment_note": "Area prerequisite/review for triangles, parallelograms, and trapezoids; verify exact shape coverage before activation."
+      "alignment_note": "Area prerequisite/review for triangles, parallelograms, and trapezoids; verify exact shape coverage before activation.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U11-L04",
@@ -69,7 +74,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for nets and surface area of polyhedra; verify prism/pyramid coverage and captions before activation."
+      "alignment_note": "Direct match for nets and surface area of polyhedra; verify prism/pyramid coverage and captions before activation.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U01-L06",
@@ -80,7 +86,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Worked two-column geometric proof example; lesson still owns proof-form comparison and general reasoning."
+      "alignment_note": "Worked two-column geometric proof example; lesson still owns proof-form comparison and general reasoning.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U02-L01",
@@ -91,7 +98,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Covers translations with coordinate-plane context; same source may support later reflection/rotation lessons after review."
+      "alignment_note": "Covers translations with coordinate-plane context; same source may support later reflection/rotation lessons after review.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U06-L05",
@@ -102,7 +110,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for sine, cosine and tangent ratios in right triangles."
+      "alignment_note": "Direct match for sine, cosine and tangent ratios in right triangles.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U08-L01",
@@ -113,7 +122,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Introductory circle vocabulary and relationships; advanced arc/tangent theorem coverage remains separate."
+      "alignment_note": "Introductory circle vocabulary and relationships; advanced arc/tangent theorem coverage remains separate.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U11-L01",
@@ -124,7 +134,8 @@
       "enabled": false,
       "optional": true,
       "usage": "prerequisite_or_supplemental",
-      "alignment_note": "Prism-volume reasoning through base area times height; does not replace Cavalieri or cylinder content."
+      "alignment_note": "Prism-volume reasoning through base area times height; does not replace Cavalieri or cylinder content.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U01-L04",
@@ -135,7 +146,8 @@
       "enabled": false,
       "optional": true,
       "usage": "prerequisite_or_supplemental",
-      "alignment_note": "Exact construction example for angle bisectors; lesson remains responsible for broader compass-and-straightedge constructions."
+      "alignment_note": "Exact construction example for angle bisectors; lesson remains responsible for broader compass-and-straightedge constructions.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U03-L02",
@@ -146,7 +158,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct SSS/SAS triangle congruence match with two-column proof examples."
+      "alignment_note": "Direct SSS/SAS triangle congruence match with two-column proof examples.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U03-L03",
@@ -157,7 +170,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Same source includes ASA/AAS; verify HL coverage separately before activation."
+      "alignment_note": "Same source includes ASA/AAS; verify HL coverage separately before activation.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U05-L03",
@@ -168,7 +182,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct similar-triangle/proportion companion; lesson remains responsible for formal AA similarity proof structure."
+      "alignment_note": "Direct similar-triangle/proportion companion; lesson remains responsible for formal AA similarity proof structure.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U08-L05",
@@ -179,7 +194,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct tangent/radius relationship match; verify exact theorem sequence before activation."
+      "alignment_note": "Direct tangent/radius relationship match; verify exact theorem sequence before activation.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U08-L06",
@@ -190,7 +206,8 @@
       "enabled": false,
       "optional": true,
       "usage": "prerequisite_or_supplemental",
-      "alignment_note": "Tangent-angle/arc relationships support the lesson; full chord/secant/tangent power-theorem coverage remains additional content."
+      "alignment_note": "Tangent-angle/arc relationships support the lesson; full chord/secant/tangent power-theorem coverage remains additional content.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U03-L07",
@@ -201,7 +218,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for perpendicular bisectors, angle bisectors and triangle centers."
+      "alignment_note": "Direct match for perpendicular bisectors, angle bisectors and triangle centers.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U08-L02",
@@ -212,7 +230,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Listing description explicitly covers arc length, sectors and central angles."
+      "alignment_note": "Listing description explicitly covers arc length, sectors and central angles.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U08-L03",
@@ -223,7 +242,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Listing description explicitly covers inscribed angles and intercepted arcs."
+      "alignment_note": "Listing description explicitly covers inscribed angles and intercepted arcs.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U08-L06",
@@ -234,7 +254,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for chord-chord, secant-tangent and secant-secant power theorems."
+      "alignment_note": "Direct match for chord-chord, secant-tangent and secant-secant power theorems.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U11-L06",
@@ -245,7 +266,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Exact cross-sections/solids-of-revolution match; new instructor requires full Academy-fit review before activation."
+      "alignment_note": "Exact cross-sections/solids-of-revolution match; new instructor requires full Academy-fit review before activation.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U03-L03",
@@ -256,7 +278,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct HL congruence/two-column proof support for the lesson's HL component."
+      "alignment_note": "Direct HL congruence/two-column proof support for the lesson's HL component.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U08-L08",
@@ -267,7 +290,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct match for standard equation of a circle using center and radius."
+      "alignment_note": "Direct match for standard equation of a circle using center and radius.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U11-L02",
@@ -278,7 +302,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct pyramid-volume companion."
+      "alignment_note": "Direct pyramid-volume companion.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U11-L02",
@@ -289,7 +314,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct cone-volume companion for the same lesson."
+      "alignment_note": "Direct cone-volume companion for the same lesson.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U11-L03",
@@ -300,7 +326,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct sphere-volume support; surface-area portion remains lesson content."
+      "alignment_note": "Direct sphere-volume support; surface-area portion remains lesson content.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U03-L04",
@@ -311,7 +338,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Direct CPCTC/multi-step triangle-proof match."
+      "alignment_note": "Direct CPCTC/multi-step triangle-proof match.",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-GEO-U11-L07",
@@ -322,7 +350,9 @@
       "enabled": false,
       "optional": true,
       "usage": "prerequisite_or_supplemental",
-      "alignment_note": "Supports cubic volume scaling under dimension changes; full similar-solid and surface-area scale relationships remain lesson content."
+      "alignment_note": "Supports cubic volume scaling under dimension changes; full similar-solid and surface-area scale relationships remain lesson content.",
+      "release_approved": false
     }
-  ]
+  ],
+  "release_gate": "Placement requires enabled=true and release_approved=true; canonical asset requires enabled=true and certification.student_release_approved=true."
 }
