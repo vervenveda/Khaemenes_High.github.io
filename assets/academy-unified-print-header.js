@@ -5,7 +5,8 @@ function clean(s){return String(s||'').replace(/\s+/g,' ').trim();}
 function metadata(){
  const path=decodeURI(location.pathname);const h=clean(document.querySelector('main h1,article h1,h1')?.textContent);
  const gradeMatch=path.match(/(?:english-|grade[-_/]?|grade)(0?[9]|10|11|12)(?:\/|\b)/i)||path.match(/(?:english-|grade-)(0?[9]|10|11|12)/i);
- const grade=gradeMatch?Number(gradeMatch[1]):(path.includes('/pre-algebra/')?9:null);
+ const subjectGrade=(path.match(/\/(?:integrated-science|biology|chemistry|physics-engineering)[-_](9|10|11|12)(?:\/|\b)/i)||[])[1];
+ const grade=gradeMatch?Number(gradeMatch[1]):subjectGrade?Number(subjectGrade):(path.includes('/pre-algebra/')?9:null);
  const unit=(path.match(/unit[-_/]?(\d{1,2})/i)||[])[1];
  const lesson=(path.match(/lesson[-_/]?(\d{1,2})/i)||[])[1];
  const week=(path.match(/week[-_/]?(\d{1,2})/i)||[])[1];
