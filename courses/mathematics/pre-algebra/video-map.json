@@ -499,6 +499,18 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Matched to primary lesson objective; human playback and caption checks still required."
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U06-L05",
+      "unit": 6,
+      "lesson": 5,
+      "lesson_file": "units/unit-06/lessons/lesson-05-estimating-irrational-roots.html",
+      "asset_id": "MATH-ESTIMATING-SQUARE-ROOTS-KHAN-001",
+      "shared_file": "../assets/video-library/estimating-square-roots-khan.json",
+      "placement_status": "topic_matched_pending_embed_caption_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Estimate between consecutive perfect squares using non-perfect-square examples"
     }
   ]
 }
