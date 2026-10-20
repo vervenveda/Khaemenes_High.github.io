@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Algebra Language Lab · Khaemenes Mathematics</title><style>
+:root{font-family:"Avenir Next","Segoe UI",Arial,sans-serif;color:#f4efe6;background:#07111d}*{box-sizing:border-box}body{margin:0}main{max-width:900px;margin:auto;padding:26px 16px 70px}h1,h2{font-family:Georgia,serif;font-weight:400}h1{font-size:clamp(30px,5vw,44px);margin:.3em 0}.card{background:#102033;border:1px solid rgba(234,215,170,.25);border-radius:7px;padding:20px;margin:18px 0;box-shadow:0 16px 40px rgba(0,0,0,.24)}button,a.button{font:inherit;color:#f4efe6;background:#17344a;border:1px solid #c9a35f;border-radius:7px;padding:10px 13px;text-decoration:none;cursor:pointer}button:disabled{opacity:.5;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ead7aa;outline-offset:3px}.choices{display:grid;gap:9px}.choices label{display:block;padding:10px;border:1px solid rgba(234,215,170,.18);border-radius:7px;background:#0b1827;cursor:pointer}.choices input{margin-right:10px}.muted{color:#b7c2cf}.status{min-height:54px;border-left:3px solid #c9a35f;padding:8px 12px}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions>*{flex:0 0 auto}progress{width:100%}@media(max-width:520px){.actions>*{width:100%}}</style></head><body><main>
+<p class="muted">Khaemenes Academy · Mathematics · Formative Practice</p><h1>Algebra Language Lab</h1>
+<p>Build fluency with the language of algebra: variables, terms, coefficients, constants, factors, degree, monomials, and polynomial structure. This practice never awards official mastery.</p>
+<section class="card"><p id="modeLabel" class="muted"></p><p id="counter"></p><progress id="progress" max="10" value="0"></progress><p id="saved" class="muted"></p><h2 id="prompt"></h2><div id="choices" class="choices"></div><p id="status" class="status" role="status" aria-live="polite">Choose the strongest answer.</p><div class="actions"><button id="check" type="button">Check answer</button><button id="next" type="button" disabled>Next</button><button id="restart" type="button">New round</button><a id="returnLink" class="button" href="#">Return to lesson</a></div></section>
+</main><script>(()=>{"use strict";
+const q=new URLSearchParams(location.search),mode=q.get("mode")||"",course=q.get("course")||"prealgebra",unit=q.get("unit")||"07",lesson=(q.get("lesson")||"01").replace(/\D/g,"").padStart(2,"0");
+const BANK=[
+["In 7x+4, what is 7?",["variable","coefficient","constant","term"],1,"7 multiplies x, so it is the coefficient."],
+["In 7x+4, what is x?",["variable","constant","factor only","degree"],0,"x is the variable because its value may change."],
+["In 7x+4, what is 4?",["coefficient","variable","constant","degree"],2,"4 has no variable factor, so it is a constant term."],
+["How many terms are in 3a²−5a+8?",["1","2","3","4"],2,"Terms are separated by addition or subtraction: 3a², −5a, and 8."],
+["What is the degree of 6x³−2x+1?",["1","2","3","6"],2,"The greatest exponent of x is 3."],
+["Which expression is a monomial?",["4x²","x+4","x²−9","2/x"],0,"4x² is one term with a nonnegative integer exponent."],
+["Which expression is a binomial?",["5x","x+3","x²+x+1","7"],1,"A binomial has exactly two terms."],
+["Which expression is a trinomial?",["x²+3x+2","4x−1","6x³","x⁴+x³+x²+x+1"],0,"A trinomial has exactly three terms."],
+["In −9m²n, what is the numerical coefficient?",["−9","9","2","n"],0,"The signed numerical factor is −9."],
+["Which is a factor of 12x²?",["12x and x","12x²+1","12+x²","x−2"],0,"12x·x=12x², so both are factors."],
+["What is the leading coefficient of 4x³−2x²+x−9?",["3","4","−2","−9"],1,"The highest-degree term is 4x³, whose coefficient is 4."],
+["Which is written in standard polynomial form?",["2+x³−4x²","x³−4x²+2","−4x²+x³+2","2−4x²+x³"],1,"Standard form lists terms by descending exponent."],
+["What is the degree of the monomial 5a²b³?",["2","3","5","6"],2,"For a monomial, add exponents: 2+3=5."],
+["Which statement is true?",["A variable is always x.","A coefficient is the number multiplying a variable term.","A constant must equal zero.","Every expression has one term."],1,"A coefficient is the numerical factor multiplying the variable part."],
+["In 2x²−7x+5, which term has degree 1?",["2x²","−7x","5","all three"],1,"−7x has exponent 1."],
+["Which expression is NOT a polynomial?",["3x²−1","7","x³+x","2/x"],3,"2/x=2x⁻¹ has a negative exponent, so it is not a polynomial."],
+["Which phrase best describes 8p³?",["constant","monomial","binomial","equation"],1,"8p³ is one algebraic term, so it is a monomial."],
+["What does the degree of a polynomial tell you?",["Number of variables only","Greatest exponent pattern in its terms","Its value at x=0","Its number of solutions exactly"],1,"The polynomial degree is determined by its highest-degree term."]
+];
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+let tasks=[],i=0,score=0,graded=false;const $=id=>document.getElementById(id),KEY="khae-algebra-language-lab-v1";
+function record(){try{return JSON.parse(localStorage.getItem(KEY)||'{"best":0,"attempts":0}')}catch{return {best:0,attempts:0}}}
+function save(p){try{const r=record();r.best=Math.max(Number(r.best)||0,p);r.attempts=(Number(r.attempts)||0)+1;localStorage.setItem(KEY,JSON.stringify(r))}catch{}}
+function lessonHref(){if(course==="algebra1")return "../../../algebra-1/units/unit-"+unit+"/lessons/"+(lesson==="01"?"lesson-01-variables-terms-factors-coefficients-degree.html":lesson==="05"?"lesson-05-monomials-introductory-polynomial-classification.html":"../");return "../../../pre-algebra/units/unit-"+unit+"/lessons/lesson-"+lesson+"-"+(lesson==="01"?"variables-terms-coefficients-constants":"algebra-language")+".html"}
+function showRecord(){const r=record();$("saved").textContent=r.attempts?"Saved best: "+r.best+"% · "+r.attempts+" completed round(s).":"Scores save locally as formative practice only."}
+function start(){tasks=shuffle(BANK).slice(0,10);i=0;score=0;$("finish")?.remove();render()}
+function render(){graded=false;const t=tasks[i];$("counter").textContent="Question "+(i+1)+" of "+tasks.length;$("progress").value=i;$("prompt").textContent=t[0];$("choices").replaceChildren();t[1].forEach((c,n)=>{const l=document.createElement("label"),r=document.createElement("input");r.type="radio";r.name="answer";r.value=n;l.append(r,document.createTextNode(c));$("choices").append(l)});$("status").textContent="Choose the strongest answer.";$("check").disabled=false;$("next").disabled=true;$("next").textContent=i===tasks.length-1?"See results":"Next"}
+$("check").onclick=()=>{if(graded)return;const x=document.querySelector('input[name="answer"]:checked');if(!x){$("status").textContent="Choose an answer first.";return}graded=true;const ok=Number(x.value)===tasks[i][2];if(ok)score++;$("status").textContent=(ok?"Correct. ":"Review: ")+tasks[i][3];document.querySelectorAll('input[name="answer"]').forEach(r=>r.disabled=true);$("check").disabled=true;$("next").disabled=false};
+$("next").onclick=()=>{if(!graded)return;i++;if(i<tasks.length){render();return}const p=Math.round(score/tasks.length*100);save(p);$("progress").value=tasks.length;$("counter").textContent="Round complete";$("prompt").textContent=score+" / "+tasks.length+" correct ("+p+"%)";$("choices").replaceChildren();$("status").textContent=p>=80?"Strong formative result. Official mastery still comes from the lesson assessment.":"Review the explanations and run a fresh randomized round.";$("check").disabled=true;$("next").disabled=true;showRecord()};
+$("restart").onclick=start;$("modeLabel").textContent=mode?"Mode: "+mode.replaceAll("-"," "):"Algebra vocabulary and structure";$("returnLink").href=lessonHref();showRecord();start();
+})();</script></body></html>
