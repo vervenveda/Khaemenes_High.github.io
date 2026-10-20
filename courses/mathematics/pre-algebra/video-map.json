@@ -1099,6 +1099,90 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Sampling and bias methods; this advanced video requires age-level review"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U12-L04",
+      "unit": 12,
+      "lesson": 4,
+      "lesson_file": "units/unit-12/lessons/lesson-04-variability-range-iqr-mad-outliers.html",
+      "asset_id": "MATH-MAD-ORGANIC-001",
+      "shared_file": "../assets/video-library/mean-absolute-deviation-organic.json",
+      "placement_status": "supplement_pending_live_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Additional explanation of mean absolute deviation; range and outliers remain in reading"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U12-L07",
+      "unit": 12,
+      "lesson": 7,
+      "lesson_file": "units/unit-12/lessons/lesson-07-compound-probability-tree-diagrams-simulation.html",
+      "asset_id": "MATH-COMPOUND-INDEPENDENT-KHAN-001",
+      "shared_file": "../assets/video-library/compound-probability-independent-khan.json",
+      "placement_status": "supplement_pending_live_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Independent compound events supplement; simulation remains in lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U13-L01",
+      "unit": 13,
+      "lesson": 1,
+      "lesson_file": "units/unit-13/lessons/lesson-01-frame-meaningful-safe-answerable-question.html",
+      "asset_id": "MATH-STATISTICAL-QUESTIONS-KHAN-001",
+      "shared_file": "../assets/video-library/statistical-questions-khan.json",
+      "placement_status": "prerequisite_only_not_capstone_complete_pending_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Statistical question formulation as capstone prerequisite; ethics and answerability in core lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U13-L02",
+      "unit": 13,
+      "lesson": 2,
+      "lesson_file": "units/unit-13/lessons/lesson-02-select-variables-mathematics-data-representations.html",
+      "asset_id": "MATH-DATA-GRAPHS-MATHANTICS-001",
+      "shared_file": "../assets/video-library/data-and-graphs-mathantics.json",
+      "placement_status": "prerequisite_only_not_capstone_complete_pending_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Data representations review; selecting variables and appropriate models require capstone lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U13-L03",
+      "unit": 13,
+      "lesson": 3,
+      "lesson_file": "units/unit-13/lessons/lesson-03-build-calculate-verify-revise-model.html",
+      "asset_id": "MATH-PREDICTING-LINEAR-MODELS-KHAN-001",
+      "shared_file": "../assets/video-library/predicting-linear-models-khan.json",
+      "placement_status": "prerequisite_only_not_capstone_complete_pending_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Linear prediction example; model validation and revision remain in written capstone"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U13-L04",
+      "unit": 13,
+      "lesson": 4,
+      "lesson_file": "units/unit-13/lessons/lesson-04-test-assumptions-sensitivity-uncertainty-fairness.html",
+      "asset_id": "MATH-MISLEADING-GRAPHS-TEDED-001",
+      "shared_file": "../assets/video-library/misleading-graphs-teded.json",
+      "placement_status": "prerequisite_only_not_capstone_complete_pending_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Misleading visualizations as critical reasoning; assumptions sensitivity and fairness remain core lesson"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U13-L05",
+      "unit": 13,
+      "lesson": 5,
+      "lesson_file": "units/unit-13/lessons/lesson-05-communicate-defend-reflect-readiness.html",
+      "asset_id": "MATH-NUMBER-PATTERNS-MATHANTICS-001",
+      "shared_file": "../assets/video-library/number-patterns-mathantics.json",
+      "placement_status": "prerequisite_only_not_capstone_complete_pending_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Patterns as prior foundational review only; no verified video found for communicating and defending mathematical models"
     }
   ]
 }
