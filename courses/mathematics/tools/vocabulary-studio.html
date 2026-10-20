@@ -87,7 +87,7 @@ unit.value=Number.isInteger(incoming)&&incoming>=(course.value==="pre-algebra"?0
 function unitAvailability(){
  const unit00=unit.querySelector('option[value="00"]');
  if(unit00)unit00.hidden=unit00.disabled=course.value!=="pre-algebra";
- if(course.value!=="pre-algebra"&&unit.value==="00")unit.value="01";for(const choice of unit.options){if(choice.value!=="00")choice.disabled=choice.hidden=(course.value==="social-studies-10"&&Number(choice.value)>8)}if(course.value==="social-studies-10"&&Number(unit.value)>8)unit.value="01";
+ if(course.value!=="pre-algebra"&&unit.value==="00")unit.value="01";for(const choice of unit.options){if(choice.value!=="00")choice.disabled=choice.hidden=(course.value==="social-studies-10"&&Number(choice.value)>1)}if(course.value==="social-studies-10"&&Number(unit.value)>1)unit.value="01";
 }
 function sync(){
  const p=new URLSearchParams({course:course.value,unit:unit.value,lang:lang.value});
