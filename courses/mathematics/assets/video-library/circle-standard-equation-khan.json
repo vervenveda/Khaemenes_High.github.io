@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "asset_id": "MATH-CIRCLE-STANDARD-EQUATION-KHAN-001",
   "title": "Writing standard equation of a circle | Mathematics II | High School Math | Khan Academy",
   "provider": "youtube",
@@ -25,20 +25,38 @@
   "enabled": false,
   "playback_verified": false,
   "captions_verified": false,
-  "transcript": null,
-  "alignment_status": "candidate_pending_review",
+  "transcript": {
+    "status": "verified_official_provider_transcript",
+    "url": "https://www.khanacademy.org/math/algebra-home/alg-conic-sections/v/writing-standard-equation-of-circle",
+    "provider": "Khan Academy",
+    "verified_on": "2026-10-20"
+  },
+  "alignment_status": "release_candidate_runtime_pending",
   "alignment_note": "Official Khan listing and exact topic verified. Full playback, captions/transcript and exact lesson fit remain pending.",
   "certification": {
     "reviewed_on": "2026-10-20",
-    "status": "partial_provider_topic_verified",
+    "batch_id": "MATH-VIDEO-CERT-BATCH-02",
+    "status": "release_candidate_runtime_pending",
     "provider_title_verified": true,
+    "provider_page_verified": true,
     "topic_alignment_verified": true,
+    "official_transcript_verified": true,
+    "transcript_or_text_fallback_verified": true,
     "whole_video_reviewed": false,
     "privacy_embed_verified": false,
     "captions_verified": false,
-    "transcript_or_text_fallback_verified": false,
     "responsive_lesson_rendering_verified": false,
     "student_release_approved": false,
-    "evidence_note": "Title, verified publisher, and description directly match writing (x-a)^2+(y-b)^2=r^2 from center and radius."
-  }
+    "target_lesson_id": "KH-MATH-GEO-U08-L08",
+    "evidence_note": "Official Khan Academy page exposes About and Transcript tabs. The lesson derives the standard equation of a circle from its center and radius, directly aligning to Geometry U08-L08 Equation of a Circle & Coordinate Applications.",
+    "remaining_gates": [
+      "Review the complete video from start to finish for mathematical accuracy and pacing.",
+      "Verify privacy-enhanced youtube-nocookie embed playback in the published Academy lesson.",
+      "Verify captions in the actual playback environment.",
+      "Verify responsive rendering on phone/tablet/desktop.",
+      "Confirm the placement remains optional and cannot alter 80% mastery/progression."
+    ]
+  },
+  "provider_page_url": "https://www.khanacademy.org/math/algebra-home/alg-conic-sections/v/writing-standard-equation-of-circle",
+  "provider_page_title": "Writing standard equation of a circle"
 }
