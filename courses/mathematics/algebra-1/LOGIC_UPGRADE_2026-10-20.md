@@ -37,3 +37,23 @@ The five visible milestones are Learn, Practice, Submit, Mastery, and Review & C
 - Updated lesson bridge JavaScript parses successfully.
 - Updated service worker JavaScript parses successfully.
 - No curriculum, assessment-bank, mastery-authority, or record-engine files were replaced.
+
+
+## Presentation convergence — dark mathematics dashboard
+
+A presentation-only dark dashboard layer now aligns Algebra I with the preferred Pre-Algebra visual identity.
+
+### Changed
+
+- Course entry defaults to dark presentation.
+- New `assets/algebra1-dark-dashboard-v1.css` loads after the existing Algebra I student-experience stylesheet.
+- The new layer uses deep navy/charcoal panels, warm light text, restrained blue accents, gold highlights, 7 px corners, and the existing Cinzel / Brandon Grotesque hierarchy.
+- Shared lesson workflow cards inherit the same dark palette.
+- Print mode remains white and evidence-friendly.
+- Service-worker release cache now includes the dark dashboard stylesheet.
+
+### Preserved
+
+No mastery, scoring, assessment, learner-record, question-bank, lesson-engine, unit-gate, Midterm, Final, project, lab, or progression logic was modified for this visual conversion.
+
+The existing mastery authority, strict mastery gates, and deep lesson engine remain separate from the presentation layer and continue to parse successfully.
