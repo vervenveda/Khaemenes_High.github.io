@@ -1003,6 +1003,30 @@
       "enabled": false,
       "optional": true,
       "alignment_note": "Coordinates prerequisite only; design constraints and error analysis remain missing from video coverage"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U12-L03",
+      "unit": 12,
+      "lesson": 3,
+      "lesson_file": "units/unit-12/lessons/lesson-03-measures-center-mean-median-mode-weighted-mean.html",
+      "asset_id": "MATH-MEAN-MEDIAN-MODE-KHAN-001",
+      "shared_file": "../assets/video-library/mean-median-mode-khan.json",
+      "placement_status": "topic_matched_pending_playback_caption_and_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Mean median and mode only; weighted mean needs original lesson explanation"
+    },
+    {
+      "lesson_id": "KH-MATH-PA-U12-L06",
+      "unit": 12,
+      "lesson": 6,
+      "lesson_file": "units/unit-12/lessons/lesson-06-probability-models-sample-spaces-relative-frequency.html",
+      "asset_id": "MATH-BASIC-PROBABILITY-MATHANTICS-001",
+      "shared_file": "../assets/video-library/basic-probability-mathantics.json",
+      "placement_status": "topic_matched_pending_playback_caption_and_scope_review",
+      "enabled": false,
+      "optional": true,
+      "alignment_note": "Basic probability concepts; relative frequency and sample-space construction remain written lesson"
     }
   ]
 }
