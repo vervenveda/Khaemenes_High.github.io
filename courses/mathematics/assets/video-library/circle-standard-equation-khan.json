@@ -27,5 +27,18 @@
   "captions_verified": false,
   "transcript": null,
   "alignment_status": "candidate_pending_review",
-  "alignment_note": "Official Khan listing and exact topic verified. Full playback, captions/transcript and exact lesson fit remain pending."
+  "alignment_note": "Official Khan listing and exact topic verified. Full playback, captions/transcript and exact lesson fit remain pending.",
+  "certification": {
+    "reviewed_on": "2026-10-20",
+    "status": "partial_provider_topic_verified",
+    "provider_title_verified": true,
+    "topic_alignment_verified": true,
+    "whole_video_reviewed": false,
+    "privacy_embed_verified": false,
+    "captions_verified": false,
+    "transcript_or_text_fallback_verified": false,
+    "responsive_lesson_rendering_verified": false,
+    "student_release_approved": false,
+    "evidence_note": "Title, verified publisher, and description directly match writing (x-a)^2+(y-b)^2=r^2 from center and radius."
+  }
 }
