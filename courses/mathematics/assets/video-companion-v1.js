@@ -19,7 +19,8 @@ const mapURL=new URL("video-map.json",courseRoot);
 const escape=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 async function loadJSON(url){const r=await fetch(url,{credentials:"same-origin"});if(!r.ok)throw new Error("resource unavailable");return r.json()}
 function approvedPlacement(record){return record?.enabled===true&&record?.release_approved===true}
-function approvedAsset(asset){return asset?.enabled===true&&asset?.certification?.student_release_approved===true&&Boolean(asset?.embed_url)}
+function blockedCurriculumPlatform(asset){const name=String(asset?.instructor||asset?.publisher||"").toLowerCase();return name.includes("khan academy")}
+function approvedAsset(asset){return !blockedCurriculumPlatform(asset)&&asset?.enabled===true&&asset?.certification?.student_release_approved===true&&Boolean(asset?.embed_url)}
 function makeCard(record,asset,index){
  const section=document.createElement("section");
  section.className="lesson-section math-video-companion";
