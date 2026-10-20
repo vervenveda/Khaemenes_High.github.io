@@ -77,9 +77,29 @@
     return lessonData()[id]?.complete === true;
   }
 
-  function allLessonsComplete(unit) {
+  function lessonEvidence(id) {
+    const record = lessonData()[id] || null;
+    if (!record || typeof record !== "object") return { lessonId:id, threshold:MASTERY, mastery:false, best:null, source:LESSON_KEY };
+    const scores = [
+      Number(record.bestScore),
+      Number(record.score),
+      ...(Array.isArray(record.attempts) ? record.attempts.map(attempt => Number(attempt?.score)) : [])
+    ].filter(Number.isFinite);
+    const best = scores.length ? Math.max(...scores) : null;
+    return { lessonId:id, threshold:MASTERY, mastery:recordMastered(record), best, source:LESSON_KEY };
+  }
+
+  function lessonMastered(id) {
+    return lessonEvidence(id).mastery;
+  }
+
+  function allLessonsMastered(unit) {
     const count = LESSON_COUNTS[unit] || 0;
-    return count > 0 && Array.from({ length: count }, (_, index) => lessonKey(unit, index + 1)).every(lessonComplete);
+    return count > 0 && Array.from({ length: count }, (_, index) => lessonKey(unit, index + 1)).every(lessonMastered);
+  }
+
+  function allLessonsComplete(unit) {
+    return allLessonsMastered(unit);
   }
 
   function unitUnlocked(unit) {
@@ -91,7 +111,7 @@
 
   function lessonUnlocked(unit, lesson) {
     if (!unitUnlocked(unit)) return false;
-    return lesson === 1 || lessonComplete(lessonKey(unit, lesson - 1));
+    return lesson === 1 || lessonMastered(lessonKey(unit, lesson - 1));
   }
 
   function missingFor(config) {
@@ -103,7 +123,7 @@
       const unit = Number(unitMatch[1]);
       if (unit > 1 && !unitMastered(unit - 1)) missing.push(`Unit ${String(unit - 1).padStart(2, "0")} mastery at ${MASTERY}%`);
       if (unit === 7 && !midtermMastered()) missing.push(`Reviewed midterm mastery at ${MASTERY}%`);
-      if (!allLessonsComplete(unit)) missing.push(`Mark all Unit ${String(unit).padStart(2, "0")} lessons complete`);
+      if (!allLessonsMastered(unit)) missing.push(`Master all Unit ${String(unit).padStart(2, "0")} lessons at ${MASTERY}%`);
       return missing;
     }
     if (config?.recordKey === "midterm") {
@@ -163,21 +183,21 @@
       const lesson = index + 1;
       const id = lessonKey(unit, lesson);
       card.dataset.lessonId = id;
-      if (lessonComplete(id)) {
+      if (lessonMastered(id)) {
         const tag = document.createElement("span");
         tag.className = "pill";
-        tag.textContent = "Complete";
+        tag.textContent = "80% mastery met";
         card.prepend(tag);
       }
       if (!lessonUnlocked(unit, lesson)) {
-        disableLink(card, `Locked · complete Lesson ${String(lesson - 1).padStart(2, "0")} first.`);
+        disableLink(card, `Locked · master Lesson ${String(lesson - 1).padStart(2, "0")} at ${MASTERY}% first.`);
       }
     });
     const mastery = document.querySelector('a.btn[href*="assessment/mastery-check.html"]');
-    if (mastery && !allLessonsComplete(unit)) disableLink(mastery, "Mastery Check locked · complete every lesson in this unit first.");
+    if (mastery && !allLessonsMastered(unit)) disableLink(mastery, `Mastery Check locked · every lesson in this unit must reach ${MASTERY}% first.`);
     const note = document.createElement("p");
     note.className = "notice";
-    note.textContent = `Progression is sequential: lesson completion, then the ${MASTERY}% unit mastery check. Weekly scoring remains a separate review item.`;
+    note.textContent = `Progression is sequential: each lesson must reach ${MASTERY}% mastery, then the unit mastery check must reach ${MASTERY}%. Completion alone never unlocks the next lesson.`;
     document.querySelector(".unit-hero .wrap")?.append(note);
   }
 
@@ -210,7 +230,10 @@
     MASTERY,
     assessmentData,
     allLessonsComplete,
+    allLessonsMastered,
     lessonComplete,
+    lessonEvidence,
+    lessonMastered,
     lessonUnlocked,
     midtermMastered,
     missingFor,

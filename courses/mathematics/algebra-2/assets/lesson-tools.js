@@ -19,6 +19,32 @@ const card=saveButton?.parentNode?.parentNode || (note?.closest ? note.closest("
 const draftPrefix=scopedKey("khaemenes-algebra2-note-drafts-v2")+":"+id+":";
 const scopedProgressKey=scopedKey(KEY);
 const MAX_NOTE=25000;
+const MASTERY=Number(progress.MASTERY)||80;
+function masteryEvidence(){return progress.lessonEvidence?.(id)||{lessonId:id,threshold:MASTERY,mastery:false,best:null,source:KEY}}
+if(box){
+ box.disabled=true;box.setAttribute("aria-disabled","true");box.setAttribute("aria-label","Lesson mastery status");
+ const label=box.closest?.("label"),textNode=label&&[...label.childNodes].find(node=>node.nodeType===3);
+ if(textNode)textNode.textContent=" Mastery status (read-only)";
+}
+if(card&&!document.getElementById("lessonMasteryScore")){
+ const ev=masteryEvidence(),gate=document.createElement("div");
+ gate.className="lesson-mastery-gate";
+ gate.innerHTML=`<h3>Lesson mastery gate</h3><p>After reviewing the completed lesson evidence, enter the evaluator score from 0–100. A score of ${MASTERY}% or higher is required before the next lesson unlocks.</p><label>Evaluator lesson score<input id="lessonMasteryScore" type="number" min="0" max="100" step="1" value="${ev.best??""}" inputmode="numeric"></label><button class="btn primary" id="saveLessonMastery" type="button">Submit Assignment</button><p class="notice">A lower attempt is retained for correction and retake. Marking activity complete is not mastery evidence.</p>`;
+ card.insertBefore(gate,card.firstChild);
+}
+const nextLessonLink=document.querySelector(".lesson-hero .actions a.primary[href]");
+if(nextLessonLink&&!nextLessonLink.dataset.masteryHref)nextLessonLink.dataset.masteryHref=nextLessonLink.getAttribute("href")||"";
+function syncNextLesson(mastered){
+ if(!nextLessonLink)return;
+ if(mastered){
+  if(nextLessonLink.dataset.masteryHref)nextLessonLink.href=nextLessonLink.dataset.masteryHref;
+  nextLessonLink.removeAttribute("aria-disabled");nextLessonLink.removeAttribute("tabindex");
+  nextLessonLink.style.opacity="";
+ }else{
+  nextLessonLink.removeAttribute("href");nextLessonLink.setAttribute("aria-disabled","true");nextLessonLink.setAttribute("tabindex","-1");
+  nextLessonLink.style.opacity=".52";
+ }
+}
 // A unique ID per page instance avoids collisions when a browser duplicates a tab
 // and clones sessionStorage. Drafts survive reload via their shared lesson prefix.
 const tabId="t"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2);
@@ -66,7 +92,10 @@ function scopeReady(){
  return false;
 }
 function updateStatus(){
- if(status)status.textContent=box?.checked?"Marked complete on this device.":"Not yet marked complete.";
+ const ev=masteryEvidence();
+ if(box){box.checked=ev.mastery;box.disabled=true}
+ if(status)status.textContent=ev.mastery?`Mastery demonstrated · Best ${ev.best}% · progression evidence recorded.`:`Not yet mastered · ${ev.best!==null?`best ${ev.best}% · `:""}${MASTERY}% required.`;
+ syncNextLesson(ev.mastery);
 }
 function readDrafts(){
  const drafts=[];
@@ -106,6 +135,19 @@ function flushDraft(){
 }
 function safeWrite(next){
  try{return progress.writeJSON(KEY,next)===true;}catch{return false;}
+}
+function saveMasteryAttempt(){
+ if(!scopeReady())return;
+ const input=document.getElementById("lessonMasteryScore"),score=Number(input?.value);
+ if(!Number.isFinite(score)||score<0||score>100){announce("Enter an evaluator score from 0 to 100 before submitting.");input?.focus();return;}
+ const latest=read(),current=latest[id]||{},attempts=Array.isArray(current.attempts)?[...current.attempts]:[];
+ attempts.push({score,mastery_threshold:MASTERY,mastery_met:score>=MASTERY,recorded_at:now(),classification:"local-evaluator-score"});
+ const best=Math.max(Number(current.bestScore)||0,score),mastery=best>=MASTERY;
+ const next={...latest,[id]:{...current,attempts,bestScore:best,score,mastery,complete:mastery,updated:now(),masteryUpdated:now()}};
+ if(!safeWrite(next)){announce("The mastery attempt could not be saved. No progression credit was granted.");return;}
+ const verified=masteryEvidence();
+ announce(verified.mastery?`Assignment submitted · Best ${verified.best}% · ${MASTERY}% lesson mastery met.`:`Assignment submitted · Best ${verified.best??score}% · below ${MASTERY}%; correct the work and submit a new evaluated attempt.`);
+ updateStatus();
 }
 function saveNote(force=false){
  if(!note||!scopeReady())return false;
@@ -197,16 +239,8 @@ note?.addEventListener("input",()=>{
  if(conflict){writeDraft(note.value,"conflict");refreshRecovery();}
 });
 saveButton?.addEventListener("click",()=>saveNote());
-box?.addEventListener("change",()=>{
- if(!scopeReady()){box.checked=!box.checked;return;}
- const latest=read(),current=latest[id]||{};
- const next={...latest,[id]:{...current,complete:box.checked,updated:now()}};
- if(!safeWrite(next)||record().complete!==box.checked){
-  box.checked=!!record().complete;
-  announce("Completion could not be verified; your previous completion state was preserved.");
- }else{announce("Lesson completion saved; other notes and lesson records were preserved.");}
- updateStatus();
-});
+document.getElementById("saveLessonMastery")?.addEventListener("click",saveMasteryAttempt);
+if(box){box.disabled=true;box.setAttribute("aria-disabled","true");}
 document.getElementById("printLesson")?.addEventListener("click",()=>print());
 window.addEventListener?.("pagehide",flushDraft);
 window.addEventListener?.("visibilitychange",()=>{if(document.visibilityState==="hidden")flushDraft();});
@@ -278,4 +312,14 @@ else if(current){
  script.onerror=showReadOnlyRecovery;
  try{document.head.appendChild(script);}catch{showReadOnlyRecovery();}
 }else showReadOnlyRecovery();
+})();
+
+/* Shared Learn → Practice → Submit → Mastery → Review workflow. */
+(()=>{
+ const source=document.currentScript;
+ function load(){
+  if(document.getElementById("algebra2WorkflowAdapterV1"))return;
+  const s=document.createElement("script");s.id="algebra2WorkflowAdapterV1";s.src=new URL("algebra2-workflow-adapter-v1.js",source?.src||location.href).href;s.async=false;document.head.appendChild(s);
+ }
+ document.readyState==="loading"?document.addEventListener("DOMContentLoaded",load,{once:true}):load();
 })();
