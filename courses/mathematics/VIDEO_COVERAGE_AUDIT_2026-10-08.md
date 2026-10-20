@@ -228,3 +228,17 @@ Open gates remain whole-video review, privacy-enhanced embed playback, caption v
 
 Batch 01 remains in the same runtime-pending state and contains Sigma Notation and Comparing with z-scores.
 
+## Platform-boundary correction — 2026-10-20
+
+Khaemenes Academy remains the instructional authority. Khan Academy candidate placements were removed from all active mathematics course maps and are no longer part of the student-release pathway.
+
+Live-map removals:
+- Pre-Algebra: 34 removed
+- Geometry: 7 removed
+- Algebra II: 7 removed
+- Algebra I: 0 removed
+
+Defense-in-depth changes:
+- student renderer rejects Khan Academy assets even if accidentally re-enabled;
+- mathematics shared-resource service worker no longer precaches Khan video records;
+- Khan metadata, where retained, is research/history only and not student-facing curriculum.
