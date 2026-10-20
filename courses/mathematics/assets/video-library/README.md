@@ -36,3 +36,15 @@ Copy first, map second, verify, and only then consider retiring legacy copies. N
 - `../../MATH_VIDEO_SOURCE_QUEUE_2026-10-19.md` is the cross-course acquisition backlog, starting with Algebra I.
 - Follow the established Pre-Algebra privacy-enhanced lesson player pattern; use course-level placement maps and leave unverified new placements disabled.
 - Privacy-enhanced embeds cannot guarantee advertisements never appear; verify each actual playback environment.
+
+## Bubble 2 · JSON and filename unification
+
+Retain the Academy's established layout: shared video records in this directory use lowercase kebab-case `*.json` filenames, persistent `MATH-*` asset IDs, and schema `1.1`; course placements stay in each course's `video-map.json` with the existing lesson IDs and relative `shared_file` references. Do not rename existing records or replace the video map structure to satisfy a naming preference; existing references must continue to resolve.
+
+A read-only check is available from the repository root:
+
+```sh
+node courses/mathematics/assets/video-library/validate-library.js
+```
+
+The check flags broken references, inconsistent names, invalid JSON, duplicate asset IDs, and unexpected embed URLs. It does not change any video, student record, or mastery gate. Legacy enabled videos may trigger warnings if they predate the newer playback-verification metadata; warnings are not proof of failure.
