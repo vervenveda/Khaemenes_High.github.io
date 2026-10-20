@@ -8,49 +8,51 @@ This audit measures the learner-facing support layers behind the shared lesson p
 
 Resource availability never grants mastery. Only existing course assessment and progression authorities may unlock advancement.
 
+## Canonical game reuse wave 1
+
+This synchronized repair wave reused existing canonical games only. **No new games were created.** Placements were added only where the lesson concept directly matched the existing game.
+
+| Course | New placements | Covered before | Covered now | Remaining gaps |
+|---|---:|---:|---:|---:|
+| Pre-Algebra | 11 | 41 | **52** | **45** |
+| Algebra I | 7 | 43 | **50** | **37** |
+| Geometry | 6 | 35 | **41** | **49** |
+| Algebra II | 4 | 76 | **80** | **12** |
+
+**Total new canonical placements: 28.**
+
 ## Course-wide coverage
 
 | Course | Lessons | Worked examples | Game/tool covered | Game/tool gaps | Reviewed videos | Pending video candidates | No reviewed/candidate video |
 |---|---:|---|---:|---:|---:|---:|---:|
-| Pre-Algebra | 97 | engine-backed | 41 | 56 | 20 | 72 | 5 |
-| Algebra I | 87 | confirmed | 43 | 44 | 0 | 10 | 77 |
-| Geometry | 90 | template-confirmed | 35 | 55 | 0 | 0 | 90 |
-| Algebra II | 92 | template-confirmed | 76 | 16 | 0 | 1 | 91 |
+| Pre-Algebra | 97 | engine-backed | 52 | 45 | 20 | 72 | 5 |
+| Algebra I | 87 | confirmed | 50 | 37 | 0 | 10 | 77 |
+| Geometry | 90 | template-confirmed | 41 | 49 | 0 | 0 | 90 |
+| Algebra II | 92 | template-confirmed | 80 | 12 | 0 | 1 | 91 |
 
 ## Interpretation
 
-- **Worked examples are not the primary system weakness.** Algebra I has structured examples in all course-data lessons. Geometry and Algebra II use course-wide detailed lesson templates that include worked reasoning/examples; representative static lessons were verified. Pre-Algebra's generic engine renders lesson example payloads, but a future line-by-line payload check is still appropriate before calling every individual example verified.
-- **Game/tool coverage is substantial but uneven.** Algebra II is closest to complete; Pre-Algebra, Algebra I, and Geometry still have many lessons without a canonical wired game companion.
-- **Reviewed video coverage is the largest gap.** Only enabled placements count as reviewed coverage. Disabled topic matches remain candidates, not learner-visible coverage.
-- **Do not activate candidates merely to improve percentages.** Playback, captions, transcript fallback, lesson alignment, and rendering should be verified first.
+- **Worked examples remain structurally strong.** Algebra I has structured examples in all course-data lessons. Geometry and Algebra II use detailed lesson templates with worked reasoning/examples. Pre-Algebra remains engine-backed pending a future payload-by-payload verification.
+- **Game/tool coverage improved without new software.** Existing canonical games were reused first, preserving the shared-game architecture and avoiding unnecessary duplicates.
+- **Algebra II is now closest to complete game/tool coverage:** 80 of 92 lessons have a canonical companion.
+- **Reviewed video coverage remains the largest cross-course gap.** Only enabled reviewed placements count as coverage; disabled topic matches remain candidates.
+- **Do not force resource matches.** A remaining gap is preferable to a mathematically weak or misleading companion.
 
 ## Repair order
 
-1. Preserve worked-example architecture; verify Pre-Algebra example payload completeness without rewriting lessons.
-2. Fill canonical game/tool gaps course by course, reusing existing shared games before creating new ones.
-3. Review existing video candidates first, then research genuinely missing topics.
-4. Activate a video only after playback/accessibility/alignment checks pass.
+1. Run another conservative canonical-game reuse pass against the remaining gaps.
+2. When no strong existing game matches, classify the lesson as either **tool-sufficient** or **new-game-needed** rather than cloning a weak analogue.
+3. Review existing video candidates before researching new ones.
+4. Activate videos only after playback, caption/transcript, alignment, and rendering verification.
 5. Re-run this matrix after each synchronized resource wave.
-
 
 ## Pre-Algebra
 
-### Missing canonical game/tool companion (56)
+### Remaining canonical game/tool gaps (45)
 
 - U04-L06 — Scale Drawings Maps Similar Figures
 - U04-L07 — Proportional Vs Nonproportional
 - U04-L08 — Conversions Multistep Proportional Modelling
-- U05-L05 — Discounts Tax Tips Commission
-- U05-L06 — Markup Profit Loss Break Even
-- U05-L07 — Simple Interest Fees Financial Comparisons
-- U05-L08 — Percentage Points Repeated Change Decisions
-- U06-L01 — Exponent Meaning Powers Grouping
-- U06-L02 — Zero Negative Exponents Patterns
-- U06-L03 — Exponent Properties Equivalent Expressions
-- U06-L04 — Square Cube Roots Perfect Powers
-- U06-L05 — Estimating Irrational Roots
-- U06-L06 — Scientific Notation Powers Ten
-- U06-L07 — Operations Scientific Notation Applications
 - U07-L01 — Variables Terms Coefficients Constants
 - U07-L02 — Translating Words Contexts Expressions
 - U07-L03 — Evaluating Expressions Substitution
@@ -181,14 +183,12 @@ Resource availability never grants mastery. Only existing course assessment and 
 
 ## Algebra I
 
-### Missing canonical game/tool companion (44)
+### Remaining canonical game/tool gaps (37)
 
 - U01-L03 — Operations, Properties & Order of Operations
-- U01-L06 — Algebra Readiness Synthesis & Error Analysis
 - U02-L01 — Variables, Terms, Factors, Coefficients & Degree
 - U02-L03 — Properties, Equivalence & Structural Reasoning
 - U02-L05 — Monomials & Introductory Polynomial Classification
-- U03-L04 — Variables on Both Sides; Identities & Contradictions
 - U03-L05 — Literal Equations & Rearranging Formulas
 - U03-L06 — Proportions, Direct Variation & Percent Equations
 - U03-L07 — Rate, Mixture, Distance & Financial Equation Models
@@ -204,12 +204,9 @@ Resource availability never grants mastery. Only existing course assessment and 
 - U06-L06 — Scatterplots, Correlation & Lines of Fit
 - U06-L07 — Regression, Residuals & Model Limitations
 - U06-L08 — Linear Modelling, Prediction & Decision-Making
-- U07-L05 — Systems from Contexts: Cost, Mixture & Motion
 - U07-L06 — Systems of Linear Inequalities
 - U07-L07 — Feasible Regions, Constraints & Introductory Optimization
-- U08-L01 — Exponent Laws & Equivalent Forms
 - U08-L02 — Zero, Negative & Rational Exponents
-- U08-L03 — Scientific Notation & Operations
 - U08-L06 — Compound Interest, Half-Life & Exponential Modelling
 - U09-L01 — Polynomial Vocabulary & Standard Form
 - U09-L02 — Adding & Subtracting Polynomials
@@ -218,7 +215,6 @@ Resource availability never grants mastery. Only existing course assessment and 
 - U10-L06 — Quadratic Formula & Discriminant
 - U10-L08 — Linear-Quadratic Systems & Model Comparison
 - U11-L01 — Radical Expressions & Principal Roots
-- U11-L03 — Rational Exponents & Equivalent Radical Forms
 - U11-L04 — Pythagorean Theorem & Distance
 - U11-L06 — Circle Equations, Radical Models & Verification
 - U12-L06 — Financial Mathematics: Growth, Loans, Taxes & Risk
@@ -226,7 +222,6 @@ Resource availability never grants mastery. Only existing course assessment and 
 - U13-L02 — Choose Variables, Assumptions, Data & Representations
 - U13-L03 — Build, Calculate, Validate & Revise the Model
 - U13-L04 — Test Sensitivity, Uncertainty & Fairness
-- U13-L05 — Present, Defend & Reflect on Algebra I Readiness
 
 ### Video status
 
@@ -325,21 +320,16 @@ Resource availability never grants mastery. Only existing course assessment and 
 
 ## Geometry
 
-### Missing canonical game/tool companion (55)
+### Remaining canonical game/tool gaps (49)
 
 - U01-L01 — Points, Lines, Planes & Defined Terms
 - U01-L04 — Compass-and-Straightedge Constructions
-- U01-L05 — Conditional Statements, Converses & Counterexamples
 - U02-L07 — Tessellations, Frieze Patterns & Design Rules
 - U03-L01 — Triangle Classification & Angle Relationships
 - U03-L05 — Isosceles and Equilateral Triangle Theorems
 - U03-L07 — Perpendicular Bisectors, Angle Bisectors & Centers
-- U04-L03 — Slope as Direction and Rate
-- U04-L05 — Coordinate Proof with Distance, Midpoint & Slope
 - U04-L06 — Equations of Lines in Geometric Context
 - U05-L07 — Indirect Measurement, Shadows & Mirrors
-- U06-L02 — Special Right Triangles: 45-45-90
-- U06-L03 — Special Right Triangles: 30-60-90
 - U06-L04 — Geometric Mean & Right-Triangle Altitudes
 - U07-L01 — Interior and Exterior Angles of Polygons
 - U07-L02 — Parallelogram Properties & Tests
@@ -348,7 +338,6 @@ Resource availability never grants mastery. Only existing course assessment and 
 - U07-L05 — Quadrilateral Coordinate Proofs
 - U07-L06 — Regular Polygons, Apothem & Central Angles
 - U07-L07 — Polygon Decomposition & Design Constraints
-- U08-L06 — Secant, Chord & Tangent Power Theorems
 - U08-L07 — Sector Area, Segment Area & Annuli
 - U08-L08 — Equation of a Circle & Coordinate Applications
 - U09-L01 — Locus as a Set of Points Meeting a Condition
@@ -480,19 +469,15 @@ Resource availability never grants mastery. Only existing course assessment and 
 
 ## Algebra II
 
-### Missing canonical game/tool companion (16)
+### Remaining canonical game/tool gaps (12)
 
 - U01-L01 — Function Language, Notation & Evaluation
 - U04-L04 — Solving Rational Equations & Extraneous Solutions
-- U04-L05 — Reciprocal Functions, Asymptotes & Holes
-- U04-L06 — Transformations and Features of Rational Functions
 - U04-L07 — Direct, Inverse, Joint & Combined Variation
 - U04-L08 — Rational Models, Rates & Work Problems
 - U05-L01 — Rational Exponents & Radical Equivalence
 - U05-L03 — Operations with Radicals & Rationalizing
 - U05-L04 — Solving Radical Equations & Checking Solutions
-- U05-L05 — Radical Functions, Domains & Transformations
-- U05-L06 — Radical Models, Geometry & Measurement Error
 - U13-L01 — Frame a Meaningful, Ethical & Answerable Question
 - U13-L02 — Select Variables, Functions, Data & Assumptions
 - U13-L03 — Build, Compute, Visualize & Validate the Model
