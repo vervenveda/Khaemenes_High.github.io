@@ -126,5 +126,13 @@
       "release_approved": false
     }
   ],
-  "release_gate": "Placement requires enabled=true and release_approved=true; canonical asset requires enabled=true and certification.student_release_approved=true."
+  "release_gate": "Placement requires enabled=true and release_approved=true; canonical asset requires enabled=true and certification.student_release_approved=true.",
+  "coverage_summary": {
+    "candidate_placements": 10,
+    "unique_lessons_covered": 10,
+    "lessons_with_multiple_candidates": 0,
+    "multiple_candidate_lessons": [],
+    "enabled_placements": 0,
+    "release_approved_placements": 0
+  }
 }
