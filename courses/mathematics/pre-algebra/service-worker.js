@@ -2,7 +2,7 @@
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v11-readiness-submit-gate-20261020-ams-v1.7.0-recovery-popout-r1`;
+const CACHE_NAME=`${CACHE_PREFIX}v12-readiness-submit-workflow-20261020-ams-v1.7.0-recovery-popout-r1`;
 const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "./",
   "./index.html",
@@ -16,6 +16,9 @@ const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-
   "./assets/prealgebra-course-navigator-v1.js",
   "./assets/prealgebra-student-navigation.js",
   "./assets/prealgebra-study-scorebook-v1.js",
+  "./assets/prealgebra-workflow-adapter-v1.js",
+  "../assets/course-lesson-workflow-v1.js",
+  "../assets/course-lesson-workflow-v1.css",
   "../assets/applied-mission-studio-v1.js",
   "./units/unit-01/projects/number-systems-investigation.html",
   "./units/unit-02/projects/signed-data-investigation.html",
