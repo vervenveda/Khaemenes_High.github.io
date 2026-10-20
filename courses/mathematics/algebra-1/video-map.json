@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "course_id": "KH-MATH-A1",
   "course": "algebra-1",
   "shared_library": "../assets/video-library/",
@@ -14,7 +14,8 @@
       "enabled": false,
       "optional": true,
       "usage": "prerequisite_or_supplemental",
-      "alignment_note": "real number classification"
+      "alignment_note": "real number classification",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A1-U01-L03",
@@ -25,7 +26,8 @@
       "enabled": false,
       "optional": true,
       "usage": "prerequisite_or_supplemental",
-      "alignment_note": "order of operations"
+      "alignment_note": "order of operations",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A1-U03-L02",
@@ -36,7 +38,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Worked methods and substitution checks for one- and two-step linear equations"
+      "alignment_note": "Worked methods and substitution checks for one- and two-step linear equations",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A1-U04-L02",
@@ -47,7 +50,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Solving linear inequalities; check negative-multiplier reversal against next lesson"
+      "alignment_note": "Solving linear inequalities; check negative-multiplier reversal against next lesson",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A1-U05-L02",
@@ -58,7 +62,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Evaluate f(x) using substitution and interpret function notation"
+      "alignment_note": "Evaluate f(x) using substitution and interpret function notation",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A1-U06-L02",
@@ -69,7 +74,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Calculate slope from two coordinate points; extend interpretation to tables and graphs"
+      "alignment_note": "Calculate slope from two coordinate points; extend interpretation to tables and graphs",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A1-U07-L03",
@@ -80,7 +86,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Two-variable substitution method with optional elimination preview"
+      "alignment_note": "Two-variable substitution method with optional elimination preview",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A1-U07-L04",
@@ -91,7 +98,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Two-variable elimination method and method comparison"
+      "alignment_note": "Two-variable elimination method and method comparison",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A1-U09-L06",
@@ -102,7 +110,8 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Introductory trinomial factoring; difference of squares requires other instruction"
+      "alignment_note": "Introductory trinomial factoring; difference of squares requires other instruction",
+      "release_approved": false
     },
     {
       "lesson_id": "KH-MATH-A1-U10-L04",
@@ -113,7 +122,9 @@
       "enabled": false,
       "optional": true,
       "usage": "optional_lesson_companion",
-      "alignment_note": "Solve quadratic equations by factoring and verify roots"
+      "alignment_note": "Solve quadratic equations by factoring and verify roots",
+      "release_approved": false
     }
-  ]
+  ],
+  "release_gate": "Placement requires enabled=true and release_approved=true; canonical asset requires enabled=true and certification.student_release_approved=true."
 }
