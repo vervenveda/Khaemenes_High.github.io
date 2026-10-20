@@ -236,3 +236,39 @@ Remaining Geometry priorities:
 4. Similarity scaling in three dimensions.
 
 All placements remain `enabled:false`.
+
+## Fifth higher-math sourcing checkpoint — 2026-10-20
+
+### Algebra II
+Algebra II now has **26 staged disabled placements**.
+
+Newly added:
+- U03-L06 — zeros, multiplicity and polynomial graph behavior (The Organic Chemistry Tutor).
+- U08-L06 — 3×3 determinant support (The Organic Chemistry Tutor).
+- U09-L07 — binomial theorem expansion (Khan Academy India - English).
+- U11-L01 — Pythagorean trigonometric identities (The Organic Chemistry Tutor).
+- U12-L05 — z-score comparison/interpretation (Khan Academy).
+
+Remaining Algebra II sourcing priorities are now narrow:
+1. Dedicated powers-of-i introductory source.
+2. Continuous growth / constant e.
+3. Arithmetic sequences.
+4. Binomial experiments / expected value.
+5. Statistical inference and margin of error.
+6. Sum/difference and double/half-angle identities.
+
+### Geometry
+Geometry now has **29 staged disabled placements**.
+
+Newly added:
+- U03-L03 — HL congruence (The Organic Chemistry Tutor).
+- U03-L04 — CPCTC and multi-step triangle proofs (The Organic Chemistry Tutor).
+- U08-L08 — standard equation of a circle (Khan Academy).
+- U11-L02 — pyramid volume and cone volume (The Organic Chemistry Tutor).
+- U11-L03 — sphere volume (The Organic Chemistry Tutor).
+- U11-L07 — 3D volume scaling under changing dimensions (Khan Academy, prerequisite/support).
+- Existing U11-L06 cross-section candidate remains staged.
+
+At this point the Geometry candidate backbone covers the major proof, circle, measurement and solid-geometry gaps identified in the audit. Remaining work is primarily certification depth, not broad sourcing.
+
+All placements remain `enabled:false`.
