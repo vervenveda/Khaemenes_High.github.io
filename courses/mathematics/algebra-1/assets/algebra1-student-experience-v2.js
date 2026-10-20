@@ -8,6 +8,13 @@ function ensureCss(){
   link.href=new URL("algebra1-student-experience-v2.css",script?.src||location.href).href;
   link.dataset.algebra1StudentExperience="v2";
   document.head.appendChild(link);
+  if(!document.querySelector('link[data-algebra1-dark-dashboard="v1"]')){
+    const dark=document.createElement("link");
+    dark.rel="stylesheet";
+    dark.href=new URL("algebra1-dark-dashboard-v1.css",script?.src||location.href).href;
+    dark.dataset.algebra1DarkDashboard="v1";
+    document.head.appendChild(dark);
+  }
 }
 function routeMode(){
   const path=location.pathname.toLowerCase();
