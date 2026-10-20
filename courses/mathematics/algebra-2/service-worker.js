@@ -1,12 +1,12 @@
 "use strict";
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
 const CACHE_PREFIX="khaemenes-algebra2-";
-const CACHE=`${CACHE_PREFIX}v10-full-lesson-path-v1-20261020`;
+const CACHE=`${CACHE_PREFIX}v11-video-companion-v1-20261020`;
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "../assets/applied-mission-studio-v1.js",
   "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
   "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js",
-  "./assets/question-bank.js","./assets/assessment-engine.js","./assets/lesson-tools.js","./assets/algebra2-workflow-adapter-v1.js","./assets/algebra2-dark-dashboard-v1.css","../assets/course-lesson-workflow-v1.js","../assets/course-lesson-workflow-v1.css","../assets/math-dashboard-parity-v1.css","../assets/math-student-journey-v1.js","../assets/math-student-journey-v1.css",
+  "./assets/question-bank.js","./assets/assessment-engine.js","./assets/lesson-tools.js","./assets/algebra2-workflow-adapter-v1.js","./assets/algebra2-dark-dashboard-v1.css","../assets/course-lesson-workflow-v1.js","../assets/course-lesson-workflow-v1.css","../assets/math-dashboard-parity-v1.css","../assets/math-student-journey-v1.js","../assets/math-student-journey-v1.css","./video-map.json","../assets/video-companion-v1.js",
   "./assets/unit-progress.js","./assets/algebra2-progression.js","./course-data.js","./course-map.json",
   "./manifest.webmanifest","./diagnostic/","./assessments/",
   "./units/unit-01/projects/01-project.html",
