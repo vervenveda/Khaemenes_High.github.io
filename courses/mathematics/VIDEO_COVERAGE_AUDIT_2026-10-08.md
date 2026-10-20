@@ -68,3 +68,19 @@ New listing-verified candidates:
 - Conditional probability and independence — Khan Academy.
 
 No Algebra II placement is enabled. Complex numbers and rational-function/asymptote candidates remain intentionally unsourced after the current search did not return sufficiently trustworthy exact matches. No video IDs were guessed.
+
+## Higher-math candidate backbone checkpoint — 2026-10-20
+
+Current staged disabled placement counts:
+- Algebra I: **10**
+- Geometry: **17**
+- Algebra II: **9**
+
+No newly sourced candidate in this checkpoint is student-facing. The records are publisher/topic verified at listing level only.
+
+Quality-control decisions preserved:
+- No guessed YouTube IDs.
+- No use of broad videos where a narrower lesson match is required.
+- A calculus-heavy exponential-growth result was rejected for Algebra II despite topical overlap.
+- Circle, congruence and construction candidates were mapped only where their described scope matches the lesson objective.
+- All release gates remain: whole-video review, playback, captions/transcript fallback, privacy-enhanced embed behavior, responsive rendering and exact objective alignment.
