@@ -3969,6 +3969,26 @@
           "wired": true
         }
       ]
+    },
+    "piecewise-boundary-lab": {
+      "title": "Piecewise Boundary Lab",
+      "canonical_path": "courses/mathematics/assets/learning-games/piecewise-boundary-lab/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "migration_state": "new-canonical-shared",
+      "scope_note": "Piecewise rule selection, endpoint ownership, step/discrete models. Formative only; never awards course mastery.",
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "05",
+          "lesson": "06",
+          "lesson_title": "Piecewise Functions & Discrete Models",
+          "mode": "piecewise-boundaries-discrete",
+          "query": "?course=algebra1&unit=05&lesson=06",
+          "wired": true
+        }
+      ]
     }
   }
 }
