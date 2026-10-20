@@ -141,3 +141,14 @@ All files changed in this repair were parsed before commit. No question bank, an
 ### Browser-level follow-up
 
 A final human/browser smoke test is still recommended for one early lesson, one middle lesson, and one late lesson on desktop/tablet/phone, including profile switching after reload, 79% and 80% attempts, retry, print, export, game/video launch, and offline revisit. This is a runtime presentation check, not a known source defect.
+
+
+## Mathematics-wide dashboard component parity
+
+Pre-Algebra participates in the shared landing/dashboard component pass through `../assets/math-dashboard-parity-v1.css`.
+
+The pass standardizes Academy-first title hierarchy, hero proportions, lighter typography, 7 px controls, dashboard metrics, card depth, unit and lesson navigation, status presentation, support/tool cards, responsive behavior, and white print evidence while preserving this course's existing layout identity.
+
+The shared layer is cached by this course's service worker for offline use. No mastery authority, score calculation, question bank, assessment engine, learner record, course gate, project, lab, or curriculum file was modified as part of this component-parity pass.
+
+Khaemenes Mathematics upgrade sequencing policy: shared upgrades are applied to Pre-Algebra, Algebra I, Geometry, and Algebra II before the next upgrade category begins.
