@@ -2666,6 +2666,15 @@
           "mode": "regression-residuals",
           "query": "?course=algebra1&unit=06&lesson=07",
           "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "06",
+          "lesson": "08",
+          "lesson_title": "Linear Modelling, Prediction & Decision-Making",
+          "mode": "linear-model-decisions",
+          "query": "?course=algebra1&unit=06&lesson=08",
+          "wired": true
         }
       ]
     },
@@ -3354,6 +3363,15 @@
           "lesson_title": "Direct, Inverse, Joint & Combined Variation",
           "mode": "variation-proportions",
           "query": "?course=algebra2&unit=04&lesson=u04-l07",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "03",
+          "lesson": "06",
+          "lesson_title": "Proportions, Direct Variation & Percent Equations",
+          "mode": "algebra1-proportion-equations",
+          "query": "?course=algebra1&unit=03&lesson=06",
           "wired": true
         }
       ],
