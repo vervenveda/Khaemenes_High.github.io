@@ -202,8 +202,8 @@ function blankState(){ return {students:[],activeId:null} }
 function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)) }
 function uid(){ return "s_" + Math.random().toString(36).slice(2,9) + Date.now().toString(36) }
 function student(){ return state.students.find(s=>s.id===state.activeId) || null }
-function ensure(s){ if(!s.progress)s.progress={weeks:{},exams:{},capstone:[]}; if(!s.progress.weeks)s.progress.weeks={}; if(!s.progress.exams)s.progress.exams={}; if(!s.progress.capstone)s.progress.capstone=[] }
-function weekRec(s,w){ ensure(s); if(!s.progress.weeks[w])s.progress.weeks[w]={lessons:{},assignments:{},notes:{},quiz:{best:0,attempts:[]},repeats:0}; return s.progress.weeks[w] }
+function ensure(s){ if(!s.progress)s.progress={weeks:{},exams:{},capstone:[]}; if(!s.progress.weeks)s.progress.weeks={}; if(!s.progress.exams||typeof s.progress.exams!=="object")s.progress.exams={}; if(!Array.isArray(s.progress.capstone))s.progress.capstone=[] }
+function weekRec(s,w){ ensure(s); if(!s.progress.weeks[w])s.progress.weeks[w]={lessons:{},assignments:{},notes:{},quiz:{best:0,attempts:[]},repeats:0};const r=s.progress.weeks[w];r.lessons ||= {};r.assignments ||= {};r.notes ||= {};r.quiz ||= {best:0,attempts:[]};if(!Array.isArray(r.quiz.attempts))r.quiz.attempts=[];return r }
 
 function highAssessmentDraw(kind,id,bank,count){
   const adapter=window.KhaemenesHighAssessmentAdapter;
@@ -223,8 +223,8 @@ function highAssessmentReviewSkills(questions,answers){
 function lessonPct(s,w){ const r=weekRec(s,w); return Math.round(["Monday","Tuesday","Wednesday","Thursday","Friday"].filter(d=>r.lessons[d]).length/5*100) }
 function assignPct(s,w){ const r=weekRec(s,w); return Math.round([0,1,2].filter(i=>r.assignments[i]).length/3*100) }
 function quizBest(s,w){ return Math.round(weekRec(s,w).quiz.best||0) }
-function weekMastered(s,w){ if(!s)return false;const r=weekRec(s,w);return ["Monday","Tuesday","Wednesday","Thursday","Friday"].every(d=>r.lessons[d]===true)&&[0,1,2].every(i=>r.assignments[i]===true)&&quizBest(s,w)>=80 }
-function highestUnlocked(s){if(!s)return 1;let n=1;for(let w=1;w<36;w++){if(!weekMastered(s,w))break;if(w===18&&Math.round(s.progress?.exams?.midterm?.best||0)<80)break;n=w+1}return n}
+function weekMastered(s,w){if(!s)return false;const r=weekRec(s,w);return ["Monday","Tuesday","Wednesday","Thursday","Friday"].every(d=>r.lessons[d]===true)&&[0,1,2].every(i=>r.assignments[i]===true)&&quizBest(s,w)>=APP.passingTarget}
+function highestUnlocked(s){if(!s)return 1;let n=1;for(let w=1;w<36;w++){if(!weekMastered(s,w))break;if(w===18&&Math.round(s.progress?.exams?.midterm?.best||0)<APP.passingTarget)break;n=w+1}return n}
 function canOpenWeek(s,w){return Number.isInteger(w)&&w>=1&&w<=highestUnlocked(s)}
 function setWeek(w){if(!canOpenWeek(student(),w)){alert("To advance, complete five lessons, submit three assignments and earn 80% on the weekly quiz. The midterm is required after Week 18.");return}activeWeek=w;view="week";render()}
 function weekScore(s,w){ return Math.round(lessonPct(s,w)*.25 + assignPct(s,w)*.35 + quizBest(s,w)*.40) } // Activity progress, not an academic grade.
@@ -302,7 +302,7 @@ function submitQuiz(){
   save();alert(`Quiz submitted: ${score}%. Best score kept.`);render();
 }
 function submitExam(name){
-  const current=student();if(name==="midterm"&&!weekMastered(current,18)){alert("Complete Weeks 1–18 before attempting the midterm.");return}if(name==="final"&&(!weekMastered(current,36)||Math.round(current.progress?.exams?.midterm?.best||0)<80)){alert("Complete all 36 weeks and master the midterm before attempting the final.");return}
+  const current=student();if(name==="midterm"&&highestUnlocked(current)<18){alert("Complete Weeks 1–18 before attempting the midterm.");return}if(name==="final"&&(!weekMastered(current,36)||Math.round(current.progress?.exams?.midterm?.best||0)<APP.passingTarget)){alert("Complete all 36 weeks and master the midterm before attempting the final.");return}
   const s=student(),bank=name==="midterm"?APP.midterm:APP.final,kind=name==="midterm"?"midterm":"final",draw=highAssessmentDraw(kind,name,bank),qs=draw.questions;
   let correct=0,answers=[];
   for(let i=0;i<qs.length;i++){
@@ -328,7 +328,7 @@ function downloadCSV(){ const s=student(); let rows=[["Student","Week","Unit","T
 function downloadScope(){let rows=[["Week","Unit","Title","Period","Regions","Essential Question","Alignment"]]; APP.weeks.forEach(w=>rows.push([w.week,w.unit,w.title,w.period,w.regions,w.essentialQuestion,w.alignment])); download("SS10_US_History_36_Week_Scope.csv",rows.map(r=>r.map(csv).join(",")).join("\n"),"text/csv")}
 function downloadCapstone(){download("SS10_Civic_Capstone_Guide.txt","Grade 10 U.S. History Civic Capstone\n\n1. Choose a historically grounded civic issue.\n2. Build an evidence file.\n3. Map institutions and authority.\n4. Compare policy options.\n5. Create a nonpartisan public product.\n6. Reflect on ethics, disagreement, and next steps.\n","text/plain")}
 function downloadBackup(){download("SS10_USH_Backup.json",JSON.stringify(state,null,2),"application/json")}
-function importBackup(e){const f=e.target.files[0]; if(!f)return; const r=new FileReader(); r.onload=()=>{try{state=JSON.parse(r.result); if(!state.students)throw Error(); state.activeId=state.activeId||state.students[0]?.id; save(); render()}catch{alert("Could not import backup.")}}; r.readAsText(f)}
+function importBackup(e){const f=e.target.files[0]; if(!f)return; const r=new FileReader(); r.onload=()=>{try{state=JSON.parse(r.result); if(!Array.isArray(state.students)||!state.students.every(x=>x&&typeof x.id==="string"&&typeof x.name==="string"))throw Error(); state.activeId=state.activeId||state.students[0]?.id; save(); render()}catch{alert("Could not import backup.")}}; r.readAsText(f)}
 function safe(s){return String(s||"student").replace(/[^a-z0-9_-]+/gi,"_").slice(0,60)}
 function csv(v){return `"${String(v??"").replaceAll('"','""')}"`}
 function download(name,text,type){let b=new Blob([text],{type}),a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download=name; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},800)}
