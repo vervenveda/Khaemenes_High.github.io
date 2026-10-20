@@ -136,7 +136,29 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <script src="../../shared/monte-carlo-assessment-v1.js"></script>
 <script src="../../shared/high-school-learning-context-v1.js"></script>
 <script src="../../shared/high-school-assessment-adapter-v1.js"></script>
-<script defer src="../../../assets/academy-unified-print-header.js"></script></head>
+<script defer src="../../../assets/academy-unified-print-header.js"></script><style id="khaemenes-elegant-course">
+:root{--navy:#f9f6ef;--navy-2:#f1ece2;--ink:#29313a;--muted:#59616a;--paper:#fffdf9;--paper-ink:#28313b;--gold:#8b7049;--line:#ded7c9;--shadow:0 4px 16px rgba(46,37,25,.065);--r:7px}
+html body{background:#f8f5ee!important;color:#28313b!important;font-family:"Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;font-weight:400!important;line-height:1.65}
+body:before{display:none!important}
+.app{grid-template-columns:minmax(220px,265px) minmax(0,1fr)}.sidebar{background:#fbf9f4!important;color:#28313b!important;border-right:1px solid #e1d9cc!important;backdrop-filter:none!important;padding:20px;}.main{max-width:1390px;padding:26px}
+.sidebar :is(p,h2,h3,label,.small),.main :is(p,h1,h2,h3,h4,label,th,td){color:inherit}
+.hero{background:linear-gradient(125deg,#faf6ed,#fffdf9)!important;border:1px solid #e0d6c5!important;border-radius:7px!important;text-align:center!important;padding:38px 32px!important;box-shadow:0 6px 20px rgba(65,51,34,.07)!important;color:#29313a!important}
+.hero:after{display:none!important}.hero .eyebrow{font-family:Cinzel,Georgia,serif!important;letter-spacing:.14em!important;font-size:clamp(1.25rem,2.8vw,2rem)!important;font-weight:400!important;text-transform:none!important;color:#51432d!important}
+.hero h1{font:400 clamp(1.5rem,3vw,2.5rem)/1.25 Cinzel,Georgia,serif!important;color:#242c35!important;margin:14px auto!important;max-width:900px}.hero p{color:#535c66!important;max-width:770px!important;margin:12px auto 22px!important}
+.hero .actions{justify-content:center!important;gap:12px!important}
+.main h2,.main h3,.sidebar h2,.sidebar h3{font-family:Cinzel,Georgia,serif!important;font-weight:400!important}
+.sidebar .brand,.sidebar .panel,.main .card,.main .panel{background:#fffdf9!important;color:#2c343d!important;border:1px solid #e1d9ca!important;border-radius:7px!important;box-shadow:0 3px 13px rgba(51,43,32,.05)!important}
+button,.button,.tab,.navBtn{border-radius:7px!important;font-weight:400!important;box-shadow:none!important}
+button:not(.danger),.button,.tab,.navBtn{background:#f2ece1!important;color:#2d3540!important;border:1px solid #d9cfbe!important}
+button:hover,.button:hover{background:#e8dfd0!important}.navBtn.active,.tab.active{background:#dfd2bd!important}
+.sidebar .seal{background:#eee4d3!important;color:#4b402f!important}
+.sidebar .weekList{max-height:270px}.tabs{margin-top:16px!important}
+#content{padding-top:12px!important}#content .card{margin-bottom:18px!important;padding:22px!important}
+a{color:#625034!important}a:focus-visible,button:focus-visible{outline:2px solid #876b43;outline-offset:3px}
+@media(max-width:980px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.main{padding:16px}.hero{padding:26px 18px!important}}
+@media(max-width:330px){.hero .eyebrow{font-size:1.2rem!important}.hero h1{font-size:1.35rem!important}.main{padding:10px}}
+@media print{body{background:#fff!important}.hero{border:0!important;box-shadow:none!important}.sidebar,.tabs{display:none!important}.main{padding:0!important}}
+</style></head>
 <body>
 <div class="app">
 <aside class="sidebar">
@@ -165,10 +187,10 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 </aside>
 <main class="main">
 <header class="hero">
-<div class="eyebrow">Federal Archive · Khaemenes Academy</div>
-<h1>Grade 10 United States History Honors</h1>
+<div class="eyebrow">Khaemenes Academy</div>
+<h1>Grade 10 · United States History Honors</h1>
 <p>A polished, self-contained student portal for investigating the American story through evidence, constitutional ideas, civic institutions, economics, geography, media literacy, Florida connections, and a nonpartisan civic capstone.</p>
-<div class="actions"><button data-go="week">Enter Case Files</button><button class="secondary" data-go="scope">View Scope</button><button class="ghost" data-go="reports">Progress Reports</button></div>
+<div class="actions"><a class="button" href="unit-01/evidence-lab.html">Unit 1 Learning Resources</a><button data-go="week">Open Lessons</button><button class="secondary" data-go="scope">View Scope</button><button class="ghost" data-go="reports">Progress Reports</button></div>
 </header>
 <nav class="tabs"><button class="tab active" data-view="dashboard">Dashboard</button><button class="tab" data-view="week">Lessons</button><button class="tab" data-view="scope">Scope</button><button class="tab" data-view="exams">Assessments</button><button class="tab" data-view="capstone">Capstone</button><button class="tab" data-view="reports">Reports</button><button class="tab" data-view="standards">Standards</button></nav>
 <section id="content"></section>
