@@ -200,3 +200,15 @@ Three new canonical shared formative games were added to the mathematics game li
 Pre-Algebra now has **81 lessons with canonical game/tool coverage**, with **16 lessons intentionally still without a game companion**. Of those, **5** remain classified as genuinely needing new game development; the rest are tool-sufficient.
 
 The new games use randomized 10-question rounds, local best-score storage, immediate explanatory feedback, and remain non-authoritative. They do not award 80% course mastery or bypass progression gates.
+
+## Geometry/measurement game cluster complete
+
+The remaining genuine Pre-Algebra game-development gaps are resolved.
+
+New canonical companions:
+- Angle & Polygon Studio — U11-L02
+- Boundary & Area Lab — U11-L03 and U11-L04
+- Pythagorean Distance Mission — U11-L06
+- Surface & Volume Studio — U11-L07
+
+Pre-Algebra now has **86/97** lessons with canonical game companions. The remaining 11 lessons are intentionally tool-sufficient. Genuine new-game gaps: **0**.
