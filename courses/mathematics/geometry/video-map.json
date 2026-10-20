@@ -125,6 +125,72 @@
       "optional": true,
       "usage": "prerequisite_or_supplemental",
       "alignment_note": "Prism-volume reasoning through base area times height; does not replace Cavalieri or cylinder content."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U01-L04",
+      "lesson_file": "units/unit-01/lessons/u01-l04.html",
+      "asset_id": "MATH-ANGLE-BISECTOR-CONSTRUCTION-KHAN-001",
+      "shared_file": "../assets/video-library/angle-bisector-construction-khan.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "prerequisite_or_supplemental",
+      "alignment_note": "Exact construction example for angle bisectors; lesson remains responsible for broader compass-and-straightedge constructions."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U03-L02",
+      "lesson_file": "units/unit-03/lessons/u03-l02.html",
+      "asset_id": "MATH-TRIANGLE-CONGRUENCE-OCT-001",
+      "shared_file": "../assets/video-library/triangle-congruence-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct SSS/SAS triangle congruence match with two-column proof examples."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U03-L03",
+      "lesson_file": "units/unit-03/lessons/u03-l03.html",
+      "asset_id": "MATH-TRIANGLE-CONGRUENCE-OCT-001",
+      "shared_file": "../assets/video-library/triangle-congruence-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Same source includes ASA/AAS; verify HL coverage separately before activation."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U05-L03",
+      "lesson_file": "units/unit-05/lessons/u05-l03.html",
+      "asset_id": "MATH-SIMILAR-TRIANGLES-OCT-001",
+      "shared_file": "../assets/video-library/similar-triangles-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct similar-triangle/proportion companion; lesson remains responsible for formal AA similarity proof structure."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U08-L05",
+      "lesson_file": "units/unit-08/lessons/u08-l05.html",
+      "asset_id": "MATH-CIRCLE-TANGENT-SECANT-OCT-001",
+      "shared_file": "../assets/video-library/circle-tangent-secant-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct tangent/radius relationship match; verify exact theorem sequence before activation."
+    },
+    {
+      "lesson_id": "KH-MATH-GEO-U08-L06",
+      "lesson_file": "units/unit-08/lessons/u08-l06.html",
+      "asset_id": "MATH-CIRCLE-TANGENT-ANGLE-OCT-001",
+      "shared_file": "../assets/video-library/circle-tangent-angle-theorems-organic.json",
+      "placement_status": "prerequisite_or_partial_match_pending_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "prerequisite_or_supplemental",
+      "alignment_note": "Tangent-angle/arc relationships support the lesson; full chord/secant/tangent power-theorem coverage remains additional content."
     }
   ]
 }
