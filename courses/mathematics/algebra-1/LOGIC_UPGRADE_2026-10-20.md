@@ -57,3 +57,14 @@ A presentation-only dark dashboard layer now aligns Algebra I with the preferred
 No mastery, scoring, assessment, learner-record, question-bank, lesson-engine, unit-gate, Midterm, Final, project, lab, or progression logic was modified for this visual conversion.
 
 The existing mastery authority, strict mastery gates, and deep lesson engine remain separate from the presentation layer and continue to parse successfully.
+
+
+## Mathematics-wide dashboard component parity
+
+Algebra I participates in the shared landing/dashboard component pass through `../assets/math-dashboard-parity-v1.css`.
+
+The pass standardizes Academy-first title hierarchy, hero proportions, lighter typography, 7 px controls, dashboard metrics, card depth, unit and lesson navigation, status presentation, support/tool cards, responsive behavior, and white print evidence while preserving this course's existing layout identity.
+
+The shared layer is cached by this course's service worker for offline use. No mastery authority, score calculation, question bank, assessment engine, learner record, course gate, project, lab, or curriculum file was modified as part of this component-parity pass.
+
+Khaemenes Mathematics upgrade sequencing policy: shared upgrades are applied to Pre-Algebra, Algebra I, Geometry, and Algebra II before the next upgrade category begins.
