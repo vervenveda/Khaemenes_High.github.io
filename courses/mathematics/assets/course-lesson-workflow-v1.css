@@ -1,4 +1,4 @@
-/* Khaemenes Mathematics · shared lesson workflow v1 */
+/* Khaemenes Mathematics · shared lesson workflow v1.1 · full learning path */
 .khae-workflow{
   --kfw-bg:var(--panel,#fff);
   --kfw-bg2:var(--panel2,#f8f6f0);
@@ -65,3 +65,10 @@
   .khae-workflow-stage span,.khae-workflow-score,.khae-workflow-chip,.khae-workflow label,.khae-workflow textarea,.khae-workflow-status{color:#222!important}
   .khae-workflow textarea{border:1px solid #999;background:#fff}
 }
+.khae-workflow-stage.is-support{background:color-mix(in srgb,var(--kfw-bg2) 88%,var(--kfw-accent) 12%)}
+.khae-workflow-stage.is-support.is-available{border-color:color-mix(in srgb,var(--kfw-accent) 55%,var(--kfw-line))}
+.khae-workflow-stage.is-support.is-unavailable{opacity:.72}
+.khae-workflow-support-status{display:block;margin-top:9px;color:var(--kfw-gold);font-style:normal;font-size:10px;line-height:1.35;letter-spacing:.04em}
+@media(max-width:1100px){.khae-workflow-stages{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.khae-workflow-stages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media print{.khae-workflow-stages{grid-template-columns:repeat(5,1fr)}.khae-workflow-support-status{color:#222!important}}
