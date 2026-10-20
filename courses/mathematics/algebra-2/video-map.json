@@ -125,6 +125,61 @@
       "optional": true,
       "usage": "optional_lesson_companion",
       "alignment_note": "Direct match for infinite geometric series and convergence."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U02-L05",
+      "lesson_file": "units/unit-02/lessons/u02-l05.html",
+      "asset_id": "MATH-COMPLEX-NUMBERS-OPERATIONS-OCT-001",
+      "shared_file": "../assets/video-library/complex-numbers-basic-operations-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for operations with complex numbers; the same source also previews graphing/modulus for U02-L07."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U02-L07",
+      "lesson_file": "units/unit-02/lessons/u02-l07.html",
+      "asset_id": "MATH-COMPLEX-NUMBERS-OPERATIONS-OCT-001",
+      "shared_file": "../assets/video-library/complex-numbers-basic-operations-organic.json",
+      "placement_status": "prerequisite_or_partial_match_pending_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "prerequisite_or_supplemental",
+      "alignment_note": "Source description includes graphing complex numbers and absolute value; verify conjugate coverage separately."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U03-L01",
+      "lesson_file": "units/unit-03/lessons/u03-l01.html",
+      "asset_id": "MATH-POLYNOMIAL-LONG-DIVISION-OCT-001",
+      "shared_file": "../assets/video-library/polynomial-long-division-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct long-division match including remainders and missing terms."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U03-L02",
+      "lesson_file": "units/unit-03/lessons/u03-l02.html",
+      "asset_id": "MATH-SYNTHETIC-DIVISION-OCT-001",
+      "shared_file": "../assets/video-library/synthetic-division-polynomials-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct synthetic-division match; listing also identifies remainder-theorem evaluation."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U06-L02",
+      "lesson_file": "units/unit-06/lessons/u06-l02.html",
+      "asset_id": "MATH-EXPONENTIAL-GROWTH-DECAY-OCT-001",
+      "shared_file": "../assets/video-library/exponential-growth-decay-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct growth/decay and applied exponential-model match at Algebra/Precalculus level."
     }
   ]
 }
