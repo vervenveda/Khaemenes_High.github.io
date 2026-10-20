@@ -176,3 +176,14 @@ This is a presentation and learner-orientation upgrade built on the existing sha
 Worked Example, Game / Tool, Optional Video, and Evidence are support stages. Their availability is detected from existing lesson content and companion elements; they never grant mastery. When a reviewed video or game companion is not attached, the workflow reports that honestly rather than fabricating a resource.
 
 Print/export evidence remains browser-local supporting evidence unless separately validated by an evaluator. The shared workflow JavaScript and all four course service workers parse successfully after the synchronized update.
+
+
+## Mathematics-wide canonical game reuse wave 1
+
+Pre-Algebra received **11** new lesson placements by reusing existing canonical shared games only. No new game was created in this wave.
+
+Current unique lesson coverage: **52 covered / 45 remaining game-tool gaps**.
+
+Placement policy: use direct mathematical matches only; ambiguous matches remain gaps. Game completion remains formative support and never grants the course's 80% mastery or bypasses progression gates. The authoritative source of truth remains the course assessment/progression system.
+
+See `../RESOURCE_COVERAGE_AUDIT_2026-10-20.md` and `../resource-coverage-v1.json` for the synchronized cross-course matrix.
