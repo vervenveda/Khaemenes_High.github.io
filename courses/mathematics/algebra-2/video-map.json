@@ -318,5 +318,22 @@
       "release_approved": false
     }
   ],
-  "release_gate": "Placement requires enabled=true and release_approved=true; canonical asset requires enabled=true and certification.student_release_approved=true."
+  "release_gate": "Placement requires enabled=true and release_approved=true; canonical asset requires enabled=true and certification.student_release_approved=true.",
+  "coverage_summary": {
+    "candidate_placements": 26,
+    "unique_lessons_covered": 24,
+    "lessons_with_multiple_candidates": 2,
+    "multiple_candidate_lessons": [
+      {
+        "lesson_id": "KH-MATH-A2-U12-L05",
+        "candidate_count": 2
+      },
+      {
+        "lesson_id": "KH-MATH-A2-U08-L06",
+        "candidate_count": 2
+      }
+    ],
+    "enabled_placements": 0,
+    "release_approved_placements": 0
+  }
 }
