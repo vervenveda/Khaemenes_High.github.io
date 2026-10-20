@@ -125,3 +125,45 @@ Highest-priority Algebra II sourcing gaps now:
 8. Binomial/normal distributions and statistical inference.
 
 Do not activate any staged placement until full playback, captions/transcript fallback, privacy-enhanced embed behavior and exact lesson alignment are verified.
+
+## Second higher-math sourcing checkpoint — 2026-10-20
+
+### Geometry
+Geometry now has **17 staged disabled placements**.
+
+Newly added in this pass:
+- U01-L04 — angle-bisector compass/straightedge construction (Khan Academy).
+- U03-L02 — SSS/SAS triangle congruence (The Organic Chemistry Tutor).
+- U03-L03 — ASA/AAS triangle congruence support (same source; HL remains separate).
+- U05-L03 — similar triangles and proportional sides (The Organic Chemistry Tutor).
+- U08-L05 — tangent/secant circle relationships (The Organic Chemistry Tutor).
+- U08-L06 — tangent-angle/arc theorem support (The Organic Chemistry Tutor).
+
+Remaining Geometry sourcing priorities:
+1. Segments/rays/notation and midpoint/partition if a strong visual source is found.
+2. Reflections, rotations and composition of transformations beyond the current introductory transformation candidate.
+3. HL congruence and CPCTC/multi-step proofs.
+4. Triangle centers and perpendicular/angle bisectors.
+5. Central/inscribed angles, chords, power theorems and circle equations.
+6. Pyramids, cones, spheres, cross-sections and volume scaling.
+
+### Algebra II
+Algebra II now has **9 staged disabled placements**.
+
+Second batch added:
+- U04-L05 — rational-function holes and asymptotes (The Organic Chemistry Tutor).
+- U09-L04 — geometric series introduction (Khan Academy).
+- U11-L05 — solving trigonometric equations on intervals (The Organic Chemistry Tutor).
+- U11-L07 — Law of Cosines for SSS/SAS triangles (The Organic Chemistry Tutor).
+- U12-L05 — normal-distribution introduction (Khan Academy).
+
+Remaining Algebra II sourcing priorities:
+1. Complex numbers and complex plane.
+2. Polynomial division, rational root theorem, multiplicity and full factorization.
+3. Exponential functions/growth at Algebra II level (reject calculus-heavy substitutes).
+4. Matrices and row reduction.
+5. Arithmetic sequences, infinite series and sigma notation.
+6. Trigonometric identities and Law of Sines/ambiguous case.
+7. Binomial distributions, expected value, z-scores and statistical inference.
+
+All staged placements remain `enabled:false`.
