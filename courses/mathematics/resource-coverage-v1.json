@@ -1,0 +1,3831 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-20",
+  "policy": {
+    "mastery_target": 80,
+    "video_count_rule": "Only enabled reviewed lesson videos count as covered.",
+    "game_count_rule": "Only wired canonical shared-game placements count as covered.",
+    "worked_example_rule": "Do not infer mastery from resource availability."
+  },
+  "courses": {
+    "pre-algebra": {
+      "total_lessons": 97,
+      "worked_example_summary": {
+        "status": "engine-backed",
+        "note": "Generic lesson engine renders LESSON_DATA examples; exact per-file example payload remains a follow-up verification target."
+      },
+      "game_tool": {
+        "covered": 41,
+        "missing": 56
+      },
+      "video": {
+        "enabled_reviewed": 20,
+        "candidate_pending": 72,
+        "missing_no_candidate": 5
+      },
+      "lessons": [
+        {
+          "id": "u01-l01",
+          "unit": 1,
+          "lesson": 1,
+          "title": "Number Systems",
+          "path": "units/unit-01/lessons/lesson-01-number-systems.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u01-l02",
+          "unit": 1,
+          "lesson": 2,
+          "title": "Factors Multiples",
+          "path": "units/unit-01/lessons/lesson-02-factors-multiples.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u01-l03",
+          "unit": 1,
+          "lesson": 3,
+          "title": "Primes Divisibility",
+          "path": "units/unit-01/lessons/lesson-03-primes-divisibility.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u01-l04",
+          "unit": 1,
+          "lesson": 4,
+          "title": "Gcf Lcm",
+          "path": "units/unit-01/lessons/lesson-04-gcf-lcm.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u01-l05",
+          "unit": 1,
+          "lesson": 5,
+          "title": "Order Operations",
+          "path": "units/unit-01/lessons/lesson-05-order-operations.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u01-l06",
+          "unit": 1,
+          "lesson": 6,
+          "title": "Estimation Reasonableness",
+          "path": "units/unit-01/lessons/lesson-06-estimation-reasonableness.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u02-l01",
+          "unit": 2,
+          "lesson": 1,
+          "title": "Integers In Context",
+          "path": "units/unit-02/lessons/lesson-01-integers-in-context.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u02-l02",
+          "unit": 2,
+          "lesson": 2,
+          "title": "Opposites Absolute Value",
+          "path": "units/unit-02/lessons/lesson-02-opposites-absolute-value.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u02-l03",
+          "unit": 2,
+          "lesson": 3,
+          "title": "Compare Order Integers",
+          "path": "units/unit-02/lessons/lesson-03-compare-order-integers.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u02-l04",
+          "unit": 2,
+          "lesson": 4,
+          "title": "Adding Integers",
+          "path": "units/unit-02/lessons/lesson-04-adding-integers.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u02-l05",
+          "unit": 2,
+          "lesson": 5,
+          "title": "Subtracting Integers",
+          "path": "units/unit-02/lessons/lesson-05-subtracting-integers.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u02-l06",
+          "unit": 2,
+          "lesson": 6,
+          "title": "Multiply Divide Integers",
+          "path": "units/unit-02/lessons/lesson-06-multiply-divide-integers.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u02-l07",
+          "unit": 2,
+          "lesson": 7,
+          "title": "Coordinate Plane Signed Change",
+          "path": "units/unit-02/lessons/lesson-07-coordinate-plane-signed-change.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u02-l08",
+          "unit": 2,
+          "lesson": 8,
+          "title": "Multi Step Integer Applications",
+          "path": "units/unit-02/lessons/lesson-08-multi-step-integer-applications.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u03-l01",
+          "unit": 3,
+          "lesson": 1,
+          "title": "Rational Numbers Fraction Meaning",
+          "path": "units/unit-03/lessons/lesson-01-rational-numbers-fraction-meaning.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u03-l02",
+          "unit": 3,
+          "lesson": 2,
+          "title": "Equivalent Fractions Simplifying",
+          "path": "units/unit-03/lessons/lesson-02-equivalent-fractions-simplifying.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u03-l03",
+          "unit": 3,
+          "lesson": 3,
+          "title": "Compare Order Rational Numbers",
+          "path": "units/unit-03/lessons/lesson-03-compare-order-rational-numbers.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u03-l04",
+          "unit": 3,
+          "lesson": 4,
+          "title": "Add Subtract Rational Numbers",
+          "path": "units/unit-03/lessons/lesson-04-add-subtract-rational-numbers.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u03-l05",
+          "unit": 3,
+          "lesson": 5,
+          "title": "Multiply Fractions Mixed Numbers",
+          "path": "units/unit-03/lessons/lesson-05-multiply-fractions-mixed-numbers.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u03-l06",
+          "unit": 3,
+          "lesson": 6,
+          "title": "Divide Fractions Complex Fractions",
+          "path": "units/unit-03/lessons/lesson-06-divide-fractions-complex-fractions.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u03-l07",
+          "unit": 3,
+          "lesson": 7,
+          "title": "Decimal Operations Repeating Decimals",
+          "path": "units/unit-03/lessons/lesson-07-decimal-operations-repeating-decimals.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "enabled_reviewed"
+        },
+        {
+          "id": "u03-l08",
+          "unit": 3,
+          "lesson": 8,
+          "title": "Conversions Estimation Applications",
+          "path": "units/unit-03/lessons/lesson-08-conversions-estimation-applications.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u04-l01",
+          "unit": 4,
+          "lesson": 1,
+          "title": "Ratio Meaning Equivalent Ratios",
+          "path": "units/unit-04/lessons/lesson-01-ratio-meaning-equivalent-ratios.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u04-l02",
+          "unit": 4,
+          "lesson": 2,
+          "title": "Ratio Tables Double Number Lines",
+          "path": "units/unit-04/lessons/lesson-02-ratio-tables-double-number-lines.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u04-l03",
+          "unit": 4,
+          "lesson": 3,
+          "title": "Rates Unit Rates Fair Comparisons",
+          "path": "units/unit-04/lessons/lesson-03-rates-unit-rates-fair-comparisons.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u04-l04",
+          "unit": 4,
+          "lesson": 4,
+          "title": "Proportional Tables Graphs Equations",
+          "path": "units/unit-04/lessons/lesson-04-proportional-tables-graphs-equations.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u04-l05",
+          "unit": 4,
+          "lesson": 5,
+          "title": "Solving Proportions Direct Variation",
+          "path": "units/unit-04/lessons/lesson-05-solving-proportions-direct-variation.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u04-l06",
+          "unit": 4,
+          "lesson": 6,
+          "title": "Scale Drawings Maps Similar Figures",
+          "path": "units/unit-04/lessons/lesson-06-scale-drawings-maps-similar-figures.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u04-l07",
+          "unit": 4,
+          "lesson": 7,
+          "title": "Proportional Vs Nonproportional",
+          "path": "units/unit-04/lessons/lesson-07-proportional-vs-nonproportional.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l08",
+          "unit": 4,
+          "lesson": 8,
+          "title": "Conversions Multistep Proportional Modelling",
+          "path": "units/unit-04/lessons/lesson-08-conversions-multistep-proportional-modelling.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l01",
+          "unit": 5,
+          "lesson": 1,
+          "title": "Percent Meaning Benchmarks Equivalent Forms",
+          "path": "units/unit-05/lessons/lesson-01-percent-meaning-benchmarks-equivalent-forms.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u05-l02",
+          "unit": 5,
+          "lesson": 2,
+          "title": "Finding Percent Of Quantity",
+          "path": "units/unit-05/lessons/lesson-02-finding-percent-of-quantity.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u05-l03",
+          "unit": 5,
+          "lesson": 3,
+          "title": "Finding Percent Rate Or Whole",
+          "path": "units/unit-05/lessons/lesson-03-finding-percent-rate-or-whole.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u05-l04",
+          "unit": 5,
+          "lesson": 4,
+          "title": "Percent Increase Decrease Relative Change",
+          "path": "units/unit-05/lessons/lesson-04-percent-increase-decrease-relative-change.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u05-l05",
+          "unit": 5,
+          "lesson": 5,
+          "title": "Discounts Tax Tips Commission",
+          "path": "units/unit-05/lessons/lesson-05-discounts-tax-tips-commission.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u05-l06",
+          "unit": 5,
+          "lesson": 6,
+          "title": "Markup Profit Loss Break Even",
+          "path": "units/unit-05/lessons/lesson-06-markup-profit-loss-break-even.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l07",
+          "unit": 5,
+          "lesson": 7,
+          "title": "Simple Interest Fees Financial Comparisons",
+          "path": "units/unit-05/lessons/lesson-07-simple-interest-fees-financial-comparisons.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u05-l08",
+          "unit": 5,
+          "lesson": 8,
+          "title": "Percentage Points Repeated Change Decisions",
+          "path": "units/unit-05/lessons/lesson-08-percentage-points-repeated-change-decisions.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l01",
+          "unit": 6,
+          "lesson": 1,
+          "title": "Exponent Meaning Powers Grouping",
+          "path": "units/unit-06/lessons/lesson-01-exponent-meaning-powers-grouping.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u06-l02",
+          "unit": 6,
+          "lesson": 2,
+          "title": "Zero Negative Exponents Patterns",
+          "path": "units/unit-06/lessons/lesson-02-zero-negative-exponents-patterns.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u06-l03",
+          "unit": 6,
+          "lesson": 3,
+          "title": "Exponent Properties Equivalent Expressions",
+          "path": "units/unit-06/lessons/lesson-03-exponent-properties-equivalent-expressions.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u06-l04",
+          "unit": 6,
+          "lesson": 4,
+          "title": "Square Cube Roots Perfect Powers",
+          "path": "units/unit-06/lessons/lesson-04-square-cube-roots-perfect-powers.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u06-l05",
+          "unit": 6,
+          "lesson": 5,
+          "title": "Estimating Irrational Roots",
+          "path": "units/unit-06/lessons/lesson-05-estimating-irrational-roots.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u06-l06",
+          "unit": 6,
+          "lesson": 6,
+          "title": "Scientific Notation Powers Ten",
+          "path": "units/unit-06/lessons/lesson-06-scientific-notation-powers-ten.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u06-l07",
+          "unit": 6,
+          "lesson": 7,
+          "title": "Operations Scientific Notation Applications",
+          "path": "units/unit-06/lessons/lesson-07-operations-scientific-notation-applications.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u07-l01",
+          "unit": 7,
+          "lesson": 1,
+          "title": "Variables Terms Coefficients Constants",
+          "path": "units/unit-07/lessons/lesson-01-variables-terms-coefficients-constants.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u07-l02",
+          "unit": 7,
+          "lesson": 2,
+          "title": "Translating Words Contexts Expressions",
+          "path": "units/unit-07/lessons/lesson-02-translating-words-contexts-expressions.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u07-l03",
+          "unit": 7,
+          "lesson": 3,
+          "title": "Evaluating Expressions Substitution",
+          "path": "units/unit-07/lessons/lesson-03-evaluating-expressions-substitution.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u07-l04",
+          "unit": 7,
+          "lesson": 4,
+          "title": "Properties Operations Equivalent Structure",
+          "path": "units/unit-07/lessons/lesson-04-properties-operations-equivalent-structure.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u07-l05",
+          "unit": 7,
+          "lesson": 5,
+          "title": "Distributive Property Factoring",
+          "path": "units/unit-07/lessons/lesson-05-distributive-property-factoring.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u07-l06",
+          "unit": 7,
+          "lesson": 6,
+          "title": "Combining Like Terms Simplifying",
+          "path": "units/unit-07/lessons/lesson-06-combining-like-terms-simplifying.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u07-l07",
+          "unit": 7,
+          "lesson": 7,
+          "title": "Formulas Multivariable Expressions",
+          "path": "units/unit-07/lessons/lesson-07-formulas-multivariable-expressions.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u07-l08",
+          "unit": 7,
+          "lesson": 8,
+          "title": "Structural Modelling Patterns Error Analysis",
+          "path": "units/unit-07/lessons/lesson-08-structural-modelling-patterns-error-analysis.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u08-l01",
+          "unit": 8,
+          "lesson": 1,
+          "title": "Equality Solutions Balance Model",
+          "path": "units/unit-08/lessons/lesson-01-equality-solutions-balance-model.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u08-l02",
+          "unit": 8,
+          "lesson": 2,
+          "title": "One Step Addition Subtraction",
+          "path": "units/unit-08/lessons/lesson-02-one-step-addition-subtraction.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u08-l03",
+          "unit": 8,
+          "lesson": 3,
+          "title": "One Step Multiplication Division",
+          "path": "units/unit-08/lessons/lesson-03-one-step-multiplication-division.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u08-l04",
+          "unit": 8,
+          "lesson": 4,
+          "title": "Two Step Equations Operation Order",
+          "path": "units/unit-08/lessons/lesson-04-two-step-equations-operation-order.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u08-l05",
+          "unit": 8,
+          "lesson": 5,
+          "title": "Multistep Distribution Like Terms",
+          "path": "units/unit-08/lessons/lesson-05-multistep-distribution-like-terms.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u08-l06",
+          "unit": 8,
+          "lesson": 6,
+          "title": "Variables Both Sides Identities Contradictions",
+          "path": "units/unit-08/lessons/lesson-06-variables-both-sides-identities-contradictions.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u08-l07",
+          "unit": 8,
+          "lesson": 7,
+          "title": "Rearranging Formulas Literal Equations",
+          "path": "units/unit-08/lessons/lesson-07-rearranging-formulas-literal-equations.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u08-l08",
+          "unit": 8,
+          "lesson": 8,
+          "title": "Context Equations Verification Error Analysis",
+          "path": "units/unit-08/lessons/lesson-08-context-equations-verification-error-analysis.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u09-l01",
+          "unit": 9,
+          "lesson": 1,
+          "title": "Inequality Meaning Symbols Solution Sets",
+          "path": "units/unit-09/lessons/lesson-01-inequality-meaning-symbols-solution-sets.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u09-l02",
+          "unit": 9,
+          "lesson": 2,
+          "title": "Number Line Graphs Interval Descriptions",
+          "path": "units/unit-09/lessons/lesson-02-number-line-graphs-interval-descriptions.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u09-l03",
+          "unit": 9,
+          "lesson": 3,
+          "title": "One Step Inequalities Order Preservation",
+          "path": "units/unit-09/lessons/lesson-03-one-step-inequalities-order-preservation.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u09-l04",
+          "unit": 9,
+          "lesson": 4,
+          "title": "Negative Multipliers Reversal",
+          "path": "units/unit-09/lessons/lesson-04-negative-multipliers-reversal.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u09-l05",
+          "unit": 9,
+          "lesson": 5,
+          "title": "Multistep Variables Both Sides",
+          "path": "units/unit-09/lessons/lesson-05-multistep-variables-both-sides.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u09-l06",
+          "unit": 9,
+          "lesson": 6,
+          "title": "Compound Inequalities And Or",
+          "path": "units/unit-09/lessons/lesson-06-compound-inequalities-and-or.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u09-l07",
+          "unit": 9,
+          "lesson": 7,
+          "title": "Contextual Constraints Discrete Solutions",
+          "path": "units/unit-09/lessons/lesson-07-contextual-constraints-discrete-solutions.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u10-l01",
+          "unit": 10,
+          "lesson": 1,
+          "title": "Coordinate Plane Ordered Pairs Quadrants",
+          "path": "units/unit-10/lessons/lesson-01-coordinate-plane-ordered-pairs-quadrants.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u10-l02",
+          "unit": 10,
+          "lesson": 2,
+          "title": "Patterns Sequences Rules",
+          "path": "units/unit-10/lessons/lesson-02-patterns-sequences-rules.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u10-l03",
+          "unit": 10,
+          "lesson": 3,
+          "title": "Relations Inputs Outputs Functions",
+          "path": "units/unit-10/lessons/lesson-03-relations-inputs-outputs-functions.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u10-l04",
+          "unit": 10,
+          "lesson": 4,
+          "title": "Tables Graphs Equations Words",
+          "path": "units/unit-10/lessons/lesson-04-tables-graphs-equations-words.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u10-l05",
+          "unit": 10,
+          "lesson": 5,
+          "title": "Rate Change Tables Graphs Contexts",
+          "path": "units/unit-10/lessons/lesson-05-rate-change-tables-graphs-contexts.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u10-l06",
+          "unit": 10,
+          "lesson": 6,
+          "title": "Slope Intercepts Linear Equations",
+          "path": "units/unit-10/lessons/lesson-06-slope-intercepts-linear-equations.html",
+          "worked_example": "engine-backed",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u10-l07",
+          "unit": 10,
+          "lesson": 7,
+          "title": "Linear Nonlinear Function Notation",
+          "path": "units/unit-10/lessons/lesson-07-linear-nonlinear-function-notation.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u10-l08",
+          "unit": 10,
+          "lesson": 8,
+          "title": "Linear Modelling Prediction Residuals",
+          "path": "units/unit-10/lessons/lesson-08-linear-modelling-prediction-residuals.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u11-l01",
+          "unit": 11,
+          "lesson": 1,
+          "title": "Measurement Systems Units Precision",
+          "path": "units/unit-11/lessons/lesson-01-measurement-systems-units-precision.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u11-l02",
+          "unit": 11,
+          "lesson": 2,
+          "title": "Angles Lines Transversals Polygons",
+          "path": "units/unit-11/lessons/lesson-02-angles-lines-transversals-polygons.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u11-l03",
+          "unit": 11,
+          "lesson": 3,
+          "title": "Perimeter Circumference Composite Boundaries",
+          "path": "units/unit-11/lessons/lesson-03-perimeter-circumference-composite-boundaries.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u11-l04",
+          "unit": 11,
+          "lesson": 4,
+          "title": "Area Polygons Circles Composite Figures",
+          "path": "units/unit-11/lessons/lesson-04-area-polygons-circles-composite-figures.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u11-l05",
+          "unit": 11,
+          "lesson": 5,
+          "title": "Scale Drawings Similarity Dilations",
+          "path": "units/unit-11/lessons/lesson-05-scale-drawings-similarity-dilations.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u11-l06",
+          "unit": 11,
+          "lesson": 6,
+          "title": "Right Triangles Pythagorean Distance",
+          "path": "units/unit-11/lessons/lesson-06-right-triangles-pythagorean-distance.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u11-l07",
+          "unit": 11,
+          "lesson": 7,
+          "title": "Surface Area Nets Volume",
+          "path": "units/unit-11/lessons/lesson-07-surface-area-nets-volume.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u11-l08",
+          "unit": 11,
+          "lesson": 8,
+          "title": "Coordinate Geometry Design Constraints Error",
+          "path": "units/unit-11/lessons/lesson-08-coordinate-geometry-design-constraints-error.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u12-l01",
+          "unit": 12,
+          "lesson": 1,
+          "title": "Data Questions Variables Populations Samples",
+          "path": "units/unit-12/lessons/lesson-01-data-questions-variables-populations-samples.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u12-l02",
+          "unit": 12,
+          "lesson": 2,
+          "title": "Frequency Tables Dot Plots Histograms Box Plots",
+          "path": "units/unit-12/lessons/lesson-02-frequency-tables-dot-plots-histograms-box-plots.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u12-l03",
+          "unit": 12,
+          "lesson": 3,
+          "title": "Measures Center Mean Median Mode Weighted Mean",
+          "path": "units/unit-12/lessons/lesson-03-measures-center-mean-median-mode-weighted-mean.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u12-l04",
+          "unit": 12,
+          "lesson": 4,
+          "title": "Variability Range Iqr Mad Outliers",
+          "path": "units/unit-12/lessons/lesson-04-variability-range-iqr-mad-outliers.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u12-l05",
+          "unit": 12,
+          "lesson": 5,
+          "title": "Comparing Distributions Misleading Displays",
+          "path": "units/unit-12/lessons/lesson-05-comparing-distributions-misleading-displays.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u12-l06",
+          "unit": 12,
+          "lesson": 6,
+          "title": "Probability Models Sample Spaces Relative Frequency",
+          "path": "units/unit-12/lessons/lesson-06-probability-models-sample-spaces-relative-frequency.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u12-l07",
+          "unit": 12,
+          "lesson": 7,
+          "title": "Compound Probability Tree Diagrams Simulation",
+          "path": "units/unit-12/lessons/lesson-07-compound-probability-tree-diagrams-simulation.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u12-l08",
+          "unit": 12,
+          "lesson": 8,
+          "title": "Sampling Bias Association Evidence Decisions",
+          "path": "units/unit-12/lessons/lesson-08-sampling-bias-association-evidence-decisions.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u13-l01",
+          "unit": 13,
+          "lesson": 1,
+          "title": "Frame Meaningful Safe Answerable Question",
+          "path": "units/unit-13/lessons/lesson-01-frame-meaningful-safe-answerable-question.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u13-l02",
+          "unit": 13,
+          "lesson": 2,
+          "title": "Select Variables Mathematics Data Representations",
+          "path": "units/unit-13/lessons/lesson-02-select-variables-mathematics-data-representations.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u13-l03",
+          "unit": 13,
+          "lesson": 3,
+          "title": "Build Calculate Verify Revise Model",
+          "path": "units/unit-13/lessons/lesson-03-build-calculate-verify-revise-model.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u13-l04",
+          "unit": 13,
+          "lesson": 4,
+          "title": "Test Assumptions Sensitivity Uncertainty Fairness",
+          "path": "units/unit-13/lessons/lesson-04-test-assumptions-sensitivity-uncertainty-fairness.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u13-l05",
+          "unit": 13,
+          "lesson": 5,
+          "title": "Communicate Defend Reflect Readiness",
+          "path": "units/unit-13/lessons/lesson-05-communicate-defend-reflect-readiness.html",
+          "worked_example": "engine-backed",
+          "game_tool": "missing",
+          "video": "missing"
+        }
+      ]
+    },
+    "algebra-1": {
+      "total_lessons": 87,
+      "worked_example_summary": {
+        "status": "confirmed",
+        "note": "87/87 course-data lessons contain structured examples."
+      },
+      "game_tool": {
+        "covered": 43,
+        "missing": 44
+      },
+      "video": {
+        "enabled_reviewed": 0,
+        "candidate_pending": 10,
+        "missing_no_candidate": 77
+      },
+      "lessons": [
+        {
+          "id": "u01-l01",
+          "unit": 1,
+          "lesson": 1,
+          "title": "Algebraic Habits, Notation & Mathematical Argument",
+          "path": "units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u01-l02",
+          "unit": 1,
+          "lesson": 2,
+          "title": "The Real Number System & Interval Representations",
+          "path": "units/unit-01/lessons/lesson-02-the-real-number-system-interval-representations.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u01-l03",
+          "unit": 1,
+          "lesson": 3,
+          "title": "Operations, Properties & Order of Operations",
+          "path": "units/unit-01/lessons/lesson-03-operations-properties-order-of-operations.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u01-l04",
+          "unit": 1,
+          "lesson": 4,
+          "title": "Units, Rates & Dimensional Analysis",
+          "path": "units/unit-01/lessons/lesson-04-units-rates-dimensional-analysis.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u01-l05",
+          "unit": 1,
+          "lesson": 5,
+          "title": "Precision, Rounding, Significant Figures & Percent Error",
+          "path": "units/unit-01/lessons/lesson-05-precision-rounding-significant-figures-percent-error.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u01-l06",
+          "unit": 1,
+          "lesson": 6,
+          "title": "Algebra Readiness Synthesis & Error Analysis",
+          "path": "units/unit-01/lessons/lesson-06-algebra-readiness-synthesis-error-analysis.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l01",
+          "unit": 2,
+          "lesson": 1,
+          "title": "Variables, Terms, Factors, Coefficients & Degree",
+          "path": "units/unit-02/lessons/lesson-01-variables-terms-factors-coefficients-degree.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l02",
+          "unit": 2,
+          "lesson": 2,
+          "title": "Evaluating Expressions & Formula Substitution",
+          "path": "units/unit-02/lessons/lesson-02-evaluating-expressions-formula-substitution.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l03",
+          "unit": 2,
+          "lesson": 3,
+          "title": "Properties, Equivalence & Structural Reasoning",
+          "path": "units/unit-02/lessons/lesson-03-properties-equivalence-structural-reasoning.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l04",
+          "unit": 2,
+          "lesson": 4,
+          "title": "Distributive Property & Combining Like Terms",
+          "path": "units/unit-02/lessons/lesson-04-distributive-property-combining-like-terms.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l05",
+          "unit": 2,
+          "lesson": 5,
+          "title": "Monomials & Introductory Polynomial Classification",
+          "path": "units/unit-02/lessons/lesson-05-monomials-introductory-polynomial-classification.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l06",
+          "unit": 2,
+          "lesson": 6,
+          "title": "Adding & Subtracting Polynomials",
+          "path": "units/unit-02/lessons/lesson-06-adding-subtracting-polynomials.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l07",
+          "unit": 2,
+          "lesson": 7,
+          "title": "Multiplying Monomials & Factoring the GCF",
+          "path": "units/unit-02/lessons/lesson-07-multiplying-monomials-factoring-the-gcf.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l01",
+          "unit": 3,
+          "lesson": 1,
+          "title": "Equality, Inverse Operations & Solution Verification",
+          "path": "units/unit-03/lessons/lesson-01-equality-inverse-operations-solution-verification.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l02",
+          "unit": 3,
+          "lesson": 2,
+          "title": "One-Step & Two-Step Linear Equations",
+          "path": "units/unit-03/lessons/lesson-02-one-step-two-step-linear-equations.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u03-l03",
+          "unit": 3,
+          "lesson": 3,
+          "title": "Multi-Step Equations with Distribution & Like Terms",
+          "path": "units/unit-03/lessons/lesson-03-multi-step-equations-with-distribution-like-terms.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l04",
+          "unit": 3,
+          "lesson": 4,
+          "title": "Variables on Both Sides; Identities & Contradictions",
+          "path": "units/unit-03/lessons/lesson-04-variables-on-both-sides-identities-contradictions.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l05",
+          "unit": 3,
+          "lesson": 5,
+          "title": "Literal Equations & Rearranging Formulas",
+          "path": "units/unit-03/lessons/lesson-05-literal-equations-rearranging-formulas.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l06",
+          "unit": 3,
+          "lesson": 6,
+          "title": "Proportions, Direct Variation & Percent Equations",
+          "path": "units/unit-03/lessons/lesson-06-proportions-direct-variation-percent-equations.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l07",
+          "unit": 3,
+          "lesson": 7,
+          "title": "Rate, Mixture, Distance & Financial Equation Models",
+          "path": "units/unit-03/lessons/lesson-07-rate-mixture-distance-financial-equation-models.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l01",
+          "unit": 4,
+          "lesson": 1,
+          "title": "Inequality Meaning, Number Lines & Interval Notation",
+          "path": "units/unit-04/lessons/lesson-01-inequality-meaning-number-lines-interval-notation.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l02",
+          "unit": 4,
+          "lesson": 2,
+          "title": "One-Step & Multi-Step Linear Inequalities",
+          "path": "units/unit-04/lessons/lesson-02-one-step-multi-step-linear-inequalities.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u04-l03",
+          "unit": 4,
+          "lesson": 3,
+          "title": "Negative Multipliers & Sign Reversal",
+          "path": "units/unit-04/lessons/lesson-03-negative-multipliers-sign-reversal.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l04",
+          "unit": 4,
+          "lesson": 4,
+          "title": "Compound Inequalities: AND, OR & Intersections",
+          "path": "units/unit-04/lessons/lesson-04-compound-inequalities-and-or-intersections.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l05",
+          "unit": 4,
+          "lesson": 5,
+          "title": "Absolute Value Equations",
+          "path": "units/unit-04/lessons/lesson-05-absolute-value-equations.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l06",
+          "unit": 4,
+          "lesson": 6,
+          "title": "Absolute Value Inequalities & Contextual Constraints",
+          "path": "units/unit-04/lessons/lesson-06-absolute-value-inequalities-contextual-constraints.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l01",
+          "unit": 5,
+          "lesson": 1,
+          "title": "Relations, Inputs, Outputs & Function Tests",
+          "path": "units/unit-05/lessons/lesson-01-relations-inputs-outputs-function-tests.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l02",
+          "unit": 5,
+          "lesson": 2,
+          "title": "Function Notation & Evaluation",
+          "path": "units/unit-05/lessons/lesson-02-function-notation-evaluation.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u05-l03",
+          "unit": 5,
+          "lesson": 3,
+          "title": "Domain & Range from Tables, Graphs & Contexts",
+          "path": "units/unit-05/lessons/lesson-03-domain-range-from-tables-graphs-contexts.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l04",
+          "unit": 5,
+          "lesson": 4,
+          "title": "Multiple Representations & Function Rules",
+          "path": "units/unit-05/lessons/lesson-04-multiple-representations-function-rules.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l05",
+          "unit": 5,
+          "lesson": 5,
+          "title": "Transformations of Parent Functions",
+          "path": "units/unit-05/lessons/lesson-05-transformations-of-parent-functions.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l06",
+          "unit": 5,
+          "lesson": 6,
+          "title": "Piecewise Functions & Discrete Models",
+          "path": "units/unit-05/lessons/lesson-06-piecewise-functions-discrete-models.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l07",
+          "unit": 5,
+          "lesson": 7,
+          "title": "Arithmetic Sequences as Functions & Inverse Thinking",
+          "path": "units/unit-05/lessons/lesson-07-arithmetic-sequences-as-functions-inverse-thinking.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l01",
+          "unit": 6,
+          "lesson": 1,
+          "title": "Rate of Change & Slope",
+          "path": "units/unit-06/lessons/lesson-01-rate-of-change-slope.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l02",
+          "unit": 6,
+          "lesson": 2,
+          "title": "Slope from Tables, Graphs & Points",
+          "path": "units/unit-06/lessons/lesson-02-slope-from-tables-graphs-points.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u06-l03",
+          "unit": 6,
+          "lesson": 3,
+          "title": "Slope-Intercept Form",
+          "path": "units/unit-06/lessons/lesson-03-slope-intercept-form.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l04",
+          "unit": 6,
+          "lesson": 4,
+          "title": "Point-Slope & Standard Form",
+          "path": "units/unit-06/lessons/lesson-04-point-slope-standard-form.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l05",
+          "unit": 6,
+          "lesson": 5,
+          "title": "Parallel & Perpendicular Lines",
+          "path": "units/unit-06/lessons/lesson-05-parallel-perpendicular-lines.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l06",
+          "unit": 6,
+          "lesson": 6,
+          "title": "Scatterplots, Correlation & Lines of Fit",
+          "path": "units/unit-06/lessons/lesson-06-scatterplots-correlation-lines-of-fit.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l07",
+          "unit": 6,
+          "lesson": 7,
+          "title": "Regression, Residuals & Model Limitations",
+          "path": "units/unit-06/lessons/lesson-07-regression-residuals-model-limitations.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l08",
+          "unit": 6,
+          "lesson": 8,
+          "title": "Linear Modelling, Prediction & Decision-Making",
+          "path": "units/unit-06/lessons/lesson-08-linear-modelling-prediction-decision-making.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l01",
+          "unit": 7,
+          "lesson": 1,
+          "title": "Systems as Intersections & Number of Solutions",
+          "path": "units/unit-07/lessons/lesson-01-systems-as-intersections-number-of-solutions.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l02",
+          "unit": 7,
+          "lesson": 2,
+          "title": "Solving Systems by Graphing",
+          "path": "units/unit-07/lessons/lesson-02-solving-systems-by-graphing.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l03",
+          "unit": 7,
+          "lesson": 3,
+          "title": "Solving Systems by Substitution",
+          "path": "units/unit-07/lessons/lesson-03-solving-systems-by-substitution.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u07-l04",
+          "unit": 7,
+          "lesson": 4,
+          "title": "Solving Systems by Elimination",
+          "path": "units/unit-07/lessons/lesson-04-solving-systems-by-elimination.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u07-l05",
+          "unit": 7,
+          "lesson": 5,
+          "title": "Systems from Contexts: Cost, Mixture & Motion",
+          "path": "units/unit-07/lessons/lesson-05-systems-from-contexts-cost-mixture-motion.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l06",
+          "unit": 7,
+          "lesson": 6,
+          "title": "Systems of Linear Inequalities",
+          "path": "units/unit-07/lessons/lesson-06-systems-of-linear-inequalities.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l07",
+          "unit": 7,
+          "lesson": 7,
+          "title": "Feasible Regions, Constraints & Introductory Optimization",
+          "path": "units/unit-07/lessons/lesson-07-feasible-regions-constraints-introductory-optimization.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l01",
+          "unit": 8,
+          "lesson": 1,
+          "title": "Exponent Laws & Equivalent Forms",
+          "path": "units/unit-08/lessons/lesson-01-exponent-laws-equivalent-forms.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l02",
+          "unit": 8,
+          "lesson": 2,
+          "title": "Zero, Negative & Rational Exponents",
+          "path": "units/unit-08/lessons/lesson-02-zero-negative-rational-exponents.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l03",
+          "unit": 8,
+          "lesson": 3,
+          "title": "Scientific Notation & Operations",
+          "path": "units/unit-08/lessons/lesson-03-scientific-notation-operations.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l04",
+          "unit": 8,
+          "lesson": 4,
+          "title": "Arithmetic & Geometric Sequences",
+          "path": "units/unit-08/lessons/lesson-04-arithmetic-geometric-sequences.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l05",
+          "unit": 8,
+          "lesson": 5,
+          "title": "Exponential Functions: Growth & Decay",
+          "path": "units/unit-08/lessons/lesson-05-exponential-functions-growth-decay.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l06",
+          "unit": 8,
+          "lesson": 6,
+          "title": "Compound Interest, Half-Life & Exponential Modelling",
+          "path": "units/unit-08/lessons/lesson-06-compound-interest-half-life-exponential-modelling.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l01",
+          "unit": 9,
+          "lesson": 1,
+          "title": "Polynomial Vocabulary & Standard Form",
+          "path": "units/unit-09/lessons/lesson-01-polynomial-vocabulary-standard-form.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l02",
+          "unit": 9,
+          "lesson": 2,
+          "title": "Adding & Subtracting Polynomials",
+          "path": "units/unit-09/lessons/lesson-02-adding-subtracting-polynomials.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l03",
+          "unit": 9,
+          "lesson": 3,
+          "title": "Multiplying Monomials & Polynomials",
+          "path": "units/unit-09/lessons/lesson-03-multiplying-monomials-polynomials.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l04",
+          "unit": 9,
+          "lesson": 4,
+          "title": "Binomial Products & Special Products",
+          "path": "units/unit-09/lessons/lesson-04-binomial-products-special-products.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l05",
+          "unit": 9,
+          "lesson": 5,
+          "title": "Factoring the Greatest Common Factor",
+          "path": "units/unit-09/lessons/lesson-05-factoring-the-greatest-common-factor.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l06",
+          "unit": 9,
+          "lesson": 6,
+          "title": "Factoring Trinomials & Difference of Squares",
+          "path": "units/unit-09/lessons/lesson-06-factoring-trinomials-difference-of-squares.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u09-l07",
+          "unit": 9,
+          "lesson": 7,
+          "title": "Zeros, Factors & Polynomial Modelling",
+          "path": "units/unit-09/lessons/lesson-07-zeros-factors-polynomial-modelling.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l01",
+          "unit": 10,
+          "lesson": 1,
+          "title": "Quadratic Functions, Parabolas & Key Features",
+          "path": "units/unit-10/lessons/lesson-01-quadratic-functions-parabolas-key-features.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l02",
+          "unit": 10,
+          "lesson": 2,
+          "title": "Vertex, Axis of Symmetry & Transformations",
+          "path": "units/unit-10/lessons/lesson-02-vertex-axis-of-symmetry-transformations.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l03",
+          "unit": 10,
+          "lesson": 3,
+          "title": "Factored Form, Zeros & Graphs",
+          "path": "units/unit-10/lessons/lesson-03-factored-form-zeros-graphs.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l04",
+          "unit": 10,
+          "lesson": 4,
+          "title": "Solving Quadratics by Factoring",
+          "path": "units/unit-10/lessons/lesson-04-solving-quadratics-by-factoring.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u10-l05",
+          "unit": 10,
+          "lesson": 5,
+          "title": "Solving by Square Roots & Completing the Square",
+          "path": "units/unit-10/lessons/lesson-05-solving-by-square-roots-completing-the-square.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l06",
+          "unit": 10,
+          "lesson": 6,
+          "title": "Quadratic Formula & Discriminant",
+          "path": "units/unit-10/lessons/lesson-06-quadratic-formula-discriminant.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l07",
+          "unit": 10,
+          "lesson": 7,
+          "title": "Quadratic Modelling, Projectiles & Optimization",
+          "path": "units/unit-10/lessons/lesson-07-quadratic-modelling-projectiles-optimization.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l08",
+          "unit": 10,
+          "lesson": 8,
+          "title": "Linear-Quadratic Systems & Model Comparison",
+          "path": "units/unit-10/lessons/lesson-08-linear-quadratic-systems-model-comparison.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l01",
+          "unit": 11,
+          "lesson": 1,
+          "title": "Radical Expressions & Principal Roots",
+          "path": "units/unit-11/lessons/lesson-01-radical-expressions-principal-roots.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l02",
+          "unit": 11,
+          "lesson": 2,
+          "title": "Simplifying & Operating with Radicals",
+          "path": "units/unit-11/lessons/lesson-02-simplifying-operating-with-radicals.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l03",
+          "unit": 11,
+          "lesson": 3,
+          "title": "Rational Exponents & Equivalent Radical Forms",
+          "path": "units/unit-11/lessons/lesson-03-rational-exponents-equivalent-radical-forms.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l04",
+          "unit": 11,
+          "lesson": 4,
+          "title": "Pythagorean Theorem & Distance",
+          "path": "units/unit-11/lessons/lesson-04-pythagorean-theorem-distance.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l05",
+          "unit": 11,
+          "lesson": 5,
+          "title": "Midpoint, Coordinate Geometry & Geometric Constraints",
+          "path": "units/unit-11/lessons/lesson-05-midpoint-coordinate-geometry-geometric-constraints.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l06",
+          "unit": 11,
+          "lesson": 6,
+          "title": "Circle Equations, Radical Models & Verification",
+          "path": "units/unit-11/lessons/lesson-06-circle-equations-radical-models-verification.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l01",
+          "unit": 12,
+          "lesson": 1,
+          "title": "Statistical Questions, Study Design & Data Ethics",
+          "path": "units/unit-12/lessons/lesson-01-statistical-questions-study-design-data-ethics.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l02",
+          "unit": 12,
+          "lesson": 2,
+          "title": "Distributions, Center, Spread & Standard Deviation",
+          "path": "units/unit-12/lessons/lesson-02-distributions-center-spread-standard-deviation.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l03",
+          "unit": 12,
+          "lesson": 3,
+          "title": "Box Plots, Histograms & Comparing Groups",
+          "path": "units/unit-12/lessons/lesson-03-box-plots-histograms-comparing-groups.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l04",
+          "unit": 12,
+          "lesson": 4,
+          "title": "Bivariate Data, Correlation, Causation & Residuals",
+          "path": "units/unit-12/lessons/lesson-04-bivariate-data-correlation-causation-residuals.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l05",
+          "unit": 12,
+          "lesson": 5,
+          "title": "Two-Way Tables, Conditional Relative Frequency & Probability",
+          "path": "units/unit-12/lessons/lesson-05-two-way-tables-conditional-relative-frequency-probability.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l06",
+          "unit": 12,
+          "lesson": 6,
+          "title": "Financial Mathematics: Growth, Loans, Taxes & Risk",
+          "path": "units/unit-12/lessons/lesson-06-financial-mathematics-growth-loans-taxes-risk.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l07",
+          "unit": 12,
+          "lesson": 7,
+          "title": "Evaluating Quantitative Claims & Communicating Evidence",
+          "path": "units/unit-12/lessons/lesson-07-evaluating-quantitative-claims-communicating-evidence.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l01",
+          "unit": 13,
+          "lesson": 1,
+          "title": "Frame a Complex & Ethical Modelling Question",
+          "path": "units/unit-13/lessons/lesson-01-frame-a-complex-ethical-modelling-question.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l02",
+          "unit": 13,
+          "lesson": 2,
+          "title": "Choose Variables, Assumptions, Data & Representations",
+          "path": "units/unit-13/lessons/lesson-02-choose-variables-assumptions-data-representations.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l03",
+          "unit": 13,
+          "lesson": 3,
+          "title": "Build, Calculate, Validate & Revise the Model",
+          "path": "units/unit-13/lessons/lesson-03-build-calculate-validate-revise-the-model.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l04",
+          "unit": 13,
+          "lesson": 4,
+          "title": "Test Sensitivity, Uncertainty & Fairness",
+          "path": "units/unit-13/lessons/lesson-04-test-sensitivity-uncertainty-fairness.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l05",
+          "unit": 13,
+          "lesson": 5,
+          "title": "Present, Defend & Reflect on Algebra I Readiness",
+          "path": "units/unit-13/lessons/lesson-05-present-defend-reflect-on-algebra-i-readiness.html",
+          "worked_example_status": "confirmed_structured",
+          "worked_example": "confirmed_structured",
+          "game_tool": "missing",
+          "video": "missing"
+        }
+      ]
+    },
+    "geometry": {
+      "total_lessons": 90,
+      "worked_example_summary": {
+        "status": "template-confirmed",
+        "note": "Course architecture declares 90 visual lessons with worked reasoning; representative static lesson verified with a worked-example section."
+      },
+      "game_tool": {
+        "covered": 35,
+        "missing": 55
+      },
+      "video": {
+        "enabled_reviewed": 0,
+        "candidate_pending": 0,
+        "missing_no_candidate": 90
+      },
+      "lessons": [
+        {
+          "id": "u01-l01",
+          "unit": 1,
+          "lesson": 1,
+          "title": "Points, Lines, Planes & Defined Terms",
+          "path": "units/unit-01/lessons/u01-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u01-l02",
+          "unit": 1,
+          "lesson": 2,
+          "title": "Segments, Rays, Angles & Notation",
+          "path": "units/unit-01/lessons/u01-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u01-l03",
+          "unit": 1,
+          "lesson": 3,
+          "title": "Distance, Midpoint & Segment Partition",
+          "path": "units/unit-01/lessons/u01-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u01-l04",
+          "unit": 1,
+          "lesson": 4,
+          "title": "Compass-and-Straightedge Constructions",
+          "path": "units/unit-01/lessons/u01-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u01-l05",
+          "unit": 1,
+          "lesson": 5,
+          "title": "Conditional Statements, Converses & Counterexamples",
+          "path": "units/unit-01/lessons/u01-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u01-l06",
+          "unit": 1,
+          "lesson": 6,
+          "title": "Two-Column, Flow & Paragraph Proofs",
+          "path": "units/unit-01/lessons/u01-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l01",
+          "unit": 2,
+          "lesson": 1,
+          "title": "Translations on the Coordinate Plane",
+          "path": "units/unit-02/lessons/u02-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l02",
+          "unit": 2,
+          "lesson": 2,
+          "title": "Reflections Across Axes and Lines",
+          "path": "units/unit-02/lessons/u02-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l03",
+          "unit": 2,
+          "lesson": 3,
+          "title": "Rotations About the Origin and Other Centers",
+          "path": "units/unit-02/lessons/u02-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l04",
+          "unit": 2,
+          "lesson": 4,
+          "title": "Compositions of Transformations",
+          "path": "units/unit-02/lessons/u02-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l05",
+          "unit": 2,
+          "lesson": 5,
+          "title": "Rigid Motion Definition of Congruence",
+          "path": "units/unit-02/lessons/u02-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l06",
+          "unit": 2,
+          "lesson": 6,
+          "title": "Line, Rotational & Point Symmetry",
+          "path": "units/unit-02/lessons/u02-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l07",
+          "unit": 2,
+          "lesson": 7,
+          "title": "Tessellations, Frieze Patterns & Design Rules",
+          "path": "units/unit-02/lessons/u02-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l01",
+          "unit": 3,
+          "lesson": 1,
+          "title": "Triangle Classification & Angle Relationships",
+          "path": "units/unit-03/lessons/u03-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l02",
+          "unit": 3,
+          "lesson": 2,
+          "title": "SSS and SAS Congruence",
+          "path": "units/unit-03/lessons/u03-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l03",
+          "unit": 3,
+          "lesson": 3,
+          "title": "ASA, AAS and HL Congruence",
+          "path": "units/unit-03/lessons/u03-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l04",
+          "unit": 3,
+          "lesson": 4,
+          "title": "CPCTC and Multi-Step Triangle Proofs",
+          "path": "units/unit-03/lessons/u03-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l05",
+          "unit": 3,
+          "lesson": 5,
+          "title": "Isosceles and Equilateral Triangle Theorems",
+          "path": "units/unit-03/lessons/u03-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l06",
+          "unit": 3,
+          "lesson": 6,
+          "title": "Triangle Inequality & Feasible Construction",
+          "path": "units/unit-03/lessons/u03-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l07",
+          "unit": 3,
+          "lesson": 7,
+          "title": "Perpendicular Bisectors, Angle Bisectors & Centers",
+          "path": "units/unit-03/lessons/u03-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l01",
+          "unit": 4,
+          "lesson": 1,
+          "title": "Parallel Lines Cut by a Transversal",
+          "path": "units/unit-04/lessons/u04-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l02",
+          "unit": 4,
+          "lesson": 2,
+          "title": "Proving Lines Parallel from Angle Relationships",
+          "path": "units/unit-04/lessons/u04-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l03",
+          "unit": 4,
+          "lesson": 3,
+          "title": "Slope as Direction and Rate",
+          "path": "units/unit-04/lessons/u04-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l04",
+          "unit": 4,
+          "lesson": 4,
+          "title": "Parallel and Perpendicular Slopes",
+          "path": "units/unit-04/lessons/u04-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l05",
+          "unit": 4,
+          "lesson": 5,
+          "title": "Coordinate Proof with Distance, Midpoint & Slope",
+          "path": "units/unit-04/lessons/u04-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l06",
+          "unit": 4,
+          "lesson": 6,
+          "title": "Equations of Lines in Geometric Context",
+          "path": "units/unit-04/lessons/u04-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l01",
+          "unit": 5,
+          "lesson": 1,
+          "title": "Dilations from a Center",
+          "path": "units/unit-05/lessons/u05-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l02",
+          "unit": 5,
+          "lesson": 2,
+          "title": "Similarity Through Transformations",
+          "path": "units/unit-05/lessons/u05-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l03",
+          "unit": 5,
+          "lesson": 3,
+          "title": "AA Similarity and Triangle Proportions",
+          "path": "units/unit-05/lessons/u05-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l04",
+          "unit": 5,
+          "lesson": 4,
+          "title": "SSS and SAS Similarity",
+          "path": "units/unit-05/lessons/u05-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l05",
+          "unit": 5,
+          "lesson": 5,
+          "title": "Side-Splitter and Proportional Segments",
+          "path": "units/unit-05/lessons/u05-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l06",
+          "unit": 5,
+          "lesson": 6,
+          "title": "Scale Drawings, Maps & Models",
+          "path": "units/unit-05/lessons/u05-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l07",
+          "unit": 5,
+          "lesson": 7,
+          "title": "Indirect Measurement, Shadows & Mirrors",
+          "path": "units/unit-05/lessons/u05-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l01",
+          "unit": 6,
+          "lesson": 1,
+          "title": "Pythagorean Theorem & Its Converse",
+          "path": "units/unit-06/lessons/u06-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l02",
+          "unit": 6,
+          "lesson": 2,
+          "title": "Special Right Triangles: 45-45-90",
+          "path": "units/unit-06/lessons/u06-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l03",
+          "unit": 6,
+          "lesson": 3,
+          "title": "Special Right Triangles: 30-60-90",
+          "path": "units/unit-06/lessons/u06-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l04",
+          "unit": 6,
+          "lesson": 4,
+          "title": "Geometric Mean & Right-Triangle Altitudes",
+          "path": "units/unit-06/lessons/u06-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l05",
+          "unit": 6,
+          "lesson": 5,
+          "title": "Sine, Cosine & Tangent Ratios",
+          "path": "units/unit-06/lessons/u06-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l06",
+          "unit": 6,
+          "lesson": 6,
+          "title": "Inverse Trigonometry & Angle Measure",
+          "path": "units/unit-06/lessons/u06-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l07",
+          "unit": 6,
+          "lesson": 7,
+          "title": "Angles of Elevation and Depression",
+          "path": "units/unit-06/lessons/u06-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l08",
+          "unit": 6,
+          "lesson": 8,
+          "title": "Bearings, Vectors & Multi-Step Navigation",
+          "path": "units/unit-06/lessons/u06-l08.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l01",
+          "unit": 7,
+          "lesson": 1,
+          "title": "Interior and Exterior Angles of Polygons",
+          "path": "units/unit-07/lessons/u07-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l02",
+          "unit": 7,
+          "lesson": 2,
+          "title": "Parallelogram Properties & Tests",
+          "path": "units/unit-07/lessons/u07-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l03",
+          "unit": 7,
+          "lesson": 3,
+          "title": "Rectangles, Rhombi & Squares",
+          "path": "units/unit-07/lessons/u07-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l04",
+          "unit": 7,
+          "lesson": 4,
+          "title": "Trapezoids, Kites & Midsegments",
+          "path": "units/unit-07/lessons/u07-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l05",
+          "unit": 7,
+          "lesson": 5,
+          "title": "Quadrilateral Coordinate Proofs",
+          "path": "units/unit-07/lessons/u07-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l06",
+          "unit": 7,
+          "lesson": 6,
+          "title": "Regular Polygons, Apothem & Central Angles",
+          "path": "units/unit-07/lessons/u07-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l07",
+          "unit": 7,
+          "lesson": 7,
+          "title": "Polygon Decomposition & Design Constraints",
+          "path": "units/unit-07/lessons/u07-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l01",
+          "unit": 8,
+          "lesson": 1,
+          "title": "Circle Vocabulary, Radius, Diameter & Chords",
+          "path": "units/unit-08/lessons/u08-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l02",
+          "unit": 8,
+          "lesson": 2,
+          "title": "Central Angles, Arcs & Arc Length",
+          "path": "units/unit-08/lessons/u08-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l03",
+          "unit": 8,
+          "lesson": 3,
+          "title": "Inscribed Angles & Intercepted Arcs",
+          "path": "units/unit-08/lessons/u08-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l04",
+          "unit": 8,
+          "lesson": 4,
+          "title": "Chords, Perpendicular Bisectors & Distances",
+          "path": "units/unit-08/lessons/u08-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l05",
+          "unit": 8,
+          "lesson": 5,
+          "title": "Tangents and Radius Relationships",
+          "path": "units/unit-08/lessons/u08-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l06",
+          "unit": 8,
+          "lesson": 6,
+          "title": "Secant, Chord & Tangent Power Theorems",
+          "path": "units/unit-08/lessons/u08-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l07",
+          "unit": 8,
+          "lesson": 7,
+          "title": "Sector Area, Segment Area & Annuli",
+          "path": "units/unit-08/lessons/u08-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l08",
+          "unit": 8,
+          "lesson": 8,
+          "title": "Equation of a Circle & Coordinate Applications",
+          "path": "units/unit-08/lessons/u08-l08.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l01",
+          "unit": 9,
+          "lesson": 1,
+          "title": "Locus as a Set of Points Meeting a Condition",
+          "path": "units/unit-09/lessons/u09-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l02",
+          "unit": 9,
+          "lesson": 2,
+          "title": "Perpendicular and Angle Bisector Loci",
+          "path": "units/unit-09/lessons/u09-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l03",
+          "unit": 9,
+          "lesson": 3,
+          "title": "Distance from a Point to a Line",
+          "path": "units/unit-09/lessons/u09-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l04",
+          "unit": 9,
+          "lesson": 4,
+          "title": "Coordinate Intersections and Geometric Systems",
+          "path": "units/unit-09/lessons/u09-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l05",
+          "unit": 9,
+          "lesson": 5,
+          "title": "Circle-Line Intersections and Tangency",
+          "path": "units/unit-09/lessons/u09-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l06",
+          "unit": 9,
+          "lesson": 6,
+          "title": "Parabolas as Distance Loci",
+          "path": "units/unit-09/lessons/u09-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l07",
+          "unit": 9,
+          "lesson": 7,
+          "title": "Voronoi Thinking, Nearest-Point Regions & Design",
+          "path": "units/unit-09/lessons/u09-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l01",
+          "unit": 10,
+          "lesson": 1,
+          "title": "Area of Triangles, Parallelograms & Trapezoids",
+          "path": "units/unit-10/lessons/u10-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l02",
+          "unit": 10,
+          "lesson": 2,
+          "title": "Area of Regular Polygons and Composite Figures",
+          "path": "units/unit-10/lessons/u10-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l03",
+          "unit": 10,
+          "lesson": 3,
+          "title": "Heron’s Formula and Coordinate Area",
+          "path": "units/unit-10/lessons/u10-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l04",
+          "unit": 10,
+          "lesson": 4,
+          "title": "Effects of Scale on Perimeter and Area",
+          "path": "units/unit-10/lessons/u10-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l05",
+          "unit": 10,
+          "lesson": 5,
+          "title": "Units, Precision, Error & Significant Figures",
+          "path": "units/unit-10/lessons/u10-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l06",
+          "unit": 10,
+          "lesson": 6,
+          "title": "Geometric Probability by Length and Area",
+          "path": "units/unit-10/lessons/u10-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l07",
+          "unit": 10,
+          "lesson": 7,
+          "title": "Optimization with Perimeter and Area Constraints",
+          "path": "units/unit-10/lessons/u10-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l01",
+          "unit": 11,
+          "lesson": 1,
+          "title": "Prisms, Cylinders & Cavalieri’s Principle",
+          "path": "units/unit-11/lessons/u11-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l02",
+          "unit": 11,
+          "lesson": 2,
+          "title": "Pyramids and Cones",
+          "path": "units/unit-11/lessons/u11-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l03",
+          "unit": 11,
+          "lesson": 3,
+          "title": "Spheres: Surface Area and Volume",
+          "path": "units/unit-11/lessons/u11-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l04",
+          "unit": 11,
+          "lesson": 4,
+          "title": "Nets and Surface Area of Prisms and Pyramids",
+          "path": "units/unit-11/lessons/u11-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l05",
+          "unit": 11,
+          "lesson": 5,
+          "title": "Surface Area of Cylinders and Cones",
+          "path": "units/unit-11/lessons/u11-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l06",
+          "unit": 11,
+          "lesson": 6,
+          "title": "Cross-Sections and Solids of Revolution",
+          "path": "units/unit-11/lessons/u11-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l07",
+          "unit": 11,
+          "lesson": 7,
+          "title": "Similarity, Scale and Volume Relationships",
+          "path": "units/unit-11/lessons/u11-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l01",
+          "unit": 12,
+          "lesson": 1,
+          "title": "CAD Workspace, Units, Grid and Snap",
+          "path": "units/unit-12/lessons/u12-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l02",
+          "unit": 12,
+          "lesson": 2,
+          "title": "Precision Lines, Angles and Dimensions",
+          "path": "units/unit-12/lessons/u12-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l03",
+          "unit": 12,
+          "lesson": 3,
+          "title": "Layers, Objects and Geometric Organization",
+          "path": "units/unit-12/lessons/u12-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l04",
+          "unit": 12,
+          "lesson": 4,
+          "title": "Scale Plans, Rooms and Openings",
+          "path": "units/unit-12/lessons/u12-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l05",
+          "unit": 12,
+          "lesson": 5,
+          "title": "Area, Perimeter and Material Schedules",
+          "path": "units/unit-12/lessons/u12-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l06",
+          "unit": 12,
+          "lesson": 6,
+          "title": "Transformations, Repetition and Modular Design",
+          "path": "units/unit-12/lessons/u12-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l07",
+          "unit": 12,
+          "lesson": 7,
+          "title": "Export, Print/PDF, SVG, DXF and Design Defense",
+          "path": "units/unit-12/lessons/u12-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l01",
+          "unit": 13,
+          "lesson": 1,
+          "title": "Frame a Geometric Design or Investigation",
+          "path": "units/unit-13/lessons/u13-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l02",
+          "unit": 13,
+          "lesson": 2,
+          "title": "Develop Constructions, Models and Proof",
+          "path": "units/unit-13/lessons/u13-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l03",
+          "unit": 13,
+          "lesson": 3,
+          "title": "Test Measurements, Sensitivity and Limitations",
+          "path": "units/unit-13/lessons/u13-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l04",
+          "unit": 13,
+          "lesson": 4,
+          "title": "Prepare a Printable Technical Portfolio",
+          "path": "units/unit-13/lessons/u13-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l05",
+          "unit": 13,
+          "lesson": 5,
+          "title": "Present, Defend and Revise the Design",
+          "path": "units/unit-13/lessons/u13-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l06",
+          "unit": 13,
+          "lesson": 6,
+          "title": "Final Synthesis, Examination and Completion Record",
+          "path": "units/unit-13/lessons/u13-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        }
+      ]
+    },
+    "algebra-2": {
+      "total_lessons": 92,
+      "worked_example_summary": {
+        "status": "template-confirmed",
+        "note": "Course architecture declares 92 detailed lessons with worked examples; representative static lesson verified with a worked-examples section."
+      },
+      "game_tool": {
+        "covered": 76,
+        "missing": 16
+      },
+      "video": {
+        "enabled_reviewed": 0,
+        "candidate_pending": 1,
+        "missing_no_candidate": 91
+      },
+      "lessons": [
+        {
+          "id": "u01-l01",
+          "unit": 1,
+          "lesson": 1,
+          "title": "Function Language, Notation & Evaluation",
+          "path": "units/unit-01/lessons/u01-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "candidate_pending"
+        },
+        {
+          "id": "u01-l02",
+          "unit": 1,
+          "lesson": 2,
+          "title": "Domain, Range, Intervals & Constraints",
+          "path": "units/unit-01/lessons/u01-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u01-l03",
+          "unit": 1,
+          "lesson": 3,
+          "title": "Transformations of Parent Functions",
+          "path": "units/unit-01/lessons/u01-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u01-l04",
+          "unit": 1,
+          "lesson": 4,
+          "title": "Function Composition & Decomposition",
+          "path": "units/unit-01/lessons/u01-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u01-l05",
+          "unit": 1,
+          "lesson": 5,
+          "title": "Inverse Functions & One-to-One Relationships",
+          "path": "units/unit-01/lessons/u01-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u01-l06",
+          "unit": 1,
+          "lesson": 6,
+          "title": "Piecewise, Absolute-Value & Step Functions",
+          "path": "units/unit-01/lessons/u01-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l01",
+          "unit": 2,
+          "lesson": 1,
+          "title": "Polynomial Vocabulary, Degree & Structure",
+          "path": "units/unit-02/lessons/u02-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l02",
+          "unit": 2,
+          "lesson": 2,
+          "title": "Polynomial Operations & Equivalent Forms",
+          "path": "units/unit-02/lessons/u02-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l03",
+          "unit": 2,
+          "lesson": 3,
+          "title": "Power Functions & End Behavior",
+          "path": "units/unit-02/lessons/u02-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l04",
+          "unit": 2,
+          "lesson": 4,
+          "title": "The Imaginary Unit & Powers of i",
+          "path": "units/unit-02/lessons/u02-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l05",
+          "unit": 2,
+          "lesson": 5,
+          "title": "Operations with Complex Numbers",
+          "path": "units/unit-02/lessons/u02-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l06",
+          "unit": 2,
+          "lesson": 6,
+          "title": "Quadratic Equations with Complex Solutions",
+          "path": "units/unit-02/lessons/u02-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l07",
+          "unit": 2,
+          "lesson": 7,
+          "title": "Conjugates, Modulus & the Complex Plane",
+          "path": "units/unit-02/lessons/u02-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u02-l08",
+          "unit": 2,
+          "lesson": 8,
+          "title": "Fundamental Theorem of Algebra & Complete Factorization",
+          "path": "units/unit-02/lessons/u02-l08.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l01",
+          "unit": 3,
+          "lesson": 1,
+          "title": "Long Division of Polynomials",
+          "path": "units/unit-03/lessons/u03-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l02",
+          "unit": 3,
+          "lesson": 2,
+          "title": "Synthetic Division & Efficient Evaluation",
+          "path": "units/unit-03/lessons/u03-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l03",
+          "unit": 3,
+          "lesson": 3,
+          "title": "Remainder and Factor Theorems",
+          "path": "units/unit-03/lessons/u03-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l04",
+          "unit": 3,
+          "lesson": 4,
+          "title": "Rational Root Theorem & Candidate Zeros",
+          "path": "units/unit-03/lessons/u03-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l05",
+          "unit": 3,
+          "lesson": 5,
+          "title": "Solving Higher-Degree Polynomial Equations",
+          "path": "units/unit-03/lessons/u03-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l06",
+          "unit": 3,
+          "lesson": 6,
+          "title": "Zeros, Multiplicity & Graph Behavior",
+          "path": "units/unit-03/lessons/u03-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u03-l07",
+          "unit": 3,
+          "lesson": 7,
+          "title": "Polynomial Regression, Interpolation & Model Limits",
+          "path": "units/unit-03/lessons/u03-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l01",
+          "unit": 4,
+          "lesson": 1,
+          "title": "Simplifying Rational Expressions & Restrictions",
+          "path": "units/unit-04/lessons/u04-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l02",
+          "unit": 4,
+          "lesson": 2,
+          "title": "Multiplying and Dividing Rational Expressions",
+          "path": "units/unit-04/lessons/u04-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l03",
+          "unit": 4,
+          "lesson": 3,
+          "title": "Adding and Subtracting Rational Expressions",
+          "path": "units/unit-04/lessons/u04-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l04",
+          "unit": 4,
+          "lesson": 4,
+          "title": "Solving Rational Equations & Extraneous Solutions",
+          "path": "units/unit-04/lessons/u04-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l05",
+          "unit": 4,
+          "lesson": 5,
+          "title": "Reciprocal Functions, Asymptotes & Holes",
+          "path": "units/unit-04/lessons/u04-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l06",
+          "unit": 4,
+          "lesson": 6,
+          "title": "Transformations and Features of Rational Functions",
+          "path": "units/unit-04/lessons/u04-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l07",
+          "unit": 4,
+          "lesson": 7,
+          "title": "Direct, Inverse, Joint & Combined Variation",
+          "path": "units/unit-04/lessons/u04-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u04-l08",
+          "unit": 4,
+          "lesson": 8,
+          "title": "Rational Models, Rates & Work Problems",
+          "path": "units/unit-04/lessons/u04-l08.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l01",
+          "unit": 5,
+          "lesson": 1,
+          "title": "Rational Exponents & Radical Equivalence",
+          "path": "units/unit-05/lessons/u05-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l02",
+          "unit": 5,
+          "lesson": 2,
+          "title": "Simplifying Radical Expressions",
+          "path": "units/unit-05/lessons/u05-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l03",
+          "unit": 5,
+          "lesson": 3,
+          "title": "Operations with Radicals & Rationalizing",
+          "path": "units/unit-05/lessons/u05-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l04",
+          "unit": 5,
+          "lesson": 4,
+          "title": "Solving Radical Equations & Checking Solutions",
+          "path": "units/unit-05/lessons/u05-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l05",
+          "unit": 5,
+          "lesson": 5,
+          "title": "Radical Functions, Domains & Transformations",
+          "path": "units/unit-05/lessons/u05-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u05-l06",
+          "unit": 5,
+          "lesson": 6,
+          "title": "Radical Models, Geometry & Measurement Error",
+          "path": "units/unit-05/lessons/u05-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l01",
+          "unit": 6,
+          "lesson": 1,
+          "title": "Exponential Function Structure & Parameters",
+          "path": "units/unit-06/lessons/u06-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l02",
+          "unit": 6,
+          "lesson": 2,
+          "title": "Growth, Decay & Percent Change",
+          "path": "units/unit-06/lessons/u06-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l03",
+          "unit": 6,
+          "lesson": 3,
+          "title": "Compound Interest & Effective Rates",
+          "path": "units/unit-06/lessons/u06-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l04",
+          "unit": 6,
+          "lesson": 4,
+          "title": "Continuous Growth, Decay & the Constant e",
+          "path": "units/unit-06/lessons/u06-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l05",
+          "unit": 6,
+          "lesson": 5,
+          "title": "Solving Exponential Equations by Common Bases",
+          "path": "units/unit-06/lessons/u06-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l06",
+          "unit": 6,
+          "lesson": 6,
+          "title": "Exponential Regression & Data Modelling",
+          "path": "units/unit-06/lessons/u06-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u06-l07",
+          "unit": 6,
+          "lesson": 7,
+          "title": "Comparing Linear, Quadratic & Exponential Models",
+          "path": "units/unit-06/lessons/u06-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l01",
+          "unit": 7,
+          "lesson": 1,
+          "title": "Logarithms as Inverses of Exponentials",
+          "path": "units/unit-07/lessons/u07-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l02",
+          "unit": 7,
+          "lesson": 2,
+          "title": "Common, Natural & Other Logarithmic Bases",
+          "path": "units/unit-07/lessons/u07-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l03",
+          "unit": 7,
+          "lesson": 3,
+          "title": "Product, Quotient & Power Properties",
+          "path": "units/unit-07/lessons/u07-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l04",
+          "unit": 7,
+          "lesson": 4,
+          "title": "Solving Exponential Equations with Logarithms",
+          "path": "units/unit-07/lessons/u07-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l05",
+          "unit": 7,
+          "lesson": 5,
+          "title": "Solving Logarithmic Equations & Domain Checks",
+          "path": "units/unit-07/lessons/u07-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l06",
+          "unit": 7,
+          "lesson": 6,
+          "title": "Change of Base, Technology & Estimation",
+          "path": "units/unit-07/lessons/u07-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u07-l07",
+          "unit": 7,
+          "lesson": 7,
+          "title": "Logarithmic Scales, Data & Model Interpretation",
+          "path": "units/unit-07/lessons/u07-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l01",
+          "unit": 8,
+          "lesson": 1,
+          "title": "Graphical Solutions of Linear–Nonlinear Systems",
+          "path": "units/unit-08/lessons/u08-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l02",
+          "unit": 8,
+          "lesson": 2,
+          "title": "Solving Nonlinear Systems by Substitution",
+          "path": "units/unit-08/lessons/u08-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l03",
+          "unit": 8,
+          "lesson": 3,
+          "title": "Polynomial, Rational & Radical Systems",
+          "path": "units/unit-08/lessons/u08-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l04",
+          "unit": 8,
+          "lesson": 4,
+          "title": "Matrix Vocabulary, Dimensions & Operations",
+          "path": "units/unit-08/lessons/u08-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l05",
+          "unit": 8,
+          "lesson": 5,
+          "title": "Matrix Equations, Row Reduction & Systems",
+          "path": "units/unit-08/lessons/u08-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u08-l06",
+          "unit": 8,
+          "lesson": 6,
+          "title": "Determinants, Inverses & Transformation Models",
+          "path": "units/unit-08/lessons/u08-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l01",
+          "unit": 9,
+          "lesson": 1,
+          "title": "Arithmetic Sequences: Explicit & Recursive Forms",
+          "path": "units/unit-09/lessons/u09-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l02",
+          "unit": 9,
+          "lesson": 2,
+          "title": "Geometric Sequences: Growth, Decay & Recursion",
+          "path": "units/unit-09/lessons/u09-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l03",
+          "unit": 9,
+          "lesson": 3,
+          "title": "General Sequences, Patterns & Difference Tables",
+          "path": "units/unit-09/lessons/u09-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l04",
+          "unit": 9,
+          "lesson": 4,
+          "title": "Finite Arithmetic & Geometric Series",
+          "path": "units/unit-09/lessons/u09-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l05",
+          "unit": 9,
+          "lesson": 5,
+          "title": "Infinite Geometric Series & Convergence",
+          "path": "units/unit-09/lessons/u09-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l06",
+          "unit": 9,
+          "lesson": 6,
+          "title": "Sigma Notation & Summation Properties",
+          "path": "units/unit-09/lessons/u09-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u09-l07",
+          "unit": 9,
+          "lesson": 7,
+          "title": "Pascal’s Triangle & the Binomial Theorem",
+          "path": "units/unit-09/lessons/u09-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l01",
+          "unit": 10,
+          "lesson": 1,
+          "title": "Angle Measure, Radians & Coterminal Angles",
+          "path": "units/unit-10/lessons/u10-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l02",
+          "unit": 10,
+          "lesson": 2,
+          "title": "The Unit Circle & Coordinate Definitions",
+          "path": "units/unit-10/lessons/u10-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l03",
+          "unit": 10,
+          "lesson": 3,
+          "title": "Exact Trigonometric Values & Reference Angles",
+          "path": "units/unit-10/lessons/u10-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l04",
+          "unit": 10,
+          "lesson": 4,
+          "title": "Six Trigonometric Functions & Reciprocal Relationships",
+          "path": "units/unit-10/lessons/u10-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l05",
+          "unit": 10,
+          "lesson": 5,
+          "title": "Graphs of Sine and Cosine",
+          "path": "units/unit-10/lessons/u10-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l06",
+          "unit": 10,
+          "lesson": 6,
+          "title": "Amplitude, Period, Phase & Vertical Shifts",
+          "path": "units/unit-10/lessons/u10-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l07",
+          "unit": 10,
+          "lesson": 7,
+          "title": "Graphs of Tangent, Cotangent, Secant & Cosecant",
+          "path": "units/unit-10/lessons/u10-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l08",
+          "unit": 10,
+          "lesson": 8,
+          "title": "Inverse Trigonometric Functions & Restricted Domains",
+          "path": "units/unit-10/lessons/u10-l08.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l09",
+          "unit": 10,
+          "lesson": 9,
+          "title": "Sinusoidal Regression & Periodic Data",
+          "path": "units/unit-10/lessons/u10-l09.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u10-l10",
+          "unit": 10,
+          "lesson": 10,
+          "title": "Vectors, Bearings & Component Models",
+          "path": "units/unit-10/lessons/u10-l10.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l01",
+          "unit": 11,
+          "lesson": 1,
+          "title": "Fundamental, Reciprocal & Pythagorean Identities",
+          "path": "units/unit-11/lessons/u11-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l02",
+          "unit": 11,
+          "lesson": 2,
+          "title": "Verifying Identities with Equivalent Transformations",
+          "path": "units/unit-11/lessons/u11-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l03",
+          "unit": 11,
+          "lesson": 3,
+          "title": "Sum and Difference Identities",
+          "path": "units/unit-11/lessons/u11-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l04",
+          "unit": 11,
+          "lesson": 4,
+          "title": "Double-Angle and Half-Angle Identities",
+          "path": "units/unit-11/lessons/u11-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l05",
+          "unit": 11,
+          "lesson": 5,
+          "title": "Solving Trigonometric Equations on Intervals",
+          "path": "units/unit-11/lessons/u11-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l06",
+          "unit": 11,
+          "lesson": 6,
+          "title": "Law of Sines, Ambiguous Case & Applications",
+          "path": "units/unit-11/lessons/u11-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l07",
+          "unit": 11,
+          "lesson": 7,
+          "title": "Law of Cosines & Heron-Type Area Reasoning",
+          "path": "units/unit-11/lessons/u11-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u11-l08",
+          "unit": 11,
+          "lesson": 8,
+          "title": "Navigation, Vectors & Multi-Step Triangle Models",
+          "path": "units/unit-11/lessons/u11-l08.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l01",
+          "unit": 12,
+          "lesson": 1,
+          "title": "Fundamental Counting Principle, Permutations & Combinations",
+          "path": "units/unit-12/lessons/u12-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l02",
+          "unit": 12,
+          "lesson": 2,
+          "title": "Probability Rules, Complements & Unions",
+          "path": "units/unit-12/lessons/u12-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l03",
+          "unit": 12,
+          "lesson": 3,
+          "title": "Conditional Probability, Independence & Bayes Reasoning",
+          "path": "units/unit-12/lessons/u12-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l04",
+          "unit": 12,
+          "lesson": 4,
+          "title": "Binomial Experiments & Expected Value",
+          "path": "units/unit-12/lessons/u12-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l05",
+          "unit": 12,
+          "lesson": 5,
+          "title": "Normal Distributions, z-Scores & Percentiles",
+          "path": "units/unit-12/lessons/u12-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l06",
+          "unit": 12,
+          "lesson": 6,
+          "title": "Sampling, Bias, Margin of Error & Study Design",
+          "path": "units/unit-12/lessons/u12-l06.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u12-l07",
+          "unit": 12,
+          "lesson": 7,
+          "title": "Evaluating Statistical Claims & Communicating Uncertainty",
+          "path": "units/unit-12/lessons/u12-l07.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "covered",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l01",
+          "unit": 13,
+          "lesson": 1,
+          "title": "Frame a Meaningful, Ethical & Answerable Question",
+          "path": "units/unit-13/lessons/u13-l01.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l02",
+          "unit": 13,
+          "lesson": 2,
+          "title": "Select Variables, Functions, Data & Assumptions",
+          "path": "units/unit-13/lessons/u13-l02.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l03",
+          "unit": 13,
+          "lesson": 3,
+          "title": "Build, Compute, Visualize & Validate the Model",
+          "path": "units/unit-13/lessons/u13-l03.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l04",
+          "unit": 13,
+          "lesson": 4,
+          "title": "Test Sensitivity, Uncertainty, Fairness & Limitations",
+          "path": "units/unit-13/lessons/u13-l04.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        },
+        {
+          "id": "u13-l05",
+          "unit": 13,
+          "lesson": 5,
+          "title": "Present, Defend, Revise & Reflect",
+          "path": "units/unit-13/lessons/u13-l05.html",
+          "worked_example": "template-confirmed",
+          "game_tool": "missing",
+          "video": "missing"
+        }
+      ]
+    }
+  }
+}
