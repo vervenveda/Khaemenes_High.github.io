@@ -15,6 +15,39 @@
       "optional": true,
       "usage": "prerequisite_or_supplemental",
       "alignment_note": "function notation prerequisite review"
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U01-L03",
+      "lesson_file": "units/unit-01/lessons/u01-l03.html",
+      "asset_id": "MATH-PARENT-FUNCTIONS-TRANSFORMATIONS-OCT-001",
+      "shared_file": "../assets/video-library/parent-functions-transformations-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct parent-function transformation review with end-behavior preview."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U07-L05",
+      "lesson_file": "units/unit-07/lessons/u07-l05.html",
+      "asset_id": "MATH-LOG-EQUATIONS-OCT-001",
+      "shared_file": "../assets/video-library/solving-logarithmic-equations-organic.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct match for solving logarithmic equations; lesson remains responsible for domain checks."
+    },
+    {
+      "lesson_id": "KH-MATH-A2-U12-L03",
+      "lesson_file": "units/unit-12/lessons/u12-l03.html",
+      "asset_id": "MATH-CONDITIONAL-PROBABILITY-KHAN-001",
+      "shared_file": "../assets/video-library/conditional-probability-independence-khan.json",
+      "placement_status": "topic_matched_pending_full_video_playback_caption_transcript_review",
+      "enabled": false,
+      "optional": true,
+      "usage": "optional_lesson_companion",
+      "alignment_note": "Direct conditional-probability and independence match; Bayes reasoning remains additional lesson content."
     }
   ]
 }
