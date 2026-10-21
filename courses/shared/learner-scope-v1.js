@@ -306,22 +306,8 @@
       trigger.dataset.utilityRailBound = "1";
       window.addEventListener("resize", positionRecoveryRail, { passive: true });
       if (typeof MutationObserver === "function") {
-        /* Watch only until the shared toolbar appears; repeated body-wide
-           mutations must not trigger synchronous layout measurement forever. */
-        let railQueued = false;
-        const railObserver = new MutationObserver(() => {
-          if (railQueued) return;
-          railQueued = true;
-          requestAnimationFrame(() => {
-            railQueued = false;
-            positionRecoveryRail();
-            if (trigger.parentElement?.id === "khaemenesLearnerUtilityToolbar") railObserver.disconnect();
-          });
-        });
-        if (trigger.parentElement?.id !== "khaemenesLearnerUtilityToolbar") {
-          railObserver.observe(document.body, { childList: true });
-          setTimeout(() => railObserver.disconnect(), 8000);
-        }
+        const railObserver = new MutationObserver(() => positionRecoveryRail());
+        railObserver.observe(document.body, { childList: true });
       }
     }
 

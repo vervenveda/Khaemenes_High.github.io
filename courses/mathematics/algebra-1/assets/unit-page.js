@@ -20,7 +20,7 @@ function loadAt(i){
  if(i>=scripts.length){shuffleVisibleOptions();window.KhaemenesAlgebra1StudentExperience?.enhance();window.KhaemenesAlgebra1LearningExperience?.enhance();return}
  const s=document.createElement("script");s.src=scripts[i];s.async=false;
  s.onload=()=>loadAt(i+1);
- s.onerror=()=>{console.error("Algebra I unit renderer dependency could not load:",scripts[i]);showRecovery();};
+ s.onerror=()=>console.error("Algebra I unit renderer dependency could not load:",scripts[i]);
  document.head.appendChild(s);
 }
 function shuffleVisibleOptions(){
@@ -33,12 +33,5 @@ function shuffleVisibleOptions(){
   items.forEach(item=>group.appendChild(item));
  });
 }
-function showRecovery(){
- const main=document.getElementById("main");
- if(!main||main.children.length||main.textContent.trim())return;
- const home=new URL(ref.root||"../../",location.href).href;
- main.innerHTML='<section class="hero"><div class="wrap"><h1>Algebra I is taking longer than expected</h1><p>The unit could not finish loading. Your saved progress remains unchanged. Try again or return to the course directory.</p><p><a class="btn primary" href="'+home+'">Algebra I home</a> <button class="btn" type="button" onclick="location.reload()">Retry loading</button></p></div></section>';
-}
 loadAt(0);
-setTimeout(showRecovery,12000);
 })();
