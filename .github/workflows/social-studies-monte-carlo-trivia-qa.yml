@@ -1,0 +1,28 @@
+name: Social Studies Monte Carlo Trivia QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/social-studies/games/high-school-monte-carlo-trivia.html'
+      - 'courses/social-studies/grade-09/**/quiz.json'
+      - 'courses/social-studies/grade-10/**/quiz.json'
+      - 'courses/social-studies/grade-11/**/quiz.json'
+      - 'courses/social-studies/grade-12/**/quiz.json'
+      - 'tests/test_social_studies_monte_carlo_trivia.py'
+      - '.github/workflows/social-studies-monte-carlo-trivia-qa.yml'
+  workflow_dispatch:
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Playwright and Chromium
+        run: |
+          python -m pip install pytest playwright
+          python -m playwright install --with-deps chromium
+      - name: Check Monte Carlo trivia
+        run: python -m pytest -v tests/test_social_studies_monte_carlo_trivia.py
