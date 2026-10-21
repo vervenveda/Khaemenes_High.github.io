@@ -34,5 +34,6 @@ jobs:
           node --check courses/science/integrated-science-9/science-formative-evidence.js
           node --check courses/science/integrated-science-9/science-evidence-portfolio.js
           node --check courses/science/integrated-science-9/science-upper-unit-evidence.js
+          node courses/science/integrated-science-9/tools/test-full-portfolio.mjs
           node courses/science/integrated-science-9/tools/test-unit06-investigation.mjs
           node courses/science/integrated-science-9/tools/test-unit04-genetics-model.mjs
