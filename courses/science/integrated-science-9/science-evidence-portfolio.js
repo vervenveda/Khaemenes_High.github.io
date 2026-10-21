@@ -10,7 +10,7 @@ function fetchRecords(id){
   const key=localStorage.key(i);if(!key?.startsWith(prefix))continue;
   try{const record=JSON.parse(localStorage.getItem(key));if(record?.schema!=="khaemenes-science-formative-v1"||record.learner!==id||typeof record.activity!=="string"||typeof record.notes!=="string"||record.notes.length>100000||key!==prefix+record.activity)continue;
   if(!/^units\/unit-(?:0[2-9]|1[0-2])\/[^/]+\.html$/.test(record.activity))continue;
-  records.push({activity:record.activity,notes:record.notes,observation:typeof record.observation==="string"?record.observation:"",updatedAt:record.updatedAt||""});}catch{}
+  records.push({activity:record.activity,notes:record.notes,observation:typeof record.observation==="string"&&record.observation.length<=20000?record.observation:"",updatedAt:record.updatedAt||""});}catch{}
  }
  return records.sort((a,b)=>a.activity.localeCompare(b.activity));
 }
@@ -47,16 +47,13 @@ function setupRestore(id){
   try{for(const r of pending){if(active()!==id)throw Error("Learner changed during restore");const key=keyPrefix+id+":"+r.activity;if(localStorage.getItem(key)!==null)continue;
     localStorage.setItem(key,JSON.stringify({schema:"khaemenes-science-formative-v1",learner:id,activity:r.activity,notes:r.notes,observation:r.observation,updatedAt:r.updatedAt||new Date().toISOString()}));count++;
   }}catch{preview.textContent="Storage stopped after "+count+" records. Export your backup and review storage space.";button.disabled=true;return}
-  preview.textContent="Restored "+count+" missing records. Reload to see the updated portfolio.";candidate=null;button.disabled=true;
+  preview.textContent="Restored "+count+" missing records. Portfolio refreshed.";candidate=null;button.disabled=true;renderRecords(id);
  });
 }
-function init(){
- $("today").textContent=new Date().toLocaleDateString();
- const id=active();$("learner").textContent=id||"Not selected";
- if(!id){$("portfolioStatus").textContent="Select a learner on a Science 9 unit page before opening the portfolio. No student data has been displayed.";return}
+function renderRecords(id){
  let rows;try{rows=fetchRecords(id)}catch{$("portfolioStatus").textContent="Browser evidence storage is unavailable.";return}
  $("portfolioStatus").textContent=rows.length+" saved formative investigation"+(rows.length===1?"":"s")+" for this learner.";
- const host=$("portfolioRecords");
+ const host=$("portfolioRecords");host.replaceChildren();
  for(let unit=2;unit<=12;unit++){
   const sub=rows.filter(r=>r.activity.startsWith("units/unit-"+String(unit).padStart(2,"0")+"/"));if(!sub.length)continue;
   const heading=document.createElement("h2");heading.textContent="Unit "+String(unit).padStart(2,"0");host.append(heading);
@@ -68,6 +65,12 @@ function init(){
    const note=document.createElement("pre");note.textContent=record.notes||"(No written notes)";item.append(note);if(record.observation){const title=document.createElement("p");title.textContent="Supporting observations:";item.append(title);const detail=document.createElement("pre");detail.textContent=record.observation;item.append(detail)}host.append(item);
   }
  }
+}
+function init(){
+ $("today").textContent=new Date().toLocaleDateString();
+ const id=active();$("learner").textContent=id||"Not selected";
+ if(!id){$("portfolioStatus").textContent="Select a learner on a Science 9 unit page before opening the portfolio. No student data has been displayed.";return}
+ renderRecords(id);
  $("exportPortfolio").disabled=false;$("printPortfolio").disabled=false;
  setupRestore(id);
  window.addEventListener("focus",()=>clearOnLearnerChange(id));
@@ -75,7 +78,7 @@ function init(){
  window.addEventListener("storage",()=>clearOnLearnerChange(id));
  document.addEventListener("visibilitychange",()=>{if(!document.hidden)clearOnLearnerChange(id)});
  $("exportPortfolio").addEventListener("click",()=>{if(active()!==id)return;download(JSON.stringify({schema:"khaemenes-science-formative-portfolio-v1",learner:id,exportedAt:new Date().toISOString(),records:fetchRecords(id)},null,2))});
- $("printPortfolio").addEventListener("click",()=>{if(active()===id)window.print()});
+ $("printPortfolio").addEventListener("click",()=>{if(active()===id){renderRecords(id);window.print()}});
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
 })();
