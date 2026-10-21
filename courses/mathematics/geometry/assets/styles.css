@@ -169,3 +169,11 @@ body{font-family:var(--khae-sans,"Brandon Grotesque","Avenir Next",Avenir,"Segoe
 .lesson-next-step p{margin:6px 0 0!important}
 .lesson-next-step .actions{margin-top:12px!important}
 .footer{margin-top:40px!important}
+
+/* Khaemenes Academy original-resource cards */
+.academy-original-resource figure{margin:0;display:grid;gap:12px}
+.academy-original-resource img{display:block;width:100%;height:auto;max-height:720px;object-fit:contain;border:1px solid rgba(215,182,106,.28);border-radius:7px;background:#0b1220}
+.academy-original-resource figcaption{font-size:1rem;line-height:1.6}
+.resource-kicker{font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;font-weight:400}
+@media(max-width:320px){.academy-original-resource{padding:14px}.academy-original-resource .actions .btn{width:100%}}
+@media print{.academy-original-resource{break-inside:avoid}.academy-original-resource img{max-height:7in;border-color:#777;background:#fff}.academy-original-resource .actions{display:none!important}}
