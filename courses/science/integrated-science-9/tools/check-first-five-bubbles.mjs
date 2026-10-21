@@ -29,4 +29,13 @@ for(let i=5;i<=12;i++){
  assert(source.includes("return verifiedScore(state[id])"),"Unit "+n+" must not trust passed flags alone");
  assert(source.includes("if(!window.KhaemenesScienceU"+n+"Scope.active())"),"Unit "+n+" must require selected learner before saving/sync");
 }
-console.log("PASS: Science 9 learner bridge and scored mastery source checks.");
+
+const printModule=read("science-print-evidence.js"), printStyle=read("course-ui.css");
+assert(printModule.includes("science-evidence-heading") && printModule.includes("Student name:"), "Shared printable identification missing");
+assert(printStyle.includes(".science-evidence-heading"),"Shared print CSS missing");
+for(let i=1;i<=12;i++){
+ const n=String(i).padStart(2,"0");
+ const controller=read("units/unit-"+n+"/unit"+n+".js");
+ assert(controller.includes('new URL("../../science-print-evidence.js"'),"Unit "+n+" lacks shared print module");
+}
+console.log("PASS: Science 9 learner bridge, scored mastery, and twelve-unit print evidence checks.");
