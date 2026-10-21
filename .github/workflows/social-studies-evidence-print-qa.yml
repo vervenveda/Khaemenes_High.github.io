@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'courses/social-studies/tools/academic-evidence-printout.html'
+      - 'courses/shared/high-school-formative-evidence-v1.js'
+      - 'courses/social-studies/grade-*/weeks/week-*/student-packet.html'
       - 'courses/social-studies/grade-09/index.html'
       - 'courses/social-studies/grade-10/index.html'
       - 'courses/social-studies/grade-11/index.html'
