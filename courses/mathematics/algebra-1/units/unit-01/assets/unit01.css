@@ -100,3 +100,15 @@ html:root:root body .card .eyebrow{font-size:13px!important;line-height:1.5!impo
    outline:3px solid #f2d48c!important;outline-offset:3px;
  }
 }
+
+/* Pair ink with actual lesson surface, instead of blanket light-on-light overrides. */
+@media screen {
+ html:root:root body[data-mode] :is(.card,.question,.notice,.lab,.boss,.movement,.lesson-reading,.lesson-panel,.unit-drawer) {
+   background:#111e30!important;color:#f5f1e8!important;
+ }
+ html:root:root body[data-mode] .hero {background:#101d2f!important;color:#f5f1e8!important}
+ html:root:root body[data-mode] .option {background:#1b2c43!important;color:#f5f1e8!important;border-color:#8091a6!important}
+ html:root:root body[data-mode] .btn.primary,
+ html:root:root body[data-mode] button.primary {background:#d8b45f!important;color:#171006!important}
+ html:root:root body[data-mode] :is(.btn,button):not(.primary) {background:#20334a!important;color:#f8f2e7!important}
+}
