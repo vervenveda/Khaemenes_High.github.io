@@ -4,10 +4,12 @@ on:
     branches: [main]
     paths:
       - 'courses/science/integrated-science-9/**'
+      - 'courses/shared/test-academic-evidence-context.mjs'
       - '.github/workflows/science9-learner-journey.yml'
   pull_request:
     paths:
       - 'courses/science/integrated-science-9/**'
+      - 'courses/shared/test-academic-evidence-context.mjs'
       - '.github/workflows/science9-learner-journey.yml'
   workflow_dispatch:
 jobs:
