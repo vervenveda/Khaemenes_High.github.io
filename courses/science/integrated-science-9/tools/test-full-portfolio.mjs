@@ -26,5 +26,8 @@ assert(formative.includes('unitLink.textContent="Return to unit lessons"'),"miss
 assert(formative.includes("investigate → save evidence"),"missing learner journey instructions");
 assert(portfolio.includes('title.textContent="Supporting observations:"'),"portfolio must display supporting observations in print");
 assert(portfolio.includes('detail.textContent=record.observation'),"portfolio must preserve full supporting observation text");
+assert(portfolio.includes('renderRecords(id);window.print()'),"print must refresh stored records before printing");
+assert(portfolio.includes('Portfolio refreshed.";candidate=null;button.disabled=true;renderRecords(id);'),"restore must refresh portfolio without reload");
+assert(portfolio.includes('record.observation.length<=20000'),"bound supporting observations during portfolio read");
 console.log("PASS narrow-width styles and asynchronous restore learner-isolation guards");
 console.log("PASS Science 9 Units 02–12 portfolio coverage, headings, current export, learner guards and formative isolation");
