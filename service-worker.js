@@ -1,15 +1,9 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-v36-five-algebra-formative-games-20261014";
+const CACHE_VERSION = "khaemenes-high-v37-canonical-math-games-20261021";
 // Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
 // Every canonical game and its shared runtime must be available on a newly installed offline worker.
 const GAME_PRECACHE_FILES = [
-  "./courses/mathematics/assets/learning-games/algebra-evidence-modelling-challenge/index.html",
-  "./courses/mathematics/assets/learning-games/algebra-exponents-radicals-challenge/index.html",
-  "./courses/mathematics/assets/learning-games/algebra-functions-systems-challenge/index.html",
-  "./courses/mathematics/assets/learning-games/algebra-reasoning-foundations/index.html",
-  "./courses/mathematics/assets/learning-games/algebra-structure-balance-challenge/index.html",
-
   "./courses/mathematics/assets/learning-games/number-family/index.html",
   "./courses/mathematics/assets/learning-games/factors-and-multiples/index.html",
   "./courses/mathematics/assets/learning-games/prime-spy-composite/index.html",
@@ -75,6 +69,23 @@ const GAME_PRECACHE_FILES = [
   "./courses/mathematics/assets/learning-games/scientific-notation-operations-mission/index.html",
   "./courses/mathematics/assets/learning-games/scientific-notation-signal-lab/index.html",
   "./courses/mathematics/assets/learning-games/small-business-math-lab/index.html",
+  "./courses/mathematics/assets/learning-games/algebra-reasoning-foundations/index.html",
+  "./courses/mathematics/assets/learning-games/algebra-structure-balance-challenge/index.html",
+  "./courses/mathematics/assets/learning-games/algebra-functions-systems-challenge/index.html",
+  "./courses/mathematics/assets/learning-games/algebra-exponents-radicals-challenge/index.html",
+  "./courses/mathematics/assets/learning-games/algebra-evidence-modelling-challenge/index.html",
+  "./courses/mathematics/assets/learning-games/algebra-language-lab/index.html",
+  "./courses/mathematics/assets/learning-games/expression-translator-studio/index.html",
+  "./courses/mathematics/assets/learning-games/equivalence-forge/index.html",
+  "./courses/mathematics/assets/learning-games/angle-polygon-studio/index.html",
+  "./courses/mathematics/assets/learning-games/boundary-area-lab/index.html",
+  "./courses/mathematics/assets/learning-games/pythagorean-distance-mission/index.html",
+  "./courses/mathematics/assets/learning-games/surface-volume-studio/index.html",
+  "./courses/mathematics/assets/learning-games/piecewise-boundary-lab/index.html",
+  "./courses/mathematics/assets/learning-games/geometry-foundations-sort/index.html",
+  "./courses/mathematics/assets/learning-games/quadrilateral-detective/index.html",
+  "./courses/mathematics/assets/learning-games/polygon-design-lab/index.html",
+  "./courses/mathematics/assets/learning-games/geometric-probability-lab/index.html"
 ];
 const GAME_RUNTIME_FILES = [
   "./courses/mathematics/assets/game-return-route.js",
