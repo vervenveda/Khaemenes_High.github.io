@@ -18,4 +18,18 @@ const standard=read("../../shared/ACADEMIC_EVIDENCE_CONVENTION_V1.md");
 for(const heading of ["Required printable identity","Sources and citations","Vocabulary","Subject connections","Parent/teacher review","Safe reuse contract"])assert(standard.includes(heading),"missing shared evidence standard section "+heading);
 assert(html.includes('href="../../shared/ACADEMIC_EVIDENCE_CONVENTION_V1.md"'),"worksheet missing shared standard link");
 assert(desk.includes('href="../../shared/ACADEMIC_EVIDENCE_CONVENTION_V1.md"'),"research desk missing shared standard link");
+for(const [course,path] of [
+ ["geometry","../../mathematics/geometry/index.html"],
+ ["algebra-2","../../mathematics/algebra-2/index.html"],
+ ["english-10","../../language-arts/english-10/index.html"],
+ ["english-11","../../language-arts/english-11/index.html"],
+ ["english-12","../../language-arts/english-12/index.html"]
+]){
+ const page=read(path);
+ assert(page.includes("academic-evidence-companion.html?course="+course),"Missing subject bridge: "+course);
+ assert(html.includes('"'+course+'":{grade:'),"Missing course configuration: "+course);
+}
+assert(html.includes('new URLSearchParams(location.search).get("course")'),"Course context should come from opening link");
+assert(html.includes('form.elements.grade.value=selected.grade'),"Grade should follow course context");
+assert(html.includes('form.elements.subject.value=selected.subject'),"Subject should follow course context");
 console.log("PASS academic evidence companion: standalone, printable, exportable, no storage or grades, connected to research desk and portfolio");
