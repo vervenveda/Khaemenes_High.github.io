@@ -5,8 +5,8 @@
   "authority": "course-local",
   "network_required": false,
   "lesson_count": 180,
-  "lessons_with_direct_tools": 53,
-  "direct_tool_links": 54,
+  "lessons_with_direct_tools": 57,
+  "direct_tool_links": 58,
   "lessons": [
     {
       "lesson_id": "DIAG-D01",
@@ -1145,7 +1145,13 @@
       "lesson_id": "U10-D09",
       "lesson_path": "units/unit-10/lessons/day-09.html",
       "lesson_title": "Watershed & Surface-Change Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../watershed-surface-lab.html",
+          "target": "units/unit-10/watershed-surface-lab.html",
+          "tool_title": "Watershed Surface Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U10-D10",
@@ -1253,7 +1259,13 @@
       "lesson_id": "U11-D09",
       "lesson_path": "units/unit-11/lessons/day-09.html",
       "lesson_title": "Stellar Spectra & Light Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../stellar-spectra-lab.html",
+          "target": "units/unit-11/stellar-spectra-lab.html",
+          "tool_title": "Stellar Spectra Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U11-D10",
@@ -1373,7 +1385,13 @@
       "lesson_id": "U12-D10",
       "lesson_path": "units/unit-12/lessons/day-10.html",
       "lesson_title": "Life-Cycle, Resource & Circularity Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../life-cycle-lab.html",
+          "target": "units/unit-12/life-cycle-lab.html",
+          "tool_title": "Life Cycle Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U12-D11",
@@ -1385,7 +1403,13 @@
       "lesson_id": "U12-D12",
       "lesson_path": "units/unit-12/lessons/day-12.html",
       "lesson_title": "Risk, Reliability & Resilience Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../risk-reliability-lab.html",
+          "target": "units/unit-12/risk-reliability-lab.html",
+          "tool_title": "Risk Reliability Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U12-D13",
