@@ -22,6 +22,7 @@ function page({lesson="u11-l08",learner="student-a",session=store(),existingStor
    hidden:false,style:{cssText:""},dataset:{},parentNode:null,children:[],attrs:{},files:null,callbacks,
    addEventListener:(key,fn)=>callbacks.set(key,fn),setAttribute:(k,v)=>{node.attrs[k]=v;},
    appendChild:(c)=>{c.parentNode=node;node.children.push(c);return c;},
+   insertBefore:(child,before)=>{child.parentNode=node;const i=node.children.indexOf(before);node.children.splice(i<0?node.children.length:i,0,child);return child;},
    append(...kids){for(const kid of kids)this.appendChild(kid);},
    get firstChild(){return this.children[0]||null;},
    closest:()=>null,click(){callbacks.get("click")?.();}
