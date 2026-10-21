@@ -12,7 +12,10 @@ for(const r of reg.lessons){
  if(ids.has(r.lesson_id)) fail.push(`duplicate lesson id ${r.lesson_id}`); ids.add(r.lesson_id);
  const lp=path.join(ROOT,r.lesson_path); if(!fs.existsSync(lp)) fail.push(`missing lesson ${r.lesson_path}`);
  if(r.tools.length) linked++;
- for(const t of r.tools){ toolLinks++; const tp=path.join(ROOT,t.target); if(!fs.existsSync(tp)) fail.push(`missing tool ${r.lesson_id} -> ${t.target}`); }
+ for(const t of r.tools){ toolLinks++; const tp=path.join(ROOT,t.target); if(!fs.existsSync(tp)) fail.push(`missing tool ${r.lesson_id} -> ${t.target}`);
+  const resolved=path.resolve(path.dirname(lp),t.href.split(/[?#]/)[0]);
+  if(resolved!==tp) fail.push(`incorrect lesson tool href ${r.lesson_id}: ${t.href} resolves to ${path.relative(ROOT,resolved)} instead of ${t.target}`);
+  if(fs.existsSync(lp)&&!fs.readFileSync(lp,"utf8").includes(t.href)) fail.push(`tool not linked from lesson ${r.lesson_id}: ${t.href}`); }
 }
 if(linked!==reg.lessons_with_direct_tools) fail.push(`linked count registry=${reg.lessons_with_direct_tools} actual=${linked}`);
 if(toolLinks!==reg.direct_tool_links) fail.push(`tool link count registry=${reg.direct_tool_links} actual=${toolLinks}`);
