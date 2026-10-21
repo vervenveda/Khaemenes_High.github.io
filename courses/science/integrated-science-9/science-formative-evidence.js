@@ -21,7 +21,9 @@ const exportJSON=document.createElement("button");exportJSON.type="button";expor
 const importLabel=document.createElement("label");importLabel.textContent="Restore from JSON backup (same learner and activity)";
 const importInput=document.createElement("input");importInput.type="file";importInput.accept=".json,application/json";importInput.disabled=!key;importLabel.append(importInput);
 const portfolioLink=document.createElement("a");portfolioLink.href=new URL("science-evidence-portfolio.html",document.currentScript?.src||new URL("../../science-formative-evidence.js",location.href)).href;portfolioLink.textContent="Open student evidence portfolio";portfolioLink.className="science-portfolio-link";
-controls.append(label,save,exportText,exportJSON,importLabel,portfolioLink,status);section.append(controls);
+const unitMatch=activity.match(/^units\\/unit-(\\d{2})\\/[^/]+\\.html$/);
+const unitLink=document.createElement("a");unitLink.href=unitMatch?"./index.html":"./";unitLink.textContent="Return to unit lessons";unitLink.className="science-portfolio-link";
+const step=document.createElement("p");step.textContent="Suggested journey: investigate → save evidence → complete the laboratory's question check → review portfolio.";controls.append(label,step,save,exportText,exportJSON,importLabel,portfolioLink,unitLink,status);section.append(controls);
 const printNotes=document.createElement("pre");printNotes.className="science-formative-print-notes";printNotes.setAttribute("aria-hidden","true");field.after(printNotes);
 const sync=()=>{printNotes.textContent=field.value||"No written evidence entered."};field.addEventListener("input",sync);sync();
 const current=()=>({schema:"khaemenes-science-formative-v1",learner:id,activity,notes:field.value,observation:out?.textContent||"",updatedAt:new Date().toISOString()});
