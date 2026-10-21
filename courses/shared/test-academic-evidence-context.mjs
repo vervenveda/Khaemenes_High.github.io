@@ -6,6 +6,8 @@ const root=process.cwd();
 const html=fs.readFileSync(path.join(root,"courses/science/integrated-science-9/academic-evidence-companion.html"),"utf8");
 const script=html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
 assert(script,"companion script required");
+const bridge=fs.readFileSync(path.join(root,"courses/shared/academic-evidence-adoption.js"),"utf8");
+assert(bridge.includes("companionSuffix")&&bridge.includes("encodeURIComponent(course)"),"Shared adoption link must supply course context");
 const cases=[
  ["science-9","9","Integrated Science","courses/science/integrated-science-9/index.html"],
  ["algebra-1","9","Algebra I","courses/mathematics/algebra-1/index.html"],
@@ -18,7 +20,8 @@ const cases=[
 ];
 for(const [course,grade,subject,page] of cases){
  const source=fs.readFileSync(path.join(root,page),"utf8");
- if(course!=="science-9")assert(source.includes("academic-evidence-companion.html?course="+course),"Missing course link: "+course);
+ if(course==="algebra-1"||course==="english-9")assert(source.includes("academic-evidence-adoption.js"),"Missing subject-aware bridge: "+course);
+ else if(course!=="science-9")assert(source.includes("academic-evidence-companion.html?course="+course),"Missing course link: "+course);
  const listeners={};const make=()=>({value:"",nextElementSibling:null,after(node){this.nextElementSibling=node},closest(){return {firstChild:{textContent:"Subject"}}}});
  const elements={grade:make(),subject:make()},inputs=[elements.grade,elements.subject];
  const form={elements,querySelectorAll:()=>inputs,reset(){for(const el of inputs)el.value=""}};
