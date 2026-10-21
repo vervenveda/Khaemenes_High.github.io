@@ -39,6 +39,7 @@ jobs:
           node --check courses/science/integrated-science-9/science-upper-unit-evidence.js
           node courses/science/integrated-science-9/tools/test-full-portfolio.mjs
           node courses/science/integrated-science-9/tools/test-academic-evidence-companion.mjs
+          node courses/shared/test-academic-evidence-adoption.mjs
           node courses/science/integrated-science-9/tools/test-portfolio-behavior.mjs
           node courses/science/integrated-science-9/tools/test-unit06-investigation.mjs
           node courses/science/integrated-science-9/tools/test-unit04-genetics-model.mjs
