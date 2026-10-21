@@ -5,8 +5,8 @@
   "authority": "course-local",
   "network_required": false,
   "lesson_count": 180,
-  "lessons_with_direct_tools": 20,
-  "direct_tool_links": 20,
+  "lessons_with_direct_tools": 21,
+  "direct_tool_links": 21,
   "lessons": [
     {
       "lesson_id": "DIAG-D01",
@@ -42,7 +42,13 @@
       "lesson_id": "U01-D01",
       "lesson_path": "units/unit-01/lessons/day-01.html",
       "lesson_title": "From Phenomena to Questions",
-      "tools": []
+      "tools": [
+        {
+          "href": "../question-evidence-studio.html",
+          "target": "units/unit-01/question-evidence-studio.html",
+          "tool_title": "Question & Evidence Studio"
+        }
+      ]
     },
     {
       "lesson_id": "U01-D02",
@@ -587,7 +593,7 @@
     {
       "lesson_id": "U06-D09",
       "lesson_path": "units/unit-06/lessons/day-09.html",
-      "lesson_title": "Electron Configurations for Elements 1\u201320",
+      "lesson_title": "Electron Configurations for Elements 1–20",
       "tools": []
     },
     {
@@ -743,13 +749,13 @@
     {
       "lesson_id": "U08-D03",
       "lesson_path": "units/unit-08/lessons/day-03.html",
-      "lesson_title": "Position\u2013Time and Distance\u2013Time Graphs",
+      "lesson_title": "Position–Time and Distance–Time Graphs",
       "tools": []
     },
     {
       "lesson_id": "U08-D04",
       "lesson_path": "units/unit-08/lessons/day-04.html",
-      "lesson_title": "Speed\u2013Time and Velocity\u2013Time Graphs",
+      "lesson_title": "Speed–Time and Velocity–Time Graphs",
       "tools": []
     },
     {
@@ -767,19 +773,19 @@
     {
       "lesson_id": "U08-D07",
       "lesson_path": "units/unit-08/lessons/day-07.html",
-      "lesson_title": "Newton\u2019s First Law, Inertia & Reference Frames",
+      "lesson_title": "Newton’s First Law, Inertia & Reference Frames",
       "tools": []
     },
     {
       "lesson_id": "U08-D08",
       "lesson_path": "units/unit-08/lessons/day-08.html",
-      "lesson_title": "Newton\u2019s Second Law: Force, Mass & Acceleration",
+      "lesson_title": "Newton’s Second Law: Force, Mass & Acceleration",
       "tools": []
     },
     {
       "lesson_id": "U08-D09",
       "lesson_path": "units/unit-08/lessons/day-09.html",
-      "lesson_title": "Newton\u2019s Third Law & Interaction Pairs",
+      "lesson_title": "Newton’s Third Law & Interaction Pairs",
       "tools": []
     },
     {
@@ -833,7 +839,7 @@
     {
       "lesson_id": "U09-D02",
       "lesson_path": "units/unit-09/lessons/day-02.html",
-      "lesson_title": "Resistance, Ohm\u2019s Law & I\u2013V Evidence",
+      "lesson_title": "Resistance, Ohm’s Law & I–V Evidence",
       "tools": []
     },
     {
@@ -929,7 +935,7 @@
     {
       "lesson_id": "U10-D02",
       "lesson_path": "units/unit-10/lessons/day-02.html",
-      "lesson_title": "Earth\u2019s Interior: Evidence, Density & Layers",
+      "lesson_title": "Earth’s Interior: Evidence, Density & Layers",
       "tools": []
     },
     {
@@ -1025,7 +1031,7 @@
     {
       "lesson_id": "U11-D02",
       "lesson_path": "units/unit-11/lessons/day-02.html",
-      "lesson_title": "Earth\u2013Moon\u2013Sun Geometry: Day, Year, Seasons & Phases",
+      "lesson_title": "Earth–Moon–Sun Geometry: Day, Year, Seasons & Phases",
       "tools": []
     },
     {
