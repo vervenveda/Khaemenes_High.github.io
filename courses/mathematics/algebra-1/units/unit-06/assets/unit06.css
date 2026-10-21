@@ -55,3 +55,43 @@
   vertical-align:middle!important;margin:0 5pt 0 0!important;
  }
 }
+
+
+/* Algebra I contrast safeguard · dark lesson surfaces, light readable ink.
+   Presentation only: no changes to lesson engines, grades, or mastery.
+   Preserve white-paper print styles below. */
+@media screen {
+ html:root:root body[data-mode] {
+   color:#f5f1e8!important;
+ }
+ html:root:root body[data-mode] :is(.hero,.card,.question,.notice,.lab,.boss,.movement,.snapshot,.lesson-panel,.unit-drawer,.feedback,.lesson-reading) {
+   color:#f5f1e8!important;
+ }
+ html:root:root body[data-mode] :is(.hero,.card,.question,.notice,.lab,.boss,.movement,.snapshot,.lesson-panel,.unit-drawer,.lesson-reading) :is(h1,h2,h3,h4,strong,legend,label) {
+   color:#fff8e9!important;
+ }
+ html:root:root body[data-mode] :is(.hero,.card,.question,.notice,.lab,.boss,.movement,.snapshot,.lesson-panel,.unit-drawer,.lesson-reading) :is(p,li,small,span,summary) {
+   color:#e1e6eb!important;
+ }
+ html:root:root body[data-mode] :is(.card,.question,.notice,.lab,.boss,.movement,.lesson-panel,.unit-drawer,.lesson-reading) a:not(.btn) {
+   color:#f2d48c!important;
+   text-decoration-color:currentColor;
+ }
+ html:root:root body[data-mode] :is(.btn,button) {
+   color:#f8f2e7!important;
+ }
+ html:root:root body[data-mode] :is(.btn.primary,button.primary) {
+   color:#171006!important;
+ }
+ html:root:root body[data-mode] :is(input,select,textarea) {
+   color:#f5f1e8!important;
+   background:#162338!important;
+   border-color:#8d9aab!important;
+ }
+ html:root:root body[data-mode] :is(input,select,textarea)::placeholder {color:#c0cbd7!important;opacity:1}
+ html:root:root body[data-mode] :is(.feedback.good,.good) {color:#f0fff2!important}
+ html:root:root body[data-mode] :is(.feedback.bad,.bad) {color:#fff0f0!important}
+ html:root:root body[data-mode] :is(a,button,input,select,textarea):focus-visible {
+   outline:3px solid #f2d48c!important;outline-offset:3px;
+ }
+}
