@@ -63,6 +63,16 @@ for(const [unit,names] of Object.entries({"07":["bonding","energy","equation","s
   if((src.match(/"explanation":/g)||[]).length!==8)problems.push("Incomplete explanations: "+unit+"/"+name);
  }
 }
+
+// Public academic bridge: standalone, linked on both entry pages, without learner-state access.
+const network=read("academic-network-bridge.js");
+for(const entry of ["index.html","science-evidence-portfolio.html"]){
+ if(!read(entry).includes('src="academic-network-bridge.js"'))problems.push("Academic bridge not loaded by "+entry);
+}
+for(const label of ["Academy","High School","Mathematics","Language Arts","Linguistics","Research & writing","Creative learning","Vervenveda"]){
+ if(!network.includes('"'+label+'"'))problems.push("Academic bridge missing "+label);
+}
+if(/localStorage|sessionStorage|fetch\(|XMLHttpRequest/.test(network))problems.push("Academic navigation must stay stateless and dependency-free");
 const formative=read("science-formative-evidence.js");
 const portfolio=read("science-evidence-portfolio.js");
 for(const check of ['portfolioLink.textContent="Open student evidence portfolio"','unitLink.textContent="Return to unit lessons"']){
