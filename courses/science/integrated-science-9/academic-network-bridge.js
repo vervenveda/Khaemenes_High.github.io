@@ -9,6 +9,7 @@
   ["Mathematics","High school math","../../mathematics/"],
   ["Language Arts","High school reading and writing","../../language-arts/"],
   ["Linguistics","Languages and translation",base+"Khaemenes_Linguistics.github.io/"],
+  ["Vocabulary & research","Shared academic research desk","academic-research-desk.html"],
   ["Research & writing","Tools and source work",base+"proresource_hub.github.io/"],
   ["Creative learning","Games and exploration",base+"arcade.github.io/"],
   ["Vervenveda","Network home",base]
