@@ -60,7 +60,7 @@ function markCourseHome(){
  const start=document.querySelector("#start .start-card:first-child")||document.querySelector("#start");if(start&&!document.getElementById("entryGateStatus")){const p=document.createElement("p");p.id="entryGateStatus";p.className="notice";p.innerHTML=`<strong>Entrance status:</strong> ${esc(routeLabel())}.`;start.appendChild(p)}
 }
 function protectClicks(){document.addEventListener("click",e=>{const a=e.target.closest('a[href*="units/unit-01"]');if(!a||status().ready)return;e.preventDefault();location.href=DIAGNOSTIC_URL},true)}
-function boot(){markCourseHome();protectClicks();setTimeout(blockUnitOnePage,0);const main=document.getElementById("main");if(main&&/\/algebra-1\/units\/unit-01\//i.test(location.pathname)){new MutationObserver(()=>{if(!status().ready&&document.body.dataset.algebra1EntryLocked!=="true")blockUnitOnePage();else if(!status().ready&&document.body.dataset.algebra1EntryLocked==="true"&&!/Begin with the readiness diagnostic/i.test(main.textContent||""))blockUnitOnePage()}).observe(main,{childList:true,subtree:false})}}
+function boot(){markCourseHome();protectClicks();if(!/\/algebra-1\/units\/unit-01\//i.test(location.pathname))return;const main=document.getElementById("main");if(!main)return;/* Unit 01 builds its instructional page synchronously. Determine entrance status once after scripts initialize; do not install an observer that rewrites lesson content on each render. */setTimeout(()=>{if(!status().ready)blockUnitOnePage()},0)}
 window.KhaemenesAlgebra1EntryGate={version:VERSION,status,diagnosticComplete,courseEvidence,blockUnitOnePage};
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
 })();
