@@ -1,0 +1,25 @@
+name: Social Studies Grade 9 Browser QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/social-studies/grade-09/**'
+      - 'courses/social-studies/tools/visual-studio.html'
+      - 'tests/test_social_studies_grade09_dashboard.py'
+      - '.github/workflows/social-studies-grade09-browser-qa.yml'
+  workflow_dispatch:
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Chromium testing dependencies
+        run: |
+          python -m pip install pytest playwright
+          python -m playwright install --with-deps chromium
+      - name: Run Grade 9 dashboard regression
+        run: python -m pytest -v tests/test_social_studies_grade09_dashboard.py
