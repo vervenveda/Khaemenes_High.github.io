@@ -83,3 +83,32 @@ def test_packet_print_and_academy_evidence(browser,site,week):
  page.emulate_media(media="print")
  assert len(page.pdf(format="A4"))>1000
  ctx.close()
+
+@pytest.mark.parametrize("grade,relative",[
+ ("09","grade-09/weeks/week-01/student-packet.html"),
+ ("10","grade-10/week-01/student-packet.html"),
+ ("11","grade-11/weeks/week-01/student-packet.html"),
+ ("12","grade-12/weeks/week-01/student-packet.html"),
+])
+def test_standardized_printable_evidence_bridge(browser,site,grade,relative):
+ ctx=browser.new_context(viewport={"width":255,"height":850})
+ page=ctx.new_page()
+ page.goto(site+"/courses/social-studies/"+relative,wait_until="domcontentloaded")
+ bridge=page.locator("[data-academic-portfolio-link]")
+ bridge.wait_for(timeout=10000)
+ assert bridge.count()==1
+ href=bridge.locator("a").get_attribute("href")
+ from urllib.parse import urlparse,parse_qs
+ parsed=urlparse(href)
+ assert parsed.path.endswith("/courses/social-studies/tools/academic-evidence-printout.html")
+ assert parse_qs(parsed.query)["grade"]==[str(int(grade))]
+ assert parse_qs(parsed.query)["lesson"]==["Week 1"]
+ page.goto(href,wait_until="domcontentloaded")
+ assert page.locator("h1").inner_text()=="Khaemenes Academy"
+ assert page.locator("#grade").input_value()==str(int(grade))
+ assert page.locator('input[name="lesson"]').input_value()=="Week 1"
+ assert page.locator('textarea[name="citations"]').count()==1
+ assert page.locator('input[name="reviewer"]').count()==1
+ page.emulate_media(media="print")
+ assert len(page.pdf(format="A4"))>1000
+ ctx.close()
