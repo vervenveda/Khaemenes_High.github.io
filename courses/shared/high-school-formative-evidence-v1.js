@@ -82,4 +82,24 @@ function attachSocialStudiesPortfolio(){
  const dest=document.querySelector("main footer, footer");if(dest)dest.before(area);else document.querySelector("main")?.append(area);
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",attachSocialStudiesPortfolio,{once:true});else attachSocialStudiesPortfolio();
+/* Senior-year visual source investigation: supplements existing packets without modifying assessments. */
+function attachSeniorVisualInvestigation(){
+ const match=location.pathname.match(/\/social-studies\/grade-12\/weeks\/week-(\d\d)\/student-packet\.html$/);
+ if(!match||document.querySelector(".khaemenes-visual-investigation"))return;
+ const week=Number(match[1]);if(week<1||week>36)return;
+ const title=(document.querySelector("h1")?.textContent||"Senior civic inquiry").trim();
+ const model=week<=12?"an institutional comparison diagram":week<=18?"a comparative-government evidence matrix":week<=24?"a dated international-law or diplomacy timeline":week<=30?"a geographic or statistical evidence comparison":"a capstone source-authentication and argument map";
+ const area=document.createElement("section");area.className="card khaemenes-visual-investigation";
+ area.setAttribute("aria-label","Khaemenes Academy original visual investigation");
+ area.style.cssText="margin:18px 0;padding:15px;border:1px solid #857d69;border-radius:7px;break-inside:avoid";
+ const heading=document.createElement("h2");heading.textContent="Khaemenes Academy · Original Senior Visual Investigation";
+ const prompt=document.createElement("p");prompt.textContent="For Week "+week+" — "+title+": construct "+model+" using at least two independently attributed documents or datasets. Compare perspectives, identify the author, jurisdiction or geography, date and limits of each source; explain how the evidence supports or qualifies a defensible conclusion.";
+ const link=document.createElement("a");link.href=new URL("../social-studies/tools/visual-studio.html",document.currentScript?.src||location.origin+"/courses/shared/high-school-formative-evidence-v1.js").href;link.textContent="Open Original Academy Visual Studio";link.style.cssText="display:inline-block;padding:9px 12px;border:1px solid currentColor;border-radius:7px;overflow-wrap:anywhere";
+ const caution=document.createElement("p");caution.textContent="Historical borders and initial chart values in the studio are schematic or illustrative. Verify original source evidence before treating any visualization as factual.";
+ const line=document.createElement("p");line.textContent="Source, publication date, geography / jurisdiction and limitation: ________________________________________________";
+ area.append(heading,prompt,link,caution,line);
+ const dest=document.querySelector("main footer, footer");if(dest)dest.before(area);else document.querySelector("main")?.append(area);
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",attachSeniorVisualInvestigation,{once:true});else attachSeniorVisualInvestigation();
+
 })(window);
