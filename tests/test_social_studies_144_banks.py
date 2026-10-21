@@ -45,4 +45,11 @@ class TestBanks(unittest.TestCase):
   errors,warnings,summary=inspect()
   print("\\nSOCIAL_STUDIES_BANK_AUDIT="+json.dumps({"summary":summary,"warnings":warnings,"errors":errors},indent=2))
   self.assertEqual(errors,[], "\\n".join(errors[:35]))
+
+ def test_repaired_first_three_weeks_have_unique_prompts(self):
+  for grade in (10,11,12):
+   for week in (1,2,3):
+    bank=json.loads(bank_path(grade,week).read_text(encoding="utf-8"))
+    keys=[re.sub(r"\\s+"," ",(q.get("prompt") or q.get("question")).strip().casefold()) for q in bank["questions"]]
+    self.assertEqual(len(keys),len(set(keys)),f"G{grade} Week {week} reintroduced a duplicate prompt")
 if __name__=="__main__":unittest.main(verbosity=2)
