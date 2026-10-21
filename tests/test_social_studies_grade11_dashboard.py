@@ -38,3 +38,16 @@ def test_grade11_week_one_packet(browser,site):
  response=page.goto(site+BASE+"weeks/week-01/student-packet.html",wait_until="domcontentloaded")
  assert response.status==200
  ctx.close()
+
+@pytest.mark.parametrize("week",list(range(1,7)))
+def test_grade11_early_week_visual_investigation(browser,site,week):
+ ctx=browser.new_context(viewport={"width":375,"height":850})
+ page=ctx.new_page()
+ result=page.goto(site+BASE+f"weeks/week-{week:02d}/student-packet.html",wait_until="domcontentloaded")
+ assert result.status==200
+ panel=page.locator(".khaemenes-visual-investigation")
+ assert panel.count()==1
+ assert "Source" in panel.inner_text() or "source" in panel.inner_text()
+ link=panel.locator("a").get_attribute("href")
+ assert page.request.get(site+BASE+f"weeks/week-{week:02d}/"+link).status==200
+ ctx.close()
