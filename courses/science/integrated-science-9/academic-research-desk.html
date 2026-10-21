@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Academic Research & Vocabulary Desk · Khaemenes Academy</title>
+<style>
+:root{color-scheme:light}*{box-sizing:border-box}body{margin:0;font:400 17px/1.6 "Brandon Grotesque","Avenir Next",Arial,sans-serif;background:#faf5eb;color:#292e30}main{width:min(100%,940px);margin:auto;padding:clamp(10px,3vw,24px)}h1,h2{font-weight:400;line-height:1.3}h1{font-size:clamp(24px,4vw,36px)}h2{font-size:23px}a{color:#194d75}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #225f92;outline-offset:3px}.panel{background:#fffdf8;border:1px solid #b8afa2;border-radius:7px;margin:16px 0;padding:clamp(10px,3vw,20px)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:10px}.tile{padding:12px;border:1px solid #bcb3a8;border-radius:7px;background:#fff;text-decoration:none;display:block}.tile span{display:block;color:#454545;font-size:14px}label{display:block;margin:8px 0 3px}input,select,button{font:inherit;border-radius:7px;max-width:100%;padding:9px;border:1px solid #857e73;background:white}input,select{width:100%}.controls{display:flex;flex-wrap:wrap;align-items:center;gap:9px}.term{padding:7px 10px;cursor:pointer}.term[aria-pressed="true"]{background:#dcebf3;border-color:#195478}#feedback{min-height:1.5em}small{font-size:14px}footer{margin-top:18px}@media(max-width:280px){.controls>*{width:100%}.tile{overflow-wrap:anywhere}}@media print{.no-print{display:none!important}body{background:#fff}main{max-width:none}.panel{break-inside:avoid}}
+</style></head><body><main>
+<nav class="no-print"><a href="./">← Science 9</a> · <a href="index.html">Course portal</a></nav>
+<h1>Khaemenes Academy</h1><h2>Academic Research & Vocabulary Desk</h2>
+<p>Explore science words through the Academy's existing dictionaries, translation tools, reading archives and research resources. This desk is navigation only: it does not create grades, track searches, or copy private learner records to another website.</p>
+<section class="panel"><h2>Choose a question or term</h2>
+<label for="unit">Science 9 topic</label><select id="unit"></select>
+<label for="term">Word or research question</label><input id="term" type="text" maxlength="180" autocomplete="off" placeholder="e.g., conservation of energy">
+<p>Suggested starting terms (select a term to place it in the field):</p><div class="controls" id="terms"></div>
+<div class="controls no-print"><button type="button" id="copy">Copy term / question</button><button type="button" id="clear">Clear</button></div>
+<p id="feedback" role="status" aria-live="polite">Choose a topic to explore.</p>
+<small>Copying is optional. No term is automatically sent to another site. Paste it in the resource you choose.</small>
+</section>
+<section class="panel"><h2>Connected Academy resources</h2><div class="grid">
+<a class="tile" href="https://vervenveda.com/Khaemenes_Linguistics.github.io/apps/dictionarybox_index.html">Sovereign Dictionary<span>Look up meaning, usage and related words</span></a>
+<a class="tile" href="https://vervenveda.com/Khaemenes_Linguistics.github.io/apps/translator.html">Academy Translator<span>Explore equivalent terms in other languages</span></a>
+<a class="tile" href="https://vervenveda.com/proresource_hub.github.io/categories/research/">PROSE Research Directory<span>Find research methods and learning tools</span></a>
+<a class="tile" href="https://vervenveda.com/Arshif.github.io/">ARSHIF Archive<span>Expand reading, context and source discovery</span></a>
+<a class="tile" href="../../language-arts/">Language Arts<span>Explain a claim, cite sources, and write conclusions</span></a>
+<a class="tile" href="../../mathematics/">Mathematics<span>Model quantities, relationships and uncertainty</span></a>
+</div></section>
+<section class="panel"><h2>A research path you can use</h2><p>1. Identify the term or question. 2. Check its meaning and translate it if helpful. 3. Find and evaluate a source. 4. Explain the claim using evidence and acknowledge uncertainty. 5. Return to your Science 9 lesson to save your own observations.</p><p><a href="./">Return to Science 9 lessons</a></p></section>
+<footer><small>Jennifer Kay Pearl · Khaemenes Academy · Navigation only · No tracking</small></footer>
+</main><script>
+"use strict";
+(()=>{
+const topics=[
+["01 · Scientific inquiry",["hypothesis","variable","evidence","uncertainty"]],
+["02 · Cells",["osmosis","membrane","diffusion","homeostasis"]],
+["03 · Body systems",["feedback","respiration","circulation","regulation"]],
+["04 · Genetics",["allele","meiosis","inheritance","variation"]],
+["05 · Ecology",["ecosystem","biodiversity","food web","conservation"]],
+["06 · Atomic science",["isotope","atomic number","electron","periodic table"]],
+["07 · Chemistry",["ionic bond","conservation of atoms","catalyst","reaction rate"]],
+["08 · Motion and forces",["velocity","acceleration","momentum","kinetic energy"]],
+["09 · Electricity and waves",["resistance","frequency","electromagnetic induction","signal"]],
+["10 · Earth systems",["watershed","plate tectonics","carbon cycle","climate feedback"]],
+["11 · Astronomy",["redshift","stellar spectrum","exoplanet transit","orbital period"]],
+["12 · Engineering",["constraint","life cycle","reliability","prototype"]]
+];
+const $=id=>document.getElementById(id),select=$("unit"),input=$("term"),terms=$("terms"),feedback=$("feedback");
+topics.forEach(([title],i)=>{const option=document.createElement("option");option.value=String(i);option.textContent=title;select.append(option)});
+function render(){terms.replaceChildren();for(const word of topics[Number(select.value)||0][1]){const b=document.createElement("button");b.type="button";b.className="term";b.textContent=word;b.setAttribute("aria-pressed",String(input.value===word));b.addEventListener("click",()=>{input.value=word;render();feedback.textContent="Selected: "+word+". Copy it, then choose a connected resource."});terms.append(b)}}
+const u=new URL(location.href);const unit=u.searchParams.get("unit");if(unit&&/^(0[1-9]|1[0-2])$/.test(unit))select.value=String(Number(unit)-1);
+select.addEventListener("change",()=>{render();feedback.textContent="Topic changed; choose a term or type your own question."});
+input.addEventListener("input",()=>{for(const b of terms.children)b.setAttribute("aria-pressed",String(b.textContent===input.value))});
+$("clear").addEventListener("click",()=>{input.value="";render();feedback.textContent="Input cleared."});
+$("copy").addEventListener("click",async()=>{const value=input.value.trim();if(!value){feedback.textContent="Enter a word or question first.";return}try{if(!navigator.clipboard?.writeText)throw Error("Clipboard unavailable");await navigator.clipboard.writeText(value);feedback.textContent="Copied. Open a resource and paste your term or question."}catch{input.focus();input.select();feedback.textContent="Clipboard access unavailable. Your text is selected; use your device's Copy command."}});
+render();
+})();
+</script></body></html>
