@@ -64,6 +64,7 @@ function init(){
    const item=document.createElement("article");item.className="portfolio-row";
    const h=document.createElement("h3");h.textContent=record.activity.split("/").pop().replace(/\.html$/,"").replace(/-/g," ");item.append(h);
    const date=document.createElement("p");date.textContent="Last saved: "+(record.updatedAt||"Not recorded");item.append(date);
+   const labLink=document.createElement("a");labLink.href=record.activity;labLink.textContent="Open original investigation";labLink.className="no-print";item.append(labLink);
    const note=document.createElement("pre");note.textContent=record.notes||"(No written observation)";item.append(note);host.append(item);
   }
  }
