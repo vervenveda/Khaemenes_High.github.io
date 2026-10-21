@@ -50,4 +50,9 @@ assert(!explore.includes("localStorage.setItem"),"Exploration must not overwrite
 const formative=read("science-formative-evidence.js");
 for(const token of ["kh_sci9_formative_v1:","r.learner!==id","r.activity!==activity","schema:\"khaemenes-science-formative-v1\"","Save notes locally","Export restorable JSON"]){assert(formative.includes(token),"Formative evidence contract missing "+token)}
 assert(!formative.includes("completedUnits"),"Formative recovery must not touch course mastery");
+const portfolioJs=read("science-evidence-portfolio.js");
+const portfolioHtml=read("science-evidence-portfolio.html");
+for(const guard of ['record.learner!==id','key!==prefix+record.activity','clearOnLearnerChange(id)','window.addEventListener("focus"','window.addEventListener("pageshow"'])assert(portfolioJs.includes(guard),"Portfolio learner isolation guard missing: "+guard);
+for(const label of ["Parent / Teacher Review","Reviewer signature","Next learning goals"])assert(portfolioHtml.includes(label),"Portfolio review missing: "+label);
+assert(!portfolioJs.includes("localStorage.setItem"),"Read-only portfolio must not change learner records");
 console.log("PASS: Science 9 learner bridge, scored mastery, and twelve-unit print evidence checks.");
