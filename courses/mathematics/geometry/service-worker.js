@@ -1,12 +1,13 @@
 "use strict";
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
-const CACHE="khaemenes-geometry-v15-video-cert-offline-v2-20261020";
+const CACHE="khaemenes-geometry-v16-original-resources-20261020";
 const CACHE_PREFIX="khaemenes-geometry-";
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
  "../assets/applied-mission-studio-v1.js",
  "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
  "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js","./assets/question-bank.js","./assets/diagnostic-bank-v2.js","./assets/assessment-engine.js","./assets/lesson-tools.js","./assets/geometry-workflow-adapter-v1.js","./assets/geometry-dark-dashboard-v1.css","../assets/course-lesson-workflow-v1.js","../assets/course-lesson-workflow-v1.css","../assets/math-dashboard-parity-v1.css","../assets/math-student-journey-v1.js","../assets/math-student-journey-v1.css","./video-map.json","../assets/video-companion-v1.js","./assets/unit-progress.js","./course-data.js","./course-map.json","./manifest.webmanifest","./diagnostic/","./assessments/",
  "./assets/geometry-archaemenes-upgrade.js","./assets/strict-course-progression.js","./assets/unit-index-gates.js","./assets/unit-mastery-source-v2.js",
+ "./assets/original-resources/index.json","./assets/original-resources/cpctc-proof-flow-map.svg","./assets/original-resources/circle-equation-coordinate-map.svg","./assets/original-resources/pyramid-cone-volume-map.svg","./assets/original-resources/sphere-surface-volume-map.svg",
  "./assessments/index.html","./assessments/administration-guide.html","./assessments/assessment-map.json","./assessments/weekly-mastery.html","./assessments/midterm.html","./assessments/final.html",
  "./assessments/assets/exam-depth-v2.js","./assessments/assets/weekly-mastery-engine-v2.js",
  "./assessments/assets/weekly-mastery-v2-01-03.js","./assessments/assets/weekly-mastery-v2-04-06.js","./assessments/assets/weekly-mastery-v2-07-09.js","./assessments/assets/weekly-mastery-v2-10-12.js","./assessments/assets/weekly-mastery-v2-13-15.js","./assessments/assets/weekly-mastery-v2-16-18.js","./assessments/assets/weekly-mastery-v2-19-21.js","./assessments/assets/weekly-mastery-v2-22-24.js","./assessments/assets/weekly-mastery-v2-25-27.js","./assessments/assets/weekly-mastery-v2-28-30.js","./assessments/assets/weekly-mastery-v2-31-33.js","./assessments/assets/weekly-mastery-v2-34-36.js",
