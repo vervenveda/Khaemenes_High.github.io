@@ -25,3 +25,4 @@ jobs:
           node courses/science/integrated-science-9/tools/check-first-five-bubbles.mjs
           node courses/science/integrated-science-9/tools/test-science9-learner-journey.mjs
           node courses/science/integrated-science-9/tools/validate-lesson-tool-registry.mjs
+          node --check courses/science/integrated-science-9/units/unit-02/exploration-studio.js
