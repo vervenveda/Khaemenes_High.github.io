@@ -21,4 +21,12 @@ for(let i=5;i<=12;i++){
  assert(source.includes('sessionStorage.setItem("kh_sci9_u04_active_learner_v1",id)'),"Unit "+n+" must publish common learner selection");
  assert(source.includes('KhaemenesCourseEntryContract?.readAcademyProfile?.()'),"Unit "+n+" must reject Academy identity mismatch");
 }
-console.log("PASS: Grade 9 first-five-bubbles structural checks, plus 24 cross-unit learner checks.");
+for(let i=5;i<=12;i++){
+ const n=String(i).padStart(2,"0");
+ const source=read("units/unit-"+n+"/unit"+n+".js");
+ assert(source.includes("function verifiedScore(item)"),"Unit "+n+" must validate scored mastery");
+ assert(source.includes("score/total>=0.8"),"Unit "+n+" must enforce 80%");
+ assert(source.includes("return verifiedScore(state[id])"),"Unit "+n+" must not trust passed flags alone");
+ assert(source.includes("if(!window.KhaemenesScienceU"+n+"Scope.active())"),"Unit "+n+" must require selected learner before saving/sync");
+}
+console.log("PASS: Science 9 learner bridge and scored mastery source checks.");
