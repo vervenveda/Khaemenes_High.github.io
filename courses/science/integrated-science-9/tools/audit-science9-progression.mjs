@@ -33,6 +33,19 @@ for(const lesson of registry.lessons){
   if(!/href="\.\/"/.test(lab)&&!/href="index\.html"/.test(lab))problems.push("Lab lacks unit home link "+tool.target);
  }
 }
+const verifiedResultRoutes=[
+ ["07","bonding-question-check.html","bonding-formula-lab.html"],
+ ["08","motion-question-check.html","motion-graph-lab.html"],
+ ["09","circuit-question-check.html","circuit-data-lab.html"],
+ ["10","watershed-question-check.html","watershed-surface-lab.html"],
+ ["12","risk-question-check.html","risk-reliability-lab.html"]
+];
+for(const [unit,check,lab] of verifiedResultRoutes){
+ const html=read("units/unit-"+unit+"/"+check);
+ if(!html.includes('href="'+lab+'"'))problems.push("Assessment result cannot return to investigation: "+unit+"/"+check);
+ if(!html.includes('href="./">Return to unit lessons'))problems.push("Assessment result cannot return to unit: "+unit+"/"+check);
+ if(!fs.existsSync(path.join(root,"units/unit-"+unit,lab)))problems.push("Assessment return target missing: "+unit+"/"+lab);
+}
 const formative=read("science-formative-evidence.js");
 const portfolio=read("science-evidence-portfolio.js");
 for(const check of ['portfolioLink.textContent="Open student evidence portfolio"','unitLink.textContent="Return to unit lessons"']){
