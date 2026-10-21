@@ -5,8 +5,8 @@
   "authority": "course-local",
   "network_required": false,
   "lesson_count": 180,
-  "lessons_with_direct_tools": 24,
-  "direct_tool_links": 24,
+  "lessons_with_direct_tools": 28,
+  "direct_tool_links": 28,
   "lessons": [
     {
       "lesson_id": "DIAG-D01",
@@ -252,19 +252,37 @@
       "lesson_id": "U03-D02",
       "lesson_path": "units/unit-03/lessons/day-02.html",
       "lesson_title": "Circulation & Transport",
-      "tools": []
+      "tools": [
+        {
+          "href": "../circulation-pathway.html",
+          "target": "units/unit-03/circulation-pathway.html",
+          "tool_title": "Circulation Pathway"
+        }
+      ]
     },
     {
       "lesson_id": "U03-D03",
       "lesson_path": "units/unit-03/lessons/day-03.html",
       "lesson_title": "The Heart, Vessels & Blood",
-      "tools": []
+      "tools": [
+        {
+          "href": "../circulation-pathway.html",
+          "target": "units/unit-03/circulation-pathway.html",
+          "tool_title": "Circulation Pathway"
+        }
+      ]
     },
     {
       "lesson_id": "U03-D04",
       "lesson_path": "units/unit-03/lessons/day-04.html",
       "lesson_title": "Gas Exchange & Ventilation",
-      "tools": []
+      "tools": [
+        {
+          "href": "../circulation-pathway.html",
+          "target": "units/unit-03/circulation-pathway.html",
+          "tool_title": "Circulation Pathway"
+        }
+      ]
     },
     {
       "lesson_id": "U03-D05",
@@ -312,7 +330,13 @@
       "lesson_id": "U03-D10",
       "lesson_path": "units/unit-03/lessons/day-10.html",
       "lesson_title": "Blood-Glucose Regulation",
-      "tools": []
+      "tools": [
+        {
+          "href": "../homeostasis-simulator.html",
+          "target": "units/unit-03/homeostasis-simulator.html",
+          "tool_title": "Homeostasis Simulator"
+        }
+      ]
     },
     {
       "lesson_id": "U03-D11",
