@@ -4,7 +4,7 @@
 const rootKey="kh_sci9_u04_active_learner_v1";
 const safeId=v=>typeof v==="string"&&/^[a-z0-9_-]{3,32}$/i.test(v)?v.toLowerCase():null;
 const active=()=>{try{const id=safeId(sessionStorage.getItem(rootKey));const profile=window.KhaemenesCourseEntryContract?.readAcademyProfile?.();if(profile&&safeId(String(profile.learnerId||""))!==id)return null;return id}catch{return null}};
-const sectionsSelector="#khaeExploration,#khaeU03Investigation,#u04Explore,#khEcologyExplorer,#khBiodiversityExplorer,#khAtomicStudio";
+const sectionsSelector="#khaeExploration,#khaeU03Investigation,#u04Explore,#khEcologyExplorer,#khBiodiversityExplorer,#khAtomicStudio,#khUpperEvidence";
 const download=(name,data,type)=>{const url=URL.createObjectURL(new Blob([data],{type}));const a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),30000)};
 function init(){
 for(const section of document.querySelectorAll(sectionsSelector)){
