@@ -1,0 +1,61 @@
+{
+  "schema": "khaemenes-social-studies-verified-data-registry-v1",
+  "edition": "2026-10-20",
+  "purpose": "A vetted source directory, not pre-certified numeric observations or historically accurate boundary files. Student visualizations remain provisional until each observation is independently checked.",
+  "sources": [
+    {
+      "id": "BLS-CPI-U",
+      "name": "Consumer Price Index: All Urban Consumers, All Items, U.S. City Average",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/cpi/factsheets/cpi-series-ids.htm",
+      "data_url": "https://www.bls.gov/cpi/data.htm",
+      "series": "CUUR0000SA0",
+      "time_coverage": "Retrieve selected monthly publication dates from BLS database",
+      "time_resolution": "month",
+      "geographic_scope": "U.S. city average",
+      "measurement_unit": "index (verify base period in selected release)",
+      "accessible_alternative": "BLS series tables / downloadable text files",
+      "visualization_status": "source_registry_only",
+      "caveats": "Unadjusted CPI-U; do not treat an index level as the inflation percentage or compare without consistent base."
+    },
+    {
+      "id": "BEA-REAL-GDP",
+      "name": "Real Gross Domestic Product",
+      "publisher": "U.S. Bureau of Economic Analysis",
+      "url": "https://www.bea.gov/data/gdp/gross-domestic-product",
+      "time_coverage": "Quarterly real GDP since 1947 as described by BEA",
+      "time_resolution": "quarter",
+      "geographic_scope": "United States",
+      "measurement_unit": "inflation-adjusted dollars (confirm chained-dollar reference year and annualization at extraction)",
+      "accessible_alternative": "BEA on-page real GDP tables, workbook downloads and NIPA documentation",
+      "visualization_status": "source_registry_only",
+      "caveats": "GDP measures output, not distribution or individual welfare; estimates may be revised."
+    },
+    {
+      "id": "CENSUS-DECENNIAL",
+      "name": "Historical Decennial Population Tables",
+      "publisher": "U.S. Census Bureau",
+      "url": "https://www.census.gov/programs-surveys/decennial-census/data/tables.html",
+      "time_coverage": "Selected decennial census years; data availability differs by table",
+      "time_resolution": "decade",
+      "geographic_scope": "United States and geographic subdivisions as indicated in selected table",
+      "measurement_unit": "persons or other published table-specific measure",
+      "accessible_alternative": "Census accessible tables and downloadable XLS/CSV/PDF",
+      "visualization_status": "source_registry_only",
+      "caveats": "Geographic definitions and questionnaire categories vary across censuses; source exact table and year."
+    }
+  ],
+  "required_observation_fields": [
+    "source_id",
+    "table_or_series",
+    "publication_or_access_date",
+    "observation_date",
+    "geography",
+    "unit",
+    "value",
+    "citation_url",
+    "methodology_note",
+    "accessible_table_alternative"
+  ],
+  "certification_policy": "No fabricated values, extrapolated territorial boundaries, or automated validation claims. Grade 9–12 teachers must validate the actual observations and attach named reference, date, geographic coverage and data table before students use them as fact."
+}
