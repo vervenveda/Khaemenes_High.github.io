@@ -23,7 +23,7 @@ for(const [course,grade,subject,page] of cases){
  const elements={grade:make(),subject:make()},inputs=[elements.grade,elements.subject];
  const form={elements,querySelectorAll:()=>inputs,reset(){for(const el of inputs)el.value=""}};
  const nodes={record:form,message:{textContent:""},courseContext:{textContent:""},printRecord:{addEventListener(event,cb){listeners.print=cb}},exportRecord:{addEventListener(){}},clearRecord:{addEventListener(event,cb){listeners.clear=cb}}};
- const document={title:"",getElementById:id=>nodes[id],createElement:()=>({className:"",textContent:""})};
+ const document={title:"",getElementById:id=>nodes[id],createElement:()=>({className:"",classList:{contains:name=>name==="print-value"},textContent:""})};
  const context={document,location:{search:"?course="+course},URLSearchParams,window:{confirm:()=>true,addEventListener(){},print(){}},URL,Blob,setTimeout:()=>{},console};
  vm.runInNewContext(script,context);
  assert.equal(elements.grade.value,grade,"opening grade "+course);
