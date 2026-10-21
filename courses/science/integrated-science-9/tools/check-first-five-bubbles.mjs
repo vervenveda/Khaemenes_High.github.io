@@ -14,4 +14,11 @@ assert(vocab.includes("u01d01:") && vocab.includes("u02d05:"),"Lesson-specific v
 assert(studio.includes("formative only") || studio.includes("formative"),"Studio must not impersonate mastery");
 assert(controller.includes("function unitComplete(){return REQUIREMENTS.every(requirementComplete)}"),"Unit 01 verified mastery requirements changed");
 assert(controller.includes("scienceConflict"),"Unit 01 concurrent save guard missing");
-console.log("PASS: Grade 9 first-five-bubbles structural checks (9 assertions).");
+for(let i=5;i<=12;i++){
+ const n=String(i).padStart(2,"0");
+ const source=read("units/unit-"+n+"/unit"+n+".js");
+ assert(source.includes('sessionStorage.getItem("kh_sci9_u04_active_learner_v1")'),"Unit "+n+" must read common learner selection");
+ assert(source.includes('sessionStorage.setItem("kh_sci9_u04_active_learner_v1",id)'),"Unit "+n+" must publish common learner selection");
+ assert(source.includes('KhaemenesCourseEntryContract?.readAcademyProfile?.()'),"Unit "+n+" must reject Academy identity mismatch");
+}
+console.log("PASS: Grade 9 first-five-bubbles structural checks, plus 24 cross-unit learner checks.");
