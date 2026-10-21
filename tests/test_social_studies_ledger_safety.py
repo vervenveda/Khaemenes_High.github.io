@@ -28,7 +28,7 @@ def seed(page,name="Sample Learner",grade="9"):
 def test_record_isolation_and_explicit_load(page):
  seed(page);page.locator("#question").fill("First student's evidence");page.locator("#save").click()
  assert "Saved for" in page.locator("#status").inner_text()
- page.locator("#reset").click();page.on("dialog",lambda d:d.accept())
+ page.on("dialog",lambda d:d.accept());page.locator("#reset").click()
  seed(page,"Other Learner","9");page.locator("#load").click()
  assert "No saved worksheet" in page.locator("#status").inner_text()
  assert page.locator("#question").input_value()==""
