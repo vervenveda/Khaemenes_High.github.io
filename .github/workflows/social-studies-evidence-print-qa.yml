@@ -1,0 +1,28 @@
+name: Social Studies Unified Evidence Print QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/social-studies/tools/academic-evidence-printout.html'
+      - 'courses/social-studies/grade-09/index.html'
+      - 'courses/social-studies/grade-10/index.html'
+      - 'courses/social-studies/grade-11/index.html'
+      - 'courses/social-studies/grade-12/index.html'
+      - 'tests/test_social_studies_unified_evidence_print.py'
+      - '.github/workflows/social-studies-evidence-print-qa.yml'
+  workflow_dispatch:
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser test dependencies
+        run: |
+          python -m pip install pytest playwright
+          python -m playwright install --with-deps chromium
+      - name: Verify Grades 9-12 printout and course links
+        run: python -m pytest -v tests/test_social_studies_unified_evidence_print.py
