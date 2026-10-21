@@ -5,8 +5,8 @@
   "authority": "course-local",
   "network_required": false,
   "lesson_count": 180,
-  "lessons_with_direct_tools": 28,
-  "direct_tool_links": 29,
+  "lessons_with_direct_tools": 31,
+  "direct_tool_links": 32,
   "lessons": [
     {
       "lesson_id": "DIAG-D01",
@@ -395,7 +395,13 @@
       "lesson_id": "U04-D03",
       "lesson_path": "units/unit-04/lessons/day-03.html",
       "lesson_title": "Mitosis & Cytokinesis",
-      "tools": []
+      "tools": [
+        {
+          "href": "../cell-cycle-laboratory.html",
+          "target": "units/unit-04/cell-cycle-laboratory.html",
+          "tool_title": "Cell Cycle Laboratory"
+        }
+      ]
     },
     {
       "lesson_id": "U04-D04",
@@ -437,7 +443,13 @@
       "lesson_id": "U04-D09",
       "lesson_path": "units/unit-04/lessons/day-09.html",
       "lesson_title": "Meiosis II & Gamete Variation",
-      "tools": []
+      "tools": [
+        {
+          "href": "../meiosis-laboratory.html",
+          "target": "units/unit-04/meiosis-laboratory.html",
+          "tool_title": "Meiosis Laboratory"
+        }
+      ]
     },
     {
       "lesson_id": "U04-D10",
@@ -455,7 +467,13 @@
       "lesson_id": "U04-D11",
       "lesson_path": "units/unit-04/lessons/day-11.html",
       "lesson_title": "Genotype, Phenotype & Dominance",
-      "tools": []
+      "tools": [
+        {
+          "href": "../inheritance-probability-lab.html",
+          "target": "units/unit-04/inheritance-probability-lab.html",
+          "tool_title": "Inheritance Probability Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U04-D12",
