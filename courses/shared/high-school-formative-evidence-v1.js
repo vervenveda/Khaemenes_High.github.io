@@ -77,7 +77,7 @@ function attachSocialStudiesPortfolio(){
  area.style.cssText="margin:16px 0;padding:15px;border:1px solid #857d69;border-radius:7px;break-inside:avoid";
  const heading=document.createElement("h2");heading.textContent="Khaemenes Academy · Printable Academic Evidence";
  const note=document.createElement("p");note.textContent="Keep a dated portfolio record alongside this weekly lesson. Add student name, sources, completed work and parent/teacher review. This form does not submit or change your quiz grades.";
- const link=document.createElement("a");link.href=url.href;link.textContent="Open Week "+week+" Academic Evidence Printout";link.style.cssText="display:inline-block;padding:9px 12px;border:1px solid currentColor;border-radius:7px;overflow-wrap:anywhere";
+ const link=document.createElement("a");link.href=url.href;link.textContent="Save Academic Evidence · Week "+week+" (Print / JSON)";link.style.cssText="display:inline-block;padding:9px 12px;border:1px solid currentColor;border-radius:7px;overflow-wrap:anywhere";
  area.append(heading,note,link);
  const dest=document.querySelector("main footer, footer");if(dest)dest.before(area);else document.querySelector("main")?.append(area);
 }
