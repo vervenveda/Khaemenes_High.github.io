@@ -212,3 +212,32 @@ def test_reset_requires_confirmation_and_preserves_unsaved_work(site,browser):
  page.get_by_role("button",name="Clear form").click()
  assert page.locator('[name="findings"]').input_value()=="Unsaved evidence must be retained"
  page.close()
+
+@pytest.mark.parametrize("bad_date",["","2026-02-30"])
+def test_portfolio_import_rejects_missing_or_invalid_work_date(site,browser,bad_date):
+ page=browser.new_page();page.goto(site+BASE+"tools/academic-evidence-printout.html?grade=9&lesson=Week%201")
+ alerts=[];page.on("dialog",lambda d:(alerts.append(d.message),d.accept()))
+ payload=_evidence_json();payload["date"]=bad_date;payload["reviewdate"]=""
+ _upload(page,payload)
+ assert any("dates must be valid" in m for m in alerts)
+ assert page.locator('[name="citations"]').input_value()==""
+ page.close()
+
+def test_portfolio_export_rejects_changed_lesson_metadata(site,browser):
+ ctx=browser.new_context(accept_downloads=True);page=ctx.new_page()
+ page.goto(site+BASE+"tools/academic-evidence-printout.html?grade=9&unit=Unit%201&lesson=Week%201&title=Civic%20question")
+ alerts=[];page.on("dialog",lambda d:(alerts.append(d.message),d.accept()))
+ page.locator('[name="student"]').fill("Sample Learner")
+ page.locator('[name="lesson"]').fill("Week 2")
+ page.locator("#export").click()
+ assert any("lesson no longer matches" in m for m in alerts)
+ ctx.close()
+
+def test_portfolio_export_filename_contains_lesson_and_date(site,browser):
+ ctx=browser.new_context(accept_downloads=True);page=ctx.new_page()
+ page.goto(site+BASE+"tools/academic-evidence-printout.html?grade=9&lesson=Week%201&title=Civic%20question")
+ page.locator('[name="student"]').fill("Sample Learner")
+ with page.expect_download() as info:page.locator("#export").click()
+ name=info.value.suggested_filename
+ assert "grade-9-1-" in name and name.endswith(".json")
+ ctx.close()
