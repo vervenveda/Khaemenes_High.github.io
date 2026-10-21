@@ -60,6 +60,13 @@ for(const [unit,name] of [["07","bonding"],["08","motion"],["09","circuit"],["10
  const src=read("units/unit-"+unit+"/"+name+"-question-app.js");
  if(!src.includes("Review these concepts: "))problems.push("Missing concept feedback "+unit+"/"+name);
 }
+for(const [unit,names] of Object.entries({"07":["bonding","energy","equation","structure"],"08":["energy","force","momentum","motion"],"09":["circuit","information","magnet","wave"],"10":["climate","cycles","interior","watershed"],"12":["decision","lifecycle","risk","testing"]})){
+ for(const name of names){
+  const src=read("units/unit-"+unit+"/"+name+"-question-app.js");
+  if(!src.includes("Review these concepts: "))problems.push("Missing focused feedback: "+unit+"/"+name);
+  if((src.match(/"explanation":/g)||[]).length!==8)problems.push("Incomplete explanations: "+unit+"/"+name);
+ }
+}
 const formative=read("science-formative-evidence.js");
 const portfolio=read("science-evidence-portfolio.js");
 for(const check of ['portfolioLink.textContent="Open student evidence portfolio"','unitLink.textContent="Return to unit lessons"']){
