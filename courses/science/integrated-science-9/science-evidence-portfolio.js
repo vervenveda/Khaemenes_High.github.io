@@ -15,6 +15,7 @@ function fetchRecords(id){
  return records.sort((a,b)=>a.activity.localeCompare(b.activity));
 }
 function download(text){const u=URL.createObjectURL(new Blob([text],{type:"application/json"}));const a=document.createElement("a");a.href=u;a.download="Khaemenes-Science9-Formative-Portfolio.json";a.click();setTimeout(()=>URL.revokeObjectURL(u),30000)}
+function clearOnLearnerChange(id){if(active()===id)return false;document.getElementById("portfolioRecords").replaceChildren();document.getElementById("learner").textContent="Selection changed";document.getElementById("portfolioStatus").textContent="Learner changed. Reload the portfolio to view the currently selected learner.";document.getElementById("exportPortfolio").disabled=true;document.getElementById("printPortfolio").disabled=true;return true}
 function init(){
  $("today").textContent=new Date().toLocaleDateString();
  const id=active();$("learner").textContent=id||"Not selected";
@@ -33,6 +34,9 @@ function init(){
   }
  }
  $("exportPortfolio").disabled=false;$("printPortfolio").disabled=false;
+ window.addEventListener("focus",()=>clearOnLearnerChange(id));
+ window.addEventListener("pageshow",()=>clearOnLearnerChange(id));
+ window.addEventListener("storage",()=>clearOnLearnerChange(id));
  $("exportPortfolio").addEventListener("click",()=>{if(active()!==id)return;download(JSON.stringify({schema:"khaemenes-science-formative-portfolio-v1",learner:id,exportedAt:new Date().toISOString(),records:rows},null,2))});
  $("printPortfolio").addEventListener("click",()=>{if(active()===id)window.print()});
 }
