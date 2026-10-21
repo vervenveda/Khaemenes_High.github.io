@@ -15,10 +15,10 @@ function activeFromSource(src,unit,common,previous,academy){
   const selector=src.slice(start,end).trim();
   const memory=new Map();
   if(common!==null)memory.set(commonKey,common);
-  if(previous!==null)memory.set("kh_sci9_u"+unit+"_active_learner_v1",previous);
+  if(previous!==null)memory.set("kh_sci9_u"+String(unit).padStart(2,"0")+"_active_learner_v1",previous);
   if(unit<5&&common!==null)memory.set("kh_sci9_u04_active_learner_v1",common);
   const scope={
-    ACTIVE:unit<5?commonKey:"kh_sci9_u"+unit+"_active_learner_v1",
+    ACTIVE:unit<5?commonKey:"kh_sci9_u"+String(unit).padStart(2,"0")+"_active_learner_v1",
     safeId:v=>typeof v==="string"&&/^[a-z0-9_-]{3,32}$/i.test(v)?v.toLowerCase():null,
     sessionStorage:{getItem:k=>memory.get(k)??null,setItem:(k,v)=>memory.set(k,v)},
     window:{KhaemenesCourseEntryContract:academy===null?undefined:{readAcademyProfile:()=>({learnerId:academy})}}
