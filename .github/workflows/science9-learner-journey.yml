@@ -31,5 +31,6 @@ jobs:
           node --check courses/science/integrated-science-9/units/unit-05/ecology-explorer.js
           node --check courses/science/integrated-science-9/units/unit-05/biodiversity-evidence-explorer.js
           node --check courses/science/integrated-science-9/units/unit-06/atomic-investigation-studio.js
+          node --check courses/science/integrated-science-9/science-formative-evidence.js
           node courses/science/integrated-science-9/tools/test-unit06-investigation.mjs
           node courses/science/integrated-science-9/tools/test-unit04-genetics-model.mjs
