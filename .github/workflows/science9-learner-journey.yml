@@ -26,6 +26,7 @@ jobs:
           node courses/science/integrated-science-9/tools/test-science9-learner-journey.mjs
           node courses/science/integrated-science-9/tools/validate-lesson-tool-registry.mjs
           node courses/science/integrated-science-9/tools/audit-science9-progression.mjs
+          node courses/science/integrated-science-9/tools/audit-academic-research-bridge.mjs
           node courses/science/integrated-science-9/tools/check-subject-connections.mjs
           node --check courses/science/integrated-science-9/units/unit-02/exploration-studio.js
           node --check courses/science/integrated-science-9/units/unit-03/investigation-studio.js
