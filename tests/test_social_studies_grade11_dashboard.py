@@ -53,3 +53,16 @@ def test_grade11_early_week_visual_investigation(browser,site,week):
  for link in links:
   assert page.request.get(site+BASE+f"weeks/week-{week:02d}/"+link).status==200,link
  ctx.close()
+
+@pytest.mark.parametrize("grade",[9,10,11,12])
+def test_unified_evidence_ledger_link_and_document(browser,site,grade):
+ ctx=browser.new_context()
+ page=ctx.new_page()
+ prefix=f"/courses/social-studies/grade-{grade:02d}/"
+ response=page.goto(site+prefix+"index.html",wait_until="domcontentloaded")
+ assert response.status==200
+ link=page.locator('.khaemenes-unified-evidence a')
+ assert link.count()==1
+ href=link.get_attribute("href")
+ assert page.request.get(site+prefix+href).status==200
+ ctx.close()
