@@ -30,7 +30,9 @@ def test_entrance_and_original_tools(browser,site,width):
  assert page.locator("#ss10-tools .ss10-tools-grid a").count()==6
  assert page.locator('button[data-view="week"]').count()>=1
  assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 2"),f"Horizontal overflow: {width}px"
- assert not errors,errors
+ # In a fresh browser no Academy learner is selected: the write boundary must refuse saving.
+ assert all("Select an Academy learner before saving course work." in error for error in errors),errors
+
  ctx.close()
 def test_resources_are_local_and_present(browser,site):
  ctx=browser.new_context();page=ctx.new_page()
@@ -39,7 +41,7 @@ def test_resources_are_local_and_present(browser,site):
   response=page.request.get(site+BASE+href)
   assert response.status==200,(href,response.status)
  ctx.close()
-@pytest.mark.parametrize("week",[1,2,12,24,36])
+@pytest.mark.parametrize("week",[1,2,3,4,5,6,12,24,36])
 def test_weekly_packet_loads(browser,site,week):
  ctx=browser.new_context(viewport={"width":375,"height":850})
  page=ctx.new_page();errors=[]
@@ -49,4 +51,23 @@ def test_weekly_packet_loads(browser,site,week):
  assert response.status==200
  assert f"Week {week}" in page.locator("h1").first.inner_text()
  assert not errors,errors
+ ctx.close()
+
+def test_grade10_requires_academy_learner_for_persistence(browser,site):
+ ctx=browser.new_context()
+ page=ctx.new_page(); errors=[]
+ page.on("pageerror",lambda error:errors.append(str(error)))
+ page.goto(site+BASE+"index.html",wait_until="domcontentloaded")
+ assert any("Select an Academy learner before saving course work." in error for error in errors)
+ assert page.locator("#ss10-tools").count()==1
+ ctx.close()
+
+@pytest.mark.parametrize("week",[1,2,3,4,5,6])
+def test_original_visual_investigation_present(browser,site,week):
+ ctx=browser.new_context()
+ page=ctx.new_page()
+ page.goto(site+BASE+f"week-{week:02d}/student-packet.html",wait_until="domcontentloaded")
+ assert page.locator(".khaemenes-visual-investigation").count()==1
+ href=page.locator(".khaemenes-visual-investigation a").get_attribute("href")
+ assert page.request.get(site+BASE+f"week-{week:02d}/"+href).status==200
  ctx.close()
