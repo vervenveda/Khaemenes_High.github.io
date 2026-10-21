@@ -20,7 +20,7 @@ else if(current){
  const script=document.createElement("script");
  script.src=new URL("./algebra2-progression.js",current.src).href;
  script.onload=run;
- script.onerror=()=>{const main=document.querySelector("main");if(main)main.innerHTML='<section class="unit-hero"><div class="wrap"><p class="eyebrow">Progression check unavailable</p><h1>Unit paused</h1><p>Refresh this page before continuing; the local progression check could not be loaded.</p></div></section>'};
+ script.onerror=()=>{const main=document.querySelector("main");if(main&&!document.getElementById("a2ProgressRecovery")){const note=document.createElement("aside");note.id="a2ProgressRecovery";note.setAttribute("role","status");note.style.cssText="margin:16px auto;padding:14px 18px;max-width:960px;border:1px solid #a67b35;border-radius:7px;background:#fff8e8;color:#282016";note.textContent="Progression status could not be loaded. Lesson navigation remains visible, but completion and mastery status cannot be verified. Reload the page before submitting graded work.";main.prepend(note)}};
  document.head.appendChild(script);
 }else run();
 })();
