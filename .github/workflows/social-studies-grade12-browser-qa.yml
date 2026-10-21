@@ -1,0 +1,23 @@
+name: Social Studies Grade 12 Browser QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/social-studies/grade-12/**'
+      - 'courses/social-studies/tools/visual-studio.html'
+      - 'tests/test_social_studies_grade12_dashboard.py'
+      - '.github/workflows/social-studies-grade12-browser-qa.yml'
+  workflow_dispatch:
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install pytest playwright
+          python -m playwright install --with-deps chromium
+      - run: python -m pytest -v tests/test_social_studies_grade12_dashboard.py
