@@ -78,6 +78,7 @@ def _evidence_json(grade=9,student="Test Learner",date="2026-10-20"):
 
 def _upload(page,payload):
  page.locator("#upload").set_input_files({"name":"evidence.json","mimeType":"application/json","buffer":json.dumps(payload).encode("utf-8")})
+ page.wait_for_function("document.querySelector('#upload').value === ''")
 
 @pytest.mark.parametrize("grade",[9,10,11,12])
 def test_evidence_import_identity_and_grade_safeguards(site,browser,grade):
