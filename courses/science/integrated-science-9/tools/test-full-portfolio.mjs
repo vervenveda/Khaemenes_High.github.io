@@ -19,5 +19,8 @@ assert(page.includes("input[type=file]{max-width:100%"),"mobile backup file inpu
 assert(portfolio.includes("Learner changed during file loading"),"async backup-read learner guard missing");
 assert(portfolio.includes("Learner changed before restoration"),"post-confirm learner guard missing");
 assert(portfolio.includes("Learner changed during restore"),"per-record learner guard missing");
+assert(portfolio.includes('labLink.href=record.activity'),"portfolio missing return to original investigation");
+assert(portfolio.includes('labLink.className="no-print"'),"printable record must hide navigation");
+assert(formative.includes('portfolioLink.textContent="Open student evidence portfolio"'),"investigation missing portfolio path");
 console.log("PASS narrow-width styles and asynchronous restore learner-isolation guards");
 console.log("PASS Science 9 Units 02–12 portfolio coverage, headings, current export, learner guards and formative isolation");
