@@ -114,8 +114,8 @@ for(const outcome of ["download-error","silent-loader","missing-script"]){
  const p=page({currentScript:outcome!=="missing-script"});
  vm.runInContext(lesson,p.ctx);
  if(outcome==="download-error"){
-  assert.equal(p.written.length,1);p.written[0].onerror();
- }else if(outcome==="silent-loader"){assert.equal(p.written.length,1);p.written[0].onload();}
+  assert.equal(p.written.length,2);p.written[0].onerror();
+ }else if(outcome==="silent-loader"){assert.equal(p.written.length,2);p.written[0].onload();}
  const message=p.doc.getElementById("algebra2ProgressionRecovery");
  assert.ok(p.main.children.includes(message),"warning inserted inside lesson "+outcome);
  assert.equal(message.attrs.role,"alert");
@@ -132,7 +132,7 @@ for(const outcome of ["download-error","silent-loader","missing-script"]){
  assert.ok(retry?.listeners.click,"retry button functional");
  retry.listeners.click();assert.equal(p.callbacks.get("reload"),true);
  p.el("printLesson").listeners.click();assert.equal(p.callbacks.get("print"),true);
- assert.equal(p.written.length,outcome==="missing-script"?0:1);
+ assert.equal(p.written.length,outcome==="missing-script"?1:2);
 }
 // Successful progression authority should retain regular save/mark behavior.
 const source={
@@ -141,7 +141,7 @@ const source={
 };
 const ok=page({progression:source});
 vm.runInContext(lesson,ok.ctx);
-assert.equal(ok.written.length,0,"no duplicate progression injection when loaded");
+assert.equal(ok.written.length,1,"no duplicate progression injection when loaded; video helper remains separate");
 assert.equal(ok.el("lessonComplete").checked,true);
 assert.equal(ok.el("lessonNote").value,"Existing record");
 assert.ok(!ok.main.children.some(c=>c.id==="algebra2ProgressionRecovery"),"no false warning on success");
