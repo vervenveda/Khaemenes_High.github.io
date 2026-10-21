@@ -39,4 +39,17 @@ for(const [course,grade,subject,page] of cases){
  assert.equal(elements.grade.value,grade,"reset grade "+course);
  assert.equal(elements.subject.value,subject,"reset subject "+course);
 }
-console.log("PASS academic evidence opening, print and reset context for all eight verified courses");
+for(const [course,subject] of [["arabic-1","Arabic I"],["russian-1","Russian I"]]){
+ const listeners={};const make=()=>({value:"",nextElementSibling:null,after(node){this.nextElementSibling=node},closest(){return {firstChild:{textContent:"Subject"}}}});
+ const elements={grade:make(),subject:make()},form={elements,querySelectorAll:()=>[elements.grade,elements.subject],reset(){elements.grade.value="";elements.subject.value=""}};
+ const nodes={record:form,message:{textContent:""},courseContext:{textContent:""},printRecord:{addEventListener(_,cb){listeners.print=cb}},exportRecord:{addEventListener(){}},clearRecord:{addEventListener(_,cb){listeners.clear=cb}}};
+ const document={title:"",getElementById:id=>nodes[id],createElement:()=>({className:"",classList:{contains:()=>true},textContent:""})};
+ vm.runInNewContext(script,{document,location:{search:"?course="+course},URLSearchParams,window:{confirm:()=>true,addEventListener(){},print(){}},URL,Blob,setTimeout:()=>{},console});
+ assert.equal(elements.grade.value,"9–12");
+ assert.equal(elements.subject.value,subject);
+ listeners.print();
+ assert.equal(elements.subject.nextElementSibling.textContent,subject);
+ listeners.clear();
+ assert.equal(elements.subject.value,subject);
+}
+console.log("PASS evidence context for eight local courses plus Arabic I and Russian I");
