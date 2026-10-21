@@ -1,0 +1,25 @@
+"use strict";
+(()=>{
+const page=location.pathname.split("/").pop();
+const mode={"cell-cycle-laboratory.html":"cycle","meiosis-laboratory.html":"meiosis","inheritance-probability-lab.html":"inheritance"}[page];if(!mode)return;
+const mount=()=>{
+ const main=document.querySelector("main");if(!main||document.getElementById("u04Explore"))return;
+ const host=document.createElement("section");host.id="u04Explore";host.className="card lesson-page";host.innerHTML='<h2>Original Khaemenes Genetics Exploration</h2><p>Formative model only: it does not change laboratory scores or verified mastery. Models simplify real cellular processes.</p><p class="record-heading">Khaemenes Academy · Grade 9 Science · Unit 04<br>Student: _______________________ Date: ________________</p><div id="u04Controls"></div><p id="u04Result" role="status" aria-live="polite"></p><label for="u04Evidence">Explain what changed, why it matters, and one limitation.</label><textarea id="u04Evidence" rows="5" placeholder="Observation, explanation, limitation"></textarea><button id="u04Print" type="button">Print evidence sheet</button>';
+ main.append(host);const box=host.querySelector("#u04Controls"),result=host.querySelector("#u04Result");
+ const display=s=>result.textContent=s;
+ if(mode==="cycle"){
+ box.innerHTML='<label for="u04Phase">Cell-cycle stage</label><select id="u04Phase"><option value="g1">G1 growth</option><option value="s">S-phase DNA replication</option><option value="g2">G2 preparation</option><option value="mitosis">Mitosis</option><option value="cytokinesis">Cytokinesis</option></select>';
+ const desc={g1:"The cell grows; its genome is not yet replicated for this division.",s:"DNA is copied, producing sister chromatids. Chromosome number is not doubled merely because DNA content doubles.",g2:"Replicated DNA is checked and the cell prepares for division.",mitosis:"Sister chromatids separate into two nuclear chromosome sets.",cytokinesis:"Cytoplasm divides into two daughter cells; cytokinesis and mitosis are related but distinct."};
+ const run=()=>display(desc[box.querySelector("#u04Phase").value]+" This schematic omits checkpoints, timing variability and cell-type differences.");box.addEventListener("change",run);run();
+ }else if(mode==="meiosis"){
+ box.innerHTML='<label for="u04Meiosis">Choose a division</label><select id="u04Meiosis"><option value="one">Meiosis I</option><option value="two">Meiosis II</option></select><label for="u04Pairs">Homologous chromosome pairs in a starting diploid model</label><input id="u04Pairs" type="range" min="1" max="5" value="2" step="1"><output for="u04Pairs" id="u04PairValue">2 pairs</output>';
+ const run=()=>{let n=Number(box.querySelector("#u04Pairs").value),second=box.querySelector("#u04Meiosis").value==="two";box.querySelector("#u04PairValue").textContent=n+" pairs";display((second?"Meiosis II separates sister chromatids in each haploid cell; four haploid products can result from one starting diploid cell.":"Meiosis I separates homologous chromosome pairs, reducing chromosome sets from diploid to haploid.")+" A starting model with "+n+" pairs has "+(2**n)+" possible independent-assortment combinations per gamete, ignoring crossing over. This does not predict exact gamete outcomes.");};box.addEventListener("input",run);box.addEventListener("change",run);run();
+ }else{
+ box.innerHTML='<label for="u04ParentA">First parent genotype</label><select id="u04ParentA"><option>AA</option><option selected>Aa</option><option>aa</option></select><label for="u04ParentB">Second parent genotype</label><select id="u04ParentB"><option>AA</option><option selected>Aa</option><option>aa</option></select>';
+ const run=()=>{let gametes=s=>s.split(""),a=gametes(box.querySelector("#u04ParentA").value),b=gametes(box.querySelector("#u04ParentB").value),comb=a.flatMap(x=>b.map(y=>[x,y].sort().join(""))),counts={AA:0,Aa:0,aa:0};comb.forEach(x=>counts[x]++);display("Punnett model: AA "+counts.AA+"/4, Aa "+counts.Aa+"/4, aa "+counts.aa+"/4. Each combination assumes independent, equally likely gametes for one simple Mendelian gene. Real traits can be polygenic or affected by environment.");};box.addEventListener("change",run);run();
+ }
+ const style=document.createElement("style");style.textContent='#u04Explore{max-width:1060px;margin:24px auto;padding:18px;min-width:0;overflow-wrap:anywhere;border-radius:7px}#u04Explore label{display:block;margin:12px 0 5px}#u04Explore input,#u04Explore select,#u04Explore textarea{display:block;width:min(100%,540px);max-width:100%;padding:8px;font:inherit}#u04Explore .record-heading{border-bottom:1px solid #aaa;padding:10px 0}#u04Explore button{margin-top:12px;padding:9px;border-radius:7px}@media print{#u04Print{display:none!important}#u04Explore{color:#111;break-inside:avoid}#u04Explore textarea{border:1px solid #555}}';document.head.append(style);
+ host.querySelector("#u04Print").addEventListener("click",()=>print());
+};
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mount,{once:true});else mount();
+})();
