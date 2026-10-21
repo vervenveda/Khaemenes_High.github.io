@@ -65,7 +65,7 @@ function init(){
    const h=document.createElement("h3");h.textContent=record.activity.split("/").pop().replace(/\.html$/,"").replace(/-/g," ");item.append(h);
    const date=document.createElement("p");date.textContent="Last saved: "+(record.updatedAt||"Not recorded");item.append(date);
    const labLink=document.createElement("a");labLink.href=record.activity;labLink.textContent="Open original investigation";labLink.className="no-print";item.append(labLink);
-   const note=document.createElement("pre");note.textContent=record.notes||"(No written observation)";item.append(note);host.append(item);
+   const note=document.createElement("pre");note.textContent=record.notes||"(No written notes)";item.append(note);if(record.observation){const title=document.createElement("p");title.textContent="Supporting observations:";item.append(title);const detail=document.createElement("pre");detail.textContent=record.observation;item.append(detail)}host.append(item);
   }
  }
  $("exportPortfolio").disabled=false;$("printPortfolio").disabled=false;
