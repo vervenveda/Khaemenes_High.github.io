@@ -44,7 +44,7 @@ document.getElementById("exportRecord").addEventListener("click",()=>{
  const lines=["Khaemenes Academy — Grade "+selected.grade+" "+selected.subject+" Academic Evidence Companion","Optional formative homeschool record — not graded","",...snapshot().map(x=>x.label+"\n"+(x.value||"(blank)")+"\n")];
  const url=URL.createObjectURL(new Blob([lines.join("\n")],{type:"text/plain;charset=utf-8"}));const a=document.createElement("a");a.href=url;a.download="Khaemenes-"+selected.slug+"-Academic-Evidence.txt";a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);status.textContent="Text export requested. Check your browser downloads.";
 });
-document.getElementById("clearRecord").addEventListener("click",()=>{if(!window.confirm("Clear this unsaved worksheet? Export first if you need a copy."))return;form.reset();status.textContent="Worksheet cleared. No Academy records were changed."});
+document.getElementById("clearRecord").addEventListener("click",()=>{if(!window.confirm("Clear this unsaved worksheet? Export first if you need a copy."))return;form.reset();form.elements.grade.value=selected.grade;form.elements.subject.value=selected.subject;refreshPrint();status.textContent="Worksheet cleared. Course subject and grade retained; no Academy records were changed."});
 window.addEventListener("beforeprint",refreshPrint);
 })();
 </script></body></html>
