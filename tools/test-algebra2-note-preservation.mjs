@@ -89,7 +89,7 @@ assert.equal(b.record().note,"Work on a different lesson");
 assert.equal(reload.record().note,"An unfinished triangle solution","other lesson saved without overwrite");
 a=page({session:a.session});
 b=page({session:b.session});
-a.complete.checked=true;a.event(a.complete,"change");
+a.progression.writeJSON(lessonKey,{...a.progression.readJSON(lessonKey,{}),[a.lesson]:{...a.record(),complete:true}}); // Simulate external completion evidence; checkbox is read-only
 assert.equal(a.record().complete,true,"completion persisted");
 const before=b.record().note;
 b.setText("A second independent note");
