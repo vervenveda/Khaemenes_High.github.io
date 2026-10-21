@@ -56,6 +56,10 @@ for(const name of ["orbit","spectra","exoplanet","cosmology"]){
  if(!app.includes("Read the explanations below, revisit the investigation"))problems.push("Missing review guidance in Unit 11 "+name);
  if((app.match(/"explanation":/g)||[]).length!==8)problems.push("Expected eight answer explanations in Unit 11 "+name);
 }
+for(const [unit,name] of [["07","bonding"],["08","motion"],["09","circuit"],["10","watershed"],["12","risk"]]) {
+ const src=read("units/unit-"+unit+"/"+name+"-question-app.js");
+ if(!src.includes("Review these concepts: "))problems.push("Missing concept feedback "+unit+"/"+name);
+}
 const formative=read("science-formative-evidence.js");
 const portfolio=read("science-evidence-portfolio.js");
 for(const check of ['portfolioLink.textContent="Open student evidence portfolio"','unitLink.textContent="Return to unit lessons"']){
