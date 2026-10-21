@@ -1,6 +1,6 @@
 /* Khaemenes Academy · Algebra II · Pre-Algebra dark dashboard alignment v1
    Presentation only. No mastery, scoring, assessment, record, or gate logic. */
-:root{
+html[data-theme="dark"]{
   --bg:#07111d!important;
   --bg2:#050b13!important;
   --panel:#101f31!important;
