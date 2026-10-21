@@ -5,8 +5,8 @@
   "authority": "course-local",
   "network_required": false,
   "lesson_count": 180,
-  "lessons_with_direct_tools": 22,
-  "direct_tool_links": 22,
+  "lessons_with_direct_tools": 24,
+  "direct_tool_links": 24,
   "lessons": [
     {
       "lesson_id": "DIAG-D01",
@@ -138,13 +138,25 @@
       "lesson_id": "U02-D04",
       "lesson_path": "units/unit-02/lessons/day-04.html",
       "lesson_title": "Eukaryotic Cell Systems",
-      "tools": []
+      "tools": [
+        {
+          "href": "../cell-model-gallery.html",
+          "target": "units/unit-02/cell-model-gallery.html",
+          "tool_title": "Cell Model Gallery"
+        }
+      ]
     },
     {
       "lesson_id": "U02-D05",
       "lesson_path": "units/unit-02/lessons/day-05.html",
       "lesson_title": "Virtual Microscopy Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../virtual-microscopy.html",
+          "target": "units/unit-02/virtual-microscopy.html",
+          "tool_title": "Virtual Microscopy Laboratory"
+        }
+      ]
     },
     {
       "lesson_id": "U02-D06",
