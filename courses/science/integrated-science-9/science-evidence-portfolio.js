@@ -27,7 +27,7 @@ function setupRestore(id){
    if(data?.schema!=="khaemenes-science-formative-portfolio-v1"||data.learner!==id||!Array.isArray(data.records)||data.records.length>200)throw Error("Wrong learner, schema, or record count.");
    const seen=new Set(),valid=[];
    for(const record of data.records){
-    if(typeof record?.activity!=="string"||!/^units\/unit-(?:0[2-9]|1[0-2])\/[^/]+\\.html$/.test(record.activity)||seen.has(record.activity)||typeof record.notes!=="string"||record.notes.length>100000||typeof record.observation!=="string"||record.observation.length>20000)throw Error("Invalid or duplicated activity entry.");
+    if(typeof record?.activity!=="string"||!/^units\/unit-(?:0[2-9]|1[0-2])\/[^/]+\.html$/.test(record.activity)||seen.has(record.activity)||typeof record.notes!=="string"||record.notes.length>100000||typeof record.observation!=="string"||record.observation.length>20000)throw Error("Invalid or duplicated activity entry.");
     seen.add(record.activity);valid.push(record);
    }
    const missing=valid.filter(r=>localStorage.getItem(keyPrefix+id+":"+r.activity)===null);
