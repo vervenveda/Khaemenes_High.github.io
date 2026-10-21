@@ -36,7 +36,8 @@ function shuffleVisibleOptions(){
 function showRecovery(){
  const main=document.getElementById("main");
  if(!main||main.children.length||main.textContent.trim())return;
- main.innerHTML='<section class="hero"><div class="wrap"><h1>Algebra I is taking longer than expected</h1><p>The unit could not finish loading. Your saved progress remains unchanged. Try again or return to the course directory.</p><p><a class="btn primary" href="../../index.html">Algebra I home</a> <button class="btn" type="button" onclick="location.reload()">Retry loading</button></p></div></section>';
+ const home=new URL(ref.root||"../../",location.href).href;
+ main.innerHTML='<section class="hero"><div class="wrap"><h1>Algebra I is taking longer than expected</h1><p>The unit could not finish loading. Your saved progress remains unchanged. Try again or return to the course directory.</p><p><a class="btn primary" href="'+home+'">Algebra I home</a> <button class="btn" type="button" onclick="location.reload()">Retry loading</button></p></div></section>';
 }
 loadAt(0);
 setTimeout(showRecovery,12000);
