@@ -9,7 +9,7 @@ function fetchRecords(id){
  for(let i=0;i<localStorage.length;i++){
   const key=localStorage.key(i);if(!key?.startsWith(prefix))continue;
   try{const record=JSON.parse(localStorage.getItem(key));if(record?.schema!=="khaemenes-science-formative-v1"||record.learner!==id||typeof record.activity!=="string"||typeof record.notes!=="string"||record.notes.length>100000||key!==prefix+record.activity)continue;
-  if(!/^units\/unit-0[2-6]\/[^/]+\.html$/.test(record.activity))continue;
+  if(!/^units\/unit-(?:0[2-9]|1[0-2])\/[^/]+\.html$/.test(record.activity))continue;
   records.push({activity:record.activity,notes:record.notes,observation:typeof record.observation==="string"?record.observation:"",updatedAt:record.updatedAt||""});}catch{}
  }
  return records.sort((a,b)=>a.activity.localeCompare(b.activity));
@@ -27,7 +27,7 @@ function setupRestore(id){
    if(data?.schema!=="khaemenes-science-formative-portfolio-v1"||data.learner!==id||!Array.isArray(data.records)||data.records.length>200)throw Error("Wrong learner, schema, or record count.");
    const seen=new Set(),valid=[];
    for(const record of data.records){
-    if(typeof record?.activity!=="string"||!/^units\\/unit-0[2-6]\\/[^/]+\\.html$/.test(record.activity)||seen.has(record.activity)||typeof record.notes!=="string"||record.notes.length>100000||typeof record.observation!=="string"||record.observation.length>20000)throw Error("Invalid or duplicated activity entry.");
+    if(typeof record?.activity!=="string"||!/^units\\/unit-(?:0[2-9]|1[0-2])\\/[^/]+\\.html$/.test(record.activity)||seen.has(record.activity)||typeof record.notes!=="string"||record.notes.length>100000||typeof record.observation!=="string"||record.observation.length>20000)throw Error("Invalid or duplicated activity entry.");
     seen.add(record.activity);valid.push(record);
    }
    const missing=valid.filter(r=>localStorage.getItem(keyPrefix+id+":"+r.activity)===null);
@@ -55,8 +55,8 @@ function init(){
  let rows;try{rows=fetchRecords(id)}catch{$("portfolioStatus").textContent="Browser evidence storage is unavailable.";return}
  $("portfolioStatus").textContent=rows.length+" saved formative investigation"+(rows.length===1?"":"s")+" for this learner.";
  const host=$("portfolioRecords");
- for(let unit=2;unit<=6;unit++){
-  const sub=rows.filter(r=>r.activity.startsWith("units/unit-0"+unit+"/"));if(!sub.length)continue;
+ for(let unit=2;unit<=12;unit++){
+  const sub=rows.filter(r=>r.activity.startsWith("units/unit-"+String(unit).padStart(2,"0")+"/"));if(!sub.length)continue;
   const heading=document.createElement("h2");heading.textContent="Unit 0"+unit;host.append(heading);
   for(const record of sub){
    const item=document.createElement("article");item.className="portfolio-row";
