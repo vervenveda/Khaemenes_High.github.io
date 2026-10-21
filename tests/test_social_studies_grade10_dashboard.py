@@ -41,7 +41,7 @@ def test_resources_are_local_and_present(browser,site):
   response=page.request.get(site+BASE+href)
   assert response.status==200,(href,response.status)
  ctx.close()
-@pytest.mark.parametrize("week",[1,2,3,4,5,6,7,8,9,10,11,12,24,36])
+@pytest.mark.parametrize("week",list(range(1,19))+[24,36])
 def test_weekly_packet_loads(browser,site,week):
  ctx=browser.new_context(viewport={"width":375,"height":850})
  page=ctx.new_page();errors=[]
@@ -62,7 +62,7 @@ def test_grade10_requires_academy_learner_for_persistence(browser,site):
  assert page.locator("#ss10-tools").count()==1
  ctx.close()
 
-@pytest.mark.parametrize("week",list(range(1,13)))
+@pytest.mark.parametrize("week",list(range(1,19)))
 def test_original_visual_investigation_present(browser,site,week):
  ctx=browser.new_context()
  page=ctx.new_page()
