@@ -364,6 +364,19 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <script src="assets/question-bank.js"></script>
 <script src="assets/algebra2-progression.js"></script>
 <script src="assets/app.js"></script>
+<script>
+/* Passive startup recovery: no grade, mastery, or storage writes. */
+setTimeout(function(){
+  var dashboard=document.getElementById("view-dashboard");
+  if(!dashboard||dashboard.children.length||dashboard.textContent.trim())return;
+  var note=document.createElement("div");
+  note.setAttribute("role","status");
+  note.style.cssText="max-width:900px;margin:24px auto;padding:20px;border:1px solid #a67b35;border-radius:7px;background:#fffdf8;color:#182b34;line-height:1.65";
+  note.innerHTML='<h2 style="color:#182b34">Course dashboard needs a retry</h2><p>The course interface did not finish loading. Your locally saved progress has not been changed. Please reload, or use the High School mathematics directory.</p><p><button type="button" id="mathStartupRetry">Retry loading</button> <a href="../">Mathematics directory</a></p>';
+  dashboard.appendChild(note);
+  note.querySelector("#mathStartupRetry").addEventListener("click",function(){location.reload()});
+},12000);
+</script>
 
 <script>
 (() => {
