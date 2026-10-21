@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "collection": "Khaemenes Academy Geometry Original Resources",
+  "ownership": "Original Khaemenes Academy instructional artwork",
+  "policy": "Academy-created diagrams/maps are canonical visual references. Vetted learning videos may remain optional supplemental resources.",
+  "format": "SVG",
+  "scalable": true,
+  "offline_ready": true,
+  "printable": true,
+  "resources": [
+    {
+      "lesson": "KH-MATH-GEO-U03-L04",
+      "file": "cpctc-proof-flow-map.svg",
+      "title": "CPCTC Proof Flow Map",
+      "purpose": "Original theorem-flow reference replacing dependence on third-party static proof diagrams."
+    },
+    {
+      "lesson": "KH-MATH-GEO-U08-L08",
+      "file": "circle-equation-coordinate-map.svg",
+      "title": "Circle Equation Coordinate Map",
+      "purpose": "Original coordinate reference for center, radius, and standard equation."
+    },
+    {
+      "lesson": "KH-MATH-GEO-U11-L02",
+      "file": "pyramid-cone-volume-map.svg",
+      "title": "Pyramid & Cone Volume Map",
+      "purpose": "Original comparison graphic for one-third volume relationships."
+    },
+    {
+      "lesson": "KH-MATH-GEO-U11-L03",
+      "file": "sphere-surface-volume-map.svg",
+      "title": "Sphere Surface Area & Volume Map",
+      "purpose": "Original dimensional-reference graphic for sphere formulas and scaling."
+    }
+  ]
+}
