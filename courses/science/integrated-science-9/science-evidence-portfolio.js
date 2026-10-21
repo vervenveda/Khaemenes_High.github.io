@@ -57,7 +57,7 @@ function init(){
  const host=$("portfolioRecords");
  for(let unit=2;unit<=12;unit++){
   const sub=rows.filter(r=>r.activity.startsWith("units/unit-"+String(unit).padStart(2,"0")+"/"));if(!sub.length)continue;
-  const heading=document.createElement("h2");heading.textContent="Unit 0"+unit;host.append(heading);
+  const heading=document.createElement("h2");heading.textContent="Unit "+String(unit).padStart(2,"0");host.append(heading);
   for(const record of sub){
    const item=document.createElement("article");item.className="portfolio-row";
    const h=document.createElement("h3");h.textContent=record.activity.split("/").pop().replace(/\.html$/,"").replace(/-/g," ");item.append(h);
@@ -70,7 +70,8 @@ function init(){
  window.addEventListener("focus",()=>clearOnLearnerChange(id));
  window.addEventListener("pageshow",()=>clearOnLearnerChange(id));
  window.addEventListener("storage",()=>clearOnLearnerChange(id));
- $("exportPortfolio").addEventListener("click",()=>{if(active()!==id)return;download(JSON.stringify({schema:"khaemenes-science-formative-portfolio-v1",learner:id,exportedAt:new Date().toISOString(),records:rows},null,2))});
+ document.addEventListener("visibilitychange",()=>{if(!document.hidden)clearOnLearnerChange(id)});
+ $("exportPortfolio").addEventListener("click",()=>{if(active()!==id)return;download(JSON.stringify({schema:"khaemenes-science-formative-portfolio-v1",learner:id,exportedAt:new Date().toISOString(),records:fetchRecords(id)},null,2))});
  $("printPortfolio").addEventListener("click",()=>{if(active()===id)window.print()});
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
