@@ -1,0 +1,26 @@
+name: Science 9 learner journey regression
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/integrated-science-9/**'
+      - '.github/workflows/science9-learner-journey.yml'
+  pull_request:
+    paths:
+      - 'courses/science/integrated-science-9/**'
+      - '.github/workflows/science9-learner-journey.yml'
+  workflow_dispatch:
+jobs:
+  learner-journey:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source and implementation regression
+        run: |
+          node courses/science/integrated-science-9/tools/check-first-five-bubbles.mjs
+          node courses/science/integrated-science-9/tools/test-science9-learner-journey.mjs
