@@ -4,7 +4,7 @@
   const ACTIVE="kh_sci9_u04_active_learner_v1",PREFIX="kh_sci9_u01_learner_v1:";
   const ORIGINAL="khaemenes_science_u01_v1";
   const safeId=v=>typeof v==="string"&&/^[a-z0-9_-]{3,32}$/i.test(v)?v.toLowerCase():null;
-  function active(){try{return safeId(sessionStorage.getItem(ACTIVE))}catch{return null}}
+  function active(){try{const selected=safeId(sessionStorage.getItem(ACTIVE));const academy=window.KhaemenesCourseEntryContract?.readAcademyProfile?.();if(academy&&selected&&safeId(String(academy.learnerId||""))!==selected)return null;return selected}catch{return null}}
   function key(){const id=active();return id?PREFIX+id+":"+ORIGINAL:null}
   function choose(){
     const raw=window.prompt("Science 9 Unit 01: enter a learner ID (3–32 letters, numbers, - or _). Use the same ID on this device to resume. Existing shared-browser records stay preserved separately.","");
