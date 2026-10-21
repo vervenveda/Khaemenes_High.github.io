@@ -39,7 +39,7 @@ def test_grade11_week_one_packet(browser,site):
  assert response.status==200
  ctx.close()
 
-@pytest.mark.parametrize("week",list(range(1,19)))
+@pytest.mark.parametrize("week",list(range(1,25)))
 def test_grade11_early_week_visual_investigation(browser,site,week):
  ctx=browser.new_context(viewport={"width":375,"height":850})
  page=ctx.new_page()
