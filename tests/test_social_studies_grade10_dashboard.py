@@ -41,7 +41,7 @@ def test_resources_are_local_and_present(browser,site):
   response=page.request.get(site+BASE+href)
   assert response.status==200,(href,response.status)
  ctx.close()
-@pytest.mark.parametrize("week",list(range(1,19))+[24,36])
+@pytest.mark.parametrize("week",list(range(1,25))+[24,36])
 def test_weekly_packet_loads(browser,site,week):
  ctx=browser.new_context(viewport={"width":375,"height":850})
  page=ctx.new_page();errors=[]
