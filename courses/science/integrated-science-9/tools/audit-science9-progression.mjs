@@ -38,6 +38,10 @@ const verifiedResultRoutes=[
  ["08","motion-question-check.html","motion-graph-lab.html"],
  ["09","circuit-question-check.html","circuit-data-lab.html"],
  ["10","watershed-question-check.html","watershed-surface-lab.html"],
+ ["11","orbit-question-check.html","solar-system-orbit-lab.html"],
+ ["11","spectra-question-check.html","stellar-spectra-lab.html"],
+ ["11","exoplanet-question-check.html","exoplanet-transit-lab.html"],
+ ["11","cosmology-question-check.html","galaxy-expansion-lab.html"],
  ["12","risk-question-check.html","risk-reliability-lab.html"]
 ];
 for(const [unit,check,lab] of verifiedResultRoutes){
