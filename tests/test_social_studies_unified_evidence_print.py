@@ -108,7 +108,14 @@ def test_weekly_evidence_export_import_and_review_roundtrip(site,browser,grade):
  ctx=browser.new_context(accept_downloads=True)
  page=ctx.new_page()
  page.goto(site+BASE+f"grade-{grade:02d}/weeks/week-01/student-packet.html",wait_until="domcontentloaded")
- page.locator("[data-academic-portfolio-link] a").click()
+ if grade==9:
+  # The Grade 9 learner diagnostic intentionally blocks pointer clicks until completed.
+  # Verify the link destination directly without disabling the protective overlay.
+  target=page.locator("[data-academic-portfolio-link] a").get_attribute("href")
+  assert page.request.get(target).status==200
+  page.goto(target,wait_until="domcontentloaded")
+ else:
+  page.locator("[data-academic-portfolio-link] a").click()
  # Opening may remain in the same tab for standalone print forms.
  if page.locator("#evidence").count()==0:
   evidence=ctx.pages[-1]
