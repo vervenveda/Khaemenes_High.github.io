@@ -54,5 +54,5 @@ const portfolioJs=read("science-evidence-portfolio.js");
 const portfolioHtml=read("science-evidence-portfolio.html");
 for(const guard of ['record.learner!==id','key!==prefix+record.activity','clearOnLearnerChange(id)','window.addEventListener("focus"','window.addEventListener("pageshow"'])assert(portfolioJs.includes(guard),"Portfolio learner isolation guard missing: "+guard);
 for(const label of ["Parent / Teacher Review","Reviewer signature","Next learning goals"])assert(portfolioHtml.includes(label),"Portfolio review missing: "+label);
-assert(!portfolioJs.includes("localStorage.setItem"),"Read-only portfolio must not change learner records");
+for(const guard of ["setupRestore(id)","data.learner!==id","seen.has(record.activity)","candidate.missing","localStorage.getItem(key)!==null","window.confirm("])assert(portfolioJs.includes(guard),"Portfolio safe restore guard missing: "+guard);
 console.log("PASS: Science 9 learner bridge, scored mastery, and twelve-unit print evidence checks.");
