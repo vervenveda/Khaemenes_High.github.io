@@ -3,9 +3,12 @@
 (()=>{
 const script=document.currentScript;
 const base=new URL("./",script?.src||location.href);
+const supported=new Set(["algebra-1","geometry","algebra-2","english-9","english-10","english-11","english-12"]);
+const course=location.pathname.match(/\/courses\/(?:mathematics|language-arts)\/([^/]+)\//)?.[1];
+const companionSuffix=supported.has(course)?"?course="+encodeURIComponent(course):"";
 const routes=[
  ["Shared evidence convention","ACADEMIC_EVIDENCE_CONVENTION_V1.md","Eight-part Academy reporting standard"],
- ["Optional evidence companion","../science/integrated-science-9/academic-evidence-companion.html","Print or export research, vocabulary and reflections"]
+ ["Optional evidence companion","../science/integrated-science-9/academic-evidence-companion.html"+companionSuffix,"Print or export research, vocabulary and reflections"]
 ];
 function mount(){
  if(document.getElementById("khEvidenceAdoption"))return;
