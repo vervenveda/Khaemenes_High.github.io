@@ -64,4 +64,22 @@ function mount(){
 }
 if(global.document?.readyState==="loading")global.document.addEventListener("DOMContentLoaded",mount,{once:true});else mount();
 global.KhaemenesHighFormativeEvidence=Object.freeze({version:VERSION,dailyKey:DAILY_KEY,courseMeta,pageScope,authority:Object.freeze({awardsMastery:false,changesScore:false,unlocksCurriculum:false,changesPlacement:false,replacesPerformanceEvidence:false}),mount});
+
+/* Social Studies printable portfolio bridge: provides a separate, ungraded record. */
+function attachSocialStudiesPortfolio(){
+ const m=location.pathname.match(/\/social-studies\/grade-(09|10|11|12)\/(?:weeks\/)?week-(\d\d)\/student-packet\.html$/);
+ if(!m||document.querySelector("[data-academic-portfolio-link]"))return;
+ const grade=Number(m[1]),week=Number(m[2]),title=(document.querySelector("h1")?.textContent||document.title||"").trim().slice(0,180);
+ const unit=(Array.from(document.querySelectorAll(".pill, .pills span")).map(n=>n.textContent.trim()).find(t=>/^Unit\s+\d/i.test(t))||"").slice(0,180);
+ const url=new URL("../social-studies/tools/academic-evidence-printout.html",document.currentScript?.src||location.origin+"/courses/shared/high-school-formative-evidence-v1.js");
+ for(const [key,val] of Object.entries({grade,unit,lesson:"Week "+week,title}))url.searchParams.set(key,String(val));
+ const area=document.createElement("aside");area.className="academic-portfolio-bridge";area.setAttribute("data-academic-portfolio-link","");
+ area.style.cssText="margin:16px 0;padding:15px;border:1px solid #857d69;border-radius:7px;break-inside:avoid";
+ const heading=document.createElement("h2");heading.textContent="Khaemenes Academy · Printable Academic Evidence";
+ const note=document.createElement("p");note.textContent="Keep a dated portfolio record alongside this weekly lesson. Add student name, sources, completed work and parent/teacher review. This form does not submit or change your quiz grades.";
+ const link=document.createElement("a");link.href=url.href;link.textContent="Open Week "+week+" Academic Evidence Printout";link.style.cssText="display:inline-block;padding:9px 12px;border:1px solid currentColor;border-radius:7px;overflow-wrap:anywhere";
+ area.append(heading,note,link);
+ const dest=document.querySelector("main footer, footer");if(dest)dest.before(area);else document.querySelector("main")?.append(area);
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",attachSocialStudiesPortfolio,{once:true});else attachSocialStudiesPortfolio();
 })(window);
