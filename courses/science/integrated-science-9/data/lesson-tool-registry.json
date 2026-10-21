@@ -5,8 +5,8 @@
   "authority": "course-local",
   "network_required": false,
   "lesson_count": 180,
-  "lessons_with_direct_tools": 21,
-  "direct_tool_links": 21,
+  "lessons_with_direct_tools": 22,
+  "direct_tool_links": 22,
   "lessons": [
     {
       "lesson_id": "DIAG-D01",
@@ -84,7 +84,13 @@
       "lesson_id": "U01-D07",
       "lesson_path": "units/unit-01/lessons/day-07.html",
       "lesson_title": "Tables, Graphs & Scale",
-      "tools": []
+      "tools": [
+        {
+          "href": "../dataset-laboratory.html",
+          "target": "units/unit-01/dataset-laboratory.html",
+          "tool_title": "Dataset Laboratory"
+        }
+      ]
     },
     {
       "lesson_id": "U01-D08",
