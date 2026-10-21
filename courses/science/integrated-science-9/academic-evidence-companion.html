@@ -27,7 +27,8 @@ const courses={
  "english-9":{grade:"9",subject:"English 9",slug:"English9"},
  "english-10":{grade:"10",subject:"English 10",slug:"English10"},
  "english-11":{grade:"11",subject:"English 11",slug:"English11"},
- "english-12":{grade:"12",subject:"English 12",slug:"English12"}
+ "english-12":{grade:"12",subject:"English 12",slug:"English12"},
+ "linguistics":{grade:"9–12",subject:"Linguistics and World Languages",slug:"Linguistics"}
 };
 const requested=new URLSearchParams(location.search).get("course")||"science-9";
 const selected=courses[requested]||courses["science-9"];
