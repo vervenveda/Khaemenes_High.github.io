@@ -1,0 +1,17 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import vm from "node:vm";
+const base=new URL("../",import.meta.url);
+const read=p=>fs.readFileSync(new URL(p,base),"utf8");
+const html=read("academic-evidence-companion.html");
+const desk=read("academic-research-desk.html"),portfolio=read("science-evidence-portfolio.html");
+for(const field of ["student","date","grade","unit","lesson","subject","question","source1","source2","reliability","terms","connections","investigation","observations","reasoning","reflection","next"])assert(html.includes('name="'+field+'"'),"missing "+field);
+for(const word of ["Khaemenes Academy","Parent / Teacher Review","printRecord","exportRecord","clearRecord","@media print","beforeprint","textContent=el.value","window.confirm("])assert(html.includes(word),"missing "+word);
+assert(!/localStorage\.|sessionStorage\.|fetch\(/.test(html),"Companion must not persist student data, upload content, or create accounts");
+assert(html.includes("academic-research-desk.html")&&html.includes("science-evidence-portfolio.html"));
+assert(desk.includes('href="academic-evidence-companion.html"'),"research desk entry missing");
+assert(portfolio.includes('href="academic-evidence-companion.html"'),"portfolio entry missing");
+const blocks=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)];
+assert.equal(blocks.length,1);
+new vm.Script(blocks[0][1],{filename:"academic-evidence-companion.html inline"});
+console.log("PASS academic evidence companion: standalone, printable, exportable, no storage or grades, connected to research desk and portfolio");
