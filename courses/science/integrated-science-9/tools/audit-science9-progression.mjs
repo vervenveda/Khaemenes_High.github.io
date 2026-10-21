@@ -14,7 +14,7 @@ for(const lesson of registry.lessons){
   report.links++;
   const target=path.join(root,tool.target);
   if(!fs.existsSync(target)){problems.push("Missing tool "+lesson.lesson_id+" -> "+tool.target);continue}
-  if(path.resolve(path.dirname(lessonPath),tool.href)!==target||!html.includes('href="'+tool.href+'"'))problems.push("Broken lesson link "+lesson.lesson_id+" -> "+tool.href);
+  if(path.resolve(path.dirname(lessonPath),tool.href)!==target||!(html.includes('href="'+tool.href+'"')||html.includes("href='"+tool.href+"'")))problems.push("Broken lesson link "+lesson.lesson_id+" -> "+tool.href);
   if(!/\/units\/unit-\d{2}\/[^/]+-lab\.html$/.test("/"+tool.target))continue;
   report.laboratories++;
   const lab=fs.readFileSync(target,"utf8");
