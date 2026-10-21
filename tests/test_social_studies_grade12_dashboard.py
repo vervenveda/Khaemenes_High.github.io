@@ -27,7 +27,7 @@ def test_senior_original_tools(browser,site,width):
  for href in page.locator("#ss12-tools a").evaluate_all("(els)=>els.map(x=>x.getAttribute('href'))"):
   assert page.request.get(site+BASE+href).status==200,href
  ctx.close()
-@pytest.mark.parametrize("week",[1,2,3])
+@pytest.mark.parametrize("week",list(range(1,7)))
 def test_senior_initial_visual_investigations(browser,site,week):
  ctx=browser.new_context();page=ctx.new_page()
  assert page.goto(site+BASE+f"weeks/week-{week:02d}/student-packet.html",wait_until="domcontentloaded").status==200
