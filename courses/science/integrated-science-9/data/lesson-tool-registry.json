@@ -5,8 +5,8 @@
   "authority": "course-local",
   "network_required": false,
   "lesson_count": 180,
-  "lessons_with_direct_tools": 34,
-  "direct_tool_links": 35,
+  "lessons_with_direct_tools": 37,
+  "direct_tool_links": 38,
   "lessons": [
     {
       "lesson_id": "DIAG-D01",
@@ -587,7 +587,13 @@
       "lesson_id": "U05-D10",
       "lesson_path": "units/unit-05/lessons/day-10.html",
       "lesson_title": "Biodiversity, Human Impacts & Conservation",
-      "tools": []
+      "tools": [
+        {
+          "href": "../biodiversity-conservation-check.html",
+          "target": "units/unit-05/biodiversity-conservation-check.html",
+          "tool_title": "Conservation Evidence Check"
+        }
+      ]
     },
     {
       "lesson_id": "U05-D11",
@@ -599,7 +605,13 @@
       "lesson_id": "U05-D12",
       "lesson_path": "units/unit-05/lessons/day-12.html",
       "lesson_title": "Microevolution, Speciation & Macroevolution",
-      "tools": []
+      "tools": [
+        {
+          "href": "../evidence-classification-lab.html",
+          "target": "units/unit-05/evidence-classification-lab.html",
+          "tool_title": "Evolution Evidence Classification"
+        }
+      ]
     },
     {
       "lesson_id": "U05-D13",
@@ -611,7 +623,13 @@
       "lesson_id": "U05-D14",
       "lesson_path": "units/unit-05/lessons/day-14.html",
       "lesson_title": "Human Origins, Creation & Worldviews",
-      "tools": []
+      "tools": [
+        {
+          "href": "../origins-evidence-hearing.html",
+          "target": "units/unit-05/origins-evidence-hearing.html",
+          "tool_title": "Origins Evidence Hearing"
+        }
+      ]
     },
     {
       "lesson_id": "U05-D15",
