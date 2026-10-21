@@ -1,0 +1,17 @@
+name: Social Studies 144 Weekly Banks QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/social-studies/**/quiz.json'
+      - 'tests/test_social_studies_144_banks.py'
+      - '.github/workflows/social-studies-144-banks-qa.yml'
+  workflow_dispatch:
+jobs:
+  weekly-bank-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate all 144 canonical weekly banks and report distribution
+        run: python -m unittest -v tests/test_social_studies_144_banks.py
