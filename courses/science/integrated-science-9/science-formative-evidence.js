@@ -20,7 +20,8 @@ const exportText=document.createElement("button");exportText.type="button";expor
 const exportJSON=document.createElement("button");exportJSON.type="button";exportJSON.textContent="Export restorable JSON";
 const importLabel=document.createElement("label");importLabel.textContent="Restore from JSON backup (same learner and activity)";
 const importInput=document.createElement("input");importInput.type="file";importInput.accept=".json,application/json";importInput.disabled=!key;importLabel.append(importInput);
-controls.append(label,save,exportText,exportJSON,importLabel,status);section.append(controls);
+const portfolioLink=document.createElement("a");portfolioLink.href=new URL("science-evidence-portfolio.html",document.currentScript?.src||new URL("../../science-formative-evidence.js",location.href)).href;portfolioLink.textContent="Open student evidence portfolio";portfolioLink.className="science-portfolio-link";
+controls.append(label,save,exportText,exportJSON,importLabel,portfolioLink,status);section.append(controls);
 const printNotes=document.createElement("pre");printNotes.className="science-formative-print-notes";printNotes.setAttribute("aria-hidden","true");field.after(printNotes);
 const sync=()=>{printNotes.textContent=field.value||"No written evidence entered."};field.addEventListener("input",sync);sync();
 const current=()=>({schema:"khaemenes-science-formative-v1",learner:id,activity,notes:field.value,observation:out?.textContent||"",updatedAt:new Date().toISOString()});
@@ -34,7 +35,7 @@ if(!window.confirm("Replace the visible notes with this matching backup? Current
 field.value=r.notes;sync();status.textContent="Imported into editor. Select Save notes locally to keep it on this device.";
 }catch{status.textContent="Invalid JSON backup. Nothing changed."}});
 }
-const style=document.createElement("style");style.textContent='.science-formative-actions{margin-top:12px}.science-formative-actions button{margin:4px;padding:9px;border-radius:7px}.science-formative-actions label{display:block;margin-top:10px}.science-formative-print-notes{display:none;white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}@media print{.science-formative-actions{display:none!important}.science-formative-print-notes{display:block!important;min-height:65px;border:1px solid #666;padding:9px;white-space:pre-wrap;overflow-wrap:anywhere}}';document.head.append(style);
+const style=document.createElement("style");style.textContent='.science-formative-actions{margin-top:12px}.science-formative-actions button{margin:4px;padding:9px;border-radius:7px}.science-formative-actions label{display:block;margin-top:10px}.science-portfolio-link{display:inline-block;padding:9px;overflow-wrap:anywhere}.science-formative-print-notes{display:none;white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}@media print{.science-formative-actions{display:none!important}.science-formative-print-notes{display:block!important;min-height:65px;border:1px solid #666;padding:9px;white-space:pre-wrap;overflow-wrap:anywhere}}';document.head.append(style);
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",()=>setTimeout(init,0),{once:true});else setTimeout(init,0);
 })();
