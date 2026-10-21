@@ -137,3 +137,22 @@ def test_weekly_evidence_export_import_and_review_roundtrip(site,browser,grade):
  evidence.emulate_media(media="print")
  assert len(evidence.pdf(format="A4"))>1000
  ctx.close()
+
+@pytest.mark.parametrize("field,wrong",[
+ ("lesson","Week 2"),("unit","Unit 2"),("title","Another unit's lesson")
+])
+def test_import_rejects_cross_week_metadata(site,browser,field,wrong):
+ page=browser.new_page()
+ page.goto(site+BASE+"tools/academic-evidence-printout.html?grade=9&unit=Unit%201&lesson=Week%201&title=Civic%20question")
+ alerts=[];confirms=[]
+ page.on("dialog",lambda d:(confirms.append(d.message) if d.type=="confirm" else alerts.append(d.message),d.accept()))
+ page.locator('[name="student"]').fill("Test Learner")
+ original=page.locator('[name="lesson"]').input_value()
+ data=_evidence_json()
+ data[field]=wrong
+ _upload(page,data)
+ assert any("does not match" in message for message in alerts),alerts
+ assert not confirms
+ assert page.locator('[name="lesson"]').input_value()==original
+ assert page.locator('[name="citations"]').input_value()==""
+ page.close()
