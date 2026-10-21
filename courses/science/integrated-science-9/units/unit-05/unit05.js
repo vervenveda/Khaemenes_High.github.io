@@ -71,3 +71,6 @@ function save(){if(!window.KhaemenesScienceU05Scope.active()){window.alert("Sele
   script.dataset.scienceThemeLoader="true";
   document.head.append(script);
 })();
+
+/* Course-wide print evidence header (local/offline; never modifies records). */
+(()=>{if(document.querySelector('script[data-science-print-evidence]'))return;const script=document.createElement("script");script.src=new URL("../../science-print-evidence.js",document.currentScript?.src||location.href).href;script.defer=true;script.dataset.sciencePrintEvidence="true";document.head.append(script)})();
