@@ -101,3 +101,5 @@
   document.addEventListener("DOMContentLoaded",init);
 })();
 (() => {const marker="/courses/science/integrated-science-9/",path=window.location.pathname,at=path.indexOf(marker),base=at>=0?path.slice(0,at+marker.length):new URL("./",window.location.href).pathname;if(document.querySelector('script[data-science-theme-loader]'))return;const script=document.createElement("script");script.src=`${base}science-theme-loader.js`;script.defer=true;script.dataset.scienceThemeLoader="true";document.head.append(script)})();
+/* Course-wide print evidence header (local/offline; never modifies records). */
+(()=>{if(document.querySelector('script[data-science-print-evidence]'))return;const script=document.createElement("script");script.src=new URL("../../science-print-evidence.js",document.currentScript?.src||location.href).href;script.defer=true;script.dataset.sciencePrintEvidence="true";document.head.append(script)})();
