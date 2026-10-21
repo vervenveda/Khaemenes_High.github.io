@@ -163,3 +163,26 @@ def test_import_rejects_cross_week_metadata(site,browser,field,wrong):
  assert page.locator('[name="lesson"]').input_value()==original
  assert page.locator('[name="citations"]').input_value()==""
  page.close()
+
+@pytest.mark.parametrize("scenario",["selected-grade","subject","review-before-work"])
+def test_import_safety_three_additional_guards(site,browser,scenario):
+ page=browser.new_page()
+ page.goto(site+BASE+"tools/academic-evidence-printout.html",wait_until="domcontentloaded")
+ page.locator('[name="student"]').fill("Test Learner")
+ alerts=[];confirms=[]
+ page.on("dialog",lambda d:(confirms.append(d.message) if d.type=="confirm" else alerts.append(d.message),d.accept()))
+ data=_evidence_json(grade=9,student="Test Learner")
+ if scenario=="selected-grade":
+  page.locator('[name="grade"]').select_option("11")
+ elif scenario=="subject":
+  data["subject"]="Other Subject"
+ else:
+  data["date"]="2026-10-20"
+  data["reviewdate"]="2026-10-19"
+ _upload(page,data)
+ assert alerts and "Import blocked:" in alerts[-1],alerts
+ assert not confirms
+ assert page.locator('[name="student"]').input_value()=="Test Learner"
+ assert page.locator('[name="citations"]').input_value()==""
+ assert page.locator('[name="subject"]').input_value()=="Social Studies"
+ page.close()
