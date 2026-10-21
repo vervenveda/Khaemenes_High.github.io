@@ -47,4 +47,7 @@ assert(explore.includes('id="magFactor"')&&explore.includes('id="outsideSolute"'
 assert(explore.includes('host.insertBefore(printHeading'),"Printable student heading must lead evidence form");
 assert(explore.includes("not a validated biological prediction"),"Model limitation notice missing");
 assert(!explore.includes("localStorage.setItem"),"Exploration must not overwrite scored student records");
+const formative=read("science-formative-evidence.js");
+for(const token of ["kh_sci9_formative_v1:","r.learner!==id","r.activity!==activity","schema:\"khaemenes-science-formative-v1\"","Save notes locally","Export restorable JSON"]){assert(formative.includes(token),"Formative evidence contract missing "+token)}
+assert(!formative.includes("completedUnits"),"Formative recovery must not touch course mastery");
 console.log("PASS: Science 9 learner bridge, scored mastery, and twelve-unit print evidence checks.");
