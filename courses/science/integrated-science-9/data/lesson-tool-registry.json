@@ -6,7 +6,7 @@
   "network_required": false,
   "lesson_count": 180,
   "lessons_with_direct_tools": 28,
-  "direct_tool_links": 28,
+  "direct_tool_links": 29,
   "lessons": [
     {
       "lesson_id": "DIAG-D01",
@@ -335,6 +335,11 @@
           "href": "../homeostasis-simulator.html",
           "target": "units/unit-03/homeostasis-simulator.html",
           "tool_title": "Homeostasis Simulator"
+        },
+        {
+          "href": "../feedback-laboratory.html",
+          "target": "units/unit-03/feedback-laboratory.html",
+          "tool_title": "Feedback Laboratory"
         }
       ]
     },
