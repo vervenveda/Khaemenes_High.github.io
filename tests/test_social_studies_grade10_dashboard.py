@@ -112,3 +112,8 @@ def test_standardized_printable_evidence_bridge(browser,site,grade,relative):
  page.emulate_media(media="print")
  assert len(page.pdf(format="A4"))>1000
  ctx.close()
+
+@pytest.mark.parametrize("week",list(range(1,37)))
+def test_grade10_weekly_portfolio_script_present(week):
+ packet=ROOT/"courses"/"social-studies"/"grade-10"/f"week-{week:02d}"/"student-packet.html"
+ assert 'src="../../../shared/high-school-formative-evidence-v1.js"' in packet.read_text(encoding="utf-8")
