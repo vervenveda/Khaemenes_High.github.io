@@ -51,7 +51,7 @@ function page({lesson="u11-l08",learner="student-a",session=store(),existingStor
  const localBlob=class {constructor(parts,options){this.parts=parts;this.options=options;}};
  const url={createObjectURL:obj=>{download.push(obj);return "blob:test";},revokeObjectURL(){}};
  const context=vm.createContext({document,window,localStorage:existingStore,sessionStorage:session,
-  URL:{...url},Blob:localBlob,console,Math,Date:class extends Date{constructor(...args){super(...(args.length?args:[clock]));}static now(){return clock;}},
+  URL:Object.assign(class extends URL {},url),Blob:localBlob,console,Math,Date:class extends Date{constructor(...args){super(...(args.length?args:[clock]));}static now(){return clock;}},
   setTimeout:fn=>{pending.push(fn);return pending.length;},clearTimeout:()=>{},
   print:()=>{},location:{reload(){}}});
  // The only URL use is from the lazy script recovery path; normal progression is ready.
