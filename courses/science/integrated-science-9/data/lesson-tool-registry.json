@@ -5,8 +5,8 @@
   "authority": "course-local",
   "network_required": false,
   "lesson_count": 180,
-  "lessons_with_direct_tools": 41,
-  "direct_tool_links": 42,
+  "lessons_with_direct_tools": 47,
+  "direct_tool_links": 48,
   "lessons": [
     {
       "lesson_id": "DIAG-D01",
@@ -815,7 +815,13 @@
       "lesson_id": "U07-D09",
       "lesson_path": "units/unit-07/lessons/day-09.html",
       "lesson_title": "Balancing Equations & Conservation of Atoms",
-      "tools": []
+      "tools": [
+        {
+          "href": "../equation-conservation-lab.html",
+          "target": "units/unit-07/equation-conservation-lab.html",
+          "tool_title": "Equation Conservation Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U07-D10",
@@ -887,7 +893,13 @@
       "lesson_id": "U08-D05",
       "lesson_path": "units/unit-08/lessons/day-05.html",
       "lesson_title": "Motion Data Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../motion-graph-lab.html",
+          "target": "units/unit-08/motion-graph-lab.html",
+          "tool_title": "Motion Graph Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U08-D06",
@@ -983,7 +995,13 @@
       "lesson_id": "U09-D05",
       "lesson_path": "units/unit-09/lessons/day-05.html",
       "lesson_title": "Low-Voltage Circuit Data Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../circuit-data-lab.html",
+          "target": "units/unit-09/circuit-data-lab.html",
+          "tool_title": "Circuit Data Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U09-D06",
@@ -1079,7 +1097,13 @@
       "lesson_id": "U10-D05",
       "lesson_path": "units/unit-10/lessons/day-05.html",
       "lesson_title": "Earth Interior & Plate Evidence Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../earth-interior-plate-lab.html",
+          "target": "units/unit-10/earth-interior-plate-lab.html",
+          "tool_title": "Earth Interior Plate Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U10-D06",
@@ -1175,7 +1199,13 @@
       "lesson_id": "U11-D05",
       "lesson_path": "units/unit-11/lessons/day-05.html",
       "lesson_title": "Solar-System Scale & Orbit Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../solar-system-orbit-lab.html",
+          "target": "units/unit-11/solar-system-orbit-lab.html",
+          "tool_title": "Solar System Orbit Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U11-D06",
@@ -1271,7 +1301,13 @@
       "lesson_id": "U12-D05",
       "lesson_path": "units/unit-12/lessons/day-05.html",
       "lesson_title": "Criteria, Constraints & Decision-Matrix Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../decision-matrix-lab.html",
+          "target": "units/unit-12/decision-matrix-lab.html",
+          "tool_title": "Decision Matrix Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U12-D06",
