@@ -102,3 +102,38 @@ def test_evidence_import_identity_and_grade_safeguards(site,browser,grade):
  assert page.locator('[name="citations"]').input_value()=="Official archive"
  assert page.locator('[name="reviewer"]').input_value()=="Reviewer"
  page.close()
+
+@pytest.mark.parametrize("grade",[9,10,11,12])
+def test_weekly_evidence_export_import_and_review_roundtrip(site,browser,grade):
+ ctx=browser.new_context(accept_downloads=True)
+ page=ctx.new_page()
+ page.goto(site+BASE+f"grade-{grade:02d}/weeks/week-01/student-packet.html",wait_until="domcontentloaded")
+ page.locator("[data-academic-portfolio-link] a").click()
+ # Opening may remain in the same tab for standalone print forms.
+ if page.locator("#evidence").count()==0:
+  evidence=ctx.pages[-1]
+ else: evidence=page
+ evidence.wait_for_selector("#evidence")
+ evidence.locator('[name="student"]').fill("Portfolio Sample")
+ evidence.locator('[name="citations"]').fill("Example dated archive record")
+ evidence.locator('[name="findings"]').fill("Evidence-based summary")
+ evidence.locator('[name="reviewer"]').fill("Parent / Teacher")
+ evidence.locator('[name="feedback"]').fill("Reviewed and discussed")
+ with evidence.expect_download() as info:
+  evidence.locator("#export").click()
+ downloaded=info.value
+ content=json.loads(Path(downloaded.path()).read_text(encoding="utf-8"))
+ assert content["student"]=="Portfolio Sample"
+ assert content["grade"]==str(grade)
+ assert content["reviewer"]=="Parent / Teacher"
+ evidence.locator("#evidence").evaluate("(el)=>el.reset()")
+ evidence.locator('[name="student"]').fill("Portfolio Sample")
+ messages=[]
+ evidence.on("dialog",lambda d:(messages.append(d.message),d.accept()))
+ _upload(evidence,content)
+ assert any("Import saved Academic Evidence?" in m for m in messages)
+ assert evidence.locator('[name="findings"]').input_value()=="Evidence-based summary"
+ assert evidence.locator('[name="feedback"]').input_value()=="Reviewed and discussed"
+ evidence.emulate_media(media="print")
+ assert len(evidence.pdf(format="A4"))>1000
+ ctx.close()
