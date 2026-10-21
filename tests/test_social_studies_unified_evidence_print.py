@@ -241,3 +241,53 @@ def test_portfolio_export_filename_contains_lesson_and_date(site,browser):
  name=info.value.suggested_filename
  assert "grade-9-1-" in name and name.endswith(".json")
  ctx.close()
+
+@pytest.mark.parametrize("grade",[9,10,11,12])
+def test_import_requires_second_confirmation_for_unsaved_work(site,browser,grade):
+ page=browser.new_page()
+ page.goto(site+BASE+f"tools/academic-evidence-printout.html?grade={grade}")
+ page.locator('[name="student"]').fill("Test Learner")
+ page.locator('[name="findings"]').fill("Do not overwrite these unsaved findings")
+ prompts=[]
+ def decline_overwrite(dialog):
+  if dialog.type=="confirm":
+   prompts.append(dialog.message)
+   dialog.dismiss() if "Safety check" in dialog.message else dialog.accept()
+  else: dialog.accept()
+ page.on("dialog",decline_overwrite)
+ _upload(page,_evidence_json(grade=grade))
+ assert any("Safety check" in prompt for prompt in prompts)
+ assert page.locator('[name="findings"]').input_value()=="Do not overwrite these unsaved findings"
+ page.close()
+
+@pytest.mark.parametrize("grade",[9,10,11,12])
+def test_reject_incomplete_imported_review(site,browser,grade):
+ page=browser.new_page()
+ page.goto(site+BASE+f"tools/academic-evidence-printout.html?grade={grade}")
+ alerts=[]
+ page.on("dialog",lambda d:(alerts.append(d.message),d.accept()))
+ invalid=_evidence_json(grade=grade)
+ invalid["reviewer"]=""
+ _upload(page,invalid)
+ assert any("Reviewer name is required" in a for a in alerts)
+ assert page.locator('[name="student"]').input_value()==""
+ page.close()
+
+@pytest.mark.parametrize("grade",[9,10,11,12])
+def test_reject_undated_and_inconsistent_review_on_export(site,browser,grade):
+ ctx=browser.new_context(accept_downloads=True)
+ page=ctx.new_page()
+ page.goto(site+BASE+f"tools/academic-evidence-printout.html?grade={grade}")
+ page.locator('[name="student"]').fill("Test Learner")
+ page.locator('[name="lesson"]').fill("Week 1")
+ page.locator('[name="date"]').fill("2026-10-20")
+ page.locator('[name="reviewer"]').fill("Teacher")
+ alerts=[]
+ page.on("dialog",lambda d:(alerts.append(d.message),d.accept()))
+ page.locator("#export").click()
+ assert any("Enter the review date" in a for a in alerts)
+ page.locator('[name="reviewdate"]').fill("2026-10-19")
+ alerts.clear()
+ page.locator("#export").click()
+ assert any("cannot precede" in a for a in alerts)
+ ctx.close()
