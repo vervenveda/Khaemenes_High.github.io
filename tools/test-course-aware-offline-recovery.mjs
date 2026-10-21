@@ -87,7 +87,7 @@ function page({progression=null,currentScript=true}={}){
  function el(id){
   if(elements.has(id))return elements.get(id);
   const item={id,disabled:false,checked:false,value:"draft remains",textContent:"",attrs:{},children:[],listeners:{},
-   style:{cssText:""},addEventListener(k,fn){this.listeners[k]=fn;},
+   style:{cssText:""},dataset:{},addEventListener(k,fn){this.listeners[k]=fn;},
    setAttribute(k,v){this.attrs[k]=v;},
    append(...items){this.children.push(...items);},
    appendChild(child){this.children.push(child);return child;},
