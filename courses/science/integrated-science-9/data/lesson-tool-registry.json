@@ -5,8 +5,8 @@
   "authority": "course-local",
   "network_required": false,
   "lesson_count": 180,
-  "lessons_with_direct_tools": 31,
-  "direct_tool_links": 32,
+  "lessons_with_direct_tools": 34,
+  "direct_tool_links": 35,
   "lessons": [
     {
       "lesson_id": "DIAG-D01",
@@ -521,7 +521,13 @@
       "lesson_id": "U05-D02",
       "lesson_path": "units/unit-05/lessons/day-02.html",
       "lesson_title": "Food Chains, Food Webs & Trophic Roles",
-      "tools": []
+      "tools": [
+        {
+          "href": "../food-web-energy-lab.html",
+          "target": "units/unit-05/food-web-energy-lab.html",
+          "tool_title": "Food-Web Energy Laboratory"
+        }
+      ]
     },
     {
       "lesson_id": "U05-D03",
@@ -539,7 +545,13 @@
       "lesson_id": "U05-D05",
       "lesson_path": "units/unit-05/lessons/day-05.html",
       "lesson_title": "Biodiversity Survey & Evidence",
-      "tools": []
+      "tools": [
+        {
+          "href": "../biodiversity-survey.html",
+          "target": "units/unit-05/biodiversity-survey.html",
+          "tool_title": "Biodiversity Survey"
+        }
+      ]
     },
     {
       "lesson_id": "U05-D06",
@@ -551,7 +563,13 @@
       "lesson_id": "U05-D07",
       "lesson_path": "units/unit-05/lessons/day-07.html",
       "lesson_title": "Population Growth, Carrying Capacity & Limits",
-      "tools": []
+      "tools": [
+        {
+          "href": "../population-evidence-lab.html",
+          "target": "units/unit-05/population-evidence-lab.html",
+          "tool_title": "Population Evidence Laboratory"
+        }
+      ]
     },
     {
       "lesson_id": "U05-D08",
