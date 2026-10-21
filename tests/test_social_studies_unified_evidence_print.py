@@ -186,3 +186,29 @@ def test_import_safety_three_additional_guards(site,browser,scenario):
  assert page.locator('[name="citations"]').input_value()==""
  assert page.locator('[name="subject"]').input_value()=="Social Studies"
  page.close()
+
+def test_export_requires_student_and_lesson(site,browser):
+ page=browser.new_page()
+ page.goto(site+BASE+"tools/academic-evidence-printout.html?grade=11",wait_until="domcontentloaded")
+ messages=[]
+ page.on("dialog",lambda d:(messages.append(d.message),d.accept()))
+ page.locator("#export").click()
+ assert any("student name" in m for m in messages)
+ page.locator('[name="student"]').fill("Test Learner")
+ page.locator("#export").click()
+ assert any("lesson/week" in m for m in messages)
+ page.locator('[name="lesson"]').fill("Week 7")
+ with page.expect_download() as transfer:
+  page.locator("#export").click()
+ assert transfer.value.suggested_filename.endswith(".json")
+ page.close()
+
+def test_reset_requires_confirmation_and_preserves_unsaved_work(site,browser):
+ page=browser.new_page()
+ page.goto(site+BASE+"tools/academic-evidence-printout.html?grade=10",wait_until="domcontentloaded")
+ page.locator('[name="student"]').fill("Test Learner")
+ page.locator('[name="findings"]').fill("Unsaved evidence must be retained")
+ page.on("dialog",lambda d:d.dismiss())
+ page.get_by_role("button",name="Clear form").click()
+ assert page.locator('[name="findings"]').input_value()=="Unsaved evidence must be retained"
+ page.close()
