@@ -9,4 +9,10 @@ function load(src,onload){const s=document.createElement("script");s.src=src;s.a
 function loadCore(){const gate=window.KhaemenesAlgebra1DedicatedGate;if(!gate||gate.before()!==true)return;if(document.body?.dataset?.masteryLocked==="true")return;load(new URL("unit09-core.js",base).href,()=>gate.after())}
 function loadGate(){if(window.KhaemenesAlgebra1DedicatedGate)return loadCore();load(deps[1],loadCore)}
 if(window.KhaemenesAlgebra1MasteryAuthority)loadGate();else load(deps[0],loadGate);
+/* Display a safe recovery route when the lesson renderer remains blank. No mastery changes. */
+setTimeout(()=>{
+ const main=document.getElementById("main");
+ if(!main||main.children.length||main.textContent.trim())return;
+ main.innerHTML='<section class="hero"><div class="wrap"><h1>Unit 09 is taking longer than expected</h1><p class="lead">The lesson has not finished loading. Your saved progress has not been changed. Try reloading or return to Algebra I.</p><div class="nav"><a class="btn primary" href="../../index.html">Algebra I home</a><button class="btn" type="button" onclick="location.reload()">Retry loading</button></div></div></section>';
+},12000);
 })();
