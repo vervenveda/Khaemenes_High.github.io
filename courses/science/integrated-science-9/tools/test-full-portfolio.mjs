@@ -22,5 +22,7 @@ assert(portfolio.includes("Learner changed during restore"),"per-record learner 
 assert(portfolio.includes('labLink.href=record.activity'),"portfolio missing return to original investigation");
 assert(portfolio.includes('labLink.className="no-print"'),"printable record must hide navigation");
 assert(formative.includes('portfolioLink.textContent="Open student evidence portfolio"'),"investigation missing portfolio path");
+assert(formative.includes('unitLink.textContent="Return to unit lessons"'),"missing clear return route");
+assert(formative.includes("investigate → save evidence"),"missing learner journey instructions");
 console.log("PASS narrow-width styles and asynchronous restore learner-isolation guards");
 console.log("PASS Science 9 Units 02–12 portfolio coverage, headings, current export, learner guards and formative isolation");
