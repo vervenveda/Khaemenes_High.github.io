@@ -50,6 +50,12 @@ for(const [unit,check,lab] of verifiedResultRoutes){
  if(!html.includes('href="./">Return to unit lessons'))problems.push("Assessment result cannot return to unit: "+unit+"/"+check);
  if(!fs.existsSync(path.join(root,"units/unit-"+unit,lab)))problems.push("Assessment return target missing: "+unit+"/"+lab);
 }
+for(const name of ["orbit","spectra","exoplanet","cosmology"]){
+ const app=read("units/unit-11/"+name+"-question-app.js");
+ if(!app.includes("const focus=Object.entries(domains).filter"))problems.push("Missing targeted misconception feedback in Unit 11 "+name);
+ if(!app.includes("Read the explanations below, revisit the investigation"))problems.push("Missing review guidance in Unit 11 "+name);
+ if((app.match(/"explanation":/g)||[]).length!==8)problems.push("Expected eight answer explanations in Unit 11 "+name);
+}
 const formative=read("science-formative-evidence.js");
 const portfolio=read("science-evidence-portfolio.js");
 for(const check of ['portfolioLink.textContent="Open student evidence portfolio"','unitLink.textContent="Return to unit lessons"']){
