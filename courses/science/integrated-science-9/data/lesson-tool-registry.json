@@ -5,8 +5,8 @@
   "authority": "course-local",
   "network_required": false,
   "lesson_count": 180,
-  "lessons_with_direct_tools": 47,
-  "direct_tool_links": 48,
+  "lessons_with_direct_tools": 53,
+  "direct_tool_links": 54,
   "lessons": [
     {
       "lesson_id": "DIAG-D01",
@@ -845,7 +845,13 @@
       "lesson_id": "U07-D13",
       "lesson_path": "units/unit-07/lessons/day-13.html",
       "lesson_title": "Reaction Rates & Collision Theory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../energy-rate-lab.html",
+          "target": "units/unit-07/energy-rate-lab.html",
+          "tool_title": "Energy Rate Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U07-D14",
@@ -929,7 +935,13 @@
       "lesson_id": "U08-D10",
       "lesson_path": "units/unit-08/lessons/day-10.html",
       "lesson_title": "Momentum, Impulse & Collision Safety",
-      "tools": []
+      "tools": [
+        {
+          "href": "../momentum-impulse-lab.html",
+          "target": "units/unit-08/momentum-impulse-lab.html",
+          "tool_title": "Momentum Impulse Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U08-D11",
@@ -1025,7 +1037,13 @@
       "lesson_id": "U09-D09",
       "lesson_path": "units/unit-09/lessons/day-09.html",
       "lesson_title": "Wave Quantities & the Wave Equation",
-      "tools": []
+      "tools": [
+        {
+          "href": "../wave-equation-lab.html",
+          "target": "units/unit-09/wave-equation-lab.html",
+          "tool_title": "Wave Equation Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U09-D10",
@@ -1145,7 +1163,13 @@
       "lesson_id": "U10-D12",
       "lesson_path": "units/unit-10/lessons/day-12.html",
       "lesson_title": "Biogeochemical Cycle Modeling Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../biogeochemical-cycle-lab.html",
+          "target": "units/unit-10/biogeochemical-cycle-lab.html",
+          "tool_title": "Biogeochemical Cycle Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U10-D13",
@@ -1247,7 +1271,13 @@
       "lesson_id": "U11-D12",
       "lesson_path": "units/unit-11/lessons/day-12.html",
       "lesson_title": "Exoplanet Transit Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../exoplanet-transit-lab.html",
+          "target": "units/unit-11/exoplanet-transit-lab.html",
+          "tool_title": "Exoplanet Transit Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U11-D13",
@@ -1331,7 +1361,13 @@
       "lesson_id": "U12-D09",
       "lesson_path": "units/unit-12/lessons/day-09.html",
       "lesson_title": "Prototype Testing, Uncertainty & Optimization Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../prototype-testing-lab.html",
+          "target": "units/unit-12/prototype-testing-lab.html",
+          "tool_title": "Prototype Testing Lab"
+        }
+      ]
     },
     {
       "lesson_id": "U12-D10",
