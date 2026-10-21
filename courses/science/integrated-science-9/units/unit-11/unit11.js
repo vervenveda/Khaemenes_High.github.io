@@ -71,3 +71,6 @@ function done(id){if(/^day/.test(id))return state.completedPages.includes(id);if
 
 /* Course-wide print evidence header (local/offline; never modifies records). */
 (()=>{if(document.querySelector('script[data-science-print-evidence]'))return;const script=document.createElement("script");script.src=new URL("../../science-print-evidence.js",document.currentScript?.src||location.href).href;script.defer=true;script.dataset.sciencePrintEvidence="true";document.head.append(script)})();
+
+/* Optional formative investigation evidence (no score writes). */
+(()=>{if(document.querySelector('script[data-science-upper-evidence]'))return;const script=document.createElement("script");script.src=new URL("../../science-upper-unit-evidence.js",document.currentScript?.src||location.href).href;script.defer=true;script.dataset.scienceUpperEvidence="true";document.head.append(script)})();
