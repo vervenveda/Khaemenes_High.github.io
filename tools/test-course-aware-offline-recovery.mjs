@@ -106,7 +106,7 @@ function page({progression=null,currentScript=true}={}){
   head:{appendChild:n=>written.push(n)}
  };
  const window={KhaemenesAlgebra2Progression:progression};
- const location={reload:()=>callbacks.set("reload",true)};
+ const location={href:host+"courses/mathematics/algebra-2/units/unit-11/lessons/day-08.html",reload:()=>callbacks.set("reload",true)};
  const ctx=vm.createContext({document:doc,window,URL,location,console,print:()=>callbacks.set("print",true),alert:()=>{}});
  return {doc,window,ctx,main,el,written,callbacks};
 }
