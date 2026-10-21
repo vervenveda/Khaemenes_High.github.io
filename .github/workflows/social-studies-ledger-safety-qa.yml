@@ -1,0 +1,22 @@
+name: Social Studies Ledger Safety QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/social-studies/tools/evidence-ledger.html'
+      - 'tests/test_social_studies_ledger_safety.py'
+      - '.github/workflows/social-studies-ledger-safety-qa.yml'
+  workflow_dispatch:
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install pytest playwright
+          python -m playwright install --with-deps chromium
+      - run: python -m pytest -v tests/test_social_studies_ledger_safety.py
