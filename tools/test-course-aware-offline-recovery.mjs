@@ -137,7 +137,8 @@ for(const outcome of ["download-error","silent-loader","missing-script"]){
 // Successful progression authority should retain regular save/mark behavior.
 const source={
  readJSON:(key,fallback)=>({"u11-l08":{complete:true,note:"Existing record"}}),
- writeJSON:()=>true
+ writeJSON:()=>true,
+ lessonEvidence:()=>({mastery:true,best:88,threshold:80})
 };
 const ok=page({progression:source});
 vm.runInContext(lesson,ok.ctx);
