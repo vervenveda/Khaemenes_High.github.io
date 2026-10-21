@@ -62,7 +62,7 @@ def test_grade10_requires_academy_learner_for_persistence(browser,site):
  assert page.locator("#ss10-tools").count()==1
  ctx.close()
 
-@pytest.mark.parametrize("week",list(range(1,19)))
+@pytest.mark.parametrize("week",list(range(1,37)))
 def test_original_visual_investigation_present(browser,site,week):
  ctx=browser.new_context()
  page=ctx.new_page()
@@ -70,4 +70,16 @@ def test_original_visual_investigation_present(browser,site,week):
  assert page.locator(".khaemenes-visual-investigation").count()==1
  href=page.locator(".khaemenes-visual-investigation a").get_attribute("href")
  assert page.request.get(site+BASE+f"week-{week:02d}/"+href).status==200
+ ctx.close()
+
+@pytest.mark.parametrize("week",[1,12,24,36])
+def test_packet_print_and_academy_evidence(browser,site,week):
+ ctx=browser.new_context()
+ page=ctx.new_page()
+ page.goto(site+BASE+f"week-{week:02d}/student-packet.html",wait_until="domcontentloaded")
+ assert page.locator("h1").first.is_visible()
+ assert page.locator(".khaemenes-visual-investigation").count()==1
+ assert "Source(s)" in page.locator(".khaemenes-visual-investigation").inner_text() or "Source" in page.locator(".khaemenes-visual-investigation").inner_text()
+ page.emulate_media(media="print")
+ assert len(page.pdf(format="A4"))>1000
  ctx.close()
