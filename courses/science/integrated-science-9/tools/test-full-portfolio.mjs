@@ -29,7 +29,7 @@ assert(portfolio.includes('detail.textContent=record.observation'),"portfolio mu
 assert(portfolio.includes('renderRecords(id);window.print()'),"print must refresh stored records before printing");
 assert(portfolio.includes('Portfolio refreshed.";candidate=null;button.disabled=true;renderRecords(id);'),"restore must refresh portfolio without reload");
 assert(portfolio.includes('record.observation.length<=20000'),"bound supporting observations during portfolio read");
-assert(html.includes('id="refreshPortfolio"'),"portfolio lacks refresh control");
+assert(read("science-evidence-portfolio.html").includes('id="refreshPortfolio"'),"portfolio lacks refresh control");
 assert(portfolio.includes('"refreshPortfolio").addEventListener'),"refresh button not wired");
 assert(portfolio.includes('No saved investigations yet.'),"missing useful empty-state guidance");
 assert(portfolio.includes('document.getElementById("refreshPortfolio").disabled=true'),"learner switching must disable refresh");
