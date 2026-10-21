@@ -27,3 +27,4 @@ jobs:
           node courses/science/integrated-science-9/tools/validate-lesson-tool-registry.mjs
           node --check courses/science/integrated-science-9/units/unit-02/exploration-studio.js
           node --check courses/science/integrated-science-9/units/unit-03/investigation-studio.js
+          node --check courses/science/integrated-science-9/units/unit-04/exploration-studio.js
