@@ -13,4 +13,11 @@ assert(portfolio.includes("document.addEventListener(\"visibilitychange\""),"lea
 for(let n=7;n<=12;n++){const id=String(n).padStart(2,"0"),src=read("units/unit-"+id+"/unit"+id+".js");assert(src.includes("science-upper-unit-evidence.js"),"missing Unit "+id+" bridge");}
 assert(bridge.includes("khUpperEvidence")&&formative.includes("#khUpperEvidence"),"upper unit evidence not connected");
 for(const src of [portfolio,formative,bridge])assert(!src.includes("completedUnits=")&&!src.includes("verifiedScore="),"formative work must not set mastery");
+const page=read("science-evidence-portfolio.html");
+assert(page.includes("@media(max-width:280px)"),"255px compact presentation rules missing");
+assert(page.includes("input[type=file]{max-width:100%"),"mobile backup file input overflow guard missing");
+assert(portfolio.includes("Learner changed during file loading"),"async backup-read learner guard missing");
+assert(portfolio.includes("Learner changed before restoration"),"post-confirm learner guard missing");
+assert(portfolio.includes("Learner changed during restore"),"per-record learner guard missing");
+console.log("PASS narrow-width styles and asynchronous restore learner-isolation guards");
 console.log("PASS Science 9 Units 02–12 portfolio coverage, headings, current export, learner guards and formative isolation");
