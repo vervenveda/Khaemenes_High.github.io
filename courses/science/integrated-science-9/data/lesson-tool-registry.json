@@ -5,8 +5,8 @@
   "authority": "course-local",
   "network_required": false,
   "lesson_count": 180,
-  "lessons_with_direct_tools": 37,
-  "direct_tool_links": 38,
+  "lessons_with_direct_tools": 41,
+  "direct_tool_links": 42,
   "lessons": [
     {
       "lesson_id": "DIAG-D01",
@@ -671,7 +671,13 @@
       "lesson_id": "U06-D05",
       "lesson_path": "units/unit-06/lessons/day-05.html",
       "lesson_title": "Atomic Composition Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../atomic-composition-lab.html",
+          "target": "units/unit-06/atomic-composition-lab.html",
+          "tool_title": "Atomic Composition Laboratory"
+        }
+      ]
     },
     {
       "lesson_id": "U06-D06",
@@ -683,7 +689,13 @@
       "lesson_id": "U06-D07",
       "lesson_path": "units/unit-06/lessons/day-07.html",
       "lesson_title": "Relative Atomic Mass & Abundance",
-      "tools": []
+      "tools": [
+        {
+          "href": "../isotope-mass-lab.html",
+          "target": "units/unit-06/isotope-mass-lab.html",
+          "tool_title": "Isotope Mass Laboratory"
+        }
+      ]
     },
     {
       "lesson_id": "U06-D08",
@@ -695,7 +707,13 @@
       "lesson_id": "U06-D09",
       "lesson_path": "units/unit-06/lessons/day-09.html",
       "lesson_title": "Electron Configurations for Elements 1–20",
-      "tools": []
+      "tools": [
+        {
+          "href": "../electron-configuration-lab.html",
+          "target": "units/unit-06/electron-configuration-lab.html",
+          "tool_title": "Electron Configuration Laboratory"
+        }
+      ]
     },
     {
       "lesson_id": "U06-D10",
@@ -725,7 +743,13 @@
       "lesson_id": "U06-D14",
       "lesson_path": "units/unit-06/lessons/day-14.html",
       "lesson_title": "Periodic Patterns Data Laboratory",
-      "tools": []
+      "tools": [
+        {
+          "href": "../periodic-patterns-lab.html",
+          "target": "units/unit-06/periodic-patterns-lab.html",
+          "tool_title": "Periodic Patterns Laboratory"
+        }
+      ]
     },
     {
       "lesson_id": "U06-D15",
