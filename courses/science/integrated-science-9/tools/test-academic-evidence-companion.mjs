@@ -14,4 +14,8 @@ assert(portfolio.includes('href="academic-evidence-companion.html"'),"portfolio 
 const blocks=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)];
 assert.equal(blocks.length,1);
 new vm.Script(blocks[0][1],{filename:"academic-evidence-companion.html inline"});
+const standard=read("../../shared/ACADEMIC_EVIDENCE_CONVENTION_V1.md");
+for(const heading of ["Required printable identity","Sources and citations","Vocabulary","Subject connections","Parent/teacher review","Safe reuse contract"])assert(standard.includes(heading),"missing shared evidence standard section "+heading);
+assert(html.includes('href="../../shared/ACADEMIC_EVIDENCE_CONVENTION_V1.md"'),"worksheet missing shared standard link");
+assert(desk.includes('href="../../shared/ACADEMIC_EVIDENCE_CONVENTION_V1.md"'),"research desk missing shared standard link");
 console.log("PASS academic evidence companion: standalone, printable, exportable, no storage or grades, connected to research desk and portfolio");
