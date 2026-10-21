@@ -24,6 +24,7 @@ function setupRestore(id){
   if(file.size>2000000){preview.textContent="Backup exceeds the 2 MB limit.";return}
   try{
    const data=JSON.parse(await file.text());
+   if(active()!==id){candidate=null;preview.textContent="Learner changed during file loading. Reload this page.";return}
    if(data?.schema!=="khaemenes-science-formative-portfolio-v1"||data.learner!==id||!Array.isArray(data.records)||data.records.length>200)throw Error("Wrong learner, schema, or record count.");
    const seen=new Set(),valid=[];
    for(const record of data.records){
@@ -41,8 +42,9 @@ function setupRestore(id){
   const pending=candidate.missing.filter(r=>localStorage.getItem(keyPrefix+id+":"+r.activity)===null);
   if(!pending.length){preview.textContent="Nothing missing to restore.";button.disabled=true;return}
   if(!window.confirm("Restore "+pending.length+" missing investigation records for learner "+id+"? Existing records will not be overwritten."))return;
+  if(active()!==id){candidate=null;preview.textContent="Learner changed before restoration. No records were restored.";button.disabled=true;return}
   let count=0;
-  try{for(const r of pending){const key=keyPrefix+id+":"+r.activity;if(localStorage.getItem(key)!==null)continue;
+  try{for(const r of pending){if(active()!==id)throw Error("Learner changed during restore");const key=keyPrefix+id+":"+r.activity;if(localStorage.getItem(key)!==null)continue;
     localStorage.setItem(key,JSON.stringify({schema:"khaemenes-science-formative-v1",learner:id,activity:r.activity,notes:r.notes,observation:r.observation,updatedAt:r.updatedAt||new Date().toISOString()}));count++;
   }}catch{preview.textContent="Storage stopped after "+count+" records. Export your backup and review storage space.";button.disabled=true;return}
   preview.textContent="Restored "+count+" missing records. Reload to see the updated portfolio.";candidate=null;button.disabled=true;
