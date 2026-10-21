@@ -38,4 +38,13 @@ for(let i=1;i<=12;i++){
  const controller=read("units/unit-"+n+"/unit"+n+".js");
  assert(controller.includes('new URL("../../science-print-evidence.js"'),"Unit "+n+" lacks shared print module");
 }
+const explore=read("units/unit-02/exploration-studio.js");
+for(const page of ["virtual-microscopy.html","cell-model-gallery.html","membrane-transport-lab.html"]){
+ const src=read("units/unit-02/"+page);
+ assert(src.includes('src="exploration-studio.js"'),"Unit 02 activity missing exploration script: "+page);
+}
+assert(explore.includes('id="magFactor"')&&explore.includes('id="outsideSolute"'),"Unit 02 interactive controls missing");
+assert(explore.includes('host.insertBefore(printHeading'),"Printable student heading must lead evidence form");
+assert(explore.includes("not a validated biological prediction"),"Model limitation notice missing");
+assert(!explore.includes("localStorage.setItem"),"Exploration must not overwrite scored student records");
 console.log("PASS: Science 9 learner bridge, scored mastery, and twelve-unit print evidence checks.");
