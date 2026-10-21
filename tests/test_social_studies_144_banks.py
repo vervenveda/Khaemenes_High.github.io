@@ -31,7 +31,7 @@ def inspect():
     if type(ans) is not int or not 0<=ans<len(choices):
      errors.append(f"G{grade} W{week:02d} Q{n}: invalid answer index");continue
     positions[ans]+=1
-    key=re.sub(r"\\s+"," ",label.strip().casefold()) if isinstance(label,str) else ""
+    key=re.sub(r"\s+"," ",label.strip().casefold()) if isinstance(label,str) else ""
     if key in seen:duplicate_ids+=1
     seen.add(key)
   counts=sum(positions.values())
