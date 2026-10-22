@@ -61,4 +61,11 @@ const unit=fs.readFileSync(path.join(root,'assets/unit01.js'),'utf8');
 assert.match(unit,/function lessonUnlocked\(/,'Unit 01 lesson access contract missing');
 assert.match(unit,/function weekMastered\(/,'Unit 01 weekly mastery check missing');
 assert.match(unit,/function installRetry\(/,'Unit 01 retake handler contract missing');
+assert.match(unit,/function installLessonWritingDraft\(/,'Lesson writing recovery missing');
+assert.match(unit,/installLessonWritingDraft\(n\);bind\(items/,'Writing recovery must initialize on lesson pages');
+for(const field of ['Discovery notes','Lab notes','Mathematical defense']){
+ assert.ok(unit.includes(field),'Required lesson writing field missing: '+field);
+}
+assert.ok(unit.includes('khaemenes-algebra1-unit01-lesson-writing-v1-'),'Lesson draft storage key missing');
+
 console.log('PASS Unit 01: six ordered lesson entrances, local script/style targets, JS syntax and mastery gates');
