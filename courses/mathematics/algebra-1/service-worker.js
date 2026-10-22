@@ -1,6 +1,6 @@
 "use strict";
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
-const CACHE_VERSION="khaemenes-algebra1-v25-access-reader-recovery-20261022";
+const CACHE_VERSION="khaemenes-algebra1-v26-reader-controls-20261022";
 const LEGACY_SOURCE="./service-worker-precache-v1.js";
 const RELEASE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
  "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",

@@ -28,9 +28,12 @@ assert.equal(decision({data:{[scoped("khaemenes-algebra1-unit01-a3-v1")]:JSON.st
 assert.equal(decision({data:{[scoped("khaemenes-algebra1-unit01-a3-v1")]:JSON.stringify({attempts:[],best:{}})}}).allow,false,"empty state must not bypass diagnostic");
 assert.equal(decision({course:"math-geometry",readiness:{route:"unit_0_refresher"}}).allow,false,"other math courses retain original checks");
 assert.ok(reader.includes("lessonReading"),"reading preserved");
+assert.ok(reader.includes("Lesson reading controls") && reader.includes("Read aloud") && reader.includes("Print lesson"),"accessible reading controls present");
 assert.ok(reader.includes("original worked-example cards"),"original examples preserved");
 assert.ok(!reader.includes('querySelector(".example-grid")?.closest("section")?.remove()'),"worked examples remain visible");
 assert.ok(reader.includes("new MutationObserver"),"retake reattachment enabled");
 assert.ok(loader.includes("algebra1RetryLoad"),"required loading failure has retry");
 assert.ok(loader.includes("strict-mastery-gates"),"mastery gate remains required");
+assert.ok(loader.indexOf('scripts.push(new URL("strict-mastery-gates.js"') < loader.indexOf('scripts.push(new URL("algebra1-student-experience-v2.js"'),"required mastery protection precedes optional enhancement");
+assert.ok(loader.includes("if(/(?:mastery-authority-v1|unit-page-core|strict-mastery-gates)"),"required dependency errors are detected");
 console.log("PASS Algebra I entrance, returning records, reader, retakes, and loader recovery");
