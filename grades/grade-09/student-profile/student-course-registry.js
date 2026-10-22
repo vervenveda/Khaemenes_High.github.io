@@ -105,14 +105,16 @@ const COURSES=Object.freeze([
     ["spanish","Spanish"],["french","French"],["german","German"],
     ["mandarin","Mandarin Chinese"],["japanese","Japanese"],
     ["arabic","Arabic"],["russian","Russian"]
-  ].map(([id,name])=>Object.freeze({
-    id:"world-language-9-"+id,title:name+" I",subject:"World Languages",
-    short:name,className:"ela",
-    home:"https://vervenveda.github.io/Khaemenes_Linguistics.github.io/Halls/index.html",
-    defaultContinue:"https://vervenveda.github.io/Khaemenes_Linguistics.github.io/Halls/index.html",
-    prefix:"https://vervenveda.github.io/Khaemenes_Linguistics.github.io/Halls/",
-    mentorSubject:"language-arts"
-  }))
+  ].map(([id,name])=>{
+    const formal=!["arabic","russian"].includes(id);
+    const handoff=`https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=${encodeURIComponent(id)}&${formal?"course=hs1":"mode=atlas"}&source=khaemenes-high-grade09`;
+    return Object.freeze({
+      id:"world-language-9-"+id,title:formal?name+" I":name+" · Exploration",subject:"World Languages",
+      short:name,className:"ela",home:handoff,defaultContinue:handoff,
+      prefix:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/",
+      mentorSubject:"language-arts",courseMode:formal?"formal":"exploration"
+    });
+  })
 ]);
 const PIN_ALIASES=Object.freeze({"science-9":"integrated-science-9","social-studies-9":"global-studies-9"});
 const canonicalPin=id=>PIN_ALIASES[id]||id;
