@@ -1,5 +1,7 @@
 (()=>{
 "use strict";
+// Temporary isolation for frozen Unit 01 Lesson 01. Preserve core lesson and grading.
+if(location.pathname.includes("/algebra-1/units/unit-01/lessons/lesson-01-"))return;
 const VERSION="1.3";
 const MASTERY=80;
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
