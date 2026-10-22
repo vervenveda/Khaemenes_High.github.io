@@ -529,7 +529,7 @@
   function ensureEcosystemMenu(){
     try{
       if(document.getElementById("vnvEcosystemMenuButton"))return;
-      if(document.getElementById("menuOverlay")&&document.getElementById("menuButton")&&/public gateway/i.test(document.title||""))return;
+      if(document.getElementById("menuButton")&&(document.getElementById("drawerBg")||document.getElementById("menuOverlay")))return;
       loadOnce(ECOSYSTEM_MENU_URL,"vnv-ecosystem-menu");
     }catch{}
   }
@@ -632,5 +632,5 @@
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});
   else start();
 
-  window.VNVBetaProgram=Object.freeze({version:"1.8.0",mount,source:safeSource,surface:safeSurface,href:betaHref,studentProfile:mountHighStudentProfile,educationProfile:educationProfileConfig,highStudentProfileUrl,openStudentSearch,isClosedBookAssessmentSurface});
+  window.VNVBetaProgram=Object.freeze({version:"1.9.0",mount,source:safeSource,surface:safeSurface,href:betaHref,studentProfile:mountHighStudentProfile,educationProfile:educationProfileConfig,highStudentProfileUrl,openStudentSearch,isClosedBookAssessmentSurface});
 })();
