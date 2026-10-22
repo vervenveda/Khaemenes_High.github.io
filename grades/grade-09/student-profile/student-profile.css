@@ -185,3 +185,34 @@ main>aside[aria-label="Student Learning Portfolio"]{max-width:1100px!important;m
 main>aside[aria-label="Student Learning Portfolio"] h2{font-size:20px!important;line-height:1.4!important;margin:0 0 8px}
 @media(max-width:760px){.grid{gap:11px}.card{padding:18px}.lesson-grid{grid-template-columns:1fr}.hero h1{font-size:33px!important}.door-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:450px){.door-grid{grid-template-columns:1fr}.hero{padding:24px 0 14px}.profile-row{grid-template-columns:1fr;text-align:center}.chip-row{justify-content:center}}
+
+
+/* Persistent learner schedule rail: seven academic slots plus personal Quick Pins. */
+.schedule-card{overflow:hidden}
+.schedule-bar-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.schedule-bar-head strong{display:block;color:var(--forest);font:500 24px/1.35 var(--formal)}
+.schedule-bar-head span{display:block;margin-top:4px;color:var(--muted);font-size:14px}
+.schedule-status{padding:6px 9px;border:1px solid var(--line);border-radius:7px;background:var(--paper2);color:var(--forest)!important;white-space:nowrap}
+.schedule-rail{display:flex;gap:11px;margin-top:14px;padding:2px 2px 11px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:inline proximity;scrollbar-width:thin}
+.schedule-tile{flex:0 0 230px;min-height:185px;display:flex;flex-direction:column;padding:14px;border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:7px;background:var(--panel);scroll-snap-align:start}
+.schedule-tile.schedule-quick{border-top-color:var(--gold);background:linear-gradient(180deg,var(--panel),var(--paper2))}
+.schedule-tile-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:7px;align-items:center}
+.schedule-number{width:28px;height:28px;display:grid!important;place-items:center;border:1px solid var(--line);border-radius:7px;background:var(--paper2);color:var(--forest)!important;font:500 12px/1 var(--formal)}
+.schedule-kind{margin:0!important;color:var(--muted)!important;font-size:10px!important;letter-spacing:.07em;text-transform:uppercase}
+.schedule-pin{width:34px;height:34px;border:1px solid var(--line);border-radius:7px;background:var(--paper2);color:var(--gold);font-size:18px;line-height:1}
+.schedule-pin:hover{transform:translateY(-1px);border-color:var(--gold)}
+.schedule-tile h3{min-height:2.6em;margin:12px 0 0;color:var(--forest);font:500 18px/1.3 var(--formal)}
+.schedule-tile p{margin:8px 0 12px;color:var(--muted);font-size:13px;line-height:1.45}
+.schedule-open{display:inline-flex;align-items:center;justify-content:center;min-height:39px;margin-top:auto;padding:8px 10px;border:1px solid var(--forest);border-radius:7px;background:var(--forest);color:#fff;font-size:10px;letter-spacing:.055em;text-transform:uppercase}
+.schedule-open:hover{transform:translateY(-1px)}
+.schedule-helper{margin-top:12px;color:var(--muted);font-size:13px}
+@media(max-width:620px){
+  .schedule-bar-head{align-items:flex-start}
+  .schedule-status{white-space:normal}
+  .schedule-tile{flex-basis:min(82vw,245px)}
+}
+@media print{
+  .schedule-rail{display:grid;grid-template-columns:repeat(2,1fr);overflow:visible}
+  .schedule-tile{min-height:0}
+  .schedule-pin{display:none}
+}
