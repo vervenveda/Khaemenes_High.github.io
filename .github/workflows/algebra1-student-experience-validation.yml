@@ -22,3 +22,6 @@ jobs:
           node-version: "22"
       - name: Validate Algebra I student experience
         run: node tools/validate-algebra1-student-experience.mjs
+
+      - name: Verify canonical lesson launch architecture
+        run: node courses/mathematics/algebra-1/tools/validate-canonical-lesson-launch.mjs
