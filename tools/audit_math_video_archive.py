@@ -46,7 +46,7 @@ def inventory():
             "sample_lines": [{"line": i + 1, "text": lines[i][:220]} for i in matches[:12]],
             "provider_urls_sample": urls,
             "mentions_student_release_approved": "student_release_approved" in body,
-            "mentions_transcript": bool(re.search(r"transcript|\\.vtt|\\.srt", body, re.I)),
+            "mentions_transcript": bool(re.search(r"transcript|\.vtt|\.srt", body, re.I)),
             "mentions_video": bool(re.search(r"video|youtube|vimeo", body, re.I)),
         })
     return records
@@ -54,7 +54,15 @@ def inventory():
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--output")
+    p.add_argument("--self-test", action="store_true", help="Validate regex and source root")
     args = p.parse_args()
+    if args.self_test:
+        assert URL.findall("https://www.youtube.com/watch?v=abc123") == ["https://www.youtube.com/watch?v=abc123"]
+        assert PATTERN.search("student_release_approved")
+        assert re.search(r"transcript|\.vtt|\.srt", "captions.vtt", re.I)
+        assert MATH.is_dir(), "Mathematics directory missing"
+        print("PASS Mathematics video inventory smoke test")
+        raise SystemExit(0)
     items = inventory()
     report = {
         "schema": "khaemenes-math-video-asset-discovery-v1",
