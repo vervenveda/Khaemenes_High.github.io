@@ -26,3 +26,8 @@ for grade in range(9,13):
         assert "sameLearner()" in code and "learnerId" in code, f"Grade {grade} preference scope guard missing"
     print(f"PASS Grade {grade} profile route and editor wiring")
 print("PASS High School grade-profile structural checks; interactive login tests remain separate")
+
+shared=(ROOT/"grades/shared/upper-grade-profile-enhancements.js").read_text(encoding="utf-8")
+for required in ("pageshow", "focus", "khaemenes_active_learner_v1", "goal.value=\"\"", "save.disabled=true", "exportBtn.disabled=true", "localStorage.getItem(originalKey)"):
+    assert required in shared, f"Profile return-visit safety check absent: {required}"
+print("PASS Grade 10–12 return-visit restoration and cross-learner concealment wiring")
