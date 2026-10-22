@@ -6,6 +6,9 @@ on:
       - '**/*.html'
       - 'courses/shared/high-school-learning-context-v1.js'
       - 'courses/mathematics/**/assets/lesson-tools.js'
+      - 'assets/vnv-beta-link.js'
+      - 'stos/khaemenes/assets/vnv-beta-link.js'
+      - 'tools/student-toolbar-policy.mjs'
       - 'tools/audit-student-toolbar-coverage.mjs'
       - '.github/workflows/high-profile-toolbar-coverage.yml'
   workflow_dispatch:
@@ -19,7 +22,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Inventory every High School HTML page
+      - name: Verify every student-facing High School page has the learner rail
+        env:
+          REQUIRE_FULL_TOOLBAR_COVERAGE: '1'
         run: node tools/audit-student-toolbar-coverage.mjs
       - name: Upload full uncovered-page report
         uses: actions/upload-artifact@v4
