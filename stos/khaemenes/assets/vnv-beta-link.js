@@ -95,6 +95,12 @@
     }catch{}
     return ACADEMY_STUDENT_URL;
   };
+  const isClosedBookAssessmentSurface=()=>{
+    try{
+      const path=decodeURIComponent(String(location.pathname||"")).toLowerCase();
+      return /(?:^|\/)(?:midterm(?:-exam)?|final(?:-exam)?|cumulative[-_]?final|semester[-_]?exam)(?:\/|\.|-|_|$)/.test(path);
+    }catch{return false}
+  };
   const openStudentSearch=()=>{
     const open=()=>{
       try{
@@ -311,10 +317,13 @@
     if(!search){
       search=document.createElement("button");
       search.id=HIGH_SEARCH_ID;search.type="button";search.textContent="Search";
-      search.setAttribute("aria-label","Search Khaemenes and the Verve N Veda learning ecosystem");
-      search.title="Search · courses, resources and ecosystem pages";
       search.addEventListener("click",openStudentSearch);
     }
+    const closedBook=isClosedBookAssessmentSurface();
+    search.disabled=closedBook;
+    search.setAttribute("aria-disabled",String(closedBook));
+    search.setAttribute("aria-label",closedBook?"Search is unavailable during this closed-book assessment":"Search Khaemenes and the Verve N Veda learning ecosystem");
+    search.title=closedBook?"Search · unavailable during closed-book assessment":"Search · courses, resources and ecosystem pages";
     dockEducationUtility(search,30);
 
     let contribute=document.getElementById(HIGH_CONTRIBUTE_ID);
@@ -644,5 +653,5 @@
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});
   else start();
 
-  window.VNVBetaProgram=Object.freeze({version:"1.8.0",mount,source:safeSource,surface:safeSurface,href:betaHref,studentProfile:mountHighStudentProfile,educationProfile:educationProfileConfig,highStudentProfileUrl,openStudentSearch});
+  window.VNVBetaProgram=Object.freeze({version:"1.8.0",mount,source:safeSource,surface:safeSurface,href:betaHref,studentProfile:mountHighStudentProfile,educationProfile:educationProfileConfig,highStudentProfileUrl,openStudentSearch,isClosedBookAssessmentSurface});
 })();
