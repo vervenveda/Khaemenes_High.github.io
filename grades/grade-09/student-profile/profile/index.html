@@ -57,8 +57,10 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <header class="top"><div class="shell nav"><a class="brand" href="../"><span class="mark">IX</span><span><strong>My Profile</strong><small>Grade 09 Student Dashboard</small></span></a><nav class="navlinks"><a href="../">Dashboard</a><a href="../daily-lessons/">Daily Lessons</a><a href="../grades/">Grades</a><a href="../../">Exit to Grade 09</a></nav></div><div class="shell hero"><p class="eyebrow">Editable Local Profile</p><h1>My Profile</h1><p>Update interests, goals, strengths, supports, portfolio links, and notes. This stays local on this device unless exported.</p></div></header>
 <main><div class="shell crumbs"><a href="../../../../">High School</a><span>›</span><a href="../../">Grade 09</a><span>›</span><a href="../">Student Dashboard</a><span>›</span><strong>My Profile</strong></div><section class="section"><div class="shell grid">
 <section class="card col12"><h2>Profile Details</h2><div class="two"><div class="field"><label for="name">Display Name</label><input id="name" autocomplete="name"></div><div class="field"><label for="pathway">Pathway / Focus</label><input id="pathway" placeholder="Example: Grade 09 Core"></div></div><div class="two"><div class="field"><label for="interests">Interests</label><textarea id="interests" placeholder="Art, coding, literature, science, music..."></textarea></div><div class="field"><label for="goals">Current Goals</label><textarea id="goals" placeholder="What are you working toward this week?"></textarea></div></div><div class="two"><div class="field"><label for="strengths">Strengths</label><textarea id="strengths"></textarea></div><div class="field"><label for="supports">Helpful Supports</label><textarea id="supports"></textarea></div></div><div class="field"><label for="portfolio">Portfolio / Project Links</label><textarea id="portfolio" placeholder="One link or note per line."></textarea></div><div class="actions"><button class="btn" id="saveProfile">Save Profile</button><button class="btn secondary" onclick="window.print()">Print Profile</button><button class="btn secondary" id="exportProfile">Export JSON</button></div><p class="notice good" id="status" hidden></p></section>
+<section class="card col12" id="designStudio" aria-labelledby="designHeading"><h2 id="designHeading">Profile Design Studio</h2><p>Personalize the learner workspace with Academy-safe presentation choices. These settings change appearance only; required classes, grades, family access, mentor help, and mastery records stay available.</p><div class="two"><div class="field"><label for="designTheme">Workspace Theme</label><select id="designTheme"><option value="parchment">Ivory Parchment</option><option value="forest">Forest Study</option><option value="midnight">Midnight Study</option></select></div><div class="field"><label for="designAccent">Accent</label><select id="designAccent"><option value="gold">Academy Gold</option><option value="teal">Scholar Teal</option><option value="plum">Library Plum</option></select></div></div><div class="two"><div class="field"><label for="designDensity">Dashboard Density</label><select id="designDensity"><option value="comfortable">Comfortable</option><option value="compact">Compact</option></select></div><div class="field"><label for="avatarShape">Avatar Shape</label><select id="avatarShape"><option value="circle">Circle</option><option value="soft-square">Rounded Square</option></select></div></div><div class="field"><label for="avatarMark">Avatar Mark</label><select id="avatarMark"><option value="initials">My Initials</option><option value="star">Scholar Star</option><option value="book">Open Book</option><option value="compass">Compass</option><option value="atom">Atom</option><option value="palette">Creative Palette</option></select></div><div class="design-preview" aria-live="polite"><div class="design-preview-mark" id="designPreviewMark">S</div><div><strong>My Student Workspace</strong><span>Preview your theme, accent, density, and avatar before saving.</span></div></div><div class="actions"><button class="btn secondary" type="button" id="previewDesign">Preview Design</button><button class="btn" type="button" id="saveDesign">Save My Design</button><button class="btn secondary" type="button" id="resetDesign">Restore Academy Layout</button></div><p class="notice good" id="designStatus" hidden></p></section>
 <section class="card col12" aria-labelledby="sevenClassHeading"><h2 id="sevenClassHeading">My Seven Classes · Unit 01</h2><div id="grade09SevenClassSchedule"></div></section><section class="card col12"><h2>Privacy Boundary</h2><p>This page may store ordinary profile preferences locally. It should not store passwords, password hashes, private recovery secrets, private tokens, legal documents, or sensitive student records in public static code or browser exports.</p><div class="actions"><a class="btn secondary" href="../settings/">Open Parent & Password Settings</a></div></section>
 </div></section></main><footer class="footer"><strong>Khaemenes High · Grade 09</strong>Editable profile</footer>
+<script src="../student-profile-preferences.js"></script>
 <script>
 const BASE_KEY='khaemenes-high-profile-v1',ACTIVE_KEY='khaemenes_active_learner_v1',FAMILY_KEY='khaemenes_family_registry_v1',status=document.getElementById('status');
 const fields=['name','pathway','interests','goals','strengths','supports','portfolio'];
@@ -98,6 +100,31 @@ document.getElementById('exportProfile').onclick=()=>{
   a.href=u;a.download='khaemenes-grade09-student-profile.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),800)
 };
 load();
+</script>
+<script>
+(()=>{
+  const design=window.KhaemenesGrade09Design;
+  if(!design)return;
+  const controls={
+    theme:document.getElementById('designTheme'),
+    accent:document.getElementById('designAccent'),
+    density:document.getElementById('designDensity'),
+    avatarShape:document.getElementById('avatarShape'),
+    avatarMark:document.getElementById('avatarMark')
+  };
+  const status=document.getElementById('designStatus'),mark=document.getElementById('designPreviewMark');
+  function values(){return Object.fromEntries(Object.entries(controls).map(([key,node])=>[key,node.value]))}
+  function initials(){
+    const name=document.getElementById('name').value.trim()||'Student';
+    return (name.split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('')||'S').toUpperCase();
+  }
+  function sync(p=design.read()){Object.entries(controls).forEach(([key,node])=>node.value=p[key]);mark.textContent=design.avatarText(initials(),p)}
+  document.getElementById('previewDesign').onclick=()=>{const p=values();design.apply(p);mark.textContent=design.avatarText(initials(),p);status.hidden=false;status.textContent='Preview applied. Save My Design to keep it for this learner.'};
+  document.getElementById('saveDesign').onclick=()=>{const p=values();const ok=design.write(p);mark.textContent=design.avatarText(initials(),p);status.hidden=false;status.textContent=ok?'Design saved for the active learner.':'Design could not be saved on this device.'};
+  document.getElementById('resetDesign').onclick=()=>{design.clear();sync(design.read());status.hidden=false;status.textContent='Academy layout restored for this learner.'};
+  document.getElementById('name').addEventListener('input',()=>{mark.textContent=design.avatarText(initials(),values())});
+  sync();
+})();
 </script>
 <script src="../../../../courses/shared/high-school-course-pins.js"></script>
 <script src="../student-course-registry.js"></script>
