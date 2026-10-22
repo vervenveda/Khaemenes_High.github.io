@@ -14,6 +14,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - name: Check inventory Python syntax
+        run: python3 -m py_compile tools/audit_math_video_archive.py
+      - name: Smoke-test archive inventory
+        run: python3 tools/audit_math_video_archive.py --self-test
       - name: Inventory mathematical video and transcript resources
         run: python3 tools/audit_math_video_archive.py --output math-video-inventory.json
       - name: Summarize inventory
