@@ -142,6 +142,10 @@ jobs:
         run: |
           node courses/mathematics/algebra-1/tools/test-locked-retakes-units02-09.mjs
 
+      - name: Verify Units 01–03 offline lesson dependencies and routes
+        run: |
+          node courses/mathematics/algebra-1/tools/test-units01-03-offline-routes.mjs
+
       - name: Verify lesson reading and draft recovery
         run: node courses/mathematics/algebra-1/tools/test-lesson-reading-drafts.mjs
 
