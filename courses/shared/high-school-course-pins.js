@@ -77,7 +77,12 @@ function syncAcademyPins(ids,id=activeLearner()){
     const itemId=canonical(typeof item==="string"?item:(item?.id||item?.courseId||""));
     return !COURSE_META[itemId];
   });
-  const high=cleanPins(ids).filter(pin=>COURSE_META[pin]).map(pin=>({
+  const desiredIds=cleanPins(ids).filter(pin=>COURSE_META[pin]);
+  const existingHigh=prior.filter(item=>{
+    const itemId=canonical(typeof item==="string"?item:(item?.id||item?.courseId||""));
+    return !!COURSE_META[itemId];
+  });
+  const high=desiredIds.map(pin=>({
     id:pin,
     courseId:pin,
     title:COURSE_META[pin].title,
@@ -86,6 +91,11 @@ function syncAcademyPins(ids,id=activeLearner()){
     source:"khaemenes-high",
     updatedAt:new Date().toISOString()
   }));
+  const same=existingHigh.length===high.length&&existingHigh.every((item,index)=>{
+    const desired=high[index],itemId=canonical(typeof item==="string"?item:(item?.id||item?.courseId||""));
+    return itemId===desired.id&&item?.title===desired.title&&item?.subtitle===desired.subtitle&&item?.href===desired.href&&item?.source==="khaemenes-high";
+  });
+  if(same)return true;
   store.version=1;
   store.learners=store.learners&&typeof store.learners==="object"?store.learners:{};
   store.learners[id]=[...preserved,...high];
