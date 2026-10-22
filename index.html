@@ -770,9 +770,9 @@ html:root:root body #grades{padding-top:52px}
       <div class="portal-grid">
         <article class="portal-card" id="student-portal" style="--portal-accent:#315b7b">
           <span class="portal-emblem">S</span>
-          <h3>Student Portal</h3>
-          <p>Save a display name, grade, and semester on this device. Pin active courses from any grade learning hall to create a clean personal starting shelf.</p>
-          <form class="portal-form" id="profileForm">
+          <h3>Student Profile</h3>
+          <p>Your Academy Family Profile is the single learner identity for High School. Return to your grade-specific Student Profile &amp; Daily Schedule to begin each day; course pins remain a convenience layer and never create a second student account.</p>
+          <form class="portal-form" id="profileForm" hidden aria-hidden="true" data-legacy-high-profile-form="migration-only">
             <label class="sr-only" for="studentName">Student display name</label>
             <input class="field" id="studentName" maxlength="50" placeholder="Student display name" autocomplete="name">
             <label class="sr-only" for="studentGrade">Grade</label>
@@ -785,15 +785,15 @@ html:root:root body #grades{padding-top:52px}
             </select>
             <button class="portal-button" type="submit">Save Local Profile</button>
           </form>
-          <div class="profile-summary" id="profileSummary" aria-live="polite">No local student profile has been saved on this device.</div>
-          <div class="portal-links"><a href="#student-portal" data-high-profile-door="1">Open Academy Student Profile</a><a href="#grades">Go to Grade Classes</a>
-            <a id="openMyGrade" href="#grades">Choose My Grade</a>
-            <a href="./stos/khaemenes/student/">Future Student Account · Not Active</a>
+          <div class="profile-summary" id="profileSummary" aria-live="polite">Use your Academy learner profile for identity, grade placement, daily classes, and records.</div>
+          <div class="portal-links"><a href="#student-portal" data-high-profile-door="1">Open My Student Profile</a><a href="#grades">Go to Grade Classes</a>
+            <a id="openMyGrade" href="#grades" data-high-profile-door="1">Open My Daily Profile</a>
+            <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/">Create or Select Academy Learner</a>
             <a href="./courses/">Course Directory</a>
             <a href="./mentor/?stage=high&amp;subject=general&amp;source=front-hall">Mentor · Get Instruction</a>
             <a href="#library">Study Resources</a>
           </div>
-          <p class="portal-note">Local profile data remains in this browser unless the learner or family deliberately exports it.</p>
+          <p class="portal-note">Learner identity and placement come from the Academy Family Registry. An older High School local profile, if present on this browser, is retained only as legacy migration data.</p>
         </article>
 
         <article class="portal-card" id="parent-portal" style="--portal-accent:#96594e">
@@ -812,8 +812,8 @@ html:root:root body #grades{padding-top:52px}
             <a href="#transition">Higher Learning</a>
           </div>
           <div class="portal-links">
-            <button id="exportProfileButton" type="button">Export Local Profile</button>
-            <button id="clearProfileButton" type="button">Clear Profile &amp; Pins</button>
+            <button id="exportProfileButton" type="button">Export Legacy Local Profile</button>
+            <button id="clearProfileButton" type="button">Clear Legacy Profile &amp; Pins</button>
           </div>
           <p class="portal-note">The public landing page does not need to transmit student records. Export remains an explicit family action.</p>
         </article>
@@ -1219,7 +1219,7 @@ html:root:root body #grades{padding-top:52px}
     const name=$("studentName").value.trim()||"Student";
     writeJSON(PROFILE_KEY,{...current,version:current.version||1,name,displayName:name,grade:$("studentGrade").value,semester:$("studentSemester").value,courses:Array.isArray(current.courses)?current.courses:[],updatedAt:new Date().toISOString()});
     renderProfile();
-    toast("Local student profile saved.");
+    toast("Legacy local profile saved for migration only.");
   });
 
   $("clearProfileButton").addEventListener("click",()=>{
@@ -1227,7 +1227,7 @@ html:root:root body #grades{padding-top:52px}
     PIN_STORE.clearPins();
     $("profileForm").reset();
     renderAllCourses();renderProfile();
-    toast("Local profile and course pins cleared.");
+    toast("Legacy local profile and course pins cleared.");
   });
 
   $("exportProfileButton").addEventListener("click",()=>{
@@ -1235,7 +1235,7 @@ html:root:root body #grades{padding-top:52px}
     const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
     const url=URL.createObjectURL(blob),a=document.createElement("a");
     a.href=url;a.download="khaemenes-high-local-profile.json";document.body.appendChild(a);a.click();a.remove();
-    setTimeout(()=>URL.revokeObjectURL(url),1000);toast("Local profile export created.");
+    setTimeout(()=>URL.revokeObjectURL(url),1000);toast("Legacy local profile export created.");
   });
 
   function scrollToLibraryCategory(category){
