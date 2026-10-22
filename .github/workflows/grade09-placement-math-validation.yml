@@ -10,6 +10,7 @@ on:
       - courses/mathematics/algebra-1/units/**/unit-map.json
       - scripts/validate_grade09_placement_math_dashboard.mjs
       - scripts/validate_grade09_seven_class_journey.mjs
+      - scripts/test_grade09_two_learner_pins.mjs
       - scripts/validate_grade09_translator_gateway.mjs
       - scripts/validate_upper_grade_seven_class_journey.mjs
       - grades/shared/upper-grade-seven-class.js
@@ -58,6 +59,9 @@ jobs:
 
       - name: Validate upper-grade seven-class student profiles
         run: node scripts/validate_upper_grade_seven_class_journey.mjs
+
+      - name: Verify two learner class pin and language isolation
+        run: node scripts/test_grade09_two_learner_pins.mjs
 
       - name: Check shared JavaScript syntax
         run: |
