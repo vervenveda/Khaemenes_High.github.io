@@ -1,3 +1,4 @@
+// One-time deterministic repair; coverage remains enforced by the read-only audit afterward.
 import fs from "node:fs";
 import path from "node:path";
 import {isStudentFacing,toolbarStatus,injectToolbar} from "./student-toolbar-policy.mjs";
