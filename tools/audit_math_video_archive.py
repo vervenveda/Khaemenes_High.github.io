@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MATH = ROOT / "courses" / "mathematics"
 EXT = {".json", ".js", ".html", ".md", ".txt", ".vtt", ".srt", ".csv"}
 PATTERN = re.compile(r"video|transcript|captions|student_release_approved|youtube|vimeo|khan.?academy|chemistry.?tutor|embed", re.I)
-URL = re.compile(r"https?://[^\\s\\\"'<>]+", re.I)
+URL = re.compile(r"""https?://[^\s"\'<>]+""", re.I)
 
 def safe_relative(path):
     return path.relative_to(ROOT).as_posix()
@@ -39,7 +39,7 @@ def inventory():
         matches = [i for i, line in enumerate(lines) if PATTERN.search(line)]
         if not matches and "video" not in file.name.lower():
             continue
-        urls = sorted({u.rstrip(").,;") for u in URL.findall(body) if re.search(r"youtube|youtu\\.be|vimeo|khanacademy", u, re.I)})[:30]
+        urls = sorted({u.rstrip(").,;") for u in URL.findall(body) if re.search(r"youtube|youtu\.be|vimeo|khanacademy", u, re.I)})[:30]
         records.append({
             "path": safe_relative(file),
             "matched_lines": len(matches),
