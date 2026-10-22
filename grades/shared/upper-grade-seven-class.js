@@ -1,5 +1,5 @@
 (()=>{"use strict";
-const grade=Number(document.body.dataset.grade),root="../../../../",pin=window.KhaemenesHighCoursePins;
+const grade=Number(document.body.dataset.grade),root="../../../",pin=window.KhaemenesHighCoursePins;
 if(![10,11,12].includes(grade)||!pin)return;
 const el=(t,s)=>{const n=document.createElement(t);if(s!==undefined)n.textContent=s;return n};
 const courses=[
