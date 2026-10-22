@@ -36,6 +36,27 @@ for(let n=1;n<=6;n++){
   if(fs.existsSync(absolute))new vm.Script(fs.readFileSync(absolute,'utf8'),{filename:absolute});
  }
 }
+// Verify lesson metadata and the complete six-lesson assessment question bank.
+const context={window:{}};
+vm.runInNewContext(fs.readFileSync(path.join(root,'assets/unit01-data.js'),'utf8'),context);
+const data=context.window.KHAE_UNIT01;
+assert.equal(data?.lessons?.length,6,'Six curriculum lessons are required');
+const seenIds=new Set();
+for(let n=1;n<=6;n++){
+ const lesson=data.lessons[n-1];
+ assert.equal(lesson.number,n,'Incorrect lesson sequence');
+ assert.ok(pages.includes(lesson.file),'Metadata points to a missing lesson: '+lesson.file);
+ assert.ok(lesson.title&&lesson.objectives?.length&&lesson.reading_sections?.length,'Incomplete teaching record: '+n);
+ const questions=data.questions.filter(q=>q.lesson===n);
+ assert.ok(questions.length>=8,'At least eight lesson-check questions are required for lesson '+n);
+ for(const q of questions){
+  assert.ok(q.id&&!seenIds.has(q.id),'Duplicate or missing question ID: '+q.id);
+  seenIds.add(q.id);
+  assert.ok(Array.isArray(q.options)&&q.options.length>=2,'Insufficient question options: '+q.id);
+  assert.ok(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<q.options.length,'Invalid answer index: '+q.id);
+  assert.ok(q.explanation,'Feedback explanation missing: '+q.id);
+ }
+}
 const unit=fs.readFileSync(path.join(root,'assets/unit01.js'),'utf8');
 assert.match(unit,/function lessonUnlocked\(/,'Unit 01 lesson access contract missing');
 assert.match(unit,/function weekMastered\(/,'Unit 01 weekly mastery check missing');
