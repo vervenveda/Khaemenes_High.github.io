@@ -298,6 +298,8 @@
         /preserv(ed)?[-_ ]?work|legacy[-_ ]?work|work[-_ ]?recovery/.test(id)||
         text==="preserved work"||text.startsWith("preserved work ·");
     });
+    const fallbackWork=document.getElementById(HIGH_WORK_ID);
+    if(preserved&&fallbackWork&&fallbackWork!==preserved)fallbackWork.remove();
     let work=preserved||document.getElementById(HIGH_WORK_ID);
     if(!work){
       work=document.createElement("button");
@@ -345,16 +347,7 @@
     const quick=document.getElementById(HIGH_PROFILE_ID);
     const beta=document.getElementById(ID);
 
-    if(bridge){
-      const toolbar=ensureEducationToolbar();
-      if(toolbar&&bridge.parentElement!==toolbar){
-        bridge.style.order="20";
-        toolbar.append(bridge);
-      }
-      if(quick)quick.remove();
-    }else if(quick){
-      dockEducationUtility(quick,20);
-    }
+    if(quick)dockEducationUtility(quick,20);
     if(beta)dockEducationUtility(beta,isHighStudentSurface()?40:30);
     ensureHighStudentUtilityButtons();
 
@@ -366,7 +359,7 @@
       panel.style.bottom=`calc(max(12px, env(safe-area-inset-bottom)) + ${h+10}px)`;
       panel.style.borderRadius="7px";
     }
-    return !!bridge;
+    return false;
   }
 
   function mountHighStudentProfile(){
