@@ -43,3 +43,6 @@ html:root:root body main .card .eyebrow{font-size:13px!important;line-height:1.5
 })();
 
 ;(()=>{const s=document.createElement("script");s.src=new URL("learning-tools-menu-v1.js",document.currentScript?.src||location.href).href;s.defer=true;document.head.append(s)})();
+
+/* Visible recovery instead of an empty screen if the lesson bootstrap fails. */
+;(()=>{if(!/\/algebra-1\/units\/unit-\d+\//.test(location.pathname))return;const check=()=>{const main=document.getElementById("main");if(!main||main.children.length||main.textContent.trim())return;const section=document.createElement("section");section.className="hero";section.innerHTML='<div class="wrap"><h1>Lesson could not open</h1><p class="lead">The lesson engine did not produce content. Refresh once, then use the course directory or report this page for repair. No assessment work has been graded by this message.</p><div class="nav"><a class="btn primary" href="../../../index.html#units">Return to Algebra I units</a><button class="btn" type="button" onclick="location.reload()">Retry this lesson</button></div></div>';main.appendChild(section)};if(document.readyState==="complete")setTimeout(check,2000);else window.addEventListener("load",()=>setTimeout(check,2000),{once:true})})();
