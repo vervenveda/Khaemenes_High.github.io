@@ -163,3 +163,11 @@ if(global.document?.readyState==="loading")global.document.addEventListener("DOM
 global.addEventListener("khaemenes-family-changed",()=>publish());
 global.KhaemenesHighLearningContext=Object.freeze({version:VERSION,ledgerKey:LEDGER_KEY,contextKey:CONTEXT_KEY,masteryThreshold:PASS,learner,recordAssessment,recordFormative,summary,publish});
 })(window);
+
+/* Shared Academy learner utility toolbar — presentation only. */
+;(()=>{"use strict";
+ if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;
+ const mount=()=>{if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;
+ const s=document.createElement("script");s.src="https://vervenveda.com/assets/vnv-beta-link.js";s.defer=true;s.dataset.academyLearnerToolbar="1";document.head.appendChild(s)};
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mount,{once:true});else mount();
+})();
