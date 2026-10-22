@@ -13,3 +13,5 @@ function loadCore(){const gate=window.KhaemenesAlgebra1DedicatedGate;if(!gate||g
 function loadGate(){if(window.KhaemenesAlgebra1DedicatedGate)return loadCore();load(deps[1],loadCore)}
 if(window.KhaemenesAlgebra1MasteryAuthority)loadGate();else load(deps[0],loadGate);
 })();
+
+;(()=>{const s=document.createElement("script");s.src=new URL("../../../assets/learning-tools-menu-v1.js",document.currentScript?.src||location.href).href;s.defer=true;document.head.append(s)})();
