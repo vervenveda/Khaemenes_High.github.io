@@ -5,7 +5,7 @@ const registry=window.KhaemenesGrade09Courses;
 const pins=window.KhaemenesHighCoursePins;
 const host=document.getElementById("grade09SevenClassSchedule");
 if(!registry||!pins||!host)return;
-const languages=[["spanish","Spanish"],["french","French"],["german","German"],["mandarin","Mandarin Chinese"],["japanese","Japanese"],["arabic","Arabic"],["russian","Russian"]];
+const languages=[["spanish","Spanish"],["french","French"],["german","German"],["mandarin","Mandarin Chinese"],["japanese","Japanese"],["arabic","Arabic (exploration)"],["russian","Russian (exploration)"]];
 const slots=[["Mathematics",null],["Literature","english-9"],["Social Studies","global-studies-9"],["Science","integrated-science-9"],["Physical Education","physical-education-9"],["Foreign Language",null],["Psychology","psychology-101"]];
 const firstLessons={
  "pre-algebra":"courses/mathematics/pre-algebra/diagnostic/",
