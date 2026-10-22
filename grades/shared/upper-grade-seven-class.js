@@ -58,12 +58,12 @@ function render(){
  migrateLegacyPins();
  holder.replaceChildren();
  const learner=profile?.activeLearner?.(),name=learner?.nickname||learner?.displayName||learner?.name||"Student";
- const identity=el("section");identity.style.cssText="border:1px solid #b6a787;border-radius:7px;padding:18px;margin-bottom:16px;background:#15243a";
+ const identity=el("section");identity.id="profile-overview";identity.style.cssText="border:1px solid #b6a787;border-radius:7px;padding:18px;margin-bottom:16px;background:#15243a";
  identity.append(el("h2",name),el("p","Grade "+grade+" · learner-owned schedule and continuation workspace"));
  const profileLink=el("a","Open Academy Learning Profile");profileLink.href="https://vervenveda.com/Khaemenes_Academy.github.io/student/";identity.append(profileLink);holder.append(identity);
  const steps=courses.map(([subject,route,id],i)=>({subject,route,id,i,step:stepFor(id,subject,route,i)}));
  const priority=steps.find(x=>x.step.snapshot&&x.step.status!=="complete")||steps[0];
- const today=el("section");today.style.cssText="border:1px solid #b6a787;border-radius:7px;padding:18px;margin-bottom:16px;background:#1b2d46";
+ const today=el("section");today.id="learning-today";today.style.cssText="border:1px solid #b6a787;border-radius:7px;padding:18px;margin-bottom:16px;background:#1b2d46";
  today.append(el("h2","Learning Today"),el("p",(priority.i===5?selected()[0].toUpperCase()+selected().slice(1):courses[priority.i][0])+" · "+priority.step.detail));
  const todayLink=el("a",priority.step.label);todayLink.href=priority.step.href;today.append(todayLink);holder.append(today);
  const lang=el("select");lang.setAttribute("aria-label","Select foreign language");
@@ -74,7 +74,7 @@ function render(){
   render();
  });
  const label=el("label","Language choice ");label.append(lang);holder.append(label);
- const list=el("div");list.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px";
+ const list=el("div");list.id="seven-classes";list.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px";
  courses.forEach(([subject,route,id],i)=>{
   const card=el("article");card.style.cssText="border:1px solid #b6a787;border-radius:7px;padding:18px";
   const h=el("h2",(i+1)+". "+subject);card.append(h);
@@ -94,7 +94,7 @@ function render(){
  all.addEventListener("click",()=>{const merged=[...new Set([...pin.readPins(),...ids()])];feedback.textContent=pin.writePins(merged)?"Seven classes pinned.":"Unable to save all classes.";render()});
  holder.append(all);
 
- const quickSection=el("section");quickSection.className="ug-card";quickSection.style.marginTop="18px";
+ const quickSection=el("section");quickSection.id="quick-pins";quickSection.className="ug-card";quickSection.style.marginTop="18px";
  quickSection.append(el("p","Personal Shortcuts"),el("h2","Quick Pins"),el("p","Games, tools, resources, and elective shortcuts stay separate from your seven academic classes and never change enrollment, grades, mastery, or placement."));
  const quickGrid=el("div");quickGrid.className="ug-quick-grid";
  const quickItems=quick?.list?.()||[];
