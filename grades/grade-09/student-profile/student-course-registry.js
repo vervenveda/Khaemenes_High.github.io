@@ -90,6 +90,12 @@ const COURSES=Object.freeze([
     mentorSubject:"social-studies"
   }),
   Object.freeze({
+    id:"physical-education-9",title:"Physical Education 9",subject:"Physical Education",short:"PE",
+    className:"science",home:repoPath("courses/physical-education/"),
+    defaultContinue:repoPath("courses/physical-education/"),
+    prefix:repoPath("courses/physical-education/"),mentorSubject:"physical-education"
+  }),
+  Object.freeze({
     id:"psychology-101",title:"Psychology 101",subject:"Electives",short:"Psychology",
     className:"ela",home:repoPath("electives/grades/grade-09/psych-101/"),
     defaultContinue:repoPath("electives/grades/grade-09/psych-101/"),
@@ -371,7 +377,7 @@ window.KhaemenesGrade09Courses=Object.freeze({
   get courses(){
     const pins=new Set(pinnedIds());
     const selected=pinStore?.readLanguageChoices()?.["9"]||"spanish";
-    return COURSES.filter(c=>["pre-algebra","algebra-1","english-9","integrated-science-9","global-studies-9","psychology-101","world-language-9-"+selected].includes(c.id)||pins.has(c.id));
+    return COURSES.filter(c=>["pre-algebra","algebra-1","english-9","integrated-science-9","global-studies-9","physical-education-9","psychology-101","world-language-9-"+selected].includes(c.id)||pins.has(c.id));
   },
   getCourse,pinnedIds,pinnedCourses,isPinned,isMathCourse,setPinned,togglePinned,setMathPathway,mathPathway,continueFor,resolveContinueFor,resumePriorityCourse,recordLaunch,mentorFor,shouldRefreshForStorageKey
 });
