@@ -64,6 +64,20 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 </style>
 <link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css">
 <link rel="stylesheet" href="https://vervenveda.com/assets/vnv-ecosystem-menu.css">
+<style id="grade09-dashboard-priority">
+/* Compact local dashboard navigation, one Academy emblem only. */
+html:root:root body .top .hero{padding-top:12px!important;padding-bottom:18px!important}
+html:root:root body .top .hero .eyebrow{font-size:15px!important;letter-spacing:.08em!important;margin:0 0 6px!important}
+html:root:root body .top .hero h1{font-size:clamp(27px,3vw,33px)!important;margin:4px 0!important}
+html:root:root body .top .hero p{max-width:750px;margin:7px auto!important}
+html:root:root body .top .nav{gap:12px;flex-wrap:wrap;align-items:center}
+html:root:root body .top .nav .brand{min-width:0}
+html:root:root body .top .nav .brand .mark{display:none!important}
+.grade09-priority{display:flex;gap:9px;flex-wrap:wrap;align-items:center;padding:14px 0 4px}
+.grade09-priority-schedule{margin-top:12px;margin-bottom:16px}
+.grade09-priority-schedule .schedule-card{margin:0}
+@media(max-width:680px){.grade09-priority{flex-direction:column;align-items:stretch}.grade09-priority .btn{text-align:center}}
+</style>
 </head>
 <body>
 <header data-khae-header class="khae-global-campus-header">
@@ -76,8 +90,9 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 </header>
 <header class="top">
   <div class="shell nav">
-    <a class="brand" href="../"><span class="mark">IX</span><span><strong>Khaemenes Academy</strong><small>Grade 09 Student Dashboard</small></span></a>
+    <a class="brand" href="../"><span><strong>Khaemenes Academy</strong><small>Grade 09 Student Dashboard</small></span></a>
     <nav class="navlinks" aria-label="Student dashboard navigation">
+      <a href="profile/">Edit My Profile</a>
       <a href="daily-lessons/">Daily Lessons</a>
       <a href="grades/">Grades</a>
       <a href="../../../mentor/?stage=high&amp;subject=general&amp;course=grade-09&amp;source=grades%2Fgrade-09%2Fstudent-profile%2F">Ask Mentor</a>
@@ -89,12 +104,19 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
     <h1>Student Dashboard</h1>
     <p>This is home. Start the day here, continue pinned classes, open grades, ask for help, or manage your student profile without searching through the whole school site.</p>
     <div class="actions center">
+      <a class="btn secondary" href="profile/">Customize My Profile</a>
       <a class="btn gold" href="daily-lessons/">Start Today’s Lessons</a>
       <a class="btn secondary" href="#classes">My Classes</a>
     </div>
   </div>
 </header>
-<main><aside aria-label="Student Learning Portfolio" style="max-width:1050px;margin:14px auto;padding:16px;border:1px solid #b9a37f;background:#fff5de;color:#221f1b;border-radius:7px"><h2 style="font-size:24px;font-weight:400">Student Learning Portfolio</h2><p>Keep reflections, writing evidence, project references and independent practice summaries in a learner-specific workspace, separate from daily lesson instructions. Families and teachers can review an exported copy together. Back up reports to a dependable device.</p><p><a href="../../../portfolio/index.html">Open My Learning Evidence →</a></p></aside>
+<main><div class="shell grade09-priority"><a class="btn gold" href="profile/">Edit My Profile</a><a class="btn secondary" href="#classes">My Pinned Classes</a><a class="btn secondary" href="daily-lessons/">Continue Lessons</a></div>
+<div class="shell grade09-priority-schedule">      <section class="card col12 schedule-card" aria-labelledby="scheduleBarTitle">
+        <h2 id="scheduleBarTitle">My Schedule Bar</h2>
+        <p>Your seven academic classes stay in order. Pinned games, tools, and elective shortcuts appear beside them without becoming grades or enrollment records.</p>
+        <div data-grade09-schedule-bar></div>
+        <p class="schedule-helper"><a href="games/">Pin games &amp; study tools →</a> · <a href="profile/">Choose language, classes &amp; profile design →</a> · <a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html">Academy Profile Studio →</a></p>
+      </section></div><aside aria-label="Student Learning Portfolio" style="max-width:1050px;margin:14px auto;padding:16px;border:1px solid #b9a37f;background:#fff5de;color:#221f1b;border-radius:7px"><h2 style="font-size:24px;font-weight:400">Student Learning Portfolio</h2><p>Keep reflections, writing evidence, project references and independent practice summaries in a learner-specific workspace, separate from daily lesson instructions. Families and teachers can review an exported copy together. Back up reports to a dependable device.</p><p><a href="../../../portfolio/index.html">Open My Learning Evidence →</a></p></aside>
   <div class="shell crumbs"><a href="../../../">High School</a><span>›</span><a href="../">Grade 09</a><span>›</span><strong>Student Dashboard</strong></div>
   <section class="section">
     <div class="shell grid">
@@ -122,12 +144,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   <p style="font-size:14px">Continue links use existing course progress and pinned choices. This panel does not set grades, mark lessons complete, or require an internet connection to display saved links.</p>
 </section>
 
-      <section class="card col12 schedule-card" aria-labelledby="scheduleBarTitle">
-        <h2 id="scheduleBarTitle">My Schedule Bar</h2>
-        <p>Your seven academic classes stay in order. Pinned games, tools, and elective shortcuts appear beside them without becoming grades or enrollment records.</p>
-        <div data-grade09-schedule-bar></div>
-        <p class="schedule-helper"><a href="games/">Pin games &amp; study tools →</a> · <a href="profile/">Choose language, classes &amp; profile design →</a> · <a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html">Academy Profile Studio →</a></p>
-      </section>
+
 
       <section class="card col12" id="classes" aria-labelledby="pinnedClassesTitle">
         <h2 id="pinnedClassesTitle">My Pinned Classes</h2>
