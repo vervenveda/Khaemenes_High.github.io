@@ -144,8 +144,12 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   "use strict";
   const registry=window.KhaemenesGrade09Courses;
   if(!registry)return;
-  const noteKey='khaemenes-grade09-daily-note-v1';
-  const checkKey='khaemenes-grade09-daily-checks-v1';
+  const academyProfile=window.KhaemenesCourseEntryContract?.readAcademyProfile?.()||null;
+  const scoped=base=>academyProfile&&window.KhaemenesCourseEntryContract?.scopedKey
+    ? window.KhaemenesCourseEntryContract.scopedKey(base,academyProfile)
+    : base;
+  const noteKey=scoped('khaemenes-grade09-daily-note-v1');
+  const checkKey=scoped('khaemenes-grade09-daily-checks-v1');
   const n=document.getElementById('dailyNote');
   const s=document.getElementById('status');
   const today=new Date().toISOString().slice(0,10);
@@ -253,7 +257,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
     c.items['saved-note']=true;
     writeChecks(c);
     document.querySelector('[data-check="saved-note"]').checked=true;
-    s.hidden=false;s.textContent='Daily note saved locally.';
+    s.hidden=false;s.textContent='Daily note saved for the active learner on this device.';
   };
   document.getElementById('clearNote').onclick=()=>{
     n.value='';
