@@ -1,0 +1,13 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+const base=path.resolve(import.meta.dirname,"..");
+for(let n=2;n<=9;n++){
+ const u=String(n).padStart(2,"0"),filename=path.join(base,"units","unit-"+u,"assets","unit"+u+"-core.js");
+ const src=fs.readFileSync(filename,"utf8");
+ for(const match of ["let graded=false","if(graded)return","score.disabled=true","input.disabled=true","Begin a new shuffled attempt","record.attempts.push","record.best[key]","insertBefore(label,feedback)","retry.hidden=true"]){
+  assert.ok(src.includes(match),"Unit "+u+" is missing "+match);
+ }
+ assert.ok(!src.includes("Try again · clear current answers"),"Unit "+u+" retains the ungraded retry control");
+}
+console.log("PASS Units 02–09 preserve graded answers and require a reshuffled retake");

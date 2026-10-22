@@ -1,20 +1,80 @@
 (()=>{"use strict";const D=window.KHAE_UNIT09,$=s=>document.querySelector(s),KEY="khaemenes-algebra1-unit09-a3-v1",esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));function st(){try{return JSON.parse(localStorage.getItem(KEY)||'{"attempts":[],"best":{}}')}catch{return{attempts:[],best:{}}}}function sv(x){try{localStorage.setItem(KEY,JSON.stringify(x))}catch{}}function sh(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}function arch(e={}){return"https://artist1970.github.io/Archaemenes.github.io/high/?"+new URLSearchParams({course:"Algebra I",unit:"Unit 09 — Polynomial Foundry",...e})}function qh(a){return a.map((q,i)=>`<div class="question"><strong>${i+1}. ${esc(q.prompt)}</strong>${q.options.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${esc(o)}</label>`).join("")}<div id="f${i}" class="feedback" hidden></div></div>`).join("")}function installRetry(){
  const score=document.getElementById("score");
- if(!score||document.getElementById("practiceRetry"))return;
+ if(!score)return null;
+ const existing=document.getElementById("practiceRetry");
+ if(existing)return existing;
  const retry=document.createElement("button");
  retry.type="button";retry.id="practiceRetry";retry.className="btn";
- retry.textContent="Try again · clear current answers";retry.setAttribute("aria-label","Begin a fresh attempt; keep previously saved scores");
+ retry.textContent="Begin a new shuffled attempt";
+ retry.setAttribute("aria-label","Start a new attempt with reshuffled choices while preserving saved scores");
  retry.style.marginLeft="10px";
- retry.addEventListener("click",()=>{
-  document.querySelectorAll('#main .question input[type="radio"]').forEach(input=>{input.checked=false});
-  document.querySelectorAll("#main .question .feedback").forEach(el=>{el.hidden=true;el.textContent="";el.classList.remove("good","bad")});
-  const message=document.getElementById("result");
-  if(message)message.textContent="New attempt ready. Current answers and feedback cleared; previously saved scores and mastery evidence remain unchanged.";
-  document.querySelector('#main .question input[type="radio"]')?.focus();
- });
+ retry.hidden=true;retry.disabled=true;
  score.after(retry);
+ return retry;
 }
-function bind(a,k){installRetry();$("#score")?.addEventListener("click",()=>{let c=0,d=true;a.forEach((q,i)=>{let z=document.querySelector(`input[name=q${i}]:checked`),f=$(`#f${i}`);f.hidden=false;if(!z){d=false;f.className="feedback bad";f.textContent="Choose an answer.";return}let ok=+z.value===q.answer;c+=ok;f.className="feedback "+(ok?"good":"bad");f.textContent=(ok?"Correct. ":"Review. ")+q.explanation});if(!d){$("#result").textContent="Answer every item before scoring.";return}let p=Math.round(100*c/a.length),r=st();r.attempts.push({key:k,score:p,correct:c,total:a.length,at:new Date().toISOString(),items:a.map(q=>q.id)});r.best[k]=Math.max(r.best[k]||0,p);sv(r);$("#result").innerHTML=`<strong>${p}%</strong> · ${c}/${a.length} · Best ${r.best[k]}%${k==="mastery"?(p>=80?" · Mastery demonstrated":" · Target 80%"):""}`})}
+function bind(items,key){
+ const score=document.getElementById("score");
+ if(!score)return;
+ const retry=installRetry();
+ let graded=false;
+ const readRecords=(typeof state==="function"?state:st);
+ const saveRecords=(typeof save==="function"?save:sv);
+ const inputs=()=>[...document.querySelectorAll('#main .question input[type="radio"]')];
+ const choiceShuffle=(source)=>{
+  const arr=[...source];
+  for(let i=arr.length-1;i>0;i--){
+   const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  // Make the display order different when at least two distinct options exist.
+  if(arr.length>1&&arr.every((label,index)=>label===source[index])){
+   arr.push(arr.shift());
+  }
+  return arr;
+ };
+ retry?.addEventListener("click",()=>{
+  if(!graded)return;
+  const targetQuestions=[...document.querySelectorAll("#main .question")];
+  for(const question of targetQuestions){
+   const feedback=question.querySelector(".feedback");
+   const labels=[...question.querySelectorAll("label.option")];
+   choiceShuffle(labels).forEach(label=>question.insertBefore(label,feedback));
+   if(feedback){feedback.hidden=true;feedback.textContent="";feedback.classList.remove("good","bad");}
+  }
+  inputs().forEach(input=>{input.checked=false;input.disabled=false;});
+  graded=false;score.disabled=false;score.textContent="Submit & Score";
+  if(retry){retry.hidden=true;retry.disabled=true;}
+  const result=document.getElementById("result");
+  if(result)result.textContent="Fresh attempt: choices have been reshuffled. Saved earlier scores and mastery remain unchanged.";
+  const first=inputs()[0];if(first){first.dispatchEvent(new Event("change",{bubbles:true}));first.focus();}
+ });
+ score.addEventListener("click",()=>{
+  if(graded)return;
+  let correct=0,complete=true;
+  items.forEach((q,i)=>{
+   const answer=document.querySelector('input[name="q'+i+'"]:checked');
+   const feedback=document.getElementById("f"+i);
+   if(!answer){
+    complete=false;
+    if(feedback){feedback.hidden=false;feedback.className="feedback bad";feedback.textContent="Choose an answer.";}
+    return;
+   }
+   const ok=Number(answer.value)===q.answer;
+   if(ok)correct++;
+   if(feedback){feedback.hidden=false;feedback.className="feedback "+(ok?"good":"bad");feedback.textContent=(ok?"Correct. ":"Review. ")+q.explanation;}
+  });
+  if(!complete){const result=document.getElementById("result");if(result)result.textContent="Answer every item before scoring. Nothing was recorded.";return;}
+  const percent=Math.round(100*correct/items.length);
+  const record=readRecords();
+  record.attempts.push({key,score:percent,correct,total:items.length,at:new Date().toISOString(),items:items.map(q=>q.id)});
+  record.best[key]=Math.max(record.best[key]||0,percent);
+  saveRecords(record);
+  graded=true;score.disabled=true;score.textContent="Attempt graded";
+  inputs().forEach(input=>{input.disabled=true;});
+  if(retry){retry.hidden=false;retry.disabled=false;}
+  const result=document.getElementById("result");
+  if(result)result.innerHTML="<strong>"+percent+"%</strong> · "+correct+"/"+items.length+" · Best "+record.best[key]+"% · Answers locked. Start a fresh attempt to retry."+(key==="mastery"?(percent>=80?" · Mastery demonstrated":" · Target 80%"):"");
+ });
+}
 function lesson(n){let l=D.lessons[n-1],a=D.questions.filter(q=>q.lesson===n);$("#main").innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Unit 09 · Lesson ${String(n).padStart(2,"0")}</p><h1>${esc(l.title)}</h1><p class="lead">${esc(D.unit.essential)}</p><div class="nav"><a class="btn" href="../index.html">Unit Home</a><a class="btn" href="../../../index.html">Course Home</a><a class="btn" href="${arch({lesson:l.title})}">Ask Arch</a><button class="btn" onclick="print()">Print</button></div></div></section><section class="block"><div class="wrap grid"><article class="card"><p class="eyebrow">1 · Observe</p><h2>Find the structure</h2><p>Identify terms, factors, degree, repeated patterns, and what changes when the expression is rewritten.</p></article><article class="card"><p class="eyebrow">2 · Discover</p><h2>Represent it</h2><textarea aria-label="Discovery notes"></textarea></article><article class="card full"><p class="eyebrow">3 · Learn</p><ul>${l.objectives.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><div class="grid">${l.concepts.map((x,i)=>`<div class="card"><h3>Structure ${i+1}</h3><p>${esc(x)}</p></div>`).join("")}</div></article><article class="card lab"><p class="eyebrow">4 · Experiment</p><h2>Polynomial Foundry</h2><p>Change a coefficient, sign, degree, factor, or dimension. Predict what the expanded and factored forms should reveal.</p><textarea aria-label="Experiment notes"></textarea></article><article class="card boss"><p class="eyebrow">5 · Challenge</p><h2>Structural Error Check</h2><p>Look for illegal combining, missed distribution, false special-product patterns, incomplete GCFs, or context-invalid zeros.</p><textarea aria-label="Error analysis"></textarea></article><article class="card"><p class="eyebrow">6 · Defend</p><h2>Factor Defense</h2><p>Verify by recombining or substituting. Explain why the structure is equivalent—not merely similar-looking.</p><textarea aria-label="Defense"></textarea></article><article class="card full"><p class="eyebrow">7 · Retrieve</p><h2>Lesson Check</h2>${qh(a)}<div class="actions"><button class="btn primary" id="score">Submit & Score</button></div><p id="result" role="status" aria-live="polite" aria-atomic="true"></p></article></div></section>`;bind(a,`lesson-${n}`)}
 function unit(){let u=D.unit;$("#main").innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Khaemenes Algebra I · Unit 09 · Open-Age</p><h1>${esc(u.title)}</h1><p class="function-mark">expanded ⇄ factored</p><p class="lead"><strong>${esc(u.formal_title)}</strong><br>${esc(u.essential)}</p><div class="nav"><a class="btn primary" href="lessons/${D.lessons[0].file}">Begin Lesson 01</a><a class="btn" href="../../index.html">Course Home</a><a class="btn" href="boss-battle.html">Synthesis Challenge</a><a class="btn" href="assessment/mastery-check.html">Mastery Check</a><a class="btn" href="${arch()}">Ask Arch</a></div><div class="snapshot"><div class="metric"><strong>7</strong>Lessons</div><div class="metric"><strong>70</strong>Unique Items</div><div class="metric"><strong>3</strong>Pathways</div><div class="metric"><strong>80%</strong>Mastery</div></div></div></section><section class="block"><div class="wrap"><div class="lesson-grid">${D.lessons.map(l=>`<article class="card"><p class="eyebrow">Lesson ${String(l.number).padStart(2,"0")}</p><h3>${esc(l.title)}</h3><p>${esc(l.objectives[0])}</p><a class="btn primary" href="lessons/${l.file}">Open Lesson</a></article>`).join("")}</div><div class="lesson-grid"><a class="card" href="practice/foundation.html"><h3>Foundation</h3><p>14 questions</p></a><a class="card" href="practice/core.html"><h3>Core</h3><p>21 questions</p></a><a class="card" href="practice/extended.html"><h3>Extended</h3><p>28 questions</p></a><a class="card" href="projects/polynomial-design-factor-analysis.html"><h3>Mission Board</h3><p>Polynomial Design & Factor Analysis</p></a></div></div></section>`}
 function bal(L){let cap={Foundation:1,Core:2,Extended:3}[L],n={Foundation:2,Core:3,Extended:4}[L],out=[];for(let l=1;l<=7;l++){let p=D.questions.filter(q=>q.lesson===l&&q.level<=cap);if(L==="Extended"){let h=sh(p.filter(q=>q.level===3)).slice(0,1);out.push(...h,...sh(p.filter(q=>!h.includes(q))).slice(0,n-h.length))}else out.push(...sh(p).slice(0,n))}return sh(out)}function practice(L){let a=bal(L);$("#main").innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Unit 09 · ${L}</p><h1>${L} Practice</h1><p class="lead">${a.length} balanced questions across all seven lessons.</p><div class="nav"><a class="btn" href="../index.html">Unit Home</a><a class="btn" href="${arch({pathway:L})}">Ask Arch</a></div></div></section><section class="block"><div class="wrap">${qh(a)}<button class="btn primary" id="score">Submit & Score</button><p id="result" role="status" aria-live="polite" aria-atomic="true"></p></div></section>`;bind(a,`practice-${L.toLowerCase()}`)}

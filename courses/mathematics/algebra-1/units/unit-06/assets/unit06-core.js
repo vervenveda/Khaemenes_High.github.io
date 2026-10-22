@@ -4,21 +4,81 @@ function arch(extra={}){let q=new URLSearchParams({course:"Algebra I",unit:"Unit
 function qhtml(items){return items.map((q,i)=>`<div class="question"><strong>${i+1}. ${esc(q.prompt)}</strong>${q.options.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${esc(o)}</label>`).join("")}<div id="f${i}" class="feedback" hidden></div></div>`).join("")}
 function installRetry(){
  const score=document.getElementById("score");
- if(!score||document.getElementById("practiceRetry"))return;
+ if(!score)return null;
+ const existing=document.getElementById("practiceRetry");
+ if(existing)return existing;
  const retry=document.createElement("button");
  retry.type="button";retry.id="practiceRetry";retry.className="btn";
- retry.textContent="Try again · clear current answers";retry.setAttribute("aria-label","Begin a fresh attempt; keep previously saved scores");
+ retry.textContent="Begin a new shuffled attempt";
+ retry.setAttribute("aria-label","Start a new attempt with reshuffled choices while preserving saved scores");
  retry.style.marginLeft="10px";
- retry.addEventListener("click",()=>{
-  document.querySelectorAll('#main .question input[type="radio"]').forEach(input=>{input.checked=false});
-  document.querySelectorAll("#main .question .feedback").forEach(el=>{el.hidden=true;el.textContent="";el.classList.remove("good","bad")});
-  const message=document.getElementById("result");
-  if(message)message.textContent="New attempt ready. Current answers and feedback cleared; previously saved scores and mastery evidence remain unchanged.";
-  document.querySelector('#main .question input[type="radio"]')?.focus();
- });
+ retry.hidden=true;retry.disabled=true;
  score.after(retry);
+ return retry;
 }
-function bind(items,key){installRetry();$("#score")?.addEventListener("click",()=>{let c=0,done=true;items.forEach((q,i)=>{let a=document.querySelector(`input[name=q${i}]:checked`),f=$(`#f${i}`);f.hidden=false;if(!a){done=false;f.className="feedback bad";f.textContent="Choose an answer.";return}let ok=+a.value===q.answer;c+=ok;f.className="feedback "+(ok?"good":"bad");f.textContent=(ok?"Correct. ":"Review. ")+q.explanation});if(!done){$("#result").textContent="Answer every item before scoring.";return}let p=Math.round(100*c/items.length),r=state();r.attempts.push({key,score:p,correct:c,total:items.length,at:new Date().toISOString(),items:items.map(q=>q.id)});r.best[key]=Math.max(r.best[key]||0,p);save(r);$("#result").innerHTML=`<strong>${p}%</strong> · ${c}/${items.length} · Best ${r.best[key]}%${key==="mastery"?(p>=80?" · Mastery demonstrated":" · Target 80%"):""}`})}
+function bind(items,key){
+ const score=document.getElementById("score");
+ if(!score)return;
+ const retry=installRetry();
+ let graded=false;
+ const readRecords=(typeof state==="function"?state:st);
+ const saveRecords=(typeof save==="function"?save:sv);
+ const inputs=()=>[...document.querySelectorAll('#main .question input[type="radio"]')];
+ const choiceShuffle=(source)=>{
+  const arr=[...source];
+  for(let i=arr.length-1;i>0;i--){
+   const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  // Make the display order different when at least two distinct options exist.
+  if(arr.length>1&&arr.every((label,index)=>label===source[index])){
+   arr.push(arr.shift());
+  }
+  return arr;
+ };
+ retry?.addEventListener("click",()=>{
+  if(!graded)return;
+  const targetQuestions=[...document.querySelectorAll("#main .question")];
+  for(const question of targetQuestions){
+   const feedback=question.querySelector(".feedback");
+   const labels=[...question.querySelectorAll("label.option")];
+   choiceShuffle(labels).forEach(label=>question.insertBefore(label,feedback));
+   if(feedback){feedback.hidden=true;feedback.textContent="";feedback.classList.remove("good","bad");}
+  }
+  inputs().forEach(input=>{input.checked=false;input.disabled=false;});
+  graded=false;score.disabled=false;score.textContent="Submit & Score";
+  if(retry){retry.hidden=true;retry.disabled=true;}
+  const result=document.getElementById("result");
+  if(result)result.textContent="Fresh attempt: choices have been reshuffled. Saved earlier scores and mastery remain unchanged.";
+  const first=inputs()[0];if(first){first.dispatchEvent(new Event("change",{bubbles:true}));first.focus();}
+ });
+ score.addEventListener("click",()=>{
+  if(graded)return;
+  let correct=0,complete=true;
+  items.forEach((q,i)=>{
+   const answer=document.querySelector('input[name="q'+i+'"]:checked');
+   const feedback=document.getElementById("f"+i);
+   if(!answer){
+    complete=false;
+    if(feedback){feedback.hidden=false;feedback.className="feedback bad";feedback.textContent="Choose an answer.";}
+    return;
+   }
+   const ok=Number(answer.value)===q.answer;
+   if(ok)correct++;
+   if(feedback){feedback.hidden=false;feedback.className="feedback "+(ok?"good":"bad");feedback.textContent=(ok?"Correct. ":"Review. ")+q.explanation;}
+  });
+  if(!complete){const result=document.getElementById("result");if(result)result.textContent="Answer every item before scoring. Nothing was recorded.";return;}
+  const percent=Math.round(100*correct/items.length);
+  const record=readRecords();
+  record.attempts.push({key,score:percent,correct,total:items.length,at:new Date().toISOString(),items:items.map(q=>q.id)});
+  record.best[key]=Math.max(record.best[key]||0,percent);
+  saveRecords(record);
+  graded=true;score.disabled=true;score.textContent="Attempt graded";
+  inputs().forEach(input=>{input.disabled=true;});
+  if(retry){retry.hidden=false;retry.disabled=false;}
+  const result=document.getElementById("result");
+  if(result)result.innerHTML="<strong>"+percent+"%</strong> · "+correct+"/"+items.length+" · Best "+record.best[key]+"% · Answers locked. Start a fresh attempt to retry."+(key==="mastery"?(percent>=80?" · Mastery demonstrated":" · Target 80%"):"");
+ });
+}
 function lesson(n){let l=D.lessons[n-1],items=D.questions.filter(q=>q.lesson===n);$("#main").innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Unit 06 · Lesson ${String(n).padStart(2,"0")}</p><h1>${esc(l.title)}</h1><p class="lead">${esc(D.unit.essential)}</p><div class="nav"><a class="btn" href="../index.html">Unit Home</a><a class="btn" href="../../../index.html">Course Home</a><a class="btn" href="${arch({lesson:l.title})}">Ask Arch</a><button class="btn" onclick="print()">Print</button></div></div></section><section class="block"><div class="wrap grid"><article class="card movement"><p class="eyebrow">1 · Mystery</p><h2>Observe the change</h2><p>${esc(l.mystery)}</p><details><summary>Reveal after you reason</summary><p>${esc(l.mystery_answer)}</p></details></article><article class="card"><p class="eyebrow">2 · Discover</p><h2>Represent the relationship</h2><p>Identify inputs, outputs, units, rate, initial value, domain, and the evidence that supports—or limits—a linear model.</p><textarea aria-label="Discovery notes"></textarea></article><article class="card full"><p class="eyebrow">3 · Learn</p><h2>Objectives</h2><ul>${l.objectives.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><div class="grid">${l.concepts.map((x,i)=>`<div class="card"><h3>Observation ${i+1}</h3><p>${esc(x)}</p></div>`).join("")}</div></article><article class="card lab"><p class="eyebrow">4 · Experiment</p><h2>Linear Model Laboratory</h2><p>Change a point, rate, intercept, domain, fitted line, or data condition. Predict what should change and what should remain invariant.</p><textarea aria-label="Experiment notes"></textarea></article><article class="card boss"><p class="eyebrow">5 · Challenge</p><h2>Wrong Answer Laboratory</h2><p>${esc(l.wrong)}</p><details><summary>Repair the reasoning</summary><p>${esc(l.wrong_answer)}</p></details></article><article class="card"><p class="eyebrow">6 · Defend</p><h2>Arch's Model Defense</h2><p>Defend your calculation or model using units, domain, assumptions, representation, and limitations—not just an answer.</p><textarea aria-label="Model defense"></textarea></article><article class="card full"><p class="eyebrow">7 · Reflect & Retrieve</p><h2>Lesson Check</h2>${qhtml(items)}<div class="actions"><button class="btn primary" id="score">Submit & Score</button></div><p id="result" role="status" aria-live="polite" aria-atomic="true"></p></article></div></section>`;bind(items,`lesson-${n}`)}
 function unit(){let u=D.unit;$("#main").innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Khaemenes Algebra I · Unit 06 · Open-Age</p><h1>${esc(u.title)}</h1><p class="function-mark">Δy / Δx → model → evidence</p><p class="lead"><strong>${esc(u.formal_title)}</strong><br>${esc(u.essential)}</p><div class="nav"><a class="btn primary" href="lessons/${D.lessons[0].file}">Begin Lesson 01</a><a class="btn" href="../../index.html">Course Home</a><a class="btn" href="boss-battle.html">Synthesis Challenge</a><a class="btn" href="assessment/mastery-check.html">Mastery Check</a><a class="btn" href="${arch()}">Ask Arch</a></div><div class="snapshot"><div class="metric"><strong>8</strong>Lessons</div><div class="metric"><strong>80</strong>Unique Items</div><div class="metric"><strong>3</strong>Pathways</div><div class="metric"><strong>80%</strong>Mastery</div></div><div class="notice">Modeling standard: distinguish association from causation, interpolation from extrapolation, and nonvertical linear functions from vertical lines.</div></div></section><section class="block"><div class="wrap"><div class="lesson-grid">${D.lessons.map(l=>`<article class="card"><p class="eyebrow">Lesson ${String(l.number).padStart(2,"0")}</p><h3>${esc(l.title)}</h3><p>${esc(l.objectives[0])}</p><a class="btn primary" href="lessons/${l.file}">Open Lesson</a></article>`).join("")}</div><div class="lesson-grid" style="margin-top:14px"><a class="card" href="practice/foundation.html"><h3>Foundation Practice</h3><p>16 balanced questions across all eight lessons.</p></a><a class="card" href="practice/core.html"><h3>Core Practice</h3><p>24 mixed linear-model questions.</p></a><a class="card" href="practice/extended.html"><h3>Extended Practice</h3><p>32 reasoning-rich questions.</p></a><a class="card" href="projects/linear-data-story-model-defence.html"><h3>Mission Board</h3><p>Linear Data Story & Model Defence.</p></a><a class="card" href="teacher-guide.html"><h3>Teacher Guide</h3></a><a class="card" href="family-guide.html"><h3>Family Guide</h3></a></div></div></section>`}
 function balanced(level){let cap={Foundation:1,Core:2,Extended:3}[level],quota={Foundation:[2,2,2,2,2,2,2,2],Core:[3,3,3,3,3,3,3,3],Extended:[4,4,4,4,4,4,4,4]}[level],out=[];for(let l=1;l<=8;l++){let pool=D.questions.filter(q=>q.lesson===l&&q.level<=cap),n=quota[l-1];if(level==="Extended"){let hard=shuffle(pool.filter(q=>q.level===3)).slice(0,1);out.push(...hard,...shuffle(pool.filter(q=>!hard.includes(q))).slice(0,n-hard.length))}else out.push(...shuffle(pool).slice(0,n))}return shuffle(out)}
