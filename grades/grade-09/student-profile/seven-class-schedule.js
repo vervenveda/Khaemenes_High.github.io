@@ -13,7 +13,7 @@ const firstLessons={
  "english-9":"courses/language-arts/english-9/weeks/week-01/day-01/",
  "global-studies-9":"courses/social-studies/grade-09/week-01/student-packet.html",
  "integrated-science-9":"courses/science/integrated-science-9/units/unit-01/lessons/day-01.html",
- "physical-education-9":"courses/physical-education/",
+ "physical-education-9":"courses/physical-education/?start=grade09-week01",
  "psychology-101":"electives/grades/grade-09/psych-101/lessons/week-01/day-01.html"
 };
 function repositoryRoot(){const at=location.pathname.indexOf("/grades/grade-09/");return at<0?"/":location.pathname.slice(0,at+1)}
@@ -66,7 +66,7 @@ function render(){
    button.addEventListener("click",()=>{registry.setPinned(id,!registry.isPinned(id));render()});
    card.append(link,button);
    const first=firstLessonFor(id);
-   if(first){const start=el("a",id==="physical-education-9"?"Open PE learning hall":id==="pre-algebra"||id==="algebra-1"?"Start mathematics readiness":"Week 01 · First lesson");start.href=first;start.style.cssText="display:inline-block;margin-right:12px;text-decoration:underline";card.append(start)}
+   if(first){const start=el("a",id==="physical-education-9"?"Start PE Week 01 lesson":id==="pre-algebra"||id==="algebra-1"?"Start mathematics readiness":"Week 01 · First lesson");start.href=first;start.style.cssText="display:inline-block;margin-right:12px;text-decoration:underline";card.append(start)}
    else if(id.startsWith("world-language-9-")){const target=languageStart(id);if(target){const a=el("a",["french","german"].includes(id.replace("world-language-9-",""))?"Open language course":"Week 01 · Language lesson");a.href=target;card.append(a)}else card.append(el("p","Open Linguistics Halls to select the appropriate first-language lesson."));}
   }
   list.append(card);
