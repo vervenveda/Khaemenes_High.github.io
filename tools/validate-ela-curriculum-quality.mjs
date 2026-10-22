@@ -40,7 +40,7 @@ for(const course of courses){
   course.slug+" is not using authoritative curriculum quiz data");
  assert(courseJs.includes('if(scriptId==="quiz-data")'),"Quiz override missing");
  assert(courseJs.includes('const saved=save();syncBest();updateProgress();'),"Existing learner score-saving path changed");
- assert(courseJs.includes('record.best=Math.max(record.best||0,score)'),"Best-score preservation changed");
+ assert(courseJs.includes('record.best=Math.max(record.best||0,attemptScore)'),"Best-score preservation changed");
  const seen=new Set(),counts=[0,0,0,0],themes=new Set();
  const bank=JSON.parse(fs.readFileSync(base+"/assets/quiz-specific-bank.json","utf8"));
  const primary=course.grade>=11?JSON.parse(fs.readFileSync(base+"/assets/quiz-primary-bank.json","utf8")):null;
