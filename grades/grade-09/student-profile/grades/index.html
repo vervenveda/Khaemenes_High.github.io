@@ -63,6 +63,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <div class="card col6"><h2>Social Studies</h2><p>Grade 09 humanities records, assessments, and evidence.</p><div class="actions"><a class="btn" href="../../../../courses/social-studies/grade-09/">Open Social Studies</a></div></div>
 <section class="card col12"><h2>Parent Review Note</h2><p>Parents should always be able to open records and export progress. Student profile preferences should never hide grade access from the parent or guardian.</p></section>
 </div></section></main><footer class="footer"><strong>Khaemenes High · Grade 09</strong>Grades and report doors</footer>
+<script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-student-profile-v2.js"></script>
 <script src="../student-profile-preferences.js"></script>
 <script>document.getElementById('exportGrades').onclick=()=>{const out={kind:'khaemenes-grade09-grade-room-summary',createdAt:new Date().toISOString(),note:'Course pages are authoritative for grades and mastery.',courses:['Mathematics','Language Arts','Science','Social Studies']};const b=new Blob([JSON.stringify(out,null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='khaemenes-grade09-grade-summary.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),800)};</script>
 </body></html>
