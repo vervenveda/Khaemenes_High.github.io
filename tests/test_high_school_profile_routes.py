@@ -36,8 +36,6 @@ theme=(ROOT/"grades/shared/student-profile-theme-photo.js").read_text(encoding="
 for grade in (10,11,12):
     html=(ROOT/f"grades/grade-{grade:02d}/student-profile/index.html").read_text(encoding="utf-8")
     assert 'student-profile-theme-photo.js' in html
-for check in ('type="color"', 'type="file"', 'canvas.toDataURL("image/jpeg"', 'sameLearner'):
-    pass
 assert 'color.type="color"' in theme and 'file.type="file"' in theme
 assert 'canvas.toDataURL("image/jpeg"' in theme
 assert 'api?.activeLearner' in theme and 'function guard()' in theme
