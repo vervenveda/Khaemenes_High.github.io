@@ -112,6 +112,13 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   <p style="font-size:14px">Continue links use existing course progress and pinned choices. This panel does not set grades, mark lessons complete, or require an internet connection to display saved links.</p>
 </section>
 
+      <section class="card col12 schedule-card" aria-labelledby="scheduleBarTitle">
+        <h2 id="scheduleBarTitle">My Schedule Bar</h2>
+        <p>Your seven academic classes stay in order. Pinned games, tools, and elective shortcuts appear beside them without becoming grades or enrollment records.</p>
+        <div data-grade09-schedule-bar></div>
+        <p class="schedule-helper"><a href="games/">Pin games &amp; study tools →</a> · <a href="profile/">Choose language, classes &amp; profile design →</a></p>
+      </section>
+
       <section class="card col12" id="classes" aria-labelledby="pinnedClassesTitle">
         <h2 id="pinnedClassesTitle">My Pinned Classes</h2>
         <p>Pin a class once. It stays here on this device so you do not have to locate it again tomorrow.</p>
@@ -165,6 +172,8 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <script src="../../../courses/shared/course-entry-contract.js"></script>
 <script src="../../../courses/shared/high-school-course-pins.js"></script>
 <script src="student-course-registry.js"></script>
+<script src="student-quick-pins.js"></script>
+<script src="student-schedule-bar.js"></script>
 <script>
 (function(){
   "use strict";
