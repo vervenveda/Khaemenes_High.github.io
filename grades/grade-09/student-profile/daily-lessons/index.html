@@ -94,6 +94,12 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
         <div class="lesson-grid" id="pinnedDailyGrid" aria-live="polite"></div>
       </section>
 
+      <section class="card col12 schedule-card" aria-labelledby="dailyScheduleTitle">
+        <h2 id="dailyScheduleTitle">My Schedule Bar</h2>
+        <p>Swipe or scroll across your seven classes and personal Quick Pins. Academic slots remain separate from games and tools.</p>
+        <div data-grade09-schedule-bar></div>
+      </section>
+
       <article class="card col12">
         <div class="focus-card">
           <div>
@@ -139,6 +145,8 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <script src="../../../../courses/shared/course-entry-contract.js"></script>
 <script src="../../../../courses/shared/high-school-course-pins.js"></script>
 <script src="../student-course-registry.js"></script>
+<script src="../student-quick-pins.js"></script>
+<script src="../student-schedule-bar.js"></script>
 <script>
 (function(){
   "use strict";
