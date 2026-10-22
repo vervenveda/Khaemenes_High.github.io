@@ -149,3 +149,6 @@
 
   withProgression(boot);
 })();
+
+/* Academy-first assessment identity; no grading or gate changes. */
+;(()=>{const apply=()=>{const brand=document.querySelector(".site-header .brand-copy");if(!brand)return;const title=brand.querySelector("strong"),subtitle=brand.querySelector("small");if(title)title.textContent="Khaemenes Academy";if(subtitle)subtitle.textContent="Algebra II · Assessment";};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",apply,{once:true});else apply()})();
