@@ -1,0 +1,32 @@
+name: Apply High School Student Toolbar Coverage
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/apply-student-toolbar-coverage.mjs'
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Add canonical learner rail to uncovered student pages
+        run: node tools/apply-student-toolbar-coverage.mjs
+      - name: Commit coverage repairs
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No toolbar coverage changes required."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add '*.html' ':!**/teacher/**' ':!**/teachers/**'
+          git commit -m "Student journey: cover remaining student pages with learner rail"
+          git push origin HEAD:main
