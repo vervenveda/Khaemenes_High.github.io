@@ -1,6 +1,6 @@
 (()=>{"use strict";
 const grade=Number(document.body.dataset.grade),root="../../../",pin=window.KhaemenesHighCoursePins;
-const continuation=window.KhaemenesLearningContinuation,profile=window.KhaemenesStudentProfileV2;
+const continuation=window.KhaemenesLearningContinuation,profile=window.KhaemenesStudentProfileV2,quick=window.KhaemenesStudentQuickPinsV1;
 if(![10,11,12].includes(grade)||!pin)return;
 const el=(t,s)=>{const n=document.createElement(t);if(s!==undefined)n.textContent=s;return n};
 const courses=({
@@ -93,6 +93,33 @@ function render(){
  const all=el("button","Pin all seven classes");all.type="button";all.style.marginTop="18px";
  all.addEventListener("click",()=>{const merged=[...new Set([...pin.readPins(),...ids()])];feedback.textContent=pin.writePins(merged)?"Seven classes pinned.":"Unable to save all classes.";render()});
  holder.append(all);
+
+ const quickSection=el("section");quickSection.className="ug-card";quickSection.style.marginTop="18px";
+ quickSection.append(el("p","Personal Shortcuts"),el("h2","Quick Pins"),el("p","Games, tools, resources, and elective shortcuts stay separate from your seven academic classes and never change enrollment, grades, mastery, or placement."));
+ const quickGrid=el("div");quickGrid.className="ug-quick-grid";
+ const quickItems=quick?.list?.()||[];
+ if(!quickItems.length){
+  const empty=el("div","No Quick Pins yet. Add games, tools, resources, or elective shortcuts from an Academy-supported profile page.");empty.className="ug-empty";quickGrid.append(empty);
+ }else{
+  quickItems.forEach(item=>{
+   const card=el("article");card.className="ug-quick";
+   const title=el("strong",item.title||"Quick Pin"),detail=el("small",item.subtitle||item.category||"Personal shortcut");
+   const actions=el("div");actions.className="ug-actions";
+   const open=el("a","Open");open.className="ug-btn secondary";open.href=item.href||"#";
+   const remove=el("button","Remove");remove.type="button";remove.className="ug-btn";
+   remove.addEventListener("click",()=>{if(quick?.setPinned?.(item.id,false))render()});
+   actions.append(open,remove);card.append(title,detail,actions);quickGrid.append(card);
+  });
+ }
+ quickSection.append(quickGrid);holder.append(quickSection);
 }
-render();window.addEventListener("storage",render);
+render();
+window.addEventListener("storage",event=>{
+ const key=String(event.key||"");
+ if(!key||key===quick?.storageKey||key.includes("khaemenes-high-pinned-courses-v2")||key.includes("khaemenes-high-language-choices-v1")||key==="khaemenes.learning.continuation.v1"||key==="khaemenes_student_profile_v2")render();
+});
+window.addEventListener("khaemenes-course-pins-changed",render);
+window.addEventListener("khaemenes-learning-continuation-changed",render);
+window.addEventListener("khaemenes-student-profile-changed",render);
+window.addEventListener("khaemenes-student-quick-pins-changed",render);
 })();
