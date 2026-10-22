@@ -102,7 +102,7 @@ function lessonExperience(){
     if(t)t.textContent=total?`${answered}/${total} answered`:"Lesson work";
     if(b)b.style.width=pct+"%";
   };
-  main.addEventListener("change",update,{passive:true});update();
+  if(main.dataset.algebra1MeterBound!=="true"){main.addEventListener("change",update,{passive:true});main.dataset.algebra1MeterBound="true"}update();
 }
 function enhance(){
   ensureCss();
@@ -114,6 +114,6 @@ function enhance(){
 ensureCss();
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",()=>setTimeout(enhance,0),{once:true});else setTimeout(enhance,0);
 const main=document.getElementById("main");
-if(main)new MutationObserver(()=>setTimeout(enhance,0)).observe(main,{childList:true,subtree:false});
+if(main){let pending=false;new MutationObserver(()=>{if(pending)return;pending=true;setTimeout(()=>{pending=false;enhance()},0)}).observe(main,{childList:true,subtree:false})}
 window.KhaemenesAlgebra1StudentExperience=Object.freeze({version:"2.0",enhance});
 })();
