@@ -60,14 +60,43 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <section class="card col12" aria-labelledby="sevenClassHeading"><h2 id="sevenClassHeading">My Seven Classes · Unit 01</h2><div id="grade09SevenClassSchedule"></div></section><section class="card col12"><h2>Privacy Boundary</h2><p>This page may store ordinary profile preferences locally. It should not store passwords, password hashes, private recovery secrets, private tokens, legal documents, or sensitive student records in public static code or browser exports.</p><div class="actions"><a class="btn secondary" href="../settings/">Open Parent & Password Settings</a></div></section>
 </div></section></main><footer class="footer"><strong>Khaemenes High · Grade 09</strong>Editable profile</footer>
 <script>
-const key='khaemenes-high-profile-v1',status=document.getElementById('status');
+const BASE_KEY='khaemenes-high-profile-v1',ACTIVE_KEY='khaemenes_active_learner_v1',FAMILY_KEY='khaemenes_family_registry_v1',status=document.getElementById('status');
 const fields=['name','pathway','interests','goals','strengths','supports','portfolio'];
+function activeLearner(){
+  try{
+    const id=JSON.parse(localStorage.getItem(ACTIVE_KEY)||'null');
+    const registry=JSON.parse(localStorage.getItem(FAMILY_KEY)||'null');
+    const learner=typeof id==='string'?registry?.learners?.[id]:null;
+    return learner&&learner.learnerId===id?learner:null;
+  }catch{return null}
+}
+function profileKey(){const learner=activeLearner();return learner?`${BASE_KEY}:learner:${encodeURIComponent(learner.learnerId)}`:BASE_KEY}
 const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};
-const write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
-function load(){const p=read(key,{});fields.forEach(id=>{document.getElementById(id).value=(id==='name'?(p.name||p.displayName||p.nickname||''):(p[id]||''));});}
-function data(){const p=read(key,{});fields.forEach(id=>p[id]=document.getElementById(id).value.trim());p.displayName=p.name||p.displayName||'Student';p.grade='9';p.updatedAt=new Date().toISOString();return p}
-document.getElementById('saveProfile').onclick=()=>{write(key,data());status.hidden=false;status.textContent='Profile saved locally.'};
-document.getElementById('exportProfile').onclick=()=>{const b=new Blob([JSON.stringify(data(),null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='khaemenes-grade09-student-profile.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),800)};
+const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
+function load(){
+  const learner=activeLearner(),p=read(profileKey(),{});
+  fields.forEach(id=>{
+    const fallback=id==='name'?(learner?.nickname||''):'';
+    document.getElementById(id).value=id==='name'?(p.name||p.displayName||p.nickname||fallback):(p[id]||'');
+  });
+}
+function data(){
+  const learner=activeLearner(),p=read(profileKey(),{});
+  fields.forEach(id=>p[id]=document.getElementById(id).value.trim());
+  p.displayName=p.name||p.displayName||learner?.nickname||'Student';
+  p.grade='9';
+  if(learner?.learnerId)p.learnerId=learner.learnerId;
+  p.updatedAt=new Date().toISOString();
+  return p;
+}
+document.getElementById('saveProfile').onclick=()=>{
+  if(!write(profileKey(),data())){status.hidden=false;status.textContent='Profile could not be saved on this device.';return}
+  status.hidden=false;status.textContent='Profile saved for the active learner on this device.';
+};
+document.getElementById('exportProfile').onclick=()=>{
+  const b=new Blob([JSON.stringify(data(),null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');
+  a.href=u;a.download='khaemenes-grade09-student-profile.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),800)
+};
 load();
 </script>
 <script src="../../../../courses/shared/high-school-course-pins.js"></script>
