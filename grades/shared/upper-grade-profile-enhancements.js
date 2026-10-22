@@ -35,7 +35,8 @@ function applyAccess(){document.documentElement.style.setProperty("--ug-personal
 const motionStyle=make("style");motionStyle.textContent='html[data-khae-reduce-motion="true"] *,html[data-khae-reduce-motion="true"] *::before,html[data-khae-reduce-motion="true"] *::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}';document.head.append(motionStyle);
 [big,calm].forEach(field=>field.addEventListener("change",()=>{if(!scoped()){big.checked=!!initial.largeText;calm.checked=!!initial.reducedMotion;return}try{localStorage.setItem(accessKey,JSON.stringify({largeText:big.checked,reducedMotion:calm.checked}));state.textContent="Reading preferences saved."}catch{state.textContent="Reading preferences could not be saved."}applyAccess()}));
 if(!originalKey){big.disabled=calm.disabled=true}applyAccess();
-root.insertAdjacentElement("afterend",panel);load();
+const customize=document.getElementById(grade==="10"?"grade10Personalize":"upperGradePersonalize");
+(customize||root).insertAdjacentElement("afterend",panel);load();
 function refreshAfterReturn(){
  if(!scoped()){
   goal.value="";goal.disabled=true;save.disabled=true;exportBtn.disabled=true;
