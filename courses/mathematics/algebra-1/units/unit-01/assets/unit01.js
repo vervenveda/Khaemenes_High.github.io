@@ -124,7 +124,23 @@ document.querySelectorAll("[data-synthesis-field]").forEach(el=>{el.value=draft.
 document.querySelectorAll("[data-synthesis-rubric]").forEach(el=>{el.value=draft.rubric[el.dataset.synthesisRubric]??"";el.addEventListener("change",()=>{draft.rubric[el.dataset.synthesisRubric]=el.value===""?"":Number(el.value)})});
 $("#saveSynthesis")?.addEventListener("click",()=>{draft.saved_at=new Date().toISOString();draft.assessment_id="KH-MATH-A1-U01-SYNTHESIS";draft.classification="browser-local-unverified-synthesis-evidence";try{localStorage.setItem(draftKey,JSON.stringify(draft));const vals=Object.values(draft.rubric).filter(v=>Number.isFinite(v));const total=vals.length===5?vals.reduce((a,b)=>a+b,0):null;$("#synthesisStatus").textContent=total===null?"Written evidence saved locally. Rubric is not yet complete.":`Written evidence saved locally · Rubric ${total}/20 · ${total>=16?"Recommended synthesis benchmark reached":"Revision recommended"}.`}catch{$("#synthesisStatus").textContent="This browser could not save the synthesis evidence. Print or copy the work before leaving."}});
 }
-let mode=document.body.dataset.mode;if(mode==="unit")unit();else if(mode==="lesson")lesson(+document.body.dataset.lesson);else if(mode==="practice")practice(document.body.dataset.pathway);else if(mode==="mastery")mastery();else if(mode==="boss")boss();
+/* Core lesson must render independently of optional student-experience add-ons. */
+try{
+ if(!D||!Array.isArray(D.lessons)||!Array.isArray(D.questions))throw new Error("Unit 01 data unavailable");
+ const mode=document.body.dataset.mode;
+ if(mode==="unit")unit();
+ else if(mode==="lesson")lesson(+document.body.dataset.lesson);
+ else if(mode==="practice")practice(document.body.dataset.pathway);
+ else if(mode==="mastery")mastery();
+ else if(mode==="boss")boss();
+ else throw new Error("Unrecognized Unit 01 page mode");
+ document.body.dataset.algebra1LessonRender="ready";
+}catch(error){
+ console.error("Algebra I Unit 01 startup failed:",error);
+ document.body.dataset.algebra1LessonRender="error";
+ const main=document.getElementById("main");
+ if(main){main.replaceChildren();const section=document.createElement("section");section.className="hero";const wrap=document.createElement("div");wrap.className="wrap";const h=document.createElement("h1");h.textContent="Lesson unavailable";const message=document.createElement("p");message.className="lead";message.textContent="This lesson could not be opened. Your existing assessment records have not been changed. Return to the unit directory or retry loading the lesson.";const nav=document.createElement("div");nav.className="nav";const home=document.createElement("a");home.className="btn primary";home.href=location.pathname.includes("/lessons/")?"../index.html":"../../index.html#units";home.textContent="Return to the course pathway";const retry=document.createElement("button");retry.className="btn";retry.type="button";retry.textContent="Retry lesson";retry.addEventListener("click",()=>location.reload());nav.append(home,retry);wrap.append(h,message,nav);section.append(wrap);main.append(section)}
+}
 if(!window.KhaemenesAlgebra1StudentExperience&&!document.getElementById("algebra1StudentExperienceV2")){const s=document.createElement("script");s.id="algebra1StudentExperienceV2";s.src=new URL("../../../assets/algebra1-student-experience-v2.js",document.currentScript?.src||location.href).href;s.defer=true;s.onload=()=>window.KhaemenesAlgebra1StudentExperience?.enhance();document.head.appendChild(s)}else window.KhaemenesAlgebra1StudentExperience?.enhance();
 })();
 ;(()=>{const s=document.createElement("script");s.src=new URL("../../../assets/learning-tools-menu-v1.js",document.currentScript?.src||location.href).href;s.defer=true;document.head.append(s)})();
