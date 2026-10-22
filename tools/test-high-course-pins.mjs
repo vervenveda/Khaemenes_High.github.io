@@ -43,6 +43,8 @@ data.set("khaemenes_family_registry_v1",JSON.stringify({learners:{
 data.set("khaemenes_active_learner_v1",JSON.stringify("a"));
 assert.equal(store.readPins().length,0,"No automatic legacy sharing");
 assert(grade9.setPinned("world-language-9-russian",true));
+const academyAfterA=JSON.parse(data.get(store.ACADEMY_PIN_KEY));
+assert(academyAfterA.learners.a.some(p=>p.id==="world-language-9-russian"),"High School pin mirrors to Academy Student Portal");
 data.set("khaemenes_active_learner_v1",JSON.stringify("b"));
 assert.equal(store.readPins().length,0,"No sibling crossover");
 assert(grade9.setPinned("english-9",true));
@@ -52,6 +54,7 @@ assert(!store.readPins().includes("english-9"));
 assert(JSON.parse(data.get(store.PIN_KEY)).includes("english-10"),"Unscoped history retained");
 assert(store.clearPins());
 assert(store.hasPinRecord()&&store.readPins().length===0,"Empty does not resurrect old pins");
+assert.equal(JSON.parse(data.get(store.ACADEMY_PIN_KEY)).learners.a.filter(p=>p.source==="khaemenes-high").length,0,"Clearing learner pins clears High School mirror without deleting other learner records");
 assert(home.includes("PIN_STORE.readPins()"),"Front hall reads shared pin store");
 assert(!home.includes("saved.filter(id=>ALL_COURSES.some"),"Front hall must not drop other IDs");
 assert(home.includes("high-school-course-pins.js"),"Front hall loads helper");
