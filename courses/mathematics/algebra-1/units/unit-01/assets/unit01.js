@@ -48,6 +48,8 @@ function bind(items,key){
   if(!old.length)throw new Error("lesson-check-questions-missing");
   old[0].insertAdjacentHTML("beforebegin",qhtml(current));old.forEach(q=>q.remove());
   graded=false;attempt++;score.disabled=false;score.textContent="Submit & Score";
+  const nextBox=$("#lessonNextStep");
+  if(nextBox){nextBox.hidden=true;nextBox.style.display="none";nextBox.replaceChildren()}
   retry.disabled=true;retry.hidden=true;result.textContent="Fresh attempt "+attempt+" · "+current.length+" randomized questions. Answer all items before grading.";
  }
  function seal(){
