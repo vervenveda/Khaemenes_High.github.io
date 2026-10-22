@@ -10,6 +10,7 @@ on:
       - courses/mathematics/algebra-1/units/**/unit-map.json
       - scripts/validate_grade09_placement_math_dashboard.mjs
       - scripts/validate_grade09_seven_class_journey.mjs
+      - scripts/validate_grade09_translator_gateway.mjs
       - .github/workflows/grade09-placement-math-validation.yml
   push:
     branches:
@@ -21,6 +22,7 @@ on:
       - courses/mathematics/algebra-1/units/**/unit-map.json
       - scripts/validate_grade09_placement_math_dashboard.mjs
       - scripts/validate_grade09_seven_class_journey.mjs
+      - scripts/validate_grade09_translator_gateway.mjs
       - .github/workflows/grade09-placement-math-validation.yml
 
 permissions:
@@ -45,6 +47,9 @@ jobs:
 
       - name: Validate Grade 09 seven-class student journey
         run: node scripts/validate_grade09_seven_class_journey.mjs
+
+      - name: Verify official Grade 09 translation layer
+        run: node scripts/validate_grade09_translator_gateway.mjs
 
       - name: Check shared JavaScript syntax
         run: |
