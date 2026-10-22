@@ -117,7 +117,7 @@
 </main>
 <footer class="footer"><strong>Khaemenes Academy · High School · Grade 09</strong><br>Centered learning pathways · readable course access · mastery remains course-authoritative</footer>
 <script>
-(()=>{"use strict";const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};const p=read("khaemenes-high-profile-v1",null)||read("khaemenes-grade09-profile-v1",null)||{};const name=p.displayName||p.name||p.nickname||"Freshman Home";const node=document.getElementById("studentName");if(node)node.textContent=name;})();
+(()=>{"use strict";const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};let learner=null;try{const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null"),family=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");learner=typeof id==="string"&&family?.learners?.[id]?.learnerId===id?family.learners[id]:null}catch{}const key=learner?`khaemenes-high-profile-v1:learner:${encodeURIComponent(learner.learnerId)}`:"khaemenes-high-profile-v1";const p=read(key,null)||(!learner?read("khaemenes-grade09-profile-v1",null):null)||{};const name=p.displayName||p.name||p.nickname||learner?.nickname||"Freshman Home";const node=document.getElementById("studentName");if(node)node.textContent=name;})();
 </script>
 <script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script>
 <script src="../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
