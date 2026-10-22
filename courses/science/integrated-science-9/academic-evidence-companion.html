@@ -32,10 +32,18 @@ const courses={
  "arabic-1":{grade:"9–12",subject:"Arabic I",slug:"Arabic1"},
  "russian-1":{grade:"9–12",subject:"Russian I",slug:"Russian1"}
 };
-const requested=new URLSearchParams(location.search).get("course")||"science-9";
+const contextParams=new URLSearchParams(location.search);
+const requested=contextParams.get("course")||"science-9";
 const selected=courses[requested]||courses["science-9"];
 form.elements.grade.value=selected.grade;
 form.elements.subject.value=selected.subject;
+// Optional, strictly bounded metadata from a lesson's "Save Academic Evidence" link.
+// Never overwrite student identity, research responses or graded course records.
+const contextUnit=contextParams.get("unit"),contextLesson=contextParams.get("lesson");
+if(contextUnit&&/^\d{1,2}$/.test(contextUnit)&&Number(contextUnit)>=1&&Number(contextUnit)<=36)
+  form.elements.unit.value="Unit "+String(Number(contextUnit)).padStart(2,"0");
+if(contextLesson&&/^\d{1,2}$/.test(contextLesson)&&Number(contextLesson)>=1&&Number(contextLesson)<=36)
+  form.elements.lesson.value="Lesson "+String(Number(contextLesson)).padStart(2,"0");
 document.getElementById("courseContext").textContent="Grade "+selected.grade+" · "+selected.subject;
 document.title=selected.subject+" Evidence Companion · Khaemenes Academy";
 const fields=()=>[...form.querySelectorAll("input,textarea")];

@@ -8,6 +8,8 @@ const bridge=read("assets/lesson-resource-bridge-v1.js");
 const companion=read("assets/algebra1-lesson-companions-v1.js");
 const unit01=read("units/unit-01/assets/unit01.js");
 assert.ok(bridge.includes("algebra1-lesson-companions-v1.js"));
+assert.ok(companion.includes('evidence.searchParams.set("unit",unit)')&&companion.includes('evidence.searchParams.set("lesson",lesson)'),"printable must carry exact lesson context");
+assert.ok(companion.includes('script[data-game'),"explicit games must not appear twice");
 for(const feature of ["game-registry.json","vocabulary.json","academic-evidence-companion.html","Print lesson","masteryLocked"]){
  assert.ok(companion.includes(feature),"missing companion feature "+feature);
 }

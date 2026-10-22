@@ -23,6 +23,8 @@ function render(){
  const actions=node("div",null,"nav");
  const evidence=new URL("../science/integrated-science-9/academic-evidence-companion.html",math);
  evidence.searchParams.set("course","algebra-1");
+ evidence.searchParams.set("unit",unit);
+ evidence.searchParams.set("lesson",lesson);
  const a=node("a","Save Academic Evidence","btn");a.href=evidence.href;
  a.setAttribute("aria-label","Open Academy-wide printable Academic Evidence companion");
  actions.append(a);
@@ -56,7 +58,11 @@ async function gameLinks(host){
    if(!/^[a-z0-9-]+$/i.test(slug))continue;
    const placement=(game.placements||[]).find(p=>p.course==="algebra-1"&&p.wired===true&&
      Number(p.unit)===Number(unit)&&Number(String(p.lesson).match(/\d+$/)?.[0])===Number(lesson));
-   if(!placement||document.getElementById("mathSharedGameCompanion-"+slug))continue;
+   // Existing explicitly inserted game companions always take priority.
+   if(!placement||
+     document.querySelector('script[data-game="'+slug+'"]')||
+     host.querySelector('a[href*="/learning-games/'+slug+'/"]')||
+     document.getElementById("mathSharedGameCompanion-"+slug))continue;
    const url=new URL("assets/learning-games/"+slug+"/index.html",math);
    url.searchParams.set("course","algebra1");
    url.searchParams.set("unit",unit);url.searchParams.set("lesson",lesson);
