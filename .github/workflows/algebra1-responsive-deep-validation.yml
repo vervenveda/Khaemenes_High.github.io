@@ -133,6 +133,11 @@ jobs:
           node --check courses/mathematics/algebra-1/assets/unit-page.js
           node courses/mathematics/algebra-1/tools/test-student-access-recovery.mjs
 
+      - name: Verify Algebra I lesson games, tools, and video safeguards
+        run: |
+          node --check courses/mathematics/algebra-1/assets/algebra1-lesson-companions-v1.js
+          node courses/mathematics/algebra-1/tools/test-canonical-lesson-companions-v1.mjs
+
       - name: Verify lesson reading and draft recovery
         run: node courses/mathematics/algebra-1/tools/test-lesson-reading-drafts.mjs
 
