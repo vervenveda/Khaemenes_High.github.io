@@ -61,3 +61,11 @@ print("PASS Grades 9–12 private journey popup integration")
 for token in ('type="date"', 'khaemenes-future-letter-v2', 'storedLetter.openDate>today()', 'sealed:true', 'function readLetter()', 'function presentLetter()'):
     assert token in journey, f"Future Self sealed-letter control missing: {token}"
 print("PASS Future Self opening-date and sealed export guards wired")
+
+progress=(ROOT/"grades/shared/student-course-progress-bars.js").read_text(encoding="utf-8")
+for grade in range(9,13):
+    html=(ROOT/f"grades/grade-{grade:02d}/student-profile/index.html").read_text(encoding="utf-8")
+    assert 'student-course-progress-bars.js' in html, f"Grade {grade} progress widget missing"
+for token in ('readLearner?.(initial)', 'snap?.progress?.percent', 'Not reported', 'aria-valuenow', 'learnerId()!==initial'):
+    assert token in progress, f"Course progress read-only guard missing: {token}"
+print("PASS Grades 9–12 source-reported progress bar integration")
