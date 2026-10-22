@@ -722,7 +722,7 @@ html:root:root body #grades{padding-top:52px}
         <p class="hero-lead">Choose your grade to begin studying, return to your student profile, or open the full course directory. Every learning pathway begins with a clear doorway.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#grades">Find My Classes</a>
-          <a class="button button-secondary" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student Profile</a>
+          <a class="button button-secondary" href="#student-portal" data-high-profile-door="1">Student Profile</a>
           <a class="button button-secondary" href="./courses/">All Courses</a>
         </div>
       </div>
@@ -741,7 +741,7 @@ html:root:root body #grades{padding-top:52px}
         </div>
         <nav class="high-quick-grid" aria-label="High School quick access">
           <a href="#grades"><span class="high-quick-mark">9–12</span><strong>My Grade</strong><small>Enter your classes</small></a>
-          <a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/"><span class="high-quick-mark">S</span><strong>Student</strong><small>Resume your learner profile</small></a>
+          <a href="#student-portal" data-high-profile-door="1"><span class="high-quick-mark">S</span><strong>Student</strong><small>Resume your learner profile</small></a>
           <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/"><span class="high-quick-mark">F</span><strong>Family</strong><small>Records, placement and support</small></a>
           <a href="./courses/"><span class="high-quick-mark">C</span><strong>Courses</strong><small>Browse every subject</small></a>
         </nav>
@@ -786,7 +786,7 @@ html:root:root body #grades{padding-top:52px}
             <button class="portal-button" type="submit">Save Local Profile</button>
           </form>
           <div class="profile-summary" id="profileSummary" aria-live="polite">No local student profile has been saved on this device.</div>
-          <div class="portal-links"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Open Academy Student Profile</a><a href="#grades">Go to Grade Classes</a>
+          <div class="portal-links"><a href="#student-portal" data-high-profile-door="1">Open Academy Student Profile</a><a href="#grades">Go to Grade Classes</a>
             <a id="openMyGrade" href="#grades">Choose My Grade</a>
             <a href="./stos/khaemenes/student/">Future Student Account · Not Active</a>
             <a href="./courses/">Course Directory</a>
@@ -1085,7 +1085,7 @@ html:root:root body #grades{padding-top:52px}
         <p>${escapeHTML(item.description)}</p>
         <div class="grade-card-actions">
           <a href="${item.url}">Grade ${item.grade} Classes</a>
-          <a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student Profile</a>
+          <a href="#student-portal" data-high-profile-door="1">Student Profile</a>
         </div>
         <div class="grade-language-slot">
           <details class="grade-language-details">
@@ -1454,5 +1454,21 @@ html:root:root body #grades{padding-top:52px}
 <script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-family-school-bridge.js" data-khaemenes-stage="high"></script>
 <script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script>
 <script src="https://vervenveda.com/assets/vnv-support.js" defer></script>
+<script>
+(()=>{"use strict";
+const links=document.querySelectorAll('[data-high-profile-door]');
+const read=k=>{try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}};
+const older=read("khaemenes-high-profile-v1");
+const active=read("khaemenes_active_learner_v1");
+const registry=read("khaemenes_family_registry_v1");
+const id=typeof active==="string"?active:active?.learnerId;
+const record=id?registry?.learners?.[id]:null;
+const grade=Number(record?.grade||older?.grade);
+const destination=Number.isInteger(grade)&&grade>=9&&grade<=12
+ ?"grades/grade-"+String(grade).padStart(2,"0")+"/student-profile/"
+ :"#student-portal";
+links.forEach(a=>{a.href=destination;if(destination==="#student-portal")a.title="Choose your grade in the High School student portal below";});
+})();
+</script>
 </body>
 </html>
