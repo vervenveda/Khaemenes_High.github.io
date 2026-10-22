@@ -112,6 +112,8 @@ function render(){
   });
  }
  quickSection.append(quickGrid);holder.append(quickSection);
+ // Student-first order: class schedule, learning today, pinned tools, then profile overview.
+ holder.prepend(list);holder.insertBefore(label,list);holder.insertBefore(today,quickSection);holder.append(identity);
 }
 render();
 window.addEventListener("storage",event=>{
