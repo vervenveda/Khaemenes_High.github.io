@@ -23,7 +23,7 @@ vm.runInContext(registrySource,box,{filename:"student-course-registry.js"});
 const store=box.KhaemenesHighCoursePins;
 const grade9=box.KhaemenesGrade09Courses;
 assert(store&&grade9);
-assert.equal(grade9.courses.length,7);
+assert.equal(grade9.courses.length,8,"Course manager exposes two math placement choices plus six non-math choices");
 assert.equal(grade9.getCourse("science-9").id,"integrated-science-9");
 assert.equal(grade9.getCourse("social-studies-9").id,"global-studies-9");
 data.set(store.PIN_KEY,JSON.stringify(["science-9","social-studies-9","english-10","world-language-9-arabic","pre-algebra","psychology-101"]));
