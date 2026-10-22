@@ -77,10 +77,16 @@ function profileKey(){const learner=activeLearner();return learner?`${BASE_KEY}:
 const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};
 const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
 function load(){
-  const learner=activeLearner(),p=read(profileKey(),{});
+  const learner=activeLearner(),p=read(profileKey(),{}),shared=learner?.learnerId?window.KhaemenesStudentProfileV2?.read?.(learner.learnerId):null;
+  const sharedFallback={
+    interests:shared?.learningMap?.interests?.join(', ')||'',
+    goals:shared?.compass?.weeklyGoal||'',
+    strengths:shared?.learningMap?.strengths?.join(', ')||'',
+    supports:shared?.learningMap?.supports?.join(', ')||''
+  };
   fields.forEach(id=>{
-    const fallback=id==='name'?(learner?.nickname||''):'';
-    document.getElementById(id).value=id==='name'?(p.name||p.displayName||p.nickname||fallback):(p[id]||'');
+    const fallback=id==='name'?(learner?.nickname||''):(sharedFallback[id]||'');
+    document.getElementById(id).value=id==='name'?(p.name||p.displayName||p.nickname||fallback):(p[id]||fallback);
   });
 }
 function data(){
@@ -93,8 +99,14 @@ function data(){
   return p;
 }
 document.getElementById('saveProfile').onclick=()=>{
-  if(!write(profileKey(),data())){status.hidden=false;status.textContent='Profile could not be saved on this device.';return}
-  status.hidden=false;status.textContent='Profile saved for the active learner on this device.';
+  const learner=activeLearner(),p=data();
+  if(!write(profileKey(),p)){status.hidden=false;status.textContent='Profile could not be saved on this device.';return}
+  const list=value=>String(value||'').split(/[\n,]+/).map(x=>x.trim()).filter(Boolean);
+  if(learner?.learnerId&&window.KhaemenesStudentProfileV2){
+    window.KhaemenesStudentProfileV2.updateLearningMap({interests:list(p.interests),strengths:list(p.strengths),supports:list(p.supports)},learner.learnerId);
+    window.KhaemenesStudentProfileV2.updateCompass({weeklyGoal:p.goals},learner.learnerId);
+  }
+  status.hidden=false;status.textContent='Profile saved for the active learner and synchronized with the Academy Learning Profile.';
 };
 document.getElementById('exportProfile').onclick=()=>{
   const b=new Blob([JSON.stringify(data(),null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');
