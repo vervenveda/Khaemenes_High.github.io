@@ -41,3 +41,5 @@ html:root:root body main .card .eyebrow{font-size:13px!important;line-height:1.5
  script.onerror=()=>console.warn("Optional Algebra I lesson tools failed to load; course content is unaffected.");
  document.head.append(script);
 })();
+
+;(()=>{const s=document.createElement("script");s.src=new URL("learning-tools-menu-v1.js",document.currentScript?.src||location.href).href;s.defer=true;document.head.append(s)})();
