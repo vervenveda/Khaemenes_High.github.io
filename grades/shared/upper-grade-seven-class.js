@@ -116,7 +116,7 @@ function render(){
 render();
 window.addEventListener("storage",event=>{
  const key=String(event.key||"");
- if(!key||key===quick?.storageKey||key.includes("khaemenes-high-pinned-courses-v2")||key.includes("khaemenes-high-language-choices-v1")||key==="khaemenes.learning.continuation.v1"||key==="khaemenes_student_profile_v2")render();
+ if(!key||key===quick?.storageKey||key.includes("khaemenes-high-pinned-courses-v2")||key.includes("khaemenes-high-language-choices-v1")||key==="khaemenes.learning.continuation.v1"||key===profile?.storageKey||key.startsWith(profile?.storagePrefix||"khaemenes.student-profile.v3:"))render();
 });
 window.addEventListener("khaemenes-course-pins-changed",render);
 window.addEventListener("khaemenes-learning-continuation-changed",render);
