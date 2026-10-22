@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="../../assets/khaemenes-grade-landing-v1.css">
 </head>
 <body id="top">
-<div style="padding:12px 24px;text-align:center;background:#172d42"><a href="student-profile/" style="color:#f5dfa7">My Seven Classes · Student Profile &amp; Daily Schedule →</a></div>
 <a class="skip" href="#main">Skip to main content</a>
 <div class="ribbon"><strong>Khaemenes Academy</strong><span>High School</span><span>Grade 11</span><a href="https://vervenveda.com/Khaemenes_Academy.github.io/" rel="noopener">Academy Home</a></div>
 <header class="site-header">
@@ -23,6 +22,7 @@
       <a href="../../">High School</a><a href="../../courses/">Courses</a><a href="../../courses/mathematics/">Mathematics</a><a href="../../mentor/?stage=high&amp;subject=general&amp;course=grade-11">Mentor</a>
     </nav>
     <div class="head-actions"><a class="head-btn primary" href="#courses">Open Courses</a></div>
+    <div class="grade-ecosystem-slot" data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div>
   </div>
 </header>
 <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/" rel="noopener">Khaemenes Academy</a><span>›</span><a href="../../">High School</a><span>›</span><strong>Grade 11</strong></nav>
@@ -38,27 +38,25 @@
 <main id="main">
 <section class="section">
   <div class="shell">
-    <div class="heading"><p class="kicker">Grade 11 Front Desk</p><h2>A junior-year home for analysis, systems, and growing independence.</h2><p>Start from the doorway that matches what you need today. The grade page keeps navigation simple while each course remains responsible for its own learning and mastery records.</p></div>
+    <div class="heading"><p class="kicker">Grade 11 Front Desk</p><h2>A calm Grade 11 home for the daily learning path.</h2><p>Start from the doorway that matches what you need today. Your Student Profile keeps seven classes, current work, daily continuation, learner preferences, and support in one reliable place while each course remains responsible for its own mastery records.</p></div>
     <div class="front-grid"><article class="front-card" style="--accent:#315f86">
-        <span class="front-mark">C</span>
-        <h3>Course Directory</h3>
-        
-        <p>Open the High School catalog for active courses and electives without changing formal learner placement.</p>
-        <a class="btn primary" href="../../courses/">Open Course Directory</a>
+        <span class="front-mark">S</span>
+        <h3>Student Dashboard</h3>
+        <div class="student-name" id="studentName">Junior Home</div>
+        <p>Open your learner home for seven classes, current work, Quick Pins, records, profile tools, and next steps.</p>
+        <a class="btn primary" href="student-profile/">Open Student Dashboard</a>
       </article>
 <article class="front-card" style="--accent:#4f7f7a">
-        <span class="front-mark">M</span>
-        <h3>Mathematics Hall</h3>
-        
-        <p>Geometry, Algebra II, or Precalculus/Trigonometry according to prerequisite evidence and readiness.</p>
-        <a class="btn" href="../../courses/mathematics/">Open Mathematics Hall</a>
+        <span class="front-mark">D</span>
+        <h3>Daily Lessons</h3>
+        <p>Move directly into Learning Today and the next source-course step without searching through the full campus directory.</p>
+        <a class="btn" href="student-profile/#learning-today">Open Daily Lessons</a>
       </article>
 <article class="front-card" style="--accent:#96594e">
-        <span class="front-mark">A</span>
-        <h3>Archaemenes</h3>
-        
-        <p>Use mentor support for planning, navigation, study direction, and practical next steps.</p>
-        <a class="btn" href="../../stos/mentor/">Open Mentor</a>
+        <span class="front-mark">P</span>
+        <h3>Profile &amp; Settings</h3>
+        <p>Open goals, strengths, supports, accessibility, language, workspace controls, and learner-owned evidence in the Academy Learning Profile.</p>
+        <a class="btn" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Open Profile &amp; Settings</a>
       </article></div>
   </div>
 </section>
@@ -100,24 +98,27 @@
 </section>
 <section class="section dark" id="support">
   <div class="shell">
-    <div class="heading"><p class="kicker">Student Support</p><h2>Clear doors for help, records, and next steps.</h2><p>Use these routes when you need planning, course navigation, progress records, or Academy support.</p></div>
+    <div class="heading"><p class="kicker">Student Support</p><h2>Clear doors for records, practice, and your profile.</h2><p>These are the same support categories used in the Grade 9 entrance so the High School feels familiar from year to year.</p></div>
     <div class="support-grid"><article class="support-card">
-        <h3>Mentor Support</h3><p>Ask for planning, study direction, course navigation, or help deciding what to do next.</p>
-        <a class="btn" href="../../mentor/?stage=high&subject=general&course=grade-11&source=grades%2Fgrade-11%2F">Ask Mentor</a>
+        <h3>Grades &amp; Records</h3><p>Open your seven-class profile, source-course continuation records, learner evidence, and current academic next steps.</p>
+        <a class="btn" href="student-profile/#seven-classes">Open Records</a>
       </article>
 <article class="support-card">
-        <h3>Course Directory</h3><p>Browse all High School courses without changing the learner's formal placement or mastery record.</p>
-        <a class="btn" href="../../courses/">Open Course Directory</a>
+        <h3>Games &amp; Practice</h3><p>Use the Verve N Veda Arcade for logic, vocabulary, strategy, and learning breaks without replacing course instruction.</p>
+        <a class="btn" href="https://vervenveda.com/arcade.github.io/">Open Arcade</a>
       </article>
 <article class="support-card">
-        <h3>High School Home</h3><p>Return to the High School campus for grade pathways, resources, student tools, and Academy services.</p>
-        <a class="btn" href="../../">Return to High School</a>
+        <h3>My Profile</h3><p>Review goals, interests, strengths, supports, workspace preferences, and learner-owned Evidence Passport entries.</p>
+        <a class="btn" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Open Profile</a>
       </article></div>
   </div>
 </section>
 </main>
 <footer class="footer"><strong>Khaemenes Academy · High School · Grade 11</strong><br>Centered learning pathways · readable course access · mastery remains course-authoritative</footer>
 
+<script>
+(()=>{"use strict";let learner=null;try{const active=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null"),family=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null"),id=typeof active==="string"?active:active?.learnerId;learner=id?family?.learners?.[id]||null:null}catch{}const name=learner?.nickname||learner?.displayName||learner?.name||"Junior Home";const node=document.getElementById("studentName");if(node)node.textContent=name;})();
+</script>
 <script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script>
 <script src="../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script defer src="../../courses/mathematics/algebra-1/assets/learning-tools-menu-v1.js" data-academy-learning-tools="v1"></script>
