@@ -31,7 +31,14 @@ function normalize(value={}){
   avatarMark:AVATAR_MARKS.has(v.avatarMark)?v.avatarMark:DEFAULT.avatarMark
  };
 }
-function read(){try{return normalize(JSON.parse(localStorage.getItem(key())||"{}"))}catch{return {...DEFAULT}}}
+function read(){
+ try{
+  const raw=localStorage.getItem(key());
+  if(raw)return normalize(JSON.parse(raw));
+  const shared=window.KhaemenesStudentProfileV2?.read?.(activeLearner())?.workspace;
+  return shared?normalize({theme:shared.theme,density:shared.density}):{...DEFAULT};
+ }catch{return {...DEFAULT}}
+}
 function apply(value=read()){
  const p=normalize(value),body=document.body;
  if(!body)return p;
@@ -47,6 +54,7 @@ function write(value){
   const owner=activeLearner(),p=normalize(value);
   if(activeLearner()!==owner)return false;
   localStorage.setItem(key(),JSON.stringify({...p,updatedAt:new Date().toISOString()}));
+  window.KhaemenesStudentProfileV2?.updateWorkspace?.({theme:p.theme,density:p.density},owner);
   apply(p);
   if(typeof window.dispatchEvent==="function"&&typeof CustomEvent==="function"){
     window.dispatchEvent(new CustomEvent("khaemenes-grade09-design-changed",{detail:{learnerId:owner,preferences:p}}));
@@ -54,7 +62,14 @@ function write(value){
   return true;
  }catch{return false}
 }
-function clear(){try{localStorage.removeItem(key());apply(DEFAULT);return true}catch{return false}}
+function clear(){
+ try{
+  const owner=activeLearner();
+  localStorage.removeItem(key());
+  window.KhaemenesStudentProfileV2?.updateWorkspace?.({theme:"academy",density:"comfortable"},owner);
+  apply(DEFAULT);return true;
+ }catch{return false}
+}
 function avatarText(initials="S",preferences=read()){
  const p=normalize(preferences);
  return p.avatarMark==="initials"?String(initials||"S").slice(0,2).toUpperCase():(MARKS[p.avatarMark]||String(initials||"S").slice(0,2).toUpperCase());
