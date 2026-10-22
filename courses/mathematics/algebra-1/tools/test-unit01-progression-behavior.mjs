@@ -17,8 +17,11 @@ const ctx=vm.createContext({window,document,localStorage,console,URL,URLSearchPa
 // Production functions live inside an IIFE. Expose read-only references in the
 // isolated test VM; do not change the shipped lesson engine or student storage.
 const production=fs.readFileSync(root+'unit01.js','utf8');
-assert.ok(production.trimEnd().endsWith('})();'),'Unexpected lesson engine wrapper');
-const instrumented=production.replace(/\}\)\(\);\s*$/, 'window.__audit={lessonUnlocked,lessonMastered,weekMastered,allUnitWeeksMastered,allLessonsMastered};})();');
+// Instrument only the core progression definitions, not the browser-only
+// renderer, navigation loader or optional tools adapter.
+const coreEnd=production.indexOf('/* Core lesson must render independently');
+assert.ok(coreEnd>0,'Unit 01 core progression boundary missing');
+const instrumented=production.slice(0,coreEnd)+'window.__audit={lessonUnlocked,lessonMastered,weekMastered,allUnitWeeksMastered,allLessonsMastered};})();';
 vm.runInContext(instrumented,ctx,{filename:'unit01.js'});
 assert.ok(window.__audit,'Unable to instrument Unit 01 internal progression methods');
 const unlocked=n=>window.__audit.lessonUnlocked(n);
