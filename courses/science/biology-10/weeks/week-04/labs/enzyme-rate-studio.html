@@ -14,4 +14,5 @@ $('run').addEventListener('click',()=>{const s=settings(),variation=[-.03,.01,.0
 $('clear').addEventListener('click',()=>{if(!confirm('Clear recorded trials? Export first if you want a backup. Journal text will remain.'))return;rows=[];persist();draw()});
 $('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({schema:'bio10-week04-model-lab-v1',course:'KH-SCI-BIO10',week:4,model:'Illustrative Gaussian temperature/pH and saturation formula',units:'relative product units per minute (synthetic)',exportedAt:new Date().toISOString(),rows,prediction:$('prediction').value,explanation:$('explanation').value},null,2)],{type:'application/json'});const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='biology10-week04-enzyme-lab.json';document.body.appendChild(a);a.click();setTimeout(()=>{a.remove();URL.revokeObjectURL(u)},1000)});
 draw()})();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

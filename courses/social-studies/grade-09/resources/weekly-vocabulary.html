@@ -10,4 +10,5 @@ function check(){const answers=form.map((q,i)=>document.querySelector('input[nam
 function exportFile(){if(!last){status.textContent='Complete the vocabulary quiz before exporting a scored attempt.';return}last.student=$('studentName').value.trim();last.application=$('application').value.trim();const u=URL.createObjectURL(new Blob([JSON.stringify(last,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download='khaemenes-grade9-vocabulary-week-'+String(last.week).padStart(2,'0')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
 $('start').onclick=start;$('print').onclick=()=>window.print();$('export').onclick=exportFile;week.onchange=()=>{history.replaceState(null,'','?week='+week.value);render()};fetch('../data/glossary.json').then(r=>{if(!r.ok)throw Error('Could not load glossary');return r.json()}).then(data=>{entries=Object.entries(data).map(([term,v])=>({term,definition:v.definition,weeks:v.weeks||[]}));render()}).catch(err=>status.textContent=err.message+'; connect to retrieve the glossary before using offline mode.');
 })();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

@@ -35,4 +35,5 @@ function save(){const w=week(),d=day(),moves=exerciseFor(w,d);const activities=[
 function download(name,content,type){const b=new Blob([content],{type}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500)}
 $("save").onclick=save;$("export").onclick=()=>download("pe-movement-log.json",JSON.stringify({schema:"khae-pe-movement-v2",grade:Number($("grade").value),verified:false,entries:load()},null,2),"application/json");
 $("csv").onclick=()=>{const lines=[["week","day","exercise","category","suggested","actual","effort","notes","savedAt"]];Object.values(load()).forEach(v=>(v.activities||[]).forEach(m=>lines.push([v.week,v.day,m.name,m.category,m.base,m.actual,v.effort,v.notes,v.savedAt])));download("pe-movement-log.csv",lines.map(a=>a.map(v=>'"'+String(v??"").replace(/"/g,'""')+'"').join(",")).join("\r\n"),"text/csv")};
-["grade","week","day","learner"].forEach(k=>$(k).addEventListener("change",render));render();</script></body></html>
+["grade","week","day","learner"].forEach(k=>$(k).addEventListener("change",render));render();</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

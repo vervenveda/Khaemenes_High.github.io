@@ -52,4 +52,5 @@ $("clear").addEventListener("click",()=>{input.value="";render();feedback.textCo
 $("copy").addEventListener("click",async()=>{const value=input.value.trim();if(!value){feedback.textContent="Enter a word or question first.";return}try{if(!navigator.clipboard?.writeText)throw Error("Clipboard unavailable");await navigator.clipboard.writeText(value);feedback.textContent="Copied. Open a resource and paste your term or question."}catch{input.focus();input.select();feedback.textContent="Clipboard access unavailable. Your text is selected; use your device's Copy command."}});
 render();
 })();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

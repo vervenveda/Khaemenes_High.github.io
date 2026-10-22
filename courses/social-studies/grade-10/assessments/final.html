@@ -84,4 +84,5 @@ function collect(){
 document.getElementById('saveBtn').onclick=()=>{localStorage.setItem(STORE,JSON.stringify(collect()));alert('Draft saved in this browser.');};
 document.getElementById('scoreBtn').onclick=()=>{const d=collect();let correct=0;QUESTIONS.forEach((q,i)=>{const ok=d.answers[i]===q.answer;if(ok)correct++;document.getElementById('fb'+i).innerHTML=`<p class="${ok?'good':'bad'}">${ok?'Correct':'Review'}: ${esc(q.explanation)}</p>`;});const pct=Math.round(correct/QUESTIONS.length*100);document.getElementById('result').innerHTML=`<p class="score">Objective score: ${correct} / ${QUESTIONS.length} (${pct}%)</p><p>Written responses are scored separately by the teacher.</p>`;localStorage.setItem(STORE,JSON.stringify(d));};
 render();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

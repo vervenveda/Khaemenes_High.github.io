@@ -12,4 +12,5 @@ document.getElementById("load").onclick=async()=>{const p=selected();if(!p)retur
 document.getElementById("export").onclick=()=>{const p=selected();if(!p){status.textContent="Select a mapped lesson first.";return}const checks=Object.fromEntries([...document.querySelectorAll("[data-qa]")].map(x=>[x.dataset.qa,x.checked]));const report={lesson_id:p.lesson_id,asset_id:p.asset_id,checkedAt:new Date().toISOString(),checks,allPassed:Object.values(checks).every(Boolean),note:"Human-observed local review only. Not a published activation."};const blob=new Blob([JSON.stringify(report,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="algebra-video-review-"+p.lesson_id+".json";a.click();URL.revokeObjectURL(url);status.textContent="Review file exported. All checks "+(report.allPassed?"selected; manual release approval still required.":"are not complete.")};
 document.getElementById("clear").onclick=()=>{document.querySelectorAll("[data-qa]").forEach(x=>x.checked=false);status.textContent="Checklist cleared."};init();
 })();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

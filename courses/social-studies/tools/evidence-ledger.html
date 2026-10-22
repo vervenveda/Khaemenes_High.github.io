@@ -43,4 +43,5 @@ el('file').onchange=async()=>{const file=el('file').files[0];el('file').value=''
  const obj=JSON.parse(await file.text());if(obj.schema!==2||obj.app!=='khaemenes-evidence-ledger')throw Error('Not a v2 ledger backup');
  const d=validate(obj.data);if(!protectIncoming(d))return;apply(d);status('Validated ledger imported for '+d.student+'. Select Save on this device to keep it locally.')}catch(e){status('Import rejected: '+e.message)}};
 status('Enter a student name and grade to save or load private local evidence. Legacy v1 shared-storage data is not automatically loaded to avoid mixing learners.');
-})();</script></body></html>
+})();</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

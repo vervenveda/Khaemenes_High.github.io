@@ -28,4 +28,5 @@ function render(){submitted=false;const q=bank[index];$("count").textContent="Un
 $("check").addEventListener("click",()=>{if(submitted)return;const selected=document.querySelector('input[name="choice"]:checked');if(!selected){$("feedback").textContent="Choose an answer before checking.";return}submitted=true;const q=bank[index],ok=Number(selected.value)===q[3];if(ok)correct++;$("feedback").textContent=(ok?"Correct. ":"Review: ")+q[4];document.querySelectorAll('input[name="choice"]').forEach(input=>input.disabled=true);$("check").disabled=true;$("next").disabled=false});
 $("next").addEventListener("click",()=>{if(!submitted)return;index++;if(index<bank.length){render();return}$("count").textContent="Challenge complete";$("prompt").textContent="You finished all sixteen questions.";$("options").replaceChildren();$("feedback").textContent="Result: "+correct+" of "+bank.length+" correct. This is independent practice, not an official assessment. You may restart to review.";$("check").disabled=true;$("next").disabled=true});
 $("restart").addEventListener("click",()=>{index=0;correct=0;render()});render();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

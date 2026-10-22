@@ -41,4 +41,5 @@ function answer(choice){if(answered)return;answered=true;const q=bank[index],ok=
 $('next').addEventListener('click',()=>{index++;if(index<bank.length){render();return}$('progress').value=bank.length;$('counter').textContent='Completed';$('question').textContent='Your results';$('options').replaceChildren();$('feedback').textContent='You answered '+correct+' of '+bank.length+' correctly ('+Math.round(correct/bank.length*100)+'%). Review the explanations and try again to strengthen your understanding.';saveResult(Math.round(correct/bank.length*100));$('next').hidden=true;const restart=document.createElement('button');restart.textContent='Play again';restart.addEventListener('click',()=>{index=0;correct=0;render()});$('options').appendChild(restart)});
 showSavedRecord();render();
 })();
-</script></main></body></html>
+</script></main><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

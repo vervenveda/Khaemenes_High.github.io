@@ -56,4 +56,5 @@ const K='khae12_tool_'+location.pathname.split('/').pop(), fields=[...document.q
 try{const d=JSON.parse(localStorage.getItem(K)||'{}');fields.forEach((x,i)=>x.value=d[i]||'')}catch(e){}
 document.getElementById('save').onclick=()=>{const d={};fields.forEach((x,i)=>d[i]=x.value);localStorage.setItem(K,JSON.stringify(d));document.getElementById('msg').textContent='Draft saved in this browser.'};
 document.getElementById('clear').onclick=()=>{if(confirm('Clear this local draft?')){localStorage.removeItem(K);fields.forEach(x=>x.value='');document.getElementById('msg').textContent='Draft cleared.'}};
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

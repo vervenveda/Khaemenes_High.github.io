@@ -13,4 +13,5 @@ $('record').addEventListener('click',()=>{const c=settings(),v=calculate(c.bound
 $('reset').addEventListener('click',()=>{if(!confirm('Clear saved simulation trials? Export them first if you need a backup.'))return;rows=[];save();display()});
 $('export').addEventListener('click',()=>{const out={schema:'chem11-w14-masslab-v1',course:'KH-SCI-CHEM11',week:14,source:'Synthetic teaching model',exportedAt:new Date().toISOString(),rows,prediction:$('prediction').value,reflection:$('reflection').value};const blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='chemistry11-week14-masslab.json';document.body.appendChild(a);a.click();setTimeout(()=>{a.remove();URL.revokeObjectURL(url)},1000)});
 display()})();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

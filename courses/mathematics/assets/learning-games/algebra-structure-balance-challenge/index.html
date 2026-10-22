@@ -21,4 +21,5 @@ function render(){graded=false;$("count").textContent="Question "+(index+1)+" of
 $("check").addEventListener("click",()=>{if(graded)return;const chosen=document.querySelector('input[name="selection"]:checked');if(!chosen){$("status").textContent="Choose one answer to continue.";return}graded=true;let ok=Number(chosen.value)===tasks[index][3];if(ok)correct++;$("status").textContent=(ok?"Correct. ":"Review: ")+tasks[index][4];document.querySelectorAll('input[name="selection"]').forEach(x=>x.disabled=true);$("check").disabled=true;$("next").disabled=false});
 $("next").addEventListener("click",()=>{if(!graded)return;index++;if(index<tasks.length){render();return}$("count").textContent="Complete";$("prompt").textContent="Round complete";$("choices").replaceChildren();$("status").textContent="You answered "+correct+" of "+tasks.length+" correctly. Review the readings if needed; this is formative practice only.";$("check").disabled=true;$("next").disabled=true});
 $("restart").addEventListener("click",()=>{index=0;correct=0;render()});render();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

@@ -52,4 +52,5 @@ else if(model==="balance"){e("line",{x1:360,y1:30,x2:360,y2:190,stroke:"#6b5945"
 else{const x=t=>360+t*45;e("line",{x1:70,y1:130,x2:650,y2:130,stroke:"#352d27","stroke-width":3});for(let n=-6;n<=6;n++){e("line",{x1:x(n),x2:x(n),y1:123,y2:137,stroke:"#352d27"});label(x(n),166,String(n))}e("line",{x1:x(-3),x2:640,y1:130,y2:130,stroke:"#246b9d","stroke-width":8});e("circle",{cx:x(-3),cy:130,r:9,fill:"#fff",stroke:"#246b9d","stroke-width":3});$("description").textContent="The solution of −2x < 6 is x > −3: open at −3 and shade right. At x="+v+", −2x="+(-2*v)+", so the original inequality is "+(-2*v<6?"true":"false")+"."}
 svg.setAttribute("aria-label",$("description").textContent)}
 $("update").addEventListener("click",draw);$("model").addEventListener("change",draw);draw();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

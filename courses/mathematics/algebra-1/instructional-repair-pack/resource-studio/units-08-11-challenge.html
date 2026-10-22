@@ -26,4 +26,5 @@ function show(){submitted=false;const q=bank[pos];$("count").textContent="Unit "
 $("check").addEventListener("click",()=>{if(submitted)return;const choice=document.querySelector('input[name="answer"]:checked');if(!choice){$("feedback").textContent="Please choose an answer first.";return}submitted=true;const q=bank[pos],ok=Number(choice.value)===q[3];if(ok)correct++;$("feedback").textContent=(ok?"Correct. ":"Review: ")+q[4];document.querySelectorAll('input[name="answer"]').forEach(x=>x.disabled=true);$("check").disabled=true;$("next").disabled=false});
 $("next").addEventListener("click",()=>{if(!submitted)return;pos++;if(pos<bank.length){show();return}$("count").textContent="Practice round complete";$("prompt").textContent="All sixteen questions completed.";$("options").replaceChildren();$("feedback").textContent="You answered "+correct+" of "+bank.length+" correctly. This is formative practice, not official mastery evidence.";$("check").disabled=true;$("next").disabled=true});
 $("restart").addEventListener("click",()=>{pos=0;correct=0;show()});show();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

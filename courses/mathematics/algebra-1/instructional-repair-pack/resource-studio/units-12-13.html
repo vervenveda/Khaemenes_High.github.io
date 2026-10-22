@@ -21,4 +21,5 @@ else if(mode==="finance"){let rate=.02+.01*n,rows=[];line(65,315,620,315);line(6
 else{const fixedA=180+10*(n-2),rows=[];line(65,315,630,315);line(65,40,65,315);let A=[],B=[];for(let count=0;count<=40;count+=5){const ca=fixedA+8*count,cb=80+12*count;let x=70+count*13,yA=330-ca*.42,yB=330-cb*.42;A.push(x+","+yA);B.push(x+","+yB);rows.push([count,"$"+ca,"$"+cb])}e("polyline",{points:A.join(" "),stroke:"#a25835",fill:"none","stroke-width":3});e("polyline",{points:B.join(" "),stroke:"#205e8d",fill:"none","stroke-width":3});const cross=(fixedA-80)/4;label(335,32,"A (brown), B (blue)");$("description").textContent="A(n)="+fixedA+"+8n dollars; B(n)=80+12n dollars. Break-even n="+cross+". Compare prices only for nonnegative whole student counts, and check service quality, capacity and accessibility.";makeTable(["Students","A","B"],rows)}
 svg.setAttribute("aria-label",$("description").textContent)}
 $("mode").addEventListener("change",draw);$("draw").addEventListener("click",draw);draw();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

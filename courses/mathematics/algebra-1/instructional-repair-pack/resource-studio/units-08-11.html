@@ -40,4 +40,5 @@ else if(mode==="parabola"){line(75,280,620,280);line(340,50,340,345);let points=
 else{const width=80*n,height=60*n,startX=160,startY=315;el("polygon",{points:startX+","+startY+" "+(startX+width)+","+startY+" "+(startX+width)+","+(startY-height),fill:"#d9e9f1",stroke:"#275c84","stroke-width":3});text(startX+width/2,startY+30,String(3*n));text(startX+width+32,startY-height/2,String(4*n));text(startX+width/2+24,startY-height/2-15,String(5*n));$("description").textContent="Right triangle legs "+(3*n)+" and "+(4*n)+" yield hypotenuse √("+(3*n)+"²+"+(4*n)+"²)="+(5*n)+". This visual represents coordinate displacement and the distance formula."}
 svg.setAttribute("aria-label",$("description").textContent)}
 $("draw").addEventListener("click",draw);$("model").addEventListener("change",draw);draw();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

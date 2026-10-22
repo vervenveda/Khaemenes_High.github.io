@@ -21,4 +21,5 @@ function render(){answered=false;const q=bank[i];$("count").textContent="Unit "+
 $("check").addEventListener("click",()=>{if(answered)return;let selected=document.querySelector('input[name="option"]:checked');if(!selected){$("feedback").textContent="Select one answer to continue.";return}answered=true;let q=bank[i],ok=Number(selected.value)===q[3];if(ok)correct++;$("feedback").textContent=(ok?"Correct. ":"Review: ")+q[4];document.querySelectorAll('input[name="option"]').forEach(x=>x.disabled=true);$("check").disabled=true;$("next").disabled=false});
 $("next").addEventListener("click",()=>{if(!answered)return;i++;if(i<bank.length){render();return}$("count").textContent="Round complete";$("prompt").textContent="Well done finishing the challenge.";$("choices").replaceChildren();$("feedback").textContent="You answered "+correct+" of "+bank.length+" correctly. This score is for practice only and has not been saved.";$("check").disabled=true;$("next").disabled=true});
 $("restart").addEventListener("click",()=>{i=0;correct=0;render()});render();
-</script></body></html>
+</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</body></html>

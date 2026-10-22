@@ -47,5 +47,6 @@ add("mentor",source?`I’m here to support the current learning page. Tell me wh
 form.addEventListener("submit",e=>{e.preventDefault();const text=safe(question.value,1200).trim();if(!text)return;add("student",text);question.value="";status.textContent="Working through the current learning context…";window.setTimeout(()=>{add("mentor",answer(text));status.textContent=""},120)});document.querySelectorAll(".prompt").forEach(b=>b.addEventListener("click",()=>{question.value=b.textContent;question.focus()}));
 })();
 </script>
+<script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
 </body>
 </html>
