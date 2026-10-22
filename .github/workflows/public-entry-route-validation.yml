@@ -8,6 +8,9 @@ on:
       - "**/*.json"
       - "**/*.webmanifest"
       - "tools/validate-public-entry-routes.mjs"
+      - "tools/validate-high-school-landing-parity.mjs"
+      - "assets/khaemenes-grade-landing-v1.css"
+      - "assets/vnv-beta-link.js"
       - ".github/workflows/public-entry-route-validation.yml"
   push:
     branches: [ main ]
@@ -26,3 +29,5 @@ jobs:
           node-version: "20"
       - name: Validate public entry routes
         run: node tools/validate-public-entry-routes.mjs
+      - name: Validate High School landing parity
+        run: node tools/validate-high-school-landing-parity.mjs
