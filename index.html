@@ -629,8 +629,26 @@ html:root:root body #grades{padding-top:52px}
 @media(max-width:1120px){#grades .grade-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){#grades{padding:44px 12px 52px}#grades .grade-grid{grid-template-columns:1fr}.grade-card-actions,.grade-language-actions{grid-template-columns:1fr}}
 </style>
+<link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css">
+<link rel="stylesheet" href="https://vervenveda.com/assets/vnv-ecosystem-menu.css">
 </head>
 <body id="top">
+<header data-khae-header class="khae-global-campus-header">
+  <div data-khae-header-inner>
+    <a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/" aria-label="Khaemenes Academy home">
+      <span data-khae-brand-mark>9–12</span>
+      <span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>High School · Grades 9–12</small></span>
+    </a>
+    <nav data-khae-nav aria-label="Academy global navigation">
+      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy Home</a>
+      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a>
+      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a>
+      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/teacher-admin/">Teacher</a>
+    </nav>
+    <div data-khae-actions><a data-khae-secondary href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student Profile</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a></div>
+    <div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div>
+  </div>
+</header>
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <div class="network-ticker" id="ticker">
@@ -1471,5 +1489,7 @@ const destination=Number.isInteger(grade)&&grade>=9&&grade<=12
 links.forEach(a=>{a.href=destination;if(destination==="#student-portal")a.title="Choose your grade in the High School student portal below";});
 })();
 </script>
+<script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.js" defer></script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-menu.js" defer></script>
 </body>
 </html>
