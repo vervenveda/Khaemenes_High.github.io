@@ -91,7 +91,9 @@ function syncAcademyPins(ids,id=activeLearner()){
   store.learners[id]=[...preserved,...high];
   store.updatedAt=new Date().toISOString();
   storage().setItem(ACADEMY_PIN_KEY,JSON.stringify(store));
-  window.dispatchEvent(new CustomEvent("khaemenes-course-pins-changed",{detail:{learnerId:id}}));
+  if(typeof window.dispatchEvent==="function"&&typeof CustomEvent==="function"){
+    window.dispatchEvent(new CustomEvent("khaemenes-course-pins-changed",{detail:{learnerId:id}}));
+  }
   return true;
  }catch{return false}
 }
