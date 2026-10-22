@@ -19,7 +19,7 @@ function render(){
  const math=el("select");math.setAttribute("aria-label","Choose current math pathway");
  [["","Use existing placement"],["pre-algebra","Pre-Algebra"],["algebra-1","Algebra I"]].forEach(([v,t])=>{let o=el("option",t);o.value=v;math.append(o)});
  math.value=registry.mathPathway()||"";
- math.addEventListener("change",()=>{if(math.value){registry.setMathPathway(math.value,{pin:false})}render()});
+ math.addEventListener("change",()=>{if(math.value){registry.setMathPathway(math.value,{pin:true})}render()});
  mathLabel.append(math);config.append(mathLabel);
  const langLabel=el("label","Foreign language ");
  const select=el("select");select.setAttribute("aria-label","Choose Grade 09 foreign language");
