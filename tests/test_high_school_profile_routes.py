@@ -49,3 +49,11 @@ shared_dreams=(ROOT/"grades/shared/student-achievements-dreams.js").read_text(en
 for requirement in ("achievement-constellation", "dream-discovery-board", "readAcademyProfile", "localStorage.setItem(boardKey", "khae-learning-portfolio-v1:learner:"):
     assert requirement in shared_dreams, f"Missing dream/constellation safeguard: {requirement}"
 print("PASS Grades 9–12 evidence stars and learner-scoped dream board wiring")
+
+journey=(ROOT/"grades/shared/student-learning-journey.js").read_text(encoding="utf-8")
+for grade in range(9,13):
+    html=(ROOT/f"grades/grade-{grade:02d}/student-profile/index.html").read_text(encoding="utf-8")
+    assert 'student-learning-journey.js' in html, f"Grade {grade} journey popup missing"
+for token in ("showModal()", 'dialog.close()', "readAcademyProfile", "futureSelfLetter", "localStorage.setItem(notesKey", "if(!authorized())return"):
+    assert token in journey, f"Journey safety or control missing: {token}"
+print("PASS Grades 9–12 private journey popup integration")
