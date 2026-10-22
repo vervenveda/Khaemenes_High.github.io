@@ -23,7 +23,7 @@
   const ACADEMY_FAMILY_URL="https://vervenveda.com/Khaemenes_Academy.github.io/family/";
   const HIGHER_SCHOLAR_URL="https://vervenveda.com/Khaemenes_Academy.github.io/adult/";
   const HIGH_SCHOOL_ROOT="https://vervenveda.com/Khaemenes_High.github.io/";
-  const CONTRIBUTE_URL="https://vervenveda.com/#vnv-global-support";
+  const CONTRIBUTE_URL="https://vervenveda.com/#support";
   const LINGUISTICS_CONTINUATION_URL="https://vervenveda.com/Khaemenes_Linguistics.github.io/assets/khaemenes-linguistics-continuation.js";
   const ELEMENTARY_CONTINUATION_URL="https://vervenveda.com/Khaemenes_Elementary.github.io/assets/khaemenes-elementary-continuation-publisher.js";
   const MIDDLE_CONTINUATION_URL="https://vervenveda.com/Khaemenes_Middle.github.io/assets/khaemenes-middle-continuation-publisher.js";
