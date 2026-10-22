@@ -41,7 +41,7 @@ let failed=false;
 const ok=(value,message)=>{if(value)console.log("OK "+message);else{failed=true;console.error("FAIL "+message)}};
 
 const widget=read("assets/vnv-beta-link.js");
-ok(widget.includes('version:"1.7.2"'),"beta/profile widget is v1.7.2");
+ok(widget.includes('version:"1.7.3"'),"beta/profile widget is v1.7.3");
 ok(widget.includes('khaemenesHighStudentProfileLink'),"student profile quick link exists");
 ok(widget.includes('Khaemenes_Academy.github.io/student/'),"student profile link uses the canonical Academy Student Portal");
 ok(widget.includes('khaemenesFamilyBridge'),"existing Academy learner continuity box is reused when present");
