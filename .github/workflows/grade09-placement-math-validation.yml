@@ -13,6 +13,8 @@ on:
       - scripts/test_grade09_two_learner_pins.mjs
       - scripts/validate_grade09_translator_gateway.mjs
       - scripts/validate_upper_grade_seven_class_journey.mjs
+      - scripts/validate_high_school_return_to_classes.mjs
+      - assets/high-school-return-to-classes.js
       - grades/shared/upper-grade-seven-class.js
       - grades/grade-10/**
       - grades/grade-11/**
@@ -62,6 +64,9 @@ jobs:
 
       - name: Verify two learner class pin and language isolation
         run: node scripts/test_grade09_two_learner_pins.mjs
+
+      - name: Validate return-to-class navigation for Grade 9–12
+        run: node scripts/validate_high_school_return_to_classes.mjs
 
       - name: Check shared JavaScript syntax
         run: |
