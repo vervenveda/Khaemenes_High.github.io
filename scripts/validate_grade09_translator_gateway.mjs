@@ -8,7 +8,9 @@ const pages=[
 "courses/mathematics/pre-algebra/index.html","courses/mathematics/algebra-1/index.html",
 "courses/language-arts/english-9/index.html","courses/social-studies/grade-09/index.html",
 "courses/science/integrated-science-9/index.html","courses/physical-education/index.html",
-"electives/grades/grade-09/psych-101/index.html"
+"electives/grades/grade-09/psych-101/index.html",
+"grades/grade-10/index.html","grades/grade-10/algebra-1/index.html",
+"grades/grade-11/index.html","grades/grade-12/index.html"
 ];
 const translator="assets/vnv-language.js";
 assert.ok(fs.existsSync(translator));
