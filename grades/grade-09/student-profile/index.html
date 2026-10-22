@@ -172,11 +172,14 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   if(!registry)return;
   const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};
   const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-
-  const p=read('khaemenes-high-profile-v1',null)||read('khaemenes-grade09-profile-v1',null)||{};
-  const name=p.displayName||p.name||p.nickname||'Student';
+  const academyProfile=window.KhaemenesCourseEntryContract?.readAcademyProfile?.()||null;
+  const scoped=base=>academyProfile&&window.KhaemenesCourseEntryContract?.scopedKey
+    ? window.KhaemenesCourseEntryContract.scopedKey(base,academyProfile)
+    : base;
+  const p=read(scoped('khaemenes-high-profile-v1'),null)||(!academyProfile?read('khaemenes-grade09-profile-v1',null):null)||{};
+  const name=p.displayName||p.name||p.nickname||academyProfile?.name||'Student';
   const initials=(name.split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('')||'S').toUpperCase();
-  const note=localStorage.getItem('khaemenes-grade09-daily-note-v1');
+  const note=localStorage.getItem(scoped('khaemenes-grade09-daily-note-v1'));
   document.getElementById('studentName').textContent=name;
   document.getElementById('avatar').textContent=initials;
   document.getElementById('studentMeta').textContent=`Grade 09${p.pathway?' · '+p.pathway:''} · Local profile workspace`;
