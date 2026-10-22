@@ -25,4 +25,7 @@ for(const [,id,route] of firstRoutes)assert.ok(fs.existsSync(route+"index.html")
 const pins=read("courses/shared/high-school-course-pins.js");
 assert.match(pins,/scopedKey\(base,id=activeLearner\(\)\)/,"Pins must be scoped to an active registered learner");
 assert.match(pins,/readLanguageChoices\(\)/,"Language selection must use scoped pin storage");
+assert.match(schedule,/Pin all seven classes/,"Student must have one-click schedule setup");
+assert.match(schedule,/registry\.setPinned\(id,true\)/,"Seven-class setup must use the existing learner-scoped pin registry");
+assert.match(schedule,/successful===7/,"Schedule setup must report incomplete saves honestly");
 console.log("PASS Grade 09 seven-class schedule: profile, daily room, pin sync, language selection and local entrances");
