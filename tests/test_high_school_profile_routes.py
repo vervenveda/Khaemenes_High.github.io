@@ -57,3 +57,7 @@ for grade in range(9,13):
 for token in ("showModal()", 'dialog.close()', "readAcademyProfile", "futureSelfLetter", "localStorage.setItem(notesKey", "if(!authorized())return"):
     assert token in journey, f"Journey safety or control missing: {token}"
 print("PASS Grades 9–12 private journey popup integration")
+
+for token in ('type="date"', 'khaemenes-future-letter-v2', 'storedLetter.openDate>today()', 'sealed:true', 'function readLetter()', 'function presentLetter()'):
+    assert token in journey, f"Future Self sealed-letter control missing: {token}"
+print("PASS Future Self opening-date and sealed export guards wired")
