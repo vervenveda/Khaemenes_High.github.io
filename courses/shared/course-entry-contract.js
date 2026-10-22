@@ -267,4 +267,17 @@
     else loadAppliedMissionStudio();
   }
 
+  // Academy utility controls: optional UI, independent of course readiness.
+  // The canonical widget owns the profile button, toolbar and print exclusion.
+  function mountLearnerToolbar(){
+    if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;
+    const tag=document.createElement("script");
+    tag.src="https://vervenveda.com/assets/vnv-beta-link.js";
+    tag.async=true;
+    tag.dataset.academyLearnerToolbar="course-entry";
+    document.head.appendChild(tag);
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mountLearnerToolbar,{once:true});
+  else mountLearnerToolbar();
+
 })();
