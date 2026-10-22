@@ -17,6 +17,10 @@ const firstLessons={
  "psychology-101":"electives/grades/grade-09/psych-101/lessons/week-01/day-01.html"
 };
 function repositoryRoot(){const at=location.pathname.indexOf("/grades/grade-09/");return at<0?"/":location.pathname.slice(0,at+1)}
+const languageStarts={
+ arabic:"arabic-1/week-01/",russian:"russian-1/week-01/"
+};
+function languageStart(id){const code=id.replace("world-language-9-","");return languageStarts[code]?"https://vervenveda.github.io/Khaemenes_Linguistics.github.io/Halls/courses/"+languageStarts[code]:null}
 function firstLessonFor(id){const route=firstLessons[id];return route?repositoryRoot()+route:null}
 const el=(tag,txt)=>{const e=document.createElement(tag);if(txt!==undefined)e.textContent=txt;return e};
 function language(){const value=pins.readLanguageChoices()["9"];return languages.some(([id])=>id===value)?value:"spanish"}
@@ -57,7 +61,7 @@ function render(){
    card.append(link,button);
    const first=firstLessonFor(id);
    if(first){const start=el("a",id==="physical-education-9"?"Open PE learning hall":id==="pre-algebra"||id==="algebra-1"?"Start mathematics readiness":"Week 01 · First lesson");start.href=first;start.style.cssText="display:inline-block;margin-right:12px;text-decoration:underline";card.append(start)}
-   else if(id.startsWith("world-language-9-"))card.append(el("p","Choose your language in the Linguistics Halls to open its first lesson."));
+   else if(id.startsWith("world-language-9-")){const target=languageStart(id);if(target){const a=el("a","Week 01 · Language lesson");a.href=target;card.append(a)}else card.append(el("p","Open Linguistics Halls to select the appropriate first-language lesson."));}
   }
   list.append(card);
  });
