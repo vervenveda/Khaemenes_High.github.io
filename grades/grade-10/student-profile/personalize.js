@@ -4,6 +4,7 @@ const root=document.getElementById("grade10Personalize");if(!root)return;
 const learner=window.KhaemenesStudentProfileV2?.activeLearner?.();
 const id=learner?.learnerId;
 const key=id?"khaemenes.grade10.profile.preferences:"+id:null;
+const sameLearner=()=>!!id&&window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId===id;
 const defaults={accent:"#9fc9b7",focus:"",motto:""};
 let settings={...defaults};
 if(key){try{const saved=JSON.parse(localStorage.getItem(key)||"null");if(saved&&typeof saved==="object")settings={...defaults,...saved}}catch{}}
@@ -19,7 +20,7 @@ const status=document.createElement("p");status.setAttribute("role","status");st
 const paint=()=>{preview.style.borderLeftColor=/^#[0-9a-fA-F]{6}$/.test(accent.value)?accent.value:defaults.accent;preview.textContent=[focus.value,motto.value].filter(Boolean).join(" · ")||"Your learning goal and encouragement will appear here."};
 [accent,focus,motto].forEach(e=>e.addEventListener("input",paint));
 const save=document.createElement("button");save.type="submit";save.textContent="Save my preferences";save.disabled=!key;save.style.cssText="max-width:240px;padding:10px;border-radius:7px";form.append(save);
-form.addEventListener("submit",e=>{e.preventDefault();if(!key)return;try{localStorage.setItem(key,JSON.stringify({accent:accent.value,focus:focus.value.trim().slice(0,140),motto:motto.value.trim().slice(0,140)}));status.textContent="Your study-space preferences were saved on this device."}catch{status.textContent="Could not save preferences. Your existing profile remains unchanged."}});
-const reset=document.createElement("button");reset.type="button";reset.textContent="Reset appearance";reset.disabled=!key;reset.addEventListener("click",()=>{if(!key)return;try{localStorage.removeItem(key);accent.value=defaults.accent;focus.value="";motto.value="";paint();status.textContent="Appearance preferences reset."}catch{status.textContent="Unable to reset saved preferences."}});form.append(reset);
+form.addEventListener("submit",e=>{e.preventDefault();if(!key||!sameLearner()){status.textContent="Active learner changed. Reload this dashboard before saving preferences.";return}try{localStorage.setItem(key,JSON.stringify({accent:accent.value,focus:focus.value.trim().slice(0,140),motto:motto.value.trim().slice(0,140)}));status.textContent="Your study-space preferences were saved on this device."}catch{status.textContent="Could not save preferences. Your existing profile remains unchanged."}});
+const reset=document.createElement("button");reset.type="button";reset.textContent="Reset appearance";reset.disabled=!key;reset.addEventListener("click",()=>{if(!key||!sameLearner()){status.textContent="Active learner changed. Reload this dashboard before resetting preferences.";return}try{localStorage.removeItem(key);accent.value=defaults.accent;focus.value="";motto.value="";paint();status.textContent="Appearance preferences reset."}catch{status.textContent="Unable to reset saved preferences."}});form.append(reset);
 root.append(h,p,form,preview,status);paint();
 })();
