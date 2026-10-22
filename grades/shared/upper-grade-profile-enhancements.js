@@ -24,5 +24,15 @@ function scoped(){if(!originalKey||keyFor()!==originalKey){state.textContent="Le
 save.onclick=()=>{if(!scoped())return;try{localStorage.setItem(originalKey,goal.value.slice(0,600));state.textContent="Study plan saved on this device."}catch{state.textContent="Could not save your plan."}};
 exportBtn.onclick=()=>{if(!scoped())return;const data={format:"khaemenes-personal-study-plan-v1",grade,learnerId:learner()?.learnerId,plan:goal.value.slice(0,600),exported:new Date().toISOString()};const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=make("a");a.href=url;a.download="my-grade-"+grade+"-study-plan.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
 editor.append(goal,save,exportBtn,state);panel.append(editor);
+const access=make("fieldset");access.style.cssText="border:1px solid #aeb6b3;border-radius:7px;margin:12px 0;padding:12px";const legend=make("legend","Reading accessibility");access.append(legend);
+const big=make("input");big.type="checkbox";const bigLabel=make("label"," Larger text");bigLabel.prepend(big);bigLabel.style.marginRight="20px";
+const calm=make("input");calm.type="checkbox";const calmLabel=make("label"," Reduce motion");calmLabel.prepend(calm);
+access.append(bigLabel,calmLabel);panel.insertBefore(access,editor);
+const accessKey=originalKey?originalKey+":access":null;const initial=(()=>{try{return accessKey?JSON.parse(localStorage.getItem(accessKey)||"{}"):{} }catch{return {}}})();
+big.checked=!!initial.largeText;calm.checked=!!initial.reducedMotion;
+function applyAccess(){document.documentElement.style.setProperty("--ug-personal-text-scale",big.checked?"1.12":"1");panel.style.fontSize=big.checked?"1.12em":"";if(calm.checked)document.documentElement.dataset.khaeReduceMotion="true";else delete document.documentElement.dataset.khaeReduceMotion}
+const motionStyle=make("style");motionStyle.textContent='html[data-khae-reduce-motion="true"] *,html[data-khae-reduce-motion="true"] *::before,html[data-khae-reduce-motion="true"] *::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}';document.head.append(motionStyle);
+[big,calm].forEach(field=>field.addEventListener("change",()=>{if(!scoped()){big.checked=!!initial.largeText;calm.checked=!!initial.reducedMotion;return}try{localStorage.setItem(accessKey,JSON.stringify({largeText:big.checked,reducedMotion:calm.checked}));state.textContent="Reading preferences saved."}catch{state.textContent="Reading preferences could not be saved."}applyAccess()}));
+if(!originalKey){big.disabled=calm.disabled=true}applyAccess();
 root.insertAdjacentElement("afterend",panel);load();
 })();
