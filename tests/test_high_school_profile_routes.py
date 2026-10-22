@@ -31,3 +31,15 @@ shared=(ROOT/"grades/shared/upper-grade-profile-enhancements.js").read_text(enco
 for required in ("pageshow", "focus", "khaemenes_active_learner_v1", "goal.value=\"\"", "save.disabled=true", "exportBtn.disabled=true", "localStorage.getItem(originalKey)"):
     assert required in shared, f"Profile return-visit safety check absent: {required}"
 print("PASS Grade 10–12 return-visit restoration and cross-learner concealment wiring")
+
+theme=(ROOT/"grades/shared/student-profile-theme-photo.js").read_text(encoding="utf-8")
+for grade in (10,11,12):
+    html=(ROOT/f"grades/grade-{grade:02d}/student-profile/index.html").read_text(encoding="utf-8")
+    assert 'student-profile-theme-photo.js' in html
+for check in ('type="color"', 'type="file"', 'canvas.toDataURL("image/jpeg"', 'sameLearner'):
+    pass
+assert 'color.type="color"' in theme and 'file.type="file"' in theme
+assert 'canvas.toDataURL("image/jpeg"' in theme
+assert 'api?.activeLearner' in theme and 'function guard()' in theme
+assert 'URL.revokeObjectURL(url)' in theme
+print("PASS Grades 10–12 color and private portrait integration wiring")
