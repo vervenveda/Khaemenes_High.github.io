@@ -14,12 +14,18 @@ const localStorage={
 const window={KHAE_UNIT01:data.window.KHAE_UNIT01,KhaemenesAlgebra1StudentExperience:{enhance(){}}};
 const document={body:{dataset:{mode:'audit'}},querySelector(){return null},querySelectorAll(){return []}};
 const ctx=vm.createContext({window,document,localStorage,console,URL,URLSearchParams,Date,Math});
-vm.runInContext(fs.readFileSync(root+'unit01.js','utf8'),ctx,{filename:'unit01.js'});
-const unlocked=n=>vm.runInContext('lessonUnlocked('+n+')',ctx);
-const mastered=n=>vm.runInContext('lessonMastered('+n+')',ctx);
-const week=n=>vm.runInContext('weekMastered('+n+')',ctx);
-const allUnitWeeks=()=>vm.runInContext('allUnitWeeksMastered()',ctx);
-const allLessons=()=>vm.runInContext('allLessonsMastered()',ctx);
+// Production functions live inside an IIFE. Expose read-only references in the
+// isolated test VM; do not change the shipped lesson engine or student storage.
+const production=fs.readFileSync(root+'unit01.js','utf8');
+assert.ok(production.trimEnd().endsWith('})();'),'Unexpected lesson engine wrapper');
+const instrumented=production.replace(/\}\)\(\);\s*$/, 'window.__audit={lessonUnlocked,lessonMastered,weekMastered,allUnitWeeksMastered,allLessonsMastered};})();');
+vm.runInContext(instrumented,ctx,{filename:'unit01.js'});
+assert.ok(window.__audit,'Unable to instrument Unit 01 internal progression methods');
+const unlocked=n=>window.__audit.lessonUnlocked(n);
+const mastered=n=>window.__audit.lessonMastered(n);
+const week=n=>window.__audit.weekMastered(n);
+const allUnitWeeks=()=>window.__audit.allUnitWeeksMastered();
+const allLessons=()=>window.__audit.allLessonsMastered();
 const KEY='khaemenes-algebra1-unit01-a3-v1';
 const WEEK='khaemenes-algebra1-weekly-mastery-v2';
 function scores(values){localStorage.setItem(KEY,JSON.stringify({attempts:[],best:values}));}
