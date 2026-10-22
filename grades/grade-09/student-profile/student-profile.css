@@ -216,3 +216,43 @@ main>aside[aria-label="Student Learning Portfolio"] h2{font-size:20px!important;
   .schedule-tile{min-height:0}
   .schedule-pin{display:none}
 }
+
+
+/* Learner-selected presentation tokens. These never remove required academic controls. */
+body[data-student-theme="forest"]{
+  --paper:#e8eee9;--paper2:#f3f7f3;--panel:#fbfdf9;--ink:#14251f;--muted:#50645b;--soft:#40584d;--line:rgba(23,57,47,.18);--line2:rgba(23,57,47,.30);
+  background:radial-gradient(circle at 50% 12%,#f9fcf8 0,#edf3ee 55%,#e3ebe5 100%);
+}
+body[data-student-theme="midnight"]{
+  --paper:#10161a;--paper2:#182126;--panel:#151d22;--ink:#eef3ef;--muted:#bdc9c3;--soft:#d0d9d4;--forest:#d9e5df;--forest2:#b7cdc2;--line:rgba(236,243,239,.16);--line2:rgba(236,243,239,.28);--shadow:0 7px 24px rgba(0,0,0,.18);
+  background:radial-gradient(circle at 50% 10%,#1a252a 0,#10161a 58%,#0c1114 100%);
+}
+body[data-student-theme="midnight"] .top{background:linear-gradient(135deg,#0b1216,#111d22 55%,#081014)}
+body[data-student-theme="midnight"] :is(.card,.lesson-card,.door,.schedule-tile,.check-item,.item,.field input,.field textarea,.field select){background:var(--panel);color:var(--ink)}
+body[data-student-theme="midnight"] :is(.btn.secondary,.schedule-pin,.schedule-number,.chip,.schedule-status){background:var(--paper2);color:var(--ink)}
+body[data-student-theme="midnight"] main>aside[aria-label="Student Learning Portfolio"]{background:var(--panel)!important;color:var(--ink)!important;border-color:var(--line2)!important}
+body[data-student-theme="midnight"] .focus-card{background:linear-gradient(135deg,#182126,#11191d)}
+body[data-student-theme="midnight"] .notice{background:#2a2418;color:#f0dbad}
+body[data-student-theme="midnight"] .notice.good{background:#16261d;color:#c8e6d1}
+body[data-student-theme="midnight"] .notice.danger{background:#30191f;color:#f2c4cc}
+
+body[data-student-accent="teal"]{--gold:#4f7f7a;--gold2:#b9d8d4}
+body[data-student-accent="plum"]{--gold:#725f82;--gold2:#d8cde0}
+body[data-student-accent="gold"]{--gold:#b58d50;--gold2:#d8b884}
+
+body[data-student-density="compact"] .section{padding:18px 0 24px}
+body[data-student-density="compact"] .grid{gap:10px}
+body[data-student-density="compact"] .card{padding:17px}
+body[data-student-density="compact"] .lesson-card{min-height:185px;padding:14px}
+body[data-student-density="compact"] .door{min-height:165px;padding:14px}
+body[data-student-density="compact"] .schedule-tile{flex-basis:205px;min-height:160px;padding:11px}
+body[data-student-density="compact"] .schedule-tile h3{font-size:16px}
+body[data-student-density="compact"] .schedule-tile p{font-size:12px}
+
+body[data-student-avatar-shape="soft-square"] .avatar{border-radius:7px}
+body[data-student-avatar-shape="circle"] .avatar{border-radius:50%}
+
+.design-preview{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:7px;background:var(--paper2)}
+.design-preview-mark{width:66px;height:66px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:7px;background:var(--panel);color:var(--forest);font:500 24px/1 var(--formal)}
+.design-preview strong{display:block;color:var(--forest);font:500 20px/1.35 var(--formal)}
+.design-preview span{display:block;margin-top:4px;color:var(--muted);font-size:13px}
