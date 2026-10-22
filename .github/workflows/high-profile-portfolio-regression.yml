@@ -1,0 +1,27 @@
+name: Student profile and portfolio isolation
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'grades/shared/profile-portfolio-overview.js'
+      - 'grades/shared/upper-grade-profile-enhancements.js'
+      - 'grades/grade-*/student-profile/index.html'
+      - 'tests/test_profile_portfolio_isolation.cjs'
+      - 'tests/test_high_school_profile_routes.py'
+      - '.github/workflows/high-profile-portfolio-regression.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify learner-specific portfolio visibility with two simulated learners
+        run: node tests/test_profile_portfolio_isolation.cjs
+      - name: Verify Grade 9 through 12 profile routes
+        run: python3 tests/test_high_school_profile_routes.py
