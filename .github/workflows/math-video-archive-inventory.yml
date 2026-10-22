@@ -1,0 +1,35 @@
+name: Mathematics video archive inventory
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/audit_math_video_archive.py'
+      - '.github/workflows/math-video-archive-inventory.yml'
+permissions:
+  contents: read
+jobs:
+  inspect-video-assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inventory mathematical video and transcript resources
+        run: python3 tools/audit_math_video_archive.py --output math-video-inventory.json
+      - name: Summarize inventory
+        run: |
+          python3 - <<'PY'
+          import json, os
+          d=json.load(open("math-video-inventory.json",encoding="utf-8"))
+          paths=[f["path"] for f in d["files"]]
+          out="## Mathematics video archive inventory\n\nFiles with potential media references: **%s**\n\n" % len(paths)
+          out+="\n".join("- `"+p+"`" for p in paths[:80])
+          out+="\n\nDiscovery only: no ad-free, rights, or student-release certification.\n"
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a",encoding="utf-8") as f:
+              f.write(out)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mathematics-video-inventory
+          path: math-video-inventory.json
+          retention-days: 14
