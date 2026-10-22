@@ -48,10 +48,12 @@ for(const grade of ["09","10","11","12"]){
   ok(widget.includes('grades/grade-"+String(grade).padStart(2,"0")+"/student-profile/')||widget.includes('grades/grade-'),"grade-aware Student Profile resolver is present for Grade "+grade);
 }
 ok(widget.includes('khaemenes-student-workspace-v2.js'),"learner rail propagates Academy workspace preferences");
-ok(widget.includes('khaemenesFamilyBridge'),"existing Academy learner continuity box is reused when present");
+ok(widget.includes('khaemenesFamilyBridge'),"Academy learner continuity bridge remains recognized");
+ok(!widget.includes('toolbar.append(bridge)')&&!widget.includes('quick.remove()'),"Family Bridge cannot replace the dedicated Student Profile rail control");
 ok(widget.includes('khaemenesLearnerUtilityToolbar'),"student profile and beta controls share the Khaemenes learner utility toolbar");
 ok(widget.includes('learnerRecordNoticeButton')&&widget.includes('khaemenesStudentWorkButton'),"My Work reuses preserved-work recovery when available");
 ok(widget.includes('khaemenesStudentSearchButton')&&widget.includes('VNVEcosystemMenu'),"Search opens the shared ecosystem search drawer");
+ok(widget.includes('isClosedBookAssessmentSurface')&&widget.includes('search.disabled=closedBook'),"Search remains visible but is disabled on closed-book exam surfaces");
 ok(widget.includes('vnvBetaProgramLink'),"Beta Program remains in the learner rail");
 ok(widget.includes('khaemenesStudentContributeButton')&&widget.includes('#vnv-global-support'),"Contribute opens centralized voluntary-support information");
 ok(widget.includes('order:50')&&widget.includes('order:40')&&widget.includes('order:30'),"five-button rail has deterministic control ordering");
