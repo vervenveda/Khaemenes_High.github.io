@@ -168,6 +168,6 @@ global.KhaemenesHighLearningContext=Object.freeze({version:VERSION,ledgerKey:LED
 ;(()=>{"use strict";
  if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;
  const mount=()=>{if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;
- const s=document.createElement("script");s.src="https://vervenveda.com/assets/vnv-beta-link.js";s.defer=true;s.dataset.academyLearnerToolbar="1";document.head.appendChild(s)};
+ const s=document.createElement("script");s.src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js";s.defer=true;s.dataset.academyLearnerToolbar="1";document.head.appendChild(s)};
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mount,{once:true});else mount();
 })();
