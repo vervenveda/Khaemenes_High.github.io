@@ -1,4 +1,4 @@
-/* Verve N Veda · Beta Program + Khaemenes learner rail widget · v1.7.8 */
+/* Verve N Veda · Beta Program + Khaemenes learner rail widget · v1.8.0 */
 (() => {
   "use strict";
 
@@ -8,18 +8,25 @@
   const SCRIPT_MARK="vnvBetaProgramScript";
   const BETA_URL="https://vervenveda.com/beta/";
   const SCRIPT_URL="https://vervenveda.com/assets/vnv-beta-link.js";
+  const ECOSYSTEM_MENU_URL="https://vervenveda.com/assets/vnv-ecosystem-menu.js";
+  const SUPPORT_URL="https://vervenveda.com/assets/vnv-support.js";
+  const KHAEMENES_WORKSPACE_URL="https://vervenveda.com/assets/khaemenes-student-workspace-v2.js";
   const BAZAAR_LIVE_URL="https://vervenveda.github.io/333.github.io/app/Bazaar_Art_Live_index.html";
   const HIGH_PROFILE_ID="khaemenesHighStudentProfileLink";
   const HIGH_PROFILE_STYLE_ID="khaemenesHighStudentProfileLinkStyles";
+  const HIGH_WORK_ID="khaemenesStudentWorkButton";
+  const HIGH_SEARCH_ID="khaemenesStudentSearchButton";
+  const HIGH_CONTRIBUTE_ID="khaemenesStudentContributeButton";
   const EDUCATION_TOOLBAR_ID="khaemenesLearnerUtilityToolbar";
   const EDUCATION_TOOLBAR_STYLE_ID="khaemenesLearnerUtilityToolbarStyles";
   const ACADEMY_STUDENT_URL="https://vervenveda.com/Khaemenes_Academy.github.io/student/";
   const ACADEMY_FAMILY_URL="https://vervenveda.com/Khaemenes_Academy.github.io/family/";
   const HIGHER_SCHOLAR_URL="https://vervenveda.com/Khaemenes_Academy.github.io/adult/";
+  const HIGH_SCHOOL_ROOT="https://vervenveda.com/Khaemenes_High.github.io/";
+  const CONTRIBUTE_URL="https://vervenveda.com/#vnv-global-support";
   const LINGUISTICS_CONTINUATION_URL="https://vervenveda.com/Khaemenes_Linguistics.github.io/assets/khaemenes-linguistics-continuation.js";
   const ELEMENTARY_CONTINUATION_URL="https://vervenveda.com/Khaemenes_Elementary.github.io/assets/khaemenes-elementary-continuation-publisher.js";
   const MIDDLE_CONTINUATION_URL="https://vervenveda.com/Khaemenes_Middle.github.io/assets/khaemenes-middle-continuation-publisher.js";
-  const KHAEMENES_WORKSPACE_URL="https://vervenveda.com/assets/khaemenes-student-workspace-v2.js";
 
   const clean=(value,max)=>String(value??"").replace(/[\u0000-\u001f\u007f]/g,"").slice(0,max);
 
@@ -64,6 +71,44 @@
   };
 
 
+  const readLocalJSON=(key)=>{
+    try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):null}catch{return null}
+  };
+  const isHighStudentSurface=()=>{
+    try{
+      const host=String(location.hostname||"").toLowerCase();
+      const path=String(location.pathname||"").toLowerCase();
+      return host.includes("khaemenes-high")||path.includes("/khaemenes_high.github.io/");
+    }catch{return false}
+  };
+  const highStudentProfileUrl=()=>{
+    try{
+      const registered=window.KhaemenesFamilyRegistry?.getLearner?.()||null;
+      const active=readLocalJSON("khaemenes_active_learner_v1");
+      const registry=readLocalJSON("khaemenes_family_registry_v1");
+      const id=registered?.learnerId||(typeof active==="string"?active:active?.learnerId);
+      const stored=id?registry?.learners?.[id]:null;
+      const grade=Number(registered?.grade??stored?.grade);
+      if(Number.isInteger(grade)&&grade>=9&&grade<=12){
+        return HIGH_SCHOOL_ROOT+"grades/grade-"+String(grade).padStart(2,"0")+"/student-profile/";
+      }
+    }catch{}
+    return ACADEMY_STUDENT_URL;
+  };
+  const openStudentSearch=()=>{
+    const open=()=>{
+      try{
+        if(window.VNVEcosystemMenu?.open){window.VNVEcosystemMenu.open();return true}
+        const button=document.getElementById("vnvEcosystemMenuButton");
+        if(button){button.click();return true}
+      }catch{}
+      return false;
+    };
+    if(open())return;
+    ensureEcosystemMenu();
+    setTimeout(()=>{if(!open())setTimeout(open,180)},70);
+  };
+
   const educationProfileConfig=()=>{
     try{
       const host=String(location.hostname||"").toLowerCase();
@@ -74,9 +119,9 @@
         return {
           label:"Learner Profile",
           mark:"P",
-          url:ACADEMY_FAMILY_URL,
-          aria:"Open the Khaemenes Academy family learner profile",
-          title:"Learner Profile · family-managed child identity and curriculum continuity"
+          url:ACADEMY_STUDENT_URL,
+          aria:"Open the Khaemenes Academy learner Student Profile",
+          title:"Learner Profile · family-managed identity, Learning Compass and curriculum continuity"
         };
       }
       if(match("khaemenes-kindergarden","/khaemenes_kindergarden.github.io/")){
@@ -110,8 +155,8 @@
         return {
           label:"Student Profile",
           mark:"S",
-          url:ACADEMY_STUDENT_URL,
-          aria:"Open Khaemenes Academy Student Profile and pinned courses",
+          url:highStudentProfileUrl(),
+          aria:"Open the active High School grade Student Profile and daily schedule",
           title:"Student Profile · pinned courses and learning schedule"
         };
       }
@@ -146,16 +191,17 @@
       style.textContent=`
         #${EDUCATION_TOOLBAR_ID}{
           position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));
-          z-index:2147482100;display:flex;align-items:stretch;justify-content:flex-end;gap:6px;
-          padding:6px;border:1px solid rgba(180,139,69,.48);border-radius:7px;
+          z-index:2147482100;display:flex;flex-wrap:nowrap;align-items:stretch;justify-content:space-evenly;gap:4px;
+          width:max-content;max-width:calc(100vw - 24px);
+          padding:4px;border:1px solid rgba(180,139,69,.48);border-radius:7px;
           background:rgba(255,253,248,.96);box-shadow:0 10px 30px rgba(15,25,37,.16);
           backdrop-filter:blur(10px)
         }
         #${EDUCATION_TOOLBAR_ID}>button,#${EDUCATION_TOOLBAR_ID}>a{
           position:static!important;right:auto!important;bottom:auto!important;z-index:auto!important;
-          width:126px!important;height:42px!important;min-height:42px!important;max-height:42px!important;
+          flex:0 1 78px;min-width:0!important;width:78px!important;max-width:78px!important;height:44px!important;min-height:44px!important;max-height:44px!important;
           display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;
-          margin:0!important;padding:7px 9px!important;border-radius:7px!important;
+          margin:0!important;padding:5px 5px!important;border-radius:7px!important;
           box-sizing:border-box!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;
           box-shadow:none!important;font:600 10px/1.15 "Avenir Next","Segoe UI",Arial,sans-serif!important;
           letter-spacing:.035em!important;text-decoration:none!important
@@ -166,20 +212,44 @@
         #${EDUCATION_TOOLBAR_ID}>#${HIGH_PROFILE_ID}{
           order:20;color:#17392f!important;background:#fffdf8!important;border:1px solid rgba(180,139,69,.72)!important
         }
+        #${EDUCATION_TOOLBAR_ID}>#${HIGH_WORK_ID},#${EDUCATION_TOOLBAR_ID}>#learnerRecordNoticeButton{
+          order:10;color:#493719!important;background:#fff4d8!important;border:1px solid #b48b45!important
+        }
+        #${EDUCATION_TOOLBAR_ID}>#${HIGH_SEARCH_ID}{
+          order:30;color:#17392f!important;background:#eef5f1!important;border:1px solid rgba(49,73,62,.38)!important
+        }
         #${EDUCATION_TOOLBAR_ID}>#${ID}{
-          order:30;color:#f7efe0!important;background:#0f1925!important;border:1px solid rgba(183,147,77,.72)!important
+          order:40;color:#f7efe0!important;background:#0f1925!important;border:1px solid rgba(183,147,77,.72)!important
+        }
+        #${EDUCATION_TOOLBAR_ID}>#${HIGH_CONTRIBUTE_ID}{
+          order:50;color:#563f27!important;background:#fffaf0!important;border:1px solid rgba(180,139,69,.62)!important
         }
         #${EDUCATION_TOOLBAR_ID}>button:hover,#${EDUCATION_TOOLBAR_ID}>a:hover{transform:translateY(-1px)}
         #${EDUCATION_TOOLBAR_ID}>button:focus-visible,#${EDUCATION_TOOLBAR_ID}>a:focus-visible{outline:3px solid #b48b45;outline-offset:2px}
         @media(max-width:520px){
-          #${EDUCATION_TOOLBAR_ID}{right:max(8px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));gap:4px;padding:4px}
+          #${EDUCATION_TOOLBAR_ID}{
+            right:max(8px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));
+            width:calc(100vw - 16px);max-width:calc(100vw - 16px);box-sizing:border-box;gap:4px;padding:4px;
+          }
           #${EDUCATION_TOOLBAR_ID}>button,#${EDUCATION_TOOLBAR_ID}>a{
-            width:96px!important;height:40px!important;min-height:40px!important;max-height:40px!important;
-            padding:6px!important;font-size:9px!important;letter-spacing:.01em!important
+            flex:1 1 0!important;min-width:0!important;
+            width:0!important;max-width:none!important;
+            height:44px!important;min-height:44px!important;max-height:44px!important;
+            padding:4px!important;font-size:9px!important;letter-spacing:.01em!important;
+            white-space:normal!important;text-align:center!important;line-height:1.15!important;
           }
         }
         @media(max-width:330px){
-          #${EDUCATION_TOOLBAR_ID}>button,#${EDUCATION_TOOLBAR_ID}>a{width:90px!important}
+          #${EDUCATION_TOOLBAR_ID}{
+            width:calc(100vw - 16px);max-width:calc(100vw - 16px);
+            box-sizing:border-box;flex-wrap:nowrap;justify-content:space-evenly;gap:3px;padding:3px;
+          }
+          #${EDUCATION_TOOLBAR_ID}>button,#${EDUCATION_TOOLBAR_ID}>a{
+            flex:1 1 0!important;width:0!important;max-width:none!important;min-width:0!important;
+            height:44px!important;min-height:44px!important;max-height:44px!important;
+            padding:3px!important;white-space:normal!important;overflow-wrap:normal!important;
+            text-align:center!important;font-size:8px!important;line-height:1.12!important;letter-spacing:0!important;
+          }
         }
         @media print{#${EDUCATION_TOOLBAR_ID}{display:none!important}}
         @media(prefers-reduced-motion:reduce){#${EDUCATION_TOOLBAR_ID}>button,#${EDUCATION_TOOLBAR_ID}>a{transition:none!important;transform:none!important}}
@@ -209,6 +279,56 @@
     return Math.max(58,Math.ceil(height)+22);
   }
 
+  function ensureHighStudentUtilityButtons(){
+    if(!isHighStudentSurface()||!document.body)return;
+    const toolbar=ensureEducationToolbar();if(!toolbar)return;
+    const profileUrl=highStudentProfileUrl();
+
+    const preserved=[...document.querySelectorAll("button,a")].find(el=>{
+      if(el.id===HIGH_WORK_ID)return false;
+      const id=String(el.id||"").toLowerCase();
+      const text=String(el.textContent||"").trim().toLowerCase();
+      return id==="learnerrecordnoticebutton"||
+        /preserv(ed)?[-_ ]?work|legacy[-_ ]?work|work[-_ ]?recovery/.test(id)||
+        text==="preserved work"||text.startsWith("preserved work ·");
+    });
+    let work=preserved||document.getElementById(HIGH_WORK_ID);
+    if(!work){
+      work=document.createElement("button");
+      work.id=HIGH_WORK_ID;
+      work.type="button";
+      work.addEventListener("click",()=>{
+        const url=highStudentProfileUrl();
+        try{location.assign(url)}catch{location.href=url}
+      });
+    }
+    work.textContent="My Work";
+    work.setAttribute("aria-label",preserved?"Open preserved student work and recovery":"Open my High School profile, records and learning evidence");
+    work.title=preserved?"My Work · preserved work and recovery":"My Work · records and evidence";
+    dockEducationUtility(work,10);
+
+    let search=document.getElementById(HIGH_SEARCH_ID);
+    if(!search){
+      search=document.createElement("button");
+      search.id=HIGH_SEARCH_ID;search.type="button";search.textContent="Search";
+      search.setAttribute("aria-label","Search Khaemenes and the Verve N Veda learning ecosystem");
+      search.title="Search · courses, resources and ecosystem pages";
+      search.addEventListener("click",openStudentSearch);
+    }
+    dockEducationUtility(search,30);
+
+    let contribute=document.getElementById(HIGH_CONTRIBUTE_ID);
+    if(!contribute){
+      contribute=document.createElement("a");
+      contribute.id=HIGH_CONTRIBUTE_ID;contribute.href=CONTRIBUTE_URL;contribute.textContent="Contribute";
+      contribute.setAttribute("aria-label","Open voluntary contribution and support information");
+      contribute.title="Contribute · voluntary support for free public access";
+    }
+    dockEducationUtility(contribute,50);
+
+    const beta=document.getElementById(ID);if(beta)dockEducationUtility(beta,40);
+  }
+
   function alignHighProfileSurface(){
     const config=educationProfileConfig();
     if(!config||!document.body)return false;
@@ -226,16 +346,8 @@
     }else if(quick){
       dockEducationUtility(quick,20);
     }
-    if(beta)dockEducationUtility(beta,30);
-
-    const preserved=[...document.querySelectorAll("button,a")].find(el=>{
-      const id=String(el.id||"").toLowerCase();
-      const text=String(el.textContent||"").trim().toLowerCase();
-      return id==="learnerrecordnoticebutton"||
-        /preserv(ed)?[-_ ]?work|legacy[-_ ]?work|work[-_ ]?recovery/.test(id)||
-        text==="preserved work"||text.startsWith("preserved work ·");
-    });
-    if(preserved&&preserved!==quick&&preserved!==beta)dockEducationUtility(preserved,10);
+    if(beta)dockEducationUtility(beta,isHighStudentSurface()?40:30);
+    ensureHighStudentUtilityButtons();
 
     const panel=document.getElementById("learnerRecordNoticePanel");
     const toolbar=document.getElementById(EDUCATION_TOOLBAR_ID);
@@ -292,7 +404,8 @@
       label.textContent=config.label;
       button.append(mark,label);
       button.addEventListener("click",()=>{
-        try{window.location.assign(config.url)}catch{window.location.href=config.url}
+        const url=isHighStudentSurface()?highStudentProfileUrl():config.url;
+        try{window.location.assign(url)}catch{window.location.href=url}
       });
       (ensureEducationToolbar()||document.body).append(button);
     }
@@ -425,6 +538,22 @@
     }catch{}
   }
 
+  function ensureEcosystemMenu(){
+    try{
+      if(document.getElementById("vnvEcosystemMenuButton"))return;
+      if(document.getElementById("menuOverlay")&&document.getElementById("menuButton")&&/public gateway/i.test(document.title||""))return;
+      loadOnce(ECOSYSTEM_MENU_URL,"vnv-ecosystem-menu");
+    }catch{}
+  }
+
+  function ensureSupportComponent(){
+    try{
+      if(document.documentElement?.hasAttribute("data-vnv-support-off"))return;
+      if(document.getElementById("vnv-global-support"))return;
+      loadOnce(SUPPORT_URL,"vnv-support");
+    }catch{}
+  }
+
   function mount(){
     if(document.getElementById(ID)||!document.body)return;
 
@@ -511,20 +640,9 @@
     observer.observe(document.documentElement,{childList:true,subtree:true});
   }
 
-  function start(){mount();mountHighStudentProfile();ensureEducationWorkspace();ensureEducationContinuationPublisher();ensureLinguisticsContinuation();bindVisibleFrames();enhanceBazaarLanding()}
+  function start(){mount();mountHighStudentProfile();ensureHighStudentUtilityButtons();ensureEducationWorkspace();ensureEducationContinuationPublisher();ensureLinguisticsContinuation();ensureEcosystemMenu();ensureSupportComponent();bindVisibleFrames();enhanceBazaarLanding()}
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});
   else start();
 
-  window.VNVBetaProgram=Object.freeze({version:"1.7.8",mount,source:safeSource,surface:safeSurface,href:betaHref,studentProfile:mountHighStudentProfile,educationProfile:educationProfileConfig});
+  window.VNVBetaProgram=Object.freeze({version:"1.8.0",mount,source:safeSource,surface:safeSurface,href:betaHref,studentProfile:mountHighStudentProfile,educationProfile:educationProfileConfig,highStudentProfileUrl,openStudentSearch});
 })();
-
-
-/* Verve N Veda shared ecosystem directory · additive shell */
-(()=>{try{
-  if(document.getElementById("vnvEcosystemMenuButton")||document.querySelector('script[data-vnv-ecosystem-menu]'))return;
-  const s=document.createElement("script");
-  s.src="https://vervenveda.com/assets/vnv-ecosystem-menu.js";
-  s.defer=true;
-  s.dataset.vnvEcosystemMenu="1";
-  (document.head||document.documentElement).appendChild(s);
-}catch{}})();
