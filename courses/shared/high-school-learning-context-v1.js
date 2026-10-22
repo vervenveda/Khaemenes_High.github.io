@@ -166,6 +166,7 @@ global.KhaemenesHighLearningContext=Object.freeze({version:VERSION,ledgerKey:LED
 
 /* Shared Academy learner utility toolbar — presentation only. */
 ;(()=>{"use strict";
+ if(typeof document==="undefined"||typeof document.createElement!=="function"||typeof document.querySelector!=="function")return;
  if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;
  const mount=()=>{if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;
  const s=document.createElement("script");s.src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js";s.defer=true;s.dataset.academyLearnerToolbar="1";document.head.appendChild(s)};
