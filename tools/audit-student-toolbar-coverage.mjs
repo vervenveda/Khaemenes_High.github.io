@@ -4,12 +4,13 @@ import fs from "node:fs";
 import path from "node:path";
 const root=process.cwd(), records=[];
 const knownShared=[
+  "courses/shared/course-entry-contract.js",
   "courses/shared/high-school-learning-context-v1.js",
   "courses/mathematics/geometry/assets/lesson-tools.js",
   "courses/mathematics/algebra-2/assets/lesson-tools.js"
 ];
 const direct=/vnv-beta-link\.js/i;
-const shared=/high-school-learning-context-v1\.js|(?:geometry|algebra-2)\/assets\/lesson-tools\.js|src=["'][^"']*\/assets\/lesson-tools\.js/i;
+const shared=/course-entry-contract\.js|high-school-learning-context-v1\.js|(?:geometry|algebra-2)\/assets\/lesson-tools\.js|src=["'][^"']*\/assets\/lesson-tools\.js/i;
 function walk(dir){for(const item of fs.readdirSync(dir,{withFileTypes:true})){if(item.name===".git"||item.name==="node_modules")continue;const p=path.join(dir,item.name);if(item.isDirectory())walk(p);else if(item.name.endsWith(".html")){const rel=path.relative(root,p).replaceAll(path.sep,"/");const html=fs.readFileSync(p,"utf8");const status=direct.test(html)?"direct":shared.test(html)?"shared":"uncovered";records.push({page:rel,course:rel.split("/").slice(0,3).join("/"),status})}}}
 walk(root);
 const totals={direct:0,shared:0,uncovered:0};
