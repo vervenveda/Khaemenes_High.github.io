@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'grades/shared/profile-portfolio-overview.js'
+      - 'grades/shared/student-achievements-dreams.js'
       - 'grades/shared/upper-grade-profile-enhancements.js'
       - 'grades/grade-*/student-profile/index.html'
       - 'tests/test_profile_portfolio_isolation.cjs'
