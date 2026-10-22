@@ -1,4 +1,4 @@
-(()=>{"use strict";const D=window.KHAE_UNIT09,$=s=>document.querySelector(s),KEY="khaemenes-algebra1-unit09-a3-v1",esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));function st(){try{return JSON.parse(localStorage.getItem(KEY)||'{"attempts":[],"best":{}}')}catch{return{attempts:[],best:{}}}}function sv(x){try{localStorage.setItem(KEY,JSON.stringify(x))}catch{}}function sh(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}function arch(e={}){return"https://artist1970.github.io/Archaemenes.github.io/high/?"+new URLSearchParams({course:"Algebra I",unit:"Unit 09 — Polynomial Foundry",...e})}function qh(a){return a.map((q,i)=>`<div class="question"><strong>${i+1}. ${esc(q.prompt)}</strong>${q.options.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${esc(o)}</label>`).join("")}<div id="f${i}" class="feedback" hidden></div></div>`).join("")}function installRetry(){
+(()=>{"use strict";const D=window.KHAE_UNIT09,$=s=>document.querySelector(s),KEY="khaemenes-algebra1-unit09-a3-v1",esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));function st(){try{return JSON.parse(localStorage.getItem(KEY)||'{"attempts":[],"best":{}}')}catch{return{attempts:[],best:{}}}}function sv(x){try{localStorage.setItem(KEY,JSON.stringify(x));return true}catch{return false}}function sh(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}function arch(e={}){return"https://artist1970.github.io/Archaemenes.github.io/high/?"+new URLSearchParams({course:"Algebra I",unit:"Unit 09 — Polynomial Foundry",...e})}function qh(a){return a.map((q,i)=>`<div class="question"><strong>${i+1}. ${esc(q.prompt)}</strong>${q.options.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${esc(o)}</label>`).join("")}<div id="f${i}" class="feedback" hidden></div></div>`).join("")}function installRetry(){
  const score=document.getElementById("score");
  if(!score)return null;
  const existing=document.getElementById("practiceRetry");
@@ -67,11 +67,15 @@ function bind(items,key){
   const record=readRecords();
   record.attempts.push({key,score:percent,correct,total:items.length,at:new Date().toISOString(),items:items.map(q=>q.id)});
   record.best[key]=Math.max(record.best[key]||0,percent);
-  saveRecords(record);
+  const persisted=saveRecords(record);
   graded=true;score.disabled=true;score.textContent="Attempt graded";
   inputs().forEach(input=>{input.disabled=true;});
   if(retry){retry.hidden=false;retry.disabled=false;}
   const result=document.getElementById("result");
+  if(!persisted){
+    if(result)result.textContent="Answer check finished, but this attempt was NOT saved on this device. No mastery credit was recorded. Check available browser storage, then begin a new attempt.";
+    return;
+  }
   if(result)result.innerHTML="<strong>"+percent+"%</strong> · "+correct+"/"+items.length+" · Best "+record.best[key]+"% · Answers locked. Start a fresh attempt to retry."+(key==="mastery"?(percent>=80?" · Mastery demonstrated":" · Target 80%"):"");
  });
 }
