@@ -1,6 +1,6 @@
 /* Algebra I non-grading learning tools menu; optional, no storage or mastery changes. */
 (()=>{"use strict";
-if(document.getElementById("khae-algebra1-tool-menu")||/\/(?:assessment|assessments|diagnostic)\//.test(location.pathname))return;
+const hideTools=/\/(?:assessment|assessments|diagnostic)\//.test(location.pathname);
 const links=[
  ["Scientific calculator","https://vervenveda.github.io/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/"],
  ["Slope & Rate Studio","https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/assets/learning-games/slope-and-rate-studio/"],
@@ -8,7 +8,7 @@ const links=[
  ["PROSE · ProTools","https://vervenveda.github.io/proresource_hub.github.io/"]
 ];
 function mount(){
- if(document.getElementById("khae-algebra1-tool-menu"))return;
+ if(hideTools||document.getElementById("khae-algebra1-tool-menu"))return;
  const root=document.createElement("aside");root.id="khae-algebra1-tool-menu";root.setAttribute("aria-label","Algebra I learning tools");
  const style=document.createElement("style");style.textContent=`
  #khae-algebra1-tool-menu{position:fixed;right:14px;bottom:16px;z-index:990;max-width:min(310px,calc(100vw - 28px));font:400 15px/1.5 "Avenir Next",Arial,sans-serif;color:#f6f0df}
