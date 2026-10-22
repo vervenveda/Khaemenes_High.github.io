@@ -12,7 +12,7 @@ const storage=()=>window.localStorage;
 
 const COURSE_META=Object.freeze({
  "pre-algebra":Object.freeze({title:"Pre-Algebra",subtitle:"Mathematics · Grade 09 pathway",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/"}),
- "algebra-1":Object.freeze({title:"Algebra I",subtitle:"Mathematics · placement pathway",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/algebra-1/"}),
+ "algebra-1":Object.freeze({title:"Algebra I",subtitle:"Mathematics pathway · High School",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/algebra-1/"}),
  "english-9":Object.freeze({title:"English 9",subtitle:"Language Arts · Grade 09",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-9/"}),
  "integrated-science-9":Object.freeze({title:"Integrated Science 9",subtitle:"Science · Grade 09",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/"}),
  "global-studies-9":Object.freeze({title:"Global Studies Honors",subtitle:"Social Studies · Grade 09",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/grade-09/"}),
@@ -24,7 +24,27 @@ const COURSE_META=Object.freeze({
  "world-language-9-mandarin":Object.freeze({title:"Mandarin Chinese I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=mandarin&course=hs1&source=khaemenes-high-grade09"}),
  "world-language-9-japanese":Object.freeze({title:"Japanese I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=japanese&course=hs1&source=khaemenes-high-grade09"}),
  "world-language-9-arabic":Object.freeze({title:"Arabic · Exploration",subtitle:"World Language · exploration pathway",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=arabic&mode=atlas&source=khaemenes-high-grade09"}),
- "world-language-9-russian":Object.freeze({title:"Russian · Exploration",subtitle:"World Language · exploration pathway",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=russian&mode=atlas&source=khaemenes-high-grade09"})
+ "world-language-9-russian":Object.freeze({title:"Russian · Exploration",subtitle:"World Language · exploration pathway",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=russian&mode=atlas&source=khaemenes-high-grade09"}),
+ "geometry":Object.freeze({title:"Geometry",subtitle:"Mathematics pathway · High School",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/geometry/"}),
+ "algebra-2":Object.freeze({title:"Algebra II",subtitle:"Mathematics pathway · High School",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/algebra-2/"}),
+ "english-10":Object.freeze({title:"English 10",subtitle:"Language Arts · Grade 10",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-10/"}),
+ "english-11":Object.freeze({title:"English 11",subtitle:"Language Arts · Grade 11",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-11/"}),
+ "english-12":Object.freeze({title:"English 12",subtitle:"Language Arts · Grade 12",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-12/"}),
+ "social-studies-10":Object.freeze({title:"Social Studies 10",subtitle:"Social Studies · Grade 10",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/grade-10/"}),
+ "social-studies-11":Object.freeze({title:"Social Studies 11",subtitle:"Social Studies · Grade 11",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/grade-11/"}),
+ "social-studies-12":Object.freeze({title:"Social Studies 12",subtitle:"Social Studies · Grade 12",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/grade-12/"}),
+ "biology-10":Object.freeze({title:"Biology 10",subtitle:"Science · Grade 10",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/science/biology-10/"}),
+ "chemistry-11":Object.freeze({title:"Chemistry 11",subtitle:"Science · Grade 11",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/science/chemistry-11/"}),
+ "physics-engineering-12":Object.freeze({title:"Physics & Engineering 12",subtitle:"Science · Grade 12",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/science/physics-engineering-12/"}),
+ "physical-education-10":Object.freeze({title:"Physical Education 10",subtitle:"Physical Education · Grade 10",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/"}),
+ "physical-education-11":Object.freeze({title:"Physical Education 11",subtitle:"Physical Education · Grade 11",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/"}),
+ "physical-education-12":Object.freeze({title:"Physical Education 12",subtitle:"Physical Education · Grade 12",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/"}),
+ "world-language-10":Object.freeze({title:"World Language · Grade 10",subtitle:"Learner-selected language",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/"}),
+ "world-language-11":Object.freeze({title:"World Language · Grade 11",subtitle:"Learner-selected language",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/"}),
+ "world-language-12":Object.freeze({title:"World Language · Grade 12",subtitle:"Learner-selected language",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/"}),
+ "elective-10":Object.freeze({title:"Elective · Grade 10",subtitle:"Learner-selected elective",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/electives/"}),
+ "elective-11":Object.freeze({title:"Elective · Grade 11",subtitle:"Learner-selected elective",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/electives/"}),
+ "elective-12":Object.freeze({title:"Elective · Grade 12",subtitle:"Learner-selected elective",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/electives/"})
 });
 const ALIASES=Object.freeze({"science-9":"integrated-science-9","social-studies-9":"global-studies-9"});
 const canonical=id=>ALIASES[id]||id;
