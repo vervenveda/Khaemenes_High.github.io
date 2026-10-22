@@ -1,17 +1,23 @@
-name: Pre-Algebra and Algebra I Launch Validation
+name: High School Mathematics Lesson Launch Validation
 
 on:
   pull_request:
     paths:
       - 'courses/mathematics/pre-algebra/**'
       - 'courses/mathematics/algebra-1/**'
+      - 'courses/mathematics/geometry/**'
+      - 'courses/mathematics/algebra-2/**'
       - 'courses/mathematics/tools/validate-prealgebra-algebra1-launch.mjs'
+      - 'courses/mathematics/tools/validate-four-course-lesson-launch.mjs'
       - '.github/workflows/math-launch-day-validation.yml'
   push:
     paths:
       - 'courses/mathematics/pre-algebra/**'
       - 'courses/mathematics/algebra-1/**'
+      - 'courses/mathematics/geometry/**'
+      - 'courses/mathematics/algebra-2/**'
       - 'courses/mathematics/tools/validate-prealgebra-algebra1-launch.mjs'
+      - 'courses/mathematics/tools/validate-four-course-lesson-launch.mjs'
       - '.github/workflows/math-launch-day-validation.yml'
 
 permissions:
@@ -24,7 +30,10 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v6
 
-      - name: Validate combined launch contract
+      - name: Validate Grade 9-12 lesson document launch contract
+        run: node courses/mathematics/tools/validate-four-course-lesson-launch.mjs
+
+      - name: Validate Pre-Algebra and Algebra I progression launch contract
         run: node courses/mathematics/tools/validate-prealgebra-algebra1-launch.mjs
 
       - name: Validate Pre-Algebra component hashes
@@ -50,6 +59,11 @@ jobs:
 
       - name: Validate Algebra I applied labs
         run: node courses/mathematics/algebra-1/tools/validate-applied-labs.mjs
+
+      - name: Validate Geometry and Algebra II course launch JavaScript syntax
+        run: |
+          node --check courses/mathematics/geometry/assets/app.js
+          node --check courses/mathematics/algebra-2/assets/app.js
 
       - name: Validate launch-page inline JavaScript syntax
         run: |
