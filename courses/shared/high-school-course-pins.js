@@ -18,13 +18,13 @@ const COURSE_META=Object.freeze({
  "global-studies-9":Object.freeze({title:"Global Studies Honors",subtitle:"Social Studies · Grade 09",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/grade-09/"}),
  "physical-education-9":Object.freeze({title:"Physical Education 9",subtitle:"Physical Education · Grade 09",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/"}),
  "psychology-101":Object.freeze({title:"Psychology 101",subtitle:"Elective · Grade 09",href:"https://vervenveda.com/Khaemenes_High.github.io/electives/grades/grade-09/psych-101/"}),
- "world-language-9-spanish":Object.freeze({title:"Spanish I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html"}),
- "world-language-9-french":Object.freeze({title:"French I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html"}),
- "world-language-9-german":Object.freeze({title:"German I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html"}),
- "world-language-9-mandarin":Object.freeze({title:"Mandarin Chinese I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html"}),
- "world-language-9-japanese":Object.freeze({title:"Japanese I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html"}),
- "world-language-9-arabic":Object.freeze({title:"Arabic · Exploration",subtitle:"World Language · exploration pathway",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html"}),
- "world-language-9-russian":Object.freeze({title:"Russian · Exploration",subtitle:"World Language · exploration pathway",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html"})
+ "world-language-9-spanish":Object.freeze({title:"Spanish I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=spanish&course=hs1&source=khaemenes-high-grade09"}),
+ "world-language-9-french":Object.freeze({title:"French I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=french&course=hs1&source=khaemenes-high-grade09"}),
+ "world-language-9-german":Object.freeze({title:"German I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=german&course=hs1&source=khaemenes-high-grade09"}),
+ "world-language-9-mandarin":Object.freeze({title:"Mandarin Chinese I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=mandarin&course=hs1&source=khaemenes-high-grade09"}),
+ "world-language-9-japanese":Object.freeze({title:"Japanese I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=japanese&course=hs1&source=khaemenes-high-grade09"}),
+ "world-language-9-arabic":Object.freeze({title:"Arabic · Exploration",subtitle:"World Language · exploration pathway",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=arabic&mode=atlas&source=khaemenes-high-grade09"}),
+ "world-language-9-russian":Object.freeze({title:"Russian · Exploration",subtitle:"World Language · exploration pathway",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=russian&mode=atlas&source=khaemenes-high-grade09"})
 });
 const ALIASES=Object.freeze({"science-9":"integrated-science-9","social-studies-9":"global-studies-9"});
 const canonical=id=>ALIASES[id]||id;
