@@ -12,6 +12,9 @@ on:
       - 'courses/shared/high-school-course-pins.js'
       - 'courses/**/index.html'
       - 'assets/vnv-beta-link.js'
+      - 'stos/khaemenes/assets/vnv-beta-link.js'
+      - 'courses/shared/course-entry-contract.js'
+      - 'tools/validate-high-student-journey.mjs'
       - 'tools/test-high-course-pins.mjs'
       - 'tools/validate-grade09-resume-convenience.mjs'
       - 'tools/validate-grade09-profile-isolation.mjs'
@@ -29,6 +32,9 @@ on:
       - 'courses/shared/high-school-course-pins.js'
       - 'courses/**/index.html'
       - 'assets/vnv-beta-link.js'
+      - 'stos/khaemenes/assets/vnv-beta-link.js'
+      - 'courses/shared/course-entry-contract.js'
+      - 'tools/validate-high-student-journey.mjs'
       - 'tools/test-high-course-pins.mjs'
       - 'tools/validate-grade09-resume-convenience.mjs'
       - 'tools/validate-grade09-profile-isolation.mjs'
@@ -62,6 +68,8 @@ jobs:
           node --check grades/grade-09/student-profile/seven-class-schedule.js
       - name: Validate profile quick-link coverage
         run: node tools/validate-student-profile-quicklink.mjs
+      - name: Validate end-to-end High School student journey
+        run: node tools/validate-high-student-journey.mjs
       - name: Validate learner-scoped High School pins
         run: node tools/test-high-course-pins.mjs
       - name: Validate Grade 09 profile isolation
