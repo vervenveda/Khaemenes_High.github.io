@@ -30,3 +30,14 @@ html:root:root body main .card .eyebrow{font-size:13px!important;line-height:1.5
  document.readyState==="loading"?document.addEventListener("DOMContentLoaded",load,{once:true}):load();
 })();
 ;(()=>{if(document.querySelector('script[data-khae-video-companion]'))return;const s=document.createElement('script');s.src=new URL('../../assets/video-companion-v1.js',document.currentScript?.src||location.href).href;s.dataset.khaeVideoCompanion='1';document.head.appendChild(s)})();
+
+/* Optional Algebra I canonical games, vocabulary and printable evidence. */
+;(()=>{
+ const source=document.currentScript;
+ if(!source?.src||document.getElementById("a1CanonicalLessonToolsLoader"))return;
+ const script=document.createElement("script");
+ script.id="a1CanonicalLessonToolsLoader";
+ script.src=new URL("algebra1-lesson-companions-v1.js",source.src).href;
+ script.onerror=()=>console.warn("Optional Algebra I lesson tools failed to load; course content is unaffected.");
+ document.head.append(script);
+})();
