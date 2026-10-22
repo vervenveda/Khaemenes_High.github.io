@@ -21,7 +21,9 @@ assert.equal((schedule.match(/\["(?:Mathematics|Literature|Social Studies|Scienc
 for(const target of ["courses/physical-education/index.html","courses/language-arts/english-9/index.html","courses/science/integrated-science-9/index.html","courses/social-studies/grade-09/index.html","electives/grades/grade-09/psych-101/index.html"])assert.ok(fs.existsSync(target),"Missing local subject door: "+target);
 const firstRoutes=[...schedule.matchAll(/"((?:pre-algebra|algebra-1|english-9|global-studies-9|integrated-science-9|physical-education-9|psychology-101))":"([^"]+)"/g)];
 assert.equal(firstRoutes.length,7,"Expected seven first-week mathematics/subject routes");
-for(const [,id,route] of firstRoutes)assert.ok(fs.existsSync(route+"index.html")||fs.existsSync(route),"Missing first-week route "+id+": "+route);
+for(const [,id,route] of firstRoutes){const file=route.split("?")[0];assert.ok(fs.existsSync(file+"index.html")||fs.existsSync(file),"Missing first-week route "+id+": "+route)}
+assert.match(schedule,/physical-education\/\?start=grade09-week01/,"PE should link to Grade 9 Week 01 teaching");
+assert.match(read("courses/physical-education/index.html"),/start"\)=== "grade09-week01"|start"\)==="grade09-week01"/,"PE should honor Week 01 deep link after instruction loads");
 const pins=read("courses/shared/high-school-course-pins.js");
 assert.match(pins,/scopedKey\(base,id=activeLearner\(\)\)/,"Pins must be scoped to an active registered learner");
 assert.match(pins,/readLanguageChoices\(\)/,"Language selection must use scoped pin storage");
