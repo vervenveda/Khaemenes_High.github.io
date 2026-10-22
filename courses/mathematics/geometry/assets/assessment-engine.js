@@ -28,3 +28,5 @@ function boot(){
 }
 const needDepth=cfg.recordKey==="midterm"||cfg.recordKey==="final";if(needDepth&&!window.KhaemenesGeometryExamDepth){const s=document.createElement("script");s.src=new URL("../assessments/assets/exam-depth-v2.js",engineScript?.src||location.href).href;s.onload=boot;s.onerror=()=>{const h=document.getElementById("assessmentRoot");if(h)h.innerHTML='<article class="card"><p class="notice"><strong>Assessment depth module unavailable.</strong> Full cumulative mastery cannot be issued.</p></article>'};document.head.appendChild(s)}else boot();
 })();
+/* Academy-first assessment identity; no grading or gate changes. */
+;(()=>{const apply=()=>{const brand=document.querySelector(".site-header .brand-copy");if(!brand)return;const title=brand.querySelector("strong"),subtitle=brand.querySelector("small");if(title)title.textContent="Khaemenes Academy";if(subtitle)subtitle.textContent="Geometry · Assessment";};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",apply,{once:true});else apply()})();
