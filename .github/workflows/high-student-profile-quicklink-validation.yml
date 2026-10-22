@@ -6,20 +6,26 @@ on:
     paths:
       - 'index.html'
       - 'grades/**/index.html'
-      - 'grades/grade-09/student-profile/student-course-registry.js'
-      - 'tools/validate-grade09-resume-convenience.mjs'
-      - 'grades/grade-09/student-profile/student-course-registry.js'
-      - 'tools/validate-grade09-resume-convenience.mjs'
+      - 'grades/grade-09/student-profile/**'
+      - 'courses/shared/high-school-course-pins.js'
       - 'courses/**/index.html'
       - 'assets/vnv-beta-link.js'
+      - 'tools/test-high-course-pins.mjs'
+      - 'tools/validate-grade09-resume-convenience.mjs'
+      - 'tools/validate-grade09-profile-isolation.mjs'
       - 'tools/validate-student-profile-quicklink.mjs'
       - '.github/workflows/high-student-profile-quicklink-validation.yml'
   pull_request:
     paths:
       - 'index.html'
       - 'grades/**/index.html'
+      - 'grades/grade-09/student-profile/**'
+      - 'courses/shared/high-school-course-pins.js'
       - 'courses/**/index.html'
       - 'assets/vnv-beta-link.js'
+      - 'tools/test-high-course-pins.mjs'
+      - 'tools/validate-grade09-resume-convenience.mjs'
+      - 'tools/validate-grade09-profile-isolation.mjs'
       - 'tools/validate-student-profile-quicklink.mjs'
       - '.github/workflows/high-student-profile-quicklink-validation.yml'
 
@@ -34,9 +40,15 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
-      - name: Syntax check widget
+      - name: Syntax check shared profile widget
         run: node --check assets/vnv-beta-link.js
+      - name: Syntax check High School pin store
+        run: node --check courses/shared/high-school-course-pins.js
       - name: Validate profile quick-link coverage
         run: node tools/validate-student-profile-quicklink.mjs
+      - name: Validate learner-scoped High School pins
+        run: node tools/test-high-course-pins.mjs
+      - name: Validate Grade 09 profile isolation
+        run: node tools/validate-grade09-profile-isolation.mjs
       - name: Validate Grade 09 resume convenience
         run: node tools/validate-grade09-resume-convenience.mjs
