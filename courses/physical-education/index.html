@@ -168,7 +168,7 @@ let grade=9,week=1,activeDay=1;
 let G9=null,EXAMS=null,W2BANK=null;
 fetch("./bank-grade09-week02.json").then(r=>r.ok?r.json():Promise.reject(Error("Week 2 bank unavailable"))).then(d=>{if(d.items?.length>=25){W2BANK=d.items;if(G9){G9.weeks[1].checks=W2BANK;render()}}}).catch(()=>{W2BANK=null});
 fetch("./grade-09-assessment-contract.json").then(r=>r.ok?r.json():Promise.reject(Error("assessment file unavailable"))).then(d=>{EXAMS=d;if(grade===9)render()}).catch(()=>{EXAMS=null});
-fetch("./grade-09-instruction.json").then(r=>{if(!r.ok)throw Error("Instruction unavailable");return r.json()}).then(d=>{if(d.weeks?.length===36){G9=d;if(W2BANK)G9.weeks[1].checks=W2BANK;render()}}).catch(()=>{const c=document.getElementById("course");if(c)c.setAttribute("data-instruction-status","fallback")});
+fetch("./grade-09-instruction.json").then(r=>{if(!r.ok)throw Error("Instruction unavailable");return r.json()}).then(d=>{if(d.weeks?.length===36){G9=d;if(W2BANK)G9.weeks[1].checks=W2BANK;render();if(new URLSearchParams(location.search).get("start")==="grade09-week01")openLesson(1)}}).catch(()=>{const c=document.getElementById("course");if(c)c.setAttribute("data-instruction-status","fallback")});
 function save(g,s){try{localStorage.setItem(key(g),JSON.stringify(s));return true}catch{return false}}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function gradeView(g){closeLesson();grade=g;week=1;activeDay=1;delete document.body.dataset.pePrintExam;updatePrintEvidenceHeader();render()}
