@@ -41,3 +41,11 @@ assert 'canvas.toDataURL("image/jpeg"' in theme
 assert 'api?.activeLearner' in theme and 'function guard()' in theme
 assert 'URL.revokeObjectURL(url)' in theme
 print("PASS Grades 10–12 color and private portrait integration wiring")
+
+for grade in range(9,13):
+    html=(ROOT/f"grades/grade-{grade:02d}/student-profile/index.html").read_text(encoding="utf-8")
+    assert 'student-achievements-dreams.js' in html, f"Grade {grade} dream board missing"
+shared_dreams=(ROOT/"grades/shared/student-achievements-dreams.js").read_text(encoding="utf-8")
+for requirement in ("achievement-constellation", "dream-discovery-board", "readAcademyProfile", "localStorage.setItem(boardKey", "khae-learning-portfolio-v1:learner:"):
+    assert requirement in shared_dreams, f"Missing dream/constellation safeguard: {requirement}"
+print("PASS Grades 9–12 evidence stars and learner-scoped dream board wiring")
