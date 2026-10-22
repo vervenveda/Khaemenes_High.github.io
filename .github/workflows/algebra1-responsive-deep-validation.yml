@@ -127,6 +127,12 @@ jobs:
           print('PASS: Algebra I Applied Mission Studio contract.')
           PY
 
+      - name: Verify Algebra I access, reader preservation and loader recovery
+        run: |
+          node --check courses/shared/math-entry-gate.js
+          node --check courses/mathematics/algebra-1/assets/unit-page.js
+          node courses/mathematics/algebra-1/tools/test-student-access-recovery.mjs
+
       - name: Verify lesson reading and draft recovery
         run: node courses/mathematics/algebra-1/tools/test-lesson-reading-drafts.mjs
 

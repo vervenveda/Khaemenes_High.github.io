@@ -143,10 +143,52 @@
     } catch {}
   }
 
+
+  // In Algebra I the Week 1 diagnostic chooses instructional support, not a grade lock.
+  function algebraDiagnosticCompleted(record) {
+    if (!record || typeof record !== "object") return false;
+    if (record.assessment_id !== "KH-MATH-A1-DIAGNOSTIC" && record.id !== "KH-MATH-A1-DIAGNOSTIC") return false;
+    const attempts = [...(Array.isArray(record.attempt_history) ? record.attempt_history : []),record.lastResult].filter(Boolean);
+    return attempts.some(a => a.id === "KH-MATH-A1-DIAGNOSTIC" &&
+      Number.isFinite(a.percent) && Number.isFinite(a.total) && a.total > 0) ||
+      Number.isFinite(record.bestScore) || Number.isFinite(record.percent);
+  }
+  function algebraHasPriorWork(profile) {
+    const keys = [];
+    for (let n = 1; n <= 13; n++) {
+      const u = String(n).padStart(2, "0");
+      keys.push(`khaemenes-algebra1-unit${u}-a3-v1`, `khaemenes-algebra1-unit${u}-progress-v1`);
+    }
+    keys.push("khaemenes-algebra1-weekly-mastery-v2",
+      "khaemenes-algebra1-midterm-result-v1", "khaemenes-algebra1-final-result-v1");
+    const evidence = v => !!v && typeof v === "object" && (
+      (Array.isArray(v.attempts) && v.attempts.length > 0) ||
+      (Array.isArray(v.attempt_history) && v.attempt_history.length > 0) ||
+      (Array.isArray(v.completed) && v.completed.length > 0) ||
+      (v.best && Object.keys(v.best).length > 0) ||
+      (v.scores && Object.keys(v.scores).length > 0) ||
+      (v.weeks && Object.values(v.weeks).some(w => !!w &&
+        (Number.isFinite(w.best) || (Array.isArray(w.attempts) && w.attempts.length > 0)))) ||
+      (!!v.lastResult && typeof v.lastResult === "object")
+    );
+    return keys.some(key => evidence(readScoped(key, profile)));
+  }
+
   function decision() {
     const profile = contract?.readAcademyProfile?.();
     if (!profile) return { allow: false, title: "Choose your learner", message: "Select your learner in the Academy Family Portal before opening this mathematics course. Course records stay separated by Academy learner.", href: academyHref, label: "Return to Academy sign-in" };
     if (entryMode === "diagnostic") return { allow: true, profile };
+    if (courseId === "math-algebra1") {
+      // Diagnostic completion is sufficient regardless of its score;
+      // lesson, weekly, unit and cumulative mastery still enforce 80% separately.
+      if (algebraDiagnosticCompleted(readScoped(evidenceKey, profile)))
+        return { allow: true, profile, pathway: "diagnostic_completed" };
+      if (algebraHasPriorWork(profile))
+        return { allow: true, profile, pathway: "returning_learner" };
+      return { allow: false, title: "Begin with Algebra I readiness",
+        message: "Complete the Week 1 diagnostic before your first lesson. Its score selects learning support, not an 80% entrance lock.",
+        href: html.dataset.mathDiagnosticHref || "diagnostic/", label: "Open readiness diagnostic" };
+    }
     const readiness = contract.readJSON(readinessKey, null, profile);
     const latest = contract.latest(readiness);
     if (contract.readinessIsValid(latest, courseId) && latest.route === "advance") return { allow: true, profile, pathway: "core" };

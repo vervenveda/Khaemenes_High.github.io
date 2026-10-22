@@ -20,7 +20,19 @@ function loadAt(i){
  if(i>=scripts.length){shuffleVisibleOptions();window.KhaemenesAlgebra1StudentExperience?.enhance();window.KhaemenesAlgebra1LearningExperience?.enhance();return}
  const s=document.createElement("script");s.src=scripts[i];s.async=false;
  s.onload=()=>loadAt(i+1);
- s.onerror=()=>console.error("Algebra I unit renderer dependency could not load:",scripts[i]);
+ s.onerror=()=>{
+  const failed=scripts[i];console.error("Algebra I unit renderer dependency could not load:",failed);
+  // Fail closed on required renderer/mastery scripts; keep optional companions separate.
+  if(/(?:mastery-authority-v1|unit-page-core|strict-mastery-gates)\\.js(?:$|\\?)/.test(failed)){
+   document.body.dataset.algebra1LoadFailed="true";
+   const main=document.getElementById("main");
+   if(main)main.innerHTML='<section class="hero"><div class="wrap"><p class="eyebrow">Algebra I · Lesson loading</p><h1>The lesson engine could not finish loading.</h1><p class="lead">Saved work was not reset. Reconnect or refresh to load the required teaching and mastery safeguards.</p><div class="actions"><button class="btn primary" type="button" id="algebra1RetryLoad">Retry lesson</button><a class="btn" href="'+(ref.root||"../../")+'">Course Home</a></div></div></section>';
+   document.getElementById("algebra1RetryLoad")?.addEventListener("click",()=>location.reload());
+   return;
+  }
+  console.warn("Optional Algebra I lesson companion unavailable:",failed);
+  loadAt(i+1);
+ };
  document.head.appendChild(s);
 }
 function shuffleVisibleOptions(){

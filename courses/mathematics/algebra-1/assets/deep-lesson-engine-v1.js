@@ -327,8 +327,8 @@ function exposeReading(){
  let printDetails=[];
  window.addEventListener("beforeprint",()=>{printDetails=[...reader.querySelectorAll("details")].map(d=>[d,d.open]);printDetails.forEach(([d])=>d.open=true)});
  window.addEventListener("afterprint",()=>{printDetails.forEach(([d,open])=>d.open=open);printDetails=[]});
- // The inline reader includes every worked example, so remove the duplicated base presentation.
- main.querySelector(".example-grid")?.closest("section")?.remove();
+ // Preserve the original worked-example cards alongside the expanded reader.
+ // Removing them hid previously available teaching content and visual examples.
 }
 function draftFieldKey(field,index){
  const question=field.closest(".question");
@@ -375,19 +375,22 @@ function preserveDrafts(){
 
 function focusQuestionSet(){
  const host=document.getElementById("questions")||document.querySelector("#questionHost")||null;if(!host||host.dataset.focusedEnhanced==="true")return;
- const questions=[...host.querySelectorAll(".question")].filter(q=>!q.closest(".constructed-block"));if(questions.length<2)return;
+ let questions=[...host.querySelectorAll(".question")].filter(q=>!q.closest(".constructed-block"));if(questions.length<2)return;
  host.dataset.focusedEnhanced="true";questions.forEach(q=>q.classList.add("focused-question"));
  let current=0;
  const panel=document.createElement("div");panel.className="focused-check";panel.innerHTML=`<div class="focused-check-top"><span class="focused-check-label">Focused problem view</span><span class="focused-check-count" aria-live="polite"></span></div><div class="focused-track" aria-hidden="true"><span></span></div><div class="focused-dots" aria-label="Question progress"></div><div class="focused-nav"><button type="button" data-prev>← Previous</button><button type="button" data-next>Next →</button></div><p class="focused-hint">One problem at a time. Draft answers save locally when storage is available; submit to record a score.</p>`;
  host.parentNode.insertBefore(panel,host);const count=panel.querySelector(".focused-check-count"),bar=panel.querySelector(".focused-track span"),dots=panel.querySelector(".focused-dots"),prev=panel.querySelector("[data-prev]"),next=panel.querySelector("[data-next]");
- questions.forEach((_,i)=>{const b=document.createElement("button");b.type="button";b.className="focused-dot";b.textContent=String(i+1);b.setAttribute("aria-label",`Go to question ${i+1}`);b.onclick=()=>show(i);dots.appendChild(b)});
- const dotButtons=[...dots.children];
+ let dotButtons=[];
+ function buildDots(){dots.replaceChildren();questions.forEach((_,i)=>{const b=document.createElement("button");b.type="button";b.className="focused-dot";b.textContent=String(i+1);b.setAttribute("aria-label",`Go to question ${i+1}`);b.onclick=()=>show(i);dots.appendChild(b)});dotButtons=[...dots.children]}
+ buildDots();
  function answered(q){return !!q.querySelector('input[type="radio"]:checked, input[type="checkbox"]:checked')||[...q.querySelectorAll('textarea,input[type="text"],input[type="number"]')].some(f=>f.value.trim()!=="")}
  function update(){const done=questions.filter(answered).length;count.textContent=`Question ${current+1} of ${questions.length} · ${done} answered`;bar.style.width=`${Math.round(done/questions.length*100)}%`;dotButtons.forEach((b,i)=>{b.classList.toggle("answered",answered(questions[i]));b.classList.toggle("current",i===current)});prev.disabled=current===0;next.disabled=current===questions.length-1;next.textContent=current===questions.length-1?"Last problem":"Next →"}
  function show(i){current=Math.max(0,Math.min(questions.length-1,i));questions.forEach((q,j)=>q.hidden=j!==current);update();questions[current].scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});questions[current].querySelector("input,textarea,button")?.focus({preventScroll:true})}
  prev.onclick=()=>show(current-1);next.onclick=()=>show(current+1);host.addEventListener("change",update);host.addEventListener("input",update);
  const score=document.getElementById("score")||document.getElementById("submitButton");if(score){score.addEventListener("click",e=>{const firstMissing=questions.findIndex(q=>!answered(q));if(firstMissing>=0){e.preventDefault();e.stopImmediatePropagation();show(firstMissing);const msg=document.getElementById("scoreMsg")||document.getElementById("status")||document.getElementById("result");if(msg)msg.textContent="Complete this problem before scoring the set.";return}setTimeout(update,0)},true)}
  const reset=document.getElementById("reset")||document.getElementById("resetButton");reset?.addEventListener("click",()=>setTimeout(()=>show(0),0));show(0);
+ // Retakes replace the question nodes; reconnect the focused view to the new set.
+ new MutationObserver(()=>{const next=[...host.querySelectorAll(".question")].filter(q=>!q.closest(".constructed-block"));if(next.length<2||next.length===questions.length&&next.every((q,i)=>q===questions[i]))return;questions=next;questions.forEach(q=>q.classList.add("focused-question"));current=0;buildDots();show(0)}).observe(host,{childList:true,subtree:true});
 }
 
 function enhance(){style();enhanceConcepts();focusQuestionSet()}
