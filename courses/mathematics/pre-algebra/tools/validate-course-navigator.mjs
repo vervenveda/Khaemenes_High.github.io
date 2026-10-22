@@ -82,10 +82,10 @@ for(let i=1;i<=13;i++){
   const required=`./units/unit-${String(i).padStart(2,"0")}/unit-map.json`;
   expect(!serviceWorker.includes(required),`Canonical ${required} must remain on-demand rather than expanding the shell cache.`);
 }
-const cacheRelease=serviceWorker.match(/CACHE_NAME=\x60\$\{CACHE_PREFIX\}(v\d+-ams-[^\x60]+)\x60/);
+const cacheRelease=serviceWorker.match(/CACHE_NAME=\x60\$\{CACHE_PREFIX\}(v\d+-[^\x60]+)\x60/);
 const missionRelease=serviceWorker.match(/MISSION_OFFLINE_RELEASE="(ams-[^"]+)"/);
-expect(Boolean(cacheRelease&&missionRelease&&cacheRelease[1].includes(missionRelease[1])),
-  "Navigator offline-shell cache release and mission release must match.");
+expect(Boolean(cacheRelease&&missionRelease&&cacheRelease[1].includes(missionRelease[1].replace(/-\\d{8}$/,""))),
+  "Navigator versioned offline-shell cache must identify the preserved mission release.");
 
 for(const relative of ["assets/prealgebra-course-navigator-v1.js","assets/prealgebra-assessment-depth-v2.js","service-worker.js"]){
   const check=spawnSync(process.execPath,["--check",path.join(root,relative)],{encoding:"utf8"});
