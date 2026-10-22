@@ -40,8 +40,8 @@ assert.match(css,/data-student-density="compact"/,"compact dashboard density is 
 
 assert.match(registry,/course=hs1/,"formal Grade 09 language links request the High School I program");
 assert.match(registry,/mode=atlas/,"exploration languages request the Linguistics Atlas");
-assert.match(registry,/Arabic · Exploration/,"Arabic is not misrepresented as a complete formal course");
-assert.match(registry,/Russian · Exploration/,"Russian is not misrepresented as a complete formal course");
+assert.match(registry,/!\["arabic","russian"\]\.includes\(id\)/,"Arabic and Russian are excluded from the current five formal programs");
+assert.match(registry,/formal\?name\+" I":name\+" · Exploration"/,"exploration languages receive non-formal titles");
 assert.match(seven,/Arabic \(exploration\)/,"schedule selector labels Arabic exploration");
 assert.match(seven,/Russian \(exploration\)/,"schedule selector labels Russian exploration");
 
