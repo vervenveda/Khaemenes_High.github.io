@@ -11,6 +11,11 @@ on:
       - scripts/validate_grade09_placement_math_dashboard.mjs
       - scripts/validate_grade09_seven_class_journey.mjs
       - scripts/validate_grade09_translator_gateway.mjs
+      - scripts/validate_upper_grade_seven_class_journey.mjs
+      - grades/shared/upper-grade-seven-class.js
+      - grades/grade-10/**
+      - grades/grade-11/**
+      - grades/grade-12/**
       - .github/workflows/grade09-placement-math-validation.yml
   push:
     branches:
@@ -50,6 +55,9 @@ jobs:
 
       - name: Verify official Grade 09 translation layer
         run: node scripts/validate_grade09_translator_gateway.mjs
+
+      - name: Validate upper-grade seven-class student profiles
+        run: node scripts/validate_upper_grade_seven_class_journey.mjs
 
       - name: Check shared JavaScript syntax
         run: |
