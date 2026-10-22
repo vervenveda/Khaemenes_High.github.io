@@ -1,4 +1,4 @@
-/* Verve N Veda · Beta Program + Khaemenes learner rail widget · v1.8.0 */
+/* Verve N Veda · Beta Program + Khaemenes learner rail widget · v1.9.0 */
 (() => {
   "use strict";
 
@@ -14,7 +14,7 @@
   const BAZAAR_LIVE_URL="https://vervenveda.github.io/333.github.io/app/Bazaar_Art_Live_index.html";
   const HIGH_PROFILE_ID="khaemenesHighStudentProfileLink";
   const HIGH_PROFILE_STYLE_ID="khaemenesHighStudentProfileLinkStyles";
-  const HIGH_WORK_ID="khaemenesStudentWorkButton";
+  const HIGH_MENTOR_ID="khaemenesStudentMentorButton";
   const HIGH_SEARCH_ID="khaemenesStudentSearchButton";
   const HIGH_CONTRIBUTE_ID="khaemenesStudentContributeButton";
   const EDUCATION_TOOLBAR_ID="khaemenesLearnerUtilityToolbar";
@@ -216,19 +216,19 @@
           order:10;color:#493719!important;background:#fff4d8!important;border:1px solid #b48b45!important
         }
         #${EDUCATION_TOOLBAR_ID}>#${HIGH_PROFILE_ID}{
-          order:20;color:#17392f!important;background:#fffdf8!important;border:1px solid rgba(180,139,69,.72)!important
-        }
-        #${EDUCATION_TOOLBAR_ID}>#${HIGH_WORK_ID},#${EDUCATION_TOOLBAR_ID}>#learnerRecordNoticeButton{
-          order:10;color:#493719!important;background:#fff4d8!important;border:1px solid #b48b45!important
+          order:10;color:#17392f!important;background:#fffdf8!important;border:1px solid rgba(180,139,69,.72)!important
         }
         #${EDUCATION_TOOLBAR_ID}>#${HIGH_SEARCH_ID}{
-          order:30;color:#17392f!important;background:#eef5f1!important;border:1px solid rgba(49,73,62,.38)!important
+          order:20;color:#17392f!important;background:#eef5f1!important;border:1px solid rgba(49,73,62,.38)!important
         }
-        #${EDUCATION_TOOLBAR_ID}>#${ID}{
-          order:40;color:#f7efe0!important;background:#0f1925!important;border:1px solid rgba(183,147,77,.72)!important
+        #${EDUCATION_TOOLBAR_ID}>#${HIGH_MENTOR_ID}{
+          order:30;color:#493719!important;background:#fff4d8!important;border:1px solid #b48b45!important
         }
         #${EDUCATION_TOOLBAR_ID}>#${HIGH_CONTRIBUTE_ID}{
-          order:50;color:#563f27!important;background:#fffaf0!important;border:1px solid rgba(180,139,69,.62)!important
+          order:40;color:#315a49!important;background:#eef5f1!important;border:1px solid rgba(49,73,62,.38)!important
+        }
+        #${EDUCATION_TOOLBAR_ID}>#${ID}{
+          order:50;color:#f7efe0!important;background:#0f1925!important;border:1px solid rgba(183,147,77,.72)!important
         }
         #${EDUCATION_TOOLBAR_ID}>button:hover,#${EDUCATION_TOOLBAR_ID}>a:hover{transform:translateY(-1px)}
         #${EDUCATION_TOOLBAR_ID}>button:focus-visible,#${EDUCATION_TOOLBAR_ID}>a:focus-visible{outline:3px solid #b48b45;outline-offset:2px}
@@ -290,30 +290,16 @@
     const toolbar=ensureEducationToolbar();if(!toolbar)return;
     const profileUrl=highStudentProfileUrl();
 
-    const preserved=[...document.querySelectorAll("button,a")].find(el=>{
-      if(el.id===HIGH_WORK_ID)return false;
-      const id=String(el.id||"").toLowerCase();
-      const text=String(el.textContent||"").trim().toLowerCase();
-      return id==="learnerrecordnoticebutton"||
-        /preserv(ed)?[-_ ]?work|legacy[-_ ]?work|work[-_ ]?recovery/.test(id)||
-        text==="preserved work"||text.startsWith("preserved work ·");
-    });
-    const fallbackWork=document.getElementById(HIGH_WORK_ID);
-    if(preserved&&fallbackWork&&fallbackWork!==preserved)fallbackWork.remove();
-    let work=preserved||document.getElementById(HIGH_WORK_ID);
-    if(!work){
-      work=document.createElement("button");
-      work.id=HIGH_WORK_ID;
-      work.type="button";
-      work.addEventListener("click",()=>{
-        const url=highStudentProfileUrl();
-        try{location.assign(url)}catch{location.href=url}
-      });
+    let mentor=document.getElementById(HIGH_MENTOR_ID);
+    if(!mentor){
+      mentor=document.createElement("a");
+      mentor.id=HIGH_MENTOR_ID;
+      mentor.href=HIGH_SCHOOL_ROOT+"mentor/?stage=high&subject=general&source=student-utility-rail";
+      mentor.textContent="Archaemenes";
+      mentor.setAttribute("aria-label","Open Archaemenes High School mentor support");
+      mentor.title="Archaemenes · planning, study direction and next steps";
     }
-    work.textContent="My Work";
-    work.setAttribute("aria-label",preserved?"Open preserved student work and recovery":"Open my High School profile, records and learning evidence");
-    work.title=preserved?"My Work · preserved work and recovery":"My Work · records and evidence";
-    dockEducationUtility(work,10);
+    dockEducationUtility(mentor,30);
 
     let search=document.getElementById(HIGH_SEARCH_ID);
     if(!search){
@@ -326,7 +312,7 @@
     search.setAttribute("aria-disabled",String(closedBook));
     search.setAttribute("aria-label",closedBook?"Search is unavailable during this closed-book assessment":"Search Khaemenes and the Verve N Veda learning ecosystem");
     search.title=closedBook?"Search · unavailable during closed-book assessment":"Search · courses, resources and ecosystem pages";
-    dockEducationUtility(search,30);
+    dockEducationUtility(search,20);
 
     let contribute=document.getElementById(HIGH_CONTRIBUTE_ID);
     if(!contribute){
@@ -335,9 +321,9 @@
       contribute.setAttribute("aria-label","Open voluntary contribution and support information");
       contribute.title="Contribute · voluntary support for free public access";
     }
-    dockEducationUtility(contribute,50);
+    dockEducationUtility(contribute,40);
 
-    const beta=document.getElementById(ID);if(beta)dockEducationUtility(beta,40);
+    const beta=document.getElementById(ID);if(beta)dockEducationUtility(beta,50);
   }
 
   function alignHighProfileSurface(){
@@ -347,8 +333,8 @@
     const quick=document.getElementById(HIGH_PROFILE_ID);
     const beta=document.getElementById(ID);
 
-    if(quick)dockEducationUtility(quick,20);
-    if(beta)dockEducationUtility(beta,isHighStudentSurface()?40:30);
+    if(quick)dockEducationUtility(quick,10);
+    if(beta)dockEducationUtility(beta,isHighStudentSurface()?50:30);
     ensureHighStudentUtilityButtons();
 
     const panel=document.getElementById("learnerRecordNoticePanel");
@@ -412,7 +398,7 @@
       (ensureEducationToolbar()||document.body).append(button);
     }
 
-    dockEducationUtility(document.getElementById(HIGH_PROFILE_ID),20);
+    dockEducationUtility(document.getElementById(HIGH_PROFILE_ID),10);
     alignHighProfileSurface();
 
     if(typeof MutationObserver==="function"&&!document.documentElement.dataset.khaeHighProfileStackBound){
