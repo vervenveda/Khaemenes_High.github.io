@@ -36,4 +36,18 @@ const motionStyle=make("style");motionStyle.textContent='html[data-khae-reduce-m
 [big,calm].forEach(field=>field.addEventListener("change",()=>{if(!scoped()){big.checked=!!initial.largeText;calm.checked=!!initial.reducedMotion;return}try{localStorage.setItem(accessKey,JSON.stringify({largeText:big.checked,reducedMotion:calm.checked}));state.textContent="Reading preferences saved."}catch{state.textContent="Reading preferences could not be saved."}applyAccess()}));
 if(!originalKey){big.disabled=calm.disabled=true}applyAccess();
 root.insertAdjacentElement("afterend",panel);load();
+function refreshAfterReturn(){
+ if(!scoped()){
+  goal.value="";goal.disabled=true;save.disabled=true;exportBtn.disabled=true;
+  big.disabled=true;calm.disabled=true;
+  state.textContent="The active learner changed. Reload this dashboard to open the correct learner workspace.";
+  return;
+ }
+ if(document.activeElement!==goal){try{const saved=localStorage.getItem(originalKey)||"";if(goal.value!==saved)goal.value=saved}catch{}}
+ try{const preferences=JSON.parse(localStorage.getItem(accessKey)||"{}");big.checked=!!preferences.largeText;calm.checked=!!preferences.reducedMotion;applyAccess()}catch{}
+}
+window.addEventListener("pageshow",refreshAfterReturn);
+window.addEventListener("focus",refreshAfterReturn);
+window.addEventListener("storage",event=>{if(!event.key||event.key===originalKey||event.key===accessKey||event.key==="khaemenes_active_learner_v1")refreshAfterReturn()});
+window.addEventListener("khaemenes-student-profile-changed",refreshAfterReturn);
 })();
