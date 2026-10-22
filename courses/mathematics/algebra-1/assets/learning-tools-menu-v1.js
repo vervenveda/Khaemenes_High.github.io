@@ -34,7 +34,7 @@ function installNextStep(){
  const num=Number(match[1]),kind=match[2];
  const result=document.getElementById("result")||document.getElementById("scoreMsg");
  const score=document.getElementById("score");
- if(!result||!score)return;
+ if(!result||!score){const main=document.getElementById("main");if(main&&!main.dataset.khaeNextStepAwait){main.dataset.khaeNextStepAwait="1";const wait=new MutationObserver(()=>{if(document.getElementById("result")||document.getElementById("scoreMsg")){wait.disconnect();delete main.dataset.khaeNextStepAwait;installNextStep()}});wait.observe(main,{childList:true,subtree:true})}return;}
  const section=document.createElement("div");section.id="khae-next-learning-step";section.style.cssText="margin:18px 0;padding:16px;border:1px solid #a99066;border-radius:7px;line-height:1.6";
  section.setAttribute("aria-label","Next learning step");
  section.hidden=true;result.after(section);
