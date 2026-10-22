@@ -13,6 +13,7 @@ on:
       - 'tools/test-high-course-pins.mjs'
       - 'tools/validate-grade09-resume-convenience.mjs'
       - 'tools/validate-grade09-profile-isolation.mjs'
+      - 'tools/validate-grade09-schedule-personalization.mjs'
       - 'tools/validate-student-profile-quicklink.mjs'
       - '.github/workflows/high-student-profile-quicklink-validation.yml'
   pull_request:
@@ -26,6 +27,7 @@ on:
       - 'tools/test-high-course-pins.mjs'
       - 'tools/validate-grade09-resume-convenience.mjs'
       - 'tools/validate-grade09-profile-isolation.mjs'
+      - 'tools/validate-grade09-schedule-personalization.mjs'
       - 'tools/validate-student-profile-quicklink.mjs'
       - '.github/workflows/high-student-profile-quicklink-validation.yml'
 
@@ -44,11 +46,19 @@ jobs:
         run: node --check assets/vnv-beta-link.js
       - name: Syntax check High School pin store
         run: node --check courses/shared/high-school-course-pins.js
+      - name: Syntax check student personalization scripts
+        run: |
+          node --check grades/grade-09/student-profile/student-quick-pins.js
+          node --check grades/grade-09/student-profile/student-schedule-bar.js
+          node --check grades/grade-09/student-profile/student-profile-preferences.js
+          node --check grades/grade-09/student-profile/seven-class-schedule.js
       - name: Validate profile quick-link coverage
         run: node tools/validate-student-profile-quicklink.mjs
       - name: Validate learner-scoped High School pins
         run: node tools/test-high-course-pins.mjs
       - name: Validate Grade 09 profile isolation
         run: node tools/validate-grade09-profile-isolation.mjs
+      - name: Validate Grade 09 schedule personalization
+        run: node tools/validate-grade09-schedule-personalization.mjs
       - name: Validate Grade 09 resume convenience
         run: node tools/validate-grade09-resume-convenience.mjs
