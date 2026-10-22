@@ -55,10 +55,9 @@
       </article>
 <article class="front-card" style="--accent:#96594e">
         <span class="front-mark">P</span>
-        <h3>Parent-Aware Settings</h3>
-        
-        <p>Parent or guardian access remains preserved. Public static pages do not store real account passwords.</p>
-        <a class="btn" href="student-profile/settings/">Open Settings</a>
+        <h3>Profile &amp; Settings</h3>
+        <p>Open goals, strengths, supports, accessibility, language, workspace controls, and learner-owned evidence in the Academy Learning Profile.</p>
+        <a class="btn" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Open Profile &amp; Settings</a>
       </article></div>
   </div>
 </section>
@@ -111,7 +110,7 @@
       </article>
 <article class="support-card">
         <h3>My Profile</h3><p>Review interests, goals, strengths, supports, and portfolio links.</p>
-        <a class="btn" href="student-profile/profile/">Open Profile</a>
+        <a class="btn" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Open Profile</a>
       </article></div>
   </div>
 </section>
@@ -120,7 +119,7 @@
 <script>
 (()=>{"use strict";const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};let learner=null;try{const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null"),family=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");learner=typeof id==="string"&&family?.learners?.[id]?.learnerId===id?family.learners[id]:null}catch{}const key=learner?`khaemenes-high-profile-v1:learner:${encodeURIComponent(learner.learnerId)}`:"khaemenes-high-profile-v1";const p=read(key,null)||(!learner?read("khaemenes-grade09-profile-v1",null):null)||{};const name=p.displayName||p.name||p.nickname||learner?.nickname||"Freshman Home";const node=document.getElementById("studentName");if(node)node.textContent=name;})();
 </script>
-<script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script>
+<script src="../../assets/vnv-beta-link.js" defer></script>
 <script src="../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script defer src="../../courses/mathematics/algebra-1/assets/learning-tools-menu-v1.js" data-academy-learning-tools="v1"></script>
 </body>
