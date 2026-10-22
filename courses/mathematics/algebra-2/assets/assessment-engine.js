@@ -125,6 +125,15 @@
       data[key].mastery = MASTERY_TARGET == null ? null : data[key].attempts.some(item => item.mastery === true || item.mastery_met === true || Number(item.score) >= MASTERY_TARGET);
       save(data);
       document.getElementById("assessmentMessage").innerHTML = `<span class="score">${scoreValue}%</span> · ${right}/${set.length} · Best ${data[key].bestScore}%${mastery === true ? " · Mastery demonstrated" : mastery === false ? " · Review, correct, and retake" : " · Diagnostic evidence recorded"}`;
+      const priorNav=document.getElementById("academyNextStep");priorNav?.remove();
+      const panel=document.createElement("div");panel.id="academyNextStep";panel.className="card";panel.style.marginTop="14px";panel.setAttribute("aria-label","Next learning step");
+      const heading=document.createElement("p");heading.textContent="Next learning step";panel.append(heading);
+      const add=(label,href)=>{const a=document.createElement("a");a.className="btn";a.href=href;a.textContent=label;a.style.margin="5px 10px 5px 0";panel.append(a);};
+      const unitMatch=location.pathname.match(/unit-(\\d{2})/),unit=unitMatch?Number(unitMatch[1]):0;
+      if(MASTERY_TARGET==null){add("Continue to Algebra II units","../index.html#units");}
+      else if(mastery===true){add("Return to course pathway",unit?"../../../index.html#units":"../index.html#units");if(unit&&unit<13)add("Check next unit","../../unit-"+String(unit+1).padStart(2,"0")+"/");}
+      else {add("Review unit lessons",unit?"../index.html":"../index.html#units");}
+      document.getElementById("assessmentMessage")?.after(panel);
       document.getElementById("submitAssessment")?.setAttribute("disabled", "true");
     }
 
