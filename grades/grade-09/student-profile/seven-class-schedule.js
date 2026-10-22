@@ -62,7 +62,20 @@ function render(){
   list.append(card);
  });
  host.append(list);
- const status=el("p",slots.filter((_,i)=>registry.isPinned(idFor(i))).length+" of 7 classes pinned");status.setAttribute("role","status");status.style.marginTop="12px";host.append(status);
+ const setup=el("button","Pin all seven classes");
+ setup.type="button";setup.style.cssText="margin-top:16px;padding:11px 16px;border-radius:7px";
+ setup.addEventListener("click",()=>{
+  let successful=0;
+  for(let i=0;i<slots.length;i++){
+   const id=idFor(i);
+   if(registry.isPinned(id)||registry.setPinned(id,true))successful++;
+  }
+  render();
+  const feedback=document.getElementById("grade09ScheduleSaveStatus");
+  if(feedback)feedback.textContent=successful===7?"Seven classes pinned for this learner. Open Daily Lessons to begin.":"Some classes could not be saved. Check available browser storage and the active learner.";
+ });
+ host.append(setup);
+ const status=el("p",slots.filter((_,i)=>registry.isPinned(idFor(i))).length+" of 7 classes pinned");status.setAttribute("role","status");status.style.marginTop="12px";status.id="grade09ScheduleSaveStatus";host.append(status);
 }
 render();
 window.addEventListener("storage",()=>render());
