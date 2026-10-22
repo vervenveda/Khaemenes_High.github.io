@@ -113,7 +113,7 @@
 <script>
 (()=>{"use strict";let learner=null;try{const active=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null"),family=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null"),id=typeof active==="string"?active:active?.learnerId;learner=id?family?.learners?.[id]||null:null}catch{}const name=learner?.nickname||learner?.displayName||learner?.name||"Sophomore Home";const node=document.getElementById("studentName");if(node)node.textContent=name;})();
 </script>
-<script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script>
+<script src="../../assets/vnv-beta-link.js" defer></script>
 <script src="../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script defer src="../../courses/mathematics/algebra-1/assets/learning-tools-menu-v1.js" data-academy-learning-tools="v1"></script>
 </body>
