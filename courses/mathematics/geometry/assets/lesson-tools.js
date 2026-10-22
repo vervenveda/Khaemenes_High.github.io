@@ -79,3 +79,6 @@ document.getElementById("saveLessonNote")?.addEventListener("click",()=>{rec.not
  document.readyState==="loading"?document.addEventListener("DOMContentLoaded",load,{once:true}):load();
 })();
 ;(()=>{if(document.querySelector('script[data-khae-video-companion]'))return;const s=document.createElement('script');s.src=new URL('../../assets/video-companion-v1.js',document.currentScript?.src||location.href).href;s.dataset.khaeVideoCompanion='1';document.head.appendChild(s)})();
+
+/* Academy learner toolbar on course lessons, independently of grading. */
+;(()=>{if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;const mount=()=>{if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;const script=document.createElement("script");script.src="https://vervenveda.com/assets/vnv-beta-link.js";script.defer=true;script.dataset.academyLearnerToolbar="1";document.head.appendChild(script)};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",mount,{once:true}):mount()})();
