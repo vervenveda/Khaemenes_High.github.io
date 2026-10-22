@@ -61,6 +61,7 @@ const unit=fs.readFileSync(path.join(root,'assets/unit01.js'),'utf8');
 assert.match(unit,/function lessonUnlocked\(/,'Unit 01 lesson access contract missing');
 assert.match(unit,/function weekMastered\(/,'Unit 01 weekly mastery check missing');
 assert.match(unit,/function installRetry\(/,'Unit 01 retake handler contract missing');
+assert.match(unit,/if\(nextBox\)\{nextBox.hidden=true;nextBox.style.display="none";nextBox.replaceChildren\(\)\}/,'New attempts must clear stale next-step links');
 assert.match(unit,/function installLessonWritingDraft\(/,'Lesson writing recovery missing');
 assert.match(unit,/installLessonWritingDraft\(n\);bind\(items/,'Writing recovery must initialize on lesson pages');
 for(const field of ['Discovery notes','Lab notes','Mathematical defense']){
