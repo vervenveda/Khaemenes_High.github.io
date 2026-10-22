@@ -35,7 +35,7 @@ for(const token of [
 pass(widget.includes("highStudentProfileUrl"),"Student Profile resolves the active High grade");
 pass(widget.includes("VNVEcosystemMenu")&&widget.includes("openStudentSearch"),"Search reuses the shared ecosystem search");
 pass(widget.includes("isClosedBookAssessmentSurface")&&widget.includes("search.disabled=closedBook"),"Search is disabled during recognized closed-book assessments");
-pass(widget.includes('CONTRIBUTE_URL="https://vervenveda.com/#vnv-global-support"'),"Contribute opens centralized voluntary-support information");
+pass(widget.includes('CONTRIBUTE_URL="https://vervenveda.com/#support"'),"Contribute opens centralized voluntary-support information");
 pass(!widget.includes("toolbar.append(bridge)")&&!widget.includes("quick.remove()"),"Family Bridge cannot replace the dedicated Student Profile rail control");
 pass(widget===local,"High School public and STOS toolbar copies are byte-for-byte synchronized");
 pass(!read("courses/shared/course-entry-contract.js").includes("mountStudentProfileAndBetaRail"),"course-entry contract no longer builds a duplicate learner rail");
