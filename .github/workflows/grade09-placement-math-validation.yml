@@ -9,6 +9,7 @@ on:
       - courses/mathematics/pre-algebra/tools/component-manifest.json
       - courses/mathematics/algebra-1/units/**/unit-map.json
       - scripts/validate_grade09_placement_math_dashboard.mjs
+      - scripts/validate_grade09_seven_class_journey.mjs
       - .github/workflows/grade09-placement-math-validation.yml
   push:
     branches:
@@ -19,6 +20,7 @@ on:
       - courses/mathematics/pre-algebra/tools/component-manifest.json
       - courses/mathematics/algebra-1/units/**/unit-map.json
       - scripts/validate_grade09_placement_math_dashboard.mjs
+      - scripts/validate_grade09_seven_class_journey.mjs
       - .github/workflows/grade09-placement-math-validation.yml
 
 permissions:
@@ -40,6 +42,9 @@ jobs:
 
       - name: Validate Grade 09 placement-aware mathematics dashboard
         run: node scripts/validate_grade09_placement_math_dashboard.mjs
+
+      - name: Validate Grade 09 seven-class student journey
+        run: node scripts/validate_grade09_seven_class_journey.mjs
 
       - name: Check shared JavaScript syntax
         run: |
