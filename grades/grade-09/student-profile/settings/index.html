@@ -58,18 +58,61 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <main><div class="shell crumbs"><a href="../../../../">High School</a><span>›</span><a href="../../">Grade 09</a><span>›</span><a href="../">Student Dashboard</a><span>›</span><strong>Settings</strong></div><section class="section"><div class="shell grid">
 <section class="card col12"><h2>Parent Access Policy</h2><p class="notice good">Parent or guardian access always remains active. A student profile setting must not remove parent access, hide grades from the parent, or block a parent recovery path.</p><p>When the protected account service is available, password changes should require parent notification and should preserve parent recovery. This static GitHub Pages profile does not store passwords, password hashes, recovery secrets, or authentication tokens.</p></section>
 <section class="card col6"><h2>Student Password Change Request</h2><p>This records a local parent-review alert. It is not a real password change and does not store the password.</p><div class="field"><label for="reason">Reason / note for parent</label><textarea id="reason" placeholder="Example: I would like to update my student password."></textarea></div><div class="actions"><button class="btn warn" id="requestChange">Record Parent Alert</button></div><p class="notice" id="changeStatus" hidden></p></section>
-<section class="card col6"><h2>Parent Review</h2><p>Use this to mark local alerts as reviewed after the parent has seen them. In a future protected system this should become a real notification receipt.</p><div class="actions"><button class="btn" id="markReviewed">Mark All Reviewed</button><button class="btn secondary" id="exportAlerts">Export Alerts</button><button class="btn secondary" id="clearAlerts">Clear Local Alerts</button></div></section>
+<section class="card col6"><h2>Local Acknowledgement</h2><p>A public static page cannot prove that a parent or guardian reviewed an alert. This control records only that the alert was acknowledged on this device. A future protected family account can provide a real review receipt.</p><div class="actions"><button class="btn" id="markReviewed">Acknowledge All on This Device</button><button class="btn secondary" id="exportAlerts">Export Alerts</button><button class="btn secondary" id="clearAlerts">Clear Local Alerts</button></div></section>
 <section class="card col12"><h2>Notification Log</h2><div class="list" id="alertList"></div></section>
 </div></section></main><footer class="footer"><strong>Khaemenes High · Grade 09</strong>Parent access and local alerts</footer>
 <script>
-const key='khaemenes-grade09-parent-alerts-v1';
-const read=()=>{try{return JSON.parse(localStorage.getItem(key)||'[]')}catch{return []}};
-const write=v=>localStorage.setItem(key,JSON.stringify(v));
-function render(){const alerts=read();document.getElementById('alertList').innerHTML=alerts.length?alerts.slice().reverse().map(a=>`<div class="item"><span><strong>${a.type}</strong><small>${new Date(a.at).toLocaleString()} · ${a.reviewed?'Parent reviewed':'Parent review needed'}${a.note?' · '+a.note:''}</small></span><span class="chip">${a.reviewed?'Reviewed':'Pending'}</span></div>`).join(''):'<p class="notice good">No local parent alerts are waiting.</p>'}
-document.getElementById('requestChange').onclick=()=>{const alerts=read();alerts.push({type:'Student password change request',note:document.getElementById('reason').value.trim(),at:new Date().toISOString(),reviewed:false});write(alerts);document.getElementById('reason').value='';const s=document.getElementById('changeStatus');s.hidden=false;s.textContent='Parent alert recorded locally. No password was stored.';render()};
-document.getElementById('markReviewed').onclick=()=>{const alerts=read().map(a=>({...a,reviewed:true,reviewedAt:new Date().toISOString()}));write(alerts);render()};
-document.getElementById('clearAlerts').onclick=()=>{if(confirm('Clear local parent alerts on this device?')){write([]);render()}};
-document.getElementById('exportAlerts').onclick=()=>{const b=new Blob([JSON.stringify(read(),null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='khaemenes-grade09-parent-alerts.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),800)};
+const BASE_KEY='khaemenes-grade09-parent-alerts-v1',ACTIVE_KEY='khaemenes_active_learner_v1',FAMILY_KEY='khaemenes_family_registry_v1';
+function activeLearner(){
+  try{
+    const id=JSON.parse(localStorage.getItem(ACTIVE_KEY)||'null');
+    const registry=JSON.parse(localStorage.getItem(FAMILY_KEY)||'null');
+    const learner=typeof id==='string'?registry?.learners?.[id]:null;
+    return learner&&learner.learnerId===id?learner:null;
+  }catch{return null}
+}
+function storageKey(){const learner=activeLearner();return learner?`${BASE_KEY}:learner:${encodeURIComponent(learner.learnerId)}`:BASE_KEY}
+const read=()=>{try{const value=JSON.parse(localStorage.getItem(storageKey())||'[]');return Array.isArray(value)?value:[]}catch{return []}};
+const write=v=>{try{localStorage.setItem(storageKey(),JSON.stringify(v));return true}catch{return false}};
+function line(text,strong=false){
+  const el=document.createElement(strong?'strong':'small');
+  el.textContent=String(text??'');
+  return el;
+}
+function render(){
+  const host=document.getElementById('alertList'),alerts=read();
+  host.replaceChildren();
+  if(!alerts.length){
+    const p=document.createElement('p');p.className='notice good';p.textContent='No local parent alerts are waiting for this learner.';host.append(p);return;
+  }
+  alerts.slice().reverse().forEach(a=>{
+    const row=document.createElement('div');row.className='item';
+    const copy=document.createElement('span');
+    copy.append(line(a.type||'Student request',true));
+    const stamp=a.at?new Date(a.at).toLocaleString():'Unknown time';
+    const state=a.acknowledged?'Acknowledged on this device':'Acknowledgement pending';
+    const details=[stamp,state,a.note?String(a.note):''].filter(Boolean).join(' · ');
+    copy.append(line(details));
+    const chip=document.createElement('span');chip.className='chip';chip.textContent=a.acknowledged?'Acknowledged':'Pending';
+    row.append(copy,chip);host.append(row);
+  });
+}
+document.getElementById('requestChange').onclick=()=>{
+  const alerts=read(),note=document.getElementById('reason').value.trim(),learner=activeLearner();
+  alerts.push({type:'Student password change request',note,at:new Date().toISOString(),acknowledged:false,learnerId:learner?.learnerId||null});
+  write(alerts);document.getElementById('reason').value='';
+  const s=document.getElementById('changeStatus');s.hidden=false;s.textContent='Parent alert recorded locally for the active learner. No password was stored.';
+  render();
+};
+document.getElementById('markReviewed').onclick=()=>{
+  const alerts=read().map(a=>({...a,reviewed:undefined,reviewedAt:undefined,acknowledged:true,acknowledgedAt:new Date().toISOString()}));
+  write(alerts);render();
+};
+document.getElementById('clearAlerts').onclick=()=>{if(confirm('Clear local alerts for the active learner on this device?')){write([]);render()}};
+document.getElementById('exportAlerts').onclick=()=>{
+  const b=new Blob([JSON.stringify(read(),null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');
+  a.href=u;a.download='khaemenes-grade09-parent-alerts.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),800)
+};
 render();
 </script>
 </body></html>
