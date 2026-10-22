@@ -142,6 +142,9 @@ jobs:
         run: |
           node courses/mathematics/algebra-1/tools/test-locked-retakes-units02-09.mjs
 
+      - name: Verify Unit 01 lesson entrance files and script contracts
+        run: node courses/mathematics/algebra-1/tools/validate-unit01-entrances.mjs
+
       - name: Verify Units 01–03 offline lesson dependencies and routes
         run: |
           node courses/mathematics/algebra-1/tools/test-units01-03-offline-routes.mjs
