@@ -41,9 +41,10 @@ let failed=false;
 const ok=(value,message)=>{if(value)console.log("OK "+message);else{failed=true;console.error("FAIL "+message)}};
 
 const widget=read("assets/vnv-beta-link.js");
-ok(widget.includes('version:"1.7.3"'),"beta/profile widget is v1.7.3");
+ok(widget.includes('version:"1.7.8"'),"beta/profile widget is v1.7.8");
 ok(widget.includes('khaemenesHighStudentProfileLink'),"student profile quick link exists");
 ok(widget.includes('Khaemenes_Academy.github.io/student/'),"student profile link uses the canonical Academy Student Portal");
+ok(widget.includes('khaemenes-student-workspace-v2.js'),"learner rail propagates Academy workspace preferences");
 ok(widget.includes('khaemenesFamilyBridge'),"existing Academy learner continuity box is reused when present");
 ok(widget.includes('khaemenesLearnerUtilityToolbar'),"student profile and beta controls share the Khaemenes learner utility toolbar");
 ok(widget.includes('learnerRecordNoticeButton'),"preserved-work recovery can dock into the same learner utility toolbar");
