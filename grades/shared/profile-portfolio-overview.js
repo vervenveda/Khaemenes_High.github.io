@@ -21,7 +21,7 @@ function show(){
  const current=profileApi?.activeLearner?.()?.learnerId,verified=contract?.readAcademyProfile?.()?.learnerId;
  if(String(current||"")!==learnerId||String(verified||"")!==learnerId){summary.textContent="Learner changed. Reload this page to view the correct portfolio.";return}
  let records=[];
- try{const parsed=JSON.parse(localStorage.getItem(key)||"[]");if(!Array.isArray(parsed))throw Error("Invalid portfolio");records=parsed.filter(x=>x&&typeof x.title==="string"&&typeof x.subject==="string"&&typeof x.detail==="string").slice(0,500)}
+ try{const parsed=JSON.parse(localStorage.getItem(key)||"[]");if(!Array.isArray(parsed))throw Error("Invalid portfolio");records=parsed.filter(x=>x&&typeof x.id==="string"&&typeof x.title==="string"&&x.title.length<=140&&typeof x.subject==="string"&&typeof x.detail==="string"&&x.detail.length<=6000&&typeof x.reference==="string"&&x.reference.length<=400).slice(0,500)}
  catch{summary.textContent="Portfolio overview unavailable. Open the portfolio to recover or import a backup.";return}
  summary.textContent=records.length+" evidence "+(records.length===1?"entry":"entries")+" saved on this device. This is a read-only overview, not a gradebook.";
  records.slice(-5).reverse().forEach(record=>{const li=document.createElement("li");li.textContent=String(record.subject).slice(0,80)+" — "+String(record.title).slice(0,140);list.append(li)});
@@ -29,4 +29,5 @@ function show(){
 show();
 window.addEventListener("storage",event=>{if(event.key===key||event.key===null)show()});
 window.addEventListener("khaemenes-student-profile-changed",show);
+window.addEventListener("focus",show);
 })();
