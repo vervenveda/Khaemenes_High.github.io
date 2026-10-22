@@ -129,9 +129,9 @@ const readJSON=(key,fallback)=>{
       const scoped=entryContract.scopedKey(key,profile);
       const scopedRaw=localStorage.getItem(scoped);
       if(scopedRaw!==null)return JSON.parse(scopedRaw);
-      // Legacy records remain readable for continuity until each course migrates.
-      const legacyRaw=localStorage.getItem(key);
-      return legacyRaw===null?fallback:JSON.parse(legacyRaw);
+      // An identified learner never inherits another browser user's legacy record.
+      // Legacy unscoped data remains untouched for explicit migration or recovery.
+      return fallback;
     }
     const raw=localStorage.getItem(key);
     return raw===null?fallback:JSON.parse(raw);
