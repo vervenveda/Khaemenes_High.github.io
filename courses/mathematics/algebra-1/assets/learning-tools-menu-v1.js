@@ -1,6 +1,6 @@
 /* Algebra I non-grading learning tools menu; optional, no storage or mastery changes. */
 (()=>{"use strict";
-if(document.getElementById("khae-algebra1-tool-menu"))return;
+if(document.getElementById("khae-algebra1-tool-menu")||/\/(?:assessment|assessments|diagnostic)\//.test(location.pathname))return;
 const links=[
  ["Scientific calculator","https://vervenveda.github.io/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/"],
  ["Slope & Rate Studio","https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/assets/learning-games/slope-and-rate-studio/"],
