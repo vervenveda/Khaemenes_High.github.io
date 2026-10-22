@@ -10,8 +10,9 @@ const head=make("h2","My learning studio");panel.append(head);
 const note=make("p","Your next lessons remain governed by the Academy course engines. These are personal notes and shortcuts, not grades or official evidence.");
 panel.append(note);
 const links=make("nav");links.setAttribute("aria-label","Profile tools");links.style.cssText="display:flex;flex-wrap:wrap;gap:12px;margin:10px 0";
-for(const [label,target] of [["My seven classes","#seven-classes"],["Learning today","#learning-today"],["Quick Pins","#quick-pins"],["Customize","#"+(grade==="10"?"grade10Personalize":"upperGradePersonalize")]]){const a=make("a",label);a.href=target;links.append(a)}
+for(const [label,target] of [["My seven classes","#seven-classes"],["Learning today","#learning-today"],["Quick Pins","#quick-pins"],["Customize","#"+(grade==="10"?"grade10Personalize":"upperGradePersonalize")],["My learning evidence","../../../portfolio/index.html"]]){const a=make("a",label);a.href=target;links.append(a)}
 panel.append(links);
+const evidenceNote=make("p","Open My Learning Evidence to view, add, print, or export entries in the Academy’s existing learner-specific portfolio. This dashboard does not copy or alter evidence records.");panel.append(evidenceNote);
 const state=make("p");state.setAttribute("role","status");
 const editor=make("div");editor.style.cssText="display:grid;gap:10px;max-width:650px";
 const goal=make("textarea");goal.placeholder="My study plan for the week";goal.rows=3;goal.maxLength=600;goal.setAttribute("aria-label","My weekly study plan");
