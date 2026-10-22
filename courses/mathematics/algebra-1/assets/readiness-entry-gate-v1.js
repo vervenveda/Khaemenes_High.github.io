@@ -60,7 +60,14 @@ function markCourseHome(){
  const start=document.querySelector("#start .start-card:first-child")||document.querySelector("#start");if(start&&!document.getElementById("entryGateStatus")){const p=document.createElement("p");p.id="entryGateStatus";p.className="notice";p.innerHTML=`<strong>Entrance status:</strong> ${esc(routeLabel())}.`;start.appendChild(p)}
 }
 function protectClicks(){document.addEventListener("click",e=>{const a=e.target.closest('a[href*="units/unit-01"]');if(!a||status().ready)return;e.preventDefault();location.href=DIAGNOSTIC_URL},true)}
-function boot(){markCourseHome();protectClicks();setTimeout(blockUnitOnePage,0);const main=document.getElementById("main");if(main&&/\/algebra-1\/units\/unit-01\//i.test(location.pathname)){new MutationObserver(()=>{if(!status().ready&&document.body.dataset.algebra1EntryLocked!=="true")blockUnitOnePage();else if(!status().ready&&document.body.dataset.algebra1EntryLocked==="true"&&!/Begin with the readiness diagnostic/i.test(main.textContent||""))blockUnitOnePage()}).observe(main,{childList:true,subtree:false})}}
+function boot(){
+ markCourseHome();
+ protectClicks();
+ // The course-specific renderer owns #main. A persistent observer here can
+ // conflict with the lesson resource bridge and freeze the browser.
+ // Apply the readiness decision once after the synchronous lesson render.
+ setTimeout(blockUnitOnePage,0);
+}
 window.KhaemenesAlgebra1EntryGate={version:VERSION,status,diagnosticComplete,courseEvidence,blockUnitOnePage};
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
 })();
