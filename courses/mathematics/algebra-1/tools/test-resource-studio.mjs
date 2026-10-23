@@ -19,7 +19,7 @@ for(const file of pages){
  ok(/<meta name="viewport"/i.test(html),file+' responsive viewport');
  // Allow only the Academy-owned, same-site student toolbar; instructional
  // application code itself remains a standalone local script.
- const injected=[...html.matchAll(/<script\\b[^>]*\\bsrc\\s*=\\s*["']([^"']+)["']/gi)].map(m=>m[1]);
+ const injected=[...html.matchAll(/<script\b[^>]*\bsrc\s*=\s*["']([^"']+)["']/gi)].map(m=>m[1]);
  ok(injected.length<=1&&injected.every(url=>
   url==='https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js'&&
   fs.existsSync(path.resolve(here,'../../../../assets/vnv-beta-link.js'))),file+' only Academy-owned toolbar');
