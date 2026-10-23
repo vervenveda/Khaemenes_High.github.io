@@ -100,3 +100,13 @@ assert 'input.disabled=false' in grade9_photo
 assert 'keyFor(owner)' in grade9_photo
 assert 'canvas.toDataURL("image/jpeg"' in grade9_photo
 print("PASS Grade 09 spectrum picker and repaired photo input wiring")
+
+grade9_photo=(ROOT/"grades/grade-09/student-profile/student-profile-photo.js").read_text(encoding="utf-8")
+grade9_bg=(ROOT/"grades/grade-09/student-profile/student-profile-background.js").read_text(encoding="utf-8")
+assert 'max-width:none!important' in grade9_photo
+assert 'keyFor(owner)' in grade9_photo
+assert 'finally{URL.revokeObjectURL(url);input.value=""}' in grade9_photo
+assert 'style.setProperty("background",color,"important")' in grade9_bg
+assert 'studentCustomBackground' in grade9_bg
+assert 'khaemenes.grade09.profile.background:' in grade9_bg
+print("PASS Grade 09 photo render and background CSS override guards")
