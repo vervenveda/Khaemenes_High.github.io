@@ -2,8 +2,8 @@
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v15-full-lesson-path-v1-20261020-ams-v1.7.0-recovery-popout-r1-20261015`;
-const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
+const CACHE_NAME=`${CACHE_PREFIX}v15-full-lesson-path-v1-20261020-ams-v1.7.0-recovery-popout-r1-20261015-draft-v1`;
+const CORE_FILES=["./assets/prealgebra-answer-draft-v1.js","../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
   "./",
   "./index.html",
   "./offline.html",
@@ -36,7 +36,7 @@ const CORE_FILES=["../../shared/course-entry-contract.js","../../shared/learner-
 
 
 const MISSION_OFFLINE_RELEASE="ams-v1.7.0-recovery-popout-r1-20261015";
-const MISSION_CRITICAL=["./","./index.html","./offline.html","../assets/applied-mission-studio-v1.js","./units/unit-01/projects/number-systems-investigation.html","./units/unit-02/projects/signed-data-investigation.html","./units/unit-03/projects/rational-quantity-investigation.html","./units/unit-04/projects/community-scale-rate-investigation.html","./units/unit-05/projects/consumer-financial-decision-investigation.html","./units/unit-06/projects/scale-of-universe-investigation.html","./units/unit-07/projects/algebraic-model-design-investigation.html","./units/unit-08/projects/equation-formula-design-investigation.html","./units/unit-09/projects/constraint-design-investigation.html","./units/unit-10/projects/linear-relationship-data-story-investigation.html","./units/unit-11/projects/accessible-space-scale-design-investigation.html","./units/unit-12/projects/community-data-evidence-investigation.html","./units/unit-13/projects/mathematical-modelling-capstone-portfolio.html"];
+const MISSION_CRITICAL=["./assets/prealgebra-answer-draft-v1.js","./","./index.html","./offline.html","../assets/applied-mission-studio-v1.js","./units/unit-01/projects/number-systems-investigation.html","./units/unit-02/projects/signed-data-investigation.html","./units/unit-03/projects/rational-quantity-investigation.html","./units/unit-04/projects/community-scale-rate-investigation.html","./units/unit-05/projects/consumer-financial-decision-investigation.html","./units/unit-06/projects/scale-of-universe-investigation.html","./units/unit-07/projects/algebraic-model-design-investigation.html","./units/unit-08/projects/equation-formula-design-investigation.html","./units/unit-09/projects/constraint-design-investigation.html","./units/unit-10/projects/linear-relationship-data-story-investigation.html","./units/unit-11/projects/accessible-space-scale-design-investigation.html","./units/unit-12/projects/community-data-evidence-investigation.html","./units/unit-13/projects/mathematical-modelling-capstone-portfolio.html"];
 async function installMissionCritical(){
   const cache=await caches.open(CACHE_NAME);
   try{await cache.addAll(MISSION_CRITICAL.map(file=>new Request(file,{cache:"reload"})))}

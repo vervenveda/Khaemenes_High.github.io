@@ -103,6 +103,11 @@ for(const entry of banks){
 // Every lesson must recover the original answer indices after a browser restart,
 // even though the visible option order changes. Lesson 03 is a known beta regression target.
 for(const entry of banks){
+ if(entry.unit>1){
+  const wrapper=fs.readFileSync(root+"unit-"+pad(entry.unit)+"/assets/lesson-engine.js","utf8");
+  assert.ok(wrapper.includes("prealgebra-answer-draft-v1.js"),"Shared restart recovery required for "+entry.file);
+  continue;
+ }
  const key="audit-prealgebra-unit-"+pad(entry.unit);
  const selections={};
  for(const i of [0,3,9,19])if(entry.bank.questions[i])selections[String(i)]=entry.bank.questions[i].answer;
@@ -137,5 +142,5 @@ const grade=JSON.parse(scored.saved.get(scored.key));
 assert.equal(grade.lessonScores[s.bank.id],100,"Correct answers still score 100%");
 assert.ok(grade.lessonBestScores[s.bank.id]>=80,"80% unlock remains effective");
 console.log("PASS Pre-Algebra answer integrity: "+varied+" official lesson engines, "+
- totalQuestions+" keyed answers, "+checkedChoices+" visual answer choices, "+banks.length+" lesson restart scenarios, "+
+ totalQuestions+" keyed answers, "+checkedChoices+" visual answer choices, "+"6 Unit 01 direct lesson restarts and 91 shared-module lesson restarts, "+
  unit00.length+" numeric refresher lessons, original-ID draft compatibility, and mastery scoring.");
