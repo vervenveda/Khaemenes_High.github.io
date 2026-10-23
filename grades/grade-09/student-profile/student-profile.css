@@ -272,3 +272,21 @@ main>.grade09-explore,main>aside[aria-label="Student Learning Portfolio"]{
 .grade09-explore-item #khaeStudentEcosystemTools>div{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))!important}
 .grade09-priority-schedule .schedule-card{width:100%;max-width:none}
 @media(max-width:650px){.grade09-explore{padding:12px}.grade09-explore-item>summary{padding:12px}}
+
+/* Final Grade 09 lane certification: all dynamically injected cards match .shell. */
+html body main > :is(.grade09-priority,.grade09-priority-schedule,#studentCourseProgress,.grade09-explore,aside[aria-label="Student Learning Portfolio"]){
+  box-sizing:border-box!important;
+  display:block;
+  width:min(calc(100% - 33px),1100px)!important;
+  max-width:1100px!important;
+  margin-inline:auto!important;
+}
+html body main > .grade09-priority{display:flex;flex-wrap:wrap}
+html body main > .grade09-explore{padding:18px!important}
+html body main > .grade09-explore .grade09-explore-item{max-width:100%;min-width:0}
+html body main > #studentCourseProgress{margin-top:12px!important;margin-bottom:20px!important}
+html body .footer{width:100%;max-width:100%;margin-inline:0}
+@media(max-width:600px){
+ html body main > :is(.grade09-priority,.grade09-priority-schedule,#studentCourseProgress,.grade09-explore,aside[aria-label="Student Learning Portfolio"]){width:calc(100% - 22px)!important}
+ html body main > .grade09-priority{display:flex;flex-direction:column;align-items:stretch}
+}
