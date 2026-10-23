@@ -63,7 +63,7 @@ function run({bank,core,unit},rng,stored=null,submit=false){
    if(s==="#quickCheckList")return quick;
    if(s==="#masteryModal")return {hidden:true};
    if(s==="#scoreMessage")return score;
-   if(s==="#submitPractice")return submit?{addEventListener:(event,fn)=>{callbacks[event]=fn}}:null;
+   if(s==="#submitPractice")return submit?{addEventListener:(event,fn)=>{callbacks[event]=fn},setAttribute(){},textContent:""}:null;
    const f=/^#feedback-(\d+)$/.exec(s);
    if(f)return {hidden:true,className:"",textContent:""};
    const ans=/^input\[name="q(\d+)"\]:checked$/.exec(s);
