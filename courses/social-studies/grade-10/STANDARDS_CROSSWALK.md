@@ -40,3 +40,7 @@ Cambridge IGCSE History supplies an international evidence-analysis overlay: kno
 
 ## Universal-course limitation
 There is no single national Grade 10 social-studies curriculum that automatically satisfies every state, country, district, accreditor, IB programme, Cambridge centre, or examination board. This crosswalk is designed to make local review transparent rather than to make an unsupported universal-acceptance guarantee.
+
+
+## State/localization requirement
+Educators must add a state/local overlay without replacing the national U.S. History spine. Use state/local sources for Indigenous history, settlement/colonization, constitutional development, slavery/emancipation/Reconstruction, migration, labor/industry, civil rights, elections, government, public records, and contemporary history where appropriate. See `STATE_LOCALIZATION_GUIDE.md`.

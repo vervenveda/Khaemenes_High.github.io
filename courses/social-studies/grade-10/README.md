@@ -33,3 +33,7 @@
 - The **standalone printable exam** (`assessments/midterm.html`) remains a separate 50-objective-question form with three teacher-scored written responses and its own browser draft store. It is **not** a synchronized view of the portal bank, and completing it does **not automatically update the portal's 80% midterm gate**.
 - For official progression, use the portal midterm; use the separate exam only as a supervised supplementary/printable assessment until a deliberate grading/record bridge is developed. Teacher-scored written work must be reviewed separately and should not be represented as an automatically certified course grade.
 - Follow-up: verify randomized form persistence, offline printing, teacher rubric, and cross-path evidence reporting in a browser.
+
+
+## State/localization rule
+Grade 10 U.S. History Honors is **state-localizable by requirement**. State history, state constitutions/government, Indigenous nations, civil-rights cases, migration, labor/economic evidence, archives, and civic records should be layered into the national course where appropriate. See `STATE_LOCALIZATION_GUIDE.md`. The 80% mastery standard is not localizable.
