@@ -205,11 +205,11 @@
         }
         #${EDUCATION_TOOLBAR_ID}>button,#${EDUCATION_TOOLBAR_ID}>a{
           position:static!important;right:auto!important;bottom:auto!important;z-index:auto!important;
-          flex:0 1 78px;min-width:0!important;width:78px!important;max-width:78px!important;height:44px!important;min-height:44px!important;max-height:44px!important;
+          flex:0 0 auto;min-width:88px!important;width:auto!important;max-width:132px!important;height:auto!important;min-height:44px!important;max-height:none!important;
           display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;
           margin:0!important;padding:5px 5px!important;border-radius:7px!important;
-          box-sizing:border-box!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;
-          box-shadow:none!important;font:600 10px/1.15 "Avenir Next","Segoe UI",Arial,sans-serif!important;
+          box-sizing:border-box!important;white-space:normal!important;overflow:visible!important;text-overflow:clip!important;overflow-wrap:break-word!important;text-align:center!important;
+          box-shadow:none!important;font:500 11px/1.25 "Avenir Next","Segoe UI",Arial,sans-serif!important;
           letter-spacing:.035em!important;text-decoration:none!important
         }
         #${EDUCATION_TOOLBAR_ID}>#learnerRecordNoticeButton{
