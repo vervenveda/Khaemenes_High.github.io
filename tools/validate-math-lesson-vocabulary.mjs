@@ -104,5 +104,5 @@ exercise("geometry","13");
 exercise("algebra-2","01");
 exercise("algebra-2","13");
 const studio=fs.readFileSync(base+"/tools/vocabulary-studio.html","utf8");
-assert(studio.includes('unit00.hidden=unit00.disabled=course.value!=="pre-algebra"'));
+assert(studio.includes('choice.hidden=choice.disabled=number===0?course.value!=="pre-algebra":number>limit'),"Vocabulary Studio must show Unit 00 only for Pre-Algebra and honor per-course unit limits");
 console.log("PASS: "+count+" lesson pages, complete unit dictionaries, 32 bridge terms, correct Studio routing, and delayed Algebra I rendering.");
