@@ -29,17 +29,32 @@ function lessonStats(s){let done=0;if(s)Object.values(s.completedLessons||{}).fo
 function assignmentStats(s){const arr=s?Object.values(s.assignments||{}):[];const submitted=arr.filter(a=>a.submitted).length;let earned=0,possible=0;arr.forEach(a=>{if(Number.isFinite(+a.score)){earned+=+a.score;possible+=30}});return{submitted,total:108,percent:Math.round(submitted/108*100),earned,possible}}
 function quizStats(s){const arr=s?Object.values(s.quizzes||{}).filter(q=>q.completed):[];return{completed:arr.length,total:36,avg:arr.length?Math.round(arr.reduce((n,q)=>n+(q.bestPercent??q.percent??0),0)/arr.length):0}}
 function overall(s){if(!s)return 0;const l=lessonStats(s).percent,a=assignmentStats(s).percent,q=Math.round(quizStats(s).completed/36*100);return Math.round(l*.35+a*.40+q*.25)}
-function currentWeek(s){if(!s)return 1;for(const w of COURSE.weeks){if((s.completedLessons[w.week]||[]).filter(Boolean).length<5)return w.week}return 36}
+function weekMastered(s,w){
+ if(!s)return false;
+ const lessons=(s.completedLessons?.[w.week]||[]).filter(Boolean).length===5;
+ const assignments=w.assignments.every(a=>s.assignments?.[`${w.week}-${a.number}`]?.submitted);
+ const quiz=s.quizzes?.[w.week];
+ const quizMastery=!!quiz?.completed&&(quiz.bestPercent??quiz.percent??0)>=80&&String(quiz.shortResponse||'').trim().length>0;
+ if(!lessons||!assignments||!quizMastery)return false;
+ if(w.week===18&&(s.exams?.governmentFinal?.bestPercent??0)<80)return false;
+ return true;
+}
+function currentWeek(s){if(!s)return 1;for(const w of COURSE.weeks){if(!weekMastered(s,w))return w.week}return 36}
 function setView(v){view=v;$$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===v));render()}
-function setWeek(n){selectedWeek=Math.max(1,Math.min(36,+n));view='week';history.replaceState(null,'',`?week=${selectedWeek}`);renderSidebarWeeks();render();scrollTo({top:0,behavior:'smooth'})}
+function setWeek(n){
+ const requested=Math.max(1,Math.min(36,+n)),unlocked=currentWeek(activeStudent());
+ if(requested>unlocked){alert(`Week ${requested} is locked. Complete Week ${unlocked}: five lessons, three submitted assignments, the constructed response, and the weekly quiz at 80%+. Week 19 also requires the Government Final at 80%+.`);selectedWeek=unlocked;}
+ else selectedWeek=requested;
+ view='week';history.replaceState(null,'',`?week=${selectedWeek}`);renderSidebarWeeks();render();scrollTo({top:0,behavior:'smooth'})
+}
 function renderStudentControls(){
  const s=$('#studentSelect');
  s.innerHTML=db.students.length?db.students.map(x=>`<option value="${x.id}" ${x.id===db.activeId?'selected':''}>${esc(x.name)}</option>`).join(''):'<option value="">No student added</option>';
 }
 function renderSidebarWeeks(){
- const s=activeStudent();
- $('#weekList').innerHTML=COURSE.weeks.map(w=>`<button class="weekBtn ${selectedWeek===w.week?'active':''}" data-week="${w.week}"><span><strong>Week ${w.week}</strong><br><small>${esc(w.title)}</small></span><span>${(s?.completedLessons?.[w.week]||[]).filter(Boolean).length}/5</span></button>`).join('');
- $$('#weekList .weekBtn').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
+ const s=activeStudent(),unlocked=currentWeek(s);
+ $('#weekList').innerHTML=COURSE.weeks.map(w=>{const locked=!!s&&w.week>unlocked;return `<button class="weekBtn ${selectedWeek===w.week?'active':''} ${locked?'locked':''}" data-week="${w.week}" ${locked?'disabled aria-disabled="true"':''}><span><strong>Week ${w.week}</strong><br><small>${esc(w.title)}</small></span><span>${locked?'🔒':(s?.completedLessons?.[w.week]||[]).filter(Boolean).length+'/5'}</span></button>`}).join('');
+ $('#weekList .weekBtn:not([disabled])').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
 }
 function render(){
  applySettings();

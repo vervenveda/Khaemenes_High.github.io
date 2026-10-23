@@ -72,3 +72,7 @@ This crosswalk records where standards are explicitly introduced or assessed. In
 | SS.912.E.1.3 | Compare traditional, market, command, and mixed economic systems. | 34 |
 | SS.912.E.3.6 | Differentiate and draw conclusions about historical economic thought. | 34 |
 | SS.912.CG.4.1 | Analyze how liberty and economic freedom generate broad-based opportunity and prosperity. | 34 |
+
+
+## State/localization requirement
+The federal constitutional-government/economics sequence remains canonical. Educators must add jurisdiction-specific state/local government, law, elections, fiscal policy, economic structure, public records, and required instruction where appropriate. See `STATE_LOCALIZATION_GUIDE.md`.
