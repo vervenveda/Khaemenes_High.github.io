@@ -306,3 +306,27 @@ html body main > .grade09-profile-first{
  .grade09-profile-first .profile-row{gap:14px;align-items:flex-start}
  .grade09-profile-first #avatar{width:76px;height:76px;min-width:76px}
 }
+
+/* Grade 09 header and floating learner toolbar readability. */
+.grade09-local-label{font:400 15px/1.4 var(--formal);letter-spacing:.04em;color:var(--forest)}
+html body [data-khae-header] [data-khae-actions] a:not([data-khae-secondary]){
+  color:#fffaf0!important;background:#0e2537!important;border-color:#4d6170!important;
+  font-size:11px!important;letter-spacing:.025em!important
+}
+html body #khaemenesLearnerUtilityToolbar{
+  width:max-content;max-width:calc(100vw - 20px);gap:5px;padding:5px;
+}
+html body #khaemenesLearnerUtilityToolbar > :is(a,button){
+  flex:0 0 auto!important;width:auto!important;min-width:94px!important;max-width:none!important;
+  min-height:47px!important;height:auto!important;max-height:none!important;
+  white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+  padding:7px 9px!important;line-height:1.35!important;text-align:center!important;
+  font-size:11px!important;letter-spacing:0!important;overflow-wrap:break-word!important;
+}
+@media(max-width:600px){
+ html body #khaemenesLearnerUtilityToolbar{width:calc(100vw - 16px)!important;max-width:calc(100vw - 16px)!important;gap:3px!important}
+ html body #khaemenesLearnerUtilityToolbar > :is(a,button){
+   flex:1 1 0!important;width:0!important;min-width:0!important;max-width:none!important;
+   padding:7px 3px!important;font-size:10px!important
+ }
+}
