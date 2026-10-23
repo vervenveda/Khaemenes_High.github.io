@@ -290,3 +290,19 @@ html body .footer{width:100%;max-width:100%;margin-inline:0}
  html body main > :is(.grade09-priority,.grade09-priority-schedule,#studentCourseProgress,.grade09-explore,aside[aria-label="Student Learning Portfolio"]){width:calc(100% - 22px)!important}
  html body main > .grade09-priority{display:flex;flex-direction:column;align-items:stretch}
 }
+
+/* Profile-first dashboard: a centered, readable student identity and daily launch lane. */
+html body main > .grade09-profile-first{
+  width:min(calc(100% - 33px),1100px);max-width:1100px;
+  margin:18px auto 8px;display:grid;gap:12px
+}
+.grade09-profile-first > .card{grid-column:1/-1;margin:0;min-width:0}
+.grade09-profile-first .profile-row{align-items:center;gap:22px}
+.grade09-profile-first #avatar{width:96px;height:96px;min-width:96px;overflow:hidden;border-radius:50%}
+.grade09-profile-first .profile-name{margin-top:0}
+.grade09-profile-first .focus-card{width:100%}
+@media(max-width:600px){
+ html body main > .grade09-profile-first{width:calc(100% - 22px);gap:10px}
+ .grade09-profile-first .profile-row{gap:14px;align-items:flex-start}
+ .grade09-profile-first #avatar{width:76px;height:76px;min-width:76px}
+}
