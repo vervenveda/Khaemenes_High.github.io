@@ -14,6 +14,7 @@ function checkPage(file){
   for(const m of html.matchAll(/<(a|script|link)\b[^>]*?\b(href|src)=["']([^"']+)["']/gi)){
     const kind=m[1].toLowerCase(),value=m[3].trim();
     if(!value||/^(?:https?:|mailto:|tel:|data:|javascript:|#|\/\/)/i.test(value))continue;
+    if(value.includes("$"+"{"))continue;
     const clean=value.split(/[?#]/)[0];
     if(!clean||clean.startsWith("/"))continue;
     const target=path.resolve(path.dirname(file),decodeURIComponent(clean));
