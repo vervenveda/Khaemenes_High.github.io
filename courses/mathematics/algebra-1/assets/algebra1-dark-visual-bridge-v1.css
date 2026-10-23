@@ -1,0 +1,35 @@
+/* Algebra I · dark-dashboard compatibility bridge. Presentation only.
+   Shared mathematical visual rules provide typography, print, focus and responsive
+   layouts; dark variables keep the existing math dashboard and light-on-dark text.
+   Assessment engines, mastery gates, stored records and STOS remain unchanged. */
+html:root:root {
+ color-scheme:dark!important;
+ --math-visual-line:var(--a1-line-strong,#536680);
+ --math-visual-paper:var(--a1-panel,#101f31);
+ --math-visual-ground:var(--a1-paper,#07111d);
+ --math-visual-ink:var(--a1-ink,#f5f1e8);
+ --math-visual-muted:var(--a1-muted,#b7c2cf);
+ --math-visual-accent:var(--a1-gold-pale,#ead7aa);
+ --math-focus-ring:#f2cb84;
+}
+@media screen {
+ html:root:root body :is(.formula,.math-box,.math-display,pre) {
+  background:#12263a!important;color:#f5f1e8!important;border-color:#536680!important;
+ }
+ html:root:root body :is(.btn.primary,.button.primary,button.primary) {
+  color:#fff!important;background:#173b60!important;border-color:#c9a35f!important;
+ }
+ html:root:root body :is(.unit-hero,.lesson-hero,.lesson-header) {
+  background:#0d1a2a!important;color:var(--a1-ink,#f5f1e8)!important;
+  border-color:var(--a1-line-strong,#536680)!important;
+ }
+ html:root:root body :is(.card,.lesson-section,.question,.unit-card,.lesson-card) :is(input,textarea,select) {
+  background:#081421;color:var(--a1-ink,#f5f1e8);border-color:var(--a1-line-strong,#536680);
+ }
+}
+@media(max-width:360px) {
+ html:root:root body .snapshot {grid-template-columns:minmax(0,1fr)!important;}
+ html:root:root body :is(.nav,.actions) {gap:10px;}
+ html:root:root body :is(.btn,button,input,select,textarea) {max-width:100%;}
+}
+@media print {html:root:root {color-scheme:light!important;}}
