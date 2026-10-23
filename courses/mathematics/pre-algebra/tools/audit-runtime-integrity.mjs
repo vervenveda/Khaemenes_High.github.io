@@ -35,7 +35,11 @@ for(const page of pages){
     const script=fs.readFileSync(asset,"utf8"),needed=new Set([...script.matchAll(/window\.([A-Z][A-Z0-9_]*)\b/g)].map(item=>item[1]));
     for(const name of needed){
       dependencies++;
-      const optional=name==="APP"||new RegExp(`window\\.${name}\\s*\\|\\|`).test(script);
+      // Cross-course navigation modules may inspect an optional data global and
+      // immediately return when that course is absent; that is not a dependency.
+      const guardedBinding=new RegExp(`(?:[;,]\\s*|\\b(?:const|let|var)\\s+)([A-Za-z_$][\\w$]*)\\s*=\\s*window\\.${name}\\b`).exec(script);
+      const safeGuard=guardedBinding&&new RegExp(`if\\s*\\([^)]*!\\s*${guardedBinding[1]}\\b`).test(script);
+      const optional=name==="APP"||new RegExp(`window\\.${name}\\s*\\|\\|`).test(script)||Boolean(safeGuard);
       if(!defined.has(name)&&!optional)fail(page,`${url} requires undefined window.${name}`);
     }
   }
