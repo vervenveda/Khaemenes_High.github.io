@@ -10,8 +10,9 @@ for(const course of ["algebra-1","geometry","algebra-2"]){
  if(course==="algebra-1")
   assert.match(css,/@import\s+url\(["']\.\.\/\.\.\/\.\.\/\.\.\/assets\/math-course-visual-unifier\.css(?:\?[^"']*)?["']\)/,"Algebra I missing shared design import");
  else {
-  for(const token of ['html[data-theme="light"]',":focus-visible","@media(max-width:320px)"])
+  for(const token of ['html[data-theme="light"]',":focus-visible"])
    assert.ok(css.includes(token),course+" must retain its own theme-aware responsive presentation: "+token);
+  assert.match(css,/@media[^{}]*\(\s*max-width\s*:\s*320px\s*\)/,course+" must retain narrow-screen layout");
  }
  assert.match(css,/@media\s+print/,course+" missing print contract");
 }

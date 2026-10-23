@@ -31,10 +31,11 @@ for(const course of ["algebra-1","geometry","algebra-2"]){
   // Geometry and Algebra II have their own responsive, light/dark theme-aware
   // course styles. Forcing an unscoped light !important layer into those
   // courses would break their existing dark-mode toggle.
-  for(const token of ['html[data-theme="light"]',":focus-visible","@media print","@media(max-width:320px)"]){
+  for(const token of ['html[data-theme="light"]',":focus-visible","@media print"]){
    assert.ok(styles.includes(token),course+" local visual contract missing "+token);
   }
   assert.ok(styles.includes(".lesson-layout"),course+" responsive lesson layout missing");
+  assert.match(styles,/@media[^{}]*\(\s*max-width\s*:\s*320px\s*\)/,course+" must retain narrow-screen layout");
  }
  sheetsChecked++;
  const landing=fs.readFileSync(root+"index.html","utf8");

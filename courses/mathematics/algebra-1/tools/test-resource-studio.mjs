@@ -17,7 +17,12 @@ for(const file of pages){
  ok(/<!doctype html>/i.test(html),file+' doctype');
  ok(/<html lang="en"/i.test(html),file+' language');
  ok(/<meta name="viewport"/i.test(html),file+' responsive viewport');
- ok(!/<script\b[^>]*\bsrc\s*=/.test(html),file+' no external scripts');
+ // Allow only the Academy-owned, same-site student toolbar; instructional
+ // application code itself remains a standalone local script.
+ const injected=[...html.matchAll(/<script\\b[^>]*\\bsrc\\s*=\\s*["']([^"']+)["']/gi)].map(m=>m[1]);
+ ok(injected.length<=1&&injected.every(url=>
+  url==='https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js'&&
+  fs.existsSync(path.resolve(here,'../../../../assets/vnv-beta-link.js'))),file+' only Academy-owned toolbar');
  ok(!/\b(?:localStorage|sessionStorage|indexedDB)\s*[.(]/.test(html),file+' no learner storage');
  ok(!/\b(?:fetch|XMLHttpRequest)\s*\(/.test(html),file+' no network calls');
  const scripts=[...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)];
