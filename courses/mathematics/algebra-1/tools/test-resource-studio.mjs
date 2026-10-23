@@ -25,7 +25,7 @@ for(const file of pages){
   fs.existsSync(path.resolve(here,'../../../../assets/vnv-beta-link.js'))),file+' only Academy-owned toolbar');
  ok(!/\b(?:localStorage|sessionStorage|indexedDB)\s*[.(]/.test(html),file+' no learner storage');
  ok(!/\b(?:fetch|XMLHttpRequest)\s*\(/.test(html),file+' no network calls');
- const scripts=[...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)];
+ const scripts=[...html.matchAll(/<script\b(?![^>]*\bsrc\s*=)[^>]*>([\s\S]*?)<\/script>/gi)];
  ok(scripts.length===1,file+' one self-contained script');
  for(const m of scripts)new vm.Script(m[1],{filename:file});
  for(const match of html.matchAll(/\bhref\s*=\s*"([^"]+)"/g)){

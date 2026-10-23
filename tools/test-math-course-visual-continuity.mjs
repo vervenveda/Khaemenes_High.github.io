@@ -109,8 +109,9 @@ const sw=fs.readFileSync("service-worker.js","utf8");
 const expectedRequest='./assets/math-course-visual-unifier.css?v=20261013';
 assert.ok(sw.includes(expectedRequest),"shared visual file absent from service-worker installation bundle");
 assert.ok(sw.includes("COURSE_VISUAL_FILES"),"offline visual dependency must be explicit");
-assert.ok(sw.includes("...COURSE_VISUAL_FILES]),")||
- sw.includes("...COURSE_VISUAL_FILES])"),"offline visual file must be installed atomically");
+const requiredAssets=sw.match(/const required\s*=\s*\[\.\.\.new Set\(\[([^\]]+)\]\)\]/)?.[1]||"";
+assert.ok(requiredAssets.includes("...COURSE_VISUAL_FILES"),
+ "offline visual file must be installed atomically alongside navigation assets");
 assert.ok(sw.includes("GAME_PRECACHE_FILES"),"canonical mathematics games remain installed");
 console.log("PASS: mathematics visual continuity: three course entrances, 39 unit entry pages, "+
  sheetsChecked+" connected stylesheets, preserved Algebra I dark dashboard, consistent 7px cards, mobile/print/keyboard/reduced-motion contracts, offline CSS and preserved learner gates.");
