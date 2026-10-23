@@ -110,3 +110,12 @@ assert 'style.setProperty("background",color,"important")' in grade9_bg
 assert 'studentCustomBackground' in grade9_bg
 assert 'khaemenes.grade09.profile.background:' in grade9_bg
 print("PASS Grade 09 photo render and background CSS override guards")
+
+page9=(ROOT/"grades/grade-09/student-profile/index.html").read_text(encoding="utf-8")
+style9=(ROOT/"grades/grade-09/student-profile/student-profile.css").read_text(encoding="utf-8")
+assert '<span class="grade09-local-label">Grade 09 · Student Dashboard</span>' in page9
+assert '<a class="brand" href="../"><span><strong>Khaemenes Academy</strong>' not in page9
+assert '#khaemenesLearnerUtilityToolbar > :is(a,button)' in style9
+assert 'text-overflow:clip!important' in style9
+assert '[data-khae-actions] a:not([data-khae-secondary])' in style9
+print("PASS Grade 09 header and learner toolbar readability rules")
