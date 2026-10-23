@@ -89,3 +89,14 @@ assert 'insertAdjacentElement("afterend",schedule)' in grade9_layout
 for requirement in ('input.type="file"', 'image/jpeg', 'encodeURIComponent(first)', 'same()', 'canvas.toDataURL'):
     assert requirement in grade9_photo
 print("PASS Grade 09 profile-first ordering and learner-specific photo")
+
+grade9_html=(ROOT/"grades/grade-09/student-profile/index.html").read_text(encoding="utf-8")
+grade9_photo=(ROOT/"grades/grade-09/student-profile/student-profile-photo.js").read_text(encoding="utf-8")
+grade9_bg=(ROOT/"grades/grade-09/student-profile/student-profile-background.js").read_text(encoding="utf-8")
+assert '<script src="student-profile-background.js"></script>' in grade9_html
+assert 'input.type="color"' in grade9_bg
+assert 'khaemenes.grade09.profile.background:' in grade9_bg
+assert 'input.disabled=false' in grade9_photo
+assert 'keyFor(owner)' in grade9_photo
+assert 'canvas.toDataURL("image/jpeg"' in grade9_photo
+print("PASS Grade 09 spectrum picker and repaired photo input wiring")
