@@ -29,7 +29,7 @@ const entries=el("div");entries.style.cssText="display:grid;grid-template-column
 const download=el("button","Export my board JSON");download.type="button";boardSection.append(download);
 const message=el("p");message.setAttribute("role","status");message.setAttribute("aria-live","polite");boardSection.append(message);
 section.append(boardSection);
-if(grade==="09")mount.insertBefore(section,mount.firstChild);else mount.append(section);
+mount.append(section);
 const portfolioUrl="../../../portfolio/index.html?grade="+grade;
 const link=el("a","Open my learning portfolio");link.href=portfolioUrl;link.style.color="#f3dba6";constellation.append(link);
 let board=[];
