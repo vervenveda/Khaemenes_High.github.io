@@ -14,7 +14,9 @@ on:
       - "courses/mathematics/pre-algebra/assessments/**"
       - "courses/mathematics/algebra-1/units/unit-01/**"
       - "courses/mathematics/algebra-1/assessments/**"
+      - "courses/mathematics/assets/learning-games/**"
       - "scripts/validate_learner_scoped_persistence.mjs"
+      - "courses/mathematics/tools/test-new-games-learner-isolation.mjs"
       - ".github/workflows/learner-scoped-persistence-validation.yml"
   workflow_dispatch:
 
@@ -35,6 +37,8 @@ jobs:
           node-version: 24
       - name: Validate migration and collision behavior
         run: node scripts/validate_learner_scoped_persistence.mjs
+      - name: Verify two-student isolation across 12 newer mathematics games
+        run: node courses/mathematics/tools/test-new-games-learner-isolation.mjs
       - name: Syntax-check scope modules
         run: |
           node --check courses/shared/course-entry-contract.js

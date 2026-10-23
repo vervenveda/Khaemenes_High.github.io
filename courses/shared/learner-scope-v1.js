@@ -5,7 +5,9 @@
     "pre-algebra": { prefixes: ["KHAE_OPEN_PREALGEBRA_FORGE_V2", "KHAE_MATH9_PREALGEBRA_", "khaemenes-naib-", "khaemenes-prealgebra-", "khaemenes_math_unit", "khaemenes-grade09-last-open-v1"] },
     "algebra-1": { prefixes: ["khaemenes-algebra1-", "khaemenes-math-algebra1-readiness-v1"] },
     "geometry": { prefixes: ["khaemenes-geometry-", "khaemenes-math-geometry-readiness-v1"] },
-    "math-games": { prefixes: ["khaemenes-", "khaemenes.", "khaemenes_group_cycle", "KHAE_MATH"] },
+    "math-games": { prefixes: ["khaemenes-", "khaemenes.", "khaemenes_group_cycle", "KHAE_MATH",
+      // Exact standalone game prefixes only; do not capture unrelated KHAE_ application data.
+      "KHAE_FTS_V1", "KHAE_EXPLOG_V1", "KHAE_POLY_V1", "KHAE_MATRIX_MISSION_V1", "KHAE_SEQUENCE_SERIES_V1", "KHAE_COMPLEX_PLANE_V1", "KHAE_STATISTICS_DETECTIVE_V1", "KHAE_PROBABILITY_QUEST_V1", "KHAE_UNIT_CIRCLE_V1", "KHAE_TRIG_WAVE_STUDIO_V1", "KHAE_TRIG_IDENTITY_FORGE_V1", "KHAE_TRIANGLE_EXPEDITION_V1"] },
     "algebra-2": { prefixes: ["khaemenes-algebra2-", "khaemenes-math-algebra2-readiness-v1"] },
     "english-10": { prefixes: ["khae-ela10-state-v1", "KA_ENGLISH10_LANDING_V1"] },
     "english-11": { prefixes: ["khae-ela11-state-v1", "KA_ENGLISH11_LANDING_V1"] },
