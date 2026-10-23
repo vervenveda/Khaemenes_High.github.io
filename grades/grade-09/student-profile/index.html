@@ -220,7 +220,7 @@ html:root:root body .top .nav .brand .mark{display:none!important}
   const initials=(name.split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('')||'S').toUpperCase();
   const note=localStorage.getItem(scoped('khaemenes-grade09-daily-note-v1'));
   document.getElementById('studentName').textContent=name;
-  document.getElementById('avatar').textContent=window.KhaemenesGrade09Design?.avatarText(initials)||initials;
+  if(!document.querySelector('#avatar img'))document.getElementById('avatar').textContent=window.KhaemenesGrade09Design?.avatarText(initials)||initials;
   document.getElementById('studentMeta').textContent=`Grade 09${p.pathway?' · '+p.pathway:''} · Local profile workspace`;
 
   function bindLaunches(root=document){
@@ -327,7 +327,7 @@ html:root:root body .top .nav .brand .mark{display:none!important}
   }
 
   async function renderAll(){await Promise.all([renderPinned(),renderManager(),renderToday(),renderLearningToday()])}
-  window.addEventListener('khaemenes-grade09-design-changed',()=>{document.getElementById('avatar').textContent=window.KhaemenesGrade09Design?.avatarText(initials)||initials;});
+  window.addEventListener('khaemenes-grade09-design-changed',()=>{if(!document.querySelector('#avatar img'))document.getElementById('avatar').textContent=window.KhaemenesGrade09Design?.avatarText(initials)||initials;});
   window.addEventListener('storage',event=>{
     if(registry.shouldRefreshForStorageKey(event.key))void renderAll();
   });
@@ -345,5 +345,6 @@ html:root:root body .top .nav .brand .mark{display:none!important}
 <script src="../../shared/student-sticker-box.js"></script>
 <script src="../../shared/student-ecosystem-tools.js"></script>
 <script src="dashboard-layout.js"></script>
+<script src="student-profile-photo.js"></script>
 </body>
 </html>
