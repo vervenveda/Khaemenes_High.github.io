@@ -78,3 +78,14 @@ assert 'align(region)' in grade09_layout
 assert 'main > :is(.grade09-priority,.grade09-priority-schedule,#studentCourseProgress,.grade09-explore' in grade09_css
 assert 'max-width:1100px!important' in grade09_css
 print("PASS Grade 09 unified dashboard layout lane")
+
+grade9_profile=(ROOT/"grades/grade-09/student-profile/index.html").read_text(encoding="utf-8")
+grade9_layout=(ROOT/"grades/grade-09/student-profile/dashboard-layout.js").read_text(encoding="utf-8")
+grade9_photo=(ROOT/"grades/grade-09/student-profile/student-profile-photo.js").read_text(encoding="utf-8")
+assert 'student-profile-photo.js' in grade9_profile
+assert 'grade09-profile-first' in grade9_layout
+assert 'for(const card of [identity,firstStep,pins])' in grade9_layout
+assert 'insertAdjacentElement("afterend",schedule)' in grade9_layout
+for requirement in ('input.type="file"', 'image/jpeg', 'encodeURIComponent(first)', 'same()', 'canvas.toDataURL'):
+    assert requirement in grade9_photo
+print("PASS Grade 09 profile-first ordering and learner-specific photo")
