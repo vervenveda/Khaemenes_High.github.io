@@ -70,3 +70,8 @@ h1{margin:10px auto 0;font-size:clamp(33px,5vw,55px);line-height:1.08}
 #seven-classes{scroll-margin-top:70px}
 #grade10Personalize,#upperGradePersonalize,#learning-today,#my-evidence-overview,#khaeDreamsAchievements{scroll-margin-top:70px}
 @media(max-width:620px){.ug-priority-nav a{flex:1 1 42%;text-align:center}.ug-brand{font-size:15px}.ug-navlinks{gap:7px}}
+
+/* One Academy masthead: upper-grade local navigation is not a second brand header. */
+body:has([data-khae-header]) .ug-top .ug-brand{display:none!important}
+body:has([data-khae-header]) .ug-top .ug-nav{justify-content:flex-end}
+body:has([data-khae-header]) .ug-top .ug-hero{padding-top:8px!important;padding-bottom:10px!important}
