@@ -78,7 +78,9 @@ function setView(next){
   render();
 }
 function setWeek(n){
-  selectedWeek=Math.max(1,Math.min(36,Math.floor(+n)||1));
+  const requested=Math.max(1,Math.min(36,Math.floor(+n)||1)),unlocked=currentWeek(activeStudent());
+  if(requested>unlocked){alert(`Week ${requested} is locked. Complete Week ${unlocked}: all five lessons, all three scored/submitted assignments, the weekly quiz at 80%+, and the constructed-response score. Week 19 also requires the midterm at 80%+.`);selectedWeek=unlocked;}
+  else selectedWeek=requested;
   view='week';
   history.replaceState(null,'',`?week=${selectedWeek}`);
   renderSidebarWeeks();
@@ -90,13 +92,13 @@ function renderStudentControls(){
   select.innerHTML = db.students.length ? db.students.map(s=>`<option value="${esc(s.id)}" ${s.id===db.activeId?'selected':''}>${esc(s.name)}</option>`).join('') : '<option value="">No student added</option>';
 }
 function renderSidebarWeeks(){
-  const s=activeStudent();
+  const s=activeStudent(),unlocked=currentWeek(s);
   $('#weekList').innerHTML=COURSE.weeks.map(w=>{
-    const done=(s?.completedLessons?.[w.week]||[]).filter(Boolean).length;
-    return `<button class="weekBtn ${selectedWeek===w.week?'active':''}" data-week="${w.week}">
-      <span><strong>Week ${w.week}</strong><br><small>${esc(w.title)}</small></span><span>${done}/5</span></button>`;
+    const done=(s?.completedLessons?.[w.week]||[]).filter(Boolean).length,locked=!!s&&w.week>unlocked;
+    return `<button class="weekBtn ${selectedWeek===w.week?'active':''} ${locked?'locked':''}" data-week="${w.week}" ${locked?'disabled aria-disabled="true"':''}>
+      <span><strong>Week ${w.week}</strong><br><small>${esc(w.title)}</small></span><span>${locked?'🔒':done+'/5'}</span></button>`;
   }).join('');
-  $$('#weekList .weekBtn').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
+  $('#weekList .weekBtn:not([disabled])').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
 }
 function render(){
   $$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===view));

@@ -78,3 +78,6 @@ Because GitHub Pages is a static host, this passcode is only a convenience layer
 
 ## Credits
 Developed for Khaemenes High and Khaemenes Academy by Jennifer Kay Pearl, 2026.
+
+## State/localization rule
+Grade 9 Global Studies Honors is **state-localizable by requirement**. The global sequence remains canonical, while state/local government, history connections, Indigenous nations, elections, public records, economic/demographic evidence, civic institutions, and capstone sources are layered in where appropriate. See `docs/STATE_LOCALIZATION_GUIDE.md`. The 80% mastery standard is fixed.

@@ -76,7 +76,8 @@ function nextWeek(student){
  for(let week=1;week<=36;week++){
   const quiz=student.quizzes?.[week],days=student.completedLessons?.[week];
   const reviewed=[1,2,3].every(n=>{const a=student.assignments?.[`${week}-${n}`];return a?.submitted&&typeof a.score==='number'&&Number.isFinite(a.score)&&a.score>=0;});
-  if(!Array.isArray(days)||days.filter(Boolean).length!==5||!reviewed||!quiz?.completed||!(quiz.percent>=80)||typeof quiz.shortScore!=='number')return week;
+  if(!Array.isArray(days)||days.filter(Boolean).length!==5||!reviewed||!quiz?.completed||!((quiz.bestPercent??quiz.percent??0)>=80)||typeof quiz.shortScore!=='number')return week;
+  if(week===18&&((student.exams?.midterm?.bestPercent??student.exams?.midterm?.percent??0)<80))return week;
  }
  return 36;
 }

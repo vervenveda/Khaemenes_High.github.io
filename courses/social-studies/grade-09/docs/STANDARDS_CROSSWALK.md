@@ -53,3 +53,7 @@ The program reflects the California History–Social Science Framework’s empha
 
 ## Important limitation
 Breadth and rigor do not equal automatic approval. A parent, teacher, district, umbrella school, or evaluator must verify local course naming, credit, required topics, hours, attendance, assessment, portfolio, and transcript requirements.
+
+
+## State/localization requirement
+The global-history course retains its international sequence. Educators must add a jurisdiction-specific state/local overlay for civic institutions, elections, public records, state history connections, Indigenous nations, economic/demographic data, and required instruction where appropriate. See `STATE_LOCALIZATION_GUIDE.md`.
