@@ -39,6 +39,8 @@ jobs:
         run: node tools/test-math-assessment-submission-integrity.mjs
       - name: Verify Pre-Algebra Unit 01 lesson document integrity
         run: node tools/test-prealgebra-unit01-lesson-structure.mjs
+      - name: Verify advanced mathematics video certification remains fail-closed
+        run: node tools/test-advanced-math-video-release-preflight.mjs
       - name: Validate three-course mathematics visual continuity
         run: node tools/test-math-course-visual-continuity.mjs
       - name: Verify Grade 9 English and Science parchment consistency

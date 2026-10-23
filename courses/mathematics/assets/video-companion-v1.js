@@ -20,7 +20,22 @@ const escape=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">"
 async function loadJSON(url){const r=await fetch(url,{credentials:"same-origin"});if(!r.ok)throw new Error("resource unavailable");return r.json()}
 function approvedPlacement(record){return record?.enabled===true&&record?.release_approved===true}
 function blockedCurriculumPlatform(asset){const name=String(asset?.instructor||asset?.publisher||"").toLowerCase();return name.includes("khan academy")}
-function approvedAsset(asset){return !blockedCurriculumPlatform(asset)&&asset?.enabled===true&&asset?.certification?.student_release_approved===true&&Boolean(asset?.embed_url)}
+function approvedAsset(asset){
+ if(blockedCurriculumPlatform(asset)||asset?.enabled!==true)return false;
+ const c=asset?.certification;
+ if(!c||c.student_release_approved!==true||c.whole_video_reviewed!==true||
+    c.privacy_embed_verified!==true||c.captions_verified!==true||
+    c.responsive_lesson_rendering_verified!==true||c.transcript_or_text_fallback_verified!==true||
+    c.topic_alignment_verified!==true||asset.playback_verified!==true||
+    asset.captions_verified!==true)return false;
+ try{
+   const url=new URL(asset.embed_url);
+   return url.protocol==="https:"&&url.hostname==="www.youtube-nocookie.com"&&
+     /^\/embed\/[A-Za-z0-9_-]{11}$/.test(url.pathname)&&
+     !url.search&&!url.hash&&asset.provider==="youtube"&&
+     url.pathname.endsWith("/"+asset.video_id);
+ }catch{return false}
+}
 function makeCard(record,asset,index){
  const section=document.createElement("section");
  section.className="lesson-section math-video-companion";
