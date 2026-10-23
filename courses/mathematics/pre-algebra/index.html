@@ -638,6 +638,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <script defer src="../../../assets/academy-unified-print-header.js"></script><link rel="stylesheet" href="../assets/math-dashboard-parity-v1.css" data-math-dashboard-parity="v1">
 <link rel="stylesheet" href="../assets/math-student-journey-v1.css" data-math-student-journey="v1">
 <script defer src="../assets/math-student-journey-v1.js"></script>
+<link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to course content</a>
@@ -4522,6 +4523,7 @@ function addCapstone(){let s=student();ensure(s);let note=$("capNote").value.tri
 function addStudent(name){let s={id:uid(),name,created:new Date().toISOString(),progress:{weeks:{},exams:{},capstone:{logs:[],score:0,rubric:{}}}};state.students.push(s);state.activeId=s.id;save();render()}
 
 function reportHTML(){let s=student(),st=stats(s);return`<!doctype html><html><head><meta charset="utf-8"><title>Pre-Algebra Report - ${esc(s.name)}</title><style>body{font-family:Aptos,"Segoe UI",Arial,sans-serif;padding:32px;color:#111;line-height:1.55}table{width:100%;border-collapse:collapse}td,th{border:1px solid #aaa;padding:8px;vertical-align:top}.kpi{display:inline-block;border:1px solid #999;padding:12px;margin:5px}th{background:#eee}a{color:#123e77}</style></head><body><h1>Khaemenes Open-Age Pre-Algebra Report</h1><p><strong>Learner:</strong> ${esc(s.name)}<br><strong>Date:</strong> ${new Date().toLocaleDateString()}</p><div class="kpi"><strong>Overall mastery:</strong> ${st.course||"—"}%</div><div class="kpi"><strong>Lesson completion:</strong> ${st.lessons}%</div><div class="kpi"><strong>Assignment completion:</strong> ${st.assignments||"—"}%</div><div class="kpi"><strong>Quiz mastery:</strong> ${st.quizzes||"—"}%</div>${progressTable(s)}<h2>Capstone Logs</h2>${capstoneTable(s)}
+<script src="../../../assets/high-navigation-v1.js" defer></script>
 </body></html>`}
 function printReport(){let w=window.open("","_blank");if(!w)return alert("Allow pop-ups to print the report.");w.document.write(reportHTML());w.document.close();w.focus();setTimeout(()=>w.print(),400)}
 function downloadReport(){download(`PreAlgebra_Report_${safe(student().name)}.html`,reportHTML(),"text/html")}

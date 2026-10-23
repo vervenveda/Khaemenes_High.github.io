@@ -1,0 +1,19 @@
+/* Khaemenes High navigation recovery. Only new controls; existing page controls unchanged. */
+.high-nav-skip{position:fixed!important;top:-120px;left:8px;z-index:2147483646;padding:10px 14px;background:#fff8e9;color:#192a37;border:2px solid #876a39;border-radius:7px}
+.high-nav-skip:focus{top:8px!important}
+#highNavigationBreadcrumbs{position:relative;z-index:2;box-sizing:border-box;width:min(100% - 16px,1200px);margin:12px auto;padding:9px 12px;background:#f7f0e3;color:#25323a;border:1px solid #c9b89a;border-radius:7px;font:400 14px/1.5 "Avenir Next",Arial,sans-serif}
+#highNavigationBreadcrumbs ol{list-style:none;display:flex;align-items:center;flex-wrap:wrap;gap:5px 9px;padding:0;margin:0}
+#highNavigationBreadcrumbs li{display:inline-flex;align-items:center;min-width:0;overflow-wrap:anywhere}
+#highNavigationBreadcrumbs li+li::before{content:"›";margin-right:9px;color:#6c6661}
+#highNavigationBreadcrumbs a{color:#294b68;text-decoration:underline;text-underline-offset:3px}
+#highNavigationBreadcrumbs [aria-current]{color:#25323a}
+#highNavigationBreadcrumbs a:focus-visible,.high-nav-menu :is(button,a):focus-visible{outline:3px solid #3a73a0;outline-offset:3px}
+.high-nav-menu{position:relative;z-index:2147481000;margin-left:auto}
+.high-nav-menu>button{width:44px;height:44px;min-width:44px;display:grid;place-items:center;border:1px solid #a58750;border-radius:7px;background:#f8f2e6;color:#1b2e41;font:400 24px/1 Arial;cursor:pointer}
+#khaeLocalEcosystemPanel{position:fixed;right:max(8px,env(safe-area-inset-right));top:64px;z-index:2147483000;width:min(320px,calc(100vw - 16px));max-height:calc(100dvh - 80px);overflow:auto;box-sizing:border-box;padding:10px;border:1px solid #af9873;border-radius:7px;background:#f8f2e6;color:#25323a;box-shadow:0 12px 32px #10172066;font:400 15px/1.4 Arial,sans-serif}
+#khaeLocalEcosystemPanel[hidden]{display:none!important}
+#khaeLocalEcosystemPanel p{margin:4px 0 10px;color:#25323a}
+#khaeLocalEcosystemPanel a{display:block;min-height:44px;box-sizing:border-box;padding:11px 8px;margin:3px 0;color:#25323a;background:#fffdf7;border:1px solid #c9b89a;border-radius:7px;text-decoration:none;overflow-wrap:anywhere}
+@media(max-width:320px){#highNavigationBreadcrumbs{font-size:13px}#khaeLocalEcosystemPanel{top:54px}}
+@media print{.high-nav-menu,.high-nav-skip,#highNavigationBreadcrumbs{display:none!important}}
+.high-nav-menu-fixed{position:fixed!important;top:max(8px,env(safe-area-inset-top));right:max(8px,env(safe-area-inset-right));z-index:2147481000}
