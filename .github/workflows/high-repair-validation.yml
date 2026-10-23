@@ -35,6 +35,8 @@ jobs:
         run: node tools/test-course-aware-offline-recovery.mjs
       - name: Verify Algebra II lesson note drafts, recovery and concurrent tab safety
         run: node tools/test-algebra2-note-preservation.mjs
+      - name: Verify mathematics assessment submission and answer integrity
+        run: node tools/test-math-assessment-submission-integrity.mjs
       - name: Validate three-course mathematics visual continuity
         run: node tools/test-math-course-visual-continuity.mjs
       - name: Verify Grade 9 English and Science parchment consistency

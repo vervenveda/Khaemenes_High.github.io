@@ -57,8 +57,9 @@
       document.getElementById("resetAssessment")?.setAttribute("disabled", "true");
     }
 
-    let set = [];
+    let set = [], submitted = false;
     function start() {
+      submitted = false;
       const missing = missingPrerequisites();
       if (missing.length) {
         lock(missing);
@@ -75,29 +76,26 @@
     }
 
     function score(token) {
+      if (submitted || !set.length) return;
+      // No answers, correctness indicators or explanations are revealed until every
+      // response has been provided. Partial submissions do not consume an attempt.
+      const answers = set.map((question, index) => document.querySelector(`input[name="${token}-q${index}"]:checked`));
+      if (answers.some(answer => !answer)) {
+        document.getElementById("assessmentMessage").textContent = "Answer every question before scoring. Your answers are still editable.";
+        return;
+      }
       let right = 0;
-      let complete = true;
       const missed = [];
       set.forEach((question, index) => {
-        const selected = document.querySelector(`input[name="${token}-q${index}"]:checked`);
+        const selected = answers[index];
         const feedback = document.getElementById(`${token}-fb${index}`);
-        feedback.hidden = false;
-        if (!selected) {
-          complete = false;
-          feedback.className = "feedback bad";
-          feedback.textContent = "Choose an answer.";
-          return;
-        }
         const correct = Number(selected.value) === question.answer;
         if (correct) right += 1;
         else missed.push(question.id);
+        feedback.hidden = false;
         feedback.className = `feedback ${correct ? "good" : "bad"}`;
         feedback.textContent = `${correct ? "Correct." : "Review."} ${question.explanation}`;
       });
-      if (!complete) {
-        document.getElementById("assessmentMessage").textContent = "Answer every question before scoring.";
-        return;
-      }
       const scoreValue = Math.round(right / set.length * 100);
       const data = load();
       const key = cfg.recordKey || "assessment";
@@ -124,12 +122,14 @@
       data[key].masteryTarget = MASTERY_TARGET;
       data[key].mastery = MASTERY_TARGET == null ? null : data[key].attempts.some(item => item.mastery === true || item.mastery_met === true || Number(item.score) >= MASTERY_TARGET);
       save(data);
+      submitted = true;
+      for (const radio of host.querySelectorAll?.('input[type="radio"]') || []) radio.disabled = true;
       document.getElementById("assessmentMessage").innerHTML = `<span class="score">${scoreValue}%</span> · ${right}/${set.length} · Best ${data[key].bestScore}%${mastery === true ? " · Mastery demonstrated" : mastery === false ? " · Review, correct, and retake" : " · Diagnostic evidence recorded"}`;
       const priorNav=document.getElementById("academyNextStep");priorNav?.remove();
       const panel=document.createElement("div");panel.id="academyNextStep";panel.className="card";panel.style.marginTop="14px";panel.setAttribute("aria-label","Next learning step");
       const heading=document.createElement("p");heading.textContent="Next learning step";panel.append(heading);
       const add=(label,href)=>{const a=document.createElement("a");a.className="btn";a.href=href;a.textContent=label;a.style.margin="5px 10px 5px 0";panel.append(a);};
-      const unitMatch=location.pathname.match(/unit-(\\d{2})/),unit=unitMatch?Number(unitMatch[1]):0;
+      const unitMatch=location.pathname.match(/unit-(\d{2})/),unit=unitMatch?Number(unitMatch[1]):0;
       if(MASTERY_TARGET==null){add("Continue to Algebra II units","../index.html#units");}
       else if(mastery===true){add("Return to course pathway",unit?"../../../index.html#units":"../index.html#units");if(unit&&unit<13)add("Check next unit","../../unit-"+String(unit+1).padStart(2,"0")+"/");}
       else {add("Review unit lessons",unit?"../index.html":"../index.html#units");}
