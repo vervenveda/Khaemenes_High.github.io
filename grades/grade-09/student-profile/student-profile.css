@@ -256,3 +256,19 @@ body[data-student-avatar-shape="circle"] .avatar{border-radius:50%}
 .design-preview-mark{width:66px;height:66px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:7px;background:var(--panel);color:var(--forest);font:500 24px/1 var(--formal)}
 .design-preview strong{display:block;color:var(--forest);font:500 20px/1.35 var(--formal)}
 .design-preview span{display:block;margin-top:4px;color:var(--muted);font-size:13px}
+
+/* Grade 09 forensic layout repair: aligned schedule, progress, and compact feature drawers. */
+main>.grade09-priority,main>.grade09-priority-schedule,main>#studentCourseProgress,
+main>.grade09-explore,main>aside[aria-label="Student Learning Portfolio"]{
+  width:min(calc(100% - 32px),var(--max,1180px));margin-left:auto!important;margin-right:auto!important
+}
+.grade09-explore{margin-top:24px;margin-bottom:34px;padding:20px;border:1px solid var(--line);border-radius:7px;background:var(--panel)}
+.grade09-explore>h2{margin:0;font-size:clamp(22px,2.5vw,28px)}
+.grade09-explore>p{margin:5px 0 16px}
+.grade09-explore-item{margin:8px 0;border:1px solid var(--line2);border-radius:7px;overflow:hidden;background:var(--paper2)}
+.grade09-explore-item>summary{cursor:pointer;list-style-position:inside;padding:14px 16px;font-size:18px;color:var(--ink)}
+.grade09-explore-item>summary:hover,.grade09-explore-item>summary:focus-visible{background:var(--gold2)}
+.grade09-explore-item>[id]{border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;width:100%!important}
+.grade09-explore-item #khaeStudentEcosystemTools>div{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))!important}
+.grade09-priority-schedule .schedule-card{width:100%;max-width:none}
+@media(max-width:650px){.grade09-explore{padding:12px}.grade09-explore-item>summary{padding:12px}}
