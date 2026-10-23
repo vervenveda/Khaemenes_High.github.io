@@ -69,3 +69,12 @@ for grade in range(9,13):
 for token in ('readLearner?.(initial)', 'snap?.progress?.percent', 'Not reported', 'aria-valuenow', 'learnerId()!==initial'):
     assert token in progress, f"Course progress read-only guard missing: {token}"
 print("PASS Grades 9–12 source-reported progress bar integration")
+
+grade09_layout=(ROOT/"grades/grade-09/student-profile/dashboard-layout.js").read_text(encoding="utf-8")
+grade09_css=(ROOT/"grades/grade-09/student-profile/student-profile.css").read_text(encoding="utf-8")
+assert 'dashboardWidth="min(calc(100% - 33px), 1100px)"' in grade09_layout
+assert '[shortcuts,schedule,progress,portfolio].forEach(align)' in grade09_layout
+assert 'align(region)' in grade09_layout
+assert 'main > :is(.grade09-priority,.grade09-priority-schedule,#studentCourseProgress,.grade09-explore' in grade09_css
+assert 'max-width:1100px!important' in grade09_css
+print("PASS Grade 09 unified dashboard layout lane")
