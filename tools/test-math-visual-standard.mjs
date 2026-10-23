@@ -7,9 +7,14 @@ for(const item of required)assert.ok(shared.includes(item),"Shared math visual s
 for(const course of ["algebra-1","geometry","algebra-2"]){
  const path="courses/mathematics/"+course+"/assets/styles.css";
  const css=fs.readFileSync(path,"utf8");
- assert.match(css,/@import\s+url\(["']\.\.\/\.\.\/\.\.\/\.\.\/assets\/math-course-visual-unifier\.css(?:\?[^"']*)?["']\)/,course+" missing shared design import");
+ if(course==="algebra-1")
+  assert.match(css,/@import\s+url\(["']\.\.\/\.\.\/\.\.\/\.\.\/assets\/math-course-visual-unifier\.css(?:\?[^"']*)?["']\)/,"Algebra I missing shared design import");
+ else {
+  for(const token of ['html[data-theme="light"]',":focus-visible","@media(max-width:320px)"])
+   assert.ok(css.includes(token),course+" must retain its own theme-aware responsive presentation: "+token);
+ }
  assert.match(css,/@media\s+print/,course+" missing print contract");
 }
 const doc=fs.readFileSync("assets/MATHEMATICS-DESIGN-STANDARD.md","utf8");
 assert.ok(doc.includes("Pre-Algebra")&&doc.includes("Geometry")&&doc.includes("Algebra II"),"Design standard must describe the cross-course intent");
-console.log("PASS shared mathematics design: typography, print, focus, motion, 44px controls and three course imports.");
+console.log("PASS shared mathematics design: typography, print, focus, motion, 44px controls and three course visual contracts.");

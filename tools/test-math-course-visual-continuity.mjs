@@ -23,11 +23,19 @@ for(const course of ["algebra-1","geometry","algebra-2"]){
  const root="courses/mathematics/"+course+"/";
  const courseCSS=root+"assets/styles.css";
  const styles=fs.readFileSync(courseCSS,"utf8");
- const asset="../".repeat(4)+"assets/math-course-visual-unifier.css";
- assert.ok(styles.includes("math-course-visual-unifier.css"),course+" shared visual missing");
- const match=styles.match(/@import url\("([^"]*math-course-visual-unifier\.css[^"]*)"\);/);
- assert.ok(match,course+" must import shared CSS");
- assert.equal(normalize(courseCSS,match[1]),visual,course+" shared visual import is an invalid relative URL");
+ if(course==="algebra-1"){
+  const match=styles.match(/@import url\("([^"]*math-course-visual-unifier\.css[^"]*)"\);/);
+  assert.ok(match,"Algebra I course stylesheet must import the shared visual CSS");
+  assert.equal(normalize(courseCSS,match[1]),visual,"Algebra I shared CSS import path invalid");
+ }else{
+  // Geometry and Algebra II have their own responsive, light/dark theme-aware
+  // course styles. Forcing an unscoped light !important layer into those
+  // courses would break their existing dark-mode toggle.
+  for(const token of ['html[data-theme="light"]',":focus-visible","@media print","@media(max-width:320px)"]){
+   assert.ok(styles.includes(token),course+" local visual contract missing "+token);
+  }
+  assert.ok(styles.includes(".lesson-layout"),course+" responsive lesson layout missing");
+ }
  sheetsChecked++;
  const landing=fs.readFileSync(root+"index.html","utf8");
  assert.ok(landing.includes('data-theme="light"'),course+" landing should open in parchment mode");
