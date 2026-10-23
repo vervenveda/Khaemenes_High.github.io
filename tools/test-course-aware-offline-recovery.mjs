@@ -113,9 +113,12 @@ function page({progression=null,currentScript=true}={}){
 for(const outcome of ["download-error","silent-loader","missing-script"]){
  const p=page({currentScript:outcome!=="missing-script"});
  vm.runInContext(lesson,p.ctx);
- if(outcome==="download-error"){
-  assert.equal(p.written.length,2);p.written[0].onerror();
- }else if(outcome==="silent-loader"){assert.equal(p.written.length,2);p.written[0].onload();}
+ if(outcome==="download-error"||outcome==="silent-loader"){
+  const authority=p.written.find(script=>script.src?.includes("algebra2-progression.js"));
+  assert.ok(authority,"progression loader is present");
+  if(outcome==="download-error")authority.onerror();
+  else authority.onload();
+ }
  const message=p.doc.getElementById("algebra2ProgressionRecovery");
  assert.ok(p.main.children.includes(message),"warning inserted inside lesson "+outcome);
  assert.equal(message.attrs.role,"alert");
@@ -132,7 +135,7 @@ for(const outcome of ["download-error","silent-loader","missing-script"]){
  assert.ok(retry?.listeners.click,"retry button functional");
  retry.listeners.click();assert.equal(p.callbacks.get("reload"),true);
  p.el("printLesson").listeners.click();assert.equal(p.callbacks.get("print"),true);
- assert.equal(p.written.length,outcome==="missing-script"?1:2);
+ assert.ok(p.written.some(script=>script.src?.includes("video-companion-v1.js")),"video companion survives a progression failure");
 }
 // Successful progression authority should retain regular save/mark behavior.
 const source={
@@ -142,7 +145,7 @@ const source={
 };
 const ok=page({progression:source});
 vm.runInContext(lesson,ok.ctx);
-assert.equal(ok.written.length,1,"no duplicate progression injection when loaded; video helper remains separate");
+assert.ok(!ok.written.some(script=>script.src?.includes("algebra2-progression.js")),"already loaded progression authority must not be reinjected");
 assert.equal(ok.el("lessonComplete").checked,true);
 assert.equal(ok.el("lessonNote").value,"Existing record");
 assert.ok(!ok.main.children.some(c=>c.id==="algebra2ProgressionRecovery"),"no false warning on success");
