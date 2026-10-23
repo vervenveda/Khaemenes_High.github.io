@@ -38,3 +38,7 @@ Use `STATE_AND_DC_REVIEW_WORKSHEET.csv` as a review log. It intentionally does n
 
 ## Weekly standards evidence
 Each weekly record lists C3 inquiry, disciplinary civics/economics/geography/history strands, grades 11–12 literacy, comparative-government skills, research skills, and NCSS thematic strands as appropriate.
+
+
+## State/localization requirement
+The course must receive a state/local overlay for jurisdiction-specific government, election administration, courts, public records, economic/demographic data, required instruction, and capstone evidence. Localization cannot replace the global comparative/IR core or reduce Academy mastery requirements. See `docs/STATE_LOCALIZATION_GUIDE.md`.

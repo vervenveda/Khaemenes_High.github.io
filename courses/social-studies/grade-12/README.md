@@ -18,3 +18,7 @@
 Credit is issued only after all mandatory graduation gates pass.
 
 This is a nationally portable honors-course design. It is not a claim of accreditation or automatic acceptance in every jurisdiction.
+
+
+## State/localization rule
+This senior course is **state-localizable by requirement** while preserving the national/global core and every Academy 80% mastery gate. See `docs/STATE_LOCALIZATION_GUIDE.md`.

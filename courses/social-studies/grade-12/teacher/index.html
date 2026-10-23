@@ -63,7 +63,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <article class="card col4"><label class="checkline"><input id="evaluator" type="checkbox"> Teacher/homeschool evaluator verification complete</label></article>
 </div><label>Evaluator notes<textarea id="notes" rows="5"></textarea></label><button id="saveVerification">Save Verification</button></section>
 <section class="card col12"><h2>Major Assessment Scores</h2><p>Check submission, enter a 0–100 score, and preserve rubric evidence. Every assessment has an individual minimum.</p><div id="majorList"></div><button id="saveMajors">Save Major Scores</button></section>
-<section class="card col12"><h2>Weekly Portfolio Review</h2><p>Approve a week only after reviewing all three assignments, source/data work, constructed response, and required corrections.</p><div id="weeklyApprovalList" class="auditGrid"></div><button id="saveWeeklyApprovals">Save Weekly Portfolio Approvals</button></section><section class="card col12"><h2>Ten Capstone Checkpoints</h2><div id="checkpointList"></div><button id="saveCheckpoints">Save Checkpoint Decisions</button></section>
+<section class="card col12"><h2>Weekly Portfolio Review · Quality Assurance</h2><p>Use these optional review checks to document evaluator sampling or feedback. Weekly portfolio approval is no longer a separate graduation or progression gate; lesson, assignment, quiz, major-assessment, capstone, integrity, and evaluator gates remain authoritative.</p><div id="weeklyApprovalList" class="auditGrid"></div><button id="saveWeeklyApprovals">Save Weekly Portfolio Approvals</button></section><section class="card col12"><h2>Ten Capstone Checkpoints</h2><div id="checkpointList"></div><button id="saveCheckpoints">Save Checkpoint Decisions</button></section>
 <section class="card col12"><h2>Graduation-Credit Audit</h2><div id="auditSummary" class="gateSummary"></div><div id="auditGrid" class="auditGrid"></div><div class="actions noPrint"><button id="issueCredit">Issue Final Credit</button><button id="revokeCredit" class="danger">Revoke / Return to Incomplete</button></div><p id="issueMsg"></p></section>
 <section class="card col12"><h2>Teacher Resources</h2><div class="actions"><a class="button" href="ANSWER_KEY_INDEX.html">36 Weekly Answer Keys</a><a class="button" href="SEMESTER_EXAM_ANSWER_KEY.html">Semester Key</a><a class="button" href="CUMULATIVE_FINAL_ANSWER_KEY.html">Final Key</a><a class="button secondary" href="TEACHER_HANDBOOK.md">Teacher Handbook</a><a class="button secondary" href="GRADUATION_AUDIT_GUIDE.md">Audit Guide</a><a class="button ghost" href="RUBRICS.md">Rubrics</a></div></section>
 </div></section>
@@ -85,9 +85,8 @@ function audit(s,includeIssue=true){const s1=sem(s,1,18),s2=sem(s,19,36),ov=over
 const approvedWeeks=COURSE.weeks.filter(w=>s?.weekApprovals?.[w.week]?.approved).length;
 const g=[
 ['hours','150 documented instructional hours',+s?.teacher?.hours>=150,`${+s?.teacher?.hours||0}/150`],
-['lessons','At least 162 of 180 daily lessons',ls(s)>=162,`${ls(s)}/180`],
+['lessons','All 180 daily lessons completed or documented as equivalent make-up work',ls(s)>=180,`${ls(s)}/180`],
 ['assignments','All 108 principal assignments submitted',as(s)>=108,`${as(s)}/108`],
-['weeklyApproval','All 36 weekly portfolios approved',approvedWeeks===36,`${approvedWeeks}/36`],
 ['quizzes','All 36 quizzes mastered at 80%+',qstat(s).master===36,`${qstat(s).master}/36`],
 ['s1','Semester 1 at least 80%',s1>=80,`${s1}%`],['s2','Semester 2 at least 80%',s2>=80,`${s2}%`],
 ['overall','Overall at least 80%',ov>=80,`${ov}%`],

@@ -58,7 +58,20 @@ function overallGrade(s){
  const maj=weights?earned/weights:0;
  return Math.round(q*.15+a*.15+maj*.70);
 }
-function currentWeek(s){if(!s)return 1;for(const w of COURSE.weeks){if((s.completedLessons[w.week]||[]).filter(Boolean).length<5)return w.week}return 36}
+function weekMastered(s,w){
+ if(!s)return false;
+ const lessons=(s.completedLessons?.[w.week]||[]).filter(Boolean).length===5;
+ const assignments=w.assignments.every(a=>s.assignments?.[`${w.week}-${a.number}`]?.submitted);
+ const quiz=s.quizzes?.[w.week];
+ const quizMastery=!!quiz?.completed&&(quiz.bestPercent??quiz.percent??0)>=META.weeklyMastery&&String(quiz.shortResponse||'').trim().length>0;
+ if(!lessons||!assignments||!quizMastery)return false;
+ if(w.week===18){
+   const mid=s.major?.semester_exam;
+   if(!mid?.submitted||(+mid.score||0)<META.semesterMinimum)return false;
+ }
+ return true;
+}
+function currentWeek(s){if(!s)return 1;for(const w of COURSE.weeks){if(!weekMastered(s,w))return w.week}return 36}
 
 function gateAudit(s,includeIssue=true){
  const ls=lessonStats(s),as=assignmentStats(s),qs=quizStats(s),s1=semesterGrade(s,1,18),s2=semesterGrade(s,19,36),ov=overallGrade(s);
@@ -70,9 +83,8 @@ function gateAudit(s,includeIssue=true){
  const approvedWeeks=COURSE.weeks.filter(w=>s?.weekApprovals?.[w.week]?.approved).length;
  const gates=[
   {id:'hours',label:`${META.minimumHours} documented instructional hours`,pass:+s?.teacher?.hours>=META.minimumHours,value:`${+s?.teacher?.hours||0}/${META.minimumHours}`},
-  {id:'lessons',label:`At least ${META.lessonMinimum} of 180 daily lessons`,pass:ls.done>=META.lessonMinimum,value:`${ls.done}/180`},
+  {id:'lessons',label:'All 180 daily lessons completed or documented as equivalent make-up work',pass:ls.done>=META.lessonMinimum,value:`${ls.done}/180`},
   {id:'assignments',label:'All 108 principal assignments submitted',pass:as.submitted>=108,value:`${as.submitted}/108`},
-  {id:'weeklyApproval',label:'All 36 weekly portfolios approved by evaluator',pass:approvedWeeks===36,value:`${approvedWeeks}/36 approved`},
   {id:'quizzes',label:`All 36 weekly quizzes mastered at ${META.weeklyMastery}% or higher`,pass:allQuizMastery,value:`${qs.mastered}/36 mastered`},
   {id:'semester1',label:`Semester 1 average at least ${META.semesterMinimum}%`,pass:s1>=META.semesterMinimum,value:`${s1}%`},
   {id:'semester2',label:`Semester 2 average at least ${META.semesterMinimum}%`,pass:s2>=META.semesterMinimum,value:`${s2}%`},
@@ -87,15 +99,21 @@ function gateAudit(s,includeIssue=true){
 }
 
 function setView(v){view=v;$$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===v));render()}
-function setWeek(n){selectedWeek=Math.max(1,Math.min(36,+n));history.replaceState(null,'',`?week=${selectedWeek}`);view='week';renderSidebarWeeks();render();scrollTo({top:0,behavior:'smooth'})}
+function setWeek(n){
+ const requested=Math.max(1,Math.min(36,+n));
+ const unlocked=currentWeek(activeStudent());
+ if(requested>unlocked){alert(`Week ${requested} is locked. Complete Week ${unlocked}: all five lessons, all three assignments, the weekly quiz at 80%+, and its constructed response. Week 19 also requires the semester exam at 80%+.`);selectedWeek=unlocked;}
+ else selectedWeek=requested;
+ history.replaceState(null,'',`?week=${selectedWeek}`);view='week';renderSidebarWeeks();render();scrollTo({top:0,behavior:'smooth'})
+}
 function renderStudentControls(){
  const el=$('#studentSelect');
  el.innerHTML=db.students.length?db.students.map(s=>`<option value="${s.id}" ${s.id===db.activeId?'selected':''}>${esc(s.name)}</option>`).join(''):'<option value="">No student added</option>';
 }
 function renderSidebarWeeks(){
- const s=activeStudent();
- $('#weekList').innerHTML=COURSE.weeks.map(w=>`<button class="weekBtn ${w.week===selectedWeek?'active':''}" data-week="${w.week}"><span><strong>Week ${w.week}</strong><br><small>${esc(w.title)}</small></span><span>${(s?.completedLessons?.[w.week]||[]).filter(Boolean).length}/5</span></button>`).join('');
- $$('#weekList .weekBtn').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
+ const s=activeStudent(), unlocked=currentWeek(s);
+ $('#weekList').innerHTML=COURSE.weeks.map(w=>{const locked=!!s&&w.week>unlocked;return `<button class="weekBtn ${w.week===selectedWeek?'active':''} ${locked?'locked':''}" data-week="${w.week}" ${locked?'disabled aria-disabled="true"':''}><span><strong>Week ${w.week}</strong><br><small>${esc(w.title)}</small></span><span>${locked?'🔒':(s?.completedLessons?.[w.week]||[]).filter(Boolean).length+'/5'}</span></button>`}).join('');
+ $('#weekList .weekBtn:not([disabled])').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
 }
 function render(){
  applySettings();const c=$('#content');
@@ -120,7 +138,7 @@ function dashboardHTML(){
  <section class="card col3 kpi"><strong>${as.submitted}/108</strong><span>Assignments submitted</span></section>
  <section class="card col3 kpi"><strong>${qs.mastered}/36</strong><span>Weekly mastery gates</span></section>
  <section class="card col3 kpi"><strong>${audit.gates.filter(g=>g.pass).length}/${audit.gates.length}</strong><span>Graduation gates passed</span></section>
- <section class="card col6"><h3>Semester Record</h3><p><strong>Semester 1:</strong> ${audit.s1}% · minimum 70%</p><p><strong>Semester 2:</strong> ${audit.s2}% · minimum 70%</p><p><strong>Overall:</strong> ${audit.ov}% · minimum 75%</p></section>
+ <section class="card col6"><h3>Semester Record</h3><p><strong>Semester 1:</strong> ${audit.s1}% · minimum ${META.semesterMinimum}%</p><p><strong>Semester 2:</strong> ${audit.s2}% · minimum ${META.semesterMinimum}%</p><p><strong>Overall:</strong> ${audit.ov}% · minimum ${META.passingOverall}%</p></section>
  <section class="card col6"><h3>Graduation Status</h3><div class="gateSummary"><strong>${audit.complete?'CREDIT ISSUED':audit.ready?'READY FOR EVALUATOR ISSUANCE':'REQUIREMENTS REMAIN'}</strong><p>${audit.complete?'Every gate is verified and final credit is recorded.':audit.ready?'All pre-issuance gates pass. The evaluator must review and issue final credit.':'Open the graduation audit for the exact unmet requirements.'}</p></div></section>
  <section class="card col12 integrity"><h3>National portability statement</h3><p>${esc(META.disclaimer)}</p></section>
  </div>`;

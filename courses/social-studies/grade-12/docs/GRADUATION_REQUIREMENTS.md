@@ -5,9 +5,9 @@ Credit is **not** awarded solely because the numerical average is passing.
 ## Mandatory gates
 1. Complete all 36 instructional weeks.
 2. Document at least 150 instructional hours.
-3. Complete at least 162 of 180 daily lessons; every omitted essential lesson must be made up.
+3. Complete all 180 daily lessons. A missed lesson may be satisfied only through documented equivalent make-up work covering the same essential competency; it is not silently waived.
 4. Submit all 108 principal assignments.
-5. Receive evaluator approval for all 36 weekly portfolios after the three assignments, source work, and correction record are reviewed.
+5. Retain weekly portfolio evidence for all 36 weeks. Evaluator sampling/review is strongly recommended and may be required by the learner's jurisdiction, but 36 separate manual approvals are not an Academy progression gate.
 6. Complete all 36 weekly mastery quizzes at 80% or higher after correction and reassessment.
 7. Earn at least 80% in Semester 1.
 8. Earn at least 80% in Semester 2.
