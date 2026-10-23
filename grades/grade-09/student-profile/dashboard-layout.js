@@ -7,8 +7,22 @@ const dashboardWidth="min(calc(100% - 33px), 1100px)";
 const align=node=>{if(!node)return;node.style.setProperty("width",dashboardWidth,"important");node.style.setProperty("max-width","1100px","important");node.style.setProperty("margin-left","auto","important");node.style.setProperty("margin-right","auto","important")};
 const shortcuts=document.querySelector(".grade09-priority");
 const portfolio=main.querySelector('aside[aria-label="Student Learning Portfolio"]');
-if(shortcuts)main.prepend(shortcuts);
-if(shortcuts)shortcuts.insertAdjacentElement("afterend",schedule);else main.prepend(schedule);
+// Student profile first: identity/photo, first step, pins, then the existing course schedule.
+const grid=main.querySelector(".section .grid");
+const identity=grid?.querySelector(".profile-row")?.closest(".card");
+const firstStep=grid?.querySelector("#todayTitle")?.closest(".card");
+const pins=grid?.querySelector("#classes");
+const top=document.createElement("section");
+top.className="grade09-profile-first";
+top.id="grade09ProfileFirst";
+top.setAttribute("aria-label","Student profile and daily starting point");
+for(const card of [identity,firstStep,pins])if(card)top.append(card);
+main.prepend(top);
+align(top);
+if(shortcuts)top.insertAdjacentElement("afterend",shortcuts);
+
+if(shortcuts)shortcuts.insertAdjacentElement("afterend",schedule);
+else top.insertAdjacentElement("afterend",schedule);
 if(progress)schedule.insertAdjacentElement("afterend",progress);
 [shortcuts,schedule,progress,portfolio].forEach(align);
 const region=document.createElement("section");region.id="grade09Explore";region.className="grade09-explore";
