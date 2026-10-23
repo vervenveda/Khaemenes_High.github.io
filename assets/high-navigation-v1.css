@@ -344,3 +344,9 @@
 @media(max-width:320px){#highNavigationBreadcrumbs{font-size:13px}#khaeLocalEcosystemPanel{top:54px}}
 @media print{.high-nav-menu,.high-nav-skip,#highNavigationBreadcrumbs{display:none!important}}
 .high-nav-menu-fixed{position:fixed!important;top:max(8px,env(safe-area-inset-top));right:max(8px,env(safe-area-inset-right));z-index:2147481000}
+
+/* Contextual return shortcuts, independent of lesson assessment engines. */
+.high-nav-shortcuts{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px;padding-top:8px;border-top:1px solid #cfbda4}
+#highNavigationBreadcrumbs .high-nav-shortcuts a{box-sizing:border-box;min-height:44px;display:inline-flex;align-items:center;padding:9px 12px;border:1px solid #b7a287;border-radius:7px;background:#fffdf7;color:#294b68;text-decoration:none}
+#highNavigationBreadcrumbs .high-nav-shortcuts a:focus-visible{outline:3px solid #3a73a0;outline-offset:3px}
+@media(max-width:255px){#highNavigationBreadcrumbs .high-nav-shortcuts a{width:100%;justify-content:center}}
