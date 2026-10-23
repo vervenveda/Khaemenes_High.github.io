@@ -100,6 +100,25 @@ for(const entry of banks){
  }
  varied++;
 }
+// Every lesson must recover the original answer indices after a browser restart,
+// even though the visible option order changes. Lesson 03 is a known beta regression target.
+for(const entry of banks){
+ const key="audit-prealgebra-unit-"+pad(entry.unit);
+ const selections={};
+ for(const i of [0,3,9,19])if(entry.bank.questions[i])selections[String(i)]=entry.bank.questions[i].answer;
+ const retained={practiceDrafts:{[entry.bank.id]:selections},lessonScores:{[entry.bank.id]:85},lessonBestScores:{[entry.bank.id]:90},lessonAttempts:{[entry.bank.id]:[{percent:90}]},completedLessons:[entry.bank.id]};
+ const restored=run(entry,.72,{[key]:JSON.stringify(retained)});
+ for(const [i,answer] of Object.entries(selections)){
+  const section=restored.host.match(new RegExp('<article class="question" data-question="'+i+'"[^>]*>([\\s\\S]*?)<\\/article>'))?.[1]||"";
+  assert.ok(section.includes('value="'+answer+'" checked'),"Saved answer missing after reload: "+entry.file+" #"+i);
+ }
+ const state=JSON.parse(restored.saved.get(key));
+ assert.equal(state.lessonBestScores[entry.bank.id],90,"Best 90% mastery preserved: "+entry.file);
+ assert.equal(state.lessonAttempts[entry.bank.id].length,1,"Attempt history preserved: "+entry.file);
+}
+const lesson03=banks.find(x=>x.unit===1&&x.bank.number===3);
+assert.ok(lesson03,"Unit 01 Lesson 03 prime/divisibility must remain in course inventory");
+
 const u1=banks.find(x=>x.unit===1),draft={practiceDrafts:{},lessonScores:{},completedLessons:[]};
 draft.practiceDrafts[u1.bank.id]={"0":u1.bank.questions[0].answer};
 draft.lessonScores[u1.bank.id]=80;draft.completedLessons=[u1.bank.id];
@@ -118,5 +137,5 @@ const grade=JSON.parse(scored.saved.get(scored.key));
 assert.equal(grade.lessonScores[s.bank.id],100,"Correct answers still score 100%");
 assert.ok(grade.lessonBestScores[s.bank.id]>=80,"80% unlock remains effective");
 console.log("PASS Pre-Algebra answer integrity: "+varied+" official lesson engines, "+
- totalQuestions+" keyed answers, "+checkedChoices+" visual answer choices, "+
+ totalQuestions+" keyed answers, "+checkedChoices+" visual answer choices, "+banks.length+" lesson restart scenarios, "+
  unit00.length+" numeric refresher lessons, original-ID draft compatibility, and mastery scoring.");
