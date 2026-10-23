@@ -24,6 +24,14 @@
    return new URL(dest,root).href;
  }
  function updateProfiles(){
+   const shortcuts=document.querySelector("#highNavigationBreadcrumbs .high-nav-shortcuts");
+   if(shortcuts){
+     const grade=activeGrade();
+     const links=shortcuts.querySelectorAll("a");
+     if(links[0]){links[0].href=new URL(grade?"grades/grade-"+String(grade).padStart(2,"0")+"/":"index.html#student-portal",root).href;links[0].textContent=grade?"My Grade "+grade:"Select Learner";}
+     if(links[1])links[1].href=profileHref();
+   }
+
    const destination=profileHref(),grade=activeGrade();
    document.querySelectorAll("a").forEach(a=>{
      const label=(a.textContent||"").replace(/\s+/g," ").trim();
@@ -78,7 +86,15 @@
      }
      ol.appendChild(li);
    });
-   nav.appendChild(ol);main.parentNode.insertBefore(nav,main);
+   nav.appendChild(ol);
+   const choices=document.createElement("div");choices.className="high-nav-shortcuts";
+   const grade=activeGrade();
+   const gradeLink=document.createElement("a");
+   gradeLink.href=new URL(grade?"grades/grade-"+String(grade).padStart(2,"0")+"/":"index.html#student-portal",root).href;
+   gradeLink.textContent=grade?"My Grade "+grade:"Select Learner";
+   const profileLink=document.createElement("a");profileLink.href=profileHref();profileLink.textContent="My Student Profile";
+   choices.append(gradeLink,profileLink);nav.appendChild(choices);
+   main.parentNode.insertBefore(nav,main);
  }
  function skip(){
    const main=document.querySelector("main,[role=main]");if(!main)return;
