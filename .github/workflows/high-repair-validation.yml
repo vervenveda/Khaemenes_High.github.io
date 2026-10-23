@@ -16,14 +16,15 @@ jobs:
           node-version: 24
       - name: Check all public page dependencies and routes
         run: python3 tools/validate-sitewide-routes.py
-      - name: Verify learner isolation, ownership recovery and direct math routes
-        run: node scripts/validate_learner_scoped_persistence.mjs
-      - name: Verify learner-owned course pins and language selections
-        run: node tools/test-high-course-pins.mjs
       - name: Verify grade-aware High School routes and Higher Learning handoffs
         run: node tools/test-high-navigation-routes.mjs
       - name: Verify local ecosystem menu interactions and learner switching
         run: node tools/test-high-navigation-menu.mjs
+      - name: Verify learner isolation, ownership recovery and direct math routes
+        run: node scripts/validate_learner_scoped_persistence.mjs
+      - name: Verify learner-owned course pins and language selections
+        run: node tools/test-high-course-pins.mjs
+
       - name: Verify English records, scores and recovery
         run: node tools/test-upper-english-records.mjs
       - name: Verify offline cache ownership

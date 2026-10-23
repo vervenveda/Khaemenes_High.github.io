@@ -96,6 +96,7 @@
   ["Higher Learning","https://vervenveda.com/Khaemenes_Higher_Learning.github.io/"]
  ];
  function fallbackMenu(){
+   if(document.getElementById("menuButton") && (document.getElementById("drawerBg")||document.getElementById("menuOverlay")))return;
    if(document.getElementById("vnvEcosystemMenuButton")||
       document.getElementById("vnvEcosystemMenuOverlay")||
       document.getElementById("khaeLocalEcosystemToggle"))return;
