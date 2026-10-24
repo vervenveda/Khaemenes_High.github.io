@@ -232,7 +232,11 @@ function highAssessmentDraw(kind,id,bank,count){
     return {adapter,opened,questions:opened.questions,storageKey};
   }catch(_err){return {adapter:null,opened:null,questions:[],storageKey:null,unavailable:true}}
 }
-function highAssessmentComplete(draw,summary){if(draw?.adapter&&draw?.opened)draw.adapter.complete(draw.opened,summary)}
+function highAssessmentComplete(draw,summary){
+  if(!draw?.adapter||!draw?.opened||!window.KhaeMonteCarloAssessment?.isActive(draw.storageKey,draw.opened.sessionId))return false;
+  const record=draw.adapter.complete(draw.opened,summary);
+  return !!record&&!record.conflict&&Array.isArray(record.attempts)&&record.attempts.some(a=>a.id===draw.opened.sessionId);
+}
 function highAssessmentReviewSkills(questions,answers){
   return [...new Set(questions.map((q,i)=>Number(answers[i])===Number(q.answer)?null:(q.skill||q.domain||"Review")).filter(Boolean))].slice(0,10);
 }
@@ -352,8 +356,8 @@ function submitQuiz(){
   }
   const score=Math.round(correct/qs.length*100),reviewSkills=highAssessmentReviewSkills(qs,answers);
   const attempt={date:new Date().toISOString(),score,answers,mastered:score>=80,attemptId:draw.opened?.sessionId||null,questionIds:draw.opened?.questionIds||qs.map(q=>q.id).filter(Boolean),reviewSkills};
+  if(!highAssessmentComplete(draw,{score,correct,total:qs.length,mastered:score>=80,reviewSkills}))return alert("This quiz attempt is no longer active. No score was recorded.");
   r.quiz.attempts.push(attempt);r.quiz.best=Math.max(r.quiz.best||0,score);
-  highAssessmentComplete(draw,{score,correct,total:qs.length,mastered:score>=80,reviewSkills});
   save();alert(`Quiz submitted: ${score}%. Best score kept.`);render();
 }
 function submitExam(name){
@@ -368,14 +372,14 @@ function submitExam(name){
   const score=Math.round(correct/qs.length*100),reviewSkills=highAssessmentReviewSkills(qs,answers);
   ensure(s);if(!s.progress.exams[name])s.progress.exams[name]={best:0,attempts:[]};
   const attempt={date:new Date().toISOString(),score,answers,mastered:score>=80,attemptId:draw.opened?.sessionId||null,questionIds:draw.opened?.questionIds||qs.map(q=>q.id).filter(Boolean),reviewSkills};
+  if(!highAssessmentComplete(draw,{score,correct,total:qs.length,mastered:score>=80,reviewSkills}))return alert("This exam attempt is no longer active. No score was recorded.");
   s.progress.exams[name].attempts.push(attempt);s.progress.exams[name].best=Math.max(s.progress.exams[name].best||0,score);
-  highAssessmentComplete(draw,{score,correct,total:qs.length,mastered:score>=80,reviewSkills});
   save();alert(`${name} submitted: ${score}%.`);render();
 }
 function repeatWeek(){let r=weekRec(student(),activeWeek); r.repeats=(r.repeats||0)+1; r.lastRepeat=new Date().toISOString(); save(); alert("Repeat logged. Review the lab, correct errors, and retake when ready."); render();}
-function issueCredit(){const s=student(); if(!readyForCredit(s))return alert("Credit remains locked until all gates pass."); s.progress.creditIssued=true; s.progress.creditDate=new Date().toISOString(); save(); alert("Final credit issued in local record."); render();}
+function issueCredit(){const s=student(); if(!readyForCredit(s))return alert("Credit remains locked until all gates pass."); s.progress.creditIssued=true; s.progress.creditDate=new Date().toISOString(); save(); alert("Provisional local course completion recorded. This is not an authenticated Academy transcript or independently verified final credit."); render();}
 function addStudent(name){const s={id:uid(),name,created:new Date().toISOString(),progress:{weeks:{},assessments:{},capstones:{},thesis:{words:0,score:0,defense:0,integrity:false,evaluator:false,hours:0},exams:{},creditIssued:false}}; state.students.push(s); state.activeId=s.id; save(); render();}
-function reportHTML(){const s=student(), st=stats(s), gates=auditGates(s); return `<!doctype html><html><head><meta charset="utf-8"><title>Grade 12 Report - ${esc(s.name)}</title><style>body{font-family:Arial;padding:24px;color:#111}table{width:100%;border-collapse:collapse}td,th{border:1px solid #aaa;padding:6px;vertical-align:top}.kpi{display:inline-block;border:1px solid #999;padding:10px;margin:5px}th{background:#eee}</style></head><body><h1>Grade 12 Global Politics, International Relations & Senior Research Honors Report</h1><p><strong>Student:</strong> ${esc(s.name)}<br><strong>Date:</strong> ${new Date().toLocaleDateString()}<br><strong>Credit Status:</strong> ${s.progress.creditIssued?"Final credit issued":readyForCredit(s)?"Ready for evaluator issuance":"Locked"}</p><div class="kpi"><strong>Course:</strong> ${st.course}%</div><div class="kpi"><strong>Lessons:</strong> ${st.lessons}%</div><div class="kpi"><strong>Portfolios:</strong> ${st.portfolio}/36</div><div class="kpi"><strong>Thesis:</strong> ${s.progress.thesis.words||0} words / ${s.progress.thesis.score||0}%</div><h2>Graduation Gates</h2><table><tr><th>Gate</th><th>Status</th><th>Evidence</th></tr>${gates.map(g=>`<tr><td>${esc(g[0])}</td><td>${g[1]?"PASS":"LOCKED"}</td><td>${esc(g[2])}</td></tr>`).join("")}</table><h2>Weekly Progress</h2>${progressTable(s)}<script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script>
+function reportHTML(){const s=student(), st=stats(s), gates=auditGates(s); return `<!doctype html><html><head><meta charset="utf-8"><title>Grade 12 Report - ${esc(s.name)}</title><style>body{font-family:Arial;padding:24px;color:#111}table{width:100%;border-collapse:collapse}td,th{border:1px solid #aaa;padding:6px;vertical-align:top}.kpi{display:inline-block;border:1px solid #999;padding:10px;margin:5px}th{background:#eee}</style></head><body><h1>Grade 12 Global Politics, International Relations & Senior Research Honors Report</h1><p><strong>Student:</strong> ${esc(s.name)}<br><strong>Date:</strong> ${new Date().toLocaleDateString()}<br><strong>Credit Status:</strong> ${s.progress.creditIssued?"Provisional local completion":readyForCredit(s)?"Locally ready for review":"Locked"}</p><div class="kpi"><strong>Course:</strong> ${st.course}%</div><div class="kpi"><strong>Lessons:</strong> ${st.lessons}%</div><div class="kpi"><strong>Portfolios:</strong> ${st.portfolio}/36</div><div class="kpi"><strong>Thesis:</strong> ${s.progress.thesis.words||0} words / ${s.progress.thesis.score||0}%</div><h2>Graduation Gates</h2><table><tr><th>Gate</th><th>Status</th><th>Evidence</th></tr>${gates.map(g=>`<tr><td>${esc(g[0])}</td><td>${g[1]?"PASS":"LOCKED"}</td><td>${esc(g[2])}</td></tr>`).join("")}</table><h2>Weekly Progress</h2>${progressTable(s)}<script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script>
 <script src="../../../assets/high-school-return-to-classes.js" data-grade="12" defer></script>
 <script src="../../../assets/high-navigation-v1.js" defer></script>
 </body></html>`}
