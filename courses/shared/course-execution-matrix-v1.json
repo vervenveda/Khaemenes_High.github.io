@@ -16,10 +16,11 @@
       "root": "courses/social-studies/grade-12/",
       "entry": "courses/social-studies/grade-12/index.html",
       "source": "courses/social-studies/grade-12/data/course-data.json",
-      "format": "json-data+js-engine+html-lessons",
-      "assessment_authority": "courses/social-studies/grade-12/app.js",
+      "format": "embedded-html-js-assessment+json-reference",
+      "assessment_authority": "courses/social-studies/grade-12/index.html",
       "upgrade": "source-anchored-assessment-bank",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "execution_note": "The student-facing index.html contains its own active assessment engine. The standalone app.js is not loaded by this route."
     },
     {
       "id": "chemistry-11",
