@@ -138,7 +138,7 @@ function safeWrite(next){
 }
 function saveMasteryAttempt(){
  if(!scopeReady())return;
- const input=document.getElementById("lessonMasteryScore"),score=Number(input?.value);
+ const input=document.getElementById("lessonMasteryScore"),rawScore=input?.value,score=rawScore==null||String(rawScore).trim()===""?NaN:Number(rawScore);
  if(!Number.isFinite(score)||score<0||score>100){announce("Enter an evaluator score from 0 to 100 before submitting.");input?.focus();return;}
  const latest=read(),current=latest[id]||{},attempts=Array.isArray(current.attempts)?[...current.attempts]:[];
  attempts.push({score,mastery_threshold:MASTERY,mastery_met:score>=MASTERY,recorded_at:now(),classification:"local-evaluator-score"});

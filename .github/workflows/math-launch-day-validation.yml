@@ -63,6 +63,9 @@ jobs:
       - name: Validate Mathematics assessment submission and locking
         run: node tools/test-math-assessment-submission-integrity.mjs
 
+      - name: Validate blank versus zero evaluator scores across courses
+        run: node tools/test-math-manual-score-input-integrity.mjs
+
       - name: Validate Algebra II learner note isolation and recovery
         run: node tools/test-algebra2-note-preservation.mjs
 
