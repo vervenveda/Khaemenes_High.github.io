@@ -5,8 +5,9 @@ import path from "node:path";
 const lesson=fs.readFileSync("courses/mathematics/geometry/units/unit-01/lessons/u01-l01.html","utf8");
 const tools=fs.readFileSync("courses/mathematics/geometry/assets/lesson-tools.js","utf8");
 const entry=fs.readFileSync("courses/shared/course-entry-contract.js","utf8");
+const workflow=fs.readFileSync("courses/mathematics/assets/course-lesson-workflow-v1.js","utf8");
 const browser=fs.readFileSync("tests/math-browser-geometry-cdp.mjs","utf8");
-new vm.Script(tools);new vm.Script(entry);
+new vm.Script(tools);new vm.Script(entry);new vm.Script(workflow);
 assert.match(lesson,/id="lessonMain"/,"Original printable Geometry lesson remains present");
 assert.match(lesson,/id="lessonComplete"/);
 assert.match(lesson,/id="lessonNote"/);
@@ -18,6 +19,10 @@ assert.match(tools,/new URL\("\.\.\/\.\.\/\.\.\/\.\.\/assets\/vnv-beta-link\.js"
 assert.match(entry,/new URL\("\.\.\/\.\.\/assets\/vnv-beta-link\.js",entryAssetSource\)/,
  "Shared Geometry entry must not override the same-origin toolbar with a remote copy");
 assert.ok(fs.existsSync(path.join("assets","vnv-beta-link.js")),"Local learner rail asset missing");
+const idempotent=(workflow.match(/if\(submitButton\.textContent!=="Submit Assignment"\)submitButton\.textContent="Submit Assignment"/g)||[]).length;
+assert.equal(idempotent,2,"Both submit-button bind paths must avoid redundant childList mutations");
+assert.doesNotMatch(workflow,/\{submitButton\.textContent="Submit Assignment";submitButton\.setAttribute/,
+ "Repeated refresh must never rewrite identical submit-button text");
 assert.match(browser,/Page\.navigate/);
 assert.match(browser,/lessonMasteryScore/);
 assert.match(browser,/lessonStatus/);

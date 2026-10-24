@@ -4,12 +4,14 @@ on:
   pull_request:
     paths:
       - "courses/mathematics/geometry/**"
+      - "courses/mathematics/assets/course-lesson-workflow-v1.js"
       - "tools/test-geometry-loading-boundary.mjs"
       - "tests/math-browser-geometry-cdp.mjs"
       - ".github/workflows/geometry-release-validation.yml"
   push:
     paths:
       - "courses/mathematics/geometry/**"
+      - "courses/mathematics/assets/course-lesson-workflow-v1.js"
       - "tools/test-geometry-loading-boundary.mjs"
       - "tests/math-browser-geometry-cdp.mjs"
       - ".github/workflows/geometry-release-validation.yml"

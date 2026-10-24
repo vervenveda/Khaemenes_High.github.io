@@ -81,11 +81,11 @@ function enhance(){
     const next=cfg.getSubmitButton?.()||null;
     if(!next)return;
     if(next===submitButton){
-      if(cfg.submitLabel!==false&&!submitButton.disabled){submitButton.textContent="Submit Assignment";submitButton.setAttribute("aria-label","Submit Assignment");}
+      if(cfg.submitLabel!==false&&!submitButton.disabled){if(submitButton.textContent!=="Submit Assignment")submitButton.textContent="Submit Assignment";if(submitButton.getAttribute("aria-label")!=="Submit Assignment")submitButton.setAttribute("aria-label","Submit Assignment");}
       return;
     }
     submitButton=next;
-    if(cfg.submitLabel!==false&&!submitButton.disabled){submitButton.textContent="Submit Assignment";submitButton.setAttribute("aria-label","Submit Assignment");}
+    if(cfg.submitLabel!==false&&!submitButton.disabled){if(submitButton.textContent!=="Submit Assignment")submitButton.textContent="Submit Assignment";if(submitButton.getAttribute("aria-label")!=="Submit Assignment")submitButton.setAttribute("aria-label","Submit Assignment");}
     submitButton.addEventListener("click",()=>{
       const rec=read();
       write({submittedAt:rec.submittedAt||now(),lastSubmittedAt:now(),submissionCount:(Number(rec.submissionCount)||0)+1,reviewComplete:false});
