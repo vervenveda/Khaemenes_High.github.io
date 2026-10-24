@@ -10,6 +10,9 @@ on:
       - 'courses/mathematics/tools/validate-prealgebra-algebra1-launch.mjs'
       - 'courses/mathematics/tools/validate-four-course-lesson-launch.mjs'
       - 'tests/math-browser-lesson-smoke.py'
+      - 'tests/math-browser-geometry-cdp.mjs'
+      - 'tools/test-geometry-loading-boundary.mjs'
+      - 'tools/test-algebra2-historical-mastery.mjs'
       - '.github/workflows/math-launch-day-validation.yml'
   push:
     paths:
@@ -20,6 +23,9 @@ on:
       - 'courses/mathematics/tools/validate-prealgebra-algebra1-launch.mjs'
       - 'courses/mathematics/tools/validate-four-course-lesson-launch.mjs'
       - 'tests/math-browser-lesson-smoke.py'
+      - 'tests/math-browser-geometry-cdp.mjs'
+      - 'tools/test-geometry-loading-boundary.mjs'
+      - 'tools/test-algebra2-historical-mastery.mjs'
       - '.github/workflows/math-launch-day-validation.yml'
 
 permissions:
@@ -78,6 +84,12 @@ jobs:
         run: |
           node --check courses/mathematics/geometry/assets/app.js
           node --check courses/mathematics/algebra-2/assets/app.js
+
+      - name: Geometry browser protocol and Algebra II historical mastery regression
+        run: |
+          node tools/test-geometry-loading-boundary.mjs
+          node tools/test-algebra2-historical-mastery.mjs
+          node --check tests/math-browser-geometry-cdp.mjs
 
       - name: Verify mathematics lesson loading in isolated Chrome
         run: |

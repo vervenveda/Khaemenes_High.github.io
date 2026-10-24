@@ -25,6 +25,9 @@
 
   function readJSON(key, fallback = {}) {
     try {
+      // Do not use anonymous historical records as current learner progression.
+      const contract = window.KhaemenesCourseEntryContract;
+      if (contract && (!contract.readAcademyProfile?.() || !activeLearnerId())) return fallback;
       const value = JSON.parse(localStorage.getItem(storageKey(key)) || "null");
       return value && typeof value === "object" ? value : fallback;
     } catch {
@@ -35,7 +38,7 @@
   function writeJSON(key, value) {
     try {
       const contract = window.KhaemenesCourseEntryContract;
-      if (contract && !contract.readAcademyProfile?.()) return false;
+      if (contract && (!contract.readAcademyProfile?.() || !activeLearnerId())) return false;
       localStorage.setItem(storageKey(key), JSON.stringify(value));
       return true;
     } catch {
@@ -48,21 +51,29 @@
   const assessmentData = () => readJSON(ASSESSMENT_KEY, {});
   const lessonData = () => readJSON(LESSON_KEY, {});
 
+  function recordedScore(value) {
+    // Empty, booleans, missing, nonfinite and out-of-range values are not grades.
+    if (typeof value !== "number" && (typeof value !== "string" || !value.trim())) return null;
+    const score = Number(value);
+    return Number.isFinite(score) && score >= 0 && score <= 100 ? score : null;
+  }
+
   function recordMastered(record) {
-    if (!record || typeof record !== "object") return false;
-    if (record.mastery === true || Number(record.bestScore) >= MASTERY) return true;
-    return Array.isArray(record.attempts) && record.attempts.some(attempt =>
-      attempt?.mastery === true || attempt?.mastery_met === true || Number(attempt?.score) >= MASTERY
-    );
+    if (!record || typeof record !== "object" || Array.isArray(record)) return false;
+    // When original attempts exist, they outrank potentially stale summary flags.
+    // A failed retake does not erase an earlier numeric 80%+ passing attempt.
+    if (Array.isArray(record.attempts) && record.attempts.length) {
+      return record.attempts.some(attempt =>
+        attempt && typeof attempt === "object" && recordedScore(attempt.score) >= MASTERY
+      );
+    }
+    // Preserve legitimate summary-only legacy passing grades, but not boolean-only mastery.
+    return recordedScore(record.bestScore) >= MASTERY ||
+      recordedScore(record.score) >= MASTERY;
   }
 
   function readinessRecorded() {
-    const record = assessmentData()["readiness-diagnostic"];
-    if (!record || typeof record !== "object") return false;
-    if (Number(record.bestScore) >= MASTERY) return true;
-    return Array.isArray(record.attempts) && record.attempts.some(attempt =>
-      attempt?.mastery === true || attempt?.mastery_met === true || Number(attempt?.score) >= MASTERY
-    );
+    return recordMastered(assessmentData()["readiness-diagnostic"]);
   }
 
   function unitMastered(unit) {

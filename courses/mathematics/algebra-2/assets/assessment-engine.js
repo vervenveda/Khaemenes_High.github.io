@@ -33,7 +33,7 @@
     const MASTERY_TARGET = cfg.source === "diagnostic" || !formalGate ? null : Number(cfg.masteryTarget ?? 80);
     const esc = value => String(value ?? "").replace(/[&<>"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[character]));
     const load = () => window.KhaemenesAlgebra2Progression?.readJSON?.(KEY, {}) || {};
-    const save = value => { window.KhaemenesAlgebra2Progression?.writeJSON?.(KEY, value); };
+    const save = value => window.KhaemenesAlgebra2Progression?.writeJSON?.(KEY, value) === true;
     const shuffle = values => { const result = [...values]; for (let i = result.length - 1; i > 0; i -= 1) { const j = Math.floor(Math.random() * (i + 1)); [result[i], result[j]] = [result[j], result[i]]; } return result; };
 
     function pool() {
@@ -104,6 +104,9 @@
       const mastery = MASTERY_TARGET == null ? null : scoreValue >= MASTERY_TARGET;
       const attempt = {
         result_schema: "khaemenes-algebra2-assessment-v2",
+        attempt_id: `a2-${Date.now()}-${Math.random().toString(36).slice(2, 11)}`,
+        question_ids: set.map(question => String(question.id)),
+        answer_locked: true,
         assessment_id: key,
         title: cfg.title || key,
         submitted_at: new Date().toISOString(),
@@ -120,8 +123,17 @@
       data[key].attempts.push(attempt);
       data[key].bestScore = Math.max(Number(data[key].bestScore) || 0, scoreValue);
       data[key].masteryTarget = MASTERY_TARGET;
-      data[key].mastery = MASTERY_TARGET == null ? null : data[key].attempts.some(item => item.mastery === true || item.mastery_met === true || Number(item.score) >= MASTERY_TARGET);
-      save(data);
+      data[key].mastery = MASTERY_TARGET == null ? null : data[key].attempts.some(item =>
+        item && typeof item.score === "number" && Number.isFinite(item.score) && item.score >= MASTERY_TARGET && item.score <= 100);
+      if (!save(data)) {
+        // A graded-but-unsaved attempt must not become editable for a second score.
+        // Retrying requires starting a new randomized attempt; nothing was credited.
+        submitted = true;
+        for (const radio of host.querySelectorAll?.('input[type="radio"]') || []) radio.disabled = true;
+        document.getElementById("submitAssessment")?.setAttribute("disabled", "true");
+        document.getElementById("assessmentMessage").textContent = "Assessment could not be saved. No mastery credit was granted. Preserve your work, restore storage, and start a new attempt.";
+        return;
+      }
       submitted = true;
       for (const radio of host.querySelectorAll?.('input[type="radio"]') || []) radio.disabled = true;
       document.getElementById("assessmentMessage").innerHTML = `<span class="score">${scoreValue}%</span> · ${right}/${set.length} · Best ${data[key].bestScore}%${mastery === true ? " · Mastery demonstrated" : mastery === false ? " · Review, correct, and retake" : " · Diagnostic evidence recorded"}`;

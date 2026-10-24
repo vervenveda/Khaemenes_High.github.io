@@ -20,7 +20,7 @@ for(const p of [a2Path,geoPath]){
 }
 const algebra=scoreBody(read(a2Path),'function score(token) {','    const missing = missingPrerequisites();');
 const geometry=scoreBody(read(geoPath),'function score(token){','function showResult(a)');
-function simulate(course,{partiallyAnswered=false,constructed=false}={}){
+function simulate(course,{partiallyAnswered=false,constructed=false,saveFails=false}={}){
  const isGeo=course==='geometry';
  const scoreSource=isGeo?geometry:algebra;
  let submitted=false,saved=0,shown=0,explanations=0,finished=0,radioLocked=false;
@@ -51,7 +51,7 @@ function simulate(course,{partiallyAnswered=false,constructed=false}={}){
   MASTERY_TARGET:80,MASTERY:80,Date,Math,location:{pathname:'/courses/mathematics/algebra-2/units/unit-11/assessment/mastery-check.html'},
   cfg:{recordKey:isGeo?'unit-11':'u11-mastery',title:'Assessment'},
   DEPTH:constructed?{constructed:[{domain:'reason'}],response_min_chars:60}:null,
-  load:()=>({}),save:()=>{saved++;},record,showResult:()=>{shown++;},renderEvaluator:()=>{shown++;},
+  load:()=>({}),save:()=>{saved++;return !saveFails;},record,showResult:()=>{shown++;},renderEvaluator:()=>{shown++;},
   esc:()=>'',console,createElement:()=>{},
  });
  vm.runInContext(scoreSource+'\nfunction run(){return score("abc")};',ctx);
@@ -70,8 +70,9 @@ function simulate(course,{partiallyAnswered=false,constructed=false}={}){
  }
  assert.equal(explanations,2,course+' displays explanation only after fully answered');
  assert.equal(saved,1,course+' saves exactly one completed attempt');
- assert.equal(ctx.submitted,true,course+' finalizes completed attempt');
+ assert.equal(ctx.submitted,true,course+' finalizes completed attempt; failed saves must also lock grading');
  assert.equal(radioLocked,true,course+' locks answer controls after scoring');
+ if(saveFails)assert.match(fakeElement('assessmentMessage').textContent,/could not be saved/i,'unsaved assessment reports no credit');
  vm.runInContext('run()',ctx);
  assert.equal(saved,1,course+' prevents repeat scoring');
 }
@@ -80,6 +81,7 @@ for(const course of ['algebra-2','geometry']){
  simulate(course,{partiallyAnswered:false});
 }
 simulate('geometry',{constructed:true});
+simulate('algebra-2',{saveFails:true});
 
 // The older 12-question Geometry bank is not the actual Unit 11 release pool:
 // the weekly source composes 20 questions with skill and week coverage.

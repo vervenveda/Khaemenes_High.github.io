@@ -4,10 +4,14 @@ on:
   pull_request:
     paths:
       - "courses/mathematics/geometry/**"
+      - "tools/test-geometry-loading-boundary.mjs"
+      - "tests/math-browser-geometry-cdp.mjs"
       - ".github/workflows/geometry-release-validation.yml"
   push:
     paths:
       - "courses/mathematics/geometry/**"
+      - "tools/test-geometry-loading-boundary.mjs"
+      - "tests/math-browser-geometry-cdp.mjs"
       - ".github/workflows/geometry-release-validation.yml"
 
 permissions:
@@ -21,6 +25,10 @@ jobs:
         uses: actions/checkout@v6
       - name: Validate Geometry strict release contract
         run: node courses/mathematics/geometry/tools/validate-release.mjs
+      - name: Validate Geometry lesson loading and local dependencies
+        run: |
+          node tools/test-geometry-loading-boundary.mjs
+          node --check tests/math-browser-geometry-cdp.mjs
       - name: Generate Geometry release integrity metadata
         run: node courses/mathematics/geometry/tools/generate-release-integrity.mjs --output "$RUNNER_TEMP/geometry-release-integrity"
       - name: Upload Geometry release integrity metadata

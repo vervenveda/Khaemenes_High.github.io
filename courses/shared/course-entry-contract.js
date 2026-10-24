@@ -152,10 +152,13 @@
 
   // Academy utility controls: optional UI, independent of course readiness.
   // The canonical widget owns the profile button, toolbar and print exclusion.
+  const entryAssetSource=document.currentScript?.src||location.href;
   function mountLearnerToolbar(){
     if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;
     const tag=document.createElement("script");
-    tag.src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js";
+    tag.src=/\/courses\/mathematics\/geometry(?:\/|$)/i.test(location.pathname)
+      ? new URL("../../assets/vnv-beta-link.js",entryAssetSource).href
+      : "https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js";
     tag.async=true;
     tag.dataset.academyLearnerToolbar="course-entry";
     document.head.appendChild(tag);

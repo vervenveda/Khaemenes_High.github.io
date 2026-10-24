@@ -30,6 +30,20 @@ try:
         for number, (name, rel) in enumerate(paths):
             if not (ROOT / rel).is_file():
                 print("FAIL", name, "missing file", rel); failed += 1; continue
+            if name == "Geometry lesson 01":
+                # Check actual student-facing DOM + mastery controls without depending on
+                # Chrome --dump-dom process termination. Fail on navigation or gate errors.
+                cmd = ["node", str(ROOT / "tests/math-browser-geometry-cdp.mjs"), CHROME, base + rel]
+                try:
+                    result = subprocess.run(cmd, capture_output=True, text=True, timeout=35)
+                    print(result.stdout.strip(), flush=True)
+                    if result.returncode:
+                        print("FAIL", name, "CDP DOM/gate verification", result.stderr.strip()[-1800:], flush=True)
+                        failed += 1
+                except subprocess.TimeoutExpired:
+                    print("FAIL", name, "CDP browser diagnostic timeout", flush=True)
+                    failed += 1
+                continue
             profile = str(pathlib.Path(profiles) / ("lesson-" + str(number)))
             cmd = [CHROME, "--headless", "--no-first-run", "--no-default-browser-check",
                    "--disable-gpu", "--disable-extensions", "--disable-background-networking",
@@ -50,23 +64,7 @@ try:
                     print("PASS", name, "page rendered (not a full interaction certification)")
             except subprocess.TimeoutExpired:
                 print("FAIL", name, "browser timeout"); failed += 1
-                if name == "Geometry lesson 01":
-                    probes = [
-                        ("javascript-disabled", ["--disable-javascript", "--virtual-time-budget=2500"]),
-                        ("external-dns-blocked", ["--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE localhost", "--virtual-time-budget=2500"]),
-                        ("no-virtual-time", []),
-                    ]
-                    for probe_no, (label, flags) in enumerate(probes):
-                        probe_profile = str(pathlib.Path(profiles) / ("geometry-probe-" + str(probe_no)))
-                        probe_cmd = [CHROME, "--headless", "--no-first-run", "--no-default-browser-check",
-                                     "--disable-gpu", "--disable-extensions", "--disable-background-networking",
-                                     "--disable-dev-shm-usage", "--user-data-dir="+probe_profile, *flags,
-                                     "--dump-dom", base+rel]
-                        try:
-                            result = subprocess.run(probe_cmd, capture_output=True, text=True, timeout=12)
-                            print("GEOMETRY PROBE", label, "exit", result.returncode, "dom", "<html" in result.stdout.lower(), flush=True)
-                        except subprocess.TimeoutExpired:
-                            print("GEOMETRY PROBE", label, "timeout", flush=True)
+
 finally:
     server.shutdown()
 print("Browser smoke failures:", failed)
