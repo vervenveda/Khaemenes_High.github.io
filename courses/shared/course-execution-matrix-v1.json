@@ -1,0 +1,97 @@
+{
+  "schema": "khaemenes-course-execution-matrix-v1",
+  "audited_base_commit": "245318e2d017afa82f73df00593bf31d6bea7be0",
+  "policy": {
+    "mastery_floor_percent": 80,
+    "format_rule": "A JSON course map is instructional data, not independently an executable lesson; the student route must resolve to an HTML execution surface or an explicitly verified equivalent.",
+    "historical_records": "Never overwrite prior student attempts or change specialist grading authorities.",
+    "grade_scope": "Enforce the assigned grade in the route and map; mathematics is placement-based and not automatically restricted to a single grade.",
+    "offline": "Never require a third-party runtime for core lesson completion."
+  },
+  "courses": [
+    {
+      "id": "social-studies-12",
+      "grade": 12,
+      "department": "social-studies",
+      "root": "courses/social-studies/grade-12/",
+      "entry": "courses/social-studies/grade-12/index.html",
+      "source": "courses/social-studies/grade-12/data/course-data.json",
+      "format": "json-data+js-engine+html-lessons",
+      "assessment_authority": "courses/social-studies/grade-12/app.js",
+      "upgrade": "source-anchored-assessment-bank",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "chemistry-11",
+      "grade": 11,
+      "department": "science",
+      "root": "courses/science/chemistry-11/",
+      "entry": "courses/science/chemistry-11/index.html",
+      "source": "courses/science/chemistry-11/course-map.json",
+      "format": "json-map+html-lessons+js-question-bank",
+      "assessment_authority": "courses/science/chemistry-11/question-bank.js",
+      "upgrade": "eight-anchor-investigations",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "english-10",
+      "grade": 10,
+      "department": "english",
+      "root": "courses/language-arts/english-10/",
+      "entry": "courses/language-arts/english-10/index.html",
+      "source": "courses/language-arts/english-10/curriculum.json",
+      "format": "json-curriculum+html-weekly-lessons",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "verified-reading-spine+vertical-rubrics",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "english-11",
+      "grade": 11,
+      "department": "english",
+      "root": "courses/language-arts/english-11/",
+      "entry": "courses/language-arts/english-11/index.html",
+      "source": "courses/language-arts/english-11/curriculum.json",
+      "format": "json-curriculum+html-weekly-lessons",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "verified-reading-spine+vertical-rubrics",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "english-12",
+      "grade": 12,
+      "department": "english",
+      "root": "courses/language-arts/english-12/",
+      "entry": "courses/language-arts/english-12/index.html",
+      "source": "courses/language-arts/english-12/curriculum.json",
+      "format": "json-curriculum+html-weekly-lessons",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "verified-reading-spine+vertical-rubrics",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "precalculus-trigonometry",
+      "grade": "placement",
+      "department": "mathematics",
+      "root": "courses/mathematics/precalculus-trigonometry/",
+      "entry": "courses/mathematics/precalculus-trigonometry/index.html",
+      "source": "courses/mathematics/precalculus-trigonometry/video-map.json",
+      "format": "html-handoff+json-video-map",
+      "assessment_authority": "not-complete",
+      "upgrade": "full-36-week-course",
+      "status": "placement-handoff"
+    },
+    {
+      "id": "calculus-1",
+      "grade": "placement",
+      "department": "mathematics",
+      "root": "courses/mathematics/calculus-1/",
+      "entry": "courses/mathematics/calculus-1/index.html",
+      "source": "courses/mathematics/calculus-1/video-map.json",
+      "format": "html-handoff+json-video-map",
+      "assessment_authority": "not-complete",
+      "upgrade": "full-36-week-course",
+      "status": "placement-handoff"
+    }
+  ]
+}
