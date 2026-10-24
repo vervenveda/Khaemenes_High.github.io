@@ -26,3 +26,4 @@ jobs:
         run: |
           node tests/test-course-execution-matrix.cjs
           node tests/test-ss12-source-assessment-v2.cjs
+          node tests/test-ss12-assessment-runtime.cjs
