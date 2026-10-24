@@ -36,4 +36,16 @@ assert.equal(record.attempts[1].summary.score,60);
 const other=adapter.open({courseId:"global-politics-12",storageKey:"fictional-learner-two-ss12-w13",kind:"weekly",bank,count:10});
 assert.notEqual(other.sessionId,second.sessionId,"Learner sessions collided");
 assert.equal(JSON.parse(memory.get("fictional-learner-two-ss12-w13")).attempts.length,0);
+for(const week of [17,18,19,20,21,22,23,24]){
+  const bank=app.weeks[week-1].quiz, session=adapter.open({
+    courseId:"global-politics-12",storageKey:"fictional-engine-audit-week-"+week,kind:"weekly",bank,count:10
+  });
+  assert.equal(session.questions.length,10,"Week "+week+" quiz size");
+  assert(session.questions.every(q=>q.choices[q.answer]===bank.find(x=>x.id===q.id).explain),
+    "Week "+week+" shuffled answer mapping");
+  const restored=adapter.open({
+    courseId:"global-politics-12",storageKey:"fictional-engine-audit-week-"+week,kind:"weekly",bank,count:10
+  });
+  assert.equal(restored.sessionId,session.sessionId,"Week "+week+" refresh session drift");
+}
 console.log("PASS SS12 fictional two-learner sessions, option-key remapping, session refresh, retake and immutable recorded scores");
