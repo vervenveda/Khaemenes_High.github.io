@@ -221,7 +221,10 @@ assert(rec.includes('Browser-local evidence is editable and not digitally signed
 ok('Evidence-gated completion record verified');
 
 const sw=read('service-worker.js');
-assert(sw.includes('khaemenes-geometry-v7-ams-v1.7.0-recovery-popout-r1-20261015'),'service worker: v7 pop-out evidence-recovery cache identity missing');
+const cacheMatch=sw.match(/const CACHE="(khaemenes-geometry-v(\d+)-[^"]+)"/);
+assert(cacheMatch&&Number(cacheMatch[2])>=7,'service worker: current Geometry release cache identity missing or regressed');
+assert(sw.includes('const CACHE_PREFIX="khaemenes-geometry-"'),'service worker: Geometry cache prefix missing');
+assert(sw.includes('compact pop-out evidence recovery'),'service worker: evidence-recovery implementation marker missing');
 const coreMatch=sw.match(/const CORE=\[([\s\S]*?)\];/);
 if(!coreMatch)fail('service worker: CORE precache list missing');else{
  const urls=[...coreMatch[1].matchAll(/"([^"]+)"/g)].map(m=>m[1]);

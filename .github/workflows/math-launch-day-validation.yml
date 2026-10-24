@@ -60,6 +60,12 @@ jobs:
       - name: Validate Algebra I applied labs
         run: node courses/mathematics/algebra-1/tools/validate-applied-labs.mjs
 
+      - name: Validate Mathematics assessment submission and locking
+        run: node tools/test-math-assessment-submission-integrity.mjs
+
+      - name: Validate Algebra II learner note isolation and recovery
+        run: node tools/test-algebra2-note-preservation.mjs
+
       - name: Validate Geometry and Algebra II course launch JavaScript syntax
         run: |
           node --check courses/mathematics/geometry/assets/app.js
