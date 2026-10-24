@@ -1,0 +1,137 @@
+{
+  "schema": "khaemenes-grade-09-12-route-sweep-v1",
+  "scope": "Grade 9–12 core entrances and placement mathematics; this registry validates routes, not release certification",
+  "policy": {
+    "mastery_floor_percent": 80,
+    "offline_core_required": true,
+    "no_authenticated_credit_from_local_checkbox": true
+  },
+  "entries": [
+    {
+      "id": "english-9",
+      "grade": 9,
+      "entry": "courses/language-arts/english-9/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "integrated-science-9",
+      "grade": 9,
+      "entry": "courses/science/integrated-science-9/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "social-studies-9",
+      "grade": 9,
+      "entry": "courses/social-studies/grade-09/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "english-10",
+      "grade": 10,
+      "entry": "courses/language-arts/english-10/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "biology-10",
+      "grade": 10,
+      "entry": "courses/science/biology-10/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "social-studies-10",
+      "grade": 10,
+      "entry": "courses/social-studies/grade-10/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "english-11",
+      "grade": 11,
+      "entry": "courses/language-arts/english-11/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "chemistry-11",
+      "grade": 11,
+      "entry": "courses/science/chemistry-11/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "social-studies-11",
+      "grade": 11,
+      "entry": "courses/social-studies/grade-11/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "english-12",
+      "grade": 12,
+      "entry": "courses/language-arts/english-12/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "physics-engineering-12",
+      "grade": 12,
+      "entry": "courses/science/physics-engineering-12/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "social-studies-12",
+      "grade": 12,
+      "entry": "courses/social-studies/grade-12/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "pre-algebra",
+      "grade": "placement",
+      "entry": "courses/mathematics/pre-algebra/index.html",
+      "kind": "placement-mathematics",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "algebra-1",
+      "grade": "placement",
+      "entry": "courses/mathematics/algebra-1/index.html",
+      "kind": "placement-mathematics",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "geometry",
+      "grade": "placement",
+      "entry": "courses/mathematics/geometry/index.html",
+      "kind": "placement-mathematics",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "algebra-2",
+      "grade": "placement",
+      "entry": "courses/mathematics/algebra-2/index.html",
+      "kind": "placement-mathematics",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "precalculus-trigonometry",
+      "grade": "placement",
+      "entry": "courses/mathematics/precalculus-trigonometry/index.html",
+      "kind": "placement-mathematics",
+      "release_status": "handoff-not-certified"
+    },
+    {
+      "id": "calculus-1",
+      "grade": "placement",
+      "entry": "courses/mathematics/calculus-1/index.html",
+      "kind": "placement-mathematics",
+      "release_status": "handoff-not-certified"
+    }
+  ]
+}
