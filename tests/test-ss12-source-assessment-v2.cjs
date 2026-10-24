@@ -12,17 +12,17 @@ assert.equal(app.passingTarget,80);
 assert.match(html,/questions:\[\],storageKey:null,unavailable:true/);
 assert.match(html,/if\(draw\.unavailable\|\|!draw\.opened\|\|!qs\.length\)return alert/);
 let count=0;
-for(let week=1;week<=16;week++){
+for(let week=1;week<=20;week++){
   const items=app.weeks[week-1].quiz;
   assert.equal(items.length,10,"Week "+week+" item count");
   const keys=[0,0,0,0],skills=new Set(),questionTexts=new Set();
   for(const q of items){
     assert.equal(q.id.startsWith("ss12-w"+String(week).padStart(2,"0")+"-transfer-v2-"),true);
     assert.equal(q.version,week>=13?3:2);
-    assert.equal(q.sourceType,"fictional-instructional-stimulus");
+    assert(["fictional-instructional-stimulus","primary-source-anchored"].includes(q.sourceType));
     assert.equal(q.choices.length,4);
     assert.equal(new Set(q.choices.map(x=>x.trim().toLowerCase())).size,4,"Duplicate choices "+q.id);
-    if(week>=13){
+    if(week>=13&&week<=16){
       assert.equal(q.distractorReview,"discipline-specific","Unreviewed alternatives "+q.id);
       assert(q.choices.every(x=>!/slogan without independent verification|number of institutions listed in a source|country's name rather than evidence/i.test(x)),"Generic distractor "+q.id);
     }
