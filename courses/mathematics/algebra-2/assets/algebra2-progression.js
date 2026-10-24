@@ -106,7 +106,7 @@
     if (!readinessRecorded()) return false;
     if (unit === 1) return true;
     if (!unitMastered(unit - 1)) return false;
-    return unit !== 7 || midtermMastered();
+    return unit < 7 || midtermMastered();
   }
 
   function lessonUnlocked(unit, lesson) {
@@ -122,7 +122,7 @@
     if (unitMatch) {
       const unit = Number(unitMatch[1]);
       if (unit > 1 && !unitMastered(unit - 1)) missing.push(`Unit ${String(unit - 1).padStart(2, "0")} mastery at ${MASTERY}%`);
-      if (unit === 7 && !midtermMastered()) missing.push(`Reviewed midterm mastery at ${MASTERY}%`);
+      if (unit >= 7 && !midtermMastered()) missing.push(`Reviewed midterm mastery at ${MASTERY}%`);
       if (!allLessonsMastered(unit)) missing.push(`Master all Unit ${String(unit).padStart(2, "0")} lessons at ${MASTERY}%`);
       return missing;
     }

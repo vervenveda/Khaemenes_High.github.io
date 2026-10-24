@@ -69,6 +69,9 @@ jobs:
       - name: Validate Algebra II learner note isolation and recovery
         run: node tools/test-algebra2-note-preservation.mjs
 
+      - name: Validate Algebra II second-half midterm continuity
+        run: node tools/test-algebra2-midterm-continuity.mjs
+
       - name: Validate Geometry and Algebra II course launch JavaScript syntax
         run: |
           node --check courses/mathematics/geometry/assets/app.js
