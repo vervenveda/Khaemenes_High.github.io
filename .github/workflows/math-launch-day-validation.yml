@@ -77,6 +77,11 @@ jobs:
           node --check courses/mathematics/geometry/assets/app.js
           node --check courses/mathematics/algebra-2/assets/app.js
 
+      - name: Verify mathematics lesson loading in isolated Chrome
+        run: |
+          command -v google-chrome || command -v chromium
+          python3 tests/math-browser-lesson-smoke.py
+
       - name: Validate launch-page inline JavaScript syntax
         run: |
           node <<'NODE'
