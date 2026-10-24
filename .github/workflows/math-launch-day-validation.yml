@@ -9,6 +9,7 @@ on:
       - 'courses/mathematics/algebra-2/**'
       - 'courses/mathematics/tools/validate-prealgebra-algebra1-launch.mjs'
       - 'courses/mathematics/tools/validate-four-course-lesson-launch.mjs'
+      - 'tests/math-browser-lesson-smoke.py'
       - '.github/workflows/math-launch-day-validation.yml'
   push:
     paths:
@@ -18,6 +19,7 @@ on:
       - 'courses/mathematics/algebra-2/**'
       - 'courses/mathematics/tools/validate-prealgebra-algebra1-launch.mjs'
       - 'courses/mathematics/tools/validate-four-course-lesson-launch.mjs'
+      - 'tests/math-browser-lesson-smoke.py'
       - '.github/workflows/math-launch-day-validation.yml'
 
 permissions:

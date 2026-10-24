@@ -26,10 +26,11 @@ paths = [
 ]
 failed = 0
 try:
-    with tempfile.TemporaryDirectory(prefix="khae-math-browser-") as profile:
-        for name, rel in paths:
+    with tempfile.TemporaryDirectory(prefix="khae-math-browser-") as profiles:
+        for number, (name, rel) in enumerate(paths):
             if not (ROOT / rel).is_file():
                 print("FAIL", name, "missing file", rel); failed += 1; continue
+            profile = str(pathlib.Path(profiles) / ("lesson-" + str(number)))
             cmd = [CHROME, "--headless", "--no-first-run", "--no-default-browser-check",
                    "--disable-gpu", "--disable-extensions", "--disable-background-networking",
                    "--disable-dev-shm-usage", "--user-data-dir="+profile,
