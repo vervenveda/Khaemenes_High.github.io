@@ -12,7 +12,7 @@ assert.equal(app.passingTarget,80);
 assert.match(html,/questions:\[\],storageKey:null,unavailable:true/);
 assert.match(html,/if\(draw\.unavailable\|\|!draw\.opened\|\|!qs\.length\)return alert/);
 let count=0;
-for(let week=1;week<=8;week++){
+for(let week=1;week<=12;week++){
   const items=app.weeks[week-1].quiz;
   assert.equal(items.length,10,"Week "+week+" item count");
   const keys=[0,0,0,0],skills=new Set(),questionTexts=new Set();
