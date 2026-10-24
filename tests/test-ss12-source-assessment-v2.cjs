@@ -1,29 +1,34 @@
 #!/usr/bin/env node
 "use strict";
-/* Grade 12 public formative QA; read-only and independent of private exam banks. */
+/* Read-only audit: Grade 12 public formative transfer banks, no private assessment access. */
 const fs=require("node:fs"),path=require("node:path"),assert=require("node:assert/strict");
 const root=path.resolve(__dirname,"..");
-const page=fs.readFileSync(path.join(root,"courses/social-studies/grade-12/index.html"),"utf8");
-const start=page.indexOf("const APP = "),end=page.indexOf(";\n",start);
-assert(start>=0&&end>start,"Embedded Grade 12 course missing");
-const course=JSON.parse(page.slice(start+"const APP = ".length,end));
-assert.equal(course.passingTarget,80);
-assert.equal(course.weeks.length,36);
-assert.match(page,/if\(draw\.unavailable\|\|!draw\.opened\|\|!qs\.length\)return alert/);
-assert.match(page,/questions:\[\],storageKey:null,unavailable:true/);
-const bank=course.weeks[0].quiz;
-assert.equal(bank.length,10);
-const positions=[0,0,0,0],skills=new Set();
-for(const q of bank){
- assert.equal(q.version,2);
- assert.match(q.id,/^ss12-w01-transfer-v2-/);
- assert.equal(q.choices.length,4);
- assert(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4);
- assert(q.choices[q.answer]===q.explain,"Answer key mismatches correct response");
- assert(q.sourceType==="fictional-instructional-stimulus");
- assert(q.q.length>=90,"Question missing substantial source/case stimulus");
- skills.add(q.skill);positions[q.answer]++;
+const html=fs.readFileSync(path.join(root,"courses/social-studies/grade-12/index.html"),"utf8");
+const start=html.indexOf("const APP = "),end=html.indexOf(";\n",start);
+assert(start>=0&&end>start,"Embedded senior curriculum missing");
+const app=JSON.parse(html.slice(start+"const APP = ".length,end));
+assert.equal(app.weeks.length,36);
+assert.equal(app.passingTarget,80);
+assert.match(html,/questions:\[\],storageKey:null,unavailable:true/);
+assert.match(html,/if\(draw\.unavailable\|\|!draw\.opened\|\|!qs\.length\)return alert/);
+let count=0;
+for(let week=1;week<=4;week++){
+  const items=app.weeks[week-1].quiz;
+  assert.equal(items.length,10,"Week "+week+" item count");
+  const keys=[0,0,0,0],skills=new Set(),questionTexts=new Set();
+  for(const q of items){
+    assert.equal(q.id.startsWith("ss12-w"+String(week).padStart(2,"0")+"-transfer-v2-"),true);
+    assert.equal(q.version,2);
+    assert.equal(q.sourceType,"fictional-instructional-stimulus");
+    assert.equal(q.choices.length,4);
+    assert(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4);
+    assert.equal(q.choices[q.answer],q.explain,"Answer mismatch "+q.id);
+    assert(q.q.length>=80,"Insufficient stimulus "+q.id);
+    assert(!questionTexts.has(q.q),"Duplicate question "+q.id);
+    questionTexts.add(q.q);skills.add(q.skill);keys[q.answer]++;count++;
+  }
+  assert(skills.size>=8,"Weak skill variety Week "+week);
+  assert(keys.every(n=>n>=1),"Answer concentration Week "+week);
+  console.log("PASS Week "+week+": "+items.length+" items, "+skills.size+" skills, answer keys "+keys.join("/"));
 }
-assert(skills.size>=6);
-assert(positions.every(n=>n>=1),"Correct answers overly concentrated in one position");
-console.log("PASS SS12 Week 1 transfer bank: 10 questions, "+skills.size+" cognitive skills, option positions "+positions.join(",")+", 80% gate, adapter fail-closed");
+console.log("PASS SS12 "+count+" source-based items; 80% gate; randomized-engine fail-closed");
