@@ -23,4 +23,6 @@ jobs:
         with:
           node-version: '22'
       - name: Check course routes, grade and engine contracts
-        run: node tests/test-course-execution-matrix.cjs
+        run: |
+          node tests/test-course-execution-matrix.cjs
+          node tests/test-ss12-source-assessment-v2.cjs
