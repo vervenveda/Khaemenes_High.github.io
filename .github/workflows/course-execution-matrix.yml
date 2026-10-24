@@ -8,6 +8,7 @@ on:
       - 'tests/test-grade-09-12-execution-sweep.cjs'
       - 'tests/test-math-placement-handoff-contract.cjs'
       - 'tests/test-chemistry11-anchor-investigations.cjs'
+      - 'tests/test-chemistry11-full-year-lab-audit.cjs'
       - 'tests/test-ss12-*.cjs'
       - 'courses/shared/grade-09-12-execution-sweep-v1.json'
       - 'grades/**'
@@ -37,6 +38,7 @@ jobs:
           node tests/test-grade-09-12-execution-sweep.cjs
           node tests/test-math-placement-handoff-contract.cjs
           node tests/test-chemistry11-anchor-investigations.cjs
+          node tests/test-chemistry11-full-year-lab-audit.cjs
           node tests/test-ss12-source-assessment-v2.cjs
           node tests/test-ss12-assessment-runtime.cjs
           node tests/test-ss12-graduation-gates.cjs
