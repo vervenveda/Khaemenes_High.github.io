@@ -18,9 +18,14 @@ for(let week=1;week<=16;week++){
   const keys=[0,0,0,0],skills=new Set(),questionTexts=new Set();
   for(const q of items){
     assert.equal(q.id.startsWith("ss12-w"+String(week).padStart(2,"0")+"-transfer-v2-"),true);
-    assert.equal(q.version,2);
+    assert.equal(q.version,week>=13?3:2);
     assert.equal(q.sourceType,"fictional-instructional-stimulus");
     assert.equal(q.choices.length,4);
+    assert.equal(new Set(q.choices.map(x=>x.trim().toLowerCase())).size,4,"Duplicate choices "+q.id);
+    if(week>=13){
+      assert.equal(q.distractorReview,"discipline-specific","Unreviewed alternatives "+q.id);
+      assert(q.choices.every(x=>!/slogan without independent verification|number of institutions listed in a source|country's name rather than evidence/i.test(x)),"Generic distractor "+q.id);
+    }
     assert(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4);
     assert.equal(q.choices[q.answer],q.explain,"Answer mismatch "+q.id);
     assert(q.q.length>=80,"Insufficient stimulus "+q.id);
