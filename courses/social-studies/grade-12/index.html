@@ -222,12 +222,12 @@ function weekRec(s,w){ ensure(s); if(!s.progress.weeks[w])s.progress.weeks[w]={l
 
 function highAssessmentDraw(kind,id,bank,count){
   const adapter=window.KhaemenesHighAssessmentAdapter;
-  if(!adapter||!window.KhaeMonteCarloAssessment||!Array.isArray(bank)||!bank.length)return {adapter:null,opened:null,questions:bank||[],storageKey:null};
+  if(!adapter||!window.KhaeMonteCarloAssessment||!Array.isArray(bank)||!bank.length)return {adapter:null,opened:null,questions:[],storageKey:null,unavailable:true};
   const storageKey=STORAGE_KEY+":monte-carlo:"+kind+":"+id;
   try{
     const opened=adapter.open({courseId:"global-politics-12",storageKey,bank,kind,count:count||adapter.countFor(kind,bank.length)});
     return {adapter,opened,questions:opened.questions,storageKey};
-  }catch(_err){return {adapter:null,opened:null,questions:bank,storageKey:null}}
+  }catch(_err){return {adapter:null,opened:null,questions:[],storageKey:null,unavailable:true}}
 }
 function highAssessmentComplete(draw,summary){if(draw?.adapter&&draw?.opened)draw.adapter.complete(draw.opened,summary)}
 function highAssessmentReviewSkills(questions,answers){
@@ -304,6 +304,7 @@ function assignmentCard(a,i,r){return `<div class="assignment"><label class="che
 function quizForm(w,r){
   const draw=highAssessmentDraw("weekly","week-"+w.week,w.quiz,w.quiz.length),qs=draw.questions;
   const note=draw.opened?`<p class="notice">Randomized open-book mastery check · ${qs.length} questions · answer order randomized · active form persists across refresh · new form on retake.</p>`:"";
+  if(draw.unavailable)return `<p class="notice" role="alert">The randomized quiz engine is unavailable. Lessons and previous mastery records remain available. Assessment submission is temporarily disabled to protect answer integrity.</p>`;
   return `<p class="score">Best: ${Math.round(r.quiz.best||0)||"—"}</p><p class="small">${r.quiz.attempts.length?`Attempts: ${r.quiz.attempts.map(a=>Math.round(a.score)+"%").join(" | ")}`:"No attempts yet."}</p>${note}<form>${qs.map((q,i)=>`<div class="q"><p><strong>${i+1}. ${esc(q.q||q.question||q.prompt)}</strong></p>${(q.choices||q.options||[]).map((choice,j)=>`<label class="choice"><input type="radio" name="q${i}" value="${j}"> ${esc(choice)}</label>`).join("")}</div>`).join("")}<div class="actions"><button type="button" onclick="submitQuiz()">Submit Quiz</button><button class="secondary" type="reset">Clear</button></div></form>`;
 }
 function bindWeekInputs(w,r){w.lessons.forEach(l=>{$(`l_${l.day}`).onchange=e=>{r.lessons[l.day]=e.target.checked;save();render()}; $(`n_${l.day}`).oninput=e=>{r.notes[l.day]=e.target.value;save()}}); w.assignments.forEach((a,i)=>{$(`a_${i}`).onchange=e=>{r.assignments[i]=e.target.checked;save();render()}}); $("portfolio").onchange=e=>{r.portfolio=e.target.checked;save();render()}; $("constructed").oninput=e=>{r.constructed=e.target.value;save()};}
@@ -317,6 +318,7 @@ function assessments(){
 function examPanel(name,title,bank){
   const s=student(),kind=name==="semester"?"midterm":"final",draw=highAssessmentDraw(kind,name,bank),qs=draw.questions;
   const note=draw.opened?`<p class="notice">${kind==="midterm"?"Closed-book midyear":"Closed-book final"} randomized form · ${qs.length} questions drawn from ${draw.opened.bankSize} available items · answer order randomized.</p>`:"";
+  if(draw.unavailable)return `<div class="notice" role="alert">${title} cannot open until the first-party randomized assessment engine is available. Existing scores are preserved.</div>`;
   return `<div class="assignment"><h4>${title}</h4><p>Best: <span class="score">${Math.round(s.progress.exams[name]?.best||0)||"—"}</span></p>${note}<details><summary>Open ${title} questions</summary><form>${qs.map((q,i)=>`<div class="q"><p><strong>${i+1}. ${esc(q.skill||q.domain||"Evidence")}: ${esc(q.q||q.question||q.prompt)}</strong></p>${(q.choices||q.options||[]).map((choice,j)=>`<label class="choice"><input type="radio" name="${name}_${i}" value="${j}"> ${esc(choice)}</label>`).join("")}</div>`).join("")}<button type="button" onclick="submitExam('${name}')">Submit ${title}</button></form></details></div>`;
 }
 function capstone(){
@@ -338,6 +340,7 @@ function standards(){const coverage={}; APP.weeks.forEach(w=>w.standards.forEach
 /* 6. Actions/exports */
 function submitQuiz(){
   const s=student(),w=APP.weeks.find(x=>x.week===activeWeek),r=weekRec(s,w.week),draw=highAssessmentDraw("weekly","week-"+w.week,w.quiz,w.quiz.length),qs=draw.questions;
+  if(draw.unavailable||!draw.opened||!qs.length)return alert("The randomized assessment engine is unavailable. Your lessons and saved progress remain accessible; no assessment attempt was recorded.");
   let correct=0,answers=[];
   for(let i=0;i<qs.length;i++){
     const chosen=document.querySelector(`input[name="q${i}"]:checked`);
@@ -352,6 +355,7 @@ function submitQuiz(){
 }
 function submitExam(name){
   const s=student(),bank=name==="semester"?APP.semesterExam:APP.finalExam,kind=name==="semester"?"midterm":"final",draw=highAssessmentDraw(kind,name,bank),qs=draw.questions;
+  if(draw.unavailable||!draw.opened||!qs.length)return alert("The randomized exam engine is unavailable. No exam attempt was recorded.");
   let correct=0,answers=[];
   for(let i=0;i<qs.length;i++){
     const chosen=document.querySelector(`input[name="${name}_${i}"]:checked`);
