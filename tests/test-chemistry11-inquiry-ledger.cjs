@@ -38,5 +38,16 @@ active="fictional-A";
 const again=mount();assert.equal(again.read().length,2);
 assert.equal(again.totals(again.read()).all,120);
 assert.equal(memory.size,2);
+const original=memory.get("fictional-A|khaemenes-chemistry-11-v1:inquiry-ledger");
+memory.set("fictional-A|khaemenes-chemistry-11-v1:inquiry-ledger","{broken json");
+const damaged=mount();
+assert.equal(damaged.load().ok,false);
+assert.equal(damaged.append({week:2,day:"Monday",minutes:30,inquiry:true,evidence:"must not overwrite damaged work"}),false);
+assert.equal(memory.get("fictional-A|khaemenes-chemistry-11-v1:inquiry-ledger"),"{broken json");
+memory.set("fictional-A|khaemenes-chemistry-11-v1:inquiry-ledger",original);
+const preserved=mount();
+assert.equal(preserved.read().length,2,"Restored fictional learner A record differs");
+assert.equal(preserved.append({week:2,day:"Monday",minutes:30,inquiry:"true",evidence:"invalid type"}),false);
+
 console.log("PASS Chemistry 11 fictional two-learner inquiry ledger: A/B separation, reload, mid-session switch denied, 75% calculation");
 console.log("Mocked learner-scoped storage only: this is not authenticated profile authorization or browser certification.");
