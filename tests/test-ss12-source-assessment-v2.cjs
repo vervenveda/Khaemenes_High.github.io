@@ -12,7 +12,7 @@ assert.equal(app.passingTarget,80);
 assert.match(html,/questions:\[\],storageKey:null,unavailable:true/);
 assert.match(html,/if\(draw\.unavailable\|\|!draw\.opened\|\|!qs\.length\)return alert/);
 let count=0;
-for(let week=1;week<=20;week++){
+for(let week=1;week<=24;week++){
   const items=app.weeks[week-1].quiz;
   if(week<=12){
     assert.equal(items[0].distractorReview,"focused-first-item-pass","Missing targeted distractor quality review Week "+week);
