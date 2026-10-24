@@ -17,7 +17,7 @@ for(let week=1;week<=20;week++){
   assert.equal(items.length,10,"Week "+week+" item count");
   const keys=[0,0,0,0],skills=new Set(),questionTexts=new Set();
   for(const q of items){
-    assert.equal(q.id.startsWith("ss12-w"+String(week).padStart(2,"0")+"-transfer-v2-"),true);
+    assert.equal(q.id.startsWith("ss12-w"+String(week).padStart(2,"0")+"-transfer-v"+(week>=17?3:2)+"-"),true);
     assert.equal(q.version,week>=13?3:2);
     assert(["fictional-instructional-stimulus","primary-source-anchored"].includes(q.sourceType));
     assert.equal(q.choices.length,4);
