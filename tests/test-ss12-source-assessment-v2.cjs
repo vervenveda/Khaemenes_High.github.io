@@ -12,7 +12,7 @@ assert.equal(app.passingTarget,80);
 assert.match(html,/questions:\[\],storageKey:null,unavailable:true/);
 assert.match(html,/if\(draw\.unavailable\|\|!draw\.opened\|\|!qs\.length\)return alert/);
 let count=0;
-for(let week=1;week<=32;week++){
+for(let week=1;week<=36;week++){
   const items=app.weeks[week-1].quiz;
   if(week<=12){
     assert.equal(items[0].distractorReview,"focused-first-item-pass","Missing targeted distractor quality review Week "+week);
@@ -33,7 +33,8 @@ for(let week=1;week<=32;week++){
       assert.equal(q.sourceRef,"docs/PRIMARY_SOURCE_DOSSIERS_25_28.md");
       assert(fs.existsSync(path.join(root,"courses/social-studies/grade-12",q.sourceRef)));
     }
-    if(week>=29){assert.equal(q.sourceRef,"docs/PRIMARY_SOURCE_DOSSIERS_29_32.md");assert(fs.existsSync(path.join(root,"courses/social-studies/grade-12",q.sourceRef)));}
+    if(week>=29&&week<=32){assert.equal(q.sourceRef,"docs/PRIMARY_SOURCE_DOSSIERS_29_32.md");assert(fs.existsSync(path.join(root,"courses/social-studies/grade-12",q.sourceRef)));}
+    if(week>=33){assert.equal(q.sourceRef,"docs/PRIMARY_SOURCE_DOSSIERS_33_36.md");assert(fs.existsSync(path.join(root,"courses/social-studies/grade-12",q.sourceRef)));}
     assert.equal(q.choices.length,4);
     assert.equal(new Set(q.choices.map(x=>x.trim().toLowerCase())).size,4,"Duplicate choices "+q.id);
     if(week>=13&&week<=16){
