@@ -223,7 +223,10 @@ function weekRec(s,w){ ensure(s); if(!s.progress.weeks[w])s.progress.weeks[w]={l
 function highAssessmentDraw(kind,id,bank,count){
   const adapter=window.KhaemenesHighAssessmentAdapter;
   if(!adapter||!window.KhaeMonteCarloAssessment||!Array.isArray(bank)||!bank.length)return {adapter:null,opened:null,questions:[],storageKey:null,unavailable:true};
-  const storageKey=STORAGE_KEY+":monte-carlo:"+kind+":"+id;
+  const learner=student();
+  if(!learner||!learner.id)return {adapter:null,opened:null,questions:[],storageKey:null,unavailable:true};
+  // Keep the existing course gradebook intact; never reuse legacy global session keys across learners.
+  const storageKey=STORAGE_KEY+":learner:"+encodeURIComponent(String(learner.id))+":monte-carlo:"+kind+":"+id;
   try{
     const opened=adapter.open({courseId:"global-politics-12",storageKey,bank,kind,count:count||adapter.countFor(kind,bank.length)});
     return {adapter,opened,questions:opened.questions,storageKey};
