@@ -1,0 +1,26 @@
+name: Grade-aware course execution matrix
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/shared/course-execution-matrix-v1.json'
+      - 'tests/test-course-execution-matrix.cjs'
+      - 'courses/language-arts/**'
+      - 'courses/science/chemistry-11/**'
+      - 'courses/social-studies/grade-12/**'
+      - 'courses/mathematics/precalculus-trigonometry/**'
+      - 'courses/mathematics/calculus-1/**'
+      - '.github/workflows/course-execution-matrix.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check course routes, grade and engine contracts
+        run: node tests/test-course-execution-matrix.cjs
