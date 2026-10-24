@@ -14,6 +14,9 @@ assert.match(html,/if\(draw\.unavailable\|\|!draw\.opened\|\|!qs\.length\)return
 let count=0;
 for(let week=1;week<=20;week++){
   const items=app.weeks[week-1].quiz;
+  if(week<=12){
+    assert.equal(items[0].distractorReview,"focused-first-item-pass","Missing targeted distractor quality review Week "+week);
+  }
   assert.equal(items.length,10,"Week "+week+" item count");
   const keys=[0,0,0,0],skills=new Set(),questionTexts=new Set();
   for(const q of items){
