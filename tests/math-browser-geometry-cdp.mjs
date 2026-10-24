@@ -72,9 +72,12 @@ catch(e){
  console.error("FAIL Geometry CDP lesson load:",e.message,stderr.slice(-1000));
  // Read-only isolation on fresh targets. These cannot turn a failed standard test green.
  const probes=[
-  ["without-remote-resources",["https://*"],true],
-  ["without-learner-scope",["*learner-scope-v1.js*"],true],
-  ["without-course-entry",["*course-entry-contract.js*"],true],
+  ["without-geometry-lesson-tools",["*geometry/assets/lesson-tools.js*"],false],
+  ["without-all-shared-scripts",["*courses/shared/*.js*"],true],
+  ["without-geometry-assets",["*geometry/assets/*.js*"],false],
+  ["without-learning-context",["*high-school-learning-context-v1.js*"],true],
+  ["without-formative-bridge",["*high-school-formative-evidence-v1.js*"],true],
+  ["without-geometry-workflow",["*geometry-workflow-adapter-v1.js*"],true],
   ["static-html-no-javascript",["*.js","*.js?*"],false]
  ];
  for(const [name,blocked,requireMastery] of probes){
