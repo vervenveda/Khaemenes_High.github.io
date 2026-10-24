@@ -35,7 +35,7 @@ try:
                 # Chrome --dump-dom process termination. Fail on navigation or gate errors.
                 cmd = ["node", str(ROOT / "tests/math-browser-geometry-cdp.mjs"), CHROME, base + rel]
                 try:
-                    result = subprocess.run(cmd, capture_output=True, text=True, timeout=35)
+                    result = subprocess.run(cmd, capture_output=True, text=True, timeout=70)
                     print(result.stdout.strip(), flush=True)
                     if result.returncode:
                         print("FAIL", name, "CDP DOM/gate verification", result.stderr.strip()[-1800:], flush=True)

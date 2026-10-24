@@ -43,30 +43,45 @@ function send(method,params={},sessionId){
   browser.stdio[3].write(JSON.stringify(request)+"\0");
  });
 }
-async function verify(){
+async function verify(label="standard", blocked=[], requireMastery=true){
  const target=await send("Target.createTarget",{url:"about:blank"});
  const attached=await send("Target.attachToTarget",{targetId:target.targetId,flatten:true});
  const session=attached.sessionId;
  await send("Page.enable",{},session);
  await send("Runtime.enable",{},session);
+ await send("Network.enable",{},session);
+ if(blocked.length)await send("Network.setBlockedURLs",{urls:blocked},session);
  const navigation=await send("Page.navigate",{url:pageUrl},session);
- if(navigation.errorText)throw new Error("Navigation failed: "+navigation.errorText);
- for(let i=0;i<60;i++){
+ if(navigation.errorText)throw new Error(label+" navigation failed: "+navigation.errorText);
+ for(let i=0;i<12;i++){
   await sleep(250);
   const evaluated=await send("Runtime.evaluate",{expression:
    'JSON.stringify({ready:document.readyState,title:document.title,lesson:document.body?.dataset.lessonId||"",main:!!document.getElementById("lessonMain"),mastery:!!document.getElementById("lessonMasteryScore"),status:!!document.getElementById("lessonStatus")})',
    returnByValue:true},session);
   try{last=JSON.parse(evaluated.result?.value||"null")}catch{}
-  if(last?.main&&last?.mastery&&last?.status&&last?.lesson==="u01-l01"&&last?.ready!=="loading"){
-   console.log("PASS Geometry lesson DOM, 80% mastery input, and local completion controls initialized",JSON.stringify(last));
+  if(last?.main&&(!requireMastery||(last?.mastery&&last?.status))&&last?.lesson==="u01-l01"&&last?.ready!=="loading"){
+   console.log("PASS Geometry "+label+" DOM "+(requireMastery?"and mastery controls":"first paint"),JSON.stringify(last));
    return;
   }
  }
- throw new Error("Geometry controls did not initialize: "+JSON.stringify(last));
+ throw new Error("Geometry "+label+" controls did not initialize: "+JSON.stringify(last));
 }
 let ok=false;
 try{await verify();ok=true}
-catch(e){console.error("FAIL Geometry CDP lesson load:",e.message,stderr.slice(-1400))}
+catch(e){
+ console.error("FAIL Geometry CDP lesson load:",e.message,stderr.slice(-1000));
+ // Read-only isolation on fresh targets. These cannot turn a failed standard test green.
+ const probes=[
+  ["without-remote-resources",["https://*"],true],
+  ["without-learner-scope",["*learner-scope-v1.js*"],true],
+  ["without-course-entry",["*course-entry-contract.js*"],true],
+  ["static-html-no-javascript",["*.js","*.js?*"],false]
+ ];
+ for(const [name,blocked,requireMastery] of probes){
+  try{await verify(name,blocked,requireMastery);console.error("DIAGNOSTIC: "+name+" recovers Geometry first paint/controls")}
+  catch(error){console.error("DIAGNOSTIC: "+name+" still fails: "+error.message)}
+ }
+}
 finally{
  browser.kill("SIGKILL");
  await Promise.race([new Promise(resolve=>browser.once("close",resolve)),sleep(1250)]);
