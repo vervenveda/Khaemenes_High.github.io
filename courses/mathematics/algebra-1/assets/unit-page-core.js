@@ -8,8 +8,23 @@ function bind(items,key){
  function fresh(){
   let selection=shuffle(bank);
   if(R.lesson&&selection.length>8)selection=selection.slice(0,8);
-  active=selection.map(q=>{const choices=shuffle(q.options.map((text,i)=>({text,i})));return {...q,options:choices.map(o=>o.text),answer:choices.findIndex(o=>o.i===q.answer)}});
-  host.innerHTML=qhtml(active);graded=false;attempt++;score.disabled=false;score.textContent="Submit & Score";
+  if(R.lesson){
+   // Balance the correct-answer positions on the learner's FIRST visible form and every retake.
+   // For five four-option lesson checks this produces a 2/1/1/1 distribution, randomized by position.
+   const correctPositions=shuffle(selection.map((_,i)=>i%4));
+   active=selection.map((q,qi)=>{
+    const correct=q.answer,target=correctPositions[qi];
+    const distractors=shuffle(q.options.map((text,i)=>({text,i})).filter(o=>o.i!==correct));
+    const order=[];let di=0;
+    for(let pos=0;pos<q.options.length;pos++)order.push(pos===target?{text:q.options[correct],i:correct}:distractors[di++]);
+    return {...q,options:order.map(o=>o.text),answer:target,_balancedOptionOrder:true};
+   });
+  }else{
+   active=selection.map(q=>{const choices=shuffle(q.options.map((text,i)=>({text,i})));return {...q,options:choices.map(o=>o.text),answer:choices.findIndex(o=>o.i===q.answer)}});
+  }
+  host.innerHTML=qhtml(active);
+  if(R.lesson)host.querySelectorAll(".options").forEach(group=>group.dataset.balancedOptionOrder="true");
+  graded=false;attempt++;score.disabled=false;score.textContent="Submit & Score";
   if(reset){reset.textContent="Begin a new randomized attempt";reset.disabled=true;reset.hidden=true}
   if(msg)msg.textContent="Attempt "+attempt+" · "+active.length+" randomized questions. Submitted attempts cannot be edited.";
  }
