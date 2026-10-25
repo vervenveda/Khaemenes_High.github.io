@@ -5,7 +5,7 @@
   "title": "Physics 12 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/physics-engineering-12/question-bank.js",
-  "reviewedItemCount": 70,
+  "reviewedItemCount": 94,
   "items": {
     "legacy-1": {
       "itemId": "legacy-1",
@@ -1682,6 +1682,582 @@
           "optionIndex": 3,
           "misconceptionTag": "ignores-i-omega-tradeoff",
           "rationale": "At fixed angular momentum, angular speed changes when moment of inertia changes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w22a": {
+      "itemId": "w22a",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "K=½Iω².",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "drops-square-on-angular-speed",
+          "rationale": "Using 1/2·I·ω gives 3 J, not the rotational kinetic-energy relation 1/2·I·ω²."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "drops-one-half-factor",
+          "rationale": "Iω² gives 18 J; rotational KE includes the 1/2 factor."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "uses-omega-alone",
+          "rationale": "3 J is just the angular-speed value numerically, not energy."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w22b": {
+      "itemId": "w22b",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "Rolling combines translation and rotation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "rolling-only-rotational-energy",
+          "rationale": "Rolling motion includes center-of-mass translation as well as rotation."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "rolling-only-translational-energy",
+          "rationale": "A rolling object rotates, so rotational kinetic energy is also present."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "rolling-zero-momentum",
+          "rationale": "A rolling object with moving center of mass has nonzero linear momentum."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w23a": {
+      "itemId": "w23a",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "f=1/T.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "frequency-equals-period",
+          "rationale": "Frequency is the reciprocal of period, not numerically equal to it."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "adds-one-to-period",
+          "rationale": "1.5 Hz does not follow from f=1/T."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "multiplies-period-by-ten",
+          "rationale": "5 Hz is not the reciprocal of 0.5 s."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w23b": {
+      "itemId": "w23b",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "Amplitude is displacement scale.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "amplitude-vs-frequency",
+          "rationale": "Cycles per second defines frequency, not amplitude."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "amplitude-vs-period",
+          "rationale": "Time per cycle defines period, not amplitude."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "amplitude-vs-wave-speed",
+          "rationale": "Wave speed is propagation rate, not maximum displacement."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w24a": {
+      "itemId": "w24a",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "v=fλ.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "divides-frequency-by-wavelength",
+          "rationale": "5/2 gives 2.5 with the wrong relation; v=fλ."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "adds-frequency-and-wavelength",
+          "rationale": "5+2 does not compute wave speed."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "divides-wavelength-by-frequency",
+          "rationale": "2/5 gives 0.4, the inverse-type ratio, not speed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w24b": {
+      "itemId": "w24b",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "λ=v/f.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "assumes-wavelength-proportional-to-frequency",
+          "rationale": "At fixed speed, wavelength is inversely proportional to frequency."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "ignores-fixed-speed-constraint",
+          "rationale": "If speed is fixed and frequency changes, wavelength must adjust."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "frequency-doubling-does-not-force-zero-wavelength",
+          "rationale": "Doubling frequency halves wavelength; it does not make it zero."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w25a": {
+      "itemId": "w25a",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "Resonance occurs near natural frequency.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "resonance-at-half-frequency",
+          "rationale": "Strongest resonance occurs near the natural frequency, not necessarily half of it."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "resonance-at-double-frequency",
+          "rationale": "Doubling the natural frequency is not the primary resonance condition for this simple model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "zero-frequency-resonance",
+          "rationale": "A static drive at 0 Hz is not the stated resonant drive."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w25b": {
+      "itemId": "w25b",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "Opposite phase can reduce resultant amplitude.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "destructive-interference-same-phase",
+          "rationale": "Waves in the same phase reinforce rather than cancel."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "destructive-interference-requires-zero-amplitude",
+          "rationale": "Cancellation depends on phase and amplitudes; each wave need not have zero amplitude."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "units-do-not-determine-interference",
+          "rationale": "Different units are not a physical condition for destructive interference."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w26a": {
+      "itemId": "w26a",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "ρ=m/V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "multiplies-mass-and-volume",
+          "rationale": "Density is mass divided by volume, not their product."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "inverts-density-ratio",
+          "rationale": "0.3/600 gives the reciprocal-type relation, not density."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "adds-mass-and-volume",
+          "rationale": "Adding 600 and 0.3 mixes incompatible quantities and does not compute density."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w26b": {
+      "itemId": "w26b",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "Buoyancy equals displaced-fluid weight in the ideal model.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "buoyancy-color-confusion",
+          "rationale": "Color does not determine displaced-fluid weight."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "buoyancy-surface-area-only",
+          "rationale": "Surface area alone does not determine buoyant force in Archimedes' model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "buoyancy-electric-field-confusion",
+          "rationale": "Electric field is unrelated to the displaced-fluid basis of buoyancy."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w27a": {
+      "itemId": "w27a",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "A1v1=A2v2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "flow-speed-proportional-to-area",
+          "rationale": "For incompressible steady flow, reducing area requires speed to increase, not decrease."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "overmultiplies-area-ratio",
+          "rationale": "The area halves, so speed doubles from 2 to 4 m/s, not quadruples."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "ignores-area-change",
+          "rationale": "Continuity requires velocity to change when cross-sectional area changes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w27b": {
+      "itemId": "w27b",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "Mass conservation supports continuity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "continuity-allows-mass-creation",
+          "rationale": "Continuity expresses mass conservation and does not assume mass is created."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "continuity-requires-fluid-at-rest",
+          "rationale": "Continuity applies to flowing fluids, not only fluids at rest."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "continuity-independent-of-area",
+          "rationale": "Cross-sectional area is central to A1v1=A2v2."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w28a": {
+      "itemId": "w28a",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "q=mcΔT.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "omits-temperature-change",
+          "rationale": "418 J corresponds to mc for ΔT=1°C; the actual change is 5°C."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "drops-mass-factor",
+          "rationale": "20.9 J is too small because the 100 g mass is not properly included."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "uses-mass-times-deltaT-only",
+          "rationale": "500 ignores the specific heat capacity."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w28b": {
+      "itemId": "w28b",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "Temperature is not total thermal energy.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "thermal-energy-color-confusion",
+          "rationale": "Color alone does not determine total internal energy."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "thermal-energy-pressure-only",
+          "rationale": "Pressure alone is insufficient to determine total internal energy."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "thermal-energy-time-zone",
+          "rationale": "Time zone has no thermodynamic role."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w29a": {
+      "itemId": "w29a",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "E∝1/r².",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "inverse-first-power-field",
+          "rationale": "A point-charge field follows 1/r², not 1/r."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "direct-field-distance-error",
+          "rationale": "Field magnitude decreases as distance increases."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "inverse-square-direction-reversed",
+          "rationale": "Doubling distance reduces field to one-fourth, not four times larger."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w29b": {
+      "itemId": "w29b",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "E=F/q.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "field-vs-gravitational-potential-like-ratio",
+          "rationale": "Energy per mass is not electric field; electric field is force per charge."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "field-vs-circuit-ratio",
+          "rationale": "Current divided by resistance does not define electric field."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "field-vs-power-rate",
+          "rationale": "Power per time is not electric field."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w30a": {
+      "itemId": "w30a",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "I=V/R.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "multiplies-voltage-and-resistance",
+          "rationale": "12×4=48 is not Ohm's-law current."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "inverts-ohms-law",
+          "rationale": "4/12 gives 0.333, but current is V/R."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "subtracts-resistance-from-voltage",
+          "rationale": "12−4 mixes unlike quantities and does not compute current."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w30b": {
+      "itemId": "w30b",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "P=VI.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "divides-voltage-by-current",
+          "rationale": "6/2=3 gives resistance-like units, not electrical power."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "adds-voltage-and-current",
+          "rationale": "6+2 does not compute watts."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "inverts-power-product",
+          "rationale": "2/6 gives 0.333 and does not follow P=VI."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w31a": {
+      "itemId": "w31a",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "Faraday’s law depends on flux-change rate.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "faraday-rate-direction-reversed",
+          "rationale": "A faster flux change increases induced emf magnitude rather than decreasing it."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "changing-flux-does-not-give-zero-emf",
+          "rationale": "Changing magnetic flux is precisely what produces induced emf in Faraday's law."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "emf-independent-of-flux-rate",
+          "rationale": "Induced emf depends on the rate of flux change, not an unchanged constant value."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w31b": {
+      "itemId": "w31b",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "No flux change means no induced emf from Faraday’s law.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "constant-flux-maximum-emf",
+          "rationale": "Perfectly constant flux gives zero flux-change contribution, not maximum emf."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "emf-sign-not-always-positive",
+          "rationale": "Induced emf direction depends on flux-change direction; with no change, it is zero."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "emf-is-not-resistance",
+          "rationale": "Resistance and emf are different electrical quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w32a": {
+      "itemId": "w32a",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "λ=v/f.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "inverts-wave-ratio",
+          "rationale": "1e8/3e8 gives 0.333, but wavelength is v/f."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "drops-factor-of-three",
+          "rationale": "The ratio 3e8/1e8 is 3, not 1."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "multiplies-speed-by-frequency",
+          "rationale": "Multiplying v by f yields the wrong dimensions and enormous value."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w32b": {
+      "itemId": "w32b",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "Thresholded states improve robustness.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "digital-signal-no-carrier",
+          "rationale": "Digital information still requires a physical carrier or storage medium."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "digital-faster-than-light",
+          "rationale": "Encoding does not allow information to exceed physical propagation limits."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "noise-impossible-in-digital-systems",
+          "rationale": "Digital systems can experience noise; discrete thresholds make them more robust, not noise-free."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w33a": {
+      "itemId": "w33a",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "Σ(score×weight).",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "adds-unweighted-scores",
+          "rationale": "23 is the raw sum and ignores weights."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "averages-after-wrong-sum",
+          "rationale": "2.57 does not follow the weighted-sum rule."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "misapplies-weight-product",
+          "rationale": "9.24 is not Σ(score×weight)."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w33b": {
+      "itemId": "w33b",
+      "reviewStatus": "reviewed-quantitative-evidence-v3",
+      "correctRationale": "Constraints bound acceptable solutions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "constraint-is-not-preference",
+          "rationale": "A preference is typically a criterion; a constraint is a required boundary."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "constraints-affect-feasibility",
+          "rationale": "Constraints directly determine whether a design is feasible."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "constraint-is-not-score",
+          "rationale": "A score evaluates a design; a constraint bounds acceptable solutions."
         }
       ],
       "reviewedAt": "2026-10-25",
