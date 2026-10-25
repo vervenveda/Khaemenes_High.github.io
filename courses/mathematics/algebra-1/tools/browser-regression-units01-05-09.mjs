@@ -71,6 +71,7 @@ await context.addInitScript(()=>{
   mastery(4);
   mastery(5);
   mastery(6);
+  mastery(7);
   mastery(8);
   localStorage.setItem(scoped("khaemenes-algebra1-midterm-result-v1"),JSON.stringify({
     attempt_history:[{
@@ -129,6 +130,14 @@ const cases=[
    key:"khaemenes-algebra1-unit07-a3-v1",
    runtime:"abundant-v2",
    bankVersion:"unit07-abundant-v1",
+   misconceptionPolicy:"provisional"
+ },
+ {
+   unit:"08",
+   file:"lesson-01-exponent-laws-equivalent-forms.html",
+   key:"khaemenes-algebra1-unit08-a3-v1",
+   runtime:"abundant-v2",
+   bankVersion:"unit08-abundant-v1",
    misconceptionPolicy:"provisional"
  },
  {
@@ -296,14 +305,14 @@ await new Promise(resolve=>server.close(resolve));
 console.log("ALGEBRA I REAL-BROWSER REGRESSION: PASS");
 console.log(JSON.stringify({
   browser:"Chromium via Playwright",
-  journey:"Unit 01 → Unit 03 → Unit 04 → Unit 05 → Unit 06 → Unit 07 → Unit 09 representative Lesson 01",
+  journey:"Unit 01 → Unit 03 → Unit 04 → Unit 05 → Unit 06 → Unit 07 → Unit 08 → Unit 09 representative Lesson 01",
   checks:[
     "10-question first form",
     "submit and immutable lock",
     "answerSnapshot persistence with delivered/original option identity",
     "reviewed misconception-aware learner feedback plus provisional-feedback suppression",
     "balanced learner-visible correct positions",
-    "Units 01 and 03–07 30-item abundant pools with low-overlap blueprint retakes",
+    "Units 01 and 03–08 30-item abundant pools with low-overlap blueprint retakes",
     "fresh retake with aligned alternates for Units 05 and 09",
     "reload preserves attempt history and best score",
     "no browser/page console errors"
