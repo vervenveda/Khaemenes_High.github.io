@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Learner-scoped Khaemenes High Scientific Investigation Notebook spanning Grades 9–12.">
+<title>Khaemenes High · Scientific Investigation Notebook</title>
+<style>
+:root{--ink:#1f241f;--green:#17392f;--paper:#fffaf0;--paper2:#f7efd9;--gold:#b48b45;--line:#cbbd9d}
+*{box-sizing:border-box}body{margin:0;background:#efe7d6;color:var(--ink);font:400 15px/1.62 "Avenir Next","Segoe UI",Arial,sans-serif}
+.shell{width:min(1080px,calc(100% - 28px));margin:auto}.hero{padding:28px 0 18px;text-align:center}.eyebrow{font:400 14px/1.3 Georgia,serif;letter-spacing:.12em;text-transform:uppercase}.hero h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}.hero h1{font-size:clamp(28px,5vw,40px);margin:.2em 0}.hero p{max-width:780px;margin:8px auto}.nav,.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 12px;border:1px solid var(--gold);border-radius:7px;background:#fffdf8;color:var(--green);text-decoration:none;font:500 13px/1.25 inherit;cursor:pointer}.btn.primary{background:var(--green);color:#fff}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;padding-bottom:34px}.card{grid-column:span 12;background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:18px;box-shadow:0 8px 24px rgba(47,38,21,.06)}.half{grid-column:span 6}.progression{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.stage{padding:12px;border:1px solid var(--line);border-radius:7px;background:var(--paper2)}label{display:block;margin:10px 0 4px}input,textarea{width:100%;border:1px solid #b9aa88;border-radius:7px;background:#fffdf8;padding:10px;font:inherit;color:inherit}textarea{min-height:100px;resize:vertical}.entry{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.entry:first-child{border-top:0;margin-top:0;padding-top:0}.meta{font-size:13px;color:#655d4e}.notice{padding:10px 12px;border-left:3px solid var(--gold);background:#fff4d8;border-radius:7px}.danger{border-color:#8d4b45;color:#6f312b}.status{min-height:1.4em;text-align:center}
+@media(max-width:760px){.half{grid-column:span 12}.progression{grid-template-columns:1fr}.nav,.actions{align-items:stretch}.btn{flex:1 1 180px}}
+@media print{body{background:#fff}.no-print{display:none!important}.card{box-shadow:none;break-inside:avoid}.shell{width:100%}}
+</style>
+</head>
+<body>
+<header class="hero shell">
+<p class="eyebrow">Khaemenes Academy · High School Science</p>
+<h1>Scientific Investigation Notebook</h1>
+<p>Your research record grows with you from guided Grade 9 investigations to independent Grade 12 scientific and engineering inquiry.</p>
+<nav class="nav no-print"><a class="btn" id="backProfile" href="../../../">Student Profile</a><a class="btn" href="../">Science Hall</a><button class="btn" type="button" id="printNotebook">Print / Save PDF</button></nav>
+</header>
+<main class="shell grid">
+<section class="card">
+<h2>Four-Year Investigation Spine</h2>
+<div class="progression">
+<div class="stage"><h3>Grade 9 · Guided</h3><p>Question → variables → observations → graph → CER.</p></div>
+<div class="stage"><h3>Grade 10 · Controlled</h3><p>Hypothesis → replicates → variability → mechanism → limitations.</p></div>
+<div class="stage"><h3>Grade 11 · Quantitative</h3><p>Measurement → uncertainty → mathematical relationship → model comparison.</p></div>
+<div class="stage"><h3>Grade 12 · Independent</h3><p>Research/design question → model → dataset → constraints → evaluation → defense.</p></div>
+</div>
+<p class="notice" id="learnerNotice">Finding the active student profile…</p>
+</section>
+<section class="card half">
+<h2>New Investigation Entry</h2>
+<p class="meta" id="entryContext"></p>
+<form id="entryForm">
+<label>Investigation title<input id="title" maxlength="140" required></label>
+<label>Research question<textarea id="question" required></textarea></label>
+<label>Prediction / hypothesis<textarea id="prediction"></textarea></label>
+<label>Variables / controls<textarea id="variables"></textarea></label>
+<label>Method / investigation notes<textarea id="method"></textarea></label>
+<label>Raw evidence / observations / dataset reference<textarea id="evidence"></textarea></label>
+<label>Calculations / graph / model analysis<textarea id="analysis"></textarea></label>
+<label>Claim + reasoning<textarea id="claim"></textarea></label>
+<label>Uncertainty / limitations<textarea id="limitations"></textarea></label>
+<label>Next investigation / revision<textarea id="next"></textarea></label>
+<div class="actions no-print"><button class="btn primary" type="submit">Save Investigation</button><button class="btn" type="reset">Clear Form</button></div>
+</form>
+<p class="status" id="status" role="status" aria-live="polite"></p>
+</section>
+<section class="card half">
+<h2>Notebook Tools</h2>
+<p>This notebook is learner-scoped and stored locally in this browser. It does not award grades, mastery, placement, or official laboratory credit.</p>
+<div class="actions no-print"><button class="btn" id="exportNotebook" type="button">Export Notebook JSON</button><label class="btn">Import Notebook JSON<input id="importNotebook" type="file" accept=".json,application/json" style="display:none"></label></div>
+<h3>Current expectations</h3><div id="gradeExpectations" class="notice"></div>
+<h3>Portfolio rule</h3><p>Choose strong investigations, preserve raw evidence, identify limitations, and show how your reasoning changed after feedback or additional data.</p>
+</section>
+<section class="card">
+<h2>Saved Investigations</h2>
+<div id="entries"><p class="meta">No saved investigations yet.</p></div>
+</section>
+</main>
+<script>
+(()=>{
+"use strict";
+const ACTIVE="khaemenes_active_learner_v1",FAMILY="khaemenes_family_registry_v1",BASE="khaemenes-science-investigation-notebook-v1";
+const qs=new URLSearchParams(location.search);
+const safe=(v,n=3000)=>String(v??"").replace(/[\u0000-\u001f\u007f]/g,"").slice(0,n);
+const readJSON=k=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):null}catch{return null}};
+function learner(){const active=readJSON(ACTIVE),family=readJSON(FAMILY);const id=typeof active==="string"?active:active?.learnerId;const rec=id&&family?.learners?.[id];return id&&rec?{id,name:safe(rec.name||rec.displayName||"Student",120),grade:Number(rec.grade)||Number(qs.get("grade"))||0}:null}
+const me=learner(),grade=me?.grade||Number(qs.get("grade"))||0,course=safe(qs.get("course")||"",80);
+const key=me?BASE+":learner:"+encodeURIComponent(me.id):null;
+const expectations={9:"Use a guided question, identify variables, record observations, make a graph or model, and write a claim supported by evidence.",10:"Use controlled comparisons, repeated trials when appropriate, variability, biological mechanism, and explicit limitations.",11:"Document measurement units, uncertainty, quantitative relationships, calculations, and comparison between competing models.",12:"Define an independent research or engineering question, justify a model, analyze data, address constraints, evaluate limitations, and prepare a defensible conclusion."};
+const profileByGrade=g=>g>=9&&g<=12?"../../../grades/grade-"+String(g).padStart(2,"0")+"/student-profile/":"../../../";
+document.getElementById("backProfile").href=profileByGrade(grade);
+document.getElementById("entryContext").textContent=(grade?"Grade "+grade:"High School")+(course?" · "+course.replace(/-/g," "):"");
+document.getElementById("gradeExpectations").textContent=expectations[grade]||"Record the research question, method, evidence, analysis, claim, limitations, and next step.";
+const notice=document.getElementById("learnerNotice"),form=document.getElementById("entryForm"),status=document.getElementById("status");
+if(me)notice.textContent="Active learner: "+me.name+" · Grade "+(me.grade||grade||"High School")+". Entries are separated from other learners on this browser.";
+else{notice.textContent="No active learner profile is available. Open your Student Profile first; saving is disabled to prevent work from being attached to the wrong learner.";form.querySelectorAll("input,textarea,button").forEach(x=>x.disabled=true)}
+function load(){if(!key)return {version:1,learnerId:null,entries:[]};const v=readJSON(key);return v&&v.version===1&&Array.isArray(v.entries)?v:{version:1,learnerId:me.id,entries:[]}}
+function save(data){if(!key)return false;try{localStorage.setItem(key,JSON.stringify(data));return true}catch{return false}}
+const val=id=>safe(document.getElementById(id).value);
+function render(){const box=document.getElementById("entries"),data=load();box.replaceChildren();if(!data.entries.length){box.innerHTML='<p class="meta">No saved investigations yet.</p>';return}data.entries.slice().reverse().forEach(entry=>{const a=document.createElement("article");a.className="entry";const h=document.createElement("h3");h.textContent=entry.title||"Untitled Investigation";const m=document.createElement("p");m.className="meta";m.textContent=[entry.grade?"Grade "+entry.grade:"",entry.course?.replace(/-/g," "),new Date(entry.updatedAt||entry.createdAt).toLocaleString()].filter(Boolean).join(" · ");a.append(h,m);[["Research question",entry.question],["Prediction / hypothesis",entry.prediction],["Variables / controls",entry.variables],["Method",entry.method],["Evidence",entry.evidence],["Analysis",entry.analysis],["Claim + reasoning",entry.claim],["Uncertainty / limitations",entry.limitations],["Next investigation",entry.next]].forEach(pair=>{const label=pair[0],value=pair[1];if(!value)return;const hh=document.createElement("h4");hh.textContent=label;const p=document.createElement("p");p.textContent=value;a.append(hh,p)});const actions=document.createElement("div");actions.className="actions no-print";const del=document.createElement("button");del.type="button";del.className="btn danger";del.textContent="Delete Entry";del.addEventListener("click",()=>{const d=load();d.entries=d.entries.filter(x=>x.id!==entry.id);save(d);render()});actions.append(del);a.append(actions);box.append(a)})}
+form.addEventListener("submit",e=>{e.preventDefault();if(!me||!key)return;const d=load(),now=new Date().toISOString();d.learnerId=me.id;d.entries.push({id:"inv-"+Date.now()+"-"+Math.random().toString(36).slice(2,8),grade:grade||me.grade||null,course,title:val("title"),question:val("question"),prediction:val("prediction"),variables:val("variables"),method:val("method"),evidence:val("evidence"),analysis:val("analysis"),claim:val("claim"),limitations:val("limitations"),next:val("next"),createdAt:now,updatedAt:now});if(save(d)){status.textContent="Investigation saved to this learner's local notebook.";form.reset();render()}else status.textContent="The notebook could not be saved in this browser."});
+document.getElementById("printNotebook").addEventListener("click",()=>window.print());
+document.getElementById("exportNotebook").addEventListener("click",()=>{if(!me)return;const blob=new Blob([JSON.stringify({...load(),exportedAt:new Date().toISOString()},null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="khaemenes-science-investigation-notebook-grade-"+(grade||"hs")+".json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),800)});
+document.getElementById("importNotebook").addEventListener("change",async e=>{if(!me||!key)return;const file=e.target.files?.[0];if(!file)return;try{const incoming=JSON.parse(await file.text());if(incoming?.learnerId&&incoming.learnerId!==me.id)throw new Error("This backup belongs to a different learner profile.");if(!Array.isArray(incoming?.entries))throw new Error("Notebook entries were not found.");const current=load(),byId=new Map(current.entries.map(x=>[x.id,x]));incoming.entries.forEach(x=>{if(x&&typeof x==="object"&&x.id)byId.set(String(x.id),x)});current.entries=[...byId.values()];current.learnerId=me.id;if(!save(current))throw new Error("Browser storage is unavailable.");status.textContent="Notebook imported and merged without erasing existing entries.";render()}catch(err){status.textContent=err.message||"Notebook import failed."}finally{e.target.value=""}});
+render();
+})();
+</script>
+<script src="../../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
+<script src="../../../assets/high-navigation-v1.js" defer></script>
+</body>
+</html>
