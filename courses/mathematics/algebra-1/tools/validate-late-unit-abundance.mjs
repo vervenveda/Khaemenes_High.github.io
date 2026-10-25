@@ -65,7 +65,7 @@ for(const marker of [
   'selectionPolicy:Number(R.unit)===13?"lesson-balanced-capstone-depth-low-overlap-v1":"lesson-balanced-low-overlap-v1"',
   "capstoneQuantitativeMinimum:Number(R.unit)===13?10:null",
   "x.available>=x.need*2",
-  'selectionPolicy:"lesson-balanced-low-overlap-v1"',
+  '"lesson-balanced-low-overlap-v1"',
   'formVersion:"algebra1-late-unit-monte-carlo-v1"',
   "immediatePriorOverlap",
   "formSeed",
