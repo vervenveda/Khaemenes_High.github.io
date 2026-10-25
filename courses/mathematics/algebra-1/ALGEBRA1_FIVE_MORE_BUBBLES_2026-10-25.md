@@ -208,3 +208,95 @@ A real-browser regression through representative **Unit 01 → Unit 05 → Unit 
 first attempt → submit → locked answers → misconception-aware feedback → fresh retake → reload → inspect saved evidence.
 
 That browser journey should remain a certification boundary rather than being mislabeled as one of the five source defects above.
+
+
+---
+
+## Execution update · 2026-10-25
+
+The recommended surgical sequence was executed through Bubbles **5 → 4 → 2 → 3** on `main`.
+
+### Bubble 5 · repaired at source level
+
+Unit 01 now saves the same reconstructable answer evidence required by the later runtimes:
+
+- selected displayed option index;
+- selected original option index;
+- correct displayed and original indexes;
+- selected and correct text;
+- item source;
+- `formVersion: "algebra1-runtime-balanced-v2"`;
+- `evidenceSchema: "algebra1-answer-evidence-v2"`;
+- bank version, selection policy, eligible-pool size, attempt number, and mastery threshold;
+- misconception tag/map source/map version/review status when a mapped distractor is selected.
+
+Historical attempts are not rewritten.
+
+### Bubble 4 · repaired with an abundance-bank standard
+
+Unit 01 Lessons 01–05 now each expose **30 eligible questions for a 10-question graded form**:
+
+- 10 dedicated lesson questions;
+- 5 existing shared aligned alternates;
+- 15 new stable abundant-bank variants.
+
+That creates `C(30,10) = 30,045,015` possible ten-question sets before answer-position balancing. Retakes use unseen-first blueprint selection and minimize overlap with the immediately preceding form. The new 75-item abundant bank uses stable IDs plus generator/version/seed metadata and is included in offline caching.
+
+Lesson 06 retains its existing synthesis-variant depth and also has access to the shared alternate bank.
+
+### Bubble 2 · structurally repaired without overstating review quality
+
+All **275 / 275** Units 02–09 aligned retake alternates now have misconception-map records.
+
+Current status:
+
+- **205 reviewed**;
+- **70 family-level provisional**;
+- **0 unmapped**;
+- **0 prompt/key/explanation drift**.
+
+The 70 newly mapped records remain explicitly `family-provisional-v1` and are not represented as human-reviewed distractor diagnosis.
+
+### Bubble 3 · repaired with reviewed-only learner feedback
+
+A first-party misconception resolver now loads the dedicated and shared maps locally. Units 01–09:
+
+- resolve mapped wrong answers by stable item ID plus original selected option index;
+- save misconception tag, map source, map version, and review status in the immutable answer snapshot;
+- append misconception-specific learner correction only when the mapping is reviewed;
+- fall back to the ordinary correct-answer explanation for provisional or unavailable mappings;
+- cache the resolver and both misconception maps for offline use.
+
+### Bubble 1 · intentionally remains open
+
+The dedicated map still contains:
+
+- **610 total dedicated items**;
+- **200 `lesson-family-reviewed-v1`**;
+- **410 `lesson-family-provisional-v1`**.
+
+Those 410 records were **not** automatically promoted. The original finding specifically distinguishes family-level provisional reasoning from human-reviewed distractor diagnosis. Preserving that distinction is part of the certification contract.
+
+### Fresh source regression
+
+A post-repair source regression against current `main` found:
+
+- Unit 01 Lessons 01–05: **30 eligible questions each**;
+- abundant bank: **75 / 75 unique stable IDs**;
+- Units 02–09 aligned misconception coverage: **275 mapped / 205 reviewed / 70 provisional / 0 drift**;
+- all Unit 02–09 loaders include the misconception resolver;
+- all Unit 02–09 cores await the resolver before grading and preserve original option identity;
+- all Unit 01–09 feedback paths gate misconception-specific learner text on reviewed status;
+- misconception resolver, shared map, dedicated map, shared question bank, and Unit 01 abundant bank are represented in offline-cache manifests.
+
+No automatic GitHub Actions run was attached to the repaired head, so CI is **not** being labeled green.
+
+### Certification boundary remains unchanged
+
+The real-browser journey is still required:
+
+**Unit 01 → Unit 05 → Unit 09**
+
+first attempt → submit → locked answers → reviewed misconception-aware feedback → fresh retake → reload → inspect saved evidence.
+
+That browser journey remains the final certification boundary and has not been mislabeled as completed.
