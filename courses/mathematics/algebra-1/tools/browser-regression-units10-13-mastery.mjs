@@ -151,7 +151,7 @@ for(let unit=10;unit<=13;unit++){
  const a2=second.attempts[1];
  assert.equal(a2.immediatePriorOverlap,0,`Unit ${unit}: immediate retake overlap is not zero`);
  assert.equal(a2.eligiblePoolSize,expectedPools[unit],`Unit ${unit}: retake lost eligible pool size`);
- assert.equal(a2.selectionPolicy,"lesson-balanced-low-overlap-v1",`Unit ${unit}: retake selection policy drift`);
+ assert.equal(a2.selectionPolicy,unit===13?"lesson-balanced-capstone-depth-low-overlap-v1":"lesson-balanced-low-overlap-v1",`Unit ${unit}: retake selection policy drift`);
  assert.equal(a2.bankVersion,expectedBanks[unit],`Unit ${unit}: retake bank version drift`);
  assert.equal(a2.items.filter(id=>new Set(firstIds).has(id)).length,0,`Unit ${unit}: retake repeated a prior-form item`);
  const secondPositions=[0,0,0,0];for(const x of a2.answerSnapshot)secondPositions[x.correctDisplayIndex]++;
