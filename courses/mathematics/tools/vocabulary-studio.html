@@ -24,14 +24,14 @@ a{color:var(--accent);text-underline-offset:3px}
 label{display:block;font-size:14px;color:var(--muted);margin-bottom:4px}
 select,input{width:100%;border-radius:7px;border:1px solid #a9b0b1;background:#fff;color:var(--ink);padding:10px;font:inherit}
 select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0}
+.list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:14px 0}
 .meta{font-size:13px;color:var(--muted)}
 .translation{margin:4px 0;color:var(--accent)}
 .description{margin:6px 0 0}
 .status{min-height:30px;color:var(--muted)}
 .end{text-align:center;border-top:1px solid var(--line);color:var(--muted)}
 [hidden]{display:none!important}
-@media(max-width:800px){.controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.controls,.list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:570px){.controls,.list{grid-template-columns:minmax(0,1fr)}h1{font-size:30px}}
 @media print{.controls,.nav{display:none}.entry{break-inside:avoid}body{background:#fff}}
 /* Vocabulary Studio symmetry and overflow guard; presentation only. */
@@ -150,7 +150,8 @@ function render(){
      ...(current.translations?.[en]||{})};
  }).filter(item=>item.en);
  const q=query.value.trim().toLocaleLowerCase();
- const matched=records.filter(item=>([item.en,item[lang.value],item.definition].join(" ").toLocaleLowerCase().includes(q)));
+ const matching=records.filter(item=>([item.en,item[lang.value],item.definition].join(" ").toLocaleLowerCase().includes(q)));
+ const matched=isEnglish(course.value)&&weekControl.value&&!q?matching.slice(0,6):matching;
  const frag=document.createDocumentFragment();
  for(const item of matched){
    const card=document.createElement("article");card.className="entry";
@@ -168,6 +169,7 @@ function render(){
    frag.append(card);
  }
  list.append(frag);
+ if(isEnglish(course.value)&&weekControl.value&&!q&&matching.length>6){const extra=addText("p","Additional assigned terms: "+matching.slice(6).map(t=>t.en).join(", ")+". Use search or select the whole unit to study them.","meta");extra.style.gridColumn="1 / -1";list.append(extra)}
  const translated=lang.value==="en"?records.length:records.filter(item=>
    typeof item[lang.value]==="string"&&item[lang.value].trim().length>0).length;
  status.textContent=matched.length+" of "+records.length+" terms displayed"+(q?" for this search":"")+"."
@@ -176,8 +178,8 @@ function render(){
 }
 let vocabWeek=Number(weekControl.value);const weekQuiz=byId("weeklyVocabularyQuiz");let quizItems=[];
 function shuffled(items){const a=items.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function drawWeekQuiz(){weekQuiz.hidden=true;quizItems=[];if(!["social-studies-10","social-studies-09","english-9"].includes(course.value)||!current||!Number.isInteger(vocabWeek)||vocabWeek<1||vocabWeek>36)return;const words=current.terms.filter(t=>(t.week===vocabWeek||(Array.isArray(t.weeks)&&t.weeks.includes(vocabWeek)))&&t.definition&&t.term&&!t.definition.startsWith("Definition awaiting"));if(words.length<4)return;const pool=current.terms.filter(t=>t.definition&&t.term);quizItems=shuffled(words).slice(0,5).map(t=>{const others=shuffled(pool.filter(x=>x.term!==t.term)).slice(0,3);return {term:t.term,definition:t.definition,choices:shuffled([t,...others])}});const wrap=byId("weeklyQuizQuestions");wrap.replaceChildren();byId("weeklyQuizTitle").textContent="Week "+vocabWeek+" · Vocabulary practice";byId("weeklyQuizNote").textContent="Up to five lesson-specific terms · select the definition that best fits. Target: 80%. "+(course.value==="english-9"?"Definitions are editorial drafts pending educator review. ":"")+"Practice does not update official mastery or assessment records.";quizItems.forEach((q,i)=>{const box=document.createElement("div");box.className="vocab-question";const field=document.createElement("fieldset");const legend=document.createElement("legend");legend.textContent=(i+1)+". What is the meaning of “"+q.term+"”?";field.append(legend);q.choices.forEach((choice,j)=>{const label=document.createElement("label");const radio=document.createElement("input");radio.type="radio";radio.name="vocabq"+i;radio.value=String(j);label.append(radio,document.createTextNode(" "+choice.definition));field.append(label)});box.append(field);wrap.append(box)});byId("weeklyQuizFeedback").textContent="";weekQuiz.hidden=false}
-byId("gradeWeeklyVocabulary").addEventListener("click",()=>{if(!quizItems.length)return;let correct=0;for(let i=0;i<quizItems.length;i++){const chosen=document.querySelector('input[name="vocabq'+i+'"]:checked');if(!chosen){byId("weeklyQuizFeedback").textContent="Answer all five questions before checking.";return}if(quizItems[i].choices[Number(chosen.value)].term===quizItems[i].term)correct++}const score=Math.round(correct/quizItems.length*100);byId("weeklyQuizFeedback").textContent=correct+" / "+quizItems.length+" · "+score+"%. "+(score>=80?"Practice target reached.":"Review the unit definitions and try another form.")+" This formative result is not recorded as verified weekly course mastery."});
+function drawWeekQuiz(){weekQuiz.hidden=true;quizItems=[];if(!["social-studies-10","social-studies-09","english-9"].includes(course.value)||!current||!Number.isInteger(vocabWeek)||vocabWeek<1||vocabWeek>36)return;const words=current.terms.filter(t=>(t.week===vocabWeek||(Array.isArray(t.weeks)&&t.weeks.includes(vocabWeek)))&&t.definition&&t.term&&!t.definition.startsWith("Definition awaiting")).slice(0,6);if(words.length<4)return;const pool=current.terms.filter(t=>t.definition&&t.term);quizItems=shuffled(words).slice(0,6).map(t=>{const others=shuffled(pool.filter(x=>x.term!==t.term)).slice(0,3);return {term:t.term,definition:t.definition,choices:shuffled([t,...others])}});const wrap=byId("weeklyQuizQuestions");wrap.replaceChildren();byId("weeklyQuizTitle").textContent="Week "+vocabWeek+" · Vocabulary practice";byId("weeklyQuizNote").textContent="Six-term study set · select the definition that best fits. Target: 80%. "+(course.value==="english-9"?"Definitions are editorial drafts pending educator review. ":"")+"Practice does not update official mastery or assessment records.";quizItems.forEach((q,i)=>{const box=document.createElement("div");box.className="vocab-question";const field=document.createElement("fieldset");const legend=document.createElement("legend");legend.textContent=(i+1)+". What is the meaning of “"+q.term+"”?";field.append(legend);q.choices.forEach((choice,j)=>{const label=document.createElement("label");const radio=document.createElement("input");radio.type="radio";radio.name="vocabq"+i;radio.value=String(j);label.append(radio,document.createTextNode(" "+choice.definition));field.append(label)});box.append(field);wrap.append(box)});byId("weeklyQuizFeedback").textContent="";weekQuiz.hidden=false}
+byId("gradeWeeklyVocabulary").addEventListener("click",()=>{if(!quizItems.length)return;let correct=0;for(let i=0;i<quizItems.length;i++){const chosen=document.querySelector('input[name="vocabq'+i+'"]:checked');if(!chosen){byId("weeklyQuizFeedback").textContent="Answer all six questions before checking.";return}if(quizItems[i].choices[Number(chosen.value)].term===quizItems[i].term)correct++}const score=Math.round(correct/quizItems.length*100);byId("weeklyQuizFeedback").textContent=correct+" / "+quizItems.length+" · "+score+"%. "+(score>=80?"Practice target reached.":"Review the unit definitions and try another form.")+" This formative result is not recorded as verified weekly course mastery."});
 byId("retryWeeklyVocabulary").addEventListener("click",drawWeekQuiz);
 async function load(){
  const n=++loadCount;current=null;list.replaceChildren();
