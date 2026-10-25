@@ -1,0 +1,1792 @@
+{
+  "schema": "khaemenes-vocabulary-v1",
+  "course": "biology-10",
+  "title": "International Biology & Biotechnology 10 · Canonical Vocabulary",
+  "status": "course-aligned-source-reviewed-v1",
+  "practiceOnly": true,
+  "generatedFrom": "36-week Biology course concepts and reviewed course language",
+  "terms": [
+    {
+      "term": "hazard",
+      "definition": "A source or condition with the potential to cause harm.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “hazard” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "risk",
+      "definition": "The likelihood and severity of harm under specific conditions.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “risk” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "variable",
+      "definition": "A factor that can change or be measured in an investigation.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “variable” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "control",
+      "definition": "A comparison condition used to isolate the effect of a tested variable.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “control” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "uncertainty",
+      "definition": "A quantified or described limit on the precision of a measurement or conclusion.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “uncertainty” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "polarity",
+      "definition": "An uneven distribution of electrical charge within a molecule.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “polarity” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "hydrogen bonding",
+      "definition": "A relatively weak attraction involving a partially positive hydrogen and an electronegative atom.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “hydrogen bonding” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "cohesion",
+      "definition": "Attraction between molecules of the same substance, such as water molecules attracting one another.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cohesion” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "adhesion",
+      "definition": "Attraction between different substances, such as water and a plant vessel wall.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “adhesion” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "carbon skeleton",
+      "definition": "The chain or ring of carbon atoms forming the structural framework of an organic molecule.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “carbon skeleton” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "carbohydrate",
+      "definition": "A biomolecule made mainly of carbon, hydrogen, and oxygen that often functions in energy storage or structure.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “carbohydrate” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "lipid",
+      "definition": "A largely nonpolar biomolecule class that includes fats, phospholipids, and steroids.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “lipid” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "protein",
+      "definition": "A polymer of amino acids whose three-dimensional structure supports diverse cellular functions.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “protein” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "nucleic acid",
+      "definition": "A polymer of nucleotides, such as DNA or RNA, involved in storing or using genetic information.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “nucleic acid” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "monomer",
+      "definition": "A smaller molecular unit that can join with others to form a polymer.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “monomer” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "enzyme",
+      "definition": "A biological catalyst that speeds a reaction without being consumed overall.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “enzyme” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "active site",
+      "definition": "The region of an enzyme where a substrate binds and a reaction is facilitated.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “active site” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "activation energy",
+      "definition": "The minimum energy barrier that must be overcome for a reaction to proceed.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “activation energy” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "denaturation",
+      "definition": "A change in a protein's structure that can reduce or destroy its normal function.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “denaturation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "reaction rate",
+      "definition": "The change in reactant or product amount per unit time.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “reaction rate” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "cell theory",
+      "definition": "The principle that living organisms are composed of cells, cells are basic units of life, and new cells arise from existing cells.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cell theory” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "prokaryote",
+      "definition": "An organism whose cells lack a membrane-bound nucleus.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “prokaryote” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "eukaryote",
+      "definition": "An organism whose cells contain a membrane-bound nucleus and other membrane-bound organelles.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “eukaryote” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "cell membrane",
+      "definition": "The selectively permeable phospholipid boundary surrounding a cell.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cell membrane” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "cytoplasm",
+      "definition": "The material inside the cell membrane excluding the nucleus, including cytosol and suspended structures.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cytoplasm” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "selective permeability",
+      "definition": "The property of a membrane that allows some substances to cross more readily than others.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “selective permeability” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "diffusion",
+      "definition": "Net movement of particles from higher to lower concentration because of random molecular motion.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “diffusion” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "osmosis",
+      "definition": "Diffusion of water across a selectively permeable membrane.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “osmosis” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "active transport",
+      "definition": "Movement of substances across a membrane using cellular energy, often against a concentration gradient.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “active transport” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "surface-area-to-volume ratio",
+      "definition": "The relationship between a cell's exchange surface and the volume that must be supplied or regulated.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “surface-area-to-volume ratio” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "nucleus",
+      "definition": "A membrane-bound organelle containing most of a eukaryotic cell's DNA.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “nucleus” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "ribosome",
+      "definition": "A molecular complex that synthesizes proteins by translating RNA.",
+      "weeks": [
+        7,
+        24
+      ],
+      "context": "Week 07, Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “ribosome” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "endoplasmic reticulum",
+      "definition": "A membrane network involved in protein or lipid synthesis and intracellular transport.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “endoplasmic reticulum” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "mitochondrion",
+      "definition": "An organelle that carries out major stages of aerobic cellular respiration.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “mitochondrion” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "chloroplast",
+      "definition": "A photosynthetic organelle in plants and algae that converts light energy into chemical energy.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “chloroplast” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "differentiation",
+      "definition": "The process by which cells become specialized in structure and function.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “differentiation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "gene expression",
+      "definition": "The use of information in a gene to produce a functional RNA or protein product.",
+      "weeks": [
+        8,
+        25
+      ],
+      "context": "Week 08, Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “gene expression” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "tissue",
+      "definition": "A group of similar or cooperating cells performing related functions.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “tissue” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "organ",
+      "definition": "A body structure composed of multiple tissues working together.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “organ” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "organ system",
+      "definition": "A group of organs that coordinate to perform major physiological functions.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “organ system” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "light reaction",
+      "definition": "A photosynthetic process that captures light energy to generate ATP, NADPH, and oxygen.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “light reaction” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "carbon fixation",
+      "definition": "The incorporation of inorganic carbon dioxide into organic molecules.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “carbon fixation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "glucose",
+      "definition": "A six-carbon sugar used as a fuel and building block in living systems.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “glucose” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "limiting factor",
+      "definition": "A resource or condition that restricts the rate or extent of a biological process.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “limiting factor” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "photosynthesis",
+      "definition": "The process by which photoautotrophs convert light energy into chemical energy stored in organic molecules.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “photosynthesis” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "glycolysis",
+      "definition": "A pathway in the cytosol that splits glucose and yields pyruvate, ATP, and reduced electron carriers.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “glycolysis” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "aerobic respiration",
+      "definition": "Energy-releasing pathways that use oxygen as the final electron acceptor to generate ATP.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “aerobic respiration” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "ATP",
+      "definition": "Adenosine triphosphate, a molecule that transfers usable chemical energy within cells.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “ATP” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "redox reaction",
+      "definition": "A reaction involving transfer of electrons through coupled oxidation and reduction.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “redox reaction” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "fermentation",
+      "definition": "An anaerobic pathway that regenerates electron carriers so glycolysis can continue without oxygen.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “fermentation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "conservation of matter",
+      "definition": "The principle that atoms are rearranged in reactions rather than created or destroyed.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “conservation of matter” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "metabolic pathway",
+      "definition": "A linked sequence of enzyme-controlled chemical reactions in a cell.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “metabolic pathway” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "biosynthesis",
+      "definition": "The construction of complex molecules from simpler components by living cells.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “biosynthesis” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "decomposition",
+      "definition": "The breakdown of complex organic matter into simpler substances.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “decomposition” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "metabolism",
+      "definition": "The complete set of chemical reactions occurring within a living system.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “metabolism” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "rate",
+      "definition": "The amount of change in a measured quantity per unit time.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “rate” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "respiration proxy",
+      "definition": "An indirect measurement used to estimate respiration, such as oxygen consumption or carbon dioxide production.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “respiration proxy” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "confounding variable",
+      "definition": "An uncontrolled factor that can offer an alternative explanation for an observed result.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “confounding variable” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "replication",
+      "definition": "Repeating measurements or trials to estimate variability and improve reliability.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “replication” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "experimental control",
+      "definition": "A baseline condition used for comparison with a treatment.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “experimental control” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "receptor",
+      "definition": "A molecule that recognizes a signal and initiates a cellular response.",
+      "weeks": [
+        13
+      ],
+      "context": "Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “receptor” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "ligand",
+      "definition": "A signaling molecule that binds specifically to a receptor or other target.",
+      "weeks": [
+        13
+      ],
+      "context": "Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “ligand” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "signal transduction",
+      "definition": "The intracellular sequence of events that converts receptor activation into a cellular response.",
+      "weeks": [
+        13
+      ],
+      "context": "Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “signal transduction” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "cellular response",
+      "definition": "A change in cell activity produced after a signaling pathway is activated.",
+      "weeks": [
+        13
+      ],
+      "context": "Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cellular response” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "specificity",
+      "definition": "Selective interaction between particular molecules or between a signal and its target.",
+      "weeks": [
+        13
+      ],
+      "context": "Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “specificity” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "homeostasis",
+      "definition": "Dynamic regulation that keeps internal conditions within functional ranges.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “homeostasis” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "negative feedback",
+      "definition": "A regulatory process in which a response counteracts a deviation from a set range.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “negative feedback” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "positive feedback",
+      "definition": "A regulatory process in which a response amplifies an initial change.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “positive feedback” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "set range",
+      "definition": "The functional interval around which a regulated variable is maintained.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “set range” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "effector",
+      "definition": "A cell, tissue, or organ that carries out a regulatory response.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “effector” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "cell cycle",
+      "definition": "The ordered sequence of growth, DNA replication, and division in a cell.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cell cycle” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "mitosis",
+      "definition": "Division of a eukaryotic nucleus that usually produces genetically similar daughter nuclei.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “mitosis” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "cytokinesis",
+      "definition": "Division of the cytoplasm to form separate daughter cells.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cytokinesis” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "chromosome",
+      "definition": "A DNA-containing structure carrying genetic information.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “chromosome” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "checkpoint",
+      "definition": "A regulatory control point that can delay or stop cell-cycle progression.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “checkpoint” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "apoptosis",
+      "definition": "A regulated form of programmed cell death.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “apoptosis” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "mutation",
+      "definition": "A heritable change in DNA sequence.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “mutation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "cell-cycle regulation",
+      "definition": "Control of progression through the cell cycle by interacting molecular signals.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cell-cycle regulation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "correlation",
+      "definition": "A statistical association between variables that does not by itself establish causation.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “correlation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "checkpoint failure",
+      "definition": "Loss of normal cell-cycle control that allows inappropriate progression despite damage or other problems.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “checkpoint failure” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "research question",
+      "definition": "A focused, testable question that guides an investigation.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “research question” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "scientific model",
+      "definition": "A representation used to explain, predict, or organize observations about a system.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “scientific model” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "method",
+      "definition": "A documented procedure used to collect or analyze evidence.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “method” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "data",
+      "definition": "Recorded observations or measurements used as evidence.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “data” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "CER",
+      "definition": "Claim–Evidence–Reasoning, a structure for explaining how evidence supports a scientific claim.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “CER” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "cumulative synthesis",
+      "definition": "Integration of ideas and evidence from multiple units into a coherent explanation.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cumulative synthesis” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "correction",
+      "definition": "A documented revision that identifies and repairs an error in reasoning or calculation.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “correction” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "remediation",
+      "definition": "Targeted study or practice designed to address a demonstrated learning gap.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “remediation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "evidence trail",
+      "definition": "The record connecting a conclusion to observations, data, methods, and calculations.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “evidence trail” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "assessment integrity",
+      "definition": "Protection of valid assessment conditions, including separation of public practice from protected exam content.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “assessment integrity” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "homolog",
+      "definition": "One of a matching chromosome pair carrying the same gene locations, one inherited from each parent.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “homolog” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "meiosis",
+      "definition": "A two-stage cell division process that produces haploid cells and increases genetic variation.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “meiosis” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "crossing over",
+      "definition": "Exchange of DNA between homologous chromosomes during meiosis.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “crossing over” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "independent assortment",
+      "definition": "Random orientation of homologous chromosome pairs that contributes to variation in gametes.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “independent assortment” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "gamete",
+      "definition": "A haploid reproductive cell such as a sperm or egg.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “gamete” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "allele",
+      "definition": "An alternative version of a gene.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “allele” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "genotype",
+      "definition": "The allele combination or genetic constitution of an organism for a trait or set of traits.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “genotype” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "phenotype",
+      "definition": "An observable characteristic produced by genetic and environmental influences.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “phenotype” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "dominance",
+      "definition": "An inheritance relationship in which one allele can determine the heterozygous phenotype.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “dominance” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "segregation",
+      "definition": "Separation of paired alleles into different gametes during meiosis.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “segregation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "pedigree",
+      "definition": "A diagram that tracks a trait through generations of a family.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “pedigree” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "probability",
+      "definition": "A numerical measure of how likely an event is to occur.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “probability” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "sample size",
+      "definition": "The number of observations or individuals included in a study.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “sample size” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "expected value",
+      "definition": "A predicted result based on a model or probability distribution.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “expected value” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "sex-linked trait",
+      "definition": "A trait influenced by a gene located on a sex chromosome.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “sex-linked trait” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "polygenic trait",
+      "definition": "A trait influenced by multiple genes.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “polygenic trait” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "pleiotropy",
+      "definition": "A condition in which one gene influences multiple traits.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “pleiotropy” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "gene–environment interaction",
+      "definition": "A relationship in which the effect of a genotype depends on environmental conditions.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “gene–environment interaction” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "penetrance",
+      "definition": "The proportion of individuals with a genotype who show the associated phenotype.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “penetrance” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "quantitative trait",
+      "definition": "A trait showing continuous numerical variation, often influenced by many genes and the environment.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “quantitative trait” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "DNA",
+      "definition": "Deoxyribonucleic acid, the hereditary molecule that stores genetic information in most organisms.",
+      "weeks": [
+        23
+      ],
+      "context": "Week 23",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “DNA” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "nucleotide",
+      "definition": "The monomer of nucleic acids, composed of a sugar, phosphate group, and nitrogenous base.",
+      "weeks": [
+        23
+      ],
+      "context": "Week 23",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “nucleotide” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "antiparallel",
+      "definition": "Describing DNA strands that run in opposite 5′-to-3′ directions.",
+      "weeks": [
+        23
+      ],
+      "context": "Week 23",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “antiparallel” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "base pairing",
+      "definition": "Specific hydrogen-bonding relationships between complementary nucleic-acid bases.",
+      "weeks": [
+        23
+      ],
+      "context": "Week 23",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “base pairing” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "DNA replication",
+      "definition": "The semiconservative process by which DNA is copied before cell division.",
+      "weeks": [
+        23
+      ],
+      "context": "Week 23",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “DNA replication” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "transcription",
+      "definition": "Synthesis of RNA using a DNA template.",
+      "weeks": [
+        24
+      ],
+      "context": "Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “transcription” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "RNA",
+      "definition": "Ribonucleic acid, a nucleic acid involved in gene expression and other cellular functions.",
+      "weeks": [
+        24
+      ],
+      "context": "Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “RNA” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "codon",
+      "definition": "A three-nucleotide sequence in messenger RNA that specifies an amino acid or stop signal.",
+      "weeks": [
+        24
+      ],
+      "context": "Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “codon” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "translation",
+      "definition": "Synthesis of a polypeptide using information encoded in messenger RNA.",
+      "weeks": [
+        24
+      ],
+      "context": "Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “translation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "promoter",
+      "definition": "A DNA region where transcription machinery assembles to begin transcription.",
+      "weeks": [
+        25
+      ],
+      "context": "Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “promoter” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "transcription factor",
+      "definition": "A regulatory protein that binds DNA or other proteins to influence transcription.",
+      "weeks": [
+        25
+      ],
+      "context": "Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “transcription factor” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "gene regulation",
+      "definition": "Control of when, where, and how strongly genes are expressed.",
+      "weeks": [
+        25
+      ],
+      "context": "Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “gene regulation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "epigenetic mark",
+      "definition": "A chemical modification associated with DNA or chromatin that can influence gene activity without changing DNA sequence.",
+      "weeks": [
+        25
+      ],
+      "context": "Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “epigenetic mark” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "PCR",
+      "definition": "Polymerase chain reaction, a method used to amplify a selected DNA sequence.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “PCR” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "electrophoresis",
+      "definition": "A technique that separates charged molecules, often DNA fragments, by movement through a matrix in an electric field.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “electrophoresis” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "DNA sequencing",
+      "definition": "Determining the order of nucleotides in a DNA molecule.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “DNA sequencing” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "CRISPR",
+      "definition": "A gene-editing approach that uses guide RNA and associated proteins to target specific DNA sequences.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “CRISPR” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "informed consent",
+      "definition": "Voluntary agreement to participate or share data after relevant information and risks are explained.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “informed consent” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "fossil",
+      "definition": "Preserved remains, traces, or impressions of past organisms.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “fossil” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "homologous structure",
+      "definition": "A structure similar because of shared ancestry, even if present-day functions differ.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “homologous structure” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "biogeography",
+      "definition": "The study of the geographic distribution of organisms across space and time.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “biogeography” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "molecular evidence",
+      "definition": "Evidence from DNA, RNA, proteins, or other molecules used to test biological relationships.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “molecular evidence” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "evolutionary inference",
+      "definition": "A conclusion about evolutionary history drawn from multiple lines of evidence.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “evolutionary inference” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "allele frequency",
+      "definition": "The proportion of a particular allele among all copies of a gene in a population.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “allele frequency” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "natural selection",
+      "definition": "Differential survival and reproduction associated with heritable variation.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “natural selection” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "genetic drift",
+      "definition": "Random change in allele frequencies, especially influential in small populations.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “genetic drift” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "gene flow",
+      "definition": "Movement of alleles between populations through migration and reproduction.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “gene flow” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "population genetics",
+      "definition": "The study of how allele frequencies change within and among populations.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “population genetics” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "variation",
+      "definition": "Differences among individuals in a population.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “variation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "heritability",
+      "definition": "The proportion of variation in a trait statistically associated with genetic differences in a population and environment.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “heritability” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "fitness",
+      "definition": "Relative reproductive success in a particular environment.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “fitness” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "selection pressure",
+      "definition": "An environmental factor that influences differential survival or reproduction.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “selection pressure” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "adaptation",
+      "definition": "A heritable characteristic that increases reproductive success in a particular environment.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “adaptation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "speciation",
+      "definition": "The evolutionary process by which populations become distinct species.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “speciation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "reproductive isolation",
+      "definition": "Barriers that reduce or prevent gene flow between populations.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “reproductive isolation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "phylogeny",
+      "definition": "A hypothesis or representation of evolutionary relationships among organisms.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “phylogeny” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "common ancestry",
+      "definition": "Shared descent of different lineages from ancestral populations.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “common ancestry” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "worldview",
+      "definition": "A broad framework of beliefs and assumptions through which a person interprets evidence and meaning.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “worldview” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "producer",
+      "definition": "An organism that makes organic molecules from inorganic carbon using light or chemical energy.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “producer” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "consumer",
+      "definition": "An organism that obtains energy and matter by feeding on other organisms or organic material.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “consumer” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "trophic level",
+      "definition": "A feeding position within an ecosystem's energy-transfer structure.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “trophic level” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "primary productivity",
+      "definition": "The rate at which producers convert energy into new organic matter.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “primary productivity” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "ecological efficiency",
+      "definition": "The fraction of energy transferred from one trophic level to the next.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “ecological efficiency” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "carbon cycle",
+      "definition": "Movement of carbon among atmospheric, biological, oceanic, and geologic reservoirs.",
+      "weeks": [
+        32
+      ],
+      "context": "Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “carbon cycle” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "nitrogen cycle",
+      "definition": "Movement and chemical transformation of nitrogen among atmosphere, organisms, soil, and water.",
+      "weeks": [
+        32
+      ],
+      "context": "Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “nitrogen cycle” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "reservoir",
+      "definition": "A location where matter is stored within a biogeochemical cycle.",
+      "weeks": [
+        32
+      ],
+      "context": "Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “reservoir” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "flux",
+      "definition": "The rate at which matter or energy moves between parts of a system.",
+      "weeks": [
+        32
+      ],
+      "context": "Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “flux” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "feedback",
+      "definition": "A process in which a system's output influences subsequent system behavior.",
+      "weeks": [
+        32
+      ],
+      "context": "Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “feedback” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "exponential growth",
+      "definition": "Population growth at a constant per-capita rate without limiting resources.",
+      "weeks": [
+        33
+      ],
+      "context": "Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “exponential growth” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "logistic growth",
+      "definition": "Population growth that slows as density approaches carrying capacity.",
+      "weeks": [
+        33
+      ],
+      "context": "Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “logistic growth” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "carrying capacity",
+      "definition": "The population size an environment can sustain under particular conditions.",
+      "weeks": [
+        33
+      ],
+      "context": "Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “carrying capacity” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "competition",
+      "definition": "An interaction in which organisms use the same limited resource.",
+      "weeks": [
+        33
+      ],
+      "context": "Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “competition” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "predation",
+      "definition": "An interaction in which one organism captures and consumes another.",
+      "weeks": [
+        33
+      ],
+      "context": "Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “predation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "biodiversity",
+      "definition": "Variation in genes, species, and ecosystems within a region or across Earth.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “biodiversity” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "resilience",
+      "definition": "The capacity of a system to resist disturbance or recover after disruption.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “resilience” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "ecosystem service",
+      "definition": "A benefit people receive from ecosystems, such as pollination, water purification, or climate regulation.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “ecosystem service” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "habitat fragmentation",
+      "definition": "Division of continuous habitat into smaller, more isolated patches.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “habitat fragmentation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "restoration ecology",
+      "definition": "The science and practice of assisting recovery of degraded ecosystems.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “restoration ecology” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "criterion",
+      "definition": "A measurable standard used to judge whether a design or solution performs successfully.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “criterion” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "constraint",
+      "definition": "A requirement or limit that a solution must satisfy.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “constraint” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "stakeholder",
+      "definition": "A person or group affected by or able to influence a decision.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “stakeholder” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "evidence",
+      "definition": "Information used to support or evaluate a scientific claim or design decision.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “evidence” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "bioethics",
+      "definition": "The study of ethical questions arising from biology, biotechnology, medicine, and life-science research.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “bioethics” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "portfolio defense",
+      "definition": "A structured explanation of how selected work demonstrates learning and scientific reasoning.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “portfolio defense” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "synthesis",
+      "definition": "Integration of ideas and evidence from multiple topics into a coherent explanation.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “synthesis” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "limitation",
+      "definition": "A condition that restricts what a method, model, or dataset can support.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “limitation” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "revision",
+      "definition": "A change made to improve an explanation, model, method, or design in response to evidence.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “revision” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    },
+    {
+      "term": "scientific communication",
+      "definition": "Clear presentation of methods, evidence, reasoning, uncertainty, and conclusions to an audience.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “scientific communication” accurately in a Biology explanation, model, data interpretation, or evidence statement."
+    }
+  ]
+}
