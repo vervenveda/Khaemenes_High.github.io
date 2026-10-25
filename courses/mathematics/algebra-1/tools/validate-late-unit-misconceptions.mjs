@@ -62,7 +62,7 @@ for(const q of pool){
  const ds=Array.isArray(rec.distractors)?rec.distractors:[];
  const expected=q.options.map((_,i)=>i).filter(i=>i!==Number(q.answer)).sort((a,b)=>a-b);
  const actual=ds.map(d=>Number(d.optionIndex)).sort((a,b)=>a-b);
- assert.deepEqual(actual,expected,id+": distractor-index coverage drift");
+ assert.equal(JSON.stringify(actual),JSON.stringify(expected),id+": distractor-index coverage drift");
  for(const d of ds){
    assert.equal(q.options[Number(d.optionIndex)],d.optionText,id+" option "+d.optionIndex+": option-text drift");
    assert.match(String(d.misconceptionTag||""),/^[a-z0-9]+(?:-[a-z0-9]+)*$/,id+" option "+d.optionIndex+": invalid tag");
