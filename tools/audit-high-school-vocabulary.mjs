@@ -109,18 +109,13 @@ function auditSocialStudies(){
 
 function auditScience(){
  need(exists("courses/science/integrated-science-9/science-vocabulary-integration.js"),"Science 9 vocabulary integration exists");
- for(const [slug,label] of [["biology-10","Biology 10"],["chemistry-11","Chemistry 11"]]){
+ for(const [slug,label] of [["biology-10","Biology 10"],["chemistry-11","Chemistry 11"],["physics-engineering-12","Physics 12"]]){
   const bank=checkBank("courses/science/"+slug+"/vocabulary.json",label+" canonical vocabulary");
   if(bank){
    const byWeek=new Map([...Array(36)].map((_,i)=>[i+1,[]]));
    for(const t of bank.terms||[])for(const w of (Array.isArray(t.weeks)?t.weeks:(t.week?[t.week]:[])))if(byWeek.has(Number(w)))byWeek.get(Number(w)).push(t);
    for(let w=1;w<=36;w++)need(byWeek.get(w).length>=5,label+" Week "+String(w)+" has at least five vocabulary terms");
   }
- }
- {
-  const slug="physics-engineering-12",label="Physics 12";
-  const has=exists("courses/science/"+slug+"/vocabulary.json")||exists("courses/science/"+slug+"/data/vocabulary.json")||exists("courses/science/"+slug+"/units/unit-01/vocabulary.json");
-  warn(has,label+" canonical vocabulary pathway is still open");
  }
 }
 
@@ -130,10 +125,10 @@ function auditStudio(){
  if(!exists(file))return;
  const s=read(file);
  need(/Practice does not update official mastery or assessment records|does not replace.*mastery|formative/i.test(s),"Vocabulary Studio preserves formative/mastery boundary");
- for(const c of ["pre-algebra","algebra-1","geometry","algebra-2","social-studies-09","social-studies-10","english-9","english-10","english-11","english-12","biology-10","chemistry-11"]){
+ for(const c of ["pre-algebra","algebra-1","geometry","algebra-2","social-studies-09","social-studies-10","english-9","english-10","english-11","english-12","biology-10","chemistry-11","physics-engineering-12"]){
   need(s.includes('value="'+c+'"')||s.includes('"'+c+'"'),"Vocabulary Studio exposes "+c);
  }
- for(const c of ["physics-engineering-12","social-studies-11","social-studies-12"]){
+ for(const c of ["social-studies-11","social-studies-12"]){
   warn(s.includes(c),"Vocabulary Studio route for "+c+" is still open");
  }
 }
