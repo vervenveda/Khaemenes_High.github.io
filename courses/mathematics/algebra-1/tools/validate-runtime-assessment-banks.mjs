@@ -53,10 +53,16 @@ for(const q of dedicated){
 }
 
 const unit01=read("courses/mathematics/algebra-1/units/unit-01/assets/unit01.js");
-if(!unit01.includes('chosen.length>10')||!unit01.includes('chosen.slice(0,10)'))failures.push("Unit 01 runtime does not enforce the repaired 10-question lesson form");
+for(const marker of ["blueprintSelect","selectedOriginalIndex",'formVersion:"algebra1-runtime-balanced-v2"','evidenceSchema:"algebra1-answer-evidence-v2"','"unit01-abundant-v1"','"blueprint-low-overlap-v1"',"eligiblePoolSize"])if(!unit01.includes(marker))failures.push(`Unit 01 runtime missing abundant-retake/evidence marker: ${marker}`);
 if(unit01.includes('chosen.length>8')||unit01.includes('chosen.slice(0,8)'))failures.push("Unit 01 legacy 8-question slice is still present");
 
 const shared=loadWindow("courses/mathematics/algebra-1/assets/question-bank.js");
+const unit01Abundant=loadWindow("courses/mathematics/algebra-1/units/unit-01/assets/unit01-abundant-bank-v1.js");
+if(!Array.isArray(unit01Abundant)||unit01Abundant.length!==75)failures.push(`Unit 01 abundant bank: expected 75 items, found ${Array.isArray(unit01Abundant)?unit01Abundant.length:"non-array"}`);
+let unit01EligibleTotal=0;
+for(let lesson=1;lesson<=5;lesson++){const dedicatedRows=dedicated.filter(q=>Number(q.lesson)===lesson&&String(q.id).startsWith("u01-")),sharedRows=shared.filter(q=>Number(q.unit)===1&&Number(q.lesson)===lesson),abundantRows=Array.isArray(unit01Abundant)?unit01Abundant.filter(q=>Number(q.lesson)===lesson):[],eligible=dedicatedRows.length+sharedRows.length+abundantRows.length;unit01EligibleTotal+=eligible;if(dedicatedRows.length!==10)failures.push(`Unit 01 lesson ${lesson}: expected 10 dedicated items, found ${dedicatedRows.length}`);if(sharedRows.length!==5)failures.push(`Unit 01 lesson ${lesson}: expected 5 shared alternates, found ${sharedRows.length}`);if(abundantRows.length!==15)failures.push(`Unit 01 lesson ${lesson}: expected 15 abundant alternates, found ${abundantRows.length}`);if(eligible!==30)failures.push(`Unit 01 lesson ${lesson}: expected 30 eligible questions, found ${eligible}`);for(const q of abundantRows)if(!q.generatorId||q.generatorVersion!=="unit01-abundant-v1"||!q.misconceptionTag)failures.push(`${q.id}: missing stable generator/misconception metadata`)}
+const unit01LessonFiles=["lesson-01-algebraic-habits-notation-mathematical-argument.html","lesson-02-the-real-number-system-interval-representations.html","lesson-03-operations-properties-order-of-operations.html","lesson-04-units-rates-dimensional-analysis.html","lesson-05-precision-rounding-significant-figures-percent-error.html","lesson-06-algebra-readiness-synthesis-error-analysis.html"];
+for(let lesson=1;lesson<=6;lesson++){const html=read(`courses/mathematics/algebra-1/units/unit-01/lessons/${unit01LessonFiles[lesson-1]}`);if(!html.includes("../../../assets/question-bank.js"))failures.push(`Unit 01 lesson ${lesson}: shared alternate bank is not loaded`);if(!html.includes("../assets/unit01-abundant-bank-v1.js"))failures.push(`Unit 01 lesson ${lesson}: abundant bank is not loaded`)}
 if(!Array.isArray(shared)||shared.length!==435)failures.push(`Shared Algebra I bank: expected 435 items, found ${Array.isArray(shared)?shared.length:"non-array"}`);
 
 let alignedLessons=0,alignedItems=0;
@@ -95,6 +101,7 @@ for(const rel of [
  "courses/mathematics/algebra-1/service-worker-precache-v1.js"
 ]){
  if(!read(rel).includes("assets/question-bank.js"))failures.push(`${rel}: shared alternate bank is not offline-cached`);
+ if(!read(rel).includes("unit01-abundant-bank-v1.js"))failures.push(`${rel}: Unit 01 abundant bank is not offline-cached`);
 }
 
 const dedicatedMap=JSON.parse(read("courses/mathematics/algebra-1/units/dedicated-assessment-misconceptions-v1.json"));
@@ -121,6 +128,7 @@ const authored=posCounts(dedicated);
 const summary={
   dedicated:{items:dedicated.length,lessons:lessonCount,authoredAnswerPositions:authored,perUnit},
   repairedUnit01LessonLength:10,
+  unit01AbundantRetakes:{lessons:5,eligibleItemsPerLesson:30,eligibleItemsAcrossLessons01to05:unit01EligibleTotal,deliveredItems:10,immediatePriorFormOverlap:"minimized by unseen-first blueprint selection",evidenceSchema:"algebra1-answer-evidence-v2",bankVersion:"unit01-abundant-v1"},
   units02to09:{
     units:8,
     lessons:55,
