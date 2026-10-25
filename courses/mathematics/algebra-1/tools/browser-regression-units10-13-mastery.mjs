@@ -65,6 +65,8 @@ async function answerAllFirst(page){
  });
 }
 async function readRecord(page,key){return page.evaluate(k=>JSON.parse(localStorage.getItem(k)||"null"),key)}
+const expectedPools={10:60,11:120,12:60,13:60};
+const expectedBanks={10:"unit10-late-abundant-v1",11:"unit11-content-rebuild-v2",12:"unit12-late-abundant-v1",13:"unit13-late-abundant-v1"};
 const results=[];
 for(let unit=10;unit<=13;unit++){
  const page=await context.newPage(),errors=[];
@@ -83,18 +85,29 @@ for(let unit=10;unit<=13;unit++){
  const first=await readRecord(page,key);
  assert.ok(first&&Array.isArray(first.attempts)&&first.attempts.length===1,`Unit ${unit}: first attempt not persisted`);
  const a1=first.attempts[0];
- assert.equal(a1.result_schema,"khaemenes-algebra1-unit-mastery-v3",`Unit ${unit}: result schema drift`);
+ assert.equal(a1.result_schema,"khaemenes-algebra1-unit-mastery-v4",`Unit ${unit}: result schema drift`);
  assert.equal(a1.evidenceSchema,"algebra1-answer-evidence-v2",`Unit ${unit}: evidence schema missing`);
- assert.equal(a1.formVersion,"algebra1-late-unit-fixed-v3",`Unit ${unit}: form version missing`);
- assert.equal(a1.selectionPolicy,"fixed-lesson-balanced-high-reasoning-v1",`Unit ${unit}: selection policy missing`);
+ assert.equal(a1.formVersion,"algebra1-late-unit-monte-carlo-v1",`Unit ${unit}: form version missing`);
+ assert.equal(a1.selectionPolicy,"lesson-balanced-low-overlap-v1",`Unit ${unit}: selection policy missing`);
+ assert.equal(a1.bankVersion,expectedBanks[unit],`Unit ${unit}: bank version drift`);
+ assert.equal(a1.eligiblePoolSize,expectedPools[unit],`Unit ${unit}: eligible pool size drift`);
+ assert.ok(Number.isInteger(a1.formSeed)&&a1.formSeed>0,`Unit ${unit}: form seed missing`);
+ assert.equal(a1.immediatePriorOverlap,0,`Unit ${unit}: first form should have no prior overlap`);
  assert.equal(a1.total,20,`Unit ${unit}: formal mastery must grade 20 items`);
  assert.equal(a1.answerSnapshot?.length,20,`Unit ${unit}: answer snapshot incomplete`);
- assert.ok(a1.answerSnapshot.every(x=>Number.isInteger(x.selectedDisplayIndex)&&Number.isInteger(x.selectedOriginalIndex)&&Number.isInteger(x.correctDisplayIndex)&&Number.isInteger(x.correctOriginalIndex)&&typeof x.selectedText==="string"&&typeof x.correctText==="string"),`Unit ${unit}: reconstructable answer identity incomplete`);
+ assert.ok(a1.answerSnapshot.every(x=>Number.isInteger(x.selectedDisplayIndex)&&Number.isInteger(x.selectedOriginalIndex)&&Number.isInteger(x.correctDisplayIndex)&&Number.isInteger(x.correctOriginalIndex)&&Array.isArray(x.optionOrder)&&x.optionOrder.length===4&&typeof x.selectedText==="string"&&typeof x.correctText==="string"),`Unit ${unit}: reconstructable answer identity incomplete`);
+ const firstPositions=[0,0,0,0];for(const x of a1.answerSnapshot)firstPositions[x.correctDisplayIndex]++;
+ assert.deepEqual(firstPositions,[5,5,5,5],`Unit ${unit}: visible correct-answer positions are not balanced`);
+ const firstIds=[...a1.items];
 
  await page.locator("#reset").click();
  await page.waitForFunction(()=>document.querySelector("#score")?.disabled===false);
  assert.equal(await page.locator('#questions input[type="radio"]:disabled').count(),0,`Unit ${unit}: new attempt did not unlock controls`);
  assert.equal(await page.locator("#reset").innerText(),"Clear current answers",`Unit ${unit}: reset control did not return to pre-grade state`);
+ const freshMeta=await page.locator("#formMeta").innerText();
+ assert.match(freshMeta,/immediate prior-form overlap: 0\/20/i,`Unit ${unit}: fresh form does not report zero overlap`);
+ const freshPrompts=await page.locator(".question legend").allTextContents();
+ assert.equal(freshPrompts.length,20,`Unit ${unit}: fresh form did not render 20 questions`);
  await answerAllFirst(page);
  await page.locator("#score").click();
  await page.waitForFunction(()=>document.querySelector("#score")?.disabled===true);
@@ -102,15 +115,23 @@ for(let unit=10;unit<=13;unit++){
  assert.equal(second.attempts.length,2,`Unit ${unit}: second immutable attempt not appended`);
  assert.equal(second.attempts[1].attemptNumber,2,`Unit ${unit}: attempt numbering drift`);
  assert.equal(second.attempts[1].answerSnapshot?.length,20,`Unit ${unit}: second answer snapshot incomplete`);
+ const a2=second.attempts[1];
+ assert.equal(a2.immediatePriorOverlap,0,`Unit ${unit}: immediate retake overlap is not zero`);
+ assert.equal(a2.eligiblePoolSize,expectedPools[unit],`Unit ${unit}: retake lost eligible pool size`);
+ assert.equal(a2.selectionPolicy,"lesson-balanced-low-overlap-v1",`Unit ${unit}: retake selection policy drift`);
+ assert.equal(a2.bankVersion,expectedBanks[unit],`Unit ${unit}: retake bank version drift`);
+ assert.equal(a2.items.filter(id=>new Set(firstIds).has(id)).length,0,`Unit ${unit}: retake repeated a prior-form item`);
+ const secondPositions=[0,0,0,0];for(const x of a2.answerSnapshot)secondPositions[x.correctDisplayIndex]++;
+ assert.deepEqual(secondPositions,[5,5,5,5],`Unit ${unit}: retake answer positions are not balanced`);
 
  await page.reload({waitUntil:"load"});
  await page.locator("#score").waitFor({state:"visible",timeout:15000});
  const after=await readRecord(page,key);
  assert.equal(after.attempts.length,2,`Unit ${unit}: reload lost attempt evidence`);
  assert.equal(errors.length,0,`Unit ${unit}: browser errors: ${errors.join(" | ")}`);
- results.push({unit,attemptsAfterReload:after.attempts.length,evidenceSchema:after.attempts[1].evidenceSchema,eligiblePoolSize:after.attempts[1].eligiblePoolSize});
+ results.push({unit,attemptsAfterReload:after.attempts.length,evidenceSchema:after.attempts[1].evidenceSchema,eligiblePoolSize:after.attempts[1].eligiblePoolSize,immediatePriorOverlap:after.attempts[1].immediatePriorOverlap,bankVersion:after.attempts[1].bankVersion});
  await page.close();
 }
 await browser.close();await new Promise(resolve=>server.close(resolve));
 console.log("ALGEBRA I LATE-UNIT REAL-BROWSER REGRESSION: PASS");
-console.log(JSON.stringify({journey:"Unit 10 → Unit 11 → Unit 12 → Unit 13 formal mastery",checks:["20-item formal form","immutable submitted controls","explicit fresh-attempt control","v2 reconstructable answer evidence","second attempt appended","reload persistence","no browser/page console errors"],results},null,2));
+console.log(JSON.stringify({journey:"Unit 10 → Unit 11 → Unit 12 → Unit 13 formal mastery",checks:["20-item formal form from 60/120/60/60 eligible pools","immutable submitted controls","balanced visible answer positions","explicit fresh-attempt control","0/20 immediate retake overlap","saved form seed and v2 reconstructable answer evidence","second attempt appended","reload persistence","no browser/page console errors"],results},null,2));
