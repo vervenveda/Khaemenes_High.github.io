@@ -32,11 +32,13 @@ The validator compares the misconception map against the live bank. Any change t
 
 Map: `courses/mathematics/algebra-1/assets/assessment-misconceptions-v1.json`
 
-- **13 reviewed items**
-- **39 distractor rationales**
-- one reviewed unit-anchor item in every Algebra I unit;
+- **271 reviewed items**
+- **813 distractor rationales**
+- **62.3% of the 435-item Algebra I bank** reviewed;
+- one reviewed anchor in every Algebra I unit;
 - **13/13 unit coverage**;
-- each wrong option carries a kebab-case misconception tag and educator-facing rationale.
+- **all detected repeated prompt families containing three or more items are mapped**;
+- the learner-visible 2/1/1/1 answer-position balance remains unchanged.
 
 Examples of mapped misconceptions include:
 
@@ -48,6 +50,20 @@ Examples of mapped misconceptions include:
 - voluntary-response bias;
 - premature rounding;
 - hidden assumptions.
+
+## Algebra I repeated-family certification
+
+Algebra I now has **271/435 reviewed items** and **813 explicit distractor rationales**. A fresh normalized-family scan finds **zero unmapped repeated prompt families with three or more variants**.
+
+The reviewed families include linear equations and inequalities, absolute value, systems, slope and line forms, polynomial operations/factoring/zeros, exponents, radicals, coordinate distance, residuals, function rules/evaluation, quadratic structure, probability/statistics, percent error, unit conversion, and financial modeling.
+
+The Algebra local regression harness now fails if:
+
+- a reviewed prompt, answer key, explanation, or option text drifts;
+- misconception tags or rationales become malformed;
+- reviewed coverage drops below 271 items / 813 rationales;
+- a repeated prompt family of three or more items contains an unmapped variant;
+- the learner-visible 2/1/1/1 lesson option-balance contract disappears.
 
 ### Chemistry 11
 
@@ -108,8 +124,8 @@ The consolidated forensic assessment audits **1,710 objective items**.
 
 The first reviewed tranche therefore provides:
 
-- **352 / 1,710 reviewed items = 20.6%**
-- **1,056 explicit distractor rationales**
+- **610 / 1,710 reviewed items = 35.7%**
+- **1,830 explicit distractor rationales**
 
 The percentage is intentionally reported as a warning rather than disguised as complete coverage.
 
@@ -144,7 +160,7 @@ It also does not publish or inspect confidential secure-assessment distractors. 
 
 Recommended order:
 
-1. Algebra I remaining lesson-check families, prioritizing common error patterns;
+1. Algebra I remaining unique/singleton lesson-check items, prioritizing higher-complexity and capstone-style reasoning before declaring full-bank coverage;
 2. Biology 10 and Physics 12 evidence/quantitative anchors;
 3. English 10–12 passage-anchor items;
 4. Grade 12 Social Studies source/data transfer items;
