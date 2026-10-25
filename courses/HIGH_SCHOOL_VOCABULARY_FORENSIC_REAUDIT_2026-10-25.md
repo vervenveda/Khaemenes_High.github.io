@@ -83,3 +83,28 @@ Risk: whole-grade omissions such as Science 10–12 and Social Studies 11–12 c
 
 ## Certification boundary
 This audit is source-level only. It does not certify keyboard behavior, browser persistence, print/export, mobile layout, audio, or live randomized practice behavior.
+
+
+## Bubble 5 repair — Academy-wide vocabulary regression
+Status: **Closed at source/CI level on 2026-10-25**
+
+Implemented:
+- `tools/audit-high-school-vocabulary.mjs`
+- `.github/workflows/high-school-vocabulary-forensic-audit.yml`
+
+The validator now treats confirmed English 9–12, Mathematics, Social Studies 9–10, Science 9, shared Studio presence, and formative/mastery separation as required coverage. Known gaps remain explicit tracked warnings rather than silently passing:
+- Biology 10 canonical vocabulary pathway
+- Chemistry 11 canonical vocabulary pathway
+- Physics 12 canonical vocabulary pathway
+- Social Studies 11 canonical vocabulary pathway
+- Social Studies 12 canonical vocabulary pathway
+- Mathematics week/lesson-specific vocabulary routing
+- missing shared Studio routes for those open courses
+
+The workflow reruns the existing English and Mathematics vocabulary regressions after the academy-wide audit.
+
+GitHub Actions result:
+- **High School Vocabulary Forensic Audit · run 1: SUCCESS**
+- Commit under test: `ff383a131a19cd3d09335aebc3280ed18636b826`
+
+This closes the fragmented-regression bubble while preserving the remaining known gaps as visible technical debt. Live-browser vocabulary certification remains separate.
