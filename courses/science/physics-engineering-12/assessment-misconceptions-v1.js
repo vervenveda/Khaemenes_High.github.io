@@ -5,7 +5,7 @@ window.KhaemenesPhysics12Misconceptions={
   "title": "Physics 12 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/physics-engineering-12/question-bank.js",
-  "reviewedItemCount": 136,
+  "reviewedItemCount": 158,
   "items": {
     "legacy-1": {
       "itemId": "legacy-1",
@@ -3266,6 +3266,534 @@ window.KhaemenesPhysics12Misconceptions={
           "optionIndex": 3,
           "misconceptionTag": "phys-sup-w18-review-d3",
           "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w19-concept": {
+      "itemId": "phys-sup-w19-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Rigid-body points share angular velocity, while v=rω makes linear speed radius-dependent.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w19-concept-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w19-concept-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w19-concept-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w19-evidence": {
+      "itemId": "phys-sup-w19-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Angular-position data over time directly test rotational kinematics.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w19-evidence-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w19-evidence-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w19-evidence-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w19-model": {
+      "itemId": "phys-sup-w19-model",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Angular and linear quantities are related but distinct and depend on radius.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w19-model-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w19-model-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w19-model-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w20-concept": {
+      "itemId": "phys-sup-w20-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Torque depends on lever arm and perpendicular force component as well as force magnitude.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w20-concept-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w20-concept-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w20-concept-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w20-evidence": {
+      "itemId": "phys-sup-w20-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Rotational equilibrium requires net torque near zero.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w20-evidence-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w20-evidence-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w20-evidence-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w21-concept": {
+      "itemId": "phys-sup-w21-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "For a rigid rotating body, L=Iω.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w21-concept-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w21-concept-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w21-concept-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w21-evidence": {
+      "itemId": "phys-sup-w21-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "If external torque is negligible, changes in I should be balanced by changes in ω so L remains approximately constant.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w21-evidence-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w21-evidence-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w21-evidence-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w22-concept": {
+      "itemId": "phys-sup-w22-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "A rolling body translates and rotates simultaneously.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w22-concept-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w22-concept-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w22-concept-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w22-evidence": {
+      "itemId": "phys-sup-w22-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Matched ramp data with v and ω can test how rotational inertia changes energy partition.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w22-evidence-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w22-evidence-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w22-evidence-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w23-concept": {
+      "itemId": "phys-sup-w23-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Period is time per cycle and frequency is cycles per second, so f=1/T.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w23-concept-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w23-concept-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w23-concept-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w23-evidence": {
+      "itemId": "phys-sup-w23-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Timing many cycles reduces relative timing error and repeated trials improve reliability.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w23-evidence-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w23-evidence-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w23-evidence-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w24-concept": {
+      "itemId": "phys-sup-w24-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Mechanical waves transfer energy through oscillating matter and require a medium.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w24-concept-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w24-concept-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w24-concept-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w24-evidence": {
+      "itemId": "phys-sup-w24-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Simultaneous f, λ, and v measurements directly test the wave relation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w24-evidence-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w24-evidence-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w24-evidence-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w25-concept": {
+      "itemId": "phys-sup-w25-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Resonance is enhanced response near a natural frequency, with energy supplied by the driver.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w25-concept-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w25-concept-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w25-concept-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w25-evidence": {
+      "itemId": "phys-sup-w25-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "A resonance peak in response versus drive frequency is direct evidence.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w25-evidence-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w25-evidence-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w25-evidence-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w26-concept": {
+      "itemId": "phys-sup-w26-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Buoyant force equals the weight of displaced fluid in the ideal model.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w26-concept-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w26-concept-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w26-concept-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w26-evidence": {
+      "itemId": "phys-sup-w26-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Mass, displaced volume, and force/floating behavior directly test buoyancy predictions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w26-evidence-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w26-evidence-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w26-evidence-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w27-concept": {
+      "itemId": "phys-sup-w27-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Steady incompressible flow conserves volume flow rate.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w27-concept-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w27-concept-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w27-concept-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w27-evidence": {
+      "itemId": "phys-sup-w27-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Area-speed pairs directly test A₁v₁=A₂v₂.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w27-evidence-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w27-evidence-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w27-evidence-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w27-model": {
+      "itemId": "phys-sup-w27-model",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Bernoulli reasoning depends on assumptions such as steady, low-viscosity flow along a streamline.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w27-model-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w27-model-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w27-model-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w28-concept": {
+      "itemId": "phys-sup-w28-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Temperature is an intensive measure related to microscopic motion, while total internal energy depends on the whole system.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w28-concept-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w28-concept-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w28-concept-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w28-evidence": {
+      "itemId": "phys-sup-w28-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Mass, heat input, and temperature change under controlled material conditions directly test q=mcΔT.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w28-evidence-d1",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w28-evidence-d2",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w28-evidence-d3",
+          "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
         }
       ],
       "reviewedAt": "2026-10-25",
