@@ -6,7 +6,7 @@ import path from "node:path";
 import vm from "node:vm";
 import {fileURLToPath} from "node:url";
 
-const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
+const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../../../..");
 const MAP_REL="courses/mathematics/algebra-1/units/dedicated-assessment-misconceptions-v1.json";
 const failures=[];
 const warnings=[];
