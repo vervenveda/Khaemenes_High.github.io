@@ -84,8 +84,10 @@ function bind(items,key){
    :`Attempt ${attempt} · fixed blueprint · balanced answer positions. Answer all items before grading.`;
  }
  retry?.addEventListener("click",()=>{if(graded)fresh()});
- score.addEventListener("click",()=>{
+ score.addEventListener("click",async()=>{
   if(graded)return;
+  const resolver=window.KhaemenesAlgebra1Misconceptions;
+  if(resolver?.ready)await resolver.ready;
   let correct=0,complete=true;
   const snapshots=[];
   current.forEach((q,i)=>{
@@ -100,6 +102,7 @@ function bind(items,key){
    const selectedOriginalIndex=Array.isArray(q._optionOrder)?q._optionOrder[selectedDisplayIndex]:selectedDisplayIndex;
    const correctOriginalIndex=Number.isInteger(q._originalAnswer)?q._originalAnswer:q.answer;
    const ok=selectedDisplayIndex===q.answer;
+   const diagnostic=!ok?resolver?.lookup?.(q.id,selectedOriginalIndex):null;
    if(ok)correct++;
    snapshots.push({
     id:q.id,
@@ -109,9 +112,14 @@ function bind(items,key){
     correctDisplayIndex:q.answer,
     correctOriginalIndex,
     selectedText:q.options[selectedDisplayIndex],
-    correctText:q.options[q.answer]
+    correctText:q.options[q.answer],
+    misconceptionTag:diagnostic?.misconceptionTag||null,
+    misconceptionMapVersion:diagnostic?.mapVersion||null,
+    misconceptionMapSource:diagnostic?.mapSource||null,
+    misconceptionReviewStatus:diagnostic?.reviewStatus||null,
+    misconceptionLearnerFeedback:Boolean(diagnostic?.learnerFeedbackEligible)
    });
-   if(feedback){feedback.hidden=false;feedback.className="feedback "+(ok?"good":"bad");feedback.textContent=(ok?"Correct. ":"Review. ")+q.explanation;}
+   if(feedback){feedback.hidden=false;feedback.className="feedback "+(ok?"good":"bad");feedback.textContent=(ok?"Correct. ":"Review. ")+q.explanation+(!ok&&diagnostic?.learnerFeedbackEligible&&diagnostic.rationale?" Misconception check: "+diagnostic.rationale:"");}
   });
   if(!complete){const result=document.getElementById("result");if(result)result.textContent="Answer every item before scoring. Nothing was recorded.";return;}
   const percent=Math.round(100*correct/current.length);
