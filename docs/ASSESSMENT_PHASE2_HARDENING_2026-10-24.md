@@ -90,6 +90,16 @@ Run:
 
 `node tools/validate-phase2-assessment-evidence.mjs`
 
+
+## Canonical consolidated forensic assessment
+
+The four Phase 2 checks are now consolidated into one source-level forensic instrument:
+
+- `tools/forensic-assessment-audit.mjs`
+- report: `docs/FORENSIC_ASSESSMENT_CONSOLIDATED_2026-10-24.md`
+
+The compatibility command `tools/validate-phase2-assessment-evidence.mjs` now delegates to that instrument. The consolidated audit reports PASS/WARN/FAIL findings, exact and template-similarity signals, explanation/option/answer integrity, learner-visible answer-position protections, passage/source anchors, science transfer coverage, and the secure/public assessment boundary.
+
 ## Certification boundary
 
 These repository checks certify public assessment architecture, mappings, metadata and published cognitive blueprints. They **do not claim to inspect or certify confidential secure midterm/final item quality when those protected items are intentionally absent from the public repository**. Secure-item certification must occur inside the authorized assessment authority with fictional/test learner records where applicable.
