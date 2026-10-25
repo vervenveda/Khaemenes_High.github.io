@@ -108,3 +108,42 @@ GitHub Actions result:
 - Commit under test: `ff383a131a19cd3d09335aebc3280ed18636b826`
 
 This closes the fragmented-regression bubble while preserving the remaining known gaps as visible technical debt. Live-browser vocabulary certification remains separate.
+
+
+## Bubble 1 repair — Upper Science canonical vocabulary pathway
+Status: **Closed at source level on 2026-10-25**
+
+Implemented canonical 36-week vocabulary banks:
+- `courses/science/biology-10/vocabulary.json` — 178 unique terms
+- `courses/science/chemistry-11/vocabulary.json` — 169 unique terms
+- `courses/science/physics-engineering-12/vocabulary.json` — 168 unique terms
+
+Each course now has:
+- 36/36 weeks represented
+- exactly five defined weekly study terms
+- merged multi-week metadata for recurring terms
+- lesson/course context
+- course-aligned application prompts
+- formative-only status
+
+Shared Vocabulary Studio now:
+- exposes Biology 10, Chemistry 11, and Physics & Engineering 12
+- loads each canonical local bank
+- shows the Week control for Science
+- filters cards to the selected week
+- generates weekly randomized vocabulary practice
+- preserves separation from official 80% course mastery
+
+Course portals now provide direct Vocabulary Studio entry buttons for all three upper-science courses.
+
+The academy-wide validator now treats all three upper-science banks as required rather than tracked warnings and requires at least five vocabulary terms for every week.
+
+Source-level readback:
+- Biology: 178 unique terms; minimum 5 terms/week; 0 weeks below target
+- Chemistry: 169 unique terms; minimum 5 terms/week; 0 weeks below target
+- Physics: 168 unique terms; minimum 5 terms/week; 0 weeks below target
+- Shared Studio routes: all three present
+- Science local-bank loader: present
+- Science week card filtering: present
+
+GitHub Actions workflow run for the final validator promotion was queued at the time of this record. Live-browser practice, keyboard, print, and mobile certification remain separate.
