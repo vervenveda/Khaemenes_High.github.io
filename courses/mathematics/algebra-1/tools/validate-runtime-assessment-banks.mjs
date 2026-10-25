@@ -53,7 +53,7 @@ for(const q of dedicated){
 }
 
 const unit01=read("courses/mathematics/algebra-1/units/unit-01/assets/unit01.js");
-for(const marker of ["blueprintSelect","selectedOriginalIndex",'formVersion:"algebra1-runtime-balanced-v2"','evidenceSchema:"algebra1-answer-evidence-v2"','"unit01-abundant-v1"','"blueprint-low-overlap-v1"',"eligiblePoolSize"])if(!unit01.includes(marker))failures.push(`Unit 01 runtime missing abundant-retake/evidence marker: ${marker}`);
+for(const marker of ["blueprintSelect","selectedOriginalIndex",'formVersion:"algebra1-runtime-balanced-v2"','evidenceSchema:"algebra1-answer-evidence-v2"','"unit01-abundant-v1"','"blueprint-low-overlap-v1"',"eligiblePoolSize","KhaemenesAlgebra1Misconceptions","misconceptionMapVersion","misconceptionLearnerFeedback"])if(!unit01.includes(marker))failures.push(`Unit 01 runtime missing abundant-retake/evidence marker: ${marker}`);
 if(unit01.includes('chosen.length>8')||unit01.includes('chosen.slice(0,8)'))failures.push("Unit 01 legacy 8-question slice is still present");
 
 const shared=loadWindow("courses/mathematics/algebra-1/assets/question-bank.js");
@@ -79,11 +79,15 @@ for(let unit=2;unit<=9;unit++){
     "answerSnapshot:snapshots",
     "selectedOriginalIndex",
     'formVersion:"algebra1-runtime-balanced-v2"',
+    "KhaemenesAlgebra1Misconceptions",
+    "misconceptionMapVersion",
+    "misconceptionLearnerFeedback",
     "fresh();"
   ];
   for(const marker of requiredCore)if(!core.includes(marker))failures.push(`Unit ${u} core missing runtime marker: ${marker}`);
   if(!loader.includes("../../../assets/question-bank.js"))failures.push(`Unit ${u} loader does not load aligned shared question bank`);
   if(!loader.includes("Array.isArray(window.ALGEBRA1_QUESTIONS)"))failures.push(`Unit ${u} loader does not verify shared question bank before core launch`);
+  if(!loader.includes("misconception-resolver-v1.js"))failures.push(`Unit ${u} loader does not load misconception resolver`);
 
   for(const lesson of data.lessons||[]){
     const alt=shared.filter(q=>Number(q.unit)===unit&&Number(q.lesson)===Number(lesson.number));
@@ -102,6 +106,7 @@ for(const rel of [
 ]){
  if(!read(rel).includes("assets/question-bank.js"))failures.push(`${rel}: shared alternate bank is not offline-cached`);
  if(!read(rel).includes("unit01-abundant-bank-v1.js"))failures.push(`${rel}: Unit 01 abundant bank is not offline-cached`);
+ for(const asset of ["misconception-resolver-v1.js","assessment-misconceptions-v1.json","dedicated-assessment-misconceptions-v1.json"])if(!read(rel).includes(asset))failures.push(`${rel}: misconception runtime dependency is not offline-cached: ${asset}`);
 }
 
 const sharedMap=JSON.parse(read("courses/mathematics/algebra-1/assets/assessment-misconceptions-v1.json"));
@@ -162,6 +167,7 @@ const summary={
   },
   offlineAlternateBankCached:true,
   sharedAlternateMisconceptionMap:{mapped:alignedMapped,reviewed:alignedReviewed,provisional:alignedProvisional,distractorRationales:alignedDistractorRationales},
+  learnerMisconceptionRuntime:{resolver:"reviewed-only learner feedback",evidence:"stores misconception tag/map version/review status when mapped",offlineCached:true},
   dedicatedMisconceptionMap:{mappedItems:dedicatedMapItems.length,distractorRationales:dedicatedRationales,representativeReviewed,provisionalMapped,representativeUnits:[1,5,9]}
 };
 
