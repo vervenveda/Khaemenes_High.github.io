@@ -65,6 +65,25 @@ function mount(){
 if(global.document?.readyState==="loading")global.document.addEventListener("DOMContentLoaded",mount,{once:true});else mount();
 global.KhaemenesHighFormativeEvidence=Object.freeze({version:VERSION,dailyKey:DAILY_KEY,courseMeta,pageScope,authority:Object.freeze({awardsMastery:false,changesScore:false,unlocksCurriculum:false,changesPlacement:false,replacesPerformanceEvidence:false}),mount});
 
+/* Science Investigation Notebook loader.
+   Upper-science weekly architecture reserves Wednesday for data, Thursday for
+   investigation/design, and Friday for CER/synthesis. Load the shared handoff
+   on those evidence-rich days without editing 108 lesson files individually. */
+function attachScienceInvestigationNotebook(){
+ const path=String(global.location?.pathname||"").toLowerCase();
+ const match=path.match(/\/courses\/science\/(biology-10|chemistry-11|physics-engineering-12)\/weeks\/week-\d{2}\/lessons\/day-(\d{2})\.html$/);
+ if(!match)return;
+ const day=Number(match[2]);
+ if(day<3||day>5)return;
+ if(global.document.querySelector('script[src*="science-investigation-lesson-bridge.js"]'))return;
+ const script=global.document.createElement("script");
+ script.src=new URL("../science/science-investigation-lesson-bridge.js",global.document.currentScript?.src||global.location.href).href;
+ script.defer=true;
+ script.dataset.khaemenesScienceInvestigation="shared-v1";
+ (global.document.head||global.document.documentElement).appendChild(script);
+}
+if(global.document?.readyState==="loading")global.document.addEventListener("DOMContentLoaded",attachScienceInvestigationNotebook,{once:true});else attachScienceInvestigationNotebook();
+
 /* Social Studies printable portfolio bridge: provides a separate, ungraded record. */
 function attachSocialStudiesPortfolio(){
  const m=location.pathname.match(/\/social-studies\/grade-(09|10|11|12)\/(?:weeks\/)?week-(\d\d)\/student-packet\.html$/);
