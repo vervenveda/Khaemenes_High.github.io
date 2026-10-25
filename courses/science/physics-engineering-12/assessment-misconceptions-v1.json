@@ -5,7 +5,7 @@
   "title": "Physics 12 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/physics-engineering-12/question-bank.js",
-  "reviewedItemCount": 18,
+  "reviewedItemCount": 30,
   "items": {
     "legacy-1": {
       "itemId": "legacy-1",
@@ -434,6 +434,294 @@
           "optionIndex": 3,
           "misconceptionTag": "longer-time-zero-impulse",
           "rationale": "If momentum changes, impulse is nonzero even when the interaction lasts longer."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "legacy-19": {
+      "itemId": "legacy-19",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Torque magnitude depends on force and the perpendicular lever arm.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "torque-depends-on-mass-only",
+          "rationale": "Mass can influence force, but torque is set by force and perpendicular distance from the axis."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "torque-depends-on-velocity-only",
+          "rationale": "Velocity is not part of the basic torque expression τ=r⊥F."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "torque-depends-on-temperature",
+          "rationale": "Temperature is not a defining variable in mechanical torque."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "legacy-20": {
+      "itemId": "legacy-20",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Angular momentum is conserved when net external torque is negligible.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "angular-momentum-requires-zero-net-force",
+          "rationale": "Angular momentum conservation depends on external torque, not simply net force."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "angular-momentum-conserved-only-if-stopped",
+          "rationale": "Rotating systems can conserve angular momentum while continuing to rotate."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "moment-of-inertia-cannot-change",
+          "rationale": "Moment of inertia may change while angular speed changes so total angular momentum remains constant."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "legacy-21": {
+      "itemId": "legacy-21",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "A rolling object can have both translational and rotational kinetic energy.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "rolling-only-potential-energy",
+          "rationale": "A moving rolling object generally has kinetic energy, not only potential energy."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "rolling-has-no-angular-motion",
+          "rationale": "Rolling includes rotation about the object's center of mass."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "rolling-has-no-momentum",
+          "rationale": "A translating rolling object has linear momentum."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "legacy-22": {
+      "itemId": "legacy-22",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Frequency is the reciprocal of period: f=1/T.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "frequency-reciprocal-of-amplitude",
+          "rationale": "Amplitude measures maximum displacement, not cycle timing."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "frequency-reciprocal-of-mass",
+          "rationale": "Mass can affect some oscillators, but frequency is not defined as 1/mass."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "frequency-reciprocal-of-energy",
+          "rationale": "Frequency is a temporal rate, not the reciprocal of energy."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "legacy-23": {
+      "itemId": "legacy-23",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Wave speed equals frequency times wavelength: v=fλ.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "wave-speed-f-over-lambda",
+          "rationale": "Dimensional analysis shows f/λ does not have units of speed."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "wave-speed-lambda-over-f-squared",
+          "rationale": "This expression has incorrect dimensions for speed."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "wave-speed-newton2-confusion",
+          "rationale": "v=ma mixes wave variables with Newton's second law and is not a wave-speed relation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "legacy-24": {
+      "itemId": "legacy-24",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Resonance occurs when a driving frequency is near a system's natural frequency.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "resonance-requires-removing-frequencies",
+          "rationale": "Resonance requires periodic driving, not removal of all frequencies."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "resonance-requires-zero-amplitude",
+          "rationale": "Resonance is associated with enhanced amplitude under suitable conditions, not zero amplitude."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "resonance-prevents-interference",
+          "rationale": "Resonance and interference are distinct wave phenomena; resonance does not imply waves cannot interfere."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "legacy-25": {
+      "itemId": "legacy-25",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Archimedes' principle relates buoyant force to the weight of displaced fluid.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "buoyancy-depends-on-color",
+          "rationale": "Color does not determine displaced-fluid weight."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "buoyancy-electric-charge",
+          "rationale": "Electric charge is not the governing quantity in Archimedean buoyancy."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "buoyancy-sound-frequency",
+          "rationale": "Sound frequency does not define buoyant force."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "legacy-26": {
+      "itemId": "legacy-26",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Conduction transfers thermal energy through microscopic interactions in contacting matter.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "conduction-equals-convection",
+          "rationale": "Bulk fluid motion is convection, not conduction."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "conduction-equals-radiation",
+          "rationale": "Electromagnetic transfer is radiation, not conduction."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "conduction-equals-nuclear-decay",
+          "rationale": "Nuclear decay is unrelated to the ordinary mechanism of thermal conduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "legacy-27": {
+      "itemId": "legacy-27",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Electric field is force per unit positive test charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "electric-field-energy-per-mass",
+          "rationale": "Energy per mass is not electric field; electric potential is energy per charge."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "electric-field-current-over-resistance",
+          "rationale": "Current and resistance are circuit quantities and do not define electric field."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "electric-field-pressure",
+          "rationale": "Force per area defines pressure, not electric field."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "legacy-28": {
+      "itemId": "legacy-28",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "For an ohmic element, Ohm's law relates voltage, current, and resistance.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "ohms-law-newton2-confusion",
+          "rationale": "Force, mass, and acceleration belong to Newton's second law."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "ohms-law-wave-relation-confusion",
+          "rationale": "Frequency and wavelength describe waves, not the V-I-R relation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "ohms-law-pressure-volume-confusion",
+          "rationale": "Pressure and volume belong to fluid/thermodynamic relationships, not Ohm's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "legacy-29": {
+      "itemId": "legacy-29",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Electromagnetic induction involves emf associated with changing magnetic flux.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "static-mass-creates-current",
+          "rationale": "Mass by itself does not generate induction current."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "sound-directly-produces-charge",
+          "rationale": "Sound does not directly create electric charge in the induction model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "constant-field-always-induces-current",
+          "rationale": "A constant magnetic field does not by itself guarantee induced emf; changing flux is required."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "legacy-30": {
+      "itemId": "legacy-30",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Discrete digital states can be regenerated despite some noise, improving robust information transfer.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "digital-information-has-no-physical-carrier",
+          "rationale": "Digital information still requires physical storage or transmission media."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "digital-signals-faster-than-light",
+          "rationale": "Digital encoding does not permit faster-than-light information transfer."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "digital-information-cannot-be-copied",
+          "rationale": "Digital information can be copied; discrete encoding can make copies highly reliable."
         }
       ],
       "reviewedAt": "2026-10-25",
