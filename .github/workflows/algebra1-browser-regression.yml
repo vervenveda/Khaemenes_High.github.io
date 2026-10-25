@@ -25,6 +25,12 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Syntax-check Algebra I regression tools
+        run: |
+          node --check courses/mathematics/algebra-1/tools/validate-runtime-assessment-banks.mjs
+          node --check courses/mathematics/algebra-1/tools/validate-dedicated-misconceptions-v1.mjs
+          node --check courses/mathematics/algebra-1/tools/browser-regression-units01-05-09.mjs
+
       - name: Install Playwright Chromium
         run: |
           npm install --no-save playwright@1.56.1
