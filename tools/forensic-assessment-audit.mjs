@@ -94,16 +94,22 @@ function itemMetrics(items,accumulate=true){
 }
 function misconceptionMapMetrics(mapRel,bank,accumulate=true){
   const map=readJSON(mapRel),byId=new Map(bank.map(q=>[String(q.id),q])),issues=[];
-  const entries=Object.values(map.items||{});let distractorRationales=0;
+  const entries=Object.values(map.items||{});
+  let reviewedItems=0,provisionalItems=0,reviewedDistractorRationales=0,provisionalDistractorRationales=0;
   for(const rec of entries){
     const q=byId.get(String(rec.itemId));
     if(!q){issues.push(`${rec.itemId}: mapped item missing from bank`);continue}
-    if(rec.reviewStatus!=="reviewed-v1")issues.push(`${rec.itemId}: reviewStatus is not reviewed-v1`);
+    const reviewed=rec.reviewStatus==="reviewed-v1";
+    const provisional=rec.reviewStatus==="family-provisional-v1";
+    if(reviewed)reviewedItems++;
+    else if(provisional)provisionalItems++;
+    else issues.push(`${rec.itemId}: unsupported reviewStatus ${rec.reviewStatus}`);
     if(rec.prompt!==q.prompt)issues.push(`${rec.itemId}: prompt drift`);
     if(Number(rec.answerIndex)!==Number(q.answer))issues.push(`${rec.itemId}: answer-key drift`);
     if(rec.correctRationale!==q.explanation)issues.push(`${rec.itemId}: correct-rationale drift`);
     const ds=Array.isArray(rec.distractors)?rec.distractors:[];
-    distractorRationales+=ds.length;
+    if(reviewed)reviewedDistractorRationales+=ds.length;
+    else if(provisional)provisionalDistractorRationales+=ds.length;
     const expected=q.options.map((_,i)=>i).filter(i=>i!==q.answer).sort((a,b)=>a-b);
     const actual=ds.map(d=>Number(d.optionIndex)).sort((a,b)=>a-b);
     if(JSON.stringify(expected)!==JSON.stringify(actual))issues.push(`${rec.itemId}: incomplete distractor-index coverage`);
@@ -115,15 +121,22 @@ function misconceptionMapMetrics(mapRel,bank,accumulate=true){
     }
   }
   if(accumulate){
-    report.totals.itemsWithReviewedMisconceptionMap+=entries.length;
-    report.totals.structuredDistractorRationales+=distractorRationales;
+    report.totals.itemsWithReviewedMisconceptionMap+=reviewedItems;
+    report.totals.structuredDistractorRationales+=reviewedDistractorRationales;
+    report.totals.itemsWithProvisionalMisconceptionMap+=provisionalItems;
+    report.totals.provisionalDistractorRationales+=provisionalDistractorRationales;
   }
   return {
     schema:map.schema,
-    reviewedItems:entries.length,
-    distractorRationales,
+    mappedItems:reviewedItems+provisionalItems,
+    reviewedItems,
+    provisionalItems,
+    distractorRationales:reviewedDistractorRationales,
+    provisionalDistractorRationales,
+    totalDistractorRationales:reviewedDistractorRationales+provisionalDistractorRationales,
     bankItems:bank.length,
-    reviewedItemPct:pct(entries.length,bank.length),
+    reviewedItemPct:pct(reviewedItems,bank.length),
+    mappedItemPct:pct(reviewedItems+provisionalItems,bank.length),
     issues
   };
 }
@@ -242,7 +255,10 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     }
     if(unit===1){
       const u1=read("courses/mathematics/algebra-1/units/unit-01/assets/unit01.js");
-      if(!u1.includes('chosen.length>10')||!u1.includes('chosen.slice(0,10)')||u1.includes('chosen.slice(0,8)'))runtimeIssues.push("Unit 01 lesson runtime is not on the 10-question contract");
+      const abundant=loadWindowBank("courses/mathematics/algebra-1/units/unit-01/assets/unit01-abundant-bank-v1.js");
+      const abundantOkay=abundant.length===75&&[1,2,3,4,5].every(lesson=>abundant.filter(q=>Number(q.lesson)===lesson).length===15);
+      const tenQuestionBlueprint=u1.includes("function blueprintSelect(pool,previousIds,count=10)")&&u1.includes("dedicatedBank.slice(0,10)")&&u1.includes("blueprintSelect(eligibleBank,previousIds,10)");
+      if(!tenQuestionBlueprint||!abundantOkay||u1.includes('chosen.slice(0,8)'))runtimeIssues.push("Unit 01 lesson runtime is not on the 10-of-30 blueprint contract");
     }else{
       const unitCore=read(`courses/mathematics/algebra-1/units/unit-${u}/assets/unit${u}-core.js`);
       const unitLoader=read(`courses/mathematics/algebra-1/units/unit-${u}/assets/unit${u}.js`);
@@ -308,8 +324,8 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     read("courses/mathematics/algebra-1/service-worker.js").includes("assets/question-bank.js")&&read("courses/mathematics/algebra-1/service-worker-precache-v1.js").includes("assets/question-bank.js")?"PASS":"FAIL",
     "The aligned alternate bank is included in both Algebra I offline cache manifests."));
   checks.push(addFinding("Algebra I","algebra1-misconception-map-v1-shared-bank",
-    dq.issues.length===0&&dq.reviewedItems===271&&dq.distractorRationales===813?"PASS":"FAIL",
-    `${dq.reviewedItems}/${dq.bankItems} shared-bank items are reviewed in the v1 companion map with ${dq.distractorRationales} explicit distractor rationales. Drift issues: ${dq.issues.length}.`,dq));
+    dq.issues.length===0&&dq.reviewedItems===271&&dq.provisionalItems===70&&dq.distractorRationales===813&&dq.provisionalDistractorRationales===210?"PASS":"FAIL",
+    `${dq.mappedItems}/${dq.bankItems} shared-bank items are mapped: ${dq.reviewedItems} reviewed with ${dq.distractorRationales} reviewed distractor rationales and ${dq.provisionalItems} provisional with ${dq.provisionalDistractorRationales} provisional rationales. Drift issues: ${dq.issues.length}.`,dq));
   checks.push(addFinding("Algebra I","algebra1-dedicated-misconception-coverage",
     dedicatedMapped===dedicated.length&&dedicatedMapIssues.length===0?"PASS":"FAIL",
     `${dedicatedMapped}/${dedicated.length} runtime-authoritative dedicated Unit 01–09 items now have direct misconception-map entries with ${dedicatedReviewed} representative-reviewed and ${dedicatedProvisional} provisional lesson-family mappings. Drift issues: ${dedicatedMapIssues.length}.`,
@@ -319,7 +335,7 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     `Shared-bank exact duplicate prompts: ${m.exactDuplicateItems}. Template-similarity signal: ${m.templateClusterPct}% (diagnostic only; repeated mathematical structures are not automatically defects).`,m));
   if(runtimeIssues.length)checks.push(addFinding("Algebra I","algebra1-runtime-contract-regressions","FAIL",runtimeIssues.join("; "),{issues:runtimeIssues}));
   area("Algebra I",
-    `Runtime-aware certification now distinguishes 610 dedicated Units 01–09 items from the 435-item shared bank; Unit 02–09 retakes use 55 aligned 15-item lesson pools and preserve selected-answer evidence.`,
+    `Runtime-aware certification distinguishes 610 dedicated Units 01–09 items from the 435-item shared bank; Unit 01 Lessons 01–05 use 30-item eligible pools for 10-question forms, while Unit 02–09 retakes use 55 aligned 15-item lesson pools and preserve selected-answer evidence.`,
     {...m,misconceptionMap:dq,sharedBankItems:bank.length,dedicatedRuntimeItems:dedicated.length,dedicatedLessons,alignedAlternateItems:alignedAlternates,dedicatedAuthoredAnswerPositions:authoredDedicatedPositions,dedicatedMisconceptionCoveragePct:pct(dedicatedMapped,dedicated.length),dedicatedRepresentativeReviewed:dedicatedReviewed,dedicatedProvisionalMapped:dedicatedProvisional,dedicatedMapIssues:dedicatedMapIssues.length},
     checks);
 }
