@@ -19,12 +19,22 @@ function buildDraft(){
  const main=text("#mainNote"),thought=text("#thoughtNote");
  const d=day();
  const draft={version:1,learnerId:id,grade:grade(),week:week(),day:d,course:course(),title,sourceUrl:location.href,createdAt:new Date().toISOString(),question:objective,method:"",evidence:"",analysis:"",claim:"",limitations:"",next:""};
- if(d===1){draft.prediction=main;draft.variables=thought;draft.evidence=main}
- else if(d===2){draft.method=main;draft.limitations=thought;draft.evidence=main}
- else if(d===3){draft.analysis=main;draft.limitations=thought;draft.evidence=main}
- else if(d===4){draft.prediction=main;draft.variables=main;draft.method=main;draft.analysis=main;draft.limitations=thought;draft.evidence=main}
- else if(d===5){draft.claim=main;draft.limitations=thought;draft.next=main;draft.evidence=main}
- else{draft.evidence=main;draft.limitations=thought}
+ const cid=draft.course;
+ if(cid==="chemistry-11"){
+  if(d===1){draft.prediction=main;draft.variables=main;draft.limitations=thought;draft.evidence=main}
+  else if(d===2){draft.method=main;draft.analysis=main;draft.limitations=thought}
+  else if(d===3){draft.analysis=main;draft.evidence=main;draft.limitations=thought}
+  else if(d===4){draft.variables=main;draft.method=main;draft.evidence=main;draft.analysis=main;draft.limitations=thought}
+  else if(d===5){draft.claim=main;draft.evidence=main;draft.analysis=main;draft.limitations=thought;draft.next=thought}
+  else{draft.evidence=main;draft.limitations=thought}
+ }else{
+  if(d===1){draft.prediction=main;draft.variables=thought;draft.evidence=main}
+  else if(d===2){draft.method=main;draft.limitations=thought;draft.evidence=main}
+  else if(d===3){draft.analysis=main;draft.limitations=thought;draft.evidence=main}
+  else if(d===4){draft.prediction=main;draft.variables=main;draft.method=main;draft.analysis=main;draft.limitations=thought;draft.evidence=main}
+  else if(d===5){draft.claim=main;draft.limitations=thought;draft.next=main;draft.evidence=main}
+  else{draft.evidence=main;draft.limitations=thought}
+ }
  return draft;
 }
 function mount(){
