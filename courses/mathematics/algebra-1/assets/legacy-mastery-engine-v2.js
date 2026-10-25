@@ -6,7 +6,7 @@ const unit=D.units.find(u=>u.number===R.unit),lessons=D.lessons.filter(l=>l.unit
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeParse=(raw,fallback)=>{try{const v=JSON.parse(raw);return v&&typeof v==="object"?v:fallback}catch{return fallback}};
 function state(){const p=safeParse(localStorage.getItem(KEY),{pathway:"Core",completed:[],scores:{},reflections:{},attempts:[]});p.completed=Array.isArray(p.completed)?p.completed:[];p.scores=p.scores&&typeof p.scores==="object"?p.scores:{};p.attempts=Array.isArray(p.attempts)?p.attempts:[];return p}
-function save(p){try{localStorage.setItem(KEY,JSON.stringify(p))}catch{}}
+function save(p){try{localStorage.setItem(KEY,JSON.stringify(p));return true}catch{return false}}
 function ranked(items){return [...items].sort((a,b)=>((Number(b.difficulty)||0)-(Number(a.difficulty)||0))||String(a.id||"").localeCompare(String(b.id||"")))}
 function blueprint(){if(!lessons.length)return[];const base=Math.floor(COUNT/lessons.length),remainder=COUNT%lessons.length,out=[],used=new Set();lessons.forEach((lesson,i)=>{const need=base+(i<remainder?1:0),pool=ranked(Q.filter(q=>q.unit===R.unit&&q.lesson===lesson.number));pool.slice(0,need).forEach(q=>{out.push(q);used.add(q.id)})});if(out.length<COUNT)ranked(Q.filter(q=>q.unit===R.unit&&!used.has(q.id))).slice(0,COUNT-out.length).forEach(q=>out.push(q));return out.slice(0,COUNT)}
 function hashSeed(text){let h=2166136261;for(let i=0;i<text.length;i++){h^=text.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
@@ -26,12 +26,97 @@ function prerequisites(A){
 }
 function run(){
  const A=window.KhaemenesAlgebra1MasteryAuthority,p=prerequisites(A);if(p){lock(p.title,p.detail,p.href);return}
- const items=blueprint(),complete=items.length===COUNT&&lessons.every(l=>items.some(q=>q.lesson===l.number));
+ const items=blueprint(),eligiblePool=Q.filter(q=>Number(q.unit)===Number(R.unit)),complete=items.length===COUNT&&lessons.every(l=>items.some(q=>q.lesson===l.number));
+ let graded=false,attemptNumber=(state().attempts.length||0)+1;
  const questions=items.map((q,i)=>`<article class="question"><fieldset><legend>${i+1}. ${esc(q.prompt)}</legend><div class="options">${optionOrder(q).map(j=>`<label class="option"><input type="radio" name="q${i}" value="${j}"><span>${esc(q.options[j])}</span></label>`).join("")}</div><div class="feedback" id="fb${i}" hidden></div></fieldset></article>`).join("");
- $("#main").innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Unit ${String(R.unit).padStart(2,"0")} · Formal mastery evidence</p><h1>${esc(unit?.title||"Mastery Check")}</h1><p class="lead">20 fixed, lesson-balanced definitive-answer questions · 80% target</p><div class="actions no-print"><a class="btn" href="${root}">Course Home</a><a class="btn" href="${root}units/unit-${String(R.unit).padStart(2,"0")}/">Unit Home</a><button class="btn" id="printButton" type="button">Print</button></div></div></section><section class="block"><div class="wrap practice-layout"><article class="card">${complete?`<div id="questions">${questions}</div><div class="actions"><button class="btn primary" id="score">Submit & Score</button><button class="btn" id="reset">Reset</button><button class="btn" id="export">Export Evidence</button></div><p id="scoreMsg" role="status" aria-live="polite" aria-atomic="true"></p>`:`<p class="notice"><strong>Assessment configuration incomplete.</strong> This unit does not currently provide enough lesson-balanced items for a formal 20-question mastery record. Do not issue mastery from this page.</p>`}</article><aside class="card practice-side"><h3>Blueprint contract</h3><p>Every lesson is represented. Item selection is stable across attempts and favors higher-reasoning bank items before foundational items.</p><p><strong>Mastery:</strong> 16/20 correct (80%).</p><p class="notice">Browser-local results are editable learning evidence, not digitally signed or independently authenticated records.</p></aside></div></section>`;
- function score(){let correct=0,all=true;items.forEach((q,i)=>{const selected=document.querySelector(`input[name=q${i}]:checked`),f=$(`#fb${i}`);f.hidden=false;if(!selected){all=false;f.className="feedback bad";f.textContent="Choose an answer.";return}const right=Number(selected.value)===q.answer;if(right)correct++;f.className=`feedback ${right?"good":"bad"}`;f.textContent=`${right?"Correct.":"Review."} ${q.explanation}`});if(!all){$("#scoreMsg").textContent="Answer every item before scoring.";return}const pct=Math.round(correct/items.length*100),s=state();s.scores.mastery=Math.max(Number(s.scores.mastery)||0,pct);if(pct>=MASTERY&&!s.completed.includes("mastery"))s.completed.push("mastery");s.attempts.push({result_schema:"khaemenes-algebra1-unit-mastery-v2",unit:R.unit,score:pct,correct,total:items.length,mastery_threshold:MASTERY,mastery_met:pct>=MASTERY,item_ids:items.map(q=>q.id),submitted_at:new Date().toISOString(),trust:{classification:"browser-local-public-self-check",authoritative:false,editable_storage:true,digitally_signed:false}});save(s);$("#scoreMsg").innerHTML=`<span class="score">${pct}%</span> · ${correct}/${items.length} correct · Best ${s.scores.mastery}% saved.${pct>=MASTERY?" · Mastery demonstrated.":" · Review, correct, and retry."}`}
- function reset(){document.querySelectorAll('input[type="radio"]').forEach(x=>x.checked=false);document.querySelectorAll(".feedback").forEach(x=>x.hidden=true);$("#scoreMsg").textContent=""}
- function exportEvidence(){const s=state(),payload={schema:"khaemenes-algebra1-unit-mastery-export-v2",exported_at:new Date().toISOString(),unit:R.unit,record:s,trust:{authoritative:false,digitally_signed:false,editable_storage:true}};const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`algebra1-unit-${String(R.unit).padStart(2,"0")}-mastery.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),500)}
+ $("#main").innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Unit ${String(R.unit).padStart(2,"0")} · Formal mastery evidence</p><h1>${esc(unit?.title||"Mastery Check")}</h1><p class="lead">20 lesson-balanced definitive-answer questions · 80% target</p><div class="actions no-print"><a class="btn" href="${root}">Course Home</a><a class="btn" href="${root}units/unit-${String(R.unit).padStart(2,"0")}/">Unit Home</a><button class="btn" id="printButton" type="button">Print</button></div></div></section><section class="block"><div class="wrap practice-layout"><article class="card">${complete?`<div id="questions">${questions}</div><div class="actions"><button class="btn primary" id="score">Submit & Score</button><button class="btn" id="reset">Clear current answers</button><button class="btn" id="export">Export Evidence</button></div><p id="scoreMsg" role="status" aria-live="polite" aria-atomic="true"></p>`:`<p class="notice"><strong>Assessment configuration incomplete.</strong> This unit does not currently provide enough lesson-balanced items for a formal 20-question mastery record. Do not issue mastery from this page.</p>`}</article><aside class="card practice-side"><h3>Blueprint contract</h3><p>Every lesson is represented. This integrity pass preserves the current fixed item blueprint while locking submitted answers and recording reconstructable evidence. Fresh question-set selection is the next migration.</p><p><strong>Mastery:</strong> 16/20 correct (80%).</p><p class="notice">Browser-local results are editable learning evidence, not digitally signed or independently authenticated records.</p></aside></div></section>`;
+ function score(){
+  if(graded)return;
+  let correct=0,all=true;
+  const answerSnapshot=[];
+  items.forEach((q,i)=>{
+   const selected=document.querySelector(`input[name=q${i}]:checked`),f=$(`#fb${i}`);
+   f.hidden=false;
+   if(!selected){all=false;f.className="feedback bad";f.textContent="Choose an answer.";return}
+   const selectedOriginalIndex=Number(selected.value),order=optionOrder(q),selectedDisplayIndex=order.indexOf(selectedOriginalIndex),correctOriginalIndex=Number(q.answer),correctDisplayIndex=order.indexOf(correctOriginalIndex),right=selectedOriginalIndex===correctOriginalIndex;
+   if(right)correct++;
+   f.className=`feedback ${right?"good":"bad"}`;
+   f.textContent=`${right?"Correct.":"Review."} ${q.explanation}`;
+   answerSnapshot.push({
+    id:q.id,
+    lesson:Number(q.lesson),
+    category:q.category||null,
+    difficulty:Number(q.difficulty)||null,
+    source:"shared-base",
+    selectedDisplayIndex,
+    selectedOriginalIndex,
+    correctDisplayIndex,
+    correctOriginalIndex,
+    selectedText:q.options[selectedOriginalIndex]??null,
+    correctText:q.options[correctOriginalIndex]??q.answer_text??null,
+    misconceptionTag:null,
+    misconceptionMapVersion:null,
+    misconceptionMapSource:null,
+    misconceptionReviewStatus:null,
+    misconceptionLearnerFeedback:false
+   });
+  });
+  if(!all){$("#scoreMsg").textContent="Answer every item before scoring.";return}
+  const pct=Math.round(correct/items.length*100),record=state();
+  record.scores.mastery=Math.max(Number(record.scores.mastery)||0,pct);
+  if(pct>=MASTERY&&!record.completed.includes("mastery"))record.completed.push("mastery");
+  const attempt={
+   result_schema:"khaemenes-algebra1-unit-mastery-v3",
+   evidenceSchema:"algebra1-answer-evidence-v2",
+   formVersion:"algebra1-late-unit-fixed-v3",
+   bankVersion:"shared-question-bank-v1",
+   selectionPolicy:"fixed-lesson-balanced-high-reasoning-v1",
+   unit:R.unit,
+   score:pct,
+   correct,
+   total:items.length,
+   mastery_threshold:MASTERY,
+   mastery_met:pct>=MASTERY,
+   attemptNumber,
+   eligiblePoolSize:eligiblePool.length,
+   formSources:["shared-base"],
+   items:items.map(q=>q.id),
+   item_ids:items.map(q=>q.id),
+   answerSnapshot,
+   submitted_at:new Date().toISOString(),
+   trust:{classification:"browser-local-public-self-check",authoritative:false,editable_storage:true,digitally_signed:false}
+  };
+  record.attempts.push(attempt);
+  const persisted=save(record);
+  graded=true;
+  document.querySelectorAll('#questions input[type="radio"]').forEach(input=>input.disabled=true);
+  const scoreButton=$("#score"),resetButton=$("#reset");
+  if(scoreButton){scoreButton.disabled=true;scoreButton.textContent="Attempt graded"}
+  if(resetButton)resetButton.textContent="Begin a new attempt";
+  if(persisted){
+   attemptNumber=record.attempts.length+1;
+   $("#scoreMsg").innerHTML=`<span class="score">${pct}%</span> · ${correct}/${items.length} correct · Best ${record.scores.mastery}% saved.${pct>=MASTERY?" · Mastery demonstrated.":" · Review, correct, and begin a new attempt."}`;
+  }else{
+   $("#scoreMsg").innerHTML=`<span class="score">${pct}%</span> · ${correct}/${items.length} correct · <strong>No mastery credit was recorded because this browser could not save the attempt.</strong> Export evidence if needed, then restore browser storage before retrying.`;
+  }
+ }
+ function reset(){
+  if(graded){
+   graded=false;
+   attemptNumber+=1;
+   document.querySelectorAll('#questions input[type="radio"]').forEach(input=>{input.checked=false;input.disabled=false});
+   document.querySelectorAll(".feedback").forEach(x=>x.hidden=true);
+   const scoreButton=$("#score"),resetButton=$("#reset");
+   if(scoreButton){scoreButton.disabled=false;scoreButton.textContent="Submit & Score"}
+   if(resetButton)resetButton.textContent="Clear current answers";
+   $("#scoreMsg").textContent="";
+   return;
+  }
+  document.querySelectorAll('#questions input[type="radio"]').forEach(x=>x.checked=false);
+  document.querySelectorAll(".feedback").forEach(x=>x.hidden=true);
+  $("#scoreMsg").textContent="";
+ }
+ function exportEvidence(){const s=state(),payload={schema:"khaemenes-algebra1-unit-mastery-export-v3",evidenceSchema:"algebra1-answer-evidence-v2",exported_at:new Date().toISOString(),unit:R.unit,record:s,trust:{authoritative:false,digitally_signed:false,editable_storage:true}};const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`algebra1-unit-${String(R.unit).padStart(2,"0")}-mastery.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),500)}
  if(complete){$("#score").onclick=score;$("#reset").onclick=reset;$("#export").onclick=exportEvidence}
  $("#printButton")?.addEventListener("click",()=>print());
  $("#themeToggle")?.addEventListener("click",()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==="light"?"dark":"light"});
