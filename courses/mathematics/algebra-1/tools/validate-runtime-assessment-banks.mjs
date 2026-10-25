@@ -131,7 +131,8 @@ const summary={
     retake:"5 aligned alternate items + 5 dedicated items, with balanced learner-visible answer positions",
     answerEvidence:"versioned immutable answerSnapshot with delivered/original option mapping"
   },
-  offlineAlternateBankCached:true,\n  dedicatedMisconceptionMap:{mappedItems:dedicatedMapItems.length,distractorRationales:dedicatedRationales,representativeReviewed,provisionalMapped,representativeUnits:[1,5,9]}
+  offlineAlternateBankCached:true,
+  dedicatedMisconceptionMap:{mappedItems:dedicatedMapItems.length,distractorRationales:dedicatedRationales,representativeReviewed,provisionalMapped,representativeUnits:[1,5,9]}
 };
 
 if(failures.length){
