@@ -53,11 +53,14 @@ Examples of mapped misconceptions include:
 
 Map: `courses/science/chemistry-11/assessment-misconceptions-v1.json`
 
-- **205 reviewed items**
-- **615 distractor rationales**
+- **339 reviewed items**
+- **1,017 distractor rationales**
 - legacy concept spine spanning **U1–U9 plus capstone**;
-- **all 25 high-repetition quantitative families are now fully mapped**;
-- **60.5% of the 339-item Chemistry bank** now has reviewed misconception mapping.
+- **all 25 high-repetition quantitative families are fully mapped**;
+- the repeated concept/model/evidence families are fully mapped;
+- the U0–U9 evidence/model spine and capstone evidence/model spine are fully mapped;
+- **100% of the 339-item public Chemistry bank** now has reviewed misconception mapping;
+- `distractorMappingRequired: true` makes any future unmapped or drifted Chemistry item a validation failure.
 
 Examples include:
 
@@ -72,7 +75,7 @@ Examples include:
 
 ## Quantitative-family tranche
 
-The Chemistry quantitative-family passes add **175 quantitative items / 525 distractor rationales** beyond the original 30-item concept-spine tranche. These are not generic error labels. The mapped alternatives identify recurring quantitative mistakes including:
+The Chemistry rollout now covers the complete public bank. The quantitative-family passes added **175 quantitative items / 525 distractor rationales**, followed by the repeated concept/model/evidence families and the U0–U9 plus capstone evidence/model spine. These are not generic error labels. The mapped alternatives identify recurring quantitative mistakes including:
 
 - doubling or halving a density result;
 - confusing atomic number, mass number, charge, electrons, and neutrons;
@@ -87,14 +90,26 @@ The Chemistry quantitative-family passes add **175 quantitative items / 525 dist
 
 Chemistry's local question-bank auditor now validates the misconception map for prompt, answer, option-text, tag, and rationale drift. A fresh family scan confirms all **25 high-repetition families** are fully represented with no unmapped variants.
 
+## Chemistry 11 full-bank certification
+
+Chemistry 11 is the first audited course in this rollout to reach **complete public-bank misconception coverage**:
+
+- **339 / 339 public selected-response items reviewed**;
+- **1,017 distractor rationales**;
+- **0 prompt/key/option drift errors** in the final source-level regression;
+- **100% item coverage**;
+- `distractorMappingRequired: true`.
+
+The dedicated validator and Chemistry local bank auditor now treat loss of coverage as a hard failure rather than a warning.
+
 ## Current Academy-wide coverage
 
 The consolidated forensic assessment audits **1,710 objective items**.
 
 The first reviewed tranche therefore provides:
 
-- **218 / 1,710 reviewed items = 12.7%**
-- **654 explicit distractor rationales**
+- **352 / 1,710 reviewed items = 20.6%**
+- **1,056 explicit distractor rationales**
 
 The percentage is intentionally reported as a warning rather than disguised as complete coverage.
 
@@ -129,10 +144,10 @@ It also does not publish or inspect confidential secure-assessment distractors. 
 
 Recommended order:
 
-1. Chemistry 11 remaining long-tail public-bank items, prioritizing evidence/model/application items with diagnostically meaningful distractors;
-2. Algebra I remaining lesson-check families, prioritizing common error patterns;
-3. Biology 10 and Physics 12 evidence/quantitative anchors;
-4. English 10–12 passage-anchor items;
-5. Grade 12 Social Studies source/data transfer items.
+1. Algebra I remaining lesson-check families, prioritizing common error patterns;
+2. Biology 10 and Physics 12 evidence/quantitative anchors;
+3. English 10–12 passage-anchor items;
+4. Grade 12 Social Studies source/data transfer items;
+5. Chemistry 11 maintenance only: any new or revised public selected-response item must remain fully mapped.
 
 A course should set `distractorMappingRequired: true` only after the selected required scope has actually been reviewed. Until then, incomplete coverage remains a forensic warning rather than a learner-grading failure.
