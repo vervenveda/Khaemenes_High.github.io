@@ -3,10 +3,10 @@
   "schemaVersion": "1.0",
   "courseId": "KH-SCI-CHEM11",
   "title": "Chemistry 11 · Legacy Concept Spine Misconception Map",
-  "coveragePolicy": "reviewed-subset; concept spine plus ten high-repetition quantitative families; newly authored or substantially revised selected-response items should include complete mapping",
+  "coveragePolicy": "reviewed-subset; concept spine plus twenty-five high-repetition quantitative families; newly authored or substantially revised selected-response items should include complete mapping",
   "sourceBank": "courses/science/chemistry-11/question-bank.js",
-  "reviewedItemCount": 100,
-  "distractorRationaleCount": 300,
+  "reviewedItemCount": 205,
+  "distractorRationaleCount": 615,
   "items": {
     "legacy-01": {
       "itemId": "legacy-01",
@@ -2907,6 +2907,3051 @@
       ],
       "reviewedAt": "2026-10-25",
       "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-1": {
+      "itemId": "w09-material-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 54 g and volume 20 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 54/20 = 2.7 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.7 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.35 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5.4 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-2": {
+      "itemId": "w09-material-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 78 g and volume 30 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 78/30 = 2.6 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.6 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.3 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5.2 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-3": {
+      "itemId": "w09-material-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 89 g and volume 10 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 89/10 = 8.9 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "9.9 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4.45 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "17.8 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-4": {
+      "itemId": "w09-material-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 45 g and volume 18 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 45/18 = 2.5 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.5 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.25 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-5": {
+      "itemId": "w09-material-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 66 g and volume 24 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 66/24 = 2.75 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.75 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.38 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5.5 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-6": {
+      "itemId": "w09-material-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 35 g and volume 14 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 35/14 = 2.5 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.5 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.25 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-7": {
+      "itemId": "w09-material-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 102 g and volume 40 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 102/40 = 2.55 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.55 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.27 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5.1 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-1": {
+      "itemId": "w13-rf-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 3 cm while the solvent front travels 6 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.5.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-2": {
+      "itemId": "w13-rf-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 2.4 cm while the solvent front travels 8 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.3.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.33",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5.6",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-3": {
+      "itemId": "w13-rf-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 5 cm while the solvent front travels 10 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.5.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.05",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-4": {
+      "itemId": "w13-rf-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 1.8 cm while the solvent front travels 6 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.3.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.33",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4.2",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-5": {
+      "itemId": "w13-rf-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 4.2 cm while the solvent front travels 7 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.6.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.67",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.8",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "6",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-6": {
+      "itemId": "w13-rf-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 3.5 cm while the solvent front travels 5 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.7.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.43",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-7": {
+      "itemId": "w13-rf-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 6 cm while the solvent front travels 8 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.75.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.33",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7.5",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-1": {
+      "itemId": "w20-collision-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 1 M to 2 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-2": {
+      "itemId": "w20-collision-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 2 M to 4 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-3": {
+      "itemId": "w20-collision-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 1.5 M to 3 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-4": {
+      "itemId": "w20-collision-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 0.5 M to 2 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.25×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-5": {
+      "itemId": "w20-collision-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 3 M to 6 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-6": {
+      "itemId": "w20-collision-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 2.5 M to 5 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-7": {
+      "itemId": "w20-collision-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 4 M to 8 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-1": {
+      "itemId": "w21-catalyst-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 80 kJ/mol. A catalyst lowers the barrier by 20 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 80−20 = 60 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "100 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "20 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-2": {
+      "itemId": "w21-catalyst-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 95 kJ/mol. A catalyst lowers the barrier by 25 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 95−25 = 70 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "120 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "25 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-3": {
+      "itemId": "w21-catalyst-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 70 kJ/mol. A catalyst lowers the barrier by 15 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 70−15 = 55 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "85 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "15 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-4": {
+      "itemId": "w21-catalyst-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 120 kJ/mol. A catalyst lowers the barrier by 30 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 120−30 = 90 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "150 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "30 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-5": {
+      "itemId": "w21-catalyst-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 65 kJ/mol. A catalyst lowers the barrier by 10 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 65−10 = 55 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "75 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "10 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-6": {
+      "itemId": "w21-catalyst-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 110 kJ/mol. A catalyst lowers the barrier by 35 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 110−35 = 75 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "145 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "35 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-7": {
+      "itemId": "w21-catalyst-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 88 kJ/mol. A catalyst lowers the barrier by 18 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 88−18 = 70 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "106 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "18 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-1": {
+      "itemId": "w23-cal-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 100 g water sample changes temperature by 5°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=100×4.18×5=2090 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.1 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "500 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4180 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-2": {
+      "itemId": "w23-cal-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 50 g water sample changes temperature by 10°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=50×4.18×10=2090 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.1 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "500 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4180 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-3": {
+      "itemId": "w23-cal-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 200 g water sample changes temperature by 3°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=200×4.18×3=2508 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.5 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "600 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5016 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-4": {
+      "itemId": "w23-cal-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 75 g water sample changes temperature by 8°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=75×4.18×8=2508 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.5 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "600 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5016 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-5": {
+      "itemId": "w23-cal-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 120 g water sample changes temperature by 6°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=120×4.18×6=3009.6 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "720 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "6019.2 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-6": {
+      "itemId": "w23-cal-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 250 g water sample changes temperature by 2°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=250×4.18×2=2090 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.1 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "500 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4180 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-7": {
+      "itemId": "w23-cal-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 80 g water sample changes temperature by 12°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=80×4.18×12=4012.8 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "960 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8025.6 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-1": {
+      "itemId": "w24-hess-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -100 and -50 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-50 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "150 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-2": {
+      "itemId": "w24-hess-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -250 and 80 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-330 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "170 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-3": {
+      "itemId": "w24-hess-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -120 and -30 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-90 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "150 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-4": {
+      "itemId": "w24-hess-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -75 and -25 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-50 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "100 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-5": {
+      "itemId": "w24-hess-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -300 and 120 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-420 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "180 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-6": {
+      "itemId": "w24-hess-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -60 and -90 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "30 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "150 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-7": {
+      "itemId": "w24-hess-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -140 and 40 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-180 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "100 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-1": {
+      "itemId": "w25-gibbs-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=10 kJ/mol, ΔS=0.05 kJ·mol⁻¹·K⁻¹, and T=300 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=10−(300×0.05)=-5 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "25 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "15 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "10 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-2": {
+      "itemId": "w25-gibbs-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=25 kJ/mol, ΔS=0.08 kJ·mol⁻¹·K⁻¹, and T=250 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=25−(250×0.08)=5 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "45 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "20 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "25 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-3": {
+      "itemId": "w25-gibbs-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=-20 kJ/mol, ΔS=0.02 kJ·mol⁻¹·K⁻¹, and T=300 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=-20−(300×0.02)=-26 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-14 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "-20 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-4": {
+      "itemId": "w25-gibbs-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=40 kJ/mol, ΔS=0.12 kJ·mol⁻¹·K⁻¹, and T=400 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=40−(400×0.12)=-8 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "88 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "48 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "40 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-5": {
+      "itemId": "w25-gibbs-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=-15 kJ/mol, ΔS=0.01 kJ·mol⁻¹·K⁻¹, and T=350 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=-15−(350×0.01)=-18.5 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-11.5 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3.5 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "-15 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-6": {
+      "itemId": "w25-gibbs-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=5 kJ/mol, ΔS=0.02 kJ·mol⁻¹·K⁻¹, and T=500 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=5−(500×0.02)=-5 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "15 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "10 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-7": {
+      "itemId": "w25-gibbs-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=30 kJ/mol, ΔS=0.15 kJ·mol⁻¹·K⁻¹, and T=300 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=30−(300×0.15)=-15 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "75 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "45 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "30 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-1": {
+      "itemId": "w27-qk-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=0.2 and K=1. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q<K, so net forward change lowers the difference toward equilibrium.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "reverse",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-2": {
+      "itemId": "w27-qk-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=5 and K=1. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q>K, so net reverse change lowers the quotient toward K.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "forward",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-3": {
+      "itemId": "w27-qk-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=1 and K=1. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q=K, so the system is at equilibrium.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "forward",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "reverse",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-4": {
+      "itemId": "w27-qk-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=0.5 and K=2. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q<K, so net forward change lowers the difference toward equilibrium.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "reverse",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-5": {
+      "itemId": "w27-qk-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=4 and K=2. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q>K, so net reverse change lowers the quotient toward K.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "forward",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-6": {
+      "itemId": "w27-qk-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=0.1 and K=0.5. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q<K, so net forward change lowers the difference toward equilibrium.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "reverse",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-7": {
+      "itemId": "w27-qk-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=3 and K=0.5. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q>K, so net reverse change lowers the quotient toward K.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "forward",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-1": {
+      "itemId": "w28-ksp-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.01 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=1.00e-4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.00e-4",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.00e-2",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2.00e-2",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-2": {
+      "itemId": "w28-ksp-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.02 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=4.00e-4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8.00e-4",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.00e-2",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4.00e-2",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-3": {
+      "itemId": "w28-ksp-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.005 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=2.50e-5.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "5.00e-5",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5.00e-3",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1.00e-2",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-4": {
+      "itemId": "w28-ksp-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.03 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=9.00e-4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.80e-3",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3.00e-2",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "6.00e-2",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-5": {
+      "itemId": "w28-ksp-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.004 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=1.60e-5.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.20e-5",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4.00e-3",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8.00e-3",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-6": {
+      "itemId": "w28-ksp-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.015 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=2.25e-4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4.50e-4",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.50e-2",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3.00e-2",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-7": {
+      "itemId": "w28-ksp-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.025 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=6.25e-4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.25e-3",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.50e-2",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5.00e-2",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-1": {
+      "itemId": "w30-ph-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-2 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-2": {
+      "itemId": "w30-ph-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-3 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 3.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "11",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-3": {
+      "itemId": "w30-ph-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-4 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-4": {
+      "itemId": "w30-ph-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-5 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 5.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "9",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-5": {
+      "itemId": "w30-ph-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-6 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 6.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-6": {
+      "itemId": "w30-ph-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-7 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 7.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "8",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "14",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-7": {
+      "itemId": "w30-ph-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-8 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 8.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "9",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-1": {
+      "itemId": "w31-buffer-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=4.8 and [A⁻]/[HA]=1, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(1)=0, giving pH=4.8.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.8",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5.8",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9.6",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-2": {
+      "itemId": "w31-buffer-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=4.8 and [A⁻]/[HA]=10, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(10)=1, giving pH=5.8.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-5.2",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "14.8",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4.8",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-3": {
+      "itemId": "w31-buffer-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=4.8 and [A⁻]/[HA]=0.1, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(0.1)=-1, giving pH=3.8.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4.7",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4.9",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4.8",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-4": {
+      "itemId": "w31-buffer-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=6.2 and [A⁻]/[HA]=1, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(1)=0, giving pH=6.2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "5.2",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7.2",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "12.4",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-5": {
+      "itemId": "w31-buffer-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=6.2 and [A⁻]/[HA]=10, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(10)=1, giving pH=7.2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-3.8",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "16.2",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "6.2",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-6": {
+      "itemId": "w31-buffer-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=7.4 and [A⁻]/[HA]=0.1, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(0.1)=-1, giving pH=6.4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "7.3",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7.5",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7.4",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-7": {
+      "itemId": "w31-buffer-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=7.4 and [A⁻]/[HA]=1, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(1)=0, giving pH=7.4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6.4",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "8.4",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "14.8",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-1": {
+      "itemId": "w32-direction-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 298 K, ΔH=-5 kJ/mol and ΔS=0 kJ·mol⁻¹·K⁻¹. ΔG is -5 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "not thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-2": {
+      "itemId": "w32-direction-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 300 K, ΔH=-10 kJ/mol and ΔS=0.02 kJ·mol⁻¹·K⁻¹. ΔG is -16 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "not thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-3": {
+      "itemId": "w32-direction-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 300 K, ΔH=20 kJ/mol and ΔS=0.1 kJ·mol⁻¹·K⁻¹. ΔG is -10 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "not thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-4": {
+      "itemId": "w32-direction-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 250 K, ΔH=15 kJ/mol and ΔS=0.02 kJ·mol⁻¹·K⁻¹. ΔG is 10 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-5": {
+      "itemId": "w32-direction-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 400 K, ΔH=-2 kJ/mol and ΔS=-0.01 kJ·mol⁻¹·K⁻¹. ΔG is 2 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-6": {
+      "itemId": "w32-direction-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 500 K, ΔH=30 kJ/mol and ΔS=0.08 kJ·mol⁻¹·K⁻¹. ΔG is -10 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "not thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-7": {
+      "itemId": "w32-direction-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 300 K, ΔH=5 kJ/mol and ΔS=0.03 kJ·mol⁻¹·K⁻¹. ΔG is -4 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "not thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-1": {
+      "itemId": "w33-cell-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=0.8 V and E°anode=-0.76 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=0.8−(-0.76)=1.56 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.04 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-1.56 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.76 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-2": {
+      "itemId": "w33-cell-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=0.34 V and E°anode=-0.44 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=0.34−(-0.44)=0.78 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-0.1 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-0.78 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.44 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-3": {
+      "itemId": "w33-cell-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=1.23 V and E°anode=0.4 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=1.23−(0.4)=0.83 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.63 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-0.83 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.4 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-4": {
+      "itemId": "w33-cell-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=0.77 V and E°anode=-0.14 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=0.77−(-0.14)=0.91 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.63 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-0.91 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.14 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-5": {
+      "itemId": "w33-cell-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=0.54 V and E°anode=-0.28 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=0.54−(-0.28)=0.82 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.26 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-0.82 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.28 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-6": {
+      "itemId": "w33-cell-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=0.15 V and E°anode=-0.25 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=0.15−(-0.25)=0.4 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-0.1 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-0.4 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.25 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-7": {
+      "itemId": "w33-cell-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=1.36 V and E°anode=0.8 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=1.36−(0.8)=0.56 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.16 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-0.56 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.8 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-1": {
+      "itemId": "w34-half-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 80 mg. How much remains after 1 half-life?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 40 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "78 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "80 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "160 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-2": {
+      "itemId": "w34-half-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 80 mg. How much remains after 2 half-lives?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 20 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "76 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "40 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "320 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-3": {
+      "itemId": "w34-half-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 160 mg. How much remains after 3 half-lives?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 20 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "154 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "53.333333333333336 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1280 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-4": {
+      "itemId": "w34-half-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 64 mg. How much remains after 2 half-lives?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 16 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "60 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "32 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "256 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-5": {
+      "itemId": "w34-half-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 100 mg. How much remains after 1 half-life?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 50 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "98 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "100 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "200 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-6": {
+      "itemId": "w34-half-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 96 mg. How much remains after 3 half-lives?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 12 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "90 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "32 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "768 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-7": {
+      "itemId": "w34-half-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 120 mg. How much remains after 2 half-lives?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 30 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "116 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "60 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "480 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-1": {
+      "itemId": "w35-decision-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 8, 6, 9 on three criteria with weights 0.4, 0.3, 0.3. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "23",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.57",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9.24",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-2": {
+      "itemId": "w35-decision-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 7, 9, 5 on three criteria with weights 0.5, 0.2, 0.3. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "21",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.27",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8.16",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-3": {
+      "itemId": "w35-decision-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 6, 8, 8 on three criteria with weights 0.3, 0.4, 0.3. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "22",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.47",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8.88",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-4": {
+      "itemId": "w35-decision-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 9, 5, 7 on three criteria with weights 0.4, 0.4, 0.2. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "21",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.33",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8.4",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-5": {
+      "itemId": "w35-decision-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 5, 9, 9 on three criteria with weights 0.2, 0.4, 0.4. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "23",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.73",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9.84",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-6": {
+      "itemId": "w35-decision-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 8, 8, 6 on three criteria with weights 0.5, 0.3, 0.2. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "22",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.53",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9.12",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-7": {
+      "itemId": "w35-decision-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 7, 7, 9 on three criteria with weights 0.3, 0.3, 0.4. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "23",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.6",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9.36",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
     }
   },
   "reviewedFamilies": [
@@ -2915,11 +5960,26 @@
     "ionic particle counting",
     "weighted-average atomic mass",
     "photon frequency / nm conversion",
+    "materials density",
     "Boyle's law",
     "molarity",
+    "chromatography Rf",
     "percent yield",
     "moles from molarity and volume",
     "average reaction rate",
-    "equilibrium constant Kc"
+    "direct-proportional rate factor",
+    "activation-energy reduction",
+    "calorimetry",
+    "Hess's law",
+    "Gibbs free energy",
+    "equilibrium constant Kc",
+    "Q vs K direction",
+    "Ksp from molar solubility",
+    "pH from hydrogen-ion concentration",
+    "Henderson–Hasselbalch buffers",
+    "thermodynamic favorability from ΔG sign",
+    "galvanic-cell potential",
+    "radioactive half-life",
+    "weighted engineering decision score"
   ]
 }
