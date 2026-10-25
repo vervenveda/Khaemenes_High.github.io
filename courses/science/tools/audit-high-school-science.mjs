@@ -94,7 +94,18 @@ function auditUpperCourse(slug,label){
   }
   if(slug==="biology-10"||slug==="physics-engineering-12"){
     need(c.includes("science-misconception-guidance-v1.js"),label+" loads reasoning diagnostic guidance");
-    need(c.includes("diagnostic=window.KhaeScienceMisconceptionGuidance"),label+" practice corrections capture diagnostic route");
+    need(c.includes("diagnostic=window.KhaeScienceMisconceptionGuidance")||c.includes("const diagnostic=reviewed||window.KhaeScienceMisconceptionGuidance"),label+" practice corrections capture diagnostic route");
+    need(c.includes("assessment-misconceptions-v1.js"),label+" loads reviewed anchor misconception map");
+    const misconceptionFile=path.join(root,"assessment-misconceptions-v1.json");
+    need(exists(misconceptionFile),label+" reviewed anchor misconception map exists");
+    if(exists(misconceptionFile)){
+      try{
+        const map=JSON.parse(read(misconceptionFile));
+        need(map?.schema==="khaemenes.assessment-misconception-map.v1",label+" misconception map schema");
+        need(Number(map?.reviewedItemCount)>=18,label+" reviewed anchor misconception count >= 18 ("+String(map?.reviewedItemCount)+")");
+        need(Object.keys(map?.items||{}).length===Number(map?.reviewedItemCount),label+" misconception map item count matches reviewed count");
+      }catch(e){failures.push(label+" misconception map parse: "+e.message)}
+    }
   }
   auditBank(path.join(root,"question-bank.js"),label,{min:180});
 }
