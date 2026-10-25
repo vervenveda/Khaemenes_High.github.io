@@ -87,6 +87,7 @@ for(let n=0;n<=13;n++){
 }
 const incoming=Number(params.get("unit"));
 unit.value=Number.isInteger(incoming)&&incoming>=(course.value==="pre-algebra"?0:1)&&incoming<=13?String(incoming).padStart(2,"0"):"01";
+if(isEnglish(course.value)&&weekControl.value)unit.value=String(Math.ceil(Number(weekControl.value)/3)).padStart(2,"0");
 function unitAvailability(){
  const limit=course.value==="social-studies-10"?8:course.value==="social-studies-09"?1:isEnglish(course.value)?12:13;
  for(const choice of unit.options){
@@ -94,8 +95,11 @@ function unitAvailability(){
    choice.hidden=choice.disabled=number===0?course.value!=="pre-algebra":number>limit;
  }
  if(Number(unit.value)>limit||(unit.value==="00"&&course.value!=="pre-algebra"))unit.value="01";
+ weekControl.parentElement.hidden=!isEnglish(course.value);
+ if(!isEnglish(course.value))weekControl.value="";
 }
 function sync(){
+ vocabWeek=Number(weekControl.value);
  const p=new URLSearchParams({course:course.value,unit:unit.value,lang:lang.value});if(weekControl.value)p.set("week",weekControl.value);
  history.replaceState(null,"","?"+p.toString());
  byId("courseHome").href=isEnglish(course.value)?"../../language-arts/"+course.value+"/":course.value==="social-studies-10"?"../../social-studies/grade-10/":course.value==="social-studies-09"?"../../social-studies/grade-09/":"../"+course.value+"/";
@@ -132,6 +136,7 @@ function render(){
       card.append(translated);
    }
    card.append(addText("p",item.definition,"description"));
+   if(item.context)card.append(addText("p","Lesson context: "+item.context,"meta"));
    frag.append(card);
  }
  list.append(frag);
