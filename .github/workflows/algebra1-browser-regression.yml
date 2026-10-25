@@ -42,5 +42,8 @@ jobs:
       - name: Validate dedicated misconception map
         run: node courses/mathematics/algebra-1/tools/validate-dedicated-misconceptions-v1.mjs
 
+      - name: Validate consolidated assessment integration
+        run: node tools/forensic-assessment-audit.mjs --json
+
       - name: Run representative real-browser journey
         run: node courses/mathematics/algebra-1/tools/browser-regression-units01-05-09.mjs
