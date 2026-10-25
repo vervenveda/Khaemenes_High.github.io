@@ -5,7 +5,7 @@
   "title": "Physics 12 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/physics-engineering-12/question-bank.js",
-  "reviewedItemCount": 94,
+  "reviewedItemCount": 115,
   "items": {
     "legacy-1": {
       "itemId": "legacy-1",
@@ -2262,6 +2262,510 @@
       ],
       "reviewedAt": "2026-10-25",
       "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "phys-sup-w01-concept": {
+      "itemId": "phys-sup-w01-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "A complete measurement includes value, unit, and uncertainty/resolution.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w01-concept-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w01-concept-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w01-concept-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w01-evidence": {
+      "itemId": "phys-sup-w01-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Replication and calibration provide stronger evidence of reliability than display precision alone.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w01-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w01-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w01-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w01-model": {
+      "itemId": "phys-sup-w01-model",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Vectors require magnitude and direction, while scalars do not.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w01-model-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w01-model-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w01-model-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w02-concept": {
+      "itemId": "phys-sup-w02-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Distance is path length; displacement is directional change in position.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w02-concept-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w02-concept-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w02-concept-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w03-concept": {
+      "itemId": "phys-sup-w03-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Acceleration describes how velocity changes with time.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w03-concept-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w03-concept-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w03-concept-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w03-evidence": {
+      "itemId": "phys-sup-w03-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "For velocity-time graphs, slope is acceleration and signed area is displacement.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w03-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w03-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w03-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w04-concept": {
+      "itemId": "phys-sup-w04-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Ideal projectile motion separates into independent horizontal and vertical components.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w04-concept-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w04-concept-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w04-concept-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w04-evidence": {
+      "itemId": "phys-sup-w04-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Time-resolved component measurements directly test horizontal constancy and vertical acceleration.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w04-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w04-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w04-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w04-model": {
+      "itemId": "phys-sup-w04-model",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Air resistance is a major boundary of the ideal projectile model.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w04-model-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w04-model-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w04-model-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w05-concept": {
+      "itemId": "phys-sup-w05-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Model selection should use evidence, residuals, assumptions, and predictive performance.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w05-concept-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w05-concept-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w05-concept-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w05-evidence": {
+      "itemId": "phys-sup-w05-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Systematic residual structure indicates the model is missing a pattern in the data.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w05-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w05-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w05-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w06-concept": {
+      "itemId": "phys-sup-w06-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "A free-body diagram includes external forces acting on the selected object.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w06-concept-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w06-concept-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w06-concept-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w06-evidence": {
+      "itemId": "phys-sup-w06-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Constant velocity is consistent with zero net force.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w06-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w06-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w06-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w07-concept": {
+      "itemId": "phys-sup-w07-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Newton's second law links net force, mass, and acceleration.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w07-concept-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w07-concept-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w07-concept-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w08-concept": {
+      "itemId": "phys-sup-w08-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Centripetal force is the net inward force, not an additional physical force.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w08-concept-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w08-concept-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w08-concept-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w09-concept": {
+      "itemId": "phys-sup-w09-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Point-mass gravity scales as 1/r² and depends on both masses.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w09-concept-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w09-concept-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w09-concept-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w09-evidence": {
+      "itemId": "phys-sup-w09-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Orbital motion is continuous free fall with inward gravitational acceleration.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w09-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w09-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w09-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception or evidence error that conflicts with the intended physics model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "w34a": {
+      "itemId": "w34a",
+      "reviewStatus": "reviewed-advanced-anchor-v1",
+      "correctRationale": "absorbed=incoming×(1−albedo).",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "w34a-d1",
+          "rationale": "300 W/m² is the reflected fraction, not the absorbed fraction."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "w34a-d2",
+          "rationale": "Albedo reduces absorbed flux; it is not added to incoming flux."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "w34a-d3",
+          "rationale": "Ignoring albedo incorrectly leaves the full incoming flux absorbed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "w34b": {
+      "itemId": "w34b",
+      "reviewStatus": "reviewed-advanced-anchor-v1",
+      "correctRationale": "Remote sensing uses reflected/emitted EM radiation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "w34b-d1",
+          "rationale": "Remote sensing does not require physical contact."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "w34b-d2",
+          "rationale": "Remote sensing commonly uses electromagnetic radiation, not mass alone."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "w34b-d3",
+          "rationale": "Sound cannot propagate through vacuum, so it is not the general basis of space remote sensing."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "w35a": {
+      "itemId": "w35a",
+      "reviewStatus": "reviewed-advanced-anchor-v1",
+      "correctRationale": "|95−100|/100×100.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "w35a-d1",
+          "rationale": "95 is the measurement, not the percent error."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "w35a-d2",
+          "rationale": "105% comes from adding rather than comparing the difference to the prediction."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "w35a-d3",
+          "rationale": "0.05% misses the percent scaling by a factor of 100."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "w35b": {
+      "itemId": "w35b",
+      "reviewStatus": "reviewed-advanced-anchor-v1",
+      "correctRationale": "Iteration should respond to evidence and constraints.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "w35b-d1",
+          "rationale": "Personal preference alone does not satisfy engineering criteria."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "w35b-d2",
+          "rationale": "Deleting inconvenient data biases the design process."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "w35b-d3",
+          "rationale": "Changing goals after results prevents an honest test against stated criteria."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
     }
   }
 }
