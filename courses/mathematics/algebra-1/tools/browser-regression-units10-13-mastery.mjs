@@ -75,6 +75,26 @@ for(let unit=10;unit<=13;unit++){
  const url=`${origin}/courses/mathematics/algebra-1/units/unit-${unit}/assessment/mastery-check.html`;
  await page.goto(url,{waitUntil:"load"});
  await page.locator("#score").waitFor({state:"visible",timeout:15000});
+ await page.waitForFunction(()=>window.KhaemenesAlgebra1Misconceptions?.status?.()==="ready",{timeout:15000});
+ const resolverProbe=await page.evaluate(async unit=>{
+  const r=window.KhaemenesAlgebra1Misconceptions;await r.ready;
+  const cases={
+   10:{reviewed:["q0306",0],provisional:["u10-ab-l01-01",1]},
+   11:{provisional:["q0346",0]},
+   12:{reviewed:["q0376",0],provisional:["u12-ab-l01-01",1]},
+   13:{reviewed:["q0411",0],provisional:["u13-ab-l01-01",1]}
+  }[unit],out={};
+  for(const [kind,[id,index]] of Object.entries(cases))out[kind]=r.lookup(id,index);
+  return out;
+ },unit);
+ if(unit!==11){
+  assert.equal(resolverProbe.reviewed?.learnerFeedbackEligible,true,`Unit ${unit}: reviewed misconception should be learner-facing`);
+  assert.equal(resolverProbe.reviewed?.mapSource,"shared",`Unit ${unit}: reviewed misconception should come from the reviewed shared map`);
+ }
+ assert.equal(resolverProbe.provisional?.learnerFeedbackEligible,false,`Unit ${unit}: provisional misconception leaked learner-facing feedback`);
+ assert.equal(resolverProbe.provisional?.mapSource,"late",`Unit ${unit}: provisional misconception should resolve from the late-unit map`);
+ if(unit===11)assert.equal(resolverProbe.provisional?.reviewStatus,"family-provisional-v1","Unit 11 rebuilt ID q0346 must override the stale reviewed shared record");
+
  await answerAllFirst(page);
  await page.locator("#score").click();
  await page.waitForFunction(()=>document.querySelector("#score")?.disabled===true);
@@ -96,6 +116,13 @@ for(let unit=10;unit<=13;unit++){
  assert.equal(a1.total,20,`Unit ${unit}: formal mastery must grade 20 items`);
  assert.equal(a1.answerSnapshot?.length,20,`Unit ${unit}: answer snapshot incomplete`);
  assert.ok(a1.answerSnapshot.every(x=>Number.isInteger(x.selectedDisplayIndex)&&Number.isInteger(x.selectedOriginalIndex)&&Number.isInteger(x.correctDisplayIndex)&&Number.isInteger(x.correctOriginalIndex)&&Array.isArray(x.optionOrder)&&x.optionOrder.length===4&&typeof x.selectedText==="string"&&typeof x.correctText==="string"),`Unit ${unit}: reconstructable answer identity incomplete`);
+ assert.ok(a1.answerSnapshot.filter(x=>x.selectedOriginalIndex!==x.correctOriginalIndex).every(x=>["shared","late"].includes(x.misconceptionMapSource)&&["reviewed-v1","family-provisional-v1"].includes(x.misconceptionReviewStatus)),`Unit ${unit}: incorrect responses are missing active misconception-map evidence`);
+ assert.ok(a1.answerSnapshot.filter(x=>x.selectedOriginalIndex!==x.correctOriginalIndex).every(x=>x.misconceptionLearnerFeedback===(x.misconceptionReviewStatus==="reviewed-v1")),`Unit ${unit}: reviewed-only learner feedback guard drift`);
+ if(unit===11){
+  assert.ok(a1.answerSnapshot.filter(x=>x.selectedOriginalIndex!==x.correctOriginalIndex).every(x=>x.misconceptionMapSource==="late"&&x.misconceptionReviewStatus==="family-provisional-v1"&&!x.misconceptionLearnerFeedback),"Unit 11 rebuilt items must remain provisional after stale-ID override");
+  const feedbackText=(await page.locator(".feedback:not([hidden])").allTextContents()).join(" ");
+  assert.ok(!feedbackText.includes("Misconception check:"),"Unit 11 provisional diagnoses must not appear in learner feedback");
+ }
  const firstPositions=[0,0,0,0];for(const x of a1.answerSnapshot)firstPositions[x.correctDisplayIndex]++;
  assert.deepEqual(firstPositions,[5,5,5,5],`Unit ${unit}: visible correct-answer positions are not balanced`);
  const firstIds=[...a1.items];
@@ -134,4 +161,4 @@ for(let unit=10;unit<=13;unit++){
 }
 await browser.close();await new Promise(resolve=>server.close(resolve));
 console.log("ALGEBRA I LATE-UNIT REAL-BROWSER REGRESSION: PASS");
-console.log(JSON.stringify({journey:"Unit 10 → Unit 11 → Unit 12 → Unit 13 formal mastery",checks:["20-item formal form from 60/120/60/60 eligible pools","immutable submitted controls","balanced visible answer positions","explicit fresh-attempt control","0/20 immediate retake overlap","saved form seed and v2 reconstructable answer evidence","second attempt appended","reload persistence","no browser/page console errors"],results},null,2));
+console.log(JSON.stringify({journey:"Unit 10 → Unit 11 → Unit 12 → Unit 13 formal mastery",checks:["20-item formal form from 60/120/60/60 eligible pools","immutable submitted controls","balanced visible answer positions","reviewed resolver feedback eligible","provisional resolver feedback suppressed","Unit 11 stale reviewed IDs overridden by provisional active mappings","explicit fresh-attempt control","0/20 immediate retake overlap","saved form seed and v2 reconstructable answer evidence","second attempt appended","reload persistence","no browser/page console errors"],results},null,2));
