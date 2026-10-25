@@ -226,8 +226,8 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     balanced&&marked&&protectedDom?"PASS":"FAIL",
     "Five-question lesson checks use a randomized 2/1/1/1 correct-position schedule before first render; the later DOM shuffler preserves that mapped order."));
   checks.push(addFinding("Algebra I","algebra1-misconception-map-v1",
-    dq.issues.length===0&&dq.reviewedItems===13&&dq.distractorRationales===39?"PASS":"FAIL",
-    `${dq.reviewedItems}/${dq.bankItems} items are reviewed in the v1 companion map, providing ${dq.distractorRationales} explicit distractor rationales across all 13 Algebra I units. Drift issues: ${dq.issues.length}.`,dq));
+    dq.issues.length===0&&dq.reviewedItems===271&&dq.distractorRationales===813?"PASS":"FAIL",
+    `${dq.reviewedItems}/${dq.bankItems} items are reviewed in the v1 companion map, providing ${dq.distractorRationales} explicit distractor rationales. All detected repeated prompt families of three or more items are mapped across all 13 units. Drift issues: ${dq.issues.length}.`,dq));
   checks.push(addFinding("Algebra I","algebra1-prompt-diversity",
     m.exactDuplicateItems===0?"PASS":"FAIL",
     `Exact duplicate prompts: ${m.exactDuplicateItems}. Template-similarity signal: ${m.templateClusterPct}% (diagnostic only; repeated mathematical structures are not automatically defects).`,m));
