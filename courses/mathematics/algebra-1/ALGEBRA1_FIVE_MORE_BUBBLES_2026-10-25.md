@@ -300,3 +300,32 @@ The real-browser journey is still required:
 first attempt → submit → locked answers → reviewed misconception-aware feedback → fresh retake → reload → inspect saved evidence.
 
 That browser journey remains the final certification boundary and has not been mislabeled as completed.
+
+
+---
+
+## Real-browser certification · PASS
+
+**Certified head:** `7c1ecdb1ae5af8bfbe9d289e75a5bc4053fa87bd`  
+**Workflow:** Algebra I Browser Regression  
+**Run:** `40205069822`  
+**Browser:** Chromium via Playwright
+
+The representative **Unit 01 → Unit 05 → Unit 09** Lesson 01 journey completed successfully.
+
+Verified in the browser:
+
+- exactly 10 questions on the first graded form;
+- submit locks all graded answers;
+- answer snapshots preserve delivered and original option identity;
+- reviewed wrong-answer mappings produce misconception-aware learner feedback;
+- learner-visible correct positions remain balanced;
+- Unit 01 uses a 30-item eligible pool and low-overlap blueprint retake;
+- Units 05 and 09 retakes include aligned alternate questions;
+- second attempts append rather than overwrite evidence;
+- reload preserves attempt history and best score;
+- no browser/page console errors were observed.
+
+The consolidated forensic assessment completed as `PASS_WITH_WARNINGS`: **33 PASS / 2 WARN / 0 FAIL**. The warnings preserve known review-quality boundaries rather than runtime defects.
+
+The previous real-browser certification boundary is therefore **closed as PASS** for this representative journey.
