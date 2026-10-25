@@ -109,7 +109,8 @@ const cases=[
    unit:"05",
    file:"lesson-01-relations-inputs-outputs-function-tests.html",
    key:"khaemenes-algebra1-unit05-a3-v1",
-   runtime:"dedicated-v2",
+   runtime:"abundant-v2",
+   bankVersion:"unit05-abundant-v1",
    misconceptionPolicy:"reviewed"
  },
  {
@@ -284,7 +285,7 @@ console.log(JSON.stringify({
     "answerSnapshot persistence with delivered/original option identity",
     "reviewed misconception-aware learner feedback plus provisional-feedback suppression",
     "balanced learner-visible correct positions",
-    "Units 01, 03 and 04 30-item abundant pools with low-overlap blueprint retakes",
+    "Units 01, 03, 04 and 05 30-item abundant pools with low-overlap blueprint retakes",
     "fresh retake with aligned alternates for Units 05 and 09",
     "reload preserves attempt history and best score",
     "no browser/page console errors"
