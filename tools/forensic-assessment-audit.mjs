@@ -22,7 +22,7 @@ const report={
   ],
   areas:[],
   findings:[],
-  totals:{auditedObjectiveItems:0,exactDuplicateItems:0,itemsWithExplanations:0,fourOptionItems:0,validAnswerItems:0,itemsWithPerDistractorRationales:0,itemsWithReviewedMisconceptionMap:0,structuredDistractorRationales:0}
+  totals:{auditedObjectiveItems:0,exactDuplicateItems:0,itemsWithExplanations:0,fourOptionItems:0,validAnswerItems:0,itemsWithPerDistractorRationales:0,itemsWithReviewedMisconceptionMap:0,structuredDistractorRationales:0,itemsWithProvisionalMisconceptionMap:0,provisionalDistractorRationales:0}
 };
 
 function read(rel){return fs.readFileSync(path.join(ROOT,rel),"utf8")}
@@ -254,9 +254,35 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
       if(snapshot)snapshotUnits++;else runtimeIssues.push(`Unit ${u}: selected-answer snapshot contract incomplete`);
     }
   }
-  const dm=itemMetrics(dedicated,false);
-  const dedicatedMisconceptions=readJSON("courses/mathematics/algebra-1/assets/assessment-misconceptions-v1.json").items||{};
-  const dedicatedMapped=[...dedicatedIds].filter(id=>Object.prototype.hasOwnProperty.call(dedicatedMisconceptions,id)).length;
+  const dm=itemMetrics(dedicated,true);
+  const dedicatedMap=readJSON("courses/mathematics/algebra-1/units/dedicated-assessment-misconceptions-v1.json");
+  const dedicatedMisconceptions=dedicatedMap.items||{};
+  let dedicatedMapped=0,dedicatedReviewed=0,dedicatedProvisional=0,dedicatedReviewedRationales=0,dedicatedProvisionalRationales=0;
+  const dedicatedMapIssues=[];
+  for(const q of dedicated){
+    const rec=dedicatedMisconceptions[q.id];
+    if(!rec){dedicatedMapIssues.push(`${q.id}: missing misconception entry`);continue}
+    dedicatedMapped++;
+    if(rec.prompt!==q.prompt)dedicatedMapIssues.push(`${q.id}: prompt drift`);
+    if(Number(rec.answerIndex)!==Number(q.answer))dedicatedMapIssues.push(`${q.id}: answer-key drift`);
+    if(rec.correctRationale!==q.explanation)dedicatedMapIssues.push(`${q.id}: explanation drift`);
+    const ds=Array.isArray(rec.distractors)?rec.distractors:[];
+    const expected=q.options.map((_,i)=>i).filter(i=>i!==q.answer).sort((a,b)=>a-b);
+    const actual=ds.map(d=>Number(d.optionIndex)).sort((a,b)=>a-b);
+    if(JSON.stringify(expected)!==JSON.stringify(actual))dedicatedMapIssues.push(`${q.id}: distractor coverage drift`);
+    for(const d of ds){
+      if(q.options[Number(d.optionIndex)]!==d.optionText)dedicatedMapIssues.push(`${q.id} option ${d.optionIndex}: option-text drift`);
+    }
+    if(rec.reviewStatus==="lesson-family-reviewed-v1"){
+      dedicatedReviewed++;dedicatedReviewedRationales+=ds.length;
+    }else if(rec.reviewStatus==="lesson-family-provisional-v1"){
+      dedicatedProvisional++;dedicatedProvisionalRationales+=ds.length;
+    }else dedicatedMapIssues.push(`${q.id}: unsupported reviewStatus`);
+  }
+  report.totals.itemsWithReviewedMisconceptionMap+=dedicatedReviewed;
+  report.totals.structuredDistractorRationales+=dedicatedReviewedRationales;
+  report.totals.itemsWithProvisionalMisconceptionMap+=dedicatedProvisional;
+  report.totals.provisionalDistractorRationales+=dedicatedProvisionalRationales;
   const checks=[];
   checks.push(addFinding("Algebra I","algebra1-shared-bank-contract",
     by.size===87&&bank.length===435&&contractFailures.length===0?"PASS":"FAIL",
@@ -285,16 +311,16 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     dq.issues.length===0&&dq.reviewedItems===271&&dq.distractorRationales===813?"PASS":"FAIL",
     `${dq.reviewedItems}/${dq.bankItems} shared-bank items are reviewed in the v1 companion map with ${dq.distractorRationales} explicit distractor rationales. Drift issues: ${dq.issues.length}.`,dq));
   checks.push(addFinding("Algebra I","algebra1-dedicated-misconception-coverage",
-    dedicatedMapped===dedicated.length?"PASS":"WARN",
-    `${dedicatedMapped}/${dedicated.length} runtime-authoritative dedicated Unit 01–09 item IDs currently have direct misconception-map entries. The forensic blind spot is repaired because this coverage is now reported explicitly rather than being inferred from the shared bank.`,
-    {mapped:dedicatedMapped,total:dedicated.length,coveragePct:pct(dedicatedMapped,dedicated.length)}));
+    dedicatedMapped===dedicated.length&&dedicatedMapIssues.length===0?"PASS":"FAIL",
+    `${dedicatedMapped}/${dedicated.length} runtime-authoritative dedicated Unit 01–09 items now have direct misconception-map entries with ${dedicatedReviewed} representative-reviewed and ${dedicatedProvisional} provisional lesson-family mappings. Drift issues: ${dedicatedMapIssues.length}.`,
+    {mapped:dedicatedMapped,total:dedicated.length,coveragePct:pct(dedicatedMapped,dedicated.length),representativeReviewed:dedicatedReviewed,provisional:dedicatedProvisional,reviewedDistractorRationales:dedicatedReviewedRationales,provisionalDistractorRationales:dedicatedProvisionalRationales,issues:dedicatedMapIssues}));
   checks.push(addFinding("Algebra I","algebra1-prompt-diversity",
     m.exactDuplicateItems===0?"PASS":"FAIL",
     `Shared-bank exact duplicate prompts: ${m.exactDuplicateItems}. Template-similarity signal: ${m.templateClusterPct}% (diagnostic only; repeated mathematical structures are not automatically defects).`,m));
   if(runtimeIssues.length)checks.push(addFinding("Algebra I","algebra1-runtime-contract-regressions","FAIL",runtimeIssues.join("; "),{issues:runtimeIssues}));
   area("Algebra I",
     `Runtime-aware certification now distinguishes 610 dedicated Units 01–09 items from the 435-item shared bank; Unit 02–09 retakes use 55 aligned 15-item lesson pools and preserve selected-answer evidence.`,
-    {...m,misconceptionMap:dq,sharedBankItems:bank.length,dedicatedRuntimeItems:dedicated.length,dedicatedLessons,alignedAlternateItems:alignedAlternates,dedicatedAuthoredAnswerPositions:authoredDedicatedPositions,dedicatedMisconceptionCoveragePct:pct(dedicatedMapped,dedicated.length)},
+    {...m,misconceptionMap:dq,sharedBankItems:bank.length,dedicatedRuntimeItems:dedicated.length,dedicatedLessons,alignedAlternateItems:alignedAlternates,dedicatedAuthoredAnswerPositions:authoredDedicatedPositions,dedicatedMisconceptionCoveragePct:pct(dedicatedMapped,dedicated.length),dedicatedRepresentativeReviewed:dedicatedReviewed,dedicatedProvisionalMapped:dedicatedProvisional,dedicatedMapIssues:dedicatedMapIssues.length},
     checks);
 }
 
@@ -362,8 +388,8 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     `${t.fourOptionItems}/${t.auditedObjectiveItems} items have four options; ${t.validAnswerItems}/${t.auditedObjectiveItems} have a valid keyed answer.`));
   checks.push(addFinding("Academy-wide","cross-distractor-rationale-metadata",
     t.itemsWithReviewedMisconceptionMap===t.auditedObjectiveItems?"PASS":"WARN",
-    `${t.itemsWithReviewedMisconceptionMap}/${t.auditedObjectiveItems} audited items now have reviewed misconception maps containing ${t.structuredDistractorRationales} explicit distractor rationales. Coverage is intentionally staged under Distractor Quality & Misconception Mapping v1.`,
-    {reviewedItems:t.itemsWithReviewedMisconceptionMap,auditedItems:t.auditedObjectiveItems,structuredDistractorRationales:t.structuredDistractorRationales,coveragePct:pct(t.itemsWithReviewedMisconceptionMap,t.auditedObjectiveItems)}));
+    `${t.itemsWithReviewedMisconceptionMap}/${t.auditedObjectiveItems} audited items have reviewed misconception mapping with ${t.structuredDistractorRationales} reviewed distractor rationales; another ${t.itemsWithProvisionalMisconceptionMap} items carry ${t.provisionalDistractorRationales} provisional lesson-family rationales awaiting item-level refinement.`,
+    {reviewedItems:t.itemsWithReviewedMisconceptionMap,provisionalItems:t.itemsWithProvisionalMisconceptionMap,auditedItems:t.auditedObjectiveItems,reviewedDistractorRationales:t.structuredDistractorRationales,provisionalDistractorRationales:t.provisionalDistractorRationales,reviewedCoveragePct:pct(t.itemsWithReviewedMisconceptionMap,t.auditedObjectiveItems),anyMappingCoveragePct:pct(t.itemsWithReviewedMisconceptionMap+t.itemsWithProvisionalMisconceptionMap,t.auditedObjectiveItems)}));
   checks.push(addFinding("Academy-wide","cross-security-boundary",
     report.findings.filter(x=>x.id.endsWith("-secure-blueprint")).every(x=>x.status==="PASS")?"PASS":"FAIL",
     "Public science certification describes cognitive design without requiring protected prompts, keys, form seeds, authentication material, reviewer notes, or private learner records."));
@@ -374,7 +400,10 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     validAnswerCoveragePct:pct(t.validAnswerItems,t.auditedObjectiveItems),
     perDistractorRationaleCoveragePct:pct(t.itemsWithReviewedMisconceptionMap,t.auditedObjectiveItems),
     reviewedMisconceptionItems:t.itemsWithReviewedMisconceptionMap,
-    structuredDistractorRationales:t.structuredDistractorRationales
+    structuredDistractorRationales:t.structuredDistractorRationales,
+    provisionalMisconceptionItems:t.itemsWithProvisionalMisconceptionMap,
+    provisionalDistractorRationales:t.provisionalDistractorRationales,
+    anyMisconceptionMappingCoveragePct:pct(t.itemsWithReviewedMisconceptionMap+t.itemsWithProvisionalMisconceptionMap,t.auditedObjectiveItems)
   },checks);
 }
 
