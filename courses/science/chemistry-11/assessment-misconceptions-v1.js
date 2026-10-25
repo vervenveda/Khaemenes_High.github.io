@@ -1,0 +1,9884 @@
+window.KhaemenesChemistry11Misconceptions={
+  "schema": "khaemenes.assessment-misconception-map.v1",
+  "schemaVersion": "1.0",
+  "courseId": "KH-SCI-CHEM11",
+  "title": "Chemistry 11 · Legacy Concept Spine Misconception Map",
+  "coveragePolicy": "complete-public-bank; every public Chemistry 11 selected-response item is misconception-mapped; newly authored or substantially revised items must include complete mapping",
+  "sourceBank": "courses/science/chemistry-11/question-bank.js",
+  "reviewedItemCount": 339,
+  "distractorRationaleCount": 1017,
+  "items": {
+    "legacy-01": {
+      "itemId": "legacy-01",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Atomic number is determined by the number of",
+      "answerIndex": 1,
+      "correctRationale": "Element identity is defined by proton number.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "neutrons",
+          "misconceptionTag": "proton-neutron-confusion",
+          "rationale": "Neutron count changes isotope mass, but proton count defines the element."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "electron shells",
+          "misconceptionTag": "shell-identity-confusion",
+          "rationale": "Electron-shell arrangement can affect chemical behavior, but it does not define atomic number."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "isotopes",
+          "misconceptionTag": "isotope-count-confusion",
+          "rationale": "Isotopes are variants of one element; the number of isotopes is not an atom's atomic number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-02": {
+      "itemId": "legacy-02",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Isotopes of an element differ in their number of",
+      "answerIndex": 1,
+      "correctRationale": "Isotopes share proton number but differ in neutron number.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "protons",
+          "misconceptionTag": "proton-change-means-new-element",
+          "rationale": "Changing proton number changes the element itself rather than producing an isotope of the same element."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "valence rules",
+          "misconceptionTag": "property-vs-particle-confusion",
+          "rationale": "Valence rules describe electron behavior; they are not a particle count that distinguishes isotopes."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "element symbols",
+          "misconceptionTag": "symbol-vs-isotope-confusion",
+          "rationale": "Isotopes of one element share the same element symbol; the distinguishing particle count is neutrons."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-03": {
+      "itemId": "legacy-03",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A line spectrum supports the idea that electron energies are",
+      "answerIndex": 1,
+      "correctRationale": "Discrete spectral lines are evidence for quantized energy differences.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "continuous at all values",
+          "misconceptionTag": "classical-continuous-energy-model",
+          "rationale": "A continuous-energy model would not naturally produce discrete spectral lines."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "unrelated to atoms",
+          "misconceptionTag": "spectrum-atom-disconnection",
+          "rationale": "Atomic emission and absorption spectra arise from electronic energy changes in atoms."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "always zero",
+          "misconceptionTag": "zero-energy-misconception",
+          "rationale": "Electrons can occupy different allowed energy states; the evidence does not imply their energy is always zero."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-04": {
+      "itemId": "legacy-04",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Across a period, recurring chemical patterns are strongly related to",
+      "answerIndex": 0,
+      "correctRationale": "Valence-electron patterns help explain periodic behavior.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "random atomic masses",
+          "misconceptionTag": "mass-causes-periodicity",
+          "rationale": "Atomic mass does not by itself explain the repeating chemical patterns across a period."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "neutron color",
+          "misconceptionTag": "nonphysical-neutron-property",
+          "rationale": "Neutrons do not have a chemical 'color' that governs periodic behavior."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "laboratory glassware",
+          "misconceptionTag": "apparatus-causes-periodicity",
+          "rationale": "Laboratory glassware does not determine intrinsic periodic trends."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-05": {
+      "itemId": "legacy-05",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ionic compound is electrically neutral when",
+      "answerIndex": 0,
+      "correctRationale": "Formula ratios reflect charge balance.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "all atoms are uncharged individually",
+          "misconceptionTag": "ionic-means-neutral-atoms",
+          "rationale": "Ionic compounds contain charged ions; neutrality applies to the total formula unit, not each ion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "it contains no electrons",
+          "misconceptionTag": "ionic-means-no-electrons",
+          "rationale": "Ions still contain electrons; charge reflects an imbalance between protons and electrons."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "it is dissolved",
+          "misconceptionTag": "dissolution-required-for-neutrality",
+          "rationale": "Charge balance is a property of the compound's formula and does not require dissolution."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-06": {
+      "itemId": "legacy-06",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A covalent bond is modeled primarily as",
+      "answerIndex": 0,
+      "correctRationale": "Covalent bonding involves shared electron density.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "neutron transfer",
+          "misconceptionTag": "neutron-transfer-bonding",
+          "rationale": "Ordinary covalent bonding involves valence electrons, not transfer of neutrons between nuclei."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "nuclear fission",
+          "misconceptionTag": "bonding-vs-nuclear-process",
+          "rationale": "Nuclear fission changes nuclei and is not the mechanism of a covalent bond."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "gravitational attraction",
+          "misconceptionTag": "gravity-as-chemical-bond",
+          "rationale": "Gravitational attraction is negligible at molecular scale compared with electromagnetic interactions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-07": {
+      "itemId": "legacy-07",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Molecular polarity depends on",
+      "answerIndex": 0,
+      "correctRationale": "Bond dipoles can reinforce or cancel depending on geometry.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "only molecular mass",
+          "misconceptionTag": "mass-only-polarity",
+          "rationale": "Molecular mass alone cannot determine polarity; bond dipoles and geometry control the net dipole."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "only color",
+          "misconceptionTag": "appearance-determines-polarity",
+          "rationale": "Color is not a defining criterion for molecular polarity."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "only state of matter",
+          "misconceptionTag": "phase-determines-polarity",
+          "rationale": "A substance's state of matter does not by itself determine whether an individual molecule is polar."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-08": {
+      "itemId": "legacy-08",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Metals conduct electricity well in part because",
+      "answerIndex": 0,
+      "correctRationale": "Mobile electrons are part of the metallic-bonding model.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "all metal atoms are ions in solution",
+          "misconceptionTag": "metallic-bonding-vs-solution-ions",
+          "rationale": "Electrical conduction in a metal does not require the metal atoms to be dissolved as ions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "they contain no nuclei",
+          "misconceptionTag": "nucleus-absence-misconception",
+          "rationale": "Metal atoms contain nuclei; conduction is explained by mobile electrons in the metallic structure."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "they are always liquids",
+          "misconceptionTag": "liquid-metal-generalization",
+          "rationale": "Most metals are solid under ordinary conditions, yet many still conduct well."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-09": {
+      "itemId": "legacy-09",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Hydrogen bonding is especially important when H is bonded to",
+      "answerIndex": 0,
+      "correctRationale": "Strongly polar N–H, O–H, and F–H bonds enable hydrogen bonding.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "any metal only",
+          "misconceptionTag": "metal-hydrogen-bond-overgeneralization",
+          "rationale": "Hydrogen bonding requires a strongly polarized H bonded to highly electronegative atoms such as N, O, or F, not simply any metal."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "noble gases only",
+          "misconceptionTag": "noble-gas-hydrogen-bond",
+          "rationale": "Noble gases generally do not form the strongly polar H–X bonds required for conventional hydrogen bonding."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "carbon in every case",
+          "misconceptionTag": "carbon-hydrogen-overgeneralization",
+          "rationale": "A C–H bond is usually not polar enough to produce the strong hydrogen bonding described here."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-10": {
+      "itemId": "legacy-10",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, decreasing gas volume generally causes pressure to",
+      "answerIndex": 1,
+      "correctRationale": "Less volume increases collision frequency with container walls.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "decrease",
+          "misconceptionTag": "inverse-pressure-volume-trend",
+          "rationale": "At constant temperature, reducing volume increases wall-collision frequency, so pressure rises rather than falls."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "remain exactly zero",
+          "misconceptionTag": "pressure-zero-misconception",
+          "rationale": "Compression does not make gas pressure exactly zero."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "become unrelated to collisions",
+          "misconceptionTag": "collision-model-rejection",
+          "rationale": "Gas pressure is directly related to particle collisions with container walls in the kinetic model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-11": {
+      "itemId": "legacy-11",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Molarity is defined as",
+      "answerIndex": 0,
+      "correctRationale": "M = mol/L of solution.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "grams of solvent per mole",
+          "misconceptionTag": "molarity-solvent-mass-confusion",
+          "rationale": "Molarity uses moles of solute divided by liters of total solution, not grams of solvent per mole."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "liters of gas per atom",
+          "misconceptionTag": "gas-volume-particle-unit-confusion",
+          "rationale": "Liters per atom is not the concentration definition of molarity."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "moles per gram of solution",
+          "misconceptionTag": "molarity-vs-mass-normalization",
+          "rationale": "Moles per gram is a mass-normalized ratio, not molarity, which is volume-normalized."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-12": {
+      "itemId": "legacy-12",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Chromatography separates mixture components because they",
+      "answerIndex": 0,
+      "correctRationale": "Different relative attractions produce different migration.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "all have identical attractions",
+          "misconceptionTag": "identical-interaction-no-separation",
+          "rationale": "If components interacted identically with both phases, they would migrate similarly and separation would be poor."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "undergo nuclear reactions",
+          "misconceptionTag": "separation-vs-nuclear-reaction",
+          "rationale": "Chromatography is a physical/chemical partitioning method, not a nuclear process."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "lose all electrons",
+          "misconceptionTag": "electron-loss-as-chromatography",
+          "rationale": "Chromatographic migration does not require every component to lose all electrons."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-13": {
+      "itemId": "legacy-13",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Balancing a chemical equation enforces conservation of",
+      "answerIndex": 0,
+      "correctRationale": "Atoms are rearranged, not created or destroyed in ordinary reactions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "coefficients only",
+          "misconceptionTag": "coefficient-vs-conservation-object",
+          "rationale": "Coefficients are adjusted to represent conservation; the conserved entities are atoms of each element."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "temperature",
+          "misconceptionTag": "temperature-conservation-confusion",
+          "rationale": "Balancing an equation does not require temperature to remain constant."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "phase labels",
+          "misconceptionTag": "phase-label-conservation-confusion",
+          "rationale": "Phase labels describe physical state; they are not the conserved count enforced by balancing."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-14": {
+      "itemId": "legacy-14",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "One mole contains approximately",
+      "answerIndex": 0,
+      "correctRationale": "The Avogadro constant relates moles to number of entities.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "9.81 entities",
+          "misconceptionTag": "acceleration-constant-confusion",
+          "rationale": "9.81 is associated with gravitational acceleration near Earth, not the number of entities in a mole."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "100 entities exactly",
+          "misconceptionTag": "round-number-mole-misconception",
+          "rationale": "A mole is not defined as exactly 100 entities."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1.60×10^-19 entities",
+          "misconceptionTag": "elementary-charge-confusion",
+          "rationale": "1.60×10^-19 is associated with elementary charge magnitude in coulombs, not Avogadro's constant."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-15": {
+      "itemId": "legacy-15",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "The limiting reactant is the reactant that",
+      "answerIndex": 0,
+      "correctRationale": "It limits the maximum amount of product.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "has the largest molar mass",
+          "misconceptionTag": "molar-mass-determines-limiting-reactant",
+          "rationale": "The limiting reactant depends on available amounts relative to stoichiometric ratios, not simply on largest molar mass."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "is always a gas",
+          "misconceptionTag": "phase-determines-limiting-reactant",
+          "rationale": "A limiting reactant can be solid, liquid, gas, or dissolved; phase does not define the role."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "is never measured",
+          "misconceptionTag": "unmeasurable-reactant-misconception",
+          "rationale": "Limiting-reactant analysis depends on measured or specified amounts; the limiting reactant is not defined as unmeasured."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-16": {
+      "itemId": "legacy-16",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Percent yield compares",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical × 100%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "atomic number with mass number",
+          "misconceptionTag": "yield-vs-atomic-structure",
+          "rationale": "Atomic number and mass number describe nuclei and are unrelated to percent yield."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "temperature with pressure only",
+          "misconceptionTag": "yield-vs-state-variable-ratio",
+          "rationale": "Temperature-to-pressure comparison is not the definition of percent yield."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "electrons with neutrons",
+          "misconceptionTag": "yield-vs-subatomic-count",
+          "rationale": "Electron and neutron counts do not define reaction yield."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-17": {
+      "itemId": "legacy-17",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Oxidation is associated with",
+      "answerIndex": 0,
+      "correctRationale": "Oxidation tracks electron loss/increased oxidation state.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "gain of neutrons only",
+          "misconceptionTag": "oxidation-vs-neutron-gain",
+          "rationale": "Oxidation in ordinary chemistry concerns electron transfer or oxidation state, not gain of neutrons."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "decrease in all energy",
+          "misconceptionTag": "oxidation-means-energy-decrease",
+          "rationale": "Oxidation is not defined by a universal decrease in energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "formation of water in every reaction",
+          "misconceptionTag": "oxidation-always-forms-water",
+          "rationale": "Many oxidation reactions do not form water; water production is not the defining criterion."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-18": {
+      "itemId": "legacy-18",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Reaction rate is often determined from",
+      "answerIndex": 0,
+      "correctRationale": "Rate describes change per time.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "atomic number divided by mass",
+          "misconceptionTag": "rate-vs-nuclear-ratio",
+          "rationale": "Atomic number divided by mass is not a reaction-rate measurement."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "color alone without calibration",
+          "misconceptionTag": "uncalibrated-observation-as-rate",
+          "rationale": "Color can be a proxy only when related to concentration or extent by a calibrated measurement; color alone is insufficient."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "the number of equations written",
+          "misconceptionTag": "work-product-vs-rate",
+          "rationale": "Counting equations written measures neither chemical change nor elapsed time."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-19": {
+      "itemId": "legacy-19",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A catalyst increases rate by",
+      "answerIndex": 0,
+      "correctRationale": "Catalysts alter pathway/activation energy, not net thermodynamics.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "raising the equilibrium constant in every case",
+          "misconceptionTag": "catalyst-changes-equilibrium-constant",
+          "rationale": "A catalyst speeds forward and reverse pathways without changing the equilibrium constant at a fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "being consumed stoichiometrically",
+          "misconceptionTag": "catalyst-consumed-stoichiometrically",
+          "rationale": "A catalyst participates in a mechanism but is regenerated rather than consumed as a net stoichiometric reactant."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "creating atoms",
+          "misconceptionTag": "catalyst-creates-matter",
+          "rationale": "Catalysis changes pathway and rate; it does not create atoms."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-20": {
+      "itemId": "legacy-20",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Increasing temperature often speeds a reaction because",
+      "answerIndex": 0,
+      "correctRationale": "Higher temperature changes collision energy distribution.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "particles stop moving",
+          "misconceptionTag": "temperature-stops-particles",
+          "rationale": "Higher temperature increases average kinetic energy rather than stopping particle motion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "activation energy becomes zero",
+          "misconceptionTag": "temperature-removes-activation-energy",
+          "rationale": "Heating changes the energy distribution; it does not make the activation energy itself zero."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "equilibrium is always destroyed",
+          "misconceptionTag": "temperature-destroys-equilibrium",
+          "rationale": "Temperature can shift an equilibrium, but it does not mean equilibrium is always destroyed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-21": {
+      "itemId": "legacy-21",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In calorimetry, q=mcΔT relates heat to",
+      "answerIndex": 0,
+      "correctRationale": "This relation estimates heat transfer from measurable quantities.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "pressure only",
+          "misconceptionTag": "calorimetry-pressure-only",
+          "rationale": "The equation q=mcΔT contains no pressure term; it relates heat to mass, specific heat, and temperature change."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "moles only",
+          "misconceptionTag": "calorimetry-moles-only",
+          "rationale": "Moles can enter other thermochemical relations, but q=mcΔT is not defined by moles alone."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "atomic number",
+          "misconceptionTag": "calorimetry-atomic-number",
+          "rationale": "Atomic number does not appear in the calorimetry relation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-22": {
+      "itemId": "legacy-22",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Hess's law works because enthalpy is",
+      "answerIndex": 0,
+      "correctRationale": "State functions depend on initial/final states, not path.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "a catalyst",
+          "misconceptionTag": "enthalpy-vs-catalyst",
+          "rationale": "A catalyst is a substance or pathway feature; enthalpy is a thermodynamic state function."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "an isotope",
+          "misconceptionTag": "enthalpy-vs-isotope",
+          "rationale": "An isotope is a nuclear variant of an element, not a thermodynamic property."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "a unit of pressure",
+          "misconceptionTag": "enthalpy-vs-pressure-unit",
+          "rationale": "Enthalpy is an energy quantity, not a unit of pressure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-23": {
+      "itemId": "legacy-23",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Entropy is commonly associated with",
+      "answerIndex": 0,
+      "correctRationale": "Entropy tracks energy/matter dispersal and multiplicity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "total absence of motion",
+          "misconceptionTag": "entropy-means-no-motion",
+          "rationale": "Greater entropy is not defined as absence of motion; microscopic motion and accessible arrangements are central to statistical descriptions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "electron charge",
+          "misconceptionTag": "entropy-vs-electric-charge",
+          "rationale": "Electron charge is an electrical property, not the thermodynamic meaning of entropy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "molar mass only",
+          "misconceptionTag": "entropy-vs-molar-mass",
+          "rationale": "Molar mass alone does not define entropy."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-24": {
+      "itemId": "legacy-24",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At dynamic equilibrium",
+      "answerIndex": 0,
+      "correctRationale": "Macroscopic constancy can coexist with ongoing microscopic change.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "all molecular motion stops",
+          "misconceptionTag": "equilibrium-stops-motion",
+          "rationale": "Dynamic equilibrium still has ongoing molecular motion and forward/reverse events."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "reactant concentration must be zero",
+          "misconceptionTag": "equilibrium-requires-zero-reactant",
+          "rationale": "Reactants and products can both remain present at nonzero concentrations at equilibrium."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "only the forward reaction occurs",
+          "misconceptionTag": "equilibrium-one-way-reaction",
+          "rationale": "Dynamic equilibrium requires both forward and reverse processes, not only the forward direction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-25": {
+      "itemId": "legacy-25",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Le Châtelier reasoning predicts",
+      "answerIndex": 0,
+      "correctRationale": "It provides a qualitative response model.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "the exact mechanism of every reaction",
+          "misconceptionTag": "le-chatelier-as-mechanism",
+          "rationale": "Le Châtelier reasoning predicts directional response to disturbance; it does not reveal an exact reaction mechanism."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "nuclear half-life",
+          "misconceptionTag": "equilibrium-vs-nuclear-decay",
+          "rationale": "Nuclear half-life is governed by radioactive decay, not Le Châtelier's principle."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "atomic number",
+          "misconceptionTag": "equilibrium-vs-atomic-number",
+          "rationale": "Atomic number is a nuclear identity property and is not predicted by equilibrium-shift reasoning."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-26": {
+      "itemId": "legacy-26",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A buffer resists pH change because it contains",
+      "answerIndex": 0,
+      "correctRationale": "A conjugate pair can moderate added H+ or OH−.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "only pure water",
+          "misconceptionTag": "pure-water-buffer-misconception",
+          "rationale": "Pure water has limited capacity to consume added acid or base and is not a conjugate buffer system."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "no ions",
+          "misconceptionTag": "buffer-without-ions",
+          "rationale": "Buffer action generally depends on acid/base species and their conjugates, often present as ions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "radioactive isotopes",
+          "misconceptionTag": "buffer-radioactivity-confusion",
+          "rationale": "Radioactive isotopes are unrelated to the acid–base mechanism by which buffers resist pH change."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-27": {
+      "itemId": "legacy-27",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A decrease of one pH unit corresponds to about",
+      "answerIndex": 0,
+      "correctRationale": "pH is logarithmic base 10.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "twofold decrease in mass",
+          "misconceptionTag": "ph-vs-mass-change",
+          "rationale": "A one-unit pH change refers to a tenfold hydrogen-ion concentration change, not a twofold mass change."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "one extra neutron",
+          "misconceptionTag": "ph-vs-neutron-count",
+          "rationale": "Neutron number is a nuclear property and does not define pH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "no concentration change",
+          "misconceptionTag": "linear-ph-misconception",
+          "rationale": "Because pH is logarithmic, a one-unit decrease does imply a concentration change; it is not 'no change.'"
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-28": {
+      "itemId": "legacy-28",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell converts",
+      "answerIndex": 0,
+      "correctRationale": "Separated redox half-reactions can drive electron flow.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "electrical energy only into gravity",
+          "misconceptionTag": "energy-conversion-category-error",
+          "rationale": "A galvanic cell does not convert electrical energy into gravity; it produces electrical energy from a spontaneous redox process."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "nuclear energy into mass loss only",
+          "misconceptionTag": "galvanic-vs-nuclear-energy",
+          "rationale": "Galvanic cells operate through chemical redox reactions rather than nuclear mass conversion."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "sound into atoms",
+          "misconceptionTag": "galvanic-vs-sound-conversion",
+          "rationale": "Sound-to-atom conversion is not the operating principle of an electrochemical cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-29": {
+      "itemId": "legacy-29",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Radioactive decay differs from an ordinary chemical reaction because it changes",
+      "answerIndex": 0,
+      "correctRationale": "Nuclear processes change nuclear composition.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "only intermolecular forces",
+          "misconceptionTag": "nuclear-vs-intermolecular-change",
+          "rationale": "Ordinary chemical reactions can change intermolecular interactions; radioactive decay is distinguished by a change in the nucleus."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "only solution volume",
+          "misconceptionTag": "nuclear-vs-volume-change",
+          "rationale": "Solution volume can change in ordinary physical or chemical processes and does not define radioactive decay."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "only molecular orientation",
+          "misconceptionTag": "nuclear-vs-orientation-change",
+          "rationale": "Molecular orientation changes do not constitute radioactive nuclear transformation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-30": {
+      "itemId": "legacy-30",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sustainable materials decision should consider",
+      "answerIndex": 0,
+      "correctRationale": "Engineering decisions require multiple criteria and tradeoffs.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "only purchase price",
+          "misconceptionTag": "single-criterion-cost-only",
+          "rationale": "Purchase price alone ignores lifecycle impacts, performance, safety, and uncertainty."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "only color",
+          "misconceptionTag": "appearance-only-design",
+          "rationale": "Color can be a design consideration but cannot by itself establish sustainability or engineering suitability."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "only molecular mass",
+          "misconceptionTag": "single-property-molar-mass",
+          "rationale": "Molar mass alone does not capture performance, lifecycle, safety, cost, or uncertainty tradeoffs."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "w01-density-1": {
+      "itemId": "w01-density-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 24 g and volume 8 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 24/8 = 3 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w01-density-2": {
+      "itemId": "w01-density-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 45 g and volume 15 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 45/15 = 3 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w01-density-3": {
+      "itemId": "w01-density-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 63 g and volume 21 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 63/21 = 3 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w01-density-4": {
+      "itemId": "w01-density-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 72 g and volume 24 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 72/24 = 3 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w01-density-5": {
+      "itemId": "w01-density-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 84 g and volume 28 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 84/28 = 3 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w01-density-6": {
+      "itemId": "w01-density-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 96 g and volume 32 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 96/32 = 3 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w01-density-7": {
+      "itemId": "w01-density-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 55 g and volume 22 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 55/22 = 2.5 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "5 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.25 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3.5 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-1": {
+      "itemId": "w02-atom-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 11, mass number 23, and charge 0. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 11 − (0) = 11; neutrons = 23 − 11 = 12.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "11 electrons; 23 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "12 electrons; 11 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "10 electrons; 12 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-2": {
+      "itemId": "w02-atom-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 17, mass number 35, and charge -1. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 17 − (-1) = 18; neutrons = 35 − 17 = 18.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "17 electrons; 18 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "18 electrons; 17 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "17 electrons; 35 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-3": {
+      "itemId": "w02-atom-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 12, mass number 24, and charge +2. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 12 − (2) = 10; neutrons = 24 − 12 = 12.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12 electrons; 24 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "12 electrons; 10 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "14 electrons; 12 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-4": {
+      "itemId": "w02-atom-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 8, mass number 16, and charge -2. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 8 − (-2) = 10; neutrons = 16 − 8 = 8.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8 electrons; 16 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "8 electrons; 10 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "6 electrons; 8 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-5": {
+      "itemId": "w02-atom-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 13, mass number 27, and charge +3. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 13 − (3) = 10; neutrons = 27 − 13 = 14.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "13 electrons; 27 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "14 electrons; 10 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "17 electrons; 13 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-6": {
+      "itemId": "w02-atom-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 20, mass number 40, and charge +2. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 20 − (2) = 18; neutrons = 40 − 20 = 20.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "20 electrons; 40 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "20 electrons; 18 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "22 electrons; 20 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-7": {
+      "itemId": "w02-atom-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 7, mass number 14, and charge -3. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 7 − (-3) = 10; neutrons = 14 − 7 = 7.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "7 electrons; 14 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7 electrons; 10 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 electrons; 7 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-1": {
+      "itemId": "w03-mass-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 35 (75%) and 37 (25%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 35(0.75) + 37(0.25) = 35.5 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "36 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "35 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "37 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-2": {
+      "itemId": "w03-mass-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 10 (80%) and 11 (20%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 10(0.8) + 11(0.2) = 10.2 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10.5 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "10 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "11 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-3": {
+      "itemId": "w03-mass-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 24 (65%) and 26 (35%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 24(0.65) + 26(0.35) = 24.7 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "25 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "24 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "26 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-4": {
+      "itemId": "w03-mass-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 63 (70%) and 65 (30%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 63(0.7) + 65(0.3) = 63.6 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "64 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "63 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "65 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-5": {
+      "itemId": "w03-mass-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 79 (55%) and 81 (45%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 79(0.55) + 81(0.45) = 79.9 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "80 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "79 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "81 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-6": {
+      "itemId": "w03-mass-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 20 (90%) and 22 (10%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 20(0.9) + 22(0.1) = 20.2 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "21 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "20 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "22 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-7": {
+      "itemId": "w03-mass-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 107 (52%) and 109 (48%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 107(0.52) + 109(0.48) = 107.96 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "108 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "107 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "109 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-1": {
+      "itemId": "w04-photon-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 400 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (400×10^-9) = 750000000000000 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "75000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7500000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1200 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-2": {
+      "itemId": "w04-photon-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 450 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (450×10^-9) = 666666666666666.6 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "66666666666666.66 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6666666666666666 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1350 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-3": {
+      "itemId": "w04-photon-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 500 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (500×10^-9) = 600000000000000 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "60000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6000000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1500 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-4": {
+      "itemId": "w04-photon-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 550 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (550×10^-9) = 545454545454545.44 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "54545454545454.55 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5454545454545454 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1650 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-5": {
+      "itemId": "w04-photon-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 600 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (600×10^-9) = 500000000000000 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "50000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5000000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1800 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-6": {
+      "itemId": "w04-photon-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 650 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (650×10^-9) = 461538461538461.56 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "46153846153846.16 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4615384615384616 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1950 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-7": {
+      "itemId": "w04-photon-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 750 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (750×10^-9) = 400000000000000 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "40000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4000000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2250 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-1": {
+      "itemId": "w11-gas-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=1 atm and V₁=4 L. If pressure becomes 2 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=2 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-2": {
+      "itemId": "w11-gas-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=1.2 atm and V₁=5 L. If pressure becomes 2 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=3 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8.33 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2.5 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-3": {
+      "itemId": "w11-gas-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=2 atm and V₁=3 L. If pressure becomes 1 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=6 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.5 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "12 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-4": {
+      "itemId": "w11-gas-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=0.8 atm and V₁=6 L. If pressure becomes 1.6 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=3 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4.8 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9.6 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-5": {
+      "itemId": "w11-gas-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=1.5 atm and V₁=8 L. If pressure becomes 3 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=4 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "16 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "8 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "24 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-6": {
+      "itemId": "w11-gas-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=2.5 atm and V₁=4 L. If pressure becomes 5 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=2 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "10 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-7": {
+      "itemId": "w11-gas-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=1 atm and V₁=10 L. If pressure becomes 4 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=2.5 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "40 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "14 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-1": {
+      "itemId": "w12-molarity-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 0.5 mol solute in 2 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 0.5/2 = 0.25 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2.5 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-2": {
+      "itemId": "w12-molarity-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 0.25 mol solute in 0.5 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 0.25/0.5 = 0.5 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.125 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-3": {
+      "itemId": "w12-molarity-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 1.2 mol solute in 3 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 1.2/3 = 0.4 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.6 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.5 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-4": {
+      "itemId": "w12-molarity-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 0.75 mol solute in 1.5 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 0.75/1.5 = 0.5 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.125 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-5": {
+      "itemId": "w12-molarity-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 0.1 mol solute in 0.25 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 0.1/0.25 = 0.4 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.025 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.5 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-6": {
+      "itemId": "w12-molarity-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 2 mol solute in 4 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 2/4 = 0.5 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-7": {
+      "itemId": "w12-molarity-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 0.33 mol solute in 1.1 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 0.33/1.1 = 0.3 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.363 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3.333 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-1": {
+      "itemId": "w16-yield-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 10 g and actual yield 8 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 80%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "125%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "40%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-2": {
+      "itemId": "w16-yield-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 20 g and actual yield 18 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 90%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "111.1%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "45%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-3": {
+      "itemId": "w16-yield-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 30 g and actual yield 24 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 80%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "125%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "40%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-4": {
+      "itemId": "w16-yield-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 10 g and actual yield 7.5 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 75%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "133.3%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.5%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "37.5%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-5": {
+      "itemId": "w16-yield-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 50 g and actual yield 45 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 90%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "111.1%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "45%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-6": {
+      "itemId": "w16-yield-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 16 g and actual yield 12 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 75%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "133.3%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "37.5%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-7": {
+      "itemId": "w16-yield-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 36 g and actual yield 27 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 75%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "133.3%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "9%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "37.5%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-1": {
+      "itemId": "w17-solution-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 50 mL of a 0.2 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.2×0.05 = 0.01 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.1 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.001 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-2": {
+      "itemId": "w17-solution-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 125 mL of a 0.1 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.1×0.125 = 0.0125 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12.5 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.125 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.0013 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-3": {
+      "itemId": "w17-solution-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 20 mL of a 0.5 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.5×0.02 = 0.01 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.1 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.001 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-4": {
+      "itemId": "w17-solution-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 80 mL of a 0.25 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.25×0.08 = 0.02 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "20 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.2 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.002 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-5": {
+      "itemId": "w17-solution-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 75 mL of a 0.4 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.4×0.075 = 0.03 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "30 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.3 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.003 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-6": {
+      "itemId": "w17-solution-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 200 mL of a 0.05 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.05×0.2 = 0.01 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.1 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.001 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-7": {
+      "itemId": "w17-solution-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 40 mL of a 0.3 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.3×0.04 = 0.012 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.12 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.0012 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-1": {
+      "itemId": "w19-rate-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 0.8 mol/L over 20 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.04 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "16 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "25 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.4 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-2": {
+      "itemId": "w19-rate-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 1.2 mol/L over 30 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.04 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "36 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "25 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.4 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-3": {
+      "itemId": "w19-rate-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 0.45 mol/L over 15 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.03 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6.75 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "33.3333 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.3 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-4": {
+      "itemId": "w19-rate-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 2.1 mol/L over 35 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.06 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "73.5 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "16.6667 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.6 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-5": {
+      "itemId": "w19-rate-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 0.6 mol/L over 12 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.05 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "7.2 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "20 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.5 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-6": {
+      "itemId": "w19-rate-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 1.5 mol/L over 25 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.06 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "37.5 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "16.6667 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.6 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-7": {
+      "itemId": "w19-rate-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 0.98 mol/L over 14 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.07 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "13.72 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "14.2857 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.7 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-1": {
+      "itemId": "w26-kc-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=0.5 M, [B]=0.5 M, [C]=1 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=1/(0.5×0.5)=4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.25",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-2": {
+      "itemId": "w26-kc-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=0.2 M, [B]=0.4 M, [C]=0.8 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=0.8/(0.2×0.4)=10.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.1",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.33",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1.4",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-3": {
+      "itemId": "w26-kc-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=1 M, [B]=2 M, [C]=0.5 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=0.5/(1×2)=0.25.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.17",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3.5",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-4": {
+      "itemId": "w26-kc-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=0.25 M, [B]=0.5 M, [C]=0.25 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=0.25/(0.25×0.5)=2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.33",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-5": {
+      "itemId": "w26-kc-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=0.1 M, [B]=0.2 M, [C]=0.4 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=0.4/(0.1×0.2)=20.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.05",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.33",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.7",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-6": {
+      "itemId": "w26-kc-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=0.8 M, [B]=0.4 M, [C]=0.64 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=0.64/(0.8×0.4)=2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.53",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1.84",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-7": {
+      "itemId": "w26-kc-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=0.3 M, [B]=0.6 M, [C]=0.54 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=0.54/(0.3×0.6)=3.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.33",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.6",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1.44",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-1": {
+      "itemId": "w09-material-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 54 g and volume 20 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 54/20 = 2.7 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.7 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.35 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5.4 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-2": {
+      "itemId": "w09-material-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 78 g and volume 30 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 78/30 = 2.6 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.6 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.3 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5.2 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-3": {
+      "itemId": "w09-material-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 89 g and volume 10 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 89/10 = 8.9 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "9.9 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4.45 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "17.8 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-4": {
+      "itemId": "w09-material-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 45 g and volume 18 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 45/18 = 2.5 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.5 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.25 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-5": {
+      "itemId": "w09-material-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 66 g and volume 24 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 66/24 = 2.75 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.75 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.38 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5.5 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-6": {
+      "itemId": "w09-material-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 35 g and volume 14 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 35/14 = 2.5 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.5 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.25 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w09-material-7": {
+      "itemId": "w09-material-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid sample has mass 102 g and volume 40 cm³. What density should be compared with a materials table?",
+      "answerIndex": 0,
+      "correctRationale": "Density = 102/40 = 2.55 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.55 g/cm³",
+          "misconceptionTag": "density-additive-offset-error",
+          "rationale": "This value adds an arbitrary offset to the mass-to-volume result instead of using density = mass/volume."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.27 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is about half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5.1 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the correct density, indicating an unnecessary factor of two after calculating mass/volume."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-1": {
+      "itemId": "w13-rf-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 3 cm while the solvent front travels 6 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.5.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-2": {
+      "itemId": "w13-rf-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 2.4 cm while the solvent front travels 8 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.3.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.33",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5.6",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-3": {
+      "itemId": "w13-rf-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 5 cm while the solvent front travels 10 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.5.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.05",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-4": {
+      "itemId": "w13-rf-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 1.8 cm while the solvent front travels 6 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.3.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.33",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4.2",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-5": {
+      "itemId": "w13-rf-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 4.2 cm while the solvent front travels 7 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.6.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.67",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.8",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "6",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-6": {
+      "itemId": "w13-rf-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 3.5 cm while the solvent front travels 5 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.7.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.43",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w13-rf-7": {
+      "itemId": "w13-rf-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A spot travels 6 cm while the solvent front travels 8 cm. What is Rf?",
+      "answerIndex": 0,
+      "correctRationale": "Rf = distance traveled by solute / distance traveled by solvent front = 0.75.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.33",
+          "misconceptionTag": "rf-ratio-inversion",
+          "rationale": "This value is the reciprocal-style result obtained by reversing solvent-front and solute distances; Rf must be solute distance divided by solvent-front distance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2",
+          "misconceptionTag": "rf-difference-instead-of-ratio",
+          "rationale": "This uses the difference between the solvent-front and spot distances rather than their ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7.5",
+          "misconceptionTag": "rf-decimal-scale-error",
+          "rationale": "This reflects a decimal-place or scale error after forming the chromatographic distance ratio; Rf should remain dimensionless and normally between 0 and 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-1": {
+      "itemId": "w20-collision-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 1 M to 2 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-2": {
+      "itemId": "w20-collision-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 2 M to 4 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-3": {
+      "itemId": "w20-collision-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 1.5 M to 3 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-4": {
+      "itemId": "w20-collision-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 0.5 M to 2 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.25×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-5": {
+      "itemId": "w20-collision-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 3 M to 6 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-6": {
+      "itemId": "w20-collision-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 2.5 M to 5 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w20-collision-7": {
+      "itemId": "w20-collision-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a simplified model where rate is directly proportional to [A], concentration changes from 4 M to 8 M. By what factor does predicted rate change?",
+      "answerIndex": 0,
+      "correctRationale": "For the stated direct-proportional model, the rate factor equals the concentration ratio.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5×",
+          "misconceptionTag": "rate-factor-ratio-inversion",
+          "rationale": "This reverses the concentration ratio; for direct proportionality the rate factor is final concentration divided by initial concentration."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3×",
+          "misconceptionTag": "rate-factor-additive-confusion",
+          "rationale": "This treats a multiplicative change factor as an additive or absolute concentration change instead of using the concentration ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No change",
+          "misconceptionTag": "direct-proportionality-ignored",
+          "rationale": "This assumes no rate change even though the stated model says rate is directly proportional to concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-1": {
+      "itemId": "w21-catalyst-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 80 kJ/mol. A catalyst lowers the barrier by 20 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 80−20 = 60 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "100 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "20 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-2": {
+      "itemId": "w21-catalyst-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 95 kJ/mol. A catalyst lowers the barrier by 25 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 95−25 = 70 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "120 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "25 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-3": {
+      "itemId": "w21-catalyst-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 70 kJ/mol. A catalyst lowers the barrier by 15 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 70−15 = 55 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "85 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "15 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-4": {
+      "itemId": "w21-catalyst-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 120 kJ/mol. A catalyst lowers the barrier by 30 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 120−30 = 90 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "150 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "30 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-5": {
+      "itemId": "w21-catalyst-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 65 kJ/mol. A catalyst lowers the barrier by 10 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 65−10 = 55 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "75 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "10 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-6": {
+      "itemId": "w21-catalyst-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 110 kJ/mol. A catalyst lowers the barrier by 35 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 110−35 = 75 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "145 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "35 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w21-catalyst-7": {
+      "itemId": "w21-catalyst-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An uncatalyzed pathway has activation energy 88 kJ/mol. A catalyst lowers the barrier by 18 kJ/mol. What is the modeled catalyzed activation energy?",
+      "answerIndex": 0,
+      "correctRationale": "Catalyzed barrier = 88−18 = 70 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "106 kJ/mol",
+          "misconceptionTag": "activation-barrier-addition-error",
+          "rationale": "This adds the amount by which the catalyst lowers the barrier instead of subtracting it from the uncatalyzed activation energy."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "18 kJ/mol",
+          "misconceptionTag": "barrier-reduction-vs-final-barrier",
+          "rationale": "This reports only the amount of barrier reduction, not the remaining catalyzed activation energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "catalyst-zero-barrier-misconception",
+          "rationale": "A catalyst lowers activation energy but does not generally eliminate the activation barrier entirely."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-1": {
+      "itemId": "w23-cal-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 100 g water sample changes temperature by 5°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=100×4.18×5=2090 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.1 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "500 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4180 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-2": {
+      "itemId": "w23-cal-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 50 g water sample changes temperature by 10°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=50×4.18×10=2090 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.1 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "500 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4180 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-3": {
+      "itemId": "w23-cal-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 200 g water sample changes temperature by 3°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=200×4.18×3=2508 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.5 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "600 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5016 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-4": {
+      "itemId": "w23-cal-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 75 g water sample changes temperature by 8°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=75×4.18×8=2508 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.5 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "600 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5016 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-5": {
+      "itemId": "w23-cal-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 120 g water sample changes temperature by 6°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=120×4.18×6=3009.6 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "720 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "6019.2 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-6": {
+      "itemId": "w23-cal-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 250 g water sample changes temperature by 2°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=250×4.18×2=2090 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.1 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "500 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4180 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w23-cal-7": {
+      "itemId": "w23-cal-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A 80 g water sample changes temperature by 12°C. Using c=4.18 J·g⁻¹·°C⁻¹, what is |q|?",
+      "answerIndex": 0,
+      "correctRationale": "q=mcΔT=80×4.18×12=4012.8 J.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4 J",
+          "misconceptionTag": "calorimetry-joule-kilojoule-scale-error",
+          "rationale": "This is about one-thousandth of the correct value while still labeled in joules, indicating a joule/kilojoule scale mismatch."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "960 J",
+          "misconceptionTag": "calorimetry-omits-specific-heat",
+          "rationale": "This multiplies mass by temperature change but omits the specific-heat factor in q=mcΔT."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8025.6 J",
+          "misconceptionTag": "calorimetry-extra-factor-two",
+          "rationale": "This doubles the correct q value, indicating an unnecessary factor of two after applying q=mcΔT."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-1": {
+      "itemId": "w24-hess-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -100 and -50 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-50 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "150 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-2": {
+      "itemId": "w24-hess-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -250 and 80 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-330 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "170 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-3": {
+      "itemId": "w24-hess-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -120 and -30 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-90 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "150 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-4": {
+      "itemId": "w24-hess-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -75 and -25 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-50 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "100 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-5": {
+      "itemId": "w24-hess-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -300 and 120 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-420 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "180 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-6": {
+      "itemId": "w24-hess-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -60 and -90 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "30 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "150 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w24-hess-7": {
+      "itemId": "w24-hess-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two reaction steps sum to the target reaction and have ΔH values -140 and 40 kJ/mol. What is ΔH for the target?",
+      "answerIndex": 0,
+      "correctRationale": "Hess's law adds enthalpy changes for steps that add to the target reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-180 kJ/mol",
+          "misconceptionTag": "hess-subtract-second-step",
+          "rationale": "This subtracts the second enthalpy value instead of adding the enthalpy changes of reaction steps that sum to the target."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "100 kJ/mol",
+          "misconceptionTag": "hess-sign-reversal",
+          "rationale": "This has the correct magnitude but the opposite sign, indicating the target enthalpy was sign-reversed without reversing the stated target reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0 kJ/mol",
+          "misconceptionTag": "hess-cancellation-assumption",
+          "rationale": "This assumes the step enthalpies cancel to zero rather than adding algebraically according to Hess's law."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-1": {
+      "itemId": "w25-gibbs-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=10 kJ/mol, ΔS=0.05 kJ·mol⁻¹·K⁻¹, and T=300 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=10−(300×0.05)=-5 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "25 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "15 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "10 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-2": {
+      "itemId": "w25-gibbs-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=25 kJ/mol, ΔS=0.08 kJ·mol⁻¹·K⁻¹, and T=250 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=25−(250×0.08)=5 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "45 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "20 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "25 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-3": {
+      "itemId": "w25-gibbs-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=-20 kJ/mol, ΔS=0.02 kJ·mol⁻¹·K⁻¹, and T=300 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=-20−(300×0.02)=-26 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-14 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "-20 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-4": {
+      "itemId": "w25-gibbs-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=40 kJ/mol, ΔS=0.12 kJ·mol⁻¹·K⁻¹, and T=400 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=40−(400×0.12)=-8 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "88 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "48 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "40 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-5": {
+      "itemId": "w25-gibbs-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=-15 kJ/mol, ΔS=0.01 kJ·mol⁻¹·K⁻¹, and T=350 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=-15−(350×0.01)=-18.5 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-11.5 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3.5 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "-15 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-6": {
+      "itemId": "w25-gibbs-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=5 kJ/mol, ΔS=0.02 kJ·mol⁻¹·K⁻¹, and T=500 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=5−(500×0.02)=-5 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "15 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "10 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w25-gibbs-7": {
+      "itemId": "w25-gibbs-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a process, ΔH=30 kJ/mol, ΔS=0.15 kJ·mol⁻¹·K⁻¹, and T=300 K. What is ΔG=ΔH−TΔS?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG=30−(300×0.15)=-15 kJ/mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "75 kJ/mol",
+          "misconceptionTag": "gibbs-adds-tdeltas",
+          "rationale": "This uses ΔH+TΔS instead of the required ΔG=ΔH−TΔS relationship."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "45 kJ/mol",
+          "misconceptionTag": "gibbs-reports-tdeltas-only",
+          "rationale": "This reports the TΔS term by itself instead of combining it with ΔH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "30 kJ/mol",
+          "misconceptionTag": "gibbs-ignores-entropy-term",
+          "rationale": "This reports ΔH alone and ignores the temperature–entropy contribution TΔS."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-1": {
+      "itemId": "w27-qk-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=0.2 and K=1. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q<K, so net forward change lowers the difference toward equilibrium.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "reverse",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-2": {
+      "itemId": "w27-qk-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=5 and K=1. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q>K, so net reverse change lowers the quotient toward K.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "forward",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-3": {
+      "itemId": "w27-qk-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=1 and K=1. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q=K, so the system is at equilibrium.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "forward",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "reverse",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-4": {
+      "itemId": "w27-qk-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=0.5 and K=2. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q<K, so net forward change lowers the difference toward equilibrium.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "reverse",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-5": {
+      "itemId": "w27-qk-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=4 and K=2. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q>K, so net reverse change lowers the quotient toward K.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "forward",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-6": {
+      "itemId": "w27-qk-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=0.1 and K=0.5. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q<K, so net forward change lowers the difference toward equilibrium.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "reverse",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w27-qk-7": {
+      "itemId": "w27-qk-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For a reversible reaction, Q=3 and K=0.5. Which direction is favored to approach equilibrium?",
+      "answerIndex": 0,
+      "correctRationale": "Q>K, so net reverse change lowers the quotient toward K.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "forward",
+          "misconceptionTag": "reaction-quotient-direction-reversed",
+          "rationale": "This chooses the opposite shift from the one indicated by comparing Q with K."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "q-equals-k-assumed",
+          "rationale": "This treats the system as already at equilibrium even though equilibrium requires Q=K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Cannot be inferred from Q and K",
+          "misconceptionTag": "qk-comparison-ignored",
+          "rationale": "The direction can be inferred from Q and K: Q<K favors net forward change, Q>K favors net reverse change, and Q=K is equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-1": {
+      "itemId": "w28-ksp-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.01 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=1.00e-4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.00e-4",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.00e-2",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2.00e-2",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-2": {
+      "itemId": "w28-ksp-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.02 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=4.00e-4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8.00e-4",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.00e-2",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4.00e-2",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-3": {
+      "itemId": "w28-ksp-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.005 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=2.50e-5.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "5.00e-5",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5.00e-3",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1.00e-2",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-4": {
+      "itemId": "w28-ksp-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.03 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=9.00e-4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.80e-3",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3.00e-2",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "6.00e-2",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-5": {
+      "itemId": "w28-ksp-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.004 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=1.60e-5.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.20e-5",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4.00e-3",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8.00e-3",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-6": {
+      "itemId": "w28-ksp-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.015 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=2.25e-4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4.50e-4",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.50e-2",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3.00e-2",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w28-ksp-7": {
+      "itemId": "w28-ksp-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For MX(s) ⇌ M⁺ + X⁻, the molar solubility is 0.025 M in pure water. What is Ksp in the simple 1:1 model?",
+      "answerIndex": 0,
+      "correctRationale": "For a 1:1 salt, [M⁺]=[X⁻]=s, so Ksp=s²=6.25e-4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.25e-3",
+          "misconceptionTag": "ksp-extra-stoichiometric-factor",
+          "rationale": "This doubles s² for a 1:1 salt even though Ksp=[M⁺][X⁻]=s·s=s² with no extra factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.50e-2",
+          "misconceptionTag": "ksp-uses-solubility-not-square",
+          "rationale": "This reports the molar solubility s itself instead of multiplying the two equilibrium ion concentrations to obtain s²."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5.00e-2",
+          "misconceptionTag": "ksp-double-solubility",
+          "rationale": "This doubles the molar solubility rather than forming the equilibrium product s²."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-1": {
+      "itemId": "w30-ph-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-2 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-2": {
+      "itemId": "w30-ph-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-3 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 3.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "11",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-3": {
+      "itemId": "w30-ph-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-4 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-4": {
+      "itemId": "w30-ph-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-5 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 5.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "9",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-5": {
+      "itemId": "w30-ph-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-6 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 6.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-6": {
+      "itemId": "w30-ph-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-7 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 7.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "8",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "14",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w30-ph-7": {
+      "itemId": "w30-ph-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "If [H⁺] = 1e-8 M, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log₁₀[H⁺] = 8.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6",
+          "misconceptionTag": "ph-poh-or-complement-confusion",
+          "rationale": "This applies a 14-based complement or nearby neutrality rule to the concentration exponent instead of using pH=−log₁₀[H⁺]."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "9",
+          "misconceptionTag": "ph-exponent-off-by-one-high",
+          "rationale": "This is one pH unit above the logarithmic result, indicating the power-of-ten exponent was shifted by one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7",
+          "misconceptionTag": "ph-exponent-or-scale-error-low",
+          "rationale": "This reflects an incorrect exponent/sign/scale interpretation rather than the negative base-10 logarithm of hydrogen-ion concentration."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-1": {
+      "itemId": "w31-buffer-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=4.8 and [A⁻]/[HA]=1, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(1)=0, giving pH=4.8.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.8",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5.8",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9.6",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-2": {
+      "itemId": "w31-buffer-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=4.8 and [A⁻]/[HA]=10, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(10)=1, giving pH=5.8.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-5.2",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "14.8",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4.8",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-3": {
+      "itemId": "w31-buffer-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=4.8 and [A⁻]/[HA]=0.1, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(0.1)=-1, giving pH=3.8.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4.7",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4.9",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4.8",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-4": {
+      "itemId": "w31-buffer-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=6.2 and [A⁻]/[HA]=1, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(1)=0, giving pH=6.2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "5.2",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7.2",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "12.4",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-5": {
+      "itemId": "w31-buffer-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=6.2 and [A⁻]/[HA]=10, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(10)=1, giving pH=7.2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-3.8",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "16.2",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "6.2",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-6": {
+      "itemId": "w31-buffer-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=7.4 and [A⁻]/[HA]=0.1, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(0.1)=-1, giving pH=6.4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "7.3",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7.5",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7.4",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w31-buffer-7": {
+      "itemId": "w31-buffer-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using Henderson–Hasselbalch, pH=pKa+log([A⁻]/[HA]). If pKa=7.4 and [A⁻]/[HA]=1, what is pH?",
+      "answerIndex": 0,
+      "correctRationale": "log₁₀(1)=0, giving pH=7.4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6.4",
+          "misconceptionTag": "henderson-log-sign-or-raw-ratio-error",
+          "rationale": "This mishandles the logarithmic contribution, commonly by subtracting the raw ratio or applying the log term with the wrong sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "8.4",
+          "misconceptionTag": "henderson-adds-raw-ratio",
+          "rationale": "This adds the raw [A⁻]/[HA] ratio to pKa instead of adding log₁₀([A⁻]/[HA])."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "14.8",
+          "misconceptionTag": "henderson-log-term-ignored-or-misscaled",
+          "rationale": "This ignores or mis-scales the logarithmic ratio contribution; the Henderson–Hasselbalch correction is log₁₀([A⁻]/[HA]), not an arbitrary multiple of pKa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-1": {
+      "itemId": "w32-direction-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 298 K, ΔH=-5 kJ/mol and ΔS=0 kJ·mol⁻¹·K⁻¹. ΔG is -5 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "not thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-2": {
+      "itemId": "w32-direction-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 300 K, ΔH=-10 kJ/mol and ΔS=0.02 kJ·mol⁻¹·K⁻¹. ΔG is -16 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "not thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-3": {
+      "itemId": "w32-direction-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 300 K, ΔH=20 kJ/mol and ΔS=0.1 kJ·mol⁻¹·K⁻¹. ΔG is -10 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "not thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-4": {
+      "itemId": "w32-direction-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 250 K, ΔH=15 kJ/mol and ΔS=0.02 kJ·mol⁻¹·K⁻¹. ΔG is 10 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-5": {
+      "itemId": "w32-direction-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 400 K, ΔH=-2 kJ/mol and ΔS=-0.01 kJ·mol⁻¹·K⁻¹. ΔG is 2 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-6": {
+      "itemId": "w32-direction-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 500 K, ΔH=30 kJ/mol and ΔS=0.08 kJ·mol⁻¹·K⁻¹. ΔG is -10 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "not thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w32-direction-7": {
+      "itemId": "w32-direction-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At 300 K, ΔH=5 kJ/mol and ΔS=0.03 kJ·mol⁻¹·K⁻¹. ΔG is -4 kJ/mol. What does the sign indicate?",
+      "answerIndex": 0,
+      "correctRationale": "The sign of ΔG indicates thermodynamic direction under the stated conditions, not kinetic speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "not thermodynamically favored",
+          "misconceptionTag": "gibbs-sign-direction-reversed",
+          "rationale": "This reverses the thermodynamic interpretation of the stated ΔG sign under the stated conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction is necessarily fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A favorable ΔG sign concerns thermodynamic direction, not whether the process is necessarily fast."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The system is necessarily at equilibrium",
+          "misconceptionTag": "gibbs-sign-equilibrium-confusion",
+          "rationale": "A nonzero ΔG does not mean the system is necessarily at equilibrium; equilibrium corresponds to the appropriate zero driving force under the defined conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-1": {
+      "itemId": "w33-cell-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=0.8 V and E°anode=-0.76 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=0.8−(-0.76)=1.56 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.04 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-1.56 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.76 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-2": {
+      "itemId": "w33-cell-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=0.34 V and E°anode=-0.44 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=0.34−(-0.44)=0.78 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-0.1 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-0.78 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.44 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-3": {
+      "itemId": "w33-cell-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=1.23 V and E°anode=0.4 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=1.23−(0.4)=0.83 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.63 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-0.83 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.4 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-4": {
+      "itemId": "w33-cell-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=0.77 V and E°anode=-0.14 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=0.77−(-0.14)=0.91 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.63 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-0.91 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.14 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-5": {
+      "itemId": "w33-cell-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=0.54 V and E°anode=-0.28 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=0.54−(-0.28)=0.82 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.26 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-0.82 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.28 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-6": {
+      "itemId": "w33-cell-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=0.15 V and E°anode=-0.25 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=0.15−(-0.25)=0.4 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-0.1 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-0.4 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.25 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w33-cell-7": {
+      "itemId": "w33-cell-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell uses E°cathode=1.36 V and E°anode=0.8 V (listed as reduction potentials). What is E°cell?",
+      "answerIndex": 0,
+      "correctRationale": "E°cell=E°cathode−E°anode=1.36−(0.8)=0.56 V.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "2.16 V",
+          "misconceptionTag": "cell-potential-adds-reduction-potentials",
+          "rationale": "This adds the listed reduction potentials directly instead of using E°cell=E°cathode−E°anode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-0.56 V",
+          "misconceptionTag": "cell-potential-sign-reversal",
+          "rationale": "This has the magnitude of the cell potential but the wrong sign, indicating cathode/anode subtraction was reversed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.8 V",
+          "misconceptionTag": "cell-potential-single-electrode-only",
+          "rationale": "This reports essentially one electrode potential magnitude instead of combining cathode and anode reduction potentials to obtain E°cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-1": {
+      "itemId": "w34-half-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 80 mg. How much remains after 1 half-life?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 40 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "78 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "80 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "160 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-2": {
+      "itemId": "w34-half-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 80 mg. How much remains after 2 half-lives?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 20 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "76 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "40 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "320 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-3": {
+      "itemId": "w34-half-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 160 mg. How much remains after 3 half-lives?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 20 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "154 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "53.333333333333336 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1280 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-4": {
+      "itemId": "w34-half-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 64 mg. How much remains after 2 half-lives?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 16 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "60 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "32 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "256 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-5": {
+      "itemId": "w34-half-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 100 mg. How much remains after 1 half-life?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 50 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "98 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "100 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "200 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-6": {
+      "itemId": "w34-half-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 96 mg. How much remains after 3 half-lives?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 12 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "90 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "32 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "768 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w34-half-7": {
+      "itemId": "w34-half-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A radioactive sample starts at 120 mg. How much remains after 2 half-lives?",
+      "answerIndex": 0,
+      "correctRationale": "Remaining amount = initial × (1/2)^n = 30 mg.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "116 mg",
+          "misconceptionTag": "half-life-linear-subtraction",
+          "rationale": "This treats radioactive decay as a fixed linear subtraction per half-life rather than repeated multiplication by one-half."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "60 mg",
+          "misconceptionTag": "half-life-divide-by-count",
+          "rationale": "This divides by the number of half-lives or applies only one halving instead of using initial×(1/2)^n."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "480 mg",
+          "misconceptionTag": "half-life-growth-instead-of-decay",
+          "rationale": "This multiplies by powers of two, modeling exponential growth rather than radioactive decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-1": {
+      "itemId": "w35-decision-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 8, 6, 9 on three criteria with weights 0.4, 0.3, 0.3. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "23",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.57",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9.24",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-2": {
+      "itemId": "w35-decision-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 7, 9, 5 on three criteria with weights 0.5, 0.2, 0.3. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "21",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.27",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8.16",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-3": {
+      "itemId": "w35-decision-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 6, 8, 8 on three criteria with weights 0.3, 0.4, 0.3. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "22",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.47",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8.88",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-4": {
+      "itemId": "w35-decision-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 9, 5, 7 on three criteria with weights 0.4, 0.4, 0.2. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "21",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.33",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8.4",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-5": {
+      "itemId": "w35-decision-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 5, 9, 9 on three criteria with weights 0.2, 0.4, 0.4. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "23",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.73",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9.84",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-6": {
+      "itemId": "w35-decision-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 8, 8, 6 on three criteria with weights 0.5, 0.3, 0.2. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "22",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.53",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9.12",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w35-decision-7": {
+      "itemId": "w35-decision-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material scores 7, 7, 9 on three criteria with weights 0.3, 0.3, 0.4. What is its weighted score?",
+      "answerIndex": 0,
+      "correctRationale": "Multiply each score by its criterion weight and add the weighted contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "23",
+          "misconceptionTag": "weighted-score-ignores-weights",
+          "rationale": "This simply sums the criterion scores and ignores the stated weights."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.6",
+          "misconceptionTag": "weighted-score-divides-again",
+          "rationale": "This divides the already weighted result by the number of criteria, effectively averaging a value that is already normalized by weights summing to one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9.36",
+          "misconceptionTag": "weighted-score-extra-rescaling",
+          "rationale": "This rescales the weighted total by an additional factor after the weighted contributions have already been summed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w05-trend-1": {
+      "itemId": "w05-trend-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater atomic radius: Na or Cl?",
+      "answerIndex": 0,
+      "correctRationale": "Across Period 3, effective nuclear attraction generally increases and radius decreases.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Cl",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w05-trend-2": {
+      "itemId": "w05-trend-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater first ionization energy: Mg or S?",
+      "answerIndex": 0,
+      "correctRationale": "Across a period, first ionization energy generally rises with effective nuclear attraction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Mg",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w05-trend-3": {
+      "itemId": "w05-trend-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater electronegativity: F or I?",
+      "answerIndex": 0,
+      "correctRationale": "Electronegativity generally decreases down a group.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "I",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w05-trend-4": {
+      "itemId": "w05-trend-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater atomic radius: K or Na?",
+      "answerIndex": 0,
+      "correctRationale": "Atomic radius generally increases down Group 1.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Na",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w05-trend-5": {
+      "itemId": "w05-trend-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater first ionization energy: Cl or Br?",
+      "answerIndex": 0,
+      "correctRationale": "Ionization energy generally decreases down a group.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Br",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w05-trend-6": {
+      "itemId": "w05-trend-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater electronegativity: O or S?",
+      "answerIndex": 0,
+      "correctRationale": "Electronegativity generally decreases down Group 16.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "S",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w05-trend-7": {
+      "itemId": "w05-trend-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater atomic radius: Li or Cs?",
+      "answerIndex": 0,
+      "correctRationale": "Additional occupied shells increase radius down Group 1.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Li",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-1": {
+      "itemId": "w06-formula-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from Mg²⁺ and Cl⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "MgCl",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Mg₂Cl",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Mg₂Cl₂",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-2": {
+      "itemId": "w06-formula-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from Al³⁺ and O²⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "AlO",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Al₃O₂",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "AlO₃",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-3": {
+      "itemId": "w06-formula-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from Ca²⁺ and N³⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "CaN",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Ca₂N₃",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Ca₃N",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-4": {
+      "itemId": "w06-formula-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from Na⁺ and S²⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Na₂S₂",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Na₂S₃",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Na⁺S²⁻",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-5": {
+      "itemId": "w06-formula-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from Fe³⁺ and O²⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "FeO",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Fe₃O₂",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "FeO₃",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-6": {
+      "itemId": "w06-formula-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from Ba²⁺ and PO₄³⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "BaPO₄",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Ba₂(PO₄)₃",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Ba₃PO₄",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-7": {
+      "itemId": "w06-formula-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from NH₄⁺ and SO₄²⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "NH₄SO₄",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(NH₄)₂SO₃",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(NH₄)₃SO₄",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-1": {
+      "itemId": "w07-valence-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for CO₂?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "18",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "14",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "32",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-2": {
+      "itemId": "w07-valence-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for NH₃?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "16",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-3": {
+      "itemId": "w07-valence-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for H₂O?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "16",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-4": {
+      "itemId": "w07-valence-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for CH₄?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "16",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-5": {
+      "itemId": "w07-valence-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for SO₂?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "20",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "16",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "36",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-6": {
+      "itemId": "w07-valence-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for NO₃⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "26",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "22",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "48",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-7": {
+      "itemId": "w07-valence-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for NH₄⁺?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "16",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-1": {
+      "itemId": "w08-vsepr-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for CO₂ in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "tetrahedral",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "bent",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "octahedral",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-2": {
+      "itemId": "w08-vsepr-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for H₂O in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "linear",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "tetrahedral",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "octahedral",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-3": {
+      "itemId": "w08-vsepr-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for BF₃ in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "linear",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "tetrahedral",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "bent",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-4": {
+      "itemId": "w08-vsepr-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for CH₄ in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "linear",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "bent",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "octahedral",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-5": {
+      "itemId": "w08-vsepr-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for NH₃ in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "linear",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "tetrahedral",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "bent",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-6": {
+      "itemId": "w08-vsepr-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for PCl₅ in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "linear",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "tetrahedral",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "bent",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-7": {
+      "itemId": "w08-vsepr-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for SF₆ in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "linear",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "tetrahedral",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "bent",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-1": {
+      "itemId": "w10-imf-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points A: 65°C and B: 98°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "A",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-2": {
+      "itemId": "w10-imf-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points C: 35°C and D: 78°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "C",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-3": {
+      "itemId": "w10-imf-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points E: 112°C and F: 84°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "F",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-4": {
+      "itemId": "w10-imf-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points G: 58°C and H: 101°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "G",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-5": {
+      "itemId": "w10-imf-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points I: 72°C and J: 120°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "I",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-6": {
+      "itemId": "w10-imf-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points K: 145°C and L: 90°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "L",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-7": {
+      "itemId": "w10-imf-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points M: 44°C and N: 69°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "M",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-1": {
+      "itemId": "w14-balance-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances H₂ + O₂ → H₂O?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-2": {
+      "itemId": "w14-balance-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances N₂ + H₂ → NH₃?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-3": {
+      "itemId": "w14-balance-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances CH₄ + O₂ → CO₂ + H₂O?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-4": {
+      "itemId": "w14-balance-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances Fe + O₂ → Fe₂O₃?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-5": {
+      "itemId": "w14-balance-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances Al + Cl₂ → AlCl₃?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-6": {
+      "itemId": "w14-balance-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances C₃H₈ + O₂ → CO₂ + H₂O?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-7": {
+      "itemId": "w14-balance-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances KClO₃ → KCl + O₂?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-1": {
+      "itemId": "w15-mole-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "H₂O has molar mass 18 g/mol. How many moles are in 36 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 36/18 = 2 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.5 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-2": {
+      "itemId": "w15-mole-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "CO₂ has molar mass 44 g/mol. How many moles are in 88 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 88/44 = 2 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.5 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-3": {
+      "itemId": "w15-mole-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "NaCl has molar mass 58.5 g/mol. How many moles are in 117 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 117/58.5 = 2 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.5 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-4": {
+      "itemId": "w15-mole-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "O₂ has molar mass 32 g/mol. How many moles are in 64 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 64/32 = 2 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.5 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-5": {
+      "itemId": "w15-mole-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "NH₃ has molar mass 17 g/mol. How many moles are in 51 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 51/17 = 3 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.33 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-6": {
+      "itemId": "w15-mole-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "CaCO₃ has molar mass 100 g/mol. How many moles are in 250 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 250/100 = 2.5 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "5 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.25 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.4 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-7": {
+      "itemId": "w15-mole-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "CH₄ has molar mass 16 g/mol. How many moles are in 40 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 40/16 = 2.5 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "5 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.25 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.4 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-1": {
+      "itemId": "w22-inquiry-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how temperature affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change temperature and concentration together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-2": {
+      "itemId": "w22-inquiry-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how concentration affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change concentration and temperature together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-3": {
+      "itemId": "w22-inquiry-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how surface area affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change surface area and temperature together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-4": {
+      "itemId": "w22-inquiry-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how catalyst presence affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change catalyst presence and concentration together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-5": {
+      "itemId": "w22-inquiry-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how pH affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change pH and temperature together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-6": {
+      "itemId": "w22-inquiry-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how ionic strength affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change ionic strength and concentration together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-7": {
+      "itemId": "w22-inquiry-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how light intensity affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change light intensity and temperature together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-1": {
+      "itemId": "w29-acid-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction HCl + H₂O → H₃O⁺ + Cl⁻, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "H₂O",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-2": {
+      "itemId": "w29-acid-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction NH₃ + H₂O ⇌ NH₄⁺ + OH⁻, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "NH₃",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-3": {
+      "itemId": "w29-acid-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction H₂SO₄ + H₂O → H₃O⁺ + HSO₄⁻, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "H₂O",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-4": {
+      "itemId": "w29-acid-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction CH₃COOH + H₂O ⇌ H₃O⁺ + CH₃COO⁻, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "H₂O",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-5": {
+      "itemId": "w29-acid-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction HCO₃⁻ + H₂O ⇌ H₂CO₃ + OH⁻, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "NH₃",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-6": {
+      "itemId": "w29-acid-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction NH₄⁺ + H₂O ⇌ NH₃ + H₃O⁺, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "H₂O",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-7": {
+      "itemId": "w29-acid-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction H₂PO₄⁻ + H₂O ⇌ H₃O⁺ + HPO₄²⁻, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "H₂O",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "concept-w01": {
+      "itemId": "concept-w01",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A balance repeatedly reads 0.18 g high when checked with a certified mass. What kind of issue is most strongly suggested?",
+      "answerIndex": 0,
+      "correctRationale": "A repeatable offset from a trusted reference is evidence of systematic bias.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Random scatter only",
+          "misconceptionTag": "random-vs-systematic-error",
+          "rationale": "A repeatable offset in the same direction is evidence of systematic bias, not random scatter alone."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "A nuclear change",
+          "misconceptionTag": "measurement-vs-nuclear-change",
+          "rationale": "A balance calibration offset does not indicate a nuclear transformation in the sample."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A change in Avogadro's constant",
+          "misconceptionTag": "constant-change-impossibility",
+          "rationale": "A local instrument offset cannot change the physical value of Avogadro's constant."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "concept-w22": {
+      "itemId": "concept-w22",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two proposed rate laws fit the first three data points equally well. What is the strongest next step?",
+      "answerIndex": 0,
+      "correctRationale": "A discriminating condition tests competing predictions rather than selecting a model by preference.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Choose the simpler graph color",
+          "misconceptionTag": "aesthetic-model-selection",
+          "rationale": "Graph color has no evidentiary power for distinguishing two competing rate laws."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Average the two rate laws",
+          "misconceptionTag": "averaging-incompatible-models",
+          "rationale": "Averaging two competing laws does not test which model better predicts new observations."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Declare both mechanisms proven",
+          "misconceptionTag": "premature-proof-claim",
+          "rationale": "Fitting the same initial points does not prove both mechanisms; a discriminating prediction is needed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "concept-w28": {
+      "itemId": "concept-w28",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A precipitate forms when ionic concentrations are mixed. Which comparison is most useful for predicting precipitation?",
+      "answerIndex": 0,
+      "correctRationale": "Precipitation is predicted by comparing the reaction/ion quotient with the solubility-product constant.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Atomic number compared with mass number",
+          "misconceptionTag": "nuclear-identity-vs-solubility",
+          "rationale": "Atomic number and mass number do not determine whether an ionic mixture exceeds its solubility-product condition."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "pH compared with density",
+          "misconceptionTag": "ph-density-category-error",
+          "rationale": "pH and density are not the governing comparison for precipitation in a Ksp model."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Molar mass compared with temperature",
+          "misconceptionTag": "molar-mass-temperature-category-error",
+          "rationale": "Molar mass and temperature alone do not replace the ion-product versus Ksp comparison required for this prediction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "concept-w29": {
+      "itemId": "concept-w29",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the Brønsted–Lowry model, an acid is a species that",
+      "answerIndex": 0,
+      "correctRationale": "A Brønsted–Lowry acid donates H+ to a base.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "accepts an electron pair only",
+          "misconceptionTag": "lewis-vs-bronsted-definition",
+          "rationale": "Accepting an electron pair is a Lewis-base description, not the Brønsted–Lowry definition of an acid."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "always contains oxygen",
+          "misconceptionTag": "oxygen-required-acid-misconception",
+          "rationale": "Brønsted–Lowry acids need not contain oxygen; the defining behavior is proton donation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "must have pH exactly 1",
+          "misconceptionTag": "ph-one-acid-misconception",
+          "rationale": "An acid is not required to produce a solution with pH exactly 1; acid strength and concentration vary."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "concept-w32": {
+      "itemId": "concept-w32",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature and pressure, a process with ΔG < 0 is thermodynamically",
+      "answerIndex": 0,
+      "correctRationale": "Negative Gibbs free-energy change indicates thermodynamic favorability, not reaction speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "guaranteed to be fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A negative ΔG indicates thermodynamic favorability, not that the process is guaranteed to occur rapidly."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "negative-deltag-equilibrium-confusion",
+          "rationale": "A negative ΔG indicates a forward thermodynamic driving force under the stated conditions, not equilibrium."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "impossible",
+          "misconceptionTag": "negative-deltag-impossible-reversal",
+          "rationale": "A negative ΔG does not make the process impossible; it indicates the forward direction is thermodynamically favored under the stated conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "u0-ev-1": {
+      "itemId": "u0-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Repeated measurements are tightly clustered but all lie well above a trusted reference. Which interpretation is best?",
+      "answerIndex": 0,
+      "correctRationale": "Tight clustering indicates precision; a consistent offset from a trusted value suggests systematic bias.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Low precision with no bias",
+          "misconceptionTag": "precision-accuracy-confusion",
+          "rationale": "Tight clustering is evidence of high precision, so calling the measurements low precision ignores the observed repeatability."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Perfect accuracy",
+          "misconceptionTag": "systematic-offset-ignored",
+          "rationale": "A consistent offset from a trusted reference contradicts perfect accuracy even when the readings are tightly clustered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Random error only",
+          "misconceptionTag": "systematic-bias-mislabeled-random",
+          "rationale": "Random error would tend to scatter measurements; a repeatable one-direction offset is characteristic of systematic bias."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u0-ev-2": {
+      "itemId": "u0-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two groups measure the same solid. Group A reports mass and volume with units and uncertainty; Group B reports only a density value. Which record is more reproducible?",
+      "answerIndex": 0,
+      "correctRationale": "Raw measurements, units, and uncertainty preserve the evidence trail needed to reproduce density.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Group B",
+          "misconceptionTag": "derived-value-without-evidence-trail",
+          "rationale": "A density value without the underlying mass, volume, units, and uncertainty preserves less reproducible evidence than the full measurement record."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They are equally reproducible",
+          "misconceptionTag": "reproducibility-equality-overclaim",
+          "rationale": "The two records are not equally reproducible because one preserves the measurements needed to independently recompute density."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Neither can ever be checked",
+          "misconceptionTag": "evidence-reproducibility-nihilism",
+          "rationale": "The presence of mass, volume, units, and uncertainty means Group A can be checked and reproduced; saying neither can ever be checked discards that evidence trail."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u0-ev-3": {
+      "itemId": "u0-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A planned chemistry procedure has an unknown reagent hazard. What is the strongest evidence-based next step?",
+      "answerIndex": 0,
+      "correctRationale": "Unknown hazards require authoritative safety information and a bounded procedure before work begins.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Guess from the reagent name",
+          "misconceptionTag": "hazard-inference-from-name",
+          "rationale": "A reagent name alone is not an adequate hazard assessment; approved safety information is needed before proceeding."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Proceed with a smaller amount",
+          "misconceptionTag": "dose-reduction-does-not-resolve-unknown-hazard",
+          "rationale": "Using a smaller amount does not make an unknown hazard acceptably characterized or controlled."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Ask another student to try it first",
+          "misconceptionTag": "unsafe-delegation",
+          "rationale": "Having another student try an uncharacterized procedure transfers the risk rather than resolving the safety uncertainty."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u0-md-1": {
+      "itemId": "u0-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A digital balance displays many decimal places. Which statement best describes those digits?",
+      "answerIndex": 0,
+      "correctRationale": "Instrument resolution and accuracy are different properties.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Every displayed digit is certainly accurate",
+          "misconceptionTag": "resolution-equals-accuracy",
+          "rationale": "Displaying more digits indicates resolution, not certainty that every digit is accurate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "More digits eliminate systematic error",
+          "misconceptionTag": "precision-eliminates-bias",
+          "rationale": "Additional displayed digits do not remove calibration or systematic error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Resolution and accuracy are identical",
+          "misconceptionTag": "resolution-accuracy-conflation",
+          "rationale": "Resolution describes display granularity, while accuracy describes closeness to a true/reference value; they are not identical."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u0-md-2": {
+      "itemId": "u0-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is percent error useful when comparing measurements of different scales?",
+      "answerIndex": 0,
+      "correctRationale": "Relative error makes differences comparable across different magnitude scales.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It removes all uncertainty",
+          "misconceptionTag": "percent-error-removes-uncertainty",
+          "rationale": "Percent error normalizes a difference; it does not eliminate measurement uncertainty."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It proves causation",
+          "misconceptionTag": "error-metric-proves-causation",
+          "rationale": "A relative error calculation compares magnitudes and cannot establish a causal relationship."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It makes units unnecessary",
+          "misconceptionTag": "units-still-required",
+          "rationale": "Using a percentage for relative error does not make units unnecessary in the underlying measurements or reference values."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u0-md-3": {
+      "itemId": "u0-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What should happen when a model prediction disagrees with a well-documented measurement?",
+      "answerIndex": 0,
+      "correctRationale": "Disagreement is evidence that can reveal model limits or measurement problems.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Delete the measurement",
+          "misconceptionTag": "data-deletion-to-fit-model",
+          "rationale": "Deleting a well-documented measurement because it disagrees with a model hides evidence instead of testing model assumptions or measurement quality."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Change the units until they agree",
+          "misconceptionTag": "unit-manipulation-to-force-agreement",
+          "rationale": "Changing units cannot legitimately alter the physical disagreement; consistent units should clarify, not erase, the discrepancy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Assume the model must be correct",
+          "misconceptionTag": "model-infallibility-assumption",
+          "rationale": "Assuming the model must be correct ignores the possibility of model limitations or unrecognized measurement effects."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u1-ev-1": {
+      "itemId": "u1-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A scattering experiment shows most particles pass through while a very small fraction deflect sharply. Which evidence most strongly argues against a uniformly distributed positive charge?",
+      "answerIndex": 0,
+      "correctRationale": "Rare large-angle deflections require a concentrated region capable of strong interaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The large number passing straight through alone",
+          "misconceptionTag": "common-event-not-discriminating",
+          "rationale": "Most particles passing through is compatible with several charge distributions; the rare large deflections are the more discriminating evidence for a concentrated positive region."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The color of the source",
+          "misconceptionTag": "irrelevant-source-color",
+          "rationale": "Source color does not explain the large-angle scattering pattern relevant to the charge-distribution model."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The detector shape",
+          "misconceptionTag": "detector-shape-not-primary-evidence",
+          "rationale": "Detector geometry may affect measurement setup, but it is not the evidence that rules out a uniformly distributed positive charge in this result."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u1-ev-2": {
+      "itemId": "u1-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An unknown source shows four narrow emission lines matching a reference within calibration uncertainty. What conclusion is best supported?",
+      "answerIndex": 0,
+      "correctRationale": "Multiple calibrated line matches provide strong but bounded identification evidence.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The source is proven identical in every property",
+          "misconceptionTag": "bounded-match-overclaimed-as-total-identity",
+          "rationale": "Matching emission lines supports consistency with the reference pattern, but it does not prove identity in every possible property."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "All atoms emit continuous spectra",
+          "misconceptionTag": "continuous-spectrum-overgeneralization",
+          "rationale": "The observed narrow lines directly contradict the claim that all atoms emit continuous spectra."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Calibration is irrelevant",
+          "misconceptionTag": "calibration-uncertainty-ignored",
+          "rationale": "Line matching is meaningful only relative to calibration and measurement uncertainty; treating calibration as irrelevant overstates the evidence."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u1-ev-3": {
+      "itemId": "u1-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A periodic-property graph decreases overall but contains one local deviation. What is the strongest treatment of the point?",
+      "answerIndex": 0,
+      "correctRationale": "Deviations can reveal additional structure or measurement issues and should remain visible.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Delete it because trends must be smooth",
+          "misconceptionTag": "outlier-deletion-bias",
+          "rationale": "Deleting a local deviation because a trend is expected suppresses evidence that could reveal model limits or measurement problems."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Average it away without comment",
+          "misconceptionTag": "unreported-averaging",
+          "rationale": "Averaging away a deviation without documenting it obscures potentially informative structure in the data."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Treat the entire periodic model as useless",
+          "misconceptionTag": "single-deviation-total-model-rejection",
+          "rationale": "One local deviation does not make the entire periodic model useless; it signals a need for refinement or additional explanation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u1-md-1": {
+      "itemId": "u1-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can a periodic-table atomic mass be non-integer?",
+      "answerIndex": 0,
+      "correctRationale": "Natural isotope populations produce weighted average atomic masses.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Atoms contain fractional protons",
+          "misconceptionTag": "fractional-proton-misconception",
+          "rationale": "Individual atoms have whole-number proton counts; non-integer tabulated atomic mass comes from averaging isotope masses, not fractional protons."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Neutrons have no mass",
+          "misconceptionTag": "neutron-mass-denial",
+          "rationale": "Neutrons contribute substantially to isotope mass, so claiming they have no mass cannot explain non-integer atomic weights."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Atomic number is averaged",
+          "misconceptionTag": "atomic-number-averaging-confusion",
+          "rationale": "Atomic number identifies proton count for an element and is not abundance-averaged across its isotopes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u1-md-2": {
+      "itemId": "u1-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why do discrete spectral lines support quantized electronic energies?",
+      "answerIndex": 0,
+      "correctRationale": "Discrete photon energies constrain allowed electronic energy differences.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Electrons are colored",
+          "misconceptionTag": "electron-color-category-error",
+          "rationale": "Electron color is not the mechanism behind discrete atomic emission lines."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "All wavelengths are emitted equally",
+          "misconceptionTag": "continuous-emission-contradiction",
+          "rationale": "If all wavelengths were emitted equally, the spectrum would not show discrete lines that support quantized energy differences."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Nuclei absorb every photon",
+          "misconceptionTag": "nucleus-absorbs-every-photon",
+          "rationale": "The observed electronic spectrum concerns allowed electron energy transitions, not a rule that nuclei absorb every photon."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u1-md-3": {
+      "itemId": "u1-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why does atomic radius generally decrease across a period?",
+      "answerIndex": 0,
+      "correctRationale": "Increasing proton number with similar-shell shielding generally strengthens effective attraction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Atoms lose all electrons across a period",
+          "misconceptionTag": "complete-electron-loss-overgeneralization",
+          "rationale": "Atoms do not lose all electrons simply by moving across a period; the trend is explained by changing effective nuclear attraction within similar principal shells."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Neutron number alone controls radius",
+          "misconceptionTag": "neutron-only-radius-model",
+          "rationale": "Neutron number alone does not control the general across-period radius trend."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Shielding always increases sharply left to right",
+          "misconceptionTag": "shielding-trend-reversed",
+          "rationale": "Across a period, shielding does not increase sharply enough to offset the rising nuclear charge in the way this choice claims."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u2-ev-1": {
+      "itemId": "u2-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid is brittle, does not conduct as a solid, and conducts when molten. Which model is most consistent with the evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Fixed ions explain poor solid conduction; mobile ions after melting explain conductivity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "A metallic solid with free electrons in the solid",
+          "misconceptionTag": "metallic-conduction-pattern-mismatch",
+          "rationale": "A metallic solid should typically conduct in the solid state through mobile electrons, which conflicts with the stated nonconducting solid behavior."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "A molecular gas",
+          "misconceptionTag": "molecular-gas-model-mismatch",
+          "rationale": "A molecular gas model does not explain a brittle solid that becomes electrically conductive when molten."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A substance with no charged particles",
+          "misconceptionTag": "charged-particle-denial",
+          "rationale": "Molten conductivity is evidence for mobile charged species, so a model with no charged particles contradicts the observation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u2-ev-2": {
+      "itemId": "u2-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two molecules have equally polar bonds, but one is symmetrical and the other bent. What evidence matters most for comparing overall polarity?",
+      "answerIndex": 0,
+      "correctRationale": "Molecular geometry determines whether bond dipoles cancel or reinforce.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Molar mass alone",
+          "misconceptionTag": "mass-alone-polarity-model",
+          "rationale": "With equally polar bonds, molar mass alone does not determine whether bond dipoles cancel or reinforce."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Number of letters in the formula",
+          "misconceptionTag": "formula-letter-count-irrelevant",
+          "rationale": "The number of letters in a formula has no physical role in determining the vector sum of molecular bond dipoles."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "State of matter alone",
+          "misconceptionTag": "state-alone-polarity-model",
+          "rationale": "State of matter by itself does not determine a molecule's net dipole; three-dimensional geometry is the key evidence here."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u2-ev-3": {
+      "itemId": "u2-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two carbon solids have different conductivity and hardness despite identical elemental composition. What evidence must a useful model include?",
+      "answerIndex": 0,
+      "correctRationale": "Structure and bonding explain why the same composition can produce different properties.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Only elemental identity",
+          "misconceptionTag": "composition-alone-cannot-explain-allotrope-properties",
+          "rationale": "Identical elemental composition cannot explain the different properties by itself; bonding and structure must be included."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Only sample color",
+          "misconceptionTag": "sample-color-insufficient-model",
+          "rationale": "Color alone does not account for the conductivity and hardness differences between carbon structures."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Only density",
+          "misconceptionTag": "density-only-insufficient-model",
+          "rationale": "Density may differ between structures, but it does not by itself explain the bonding origins of conductivity and hardness."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u2-md-1": {
+      "itemId": "u2-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is MgCl2 a better formula than MgCl for Mg2+ and Cl− ions?",
+      "answerIndex": 0,
+      "correctRationale": "One Mg2+ requires two Cl− ions for electrical neutrality.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It contains more atoms",
+          "misconceptionTag": "atom-count-instead-of-charge-balance",
+          "rationale": "Containing more atoms is not the criterion for a correct ionic formula; the total ionic charge must sum to zero."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Chloride must always appear twice",
+          "misconceptionTag": "fixed-chloride-subscript-rule",
+          "rationale": "Chloride does not 'always appear twice'; the subscript depends on the charge of the counterion."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Magnesium becomes neutral by losing protons",
+          "misconceptionTag": "proton-loss-ionic-bonding-misconception",
+          "rationale": "Magnesium forms Mg²⁺ by losing electrons, not protons; nuclear proton loss is not ordinary ionic bonding."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u2-md-2": {
+      "itemId": "u2-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What does a Lewis structure represent most directly?",
+      "answerIndex": 0,
+      "correctRationale": "Lewis structures are simplified bookkeeping models for valence electrons and connectivity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Exact electron probability density",
+          "misconceptionTag": "lewis-as-exact-density-model",
+          "rationale": "A Lewis structure is simplified valence-electron bookkeeping and connectivity, not an exact electron probability-density map."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Molecular vibration at every instant",
+          "misconceptionTag": "lewis-as-dynamic-vibration-model",
+          "rationale": "Lewis notation does not directly represent molecular vibration at every instant."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Nuclear dimensions",
+          "misconceptionTag": "lewis-as-nuclear-dimension-model",
+          "rationale": "Nuclear dimensions are outside the scope of a Lewis structure, which focuses on valence electrons and bonding connectivity."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u2-md-3": {
+      "itemId": "u2-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is H2O bent rather than linear in a simple VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "Four electron domains include two lone pairs, leaving a bent molecular geometry.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Hydrogen atoms repel the nucleus only",
+          "misconceptionTag": "hydrogen-nucleus-repulsion-model",
+          "rationale": "The bent geometry is not explained by hydrogen atoms repelling the nucleus; VSEPR treats electron-domain repulsions around oxygen."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Oxygen has no valence electrons",
+          "misconceptionTag": "oxygen-no-valence-electrons",
+          "rationale": "Oxygen has valence electrons, including lone pairs that are essential to the VSEPR explanation of water's bent shape."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Water is polar, so it must be linear",
+          "misconceptionTag": "polarity-causes-linearity-reversal",
+          "rationale": "Polarity does not require a molecule to be linear; water is polar precisely because its bent geometry prevents dipole cancellation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u3-ev-1": {
+      "itemId": "u3-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which comparison best isolates an intermolecular-force effect on boiling point?",
+      "answerIndex": 0,
+      "correctRationale": "Matched comparisons reduce confounding factors such as size and shape.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "A tiny polar molecule and a huge nonpolar molecule",
+          "misconceptionTag": "imf-comparison-size-confounded",
+          "rationale": "Comparing a tiny polar molecule with a huge nonpolar molecule changes size/polarizability along with interaction type, confounding the IMF comparison."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Two substances at different pressures with no controls",
+          "misconceptionTag": "imf-comparison-pressure-confounded",
+          "rationale": "Using different pressures without controls introduces another variable that can affect boiling behavior."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Two unrelated materials with many properties changed",
+          "misconceptionTag": "multi-property-confounding",
+          "rationale": "Two unrelated materials with many simultaneous differences cannot isolate the effect of intermolecular-force type."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u3-ev-2": {
+      "itemId": "u3-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Pressure-volume data give nearly constant PV at fixed temperature. What does this evidence support?",
+      "answerIndex": 0,
+      "correctRationale": "A near-constant PV supports Boyle-style inverse behavior within the measured range.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Pressure and volume are directly proportional",
+          "misconceptionTag": "boyle-direct-proportion-reversal",
+          "rationale": "Nearly constant PV at fixed temperature supports an inverse pressure-volume relation, not direct proportionality."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Temperature changed dramatically",
+          "misconceptionTag": "temperature-change-unsupported",
+          "rationale": "The condition is fixed temperature; claiming a dramatic temperature change contradicts the setup rather than explaining the data."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The gas is ideal under all conditions",
+          "misconceptionTag": "limited-range-evidence-overgeneralized",
+          "rationale": "Near-constant PV over the tested range does not prove the gas is ideal under every possible condition."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u3-ev-3": {
+      "itemId": "u3-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An unknown chromatogram matches three reference spots within measurement uncertainty. Which claim is strongest?",
+      "answerIndex": 0,
+      "correctRationale": "A multi-feature match under comparable conditions supports a bounded identification claim.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The identity is proven beyond all alternatives",
+          "misconceptionTag": "chromatogram-match-overclaim",
+          "rationale": "A multi-spot match supports consistency under the same conditions but does not prove identity beyond all alternatives."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "One matching spot would be equally strong",
+          "misconceptionTag": "single-feature-evidence-overvalued",
+          "rationale": "One matching spot contains less identifying information than three matched features and is not equally strong evidence."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Rf values are universal constants",
+          "misconceptionTag": "rf-universal-constant-misconception",
+          "rationale": "Rf depends on experimental conditions and stationary/mobile phases; it is not a universal constant for a compound."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u3-md-1": {
+      "itemId": "u3-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can a larger nonpolar molecule have a higher boiling point than a smaller nonpolar molecule?",
+      "answerIndex": 0,
+      "correctRationale": "Larger, more polarizable electron clouds can support stronger dispersion interactions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Nonpolar molecules have no intermolecular forces",
+          "misconceptionTag": "nonpolar-no-imf-misconception",
+          "rationale": "Nonpolar molecules still experience London dispersion forces; they are not free of intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Larger molecules always become ionic",
+          "misconceptionTag": "size-causes-ionicity",
+          "rationale": "Increasing molecular size does not automatically convert a nonpolar molecular substance into an ionic one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point depends only on color",
+          "misconceptionTag": "boiling-point-color-model",
+          "rationale": "Color is not the controlling variable in the dispersion-force explanation of boiling-point differences."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u3-md-2": {
+      "itemId": "u3-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can pressure rise when a sealed rigid gas container is heated?",
+      "answerIndex": 0,
+      "correctRationale": "Higher temperature increases average kinetic energy and wall-collision effects.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Particles gain mass",
+          "misconceptionTag": "particle-mass-increases-with-temperature",
+          "rationale": "Heating increases average kinetic energy, not the rest mass of gas particles in this model."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The container volume doubles",
+          "misconceptionTag": "rigid-container-volume-change",
+          "rationale": "The container is specified as rigid, so its volume does not double when heated."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Pressure is stored inside particles",
+          "misconceptionTag": "pressure-stored-in-particles",
+          "rationale": "Pressure is an emergent result of particle-wall collisions, not a quantity stored inside individual particles."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u3-md-3": {
+      "itemId": "u3-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why does M1V1=M2V2 work for a simple dilution?",
+      "answerIndex": 0,
+      "correctRationale": "The relation follows from conserved solute moles before and after dilution.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Solute is destroyed",
+          "misconceptionTag": "dilution-destroys-solute",
+          "rationale": "Dilution changes concentration by adding solvent; it does not destroy solute moles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The solvent volume is always constant",
+          "misconceptionTag": "solvent-volume-constant-misconception",
+          "rationale": "Dilution specifically changes the total solution volume, so the solvent/solution volume is not fixed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Molarity is independent of volume",
+          "misconceptionTag": "molarity-independent-of-volume",
+          "rationale": "Molarity is moles per liter and therefore changes when volume changes at constant solute amount."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u4-ev-1": {
+      "itemId": "u4-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which observation most directly supports formation of a new gas during a reaction rather than simple boiling?",
+      "answerIndex": 0,
+      "correctRationale": "Bubbles alone are ambiguous; context and converging reaction evidence strengthen the claim.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Any visible bubble",
+          "misconceptionTag": "bubble-alone-ambiguous",
+          "rationale": "Visible bubbles alone cannot distinguish chemical gas formation from boiling or dissolved gas release."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "A warm container",
+          "misconceptionTag": "warmth-alone-nondiagnostic",
+          "rationale": "A warm container may indicate heat transfer but does not directly prove that a new gas formed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A colorless liquid",
+          "misconceptionTag": "colorless-liquid-nondiagnostic",
+          "rationale": "A colorless liquid provides no direct evidence that a new gaseous product has formed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u4-ev-2": {
+      "itemId": "u4-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction repeatedly gives 72–74% yield across careful trials. What is the strongest conclusion?",
+      "answerIndex": 0,
+      "correctRationale": "Consistent sub-100% yield suggests systematic process limitations that require investigation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The theoretical yield is wrong by definition",
+          "misconceptionTag": "theoretical-yield-definition-misread",
+          "rationale": "A reproducible yield below 100% does not make theoretical yield 'wrong by definition'; it points to process losses, incomplete conversion, or side processes."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Mass is not conserved",
+          "misconceptionTag": "mass-conservation-overclaim",
+          "rationale": "Sub-100% isolated yield does not by itself show that mass conservation failed; material can remain unreacted or be lost from the measured product stream."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The product must be impure in every case",
+          "misconceptionTag": "impurity-certainty-overclaim",
+          "rationale": "Impurity is one possible cause of reduced yield but is not proven in every trial by the yield percentage alone."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u4-ev-3": {
+      "itemId": "u4-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An electrode loses mass while metal ions appear in solution. Which process is most consistent with the evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Metal loss with ions entering solution is consistent with oxidation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Reduction of ions to solid metal",
+          "misconceptionTag": "redox-direction-reversed",
+          "rationale": "Metal loss and ions entering solution indicate oxidation of metal atoms, not reduction of ions onto the electrode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "No electron transfer",
+          "misconceptionTag": "electron-transfer-denied",
+          "rationale": "Conversion of neutral metal atoms to ions necessarily involves electron transfer in the redox model."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Nuclear decay",
+          "misconceptionTag": "nuclear-vs-redox-category-error",
+          "rationale": "The observed electrode mass loss and dissolved metal ions are ordinary chemical redox evidence, not evidence of nuclear decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u4-md-1": {
+      "itemId": "u4-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why must a chemical equation conserve each element's atom count?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced equations encode conservation of matter at the atom-count level.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Coefficients are decorative",
+          "misconceptionTag": "coefficients-as-decoration",
+          "rationale": "Stoichiometric coefficients encode atom conservation and are not merely decorative notation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Only charge must be conserved",
+          "misconceptionTag": "charge-only-conservation",
+          "rationale": "Charge conservation matters, but balancing an ordinary chemical equation also requires conserving each element's atom count."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Atoms change identity freely",
+          "misconceptionTag": "atoms-change-element-identity",
+          "rationale": "Ordinary chemical reactions rearrange atoms; they do not freely change one element into another."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u4-md-2": {
+      "itemId": "u4-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What information does a balanced equation provide for stoichiometry?",
+      "answerIndex": 0,
+      "correctRationale": "Coefficients give the stoichiometric mole relationships.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Exact reaction rate",
+          "misconceptionTag": "stoichiometry-vs-kinetics",
+          "rationale": "Balanced-equation coefficients give mole ratios, not the exact rate at which the reaction proceeds."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Exact percent yield",
+          "misconceptionTag": "stoichiometry-vs-percent-yield",
+          "rationale": "The balanced equation defines theoretical mole relationships but does not determine the actual percent yield."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Molecular color",
+          "misconceptionTag": "molecular-color-irrelevant",
+          "rationale": "Molecular color is not encoded by stoichiometric coefficients and is unrelated to the mole-ratio information used here."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u4-md-3": {
+      "itemId": "u4-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why does the limiting reactant determine maximum product amount?",
+      "answerIndex": 0,
+      "correctRationale": "Once the limiting reactant is exhausted, additional product cannot form under the modeled reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It always has the smallest mass",
+          "misconceptionTag": "smallest-mass-not-necessarily-limiting",
+          "rationale": "The reactant with the smallest mass is not necessarily limiting because stoichiometric ratios and molar masses determine required amounts."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It has the lowest molar mass",
+          "misconceptionTag": "lowest-molar-mass-not-necessarily-limiting",
+          "rationale": "A low molar mass does not by itself determine which reactant is exhausted first."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It reacts most slowly",
+          "misconceptionTag": "slowest-reactant-vs-limiting-reactant",
+          "rationale": "Reaction speed and limiting-reactant identity are different concepts; the limiting reactant is set by available amount relative to stoichiometric need."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u5-ev-1": {
+      "itemId": "u5-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A concentration-time graph becomes less steep over time. What evidence does the changing slope provide?",
+      "answerIndex": 0,
+      "correctRationale": "Slope magnitude on concentration-time data represents rate of concentration change.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Concentration is increasing",
+          "misconceptionTag": "rate-slope-direction-misread",
+          "rationale": "A less-steep concentration-time curve means the magnitude of concentration change per unit time is smaller, not that concentration is increasing."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Time is reversing",
+          "misconceptionTag": "time-reversal-nonphysical",
+          "rationale": "A changing graph slope does not imply time reverses; it reflects a changing reaction rate."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Activation energy is zero",
+          "misconceptionTag": "zero-activation-energy-overclaim",
+          "rationale": "A decreasing rate does not establish zero activation energy and is inconsistent with the idea that there is no kinetic barrier."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u5-ev-2": {
+      "itemId": "u5-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction runs faster at higher temperature in repeated controlled trials. Which additional evidence would best support collision-theory reasoning?",
+      "answerIndex": 0,
+      "correctRationale": "Collision theory links temperature to collision energies and successful collision fraction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The reactants change identity before colliding",
+          "misconceptionTag": "reactant-identity-change-before-collision",
+          "rationale": "Collision theory does not require reactants to change identity before colliding; successful collisions are part of the process that can lead to reaction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Particle number becomes zero",
+          "misconceptionTag": "particle-number-zero",
+          "rationale": "Higher temperature does not make the reactant particle number become zero."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Temperature has no effect on motion",
+          "misconceptionTag": "temperature-motion-effect-denied",
+          "rationale": "Temperature directly affects the distribution of particle kinetic energies, so claiming no effect on motion contradicts collision-theory reasoning."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u5-ev-3": {
+      "itemId": "u5-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two rate models fit early data similarly, but one shows systematic residuals later. Which model is better supported?",
+      "answerIndex": 0,
+      "correctRationale": "Residual structure is direct evidence of model adequacy.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The model with more adjustable constants regardless of fit",
+          "misconceptionTag": "complexity-over-fit-evidence",
+          "rationale": "More adjustable constants do not by themselves make a model better supported; residual quality across the full range is stronger evidence."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The model chosen first",
+          "misconceptionTag": "first-model-anchoring-bias",
+          "rationale": "Choosing the model selected first ignores later residual evidence and introduces anchoring rather than evaluation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Both are proven identical",
+          "misconceptionTag": "model-equivalence-overclaim",
+          "rationale": "Different residual patterns mean the two models are not proven identical in adequacy."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u5-md-1": {
+      "itemId": "u5-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can increasing concentration increase reaction rate?",
+      "answerIndex": 0,
+      "correctRationale": "More reactant particles per volume can increase collision frequency.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It lowers all particle energies to zero",
+          "misconceptionTag": "concentration-lowers-energy-to-zero",
+          "rationale": "Increasing concentration changes collision frequency, not by lowering every particle's energy to zero."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It changes every reaction into equilibrium",
+          "misconceptionTag": "concentration-forces-equilibrium",
+          "rationale": "A concentration change can affect rate and equilibrium position, but it does not convert every reaction into equilibrium."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It guarantees a catalyst is present",
+          "misconceptionTag": "concentration-guarantees-catalyst",
+          "rationale": "Higher concentration does not imply that a catalyst is present."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u5-md-2": {
+      "itemId": "u5-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How does a catalyst increase reaction rate?",
+      "answerIndex": 0,
+      "correctRationale": "Catalysts alter pathway kinetics without changing overall reaction thermodynamics.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It raises product energy permanently",
+          "misconceptionTag": "catalyst-changes-product-energy",
+          "rationale": "A catalyst changes the reaction pathway and activation barrier, not the permanent thermodynamic energy of the products."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It changes equilibrium into complete conversion",
+          "misconceptionTag": "catalyst-forces-complete-conversion",
+          "rationale": "Catalysts speed approach to equilibrium but do not change the equilibrium composition into complete conversion."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It is consumed stoichiometrically",
+          "misconceptionTag": "catalyst-consumed-stoichiometrically",
+          "rationale": "A catalyst is regenerated through the mechanism and is not consumed as a net stoichiometric reactant."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u5-md-3": {
+      "itemId": "u5-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can the slowest elementary step influence overall rate?",
+      "answerIndex": 0,
+      "correctRationale": "A slow step can limit throughput through the full mechanism.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It contains the most atoms",
+          "misconceptionTag": "slow-step-most-atoms-fallacy",
+          "rationale": "The rate-limiting influence of a step is not determined by how many atoms appear in that elementary step."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It has the highest coefficient by definition",
+          "misconceptionTag": "slow-step-largest-coefficient-fallacy",
+          "rationale": "A slow step is not defined by having the largest stoichiometric coefficient."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It always occurs last",
+          "misconceptionTag": "slow-step-always-last-fallacy",
+          "rationale": "The kinetically limiting step can occur anywhere in a mechanism; it is not required to be the final step."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u6-ev-1": {
+      "itemId": "u6-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A coffee-cup calorimeter shows the solution warms during reaction. What sign is most consistent for heat flow of the reaction system?",
+      "answerIndex": 0,
+      "correctRationale": "Warming surroundings are consistent with an exothermic system process.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The reaction absorbs heat from the surroundings",
+          "misconceptionTag": "exothermic-endothermic-direction-reversed",
+          "rationale": "If the surroundings warm, heat has flowed from the reaction system to the surroundings rather than being absorbed by the reaction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "No energy transfer occurred",
+          "misconceptionTag": "energy-transfer-denied",
+          "rationale": "A measured temperature rise in the surroundings is evidence that energy transfer occurred."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Temperature and heat are identical",
+          "misconceptionTag": "temperature-heat-conflation",
+          "rationale": "Temperature is a state variable related to thermal energy distribution, while heat is energy transferred because of a temperature difference; they are not identical."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u6-ev-2": {
+      "itemId": "u6-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two independent reaction pathways lead between the same initial and final states. What should happen to total enthalpy change?",
+      "answerIndex": 0,
+      "correctRationale": "Enthalpy is a state function, so ΔH depends on initial and final states.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It depends only on the number of steps",
+          "misconceptionTag": "enthalpy-step-count-dependence",
+          "rationale": "Because enthalpy is a state function, total ΔH does not depend on the number of steps used between the same initial and final states."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It must change sign randomly",
+          "misconceptionTag": "enthalpy-random-sign",
+          "rationale": "The sign of total enthalpy change is determined by the chosen initial/final states and reaction direction, not random pathway variation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It is always zero",
+          "misconceptionTag": "enthalpy-always-zero",
+          "rationale": "A state function can have a nonzero change between different states; path independence does not mean ΔH must be zero."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u6-ev-3": {
+      "itemId": "u6-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A process occurs spontaneously at one temperature but not another. What does this evidence suggest?",
+      "answerIndex": 0,
+      "correctRationale": "Temperature changes the TΔS term in Gibbs free energy.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Only enthalpy can matter",
+          "misconceptionTag": "enthalpy-only-spontaneity",
+          "rationale": "Temperature-dependent spontaneity is evidence that the TΔS contribution matters; enthalpy alone cannot explain the change with temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Temperature has no thermodynamic role",
+          "misconceptionTag": "temperature-role-denied",
+          "rationale": "Temperature directly multiplies the entropy term in ΔG=ΔH−TΔS, so it can alter thermodynamic favorability."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Spontaneous means infinitely fast",
+          "misconceptionTag": "spontaneous-equals-instantaneous",
+          "rationale": "Thermodynamic spontaneity does not imply an infinitely fast process; kinetics and activation barriers still matter."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u6-md-1": {
+      "itemId": "u6-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is q=mcΔT a model rather than a universal identity for every calorimeter?",
+      "answerIndex": 0,
+      "correctRationale": "Real calorimetry requires system boundaries and accounting for additional heat capacities/losses.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It works without units",
+          "misconceptionTag": "calorimetry-units-ignored",
+          "rationale": "The relation q=mcΔT requires consistent physical units and material properties; it does not work meaningfully without units."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It proves no heat is lost",
+          "misconceptionTag": "calorimetry-perfect-insulation-assumption",
+          "rationale": "Using q=mcΔT does not prove that no heat is lost; real calorimeters require explicit boundary and loss accounting."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It applies only to gases",
+          "misconceptionTag": "calorimetry-gases-only",
+          "rationale": "The heat-capacity model applies to appropriate materials with known c values and is not restricted to gases."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u6-md-2": {
+      "itemId": "u6-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is breaking a bond endothermic in the bond-energy model?",
+      "answerIndex": 0,
+      "correctRationale": "Separating bonded atoms requires energy input.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Bond breaking releases all stored energy automatically",
+          "misconceptionTag": "bond-breaking-releases-energy-misconception",
+          "rationale": "Breaking a bond requires energy input to overcome attraction; bond formation, not breaking, is the energy-releasing direction in the simple model."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Atoms lose mass",
+          "misconceptionTag": "bond-breaking-mass-loss",
+          "rationale": "Ordinary bond breaking rearranges electronic interactions and does not make atoms lose measurable rest mass."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Electrons disappear",
+          "misconceptionTag": "bond-breaking-electron-disappearance",
+          "rationale": "Electrons do not disappear when a bond breaks; the electronic arrangement changes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u6-md-3": {
+      "itemId": "u6-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What does higher entropy generally represent in a molecular model?",
+      "answerIndex": 0,
+      "correctRationale": "Entropy is linked to multiplicity/accessibility of microscopic states.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "A lower temperature by definition",
+          "misconceptionTag": "entropy-lower-temperature-definition",
+          "rationale": "Higher entropy is not defined as lower temperature; entropy concerns the number and distribution of accessible microscopic states."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Zero particle motion",
+          "misconceptionTag": "entropy-zero-motion",
+          "rationale": "Entropy does not require particles to stop moving; zero motion is not the defining condition."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Perfect order in every case",
+          "misconceptionTag": "entropy-perfect-order",
+          "rationale": "Higher entropy generally corresponds to more accessible arrangements, not perfect order in every case."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u7-ev-1": {
+      "itemId": "u7-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Forward and reverse reaction rates become equal while concentrations remain constant. What does this support?",
+      "answerIndex": 0,
+      "correctRationale": "At dynamic equilibrium, both directions continue at equal rates.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Reaction completion with no molecular change",
+          "misconceptionTag": "equilibrium-completion-misconception",
+          "rationale": "Dynamic equilibrium is not reaction completion; forward and reverse molecular events continue."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Zero reaction rates",
+          "misconceptionTag": "equilibrium-zero-rate-misconception",
+          "rationale": "At equilibrium the forward and reverse rates are equal, not zero."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A closed system with no particles",
+          "misconceptionTag": "equilibrium-no-particles",
+          "rationale": "A closed equilibrium system still contains particles and ongoing collisions/reactions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u7-ev-2": {
+      "itemId": "u7-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "After adding reactant, product concentration rises and a new constant composition is reached. What is the strongest interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A concentration disturbance can shift composition while K remains unchanged at constant temperature.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Equilibrium was permanently destroyed",
+          "misconceptionTag": "equilibrium-destroyed-permanently",
+          "rationale": "A concentration disturbance can shift the system and then a new equilibrium is established; equilibrium is not permanently destroyed."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The equilibrium constant necessarily changed at constant temperature",
+          "misconceptionTag": "equilibrium-constant-changes-with-concentration",
+          "rationale": "At constant temperature, changing concentration shifts equilibrium composition but does not change K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "All reactant vanished",
+          "misconceptionTag": "complete-reactant-consumption-overclaim",
+          "rationale": "A shift toward products does not imply all reactant must disappear at equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u7-ev-3": {
+      "itemId": "u7-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solution becomes cloudy after adding a common ion. Which evidence-based interpretation is strongest?",
+      "answerIndex": 0,
+      "correctRationale": "Common ions can reduce solubility and promote precipitation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "All ions became neutral atoms",
+          "misconceptionTag": "ions-become-neutral-atoms",
+          "rationale": "Precipitation forms an ionic solid; it does not require all dissolved ions to become neutral atoms."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Temperature must have risen",
+          "misconceptionTag": "temperature-change-assumed",
+          "rationale": "Cloudiness after adding a common ion does not by itself establish that temperature rose."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The solvent disappeared",
+          "misconceptionTag": "solvent-disappearance",
+          "rationale": "Precipitation does not mean the solvent disappeared; the observation is consistent with reduced solubility of the salt."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u7-md-1": {
+      "itemId": "u7-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can macroscopic concentrations stay constant while reactions continue?",
+      "answerIndex": 0,
+      "correctRationale": "Equal opposing rates produce no net concentration change.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "All molecular motion stops",
+          "misconceptionTag": "equilibrium-motion-stops",
+          "rationale": "Molecules continue moving at dynamic equilibrium; constant concentrations arise from equal opposing rates."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Reactants and products become identical",
+          "misconceptionTag": "reactant-product-identical",
+          "rationale": "Reactants and products remain chemically distinct species even when their concentrations are constant at equilibrium."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No collisions occur",
+          "misconceptionTag": "equilibrium-no-collisions",
+          "rationale": "Collisions and microscopic reactions continue at equilibrium rather than stopping."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u7-md-2": {
+      "itemId": "u7-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What does Le Châtelier's principle predict?",
+      "answerIndex": 0,
+      "correctRationale": "It is a qualitative response model for equilibrium disturbances.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The exact reaction mechanism",
+          "misconceptionTag": "le-chatelier-exact-mechanism",
+          "rationale": "Le Châtelier's principle predicts qualitative equilibrium response, not the exact elementary reaction mechanism."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The exact reaction rate constant",
+          "misconceptionTag": "le-chatelier-rate-constant",
+          "rationale": "The principle does not calculate an exact kinetic rate constant."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The atomic masses",
+          "misconceptionTag": "le-chatelier-atomic-mass",
+          "rationale": "Atomic masses are nuclear/elemental properties and are unrelated to qualitative equilibrium-shift predictions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u7-md-3": {
+      "itemId": "u7-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can adding a common ion lower the solubility of a sparingly soluble salt?",
+      "answerIndex": 0,
+      "correctRationale": "The added ion changes equilibrium composition according to the common-ion effect.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It removes all water molecules",
+          "misconceptionTag": "common-ion-removes-water",
+          "rationale": "Adding a common ion shifts an equilibrium; it does not work by removing all water molecules."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It changes protons into neutrons",
+          "misconceptionTag": "common-ion-nuclear-change",
+          "rationale": "The common-ion effect is a chemical equilibrium phenomenon and does not convert protons into neutrons."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It always increases temperature",
+          "misconceptionTag": "common-ion-always-heats",
+          "rationale": "A common ion can alter solubility without necessarily increasing temperature."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u8-ev-1": {
+      "itemId": "u8-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solution conducts electricity and turns a suitable indicator acidic. What additional evidence is most useful before identifying the acid strength?",
+      "answerIndex": 0,
+      "correctRationale": "Acid strength requires quantitative equilibrium evidence, not just presence of acidity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The solution color alone",
+          "misconceptionTag": "color-alone-acid-strength",
+          "rationale": "Indicator color can show acidity over a range but does not by itself quantify acid strength."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Container shape",
+          "misconceptionTag": "container-shape-irrelevant",
+          "rationale": "Container geometry does not identify acid strength in the solution."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Sample mass without volume",
+          "misconceptionTag": "mass-without-volume-insufficient",
+          "rationale": "Sample mass without a defined volume or equilibrium measurement cannot establish acid strength."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u8-ev-2": {
+      "itemId": "u8-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A titration curve shows a sharp pH change near the stoichiometric point. What does the inflection region help identify?",
+      "answerIndex": 0,
+      "correctRationale": "The steep/inflection region helps locate the stoichiometric equivalence region.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The molar mass directly",
+          "misconceptionTag": "titration-inflection-molar-mass",
+          "rationale": "The inflection region identifies the equivalence region, not molar mass directly."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The exact reaction mechanism",
+          "misconceptionTag": "titration-curve-mechanism-overclaim",
+          "rationale": "A titration curve does not reveal an exact molecular reaction mechanism."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The indicator color only",
+          "misconceptionTag": "equivalence-vs-indicator-color",
+          "rationale": "Indicator color can help locate an endpoint, but the curve's steep/inflection region is broader evidence for the equivalence region."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u8-ev-3": {
+      "itemId": "u8-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two solutions receive the same small acid addition; one changes pH far less. What evidence does this provide?",
+      "answerIndex": 0,
+      "correctRationale": "Resistance to pH change is direct evidence of buffering capacity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Both have identical buffer capacity",
+          "misconceptionTag": "buffer-capacity-equality-contradicted",
+          "rationale": "Different pH responses to the same acid addition are direct evidence that the two solutions do not have identical buffering capacity under those conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "pH cannot be measured",
+          "misconceptionTag": "ph-measurability-denied",
+          "rationale": "The comparison itself depends on measured pH change, so saying pH cannot be measured contradicts the evidence."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The acid was not added",
+          "misconceptionTag": "acid-addition-denied",
+          "rationale": "The scenario specifies the same acid addition to both solutions; denying the addition ignores the experimental condition."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u8-md-1": {
+      "itemId": "u8-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the Brønsted–Lowry model, an acid is best described as",
+      "answerIndex": 0,
+      "correctRationale": "Brønsted–Lowry acids donate protons.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "An electron donor only",
+          "misconceptionTag": "bronsted-vs-electron-donor",
+          "rationale": "Electron donation describes a different acid-base framework and is not the Brønsted–Lowry definition of an acid."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Any substance with oxygen",
+          "misconceptionTag": "oxygen-required-acid",
+          "rationale": "Brønsted–Lowry acids are defined by proton donation and need not contain oxygen."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A neutral salt",
+          "misconceptionTag": "neutral-salt-as-acid",
+          "rationale": "A neutral salt is not automatically a proton donor and therefore is not necessarily a Brønsted acid."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u8-md-2": {
+      "itemId": "u8-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is the pH scale logarithmic rather than linear?",
+      "answerIndex": 0,
+      "correctRationale": "A logarithmic scale compactly represents orders-of-magnitude concentration differences.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Every acid has the same concentration",
+          "misconceptionTag": "same-acid-concentration-misconception",
+          "rationale": "Different acids and solutions can have very different hydrogen-ion concentrations; pH is logarithmic precisely because those concentrations span orders of magnitude."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "pH measures temperature",
+          "misconceptionTag": "ph-temperature-confusion",
+          "rationale": "pH measures hydrogen-ion activity/concentration behavior, not temperature."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Logarithms eliminate units from all chemistry",
+          "misconceptionTag": "logarithms-remove-all-units-overclaim",
+          "rationale": "The logarithmic pH definition does not make units irrelevant throughout chemistry; it specifically compresses orders-of-magnitude hydrogen-ion variation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u8-md-3": {
+      "itemId": "u8-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How does a buffer resist a small acid addition?",
+      "answerIndex": 0,
+      "correctRationale": "A buffer pair consumes added acid/base and limits concentration change.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It prevents any reaction",
+          "misconceptionTag": "buffer-prevents-all-reaction",
+          "rationale": "A buffer works by reacting with added acid/base; it does not prevent chemical reaction entirely."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It converts all water to gas",
+          "misconceptionTag": "buffer-converts-water-to-gas",
+          "rationale": "Buffer action involves conjugate acid-base chemistry, not conversion of all water to gas."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It fixes pH at exactly 7",
+          "misconceptionTag": "buffer-fixed-at-seven",
+          "rationale": "Buffers resist change around their operating range and are not required to hold pH exactly at 7."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u9-ev-1": {
+      "itemId": "u9-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has negative ΔG under specified conditions. What conclusion is supported?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG addresses thermodynamic direction, not kinetic speed or safety.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The reaction must be fast",
+          "misconceptionTag": "negative-deltag-means-fast",
+          "rationale": "Thermodynamic favorability does not determine reaction speed; a large activation barrier can make a favorable process slow."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction has zero activation energy",
+          "misconceptionTag": "negative-deltag-zero-barrier",
+          "rationale": "A favorable ΔG does not imply activation energy is zero."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The products are always safe",
+          "misconceptionTag": "thermodynamic-favorability-safety",
+          "rationale": "Energetic favorability does not establish that products are safe or nonhazardous."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u9-ev-2": {
+      "itemId": "u9-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell produces a positive measured voltage under spontaneous operating conditions. What does this support?",
+      "answerIndex": 0,
+      "correctRationale": "Positive cell potential for the defined spontaneous direction is consistent with favorable redox energy conversion.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "No electron transfer",
+          "misconceptionTag": "positive-cell-voltage-no-electron-transfer",
+          "rationale": "A working galvanic cell voltage arises from a redox process involving electron transfer, so denying electron transfer contradicts the observation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "A nonspontaneous cell by definition",
+          "misconceptionTag": "positive-cell-voltage-nonspontaneous",
+          "rationale": "For the defined galvanic direction, a positive cell potential is consistent with spontaneous thermodynamic driving force rather than nonspontaneity."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Nuclear fission",
+          "misconceptionTag": "electrochemistry-vs-nuclear-fission",
+          "rationale": "Cell voltage from a galvanic setup is evidence of chemical redox energy conversion, not nuclear fission."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u9-ev-3": {
+      "itemId": "u9-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Repeated samples of the same isotope show the same fractional decay over equal time intervals. What model does this support?",
+      "answerIndex": 0,
+      "correctRationale": "Constant fractional decay over equal times is characteristic of exponential radioactive decay.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Linear loss of a fixed mass each interval",
+          "misconceptionTag": "half-life-linear-loss-model",
+          "rationale": "A constant fractional loss over equal intervals supports exponential decay, not loss of a fixed mass each interval."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "No statistical variation",
+          "misconceptionTag": "radioactive-decay-no-variation",
+          "rationale": "Radioactive decay is statistical; the half-life model does not imply zero variation among finite samples."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Chemical equilibrium",
+          "misconceptionTag": "half-life-vs-chemical-equilibrium",
+          "rationale": "Repeated fractional nuclear decay is not a chemical equilibrium process."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u9-md-1": {
+      "itemId": "u9-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What does ΔG combine conceptually?",
+      "answerIndex": 0,
+      "correctRationale": "Gibbs free energy combines enthalpy and entropy-temperature contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Only reaction rate",
+          "misconceptionTag": "gibbs-vs-rate-only",
+          "rationale": "ΔG is a thermodynamic state-function combination and is not simply a reaction-rate measure."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Only pressure",
+          "misconceptionTag": "gibbs-pressure-only",
+          "rationale": "Pressure can matter to thermodynamic states, but ΔG conceptually combines enthalpy and entropy-temperature contributions rather than pressure alone."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Only atomic number",
+          "misconceptionTag": "gibbs-atomic-number",
+          "rationale": "Atomic number is a nuclear identity property and is not a component of Gibbs free energy."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u9-md-2": {
+      "itemId": "u9-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What physically carries charge through the external wire of a simple galvanic cell?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons move through the external electronic conductor.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Protons moving through copper metal",
+          "misconceptionTag": "protons-in-metal-wire",
+          "rationale": "In an ordinary metallic external wire, electrons carry charge; protons do not flow through the copper lattice as the current carrier."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Neutrons",
+          "misconceptionTag": "neutrons-carry-current",
+          "rationale": "Neutrons are electrically neutral and do not carry the external circuit current."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Salt crystals",
+          "misconceptionTag": "salt-crystals-in-wire",
+          "rationale": "Salt ions move in the electrolyte/salt bridge where applicable, not as salt crystals carrying charge through the metallic wire."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u9-md-3": {
+      "itemId": "u9-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is radioactive half-life largely unaffected by ordinary chemical conditions?",
+      "answerIndex": 0,
+      "correctRationale": "Radioactive decay originates in unstable nuclei and is largely independent of ordinary chemical bonding.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Atoms stop moving",
+          "misconceptionTag": "nuclear-decay-motion-stops",
+          "rationale": "Radioactive half-life is not protected by atoms stopping motion; nuclear instability persists under ordinary conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Chemical bonds contain all nuclear energy",
+          "misconceptionTag": "chemical-bonds-contain-all-nuclear-energy",
+          "rationale": "Chemical bonds involve valence electrons and do not contain or control all nuclear decay energy/processes."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Temperature is always zero",
+          "misconceptionTag": "temperature-zero-requirement",
+          "rationale": "Radioactive half-life does not require zero temperature and is largely insensitive to ordinary temperature changes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "cap-ev-1": {
+      "itemId": "cap-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material has lower manufacturing emissions but much shorter service life. What evidence is needed for a fair sustainability comparison?",
+      "answerIndex": 0,
+      "correctRationale": "Lifecycle evidence prevents optimizing one stage while ignoring impacts elsewhere.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Manufacturing emissions alone",
+          "misconceptionTag": "single-stage-lifecycle-boundary",
+          "rationale": "Manufacturing emissions alone can miss use-phase durability and end-of-life impacts, so it is too narrow for a fair lifecycle comparison."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Color and brand",
+          "misconceptionTag": "aesthetic-brand-evidence",
+          "rationale": "Color and brand do not constitute lifecycle sustainability evidence."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Purchase price only",
+          "misconceptionTag": "purchase-price-only-decision",
+          "rationale": "Purchase price alone omits environmental performance, service life, safety, and end-of-life impacts."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "cap-ev-2": {
+      "itemId": "cap-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A capstone prototype meets four criteria but repeatedly violates a safety constraint. What conclusion is strongest?",
+      "answerIndex": 0,
+      "correctRationale": "Hard constraints must be satisfied regardless of weighted preference scores.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The high criterion score overrides safety",
+          "misconceptionTag": "criteria-score-overrides-hard-constraint",
+          "rationale": "A high weighted score cannot compensate for violating a hard safety constraint."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The constraint can be ignored if performance is high",
+          "misconceptionTag": "safety-constraint-ignored",
+          "rationale": "Ignoring a stated safety constraint makes the design unacceptable regardless of other performance."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "More trials are unnecessary",
+          "misconceptionTag": "repeatability-evidence-dismissed",
+          "rationale": "Repeated safety failures are evidence requiring revision; additional or corrective testing remains relevant."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "cap-ev-3": {
+      "itemId": "cap-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two revisions improve average performance, but one also doubles variability. Which evidence should guide selection?",
+      "answerIndex": 0,
+      "correctRationale": "Engineering evidence should include central performance and reliability/repeatability.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Average alone",
+          "misconceptionTag": "average-only-reliability-blindness",
+          "rationale": "Average performance alone misses the doubled variability and therefore cannot assess reliability against criteria."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The newest revision automatically",
+          "misconceptionTag": "newest-is-best-recency-bias",
+          "rationale": "A newer revision is not automatically superior; selection should be evidence-based."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A single best trial",
+          "misconceptionTag": "single-best-trial-cherry-picking",
+          "rationale": "Choosing a revision from one best trial ignores repeatability and invites cherry-picking."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "cap-md-1": {
+      "itemId": "cap-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the role of weights in a decision matrix?",
+      "answerIndex": 0,
+      "correctRationale": "Weights encode priorities and should be justified.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "They prove one design is objectively best for all stakeholders",
+          "misconceptionTag": "weights-as-objective-proof",
+          "rationale": "Weights encode chosen priorities and do not prove one design is objectively best for every stakeholder."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They replace constraints",
+          "misconceptionTag": "weights-replace-constraints",
+          "rationale": "Preference weights do not eliminate hard constraints that every acceptable design must satisfy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "They remove uncertainty",
+          "misconceptionTag": "weights-remove-uncertainty",
+          "rationale": "Assigning weights does not remove uncertainty in measurements, impacts, or stakeholder priorities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "cap-md-2": {
+      "itemId": "cap-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is a lifecycle model useful in sustainable chemistry?",
+      "answerIndex": 0,
+      "correctRationale": "Lifecycle thinking broadens the system boundary across production, use, and disposal/recovery.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It guarantees zero environmental impact",
+          "misconceptionTag": "lifecycle-zero-impact-guarantee",
+          "rationale": "Lifecycle analysis broadens the system boundary but cannot guarantee zero environmental impact."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It ignores resource extraction",
+          "misconceptionTag": "lifecycle-extraction-omitted",
+          "rationale": "Resource extraction is part of the lifecycle boundary and should not be ignored."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It measures only laboratory yield",
+          "misconceptionTag": "lifecycle-lab-yield-only",
+          "rationale": "Laboratory yield is only one possible metric and does not capture production, use, and end-of-life impacts."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "cap-md-3": {
+      "itemId": "cap-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What does optimization mean in the capstone context?",
+      "answerIndex": 0,
+      "correctRationale": "Optimization is constrained and priority-dependent.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Maximizing every variable simultaneously",
+          "misconceptionTag": "optimization-maximize-everything",
+          "rationale": "Real design variables and objectives conflict; optimization seeks the best feasible tradeoff rather than maximizing every variable simultaneously."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Choosing the cheapest option automatically",
+          "misconceptionTag": "optimization-cheapest-only",
+          "rationale": "Cost may be one criterion, but optimization does not automatically choose the cheapest option when other priorities and constraints matter."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Removing all tradeoffs",
+          "misconceptionTag": "optimization-removes-tradeoffs",
+          "rationale": "Optimization manages tradeoffs under constraints; it does not make all tradeoffs disappear."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    }
+  },
+  "reviewedFamilies": [
+    "legacy concept spine",
+    "density",
+    "ionic particle counting",
+    "weighted-average atomic mass",
+    "photon frequency / nm conversion",
+    "materials density",
+    "Boyle's law",
+    "molarity",
+    "chromatography Rf",
+    "percent yield",
+    "moles from molarity and volume",
+    "average reaction rate",
+    "direct-proportional rate factor",
+    "activation-energy reduction",
+    "calorimetry",
+    "Hess's law",
+    "Gibbs free energy",
+    "equilibrium constant Kc",
+    "Q vs K direction",
+    "Ksp from molar solubility",
+    "pH from hydrogen-ion concentration",
+    "Henderson–Hasselbalch buffers",
+    "thermodynamic favorability from ΔG sign",
+    "galvanic-cell potential",
+    "radioactive half-life",
+    "weighted engineering decision score",
+    "periodic-trend comparisons",
+    "ionic formula charge balance",
+    "Lewis valence-electron totals",
+    "VSEPR molecular geometry",
+    "intermolecular-force boiling-point evidence",
+    "chemical-equation balancing",
+    "mole calculations",
+    "controlled kinetics inquiry",
+    "Brønsted–Lowry acid identification",
+    "standalone evidence/model anchors",
+    "U0–U9 evidence/model spine",
+    "capstone evidence/model spine"
+  ],
+  "distractorMappingRequired": true
+};
