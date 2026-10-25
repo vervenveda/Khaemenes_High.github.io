@@ -5,7 +5,7 @@
   "title": "Physics 12 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/physics-engineering-12/question-bank.js",
-  "reviewedItemCount": 158,
+  "reviewedItemCount": 180,
   "items": {
     "legacy-1": {
       "itemId": "legacy-1",
@@ -3794,6 +3794,534 @@
           "optionIndex": 3,
           "misconceptionTag": "phys-sup-w28-evidence-d3",
           "rationale": "This option represents a reviewed physics misconception, model-boundary error, or weak-evidence interpretation for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w29-concept": {
+      "itemId": "phys-sup-w29-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Electric field and electric potential are related but distinct quantities with different definitions and units.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w29-concept-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w29-concept-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w29-concept-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w29-evidence": {
+      "itemId": "phys-sup-w29-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Field-versus-distance data can test the predicted inverse-square scaling.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w29-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w29-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w29-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w30-concept": {
+      "itemId": "phys-sup-w30-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Current describes charge flow; resistors transfer energy but do not consume charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w30-concept-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w30-concept-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w30-concept-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w30-evidence": {
+      "itemId": "phys-sup-w30-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "A set of V-I measurements directly tests Ohm's-law behavior.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w30-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w30-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w30-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w31-concept": {
+      "itemId": "phys-sup-w31-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Induced emf depends on the rate of change of magnetic flux.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w31-concept-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w31-concept-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w31-concept-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w31-evidence": {
+      "itemId": "phys-sup-w31-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Voltage traces versus flux-change rate directly test induction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w31-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w31-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w31-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w32-concept": {
+      "itemId": "phys-sup-w32-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "EM waves can propagate through vacuum and carry encoded information while still obeying physical propagation limits.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w32-concept-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w32-concept-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w32-concept-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w32-evidence": {
+      "itemId": "phys-sup-w32-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Transmission fidelity is tested by measured attenuation, error rates, and repeatability.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w32-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w32-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w32-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w33-concept": {
+      "itemId": "phys-sup-w33-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Criteria guide optimization, but hard constraints bound acceptable solutions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w33-concept-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w33-concept-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w33-concept-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w33-evidence": {
+      "itemId": "phys-sup-w33-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Repeated comparable test data provide stronger design evidence than preference or selective reporting.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w33-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w33-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w33-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w33-model": {
+      "itemId": "phys-sup-w33-model",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Decision matrices support comparison but do not override hard constraints or uncertainty.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w33-model-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w33-model-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w33-model-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w34-concept": {
+      "itemId": "phys-sup-w34-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Remote sensing commonly uses reflected or emitted EM radiation to infer properties at a distance.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w34-concept-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w34-concept-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w34-concept-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w34-evidence": {
+      "itemId": "phys-sup-w34-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Calibration, multi-band comparison, and uncertainty/resolution checks strengthen remote-sensing inference.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w34-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w34-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w34-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w34-model": {
+      "itemId": "phys-sup-w34-model",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Remote-sensing measurements are indirect and model-dependent.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w34-model-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w34-model-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w34-model-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w35-concept": {
+      "itemId": "phys-sup-w35-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "A rigorous capstone connects model, prediction, evidence, criteria, and revision.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w35-concept-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w35-concept-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w35-concept-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w35-evidence": {
+      "itemId": "phys-sup-w35-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Independent agreement within uncertainty strengthens confidence in a model.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w35-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w35-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w35-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w35-model": {
+      "itemId": "phys-sup-w35-model",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Capstone conclusions remain bounded by evidence quality, transparency, and uncertainty.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w35-model-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w35-model-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w35-model-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w36-concept": {
+      "itemId": "phys-sup-w36-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "A strong portfolio defense selects representative evidence and explains the physics reasoning while preserving assessment integrity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w36-concept-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w36-concept-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w36-concept-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w36-evidence": {
+      "itemId": "phys-sup-w36-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Mastery is demonstrated by traceable reasoning, quantitative evidence, revision, and breadth across domains.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w36-evidence-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w36-evidence-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w36-evidence-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w36-model": {
+      "itemId": "phys-sup-w36-model",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Portfolio evidence and authenticated examination serve different evidentiary roles.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w36-model-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w36-model-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w36-model-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w36-quantitative": {
+      "itemId": "phys-sup-w36-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "9/12×100=75%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w36-quantitative-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w36-quantitative-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w36-quantitative-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w36-review": {
+      "itemId": "phys-sup-w36-review",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "A strong portfolio defense uses representative learner evidence, explicit model reasoning, corrections, and limitations without exposing protected exam content.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w36-review-d1",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w36-review-d2",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w36-review-d3",
+          "rationale": "This option reflects a reviewed misconception, overclaim, model-boundary error, or weak-evidence interpretation for this Physics item."
         }
       ],
       "reviewedAt": "2026-10-25",
