@@ -632,28 +632,29 @@ html:root:root body #grades{padding-top:52px}
 <link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css">
 <link rel="stylesheet" href="https://vervenveda.com/assets/vnv-ecosystem-menu.css">
 
-<style id="khae-single-master-header-v1">/* Retain local course navigation, remove duplicate masthead branding only. */
-body:has([data-khae-header]) .site-header .brand .brand-mark,body:has([data-khae-header]) .site-header .brand .brand-name,body:has([data-khae-header]) .site-header .brand .brand-sub{display:none!important}
-</style>
+
 <link rel="stylesheet" href="assets/high-navigation-v1.css" data-high-navigation-css>
+<style id="high-home-layout-symmetry-20261025">
+/* High School front desk: single header, fluid edges, compact utility controls */
+:root{--sticky-stack:calc(var(--ticker-height) + var(--header-height))}
+.site-header .header-inner{width:100%;max-width:none;padding-inline:clamp(12px,2vw,32px);grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px}
+.site-header .brand{justify-self:start;max-width:100%;min-width:0}
+.site-header .header-actions{justify-self:end;margin-left:auto}
+.site-header .menu-button{flex:none}
+.network-ticker-track{display:flex;width:max-content;min-width:max-content}
+.network-ticker-set{flex:0 0 auto;white-space:nowrap;gap:16px;padding-inline:8px}
+.network-ticker-app{flex:0 0 auto}
+.hero h1{font-size:clamp(2.6rem,5.1vw,4.7rem);line-height:1.08;max-width:100%;text-wrap:balance}
+.high-hero-school{display:block;font-size:.64em;letter-spacing:.015em;margin-top:.12em}
+@media(max-width:1080px){.site-header .header-inner{grid-template-columns:minmax(0,1fr) auto}.site-header .header-links{display:none}.site-header .header-actions{grid-column:2}}
+@media(max-width:560px){.site-header .brand-name{font-size:12px}.site-header .brand-sub{font-size:8px}.site-header .brand-mark{width:34px;flex-basis:34px}.site-header .header-inner{padding-inline:10px}.hero h1{font-size:clamp(2.35rem,9vw,3.5rem)}}
+/* Compact beta utility dock; do not hide or disable its controls. */
+body :is([class*="beta-toolbar"],[class*="beta-dock"],[id*="beta-toolbar"],[id*="beta-dock"]){max-width:min(96vw,540px)!important;box-sizing:border-box!important}
+body :is([class*="beta-toolbar"],[class*="beta-dock"],[id*="beta-toolbar"],[id*="beta-dock"]) :is(a,button){min-width:0!important;max-width:100%!important;white-space:normal!important;overflow-wrap:anywhere!important;line-height:1.3!important;padding:7px 9px!important;font-size:11px!important}
+</style>
 </head>
 <body id="top">
-<header data-khae-header class="khae-global-campus-header">
-  <div data-khae-header-inner>
-    <a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/" aria-label="Khaemenes Academy home">
-      <span data-khae-brand-mark>9–12</span>
-      <span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>High School · Grades 9–12</small></span>
-    </a>
-    <nav data-khae-nav aria-label="Academy global navigation">
-      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy Home</a>
-      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a>
-      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a>
-      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/teacher-admin/">Teacher</a>
-    </nav>
-    <div data-khae-actions><a data-khae-secondary href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student Profile</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a></div>
-    
-  </div>
-</header>
+
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <div class="network-ticker" id="ticker">
@@ -739,7 +740,7 @@ body:has([data-khae-header]) .site-header .brand .brand-mark,body:has([data-khae
       <div class="hero-stage">
         <div>
           <p class="eyebrow">Welcome to Khaemenes Academy</p>
-          <h1>Khaemenes High School</h1>
+          <h1>Khaemenes Academy <span class="high-hero-school">High School</span></h1>
           <p class="high-hero-sub">Your Classes. Your Profile. Your Path Forward.</p>
         </div>
         <p class="hero-lead">Choose your grade to begin studying, return to your student profile, or open the full course directory. Every learning pathway begins with a clear doorway.</p>
