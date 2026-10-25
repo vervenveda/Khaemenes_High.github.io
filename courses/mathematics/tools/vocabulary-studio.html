@@ -96,7 +96,7 @@ header,main,footer{width:100%;min-width:0}
 <main id="main">
 <section class="panel" aria-label="Vocabulary study controls">
 <div class="controls">
-<div><label for="course">Course</label><select id="course"><option value="pre-algebra">Pre-Algebra</option><option value="algebra-1">Algebra I</option><option value="geometry">Geometry</option><option value="algebra-2">Algebra II</option><option value="social-studies-10">U.S. History · Grade 10</option><option value="social-studies-09">Global Studies · Grade 9</option><option value="english-9">English 9</option><option value="english-10">English 10</option><option value="english-11">English 11</option><option value="english-12">English 12</option><option value="biology-10">Biology &amp; Biotechnology 10</option></select></div>
+<div><label for="course">Course</label><select id="course"><option value="pre-algebra">Pre-Algebra</option><option value="algebra-1">Algebra I</option><option value="geometry">Geometry</option><option value="algebra-2">Algebra II</option><option value="social-studies-10">U.S. History · Grade 10</option><option value="social-studies-09">Global Studies · Grade 9</option><option value="english-9">English 9</option><option value="english-10">English 10</option><option value="english-11">English 11</option><option value="english-12">English 12</option><option value="biology-10">Biology &amp; Biotechnology 10</option><option value="chemistry-11">Chemistry &amp; Materials Science 11</option></select></div>
 <div><label for="unit">Unit</label><select id="unit"></select></div>
 <div><label for="week">Week</label><select id="week"><option value="">Whole unit</option></select></div><div><label for="language">Language</label><select id="language"><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="ar">العربية</option><option value="pt">Português</option></select></div>
 <div><label for="search">Find a term</label><input id="search" type="search" autocomplete="off" placeholder="Search the unit"></div>
@@ -112,7 +112,7 @@ header,main,footer{width:100%;min-width:0}
 (()=>{
 "use strict";
 const byId=id=>document.getElementById(id);
-const courseNames=Object.freeze({"pre-algebra":"Pre-Algebra","algebra-1":"Algebra I","geometry":"Geometry","algebra-2":"Algebra II","social-studies-10":"United States History · Grade 10","social-studies-09":"Global Studies · Grade 9","english-9":"English 9","english-10":"English 10","english-11":"English 11","english-12":"English 12","biology-10":"Biology & Biotechnology 10"});
+const courseNames=Object.freeze({"pre-algebra":"Pre-Algebra","algebra-1":"Algebra I","geometry":"Geometry","algebra-2":"Algebra II","social-studies-10":"United States History · Grade 10","social-studies-09":"Global Studies · Grade 9","english-9":"English 9","english-10":"English 10","english-11":"English 11","english-12":"English 12","biology-10":"Biology & Biotechnology 10","chemistry-11":"Chemistry & Materials Science 11"});
 const validCourses=new Set(Object.keys(courseNames));
 const validLanguages=new Set(["en","es","fr","ar","pt"]);
 const params=new URLSearchParams(location.search);
