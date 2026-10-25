@@ -2,116 +2,157 @@
   "title": "Week 8 Mastery Quiz · Courts, Rule of Law, and Accountability",
   "questions": [
     {
-      "question": "Which definition best matches “judicial review”?",
+      "id": "ss12-w08-transfer-v2-01",
+      "question": "Fictional judgment: a court strikes down an executive order but gives no remedy to people harmed by it. What remains unresolved?",
       "options": [
-        "Influence over which issues receive public attention.",
-        "Court evaluation of whether government action complies with higher law.",
-        "A durable unwritten rule or practice shaping behavior.",
-        "A court with special responsibility for constitutional interpretation."
+        "Invalidation alone compensates every person affected by the executive order.",
+        "Availability and enforcement of effective relief",
+        "The judgment automatically ensures implementation without administrative compliance.",
+        "Only constitutional interpretation matters; remedial procedure is irrelevant to legal accountability."
       ],
       "answer": 1,
-      "explanation": "Judicial review means court evaluation of whether government action complies with higher law."
+      "explanation": "Availability and enforcement of effective relief",
+      "skill": "access-to-justice",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “judicial independence”?",
+      "id": "ss12-w08-transfer-v2-02",
+      "question": "A study reports faster cases after court reform but omits appeal and reversal rates. Which limitation matters?",
       "options": [
-        "A constitution designed to restructure institutions and remedy entrenched injustice.",
-        "Use of language and regional identity in territorial organization.",
-        "A structured presentation and questioning process used to justify a project or conclusion.",
-        "The capacity of courts to decide cases without improper political control."
-      ],
-      "answer": 3,
-      "explanation": "Judicial independence means the capacity of courts to decide cases without improper political control."
-    },
-    {
-      "question": "Which definition best matches “precedent”?",
-      "options": [
-        "An earlier decision used to guide later legal reasoning.",
-        "Policy outcomes shaped by bargaining among organizations with different missions and interests.",
-        "The boundaries of a study, including cases, period, concepts, and evidence.",
-        "An unelected body empowered to supervise or constrain elected institutions."
-      ],
-      "answer": 0,
-      "explanation": "Precedent means an earlier decision used to guide later legal reasoning."
-    },
-    {
-      "question": "Which definition best matches “civil law”?",
-      "options": [
-        "A government’s strategy and actions toward external actors and conditions.",
-        "A structured plan explaining a research problem, question, method, evidence, schedule, and significance.",
-        "A power to block a decision despite broader support.",
-        "A legal tradition centered on comprehensive codes and enacted law."
-      ],
-      "answer": 3,
-      "explanation": "Civil law means a legal tradition centered on comprehensive codes and enacted law."
-    },
-    {
-      "question": "Which definition best matches “common law”?",
-      "options": [
-        "A legal tradition in which judicial decisions and precedent have major importance.",
-        "A situation in which one actor’s defensive measures make others feel less secure.",
-        "A formal institution created by states or other actors to pursue shared purposes.",
-        "Temporary suspension of certain obligations under narrowly defined emergencies."
-      ],
-      "answer": 0,
-      "explanation": "Common law means a legal tradition in which judicial decisions and precedent have major importance."
-    },
-    {
-      "question": "Which definition best matches “transitional justice”?",
-      "options": [
-        "Procedures used to determine whether commitments are being honored.",
-        "Rules governing conduct during armed conflict and protection of persons.",
-        "Processes addressing serious abuses during movement from conflict or repression.",
-        "Long-term improvement in capabilities, institutions, living conditions, and opportunity."
+        "Speed proves legal fairness",
+        "No other outcome is relevant",
+        "Timeliness alone does not measure accuracy, rights protection, or procedural fairness",
+        "Appeals are always unlawful"
       ],
       "answer": 2,
-      "explanation": "Transitional justice means processes addressing serious abuses during movement from conflict or repression."
+      "explanation": "Timeliness alone does not measure accuracy, rights protection, or procedural fairness",
+      "skill": "judicial-quality",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which statement is most consistent with the Week 8 analysis?",
+      "id": "ss12-w08-transfer-v2-03",
+      "question": "Simulated disciplinary rules let the executive remove judges without independent review. What institutional risk warrants investigation?",
       "options": [
-        "The most confident source should be accepted without examining authority or method.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Courts require public, institutional, and professional support to make independence effective."
+        "Guaranteed judicial expertise",
+        "Guaranteed faster trials",
+        "Stronger legislative budgeting",
+        "Pressure on judicial independence through insecure tenure"
       ],
       "answer": 3,
-      "explanation": "Courts require public, institutional, and professional support to make independence effective."
+      "explanation": "Pressure on judicial independence through insecure tenure",
+      "skill": "judicial-independence",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which statement is most consistent with the Week 8 analysis?",
+      "id": "ss12-w08-transfer-v2-04",
+      "question": "Two courts reach different outcomes under similar statutes. What is the soundest method for comparison?",
       "options": [
-        "Judicial power can protect rights or entrench elite authority.",
-        "The most confident source should be accepted without examining authority or method.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Political labels have exactly the same meaning in every country and period."
+        "Compare facts, jurisdiction, legal text, interpretive methods, and procedural posture",
+        "Count the number of words in the judgments",
+        "Assume one judge is corrupt",
+        "Choose the oldest judgment automatically"
       ],
       "answer": 0,
-      "explanation": "Judicial power can protect rights or entrench elite authority."
+      "explanation": "Compare facts, jurisdiction, legal text, interpretive methods, and procedural posture",
+      "skill": "comparative-law",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which research practice is most appropriate for Courts, Rule of Law, and Accountability?",
+      "id": "ss12-w08-transfer-v2-05",
+      "question": "A public prosecutor reports 95% conviction rates. Which claim is warranted without more evidence?",
       "options": [
-        "Choose only evidence that supports the preferred conclusion.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Replace documentary evidence with political identity or intuition.",
-        "Trace claims to Constitutional court decisions from multiple legal traditions and anti-corruption institutions, evaluate authority and context, corroborate material facts, and state limitations."
+        "Every case was fair",
+        "The figure alone cannot establish trial fairness or prosecutorial independence",
+        "All defendants were guilty",
+        "Conviction rates prove the rule of law"
+      ],
+      "answer": 1,
+      "explanation": "The figure alone cannot establish trial fairness or prosecutorial independence",
+      "skill": "indicator-limits",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w08-transfer-v2-06",
+      "question": "An investigative report alleges bribery but relies on an unnamed single source. Which evidentiary next step is strongest?",
+      "options": [
+        "Declare guilt immediately",
+        "Dismiss all corruption allegations automatically",
+        "Seek corroborating financial records, procedures, and independently verifiable testimony",
+        "Publish private personal records indiscriminately"
+      ],
+      "answer": 2,
+      "explanation": "Seek corroborating financial records, procedures, and independently verifiable testimony",
+      "skill": "corroboration",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w08-transfer-v2-07",
+      "question": "Fictional statute guarantees legal representation, yet remote residents wait a year for counsel. Which distinction matters?",
+      "options": [
+        "The statute is meaningless in every case",
+        "Wait times prove convictions invalid",
+        "There is no access issue",
+        "Formal entitlement versus practical and equitable access to legal assistance"
       ],
       "answer": 3,
-      "explanation": "Trace claims to Constitutional court decisions from multiple legal traditions and anti-corruption institutions, evaluate authority and context, corroborate material facts, and state limitations."
+      "explanation": "Formal entitlement versus practical and equitable access to legal assistance",
+      "skill": "rights-access",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
+      "id": "ss12-w08-transfer-v2-08",
+      "question": "A court ruling interprets a constitutional right narrowly, while a later authenticated amendment broadens the text. What research action is required?",
       "options": [
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "List facts without connecting them to a claim."
+        "Trace dates and authoritative texts before claiming the earlier ruling controls the new language",
+        "Ignore the amendment",
+        "Assume all interpretations remain fixed",
+        "Use only commentary"
       ],
       "answer": 0,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "Trace dates and authoritative texts before claiming the earlier ruling controls the new language",
+      "skill": "legal-chronology",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w08-transfer-v2-09",
+      "question": "A post-conflict commission hears survivor testimony but lacks authority to prosecute. Which description is most precise?",
+      "options": [
+        "It is identical to a criminal tribunal",
+        "Truth-seeking and criminal adjudication have different mandates and standards",
+        "Its evidence can never be useful",
+        "All reconciliation is complete"
+      ],
+      "answer": 1,
+      "explanation": "Truth-seeking and criminal adjudication have different mandates and standards",
+      "skill": "transitional-justice",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w08-transfer-v2-10",
+      "question": "Court budget records show rising allocations, while legal aid participation falls. What should the senior scholar conclude?",
+      "options": [
+        "Higher spending proves access rose",
+        "Legal aid is unrelated to courts",
+        "Budget totals and service access diverge; investigate allocation, costs, demand, and outcomes",
+        "The dataset is automatically fraudulent"
+      ],
+      "answer": 2,
+      "explanation": "Budget totals and service access diverge; investigate allocation, costs, demand, and outcomes",
+      "skill": "budget-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     }
   ],
   "shortResponse": "When can courts constrain political power, and what makes judicial independence credible?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
