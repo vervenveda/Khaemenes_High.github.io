@@ -2,116 +2,167 @@
   "title": "Week 24 Mastery Quiz · Human Rights and Humanitarian Principles",
   "questions": [
     {
-      "question": "Which definition best matches “human right”?",
+      "id": "ss12-w24-transfer-v3-01",
+      "question": "The UDHR describes equality before law in Article 7. What evidence is needed to assess implementation in one country?",
       "options": [
-        "Evidence that does not fit an emerging explanation.",
-        "Systematic unfairness arising from data, design, deployment, or social context.",
-        "Design that enables people with different abilities and circumstances to use information.",
-        "A fundamental entitlement claimed for every person by virtue of being human."
-      ],
-      "answer": 3,
-      "explanation": "Human right means a fundamental entitlement claimed for every person by virtue of being human."
-    },
-    {
-      "question": "Which definition best matches “derogation”?",
-      "options": [
-        "A conclusion directly derived from analyzed evidence.",
-        "A conclusion or proposition that requires support.",
-        "Lawful participation intended to understand or influence public life.",
-        "Temporary suspension of certain obligations under narrowly defined emergencies."
-      ],
-      "answer": 3,
-      "explanation": "Derogation means temporary suspension of certain obligations under narrowly defined emergencies."
-    },
-    {
-      "question": "Which definition best matches “proportionality”?",
-      "options": [
-        "Power regarded as rightful within a political or legal order.",
-        "A disciplined study of human institutions, behavior, and relationships using explicit methods and evidence.",
-        "A check that claims, quotations, data, and references are accurate and complete.",
-        "A test asking whether a restriction is suitable, necessary, and balanced."
-      ],
-      "answer": 3,
-      "explanation": "Proportionality means a test asking whether a restriction is suitable, necessary, and balanced."
-    },
-    {
-      "question": "Which definition best matches “positive obligation”?",
-      "options": [
-        "The durable rules and institutions governing access to and exercise of political power.",
-        "A formally recorded unit of completed study verified by the responsible authority.",
-        "A transparent statement of assistance, methods, conflicts, or limitations.",
-        "A duty requiring authorities to take protective or enabling action."
-      ],
-      "answer": 3,
-      "explanation": "Positive obligation means a duty requiring authorities to take protective or enabling action."
-    },
-    {
-      "question": "Which definition best matches “rights monitoring”?",
-      "options": [
-        "Presenting another person’s words, ideas, or work as one’s own.",
-        "Systematic collection and evaluation of evidence about rights conditions.",
-        "A system in which multiple groups, values, and centers of influence coexist.",
-        "The principle that government is limited and structured by higher law."
-      ],
-      "answer": 1,
-      "explanation": "Rights monitoring means systematic collection and evaluation of evidence about rights conditions."
-    },
-    {
-      "question": "Which definition best matches “impunity”?",
-      "options": [
-        "Failure to investigate or impose accountability for serious violations.",
-        "Transfer of authority from a central government to regional or local bodies.",
-        "A legal tradition in which judicial decisions and precedent have major importance.",
-        "A principle concerning equal status, rights, opportunity, treatment, or outcomes."
+        "Court access, enforcement patterns, remedy availability and appropriately disaggregated outcomes.",
+        "The declaration's existence alone.",
+        "The nationality of the document's designer.",
+        "The number of national holidays."
       ],
       "answer": 0,
-      "explanation": "Impunity means failure to investigate or impose accountability for serious violations."
+      "explanation": "Court access, enforcement patterns, remedy availability and appropriately disaggregated outcomes.",
+      "skill": "primary-source",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 24 analysis?",
+      "id": "ss12-w24-transfer-v3-02",
+      "question": "A fictional court provides nominally open hearings but most rural residents cannot reach the courthouse. Which distinction matters?",
       "options": [
-        "The most confident source should be accepted without examining authority or method.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Rights claims require legal definition, evidence, duty bearers, and remedies.",
-        "Political labels have exactly the same meaning in every country and period."
+        "Open hearings mean every resident attended.",
+        "Formal hearing rights versus practical access, measured through travel, costs and services.",
+        "Article 10 sets travel reimbursement amounts.",
+        "Rural geography proves a court is unlawful."
+      ],
+      "answer": 1,
+      "explanation": "Formal hearing rights versus practical access, measured through travel, costs and services.",
+      "skill": "quantitative",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w24-transfer-v3-03",
+      "question": "A humanitarian report counts 2,000 food parcels and calls this 2,000 people fed for a month. What inference fails?",
+      "options": [
+        "Parcel counts are unusable for any purpose.",
+        "Every parcel feeds exactly one person for exactly one month.",
+        "Outputs cannot establish beneficiary coverage or duration without distribution and household data.",
+        "Food assistance can never improve well-being."
       ],
       "answer": 2,
-      "explanation": "Rights claims require legal definition, evidence, duty bearers, and remedies."
+      "explanation": "Outputs cannot establish beneficiary coverage or duration without distribution and household data.",
+      "skill": "source-criticism",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 24 analysis?",
+      "id": "ss12-w24-transfer-v3-04",
+      "question": "A school reports the share of enrolled children with disabilities but not the share excluded from enrollment. What limitation exists?",
       "options": [
-        "Political labels have exactly the same meaning in every country and period.",
-        "Most rights permit some regulation, but limitations must be justified.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "The most confident source should be accepted without examining authority or method."
+        "Enrolled proportions describe every eligible child.",
+        "School attendance is identical to educational quality.",
+        "Disability classification has no bearing on inclusion analysis.",
+        "A sample limited to enrollees can miss access barriers for excluded children."
+      ],
+      "answer": 3,
+      "explanation": "A sample limited to enrollees can miss access barriers for excluded children.",
+      "skill": "institutional-implementation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w24-transfer-v3-05",
+      "question": "A policy restricts expression while citing public safety, but omits a legal basis and evidence of necessity. What should a rights review ask?",
+      "options": [
+        "Identify the applicable legal framework and test justification, scope and proportionality with evidence.",
+        "Treat any official safety claim as sufficient.",
+        "Assume no right may ever be limited in any circumstances.",
+        "Measure legality by vote share alone."
+      ],
+      "answer": 0,
+      "explanation": "Identify the applicable legal framework and test justification, scope and proportionality with evidence.",
+      "skill": "legal-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w24-transfer-v3-06",
+      "question": "A government announces a health benefit but clinic records show long waits and regional gaps. What should be assessed?",
+      "options": [
+        "A benefit announcement proves universal access.",
+        "Formal eligibility versus actual availability, accessibility and quality of services.",
+        "Wait times cannot be measured.",
+        "Only the number of legislative speeches."
       ],
       "answer": 1,
-      "explanation": "Most rights permit some regulation, but limitations must be justified."
+      "explanation": "Formal eligibility versus actual availability, accessibility and quality of services.",
+      "skill": "comparative-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     },
     {
-      "question": "Which research practice is most appropriate for Human Rights and Humanitarian Principles?",
+      "id": "ss12-w24-transfer-v3-07",
+      "question": "Two human-rights reports use different definitions of arbitrary detention. What is essential before combining counts?",
       "options": [
-        "Trace claims to Universal Declaration, core treaties, court decisions, and documented monitoring reports, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Replace documentary evidence with political identity or intuition.",
-        "Choose only evidence that supports the preferred conclusion."
+        "Add both counts directly as fully independent.",
+        "Choose whichever figure is higher.",
+        "Reconcile definitions, periods, evidence standards and overlap between recorded cases.",
+        "Ignore differences because both reports concern rights."
       ],
-      "answer": 0,
-      "explanation": "Trace claims to Universal Declaration, core treaties, court decisions, and documented monitoring reports, evaluate authority and context, corroborate material facts, and state limitations."
+      "answer": 2,
+      "explanation": "Reconcile definitions, periods, evidence standards and overlap between recorded cases.",
+      "skill": "measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     },
     {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
+      "id": "ss12-w24-transfer-v3-08",
+      "question": "A fictional humanitarian operation distributes aid according to political affiliation. What ethical investigation is warranted?",
       "options": [
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "List facts without connecting them to a claim.",
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "Treat legal, causal, and moral claims as interchangeable."
+        "Aid distributions are fair whenever authorized by officials.",
+        "Political affiliation is a universal measure of need.",
+        "Beneficiary complaints are irrelevant to evaluation.",
+        "Examine need-based access, discrimination risks, accountability and applicable humanitarian standards."
+      ],
+      "answer": 3,
+      "explanation": "Examine need-based access, discrimination risks, accountability and applicable humanitarian standards.",
+      "skill": "ethical-evaluation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w24-transfer-v3-09",
+      "question": "A senior claims the UDHR by itself proves a government's actions comply with rights norms. What should be corrected?",
+      "options": [
+        "A declaration articulates principles; compliance requires separate legal and empirical evidence.",
+        "International texts automatically document domestic practice.",
+        "The UDHR contains country-specific compliance reports.",
+        "A citation eliminates the need for implementation data."
       ],
       "answer": 0,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "A declaration articulates principles; compliance requires separate legal and empirical evidence.",
+      "skill": "interpretation",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w24-transfer-v3-10",
+      "question": "A housing indicator shows average floor space rising but displacement also rising. What interpretation is most careful?",
+      "options": [
+        "Rising averages prove universal improvement.",
+        "Averages can obscure distributional outcomes; examine who benefits, who is displaced and alternative measures.",
+        "Displacement is mathematically impossible if averages rise.",
+        "Housing indicators cannot be compared across time."
+      ],
+      "answer": 1,
+      "explanation": "Averages can obscure distributional outcomes; examine who benefits, who is displaced and alternative measures.",
+      "skill": "synthesis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     }
   ],
   "shortResponse": "How should universal rights be interpreted, protected, and enforced across diverse societies and unequal power?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
