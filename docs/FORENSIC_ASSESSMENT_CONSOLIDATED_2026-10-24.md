@@ -27,8 +27,8 @@ The specialist course engines remain authoritative for their own learner records
 | Items with an item-level explanation | **1,710 / 1,710 (100%)** |
 | Four-option objective items | **1,710 / 1,710 (100%)** |
 | Valid keyed answers | **1,710 / 1,710 (100%)** |
-| Reviewed misconception-mapped items | **352 / 1,710 (20.6%)** |
-| Explicit reviewed distractor rationales | **1,056** |
+| Reviewed misconception-mapped items | **610 / 1,710 (35.7%)** |
+| Explicit reviewed distractor rationales | **1,830** |
 | Grade 12 Social Studies weekly banks passing transfer rule | **36 / 36** |
 | English 10–12 weekly passage/source anchors | **108 / 108** |
 | Upper-science ordinary weeks with transfer evidence | **102 / 102** |
@@ -99,7 +99,7 @@ The learner-visible five-question lesson form now uses a randomized **2/1/1/1** 
 
 Raw authored answer positions remain **123 / 116 / 104 / 92**, but those positions are not exposed as a fixed learner pattern by the lesson renderer.
 
-The template-similarity heuristic marks approximately **49.2%** of Algebra I items as belonging to repeated structural families. This is recorded as a diagnostic signal rather than a defect because mathematics legitimately reuses problem structures. Exact prompt duplication remains zero.
+The template-similarity heuristic marks approximately **49.2%** of Algebra I items as belonging to repeated structural families. Those repeated families are now fully misconception-mapped: **271/435 Algebra I items (62.3%)** carry **813 explicit distractor rationales**, and a fresh normalized-family scan finds no unmapped repeated family with three or more variants. Exact prompt duplication remains zero.
 
 Formal Unit Mastery remains outside this lesson-form modification and was not weakened.
 
@@ -203,9 +203,9 @@ Backfilling the remaining items remains a staged item-writing project rather tha
 The v1 contract is now active at `courses/shared/ASSESSMENT_DISTRACTOR_QUALITY_CONTRACT_V1.md`.
 
 Current reviewed coverage:
-- Algebra I: **13 items / 39 distractor rationales / 13 of 13 units represented**;
+- Algebra I: **271 / 435 items / 813 distractor rationales / 62.3% bank coverage / all repeated families of 3+ items mapped / 13 of 13 units represented**;
 - Chemistry 11: **339 / 339 items / 1,017 distractor rationales / 100% public-bank coverage / mapping required**;
-- Academy-wide: **352 / 1,710 items (20.6%) / 1,056 distractor rationales**.
+- Academy-wide: **610 / 1,710 items (35.7%) / 1,830 distractor rationales**.
 
 Dedicated validation: `node tools/validate-distractor-quality-v1.mjs`.
 
