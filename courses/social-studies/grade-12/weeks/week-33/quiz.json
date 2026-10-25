@@ -2,116 +2,167 @@
   "title": "Week 33 Mastery Quiz · Capstone Evidence and Findings",
   "questions": [
     {
-      "question": "Which definition best matches “finding”?",
+      "id": "ss12-w33-transfer-v3-01",
+      "question": "An evidence table combines 2021 and 2025 figures without marking the years. What should the senior scholar do?",
       "options": [
-        "The obligation to explain conduct and face consequences for misuse or failure.",
-        "A conclusion directly derived from analyzed evidence.",
-        "The ability of public institutions to implement decisions and provide core functions.",
-        "The legal right to vote."
+        "Average the values without metadata.",
+        "Label periods, test comparability, and qualify trend claims.",
+        "Report both as contemporaneous observations.",
+        "Discard the earlier data automatically."
       ],
       "answer": 1,
-      "explanation": "Finding means a conclusion directly derived from analyzed evidence."
+      "explanation": "Label periods, test comparability, and qualify trend claims.",
+      "skill": "evidence-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “coding”?",
+      "id": "ss12-w33-transfer-v3-02",
+      "question": "A thesis interviews ten volunteers from a single civic group. What inference is methodologically responsible?",
       "options": [
-        "Institutional conditions that open or close possibilities for collective influence.",
-        "The pattern of parties that compete and influence government.",
-        "Systematic labeling of qualitative evidence for comparison and analysis.",
-        "A system with a separately elected president serving a fixed term."
+        "Treat the sample as nationally representative.",
+        "Infer every member agrees.",
+        "Describe the group's perspectives without generalizing to a national population.",
+        "Assume volunteer selection eliminates bias."
       ],
       "answer": 2,
-      "explanation": "Coding means systematic labeling of qualitative evidence for comparison and analysis."
+      "explanation": "Describe the group's perspectives without generalizing to a national population.",
+      "skill": "mastery-and-gates",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “negative case”?",
+      "id": "ss12-w33-transfer-v3-03",
+      "question": "A simulated Assembly important-question vote has 90 members present and voting, 59 in favor. Under UN Charter Article 18, what follows?",
       "options": [
-        "Allocation of seats in approximate proportion to party vote shares.",
-        "Exchange of targeted benefits for political support.",
-        "Coordinated behavior toward a shared objective.",
-        "Evidence that does not fit an emerging explanation."
+        "It passes because 59 is more than half.",
+        "It passes by unanimity.",
+        "It requires exactly 45 votes.",
+        "It falls short of the 60 votes required for a two-thirds majority."
       ],
       "answer": 3,
-      "explanation": "Negative case means evidence that does not fit an emerging explanation."
+      "explanation": "It falls short of the 60 votes required for a two-thirds majority.",
+      "skill": "source-interpretation",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “sensitivity analysis”?",
+      "id": "ss12-w33-transfer-v3-04",
+      "question": "A coded interview dataset contains the category 'institutional trust' but no codebook. What is the strongest repair?",
       "options": [
-        "The statutory distribution of powers to Scotland, Wales, and Northern Ireland.",
-        "Testing whether a finding changes under alternative assumptions or measures.",
-        "An election whose competition or information environment is substantially controlled.",
-        "An organization seeking to influence public decisions without directly becoming the government."
+        "Define codes, inclusion rules, examples and agreement checks so interpretations are auditable.",
+        "Count every phrase as an identical code.",
+        "Remove the methodological appendix.",
+        "Use only the most memorable quotation."
+      ],
+      "answer": 0,
+      "explanation": "Define codes, inclusion rules, examples and agreement checks so interpretations are auditable.",
+      "skill": "quantitative-literacy",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w33-transfer-v3-05",
+      "question": "A case contradicts a thesis's central prediction. Which scholarly response is most defensible?",
+      "options": [
+        "Exclude the case without disclosure.",
+        "Investigate the negative case, competing explanations and boundaries of the claim.",
+        "Change its classification silently.",
+        "Present one confirming example instead."
       ],
       "answer": 1,
-      "explanation": "Sensitivity analysis means testing whether a finding changes under alternative assumptions or measures."
+      "explanation": "Investigate the negative case, competing explanations and boundaries of the claim.",
+      "skill": "ethical-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “confidence”?",
+      "id": "ss12-w33-transfer-v3-06",
+      "question": "Two original data tables use different percentages because their denominators differ. What must an analytical figure disclose?",
       "options": [
-        "The principle that Parliament is the supreme lawmaking authority in the UK constitutional order.",
-        "Comparison of similar cases with different outcomes.",
-        "A Leninist principle combining internal discussion with enforced unity after a decision.",
-        "The justified degree of certainty attached to a conclusion."
+        "Only the visually larger bar.",
+        "The table's font size.",
+        "Population, denominator, source date, methodology and uncertainty.",
+        "A combined percentage without weighting."
+      ],
+      "answer": 2,
+      "explanation": "Population, denominator, source date, methodology and uncertainty.",
+      "skill": "methodology",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w33-transfer-v3-07",
+      "question": "A research team updates a spreadsheet after finding a transcription error. What makes the correction reproducible?",
+      "options": [
+        "Overwrite all earlier versions without note.",
+        "Keep the incorrect output for consistency.",
+        "Attribute the difference to public opinion.",
+        "Record the original value, corrected value, evidence, time and recalculated findings."
       ],
       "answer": 3,
-      "explanation": "Confidence means the justified degree of certainty attached to a conclusion."
+      "explanation": "Record the original value, corrected value, evidence, time and recalculated findings.",
+      "skill": "counterargument",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “research limitation”?",
+      "id": "ss12-w33-transfer-v3-08",
+      "question": "A senior identifies correlation between turnout and trust across countries. Which conclusion requires further research?",
       "options": [
-        "An approach emphasizing cooperation, institutions, interdependence, and domestic constraints.",
-        "A boundary or weakness affecting interpretation or generalization.",
-        "Systematic comparison used to describe, classify, explain, or evaluate cases.",
-        "A state with capacity and policy commitment to direct long-term development."
-      ],
-      "answer": 1,
-      "explanation": "Research limitation means a boundary or weakness affecting interpretation or generalization."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 33 analysis?",
-      "options": [
-        "Findings must answer the research question rather than merely summarize sources.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Political labels have exactly the same meaning in every country and period."
+        "A causal assertion that trust alone produced the turnout difference.",
+        "The reported correlation exists in the sample.",
+        "The variables were measured.",
+        "The cases belong to countries."
       ],
       "answer": 0,
-      "explanation": "Findings must answer the research question rather than merely summarize sources."
+      "explanation": "A causal assertion that trust alone produced the turnout difference.",
+      "skill": "research-integrity",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 33 analysis?",
+      "id": "ss12-w33-transfer-v3-09",
+      "question": "A document archive includes a later commentary that cites an earlier constitutional clause. What is the best source-custody practice?",
       "options": [
-        "Political labels have exactly the same meaning in every country and period.",
-        "Negative and contradictory evidence should be examined, not hidden.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "The most confident source should be accepted without examining authority or method."
+        "Treat commentary as the enacted legal text.",
+        "Locate the authenticated clause, record the date and note how commentary interprets it.",
+        "Use an undated summary as the sole reference.",
+        "Assume the quotation is complete."
       ],
       "answer": 1,
-      "explanation": "Negative and contradictory evidence should be examined, not hidden."
+      "explanation": "Locate the authenticated clause, record the date and note how commentary interprets it.",
+      "skill": "portfolio-evidence",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which research practice is most appropriate for Capstone Evidence and Findings?",
+      "id": "ss12-w33-transfer-v3-10",
+      "question": "The findings chapter reports an average but ignores marked regional variation. Which revision adds analytical depth?",
       "options": [
-        "Trace claims to Student evidence corpus, analysis log, data tables, and methods record, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Replace documentary evidence with political identity or intuition.",
-        "Choose only evidence that supports the preferred conclusion.",
-        "Use the first search result and treat its summary as conclusive."
+        "Replace the average with a slogan.",
+        "Assume all regions are identical.",
+        "Disaggregate relevant groups and explain how variation affects the proposed conclusion.",
+        "Hide small groups even when privacy-safe reporting is possible."
       ],
-      "answer": 0,
-      "explanation": "Trace claims to Student evidence corpus, analysis log, data tables, and methods record, evaluate authority and context, corroborate material facts, and state limitations."
-    },
-    {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
-      "options": [
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "List facts without connecting them to a claim."
-      ],
-      "answer": 1,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "answer": 2,
+      "explanation": "Disaggregate relevant groups and explain how variation affects the proposed conclusion.",
+      "skill": "defense",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     }
   ],
   "shortResponse": "Can the student transform a documented body of evidence into transparent, appropriately qualified findings?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
