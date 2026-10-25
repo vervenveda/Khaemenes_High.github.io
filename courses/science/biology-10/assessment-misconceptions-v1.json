@@ -5,7 +5,7 @@
   "title": "Biology 10 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/biology-10/question-bank.js",
-  "reviewedItemCount": 30,
+  "reviewedItemCount": 50,
   "items": {
     "bio-001": {
       "itemId": "bio-001",
@@ -726,6 +726,486 @@
       ],
       "reviewedAt": "2026-10-25",
       "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-031": {
+      "itemId": "bio-031",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "Within-team precision is high, but the between-team difference suggests a possible systematic measurement difference that should be tested.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "premature-biological-change-claim",
+          "rationale": "The within-team consistency and between-team offset point first to a possible measurement-system difference, not evidence that the specimen changed."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "averaging-hides-group-bias",
+          "rationale": "Pooling all values would hide the systematic difference between teams instead of testing it."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "discarding-data-by-value",
+          "rationale": "Discarding lower values without a pre-stated quality rule biases the dataset."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-032": {
+      "itemId": "bio-032",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "Percent change is (50−40)/40 × 100 = 25%.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "uses-absolute-change-as-percent",
+          "rationale": "10 is the absolute change, not the percent change."
+        },
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "divides-change-by-final-value",
+          "rationale": "Using 10/50 gives 20%, but percent change is referenced to the original value."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "uses-original-value-as-percent",
+          "rationale": "40 is the starting quantity, not the percent change."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-033": {
+      "itemId": "bio-033",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "Comparative physical behavior can support the role of polarity and hydrogen bonding.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "irrelevant-composition-evidence",
+          "rationale": "Carbon content does not test hydrogen bonding or cohesion in water."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "equal-behavior-undermines-mechanism",
+          "rationale": "If all liquids behaved equally, that would not support a water-specific polarity explanation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "denies-intermolecular-forces",
+          "rationale": "Water's cohesion is evidence for intermolecular attraction, not absence of it."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-034": {
+      "itemId": "bio-034",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "Composition data support composition claims, not complete physiological conclusions.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "composition-overreach",
+          "rationale": "A food label reports composition but cannot by itself establish complete biological effects."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "macromolecule-identity-confusion",
+          "rationale": "Protein and carbohydrate are chemically distinct classes of biomolecules."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "fat-carbon-confusion",
+          "rationale": "Lipids are carbon-containing organic molecules."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-035": {
+      "itemId": "bio-035",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "Rate equals change divided by elapsed time: 18/3=6 and 54/3=18 units/min.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "reports-total-not-rate",
+          "rationale": "18 and 54 are totals, not values divided by the 3-minute interval."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "divides-by-extra-factor",
+          "rationale": "3 and 9 result from over-dividing rather than using change/time once."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "adds-time-instead-of-dividing",
+          "rationale": "Adding elapsed time to the totals does not compute a rate."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-036": {
+      "itemId": "bio-036",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "The cell is 6/4=1.5 times the scale bar, so 1.5×20 μm=30 μm.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "inverts-scale-ratio",
+          "rationale": "The cell is larger than the 4 cm scale bar on the print, so its actual size must exceed 20 μm, not shrink below it."
+        },
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "ignores-relative-length",
+          "rationale": "Using 20 μm directly ignores that the cell image is 1.5 times the scale-bar length."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "multiplies-print-length-directly",
+          "rationale": "Using 6×20 ignores the 4 cm reference length and overestimates the cell size."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-037": {
+      "itemId": "bio-037",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "Smaller cubes have more surface area per unit volume.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "larger-cells-have-higher-sa-v",
+          "rationale": "As a cube grows, volume increases faster than surface area, so SA:V decreases."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "ratio-unchanged-by-proportional-scaling-misread",
+          "rationale": "Surface area and volume do not scale linearly with side length; doubling both abstractly misses the geometric relationship."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "removing-membrane-not-valid-cell-model",
+          "rationale": "Removing the membrane eliminates the exchange boundary rather than improving a viable cell's SA:V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-038": {
+      "itemId": "bio-038",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "Multiple bacterial-like features provide converging evidence for endosymbiotic ancestry.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "organelle-size-as-origin-evidence",
+          "rationale": "Being large would not specifically support bacterial ancestry."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "plant-only-mitochondria",
+          "rationale": "Mitochondria occur broadly in eukaryotes, not only plants."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "mitochondria-have-nuclear-chromosomes",
+          "rationale": "Mitochondria possess their own small genome but not the cell's nuclear chromosomes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-039": {
+      "itemId": "bio-039",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "Differential gene expression is central to cell specialization.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "differentiation-loses-most-genes",
+          "rationale": "Differentiated cells generally retain the genome rather than deleting most genes."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "ribosomes-rewrite-dna",
+          "rationale": "Ribosomes translate RNA and do not rewrite genomic DNA."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "cell-shape-determines-sequence",
+          "rationale": "Cell shape is an outcome of cellular programs, not a determinant of nucleotide order."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-040": {
+      "itemId": "bio-040",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "A plateau is consistent with another factor becoming limiting or the system approaching capacity under those conditions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "plateau-means-permanent-stop",
+          "rationale": "A plateau means the measured rate stopped increasing under those conditions, not that photosynthesis ceased permanently."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "photosynthesis-destroys-carbon",
+          "rationale": "Carbon atoms are conserved and rearranged, not destroyed."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "more-light-always-reduces-rate",
+          "rationale": "The data show a plateau, not an obligatory decline with more light."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-041": {
+      "itemId": "bio-041",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "12 mL ÷ 6 min ÷ 2 g = 1 mL O₂ min⁻¹ g⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "normalizes-by-time-only",
+          "rationale": "12/6=2 mL/min, but the result still must be divided by 2 g."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "partial-normalization-error",
+          "rationale": "4 mL/min/g does not follow from dividing the measured oxygen use by both time and mass correctly."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "uses-raw-total",
+          "rationale": "12 mL is the unnormalized total, not a mass-specific rate."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-042": {
+      "itemId": "bio-042",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "Tracking atoms checks conservation of matter across reaction models.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "energy-recycles-like-matter",
+          "rationale": "Energy flows and dissipates; atom accounting tests matter conservation, not energy recycling."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "atoms-disappear-in-metabolism",
+          "rationale": "Atoms are rearranged through reactions and do not vanish."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "model-replaces-experiment",
+          "rationale": "Stoichiometric accounting is a model check and cannot replace experimental evidence."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-043": {
+      "itemId": "bio-043",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "A: 3 mL/h/g; B: 2 mL/h/g, so A has the higher normalized rate.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "compares-raw-total-only",
+          "rationale": "B has the larger raw CO₂ output but also twice the mass; normalization reverses the comparison."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "assumes-equal-after-normalization",
+          "rationale": "A=3 and B=2 mL/h/g, so the normalized rates are not equal."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "normalization-allows-comparison",
+          "rationale": "Mass normalization is specifically what makes the two organisms comparable here."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-044": {
+      "itemId": "bio-044",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "The graph supports a bounded response pattern, not a complete molecular mechanism.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "graph-alone-proves-mechanism",
+          "rationale": "A dose-response curve supports a response pattern but does not by itself prove the molecular mechanism."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "infers-identical-receptor-number",
+          "rationale": "The curve does not establish equal receptor abundance in every cell."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "extrapolates-beyond-tested-outcomes",
+          "rationale": "The graph cannot guarantee absence of side effects at higher doses."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-045": {
+      "itemId": "bio-045",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "Deviation is 8; 8/50×100=16%.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "uses-absolute-deviation-as-percent",
+          "rationale": "8 is the absolute deviation, not the percentage relative to 50."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "reports-reference-as-percent",
+          "rationale": "50 is the reference value, not the computed percent deviation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "reports-peak-value-as-percent",
+          "rationale": "58 is the peak measurement, not the percent deviation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-046": {
+      "itemId": "bio-046",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "Replication doubles DNA/chromatid count while chromosome count remains 8 until sister chromatids separate.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "s-phase-does-not-double-chromatids",
+          "rationale": "After S phase, each chromosome has two sister chromatids, so chromatids double."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "replication-doubles-chromosome-count",
+          "rationale": "DNA replication doubles chromatids/DNA amount but chromosome count remains 8 until chromatids separate."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "doubles-chromosomes-not-chromatids",
+          "rationale": "This reverses what changes during S phase."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-047": {
+      "itemId": "bio-047",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "A rescue-style comparison tests whether changing the suspected factor changes the phenotype in the predicted direction.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "graph-color-not-causal-evidence",
+          "rationale": "Visual contrast does not test whether the regulatory variant causes the phenotype."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "repeating-correlation-is-not-intervention",
+          "rationale": "Restating an association does not provide intervention-based causal evidence."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "removing-control-weakens-causality",
+          "rationale": "Removing the control makes causal interpretation weaker, not stronger."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-048": {
+      "itemId": "bio-048",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "Data exclusions require transparent rules tied to measurement quality or design, not preferred conclusions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "silent-outlier-deletion",
+          "rationale": "Removing inconvenient data without a pre-stated rule is selective reporting."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "hypothesis-after-results",
+          "rationale": "Changing the hypothesis only after seeing results risks post hoc reasoning."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "rounding-to-fit-expectation",
+          "rationale": "Rounding should follow measurement rules, not be used to force agreement with expectations."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-049": {
+      "itemId": "bio-049",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "2^5 = 32 combinations.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "uses-2n-instead-of-2-power-n",
+          "rationale": "10 comes from 2×5, but independent assortment combinations follow 2^n."
+        },
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "uses-n-squared",
+          "rationale": "25 comes from 5², not the 2^n chromosome-combination model."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "extra-factor-of-two",
+          "rationale": "64 is 2^6 and overcounts one homologous pair."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-050": {
+      "itemId": "bio-050",
+      "reviewStatus": "reviewed-quantitative-evidence-v1",
+      "correctRationale": "The four equally likely genotype cells are AA, Aa, Aa, aa.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "counts-heterozygotes-as-recessive",
+          "rationale": "Two of four cells are Aa, but only aa is the recessive homozygote."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "uses-dominant-phenotype-fraction",
+          "rationale": "3/4 corresponds to the expected dominant phenotype fraction, not aa genotype."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "assumes-all-offspring-aa",
+          "rationale": "Aa × Aa produces a distribution of genotypes, not all aa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
     }
   }
 }
