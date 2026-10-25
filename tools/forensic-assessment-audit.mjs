@@ -338,7 +338,7 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     const bank=loadWindowBank(bankPath);combined.push(...bank);
     const map=readJSON(`courses/science/${slug}/course-map.json`);
     const blueprint=read(`courses/science/${slug}/assessments/SECURE_ASSESSMENT_BLUEPRINT.md`);
-    const index=read(`courses/science/${slug}/index.html`);
+    const index=read(`courses/science/${slug}/assessments/index.html`);
     const missing=[];
     for(let week=1;week<=36;week++){
       if(week===18||week===36)continue;ordinaryTotal++;
