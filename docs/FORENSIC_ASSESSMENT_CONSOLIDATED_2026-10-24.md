@@ -87,7 +87,7 @@ The raw supplemental schema stores the keyed option first, so its authored posit
 
 ## 3. Algebra I
 
-**Status: PASS at source/runtime-contract level; representative browser execution tracked separately**
+**Status: PASS · source/runtime contract + representative Chromium regression**
 
 Algebra I now has two distinct public assessment sources and the forensic system treats them separately rather than using one as a proxy for the other.
 
@@ -155,6 +155,8 @@ and:
 `.github/workflows/algebra1-browser-regression.yml`
 
 The Playwright/Chromium journey opens the actual representative Unit 01, Unit 05, and Unit 09 lesson pages and verifies first attempt → submit → immutable answer lock → fresh retake → saved evidence → reload. The workflow also runs the runtime-bank and dedicated-misconception validators before browser execution, so a source-contract failure prevents a misleading browser PASS.
+
+**Certified browser run 40167547597: PASS.** Unit 01, Unit 05, and Unit 09 each rendered ten-question first forms and ten-question retakes, preserved two attempts through reload, and produced no browser/page console errors. Unit 05 and Unit 09 retakes explicitly contained both dedicated and aligned-alternate items.
 
 ## 4. Upper Science
 
