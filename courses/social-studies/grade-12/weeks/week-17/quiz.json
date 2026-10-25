@@ -2,116 +2,158 @@
   "title": "Week 17 Mastery Quiz · Comparative Political Systems Synthesis",
   "questions": [
     {
-      "question": "Which definition best matches “comparative method”?",
+      "id": "ss12-w17-transfer-v3-01",
+      "question": "Two cases have similar constitutions but different court independence scores. What design best tests institutional explanations?",
       "options": [
-        "Protection granted by a state to a qualifying person seeking refuge.",
-        "A written international agreement governed by international law.",
-        "Systematic comparison used to describe, classify, explain, or evaluate cases.",
-        "Money owed by a national government."
-      ],
-      "answer": 2,
-      "explanation": "Comparative method means systematic comparison used to describe, classify, explain, or evaluate cases."
-    },
-    {
-      "question": "Which definition best matches “case selection”?",
-      "options": [
-        "The reasoned choice of cases appropriate to a research question.",
-        "Cross-border organization of production stages for a good or service.",
-        "Failure to investigate or impose accountability for serious violations.",
-        "Inability to credibly promise future compliance when power or incentives may change."
+        "Hold constitutional text similar and compare appointment, tenure, enforcement, and historical context",
+        "Treat the scores alone as the cause",
+        "Change both institutional definitions between cases",
+        "Select only courts with identical decisions"
       ],
       "answer": 0,
-      "explanation": "Case selection means the reasoned choice of cases appropriate to a research question."
+      "explanation": "Hold constitutional text similar and compare appointment, tenure, enforcement, and historical context",
+      "skill": "method-design",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “most-similar design”?",
+      "id": "ss12-w17-transfer-v3-02",
+      "question": "A researcher selects cases because they both confirm the preferred theory. What is the principal threat?",
       "options": [
-        "Severe climate impacts that cannot be fully avoided through mitigation or adaptation.",
-        "A relationship in which economic structures constrain autonomous development.",
-        "Comparison of similar cases with different outcomes.",
-        "Use of computational systems to inform or make public decisions."
-      ],
-      "answer": 2,
-      "explanation": "Most-similar design means comparison of similar cases with different outcomes."
-    },
-    {
-      "question": "Which definition best matches “most-different design”?",
-      "options": [
-        "Identification of actors responsible for a digital operation.",
-        "Comparison of different cases sharing an outcome or relationship.",
-        "A difficult-to-exclude resource vulnerable to overuse.",
-        "Structured evaluation of preparedness, response, outcomes, and lessons."
+        "Legal pluralism",
+        "Selection on the outcome and confirmation bias",
+        "A larger sample automatically",
+        "Excess use of primary documents"
       ],
       "answer": 1,
-      "explanation": "Most-different design means comparison of different cases sharing an outcome or relationship."
+      "explanation": "Selection on the outcome and confirmation bias",
+      "skill": "source-criticism",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “typology”?",
+      "id": "ss12-w17-transfer-v3-03",
+      "question": "Case A reports 65% turnout among registered voters, Case B 65% among eligible adults. What is required?",
       "options": [
-        "A record explaining changes made in response to evidence and feedback.",
-        "A classification system based on multiple dimensions.",
-        "A norm such as humanity, neutrality, impartiality, or independence guiding relief.",
-        "Discouraging action by credibly threatening unacceptable costs."
+        "Treat the two values as equal measures",
+        "Average the numbers",
+        "Align denominators or clearly qualify the comparison",
+        "Rank the countries by turnout alone"
+      ],
+      "answer": 2,
+      "explanation": "Align denominators or clearly qualify the comparison",
+      "skill": "measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 3
+    },
+    {
+      "id": "ss12-w17-transfer-v3-04",
+      "question": "A paired historical comparison finds reforms before increased participation in one country but after it in another. Which conclusion is justified?",
+      "options": [
+        "Reforms caused both changes",
+        "The second country has no reform",
+        "Temporal order cannot inform analysis",
+        "A single common causal story is not established without testing sequence and rival explanations"
+      ],
+      "answer": 3,
+      "explanation": "A single common causal story is not established without testing sequence and rival explanations",
+      "skill": "causal-inference",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 3
+    },
+    {
+      "id": "ss12-w17-transfer-v3-05",
+      "question": "An archive shows similar electoral rules but differing media access. Which dimension cannot be omitted?",
+      "options": [
+        "Practical competition and rights conditions alongside formal rules",
+        "Only the number of election days",
+        "Only the text's publication language",
+        "Only the number of candidates"
+      ],
+      "answer": 0,
+      "explanation": "Practical competition and rights conditions alongside formal rules",
+      "skill": "institutional-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 3
+    },
+    {
+      "id": "ss12-w17-transfer-v3-06",
+      "question": "A comparative chart uses legal independence of courts for Country A and public trust in courts for B. What correction matters?",
+      "options": [
+        "Both indicators are identical",
+        "Use comparable constructs or clearly explain the difference in what is measured",
+        "Drop the source dates",
+        "Assume higher trust proves judicial independence"
       ],
       "answer": 1,
-      "explanation": "Typology means a classification system based on multiple dimensions."
+      "explanation": "Use comparable constructs or clearly explain the difference in what is measured",
+      "skill": "source-application",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “causal inference”?",
+      "id": "ss12-w17-transfer-v3-07",
+      "question": "A report attributes an institutional change solely to regime ideology. What should a senior test?",
       "options": [
-        "Logical connection among question, method, evidence, findings, and conclusion.",
-        "Systematic collection and analysis of health data for action.",
-        "A systematic review of required work, evidence, records, and corrections.",
-        "Reasoning about whether and how one factor contributes to an outcome."
+        "Only vocabulary in party speeches",
+        "Only whether the change happened",
+        "Legal constraints, coalitions, fiscal capacity, and historical alternatives",
+        "That any ideology predicts every outcome"
+      ],
+      "answer": 2,
+      "explanation": "Legal constraints, coalitions, fiscal capacity, and historical alternatives",
+      "skill": "case-selection",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 3
+    },
+    {
+      "id": "ss12-w17-transfer-v3-08",
+      "question": "An election study compares two countries at different historical points without explaining why. What improves validity?",
+      "options": [
+        "Remove all dates",
+        "Choose the most famous country",
+        "Use a single national stereotype",
+        "State temporal scope and justify the cases and observed periods"
       ],
       "answer": 3,
-      "explanation": "Causal inference means reasoning about whether and how one factor contributes to an outcome."
+      "explanation": "State temporal scope and justify the cases and observed periods",
+      "skill": "comparative-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 17 analysis?",
+      "id": "ss12-w17-transfer-v3-09",
+      "question": "A researcher finds a contrary case that weakens the preferred typology. Which scholarly response is strongest?",
       "options": [
-        "Comparison requires common concepts and attention to case-specific context.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Political labels have exactly the same meaning in every country and period."
+        "Revise the classification or identify a bounded exception with evidence",
+        "Discard the country immediately",
+        "Change the case label without explanation",
+        "Treat contradictions as irrelevant"
       ],
       "answer": 0,
-      "explanation": "Comparison requires common concepts and attention to case-specific context."
+      "explanation": "Revise the classification or identify a bounded exception with evidence",
+      "skill": "revision",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 17 analysis?",
+      "id": "ss12-w17-transfer-v3-10",
+      "question": "The UN Charter Article 2 affirms sovereign equality, but two states show unequal military capacity. What distinction is required?",
       "options": [
-        "Selecting only convenient cases creates biased conclusions.",
-        "The most confident source should be accepted without examining authority or method.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Political labels have exactly the same meaning in every country and period."
+        "Military capacity determines Charter membership",
+        "Legal principle and empirical power distribution are different analytical dimensions",
+        "The Charter proves all states have equal armed forces",
+        "Unequal military capacity repeals Article 2"
       ],
-      "answer": 0,
-      "explanation": "Selecting only convenient cases creates biased conclusions."
-    },
-    {
-      "question": "Which research practice is most appropriate for Comparative Political Systems Synthesis?",
-      "options": [
-        "Trace claims to Country portfolios from Weeks 13–16 and cross-national governance datasets, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Choose only evidence that supports the preferred conclusion.",
-        "Replace documentary evidence with political identity or intuition.",
-        "Use the first search result and treat its summary as conclusive."
-      ],
-      "answer": 0,
-      "explanation": "Trace claims to Country portfolios from Weeks 13–16 and cross-national governance datasets, evaluate authority and context, corroborate material facts, and state limitations."
-    },
-    {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
-      "options": [
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "List facts without connecting them to a claim.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
-      ],
-      "answer": 3,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "answer": 1,
+      "explanation": "Legal principle and empirical power distribution are different analytical dimensions",
+      "skill": "synthesis",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_17_20.md",
+      "version": 3
     }
   ],
   "shortResponse": "Which concepts best explain similarities and differences across political systems without erasing history and context?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
