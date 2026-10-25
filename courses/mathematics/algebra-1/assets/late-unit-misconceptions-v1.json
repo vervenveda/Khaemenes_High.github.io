@@ -8025,7 +8025,7 @@
       "reviewStatus": "family-provisional-v1",
       "prompt": "A population model is P=500(1.08)^t. What does it predict after 2 time periods?",
       "answerIndex": 0,
-      "correctRationale": "P=500(1.08)^2=500(1.1664)=583.2.",
+      "correctRationale": "Apply the 8% growth factor twice: P=500(1.08)^2=500(1.1664)=583.2, so the model predicts 583.2 after two time periods.",
       "distractors": [
         {
           "optionIndex": 1,
