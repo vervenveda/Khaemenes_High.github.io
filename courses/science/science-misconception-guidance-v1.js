@@ -19,7 +19,7 @@ function reviewed(map,q,chosenIndex){
   label:String(hit.misconceptionTag||"Reviewed misconception"),
   tag:String(hit.misconceptionTag||"reviewed-misconception"),
   guidance:String(hit.rationale||"Review this reasoning path."),
-  remediationRoute:"Week "+String(Number(q.week)||"").padStart(2,"0")+" · Day 02/03 correction",
+  remediationRoute:"Week "+String(Number(q.week)||"").padStart(2,"0")+" · Day "+String((byType[String(q?.type||"concept").toLowerCase()]||byType.concept).day).padStart(2,"0")+" correction",
   certainty:"reviewed-option-specific",
   note:"This diagnosis is tied to the selected distractor and reviewed item map."
  });
