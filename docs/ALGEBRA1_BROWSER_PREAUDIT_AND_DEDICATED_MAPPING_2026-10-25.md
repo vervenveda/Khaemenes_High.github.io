@@ -3,7 +3,7 @@
 **Branch:** main  
 **Scope:** representative Unit 01 → Unit 05 → Unit 09 learner journeys and runtime-authoritative Units 01–09 assessment banks  
 **Mastery floor:** 80%  
-**Browser certification:** GitHub-hosted Chromium regression configured; final result recorded below when execution completes.
+**Browser certification:** **PASS** · GitHub-hosted Chromium / Playwright representative Unit 01 → Unit 05 → Unit 09 journey.
 
 ## Pre-audit finding
 
@@ -97,10 +97,34 @@ The first GitHub-hosted browser attempt correctly stopped before browser executi
 
 Both validator defects were repaired. They were test-infrastructure errors, not learner-runtime failures.
 
-The current workflow rerun executes against those corrections.
+After those corrections, the GitHub-hosted job reached both source validators and the browser stage successfully.
 
-## Remaining certification boundary
+### Certified execution result
 
-Until the representative Chromium job completes successfully, the source/runtime contracts are verified but the end-to-end browser journey is not certified.
+Workflow run: **40167547597**  
+Head commit: `1690dbb0b27c69de774f69152b79cb17370ee67d`  
+Result: **SUCCESS**
 
-After browser PASS, the remaining curriculum-quality work is to refine the **410 provisional dedicated mappings** item by item, beginning with Units 02–04 and then Units 06–08, while keeping the 610-item runtime banks and learner history unchanged.
+The workflow reported:
+
+- runtime-assessment forensic validation: **PASS**;
+- dedicated misconception-map validation: **PASS**;
+- real-browser regression: **PASS**.
+
+Chromium opened the actual representative Lesson 01 pages in Unit 01, Unit 05, and Unit 09.
+
+Observed browser evidence:
+
+| Unit | First attempt | Locked after submit | Retake | Retake sources | Attempts after reload |
+| --- | ---: | --- | ---: | --- | ---: |
+| 01 | 10 items | Yes | 10 items | dedicated | 2 |
+| 05 | 10 items | Yes | 10 items | dedicated + aligned-alternate | 2 |
+| 09 | 10 items | Yes | 10 items | dedicated + aligned-alternate | 2 |
+
+The browser harness additionally verified balanced learner-visible correct positions for Units 05 and 09, complete answer snapshots, retained best-score evidence, changed retake forms, and **zero browser/page console errors**.
+
+## Remaining curriculum-quality boundary
+
+The representative browser execution boundary is now certified.
+
+The remaining work is **assessment-depth refinement rather than runtime repair**: promote the **410 provisional dedicated mappings** to item-level reviewed status, beginning with Units 02–04 and then Units 06–08, while keeping the 610-item runtime banks, answer keys, learner history, mastery gates, and offline behavior unchanged.
