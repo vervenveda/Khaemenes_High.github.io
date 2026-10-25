@@ -40,6 +40,9 @@ function loadAt(i){
 }
 function shuffleVisibleOptions(){
  document.querySelectorAll(".options").forEach(group=>{
+  // The lesson engine already installed a mapped, balanced answer order.
+  // Do not reshuffle those labels after answer indices have been balanced.
+  if(group.dataset.balancedOptionOrder==="true")return;
   const items=[...group.children];
   for(let i=items.length-1;i>0;i--){
    const j=Math.floor(Math.random()*(i+1));
