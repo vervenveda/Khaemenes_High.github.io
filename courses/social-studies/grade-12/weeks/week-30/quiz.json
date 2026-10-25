@@ -2,116 +2,167 @@
   "title": "Week 30 Mastery Quiz · Security, Terrorism, Nuclear Risk, and Cyber Conflict",
   "questions": [
     {
-      "question": "Which definition best matches “human security”?",
+      "id": "ss12-w30-transfer-v3-01",
+      "question": "The NPT differentiates state obligations under Articles I and II. What should a comparative compliance assessment avoid?",
       "options": [
-        "A principle concerning equal status, rights, opportunity, treatment, or outcomes.",
-        "Protection of people from severe threats to life, livelihood, dignity, and freedom.",
-        "Transfer of authority from a central government to regional or local bodies.",
-        "Independent evidence that supports, qualifies, or contradicts a claim."
+        "Examining treaty participation.",
+        "Consulting the authentic instrument.",
+        "Applying a single undifferentiated treaty duty without checking the category and facts for each state.",
+        "Separating claims from evidence."
       ],
-      "answer": 1,
-      "explanation": "Human security means protection of people from severe threats to life, livelihood, dignity, and freedom."
+      "answer": 2,
+      "explanation": "Applying a single undifferentiated treaty duty without checking the category and facts for each state.",
+      "skill": "source-interpretation",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “terrorism”?",
+      "id": "ss12-w30-transfer-v3-02",
+      "question": "Two fictional radiation sensors disagree by 30% after calibration dates diverge. What is a responsible first step?",
       "options": [
-        "Political violence targeting or threatening civilians to create fear and influence a wider audience.",
-        "A structured set of ideas about society, power, rights, and political change.",
-        "An earlier decision used to guide later legal reasoning.",
-        "Constitutional division of authority between national and regional governments."
-      ],
-      "answer": 0,
-      "explanation": "Terrorism means political violence targeting or threatening civilians to create fear and influence a wider audience."
-    },
-    {
-      "question": "Which definition best matches “deterrence”?",
-      "options": [
-        "Discouraging action by credibly threatening unacceptable costs.",
-        "The share of eligible or registered voters who cast ballots.",
-        "Court evaluation of whether government action complies with higher law.",
-        "Incremental weakening of competitive elections, rights, checks, or lawful accountability."
-      ],
-      "answer": 0,
-      "explanation": "Deterrence means discouraging action by credibly threatening unacceptable costs."
-    },
-    {
-      "question": "Which definition best matches “proliferation”?",
-      "options": [
-        "Organizations and officials that administer laws and public programs.",
-        "Spread of weapons, materials, technology, or capabilities.",
-        "A minimum share of votes required to qualify for representation.",
-        "Strategic communication designed to shape belief or behavior, often selectively or deceptively."
-      ],
-      "answer": 1,
-      "explanation": "Proliferation means spread of weapons, materials, technology, or capabilities."
-    },
-    {
-      "question": "Which definition best matches “cyber attribution”?",
-      "options": [
-        "A set of familiar strategies used by movements or political actors.",
-        "Identification of actors responsible for a digital operation.",
-        "The number of representatives elected from a district.",
-        "Change to voting, representation, administration, or competition rules."
-      ],
-      "answer": 1,
-      "explanation": "Cyber attribution means identification of actors responsible for a digital operation."
-    },
-    {
-      "question": "Which definition best matches “resilience”?",
-      "options": [
-        "Market activity combined with extensive state ownership, direction, or strategic control.",
-        "Mexico’s six-year presidential term without immediate reelection.",
-        "A sustained collective effort seeking social, cultural, or political change.",
-        "Capacity to withstand, adapt to, and recover from disruption."
+        "Average readings without qualification.",
+        "Use the larger reading as proof of a weapons program.",
+        "Discard all instrumentation data.",
+        "Check calibration, units, locations and measurement uncertainty before interpreting the discrepancy."
       ],
       "answer": 3,
-      "explanation": "Resilience means capacity to withstand, adapt to, and recover from disruption."
+      "explanation": "Check calibration, units, locations and measurement uncertainty before interpreting the discrepancy.",
+      "skill": "measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 30 analysis?",
+      "id": "ss12-w30-transfer-v3-03",
+      "question": "A security brief describes every cyber outage as a hostile state attack. Which standard is missing?",
       "options": [
-        "The most confident source should be accepted without examining authority or method.",
-        "Security terms require precise definitions and evidence.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "A single vivid example proves a universal conclusion without qualification."
+        "Evidence-based attribution that distinguishes failure, criminal acts, technical error and state-linked conduct.",
+        "A faster incident response.",
+        "Service restoration statistics.",
+        "An account of system dependencies."
+      ],
+      "answer": 0,
+      "explanation": "Evidence-based attribution that distinguishes failure, criminal acts, technical error and state-linked conduct.",
+      "skill": "rights-and-evidence",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w30-transfer-v3-04",
+      "question": "A simulated alert system produces 40 true alerts and 160 false alerts. What is its positive predictive value?",
+      "options": [
+        "80% of its alerts are true positives.",
+        "20% of its alerts are true positives.",
+        "40% of all events are attacks.",
+        "160% of alerts are false."
       ],
       "answer": 1,
-      "explanation": "Security terms require precise definitions and evidence."
+      "explanation": "20% of its alerts are true positives.",
+      "skill": "quantitative-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 30 analysis?",
+      "id": "ss12-w30-transfer-v3-05",
+      "question": "A fictional emergency decree restricts assembly without a specified end date or review. What must oversight assess?",
       "options": [
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Countermeasures can produce backlash, rights violations, or strategic adaptation.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "The most confident source should be accepted without examining authority or method."
+        "Only the declared political objective.",
+        "Whether media reports use an urgent headline.",
+        "Legal basis, necessity, proportionality, duration, remedies and oversight mechanisms.",
+        "The decree's page count."
       ],
-      "answer": 1,
-      "explanation": "Countermeasures can produce backlash, rights violations, or strategic adaptation."
+      "answer": 2,
+      "explanation": "Legal basis, necessity, proportionality, duration, remedies and oversight mechanisms.",
+      "skill": "institutional-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
     },
     {
-      "question": "Which research practice is most appropriate for Security, Terrorism, Nuclear Risk, and Cyber Conflict?",
+      "id": "ss12-w30-transfer-v3-06",
+      "question": "A study claims increasing deterrence spending necessarily reduces every form of insecurity. What needs to be tested?",
       "options": [
-        "Replace documentary evidence with political identity or intuition.",
-        "Trace claims to Security Council records, arms-control treaties, threat assessments, court cases, and cyber incident reports, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Choose only evidence that supports the preferred conclusion."
-      ],
-      "answer": 1,
-      "explanation": "Trace claims to Security Council records, arms-control treaties, threat assessments, court cases, and cyber incident reports, evaluate authority and context, corroborate material facts, and state limitations."
-    },
-    {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
-      "options": [
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "List facts without connecting them to a claim.",
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+        "Only annual weapon counts.",
+        "The number of military branches.",
+        "Assuming deterrence eliminates public-health risk.",
+        "Tradeoffs involving human security, opportunity costs, threat response and countervailing escalation."
       ],
       "answer": 3,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "Tradeoffs involving human security, opportunity costs, threat response and countervailing escalation.",
+      "skill": "causal-limits",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w30-transfer-v3-07",
+      "question": "A public briefing merges online extremism exposure with proof of participation in violence. Which research distinction matters?",
+      "options": [
+        "Exposure, expressed views, preparation and harmful acts are different constructs requiring distinct evidence.",
+        "All internet users are suspects.",
+        "A shared hashtag constitutes a criminal conviction.",
+        "Intent can be inferred from an algorithm alone."
+      ],
+      "answer": 0,
+      "explanation": "Exposure, expressed views, preparation and harmful acts are different constructs requiring distinct evidence.",
+      "skill": "research-methods",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w30-transfer-v3-08",
+      "question": "A fictional arms-control inspection report covers only facilities voluntarily opened for review. What is the limitation?",
+      "options": [
+        "Volunteer facilities prove national compliance.",
+        "Selection and access restrictions may prevent conclusions about uninspected locations.",
+        "Inspection access is irrelevant to verification.",
+        "Only the report's length matters."
+      ],
+      "answer": 1,
+      "explanation": "Selection and access restrictions may prevent conclusions about uninspected locations.",
+      "skill": "implementation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w30-transfer-v3-09",
+      "question": "An analyst applies Article VI of the NPT to claim immediate verified disarmament occurred. What correction is appropriate?",
+      "options": [
+        "A treaty article measures arsenal size.",
+        "Negotiation duties are identical to public-opinion polls.",
+        "Distinguish a negotiation obligation from independent evidence of outcomes and applicable legal interpretation.",
+        "A legal objective proves every state has complied."
+      ],
+      "answer": 2,
+      "explanation": "Distinguish a negotiation obligation from independent evidence of outcomes and applicable legal interpretation.",
+      "skill": "legal-interpretation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w30-transfer-v3-10",
+      "question": "A cyber resilience plan funds backups but never rehearses restoration. What performance evidence is absent?",
+      "options": [
+        "The number of backup drives alone.",
+        "A statement that redundancy is sufficient.",
+        "Whether the data center has a logo.",
+        "Recovery-time tests, integrity checks, access controls and lessons from simulated incidents."
+      ],
+      "answer": 3,
+      "explanation": "Recovery-time tests, integrity checks, access controls and lessons from simulated incidents.",
+      "skill": "evaluation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
     }
   ],
   "shortResponse": "How should societies address severe security threats while preserving law, evidence, proportionality, and human rights?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
