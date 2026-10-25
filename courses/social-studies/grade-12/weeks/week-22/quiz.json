@@ -2,116 +2,167 @@
   "title": "Week 22 Mastery Quiz · International Organizations and Global Governance",
   "questions": [
     {
-      "question": "Which definition best matches “international organization”?",
+      "id": "ss12-w22-transfer-v3-01",
+      "question": "UN Charter Article 24 assigns primary international peace-and-security responsibility to which body?",
       "options": [
-        "Systematic labeling of qualitative evidence for comparison and analysis.",
-        "Severe climate impacts that cannot be fully avoided through mitigation or adaptation.",
-        "A formal institution created by states or other actors to pursue shared purposes.",
-        "Use of computational systems to inform or make public decisions."
+        "The Secretariat acting alone.",
+        "The International Court of Justice in every political dispute.",
+        "The Security Council, subject to its Charter mandate and institutional constraints.",
+        "The General Assembly acting as an executive government."
       ],
       "answer": 2,
-      "explanation": "International organization means a formal institution created by states or other actors to pursue shared purposes."
+      "explanation": "The Security Council, subject to its Charter mandate and institutional constraints.",
+      "skill": "primary-source",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “collective security”?",
+      "id": "ss12-w22-transfer-v3-02",
+      "question": "A simulated General Assembly important-question vote has 150 members present and voting; 98 favor it. Under Charter Article 18 what follows?",
       "options": [
-        "Structured evaluation of preparedness, response, outcomes, and lessons.",
-        "An arrangement treating aggression against one as a concern of all.",
-        "A person or group affected by or able to influence an issue.",
-        "Identification of actors responsible for a digital operation."
+        "It passes because 98 exceeds half.",
+        "It passes automatically as a unanimous decision.",
+        "Its passage depends only on absent members.",
+        "It falls short of the two-thirds threshold of 100 votes."
+      ],
+      "answer": 3,
+      "explanation": "It falls short of the two-thirds threshold of 100 votes.",
+      "skill": "quantitative",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w22-transfer-v3-03",
+      "question": "A briefing treats a General Assembly recommendation as legally identical to a Security Council decision. What must be corrected?",
+      "options": [
+        "The bodies' Charter powers and legal consequences must be distinguished.",
+        "Both documents are automatically enforceable treaties.",
+        "General Assembly votes always bind all courts.",
+        "Institutional identity cannot affect legal force."
+      ],
+      "answer": 0,
+      "explanation": "The bodies' Charter powers and legal consequences must be distinguished.",
+      "skill": "source-criticism",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w22-transfer-v3-04",
+      "question": "A regional organization publishes a public health coordination plan. What additional evidence measures actual implementation?",
+      "options": [
+        "The organization's formal name alone.",
+        "Funding, member participation, operational delivery and independently measured results.",
+        "The number of languages on its website.",
+        "Its date of founding without activity data."
       ],
       "answer": 1,
-      "explanation": "Collective security means an arrangement treating aggression against one as a concern of all."
+      "explanation": "Funding, member participation, operational delivery and independently measured results.",
+      "skill": "institutional-implementation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “veto”?",
+      "id": "ss12-w22-transfer-v3-05",
+      "question": "A fictional council adopts a resolution, but two parties interpret its timetable differently. What should an implementation review do?",
       "options": [
-        "A norm such as humanity, neutrality, impartiality, or independence guiding relief.",
-        "A record explaining changes made in response to evidence and feedback.",
-        "Recognition for mastery above the minimum course threshold.",
-        "A power to block a decision despite broader support."
-      ],
-      "answer": 3,
-      "explanation": "Veto means a power to block a decision despite broader support."
-    },
-    {
-      "question": "Which definition best matches “conditionality”?",
-      "options": [
-        "Requirements attached to financial assistance, membership, or cooperation.",
-        "Logical connection among question, method, evidence, findings, and conclusion.",
-        "Inventing evidence, data, sources, quotations, or results.",
-        "A systematic review of required work, evidence, records, and corrections."
-      ],
-      "answer": 0,
-      "explanation": "Conditionality means requirements attached to financial assistance, membership, or cooperation."
-    },
-    {
-      "question": "Which definition best matches “subsidiarity”?",
-      "options": [
-        "Using different sources or methods to examine the same question.",
-        "A presentation and questioning process testing independent mastery.",
-        "A standard for fair institutions, rights, duties, procedures, and distributions.",
-        "The principle that decisions should be made at the lowest effective level."
-      ],
-      "answer": 3,
-      "explanation": "Subsidiarity means the principle that decisions should be made at the lowest effective level."
-    },
-    {
-      "question": "Which definition best matches “global governance”?",
-      "options": [
-        "A state in which ultimate constitutional authority rests with the central government.",
-        "The expertise, responsibility, or firsthand access that makes a source relevant.",
-        "Freedom from unjust restraint and the capacity to make meaningful choices.",
-        "Rules and coordination addressing transnational issues without a world government."
-      ],
-      "answer": 3,
-      "explanation": "Global governance means rules and coordination addressing transnational issues without a world government."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 22 analysis?",
-      "options": [
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "The most confident source should be accepted without examining authority or method.",
-        "International organizations reflect both shared purposes and power inequalities."
-      ],
-      "answer": 3,
-      "explanation": "International organizations reflect both shared purposes and power inequalities."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 22 analysis?",
-      "options": [
-        "A single vivid example proves a universal conclusion without qualification.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Institutional design affects effectiveness, legitimacy, and accountability.",
-        "Political labels have exactly the same meaning in every country and period."
+        "Select whichever press release is longer.",
+        "Assume disagreement proves deliberate bad faith.",
+        "Examine the adopted text, competent interpretations, dates and verified compliance records.",
+        "Substitute a previous unrelated resolution."
       ],
       "answer": 2,
-      "explanation": "Institutional design affects effectiveness, legitimacy, and accountability."
+      "explanation": "Examine the adopted text, competent interpretations, dates and verified compliance records.",
+      "skill": "legal-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     },
     {
-      "question": "Which research practice is most appropriate for International Organizations and Global Governance?",
+      "id": "ss12-w22-transfer-v3-06",
+      "question": "An analysis claims the WTO and WHO perform interchangeable tasks because both are international organizations. What improves the comparison?",
       "options": [
-        "Trace claims to UN Charter, institutional voting rules, budgets, reports, and evaluations, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Choose only evidence that supports the preferred conclusion.",
-        "Replace documentary evidence with political identity or intuition."
-      ],
-      "answer": 0,
-      "explanation": "Trace claims to UN Charter, institutional voting rules, budgets, reports, and evaluations, evaluate authority and context, corroborate material facts, and state limitations."
-    },
-    {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
-      "options": [
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "List facts without connecting them to a claim.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+        "Compare only staff counts.",
+        "Assume all organizations issue equivalent binding orders.",
+        "Use one agency's budget as the other's authority.",
+        "Examine founding mandates, membership, decision mechanisms and policy domains separately."
       ],
       "answer": 3,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "Examine founding mandates, membership, decision mechanisms and policy domains separately.",
+      "skill": "comparative-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w22-transfer-v3-07",
+      "question": "A statistical brief compares contributions from states of different sizes. Which denominator matters when drawing an equity claim?",
+      "options": [
+        "Select and justify a measure such as share of national income, alongside absolute contributions.",
+        "Use raw totals as automatically fair.",
+        "Exclude countries with different currencies.",
+        "Assume national population alone determines payment obligations."
+      ],
+      "answer": 0,
+      "explanation": "Select and justify a measure such as share of national income, alongside absolute contributions.",
+      "skill": "measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w22-transfer-v3-08",
+      "question": "A fictional regional peacekeeping mission announces success based only on deployed personnel. What outcome evidence is missing?",
+      "options": [
+        "The troop count repeated twice.",
+        "Mandate fulfillment, civilian protection indicators, access and unintended harms.",
+        "The mission flag's design.",
+        "A list of official ceremonies."
+      ],
+      "answer": 1,
+      "explanation": "Mandate fulfillment, civilian protection indicators, access and unintended harms.",
+      "skill": "ethical-evaluation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w22-transfer-v3-09",
+      "question": "UN Charter Article 25 concerns carrying out Security Council decisions. Which caution is appropriate?",
+      "options": [
+        "Article 25 converts all Assembly debates into decisions.",
+        "Only national constitutions determine whether a Council decision exists.",
+        "Interpret the specific decision and Charter context rather than assuming every Council statement has identical effect.",
+        "Every Council document is a new treaty."
+      ],
+      "answer": 2,
+      "explanation": "Interpret the specific decision and Charter context rather than assuming every Council statement has identical effect.",
+      "skill": "interpretation",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w22-transfer-v3-10",
+      "question": "A governance report uses one member state's statement as proof of unanimous institutional policy. What should be checked?",
+      "options": [
+        "The member state's press office logo.",
+        "The length of the statement.",
+        "How many journalists reposted it.",
+        "Adopted decisions and voting or consensus records, distinguishing member positions from organization acts."
+      ],
+      "answer": 3,
+      "explanation": "Adopted decisions and voting or consensus records, distinguishing member positions from organization acts.",
+      "skill": "synthesis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     }
   ],
   "shortResponse": "When can international organizations solve collective problems, and when do power, design, or sovereignty limit them?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
