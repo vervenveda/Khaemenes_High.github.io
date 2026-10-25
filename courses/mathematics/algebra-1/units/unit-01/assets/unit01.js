@@ -1,7 +1,7 @@
 (()=>{"use strict";
 const D=window.KHAE_UNIT01,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],MASTERY=80,KEY="khaemenes-algebra1-unit01-a3-v1",WEEK_STORE="khaemenes-algebra1-weekly-mastery-v2";
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-function parse(k,f={}){try{return JSON.parse(localStorage.getItem(k)||"null")||f}catch{return f}}function load(){return parse(KEY,{attempts:[],best:{}})}function save(r){try{localStorage.setItem(KEY,JSON.stringify(r))}catch{}}function best(key){return Number(load()?.best?.[key])||0}function lessonMastered(n){return best(`lesson-${n}`)>=MASTERY}function weekMastered(n){const r=parse(WEEK_STORE,{weeks:{}})?.weeks?.[n];return Number(r?.best)>=MASTERY||Boolean(r?.attempts?.some(a=>a.mastery_met===true))}function allLessonsMastered(){return D.lessons.every(l=>lessonMastered(l.number))}function allUnitWeeksMastered(){return weekMastered(2)&&weekMastered(3)}function lessonWeek(n){return n<=3?2:3}function lessonUnlocked(n){if(n===1)return true;if(!lessonMastered(n-1))return false;return n===4?weekMastered(2):true}
+function parse(k,f={}){try{return JSON.parse(localStorage.getItem(k)||"null")||f}catch{return f}}function load(){return parse(KEY,{attempts:[],best:{}})}function save(r){try{localStorage.setItem(KEY,JSON.stringify(r));return true}catch{return false}}function best(key){return Number(load()?.best?.[key])||0}function lessonMastered(n){return best(`lesson-${n}`)>=MASTERY}function weekMastered(n){const r=parse(WEEK_STORE,{weeks:{}})?.weeks?.[n];return Number(r?.best)>=MASTERY||Boolean(r?.attempts?.some(a=>a.mastery_met===true))}function allLessonsMastered(){return D.lessons.every(l=>lessonMastered(l.number))}function allUnitWeeksMastered(){return weekMastered(2)&&weekMastered(3)}function lessonWeek(n){return n<=3?2:3}function lessonUnlocked(n){if(n===1)return true;if(!lessonMastered(n-1))return false;return n===4?weekMastered(2):true}
 function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function synthesisVariantBank(){
  const bank=[];
@@ -29,56 +29,24 @@ function nextStepHtml(n){
  if(n===3)return {href:D.lessons[3].file,label:"Go to Next Lesson · 04",kind:"lesson"};
  return {href:"../index.html",label:"Return to Unit Pathway",kind:"unit"};
 }
+function itemDifficulty(q){const n=Number(q?.difficulty??q?.level);return n>=1&&n<=3?n:2}
+function balanceOptions(chosen){const targets=shuffle(chosen.map((_,i)=>i%4));return chosen.map((q,qi)=>{const sourceOptions=q.options.map((text,i)=>({text,i}));if(sourceOptions.length!==4){const order=shuffle(sourceOptions);return {...q,options:order.map(o=>o.text),answer:order.findIndex(o=>o.i===q.answer),_originalAnswer:q.answer,_optionOrder:order.map(o=>o.i)}}const correct=sourceOptions.find(o=>o.i===q.answer),distractors=shuffle(sourceOptions.filter(o=>o.i!==q.answer)),target=targets[qi],order=[];let d=0;for(let pos=0;pos<4;pos++)order.push(pos===target?correct:distractors[d++]);return {...q,options:order.map(o=>o.text),answer:target,_originalAnswer:q.answer,_optionOrder:order.map(o=>o.i)}})}
+function blueprintSelect(pool,previousIds,count=10){const previous=new Set(previousIds||[]),selected=[],used=new Set(),targets=shuffle([1,1,1,2,2,2,2,3,3,3]);const take=candidates=>{const q=shuffle(candidates.filter(x=>!used.has(x.id)))[0];if(!q)return false;selected.push(q);used.add(q.id);return true};for(const target of targets){if(take(pool.filter(q=>!previous.has(q.id)&&itemDifficulty(q)===target)))continue;if(take(pool.filter(q=>!previous.has(q.id))))continue;if(take(pool.filter(q=>itemDifficulty(q)===target)))continue;take(pool)}return shuffle(selected).slice(0,count)}
 function bind(items,key){
  const score=$("#score"),result=$("#result");if(!score)return;
- const questionBank=[...items];let current=[],graded=false,attempt=0;
+ const lessonNumber=key.startsWith("lesson-")?Number(key.slice(7)):null;
+ const dedicatedBank=[...items].map(q=>({...q,_formSource:q.id?.startsWith("u01-l06-mc-")?"generated-synthesis":"dedicated"}));
+ const sharedAlternates=lessonNumber&&Array.isArray(window.ALGEBRA1_QUESTIONS)?window.ALGEBRA1_QUESTIONS.filter(q=>Number(q.unit)===1&&Number(q.lesson)===lessonNumber).map(q=>({...q,_formSource:"aligned-alternate"})):[];
+ const abundantAlternates=lessonNumber&&Array.isArray(window.KHAE_UNIT01_ABUNDANT_BANK)?window.KHAE_UNIT01_ABUNDANT_BANK.filter(q=>Number(q.lesson)===lessonNumber).map(q=>({...q,_formSource:"abundant-alternate"})):[];
+ const eligibleBank=[...dedicatedBank,...sharedAlternates,...abundantAlternates],existing=load(),priorAttempts=(Array.isArray(existing.attempts)?existing.attempts:[]).filter(a=>a?.key===key);
+ let current=[],graded=false,attempt=priorAttempts.length,previousIds=priorAttempts.length&&Array.isArray(priorAttempts[priorAttempts.length-1]?.items)?priorAttempts[priorAttempts.length-1].items:[];
  const card=score.closest(".card")||score.closest(".block")||document.getElementById("main");
- const retry=document.createElement("button");retry.type="button";retry.id="practiceRetry";retry.className="btn";retry.textContent="Begin a new randomized attempt";retry.style.marginLeft="10px";
- score.after(retry);
- function fresh(){
-  const previous=current.map(q=>q.id).join("|");
-  let chosen=shuffle(questionBank);
-  if(key.startsWith("lesson-")&&chosen.length>10)chosen=chosen.slice(0,10);
-  if(questionBank.length>chosen.length&&previous===chosen.map(q=>q.id).join("|"))chosen=shuffle(questionBank).slice(-chosen.length);
-  current=chosen.map(q=>{
-   const options=shuffle(q.options.map((text,i)=>({text,i})));
-   return {...q,options:options.map(o=>o.text),answer:options.findIndex(o=>o.i===q.answer)};
-  });
-  const old=[...card.querySelectorAll(".question")];
-  if(!old.length)throw new Error("lesson-check-questions-missing");
-  old[0].insertAdjacentHTML("beforebegin",qhtml(current));old.forEach(q=>q.remove());
-  graded=false;attempt++;score.disabled=false;score.textContent="Submit & Score";
-  const nextBox=$("#lessonNextStep");
-  if(nextBox){nextBox.hidden=true;nextBox.style.display="none";nextBox.replaceChildren()}
-  retry.disabled=true;retry.hidden=true;result.textContent="Fresh attempt "+attempt+" · "+current.length+" randomized questions. Answer all items before grading.";
- }
- function seal(){
-  graded=true;score.disabled=true;score.textContent="Attempt graded";
-  card.querySelectorAll('.question input').forEach(input=>{input.disabled=true});
-  retry.hidden=false;retry.disabled=false;
- }
- score.addEventListener("click",()=>{
-  if(graded)return;
-  let correct=0,complete=true;
-  current.forEach((q,i)=>{const answer=card.querySelector('input[name="q'+i+'"]:checked');if(!answer){complete=false;return}if(+answer.value===q.answer)correct++});
-  if(!complete){result.textContent="Answer every item before submitting. Nothing has been graded.";return}
-  const pct=Math.round(100*correct/current.length),record=load();
-  record.attempts=Array.isArray(record.attempts)?record.attempts:[];
-  record.best=record.best||{};
-  record.attempts.push({key,score:pct,correct,total:current.length,at:new Date().toISOString(),items:current.map(q=>q.id),answerSnapshot:current.map((q,i)=>({id:q.id,option:Number(card.querySelector('input[name="q'+i+'"]:checked').value),answer:q.answer})),mastery_threshold:MASTERY,mastery_met:pct>=MASTERY,attemptNumber:attempt});
-  record.best[key]=Math.max(record.best[key]||0,pct);
-  try{localStorage.setItem(KEY,JSON.stringify(record))}catch{result.textContent="Evidence could not be saved; this attempt was not submitted. Check device storage.";return}
-  current.forEach((q,i)=>{const answer=card.querySelector('input[name="q'+i+'"]:checked'),f=card.querySelector("#f"+i),ok=Number(answer.value)===q.answer;if(f){f.hidden=false;f.className="feedback "+(ok?"good":"bad");f.textContent=(ok?"Correct. ":"Review. ")+q.explanation}});
-  seal();
-  result.innerHTML='<strong>'+pct+'%</strong> · '+correct+'/'+current.length+' correct · Best: '+record.best[key]+'% · Graded answers are locked. '+(pct>=MASTERY?"Mastery demonstrated.":"Below 80%; use New Attempt for different questions.");
-  const nextBox=$("#lessonNextStep");
-  if(nextBox&&key.startsWith("lesson-")){
-   nextBox.hidden=pct<MASTERY;nextBox.style.display=pct>=MASTERY?"flex":"none";nextBox.innerHTML="";
-   if(pct>=MASTERY){const next=nextStepHtml(Number(key.slice(7))),a=document.createElement("a");a.className="btn primary";a.href=next.href;a.textContent=next.label;nextBox.appendChild(a)}
-  }
- });
- retry.addEventListener("click",()=>{if(!graded)return;fresh()});
- fresh();
+ const retry=document.createElement("button");retry.type="button";retry.id="practiceRetry";retry.className="btn";retry.textContent="Begin a new randomized attempt";retry.style.marginLeft="10px";retry.setAttribute("aria-label","Start a fresh blueprint-balanced attempt while preserving saved scores");score.after(retry);
+ function chooseForm(){if(!lessonNumber)return shuffle(dedicatedBank);if(lessonNumber<=5&&attempt===0)return dedicatedBank.slice(0,10);return blueprintSelect(eligibleBank,previousIds,10)}
+ function fresh(){const chosen=chooseForm();current=balanceOptions(chosen);const old=[...card.querySelectorAll(".question")];if(!old.length)throw new Error("lesson-check-questions-missing");old[0].insertAdjacentHTML("beforebegin",qhtml(current));old.forEach(q=>q.remove());graded=false;attempt++;score.disabled=false;score.textContent="Submit & Score";const nextBox=$("#lessonNextStep");if(nextBox){nextBox.hidden=true;nextBox.style.display="none";nextBox.replaceChildren()}retry.disabled=true;retry.hidden=true;if(result)result.textContent=lessonNumber?`Attempt ${attempt} · ${current.length} blueprint-balanced questions from ${eligibleBank.length} eligible items · immediate prior-form overlap minimized. Answer all items before grading.`:`Attempt ${attempt} · ${current.length} randomized questions. Answer all items before grading.`}
+ function seal(){graded=true;score.disabled=true;score.textContent="Attempt graded";card.querySelectorAll('.question input').forEach(input=>{input.disabled=true});retry.hidden=false;retry.disabled=false}
+ score.addEventListener("click",()=>{if(graded)return;let correct=0,complete=true;const snapshots=[];current.forEach((q,i)=>{const answer=card.querySelector('input[name="q'+i+'"]:checked'),f=card.querySelector("#f"+i);if(!answer){complete=false;return}const selectedDisplayIndex=Number(answer.value),selectedOriginalIndex=Array.isArray(q._optionOrder)?q._optionOrder[selectedDisplayIndex]:selectedDisplayIndex,correctOriginalIndex=Number.isInteger(q._originalAnswer)?q._originalAnswer:q.answer,ok=selectedDisplayIndex===q.answer;if(ok)correct++;snapshots.push({id:q.id,source:q._formSource||"dedicated",selectedDisplayIndex,selectedOriginalIndex,correctDisplayIndex:q.answer,correctOriginalIndex,selectedText:q.options[selectedDisplayIndex],correctText:q.options[q.answer],generatorId:q.generatorId||null,generatorVersion:q.generatorVersion||null,seed:q.seed??null,misconceptionTag:q.misconceptionTag||null,misconceptionReviewStatus:q.reviewStatus||null});if(f){f.hidden=false;f.className="feedback "+(ok?"good":"bad");f.textContent=(ok?"Correct. ":"Review. ")+q.explanation}});if(!complete){if(result)result.textContent="Answer every item before submitting. Nothing has been graded.";return}const pct=Math.round(100*correct/current.length),record=load();record.attempts=Array.isArray(record.attempts)?record.attempts:[];record.best=record.best||{};const nextBest=Math.max(record.best[key]||0,pct);record.attempts.push({key,score:pct,correct,total:current.length,at:new Date().toISOString(),items:current.map(q=>q.id),answerSnapshot:snapshots,formVersion:"algebra1-runtime-balanced-v2",evidenceSchema:"algebra1-answer-evidence-v2",bankVersion:lessonNumber<=5?"unit01-abundant-v1":"unit01-synthesis-v1",selectionPolicy:lessonNumber?"blueprint-low-overlap-v1":"shuffle-v1",eligiblePoolSize:lessonNumber?eligibleBank.length:dedicatedBank.length,formSources:[...new Set(current.map(q=>q._formSource||"dedicated"))],mastery_threshold:MASTERY,mastery_met:pct>=MASTERY,attemptNumber:attempt});record.best[key]=nextBest;if(!save(record)){if(result)result.textContent="Evidence could not be saved; this attempt was not submitted. Check device storage, then begin a new attempt.";return}previousIds=current.map(q=>q.id);seal();if(result)result.innerHTML='<strong>'+pct+'%</strong> · '+correct+'/'+current.length+' correct · Best: '+nextBest+'% · Graded answers are locked. '+(pct>=MASTERY?"Mastery demonstrated.":"Below 80%; begin a new attempt for a fresh blueprint-balanced form.");const nextBox=$("#lessonNextStep");if(nextBox&&key.startsWith("lesson-")){nextBox.hidden=pct<MASTERY;nextBox.style.display=pct>=MASTERY?"flex":"none";nextBox.innerHTML="";if(pct>=MASTERY){const next=nextStepHtml(Number(key.slice(7))),a=document.createElement("a");a.className="btn primary";a.href=next.href;a.textContent=next.label;nextBox.appendChild(a)}}});
+ retry.addEventListener("click",()=>{if(graded)fresh()});fresh()
 }
 /* Student video display belongs exclusively to the shared certification-gated
    Mathematics companion; staged candidates must never autoplay or bypass review. */
