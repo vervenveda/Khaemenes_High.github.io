@@ -5,7 +5,7 @@
   "title": "Biology 10 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/biology-10/question-bank.js",
-  "reviewedItemCount": 120,
+  "reviewedItemCount": 143,
   "items": {
     "bio-001": {
       "itemId": "bio-001",
@@ -2882,6 +2882,558 @@
           "optionIndex": 3,
           "misconceptionTag": "bio-sup-w10-evidence-d3",
           "rationale": "Breathing and cellular respiration are distinct processes; respiration transforms chemical energy and occurs broadly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w11-concept": {
+      "itemId": "bio-sup-w11-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Matter is conserved and rearranged, whereas usable energy is transformed and ultimately dissipated.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w11-concept-d1",
+          "rationale": "Energy and matter do not cycle identically; usable energy dissipates."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w11-concept-d2",
+          "rationale": "Atoms are conserved through reactions rather than disappearing."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w11-concept-d3",
+          "rationale": "Metabolic accounting cannot create matter or prove every mechanism from bookkeeping alone."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w11-evidence": {
+      "itemId": "bio-sup-w11-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "A labeled-carbon tracer directly follows carbon atoms through connected reactions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w11-evidence-d1",
+          "rationale": "Energy and matter do not cycle identically; usable energy dissipates."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w11-evidence-d2",
+          "rationale": "Atoms are conserved through reactions rather than disappearing."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w11-evidence-d3",
+          "rationale": "Metabolic accounting cannot create matter or prove every mechanism from bookkeeping alone."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w11-model": {
+      "itemId": "bio-sup-w11-model",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Matter and energy require different accounting: atoms are conserved, while usable energy dissipates.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w11-model-d1",
+          "rationale": "Energy and matter do not cycle identically; usable energy dissipates."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w11-model-d2",
+          "rationale": "Atoms are conserved through reactions rather than disappearing."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w11-model-d3",
+          "rationale": "Metabolic accounting cannot create matter or prove every mechanism from bookkeeping alone."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w12-concept": {
+      "itemId": "bio-sup-w12-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Controls, replication, defined variables, and quantitative measurements support causal interpretation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w12-concept-d1",
+          "rationale": "A single uncontrolled treatment cannot establish a causal effect."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w12-concept-d2",
+          "rationale": "Changing multiple variables or selecting favorable trials weakens causal inference."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w12-concept-d3",
+          "rationale": "Correlation and descriptive statistics do not replace controls or establish mechanism."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w12-evidence": {
+      "itemId": "bio-sup-w12-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "The separation relative to observed variation supports a treatment effect, but mechanism still requires additional evidence.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w12-evidence-d1",
+          "rationale": "A single uncontrolled treatment cannot establish a causal effect."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w12-evidence-d2",
+          "rationale": "Changing multiple variables or selecting favorable trials weakens causal inference."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w12-evidence-d3",
+          "rationale": "Correlation and descriptive statistics do not replace controls or establish mechanism."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w12-model": {
+      "itemId": "bio-sup-w12-model",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Correlation alone cannot establish causation or exclude confounding variables.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w12-model-d1",
+          "rationale": "A single uncontrolled treatment cannot establish a causal effect."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w12-model-d2",
+          "rationale": "Changing multiple variables or selecting favorable trials weakens causal inference."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w12-model-d3",
+          "rationale": "Correlation and descriptive statistics do not replace controls or establish mechanism."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w12-quantitative": {
+      "itemId": "bio-sup-w12-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "(30−20)/20×100=50%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w12-quantitative-d1",
+          "rationale": "A single uncontrolled treatment cannot establish a causal effect."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w12-quantitative-d2",
+          "rationale": "Changing multiple variables or selecting favorable trials weakens causal inference."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w12-quantitative-d3",
+          "rationale": "Correlation and descriptive statistics do not replace controls or establish mechanism."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w13-concept": {
+      "itemId": "bio-sup-w13-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Cell signaling commonly proceeds through reception, transduction, and response.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w13-concept-d1",
+          "rationale": "Cell signaling is not DNA replication, meiosis, or unrelated metabolic bookkeeping."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w13-concept-d2",
+          "rationale": "Receptor requirement is best tested by perturbation with matched controls."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w13-concept-d3",
+          "rationale": "Dose-response or receptor presence alone does not prove the complete pathway."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w13-evidence": {
+      "itemId": "bio-sup-w13-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "A receptor perturbation with matched signaling conditions directly tests receptor requirement.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w13-evidence-d1",
+          "rationale": "Cell signaling is not DNA replication, meiosis, or unrelated metabolic bookkeeping."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w13-evidence-d2",
+          "rationale": "Receptor requirement is best tested by perturbation with matched controls."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w13-evidence-d3",
+          "rationale": "Dose-response or receptor presence alone does not prove the complete pathway."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w13-model": {
+      "itemId": "bio-sup-w13-model",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Receptor-mediated signaling can transmit information without signal entry, and response depends on cellular context.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w13-model-d1",
+          "rationale": "Cell signaling is not DNA replication, meiosis, or unrelated metabolic bookkeeping."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w13-model-d2",
+          "rationale": "Receptor requirement is best tested by perturbation with matched controls."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w13-model-d3",
+          "rationale": "Dose-response or receptor presence alone does not prove the complete pathway."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w14-concept": {
+      "itemId": "bio-sup-w14-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Homeostasis is dynamic regulation around functional ranges, often through negative feedback.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w14-concept-d1",
+          "rationale": "Homeostasis is dynamic, not perfect constancy."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w14-concept-d2",
+          "rationale": "Negative feedback counteracts rather than amplifies deviations."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w14-concept-d3",
+          "rationale": "One snapshot cannot establish a regulatory feedback process."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w14-evidence": {
+      "itemId": "bio-sup-w14-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "A return toward baseline after disturbance is consistent with negative feedback.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w14-evidence-d1",
+          "rationale": "Homeostasis is dynamic, not perfect constancy."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w14-evidence-d2",
+          "rationale": "Negative feedback counteracts rather than amplifies deviations."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w14-evidence-d3",
+          "rationale": "One snapshot cannot establish a regulatory feedback process."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w14-model": {
+      "itemId": "bio-sup-w14-model",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Homeostasis permits regulated fluctuation and should be evaluated over time, not from one value.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w14-model-d1",
+          "rationale": "Homeostasis is dynamic, not perfect constancy."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w14-model-d2",
+          "rationale": "Negative feedback counteracts rather than amplifies deviations."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w14-model-d3",
+          "rationale": "One snapshot cannot establish a regulatory feedback process."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w15-concept": {
+      "itemId": "bio-sup-w15-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Mitosis generally maintains chromosome number and produces two similar daughter cells.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w15-concept-d1",
+          "rationale": "Mitosis is distinct from meiosis and usually maintains chromosome number."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w15-concept-d2",
+          "rationale": "One cell or unrelated measurements cannot estimate stage duration reliably."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w15-concept-d3",
+          "rationale": "Independent assortment is meiotic, not mitotic."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w15-evidence": {
+      "itemId": "bio-sup-w15-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Stage frequencies across many cells can estimate relative time spent in stages under steady-state assumptions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w15-evidence-d1",
+          "rationale": "Mitosis is distinct from meiosis and usually maintains chromosome number."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w15-evidence-d2",
+          "rationale": "One cell or unrelated measurements cannot estimate stage duration reliably."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w15-evidence-d3",
+          "rationale": "Independent assortment is meiotic, not mitotic."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w16-concept": {
+      "itemId": "bio-sup-w16-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Cell-cycle checkpoints are coordinated regulatory systems that integrate multiple signals.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w16-concept-d1",
+          "rationale": "Checkpoint control involves networks rather than a single switch."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w16-concept-d2",
+          "rationale": "Presence alone is weaker evidence than functional perturbation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w16-concept-d3",
+          "rationale": "Checkpoint responses are not identical across all tissues or outcomes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w16-evidence": {
+      "itemId": "bio-sup-w16-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Continued proliferation despite damage after checkpoint disruption supports regulatory failure.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w16-evidence-d1",
+          "rationale": "Checkpoint control involves networks rather than a single switch."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w16-evidence-d2",
+          "rationale": "Presence alone is weaker evidence than functional perturbation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w16-evidence-d3",
+          "rationale": "Checkpoint responses are not identical across all tissues or outcomes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w16-model": {
+      "itemId": "bio-sup-w16-model",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Checkpoint control is networked and context-dependent rather than governed by one universal switch.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w16-model-d1",
+          "rationale": "Checkpoint control involves networks rather than a single switch."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w16-model-d2",
+          "rationale": "Presence alone is weaker evidence than functional perturbation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w16-model-d3",
+          "rationale": "Checkpoint responses are not identical across all tissues or outcomes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w16-quantitative": {
+      "itemId": "bio-sup-w16-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "(30−18)/18×100≈66.7%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w16-quantitative-d1",
+          "rationale": "Checkpoint control involves networks rather than a single switch."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w16-quantitative-d2",
+          "rationale": "Presence alone is weaker evidence than functional perturbation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w16-quantitative-d3",
+          "rationale": "Checkpoint responses are not identical across all tissues or outcomes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w17-concept": {
+      "itemId": "bio-sup-w17-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Strong synthesis connects multiple scales and evidence types without erasing limits or differences.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w17-concept-d1",
+          "rationale": "Synthesis should integrate rather than erase unit-specific evidence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w17-concept-d2",
+          "rationale": "Selective evidence use and forced averaging weaken synthesis."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w17-concept-d3",
+          "rationale": "Models remain revisable and bounded by uncertainty and scope."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w17-evidence": {
+      "itemId": "bio-sup-w17-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Independent converging evidence strengthens synthesis while discrepancies and uncertainty must remain visible.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w17-evidence-d1",
+          "rationale": "Synthesis should integrate rather than erase unit-specific evidence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w17-evidence-d2",
+          "rationale": "Selective evidence use and forced averaging weaken synthesis."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w17-evidence-d3",
+          "rationale": "Models remain revisable and bounded by uncertainty and scope."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w17-model": {
+      "itemId": "bio-sup-w17-model",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "Unifying models remain bounded by evidence, assumptions, uncertainty, and scope.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w17-model-d1",
+          "rationale": "Synthesis should integrate rather than erase unit-specific evidence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w17-model-d2",
+          "rationale": "Selective evidence use and forced averaging weaken synthesis."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w17-model-d3",
+          "rationale": "Models remain revisable and bounded by uncertainty and scope."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w17-quantitative": {
+      "itemId": "bio-sup-w17-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v5",
+      "correctRationale": "A increases 5/10=50%, while B increases 10/40=25%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w17-quantitative-d1",
+          "rationale": "Synthesis should integrate rather than erase unit-specific evidence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w17-quantitative-d2",
+          "rationale": "Selective evidence use and forced averaging weaken synthesis."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w17-quantitative-d3",
+          "rationale": "Models remain revisable and bounded by uncertainty and scope."
         }
       ],
       "reviewedAt": "2026-10-25",
