@@ -2,116 +2,167 @@
   "title": "Week 31 Mastery Quiz · Technology, AI, Surveillance, and Digital Rights",
   "questions": [
     {
-      "question": "Which definition best matches “algorithmic governance”?",
+      "id": "ss12-w31-transfer-v3-01",
+      "question": "UDHR Article 12 addresses privacy interests. A fictional agency claims consent to one service authorizes all future data sharing. What issue arises?",
       "options": [
-        "Public acceptance that an institution or decision has a justified right to rule.",
-        "Use of computational systems to inform or make public decisions.",
-        "The principle that public and private actors are governed by known, generally applicable law.",
-        "Organizations and officials that administer laws and public programs."
-      ],
-      "answer": 1,
-      "explanation": "Algorithmic governance means use of computational systems to inform or make public decisions."
-    },
-    {
-      "question": "Which definition best matches “algorithmic bias”?",
-      "options": [
-        "A system in which the executive depends on legislative confidence.",
-        "A system in which citizens meaningfully choose leaders and can contest public power.",
-        "Systematic unfairness arising from data, design, deployment, or social context.",
-        "The number of representatives elected from a district."
-      ],
-      "answer": 2,
-      "explanation": "Algorithmic bias means systematic unfairness arising from data, design, deployment, or social context."
-    },
-    {
-      "question": "Which definition best matches “data sovereignty”?",
-      "options": [
-        "Authority and rights concerning collection, storage, transfer, and control of data.",
-        "The institutions responsible for leadership and implementation of law and policy.",
-        "A rule in which the candidate with the most votes wins, even without a majority.",
-        "A sustained collective effort seeking social, cultural, or political change."
-      ],
-      "answer": 0,
-      "explanation": "Data sovereignty means authority and rights concerning collection, storage, transfer, and control of data."
-    },
-    {
-      "question": "Which definition best matches “surveillance”?",
-      "options": [
-        "Voluntary organizations and networks operating between private life, markets, and the state.",
-        "Systematic observation, tracking, or collection of information about people or groups.",
-        "Processes addressing serious abuses during movement from conflict or repression.",
-        "A politically binding practice not ordinarily enforced as a legal rule."
-      ],
-      "answer": 1,
-      "explanation": "Surveillance means systematic observation, tracking, or collection of information about people or groups."
-    },
-    {
-      "question": "Which definition best matches “explainability”?",
-      "options": [
-        "A system in which a ruling party is interwoven with state institutions.",
-        "The process by which officials act for people, places, groups, or interests.",
-        "Testing a claim through source tracing, corroboration, context, and evidence.",
-        "Capacity to provide understandable reasons for a system’s output or decision."
+        "All public-sector uses are identical.",
+        "A privacy statement automatically prevents misuse.",
+        "Any consent permanently removes privacy interests.",
+        "Purpose limitation, meaningful consent, legal authority and downstream privacy risks require separate examination."
       ],
       "answer": 3,
-      "explanation": "Explainability means capacity to provide understandable reasons for a system’s output or decision."
+      "explanation": "Purpose limitation, meaningful consent, legal authority and downstream privacy risks require separate examination.",
+      "skill": "source-interpretation",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “digital right”?",
+      "id": "ss12-w31-transfer-v3-02",
+      "question": "A benefit-screening algorithm flags 90 of 100 ineligible applicants and incorrectly flags 30 eligible applicants. Which further metric best assesses equity?",
       "options": [
-        "A durable unwritten rule or practice shaping behavior.",
-        "A right or liberty applied to participation, information, privacy, expression, and security online.",
-        "Influence over which issues receive public attention.",
-        "A court with special responsibility for constitutional interpretation."
+        "Compare false-positive rates by group using appropriate group-specific denominators.",
+        "Only report the 90 detected cases.",
+        "Treat all flagged applicants as ineligible.",
+        "Measure fairness exclusively by software cost."
+      ],
+      "answer": 0,
+      "explanation": "Compare false-positive rates by group using appropriate group-specific denominators.",
+      "skill": "measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w31-transfer-v3-03",
+      "question": "A facial-recognition pilot publishes a single overall accuracy score without subgroup results. What limitation matters?",
+      "options": [
+        "An average proves equal performance for every person.",
+        "Aggregate performance can conceal uneven error rates across subpopulations and deployment settings.",
+        "Group-level review is impossible.",
+        "The system's accuracy is independent of context."
       ],
       "answer": 1,
-      "explanation": "Digital right means a right or liberty applied to participation, information, privacy, expression, and security online."
+      "explanation": "Aggregate performance can conceal uneven error rates across subpopulations and deployment settings.",
+      "skill": "rights-and-evidence",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 31 analysis?",
+      "id": "ss12-w31-transfer-v3-04",
+      "question": "A fictional state deploys automated surveillance with no appeal or independent review. What institutional safeguard is missing?",
       "options": [
-        "Political labels have exactly the same meaning in every country and period.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Technology policy should distinguish capability, deployment context, evidence, and governance.",
-        "A single vivid example proves a universal conclusion without qualification."
+        "Only greater server capacity.",
+        "A longer marketing description.",
+        "Effective challenge procedures, oversight, transparency and lawful limits on collection and use.",
+        "A policy allowing indefinite retention."
       ],
       "answer": 2,
-      "explanation": "Technology policy should distinguish capability, deployment context, evidence, and governance."
+      "explanation": "Effective challenge procedures, oversight, transparency and lawful limits on collection and use.",
+      "skill": "quantitative-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 31 analysis?",
+      "id": "ss12-w31-transfer-v3-05",
+      "question": "Two AI vendors report 95% and 98% accuracy on different test sets. What comparative conclusion is justified?",
       "options": [
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Automated systems can scale both benefits and errors.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Political labels have exactly the same meaning in every country and period."
+        "98% always means better public outcomes.",
+        "Test-set composition cannot affect accuracy.",
+        "The vendors have identical error costs.",
+        "Neither score establishes superiority without comparable populations, labels, tasks and conditions."
+      ],
+      "answer": 3,
+      "explanation": "Neither score establishes superiority without comparable populations, labels, tasks and conditions.",
+      "skill": "institutional-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w31-transfer-v3-06",
+      "question": "An education algorithm predicts dropout risk using postal codes. What should a senior investigate before deployment?",
+      "options": [
+        "Proxy discrimination, data validity, interventions offered and mechanisms for correction.",
+        "Only the number of training rows.",
+        "Whether the model name sounds impartial.",
+        "Assume postal codes represent educational ability."
+      ],
+      "answer": 0,
+      "explanation": "Proxy discrimination, data validity, interventions offered and mechanisms for correction.",
+      "skill": "causal-limits",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w31-transfer-v3-07",
+      "question": "A public service chatbot generates fabricated citations in a legal explanation. Which evidence protocol is required?",
+      "options": [
+        "Treat fluent text as legal evidence.",
+        "Verify cited authority, link each claim to actual provisions and provide correction or escalation paths.",
+        "Remove links so errors cannot be checked.",
+        "Use the chatbot's confidence wording as proof."
       ],
       "answer": 1,
-      "explanation": "Automated systems can scale both benefits and errors."
+      "explanation": "Verify cited authority, link each claim to actual provisions and provide correction or escalation paths.",
+      "skill": "research-methods",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
     },
     {
-      "question": "Which research practice is most appropriate for Technology, AI, Surveillance, and Digital Rights?",
+      "id": "ss12-w31-transfer-v3-08",
+      "question": "A ministry retains biometric records indefinitely despite no stated operational need. What governance question is central?",
       "options": [
-        "Replace documentary evidence with political identity or intuition.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Trace claims to AI governance frameworks, privacy law, algorithmic audits, platform policies, and rights cases, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Choose only evidence that supports the preferred conclusion."
+        "Whether storage is inexpensive.",
+        "Whether the agency has enough servers.",
+        "Necessity, lawful basis, retention limits, security and independent accountability.",
+        "Assume unlimited storage is a legal right."
       ],
       "answer": 2,
-      "explanation": "Trace claims to AI governance frameworks, privacy law, algorithmic audits, platform policies, and rights cases, evaluate authority and context, corroborate material facts, and state limitations."
+      "explanation": "Necessity, lawful basis, retention limits, security and independent accountability.",
+      "skill": "implementation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
     },
     {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
+      "id": "ss12-w31-transfer-v3-09",
+      "question": "A platform claims neutral content ranking but refuses to explain its moderation appeal process. What should analysts distinguish?",
       "options": [
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "List facts without connecting them to a claim.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "Use a slogan as the conclusion and omit uncertainties."
+        "A neutral branding claim proves fair enforcement.",
+        "Appeals are unrelated to expression.",
+        "Transparency requires publicizing every private user record.",
+        "Ranking methods, governance rules, rights implications and practical access to redress."
       ],
-      "answer": 2,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "answer": 3,
+      "explanation": "Ranking methods, governance rules, rights implications and practical access to redress.",
+      "skill": "legal-interpretation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w31-transfer-v3-10",
+      "question": "A senior argues Article 19 guarantees algorithmic promotion of every message. What interpretation is more defensible?",
+      "options": [
+        "Analyze the protection of expression separately from claims about platform amplification, applicable law and competing rights.",
+        "Every private platform must amplify all content equally.",
+        "The article gives a guaranteed algorithmic ranking.",
+        "Expressive rights eliminate platform safety responsibilities."
+      ],
+      "answer": 0,
+      "explanation": "Analyze the protection of expression separately from claims about platform amplification, applicable law and competing rights.",
+      "skill": "evaluation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_29_32.md",
+      "version": 3
     }
   ],
   "shortResponse": "How should law and democratic governance respond when digital systems redistribute information, power, labor, privacy, and risk?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
