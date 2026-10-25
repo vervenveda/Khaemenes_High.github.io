@@ -14,9 +14,9 @@ for(const marker of [
   "const persisted=save(record)",
   "No mastery credit was recorded",
   'evidenceSchema:"algebra1-answer-evidence-v2"',
-  'formVersion:"algebra1-late-unit-fixed-v3"',
-  'bankVersion:"shared-question-bank-v1"',
-  'selectionPolicy:"fixed-lesson-balanced-high-reasoning-v1"',
+  'formVersion:"algebra1-late-unit-monte-carlo-v1"',
+  "bankVersion,",
+  'selectionPolicy:"lesson-balanced-low-overlap-v1"',
   "selectedDisplayIndex",
   "selectedOriginalIndex",
   "correctDisplayIndex",
@@ -24,7 +24,10 @@ for(const marker of [
   "selectedText",
   "correctText",
   "eligiblePoolSize",
-  'formSources:["shared-base"]'
+  "formSources:[...new Set(current.map(q=>q._formSource||\"shared-base\"))]",
+  "formSeed",
+  "immediatePriorOverlap",
+  "optionOrder:[...order]"
 ]){
   assert.ok(src.includes(marker),"late-unit mastery engine is missing "+marker);
 }
@@ -42,4 +45,4 @@ for(let unit=10;unit<=13;unit++){
   assert.ok(page.includes("legacy-mastery-engine-v2.js"),`Unit ${unit} formal mastery does not load the hardened shared engine`);
 }
 
-console.log("PASS Units 10–13 lock graded mastery answers and preserve v2 reconstructable evidence");
+console.log("PASS Units 10–13 lock graded mastery answers, preserve v2 evidence, and record Monte Carlo form metadata");
