@@ -122,7 +122,9 @@ function distribution(values){
   return counts;
 }
 
-for(const test of cases){\n  console.log(`[browser] Unit ${test.unit} · opening representative lesson`);\n  const page=await context.newPage();
+for(const test of cases){
+  console.log(`[browser] Unit ${test.unit} · opening representative lesson`);
+  const page=await context.newPage();
   const url=`${origin}/courses/mathematics/algebra-1/units/unit-${test.unit}/lessons/${test.file}`;
   const consoleErrors=[];
   page.on("pageerror",err=>consoleErrors.push("pageerror: "+err.message));
