@@ -5,7 +5,7 @@
   "title": "Biology 10 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/biology-10/question-bank.js",
-  "reviewedItemCount": 60,
+  "reviewedItemCount": 70,
   "items": {
     "bio-001": {
       "itemId": "bio-001",
@@ -1446,6 +1446,246 @@
       ],
       "reviewedAt": "2026-10-25",
       "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-sup-w21-evidence": {
+      "itemId": "bio-sup-w21-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Broader repeated inheritance patterns provide stronger evidence for distinguishing candidate models.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "single-case-insufficient-for-inheritance-model",
+          "rationale": "One affected individual provides too little family structure to distinguish inheritance mechanisms."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "pedigree-assumptions-ignored",
+          "rationale": "Ignoring penetrance and sampling can make a pedigree interpretation overconfident."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "probability-treated-as-proof",
+          "rationale": "A calculated probability does not by itself prove the family's causal mechanism."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w21-model": {
+      "itemId": "bio-sup-w21-model",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Pedigree interpretation depends on assumptions and sample structure and rarely proves one mechanism by itself.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "pedigree-identifies-exact-gene",
+          "rationale": "Pedigrees can suggest inheritance patterns but usually cannot identify the exact causal gene by themselves."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "unaffected-cannot-be-carrier",
+          "rationale": "Recessive alleles can be carried by unaffected heterozygous individuals."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "small-family-proves-universal-pattern",
+          "rationale": "A single small pedigree is not enough to establish a universal inheritance rule."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w21-quantitative": {
+      "itemId": "bio-sup-w21-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "For independent events that must both occur, multiply: 1/2×1/3=1/6.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "adds-independent-probabilities",
+          "rationale": "5/6 comes from adding rather than multiplying independent probabilities."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "uses-first-probability-only",
+          "rationale": "1/2 ignores the second event."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "adds-fractions-for-and-event",
+          "rationale": "2/3 does not follow the product rule for both independent events occurring."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w22-evidence": {
+      "itemId": "bio-sup-w22-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Different genotype responses across environments support interaction rather than a simple additive effect.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "parallel-response-mistaken-for-interaction",
+          "rationale": "Identical shifts across genotypes suggest no genotype-specific environmental response."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "single-environment-cannot-test-interaction",
+          "rationale": "A single environment cannot establish how genotype response changes across environments."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "genotype-main-effect-mistaken-for-interaction",
+          "rationale": "A mean difference without an environmental comparison does not demonstrate interaction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w22-model": {
+      "itemId": "bio-sup-w22-model",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Heritability is population- and environment-specific and does not imply immutability or individual certainty.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "heritability-means-no-environment",
+          "rationale": "Heritability does not imply the environment is irrelevant."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "heritability-predicts-individual-certainty",
+          "rationale": "Heritability describes population variance, not certain individual outcomes."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "heritability-is-universal-constant",
+          "rationale": "Heritability can differ across populations and environments."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w23-evidence": {
+      "itemId": "bio-sup-w23-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Semiconservative replication predicts one old and one newly synthesized strand in each daughter DNA molecule.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "conservative-replication-confusion",
+          "rationale": "Two entirely old strands together would match a conservative model, not semiconservative replication."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "replication-produces-rna",
+          "rationale": "DNA replication produces DNA; RNA synthesis is transcription."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "chromosomes-destroyed-and-rebuilt",
+          "rationale": "Replication copies DNA strands rather than destroying chromosomes and rebuilding them from proteins."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w23-model": {
+      "itemId": "bio-sup-w23-model",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "DNA replication is highly accurate but not perfectly error-free and depends on enzyme systems and repair.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "replication-perfectly-error-free",
+          "rationale": "Replication has very high fidelity but still allows occasional errors and repair."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "base-pairing-eliminates-enzyme-need",
+          "rationale": "Complementarity guides copying but enzymes are essential for replication."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "parental-strands-destroyed",
+          "rationale": "Parental strands serve as templates and are retained in daughter molecules."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w24-evidence": {
+      "itemId": "bio-sup-w24-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "A sequence change that predictably alters a codon and amino-acid output directly tests the genetic-code model.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "all-mutations-change-amino-acid",
+          "rationale": "Synonymous mutations can leave the amino-acid sequence unchanged."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "protein-change-without-expression-pathway",
+          "rationale": "Protein sequence changes require changes in coding information or expression/processing, not arbitrary independence from RNA and translation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "codon-order-unrelated-to-amino-acid-order",
+          "rationale": "Codon sequence directly determines amino-acid sequence during translation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w25-evidence": {
+      "itemId": "bio-sup-w25-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "A controlled perturbation followed by expression measurement directly tests regulatory function.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "single-expression-measurement-no-control",
+          "rationale": "A one-time measurement without comparison cannot isolate the regulator's effect."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "expression-change-equals-dna-mutation",
+          "rationale": "Expression differences can arise from regulation without sequence mutation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "uncontrolled-unrelated-comparison",
+          "rationale": "Comparing unrelated genes/tissues without controls does not directly test the regulatory element."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w25-model": {
+      "itemId": "bio-sup-w25-model",
+      "reviewStatus": "reviewed-supplemental-repair-v1",
+      "correctRationale": "Epigenetic regulation can alter expression without changing nucleotide sequence and is not necessarily permanent or inherited.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "epigenetics-rewrites-dna-sequence",
+          "rationale": "Epigenetic regulation changes activity without necessarily changing nucleotide sequence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "epigenetics-removes-genes",
+          "rationale": "Epigenetic mechanisms regulate accessibility/expression rather than deleting genes."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "epigenetic-marks-always-inherited",
+          "rationale": "Many epigenetic states are reversible or reset and are not guaranteed to persist across generations."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
     }
   }
 }
