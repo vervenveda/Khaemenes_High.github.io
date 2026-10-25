@@ -104,6 +104,27 @@ for(const rel of [
  if(!read(rel).includes("unit01-abundant-bank-v1.js"))failures.push(`${rel}: Unit 01 abundant bank is not offline-cached`);
 }
 
+const sharedMap=JSON.parse(read("courses/mathematics/algebra-1/assets/assessment-misconceptions-v1.json"));
+const sharedMapItems=Array.isArray(sharedMap.items)?sharedMap.items:Object.values(sharedMap.items||{});
+const sharedMapById=new Map(sharedMapItems.map(x=>[x.itemId,x]));
+let alignedMapped=0,alignedReviewed=0,alignedProvisional=0,alignedDistractorRationales=0;
+for(const q of shared.filter(q=>Number(q.unit)>=2&&Number(q.unit)<=9)){
+ const rec=sharedMapById.get(q.id);
+ if(!rec){failures.push(`${q.id}: missing shared alternate misconception map`);continue}
+ alignedMapped++;
+ if(rec.prompt!==q.prompt||Number(rec.answerIndex)!==Number(q.answer)||rec.correctRationale!==q.explanation)failures.push(`${q.id}: shared misconception map drift`);
+ const ds=Array.isArray(rec.distractors)?rec.distractors:[];
+ alignedDistractorRationales+=ds.length;
+ if(ds.length!==3)failures.push(`${q.id}: expected three shared distractor rationales, found ${ds.length}`);
+ if(rec.reviewStatus==="reviewed-v1")alignedReviewed++;
+ else if(rec.reviewStatus==="family-provisional-v1")alignedProvisional++;
+ else failures.push(`${q.id}: invalid shared misconception reviewStatus ${rec.reviewStatus}`);
+}
+if(alignedMapped!==275)failures.push(`Shared alternate misconception coverage: expected 275/275, found ${alignedMapped}/275`);
+if(alignedReviewed!==205)failures.push(`Shared alternate reviewed coverage: expected 205, found ${alignedReviewed}`);
+if(alignedProvisional!==70)failures.push(`Shared alternate provisional coverage: expected 70, found ${alignedProvisional}`);
+if(alignedDistractorRationales!==825)failures.push(`Shared alternate distractor rationales: expected 825, found ${alignedDistractorRationales}`);
+
 const dedicatedMap=JSON.parse(read("courses/mathematics/algebra-1/units/dedicated-assessment-misconceptions-v1.json"));
 const dedicatedMapItems=Object.values(dedicatedMap.items||{});
 if(dedicatedMapItems.length!==610)failures.push(`Dedicated misconception map: expected 610 items, found ${dedicatedMapItems.length}`);
@@ -140,6 +161,7 @@ const summary={
     answerEvidence:"versioned immutable answerSnapshot with delivered/original option mapping"
   },
   offlineAlternateBankCached:true,
+  sharedAlternateMisconceptionMap:{mapped:alignedMapped,reviewed:alignedReviewed,provisional:alignedProvisional,distractorRationales:alignedDistractorRationales},
   dedicatedMisconceptionMap:{mappedItems:dedicatedMapItems.length,distractorRationales:dedicatedRationales,representativeReviewed,provisionalMapped,representativeUnits:[1,5,9]}
 };
 
