@@ -66,7 +66,7 @@ add("u13-depth-l03-01",3,2,"build-and-predict",
 add("u13-depth-l03-02",3,3,"exponential-prediction",
  "A population model is P=500(1.08)^t. What does it predict after 2 time periods?",
  ["583.2","540","580","630"],
- "P=500(1.08)^2=500(1.1664)=583.2.",
+ "Apply the 8% growth factor twice: P=500(1.08)^2=500(1.1664)=583.2, so the model predicts 583.2 after two time periods.",
  "exponential-multistep-evaluation",108);
 add("u13-depth-l03-04",3,3,"break-even-system",
  "A project has cost C=200+5x and revenue R=9x. At what x do the models break even?",
