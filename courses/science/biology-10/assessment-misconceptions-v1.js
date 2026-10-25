@@ -5,7 +5,7 @@ window.KhaemenesBiology10Misconceptions={
   "title": "Biology 10 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/biology-10/question-bank.js",
-  "reviewedItemCount": 175,
+  "reviewedItemCount": 180,
   "items": {
     "bio-001": {
       "itemId": "bio-001",
@@ -4202,6 +4202,126 @@ window.KhaemenesBiology10Misconceptions={
           "optionIndex": 3,
           "misconceptionTag": "bio-sup-w26-model-d3",
           "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w36-concept": {
+      "itemId": "bio-sup-w36-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v8",
+      "correctRationale": "A strong defense uses representative evidence and explanation while protecting assessment integrity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w36-concept-d1",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w36-concept-d2",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w36-concept-d3",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w36-evidence": {
+      "itemId": "bio-sup-w36-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v8",
+      "correctRationale": "Mastery is best demonstrated through traceable evidence, corrected reasoning, quantitative analysis, and honest limitations.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w36-evidence-d1",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w36-evidence-d2",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w36-evidence-d3",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w36-model": {
+      "itemId": "bio-sup-w36-model",
+      "reviewStatus": "reviewed-supplemental-repair-v8",
+      "correctRationale": "Evidence quality, reasoning, and domain coverage matter more than raw volume.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w36-model-d1",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w36-model-d2",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w36-model-d3",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w36-quantitative": {
+      "itemId": "bio-sup-w36-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v8",
+      "correctRationale": "8/10×100=80% coverage.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w36-quantitative-d1",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w36-quantitative-d2",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w36-quantitative-d3",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w36-correction": {
+      "itemId": "bio-sup-w36-correction",
+      "reviewStatus": "reviewed-supplemental-repair-v8",
+      "correctRationale": "A portfolio defense should use representative learner evidence, reasoning, corrections, and limitations without exposing protected exam material.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w36-correction-d1",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w36-correction-d2",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w36-correction-d3",
+          "rationale": "This option confuses evidence quantity, assessment exposure, or presentation appearance with demonstrated scientific mastery."
         }
       ],
       "reviewedAt": "2026-10-25",
