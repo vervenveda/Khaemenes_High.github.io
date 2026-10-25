@@ -14,6 +14,7 @@ on:
       - 'tests/test-chemistry11-review-authority.cjs'
       - 'tests/test-english-week01-original-source-studios.cjs'
       - 'tests/test-english-weeks02-04-original-studios.cjs'
+      - 'tests/test-english-weeks05-08-source-studios.cjs'
       - 'tests/test-ss12-*.cjs'
       - 'courses/shared/grade-09-12-execution-sweep-v1.json'
       - 'grades/**'
@@ -49,6 +50,7 @@ jobs:
           node tests/test-chemistry11-review-authority.cjs
           node tests/test-english-week01-original-source-studios.cjs
           node tests/test-english-weeks02-04-original-studios.cjs
+          node tests/test-english-weeks05-08-source-studios.cjs
           node tests/test-ss12-source-assessment-v2.cjs
           node tests/test-ss12-assessment-runtime.cjs
           node tests/test-ss12-graduation-gates.cjs
