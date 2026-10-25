@@ -236,7 +236,8 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
   const abundantByUnit=new Map([
     [2,loadWindowBank("courses/mathematics/algebra-1/units/unit-02/assets/unit02-abundant-bank-v1.js")],
     [3,loadWindowBank("courses/mathematics/algebra-1/units/unit-03/assets/unit03-abundant-bank-v1.js")],
-    [4,loadWindowBank("courses/mathematics/algebra-1/units/unit-04/assets/unit04-abundant-bank-v1.js")]
+    [4,loadWindowBank("courses/mathematics/algebra-1/units/unit-04/assets/unit04-abundant-bank-v1.js")],
+    [5,loadWindowBank("courses/mathematics/algebra-1/units/unit-05/assets/unit05-abundant-bank-v1.js")]
   ]);
   const abundantItemCounts=new Map([...abundantByUnit.keys()].map(unit=>[unit,0]));
   let dedicatedLessons=0,alignedLessons=0,alignedAlternates=0,runtimeProtectedUnits=0,snapshotUnits=0;
@@ -332,8 +333,8 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
   const abundantCoverageOkay=[...abundantByUnit].every(([unit,rows])=>abundantItemCounts.get(unit)===rows.length);
   checks.push(addFinding("Algebra I","algebra1-runtime-fresh-retake-pools",
     alignedLessons===55&&alignedAlternates===275&&abundantCoverageOkay&&runtimeIssues.filter(x=>/aligned alternate|abundant items|runtime pool/.test(x)).length===0?"PASS":"FAIL",
-    `${alignedLessons}/55 Unit 02–09 lessons retain five aligned shared alternates. Units 02–04 now add ${[2,3,4].reduce((n,unit)=>n+(abundantItemCounts.get(unit)||0),0)} stable abundant items across twenty lessons for 30-item eligible pools; Units 05–09 retain 15-item pools pending the same migration.`,
-    {alignedLessons,alignedAlternates,abundantItemCounts:Object.fromEntries(abundantItemCounts),abundantPoolPerLesson:30,units05to09PoolPerLesson:15}));
+    `${alignedLessons}/55 Unit 02–09 lessons retain five aligned shared alternates. Units 02–05 now add ${[2,3,4,5].reduce((n,unit)=>n+(abundantItemCounts.get(unit)||0),0)} stable abundant items across twenty-seven lessons for 30-item eligible pools; Units 06–09 retain 15-item pools pending the same migration.`,
+    {alignedLessons,alignedAlternates,abundantItemCounts:Object.fromEntries(abundantItemCounts),abundantPoolPerLesson:30,units06to09PoolPerLesson:15}));
   checks.push(addFinding("Algebra I","algebra1-runtime-answer-snapshots",
     snapshotUnits===8?"PASS":"FAIL",
     `${snapshotUnits}/8 Unit 02–09 cores save versioned immutable answer snapshots containing selected/correct delivered indexes and original-option indexes for future misconception analysis.`));
@@ -341,7 +342,7 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
   const abundantOffline=[...abundantByUnit.keys()].every(unit=>{const u=String(unit).padStart(2,"0"),asset=`unit${u}-abundant-bank-v1.js`;return sw.includes(asset)&&legacySw.includes(asset)});
   checks.push(addFinding("Algebra I","algebra1-runtime-offline-alternate-bank",
     sw.includes("assets/question-bank.js")&&legacySw.includes("assets/question-bank.js")&&abundantOffline?"PASS":"FAIL",
-    "The shared alternate bank plus Unit 02–04 abundant banks are included in both Algebra I offline cache manifests."));
+    "The shared alternate bank plus Unit 02–05 abundant banks are included in both Algebra I offline cache manifests."));
   checks.push(addFinding("Algebra I","algebra1-misconception-map-v1-shared-bank",
     dq.issues.length===0&&dq.reviewedItems===271&&dq.provisionalItems===70&&dq.distractorRationales===813&&dq.provisionalDistractorRationales===210?"PASS":"FAIL",
     `${dq.mappedItems}/${dq.bankItems} shared-bank items are mapped: ${dq.reviewedItems} reviewed with ${dq.distractorRationales} reviewed distractor rationales and ${dq.provisionalItems} provisional with ${dq.provisionalDistractorRationales} provisional rationales. Drift issues: ${dq.issues.length}.`,dq));
@@ -354,7 +355,7 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     `Shared-bank exact duplicate prompts: ${m.exactDuplicateItems}. Template-similarity signal: ${m.templateClusterPct}% (diagnostic only; repeated mathematical structures are not automatically defects).`,m));
   if(runtimeIssues.length)checks.push(addFinding("Algebra I","algebra1-runtime-contract-regressions","FAIL",runtimeIssues.join("; "),{issues:runtimeIssues}));
   area("Algebra I",
-    `Runtime-aware certification distinguishes 610 dedicated Units 01–09 items from the 435-item shared bank; Unit 01 Lessons 01–05 and all lessons in Units 02–04 now use 30-item eligible pools for 10-question forms, while Units 05–09 retain 15-item pools pending abundance migration.`,
+    `Runtime-aware certification distinguishes 610 dedicated Units 01–09 items from the 435-item shared bank; Unit 01 Lessons 01–05 and all lessons in Units 02–05 now use 30-item eligible pools for 10-question forms, while Units 06–09 retain 15-item pools pending abundance migration.`,
     {...m,misconceptionMap:dq,sharedBankItems:bank.length,dedicatedRuntimeItems:dedicated.length,dedicatedLessons,alignedAlternateItems:alignedAlternates,abundantItemCounts:Object.fromEntries(abundantItemCounts),dedicatedAuthoredAnswerPositions:authoredDedicatedPositions,dedicatedMisconceptionCoveragePct:pct(dedicatedMapped,dedicated.length),dedicatedRepresentativeReviewed:dedicatedReviewed,dedicatedProvisionalMapped:dedicatedProvisional,dedicatedMapIssues:dedicatedMapIssues.length},
     checks);
 }
