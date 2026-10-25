@@ -5,7 +5,7 @@
   "title": "Biology 10 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/biology-10/question-bank.js",
-  "reviewedItemCount": 143,
+  "reviewedItemCount": 156,
   "items": {
     "bio-001": {
       "itemId": "bio-001",
@@ -3434,6 +3434,318 @@
           "optionIndex": 3,
           "misconceptionTag": "bio-sup-w17-quantitative-d3",
           "rationale": "Models remain revisable and bounded by uncertainty and scope."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w01-concept": {
+      "itemId": "bio-sup-w01-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "Reliable biological measurement requires units, replication, uncertainty, reproducibility, and safety.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w01-concept-d1",
+          "rationale": "A single value without units or replication is weak evidence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w01-concept-d2",
+          "rationale": "Uncertainty should be reported rather than hidden."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w01-concept-d3",
+          "rationale": "Safety and reproducibility remain relevant even in simple measurements."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w01-evidence": {
+      "itemId": "bio-sup-w01-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "Replication with documented variation and a consistent protocol is stronger evidence of reliability.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w01-evidence-d1",
+          "rationale": "A single value without units or replication is weak evidence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w01-evidence-d2",
+          "rationale": "Uncertainty should be reported rather than hidden."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w01-evidence-d3",
+          "rationale": "Safety and reproducibility remain relevant even in simple measurements."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w01-model": {
+      "itemId": "bio-sup-w01-model",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "Readiness diagnostics are provisional evidence of current skills, not permanent labels.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w01-model-d1",
+          "rationale": "A single value without units or replication is weak evidence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w01-model-d2",
+          "rationale": "Uncertainty should be reported rather than hidden."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w01-model-d3",
+          "rationale": "Safety and reproducibility remain relevant even in simple measurements."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w02-concept": {
+      "itemId": "bio-sup-w02-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "Water's polarity and hydrogen bonding help explain cohesion and solvent properties.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w02-concept-d1",
+          "rationale": "Water can dissolve many ionic and polar substances."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w02-concept-d2",
+          "rationale": "Water has strong intermolecular interactions."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w02-concept-d3",
+          "rationale": "Water is chemically distinct from nonpolar hydrocarbons."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w02-evidence": {
+      "itemId": "bio-sup-w02-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "Controlled comparison across solvent polarity directly tests its effect on solubility.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w02-evidence-d1",
+          "rationale": "Water can dissolve many ionic and polar substances."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w02-evidence-d2",
+          "rationale": "Water has strong intermolecular interactions."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w02-evidence-d3",
+          "rationale": "Water is chemically distinct from nonpolar hydrocarbons."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w02-model": {
+      "itemId": "bio-sup-w02-model",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "Polarity is important but not the only determinant of solubility.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w02-model-d1",
+          "rationale": "Water can dissolve many ionic and polar substances."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w02-model-d2",
+          "rationale": "Water has strong intermolecular interactions."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w02-model-d3",
+          "rationale": "Water is chemically distinct from nonpolar hydrocarbons."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w03-concept": {
+      "itemId": "bio-sup-w03-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "Macromolecular function depends on detailed chemical structure and shape, not size alone.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w03-concept-d1",
+          "rationale": "Macromolecular function is not determined by size alone."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w03-concept-d2",
+          "rationale": "Equal mass does not imply equal structure or function."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w03-concept-d3",
+          "rationale": "Major macromolecule classes have different chemistry and roles."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w03-evidence": {
+      "itemId": "bio-sup-w03-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "A controlled structural change linked to a functional change directly supports structure–function reasoning.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w03-evidence-d1",
+          "rationale": "Macromolecular function is not determined by size alone."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w03-evidence-d2",
+          "rationale": "Equal mass does not imply equal structure or function."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w03-evidence-d3",
+          "rationale": "Major macromolecule classes have different chemistry and roles."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w03-model": {
+      "itemId": "bio-sup-w03-model",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "Size alone is an incomplete predictor of macromolecule chemistry and function.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w03-model-d1",
+          "rationale": "Macromolecular function is not determined by size alone."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w03-model-d2",
+          "rationale": "Equal mass does not imply equal structure or function."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w03-model-d3",
+          "rationale": "Major macromolecule classes have different chemistry and roles."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w03-quantitative": {
+      "itemId": "bio-sup-w03-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "Total mass is 100 g, so protein is 24/100×100=24%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w03-quantitative-d1",
+          "rationale": "Macromolecular function is not determined by size alone."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w03-quantitative-d2",
+          "rationale": "Equal mass does not imply equal structure or function."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w03-quantitative-d3",
+          "rationale": "Major macromolecule classes have different chemistry and roles."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w04-concept": {
+      "itemId": "bio-sup-w04-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "Enzymes lower activation-energy barriers and are not consumed overall.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w04-concept-d1",
+          "rationale": "Enzymes are catalysts whose behavior depends on specific conditions; they are not consumed or universally optimized."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w04-concept-d2",
+          "rationale": "Enzymes are catalysts whose behavior depends on specific conditions; they are not consumed or universally optimized."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w04-concept-d3",
+          "rationale": "Enzymes are catalysts whose behavior depends on specific conditions; they are not consumed or universally optimized."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w04-evidence": {
+      "itemId": "bio-sup-w04-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "Varying temperature alone while controlling other factors isolates its effect on enzyme rate.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w04-evidence-d1",
+          "rationale": "Enzymes are catalysts whose behavior depends on specific conditions; they are not consumed or universally optimized."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w04-evidence-d2",
+          "rationale": "Enzymes are catalysts whose behavior depends on specific conditions; they are not consumed or universally optimized."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w04-evidence-d3",
+          "rationale": "Enzymes are catalysts whose behavior depends on specific conditions; they are not consumed or universally optimized."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w04-model": {
+      "itemId": "bio-sup-w04-model",
+      "reviewStatus": "reviewed-supplemental-repair-v6",
+      "correctRationale": "Enzyme optima are condition- and enzyme-specific and should not be generalized universally.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w04-model-d1",
+          "rationale": "Enzymes are catalysts whose behavior depends on specific conditions; they are not consumed or universally optimized."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w04-model-d2",
+          "rationale": "Enzymes are catalysts whose behavior depends on specific conditions; they are not consumed or universally optimized."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w04-model-d3",
+          "rationale": "Enzymes are catalysts whose behavior depends on specific conditions; they are not consumed or universally optimized."
         }
       ],
       "reviewedAt": "2026-10-25",
