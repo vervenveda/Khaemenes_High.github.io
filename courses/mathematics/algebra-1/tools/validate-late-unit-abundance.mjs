@@ -31,16 +31,21 @@ for(const q of extra){
   assert.equal(q.generatorVersion,"late-unit-abundant-v1","abundant item generator version drift");
 }
 
+run("assets/unit13-capstone-depth-bank-v1.js",ctx);
+const unit13Depth=[...ctx.window.ALGEBRA1_UNIT13_CAPSTONE_DEPTH];
+assert.equal(unit13Depth.length,20,"Unit 13 capstone depth bank must contain exactly 20 quantitative items");
+assert.deepEqual(Object.fromEntries([1,2,3,4,5].map(lesson=>[lesson,unit13Depth.filter(q=>Number(q.lesson)===lesson).length])),{"1":4,"2":4,"3":4,"4":4,"5":4},"Unit 13 capstone depth allocation drift");
+assert.ok(unit13Depth.every(q=>q.capstoneDepth==="quantitative"),"Unit 13 depth items must be explicitly tagged quantitative");
 run("assets/unit-11-content-upgrade.js",ctx);
 const upgradedQuestions=ctx.window.ALGEBRA1_QUESTIONS;
 const data=ctx.window.ALGEBRA1_DATA;
-const expected={10:60,11:120,12:60,13:60};
+const expected={10:60,11:120,12:60,13:80};
 
 for(const unit of [10,11,12,13]){
   const lessons=data.lessons.filter(l=>Number(l.unit)===unit);
   const pool=unit===11
     ? upgradedQuestions.filter(q=>Number(q.unit)===unit)
-    : [...baseQuestions.filter(q=>Number(q.unit)===unit),...extra.filter(q=>Number(q.unit)===unit)];
+    : [...baseQuestions.filter(q=>Number(q.unit)===unit),...extra.filter(q=>Number(q.unit)===unit),...(unit===13?unit13Depth:[])];
   assert.equal(pool.length,expected[unit],"Unit "+unit+" eligible pool size drift");
   assert.equal(new Set(pool.map(q=>q.id)).size,pool.length,"Unit "+unit+" has duplicate eligible item IDs");
   const baseQuota=Math.floor(20/lessons.length),remainder=20%lessons.length;
@@ -55,7 +60,10 @@ const engine=read("assets/legacy-mastery-engine-v2.js");
 for(const marker of [
   "randomSeed()",
   "selectForm(previousIds,seed)",
-  "targetPoolSize=Number(R.unit)===11?120:60",
+  "targetPoolSize=Number(R.unit)===11?120:Number(R.unit)===13?80:60",
+  "selectCapstoneLesson",
+  'selectionPolicy:Number(R.unit)===13?"lesson-balanced-capstone-depth-low-overlap-v1":"lesson-balanced-low-overlap-v1"',
+  "capstoneQuantitativeMinimum:Number(R.unit)===13?10:null",
   "x.available>=x.need*2",
   'selectionPolicy:"lesson-balanced-low-overlap-v1"',
   'formVersion:"algebra1-late-unit-monte-carlo-v1"',
@@ -76,6 +84,10 @@ for(const unit of [10,11,12,13]){
   }else{
     const abundanceIndex=page.indexOf('assets/late-unit-abundant-bank-v1.js');
     assert.ok(abundanceIndex>qIndex&&abundanceIndex<engineIndex,"Unit "+unit+" abundance bank must load before mastery engine");
+    if(unit===13){
+      const depthIndex=page.indexOf('assets/unit13-capstone-depth-bank-v1.js');
+      assert.ok(depthIndex>abundanceIndex&&depthIndex<engineIndex,"Unit 13 capstone depth bank must load before mastery engine");
+    }
   }
 }
 
@@ -83,6 +95,7 @@ for(const rel of ["service-worker.js","service-worker-precache-v1.js"]){
   const src=read(rel);
   assert.ok(src.includes("late-unit-abundant-bank-v1.js"),rel+" does not cache the late-unit abundant bank");
   assert.ok(src.includes("unit-11-content-upgrade.js"),rel+" does not cache the Unit 11 rebuild");
+  assert.ok(src.includes("unit13-capstone-depth-bank-v1.js"),rel+" does not cache the Unit 13 capstone depth bank");
 }
 
-console.log("PASS Units 10–13 expose 60/120/60/60 eligible items with lesson-balanced zero-overlap retake capacity");
+console.log("PASS Units 10–13 expose 60/120/60/80 eligible items; Unit 13 adds 20 quantitative capstone items and a 10-item-per-form depth guarantee");
