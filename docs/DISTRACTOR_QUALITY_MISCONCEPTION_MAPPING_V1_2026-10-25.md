@@ -26,7 +26,7 @@ This protects:
 
 The validator compares the misconception map against the live bank. Any change to the prompt, keyed answer, or mapped option text creates a drift failure and requires a fresh review.
 
-## First reviewed tranche
+## Reviewed tranches
 
 ### Algebra I
 
@@ -53,10 +53,11 @@ Examples of mapped misconceptions include:
 
 Map: `courses/science/chemistry-11/assessment-misconceptions-v1.json`
 
-- **30 reviewed items**
-- **90 distractor rationales**
+- **100 reviewed items**
+- **300 distractor rationales**
 - legacy concept spine spanning **U1–U9 plus capstone**;
-- every wrong option in the reviewed tranche is mapped.
+- ten seven-item quantitative families now mapped: density, ionic particle counting, weighted-average atomic mass, photon frequency/nm conversion, Boyle's law, molarity, percent yield, moles from molarity and volume, average reaction rate, and Kc;
+- **29.5% of the 339-item Chemistry bank** now has reviewed misconception mapping.
 
 Examples include:
 
@@ -69,14 +70,31 @@ Examples include:
 - pH linear-scale misconception;
 - single-criterion sustainability decisions.
 
+## Quantitative-family tranche
+
+The second Chemistry tranche adds **70 quantitative items / 210 distractor rationales**. These are not generic error labels. The mapped alternatives identify recurring quantitative mistakes including:
+
+- doubling or halving a density result;
+- confusing atomic number, mass number, charge, electrons, and neutrons;
+- using an unweighted isotope mean;
+- shifting the nanometer exponent by a power of ten;
+- treating Boyle's-law variables as directly proportional;
+- multiplying instead of dividing in molarity;
+- inverting the percent-yield ratio;
+- using mL directly instead of converting to liters;
+- multiplying concentration change by time or inverting the rate ratio;
+- reversing the equilibrium expression, adding reactant concentrations, or summing all concentrations instead of evaluating Kc.
+
+Chemistry's local question-bank auditor now validates the misconception map for prompt, answer, option-text, tag, and rationale drift.
+
 ## Current Academy-wide coverage
 
 The consolidated forensic assessment audits **1,710 objective items**.
 
 The first reviewed tranche therefore provides:
 
-- **43 / 1,710 reviewed items = 2.5%**
-- **129 explicit distractor rationales**
+- **113 / 1,710 reviewed items = 6.6%**
+- **339 explicit distractor rationales**
 
 The percentage is intentionally reported as a warning rather than disguised as complete coverage.
 
@@ -103,7 +121,7 @@ The same checks are integrated into:
 
 ## What v1 does not claim
 
-This first tranche does not certify distractor rationale quality for all 1,710 items.
+The current staged rollout does not certify distractor rationale quality for all 1,710 items.
 
 It also does not publish or inspect confidential secure-assessment distractors. Protected items may follow the same contract behind the authorized assessment boundary without exposing their content publicly.
 
@@ -111,7 +129,7 @@ It also does not publish or inspect confidential secure-assessment distractors. 
 
 Recommended order:
 
-1. Chemistry 11 quantitative/template families with the highest repetition signal;
+1. Chemistry 11 remaining high-repetition quantitative families, prioritizing thermochemistry, equilibrium, acids/bases, electrochemistry, nuclear decay, and engineering decision analysis;
 2. Algebra I remaining lesson-check families, prioritizing common error patterns;
 3. Biology 10 and Physics 12 evidence/quantitative anchors;
 4. English 10–12 passage-anchor items;
