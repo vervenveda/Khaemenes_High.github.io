@@ -110,7 +110,7 @@ for(let unit=10;unit<=13;unit++){
  const pool=unit===11?(upgradedLegacyQuestions||[]).filter(q=>Number(q.unit)===unit):[...legacyBaseQuestions.filter(q=>Number(q.unit)===unit),...lateAbundant.filter(q=>Number(q.unit)===unit)];
  ok(pool.length===lateExpectedPools[unit],`Unit ${id} exposes the certified ${lateExpectedPools[unit]}-item mastery pool`);
  ok(new Set(pool.map(q=>q.id)).size===pool.length,`Unit ${id} mastery pool IDs are unique`);
- const baseQuota=Math.floor(20/unitLessons.length),remainder=20%unitLessons.length;unitLessons.forEach((l,i)=>{const need=baseQuota+(i<remainder?1:0),count=pool.filter(q=>Number(q.lesson)===unit&&false).length||pool.filter(q=>Number(q.lesson)===Number(l.number)).length;ok(count>=need*2,`Unit ${id} Lesson ${l.number} supplies at least double its form quota for immediate zero-overlap retakes`)});
+ const baseQuota=Math.floor(20/unitLessons.length),remainder=20%unitLessons.length;unitLessons.forEach((l,i)=>{const need=baseQuota+(i<remainder?1:0),count=pool.filter(q=>Number(q.lesson)===Number(l.number)).length;ok(count>=need*2,`Unit ${id} Lesson ${l.number} supplies at least double its form quota for immediate zero-overlap retakes`)});
  if(unit===11)ok(page.indexOf("assets/unit-11-content-upgrade.js")>page.indexOf("assets/question-bank.js")&&page.indexOf("assets/unit-11-content-upgrade.js")<page.indexOf("assets/legacy-mastery-engine-v2.js"),"Unit 11 loads its 120-question rebuild before formal mastery");
  else ok(page.indexOf("assets/late-unit-abundant-bank-v1.js")>page.indexOf("assets/question-bank.js")&&page.indexOf("assets/late-unit-abundant-bank-v1.js")<page.indexOf("assets/legacy-mastery-engine-v2.js"),`Unit ${id} loads the late-unit abundance bank before formal mastery`);
 }
