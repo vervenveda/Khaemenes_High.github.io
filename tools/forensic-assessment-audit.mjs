@@ -300,6 +300,8 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     12:bank.filter(q=>Number(q.unit)===12).length+lateAbundant.filter(q=>Number(q.unit)===12).length,
     13:bank.filter(q=>Number(q.unit)===13).length+lateAbundant.filter(q=>Number(q.unit)===13).length
   };
+  const lateMisconceptions=readJSON("courses/mathematics/algebra-1/assets/late-unit-misconceptions-v1.json");
+  const lateResolver=read("courses/mathematics/algebra-1/assets/misconception-resolver-v1.js");
   const lateEngine=read("courses/mathematics/algebra-1/assets/legacy-mastery-engine-v2.js");
   const lateMonteCarlo=["randomSeed()","selectForm(previousIds,seed)",'selectionPolicy:"lesson-balanced-low-overlap-v1"',"targetPoolSize=Number(R.unit)===11?120:60","immediatePriorOverlap","formSeed"].every(x=>lateEngine.includes(x));
   const latePages=[10,11,12,13].every(unit=>{
@@ -307,6 +309,16 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     const bankIndex=unit===11?page.indexOf("assets/unit-11-content-upgrade.js"):page.indexOf("assets/late-unit-abundant-bank-v1.js");
     return baseIndex>=0&&bankIndex>baseIndex&&engineIndex>bankIndex;
   });
+  const lateMisconceptionRuntime=[
+    "async function score()","KhaemenesAlgebra1Misconceptions","resolver?.lookup?.(q.id,selectedOriginalIndex)",
+    "diagnostic?.learnerFeedbackEligible","misconceptionMapSource:diagnostic?.mapSource"
+  ].every(x=>lateEngine.includes(x))
+    &&lateResolver.includes("late-unit-misconceptions-v1.json")
+    &&lateResolver.includes('late.has(itemId)?"late":"shared"')
+    &&[10,11,12,13].every(unit=>{
+      const page=read(`courses/mathematics/algebra-1/units/unit-${unit}/assessment/mastery-check.html`);
+      return page.indexOf("assets/misconception-resolver-v1.js")>=0&&page.indexOf("assets/misconception-resolver-v1.js")<page.indexOf("assets/legacy-mastery-engine-v2.js");
+    });
   const dm=itemMetrics(dedicated,true);
   const dedicatedMap=readJSON("courses/mathematics/algebra-1/units/dedicated-assessment-misconceptions-v1.json");
   const dedicatedMisconceptions=dedicatedMap.items||{};
@@ -347,6 +359,10 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     latePoolSizes[10]===60&&latePoolSizes[11]===120&&latePoolSizes[12]===60&&latePoolSizes[13]===60&&lateMonteCarlo&&latePages?"PASS":"FAIL",
     `Late formal mastery pools are Unit 10=${latePoolSizes[10]}, Unit 11=${latePoolSizes[11]}, Unit 12=${latePoolSizes[12]}, Unit 13=${latePoolSizes[13]}; the runtime uses seeded lesson-balanced low-overlap selection and the mastery pages load the abundance assets before scoring.`,
     {poolSizes:latePoolSizes,selectionPolicy:"lesson-balanced-low-overlap-v1",delivered:20}));
+  checks.push(addFinding("Algebra I","algebra1-late-unit-misconception-parity",
+    lateMisconceptions.lateFormalPoolItemCount===300&&lateMisconceptions.reviewedCoverageFromSharedMap===33&&lateMisconceptions.provisionalItemCount===267&&lateMisconceptions.rebuiltIdOverrideCount===19&&lateMisconceptions.provisionalDistractorRationaleCount===801&&lateMisconceptionRuntime?"PASS":"FAIL",
+    `Late formal mastery has 300/300 active-item misconception coverage: ${lateMisconceptions.reviewedCoverageFromSharedMap} exact reviewed shared records and ${lateMisconceptions.provisionalItemCount} provisional late records, including ${lateMisconceptions.rebuiltIdOverrideCount} Unit 11 stale-ID overrides. Learner feedback remains reviewed-only.`,
+    {activeItems:lateMisconceptions.lateFormalPoolItemCount,reviewedExact:lateMisconceptions.reviewedCoverageFromSharedMap,provisional:lateMisconceptions.provisionalItemCount,rebuiltIdOverrides:lateMisconceptions.rebuiltIdOverrideCount,provisionalDistractorRationales:lateMisconceptions.provisionalDistractorRationaleCount}));
   checks.push(addFinding("Algebra I","algebra1-runtime-dedicated-bank-contract",
     dedicated.length===610&&dedicatedLessons===61&&runtimeIssues.filter(x=>/dedicated questions/.test(x)).length===0?"PASS":"FAIL",
     `Runtime-authoritative Units 01–09: ${dedicated.length} dedicated items across ${dedicatedLessons} lessons; every lesson is required to expose 10 authored questions. Authored answer positions remain diagnostic only: ${authoredDedicatedPositions.join("/")}.`,
@@ -380,7 +396,7 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
   if(runtimeIssues.length)checks.push(addFinding("Algebra I","algebra1-runtime-contract-regressions","FAIL",runtimeIssues.join("; "),{issues:runtimeIssues}));
   area("Algebra I",
     `Runtime-aware certification distinguishes 610 dedicated Units 01–09 items from the shared bank; Unit 01 Lessons 01–05 and Units 02–09 use 30-item pools for 10-question lesson forms, while formal Units 10–13 use 60/120/60/60 eligible pools for 20-question low-overlap mastery forms.`,
-    {...m,misconceptionMap:dq,sharedBankItems:bank.length,dedicatedRuntimeItems:dedicated.length,dedicatedLessons,alignedAlternateItems:alignedAlternates,abundantItemCounts:Object.fromEntries(abundantItemCounts),dedicatedAuthoredAnswerPositions:authoredDedicatedPositions,dedicatedMisconceptionCoveragePct:pct(dedicatedMapped,dedicated.length),dedicatedRepresentativeReviewed:dedicatedReviewed,dedicatedProvisionalMapped:dedicatedProvisional,dedicatedMapIssues:dedicatedMapIssues.length,lateFormalMasteryPoolSizes:latePoolSizes},
+    {...m,misconceptionMap:dq,sharedBankItems:bank.length,dedicatedRuntimeItems:dedicated.length,dedicatedLessons,alignedAlternateItems:alignedAlternates,abundantItemCounts:Object.fromEntries(abundantItemCounts),dedicatedAuthoredAnswerPositions:authoredDedicatedPositions,dedicatedMisconceptionCoveragePct:pct(dedicatedMapped,dedicated.length),dedicatedRepresentativeReviewed:dedicatedReviewed,dedicatedProvisionalMapped:dedicatedProvisional,dedicatedMapIssues:dedicatedMapIssues.length,lateFormalMasteryPoolSizes:latePoolSizes,lateMisconceptionCoverage:{active:300,reviewedExact:33,provisional:267,rebuiltIdOverrides:19}},
     checks);
 }
 
