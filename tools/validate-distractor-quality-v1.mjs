@@ -20,8 +20,8 @@ const specs=[
   label:"Chemistry 11",
   bank:"courses/science/chemistry-11/question-bank.js",
   map:"courses/science/chemistry-11/assessment-misconceptions-v1.json",
-  expectedItems:100,
-  expectedDistractors:300,
+  expectedItems:205,
+  expectedDistractors:615,
   coverageKey:q=>String(q.unit),
   expectedCoverageKeys:["U1","U2","U3","U4","U5","U6","U7","U8","U9","CAP"]
  }
