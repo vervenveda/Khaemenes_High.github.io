@@ -22,7 +22,7 @@ const report={
   ],
   areas:[],
   findings:[],
-  totals:{auditedObjectiveItems:0,exactDuplicateItems:0,itemsWithExplanations:0,fourOptionItems:0,validAnswerItems:0,itemsWithPerDistractorRationales:0}
+  totals:{auditedObjectiveItems:0,exactDuplicateItems:0,itemsWithExplanations:0,fourOptionItems:0,validAnswerItems:0,itemsWithPerDistractorRationales:0,itemsWithReviewedMisconceptionMap:0,structuredDistractorRationales:0}
 };
 
 function read(rel){return fs.readFileSync(path.join(ROOT,rel),"utf8")}
@@ -91,6 +91,41 @@ function itemMetrics(items,accumulate=true){
     report.totals.itemsWithPerDistractorRationales+=perDistractor;
   }
   return out;
+}
+function misconceptionMapMetrics(mapRel,bank,accumulate=true){
+  const map=readJSON(mapRel),byId=new Map(bank.map(q=>[String(q.id),q])),issues=[];
+  const entries=Object.values(map.items||{});let distractorRationales=0;
+  for(const rec of entries){
+    const q=byId.get(String(rec.itemId));
+    if(!q){issues.push(`${rec.itemId}: mapped item missing from bank`);continue}
+    if(rec.reviewStatus!=="reviewed-v1")issues.push(`${rec.itemId}: reviewStatus is not reviewed-v1`);
+    if(rec.prompt!==q.prompt)issues.push(`${rec.itemId}: prompt drift`);
+    if(Number(rec.answerIndex)!==Number(q.answer))issues.push(`${rec.itemId}: answer-key drift`);
+    if(rec.correctRationale!==q.explanation)issues.push(`${rec.itemId}: correct-rationale drift`);
+    const ds=Array.isArray(rec.distractors)?rec.distractors:[];
+    distractorRationales+=ds.length;
+    const expected=q.options.map((_,i)=>i).filter(i=>i!==q.answer).sort((a,b)=>a-b);
+    const actual=ds.map(d=>Number(d.optionIndex)).sort((a,b)=>a-b);
+    if(JSON.stringify(expected)!==JSON.stringify(actual))issues.push(`${rec.itemId}: incomplete distractor-index coverage`);
+    for(const d of ds){
+      const i=Number(d.optionIndex);
+      if(q.options[i]!==d.optionText)issues.push(`${rec.itemId} option ${i}: option-text drift`);
+      if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(String(d.misconceptionTag||"")))issues.push(`${rec.itemId} option ${i}: invalid misconception tag`);
+      if(String(d.rationale||"").trim().length<24)issues.push(`${rec.itemId} option ${i}: rationale too thin`);
+    }
+  }
+  if(accumulate){
+    report.totals.itemsWithReviewedMisconceptionMap+=entries.length;
+    report.totals.structuredDistractorRationales+=distractorRationales;
+  }
+  return {
+    schema:map.schema,
+    reviewedItems:entries.length,
+    distractorRationales,
+    bankItems:bank.length,
+    reviewedItemPct:pct(entries.length,bank.length),
+    issues
+  };
 }
 function addFinding(area,id,status,detail,metrics={}){
   const finding={area,id,status,detail,metrics};
@@ -175,7 +210,7 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
   const loader=read("courses/mathematics/algebra-1/assets/unit-page.js");
   const by=new Map();
   for(const q of bank){const k=`${q.unit}:${q.lesson}`;if(!by.has(k))by.set(k,[]);by.get(k).push(q)}
-  const m=itemMetrics(bank),contractFailures=[];
+  const m=itemMetrics(bank),dq=misconceptionMapMetrics("courses/mathematics/algebra-1/assets/assessment-misconceptions-v1.json",bank),contractFailures=[];
   for(const [lesson,items] of by){
     if(items.length!==5)contractFailures.push(`${lesson}: ${items.length} items`);
     for(const q of items)if(!Array.isArray(q.options)||q.options.length!==4||!Number.isInteger(q.answer)||q.answer<0||q.answer>3||q.options[q.answer]!==q.answer_text)contractFailures.push(`${q.id}: answer contract`);
@@ -190,10 +225,13 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
   checks.push(addFinding("Algebra I","algebra1-first-form-answer-balance",
     balanced&&marked&&protectedDom?"PASS":"FAIL",
     "Five-question lesson checks use a randomized 2/1/1/1 correct-position schedule before first render; the later DOM shuffler preserves that mapped order."));
+  checks.push(addFinding("Algebra I","algebra1-misconception-map-v1",
+    dq.issues.length===0&&dq.reviewedItems===13&&dq.distractorRationales===39?"PASS":"FAIL",
+    `${dq.reviewedItems}/${dq.bankItems} items are reviewed in the v1 companion map, providing ${dq.distractorRationales} explicit distractor rationales across all 13 Algebra I units. Drift issues: ${dq.issues.length}.`,dq));
   checks.push(addFinding("Algebra I","algebra1-prompt-diversity",
     m.exactDuplicateItems===0?"PASS":"FAIL",
     `Exact duplicate prompts: ${m.exactDuplicateItems}. Template-similarity signal: ${m.templateClusterPct}% (diagnostic only; repeated mathematical structures are not automatically defects).`,m));
-  area("Algebra I","Lesson checks retain valid answer mappings while balancing the learner-visible first form and retakes.",{...m,lessons:by.size,renderedDistribution:"2/1/1/1 for five-question lesson forms"},checks);
+  area("Algebra I","Lesson checks retain valid answer mappings while balancing the learner-visible first form and retakes.",{...m,misconceptionMap:dq,lessons:by.size,renderedDistribution:"2/1/1/1 for five-question lesson forms"},checks);
 }
 
 /* 4. Upper science */
@@ -217,7 +255,9 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
       const qs=bank.filter(q=>Number(q.week)===week);
       if(qs.length&&qs.some(q=>transferTypes.has(String(q.type||"").toLowerCase())))ordinaryPassing++;else missing.push(week);
     }
-    const m=itemMetrics(bank);courseMetrics[slug]={items:bank.length,missingTransferWeeks:missing,metrics:m};
+    const m=itemMetrics(bank);
+    const dq=slug==="chemistry-11"?misconceptionMapMetrics("courses/science/chemistry-11/assessment-misconceptions-v1.json",bank):null;
+    courseMetrics[slug]={items:bank.length,missingTransferWeeks:missing,metrics:m,...(dq?{misconceptionMap:dq}:{})};
     const blueprintOkay=["80% mastery floor","Midterm · Week 18","Final · Week 36","Must remain protected","novel phenomenon"].every(x=>blueprint.includes(x))
       &&index.includes("SECURE_ASSESSMENT_BLUEPRINT.md")
       &&Number(map.assessment?.mastery_target)===80
@@ -235,6 +275,9 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     checks.push(addFinding(label,`${slug}-public-practice-option-remap`,
       usesMC&&mcBalanced?"PASS":"FAIL",
       `Authored answer positions are diagnostic only for public Monte Carlo practice: ${m.authoredAnswerPositions.join("/")}. The shared engine materializes a balanced option order and remaps the answer before display.`));
+    if(dq)checks.push(addFinding(label,"chemistry-11-misconception-map-v1",
+      dq.issues.length===0&&dq.reviewedItems===30&&dq.distractorRationales===90?"PASS":"FAIL",
+      `${dq.reviewedItems}/${dq.bankItems} Chemistry items are reviewed in the v1 companion map with ${dq.distractorRationales} explicit distractor rationales spanning the legacy concept spine. Drift issues: ${dq.issues.length}.`,dq));
   }
   const m=itemMetrics(combined,false);
   area("Upper Science",`${ordinaryPassing}/${ordinaryTotal} ordinary instructional weeks satisfy the transfer-item requirement; ${blueprints}/3 secure blueprints are linked and bounded.`,{...m,courseMetrics,ordinaryWeeksPassing:ordinaryPassing,ordinaryWeeksTotal:ordinaryTotal,blueprintsPassing:blueprints,publicMonteCarloCourses:publicMonteCarlo},checks);
@@ -254,8 +297,9 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     t.fourOptionItems===t.auditedObjectiveItems&&t.validAnswerItems===t.auditedObjectiveItems?"PASS":"FAIL",
     `${t.fourOptionItems}/${t.auditedObjectiveItems} items have four options; ${t.validAnswerItems}/${t.auditedObjectiveItems} have a valid keyed answer.`));
   checks.push(addFinding("Academy-wide","cross-distractor-rationale-metadata",
-    t.itemsWithPerDistractorRationales===t.auditedObjectiveItems?"PASS":"WARN",
-    `${t.itemsWithPerDistractorRationales}/${t.auditedObjectiveItems} items expose structured per-distractor rationale metadata. Correct-answer explanations are present, but distractor-specific rationale is not yet a standardized bank field.`));
+    t.itemsWithReviewedMisconceptionMap===t.auditedObjectiveItems?"PASS":"WARN",
+    `${t.itemsWithReviewedMisconceptionMap}/${t.auditedObjectiveItems} audited items now have reviewed misconception maps containing ${t.structuredDistractorRationales} explicit distractor rationales. Coverage is intentionally staged under Distractor Quality & Misconception Mapping v1.`,
+    {reviewedItems:t.itemsWithReviewedMisconceptionMap,auditedItems:t.auditedObjectiveItems,structuredDistractorRationales:t.structuredDistractorRationales,coveragePct:pct(t.itemsWithReviewedMisconceptionMap,t.auditedObjectiveItems)}));
   checks.push(addFinding("Academy-wide","cross-security-boundary",
     report.findings.filter(x=>x.id.endsWith("-secure-blueprint")).every(x=>x.status==="PASS")?"PASS":"FAIL",
     "Public science certification describes cognitive design without requiring protected prompts, keys, form seeds, authentication material, reviewer notes, or private learner records."));
@@ -264,7 +308,7 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     explanationCoveragePct:pct(t.itemsWithExplanations,t.auditedObjectiveItems),
     fourOptionCoveragePct:pct(t.fourOptionItems,t.auditedObjectiveItems),
     validAnswerCoveragePct:pct(t.validAnswerItems,t.auditedObjectiveItems),
-    perDistractorRationaleCoveragePct:pct(t.itemsWithPerDistractorRationales,t.auditedObjectiveItems)
+    perDistractorRationaleCoveragePct:pct(t.itemsWithReviewedMisconceptionMap,t.auditedObjectiveItems),\n    reviewedMisconceptionItems:t.itemsWithReviewedMisconceptionMap,\n    structuredDistractorRationales:t.structuredDistractorRationales
   },checks);
 }
 
@@ -291,7 +335,7 @@ function markdown(){
     for(const c of a.checks)lines.push(`- **${c.status} · ${c.id}:** ${c.detail}`);
   }
   lines.push("","## Certification boundary","",report.certificationBoundary,"",
-    "A warning is not silently converted into a pass. The current cross-system warning is expected to include structured per-distractor rationale coverage until that metadata contract is implemented.");
+    "A warning is not silently converted into a pass. Distractor Quality & Misconception Mapping v1 is now implemented, but legacy-bank coverage remains intentionally staged and is reported as a warning until reviewed mapping is complete or a course-specific required threshold is declared.");
   return lines.join("\n");
 }
 
