@@ -13,6 +13,8 @@ vm.runInContext(read("assets/question-bank.js"),ctx,{filename:"assets/question-b
 const baseQuestions=[...ctx.window.ALGEBRA1_QUESTIONS];
 vm.runInContext(read("assets/late-unit-abundant-bank-v1.js"),ctx,{filename:"assets/late-unit-abundant-bank-v1.js"});
 const lateAbundant=[...ctx.window.ALGEBRA1_LATE_ABUNDANT_QUESTIONS];
+vm.runInContext(read("assets/unit13-capstone-depth-bank-v1.js"),ctx,{filename:"assets/unit13-capstone-depth-bank-v1.js"});
+const unit13Depth=[...ctx.window.ALGEBRA1_UNIT13_CAPSTONE_DEPTH];
 
 const u11ctx={window:{ALGEBRA1_QUESTIONS:[...baseQuestions]}};
 vm.createContext(u11ctx);
@@ -26,10 +28,11 @@ const pool=[
  ...baseQuestions.filter(q=>Number(q.unit)===12),
  ...lateAbundant.filter(q=>Number(q.unit)===12),
  ...baseQuestions.filter(q=>Number(q.unit)===13),
- ...lateAbundant.filter(q=>Number(q.unit)===13)
+ ...lateAbundant.filter(q=>Number(q.unit)===13),
+ ...unit13Depth
 ];
-assert.equal(pool.length,300,"late-unit formal pool must contain 300 items");
-assert.equal(new Set(pool.map(q=>String(q.id))).size,300,"late-unit formal pool IDs must be unique");
+assert.equal(pool.length,320,"late-unit formal pool must contain 320 items");
+assert.equal(new Set(pool.map(q=>String(q.id))).size,320,"late-unit formal pool IDs must be unique");
 
 const shared=readJson("assets/assessment-misconceptions-v1.json");
 const late=readJson("assets/late-unit-misconceptions-v1.json");
@@ -40,10 +43,10 @@ const lateById=new Map(lateRows.map(x=>[String(x.itemId),x]));
 const poolById=new Map(pool.map(q=>[String(q.id),q]));
 const reviewedStatuses=new Set(["reviewed-v1","lesson-family-reviewed-v1"]);
 
-assert.equal(lateRows.length,267,"late provisional misconception map count drift");
-assert.equal(late.provisionalItemCount,267,"late provisional metadata count drift");
-assert.equal(late.provisionalDistractorRationaleCount,801,"late provisional distractor count drift");
-assert.equal(late.lateFormalPoolItemCount,300,"late formal pool metadata drift");
+assert.equal(lateRows.length,287,"late provisional misconception map count drift");
+assert.equal(late.provisionalItemCount,287,"late provisional metadata count drift");
+assert.equal(late.provisionalDistractorRationaleCount,861,"late provisional distractor count drift");
+assert.equal(late.lateFormalPoolItemCount,320,"late formal pool metadata drift");
 assert.equal(late.reviewedCoverageFromSharedMap,33,"reviewed shared coverage metadata drift");
 const overrides=[...lateById.keys()].filter(id=>sharedById.has(id));
 assert.equal(overrides.length,19,"late provisional map must override exactly the 19 rebuilt Unit 11 ID collisions");
@@ -75,9 +78,9 @@ for(const q of pool){
  }
 }
 assert.equal(reviewed,33,"late reviewed misconception coverage drift");
-assert.equal(provisional,267,"late provisional misconception coverage drift");
+assert.equal(provisional,287,"late provisional misconception coverage drift");
 assert.equal(reviewedRationales,99,"late reviewed distractor rationale count drift");
-assert.equal(provisionalRationales,801,"late provisional distractor rationale count drift");
+assert.equal(provisionalRationales,861,"late provisional distractor rationale count drift");
 
 const resolver=read("assets/misconception-resolver-v1.js");
 for(const marker of [
@@ -114,4 +117,4 @@ for(const rel of ["service-worker.js","service-worker-precache-v1.js"]){
  assert.ok(src.includes("assets/late-unit-misconceptions-v1.json"),rel+" does not cache the late misconception map");
 }
 
-console.log("PASS Units 10–13 misconception coverage: 300/300 active items mapped = 33 exact reviewed + 267 provisional, including 19 stale-ID overrides; learner-facing feedback remains reviewed-only");
+console.log("PASS Units 10–13 misconception coverage: 320/320 active items mapped = 33 exact reviewed + 287 provisional, including 19 stale-ID overrides and 20 Unit 13 capstone-depth items; learner-facing feedback remains reviewed-only");
