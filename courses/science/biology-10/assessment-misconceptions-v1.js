@@ -5,7 +5,7 @@ window.KhaemenesBiology10Misconceptions={
   "title": "Biology 10 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/biology-10/question-bank.js",
-  "reviewedItemCount": 50,
+  "reviewedItemCount": 60,
   "items": {
     "bio-001": {
       "itemId": "bio-001",
@@ -1202,6 +1202,246 @@ window.KhaemenesBiology10Misconceptions={
           "optionIndex": 3,
           "misconceptionTag": "assumes-all-offspring-aa",
           "rationale": "Aa × Aa produces a distribution of genotypes, not all aa."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-051": {
+      "itemId": "bio-051",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "For independent events that must both occur, multiply: 1/2×1/4=1/8.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "adds-independent-probabilities",
+          "rationale": "For independent events that must both occur, multiply probabilities; adding 1/2 and 1/4 gives 3/4, not 1/4."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "uses-first-event-only",
+          "rationale": "Using 1/2 ignores the second independent event."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "adds-probabilities-for-and-event",
+          "rationale": "3/4 comes from addition, which is not the correct rule for two independent events both occurring."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-052": {
+      "itemId": "bio-052",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Nonparallel or crossing reaction norms are consistent with genotype effects depending on environment.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "crossing-reaction-norm-means-no-environment",
+          "rationale": "Crossing lines show that phenotype changes with environment and that genotype responses differ."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "crossing-lines-identical-response",
+          "rationale": "Identical genotype responses would produce parallel/overlapping patterns, not crossing reaction norms."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "reaction-norm-guarantees-individual-outcome",
+          "rationale": "Reaction norms describe modeled group responses and do not guarantee a personal outcome."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-053": {
+      "itemId": "bio-053",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "G≈24%, leaving 52% for A+T, so A≈26%.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "chargaff-pairs-c-with-a",
+          "rationale": "In double-stranded DNA, C pairs with G, not A."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "uses-remaining-at-as-one-base",
+          "rationale": "After C=G=24%, 52% remains for A+T; adenine is half of that, not all 52%."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "subtracts-one-base-only",
+          "rationale": "52% is A+T together, not adenine alone."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-054": {
+      "itemId": "bio-054",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "A non-triplet insertion can change downstream codon grouping.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "frameshift-always-repairs-gene",
+          "rationale": "A one-base insertion usually disrupts downstream codon grouping rather than repairing the sequence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "dna-rna-direction-confusion",
+          "rationale": "An insertion in DNA does not convert RNA directly into DNA."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "mutation-always-beneficial",
+          "rationale": "Frameshift effects can be harmful, neutral, or occasionally beneficial; benefit is not guaranteed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-055": {
+      "itemId": "bio-055",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "80/20=4-fold.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "inverts-fold-change",
+          "rationale": "20/80=0.25 is the inverse ratio; fold increase is final/initial."
+        },
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "uses-additive-factor",
+          "rationale": "A 60-unit increase does not imply a 2-fold change."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "uses-absolute-difference-as-fold",
+          "rationale": "60 is the absolute increase, not the fold ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-056": {
+      "itemId": "bio-056",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "A negative control tests whether signal appears even without the intended target/template condition.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "negative-control-guarantees-primer-quality",
+          "rationale": "A negative control can reveal contamination/nonspecific signal but cannot guarantee every primer is perfect."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "pcr-control-determines-ancestry",
+          "rationale": "A negative PCR control does not by itself identify ancestry."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "negative-control-amplifies-target",
+          "rationale": "The negative control should lack target/template conditions and is not intended to double target DNA."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-057": {
+      "itemId": "bio-057",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Allele frequency is 120/200=0.60.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "uses-non-a-copies",
+          "rationale": "0.40 is the frequency of the other allele if only two alleles are present, not A."
+        },
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "assumes-half-without-counting",
+          "rationale": "The allele count is 120 of 200, not an automatic 50/50 split."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "fails-frequency-range",
+          "rationale": "Allele frequencies must lie between 0 and 1; 1.20 is impossible."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-058": {
+      "itemId": "bio-058",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "960/8000×100=12%.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "efficiency-denominator-error",
+          "rationale": "8% does not result from herbivore production divided by producer production."
+        },
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "assumes-ten-percent-rule-exact",
+          "rationale": "The common 10% heuristic is not a substitute for calculating from the given data."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "uses-herbivore-value-as-percent",
+          "rationale": "96% confuses the numerator 960 with a percentage result."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-059": {
+      "itemId": "bio-059",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Residence time≈reservoir/flux=900/45=20 years.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "misconceptionTag": "flux-divided-by-reservoir",
+          "rationale": "45/900 gives 0.05 per year, the inverse of residence time."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "uses-flux-as-time",
+          "rationale": "45 is the annual outgoing flux, not the residence time."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "uses-reservoir-size-as-time",
+          "rationale": "900 is the reservoir amount, not years."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "bio-060": {
+      "itemId": "bio-060",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "1−900/1000=0.1.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "uses-n-over-k-only",
+          "rationale": "0.9 is N/K; the density factor is 1−N/K."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "assumes-density-factor-one-near-k",
+          "rationale": "At N=900 with K=1000, crowding strongly reduces growth; the factor is not 1."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "uses-population-difference-without-normalizing",
+          "rationale": "100 is K−N, but the logistic density factor is dimensionless and normalized by K."
         }
       ],
       "reviewedAt": "2026-10-25",
