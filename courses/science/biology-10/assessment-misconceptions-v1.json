@@ -5,7 +5,7 @@
   "title": "Biology 10 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/biology-10/question-bank.js",
-  "reviewedItemCount": 84,
+  "reviewedItemCount": 101,
   "items": {
     "bio-001": {
       "itemId": "bio-001",
@@ -2018,6 +2018,414 @@
           "optionIndex": 3,
           "misconceptionTag": "branch-length-always-time",
           "rationale": "Branch length represents time only when the tree explicitly uses a time scale."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w31-concept": {
+      "itemId": "bio-sup-w31-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Energy flows through ecosystems and dissipates, while matter is conserved and recycled.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "energy-recycles-like-matter",
+          "rationale": "Energy flows and dissipates; it is not recycled indefinitely like matter."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "matter-disappears-during-respiration",
+          "rationale": "Respiration rearranges atoms; matter is conserved."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "predators-create-energy",
+          "rationale": "Predators obtain chemical energy from prey rather than creating new energy."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w31-evidence": {
+      "itemId": "bio-sup-w31-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Quantitative productivity or energy data across trophic levels directly test transfer efficiency and energy-flow models.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "species-list-not-energy-data",
+          "rationale": "A species list does not quantify energy transfer."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "single-organism-mass-not-trophic-transfer",
+          "rationale": "One body mass does not test energy flow across trophic levels."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "diagram-without-measurement",
+          "rationale": "A qualitative food-web diagram cannot quantify transfer efficiency."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w31-model": {
+      "itemId": "bio-sup-w31-model",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Energy pyramids represent diminishing available energy; matter remains conserved and cycles through reservoirs.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "ten-percent-rule-is-exact",
+          "rationale": "The 10% rule is a rough heuristic, not a universal constant."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "energy-pyramid-means-matter-destroyed",
+          "rationale": "Energy loss from one trophic level does not mean matter disappears."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "energy-and-matter-cycle-identically",
+          "rationale": "Matter cycles; usable energy flows through and dissipates."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w32-concept": {
+      "itemId": "bio-sup-w32-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Biogeochemical cycles move conserved elements among multiple biotic and abiotic reservoirs.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "elements-used-once",
+          "rationale": "Elements are conserved and repeatedly cycled through reservoirs."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "all-reservoirs-same-rate",
+          "rationale": "Reservoir exchange rates differ widely."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "only-living-reservoirs-matter",
+          "rationale": "Atmosphere, water, rocks, and soils are major abiotic reservoirs."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w32-evidence": {
+      "itemId": "bio-sup-w32-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Reservoir measurements plus fluxes allow evaluation of accumulation, depletion, and movement through a cycle.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "single-concentration-no-flux-context",
+          "rationale": "One concentration cannot reveal whether a reservoir is accumulating or depleting."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "diagram-without-quantities",
+          "rationale": "Names alone do not measure movement or accumulation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "one-organism-represents-system",
+          "rationale": "One organism cannot stand in for whole-system carbon storage and flux."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w32-model": {
+      "itemId": "bio-sup-w32-model",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Reservoirs differ in size and flux, so turnover and residence times can vary substantially.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "identical-residence-times",
+          "rationale": "Reservoir size and flux differences produce different residence times."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "cycle-diagram-proves-constant-flux",
+          "rationale": "A schematic does not establish that fluxes are temporally constant."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "cycle-is-one-way",
+          "rationale": "Biogeochemical cycles contain multiple pathways and directions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w33-concept": {
+      "itemId": "bio-sup-w33-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Density-dependent limits such as resource competition and disease reduce growth as populations approach carrying capacity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "all-reproduction-stops-at-k",
+          "rationale": "Carrying capacity does not imply every individual stops reproducing simultaneously."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "carrying-capacity-never-changes",
+          "rationale": "K depends on environmental conditions and can change."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "growth-slowing-because-mutation-stops",
+          "rationale": "Density-dependent limits, not cessation of mutation, explain logistic slowing."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w33-evidence": {
+      "itemId": "bio-sup-w33-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "A time series reveals whether growth remains proportional or slows as density increases.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "single-count-cannot-show-growth-form",
+          "rationale": "One time point cannot distinguish exponential from logistic dynamics."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "name-and-habitat-no-growth-data",
+          "rationale": "Descriptive labels do not reveal population trajectory."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "one-individual-not-population-trajectory",
+          "rationale": "Individual reproductive output alone does not establish population growth form."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w33-model": {
+      "itemId": "bio-sup-w33-model",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Logistic models are useful simplifications, but parameters can vary and omitted processes can matter.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "logistic-k-always-constant",
+          "rationale": "Natural carrying capacity can change with resources and environment."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "all-populations-same-curve",
+          "rationale": "Real populations vary and may not follow an ideal logistic curve exactly."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "logistic-model-makes-other-processes-irrelevant",
+          "rationale": "Migration and species interactions can still matter even if omitted from a simple model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w34-concept": {
+      "itemId": "bio-sup-w34-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Functional and response diversity can help ecosystems maintain or recover function after disturbance.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "biodiversity-prevents-disturbance",
+          "rationale": "Diversity can improve resilience but cannot prevent all disturbances."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "richness-alone-guarantees-function",
+          "rationale": "Species count alone ignores functional identity and redundancy."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "biodiversity-stops-evolution",
+          "rationale": "Evolution continues in diverse ecosystems."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w34-evidence": {
+      "itemId": "bio-sup-w34-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Comparable recovery measurements across a biodiversity gradient directly test a resilience hypothesis.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "single-undisturbed-site-no-resilience-test",
+          "rationale": "Resilience requires observing response or recovery after disturbance."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "different-outcomes-not-comparable",
+          "rationale": "Measuring different functions prevents a clean comparison."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "assumed-resilience-without-recovery-data",
+          "rationale": "Resilience must be measured rather than inferred from richness alone."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w34-model": {
+      "itemId": "bio-sup-w34-model",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Biodiversity effects depend on functional roles, response diversity, and ecological context.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "richness-fully-predicts-resilience",
+          "rationale": "Context and functional composition matter in addition to species count."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "diversity-prevents-functional-loss",
+          "rationale": "High diversity does not make ecosystems immune to disturbance."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "all-species-functionally-equivalent",
+          "rationale": "Species differ in ecological roles and response traits."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w34-quantitative": {
+      "itemId": "bio-sup-w34-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "The site regained 30 of the 60 units lost, so recovery of lost function is 30/60 = 50%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "uses-absolute-recovery-as-percent",
+          "rationale": "30 is the number of units regained, not the fraction of lost function recovered."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "uses-final-level-as-recovery-fraction",
+          "rationale": "70% compares final function to pre-disturbance function, not recovered loss."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "wrong-denominator-for-recovered-loss",
+          "rationale": "75% does not use the 60-unit loss as the denominator."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w35-concept": {
+      "itemId": "bio-sup-w35-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "A strong capstone integrates a testable question, evidence, analysis, explanation, and limitations.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "presentation-over-evidence",
+          "rationale": "Presentation quality cannot substitute for transparent methods and evidence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "conclusion-before-data",
+          "rationale": "Preselecting a conclusion biases the investigation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "qualitative-only-no-uncertainty",
+          "rationale": "A rigorous capstone should evaluate quantitative evidence and uncertainty when appropriate."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w35-evidence": {
+      "itemId": "bio-sup-w35-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Transparent methods, traceable data, replication, and uncertainty strengthen scientific claims.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "selective-data-removal",
+          "rationale": "Removing conflicting results without a defensible rule biases the evidence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "graph-without-raw-data",
+          "rationale": "A final graph alone reduces traceability and reproducibility."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "single-trial-proves-claim",
+          "rationale": "Replication is needed to evaluate variation and reliability."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w35-model": {
+      "itemId": "bio-sup-w35-model",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "Scientific models remain bounded by assumptions, evidence quality, and the range of conditions tested.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "good-looking-graph-proves-model",
+          "rationale": "Visual fit alone cannot establish model validity."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "one-fit-eliminates-alternatives",
+          "rationale": "Competing explanations may remain viable after one dataset."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "hide-limitations-to-strengthen-claim",
+          "rationale": "Omitting limitations weakens scientific credibility."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w35-quantitative": {
+      "itemId": "bio-sup-w35-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v3",
+      "correctRationale": "With the same central estimate, the narrower uncertainty interval indicates greater precision.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "larger-uncertainty-means-more-precision",
+          "rationale": "Greater uncertainty indicates lower precision, not higher confidence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "same-mean-equals-same-precision",
+          "rationale": "Precision depends on uncertainty/spread, not just the central estimate."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "uncertainty-allows-precision-comparison",
+          "rationale": "Reported uncertainty is exactly what permits a precision comparison."
         }
       ],
       "reviewedAt": "2026-10-25",
