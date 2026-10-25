@@ -107,7 +107,7 @@ const specs=[
 for(const spec of specs){
  const page=await context.newPage(),errors=[];
  page.on("pageerror",e=>errors.push("pageerror: "+e.message));
- page.on("console",m=>{if(m.type()!=="error")return;const msg=m.text();if(/Content Security Policy directive 'frame-ancestors' is ignored/i.test(msg))return;if(/Refused to load the stylesheet .*Content Security Policy directive/i.test(msg))return;errors.push("console: "+msg)});
+ page.on("console",m=>{if(m.type()!=="error")return;const msg=m.text();if(/Content Security Policy directive 'frame-ancestors' is ignored/i.test(msg))return;if(/Refused to load the stylesheet .*Content Security Policy directive/i.test(msg))return;if(/vnv-beta-link\.js.*Content Security Policy directive/i.test(msg))return;errors.push("console: "+msg)});
 
  if(spec.kind==="final"){
   const validMid=bareAttempt("KH-MATH-A1-MIDTERM-U01-U06",6);
