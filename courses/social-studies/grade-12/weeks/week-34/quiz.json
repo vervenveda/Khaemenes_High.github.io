@@ -2,116 +2,167 @@
   "title": "Week 34 Mastery Quiz · Thesis Drafting and Peer Review",
   "questions": [
     {
-      "question": "Which definition best matches “literature review”?",
+      "id": "ss12-w34-transfer-v3-01",
+      "question": "A thesis draft argues that a legal right is effective solely because the constitution contains it. What evidence should the reviewer request?",
       "options": [
-        "A synthesis of relevant scholarship and evidence showing what is known and disputed.",
-        "The principle that government is limited and structured by higher law.",
-        "Rules converting votes into offices or seats.",
-        "An organization seeking to influence public decisions without directly becoming the government."
-      ],
-      "answer": 0,
-      "explanation": "Literature review means a synthesis of relevant scholarship and evidence showing what is known and disputed."
-    },
-    {
-      "question": "Which definition best matches “counterargument”?",
-      "options": [
-        "A serious alternative claim or interpretation addressed by an argument.",
-        "Belief that participation can matter and institutions may respond.",
-        "A legal tradition in which judicial decisions and precedent have major importance.",
-        "The principle that Parliament is the supreme lawmaking authority in the UK constitutional order."
-      ],
-      "answer": 0,
-      "explanation": "Counterargument means a serious alternative claim or interpretation addressed by an argument."
-    },
-    {
-      "question": "Which definition best matches “coherence”?",
-      "options": [
-        "Logical connection among question, method, evidence, findings, and conclusion.",
-        "A state with capacity and policy commitment to direct long-term development.",
-        "An estimate of sampling uncertainty around a survey result.",
-        "Selection and presentation that shape how an issue is interpreted."
-      ],
-      "answer": 0,
-      "explanation": "Coherence means logical connection among question, method, evidence, findings, and conclusion."
-    },
-    {
-      "question": "Which definition best matches “peer review”?",
-      "options": [
-        "False or inaccurate information shared without necessarily intending deception.",
-        "Unequal conditions structured by historical and institutional racial classification.",
-        "An alliance of parties or groups cooperating to govern or pursue policy.",
-        "Structured evaluation by another reader using shared criteria."
-      ],
-      "answer": 3,
-      "explanation": "Peer review means structured evaluation by another reader using shared criteria."
-    },
-    {
-      "question": "Which definition best matches “revision memo”?",
-      "options": [
-        "Presidential governance dependent on multiparty legislative coalitions.",
-        "Distribution of natural-resource authority and revenue across levels of government.",
-        "A record explaining changes made in response to evidence and feedback.",
-        "Standards protecting integrity, people, communities, and the accuracy of knowledge."
+        "A longer definition of the right.",
+        "The title of the constitution.",
+        "Implementation records, access barriers, relevant judgments and outcomes.",
+        "The number of pages in the thesis."
       ],
       "answer": 2,
-      "explanation": "Revision memo means a record explaining changes made in response to evidence and feedback."
+      "explanation": "Implementation records, access barriers, relevant judgments and outcomes.",
+      "skill": "evidence-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “citation audit”?",
+      "id": "ss12-w34-transfer-v3-02",
+      "question": "A peer reviewer receives a claim without any source date or article reference. What is the most actionable response?",
       "options": [
-        "Historically shaped assumptions about security, force, risk, and international role.",
-        "Whether a project can be completed ethically with available time, evidence, and skills.",
-        "A check that claims, quotations, data, and references are accurate and complete.",
-        "A system in which religious authority or doctrine has a governing role."
+        "Approve the claim if it sounds plausible.",
+        "Replace it with a party position.",
+        "Delete all supporting evidence.",
+        "Request precise provenance and the source passage supporting the claim."
+      ],
+      "answer": 3,
+      "explanation": "Request precise provenance and the source passage supporting the claim.",
+      "skill": "mastery-and-gates",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w34-transfer-v3-03",
+      "question": "A senior cites UDHR Article 10 but concludes it proves every tribunal is impartial. What revision is required?",
+      "options": [
+        "Separate the stated normative principle from observed tribunal performance.",
+        "Treat the UDHR as a census of courts.",
+        "Remove Article 10 from the bibliography.",
+        "Assume impartiality is unmeasurable."
+      ],
+      "answer": 0,
+      "explanation": "Separate the stated normative principle from observed tribunal performance.",
+      "skill": "source-interpretation",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w34-transfer-v3-04",
+      "question": "A literature review summarizes authors but does not compare their arguments. What strengthens synthesis?",
+      "options": [
+        "Add more biographical facts.",
+        "Identify shared questions, competing mechanisms, evidence standards and research gaps.",
+        "Arrange the authors by surname only.",
+        "Avoid discussing any disagreement."
+      ],
+      "answer": 1,
+      "explanation": "Identify shared questions, competing mechanisms, evidence standards and research gaps.",
+      "skill": "quantitative-literacy",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w34-transfer-v3-05",
+      "question": "A peer reviewer challenges the sample selection but the draft provides no rationale. Which repair is appropriate?",
+      "options": [
+        "Assert that famous cases require no rationale.",
+        "Remove methods from the paper.",
+        "Explain why cases were chosen, likely biases and the claim's generalizability limits.",
+        "Change the sample size in the title."
       ],
       "answer": 2,
-      "explanation": "Citation audit means a check that claims, quotations, data, and references are accurate and complete."
+      "explanation": "Explain why cases were chosen, likely biases and the claim's generalizability limits.",
+      "skill": "ethical-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 34 analysis?",
+      "id": "ss12-w34-transfer-v3-06",
+      "question": "A methods section calls a descriptive trend a controlled experiment. What correction protects validity?",
       "options": [
-        "The most confident source should be accepted without examining authority or method.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Revision is a reasoning process, not only proofreading."
+        "Keep the term experiment for prestige.",
+        "Label any chart a randomized trial.",
+        "Conclude causality from the graph alone.",
+        "Accurately identify the observational design and its limitations on causal claims."
       ],
       "answer": 3,
-      "explanation": "Revision is a reasoning process, not only proofreading."
+      "explanation": "Accurately identify the observational design and its limitations on causal claims.",
+      "skill": "methodology",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 34 analysis?",
+      "id": "ss12-w34-transfer-v3-07",
+      "question": "A senior discovers two credible sources disagree over the year a policy took effect. What belongs in the revision memo?",
       "options": [
-        "Political labels have exactly the same meaning in every country and period.",
-        "The most confident source should be accepted without examining authority or method.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "A thesis must distinguish evidence, analysis, inference, and recommendation."
+        "The conflicting dates, authoritative chronology checked and justified final wording.",
+        "Only the preferred date.",
+        "An unmarked replacement of one source.",
+        "A claim that disagreement proves both false."
       ],
-      "answer": 3,
-      "explanation": "A thesis must distinguish evidence, analysis, inference, and recommendation."
+      "answer": 0,
+      "explanation": "The conflicting dates, authoritative chronology checked and justified final wording.",
+      "skill": "counterargument",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which research practice is most appropriate for Thesis Drafting and Peer Review?",
+      "id": "ss12-w34-transfer-v3-08",
+      "question": "An essay quotes a public document but the quotation omits a qualification. What should the author do?",
       "options": [
-        "Replace documentary evidence with political identity or intuition.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Trace claims to Complete draft, rubric, citation record, peer feedback, and version history, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Choose only evidence that supports the preferred conclusion."
+        "Retain the shortened wording without notation.",
+        "Restore necessary context and distinguish verbatim text from paraphrase.",
+        "Present a paraphrase inside quotation marks.",
+        "Discard the source's document identifier."
+      ],
+      "answer": 1,
+      "explanation": "Restore necessary context and distinguish verbatim text from paraphrase.",
+      "skill": "research-integrity",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w34-transfer-v3-09",
+      "question": "A statistical appendix uses percentages rounded differently in the text and figures. What is a sound editorial response?",
+      "options": [
+        "Choose the largest displayed percentage.",
+        "Remove denominators.",
+        "Recalculate from underlying values and use a consistent explained rounding policy.",
+        "Change data to fit a chart."
       ],
       "answer": 2,
-      "explanation": "Trace claims to Complete draft, rubric, citation record, peer feedback, and version history, evaluate authority and context, corroborate material facts, and state limitations."
+      "explanation": "Recalculate from underlying values and use a consistent explained rounding policy.",
+      "skill": "portfolio-evidence",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
+      "id": "ss12-w34-transfer-v3-10",
+      "question": "A final revision adds a counterargument but no answer to it. Which further step best demonstrates senior reasoning?",
       "options": [
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "List facts without connecting them to a claim.",
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+        "Label the counterargument irrational.",
+        "Delete the counterevidence.",
+        "Claim that the thesis title settles the dispute.",
+        "Represent the counterargument fairly, test supporting evidence and explain the qualified response."
       ],
       "answer": 3,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "Represent the counterargument fairly, test supporting evidence and explain the qualified response.",
+      "skill": "defense",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     }
   ],
   "shortResponse": "How can revision improve reasoning, evidence, organization, fairness, and academic integrity?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
