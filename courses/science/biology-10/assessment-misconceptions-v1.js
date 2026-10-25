@@ -5,7 +5,7 @@ window.KhaemenesBiology10Misconceptions={
   "title": "Biology 10 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/biology-10/question-bank.js",
-  "reviewedItemCount": 70,
+  "reviewedItemCount": 84,
   "items": {
     "bio-001": {
       "itemId": "bio-001",
@@ -1682,6 +1682,342 @@ window.KhaemenesBiology10Misconceptions={
           "optionIndex": 3,
           "misconceptionTag": "epigenetic-marks-always-inherited",
           "rationale": "Many epigenetic states are reversible or reset and are not guaranteed to persist across generations."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w27-concept": {
+      "itemId": "bio-sup-w27-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Converging evidence from fossils, comparative biology, genetics, and observed populations strengthens evolutionary inference.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "single-fossil-proves-lineage",
+          "rationale": "One fossil alone rarely resolves an entire evolutionary history."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "exclude-molecular-evidence",
+          "rationale": "Molecular data are an important independent evidence stream and should not be dismissed."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "evolution-as-progress-ladder",
+          "rationale": "Evolutionary relationships branch and do not rank organisms from lower to higher."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w27-evidence": {
+      "itemId": "bio-sup-w27-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Independent converging evidence provides stronger support than one repeated or selectively chosen observation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "single-similarity-is-sufficient",
+          "rationale": "One similarity can arise for multiple reasons and is weaker than converging independent evidence."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "repetition-is-not-independence",
+          "rationale": "Repeating the same source does not create independent evidence."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "confirmation-bias-evidence-selection",
+          "rationale": "Choosing only traits that fit the expected conclusion weakens inference."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w27-model": {
+      "itemId": "bio-sup-w27-model",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Evolutionary change is measured across populations and generations, not as need-driven genetic change within one individual.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "need-based-individual-evolution",
+          "rationale": "Individuals do not rewrite inherited genes because they need a trait."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "evolution-equals-progress",
+          "rationale": "Evolution does not inherently move toward greater complexity or perfection."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "evolution-stops-in-stable-environments",
+          "rationale": "Evolutionary processes can continue even when conditions appear relatively stable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w27-quantitative": {
+      "itemId": "bio-sup-w27-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "18/180 × 100 = 10% sequence difference.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "uses-difference-count-as-percent",
+          "rationale": "18 is the number of differing positions, not the percentage."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "reports-percent-similarity-instead-of-difference",
+          "rationale": "90% is sequence similarity, not sequence difference."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "multiplies-instead-of-dividing",
+          "rationale": "162% does not follow differences/total × 100."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w28-concept": {
+      "itemId": "bio-sup-w28-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Population genetics studies allele/genotype frequencies and how forces such as selection, drift, mutation, and migration change them.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "population-genetics-equals-census-size",
+          "rationale": "Population genetics focuses on allele/genotype frequencies, not only population size."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "population-genetics-assumes-no-change",
+          "rationale": "The field specifically studies changes in genetic frequencies."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "individual-mutation-only",
+          "rationale": "Population genetics examines population-level frequency patterns across generations."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w28-evidence": {
+      "itemId": "bio-sup-w28-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Repeated allele-frequency measurements across generations directly test population genetic change.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "single-phenotype-snapshot",
+          "rationale": "One phenotype snapshot cannot directly establish allele-frequency change over generations."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "species-list-without-frequency-data",
+          "rationale": "A species list lacks population genetic frequency information."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "one-individual-repeated",
+          "rationale": "Repeated measurement of one individual does not test population allele-frequency change."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w28-model": {
+      "itemId": "bio-sup-w28-model",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Hardy-Weinberg equilibrium is a conditional null model, not a universal law that populations never evolve.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "hardy-weinberg-means-no-evolution-ever",
+          "rationale": "Hardy-Weinberg is a null expectation under assumptions, not proof that real populations never evolve."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "hardy-weinberg-with-violated-assumptions",
+          "rationale": "Strong selection, migration, or nonrandom mating violate key equilibrium assumptions."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "hardy-weinberg-equalizes-alleles",
+          "rationale": "The model does not predict all allele frequencies become equal."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w29-concept": {
+      "itemId": "bio-sup-w29-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Natural selection requires heritable variation and differential reproductive success.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "need-based-gene-change",
+          "rationale": "Natural selection does not depend on intentional gene changes by individuals."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "equal-reproduction-allows-selection",
+          "rationale": "Without reproductive differences tied to heritable variation, selection cannot shift frequencies."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "environment-creates-needed-mutations",
+          "rationale": "Mutations arise without foresight; environments filter existing heritable variation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w29-evidence": {
+      "itemId": "bio-sup-w29-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Selection is supported when heritable variation predicts reproductive success and population frequency change.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "nonheritable-trait-selection-confusion",
+          "rationale": "A nonheritable difference cannot directly produce evolutionary response through selection."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phenotype-difference-without-fitness",
+          "rationale": "A trait difference alone does not show differential reproductive success."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "environment-change-without-frequency-response",
+          "rationale": "Environmental change by itself is not evidence that selection changed trait frequencies."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w29-model": {
+      "itemId": "bio-sup-w29-model",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Natural selection filters heritable variation but does not operate by conscious need or guarantee perfect outcomes.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "selection-produces-perfect-adaptation",
+          "rationale": "Selection is constrained by history, tradeoffs, variation, and changing environments."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "organisms-choose-selected-traits",
+          "rationale": "Selection acts on differential reproduction, not conscious trait choice."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "beneficial-allele-always-fixes",
+          "rationale": "Drift, tradeoffs, changing environments, and gene flow can prevent fixation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w29-quantitative": {
+      "itemId": "bio-sup-w29-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Relative fitness = 4/6 ≈ 0.67.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "inverts-relative-fitness",
+          "rationale": "6/4=1.5 reverses the requested comparison."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "uses-offspring-difference",
+          "rationale": "2 is the absolute difference, not relative fitness."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "adds-offspring-counts",
+          "rationale": "10 is the total offspring count, not a ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w30-concept": {
+      "itemId": "bio-sup-w30-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Speciation involves sustained lineage divergence and reproductive isolation, not mere geographic separation or one mutation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "speciation-equals-population-growth",
+          "rationale": "Population size can change without creating reproductive isolation."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "one-mutation-instantly-causes-speciation",
+          "rationale": "Speciation generally requires broader lineage divergence and reproductive isolation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "geographic-separation-alone-defines-species",
+          "rationale": "Geographic separation can contribute to speciation but is not itself sufficient."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w30-evidence": {
+      "itemId": "bio-sup-w30-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Shared derived characters and independent genetic evidence provide stronger phylogenetic support.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "body-size-alone-phylogeny",
+          "rationale": "Overall size is weak evidence and can evolve independently in unrelated groups."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "geography-alone-phylogeny",
+          "rationale": "Geographic proximity does not establish common ancestry without biological evidence."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "ancestral-trait-as-derived-evidence",
+          "rationale": "Widely shared ancestral traits are less informative than shared derived characters for resolving branches."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w30-model": {
+      "itemId": "bio-sup-w30-model",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Phylogenetic trees represent hypothesized branching relationships and should not be read as progress ladders or direct ancestry unless supported.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phylogeny-progress-ladder",
+          "rationale": "Tree position does not rank species by evolutionary advancement."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "nearby-tips-direct-ancestor",
+          "rationale": "Closely placed living species usually share a common ancestor; one is not necessarily the other's ancestor."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "branch-length-always-time",
+          "rationale": "Branch length represents time only when the tree explicitly uses a time scale."
         }
       ],
       "reviewedAt": "2026-10-25",
