@@ -14,6 +14,11 @@ const need=(ok,msg)=>(ok?passes:failures).push(msg);
 const warn=(ok,msg)=>{if(!ok)warnings.push(msg)};
 const norm=s=>String(s??"").toLowerCase().replace(/[^\p{L}\p{N}]+/gu," ").trim();
 const normOption=s=>String(s??"").normalize("NFKC").replace(/\s+/gu," ").trim(); // Preserve case: RR, Rr, and rr are different genotypes.
+const sharedFormative=path.join(repoRoot,"courses","shared","high-school-formative-evidence-v1.js");
+need(exists(sharedFormative),"shared formative evidence layer exists");
+if(exists(sharedFormative))need(read(sharedFormative).includes("attachScienceInvestigationNotebook"),"science investigation loader exists in shared formative layer");
+const sharedInquiry=path.join(scienceRoot,"inquiry-ledger","index.html");
+need(exists(sharedInquiry),"shared Grades 10–12 inquiry ledger exists");
 
 function parseAssignedArray(file){
   const raw=read(file),m=raw.match(/=\s*(\[[\s\S]*\]);?\s*$/);
@@ -72,16 +77,41 @@ function auditUpperCourse(slug,label){
   const portal=path.join(root,"index.html");
   if(exists(portal)){
     const c=read(portal);
+    need(c.includes("../inquiry-ledger/?course="+slug),label+" links shared inquiry-time ledger");
     need(c.includes("monte-carlo-assessment-v1.js"),label+" portal uses Monte Carlo engine");
     need(c.includes("assessmentHistory"),label+" portal retains assessment history");
     need(/masteryScore|state\.mastery|mastery\s*:/.test(c),label+" portal has weekly mastery state");
     need(c.includes("Corrections/Reassessment"),label+" report distinguishes remediation from mastery");
     need(c.includes("Reviewed"),label+" report distinguishes review/evidence from mastery");
   }
+  const mapFile=path.join(root,"course-map.json");
+  if(exists(mapFile)){
+    try{
+      const parsed=JSON.parse(read(mapFile)),weeks=Array.isArray(parsed)?parsed:(parsed.weeks||[]);
+      const vague=weeks.filter(w=>/(open text|teacher-approved|trusted source|trusted educational|student-selected trusted|prepared micrographs)/i.test(String(w.reading||""))&&!/linked Deep Lesson|lesson page is the required reading/i.test(String(w.reading||"")));
+      need(vague.length===0,label+" canonical Tuesday Deep Lesson reading contract ("+vague.length+" vague)");
+    }catch(e){failures.push(label+" course map parse: "+e.message)}
+  }
+  if(slug==="biology-10"||slug==="physics-engineering-12"){
+    need(c.includes("science-misconception-guidance-v1.js"),label+" loads reasoning diagnostic guidance");
+    need(c.includes("diagnostic=window.KhaeScienceMisconceptionGuidance"),label+" practice corrections capture diagnostic route");
+  }
   auditBank(path.join(root,"question-bank.js"),label,{min:180});
 }
 function auditGrade9(){
   const root=path.join(scienceRoot,"integrated-science-9");
+  const u01=path.join(root,"units","unit-01"),u01js=path.join(u01,"unit01.js");
+  need(exists(u01js),"Science 9 Unit 01 identity adapter exists");
+  if(exists(u01js)){
+    const identity=read(u01js);
+    need(identity.includes("Academy-first, legacy-preserving"),"Science 9 Unit 01 Academy-first identity adapter");
+    need(identity.includes("if(academy?.learnerId)return String(academy.learnerId)"),"Science 9 Unit 01 Academy identity authority");
+    need(identity.includes("return legacyActive()"),"Science 9 Unit 01 legacy recovery fallback preserved");
+  }
+  for(const rel of ["index.html","dataset-laboratory.html","investigation-design-task.html","paper-helicopter-investigation.html","student-record.html","mastery-quiz.html","unit-assessment.html",...Array.from({length:10},(_,i)=>"lessons/day-"+String(i+1).padStart(2,"0")+".html")]){
+    const file=path.join(u01,rel);if(!exists(file))continue;const source=read(file),contract=source.indexOf("course-entry-contract.js"),unit=source.indexOf("unit01.js");
+    if(unit>=0)need(contract>=0&&contract<unit,"Science 9 Unit 01 Academy identity contract before state on "+rel);
+  }
   for(let u=1;u<=12;u++){
     const up=String(u).padStart(2,"0"),unit=path.join(root,"units","unit-"+up);
     const bank=auditBank(path.join(unit,"question-bank.js"),"Science 9 Unit "+up,{min:50});
