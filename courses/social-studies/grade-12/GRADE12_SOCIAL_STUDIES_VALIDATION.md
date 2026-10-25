@@ -90,3 +90,21 @@ The package is designed to provide a rigorous and reviewable national-portabilit
 - Week 13–24 batch: 48 entries
 - Week 25–36 batch: 48 entries
 - Corrupt archive entries detected: 0
+
+
+## Transfer-assessment hardening — 2026-10-24
+
+The weekly assessment source of truth was reconciled after a forensic audit found that the live portal had stronger transfer-oriented banks than the checked-in `week-XX/quiz.json` and course-data artifacts.
+
+Current canonical requirements:
+
+- 36 weekly quizzes × 10 objective items = **360** objective items;
+- no more than **20%** stand-alone vocabulary recall in any weekly bank;
+- at least **50%** source/data/map/case or other disciplinary-transfer items in every weekly bank;
+- every item carries a stable ID, skill, source type, valid four-option answer mapping, and assessment version;
+- `bankVersion: transfer-v3` is recorded in each weekly quiz file;
+- the 80% mastery floor is unchanged;
+- existing learner best scores remain preserved;
+- randomized fresh forms continue to use the shared first-party Monte Carlo assessment authority.
+
+Regression: `node validation/validate-transfer-quizzes.mjs`.
