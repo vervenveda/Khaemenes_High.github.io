@@ -160,3 +160,13 @@
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});
  else init();
 })();
+
+/* Khaemenes High persistent learner toolbar bootstrap · Student Profile + Beta rail */
+(()=>{try{
+  const host=String(location.hostname||"").toLowerCase(),path=String(location.pathname||"").toLowerCase();
+  const high=host.includes("khaemenes-high")||path.includes("/khaemenes_high.github.io/");
+  if(!high)return;
+  const already=document.getElementById("vnvBetaProgramLink")||Array.from(document.scripts).some(s=>String(s.src||"").includes("/assets/vnv-beta-link.js"));
+  if(already)return;
+  const s=document.createElement("script");s.src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js";s.defer=true;s.dataset.khaemenesStudentToolbar="persistent-v1";(document.head||document.documentElement).append(s);
+}catch{}})();
