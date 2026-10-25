@@ -65,8 +65,8 @@ async function answerAllFirst(page){
  });
 }
 async function readRecord(page,key){return page.evaluate(k=>JSON.parse(localStorage.getItem(k)||"null"),key)}
-const expectedPools={10:60,11:120,12:60,13:60};
-const expectedBanks={10:"unit10-late-abundant-v1",11:"unit11-content-rebuild-v2",12:"unit12-late-abundant-v1",13:"unit13-late-abundant-v1"};
+const expectedPools={10:60,11:120,12:60,13:80};
+const expectedBanks={10:"unit10-late-abundant-v1",11:"unit11-content-rebuild-v2",12:"unit12-late-abundant-v1",13:"unit13-capstone-depth-v1"};
 const results=[];
 for(let unit=10;unit<=13;unit++){
  const page=await context.newPage(),errors=[];
@@ -107,8 +107,8 @@ for(let unit=10;unit<=13;unit++){
  const a1=first.attempts[0];
  assert.equal(a1.result_schema,"khaemenes-algebra1-unit-mastery-v4",`Unit ${unit}: result schema drift`);
  assert.equal(a1.evidenceSchema,"algebra1-answer-evidence-v2",`Unit ${unit}: evidence schema missing`);
- assert.equal(a1.formVersion,"algebra1-late-unit-monte-carlo-v1",`Unit ${unit}: form version missing`);
- assert.equal(a1.selectionPolicy,"lesson-balanced-low-overlap-v1",`Unit ${unit}: selection policy missing`);
+ assert.equal(a1.formVersion,unit===13?"algebra1-unit13-capstone-depth-v1":"algebra1-late-unit-monte-carlo-v1",`Unit ${unit}: form version missing`);
+ assert.equal(a1.selectionPolicy,unit===13?"lesson-balanced-capstone-depth-low-overlap-v1":"lesson-balanced-low-overlap-v1",`Unit ${unit}: selection policy missing`);
  assert.equal(a1.bankVersion,expectedBanks[unit],`Unit ${unit}: bank version drift`);
  assert.equal(a1.eligiblePoolSize,expectedPools[unit],`Unit ${unit}: eligible pool size drift`);
  assert.ok(Number.isInteger(a1.formSeed)&&a1.formSeed>0,`Unit ${unit}: form seed missing`);
@@ -125,6 +125,12 @@ for(let unit=10;unit<=13;unit++){
  }
  const firstPositions=[0,0,0,0];for(const x of a1.answerSnapshot)firstPositions[x.correctDisplayIndex]++;
  assert.deepEqual(firstPositions,[5,5,5,5],`Unit ${unit}: visible correct-answer positions are not balanced`);
+ if(unit===13){
+  assert.ok(a1.capstoneQuantitativeCount>=10,"Unit 13: first form has fewer than 10 quantitative capstone items");
+  assert.equal(a1.capstoneQuantitativeMinimum,10,"Unit 13: quantitative minimum evidence drift");
+  assert.deepEqual(a1.capstoneLessonQuantitativeCounts?.map(x=>x.count),[2,2,2,2,2],"Unit 13: first form must contain two quantitative capstone items per lesson");
+  assert.equal(a1.answerSnapshot.filter(x=>x.capstoneDepth==="quantitative").length,a1.capstoneQuantitativeCount,"Unit 13: snapshot quantitative count drift");
+ }
  const firstIds=[...a1.items];
 
  await page.locator("#reset").click();
@@ -150,15 +156,20 @@ for(let unit=10;unit<=13;unit++){
  assert.equal(a2.items.filter(id=>new Set(firstIds).has(id)).length,0,`Unit ${unit}: retake repeated a prior-form item`);
  const secondPositions=[0,0,0,0];for(const x of a2.answerSnapshot)secondPositions[x.correctDisplayIndex]++;
  assert.deepEqual(secondPositions,[5,5,5,5],`Unit ${unit}: retake answer positions are not balanced`);
+ if(unit===13){
+  assert.ok(a2.capstoneQuantitativeCount>=10,"Unit 13: retake has fewer than 10 quantitative capstone items");
+  assert.deepEqual(a2.capstoneLessonQuantitativeCounts?.map(x=>x.count),[2,2,2,2,2],"Unit 13: retake must contain two quantitative capstone items per lesson");
+  assert.equal(a2.items.filter(id=>id.startsWith("u13-depth-")).length,10,"Unit 13: retake should draw exactly ten tagged depth-bank items");
+ }
 
  await page.reload({waitUntil:"load"});
  await page.locator("#score").waitFor({state:"visible",timeout:15000});
  const after=await readRecord(page,key);
  assert.equal(after.attempts.length,2,`Unit ${unit}: reload lost attempt evidence`);
  assert.equal(errors.length,0,`Unit ${unit}: browser errors: ${errors.join(" | ")}`);
- results.push({unit,attemptsAfterReload:after.attempts.length,evidenceSchema:after.attempts[1].evidenceSchema,eligiblePoolSize:after.attempts[1].eligiblePoolSize,immediatePriorOverlap:after.attempts[1].immediatePriorOverlap,bankVersion:after.attempts[1].bankVersion});
+ results.push({unit,attemptsAfterReload:after.attempts.length,evidenceSchema:after.attempts[1].evidenceSchema,eligiblePoolSize:after.attempts[1].eligiblePoolSize,immediatePriorOverlap:after.attempts[1].immediatePriorOverlap,bankVersion:after.attempts[1].bankVersion,capstoneQuantitativeCount:unit===13?after.attempts[1].capstoneQuantitativeCount:null});
  await page.close();
 }
 await browser.close();await new Promise(resolve=>server.close(resolve));
 console.log("ALGEBRA I LATE-UNIT REAL-BROWSER REGRESSION: PASS");
-console.log(JSON.stringify({journey:"Unit 10 → Unit 11 → Unit 12 → Unit 13 formal mastery",checks:["20-item formal form from 60/120/60/60 eligible pools","immutable submitted controls","balanced visible answer positions","reviewed resolver feedback eligible","provisional resolver feedback suppressed","Unit 11 stale reviewed IDs overridden by provisional active mappings","explicit fresh-attempt control","0/20 immediate retake overlap","saved form seed and v2 reconstructable answer evidence","second attempt appended","reload persistence","no browser/page console errors"],results},null,2));
+console.log(JSON.stringify({journey:"Unit 10 → Unit 11 → Unit 12 → Unit 13 formal mastery",checks:["20-item formal form from 60/120/60/80 eligible pools","immutable submitted controls","balanced visible answer positions","Unit 13 guarantees 10 quantitative capstone items, two per lesson","reviewed resolver feedback eligible","provisional resolver feedback suppressed","Unit 11 stale reviewed IDs overridden by provisional active mappings","explicit fresh-attempt control","0/20 immediate retake overlap","saved form seed and v2 reconstructable answer evidence","second attempt appended","reload persistence","no browser/page console errors"],results},null,2));
