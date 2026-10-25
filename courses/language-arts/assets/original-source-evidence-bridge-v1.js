@@ -1,0 +1,21 @@
+(()=>{"use strict";
+const section=document.querySelector("#academy-original-source-studio,#academy-week01-source-studio");
+if(!section)return;
+const grade=section.dataset.academyGrade||location.pathname.match(/english-(\d+)/)?.[1];
+const week=section.dataset.academyWeek||location.pathname.match(/week-(\d+)/)?.[1];
+const profile=()=>window.KhaemenesCourseEntryContract?.readAcademyProfile?.()||null;
+const owner=profile()?.learnerId||null;
+const key="khae-english-source-draft-v1:grade-"+grade+":week-"+Number(week)+":learner:"+encodeURIComponent(owner||"");
+const form=document.createElement("div");form.className="academy-source-evidence-bridge";
+const header=document.createElement("h3");header.textContent="My source analysis · Saved draft";
+const note=document.createElement("p");note.textContent="Formative draft saved only on this device for the selected Academy learner. It does not submit a grade or grant credit.";
+const field=document.createElement("textarea");field.rows=8;field.style.cssText="width:100%;min-height:160px;font:inherit;padding:12px;border:1px solid #928674;border-radius:7px";field.setAttribute("aria-label","Your original source-analysis draft");
+const status=document.createElement("p");status.setAttribute("role","status");
+const print=document.createElement("button");print.type="button";print.textContent="Print source evidence";print.style.cssText="font:inherit;padding:9px 14px;border-radius:7px;cursor:pointer";
+const current=()=>!!owner&&profile()?.learnerId===owner;
+function recover(){if(!current()){field.disabled=true;print.disabled=true;status.textContent="Select an Academy learner and reload to access this draft.";return;}try{field.value=localStorage.getItem(key)||"";status.textContent="Draft ready for this learner.";}catch{field.disabled=true;status.textContent="Local storage unavailable; draft saving is disabled.";}}
+field.addEventListener("input",()=>{if(!current()){field.disabled=true;status.textContent="Learner changed. Reload to avoid mixing records.";return;}try{localStorage.setItem(key,field.value);status.textContent="Draft saved locally.";}catch{status.textContent="Save failed. Copy your draft before leaving."; }});
+print.addEventListener("click",()=>{if(!current())return;const output=document.createElement("div");output.id="academy-source-print-preview";output.style.cssText="white-space:pre-wrap;padding:16px;border:1px solid #aaa;margin:12px 0";output.textContent="Khaemenes Academy · English "+grade+" · Week "+week+"\nReading: "+(section.querySelector("h3")?.textContent||"Original source")+"\n\n"+field.value;form.appendChild(output);window.print();output.remove();});
+window.addEventListener("focus",()=>{if(!current()){field.disabled=true;print.disabled=true;status.textContent="Learner changed. Reload this page."; }});
+form.append(header,note,field,status,print);section.appendChild(form);recover();
+})();
