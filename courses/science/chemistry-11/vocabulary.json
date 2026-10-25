@@ -1,0 +1,1711 @@
+{
+  "schema": "khaemenes-vocabulary-v1",
+  "course": "chemistry-11",
+  "title": "International Chemistry & Materials Science 11 · Canonical Vocabulary",
+  "status": "course-aligned-source-reviewed-v1",
+  "practiceOnly": true,
+  "generatedFrom": "36-week Chemistry course concepts and reviewed course language",
+  "terms": [
+    {
+      "term": "hazard",
+      "definition": "A chemical, physical, or procedural source with the potential to cause harm.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “hazard” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "PPE",
+      "definition": "Personal protective equipment used to reduce exposure to laboratory hazards.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “PPE” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "SDS",
+      "definition": "A Safety Data Sheet describing chemical hazards, handling, storage, and emergency information.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “SDS” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "significant figures",
+      "definition": "Digits in a measured value that communicate the precision supported by the measurement.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “significant figures” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "dimensional analysis",
+      "definition": "A problem-solving method that uses unit relationships as conversion factors.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “dimensional analysis” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "proton",
+      "definition": "A positively charged subatomic particle found in the atomic nucleus.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “proton” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "neutron",
+      "definition": "An electrically neutral subatomic particle found in the atomic nucleus.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “neutron” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "electron",
+      "definition": "A negatively charged subatomic particle occupying regions around the nucleus.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “electron” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "nucleus",
+      "definition": "The dense central region of an atom containing protons and neutrons.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “nucleus” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "atomic model",
+      "definition": "A scientific representation used to explain and predict atomic structure and behavior.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “atomic model” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "isotope",
+      "definition": "An atom of an element with the same proton number but a different neutron number.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “isotope” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "mass number",
+      "definition": "The total number of protons and neutrons in an atom's nucleus.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “mass number” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "atomic mass",
+      "definition": "The weighted average mass of an element's naturally occurring isotopes.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “atomic mass” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "isotopic abundance",
+      "definition": "The fraction or percentage of an element's atoms represented by a particular isotope.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “isotopic abundance” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "ion",
+      "definition": "An atom or molecule with a net electric charge caused by gain or loss of electrons.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “ion” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "energy level",
+      "definition": "An allowed quantized energy state for an electron in an atom.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “energy level” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "photon",
+      "definition": "A quantum of electromagnetic radiation carrying energy proportional to frequency.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “photon” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "spectrum",
+      "definition": "A distribution of electromagnetic radiation by wavelength, frequency, or energy.",
+      "weeks": [
+        4,
+        13
+      ],
+      "context": "Week 04, Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “spectrum” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "electron configuration",
+      "definition": "The arrangement of electrons among an atom's energy levels and orbitals.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “electron configuration” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "valence electron",
+      "definition": "An electron in the outer occupied energy level that often participates in bonding.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “valence electron” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "period",
+      "definition": "A horizontal row of the periodic table.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “period” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "group",
+      "definition": "A vertical column of the periodic table whose elements often share valence patterns and chemical behavior.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “group” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "atomic radius",
+      "definition": "A measure of atomic size based on the spatial extent of the electron cloud.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “atomic radius” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "ionization energy",
+      "definition": "The energy required to remove an electron from a gaseous atom or ion.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “ionization energy” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "electronegativity",
+      "definition": "The tendency of an atom in a bond to attract shared electrons.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “electronegativity” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "ionic bond",
+      "definition": "Electrostatic attraction between oppositely charged ions.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “ionic bond” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "crystal lattice",
+      "definition": "A repeating three-dimensional arrangement of particles in a crystalline solid.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “crystal lattice” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "formula unit",
+      "definition": "The lowest whole-number ratio of ions in an ionic compound.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “formula unit” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "charge balance",
+      "definition": "The condition in which total positive and negative charge combine to give the required net charge.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “charge balance” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "cation",
+      "definition": "A positively charged ion formed by loss of one or more electrons.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cation” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "covalent bond",
+      "definition": "A chemical bond formed through sharing of electron pairs between atoms.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “covalent bond” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "Lewis structure",
+      "definition": "A diagram showing valence electrons, bonds, and lone pairs in a molecule or ion.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “Lewis structure” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "octet model",
+      "definition": "A bonding model in which many main-group atoms tend toward eight valence electrons.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “octet model” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "bond order",
+      "definition": "The number of shared electron pairs between two bonded atoms.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “bond order” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "resonance model",
+      "definition": "A set of valid Lewis structures used together when one structure cannot represent electron distribution adequately.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “resonance model” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "electron domain",
+      "definition": "A region of electron density around a central atom used in molecular-geometry models.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “electron domain” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "molecular geometry",
+      "definition": "The three-dimensional arrangement of atoms in a molecule.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “molecular geometry” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "polarity",
+      "definition": "Uneven distribution of electrical charge in a bond or molecule.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “polarity” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "dipole",
+      "definition": "A separation of partial positive and negative charge.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “dipole” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "symmetry",
+      "definition": "A balanced geometric arrangement that can influence whether bond dipoles cancel.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “symmetry” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "metallic bonding",
+      "definition": "Attraction between metal cations and delocalized valence electrons in a metallic solid.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “metallic bonding” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "network solid",
+      "definition": "A solid composed of atoms connected in an extended covalent bonding network.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “network solid” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "crystal",
+      "definition": "A solid whose particles are arranged in a repeating ordered pattern.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “crystal” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "alloy",
+      "definition": "A metallic material composed of two or more elements, at least one of which is a metal.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “alloy” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "structure–property relationship",
+      "definition": "A connection between a material's microscopic structure and its observable properties.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “structure–property relationship” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "dispersion force",
+      "definition": "An intermolecular attraction arising from temporary fluctuations in electron distribution.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “dispersion force” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "dipole–dipole force",
+      "definition": "Attraction between permanent partial charges of polar molecules.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “dipole–dipole force” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "hydrogen bonding",
+      "definition": "A relatively strong intermolecular attraction involving hydrogen bonded to highly electronegative atoms.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “hydrogen bonding” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "intermolecular force",
+      "definition": "An attractive or repulsive interaction between separate molecules or particles.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “intermolecular force” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "boiling point",
+      "definition": "The temperature at which a liquid's vapor pressure equals the surrounding pressure.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “boiling point” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "pressure",
+      "definition": "Force exerted per unit area, often produced by particle collisions in a gas.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “pressure” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "temperature",
+      "definition": "A measure related to the average kinetic energy of particles.",
+      "weeks": [
+        11,
+        20
+      ],
+      "context": "Week 11, Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “temperature” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "volume",
+      "definition": "The amount of three-dimensional space occupied by matter.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “volume” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "mole",
+      "definition": "The SI amount-of-substance unit containing Avogadro's number of specified entities.",
+      "weeks": [
+        11,
+        15
+      ],
+      "context": "Week 11, Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “mole” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "kinetic molecular theory",
+      "definition": "A model explaining gas behavior through particle motion, collisions, and negligible particle volume under ideal conditions.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “kinetic molecular theory” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "solute",
+      "definition": "The substance dissolved in a solution.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “solute” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "solvent",
+      "definition": "The substance that dissolves a solute and usually forms the larger portion of a solution.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “solvent” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "molarity",
+      "definition": "Moles of solute per liter of solution.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “molarity” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "dilution",
+      "definition": "Lowering solution concentration by adding solvent while conserving solute amount.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “dilution” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "solubility",
+      "definition": "The amount of a substance that can dissolve under specified conditions.",
+      "weeks": [
+        12,
+        28
+      ],
+      "context": "Week 12, Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “solubility” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "mixture",
+      "definition": "A physical combination of substances whose components retain their chemical identities.",
+      "weeks": [
+        13
+      ],
+      "context": "Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “mixture” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "chromatography",
+      "definition": "A separation method based on different interactions with stationary and mobile phases.",
+      "weeks": [
+        13
+      ],
+      "context": "Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “chromatography” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "calibration",
+      "definition": "Comparison of an instrument response with known standards to improve quantitative interpretation.",
+      "weeks": [
+        13
+      ],
+      "context": "Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “calibration” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "retention",
+      "definition": "The degree to which a component is delayed or held during a separation process.",
+      "weeks": [
+        13
+      ],
+      "context": "Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “retention” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "reactant",
+      "definition": "A starting substance consumed or transformed in a chemical reaction.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “reactant” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "product",
+      "definition": "A substance formed by a chemical reaction.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “product” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "coefficient",
+      "definition": "A number placed before a chemical formula to indicate relative particle or mole amounts in an equation.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “coefficient” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "state symbol",
+      "definition": "Notation indicating a substance's physical state, such as solid, liquid, gas, or aqueous.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “state symbol” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "conservation of matter",
+      "definition": "The principle that atoms are rearranged in chemical reactions rather than created or destroyed.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “conservation of matter” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "Avogadro constant",
+      "definition": "The number of particles in one mole, approximately 6.022×10²³ mol⁻¹.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “Avogadro constant” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "molar mass",
+      "definition": "The mass of one mole of a substance.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “molar mass” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "stoichiometric ratio",
+      "definition": "A mole ratio derived from the coefficients of a balanced chemical equation.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “stoichiometric ratio” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "stoichiometry",
+      "definition": "Quantitative calculation of reactant and product amounts from a balanced chemical equation.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “stoichiometry” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "limiting reactant",
+      "definition": "The reactant consumed first and therefore limiting the maximum product amount.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “limiting reactant” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "excess reactant",
+      "definition": "A reactant present in more than the stoichiometric amount required.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “excess reactant” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "theoretical yield",
+      "definition": "The maximum product amount predicted from stoichiometry and the limiting reactant.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “theoretical yield” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "actual yield",
+      "definition": "The amount of product actually obtained in an experiment.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “actual yield” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "percent yield",
+      "definition": "Actual yield divided by theoretical yield, multiplied by 100 percent.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “percent yield” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "oxidation",
+      "definition": "Loss of electrons or increase in oxidation number.",
+      "weeks": [
+        17,
+        33
+      ],
+      "context": "Week 17, Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “oxidation” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "reduction",
+      "definition": "Gain of electrons or decrease in oxidation number.",
+      "weeks": [
+        17,
+        33
+      ],
+      "context": "Week 17, Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “reduction” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "oxidation number",
+      "definition": "A bookkeeping value used to track electron distribution in redox reactions.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “oxidation number” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "titration",
+      "definition": "A quantitative method in which a solution of known concentration reacts with an analyte to determine amount or concentration.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “titration” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "equivalence point",
+      "definition": "The point in a titration at which reactants have combined in their stoichiometric ratio.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “equivalence point” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "cumulative synthesis",
+      "definition": "Integration of ideas, calculations, models, and evidence from multiple chemistry units.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cumulative synthesis” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "correction",
+      "definition": "A documented revision that identifies and repairs an error in chemical reasoning or calculation.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “correction” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "remediation",
+      "definition": "Targeted practice designed to address a demonstrated chemistry learning gap.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “remediation” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "evidence trail",
+      "definition": "The record linking a chemical conclusion to observations, calculations, methods, and data.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “evidence trail” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "assessment integrity",
+      "definition": "Protection of valid assessment conditions and separation of public practice from protected exam content.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “assessment integrity” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "reaction rate",
+      "definition": "The change in concentration or amount of a reactant or product per unit time.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “reaction rate” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "concentration",
+      "definition": "Amount of solute or species present per defined quantity of solution or mixture.",
+      "weeks": [
+        19,
+        20
+      ],
+      "context": "Week 19, Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “concentration” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "slope",
+      "definition": "Rate of change represented by the steepness of a graph.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “slope” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "rate law",
+      "definition": "An equation relating reaction rate to reactant concentrations and experimentally determined exponents.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “rate law” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "initial rate",
+      "definition": "The reaction rate measured near the beginning of a reaction before concentrations change substantially.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “initial rate” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "collision theory",
+      "definition": "A model stating that reacting particles must collide with sufficient energy and suitable orientation.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “collision theory” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "activation energy",
+      "definition": "The minimum energy barrier that must be overcome for a reaction pathway to proceed.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “activation energy” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "surface area",
+      "definition": "The exposed area of a solid reactant available for collisions.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “surface area” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "reaction mechanism",
+      "definition": "A sequence of elementary steps proposed to explain how an overall reaction occurs.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “reaction mechanism” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "elementary step",
+      "definition": "A single molecular event within a reaction mechanism.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “elementary step” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "intermediate",
+      "definition": "A species formed in one mechanism step and consumed in a later step.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “intermediate” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "catalyst",
+      "definition": "A substance that increases reaction rate by providing an alternative pathway and is regenerated overall.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “catalyst” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "transition state",
+      "definition": "A high-energy arrangement of atoms along a reaction pathway.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “transition state” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "hypothesis",
+      "definition": "A testable proposed explanation or prediction.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “hypothesis” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "independent variable",
+      "definition": "The factor deliberately changed in an investigation.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “independent variable” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "rate model",
+      "definition": "A mathematical or conceptual representation used to describe reaction-rate behavior.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “rate model” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "residual",
+      "definition": "The difference between an observed value and a model-predicted value.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “residual” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "uncertainty",
+      "definition": "A quantified or described limit on the precision of a measurement or conclusion.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “uncertainty” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "system",
+      "definition": "The matter or region selected for thermodynamic analysis.",
+      "weeks": [
+        23
+      ],
+      "context": "Week 23",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “system” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "surroundings",
+      "definition": "Everything outside the defined thermodynamic system.",
+      "weeks": [
+        23
+      ],
+      "context": "Week 23",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “surroundings” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "heat",
+      "definition": "Energy transferred because of a temperature difference.",
+      "weeks": [
+        23
+      ],
+      "context": "Week 23",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “heat” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "enthalpy",
+      "definition": "A thermodynamic state function commonly used to track heat transfer at constant pressure.",
+      "weeks": [
+        23,
+        32
+      ],
+      "context": "Week 23, Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “enthalpy” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "calorimeter",
+      "definition": "An apparatus used to measure heat transfer by monitoring temperature change.",
+      "weeks": [
+        23
+      ],
+      "context": "Week 23",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “calorimeter” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "bond energy",
+      "definition": "Energy required to break a specified chemical bond in the gas phase, often treated as an average value.",
+      "weeks": [
+        24
+      ],
+      "context": "Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “bond energy” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "Hess's law",
+      "definition": "The principle that overall enthalpy change equals the sum of enthalpy changes for any valid sequence of steps.",
+      "weeks": [
+        24
+      ],
+      "context": "Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “Hess's law” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "state function",
+      "definition": "A property determined only by the current state, not by the path taken to reach it.",
+      "weeks": [
+        24
+      ],
+      "context": "Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “state function” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "reaction pathway",
+      "definition": "A sequence of steps connecting reactants to products.",
+      "weeks": [
+        24
+      ],
+      "context": "Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “reaction pathway” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "enthalpy change",
+      "definition": "The difference in enthalpy between products and reactants for a process.",
+      "weeks": [
+        24
+      ],
+      "context": "Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “enthalpy change” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "entropy",
+      "definition": "A thermodynamic state function related to the number and distribution of accessible microscopic arrangements.",
+      "weeks": [
+        25,
+        32
+      ],
+      "context": "Week 25, Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “entropy” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "energy dispersal",
+      "definition": "Spreading of energy among more particles or available modes.",
+      "weeks": [
+        25
+      ],
+      "context": "Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “energy dispersal” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "microstate",
+      "definition": "One specific microscopic arrangement consistent with a system's macroscopic state.",
+      "weeks": [
+        25
+      ],
+      "context": "Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “microstate” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "spontaneity",
+      "definition": "The thermodynamic tendency of a process to proceed under specified conditions.",
+      "weeks": [
+        25,
+        32
+      ],
+      "context": "Week 25, Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “spontaneity” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "second law of thermodynamics",
+      "definition": "The principle that total entropy of an isolated system does not decrease in a spontaneous process.",
+      "weeks": [
+        25
+      ],
+      "context": "Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “second law of thermodynamics” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "dynamic equilibrium",
+      "definition": "A state in which forward and reverse reaction rates are equal while reactions continue microscopically.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “dynamic equilibrium” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "equilibrium constant",
+      "definition": "A temperature-dependent ratio describing equilibrium composition for a specified reaction.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “equilibrium constant” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "reaction quotient",
+      "definition": "A ratio with the same form as the equilibrium expression but calculated from current, not necessarily equilibrium, concentrations or pressures.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “reaction quotient” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "forward reaction",
+      "definition": "The reaction direction written from reactants toward products.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “forward reaction” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "reverse reaction",
+      "definition": "The reaction direction written from products toward reactants.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “reverse reaction” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "stress",
+      "definition": "A change in concentration, pressure, volume, or temperature imposed on an equilibrium system.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “stress” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "equilibrium shift",
+      "definition": "A change in equilibrium composition after conditions are altered.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “equilibrium shift” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "equilibrium position",
+      "definition": "The relative amounts of reactants and products present at equilibrium.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “equilibrium position” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "Le Châtelier's principle",
+      "definition": "A qualitative rule predicting how an equilibrium system responds to a disturbance.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “Le Châtelier's principle” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "temperature effect",
+      "definition": "A change in equilibrium caused by altering temperature, which changes the equilibrium constant.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “temperature effect” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "saturation",
+      "definition": "A condition in which a solution contains the equilibrium amount of dissolved solute under given conditions.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “saturation” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "precipitation",
+      "definition": "Formation of a solid from dissolved ions or molecules in solution.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “precipitation” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "Ksp",
+      "definition": "The solubility-product equilibrium constant for a sparingly soluble ionic solid.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “Ksp” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "common-ion effect",
+      "definition": "Reduced solubility or altered equilibrium caused by adding an ion already present in the equilibrium expression.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “common-ion effect” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "acid",
+      "definition": "A species that donates a proton in a Brønsted–Lowry reaction.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “acid” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "base",
+      "definition": "A species that accepts a proton in a Brønsted–Lowry reaction.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “base” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "proton donor",
+      "definition": "A species that transfers H⁺ to another species.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “proton donor” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "conjugate pair",
+      "definition": "Two species that differ by one proton.",
+      "weeks": [
+        29,
+        31
+      ],
+      "context": "Week 29, Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “conjugate pair” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "amphoteric",
+      "definition": "Able to act as either an acid or a base depending on reaction partner.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “amphoteric” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "pH",
+      "definition": "A logarithmic measure related to hydrogen-ion activity or concentration in aqueous solution.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “pH” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "pOH",
+      "definition": "A logarithmic measure related to hydroxide-ion activity or concentration in aqueous solution.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “pOH” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "strong acid",
+      "definition": "An acid that ionizes essentially completely in water under ordinary dilute conditions.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “strong acid” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "weak acid",
+      "definition": "An acid that ionizes only partially and establishes an equilibrium in water.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “weak acid” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "indicator",
+      "definition": "A substance whose color or other property changes over a characteristic pH range.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “indicator” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "buffer",
+      "definition": "A solution that resists large pH changes when small amounts of acid or base are added.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “buffer” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "buffer capacity",
+      "definition": "The amount of acid or base a buffer can neutralize before its pH changes substantially.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “buffer capacity” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "equilibrium",
+      "definition": "A dynamic state in which opposing process rates are equal.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “equilibrium” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "chemical regulation",
+      "definition": "Control of chemical conditions through coupled equilibria or reaction processes.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “chemical regulation” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "Gibbs free energy",
+      "definition": "A thermodynamic state function used to predict spontaneity at constant temperature and pressure.",
+      "weeks": [
+        32
+      ],
+      "context": "Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “Gibbs free energy” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "coupling",
+      "definition": "Linking an unfavorable process to a favorable one so the combined process can proceed.",
+      "weeks": [
+        32
+      ],
+      "context": "Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “coupling” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "anode",
+      "definition": "The electrode where oxidation occurs.",
+      "weeks": [
+        33
+      ],
+      "context": "Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “anode” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "cathode",
+      "definition": "The electrode where reduction occurs.",
+      "weeks": [
+        33
+      ],
+      "context": "Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cathode” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "cell potential",
+      "definition": "The electrical potential difference between electrodes in an electrochemical cell.",
+      "weeks": [
+        33
+      ],
+      "context": "Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cell potential” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "radioactive isotope",
+      "definition": "An isotope with an unstable nucleus that can undergo spontaneous nuclear decay.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “radioactive isotope” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "radioactive decay",
+      "definition": "Spontaneous transformation of an unstable nucleus with emission of particles or radiation.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “radioactive decay” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "fission",
+      "definition": "Splitting of a heavy atomic nucleus into smaller nuclei with release of energy.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “fission” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "fusion",
+      "definition": "Combining light nuclei into heavier nuclei with release of energy under suitable conditions.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “fusion” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "polymer",
+      "definition": "A large molecule made from repeating structural units called monomers.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “polymer” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "green chemistry",
+      "definition": "Design of chemical products and processes to reduce hazards, waste, and environmental impact.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “green chemistry” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "life-cycle analysis",
+      "definition": "Evaluation of material and energy impacts across production, use, and end-of-life stages.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “life-cycle analysis” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "criterion",
+      "definition": "A measurable standard used to judge design performance.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “criterion” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "constraint",
+      "definition": "A nonnegotiable requirement or limit that a design must satisfy.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “constraint” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "tradeoff",
+      "definition": "A compromise in which improving one design objective may reduce performance on another.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “tradeoff” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "portfolio defense",
+      "definition": "A structured explanation of how selected chemistry work demonstrates learning and laboratory reasoning.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “portfolio defense” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "synthesis",
+      "definition": "Integration of evidence, models, calculations, and concepts into a coherent explanation.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “synthesis” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "limitation",
+      "definition": "A condition that restricts what a method, model, or dataset can support.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “limitation” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "revision",
+      "definition": "A change made to improve an explanation, calculation, method, or design in response to evidence.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “revision” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    },
+    {
+      "term": "laboratory communication",
+      "definition": "Clear reporting of methods, observations, data, uncertainty, reasoning, and conclusions.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “laboratory communication” accurately in a Chemistry explanation, calculation, model, laboratory record, or evidence statement."
+    }
+  ]
+}
