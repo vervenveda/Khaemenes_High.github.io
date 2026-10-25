@@ -20,8 +20,8 @@ const specs=[
   label:"Chemistry 11",
   bank:"courses/science/chemistry-11/question-bank.js",
   map:"courses/science/chemistry-11/assessment-misconceptions-v1.json",
-  expectedItems:205,
-  expectedDistractors:615,
+  expectedItems:339,
+  expectedDistractors:1017,
   coverageKey:q=>String(q.unit),
   expectedCoverageKeys:["U1","U2","U3","U4","U5","U6","U7","U8","U9","CAP"]
  }
@@ -40,8 +40,10 @@ for(const spec of specs){
  const map=JSON.parse(read(spec.map)),entries=Object.values(map.items||{});
  let distractors=0;const coveredKeys=new Set();
  if(map.schema!=="khaemenes.assessment-misconception-map.v1")failures.push(spec.label+": wrong schema");
+ if(spec.label==="Chemistry 11"&&map.distractorMappingRequired!==true)failures.push(spec.label+": distractorMappingRequired must be true after complete public-bank review");
  if(map.sourceBank!==spec.bank)failures.push(spec.label+": sourceBank drift");
  if(entries.length!==spec.expectedItems)failures.push(`${spec.label}: expected ${spec.expectedItems} reviewed items, found ${entries.length}`);
+ if(spec.label==="Chemistry 11"&&map.distractorMappingRequired===true&&entries.length!==bank.length)failures.push(spec.label+": required misconception mapping no longer covers the complete public bank");
  for(const rec of entries){
   const q=byId.get(String(rec.itemId));
   if(!q){failures.push(`${spec.label}: mapped item missing from bank: ${rec.itemId}`);continue}
