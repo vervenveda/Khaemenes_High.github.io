@@ -137,6 +137,7 @@ function render(){
    }
    card.append(addText("p",item.definition,"description"));
    if(item.context)card.append(addText("p","Lesson context: "+item.context,"meta"));
+   if(item.reviewStatus==="editorial-draft")card.append(addText("p","Definition draft · educator review pending","meta"));
    frag.append(card);
  }
  list.append(frag);
