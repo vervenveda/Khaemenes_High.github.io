@@ -2,116 +2,167 @@
   "title": "Week 25 Mastery Quiz · Migration, Refugees, Citizenship, and Statelessness",
   "questions": [
     {
-      "question": "Which definition best matches “refugee”?",
+      "id": "ss12-w25-transfer-v3-01",
+      "question": "A fictional family flees a city but remains within its own country's borders. Which classification warrants investigation?",
       "options": [
-        "Structured evaluation by another reader using shared criteria.",
-        "Exchange of timely information about hazards, uncertainty, and protective action.",
-        "A formally recorded unit of completed study verified by the responsible authority.",
-        "A person outside their country with a well-founded fear of persecution on protected grounds."
-      ],
-      "answer": 3,
-      "explanation": "Refugee means a person outside their country with a well-founded fear of persecution on protected grounds."
-    },
-    {
-      "question": "Which definition best matches “asylum”?",
-      "options": [
-        "A mandatory requirement that cannot be replaced by a weighted average.",
-        "Protection granted by a state to a qualifying person seeking refuge.",
-        "Presenting another person’s words, ideas, or work as one’s own.",
-        "A serious alternative claim or interpretation addressed by an argument."
+        "Refugee status follows automatically from any movement.",
+        "Internal displacement, rather than assuming crossing an international border.",
+        "The family has necessarily lost citizenship.",
+        "All internally displaced people are economic migrants."
       ],
       "answer": 1,
-      "explanation": "Asylum means protection granted by a state to a qualifying person seeking refuge."
+      "explanation": "Internal displacement, rather than assuming crossing an international border.",
+      "skill": "primary-source",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “internally displaced person”?",
+      "id": "ss12-w25-transfer-v3-02",
+      "question": "A student cites the 1951 Refugee Convention as automatically covering every person who changes residence. What must be corrected?",
       "options": [
-        "A principle concerning equal status, rights, opportunity, treatment, or outcomes.",
-        "A person forced from home who has not crossed an international border.",
-        "Independent evidence that supports, qualifies, or contradicts a claim.",
-        "Integration of concepts and evidence into a coherent conclusion."
-      ],
-      "answer": 1,
-      "explanation": "Internally displaced person means a person forced from home who has not crossed an international border."
-    },
-    {
-      "question": "Which definition best matches “statelessness”?",
-      "options": [
-        "The condition of not being recognized as a national by any state under its law.",
-        "A condition that narrows what evidence or a study can establish.",
-        "Constitutional division of authority between national and regional governments.",
-        "A structured set of ideas about society, power, rights, and political change."
-      ],
-      "answer": 0,
-      "explanation": "Statelessness means the condition of not being recognized as a national by any state under its law."
-    },
-    {
-      "question": "Which definition best matches “non-refoulement”?",
-      "options": [
-        "A political organization claiming authority over a territory and population.",
-        "Incremental weakening of competitive elections, rights, checks, or lawful accountability.",
-        "Court evaluation of whether government action complies with higher law.",
-        "The principle against returning a person to serious threats of persecution or harm."
-      ],
-      "answer": 3,
-      "explanation": "Non-refoulement means the principle against returning a person to serious threats of persecution or harm."
-    },
-    {
-      "question": "Which definition best matches “remittance”?",
-      "options": [
-        "A minimum share of votes required to qualify for representation.",
-        "Money transferred by migrants to people or communities in another place.",
-        "The principle that public and private actors are governed by known, generally applicable law.",
-        "Organizations and officials that administer laws and public programs."
-      ],
-      "answer": 1,
-      "explanation": "Remittance means money transferred by migrants to people or communities in another place."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 25 analysis?",
-      "options": [
-        "Migrant, refugee, asylum-seeker, displaced person, and stateless person are not interchangeable.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "A single vivid example proves a universal conclusion without qualification."
-      ],
-      "answer": 0,
-      "explanation": "Migrant, refugee, asylum-seeker, displaced person, and stateless person are not interchangeable."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 25 analysis?",
-      "options": [
-        "Migration has demographic, economic, cultural, security, and human consequences.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "The most confident source should be accepted without examining authority or method."
-      ],
-      "answer": 0,
-      "explanation": "Migration has demographic, economic, cultural, security, and human consequences."
-    },
-    {
-      "question": "Which research practice is most appropriate for Migration, Refugees, Citizenship, and Statelessness?",
-      "options": [
-        "Replace documentary evidence with political identity or intuition.",
-        "Trace claims to Refugee Convention materials, UNHCR data, migration statistics, and national policies, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Choose only evidence that supports the preferred conclusion.",
-        "Use the first search result and treat its summary as conclusive."
-      ],
-      "answer": 1,
-      "explanation": "Trace claims to Refugee Convention materials, UNHCR data, migration statistics, and national policies, evaluate authority and context, corroborate material facts, and state limitations."
-    },
-    {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
-      "options": [
-        "List facts without connecting them to a claim.",
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "Use a slogan as the conclusion and omit uncertainties."
+        "Every traveler falls under Article 1.",
+        "Migration never involves coercion.",
+        "Apply the definition and relevant legal circumstances rather than equating movement with refugee status.",
+        "The Convention is a population census."
       ],
       "answer": 2,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "Apply the definition and relevant legal circumstances rather than equating movement with refugee status.",
+      "skill": "data-interpretation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w25-transfer-v3-03",
+      "question": "An asylum assessment includes credible evidence of persecution but the research report repeats only the applicant's profession. What evidence is missing?",
+      "options": [
+        "The number of flights to the destination.",
+        "The host country's tourist arrivals.",
+        "The applicant's preferred language alone.",
+        "The asserted risk, protected-ground connection, location, relevant country information and legal criteria."
+      ],
+      "answer": 3,
+      "explanation": "The asserted risk, protected-ground connection, location, relevant country information and legal criteria.",
+      "skill": "measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w25-transfer-v3-04",
+      "question": "A fictional border policy reduces recorded arrivals by 20%, while attempted crossings are not counted. What can be concluded?",
+      "options": [
+        "Recorded arrivals fell, but the figures alone do not establish a decrease in underlying displacement.",
+        "The root causes of displacement disappeared.",
+        "All applicants received protection.",
+        "Border measures ended migration entirely."
+      ],
+      "answer": 0,
+      "explanation": "Recorded arrivals fell, but the figures alone do not establish a decrease in underlying displacement.",
+      "skill": "causal-inference",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w25-transfer-v3-05",
+      "question": "A public claim equates refugee status and statelessness. What is the correct analytical separation?",
+      "options": [
+        "Statelessness always means asylum was denied.",
+        "Refugee status and lack of nationality are distinct legal concepts that can overlap but are not identical.",
+        "A refugee never possesses nationality.",
+        "Every migrant automatically becomes stateless."
+      ],
+      "answer": 1,
+      "explanation": "Refugee status and lack of nationality are distinct legal concepts that can overlap but are not identical.",
+      "skill": "institutional-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w25-transfer-v3-06",
+      "question": "A city plans reception services based on 5,000 registered arrivals but excludes unregistered residents. What risk should planners recognize?",
+      "options": [
+        "The registration count is necessarily complete.",
+        "Unregistered residents have no needs.",
+        "Administrative totals may undercount service demand and require transparent coverage estimates.",
+        "City population figures cannot be compared."
+      ],
+      "answer": 2,
+      "explanation": "Administrative totals may undercount service demand and require transparent coverage estimates.",
+      "skill": "quantitative-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w25-transfer-v3-07",
+      "question": "A draft bilateral arrangement refers to transferring asylum applicants without evaluating danger in the receiving country. What must be reviewed?",
+      "options": [
+        "Only the flights' operating costs.",
+        "Whether both foreign ministers signed photographs.",
+        "Only the number of border checkpoints.",
+        "Applicable non-refoulement obligations, individualized risks, procedures and legal safeguards."
+      ],
+      "answer": 3,
+      "explanation": "Applicable non-refoulement obligations, individualized risks, procedures and legal safeguards.",
+      "skill": "case-comparison",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w25-transfer-v3-08",
+      "question": "An analyst says a diaspora sends larger remittances because its membership grew, but provides only total amounts. What additional calculation is useful?",
+      "options": [
+        "Per-sender trends, reporting coverage, inflation and exchange-rate changes.",
+        "Total remittances alone establish sender numbers.",
+        "Currency movements are irrelevant.",
+        "Every remittance is identical."
+      ],
+      "answer": 0,
+      "explanation": "Per-sender trends, reporting coverage, inflation and exchange-rate changes.",
+      "skill": "policy-evaluation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w25-transfer-v3-09",
+      "question": "An article frames all migration solely as a labor-market problem. Which evidence would broaden the inquiry?",
+      "options": [
+        "Average wages by themselves establish all duties.",
+        "Protection duties, family ties, fiscal effects, rights, integration and regional variation.",
+        "Border rules determine every household outcome.",
+        "Humanitarian issues cannot be analyzed."
+      ],
+      "answer": 1,
+      "explanation": "Protection duties, family ties, fiscal effects, rights, integration and regional variation.",
+      "skill": "source-limits",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w25-transfer-v3-10",
+      "question": "A government describes a removal decision as routine but provides no individualized case record. What is a defensible source conclusion?",
+      "options": [
+        "Every removal is automatically lawful.",
+        "No legal remedies could apply.",
+        "The public statement cannot establish that required legal and risk assessments occurred in each case.",
+        "The announcement substitutes for evidence of procedure."
+      ],
+      "answer": 2,
+      "explanation": "The public statement cannot establish that required legal and risk assessments occurred in each case.",
+      "skill": "research-methods",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     }
   ],
   "shortResponse": "How should states balance borders, sovereignty, labor needs, family unity, humanitarian protection, and equal dignity?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
