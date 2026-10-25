@@ -50,13 +50,25 @@ const origin=`http://127.0.0.1:${port}`;
 const browser=await chromium.launch({headless:true});
 const context=await browser.newContext();
 await context.addInitScript(()=>{
+  const learnerId="browser-regression-learner";
+  const scoped=base=>`${base}:learner:${encodeURIComponent(learnerId)}`;
+  localStorage.setItem("khaemenes_active_learner_v1",JSON.stringify(learnerId));
+  localStorage.setItem("khaemenes_family_registry_v1",JSON.stringify({
+    version:1,
+    learners:{
+      [learnerId]:{learnerId,nickname:"Browser Regression Learner"}
+    }
+  }));
+  localStorage.setItem(scoped("khaemenes-algebra1-diagnostic-result-v1"),JSON.stringify({
+    attempt_history:[{submitted_at:"2026-10-25T00:00:00.000Z",overall_percent:100}]
+  }));
   const mastery=(unit)=>localStorage.setItem(
-    `khaemenes-algebra1-unit${String(unit).padStart(2,"0")}-a3-v1`,
+    scoped(`khaemenes-algebra1-unit${String(unit).padStart(2,"0")}-a3-v1`),
     JSON.stringify({attempts:[],best:{mastery:100}})
   );
   mastery(4);
   mastery(8);
-  localStorage.setItem("khaemenes-algebra1-midterm-result-v1",JSON.stringify({
+  localStorage.setItem(scoped("khaemenes-algebra1-midterm-result-v1"),JSON.stringify({
     attempt_history:[{
       mastery:true,
       legacy_selected_only:false,
@@ -110,14 +122,25 @@ function distribution(values){
   return counts;
 }
 
-for(const test of cases){
-  const page=await context.newPage();
+for(const test of cases){\n  console.log(`[browser] Unit ${test.unit} · opening representative lesson`);\n  const page=await context.newPage();
   const url=`${origin}/courses/mathematics/algebra-1/units/unit-${test.unit}/lessons/${test.file}`;
   const consoleErrors=[];
   page.on("pageerror",err=>consoleErrors.push("pageerror: "+err.message));
   page.on("console",msg=>{if(msg.type()==="error")consoleErrors.push("console: "+msg.text())});
   await page.goto(url,{waitUntil:"load"});
-  await page.locator("#score").waitFor({state:"visible"});
+  try{
+    await page.locator("#score").waitFor({state:"visible",timeout:15000});
+  }catch(error){
+    const diagnostic=await page.evaluate(()=>({
+      pathname:location.pathname,
+      title:document.title,
+      bodyDataset:{...document.body.dataset},
+      mainText:(document.querySelector("#main")?.innerText||"").slice(0,1200),
+      scorePresent:!!document.querySelector("#score")
+    }));
+    console.error(`[browser] Unit ${test.unit} did not expose #score`,JSON.stringify({diagnostic,consoleErrors},null,2));
+    throw error;
+  }
   await page.waitForFunction(()=>document.querySelectorAll(".question").length===10);
 
   const initialPrompts=await questions(page);
