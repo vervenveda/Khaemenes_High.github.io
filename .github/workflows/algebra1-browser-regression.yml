@@ -1,0 +1,40 @@
+name: Algebra I Browser Regression
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "courses/mathematics/algebra-1/**"
+      - "tools/forensic-assessment-audit.mjs"
+      - ".github/workflows/algebra1-browser-regression.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  algebra1-browser-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Validate runtime assessment banks
+        run: node courses/mathematics/algebra-1/tools/validate-runtime-assessment-banks.mjs
+
+      - name: Validate dedicated misconception map
+        run: node courses/mathematics/algebra-1/tools/validate-dedicated-misconceptions-v1.mjs
+
+      - name: Run representative real-browser journey
+        run: node courses/mathematics/algebra-1/tools/browser-regression-units01-05-09.mjs
