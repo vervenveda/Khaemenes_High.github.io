@@ -103,6 +103,30 @@ The template-similarity heuristic marks approximately **49.2%** of Algebra I ite
 
 Formal Unit Mastery remains outside this lesson-form modification and was not weakened.
 
+
+### Algebra I runtime-aware correction · 2026-10-25
+
+The Algebra I certification model now distinguishes the learner-facing dedicated Unit 01–09 banks from the separate shared bank instead of treating the 435-item shared bank as a proxy for the entire course.
+
+Runtime-authoritative first-half coverage is now explicitly checked:
+
+- **610 dedicated questions** across **61 lessons** in Units 01–09;
+- **10 dedicated questions per lesson**;
+- Unit 01 lesson checks restored from 8 to **10 questions**;
+- Units 02–09 rebuild the first visible form with balanced correct-answer positions;
+- all **55 Unit 02–09 lessons** have **5 aligned shared alternates**, giving a **15-item lesson pool**;
+- retakes use **5 aligned alternate + 5 dedicated** questions rather than only moving option labels;
+- Units 02–09 store versioned immutable answer snapshots with delivered and original option indexes;
+- the alternate shared bank remains present in both Algebra I offline cache manifests.
+
+Dedicated runtime validation lives at:
+
+`courses/mathematics/algebra-1/tools/validate-runtime-assessment-banks.mjs`
+
+The runtime-aware audit also corrects the earlier misconception-coverage interpretation. The existing **271 mapped Algebra I items / 813 distractor rationales** belong to the shared bank. The **610 dedicated Unit 01–09 IDs currently have 0 direct misconception-map entries**. That is now reported as a WARN rather than being obscured by the shared-bank coverage figure.
+
+This is a source-level certification. Representative real-browser first-attempt → submit → lock → retake → reload journeys remain the final execution check.
+
 ## 4. Upper Science
 
 **Status: PASS for the four Phase 2 requirements; diagnostic warnings retained**
