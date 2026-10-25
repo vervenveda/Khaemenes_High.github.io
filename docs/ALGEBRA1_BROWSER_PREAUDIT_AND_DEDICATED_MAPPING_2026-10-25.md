@@ -101,11 +101,13 @@ After those corrections, the GitHub-hosted job reached both source validators an
 
 ### Certified execution result
 
-Workflow run: **40167547597**  
-Head commit: `1690dbb0b27c69de774f69152b79cb17370ee67d`  
+Workflow run: **40167818241**  
+Head commit: `d9d27348abcb9fe8e1e6a7ac82d8709c2980497f`  
 Result: **SUCCESS**
 
 The workflow reported:
+
+- Academy-wide consolidated assessment integration: **PASS WITH WARNINGS** · 33 PASS / 2 WARN / 0 FAIL;
 
 - runtime-assessment forensic validation: **PASS**;
 - dedicated misconception-map validation: **PASS**;
