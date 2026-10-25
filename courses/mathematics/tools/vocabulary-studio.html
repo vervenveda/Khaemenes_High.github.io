@@ -170,7 +170,7 @@ function render(){
  }).filter(item=>item.en);
  const q=query.value.trim().toLocaleLowerCase();
  const matching=records.filter(item=>([item.en,item[lang.value],item.definition].join(" ").toLocaleLowerCase().includes(q)));
- const matched=isEnglish(course.value)&&weekControl.value&&!q?matching.slice(0,6):matching;
+ const matched=isEnglish(course.value)&&weekControl.value&&!q?(matching.length>6&&quizItems.length?quizItems.map(q=>matching.find(t=>t.term===q.term||t.en===q.term)).filter(Boolean):matching.slice(0,6)):matching;
  const frag=document.createDocumentFragment();
  for(const item of matched){
    const card=document.createElement("article");card.className="entry";
@@ -189,7 +189,7 @@ function render(){
    frag.append(card);
  }
  list.append(frag);
- if(isEnglish(course.value)&&weekControl.value&&!q&&matching.length>6){const extra=addText("p","Additional assigned terms: "+matching.slice(6).map(t=>t.en).join(", ")+". Use search or select the whole unit to study them.","meta");extra.style.gridColumn="1 / -1";list.append(extra)}
+ if(isEnglish(course.value)&&weekControl.value&&!q&&matching.length>6){const displayed=new Set(matched.map(t=>t.en));const extra=addText("p","Additional assigned terms: "+matching.filter(t=>!displayed.has(t.en)).map(t=>t.en).join(", ")+". Use search or select the whole unit to study them.","meta");extra.style.gridColumn="1 / -1";list.append(extra)}
  const translated=lang.value==="en"?records.length:records.filter(item=>
    typeof item[lang.value]==="string"&&item[lang.value].trim().length>0).length;
  status.textContent=matched.length+" of "+records.length+" terms displayed"+(q?" for this search":isEnglish(course.value)&&weekControl.value?" in the six-term study set":"")+"."
@@ -221,6 +221,7 @@ async function load(){
     if(["english-9","english-10","english-11","english-12"].includes(course.value)&&Number(unit.value)>=1&&Number(unit.value)<=12){
       const response=await fetch("../../language-arts/"+course.value+"/units/unit-"+unit.value+"/vocabulary.json",{credentials:"same-origin"});
       if(response.ok){const bank=await response.json();const byTerm=new Map((bank.terms||[]).map(t=>[String(t.term).toLocaleLowerCase(),t]));data.terms=data.terms.map(t=>{const entry=byTerm.get(t.term.toLocaleLowerCase());return entry?{...t,definition:entry.definition,context:entry.context,reviewStatus:entry.reviewStatus,wordFamily:entry.wordFamily,applicationPrompt:entry.applicationPrompt}:t});
+      if(course.value==="english-9"&&Number(weekControl.value)===1){const supplement=data.terms.find(t=>t.term==="claim");if(supplement)supplement.weeks=[1]}
       if(["english-10","english-11","english-12"].includes(course.value)&&weekControl.value&&data.terms.length===5){const extension=(bank.terms||[]).find(t=>!data.terms.some(x=>x.term.toLocaleLowerCase()===String(t.term).toLocaleLowerCase())&&t.definition&&!t.definition.startsWith("Definition awaiting"));if(extension)data.terms.push({en:extension.term,term:extension.term,definition:extension.definition,context:"Unit enrichment · extension term",weeks:[Number(weekControl.value)],reviewStatus:"editorial-draft",extension:true})}}
     }
     data.title=(data.units||[]).find(u=>Number(u.unit||u.n)===Number(unit.value))?.title||"Unit "+unit.value;
@@ -228,7 +229,7 @@ async function load(){
   if(!Array.isArray(data.terms))throw new Error("Vocabulary data has an invalid format.");
   current=data;
   title.textContent=courseNames[course.value]+" · "+(data.title||"Unit "+unit.value);
-  render();drawWeekQuiz();
+  drawWeekQuiz();render();
  }catch(error){
   if(n!==loadCount)return;
   title.textContent="Unit "+unit.value+" · Vocabulary";
