@@ -1,0 +1,1702 @@
+{
+  "schema": "khaemenes-vocabulary-v1",
+  "course": "physics-engineering-12",
+  "title": "Physics & Engineering 12 · Canonical Vocabulary",
+  "status": "course-aligned-source-reviewed-v1",
+  "practiceOnly": true,
+  "generatedFrom": "36-week Physics & Engineering course concepts and reviewed course language",
+  "terms": [
+    {
+      "term": "SI unit",
+      "definition": "A standard unit from the International System of Units used for consistent physical measurement.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “SI unit” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "scalar",
+      "definition": "A physical quantity described by magnitude only.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “scalar” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "vector",
+      "definition": "A physical quantity described by both magnitude and direction.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “vector” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "uncertainty",
+      "definition": "A stated limit on the precision or confidence of a measurement.",
+      "weeks": [
+        1,
+        5,
+        35
+      ],
+      "context": "Week 01, Week 05, Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “uncertainty” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "physical model",
+      "definition": "A simplified representation used to explain or predict the behavior of a physical system.",
+      "weeks": [
+        1
+      ],
+      "context": "Week 01",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “physical model” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "position",
+      "definition": "An object's location relative to a chosen reference frame.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “position” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "displacement",
+      "definition": "The vector change in position from an initial point to a final point.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “displacement” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "distance",
+      "definition": "The total path length traveled, without direction.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “distance” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "velocity",
+      "definition": "The rate of change of displacement with time, including direction.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “velocity” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "reference frame",
+      "definition": "A coordinate system or viewpoint relative to which motion is described.",
+      "weeks": [
+        2
+      ],
+      "context": "Week 02",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “reference frame” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "acceleration",
+      "definition": "The rate at which velocity changes with time.",
+      "weeks": [
+        3,
+        7
+      ],
+      "context": "Week 03, Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “acceleration” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "instantaneous velocity",
+      "definition": "Velocity at a specific moment in time.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “instantaneous velocity” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "average velocity",
+      "definition": "Total displacement divided by elapsed time.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “average velocity” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "velocity–time graph",
+      "definition": "A graph showing how velocity changes over time.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “velocity–time graph” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "slope",
+      "definition": "A graph's rate of change, such as acceleration on a velocity–time graph.",
+      "weeks": [
+        3
+      ],
+      "context": "Week 03",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “slope” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "component",
+      "definition": "The part of a vector resolved along a chosen axis.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “component” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "projectile",
+      "definition": "An object moving under gravity after launch, ideally with negligible air resistance.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “projectile” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "trajectory",
+      "definition": "The path followed by a moving object.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “trajectory” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "gravity",
+      "definition": "The attractive interaction between masses that produces downward acceleration near Earth.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “gravity” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "independent motion",
+      "definition": "The treatment of perpendicular motion components as separately evolving under appropriate assumptions.",
+      "weeks": [
+        4
+      ],
+      "context": "Week 04",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “independent motion” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "residual",
+      "definition": "The difference between an observed value and the value predicted by a model.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “residual” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "best fit",
+      "definition": "A model or line that represents the overall trend in a dataset.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “best fit” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "assumption",
+      "definition": "A condition accepted as true within the limits of a model.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “assumption” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "model selection",
+      "definition": "Choosing among competing models using evidence, assumptions, and predictive performance.",
+      "weeks": [
+        5
+      ],
+      "context": "Week 05",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “model selection” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "force",
+      "definition": "An interaction capable of changing an object's motion.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “force” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "net force",
+      "definition": "The vector sum of all external forces acting on an object.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “net force” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "inertia",
+      "definition": "The tendency of an object to resist changes in its velocity.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “inertia” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "free-body diagram",
+      "definition": "A diagram showing the external forces acting on a selected object.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “free-body diagram” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "interaction",
+      "definition": "A mutual influence between objects that can produce forces.",
+      "weeks": [
+        6
+      ],
+      "context": "Week 06",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “interaction” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "Newton's first law",
+      "definition": "An object maintains constant velocity unless acted on by a net external force.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “Newton's first law” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "Newton's second law",
+      "definition": "The net force on an object equals mass times acceleration.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “Newton's second law” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "Newton's third law",
+      "definition": "Forces between two interacting objects occur in equal-magnitude, opposite-direction pairs.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “Newton's third law” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "mass",
+      "definition": "A measure of an object's inertia and amount of matter.",
+      "weeks": [
+        7
+      ],
+      "context": "Week 07",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “mass” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "friction",
+      "definition": "A contact force opposing relative motion or attempted motion between surfaces.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “friction” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "normal force",
+      "definition": "A contact force exerted perpendicular to a surface.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “normal force” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "centripetal acceleration",
+      "definition": "Acceleration directed toward the center of circular motion.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “centripetal acceleration” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "tension",
+      "definition": "A pulling force transmitted through a taut string, rope, cable, or similar connector.",
+      "weeks": [
+        8
+      ],
+      "context": "Week 08",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “tension” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "constraint",
+      "definition": "A physical or design limitation that restricts possible motion or solutions.",
+      "weeks": [
+        8,
+        13,
+        33
+      ],
+      "context": "Week 08, Week 13, Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “constraint” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "gravitational field",
+      "definition": "A region in which a mass experiences gravitational force.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “gravitational field” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "inverse-square relationship",
+      "definition": "A relationship in which a quantity varies inversely with the square of distance.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “inverse-square relationship” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "orbit",
+      "definition": "Motion of an object around another due primarily to gravity.",
+      "weeks": [
+        9,
+        34
+      ],
+      "context": "Week 09, Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “orbit” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "centripetal force",
+      "definition": "The net inward force required for circular motion.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “centripetal force” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "gravitational interaction",
+      "definition": "The mutual attractive force between masses.",
+      "weeks": [
+        9
+      ],
+      "context": "Week 09",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “gravitational interaction” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "work",
+      "definition": "Energy transferred when a force acts through a displacement.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “work” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "kinetic energy",
+      "definition": "Energy associated with an object's motion.",
+      "weeks": [
+        10,
+        16
+      ],
+      "context": "Week 10, Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “kinetic energy” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "system",
+      "definition": "The object or group of objects selected for analysis.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “system” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "energy transfer",
+      "definition": "Movement of energy into, out of, or within a system.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “energy transfer” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "joule",
+      "definition": "The SI unit of energy and work.",
+      "weeks": [
+        10
+      ],
+      "context": "Week 10",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “joule” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "gravitational potential energy",
+      "definition": "Energy associated with position in a gravitational system.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “gravitational potential energy” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "elastic potential energy",
+      "definition": "Energy stored when an elastic object is stretched or compressed.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “elastic potential energy” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "conservation of energy",
+      "definition": "The principle that total energy in a closed system remains constant while changing form.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “conservation of energy” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "system boundary",
+      "definition": "The conceptual boundary separating a chosen system from its surroundings.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “system boundary” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "energy transformation",
+      "definition": "Conversion of energy from one form to another within a system.",
+      "weeks": [
+        11
+      ],
+      "context": "Week 11",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “energy transformation” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "power",
+      "definition": "The rate at which energy is transferred or transformed.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “power” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "efficiency",
+      "definition": "Useful output energy divided by input energy, usually expressed as a percentage.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “efficiency” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "useful output",
+      "definition": "The portion of transferred energy that accomplishes the intended task.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “useful output” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "dissipation",
+      "definition": "Transfer of organized energy into less useful forms, often thermal energy.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “dissipation” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "watt",
+      "definition": "The SI unit of power, equal to one joule per second.",
+      "weeks": [
+        12
+      ],
+      "context": "Week 12",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “watt” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "energy system",
+      "definition": "A defined collection of components through which energy is stored, transferred, or transformed.",
+      "weeks": [
+        13
+      ],
+      "context": "Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “energy system” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "thermal loss",
+      "definition": "Energy transferred to thermal stores when it is not part of the intended output.",
+      "weeks": [
+        13
+      ],
+      "context": "Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “thermal loss” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "criterion",
+      "definition": "A measurable standard used to judge design performance.",
+      "weeks": [
+        13,
+        33
+      ],
+      "context": "Week 13, Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “criterion” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "energy audit",
+      "definition": "An accounting of energy inputs, useful outputs, transfers, and losses.",
+      "weeks": [
+        13
+      ],
+      "context": "Week 13",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “energy audit” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "momentum",
+      "definition": "The product of an object's mass and velocity.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “momentum” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "impulse",
+      "definition": "The product of force and time interval, equal to the change in momentum.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “impulse” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "collision",
+      "definition": "A short-duration interaction in which objects exert significant forces on one another.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “collision” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "force–time graph",
+      "definition": "A graph whose area represents impulse.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “force–time graph” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "change in momentum",
+      "definition": "The difference between final and initial momentum.",
+      "weeks": [
+        14
+      ],
+      "context": "Week 14",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “change in momentum” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "momentum conservation",
+      "definition": "The principle that total momentum of an isolated system remains constant.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “momentum conservation” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "internal force",
+      "definition": "A force exchanged between objects inside the chosen system.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “internal force” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "external impulse",
+      "definition": "Impulse delivered to a system by forces from outside the system.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “external impulse” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "isolated system",
+      "definition": "A system with negligible net external impulse over the interval of interest.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “isolated system” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "system momentum",
+      "definition": "The vector sum of the momenta of all objects in a system.",
+      "weeks": [
+        15
+      ],
+      "context": "Week 15",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “system momentum” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "elastic collision",
+      "definition": "A collision in which both total momentum and total kinetic energy are conserved.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “elastic collision” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "inelastic collision",
+      "definition": "A collision in which total momentum is conserved but kinetic energy is not.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “inelastic collision” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "deformation",
+      "definition": "A change in shape that can store or dissipate energy during an interaction.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “deformation” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "coefficient of restitution",
+      "definition": "A measure of how much relative speed is retained after a collision.",
+      "weeks": [
+        16
+      ],
+      "context": "Week 16",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “coefficient of restitution” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "center of mass",
+      "definition": "The mass-weighted average position of a system.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “center of mass” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "model choice",
+      "definition": "Selection of the representation or equation best suited to a physical situation.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “model choice” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "external force",
+      "definition": "A force exerted on a system by something outside the chosen system.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “external force” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "conservation law",
+      "definition": "A principle stating that a physical quantity remains constant under specified conditions.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “conservation law” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "semester synthesis",
+      "definition": "Integration of multiple mechanics ideas into a single evidence-based analysis.",
+      "weeks": [
+        17
+      ],
+      "context": "Week 17",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “semester synthesis” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "cumulative mechanics",
+      "definition": "Integrated use of kinematics, forces, energy, and momentum in a single analysis.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “cumulative mechanics” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "correction",
+      "definition": "A documented revision that identifies and repairs a physics reasoning or calculation error.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “correction” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "remediation",
+      "definition": "Targeted practice designed to address a demonstrated physics learning gap.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “remediation” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "evidence trail",
+      "definition": "The record linking a physical conclusion to measurements, calculations, models, and assumptions.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “evidence trail” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "assessment integrity",
+      "definition": "Protection of valid assessment conditions and separation of public practice from protected exam content.",
+      "weeks": [
+        18
+      ],
+      "context": "Week 18",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “assessment integrity” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "angle",
+      "definition": "A measure of rotational displacement between two directions.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “angle” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "angular velocity",
+      "definition": "The rate of change of angular position.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “angular velocity” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "angular acceleration",
+      "definition": "The rate of change of angular velocity.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “angular acceleration” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "radius",
+      "definition": "The distance from an axis of rotation to a point.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “radius” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "rotational kinematics",
+      "definition": "Description of rotational motion using angular position, velocity, acceleration, and time.",
+      "weeks": [
+        19
+      ],
+      "context": "Week 19",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “rotational kinematics” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "torque",
+      "definition": "The rotational effect of a force about an axis.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “torque” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "lever arm",
+      "definition": "The perpendicular distance from an axis to a force's line of action.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “lever arm” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "rotational equilibrium",
+      "definition": "A state in which the net torque on a system is zero.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “rotational equilibrium” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "center of gravity",
+      "definition": "The effective point through which an object's weight acts in a uniform gravitational field.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “center of gravity” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "moment balance",
+      "definition": "A condition in which clockwise and counterclockwise torques cancel.",
+      "weeks": [
+        20
+      ],
+      "context": "Week 20",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “moment balance” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "angular momentum",
+      "definition": "A measure of rotational motion related to moment of inertia and angular velocity.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “angular momentum” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "moment of inertia",
+      "definition": "A measure of an object's resistance to angular acceleration based on mass distribution.",
+      "weeks": [
+        21,
+        22
+      ],
+      "context": "Week 21, Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “moment of inertia” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "angular momentum conservation",
+      "definition": "The principle that total angular momentum remains constant when net external torque is negligible.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “angular momentum conservation” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "external torque",
+      "definition": "Torque on a system produced by forces from outside the system.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “external torque” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "mass distribution",
+      "definition": "The way mass is arranged relative to an axis of rotation.",
+      "weeks": [
+        21
+      ],
+      "context": "Week 21",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “mass distribution” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "rotational kinetic energy",
+      "definition": "Energy associated with rotational motion.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “rotational kinetic energy” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "rolling motion",
+      "definition": "Combined translational and rotational motion of an object.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “rolling motion” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "energy partition",
+      "definition": "The division of total energy among translational, rotational, and other forms.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “energy partition” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "rolling without slipping",
+      "definition": "Motion in which the point of contact is instantaneously at rest relative to the surface.",
+      "weeks": [
+        22
+      ],
+      "context": "Week 22",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “rolling without slipping” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "period",
+      "definition": "The time required for one complete cycle of an oscillation.",
+      "weeks": [
+        23
+      ],
+      "context": "Week 23",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “period” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "frequency",
+      "definition": "The number of cycles completed per unit time.",
+      "weeks": [
+        23,
+        24
+      ],
+      "context": "Week 23, Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “frequency” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "amplitude",
+      "definition": "The maximum displacement from equilibrium.",
+      "weeks": [
+        23,
+        24
+      ],
+      "context": "Week 23, Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “amplitude” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "restoring force",
+      "definition": "A force directed toward equilibrium that tends to return an oscillator toward its central position.",
+      "weeks": [
+        23
+      ],
+      "context": "Week 23",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “restoring force” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "phase",
+      "definition": "A quantity describing the position of an oscillation within its cycle.",
+      "weeks": [
+        23
+      ],
+      "context": "Week 23",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “phase” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "wavelength",
+      "definition": "The distance between equivalent points on successive wave cycles.",
+      "weeks": [
+        24
+      ],
+      "context": "Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “wavelength” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "wave speed",
+      "definition": "The rate at which a wave disturbance propagates through a medium or space.",
+      "weeks": [
+        24
+      ],
+      "context": "Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “wave speed” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "superposition",
+      "definition": "The principle that overlapping waves add algebraically to produce a combined disturbance.",
+      "weeks": [
+        24
+      ],
+      "context": "Week 24",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “superposition” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "sound",
+      "definition": "A mechanical pressure wave that propagates through a material medium.",
+      "weeks": [
+        25
+      ],
+      "context": "Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “sound” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "resonance",
+      "definition": "Enhanced oscillation when a driving frequency is near a system's natural frequency.",
+      "weeks": [
+        25
+      ],
+      "context": "Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “resonance” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "standing wave",
+      "definition": "A wave pattern formed by interference that has fixed nodes and antinodes.",
+      "weeks": [
+        25
+      ],
+      "context": "Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “standing wave” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "interference",
+      "definition": "Combination of waves that can reinforce or reduce one another.",
+      "weeks": [
+        25
+      ],
+      "context": "Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “interference” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "decibel",
+      "definition": "A logarithmic unit commonly used to express sound intensity level.",
+      "weeks": [
+        25
+      ],
+      "context": "Week 25",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “decibel” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "density",
+      "definition": "Mass per unit volume.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “density” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "pressure",
+      "definition": "Force exerted per unit area.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “pressure” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "buoyancy",
+      "definition": "Upward force exerted by a fluid on an immersed object.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “buoyancy” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "Archimedes' principle",
+      "definition": "The buoyant force on an object equals the weight of the fluid it displaces.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “Archimedes' principle” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "fluid",
+      "definition": "A substance that can flow and deform continuously under applied shear.",
+      "weeks": [
+        26
+      ],
+      "context": "Week 26",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “fluid” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "continuity",
+      "definition": "Conservation relation connecting flow speed and cross-sectional area in steady incompressible flow.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “continuity” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "flow rate",
+      "definition": "Volume of fluid passing a location per unit time.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “flow rate” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "viscosity",
+      "definition": "A fluid's resistance to flow or internal deformation.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “viscosity” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "streamline",
+      "definition": "A line tangent to the local direction of fluid velocity in a flow field.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “streamline” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "Bernoulli principle",
+      "definition": "A model relating pressure, speed, and height along a streamline under idealized flow assumptions.",
+      "weeks": [
+        27
+      ],
+      "context": "Week 27",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “Bernoulli principle” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "temperature",
+      "definition": "A measure related to the average microscopic kinetic energy of particles.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “temperature” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "internal energy",
+      "definition": "The total microscopic kinetic and potential energy within a system.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “internal energy” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "heat",
+      "definition": "Energy transferred because of a temperature difference.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “heat” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "conduction",
+      "definition": "Thermal energy transfer through direct particle interactions.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “conduction” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "convection",
+      "definition": "Thermal energy transfer by bulk motion of a fluid.",
+      "weeks": [
+        28
+      ],
+      "context": "Week 28",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “convection” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "electric charge",
+      "definition": "A property of matter that determines participation in electric interactions.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “electric charge” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "electric field",
+      "definition": "Force per unit positive test charge at a location in space.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “electric field” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "electric potential",
+      "definition": "Electric potential energy per unit charge.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “electric potential” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "Coulomb interaction",
+      "definition": "The electric force between point charges described by an inverse-square relationship.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “Coulomb interaction” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "electric potential energy",
+      "definition": "Energy associated with the positions of charges in an electric system.",
+      "weeks": [
+        29
+      ],
+      "context": "Week 29",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “electric potential energy” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "electric current",
+      "definition": "Rate of flow of electric charge.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “electric current” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "voltage",
+      "definition": "Electric potential difference between two points.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “voltage” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "resistance",
+      "definition": "Opposition to electric current in a circuit element.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “resistance” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "series circuit",
+      "definition": "A circuit arrangement with a single current path through components.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “series circuit” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "parallel circuit",
+      "definition": "A circuit arrangement with multiple branches sharing the same potential difference.",
+      "weeks": [
+        30
+      ],
+      "context": "Week 30",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “parallel circuit” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "magnetic field",
+      "definition": "A field describing magnetic influence on moving charges, currents, and magnetic materials.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “magnetic field” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "electromagnetic induction",
+      "definition": "Production of an emf by changing magnetic flux through a circuit.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “electromagnetic induction” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "magnetic flux",
+      "definition": "A measure of magnetic field passing through a surface.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “magnetic flux” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "generator",
+      "definition": "A device that converts mechanical energy to electrical energy through electromagnetic induction.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “generator” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "motor",
+      "definition": "A device that converts electrical energy to mechanical motion using magnetic interactions.",
+      "weeks": [
+        31
+      ],
+      "context": "Week 31",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “motor” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "electromagnetic spectrum",
+      "definition": "The full range of electromagnetic radiation arranged by frequency or wavelength.",
+      "weeks": [
+        32
+      ],
+      "context": "Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “electromagnetic spectrum” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "photon",
+      "definition": "A quantum of electromagnetic radiation.",
+      "weeks": [
+        32
+      ],
+      "context": "Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “photon” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "reflection",
+      "definition": "Change in direction of a wave when it returns from a boundary.",
+      "weeks": [
+        32
+      ],
+      "context": "Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “reflection” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "refraction",
+      "definition": "Change in wave direction caused by a change in propagation speed between media.",
+      "weeks": [
+        32
+      ],
+      "context": "Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “refraction” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "digital signal",
+      "definition": "Information represented using discrete states or encoded values.",
+      "weeks": [
+        32
+      ],
+      "context": "Week 32",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “digital signal” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "prototype",
+      "definition": "An early working model built to test a design idea.",
+      "weeks": [
+        33,
+        35
+      ],
+      "context": "Week 33, Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “prototype” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "iteration",
+      "definition": "A repeated cycle of testing, evaluation, and revision.",
+      "weeks": [
+        33
+      ],
+      "context": "Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “iteration” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "optimization",
+      "definition": "Improving a design to best satisfy criteria while respecting constraints.",
+      "weeks": [
+        33
+      ],
+      "context": "Week 33",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “optimization” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "radiation",
+      "definition": "Energy carried through space by electromagnetic waves or particles.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “radiation” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "albedo",
+      "definition": "The fraction of incoming radiation reflected by a surface or planet.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “albedo” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "energy balance",
+      "definition": "Comparison of energy entering and leaving a system.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “energy balance” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "remote sensing",
+      "definition": "Measurement of a target from a distance using detected reflected or emitted signals.",
+      "weeks": [
+        34
+      ],
+      "context": "Week 34",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “remote sensing” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "model",
+      "definition": "A representation used to explain, predict, or test physical behavior.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “model” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "test",
+      "definition": "A planned procedure used to collect evidence about performance or a prediction.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “test” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "communication",
+      "definition": "Clear presentation of design choices, evidence, reasoning, and limitations.",
+      "weeks": [
+        35
+      ],
+      "context": "Week 35",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “communication” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "portfolio defense",
+      "definition": "A structured explanation of how selected Physics & Engineering work demonstrates learning.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “portfolio defense” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "synthesis",
+      "definition": "Integration of ideas and evidence from multiple physical domains into a coherent explanation.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “synthesis” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "limitation",
+      "definition": "A condition that restricts what a model, method, or dataset can support.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “limitation” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "revision",
+      "definition": "A change made to improve a model, calculation, or design in response to evidence.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “revision” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    },
+    {
+      "term": "engineering communication",
+      "definition": "Clear reporting of criteria, methods, data, uncertainty, reasoning, and design decisions.",
+      "weeks": [
+        36
+      ],
+      "context": "Week 36",
+      "reviewStatus": "course-aligned-v1",
+      "applicationPrompt": "Use “engineering communication” accurately in a Physics or Engineering explanation, calculation, model, design record, or evidence statement."
+    }
+  ]
+}
