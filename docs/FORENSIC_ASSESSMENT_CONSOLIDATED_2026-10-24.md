@@ -27,8 +27,8 @@ The specialist course engines remain authoritative for their own learner records
 | Items with an item-level explanation | **1,710 / 1,710 (100%)** |
 | Four-option objective items | **1,710 / 1,710 (100%)** |
 | Valid keyed answers | **1,710 / 1,710 (100%)** |
-| Reviewed misconception-mapped items | **113 / 1,710 (6.6%)** |
-| Explicit reviewed distractor rationales | **339** |
+| Reviewed misconception-mapped items | **218 / 1,710 (12.7%)** |
+| Explicit reviewed distractor rationales | **654** |
 | Grade 12 Social Studies weekly banks passing transfer rule | **36 / 36** |
 | English 10–12 weekly passage/source anchors | **108 / 108** |
 | Upper-science ordinary weeks with transfer evidence | **102 / 102** |
@@ -123,7 +123,7 @@ Raw authored answer positions are **154 / 20 / 6 / 0**.
 
 Raw authored answer positions are **335 / 4 / 0 / 0**.
 
-The template-similarity heuristic marks approximately **51.6%** of the Chemistry bank as belonging to repeated structural families. The first quantitative misconception tranche now covers ten of those seven-item families, so repeated structures increasingly function as controlled diagnostic variants rather than merely repeated numerical shells. The similarity percentage itself is retained as a structural signal and is not falsely reduced by metadata alone.
+The template-similarity heuristic marks approximately **51.6%** of the Chemistry bank as belonging to repeated structural families. All 25 high-repetition Chemistry families are now misconception-mapped, so repeated structures function as controlled diagnostic variants rather than merely repeated numerical shells. The similarity percentage itself is retained as a structural signal and is not falsely reduced by metadata alone.
 
 ### Physics & Engineering 12
 - public bank: **180 items**;
@@ -200,8 +200,8 @@ The v1 contract is now active at `courses/shared/ASSESSMENT_DISTRACTOR_QUALITY_C
 
 Current reviewed coverage:
 - Algebra I: **13 items / 39 distractor rationales / 13 of 13 units represented**;
-- Chemistry 11: **100 items / 300 distractor rationales / 29.5% bank coverage / U1–U9 plus capstone and ten quantitative families represented**;
-- Academy-wide: **113 / 1,710 items (6.6%) / 339 distractor rationales**.
+- Chemistry 11: **205 items / 615 distractor rationales / 60.5% bank coverage / all 25 high-repetition families represented**;
+- Academy-wide: **218 / 1,710 items (12.7%) / 654 distractor rationales**.
 
 Dedicated validation: `node tools/validate-distractor-quality-v1.mjs`.
 
