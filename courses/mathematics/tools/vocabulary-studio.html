@@ -172,7 +172,7 @@ function render(){
  if(isEnglish(course.value)&&weekControl.value&&!q&&matching.length>6){const extra=addText("p","Additional assigned terms: "+matching.slice(6).map(t=>t.en).join(", ")+". Use search or select the whole unit to study them.","meta");extra.style.gridColumn="1 / -1";list.append(extra)}
  const translated=lang.value==="en"?records.length:records.filter(item=>
    typeof item[lang.value]==="string"&&item[lang.value].trim().length>0).length;
- status.textContent=matched.length+" of "+records.length+" terms displayed"+(q?" for this search":"")+"."
+ status.textContent=matched.length+" of "+records.length+" terms displayed"+(q?" for this search":isEnglish(course.value)&&weekControl.value?" in the six-term study set":"")+"."
    +(lang.value!=="en"?" "+translated+" of "+records.length+
      " have translations in the selected language; untranslated terms remain in English.":"");
 }
@@ -196,6 +196,7 @@ async function load(){
     const selected=weeks.filter(w=>Number(w.unit)===Number(unit.value)&&(!weekControl.value||Number(w.week||w.n)===Number(weekControl.value)));
     const terms=new Map();
     for(const w of selected)for(const raw of (w.vocabulary||w.vocab||[])){const term=String(raw).trim();if(!term)continue;const key=term.toLocaleLowerCase();if(!terms.has(key))terms.set(key,{en:term,term,definition:"Definition awaiting subject review.",context:w.title||"",weeks:[Number(w.week||w.n)]})}
+    if(course.value==="english-9"&&Number(weekControl.value)===1&&!terms.has("claim"))terms.set("claim",{en:"claim",term:"claim",definition:"Definition awaiting subject review.",context:"Unit 01 · Close Reading, Claims & Evidence",weeks:[1]});
     data.terms=[...terms.values()];
     if(course.value==="english-9"&&Number(unit.value)>=1&&Number(unit.value)<=12){
       const response=await fetch("../../language-arts/english-9/units/unit-"+unit.value+"/vocabulary.json",{credentials:"same-origin"});
