@@ -12,7 +12,7 @@ The assessment covers:
 
 1. Grade 12 Social Studies transfer/source/data reasoning;
 2. English 10–12 passage/source anchoring and randomized-form guarantees;
-3. Algebra I learner-visible answer-position balance and answer mapping;
+3. Algebra I runtime-authoritative dedicated Units 01–09 banks, shared alternate/late-unit bank, answer-position balance, fresh retakes, selected-answer evidence, and misconception mapping;
 4. Biology 10, Chemistry 11, and Physics & Engineering 12 ordinary-week transfer evidence plus public secure-assessment blueprints;
 5. Academy-wide duplicate prompts, explanation coverage, option/answer validity, structured distractor-rationale metadata, and public/private assessment boundaries.
 
@@ -22,18 +22,22 @@ The specialist course engines remain authoritative for their own learner records
 
 | Measure | Current result |
 | --- | ---: |
-| Public objective items inspected | **1,710** |
-| Exact duplicate prompts within audited banks | **0** |
-| Items with an item-level explanation | **1,710 / 1,710 (100%)** |
-| Four-option objective items | **1,710 / 1,710 (100%)** |
-| Valid keyed answers | **1,710 / 1,710 (100%)** |
-| Reviewed misconception-mapped items | **610 / 1,710 (35.7%)** |
-| Explicit reviewed distractor rationales | **1,830** |
+| Public objective items inspected | **2,320** |
+| Items with an item-level explanation | **2,320 / 2,320 (100%)** |
+| Four-option objective items | **2,320 / 2,320 (100%)** |
+| Valid keyed answers | **2,320 / 2,320 (100%)** |
+| Reviewed misconception-mapped items | **810 / 2,320 (34.9%)** |
+| Provisional lesson-family misconception mappings | **410 / 2,320 (17.7%)** |
+| Any misconception mapping | **1,220 / 2,320 (52.6%)** |
+| Explicit reviewed distractor rationales | **2,430** |
+| Provisional distractor rationales | **1,230** |
 | Grade 12 Social Studies weekly banks passing transfer rule | **36 / 36** |
 | English 10–12 weekly passage/source anchors | **108 / 108** |
 | Upper-science ordinary weeks with transfer evidence | **102 / 102** |
-| Algebra I lesson-check bank | **87 lessons / 435 items** |
-| Algebra I visible five-question answer distribution | **2 / 1 / 1 / 1** |
+| Algebra I dedicated runtime banks · Units 01–09 | **61 lessons / 610 items** |
+| Algebra I shared alternate/late-unit bank | **87 lessons / 435 items** |
+| Units 02–09 visible ten-question answer balance | **3 / 3 / 2 / 2, position assignment randomized** |
+| Shared late-unit five-question answer balance | **2 / 1 / 1 / 1, position assignment randomized** |
 
 ## 1. Grade 12 Social Studies
 
@@ -83,49 +87,74 @@ The raw supplemental schema stores the keyed option first, so its authored posit
 
 ## 3. Algebra I
 
-**Status: PASS**
+**Status: PASS at source/runtime-contract level; representative browser execution tracked separately**
 
-The forensic bank contains:
+Algebra I now has two distinct public assessment sources and the forensic system treats them separately rather than using one as a proxy for the other.
 
-- **87 lessons**;
-- **435 lesson-check questions**;
-- **0 exact duplicate prompts**;
-- **100% explanation coverage**;
-- **100% four-option coverage**;
-- **100% unique-choice coverage**;
-- **100% valid keyed-answer contracts**.
+### Runtime-authoritative Units 01–09
 
-The learner-visible five-question lesson form now uses a randomized **2/1/1/1** correct-position schedule before first render. The later DOM shuffler recognizes the balanced-form marker and does not disturb the mapped answer order.
+The dedicated banks contain **610 items across 61 lessons**:
 
-Raw authored answer positions remain **123 / 116 / 104 / 92**, but those positions are not exposed as a fixed learner pattern by the lesson renderer.
+- Unit 01: 60 items / 6 lessons;
+- Unit 02: 70 / 7;
+- Unit 03: 70 / 7;
+- Unit 04: 60 / 6;
+- Unit 05: 70 / 7;
+- Unit 06: 80 / 8;
+- Unit 07: 70 / 7;
+- Unit 08: 60 / 6;
+- Unit 09: 70 / 7.
 
-The template-similarity heuristic marks approximately **49.2%** of Algebra I items as belonging to repeated structural families. Those repeated families are now fully misconception-mapped: **271/435 Algebra I items (62.3%)** carry **813 explicit distractor rationales**, and a fresh normalized-family scan finds no unmapped repeated family with three or more variants. Exact prompt duplication remains zero.
+Every dedicated lesson contains **10 authored questions**. Unit 01's former 8-question runtime slice has been removed, restoring the intended 10-question lesson-check contract and an exact **8/10 = 80%** mastery threshold.
 
-Formal Unit Mastery remains outside this lesson-form modification and was not weakened.
+Units 02–09 now rebuild the learner-visible option order before the first attempt. Their ten-question forms distribute keyed answers **3/3/2/2 across the four visible positions**, with the positions receiving three correct answers randomized each form. The original authored order remains unchanged in the bank.
 
+All **55 Unit 02–09 lessons** also have five aligned items in the shared bank. The runtime therefore has a **15-item aligned lesson pool**: ten dedicated questions plus five aligned alternates. First attempts use the ten dedicated questions; fresh retakes use five aligned alternates plus five dedicated questions rather than merely moving the same answer labels.
 
-### Algebra I runtime-aware correction · 2026-10-25
+Units 02–09 save immutable, versioned answer snapshots containing:
 
-The Algebra I certification model now distinguishes the learner-facing dedicated Unit 01–09 banks from the separate shared bank instead of treating the 435-item shared bank as a proxy for the entire course.
+- item ID and source;
+- selected learner-visible option index;
+- selected original-bank option index;
+- correct learner-visible option index;
+- correct original-bank option index;
+- selected and correct text;
+- form version and form sources.
 
-Runtime-authoritative first-half coverage is now explicitly checked:
+That makes the learner's actual error pattern available for future misconception analysis without rewriting completed attempts.
 
-- **610 dedicated questions** across **61 lessons** in Units 01–09;
-- **10 dedicated questions per lesson**;
-- Unit 01 lesson checks restored from 8 to **10 questions**;
-- Units 02–09 rebuild the first visible form with balanced correct-answer positions;
-- all **55 Unit 02–09 lessons** have **5 aligned shared alternates**, giving a **15-item lesson pool**;
-- retakes use **5 aligned alternate + 5 dedicated** questions rather than only moving option labels;
-- Units 02–09 store versioned immutable answer snapshots with delivered and original option indexes;
-- the alternate shared bank remains present in both Algebra I offline cache manifests.
+### Shared bank
 
-Dedicated runtime validation lives at:
+The separate shared bank contains **435 items across 87 lesson groups**. It remains authoritative for aligned alternates and later-unit assessment surfaces. Its lesson renderer balances five-question forms at **2/1/1/1** learner-visible correct positions and preserves answer mapping.
 
-`courses/mathematics/algebra-1/tools/validate-runtime-assessment-banks.mjs`
+The shared misconception map currently covers **271/435 items** with **813 reviewed distractor rationales**, including every normalized repeated family with three or more variants identified in the prior pass.
 
-The runtime-aware audit also corrects the earlier misconception-coverage interpretation. The existing **271 mapped Algebra I items / 813 distractor rationales** belong to the shared bank. The **610 dedicated Unit 01–09 IDs currently have 0 direct misconception-map entries**. That is now reported as a WARN rather than being obscured by the shared-bank coverage figure.
+### Dedicated misconception mapping
 
-This is a source-level certification. Representative real-browser first-attempt → submit → lock → retake → reload journeys remain the final execution check.
+The live Units 01–09 banks now have their own direct companion map:
+
+`courses/mathematics/algebra-1/units/dedicated-assessment-misconceptions-v1.json`
+
+Coverage is **610/610 dedicated items / 1,830 distractor rationales**. Certification is deliberately split:
+
+- Units **01, 05, and 09**: **200 items / 600 rationales**, marked `lesson-family-reviewed-v1`;
+- Units **02–04 and 06–08**: **410 items / 1,230 rationales**, marked `lesson-family-provisional-v1` pending item-level refinement.
+
+The provisional mappings are useful diagnostic scaffolds, but they are **not represented as fully reviewed item-level certification**.
+
+Drift validation now compares dedicated item IDs, prompt text, keyed answer, explanation, wrong-option indexes, option text, misconception tags, and rationale completeness directly against the live 610-item banks.
+
+### Browser execution boundary
+
+The repository now contains:
+
+`courses/mathematics/algebra-1/tools/browser-regression-units01-05-09.mjs`
+
+and:
+
+`.github/workflows/algebra1-browser-regression.yml`
+
+The Playwright/Chromium journey opens the actual representative Unit 01, Unit 05, and Unit 09 lesson pages and verifies first attempt → submit → immutable answer lock → fresh retake → saved evidence → reload. The workflow also runs the runtime-bank and dedicated-misconception validators before browser execution, so a source-contract failure prevents a misleading browser PASS.
 
 ## 4. Upper Science
 
@@ -189,51 +218,47 @@ Each blueprint records:
 
 The public course maps continue to identify the protected summative design as a **15-item midterm** and **30-item final**. Public Monte Carlo practice forms may use different lengths; practice-form length is not represented as the secure exam length.
 
-## 5. Academy-wide warning — distractor rationale metadata
+## 5. Academy-wide warning — misconception review depth
 
 **Status: WARN**
 
-Every audited objective item contains an explanation of the keyed response, but none of the 1,710 audited items currently exposes a standardized structured field such as:
+The audit now distinguishes **reviewed** misconception metadata from **provisional lesson-family scaffolds**.
 
-`distractorRationales`
+Across the **2,320** distinct public objective items in the consolidated scope:
 
-for the three incorrect alternatives.
+- **810 items (34.9%)** have reviewed misconception mapping;
+- **410 items (17.7%)** have provisional Algebra I lesson-family mapping;
+- **1,220 items (52.6%)** therefore have some structured misconception mapping;
+- reviewed mappings contain **2,430 distractor rationales**;
+- provisional mappings contain another **1,230 rationales**.
 
-That means the forensic instrument can verify:
+The remaining warning is no longer “no distractor rationale system exists.” The system exists and is enforced with drift protection. The warning is now about **review depth and remaining unmapped courses/items**.
 
-- that distractors are distinct;
-- that the keyed answer is valid;
-- that an explanation exists;
-- that exact prompts are not duplicated;
-- that runtime answer placement is protected where applicable;
+Provisional Algebra I mappings are intentionally not promoted to reviewed status until their individual distractors receive item-level scrutiny. Likewise, unmapped Social Studies, English, Biology, and Physics items should be backfilled in staged, subject-reviewed tranches rather than by silently bulk-labeling wrong answers.
 
-but it cannot yet mechanically certify **why each individual distractor is plausible and diagnostically useful**.
-
-This warning does not invalidate the four completed Phase 2 repairs. It identifies the next assessment-quality metadata layer.
-
-Recommended future contract for newly authored or substantially revised selected-response items:
-
-- one rationale for the keyed answer;
-- one misconception/error rationale for each distractor;
-- cognitive category;
-- source/stimulus anchor where applicable;
-- difficulty/complexity tag;
-- stable item ID and bank version.
-
-Backfilling the remaining items remains a staged item-writing project rather than an automatic bulk-generation exercise. The v1 validator enforces prompt/key/option drift protection so reviewed rationales cannot silently follow a changed item.
+This warning does not lower the 80% mastery rule, change historical attempts, expose protected assessments, or prevent current learner use.
 
 ## Distractor Quality & Misconception Mapping v1 rollout
 
-The v1 contract is now active at `courses/shared/ASSESSMENT_DISTRACTOR_QUALITY_CONTRACT_V1.md`.
+The v1 contract is active at `courses/shared/ASSESSMENT_DISTRACTOR_QUALITY_CONTRACT_V1.md`.
 
-Current reviewed coverage:
-- Algebra I: **271 / 435 items / 813 distractor rationales / 62.3% bank coverage / all repeated families of 3+ items mapped / 13 of 13 units represented**;
-- Chemistry 11: **339 / 339 items / 1,017 distractor rationales / 100% public-bank coverage / mapping required**;
-- Academy-wide: **610 / 1,710 items (35.7%) / 1,830 distractor rationales**.
+Current mapping status:
 
-Dedicated validation: `node tools/validate-distractor-quality-v1.mjs`.
+- Algebra I shared bank: **271 / 435 reviewed items / 813 rationales**;
+- Algebra I dedicated Units 01–09: **610 / 610 mapped**, split into **200 reviewed representative items / 600 rationales** and **410 provisional items / 1,230 rationales**;
+- Chemistry 11: **339 / 339 reviewed items / 1,017 rationales / mapping required**;
+- consolidated reviewed coverage: **810 / 2,320 (34.9%)**;
+- consolidated any-mapping coverage: **1,220 / 2,320 (52.6%)**.
 
-The consolidated audit treats incomplete legacy coverage as a warning while failing any drift inside already-reviewed mappings.
+Dedicated Algebra validation:
+
+`node courses/mathematics/algebra-1/tools/validate-dedicated-misconceptions-v1.mjs`
+
+Runtime-aware Algebra validation:
+
+`node courses/mathematics/algebra-1/tools/validate-runtime-assessment-banks.mjs`
+
+The consolidated audit fails drift inside reviewed mappings and reports provisional coverage separately rather than treating provisional lesson-family tags as full certification.
 
 ## Running the unified forensic assessment
 
