@@ -1,18 +1,19 @@
 {
   "schema": "khaemenes.assessment-misconception-map.late-units.v1",
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "courseId": "KH-MATH-ALG1",
   "title": "Algebra I · Units 10–13 Provisional Misconception Coverage",
-  "coveragePolicy": "Structural coverage for late-unit formal mastery items not already present in assessment-misconceptions-v1.json. All records in this file are family-provisional-v1 and forensic-only until human distractor review. Reviewed records continue to come from the shared map.",
+  "coveragePolicy": "Structural coverage and rebuilt-ID overrides for late-unit formal mastery items that do not have an exact prompt/answer/rationale match in assessment-misconceptions-v1.json. All records here are family-provisional-v1 and forensic-only until human distractor review. Only exact matching reviewed shared-map records may remain learner-facing.",
   "sourceBanks": [
     "courses/mathematics/algebra-1/assets/question-bank.js",
     "courses/mathematics/algebra-1/assets/unit-11-content-upgrade.js",
     "courses/mathematics/algebra-1/assets/late-unit-abundant-bank-v1.js"
   ],
   "lateFormalPoolItemCount": 300,
-  "reviewedCoverageFromSharedMap": 52,
-  "provisionalItemCount": 248,
-  "provisionalDistractorRationaleCount": 744,
+  "reviewedCoverageFromSharedMap": 33,
+  "provisionalItemCount": 267,
+  "rebuiltIdOverrideCount": 19,
+  "provisionalDistractorRationaleCount": 801,
   "items": [
     {
       "itemId": "q0307",
@@ -1291,6 +1292,151 @@
       "reviewMethod": "automated late-unit structural coverage; requires human distractor review before learner-facing use"
     },
     {
+      "itemId": "q0346",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "What is the principal square root of 81?",
+      "answerIndex": 1,
+      "correctRationale": "The radical symbol √ denotes the nonnegative principal square root.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "−9",
+          "misconceptionTag": "principal-root-provisional-distractor-0",
+          "rationale": "Provisional late-unit mapping: choosing “−9” does not satisfy the principal root reasoning required by this item. Rework the governing relationship and verify against the correct result “9”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "±9",
+          "misconceptionTag": "principal-root-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “±9” does not satisfy the principal root reasoning required by this item. Rework the governing relationship and verify against the correct result “9”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "40.5",
+          "misconceptionTag": "principal-root-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “40.5” does not satisfy the principal root reasoning required by this item. Rework the governing relationship and verify against the correct result “9”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0347",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Simplify √72.",
+      "answerIndex": 0,
+      "correctRationale": "72=36·2, so √72=6√2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8√2",
+          "misconceptionTag": "simplify-radical-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “8√2” does not satisfy the simplify radical reasoning required by this item. Rework the governing relationship and verify against the correct result “6√2”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "12√2",
+          "misconceptionTag": "simplify-radical-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “12√2” does not satisfy the simplify radical reasoning required by this item. Rework the governing relationship and verify against the correct result “6√2”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "36√2",
+          "misconceptionTag": "simplify-radical-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “36√2” does not satisfy the simplify radical reasoning required by this item. Rework the governing relationship and verify against the correct result “6√2”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0348",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Between which consecutive integers does √50 lie?",
+      "answerIndex": 2,
+      "correctRationale": "49<50<64, so 7<√50<8.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "5 and 6",
+          "misconceptionTag": "estimate-root-provisional-distractor-0",
+          "rationale": "Provisional late-unit mapping: choosing “5 and 6” does not satisfy the estimate root reasoning required by this item. Rework the governing relationship and verify against the correct result “7 and 8”."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "6 and 7",
+          "misconceptionTag": "estimate-root-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “6 and 7” does not satisfy the estimate root reasoning required by this item. Rework the governing relationship and verify against the correct result “7 and 8”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8 and 9",
+          "misconceptionTag": "estimate-root-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “8 and 9” does not satisfy the estimate root reasoning required by this item. Rework the governing relationship and verify against the correct result “7 and 8”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0349",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "For real x, simplify √(x²).",
+      "answerIndex": 2,
+      "correctRationale": "A principal square root is nonnegative, so √(x²)=|x|.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x",
+          "misconceptionTag": "absolute-value-root-provisional-distractor-0",
+          "rationale": "Provisional late-unit mapping: choosing “x” does not satisfy the absolute value root reasoning required by this item. Rework the governing relationship and verify against the correct result “|x|”."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "−x",
+          "misconceptionTag": "absolute-value-root-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “−x” does not satisfy the absolute value root reasoning required by this item. Rework the governing relationship and verify against the correct result “|x|”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x²",
+          "misconceptionTag": "absolute-value-root-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “x²” does not satisfy the absolute value root reasoning required by this item. Rework the governing relationship and verify against the correct result “|x|”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0350",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "For which real values of x is √(x−4) defined?",
+      "answerIndex": 2,
+      "correctRationale": "A real square root requires x−4≥0.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x≤4",
+          "misconceptionTag": "domain-radical-provisional-distractor-0",
+          "rationale": "Provisional late-unit mapping: choosing “x≤4” does not satisfy the domain radical reasoning required by this item. Rework the governing relationship and verify against the correct result “x≥4”."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "x<4",
+          "misconceptionTag": "domain-radical-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “x<4” does not satisfy the domain radical reasoning required by this item. Rework the governing relationship and verify against the correct result “x≥4”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "all real x",
+          "misconceptionTag": "domain-radical-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “all real x” does not satisfy the domain radical reasoning required by this item. Rework the governing relationship and verify against the correct result “x≥4”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
       "itemId": "u11x-l01-06",
       "reviewStatus": "family-provisional-v1",
       "prompt": "Simplify √48.",
@@ -1724,6 +1870,151 @@
       ],
       "mappedAt": "2026-10-25",
       "reviewMethod": "automated late-unit structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0351",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Simplify 3√5+2√5.",
+      "answerIndex": 0,
+      "correctRationale": "Like radicals combine by adding coefficients.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "5√10",
+          "misconceptionTag": "add-subtract-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “5√10” does not satisfy the add subtract reasoning required by this item. Rework the governing relationship and verify against the correct result “5√5”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6√5",
+          "misconceptionTag": "add-subtract-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “6√5” does not satisfy the add subtract reasoning required by this item. Rework the governing relationship and verify against the correct result “5√5”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "√5",
+          "misconceptionTag": "add-subtract-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “√5” does not satisfy the add subtract reasoning required by this item. Rework the governing relationship and verify against the correct result “5√5”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0352",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Simplify 7√3−4√3.",
+      "answerIndex": 0,
+      "correctRationale": "Subtract the coefficients of like radicals.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3",
+          "misconceptionTag": "add-subtract-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “3” does not satisfy the add subtract reasoning required by this item. Rework the governing relationship and verify against the correct result “3√3”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "11√3",
+          "misconceptionTag": "add-subtract-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “11√3” does not satisfy the add subtract reasoning required by this item. Rework the governing relationship and verify against the correct result “3√3”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "√3",
+          "misconceptionTag": "add-subtract-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “√3” does not satisfy the add subtract reasoning required by this item. Rework the governing relationship and verify against the correct result “3√3”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0353",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Simplify √12+√27.",
+      "answerIndex": 0,
+      "correctRationale": "√12=2√3 and √27=3√3.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3√39",
+          "misconceptionTag": "mixed-simplify-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “3√39” does not satisfy the mixed simplify reasoning required by this item. Rework the governing relationship and verify against the correct result “5√3”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "√39",
+          "misconceptionTag": "mixed-simplify-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “√39” does not satisfy the mixed simplify reasoning required by this item. Rework the governing relationship and verify against the correct result “5√3”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5√6",
+          "misconceptionTag": "mixed-simplify-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “5√6” does not satisfy the mixed simplify reasoning required by this item. Rework the governing relationship and verify against the correct result “5√3”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0354",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Multiply √6·√15 and simplify.",
+      "answerIndex": 0,
+      "correctRationale": "√90=√(9·10)=3√10.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "√90",
+          "misconceptionTag": "multiply-radicals-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “√90” does not satisfy the multiply radicals reasoning required by this item. Rework the governing relationship and verify against the correct result “3√10”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "9√10",
+          "misconceptionTag": "multiply-radicals-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “9√10” does not satisfy the multiply radicals reasoning required by this item. Rework the governing relationship and verify against the correct result “3√10”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5√6",
+          "misconceptionTag": "multiply-radicals-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “5√6” does not satisfy the multiply radicals reasoning required by this item. Rework the governing relationship and verify against the correct result “3√10”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0355",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Simplify 2√3(√12−√3).",
+      "answerIndex": 0,
+      "correctRationale": "√12=2√3, so 2√3(√3)=2·3=6.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12",
+          "misconceptionTag": "distribution-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “12” does not satisfy the distribution reasoning required by this item. Rework the governing relationship and verify against the correct result “6”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "18",
+          "misconceptionTag": "distribution-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “18” does not satisfy the distribution reasoning required by this item. Rework the governing relationship and verify against the correct result “6”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "24",
+          "misconceptionTag": "distribution-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “24” does not satisfy the distribution reasoning required by this item. Rework the governing relationship and verify against the correct result “6”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
     },
     {
       "itemId": "u11x-l02-06",
@@ -2770,6 +3061,122 @@
       "reviewMethod": "automated late-unit structural coverage; requires human distractor review before learner-facing use"
     },
     {
+      "itemId": "q0362",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A right triangle has legs 6 and 8. Hypotenuse?",
+      "answerIndex": 0,
+      "correctRationale": "√(36+64)=10.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "14",
+          "misconceptionTag": "pythagorean-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “14” does not satisfy the pythagorean reasoning required by this item. Rework the governing relationship and verify against the correct result “10”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "48",
+          "misconceptionTag": "pythagorean-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “48” does not satisfy the pythagorean reasoning required by this item. Rework the governing relationship and verify against the correct result “10”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "√14",
+          "misconceptionTag": "pythagorean-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “√14” does not satisfy the pythagorean reasoning required by this item. Rework the governing relationship and verify against the correct result “10”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0363",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Distance from (−2,1) to (4,5)?",
+      "answerIndex": 0,
+      "correctRationale": "Differences are 6 and 4; distance √52=2√13.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "√52",
+          "misconceptionTag": "distance-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “√52” does not satisfy the distance reasoning required by this item. Rework the governing relationship and verify against the correct result “2√13”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "10",
+          "misconceptionTag": "distance-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “10” does not satisfy the distance reasoning required by this item. Rework the governing relationship and verify against the correct result “2√13”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "6",
+          "misconceptionTag": "distance-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “6” does not satisfy the distance reasoning required by this item. Rework the governing relationship and verify against the correct result “2√13”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0364",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Distance from (1,−3) to (5,2)?",
+      "answerIndex": 0,
+      "correctRationale": "Differences are 4 and 5; √(16+25)=√41.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "9",
+          "misconceptionTag": "distance-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “9” does not satisfy the distance reasoning required by this item. Rework the governing relationship and verify against the correct result “√41”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "√21",
+          "misconceptionTag": "distance-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “√21” does not satisfy the distance reasoning required by this item. Rework the governing relationship and verify against the correct result “√41”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "41",
+          "misconceptionTag": "distance-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “41” does not satisfy the distance reasoning required by this item. Rework the governing relationship and verify against the correct result “√41”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0365",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A 13-ft ladder reaches 12 ft up a wall. How far is its foot from the wall?",
+      "answerIndex": 0,
+      "correctRationale": "x²+12²=13², so x²=25.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1 ft",
+          "misconceptionTag": "pythagorean-application-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “1 ft” does not satisfy the pythagorean application reasoning required by this item. Rework the governing relationship and verify against the correct result “5 ft”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "25 ft",
+          "misconceptionTag": "pythagorean-application-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “25 ft” does not satisfy the pythagorean application reasoning required by this item. Rework the governing relationship and verify against the correct result “5 ft”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "√313 ft",
+          "misconceptionTag": "pythagorean-application-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “√313 ft” does not satisfy the pythagorean application reasoning required by this item. Rework the governing relationship and verify against the correct result “5 ft”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
       "itemId": "u11x-l04-06",
       "reviewStatus": "family-provisional-v1",
       "prompt": "A right triangle has hypotenuse 17 and one leg 8. Other leg?",
@@ -3203,6 +3610,151 @@
       ],
       "mappedAt": "2026-10-25",
       "reviewMethod": "automated late-unit structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0366",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Midpoint of (2,4) and (8,10)?",
+      "answerIndex": 0,
+      "correctRationale": "Average corresponding coordinates.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "(10,14)",
+          "misconceptionTag": "midpoint-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “(10,14)” does not satisfy the midpoint reasoning required by this item. Rework the governing relationship and verify against the correct result “(5,7)”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(3,3)",
+          "misconceptionTag": "midpoint-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “(3,3)” does not satisfy the midpoint reasoning required by this item. Rework the governing relationship and verify against the correct result “(5,7)”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(6,6)",
+          "misconceptionTag": "midpoint-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “(6,6)” does not satisfy the midpoint reasoning required by this item. Rework the governing relationship and verify against the correct result “(5,7)”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0367",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Midpoint of (−6,2) and (4,8)?",
+      "answerIndex": 0,
+      "correctRationale": "((-6+4)/2,(2+8)/2)=(-1,5).",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "(−2,10)",
+          "misconceptionTag": "midpoint-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “(−2,10)” does not satisfy the midpoint reasoning required by this item. Rework the governing relationship and verify against the correct result “(−1,5)”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(5,−1)",
+          "misconceptionTag": "midpoint-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “(5,−1)” does not satisfy the midpoint reasoning required by this item. Rework the governing relationship and verify against the correct result “(−1,5)”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(1,3)",
+          "misconceptionTag": "midpoint-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “(1,3)” does not satisfy the midpoint reasoning required by this item. Rework the governing relationship and verify against the correct result “(−1,5)”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0368",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "One endpoint is (2,3), midpoint is (5,7). Other endpoint?",
+      "answerIndex": 0,
+      "correctRationale": "2·midpoint−known endpoint=(10−2,14−3).",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "(3,4)",
+          "misconceptionTag": "missing-endpoint-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “(3,4)” does not satisfy the missing endpoint reasoning required by this item. Rework the governing relationship and verify against the correct result “(8,11)”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(7,10)",
+          "misconceptionTag": "missing-endpoint-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “(7,10)” does not satisfy the missing endpoint reasoning required by this item. Rework the governing relationship and verify against the correct result “(8,11)”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(10,14)",
+          "misconceptionTag": "missing-endpoint-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “(10,14)” does not satisfy the missing endpoint reasoning required by this item. Rework the governing relationship and verify against the correct result “(8,11)”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0369",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Segment endpoints are (−2,−1) and (6,5). Find midpoint.",
+      "answerIndex": 0,
+      "correctRationale": "Average x-values and y-values.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "(4,4)",
+          "misconceptionTag": "midpoint-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “(4,4)” does not satisfy the midpoint reasoning required by this item. Rework the governing relationship and verify against the correct result “(2,2)”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(−4,−3)",
+          "misconceptionTag": "midpoint-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “(−4,−3)” does not satisfy the midpoint reasoning required by this item. Rework the governing relationship and verify against the correct result “(2,2)”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(8,6)",
+          "misconceptionTag": "midpoint-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “(8,6)” does not satisfy the midpoint reasoning required by this item. Rework the governing relationship and verify against the correct result “(2,2)”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "q0370",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Which point is equidistant from (0,0) and (6,0) and lies on the x-axis?",
+      "answerIndex": 0,
+      "correctRationale": "The midpoint is 3 units from each endpoint.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "(6,0)",
+          "misconceptionTag": "geometric-constraint-provisional-distractor-1",
+          "rationale": "Provisional late-unit mapping: choosing “(6,0)” does not satisfy the geometric constraint reasoning required by this item. Rework the governing relationship and verify against the correct result “(3,0)”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(0,3)",
+          "misconceptionTag": "geometric-constraint-provisional-distractor-2",
+          "rationale": "Provisional late-unit mapping: choosing “(0,3)” does not satisfy the geometric constraint reasoning required by this item. Rework the governing relationship and verify against the correct result “(3,0)”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(3,3)",
+          "misconceptionTag": "geometric-constraint-provisional-distractor-3",
+          "rationale": "Provisional late-unit mapping: choosing “(3,3)” does not satisfy the geometric constraint reasoning required by this item. Rework the governing relationship and verify against the correct result “(3,0)”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "rebuilt-item override: prior shared ID record drifted from the active prompt; requires human distractor review before learner-facing use"
     },
     {
       "itemId": "u11x-l05-06",
