@@ -168,7 +168,7 @@ async function load(){
     const terms=new Map();
     for(const w of selected)for(const raw of (w.vocabulary||w.vocab||[])){const term=String(raw).trim();if(!term)continue;const key=term.toLocaleLowerCase();if(!terms.has(key))terms.set(key,{en:term,term,definition:"Definition awaiting subject review.",context:w.title||"",weeks:[Number(w.week||w.n)]})}
     data.terms=[...terms.values()];
-    if(course.value==="english-9"&&Number(unit.value)>=1&&Number(unit.value)<=8){
+    if(course.value==="english-9"&&Number(unit.value)>=1&&Number(unit.value)<=12){
       const response=await fetch("../../language-arts/english-9/units/unit-"+unit.value+"/vocabulary.json",{credentials:"same-origin"});
       if(response.ok){const bank=await response.json();const byTerm=new Map((bank.terms||[]).map(t=>[String(t.term).toLocaleLowerCase(),t]));data.terms=data.terms.map(t=>{const entry=byTerm.get(t.term.toLocaleLowerCase());return entry?{...t,definition:entry.definition,context:entry.context,reviewStatus:entry.reviewStatus}:t})}
     }
