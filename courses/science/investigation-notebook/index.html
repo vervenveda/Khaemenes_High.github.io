@@ -64,7 +64,7 @@
 <script>
 (()=>{
 "use strict";
-const ACTIVE="khaemenes_active_learner_v1",FAMILY="khaemenes_family_registry_v1",BASE="khaemenes-science-investigation-notebook-v1";
+const ACTIVE="khaemenes_active_learner_v1",FAMILY="khaemenes_family_registry_v1",BASE="khaemenes-science-investigation-notebook-v1",DRAFT="khaemenes-science-investigation-draft-v1";
 const qs=new URLSearchParams(location.search);
 const safe=(v,n=3000)=>String(v??"").replace(/[\u0000-\u001f\u007f]/g,"").slice(0,n);
 const readJSON=k=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):null}catch{return null}};
@@ -79,6 +79,17 @@ document.getElementById("gradeExpectations").textContent=expectations[grade]||"R
 const notice=document.getElementById("learnerNotice"),form=document.getElementById("entryForm"),status=document.getElementById("status");
 if(me)notice.textContent="Active learner: "+me.name+" · Grade "+(me.grade||grade||"High School")+". Entries are separated from other learners on this browser.";
 else{notice.textContent="No active learner profile is available. Open your Student Profile first; saving is disabled to prevent work from being attached to the wrong learner.";form.querySelectorAll("input,textarea,button").forEach(x=>x.disabled=true)}
+function applyDraft(){
+ if(!me||qs.get("draft")!=="1")return;
+ try{
+  const raw=sessionStorage.getItem(DRAFT);if(!raw)return;
+  const d=JSON.parse(raw);if(!d||d.learnerId!==me.id)return;
+  const put=(id,value)=>{const el=document.getElementById(id);if(el&&!el.value&&value)el.value=safe(value)};
+  put("title",d.title);put("question",d.question);put("prediction",d.prediction);put("variables",d.variables);put("method",d.method);put("evidence",d.evidence);put("analysis",d.analysis);put("claim",d.claim);put("limitations",d.limitations);put("next",d.next);
+  status.textContent="Investigation notes were carried here from your science lesson. Review them before saving.";
+  sessionStorage.removeItem(DRAFT);
+ }catch{}
+}
 function load(){if(!key)return {version:1,learnerId:null,entries:[]};const v=readJSON(key);return v&&v.version===1&&Array.isArray(v.entries)?v:{version:1,learnerId:me.id,entries:[]}}
 function save(data){if(!key)return false;try{localStorage.setItem(key,JSON.stringify(data));return true}catch{return false}}
 const val=id=>safe(document.getElementById(id).value);
@@ -87,6 +98,7 @@ form.addEventListener("submit",e=>{e.preventDefault();if(!me||!key)return;const 
 document.getElementById("printNotebook").addEventListener("click",()=>window.print());
 document.getElementById("exportNotebook").addEventListener("click",()=>{if(!me)return;const blob=new Blob([JSON.stringify({...load(),exportedAt:new Date().toISOString()},null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="khaemenes-science-investigation-notebook-grade-"+(grade||"hs")+".json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),800)});
 document.getElementById("importNotebook").addEventListener("change",async e=>{if(!me||!key)return;const file=e.target.files?.[0];if(!file)return;try{const incoming=JSON.parse(await file.text());if(incoming?.learnerId&&incoming.learnerId!==me.id)throw new Error("This backup belongs to a different learner profile.");if(!Array.isArray(incoming?.entries))throw new Error("Notebook entries were not found.");const current=load(),byId=new Map(current.entries.map(x=>[x.id,x]));incoming.entries.forEach(x=>{if(x&&typeof x==="object"&&x.id)byId.set(String(x.id),x)});current.entries=[...byId.values()];current.learnerId=me.id;if(!save(current))throw new Error("Browser storage is unavailable.");status.textContent="Notebook imported and merged without erasing existing entries.";render()}catch(err){status.textContent=err.message||"Notebook import failed."}finally{e.target.value=""}});
+applyDraft();
 render();
 })();
 </script>
