@@ -21,7 +21,7 @@ function run(){
   <ol>
    <li><strong>Formal synthesis lessons:</strong> complete Unit 13 Lessons 01–05 and reach at least 80% on each lesson check.</li>
    <li><strong>Weekly mastery:</strong> complete Week 36 mastery at 8/10 or better after all five Week 36 lesson gates are met.</li>
-   <li><strong>Unit mastery:</strong> complete the fixed 20-question Unit 13 formal mastery check at 16/20 or better.</li>
+   <li><strong>Unit mastery:</strong> complete the 20-question Unit 13 capstone-depth mastery check at 16/20 or better; each form is selected from an 80-item pool and guarantees quantitative/integrated modelling evidence from every formal lesson.</li>
    <li><strong>Portfolio & oral defence:</strong> finalize the model, present the evidence, answer reviewer questions, and receive an evaluator capstone score of at least 80% for course-completion eligibility.</li>
    <li><strong>Final examination:</strong> the cumulative Final opens only after its canonical course prerequisites are met. Its existing selected-response, constructed-response, and overall 80% requirements remain unchanged.</li>
   </ol>
