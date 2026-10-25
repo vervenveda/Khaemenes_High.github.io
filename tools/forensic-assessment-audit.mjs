@@ -291,6 +291,22 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
       if(snapshot)snapshotUnits++;else runtimeIssues.push(`Unit ${u}: selected-answer snapshot contract incomplete`);
     }
   }
+  const lateCtx={window:{}};vm.createContext(lateCtx);vm.runInContext(read("courses/mathematics/algebra-1/assets/late-unit-abundant-bank-v1.js"),lateCtx,{filename:"late-unit-abundant-bank-v1.js"});
+  const lateAbundant=lateCtx.window.ALGEBRA1_LATE_ABUNDANT_QUESTIONS||[];
+  const u11Ctx={window:{ALGEBRA1_QUESTIONS:[...bank]}};vm.createContext(u11Ctx);vm.runInContext(read("courses/mathematics/algebra-1/assets/unit-11-content-upgrade.js"),u11Ctx,{filename:"unit-11-content-upgrade.js"});
+  const latePoolSizes={
+    10:bank.filter(q=>Number(q.unit)===10).length+lateAbundant.filter(q=>Number(q.unit)===10).length,
+    11:(u11Ctx.window.ALGEBRA1_QUESTIONS||[]).filter(q=>Number(q.unit)===11).length,
+    12:bank.filter(q=>Number(q.unit)===12).length+lateAbundant.filter(q=>Number(q.unit)===12).length,
+    13:bank.filter(q=>Number(q.unit)===13).length+lateAbundant.filter(q=>Number(q.unit)===13).length
+  };
+  const lateEngine=read("courses/mathematics/algebra-1/assets/legacy-mastery-engine-v2.js");
+  const lateMonteCarlo=["randomSeed()","selectForm(previousIds,seed)",'selectionPolicy:"lesson-balanced-low-overlap-v1"',"targetPoolSize=Number(R.unit)===11?120:60","immediatePriorOverlap","formSeed"].every(x=>lateEngine.includes(x));
+  const latePages=[10,11,12,13].every(unit=>{
+    const page=read(`courses/mathematics/algebra-1/units/unit-${unit}/assessment/mastery-check.html`),engineIndex=page.indexOf("assets/legacy-mastery-engine-v2.js"),baseIndex=page.indexOf("assets/question-bank.js");
+    const bankIndex=unit===11?page.indexOf("assets/unit-11-content-upgrade.js"):page.indexOf("assets/late-unit-abundant-bank-v1.js");
+    return baseIndex>=0&&bankIndex>baseIndex&&engineIndex>bankIndex;
+  });
   const dm=itemMetrics(dedicated,true);
   const dedicatedMap=readJSON("courses/mathematics/algebra-1/units/dedicated-assessment-misconceptions-v1.json");
   const dedicatedMisconceptions=dedicatedMap.items||{};
@@ -327,6 +343,10 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
   checks.push(addFinding("Algebra I","algebra1-shared-late-unit-first-form-balance",
     balanced&&marked&&protectedDom?"PASS":"FAIL",
     "The shared late-unit renderer balances learner-visible answer positions and preserves mapped correctness."));
+  checks.push(addFinding("Algebra I","algebra1-late-unit-monte-carlo-pools",
+    latePoolSizes[10]===60&&latePoolSizes[11]===120&&latePoolSizes[12]===60&&latePoolSizes[13]===60&&lateMonteCarlo&&latePages?"PASS":"FAIL",
+    `Late formal mastery pools are Unit 10=${latePoolSizes[10]}, Unit 11=${latePoolSizes[11]}, Unit 12=${latePoolSizes[12]}, Unit 13=${latePoolSizes[13]}; the runtime uses seeded lesson-balanced low-overlap selection and the mastery pages load the abundance assets before scoring.`,
+    {poolSizes:latePoolSizes,selectionPolicy:"lesson-balanced-low-overlap-v1",delivered:20}));
   checks.push(addFinding("Algebra I","algebra1-runtime-dedicated-bank-contract",
     dedicated.length===610&&dedicatedLessons===61&&runtimeIssues.filter(x=>/dedicated questions/.test(x)).length===0?"PASS":"FAIL",
     `Runtime-authoritative Units 01–09: ${dedicated.length} dedicated items across ${dedicatedLessons} lessons; every lesson is required to expose 10 authored questions. Authored answer positions remain diagnostic only: ${authoredDedicatedPositions.join("/")}.`,
@@ -359,8 +379,8 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     `Shared-bank exact duplicate prompts: ${m.exactDuplicateItems}. Template-similarity signal: ${m.templateClusterPct}% (diagnostic only; repeated mathematical structures are not automatically defects).`,m));
   if(runtimeIssues.length)checks.push(addFinding("Algebra I","algebra1-runtime-contract-regressions","FAIL",runtimeIssues.join("; "),{issues:runtimeIssues}));
   area("Algebra I",
-    `Runtime-aware certification distinguishes 610 dedicated Units 01–09 items from the 435-item shared bank; Unit 01 Lessons 01–05 and all lessons in Units 02–09 now use 30-item eligible pools for 10-question forms; Unit 01 Lesson 06 retains its deeper synthesis-variant architecture.`,
-    {...m,misconceptionMap:dq,sharedBankItems:bank.length,dedicatedRuntimeItems:dedicated.length,dedicatedLessons,alignedAlternateItems:alignedAlternates,abundantItemCounts:Object.fromEntries(abundantItemCounts),dedicatedAuthoredAnswerPositions:authoredDedicatedPositions,dedicatedMisconceptionCoveragePct:pct(dedicatedMapped,dedicated.length),dedicatedRepresentativeReviewed:dedicatedReviewed,dedicatedProvisionalMapped:dedicatedProvisional,dedicatedMapIssues:dedicatedMapIssues.length},
+    `Runtime-aware certification distinguishes 610 dedicated Units 01–09 items from the shared bank; Unit 01 Lessons 01–05 and Units 02–09 use 30-item pools for 10-question lesson forms, while formal Units 10–13 use 60/120/60/60 eligible pools for 20-question low-overlap mastery forms.`,
+    {...m,misconceptionMap:dq,sharedBankItems:bank.length,dedicatedRuntimeItems:dedicated.length,dedicatedLessons,alignedAlternateItems:alignedAlternates,abundantItemCounts:Object.fromEntries(abundantItemCounts),dedicatedAuthoredAnswerPositions:authoredDedicatedPositions,dedicatedMisconceptionCoveragePct:pct(dedicatedMapped,dedicated.length),dedicatedRepresentativeReviewed:dedicatedReviewed,dedicatedProvisionalMapped:dedicatedProvisional,dedicatedMapIssues:dedicatedMapIssues.length,lateFormalMasteryPoolSizes:latePoolSizes},
     checks);
 }
 
