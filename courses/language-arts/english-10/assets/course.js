@@ -182,15 +182,18 @@
     const form=$("[data-quiz-form]"); if(!form)return;
     const week=Number(form.dataset.week);
     const rawQuestions=readQuestions("quiz-data");
-    const supplementalRows=window.KHAE_ENGLISH_SPECIFIC_QUIZ_BANK?.rows?.[week-1]||[];
+    const supplementalBank=window.KHAE_ENGLISH_SPECIFIC_QUIZ_BANK||{};
+    const supplementalVersion=String(supplementalBank.version||"supp").replace(/[^a-z0-9_-]+/gi,"-");
+    const supplementalRows=supplementalBank.rows?.[week-1]||[];
     const supplemental=Array.isArray(supplementalRows)?supplementalRows.map((row,i)=>({
-      id:`${COURSE_ID}-week-${week}-supp-${i+1}`,
+      id:`${COURSE_ID}-week-${week}-${supplementalVersion}-supp-${i+1}`,
       question:String(row?.[0]||""),
       choices:Array.isArray(row?.[1])?row[1].map(String):[],
       answer:0,
       explanation:String(row?.[2]||""),
       skill:String(row?.[3]||"Week-specific reasoning"),
-      source:"week-specific-supplement"
+      source:row?.[4]?.anchor===true?"passage-anchor":"week-specific-supplement",
+      difficulty:"core"
     })).filter(q=>q.question&&q.choices.length===4):[];
     const candidateQuestions=rawQuestions.concat(supplemental);
     const adapter=window.KhaemenesHighAssessmentAdapter||null;
@@ -199,7 +202,7 @@
     let questions=rawQuestions;
     if(adapter&&window.KhaeMonteCarloAssessment&&candidateQuestions.length){
       try{
-        opened=adapter.open({courseId:COURSE_ID,storageKey,bank:candidateQuestions,kind:"weekly",count:rawQuestions.length});
+        opened=adapter.open({courseId:COURSE_ID,storageKey,bank:candidateQuestions,kind:"weekly",count:rawQuestions.length,sourceQuotas:supplemental.some(q=>q.source==="passage-anchor")?{"passage-anchor":1}:null});
         questions=opened.questions;
       }catch(_err){opened=null;questions=rawQuestions}
     }
@@ -210,7 +213,7 @@
     syncBest();
     if(opened){
       const note=document.createElement("p");note.className="notice";
-      note.textContent=`Randomized open-book weekly check · ${opened.count} questions drawn from ${opened.bankSize} week-specific candidates · question and answer order randomized · 80% mastery target.`;
+      note.textContent=`Randomized open-book weekly check · ${opened.count} questions drawn from ${opened.bankSize} week-specific candidates · at least one passage/source anchor required · question and answer order randomized · 80% mastery target.`;
       form.prepend(note);
     }
     form.addEventListener("submit",e=>{
