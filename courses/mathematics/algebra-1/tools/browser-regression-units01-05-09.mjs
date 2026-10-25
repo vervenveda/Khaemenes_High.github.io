@@ -66,6 +66,7 @@ await context.addInitScript(()=>{
     scoped(`khaemenes-algebra1-unit${String(unit).padStart(2,"0")}-a3-v1`),
     JSON.stringify({attempts:[],best:{mastery:100}})
   );
+  mastery(2);
   mastery(4);
   mastery(8);
   localStorage.setItem(scoped("khaemenes-algebra1-midterm-result-v1"),JSON.stringify({
@@ -83,19 +84,31 @@ const cases=[
    unit:"01",
    file:"lesson-01-algebraic-habits-notation-mathematical-argument.html",
    key:"khaemenes-algebra1-unit01-a3-v1",
-   runtime:"abundant-v2"
+   runtime:"abundant-v2",
+   bankVersion:"unit01-abundant-v1",
+   misconceptionPolicy:"reviewed"
+ },
+ {
+   unit:"03",
+   file:"lesson-01-equality-inverse-operations-solution-verification.html",
+   key:"khaemenes-algebra1-unit03-a3-v1",
+   runtime:"abundant-v2",
+   bankVersion:"unit03-abundant-v1",
+   misconceptionPolicy:"provisional"
  },
  {
    unit:"05",
    file:"lesson-01-relations-inputs-outputs-function-tests.html",
    key:"khaemenes-algebra1-unit05-a3-v1",
-   runtime:"dedicated-v2"
+   runtime:"dedicated-v2",
+   misconceptionPolicy:"reviewed"
  },
  {
    unit:"09",
    file:"lesson-01-polynomial-vocabulary-standard-form.html",
    key:"khaemenes-algebra1-unit09-a3-v1",
-   runtime:"dedicated-v2"
+   runtime:"dedicated-v2",
+   misconceptionPolicy:"reviewed"
  }
 ];
 
@@ -173,14 +186,20 @@ for(const test of cases){
     assert.deepEqual(a1.formSources,["dedicated"],`Unit ${test.unit}: first form should use dedicated items only`);
     const wrong=a1.answerSnapshot.filter(x=>x.selectedDisplayIndex!==x.correctDisplayIndex);
     assert.ok(wrong.length>0,`Unit ${test.unit}: representative first form did not exercise wrong-answer feedback`);
-    assert.ok(wrong.every(x=>x.misconceptionTag&&x.misconceptionMapVersion&&x.misconceptionMapSource==="dedicated"&&x.misconceptionLearnerFeedback===true),`Unit ${test.unit}: reviewed wrong-answer misconception evidence is incomplete`);
+    assert.ok(wrong.every(x=>x.misconceptionTag&&x.misconceptionMapVersion&&x.misconceptionMapSource==="dedicated"),`Unit ${test.unit}: wrong-answer misconception evidence is incomplete`);
     const misconceptionFeedback=await page.locator(".feedback.bad").allTextContents();
     assert.equal(misconceptionFeedback.length,wrong.length,`Unit ${test.unit}: wrong-answer feedback count does not match saved evidence`);
-    assert.ok(misconceptionFeedback.every(text=>/Misconception check:/i.test(text)),`Unit ${test.unit}: reviewed misconception correction was not shown to the learner`);
+    if(test.misconceptionPolicy==="reviewed"){
+      assert.ok(wrong.every(x=>x.misconceptionLearnerFeedback===true),`Unit ${test.unit}: reviewed mappings were not marked learner-feedback eligible`);
+      assert.ok(misconceptionFeedback.every(text=>/Misconception check:/i.test(text)),`Unit ${test.unit}: reviewed misconception correction was not shown to the learner`);
+    }else if(test.misconceptionPolicy==="provisional"){
+      assert.ok(wrong.every(x=>x.misconceptionReviewStatus==="lesson-family-provisional-v1"&&x.misconceptionLearnerFeedback===false),`Unit ${test.unit}: provisional mappings crossed the learner-feedback boundary`);
+      assert.ok(misconceptionFeedback.every(text=>!/Misconception check:/i.test(text)),`Unit ${test.unit}: provisional misconception diagnosis was exposed to the learner`);
+    }
   }
   if(test.runtime==="abundant-v2"){
     assert.equal(a1.evidenceSchema,"algebra1-answer-evidence-v2",`Unit ${test.unit}: answer evidence schema missing`);
-    assert.equal(a1.bankVersion,"unit01-abundant-v1",`Unit ${test.unit}: abundant bank version missing`);
+    assert.equal(a1.bankVersion,test.bankVersion,`Unit ${test.unit}: abundant bank version missing`);
     assert.equal(a1.selectionPolicy,"blueprint-low-overlap-v1",`Unit ${test.unit}: selection policy missing`);
     assert.equal(a1.eligiblePoolSize,30,`Unit ${test.unit}: expected 30 eligible questions for Lesson 01`);
   }
@@ -249,14 +268,14 @@ await new Promise(resolve=>server.close(resolve));
 console.log("ALGEBRA I REAL-BROWSER REGRESSION: PASS");
 console.log(JSON.stringify({
   browser:"Chromium via Playwright",
-  journey:"Unit 01 → Unit 05 → Unit 09 representative Lesson 01",
+  journey:"Unit 01 → Unit 03 → Unit 05 → Unit 09 representative Lesson 01",
   checks:[
     "10-question first form",
     "submit and immutable lock",
     "answerSnapshot persistence with delivered/original option identity",
-    "reviewed misconception-aware learner feedback on wrong answers",
+    "reviewed misconception-aware learner feedback plus provisional-feedback suppression",
     "balanced learner-visible correct positions",
-    "Unit 01 30-item abundant pool with low-overlap blueprint retake",
+    "Unit 01 and Unit 03 30-item abundant pools with low-overlap blueprint retakes",
     "fresh retake with aligned alternates for Units 05 and 09",
     "reload preserves attempt history and best score",
     "no browser/page console errors"
