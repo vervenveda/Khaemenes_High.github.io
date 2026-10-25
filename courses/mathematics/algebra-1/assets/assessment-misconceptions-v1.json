@@ -3,10 +3,10 @@
   "schemaVersion": "1.0",
   "courseId": "KH-MATH-ALG1",
   "title": "Algebra I · Unit Anchor Misconception Map",
-  "coveragePolicy": "reviewed-subset; unit anchors plus high-frequency Algebra I repeated families; newly authored or substantially revised selected-response items should include complete mapping",
+  "coveragePolicy": "reviewed-subset; all detected Algebra I repeated families of at least three items plus unit anchors; newly authored or substantially revised selected-response items should include complete mapping",
   "sourceBank": "courses/mathematics/algebra-1/assets/question-bank.js",
-  "reviewedItemCount": 159,
-  "distractorRationaleCount": 477,
+  "reviewedItemCount": 271,
+  "distractorRationaleCount": 813,
   "items": {
     "q0001": {
       "itemId": "q0001",
@@ -4618,6 +4618,3254 @@
       ],
       "reviewedAt": "2026-10-25",
       "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0011": {
+      "itemId": "q0011",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Evaluate 9+3·3−6.",
+      "answerIndex": 0,
+      "correctRationale": "Multiply before adding and subtracting.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0",
+          "misconceptionTag": "subtraction-grouped-into-product",
+          "rationale": "This incorrectly groups the final subtraction inside the multiplication term instead of evaluating multiplication first."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "30",
+          "misconceptionTag": "addition-before-multiplication",
+          "rationale": "This adds before multiplying, violating the order of operations; the multiplication must be completed first."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9",
+          "misconceptionTag": "order-of-operations-arithmetic-error",
+          "rationale": "This result does not follow the required multiplication-before-addition/subtraction sequence."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0012": {
+      "itemId": "q0012",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Evaluate 2+5·3−8.",
+      "answerIndex": 1,
+      "correctRationale": "Multiply before adding and subtracting.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "-23",
+          "misconceptionTag": "subtraction-grouped-into-product",
+          "rationale": "This incorrectly groups the final subtraction inside the multiplication term instead of evaluating multiplication first."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "13",
+          "misconceptionTag": "addition-before-multiplication",
+          "rationale": "This adds before multiplying, violating the order of operations; the multiplication must be completed first."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2",
+          "misconceptionTag": "order-of-operations-arithmetic-error",
+          "rationale": "This result does not follow the required multiplication-before-addition/subtraction sequence."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0013": {
+      "itemId": "q0013",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Evaluate 5+3·3−2.",
+      "answerIndex": 2,
+      "correctRationale": "Multiply before adding and subtracting.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "8",
+          "misconceptionTag": "subtraction-grouped-into-product",
+          "rationale": "This incorrectly groups the final subtraction inside the multiplication term instead of evaluating multiplication first."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "22",
+          "misconceptionTag": "addition-before-multiplication",
+          "rationale": "This adds before multiplying, violating the order of operations; the multiplication must be completed first."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9",
+          "misconceptionTag": "order-of-operations-arithmetic-error",
+          "rationale": "This result does not follow the required multiplication-before-addition/subtraction sequence."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0014": {
+      "itemId": "q0014",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Evaluate 2+9·3−1.",
+      "answerIndex": 3,
+      "correctRationale": "Multiply before adding and subtracting.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "20",
+          "misconceptionTag": "subtraction-grouped-into-product",
+          "rationale": "This incorrectly groups the final subtraction inside the multiplication term instead of evaluating multiplication first."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "32",
+          "misconceptionTag": "addition-before-multiplication",
+          "rationale": "This adds before multiplying, violating the order of operations; the multiplication must be completed first."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "13",
+          "misconceptionTag": "order-of-operations-arithmetic-error",
+          "rationale": "This result does not follow the required multiplication-before-addition/subtraction sequence."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0015": {
+      "itemId": "q0015",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Evaluate 9+3·3−8.",
+      "answerIndex": 0,
+      "correctRationale": "Multiply before adding and subtracting.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "-6",
+          "misconceptionTag": "subtraction-grouped-into-product",
+          "rationale": "This incorrectly groups the final subtraction inside the multiplication term instead of evaluating multiplication first."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "28",
+          "misconceptionTag": "addition-before-multiplication",
+          "rationale": "This adds before multiplying, violating the order of operations; the multiplication must be completed first."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7",
+          "misconceptionTag": "order-of-operations-arithmetic-error",
+          "rationale": "This result does not follow the required multiplication-before-addition/subtraction sequence."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0016": {
+      "itemId": "q0016",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Convert 3 meters to centimeters.",
+      "answerIndex": 1,
+      "correctRationale": "Multiply by 100 cm per meter.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "30 cm",
+          "misconceptionTag": "metric-factor-ten-only",
+          "rationale": "One meter equals 100 centimeters, so multiplying by only 10 under-converts the measurement."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.03 cm",
+          "misconceptionTag": "metric-conversion-direction-reversed",
+          "rationale": "This divides by 100 as though converting centimeters to meters; meters to centimeters requires multiplying by 100."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3000 cm",
+          "misconceptionTag": "metric-factor-thousand",
+          "rationale": "This uses a factor of 1000, which is not the meter-to-centimeter conversion factor."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0017": {
+      "itemId": "q0017",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Convert 2 meters to centimeters.",
+      "answerIndex": 2,
+      "correctRationale": "Multiply by 100 cm per meter.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "20 cm",
+          "misconceptionTag": "metric-factor-ten-only",
+          "rationale": "One meter equals 100 centimeters, so multiplying by only 10 under-converts the measurement."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "0.02 cm",
+          "misconceptionTag": "metric-conversion-direction-reversed",
+          "rationale": "This divides by 100 as though converting centimeters to meters; meters to centimeters requires multiplying by 100."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2000 cm",
+          "misconceptionTag": "metric-factor-thousand",
+          "rationale": "This uses a factor of 1000, which is not the meter-to-centimeter conversion factor."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0018": {
+      "itemId": "q0018",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Convert 9 meters to centimeters.",
+      "answerIndex": 3,
+      "correctRationale": "Multiply by 100 cm per meter.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "90 cm",
+          "misconceptionTag": "metric-factor-ten-only",
+          "rationale": "One meter equals 100 centimeters, so multiplying by only 10 under-converts the measurement."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "0.09 cm",
+          "misconceptionTag": "metric-conversion-direction-reversed",
+          "rationale": "This divides by 100 as though converting centimeters to meters; meters to centimeters requires multiplying by 100."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "9000 cm",
+          "misconceptionTag": "metric-factor-thousand",
+          "rationale": "This uses a factor of 1000, which is not the meter-to-centimeter conversion factor."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0019": {
+      "itemId": "q0019",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Convert 7 meters to centimeters.",
+      "answerIndex": 0,
+      "correctRationale": "Multiply by 100 cm per meter.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "70 cm",
+          "misconceptionTag": "metric-factor-ten-only",
+          "rationale": "One meter equals 100 centimeters, so multiplying by only 10 under-converts the measurement."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.07 cm",
+          "misconceptionTag": "metric-conversion-direction-reversed",
+          "rationale": "This divides by 100 as though converting centimeters to meters; meters to centimeters requires multiplying by 100."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7000 cm",
+          "misconceptionTag": "metric-factor-thousand",
+          "rationale": "This uses a factor of 1000, which is not the meter-to-centimeter conversion factor."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0021": {
+      "itemId": "q0021",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A measurement is 102 and accepted value is 100. Percent error?",
+      "answerIndex": 2,
+      "correctRationale": "Absolute error divided by accepted value times 100.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "102%",
+          "misconceptionTag": "measurement-reported-as-percent-error",
+          "rationale": "This reports the measured value itself as a percentage instead of calculating absolute error divided by accepted value times 100."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "0.02%",
+          "misconceptionTag": "percent-conversion-factor-omitted",
+          "rationale": "This leaves the relative error as a decimal fraction instead of multiplying by 100 to express percent error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "98%",
+          "misconceptionTag": "percent-accuracy-confused-with-error",
+          "rationale": "This subtracts the error percentage from 100, which resembles percent accuracy rather than percent error."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0022": {
+      "itemId": "q0022",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A measurement is 109 and accepted value is 100. Percent error?",
+      "answerIndex": 3,
+      "correctRationale": "Absolute error divided by accepted value times 100.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "109%",
+          "misconceptionTag": "measurement-reported-as-percent-error",
+          "rationale": "This reports the measured value itself as a percentage instead of calculating absolute error divided by accepted value times 100."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "0.09%",
+          "misconceptionTag": "percent-conversion-factor-omitted",
+          "rationale": "This leaves the relative error as a decimal fraction instead of multiplying by 100 to express percent error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "91%",
+          "misconceptionTag": "percent-accuracy-confused-with-error",
+          "rationale": "This subtracts the error percentage from 100, which resembles percent accuracy rather than percent error."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0023": {
+      "itemId": "q0023",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A measurement is 103 and accepted value is 100. Percent error?",
+      "answerIndex": 0,
+      "correctRationale": "Absolute error divided by accepted value times 100.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "103%",
+          "misconceptionTag": "measurement-reported-as-percent-error",
+          "rationale": "This reports the measured value itself as a percentage instead of calculating absolute error divided by accepted value times 100."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.03%",
+          "misconceptionTag": "percent-conversion-factor-omitted",
+          "rationale": "This leaves the relative error as a decimal fraction instead of multiplying by 100 to express percent error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "97%",
+          "misconceptionTag": "percent-accuracy-confused-with-error",
+          "rationale": "This subtracts the error percentage from 100, which resembles percent accuracy rather than percent error."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0024": {
+      "itemId": "q0024",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A measurement is 106 and accepted value is 100. Percent error?",
+      "answerIndex": 1,
+      "correctRationale": "Absolute error divided by accepted value times 100.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "106%",
+          "misconceptionTag": "measurement-reported-as-percent-error",
+          "rationale": "This reports the measured value itself as a percentage instead of calculating absolute error divided by accepted value times 100."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.06%",
+          "misconceptionTag": "percent-conversion-factor-omitted",
+          "rationale": "This leaves the relative error as a decimal fraction instead of multiplying by 100 to express percent error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "94%",
+          "misconceptionTag": "percent-accuracy-confused-with-error",
+          "rationale": "This subtracts the error percentage from 100, which resembles percent accuracy rather than percent error."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0046": {
+      "itemId": "q0046",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Simplify 5x+8+2x−0.",
+      "answerIndex": 2,
+      "correctRationale": "Combine variable terms and constants separately.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "10x+8",
+          "misconceptionTag": "like-term-or-constant-sign-error",
+          "rationale": "This preserves the basic form but combines either the x-coefficients or the constants with incorrect arithmetic or sign handling."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "15x",
+          "misconceptionTag": "combines-unlike-terms-into-variable-term",
+          "rationale": "This collapses constants into the x-term instead of combining variable terms and constants separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7x+8 + 3",
+          "misconceptionTag": "like-term-or-constant-sign-error",
+          "rationale": "This preserves the basic form but combines either the x-coefficients or the constants with incorrect arithmetic or sign handling."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0047": {
+      "itemId": "q0047",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Simplify 9x+4+9x−1.",
+      "answerIndex": 3,
+      "correctRationale": "Combine variable terms and constants separately.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "81x+3",
+          "misconceptionTag": "like-term-or-constant-sign-error",
+          "rationale": "This preserves the basic form but combines either the x-coefficients or the constants with incorrect arithmetic or sign handling."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "21x",
+          "misconceptionTag": "combines-unlike-terms-into-variable-term",
+          "rationale": "This collapses constants into the x-term instead of combining variable terms and constants separately."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "18x+5",
+          "misconceptionTag": "like-term-or-constant-sign-error",
+          "rationale": "This preserves the basic form but combines either the x-coefficients or the constants with incorrect arithmetic or sign handling."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0048": {
+      "itemId": "q0048",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Simplify 9x+6+4x−2.",
+      "answerIndex": 0,
+      "correctRationale": "Combine variable terms and constants separately.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "36x+4",
+          "misconceptionTag": "like-term-or-constant-sign-error",
+          "rationale": "This preserves the basic form but combines either the x-coefficients or the constants with incorrect arithmetic or sign handling."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "17x",
+          "misconceptionTag": "combines-unlike-terms-into-variable-term",
+          "rationale": "This collapses constants into the x-term instead of combining variable terms and constants separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "13x+8",
+          "misconceptionTag": "like-term-or-constant-sign-error",
+          "rationale": "This preserves the basic form but combines either the x-coefficients or the constants with incorrect arithmetic or sign handling."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0049": {
+      "itemId": "q0049",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Simplify 7x+1+6x−3.",
+      "answerIndex": 1,
+      "correctRationale": "Combine variable terms and constants separately.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "42x+-2",
+          "misconceptionTag": "like-term-or-constant-sign-error",
+          "rationale": "This preserves the basic form but combines either the x-coefficients or the constants with incorrect arithmetic or sign handling."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "11x",
+          "misconceptionTag": "combines-unlike-terms-into-variable-term",
+          "rationale": "This collapses constants into the x-term instead of combining variable terms and constants separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "13x+4",
+          "misconceptionTag": "like-term-or-constant-sign-error",
+          "rationale": "This preserves the basic form but combines either the x-coefficients or the constants with incorrect arithmetic or sign handling."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0050": {
+      "itemId": "q0050",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Simplify 5x+6+5x−4.",
+      "answerIndex": 2,
+      "correctRationale": "Combine variable terms and constants separately.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "25x+2",
+          "misconceptionTag": "like-term-or-constant-sign-error",
+          "rationale": "This preserves the basic form but combines either the x-coefficients or the constants with incorrect arithmetic or sign handling."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "12x",
+          "misconceptionTag": "combines-unlike-terms-into-variable-term",
+          "rationale": "This collapses constants into the x-term instead of combining variable terms and constants separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "10x+10",
+          "misconceptionTag": "like-term-or-constant-sign-error",
+          "rationale": "This preserves the basic form but combines either the x-coefficients or the constants with incorrect arithmetic or sign handling."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0091": {
+      "itemId": "q0091",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve x/5=3/15.",
+      "answerIndex": 1,
+      "correctRationale": "Multiply by the denominator and simplify.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x=3",
+          "misconceptionTag": "proportion-numerator-used-as-solution",
+          "rationale": "This copies the right-side numerator instead of scaling it by the left denominator over the right denominator."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x=5",
+          "misconceptionTag": "proportion-left-denominator-used-as-solution",
+          "rationale": "This reports the denominator under x rather than solving the proportional relationship."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x=15",
+          "misconceptionTag": "proportion-right-denominator-used-as-solution",
+          "rationale": "This reports the right-side denominator instead of solving for x."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0092": {
+      "itemId": "q0092",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve x/9=6/54.",
+      "answerIndex": 2,
+      "correctRationale": "Multiply by the denominator and simplify.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x=6",
+          "misconceptionTag": "proportion-numerator-used-as-solution",
+          "rationale": "This copies the right-side numerator instead of scaling it by the left denominator over the right denominator."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "x=9",
+          "misconceptionTag": "proportion-left-denominator-used-as-solution",
+          "rationale": "This reports the denominator under x rather than solving the proportional relationship."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x=54",
+          "misconceptionTag": "proportion-right-denominator-used-as-solution",
+          "rationale": "This reports the right-side denominator instead of solving for x."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0093": {
+      "itemId": "q0093",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve x/4=4/16.",
+      "answerIndex": 3,
+      "correctRationale": "Multiply by the denominator and simplify.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x=4",
+          "misconceptionTag": "proportion-numerator-used-as-solution",
+          "rationale": "This copies the right-side numerator instead of scaling it by the left denominator over the right denominator."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "x=16",
+          "misconceptionTag": "proportion-right-denominator-used-as-solution",
+          "rationale": "This reports the right-side denominator instead of solving for x."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x=1 + 3",
+          "misconceptionTag": "proportion-cross-multiplication-error",
+          "rationale": "This value does not satisfy the original proportion when substituted back into the equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0094": {
+      "itemId": "q0094",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve x/5=8/40.",
+      "answerIndex": 0,
+      "correctRationale": "Multiply by the denominator and simplify.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "x=8",
+          "misconceptionTag": "proportion-numerator-used-as-solution",
+          "rationale": "This copies the right-side numerator instead of scaling it by the left denominator over the right denominator."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x=5",
+          "misconceptionTag": "proportion-left-denominator-used-as-solution",
+          "rationale": "This reports the denominator under x rather than solving the proportional relationship."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x=40",
+          "misconceptionTag": "proportion-right-denominator-used-as-solution",
+          "rationale": "This reports the right-side denominator instead of solving for x."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0095": {
+      "itemId": "q0095",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve x/8=7/56.",
+      "answerIndex": 1,
+      "correctRationale": "Multiply by the denominator and simplify.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x=7",
+          "misconceptionTag": "proportion-numerator-used-as-solution",
+          "rationale": "This copies the right-side numerator instead of scaling it by the left denominator over the right denominator."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x=8",
+          "misconceptionTag": "proportion-left-denominator-used-as-solution",
+          "rationale": "This reports the denominator under x rather than solving the proportional relationship."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x=56",
+          "misconceptionTag": "proportion-right-denominator-used-as-solution",
+          "rationale": "This reports the right-side denominator instead of solving for x."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0096": {
+      "itemId": "q0096",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A service costs $6+$9/hour and totals $78. Hours?",
+      "answerIndex": 2,
+      "correctRationale": "Model fixed+rate·h=total.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "9",
+          "misconceptionTag": "service-model-arithmetic-slip",
+          "rationale": "This is one hour from the verified solution, consistent with an arithmetic slip after subtracting the fixed fee or dividing by the hourly rate."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "7",
+          "misconceptionTag": "service-model-arithmetic-slip",
+          "rationale": "This is one hour from the verified solution, consistent with an arithmetic slip after subtracting the fixed fee or dividing by the hourly rate."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8 + 3",
+          "misconceptionTag": "service-equation-model-error",
+          "rationale": "Substituting this hour count into fixed fee + rate·hours does not reproduce the stated total."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0097": {
+      "itemId": "q0097",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A service costs $4+$7/hour and totals $46. Hours?",
+      "answerIndex": 3,
+      "correctRationale": "Model fixed+rate·h=total.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "7",
+          "misconceptionTag": "service-model-arithmetic-slip",
+          "rationale": "This is one hour from the verified solution, consistent with an arithmetic slip after subtracting the fixed fee or dividing by the hourly rate."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "5",
+          "misconceptionTag": "service-model-arithmetic-slip",
+          "rationale": "This is one hour from the verified solution, consistent with an arithmetic slip after subtracting the fixed fee or dividing by the hourly rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6 + 3",
+          "misconceptionTag": "service-equation-model-error",
+          "rationale": "Substituting this hour count into fixed fee + rate·hours does not reproduce the stated total."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0098": {
+      "itemId": "q0098",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A service costs $2+$5/hour and totals $17. Hours?",
+      "answerIndex": 0,
+      "correctRationale": "Model fixed+rate·h=total.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4",
+          "misconceptionTag": "service-model-arithmetic-slip",
+          "rationale": "This is one hour from the verified solution, consistent with an arithmetic slip after subtracting the fixed fee or dividing by the hourly rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2",
+          "misconceptionTag": "service-model-arithmetic-slip",
+          "rationale": "This is one hour from the verified solution, consistent with an arithmetic slip after subtracting the fixed fee or dividing by the hourly rate."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3 + 3",
+          "misconceptionTag": "service-equation-model-error",
+          "rationale": "Substituting this hour count into fixed fee + rate·hours does not reproduce the stated total."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0099": {
+      "itemId": "q0099",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A service costs $7+$9/hour and totals $43. Hours?",
+      "answerIndex": 1,
+      "correctRationale": "Model fixed+rate·h=total.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "5",
+          "misconceptionTag": "service-model-arithmetic-slip",
+          "rationale": "This is one hour from the verified solution, consistent with an arithmetic slip after subtracting the fixed fee or dividing by the hourly rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3",
+          "misconceptionTag": "service-model-arithmetic-slip",
+          "rationale": "This is one hour from the verified solution, consistent with an arithmetic slip after subtracting the fixed fee or dividing by the hourly rate."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 + 3",
+          "misconceptionTag": "service-equation-model-error",
+          "rationale": "Substituting this hour count into fixed fee + rate·hours does not reproduce the stated total."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0100": {
+      "itemId": "q0100",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A service costs $5+$4/hour and totals $41. Hours?",
+      "answerIndex": 2,
+      "correctRationale": "Model fixed+rate·h=total.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "10",
+          "misconceptionTag": "service-model-arithmetic-slip",
+          "rationale": "This is one hour from the verified solution, consistent with an arithmetic slip after subtracting the fixed fee or dividing by the hourly rate."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "8",
+          "misconceptionTag": "service-model-arithmetic-slip",
+          "rationale": "This is one hour from the verified solution, consistent with an arithmetic slip after subtracting the fixed fee or dividing by the hourly rate."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9 + 3",
+          "misconceptionTag": "service-equation-model-error",
+          "rationale": "Substituting this hour count into fixed fee + rate·hours does not reproduce the stated total."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0111": {
+      "itemId": "q0111",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve −8x≤16.",
+      "answerIndex": 3,
+      "correctRationale": "Divide by a negative and reverse the sign.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x≤-2",
+          "misconceptionTag": "fails-to-reverse-inequality",
+          "rationale": "Dividing both sides of an inequality by a negative number requires reversing the inequality direction."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "x>-2",
+          "misconceptionTag": "strict-vs-inclusive-boundary",
+          "rationale": "The original inequality includes equality, so the solution boundary must remain included after division."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x<-2",
+          "misconceptionTag": "negative-inequality-direction-and-boundary-error",
+          "rationale": "Dividing by a negative must reverse the inequality, and the inclusive boundary must remain inclusive; this option misses both."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0112": {
+      "itemId": "q0112",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve −2x≤-2.",
+      "answerIndex": 0,
+      "correctRationale": "Divide by a negative and reverse the sign.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "x≤1",
+          "misconceptionTag": "fails-to-reverse-inequality",
+          "rationale": "Dividing both sides of an inequality by a negative number requires reversing the inequality direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x>1",
+          "misconceptionTag": "strict-vs-inclusive-boundary",
+          "rationale": "The original inequality includes equality, so the solution boundary must remain included after division."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x<1",
+          "misconceptionTag": "negative-inequality-direction-and-boundary-error",
+          "rationale": "Dividing by a negative must reverse the inequality, and the inclusive boundary must remain inclusive; this option misses both."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0113": {
+      "itemId": "q0113",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve −8x≤-56.",
+      "answerIndex": 1,
+      "correctRationale": "Divide by a negative and reverse the sign.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x≤7",
+          "misconceptionTag": "fails-to-reverse-inequality",
+          "rationale": "Dividing both sides of an inequality by a negative number requires reversing the inequality direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x>7",
+          "misconceptionTag": "strict-vs-inclusive-boundary",
+          "rationale": "The original inequality includes equality, so the solution boundary must remain included after division."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x<7",
+          "misconceptionTag": "negative-inequality-direction-and-boundary-error",
+          "rationale": "Dividing by a negative must reverse the inequality, and the inclusive boundary must remain inclusive; this option misses both."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0114": {
+      "itemId": "q0114",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve −2x≤6.",
+      "answerIndex": 2,
+      "correctRationale": "Divide by a negative and reverse the sign.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x≤-3",
+          "misconceptionTag": "fails-to-reverse-inequality",
+          "rationale": "Dividing both sides of an inequality by a negative number requires reversing the inequality direction."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "x>-3",
+          "misconceptionTag": "strict-vs-inclusive-boundary",
+          "rationale": "The original inequality includes equality, so the solution boundary must remain included after division."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x<-3",
+          "misconceptionTag": "negative-inequality-direction-and-boundary-error",
+          "rationale": "Dividing by a negative must reverse the inequality, and the inclusive boundary must remain inclusive; this option misses both."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0115": {
+      "itemId": "q0115",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve −5x≤20.",
+      "answerIndex": 3,
+      "correctRationale": "Divide by a negative and reverse the sign.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x≤-4",
+          "misconceptionTag": "fails-to-reverse-inequality",
+          "rationale": "Dividing both sides of an inequality by a negative number requires reversing the inequality direction."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "x>-4",
+          "misconceptionTag": "strict-vs-inclusive-boundary",
+          "rationale": "The original inequality includes equality, so the solution boundary must remain included after division."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x<-4",
+          "misconceptionTag": "negative-inequality-direction-and-boundary-error",
+          "rationale": "Dividing by a negative must reverse the inequality, and the inclusive boundary must remain inclusive; this option misses both."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0116": {
+      "itemId": "q0116",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Interval for −2<x≤8?",
+      "answerIndex": 0,
+      "correctRationale": "Left excluded, right included.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "[−2, 8)",
+          "misconceptionTag": "interval-endpoints-both-reversed",
+          "rationale": "The left endpoint should be excluded because the inequality is strict, while the right endpoint should be included because it uses ≤."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(−2, 8)",
+          "misconceptionTag": "interval-right-endpoint-exclusion-error",
+          "rationale": "The right inequality includes equality, so the right endpoint must use a bracket rather than a parenthesis."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "[−2, 8]",
+          "misconceptionTag": "interval-left-endpoint-inclusion-error",
+          "rationale": "The left inequality is strict, so the left endpoint must use a parenthesis rather than a bracket."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0117": {
+      "itemId": "q0117",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Interval for −2<x≤9?",
+      "answerIndex": 1,
+      "correctRationale": "Left excluded, right included.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "[−2, 9)",
+          "misconceptionTag": "interval-endpoints-both-reversed",
+          "rationale": "The left endpoint should be excluded because the inequality is strict, while the right endpoint should be included because it uses ≤."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(−2, 9)",
+          "misconceptionTag": "interval-right-endpoint-exclusion-error",
+          "rationale": "The right inequality includes equality, so the right endpoint must use a bracket rather than a parenthesis."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "[−2, 9]",
+          "misconceptionTag": "interval-left-endpoint-inclusion-error",
+          "rationale": "The left inequality is strict, so the left endpoint must use a parenthesis rather than a bracket."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0118": {
+      "itemId": "q0118",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Interval for −5<x≤9?",
+      "answerIndex": 2,
+      "correctRationale": "Left excluded, right included.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "[−5, 9)",
+          "misconceptionTag": "interval-endpoints-both-reversed",
+          "rationale": "The left endpoint should be excluded because the inequality is strict, while the right endpoint should be included because it uses ≤."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "(−5, 9)",
+          "misconceptionTag": "interval-right-endpoint-exclusion-error",
+          "rationale": "The right inequality includes equality, so the right endpoint must use a bracket rather than a parenthesis."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "[−5, 9]",
+          "misconceptionTag": "interval-left-endpoint-inclusion-error",
+          "rationale": "The left inequality is strict, so the left endpoint must use a parenthesis rather than a bracket."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0119": {
+      "itemId": "q0119",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Interval for −9<x≤5?",
+      "answerIndex": 3,
+      "correctRationale": "Left excluded, right included.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "[−9, 5)",
+          "misconceptionTag": "interval-endpoints-both-reversed",
+          "rationale": "The left endpoint should be excluded because the inequality is strict, while the right endpoint should be included because it uses ≤."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "(−9, 5)",
+          "misconceptionTag": "interval-right-endpoint-exclusion-error",
+          "rationale": "The right inequality includes equality, so the right endpoint must use a bracket rather than a parenthesis."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "[−9, 5]",
+          "misconceptionTag": "interval-left-endpoint-inclusion-error",
+          "rationale": "The left inequality is strict, so the left endpoint must use a parenthesis rather than a bracket."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0120": {
+      "itemId": "q0120",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Interval for −9<x≤9?",
+      "answerIndex": 0,
+      "correctRationale": "Left excluded, right included.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "[−9, 9)",
+          "misconceptionTag": "interval-endpoints-both-reversed",
+          "rationale": "The left endpoint should be excluded because the inequality is strict, while the right endpoint should be included because it uses ≤."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(−9, 9)",
+          "misconceptionTag": "interval-right-endpoint-exclusion-error",
+          "rationale": "The right inequality includes equality, so the right endpoint must use a bracket rather than a parenthesis."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "[−9, 9]",
+          "misconceptionTag": "interval-left-endpoint-inclusion-error",
+          "rationale": "The left inequality is strict, so the left endpoint must use a parenthesis rather than a bracket."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0136": {
+      "itemId": "q0136",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For f(x)=4x+8, find f(-1).",
+      "answerIndex": 3,
+      "correctRationale": "Substitute the input.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "11",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "28",
+          "misconceptionTag": "implicit-parentheses-error",
+          "rationale": "This treats ax+b as though it were a(x+b), changing the original rule."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-12",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0137": {
+      "itemId": "q0137",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For f(x)=4x+5, find f(3).",
+      "answerIndex": 0,
+      "correctRationale": "Substitute the input.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12",
+          "misconceptionTag": "constant-term-omitted",
+          "rationale": "This evaluates the variable term but omits the constant term."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "32",
+          "misconceptionTag": "implicit-parentheses-error",
+          "rationale": "This treats ax+b as though it were a(x+b), changing the original rule."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0138": {
+      "itemId": "q0138",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For f(x)=4x+4, find f(10).",
+      "answerIndex": 1,
+      "correctRationale": "Substitute the input.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "18",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "56",
+          "misconceptionTag": "implicit-parentheses-error",
+          "rationale": "This treats ax+b as though it were a(x+b), changing the original rule."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "36",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0139": {
+      "itemId": "q0139",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For f(x)=7x+7, find f(5).",
+      "answerIndex": 2,
+      "correctRationale": "Substitute the input.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "19",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "84",
+          "misconceptionTag": "implicit-parentheses-error",
+          "rationale": "This treats ax+b as though it were a(x+b), changing the original rule."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "28",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0140": {
+      "itemId": "q0140",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For f(x)=2x+4, find f(-5).",
+      "answerIndex": 3,
+      "correctRationale": "Substitute the input.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "1",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "-2",
+          "misconceptionTag": "implicit-parentheses-error",
+          "rationale": "This treats ax+b as though it were a(x+b), changing the original rule."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-14",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0201": {
+      "itemId": "q0201",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For y=6x+7, predict y at x=7.",
+      "answerIndex": 2,
+      "correctRationale": "Substitute the input.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "20",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "84",
+          "misconceptionTag": "implicit-parentheses-error",
+          "rationale": "This treats ax+b as though it were a(x+b), changing the original rule."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "35",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0202": {
+      "itemId": "q0202",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For y=8x+4, predict y at x=8.",
+      "answerIndex": 3,
+      "correctRationale": "Substitute the input.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "20",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "96",
+          "misconceptionTag": "implicit-parentheses-error",
+          "rationale": "This treats ax+b as though it were a(x+b), changing the original rule."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "60",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0203": {
+      "itemId": "q0203",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For y=5x+1, predict y at x=6.",
+      "answerIndex": 0,
+      "correctRationale": "Substitute the input.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "35",
+          "misconceptionTag": "implicit-parentheses-error",
+          "rationale": "This treats ax+b as though it were a(x+b), changing the original rule."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "29",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0204": {
+      "itemId": "q0204",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For y=9x+7, predict y at x=8.",
+      "answerIndex": 1,
+      "correctRationale": "Substitute the input.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "24",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "135",
+          "misconceptionTag": "implicit-parentheses-error",
+          "rationale": "This treats ax+b as though it were a(x+b), changing the original rule."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "65",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0205": {
+      "itemId": "q0205",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For y=4x+1, predict y at x=9.",
+      "answerIndex": 2,
+      "correctRationale": "Substitute the input.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "14",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "40",
+          "misconceptionTag": "implicit-parentheses-error",
+          "rationale": "This treats ax+b as though it were a(x+b), changing the original rule."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "35",
+          "misconceptionTag": "linear-rule-evaluation-error",
+          "rationale": "This result does not come from substituting the stated input into the linear rule and evaluating it correctly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0146": {
+      "itemId": "q0146",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Rule for x:0,1,2; y:7,14,21?",
+      "answerIndex": 1,
+      "correctRationale": "Difference gives slope; x=0 gives intercept.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "y=14x",
+          "misconceptionTag": "table-intercept-absorbed-into-slope",
+          "rationale": "This adds slope and intercept together and removes the constant term instead of using y=mx+b."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "y=7x−7",
+          "misconceptionTag": "table-intercept-sign-error",
+          "rationale": "The constant difference is correct, but the intercept sign is reversed, so the rule fails at x=0."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "y=7x+7 + 3",
+          "misconceptionTag": "table-linear-rule-error",
+          "rationale": "This rule does not simultaneously match the table's constant difference and its value when x=0."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0147": {
+      "itemId": "q0147",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Rule for x:0,1,2; y:2,6,10?",
+      "answerIndex": 2,
+      "correctRationale": "Difference gives slope; x=0 gives intercept.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "y=2x+4",
+          "misconceptionTag": "table-slope-intercept-swapped",
+          "rationale": "This swaps the table's constant difference with the y-value at x=0; slope and intercept play different roles."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "y=6x",
+          "misconceptionTag": "table-intercept-absorbed-into-slope",
+          "rationale": "This adds slope and intercept together and removes the constant term instead of using y=mx+b."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "y=4x−2",
+          "misconceptionTag": "table-intercept-sign-error",
+          "rationale": "The constant difference is correct, but the intercept sign is reversed, so the rule fails at x=0."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0148": {
+      "itemId": "q0148",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Rule for x:0,1,2; y:3,9,15?",
+      "answerIndex": 3,
+      "correctRationale": "Difference gives slope; x=0 gives intercept.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "y=3x+6",
+          "misconceptionTag": "table-slope-intercept-swapped",
+          "rationale": "This swaps the table's constant difference with the y-value at x=0; slope and intercept play different roles."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "y=9x",
+          "misconceptionTag": "table-intercept-absorbed-into-slope",
+          "rationale": "This adds slope and intercept together and removes the constant term instead of using y=mx+b."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "y=6x−3",
+          "misconceptionTag": "table-intercept-sign-error",
+          "rationale": "The constant difference is correct, but the intercept sign is reversed, so the rule fails at x=0."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0149": {
+      "itemId": "q0149",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Rule for x:0,1,2; y:7,12,17?",
+      "answerIndex": 0,
+      "correctRationale": "Difference gives slope; x=0 gives intercept.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "y=7x+5",
+          "misconceptionTag": "table-slope-intercept-swapped",
+          "rationale": "This swaps the table's constant difference with the y-value at x=0; slope and intercept play different roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "y=12x",
+          "misconceptionTag": "table-intercept-absorbed-into-slope",
+          "rationale": "This adds slope and intercept together and removes the constant term instead of using y=mx+b."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "y=5x−7",
+          "misconceptionTag": "table-intercept-sign-error",
+          "rationale": "The constant difference is correct, but the intercept sign is reversed, so the rule fails at x=0."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0150": {
+      "itemId": "q0150",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Rule for x:0,1,2; y:1,9,17?",
+      "answerIndex": 1,
+      "correctRationale": "Difference gives slope; x=0 gives intercept.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "y=1x+8",
+          "misconceptionTag": "table-slope-intercept-swapped",
+          "rationale": "This swaps the table's constant difference with the y-value at x=0; slope and intercept play different roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "y=9x",
+          "misconceptionTag": "table-intercept-absorbed-into-slope",
+          "rationale": "This adds slope and intercept together and removes the constant term instead of using y=mx+b."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "y=8x−1",
+          "misconceptionTag": "table-intercept-sign-error",
+          "rationale": "The constant difference is correct, but the intercept sign is reversed, so the rule fails at x=0."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0186": {
+      "itemId": "q0186",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Perpendicular slope to 2?",
+      "answerIndex": 3,
+      "correctRationale": "Use the negative reciprocal.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "2",
+          "misconceptionTag": "uses-same-slope",
+          "rationale": "A line with the same slope is parallel, not perpendicular."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "-2",
+          "misconceptionTag": "negates-without-reciprocal",
+          "rationale": "Perpendicular slopes use the negative reciprocal, not merely the negative of the original slope."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1/2",
+          "misconceptionTag": "reciprocal-without-negative",
+          "rationale": "This takes the reciprocal but omits the negative sign required for a perpendicular slope."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0187": {
+      "itemId": "q0187",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Perpendicular slope to 3?",
+      "answerIndex": 0,
+      "correctRationale": "Use the negative reciprocal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3",
+          "misconceptionTag": "uses-same-slope",
+          "rationale": "A line with the same slope is parallel, not perpendicular."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-3",
+          "misconceptionTag": "negates-without-reciprocal",
+          "rationale": "Perpendicular slopes use the negative reciprocal, not merely the negative of the original slope."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1/3",
+          "misconceptionTag": "reciprocal-without-negative",
+          "rationale": "This takes the reciprocal but omits the negative sign required for a perpendicular slope."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0188": {
+      "itemId": "q0188",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Perpendicular slope to 6?",
+      "answerIndex": 1,
+      "correctRationale": "Use the negative reciprocal.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "6",
+          "misconceptionTag": "uses-same-slope",
+          "rationale": "A line with the same slope is parallel, not perpendicular."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-6",
+          "misconceptionTag": "negates-without-reciprocal",
+          "rationale": "Perpendicular slopes use the negative reciprocal, not merely the negative of the original slope."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1/6",
+          "misconceptionTag": "reciprocal-without-negative",
+          "rationale": "This takes the reciprocal but omits the negative sign required for a perpendicular slope."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0189": {
+      "itemId": "q0189",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Perpendicular slope to 5?",
+      "answerIndex": 2,
+      "correctRationale": "Use the negative reciprocal.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "5",
+          "misconceptionTag": "uses-same-slope",
+          "rationale": "A line with the same slope is parallel, not perpendicular."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "-5",
+          "misconceptionTag": "negates-without-reciprocal",
+          "rationale": "Perpendicular slopes use the negative reciprocal, not merely the negative of the original slope."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1/5",
+          "misconceptionTag": "reciprocal-without-negative",
+          "rationale": "This takes the reciprocal but omits the negative sign required for a perpendicular slope."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0190": {
+      "itemId": "q0190",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Perpendicular slope to 7?",
+      "answerIndex": 3,
+      "correctRationale": "Use the negative reciprocal.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "7",
+          "misconceptionTag": "uses-same-slope",
+          "rationale": "A line with the same slope is parallel, not perpendicular."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "-7",
+          "misconceptionTag": "negates-without-reciprocal",
+          "rationale": "Perpendicular slopes use the negative reciprocal, not merely the negative of the original slope."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1/7",
+          "misconceptionTag": "reciprocal-without-negative",
+          "rationale": "This takes the reciprocal but omits the negative sign required for a perpendicular slope."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0251": {
+      "itemId": "q0251",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Write 4.2×10³ in standard notation.",
+      "answerIndex": 3,
+      "correctRationale": "Move the decimal three places right.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "420",
+          "misconceptionTag": "scientific-decimal-one-place-short",
+          "rationale": "This moves the decimal only two places to the right instead of three for 10³."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "42,000",
+          "misconceptionTag": "scientific-decimal-one-place-too-far",
+          "rationale": "This moves the decimal four places to the right instead of three for 10³."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.0042",
+          "misconceptionTag": "scientific-exponent-direction-reversed",
+          "rationale": "This moves the decimal left as though the exponent were negative; 10³ requires moving it right three places."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0253": {
+      "itemId": "q0253",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Write 5.2×10³ in standard notation.",
+      "answerIndex": 1,
+      "correctRationale": "Move the decimal three places right.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "520",
+          "misconceptionTag": "scientific-decimal-one-place-short",
+          "rationale": "This moves the decimal only two places to the right instead of three for 10³."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "52,000",
+          "misconceptionTag": "scientific-decimal-one-place-too-far",
+          "rationale": "This moves the decimal four places to the right instead of three for 10³."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.0052",
+          "misconceptionTag": "scientific-exponent-direction-reversed",
+          "rationale": "This moves the decimal left as though the exponent were negative; 10³ requires moving it right three places."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0254": {
+      "itemId": "q0254",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Write 8.2×10³ in standard notation.",
+      "answerIndex": 2,
+      "correctRationale": "Move the decimal three places right.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "820",
+          "misconceptionTag": "scientific-decimal-one-place-short",
+          "rationale": "This moves the decimal only two places to the right instead of three for 10³."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "82,000",
+          "misconceptionTag": "scientific-decimal-one-place-too-far",
+          "rationale": "This moves the decimal four places to the right instead of three for 10³."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.0082",
+          "misconceptionTag": "scientific-exponent-direction-reversed",
+          "rationale": "This moves the decimal left as though the exponent were negative; 10³ requires moving it right three places."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0255": {
+      "itemId": "q0255",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Write 9.2×10³ in standard notation.",
+      "answerIndex": 3,
+      "correctRationale": "Move the decimal three places right.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "920",
+          "misconceptionTag": "scientific-decimal-one-place-short",
+          "rationale": "This moves the decimal only two places to the right instead of three for 10³."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "92,000",
+          "misconceptionTag": "scientific-decimal-one-place-too-far",
+          "rationale": "This moves the decimal four places to the right instead of three for 10³."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.0092",
+          "misconceptionTag": "scientific-exponent-direction-reversed",
+          "rationale": "This moves the decimal left as though the exponent were negative; 10³ requires moving it right three places."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0281": {
+      "itemId": "q0281",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Expand 6x(8x+5).",
+      "answerIndex": 0,
+      "correctRationale": "Distribute the monomial.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "48x+30",
+          "misconceptionTag": "distribution-loses-x-power",
+          "rationale": "Multiplying x by the x-term must produce an x² term; this choice loses one factor of x."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "14x²+5",
+          "misconceptionTag": "distribution-omits-x-on-second-term",
+          "rationale": "The outside x must multiply the constant term as well, producing an x-term rather than a plain constant."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "48x²+5x",
+          "misconceptionTag": "distribution-coefficient-error",
+          "rationale": "The structure is correct, but one product coefficient is not the result of distributing the outside monomial to both terms."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0282": {
+      "itemId": "q0282",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Expand 3x(4x+1).",
+      "answerIndex": 1,
+      "correctRationale": "Distribute the monomial.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "12x+3",
+          "misconceptionTag": "distribution-loses-x-power",
+          "rationale": "Multiplying x by the x-term must produce an x² term; this choice loses one factor of x."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7x²+1",
+          "misconceptionTag": "distribution-omits-x-on-second-term",
+          "rationale": "The outside x must multiply the constant term as well, producing an x-term rather than a plain constant."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "12x²+1x",
+          "misconceptionTag": "distribution-coefficient-error",
+          "rationale": "The structure is correct, but one product coefficient is not the result of distributing the outside monomial to both terms."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0283": {
+      "itemId": "q0283",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Expand 6x(9x+2).",
+      "answerIndex": 2,
+      "correctRationale": "Distribute the monomial.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "54x+12",
+          "misconceptionTag": "distribution-loses-x-power",
+          "rationale": "Multiplying x by the x-term must produce an x² term; this choice loses one factor of x."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "15x²+2",
+          "misconceptionTag": "distribution-omits-x-on-second-term",
+          "rationale": "The outside x must multiply the constant term as well, producing an x-term rather than a plain constant."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "54x²+2x",
+          "misconceptionTag": "distribution-coefficient-error",
+          "rationale": "The structure is correct, but one product coefficient is not the result of distributing the outside monomial to both terms."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0284": {
+      "itemId": "q0284",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Expand 3x(6x+7).",
+      "answerIndex": 3,
+      "correctRationale": "Distribute the monomial.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "18x+21",
+          "misconceptionTag": "distribution-loses-x-power",
+          "rationale": "Multiplying x by the x-term must produce an x² term; this choice loses one factor of x."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "9x²+7",
+          "misconceptionTag": "distribution-omits-x-on-second-term",
+          "rationale": "The outside x must multiply the constant term as well, producing an x-term rather than a plain constant."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "18x²+7x",
+          "misconceptionTag": "distribution-coefficient-error",
+          "rationale": "The structure is correct, but one product coefficient is not the result of distributing the outside monomial to both terms."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0285": {
+      "itemId": "q0285",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Expand 4x(2x+5).",
+      "answerIndex": 0,
+      "correctRationale": "Distribute the monomial.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8x+20",
+          "misconceptionTag": "distribution-loses-x-power",
+          "rationale": "Multiplying x by the x-term must produce an x² term; this choice loses one factor of x."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6x²+5",
+          "misconceptionTag": "distribution-omits-x-on-second-term",
+          "rationale": "The outside x must multiply the constant term as well, producing an x-term rather than a plain constant."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8x²+5x",
+          "misconceptionTag": "distribution-coefficient-error",
+          "rationale": "The structure is correct, but one product coefficient is not the result of distributing the outside monomial to both terms."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0286": {
+      "itemId": "q0286",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Expand (x+4)².",
+      "answerIndex": 1,
+      "correctRationale": "(x+a)²=x²+2ax+a².",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x²+16",
+          "misconceptionTag": "binomial-square-middle-term-omitted",
+          "rationale": "Squaring (x+a) produces x²+2ax+a²; this option omits the middle 2ax term."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x²+4x+16",
+          "misconceptionTag": "binomial-square-missing-factor-two",
+          "rationale": "The middle term of (x+a)² is 2ax, not ax; this option misses the factor of two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x²−8x+16",
+          "misconceptionTag": "binomial-square-middle-sign-error",
+          "rationale": "For (x+a)², the middle term is positive 2ax; this option incorrectly changes its sign."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0287": {
+      "itemId": "q0287",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Expand (x+5)².",
+      "answerIndex": 2,
+      "correctRationale": "(x+a)²=x²+2ax+a².",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x²+25",
+          "misconceptionTag": "binomial-square-middle-term-omitted",
+          "rationale": "Squaring (x+a) produces x²+2ax+a²; this option omits the middle 2ax term."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "x²+5x+25",
+          "misconceptionTag": "binomial-square-missing-factor-two",
+          "rationale": "The middle term of (x+a)² is 2ax, not ax; this option misses the factor of two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x²−10x+25",
+          "misconceptionTag": "binomial-square-middle-sign-error",
+          "rationale": "For (x+a)², the middle term is positive 2ax; this option incorrectly changes its sign."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0288": {
+      "itemId": "q0288",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Expand (x+3)².",
+      "answerIndex": 3,
+      "correctRationale": "(x+a)²=x²+2ax+a².",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x²+9",
+          "misconceptionTag": "binomial-square-middle-term-omitted",
+          "rationale": "Squaring (x+a) produces x²+2ax+a²; this option omits the middle 2ax term."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "x²+3x+9",
+          "misconceptionTag": "binomial-square-missing-factor-two",
+          "rationale": "The middle term of (x+a)² is 2ax, not ax; this option misses the factor of two."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x²−6x+9",
+          "misconceptionTag": "binomial-square-middle-sign-error",
+          "rationale": "For (x+a)², the middle term is positive 2ax; this option incorrectly changes its sign."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0289": {
+      "itemId": "q0289",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Expand (x+9)².",
+      "answerIndex": 0,
+      "correctRationale": "(x+a)²=x²+2ax+a².",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "x²+81",
+          "misconceptionTag": "binomial-square-middle-term-omitted",
+          "rationale": "Squaring (x+a) produces x²+2ax+a²; this option omits the middle 2ax term."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x²+9x+81",
+          "misconceptionTag": "binomial-square-missing-factor-two",
+          "rationale": "The middle term of (x+a)² is 2ax, not ax; this option misses the factor of two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x²−18x+81",
+          "misconceptionTag": "binomial-square-middle-sign-error",
+          "rationale": "For (x+a)², the middle term is positive 2ax; this option incorrectly changes its sign."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0290": {
+      "itemId": "q0290",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Expand (x+6)².",
+      "answerIndex": 1,
+      "correctRationale": "(x+a)²=x²+2ax+a².",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x²+36",
+          "misconceptionTag": "binomial-square-middle-term-omitted",
+          "rationale": "Squaring (x+a) produces x²+2ax+a²; this option omits the middle 2ax term."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x²+6x+36",
+          "misconceptionTag": "binomial-square-missing-factor-two",
+          "rationale": "The middle term of (x+a)² is 2ax, not ax; this option misses the factor of two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x²−12x+36",
+          "misconceptionTag": "binomial-square-middle-sign-error",
+          "rationale": "For (x+a)², the middle term is positive 2ax; this option incorrectly changes its sign."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0296": {
+      "itemId": "q0296",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Factor x²+8x+15.",
+      "answerIndex": 3,
+      "correctRationale": "Factors multiply to the constant and add to the middle coefficient.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "(x−3)(x−5)",
+          "misconceptionTag": "quadratic-factor-signs-both-reversed",
+          "rationale": "For a positive middle term and positive constant here, the factor constants should both be positive; two negative constants give a negative middle term."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "(x+8)(x+15)",
+          "misconceptionTag": "uses-middle-and-constant-as-factors",
+          "rationale": "The factor constants must multiply to the constant term and add to the middle coefficient; they are not simply the middle and constant coefficients themselves."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(x+3)(x−5)",
+          "misconceptionTag": "mixed-factor-sign-error",
+          "rationale": "Opposite-signed factors would produce a negative product constant, which does not match the positive constant in this quadratic."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0297": {
+      "itemId": "q0297",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Factor x²+11x+30.",
+      "answerIndex": 0,
+      "correctRationale": "Factors multiply to the constant and add to the middle coefficient.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "(x−6)(x−5)",
+          "misconceptionTag": "quadratic-factor-signs-both-reversed",
+          "rationale": "For a positive middle term and positive constant here, the factor constants should both be positive; two negative constants give a negative middle term."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(x+11)(x+30)",
+          "misconceptionTag": "uses-middle-and-constant-as-factors",
+          "rationale": "The factor constants must multiply to the constant term and add to the middle coefficient; they are not simply the middle and constant coefficients themselves."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(x+6)(x−5)",
+          "misconceptionTag": "mixed-factor-sign-error",
+          "rationale": "Opposite-signed factors would produce a negative product constant, which does not match the positive constant in this quadratic."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0298": {
+      "itemId": "q0298",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Factor x²+9x+14.",
+      "answerIndex": 1,
+      "correctRationale": "Factors multiply to the constant and add to the middle coefficient.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "(x−7)(x−2)",
+          "misconceptionTag": "quadratic-factor-signs-both-reversed",
+          "rationale": "For a positive middle term and positive constant here, the factor constants should both be positive; two negative constants give a negative middle term."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(x+9)(x+14)",
+          "misconceptionTag": "uses-middle-and-constant-as-factors",
+          "rationale": "The factor constants must multiply to the constant term and add to the middle coefficient; they are not simply the middle and constant coefficients themselves."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(x+7)(x−2)",
+          "misconceptionTag": "mixed-factor-sign-error",
+          "rationale": "Opposite-signed factors would produce a negative product constant, which does not match the positive constant in this quadratic."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0299": {
+      "itemId": "q0299",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Factor x²+11x+24.",
+      "answerIndex": 2,
+      "correctRationale": "Factors multiply to the constant and add to the middle coefficient.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "(x−8)(x−3)",
+          "misconceptionTag": "quadratic-factor-signs-both-reversed",
+          "rationale": "For a positive middle term and positive constant here, the factor constants should both be positive; two negative constants give a negative middle term."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "(x+11)(x+24)",
+          "misconceptionTag": "uses-middle-and-constant-as-factors",
+          "rationale": "The factor constants must multiply to the constant term and add to the middle coefficient; they are not simply the middle and constant coefficients themselves."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(x+8)(x−3)",
+          "misconceptionTag": "mixed-factor-sign-error",
+          "rationale": "Opposite-signed factors would produce a negative product constant, which does not match the positive constant in this quadratic."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0300": {
+      "itemId": "q0300",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Factor x²+12x+35.",
+      "answerIndex": 3,
+      "correctRationale": "Factors multiply to the constant and add to the middle coefficient.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "(x−7)(x−5)",
+          "misconceptionTag": "quadratic-factor-signs-both-reversed",
+          "rationale": "For a positive middle term and positive constant here, the factor constants should both be positive; two negative constants give a negative middle term."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "(x+12)(x+35)",
+          "misconceptionTag": "uses-middle-and-constant-as-factors",
+          "rationale": "The factor constants must multiply to the constant term and add to the middle coefficient; they are not simply the middle and constant coefficients themselves."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(x+7)(x−5)",
+          "misconceptionTag": "mixed-factor-sign-error",
+          "rationale": "Opposite-signed factors would produce a negative product constant, which does not match the positive constant in this quadratic."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0301": {
+      "itemId": "q0301",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Zeros of (x−8)(x+4)=0?",
+      "answerIndex": 0,
+      "correctRationale": "Set each factor equal to zero.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "−8 and 4",
+          "misconceptionTag": "factor-signs-not-reversed-for-zeros",
+          "rationale": "Setting each factor equal to zero requires reversing the sign of its constant; this option keeps both factor signs instead."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "12 and 32",
+          "misconceptionTag": "zero-product-sum-or-product-confusion",
+          "rationale": "This pair comes from combining factor constants rather than setting each linear factor equal to zero separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8 only",
+          "misconceptionTag": "zero-product-single-root-only",
+          "rationale": "A product of two distinct linear factors gives a zero from each factor; this option keeps only one root."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0302": {
+      "itemId": "q0302",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Zeros of (x−9)(x+8)=0?",
+      "answerIndex": 1,
+      "correctRationale": "Set each factor equal to zero.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "−9 and 8",
+          "misconceptionTag": "factor-signs-not-reversed-for-zeros",
+          "rationale": "Setting each factor equal to zero requires reversing the sign of its constant; this option keeps both factor signs instead."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "17 and 72",
+          "misconceptionTag": "zero-product-sum-or-product-confusion",
+          "rationale": "This pair comes from combining factor constants rather than setting each linear factor equal to zero separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9 only",
+          "misconceptionTag": "zero-product-single-root-only",
+          "rationale": "A product of two distinct linear factors gives a zero from each factor; this option keeps only one root."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0303": {
+      "itemId": "q0303",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Zeros of (x−5)(x+6)=0?",
+      "answerIndex": 2,
+      "correctRationale": "Set each factor equal to zero.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "−5 and 6",
+          "misconceptionTag": "factor-signs-not-reversed-for-zeros",
+          "rationale": "Setting each factor equal to zero requires reversing the sign of its constant; this option keeps both factor signs instead."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "11 and 30",
+          "misconceptionTag": "zero-product-sum-or-product-confusion",
+          "rationale": "This pair comes from combining factor constants rather than setting each linear factor equal to zero separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 only",
+          "misconceptionTag": "zero-product-single-root-only",
+          "rationale": "A product of two distinct linear factors gives a zero from each factor; this option keeps only one root."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0304": {
+      "itemId": "q0304",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Zeros of (x−8)(x+7)=0?",
+      "answerIndex": 3,
+      "correctRationale": "Set each factor equal to zero.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "−8 and 7",
+          "misconceptionTag": "factor-signs-not-reversed-for-zeros",
+          "rationale": "Setting each factor equal to zero requires reversing the sign of its constant; this option keeps both factor signs instead."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "15 and 56",
+          "misconceptionTag": "zero-product-sum-or-product-confusion",
+          "rationale": "This pair comes from combining factor constants rather than setting each linear factor equal to zero separately."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "8 only",
+          "misconceptionTag": "zero-product-single-root-only",
+          "rationale": "A product of two distinct linear factors gives a zero from each factor; this option keeps only one root."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0305": {
+      "itemId": "q0305",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Zeros of (x−5)(x+4)=0?",
+      "answerIndex": 0,
+      "correctRationale": "Set each factor equal to zero.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "−5 and 4",
+          "misconceptionTag": "factor-signs-not-reversed-for-zeros",
+          "rationale": "Setting each factor equal to zero requires reversing the sign of its constant; this option keeps both factor signs instead."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "9 and 20",
+          "misconceptionTag": "zero-product-sum-or-product-confusion",
+          "rationale": "This pair comes from combining factor constants rather than setting each linear factor equal to zero separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 only",
+          "misconceptionTag": "zero-product-single-root-only",
+          "rationale": "A product of two distinct linear factors gives a zero from each factor; this option keeps only one root."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0316": {
+      "itemId": "q0316",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Zeros of (x−2)(x+3)?",
+      "answerIndex": 1,
+      "correctRationale": "Set each factor to zero.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "−2 and 3",
+          "misconceptionTag": "factor-signs-not-reversed-for-zeros",
+          "rationale": "Setting each factor equal to zero requires reversing the sign of its constant; this option keeps both factor signs instead."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5 and 6",
+          "misconceptionTag": "zero-product-sum-or-product-confusion",
+          "rationale": "This pair comes from combining factor constants rather than setting each linear factor equal to zero separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2 and 3",
+          "misconceptionTag": "one-zero-sign-error",
+          "rationale": "The root magnitudes come from the factors, but at least one sign is wrong when solving a factor equal to zero."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0317": {
+      "itemId": "q0317",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Zeros of (x−2)(x+8)?",
+      "answerIndex": 2,
+      "correctRationale": "Set each factor to zero.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "−2 and 8",
+          "misconceptionTag": "factor-signs-not-reversed-for-zeros",
+          "rationale": "Setting each factor equal to zero requires reversing the sign of its constant; this option keeps both factor signs instead."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "10 and 16",
+          "misconceptionTag": "zero-product-sum-or-product-confusion",
+          "rationale": "This pair comes from combining factor constants rather than setting each linear factor equal to zero separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2 and 8",
+          "misconceptionTag": "one-zero-sign-error",
+          "rationale": "The root magnitudes come from the factors, but at least one sign is wrong when solving a factor equal to zero."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0318": {
+      "itemId": "q0318",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Zeros of (x−4)(x+9)?",
+      "answerIndex": 3,
+      "correctRationale": "Set each factor to zero.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "−4 and 9",
+          "misconceptionTag": "factor-signs-not-reversed-for-zeros",
+          "rationale": "Setting each factor equal to zero requires reversing the sign of its constant; this option keeps both factor signs instead."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "13 and 36",
+          "misconceptionTag": "zero-product-sum-or-product-confusion",
+          "rationale": "This pair comes from combining factor constants rather than setting each linear factor equal to zero separately."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4 and 9",
+          "misconceptionTag": "one-zero-sign-error",
+          "rationale": "The root magnitudes come from the factors, but at least one sign is wrong when solving a factor equal to zero."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0319": {
+      "itemId": "q0319",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Zeros of (x−3)(x+6)?",
+      "answerIndex": 0,
+      "correctRationale": "Set each factor to zero.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "−3 and 6",
+          "misconceptionTag": "factor-signs-not-reversed-for-zeros",
+          "rationale": "Setting each factor equal to zero requires reversing the sign of its constant; this option keeps both factor signs instead."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "9 and 18",
+          "misconceptionTag": "zero-product-sum-or-product-confusion",
+          "rationale": "This pair comes from combining factor constants rather than setting each linear factor equal to zero separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3 and 6",
+          "misconceptionTag": "one-zero-sign-error",
+          "rationale": "The root magnitudes come from the factors, but at least one sign is wrong when solving a factor equal to zero."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0320": {
+      "itemId": "q0320",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Zeros of (x−5)(x+4)?",
+      "answerIndex": 1,
+      "correctRationale": "Set each factor to zero.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "−5 and 4",
+          "misconceptionTag": "factor-signs-not-reversed-for-zeros",
+          "rationale": "Setting each factor equal to zero requires reversing the sign of its constant; this option keeps both factor signs instead."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "9 and 20",
+          "misconceptionTag": "zero-product-sum-or-product-confusion",
+          "rationale": "This pair comes from combining factor constants rather than setting each linear factor equal to zero separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 and 4",
+          "misconceptionTag": "one-zero-sign-error",
+          "rationale": "The root magnitudes come from the factors, but at least one sign is wrong when solving a factor equal to zero."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0311": {
+      "itemId": "q0311",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Vertex of y=(x−7)²+7?",
+      "answerIndex": 0,
+      "correctRationale": "Vertex form gives (h,k).",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "(−7, 7)",
+          "misconceptionTag": "vertex-h-sign-error",
+          "rationale": "In vertex form y=(x−h)²+k, the x-coordinate is h; the sign inside the parentheses is opposite the vertex coordinate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(7, −7)",
+          "misconceptionTag": "vertex-k-sign-error",
+          "rationale": "The vertical shift k is used directly as the vertex y-coordinate; this option reverses its sign."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(7, 7) + 3",
+          "misconceptionTag": "vertex-coordinates-swapped",
+          "rationale": "This swaps h and k; vertex form gives the ordered pair (h,k), not (k,h)."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0312": {
+      "itemId": "q0312",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Vertex of y=(x−4)²+7?",
+      "answerIndex": 1,
+      "correctRationale": "Vertex form gives (h,k).",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "(−4, 7)",
+          "misconceptionTag": "vertex-h-sign-error",
+          "rationale": "In vertex form y=(x−h)²+k, the x-coordinate is h; the sign inside the parentheses is opposite the vertex coordinate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(4, −7)",
+          "misconceptionTag": "vertex-k-sign-error",
+          "rationale": "The vertical shift k is used directly as the vertex y-coordinate; this option reverses its sign."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(7, 4)",
+          "misconceptionTag": "vertex-coordinates-swapped",
+          "rationale": "This swaps h and k; vertex form gives the ordered pair (h,k), not (k,h)."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0313": {
+      "itemId": "q0313",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Vertex of y=(x−8)²+3?",
+      "answerIndex": 2,
+      "correctRationale": "Vertex form gives (h,k).",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "(−8, 3)",
+          "misconceptionTag": "vertex-h-sign-error",
+          "rationale": "In vertex form y=(x−h)²+k, the x-coordinate is h; the sign inside the parentheses is opposite the vertex coordinate."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "(8, −3)",
+          "misconceptionTag": "vertex-k-sign-error",
+          "rationale": "The vertical shift k is used directly as the vertex y-coordinate; this option reverses its sign."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(3, 8)",
+          "misconceptionTag": "vertex-coordinates-swapped",
+          "rationale": "This swaps h and k; vertex form gives the ordered pair (h,k), not (k,h)."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0314": {
+      "itemId": "q0314",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Vertex of y=(x−3)²+3?",
+      "answerIndex": 3,
+      "correctRationale": "Vertex form gives (h,k).",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "(−3, 3)",
+          "misconceptionTag": "vertex-h-sign-error",
+          "rationale": "In vertex form y=(x−h)²+k, the x-coordinate is h; the sign inside the parentheses is opposite the vertex coordinate."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "(3, −3)",
+          "misconceptionTag": "vertex-k-sign-error",
+          "rationale": "The vertical shift k is used directly as the vertex y-coordinate; this option reverses its sign."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(3, 3) + 3",
+          "misconceptionTag": "vertex-coordinates-swapped",
+          "rationale": "This swaps h and k; vertex form gives the ordered pair (h,k), not (k,h)."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0315": {
+      "itemId": "q0315",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Vertex of y=(x−4)²+3?",
+      "answerIndex": 0,
+      "correctRationale": "Vertex form gives (h,k).",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "(−4, 3)",
+          "misconceptionTag": "vertex-h-sign-error",
+          "rationale": "In vertex form y=(x−h)²+k, the x-coordinate is h; the sign inside the parentheses is opposite the vertex coordinate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(4, −3)",
+          "misconceptionTag": "vertex-k-sign-error",
+          "rationale": "The vertical shift k is used directly as the vertex y-coordinate; this option reverses its sign."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(3, 4)",
+          "misconceptionTag": "vertex-coordinates-swapped",
+          "rationale": "This swaps h and k; vertex form gives the ordered pair (h,k), not (k,h)."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0321": {
+      "itemId": "q0321",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve x²−12x+36=0.",
+      "answerIndex": 2,
+      "correctRationale": "Factor and use the zero-product property.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x=−6 or x=−6",
+          "misconceptionTag": "quadratic-root-sign-error",
+          "rationale": "The factor constants lead to positive roots in this equation; this option reverses the root signs."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "x=12",
+          "misconceptionTag": "middle-coefficient-used-as-root",
+          "rationale": "The middle coefficient is related to the sum of the roots, not itself a root of the quadratic."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x=36",
+          "misconceptionTag": "constant-term-used-as-root",
+          "rationale": "The constant term is related to the product of the roots, not itself a root."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0322": {
+      "itemId": "q0322",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve x²−13x+42=0.",
+      "answerIndex": 3,
+      "correctRationale": "Factor and use the zero-product property.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x=−6 or x=−7",
+          "misconceptionTag": "quadratic-root-sign-error",
+          "rationale": "The factor constants lead to positive roots in this equation; this option reverses the root signs."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "x=13",
+          "misconceptionTag": "middle-coefficient-used-as-root",
+          "rationale": "The middle coefficient is related to the sum of the roots, not itself a root of the quadratic."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x=42",
+          "misconceptionTag": "constant-term-used-as-root",
+          "rationale": "The constant term is related to the product of the roots, not itself a root."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0323": {
+      "itemId": "q0323",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve x²−11x+18=0.",
+      "answerIndex": 0,
+      "correctRationale": "Factor and use the zero-product property.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "x=−9 or x=−2",
+          "misconceptionTag": "quadratic-root-sign-error",
+          "rationale": "The factor constants lead to positive roots in this equation; this option reverses the root signs."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x=11",
+          "misconceptionTag": "middle-coefficient-used-as-root",
+          "rationale": "The middle coefficient is related to the sum of the roots, not itself a root of the quadratic."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x=18",
+          "misconceptionTag": "constant-term-used-as-root",
+          "rationale": "The constant term is related to the product of the roots, not itself a root."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0324": {
+      "itemId": "q0324",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve x²−7x+12=0.",
+      "answerIndex": 1,
+      "correctRationale": "Factor and use the zero-product property.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x=−3 or x=−4",
+          "misconceptionTag": "quadratic-root-sign-error",
+          "rationale": "The factor constants lead to positive roots in this equation; this option reverses the root signs."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x=7",
+          "misconceptionTag": "middle-coefficient-used-as-root",
+          "rationale": "The middle coefficient is related to the sum of the roots, not itself a root of the quadratic."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x=12",
+          "misconceptionTag": "constant-term-used-as-root",
+          "rationale": "The constant term is related to the product of the roots, not itself a root."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0325": {
+      "itemId": "q0325",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve x²−9x+20=0.",
+      "answerIndex": 2,
+      "correctRationale": "Factor and use the zero-product property.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x=−4 or x=−5",
+          "misconceptionTag": "quadratic-root-sign-error",
+          "rationale": "The factor constants lead to positive roots in this equation; this option reverses the root signs."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "x=9",
+          "misconceptionTag": "middle-coefficient-used-as-root",
+          "rationale": "The middle coefficient is related to the sum of the roots, not itself a root of the quadratic."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x=20",
+          "misconceptionTag": "constant-term-used-as-root",
+          "rationale": "The constant term is related to the product of the roots, not itself a root."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0381": {
+      "itemId": "q0381",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Mean of 3, 8, 3, 11, 5?",
+      "answerIndex": 2,
+      "correctRationale": "Add and divide by count.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "30",
+          "misconceptionTag": "mean-sum-not-divided",
+          "rationale": "This is the total of the data values, but the mean requires dividing that sum by the number of values."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "5",
+          "misconceptionTag": "mean-selected-data-value",
+          "rationale": "This selects one observed value rather than computing the arithmetic mean of all observations."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8",
+          "misconceptionTag": "mean-selected-data-value",
+          "rationale": "This selects one observed value rather than computing the arithmetic mean of all observations."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0382": {
+      "itemId": "q0382",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Mean of 6, 4, 3, 10, 5?",
+      "answerIndex": 3,
+      "correctRationale": "Add and divide by count.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "28",
+          "misconceptionTag": "mean-sum-not-divided",
+          "rationale": "This is the total of the data values, but the mean requires dividing that sum by the number of values."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "5",
+          "misconceptionTag": "mean-selected-data-value",
+          "rationale": "This selects one observed value rather than computing the arithmetic mean of all observations."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7",
+          "misconceptionTag": "mean-division-or-arithmetic-error",
+          "rationale": "This value does not equal the sum of all observations divided by the number of observations."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0383": {
+      "itemId": "q0383",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Mean of 6, 7, 3, 13, 5?",
+      "answerIndex": 0,
+      "correctRationale": "Add and divide by count.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "34",
+          "misconceptionTag": "mean-sum-not-divided",
+          "rationale": "This is the total of the data values, but the mean requires dividing that sum by the number of values."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6",
+          "misconceptionTag": "mean-selected-data-value",
+          "rationale": "This selects one observed value rather than computing the arithmetic mean of all observations."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "10",
+          "misconceptionTag": "mean-division-or-arithmetic-error",
+          "rationale": "This value does not equal the sum of all observations divided by the number of observations."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0384": {
+      "itemId": "q0384",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Mean of 4, 2, 1, 6, 3?",
+      "answerIndex": 1,
+      "correctRationale": "Add and divide by count.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "16",
+          "misconceptionTag": "mean-sum-not-divided",
+          "rationale": "This is the total of the data values, but the mean requires dividing that sum by the number of values."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3",
+          "misconceptionTag": "mean-selected-data-value",
+          "rationale": "This selects one observed value rather than computing the arithmetic mean of all observations."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5",
+          "misconceptionTag": "mean-division-or-arithmetic-error",
+          "rationale": "This value does not equal the sum of all observations divided by the number of observations."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0385": {
+      "itemId": "q0385",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Mean of 2, 6, 8, 8, 10?",
+      "answerIndex": 2,
+      "correctRationale": "Add and divide by count.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "34",
+          "misconceptionTag": "mean-sum-not-divided",
+          "rationale": "This is the total of the data values, but the mean requires dividing that sum by the number of values."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "8",
+          "misconceptionTag": "mean-selected-data-value",
+          "rationale": "This selects one observed value rather than computing the arithmetic mean of all observations."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "6.8 + 3",
+          "misconceptionTag": "mean-division-or-arithmetic-error",
+          "rationale": "This value does not equal the sum of all observations divided by the number of observations."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0396": {
+      "itemId": "q0396",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A bag has 7 red and 5 blue. P(red)?",
+      "answerIndex": 1,
+      "correctRationale": "Favorable over total.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "5/12",
+          "misconceptionTag": "probability-complement-used",
+          "rationale": "This gives the probability of blue rather than the requested probability of red."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7/5",
+          "misconceptionTag": "probability-favorable-over-unfavorable",
+          "rationale": "Probability uses favorable outcomes over total outcomes, not favorable over unfavorable outcomes."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "12/7",
+          "misconceptionTag": "probability-total-over-favorable",
+          "rationale": "This inverts the probability ratio; the numerator should be favorable outcomes and the denominator total outcomes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0397": {
+      "itemId": "q0397",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A bag has 9 red and 4 blue. P(red)?",
+      "answerIndex": 2,
+      "correctRationale": "Favorable over total.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "4/13",
+          "misconceptionTag": "probability-complement-used",
+          "rationale": "This gives the probability of blue rather than the requested probability of red."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "9/4",
+          "misconceptionTag": "probability-favorable-over-unfavorable",
+          "rationale": "Probability uses favorable outcomes over total outcomes, not favorable over unfavorable outcomes."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "13/9",
+          "misconceptionTag": "probability-total-over-favorable",
+          "rationale": "This inverts the probability ratio; the numerator should be favorable outcomes and the denominator total outcomes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0398": {
+      "itemId": "q0398",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A bag has 9 red and 5 blue. P(red)?",
+      "answerIndex": 3,
+      "correctRationale": "Favorable over total.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "5/14",
+          "misconceptionTag": "probability-complement-used",
+          "rationale": "This gives the probability of blue rather than the requested probability of red."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "9/5",
+          "misconceptionTag": "probability-favorable-over-unfavorable",
+          "rationale": "Probability uses favorable outcomes over total outcomes, not favorable over unfavorable outcomes."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "14/9",
+          "misconceptionTag": "probability-total-over-favorable",
+          "rationale": "This inverts the probability ratio; the numerator should be favorable outcomes and the denominator total outcomes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0399": {
+      "itemId": "q0399",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A bag has 3 red and 4 blue. P(red)?",
+      "answerIndex": 0,
+      "correctRationale": "Favorable over total.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4/7",
+          "misconceptionTag": "probability-complement-used",
+          "rationale": "This gives the probability of blue rather than the requested probability of red."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3/4",
+          "misconceptionTag": "probability-favorable-over-unfavorable",
+          "rationale": "Probability uses favorable outcomes over total outcomes, not favorable over unfavorable outcomes."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "7/3",
+          "misconceptionTag": "probability-total-over-favorable",
+          "rationale": "This inverts the probability ratio; the numerator should be favorable outcomes and the denominator total outcomes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0400": {
+      "itemId": "q0400",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A bag has 9 red and 8 blue. P(red)?",
+      "answerIndex": 1,
+      "correctRationale": "Favorable over total.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "8/17",
+          "misconceptionTag": "probability-complement-used",
+          "rationale": "This gives the probability of blue rather than the requested probability of red."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "9/8",
+          "misconceptionTag": "probability-favorable-over-unfavorable",
+          "rationale": "Probability uses favorable outcomes over total outcomes, not favorable over unfavorable outcomes."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "17/9",
+          "misconceptionTag": "probability-total-over-favorable",
+          "rationale": "This inverts the probability ratio; the numerator should be favorable outcomes and the denominator total outcomes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0401": {
+      "itemId": "q0401",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "$90 purchase with 7% tax total?",
+      "answerIndex": 2,
+      "correctRationale": "Add tax to original price.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "$6.30",
+          "misconceptionTag": "tax-amount-only",
+          "rationale": "This calculates the tax amount but does not add it to the original purchase price to obtain the total."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "$90.07",
+          "misconceptionTag": "tax-percent-used-as-decimal-dollars",
+          "rationale": "This adds 0.07 dollars instead of calculating 7% of the purchase price."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "$83.70",
+          "misconceptionTag": "tax-subtracted-instead-of-added",
+          "rationale": "Sales tax increases the purchase total; this option subtracts the tax amount from the price."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0402": {
+      "itemId": "q0402",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "$40 purchase with 7% tax total?",
+      "answerIndex": 3,
+      "correctRationale": "Add tax to original price.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "$2.80",
+          "misconceptionTag": "tax-amount-only",
+          "rationale": "This calculates the tax amount but does not add it to the original purchase price to obtain the total."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "$40.07",
+          "misconceptionTag": "tax-percent-used-as-decimal-dollars",
+          "rationale": "This adds 0.07 dollars instead of calculating 7% of the purchase price."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "$37.20",
+          "misconceptionTag": "tax-subtracted-instead-of-added",
+          "rationale": "Sales tax increases the purchase total; this option subtracts the tax amount from the price."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0403": {
+      "itemId": "q0403",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "$30 purchase with 7% tax total?",
+      "answerIndex": 0,
+      "correctRationale": "Add tax to original price.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "$2.10",
+          "misconceptionTag": "tax-amount-only",
+          "rationale": "This calculates the tax amount but does not add it to the original purchase price to obtain the total."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "$30.07",
+          "misconceptionTag": "tax-percent-used-as-decimal-dollars",
+          "rationale": "This adds 0.07 dollars instead of calculating 7% of the purchase price."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "$27.90",
+          "misconceptionTag": "tax-subtracted-instead-of-added",
+          "rationale": "Sales tax increases the purchase total; this option subtracts the tax amount from the price."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0404": {
+      "itemId": "q0404",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "$20 purchase with 7% tax total?",
+      "answerIndex": 1,
+      "correctRationale": "Add tax to original price.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "$1.40",
+          "misconceptionTag": "tax-amount-only",
+          "rationale": "This calculates the tax amount but does not add it to the original purchase price to obtain the total."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "$20.07",
+          "misconceptionTag": "tax-percent-used-as-decimal-dollars",
+          "rationale": "This adds 0.07 dollars instead of calculating 7% of the purchase price."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "$18.60",
+          "misconceptionTag": "tax-subtracted-instead-of-added",
+          "rationale": "Sales tax increases the purchase total; this option subtracts the tax amount from the price."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
+    },
+    "q0405": {
+      "itemId": "q0405",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "$70 purchase with 7% tax total?",
+      "answerIndex": 2,
+      "correctRationale": "Add tax to original price.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "$4.90",
+          "misconceptionTag": "tax-amount-only",
+          "rationale": "This calculates the tax amount but does not add it to the original purchase price to obtain the total."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "$70.07",
+          "misconceptionTag": "tax-percent-used-as-decimal-dollars",
+          "rationale": "This adds 0.07 dollars instead of calculating 7% of the purchase price."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "$65.10",
+          "misconceptionTag": "tax-subtracted-instead-of-added",
+          "rationale": "Sales tax increases the purchase total; this option subtracts the tax amount from the price."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored repeated-family misconception review"
     }
   },
   "reviewedFamilies": [
@@ -4636,6 +7884,29 @@
     "arithmetic sequences",
     "slope from two points",
     "coordinate distance",
-    "regression residuals"
+    "regression residuals",
+    "order of operations",
+    "meter-to-centimeter conversion",
+    "percent error",
+    "linear term combination",
+    "proportion solving",
+    "service-rate equation models",
+    "negative-coefficient inequalities",
+    "interval notation",
+    "function evaluation",
+    "linear-model prediction",
+    "linear rule from table",
+    "perpendicular slopes",
+    "scientific notation to standard",
+    "monomial distribution",
+    "square of a binomial",
+    "quadratic factoring",
+    "polynomial zeros",
+    "quadratic zeros",
+    "quadratic vertex form",
+    "quadratic equation solving",
+    "arithmetic mean",
+    "simple probability",
+    "sales-tax totals"
   ]
 }
