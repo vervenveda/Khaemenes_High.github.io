@@ -5,7 +5,7 @@
   "title": "Biology 10 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/biology-10/question-bank.js",
-  "reviewedItemCount": 18,
+  "reviewedItemCount": 30,
   "items": {
     "bio-001": {
       "itemId": "bio-001",
@@ -434,6 +434,294 @@
           "optionIndex": 3,
           "misconceptionTag": "mutation-always-beneficial",
           "rationale": "Mutational effects can be harmful, neutral, or beneficial; they do not always increase fitness."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-019": {
+      "itemId": "bio-019",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Different cell types can share nearly the same genome while expressing different sets of genes.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "cell-types-have-different-genomes",
+          "rationale": "Most differentiated cells in one organism retain nearly the same DNA sequence; expression patterns differ."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "genes-never-environment-responsive",
+          "rationale": "Gene expression can respond to environmental and signaling conditions."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "ribosomes-store-genetic-information",
+          "rationale": "Ribosomes translate mRNA; they do not store genes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-020": {
+      "itemId": "bio-020",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Responsible genomics requires privacy, consent, uncertainty communication, and misuse safeguards.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "genomics-is-only-data-storage",
+          "rationale": "File size is a technical issue, not the main ethical responsibility in genomics."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "genetic-prediction-can-be-certain",
+          "rationale": "Genetic predictions often contain uncertainty and should not be presented as perfectly certain."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "transparency-not-needed",
+          "rationale": "Hiding methods undermines reproducibility, accountability, and informed interpretation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-021": {
+      "itemId": "bio-021",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Independent evidence streams that converge on compatible relationships strengthen evolutionary inference.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "single-source-evidence-is-strongest",
+          "rationale": "Multiple independent evidence sources are stronger than repeated views of one diagram."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "molecular-evidence-should-be-excluded",
+          "rationale": "Molecular evidence is an important independent line of evidence for evolutionary relationships."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "evolutionary-claims-need-no-predictions",
+          "rationale": "Strong scientific models generate testable expectations and predictions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-022": {
+      "itemId": "bio-022",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Natural selection requires heritable variation and unequal reproductive success linked to that variation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "need-based-evolution",
+          "rationale": "Individuals do not intentionally change inherited genes because they need a trait."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "selection-without-environment",
+          "rationale": "Selection depends on interactions between traits and environmental conditions."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "equal-reproduction-allows-selection",
+          "rationale": "If all variants reproduce equally, selection cannot favor one heritable variant over another."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-023": {
+      "itemId": "bio-023",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Allele frequency is the proportion of a specific allele among copies of that gene in a population.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "allele-frequency-organelle-count",
+          "rationale": "Organelle number is a cellular property, not a population genetic frequency."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "allele-frequency-enzyme-rate",
+          "rationale": "Enzyme rate measures biochemical activity, not allele prevalence."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "allele-frequency-fossil-age",
+          "rationale": "Fossil age is a chronological measure, not allele frequency."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-024": {
+      "itemId": "bio-024",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Speciation centers on the evolution of reproductive isolation and lineage divergence.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "speciation-equals-mitosis",
+          "rationale": "Mitosis produces body cells; it does not by itself create reproductively isolated populations."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "speciation-equals-photosynthesis",
+          "rationale": "Photosynthesis is an energy-conversion process, not a mechanism of speciation."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "speciation-is-short-term-weather",
+          "rationale": "Short-term weather change alone does not define lineage divergence or reproductive isolation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-025": {
+      "itemId": "bio-025",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "A phylogenetic tree is a testable model of hypothesized evolutionary relationships.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "evolution-is-ladder-of-progress",
+          "rationale": "Phylogenies branch; they do not rank living groups on a ladder from lower to higher."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phylogeny-measures-individual-fitness",
+          "rationale": "A phylogeny models lineage relationships, not the reproductive success of one individual."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phylogeny-is-food-web",
+          "rationale": "Food webs represent ecological feeding relationships, not common ancestry."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-026": {
+      "itemId": "bio-026",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Energy transfer between trophic levels is inefficient and much usable energy dissipates as heat.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "matter-disappears-between-trophic-levels",
+          "rationale": "Matter is transformed and cycled; it does not simply disappear."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "predators-create-energy",
+          "rationale": "Predators obtain chemical energy from food; they do not create energy."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "producers-have-no-energy",
+          "rationale": "Producers store chemical energy that supports higher trophic levels."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-027": {
+      "itemId": "bio-027",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Matter cycles through reservoirs while usable energy flows through ecosystems and dissipates.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "matter-destroyed-at-trophic-levels",
+          "rationale": "Atoms are conserved and recycled through ecosystems."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "matter-only-in-organisms",
+          "rationale": "Matter moves through organisms and abiotic reservoirs such as air, water, and soil."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "matter-never-atmospheric",
+          "rationale": "Carbon, nitrogen, oxygen, and water all move through atmospheric reservoirs."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-028": {
+      "itemId": "bio-028",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Carrying capacity is condition-dependent and reflects the population an environment can sustain.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "carrying-capacity-fixed-for-species",
+          "rationale": "Carrying capacity changes with resources, habitat, interactions, and environmental conditions."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "carrying-capacity-chromosome-count",
+          "rationale": "Chromosome number is a genetic property, not a population support limit."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "carrying-capacity-mutation-rate",
+          "rationale": "Mutation rate does not define environmental carrying capacity."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-029": {
+      "itemId": "bio-029",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Biodiversity can support resilience through functional and response diversity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "all-species-respond-identically",
+          "rationale": "Response diversity means different species or functions can respond differently to disturbance."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "biodiversity-eliminates-disturbance",
+          "rationale": "Biodiversity may improve recovery but does not prevent all disturbance."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "biodiversity-prevents-evolution",
+          "rationale": "Evolution continues in diverse communities; biodiversity does not stop evolutionary change."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial item-level misconception review"
+    },
+    "bio-030": {
+      "itemId": "bio-030",
+      "reviewStatus": "reviewed-anchor-v1",
+      "correctRationale": "Strong scientific claims connect evidence to reasoning and state uncertainty and limitations.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "good-science-hides-uncertainty",
+          "rationale": "Scientific credibility improves when uncertainty and limits are stated transparently."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "quantitative-evidence-should-be-avoided",
+          "rationale": "Relevant quantitative evidence can strengthen biological arguments."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "correlation-proves-causation",
+          "rationale": "Correlation alone does not establish a causal mechanism."
         }
       ],
       "reviewedAt": "2026-10-25",
