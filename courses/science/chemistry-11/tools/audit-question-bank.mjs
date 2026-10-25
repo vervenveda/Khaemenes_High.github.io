@@ -69,6 +69,7 @@ if(fs.existsSync(mapPath)){
     }
   }
   const reviewed=Object.keys(map.items||{}).length;
+  if(map.distractorMappingRequired===true&&reviewed!==bank.length)failures.push(`required misconception mapping covers ${reviewed}/${bank.length} public items`);
   misconceptionSummary={reviewed,rationaleCount,coveragePct:Number((100*reviewed/bank.length).toFixed(1))};
 }
 
