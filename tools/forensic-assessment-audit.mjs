@@ -276,8 +276,8 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
       usesMC&&mcBalanced?"PASS":"FAIL",
       `Authored answer positions are diagnostic only for public Monte Carlo practice: ${m.authoredAnswerPositions.join("/")}. The shared engine materializes a balanced option order and remaps the answer before display.`));
     if(dq)checks.push(addFinding(label,"chemistry-11-misconception-map-v1",
-      dq.issues.length===0&&dq.reviewedItems===100&&dq.distractorRationales===300?"PASS":"FAIL",
-      `${dq.reviewedItems}/${dq.bankItems} Chemistry items are reviewed in the v1 companion map with ${dq.distractorRationales} explicit distractor rationales spanning the legacy concept spine plus ten high-repetition quantitative families. Drift issues: ${dq.issues.length}.`,dq));
+      dq.issues.length===0&&dq.reviewedItems===205&&dq.distractorRationales===615?"PASS":"FAIL",
+      `${dq.reviewedItems}/${dq.bankItems} Chemistry items are reviewed in the v1 companion map with ${dq.distractorRationales} explicit distractor rationales spanning the legacy concept spine plus all twenty-five high-repetition quantitative families. Drift issues: ${dq.issues.length}.`,dq));
   }
   const m=itemMetrics(combined,false);
   area("Upper Science",`${ordinaryPassing}/${ordinaryTotal} ordinary instructional weeks satisfy the transfer-item requirement; ${blueprints}/3 secure blueprints are linked and bounded.`,{...m,courseMetrics,ordinaryWeeksPassing:ordinaryPassing,ordinaryWeeksTotal:ordinaryTotal,blueprintsPassing:blueprints,publicMonteCarloCourses:publicMonteCarlo},checks);
