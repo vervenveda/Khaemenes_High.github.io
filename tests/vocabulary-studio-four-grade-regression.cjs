@@ -14,6 +14,9 @@ for(const marker of [
  'Practice does not update official mastery or assessment records'
 ]) assert(studio.includes(marker),"Studio regression: "+marker);
 assert(!/localStorage\.setItem|sessionStorage\.setItem/.test(studio),"Vocabulary Studio must not record official grades");
+assert(studio.includes("quizItems.length<(isEnglish(course.value)?6:4)"),"English practice must require all six valid questions");
+assert(studio.includes("byId(\"weeklyQuizQuestions\").replaceChildren()"),"Loading must remove stale quiz response controls");
+assert(studio.includes("if(isEnglish(course.value)&&!data.terms.length)"),"Empty English vocabulary selections must fail visibly");
 let total=0;
 for(let grade=9;grade<=12;grade++){
  const base="courses/language-arts/english-"+grade+"/";
