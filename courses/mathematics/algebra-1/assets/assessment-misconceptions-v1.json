@@ -1,0 +1,389 @@
+{
+  "schema": "khaemenes.assessment-misconception-map.v1",
+  "schemaVersion": "1.0",
+  "courseId": "KH-MATH-ALG1",
+  "title": "Algebra I · Unit Anchor Misconception Map",
+  "coveragePolicy": "reviewed-subset; newly authored or substantially revised selected-response items should include complete mapping",
+  "sourceBank": "courses/mathematics/algebra-1/assets/question-bank.js",
+  "reviewedItemCount": 13,
+  "distractorRationaleCount": 39,
+  "items": {
+    "q0001": {
+      "itemId": "q0001",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which method verifies a proposed equation solution?",
+      "answerIndex": 2,
+      "correctRationale": "A solution must make the original equation true.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "repeat the same steps",
+          "misconceptionTag": "procedure-repetition-as-verification",
+          "rationale": "Repeating the same algebraic steps can repeat the same mistake; verification should test the proposed value in the original equation."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "round it",
+          "misconceptionTag": "rounding-as-verification",
+          "rationale": "Rounding changes numerical precision but does not test whether the proposed value satisfies the equation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "change all signs",
+          "misconceptionTag": "unjustified-sign-change",
+          "rationale": "Changing all signs is not a general verification rule and can alter the equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "q0031": {
+      "itemId": "q0031",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Evaluate 2x+7 when x=3.",
+      "answerIndex": 3,
+      "correctRationale": "Substitute and evaluate.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "12",
+          "misconceptionTag": "operation-order-error",
+          "rationale": "This result is consistent with mishandling the multiplication/addition structure instead of substituting x=3 into 2x+7."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "20",
+          "misconceptionTag": "implicit-parentheses-error",
+          "rationale": "This resembles treating the expression as 2(x+7), which changes the original grouping."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-1",
+          "misconceptionTag": "sign-or-subtraction-error",
+          "rationale": "A negative result here reflects an unjustified subtraction/sign change during evaluation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "q0066": {
+      "itemId": "q0066",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve 6x+7=13.",
+      "answerIndex": 0,
+      "correctRationale": "Undo operations and verify.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "x=2",
+          "misconceptionTag": "inverse-operation-error",
+          "rationale": "x=2 does not satisfy 6x+7=13; it suggests the additive and multiplicative inverses were not both applied correctly."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x=0",
+          "misconceptionTag": "incomplete-isolation",
+          "rationale": "x=0 leaves the left side equal to 7, showing the variable was not fully isolated."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x=-1",
+          "misconceptionTag": "sign-error",
+          "rationale": "x=-1 makes the left side 1, indicating a sign error rather than a valid inverse-operation sequence."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "q0101": {
+      "itemId": "q0101",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Solve x+6≤3.",
+      "answerIndex": 1,
+      "correctRationale": "Subtract the same value.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x≥-3",
+          "misconceptionTag": "inequality-direction-error",
+          "rationale": "Subtracting 6 gives x≤-3; the inequality direction should not reverse when only adding or subtracting the same quantity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x<-3",
+          "misconceptionTag": "strict-vs-inclusive-boundary",
+          "rationale": "The original symbol is ≤, so the boundary value -3 must remain included."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "x>-3",
+          "misconceptionTag": "direction-and-boundary-error",
+          "rationale": "This choice both reverses the solution direction and excludes the equality boundary."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "q0131": {
+      "itemId": "q0131",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which relation is not a function?",
+      "answerIndex": 2,
+      "correctRationale": "Input 1 has two outputs.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "{(1,2),(2,5)}",
+          "misconceptionTag": "unique-input-rule-misread",
+          "rationale": "Each input in this set has only one output, so the relation satisfies the function rule."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "y=3x+1",
+          "misconceptionTag": "linear-equation-not-function",
+          "rationale": "A nonvertical linear equation such as y=3x+1 assigns exactly one y-value to each x-value."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "{(0,4),(1,4)}",
+          "misconceptionTag": "repeated-output-misconception",
+          "rationale": "Functions may send different inputs to the same output; repeated outputs do not violate the definition."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "q0166": {
+      "itemId": "q0166",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Slope through (0,2) and (2,6)?",
+      "answerIndex": 3,
+      "correctRationale": "Change in y divided by change in x.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "3",
+          "misconceptionTag": "slope-numerator-denominator-error",
+          "rationale": "The rise is 4 and the run is 2, so a slope of 3 does not match Δy/Δx."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "1",
+          "misconceptionTag": "slope-ratio-inversion-or-subtraction",
+          "rationale": "A slope of 1 does not match (6-2)/(2-0); it reflects an incorrect change ratio."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "-2",
+          "misconceptionTag": "sign-error",
+          "rationale": "Both coordinate changes are positive, so the slope is positive rather than -2."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "q0206": {
+      "itemId": "q0206",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Pair solving x+y=11 and x−y=1?",
+      "answerIndex": 0,
+      "correctRationale": "The pair must satisfy both equations.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "(5, 6)",
+          "misconceptionTag": "system-order-substitution-error",
+          "rationale": "(5,6) satisfies x+y=11 but gives x-y=-1, so it fails the second equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(−6, 5)",
+          "misconceptionTag": "fails-both-equations",
+          "rationale": "(-6,5) gives a sum of -1 and does not satisfy the system."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(6, −5)",
+          "misconceptionTag": "one-equation-only-check",
+          "rationale": "(6,-5) makes x-y=11 and fails x+y=11; a system solution must satisfy both equations."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "q0241": {
+      "itemId": "q0241",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Simplify x^8·x^9.",
+      "answerIndex": 1,
+      "correctRationale": "Add exponents for the same base.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "x^72",
+          "misconceptionTag": "multiply-exponents-error",
+          "rationale": "When multiplying powers with the same base, exponents are added, not multiplied."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "x^-1",
+          "misconceptionTag": "subtract-exponents-error",
+          "rationale": "Subtracting exponents is associated with division of like bases, not multiplication."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2x^17",
+          "misconceptionTag": "invented-coefficient",
+          "rationale": "Multiplying x-powers does not create a coefficient of 2 when both original coefficients are 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "q0271": {
+      "itemId": "q0271",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Degree of 2x³−4x+3?",
+      "answerIndex": 2,
+      "correctRationale": "The greatest exponent is 3.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "2",
+          "misconceptionTag": "coefficient-as-degree",
+          "rationale": "The coefficient 2 is not the polynomial's degree; degree comes from the greatest exponent."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "4",
+          "misconceptionTag": "coefficient-magnitude-as-degree",
+          "rationale": "The coefficient -4 does not make the degree 4."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3 + 3",
+          "misconceptionTag": "combining-unrelated-numbers",
+          "rationale": "Degree is a single highest exponent, not a sum involving the constant term."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "q0306": {
+      "itemId": "q0306",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For y=−2x²+4x+1, opening direction?",
+      "answerIndex": 3,
+      "correctRationale": "Negative leading coefficient opens downward.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "upward",
+          "misconceptionTag": "leading-sign-ignored",
+          "rationale": "A negative quadratic leading coefficient makes a vertical parabola open downward, not upward."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "left",
+          "misconceptionTag": "horizontal-parabola-confusion",
+          "rationale": "The equation is solved for y as a quadratic in x, so its basic opening is vertical rather than leftward."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "right",
+          "misconceptionTag": "horizontal-parabola-confusion",
+          "rationale": "Rightward opening describes a different parabola orientation, not y=ax²+bx+c with a negative a."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "q0346": {
+      "itemId": "q0346",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Simplify √(98).",
+      "answerIndex": 0,
+      "correctRationale": "Factor out the perfect square.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "49√2",
+          "misconceptionTag": "perfect-square-root-not-taken",
+          "rationale": "98=49·2, so √98=√49·√2=7√2; leaving 49 outside the radical overstates the factor."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "9",
+          "misconceptionTag": "unsupported-integer-approximation",
+          "rationale": "√98 is irrational and is not exactly 9."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "√14",
+          "misconceptionTag": "incorrect-radical-factorization",
+          "rationale": "Simplifying a radical requires extracting perfect-square factors; √14 is not equivalent to √98."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "q0376": {
+      "itemId": "q0376",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Most representative school sample?",
+      "answerIndex": 1,
+      "correctRationale": "Stratified random selection reduces undercoverage.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "survey robotics club",
+          "misconceptionTag": "sample-undercoverage",
+          "rationale": "Robotics-club members are a specialized subgroup and will underrepresent students who are not in that club."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "survey first arrivals",
+          "misconceptionTag": "convenience-sampling",
+          "rationale": "Surveying first arrivals selects by convenience/time of arrival rather than representing the full school."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "use volunteers only",
+          "misconceptionTag": "voluntary-response-bias",
+          "rationale": "Volunteers self-select, which can systematically differ from students who do not volunteer."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "q0411": {
+      "itemId": "q0411",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Strong first step in modelling?",
+      "answerIndex": 2,
+      "correctRationale": "Question and quantities guide the model.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "choose graph first",
+          "misconceptionTag": "representation-before-question",
+          "rationale": "Choosing a graph before defining the question and quantities risks selecting a representation that does not fit the modeling goal."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "hide assumptions",
+          "misconceptionTag": "hidden-assumptions",
+          "rationale": "Good modeling makes assumptions explicit so they can be tested and revised."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "round immediately",
+          "misconceptionTag": "premature-rounding",
+          "rationale": "Rounding before defining quantities and relationships can discard information before the model is even specified."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    }
+  }
+}
