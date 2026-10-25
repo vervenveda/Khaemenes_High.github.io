@@ -6,6 +6,8 @@
 <script src="../../shared/learner-scope-v1.js?v=20261016" data-learner-scope="chemistry-11"></script>
 <script src="../../shared/monte-carlo-assessment-v1.js?v=20261018"></script>
 <script src="question-bank.js?v=20261018"></script>
+<script src="../science-misconception-guidance-v1.js?v=20261025"></script>
+<script src="assessment-misconceptions-v1.js?v=20261025"></script>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="A 36-week quantitative chemistry course spanning atomic structure, bonding, molecular properties, stoichiometry, kinetics, thermochemistry, equilibrium, acids/bases, electrochemistry, nuclear chemistry, materials science, and sustainable design." name="description"/>
@@ -163,7 +165,12 @@ function scoreTest(kind,form){
     const chosen=form.querySelector(`input[name="q${i}"]:checked`);
     domains[q.type]||={correct:0,total:0};domains[q.type].total++;
     if(chosen&&+chosen.value===q.answer){correct++;domains[q.type].correct++}
-    else misses.push({n:i+1,week:q.week,topic:q.topic,answer:q.options[q.answer],why:q.explanation});
+    else{
+      const selected=chosen?+chosen.value:null;
+      const reviewed=window.KhaeScienceMisconceptionGuidance?.reviewed(window.KhaemenesChemistry11Misconceptions,q,selected)||null;
+      const diagnostic=reviewed||window.KhaeScienceMisconceptionGuidance?.forQuestion("chemistry-11",q,selected)||null;
+      misses.push({n:i+1,week:q.week,topic:q.topic,answer:q.options[q.answer],why:q.explanation,diagnostic});
+    }
   });
   const pct=Math.round(correct/pool.length*100),passed=pct>=80;
   state.scores[kind]=Math.max(state.scores[kind]||0,pct);
@@ -172,7 +179,7 @@ function scoreTest(kind,form){
   state.assessmentHistory=state.assessmentHistory.slice(-24);
   save();
   MC.complete(mcKey,{score:correct,total:pool.length,percent:pct,passed,domains},activeTestSession.id);
-  $("testFeedback").innerHTML=`<div class="feedback ${passed?'good':'bad'}"><strong>${pct}% · ${correct}/${pool.length}</strong><p>${passed?'Mastery target met for this public practice form. Continue reviewing missed reasoning.':'Below the 80% target. Complete corrections before a new randomized attempt.'}</p><p class="small">Domain result: ${Object.entries(domains).map(([k,v])=>esc(k)+": "+v.correct+"/"+v.total).join(" · ")}</p>${misses.length?`<details><summary>Correction guidance</summary><ol>${misses.map(m=>`<li>Week ${m.week} · ${esc(m.topic)} — Correct answer: ${esc(m.answer)}. ${esc(m.why)}</li>`).join("")}</ol></details>`:""}</div>`;
+  $("testFeedback").innerHTML=`<div class="feedback ${passed?'good':'bad'}"><strong>${pct}% · ${correct}/${pool.length}</strong><p>${passed?'Mastery target met for this public practice form. Continue reviewing missed reasoning.':'Below the 80% target. Complete corrections before a new randomized attempt.'}</p><p class="small">Domain result: ${Object.entries(domains).map(([k,v])=>esc(k)+": "+v.correct+"/"+v.total).join(" · ")}</p>${misses.length?`<details><summary>Correction guidance</summary><ol>${misses.map(m=>`<li>Week ${m.week} · ${esc(m.topic)} — Correct answer: ${esc(m.answer)}. ${esc(m.why)}${m.diagnostic?` <strong>${esc(m.diagnostic.label)}:</strong> ${esc(m.diagnostic.guidance)} Review ${esc(m.diagnostic.remediationRoute)}.`:""}</li>`).join("")}</ol></details>`:""}</div>`;
 }
 
 function reportView(){const rows=COURSE.weeks.map(w=>{const score=masteryScore(w.week);return `<tr><td>${w.week}</td><td>${esc(w.title)}</td><td>${state.completed[w.week]?"Reviewed":"Open"}</td><td>${score===null?"—":score+"%"+(score>=COURSE.passingTarget?" · Mastered":" · Corrections/Reassessment")}</td><td>${esc(state.notes[w.week]||"")}</td></tr>`}).join("");return `<article class="card"><h3>Progress Report</h3><p><strong>Student:</strong> ${esc(state.profile.name)} · <strong>Pathway:</strong> ${esc(state.profile.pathway)}</p><p><strong>Weeks mastered:</strong> ${masteryCount()}/36 · <strong>Weeks reviewed:</strong> ${doneCount()}/36 · <strong>Midterm practice best:</strong> ${state.scores.midterm??"—"} · <strong>Final practice best:</strong> ${state.scores.final??"—"}</p><p class="small"><strong>Assessment boundary:</strong> Midterm/final values shown here are browser-local practice only and never constitute an official supervised grade.</p><div class="bar"><span style="width:${Math.round(masteryCount()/36*100)}%"></span></div><table><tr><th>Week</th><th>Topic</th><th>Evidence status</th><th>Mastery</th><th>Portfolio / correction note</th></tr>${rows}</table><div class="row noPrint"><button type="button" onclick="window.print()">Print</button><button type="button" class="secondary" id="export2">Export JSON</button></div></article>`}
