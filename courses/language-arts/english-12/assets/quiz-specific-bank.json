@@ -1,5 +1,5 @@
 {
-  "version": "v3-instructional",
+  "version": "v4-passage-anchored",
   "course": "english-12",
   "rows": [
     [
@@ -12,7 +12,12 @@
           "The archive cannot establish any information at all."
         ],
         "Official provenance does not equal comprehensive representation.",
-        "Primary-source limits"
+        "Primary-source limits",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence separates institutional record from public reception?",
@@ -36,7 +41,12 @@
           "Conclude that the narrator is deceptive solely because memories shift."
         ],
         "Unreliable recollection calls for evidence mapping, not invented certainty.",
-        "Complex text chronology"
+        "Complex text chronology",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which note most accurately marks competing timelines?",
@@ -60,7 +70,12 @@
           "Assume the conclusion excuses source-use omissions."
         ],
         "Ethical authorship includes transparent source use and revision evidence.",
-        "Academic integrity"
+        "Academic integrity",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which reflection describes responsible assistance with writing?",
@@ -76,7 +91,7 @@
     ],
     [
       [
-        "In an epic, a recurring journey motif appears first as a conquest and later as a return. What does that change invite?",
+        "Original epic excerpts: Early in the poem the hero crosses the sea to seize a rival city; near the end the hero crosses the same sea to return what was taken. In an epic, a recurring journey motif appears first as a conquest and later as a return. What does that change invite?",
         [
           "Analysis of how repeated narrative patterns acquire different moral meanings.",
           "A claim that all cultures interpret journeys identically.",
@@ -84,7 +99,12 @@
           "The assumption that every journey is a literal historical record."
         ],
         "Archetypal patterns are shaped by local narrative contexts.",
-        "Epic motif"
+        "Epic motif",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which claim integrates an allusion without relying on a universal archetype rule?",
@@ -100,7 +120,7 @@
     ],
     [
       [
-        "A tragic protagonist sees two obligations as incompatible. What distinguishes serious analysis from moral labeling?",
+        "Original tragic scene: A leader must either reveal a sibling’s secret and protect the city or keep the promise of silence and risk public harm. A tragic protagonist sees two obligations as incompatible. What distinguishes serious analysis from moral labeling?",
         [
           "Examine the competing duties, choices, and consequences in the dramatic structure.",
           "Rank characters as good or bad using only the ending.",
@@ -108,7 +128,12 @@
           "Treat the audience's knowledge as identical to the character's."
         ],
         "Tragedy requires attention to conflict and constraint, not retrospective certainty.",
-        "Tragic conflict"
+        "Tragic conflict",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which thesis acknowledges dramatic complexity?",
@@ -124,7 +149,7 @@
     ],
     [
       [
-        "A contemporary retelling gives a silent secondary figure their own narration. What transformation should be studied?",
+        "Original adaptation note: In the earlier tale a secondary figure never speaks; in the retelling, that figure narrates three chapters in first person. A contemporary retelling gives a silent secondary figure their own narration. What transformation should be studied?",
         [
           "How the new point of view revises whose knowledge and interests guide the plot.",
           "Whether all retellings must copy the source scene by scene.",
@@ -132,7 +157,12 @@
           "Whether new narrators automatically make adaptations more accurate."
         ],
         "Adaptation can redistribute narrative authority without proving original intent.",
-        "Comparative adaptation"
+        "Comparative adaptation",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which comparison describes a specific shift in focalization?",
@@ -156,7 +186,12 @@
           "Comparing shifts in address."
         ],
         "A lyric persona can be constructed rather than biographical.",
-        "Poetic persona"
+        "Poetic persona",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which reading correctly handles a line break that interrupts a clause?",
@@ -180,7 +215,12 @@
           "The claim that every wall image means the same thing."
         ],
         "Sound and lineation can work alongside imagery to structure meaning.",
-        "Figurative ambiguity"
+        "Figurative ambiguity",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which explanation appropriately connects sound and visual form?",
@@ -204,7 +244,12 @@
           "Any metaphor proves the poem is historically false."
         ],
         "Context supplements, rather than replaces, close reading.",
-        "Historicism"
+        "Historicism",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence attributes the contextual inference carefully?",
@@ -228,7 +273,12 @@
           "Emotional intensity from any possible audience response."
         ],
         "Persuasive force and factual reliability are different analytical questions.",
-        "Rhetorical ethics"
+        "Rhetorical ethics",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence evaluates a rhetorical appeal without assuming its success?",
@@ -252,7 +302,12 @@
           "Shared reform goals prove identical rhetorical strategies."
         ],
         "Audience and occasion shape rhetorical choices.",
-        "Comparative rhetoric"
+        "Comparative rhetoric",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which thesis links contrast to audience rather than only naming devices?",
@@ -276,7 +331,12 @@
           "A purely emotional appeal to the audience."
         ],
         "Steelmanning and evidence-based response avoid weak caricatures.",
-        "Civic discourse"
+        "Civic discourse",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which rebuttal fairly acknowledges a real cost?",
@@ -300,7 +360,12 @@
           "The number of sources automatically guarantees representativeness."
         ],
         "Sampling scope limits a general conclusion.",
-        "Argument warrant"
+        "Argument warrant",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which claim is proportionate to the evidence?",
@@ -324,7 +389,12 @@
           "It clarifies the definition of vehicle."
         ],
         "The distorted version is a straw man.",
-        "Fallacy recognition"
+        "Fallacy recognition",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which response challenges the real claim rather than the invented one?",
@@ -340,7 +410,7 @@
     ],
     [
       [
-        "An infographic uses a truncated axis to make a modest increase look dramatic. What should readers investigate?",
+        "Original visual-source note: A chart begins its vertical axis at 94 rather than zero, making a change from 96 to 98 appear visually enormous. An infographic uses a truncated axis to make a modest increase look dramatic. What should readers investigate?",
         [
           "The scale, baseline, unit, underlying counts, and source before interpreting the magnitude.",
           "Whether the image uses an attractive palette.",
@@ -348,7 +418,12 @@
           "Whether the caption sounds confident."
         ],
         "Visual form can exaggerate a real difference.",
-        "Visual data literacy"
+        "Visual data literacy",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which caption accurately conveys uncertainty about a chart?",
@@ -372,7 +447,12 @@
           "Claim the sources agree completely because dates match."
         ],
         "Agreement in one dimension does not settle another.",
-        "Source synthesis"
+        "Source synthesis",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence preserves the conflicting estimates?",
@@ -388,7 +468,7 @@
     ],
     [
       [
-        "A proposed capstone asks 'How does media affect everybody?' Which revision is researchable?",
+        "Original proposal draft: “How does media affect everybody?” A proposed capstone asks 'How does media affect everybody?' Which revision is researchable?",
         [
           "'How do two local news outlets frame the same school policy across one month?'",
           "'How can all people stop believing media?'",
@@ -396,7 +476,12 @@
           "'Does every story affect all humans in exactly one way?'"
         ],
         "The revision narrows the sources, topic, and time frame.",
-        "Research scope"
+        "Research scope",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which annotated-bibliography note evaluates rather than merely summarizes?",
@@ -412,7 +497,7 @@
     ],
     [
       [
-        "A senior's midterm scores show strength in summary but weakness in integrating counterarguments. What transfer task is appropriate?",
+        "Original midyear profile: Summary 91%; source integration 84%; counterargument 63%; sentence control 88%. A senior's midterm scores show strength in summary but weakness in integrating counterarguments. What transfer task is appropriate?",
         [
           "Analyze an unfamiliar claim, state a fair counterpoint, and respond with evidence.",
           "Memorize only the first essay's opening sentence.",
@@ -420,7 +505,12 @@
           "Replace the written corrections with a self-rating."
         ],
         "The next task addresses an identified reasoning weakness in a new context.",
-        "Midyear transfer"
+        "Midyear transfer",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which correction memo identifies a method for future work?",
@@ -444,7 +534,12 @@
           "A claim that fragmented structure prevents any interpretation."
         ],
         "Temporal structure can be inferred cautiously from textual signals.",
-        "Fragmented narration"
+        "Fragmented narration",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which analytical sentence preserves timeline uncertainty?",
@@ -468,7 +563,12 @@
           "Switching languages always indicates deception."
         ],
         "Multilingual practice carries social meaning and should not be pathologized.",
-        "Diasporic language"
+        "Diasporic language",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which interpretation remains grounded in one narrator rather than generalizing a population?",
@@ -492,7 +592,12 @@
           "Whether the source word necessarily has a single meaning."
         ],
         "Translation effects can be discussed independently of unverifiable source-language claims.",
-        "Translation ethics"
+        "Translation ethics",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which comparative sentence labels the uncertainty accurately?",
@@ -516,7 +621,12 @@
           "An assumption that the narrator has changed identity completely."
         ],
         "Dialect and register are context-governed language choices.",
-        "Language variation"
+        "Language variation",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which explanation avoids stigmatizing a dialect?",
@@ -532,7 +642,7 @@
     ],
     [
       [
-        "A film places a quiet reaction shot immediately after a loud announcement. Which element merits analysis?",
+        "Original storyboard note: A loud public announcement fills the soundtrack; the next shot is silent and holds on one listener’s face for five seconds. A film places a quiet reaction shot immediately after a loud announcement. Which element merits analysis?",
         [
           "Editing sequence and sound contrast as choices shaping the viewer's interpretation.",
           "The assumption that viewers all felt identical emotions.",
@@ -540,7 +650,12 @@
           "Whether the scene's runtime guarantees factual truth."
         ],
         "Juxtaposition of image and sound can guide attention and inference.",
-        "Multimodal rhetoric"
+        "Multimodal rhetoric",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which caption identifies technique and potential effect?",
@@ -564,7 +679,12 @@
           "An argument with no textual or visual evidence."
         ],
         "A focused global issue connects craft and evidence in different text types.",
-        "Comparative oral"
+        "Comparative oral",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which oral signpost accurately compares media?",
@@ -580,7 +700,7 @@
     ],
     [
       [
-        "A database returns only studies supporting the senior's hypothesis. What search-method concern should be tested?",
+        "Original database log: The first search uses only the exact phrase that appears in the student’s hypothesis and returns five supportive studies. A database returns only studies supporting the senior's hypothesis. What search-method concern should be tested?",
         [
           "Whether query terms, database coverage, and selection criteria excluded competing findings.",
           "Whether the first result has a persuasive title.",
@@ -588,7 +708,12 @@
           "Whether finding agreement proves research completeness."
         ],
         "Search design can cause selection bias.",
-        "Research retrieval"
+        "Research retrieval",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which methods note promotes reproducibility?",
@@ -604,7 +729,7 @@
     ],
     [
       [
-        "Five studies address one intervention but define success differently. What belongs in a literature review?",
+        "Original literature-review table: Five studies examine the same intervention, but one defines success as attendance, two as test scores, one as graduation, and one as student self-report. Five studies address one intervention but define success differently. What belongs in a literature review?",
         [
           "A comparison of the outcome definitions and methods before claiming consensus.",
           "A single pooled number without denominators.",
@@ -612,7 +737,12 @@
           "A ranking based solely on publication length."
         ],
         "Conceptual and methodological alignment precedes synthesis.",
-        "Literature review"
+        "Literature review",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which synthesis sentence states a research gap accurately?",
@@ -636,7 +766,12 @@
           "Keep the universal claim and remove the data table."
         ],
         "Valid arguments scale claims to the supporting evidence.",
-        "Academic revision"
+        "Academic revision",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence integrates a limitation without erasing the result?",
@@ -660,7 +795,12 @@
           "An invented hardship to make the narrative dramatic."
         ],
         "Reflective narrative connects concrete experience to insight ethically.",
-        "Personal narrative"
+        "Personal narrative",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which revision replaces cliché with a specific detail?",
@@ -676,7 +816,7 @@
     ],
     [
       [
-        "A public comment asks officials to revise a bus schedule. Which format best serves that audience?",
+        "Original public comment: “Please move the final Route 8 departure from 9:10 p.m. to 10:00 p.m.; my shift ends at 9:30 and the next stop is two miles away.” A public comment asks officials to revise a bus schedule. Which format best serves that audience?",
         [
           "A concise request identifying the affected route, evidence, and proposed action.",
           "An unrelated personal memoir with no request.",
@@ -684,7 +824,12 @@
           "An extended poem with no operational details."
         ],
         "Professional and civic communication should make the desired action clear.",
-        "Audience-fit writing"
+        "Audience-fit writing",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which subject line supports a specific professional request?",
@@ -708,7 +853,12 @@
           "Hide the source citation to simplify the design."
         ],
         "Accessible publication requires alternatives for information conveyed visually.",
-        "Digital accessibility"
+        "Digital accessibility",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which alt text communicates a quantitative graph rather than an opinion?",
@@ -732,7 +882,12 @@
           "A claim about the author's private travels without sources."
         ],
         "Motif development needs evidence across the complete long-form work.",
-        "Sustained motif"
+        "Sustained motif",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which long-form synthesis stays tied to chapter evidence?",
@@ -748,7 +903,7 @@
     ],
     [
       [
-        "A historical lens illuminates the setting but conflicts with the character's spoken claim. What must an interpretation do?",
+        "Original interpretive source set: A historical lens emphasizes wartime rationing, while the character says, “I kept the bread because I did not trust my brother.” A historical lens illuminates the setting but conflicts with the character's spoken claim. What must an interpretation do?",
         [
           "Consider the textual contradiction and avoid treating the lens as a predetermined answer.",
           "Discard the character's words because theory is stronger.",
@@ -756,7 +911,12 @@
           "Claim every detail represents the same ideology."
         ],
         "An interpretive lens is tested against, not imposed on, primary evidence.",
-        "Critical lenses"
+        "Critical lenses",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence qualifies a lens-based reading?",
@@ -772,7 +932,7 @@
     ],
     [
       [
-        "A student leads a seminar and receives an unexpected counterreading. What is the strongest scholarly response?",
+        "Original seminar exchange: A peer responds, “Your reading explains the final scene, but the opening scene points in the opposite direction.” A student leads a seminar and receives an unexpected counterreading. What is the strongest scholarly response?",
         [
           "Restate the counterreading fairly and test which passages favor each interpretation.",
           "Declare the discussion finished once challenged.",
@@ -780,7 +940,12 @@
           "Cite the essay's title instead of a passage."
         ],
         "Rigorous discussion turns differences into testable interpretive questions.",
-        "Independent seminar"
+        "Independent seminar",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which defense shows responsible evidentiary limits?",
@@ -804,7 +969,12 @@
           "Assume positive responses prove all residents benefited."
         ],
         "A capstone must distinguish sampled experience from population-wide impact.",
-        "Capstone methodology"
+        "Capstone methodology",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which abstract reports a limited result transparently?",
@@ -828,7 +998,12 @@
           "Another copy of the strongest essay without feedback."
         ],
         "Metacognitive evidence links process to demonstrated skill.",
-        "Portfolio defense"
+        "Portfolio defense",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which oral defense statement can be substantiated?",
@@ -852,7 +1027,12 @@
           "Present an unsupported conclusion as settled."
         ],
         "Transfer maintains evidentiary integrity while adjusting audience and purpose.",
-        "Postsecondary transfer"
+        "Postsecondary transfer",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which next-step plan has a checkable learning outcome?",
@@ -866,5 +1046,7 @@
         "Measurable literacy plan"
       ]
     ]
-  ]
+  ],
+  "grade": 12,
+  "anchorPolicy": "First supplemental item in every week is a passage/source anchor; weekly form requires at least one anchor."
 }
