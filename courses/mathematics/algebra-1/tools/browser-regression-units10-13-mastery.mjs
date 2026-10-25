@@ -38,9 +38,17 @@ await context.addInitScript(()=>{
  for(let unit=1;unit<=9;unit++)localStorage.setItem(scoped(`khaemenes-algebra1-unit${String(unit).padStart(2,"0")}-a3-v1`),JSON.stringify({best:{mastery:100},attempts:[]}));
  const counts={10:8,11:6,12:7,13:5};
  for(const [unitText,count] of Object.entries(counts)){
-  const unit=Number(unitText),scores={mastery:100};
-  for(let lesson=1;lesson<=count;lesson++)scores[`u${String(unit).padStart(2,"0")}-l${String(lesson).padStart(2,"0")}`]=100;
-  localStorage.setItem(scoped(`khaemenes-algebra1-unit${String(unit).padStart(2,"0")}-progress-v1`),JSON.stringify({pathway:"Core",completed:[],scores,reflections:{},attempts:[]}));
+  const unit=Number(unitText),baseKey=`khaemenes-algebra1-unit${String(unit).padStart(2,"0")}-progress-v1`,key=scoped(baseKey);
+  let record={pathway:"Core",completed:[],scores:{},reflections:{},attempts:[]};
+  try{record=JSON.parse(localStorage.getItem(key)||"{}")||record}catch{}
+  record.pathway=record.pathway||"Core";
+  record.completed=Array.isArray(record.completed)?record.completed:[];
+  record.scores=record.scores&&typeof record.scores==="object"?record.scores:{};
+  record.reflections=record.reflections&&typeof record.reflections==="object"?record.reflections:{};
+  record.attempts=Array.isArray(record.attempts)?record.attempts:[];
+  record.scores.mastery=100;
+  for(let lesson=1;lesson<=count;lesson++)record.scores[`u${String(unit).padStart(2,"0")}-l${String(lesson).padStart(2,"0")}`]=100;
+  localStorage.setItem(key,JSON.stringify(record));
  }
  const weeks={};for(let week=27;week<=36;week++)weeks[week]={best:100,attempts:[{mastery_met:true}]};
  localStorage.setItem(scoped("khaemenes-algebra1-weekly-mastery-v2"),JSON.stringify({weeks}));
