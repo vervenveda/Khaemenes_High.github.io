@@ -1,5 +1,5 @@
 {
-  "version": "v3-instructional",
+  "version": "v4-passage-anchored",
   "course": "english-10",
   "rows": [
     [
@@ -12,7 +12,12 @@
           "Keep the paragraph unchanged to preserve a clean first draft."
         ],
         "A baseline captures actual evidence-based reasoning rather than presentation alone.",
-        "Baseline reading"
+        "Baseline reading",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "A learner writes, 'The evidence is clear the argument is incomplete.' Which revision correctly separates the complete clauses?",
@@ -36,7 +41,12 @@
           "A missing scale means the route never existed."
         ],
         "The visual supports route relationships, not unsupported physical distances.",
-        "Evidence limitation"
+        "Evidence limitation",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "A student writes, 'The annotation identifies a detail it does not yet explain its significance.' Which revision clarifies the relationship?",
@@ -60,7 +70,12 @@
           "It introduces a new but supported interpretation."
         ],
         "Accurate paraphrase needs independent language and attribution, not cosmetic substitutions.",
-        "Academic integrity"
+        "Academic integrity",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which attribution is clearest when a paragraph changes from a source's claim to the student's inference?",
@@ -84,7 +99,12 @@
           "The storefront proves the plot takes place in winter."
         ],
         "Point of view constrains available information without proving unseen events.",
-        "Narrative perspective"
+        "Narrative perspective",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence uses an appositive to identify a speaker without changing the factual claim?",
@@ -100,7 +120,7 @@
     ],
     [
       [
-        "A teenager hides an unfinished application after being praised for independence. Which evidence best supports an internal conflict?",
+        "Original instructional passage: “When the counselor praised Lena for handling everything alone, she slid the unfinished application beneath her notebook and smiled.” A teenager hides an unfinished application after being praised for independence. Which evidence best supports an internal conflict?",
         [
           "The contrast between public praise and the concealed unfinished form.",
           "The number of other students in the school.",
@@ -108,7 +128,12 @@
           "An unrelated description of the weather."
         ],
         "Character motivation emerges from tension between expectation and behavior.",
-        "Characterization"
+        "Characterization",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which revision maintains a consistent past-time account?",
@@ -132,7 +157,12 @@
           "The second narrator describes a separate protest."
         ],
         "Different focal points need not mean entirely incompatible facts.",
-        "Perspective comparison"
+        "Perspective comparison",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which parallel revision most clearly contrasts the narrators?",
@@ -148,7 +178,7 @@
     ],
     [
       [
-        "Two tales portray generosity: one through a small gift and one through refusing a reward. What is a thematic comparison?",
+        "Original paired passages: “Mara leaves bread at a stranger’s door without signing her name.” / “Ilyas repairs a neighbor’s gate and refuses the offered payment.” Two tales portray generosity: one through a small gift and one through refusing a reward. What is a thematic comparison?",
         [
           "Both test what generosity requires, using contrasting choices to develop the idea.",
           "Both contain exactly the same plot events.",
@@ -156,7 +186,12 @@
           "The only theme is that gifts always solve conflict."
         ],
         "A shared concern can develop differently through character decisions.",
-        "Cross-text theme"
+        "Cross-text theme",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which thesis uses parallel comparison and avoids equating unlike plots?",
@@ -180,7 +215,12 @@
           "The passage has no tone because sentence lengths vary."
         ],
         "Sentence design can affect pacing and perceived voice.",
-        "Syntax and tone"
+        "Syntax and tone",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which punctuation best creates a deliberate, immediate interruption?",
@@ -204,7 +244,12 @@
           "A statement that no counterreading is possible."
         ],
         "A quotation does not interpret itself; reasoning links evidence to thesis.",
-        "Analytical commentary"
+        "Analytical commentary",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence integrates a brief quotation grammatically?",
@@ -228,7 +273,12 @@
           "The wider claim is proven solely by its later placement."
         ],
         "A specific-to-general progression can organize reasoning but does not guarantee its validity.",
-        "Rhetorical structure"
+        "Rhetorical structure",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence correctly joins two related independent historical claims?",
@@ -244,7 +294,7 @@
     ],
     [
       [
-        "An advocate addresses an audience that distrusts official numbers. Which rhetorical choice best responds to that concern?",
+        "Original speech excerpt: “You have every reason to ask where these figures came from. The survey covered 1,204 residents; here is how they were selected, and here is what the margin cannot tell us.” An advocate addresses an audience that distrusts official numbers. Which rhetorical choice best responds to that concern?",
         [
           "Explain the data source, limitations, and method before drawing conclusions.",
           "Repeat a statistic more loudly instead of citing it.",
@@ -252,7 +302,12 @@
           "Remove qualifiers to make the claim appear certain."
         ],
         "Audience awareness shapes what evidence and explanation an argument needs.",
-        "Audience and credibility"
+        "Audience and credibility",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which revision turns repetition into a purposeful appeal?",
@@ -276,7 +331,12 @@
           "The phrase introduces an unrelated plot twist."
         ],
         "Repeated antithetical phrasing can focus an audience on the key contrast.",
-        "Rhetorical repetition"
+        "Rhetorical repetition",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which revision makes the parallel structure more consistent?",
@@ -300,7 +360,12 @@
           "Whether one article includes more adjectives."
         ],
         "Validity depends on comparable definitions and methods, not rhetoric alone.",
-        "Argument validity"
+        "Argument validity",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which qualified sentence reports an uncertain cause fairly?",
@@ -316,7 +381,7 @@
     ],
     [
       [
-        "An opposing writer accepts the data but disputes a policy's fairness. Which counterargument would be intellectually fair?",
+        "Original rebuttal excerpt: “The pilot did reduce average travel time, but the added fee falls most heavily on riders with the lowest incomes.” An opposing writer accepts the data but disputes a policy's fairness. Which counterargument would be intellectually fair?",
         [
           "Represent the fairness concern accurately before assessing its evidence and assumptions.",
           "Call the opponent ignorant without stating the argument.",
@@ -324,7 +389,12 @@
           "Ignore the moral criterion because numbers are available."
         ],
         "Counterargument should address the actual claim rather than misrepresent it.",
-        "Rebuttal accuracy"
+        "Rebuttal accuracy",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which concession strengthens rather than abandons an argument?",
@@ -340,7 +410,7 @@
     ],
     [
       [
-        "During debate, a classmate identifies an error in a statistic. What is the strongest immediate response?",
+        "Original debate exchange: “Your chart says eighteen percent, but the source table says eight percent.” The speaker pauses and checks the table. During debate, a classmate identifies an error in a statistic. What is the strongest immediate response?",
         [
           "Acknowledge and correct the figure before continuing the argument.",
           "Repeat the incorrect number with more confidence.",
@@ -348,7 +418,12 @@
           "Change topics without addressing the challenged claim."
         ],
         "Responsible oral argument corrects material inaccuracies openly.",
-        "Debate ethics"
+        "Debate ethics",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which oral transition signals a response to another position?",
@@ -372,7 +447,12 @@
           "Copy each report's introduction as separate paragraphs."
         ],
         "Synthesis connects sources and weighs their differing evidentiary roles.",
-        "Expository synthesis"
+        "Expository synthesis",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which integrated sentence clearly distinguishes sources?",
@@ -396,7 +476,12 @@
           "Delete evidence that names either group."
         ],
         "Readers must know which group each claim describes.",
-        "Pronoun reference"
+        "Pronoun reference",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence has clear subject–verb agreement?",
@@ -412,7 +497,7 @@
     ],
     [
       [
-        "A learner scores poorly on inference but well on identifying details. Which review is most targeted?",
+        "Original score report: Detail identification 92%; inference 64%; source integration 81%. A learner scores poorly on inference but well on identifying details. Which review is most targeted?",
         [
           "Practice linking quoted details to explanations of implied meaning.",
           "Spend all review time memorizing author birth dates.",
@@ -420,7 +505,12 @@
           "Replace the evidence notebook with a score list."
         ],
         "The targeted gap concerns reasoning from evidence, not detail recognition.",
-        "Midterm diagnostic"
+        "Midterm diagnostic",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which revision memo documents a real correction?",
@@ -444,7 +534,12 @@
           "The poet's biography makes the line meaningless."
         ],
         "Lyric voice and the historical author should not be conflated.",
-        "Poetic speaker"
+        "Poetic speaker",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence qualifies an interpretation of ambiguity?",
@@ -468,7 +563,12 @@
           "Whether every adjective is factually measurable."
         ],
         "Connotation permits emotional associations beyond literal weather.",
-        "Connotation"
+        "Connotation",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which revision uses a precise image-rich verb?",
@@ -492,7 +592,12 @@
           "The number of pages in their publishers' catalogs."
         ],
         "Formal position shapes the rhetorical role of repetition.",
-        "Poetic structure"
+        "Poetic structure",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which comparative sentence integrates two works without flattening them?",
@@ -508,7 +613,7 @@
     ],
     [
       [
-        "A myth recurs in two cultures with different choices and consequences. What should comparative analysis avoid?",
+        "Original paired myth summaries: Tale A rewards a traveler who shares water with a stranger; Tale B punishes a ruler who hoards water during a drought. A myth recurs in two cultures with different choices and consequences. What should comparative analysis avoid?",
         [
           "Assuming a shared figure establishes a single identical cultural value.",
           "Examining the distinct narrative settings.",
@@ -516,7 +621,12 @@
           "Identifying the evidence that supports each reading."
         ],
         "Shared motifs can be shaped by different traditions and contexts.",
-        "Myth comparison"
+        "Myth comparison",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence introduces an allusion clearly?",
@@ -532,7 +642,7 @@
     ],
     [
       [
-        "When comparing a sacred narrative with its literary adaptation, what is the most responsible task?",
+        "Original comparison note: An adaptation preserves several named figures from an earlier sacred narrative but changes the narrator, setting, and ending. When comparing a sacred narrative with its literary adaptation, what is the most responsible task?",
         [
           "Analyze narrative techniques and context without evaluating people's beliefs as literature scores.",
           "Assume all adherents interpret the passage identically.",
@@ -540,7 +650,12 @@
           "Treat every adaptation as a verbatim translation."
         ],
         "Literary analysis can be rigorous and respectful without pronouncing on faith commitments.",
-        "Respectful literary analysis"
+        "Respectful literary analysis",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which attribution best separates text and interpretation?",
@@ -564,7 +679,12 @@
           "The camera choice guarantees the audience interprets one emotion."
         ],
         "Medium-specific techniques change how information is communicated.",
-        "Adaptation methods"
+        "Adaptation methods",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which comparative thesis is defensible?",
@@ -588,7 +708,12 @@
           "'Which book is objectively best across every era?'"
         ],
         "A bounded population, variable, and time frame permit feasible evidence collection.",
-        "Inquiry scope"
+        "Inquiry scope",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which proposal sentence names a measurable scope?",
@@ -612,7 +737,12 @@
           "Use only the page's headline as supporting evidence."
         ],
         "Lateral reading requires tracing a claim beyond the surface that repeats it.",
-        "Source verification"
+        "Source verification",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which evaluation sentence uses justified uncertainty?",
@@ -636,7 +766,12 @@
           "Assume research notes are exempt from ethical attribution."
         ],
         "Quotation boundaries and source metadata prevent later accidental patchwriting.",
-        "Research source ethics"
+        "Research source ethics",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which signal phrase correctly attributes a source rather than a student's inference?",
@@ -652,7 +787,7 @@
     ],
     [
       [
-        "A research report lists facts but never explains why they relate. What change improves exposition?",
+        "Original report excerpt: “The town added three wells in 2019. Rainfall fell 12 percent. Household water use rose. A conservation rule changed in 2021.” A research report lists facts but never explains why they relate. What change improves exposition?",
         [
           "Organize sections around a controlling idea and explain relationships between the findings.",
           "Add more disconnected quotations.",
@@ -660,7 +795,12 @@
           "Move every source citation to the title."
         ],
         "Expository coherence requires explanation, not an inventory of details.",
-        "Expository reasoning"
+        "Expository reasoning",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which transition identifies a relationship without overstating causality?",
@@ -676,7 +816,7 @@
     ],
     [
       [
-        "A policy writer reports a correlation but calls it proof that the proposal works. What is the best repair?",
+        "Original policy report excerpt: “After the program began, attendance rose from 68 to 74 percent; therefore the program caused the entire increase.” A policy writer reports a correlation but calls it proof that the proposal works. What is the best repair?",
         [
           "Limit the claim to the observed association and examine competing explanations.",
           "Delete the table but retain the causal claim.",
@@ -684,7 +824,12 @@
           "Add emotional adjectives instead of evaluating methods."
         ],
         "Causal conclusions require design and reasoning beyond association.",
-        "Argument evidence"
+        "Argument evidence",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence concedes a limitation without abandoning the proposal?",
@@ -708,7 +853,12 @@
           "Remove any citation for the underlying values."
         ],
         "Visual scales can distort magnitude without changing raw data.",
-        "Digital publication ethics"
+        "Digital publication ethics",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which caption lets readers interpret a chart independently?",
@@ -724,7 +874,7 @@
     ],
     [
       [
-        "An audience knows one character's secret while another character does not. What dramatic effect can follow?",
+        "Original dramatic scene: “Mara hides the signed letter in her coat. Elias enters and asks, ‘Did any message arrive?’ ‘Nothing,’ Mara says.” An audience knows one character's secret while another character does not. What dramatic effect can follow?",
         [
           "The audience can interpret apparently ordinary dialogue with dramatic irony.",
           "The scene cannot contain conflict.",
@@ -732,7 +882,12 @@
           "The concealed information makes stage directions unnecessary."
         ],
         "A gap between audience and character knowledge creates dramatic irony.",
-        "Dramatic irony"
+        "Dramatic irony",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which punctuation best marks a brief interrupted exchange?",
@@ -748,7 +903,7 @@
     ],
     [
       [
-        "A Shakespearean character uses an unfamiliar word order. What reading strategy is strongest?",
+        "Original practice line: “To the old gate before the bells went I, though none would follow.” A Shakespearean character uses an unfamiliar word order. What reading strategy is strongest?",
         [
           "Identify the subject and verb, then paraphrase while checking imagery and context.",
           "Replace every unusual phrase with a modern slogan.",
@@ -756,7 +911,12 @@
           "Assume inverted syntax always expresses sarcasm."
         ],
         "Grammatical reconstruction should preserve meaning and poetic choices.",
-        "Early modern syntax"
+        "Early modern syntax",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which performance note is precise without pretending to know the author's one intended delivery?",
@@ -772,7 +932,7 @@
     ],
     [
       [
-        "A director changes the timing of a pause. What evidence could justify this interpretive choice?",
+        "Original script excerpt: “I did not say— [pause] —that I forgave you.” A director changes the timing of a pause. What evidence could justify this interpretive choice?",
         [
           "The pause highlights a shift in the character's motive visible in adjacent lines.",
           "The pause makes the scene automatically historically accurate.",
@@ -780,7 +940,12 @@
           "The director should conceal textual reasons from the cast."
         ],
         "Performance interpretation should connect craft decisions to the script.",
-        "Dramatic interpretation"
+        "Dramatic interpretation",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which reflection is evidence-based?",
@@ -796,7 +961,7 @@
     ],
     [
       [
-        "Across chapters, an image of locked doors recurs when characters withhold information. What is the best motif claim?",
+        "Original chapter evidence: Chapter 2 describes a locked pantry when a character conceals a debt; Chapter 9 describes a locked office when another character hides a report. Across chapters, an image of locked doors recurs when characters withhold information. What is the best motif claim?",
         [
           "The image may develop a pattern connecting secrecy with restricted agency.",
           "Every locked door always symbolizes death.",
@@ -804,7 +969,12 @@
           "The novel's publication date alone defines the motif."
         ],
         "Recurring details gain interpretive force from patterned contexts.",
-        "Long-form motif"
+        "Long-form motif",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which notebook entry helps track motif development?",
@@ -828,7 +998,12 @@
           "An undated score without the work."
         ],
         "Process evidence shows the change in skill over time.",
-        "Portfolio evidence"
+        "Portfolio evidence",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which conference statement supports a claim of improvement?",
@@ -844,7 +1019,7 @@
     ],
     [
       [
-        "A student has mastered locating claims but misses causal reasoning questions. What is an effective final review?",
+        "Original mastery profile: Claim identification 94%; evidence location 91%; causal reasoning 66%; revision 84%. A student has mastered locating claims but misses causal reasoning questions. What is an effective final review?",
         [
           "Practice distinguishing observed relationships from supported explanations in new passages.",
           "Repeat only previously correct claim-location problems.",
@@ -852,7 +1027,12 @@
           "Avoid looking at feedback until after the exam."
         ],
         "Targeted transfer addresses the specific reasoning gap.",
-        "Final review"
+        "Final review",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which post-course goal is measurable?",
@@ -866,5 +1046,7 @@
         "Goal-setting"
       ]
     ]
-  ]
+  ],
+  "grade": 10,
+  "anchorPolicy": "First supplemental item in every week is a passage/source anchor; weekly form requires at least one anchor."
 }
