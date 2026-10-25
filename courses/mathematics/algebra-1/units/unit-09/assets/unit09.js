@@ -5,11 +5,12 @@ const base=new URL(".",current?.src||location.href);
 window.KhaemenesAlgebra1DedicatedGateConfig={unit:9,lesson_weeks:[24,24,24,25,25,26,26]};
 const deps=[new URL("../../../assets/mastery-authority-v1.js",base).href,new URL("../../../assets/dedicated-unit-gates-v1.js",base).href,
  new URL("../../../assets/question-bank.js",base).href,
+ new URL("unit09-abundant-bank-v1.js",base).href,
  new URL("../../../assets/misconception-resolver-v1.js",base).href
 ];
 function fail(message){const main=document.getElementById("main");if(main)main.innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Strict 80% Mastery Gate</p><h1>Unit 09 is temporarily locked</h1><p class="lead">${message}</p><div class="nav"><a class="btn" href="../../index.html">Course Home</a></div></div></section>`}
 function load(src,onload){const s=document.createElement("script");s.src=src;s.async=false;s.onload=onload;s.onerror=()=>fail("A required mastery dependency could not be loaded. Reload before continuing.");document.head.appendChild(s)}
-function loadCore(){const gate=window.KhaemenesAlgebra1DedicatedGate;if(!gate||gate.before()!==true)return;if(document.body?.dataset?.masteryLocked==="true")return;const start=()=>load(new URL("unit09-core.js",base).href,()=>gate.after());const withResolver=()=>window.KhaemenesAlgebra1Misconceptions?start():load(deps[3],start);if(Array.isArray(window.ALGEBRA1_QUESTIONS))withResolver();else load(deps[2],withResolver)}
+function loadCore(){const gate=window.KhaemenesAlgebra1DedicatedGate;if(!gate||gate.before()!==true)return;if(document.body?.dataset?.masteryLocked==="true")return;const start=()=>load(new URL("unit09-core.js",base).href,()=>gate.after());const withResolver=()=>window.KhaemenesAlgebra1Misconceptions?start():load(deps[4],start);const withAbundant=()=>Array.isArray(window.KHAE_UNIT09_ABUNDANT_BANK)?withResolver():load(deps[3],withResolver);if(Array.isArray(window.ALGEBRA1_QUESTIONS))withAbundant();else load(deps[2],withAbundant)}
 function loadGate(){if(window.KhaemenesAlgebra1DedicatedGate)return loadCore();load(deps[1],loadCore)}
 if(window.KhaemenesAlgebra1MasteryAuthority)loadGate();else load(deps[0],loadGate);
 })();
