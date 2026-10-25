@@ -30,6 +30,8 @@ jobs:
           node --check courses/mathematics/algebra-1/tools/validate-runtime-assessment-banks.mjs
           node --check courses/mathematics/algebra-1/tools/validate-dedicated-misconceptions-v1.mjs
           node --check courses/mathematics/algebra-1/tools/browser-regression-units01-05-09.mjs
+          node --check courses/mathematics/algebra-1/tools/browser-regression-units10-13-mastery.mjs
+          node --check courses/mathematics/algebra-1/tools/test-locked-evidence-units10-13.mjs
 
       - name: Install Playwright Chromium
         run: |
@@ -39,6 +41,9 @@ jobs:
       - name: Validate runtime assessment banks
         run: node courses/mathematics/algebra-1/tools/validate-runtime-assessment-banks.mjs
 
+      - name: Validate late-unit immutable mastery evidence
+        run: node courses/mathematics/algebra-1/tools/test-locked-evidence-units10-13.mjs
+
       - name: Validate dedicated misconception map
         run: node courses/mathematics/algebra-1/tools/validate-dedicated-misconceptions-v1.mjs
 
@@ -47,3 +52,6 @@ jobs:
 
       - name: Run representative real-browser journey
         run: node courses/mathematics/algebra-1/tools/browser-regression-units01-05-09.mjs
+
+      - name: Run late-unit formal mastery browser journey
+        run: node courses/mathematics/algebra-1/tools/browser-regression-units10-13-mastery.mjs
