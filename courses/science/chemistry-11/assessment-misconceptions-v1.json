@@ -5,8 +5,8 @@
   "title": "Chemistry 11 · Legacy Concept Spine Misconception Map",
   "coveragePolicy": "reviewed-subset; concept spine, all high-repetition quantitative families, and repeated concept/model/evidence families; newly authored or substantially revised selected-response items should include complete mapping",
   "sourceBank": "courses/science/chemistry-11/question-bank.js",
-  "reviewedItemCount": 273,
-  "distractorRationaleCount": 819,
+  "reviewedItemCount": 303,
+  "distractorRationaleCount": 909,
   "items": {
     "legacy-01": {
       "itemId": "legacy-01",
@@ -7924,6 +7924,876 @@
       ],
       "reviewedAt": "2026-10-25",
       "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "u0-ev-1": {
+      "itemId": "u0-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Repeated measurements are tightly clustered but all lie well above a trusted reference. Which interpretation is best?",
+      "answerIndex": 0,
+      "correctRationale": "Tight clustering indicates precision; a consistent offset from a trusted value suggests systematic bias.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Low precision with no bias",
+          "misconceptionTag": "precision-accuracy-confusion",
+          "rationale": "Tight clustering is evidence of high precision, so calling the measurements low precision ignores the observed repeatability."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Perfect accuracy",
+          "misconceptionTag": "systematic-offset-ignored",
+          "rationale": "A consistent offset from a trusted reference contradicts perfect accuracy even when the readings are tightly clustered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Random error only",
+          "misconceptionTag": "systematic-bias-mislabeled-random",
+          "rationale": "Random error would tend to scatter measurements; a repeatable one-direction offset is characteristic of systematic bias."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u0-ev-2": {
+      "itemId": "u0-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two groups measure the same solid. Group A reports mass and volume with units and uncertainty; Group B reports only a density value. Which record is more reproducible?",
+      "answerIndex": 0,
+      "correctRationale": "Raw measurements, units, and uncertainty preserve the evidence trail needed to reproduce density.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Group B",
+          "misconceptionTag": "derived-value-without-evidence-trail",
+          "rationale": "A density value without the underlying mass, volume, units, and uncertainty preserves less reproducible evidence than the full measurement record."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They are equally reproducible",
+          "misconceptionTag": "reproducibility-equality-overclaim",
+          "rationale": "The two records are not equally reproducible because one preserves the measurements needed to independently recompute density."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Neither can ever be checked",
+          "misconceptionTag": "evidence-reproducibility-nihilism",
+          "rationale": "The presence of mass, volume, units, and uncertainty means Group A can be checked and reproduced; saying neither can ever be checked discards that evidence trail."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u0-ev-3": {
+      "itemId": "u0-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A planned chemistry procedure has an unknown reagent hazard. What is the strongest evidence-based next step?",
+      "answerIndex": 0,
+      "correctRationale": "Unknown hazards require authoritative safety information and a bounded procedure before work begins.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Guess from the reagent name",
+          "misconceptionTag": "hazard-inference-from-name",
+          "rationale": "A reagent name alone is not an adequate hazard assessment; approved safety information is needed before proceeding."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Proceed with a smaller amount",
+          "misconceptionTag": "dose-reduction-does-not-resolve-unknown-hazard",
+          "rationale": "Using a smaller amount does not make an unknown hazard acceptably characterized or controlled."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Ask another student to try it first",
+          "misconceptionTag": "unsafe-delegation",
+          "rationale": "Having another student try an uncharacterized procedure transfers the risk rather than resolving the safety uncertainty."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u0-md-1": {
+      "itemId": "u0-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A digital balance displays many decimal places. Which statement best describes those digits?",
+      "answerIndex": 0,
+      "correctRationale": "Instrument resolution and accuracy are different properties.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Every displayed digit is certainly accurate",
+          "misconceptionTag": "resolution-equals-accuracy",
+          "rationale": "Displaying more digits indicates resolution, not certainty that every digit is accurate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "More digits eliminate systematic error",
+          "misconceptionTag": "precision-eliminates-bias",
+          "rationale": "Additional displayed digits do not remove calibration or systematic error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Resolution and accuracy are identical",
+          "misconceptionTag": "resolution-accuracy-conflation",
+          "rationale": "Resolution describes display granularity, while accuracy describes closeness to a true/reference value; they are not identical."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u0-md-2": {
+      "itemId": "u0-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is percent error useful when comparing measurements of different scales?",
+      "answerIndex": 0,
+      "correctRationale": "Relative error makes differences comparable across different magnitude scales.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It removes all uncertainty",
+          "misconceptionTag": "percent-error-removes-uncertainty",
+          "rationale": "Percent error normalizes a difference; it does not eliminate measurement uncertainty."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It proves causation",
+          "misconceptionTag": "error-metric-proves-causation",
+          "rationale": "A relative error calculation compares magnitudes and cannot establish a causal relationship."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It makes units unnecessary",
+          "misconceptionTag": "units-still-required",
+          "rationale": "Using a percentage for relative error does not make units unnecessary in the underlying measurements or reference values."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u0-md-3": {
+      "itemId": "u0-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What should happen when a model prediction disagrees with a well-documented measurement?",
+      "answerIndex": 0,
+      "correctRationale": "Disagreement is evidence that can reveal model limits or measurement problems.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Delete the measurement",
+          "misconceptionTag": "data-deletion-to-fit-model",
+          "rationale": "Deleting a well-documented measurement because it disagrees with a model hides evidence instead of testing model assumptions or measurement quality."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Change the units until they agree",
+          "misconceptionTag": "unit-manipulation-to-force-agreement",
+          "rationale": "Changing units cannot legitimately alter the physical disagreement; consistent units should clarify, not erase, the discrepancy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Assume the model must be correct",
+          "misconceptionTag": "model-infallibility-assumption",
+          "rationale": "Assuming the model must be correct ignores the possibility of model limitations or unrecognized measurement effects."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u1-ev-1": {
+      "itemId": "u1-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A scattering experiment shows most particles pass through while a very small fraction deflect sharply. Which evidence most strongly argues against a uniformly distributed positive charge?",
+      "answerIndex": 0,
+      "correctRationale": "Rare large-angle deflections require a concentrated region capable of strong interaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The large number passing straight through alone",
+          "misconceptionTag": "common-event-not-discriminating",
+          "rationale": "Most particles passing through is compatible with several charge distributions; the rare large deflections are the more discriminating evidence for a concentrated positive region."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The color of the source",
+          "misconceptionTag": "irrelevant-source-color",
+          "rationale": "Source color does not explain the large-angle scattering pattern relevant to the charge-distribution model."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The detector shape",
+          "misconceptionTag": "detector-shape-not-primary-evidence",
+          "rationale": "Detector geometry may affect measurement setup, but it is not the evidence that rules out a uniformly distributed positive charge in this result."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u1-ev-2": {
+      "itemId": "u1-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An unknown source shows four narrow emission lines matching a reference within calibration uncertainty. What conclusion is best supported?",
+      "answerIndex": 0,
+      "correctRationale": "Multiple calibrated line matches provide strong but bounded identification evidence.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The source is proven identical in every property",
+          "misconceptionTag": "bounded-match-overclaimed-as-total-identity",
+          "rationale": "Matching emission lines supports consistency with the reference pattern, but it does not prove identity in every possible property."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "All atoms emit continuous spectra",
+          "misconceptionTag": "continuous-spectrum-overgeneralization",
+          "rationale": "The observed narrow lines directly contradict the claim that all atoms emit continuous spectra."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Calibration is irrelevant",
+          "misconceptionTag": "calibration-uncertainty-ignored",
+          "rationale": "Line matching is meaningful only relative to calibration and measurement uncertainty; treating calibration as irrelevant overstates the evidence."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u1-ev-3": {
+      "itemId": "u1-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A periodic-property graph decreases overall but contains one local deviation. What is the strongest treatment of the point?",
+      "answerIndex": 0,
+      "correctRationale": "Deviations can reveal additional structure or measurement issues and should remain visible.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Delete it because trends must be smooth",
+          "misconceptionTag": "outlier-deletion-bias",
+          "rationale": "Deleting a local deviation because a trend is expected suppresses evidence that could reveal model limits or measurement problems."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Average it away without comment",
+          "misconceptionTag": "unreported-averaging",
+          "rationale": "Averaging away a deviation without documenting it obscures potentially informative structure in the data."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Treat the entire periodic model as useless",
+          "misconceptionTag": "single-deviation-total-model-rejection",
+          "rationale": "One local deviation does not make the entire periodic model useless; it signals a need for refinement or additional explanation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u1-md-1": {
+      "itemId": "u1-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can a periodic-table atomic mass be non-integer?",
+      "answerIndex": 0,
+      "correctRationale": "Natural isotope populations produce weighted average atomic masses.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Atoms contain fractional protons",
+          "misconceptionTag": "fractional-proton-misconception",
+          "rationale": "Individual atoms have whole-number proton counts; non-integer tabulated atomic mass comes from averaging isotope masses, not fractional protons."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Neutrons have no mass",
+          "misconceptionTag": "neutron-mass-denial",
+          "rationale": "Neutrons contribute substantially to isotope mass, so claiming they have no mass cannot explain non-integer atomic weights."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Atomic number is averaged",
+          "misconceptionTag": "atomic-number-averaging-confusion",
+          "rationale": "Atomic number identifies proton count for an element and is not abundance-averaged across its isotopes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u1-md-2": {
+      "itemId": "u1-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why do discrete spectral lines support quantized electronic energies?",
+      "answerIndex": 0,
+      "correctRationale": "Discrete photon energies constrain allowed electronic energy differences.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Electrons are colored",
+          "misconceptionTag": "electron-color-category-error",
+          "rationale": "Electron color is not the mechanism behind discrete atomic emission lines."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "All wavelengths are emitted equally",
+          "misconceptionTag": "continuous-emission-contradiction",
+          "rationale": "If all wavelengths were emitted equally, the spectrum would not show discrete lines that support quantized energy differences."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Nuclei absorb every photon",
+          "misconceptionTag": "nucleus-absorbs-every-photon",
+          "rationale": "The observed electronic spectrum concerns allowed electron energy transitions, not a rule that nuclei absorb every photon."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u1-md-3": {
+      "itemId": "u1-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why does atomic radius generally decrease across a period?",
+      "answerIndex": 0,
+      "correctRationale": "Increasing proton number with similar-shell shielding generally strengthens effective attraction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Atoms lose all electrons across a period",
+          "misconceptionTag": "complete-electron-loss-overgeneralization",
+          "rationale": "Atoms do not lose all electrons simply by moving across a period; the trend is explained by changing effective nuclear attraction within similar principal shells."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Neutron number alone controls radius",
+          "misconceptionTag": "neutron-only-radius-model",
+          "rationale": "Neutron number alone does not control the general across-period radius trend."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Shielding always increases sharply left to right",
+          "misconceptionTag": "shielding-trend-reversed",
+          "rationale": "Across a period, shielding does not increase sharply enough to offset the rising nuclear charge in the way this choice claims."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u2-ev-1": {
+      "itemId": "u2-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solid is brittle, does not conduct as a solid, and conducts when molten. Which model is most consistent with the evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Fixed ions explain poor solid conduction; mobile ions after melting explain conductivity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "A metallic solid with free electrons in the solid",
+          "misconceptionTag": "metallic-conduction-pattern-mismatch",
+          "rationale": "A metallic solid should typically conduct in the solid state through mobile electrons, which conflicts with the stated nonconducting solid behavior."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "A molecular gas",
+          "misconceptionTag": "molecular-gas-model-mismatch",
+          "rationale": "A molecular gas model does not explain a brittle solid that becomes electrically conductive when molten."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A substance with no charged particles",
+          "misconceptionTag": "charged-particle-denial",
+          "rationale": "Molten conductivity is evidence for mobile charged species, so a model with no charged particles contradicts the observation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u2-ev-2": {
+      "itemId": "u2-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two molecules have equally polar bonds, but one is symmetrical and the other bent. What evidence matters most for comparing overall polarity?",
+      "answerIndex": 0,
+      "correctRationale": "Molecular geometry determines whether bond dipoles cancel or reinforce.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Molar mass alone",
+          "misconceptionTag": "mass-alone-polarity-model",
+          "rationale": "With equally polar bonds, molar mass alone does not determine whether bond dipoles cancel or reinforce."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Number of letters in the formula",
+          "misconceptionTag": "formula-letter-count-irrelevant",
+          "rationale": "The number of letters in a formula has no physical role in determining the vector sum of molecular bond dipoles."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "State of matter alone",
+          "misconceptionTag": "state-alone-polarity-model",
+          "rationale": "State of matter by itself does not determine a molecule's net dipole; three-dimensional geometry is the key evidence here."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u2-ev-3": {
+      "itemId": "u2-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two carbon solids have different conductivity and hardness despite identical elemental composition. What evidence must a useful model include?",
+      "answerIndex": 0,
+      "correctRationale": "Structure and bonding explain why the same composition can produce different properties.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Only elemental identity",
+          "misconceptionTag": "composition-alone-cannot-explain-allotrope-properties",
+          "rationale": "Identical elemental composition cannot explain the different properties by itself; bonding and structure must be included."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Only sample color",
+          "misconceptionTag": "sample-color-insufficient-model",
+          "rationale": "Color alone does not account for the conductivity and hardness differences between carbon structures."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Only density",
+          "misconceptionTag": "density-only-insufficient-model",
+          "rationale": "Density may differ between structures, but it does not by itself explain the bonding origins of conductivity and hardness."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u2-md-1": {
+      "itemId": "u2-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is MgCl2 a better formula than MgCl for Mg2+ and Cl− ions?",
+      "answerIndex": 0,
+      "correctRationale": "One Mg2+ requires two Cl− ions for electrical neutrality.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It contains more atoms",
+          "misconceptionTag": "atom-count-instead-of-charge-balance",
+          "rationale": "Containing more atoms is not the criterion for a correct ionic formula; the total ionic charge must sum to zero."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Chloride must always appear twice",
+          "misconceptionTag": "fixed-chloride-subscript-rule",
+          "rationale": "Chloride does not 'always appear twice'; the subscript depends on the charge of the counterion."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Magnesium becomes neutral by losing protons",
+          "misconceptionTag": "proton-loss-ionic-bonding-misconception",
+          "rationale": "Magnesium forms Mg²⁺ by losing electrons, not protons; nuclear proton loss is not ordinary ionic bonding."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u2-md-2": {
+      "itemId": "u2-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What does a Lewis structure represent most directly?",
+      "answerIndex": 0,
+      "correctRationale": "Lewis structures are simplified bookkeeping models for valence electrons and connectivity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Exact electron probability density",
+          "misconceptionTag": "lewis-as-exact-density-model",
+          "rationale": "A Lewis structure is simplified valence-electron bookkeeping and connectivity, not an exact electron probability-density map."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Molecular vibration at every instant",
+          "misconceptionTag": "lewis-as-dynamic-vibration-model",
+          "rationale": "Lewis notation does not directly represent molecular vibration at every instant."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Nuclear dimensions",
+          "misconceptionTag": "lewis-as-nuclear-dimension-model",
+          "rationale": "Nuclear dimensions are outside the scope of a Lewis structure, which focuses on valence electrons and bonding connectivity."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u2-md-3": {
+      "itemId": "u2-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is H2O bent rather than linear in a simple VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "Four electron domains include two lone pairs, leaving a bent molecular geometry.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Hydrogen atoms repel the nucleus only",
+          "misconceptionTag": "hydrogen-nucleus-repulsion-model",
+          "rationale": "The bent geometry is not explained by hydrogen atoms repelling the nucleus; VSEPR treats electron-domain repulsions around oxygen."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Oxygen has no valence electrons",
+          "misconceptionTag": "oxygen-no-valence-electrons",
+          "rationale": "Oxygen has valence electrons, including lone pairs that are essential to the VSEPR explanation of water's bent shape."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Water is polar, so it must be linear",
+          "misconceptionTag": "polarity-causes-linearity-reversal",
+          "rationale": "Polarity does not require a molecule to be linear; water is polar precisely because its bent geometry prevents dipole cancellation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u3-ev-1": {
+      "itemId": "u3-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which comparison best isolates an intermolecular-force effect on boiling point?",
+      "answerIndex": 0,
+      "correctRationale": "Matched comparisons reduce confounding factors such as size and shape.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "A tiny polar molecule and a huge nonpolar molecule",
+          "misconceptionTag": "imf-comparison-size-confounded",
+          "rationale": "Comparing a tiny polar molecule with a huge nonpolar molecule changes size/polarizability along with interaction type, confounding the IMF comparison."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Two substances at different pressures with no controls",
+          "misconceptionTag": "imf-comparison-pressure-confounded",
+          "rationale": "Using different pressures without controls introduces another variable that can affect boiling behavior."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Two unrelated materials with many properties changed",
+          "misconceptionTag": "multi-property-confounding",
+          "rationale": "Two unrelated materials with many simultaneous differences cannot isolate the effect of intermolecular-force type."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u3-ev-2": {
+      "itemId": "u3-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Pressure-volume data give nearly constant PV at fixed temperature. What does this evidence support?",
+      "answerIndex": 0,
+      "correctRationale": "A near-constant PV supports Boyle-style inverse behavior within the measured range.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Pressure and volume are directly proportional",
+          "misconceptionTag": "boyle-direct-proportion-reversal",
+          "rationale": "Nearly constant PV at fixed temperature supports an inverse pressure-volume relation, not direct proportionality."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Temperature changed dramatically",
+          "misconceptionTag": "temperature-change-unsupported",
+          "rationale": "The condition is fixed temperature; claiming a dramatic temperature change contradicts the setup rather than explaining the data."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The gas is ideal under all conditions",
+          "misconceptionTag": "limited-range-evidence-overgeneralized",
+          "rationale": "Near-constant PV over the tested range does not prove the gas is ideal under every possible condition."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u3-ev-3": {
+      "itemId": "u3-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An unknown chromatogram matches three reference spots within measurement uncertainty. Which claim is strongest?",
+      "answerIndex": 0,
+      "correctRationale": "A multi-feature match under comparable conditions supports a bounded identification claim.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The identity is proven beyond all alternatives",
+          "misconceptionTag": "chromatogram-match-overclaim",
+          "rationale": "A multi-spot match supports consistency under the same conditions but does not prove identity beyond all alternatives."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "One matching spot would be equally strong",
+          "misconceptionTag": "single-feature-evidence-overvalued",
+          "rationale": "One matching spot contains less identifying information than three matched features and is not equally strong evidence."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Rf values are universal constants",
+          "misconceptionTag": "rf-universal-constant-misconception",
+          "rationale": "Rf depends on experimental conditions and stationary/mobile phases; it is not a universal constant for a compound."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u3-md-1": {
+      "itemId": "u3-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can a larger nonpolar molecule have a higher boiling point than a smaller nonpolar molecule?",
+      "answerIndex": 0,
+      "correctRationale": "Larger, more polarizable electron clouds can support stronger dispersion interactions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Nonpolar molecules have no intermolecular forces",
+          "misconceptionTag": "nonpolar-no-imf-misconception",
+          "rationale": "Nonpolar molecules still experience London dispersion forces; they are not free of intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Larger molecules always become ionic",
+          "misconceptionTag": "size-causes-ionicity",
+          "rationale": "Increasing molecular size does not automatically convert a nonpolar molecular substance into an ionic one."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point depends only on color",
+          "misconceptionTag": "boiling-point-color-model",
+          "rationale": "Color is not the controlling variable in the dispersion-force explanation of boiling-point differences."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u3-md-2": {
+      "itemId": "u3-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can pressure rise when a sealed rigid gas container is heated?",
+      "answerIndex": 0,
+      "correctRationale": "Higher temperature increases average kinetic energy and wall-collision effects.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Particles gain mass",
+          "misconceptionTag": "particle-mass-increases-with-temperature",
+          "rationale": "Heating increases average kinetic energy, not the rest mass of gas particles in this model."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The container volume doubles",
+          "misconceptionTag": "rigid-container-volume-change",
+          "rationale": "The container is specified as rigid, so its volume does not double when heated."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Pressure is stored inside particles",
+          "misconceptionTag": "pressure-stored-in-particles",
+          "rationale": "Pressure is an emergent result of particle-wall collisions, not a quantity stored inside individual particles."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u3-md-3": {
+      "itemId": "u3-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why does M1V1=M2V2 work for a simple dilution?",
+      "answerIndex": 0,
+      "correctRationale": "The relation follows from conserved solute moles before and after dilution.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Solute is destroyed",
+          "misconceptionTag": "dilution-destroys-solute",
+          "rationale": "Dilution changes concentration by adding solvent; it does not destroy solute moles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The solvent volume is always constant",
+          "misconceptionTag": "solvent-volume-constant-misconception",
+          "rationale": "Dilution specifically changes the total solution volume, so the solvent/solution volume is not fixed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Molarity is independent of volume",
+          "misconceptionTag": "molarity-independent-of-volume",
+          "rationale": "Molarity is moles per liter and therefore changes when volume changes at constant solute amount."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u4-ev-1": {
+      "itemId": "u4-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which observation most directly supports formation of a new gas during a reaction rather than simple boiling?",
+      "answerIndex": 0,
+      "correctRationale": "Bubbles alone are ambiguous; context and converging reaction evidence strengthen the claim.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Any visible bubble",
+          "misconceptionTag": "bubble-alone-ambiguous",
+          "rationale": "Visible bubbles alone cannot distinguish chemical gas formation from boiling or dissolved gas release."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "A warm container",
+          "misconceptionTag": "warmth-alone-nondiagnostic",
+          "rationale": "A warm container may indicate heat transfer but does not directly prove that a new gas formed."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A colorless liquid",
+          "misconceptionTag": "colorless-liquid-nondiagnostic",
+          "rationale": "A colorless liquid provides no direct evidence that a new gaseous product has formed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u4-ev-2": {
+      "itemId": "u4-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction repeatedly gives 72–74% yield across careful trials. What is the strongest conclusion?",
+      "answerIndex": 0,
+      "correctRationale": "Consistent sub-100% yield suggests systematic process limitations that require investigation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The theoretical yield is wrong by definition",
+          "misconceptionTag": "theoretical-yield-definition-misread",
+          "rationale": "A reproducible yield below 100% does not make theoretical yield 'wrong by definition'; it points to process losses, incomplete conversion, or side processes."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Mass is not conserved",
+          "misconceptionTag": "mass-conservation-overclaim",
+          "rationale": "Sub-100% isolated yield does not by itself show that mass conservation failed; material can remain unreacted or be lost from the measured product stream."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The product must be impure in every case",
+          "misconceptionTag": "impurity-certainty-overclaim",
+          "rationale": "Impurity is one possible cause of reduced yield but is not proven in every trial by the yield percentage alone."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u4-ev-3": {
+      "itemId": "u4-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An electrode loses mass while metal ions appear in solution. Which process is most consistent with the evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Metal loss with ions entering solution is consistent with oxidation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Reduction of ions to solid metal",
+          "misconceptionTag": "redox-direction-reversed",
+          "rationale": "Metal loss and ions entering solution indicate oxidation of metal atoms, not reduction of ions onto the electrode."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "No electron transfer",
+          "misconceptionTag": "electron-transfer-denied",
+          "rationale": "Conversion of neutral metal atoms to ions necessarily involves electron transfer in the redox model."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Nuclear decay",
+          "misconceptionTag": "nuclear-vs-redox-category-error",
+          "rationale": "The observed electrode mass loss and dissolved metal ions are ordinary chemical redox evidence, not evidence of nuclear decay."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u4-md-1": {
+      "itemId": "u4-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why must a chemical equation conserve each element's atom count?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced equations encode conservation of matter at the atom-count level.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Coefficients are decorative",
+          "misconceptionTag": "coefficients-as-decoration",
+          "rationale": "Stoichiometric coefficients encode atom conservation and are not merely decorative notation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Only charge must be conserved",
+          "misconceptionTag": "charge-only-conservation",
+          "rationale": "Charge conservation matters, but balancing an ordinary chemical equation also requires conserving each element's atom count."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Atoms change identity freely",
+          "misconceptionTag": "atoms-change-element-identity",
+          "rationale": "Ordinary chemical reactions rearrange atoms; they do not freely change one element into another."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u4-md-2": {
+      "itemId": "u4-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What information does a balanced equation provide for stoichiometry?",
+      "answerIndex": 0,
+      "correctRationale": "Coefficients give the stoichiometric mole relationships.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Exact reaction rate",
+          "misconceptionTag": "stoichiometry-vs-kinetics",
+          "rationale": "Balanced-equation coefficients give mole ratios, not the exact rate at which the reaction proceeds."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Exact percent yield",
+          "misconceptionTag": "stoichiometry-vs-percent-yield",
+          "rationale": "The balanced equation defines theoretical mole relationships but does not determine the actual percent yield."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Molecular color",
+          "misconceptionTag": "molecular-color-irrelevant",
+          "rationale": "Molecular color is not encoded by stoichiometric coefficients and is unrelated to the mole-ratio information used here."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u4-md-3": {
+      "itemId": "u4-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why does the limiting reactant determine maximum product amount?",
+      "answerIndex": 0,
+      "correctRationale": "Once the limiting reactant is exhausted, additional product cannot form under the modeled reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It always has the smallest mass",
+          "misconceptionTag": "smallest-mass-not-necessarily-limiting",
+          "rationale": "The reactant with the smallest mass is not necessarily limiting because stoichiometric ratios and molar masses determine required amounts."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It has the lowest molar mass",
+          "misconceptionTag": "lowest-molar-mass-not-necessarily-limiting",
+          "rationale": "A low molar mass does not by itself determine which reactant is exhausted first."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It reacts most slowly",
+          "misconceptionTag": "slowest-reactant-vs-limiting-reactant",
+          "rationale": "Reaction speed and limiting-reactant identity are different concepts; the limiting reactant is set by available amount relative to stoichiometric need."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
     }
   },
   "reviewedFamilies": [
