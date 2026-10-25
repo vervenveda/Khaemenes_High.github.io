@@ -2,116 +2,167 @@
   "title": "Week 27 Mastery Quiz · Global Political Economy, Trade, and Debt",
   "questions": [
     {
-      "question": "Which definition best matches “global value chain”?",
+      "id": "ss12-w27-transfer-v3-01",
+      "question": "The WTO's founding agreement provides an institutional framework. Which claim requires checking a specific covered trade agreement?",
       "options": [
-        "Cross-border organization of production stages for a good or service.",
-        "The capacity to shape behavior, choices, rules, opportunities, or outcomes.",
-        "Recognition for mastery above the minimum course threshold.",
-        "A record explaining changes made in response to evidence and feedback."
-      ],
-      "answer": 0,
-      "explanation": "Global value chain means cross-border organization of production stages for a good or service."
-    },
-    {
-      "question": "Which definition best matches “foreign direct investment”?",
-      "options": [
-        "A systematic review of required work, evidence, records, and corrections.",
-        "Investment providing lasting control or influence in an enterprise abroad.",
-        "Inventing evidence, data, sources, quotations, or results.",
-        "A condition or benefit understood to serve the community as a whole."
-      ],
-      "answer": 1,
-      "explanation": "Foreign direct investment means investment providing lasting control or influence in an enterprise abroad."
-    },
-    {
-      "question": "Which definition best matches “sovereign debt”?",
-      "options": [
-        "Money owed by a national government.",
-        "A standard for fair institutions, rights, duties, procedures, and distributions.",
-        "Protection that makes a constitutional rule harder to change than ordinary law.",
-        "Using different sources or methods to examine the same question."
-      ],
-      "answer": 0,
-      "explanation": "Sovereign debt means money owed by a national government."
-    },
-    {
-      "question": "Which definition best matches “balance of payments”?",
-      "options": [
-        "A record of transactions between residents of a country and the rest of the world.",
-        "A state in which ultimate constitutional authority rests with the central government.",
-        "Freedom from unjust restraint and the capacity to make meaningful choices.",
-        "A legal tradition centered on comprehensive codes and enacted law."
-      ],
-      "answer": 0,
-      "explanation": "Balance of payments means a record of transactions between residents of a country and the rest of the world."
-    },
-    {
-      "question": "Which definition best matches “sanction”?",
-      "options": [
-        "A subset studied to estimate characteristics of a larger population.",
-        "The capacity of courts to decide cases without improper political control.",
-        "The foundational rules organizing government, authority, rights, and amendment.",
-        "A restriction intended to influence another actor’s behavior."
+        "That the WTO has member states.",
+        "That the founding agreement exists.",
+        "That governments discuss trade.",
+        "Whether a particular tariff conflicts with an identified legal obligation and its exceptions."
       ],
       "answer": 3,
-      "explanation": "Sanction means a restriction intended to influence another actor’s behavior."
+      "explanation": "Whether a particular tariff conflicts with an identified legal obligation and its exceptions.",
+      "skill": "primary-source",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “debt sustainability”?",
+      "id": "ss12-w27-transfer-v3-02",
+      "question": "A fictional country gains export revenue but import prices rise for low-income households. What evaluation best captures distribution?",
       "options": [
-        "The legal right to vote.",
-        "A government’s capacity to meet debt obligations without unacceptable adjustment or default.",
-        "False or manipulated information spread deliberately.",
-        "The ability of public institutions to implement decisions and provide core functions."
+        "Assess producers, consumers, prices and fiscal impacts instead of relying on national net exports alone.",
+        "Exports automatically benefit every household.",
+        "Rising import prices have no welfare effect.",
+        "Trade gains must be distributed equally."
+      ],
+      "answer": 0,
+      "explanation": "Assess producers, consumers, prices and fiscal impacts instead of relying on national net exports alone.",
+      "skill": "data-interpretation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w27-transfer-v3-03",
+      "question": "A government argues comparative advantage means all workers win immediately from specialization. What is missing?",
+      "options": [
+        "Comparative advantage refers only to exchange rates.",
+        "Adjustment costs, sector-level losses, mobility constraints and distributional policies.",
+        "Productivity cannot vary.",
+        "Worker skills never affect transition."
       ],
       "answer": 1,
-      "explanation": "Debt sustainability means a government’s capacity to meet debt obligations without unacceptable adjustment or default."
+      "explanation": "Adjustment costs, sector-level losses, mobility constraints and distributional policies.",
+      "skill": "measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 27 analysis?",
+      "id": "ss12-w27-transfer-v3-04",
+      "question": "A fictional supply chain has three countries; a port closure halts the only component supplier. What is the strongest institutional risk finding?",
       "options": [
-        "The most confident source should be accepted without examining authority or method.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Trade can create aggregate gains while imposing concentrated adjustment costs.",
-        "Political labels have exactly the same meaning in every country and period."
+        "Every multinational chain is equally fragile.",
+        "A port closure proves intentional sanctions.",
+        "Concentrated upstream dependence creates exposure that can be assessed through alternative supply capacity.",
+        "Diversification always has zero cost."
       ],
       "answer": 2,
-      "explanation": "Trade can create aggregate gains while imposing concentrated adjustment costs."
+      "explanation": "Concentrated upstream dependence creates exposure that can be assessed through alternative supply capacity.",
+      "skill": "causal-inference",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 27 analysis?",
+      "id": "ss12-w27-transfer-v3-05",
+      "question": "A debt table reports liabilities in local and foreign currency but no repayment schedule. What evidence is needed?",
       "options": [
-        "Financial integration transmits capital and crises.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "A single vivid example proves a universal conclusion without qualification."
+        "Total face value alone determines default timing.",
+        "Currency denomination never matters.",
+        "Debt service is independent of interest.",
+        "Maturity, interest, currency risk, reserves and expected fiscal revenue."
+      ],
+      "answer": 3,
+      "explanation": "Maturity, interest, currency risk, reserves and expected fiscal revenue.",
+      "skill": "institutional-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w27-transfer-v3-06",
+      "question": "A sovereign government refinances loans at a higher interest rate, while principal stays fixed. What changes most directly?",
+      "options": [
+        "The expected interest-servicing burden, subject to contract terms and timing.",
+        "Principal necessarily doubles.",
+        "The population automatically shrinks.",
+        "Exports cannot be affected."
       ],
       "answer": 0,
-      "explanation": "Financial integration transmits capital and crises."
+      "explanation": "The expected interest-servicing burden, subject to contract terms and timing.",
+      "skill": "quantitative-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which research practice is most appropriate for Global Political Economy, Trade, and Debt?",
+      "id": "ss12-w27-transfer-v3-07",
+      "question": "An analyst blames a tariff for inflation based only on events after the tariff was introduced. What stronger inference design helps?",
       "options": [
-        "Trace claims to WTO records, trade data, sovereign-debt cases, supply-chain maps, and labor evidence, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Choose only evidence that supports the preferred conclusion.",
-        "Replace documentary evidence with political identity or intuition."
+        "Timing alone establishes exclusive causation.",
+        "Compare affected goods, prior trends, exchange rates and other shocks with a plausible counterfactual.",
+        "One merchant's statement is sufficient.",
+        "Inflation and tariffs cannot interact."
       ],
-      "answer": 0,
-      "explanation": "Trace claims to WTO records, trade data, sovereign-debt cases, supply-chain maps, and labor evidence, evaluate authority and context, corroborate material facts, and state limitations."
+      "answer": 1,
+      "explanation": "Compare affected goods, prior trends, exchange rates and other shocks with a plausible counterfactual.",
+      "skill": "case-comparison",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
+      "id": "ss12-w27-transfer-v3-08",
+      "question": "A fictional trade agreement lowers duties but excludes labor enforcement. Which aspect remains to examine?",
       "options": [
-        "List facts without connecting them to a claim.",
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "Treat legal, causal, and moral claims as interchangeable."
+        "Tariff reductions prove workplace protections.",
+        "Trade rules eliminate all domestic labor law.",
+        "Whether distributional and labor standards effects are governed or monitored elsewhere.",
+        "A preamble enforces every promise."
       ],
       "answer": 2,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "Whether distributional and labor standards effects are governed or monitored elsewhere.",
+      "skill": "policy-evaluation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w27-transfer-v3-09",
+      "question": "One country receives foreign direct investment concentrated in an enclave sector. Which limitation affects claims of nationwide development?",
+      "options": [
+        "Investment flows always benefit every district.",
+        "Enclave location determines treaty validity.",
+        "FDI cannot be measured.",
+        "Assess local linkages, employment quality, tax revenue and spillovers rather than assuming equal nationwide gains."
+      ],
+      "answer": 3,
+      "explanation": "Assess local linkages, employment quality, tax revenue and spillovers rather than assuming equal nationwide gains.",
+      "skill": "source-limits",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w27-transfer-v3-10",
+      "question": "An official debt statement and independent creditor report give different totals. What source audit is warranted?",
+      "options": [
+        "Reconcile coverage, valuation dates, state guarantees and instruments counted.",
+        "Select the larger figure without checking.",
+        "Average incompatible categories.",
+        "Count only domestic debt by default."
+      ],
+      "answer": 0,
+      "explanation": "Reconcile coverage, valuation dates, state guarantees and instruments counted.",
+      "skill": "research-methods",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     }
   ],
   "shortResponse": "Who gains, who loses, and who decides in systems of global trade, finance, investment, taxation, and debt?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
