@@ -15,7 +15,7 @@ function text(selector){return safe(document.querySelector(selector)?.value||doc
 function buildDraft(){
  const id=learnerId();if(!id)return null;
  const title=text("h1")||"Science Investigation";
- const objective=text(".heading p strong")||"";
+ const objective=safe([...document.querySelectorAll(".heading p")].find(p=>/Learning objective:/i.test(p.textContent||""))?.textContent?.replace(/Learning objective:\s*/i,"")||"");
  const main=text("#mainNote"),thought=text("#thoughtNote");
  const d=day();
  const draft={version:1,learnerId:id,grade:grade(),week:week(),day:d,course:course(),title,sourceUrl:location.href,createdAt:new Date().toISOString(),question:objective,method:"",evidence:"",analysis:"",claim:"",limitations:"",next:""};
@@ -31,7 +31,7 @@ function mount(){
  const panel=[...document.querySelectorAll("article.panel.full")].find(x=>/Course evidence bridge/i.test(x.querySelector("h2")?.textContent||""))||document.querySelector("article.panel.full");
  if(!panel||panel.querySelector("[data-science-investigation-handoff]"))return;
  const actions=panel.querySelector(".actions")||document.createElement("div");if(!actions.parentElement){actions.className="actions no-print";panel.append(actions)}
- const a=document.createElement("button");a.type="button";a.className="btn";a.dataset.scienceInvestigationHandoff="true";a.textContent="Save to Scientific Investigation Notebook";
+ const a=document.createElement("button");a.type="button";a.className="btn";a.dataset.scienceInvestigationHandoff="true";a.textContent="Add to Scientific Investigation Notebook";
  a.addEventListener("click",()=>{const draft=buildDraft();if(!draft){alert("Open or select your Student Profile first so this investigation is attached to the correct learner.");return}try{sessionStorage.setItem(DRAFT,JSON.stringify(draft))}catch{}
    const u=new URL(NOTEBOOK);u.searchParams.set("grade",String(draft.grade||""));u.searchParams.set("course",draft.course);u.searchParams.set("draft","1");location.href=u.href;
  });
