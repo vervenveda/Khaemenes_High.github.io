@@ -5,7 +5,7 @@ window.KhaemenesBiology10Misconceptions={
   "title": "Biology 10 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/biology-10/question-bank.js",
-  "reviewedItemCount": 101,
+  "reviewedItemCount": 120,
   "items": {
     "bio-001": {
       "itemId": "bio-001",
@@ -2426,6 +2426,462 @@ window.KhaemenesBiology10Misconceptions={
           "optionIndex": 3,
           "misconceptionTag": "uncertainty-allows-precision-comparison",
           "rationale": "Reported uncertainty is exactly what permits a precision comparison."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w05-concept": {
+      "itemId": "bio-sup-w05-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Cell theory identifies cells as fundamental units of life and rejects spontaneous generation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w05-concept-d1",
+          "rationale": "Cell theory does not require identical organelles or structures."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w05-concept-d2",
+          "rationale": "Cell theory applies to unicellular and multicellular life."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w05-concept-d3",
+          "rationale": "Modern cell theory rejects spontaneous generation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w05-evidence": {
+      "itemId": "bio-sup-w05-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Repeated microscopic evidence across diverse organisms directly supports cellular organization as a shared feature of life.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w05-evidence-d1",
+          "rationale": "Cell theory does not require identical organelles or structures."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w05-evidence-d2",
+          "rationale": "Cell theory applies to unicellular and multicellular life."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w05-evidence-d3",
+          "rationale": "Modern cell theory rejects spontaneous generation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w05-model": {
+      "itemId": "bio-sup-w05-model",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Cell theory describes shared cellular organization without implying identical structure or specialization.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w05-model-d1",
+          "rationale": "Cell theory does not require identical organelles or structures."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w05-model-d2",
+          "rationale": "Cell theory applies to unicellular and multicellular life."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w05-model-d3",
+          "rationale": "Modern cell theory rejects spontaneous generation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w05-quantitative": {
+      "itemId": "bio-sup-w05-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "The cell is 5/2=2.5 times the scale bar, so 2.5×10 μm=25 μm.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w05-quantitative-d1",
+          "rationale": "Cell theory does not require identical organelles or structures."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w05-quantitative-d2",
+          "rationale": "Cell theory applies to unicellular and multicellular life."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w05-quantitative-d3",
+          "rationale": "Modern cell theory rejects spontaneous generation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w06-concept": {
+      "itemId": "bio-sup-w06-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Membrane transport depends on selective permeability, gradients, and transport mechanisms; equilibrium is dynamic.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w06-concept-d1",
+          "rationale": "Membrane permeability is selective, not identical for all molecules."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w06-concept-d2",
+          "rationale": "Passive diffusion does not require ATP."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w06-concept-d3",
+          "rationale": "Particles continue moving at equilibrium; net movement balances."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w06-evidence": {
+      "itemId": "bio-sup-w06-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Controlled mass change across concentration conditions directly tests water movement by osmosis.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w06-evidence-d1",
+          "rationale": "Membrane permeability is selective, not identical for all molecules."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w06-evidence-d2",
+          "rationale": "Passive diffusion does not require ATP."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w06-evidence-d3",
+          "rationale": "Particles continue moving at equilibrium; net movement balances."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w07-concept": {
+      "itemId": "bio-sup-w07-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Multiple bacterial-like features support an endosymbiotic origin.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w07-concept-d1",
+          "rationale": "Organelle size is not diagnostic evidence for bacterial ancestry."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w07-concept-d2",
+          "rationale": "Mitochondria and chloroplasts do not contain the cell's nuclear chromosomes."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w07-concept-d3",
+          "rationale": "Modern organelles are integrated into host cells and are not generally independent organisms."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w07-evidence": {
+      "itemId": "bio-sup-w07-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Converging structural, molecular, and phylogenetic evidence strongly supports endosymbiotic ancestry.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w07-evidence-d1",
+          "rationale": "Organelle size is not diagnostic evidence for bacterial ancestry."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w07-evidence-d2",
+          "rationale": "Mitochondria and chloroplasts do not contain the cell's nuclear chromosomes."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w07-evidence-d3",
+          "rationale": "Modern organelles are integrated into host cells and are not generally independent organisms."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w07-model": {
+      "itemId": "bio-sup-w07-model",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Endosymbiosis explains origins of particular organelles without implying modern independence or universal chloroplast presence.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w07-model-d1",
+          "rationale": "Organelle size is not diagnostic evidence for bacterial ancestry."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w07-model-d2",
+          "rationale": "Mitochondria and chloroplasts do not contain the cell's nuclear chromosomes."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w07-model-d3",
+          "rationale": "Modern organelles are integrated into host cells and are not generally independent organisms."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w07-quantitative": {
+      "itemId": "bio-sup-w07-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Both oxygen use and mitochondrial number differ by a factor of three, so the normalized rate is equal in this simplified comparison.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w07-quantitative-d1",
+          "rationale": "Organelle size is not diagnostic evidence for bacterial ancestry."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w07-quantitative-d2",
+          "rationale": "Mitochondria and chloroplasts do not contain the cell's nuclear chromosomes."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w07-quantitative-d3",
+          "rationale": "Modern organelles are integrated into host cells and are not generally independent organisms."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w08-concept": {
+      "itemId": "bio-sup-w08-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Differential gene expression produces distinct cell structures and functions from largely shared genomes.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w08-concept-d1",
+          "rationale": "Specialized cells usually retain largely the same genome."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w08-concept-d2",
+          "rationale": "Cell shape does not determine nucleotide sequence."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w08-concept-d3",
+          "rationale": "Ribosomes translate RNA and do not delete genes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w08-evidence": {
+      "itemId": "bio-sup-w08-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Similar genomes paired with different expression profiles directly support differential gene expression.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w08-evidence-d1",
+          "rationale": "Specialized cells usually retain largely the same genome."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w08-evidence-d2",
+          "rationale": "Cell shape does not determine nucleotide sequence."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w08-evidence-d3",
+          "rationale": "Ribosomes translate RNA and do not delete genes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w08-model": {
+      "itemId": "bio-sup-w08-model",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Specialization largely reflects regulated expression, not wholesale genome loss.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w08-model-d1",
+          "rationale": "Specialized cells usually retain largely the same genome."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w08-model-d2",
+          "rationale": "Cell shape does not determine nucleotide sequence."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w08-model-d3",
+          "rationale": "Ribosomes translate RNA and do not delete genes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w08-quantitative": {
+      "itemId": "bio-sup-w08-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "30/120×100=25%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w08-quantitative-d1",
+          "rationale": "Specialized cells usually retain largely the same genome."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w08-quantitative-d2",
+          "rationale": "Cell shape does not determine nucleotide sequence."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w08-quantitative-d3",
+          "rationale": "Ribosomes translate RNA and do not delete genes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w09-concept": {
+      "itemId": "bio-sup-w09-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Photosynthesis stores light energy in chemical form and fixes carbon from CO₂.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w09-concept-d1",
+          "rationale": "Most plant dry mass does not come directly from soil minerals."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w09-concept-d2",
+          "rationale": "Photosynthesis rearranges conserved matter rather than creating carbon atoms."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w09-concept-d3",
+          "rationale": "Photosynthesis is not restricted to nighttime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w09-evidence": {
+      "itemId": "bio-sup-w09-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Varying light intensity while controlling other variables directly tests its effect on photosynthetic rate.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w09-evidence-d1",
+          "rationale": "Most plant dry mass does not come directly from soil minerals."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w09-evidence-d2",
+          "rationale": "Photosynthesis rearranges conserved matter rather than creating carbon atoms."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w09-evidence-d3",
+          "rationale": "Photosynthesis is not restricted to nighttime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w09-model": {
+      "itemId": "bio-sup-w09-model",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Carbon dioxide supplies much of the carbon incorporated into plant biomass.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w09-model-d1",
+          "rationale": "Most plant dry mass does not come directly from soil minerals."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w09-model-d2",
+          "rationale": "Photosynthesis rearranges conserved matter rather than creating carbon atoms."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w09-model-d3",
+          "rationale": "Photosynthesis is not restricted to nighttime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w10-concept": {
+      "itemId": "bio-sup-w10-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Cellular respiration transforms chemical energy into ATP and occurs broadly across organisms.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w10-concept-d1",
+          "rationale": "Breathing and cellular respiration are distinct processes; respiration transforms chemical energy and occurs broadly."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w10-concept-d2",
+          "rationale": "Breathing and cellular respiration are distinct processes; respiration transforms chemical energy and occurs broadly."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w10-concept-d3",
+          "rationale": "Breathing and cellular respiration are distinct processes; respiration transforms chemical energy and occurs broadly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w10-evidence": {
+      "itemId": "bio-sup-w10-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v4",
+      "correctRationale": "Oxygen use and CO₂ production are direct metabolic indicators of aerobic respiration.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w10-evidence-d1",
+          "rationale": "Breathing and cellular respiration are distinct processes; respiration transforms chemical energy and occurs broadly."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w10-evidence-d2",
+          "rationale": "Breathing and cellular respiration are distinct processes; respiration transforms chemical energy and occurs broadly."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w10-evidence-d3",
+          "rationale": "Breathing and cellular respiration are distinct processes; respiration transforms chemical energy and occurs broadly."
         }
       ],
       "reviewedAt": "2026-10-25",
