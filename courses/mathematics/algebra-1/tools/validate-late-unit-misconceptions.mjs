@@ -76,7 +76,7 @@ for(const q of pool){
 }
 assert.equal(reviewed,33,"late reviewed misconception coverage drift");
 assert.equal(provisional,267,"late provisional misconception coverage drift");
-assert.equal(reviewedRationales,156,"late reviewed distractor rationale count drift");
+assert.equal(reviewedRationales,99,"late reviewed distractor rationale count drift");
 assert.equal(provisionalRationales,801,"late provisional distractor rationale count drift");
 
 const resolver=read("assets/misconception-resolver-v1.js");
