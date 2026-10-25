@@ -2,116 +2,157 @@
   "title": "Week 1 Mastery Quiz · Senior Inquiry and the Social Sciences",
   "questions": [
     {
-      "question": "Which definition best matches “social science”?",
+      "id": "ss12-w01-transfer-v2-01",
+      "question": "Simulated civic dataset: District A has 72% registered-voter turnout and 40% contested seats; District B has 51% turnout and 90% contested seats. Which conclusion follows?",
       "options": [
-        "A disciplined study of human institutions, behavior, and relationships using explicit methods and evidence.",
-        "Transfer of authority from a central government to regional or local bodies.",
-        "A legal tradition in which judicial decisions and precedent have major importance.",
-        "A principle concerning equal status, rights, opportunity, treatment, or outcomes."
+        "District A shows stronger participation and therefore necessarily more equitable representation.",
+        "District B's higher contested-seat rate establishes better accountability across all institutions.",
+        "Neither higher turnout nor more contested seats alone proves stronger overall representation.",
+        "The two percentages are interchangeable measures of political participation."
       ],
-      "answer": 0,
-      "explanation": "Social science means a disciplined study of human institutions, behavior, and relationships using explicit methods and evidence."
+      "answer": 2,
+      "explanation": "Neither higher turnout nor more contested seats alone proves stronger overall representation.",
+      "skill": "data-interpretation",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “research question”?",
+      "id": "ss12-w01-transfer-v2-02",
+      "question": "Fictional constitutional excerpt: 'The assembly may review executive decrees within thirty days.' Which additional evidence best tests whether this rule constrains executive power?",
       "options": [
-        "A focused, answerable question that guides evidence collection and analysis.",
-        "An estimate of sampling uncertainty around a survey result.",
-        "An earlier decision used to guide later legal reasoning.",
-        "Constitutional division of authority between national and regional governments."
-      ],
-      "answer": 0,
-      "explanation": "Research question means a focused, answerable question that guides evidence collection and analysis."
-    },
-    {
-      "question": "Which definition best matches “claim”?",
-      "options": [
-        "A conclusion or proposition that requires support.",
-        "False or inaccurate information shared without necessarily intending deception.",
-        "The share of eligible or registered voters who cast ballots.",
-        "Court evaluation of whether government action complies with higher law."
-      ],
-      "answer": 0,
-      "explanation": "Claim means a conclusion or proposition that requires support."
-    },
-    {
-      "question": "Which definition best matches “evidence”?",
-      "options": [
-        "A minimum share of votes required to qualify for representation.",
-        "Information used to test or support a claim.",
-        "Strategic communication designed to shape belief or behavior, often selectively or deceptively.",
-        "Distribution of natural-resource authority and revenue across levels of government."
+        "The title of the constitution.",
+        "Records showing whether review occurs and whether executive decrees were amended or overturned.",
+        "The number of assembly seats alone.",
+        "A single favorable editorial."
       ],
       "answer": 1,
-      "explanation": "Evidence means information used to test or support a claim."
+      "explanation": "Records showing whether review occurs and whether executive decrees were amended or overturned.",
+      "skill": "legal-source-evaluation",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “methodology”?",
+      "id": "ss12-w01-transfer-v2-03",
+      "question": "Simulated time series: Public approval rises from 44% to 58% as unemployment falls from 8% to 5%. What is the soundest causal interpretation?",
       "options": [
-        "A set of familiar strategies used by movements or political actors.",
-        "Change to voting, representation, administration, or competition rules.",
-        "A system in which religious authority or doctrine has a governing role.",
-        "The organized procedures used to collect and analyze evidence."
+        "Lower unemployment is proven to be the sole cause.",
+        "Approval caused unemployment to fall.",
+        "The association merits investigation; the data alone cannot identify the cause of approval changes.",
+        "Every individual changed their opinion."
+      ],
+      "answer": 2,
+      "explanation": "The association merits investigation; the data alone cannot identify the cause of approval changes.",
+      "skill": "causal-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w01-transfer-v2-04",
+      "question": "Source A is an election commission's official vote tally. Source B is an independent observer's report about polling access. Which claim is best supported by using both?",
+      "options": [
+        "Both documents independently verify voter motivations.",
+        "The official tally alone proves equal access.",
+        "The observer report replaces the vote count.",
+        "They address different dimensions: recorded results and aspects of how voting was conducted."
       ],
       "answer": 3,
-      "explanation": "Methodology means the organized procedures used to collect and analyze evidence."
+      "explanation": "They address different dimensions: recorded results and aspects of how voting was conducted.",
+      "skill": "corroboration",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “limitation”?",
+      "id": "ss12-w01-transfer-v2-05",
+      "question": "A survey reports 62% support for a policy, but sampled only subscribers to one political newsletter. Which limitation most threatens national inference?",
       "options": [
-        "Mexico’s six-year presidential term without immediate reelection.",
-        "A condition that narrows what evidence or a study can establish.",
-        "Reasoning about whether and how one factor contributes to an outcome.",
-        "Market activity combined with extensive state ownership, direction, or strategic control."
-      ],
-      "answer": 1,
-      "explanation": "Limitation means a condition that narrows what evidence or a study can establish."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 1 analysis?",
-      "options": [
-        "A single vivid example proves a universal conclusion without qualification.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "Different disciplines ask different questions about the same public problem."
-      ],
-      "answer": 3,
-      "explanation": "Different disciplines ask different questions about the same public problem."
-    },
-    {
-      "question": "Two researchers from different fields investigate the same policy problem using different methods. Which conclusion is justified?",
-      "options": [
-        "Political labels have exactly the same meaning in every country and period.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "The most confident source should be accepted without examining authority or method.",
-        "A strong claim is proportional to the quality and limits of its evidence."
-      ],
-      "answer": 3,
-      "explanation": "A strong claim is proportional to the quality and limits of its evidence."
-    },
-    {
-      "question": "Which research practice is most appropriate for Senior Inquiry and the Social Sciences?",
-      "options": [
-        "Replace documentary evidence with political identity or intuition.",
-        "Trace claims to United Nations Human Development data, constitutions, election records, and public-opinion evidence, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Choose only evidence that supports the preferred conclusion."
-      ],
-      "answer": 1,
-      "explanation": "Trace claims to United Nations Human Development data, constitutions, election records, and public-opinion evidence, evaluate authority and context, corroborate material facts, and state limitations."
-    },
-    {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
-      "options": [
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "List facts without connecting them to a claim.",
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "Use a slogan as the conclusion and omit uncertainties."
+        "Selection bias means subscribers may not represent the full population.",
+        "The percentage cannot be computed.",
+        "All surveys are always worthless.",
+        "The question has a definite legal answer."
       ],
       "answer": 0,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "Selection bias means subscribers may not represent the full population.",
+      "skill": "sampling",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w01-transfer-v2-06",
+      "question": "Simulated comparison: Country X's law guarantees public-record access, but requests take 180 days; Country Y has no broad guarantee but publishes detailed data monthly. What should the researcher do?",
+      "options": [
+        "Rank X higher solely because a law exists.",
+        "Rank Y higher solely because one dataset exists.",
+        "Distinguish formal legal rights from practical information access and investigate both.",
+        "Avoid any comparison because institutions differ."
+      ],
+      "answer": 2,
+      "explanation": "Distinguish formal legal rights from practical information access and investigate both.",
+      "skill": "comparative-institutions",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w01-transfer-v2-07",
+      "question": "A commentator claims a policy caused a decline in protests because protest counts fell after implementation. Which additional study would be strongest?",
+      "options": [
+        "Repeat the commentator's conclusion.",
+        "Compare trends, alternative causes, measurement changes, and an appropriate counterfactual.",
+        "Ignore earlier protest counts.",
+        "Use only a minister's speech."
+      ],
+      "answer": 1,
+      "explanation": "Compare trends, alternative causes, measurement changes, and an appropriate counterfactual.",
+      "skill": "methods-transfer",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w01-transfer-v2-08",
+      "question": "Fictional municipal budget: Education is 30%, health 25%, transport 15%, and other services 30%. A proposal shifts five percentage points from transport to education. Which description is precise?",
+      "options": [
+        "Education becomes 30% and transport 20%.",
+        "Education rises by 5% relative, not 5 percentage points.",
+        "Every sector increases.",
+        "Education becomes 35% and transport becomes 10%, assuming the total budget is unchanged."
+      ],
+      "answer": 3,
+      "explanation": "Education becomes 35% and transport becomes 10%, assuming the total budget is unchanged.",
+      "skill": "quantitative-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w01-transfer-v2-09",
+      "question": "An archive contains an undated map showing a disputed boundary, but its creator and purpose are unknown. What is the responsible first step?",
+      "options": [
+        "Establish provenance and compare the map with dated, independently sourced records.",
+        "Treat it as a current legal boundary.",
+        "Discard all maps from archives.",
+        "Choose the boundary that looks most familiar."
+      ],
+      "answer": 0,
+      "explanation": "Establish provenance and compare the map with dated, independently sourced records.",
+      "skill": "historical-provenance",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w01-transfer-v2-10",
+      "question": "A senior concludes that a policy improved public trust, based on one favorable interview and a small poll. What revision condition demonstrates scholarly judgment?",
+      "options": [
+        "Require everyone to agree with the senior.",
+        "Remove uncertainty from the claim.",
+        "State what wider, contradictory, or longitudinal evidence would change the conclusion.",
+        "Count interview quotations as a random sample."
+      ],
+      "answer": 2,
+      "explanation": "State what wider, contradictory, or longitudinal evidence would change the conclusion.",
+      "skill": "revision-evidence",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     }
   ],
   "shortResponse": "How can a senior distinguish a defensible social-science conclusion from an opinion, slogan, or unsupported prediction?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
