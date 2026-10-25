@@ -136,6 +136,8 @@ function render(){
    }
    card.append(addText("p",item.definition,"description"));
    if(item.context)card.append(addText("p","Lesson context: "+item.context,"meta"));
+   if(Array.isArray(item.wordFamily)&&item.wordFamily.length)card.append(addText("p","Related forms: "+item.wordFamily.join(", "),"meta"));
+   if(item.applicationPrompt)card.append(addText("p","Apply: "+item.applicationPrompt,"description"));
    if(item.reviewStatus==="editorial-draft")card.append(addText("p","Definition draft · educator review pending","meta"));
    frag.append(card);
  }
@@ -169,7 +171,7 @@ async function load(){
     data.terms=[...terms.values()];
     if(course.value==="english-9"&&Number(unit.value)>=1&&Number(unit.value)<=12){
       const response=await fetch("../../language-arts/english-9/units/unit-"+unit.value+"/vocabulary.json",{credentials:"same-origin"});
-      if(response.ok){const bank=await response.json();const byTerm=new Map((bank.terms||[]).map(t=>[String(t.term).toLocaleLowerCase(),t]));data.terms=data.terms.map(t=>{const entry=byTerm.get(t.term.toLocaleLowerCase());return entry?{...t,definition:entry.definition,context:entry.context,reviewStatus:entry.reviewStatus}:t})}
+      if(response.ok){const bank=await response.json();const byTerm=new Map((bank.terms||[]).map(t=>[String(t.term).toLocaleLowerCase(),t]));data.terms=data.terms.map(t=>{const entry=byTerm.get(t.term.toLocaleLowerCase());return entry?{...t,definition:entry.definition,context:entry.context,reviewStatus:entry.reviewStatus,wordFamily:entry.wordFamily,applicationPrompt:entry.applicationPrompt}:t})}
     }
     data.title=(data.units||[]).find(u=>Number(u.unit||u.n)===Number(unit.value))?.title||"Unit "+unit.value;
   }
