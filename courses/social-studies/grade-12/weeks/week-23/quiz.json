@@ -2,116 +2,167 @@
   "title": "Week 23 Mastery Quiz · International Law, Treaties, and Courts",
   "questions": [
     {
-      "question": "Which definition best matches “treaty”?",
+      "id": "ss12-w23-transfer-v3-01",
+      "question": "An ICJ briefing cites Statute Article 36 to claim any state can sue any other state without consent. What correction is necessary?",
       "options": [
-        "A written international agreement governed by international law.",
-        "Systematic collection and analysis of health data for action.",
-        "Protection of people from severe threats to life, livelihood, dignity, and freedom.",
-        "Logical connection among question, method, evidence, findings, and conclusion."
-      ],
-      "answer": 0,
-      "explanation": "Treaty means a written international agreement governed by international law."
-    },
-    {
-      "question": "Which definition best matches “customary international law”?",
-      "options": [
-        "A presentation and questioning process testing independent mastery.",
-        "A right or liberty applied to participation, information, privacy, expression, and security online.",
-        "A general and consistent state practice accepted as legally required.",
-        "A synthesis of relevant scholarship and evidence showing what is known and disputed."
-      ],
-      "answer": 2,
-      "explanation": "Customary international law means a general and consistent state practice accepted as legally required."
-    },
-    {
-      "question": "Which definition best matches “jurisdiction”?",
-      "options": [
-        "The justified degree of certainty attached to a conclusion.",
-        "The expertise, responsibility, or firsthand access that makes a source relevant.",
-        "Critical examination of choices, learning, effects, and remaining questions.",
-        "Legal authority to hear a matter, regulate conduct, or enforce law."
+        "The Court decides only criminal guilt.",
+        "Article 36 grants jurisdiction over every private person.",
+        "Court jurisdiction follows from media coverage.",
+        "Jurisdiction depends on recognized grounds such as consent, treaty clauses or applicable declarations and conditions."
       ],
       "answer": 3,
-      "explanation": "Jurisdiction means legal authority to hear a matter, regulate conduct, or enforce law."
+      "explanation": "Jurisdiction depends on recognized grounds such as consent, treaty clauses or applicable declarations and conditions.",
+      "skill": "primary-source",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “state responsibility”?",
+      "id": "ss12-w23-transfer-v3-02",
+      "question": "A simulated treaty grants jurisdiction over disputes 'about interpretation' but the suit concerns an unrelated contract. What should be examined?",
       "options": [
-        "The organized procedures used to collect and analyze evidence.",
-        "Design that enables people with different abilities and circumstances to use information.",
-        "A community connected by shared identity, history, culture, language, or political aspiration.",
-        "Legal consequences arising when a state breaches an international obligation."
-      ],
-      "answer": 3,
-      "explanation": "State responsibility means legal consequences arising when a state breaches an international obligation."
-    },
-    {
-      "question": "Which definition best matches “complementarity”?",
-      "options": [
-        "The principle that international criminal jurisdiction supplements rather than automatically replaces national courts.",
-        "The obligation to explain conduct and face consequences for misuse or failure.",
-        "A conclusion or proposition that requires support.",
-        "Supreme governing authority within a territory and independence in external relations."
+        "Whether the legal dispute falls within the clause's material scope.",
+        "Whether the contract has a longer title.",
+        "Whether either state belongs to a regional trade bloc.",
+        "Whether one party makes a popular claim."
       ],
       "answer": 0,
-      "explanation": "Complementarity means the principle that international criminal jurisdiction supplements rather than automatically replaces national courts."
+      "explanation": "Whether the legal dispute falls within the clause's material scope.",
+      "skill": "quantitative",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “humanitarian law”?",
+      "id": "ss12-w23-transfer-v3-03",
+      "question": "Two states disagree whether a treaty is still in force. What documents should a legal source dossier prioritize?",
       "options": [
-        "Rules governing conduct during armed conflict and protection of persons.",
-        "Rule that sharply restricts political competition, accountability, or civil liberty.",
-        "A system with a separately elected president serving a fixed term.",
-        "Power regarded as rightful within a political or legal order."
-      ],
-      "answer": 0,
-      "explanation": "Humanitarian law means rules governing conduct during armed conflict and protection of persons."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 23 analysis?",
-      "options": [
-        "A single vivid example proves a universal conclusion without qualification.",
-        "International law relies on consent, reciprocity, institutions, domestic implementation, and legitimacy.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "The most confident source should be accepted without examining authority or method."
+        "An undated commentary thread.",
+        "Authenticated treaty text, entry-into-force terms, amendment and termination records.",
+        "The oldest newspaper mention.",
+        "Only one foreign ministry's paraphrase."
       ],
       "answer": 1,
-      "explanation": "International law relies on consent, reciprocity, institutions, domestic implementation, and legitimacy."
+      "explanation": "Authenticated treaty text, entry-into-force terms, amendment and termination records.",
+      "skill": "source-criticism",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 23 analysis?",
+      "id": "ss12-w23-transfer-v3-04",
+      "question": "A court decides it lacks jurisdiction and does not reach the merits. What is a defensible summary?",
       "options": [
-        "Political labels have exactly the same meaning in every country and period.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Legal obligation and political enforcement are distinct.",
-        "A single vivid example proves a universal conclusion without qualification."
+        "The respondent has won on all factual claims.",
+        "The applicant's evidence is necessarily fabricated.",
+        "The forum has not determined which substantive side is legally correct.",
+        "A jurisdictional dismissal constitutes a criminal conviction."
       ],
       "answer": 2,
-      "explanation": "Legal obligation and political enforcement are distinct."
+      "explanation": "The forum has not determined which substantive side is legally correct.",
+      "skill": "institutional-implementation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     },
     {
-      "question": "Which research practice is most appropriate for International Law, Treaties, and Courts?",
+      "id": "ss12-w23-transfer-v3-05",
+      "question": "A legal opinion cites a treaty but not any reservation attached to acceptance. What is the source-critical problem?",
       "options": [
-        "Trace claims to UN Charter, Vienna Convention principles, ICJ and ICC materials, and Geneva law, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Replace documentary evidence with political identity or intuition.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Choose only evidence that supports the preferred conclusion."
+        "Reservations have no legal relevance.",
+        "Treaty law is determined by article numbers alone.",
+        "A state can never qualify consent.",
+        "The reservation may change the scope of an undertaking and requires checking the authenticated record."
+      ],
+      "answer": 3,
+      "explanation": "The reservation may change the scope of an undertaking and requires checking the authenticated record.",
+      "skill": "legal-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w23-transfer-v3-06",
+      "question": "A state alleges another violated an international obligation, but the chronology predates the treaty's entry into force. What matters?",
+      "options": [
+        "Temporal jurisdiction, the applicable law at the time and any other relevant sources of obligation.",
+        "Only current diplomatic sentiment.",
+        "Whether both states share a currency.",
+        "A later press release's headline."
       ],
       "answer": 0,
-      "explanation": "Trace claims to UN Charter, Vienna Convention principles, ICJ and ICC materials, and Geneva law, evaluate authority and context, corroborate material facts, and state limitations."
+      "explanation": "Temporal jurisdiction, the applicable law at the time and any other relevant sources of obligation.",
+      "skill": "comparative-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     },
     {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
+      "id": "ss12-w23-transfer-v3-07",
+      "question": "An analyst treats the ICJ as identical to an international criminal tribunal. What distinction matters?",
       "options": [
-        "List facts without connecting them to a claim.",
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "Treat legal, causal, and moral claims as interchangeable."
+        "Both courts always try individual defendants.",
+        "The courts' jurisdictions, parties and procedures differ, including interstate disputes versus individual criminal responsibility.",
+        "Both bodies are organs of national legislatures.",
+        "Neither hears legal arguments."
+      ],
+      "answer": 1,
+      "explanation": "The courts' jurisdictions, parties and procedures differ, including interstate disputes versus individual criminal responsibility.",
+      "skill": "measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w23-transfer-v3-08",
+      "question": "A fictional state cites customary international law using only one isolated practice example. What further evidence is required?",
+      "options": [
+        "The example's popularity on social media.",
+        "A single editorial condemning the practice.",
+        "A wider assessment of state practice and the relevant sense of legal obligation.",
+        "Only the geographic distance between states."
       ],
       "answer": 2,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "A wider assessment of state practice and the relevant sense of legal obligation.",
+      "skill": "ethical-evaluation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w23-transfer-v3-09",
+      "question": "A judgment awards reparation after finding responsibility. What must an evidence table keep separate?",
+      "options": [
+        "The date of the court building's opening.",
+        "Only the respondent's press release.",
+        "The personal reputation of an advocate.",
+        "The legal obligation breached, attribution and injury, and the nature or amount of the remedy."
+      ],
+      "answer": 3,
+      "explanation": "The legal obligation breached, attribution and injury, and the nature or amount of the remedy.",
+      "skill": "interpretation",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w23-transfer-v3-10",
+      "question": "A student quotes an unofficial translation of a legal instrument with missing paragraphs. What should the citation practice be?",
+      "options": [
+        "Identify authenticated texts and disclose the translation and its limitations before relying on contested wording.",
+        "Treat the excerpt as the sole authoritative instrument.",
+        "Remove paragraph numbers to avoid discrepancies.",
+        "Assume translations cannot alter interpretation."
+      ],
+      "answer": 0,
+      "explanation": "Identify authenticated texts and disclose the translation and its limitations before relying on contested wording.",
+      "skill": "synthesis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_21_24.md",
+      "version": 3
     }
   ],
   "shortResponse": "How does international law create obligations without a single global sovereign?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
