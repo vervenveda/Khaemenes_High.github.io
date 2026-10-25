@@ -18,10 +18,11 @@ function uniqueById(rows){const seen=new Set();return rows.filter(q=>{const id=S
 const baseSource=Number(R.unit)===11?"unit11-rebuild":"shared-base";
 const basePool=Q.filter(q=>Number(q.unit)===Number(R.unit)).map(q=>({...q,_formSource:baseSource}));
 const lateExtra=(Array.isArray(window.ALGEBRA1_LATE_ABUNDANT_QUESTIONS)?window.ALGEBRA1_LATE_ABUNDANT_QUESTIONS:[]).filter(q=>Number(q.unit)===Number(R.unit)).map(q=>({...q,_formSource:"late-abundant"}));
-const eligiblePool=uniqueById([...basePool,...lateExtra]);
-const bankVersion=Number(R.unit)===11&&basePool.length>=120?"unit11-content-rebuild-v2":lateExtra.length?`unit${String(R.unit).padStart(2,"0")}-late-abundant-v1`:"shared-question-bank-v1";
-function selectLesson(pool,need,previousSet,seed,lessonNumber){
- const selected=[],used=new Set(),targets=targetDifficulties(need);
+const capstoneExtra=(Number(R.unit)===13&&Array.isArray(window.ALGEBRA1_UNIT13_CAPSTONE_DEPTH)?window.ALGEBRA1_UNIT13_CAPSTONE_DEPTH:[]).map(q=>({...q,_formSource:"unit13-capstone-depth"}));
+const eligiblePool=uniqueById([...basePool,...lateExtra,...capstoneExtra]);
+const bankVersion=Number(R.unit)===13&&capstoneExtra.length===20?"unit13-capstone-depth-v1":Number(R.unit)===11&&basePool.length>=120?"unit11-content-rebuild-v2":lateExtra.length?`unit${String(R.unit).padStart(2,"0")}-late-abundant-v1`:"shared-question-bank-v1";
+function selectLesson(pool,need,previousSet,seed,lessonNumber,excludedIds=[]){
+ const selected=[],used=new Set(excludedIds),targets=targetDifficulties(need);
  const pick=(predicate,salt)=>{const candidates=pool.filter(q=>!used.has(q.id)&&predicate(q));if(!candidates.length)return false;const chosen=shuffled(candidates,hashSeed(`${seed}:${lessonNumber}:${salt}:${selected.length}`))[0];selected.push(chosen);used.add(chosen.id);return true};
  for(const target of targets){
   if(pick(q=>!previousSet.has(q.id)&&difficultyOf(q)===target,`unseen-d${target}`))continue;
@@ -31,9 +32,29 @@ function selectLesson(pool,need,previousSet,seed,lessonNumber){
  }
  return selected;
 }
+function selectCapstoneLesson(pool,previousSet,seed,lessonNumber){
+ const selected=[],used=new Set();
+ const pick=(predicate,salt)=>{const candidates=pool.filter(q=>!used.has(q.id)&&predicate(q));if(!candidates.length)return false;const chosen=shuffled(candidates,hashSeed(`${seed}:capstone:${lessonNumber}:${salt}:${selected.length}`))[0];selected.push(chosen);used.add(chosen.id);return true};
+ for(const target of [2,3]){
+  if(pick(q=>q.capstoneDepth==="quantitative"&&!previousSet.has(q.id)&&difficultyOf(q)===target,`depth-unseen-d${target}`))continue;
+  if(pick(q=>q.capstoneDepth==="quantitative"&&!previousSet.has(q.id),"depth-unseen-any"))continue;
+  if(pick(q=>q.capstoneDepth==="quantitative"&&difficultyOf(q)===target,`depth-seen-d${target}`))continue;
+  pick(q=>q.capstoneDepth==="quantitative","depth-fallback");
+ }
+ for(const target of [1,2]){
+  if(pick(q=>!previousSet.has(q.id)&&difficultyOf(q)===target,`support-unseen-d${target}`))continue;
+  if(pick(q=>!previousSet.has(q.id),"support-unseen-any"))continue;
+  if(pick(q=>difficultyOf(q)===target,`support-seen-d${target}`))continue;
+  pick(()=>true,"support-fallback");
+ }
+ return selected;
+}
 function selectForm(previousIds,seed){
  const previousSet=new Set(previousIds||[]),selected=[];
- lessons.forEach((lesson,index)=>{const pool=eligiblePool.filter(q=>Number(q.lesson)===Number(lesson.number));selected.push(...selectLesson(pool,lessonQuota(index),previousSet,seed,lesson.number))});
+ lessons.forEach((lesson,index)=>{
+  const pool=eligiblePool.filter(q=>Number(q.lesson)===Number(lesson.number));
+  selected.push(...(Number(R.unit)===13?selectCapstoneLesson(pool,previousSet,seed,lesson.number):selectLesson(pool,lessonQuota(index),previousSet,seed,lesson.number)));
+ });
  return shuffled(selected,hashSeed(`${seed}:form-order`)).slice(0,COUNT);
 }
 function balancedOrder(q,target,seed){const answer=Number(q.answer),others=q.options.map((_,i)=>i).filter(i=>i!==answer),rest=shuffled(others,hashSeed(`${seed}:${q.id}:options`)),order=[...rest];order.splice(target,0,answer);return order}
@@ -52,13 +73,14 @@ function prerequisites(A){
 function run(){
  const A=window.KhaemenesAlgebra1MasteryAuthority,p=prerequisites(A);if(p){lock(p.title,p.detail,p.href);return}
  const quotas=lessons.map((lesson,index)=>({lesson:Number(lesson.number),need:lessonQuota(index),available:eligiblePool.filter(q=>Number(q.lesson)===Number(lesson.number)).length}));
- const targetPoolSize=Number(R.unit)===11?120:60;
- const complete=eligiblePool.length>=targetPoolSize&&quotas.every(x=>x.available>=x.need*2);
+ const capstoneDepthCoverage=lessons.map(lesson=>({lesson:Number(lesson.number),available:eligiblePool.filter(q=>Number(q.lesson)===Number(lesson.number)&&q.capstoneDepth==="quantitative").length}));
+ const targetPoolSize=Number(R.unit)===11?120:Number(R.unit)===13?80:60;
+ const complete=eligiblePool.length>=targetPoolSize&&quotas.every(x=>x.available>=x.need*2)&&(Number(R.unit)!==13||capstoneDepthCoverage.every(x=>x.available>=4));
  const existing=state(),last=existing.attempts[existing.attempts.length-1],initialPrevious=Array.isArray(last?.items)?last.items:Array.isArray(last?.item_ids)?last.item_ids:[];
  let graded=false,attemptNumber=existing.attempts.length+1,previousIds=[...initialPrevious],current=[],formSeed=0;
- $("#main").innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Unit ${String(R.unit).padStart(2,"0")} · Formal mastery evidence</p><h1>${esc(unit?.title||"Mastery Check")}</h1><p class="lead">20 lesson-balanced questions selected from ${eligiblePool.length} eligible items · 80% target</p><div class="actions no-print"><a class="btn" href="${root}">Course Home</a><a class="btn" href="${root}units/unit-${String(R.unit).padStart(2,"0")}/">Unit Home</a><button class="btn" id="printButton" type="button">Print</button></div></div></section><section class="block"><div class="wrap practice-layout"><article class="card">${complete?`<p id="formMeta" class="notice"></p><div id="questions"></div><div class="actions"><button class="btn primary" id="score">Submit & Score</button><button class="btn" id="reset">Clear current answers</button><button class="btn" id="export">Export Evidence</button></div><p id="scoreMsg" role="status" aria-live="polite" aria-atomic="true"></p>`:`<p class="notice"><strong>Assessment configuration incomplete.</strong> This unit does not currently provide the certified abundant pool needed for a low-overlap 20-question mastery record. Do not issue mastery from this page.</p>`}</article><aside class="card practice-side"><h3>Blueprint contract</h3><p>Every lesson is represented. Forms use difficulty-balanced selection from an abundant bank and prefer questions not seen on the immediately previous attempt.</p><p><strong>Eligible pool:</strong> ${eligiblePool.length} items. <strong>Delivered:</strong> 20. <strong>Mastery:</strong> 16/20 correct (80%).</p><p class="notice">Browser-local results are editable learning evidence, not digitally signed or independently authenticated records.</p></aside></div></section>`;
+ $("#main").innerHTML=`<section class="hero"><div class="wrap"><p class="eyebrow">Unit ${String(R.unit).padStart(2,"0")} · Formal mastery evidence</p><h1>${esc(unit?.title||"Mastery Check")}</h1><p class="lead">20 lesson-balanced questions selected from ${eligiblePool.length} eligible items · 80% target</p><div class="actions no-print"><a class="btn" href="${root}">Course Home</a><a class="btn" href="${root}units/unit-${String(R.unit).padStart(2,"0")}/">Unit Home</a><button class="btn" id="printButton" type="button">Print</button></div></div></section><section class="block"><div class="wrap practice-layout"><article class="card">${complete?`<p id="formMeta" class="notice"></p><div id="questions"></div><div class="actions"><button class="btn primary" id="score">Submit & Score</button><button class="btn" id="reset">Clear current answers</button><button class="btn" id="export">Export Evidence</button></div><p id="scoreMsg" role="status" aria-live="polite" aria-atomic="true"></p>`:`<p class="notice"><strong>Assessment configuration incomplete.</strong> This unit does not currently provide the certified abundant pool needed for a low-overlap 20-question mastery record. Do not issue mastery from this page.</p>`}</article><aside class="card practice-side"><h3>Blueprint contract</h3><p>Every lesson is represented. Forms use difficulty-balanced selection from an abundant bank and prefer questions not seen on the immediately previous attempt.${Number(R.unit)===13?" Unit 13 additionally guarantees at least two quantitative/integrated capstone items from each lesson.":""}</p><p><strong>Eligible pool:</strong> ${eligiblePool.length} items. <strong>Delivered:</strong> 20. <strong>Mastery:</strong> 16/20 correct (80%).</p><p class="notice">Browser-local results are editable learning evidence, not digitally signed or independently authenticated records.</p></aside></div></section>`;
  if(!complete){$("#printButton")?.addEventListener("click",()=>print());return}
- function renderForm(){const form=prepareForm(previousIds);formSeed=form.seed;current=form.items;$("#questions").innerHTML=current.map((q,i)=>`<article class="question"><fieldset><legend>${i+1}. ${esc(q.prompt)}</legend><div class="options">${q._optionOrder.map(j=>`<label class="option"><input type="radio" name="q${i}" value="${j}"><span>${esc(q.options[j])}</span></label>`).join("")}</div><div class="feedback" id="fb${i}" hidden></div></fieldset></article>`).join("");const previousSet=new Set(previousIds),overlap=current.filter(q=>previousSet.has(q.id)).length;$("#formMeta").textContent=`Attempt ${attemptNumber} · 20 questions from ${eligiblePool.length} eligible items · immediate prior-form overlap: ${overlap}/20.`}
+ function renderForm(){const form=prepareForm(previousIds);formSeed=form.seed;current=form.items;const capstoneQuantitativeCount=current.filter(q=>q.capstoneDepth==="quantitative").length;$("#questions").innerHTML=current.map((q,i)=>`<article class="question"><fieldset><legend>${i+1}. ${esc(q.prompt)}</legend><div class="options">${q._optionOrder.map(j=>`<label class="option"><input type="radio" name="q${i}" value="${j}"><span>${esc(q.options[j])}</span></label>`).join("")}</div><div class="feedback" id="fb${i}" hidden></div></fieldset></article>`).join("");const previousSet=new Set(previousIds),overlap=current.filter(q=>previousSet.has(q.id)).length;$("#formMeta").textContent=`Attempt ${attemptNumber} · 20 questions from ${eligiblePool.length} eligible items · immediate prior-form overlap: ${overlap}/20${Number(R.unit)===13?` · quantitative/integrated capstone items: ${capstoneQuantitativeCount}/20`:""}.`}
  function beginAttempt(){graded=false;renderForm();$("#score").disabled=false;$("#score").textContent="Submit & Score";$("#reset").textContent="Clear current answers";$("#scoreMsg").textContent=""}
  async function score(){
   if(graded)return;
@@ -95,7 +117,9 @@ function run(){
     misconceptionLearnerFeedback:Boolean(diagnostic?.learnerFeedbackEligible),
     generatorId:q.generatorId||null,
     generatorVersion:q.generatorVersion||null,
-    seed:q.seed??null
+    seed:q.seed??null,
+    capstoneDepth:q.capstoneDepth||null,
+    capstoneSkill:q.capstoneSkill||null
    });
   });
   if(!all){$("#scoreMsg").textContent="Answer every item before scoring.";return}
@@ -105,9 +129,9 @@ function run(){
   const attempt={
    result_schema:"khaemenes-algebra1-unit-mastery-v4",
    evidenceSchema:"algebra1-answer-evidence-v2",
-   formVersion:"algebra1-late-unit-monte-carlo-v1",
+   formVersion:Number(R.unit)===13?"algebra1-unit13-capstone-depth-v1":"algebra1-late-unit-monte-carlo-v1",
    bankVersion,
-   selectionPolicy:"lesson-balanced-low-overlap-v1",
+   selectionPolicy:Number(R.unit)===13?"lesson-balanced-capstone-depth-low-overlap-v1":"lesson-balanced-low-overlap-v1",
    unit:R.unit,
    score:pct,
    correct,
@@ -119,6 +143,9 @@ function run(){
    formSeed,
    immediatePriorOverlap:overlap,
    lessonBlueprint:quotas.map(x=>({lesson:x.lesson,count:x.need})),
+   capstoneQuantitativeMinimum:Number(R.unit)===13?10:null,
+   capstoneQuantitativeCount:Number(R.unit)===13?current.filter(q=>q.capstoneDepth==="quantitative").length:null,
+   capstoneLessonQuantitativeCounts:Number(R.unit)===13?lessons.map(l=>({lesson:Number(l.number),count:current.filter(q=>Number(q.lesson)===Number(l.number)&&q.capstoneDepth==="quantitative").length})):null,
    formSources:[...new Set(current.map(q=>q._formSource||"shared-base"))],
    items:current.map(q=>q.id),
    item_ids:current.map(q=>q.id),
