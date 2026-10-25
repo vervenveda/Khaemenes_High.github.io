@@ -3,10 +3,10 @@
   "schemaVersion": "1.0",
   "courseId": "KH-SCI-CHEM11",
   "title": "Chemistry 11 · Legacy Concept Spine Misconception Map",
-  "coveragePolicy": "reviewed-subset; newly authored or substantially revised selected-response items should include complete mapping",
+  "coveragePolicy": "reviewed-subset; concept spine plus ten high-repetition quantitative families; newly authored or substantially revised selected-response items should include complete mapping",
   "sourceBank": "courses/science/chemistry-11/question-bank.js",
-  "reviewedItemCount": 30,
-  "distractorRationaleCount": 90,
+  "reviewedItemCount": 100,
+  "distractorRationaleCount": 300,
   "items": {
     "legacy-01": {
       "itemId": "legacy-01",
@@ -877,6 +877,2049 @@
       ],
       "reviewedAt": "2026-10-25",
       "reviewMethod": "human-authored misconception review"
+    },
+    "w01-density-1": {
+      "itemId": "w01-density-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 24 g and volume 8 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 24/8 = 3 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w01-density-2": {
+      "itemId": "w01-density-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 45 g and volume 15 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 45/15 = 3 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w01-density-3": {
+      "itemId": "w01-density-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 63 g and volume 21 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 63/21 = 3 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w01-density-4": {
+      "itemId": "w01-density-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 72 g and volume 24 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 72/24 = 3 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w01-density-5": {
+      "itemId": "w01-density-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 84 g and volume 28 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 84/28 = 3 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w01-density-6": {
+      "itemId": "w01-density-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 96 g and volume 32 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 96/32 = 3 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w01-density-7": {
+      "itemId": "w01-density-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sample has mass 55 g and volume 22 cm³. What is its density?",
+      "answerIndex": 0,
+      "correctRationale": "Density = mass/volume = 55/22 = 2.5 g/cm³.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "5 g/cm³",
+          "misconceptionTag": "density-double-result",
+          "rationale": "This value is twice the mass-to-volume result, indicating an extra factor of two after the density calculation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.25 g/cm³",
+          "misconceptionTag": "density-half-result",
+          "rationale": "This value is half the correct mass-to-volume result, indicating an unnecessary division by two."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3.5 g/cm³",
+          "misconceptionTag": "density-operation-selection-error",
+          "rationale": "This value does not equal mass divided by volume; it reflects an unsupported arithmetic combination of the given quantities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-1": {
+      "itemId": "w02-atom-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 11, mass number 23, and charge 0. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 11 − (0) = 11; neutrons = 23 − 11 = 12.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "11 electrons; 23 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "12 electrons; 11 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "10 electrons; 12 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-2": {
+      "itemId": "w02-atom-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 17, mass number 35, and charge -1. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 17 − (-1) = 18; neutrons = 35 − 17 = 18.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "17 electrons; 18 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "18 electrons; 17 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "17 electrons; 35 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-3": {
+      "itemId": "w02-atom-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 12, mass number 24, and charge +2. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 12 − (2) = 10; neutrons = 24 − 12 = 12.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12 electrons; 24 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "12 electrons; 10 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "14 electrons; 12 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-4": {
+      "itemId": "w02-atom-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 8, mass number 16, and charge -2. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 8 − (-2) = 10; neutrons = 16 − 8 = 8.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8 electrons; 16 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "8 electrons; 10 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "6 electrons; 8 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-5": {
+      "itemId": "w02-atom-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 13, mass number 27, and charge +3. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 13 − (3) = 10; neutrons = 27 − 13 = 14.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "13 electrons; 27 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "14 electrons; 10 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "17 electrons; 13 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-6": {
+      "itemId": "w02-atom-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 20, mass number 40, and charge +2. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 20 − (2) = 18; neutrons = 40 − 20 = 20.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "20 electrons; 40 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "20 electrons; 18 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "22 electrons; 20 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w02-atom-7": {
+      "itemId": "w02-atom-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ion has atomic number 7, mass number 14, and charge -3. How many electrons and neutrons does it contain?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons = protons − charge = 7 − (-3) = 10; neutrons = 14 − 7 = 7.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "7 electrons; 14 neutrons",
+          "misconceptionTag": "atomic-particle-count-relation-error",
+          "rationale": "This pair does not consistently apply electrons = atomic number − charge and neutrons = mass number − atomic number; it ignores at least one required relation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7 electrons; 10 neutrons",
+          "misconceptionTag": "atomic-particle-role-confusion",
+          "rationale": "This pair mixes the roles of atomic number, mass number, charge, electron count, and neutron count instead of calculating electrons and neutrons separately."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 electrons; 7 neutrons",
+          "misconceptionTag": "ionic-charge-sign-or-mass-number-error",
+          "rationale": "This pair applies the ionic charge with the wrong sign and/or treats mass number as a particle count without subtracting the proton number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-1": {
+      "itemId": "w03-mass-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 35 (75%) and 37 (25%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 35(0.75) + 37(0.25) = 35.5 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "36 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "35 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "37 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-2": {
+      "itemId": "w03-mass-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 10 (80%) and 11 (20%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 10(0.8) + 11(0.2) = 10.2 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10.5 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "10 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "11 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-3": {
+      "itemId": "w03-mass-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 24 (65%) and 26 (35%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 24(0.65) + 26(0.35) = 24.7 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "25 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "24 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "26 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-4": {
+      "itemId": "w03-mass-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 63 (70%) and 65 (30%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 63(0.7) + 65(0.3) = 63.6 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "64 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "63 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "65 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-5": {
+      "itemId": "w03-mass-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 79 (55%) and 81 (45%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 79(0.55) + 81(0.45) = 79.9 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "80 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "79 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "81 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-6": {
+      "itemId": "w03-mass-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 20 (90%) and 22 (10%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 20(0.9) + 22(0.1) = 20.2 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "21 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "20 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "22 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w03-mass-7": {
+      "itemId": "w03-mass-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An element has isotopes of mass 107 (52%) and 109 (48%). What is the weighted-average atomic mass?",
+      "answerIndex": 0,
+      "correctRationale": "Weighted average = 107(0.52) + 109(0.48) = 107.96 u.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "108 u",
+          "misconceptionTag": "unweighted-isotope-mean",
+          "rationale": "This is the simple midpoint of the isotope masses and ignores the stated percent abundances."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "107 u",
+          "misconceptionTag": "dominant-isotope-only",
+          "rationale": "This uses the lower isotope mass alone instead of combining both isotope masses according to their fractional abundances."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "109 u",
+          "misconceptionTag": "minor-isotope-only",
+          "rationale": "This uses the upper isotope mass alone instead of computing the abundance-weighted average."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-1": {
+      "itemId": "w04-photon-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 400 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (400×10^-9) = 750000000000000 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "75000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7500000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1200 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-2": {
+      "itemId": "w04-photon-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 450 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (450×10^-9) = 666666666666666.6 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "66666666666666.66 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6666666666666666 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1350 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-3": {
+      "itemId": "w04-photon-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 500 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (500×10^-9) = 600000000000000 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "60000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6000000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1500 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-4": {
+      "itemId": "w04-photon-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 550 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (550×10^-9) = 545454545454545.44 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "54545454545454.55 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5454545454545454 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1650 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-5": {
+      "itemId": "w04-photon-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 600 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (600×10^-9) = 500000000000000 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "50000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5000000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1800 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-6": {
+      "itemId": "w04-photon-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 650 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (650×10^-9) = 461538461538461.56 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "46153846153846.16 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4615384615384616 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1950 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w04-photon-7": {
+      "itemId": "w04-photon-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Using c = 3.00×10^8 m/s, what is the frequency of light with wavelength 750 nm?",
+      "answerIndex": 0,
+      "correctRationale": "f = c/λ = 3.00×10^8 / (750×10^-9) = 400000000000000 Hz.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "40000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-low",
+          "rationale": "This frequency is one power of ten too small, consistent with an incorrect nanometer-to-meter exponent conversion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4000000000000000 Hz",
+          "misconceptionTag": "nanometer-exponent-high",
+          "rationale": "This frequency is one power of ten too large, consistent with shifting the nanometer conversion exponent in the wrong direction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2250 Hz",
+          "misconceptionTag": "multiply-instead-of-divide-frequency",
+          "rationale": "This small value is consistent with multiplying the leading numbers rather than using f = c/λ with wavelength converted to meters."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-1": {
+      "itemId": "w11-gas-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=1 atm and V₁=4 L. If pressure becomes 2 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=2 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-2": {
+      "itemId": "w11-gas-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=1.2 atm and V₁=5 L. If pressure becomes 2 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=3 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8.33 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "7 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2.5 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-3": {
+      "itemId": "w11-gas-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=2 atm and V₁=3 L. If pressure becomes 1 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=6 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.5 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "12 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-4": {
+      "itemId": "w11-gas-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=0.8 atm and V₁=6 L. If pressure becomes 1.6 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=3 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4.8 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "9.6 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-5": {
+      "itemId": "w11-gas-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=1.5 atm and V₁=8 L. If pressure becomes 3 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=4 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "16 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "8 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "24 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-6": {
+      "itemId": "w11-gas-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=2.5 atm and V₁=4 L. If pressure becomes 5 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=2 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "10 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w11-gas-7": {
+      "itemId": "w11-gas-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, a gas has P₁=1 atm and V₁=10 L. If pressure becomes 4 atm, what is V₂?",
+      "answerIndex": 0,
+      "correctRationale": "Boyle's law: P₁V₁=P₂V₂, so V₂=2.5 L.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "40 L",
+          "misconceptionTag": "direct-proportion-instead-of-inverse",
+          "rationale": "This treats pressure and volume as directly proportional; Boyle's law requires their product to remain constant at fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "14 L",
+          "misconceptionTag": "boyle-product-not-preserved",
+          "rationale": "This value does not preserve P₁V₁=P₂V₂ and commonly reflects carrying forward or combining a given value without solving for V₂."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 L",
+          "misconceptionTag": "boyle-rearrangement-error",
+          "rationale": "This value comes from an incorrect rearrangement or scaling of Boyle's-law quantities rather than V₂=P₁V₁/P₂."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-1": {
+      "itemId": "w12-molarity-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 0.5 mol solute in 2 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 0.5/2 = 0.25 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2.5 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-2": {
+      "itemId": "w12-molarity-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 0.25 mol solute in 0.5 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 0.25/0.5 = 0.5 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.125 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-3": {
+      "itemId": "w12-molarity-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 1.2 mol solute in 3 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 1.2/3 = 0.4 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3.6 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.5 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-4": {
+      "itemId": "w12-molarity-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 0.75 mol solute in 1.5 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 0.75/1.5 = 0.5 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.125 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-5": {
+      "itemId": "w12-molarity-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 0.1 mol solute in 0.25 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 0.1/0.25 = 0.4 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.025 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.5 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "4 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-6": {
+      "itemId": "w12-molarity-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 2 mol solute in 4 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 2/4 = 0.5 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "8 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "5 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w12-molarity-7": {
+      "itemId": "w12-molarity-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the molarity of a solution containing 0.33 mol solute in 1.1 L of solution?",
+      "answerIndex": 0,
+      "correctRationale": "M = n/V = 0.33/1.1 = 0.3 M.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.363 M",
+          "misconceptionTag": "multiply-moles-and-volume",
+          "rationale": "This value comes from multiplying moles by liters instead of dividing moles by liters to obtain molarity."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "3.333 M",
+          "misconceptionTag": "invert-molarity-ratio",
+          "rationale": "This reverses the molarity ratio and uses volume divided by moles rather than moles divided by volume."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3 M",
+          "misconceptionTag": "decimal-place-molarity-error",
+          "rationale": "This value is ten times the correct concentration, indicating a decimal-place or scale error after forming n/V."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-1": {
+      "itemId": "w16-yield-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 10 g and actual yield 8 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 80%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "125%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "40%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-2": {
+      "itemId": "w16-yield-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 20 g and actual yield 18 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 90%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "111.1%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "45%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-3": {
+      "itemId": "w16-yield-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 30 g and actual yield 24 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 80%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "125%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "40%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-4": {
+      "itemId": "w16-yield-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 10 g and actual yield 7.5 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 75%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "133.3%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2.5%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "37.5%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-5": {
+      "itemId": "w16-yield-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 50 g and actual yield 45 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 90%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "111.1%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "5%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "45%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-6": {
+      "itemId": "w16-yield-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 16 g and actual yield 12 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 75%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "133.3%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "4%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "37.5%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w16-yield-7": {
+      "itemId": "w16-yield-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has theoretical yield 36 g and actual yield 27 g. What is percent yield?",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical ×100 = 75%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "133.3%",
+          "misconceptionTag": "invert-percent-yield-ratio",
+          "rationale": "This reverses the percent-yield ratio and uses theoretical/actual instead of actual/theoretical."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "9%",
+          "misconceptionTag": "mass-difference-as-percent",
+          "rationale": "This treats the gram difference between theoretical and actual yield as though that number were already a percentage."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "37.5%",
+          "misconceptionTag": "percentage-scale-halved",
+          "rationale": "This value is half the correct percent yield, indicating an unnecessary factor-of-two reduction after calculating the percentage."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-1": {
+      "itemId": "w17-solution-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 50 mL of a 0.2 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.2×0.05 = 0.01 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.1 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.001 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-2": {
+      "itemId": "w17-solution-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 125 mL of a 0.1 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.1×0.125 = 0.0125 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12.5 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.125 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.0013 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-3": {
+      "itemId": "w17-solution-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 20 mL of a 0.5 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.5×0.02 = 0.01 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.1 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.001 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-4": {
+      "itemId": "w17-solution-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 80 mL of a 0.25 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.25×0.08 = 0.02 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "20 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.2 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.002 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-5": {
+      "itemId": "w17-solution-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 75 mL of a 0.4 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.4×0.075 = 0.03 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "30 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.3 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.003 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-6": {
+      "itemId": "w17-solution-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 200 mL of a 0.05 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.05×0.2 = 0.01 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.1 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.001 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w17-solution-7": {
+      "itemId": "w17-solution-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many moles of solute are present in 40 mL of a 0.3 M solution?",
+      "answerIndex": 0,
+      "correctRationale": "n = M×V(L) = 0.3×0.04 = 0.012 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "12 mol",
+          "misconceptionTag": "milliliter-not-converted-to-liter",
+          "rationale": "This uses the milliliter number directly in n=M×V instead of first converting volume to liters, producing a factor-of-1000 error."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.12 mol",
+          "misconceptionTag": "solution-moles-decimal-place-high",
+          "rationale": "This value is ten times the correct mole amount, indicating a one-place volume or product scaling error."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.0012 mol",
+          "misconceptionTag": "solution-moles-decimal-place-low",
+          "rationale": "This value is one tenth of the correct mole amount, indicating an extra factor-of-ten reduction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-1": {
+      "itemId": "w19-rate-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 0.8 mol/L over 20 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.04 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "16 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "25 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.4 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-2": {
+      "itemId": "w19-rate-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 1.2 mol/L over 30 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.04 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "36 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "25 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.4 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-3": {
+      "itemId": "w19-rate-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 0.45 mol/L over 15 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.03 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6.75 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "33.3333 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.3 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-4": {
+      "itemId": "w19-rate-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 2.1 mol/L over 35 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.06 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "73.5 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "16.6667 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.6 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-5": {
+      "itemId": "w19-rate-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 0.6 mol/L over 12 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.05 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "7.2 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "20 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.5 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-6": {
+      "itemId": "w19-rate-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 1.5 mol/L over 25 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.06 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "37.5 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "16.6667 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.6 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w19-rate-7": {
+      "itemId": "w19-rate-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reactant concentration changes by 0.98 mol/L over 14 s. What is the magnitude of the average rate?",
+      "answerIndex": 0,
+      "correctRationale": "Average rate magnitude = change/time = 0.07 mol·L⁻¹·s⁻¹.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "13.72 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "multiply-change-by-time",
+          "rationale": "This multiplies concentration change by elapsed time instead of dividing change by time to calculate average rate."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "14.2857 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "invert-average-rate",
+          "rationale": "This reverses the ratio and divides time by concentration change instead of concentration change by time."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.7 mol·L⁻¹·s⁻¹",
+          "misconceptionTag": "average-rate-decimal-place-high",
+          "rationale": "This value is ten times the correct average rate, indicating a decimal-place scaling error after computing Δconcentration/Δtime."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-1": {
+      "itemId": "w26-kc-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=0.5 M, [B]=0.5 M, [C]=1 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=1/(0.5×0.5)=4.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.25",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "2",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-2": {
+      "itemId": "w26-kc-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=0.2 M, [B]=0.4 M, [C]=0.8 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=0.8/(0.2×0.4)=10.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.1",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.33",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1.4",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-3": {
+      "itemId": "w26-kc-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=1 M, [B]=2 M, [C]=0.5 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=0.5/(1×2)=0.25.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.17",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3.5",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-4": {
+      "itemId": "w26-kc-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=0.25 M, [B]=0.5 M, [C]=0.25 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=0.25/(0.25×0.5)=2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.33",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-5": {
+      "itemId": "w26-kc-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=0.1 M, [B]=0.2 M, [C]=0.4 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=0.4/(0.1×0.2)=20.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.05",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.33",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.7",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-6": {
+      "itemId": "w26-kc-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=0.8 M, [B]=0.4 M, [C]=0.64 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=0.64/(0.8×0.4)=2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.5",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.53",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1.84",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w26-kc-7": {
+      "itemId": "w26-kc-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For A + B ⇌ C, equilibrium concentrations are [A]=0.3 M, [B]=0.6 M, [C]=0.54 M. What is Kc?",
+      "answerIndex": 0,
+      "correctRationale": "Kc=[C]/([A][B])=0.54/(0.3×0.6)=3.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.33",
+          "misconceptionTag": "equilibrium-expression-reciprocal",
+          "rationale": "This is the reciprocal of the correct equilibrium constant, consistent with reversing products and reactants in the Kc expression."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.6",
+          "misconceptionTag": "add-reactant-concentrations",
+          "rationale": "This uses [C]/([A]+[B]) instead of multiplying reactant concentrations in the denominator for A+B⇌C."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1.44",
+          "misconceptionTag": "sum-all-equilibrium-concentrations",
+          "rationale": "This adds equilibrium concentrations rather than evaluating the reaction-specific product/reactant concentration expression."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored quantitative-family misconception review"
     }
-  }
+  },
+  "reviewedFamilies": [
+    "legacy concept spine",
+    "density",
+    "ionic particle counting",
+    "weighted-average atomic mass",
+    "photon frequency / nm conversion",
+    "Boyle's law",
+    "molarity",
+    "percent yield",
+    "moles from molarity and volume",
+    "average reaction rate",
+    "equilibrium constant Kc"
+  ]
 }
