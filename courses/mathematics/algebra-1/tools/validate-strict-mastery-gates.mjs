@@ -19,7 +19,8 @@ for(let unit=2;unit<=9;unit++){const id=String(unit).padStart(2,'0'),wrapper=rea
 ok(u1.includes('weekMastered(2)')&&u1.includes('weekMastered(3)'),'Unit 01 requires Weeks 02 and 03 mastery');
 ok(u1.includes('n===4?weekMastered(2)'),'Unit 01 Week 02→03 lesson boundary is gated');
 ok(u1.includes('allLessonsMastered()&&allUnitWeeksMastered()'),'Unit 01 formal mastery requires lessons and weekly gates');
-ok(authority.includes('version:"1.3"')&&authority.includes('weekLessonMap:WEEK_LESSONS')&&authority.includes('weekLessonsMastered')&&authority.includes('focused_assessment:"v1.2"'),'canonical authority owns the Week 02-36 lesson prerequisite map and focused-assessment contract');
+ok(authority.includes('version:"1.4"')&&authority.includes('weekLessonMap:WEEK_LESSONS')&&authority.includes('weekLessonsMastered')&&authority.includes('focused_assessment:"v1.2"'),'canonical authority owns the Week 02-36 lesson prerequisite map and focused-assessment contract');
+ok(authority.includes("validEvaluatorReview")&&authority.includes("khaemenes-algebra1-evaluator-review-v1")&&authority.includes("rejected_unstructured_review_attempts"),'canonical authority requires structured cumulative reviewer evidence and rejects boolean-only reviews');
 ok(weeklyPage.includes('../assets/mastery-authority-v1.js'),'weekly mastery page preloads canonical authority');
 ok(/MASTERY=80/.test(weekly)&&weekly.includes('function weekGate')&&weekly.includes('A.weekLessonEvidence(week)'),'weekly engine uses canonical current-week lesson gating');
 ok(weekly.includes('reason:"previous-week"')&&weekly.includes('A.unitMastered(unit-1)')&&weekly.includes('A.midtermMastered()'),'weekly engine independently enforces previous-week, prior-unit, and Midterm prerequisites');
