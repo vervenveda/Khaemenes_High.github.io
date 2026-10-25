@@ -1,10 +1,10 @@
 {
-  "version": "v3-instructional",
+  "version": "v4-passage-anchored",
   "course": "english-11",
   "rows": [
     [
       [
-        "A city official calls the new library 'a success,' while visitor logs show uneven neighborhood access. Which conclusion is supported?",
+        "Original paired sources: An official statement calls a new library “a success.” Visitor logs show high use downtown but substantially lower use from two outlying neighborhoods. A city official calls the new library 'a success,' while visitor logs show uneven neighborhood access. Which conclusion is supported?",
         [
           "The opening was achieved, but the evidence leaves the reach of its benefits unresolved.",
           "The official intentionally concealed every visit count.",
@@ -12,7 +12,12 @@
           "The logs prove that every neighborhood agreed about the opening."
         ],
         "Distinguish an institution's action from access and intentions that require more evidence.",
-        "Source evaluation"
+        "Source evaluation",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which thesis qualifies its inference from the conflicting documents?",
@@ -36,7 +41,12 @@
           "Every witness at the same event must agree."
         ],
         "An inference depends on what the witness could observe and how testimony is framed.",
-        "Source provenance"
+        "Source provenance",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence differentiates observation from inference?",
@@ -60,7 +70,12 @@
           "Place the idea in a bibliography only and use the sentence unmarked."
         ],
         "Paraphrase requires independent wording and clear source credit.",
-        "Paraphrase ethics"
+        "Paraphrase ethics",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which revision removes a dangling modifier?",
@@ -76,7 +91,7 @@
     ],
     [
       [
-        "An apparently heroic action is narrated by someone unaware of the character's private motive. What can a critic claim?",
+        "Original passage: “From the doorway I watched Arun carry the child through the smoke. Everyone cheered. I could not know what promise he had made before entering.” An apparently heroic action is narrated by someone unaware of the character's private motive. What can a critic claim?",
         [
           "The narration frames the act as heroic but does not settle the character's intent.",
           "The character certainly acted from vanity.",
@@ -84,7 +99,12 @@
           "The action has only one defensible interpretation."
         ],
         "Limited perspective must not be mistaken for omniscient access to motive.",
-        "Interpretive limits"
+        "Interpretive limits",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which analytical clause presents an alternative reading coherently?",
@@ -108,7 +128,12 @@
           "Whether every repeated word has exactly one connotation."
         ],
         "Style analysis connects patterns of diction with effects, not arbitrary counts.",
-        "Authorial style"
+        "Authorial style",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence most precisely discusses syntax?",
@@ -124,7 +149,7 @@
     ],
     [
       [
-        "One narrative portrays hospitality as generosity and another as social obligation. Which comparison is defensible?",
+        "Original paired passages: In one story a host gives the best food to a stranger as a gift; in another, the host serves the meal because custom requires it. One narrative portrays hospitality as generosity and another as social obligation. Which comparison is defensible?",
         [
           "The shared action carries different values because its social contexts differ.",
           "Both societies must have identical customs.",
@@ -132,7 +157,12 @@
           "One narrative must be historically false."
         ],
         "Shared motifs can be interpreted in culturally distinct contexts.",
-        "Cross-cultural themes"
+        "Cross-cultural themes",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which comparison avoids generalizing about entire cultures?",
@@ -156,7 +186,12 @@
           "Metaphors cannot encode perspective."
         ],
         "Juxtaposed figures of speech can expose perspective without resolving every fact.",
-        "Juxtaposition"
+        "Juxtaposition",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence presents both positions in parallel form?",
@@ -172,7 +207,7 @@
     ],
     [
       [
-        "A room is described as 'bright as polished metal,' yet a character speaks with dread. What does the contrast suggest?",
+        "Original passage: “The room shone, bright as polished metal. ‘I do not want to stay here,’ Nia whispered, gripping the chair.” A room is described as 'bright as polished metal,' yet a character speaks with dread. What does the contrast suggest?",
         [
           "The image of brightness may intensify an unsettled emotional atmosphere.",
           "The scene's weather is necessarily sunny.",
@@ -180,7 +215,12 @@
           "Figurative language cannot convey emotional conflict."
         ],
         "Mood may arise from tension between imagery and character response.",
-        "Mood and image"
+        "Mood and image",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which explanation avoids assuming a metaphor has one fixed meaning?",
@@ -204,7 +244,12 @@
           "A biographical claim about the author unsupported by sources."
         ],
         "Literary analysis needs patterned development, not motif spotting alone.",
-        "Motif development"
+        "Motif development",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which revised claim integrates evidence without overstating author intent?",
@@ -228,7 +273,12 @@
           "Whether the modern reader agrees with the speaker."
         ],
         "A historically situated term cannot be evaluated solely by present-day definitions.",
-        "Historical rhetoric"
+        "Historical rhetoric",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence attributes historical context responsibly?",
@@ -252,7 +302,12 @@
           "The order guarantees every reader supports the policy."
         ],
         "Structural moves have different rhetorical functions that still require evaluation.",
-        "Text structure"
+        "Text structure",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence explains a structure rather than merely listing its sections?",
@@ -276,7 +331,12 @@
           "A legal obligation to agree."
         ],
         "An appeal to common experience can help build ethos without independently validating data.",
-        "Rhetorical appeals"
+        "Rhetorical appeals",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence identifies both device and likely effect?",
@@ -292,7 +352,7 @@
     ],
     [
       [
-        "An advocate says 'we will listen, we will measure, we will revise.' What is the rhetorical effect?",
+        "Original speech excerpt: “We will listen. We will measure. We will revise.” An advocate says 'we will listen, we will measure, we will revise.' What is the rhetorical effect?",
         [
           "Parallel repeated beginnings present the commitments as a coordinated program.",
           "The phrase supplies an independently verified success rate.",
@@ -300,7 +360,12 @@
           "Repetition prevents listeners from noticing audience concerns."
         ],
         "Anaphora and parallelism foreground coordinated action.",
-        "Anaphora"
+        "Anaphora",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence analyzes the quoted verbs precisely?",
@@ -324,7 +389,12 @@
           "Treat the ridership totals as direct proof of every personal motive."
         ],
         "The methods provide complementary, not interchangeable, kinds of evidence.",
-        "Multi-source comparison"
+        "Multi-source comparison",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence distinguishes these evidence roles?",
@@ -340,7 +410,7 @@
     ],
     [
       [
-        "Writers describe an event one year apart but refer to different policy stages. What comparison is necessary first?",
+        "Original source set: A memo dated March describes a proposed rule; a report dated the following January describes the rule after implementation. Writers describe an event one year apart but refer to different policy stages. What comparison is necessary first?",
         [
           "Establish the date and policy stage each account addresses.",
           "Decide which writer uses the stronger adjective.",
@@ -348,7 +418,12 @@
           "Assume both authors observed the exact same decision."
         ],
         "Comparison needs alignment of chronology and referents.",
-        "Contemporaneous documents"
+        "Contemporaneous documents",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence makes the temporal distinction explicit?",
@@ -372,7 +447,12 @@
           "A plot summary unrelated to the speech."
         ],
         "Naming appeals is classification, not yet analysis.",
-        "Rhetorical analysis"
+        "Rhetorical analysis",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which thesis moves beyond listing devices?",
@@ -388,7 +468,7 @@
     ],
     [
       [
-        "At a seminar, a student rejects a peer's view without restating it. What would improve the exchange?",
+        "Original seminar transcript: “That interpretation is wrong,” Devin says. “Which part of it do you think the evidence fails to support?” Mei asks. At a seminar, a student rejects a peer's view without restating it. What would improve the exchange?",
         [
           "Paraphrase the peer's actual claim and then test the cited evidence.",
           "Use a louder voice to claim authority.",
@@ -396,7 +476,12 @@
           "End the discussion before evidence is compared."
         ],
         "Fair response requires accurate representation before rebuttal.",
-        "Academic discussion"
+        "Academic discussion",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which oral response models respectful challenge?",
@@ -420,7 +505,12 @@
           "Change the essay heading without examining the errors."
         ],
         "Transfer tests the misconception with new evidence.",
-        "Cumulative review"
+        "Cumulative review",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which correction note includes a prevention strategy?",
@@ -444,7 +534,12 @@
           "Ignore the poem's language once the date is known."
         ],
         "Context informs interpretation but does not replace textual evidence.",
-        "Poetry in context"
+        "Poetry in context",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence integrates context without determining every image?",
@@ -468,7 +563,12 @@
           "The poets' private motives without documentary evidence."
         ],
         "Comparative historical study considers form, speaker, and context rather than flattening eras.",
-        "Period comparison"
+        "Period comparison",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which comparison avoids treating literary movements as homogeneous?",
@@ -492,7 +592,12 @@
           "The realist poem cannot use figurative language."
         ],
         "Narrative/poetic form mediates representation, not an automatic truth rank.",
-        "Literary movements"
+        "Literary movements",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which analytical sentence uses form-related vocabulary precisely?",
@@ -508,7 +613,7 @@
     ],
     [
       [
-        "Two poets publish during the same conflict but portray it differently. What should comparison prioritize?",
+        "Original paired poem excerpts: One speaker calls the conflict “a closing gate”; another, writing the same year, calls it “a road no map can finish.” Two poets publish during the same conflict but portray it differently. What should comparison prioritize?",
         [
           "The poems' speakers, images, and rhetorical choices, not assumed shared beliefs.",
           "A presumption that contemporaries share one opinion.",
@@ -516,7 +621,12 @@
           "Selecting the poem that agrees with current readers."
         ],
         "Shared time does not erase individual artistic positions.",
-        "Contemporaneous poets"
+        "Contemporaneous poets",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence compares the poems with warranted restraint?",
@@ -540,7 +650,12 @@
           "Whether the anthology uses glossy paper."
         ],
         "Modal qualifiers can undercut an unqualified certainty claim.",
-        "Poetry interpretation"
+        "Poetry interpretation",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which analytical sentence connects form to meaning?",
@@ -556,7 +671,7 @@
     ],
     [
       [
-        "A poetry performance accelerates during a list then pauses after a question. How can the choices be justified?",
+        "Original performance note: The reader accelerates through a six-item list, then pauses for three seconds after the final question. A poetry performance accelerates during a list then pauses after a question. How can the choices be justified?",
         [
           "By linking rate and silence to the list's urgency and the question's uncertainty.",
           "By treating every performance as historically definitive.",
@@ -564,7 +679,12 @@
           "By refusing to consult the poem's punctuation."
         ],
         "Performance decisions are interpretations grounded in words and structure.",
-        "Oral interpretation"
+        "Oral interpretation",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which performance note is most actionable?",
@@ -580,7 +700,7 @@
     ],
     [
       [
-        "A research topic is 'why literature changes people.' Which refinement could guide a feasible literary study?",
+        "Original research proposal: “I want to study why literature changes people.” A research topic is 'why literature changes people.' Which refinement could guide a feasible literary study?",
         [
           "'How does one novel's shifting narrator affect readers' interpretation of its ending?'",
           "'Why does every book change every reader?'",
@@ -588,7 +708,12 @@
           "'Can literature prove universal human psychology alone?'"
         ],
         "The refined question defines a work, a craft feature, and an analyzable effect.",
-        "Literary inquiry"
+        "Literary inquiry",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which research plan sets a practical boundary?",
@@ -612,7 +737,12 @@
           "The novel is irrelevant once a review exists."
         ],
         "Secondary criticism interprets, but does not eliminate, textual primary evidence.",
-        "Source classification"
+        "Source classification",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which attribution keeps the two roles separate?",
@@ -636,7 +766,12 @@
           "Ignore the primary scene because critics already discussed it."
         ],
         "Synthesis maps relationships and limits between readings.",
-        "Literature synthesis"
+        "Literature synthesis",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence describes an evidence-based relationship between critics?",
@@ -660,7 +795,12 @@
           "A title with more theoretical vocabulary."
         ],
         "Literary research integrates historical framing with analyzed text.",
-        "Research-backed close reading"
+        "Research-backed close reading",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which thesis remains open to competing interpretations?",
@@ -684,7 +824,12 @@
           "Present the source's assumptions as established facts."
         ],
         "Exposition requires accurate source representation and independent reasoning.",
-        "Expository attribution"
+        "Expository attribution",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence clearly distinguishes claim from evaluation?",
@@ -700,7 +845,7 @@
     ],
     [
       [
-        "A digital narrative changes from first-person diary entries to an outsider's report. What might that formal shift invite?",
+        "Original digital narrative excerpts: Entry 1 uses a first-person diary voice; the next screen shifts to an unsigned third-person incident report. A digital narrative changes from first-person diary entries to an outsider's report. What might that formal shift invite?",
         [
           "Comparison between lived experience and an external account's limits.",
           "Assuming the outsider knows every private thought.",
@@ -708,7 +853,12 @@
           "Treating digital format as proof of authenticity."
         ],
         "Viewpoint shifts prompt analysis of who can know what.",
-        "Digital narration"
+        "Digital narration",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which caption accurately labels a reconstructed scene?",
@@ -732,7 +882,12 @@
           "The play ceases to involve perspective."
         ],
         "Unequal knowledge between audience and character creates dramatic irony.",
-        "Drama irony"
+        "Drama irony",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which commentary identifies a stage direction's function?",
@@ -748,7 +903,7 @@
     ],
     [
       [
-        "A performer speaks a threat softly instead of shouting it. What might defend that choice?",
+        "Original script excerpt: “You promised you would return.” The stage direction reads: [quietly, without moving toward the door]. A performer speaks a threat softly instead of shouting it. What might defend that choice?",
         [
           "The contrast with the threatening words can make the speaker appear controlled or unsettling.",
           "A quiet threat must always sound kind.",
@@ -756,7 +911,12 @@
           "The performer need not explain any textual connection."
         ],
         "Volume may alter interpretation when connected to the dialogue.",
-        "Drama performance"
+        "Drama performance",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which annotation links acting choice to evidence?",
@@ -780,7 +940,12 @@
           "Whether all characters use the word home equally often."
         ],
         "Development requires chronological evidence across the complete work.",
-        "Long-form reading"
+        "Long-form reading",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which note better supports chapter-to-chapter synthesis?",
@@ -796,7 +961,7 @@
     ],
     [
       [
-        "A later chapter reuses the opening image but changes its setting. What can a critic defend?",
+        "Original chapter evidence: The opening chapter places a cracked mirror in an abandoned room; the final chapter returns to the mirror after the room has become a community clinic. A later chapter reuses the opening image but changes its setting. What can a critic defend?",
         [
           "The repeated image may gain new significance through its altered surroundings.",
           "The image retains exactly one fixed meaning.",
@@ -804,7 +969,12 @@
           "The image is incidental because it recurs."
         ],
         "Motif analysis attends to differences within recurrence.",
-        "Novel motif"
+        "Novel motif",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which sentence provides an interpretive line of reasoning?",
@@ -820,7 +990,7 @@
     ],
     [
       [
-        "A portfolio claims improvement in evidence analysis. What proof supports the claim?",
+        "Original portfolio record: Draft 1 names evidence but gives no commentary; Draft 3 integrates quotations and explains how each one supports the claim. A portfolio claims improvement in evidence analysis. What proof supports the claim?",
         [
           "A dated early passage annotation, later revision, and explanation of specific changes.",
           "Only the highest quiz number.",
@@ -828,7 +998,12 @@
           "Another student's model essay."
         ],
         "A portfolio demonstrates progress with comparable authentic artifacts.",
-        "Portfolio verification"
+        "Portfolio verification",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which conference statement defines a testable growth claim?",
@@ -852,7 +1027,12 @@
           "Skip the passage and guess from its title."
         ],
         "Transfer requires applying learned concepts to unfamiliar evidence.",
-        "Cumulative transfer"
+        "Cumulative transfer",
+        {
+          "anchor": true,
+          "anchorType": "passage-or-source",
+          "provenance": "original-instructional"
+        }
       ],
       [
         "Which reflection links a correction to future action?",
@@ -866,5 +1046,7 @@
         "Exam corrections"
       ]
     ]
-  ]
+  ],
+  "grade": 11,
+  "anchorPolicy": "First supplemental item in every week is a passage/source anchor; weekly form requires at least one anchor."
 }
