@@ -24,10 +24,11 @@ function mount(grade,week,withLearner=true){
 }
 const a=mount(10,5);a.field.value="fictional-A academic evidence";a.field.oninput();
 assert([...storage.values()].includes("fictional-A academic evidence"));
-active="fictional-B";a.field.value="cross-learner write";a.field.oninput();assert.equal(a.field.disabled,true);
+active="fictional-B";a.field.value="cross-learner write";a.field.oninput();assert.equal(a.field.disabled,true);assert.equal(a.field.value,"","Old learner draft must be removed from screen on switch");a.button.onclick();assert.equal(calls.print||0,0,"Printing must be blocked following a learner switch");
 const b=mount(10,5);assert.equal(b.field.value,"");b.field.value="fictional-B response";b.field.oninput();
-active="fictional-A";const again=mount(10,5);assert.equal(again.field.value,"fictional-A academic evidence");
+active="fictional-A";const again=mount(10,5);assert.equal(again.field.value,"fictional-A academic evidence");again.button.onclick();assert.equal(calls.print,1,"Authorized learner should be able to print their draft");
 const distinctWeek=mount(10,6);assert.equal(distinctWeek.field.value,"");
+const grade9=mount(9,2);grade9.field.value="Grade 9 fictional evidence";grade9.field.oninput();const grade9reload=mount(9,2);assert.equal(grade9reload.field.value,"Grade 9 fictional evidence");
 const noLearner=mount(9,1,false);assert.equal(noLearner.field.disabled,true);
-assert.equal(storage.size,2);
+assert.equal(storage.size,3);
 console.log("PASS 32 Grade 9–12 studio routes, fictional A/B draft separation, reload, week partition and no-learner lock");
