@@ -92,25 +92,35 @@ function auditUpperCourse(slug,label){
       need(vague.length===0,label+" canonical Tuesday Deep Lesson reading contract ("+vague.length+" vague)");
     }catch(e){failures.push(label+" course map parse: "+e.message)}
   }
-  if(slug==="biology-10"||slug==="physics-engineering-12"){
+  if(slug==="biology-10"||slug==="chemistry-11"||slug==="physics-engineering-12"){
     need(c.includes("science-misconception-guidance-v1.js"),label+" loads reasoning diagnostic guidance");
-    need(c.includes("diagnostic=window.KhaeScienceMisconceptionGuidance")||c.includes("const diagnostic=reviewed||window.KhaeScienceMisconceptionGuidance"),label+" practice corrections capture diagnostic route");
-    need(c.includes("assessment-misconceptions-v1.js"),label+" loads reviewed anchor misconception map");
+    need(c.includes("assessment-misconceptions-v1.js"),label+" loads reviewed misconception map");
+    const expectedGlobal=slug==="biology-10"?"KhaemenesBiology10Misconceptions":slug==="chemistry-11"?"KhaemenesChemistry11Misconceptions":"KhaemenesPhysics12Misconceptions";
+    need(c.includes(expectedGlobal),label+" practice corrections use reviewed misconception map");
+    need(c.includes("KhaeScienceMisconceptionGuidance?.reviewed"),label+" practice corrections prefer reviewed option-specific diagnosis");
     const misconceptionFile=path.join(root,"assessment-misconceptions-v1.json");
-    need(exists(misconceptionFile),label+" reviewed anchor misconception map exists");
+    need(exists(misconceptionFile),label+" reviewed misconception map exists");
     if(exists(misconceptionFile)){
       try{
         const map=JSON.parse(read(misconceptionFile));
         need(map?.schema==="khaemenes.assessment-misconception-map.v1",label+" misconception map schema");
-        const misconceptionFloor=slug==="biology-10"?180:180;\n        need(Number(map?.reviewedItemCount)>=misconceptionFloor,label+" reviewed misconception count >= "+misconceptionFloor+" ("+String(map?.reviewedItemCount)+")");
-        need(Object.keys(map?.items||{}).length===Number(map?.reviewedItemCount),label+" misconception map item count matches reviewed count");
         const bank=parseAssignedArray(path.join(root,"question-bank.js")),byId=new Map(bank.map(q=>[String(q.id),q]));
-        let valid=true;
+        need(Number(map?.reviewedItemCount)===bank.length,label+" reviewed misconception count equals full bank ("+String(map?.reviewedItemCount)+"/"+bank.length+")");
+        need(Object.keys(map?.items||{}).length===bank.length,label+" misconception map item count equals full bank");
+        let valid=true,complete=true;
+        for(const q of bank){if(!map?.items?.[String(q.id)]){complete=false;break}}
         for(const item of Object.values(map?.items||{})){
           const q=byId.get(String(item?.itemId||""));if(!q){valid=false;break}
-          if(!Array.isArray(item?.distractors)||item.distractors.some(d=>!Number.isInteger(d?.optionIndex)||d.optionIndex<0||d.optionIndex>=q.options.length||d.optionIndex===q.answer||!String(d?.misconceptionTag||"").trim()||!String(d?.rationale||"").trim())){valid=false;break}
+          const seen=new Set();
+          if(!Array.isArray(item?.distractors)||item.distractors.length!==q.options.length-1){valid=false;break}
+          for(const d of item.distractors){
+            if(!Number.isInteger(d?.optionIndex)||d.optionIndex<0||d.optionIndex>=q.options.length||d.optionIndex===q.answer||seen.has(d.optionIndex)||!String(d?.misconceptionTag||"").trim()||!String(d?.rationale||"").trim()){valid=false;break}
+            seen.add(d.optionIndex);
+          }
+          if(!valid)break;
         }
-        need(valid,label+" misconception distractor option indexes remain valid");
+        need(complete,label+" every question has a reviewed misconception entry");
+        need(valid,label+" misconception distractors are complete, unique, and valid");
       }catch(e){failures.push(label+" misconception map parse: "+e.message)}
     }
   }
