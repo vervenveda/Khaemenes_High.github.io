@@ -1,130 +1,891 @@
 {
+  "schema": "khaemenes.algebra1.unit13.answer-key.v2",
+  "schemaVersion": "2.0",
   "unit": 13,
+  "poolVersion": "unit13-capstone-depth-v1",
+  "eligibleItemCount": 80,
+  "deliveredPerAttempt": 20,
+  "capstoneQuantitativeMinimumPerAttempt": 10,
   "items": [
     {
       "id": "q0411",
+      "lesson": 1,
+      "difficulty": 1,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 2,
       "answer": "state a precise question and define quantities",
-      "explanation": "Question and quantities guide the model."
+      "explanation": "Question and quantities guide the model.",
+      "capstoneDepth": null
     },
     {
       "id": "q0412",
+      "lesson": 1,
+      "difficulty": 2,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 3,
       "answer": "how results change when inputs change",
-      "explanation": "Sensitivity evaluates stability."
+      "explanation": "Sensitivity evaluates stability.",
+      "capstoneDepth": null
     },
     {
       "id": "q0413",
+      "lesson": 1,
+      "difficulty": 3,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
       "answer": "The model supports the claim within its domain and assumptions.",
-      "explanation": "Defensible conclusions state scope and limits."
+      "explanation": "Defensible conclusions state scope and limits.",
+      "capstoneDepth": null
     },
     {
       "id": "q0414",
-      "answer": "state a precise question and define quantities",
-      "explanation": "Question and quantities guide the model."
+      "lesson": 1,
+      "difficulty": 1,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "define quantities and units",
+      "explanation": "Defined quantities and units make the variables measurable and interpretable.",
+      "capstoneDepth": null
     },
     {
       "id": "q0415",
-      "answer": "how results change when inputs change",
-      "explanation": "Sensitivity evaluates stability."
+      "lesson": 1,
+      "difficulty": 2,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "They make simplifications visible.",
+      "explanation": "Disclosed assumptions let others evaluate how the model simplifies reality.",
+      "capstoneDepth": null
     },
     {
       "id": "q0416",
-      "answer": "state a precise question and define quantities",
-      "explanation": "Question and quantities guide the model."
+      "lesson": 2,
+      "difficulty": 1,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "variables, units, and domain",
+      "explanation": "A usable model defines its variables, units, and meaningful domain.",
+      "capstoneDepth": null
     },
     {
       "id": "q0417",
-      "answer": "how results change when inputs change",
-      "explanation": "Sensitivity evaluates stability."
+      "lesson": 2,
+      "difficulty": 2,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "an input or assumption",
+      "explanation": "Sensitivity analysis changes an input or assumption to see how the result responds.",
+      "capstoneDepth": null
     },
     {
       "id": "q0418",
+      "lesson": 2,
+      "difficulty": 3,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
       "answer": "The model supports the claim within its domain and assumptions.",
-      "explanation": "Defensible conclusions state scope and limits."
+      "explanation": "A defensible conclusion states the domain and assumptions that limit the claim.",
+      "capstoneDepth": null
     },
     {
       "id": "q0419",
-      "answer": "state a precise question and define quantities",
-      "explanation": "Question and quantities guide the model."
+      "lesson": 2,
+      "difficulty": 1,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "So the evidence can be checked.",
+      "explanation": "A source lets readers inspect the evidence supporting the model.",
+      "capstoneDepth": null
     },
     {
       "id": "q0420",
-      "answer": "how results change when inputs change",
-      "explanation": "Sensitivity evaluates stability."
+      "lesson": 2,
+      "difficulty": 2,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "model output versus observed evidence",
+      "explanation": "Comparing output with evidence reveals where a model needs revision.",
+      "capstoneDepth": null
     },
     {
       "id": "q0421",
-      "answer": "state a precise question and define quantities",
-      "explanation": "Question and quantities guide the model."
+      "lesson": 3,
+      "difficulty": 1,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "the question and quantities",
+      "explanation": "A precise question and defined quantities establish the model's purpose.",
+      "capstoneDepth": null
     },
     {
       "id": "q0422",
-      "answer": "how results change when inputs change",
-      "explanation": "Sensitivity evaluates stability."
+      "lesson": 3,
+      "difficulty": 2,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "vary an input or assumption",
+      "explanation": "Sensitivity analysis tests how output changes when inputs or assumptions vary.",
+      "capstoneDepth": null
     },
     {
       "id": "q0423",
-      "answer": "The model supports the claim within its domain and assumptions.",
-      "explanation": "Defensible conclusions state scope and limits."
+      "lesson": 3,
+      "difficulty": 3,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "evidence, reasoning, assumptions, and limitations",
+      "explanation": "A model defense connects evidence and reasoning to its assumptions and limitations.",
+      "capstoneDepth": null
     },
     {
       "id": "q0424",
-      "answer": "state a precise question and define quantities",
-      "explanation": "Question and quantities guide the model."
+      "lesson": 3,
+      "difficulty": 1,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "comparison with data or constraints",
+      "explanation": "Validation compares the model with evidence or known constraints.",
+      "capstoneDepth": null
     },
     {
       "id": "q0425",
-      "answer": "how results change when inputs change",
-      "explanation": "Sensitivity evaluates stability."
+      "lesson": 3,
+      "difficulty": 2,
+      "category": "modelling",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "the uncertainty and its likely effect",
+      "explanation": "Responsible modelling communicates uncertainty and its effect on interpretation.",
+      "capstoneDepth": null
     },
     {
       "id": "q0426",
+      "lesson": 4,
+      "difficulty": 1,
+      "category": "sensitivity",
+      "source": "shared-base",
+      "answerIndex": 0,
       "answer": "state a precise question and define quantities",
-      "explanation": "Question and quantities guide the model."
+      "explanation": "A precise question and defined quantities make later assumptions reviewable.",
+      "capstoneDepth": null
     },
     {
       "id": "q0427",
+      "lesson": 4,
+      "difficulty": 2,
+      "category": "sensitivity",
+      "source": "shared-base",
+      "answerIndex": 0,
       "answer": "how results change when inputs change",
-      "explanation": "Sensitivity evaluates stability."
+      "explanation": "Sensitivity analysis reveals how stable a result is when inputs or assumptions change.",
+      "capstoneDepth": null
     },
     {
       "id": "q0428",
-      "answer": "The model supports the claim within its domain and assumptions.",
-      "explanation": "Defensible conclusions state scope and limits."
+      "lesson": 4,
+      "difficulty": 3,
+      "category": "sensitivity",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "The result is supported for the stated domain, data, and assumptions.",
+      "explanation": "A responsible conclusion qualifies the result by its domain, data, and assumptions.",
+      "capstoneDepth": null
     },
     {
       "id": "q0429",
-      "answer": "state a precise question and define quantities",
-      "explanation": "Question and quantities guide the model."
+      "lesson": 4,
+      "difficulty": 1,
+      "category": "sensitivity",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "disclose assumptions and limitations",
+      "explanation": "Trustworthy modelling makes assumptions and limitations visible.",
+      "capstoneDepth": null
     },
     {
       "id": "q0430",
-      "answer": "how results change when inputs change",
-      "explanation": "Sensitivity evaluates stability."
+      "lesson": 4,
+      "difficulty": 2,
+      "category": "sensitivity",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "The result is limited by its domain, data, and assumptions.",
+      "explanation": "A responsible report states the conditions and limits of its conclusion.",
+      "capstoneDepth": null
     },
     {
       "id": "q0431",
-      "answer": "state a precise question and define quantities",
-      "explanation": "Question and quantities guide the model."
+      "lesson": 5,
+      "difficulty": 1,
+      "category": "communication",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "evidence, reasoning, limitations, and conclusion",
+      "explanation": "A defensible presentation connects the evidence and reasoning to a qualified conclusion.",
+      "capstoneDepth": null
     },
     {
       "id": "q0432",
+      "lesson": 5,
+      "difficulty": 2,
+      "category": "communication",
+      "source": "shared-base",
+      "answerIndex": 0,
       "answer": "how results change when inputs change",
-      "explanation": "Sensitivity evaluates stability."
+      "explanation": "Sensitivity analysis tests the stability of the model under changed inputs.",
+      "capstoneDepth": null
     },
     {
       "id": "q0433",
-      "answer": "The model supports the claim within its domain and assumptions.",
-      "explanation": "Defensible conclusions state scope and limits."
+      "lesson": 5,
+      "difficulty": 3,
+      "category": "communication",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "a clear statement of what the evidence can and cannot establish",
+      "explanation": "Reflection distinguishes supported evidence from claims beyond the model.",
+      "capstoneDepth": null
     },
     {
       "id": "q0434",
-      "answer": "state a precise question and define quantities",
-      "explanation": "Question and quantities guide the model."
+      "lesson": 5,
+      "difficulty": 1,
+      "category": "communication",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "explain what the model can and cannot establish",
+      "explanation": "Reflection distinguishes supported conclusions from claims beyond the model's evidence.",
+      "capstoneDepth": null
     },
     {
       "id": "q0435",
-      "answer": "how results change when inputs change",
-      "explanation": "Sensitivity evaluates stability."
+      "lesson": 5,
+      "difficulty": 2,
+      "category": "communication",
+      "source": "shared-base",
+      "answerIndex": 0,
+      "answer": "evidence, verification, assumptions, and limitations",
+      "explanation": "A credible defense connects evidence and verification to stated assumptions and limitations.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l01-01",
+      "lesson": 1,
+      "difficulty": 1,
+      "category": "question-framing",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "How does weekly study time relate to quiz score for Grade 9 students during this semester?",
+      "explanation": "A testable modelling question defines measurable quantities, population, and time context.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l01-02",
+      "lesson": 1,
+      "difficulty": 2,
+      "category": "variables-units",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "distance in miles, speed in miles/hour, time in hours",
+      "explanation": "t=d/r requires compatible distance and rate units.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l01-03",
+      "lesson": 1,
+      "difficulty": 2,
+      "category": "domain",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "h=10",
+      "explanation": "Ten hours lies outside the model's stated input range.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l01-04",
+      "lesson": 1,
+      "difficulty": 3,
+      "category": "ethical-framing",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "Which measured variables are relevant, reliable, and fair to use for this decision?",
+      "explanation": "High-impact models require scrutiny of relevance, measurement quality, and fairness.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l01-05",
+      "lesson": 1,
+      "difficulty": 1,
+      "category": "response-variable",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "monthly electricity cost",
+      "explanation": "The response is the outcome being predicted.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l01-06",
+      "lesson": 1,
+      "difficulty": 2,
+      "category": "assumptions",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "So readers can judge whether that simplification is reasonable",
+      "explanation": "Assumptions expose the simplifications on which conclusions depend.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l01-07",
+      "lesson": 1,
+      "difficulty": 3,
+      "category": "scope",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "The model supports weekday predictions within conditions similar to the observed data",
+      "explanation": "Conclusions should stay within the observed domain and conditions.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l02-01",
+      "lesson": 2,
+      "difficulty": 1,
+      "category": "model-choice",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "Linear",
+      "explanation": "A roughly constant first difference suggests a linear relationship.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l02-02",
+      "lesson": 2,
+      "difficulty": 2,
+      "category": "model-choice",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "Exponential",
+      "explanation": "A roughly constant multiplicative factor suggests exponential change.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l02-03",
+      "lesson": 2,
+      "difficulty": 2,
+      "category": "variable-definition",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "x = time since launch, measured in seconds, with x≥0",
+      "explanation": "A useful variable definition includes meaning, units, and relevant domain.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l02-04",
+      "lesson": 2,
+      "difficulty": 3,
+      "category": "data-quality",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "The data may not represent the target population",
+      "explanation": "A narrow volunteer sample may introduce selection bias and poor population coverage.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l02-05",
+      "lesson": 2,
+      "difficulty": 1,
+      "category": "representation",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "Scatterplot",
+      "explanation": "A scatterplot shows paired quantitative values and overall form.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l02-06",
+      "lesson": 2,
+      "difficulty": 2,
+      "category": "predictor-response",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "h",
+      "explanation": "Hours used is the input used to predict cost.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l02-07",
+      "lesson": 2,
+      "difficulty": 3,
+      "category": "omitted-variable",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "Vehicle type may change the relationship between distance and fuel use",
+      "explanation": "An omitted relevant variable can cause systematic prediction differences.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l03-01",
+      "lesson": 3,
+      "difficulty": 1,
+      "category": "linear-evaluation",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "29",
+      "explanation": "3(8)+5=29.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l03-02",
+      "lesson": 3,
+      "difficulty": 2,
+      "category": "build-linear-model",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "3",
+      "explanation": "Slope=(19−7)/(6−2)=12/4=3.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l03-03",
+      "lesson": 3,
+      "difficulty": 2,
+      "category": "residual",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "3",
+      "explanation": "Residual=42−39=3.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l03-04",
+      "lesson": 3,
+      "difficulty": 3,
+      "category": "percent-error",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "4%",
+      "explanation": "|48−50|/50=2/50=0.04=4%.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l03-05",
+      "lesson": 3,
+      "difficulty": 2,
+      "category": "exponential-evaluation",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "10% growth per time period",
+      "explanation": "A growth factor 1+r=1.10 corresponds to r=0.10.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l03-06",
+      "lesson": 3,
+      "difficulty": 3,
+      "category": "quadratic-model",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "6",
+      "explanation": "The vertex input is x=−b/(2a)=−12/(−2)=6.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l03-07",
+      "lesson": 3,
+      "difficulty": 3,
+      "category": "validation",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "The model is missing systematic structure",
+      "explanation": "A patterned residual plot suggests the chosen model form is inadequate.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l04-01",
+      "lesson": 4,
+      "difficulty": 1,
+      "category": "sensitivity",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "5",
+      "explanation": "The slope 5 is the output change per one-unit increase in x.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l04-02",
+      "lesson": 4,
+      "difficulty": 2,
+      "category": "sensitivity-percent",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "7%",
+      "explanation": "(214−200)/200=14/200=0.07.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l04-03",
+      "lesson": 4,
+      "difficulty": 2,
+      "category": "uncertainty",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "48 to 52",
+      "explanation": "±2 gives a lower bound of 48 and upper bound of 52.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l04-04",
+      "lesson": 4,
+      "difficulty": 3,
+      "category": "fairness-errors",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "Why prediction error differs substantially between the groups",
+      "explanation": "Large group differences in error may signal unequal model performance or data quality.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l04-05",
+      "lesson": 4,
+      "difficulty": 2,
+      "category": "robustness",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "A 5% input change produces only a very small output change",
+      "explanation": "Robust models are comparatively insensitive to small plausible perturbations.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l04-06",
+      "lesson": 4,
+      "difficulty": 3,
+      "category": "scenario-range",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "$480 to $545",
+      "explanation": "The scenario range spans the minimum to maximum plausible modeled result.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l04-07",
+      "lesson": 4,
+      "difficulty": 3,
+      "category": "assumption-test",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "How conclusions change when the price rule changes after 100 units",
+      "explanation": "Sensitivity should vary assumptions that plausibly affect the result.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l05-01",
+      "lesson": 5,
+      "difficulty": 1,
+      "category": "model-comparison",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "Model A",
+      "explanation": "Lower mean absolute error indicates smaller typical prediction error.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l05-02",
+      "lesson": 5,
+      "difficulty": 2,
+      "category": "defense-domain",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "State that x=200 is far outside the calibrated domain and any prediction is uncertain",
+      "explanation": "Responsible defense distinguishes interpolation from far extrapolation.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l05-03",
+      "lesson": 5,
+      "difficulty": 2,
+      "category": "visual-evidence",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "A residual plot with points above and below zero without a pattern",
+      "explanation": "A residual plot directly displays prediction errors against the model.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l05-04",
+      "lesson": 5,
+      "difficulty": 3,
+      "category": "holdout-validation",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "To evaluate how well it generalizes beyond the fitting data",
+      "explanation": "Holdout data provide a more independent check of predictive performance.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l05-05",
+      "lesson": 5,
+      "difficulty": 2,
+      "category": "qualified-conclusion",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "Within the observed domain, the model predicts cost within about ±$8 under the stated assumptions",
+      "explanation": "A defensible conclusion states scope, uncertainty, and assumptions.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l05-06",
+      "lesson": 5,
+      "difficulty": 3,
+      "category": "verification",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "The prediction error is 3, which should be compared with the model's acceptable-error standard",
+      "explanation": "Verification quantifies error and compares it with a stated standard, without overgeneralizing.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-ab-l05-07",
+      "lesson": 5,
+      "difficulty": 3,
+      "category": "reflection",
+      "source": "late-abundant",
+      "answerIndex": 0,
+      "answer": "Identify what evidence supports, what remains uncertain, and what additional data or revision would improve the model",
+      "explanation": "Strong reflection links evidence, uncertainty, limitations, and next steps.",
+      "capstoneDepth": null
+    },
+    {
+      "id": "u13-depth-l01-01",
+      "lesson": 1,
+      "difficulty": 2,
+      "category": "decision-constraint",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "60 riders",
+      "explanation": "Solve 180+3.50r≤390: 3.50r≤210, so r≤60. The decision question must preserve the budget constraint and the unit riders.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l01-02",
+      "lesson": 1,
+      "difficulty": 2,
+      "category": "units-and-rate",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "0.75 kilowatt-hours per operating hour",
+      "explanation": "In E=0.75h, the coefficient is the output change per input unit: 0.75 kWh for each operating hour.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l01-04",
+      "lesson": 1,
+      "difficulty": 3,
+      "category": "constraint-window",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "7 hours",
+      "explanation": "Solve 240−12t≥156: −12t≥−84, so t≤7. The model therefore allows at most 7 whole hours under the stated safety constraint.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l01-03",
+      "lesson": 1,
+      "difficulty": 3,
+      "category": "ethical-threshold",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "101",
+      "explanation": "12+0.08n>20 gives 0.08n>8, so n>100. The smallest whole-number count is 101; a high-impact threshold should then be reviewed for fairness and evidence quality.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l02-01",
+      "lesson": 2,
+      "difficulty": 2,
+      "category": "model-from-table",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "y=3x+5",
+      "explanation": "Every +2 in x produces +6 in y, so slope=6/2=3. Since y=5 when x=0, the model is y=3x+5.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l02-02",
+      "lesson": 2,
+      "difficulty": 2,
+      "category": "model-family-data",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "A constant multiplicative factor of 1.20",
+      "explanation": "120/100=1.20 and 144/120=1.20, so the data support exponential growth with a constant factor 1.20.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l02-04",
+      "lesson": 2,
+      "difficulty": 3,
+      "category": "quadratic-from-table",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "y=x²+2x+2",
+      "explanation": "The first differences are 3,5,7 and the second differences are constant at 2. Substitution confirms y=x²+2x+2 for all four inputs.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l02-03",
+      "lesson": 2,
+      "difficulty": 3,
+      "category": "competing-models-break-even",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "h=7.5",
+      "explanation": "Set 25+4h=10+6h. Then 15=2h, so h=7.5. This is the break-even input for comparing the two models.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l03-01",
+      "lesson": 3,
+      "difficulty": 2,
+      "category": "build-and-predict",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "62",
+      "explanation": "Slope=(42−18)/(10−4)=24/6=4. Using 18=4(4)+b gives b=2, so y=4x+2 and y(15)=62.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l03-02",
+      "lesson": 3,
+      "difficulty": 3,
+      "category": "exponential-prediction",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "583.2",
+      "explanation": "P=500(1.08)^2=500(1.1664)=583.2.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l03-04",
+      "lesson": 3,
+      "difficulty": 3,
+      "category": "break-even-system",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "50",
+      "explanation": "Break-even occurs when cost equals revenue: 200+5x=9x, so 200=4x and x=50.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l03-03",
+      "lesson": 3,
+      "difficulty": 3,
+      "category": "quadratic-optimization",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "21",
+      "explanation": "The vertex occurs at t=−20/(2·−5)=2. Then h(2)=−5(4)+40+1=21.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l04-01",
+      "lesson": 4,
+      "difficulty": 2,
+      "category": "sensitivity-calculation",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "24",
+      "explanation": "C(20)=260 and C(23)=284, so the output increases by 24. Equivalently, slope 8 times input change 3 gives 24.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l04-02",
+      "lesson": 4,
+      "difficulty": 3,
+      "category": "uncertainty-propagation",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "53 to 57",
+      "explanation": "The input interval is 11.5 to 12.5. Evaluating y=4x+7 gives 53 to 57.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l04-04",
+      "lesson": 4,
+      "difficulty": 3,
+      "category": "assumption-sensitivity",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "3.39",
+      "explanation": "Baseline P=88.20. Revised P=91.592. The increase is 91.592−88.20=3.392, about 3.39.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l04-03",
+      "lesson": 4,
+      "difficulty": 3,
+      "category": "fairness-error-comparison",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "2",
+      "explanation": "Group A MAE=(2+4+6)/3=4. Group B MAE=(1+8+9)/3=6. The difference is 2, which warrants investigation of unequal model performance.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l05-01",
+      "lesson": 5,
+      "difficulty": 3,
+      "category": "validation-model-comparison",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "Model A, MAE 2",
+      "explanation": "Model A absolute errors sum to 8, so MAE=2. Model B absolute errors sum to 16, so MAE=4. Model A performs better by this measure.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l05-02",
+      "lesson": 5,
+      "difficulty": 3,
+      "category": "decision-threshold",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "10",
+      "explanation": "Solve 120−8m≥40: −8m≥−80, so m≤10. The recommendation changes once m exceeds 10.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l05-04",
+      "lesson": 5,
+      "difficulty": 3,
+      "category": "holdout-error-comparison",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "Model A, MAE about 2.33",
+      "explanation": "Model A absolute errors are 2,1,4, giving MAE=7/3≈2.33. Model B errors are 1,4,3, giving MAE=8/3≈2.67.",
+      "capstoneDepth": "quantitative"
+    },
+    {
+      "id": "u13-depth-l05-03",
+      "lesson": 5,
+      "difficulty": 3,
+      "category": "uncertainty-communication",
+      "source": "unit13-capstone-depth",
+      "answerIndex": 0,
+      "answer": "520 ±40 units across the tested scenarios",
+      "explanation": "The tested range is 480 to 560, which is 40 below and 40 above the central value 520.",
+      "capstoneDepth": "quantitative"
     }
   ]
 }
