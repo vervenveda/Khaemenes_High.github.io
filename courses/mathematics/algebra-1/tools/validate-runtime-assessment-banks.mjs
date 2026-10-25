@@ -66,7 +66,7 @@ for(let unit=2;unit<=9;unit++){
   const core=read(`courses/mathematics/algebra-1/units/unit-${u}/assets/unit${u}-core.js`);
   const loader=read(`courses/mathematics/algebra-1/units/unit-${u}/assets/unit${u}.js`);
   const requiredCore=[
-    "function balanceOptions",
+    "const balanceOptions=(chosen)=>",
     'key.startsWith("lesson-")',
     "supplementalCount",
     '_formSource:"aligned-alternate"',
