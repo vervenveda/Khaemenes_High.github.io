@@ -5,7 +5,7 @@
   "title": "Physics 12 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/physics-engineering-12/question-bank.js",
-  "reviewedItemCount": 115,
+  "reviewedItemCount": 136,
   "items": {
     "legacy-1": {
       "itemId": "legacy-1",
@@ -2762,6 +2762,510 @@
           "optionIndex": 3,
           "misconceptionTag": "w35b-d3",
           "rationale": "Changing goals after results prevents an honest test against stated criteria."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w10-concept": {
+      "itemId": "phys-sup-w10-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "The work–kinetic energy theorem states W_net=ΔK.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w10-concept-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w10-concept-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w10-concept-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w10-evidence": {
+      "itemId": "phys-sup-w10-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Force-displacement data and before/after kinetic energy directly test W_net=ΔK.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w10-evidence-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w10-evidence-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w10-evidence-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w11-concept": {
+      "itemId": "phys-sup-w11-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Potential energy is a property of system configuration and can transform into other forms.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w11-concept-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w11-concept-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w11-concept-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w11-evidence": {
+      "itemId": "phys-sup-w11-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Matching changes in potential and kinetic energy support mechanical-energy conservation when losses are negligible.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w11-evidence-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w11-evidence-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w11-evidence-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w12-concept": {
+      "itemId": "phys-sup-w12-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Power is energy transferred per unit time and is measured in watts.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w12-concept-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w12-concept-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w12-concept-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w12-evidence": {
+      "itemId": "phys-sup-w12-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Average power is P=E/t.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w12-evidence-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w12-evidence-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w12-evidence-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w13-concept": {
+      "itemId": "phys-sup-w13-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Efficiency is useful output/input and requires a clearly defined system boundary.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w13-concept-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w13-concept-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w13-concept-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w13-evidence": {
+      "itemId": "phys-sup-w13-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Measured input and useful output directly determine efficiency.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w13-evidence-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w13-evidence-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w13-evidence-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w14-concept": {
+      "itemId": "phys-sup-w14-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Impulse J=Δp and equals ∫Fdt.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w14-concept-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w14-concept-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w14-concept-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w15-concept": {
+      "itemId": "phys-sup-w15-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Momentum conservation depends on negligible net external impulse.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w15-concept-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w15-concept-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w15-concept-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w15-evidence": {
+      "itemId": "phys-sup-w15-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Total momentum requires masses and velocities for the complete system before and after.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w15-evidence-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w15-evidence-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w15-evidence-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w16-concept": {
+      "itemId": "phys-sup-w16-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Elasticity is determined by kinetic-energy conservation in addition to momentum conservation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w16-concept-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w16-concept-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w16-concept-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w16-evidence": {
+      "itemId": "phys-sup-w16-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Approximate conservation of both momentum and kinetic energy supports an elastic model.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w16-evidence-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w16-evidence-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w16-evidence-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w17-concept": {
+      "itemId": "phys-sup-w17-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Center of mass is a mass-weighted position and can lie where no material is present.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w17-concept-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w17-concept-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w17-concept-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w17-evidence": {
+      "itemId": "phys-sup-w17-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Center-of-mass motion reflects the net external force on the system.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w17-evidence-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w17-evidence-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w17-evidence-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w17-model": {
+      "itemId": "phys-sup-w17-model",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Center of mass is mass-weighted and can lie outside material; its motion is governed by external force.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w17-model-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w17-model-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w17-model-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w18-concept": {
+      "itemId": "phys-sup-w18-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Correction work should repair reasoning while preserving assessment integrity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w18-concept-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w18-concept-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w18-concept-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w18-evidence": {
+      "itemId": "phys-sup-w18-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Domain-level error patterns provide stronger remediation guidance than isolated misses.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w18-evidence-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w18-evidence-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w18-evidence-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w18-model": {
+      "itemId": "phys-sup-w18-model",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Public practice supports learning but remains separate from protected official mastery evidence.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w18-model-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w18-model-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w18-model-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w18-quantitative": {
+      "itemId": "phys-sup-w18-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Force errors are 6/20=30%; energy errors are 2/20=10%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w18-quantitative-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w18-quantitative-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w18-quantitative-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "phys-sup-w18-review": {
+      "itemId": "phys-sup-w18-review",
+      "reviewStatus": "reviewed-supplemental-repair-v2",
+      "correctRationale": "Good correction work repairs reasoning while protected assessment content remains separate.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "phys-sup-w18-review-d1",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "phys-sup-w18-review-d2",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "phys-sup-w18-review-d3",
+          "rationale": "This option represents a reviewed misconception or weak-evidence pattern that conflicts with the intended physics model for this item."
         }
       ],
       "reviewedAt": "2026-10-25",
