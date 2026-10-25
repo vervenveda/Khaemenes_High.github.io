@@ -1,19 +1,20 @@
 {
   "schema": "khaemenes.assessment-misconception-map.late-units.v1",
-  "schemaVersion": "1.1",
+  "schemaVersion": "1.2",
   "courseId": "KH-MATH-ALG1",
   "title": "Algebra I · Units 10–13 Provisional Misconception Coverage",
   "coveragePolicy": "Structural coverage and rebuilt-ID overrides for late-unit formal mastery items that do not have an exact prompt/answer/rationale match in assessment-misconceptions-v1.json. All records here are family-provisional-v1 and forensic-only until human distractor review. Only exact matching reviewed shared-map records may remain learner-facing.",
   "sourceBanks": [
     "courses/mathematics/algebra-1/assets/question-bank.js",
     "courses/mathematics/algebra-1/assets/unit-11-content-upgrade.js",
-    "courses/mathematics/algebra-1/assets/late-unit-abundant-bank-v1.js"
+    "courses/mathematics/algebra-1/assets/late-unit-abundant-bank-v1.js",
+    "courses/mathematics/algebra-1/assets/unit13-capstone-depth-bank-v1.js"
   ],
-  "lateFormalPoolItemCount": 300,
+  "lateFormalPoolItemCount": 320,
   "reviewedCoverageFromSharedMap": 33,
-  "provisionalItemCount": 267,
+  "provisionalItemCount": 287,
   "rebuiltIdOverrideCount": 19,
-  "provisionalDistractorRationaleCount": 801,
+  "provisionalDistractorRationaleCount": 861,
   "items": [
     {
       "itemId": "q0307",
@@ -7757,6 +7758,586 @@
       ],
       "mappedAt": "2026-10-25",
       "reviewMethod": "automated late-unit structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l01-01",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A community shuttle model is C=180+3.50r dollars for r riders. If the trip budget is at most $390, what rider count is the largest allowed by the model?",
+      "answerIndex": 0,
+      "correctRationale": "Solve 180+3.50r≤390: 3.50r≤210, so r≤60. The decision question must preserve the budget constraint and the unit riders.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "54 riders",
+          "misconceptionTag": "constraint-model-solve-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “54 riders” does not satisfy the decision constraint reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “60 riders”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "66 riders",
+          "misconceptionTag": "constraint-model-solve-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “66 riders” does not satisfy the decision constraint reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “60 riders”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "110 riders",
+          "misconceptionTag": "constraint-model-solve-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “110 riders” does not satisfy the decision constraint reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “60 riders”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l01-02",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "An energy model is E=0.75h, where E is kilowatt-hours and h is operating hours. What does the coefficient 0.75 represent?",
+      "answerIndex": 0,
+      "correctRationale": "In E=0.75h, the coefficient is the output change per input unit: 0.75 kWh for each operating hour.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "0.75 operating hours per kilowatt-hour",
+          "misconceptionTag": "rate-unit-interpretation-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “0.75 operating hours per kilowatt-hour” does not satisfy the units and rate reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “0.75 kilowatt-hours per operating hour”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.75 kilowatt-hours total regardless of time",
+          "misconceptionTag": "rate-unit-interpretation-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “0.75 kilowatt-hours total regardless of time” does not satisfy the units and rate reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “0.75 kilowatt-hours per operating hour”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.75 dollars per hour",
+          "misconceptionTag": "rate-unit-interpretation-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “0.75 dollars per hour” does not satisfy the units and rate reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “0.75 kilowatt-hours per operating hour”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l01-04",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A water-supply model is V=240−12t liters after t hours. The plan requires at least 156 liters remaining. What is the latest whole hour allowed by the model?",
+      "answerIndex": 0,
+      "correctRationale": "Solve 240−12t≥156: −12t≥−84, so t≤7. The model therefore allows at most 7 whole hours under the stated safety constraint.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 hours",
+          "misconceptionTag": "constraint-window-inequality-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “6 hours” does not satisfy the constraint window reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “7 hours”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "8 hours",
+          "misconceptionTag": "constraint-window-inequality-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “8 hours” does not satisfy the constraint window reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “7 hours”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "13 hours",
+          "misconceptionTag": "constraint-window-inequality-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “13 hours” does not satisfy the constraint window reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “7 hours”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l01-03",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A screening model flags a case when S=12+0.08n exceeds 20, where n is a count of observed events. At what smallest whole-number n does the model begin flagging?",
+      "answerIndex": 0,
+      "correctRationale": "12+0.08n>20 gives 0.08n>8, so n>100. The smallest whole-number count is 101; a high-impact threshold should then be reviewed for fairness and evidence quality.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "100",
+          "misconceptionTag": "threshold-inequality-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “100” does not satisfy the ethical threshold reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “101”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "99",
+          "misconceptionTag": "threshold-inequality-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “99” does not satisfy the ethical threshold reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “101”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "160",
+          "misconceptionTag": "threshold-inequality-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “160” does not satisfy the ethical threshold reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “101”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l02-01",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A data table contains (x,y)=(0,5),(2,11),(4,17),(6,23). Which equation matches the constant rate in the table?",
+      "answerIndex": 0,
+      "correctRationale": "Every +2 in x produces +6 in y, so slope=6/2=3. Since y=5 when x=0, the model is y=3x+5.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "y=6x+5",
+          "misconceptionTag": "table-to-linear-model-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “y=6x+5” does not satisfy the model from table reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “y=3x+5”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "y=3x+2",
+          "misconceptionTag": "table-to-linear-model-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “y=3x+2” does not satisfy the model from table reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “y=3x+5”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "y=5x+3",
+          "misconceptionTag": "table-to-linear-model-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “y=5x+3” does not satisfy the model from table reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “y=3x+5”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l02-02",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A quantity takes values 100, 120, 144 at equally spaced times. Which model feature is supported by these data?",
+      "answerIndex": 0,
+      "correctRationale": "120/100=1.20 and 144/120=1.20, so the data support exponential growth with a constant factor 1.20.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "A constant additive change of 20",
+          "misconceptionTag": "difference-vs-ratio-model-choice-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “A constant additive change of 20” does not satisfy the model family data reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “A constant multiplicative factor of 1.20”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "A constant second difference of 24",
+          "misconceptionTag": "difference-vs-ratio-model-choice-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “A constant second difference of 24” does not satisfy the model family data reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “A constant multiplicative factor of 1.20”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A constant value of 120",
+          "misconceptionTag": "difference-vs-ratio-model-choice-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “A constant value of 120” does not satisfy the model family data reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “A constant multiplicative factor of 1.20”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l02-04",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A table has x=0,1,2,3 and y=2,5,10,17. Which equation matches all four values?",
+      "answerIndex": 0,
+      "correctRationale": "The first differences are 3,5,7 and the second differences are constant at 2. Substitution confirms y=x²+2x+2 for all four inputs.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "y=3x+2",
+          "misconceptionTag": "table-to-quadratic-model-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “y=3x+2” does not satisfy the quadratic from table reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “y=x²+2x+2”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "y=2x²+3",
+          "misconceptionTag": "table-to-quadratic-model-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “y=2x²+3” does not satisfy the quadratic from table reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “y=x²+2x+2”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "y=2(2^x)",
+          "misconceptionTag": "table-to-quadratic-model-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “y=2(2^x)” does not satisfy the quadratic from table reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “y=x²+2x+2”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l02-03",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Two cost models are A=25+4h and B=10+6h. At what h do the models predict the same cost?",
+      "answerIndex": 0,
+      "correctRationale": "Set 25+4h=10+6h. Then 15=2h, so h=7.5. This is the break-even input for comparing the two models.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "h=5",
+          "misconceptionTag": "model-break-even-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “h=5” does not satisfy the competing models break even reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “h=7.5”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "h=15",
+          "misconceptionTag": "model-break-even-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “h=15” does not satisfy the competing models break even reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “h=7.5”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "h=17.5",
+          "misconceptionTag": "model-break-even-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “h=17.5” does not satisfy the competing models break even reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “h=7.5”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l03-01",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A linear model passes through (4,18) and (10,42). Using that model, what value is predicted at x=15?",
+      "answerIndex": 0,
+      "correctRationale": "Slope=(42−18)/(10−4)=24/6=4. Using 18=4(4)+b gives b=2, so y=4x+2 and y(15)=62.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "60",
+          "misconceptionTag": "two-point-model-prediction-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “60” does not satisfy the build and predict reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “62”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "58",
+          "misconceptionTag": "two-point-model-prediction-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “58” does not satisfy the build and predict reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “62”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "72",
+          "misconceptionTag": "two-point-model-prediction-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “72” does not satisfy the build and predict reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “62”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l03-02",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A population model is P=500(1.08)^t. What does it predict after 2 time periods?",
+      "answerIndex": 0,
+      "correctRationale": "P=500(1.08)^2=500(1.1664)=583.2.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "540",
+          "misconceptionTag": "exponential-multistep-evaluation-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “540” does not satisfy the exponential prediction reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “583.2”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "580",
+          "misconceptionTag": "exponential-multistep-evaluation-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “580” does not satisfy the exponential prediction reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “583.2”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "630",
+          "misconceptionTag": "exponential-multistep-evaluation-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “630” does not satisfy the exponential prediction reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “583.2”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l03-04",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A project has cost C=200+5x and revenue R=9x. At what x do the models break even?",
+      "answerIndex": 0,
+      "correctRationale": "Break-even occurs when cost equals revenue: 200+5x=9x, so 200=4x and x=50.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "25",
+          "misconceptionTag": "linear-system-break-even-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “25” does not satisfy the break even system reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “50”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "40",
+          "misconceptionTag": "linear-system-break-even-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “40” does not satisfy the break even system reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “50”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "100",
+          "misconceptionTag": "linear-system-break-even-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “100” does not satisfy the break even system reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “50”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l03-03",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A height model is h(t)=−5t²+20t+1. What maximum height does the model predict?",
+      "answerIndex": 0,
+      "correctRationale": "The vertex occurs at t=−20/(2·−5)=2. Then h(2)=−5(4)+40+1=21.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "20",
+          "misconceptionTag": "quadratic-vertex-output-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “20” does not satisfy the quadratic optimization reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “21”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "16",
+          "misconceptionTag": "quadratic-vertex-output-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “16” does not satisfy the quadratic optimization reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “21”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "41",
+          "misconceptionTag": "quadratic-vertex-output-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “41” does not satisfy the quadratic optimization reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “21”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l04-01",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "For C=100+8x, the baseline input is x=20. If x rises to 23, how much does the model output increase?",
+      "answerIndex": 0,
+      "correctRationale": "C(20)=260 and C(23)=284, so the output increases by 24. Equivalently, slope 8 times input change 3 gives 24.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "3",
+          "misconceptionTag": "sensitivity-output-change-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “3” does not satisfy the sensitivity calculation reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “24”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "8",
+          "misconceptionTag": "sensitivity-output-change-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “8” does not satisfy the sensitivity calculation reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “24”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "184",
+          "misconceptionTag": "sensitivity-output-change-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “184” does not satisfy the sensitivity calculation reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “24”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l04-02",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A measured input is x=12±0.5 and the model is y=4x+7. Using the endpoint method, what output interval results?",
+      "answerIndex": 0,
+      "correctRationale": "The input interval is 11.5 to 12.5. Evaluating y=4x+7 gives 53 to 57.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "54.5 to 55.5",
+          "misconceptionTag": "linear-uncertainty-propagation-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “54.5 to 55.5” does not satisfy the uncertainty propagation reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “53 to 57”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "48 to 52",
+          "misconceptionTag": "linear-uncertainty-propagation-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “48 to 52” does not satisfy the uncertainty propagation reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “53 to 57”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "55 to 59",
+          "misconceptionTag": "linear-uncertainty-propagation-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “55 to 59” does not satisfy the uncertainty propagation reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “53 to 57”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l04-04",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A baseline model is P=80(1.05)^2. A revised assumption uses 7% growth, P=80(1.07)^2. About how much larger is the revised prediction?",
+      "answerIndex": 0,
+      "correctRationale": "Baseline P=88.20. Revised P=91.592. The increase is 91.592−88.20=3.392, about 3.39.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1.60",
+          "misconceptionTag": "growth-assumption-sensitivity-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “1.60” does not satisfy the assumption sensitivity reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “3.39”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "8.00",
+          "misconceptionTag": "growth-assumption-sensitivity-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “8.00” does not satisfy the assumption sensitivity reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “3.39”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "11.44",
+          "misconceptionTag": "growth-assumption-sensitivity-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “11.44” does not satisfy the assumption sensitivity reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “3.39”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l04-03",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Absolute prediction errors for Group A are 2,4,6 and for Group B are 1,8,9. What is the difference between the groups' mean absolute errors?",
+      "answerIndex": 0,
+      "correctRationale": "Group A MAE=(2+4+6)/3=4. Group B MAE=(1+8+9)/3=6. The difference is 2, which warrants investigation of unequal model performance.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4",
+          "misconceptionTag": "group-mae-comparison-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “4” does not satisfy the fairness error comparison reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “2”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6",
+          "misconceptionTag": "group-mae-comparison-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “6” does not satisfy the fairness error comparison reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “2”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "8",
+          "misconceptionTag": "group-mae-comparison-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “8” does not satisfy the fairness error comparison reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “2”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l05-01",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "On the same holdout cases, Model A residuals are −2,1,3,−2 and Model B residuals are −1,5,−4,6. Which model has the lower mean absolute error, and what is it?",
+      "answerIndex": 0,
+      "correctRationale": "Model A absolute errors sum to 8, so MAE=2. Model B absolute errors sum to 16, so MAE=4. Model A performs better by this measure.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Model B, MAE 2",
+          "misconceptionTag": "holdout-mae-comparison-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “Model B, MAE 2” does not satisfy the validation model comparison reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “Model A, MAE 2”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Model A, MAE 4",
+          "misconceptionTag": "holdout-mae-comparison-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “Model A, MAE 4” does not satisfy the validation model comparison reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “Model A, MAE 2”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Model B, MAE 4",
+          "misconceptionTag": "holdout-mae-comparison-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “Model B, MAE 4” does not satisfy the validation model comparison reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “Model A, MAE 2”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l05-02",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "A recommendation is issued only when predicted savings S=120−8m are at least $40. What is the largest m that still meets the recommendation rule?",
+      "answerIndex": 0,
+      "correctRationale": "Solve 120−8m≥40: −8m≥−80, so m≤10. The recommendation changes once m exceeds 10.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "9",
+          "misconceptionTag": "decision-threshold-inequality-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “9” does not satisfy the decision threshold reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “10”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "11",
+          "misconceptionTag": "decision-threshold-inequality-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “11” does not satisfy the decision threshold reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “10”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "20",
+          "misconceptionTag": "decision-threshold-inequality-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “20” does not satisfy the decision threshold reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “10”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l05-04",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Actual holdout values are 22,29,44. Model A predicts 20,30,40; Model B predicts 23,33,41. Which model has the lower mean absolute error?",
+      "answerIndex": 0,
+      "correctRationale": "Model A absolute errors are 2,1,4, giving MAE=7/3≈2.33. Model B errors are 1,4,3, giving MAE=8/3≈2.67.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Model B, MAE about 2.33",
+          "misconceptionTag": "holdout-error-comparison-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “Model B, MAE about 2.33” does not satisfy the holdout error comparison reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “Model A, MAE about 2.33”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Model A, MAE about 2.67",
+          "misconceptionTag": "holdout-error-comparison-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “Model A, MAE about 2.67” does not satisfy the holdout error comparison reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “Model A, MAE about 2.33”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Model B, MAE about 2.67",
+          "misconceptionTag": "holdout-error-comparison-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “Model B, MAE about 2.67” does not satisfy the holdout error comparison reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “Model A, MAE about 2.33”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
+    },
+    {
+      "itemId": "u13-depth-l05-03",
+      "reviewStatus": "family-provisional-v1",
+      "prompt": "Three defensible scenarios predict 480, 520, and 560 units. If 520 is used as the central scenario, which concise uncertainty statement matches the scenario spread?",
+      "answerIndex": 0,
+      "correctRationale": "The tested range is 480 to 560, which is 40 below and 40 above the central value 520.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "520 ±80 units across the tested scenarios",
+          "misconceptionTag": "scenario-uncertainty-communication-provisional-distractor-1",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “520 ±80 units across the tested scenarios” does not satisfy the uncertainty communication reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “520 ±40 units across the tested scenarios”."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "480 ±40 units across the tested scenarios",
+          "misconceptionTag": "scenario-uncertainty-communication-provisional-distractor-2",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “480 ±40 units across the tested scenarios” does not satisfy the uncertainty communication reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “520 ±40 units across the tested scenarios”."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "560 ±40 units across the tested scenarios",
+          "misconceptionTag": "scenario-uncertainty-communication-provisional-distractor-3",
+          "rationale": "Provisional Unit 13 capstone mapping: choosing “560 ±40 units across the tested scenarios” does not satisfy the uncertainty communication reasoning required by this item. Rework the quantitative relationship, preserve units and constraints, and verify against the correct result “520 ±40 units across the tested scenarios”."
+        }
+      ],
+      "mappedAt": "2026-10-25",
+      "reviewMethod": "automated Unit 13 capstone-depth structural coverage; requires human distractor review before learner-facing use"
     }
   ]
 }
