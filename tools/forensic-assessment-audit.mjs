@@ -308,7 +308,9 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     explanationCoveragePct:pct(t.itemsWithExplanations,t.auditedObjectiveItems),
     fourOptionCoveragePct:pct(t.fourOptionItems,t.auditedObjectiveItems),
     validAnswerCoveragePct:pct(t.validAnswerItems,t.auditedObjectiveItems),
-    perDistractorRationaleCoveragePct:pct(t.itemsWithReviewedMisconceptionMap,t.auditedObjectiveItems),\n    reviewedMisconceptionItems:t.itemsWithReviewedMisconceptionMap,\n    structuredDistractorRationales:t.structuredDistractorRationales
+    perDistractorRationaleCoveragePct:pct(t.itemsWithReviewedMisconceptionMap,t.auditedObjectiveItems),
+    reviewedMisconceptionItems:t.itemsWithReviewedMisconceptionMap,
+    structuredDistractorRationales:t.structuredDistractorRationales
   },checks);
 }
 
