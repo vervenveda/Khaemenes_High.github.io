@@ -12,7 +12,8 @@ function grade(){
  if(m)return Number(m[1]);
  return location.pathname.toLowerCase().includes("/integrated-science-9/")?9:0;
 }
-function week(){const m=(document.querySelector(".eyebrow")?.textContent||"").match(/Week\s+(\d{1,2})/i);return m?Number(m[1]):0}\nfunction unit(){const m=location.pathname.match(/unit-(\\d{1,2})/i);return m?Number(m[1]):0}
+function week(){const m=(document.querySelector(".eyebrow")?.textContent||"").match(/Week\s+(\d{1,2})/i);return m?Number(m[1]):0}
+function unit(){const m=location.pathname.match(/unit-(\d{1,2})/i);return m?Number(m[1]):0}
 function day(){
  const direct=Number(document.body?.dataset?.day);if(direct)return direct;
  const m=(document.querySelector(".eyebrow")?.textContent||document.title||"").match(/Day\s*(\d{1,2})/i);
@@ -33,7 +34,17 @@ function buildDraft(){
  const cid=draft.course;
  if(cid==="integrated-science-9"){
   draft.question=objective||title;
-  if(d===5){
+  const u=unit();
+  if(u!==1){
+   draft.title=title+" · Scientific Investigation";
+   draft.variables="Identify the independent/dependent variables, controls, comparison conditions, or design criteria that matter in this investigation.";
+   draft.method="Describe the procedure, model, field method, or design process actually used. Include safety boundaries and any changes from the plan.";
+   draft.evidence="Enter observations, measurements, dataset values, or a concise reference to the saved table/model. Include units where applicable.";
+   draft.analysis="Describe the graph, pattern, calculation, model comparison, or evidence relationship you used.";
+   draft.claim="State what the evidence supports without extending the conclusion beyond the investigation.";
+   draft.limitations="Identify uncertainty, anomalies, confounders, model limits, or safety/measurement constraints.";
+   draft.next="State one revision, additional measurement, or next test that would strengthen the evidence.";
+  }else if(d===5){
    draft.title="Paper Helicopter Investigation · Plan";
    draft.prediction="State your directional prediction and scientific reasoning before testing.";
    draft.variables="Independent variable, dependent variable, controls, variable levels, trial count, measurement rule, and safety boundary.";
