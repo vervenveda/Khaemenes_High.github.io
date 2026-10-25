@@ -42,10 +42,10 @@ function selectCapstoneLesson(pool,previousSet,seed,lessonNumber){
   pick(q=>q.capstoneDepth==="quantitative","depth-fallback");
  }
  for(const target of [1,2]){
-  if(pick(q=>!previousSet.has(q.id)&&difficultyOf(q)===target,`support-unseen-d${target}`))continue;
-  if(pick(q=>!previousSet.has(q.id),"support-unseen-any"))continue;
-  if(pick(q=>difficultyOf(q)===target,`support-seen-d${target}`))continue;
-  pick(()=>true,"support-fallback");
+  if(pick(q=>q.capstoneDepth!=="quantitative"&&!previousSet.has(q.id)&&difficultyOf(q)===target,`support-unseen-d${target}`))continue;
+  if(pick(q=>q.capstoneDepth!=="quantitative"&&!previousSet.has(q.id),"support-unseen-any"))continue;
+  if(pick(q=>q.capstoneDepth!=="quantitative"&&difficultyOf(q)===target,`support-seen-d${target}`))continue;
+  pick(q=>q.capstoneDepth!=="quantitative","support-fallback");
  }
  return selected;
 }
