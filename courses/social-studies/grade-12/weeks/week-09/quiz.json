@@ -2,116 +2,157 @@
   "title": "Week 9 Mastery Quiz · Parties and Electoral Systems",
   "questions": [
     {
-      "question": "Which definition best matches “electoral system”?",
+      "id": "ss12-w09-transfer-v2-01",
+      "question": "In a fictional election, List A wins 39% of votes and 60% of seats under plurality rules. What is the justified inference?",
       "options": [
-        "Suppression, restriction, or manipulation of access to information.",
-        "Rules converting votes into offices or seats.",
-        "A structured plan explaining a research problem, question, method, evidence, schedule, and significance.",
-        "Exchange of targeted benefits for political support."
+        "The seat share exceeds the vote share; district results and rules must be examined before explaining why",
+        "A gap between national votes and seats necessarily establishes deliberate falsification.",
+        "The 39% vote share means List A won 39% of electoral districts.",
+        "Plurality rules necessarily allocate seats in exact proportion to national vote totals."
+      ],
+      "answer": 0,
+      "explanation": "The seat share exceeds the vote share; district results and rules must be examined before explaining why",
+      "skill": "source-interpretation",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w09-transfer-v2-02",
+      "question": "A proportional assembly has 100 seats and a 5% legal threshold. Party C wins 4% of the vote. What should an analyst investigate?",
+      "options": [
+        "Only the party logo",
+        "Whether votes below the threshold affect seat allocation under the specified electoral formula",
+        "Whether the party won a presidential election",
+        "The average candidate age"
       ],
       "answer": 1,
-      "explanation": "Electoral system means rules converting votes into offices or seats."
+      "explanation": "Whether votes below the threshold affect seat allocation under the specified electoral formula",
+      "skill": "sampling-and-measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “plurality”?",
+      "id": "ss12-w09-transfer-v2-03",
+      "question": "Two fictional districts each elect one member, but one contains twice as many eligible voters. Which question is most directly raised?",
       "options": [
-        "A rule in which the candidate with the most votes wins, even without a majority.",
-        "An election whose competition or information environment is substantially controlled.",
-        "A classification system based on multiple dimensions.",
-        "A situation in which one actor’s defensive measures make others feel less secure."
+        "Whether candidates wear matching colors",
+        "Whether polling opens early",
+        "Whether representation is equally apportioned per eligible voter",
+        "Whether the constitution has a flag"
       ],
-      "answer": 0,
-      "explanation": "Plurality means a rule in which the candidate with the most votes wins, even without a majority."
+      "answer": 2,
+      "explanation": "Whether representation is equally apportioned per eligible voter",
+      "skill": "quantitative-transfer",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “proportional representation”?",
+      "id": "ss12-w09-transfer-v2-04",
+      "question": "Simulated returns: Party X wins 46 seats, Y wins 34, Z wins 20 in a 100-seat chamber. Which coalition can reach a majority?",
       "options": [
-        "Allocation of seats in approximate proportion to party vote shares.",
-        "Comparison of similar cases with different outcomes.",
-        "Procedures used to determine whether commitments are being honored.",
-        "The individual, domestic, state, international, or systemic level used to explain an outcome."
-      ],
-      "answer": 0,
-      "explanation": "Proportional representation means allocation of seats in approximate proportion to party vote shares."
-    },
-    {
-      "question": "Which definition best matches “district magnitude”?",
-      "options": [
-        "An approach emphasizing cooperation, institutions, interdependence, and domestic constraints.",
-        "Legal consequences arising when a state breaches an international obligation.",
-        "A resource or condition that improves bargaining influence.",
-        "The number of representatives elected from a district."
+        "X alone",
+        "Y and Z cannot",
+        "Z alone",
+        "X and Z together, assuming simple majority requires 51 seats"
       ],
       "answer": 3,
-      "explanation": "District magnitude means the number of representatives elected from a district."
+      "explanation": "X and Z together, assuming simple majority requires 51 seats",
+      "skill": "institutional-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “party system”?",
+      "id": "ss12-w09-transfer-v2-05",
+      "question": "A party claims a mixed-member system is fully proportional based only on its name. Which evidence is essential?",
       "options": [
-        "The pattern of parties that compete and influence government.",
-        "Management of relations through communication, representation, negotiation, and agreement.",
-        "A person forced from home who has not crossed an international border.",
-        "A general and consistent state practice accepted as legally required."
+        "Seat allocation formula, compensatory rules, thresholds, and actual votes-to-seats results",
+        "Party headquarters locations",
+        "Only number of campaign events",
+        "The oldest candidate's age"
       ],
       "answer": 0,
-      "explanation": "Party system means the pattern of parties that compete and influence government."
+      "explanation": "Seat allocation formula, compensatory rules, thresholds, and actual votes-to-seats results",
+      "skill": "rights-in-practice",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “threshold”?",
+      "id": "ss12-w09-transfer-v2-06",
+      "question": "A constituency map changes after a census. What evidence best tests whether changes unfairly advantage a party?",
       "options": [
-        "A minimum share of votes required to qualify for representation.",
-        "Investment providing lasting control or influence in an enterprise abroad.",
-        "Rules and coordination addressing transnational issues without a world government.",
-        "A person outside their country with a well-founded fear of persecution on protected grounds."
-      ],
-      "answer": 0,
-      "explanation": "Threshold means a minimum share of votes required to qualify for representation."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 9 analysis?",
-      "options": [
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Electoral rules create incentives but do not mechanically determine outcomes.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "The most confident source should be accepted without examining authority or method."
+        "Political slogans",
+        "Population equivalence, boundary criteria, historical returns, and counterfactual plans",
+        "The number of map colors",
+        "Whether the map is printable"
       ],
       "answer": 1,
-      "explanation": "Electoral rules create incentives but do not mechanically determine outcomes."
+      "explanation": "Population equivalence, boundary criteria, historical returns, and counterfactual plans",
+      "skill": "methods",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which statement is most consistent with the Week 9 analysis?",
+      "id": "ss12-w09-transfer-v2-07",
+      "question": "Two countries use the same electoral formula but very different district magnitudes. What comparison is warranted?",
       "options": [
-        "Political labels have exactly the same meaning in every country and period.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Representation, governability, accountability, and inclusion can conflict."
+        "Their outcomes must be equal",
+        "District magnitude never matters",
+        "Measure how district size changes the effective thresholds and representation",
+        "Compare only turnout"
+      ],
+      "answer": 2,
+      "explanation": "Measure how district size changes the effective thresholds and representation",
+      "skill": "framing-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w09-transfer-v2-08",
+      "question": "A fictional party receives 12% nationally but zero seats in a district system. Which statement is defensible?",
+      "options": [
+        "National vote share guarantees seats",
+        "The party has no supporters",
+        "Its votes were necessarily fabricated",
+        "Geographic vote distribution and district rules can produce this outcome"
       ],
       "answer": 3,
-      "explanation": "Representation, governability, accountability, and inclusion can conflict."
+      "explanation": "Geographic vote distribution and district rules can produce this outcome",
+      "skill": "causal-limits",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which research practice is most appropriate for Parties and Electoral Systems?",
+      "id": "ss12-w09-transfer-v2-09",
+      "question": "A proposal would replace a first-past-the-post system with ranked voting. Which evaluation goes beyond slogans?",
       "options": [
-        "Trace claims to Election laws and results from the UK, Mexico, Nigeria, India, Germany, and South Africa, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Replace documentary evidence with political identity or intuition.",
-        "Choose only evidence that supports the preferred conclusion.",
-        "Use the first search result and treat its summary as conclusive."
+        "Model ballots and transfer rules using transparent illustrative returns, then discuss limits",
+        "Treat both systems as identical",
+        "Assume reform alone guarantees greater trust",
+        "Compare country flags"
       ],
       "answer": 0,
-      "explanation": "Trace claims to Election laws and results from the UK, Mexico, Nigeria, India, Germany, and South Africa, evaluate authority and context, corroborate material facts, and state limitations."
+      "explanation": "Model ballots and transfer rules using transparent illustrative returns, then discuss limits",
+      "skill": "verification",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
+      "id": "ss12-w09-transfer-v2-10",
+      "question": "A coalition agreement promises legislative oversight but omits enforcement. What should a senior examine?",
       "options": [
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "List facts without connecting them to a claim."
+        "The agreement's typography",
+        "Committees' legal powers, information access, compliance, and observed oversight",
+        "Only coalition party names",
+        "The length of negotiations"
       ],
       "answer": 1,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "Committees' legal powers, information access, compliance, and observed oversight",
+      "skill": "synthesis",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     }
   ],
   "shortResponse": "How do electoral rules shape parties, representation, coalition building, and accountability?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
