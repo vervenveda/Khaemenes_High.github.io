@@ -102,8 +102,15 @@ function auditUpperCourse(slug,label){
       try{
         const map=JSON.parse(read(misconceptionFile));
         need(map?.schema==="khaemenes.assessment-misconception-map.v1",label+" misconception map schema");
-        need(Number(map?.reviewedItemCount)>=18,label+" reviewed anchor misconception count >= 18 ("+String(map?.reviewedItemCount)+")");
+        need(Number(map?.reviewedItemCount)>=30,label+" reviewed anchor misconception count >= 30 ("+String(map?.reviewedItemCount)+")");
         need(Object.keys(map?.items||{}).length===Number(map?.reviewedItemCount),label+" misconception map item count matches reviewed count");
+        const bank=parseAssignedArray(path.join(root,"question-bank.js")),byId=new Map(bank.map(q=>[String(q.id),q]));
+        let valid=true;
+        for(const item of Object.values(map?.items||{})){
+          const q=byId.get(String(item?.itemId||""));if(!q){valid=false;break}
+          if(!Array.isArray(item?.distractors)||item.distractors.some(d=>!Number.isInteger(d?.optionIndex)||d.optionIndex<0||d.optionIndex>=q.options.length||d.optionIndex===q.answer||!String(d?.misconceptionTag||"").trim()||!String(d?.rationale||"").trim())){valid=false;break}
+        }
+        need(valid,label+" misconception distractor option indexes remain valid");
       }catch(e){failures.push(label+" misconception map parse: "+e.message)}
     }
   }
