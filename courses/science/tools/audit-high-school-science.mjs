@@ -102,7 +102,7 @@ function auditUpperCourse(slug,label){
       try{
         const map=JSON.parse(read(misconceptionFile));
         need(map?.schema==="khaemenes.assessment-misconception-map.v1",label+" misconception map schema");
-        const misconceptionFloor=slug==="biology-10"?143:94;\n        need(Number(map?.reviewedItemCount)>=misconceptionFloor,label+" reviewed misconception count >= "+misconceptionFloor+" ("+String(map?.reviewedItemCount)+")");
+        const misconceptionFloor=slug==="biology-10"?180:94;\n        need(Number(map?.reviewedItemCount)>=misconceptionFloor,label+" reviewed misconception count >= "+misconceptionFloor+" ("+String(map?.reviewedItemCount)+")");
         need(Object.keys(map?.items||{}).length===Number(map?.reviewedItemCount),label+" misconception map item count matches reviewed count");
         const bank=parseAssignedArray(path.join(root,"question-bank.js")),byId=new Map(bank.map(q=>[String(q.id),q]));
         let valid=true;
