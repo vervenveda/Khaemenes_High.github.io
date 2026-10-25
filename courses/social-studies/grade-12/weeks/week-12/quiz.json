@@ -2,116 +2,157 @@
   "title": "Week 12 Mastery Quiz · Media, Propaganda, and Political Communication",
   "questions": [
     {
-      "question": "Which definition best matches “propaganda”?",
+      "id": "ss12-w12-transfer-v2-01",
+      "question": "An online clip circulates without an original date or full recording. What is the strongest first verification step?",
       "options": [
-        "Strategic communication designed to shape belief or behavior, often selectively or deceptively.",
-        "The reasoned choice of cases appropriate to a research question.",
-        "Assistance by a third party seeking to facilitate agreement.",
-        "An approach emphasizing norms, identities, ideas, and socially constructed interests."
-      ],
-      "answer": 0,
-      "explanation": "Propaganda means strategic communication designed to shape belief or behavior, often selectively or deceptively."
-    },
-    {
-      "question": "Which definition best matches “disinformation”?",
-      "options": [
-        "The least favorable deal an actor will accept before walking away.",
-        "Legal authority to hear a matter, regulate conduct, or enforce law.",
-        "False or manipulated information spread deliberately.",
-        "An approach emphasizing power, security, states, and competition under anarchy."
-      ],
-      "answer": 2,
-      "explanation": "Disinformation means false or manipulated information spread deliberately."
-    },
-    {
-      "question": "Which definition best matches “misinformation”?",
-      "options": [
-        "False or inaccurate information shared without necessarily intending deception.",
-        "Protection granted by a state to a qualifying person seeking refuge.",
-        "An outcome not sought or anticipated by a decision maker.",
-        "A written international agreement governed by international law."
-      ],
-      "answer": 0,
-      "explanation": "Misinformation means false or inaccurate information shared without necessarily intending deception."
-    },
-    {
-      "question": "Which definition best matches “agenda setting”?",
-      "options": [
-        "Failure to investigate or impose accountability for serious violations.",
-        "Influence over which issues receive public attention.",
-        "Cross-border organization of production stages for a good or service.",
-        "The principle that decisions should be made at the lowest effective level."
+        "An edited short clip provides reliable chronology when uploaded by a verified account.",
+        "Identify the earliest available source, date, location, and full context before drawing conclusions",
+        "Platform verification of an uploader establishes the accuracy of every caption.",
+        "High distribution across independent accounts proves the clip's date and context."
       ],
       "answer": 1,
-      "explanation": "Agenda setting means influence over which issues receive public attention."
+      "explanation": "Identify the earliest available source, date, location, and full context before drawing conclusions",
+      "skill": "source-interpretation",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “framing”?",
+      "id": "ss12-w12-transfer-v2-02",
+      "question": "Two outlets report the same legislative vote but use different headlines. Which evidence helps separate framing from fact?",
       "options": [
-        "Selection and presentation that shape how an issue is interpreted.",
-        "A duty requiring authorities to take protective or enabling action.",
-        "A relationship in which economic structures constrain autonomous development.",
-        "Severe climate impacts that cannot be fully avoided through mitigation or adaptation."
-      ],
-      "answer": 0,
-      "explanation": "Framing means selection and presentation that shape how an issue is interpreted."
-    },
-    {
-      "question": "Which definition best matches “verification”?",
-      "options": [
-        "Testing a claim through source tracing, corroboration, context, and evidence.",
-        "Deprivation measured against a fixed minimum standard.",
-        "A difficult-to-exclude resource vulnerable to overuse.",
-        "Identification of actors responsible for a digital operation."
-      ],
-      "answer": 0,
-      "explanation": "Verification means testing a claim through source tracing, corroboration, context, and evidence."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 12 analysis?",
-      "options": [
-        "The most confident source should be accepted without examining authority or method.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "Freedom of expression and reliable information are related but not identical."
-      ],
-      "answer": 3,
-      "explanation": "Freedom of expression and reliable information are related but not identical."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 12 analysis?",
-      "options": [
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Propaganda often mixes truth, omission, emotion, identity, and repetition."
-      ],
-      "answer": 3,
-      "explanation": "Propaganda often mixes truth, omission, emotion, identity, and repetition."
-    },
-    {
-      "question": "Which research practice is most appropriate for Media, Propaganda, and Political Communication?",
-      "options": [
-        "Replace documentary evidence with political identity or intuition.",
-        "Trace claims to The Verifier, press-freedom reports, platform transparency records, and selected propaganda artifacts, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Choose only evidence that supports the preferred conclusion.",
-        "Use the first search result and treat its summary as conclusive."
-      ],
-      "answer": 1,
-      "explanation": "Trace claims to The Verifier, press-freedom reports, platform transparency records, and selected propaganda artifacts, evaluate authority and context, corroborate material facts, and state limitations."
-    },
-    {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
-      "options": [
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "List facts without connecting them to a claim.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "Treat legal, causal, and moral claims as interchangeable."
+        "Headline length",
+        "Publisher logos",
+        "The official roll-call record alongside the articles' framing choices",
+        "Follower counts alone"
       ],
       "answer": 2,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "The official roll-call record alongside the articles' framing choices",
+      "skill": "sampling-and-measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w12-transfer-v2-03",
+      "question": "A fictional social-media dataset shows 80% of posts favor a policy, but accounts were selected through a single hashtag. What is the limitation?",
+      "options": [
+        "The dataset is not a representative measure of public opinion",
+        "Every post is human",
+        "All residents used the hashtag",
+        "Posts are official votes"
+      ],
+      "answer": 0,
+      "explanation": "The dataset is not a representative measure of public opinion",
+      "skill": "quantitative-transfer",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w12-transfer-v2-04",
+      "question": "A chart truncates the vertical axis to amplify a small change in approval. What should a student do?",
+      "options": [
+        "Ignore the actual values",
+        "Assume manipulation always proves false data",
+        "Only compare colors",
+        "Read the axis scale, recover the numbers, and evaluate whether the visual exaggerates change"
+      ],
+      "answer": 3,
+      "explanation": "Read the axis scale, recover the numbers, and evaluate whether the visual exaggerates change",
+      "skill": "institutional-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w12-transfer-v2-05",
+      "question": "An anonymous account claims a treaty changed yesterday and shows an undated screenshot. Which source provides the strongest check?",
+      "options": [
+        "The account biography",
+        "An authenticated treaty depositary or official amendment record with date",
+        "The number of reposts",
+        "A speculative comment thread"
+      ],
+      "answer": 1,
+      "explanation": "An authenticated treaty depositary or official amendment record with date",
+      "skill": "rights-in-practice",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w12-transfer-v2-06",
+      "question": "A platform recommends a sequence of increasingly polarizing posts. Which causal conclusion is warranted from the sequence alone?",
+      "options": [
+        "It proves the platform changed every user's ideology",
+        "It proves intentional wrongdoing",
+        "The sequence documents exposure; effects and mechanisms require additional study",
+        "It measures national sentiment"
+      ],
+      "answer": 2,
+      "explanation": "The sequence documents exposure; effects and mechanisms require additional study",
+      "skill": "methods",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w12-transfer-v2-07",
+      "question": "A news article quotes a statistic but omits the report's denominator. Which correction is needed?",
+      "options": [
+        "Locate the underlying report, denominator, reference period, and methods",
+        "Use only the headline",
+        "Replace the statistic with a rumor",
+        "Assume the percentage is always incorrect"
+      ],
+      "answer": 0,
+      "explanation": "Locate the underlying report, denominator, reference period, and methods",
+      "skill": "framing-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w12-transfer-v2-08",
+      "question": "A newsroom labels a commentary article as an investigative report. Which distinction should readers test?",
+      "options": [
+        "Whether the article is long",
+        "The color of its masthead",
+        "Whether comments are allowed",
+        "Whether claims rely on independently checked documents, disclosed methods, and separation of opinion from verified reporting"
+      ],
+      "answer": 3,
+      "explanation": "Whether claims rely on independently checked documents, disclosed methods, and separation of opinion from verified reporting",
+      "skill": "causal-limits",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w12-transfer-v2-09",
+      "question": "A fabricated photograph is shared as evidence of an actual protest. What is the responsible approach?",
+      "options": [
+        "Repeat the claimed event because it may be plausible",
+        "Check image provenance, original publication, visual context, and independent documentation of the event",
+        "Assume every photo from the internet is fabricated",
+        "Ignore all photo evidence"
+      ],
+      "answer": 1,
+      "explanation": "Check image provenance, original publication, visual context, and independent documentation of the event",
+      "skill": "verification",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w12-transfer-v2-10",
+      "question": "Two verified sources disagree about the number of displaced people because they use different dates and definitions. Which comparison is best?",
+      "options": [
+        "Average the figures without explanation",
+        "Choose the larger number automatically",
+        "Compare counting methods, dates, populations, and uncertainty before treating the figures as contradictory",
+        "Call both sources propaganda"
+      ],
+      "answer": 2,
+      "explanation": "Compare counting methods, dates, populations, and uncertainty before treating the figures as contradictory",
+      "skill": "synthesis",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     }
   ],
   "shortResponse": "How can citizens evaluate political information when governments, parties, platforms, journalists, and networks compete to shape attention?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
