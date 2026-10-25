@@ -66,6 +66,7 @@ await context.addInitScript(()=>{
     scoped(`khaemenes-algebra1-unit${String(unit).padStart(2,"0")}-a3-v1`),
     JSON.stringify({attempts:[],best:{mastery:100}})
   );
+  mastery(1);
   mastery(2);
   mastery(3);
   mastery(4);
@@ -91,6 +92,14 @@ const cases=[
    runtime:"abundant-v2",
    bankVersion:"unit01-abundant-v1",
    misconceptionPolicy:"reviewed"
+ },
+ {
+   unit:"02",
+   file:"lesson-01-variables-terms-factors-coefficients-degree.html",
+   key:"khaemenes-algebra1-unit02-a3-v1",
+   runtime:"abundant-v2",
+   bankVersion:"unit02-abundant-v1",
+   misconceptionPolicy:"provisional"
  },
  {
    unit:"03",
@@ -144,7 +153,8 @@ const cases=[
    unit:"09",
    file:"lesson-01-polynomial-vocabulary-standard-form.html",
    key:"khaemenes-algebra1-unit09-a3-v1",
-   runtime:"dedicated-v2",
+   runtime:"abundant-v2",
+   bankVersion:"unit09-abundant-v1",
    misconceptionPolicy:"reviewed"
  }
 ];
@@ -305,14 +315,14 @@ await new Promise(resolve=>server.close(resolve));
 console.log("ALGEBRA I REAL-BROWSER REGRESSION: PASS");
 console.log(JSON.stringify({
   browser:"Chromium via Playwright",
-  journey:"Unit 01 → Unit 03 → Unit 04 → Unit 05 → Unit 06 → Unit 07 → Unit 08 → Unit 09 representative Lesson 01",
+  journey:"Unit 01 → Unit 02 → Unit 03 → Unit 04 → Unit 05 → Unit 06 → Unit 07 → Unit 08 → Unit 09 representative Lesson 01",
   checks:[
     "10-question first form",
     "submit and immutable lock",
     "answerSnapshot persistence with delivered/original option identity",
     "reviewed misconception-aware learner feedback plus provisional-feedback suppression",
     "balanced learner-visible correct positions",
-    "Units 01 and 03–08 30-item abundant pools with low-overlap blueprint retakes",
+    "Unit 01 Lesson 01 and Units 02–09 Lesson 01 use 30-item abundant pools with low-overlap blueprint retakes",
     "fresh retake with aligned alternates for Units 05 and 09",
     "reload preserves attempt history and best score",
     "no browser/page console errors"
