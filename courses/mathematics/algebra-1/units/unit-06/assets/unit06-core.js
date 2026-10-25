@@ -33,11 +33,33 @@ function bind(items,key){
  const supplemental=lessonNumber&&Array.isArray(window.ALGEBRA1_QUESTIONS)
   ?window.ALGEBRA1_QUESTIONS.filter(q=>Number(q.unit)===unitNumber&&Number(q.lesson)===lessonNumber)
   :[];
- let current=[],graded=false,attempt=0;
+ const abundant=lessonNumber&&Array.isArray(window.KHAE_UNIT06_ABUNDANT_BANK)
+  ?window.KHAE_UNIT06_ABUNDANT_BANK.filter(q=>Number(q.lesson)===lessonNumber)
+  :[];
+ const eligibleBank=[
+  ...dedicatedBank.map(q=>({...q,_formSource:"dedicated"})),
+  ...supplemental.map(q=>({...q,_formSource:"aligned-alternate"})),
+  ...abundant.map(q=>({...q,_formSource:"abundant-alternate"}))
+ ];
+ const existingRecords=readRecords();
+ const priorAttempts=(Array.isArray(existingRecords?.attempts)?existingRecords.attempts:[]).filter(a=>a?.key===key);
+ let current=[],graded=false,attempt=priorAttempts.length,previousIds=priorAttempts.length&&Array.isArray(priorAttempts[priorAttempts.length-1]?.items)?priorAttempts[priorAttempts.length-1].items:[];
  const shuffleForm=(source)=>{
   const arr=[...source];
   for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}
   return arr;
+ };
+ const itemDifficulty=q=>{const n=Number(q?.difficulty??q?.level);return n>=1&&n<=3?n:2};
+ const blueprintSelect=(pool,previous,count=10)=>{
+  const previousSet=new Set(previous||[]),selected=[],used=new Set(),targets=shuffleForm([1,1,1,2,2,2,2,3,3,3]);
+  const take=candidates=>{const q=shuffleForm(candidates.filter(x=>!used.has(x.id)))[0];if(!q)return false;selected.push(q);used.add(q.id);return true};
+  for(const target of targets){
+   if(take(pool.filter(q=>!previousSet.has(q.id)&&itemDifficulty(q)===target)))continue;
+   if(take(pool.filter(q=>!previousSet.has(q.id))))continue;
+   if(take(pool.filter(q=>itemDifficulty(q)===target)))continue;
+   take(pool);
+  }
+  return shuffleForm(selected).slice(0,count);
  };
  const renderQuestions=(rows)=>rows.map((q,i)=>`<div class="question"><strong>${i+1}. ${esc(q.prompt)}</strong>${q.options.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${esc(o)}</label>`).join("")}<div id="f${i}" class="feedback" hidden></div></div>`).join("");
  const inputs=()=>[...container.querySelectorAll('.question input[type="radio"]')];
@@ -57,16 +79,9 @@ function bind(items,key){
   });
  };
  const chooseForm=()=>{
-  if(!lessonNumber||!supplemental.length)return dedicatedBank.map(q=>({...q,_formSource:"dedicated"}));
+  if(!lessonNumber)return dedicatedBank.map(q=>({...q,_formSource:"dedicated"}));
   if(attempt===0)return dedicatedBank.map(q=>({...q,_formSource:"dedicated"}));
-  const desired=dedicatedBank.length;
-  const supplementalCount=Math.min(supplemental.length,Math.max(1,Math.floor(desired/2)));
-  const previousIds=new Set(current.map(q=>q.id));
-  const unseen=shuffleForm(dedicatedBank.filter(q=>!previousIds.has(q.id)));
-  const seen=shuffleForm(dedicatedBank.filter(q=>previousIds.has(q.id)));
-  const keep=shuffleForm([...unseen,...seen]).slice(0,desired-supplementalCount);
-  const alternate=shuffleForm(supplemental).slice(0,supplementalCount).map(q=>({...q,_formSource:"aligned-alternate"}));
-  return shuffleForm([...keep.map(q=>({...q,_formSource:"dedicated"})),...alternate]);
+  return blueprintSelect(eligibleBank,previousIds,10);
  };
  function fresh(){
   const chosen=chooseForm();
@@ -79,7 +94,7 @@ function bind(items,key){
   if(retry){retry.hidden=true;retry.disabled=true;}
   const result=document.getElementById("result");
   if(result)result.textContent=lessonNumber
-   ?`Attempt ${attempt} · ${current.length} questions · balanced answer positions${attempt>1?" · aligned alternate items included":""}. Answer all items before grading.`
+   ?`Attempt ${attempt} · ${current.length} blueprint-balanced questions from ${eligibleBank.length} eligible items${attempt>1?" · immediate prior-form overlap minimized":""}. Answer all items before grading.`
    :`Attempt ${attempt} · fixed blueprint · balanced answer positions. Answer all items before grading.`;
  }
  retry?.addEventListener("click",()=>{if(graded)fresh()});
@@ -112,11 +127,14 @@ function bind(items,key){
     correctOriginalIndex,
     selectedText:q.options[selectedDisplayIndex],
     correctText:q.options[q.answer],
-    misconceptionTag:diagnostic?.misconceptionTag||null,
+    misconceptionTag:diagnostic?.misconceptionTag||q.misconceptionTag||null,
     misconceptionMapVersion:diagnostic?.mapVersion||null,
     misconceptionMapSource:diagnostic?.mapSource||null,
-    misconceptionReviewStatus:diagnostic?.reviewStatus||null,
-    misconceptionLearnerFeedback:Boolean(diagnostic?.learnerFeedbackEligible)
+    misconceptionReviewStatus:diagnostic?.reviewStatus||q.reviewStatus||null,
+    misconceptionLearnerFeedback:Boolean(diagnostic?.learnerFeedbackEligible),
+    generatorId:q.generatorId||null,
+    generatorVersion:q.generatorVersion||null,
+    seed:q.seed??null
    });
    if(feedback){feedback.hidden=false;feedback.className="feedback "+(ok?"good":"bad");feedback.textContent=(ok?"Correct. ":"Review. ")+q.explanation+(!ok&&diagnostic?.learnerFeedbackEligible&&diagnostic.rationale?" Misconception check: "+diagnostic.rationale:"");}
   });
@@ -130,11 +148,16 @@ function bind(items,key){
    items:current.map(q=>q.id),
    answerSnapshot:snapshots,
    formVersion:"algebra1-runtime-balanced-v2",
+   evidenceSchema:"algebra1-answer-evidence-v2",
+   bankVersion:lessonNumber?"unit06-abundant-v1":"unit06-fixed-v1",
+   selectionPolicy:lessonNumber?"blueprint-low-overlap-v1":"fixed-blueprint-v1",
+   eligiblePoolSize:lessonNumber?eligibleBank.length:dedicatedBank.length,
    formSources:[...new Set(current.map(q=>q._formSource||"dedicated"))],
    mastery_threshold:80,mastery_met:percent>=80,attemptNumber:attempt
   });
   record.best[key]=Math.max(record.best[key]||0,percent);
   const persisted=saveRecords(record);
+  if(persisted)previousIds=current.map(q=>q.id);
   graded=true;score.disabled=true;score.textContent="Attempt graded";
   inputs().forEach(input=>{input.disabled=true;});
   if(retry){retry.hidden=false;retry.disabled=false;}
