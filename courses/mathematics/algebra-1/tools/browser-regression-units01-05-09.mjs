@@ -67,6 +67,7 @@ await context.addInitScript(()=>{
     JSON.stringify({attempts:[],best:{mastery:100}})
   );
   mastery(2);
+  mastery(3);
   mastery(4);
   mastery(8);
   localStorage.setItem(scoped("khaemenes-algebra1-midterm-result-v1"),JSON.stringify({
@@ -94,6 +95,14 @@ const cases=[
    key:"khaemenes-algebra1-unit03-a3-v1",
    runtime:"abundant-v2",
    bankVersion:"unit03-abundant-v1",
+   misconceptionPolicy:"provisional"
+ },
+ {
+   unit:"04",
+   file:"lesson-01-inequality-meaning-number-lines-interval-notation.html",
+   key:"khaemenes-algebra1-unit04-a3-v1",
+   runtime:"abundant-v2",
+   bankVersion:"unit04-abundant-v1",
    misconceptionPolicy:"provisional"
  },
  {
@@ -268,14 +277,14 @@ await new Promise(resolve=>server.close(resolve));
 console.log("ALGEBRA I REAL-BROWSER REGRESSION: PASS");
 console.log(JSON.stringify({
   browser:"Chromium via Playwright",
-  journey:"Unit 01 → Unit 03 → Unit 05 → Unit 09 representative Lesson 01",
+  journey:"Unit 01 → Unit 03 → Unit 04 → Unit 05 → Unit 09 representative Lesson 01",
   checks:[
     "10-question first form",
     "submit and immutable lock",
     "answerSnapshot persistence with delivered/original option identity",
     "reviewed misconception-aware learner feedback plus provisional-feedback suppression",
     "balanced learner-visible correct positions",
-    "Unit 01 and Unit 03 30-item abundant pools with low-overlap blueprint retakes",
+    "Units 01, 03 and 04 30-item abundant pools with low-overlap blueprint retakes",
     "fresh retake with aligned alternates for Units 05 and 09",
     "reload preserves attempt history and best score",
     "no browser/page console errors"
