@@ -2,116 +2,167 @@
   "title": "Week 26 Mastery Quiz · Development, Poverty, and Global Inequality",
   "questions": [
     {
-      "question": "Which definition best matches “development”?",
+      "id": "ss12-w26-transfer-v3-01",
+      "question": "The UNDP HDI includes health, education and income dimensions. What is the strongest interpretation of a higher HDI score?",
       "options": [
-        "Instruction or administration that does not require allegiance to a party, candidate, or political position.",
-        "Testing whether a finding changes under alternative assumptions or measures.",
-        "Long-term improvement in capabilities, institutions, living conditions, and opportunity.",
-        "A condition that narrows what evidence or a study can establish."
+        "All households experienced equal gains.",
+        "Environmental effects have been measured fully.",
+        "The composite is higher under its method; it does not alone prove equal opportunity within the country.",
+        "The score establishes democratic quality."
       ],
       "answer": 2,
-      "explanation": "Development means long-term improvement in capabilities, institutions, living conditions, and opportunity."
+      "explanation": "The composite is higher under its method; it does not alone prove equal opportunity within the country.",
+      "skill": "primary-source",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “human development”?",
+      "id": "ss12-w26-transfer-v3-02",
+      "question": "Simulated countries A and B have equal per-capita income, but A has higher life expectancy and schooling. Which conclusion fits multidimensional measurement?",
       "options": [
-        "A political organization claiming authority over a territory and population.",
-        "Presentation of complex evidence for a non-specialist audience.",
-        "Information used to test or support a claim.",
-        "Expansion of people’s capabilities, health, education, and meaningful choices."
+        "GDP and HDI must rank both countries identically.",
+        "Equal income proves equal educational attainment.",
+        "No comparison is possible.",
+        "Development comparisons may differ despite equal income because health and education also matter."
       ],
       "answer": 3,
-      "explanation": "Human development means expansion of people’s capabilities, health, education, and meaningful choices."
+      "explanation": "Development comparisons may differ despite equal income because health and education also matter.",
+      "skill": "data-interpretation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “absolute poverty”?",
+      "id": "ss12-w26-transfer-v3-03",
+      "question": "A poverty chart compares a national threshold in one country with an international threshold in another. What repair matters most?",
       "options": [
-        "The principle that public and private actors are governed by known, generally applicable law.",
-        "A focused, answerable question that guides evidence collection and analysis.",
-        "Public acceptance that an institution or decision has a justified right to rule.",
-        "Deprivation measured against a fixed minimum standard."
-      ],
-      "answer": 3,
-      "explanation": "Absolute poverty means deprivation measured against a fixed minimum standard."
-    },
-    {
-      "question": "Which definition best matches “relative poverty”?",
-      "options": [
-        "Deprivation measured in relation to prevailing standards in a society.",
-        "A system in which the executive depends on legislative confidence.",
-        "The capacity to shape behavior, choices, rules, opportunities, or outcomes.",
-        "A system in which citizens meaningfully choose leaders and can contest public power."
+        "Clarify poverty definitions, price adjustments and comparable denominators before ranking.",
+        "National thresholds are universally equivalent.",
+        "Only the latest count matters.",
+        "Poverty rates are independent of measurement."
       ],
       "answer": 0,
-      "explanation": "Relative poverty means deprivation measured in relation to prevailing standards in a society."
+      "explanation": "Clarify poverty definitions, price adjustments and comparable denominators before ranking.",
+      "skill": "measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “dependency”?",
+      "id": "ss12-w26-transfer-v3-04",
+      "question": "An aid program reports 10,000 textbooks distributed and claims literacy increased by 10 percentage points. What is unsupported?",
       "options": [
-        "The institutions responsible for leadership and implementation of law and policy.",
-        "A rule in which the candidate with the most votes wins, even without a majority.",
-        "A condition or benefit understood to serve the community as a whole.",
-        "A relationship in which economic structures constrain autonomous development."
+        "The program distributed textbooks.",
+        "The causal outcome claim needs comparable learning measurements and credible attribution.",
+        "Books may be counted.",
+        "Distribution costs money."
       ],
-      "answer": 3,
-      "explanation": "Dependency means a relationship in which economic structures constrain autonomous development."
+      "answer": 1,
+      "explanation": "The causal outcome claim needs comparable learning measurements and credible attribution.",
+      "skill": "causal-inference",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “sustainable development”?",
+      "id": "ss12-w26-transfer-v3-05",
+      "question": "A model estimates an income increase from infrastructure but ignores households displaced during construction. What is missing?",
       "options": [
-        "Voluntary organizations and networks operating between private life, markets, and the state.",
-        "Processes addressing serious abuses during movement from conflict or repression.",
-        "Protection that makes a constitutional rule harder to change than ordinary law.",
-        "Meeting present needs without undermining future generations’ capacity."
-      ],
-      "answer": 3,
-      "explanation": "Sustainable development means meeting present needs without undermining future generations’ capacity."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 26 analysis?",
-      "options": [
-        "A single vivid example proves a universal conclusion without qualification.",
-        "The most confident source should be accepted without examining authority or method.",
-        "No single indicator captures development.",
-        "Political labels have exactly the same meaning in every country and period."
+        "Infrastructure can never improve access.",
+        "National totals capture every loss.",
+        "Distributional impacts, displacement costs and a defensible counterfactual.",
+        "Estimated benefits are always exact."
       ],
       "answer": 2,
-      "explanation": "No single indicator captures development."
+      "explanation": "Distributional impacts, displacement costs and a defensible counterfactual.",
+      "skill": "institutional-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 26 analysis?",
+      "id": "ss12-w26-transfer-v3-06",
+      "question": "A fictional district's graduation rate rises from 60% to 75%, while eligibility rules change. What question comes first?",
       "options": [
-        "Growth can reduce poverty while increasing inequality or environmental pressure.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "The most confident source should be accepted without examining authority or method."
-      ],
-      "answer": 0,
-      "explanation": "Growth can reduce poverty while increasing inequality or environmental pressure."
-    },
-    {
-      "question": "Which research practice is most appropriate for Development, Poverty, and Global Inequality?",
-      "options": [
-        "Trace claims to UNDP, World Bank, national statistics, Sustainable Development Goals, and program evaluations, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Replace documentary evidence with political identity or intuition.",
-        "Choose only evidence that supports the preferred conclusion.",
-        "Use the first search result and treat its summary as conclusive."
-      ],
-      "answer": 0,
-      "explanation": "Trace claims to UNDP, World Bank, national statistics, Sustainable Development Goals, and program evaluations, evaluate authority and context, corroborate material facts, and state limitations."
-    },
-    {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
-      "options": [
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "List facts without connecting them to a claim.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+        "The reform necessarily caused a 15-point gain.",
+        "All school-age children graduated.",
+        "The number alone proves better teaching.",
+        "Whether the denominator and reporting rules are comparable across years."
       ],
       "answer": 3,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "Whether the denominator and reporting rules are comparable across years.",
+      "skill": "quantitative-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w26-transfer-v3-07",
+      "question": "A researcher attributes all development inequality to colonial history without examining present institutions. What is a sounder design?",
+      "options": [
+        "Trace historical mechanisms while testing contemporary policies, resources and rival explanations.",
+        "Historical legacies have no possible effect.",
+        "Contemporary policy always erases history.",
+        "One explanation rules out every other."
+      ],
+      "answer": 0,
+      "explanation": "Trace historical mechanisms while testing contemporary policies, resources and rival explanations.",
+      "skill": "case-comparison",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w26-transfer-v3-08",
+      "question": "A country reports rising average income alongside widening income dispersion. How should the claim be qualified?",
+      "options": [
+        "Rising averages prove poverty ended.",
+        "Average progress and distributional inequality can move in different directions.",
+        "Inequality must decline as income rises.",
+        "Income dispersion cannot be measured."
+      ],
+      "answer": 1,
+      "explanation": "Average progress and distributional inequality can move in different directions.",
+      "skill": "policy-evaluation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w26-transfer-v3-09",
+      "question": "A study claims health access improved because clinic buildings doubled. What additional evidence matters?",
+      "options": [
+        "Buildings alone prove medical quality.",
+        "Every clinic has equal staffing.",
+        "Staffing, geographic access, affordability, service use, quality and health outcomes.",
+        "Geographic differences are immaterial."
+      ],
+      "answer": 2,
+      "explanation": "Staffing, geographic access, affordability, service use, quality and health outcomes.",
+      "skill": "source-limits",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w26-transfer-v3-10",
+      "question": "A senior compares HDI scores from two different methodology vintages without noting revisions. What is the source-integrity issue?",
+      "options": [
+        "All HDI releases use identical inputs forever.",
+        "Method revisions make every score useless.",
+        "The year of publication replaces source notes.",
+        "Version and method changes can affect comparability and should be documented."
+      ],
+      "answer": 3,
+      "explanation": "Version and method changes can affect comparability and should be documented.",
+      "skill": "research-methods",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     }
   ],
   "shortResponse": "How should development be measured, explained, financed, and evaluated?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
