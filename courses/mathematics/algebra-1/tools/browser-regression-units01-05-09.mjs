@@ -62,10 +62,15 @@ await context.addInitScript(()=>{
   localStorage.setItem(scoped("khaemenes-algebra1-diagnostic-result-v1"),JSON.stringify({
     attempt_history:[{submitted_at:"2026-10-25T00:00:00.000Z",overall_percent:100}]
   }));
-  const mastery=(unit)=>localStorage.setItem(
-    scoped(`khaemenes-algebra1-unit${String(unit).padStart(2,"0")}-a3-v1`),
-    JSON.stringify({attempts:[],best:{mastery:100}})
-  );
+  const mastery=(unit)=>{
+    const key=scoped(`khaemenes-algebra1-unit${String(unit).padStart(2,"0")}-a3-v1`);
+    let record={attempts:[],best:{}};
+    try{record=JSON.parse(localStorage.getItem(key)||"{}")||record}catch{}
+    record.attempts=Array.isArray(record.attempts)?record.attempts:[];
+    record.best=record.best&&typeof record.best==="object"?record.best:{};
+    record.best.mastery=100;
+    localStorage.setItem(key,JSON.stringify(record));
+  };
   mastery(1);
   mastery(2);
   mastery(3);
