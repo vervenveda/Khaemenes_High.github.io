@@ -255,7 +255,8 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     }
   }
   const dm=itemMetrics(dedicated,false);
-  const dedicatedMisconceptions=readJSON("courses/mathematics/algebra-1/assets/assessment-misconceptions-v1.json").items||{};\n  const dedicatedMapped=[...dedicatedIds].filter(id=>Object.prototype.hasOwnProperty.call(dedicatedMisconceptions,id)).length;
+  const dedicatedMisconceptions=readJSON("courses/mathematics/algebra-1/assets/assessment-misconceptions-v1.json").items||{};
+  const dedicatedMapped=[...dedicatedIds].filter(id=>Object.prototype.hasOwnProperty.call(dedicatedMisconceptions,id)).length;
   const checks=[];
   checks.push(addFinding("Algebra I","algebra1-shared-bank-contract",
     by.size===87&&bank.length===435&&contractFailures.length===0?"PASS":"FAIL",
