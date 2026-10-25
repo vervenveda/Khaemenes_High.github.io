@@ -2,116 +2,167 @@
   "title": "Week 35 Mastery Quiz · Political Engagement and Public Communication",
   "questions": [
     {
-      "question": "Which definition best matches “stakeholder”?",
+      "id": "ss12-w35-transfer-v3-01",
+      "question": "A public briefing explains two options but omits costs borne by affected neighborhoods. What should be added?",
       "options": [
-        "Court evaluation of whether government action complies with higher law.",
-        "A person or group affected by or able to influence an issue.",
-        "The share of eligible or registered voters who cast ballots.",
-        "False or inaccurate information shared without necessarily intending deception."
+        "Only an endorsement slogan.",
+        "A longer list of officials.",
+        "A prediction of unanimous support.",
+        "Distributional impacts, evidence quality and accessible explanation of tradeoffs."
       ],
-      "answer": 1,
-      "explanation": "Stakeholder means a person or group affected by or able to influence an issue."
+      "answer": 3,
+      "explanation": "Distributional impacts, evidence quality and accessible explanation of tradeoffs.",
+      "skill": "evidence-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “political engagement”?",
+      "id": "ss12-w35-transfer-v3-02",
+      "question": "A student prepares testimony using a fictional dataset without labeling it simulated. Which correction is mandatory?",
       "options": [
-        "Strategic communication designed to shape belief or behavior, often selectively or deceptively.",
-        "Distribution of natural-resource authority and revenue across levels of government.",
-        "Lawful participation intended to understand or influence public life.",
-        "A minimum share of votes required to qualify for representation."
-      ],
-      "answer": 2,
-      "explanation": "Political engagement means lawful participation intended to understand or influence public life."
-    },
-    {
-      "question": "Which definition best matches “public communication”?",
-      "options": [
-        "Presentation of complex evidence for a non-specialist audience.",
-        "A system in which religious authority or doctrine has a governing role.",
-        "A set of familiar strategies used by movements or political actors.",
-        "Change to voting, representation, administration, or competition rules."
+        "Clearly identify the invented data and avoid presenting it as real civic evidence.",
+        "Call it an official statistic.",
+        "Keep the simulation label only in private notes.",
+        "Quote a fictitious agency."
       ],
       "answer": 0,
-      "explanation": "Public communication means presentation of complex evidence for a non-specialist audience."
+      "explanation": "Clearly identify the invented data and avoid presenting it as real civic evidence.",
+      "skill": "mastery-and-gates",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “accessibility”?",
+      "id": "ss12-w35-transfer-v3-03",
+      "question": "UN Charter Article 33 identifies peaceful dispute-settlement methods. Which public summary is accurate?",
       "options": [
-        "Market activity combined with extensive state ownership, direction, or strategic control.",
-        "Design that enables people with different abilities and circumstances to use information.",
-        "Mexico’s six-year presidential term without immediate reelection.",
-        "Reasoning about whether and how one factor contributes to an outcome."
+        "It mandates that every dispute use only arbitration.",
+        "It names alternatives including negotiation and mediation, without guaranteeing outcomes.",
+        "It removes domestic decision procedures.",
+        "It guarantees successful mediation."
       ],
       "answer": 1,
-      "explanation": "Accessibility means design that enables people with different abilities and circumstances to use information."
+      "explanation": "It names alternatives including negotiation and mediation, without guaranteeing outcomes.",
+      "skill": "source-interpretation",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “nonpartisanship”?",
+      "id": "ss12-w35-transfer-v3-04",
+      "question": "A civic infographic compares two districts but charts counts against rates without denominators. What is the strongest repair?",
       "options": [
-        "Concentration of authority around an individual leader rather than autonomous institutions.",
-        "Comparison of different cases sharing an outcome or relationship.",
-        "Absence of a single sovereign authority above states.",
-        "Instruction or administration that does not require allegiance to a party, candidate, or political position."
+        "Enlarge the more favorable bar.",
+        "Remove the data source.",
+        "Label metrics and denominators; compare comparable measures or state their limitations.",
+        "Use colors to imply comparability."
+      ],
+      "answer": 2,
+      "explanation": "Label metrics and denominators; compare comparable measures or state their limitations.",
+      "skill": "quantitative-literacy",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w35-transfer-v3-05",
+      "question": "A multilingual community cannot access a public comment form available in only one language. What design question arises?",
+      "options": [
+        "Whether the form is visually attractive.",
+        "Whether all residents use identical devices.",
+        "Whether public comment has no educational value.",
+        "Whether translated and accessible channels are required for meaningful participation."
       ],
       "answer": 3,
-      "explanation": "Nonpartisanship means instruction or administration that does not require allegiance to a party, candidate, or political position."
+      "explanation": "Whether translated and accessible channels are required for meaningful participation.",
+      "skill": "ethical-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “reflection”?",
+      "id": "ss12-w35-transfer-v3-06",
+      "question": "A student wants to advocate for a policy while serving as an Academy assessor. What integrity boundary matters?",
       "options": [
-        "Critical examination of choices, learning, effects, and remaining questions.",
-        "An approach emphasizing norms, identities, ideas, and socially constructed interests.",
-        "The reasoned choice of cases appropriate to a research question.",
-        "Assistance by a third party seeking to facilitate agreement."
+        "Separate personal advocacy from neutral grading and disclose relevant roles.",
+        "Adjust scores for shared political views.",
+        "Require all learners to agree.",
+        "Remove criticism from portfolios."
       ],
       "answer": 0,
-      "explanation": "Reflection means critical examination of choices, learning, effects, and remaining questions."
+      "explanation": "Separate personal advocacy from neutral grading and disclose relevant roles.",
+      "skill": "methodology",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 35 analysis?",
+      "id": "ss12-w35-transfer-v3-07",
+      "question": "A press release calls a policy 'widely supported' based on a single invitation-only meeting. What can be stated responsibly?",
       "options": [
-        "Political labels have exactly the same meaning in every country and period.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Engagement may involve research, service, observation, education, testimony, or deliberation.",
-        "The most confident source should be accepted without examining authority or method."
+        "The meeting establishes unanimous community consent.",
+        "The meeting shows attendees' positions but not necessarily population-wide support.",
+        "Invitation-only attendance is random sampling.",
+        "All nonattendees favored the measure."
+      ],
+      "answer": 1,
+      "explanation": "The meeting shows attendees' positions but not necessarily population-wide support.",
+      "skill": "counterargument",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w35-transfer-v3-08",
+      "question": "A town hall feedback log includes personal medical narratives. How should an educational report handle them?",
+      "options": [
+        "Publish every attendee's identity.",
+        "Upload private files to a public repository.",
+        "Use consent-aware summaries and minimize sensitive identifiers while preserving relevant evidence.",
+        "Treat privacy as irrelevant to civic research."
       ],
       "answer": 2,
-      "explanation": "Engagement may involve research, service, observation, education, testimony, or deliberation."
+      "explanation": "Use consent-aware summaries and minimize sensitive identifiers while preserving relevant evidence.",
+      "skill": "research-integrity",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which statement is most consistent with the Week 35 analysis?",
+      "id": "ss12-w35-transfer-v3-09",
+      "question": "A service-learning portfolio lists volunteer hours but no learning reflection. Which addition advances academic evidence?",
       "options": [
-        "Political labels have exactly the same meaning in every country and period.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Students are graded on evidence and process, not viewpoint."
+        "A bigger hour count alone.",
+        "Unverifiable anecdotes about participants.",
+        "A partisan candidate endorsement.",
+        "A documented inquiry, observations, civic context, limitations and reflective evaluation."
       ],
       "answer": 3,
-      "explanation": "Students are graded on evidence and process, not viewpoint."
+      "explanation": "A documented inquiry, observations, civic context, limitations and reflective evaluation.",
+      "skill": "portfolio-evidence",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     },
     {
-      "question": "Which research practice is most appropriate for Political Engagement and Public Communication?",
+      "id": "ss12-w35-transfer-v3-10",
+      "question": "Two presentations use identical facts but different visual scales. What should the reviewer assess?",
       "options": [
-        "Choose only evidence that supports the preferred conclusion.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Replace documentary evidence with political identity or intuition.",
-        "Trace claims to Stakeholder records, public meeting materials, civic resources, and student communication products, evaluate authority and context, corroborate material facts, and state limitations."
+        "Whether axes and context distort the audience's interpretation despite correct underlying numbers.",
+        "Only presentation length.",
+        "Whether the speaker has a larger audience.",
+        "Whether the slide template is colorful."
       ],
-      "answer": 3,
-      "explanation": "Trace claims to Stakeholder records, public meeting materials, civic resources, and student communication products, evaluate authority and context, corroborate material facts, and state limitations."
-    },
-    {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
-      "options": [
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "List facts without connecting them to a claim."
-      ],
-      "answer": 2,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "answer": 0,
+      "explanation": "Whether axes and context distort the audience's interpretation despite correct underlying numbers.",
+      "skill": "defense",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_33_36.md",
+      "version": 3
     }
   ],
   "shortResponse": "How can a graduate communicate research and engage responsibly without manipulating evidence or compelling political conformity?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
