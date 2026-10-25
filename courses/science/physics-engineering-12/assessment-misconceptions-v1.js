@@ -5,7 +5,7 @@ window.KhaemenesPhysics12Misconceptions={
   "title": "Physics 12 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/physics-engineering-12/question-bank.js",
-  "reviewedItemCount": 50,
+  "reviewedItemCount": 70,
   "items": {
     "legacy-1": {
       "itemId": "legacy-1",
@@ -1202,6 +1202,486 @@ window.KhaemenesPhysics12Misconceptions={
           "optionIndex": 3,
           "misconceptionTag": "subtracts-displacement-from-force",
           "rationale": "Subtracting unlike quantities does not compute work."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w11a": {
+      "itemId": "w11a",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "mgh.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "omits-height-factor-in-mgh",
+          "rationale": "12 J does not include the full mgh product."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "uses-mg-only",
+          "rationale": "30 N is the weight, not the gravitational potential-energy change over 4 m."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "uses-gh-without-mass",
+          "rationale": "40 omits the 3 kg mass."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w11b": {
+      "itemId": "w11b",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Total system energy is conserved.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "conservation-means-ke-constant",
+          "rationale": "Kinetic energy can transform into potential or thermal energy while total energy remains conserved."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "potential-energy-always-zero",
+          "rationale": "Potential energy depends on system configuration and reference; it need not be zero."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "friction-creates-energy",
+          "rationale": "Friction transforms mechanical energy into thermal/internal energy rather than creating energy."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w12a": {
+      "itemId": "w12a",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "P=E/t.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "multiplies-energy-by-time",
+          "rationale": "Power is energy divided by time, not multiplied."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "inverts-power-ratio",
+          "rationale": "3/600 has the wrong relationship and units."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "subtracts-time-from-energy",
+          "rationale": "Subtracting unlike quantities does not compute power."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w12b": {
+      "itemId": "w12b",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "useful/input×100.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "uses-loss-fraction",
+          "rationale": "20% is the loss fraction, not useful-output efficiency."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "inverts-efficiency-ratio",
+          "rationale": "100/80 gives 125%, which reverses useful/input."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "forgets-percent-conversion",
+          "rationale": "0.8 is the decimal efficiency; multiply by 100 to report percent."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w13a": {
+      "itemId": "w13a",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Energy accounting: input=useful+losses.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "adds-losses-to-input",
+          "rationale": "Useful output equals input minus losses, not input plus losses."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "reports-loss-as-useful-output",
+          "rationale": "150 J is the thermal loss, not useful output."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "forms-ratio-instead-of-energy-balance",
+          "rationale": "500/150 is a ratio and does not satisfy input=useful+losses."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w13b": {
+      "itemId": "w13b",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "System boundaries make energy accounting meaningful.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "preferred-conclusion-before-boundary",
+          "rationale": "Choosing a desired conclusion before defining the system biases the audit."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "ignores-other-loss-pathways",
+          "rationale": "Energy audits should account for all relevant inputs/outputs and losses, not only one pathway."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "ignores-uncertainty",
+          "rationale": "Measurement uncertainty is part of credible energy accounting."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w14a": {
+      "itemId": "w14a",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "J=FΔt.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "divides-force-by-time",
+          "rationale": "30/0.4=75 has the wrong operation for impulse."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "adds-force-and-time",
+          "rationale": "30+0.4 does not compute N·s."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "subtracts-time-from-force",
+          "rationale": "30−0.4 is dimensionally invalid for impulse."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w14b": {
+      "itemId": "w14b",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Favg=Δp/Δt.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "force-proportional-to-time-at-fixed-impulse",
+          "rationale": "For the same Δp, force is inversely proportional to stopping time."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "ignores-time-change-at-fixed-impulse",
+          "rationale": "Doubling stopping time changes average force; it does not remain unchanged."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "assumes-longer-time-means-zero-force",
+          "rationale": "A finite momentum change over finite time still requires nonzero average force."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w15a": {
+      "itemId": "w15a",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Conserve momentum: 8=(4)vf.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "uses-initial-speed-after-sticking",
+          "rationale": "The combined mass is doubled, so speed must decrease for momentum conservation."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "uses-total-momentum-as-speed",
+          "rationale": "8 is the initial momentum in kg·m/s, not the final speed."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "over-halves-final-speed",
+          "rationale": "The momentum equation gives 8=(4)vf, so vf=2 m/s, not 1."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w15b": {
+      "itemId": "w15b",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Internal impulses cancel within the system.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "momentum-conservation-forbids-deformation",
+          "rationale": "Objects may deform while total momentum remains conserved if external impulse is negligible."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "confuses-momentum-with-ke-conservation",
+          "rationale": "Momentum can be conserved even when kinetic energy is not."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "internal-forces-must-vanish",
+          "rationale": "Internal forces need not vanish; their impulses cancel within the system."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w16a": {
+      "itemId": "w16a",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Sticking together defines a perfectly inelastic collision.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "sticking-called-elastic",
+          "rationale": "Sticking together is the defining idealization of a perfectly inelastic collision, not elastic."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "collision-vs-equilibrium-confusion",
+          "rationale": "Static equilibrium describes zero net force/torque, not two objects sticking after impact."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "collision-vs-circular-motion-confusion",
+          "rationale": "Uniform circular motion is unrelated to collision classification."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w16b": {
+      "itemId": "w16b",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Momentum is conserved but kinetic energy decreases.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "inelastic-ke-conserved",
+          "rationale": "In a perfectly inelastic collision, kinetic energy decreases even though momentum is conserved."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "collision-increases-ke-without-source",
+          "rationale": "The sticking process does not increase kinetic energy in this isolated idealization."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "ke-is-definable",
+          "rationale": "The final kinetic energy is well-defined and calculable from the combined mass and final speed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w17a": {
+      "itemId": "w17a",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Symmetry places COM midway.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "center-of-mass-at-right-object",
+          "rationale": "For equal masses, the center lies midway, not at one object's position."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "center-of-mass-at-left-object",
+          "rationale": "Equal masses at 0 and 6 m place the center at 3 m, not 0."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "adds-positions-instead-of-averaging",
+          "rationale": "12 m is not between the two masses and results from misusing the positions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w17b": {
+      "itemId": "w17b",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Different models simplify different aspects.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "shortest-formula-model-choice",
+          "rationale": "Model choice should follow the system and question, not whichever equation is shortest."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "use-all-models-always",
+          "rationale": "Using every model can add confusion; choose the model suited to the conserved quantity or interaction."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "ignore-assumptions",
+          "rationale": "Assumptions determine whether a model is valid and cannot be ignored."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w19a": {
+      "itemId": "w19a",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "v=rω.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "divides-omega-by-radius",
+          "rationale": "3/2 is not the relation for tangential speed."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "adds-radius-and-angular-speed",
+          "rationale": "2+3 does not compute linear speed."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "squares-angular-speed-unnecessarily",
+          "rationale": "9 does not follow v=rω for r=2 and ω=3."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w19b": {
+      "itemId": "w19b",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Angular rate is common; linear quantities depend on radius.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "rigid-body-same-linear-speed",
+          "rationale": "Linear speed increases with radius even when angular velocity is shared."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "same-distance-per-revolution",
+          "rationale": "Points farther from the axis travel a larger circumference each revolution."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "same-centripetal-acceleration",
+          "rationale": "Centripetal acceleration depends on radius as a=ω²r."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w20a": {
+      "itemId": "w20a",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "τ=rF.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "divides-force-by-lever-arm",
+          "rationale": "20/0.5=40 is not torque; torque is rF for perpendicular force."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "adds-force-and-distance",
+          "rationale": "20+0.5 mixes incompatible units and is not torque."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "multiplies-by-extra-small-factor",
+          "rationale": "0.025 N·m does not follow from 0.5×20."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w20b": {
+      "itemId": "w20b",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "Angular acceleration is zero when net torque is zero.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "net-torque-equals-weight",
+          "rationale": "Weight is a force; rotational equilibrium requires the sum of torques to be zero."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "equilibrium-maximizes-torque",
+          "rationale": "Maximum torque would generally produce angular acceleration rather than equilibrium."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "torque-parallel-to-velocity",
+          "rationale": "Torque is a rotational tendency vector and is not defined as parallel to velocity."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w21a": {
+      "itemId": "w21a",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "L=Iω.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "uses-moment-of-inertia-alone",
+          "rationale": "2 kg·m² is I, not angular momentum."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "adds-i-and-omega",
+          "rationale": "2+4=6 does not compute L=Iω."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "squares-omega-unnecessarily",
+          "rationale": "16 comes from 4² and does not follow the angular momentum relation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial quantitative/evidence error-path review"
+    },
+    "w21b": {
+      "itemId": "w21b",
+      "reviewStatus": "reviewed-quantitative-evidence-v2",
+      "correctRationale": "L=Iω is conserved.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "inverse-angular-momentum-response",
+          "rationale": "With L conserved, reducing I requires ω to increase, not decrease."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "conservation-does-not-force-zero-omega",
+          "rationale": "Angular speed does not become zero merely because moment of inertia changes."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "ignores-i-omega-tradeoff",
+          "rationale": "At fixed angular momentum, angular speed changes when moment of inertia changes."
         }
       ],
       "reviewedAt": "2026-10-25",
