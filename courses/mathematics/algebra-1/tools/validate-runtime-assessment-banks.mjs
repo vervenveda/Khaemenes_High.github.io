@@ -71,7 +71,8 @@ const abundantByUnit=new Map([
  [4,loadWindow("courses/mathematics/algebra-1/units/unit-04/assets/unit04-abundant-bank-v1.js")],
  [5,loadWindow("courses/mathematics/algebra-1/units/unit-05/assets/unit05-abundant-bank-v1.js")],
  [6,loadWindow("courses/mathematics/algebra-1/units/unit-06/assets/unit06-abundant-bank-v1.js")],
- [7,loadWindow("courses/mathematics/algebra-1/units/unit-07/assets/unit07-abundant-bank-v1.js")]
+ [7,loadWindow("courses/mathematics/algebra-1/units/unit-07/assets/unit07-abundant-bank-v1.js")],
+ [8,loadWindow("courses/mathematics/algebra-1/units/unit-08/assets/unit08-abundant-bank-v1.js")]
 ]);
 for(const [unit,rows] of abundantByUnit)if(!Array.isArray(rows))failures.push(`Unit ${String(unit).padStart(2,"0")} abundant bank is not an array`);
 let alignedLessons=0,alignedItems=0;
@@ -199,14 +200,15 @@ const summary={
   unit05AbundantRetakes:{lessons:7,eligibleItemsPerLesson:30,abundantItems:abundantItemCounts.get(5),deliveredItems:10,immediatePriorFormOverlap:"minimized by unseen-first blueprint selection",evidenceSchema:"algebra1-answer-evidence-v2",bankVersion:"unit05-abundant-v1"},
   unit06AbundantRetakes:{lessons:8,eligibleItemsPerLesson:30,abundantItems:abundantItemCounts.get(6),deliveredItems:10,immediatePriorFormOverlap:"minimized by unseen-first blueprint selection",evidenceSchema:"algebra1-answer-evidence-v2",bankVersion:"unit06-abundant-v1"},
   unit07AbundantRetakes:{lessons:7,eligibleItemsPerLesson:30,abundantItems:abundantItemCounts.get(7),deliveredItems:10,immediatePriorFormOverlap:"minimized by unseen-first blueprint selection",evidenceSchema:"algebra1-answer-evidence-v2",bankVersion:"unit07-abundant-v1"},
+  unit08AbundantRetakes:{lessons:6,eligibleItemsPerLesson:30,abundantItems:abundantItemCounts.get(8),deliveredItems:10,immediatePriorFormOverlap:"minimized by unseen-first blueprint selection",evidenceSchema:"algebra1-answer-evidence-v2",bankVersion:"unit08-abundant-v1"},
   units02to09:{
     units:8,
     lessons:55,
     dedicatedItems:550,
     alignedAlternateItems:alignedItems,
-    runtimePoolPerLesson:"Units 02–07 = 30; Units 08–09 = 15",
+    runtimePoolPerLesson:"Units 02–08 = 30; Unit 09 = 15",
     firstAttempt:"10 dedicated items with balanced learner-visible answer positions",
-    retake:"Units 02–07 use 10-of-30 low-overlap blueprint retakes; Units 08–09 use 5 aligned alternates + 5 dedicated items",
+    retake:"Units 02–08 use 10-of-30 low-overlap blueprint retakes; Unit 09 uses 5 aligned alternates + 5 dedicated items",
     answerEvidence:"versioned immutable answerSnapshot with delivered/original option mapping"
   },
   offlineAlternateBankCached:true,
