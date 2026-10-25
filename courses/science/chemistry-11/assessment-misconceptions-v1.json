@@ -1,0 +1,882 @@
+{
+  "schema": "khaemenes.assessment-misconception-map.v1",
+  "schemaVersion": "1.0",
+  "courseId": "KH-SCI-CHEM11",
+  "title": "Chemistry 11 · Legacy Concept Spine Misconception Map",
+  "coveragePolicy": "reviewed-subset; newly authored or substantially revised selected-response items should include complete mapping",
+  "sourceBank": "courses/science/chemistry-11/question-bank.js",
+  "reviewedItemCount": 30,
+  "distractorRationaleCount": 90,
+  "items": {
+    "legacy-01": {
+      "itemId": "legacy-01",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Atomic number is determined by the number of",
+      "answerIndex": 1,
+      "correctRationale": "Element identity is defined by proton number.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "neutrons",
+          "misconceptionTag": "proton-neutron-confusion",
+          "rationale": "Neutron count changes isotope mass, but proton count defines the element."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "electron shells",
+          "misconceptionTag": "shell-identity-confusion",
+          "rationale": "Electron-shell arrangement can affect chemical behavior, but it does not define atomic number."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "isotopes",
+          "misconceptionTag": "isotope-count-confusion",
+          "rationale": "Isotopes are variants of one element; the number of isotopes is not an atom's atomic number."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-02": {
+      "itemId": "legacy-02",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Isotopes of an element differ in their number of",
+      "answerIndex": 1,
+      "correctRationale": "Isotopes share proton number but differ in neutron number.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "protons",
+          "misconceptionTag": "proton-change-means-new-element",
+          "rationale": "Changing proton number changes the element itself rather than producing an isotope of the same element."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "valence rules",
+          "misconceptionTag": "property-vs-particle-confusion",
+          "rationale": "Valence rules describe electron behavior; they are not a particle count that distinguishes isotopes."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "element symbols",
+          "misconceptionTag": "symbol-vs-isotope-confusion",
+          "rationale": "Isotopes of one element share the same element symbol; the distinguishing particle count is neutrons."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-03": {
+      "itemId": "legacy-03",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A line spectrum supports the idea that electron energies are",
+      "answerIndex": 1,
+      "correctRationale": "Discrete spectral lines are evidence for quantized energy differences.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "continuous at all values",
+          "misconceptionTag": "classical-continuous-energy-model",
+          "rationale": "A continuous-energy model would not naturally produce discrete spectral lines."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "unrelated to atoms",
+          "misconceptionTag": "spectrum-atom-disconnection",
+          "rationale": "Atomic emission and absorption spectra arise from electronic energy changes in atoms."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "always zero",
+          "misconceptionTag": "zero-energy-misconception",
+          "rationale": "Electrons can occupy different allowed energy states; the evidence does not imply their energy is always zero."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-04": {
+      "itemId": "legacy-04",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Across a period, recurring chemical patterns are strongly related to",
+      "answerIndex": 0,
+      "correctRationale": "Valence-electron patterns help explain periodic behavior.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "random atomic masses",
+          "misconceptionTag": "mass-causes-periodicity",
+          "rationale": "Atomic mass does not by itself explain the repeating chemical patterns across a period."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "neutron color",
+          "misconceptionTag": "nonphysical-neutron-property",
+          "rationale": "Neutrons do not have a chemical 'color' that governs periodic behavior."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "laboratory glassware",
+          "misconceptionTag": "apparatus-causes-periodicity",
+          "rationale": "Laboratory glassware does not determine intrinsic periodic trends."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-05": {
+      "itemId": "legacy-05",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "An ionic compound is electrically neutral when",
+      "answerIndex": 0,
+      "correctRationale": "Formula ratios reflect charge balance.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "all atoms are uncharged individually",
+          "misconceptionTag": "ionic-means-neutral-atoms",
+          "rationale": "Ionic compounds contain charged ions; neutrality applies to the total formula unit, not each ion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "it contains no electrons",
+          "misconceptionTag": "ionic-means-no-electrons",
+          "rationale": "Ions still contain electrons; charge reflects an imbalance between protons and electrons."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "it is dissolved",
+          "misconceptionTag": "dissolution-required-for-neutrality",
+          "rationale": "Charge balance is a property of the compound's formula and does not require dissolution."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-06": {
+      "itemId": "legacy-06",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A covalent bond is modeled primarily as",
+      "answerIndex": 0,
+      "correctRationale": "Covalent bonding involves shared electron density.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "neutron transfer",
+          "misconceptionTag": "neutron-transfer-bonding",
+          "rationale": "Ordinary covalent bonding involves valence electrons, not transfer of neutrons between nuclei."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "nuclear fission",
+          "misconceptionTag": "bonding-vs-nuclear-process",
+          "rationale": "Nuclear fission changes nuclei and is not the mechanism of a covalent bond."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "gravitational attraction",
+          "misconceptionTag": "gravity-as-chemical-bond",
+          "rationale": "Gravitational attraction is negligible at molecular scale compared with electromagnetic interactions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-07": {
+      "itemId": "legacy-07",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Molecular polarity depends on",
+      "answerIndex": 0,
+      "correctRationale": "Bond dipoles can reinforce or cancel depending on geometry.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "only molecular mass",
+          "misconceptionTag": "mass-only-polarity",
+          "rationale": "Molecular mass alone cannot determine polarity; bond dipoles and geometry control the net dipole."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "only color",
+          "misconceptionTag": "appearance-determines-polarity",
+          "rationale": "Color is not a defining criterion for molecular polarity."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "only state of matter",
+          "misconceptionTag": "phase-determines-polarity",
+          "rationale": "A substance's state of matter does not by itself determine whether an individual molecule is polar."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-08": {
+      "itemId": "legacy-08",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Metals conduct electricity well in part because",
+      "answerIndex": 0,
+      "correctRationale": "Mobile electrons are part of the metallic-bonding model.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "all metal atoms are ions in solution",
+          "misconceptionTag": "metallic-bonding-vs-solution-ions",
+          "rationale": "Electrical conduction in a metal does not require the metal atoms to be dissolved as ions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "they contain no nuclei",
+          "misconceptionTag": "nucleus-absence-misconception",
+          "rationale": "Metal atoms contain nuclei; conduction is explained by mobile electrons in the metallic structure."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "they are always liquids",
+          "misconceptionTag": "liquid-metal-generalization",
+          "rationale": "Most metals are solid under ordinary conditions, yet many still conduct well."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-09": {
+      "itemId": "legacy-09",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Hydrogen bonding is especially important when H is bonded to",
+      "answerIndex": 0,
+      "correctRationale": "Strongly polar N–H, O–H, and F–H bonds enable hydrogen bonding.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "any metal only",
+          "misconceptionTag": "metal-hydrogen-bond-overgeneralization",
+          "rationale": "Hydrogen bonding requires a strongly polarized H bonded to highly electronegative atoms such as N, O, or F, not simply any metal."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "noble gases only",
+          "misconceptionTag": "noble-gas-hydrogen-bond",
+          "rationale": "Noble gases generally do not form the strongly polar H–X bonds required for conventional hydrogen bonding."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "carbon in every case",
+          "misconceptionTag": "carbon-hydrogen-overgeneralization",
+          "rationale": "A C–H bond is usually not polar enough to produce the strong hydrogen bonding described here."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-10": {
+      "itemId": "legacy-10",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature, decreasing gas volume generally causes pressure to",
+      "answerIndex": 1,
+      "correctRationale": "Less volume increases collision frequency with container walls.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "decrease",
+          "misconceptionTag": "inverse-pressure-volume-trend",
+          "rationale": "At constant temperature, reducing volume increases wall-collision frequency, so pressure rises rather than falls."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "remain exactly zero",
+          "misconceptionTag": "pressure-zero-misconception",
+          "rationale": "Compression does not make gas pressure exactly zero."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "become unrelated to collisions",
+          "misconceptionTag": "collision-model-rejection",
+          "rationale": "Gas pressure is directly related to particle collisions with container walls in the kinetic model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-11": {
+      "itemId": "legacy-11",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Molarity is defined as",
+      "answerIndex": 0,
+      "correctRationale": "M = mol/L of solution.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "grams of solvent per mole",
+          "misconceptionTag": "molarity-solvent-mass-confusion",
+          "rationale": "Molarity uses moles of solute divided by liters of total solution, not grams of solvent per mole."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "liters of gas per atom",
+          "misconceptionTag": "gas-volume-particle-unit-confusion",
+          "rationale": "Liters per atom is not the concentration definition of molarity."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "moles per gram of solution",
+          "misconceptionTag": "molarity-vs-mass-normalization",
+          "rationale": "Moles per gram is a mass-normalized ratio, not molarity, which is volume-normalized."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-12": {
+      "itemId": "legacy-12",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Chromatography separates mixture components because they",
+      "answerIndex": 0,
+      "correctRationale": "Different relative attractions produce different migration.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "all have identical attractions",
+          "misconceptionTag": "identical-interaction-no-separation",
+          "rationale": "If components interacted identically with both phases, they would migrate similarly and separation would be poor."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "undergo nuclear reactions",
+          "misconceptionTag": "separation-vs-nuclear-reaction",
+          "rationale": "Chromatography is a physical/chemical partitioning method, not a nuclear process."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "lose all electrons",
+          "misconceptionTag": "electron-loss-as-chromatography",
+          "rationale": "Chromatographic migration does not require every component to lose all electrons."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-13": {
+      "itemId": "legacy-13",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Balancing a chemical equation enforces conservation of",
+      "answerIndex": 0,
+      "correctRationale": "Atoms are rearranged, not created or destroyed in ordinary reactions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "coefficients only",
+          "misconceptionTag": "coefficient-vs-conservation-object",
+          "rationale": "Coefficients are adjusted to represent conservation; the conserved entities are atoms of each element."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "temperature",
+          "misconceptionTag": "temperature-conservation-confusion",
+          "rationale": "Balancing an equation does not require temperature to remain constant."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "phase labels",
+          "misconceptionTag": "phase-label-conservation-confusion",
+          "rationale": "Phase labels describe physical state; they are not the conserved count enforced by balancing."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-14": {
+      "itemId": "legacy-14",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "One mole contains approximately",
+      "answerIndex": 0,
+      "correctRationale": "The Avogadro constant relates moles to number of entities.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "9.81 entities",
+          "misconceptionTag": "acceleration-constant-confusion",
+          "rationale": "9.81 is associated with gravitational acceleration near Earth, not the number of entities in a mole."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "100 entities exactly",
+          "misconceptionTag": "round-number-mole-misconception",
+          "rationale": "A mole is not defined as exactly 100 entities."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1.60×10^-19 entities",
+          "misconceptionTag": "elementary-charge-confusion",
+          "rationale": "1.60×10^-19 is associated with elementary charge magnitude in coulombs, not Avogadro's constant."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-15": {
+      "itemId": "legacy-15",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "The limiting reactant is the reactant that",
+      "answerIndex": 0,
+      "correctRationale": "It limits the maximum amount of product.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "has the largest molar mass",
+          "misconceptionTag": "molar-mass-determines-limiting-reactant",
+          "rationale": "The limiting reactant depends on available amounts relative to stoichiometric ratios, not simply on largest molar mass."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "is always a gas",
+          "misconceptionTag": "phase-determines-limiting-reactant",
+          "rationale": "A limiting reactant can be solid, liquid, gas, or dissolved; phase does not define the role."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "is never measured",
+          "misconceptionTag": "unmeasurable-reactant-misconception",
+          "rationale": "Limiting-reactant analysis depends on measured or specified amounts; the limiting reactant is not defined as unmeasured."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-16": {
+      "itemId": "legacy-16",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Percent yield compares",
+      "answerIndex": 0,
+      "correctRationale": "Percent yield = actual/theoretical × 100%.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "atomic number with mass number",
+          "misconceptionTag": "yield-vs-atomic-structure",
+          "rationale": "Atomic number and mass number describe nuclei and are unrelated to percent yield."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "temperature with pressure only",
+          "misconceptionTag": "yield-vs-state-variable-ratio",
+          "rationale": "Temperature-to-pressure comparison is not the definition of percent yield."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "electrons with neutrons",
+          "misconceptionTag": "yield-vs-subatomic-count",
+          "rationale": "Electron and neutron counts do not define reaction yield."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-17": {
+      "itemId": "legacy-17",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Oxidation is associated with",
+      "answerIndex": 0,
+      "correctRationale": "Oxidation tracks electron loss/increased oxidation state.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "gain of neutrons only",
+          "misconceptionTag": "oxidation-vs-neutron-gain",
+          "rationale": "Oxidation in ordinary chemistry concerns electron transfer or oxidation state, not gain of neutrons."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "decrease in all energy",
+          "misconceptionTag": "oxidation-means-energy-decrease",
+          "rationale": "Oxidation is not defined by a universal decrease in energy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "formation of water in every reaction",
+          "misconceptionTag": "oxidation-always-forms-water",
+          "rationale": "Many oxidation reactions do not form water; water production is not the defining criterion."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-18": {
+      "itemId": "legacy-18",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Reaction rate is often determined from",
+      "answerIndex": 0,
+      "correctRationale": "Rate describes change per time.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "atomic number divided by mass",
+          "misconceptionTag": "rate-vs-nuclear-ratio",
+          "rationale": "Atomic number divided by mass is not a reaction-rate measurement."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "color alone without calibration",
+          "misconceptionTag": "uncalibrated-observation-as-rate",
+          "rationale": "Color can be a proxy only when related to concentration or extent by a calibrated measurement; color alone is insufficient."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "the number of equations written",
+          "misconceptionTag": "work-product-vs-rate",
+          "rationale": "Counting equations written measures neither chemical change nor elapsed time."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-19": {
+      "itemId": "legacy-19",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A catalyst increases rate by",
+      "answerIndex": 0,
+      "correctRationale": "Catalysts alter pathway/activation energy, not net thermodynamics.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "raising the equilibrium constant in every case",
+          "misconceptionTag": "catalyst-changes-equilibrium-constant",
+          "rationale": "A catalyst speeds forward and reverse pathways without changing the equilibrium constant at a fixed temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "being consumed stoichiometrically",
+          "misconceptionTag": "catalyst-consumed-stoichiometrically",
+          "rationale": "A catalyst participates in a mechanism but is regenerated rather than consumed as a net stoichiometric reactant."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "creating atoms",
+          "misconceptionTag": "catalyst-creates-matter",
+          "rationale": "Catalysis changes pathway and rate; it does not create atoms."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-20": {
+      "itemId": "legacy-20",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Increasing temperature often speeds a reaction because",
+      "answerIndex": 0,
+      "correctRationale": "Higher temperature changes collision energy distribution.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "particles stop moving",
+          "misconceptionTag": "temperature-stops-particles",
+          "rationale": "Higher temperature increases average kinetic energy rather than stopping particle motion."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "activation energy becomes zero",
+          "misconceptionTag": "temperature-removes-activation-energy",
+          "rationale": "Heating changes the energy distribution; it does not make the activation energy itself zero."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "equilibrium is always destroyed",
+          "misconceptionTag": "temperature-destroys-equilibrium",
+          "rationale": "Temperature can shift an equilibrium, but it does not mean equilibrium is always destroyed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-21": {
+      "itemId": "legacy-21",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In calorimetry, q=mcΔT relates heat to",
+      "answerIndex": 0,
+      "correctRationale": "This relation estimates heat transfer from measurable quantities.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "pressure only",
+          "misconceptionTag": "calorimetry-pressure-only",
+          "rationale": "The equation q=mcΔT contains no pressure term; it relates heat to mass, specific heat, and temperature change."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "moles only",
+          "misconceptionTag": "calorimetry-moles-only",
+          "rationale": "Moles can enter other thermochemical relations, but q=mcΔT is not defined by moles alone."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "atomic number",
+          "misconceptionTag": "calorimetry-atomic-number",
+          "rationale": "Atomic number does not appear in the calorimetry relation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-22": {
+      "itemId": "legacy-22",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Hess's law works because enthalpy is",
+      "answerIndex": 0,
+      "correctRationale": "State functions depend on initial/final states, not path.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "a catalyst",
+          "misconceptionTag": "enthalpy-vs-catalyst",
+          "rationale": "A catalyst is a substance or pathway feature; enthalpy is a thermodynamic state function."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "an isotope",
+          "misconceptionTag": "enthalpy-vs-isotope",
+          "rationale": "An isotope is a nuclear variant of an element, not a thermodynamic property."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "a unit of pressure",
+          "misconceptionTag": "enthalpy-vs-pressure-unit",
+          "rationale": "Enthalpy is an energy quantity, not a unit of pressure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-23": {
+      "itemId": "legacy-23",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Entropy is commonly associated with",
+      "answerIndex": 0,
+      "correctRationale": "Entropy tracks energy/matter dispersal and multiplicity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "total absence of motion",
+          "misconceptionTag": "entropy-means-no-motion",
+          "rationale": "Greater entropy is not defined as absence of motion; microscopic motion and accessible arrangements are central to statistical descriptions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "electron charge",
+          "misconceptionTag": "entropy-vs-electric-charge",
+          "rationale": "Electron charge is an electrical property, not the thermodynamic meaning of entropy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "molar mass only",
+          "misconceptionTag": "entropy-vs-molar-mass",
+          "rationale": "Molar mass alone does not define entropy."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-24": {
+      "itemId": "legacy-24",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At dynamic equilibrium",
+      "answerIndex": 0,
+      "correctRationale": "Macroscopic constancy can coexist with ongoing microscopic change.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "all molecular motion stops",
+          "misconceptionTag": "equilibrium-stops-motion",
+          "rationale": "Dynamic equilibrium still has ongoing molecular motion and forward/reverse events."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "reactant concentration must be zero",
+          "misconceptionTag": "equilibrium-requires-zero-reactant",
+          "rationale": "Reactants and products can both remain present at nonzero concentrations at equilibrium."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "only the forward reaction occurs",
+          "misconceptionTag": "equilibrium-one-way-reaction",
+          "rationale": "Dynamic equilibrium requires both forward and reverse processes, not only the forward direction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-25": {
+      "itemId": "legacy-25",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Le Châtelier reasoning predicts",
+      "answerIndex": 0,
+      "correctRationale": "It provides a qualitative response model.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "the exact mechanism of every reaction",
+          "misconceptionTag": "le-chatelier-as-mechanism",
+          "rationale": "Le Châtelier reasoning predicts directional response to disturbance; it does not reveal an exact reaction mechanism."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "nuclear half-life",
+          "misconceptionTag": "equilibrium-vs-nuclear-decay",
+          "rationale": "Nuclear half-life is governed by radioactive decay, not Le Châtelier's principle."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "atomic number",
+          "misconceptionTag": "equilibrium-vs-atomic-number",
+          "rationale": "Atomic number is a nuclear identity property and is not predicted by equilibrium-shift reasoning."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-26": {
+      "itemId": "legacy-26",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A buffer resists pH change because it contains",
+      "answerIndex": 0,
+      "correctRationale": "A conjugate pair can moderate added H+ or OH−.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "only pure water",
+          "misconceptionTag": "pure-water-buffer-misconception",
+          "rationale": "Pure water has limited capacity to consume added acid or base and is not a conjugate buffer system."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "no ions",
+          "misconceptionTag": "buffer-without-ions",
+          "rationale": "Buffer action generally depends on acid/base species and their conjugates, often present as ions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "radioactive isotopes",
+          "misconceptionTag": "buffer-radioactivity-confusion",
+          "rationale": "Radioactive isotopes are unrelated to the acid–base mechanism by which buffers resist pH change."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-27": {
+      "itemId": "legacy-27",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A decrease of one pH unit corresponds to about",
+      "answerIndex": 0,
+      "correctRationale": "pH is logarithmic base 10.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "twofold decrease in mass",
+          "misconceptionTag": "ph-vs-mass-change",
+          "rationale": "A one-unit pH change refers to a tenfold hydrogen-ion concentration change, not a twofold mass change."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "one extra neutron",
+          "misconceptionTag": "ph-vs-neutron-count",
+          "rationale": "Neutron number is a nuclear property and does not define pH."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "no concentration change",
+          "misconceptionTag": "linear-ph-misconception",
+          "rationale": "Because pH is logarithmic, a one-unit decrease does imply a concentration change; it is not 'no change.'"
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-28": {
+      "itemId": "legacy-28",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell converts",
+      "answerIndex": 0,
+      "correctRationale": "Separated redox half-reactions can drive electron flow.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "electrical energy only into gravity",
+          "misconceptionTag": "energy-conversion-category-error",
+          "rationale": "A galvanic cell does not convert electrical energy into gravity; it produces electrical energy from a spontaneous redox process."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "nuclear energy into mass loss only",
+          "misconceptionTag": "galvanic-vs-nuclear-energy",
+          "rationale": "Galvanic cells operate through chemical redox reactions rather than nuclear mass conversion."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "sound into atoms",
+          "misconceptionTag": "galvanic-vs-sound-conversion",
+          "rationale": "Sound-to-atom conversion is not the operating principle of an electrochemical cell."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-29": {
+      "itemId": "legacy-29",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Radioactive decay differs from an ordinary chemical reaction because it changes",
+      "answerIndex": 0,
+      "correctRationale": "Nuclear processes change nuclear composition.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "only intermolecular forces",
+          "misconceptionTag": "nuclear-vs-intermolecular-change",
+          "rationale": "Ordinary chemical reactions can change intermolecular interactions; radioactive decay is distinguished by a change in the nucleus."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "only solution volume",
+          "misconceptionTag": "nuclear-vs-volume-change",
+          "rationale": "Solution volume can change in ordinary physical or chemical processes and does not define radioactive decay."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "only molecular orientation",
+          "misconceptionTag": "nuclear-vs-orientation-change",
+          "rationale": "Molecular orientation changes do not constitute radioactive nuclear transformation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "legacy-30": {
+      "itemId": "legacy-30",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A sustainable materials decision should consider",
+      "answerIndex": 0,
+      "correctRationale": "Engineering decisions require multiple criteria and tradeoffs.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "only purchase price",
+          "misconceptionTag": "single-criterion-cost-only",
+          "rationale": "Purchase price alone ignores lifecycle impacts, performance, safety, and uncertainty."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "only color",
+          "misconceptionTag": "appearance-only-design",
+          "rationale": "Color can be a design consideration but cannot by itself establish sustainability or engineering suitability."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "only molecular mass",
+          "misconceptionTag": "single-property-molar-mass",
+          "rationale": "Molar mass alone does not capture performance, lifecycle, safety, cost, or uncertainty tradeoffs."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored misconception review"
+    }
+  }
+}
