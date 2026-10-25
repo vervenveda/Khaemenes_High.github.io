@@ -11,8 +11,8 @@ const specs=[
   label:"Algebra I",
   bank:"courses/mathematics/algebra-1/assets/question-bank.js",
   map:"courses/mathematics/algebra-1/assets/assessment-misconceptions-v1.json",
-  expectedItems:13,
-  expectedDistractors:39,
+  expectedItems:271,
+  expectedDistractors:813,
   coverageKey:q=>String(q.unit),
   expectedCoverageKeys:Array.from({length:13},(_,i)=>String(i+1))
  },
@@ -68,6 +68,14 @@ for(const spec of specs){
   }
  }
  if(distractors!==spec.expectedDistractors)failures.push(`${spec.label}: expected ${spec.expectedDistractors} distractor rationales, found ${distractors}`);
+ if(spec.label==="Algebra I"){
+  const normTemplate=s=>String(s??"").toLowerCase().replace(/−/g,"-").replace(/-?\d+(?:\.\d+)?/g,"#").replace(/[^\p{L}\p{N}#]+/gu," ").replace(/\s+/g," ").trim();
+  const families=new Map();
+  for(const q of bank){const k=normTemplate(q.prompt);if(!families.has(k))families.set(k,[]);families.get(k).push(q)}
+  const mappedIds=new Set(entries.map(x=>String(x.itemId)));
+  const gaps=[...families.entries()].filter(([,group])=>group.length>=3&&group.some(q=>!mappedIds.has(String(q.id))));
+  if(gaps.length)failures.push(spec.label+": repeated-family mapping gaps remain: "+gaps.map(([k,g])=>k+" ["+g.filter(q=>!mappedIds.has(String(q.id))).map(q=>q.id).join(",")+"]").join("; "));
+ }
  const missingCoverage=spec.expectedCoverageKeys.filter(k=>!coveredKeys.has(k));
  if(missingCoverage.length)failures.push(`${spec.label}: year-spanning anchor coverage missing ${missingCoverage.join(", ")}`);
  summary.push({
