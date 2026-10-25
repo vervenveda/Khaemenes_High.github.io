@@ -338,7 +338,8 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     const bank=loadWindowBank(bankPath);combined.push(...bank);
     const map=readJSON(`courses/science/${slug}/course-map.json`);
     const blueprint=read(`courses/science/${slug}/assessments/SECURE_ASSESSMENT_BLUEPRINT.md`);
-    const index=read(`courses/science/${slug}/assessments/index.html`);
+    const assessmentIndex=read(`courses/science/${slug}/assessments/index.html`);
+    const courseIndex=read(`courses/science/${slug}/index.html`);
     const missing=[];
     for(let week=1;week<=36;week++){
       if(week===18||week===36)continue;ordinaryTotal++;
@@ -349,12 +350,12 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     const dq=slug==="chemistry-11"?misconceptionMapMetrics("courses/science/chemistry-11/assessment-misconceptions-v1.json",bank):null;
     courseMetrics[slug]={items:bank.length,missingTransferWeeks:missing,metrics:m,...(dq?{misconceptionMap:dq}:{})};
     const blueprintOkay=["80% mastery floor","Midterm · Week 18","Final · Week 36","Must remain protected","novel phenomenon"].every(x=>blueprint.includes(x))
-      &&index.includes("SECURE_ASSESSMENT_BLUEPRINT.md")
+      &&assessmentIndex.includes("SECURE_ASSESSMENT_BLUEPRINT.md")
       &&Number(map.assessment?.mastery_target)===80
       &&/15-item/i.test(map.assessment?.midterm||"")
       &&/30-item/i.test(map.assessment?.final||"");
     if(blueprintOkay)blueprints++;
-    const usesMC=index.includes("KhaeMonteCarloAssessment")&&index.includes(".openSession(")&&index.includes(".materialize(");
+    const usesMC=courseIndex.includes("KhaeMonteCarloAssessment")&&courseIndex.includes(".openSession(")&&courseIndex.includes(".materialize(");
     if(usesMC)publicMonteCarlo++;
     checks.push(addFinding(label,`${slug}-ordinary-week-transfer`,
       missing.length===0?"PASS":"FAIL",
