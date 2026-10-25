@@ -80,14 +80,27 @@ function weekEvidence(n){
  const week=Number(n),store=safe(WEEKLY_KEY,{weeks:{}}),record=store?.weeks?.[week]||store?.weeks?.[String(week)]||null,best=numeric(record?.best),attemptMastery=Array.isArray(record?.attempts)&&record.attempts.some(a=>a?.mastery_met===true);
  return {week,threshold:MASTERY,mastery:(best!==null&&best>=MASTERY)||attemptMastery,best,source:WEEKLY_KEY};
 }
+const REVIEW_ROLES=new Set(["parent-guardian","teacher","program-evaluator","tutor-mentor"]);
+function validEvaluatorReview(attempt){
+ const review=attempt?.evaluator_review||{},name=String(review.reviewer_name||"").trim(),note=String(review.reviewer_note||"").trim(),id=String(review.review_id||"").trim(),role=String(review.reviewer_role||""),reviewedAt=Date.parse(String(review.reviewed_at||""));
+ return attempt?.constructed_response?.review_complete===true
+  &&review?.schema==="khaemenes-algebra1-evaluator-review-v1"
+  &&review?.review_complete===true
+  &&review?.attestation===true
+  &&name.length>=2
+  &&note.length>=12
+  &&id.length>=8
+  &&REVIEW_ROLES.has(role)
+  &&Number.isFinite(reviewedAt);
+}
 function cumulativeEvidence(key){
- const record=safe(key,null),attempts=Array.isArray(record?.attempt_history)?record.attempt_history:[],valid=attempts.filter(a=>a?.mastery===true&&!a?.legacy_selected_only&&a?.constructed_response?.review_complete===true),scores=valid.map(a=>numeric(a?.overall_percent)).filter(v=>v!==null),best=scores.length?Math.max(...scores):null;
- return {key,threshold:MASTERY,mastery:best!==null&&best>=MASTERY,best,reviewed_mastery_attempts:valid.length};
+ const record=safe(key,null),attempts=Array.isArray(record?.attempt_history)?record.attempt_history:[],masteryAttempts=attempts.filter(a=>a?.mastery===true&&!a?.legacy_selected_only),valid=masteryAttempts.filter(validEvaluatorReview),scores=valid.map(a=>numeric(a?.overall_percent)).filter(v=>v!==null),best=scores.length?Math.max(...scores):null;
+ return {key,threshold:MASTERY,mastery:best!==null&&best>=MASTERY,best,reviewed_mastery_attempts:valid.length,rejected_unstructured_review_attempts:masteryAttempts.length-valid.length,evaluator_review_schema:"khaemenes-algebra1-evaluator-review-v1",evaluator_identity_required:true,evaluator_attestation_required:true};
 }
 function allUnitsMastered(first=1,last=13){for(let n=Number(first);n<=Number(last);n++)if(!unitEvidence(n).mastery)return false;return true}
 function allWeeksMastered(first=2,last=36){for(let n=Number(first);n<=Number(last);n++)if(!weekEvidence(n).mastery)return false;return true}
 window.KhaemenesAlgebra1MasteryAuthority={
- version:"1.3",
+ version:"1.4",
  threshold:MASTERY,
  responsive_layout:"v1",
  focused_assessment:"v1.2",
@@ -102,6 +115,7 @@ window.KhaemenesAlgebra1MasteryAuthority={
  weekLessonsMastered:n=>weekLessonEvidence(n).mastery,
  weekEvidence,
  weekMastered:n=>weekEvidence(n).mastery,
+ validEvaluatorReview,
  cumulativeEvidence,
  midtermEvidence:()=>cumulativeEvidence(MIDTERM_KEY),
  midtermMastered:()=>cumulativeEvidence(MIDTERM_KEY).mastery,
