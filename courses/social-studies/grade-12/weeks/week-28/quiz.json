@@ -2,116 +2,167 @@
   "title": "Week 28 Mastery Quiz · Climate, Resources, and Environmental Justice",
   "questions": [
     {
-      "question": "Which definition best matches “mitigation”?",
+      "id": "ss12-w28-transfer-v3-01",
+      "question": "The Paris Agreement Article 4 concerns nationally determined contributions. What distinction matters in a student evidence table?",
       "options": [
-        "Action reducing greenhouse-gas emissions or increasing removal.",
-        "Freedom from unjust restraint and the capacity to make meaningful choices.",
-        "Critical examination of choices, learning, effects, and remaining questions.",
-        "The expertise, responsibility, or firsthand access that makes a source relevant."
+        "A stated national target is not the same as measured emissions reductions or achieved outcomes.",
+        "All contributions are identical legal emission caps.",
+        "Submitting a target proves delivery.",
+        "Every target covers the same economic sectors."
       ],
       "answer": 0,
-      "explanation": "Mitigation means action reducing greenhouse-gas emissions or increasing removal."
+      "explanation": "A stated national target is not the same as measured emissions reductions or achieved outcomes.",
+      "skill": "primary-source",
+      "sourceType": "primary-source-anchored",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “adaptation”?",
+      "id": "ss12-w28-transfer-v3-02",
+      "question": "Fictional coastal districts face identical storm exposure but different household incomes and evacuation access. Which comparison best captures climate justice?",
       "options": [
-        "A community connected by shared identity, history, culture, language, or political aspiration.",
-        "The organized procedures used to collect and analyze evidence.",
-        "Adjustment that reduces vulnerability to actual or expected climate effects.",
-        "The foundational rules organizing government, authority, rights, and amendment."
-      ],
-      "answer": 2,
-      "explanation": "Adaptation means adjustment that reduces vulnerability to actual or expected climate effects."
-    },
-    {
-      "question": "Which definition best matches “environmental justice”?",
-      "options": [
-        "The ability of public institutions to implement decisions and provide core functions.",
-        "Fair distribution of environmental benefits, burdens, participation, and remedies.",
-        "Supreme governing authority within a territory and independence in external relations.",
-        "The obligation to explain conduct and face consequences for misuse or failure."
+        "Exposure alone proves equal risk.",
+        "Physical hazard plus unequal vulnerability, adaptation resources and exposure to harm.",
+        "Income cannot affect resilience.",
+        "Both districts necessarily have identical losses."
       ],
       "answer": 1,
-      "explanation": "Environmental justice means fair distribution of environmental benefits, burdens, participation, and remedies."
+      "explanation": "Physical hazard plus unequal vulnerability, adaptation resources and exposure to harm.",
+      "skill": "data-interpretation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “common-pool resource”?",
+      "id": "ss12-w28-transfer-v3-03",
+      "question": "A policy reduces average emissions but causes steep heating-cost increases among low-income households. What evidence should an evaluation include?",
       "options": [
-        "Rule that sharply restricts political competition, accountability, or civil liberty.",
-        "The pattern of parties that compete and influence government.",
-        "A difficult-to-exclude resource vulnerable to overuse.",
-        "A system with a separately elected president serving a fixed term."
+        "Aggregate reductions prove everyone benefits equally.",
+        "Energy affordability has no policy relevance.",
+        "Carbon effects alongside distributional costs, support measures and feasible alternatives.",
+        "Mitigation and equity cannot be studied together."
       ],
       "answer": 2,
-      "explanation": "Common-pool resource means a difficult-to-exclude resource vulnerable to overuse."
+      "explanation": "Carbon effects alongside distributional costs, support measures and feasible alternatives.",
+      "skill": "measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which definition best matches “intergenerational equity”?",
+      "id": "ss12-w28-transfer-v3-04",
+      "question": "A fictional region reports 15% more rainfall but 30% higher flood losses. What interpretation is most defensible?",
       "options": [
-        "A representative body that deliberates, makes law, authorizes resources, and oversees government.",
-        "Coordinated behavior toward a shared objective.",
-        "Fair consideration of present and future generations.",
-        "Allocation of seats in approximate proportion to party vote shares."
-      ],
-      "answer": 2,
-      "explanation": "Intergenerational equity means fair consideration of present and future generations."
-    },
-    {
-      "question": "Which definition best matches “loss and damage”?",
-      "options": [
-        "Severe climate impacts that cannot be fully avoided through mitigation or adaptation.",
-        "An organization seeking to influence public decisions without directly becoming the government.",
-        "The statutory distribution of powers to Scotland, Wales, and Northern Ireland.",
-        "Rules converting votes into offices or seats."
-      ],
-      "answer": 0,
-      "explanation": "Loss and damage means severe climate impacts that cannot be fully avoided through mitigation or adaptation."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 28 analysis?",
-      "options": [
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Environmental harms and capacities are distributed unequally.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Political labels have exactly the same meaning in every country and period."
-      ],
-      "answer": 1,
-      "explanation": "Environmental harms and capacities are distributed unequally."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 28 analysis?",
-      "options": [
-        "Scientific evidence informs but does not determine policy choices.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "The most confident source should be accepted without examining authority or method.",
-        "A single vivid example proves a universal conclusion without qualification."
-      ],
-      "answer": 0,
-      "explanation": "Scientific evidence informs but does not determine policy choices."
-    },
-    {
-      "question": "Which research practice is most appropriate for Climate, Resources, and Environmental Justice?",
-      "options": [
-        "Choose only evidence that supports the preferred conclusion.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Replace documentary evidence with political identity or intuition.",
-        "Trace claims to IPCC summaries, climate agreements, emissions data, adaptation plans, and environmental-justice cases, evaluate authority and context, corroborate material facts, and state limitations."
+        "Rainfall alone accounts for every dollar lost.",
+        "Any increase proves one policy caused flooding.",
+        "Damage data cannot be related to rainfall.",
+        "Losses can reflect precipitation, exposed assets, land-use decisions and protective capacity together."
       ],
       "answer": 3,
-      "explanation": "Trace claims to IPCC summaries, climate agreements, emissions data, adaptation plans, and environmental-justice cases, evaluate authority and context, corroborate material facts, and state limitations."
+      "explanation": "Losses can reflect precipitation, exposed assets, land-use decisions and protective capacity together.",
+      "skill": "causal-inference",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     },
     {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
+      "id": "ss12-w28-transfer-v3-05",
+      "question": "A national adaptation plan lists new seawalls but no maintenance or ecological impacts. Which appraisal is stronger?",
       "options": [
-        "Treat legal, causal, and moral claims as interchangeable.",
-        "List facts without connecting them to a claim.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "Use a slogan as the conclusion and omit uncertainties."
+        "Consider life-cycle costs, affected communities, ecosystem effects and alternative protections.",
+        "Construction alone guarantees long-term resilience.",
+        "Ecological effects cannot be observed.",
+        "All shoreline communities face equal risk."
+      ],
+      "answer": 0,
+      "explanation": "Consider life-cycle costs, affected communities, ecosystem effects and alternative protections.",
+      "skill": "institutional-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w28-transfer-v3-06",
+      "question": "A mining proposal cites energy-transition benefits but excludes Indigenous communities from consultation records. Which question needs investigation?",
+      "options": [
+        "Clean-energy goals automatically waive procedural rights.",
+        "Applicable consultation rights, land tenure, distribution of harms and evidence of meaningful participation.",
+        "Consultation is equivalent to a press notice.",
+        "A national benefit estimate records each local impact."
+      ],
+      "answer": 1,
+      "explanation": "Applicable consultation rights, land tenure, distribution of harms and evidence of meaningful participation.",
+      "skill": "quantitative-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w28-transfer-v3-07",
+      "question": "Two states publish different climate baselines when announcing percentage cuts. What calculation issue is central?",
+      "options": [
+        "Percent cuts are directly comparable without baselines.",
+        "Only population determines the baseline.",
+        "The starting year, emissions inventory, sector coverage and absolute totals determine comparability.",
+        "Different baselines prove dishonesty."
       ],
       "answer": 2,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "The starting year, emissions inventory, sector coverage and absolute totals determine comparability.",
+      "skill": "case-comparison",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w28-transfer-v3-08",
+      "question": "A carbon-pricing scheme reports revenue but no emissions baseline. What outcome claim is unsupported?",
+      "options": [
+        "The government collected revenue.",
+        "Pricing policy was implemented.",
+        "Revenue can be reported in currency.",
+        "Its emissions-reduction effect cannot be inferred from revenue collection alone."
+      ],
+      "answer": 3,
+      "explanation": "Its emissions-reduction effect cannot be inferred from revenue collection alone.",
+      "skill": "policy-evaluation",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w28-transfer-v3-09",
+      "question": "A source cites the Paris Agreement temperature objective as proof that current policy will achieve it. What distinction is essential?",
+      "options": [
+        "International goals and actual global trajectories require different evidence and implementation analysis.",
+        "Adoption automatically guarantees outcomes.",
+        "National inventories are unnecessary.",
+        "Targets cannot be evaluated."
+      ],
+      "answer": 0,
+      "explanation": "International goals and actual global trajectories require different evidence and implementation analysis.",
+      "skill": "source-limits",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
+    },
+    {
+      "id": "ss12-w28-transfer-v3-10",
+      "question": "A government claims one drought caused by climate change without supporting attribution research. What should a cautious assessment say?",
+      "options": [
+        "Every drought has identical causes.",
+        "Assess long-term trends, event attribution evidence, exposure and uncertainty before assigning a singular cause.",
+        "One event alone measures global warming.",
+        "Climate science excludes natural variability."
+      ],
+      "answer": 1,
+      "explanation": "Assess long-term trends, event attribution evidence, exposure and uncertainty before assigning a singular cause.",
+      "skill": "research-methods",
+      "sourceType": "fictional-instructional-stimulus",
+      "sourceRef": "docs/PRIMARY_SOURCE_DOSSIERS_25_28.md",
+      "version": 3
     }
   ],
   "shortResponse": "How can political institutions govern environmental risks that cross borders, generations, and unequal communities?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
